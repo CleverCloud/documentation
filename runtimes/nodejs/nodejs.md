@@ -21,38 +21,33 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
-## Necessary information
+## Requirements
 
 Be sure that:
 
 * you have pushed in <b>master branch</b>
-* you listen on <b>port 8080</b>
-* you have added application <b>name</b> in package.json
-* you have added application <b>version</b> in package.json
-* you have added application <b>start script</b> in package.json
+* you listen on <b>0.0.0.0:8080</b>
+* your packages.json either has a <b>scripts.start</b> or <b>main</b> field
 
-## Requirements
-
-First, your application must be set to listen on the 8080 port, for worldwide
-connections. The following code describes a Hello world application listening on
-that port:
+The following code describes a Hello world application listening on port 8080:
 
 ```javascript
 // Load the http module to create an http server.
-var http = require('http');
+const http = require('http');
 
 // Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
+const server = http.createServer((request, response) => {
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.end("Hello World\n");
 });
 
 // Last, but not least, listen on port 8080
-server.listen(8080);
+// The environment variable PORT is automatically defined and equals to 8080
+server.listen(process.env.PORT, '0.0.0.0');
 ```
 Then, a *package.json* file is mandatory to initiate your app deployment on Clever Cloud. The next section will detail this point.
 
-### Describing package.json  
+### Describing package.json
 
 Even if you have no dependencies, you have to provide a `package.json` file at the root of your project’s directory.
 
@@ -63,9 +58,9 @@ Even if you have no dependencies, you have to provide a `package.json` file at t
 directory.</li>
   <li>Additionally, make sure that the folder "/node_modules" is in your .gitignore file before pushing your app.</li>
   </ul>
-</div>  
+</div>
 
-If you already are a Node.js guru, you probably won’t have to change anything to that
+If you already are a Node.js guru, you probably won't have to change anything to that
 file. Just check the required fields below.
 
 The `package.json` file should look like the following:
@@ -97,16 +92,6 @@ The following table describes each of the fields formerly mentioned.
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><span class="label label-danger">Required</span></td>
-<td>name</td>
-<td>Name of your application. You need to fill this field.</td>
-</tr>
-<tr>
-<td><span class="label label-danger">Required</span></td>
-<td>version</td>
-<td>Version of you application. You need to fill this field.</td>
-</tr>
 <tr>
 <td class="cc-depusage" rowspan="2"><span class="label label-danger">At least one</span></td>
 <td>scripts.start</td>
@@ -163,7 +148,8 @@ If your application got privates dependencies, you can add a [Private SSH Key](h
 
 Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
-versions are not supported either.
+versions are not supported either. You can use the `engines.node` field
+in `package.json` to define the wanted version.
 
 ## Supported package managers
 
@@ -192,18 +178,14 @@ We currently host the following Node.js versions, with these modules already ins
 </tr>
 </thead>
 <tbody>
-<tr><td>socket.io</td></tr>
-<tr><td>express  </td></tr>
-<tr><td>async    </td></tr>
-<tr><td>mysql    </td></tr>
-<tr><td>pg       </td></tr>
+<tr><td>phantomjs</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 
 
-New versions will be added as they are released.
+New versions will be added as they are released and are only available with pre-installed versions of node.
 
 ### Defining *pre-installed*
 
@@ -211,13 +193,8 @@ The above table describes the modules pre-installed.
 These modules are available at deploy time, without the need to download and
 install them.
 
-If you use modules that are not pre-installed, we will just get them with npm
-(provided they are in the npm repository), and install it before we start your
-application. The deploy will then be a little longer, due to probable
-compilation of some of these modules.
-
-Some modules require system dependencies to build, require to rebuild node… so
-we installed the most used ones.
+If you use modules that are not pre-installed, they will be installed via `npm install`.
+The deploy may be a little longer due to probable compilation of some of these modules.
 
 If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
@@ -228,12 +205,10 @@ Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
 
 To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`process.env["MY_VARIABLE"]`.
+it from your environment: `process.env.MY_VARIABLE`.
 
-You can, for example, inject the NODE_ENV variable to define it at "production". It is not
-currently set on our machines, because we need to build the project first. Beware,
-devDependencies do not get fetched if NODE_ENV=production.
+You can (and should) define the `NODE_ENV=production` environment variable as many frameworks
+rely on it for production mode.
 
 ### Special env NPM_TOKEN
 

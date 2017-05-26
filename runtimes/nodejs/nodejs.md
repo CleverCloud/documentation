@@ -13,10 +13,6 @@ explain you how to set up your application to run it on our service.
 You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some
 mandatory files to add, and properties to setup.
 
-## Overview
-
-Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, pretty good for data-intensive real-time applications that run across distributed devices.
-
 ## Create an application
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
@@ -165,39 +161,13 @@ release.
 
 ### Pre-installed modules
 
-We currently host the following Node.js versions, with these modules already installed:
+We currently provide these pre-installed modules:
 
 **You can use any version of node you need and any modules you need. Preinstall version is only for faster deployment process.**
 
-<div class="row">
-<div class="span4">
-<table class="table table-bordered table-striped span1">
-<thead>
-<tr>
-<th>Pre-installed modules</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>phantomjs</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
+* phantomjs
 
 New versions will be added as they are released and are only available with pre-installed versions of node.
-
-### Defining *pre-installed*
-
-The above table describes the modules pre-installed.
-These modules are available at deploy time, without the need to download and
-install them.
-
-If you use modules that are not pre-installed, they will be installed via `npm install`.
-The deploy may be a little longer due to probable compilation of some of these modules.
-
-If you think more modules are commonly used and should be pre-installed, do not
-hesitate to contact us at <mailto:support@clever-cloud.com>
 
 ## Environment injection
 

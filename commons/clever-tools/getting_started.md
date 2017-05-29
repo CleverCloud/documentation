@@ -33,7 +33,7 @@ To install Clever Tools system-wide, run
 Clever Tools comes with a powerful auto-completion support. Make sure to
 enable it for a better experience.
 
-    install-clever-completion
+    sudo install-clever-completion
 
 ## Linking your account
 

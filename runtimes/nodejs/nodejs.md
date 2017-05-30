@@ -92,7 +92,7 @@ The following table describes each of the fields formerly mentioned.
 <td class="cc-depusage" rowspan="2"><span class="label label-danger">At least one</span></td>
 <td>scripts.start</td>
 <td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise
-we will use the <code>main</code> field</td>
+we will use the <code>main</code> field. See below to know how and when to use the `scripts.start` field</td>
 </tr>
 <tr>
 <td>main</td>
@@ -109,6 +109,21 @@ please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
 </tr>
 </tbody>
 </table>
+
+### Build and start
+
+When deploying an application, there are two phases: build and run.
+
+* The build phase installs the dependencies and executes the `scripts.install` in your `package.json` (if defined).
+It's meant to build the whole application including dependencies and / or assets (if there are any).
+
+* The run phase is executed from `scripts.start` if defined. This phase is only meant to start your application and should not
+contain any build task.
+
+All the build part should be written into the `scripts.install` field of the `package.json`. You can also add a custom bash script and
+execute it with: `"scripts.install": "./build.sh"`
+
+For more information, see <a href="https://docs.npmjs.com/misc/scripts">the npm documentation</a>
 
 ### NPM modules dependencies
 

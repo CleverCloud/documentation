@@ -9,10 +9,9 @@ tags:
 
 ## What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is an individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from XS to XXXL.
+A <dfn id="def-scaler">scaler</dfn> is an individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from Pico to XL.
 
-Each [scaler](#def-scaler) is given a fixed set of resources, depending on the chosen language. A Java [scaler](#def-scaler) will have more RAM than a PHP [scaler](#def-scaler).
-The way you scale an application is by assigning it new [scalers](#def-scaler).
+Each [scaler](#def-scaler) is given a fixed set of resources.
 When enabling auto-scalability, you have to set a minimum and a maximum of active [scalers](#def-scaler) in your apps settings. This way you can precisely control your monthly fee.
 
 ## What languages and frameworks are supported by Clever Cloud?
@@ -25,6 +24,10 @@ Currently Clever Cloud supports:
 * Python (Django)
 * Ruby
 * Go
+* Haskell
+* Scala
+* Rust
+* Docker
 
 ## How many applications can I create with Clever Cloud?
 
@@ -32,7 +35,7 @@ As much as you want. We've not set a limited number of apps by developer.
 
 ## How can I disable one of my existing applications?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the head-bar. Then click on **Configuration** in the left pane to stop your app. It will be un-deployed, and ready for a new start without pushing your app via Git or FTP again.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and selection **Overview**. Click on the **Stop** button top undeploy your app.
 
 ## What type of content is allowed on Clever Cloud?
 
@@ -47,7 +50,7 @@ We use custom probes to monitor:
 
 ## How do I authenticate members of my organization?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the head-bar. Then click on **Configuration** in the left pane and select **Members**. You'll see a list of the organization's members. If your are an admin, you can revoke or grant apps permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant apps permissions.
 
 ## How do I report an application that is in violation of your Terms and Conditions?
 

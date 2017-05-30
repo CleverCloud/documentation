@@ -35,7 +35,7 @@ As much as you want. We've not set a limited number of apps by developer.
 
 ## How can I disable one of my existing applications?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and selection **Overview**. Click on the **Stop** button top undeploy your app.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
 
 ## What type of content is allowed on Clever Cloud?
 

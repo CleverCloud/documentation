@@ -80,11 +80,11 @@ First, list addon providers and then create your addon.
     # List addon providers
     clever addon providers
 
-    # Create your addon and link it to your application with --link
-    clever addon create <provider-name> <addon-name> --link
+    # Create your addon and link it to your application with --link <app-alias>
+    clever addon create <provider-name> <addon-name> --link <app-alias>
 
     # Create an addon for an organization
-    clever addon create <provider-name> <addon-name> --link --org <org-name>
+    clever addon create <provider-name> <addon-name> --link <app-alias> --org <org-name>
 
 ### Choosing provider's plan and region
 

@@ -151,3 +151,21 @@ public class Main {
     }
 }
 ```
+### Python
+
+Based on [this article on dzone](https://dzone.com/articles/look-riak-cs-basho). This has been tested against python 3.6
+
+This script use boto, the old implentation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar.services.clever-cloud.com` (but check in the clever cloud console).
+
+```python
+from boto.s3.key import Key
+from boto.s3.connection import S3Connection
+from boto.s3.connection import OrdinaryCallingFormat
+apikey='<key>'
+secretkey='<secret>'
+host='<host>'
+cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
+conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
+b = conn.get_all_buckets()
+print(b)
+```

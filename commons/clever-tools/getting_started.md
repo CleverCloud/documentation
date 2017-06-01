@@ -64,11 +64,11 @@ Clever Tools.
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-     <h4>Note on clever.json</h4>
+     <h4>Notes on `.clever.json`</h4>
   </div>
   <div class="panel-body">
     <div>
-      Once you have linked an application, clever-tools will create a Json configuration file named `clever.json` at the root of the directory.
+      Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.
     </div>
     <div>This file can be commited safely, others team members working on this repository will not have to link the application again.</div>
     <div>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</div>

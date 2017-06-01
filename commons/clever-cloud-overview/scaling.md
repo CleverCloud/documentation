@@ -8,13 +8,13 @@ tags:
 
 # Application scaling
 
-When your application is running, you don't have the same number of user all the time. During an event for example,
-the number of users can grow up and the loading on the server increase. If too many requests are done on your
-server in the same time, the response time will increase and could slow down your website.
+When your application is running, you don't have the same number of users all the time. During an event for example,
+the number of users can grow up and the load on the server increase. If too many requests are done on your
+server at the same time, the response time will increase and could slow down your website.
 
-To avoid this problem and keep a fast website, the main solution is to deploy more **Scalers** of your application to
-support the loading. That's what is scalling : adapting automatically the number of **Scalers** and there size to feet the
-loading of your application, without action from you.
+To avoid this problem and keep a fast website, the main solution is to deploy more **Scalers** for your application to
+support the load. That's what scaling is: adapting automatically the number of **Scalers** and their size to fit the
+load of your application, without any action from you.
 
 Clever Cloud gives you the ability to fine tune your application's scaling by managing both horizontal and vertical
 scaling. These two parameters can be combined to adapt to your needs.
@@ -35,7 +35,7 @@ To enable the scalability of your application, open the [console](https://consol
 
 In case of large traffic, we detect a high load on your application and spawn **another instance in parallel**.
 It gives more power to your application by setting up another identical application. Both will run in parallel with load
-balancing. And so on.
+balancing.
 
 This process is exactly the opposite when the **load decreases**. A Scaler is removed and so on till a **minimum
 reasonable level** is reached.
@@ -83,6 +83,6 @@ vertical scaling from S to L, and the horizontal scaling from 2 scalers to 4 sca
 the size of the 2 scalers already launched.
 
 If the 2 initials scalers are at their maximum size, Clever Cloud will launch new scalers with the maximum size of scalers.
-This is how it'll be done :
+This is how it'll be done:
 
 2-S => 2-M => 2-L => 3-L => 4-L.

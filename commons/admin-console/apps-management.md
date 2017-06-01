@@ -1,7 +1,7 @@
 ---
 title: Apps Management
 position: 7
-shortdesc: Starting, stopping and loggins for application
+shortdesc: Starting, stopping and logs for your applications
 tags:
 - dashboard-setup
 keywords:
@@ -17,7 +17,7 @@ keywords:
 
 You can start, restart, and stop your application in the associated configuration panel.
 
-Stop functionality is usefull during the development of the application to limits its credit consumption.
+Stop functionality is useful during the development of the application to limit its credit consumption.
 
 <figure class="cc-content-img">
   <img src="/doc/assets/images/app-management.png"/></a>

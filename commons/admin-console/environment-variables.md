@@ -17,15 +17,17 @@ injected in your application's environment.
 
 ## How are variables defined?
 
-Variables are defined on a per-application basis. They are defined by three ways:
+Variables are defined on a per-application basis. They are defined in four ways:
 
  * By provisioned add-ons linked to applications. The variables names
    are listed in the add-on's information panel
 
+ * By linked applications with exposed configuration
+
  * By adding variables yourself in the "Environment variables" panel of
    your application.
 
- * Some special environment variables are added automatically for each application.
+ * Some environment variables are added automatically for each application.
 
 Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.
@@ -35,31 +37,26 @@ need to redeploy your application to make it use the new variables.
 Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.
 
-They can be accessed as classic environment variables and can be used in your application to
-give you informations about the current context of the application.
+They can be accessed as classic environment variables.
 
- * `APP_ID` : the ID of the application. Each application has a unique identifier used to
+ * `APP_ID`: the ID of the application. Each application has a unique identifier used to
  identify it in our system. This ID is the same than the one you can find in the information
  section of your application.
 
- * `INSTANCE_ID` : the ID of the current instance of your application. It's unique for each
- instance of your application and change every time you deploy it.
+ * `INSTANCE_ID`: the ID of the current instance (scaler) of your application. It's unique for each
+ instance of your application and changes every time you deploy it.
 
- * `INSTANCE_TYPE` : The type of instance. Values can be `build` or `production`. `build` is when
+ * `INSTANCE_TYPE`: The type of the instance (scaler). Its value can be `build` or `production`. `build` is when
  your application is being built on a [dedicated instance](/doc/admin-console/apps-management/#dedicated-build).
 
- * `COMMIT_ID` : the commit ID used as a base to deploy your application. As we remove
+ * `COMMIT_ID`: the commit ID used as a base to deploy your application. As we remove
  the `.git` directory before the deployment (to avoid security problems), it can be used
  to know which version of your application is running on the server.
 
- * `APP_HOME` : The absolute path of your application on the server. Can be used to
- create absolute link in your application (ex : ${APP_HOME}/foo/bar).
+ * `APP_HOME`: The absolute path of your application on the server. Can be used to
+ create absolute links in your application (e.g. ${APP_HOME}/foo/bar).
 
- * `INSTANCE_NUMBER` : See below
-
- * `IGNORE_FROM_BUILDCACHE`: allow users to specify paths to ignore when the build
- cache archive is created. Must be relative to your application root.
- (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
+ * `INSTANCE_NUMBER`: See below
 
 ### What is the `INSTANCE_NUMBER` variable used for?
 
@@ -70,6 +67,14 @@ It will contain a different number for each instance of your application.
 For example, if three instances are running, it will contain `0` for the first, `1`
 for the second and `2` for the third.
 It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
+
+## Settings you can define using environment variables
+
+We use environment variables for some settings:
+
+ * `IGNORE_FROM_BUILDCACHE`: allows you to specify paths to ignore when the build
+ cache archive is created. Must be relative to your application root.
+ (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
 ## Variable definition constraints
 

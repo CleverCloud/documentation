@@ -25,7 +25,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 
 ## About Cargo
 To run your app, you can, for example, use plugins like cargo
-(<a href="http://cargo.codehaus.org/Maven2+plugin">Find it here</a>).
+DEAD LINK -> (<a href="http://cargo.codehaus.org/Maven2+plugin">Find it here</a>).
 Your application must be set to listen on the port 8080.
 
 ## Create an application

@@ -16,7 +16,7 @@ keyworkds:
 
 In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations.
 
-Once you created an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which give them rights.
+Once you create an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which gives them rights.
 
 
 ## Add an organization

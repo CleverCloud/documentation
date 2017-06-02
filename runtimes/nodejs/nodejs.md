@@ -174,6 +174,15 @@ If you want to use `yarn`, please note that it's only installed for pre-installe
 Use `^6` or `^7` in your `engines.node` if you need to target the pre-installed version for a given
 release.
 
+## Meteor.js
+
+We also support Meteor.js applications. Those are built using `meteor build`, the built application lives in the `.build` directory.
+If you want to set custom start parameters, the main entry point of built meteor applications is: `.build/bundle/main.js`.
+Just add it in the `scripts.start` field of the package.json: `node .build/bundle/main.js <parameters>`
+
+If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
+support@clever-cloud.com with the app_id.
+
 ### Pre-installed modules
 
 We currently provide these pre-installed modules:

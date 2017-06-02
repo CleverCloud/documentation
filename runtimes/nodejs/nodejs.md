@@ -183,6 +183,8 @@ Just add it in the `scripts.start` field of the package.json: `node .build/bundl
 If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
 support@clever-cloud.com with the app_id.
 
+You can check out the [Meteor.js demo repository](https://github.com/CleverCloud/demo-meteorjs) on Github.
+
 ### Pre-installed modules
 
 We currently provide these pre-installed modules:

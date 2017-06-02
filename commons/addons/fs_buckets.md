@@ -10,6 +10,7 @@ keywords:
 - file system
 - buckets
 - fs buckets
+- storage
 ---
 
 # FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>

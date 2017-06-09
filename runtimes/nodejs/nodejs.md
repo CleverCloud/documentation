@@ -184,7 +184,7 @@ You can check out the [Meteor.js demo repository](https://github.com/CleverCloud
 
 Meteor applications are built using `meteor build`, the built application lives in the `.build` directory.
 If you want to set custom start parameters, the main entry point of built meteor applications is: `.build/bundle/main.js`.
-Just add it in the `scripts.start` field of the package.json: `node .build/bundle/main.js <parameters>`
+Add an environment variable `CC_NODE_START_GOAL=.build/bundle/main.js <parameters>` to define those parameters.
 
 ### Custom version
 

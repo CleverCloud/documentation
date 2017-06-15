@@ -7,21 +7,21 @@ tags:
 ---
 # Clever Cloud API
 
-The Clever Cloud console is built on top of an API that allow you to manage your
-account and products. This article will explain how to connect to this API and
-use it.
+The Clever Cloud console and clever-tools are built on top of an API that
+allows you to manage your account and products. This article will explain how
+to connect to this API and use it.
 
 ## HTTP calls
 
 ### **Authentication**
 
-Clever Cloud API works with an OAuth1 based authentication.
+Clever Cloud API has an OAuth1 based authentication.
 
 There are 2 supported methods for the signature: PLAINTEXT and HMAC-SHA1.
 While PLAINTEXT is way easier for testing, you **should** use HMAC-SHA1
-when it comes to production. This ensures that the request is totaly verified.
+when it comes to production. This ensures that the request is totally verified.
 
-We have a [client for javascript on Github](https://github.com/CleverCloud/clever-client.js)
+We have a [JavaScript client on Github](https://github.com/CleverCloud/clever-client.js)
 where you can find a lot of informations.
 Especially in the [src/session.js file](https://github.com/CleverCloud/clever-client.js/blob/master/src/session.js)
 
@@ -46,7 +46,7 @@ users will be able to grant (or decline) privileges for your application.
 For example, the Clever Cloud Console is using an oauth consumer.
 You (most of the time) give it full access to manage your account.
 
-You need to set a callback URL, this is the url your user will be redirected
+You need to set a callback URL, this is the url your user will be redirected to
 after he has been authenticated.
 
 #### **Get a request token**
@@ -55,15 +55,15 @@ You have to make a `POST`request to get a
 [request token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_request_token_post)
 to the API.
 
-#### **Get the authorisation URL**
+#### **Get the authorization URL**
 
-Ask the API for the [authorisation URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
+Ask the API for the [authorization URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
 and go to this URL with a browser. Log in with your account and it will send you
 to the callback URL.
 
 #### **Get the verifier token**
 
-In the callback URL you have the verifier token :
+In the callback URL, you have the verifier token:
 
 `http://www.example.com/callback?oauth_verifier=<verifierToken>`
 
@@ -77,9 +77,9 @@ You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](http://oauth.net/core/1.0/#anchor9).
 
-### **API request links**
+### **API endpoints documentation**
 
-All the API links are referenced in a swagger documentation.
+All the API endpoints are referenced in a swagger documentation.
 
  * [https://www.clever-cloud.com/doc/api/](https://www.clever-cloud.com/doc/api/)
 
@@ -95,7 +95,7 @@ Clever Cloud API can handle WebSocket-Security requests for the logs or events.
 To connect to a WebSocket API URL follow this guide.
 
  * Take a URL in the API for the WebSocket.
- * Ex : `https://api.clever-cloud.com/v2/events/event-socket`
+ * Ex: `https://api.clever-cloud.com/v2/events/event-socket`
  * Sign the OAuth request with this URL.
  * Replace `https://` by `wss://`
  * `wss://api.clever-cloud.com/v2/events/event-socket`

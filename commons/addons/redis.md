@@ -16,56 +16,25 @@ keywords:
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.
 
-## Redis plans
+## Redis administration with Redsmin
 
-<table class="table table-bordered table-striped dataTable"><caption>Redis pricing plans</caption>
-<tr>
-<th>Name</th>
-<th>DATABASES</th>
-<th>Disk</th>
-<th>Conn. limit</th>
-<th>Price /mo</th>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
-<td>100</td>
-<td>10 MB</td>
-<td>10</td>
-<td>Free</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-<td>100</td>
-<td>100 MB</td>
-<td>100</td>
-<td>8,67 €</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
-<td>100</td>
-<td>250 MB</td>
-<td>250</td>
-<td>13,34 €</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
-<td>100</td>
-<td>500 MB</td>
-<td>500</td>
-<td>43,38 €</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
-<td>100</td>
-<td>100 MB</td>
-<td>500</td>
-<td>78,08 €</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
-<td>100</td>
-<td>2500 MB</td>
-<td>500</td>
-<td>190,71 €</td>
-</tr>
-</table>
+Each Redis addon provides a [Redsmin](https://www.redsmin.com) dasboard, which allows
+you to query and monitor your redis database activity.
+
+## Backups
+
+Redis databases are backed up once a day. You can download backups from the addon panel
+(in the "backups" tab). A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder
+to access data.
+
+## Leader / follower topology
+
+By default, all redis addons are configured as leaders. You can set up a redis addon as a follower from the addon panel (in the "Addon information" tab). You need to set the leader
+information (host, port, password) to start the replication. The addon panel will display the sync process status so that you know when the synchronisation is done.
+
+While a redis database is configured as a follower, it's read-only.
+
+## Default retention policy
+
+By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,
+please contact the support to change its policy.

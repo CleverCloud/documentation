@@ -30,7 +30,6 @@ Clever Cloud provides multiple add-ons to work with your applications:
 * [FS buckets](/doc/addons/fs_buckets)
 * [Cellar](/doc/addons/cellar)
 * [Redis](/doc/addons/redis)
-* [Redsmin](/doc/addons/redsmin)
 
 ## Create an add-on for your application
 

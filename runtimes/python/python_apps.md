@@ -226,6 +226,18 @@ To execute a goal, you can define the environment variable `PYTHON_SETUP_PY_GOAL
 
 The goal will be launched after the dependencies from `requirements.txt` have been installed.
 
+## Manage.py tasks
+
+We support execution of multiple `manage.py` tasks.
+
+You can declare the `manage.py` tasks in `clevercloud/python.json`:
+
+```json
+{ "deploy": { "managetasks": [ "migrate" ]}}
+```
+
+The tasks are launched after the dependencies from `requirements.txt` have been installed.
+
 ## Git Deployment
 
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more

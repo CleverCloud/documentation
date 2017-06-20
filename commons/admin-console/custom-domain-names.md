@@ -98,6 +98,7 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
   </div>
 </div>
 <br>
+
 ### Contextual Example
 
 <table class="table table-striped">
@@ -127,3 +128,12 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
     </tr>
   </tboby>
 </table>
+
+## Prefix routing
+
+Requests are routed to applications based on the domain name, but you can also route based
+on a path prefix.
+
+For instance, you can bind `example.com/api` to an app, and `example.com` to another one.
+All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
+the first app. The other requests will be routed to the second app. You can add a path after every domain name you bind in the console (or with [clever tools](/doc/clever-tools/getting_started)).

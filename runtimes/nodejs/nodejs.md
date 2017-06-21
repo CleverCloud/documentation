@@ -234,6 +234,17 @@ NPM_TOKEN=00000000-0000-0000-0000-000000000000
 As you can see, only the `authToken` value is needed, not the full url you can find in
 your .npmrc.
 
+## Custom run command
+
+If you need to run a custom command (or just pass options to the program),
+you can specify it through the `CC_RUN_COMMAND` environment variable.
+
+For instance, for a meteor application, you can put
+
+```
+CC_RUN_COMMAND=node .build/bundle/main.js <options>
+```
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

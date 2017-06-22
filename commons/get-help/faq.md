@@ -65,7 +65,11 @@ Have a look at [installing SSL certificates](/doc/tools/ssl-certificates/), and 
 
 ## I'd like to map my app to http://mydomain.com.
 
-See [Custom Domain Names](/doc/admin-console/apps-management/#custom-domain-names) section of Apps Management.
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/admin-console/custom-domain-names/).
+
+## I'd like to have two applications available on the same domain name
+
+Please refer to [prefix routing](/doc/admin-console/custom-domain-names/#prefix-routing) to learn how to have two applications share a domain name.
 
 ## How do I define cron jobs for my application?
 

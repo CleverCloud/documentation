@@ -243,13 +243,6 @@ The tasks are launched after the dependencies from `requirements.txt` have been 
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more
 information: [git-scm.com](http://git-scm.com)*
 
-After you created an app in the [console](https://console.clever-cloud.com), the console prompt you the following message:
-
-<figure class="cc-content-img">
-  <img src="/doc/assets/images/newgitapp.png"/>
-</figure>
-
-
 ### Setting up your remotes
 
 1. The "Information" page of your app gives you your git deployment URL. It looks like this:

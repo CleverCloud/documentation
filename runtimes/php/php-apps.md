@@ -446,6 +446,24 @@ monolog:
 
 You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
 
+## Header injection
+
+If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
+you have to do it from PHP (you can't do it from `.htaccess`).
+
+```php
+<?php
+header("Access-Control-Allow-Origin: *");
+```
+
+If you want to keep this separate from your application, you can configure the application to execute some code on every request.
+
+In `.user.ini`, add the following line (you need to create `inject_headers.php` first):
+
+```ini
+auto_prepend_file=./inject_headers.php
+```
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow

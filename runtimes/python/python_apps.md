@@ -182,7 +182,7 @@ uWSGI, gunicorn and nginx settings can be configured by setting environment vari
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
  - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 
-### Nginx configuration
+## Nginx configuration
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 

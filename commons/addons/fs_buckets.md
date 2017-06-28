@@ -107,9 +107,9 @@ It's a json array containing objects with at least two fields:
 <tr>
 <td><span class="label label-danger">Required</span></td>
 <td>folder</td>
-<td>The folder you want the bucket to be mount in. Should start with `/`. Using the example
+<td>The folder you want the bucket to be mounted in. Should start with `/`. Using the example
 *myFolder*, you can access your bucket via the *myFolder* folder at
-the root of your application or via */app/myFolder*</td>
+the root of your application (which absolute path is available in the `APP_HOME` environment variable)</td>
 </tr>
 <tr>
 <td class="cc-depusage"><span class="label label-default">Optional</span></td>

@@ -33,6 +33,10 @@ Currently Clever Cloud supports:
 
 As much as you want. We've not set a limited number of apps by developer.
 
+## How to setup domain names I own?
+
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/admin-console/custom-domain-names/).
+
 ## How can I disable one of my existing applications?
 
 Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
@@ -48,7 +52,7 @@ We use custom probes to monitor:
 * hardware's components usage
 * databases read / write / update operations
 
-## How do I authenticate members of my organization?
+## How do I add or remove members in my organizations?
 
 Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant apps permissions.
 
@@ -62,10 +66,6 @@ We will investigate and contact the application's owner over the violation if ne
 
 Absolutely! For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
 Have a look at [installing SSL certificates](/doc/tools/ssl-certificates/), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
-
-## I'd like to map my app to http://mydomain.com.
-
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/admin-console/custom-domain-names/).
 
 ## I'd like to have two applications available on the same domain name
 
@@ -90,16 +90,23 @@ All connections are handled by load-balancers ahead of your applications and for
 
 Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to '*http*' or '*https*'.
 
-<div class="alert alert-hot-problems">
-   <h4>Note for Play Framework! 1.2.x users</h4>
-   <p>In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Note for Play Framework! 1.2.x users</h4>
+  </div>
+  <div class="panel-body">
+    In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.
+  </div>
 </div>
 
-<div class="alert alert-hot-problems">
-   <h4>Note for Play Framework! 2.3+ users</h4>
-   <p>In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Note for Play Framework! 2.3+ users</h4>
+  </div>
+  <div class="panel-body">
+    In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.
+  </div>
 </div>
-
 
 ## How to get the user's IP address?
 
@@ -137,3 +144,7 @@ The ssh.json file is documented in the [common configuration page](/doc/clever-c
 If you get this error on a java (or any JVM language) application, it means that your application requires a specific version of java.  
 By default, java 8 is used, but you can change it. Please head up to [select java version](/doc/java/select-java-version/)
 for more information.
+
+## I want to user Clever Cloud on my own premises, is that possible?
+
+Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to <sales@clever-cloud.com> or visit [https://www.clever-cloud.com/on-premises](www.clever-cloud.com/on-premises) for more infos.

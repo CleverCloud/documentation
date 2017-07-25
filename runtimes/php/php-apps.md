@@ -250,22 +250,10 @@ You can find more documentation about composer configuration at [getcomposer.com
 
 You use Artisan to manage your project and you want to execute _artisan migrate_ before running your app.
 
-First, add a file `ccbuild.sh` at the root of your project with these lines:
-
-```bash
-#!/bin/bash
-
-php artisan migrate --force
+To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:
+ 
 ```
-
-Then add these lines in `clevercloud/php.json`:
-
-```javascript
-   {
-      "hooks": {
-         "postDeploy": "ccbuild.sh"
-      }
-   }
+CC_POST_BUILD_HOOK=php artisan migrate --force
 ```
 
 <strong>Note: </strong>You must add the _execute_ permission to your file (`chmod u+x yourfile`) before pushing it.

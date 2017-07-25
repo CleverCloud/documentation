@@ -336,6 +336,10 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 <td>Symfony</td>
 <td>Thelia</td>
 </tr>
+<tr>
+<td>Laravel</td>
+<td>-</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -445,6 +449,16 @@ monolog:
 ```
 
 You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
+
+Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. Here, ensure that you have the following line in `config/app.php`:
+
+```php
+...
+'log' => env('APP_LOG'),
+...
+```
+
+Then, set `APP_LOG=syslog` as Clever application environment variable.
 
 ## Header injection
 

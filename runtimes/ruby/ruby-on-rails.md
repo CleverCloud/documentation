@@ -16,6 +16,7 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 Ruby on Rails is an open source web application framework which runs on the Ruby programming language. It is a full-stack framework: it allows creating pages and applications that gather information from the web server, talk to or query the database, and render templates out of the box. As a result, Rails features a routing system that is independent of the web server.
 
+[Here](https://github.com/CleverCloudDemos/demo-rubyonrails-pg-rest) is an example of Ruby on Rails on Clever Cloud.
 
 ## Create an application
 
@@ -43,17 +44,15 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 .../myapp $ git add Gemfile.lock
 .../myapp $ git commit -m "Add production dependency file"
 ```
+## Environment injection
+
+To access your variables in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
 
 ## Choose ruby version
 
-Simply add this to your Gemfile
-
-```
-ruby '2.3'
-```
-
-`rubyversion` must be a string. The given string is tested against the
-available versions by using the /^<ver>/ regexp.
+On your Clever Cloud application create an environment variable `RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
  * "2" will select the greatest "2.X.Y" version available.
  * "2.3" will select the greatest "2.0.Y" version available.
@@ -68,14 +67,6 @@ releases, but, hey, we're human!
 
 Due to current landscape in ruby applications, the default version is the
 greatest 2.3.Y. We provide also the 2.2.Y and 2.1.Y versions.
-
-
-## Environment injection
-
-To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`ENV["MY_VARIABLE"]`.
-
 
 ## Configuration secret key production
 
@@ -205,7 +196,7 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 ```json
 {
     "deploy": {
-        "rakegoals": ["assets:precompile"]
+        "rakegoals": ["db:migrate", "assets:precompile"]
     }
 }
 ```

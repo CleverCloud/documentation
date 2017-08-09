@@ -1,33 +1,34 @@
 ---
-title: Installing SSL Certificates
+title: Installing TLS Certificates
 position: 3
-shortdesc: How to prepare your SSL certificates on Clever Cloud
+shortdesc: How to prepare your TLS certificates on Clever Cloud
 tags:
 - ssl
+- tls
 - certificate
 - https
 ---
 
-# Installing SSL Certificates
+# Installing TLS Certificates
 
-SSL certificates are necessary to enable secure HTTPS connections between a browser and you application. These certificates can be bought online, or directly via Clever Cloud (Domain Validation or Wildcard SSL). In that case, we manage the whole process.
+TLS certificates are necessary to enable secure HTTPS connections between a browser and you application. These certificates can be bought online, or directly via Clever Cloud (Domain Validation or Wildcard SSL). In that case, we manage the whole process for you.
 
-If you already have your certificates, we recommend to use a secured way to tranfert the files to us.
+If you already have your certificates, you can upload them on Clever Cloud. 
 
+## Uploading certificates
 
-## Required Files
+You can upload certificates yourself: <https://api.clever-cloud.com/v2/certificates/new>
 
-* private key
-* certification chain (your certificate + intermediates certificates)
+You need to paste a PEM bundle containing (in this order):
 
-or
+ - the private key
+ - the certificate itself
+ - intermediate certificates
 
-* PEM Bundle (contains all the necessary files)
+## Transmitting your files manually
 
-## Transmitting your files
-
-The most secure way to transfert your certificates is using a signed and crypted email.
-Our dedicated email: for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
+If you need manual operations on the certificates, the most secure way to transfer your certificates is using a signed and encrypted email.
+Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
 
 <div class="panel panel-warning">
   <div class="panel-heading">

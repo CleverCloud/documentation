@@ -145,6 +145,10 @@ If you get this error on a java (or any JVM language) application, it means that
 By default, java 8 is used, but you can change it. Please head up to [select java version](/doc/java/select-java-version/)
 for more information.
 
+## I want SSH access to my server
+
+Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment. If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/clever-tools/ssh-access/), but keep in mind that changes made on an instance are not persistent across deployments.
+
 ## I want to user Clever Cloud on my own premises, is that possible?
 
 Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to <sales@clever-cloud.com> or visit [https://www.clever-cloud.com/on-premises](www.clever-cloud.com/on-premises) for more infos.

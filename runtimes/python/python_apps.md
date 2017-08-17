@@ -53,23 +53,19 @@ Remove the environment variable or set it to `false` to disable this feature.
 If you have any question, feel free to [contact our support](https://www.clever-cloud.com/doc/get-help/support/).
 
 
-## Configuration file
+## Configuring the deployment
 
-The configuration file for your Python application must be `/clevercloud/python.json`.
 
-You can find a [example of Flask application](/doc/python/python-flask-sample-app/) who use concept detailed below.
-
+To make the deployment process aware of what you are trying to run, you will use some
+environment variables. To set such environment variables, go in the "Environment
+variables" menu of your application.
 
 ### Select your module
 
-To select which module you want to start, use the key `module` in `deploy` like the following:
+To select which module you want to start, use the `CC_PYTHON_MODULE` variable.
 
-```haskell
-   {
-      "deploy": {
-         "module": "mymodule:app"
-      }
-   }
+```
+CC_PYTHON_MODULE="mymodule:app"
 ```
 
 The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For example with *Flask*, it's gonna be the name of
@@ -78,36 +74,19 @@ of your project with a Flask `app` object inside.
 
 Basically, you should just point to a WSGI capable object.
 
-
 ### Celery apps
 
-We also support celery apps out of the box. To deploy a celery app, use the key `celery` in `deploy` like the following:
+We also support celery apps out of the box. To deploy a celery app, use the
+`CC_PYTHON_CELERY_MODULE` variable:
 
-```json
-   {
-      "deploy": {
-         "celery": {
-            "module": "mymodule"
-         }
-      }
-   }
+```
+CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
-You can activate `beat` or add some more configurations like this
+You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log
+dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
 
-```json
-   {
-      "deploy": {
-         "celery": {
-            "module": "mymodule",
-            "log": "/path/to/logdir",
-            "beat": "yes"
-         }
-      }
-   }
-```
-
-The `log` path will be concatenated to the application's path.
+The `CC_PYTHON_CELERY_LOGFILE` path will be concatenated to the application's path.
 
 ## Select the python backend
 
@@ -120,7 +99,7 @@ If not specified, the default backend is `uwsgi`.
 
 Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
 
-To do so, just add the `CC_USE_GEVENT` environment variable to your application, with the `true` value.
+To do so, just add the `CC_PYTHON_USE_GEVENT` environment variable to your application, with the `true` value.
 
 ## Manage your static files
 

@@ -116,6 +116,12 @@ Currently, we support `uwsgi` and `gunicorn` for python backends. To select one,
 
 If not specified, the default backend is `uwsgi`.
 
+## Using the Gevent loop engine
+
+Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
+
+To do so, just add the `CC_USE_GEVENT` environment variable to your application, with the `true` value.
+
 ## Manage your static files
 
 To enable Nginx to serve your static resources, you have to set two environment variables.

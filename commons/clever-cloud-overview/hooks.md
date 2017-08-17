@@ -94,12 +94,12 @@ This hook is perfect for:
 
 ### `RUN_SUCCEEDED` and `RUN_FAILED`
 
-These hooks are ran once the application has sarted (or has failed starting).
+These hooks are ran once the application has started (or has failed starting).
 Their failure doesn't cause the deployment to fail.
 
 One of these hooks is ran every time.
 
-These hoosk are perfect for:
+These hooks are perfect for:
 
  - notifications
  - clean-up

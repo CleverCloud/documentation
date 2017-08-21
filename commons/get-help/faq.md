@@ -9,7 +9,7 @@ tags:
 
 ## What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is an individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from Pico to XL.
+A <dfn id="def-scaler">scaler</dfn> is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from Pico to XL.
 
 Each [scaler](#def-scaler) is given a fixed set of resources.
 When enabling auto-scalability, you have to set a minimum and a maximum of active [scalers](#def-scaler) in your apps settings. This way you can precisely control your monthly fee.
@@ -31,7 +31,7 @@ Currently Clever Cloud supports:
 
 ## How many applications can I create with Clever Cloud?
 
-As much as you want. We've not set a limited number of apps by developer.
+As many as you want. We've not set a limited number of apps by developer.
 
 ## How to setup domain names I own?
 
@@ -44,13 +44,6 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 ## What type of content is allowed on Clever Cloud?
 
 Please refer to our Terms and Conditions, article 6, *Obligations and responsibilities of the client*.
-
-## How is the current load report in my application's admin console generated?
-
-We use custom probes to monitor:
-
-* hardware's components usage
-* databases read / write / update operations
 
 ## How do I add or remove members in my organizations?
 
@@ -74,15 +67,6 @@ Please refer to [prefix routing](/doc/admin-console/custom-domain-names/#prefix-
 ## How do I define cron jobs for my application?
 
 See [Cron Configuration File](/doc/tools/crons/) for more information.
-
-## How many active requests can my app serve at one time?
-
-There are two possibilities, according to the scalability settings you've opted for.
-
-1. You have set a single [scaler](#def-scaler) : the maximum active requests depends on your [scaler's](#def-scaler)
-computing limits.
-2. You have set auto-scalability, new [scalers](#def-scaler) will be started as long as your app need more resources
-(until it reaches the maximum number of [scalers](#def-scaler) you have defined).
 
 ## How to know if a user comes from a secure connection?
 

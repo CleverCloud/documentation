@@ -251,4 +251,6 @@ Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/cle
 
 ## Deployment video
 
+<iframe width="853" height="480" src="https://www.youtube.com/embed/dxhSjHnrrhA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 More info on <a target="_blank" href="http://nodejs.org/">nodejs.org</a>.

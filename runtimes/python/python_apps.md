@@ -53,12 +53,10 @@ Remove the environment variable or set it to `false` to disable this feature.
 If you have any question, feel free to [contact our support](https://www.clever-cloud.com/doc/get-help/support/).
 
 
-## Configuring the deployment
+## Configuring the application
 
-
-To make the deployment process aware of what you are trying to run, you will use some
-environment variables. To set such environment variables, go in the "Environment
-variables" menu of your application.
+Python apps can be launched in a variety of ways. You can specify how to start your application
+(for instance which module to run) by setting environment variables (in the "Environment variables" section of the console).
 
 ### Select your module
 
@@ -86,7 +84,7 @@ CC_PYTHON_CELERY_MODULE="mymodule"
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log
 dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
 
-The `CC_PYTHON_CELERY_LOGFILE` path will be concatenated to the application's path.
+The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 ## Select the python backend
 
@@ -99,7 +97,7 @@ If not specified, the default backend is `uwsgi`.
 
 Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
 
-To do so, just add the `CC_PYTHON_USE_GEVENT` environment variable to your application, with the `true` value.
+To do so, add the `CC_PYTHON_USE_GEVENT` environment variable to your application, with the `true` value.
 
 ## Manage your static files
 

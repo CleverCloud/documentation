@@ -150,3 +150,22 @@ who manages the connexion with Redis and Wordpress and moves it to your `/wp-con
 `object-cache.php`.
 
 4. Redis should now work with your Wordpress.
+
+### SSL Configuration
+
+Since your website is behind a reverse proxy managed by Clever Cloud, you need to use specific headers to enable SSL. Sadly there is no other way than modifying the `is_ssl` function in `wp-includes/load.php` to detect **X_FORWARDED_PROTO** ou **HTTP_X_FORWARDED_PROTO**.
+```php
+function is_ssl() {
+  if ( isset($_SERVER['HTTPS']) ) {
+    if ( 'on' == strtolower($_SERVER['HTTPS']) ) return true;
+    if ( '1' == $_SERVER['HTTPS'] ) return true;
+  } elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
+    return true;
+  } elseif ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && ( 'https' == strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) ) ) {
+    return true;
+  } elseif ( isset($_SERVER['X_FORWARDED_PROTO']) && ( 'https' == strtolower($_SERVER['X_FORWARDED_PROTO']) ) ) {
+    return true;
+  }
+  return false;
+}
+```

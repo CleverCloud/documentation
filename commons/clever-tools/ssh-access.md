@@ -35,7 +35,7 @@ You can access running instances of a linked application with `clever ssh`.
 
     clever ssh
     > Opening an ssh shell
-    > bas@67fbf787-3518-47bb-abd9-2c2575844edd ~ $ 
+    > bas@67fbf787-3518-47bb-abd9-2c2575844edd ~ $
 
 If multiple instances are running, you will be asked which one to use:
 
@@ -65,3 +65,11 @@ Alternatively, you can connect using only your ssh client:
 </div>
 
 You can omit the application ID. In that case, you will be asked to choose an organization and an application.
+
+## Show your application's logs
+
+If you want to show your application's logs while you debug:
+
+    journalctl -efa -u bas-deploy.service
+
+You can also use `journalctl` with other options if you need it

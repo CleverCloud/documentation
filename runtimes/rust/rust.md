@@ -132,3 +132,7 @@ Cloud](/doc/admin-console/environment-variables/).
 Application deployment on Clever Cloud is via Git. Follow [these
 steps](/doc/clever-cloud-overview/add-application/) to deploy your
 application.
+
+## Deployment Video
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/mz_8jzrM13Y?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>

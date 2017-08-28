@@ -62,34 +62,6 @@ You can for example:
 
 More information on [playframework.com](http://www.playframework.com).
 
-## Configuration file
-
-You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
-
-```javascript
-{
-  "hooks": {
-     "...": "pathtoyourscript"
-  }
-}
-```
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Usage</th>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td>**hook**</td>
-      <td>see [Hooks](doc/clever-cloud-overview/hooks)</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the

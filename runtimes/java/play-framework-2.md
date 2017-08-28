@@ -34,9 +34,6 @@ You can configure your application start command by adding a
 {
   "deploy":{
     "goal": "yourgoal"
-  },
-  "hooks": {
-     "...": "pathtoyourscript"
   }
 }
 ```
@@ -54,12 +51,6 @@ You can use the following properties:
       <td><span class="label label-danger">Required</span></td>
       <td>**deploy -&gt; goal**</td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
-    </tr>
-
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td>**hook**</td>
-      <td>see [Hooks](doc/clever-cloud-overview/hooks). You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/sbt.json`.</td>
     </tr>
   </tbody>
 </table>

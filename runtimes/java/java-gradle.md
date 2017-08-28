@@ -53,9 +53,6 @@ The full configuration can look like the following:
   },
   "deploy": {
     "goal": "<string>"
-  },
-  "hooks": {
-     "...": "<string>"
   }
 }
 ```
@@ -79,17 +76,10 @@ You can use the following properties:
       <td>**build -&gt; goal**</td>
       <td>is the target you want to use to build your project</td>
     </tr>
-
     <tr>
       <td><span class="label label-danger">Required</span></td>
       <td>**deploy -&gt; goal**</td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
-    </tr>
-
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td>**hook**</td>
-      <td>see [Hooks](doc/clever-cloud-overview/hooks)</td>
     </tr>
   </tbody>
 </table>

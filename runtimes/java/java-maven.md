@@ -10,6 +10,7 @@ tags:
 
 Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
 
+Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
 ## Overview
 Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
@@ -54,7 +55,7 @@ An example of what can be found as a goal value is:
 
 The full configuration can look like the following:
 
-```haskell
+```javascript
 {
   "build": {
     "type": "<string>",
@@ -64,21 +65,44 @@ The full configuration can look like the following:
     "goal": "<string>"
   },
   "hooks": {
-     "postDeploy": "<string>"
+     "...": "<string>"
   }
 }
 ```
 You can use the following properties:
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**build -&gt; type**</td>
+      <td>can be ``"maven"``, ``"gradle"`` or ``"ant"``</td>
+    </tr>
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**build -&gt; goal**</td>
+      <td>is the target you want to use to build your project</td>
+    </tr>
 
-* ``build``
-    * ``"type"`` can be ``"maven"``, ``"gradle"`` or ``"ant"``.
-    * ``"goal"`` is the target you want to use to build your project.
-* ``deploy``
-    * ``"goal"`` the goal/target and options you want to execute to
-		  deploy/run you project. (This one is mandatory.)
-* ``hooks``
-    * ``postDeploy`` execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and adding the associated file name.
+    <tr>
+      <td><span class="label label-danger">Required</span></td>
+      <td>**deploy -&gt; goal**</td>
+      <td>the goal/target and options you want to execute to deploy/run you project</td>
+    </tr>
+
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**hook**</td>
+      <td>see [Hooks](doc/clever-cloud-overview/hooks)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Deploy on Clever Cloud
 

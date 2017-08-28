@@ -10,6 +10,8 @@ tags:
 
 Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run on Clever Cloud.
 
+Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+
 ## Overview
 
 Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern. It aims to optimize developer productivity by using convention over configuration, hot code reloading and display of errors in the browser.
@@ -34,18 +36,33 @@ You can configure your application start command by adding a
     "goal": "yourgoal"
   },
   "hooks": {
-     "postDeploy": "pathtoyourscript"
+     "...": "pathtoyourscript"
   }
 }
 ```
+You can use the following properties:
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label label-danger">Required</span></td>
+      <td>**deploy -&gt; goal**</td>
+      <td>the goal/target and options you want to execute to deploy/run you project</td>
+    </tr>
 
-**goal**: can for example contain additional configuration like
-`"-Dconfig.resource=clevercloud.conf"` or `"-Dplay.version=2.0.4"`.
-
-
-**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and
-adding the associated file name in `clevercloud/sbt.json`.
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**hook**</td>
+      <td>see [Hooks](doc/clever-cloud-overview/hooks). You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/sbt.json`.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Environment injection
 

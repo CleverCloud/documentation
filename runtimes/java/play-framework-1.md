@@ -11,6 +11,8 @@ tags:
 Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run
 on Clever Cloud.
 
+Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+
 ## Overview
 
 Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller
@@ -67,14 +69,26 @@ You can configure your application start command by adding a `./clevercloud/play
 ```javascript
 {
   "hooks": {
-     "postDeploy": "pathtoyourscript"
+     "...": "pathtoyourscript"
   }
 }
 ```
-
-**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require
-bootstrapping before the application may run. You can achieve this by creating a custom script with your commands and
-adding the associated file name in `clevercloud/play.json`.
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**hook**</td>
+      <td>see [Hooks](doc/clever-cloud-overview/hooks)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Environment injection
 

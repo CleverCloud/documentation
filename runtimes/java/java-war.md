@@ -10,6 +10,8 @@ tags:
 
 Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 
+Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+
 ## Overview
 
 In <abbr title="Java Enterprise Edition">JEE</abbr>, application modules are packaged as EAR and WAR based on their functionality.

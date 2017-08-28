@@ -15,10 +15,13 @@ configuration files, here is what you can do:
   * Commit and push a single jar file with all dependencies embedded;
   * Commit and push your sources, let Clever Cloud build them with maven or gradle, and run the resulting jar;
 
+Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+
+Please **keep in mind** that you cannot give any parameters to your jar file in commande line. For example, if you use [Dropwizard](http://www.dropwizard.io) framework, you can't set `server` parameter and config file.
+
 ## Create an application
 
-Create a *Java + Maven* application, more information is available on the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
-
+Create a *Java + Maven* or *Java + Gradle* application, more information is available on the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
 
@@ -74,30 +77,60 @@ embedded dependencies is:
 
 The full configuration can look like the following:
 
-```haskell
+```javascript
 {
   "build": {
     "type": "<string>",
     "goal": "<string>"
   },
   "deploy": {
+    "goal": "<string>",
     "jarName": "<string>"
   },
   "hooks": {
-     "postDeploy": "<string>"
+     "...": "<string>"
   }
 }
 ```
 You can use the following properties:
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**build -&gt; type**</td>
+      <td>can be ``"maven"``, ``"gradle"`` or ``"ant"``</td>
+    </tr>
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**build -&gt; goal**</td>
+      <td>is the target you want to use to build your project</td>
+    </tr>
 
-* ``build``
-    * ``"type"`` can be ``"maven"``, ``"gradle"`` or ``"ant"``.
-    * ``"goal"`` is the target you want to use to build your project.
-* ``deploy``
-    * ``"goal"`` the goal/target and options you want to execute to deploy/run you project.
-* ``hooks``
-    * ``postDeploy`` execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and adding the associated file name.
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**deploy -&gt; goal**</td>
+      <td>the goal/target and options you want to execute to deploy/run you project</td>
+    </tr>
+    <tr>
+      <td><span class="label label-danger">Required</span></td>
+      <td>**build -&gt; jarName**</td>
+      <td>jar file name of your application</td>
+    </tr>
+
+    <tr>
+      <td><span class="label label-default">Optional</span></td>
+      <td>**hook**</td>
+      <td>see [Hooks](doc/clever-cloud-overview/hooks)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Environment injection
 

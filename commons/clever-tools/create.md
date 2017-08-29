@@ -38,7 +38,7 @@ First of all, select the type of your application in the list below :
 * ruby (Ruby)
 * rust (Rust)
 * sbt (Scala + SBT)
-* static (Static)
+* static-apache (Static)
 * war (Java + WAR)
 
 Then, in order to create your app in your personal space, use :

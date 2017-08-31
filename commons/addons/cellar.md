@@ -125,6 +125,14 @@ var s3 = new AWS.S3({ endpoint: ep, signatureVersion: 'v2' });
 s3.listBuckets(function(err, res) {
   // handle results
 });
+
+/* In order to access non-public file via HTTP, you need to get a presigned url for a specific key
+ * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
+ * you'll need to use 'putObject' insteed.
+ * see doc : http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+ */
+s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
+
 ```
 
 
@@ -168,4 +176,12 @@ cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
 conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
 b = conn.get_all_buckets()
 print(b)
+
+"""
+In order to access non-public file via HTTP, you need to get a presigned url for a specific key
+the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
+you'll need to use 'putObject' insteed.
+see doc : http://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
+"""
+b[0].generate_url(60)
 ```

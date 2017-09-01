@@ -173,6 +173,9 @@ buckets</td>
 Your bucket is mounted at the configured path, starting from your application's
 root folder.
 
+If you want to use an absolute path, you can use the `APP_HOME` environment
+variable, see [special environment variables](https://www.clever-cloud.com/doc/admin-console/environment-variables/#special-environment-variables)
+
 ### From the addon dashboard
 
 The **File explorer** tab of the addon dashboard gives you access to your files

@@ -144,8 +144,10 @@ you're not using an old version.
 
 ```java
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.HttpMethod;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3Client;
+import java.net.URL;
 
 public class Main {
     public static void main(String[] argv) {
@@ -156,6 +158,13 @@ public class Main {
         List<> buckets = s3Client.listBuckets()
 
         // handle results
+
+        /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
+        * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
+        * you'll need to use 'HttpMethod.PUT' instead.
+        * see doc : http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html#generatePresignedUrl-java.lang.String-java.lang.String-java.util.Date-com.amazonaws.HttpMethod-
+        */
+        URL presignedUrl = s3Client.generatePresignedUrl("<YourBucket>", "<YourKey>", <expiration date>, HttpMethod.GET);
     }
 }
 ```

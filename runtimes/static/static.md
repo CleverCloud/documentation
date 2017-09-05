@@ -1,16 +1,15 @@
 ---
 title: Deploy static files
-shortdesc: Don't need other provider to store your static files
+shortdesc: Perfect for pure-javascript applications
 tags:
 - static
 ---
 
 ## Deploy static files
 
-Static is not really runtime, but you can store static files like other web
-hosting provider.
+If you only need to serve static files without executing any code on the backend, for instance for a javascript Single Page Application (SPA), you can create a static application.
 
-This runtime is same as [PHP](/doc/php/php-apps/)
+This runtime is based on apache, so shares a lot with the [PHP runtime](/doc/php/php-apps/). This means you can use `.htaccess` files for redirection or access control.
 
 ## Deploy on Clever Cloud
 

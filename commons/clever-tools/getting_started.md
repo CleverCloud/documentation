@@ -20,7 +20,7 @@ Clever Tools is available on Windows, GNU/Linux and MacOS.
 
 ### MacOS
 
-Clever Tools is packaged using [homebrew](brew.sh):
+Clever Tools is packaged using [homebrew](https://brew.sh):
 
     brew install CleverCloud/tap/clever-tools
 
@@ -39,7 +39,7 @@ Clever Tools comes with a comprehensive auto-completion system. The brew package
 
 ### Windows
 
-Clever Tools is packaged using [chocolatey](chocolatey.org):
+Clever Tools is packaged using [chocolatey](https://chocolatey.org):
 
     choco install clever-tools
 

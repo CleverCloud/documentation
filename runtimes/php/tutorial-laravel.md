@@ -28,6 +28,14 @@ Create a `php.json` file in a `clevercloud` directory at the root of your applic
 }
 ```
 
+### Access to the laravel environment
+
+If you already have a `.env` file in your application, please don't commit it: credentials are not meant to be committed alongside your applications. Clever Cloud allows you to inject environment in your app, so you can dynamically like databases and have separate environments with the same code base.
+
+From the console, you can edit the application's environment variables. Click on "expert mode", you'll be able to directly paste the contents of the .env file.
+
+From the CLI, it's even simpler: `clever env import < .env`.
+
 ### Configure your application key
 
 On your machine, run `php artisan key:generate`. It should output something like `base64:tQbFzxwUfOfKKqNlbjXuduwaUFDQUy+NL8DBfgb3o3s=`. Copy this value and add an enviroment variable named `APP_KEY`, with this value.
@@ -90,3 +98,9 @@ CC_POST_BUILD_HOOK=php artisan migrate --force
 Create a FS Bucket and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
 
 Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
+
+### Optional: configure the front-end build
+
+If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` environment variable.
+
+For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=npm install && npm run prod`.

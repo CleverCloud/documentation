@@ -447,6 +447,16 @@ Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. 
 
 Then, set `APP_LOG=syslog` as Clever application environment variable.
 
+## Timezone configuration
+
+All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
+
+Additionally, you can set PHP's time zone setting with `.user.ini`. For instance, to use the french time zone, edit `.user.ini` to add this line:
+
+```
+date.timezone=Europe/Paris
+```
+
 ## Header injection
 
 If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),

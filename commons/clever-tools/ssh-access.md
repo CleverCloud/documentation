@@ -66,6 +66,10 @@ Alternatively, you can connect using only your ssh client:
 
 You can omit the application ID. In that case, you will be asked to choose an organization and an application.
 
+## Access your application's folder
+
+Your application's folder is located at: `/home/bas/<app_id>`
+
 ## Show your application's logs
 
 If you want to show your application's logs while you debug:

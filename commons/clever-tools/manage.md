@@ -30,6 +30,9 @@ If you want to restart your application, you can use :
 
 You can use `--quiet` when you restart, logs won't appear during deployment.
 
+## Deploy a new commit
+
+Use `clever deploy` to push your commits, which then starts a deployment
 
 ## Environment
 

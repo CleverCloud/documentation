@@ -153,19 +153,11 @@ who manages the connexion with Redis and Wordpress and moves it to your `/wp-con
 
 ### SSL Configuration
 
-Since your website is behind a reverse proxy managed by Clever Cloud, you need to use specific headers to enable SSL. Sadly there is no other way than modifying the `is_ssl` function in `wp-includes/load.php` to detect **X_FORWARDED_PROTO** ou **HTTP_X_FORWARDED_PROTO**.
+Since your website is behind a reverse proxy managed by Clever Cloud, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. To do so edit `wp-config.php` and add the following code above the last `require_once` call.
 ```php
-function is_ssl() {
-  if ( isset($_SERVER['HTTPS']) ) {
-    if ( 'on' == strtolower($_SERVER['HTTPS']) ) return true;
-    if ( '1' == $_SERVER['HTTPS'] ) return true;
-  } elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
-    return true;
-  } elseif ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && ( 'https' == strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) ) ) {
-    return true;
-  } elseif ( isset($_SERVER['X_FORWARDED_PROTO']) && ( 'https' == strtolower($_SERVER['X_FORWARDED_PROTO']) ) ) {
-    return true;
-  }
-  return false;
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';
+} elseif (isset($_SERVER['X_FORWARDED_PROTO']) && $_SERVER['X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';  
 }
 ```

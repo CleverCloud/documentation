@@ -459,7 +459,11 @@ date.timezone=Europe/Paris
 
 ## Header injection
 
-If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
+Usually, you can use an `.htaccess` file to create / update / delete headers.
+You won't be able to do it from the `.htaccess` file if the headers come from a `.php` file, because `php-fpm` ignores the `mod_headers` plugin.
+It works fine for static files directly served by apache.
+
+So if you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
 you have to do it from PHP (you can't do it from `.htaccess`).
 
 ```php

@@ -43,7 +43,7 @@ Clever Tools is packaged using [chocolatey](https://chocolatey.org):
 
     choco install clever-tools
 
-If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-0.9.0_windows.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_windows.tar.gz).
+If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-0.9.0_windows.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_windows.zip).
 You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to use the application.
 
 ### GNU/Linux

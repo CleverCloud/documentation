@@ -7,8 +7,6 @@ tags:
 
 # Environment Variable Reference
 
-Source environment variable in a cron, create a script that starts with: source /home/bas/applicationrc 
-
 ##  Applications
 
 ### Commons to all Applications

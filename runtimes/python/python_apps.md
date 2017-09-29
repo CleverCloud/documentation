@@ -119,8 +119,7 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 ### Example
 
 Here is how to serve the static files, the `test.png` being the static file:
-```​Oui, cela sélectionnera 
-.​Oui, cela sélectionnera 
+```
 ├── app
 │   ├── flask-app.py
 │   ├── static

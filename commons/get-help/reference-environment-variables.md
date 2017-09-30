@@ -689,12 +689,6 @@ tags:
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>ADDON_API_HOST</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
     <td>MYSQL_ADDON_DB</td>
     <td></td>
     <td>Generated upon creation</td>
@@ -730,12 +724,6 @@ tags:
     <th><center>Description</center></th>
     <th><center>Default value</center></th>
     <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>ADDON_API_HOST</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
   </tr>
   <tr>
     <td>POSTGRESQL_ADDON_DB</td>

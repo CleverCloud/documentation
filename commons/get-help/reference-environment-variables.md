@@ -11,114 +11,112 @@ tags:
 
 ### Commons to all Applications
 
+#### Set by the deployment process
+
+These are read-only variables that are generated for each scaler before they build and start your application.
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Description</center></th>
+    <th><center>Example value</center></th>
+  </tr>
+  <tr>
+    <td>[INSTANCE_NUMBER](doc/admin-console/environment-variables/#special-environment-variables)</td>
+    <td>Allows your application to differentiate each running node on the application level.</td>
+    <td>0, 1…</td>
+  </tr>
+  <tr>
+    <td>INSTANCE_TYPE</td>
+    <td>Whether this instance is a "build" instance or a "production" instance.</td>
+    <td>build, production</td>
+  </tr>
+  <tr>
+    <td>APP_ID</td>
+    <td>The ID of your Clever Cloud application</td>
+    <td>app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>
+  </tr>
+  <tr>
+    <td>APP_HOME</td>
+    <td>The absolute path to your application folder</td>
+    <td>/home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>
+  </tr>
+  <tr>
+    <td>CC_DEPLOYMENT_ID</td>
+    <td>Internal id of current deployment</td>
+    <td>f7efaf04-1a63-45a1-8503-0de7c750ee48</td>
+  </tr>
+  <tr>
+    <td>COMMIT_ID</td>
+    <td>The id of the commit that's currently running</td>
+    <td>d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f</td>
+  </tr>
+</table>
+
+#### Variables you can define
+
+So you can alter the build&start process for your application.
+
 <table class="table table-bordered" style="text-align:center">
   <tr>
     <th><center>Name</center></th>
     <th><center>Description</center></th>
     <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
+  </tr>
+  <tr>
+    <td>APP_FOLDER</td>
+    <td>Folder in which the application is located (inside the git repository)</td>
+    <td></td>
   </tr>
   <tr>
     <td>[CC_TROUBLESHOOT](doc/clever-cloud-overview/troubleshoot-mode/)</td>
     <td>Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.</td>
     <td>`false`</td>
-    <td></td>
   </tr>
   <tr>
     <td>CC_WORKER_COMMAND</td>
     <td>Command to run in background as a worker process.</td>
-    <td></td>
     <td></td>
   </tr>
   <tr>
     <td>CC_PRE_BUILD_HOOK</td>
     <td>Ran before the dependencies are fetched. If it fails, the deployment fails.</td>
     <td></td>
-    <td></td>
   </tr>
   <tr>
     <td>CC_POST_BUILD_HOOK</td>
     <td>Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.</td>
-    <td></td>
     <td></td>
   </tr>
   <tr>
     <td>CC_PRE_RUN_HOOK</td>
     <td>Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.</td>
     <td></td>
-    <td></td>
   </tr>
   <tr>
     <td>CC_RUN_SUCCEEDED_HOOK</td>
     <td>Ran once the application has started successfuly.</td>
-    <td></td>
     <td></td>
   </tr>
   <tr>
     <td>CC_RUN_FAILED_HOOK</td>
     <td>Ran once the application has failed to start.</td>
     <td></td>
-    <td></td>
   </tr>
   <tr>
     <td>CACHE_DEPENDENCIES</td>
     <td>Enable caching of your build dependencies to speed up following builds.</td>
     <td>`false`</td>
-    <td></td>
   </tr>
   <tr>
     <td>ENABLE_METRICS</td>
     <td>BETA: Enable metrics collection, Contact support.</td>
     <td>`false`</td>
-    <td></td>
   </tr>
   <tr>
     <td>[IGNORE_FROM_BUILDCACHE](doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
     <td>Allows to specify paths to ignore when the build cache archive is created.</td>
     <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[INSTANCE_NUMBER](doc/admin-console/environment-variables/#special-environment-variables)</td>
-    <td>Allows your application to differentiate each running node on the application level.</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>INSTANCE_TYPE</td>
-    <td>Whether this instance is a "build" instance or a "production" instance.</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>APP_FOLDER</td>
-    <td>Folder in which the application is located (inside the git repository)</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>APP_ID</td>
-    <td>The ID of your Clever Cloud application</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>APP_HOME</td>
-    <td>The absolute path to your application folder</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>CC_DEPLOYMENT_ID</td>
-    <td></td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>COMMIT_ID</td>
-    <td>The git commit id currently deployed</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
   </tr>
 </table>
 

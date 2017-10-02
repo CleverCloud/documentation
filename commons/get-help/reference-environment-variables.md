@@ -22,7 +22,7 @@ These are read-only variables that are generated for each scaler before they bui
     <th><center>Example value</center></th>
   </tr>
   <tr>
-    <td>[INSTANCE_NUMBER](doc/admin-console/environment-variables/#special-environment-variables)</td>
+    <td>[INSTANCE_NUMBER](/doc/admin-console/environment-variables/#special-environment-variables)</td>
     <td>Allows your application to differentiate each running node on the application level.</td>
     <td>0, 1…</td>
   </tr>
@@ -69,7 +69,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[CC_TROUBLESHOOT](doc/clever-cloud-overview/troubleshoot-mode/)</td>
+    <td>[CC_TROUBLESHOOT](/doc/clever-cloud-overview/troubleshoot-mode/)</td>
     <td>Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.</td>
     <td>`false`</td>
   </tr>
@@ -114,7 +114,7 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
   </tr>
   <tr>
-    <td>[IGNORE_FROM_BUILDCACHE](doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
+    <td>[IGNORE_FROM_BUILDCACHE](/doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
     <td>Allows to specify paths to ignore when the build cache archive is created.</td>
     <td></td>
   </tr>
@@ -123,7 +123,7 @@ So you can alter the build&start process for your application.
 
 ### Docker
 
-[Docker Documentation](doc/docker/)
+[Docker Documentation](/doc/docker/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -142,7 +142,7 @@ So you can alter the build&start process for your application.
 
 ### Go
 
-[Go Documentation](doc/go/)
+[Go Documentation](/doc/go/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -161,7 +161,7 @@ So you can alter the build&start process for your application.
 
 ### Haskell
 
-[Haskell Documentation](doc/haskell/)
+[Haskell Documentation](/doc/haskell/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -180,7 +180,7 @@ So you can alter the build&start process for your application.
 
 ### Java
 
-[Java Documentation](doc/java/)
+[Java Documentation](/doc/java/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -235,7 +235,7 @@ So you can alter the build&start process for your application.
 
 ### NodeJS
 
-[NodeJS Documentation](doc/nodejs/)
+[NodeJS Documentation](/doc/nodejs/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -272,7 +272,7 @@ So you can alter the build&start process for your application.
 
 ### PHP
 
-[PHP Documentation](doc/php/)
+[PHP Documentation](/doc/php/)
 
 
 <table class="table table-bordered" style="text-align:center">
@@ -325,7 +325,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[SESSION_TYPE](doc/php/php-apps/#use-redis-to-store-php-sessions)</td>
+    <td>[SESSION_TYPE](/doc/php/php-apps/#use-redis-to-store-php-sessions)</td>
     <td>Choose `redis` to use it as session store</td>
     <td></td>
     <td></td>
@@ -346,7 +346,7 @@ So you can alter the build&start process for your application.
 
 ### Python
 
-[Python Documentation](doc/python/)
+[Python Documentation](/doc/python/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -416,7 +416,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[STATIC_URL_PREFIX](doc/python/python_apps/#manage-your-static-files)</td>
+    <td>[STATIC_URL_PREFIX](/doc/python/python_apps/#manage-your-static-files)</td>
     <td>The URL path under which you want to serve static file, usually `/public`</td>
     <td></td>
     <td></td>
@@ -434,7 +434,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[UWSGI_ASYNC](doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
+    <td>[UWSGI_ASYNC](/doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
     <td>Number of cores to use for uWSGI asynchronous/non-blocking modes</td>
     <td></td>
     <td></td>
@@ -485,7 +485,7 @@ So you can alter the build&start process for your application.
 
 ### Ruby
 
-[Ruby Documentation](doc/ruby/)
+[Ruby Documentation](/doc/ruby/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -531,7 +531,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[STATIC_URL_PREFIX](doc/python/python_apps/#manage-your-static-files)</td>
+    <td>[STATIC_URL_PREFIX](/doc/python/python_apps/#manage-your-static-files)</td>
     <td>The URL path under which you want to serve static file, usually `/public`</td>
     <td></td>
     <td></td>
@@ -549,7 +549,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[UWSGI_ASYNC](doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
+    <td>[UWSGI_ASYNC](/doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
     <td>Number of cores to use for uWSGI asynchronous/non-blocking modes</td>
     <td></td>
     <td></td>
@@ -600,7 +600,7 @@ So you can alter the build&start process for your application.
 
 ### Rust
 
-[Rust Documentation](doc/rust/)
+[Rust Documentation](/doc/rust/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -621,7 +621,7 @@ So you can alter the build&start process for your application.
 
 ### FS Bucket
 
-[FS Bucket Documentation](doc/addons/fs_buckets/)
+[FS Bucket Documentation](/doc/addons/fs_buckets/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -646,7 +646,7 @@ So you can alter the build&start process for your application.
 
 ### MongoDB
 
-[MongoDB Documentation](doc/mongodb/)
+[MongoDB Documentation](/doc/mongodb/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -677,7 +677,7 @@ So you can alter the build&start process for your application.
 
 ### MySQL
 
-[MySQL Documentation](doc/mysql/)
+[MySQL Documentation](/doc/mysql/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -714,7 +714,7 @@ So you can alter the build&start process for your application.
 
 ### PostgreSQL
 
-[PostgreSQL Documentation](doc/postgresql/)
+[PostgreSQL Documentation](/doc/postgresql/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -751,7 +751,7 @@ So you can alter the build&start process for your application.
 
 ### Redis
 
-[Redis Documentation](doc/redis/)
+[Redis Documentation](/doc/redis/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>

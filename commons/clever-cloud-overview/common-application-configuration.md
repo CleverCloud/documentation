@@ -73,10 +73,10 @@ That is, right beside the `<instance_type>.json` file.
 
 ## Workers
 
-You can run background tasks during in parallel of your application. They will be restarted automatically on error.
+You can run background tasks running in parallel of your application. They will be restarted automatically on error.
+Those are especially useful for environments where you can't have long-running processes such as PHP, ruby or python.
 
-The workers automatically inherit your application's environment and are launch in the directory in which the
-application is located.
+The workers run in the same environment as your application. They are launched in the application's directory.
 
 All you need to do is add one (or several) envrionment variables as such:
 

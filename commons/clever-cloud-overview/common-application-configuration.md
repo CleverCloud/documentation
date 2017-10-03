@@ -70,3 +70,23 @@ repository. The script file **MUST** have execution right set.
 
 In the example above, the script is a file named `myScript` in the `clevercloud` folder.
 That is, right beside the `<instance_type>.json` file.
+
+## Workers
+
+You can run background tasks running in parallel of your application. They will be restarted automatically on error.
+Those are especially useful for environments where you can't have long-running processes such as PHP, ruby or python.
+
+The workers run in the same environment as your application. They are launched in the application's directory.
+
+All you need to do is add one (or several) envrionment variables as such:
+
+```
+CC_WORKER_COMMAND=my-awesome-worker
+```
+
+Or
+
+```
+CC_WORKER_COMMAND_0=my-awesome-worker
+CC_WORKER_COMMAND_1=my-other-worker
+```

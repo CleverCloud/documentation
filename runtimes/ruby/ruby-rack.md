@@ -37,7 +37,7 @@ or use arguments that will make gem and bundle install the gem in directories yo
 ```bash
 $ mkdir helloworld-rack
 $ cd !$ # or 'helloworld-rack'.
-$ touch hello.rb config.ru Gemfile
+$ touch hello.rb config.ru gems.rb ## or Gemfile
 ```
 
 Inside `hello.rb` put the following:
@@ -57,7 +57,7 @@ require './hello'
 run HelloWorld.new
 ```
 
-The `Gemfile` file will contain our dependencies:
+The `gems.rb` or `Gemfile` file will contain our dependencies:
 
 ```ruby
 source 'https://rubygems.org'
@@ -65,31 +65,28 @@ source 'https://rubygems.org'
 gem 'rack', '~>1.5.1'
 ```
 
-We don't need any more dependencies. The Gemfile is mandatory to deploy
+We don't need any more dependencies. The gems.rb or Gemfile is mandatory to deploy
 on Clever Cloud.
-
 
 ## Test your application
 
 To test your application, just fetch the dependencies using bundler:
 
 ```bash
-$ bundle
+$ bundle install
 Fetching gem metadata from https://rubygems.org/..........
 Resolving dependencies...
 Using rack (1.5.2)
 Using bundler (1.3.5)
 Your bundle is complete!
 Use `bundle show [gemname]` to see where a bundled gem is installed.
-$ rackup # That will start your application
+$ bundle exec rackup # That will start your application
 [2013-09-16 17:35:26] INFO  WEBrick 1.3.1
 [2013-09-16 17:35:26] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
 [2013-09-16 17:35:26] INFO  WEBrick::HTTPServer#start: pid=5656 port=9292
 ```
 
 You can now test with your browser at <a href="http://localhost:9292/">localhost:9292</a>.
-
-
 
 ## Deploy your application
 
@@ -99,12 +96,12 @@ You can now test with your browser at <a href="http://localhost:9292/">localhost
 ```bash
 $ git init
 Initialized empty Git repository in /*******/helloworld-rack/.git/
-$ git add config.ru Gemfile Gemfile.lock hello.rb
+$ git add config.ru hello.rb gems.rb gems.locked # or Gemfile Gemfile.lock
 $ git commit -m "Initial commit, ready for clever push"
 [master (root-commit) eaadcfc] Initial commit, ready for clever push
  4 files changed, 20 insertions(+)
- create mode 100644 Gemfile
- create mode 100644 Gemfile.lock
+ create mode 100644 gems.rb
+ create mode 100644 gems.locked
  create mode 100644 config.ru
  create mode 100644 hello.rb
 $ git remote add cleverapps git+ssh://git@push.clever-cloud.com/app_xxxxx-xxxxx-xxxxx-xxxxx-xxxxxx.git

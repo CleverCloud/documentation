@@ -16,7 +16,9 @@ dashboard) and application deployment (requiring actions from Git / or your FTP 
  1. First, select the proper organization you want to add the application to. Then,
  click on the **Add an application** button in the **Organization Manager** panel.
  This starts the application creation wizard. If your account has been linked to
- GitHub, you can select a repository from your GitHub account.
+ GitHub, you can select a repository from your GitHub account. 
+ 
+ If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
  2. Then select the language or the framework you need
 

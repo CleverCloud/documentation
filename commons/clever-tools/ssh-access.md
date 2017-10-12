@@ -45,6 +45,9 @@ If multiple instances are running, you will be asked which one to use:
     > Your choice: 1
     > Opening an ssh shell
     > bas@11281f38-31ff-43a7-8595-a2d82630c32b ~ $
+    
+### For Windows users
+`clever ssh` command will fail on PowerShell or cmd.exe if there is no ssh.exe in your path, which is true for most users. To be able to overcome this problem, the most straightforward solution is to start "clever ssh" from "git-bash".
 
 ## Without clever-tools
 

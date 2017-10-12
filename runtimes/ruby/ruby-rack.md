@@ -65,7 +65,7 @@ source 'https://rubygems.org'
 gem 'rack', '~>1.5.1'
 ```
 
-We don't need any more dependencies. The gems.rb or Gemfile is mandatory to deploy
+We don't need any more dependencies. The `gems.rb` or `Gemfile` is mandatory to deploy
 on Clever Cloud.
 
 ## Test your application

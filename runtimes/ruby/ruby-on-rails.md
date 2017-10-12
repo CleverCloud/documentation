@@ -37,10 +37,10 @@ Be sure that:
 First, your application must use rack. This implies that a config.ru
 file is present.
 
-Then, you need to provide a gems.locked or Gemfile.lock. To do that, please run:
+Then, you need to provide a `gems.locked` or `Gemfile.lock`. To do that, please run:
 
 ```bash
-.../myapp $ bundle install ## That will generate gems.locked or Gemfile.lock
+.../myapp $ bundle install ## This will generate gems.locked or Gemfile.lock
 .../myapp $ git add gems.locked ## or Gemfile.lock
 .../myapp $ git commit -m "Add production dependency file"
 ```
@@ -70,11 +70,15 @@ greatest 2.3.Y. We provide also the 2.2.Y and 2.1.Y versions.
 
 ## Choose rackup application server
 
-By default your application will be run using uwsgi. If you prefer, you can select another server
-by setting an environment variable `CC_RACKUP_SERVER=yourserver` where yourserver is one of `puma` or `uwsgi`.
+If no configuration is provided, your application will run using [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
+uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster.
+
+If you prefer, you can select another server by setting an environment variable `CC_RACKUP_SERVER=yourserver`
+where yourserver is one of `puma` or `uwsgi`. `puma` is the default application server from rails, and thus one
+of the most commonly used for ruby deployment.
 
 If you select puma, you will need to also add it to your dependencies: `bundle add puma`, and commit the resulting
-changes.
+changes (this is automatic for projects generated using `rails new`).
 
 ## Configuration secret key production
 
@@ -250,7 +254,7 @@ Nginx settings can be configured further in `clevercloud/http.json`. All its fie
 
 ### Puma configuration
 
-Puma reads its configuration from the `config/puma.rb` file. See puma documentation for more information.
+Puma reads its configuration from the `config/puma.rb` file. See [the puma documentation](https://github.com/puma/puma/blob/master/README.md) for more information.
 
 ## uWSGI asynchronous/non-blocking modes
 

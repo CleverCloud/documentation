@@ -8,17 +8,6 @@ tags:
 
 # Hooks
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-     <h4>Hooks are not available everywhere yet</h4>
-  </div>
-  <div class="panel-body">
-    Hooks are currently only available for Erlang, Haskell, Java, NodeJS, PHP and Rust
-    applications. In the meantime, you can continue to use the postDeploy on
-    the other runtimes.
-  </div>
-</div>
-
 ## Deployment lifecycle
 
 An application deployed on Clever Cloud goes through two distinct phases. The

@@ -26,7 +26,7 @@ applications.
 
 Docker containers can encapsulate any payload, and will run consistently
 on and between virtually any server. The same container that a developer
-builds and tests on a laptop will run at scale, in production*, on VMs,
+builds and tests on a laptop will run at scale, in production, on VMs,
 bare-metal servers, public instances, or combinations of the above.
 
 ### Create an application

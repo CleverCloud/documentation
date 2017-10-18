@@ -45,6 +45,22 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
   ]
 ```
 
+## Access environment variables
+
+Environment variables are not available in scripts / executables ran from crons. You must inject them yourself.
+
+To do so, your cron should call a shell script which will inject the environment and in turn run your command:
+
+```bash
+#! /usr/bin/env bash
+
+source /home/bas/applicationrc
+
+/usr/bin/php $APP_HOME/cron.php
+```
+
+You can refer to [this list](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
+
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
   <p>All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.</p>
@@ -53,16 +69,7 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
   <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
-  <p>Also, please note that environment variables like `INSTANCE_NUMBER` are not yet injected into crons. You have to add this line at the beginning of your script:
-  ```bash
-    source /home/bas/applicationrc
-  ```
-  <br>
-  You can refer to [special environment variables](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
-  </p>
-  <p>Once you added this line at the top of your script, you can access the directory in which your applicaiton is using `$APP_HOME`</p>
 </div>
-
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 

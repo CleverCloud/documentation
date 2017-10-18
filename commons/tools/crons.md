@@ -24,6 +24,12 @@ The string `<string>` must use the cron format:
 M H d m Y command
 ```
 
+ - M: Minute [0,59]
+ - H: Hour [0,23]
+ - d: Day of the month [1,31]
+ - m: Month of the year [1,12]
+ - Y: Day of the week [0,6] (0 is Sunday)
+
 There are two restrictions about the usage of crontab on our platform:
 
 * The special date `@reboot` is not available since the crontab is added after the startup of the instance

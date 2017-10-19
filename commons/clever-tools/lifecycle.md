@@ -27,6 +27,28 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
     # Here is an example
     clever logs --before 2016-08-11T14:54:33.971Z
 
+#### Logs drains: exporting logs to an external tools
+
+You can use the logs drains to send your application's logs to an external server with the following command.
+
+
+    clever drain create [--alias <alias>] <DRAIN-TYPE> <DRAIN-URL> [--username <username>] [--password <password>]
+
+Where `DRAIN-TYPE` is one of:
+
+ - `TCPSyslog`: for TCP syslog endpoint
+ - `UDPSyslog`: for UDP syslog endpoint
+ - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication)
+ - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication)
+ 
+You can list the currently activated drains with this command.
+
+    clever drain [--alias <alias>]
+
+And remove them if needed
+
+    clever drain remove [--alias <alias>] <DRAIN-ID>
+
 ### Listing linked applications
 
 You can list your linked applications with `clever applications`. For each application, the command shows you the alias, the id and the deployment url.

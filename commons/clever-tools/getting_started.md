@@ -48,7 +48,7 @@ You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to u
 
 ### GNU/Linux
 
-A pre-compiled version is available: [clever-tools-0.9.0_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_linux.tar.gz).
+A pre-compiled version is available: [clever-tools-0.9.3_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.3/clever-tools-0.9.3_linux.tar.gz).
 You need to add both files (`clever` and `nodegit.node`) to your `PATH` to use the application.
 
 #### Autocompletion

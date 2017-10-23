@@ -91,8 +91,7 @@ Other settings can be changed by adding the following line in `clevercloud/php.j
 ```javascript
    {
       "configuration": {
-         "mbstring.func_overload": 2,
-         "another.setting": "value"
+         "my.setting": "value"
       }
    }
 ```

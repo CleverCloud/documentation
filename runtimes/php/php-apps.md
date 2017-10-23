@@ -83,8 +83,24 @@ Please note the absolute path style: `/public`.
 
 ### Change PHP settings
 
-Most of PHP settings can be changed using a `.user.ini` file. If you want it to be used for any file and you set a different `webroot` than `/`, you need to put this file in that directory instead of the root of your repository. Please refer to the
-[official documentation](http://www.php.net/manual/en/configuration.file.per-user.php) for more information. You can review the [available directives](http://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within `user.ini`.
+Most PHP settings can be changed using a `.user.ini` file.
+
+You should put this file in your `webroot`. if you did not change it (see
+above), then your `webroot` is the root of the repository. Settings put in that
+file will be applied to the whole application.
+
+However, if you want to change some settings for a subdirectory instead, you 
+can put the `.user.ini` file in that directory; it will be applied recursively
+starting from there.
+
+Please refer to the [official
+documentation](http://www.php.net/manual/en/configuration.file.per-user.php)
+for more information. You can review the [available
+directives](http://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`,
+`PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within
+`user.ini`.
+
+**Note**: `.user.ini` files are not loaded by the php cli
 
 Other settings can be changed by adding the following line in `clevercloud/php.json`:
 
@@ -100,7 +116,7 @@ Here is the list of available settings:
 
 * `mbstring.func_overload`
 
-**Note**: You can send a request to the support if you need to change a setting which is not in this list.
+**Note**: You can send a request to the support if you need to change a setting which cannot be changed via a `.user.ini` file and is not in this list.
 
 #### Maximum PHP Children per instance
 

@@ -42,35 +42,6 @@ You can run specific tasks during the deployment of your application. Please
 refer to the [hooks documentation](/doc/clever-cloud-overview/hooks/) to learn
 more about them.
 
-### Post deploy hook
-
-<div class="panel panel-warning">
-  <div class="panel-heading">
-     <h4>Post deploy hooks are being deprecated</h4>
-  </div>
-  <div class="panel-body">
-    Please refer to the <a href="/doc/clever-cloud-overview/hooks/">hooks documentation</a> to replace them.
-  </div>
-</div>
-
-If you need to perform additional actions after your app is started, you can define a
-"postDeploy" hook in your `<instance_type>.json` file (e.g. if you are deploying a ruby app,
-put it in your `ruby.json` file):
-
-```javascript
-{
-  "hooks": {
-    "postDeploy": "./clevercloud/myScript"
-  }
-}
-```
-
-The `postDeploy` field must contain the path to a script, relative to the root of your
-repository. The script file **MUST** have execution right set.
-
-In the example above, the script is a file named `myScript` in the `clevercloud` folder.
-That is, right beside the `<instance_type>.json` file.
-
 ## Workers
 
 You can run background tasks running in parallel of your application. They will be restarted automatically on error.

@@ -115,22 +115,15 @@ Other settings can be changed by adding the following line in `clevercloud/php.j
 Here is the list of available settings:
 
 * `mbstring.func_overload`
+* `pm.max_children`
 
 **Note**: You can send a request to the support if you need to change a setting which cannot be changed via a `.user.ini` file and is not in this list.
 
-#### Maximum PHP Children per instance
+#### `pm.max_children`: Maximum PHP Children per instance
 
-You can fix the maximum number of PHP running processes per instance by adding the following line in `clevercloud/php.json`:
+You can fix the maximum number of PHP running processes per instance by setting `pm.max_children` (see above).
 
-```javascript
-   {
-      "configuration": {
-         "pm.max_children": 32
-      }
-   }
-```
-
-This setting is usefull if you need to limit the number of running processes according to the maximum connections limit
+This setting is useful if you need to limit the number of running processes according to the maximum connections limit
 of your MySQL or PostgreSQL database.
 
 By default, `pm.max_children` is set to **10**.

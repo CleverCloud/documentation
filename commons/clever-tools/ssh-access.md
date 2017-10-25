@@ -24,6 +24,16 @@ While direct SSH access to instances is not recommended in an [immutable infrast
   </div>
 </div>
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">SSH access is disabled on Docker instances</h4>
+  </div>
+  <div class="panel-body">
+    <p>
+    For security reasons, SSH access is disabled for Docker applications. Contact the support if you need help to debug your Docker applications.
+    </p>
+  </div>
+</div>
 
 ## Make sure you have a properly configured SSH key
 

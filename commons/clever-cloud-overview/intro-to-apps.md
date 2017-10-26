@@ -20,14 +20,17 @@ An application is defined on Clever Cloud by the following elements:
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
-Available languages are listed below:
+Supported platforms:
 
+* [Docker](/doc/docker)
 * [Go](/doc/go)
+* [Haskell](/doc/haskell)
 * [Java](/doc/java) [Play Framework 1 & 2, Maven, War files… ]
 * [Node.js](/doc/nodejs)
 * [PHP](/doc/php)
 * [Python](/doc/python)
 * [Ruby](/doc/ruby)
+* [Rust](/doc/rust)
 * [Scala](/doc/scala)
 
 

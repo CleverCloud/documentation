@@ -47,7 +47,7 @@ Please refer to our Terms and Conditions, article 6, *Obligations and responsibi
 
 ## How do I add or remove members in my organizations?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant apps permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant permissions.
 
 ## How do I report an application that is in violation of your Terms and Conditions?
 
@@ -72,14 +72,14 @@ See [Cron Configuration File](/doc/tools/crons/) for more information.
 
 All connections are handled by load-balancers ahead of your applications and forwarded in plain http, you cannot rely on the server port to know the scheme used by the user.
 
-Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to '*http*' or '*https*'.
+Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '*http*' or '*https*'.
 
 <div class="panel panel-warning">
   <div class="panel-heading">
      <h4>Note for Play Framework! 1.2.x users</h4>
   </div>
   <div class="panel-body">
-    In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.
+    In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your *application.conf*.
   </div>
 </div>
 
@@ -118,15 +118,15 @@ contain `0` on the first, `1` on the second and `2` on the third.
 
 If your company manages its own artifacts in a private repository (like, you can only
 access them via git+ssh or sftp), and you need a private key to connect to the server, you
-can commit them in your application's Clever Cloud repository and then add the
-`clevercloud/ssh.json`.
+can commit them in your application's Clever Cloud repository and then add a
+`clevercloud/ssh.json` file.
 
-The ssh.json file is documented in the [common configuration page](/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key)
+The ssh.json file is documented [here](/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).
 
-## I got a `Unsupported major.minor version` error. How can I fix it?
+## I get a `Unsupported major.minor version` error. How can I fix it?
 
-If you get this error on a java (or any JVM language) application, it means that your application requires a specific version of java.  
-By default, java 8 is used, but you can change it. Please head up to [select java version](/doc/java/select-java-version/)
+If you get this error on a Java (or any JVM language) application, it means that your application requires a specific version of Java.
+By default, Java 8 is used; but you can change it. Please head [over here](/doc/java/select-java-version/)
 for more information.
 
 ## I want SSH access to my server

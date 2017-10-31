@@ -9,7 +9,7 @@ tags:
 
 ## What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from Pico to XL.
+A <dfn id="def-scaler">scaler</dfn> is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
 
 Each [scaler](#def-scaler) is given a fixed set of resources.
 When enabling auto-scalability, you have to set a minimum and a maximum of active [scalers](#def-scaler) in your apps settings. This way you can precisely control your monthly fee.

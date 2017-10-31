@@ -136,3 +136,11 @@ Clever Cloud does not give you access to a server or a VPS, it makes your applic
 ## I want to user Clever Cloud on my own premises, is that possible?
 
 Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to <sales@clever-cloud.com> or visit [https://www.clever-cloud.com/on-premises](www.clever-cloud.com/on-premises) for more infos.
+
+## Where are my applications and add-ons located?
+
+Applications and add-ons are located in either *Paris, France* or *Montreal,
+Canada*. You can choose where you want it to be when you create an application
+and a Clever Cloud add-on.
+
+Clever Cloud is based in Nantes, France.

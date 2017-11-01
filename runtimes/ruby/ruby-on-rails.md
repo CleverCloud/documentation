@@ -149,13 +149,6 @@ Run a sidekiq process in background. Please note you will need a redis instance 
 feature.
 </td>
 </tr>
-<tr>
-<td><span class="label label-default">Optional</span></td>
-<td>deploy.static</td>
-<td>
-Let nginx serve the assets contained in the directory.
-</td>
-</tr>
 </tbody>
 </table>
 

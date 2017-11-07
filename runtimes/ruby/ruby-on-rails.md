@@ -57,8 +57,8 @@ If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, othe
 On your Clever Cloud application create an environment variable `RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
  * "2" will select the greatest "2.X.Y" version available.
- * "2.3" will select the greatest "2.3.Y" version available.
- * "2.3.1-p112" will select the "2.3.1-p112" version.
+ * "2.4" will select the greatest "2.4.Y" version available.
+ * "2.4.2" will select the "2.4.2" version.
 
 If given `rubyversion` does not match any available version, your
 deployment will fail.

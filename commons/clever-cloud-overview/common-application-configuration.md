@@ -62,5 +62,5 @@ CC_WORKER_COMMAND_0=my-awesome-worker
 CC_WORKER_COMMAND_1=my-other-worker
 ```
 
-By default, a worker will be restarted if it exists with an error code. You can customise this behaviour by setting the
+By default, a worker will be restarted if it exits with an error code. You can customise this behaviour by setting the
 environment variable `CC_WORKER_RESTART` to one of `always`, `on-failure` (the default) or `no`.

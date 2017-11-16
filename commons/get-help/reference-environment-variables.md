@@ -80,7 +80,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_WORKER_RESTART</td>
-    <td>One of `always`, `on-failure` or `no`. Control whether a worker needs to be restarted when it exists</td>
+    <td>One of `always`, `on-failure` or `no`. Control whether a worker needs to be restarted when it exits</td>
     <td>on-failure</td>
   </tr>
   <tr>

@@ -72,12 +72,14 @@ greatest 2.4.Y. We provide also the 2.3.Y, 2.2.Y and 2.1.Y versions.
 
 ## Choose rackup application server
 
-If no configuration is provided, your application will run using [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
-uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster.
-
-If you prefer, you can select another server by setting an environment variable `CC_RACKUP_SERVER=yourserver`
+You can select the server by setting an environment variable `CC_RACKUP_SERVER=yourserver`
 where yourserver is one of `puma` or `uwsgi`. `puma` is the default application server from rails, and thus one
 of the most commonly used for ruby deployment.
+
+By default, when creating a new ruby application, an environment variable is automatically added: `CC_RACKUP_SERVER=puma`.
+
+If you remove this environment variable or set its value to `uwsgi`, your application will run using [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
+uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster.
 
 If you select puma, you will need to also add it to your dependencies: `bundle add puma`, and commit the resulting
 changes (this is automatic for projects generated using `rails new`).

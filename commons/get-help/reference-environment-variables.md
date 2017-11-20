@@ -79,6 +79,11 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_WORKER_RESTART</td>
+    <td>One of `always`, `on-failure` or `no`. Control whether a worker needs to be restarted when it exits</td>
+    <td>on-failure</td>
+  </tr>
+  <tr>
     <td>CC_PRE_BUILD_HOOK</td>
     <td>Ran before the dependencies are fetched. If it fails, the deployment fails.</td>
     <td></td>

@@ -501,8 +501,8 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_RACKUP_SERVER</td>
-    <td></td>
-    <td></td>
+    <td>The server to use for serving the ruby application</td>
+    <td>puma</td>
     <td></td>
   </tr>
   <tr>

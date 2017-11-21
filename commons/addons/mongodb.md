@@ -26,19 +26,31 @@ MongoDB is an open source NoSQL document-oriented database.
 <th>Price /mo</th>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+<td class="cc-col__price "><span class="label cc-label__price label-info">Peanut</span></td>
 <td>500 MB</td>
 <td>SHARED</td>
 <td>Free</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">SM</span></td>
+<td class="cc-col__price "><span class="label cc-label__price label-info">Hazelnut</span></td>
+<td>1 GB</td>
+<td>512 MB</td>
+<td>20.00€</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">Shamrock</span></td>
+<td>5 GB</td>
+<td>1 GB</td>
+<td>40.00€</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">Vine</span></td>
 <td>30 GB</td>
 <td>2 GB</td>
 <td>75.00€</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+<td class="cc-col__price "><span class="label cc-label__price label-info">Gunnera</span></td>
 <td>100 GB</td>
 <td>4 GB</td>
 <td>150.00€</td>

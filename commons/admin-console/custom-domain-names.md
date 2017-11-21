@@ -44,7 +44,7 @@ If you need to configure a custom domain name, follow the steps below.
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records on ``163.172.235.152`` and ``163.172.235.153``</td>
+    <td>Two records on ``62.210.112.171`` and ``62.210.92.244``</td>
   </tr>
 </table>
 

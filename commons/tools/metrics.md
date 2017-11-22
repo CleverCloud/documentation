@@ -42,7 +42,8 @@ on a specified time range.
 ### Custom queries
 
 All metrics are stored in [Warp10](http://www.warp10.io/), so you explore data directly with
-the quantum interface.
+the quantum interface, with [WarpScript](http://www.warp10.io/reference/). For instance,
+you can derive metrics over time, do custom aggregations or combine metrics.
 
 ## Custom metrics
 
@@ -52,7 +53,7 @@ On some platforms, standard metrics published over `statsd` are even integrated 
 
 Metrics published over `statsd` are prefixed with `statsd`.
 
-### `statsd` socket
+### statsd socket
 
 To publish custom metrics, configure to use your client to push to `localhost:8125`
 (it's the default host and port, so it should work with default settings as well).

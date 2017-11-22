@@ -7,9 +7,13 @@ tags:
 
 # Clever Cloud Metrics
 
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-  <p>Clever Cloud Metrics is still in beta. </p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    Clever Cloud Metrics is still in beta.
+  </div>
 </div>
 
 In addition to logs, you can have access to metrics to know how your application

@@ -138,7 +138,7 @@ s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
 
 ### Java
 
-Make sure to use at least version `1.11.3`. Older versions don't support
+Make sure to use at least version `1.11.232`. Older versions don't support
 Server Name Indication, so if you have SSL certificates errors, check that
 you're not using an old version.
 
@@ -153,9 +153,12 @@ public class Main {
     public static void main(String[] argv) {
         ClientConfiguration opts = new ClientConfiguration()
         opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
-        AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials("<key>", "<secret>"), opts)
-        s3Client.setEndpoint("<host>")
-        List<> buckets = s3Client.listBuckets()
+        AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials("<key>", "<secret>"), opts);
+        s3Client.setEndpoint("<host>");
+        // Use path style access to avoid java-related SNI issues
+        S3ClientOptions s3ClientOptions = new S3ClientOptions().withPathStyleAccess(true);
+        s3Client.setS3ClientOptions(s3ClientOptions);
+        List<> buckets = s3Client.listBuckets();
 
         // handle results
 

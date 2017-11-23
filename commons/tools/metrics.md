@@ -25,7 +25,8 @@ You can also publish your own metrics if you want (via `statsd`).
 ## Activate metrics
 
 To enable metrics on your application you need to add `ENABLE_METRICS=true` to
-its [environment variables](/doc/admin-console/environment-variables/).
+its [environment variables](/doc/admin-console/environment-variables/) and restart
+the application.
 Once it's done, metrics will automatically be gathered and displayed in the console.
 
 ## Display metrics

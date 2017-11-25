@@ -622,6 +622,23 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
+### Elixir
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Description</center></th>
+    <th><center>Default value</center></th>
+    <th><center>Read Only</center></th>
+  </tr>
+  <tr>
+    <td>CC_PHOENIX_ASSETS_DIR</td>
+    <td>Folder in which your Phoenix assets are located.</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
 ## Addons
 
 ### FS Bucket

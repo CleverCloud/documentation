@@ -7,7 +7,7 @@ tags:
 
 # Deploy PHP apps
 
-PHP is available on our platform with the branches 5.6 and 7.0. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6 to 7.2. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 
@@ -36,14 +36,15 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 ## Choose your PHP version
 
-Since January 2016, choosing a PHP version has gotten easier: just set the PHP_VERSION environment
+Since January 2016, choosing a PHP version has gotten easier: just set the `PHP_VERSION` environment
 variable to one of the following values:
 
 - 5.6
 - 7.0
 - 7.1
+- 7.2
 
-By default, all new PHP applications are created with a default PHP_VERSION, set to 5.6.
+By default, all new PHP applications are created with a default `PHP_VERSION`, set to 5.6.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 
@@ -343,12 +344,15 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 ## Available extensions and modules
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
-[PHP 5.6](https://php56info.cleverapps.io) and [PHP 7.0](https://php70info.cleverapps.io).
+- [PHP 5.6](https://php56info.cleverapps.io)
+- [PHP 7.0](https://php70info.cleverapps.io)
+- [PHP 7.1](https://php71info.cleverapps.io)
+- [PHP 7.2](https://php72info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `imagick`, `memcached`,
-`memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`.
+The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `memcached`,
+`memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable](/doc/admin-console/environment-variables/)
 to disable them.

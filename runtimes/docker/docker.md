@@ -12,10 +12,10 @@ Docker container. This page will explain how to set up your application
 to run it on our service.
 
 <div class="alert alert-hot-problems">
-<h5>Note for Beta Version</h5>
+<h5>Note for Docker runtime limitation</h5>
 <div>
-Docker support is still in beta. It does not yet support FS
-Buckets, validation of your Dockerfile, or other advanced features.
+Docker support does not support FS
+Buckets (on Clever Cloud public, it's avaible for private cloud), validation of your Dockerfile, or other advanced features. We are working on better alternative for FS access.
 </div>
 </div>
 

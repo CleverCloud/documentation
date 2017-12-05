@@ -12,10 +12,9 @@ Docker container. This page will explain how to set up your application
 to run it on our service.
 
 <div class="alert alert-hot-problems">
-<h5>Note for Docker runtime limitation</h5>
+<h5>Docker support limitations</h5>
 <div>
-Docker support does not support FS
-Buckets (on Clever Cloud public, it's avaible for private cloud), validation of your Dockerfile, or other advanced features. We are working on better alternative for FS access.
+Docker instances cannot use FS Buckets (available only for On-Premises clients; there is no Dockerfile validation and some other advanced features may not be available. Note that we are working on an alternative for FS buckets.
 </div>
 </div>
 

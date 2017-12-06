@@ -44,7 +44,7 @@ variable to one of the following values:
 - 7.1
 - 7.2
 
-By default, all new PHP applications are created with a default `PHP_VERSION`, set to 5.6.
+By default, all new PHP applications are created with a default `PHP_VERSION`, set to 7.0.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 

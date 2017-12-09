@@ -141,11 +141,11 @@ Here is an example :
   },
   "engines": {
     "node": "0.8.15"
- },
-"dependencies": {
-  "express": "3.x",
-  "socket.io": "0.9.x",
-  "underscore": "1.4.3"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "socket.io": "0.9.x",
+    "underscore": "1.4.3"
   }
 }
 ```

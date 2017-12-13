@@ -628,13 +628,24 @@ So you can alter the build&start process for your application.
   <tr>
     <th><center>Name</center></th>
     <th><center>Description</center></th>
-    <th><center>Default value</center></th>
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>CC_PHOENIX_ASSETS_DIR</td>
+    <td>CC_PHOENIX_ASSETS_DIR</td
     <td>Folder in which your Phoenix assets are located.</td>
     <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_PHOENIX_DIGEST_GOAL</td>
+    <td>Phoenix digest goal.</td>
+    <td>phx.digest</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_PHOENIX_SERVER_GOAL</td>
+    <td>Phoenix server goal.</td>
+    <td>phx.server</td>
     <td></td>
   </tr>
 </table>

@@ -51,6 +51,12 @@ These are read-only variables that are generated for each scaler before they bui
     <td>The id of the commit that's currently running</td>
     <td>d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f</td>
   </tr>
+  <tr>
+    <td>CC_REVERSE_PROXYS_IPS</td>
+    <td>A comma separated list of trusted IP addresses. You should only accept requests
+    coming from these IP addresses.</td>
+    <td>62.210.92.244,62.210.112.171</td>
+  </tr>
 </table>
 
 #### Variables you can define

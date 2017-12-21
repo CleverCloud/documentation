@@ -97,3 +97,11 @@ You can use the following properties:
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
+
+## Specifying a profile
+
+If you need to specify a maven profile (either for the `build` or the `deploy` goal, you can add it in the `goal` section:
+
+```haskell
+"-Pmyprofile package"
+```

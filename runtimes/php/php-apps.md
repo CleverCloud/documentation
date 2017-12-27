@@ -491,6 +491,17 @@ In `.user.ini`, add the following line (you need to create `inject_headers.php` 
 auto_prepend_file=./inject_headers.php
 ```
 
+## Using HTTP authentication
+
+Using basic HTTP authentication, PHP usually gives you the user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`. On Clever Cloud, we have enabled an option in Apache to pass directly the Authorization header even though we are using FastCGI; still, PHP does not use the header and the variables mentioned before are empty.
+
+You can do this to fill them using the Authorization header:
+
+```php
+<?php
+list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':' , base64_decode(substr($_SERVER['Authorization'], 6)));
+```
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow

@@ -62,7 +62,7 @@ If you need to configure a custom domain name, follow the steps below.
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records on ``68.71.34.33`` and ``68.71.34.35``</td>
+    <td>Two records on ``149.56.147.232`` and ``149.56.126.234``</td>
   </tr>
 </table>
 

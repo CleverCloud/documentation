@@ -92,6 +92,10 @@ Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information,
   </div>
 </div>
 
+## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
+
+It's explained [here](/doc/php/php-apps/#using-http-authentication).
+
 ## How to get the user's IP address?
 
 All connections are handled by load-balancers ahead of your applications

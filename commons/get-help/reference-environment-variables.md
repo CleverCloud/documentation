@@ -55,7 +55,7 @@ These are read-only variables that are generated for each scaler before they bui
     <td>CC_REVERSE_PROXYS_IPS</td>
     <td>A comma separated list of trusted IP addresses. You should only accept requests
     coming from these IP addresses.</td>
-    <td>62.210.92.244,62.210.112.171</td>
+    <td>x.y.z.z,x.y.z.z</td>
   </tr>
 </table>
 

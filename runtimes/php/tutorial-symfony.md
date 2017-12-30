@@ -6,6 +6,8 @@ tags:
 - symfony
 ---
 
+> This tutorial assumes that your application is based on Symfony 4 and Symfony Flex.
+
 # Deploy a Symfony application
 
 Symfony applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.

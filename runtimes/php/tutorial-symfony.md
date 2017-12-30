@@ -86,5 +86,5 @@ yarn run build
 Thens, add this to the application's environment variables:
 
 ```
-CC_POST_BUILD_HOOK=./post_build.sh
+CC_POST_BUILD_HOOK=./clevercloud/post_build.sh
 ```

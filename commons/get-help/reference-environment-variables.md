@@ -52,7 +52,7 @@ These are read-only variables that are generated for each scaler before they bui
     <td>d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f</td>
   </tr>
   <tr>
-    <td>CC_REVERSE_PROXYS_IPS</td>
+    <td>CC_REVERSE_PROXY_IPS</td>
     <td>A comma separated list of trusted IP addresses. You should only accept requests
     coming from these IP addresses.</td>
     <td>x.y.z.z,x.y.z.z</td>

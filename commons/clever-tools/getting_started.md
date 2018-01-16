@@ -24,7 +24,7 @@ Clever Tools is packaged using [homebrew](https://brew.sh):
 
     brew install CleverCloud/tap/clever-tools
 
-If you don't want to use `brew`, a pre-compiled version is available: [clever-tools-0.9.0_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_macos.tar.gz).
+If you don't want to use `brew`, a pre-compiled version is available: [clever-tools-latest_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz).
 You need to put both files (`clever` and `nodegit.node`) in your `PATH` to use the application.
 
 #### Autocompletion
@@ -43,12 +43,12 @@ Clever Tools is packaged using [chocolatey](https://chocolatey.org):
 
     choco install clever-tools
 
-If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-0.9.0_windows.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_windows.zip).
+If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-latest_win.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_win.zip).
 You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to use the application.
 
 ### GNU/Linux
 
-A pre-compiled version is available: [clever-tools-0.9.3_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.3/clever-tools-0.9.3_linux.tar.gz).
+A pre-compiled version is available: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
 You need to add both files (`clever` and `nodegit.node`) to your `PATH` to use the application.
 
 #### Autocompletion

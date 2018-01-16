@@ -71,9 +71,12 @@ On some distributions (eg. archlinux), a `libcurl` version mismatch between the 
     # add an alias to start clever tools with a compatible libcurl version
     alias clever='LD_PRELOAD=libcurl.so.3 clever'
 
-### Manual installation (advanced)
+### Usage via global npm install
 
-Clever Tools is built with [npm](https://npmjs.org). If you wish to install it from `npm`, you can run `npm install -g clever-tools`. You can also install it [from source](https://github.com/CleverCloud/clever-tools).
+We no longer support the usage and installation of Clever Tools via a global npm install.
+Please follow the installation instructions for your platform (see above) and make sure to uninstall the npm version with this:
+
+    npm uninstall -g clever-tools
 
 ## Linking your account
 

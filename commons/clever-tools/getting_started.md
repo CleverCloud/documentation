@@ -67,16 +67,6 @@ Clever Tools comes with a comprehensive auto-completion system.
     # for zsh
     clever --zsh-autocomplete-script $(which clever) | sudo tee /usr/share/zsh/site-functions
 
-#### In case of `libcurl` version mismatch
-
-On some distributions (eg. archlinux), a `libcurl` version mismatch between the system default and the expected version can happen. If you see `Error: /usr/lib/libcurl.so.4: version 'CURL_OPENSSL_3' not found (required by /usr/bin/nodegit.node)` in the logs, you can fix the issue by using a compatible libcurl version:
-
-    # install libcurl-compat
-    pacman -S libcurl-compat # on archlinux
-
-    # add an alias to start clever tools with a compatible libcurl version
-    alias clever='LD_PRELOAD=libcurl.so.3 clever'
-
 ### Usage via global npm install
 
 We no longer support the usage and installation of Clever Tools via a global npm install.

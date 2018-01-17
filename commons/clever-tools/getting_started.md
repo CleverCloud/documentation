@@ -48,6 +48,12 @@ You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to u
 
 ### GNU/Linux
 
+#### Archlinux
+
+The package is available on the AUR: [clever-tools-bin](https://aur.archlinux.org/packages/clever-tools-bin/)
+
+#### Other distributions
+
 A pre-compiled version is available: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
 You need to add both files (`clever` and `nodegit.node`) to your `PATH` to use the application.
 

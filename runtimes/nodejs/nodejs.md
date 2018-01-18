@@ -223,6 +223,14 @@ For instance, for a meteor application, you can put
 CC_RUN_COMMAND=node .build/bundle/main.js <options>
 ```
 
+## Automatic HTTPS redirection
+
+If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
+
+`app.use(enforce.HTTPS({ trustProtoHeader: true }))`
+
+Otherwise, you can read the [X-Forwarded-Proto header](https://www.clever-cloud.com/doc/get-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection-).
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

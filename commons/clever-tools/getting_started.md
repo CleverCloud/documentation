@@ -24,7 +24,7 @@ Clever Tools is packaged using [homebrew](https://brew.sh):
 
     brew install CleverCloud/tap/clever-tools
 
-If you don't want to use `brew`, a pre-compiled version is available: [clever-tools-0.9.0_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_macos.tar.gz).
+If you don't want to use `brew`, a pre-compiled version is available: [clever-tools-latest_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz).
 You need to put both files (`clever` and `nodegit.node`) in your `PATH` to use the application.
 
 #### Autocompletion
@@ -43,12 +43,18 @@ Clever Tools is packaged using [chocolatey](https://chocolatey.org):
 
     choco install clever-tools
 
-If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-0.9.0_windows.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.0/clever-tools-0.9.0_windows.zip).
+If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-latest_win.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_win.zip).
 You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to use the application.
 
 ### GNU/Linux
 
-A pre-compiled version is available: [clever-tools-0.9.3_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/0.9.3/clever-tools-0.9.3_linux.tar.gz).
+#### Archlinux
+
+The package is available on the AUR: [clever-tools-bin](https://aur.archlinux.org/packages/clever-tools-bin/)
+
+#### Other distributions
+
+A pre-compiled version is available: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
 You need to add both files (`clever` and `nodegit.node`) to your `PATH` to use the application.
 
 #### Autocompletion
@@ -61,19 +67,12 @@ Clever Tools comes with a comprehensive auto-completion system.
     # for zsh
     clever --zsh-autocomplete-script $(which clever) | sudo tee /usr/share/zsh/site-functions
 
-#### In case of `libcurl` version mismatch
+### Usage via global npm install
 
-On some distributions (eg. archlinux), a `libcurl` version mismatch between the system default and the expected version can happen. If you see `Error: /usr/lib/libcurl.so.4: version 'CURL_OPENSSL_3' not found (required by /usr/bin/nodegit.node)` in the logs, you can fix the issue by using a compatible libcurl version:
+We no longer support the usage and installation of Clever Tools via a global npm install.
+Please follow the installation instructions for your platform (see above) and make sure to uninstall the npm version with this:
 
-    # install libcurl-compat
-    pacman -S libcurl-compat # on archlinux
-
-    # add an alias to start clever tools with a compatible libcurl version
-    alias clever='LD_PRELOAD=libcurl.so.3 clever'
-
-### Manual installation (advanced)
-
-Clever Tools is built with [npm](https://npmjs.org). If you wish to install it from `npm`, you can run `npm install -g clever-tools`. You can also install it [from source](https://github.com/CleverCloud/clever-tools).
+    npm uninstall -g clever-tools
 
 ## Linking your account
 

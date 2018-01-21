@@ -51,19 +51,18 @@ Here is an exemple of monolog configuration that stores all log messages during 
 ```
 monolog:
     handlers:
-        handlers:
-            filter_for_errors:
-                type: fingers_crossed
-                action_level: error
-                handler: file_handler
+        filter_for_errors:
+            type: fingers_crossed
+            action_level: error
+            handler: file_handler
 
-            file_handler:
-                type: stream
-                path: "%kernel.logs_dir%/%kernel.environment%.log"
+        file_handler:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
 
-            syslog_handler:
-                type: syslog
-                level: error
+        syslog_handler:
+            type: syslog
+            level: error
 ```
 
 

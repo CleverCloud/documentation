@@ -96,6 +96,41 @@ environment variable. If you want to rebuild your application from scratch,
 you can select "rebuild and restart" from the console or launch `clever
 restart --without-cache` from CLI.
 
+### Private dependencies
+
+If you use dependencies on a private git repository inside your project, it needs a bit of configuration until
+[this cargo issue](https://github.com/rust-lang/cargo/issues/1851) has been resolved
+
+First, you need to use the `HTTPS` url as the git url for your dependency in your `Cargo.toml`:
+
+`private-dep = { git = "https://github.com/user/my-private-dep.git" }`
+
+Then, you need to create a personal access token. It allows to not use your password:
+- `Github`: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+- `Gitlab`: https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html (API rights are needed)
+
+Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
+
+Create a `clevercloud/pre-build.sh` file at the root of your application and paste:
+
+```bash
+#!/usr/bin/env bash
+
+git config --global credential.helper store
+echo "https://${GIT_USERNAME}:${GIT_PASSWORD}@gitlab.clever-cloud.com" > ~/.git-credentials
+chmod 600 ~/.git-credentials
+```
+
+If you have multiple private repositories, add them accordingly.
+
+Now, go into the environment variables page of your application and create those environment variables:
+- `GIT_USERNAME`: your github / gitlab / other username
+- `GIT_PASSWORD`: your github / gitlab / other password
+- `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
+- `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
+
+It adds the git configuration before the build start and it cleans it after the build has been done.
+
 ### Rust channels
 
 By default, your application is built with the latest stable version. If you

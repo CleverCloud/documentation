@@ -55,7 +55,9 @@ The package is available on the AUR: [clever-tools-bin](https://aur.archlinux.or
 #### Other distributions
 
 A pre-compiled version is available: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
-You need to add both files (`clever` and `nodegit.node`) to your `PATH` to use the application.
+You need to add both files (`clever` and `nodegit.node`) to your `PATH`
+(you can put them in `~/.local/bin` for instance)
+to use the application.
 
 #### Autocompletion
 

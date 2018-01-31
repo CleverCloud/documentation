@@ -78,17 +78,17 @@ Some containers require access to the docker socket, to spawn sibling containers
 
 You can make the docker socket available from inside the container by adding `CC_MOUNT_DOCKER_SOCKET=true` in your application's environment variables. In that case, docker is started in the namespaced mode, and in bridge network mode.
 
-### Sample apps
+## Sample apps
 
 We provide a few examples of dockerized applications on Clever Cloud.
 
-[Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-[Haskell App](https://github.com/CleverCloud/demo-haskell)
-[Hack / HHVM App](https://github.com/CleverCloud/demo-hhvm)
-[Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
-[Rust App](https://github.com/CleverCloud/demo-rust)
+* [Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
+* [Haskell App](https://github.com/CleverCloud/demo-haskell)
+* [Hack / HHVM App](https://github.com/CleverCloud/demo-hhvm)
+* [Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
+* [Rust App](https://github.com/CleverCloud/demo-rust)
 
-#### Deploying a Rust application
+### Deploying a Rust application
 
 To make your dockerized application run on clever Cloud, you need to:
 

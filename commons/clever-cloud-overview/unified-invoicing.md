@@ -2,7 +2,7 @@
 title: Unified Invoicing
 position: 1
 tags:
-- support
+- billing
 keywords:
 - invoice
 - invoicing

@@ -1,15 +1,11 @@
 ---
-title: Intro to Apps
+title: Introduction to Applications
 position: 1
 shortdesc: A quick overview of the concept of application on Clever Cloud
 tags:
 - dashboard-setup
 - apps
 ---
-
-# Introduction to Applications
-
-## Application's definition
 
 An application is defined on Clever Cloud by the following elements:
 
@@ -32,7 +28,6 @@ Supported platforms:
 * [Ruby](/doc/ruby)
 * [Rust](/doc/rust)
 * [Scala](/doc/scala)
-
 
 ## How it works
 

@@ -9,8 +9,6 @@ keywords:
 - clever-tools
 ---
 
-# Clever Cloud CLI overview
-
 In addition to the Clever Cloud console, you can manage your addons and
 applications from the command line with Clever Tools.
 

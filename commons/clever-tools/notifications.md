@@ -1,5 +1,5 @@
 ---
-title: Notifications management
+title: Notifications management with Clever Tools
 position: 5
 shortdesc: How to setup and configure notifications via clever-tools
 tags:
@@ -12,7 +12,6 @@ keywords:
 - slack
 - flowdock
 ---
-# Notifications management with the CLI
 
 The *Notifications* service allows you to choose the events of interest to you
 and decide where to send corresponding notifications.

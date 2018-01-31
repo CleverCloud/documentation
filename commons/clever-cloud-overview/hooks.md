@@ -1,13 +1,10 @@
 ---
-title: Hooks
+title: Deployment Hooks
 shortdesc: Hooks allow to run custom tasks during deployment
 tags:
 - apps
 - hooks
 ---
-
-# Hooks
-
 ## Deployment lifecycle
 
 An application deployed on Clever Cloud goes through two distinct phases. The

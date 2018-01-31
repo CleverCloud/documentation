@@ -1,12 +1,10 @@
 ---
-title: Java War/Ear
+title: Java War/Ear deployment
 position: 4
 shortdesc: In JEE, applications modules are packaged as EAR and WAR based on their functionality.
 tags:
 - java
 ---
-
-# Deploy WAR/EAR projects
 
 Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 

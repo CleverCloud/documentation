@@ -9,8 +9,6 @@ tags:
 - https
 ---
 
-# Installing TLS Certificates
-
 TLS certificates are necessary to enable secure HTTPS connections between a browser and you application. These certificates can be bought online, or directly via Clever Cloud (Domain Validation or Wildcard SSL). In that case, we manage the whole process for you.
 
 If you already have your certificates, you can upload them on Clever Cloud. 

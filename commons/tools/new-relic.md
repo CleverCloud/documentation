@@ -6,8 +6,6 @@ tags:
 - apps
 ---
 
-# New Relic
-
 [New Relic](http://www.newrelic.com/) is a software analytics company based in San Francisco, California.
 New Relic's technology monitors Web and mobile applications in real-time that run in cloud, on-premise, or hybrid
 environments. You can easily setup a New Relic based monitoring on your application to monitor it and find

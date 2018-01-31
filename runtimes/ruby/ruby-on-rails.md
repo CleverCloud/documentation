@@ -1,11 +1,9 @@
 ---
-title: Deploy Ruby on Rails apps
+title: Deploying Ruby on Rails apps
 shortdesc: Ruby on Rails is an open source web application framework which runs on the Ruby programming language.
 tags:
 - ruby
 ---
-
-# Deploy Ruby on Rails applications
 
 Clever Cloud allows you to deploy any Ruby on Rails application. This page will
 explain you how to set up your application to run it on our service.

@@ -67,7 +67,7 @@ The Json contains two parameters: the ID of the FS Bucket, and the path you want
 *Related page: [File System buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/).*
 
 
-#### <i class="icon-double-angle-right"></i> Error about Empty Repository
+## Error about Empty Repository
 
 > “Logs are telling me \"warning: You appear to have cloned an empty repository\"”
 
@@ -90,7 +90,7 @@ $ git push clever production:master
 
 *Related page: [Deploy an application](/doc/clever-cloud-overview/add-application/).*
 
-#### <i class="icon-double-angle-right"></i> Error about not being a git repository
+## Error about not being a git repository
 
 > “I get errors telling me that it's not a git repository, what does it mean?
 
@@ -112,7 +112,7 @@ $ git remote add clever <your-git-deployment-url>
 
 *Related page: [Git deployment](/doc/clever-cloud-overview/add-application/)*
 
-#### <i class="icon-double-angle-right"></i> SSH: Password is Asked
+## SSH: Password is Asked
 
 > “When I try to push my app, the server responds by asking a password.”
 
@@ -132,7 +132,7 @@ Host ccloud
   IdentityFile ~/.ssh/id_rsa_clevercloud
 ```
 
-#### <i class="icon-double-angle-right"></i> Node failed to deploy
+## Node failed to deploy
 
 > “My Node.js application is unable to start. Logs are not helping”
 
@@ -146,8 +146,7 @@ server.listen(8080);
 
 *Related page: [Deploy Node.js apps](/doc/nodejs/nodejs/).*
 
-
-#### <i class="icon-double-angle-right"></i> My github organization is not listed on the app creation page
+## My github organization is not listed on the app creation page
 
 Github does not give us access to organizations created or joined *after* you've linked your Github account to
 Clever Cloud (which is a good thing). So you need to let the Clever Cloud API

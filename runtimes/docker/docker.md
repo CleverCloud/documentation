@@ -29,19 +29,15 @@ on and between virtually any server. The same container that a developer
 builds and tests on a laptop will run at scale, in production, on VMs,
 bare-metal servers, public instances, or combinations of the above.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an Application** button, in the sidebar.
 2. Select a brand new instance (or a repository from GitHub if your account is linked).
 3. Then select Docker in the platforms list.
 4. Configure your scaling options.
 5. Enter your application's name and description and click "Next". You can also select the region you want (North America or Europe).
-<figure class="cc-content-img">
-  <img src="/doc/assets/images/choose-name.png"/>
-</figure>
 
-
-### Requirements
+## Requirements
 
 Clever Cloud does not have a lot of requirements, here is what you *need*
 to do to ensure that your application will run:
@@ -52,7 +48,7 @@ to do to ensure that your application will run:
 
 * Listen on **port 8080**.
 
-### Dockerfile contents
+## Dockerfile contents
 
 You can virtually put everything you want in your Dockerfile. The only
 mandatory (for us) instruction to put in it is:
@@ -61,12 +57,12 @@ mandatory (for us) instruction to put in it is:
 CMD <command to run>
 ```
 
-   * **command to run**: this is the command that starts your
+**command to run**: this is the command that starts your
    application. Your application **must** listen on port 8080. It can be
    easier for you to put a script in your docker image and call it with
    the CMD instruction.
 
-### Docker socket access
+## Docker socket access
 
 Some containers require access to the docker socket, to spawn sibling containers for instance.
 
@@ -125,7 +121,7 @@ RUN cargo build
 CMD cargo run
 ```
 
-#### Deploying a HHVM application
+### Deploying a HHVM application
 
 Deploying a HHVM application is a bit trickier as it needs to have both HHVM
 and nginx running as daemons. To be able to have them running both, we need to

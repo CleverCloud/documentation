@@ -1,12 +1,10 @@
 ---
-title: Play Framework 2
+title: Play Framework 2 deployment
 position: 2
 shortdesc: Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern.
 tags:
 - java
 ---
-
-# Deploy Play Framework 2 Java
 
 Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run on Clever Cloud.
 

@@ -2,7 +2,7 @@
 title: FAQ
 position: 3
 tags:
-- support
+- faq
 ---
 
 # Clever Cloud FAQs

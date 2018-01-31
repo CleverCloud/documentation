@@ -1,5 +1,5 @@
 ---
-title: Create an application
+title: Application creation with Clever Tools
 position: 2
 shortdesc: Create a new application using the Clever Cloud CLI tool
 tags:
@@ -18,8 +18,6 @@ keywords:
 - dependency
 - exposed configuration
 ---
-
-# Create an application
 
 `clever create` allows you to create a new application.
 

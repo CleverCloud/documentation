@@ -8,8 +8,6 @@ keywords:
 - cargo
 ---
 
-# Deploy Rust apps
-
 <div class="panel panel-warning">
   <div class="panel-heading">
      <h4>Rust support is in private beta</h4>

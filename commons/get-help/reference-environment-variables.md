@@ -5,9 +5,7 @@ tags:
 - support
 ---
 
-# Environment Variable Reference
-
-##  Applications
+## Application-related environment variable
 
 ### Commons to all Applications
 
@@ -119,7 +117,6 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
 </table>
-
 
 ### Docker
 
@@ -617,7 +614,7 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-## Addons
+## Addons-related environment variable
 
 ### FS Bucket
 

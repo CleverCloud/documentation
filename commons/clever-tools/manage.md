@@ -16,8 +16,6 @@ keywords:
 - domain
 ---
 
-# Manage your application
-
 ## Stop or restart your application
 
 `clever stop <app-name>` allows you to stop your application.

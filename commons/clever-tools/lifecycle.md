@@ -1,5 +1,5 @@
 ---
-title: Application lifecycle
+title: Informations about your application lifecycle
 position: 4
 shortdesc: Get informations about your application using the Clever Cloud CLI tool
 tags:
@@ -13,8 +13,6 @@ keywords:
 - activity
 - list
 ---
-
-# Informations about your application
 
 ### Get continuous logs from your application
 

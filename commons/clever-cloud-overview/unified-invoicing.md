@@ -12,8 +12,6 @@ keywords:
 - payments
 ---
 
-# Unified Invoicing
-
 Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
 
 ## Monthly invoice

@@ -7,7 +7,6 @@ tags:
 - caching
 ---
 
-# Varnish
 
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
 and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load.

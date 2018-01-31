@@ -1,5 +1,5 @@
 ---
-title: Deploy haskell apps
+title: Deploying haskell apps
 shortdesc: Haskell is love, haskell is life
 tags:
 - haskell
@@ -7,8 +7,6 @@ keywords:
 - haskell
 - stack
 ---
-
-# Deploy Haskell apps
 
 <div class="panel panel-warning">
   <div class="panel-heading">
@@ -39,7 +37,6 @@ Clever Cloud uses stack to build haskell applications.
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
-
 
 Be sure that:
 

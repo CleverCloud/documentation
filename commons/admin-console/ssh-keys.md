@@ -14,8 +14,6 @@ keywords:
 - private ssh
 ---
 
-# SSH keys
-
 SSH keys are used to establish a secure connection between your computer and Clever Cloud.  
 You need to add a SSH key to your Clever Cloud's account to deploy via Git.  
 A user can have multiple SSH keys.

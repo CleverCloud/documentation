@@ -1,12 +1,10 @@
 ---
-title: Deploy a Laravel application
+title: Deploying a Laravel application
 shortdesc: This article shows you how to deploy a laravel application on Clever Cloud.
 tags:
 - php
 - laravel
 ---
-
-# Deploy a Laravel application
 
 Laravel applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 

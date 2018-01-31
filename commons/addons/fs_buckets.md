@@ -1,6 +1,5 @@
 ---
-title: FS Buckets add-on
-title: FS Buckets add-on
+title: File System Buckets add-on
 position: 4
 shortdesc: This add-on allows applications to use a persistent file system, as git-based apps don't have one.
 tags:
@@ -12,8 +11,6 @@ keywords:
 - fs buckets
 - storage
 ---
-
-# FS Buckets: file system with persistence
 
 When you deploy an application on any PaaS, a new virtual machine is created, the previous one is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external

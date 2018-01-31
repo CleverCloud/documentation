@@ -12,7 +12,6 @@ keyworkds:
 - organizations
 - collaboration
 ---
-# Organizations
 
 In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations.
 

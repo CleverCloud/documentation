@@ -1,5 +1,5 @@
 ---
-title: Trace add-on
+title: Trace add-on (deprecated)
 position: 9
 shortdesc: Trace is a Node.js performance monitoring tool which helps you to understand how your application behaves and lets you to find performance bottlenecks with ease
 tags:
@@ -11,8 +11,6 @@ keywords:
 - microservices
 - microservice
 ---
-
-# Trace
 
 Trace provides error detection, alerting, distributed tracing and process monitoring for your Clever Cloud applications. Install the Trace Trace Clever Cloud add-on by following these steps:
 

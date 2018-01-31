@@ -9,7 +9,6 @@ keywords:
 - tax
 - pricing
 ---
-# Payments & invoicing
 
 ## Make a payment
 

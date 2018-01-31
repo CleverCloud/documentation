@@ -6,8 +6,6 @@ tags:
 - dashboard-setup
 ---
 
-# Deploying an application
-
 There are two steps in this section: application creation (requiring actions from
 dashboard) and application deployment (requiring actions from Git / or your FTP access).
 

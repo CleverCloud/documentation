@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud Add-ons
+title: Introduction to Add-ons
 position: 2
 shortdesc: 'This article introduces the add-ons: a way to add services to your application on Clever Cloud.'
 tags:
@@ -8,8 +8,6 @@ keywords:
 - addons
 - addon
 ---
-
-# Introduction to Add-ons
 
 Add-ons are a way to add services to your application, for example a database or a caching system, to enrich its
 features.

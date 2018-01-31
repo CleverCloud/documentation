@@ -1,11 +1,10 @@
 ---
-title: Running crons
+title: CRON configuration file
 position: 1
+shortdesc: All you need to know about running crons on Clever Cloud
 tags:
 - apps
 ---
-
-# CRON configuration file
 
 The configuration file used for crontab is `/clevercloud/cron.json`.
 
@@ -72,5 +71,3 @@ You can refer to [this list](/doc/admin-console/environment-variables#special-en
 </div>
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
-
-

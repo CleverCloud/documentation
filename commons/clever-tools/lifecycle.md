@@ -14,7 +14,7 @@ keywords:
 - list
 ---
 
-### Get continuous logs from your application
+## Get continuous logs from your application
 
 You can see logs with the command down below.
 
@@ -25,7 +25,7 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
     # Here is an example
     clever logs --before 2016-08-11T14:54:33.971Z
 
-#### Logs drains: exporting logs to an external tools
+### Logs drains: exporting logs to an external tools
 
 You can use the logs drains to send your application's logs to an external server with the following command.
 
@@ -47,7 +47,7 @@ And remove them if needed
 
     clever drain remove [--alias <alias>] <DRAIN-ID>
 
-### Listing linked applications
+## Listing linked applications
 
 You can list your linked applications with `clever applications`. For each application, the command shows you the alias, the id and the deployment url.
 
@@ -57,11 +57,11 @@ You can list your linked applications with `clever applications`. For each appli
     # List only application aliases
     clever applications --only-aliases
 
-### Status of your application
+## Status of your application
 
 Clever-tools can show you the status of an application on Clever Cloud using `clever status`. This command shows you if the application is running or stopped and informations about the scalability of your application.
 
-### Activity of your application
+## Activity of your application
 
 `clever-tools` can show you the activity of an application. For each deployment, you get :
 

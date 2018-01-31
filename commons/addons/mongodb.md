@@ -12,8 +12,6 @@ keywords:
 - database
 ---
 
-# MongoDB
-
 MongoDB is an open source NoSQL document-oriented database.
 
 ## MongoDB plans

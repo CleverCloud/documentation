@@ -10,7 +10,6 @@ keywords:
 - variables
 - environment variables
 ---
-## Configuring environment variables
 
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.

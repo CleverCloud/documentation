@@ -5,7 +5,6 @@ shortdesc: How to integrate your own service as an add-on on Clever Cloud
 tags:
 - developer
 ---
-# Clever Cloud add-on API
 
 Clever Cloud offers you to sell your service as an add-on through the dashboard.
 This article will document how you can technically plug into the platform to provide add-on provision, deprovision, and configuration via the dashboard.

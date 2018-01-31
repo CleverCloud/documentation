@@ -5,7 +5,6 @@ shortdesc: Getting started with the Clever Cloud API
 tags:
 - developer
 ---
-# Clever Cloud API
 
 The Clever Cloud console and clever-tools are built on top of an API that
 allows you to manage your account and products. This article will explain how

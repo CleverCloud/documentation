@@ -8,8 +8,6 @@ keywords:
 - environment variables
 ---
 
-# Configuration provider
-
 Expose configuration to your applications (via environment variables).
 If you have multiple applications which need the same configuration items
 (for instance credentials for an external service), you can create an

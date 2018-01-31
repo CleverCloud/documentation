@@ -5,8 +5,6 @@ tags:
 - faq
 ---
 
-# Clever Cloud FAQs
-
 ## What is a Scaler?
 
 A <dfn id="def-scaler">scaler</dfn> is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.

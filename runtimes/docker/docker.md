@@ -5,21 +5,20 @@ tags:
 - docker
 ---
 
-## Deploy Docker images
-
 Clever Cloud allows you to deploy any application running inside a
 Docker container. This page will explain how to set up your application
 to run it on our service.
 
-<div class="alert alert-hot-problems">
-<h5>Note for Beta Version</h5>
-<div>
-Docker support is still in beta. It does not yet support FS
-Buckets, validation of your Dockerfile, or other advanced features.
-</div>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Note for Beta Version</h4>
+  </div>
+  <div class="panel-body">
+    Docker support is still in beta. It does not yet support FS Buckets, validation of your Dockerfile, or other advanced features.
+  </div>
 </div>
 
-### Overview
+## Overview
 
 Docker is an easy, lightweight virtualized environment for portable
 applications.

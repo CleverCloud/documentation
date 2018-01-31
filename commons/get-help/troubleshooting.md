@@ -1,58 +1,12 @@
 ---
 title: Troubleshooting
 position: 4
+shortdesc: Common issues and errors you may have
 tags:
 - support
 ---
 
-## Troubleshooting
-
-### Common Technical Problems
-
-
-<div class="row-fluid">
-<div class="col-md-3">
-<a href="#git-and-file-persistence">
-<center>
-<img  src="/doc/assets/images/faq/git_persistence.png" alt="instance">
-</center>
-<div class="cc_service__title" style="text-align:center">Git and File Persistence</div>
-</a>
-</div>
-<div class="col-md-3">
-<a href="#error-about-empty-repository">
-<center>
-<img  src="/doc/assets/images/faq/empty_repo.png" alt="instance">
-</center>
-<div class="cc_service__title" style="text-align:center">
-Error about Empty Repository
-</div>
-</a>
-</div>
-<div class="col-md-3">
-<a href="#ssh-password-is-asked">
-<center>
-<img  src="/doc/assets/images/faq/password_asked.png" alt="instance">
-</center>
-<div class="cc_service__title" style="text-align:center">
-SSH: Password is Asked
-</div>
-</a>
-</div>
-<div class="col-md-3">
-<a href="#node-failed-to-deploy">
-<center>
-<img  src="/doc/assets/images/faq/node_fail.png" alt="instance">
-<center>
-<div class="cc_service__title" style="text-align:center">
-  Node failed to deploy
-</div>
-</a>
-</div>
-</div>
-<br><br>
-
-#### <i class="icon-double-angle-right"></i> Git and File Persistence
+## Git and File Persistence
 
 > "Why are my files disappearing after an application restart?”
 

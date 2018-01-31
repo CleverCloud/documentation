@@ -1,13 +1,11 @@
 ---
-title: Common apps configuration
+title: Configuration items available on every instance type
 position: 5
 shortdesc: Learn how to do some basic steup configuration to get started
 tags:
 - apps
 - dashboard-setup
 ---
-
-#  Configuration items available on every instance type.
 
 Each instance type (php,java,python,go,ruby…) has its own configuration. However, some of
 these configuration items can be applied to any instance.

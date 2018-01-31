@@ -11,8 +11,6 @@ keywords:
 - logs
 ---
 
-# Managing Application Lifecycle and Informations
-
 ## Start, restart and stop
 
 You can start, restart, and stop your application in the associated configuration panel.

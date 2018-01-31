@@ -1,11 +1,9 @@
 ---
-title: Deploy Node.js apps
+title: Deploying Node.js apps
 shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 tags:
 - nodejs
 ---
-
-# Deploy Node.js apps
 
 Clever Cloud allows you to deploy any Node.js application. This page will
 explain you how to set up your application to run it on our service.

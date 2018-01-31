@@ -9,8 +9,6 @@ keywords:
 - configuration
 ---
 
-# Service Dependencies
-
 On Clever Cloud, each application depends on one or more backing addons. Each
 addon exposes configuration, which allows the user to choose which addon link
 to an application.

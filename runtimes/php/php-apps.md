@@ -1,13 +1,11 @@
 ---
-title: Deploy PHP applications
+title: Deploying PHP applications
 shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 tags:
 - php
 ---
 
-# Deploy PHP apps
-
-PHP is available on our platform with the branches 5.6 to 7.2. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6 and 7.0. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 

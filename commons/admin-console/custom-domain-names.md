@@ -11,8 +11,6 @@ keywords:
 - URL
 ---
 
-# Managing Domain Names
-
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name

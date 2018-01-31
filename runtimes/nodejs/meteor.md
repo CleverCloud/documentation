@@ -1,13 +1,11 @@
 ---
-title: Deploy Meteor.js apps
+title: Deploying Meteor.js apps
 shortdesc: Meteor is an open source platform for web, mobile, and desktop.
 tags:
 - meteor
 - meteorjs
 - nodejs
 ---
-
-# Deploy Meteor.js apps
 
 Clever Cloud allows you to deploy any Meteor.js application. This page will explain how to set up your application to run it on our services.
 

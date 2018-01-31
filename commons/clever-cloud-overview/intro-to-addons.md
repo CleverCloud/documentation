@@ -7,8 +7,6 @@ tags:
 - addons
 ---
 
-# Intro to add-ons
-
 Applications often requires one or more services in addition to the runtime itself. For example, you may need databases
 for storing data, cache engine for performances, long time log storage, etc...
 
@@ -31,7 +29,6 @@ Some add-ons are developed and maintained by Clever Cloud, exclusively.
 * Kafka$
 * RabbitMQ
 * Riak KV
-
 
 ## Adding an add-on
 

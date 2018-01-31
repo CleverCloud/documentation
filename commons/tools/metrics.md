@@ -5,8 +5,6 @@ tags:
 - apps
 ---
 
-# Clever Cloud Metrics
-
 <div class="panel panel-warning">
   <div class="panel-heading">
     <h4>Warning:</h4>

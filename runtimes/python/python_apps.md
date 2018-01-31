@@ -1,12 +1,10 @@
 ---
-title: Deploy Your App
+title: Deploying Python apps
 position: 1
 shortdesc: Python 2.7 and 3.6 are available on our platform. You can use Git to deploy your application.
 tags:
 - python
 ---
-
-# Deploy Python apps
 
 Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 You can learn how to use Python and see almost immediate gains in productivity and lower maintenance costs.

@@ -5,8 +5,6 @@ tags:
 - nodejs
 ---
 
-# Node.js + MongoDB sample application
-
 The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
 
 The application is a very simple list. You can add and delete values. More information about the application:

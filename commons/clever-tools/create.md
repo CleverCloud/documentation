@@ -1,5 +1,5 @@
 ---
-title: Create an application
+title: Application creation with Clever Tools
 position: 2
 shortdesc: Create a new application using the Clever Cloud CLI tool
 tags:
@@ -18,8 +18,7 @@ keywords:
 - dependency
 - exposed configuration
 ---
-
-# Create an application
+## Apps creation process
 
 `clever create` allows you to create a new application.
 
@@ -66,7 +65,7 @@ When creating your application, you can link it to github for deployments.
     # Link an application to github
     clever create --github <owner>/<repository>
 
-# Addon
+## Addon creation process
 
 Using `clever addon`, you can add, rename or delete addon and list available addon providers
 
@@ -108,7 +107,7 @@ If you don't want any confirmation, use `--yes`.
     clever addon delete <addon-name>
 
 
-# Dependencies
+## Dependencies
 
 ### Link an application or an addon
 
@@ -122,7 +121,7 @@ You can make dependencies using `clever service link`
 
 You can unlink dependency using `unlink-app` and `unlink-addon`
 
-# Exposed configuration
+## Exposed configuration
 
 Clever-tools allows you to get and update the exposed configuration of your application that allows dependencies to get informations about your application.
 

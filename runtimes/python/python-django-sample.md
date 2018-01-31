@@ -5,8 +5,6 @@ tags:
 - python
 ---
 
-# Django sample application
-
 The goal of this article is to show you how to deploy a Django application on Clever Cloud.
 
 The application is a very basic one. More information about the application:  

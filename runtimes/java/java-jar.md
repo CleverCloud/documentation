@@ -6,8 +6,6 @@ tags:
 - java
 ---
 
-# Deploy Jar files
-
 Clever Cloud offers you to run any Java ARchive file. You do not
 need to change your code, but running it on Clever Cloud needs some
 configuration files, here is what you can do:

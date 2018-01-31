@@ -17,14 +17,14 @@ You can either make a [pull-request](https://github.com/CleverCloud/doc.clever-c
 
 ## Coding style
 
-Each page begin with a [YAML](http://www.yaml.org/) section used for metadata, and the rest of the article is written in [markdown](https://daringfireball.net/projects/markdown/syntax). Make sure to reduce inline HTML to the maximum, altough is it needed for some table formatting.
+Each page begins with a [YAML](http://www.yaml.org/) section used for metadata, and the rest of the article is written in [markdown](https://daringfireball.net/projects/markdown/syntax). Make sure to reduce inline HTML to the maximum, although it is needed for some table formatting.
 
 ### YAML section
 
-* **title**: The title used for the search result and the H1 of the article page.
-* **shortdesc**: Used to searched terms via Algolia and show up when you're using the search.
+* **title**: The title used for the search result and the `H1` of the article page.
+* **shortdesc**: Used to search terms via Algolia and shows up when you're using the search.
 * **tags**: The tags are used to categorize the article in sections (within Account Setup, Dashboard Setup, CLI, Apps, Addons, Developer, Billing, Support and FAQ)
-* **keywords**: Used to reference the article in Algolia's index for improved search (optionnal).
+* **keywords**: Used to reference the article in Algolia's index for improved search (optional).
 
 ### Article section
 

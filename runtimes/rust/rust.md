@@ -1,5 +1,5 @@
 ---
-title: Deploy rust apps
+title: Deploy Rust apps
 shortdesc: Rust is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
 tags:
 - rust
@@ -10,14 +10,14 @@ keywords:
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-     <h4>Rust support is in private beta</h4>
+     <h4>Rust support is in beta</h4>
   </div>
   <div class="panel-body">
-    If you are interested in accessing the beta test, please contact the support.
+    If you encounter an issue, please contact the support.
   </div>
 </div>
 
-Clever Cloud allows you to deploy rust web applications. This page will explain
+Clever Cloud allows you to deploy Rust web applications. This page will explain
 you how to set up your application to run it on our service.
 
 You do not need to change a lot in your application, the *requirements* will
@@ -27,7 +27,7 @@ properties to setup.
 ## Overview
 
 Rust is a systems programming language that runs blazingly fast, prevents
-segfaults, and guarantees thread safety. You can build rust web services with
+segfaults, and guarantees thread safety. You can build Rust web services with
 frameworks like [Iron](http://ironframework.io/)
 
 ## Create an application
@@ -132,9 +132,9 @@ It adds the git configuration before the build start and it cleans it after the 
 ### Rust channels
 
 By default, your application is built with the latest stable version. If you
-require beta, nightly or a specific rust version, you can set `RUSTUP_CHANNEL`
+require beta, nightly or a specific Rust version, you can set `RUSTUP_CHANNEL`
 to `beta`, `nightly` or a specific version (eg. `1.13.0`). The build uses
-`rustup` to select the rust version you need.
+`rustup` to select the Rust version you need.
 
 ## Environment injection
 

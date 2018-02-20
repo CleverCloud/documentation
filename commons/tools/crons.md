@@ -50,14 +50,42 @@ Environment variables are not available in scripts / executables ran from crons.
 
 To do so, your cron should call a shell script which will inject the environment and in turn run your command:
 
-```bash
+In `clevercloud/cron.json`:
+
+```haskell
+  [
+    "*/5 * * * * sh $ROOT/path/to/script.sh"
+  ]
+```
+And in `script.sh`:
+
+```bash 
 #! /usr/bin/env bash
 
 source /home/bas/applicationrc
 
 /usr/bin/php $APP_HOME/cron.php
 ```
+Now you can call environment variables as you want in `cron.php`.   
 
+If you need to inject environnement variables in more than one cron you pass the cron in arguments on the bash script:  
+In `clevercloud/cron.json`:
+
+```haskell
+  [
+    "*/5 * * * * sh $ROOT/path/to/script.sh cron.php",
+    "*/10 * * * * sh $ROOT/path/to/script.sh other_cron.php"
+  ]
+```
+And in `script.sh`:
+
+```bash 
+#! /usr/bin/env bash
+
+source /home/bas/applicationrc
+
+/usr/bin/php $APP_HOME/$1
+```
 You can refer to [this list](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
 
 <div class="alert alert-hot-problems">

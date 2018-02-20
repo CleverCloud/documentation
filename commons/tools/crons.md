@@ -10,7 +10,7 @@ The configuration file used for crontab is `/clevercloud/cron.json`.
 
 Here is the general syntax:
 
-```haskell
+```json
   [
     "<string>",
     "<string>"
@@ -38,7 +38,7 @@ You can use the special variable `$ROOT` to refer to the root folder of your app
 
 Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
 
-```haskell
+```json
   [
     "*/5 * * * * /usr/bin/php $ROOT/cron.php"
   ]
@@ -52,7 +52,7 @@ To do so, your cron should call a shell script which will inject the environment
 
 In `clevercloud/cron.json`:
 
-```haskell
+```json
   [
     "*/5 * * * * sh $ROOT/path/to/script.sh"
   ]
@@ -66,12 +66,12 @@ source /home/bas/applicationrc
 
 /usr/bin/php $APP_HOME/cron.php
 ```
-Now you can call environment variables as you want in `cron.php`.   
+Now you have access to environment variables in `cron.php`.   
 
-If you need to inject environnement variables in more than one cron you pass the cron in arguments on the bash script:  
+If you need to inject environnement variables in more than one cron; you can pass the file in an argument of the bash script:  
 In `clevercloud/cron.json`:
 
-```haskell
+```json
   [
     "*/5 * * * * sh $ROOT/path/to/script.sh cron.php",
     "*/10 * * * * sh $ROOT/path/to/script.sh other_cron.php"

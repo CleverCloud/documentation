@@ -22,7 +22,7 @@ Clever Cloud allows to declare the topology of your micro services graph by
 letting you link applications in the same way you can link addons.
 
 <figure class="cc-content-img" style="width:355px">
-  ><img src="/doc/assets/images/service-dependencies-example.png" data-action="zoom">
+  <img src="/doc/assets/images/service-dependencies-example.png" data-action="zoom">
   <figcaption>Service dependencies</figcaption>
 </figure>
 

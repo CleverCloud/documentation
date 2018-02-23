@@ -41,13 +41,13 @@ reasonable level** is reached.
 The following scheme depicts a Scaler replication in case of a load increase:
 
 <figure class="cc-content-img" >
-  <a href="/assets/images/scaling_horizontal_scheme.jpg"><img src="/doc/assets/images/scaling_horizontal_scheme.jpg"/></a>
+  <img src="/doc/assets/images/scaling_horizontal_scheme.jpg" data-action="zoom"/>
 </figure>
 
 You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.
 
 <figure class="cc-content-img" style="width:355px">
-  <a href="/assets/images/select-scalab.png"><img src="/doc/assets/images/select-scalab.png"/></a>
+  <img src="/doc/assets/images/select-scalab.png" data-action="zoom"/>
   <figcaption>Horizontal scaling: the amount of scaler will increase, not the scaler size.</figcaption>
 </figure>
 
@@ -63,13 +63,13 @@ load, the larger the instance.
 The following scheme depicts a larger Scaler replacement in case of a load increase:
 
 <figure class="cc-content-img">
-  <a href="/assets/images/scaling_vertical_scheme.jpg"><img src="/doc/assets/images/scaling_vertical_scheme.jpg"/></a>
+  <img src="/doc/assets/images/scaling_vertical_scheme.jpg" data-action="zoom"/>
 </figure>
 
 You can choose the type of Scalers you consider of just let Clever Cloud choose for you:
 
 <figure class="cc-content-img">
-  <a href="/doc/assets/images/select-scalab.png"><img src="/doc/assets/images/select-scalab.png"/></a>
+  <img src="/doc/assets/images/select-scalab.png" data-action="zoom"/>
   <figcaption>Vertical scaling: the amount of scalers will not increase in this configuration, but the scaler size will,
   from S to XL.</figcaption>
 </figure>

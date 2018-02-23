@@ -76,9 +76,7 @@ This screen sums-up the characteristics of the selected add-on.
 Features and environment variables (if applicable) are shown.
 
 <figure class="cc-content-img">
-  <a class="cc-content-img" href="/doc//assets/images/managing-addons-info.png">
-    <img src="/doc/assets/images/managing-addons-info.png">
-  </a>
+  <img src="/doc/assets/images/managing-addons-info.png" data-action="zoom">
   <figcaption>
     Example of the information tab of an add-on
   </figcaption>
@@ -91,9 +89,7 @@ Add-ons can be managed from the Configuration tab.
 This screen is managed directly by the provider of the add-on.
 
 <figure class="cc-content-img">
-  <a class="cc-content-img" href="/doc/assets/images/managing-addons-config.png">
-    <img src="/doc/assets/images/managing-addons-config.png">
-  </a>
+  <img src="/doc/assets/images/managing-addons-config.png" data-action="zoom">
   <figcaption>
     Example of the configuration tab of an add-on
   </figcaption>

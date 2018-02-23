@@ -30,6 +30,6 @@ Invoices are available in the *Invoices* tab of the *Credits Manager* section. I
 * for organization: available in *Configuration > Informations and Advanced Configuration*
 
 <figure class="cc-content-img">
-  <a href="/assets/images/billing-infos.png"><img src="/doc/assets/images/billing-infos.png"/></a>
+  <img src="/doc/assets/images/billing-infos.png" data-action="zoom"/>
   <figcaption>Organization information</figcaption>
 </figure>

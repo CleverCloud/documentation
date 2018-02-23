@@ -18,7 +18,7 @@ You can start, restart, and stop your application in the associated configuratio
 Stop functionality is useful during the development of the application to limit its credit consumption.
 
 <figure class="cc-content-img">
-  <img src="/doc/assets/images/app-management.png"/></a>
+  <img src="/doc/assets/images/app-management.png" data-action="zoom"/>
 </figure>
 <figcaption>Manage your application</figcaption>
 
@@ -27,7 +27,7 @@ Stop functionality is useful during the development of the application to limit 
 You can edit your application in the information panel. You can rename, change region, delete and change some properties.
 
 <figure class="cc-content-img">
-  <img src="/doc/assets/images/application-edit.png"/></a>
+  <img src="/doc/assets/images/application-edit.png" data-action="zoom"/>
 </figure>
 <figcaption>Edit your application</figcaption>
 

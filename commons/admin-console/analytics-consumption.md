@@ -14,4 +14,4 @@ You only pay what you consume. It means that every 10 minutes, we check your app
 The following charts on the dashboard main page presents daily credits consumption:  
 
 <br/>
-<figure class="cc-content-img"><img src="/doc/assets/images/analytics.png"></figure>
+<figure class="cc-content-img"><img src="/doc/assets/images/analytics.png"data-action="zoom"></figure>

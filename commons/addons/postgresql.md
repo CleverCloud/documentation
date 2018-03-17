@@ -74,6 +74,5 @@ The version currently installed by the add-on is :
 Some applications require a populated database to run properly.
 If you want to import your **SQL** dump, you can use several methods:
 
-1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/adminer/).
-2. Command line tool for PostgreSQL administration like `psql`.
-3. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).
+1. Command line tool for PostgreSQL administration like `psql`.
+2. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).

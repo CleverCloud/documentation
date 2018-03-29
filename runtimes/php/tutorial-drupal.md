@@ -19,13 +19,15 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/) and link it to your application
 3. [Send these Drupal files via FTP](/doc/clever-cloud-overview/add-application/#ftp-deployment) using the FTP credentials from the addon dashboard.
 4. When finished, launch the application with the url that you can find in the *domains* panel in the left sidebar.
-5. Follow the Drupal installation steps
-6. When asked for database informations, fill them with the ones displayed in the database addon dashboard:
-  * database name
-  * database username
-  * database password
-    * database host, for example `bj79c949bvl2deb6.mysql.services.clever-cloud.com`
-    * database port
+5. Follow the Drupal installation steps.
+6. When asked for database informations, fill them with the ones displayed in the database addon dashboard.
+* database name
+* database username
+* database password
+* database host, for example `bj79c949bvl2deb6.mysql.services.clever-cloud.com`
+* database port
+
+*Note: You can also make use of environnement variables. But any env update will require a re-deploy of the app*
 
 
 ## Deploy via Git

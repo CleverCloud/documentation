@@ -362,7 +362,7 @@ If you have a request about modules, feel free to contact our support at <suppor
     <h4>Warning:</h4>
   </div>
   <div class="panel-body">
-    <p>memcache and memcached extensions are not yet available for PHP 7</p>
+    <p>On PHP 7, the memcache extension is not available; only memcached is available</p>
   </div>
 </div>
 

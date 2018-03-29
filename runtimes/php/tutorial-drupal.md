@@ -21,11 +21,11 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 4. When finished, launch the application with the url that you can find in the *domains* panel in the left sidebar.
 5. Follow the Drupal installation steps.
 6. When asked for database informations, fill them with the ones displayed in the database addon dashboard.
-* database name
-* database username
-* database password
-* database host, for example `bj79c949bvl2deb6.mysql.services.clever-cloud.com`
-* database port
+  * database name
+  * database username
+  * database password
+  * database host, for example `bj79c949bvl2deb6.mysql.services.clever-cloud.com`
+  * database port
 
 *Note: You can also make use of environnement variables. But any env update will require a re-deploy of the app*
 

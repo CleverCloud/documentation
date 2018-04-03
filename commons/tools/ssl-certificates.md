@@ -7,11 +7,14 @@ tags:
 - tls
 - certificate
 - https
+- encrypt
 ---
 
 TLS certificates are necessary to enable secure HTTPS connections between a browser and you application. These certificates can be bought online, or directly via Clever Cloud (Domain Validation or Wildcard SSL). In that case, we manage the whole process for you.
 
 If you already have your certificates, you can upload them on Clever Cloud. 
+
+**About Let's Encrypt**: The service is currently in beta. You can ask for a Let's Encrypt certificate via the support. An integrated user interface is coming soon.
 
 ## Uploading certificates
 

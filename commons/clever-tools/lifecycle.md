@@ -38,6 +38,8 @@ Where `DRAIN-TYPE` is one of:
  - `UDPSyslog`: for UDP syslog endpoint
  - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication)
  - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication)
+
+ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
  
 You can list the currently activated drains with this command.
 

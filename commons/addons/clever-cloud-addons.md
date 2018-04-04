@@ -29,6 +29,16 @@ Clever Cloud provides multiple add-ons to work with your applications:
 * [Cellar](/doc/addons/cellar)
 * [Redis](/doc/addons/redis)
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Warning on SHARED plans</h4>
+  </div>
+  <div class="panel-body">
+    Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.<br>
+    Shared clusters may not be running the same version as dedicated instances.
+  </div>
+</div>
+
 ## Create an add-on for your application
 
 In order to create an add-on for your application, go to the [Clever Cloud Console](https://console.clever-cloud.com/).

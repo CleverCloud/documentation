@@ -41,4 +41,15 @@ There is two kinds of billing:
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
 * Per-usage billing: Add-ons based on consumption, like [FS-Buckets](/doc/addons/fs_buckets/) and [Cellar](/doc/addons/cellar/)
 
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Warning on SHARED plans</h4>
+  </div>
+  <div class="panel-body">
+    Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.<br>
+    Shared clusters may not be running the same version as dedicated instances.
+  </div>
+</div>
+
 **Note:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.

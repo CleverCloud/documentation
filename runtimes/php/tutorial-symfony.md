@@ -40,11 +40,11 @@ From the console, you can edit the application's environment variables. Click on
 From the CLI, it's even simpler: `clever env import < .env`.
 
 
-### Configure monolog to use syslog
+### Configure monolog to use error_log
 
-Make sure that Symfony send error level logs to syslog, then you will be able to read them in clever-cloud log console.
+Make sure that Symfony send error level logs to error_log, then you will be able to read them in clever-cloud log console.
 
-Here is an exemple of monolog configuration that stores all log messages during a request but only writes them only if one of the messages reaches error level, and in all cases passes all error level message to syslog:
+Here is an exemple of monolog configuration that stores all log messages during a request but only writes them only if one of the messages reaches error level, and in all cases passes all error level message to error_log:
 
 ```
 monolog:
@@ -58,9 +58,9 @@ monolog:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
 
-        syslog_handler:
-            type: syslog
-            level: error
+        error_log_handler:
+            type: error_log
+            level: warning
 ```
 
 

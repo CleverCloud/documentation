@@ -44,7 +44,7 @@ From the CLI, it's even simpler: `clever env import < .env`.
 
 Make sure that Symfony send error level logs to error_log, then you will be able to read them in clever-cloud log console.
 
-Here is an exemple of monolog configuration that stores all log messages during a request but only writes them only if one of the messages reaches error level, and in all cases passes all error level message to error_log:
+Here is an exemple of monolog configuration that stores all log messages during a request but only send them to error_log if one of the messages reaches error level:
 
 ```
 monolog:
@@ -52,11 +52,10 @@ monolog:
         filter_for_errors:
             type: fingers_crossed
             action_level: error
-            handler: file_handler
-
-        file_handler:
-            type: stream
-            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            handler: error_log_handler
+            excluded_404s:
+                 # regex: exclude all 404 errors from the logs
+                 - ^/
 
         error_log_handler:
             type: error_log

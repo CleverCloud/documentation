@@ -13,6 +13,13 @@ keywords:
 
 MySQL is an open-source relational database management system (RDBMS).
 
+## MySQL version
+
+The version currently installed by the add-on is :
+
+- on shared plans (DEV and S) : MySQL 5.5.28
+- on newly created dedicated databases (plans M and above) : MySQL 5.7.20
+
 ## MySQL plans
 
 <div class="panel panel-warning">

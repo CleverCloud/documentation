@@ -14,6 +14,13 @@ keywords:
 
 MongoDB is an open source NoSQL document-oriented database.
 
+## MongoDB version
+
+The version currently installed by the add-on is :
+
+- on shared plans (Peanut) : MongoDB 3.2.9
+- on newly created dedicated databases (plans Hazelnut and above) : MongoDB 3.6.4
+
 ## MongoDB plans
 
 <table class="table table-bordered table-striped dataTable"><caption>MongoDB pricing plans</caption>

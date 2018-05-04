@@ -14,6 +14,10 @@ keywords:
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.
 
+## Redis version
+
+The version currently installed by the add-on is : Redis 4.0.2
+
 ## Redis administration with Redsmin
 
 Each Redis add-on provides a [Redsmin](https://www.redsmin.com) dasboard, which allows

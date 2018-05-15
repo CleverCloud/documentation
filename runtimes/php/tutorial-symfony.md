@@ -48,9 +48,11 @@ You will also need to set the environment variable `APP_ENV` to one of:
 
 ### Configure monolog to use error_log
 
-Make sure that Symfony send error level logs to error_log, then you will be able to read them in clever-cloud log console.
+For your application logs to be collected and available in the console and CLI,
+you need to configure monolog to use its `error_log` output.
 
-Here is an exemple of monolog configuration that stores all log messages during a request but only send them to error_log if one of the messages reaches error level:
+That does not mean that it will only output error level logs, you can set it to
+use any level, here is an exemple with the info level (and above):
 
 ```
 monolog:
@@ -65,7 +67,7 @@ monolog:
 
         error_log_handler:
             type: error_log
-            level: warning
+            level: info
 ```
 
 

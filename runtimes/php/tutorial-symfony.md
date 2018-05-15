@@ -39,6 +39,12 @@ From the console, you can edit the application's environment variables. Click on
 
 From the CLI, it's even simpler: `clever env import < .env`.
 
+You will also need to set the environment variable `APP_ENV` to one of:
+
+ - dev
+ - test
+ - prod
+
 
 ### Configure monolog to use error_log
 

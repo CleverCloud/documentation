@@ -23,7 +23,8 @@ Create a *Java + Maven* or *Java + Gradle* application, more information is avai
 
 ## Necessary information
 
-You *must* provide a `clevercloud/jar.json` file (jar.json file in
+You *must* either have the `CC_JAR_PATH` environment variable containing the
+path to your jar or provide a `clevercloud/jar.json` file (jar.json file in
 clevercloud folder which is at the root of you application) that
 contains at least the following:
 
@@ -72,6 +73,9 @@ embedded dependencies is:
 }
 ```
 ## More configuration
+
+You can pass extra arguments to the `java -jar` command by using the environment
+variable `CC_EXTRA_JAVA_ARGS`
 
 The full configuration can look like the following:
 

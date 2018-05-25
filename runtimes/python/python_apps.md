@@ -143,6 +143,15 @@ You have to write either `2` or `3` in it to select the python version. Please p
 
 **Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
 
+## Choose Pip version
+
+The default version of pip on Clever Cloud is **10**.
+If you want to use pip **9** instead, create an environment variable like this:
+
+```
+CC_PIP_VERSION=9
+```
+
 ## uWSGI, Gunicorn and Nginx configuration
 
 uWSGI, gunicorn and nginx settings can be configured by setting environment variables:

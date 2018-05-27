@@ -115,7 +115,7 @@ Create a `clevercloud/pre-build.sh` file at the root of your application and pas
 #!/usr/bin/env bash
 
 git config --global credential.helper store
-echo "https://${GIT_USERNAME}:${GIT_PASSWORD}@gitlab.clever-cloud.com" > ~/.git-credentials
+echo "https://${GIT_USERNAME}:${GIT_PASSWORD}@gitlab.com" > ~/.git-credentials
 chmod 600 ~/.git-credentials
 ```
 

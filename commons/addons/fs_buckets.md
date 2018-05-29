@@ -60,6 +60,20 @@ CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
 
 ## Configuring your application with buckets.json (@deprecated)
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Deprecation notice</h4>
+  </div>
+  <div class="panel-body">
+    <p>
+    This method is deprecated, we strongly recommend that you use environment variables.
+    </p>
+    <p>
+      If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
+    </p>
+  </div>
+</div>
+
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
 

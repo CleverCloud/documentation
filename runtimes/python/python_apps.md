@@ -86,6 +86,16 @@ dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
 
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Beware of timezones with Celery Beat!</h4>
+  </div>
+  <div class="panel-body">
+   There is a bug in recent versions of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment
+variable. The bug is documented here: [https://github.com/celery/celery/issues/4184](https://github.com/celery/celery/issues/4184).
+  </div>
+</div>
+
 ## Select the python backend
 
 Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the

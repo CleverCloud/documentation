@@ -14,17 +14,17 @@ tasks before and after those phases.
 
 The available hooks are:
 
- - `PRE_BUILD`
- - `POST_BUILD`
- - `PRE_RUN`
- - `RUN_SUCCEEDED`
- - `RUN_FAILED`
+ - Pre Build
+ - Post Build
+ - Pre Run
+ - On Run Succeeded
+ - On Run Failed
 
 ## Setting hooks up
 
 Hooks are set up through [environment
 variables](https://www.clever-cloud.com/doc/admin-console/environment-variables/).
-To set up a `POST_BUILD` hook, you need to define a `CC_POST_BUILD_HOOK`
+To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 
 	CC_POST_BUILD_HOOK=echo "it works!"
@@ -44,7 +44,7 @@ the project's build configuration.
 
 ## Hooks types
 
-### `PRE_BUILD`
+### Pre Build (`CC_PRE_BUILD_HOOK`)
 
 This hook is ran before the dependencies are fetched. If it fails, the
 deployment fails.
@@ -56,7 +56,7 @@ This hook is perfect for:
  - build tool configuration (eg setting up a `.npmrc` with private tokens)
  - extra dependencies fetching (eg `npm install` for frontend deps)
 
-### `POST_BUILD`
+### Post Build (`CC_POST_BUILD_HOOK`)
 
 This hook is ran after the project is built, and before the cache archive is
 generated. If it fails, the deployment fails.
@@ -67,7 +67,7 @@ This hook is perfect for:
 
  - extra build steps that you want to cache (eg bundling your frontend assets)
 
-### `PRE_RUN`
+### Pre Run (`CC_PRE_RUN_HOOK`)
 
 This hook is ran before the application is started, but after the cache archive
 has been generated. If it fails, the deployment fails.
@@ -78,7 +78,7 @@ This hook is perfect for:
 
  - preparation tasks that need to be ran every time (eg a database migration check)
 
-### `RUN_SUCCEEDED` and `RUN_FAILED`
+### Run Succeeded (`CC_RUN_SUCCEEDED_HOOK`) or Failed (`CC_RUN_FAILED_HOOK`)
 
 These hooks are ran once the application has started (or has failed starting).
 Their failure doesn't cause the deployment to fail.

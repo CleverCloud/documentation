@@ -69,7 +69,7 @@ For instance for MySQL:
             'host' => env('MYSQL_ADDON_HOST', '127.0.0.1'),
             'port' => env('MYSQL_ADDON_PORT', '3306'),
             'database' => env('MYSQL_ADDON_DB', 'forge'),
-            'username' => env('MYSQL_ADDON_USERNAME', 'forge'),
+            'username' => env('MYSQL_ADDON_USER', 'forge'),
             'password' => env('MYSQL_ADDON_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',

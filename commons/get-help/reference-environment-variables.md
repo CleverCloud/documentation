@@ -643,6 +643,7 @@ So you can alter the build&start process for your application.
   <tr>
     <th><center>Name</center></th>
     <th><center>Description</center></th>
+    <th><center>Default value</center></th>
     <th><center>Read Only</center></th>
   </tr>
   <tr>
@@ -661,6 +662,12 @@ So you can alter the build&start process for your application.
     <td>CC_PHOENIX_SERVER_GOAL</td>
     <td>Phoenix server goal.</td>
     <td>phx.server</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_PHOENIX_RUN_EXTO_MIGRATE</td>
+    <td>Whether to run 'mix ecto.migrate' or not.</td>
+    <td>true</td>
     <td></td>
   </tr>
 </table>

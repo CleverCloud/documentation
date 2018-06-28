@@ -665,7 +665,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>CC_PHOENIX_RUN_EXTO_MIGRATE</td>
+    <td>CC_PHOENIX_RUN_ECTO_MIGRATE</td>
     <td>Whether to run 'mix ecto.migrate' or not.</td>
     <td>true</td>
     <td></td>

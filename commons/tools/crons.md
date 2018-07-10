@@ -49,11 +49,11 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
 To have access to environment variable, you must wrap your commands in a bash script. Let's say
 your command is `bundle exec rake myapp:dosomething`.
 
-You need to put it in a bash script, starting with `#!/usr/bin/bash -l`. The *`-l`* is very
+You need to put it in a bash script, starting with `#!/bin/bash -l`. The *`-l`* is very
 important:
 
 ```bash
-#!/usr/bin/bash -l
+#!/bin/bash -l
 
 cd ${APP_HOME} # Which has been loaded by the env.
 bundle exec rake myapp:dosomething
@@ -86,7 +86,7 @@ You might be tempted to put the following in your cron.json file:
 
 ```json
   [
-    "*/5 * * * * /usr/bin/bash $ROOT/crons/mycron.sh"
+    "*/5 * * * * /bin/bash $ROOT/crons/mycron.sh"
   ]
 ```
 

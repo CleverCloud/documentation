@@ -13,9 +13,11 @@ keyworkds:
 - collaboration
 ---
 
-In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations.
+In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations. Each organization has its own billing, leaning that you can create as much as orgnanization you'd like. Most use-cases include the billing separation of private and business applications, several businesses or business units (within one company, for instance).
 
 Once you create an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which gives them rights.
+
+Each organization have its own identifier looking like `orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
 
 ## Add an organization

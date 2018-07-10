@@ -46,46 +46,53 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
 
 ## Access environment variables
 
-Environment variables are not available in scripts / executables ran from crons. You must inject them yourself.
+To have access to environment variable, you must wrap your commands in a bash script. Let's say
+your command is `bundle exec rake myapp:dosomething`.
 
-To do so, your cron should call a shell script which will inject the environment and in turn run your command:
+You need to put it in a bash script, starting with `#!/bin/bash -l`. The *`-l`* is very
+important:
 
-In `clevercloud/cron.json`:
+```bash
+#!/bin/bash -l
+
+cd ${APP_HOME} # Which has been loaded by the env.
+bundle exec rake myapp:dosomething
+```
+
+Then you need to commit an executable file:
+
+```
+project/ $ chmod +x crons/mycron.sh
+project/ $ git add crons/mycron.sh
+project/ $ git diff --cached
+diff --git a/crons/mycron.sh b/crons/mycron.sh
+old mode 100644
+new mode 100755
+project/ $ git commit -m "Make cron file executable"
+```
+
+Then, in `clevercloud/cron.json`:
 
 ```json
   [
-    "*/5 * * * * sh $ROOT/path/to/script.sh"
+    "*/5 * * * * $ROOT/crons/mycron.sh"
   ]
 ```
-And in `script.sh`:
 
-```bash 
-#! /usr/bin/env bash
 
-source /home/bas/applicationrc
+### Do *not* double bash!
 
-/usr/bin/php $APP_HOME/cron.php
-```
-Now you have access to environment variables in `cron.php`.   
-
-If you need to inject environnement variables in more than one cron; you can pass the file in an argument of the bash script:  
-In `clevercloud/cron.json`:
+You might be tempted to put the following in your cron.json file:
 
 ```json
   [
-    "*/5 * * * * sh $ROOT/path/to/script.sh cron.php",
-    "*/10 * * * * sh $ROOT/path/to/script.sh other_cron.php"
+    "*/5 * * * * /bin/bash $ROOT/crons/mycron.sh"
   ]
 ```
-And in `script.sh`:
 
-```bash 
-#! /usr/bin/env bash
+Do *NOT*. Invoking bash here will supersede the shebang and cancel the `bash -l` that
+loads the env. So just put the path to your _executable_ `mycron.sh`.
 
-source /home/bas/applicationrc
-
-/usr/bin/php $APP_HOME/$1
-```
 You can refer to [this list](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
 
 <div class="alert alert-hot-problems">

@@ -74,8 +74,8 @@ embedded dependencies is:
 ```
 ## More configuration
 
-You can pass extra arguments to the `java -jar` command by using the environment
-variable `CC_EXTRA_JAVA_ARGS`
+You can pass extra arguments to the `java` command by using the environment
+variable `CC_EXTRA_JAVA_ARGS` and to your jar by using `CC_JAR_ARGS`
 
 The full configuration can look like the following:
 

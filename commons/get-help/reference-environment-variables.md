@@ -247,7 +247,13 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_EXTRA_JAVA_ARGS</td>
-    <td>Define extra arguments to pass to 'java -jar'.</td>
+    <td>Define extra arguments to pass to 'java' for jars.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_JAR_ARGS</td>
+    <td>Define arguments to pass to the jar we launch.</td>
     <td></td>
     <td></td>
   </tr>

@@ -172,16 +172,6 @@ If you want to use `yarn`, please note that it's only installed for pre-installe
 Use `^6` or `^7` in your `engines.node` if you need to target the pre-installed version for a given
 release.
 
-## Pre-installed modules
-
-We currently provide these pre-installed modules:
-
-**You can use any version of node you need and any modules you need. Preinstall version is only for faster deployment process.**
-
-* phantomjs
-
-New versions will be added as they are released and are only available with pre-installed versions of node.
-
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the

@@ -502,6 +502,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>GZIP_TYPES</td>
+    <td>Set the mime types to compress.</td>
+    <td>`text/* application/json application/xml application/javascript image/svg+xml`</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>NGINX_READ_TIMEOUT</td>
     <td>Read timeout in seconds</td>
     <td>`300`</td>

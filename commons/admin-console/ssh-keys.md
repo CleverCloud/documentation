@@ -40,7 +40,7 @@ You may already have an SSH key and so do not need to generate a new one. To che
 
 1. Wether you use Mac or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
-3. If the folder exists, run `ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+3. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
    If you can find them, you do not need to generate a new one, simply go to the following
    "Add your key on Clever Cloud" part!
 
@@ -51,7 +51,7 @@ You may already have an SSH key and so do not need to generate a new one. To che
 1. If you don't have it, download [Git for Windows](https://git-for-windows.github.io/) and install it.
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
 3. Run `cd ~/.ssh/` in your Terminal.
-4. If the folder exists, run `ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+4. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
    If you can find them, you do not need to generate a new one, simply go to the following
    "Add you key on Clever Cloud" part!
 
@@ -62,15 +62,15 @@ If you read the previous section, you should have a Terminal open.
 1.  In your Terminal, enter the following bash line:
 
     ```bash
-    ssh-keygen -t rsa -C "your_email@youremail.com"
+    ssh-keygen -t ed25519 -C "your_email@youremail.com"
     ```
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
 2.  When asked, enter a passphrase:
 
     ```bash
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/your_home_path/.ssh/id_rsa):
+    Generating public/private ed25519 key pair.
+    Enter file in which to save the key (/your_home_path/.ssh/id_ed25519):
     # Now you should enter a passphrase.
     Enter passphrase (empty for no passphrase): [Type a passphrase]
     Enter same passphrase again: [Type passphrase again]
@@ -79,8 +79,8 @@ If you read the previous section, you should have a Terminal open.
     Which should give you something like this:
 
     ```bash
-    Your identification has been saved in /your_home_path/.ssh/id_rsa.
-    Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.
+    Your identification has been saved in /your_home_path/.ssh/id_ed25519.
+    Your public key has been saved in /your_home_path/.ssh/id_ed25519.pub.
     The key fingerprint is:
     01:0e:e5:2d:ab:98:d6:17:a1:6d:f0:68:9f:d0:a2:db your_email@youremail.com
     ```
@@ -90,7 +90,7 @@ If you read the previous section, you should have a Terminal open.
 ### Public SSH Key
 To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, go in "Profile" and in the "SSH Keys" tab.
 
-Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_rsa.pub** file.
+Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_ed25519.pub** file.
 
 <div class="alert alert-hot-problems">
 <h4>Remember</h4>
@@ -144,11 +144,11 @@ Please update your Clever Cloud SSH key path accordingly.
 Host ccloud-par
   Hostname push-par-clevercloud-customers.services.clever-cloud.com
   User git
-  IdentityFile ~/.ssh/id_rsa_clevercloud
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
 
 # config for Clever Cloud specific key (Montreal zone)
 Host ccloud-mtl
   Hostname push-mtl-clevercloud-customers.services.clever-cloud.com
   User git
-  IdentityFile ~/.ssh/id_rsa_clevercloud
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
 ```

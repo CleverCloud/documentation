@@ -41,6 +41,8 @@ You may already have an SSH key and so do not need to generate a new one. To che
 1. Wether you use Mac or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
 3. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
+   Using *id_rsa* and *id_rsa.pub* is fine too. We are just advocating the use of *ed25519*.
+   Smaller to copy and way stronger than 2048-bit RSA keys.
    If you can find them, you do not need to generate a new one, simply go to the following
    "Add your key on Clever Cloud" part!
 
@@ -52,6 +54,8 @@ You may already have an SSH key and so do not need to generate a new one. To che
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
 3. Run `cd ~/.ssh/` in your Terminal.
 4. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
+   Using *id_rsa* and *id_rsa.pub* is fine too. We just advocate using *ed25519*.
+   Smaller to copy and way stronger than 2048-bit RSA keys.
    If you can find them, you do not need to generate a new one, simply go to the following
    "Add you key on Clever Cloud" part!
 

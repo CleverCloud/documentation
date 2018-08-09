@@ -146,6 +146,18 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_DOCKER_EXPOSED_HTTP_PORT</td>
+    <td>Set to custom HTTP port if your Docker container runs on custom port.</td>
+    <td>`8080`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_DOCKER_EXPOSED_TCP_PORT</td>
+    <td>Set to custom TCP port if your Docker container runs on custom port but **it still needs a support request to make use of it.**</td>
+    <td>`4040`</td>
+    <td></td>
+  </tr>
 </table>
 
 ### Go

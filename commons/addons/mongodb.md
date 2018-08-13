@@ -21,6 +21,33 @@ The version currently installed by the add-on is :
 - on shared plans (Peanut) : MongoDB 3.2.9
 - on newly created dedicated databases (plans Hazelnut and above) : MongoDB 3.6.4
 
+## About Free Dababases
+
+Free plans are meant for tests and development usage only. Using these databases in production is not recomanded, because actual performances may vary depending on the global cluster's usage. Also, before switching to production, consider to upgrade to a dedicated database for better performances.
+
+### Important Note About Fair Use on Free Databases
+
+Heavy usage of free databases may impact the shared cluster they rely upon, degrading performance of other shared databases. To that extent, we reserve ourselves the right to disconnect databases making a high usage, **above 15 operations/seconds**, if no answer is received from you after a first notice.
+
+## Daily Backups and Retention
+
+By default, Clever Cloud perfoms a free backup every day, with a retention of seven days. Each backups can be found in the add-on dashbaord in the web console, along with the credentials.
+
+## Database Migration Process
+
+The migration process is pretty much the same for each of theses cases:
+
+- migrating from a Clever Cloud shared database to a dedicated one
+- migrating from an external database to a Clever Cloud one
+- migrating between Clever Cloud Databases
+
+The process consists in tree steps:
+
+1. First, perform a backup and download it, either with the Clever Cloud add-on dasbhboard or the `mongodump` command from your workstation.
+2. Install `mongorestore` (a tool comming with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
+3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page. If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...)
+
+
 ## MongoDB plans
 
 <table class="table table-bordered table-striped dataTable"><caption>MongoDB pricing plans</caption>

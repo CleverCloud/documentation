@@ -1,7 +1,7 @@
 ---
 title: MongoDB add-on
 position: 5
-shortdesc: MongoDB is a noSQL and document-oriented database, operated by Clever Cloud.
+shortdesc: An noSQL and document-oriented database, operated by Clever Cloud.
 tags:
 - addons
 keywords:
@@ -12,7 +12,7 @@ keywords:
 - database
 ---
 
-MongoDB is an open source NoSQL document-oriented database.
+MongoDB is an open source NoSQL document-oriented database. We provide these databases with daily backups and monitoring for both shared and dedicated plans.
 
 ## MongoDB version
 

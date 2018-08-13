@@ -23,11 +23,11 @@ The version currently installed by the add-on is :
 
 ## About Free Dababases
 
-Free plans are recommended for test and development usage only. Using these databases in production is not recommended, because performances may vary depending on the global usage of the cluster. Therefore, before switching to production, consider upgrading to a dedicated database for better performances.
+Free plans are recommended for test and development usage only. Using these databases in production is not recommended, because performance may vary depending on the global usage of the cluster. Therefore, before switching to production, consider upgrading to a dedicated database for better performance.
 
 ### Important Note About Fair Use on Free Databases
 
-Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performances of the other databases. To that extent, *above 15 operations/second*, we reserve ourselves the right to disconnect your databases. This will however happen after making contact with your teams.
+Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, we set a soft limit of **15 operations/second**. Going above the limit will expose your database to disconnection, would you not answer our notices.
 
 ## Daily Backups and Retention
 
@@ -43,8 +43,8 @@ The migration process is pretty much the same for each of these cases:
 
 The process consists in three steps:
 
-1. First, perform a backup and download it, either with the Clever Cloud add-on dasbhboard or the `mongodump` command from your workstation.
-2. Install `mongorestore` (a tool comming with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
+1. First, perform a backup and download it, either with the Clever Cloud add-on dashboard or the `mongodump` command from your workstation.
+2. Install `mongorestore` (a tool packaged with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
 3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page. If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...)
 
 

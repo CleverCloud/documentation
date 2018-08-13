@@ -21,7 +21,7 @@ The version currently installed by the add-on is :
 - on shared plans (Peanut) : MongoDB 3.2.9
 - on newly created dedicated databases (plans Hazelnut and above) : MongoDB 3.6.4
 
-## About Free Dababases
+## About Free Databases
 
 Free plans are recommended for test and development usage only. Using these databases in production is not recommended, because performance may vary depending on the global usage of the cluster. Therefore, before switching to production, consider upgrading to a dedicated database for better performance.
 

@@ -1,7 +1,7 @@
 ---
 title: MongoDB add-on
 position: 5
-shortdesc: An noSQL and document-oriented database, operated by Clever Cloud.
+shortdesc: A noSQL and document-oriented database, operated by Clever Cloud.
 tags:
 - addons
 keywords:
@@ -23,25 +23,25 @@ The version currently installed by the add-on is :
 
 ## About Free Dababases
 
-Free plans are meant for tests and development usage only. Using these databases in production is not recomanded, because actual performances may vary depending on the global cluster's usage. Also, before switching to production, consider to upgrade to a dedicated database for better performances.
+Free plans are recommended for test and development usage only. Using these databases in production is not recommended, because performances may vary depending on the global usage of the cluster. Therefore, before switching to production, consider upgrading to a dedicated database for better performances.
 
 ### Important Note About Fair Use on Free Databases
 
-Heavy usage of free databases may impact the shared cluster they rely upon, degrading performance of other shared databases. To that extent, we reserve ourselves the right to disconnect databases making a high usage, **above 15 operations/seconds**, if no answer is received from you after a first notice.
+Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performances of the other databases. To that extent, *above 15 operations/second*, we reserve ourselves the right to disconnect your databases. This will however happen after making contact with your teams.
 
 ## Daily Backups and Retention
 
-By default, Clever Cloud perfoms a free backup every day, with a retention of seven days. Each backups can be found in the add-on dashbaord in the web console, along with the credentials.
+By default, Clever Cloud perfoms a free backup every day, with a retention of seven days. Each backup can be found in the add-on dashboard in the web console, along with the credentials.
 
 ## Database Migration Process
 
-The migration process is pretty much the same for each of theses cases:
+The migration process is pretty much the same for each of these cases:
 
 - migrating from a Clever Cloud shared database to a dedicated one
 - migrating from an external database to a Clever Cloud one
 - migrating between Clever Cloud Databases
 
-The process consists in tree steps:
+The process consists in three steps:
 
 1. First, perform a backup and download it, either with the Clever Cloud add-on dasbhboard or the `mongodump` command from your workstation.
 2. Install `mongorestore` (a tool comming with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))

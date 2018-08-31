@@ -333,6 +333,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_WEBROOT</td>
+    <td>Define the `DocumentRoot` of your project</td>
+    <td>.</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>LDAPTLS_CACERT</td>
     <td></td>
     <td></td>

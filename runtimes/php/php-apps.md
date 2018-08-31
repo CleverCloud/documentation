@@ -46,7 +46,7 @@ By default, all new PHP applications are created with a default `PHP_VERSION`, s
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 
-## Configuration files for PHP applications
+## Configure your PHP applications
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
 `/clevercloud` folder at the root of your application.
@@ -55,6 +55,16 @@ The configuration file for your PHP application must be `/clevercloud/php.json`,
 
 Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may
 want to set another webroot than the default one (*the root of your application*).
+
+#### Using an environment variable
+
+Add a new environment variable called `CC_WEBROOT` and set `/public` as its value. 
+
+```
+clever env set CC_WEBROOT /public
+```
+
+#### Using a configuration file
 
 To change the webroot, just set the key `webroot` in the `deploy` part
 of the configuration file *clevercloud/php.json* with the absolute path (*from the root of your application*) of your new public folder.
@@ -69,14 +79,12 @@ In the following example we want to set the webroot to the folder `/public`:
   }
 ```
 
-Please note the absolute path style: `/public`.
-
 <div class="panel panel-warning">
   <div class="panel-heading">
     <h4>Warning:</h4>
   </div>
   <div class="panel-body">
-    <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+    <p>Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
   </div>
 </div>
 

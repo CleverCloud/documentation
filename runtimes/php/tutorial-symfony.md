@@ -17,14 +17,10 @@ We strongly recommend to use git deployment for Symfony applications. This tutor
 
 ### Configure `DocumentRoot`
 
-Create a `php.json` file in a `clevercloud` directory at the root of your application.
+Add a new environment variable called `CC_WEBROOT` and set `/public` as its value. 
 
-```json
-{
-  "deploy": {
-    "webroot": "/public"
-  }
-}
+```
+clever env set CC_WEBROOT /public
 ```
 
 ### Configure your application secret

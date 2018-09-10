@@ -83,6 +83,22 @@ Some containers require access to the docker socket, to spawn sibling containers
 
 You can make the docker socket available from inside the container by adding `CC_MOUNT_DOCKER_SOCKET=true` in your application's environment variables. In that case, docker is started in the namespaced mode, and in bridge network mode.
 
+## Private registry
+
+We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few environment variables:
+- `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
+- `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
+- `CC_DOCKER_LOGIN_SERVER` (optionnal): the server of your private registry. Defaults to Docker's public registry.
+
+This uses the `docker login` command under the hood.
+
+## Build-time variables
+
+You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) instruction to define build-time environment variables.
+
+Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>`
+parameter during the `docker build`.
+
 ## Sample apps
 
 We provide a few examples of dockerized applications on Clever Cloud.

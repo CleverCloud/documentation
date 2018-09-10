@@ -92,6 +92,13 @@ We support pulling private images through the `docker build` command. To login t
 
 This uses the `docker login` command under the hood.
 
+## Build-time variables
+
+You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) instruction to define build-time environment variables.
+
+Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>`
+parameter during the `docker build`.
+
 ## Sample apps
 
 We provide a few examples of dockerized applications on Clever Cloud.

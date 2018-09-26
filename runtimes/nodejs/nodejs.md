@@ -163,8 +163,16 @@ in `package.json` to define the wanted version.
 ## Supported package managers
 
 We support [npm](https://www.npmjs.com) and [yarn](https://yarnpkg.com) as package managers.
-You can define the environment variable `NODE_BUILD_TOOL` to `npm` or `yarn` to select the
-one you want. If not specified, `npm` will be used.
+
+The environment variable `NODE_BUILD_TOOL` allows you to define which build tool you want to use.
+It can be one of these values:
+
+- `npm-install`: uses [npm install](https://docs.npmjs.com/cli/install)
+- `npm-ci`: uses [npm ci](https://docs.npmjs.com/cli/ci)
+- `npm`: Defaults to `npm-install` for now
+- `yarn`: uses [yarn](https://yarnpkg.com/)
+
+If the variable isn't defined or if another value is provided, it will default to `npm`.
 
 ## Environment injection
 

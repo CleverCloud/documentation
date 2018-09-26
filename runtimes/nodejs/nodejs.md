@@ -166,12 +166,6 @@ We support [npm](https://www.npmjs.com) and [yarn](https://yarnpkg.com) as packa
 You can define the environment variable `NODE_BUILD_TOOL` to `npm` or `yarn` to select the
 one you want. If not specified, `npm` will be used.
 
-`yarn` is only available on `node.js` instances for now.
-
-If you want to use `yarn`, please note that it's only installed for pre-installed node versions.
-Use `^6` or `^7` in your `engines.node` if you need to target the pre-installed version for a given
-release.
-
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the

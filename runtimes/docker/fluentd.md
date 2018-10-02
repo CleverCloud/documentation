@@ -9,12 +9,12 @@ tags:
 
 ## Introduction
 
-Since you deploy microservice on on Clever Cloud you may need some data pipes between your services to :
+Since you deploy microservice on Clever Cloud you may need some data pipes between your services to :
 
-* collect datas from your PostrgreSQL to create Elasticsearch indexes for your website search engine
+* collect data from your PostrgreSQL to create Elasticsearch indexes for your website search engine
 * collect application logs to analyze them with elasticsearch, then archive them with S3
 * collect Apache access logs to analyze them in MongoDB
-* extract datas from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
+* extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
 * and many more ...
 
 Fluentd is an open source data collector, which lets you unify the data collection and consumption for a better use and understanding of data.
@@ -35,8 +35,9 @@ To follow this tutorial, you will need:
 
 <div class="alert">
 To manage your gems and ruby versions, we recommend <a href="https://github.com/sstephenson/rbenv">rbenv</a>.
+</div>
 
-## Create a fluentd application on your local
+## Create a fluentd application locally
 
 ```bash
 $ mkdir myFluentd
@@ -62,7 +63,7 @@ Then run bundler to install dependancies and generate your `Gemfile.lock`
 $ bundle install
 ```
 
-Clever Cloud need that your application answer on request made on **0.0.0.0:8080**, we'll use a PORT environment variable for local test purpose (this variable is automatically setup on each application).
+Clever Cloud needs that your application answers on requests made on `0.0.0.0:8080`, we'll use a PORT environment variable for local test purpose (this variable is automatically setup on each application).
 Inside `td-agent.conf` put the following:
 
 ```yaml

@@ -9,79 +9,191 @@ keywords:
 - clever-tools
 ---
 
-In addition to the Clever Cloud console, you can manage your addons and
-applications from the command line with Clever Tools.
+In addition to the Clever Cloud console, you can manage your addons and applications from the command line with Clever Tools.
 
 ## Installing Clever Tools
 
-Clever Tools is available on Windows, GNU/Linux and MacOS.
+The clever-tools CLI can be installed through many different channels depending on your system setup.
 
-### MacOS
+### Via npm
 
-Clever Tools is packaged using [homebrew](https://brew.sh):
+If you already have node/npm on your system, you can run:
 
-    brew install CleverCloud/tap/clever-tools
+```sh
+npm install -g clever-tools
+```
 
-If you don't want to use `brew`, a pre-compiled version is available: [clever-tools-latest_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz).
-You need to put both files (`clever` and `nodegit.node`) in your `PATH` to use the application.
+WARNING: ⚠ This only works for 1.0.0 and after but it is not released yet.
 
-#### Autocompletion
+If you want to install our latest beta release, you can run:
 
-Clever Tools comes with a comprehensive auto-completion system. The brew package installs it automatically (for `bash` and `zsh`). Make sure `bash-completions` or `zsh-completions` are properly set up.
+```sh
+npm install -g clever-tools@beta
+```
 
-    # In ~/.bash_profile
-    . /usr/local/etc/bash_completion
+### On GNU/Linux
 
-    # In ~/.zshrc
-    fpath=(/usr/local/share/zsh-completions $fpath)
+#### Debian/Ubuntu (.deb)
 
-### Windows
+If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
-Clever Tools is packaged using [chocolatey](https://chocolatey.org):
+```sh
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "379CE192D401AB61"
+echo "deb https://dl.bintray.com/clevercloud/deb stable main" | tee -a /etc/apt/sources.list
+apt-get update
+apt-get install clever-tools
+```
 
-    choco install clever-tools
+NOTES:
 
-If you don't want to use `chocolatey`, a pre-compiled version is available: [clever-tools-latest_win.zip](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_win.zip).
-You need to add both files (`clever.exe` and `nodegit.node`) to your `PATH` to use the application.
+* The `.deb` packages are hosted on Bintray (their GPG key is required to trust their signed packages).
+* If you want access to the beta channel, you can use this in your `sources.list`:
 
-### GNU/Linux
+```sh
+echo "deb https://dl.bintray.com/clevercloud/deb unstable beta" | tee -a /etc/apt/sources.list
+```
 
-#### Archlinux
+#### CentOS/Fedora (.rpm)
 
-The package is available on the AUR: [clever-tools-bin](https://aur.archlinux.org/packages/clever-tools-bin/)
+If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
 
-#### Other distributions
+```sh
+curl https://bintray.com/clevercloud/rpm/rpm > /etc/yum.repos.d/bintray-clevercloud-rpm.repo
+echo "exclude=*beta*" >> /etc/yum.repos.d/bintray-clevercloud-rpm.repo
+yum install clever-tools
+```
 
-A pre-compiled version is available: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
-You need to add both files (`clever` and `nodegit.node`) to your `PATH`
-(you can put them in `~/.local/bin` for instance)
-to use the application.
+NOTES:
 
-#### Autocompletion
+* The `.rpm` packages are hosted on Bintray.
+* If you want access to the beta channel, you can omit the second line which contains an exclude option.
 
-Clever Tools comes with a comprehensive auto-completion system.
+#### Arch Linux
 
-    # for bash
-    clever --bash-autocomplete-script $(which clever) | sudo tee /usr/share/bash-completion/completions/clever
+If you are using Arch Linux, the packages can be installed from AUR with this repo: [clever-tools-bin](https://aur.archlinux.org/packages/clever-tools-bin/).
+If you don't know how to use this, you can run:
 
-    # for zsh
-    clever --zsh-autocomplete-script $(which clever) | sudo tee /usr/share/zsh/site-functions
+```sh
+git clone https://aur.archlinux.org/clever-tools-bin.git clever-tools
+cd clever-tools
+makepkg -si
+```
 
-### Usage via global npm install
+NOTES:
 
-We no longer support the usage and installation of Clever Tools via a global npm install.
-Please follow the installation instructions for your platform (see above) and make sure to uninstall the npm version with this:
+* If you want access to the beta channel, you can use this repo [clever-tools-bin-beta](https://aur.archlinux.org/packages/clever-tools-bin-beta/).
 
-    npm uninstall -g clever-tools
+#### Exherbo
+
+If you are using Exherbo, you can run:
+
+```sh
+cave resolve repository/CleverCloud -zx1
+cave resolve clever-tools-bin -zx
+```
+
+#### Other distributions (.tar.gz)
+
+If you are using another GNU/Linux distribution, you can download a `.tar.gz` archive and extract the binary in your `PATH`:
+
+```sh
+curl https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+tar xvzf clever-tools-latest_linux.tar.gz
+cp clever-tools-latest_linux/clever ~/.local/bin/
+```
+
+WARNING: ⚠ Before version 1.0.0, you will also need to copy `nodegit.node` file from the archive into your `PATH`.
+
+NOTES:
+
+* The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_linux.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
+* You can also retrieve any release (including beta) on this Cellar bucket by replacing `latest` (path and filename) with the version number you need.
+
+### On MacOS
+
+#### Using homebrew
+
+If you are using MacOS and you have [homebrew](https://brew.sh) installed, you can run:
+
+```sh
+brew install CleverCloud/homebrew-tap/clever-tools
+```
+
+NOTES:
+
+* If you want access to the beta channel, you can use `CleverCloud/homebrew-tap-beta/clever-tools` instead.
+
+#### Using the `.tar.gz` archive
+
+If you are using MacOS but you don't have [homebrew](https://brew.sh) installed, you can download a `.tar.gz` archive and extract the binary in your `PATH`:
+
+```sh
+curl https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz
+tar xvzf clever-tools-latest_linux.tar.gz
+cp clever-tools-latest_linux/clever ~/.local/bin/
+```
+
+WARNING: ⚠ Before version 1.0.0, you will also need to copy `nodegit.node` file from the archive into your `PATH`.
+
+NOTES:
+
+* The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_macos.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz).
+* You can also retrieve any release (including beta) on this Cellar bucket by replacing `latest` (path and filename) with the version number you need.
+
+### On Windows
+
+#### Using chocolatey
+
+If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run: 
+
+```bash
+choco sources add -n=clevercloud -s='https://api.bintray.com/nuget/clevercloud/nupkg'
+choco install clever-tools
+```
+
+NOTES:
+
+* If you want access to the beta channel, you can use `choco install --pre clever-tools` instead.
+
+#### Using the `.zip` archive
+
+If you are using Windows but you don't have [chocolatey](https://chocolatey.org) installed, you can download a `.zip` archive and extract the binary in your `PATH`.
+
+WARNING: ⚠ Before version 1.0.0, you will also need to copy `nodegit.node` file from the archive into your `PATH`.
+
+NOTES:
+
+* The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_win.tar.gz](https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_win.zip).
+* You can also retrieve any release (including beta) on this Cellar bucket by replacing `latest` (path and filename) with the version number you need.
+
+## Enabling autocompletion
+
+The clever-tools CLI comes with a comprehensive auto-completion system.
+Some installation methods like `.deb` packages, `.rpm` packages or brew will try to enable it automatically.
+If it does not work, try this for bash: 
+
+```bash
+clever --bash-autocomplete-script $(which clever) | sudo tee /usr/share/bash-completion/completions/clever
+```
+
+or this for zsh:
+
+```bash
+clever --zsh-autocomplete-script $(which clever) | sudo tee /usr/share/zsh/site-functions
+```
 
 ## Linking your account
 
-Once you have installed Clever Tools, the next step is to link your account:
+To use `clever-tools`, you have to login.
 
-    clever login
+```sh
+clever login
+```
 
-This will open a login page in your browser, and will give you identification
-tokens. Copy them and paste them in the `clever login` prompt.
+It will open the Web console in your browser and reuse your existing session if you're already logged in.
+
+`clever login` tries to open a browser through `xdg-open` on GNU/Linux systems (and in bash for windows).
+Make sure you have `xdg-utils` available as well as a default browser set (or you can copy and paste the URL displayed in the console.
 
 ## Linking an existing application
 

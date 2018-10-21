@@ -223,7 +223,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>JAVA_VERSION</td>
-    <td>Choose the JVM version between `7` or `8`.</td>
+    <td>Choose the JVM version between `7` to `11`.</td>
     <td>`8`</td>
     <td></td>
   </tr>

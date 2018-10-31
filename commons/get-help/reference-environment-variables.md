@@ -419,7 +419,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_PYTHON_MODULE</td>
-    <td>Select which module you want to start: `mymodule:app`</td>
+    <td>Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app`</td>
     <td></td>
     <td></td>
   </tr>

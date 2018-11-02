@@ -68,7 +68,7 @@ The `package.json` file should look like the following:
     "start" : "node myapp.js"
   },
   "engines" : {
-    "node" : "~4.0"
+    "node" : "^10"
   }
 }
 ```
@@ -138,7 +138,7 @@ Here is an example :
     "start" : "node myapp.js"
   },
   "engines": {
-    "node": "0.8.15"
+    "node": "^10"
   },
   "dependencies": {
     "express": "3.x",

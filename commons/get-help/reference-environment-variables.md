@@ -241,7 +241,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>PLAY1_VERSION</td>
-    <td>Define which play1 version to use between `1.2`, `1.3` and `1.4`</td>
+    <td>Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5`</td>
     <td></td>
     <td></td>
   </tr>

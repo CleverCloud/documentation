@@ -922,6 +922,12 @@ So you can alter the build&start process for your application.
 
 ### VPN
 
+The VPN addon provides a fixed-ip outgoing node. This can be used to work
+with services protected by ip address filtering. `VPN_ADDON_*` variables will
+be provided by Clever Cloud upon setup, the only configuration you have to
+provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
+to be routed through the exit node.
+
 <table class="table table-bordered" style="text-align:center">
   <tr>
     <th><center>Name</center></th>
@@ -931,37 +937,44 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>VPN_ADDON_CRT</td>
-    <td></td>
+    <td>Client certificate</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>VPN_ADDON_CACRT</td>
-    <td></td>
+    <td>Server CA certificate</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>VPN_ADDON_KEY</td>
-    <td></td>
+    <td>Client certificate private key</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>VPN_ADDON_HOST</td>
-    <td></td>
+    <td>Server host or IP address</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>VPN_ADDON_PORT</td>
-    <td></td>
+    <td>Server port</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>VPN_ADDON_TAKEY</td>
+    <td>Pre-shared secret</td>
     <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>VPN_TARGETS</td>
+    <td>Comma-separated list of CIDRs for which you want the traffic to be
+    routed through the exit node</td>
     <td></td>
     <td></td>
   </tr>

@@ -34,10 +34,11 @@ You can use the logs drains to send your application's logs to an external serve
 
 Where `DRAIN-TYPE` is one of:
 
- - `TCPSyslog`: for TCP syslog endpoint
- - `UDPSyslog`: for UDP syslog endpoint
- - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication)
- - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication)
+ - `TCPSyslog`: for TCP syslog endpoint;
+ - `UDPSyslog`: for UDP syslog endpoint;
+ - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
+ - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
+ - `Datadog`: for Datadog endpoint (note that this endpoint require APIKey parameter as Datadog mandatory).
 
 ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
  

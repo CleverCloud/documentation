@@ -27,7 +27,7 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 ## Select Play! version
 
-Clever Cloud supports Play! **1.2** and **1.3**. You can select the Play! version for your application by creating a
+Clever Cloud supports Play! **1.2**, **1.3**, **1.4** and **1.5**. You can select the Play! version for your application by creating a
 `play1_version` file in the `/clevercloud` folder.
 
 The `play1_version` file can contain one of the following values:

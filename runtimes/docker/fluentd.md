@@ -125,4 +125,4 @@ CMD [ "/go.sh" ]
 
 Now you can deploy your application.
 
-Finally you can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins)
+Finally, you can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins).

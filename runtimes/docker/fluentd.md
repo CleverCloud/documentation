@@ -90,7 +90,7 @@ Start you service
 $ PORT=9292 ./go.sh
 ```
 
-Verify that it respond to request
+Verify that it responds to requests
 
 ```bash
 $ curl 0.0.0.0:9292

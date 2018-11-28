@@ -63,7 +63,7 @@ Then run bundler to install dependencies and generate your `Gemfile.lock`
 $ bundle install
 ```
 
-Clever Cloud needs that your application answers on requests made on `0.0.0.0:8080`, we'll use a PORT environment variable for local test purpose (this variable is automatically setup on each application).
+Clever Cloud needs that your application answers on requests made on `0.0.0.0:8080`, we'll use a PORT environment variable for local test purposes (this variable is automatically setup on each application).
 Inside `td-agent.conf` put the following:
 
 ```yaml

@@ -9,7 +9,7 @@ tags:
 
 ## Introduction
 
-Since you deploy microservice on Clever Cloud you may need some data pipes between your services to :
+Since you deploy microservices on Clever Cloud, you may need some data pipes between your services to:
 
 * collect data from your PostrgreSQL to create Elasticsearch indexes for your website search engine
 * collect application logs to analyze them with elasticsearch, then archive them with S3

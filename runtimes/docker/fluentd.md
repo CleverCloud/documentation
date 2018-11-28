@@ -57,7 +57,7 @@ gem 'fluentd'
 gem 'fluent-plugin-td'
 ```
 
-Then run bundler to install dependancies and generate your `Gemfile.lock`
+Then run bundler to install dependencies and generate your `Gemfile.lock`
 
 ```bash
 $ bundle install

@@ -70,14 +70,11 @@ greatest 2.5.Y. We provide also the 2.4.Y and 2.3.Y version.
 
 ## Choose rackup application server
 
-You can select the server by setting an environment variable `CC_RACKUP_SERVER=yourserver`
-where yourserver is one of `puma` or `uwsgi`. `puma` is the default application server from rails, and thus one
+You can select the server by setting an environment variable `CC_RACKUP_SERVER=yourserver`.
+The only available server as of now is `puma`. `puma` is the default application server from rails, and thus one
 of the most commonly used for ruby deployment.
 
 By default, when creating a new ruby application, an environment variable is automatically added: `CC_RACKUP_SERVER=puma`.
-
-If you remove this environment variable or set its value to `uwsgi`, your application will run using [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
-uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster. Note that this is only supported for ruby 2.3.
 
 If you select puma, you will need to also add it to your dependencies: `bundle add puma`, and commit the resulting
 changes (this is automatic for projects generated using `rails new`).
@@ -208,23 +205,11 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 }
 ```
 
-## uWSGI configuration
-
-uWSGI settings can be configured by setting environment variables:
-
- - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
- - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
- - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
- - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
- - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
-
 ### nginx configuration
 
 nginx settings can be configured by setting environment variables:
 
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
- - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
- - `UWSGI_INTERCEPT_ERRORS`: "on|off" intercept uwsgi errors
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 
@@ -266,13 +251,6 @@ threads instead of a static number of threads.
 If specified, it will be preferred over the setting from `config/puma.rb`.
 If none is specified, we will setup the number of threads per worker depending on the size of the scaler your application is running on.
 We also fill the `RAILS_MAX_THREADS` environment variable if it's not present as it may be used by rails' puma configuration.
-
-## uWSGI asynchronous/non-blocking modes
-
-To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async.html) mode, you can use these two environment variables:
-
- - `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
- - `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional)
 
 ## Deploy on Clever Cloud
 

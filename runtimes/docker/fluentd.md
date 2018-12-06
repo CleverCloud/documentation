@@ -103,7 +103,7 @@ $ curl 0.0.0.0:9292
      <h4>Why I can't just use ruby runtime</h4>
   </div>
   <div class="panel-body">
-    Ruby runtime on Clever Cloud requires **Puma** or **uWSGI** webserver but fluentd is using **excon**.
+    Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
   </div>
 </div>
 

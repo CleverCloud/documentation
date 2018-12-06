@@ -593,54 +593,6 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>UWSGI_INTERCEPT_ERRORS</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[UWSGI_ASYNC](/doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
-    <td>Number of cores to use for uWSGI asynchronous/non-blocking modes</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>UWSGI_ASYNC_ENGINE</td>
-    <td>Select the asynchronous engine for uWSGI (optional)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_WORKERS</td>
-    <td>Number of workers. (Defaut: automatically setup with the scaler size)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_THREADS</td>
-    <td>Number of threads per worker. (Defaut: automatically setup with the scaler size)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_BUFFER_SIZE</td>
-    <td>Buffer size (in bytes) for uploads.</td>
-    <td>`4096`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_POST_BUFFERING</td>
-    <td>Maximal size (in bytes) for the headers of a request. </td>
-    <td>`4096`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>ENABLE_GZIP_COMPRESSION</td>
-    <td>Set to `true` to gzip-compress the output of uwsgi</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
     <td>NGINX_READ_TIMEOUT</td>
     <td>Read timeout in seconds</td>
     <td>`300`</td>

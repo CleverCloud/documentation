@@ -55,8 +55,8 @@ If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, othe
 On your Clever Cloud application create an environment variable `RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
  * "2" will select the greatest "2.X.Y" version available.
- * "2.4" will select the greatest "2.4.Y" version available.
- * "2.4.2" will select the "2.4.2" version.
+ * "2.5" will select the greatest "2.5.Y" version available.
+ * "2.5.3" will select the "2.5.3" version.
 
 If given `rubyversion` does not match any available version, your
 deployment will fail.
@@ -66,7 +66,7 @@ support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
 Due to current landscape in ruby applications, the default version is the
-greatest 2.4.Y. We provide also the 2.3.Y, 2.2.Y and 2.1.Y versions.
+greatest 2.5.Y. We provide also the 2.4.Y and 2.3.Y version.
 
 ## Choose rackup application server
 
@@ -77,7 +77,7 @@ of the most commonly used for ruby deployment.
 By default, when creating a new ruby application, an environment variable is automatically added: `CC_RACKUP_SERVER=puma`.
 
 If you remove this environment variable or set its value to `uwsgi`, your application will run using [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
-uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster.
+uWSGI's main goal is to run as much as possible in parallel, thus aiming at being faster. Note that this is only supported for ruby 2.3.
 
 If you select puma, you will need to also add it to your dependencies: `bundle add puma`, and commit the resulting
 changes (this is automatic for projects generated using `rails new`).

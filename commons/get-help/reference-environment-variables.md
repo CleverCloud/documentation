@@ -551,12 +551,6 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>HARAKIRI</td>
-    <td>Timeout (in seconds) after which an unresponding process is killed</td>
-    <td>`180`</td>
-    <td></td>
-  </tr>
-  <tr>
     <td>RACK_ENV</td>
     <td></td>
     <td></td>

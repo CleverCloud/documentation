@@ -209,7 +209,7 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 
 nginx settings can be configured by setting environment variables:
 
- - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `NGINX_READ_TIMEOUT`: the response timeout in seconds. (Defaut: 300)
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 

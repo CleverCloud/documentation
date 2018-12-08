@@ -5,7 +5,7 @@ tags:
 - php
 ---
 
-PHP is available on our platform with the branches 5.6 and 7.0. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6, 7.0, 7.1, 7.2 and 7.3. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 
@@ -41,8 +41,10 @@ variable to one of the following values:
 - 7.0
 - 7.1
 - 7.2
+- 7.3
 
-By default, all new PHP applications are created with a default `PHP_VERSION`, set to 7.0.
+By default, all new PHP applications are created with a default `PHP_VERSION`, set to 7, which means latest php 7
+version available.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 
@@ -354,6 +356,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 7.0](https://php70info.cleverapps.io)
 - [PHP 7.1](https://php71info.cleverapps.io)
 - [PHP 7.2](https://php72info.cleverapps.io).
+- [PHP 7.3](https://php73info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 

@@ -7,7 +7,7 @@ tags:
 
 Simply set the environment variable **JAVA_VERSION** to the version you want
 
-Accepted values are `7` and `8`
+Accepted values are `7` to `11`
 
 <div class="panel panel-warning">
   <div class="panel-heading">

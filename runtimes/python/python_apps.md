@@ -12,7 +12,7 @@ You can learn how to use Python and see almost immediate gains in productivity a
 
 ## Overview
 
-Python 2.7 and 3.6 are available on our platform. You can use Git to deploy your application.
+Python 2.7, 3.6 and 3.7 are available on our platform. You can use Git to deploy your application.
 
 
 ## Create an application
@@ -145,8 +145,8 @@ The `test.png` file will be accessed under: `https://<domain.tld>/public/test.pn
 
 ## Choose Python version
 
-The default version of python on Clever Cloud is **2.7**. If you want to use python **3.6** instead,
-create an environment variable `PYTHON_VERSION` equals to either `2` or `3`.
+The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead,
+create an environment variable `PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.6` or `3.7`.
 
 Also, the file `/clevercloud/python_version` is still supported for backward compatibility.
 You have to write either `2` or `3` in it to select the python version. Please prefer the environment variable.

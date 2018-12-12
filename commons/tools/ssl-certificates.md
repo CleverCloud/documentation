@@ -15,14 +15,16 @@ TLS certificates are necessary to enable secure HTTPS connections between a brow
 There is two ways to get HTTPS for your apps:
 
 1. **Let's Encrypt**: This is the quick and easy way to get a TLS certificate on Clever Cloud.
-2. **Your own certificates**: if your already generate have a certificate, you can upload it securely.
+2. **Your own certificates**: If you already have a certificate, you can upload it securely.
 
 ## Getting a Let's Encrypt certificate
 
 We automatically generate certificates when you add a domain name to your app.
 It's all you have to do, our internal certificate generator will create a TLS certificate for a domain or a sub-domain.
 
-To get wildcard or Domain Validation certificates, please ask to the support to buy one of these.
+We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one (we can resell one to you, in which case we will deal with the csr generation ourselves).
+
+If you want to mention extended validation certificates (not domain validation), I guess you should add a new section.
 
 ## Uploading certificates
 

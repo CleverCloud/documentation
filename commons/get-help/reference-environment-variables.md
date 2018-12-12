@@ -30,6 +30,11 @@ These are read-only variables that are generated for each scaler before they bui
     <td>build, production</td>
   </tr>
   <tr>
+    <td>INSTANCE_ID</td>
+    <td>The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.</td>
+    <td>518c8d8f-e304-4310-81e0-9c4237d55645</td>
+  </tr>
+  <tr>
     <td>APP_ID</td>
     <td>The ID of your Clever Cloud application</td>
     <td>app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>

@@ -194,6 +194,8 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 
 **Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
 
+**Note**: if your project uses webpacker, make sure to enable the dedicated build instance option in the information tab of your application because webpacker needs a lot a ressources when starting.
+
 If you use the asset pipeline, make sure to include the `assets:precompile`
 task in the `rakegoals` field of `clevercloud/ruby.json`.
 

@@ -38,11 +38,20 @@ If you need to configure a custom domain name, follow the steps below.
   </tr>
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>``domain.par.clever-cloud.com.``</td>
+    <td>
+    ```
+    {yoursubdomain} IN CNAME 10800 domain.par.clever-cloud.com.
+    ```
+    </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Four records on ``185.42.117.108``, ``185.42.117.109``, ``46.252.181.103`` and ``46.252.181.104``</td>
+    <td>Four records:<br>
+    ``@ IN A 10800 185.42.117.108``<br>
+    ``@ IN A 10800 185.42.117.109``<br>
+    ``@ IN A 10800 46.252.181.103``<br>
+    ``@ IN A 10800 46.252.181.104``
+    </td>
   </tr>
 </table>
 

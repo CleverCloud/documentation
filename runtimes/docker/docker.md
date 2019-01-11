@@ -12,10 +12,10 @@ to run it on our service.
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-     <h4>Note for Beta Version</h4>
+     <h4>Note for Docker support</h4>
   </div>
   <div class="panel-body">
-    Docker support is still in beta. It does not yet support FS Buckets, validation of your Dockerfile, or other advanced features.
+    Docker at Clever Cloud does not yet support FS Buckets, validation of your Dockerfile, or compose of sorts.
   </div>
 </div>
 

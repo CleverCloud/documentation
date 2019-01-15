@@ -24,8 +24,6 @@ It's all you have to do, our internal certificate generator will create a TLS ce
 
 We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one (we can resell one to you, in which case we will deal with the csr generation ourselves).
 
-If you want to mention extended validation certificates (not domain validation), I guess you should add a new section.
-
 ## Uploading certificates
 
 You can upload certificates yourself: <https://api.clever-cloud.com/v2/certificates/new>

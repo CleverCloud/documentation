@@ -105,6 +105,11 @@ If you see "*access denied*" or "*password:*" when you
 [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment),
 your SSH Keys may be invalid or not available on Clever Cloud. Please check that you SSH Key is present and valid in
 your profile.
+If you want to use a specific key for Clever Cloud, you can set it in your SSH config by adding this :
+```
+Host *.clever-cloud.com 
+   IdentityFile ~/.ssh/clevercloud
+```
 
 ### Private SSH Key
 If you want to clone a repository from a private repository, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).

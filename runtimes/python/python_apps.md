@@ -40,6 +40,7 @@ webassets==0.8
 pytz==2012d
 psycopg2==2.4.5
 ```
+We recommend using `psycopg2>=2.7 --no-binary psycopg2` to avoid wsgi issues.
 
 ### Cache dependencies
 

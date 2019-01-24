@@ -38,7 +38,7 @@ Flask-Script==0.5.3
 Flask-WTF==0.8.3
 webassets==0.8
 pytz==2012d
-psycopg2==2.4.5
+psycopg2>=2.7 --no-binary psycopg2
 ```
 We recommend using `psycopg2>=2.7 --no-binary psycopg2` to avoid wsgi issues.
 

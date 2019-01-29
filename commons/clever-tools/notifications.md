@@ -77,6 +77,63 @@ and there issue this command:
 clever webhooks add "deployment results on Slack" https://hooks.slack.com/services/xxxxxx/yyyyyy/zzzzzzzzzzzzz --format slack --event META_DEPLOYMENT_RESULT
 ```
 
+#### Events available
+
+The list of values that can be assigned to `--event` option:
+
+**Account:**
+- `ACCOUNT_CREATION`
+- `ACCOUNT_DELETION`
+- `ACCOUNT_EDITION`
+
+**Addon:**
+- `ADDON_CREATION`
+- `ADDON_DELETION`
+
+**Application:**
+- `APPLICATION_CREATION`
+- `APPLICATION_DELETION`
+- `APPLICATION_EDITION`
+- `APPLICATION_REDEPLOY`
+- `APPLICATION_STOP`
+
+**Deployment:**
+- `DEPLOYMENT_ACTION_BEGIN`
+- `DEPLOYMENT_ACTION_END`
+- `DEPLOYMENT_FAIL`
+- `DEPLOYMENT_SUCCESS`
+- `GIT_PUSH`
+
+**Organisation:**
+- `ORGANISATION_CREATION`
+- `ORGANISATION_DELETION`
+- `ORGANISATION_EDITION`
+- `ORGANISATION_USER_ADDITION`
+
+**Meta:**
+- `META_SERVICE_LIFECYCLE` = APPLICATION_STOP, DEPLOYMENT_ACTION_BEGIN, DEPLOYMENT_FAIL, DEPLOYMENT_SUCCESS
+- `META_DEPLOYMENT_RESULT` = DEPLOYMENT_FAIL, DEPLOYMENT_SUCCESS
+- `META_SERVICE_MANAGEMENT` = ADDON_CREATION, ADDON_DELETION APPLICATION_CREATION, APPLICATION_EDITION, APPLICATION_DELETION`
+- `META_CREDITS` = CREDITS_ADDED
+
+**Others:**
+- `CLEVER_TOOLS_REQUEST`
+- `CREDITS_ADDED`
+
+##### Examples:
+
+Get a message in a Slack channel when the deployment for an application failed:
+
+```
+clever webhooks add "The application failed to deploy" https://hooks.slack.com/services/xxxxxx/ --format slack --event DEPLOYMENT_FAIL
+```
+
+Notify your accounting service when credits are added:
+
+```
+clever webhooks add "credits added" https://hooks.slack.com/services/xxxxxx/yyyyyy/zzzzzzzzzzzzz --format raw --event META_CREDITS
+```
+
 All done! You can now push your application (`clever deploy`) or restart it
 (`clever restart`) and you will see the result of the deployment in your Slack
 channel.

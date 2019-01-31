@@ -216,8 +216,14 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_SBT_TARGET_DIR</td>
+    <td>Define where pick the bin to run.</td>
+    <td>`./target/universal/stage/bin`</td>
     <td></td>
-    <td></td>
+  </tr>
+  <tr>
+    <td>CC_SBT_TARGET_BIN</td>
+    <td>Define the bin to pick in the `CC_SBT_TARGET_DIR`.</td>
+    <td>The first bin found in the `CC_SBT_TARGET_DIR`.</td>
     <td></td>
   </tr>
   <tr>

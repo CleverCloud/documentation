@@ -83,6 +83,10 @@ Some containers require access to the docker socket, to spawn sibling containers
 
 You can make the docker socket available from inside the container by adding `CC_MOUNT_DOCKER_SOCKET=true` in your application's environment variables. In that case, docker is started in the namespaced mode, and in bridge network mode.
 
+## Enable IPv6 networking
+
+You can activate the support of IPv6 with a IPv6 subnet in the docker daemon by adding `CC_DOCKER_FIXED-CIDR-V6=<IP>` in your application's environment variables.
+
 ## Private registry
 
 We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few environment variables:

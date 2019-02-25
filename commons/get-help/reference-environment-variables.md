@@ -163,6 +163,12 @@ So you can alter the build&start process for your application.
     <td>`4040`</td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_DOCKER_FIXED_CIDR_V6</td>
+    <td>Activate the support of IPv6 with an IPv6 subnet int the docker daemon.</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### Go
@@ -396,6 +402,18 @@ So you can alter the build&start process for your application.
     <td></td>
     <td>`false`</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>CC_OPCACHE_MEMORY</td>
+    <td>Set the shared opcache memory size</td>
+    <td>Default is about 1/8 of the RAM</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_OPCACHE_MAX_ACCELERATED_FILES</td>
+    <td>Set the shared opcache memory size</td>
+    <td>Maximum number of files handled by opcache.</td>
+    <td>Default depends on the scaler size</td>
   </tr>
 </table>
 

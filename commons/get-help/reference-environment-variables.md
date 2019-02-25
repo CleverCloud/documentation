@@ -83,13 +83,15 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
   </tr>
   <tr>
-    <td>CC_WORKER_COMMAND</td>
-    <td>Command to run in background as a worker process.</td>
+    <td>[CC_WORKER_COMMAND](/doc/clever-cloud-overview/common-application-configuration/#workers)</td>
+    <td>Command to run in background as a worker process. You can run multiple worker.</td>
     <td></td>
   </tr>
   <tr>
     <td>CC_WORKER_RESTART</td>
-    <td>One of `always`, `on-failure` or `no`. Control whether a worker needs to be restarted when it exits</td>
+    <td>One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.
+        This setting controls all workers.
+    </td>
     <td>on-failure</td>
   </tr>
   <tr>

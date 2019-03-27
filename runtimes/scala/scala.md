@@ -36,7 +36,7 @@ to `project/plugins.sbt`. Please make sure you use an up-to-date version.
 In `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.18")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.19")
 ```
 
 Then you need to configure the package type:

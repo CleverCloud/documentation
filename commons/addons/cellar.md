@@ -92,7 +92,7 @@ If you want to use a custom domain, for example cdn.example.com, you need to cre
     s3cmd mb s3://cdn.example.com
 ```
 
-Then, you just have to create a CNAME record on your domain pointing to `cellar.services.clever-cloud.com.`.
+Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
 
 <div class="panel panel-warning">
   <div class="panel-heading">

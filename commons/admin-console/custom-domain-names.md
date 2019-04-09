@@ -151,3 +151,7 @@ on a path prefix.
 For instance, you can bind `example.com/api` to an app, and `example.com` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
 the first app. The other requests will be routed to the second app. You can add a path after every domain name you bind in the console (or with [clever tools](/doc/clever-tools/getting_started)).
+
+## Gandi CNAME configuration
+
+Here is <a href="https://next-www.cleverapps.io/blog/features/2019/03/05/gandi-domain-on-clever-cloud/" target="_blank">an article that demonstrates a simple setup for Gandi CNAMEs</a>.

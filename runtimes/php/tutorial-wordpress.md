@@ -159,3 +159,36 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
     $_SERVER['HTTPS'] = 'on';  
 }
 ```
+
+### Using a CDN as Cloudflare with SSL (avoid infinite loops)
+
+As with ###SSL configuration, you need to detect detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. In this case, the chained proxies might concatenate those headers. As a result, headers values can look like 
+```php [HTTP_X_FORWARDED_PROTO] => https, https```
+The previous code snippet would not enable SSL on the Clever Cloud application, resulting in mixed content or infinite loop.
+
+In order to avoid this, you'll need to add the following code snippet to your `wp-config.php` file (it replaces the previous code snippet). Add the following code above the last `require_once` call or at the beginning of the `wp-config.php` file.
+
+To do so edit `wp-config.php` and add the following code above the last `require_once` call.
+```php
+function check_proto_set_ssl($forwarded_protocols){
+	$secure = 'off';
+	if ( strstr($forwarded_protocols , ",") ) {
+		$previous = null;
+		foreach ( explode(",", $forwarded_protocols) as $value ) {
+			if ( $previous ) {
+				trim($value) == $previous && trim($value) == 'https' ? $secure = 'on' : $secure = 'off';
+			}
+			$previous = trim($value);
+		}
+		$_SERVER["HTTPS"] = $secure;
+	}else{
+		$forwarded_protocols == 'https' ? $_SERVER["HTTPS"] = 'on' : $_SERVER["HTTPS"] = $secure = 'off';
+	}
+}
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+	check_proto_set_ssl($_SERVER['HTTP_X_FORWARDED_PROTO']);
+} elseif (isset($_SERVER['X_FORWARDED_PROTO'])) {
+	check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
+}
+```

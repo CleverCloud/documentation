@@ -21,7 +21,7 @@ Be sure that:
 
 * you have pushed in <b>master branch</b>
 * you listen on <b>0.0.0.0:8080</b>
-* your packages.json either has a <b>scripts.start</b> or <b>main</b> field
+* your package.json either has a <b>scripts.start</b> or <b>main</b> field
 
 The following code describes a Hello world application listening on port 8080:
 

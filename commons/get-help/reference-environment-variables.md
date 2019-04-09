@@ -225,8 +225,8 @@ So you can alter the build&start process for your application.
   <tr>
     <td>CC_SBT_TARGET_DIR</td>
     <td>Define where pick the bin to run.</td>
-    <td>`./target/universal/stage/bin`</td>
-    <td></td>
+    <td>`.`</td>
+    <td>Then `/target/universal/stage/bin` is concatenated.</td>
   </tr>
   <tr>
     <td>CC_SBT_TARGET_BIN</td>

@@ -242,13 +242,19 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>JAVA_VERSION</td>
-    <td>Choose the JVM version between `7` to `11`.</td>
+    <td>Choose the JVM version between 'graalvm-ce' or `7` to `11` for OpenJDK.</td>
     <td>`8`</td>
     <td></td>
   </tr>
   <tr>
     <td>MAVEN_DEPLOY_GOAL</td>
     <td>Define which maven goals to run during build.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MAVEN_PROFILES</td>
+    <td>Define which maven profile to use during default build.</td>
     <td></td>
     <td></td>
   </tr>

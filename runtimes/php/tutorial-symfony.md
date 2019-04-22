@@ -88,3 +88,19 @@ Thens, add this to the application's environment variables:
 ```
 CC_POST_BUILD_HOOK=./clevercloud/post_build.sh
 ```
+
+### Configure Symfony to work behind Clever Cloud reverse proxies
+
+You can use the CC_REVERSE_PROXY_IPS [environment variable](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/) that contains a list of trusted IP addresses, separated by commas.
+
+```
+if ($trustedProxies = $request->server->get('CC_REVERSE_PROXY_IPS')) {
+    // trust *all* requests
+    Request::setTrustedProxies(array_merge(['127.0.0.1'], explode(',', $trustedProxies)),
+
+    // trust *all* "X-Forwarded-*" headers
+    Request::HEADER_X_FORWARDED_ALL);
+}
+```
+
+For more information on configuring symfony behind a reverse proxy, you can read the [official documentation](https://symfony.com/doc/current/deployment/proxies.html).

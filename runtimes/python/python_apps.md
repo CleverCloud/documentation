@@ -100,7 +100,7 @@ variable. The bug is documented here: [https://github.com/celery/celery/issues/4
 ## Select the python backend
 
 Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the
-`PYTHON_BACKEND` environment variable with either `uwsgi` or `gunicorn`.
+`CC_PYTHON_BACKEND` environment variable with either `uwsgi` or `gunicorn`.
 
 If not specified, the default backend is `uwsgi`.
 

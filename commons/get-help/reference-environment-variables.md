@@ -473,7 +473,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>PYTHON_BACKEND</td>
+    <td>CC_PYTHON_BACKEND</td>
     <td>Choose the Python backend to use between `uwsgi` and `gunicorn`</td>
     <td>`uwsgi`</td>
     <td></td>

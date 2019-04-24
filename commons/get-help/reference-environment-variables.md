@@ -388,8 +388,8 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>PHP_VERSION</td>
-    <td>Choose your PHP version between `5.6`, `7.0`, `7.1`, `7.2` and `7.3`</td>
+    <td>CC_PHP_VERSION</td>
+    <td>Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3`</td>
     <td>`7`</td>
     <td></td>
   </tr>

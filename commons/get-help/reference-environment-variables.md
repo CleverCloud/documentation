@@ -120,7 +120,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>CACHE_DEPENDENCIES</td>
+    <td>CC_CACHE_DEPENDENCIES</td>
     <td>Enable caching of your build dependencies to speed up following builds.</td>
     <td>`false`</td>
   </tr>

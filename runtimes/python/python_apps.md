@@ -44,7 +44,7 @@ We recommend using `psycopg2>=2.7 --no-binary psycopg2` to avoid wsgi issues.
 
 ### Cache dependencies
 
-You can cache dependencies to avoid the installation at each deployment. Define the `CACHE_DEPENDENCIES`
+You can cache dependencies to avoid the installation at each deployment. Define the `CC_CACHE_DEPENDENCIES`
 variable to `true` to activate it. If dependencies have changed between deployments, the cache
 will be updated.
 Remove the environment variable or set it to `false` to disable this feature.

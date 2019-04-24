@@ -241,9 +241,9 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>JAVA_VERSION</td>
-    <td>Choose the JVM version between 'graalvm-ce' or `7` to `11` for OpenJDK.</td>
-    <td>`8`</td>
+    <td>CC_JAVA_VERSION</td>
+    <td>Choose the JVM version between 'graalvm-ce' or `7` to `12` for OpenJDK.</td>
+    <td>`11`</td>
     <td></td>
   </tr>
   <tr>

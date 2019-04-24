@@ -34,16 +34,14 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 ## Choose your PHP version
 
-Since January 2016, choosing a PHP version has gotten easier: just set the `PHP_VERSION` environment
-variable to one of the following values:
+Set the `CC_PHP_VERSION` environment variable to one of the following values:
 
 - 5.6
-- 7.0
 - 7.1
 - 7.2
 - 7.3
 
-By default, all new PHP applications are created with a default `PHP_VERSION`, set to 7, which means latest php 7
+By default, all new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7
 version available.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.

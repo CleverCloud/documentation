@@ -89,7 +89,7 @@ iron = "0.4.0"
 ```
 
 Compiled dependencies are cached by default to speed up deployments. You can
-disable dependencies caching completely by removing the `CACHE_DEPENDENCIES`
+disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES`
 environment variable. If you want to rebuild your application from scratch,
 you can select "rebuild and restart" from the console or launch `clever
 restart --without-cache` from CLI.

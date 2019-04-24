@@ -120,7 +120,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>CACHE_DEPENDENCIES</td>
+    <td>CC_CACHE_DEPENDENCIES</td>
     <td>Enable caching of your build dependencies to speed up following builds.</td>
     <td>`false`</td>
   </tr>
@@ -241,9 +241,9 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>JAVA_VERSION</td>
-    <td>Choose the JVM version between 'graalvm-ce' or `7` to `11` for OpenJDK.</td>
-    <td>`8`</td>
+    <td>CC_JAVA_VERSION</td>
+    <td>Choose the JVM version between 'graalvm-ce' or `7` to `12` for OpenJDK.</td>
+    <td>`11`</td>
     <td></td>
   </tr>
   <tr>
@@ -388,8 +388,8 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>PHP_VERSION</td>
-    <td>Choose your PHP version between `5.6`, `7.0`, `7.1`, `7.2` and `7.3`</td>
+    <td>CC_PHP_VERSION</td>
+    <td>Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3`</td>
     <td>`7`</td>
     <td></td>
   </tr>
@@ -473,14 +473,14 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>PYTHON_BACKEND</td>
+    <td>CC_PYTHON_BACKEND</td>
     <td>Choose the Python backend to use between `uwsgi` and `gunicorn`</td>
     <td>`uwsgi`</td>
     <td></td>
   </tr>
   <tr>
-    <td>PYTHON_VERSION</td>
-    <td>Choose the Python version between `2.7` and `3.6`</td>
+    <td>CC_PYTHON_VERSION</td>
+    <td>Choose the Python version between `2.7`, `3.6` and `3.7`</td>
     <td></td>
     <td></td>
   </tr>

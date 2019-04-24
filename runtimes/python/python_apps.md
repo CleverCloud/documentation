@@ -147,16 +147,13 @@ The `test.png` file will be accessed under: `https://<domain.tld>/public/test.pn
 ## Choose Python version
 
 The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead,
-create an environment variable `PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.6` or `3.7`.
+create an environment variable `CC_PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.6` or `3.7`.
 
-Also, the file `/clevercloud/python_version` is still supported for backward compatibility.
-You have to write either `2` or `3` in it to select the python version. Please prefer the environment variable.
-
-**Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
+**Note**: the version is a number, do not use quotes. values allowed are `2`, `2.7`, `3`, `3.6`, `3.7`.
 
 ## Choose Pip version
 
-The default version of pip on Clever Cloud is **10**.
+The default version of pip on Clever Cloud is **19**.
 If you want to use pip **9** instead, create an environment variable like this:
 
 ```

@@ -479,8 +479,8 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>PYTHON_VERSION</td>
-    <td>Choose the Python version between `2.7` and `3.6`</td>
+    <td>CC_PYTHON_VERSION</td>
+    <td>Choose the Python version between `2.7`, `3.6` and `3.7`</td>
     <td></td>
     <td></td>
   </tr>

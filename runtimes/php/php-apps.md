@@ -105,7 +105,7 @@ documentation](http://www.php.net/manual/en/configuration.file.per-user.php)
 for more information. You can review the [available
 directives](http://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`,
 `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within
-`user.ini`.
+`.user.ini`.
 
 **Note**: `.user.ini` files are not loaded by the php cli
 

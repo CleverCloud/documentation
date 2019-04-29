@@ -195,3 +195,30 @@ see doc : http://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket
 """
 b[0].generate_url(60)
 ```
+
+### Active Storage (Ruby On Rails)
+
+[Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various 
+cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
+you must configure a S3 service with a custom endpoint.
+
+Use this configuration in your `config/storage.yml`:
+
+```yaml
+cellar:
+  service: S3
+  access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
+  secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
+  endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
+  region: 'us-west-1'
+  force_path_style: true
+  bucket: mybucket
+```
+
+A `region` parameter must be provided, although it is not used by Cellar.
+
+`force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html):
+
+> `:force_path_style` (Boolean) — default: `false` —
+> When set to true, the bucket name is always left in the request URI and never moved to the host as a sub-domain.
+

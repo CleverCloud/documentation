@@ -97,8 +97,6 @@ Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/cle
 
 The error occurs when we cannot find a bin to execute your project.
 
-This may happen when you use `SBT_DEPLOY_GOAL` and `CC_SBT_TARGET_DIR`. If you do so, you should be aware that the `SBT_DEPLOY_GOAL` is relative the `/target/universal/stage` directory inside `CC_SBT_TARGET_DIR`.
-
 
 ## Failed to acquire connection: Too many connections
 

@@ -19,53 +19,221 @@ and on standards-compliance.
 
 The version currently installed by the add-on is :
 
-- on shared plans (DEV and S) : PostgreSQL 11.1
-- on newly created dedicated databases (plans M and above) : PostgreSQL 11.1
+- on shared plans (DEV) : PostgreSQL 11.1
+- on newly created dedicated databases (plans XS and above) : PostgreSQL 11.1
 
 ## PostgreSQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
 <tr>
 <th>Name</th>
-<th>Memory</th>
+<th>Logs</th>
 <th>DB size</th>
 <th>Conn. limit</th>
+<th>Memory</th>
+<th>Type</th>
+<th>VCPUS</th>
 <th>Price /mo</th>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">DEV</span></td>
-<td>SHARED</td>
+<td>no</td>
 <td>256 MB</td>
 <td>5</td>
+<td>Shared</td>
+<td>Shared</td>
+<td>Shared</td>
 <td>Free</td>
 </tr>
 <tr>
-<td class="cc-col__price"><span class="label cc-label__price label-info">S</span></td>
-<td>SHARED</td>
-<td>1 GB</td>
-<td>10</td>
-<td>10 €</td>
-</tr>
-<tr>
-<td class="cc-col__price"><span class="label cc-label__price label-info">M</span></td>
-<td>1 GB</td>
-<td>100 GB</td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XS Small Space</span></td>
+<td>yes</td>
+<td>5 GB</td>
 <td>75</td>
-<td>30 €</td>
+<td>1 GB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>17.50 €</td>
 </tr>
 <tr>
-<td class="cc-col__price"><span class="label cc-label__price label-info">L</span></td>
-<td>8 GB</td>
-<td>450 GB</td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XS Medium Space</span></td>
+<td>yes</td>
+<td>10 GB</td>
+<td>75</td>
+<td>1 GB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>20.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XS Big Space</span></td>
+<td>yes</td>
+<td>15 GB</td>
+<td>75</td>
+<td>1 GB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>30.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">S Small Space</span></td>
+<td>yes</td>
+<td>10 GB</td>
+<td>125</td>
+<td>2 GB</td>
+<td>Dedicated</td>
+<td>2</td>
+<td>35.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">S Medium Space</span></td>
+<td>yes</td>
+<td>15 GB</td>
+<td>125</td>
+<td>2 GB</td>
+<td>Dedicated</td>
+<td>2</td>
+<td>37.50 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">S Big Space</span></td>
+<td>yes</td>
+<td>20 GB</td>
+<td>125</td>
+<td>2 GB</td>
+<td>Dedicated</td>
+<td>2</td>
+<td>40.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">M Small Space</span></td>
+<td>yes</td>
+<td>20 GB</td>
+<td>250</td>
+<td>4 GB</td>
+<td>Dedicated</td>
+<td>4</td>
+<td>82.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">M Medium Space</span></td>
+<td>yes</td>
+<td>40 GB</td>
+<td>250</td>
+<td>4 GB</td>
+<td>Dedicated</td>
+<td>4</td>
+<td>92.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">M Big Space</span></td>
+<td>yes</td>
+<td>80 GB</td>
+<td>250</td>
+<td>4 GB</td>
+<td>Dedicated</td>
+<td>4</td>
+<td>112.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">L Small Space</span></td>
+<td>yes</td>
+<td>40 GB</td>
 <td>500</td>
-<td>240 €</td>
+<td>8 GB</td>
+<td>Dedicated</td>
+<td>6</td>
+<td>164.00 €</td>
 </tr>
 <tr>
-<td class="cc-col__price"><span class="label cc-label__price label-info">XL</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">L Medium Space</span></td>
+<td>yes</td>
+<td>80 GB</td>
+<td>500</td>
+<td>8 GB</td>
+<td>Dedicated</td>
+<td>6</td>
+<td>184.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">L Big Space</span></td>
+<td>yes</td>
+<td>120 GB</td>
+<td>500</td>
+<td>8 GB</td>
+<td>Dedicated</td>
+<td>6</td>
+<td>204.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XL Small Space</span></td>
+<td>yes</td>
+<td>80 GB</td>
+<td>750</td>
+<td>16 GB</td>
+<td>Dedicated</td>
+<td>8</td>
+<td>328.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XL Medium Space</span></td>
+<td>yes</td>
+<td>160 GB</td>
+<td>750</td>
+<td>16 GB</td>
+<td>Dedicated</td>
+<td>8</td>
+<td>368.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XL Big Space</span></td>
+<td>yes</td>
+<td>320 GB</td>
+<td>750</td>
+<td>16 GB</td>
+<td>Dedicated</td>
+<td>8</td>
+<td>448.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXL Small Space</span></td>
+<td>yes</td>
+<td>160 GB</td>
+<td>900</td>
 <td>32 GB</td>
-<td>600 GB</td>
-<td>1000</td>
-<td>700 €</td>
+<td>Dedicated</td>
+<td>10</td>
+<td>796.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXL Medium Space</span></td>
+<td>yes</td>
+<td>320 GB</td>
+<td>900</td>
+<td>32 GB</td>
+<td>Dedicated</td>
+<td>10</td>
+<td>892.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXL Big Space</span></td>
+<td>yes</td>
+<td>640 GB</td>
+<td>900</td>
+<td>32 GB</td>
+<td>Dedicated</td>
+<td>10</td>
+<td>1084.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXL Huge Space</span></td>
+<td>yes</td>
+<td>960 GB</td>
+<td>900</td>
+<td>32 GB</td>
+<td>Dedicated</td>
+<td>10</td>
+<td>1276.00 €</td>
 </tr>
 </table>
 

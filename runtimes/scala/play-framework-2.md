@@ -93,7 +93,7 @@ For instance, if your Sbt project contains a `shared` and `play` module and you 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
 
 
-## Bad root server path
+## Bad root server path error
 
 The error occurs when we cannot find a bin to execute your project.
 

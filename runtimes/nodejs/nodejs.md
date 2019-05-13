@@ -213,7 +213,7 @@ For instance, for a meteor application, you can put
 CC_RUN_COMMAND=node .build/bundle/main.js <options>
 ```
 
-## Trouble shooting your application
+## Troubleshooting your application
 
 If you are often experiencing auto restart of your nodeJS instance, maybe you have an application crashing that we automatically restart.
 To target this behaviour, you can gracefully shutdown with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment so you can fix the problem.

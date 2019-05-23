@@ -245,3 +245,12 @@ If you want to import your **SQL** dump, you can use several methods:
 1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/).
 2. Command line tool for PostgreSQL administration like `psql`.
 3. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).
+
+
+## Direct access
+
+All our dedicated PostgreSQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.
+
+This action will add new environment variables to reach the addon without any proxy.
+
+Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.

@@ -247,7 +247,7 @@ The version currently installed by the add-on is :
 </tr>
 </table>
 
-### Migrating from an old database
+## Migrating from an old database
 
 Some applications require a populated database to run properly.
 If you want to import your **SQL** dump, you can use several methods:
@@ -257,3 +257,11 @@ If you want to import your **SQL** dump, you can use several methods:
 3. Any MySQL client such as [MySQL Workbench](https://www.mysql.fr/products/workbench/).
 
 If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
+
+## Direct access
+
+All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.
+
+This action will add new environment variables to reach the addon without any proxy.
+
+Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.

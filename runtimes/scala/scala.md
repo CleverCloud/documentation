@@ -77,6 +77,8 @@ application.secret=${APPLICATION_SECRET}
 By default, the deployment system runs `sbt stage`. If you want to run another
 goal, you can specify it with the `SBT_DEPLOY_GOAL` environment variable.
 
+Be aware that `SBT_DEPLOY_GOAL` will infer with `CC_SBT_TARGET_DIR`.
+
 ## Multi-module build
 
 If you have a single repository with multiple modules (and no top-level `stage`

@@ -80,9 +80,22 @@ Redirect to HTTPS With Play
 To be able to use `request.secure`, you have to add `trustxforwarded=true` in
 `application.conf`.
 
+## Multi-module project
+
+If you have a single repository with multiple modules, then you can specify which module to run with `CC_SBT_TARGET_DIR`.
+
+For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add
+`CC_SBT_TARGET_DIR=play` in the application's environment variables.
+
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
+
+
+## Bad root server path error
+
+The error occurs when we cannot find a bin to execute your project.
 
 
 ## Failed to acquire connection: Too many connections

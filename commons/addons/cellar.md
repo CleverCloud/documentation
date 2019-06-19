@@ -99,9 +99,7 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
     <h4 class="panel-title">S3 signature algorithm</h4>
   </div>
   <div class="panel-body">
-    Cellar doesn't support the `v4` signature algorithm from S3. Please make sure
-    your client is configured to use the `v2` signature algorithm. The
-    s3cmd configuration file provided on the add-on configuration page already has it.
+    Cellar does now support the `v4` signature algorithm from S3.
   </div>
 </div>
 

@@ -44,6 +44,10 @@ You will be able to retrieve generated data between two deployments.
 </tr>
 </table>
 
+**Notes:** 
+- Back-ups are not included in the public cloud offer. You can still do them manually.
+- FSBuckets are not available for Docker because of security concerns.
+
 ## Configuring your application
 
 Buckets are configured using environment variables. Add the following to your application :

@@ -151,7 +151,7 @@ Your Clever Grid application is now set up to receive your code.
 
 * Go to your project and add the Clever Grid repository to your repository :
 
-      git remote add Clever Grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
+      git remote add clever-grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
  <div class="panel panel-info">
   <div class="panel-body">
     You can find the repository address on the overview page of your application

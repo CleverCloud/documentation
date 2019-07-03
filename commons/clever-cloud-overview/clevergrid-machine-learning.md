@@ -50,7 +50,7 @@ A **Webapp** keeps the application up and serve via HTTP.
   </div>
 </div>
 
-1. Go to https://dashboard.Clever Grid.io/, create a “brand new application”.
+1. Go to https://dashboard.clevergrid.io, create a “brand new application”.
 <figure class="cc-content-img" >
   <img src="/doc/assets/images/create-application.png" data-action="zoom"/>
 </figure>
@@ -83,7 +83,7 @@ A **Webapp** keeps the application up and serve via HTTP.
 
 ## Create an add-on
 
-1. Go to https://dashboard.Clever Grid.io/, Add a “a storage service”.
+1. Go to https://dashboard.clevergrid.io, Add a “a storage service”.
 <figure class="cc-content-img" >
 <img src="/doc/assets/images/addons.png" data-action="zoom"/>
 </figure>
@@ -108,7 +108,7 @@ You can pass some parameter to your application by **environments variables**.
   </div>
 </div>
 
-- Go to [dashboard.Clever Grid.io](https://dashboard.Clever Grid.io) and select your application
+- Go to [dashboard.clevergrid.io](https://dashboard.clevergrid.io) and select your application
 - Manage your environment variables by the tab "Environment variables" 
 <figure class="cc-content-img" >
 <img src="/doc/assets/images/env-selection.png" data-action="zoom"/>
@@ -151,7 +151,7 @@ Your Clever Grid application is now set up to receive your code.
 
 * Go to your project and add the Clever Grid repository to your repository :
 
-      git remote add Clever Grid git+ssh://git@push-Clever Grid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
+      git remote add Clever Grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
  <div class="panel panel-info">
   <div class="panel-body">
     You can find the repository address on the overview page of your application

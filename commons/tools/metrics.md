@@ -18,7 +18,15 @@ In addition to logs, you can have access to metrics to know how your application
 behaves. By default, system metrics like CPU and RAM use are available, as well
 as application-level metrics when available (apache or nginx status for instance).
 
-You can also publish your own metrics if you want (via `statsd`).
+## Publish your own metrics
+
+We currently support two ways to push / collect your metrics: the `statsd` protocol and `Prometheus`.
+
+The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced
+one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
+
+We also support Prometheus metrics collection. Our agent collects exposed metrics on `localhost:9100/metrics`.
+You currently have no way to customize the port or the path but if that's something you need, please ping our support team.
 
 ## Display metrics
 

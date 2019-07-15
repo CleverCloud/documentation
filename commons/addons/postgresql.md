@@ -254,3 +254,51 @@ All our dedicated PostgreSQL databases are served via a proxy. To reduce the lat
 This action will add new environment variables to reach the addon without any proxy.
 
 Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.
+
+## Default extensions
+
+Every PostgreSQL database mananged by Clever Cloud comes with the following default extensions:
+`adminpack`,
+`autoinc`,
+`btree_gin`,
+`btree_gist`,
+`citext`,
+`cube`,
+`dblink`,
+`dict_int`,
+`dict_xsyn`,
+`earthdistance`,
+`file_fdw`,
+`fuzzystrmatch`,
+`hstore`,
+`insert_username`,
+`intagg`,
+`intarray`,
+`isn`,
+`lo`,
+`ltree`,
+`moddatetime`,
+`pageinspect`,
+`pg_buffercache`,
+`pgcrypto`,
+`pg_freespacemap`,
+`pgrowlocks`,
+`pg_stat_statements`,
+`pgstattuple`,
+`pg_trgm`,
+`plcoffee`,
+`plls`,
+`plv8`,
+`postgis`,
+`postgis_tiger_geocoder`,
+`postgis_topology`
+`postgres_fdw`,
+`refint`,
+`seg`,
+`sslinfo`,
+`tablefunc`,
+`tcn`,
+`timetravel`,
+`unaccent`,
+`"uuid-ossp"`,
+`xml2`

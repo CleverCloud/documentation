@@ -8,6 +8,11 @@ keywords:
 - cli
 - clever-tools
 - logs
+- log
+- logging
+- log drains
+- drain
+- drains
 - lifecycle
 - status
 - activity

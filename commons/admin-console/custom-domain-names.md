@@ -154,4 +154,4 @@ the first app. The other requests will be routed to the second app. You can add 
 
 ## Gandi CNAME configuration
 
-Here is <a href="https://next-www.cleverapps.io/blog/features/2019/03/05/gandi-domain-on-clever-cloud/" target="_blank">an article that demonstrates a simple setup for Gandi CNAMEs</a>.
+Here is <a href="https://blog.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud/" target="_blank">an article that demonstrates a simple setup for Gandi CNAMEs</a>.

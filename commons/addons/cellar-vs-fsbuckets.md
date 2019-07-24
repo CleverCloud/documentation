@@ -1,5 +1,5 @@
 ---
-title: Can't choose between Cellar and FS Bucket? Read this guide!
+title: Choosing between File System Buckets and Cellar S3
 position: 3
 shortdesc: This will help you understand the differenc between Cellar and FS Buckets.
 tags:

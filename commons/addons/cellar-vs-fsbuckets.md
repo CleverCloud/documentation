@@ -16,7 +16,7 @@ You want to store files but you can't decide between FS Buckets and Cellar. This
 will compare them: usage, pros/cons, pricing. Get ready for the ultimate comparison.
 
 Clever Cloud uses immutable throwable VMs.
-Every time you redeploy your application, you lose the old VM and all the files stored on their filesystem.
+Every time you redeploy your application, you lose the old instances and all the files stored on their filesystems.
 If you want to avoid that, you might want to store your important files outside of your instances.
 
 Cellar and FS Buckets both allow you to store files ouside of your instances for later
@@ -67,12 +67,12 @@ It provides an HTTP API that can be used with any S3 API Client.
 Clients exist for a lot of languages.
 You can use any S3 Client, from the official Amazon ones to the community ones.
 
-If you already using S3, you will be in your element.
+If you already use S3, you will be in your element.
 
 To store a file, issue a PUT HTTP request to Cellar's API.
 To get a file, issue a GET request to the API.
 You need secret and public keys to authenticate your requests.
-You can manage ACLs, and generate signed URLs with an expiration date.
+You can manage ACLs and generate signed URLs with an expiration date.
 
 ### Upsides
 

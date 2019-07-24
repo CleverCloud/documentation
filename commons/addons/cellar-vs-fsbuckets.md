@@ -1,7 +1,7 @@
 ---
 title: Choosing between File System Buckets and Cellar S3
 position: 3
-shortdesc: This will help you understand the differenc between Cellar and FS Buckets.
+shortdesc: This will help you understand the difference between Cellar and FS Buckets.
 tags:
 - addons
 keywords:
@@ -13,11 +13,11 @@ keywords:
 ---
 
 You want to store files but you can't decide between FS Buckets and Cellar. This article
-will compare them: usage, pros/cons, pricing. Get ready for the ultimate comparison.
+will compare them: usage, pros/cons, pricing.
 
-Clever Cloud uses immutable throwable VMs.
+Clever Cloud uses immutable disposable VMs.
 Every time you redeploy your application, you lose the old instances and all the files stored on their filesystems.
-If you want to avoid that, you might want to store your important files outside of your instances.
+If you want to avoid that, you have to store your important files outside of your instances.
 
 Cellar and FS Buckets both allow you to store files ouside of your instances for later
 use. But there are some differences between them.

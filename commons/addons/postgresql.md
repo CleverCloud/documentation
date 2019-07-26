@@ -20,7 +20,7 @@ and on standards-compliance.
 The version currently installed by the add-on is :
 
 - on shared plans (DEV) : PostgreSQL 11.1
-- on newly created dedicated databases (plans XS and above) : PostgreSQL 11.1
+- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10.4 or 11.1
 
 ## PostgreSQL plans
 

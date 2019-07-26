@@ -17,8 +17,8 @@ MySQL is an open-source relational database management system (RDBMS).
 
 The version currently installed by the add-on is :
 
-- on shared plans (DEV) : MySQL 5.5.28
-- on newly created dedicated databases (plans XS and above) : MySQL 5.7.20
+- on shared plans (DEV) : MySQL 8.0
+- on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7 or 8.0
 
 ## MySQL plans
 

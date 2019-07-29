@@ -69,7 +69,7 @@ fn main() {
 ### Multiple binary targets
 
 If your `Cargo.toml` defines multiple targets, you must specify the one you
-want to run, with the `CARGO_BIN` environment variable. If `CARGO_BIN` is
+want to run, with the `CC_RUST_BIN` environment variable. If `CC_RUST_BIN` is
 specified, then the executable produced by this target is used to start the
 application.
 
@@ -132,9 +132,14 @@ It adds the git configuration before the build start and it cleans it after the 
 ### Rust channels
 
 By default, your application is built with the latest stable version. If you
-require beta, nightly or a specific Rust version, you can set `RUSTUP_CHANNEL`
-to `beta`, `nightly` or a specific version (eg. `1.13.0`). The build uses
+require beta, nightly or a specific Rust version, you can set `CC_RUSTUP_CHANNEL`
+to `beta`, `nightly` or a specific version (eg. `1.36.0`). The build uses
 `rustup` to select the Rust version you need.
+
+### Cargo features
+
+You can enable specific features for your crate by settings the `CC_RUST_FEATURES`
+environment variable to the list of features to enable.
 
 ## Environment injection
 

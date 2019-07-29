@@ -643,8 +643,20 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>RUSTUP_CHANNEL</td>
+    <td>CC_RUST_BIN</td>
+    <td>The name of the binary to launch once built</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_RUSTUP_CHANNEL</td>
     <td>Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0` </td>
+    <td>stable</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_RUST_FEATURES</td>
+    <td>The list of features to enable</td>
     <td></td>
     <td></td>
   </tr>

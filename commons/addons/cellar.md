@@ -100,15 +100,14 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
   </div>
   <div class="panel-body">
     New cellar add-ons does now support the `v4` signature algorithm from S3.
-    If you don't have a new instance, please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided on the add-on configuration page already has it.
+    If you are still using an old account (cellar.services.clever-cloud.com), please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided by the add-on's dashboard is already configured.
   </div>
 </div>
 
 ## Using AWS SDK
 
 To use cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk).
-You only need to specify a custom endpoint (eg `cellar.services.clever-cloud.com`) and to
-force the use of the version 2 of the request signer.
+You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.com`).
 
 ### Node.js
 
@@ -117,7 +116,6 @@ var AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
 var ep = new AWS.Endpoint('<cellar_host>');
-var s3 = new AWS.S3({ endpoint: ep, signatureVersion: 'v2' });
 
 s3.listBuckets(function(err, res) {
   // handle results
@@ -170,9 +168,9 @@ public class Main {
 ```
 ### Python
 
-Based on [this article on dzone](https://dzone.com/articles/look-riak-cs-basho). This has been tested against python 3.6
+This has been tested against python 3.6
 
-This script use boto, the old implentation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar.services.clever-cloud.com` (but check in the clever cloud console).
+This script uses boto, the old implentation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar-c2.services.clever-cloud.com` (but check in the clever cloud console).
 
 ```python
 from boto.s3.key import Key

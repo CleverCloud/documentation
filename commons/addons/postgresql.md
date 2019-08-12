@@ -246,7 +246,6 @@ If you want to import your **SQL** dump, you can use several methods:
 2. Command line tool for PostgreSQL administration like `psql`.
 3. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).
 
-
 ## Direct access
 
 All our dedicated PostgreSQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.

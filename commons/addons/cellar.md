@@ -112,10 +112,12 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 ### Node.js
 
 ```javascript
-var AWS = require('aws-sdk');
+const AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
-var ep = new AWS.Endpoint('<cellar_host>');
+const endpoint = new AWS.Endpoint('<cellar_host>');
+
+const s3 = new AWS.S3({ endpoint });
 
 s3.listBuckets(function(err, res) {
   // handle results

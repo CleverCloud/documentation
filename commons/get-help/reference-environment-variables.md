@@ -125,8 +125,8 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
   </tr>
   <tr>
-    <td>ENABLE_METRICS</td>
-    <td>BETA: Enable metrics collection, Contact support.</td>
+    <td>CC_DISABLE_METRICS</td>
+    <td>Disable metrics collection.</td>
     <td>`false`</td>
   </tr>
   <tr>

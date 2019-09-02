@@ -175,7 +175,8 @@ uWSGI, gunicorn and nginx settings can be configured by setting environment vari
 ### Gunicorn
 
  - `GUNICORN_WORKER_CLASS`: type of worker to use. Default to `sync`. [Available workers](http://docs.gunicorn.org/en/stable/settings.html#worker-class)
-
+ - `CC_GUNICORN_TIMEOUT`: gunicorn timeout. Defaults to `30`
+ 
 ### Nginx
 
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)

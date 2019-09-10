@@ -265,3 +265,11 @@ All our dedicated MySQL databases are served via a proxy. To reduce the latency 
 This action will add new environment variables to reach the addon without any proxy.
 
 Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.
+
+## Encryption at rest
+
+MySQL dedicated addons can be encrypted using LUKS with `aes-xts`.
+
+The passphrase is encrypted in our database using Cipher and Nonce as bytes arrays.
+
+To enable it, you need to ask to our support then we will perform invoicing configuration (more informations about pricing are available through support) and enable the encryption for your addon. Once it's done, you will need to migrate your addon then the encryption at rest will be up.

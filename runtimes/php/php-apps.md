@@ -149,7 +149,7 @@ However, directives who applies to the entire application must be declared in a 
 
 If you need basic authentication, you can use the `.htpasswd` file. The path to the `.htpasswd` of the `AuthUserFile` directive
 has to be absolute. Your site root folder is available at `/var/www/bas/site/`, so the directive should look like:
-`AuthUserFile=/var/www/bas/site/.htpasswd`
+`AuthUserFile /var/www/bas/site/.htpasswd`
 
 #### Define a custom HTTP timeout
 

@@ -30,8 +30,8 @@ Be sure that:
 Apart from <strong>listening on port 8080</strong>, there is nothing to
 change on your application.
 
-We automatically build and run your application, as `go get myapp` would
-build it. The executable is run with the application's root as its
+We automatically build and run your application, see [Build the application](#build-the-application).
+The executable is run with the application's root as its
 current path. So if your application has a "static" folder at its root, it will be
 accessible via "./static" in your application.
 
@@ -39,15 +39,34 @@ We currently support single module applications only. That means that
 your sources files just need to be at the project's root, and you can't
 have multiple modules running.
 
-Also, the go tool requires that you put your main code in a file named `main.go`. If you
-do not do that, go will generate a library and not an executable. So if you get a `Nothing
-listening on port 8080`, please check that your main file is named `main.go`.
+## Build the application
 
-By default, we deploy your application as a go project named "<app_id>". This might not be
+You can use go modules to build your application. If your project isn't compatible, we will build your application using `go get`.
+
+### Go modules
+
+If your project is compatible with go modules, be sure that the `go.mod` file is in your git tree. Note that it **must** be at the root
+of your application (see the [APP_FOLDER environment variable if it isn't](/doc/get-help/reference-environment-variables/#variables-you-can-define))
+
+For now, you have to add the environment variable `CC_GO_BUILD_TOOL=gomod` to build using the go modules. In a future release, we will automatically
+build with go modules if the `go.mod` file is present at the root of your git tree.
+
+Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to specify it using the following environment variable:
+`CC_GO_PKG=./path/to/entrypoint.go`
+
+### Go get
+
+By default, we deploy your application as a go project named `<app_id>`. This might not be
 what you want. If your application has submodules and imports them with their full path *or* your main
 project is an external package hosted, let's say, on github (like `github.com/mememe/myproject`),
 you can define the `CC_GO_PKG=github.com/mememe/myproject` environment variable. We will
 then run `go get ${CC_GO_PKG}` instead of running `go get <app_id>`.
+
+Also, go get requires that you put your main code in a file named `main.go`. If you
+do not do that, go will generate a library and not an executable. So if you get a `Nothing
+listening on port 8080`, please check that your main file is named `main.go`.
+
+You can also force the use of `go get` by setting the environment variable `CC_GO_BUILD_TOOL=goget`. This is currently the default.
 
 ## More configuration
 
@@ -130,7 +149,13 @@ it from your environment, like you would with `PATH`:
 <tr>
 <td>CC_GO_PKG</td>
 <td>
-Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>`.
+Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>` or `go install ${CC_GO_PKG}` instead of `go install <package>`.
+</td>
+</tr>
+<tr>
+<td>CC_GO_BUILD_TOOL</td>
+<td>
+Available values: `gomod`, `goget`. Makes the deployer use `go modules` or `go get` to build your application. If not specified, defaults to `goget`.
 </td>
 </tr>
 </tbody>

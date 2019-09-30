@@ -190,6 +190,12 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_GO_BUILD_TOOL</td>
+    <td>Available values: `gomod`, `goget`. Makes the deployer use `go modules` or `go get` to build your application.</td>
+    <td>`goget`</td>
+    <td></td>
+  </tr>
 </table>
 
 ### Haskell

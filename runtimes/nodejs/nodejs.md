@@ -148,6 +148,9 @@ Here is an example :
 }
 ```
 
+As of now, we will always install development dependencies even if `NODE_ENV=production` is set, using either `npm install --production=false` or `yarn install --production=false`.
+An environment variable might be added in the future to let you control this behaviour. Please reach out to our support if you need such environment variable.
+
 #### Deploy with privates dependencies
 
 If your application got privates dependencies, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).

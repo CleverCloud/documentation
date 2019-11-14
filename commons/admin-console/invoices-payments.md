@@ -64,9 +64,10 @@ Mandate:
 > </ul>
 > Your rights are explained in a statement that you can obtain from your bank.
 
-### A bit more on invoice issuance and notification:
+### About invoices issuance and notifications
 
 As explained in the [Monthly Invoice documentation](/doc/clever-cloud-overview/unified-invoicing/#monthly-invoice),
-at the beginning of every month, we issue an invoice. We attach the invoice to an email
-we send you. In accordance with SEPA rules and the mandate your agreed to, this email will notify you that a debit
-will be attempted the 5th of the month, so three to four days after the notification.
+we issue an invoice at the beginning of every month. We attach the invoice to an email
+we send you. Following SEPA rules and the mandate you agreed to, this email notifies you
+that Clever Cloud is going to charge you on the 5th of the month, three to four days after
+the notification.

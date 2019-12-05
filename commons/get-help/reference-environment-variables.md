@@ -192,10 +192,15 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_GO_BUILD_TOOL</td>
-    <td>Available values: `gomod`, `goget`. Makes the deployer use `go modules` or `go get` to build your application.</td>
+    <td>Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application.</td>
     <td>`goget`</td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_GO_RUNDIR</td>
+    <td>Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`</td>
+    <td></td>
+    <td></td>
 </table>
 
 ### Haskell

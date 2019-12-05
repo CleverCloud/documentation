@@ -41,7 +41,10 @@ have multiple modules running.
 
 ## Build the application
 
-You can use go modules to build your application. If your project isn't compatible, we will build your application using `go get`.
+To build your application, you can use one of the three methods available:
+- go modules
+- go build
+- go get (default)
 
 ### Go modules
 
@@ -53,6 +56,15 @@ build with go modules if the `go.mod` file is present at the root of your git tr
 
 Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to specify it using the following environment variable:
 `CC_GO_PKG=./path/to/entrypoint.go`
+
+### Go build
+
+If your project does not support `go modules`, it may include your vendored dependencies. In this case, `go build` must be used.
+
+To use `go build`, you have to set the `CC_GO_BUILD_TOOL=gobuild` environment variable.
+We will then deploy your project in a classic `GOPATH` hierarchy using `go build`.
+
+The `CC_GO_PKG` environment variable can be used to define the main file of your application. Defaults to `main.go`.
 
 ### Go get
 
@@ -155,7 +167,13 @@ Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>` or `go
 <tr>
 <td>CC_GO_BUILD_TOOL</td>
 <td>
-Available values: `gomod`, `goget`. Makes the deployer use `go modules` or `go get` to build your application. If not specified, defaults to `goget`.
+Available values: `gomod`, `goget`, `gobuild`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. If not specified, defaults to `goget`.
+</td>
+</tr>
+<tr>
+<td>CC_GO_RUNDIR</td>
+<td>
+Makes the deployer use the specified directory to run your binary. If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`.
 </td>
 </tr>
 </tbody>

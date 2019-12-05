@@ -134,6 +134,12 @@ So you can alter the build&start process for your application.
     <td>Allows to specify paths to ignore when the build cache archive is created.</td>
     <td></td>
   </tr>
+  <tr>
+    <td>[CC_OVERRIDE_BUILDCACHE](/doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
+    <td>Allows to specify paths that will be in the build cache.
+    Only those files / directories will be cached</td>
+    <td></td>
+  </tr>
 </table>
 
 ### Docker

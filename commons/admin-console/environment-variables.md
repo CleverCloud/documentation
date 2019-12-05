@@ -75,6 +75,8 @@ We use environment variables for some settings:
  cache archive is created. Must be relative to your application root.
  (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
+ * `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files / directories will be cached. (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
+
 ## Variable definition constraints
 
 *Spaces are not allowed* in the name of the variables.

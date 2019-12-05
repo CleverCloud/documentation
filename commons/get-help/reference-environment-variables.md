@@ -140,6 +140,16 @@ So you can alter the build&start process for your application.
     Only those files / directories will be cached</td>
     <td></td>
   </tr>
+  <tr>
+    <td>[CC_METRICS_PROMETHEUS_PORT](/doc/tools/metrics#publish-your-own-metrics)
+    <td>Define the port on which the Prometheus endpoint is available</td>
+    <td>`8080`</td>
+  </tr>
+  <tr>
+    <td>[CC_METRICS_PROMETHEUS_PATH](/doc/tools/metrics#publish-your-own-metrics)
+    <td>Define the path on which the Prometheus endpoint is available</td>
+    <td>`/metrics`</td>
+  </tr>
 </table>
 
 ### Docker

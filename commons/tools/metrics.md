@@ -25,8 +25,11 @@ We currently support two ways to push / collect your metrics: the `statsd` proto
 The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced
 one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
 
-We also support Prometheus metrics collection. Our agent collects exposed metrics on `localhost:9100/metrics`.
-You currently have no way to customize the port or the path but if that's something you need, please ping our support team.
+We also support Prometheus metrics collection. By default our agent collects exposed metrics on `localhost:9100/metrics`.
+
+If needed, you can override those settings with the two following environment variables:
+- `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
+- `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
 ## Display metrics
 

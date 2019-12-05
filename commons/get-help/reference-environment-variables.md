@@ -678,6 +678,12 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
+    <td>CC_ELIXIR_VERSION</td
+    <td>Choose the Elixir version between '1.8' or `1.9`</td>
+    <td>`1.9`</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>CC_PHOENIX_ASSETS_DIR</td
     <td>Folder in which your Phoenix assets are located.</td>
     <td></td>

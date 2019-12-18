@@ -35,6 +35,11 @@ npm install -g clever-tools@beta
 
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
+> Make sure you can download https hosted sources package. You may install :
+  ```sh
+  apt-get install apt-transport-https ca-certificates
+  ```
+
 ```sh
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "379CE192D401AB61"
 echo "deb https://dl.bintray.com/clevercloud/deb stable main" | tee -a /etc/apt/sources.list

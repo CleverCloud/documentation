@@ -69,7 +69,7 @@ monolog:
 
 ### Configure your database
 
-From the console, edit the application's environment variables. Find DATABASE_URL variable, or create it. And set it to `$MYSQL_ADDON_URI`, that you can find lower in the list, under "Add-on : your-application" title. Here, you can find all environment variables about your add-on, espacially about your database.
+From the console, edit the application's environment variables. Find DATABASE_URL variable, or create it. And set it to the value of `$MYSQL_ADDON_URI`, that you can find lower in the list, under "Add-on : your-application" title. Here, you can find all environment variables about your add-on, espacially about your database.
 
 #### Optional: run tasks after build step
 

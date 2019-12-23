@@ -18,7 +18,7 @@ In addition to logs, you can have access to metrics to know how your application
 behaves. By default, system metrics like CPU and RAM use are available, as well
 as application-level metrics when available (apache or nginx status for instance).
 
-# Publish your own metrics
+## Publish your own metrics
 
 We currently support two ways to push / collect your metrics: the `statsd` protocol and `Prometheus`.
 
@@ -31,32 +31,32 @@ If needed, you can override those settings with the two following environment va
 - `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
 - `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
-# Display metrics
+## Display metrics
 
 For each application, there is a `Metrics` tab in the console.
 
-## Overview pane
+### Overview pane
 
 To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
-## Advanced pane
+### Advanced pane
 
 Advanced metrics allow you to access all gathered metrics,
 on a specified time range.
 
-## Custom queries
+### Custom queries
 
 All metrics are stored in [Warp10](/doc/tools/warp10/), so you explore data directly with
 the [quantum](/doc/tools/warp10/) interface, with [WarpScript](http://www.warp10.io/reference/). For instance,
 you can derive metrics over time, do custom aggregations or combine metrics.
 
-# Access Logs metrics
+## Access Logs metrics
 
 All your applications access logs are pushed to [Warp10](/doc/tools/warp10/). You are now able to process them directly in the console in the Metrics tab of your applications.
 
-## Access Log data model
+### Access Log data model
 
 Access logs are defined in the `'accessLogs'` Warp10 class and there are three Warp10 labels available:
 
@@ -102,7 +102,7 @@ r -> requestId (Sozu)
 ```
 
 
-## Queries examples:
+### Queries examples:
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
@@ -153,7 +153,7 @@ In the following example, we get the `accessLogs` status codes and create a GTS 
 %> LMAP
 ```
 
-# Custom metrics
+## Custom metrics
 
 You can expose custom metrics via [`statsd`](https://github.com/etsy/statsd#usage).
 These metrics will be gathered and displayed in advanced view as well.
@@ -161,12 +161,12 @@ On some platforms, standard metrics published over `statsd` are even integrated 
 
 Metrics published over `statsd` are prefixed with `statsd`.
 
-## statsd socket
+### statsd socket
 
 To publish custom metrics, configure to use your client to push to `localhost:8125`
 (it's the default host and port, so it should work with default settings as well).
 
-## NodeJS example
+### NodeJS example
 
 You can use `node-statsd` to publish metrics
 
@@ -183,7 +183,7 @@ client.increment('my_counter');
 client.gauge('my_gauge', 123.45);
 ```
 
-## Haskell example
+### Haskell example
 
 <!-- Maybe this should be put in haskell documentation? -->
 

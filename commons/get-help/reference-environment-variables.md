@@ -416,7 +416,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_PHP_VERSION</td>
-    <td>Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3`</td>
+    <td>Choose your PHP version between `5.6`, `7.2`, `7.3` and `7.4`</td>
     <td>`7`</td>
     <td></td>
   </tr>

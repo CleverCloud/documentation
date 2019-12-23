@@ -37,9 +37,9 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 Set the `CC_PHP_VERSION` environment variable to one of the following values:
 
 - 5.6
-- 7.1
 - 7.2
 - 7.3
+- 7.4
 
 By default, all new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7
 version available.
@@ -351,10 +351,9 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
 - [PHP 5.6](https://php56info.cleverapps.io)
-- [PHP 7.0](https://php70info.cleverapps.io)
-- [PHP 7.1](https://php71info.cleverapps.io)
 - [PHP 7.2](https://php72info.cleverapps.io).
 - [PHP 7.3](https://php73info.cleverapps.io).
+- [PHP 7.4](https://php74info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 

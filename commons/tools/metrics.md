@@ -125,9 +125,9 @@ FLATTEN
 UNIQUE
 ```
 
-AA convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
+A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
-In the following example, we get the `accessLogs` status codes and create a GTS as output to be able to use FILTER or any other transformation on it a second time.
+In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
 ```warpscript
 // Get all application status code  for the last hour

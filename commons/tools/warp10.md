@@ -1,14 +1,11 @@
 ---
-title: Access Logs
-shortdesc: Get and process your access logs.
+title: Warp10
+shortdesc: Warp10. Geo Time series database. Presentations, concepts and examples
 tags:
-- apps, GTS, warp10, Quantum, visualization
+- GTS, warp10, Quantum, visualization, time series, database
 ---
 
-
-## Warp10 
-
-### Main concepts
+## Main concepts
 
 Warp10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
 
@@ -26,7 +23,7 @@ Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpS
 
 > [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
 
-### Endpoint
+## Endpoint
 
 The Clever Cloud warp10 endpoint is:
 
@@ -46,13 +43,13 @@ You can query our warp10 platform with your own script. Here's a curl example :
 
 > Do not forget the endpoint. `exec` in the previous exemple.
 
-### Token
+## Token
 
 Tokens are based on your application with the notion of producer and owner. Hence, only the data owner can see it.
 
 You can find a 5 days available token in the `metric` tab of your application.
 
-### Technical constraints
+## Technical constraints
 
 The followings limits are defined in warp10. The **soft** one can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. The **hard** one is unsurpassable.
 
@@ -71,7 +68,7 @@ The followings limits are defined in warp10. The **soft** one can be passed over
 
 > **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY INTENSIVES. THEY SHOULD NOT BE USED**
 
-#### Usage:
+### Usage:
 
 An example where it is needed to increase the fetch limit by the `LIMIT` function
 
@@ -82,7 +79,9 @@ An example where it is needed to increase the fetch limit by the `LIMIT` functio
 [ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 1 w ] FETCH
 ```
 
-## Quantum
+## Visualization and exploration
+
+### Quantum
 
 Quantum is a web tool used to run some warpscript. You can access to it from your metrics interface.
 

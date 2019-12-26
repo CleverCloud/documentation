@@ -106,52 +106,13 @@ r -> requestId (Sozu)
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
-```warpscript
-// Fetch on the 'accessLogs' class for your application id as labels
-[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
-
-// get the path field
-<% 
-    DROP
-    VALUES
-    <% DROP
-        JSON->
-        'path' GET
-    %> LMAP
-%> LMAP
-FLATTEN
-
-// distinct|unique results
-UNIQUE
-```
+<script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
 A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
-```warpscript
-// Get all application status code  for the last hour
-[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 10 m ] FETCH
-<%
-  DROP
-  'gts' STORE
-  // output new GTS
-  NEWGTS
-  $gts 
-  <%
-    DUP
-    // store the timestamp
-    0 GET 'ts' STORE
-    // store the status code
-    -1 GET JSON-> 'sC' GET 'sC' STORE
-    // Keep the same labels in the output GTS than in the input ones
-    $gts LABELS RELABEL
-    // Add timestamp and status code value to the output GTS
-    [ $ts NaN NaN NaN $sC ] ADDVALUE
-  %>
-  FOREACH
-%> LMAP
-```
+<script src="https://gist.github.com/cnivolle/2ee8607d995daa1316e17ffc3874d047.js"></script>
 
 ## Custom metrics
 

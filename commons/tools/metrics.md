@@ -2,7 +2,7 @@
 title: Metrics
 shortdesc: Gather metrics on your applications
 tags:
-- apps
+- apps, metrics, accesslogs, warp10
 ---
 
 <div class="panel panel-warning">
@@ -48,9 +48,110 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp10](http://www.warp10.io/), so you explore data directly with
-the quantum interface, with [WarpScript](http://www.warp10.io/reference/). For instance,
+All metrics are stored in [Warp10](/doc/tools/warp10/), so you explore data directly with
+the [quantum](/doc/tools/warp10/) interface, with [WarpScript](http://www.warp10.io/reference/). For instance,
 you can derive metrics over time, do custom aggregations or combine metrics.
+
+## Access Logs metrics
+
+All your applications access logs are pushed to [Warp10](/doc/tools/warp10/). You are now able to process them directly in the console in the Metrics tab of your applications.
+
+### Access Log data model
+
+Access logs are defined in the `'accessLogs'` Warp10 class and there are three Warp10 labels available:
+
+* owner_id;
+* app_id;
+* adc (reverse proxy used).
+
+To reduce space used to store access logs, we defined the following key-value model:
+
+```bash
+t -> timestamp
+a -> appId
+o -> ownerId
+i -> instanceId
+ipS -> ipSource
+pS -> portSource # 0 if undefined
+s -> source
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+ipD -> ipDestination
+pD -> portDestination # 0 if undefined
+d -> destination
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+vb -> verb
+path -> path
+bIn -> bytesInt
+bOut -> bytesOut
+h -> hostname
+rTime -> responseTime
+sTime -> serviceTime
+scheme -> scheme
+sC -> statusCode
+sT -> statusText
+tS -> Haproxy termination_state
+adc -> Reverse proxy hostname
+w -> workerId (Sozu)
+r -> requestId (Sozu)
+```
+
+
+### Queries examples:
+
+The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
+
+```warpscript
+// Fetch on the 'accessLogs' class for your application id as labels
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
+
+// get the path field
+<% 
+    DROP
+    VALUES
+    <% DROP
+        JSON->
+        'path' GET
+    %> LMAP
+%> LMAP
+FLATTEN
+
+// distinct|unique results
+UNIQUE
+```
+
+A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
+
+In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
+
+```warpscript
+// Get all application status code  for the last hour
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 10 m ] FETCH
+<%
+  DROP
+  'gts' STORE
+  // output new GTS
+  NEWGTS
+  $gts 
+  <%
+    DUP
+    // store the timestamp
+    0 GET 'ts' STORE
+    // store the status code
+    -1 GET JSON-> 'sC' GET 'sC' STORE
+    // Keep the same labels in the output GTS than in the input ones
+    $gts LABELS RELABEL
+    // Add timestamp and status code value to the output GTS
+    [ $ts NaN NaN NaN $sC ] ADDVALUE
+  %>
+  FOREACH
+%> LMAP
+```
 
 ## Custom metrics
 

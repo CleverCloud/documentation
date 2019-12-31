@@ -705,6 +705,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_MIX_BUILD_GOAL</td
+    <td>The mix goal to build the application (default compile)</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
     <td>CC_PHOENIX_ASSETS_DIR</td
     <td>Folder in which your Phoenix assets are located.</td>
     <td></td>

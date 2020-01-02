@@ -27,6 +27,27 @@ To run, your Meteor.js application needs a few mandatory [environment variables]
 - `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
 - `PORT`: keep the current value of 8080
 
+### Optional Meteor settings as environment variable
+
+Some application require a `settings.json` file to [store api keys and other various private and public Meteor variables](https://docs.meteor.com/api/core.html#Meteor-settings).
+You can declare a `METEOR_SETTINGS` environment variable and past the content of the json file as the value of this key.
+
+## Specify required Node.js version
+
+Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](https://www.clever-cloud.com/doc/nodejs/nodejs/#requirements) documentation.
+To find out which version is required by your application type the following command `meteor node -v` inside root folder.
+
+Currently with Meteor *1.8.3* the Node.js version is *8.17.0* so you should add the following inside the `package.json` file.
+
+```
+  ...
+  "engines": {
+    "node": "8.17.0"
+  },
+  ...
+```
+You may change the node version value according to the application requirements.
+
 ## Activate the dedicated build
 
 Meteor.js eats a lot of memory during the build. You most likely will need to activate the [dedicated build feature](https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build).

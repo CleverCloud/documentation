@@ -83,7 +83,12 @@ If you want to have database migrations automatically run during each deployment
 yarn run build
 ```
 
-Thens, add this to the application's environment variables:
+Make sure this file is executable:
+
+```
+chmod +x clevercloud/post_build.sh
+```
+Then, add this to the application's environment variables:
 
 ```
 CC_POST_BUILD_HOOK=./clevercloud/post_build.sh

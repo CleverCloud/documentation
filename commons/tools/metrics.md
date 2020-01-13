@@ -99,6 +99,7 @@ tS -> Haproxy termination_state
 adc -> Reverse proxy hostname
 w -> workerId (Sozu)
 r -> requestId (Sozu)
+tlsV -> tlsVersion (Sozu)
 ```
 
 

@@ -396,6 +396,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
 
+* Mailparse: set `ENABLE_MAILPARSE` to `true`.
+
+    Mailparse is an extension for parsing and working with email messages. It can deal with RFC 822 and RFC 2045 (MIME) compliant messages.
+
 * Mongo: set `ENABLE_MONGO` to `true`.
 
     MongoDB is a NoSQL Database. This extension allows to use it from PHP.

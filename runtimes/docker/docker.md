@@ -46,6 +46,8 @@ to do to ensure that your application will run:
 
 * Commit a file named **Dockerfile**, [Here is what it will look like](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices "Dockerfile")
 
+**Note**: You can use a Dockerfile with a different name by setting the environment variable `CC_DOCKERFILE` to the name you want.
+
 * Listen on **port 8080** (HTTP) by default, but you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` environment variable.
 
 ## TCP support

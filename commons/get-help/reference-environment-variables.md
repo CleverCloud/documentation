@@ -187,6 +187,12 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_DOCKERFILE</td>
+    <td>Set an alternative Dockerfile name</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### Go

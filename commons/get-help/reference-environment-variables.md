@@ -456,6 +456,42 @@ So you can alter the build&start process for your application.
     <td>Maximum number of files handled by opcache.</td>
     <td>Default depends on the scaler size</td>
   </tr>
+  <tr>
+    <td>CC_MTA_SERVER_HOST</td>
+    <td>Host of the SMTP server</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MTA_SERVER_PORT</td>
+    <td>Port of the SMTP server</td>
+    <td>465</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MTA_AUTH_USER</td>
+    <td>User to authenticate to the SMTP server</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MTA_AUTH_PASSWORD</td>
+    <td>Password to authenticate to the SMTP server</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MTA_USE_TLS</td>
+    <td>Enable or disable TLS when connecting to the SMTP server</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_MTA_AUTH_METHOD</td>
+    <td>Enable or disable authentication to the SMTP server</td>
+    <td>on</td>
+    <td></td>
+  </tr>
 </table>
 
 ### Python

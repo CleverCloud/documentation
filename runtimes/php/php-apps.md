@@ -439,10 +439,22 @@ To enable this feature, you need to:
     </div>
 </div>
 
-## Sending e-mails
+## Sending emails
 
-The PHP language has the `mail` function to directly send e-mails but we do not support it because of all the maintenance it needs.
-Instead, we recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/). These services already have everything you need to send emails from your code.
+The PHP language has the `mail` function to directly send emails. While we do not provide a SMTP server (needed to send the emails), you can configure one through environment variables.
+
+We also recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) if your project supports it. These services already have everything you need to send emails from your code.
+
+### Configure the SMTP server
+
+Services like [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) provide SMTP servers. If your application has no other way but to use the `mail` function of PHP to send emails, you have to configure a SMTP server. This can be done through environment variables:
+
+- `CC_MTA_SERVER_HOST`: Host of the SMTP server.
+- `CC_MTA_SERVER_PORT`: Port of the SMTP server. Defaults to `465` weither TLS is enabled or not.
+- `CC_MTA_AUTH_USER`: User to authenticate to the SMTP server.
+- `CC_MTA_AUTH_PASSWORD`: Password to authenticate to the SMTP server.
+- `CC_MTA_SERVER_USE_TLS`: Enable or disable TLS (no STARTTLS support). Defaults to `true`.
+- `CC_MTA_SERVER_AUTH_METHOD`: Enable or disable authentication. Defaults to `on`.
 
 ## Configure Monolog
 

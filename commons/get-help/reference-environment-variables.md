@@ -452,9 +452,9 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_OPCACHE_MAX_ACCELERATED_FILES</td>
-    <td>Set the shared opcache memory size</td>
     <td>Maximum number of files handled by opcache.</td>
     <td>Default depends on the scaler size</td>
+    <td></td>
   </tr>
   <tr>
     <td>CC_MTA_SERVER_HOST</td>

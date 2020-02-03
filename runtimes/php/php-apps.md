@@ -316,7 +316,7 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 <table class="table table-bordered">
 <tbody>
 <tr>
-<td>Wordpress</td>
+<td>WordPress</td>
 <td>Prestashop</td>
 </tr>
 </tbody>
@@ -394,7 +394,7 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
-    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
+    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.
 
 * Mailparse: set `ENABLE_MAILPARSE` to `true`.
 

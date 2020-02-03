@@ -9,13 +9,13 @@ The goal of this article is to show you how to deploy a Django application on Cl
 
 The application is a very basic one. More information about the application:  
 
-*  [Github repo](https://github.com/CleverCloud/django-example)
+*  [GitHub repo](https://github.com/CleverCloud/django-example)
 *  [Clever Cloud demo](http://django.cleverapps.io/)
 
 <br/>
 If you want to test our platform and deploy this application, just follow these simple steps:
 
-1. Clone the [Github repo](https://github.com/CleverCloud/django-example)
+1. Clone the [GitHub repo](https://github.com/CleverCloud/django-example)
 2. Git push (deploy) your application.
 
 <br/><br/>

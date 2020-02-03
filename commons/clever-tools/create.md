@@ -58,11 +58,11 @@ You might want to use an alias instead of the complete name.
 
 When you want to make reference to this application using an other command, use `--alias ALIAS` instead of the name.
 
-### Github
+### GitHub
 
-When creating your application, you can link it to github for deployments.
+When creating your application, you can link it to GitHub for deployments.
 
-    # Link an application to github
+    # Link an application to GitHub
     clever create --github <owner>/<repository>
 
 ## Addon creation process

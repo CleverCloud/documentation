@@ -104,7 +104,7 @@ First, you need to use the `HTTPS` url as the git url for your dependency in you
 `private-dep = { git = "https://github.com/user/my-private-dep.git" }`
 
 Then, you need to create a personal access token. It allows to not use your password:
-- `Github`: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+- `GitHub`: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 - `Gitlab`: https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html (API rights are needed)
 
 Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
@@ -122,8 +122,8 @@ chmod 600 ~/.git-credentials
 If you have multiple private repositories, add them accordingly.
 
 Now, go into the environment variables page of your application and create those environment variables:
-- `GIT_USERNAME`: your github / gitlab / other username
-- `GIT_PASSWORD`: your github / gitlab / other password
+- `GIT_USERNAME`: Your GitHub / gitlab / other username
+- `GIT_PASSWORD`: Your GitHub / gitlab / other password
 - `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
 - `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
 

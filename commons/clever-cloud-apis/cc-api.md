@@ -20,7 +20,7 @@ There are 2 supported methods for the signature: PLAINTEXT and HMAC-SHA1.
 While PLAINTEXT is way easier for testing, you **should** use HMAC-SHA1
 when it comes to production. This ensures that the request is totally verified.
 
-We have a [JavaScript client on Github](https://github.com/CleverCloud/clever-client.js)
+We have a [JavaScript client on GitHub](https://github.com/CleverCloud/clever-client.js)
 where you can find a lot of informations.
 Especially in the [src/session.js file](https://github.com/CleverCloud/clever-client.js/blob/master/src/session.js)
 

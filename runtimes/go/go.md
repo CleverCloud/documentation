@@ -70,7 +70,7 @@ The `CC_GO_PKG` environment variable can be used to define the main file of your
 
 By default, we deploy your application as a go project named `<app_id>`. This might not be
 what you want. If your application has submodules and imports them with their full path *or* your main
-project is an external package hosted, let's say, on github (like `github.com/mememe/myproject`),
+project is an external package hosted, let's say, on GitHub (like `github.com/mememe/myproject`),
 you can define the `CC_GO_PKG=github.com/mememe/myproject` environment variable. We will
 then run `go get ${CC_GO_PKG}` instead of running `go get <app_id>`.
 

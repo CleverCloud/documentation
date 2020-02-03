@@ -1,6 +1,6 @@
 ---
-title: Deploying a Wordpress website
-shortdesc: This article shows you how to deploy a Wordpress-based website on Clever Cloud.
+title: Deploying a WordPress website
+shortdesc: This article shows you how to deploy a WordPress-based website on Clever Cloud.
 tags:
 - php
 ---
@@ -18,7 +18,7 @@ have their own pros and cons but have the same end result.
 
 ## Deploy via FTP
 
-1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
+1. Download the WordPress source files on [wordpress.org](http://wordpress.org).
 
 2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/).
 
@@ -27,7 +27,7 @@ have their own pros and cons but have the same end result.
 4. Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
 password using the [environment variables](/doc/admin-console/environment-variables/) of the add-on.
 
-3. [Send these Wordpress files via FTP](/doc/clever-cloud-overview/add-application/#ftp-deployment) using the FTP
+3. [Send these WordPress files via FTP](/doc/clever-cloud-overview/add-application/#ftp-deployment) using the FTP
 credentials displayed in the application' information page.
 
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
@@ -35,7 +35,7 @@ credentials displayed in the application' information page.
 
 ## Deploy via Git
 
-1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
+1. Download the WordPress source files on [wordpress.org](http://wordpress.org).
 
 2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/).
 
@@ -62,15 +62,15 @@ you create a `buckets.json` file).
     ]
     ```
 
-8. Send these Wordpress files via Git. Read this [article](/doc/clever-cloud-overview/add-application/#git-deployment)
+8. Send these WordPress files via Git. Read this [article](/doc/clever-cloud-overview/add-application/#git-deployment)
 if you need more information about it.
 
 9. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
 
 
-### Install a Wordpress plugin with Git
+### Install a WordPress plugin with Git
 
-Wordpress plugins can be installed from the administration panel, to help the user. However, this way doesn't work with
+WordPress plugins can be installed from the administration panel, to help the user. However, this way doesn't work with
 git. Indeed, as explained above, deploying with git prevents to keep files uploaded by the user and the plugin installed
 on the admin panel will be lost at the next deployment, because the code of the plugin isn't tracked by git.
 
@@ -78,15 +78,15 @@ To solve this problem, we recommend to install the plugin manually by copying th
 `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
 
 The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it
-as others Wordpress plugins. To uninstall the plugin, the procedure is the same as before except that you have to delete
+as others WordPress plugins. To uninstall the plugin, the procedure is the same as before except that you have to delete
 the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend
 you to delete it from you admin panel before removing the file, in order to clean your database and all files that the
 plugin could have created.
 
 
-## Optimise and speed-up your Wordpress
+## Optimise and speed-up your WordPress
 
-There are multiple ways to optimise your Wordpress and speed-up its response time.
+There are multiple ways to optimise your WordPress and speed-up its response time.
 We provide different tools and software to help you in this task as [Varnish](/doc/php/varnish/) for the HTTP cache,
 and [Redis](/doc/addons/redis/) for the object caching.
 
@@ -111,11 +111,11 @@ Enabling [Varnish](/doc/tools/varnish/) for your application is very simple. All
 your application. If this folder doesn't exist, create it in the **root** of your project.
 
 2. Copy [this code](https://raw.githubusercontent.com/CleverCloud/varnish-examples/master/wordpress.vcl) into the
-`varnish.vcl` file you just created. It'll configure Varnish to work with your Wordpress.
+`varnish.vcl` file you just created. It'll configure Varnish to work with your WordPress.
 
 3. To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, ...
 we recommend you to install the [Varnish HTTP Purge](https://wordpress.org/plugins/varnish-http-purge/) plugin to
-your Wordpress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
+your WordPress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
 
 If you need to manually purge the Varnish cache, the plugin provides a **Purge Varnish cache** button on the top bar
 of your website.
@@ -126,7 +126,7 @@ of your website.
 [Redis](/doc/addons/redis/) offers you a good way to speed-up your application by caching some of the objects of your
 application, as the result of SQL queries of your application, improving the response time.
 
-To enable [Redis](/doc/addons/redis/) for your Wordpress, you need to disable other Object Cache and Data Cache of your
+To enable [Redis](/doc/addons/redis/) for your WordPress, you need to disable other Object Cache and Data Cache of your
 application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and
 performance problems.
 
@@ -144,10 +144,10 @@ define('WP_REDIS_PASSWORD', getenv('REDIS_PASSWORD'));
 ```
 
 3. Download [this file](http://plugins.svn.wordpress.org/redis-cache/trunk/includes/object-cache.php)
-who manages the connexion with Redis and Wordpress and moves it to your `/wp-content` folder. The file **must** be named
+who manages the connexion with Redis and WordPress and moves it to your `/wp-content` folder. The file **must** be named
 `object-cache.php`.
 
-4. Redis should now work with your Wordpress.
+4. Redis should now work with your WordPress.
 
 ### SSL Configuration
 

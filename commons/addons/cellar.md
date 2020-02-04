@@ -216,9 +216,6 @@ cellar:
 ```
 
 A `region` parameter must be provided, although it is not used by Cellar.
+The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception will be raised : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
 
-`force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html):
-
-> `:force_path_style` (Boolean) — default: `false` —
-> When set to true, the bucket name is always left in the request URI and never moved to the host as a sub-domain.
-
+`force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).

@@ -42,6 +42,18 @@ possible with your build tool, but sometimes it's not possible. Another reason
 to use hooks is to integrate Clever Cloud-specific tasks which don't belong in
 the project's build configuration.
 
+## Exceptions
+
+Some application types do not have hooks support or only some of them.
+
+### Docker
+
+For Docker, because you can do pretty much anything yourself inside your Dockerfile, only the following hooks are available:
+
+- CC_RUN_SUCCEEDED_HOOK
+
+If you need support for other hooks, please reach out to our support and explain your use case.
+
 ## Hooks types
 
 ### Pre Build (`CC_PRE_BUILD_HOOK`)

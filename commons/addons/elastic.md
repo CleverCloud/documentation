@@ -30,7 +30,14 @@ Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. 
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. Once both your application and APM server are running, you application with automatically send APM datas to the APM server wich will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
+
+Curently, APM agents are available in the following languages:
+- [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
+- [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
+- [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
+- [Python](https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html)
+- [Ruby](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html)
 
 ## Logs
 

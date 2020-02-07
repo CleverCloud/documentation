@@ -22,7 +22,7 @@ In the Clever Cloud web console:
 In the envrionment variables section of your Elixir application, set
 
 - **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
-- **CC_ELIXIR_VERSION** with the value of `$ elixir -v` result. (Available values as of today are `1.8`, `1.9` or `1.10`)
+- **CC_ELIXIR_VERSION** to the value of `$ elixir -v` result. (Available versions as of today are `1.8`, `1.9` or `1.10`)
 - **CC_PHOENIX_RUN_ECTO_MIGRATE** to `true` if you need to trigger the command `$ mix ecto.migrate`
 
 ## Git Deployment on Clever Cloud

@@ -4,7 +4,7 @@ Currently, Clever Cloud supports Elixir based applications.
 ## Create an Elixir application and add a PostreSQL database
 
 In the Clever Cloud web console:
-- under the organization of your choice, click new, then application. Select **Elixir**, then name your application and choose it's deployment zone.
+- under the organization of your choice, click new, then application. Select **Elixir**, then name your application and choose its deployment zone.
 - we prompted if you need an add-on, select **PostgreSQL**. Select your database size and name it.
 
 ## Configure your Phoenix application

@@ -15,7 +15,7 @@ In the Clever Cloud web console:
 
 - Generate a secret token with `$ mix phx.gen.secret`.
 
-- Know your Elixir version with `$ elixir -v`
+- Get your Elixir version with `$ elixir -v`, you will need it later
 
 ## Set production environment variables
 

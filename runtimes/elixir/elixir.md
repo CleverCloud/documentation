@@ -1,4 +1,5 @@
 ## Overview
+
 Clever Cloud supports Elixir based applications.
 
 ## Create an Elixir application and add a PostreSQL database
@@ -12,9 +13,7 @@ In the Clever Cloud web console:
 ### Mandatory configuration
 
 - Edit the file `config/prod.secret.exs` to replace `System.get_env("DATABASE_URL")` with `System.get_env("POSTGRESQL_ADDON_URI")`.
-
 - Generate a secret token with `$ mix phx.gen.secret`.
-
 - Get your Elixir version with `$ elixir -v`, you will need it later
 
 ## Set production environment variables
@@ -26,20 +25,18 @@ In the envrionment variables section of your Elixir application, set
 - **CC_PHOENIX_RUN_ECTO_MIGRATE** to `true` if you need to trigger the command `$ mix ecto.migrate`
 
 ## Git Deployment on Clever Cloud
+
 You need git on your computer to deploy via this tool. Here is the official website of Git to get more information: git-scm.com
 
 ### Setting up your remotes
 
-
 The "Information" page of your app gives you your git deployment URL. It looks like this:
 `git+ssh://git@push.clever-cloud.com/<your_app_id>.git`. Copy it in your clipboard.
-
 
 - Locally, under your code folder, type in `git init` to set up a new git repository or skip this step if you already have one.
 - Add the deploy URL with `git remote add <name> <your-git-deployment-url>`.
 - Add your files via `git add <files path>` and commit them via `git commit -m <your commit message>`.
 - Now push your application on Clever Cloud with `git push <name> master`
-
 
 ## Build, deployment phases and custom configuration
 

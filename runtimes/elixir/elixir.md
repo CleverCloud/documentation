@@ -1,5 +1,5 @@
 ## Overview
-Currently, Clever Cloud supports Elixir based applications.
+Clever Cloud supports Elixir based applications.
 
 ## Create an Elixir application and add a PostreSQL database
 
@@ -49,7 +49,9 @@ $ mix deps.get
 $ mix deps.compile
 $ npm install
 ```
-These commands will compile your dependencies at the root of your project folder. If you want to use another folder, specify it via the environment variable **CC_PHOENIX_ASSETS_DIR**.
+These commands will compile your dependencies at the root of your project folder. 
+If you want to use another folder for `npm install`, specify it via the environment variable **CC_PHOENIX_ASSETS_DIR**.
+To change the folder for the entire build / run process, you should use **APP_FOLDER** environment variable.
 
 Then `$ mix compile` is run. If you want to override this behavior, you can set the environment variable **CC_MIX_BUILD_GOAL** to the value you desire.
 

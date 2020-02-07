@@ -43,7 +43,7 @@ The "Information" page of your app gives you your git deployment URL. It looks l
 
 ## Build, deployment phases and custom configuration
 
-When we push our code to the Clever Cloud remote provided, the following commands are run
+Once you push your code to the Clever Cloud remote provided, the following commands are run:
 ```
 $ mix deps.get
 $ mix deps.compile

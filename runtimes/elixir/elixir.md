@@ -19,7 +19,7 @@ In the Clever Cloud web console:
 
 ## Set production environment variables
 
-In the envrionment variables section of your Elixir's application, set
+In the envrionment variables section of your Elixir application, set
 
 - **SECRET_KEY_BASE** with the value obtained with `$ mix phx.gen.secret` previously
 - **CC_ELIXIR_VERSION** with the value of `$ elixir -v` result. (Available values as of today are `1.8`, `1.9` or `1.10`)

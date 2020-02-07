@@ -41,7 +41,7 @@ The "Information" page of your app gives you your git deployment URL. It looks l
 - Now push your application on Clever Cloud with `git push <name> master`
 
 
-## Build and deployment phases and custom configuration
+## Build, deployment phases and custom configuration
 
 When we push our code to the Clever Cloud remote provided, the following commands are run
 ```

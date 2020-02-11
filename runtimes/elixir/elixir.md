@@ -7,7 +7,6 @@ Clever Cloud supports Elixir based applications.
 In the Clever Cloud web console:
 - under the organization of your choice, click new, then application. Select **Elixir**, then name your application and choose its deployment zone.
 
-
 #### If you deploy a Phoenix application
 
 - when prompted if you need an add-on, select **PostgreSQL**. Select your database size and name it.
@@ -28,7 +27,6 @@ In the Clever Cloud web console:
 In the envrionment variables section of your Elixir application, set
 
 - **CC_ELIXIR_VERSION** to the value of `$ elixir -v` result. (Available versions as of today are `1.8`, `1.9` or `1.10`)
-
 
 #### If you deploy a Phoenix application
 

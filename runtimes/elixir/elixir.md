@@ -2,26 +2,37 @@
 
 Clever Cloud supports Elixir based applications.
 
-## Create an Elixir application and add a PostreSQL database
+## Create an Elixir application
 
 In the Clever Cloud web console:
 - under the organization of your choice, click new, then application. Select **Elixir**, then name your application and choose its deployment zone.
-- we prompted if you need an add-on, select **PostgreSQL**. Select your database size and name it.
 
-## Configure your Phoenix application
+
+#### If you deploy a Phoenix application
+
+- when prompted if you need an add-on, select **PostgreSQL**. Select your database size and name it.
+
+## Configure your application
 
 ### Mandatory configuration
 
+- Get your Elixir version with `$ elixir -v`, you will need it later
+
+#### If you deploy a Phoenix application
+
 - Edit the file `config/prod.secret.exs` to replace `System.get_env("DATABASE_URL")` with `System.get_env("POSTGRESQL_ADDON_URI")`.
 - Generate a secret token with `$ mix phx.gen.secret`.
-- Get your Elixir version with `$ elixir -v`, you will need it later
 
 ## Set production environment variables
 
 In the envrionment variables section of your Elixir application, set
 
-- **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
 - **CC_ELIXIR_VERSION** to the value of `$ elixir -v` result. (Available versions as of today are `1.8`, `1.9` or `1.10`)
+
+
+#### If you deploy a Phoenix application
+
+- **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
 - **CC_PHOENIX_RUN_ECTO_MIGRATE** to `true` if you need to trigger the command `$ mix ecto.migrate`
 
 ## Git Deployment on Clever Cloud
@@ -58,4 +69,4 @@ Then `$ mix phx.digest` is run. You can override this one with the variable **CC
 
 Finally, `$ mix phx.server` is invoked, and as always, you can override this behavior, either with **CC_RUN_COMMAND** where you have to specify the full command, or **CC_PHOENIX_SERVER_GOAL** where it will be a mix task by default.
 
-And if you need to specify the timezone of your application, you can do it with the variable **TZ** set to the usual timezone format, for instance `Europe/Paris`.
+Note: If you need to specify the timezone of your application, you can do it with the variable **TZ** set to the usual timezone format, for instance `Europe/Paris`.

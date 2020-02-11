@@ -219,6 +219,8 @@ you must configure a S3 service with a custom endpoint.
 
 Use this configuration in your `config/storage.yml`:
 
+<!-- We're sorry folks, but this keeps the doc compiling : <% const ENV = { fetch:()=>{}} %>-->
+
 ```yaml
 cellar:
   service: S3

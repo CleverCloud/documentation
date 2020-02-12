@@ -19,7 +19,7 @@ Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpS
 
 > The metrics ovh team built an other way to request warp10: https://github.com/ovh/tsl/
 
-> Notice that the timestamp is in **milliseconds**
+> Notice that the timestamp is in **microsecond**
 
 > [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
 

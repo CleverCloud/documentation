@@ -5,7 +5,7 @@ tags:
 - php
 ---
 
-PHP is available on our platform with the branches 5.6, 7.0, 7.1, 7.2 and 7.3. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6, 7.2, 7.3 and 7.4. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 

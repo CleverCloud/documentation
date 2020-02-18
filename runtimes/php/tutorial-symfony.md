@@ -29,7 +29,7 @@ clever env set CC_WEBROOT /public
 
 ### Configure the Symfony environment
 
-If you already have a `.env` file in your application, please don't commit it: credentials are not meant to be committed alongside your applications. Clever Cloud allows you to inject environment in your app, so you can dynamically like databases and have separate environments with the same code base.
+If you're using [`.env` file](https://symfony.com/blog/improvements-to-the-handling-of-env-files-for-all-symfony-versions) in your application, please don't commit productions credentials in this file or in a `.env.production` file. They are not meant to be committed alongside your applications. Clever Cloud allows you to inject environment in your app, so you can dynamically like databases and have separate environments with the same code base.
 
 From the console, you can edit the application's environment variables. Click on "expert mode", you'll be able to directly paste the contents of the .env file.
 

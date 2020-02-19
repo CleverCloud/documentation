@@ -146,3 +146,31 @@ An example where it is needed to increase the fetch limit by the `LIMIT` functio
 Quantum is a web tool used to run some warpscript. You can access to it from your metrics interface.
 
 It provide the path to the Clever Cloud warp10 gateway and let you explore your data.
+
+## Macro
+
+Clever Cloud provides some macros.
+
+Any macro can be called in warpscripts by `@clevercloud/<macro's name>`
+
+### Consumption and invoice
+
+The following macros are helpers to compute consumption in seconds
+
+- `app_consumption`
+
+Return the consumption in **second** by **applications** for a specific **organisation**.
+ `Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
+
+```bash
+'<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
+```
+
+- `orga_consumption`
+
+Return **all** the consumption in **second** for a specific **organisation**. `Start` and `End` parameters 
+can be either a timestamp in microseconds or an iso8601 date format.
+
+```bash
+'<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
+```

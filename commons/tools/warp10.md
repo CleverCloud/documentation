@@ -153,7 +153,7 @@ Clever Cloud provides some macros.
 
 Any macro can be called in warpscripts by `@clevercloud/<macro's name>`
 
-### Consumption and invoice
+### Consumption
 
 The following macros are helpers to compute consumption in seconds
 

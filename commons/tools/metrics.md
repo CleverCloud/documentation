@@ -382,7 +382,7 @@ NOW 'NOW' STORE
 [ SWAP [ 'app_id' ] reducer.mean ] REDUCE
 ```
 
-## Consumption and price metrics
+## Consumption metric
  
 Consumption can also be inferred by our metrics. We provide some helper macros in the 
 [Warp10 documentation](/doc/tools/warp10/).

@@ -147,7 +147,14 @@ In metrics' data, mains labels would be :
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 
-> Depending on the class. Only some of this labels could be present
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Note:</h4>
+  </div>
+  <div class=“panel-body”>
+  For some specific metrics. Some labels could miss.
+  </div>
+</div>
 
 ##### Classes
 
@@ -155,7 +162,7 @@ Telegraf provide lots of metrics described in their [documentation](https://gith
 
 Below, the list of all warp10 classes representing Telegraf metrics :
 
-<table align="center">
+<table align="center" class="table table-bordered" >
 <tbody>
 <tr>
 <td align="center">conntrack.ip_conntrack_count</td>
@@ -369,7 +376,14 @@ More information about [Quantum and Warp10](/doc/tools/warp10/) in our documenta
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by 
 minute.
 
->  Computation can be time intensive
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Warning:</h4>
+  </div>
+  <div class=“panel-body”>
+  Computation can be time intensive.
+  </div>
+</div>
 
 ```bash
 // Fix the NOW timestamp to have the same on over the script

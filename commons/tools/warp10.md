@@ -19,9 +19,16 @@ Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpS
 
 > The metrics ovh team built an other way to request warp10: https://github.com/ovh/tsl/
 
-> Notice that the timestamp is in **microsecond**
-
 > [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
+
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Note:</h4>
+  </div>
+  <div class=“panel-body”>
+  Timestamp unit is in <b>microsecond.</b>
+  </div>
+</div>
 
 ## Endpoint
 
@@ -126,7 +133,14 @@ The followings limits are defined in warp10. The **soft** one can be passed over
 </tbody>
 </table>
 
-> **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY INTENSIVES. THEY SHOULD NOT BE USED**
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Warning:</h4>
+  </div>
+  <div class=“panel-body”>
+    operation over <i> soft limts </i> may be really intensives.
+  </div>
+</div>
 
 ### Usage:
 
@@ -149,9 +163,16 @@ It provide the path to the Clever Cloud warp10 gateway and let you explore your 
 
 ## Macro
 
-Clever Cloud provides some macros.
+Warp10 provide a server side macro manager. It is a way to release some ready to use warpscript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.
 
-Any macro can be called in warpscripts by `@clevercloud/<macro's name>`
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Note:</h4>
+  </div>
+  <div class=“panel-body”>
+  More information on the <a href="https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros">Warp10' macros documentations</a>.
+  </div>
+</div>
 
 ### Consumption
 

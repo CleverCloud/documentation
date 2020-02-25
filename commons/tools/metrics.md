@@ -62,11 +62,17 @@ Access logs are defined in the `'accessLogs'` Warp10 class and there are three W
 
 * `owner_id`: Organisation ID
 * `app_id` or `addon_id`: Application ID or Addon ID
-* `adc` or `sdc` : `adc` (Application Delivery Controller) are used for http connexions ; `sdc` (Service Delivery Controller) are used for tcp connexions.
+* `adc` or `sdc`
+    * `adc` (Application Delivery Controller) are used for http connexions
+    * `sdc` (Service Delivery Controller) are used for tcp connexions
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
-To reduce space used to store access logs, we defined the following key-value model:
+To reduce space used to store access logs, we defined the following key-value models.
+
+#### Key-Value model for applications
+
+AccessLogs data models for application. Using HTTP protocol.
 
 ```bash
 t -> timestamp
@@ -91,18 +97,51 @@ vb -> verb
 path -> path
 bIn -> bytesInt
 bOut -> bytesOut
-h -> hostname (missing for addons)
+h -> hostname
 rTime -> responseTime
 sTime -> serviceTime
 scheme -> scheme
 sC -> statusCode
 sT -> statusText
 tS -> Haproxy termination_state
-adc | sdc -> Reverse proxy hostname
+adc -> Reverse proxy hostname
 w -> workerId (Sozu)
 r -> requestId (Sozu)
 tlsV -> tlsVersion (Sozu)
-sDuration -> for SDC only. Total session duration time in millis (haproxy tcp)
+```
+
+#### Key-Value model for addons
+
+AccessLogs data models for addons. Using TCP protocol.
+
+```bash
+t -> timestamp
+a -> appId or addonId
+o -> ownerId
+i -> instanceId
+ipS -> ipSource
+pS -> portSource # 0 if undefined
+s -> source
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+ipD -> ipDestination
+pD -> portDestination # 0 if undefined
+d -> destination
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+bIn -> bytesInt
+bOut -> bytesOut
+scheme -> scheme
+tS -> Haproxy termination_state
+sdc -> Reverse proxy hostname
+w -> workerId (Sozu)
+r -> requestId (Sozu)
+tlsV -> tlsVersion (Sozu)
+sDuration -> total session duration time in millis
 ```
 
 
@@ -146,7 +185,8 @@ In metrics' data, mains labels would be :
 - `owner_id` : A unique ID by organisation
 - `app_id` : A unique ID of application
 - `host` : HV id hosting the VM instance
-- `adc` : Reverse proxy ID
+- `adc` : Reverse proxy ID for http connexion (ie: applications)
+- `sdc` : Reverse proxy ID for tcp connexion (ie: addons)
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 

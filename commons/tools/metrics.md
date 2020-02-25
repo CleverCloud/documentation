@@ -70,7 +70,7 @@ To reduce space used to store access logs, we defined the following key-value mo
 
 ```bash
 t -> timestamp
-a -> appId
+a -> appId or addonId
 o -> ownerId
 i -> instanceId
 ipS -> ipSource
@@ -91,7 +91,7 @@ vb -> verb
 path -> path
 bIn -> bytesInt
 bOut -> bytesOut
-h -> hostname
+h -> hostname (missing for addons)
 rTime -> responseTime
 sTime -> serviceTime
 scheme -> scheme

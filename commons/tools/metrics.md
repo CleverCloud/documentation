@@ -60,9 +60,11 @@ All your applications access logs are pushed to [Warp10](/doc/tools/warp10/). Yo
 
 Access logs are defined in the `'accessLogs'` Warp10 class and there are three Warp10 labels available:
 
-* owner_id;
-* app_id;
-* adc (reverse proxy used).
+* `owner_id`: Organisation ID
+* `app_id` or `addon_id`: Application ID or Addon ID
+* `adc` or `sdc` : `adc` (Application Delivery Controller) are used for http connexions ; `sdc` (Service Delivery Controller) are used for tcp connexions.
+
+> Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
 To reduce space used to store access logs, we defined the following key-value model:
 
@@ -96,10 +98,11 @@ scheme -> scheme
 sC -> statusCode
 sT -> statusText
 tS -> Haproxy termination_state
-adc -> Reverse proxy hostname
+adc | sdc -> Reverse proxy hostname
 w -> workerId (Sozu)
 r -> requestId (Sozu)
 tlsV -> tlsVersion (Sozu)
+sDuration -> for SDC only. Total session duration time in millis (haproxy tcp)
 ```
 
 

@@ -130,6 +130,29 @@ For instance, for a hakyll website, you can put
 CC_RUN_COMMAND=~./local/bin/site server --host 0.0.0.0 --port 8080
 ```
 
+## Log interactivity and Output buffering
+
+When printing text to stdout, you may experience a little delay. This happens
+because by default, when running outside of an interactive terminal, haskell
+programs aggressively buffer output, instead of flushing content line by line.
+On small scalers, it can lead to lost logs (the buffer gets too big and the log
+collector is killed before having a chance to send logs). To avoid this, you can
+force the output buffer to be flushed line by line, as in a terminal session.
+
+```haskell
+module Main where
+
+import System.IO
+
+main :: IO ()
+main = do
+  hSetBuffering stdout LineBuffering
+  -- your program goes here
+```
+
+Of course, only do that for programs where you want low latency for
+text output, as it can significantly affect performance.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these

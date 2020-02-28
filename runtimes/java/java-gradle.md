@@ -100,6 +100,18 @@ Just create and commit the `gradlew` file and the wrapper `jar` and
 	src/
 ```
 
+## Custom run command
+
+If you need to run a custom command
+you can specify it through the `CC_RUN_COMMAND` environment variable.
+This will override the default way of runing your application.
+
+Example:
+
+```
+CC_RUN_COMMAND=java -jar somefile.jar <options>
+```
+
 
 ## Environment injection
 

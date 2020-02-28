@@ -103,3 +103,16 @@ If you need to specify a maven profile (either for the `build` or the `deploy` g
 ```haskell
 "-Pmyprofile package"
 ```
+
+## Custom run command
+
+If you need to run a custom command
+you can specify it through the `CC_RUN_COMMAND` environment variable.
+This will override the default `maven run` we use to run your application.
+
+Example:
+
+```
+CC_RUN_COMMAND=java -jar somefile.jar <options>
+```
+

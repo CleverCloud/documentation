@@ -124,6 +124,18 @@ You can use the following properties:
   </tbody>
 </table>
 
+## Custom run command
+
+If you need to run a custom command (or just pass options to the program),
+you can specify it through the `CC_RUN_COMMAND` environment variable.
+This will override the default way of running your application.
+
+Example:
+
+```
+CC_RUN_COMMAND=java -jar somefile.jar <options>
+```
+
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the

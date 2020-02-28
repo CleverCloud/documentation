@@ -45,7 +45,7 @@ The supported containers are listed below:
 </table>
 
 
-## Available Java versions
+## Available Java versions
 
 Please refer to <a href="/doc/java/select-java-version/">Java: select version</a>
 
@@ -295,6 +295,18 @@ Here's the list of the configuration values for the "container" field in `war.js
 </tr>
 </tbody>
 </table>
+
+## Custom run command
+
+If you need to run a custom command
+you can specify it through the `CC_RUN_COMMAND` environment variable.
+This will override the default way of running your application.
+
+Example:
+
+```
+CC_RUN_COMMAND=java -jar somefile.jar <options>
+```
 
 ## Environment injection
 

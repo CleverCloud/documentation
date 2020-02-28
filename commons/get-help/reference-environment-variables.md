@@ -327,6 +327,12 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_RUN_COMMAND</td>
+    <td>Custom command to run your application. Replaces the default behaviour.</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### NodeJS

@@ -47,15 +47,9 @@ Curently, APM agents are available in the following languages:
 - [Python](https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html)
 - [Ruby](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html)
 
-
 It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
 
 Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
-
-
-## Logs
-
-You can redirect your application logs directly in Elasticsearch and visualize them in Kibana.
 
 ## Elastic stack plans
 

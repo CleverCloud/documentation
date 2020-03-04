@@ -60,15 +60,23 @@ All your applications access logs are pushed to [Warp10](/doc/tools/warp10/). Yo
 
 Access logs are defined in the `'accessLogs'` Warp10 class and there are three Warp10 labels available:
 
-* owner_id;
-* app_id;
-* adc (reverse proxy used).
+* `owner_id`: Organisation ID
+* `app_id` or `addon_id`: Application ID or Addon ID
+* `adc` or `sdc`
+    * `adc` (Application Delivery Controller) are used for HTTP connections
+    * `sdc` (Service Delivery Controller) are used for TCP connections
 
-To reduce space used to store access logs, we defined the following key-value model:
+> Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
+
+To reduce space used to store access logs, we defined the following key-value models.
+
+#### Key-Value model for applications
+
+AccessLogs data models for application. Using HTTP protocol.
 
 ```bash
 t -> timestamp
-a -> appId
+a -> appId or addonId
 o -> ownerId
 i -> instanceId
 ipS -> ipSource
@@ -100,6 +108,34 @@ adc -> Reverse proxy hostname
 w -> workerId (Sozu)
 r -> requestId (Sozu)
 tlsV -> tlsVersion (Sozu)
+```
+
+#### Key-Value model for addons
+
+AccessLogs data models for addons. Using TCP protocol.
+
+```bash
+t -> timestamp
+a -> appId or addonId
+o -> ownerId
+i -> instanceId
+ipS -> ipSource
+pS -> portSource # 0 if undefined
+s -> source
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+ipD -> ipDestination
+pD -> portDestination # 0 if undefined
+d -> destination
+  lt -> latitude
+  lg -> longitude
+  ct -> city
+  co -> country
+tS -> Haproxy termination_state
+sdc -> Reverse proxy hostname
+sDuration -> total session duration time in millis
 ```
 
 
@@ -143,7 +179,8 @@ In metrics' data, mains labels would be :
 - `owner_id` : A unique ID by organisation
 - `app_id` : A unique ID of application
 - `host` : HV id hosting the VM instance
-- `adc` : Reverse proxy ID
+- `adc` : Reverse proxy ID for http connexion (ie: applications)
+- `sdc` : Reverse proxy ID for tcp connexion (ie: addons)
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 

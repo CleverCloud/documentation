@@ -63,8 +63,8 @@ Access logs are defined in the `'accessLogs'` Warp10 class and there are three W
 * `owner_id`: Organisation ID
 * `app_id` or `addon_id`: Application ID or Addon ID
 * `adc` or `sdc`
-    * `adc` (Application Delivery Controller) are used for http connexions
-    * `sdc` (Service Delivery Controller) are used for tcp connexions
+    * `adc` (Application Delivery Controller) are used for HTTP connections
+    * `sdc` (Service Delivery Controller) are used for TCP connections
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
@@ -133,14 +133,8 @@ d -> destination
   lg -> longitude
   ct -> city
   co -> country
-bIn -> bytesInt
-bOut -> bytesOut
-scheme -> scheme
 tS -> Haproxy termination_state
 sdc -> Reverse proxy hostname
-w -> workerId (Sozu)
-r -> requestId (Sozu)
-tlsV -> tlsVersion (Sozu)
 sDuration -> total session duration time in millis
 ```
 

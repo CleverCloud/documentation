@@ -18,7 +18,7 @@ Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsea
 
 ## Elastic Stack version
 
-The version currently installed by the add-on is 7.4.2.
+The current versions supported at add-on creation are 6 and 7.
 
 ## Elasticsearch
 
@@ -27,6 +27,14 @@ Elasticsearch is a distributed, RESTful search and analytics engine capable of a
 ## Kibana
 
 Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack so you can do anything from tracking query load to understanding the way requests flow through your apps.
+
+It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
+
+Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/kibana/current/index.html).
+
+### Authentication
+
+Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system. 
 
 ## Elastic APM
 
@@ -38,6 +46,12 @@ Curently, APM agents are available in the following languages:
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
 - [Python](https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html)
 - [Ruby](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html)
+
+
+It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
+
+Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
+
 
 ## Logs
 

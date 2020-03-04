@@ -59,6 +59,21 @@ Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/g
 
 Any applications linked to the APM application will have the right credentials and APM endpoint automatically avaiable as environment variables. These variables can be picked up automatically by the APM agent you are using in your application. As such everything should work automatically.
 
+## Backups
+
+Your Elastic add-on backups are managed by Clever Cloud. When you provision the add-on, we automatically create a Cellar add-on instance named Backups. You will find it in your organisation. Backups are taken daily and are stored in this Cellar add-on instance. As such *additional credits will be consumed by your backups*.
+
+Backups can be managed under the *Backup* tab of the elastic add-on. You can restore, delete or open it directly under Kibana if you opted-in.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.</p>
+  </div>
+</div>
+
 ## Elastic stack plans
 
 <table class="table table-bordered table-striped dataTable"><caption>Elastic Stack pricing plans</caption> 

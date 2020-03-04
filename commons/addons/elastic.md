@@ -30,6 +30,8 @@ Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack
 
 It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
 
+The created application name follow the pattern *Kibana - elasticsearch_addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*.
+
 Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/kibana/current/index.html).
 
 ### Authentication
@@ -49,7 +51,13 @@ Curently, APM agents are available in the following languages:
 
 It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
 
+The created application name follow the pattern *APM - elasticsearch_addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*.  
+
 Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
+
+### How to setup APM
+
+Any applications linked to the APM application will have the right credentials and APM endpoint automatically avaiable as environment variables. These variables can be picked up automatically by the APM agent you are using in your application. As such everything should work automatically.
 
 ## Elastic stack plans
 

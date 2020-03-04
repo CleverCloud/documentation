@@ -30,7 +30,7 @@ Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack
 
 It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
 
-The created application name follow the pattern *Kibana - elasticsearch_addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*.
+The created application name follow the pattern *Kibana - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*. The provisioning of this application might take up a minute to show up in your organisation.
 
 Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/kibana/current/index.html).
 
@@ -51,7 +51,7 @@ Curently, APM agents are available in the following languages:
 
 It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
 
-The created application name follow the pattern *APM - elasticsearch_addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*.  
+The created application name follow the pattern *APM - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*. The provisioning of this application might take up a minute to show up in your organisation.
 
 Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
 
@@ -73,75 +73,75 @@ Any applications linked to the APM application will have the right credentials a
         </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">XS</span></td>
-              <td>1</td>
-              <td>10</td>
-              <td>1</td>
-              <td>1</td>
-              <td>17.00&nbsp;€</td>
+              <td class="text-right">1</td>
+              <td class="text-right">10</td>
+              <td class="text-right">1</td>
+              <td class="text-right">1</td>
+              <td class="text-right">17.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">S</span></td>
-              <td>1</td>
-              <td>60</td>
-              <td>2</td>
-              <td>1</td>
-              <td>34.00&nbsp;€</td>
+              <td class="text-right">1</td>
+              <td class="text-right">60</td>
+              <td class="text-right">2</td>
+              <td class="text-right">1</td>
+              <td class="text-right">34.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">M</span></td>
-              <td>2</td>
-              <td>120</td>
-              <td>4</td>
-              <td>1</td>
-              <td>58.00&nbsp;€</td>
+              <td class="text-right">2</td>
+              <td class="text-right">120</td>
+              <td class="text-right">4</td>
+              <td class="text-right">1</td>
+              <td class="text-right">58.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">L</span></td>
-              <td>4</td>
-              <td>240</td>
-              <td>8</td>
-              <td>1</td>
-              <td>122.00&nbsp;€</td>
+              <td class="text-right">4</td>
+              <td class="text-right">240</td>
+              <td class="text-right">8</td>
+              <td class="text-right">1</td>
+              <td class="text-right">122.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">XL</span></td>
-              <td>6</td>
-              <td>450</td>
-              <td>16</td>
-              <td>1</td>
-              <td>237.00&nbsp;€</td>
+              <td class="text-right">6</td>
+              <td class="text-right">450</td>
+              <td class="text-right">16</td>
+              <td class="text-right">1</td>
+              <td class="text-right">237.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">XXL</span></td>
-              <td>8</td>
-              <td>870</td>
-              <td>32</td>
-              <td>1</td>
-              <td>458.00&nbsp;€</td>
+              <td class="text-right">8</td>
+              <td class="text-right">870</td>
+              <td class="text-right">32</td>
+              <td class="text-right">1</td>
+              <td class="text-right">458.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">XXXL</span></td>
-              <td>16</td>
-              <td>1700</td>
-              <td>64</td>
-              <td>1</td>
-              <td>967.00&nbsp;€</td>
+              <td class="text-right">16</td>
+              <td class="text-right">1700</td>
+              <td class="text-right">64</td>
+              <td class="text-right">1</td>
+              <td class="text-right">967.00&nbsp;€</td>
         </tr>
         <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">4XL</span></td>
-              <td>32</td>
-              <td>3500</td>
-              <td>128</td>
-              <td>1</td>
-              <td>1887.00&nbsp;€</td>
+              <td class="text-right">32</td>
+              <td class="text-right">3500</td>
+              <td class="text-right">128</td>
+              <td class="text-right">1</td>
+              <td class="text-right">1887.00&nbsp;€</td>
           </tr>
           <tr>
             <td class="cc-col__price"><span class="label cc-label__price label-info">5XL</span></td>            
-              <td>64</td>            
-              <td>7000</td>            
-              <td>256</td>            
-              <td>1</td>            
-              <td>4151.00&nbsp;€</td>
+              <td class="text-right">64</td>            
+              <td class="text-right">7000</td>            
+              <td class="text-right">256</td>            
+              <td class="text-right">1</td>            
+              <td class="text-right">4151.00&nbsp;€</td>
           </tr>        
     </tbody>
 </table>

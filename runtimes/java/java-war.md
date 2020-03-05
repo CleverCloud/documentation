@@ -37,7 +37,7 @@ The supported containers are listed below:
 </thead>
 <tbody>
 <tr><td>Apache Tomcat 4.1 (TOMCAT4)</td><td>Jetty 6.1 (JETTY6)</td><td>Jboss 6.1 (JBOSS6)</td><td>Glassfish 3.1 (GLASSFISH3)</td><td>Payara 4.1 (PAYARA4)</td><td>Resin 3.1 (RESIN3)</td><td>WildFly 9.0.2 (WILDFLY9)</td></tr>
-<tr><td>Apache Tomcat 5.5 (TOMCAT5)</td><td>Jetty 7.6 (JETTY7)</td><td>Jboss AS 7.1 (JBOSS7)</td><td>Glassfish 4.1 (GLASSFISH4)</td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 5.5 (TOMCAT5)</td><td>Jetty 7.6 (JETTY7)</td><td>Jboss AS 7.1 (JBOSS7)</td><td>Glassfish 4.1 (GLASSFISH4)</td><td> </td><td> </td><td>WildFly 17.0.1 (WILDFLY17)</td></tr>
 <tr><td>Apache Tomcat 6.0 (TOMCAT6)</td><td>Jetty 8.1 (JETTY8)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 <tr><td>Apache Tomcat 7.0 (TOMCAT7)</td><td>Jetty 9.0 (JETTY9)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 <tr><td>Apache Tomcat 8.8 (TOMCAT8)</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>

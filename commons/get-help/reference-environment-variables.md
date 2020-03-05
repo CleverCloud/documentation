@@ -555,7 +555,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_PYTHON_VERSION</td>
-    <td>Choose the Python version between `2.7`, `3.6` and `3.7`</td>
+    <td>Choose the Python version between `2.7`, `3.6`, `3.7` and `3.8`</td>
     <td></td>
     <td></td>
   </tr>

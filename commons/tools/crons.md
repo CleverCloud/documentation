@@ -34,7 +34,7 @@ There are two restrictions about the usage of crontab on our platform:
 * The special date `@reboot` is not available since the crontab is added after the startup of the instance
 * You must use the absolute path of commands
 
-You can use the special variable `$ROOT` to refer to the root folder of your application.
+You can use the special token `$ROOT` to refer to the root folder of your application.
 
 Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
 
@@ -43,6 +43,8 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
     "*/5 * * * * /usr/bin/php $ROOT/cron.php"
   ]
 ```
+
+Note: `$ROOT` is only a token (not an actual variable) which is replaced when setting up the crons by the equivalent of the `APP_HOME` variable (`/home/bas/<app_id>`). Do not write `${ROOT}`, only `$ROOT` will work.
 
 ## Access environment variables
 

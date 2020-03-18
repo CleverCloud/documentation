@@ -333,6 +333,18 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_JAVA_APM_AGENT_ENABLE</td>
+    <td>Attach the APM Java Agent to the currently running JVM processes</td>
+    <td>false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_JAVA_APM_AGENT_CONTINUOUS</td>
+    <td>Periodically scan and attach the APM Java Agent to any JVM processes it can find over time</td>
+    <td>false</td>
+    <td></td>
+  </tr>
 </table>
 
 ### NodeJS

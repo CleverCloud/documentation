@@ -275,7 +275,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_JAVA_VERSION</td>
-    <td>Choose the JVM version between 'graalvm-ce' or `7` to `12` for OpenJDK.</td>
+    <td>Choose the JVM version between 'graalvm-ce' or `7` to `13` for OpenJDK.</td>
     <td>`11`</td>
     <td></td>
   </tr>

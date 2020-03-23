@@ -68,6 +68,18 @@ Access logs are defined in the `'accessLogs'` Warp10 class and there are three W
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>WARNINGS</h4>
+  </div>
+  <div class=“panel-body”>
+  <ul>
+    <li>Add-ons on shared plans (usually DEV plans) do not provide access logs</li>
+    <li>There are no recorded access logs in case of a direct access to an add-on</li>
+  </ul>
+  </div>
+</div>
+
 To reduce space used to store access logs, we defined the following key-value models.
 
 #### Key-Value model for applications

@@ -97,6 +97,30 @@ loads the env. So just put the path to your _executable_ `mycron.sh`.
 
 You can refer to [this list](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
 
+## Deduplicating crons
+
+Crons are installed and executed on every scaler of an application.
+This means the same cron may be executed more than once.
+You can use your own techniques to avoid that, like a shared task queue or some other
+locking system.
+
+If you do want to stay stateless and simple, just your bash wrapper
+script by:
+
+```bash
+#!/bin/bash -l
+
+
+if [[ "$INSTANCE_NUMBER" != "0" ]]; then
+    echo "Instance number is ${INSTANCE_NUMBER}. Stop here."
+    exit 0
+fi
+
+cd ${APP_HOME} # Which has been loaded by the env.
+
+… # Your part here
+```
+
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
   <p>All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.</p>

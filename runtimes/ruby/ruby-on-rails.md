@@ -207,6 +207,33 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 }
 ```
 
+### Using Active Storage and Cellar S3
+
+Only for Rails >= 5.2.
+
+- Enable Active Storage for your application: `$ rails active_storage:install` then `$ rake db:migrate`
+- Add `gem "aws-sdk-s3", require: false` to your Gemfile, run `$ bundle install`
+- Add `config.active_storage.service = :clevercloud` in `config/environments/production.yml`
+- Add in `config/storage.yml`:
+```
+clevercloud:
+  service: S3
+  access_key_id: <%= ENV['CELLAR_ADDON_KEY_ID'] %>
+  secret_access_key: <%= ENV['CELLAR_ADDON_KEY_SECRET'] %>
+  region: us-east-1
+  bucket: <%= ENV['CELLAR_ADDON_BUCKET_NAME'] %>
+  endpoint: <%= ENV['CELLAR_ADDON_ENDPOINT'] %>
+  force_path_style: true
+```
+- In the clever cloud console create a Cellar S3 storage add-on, name it, link it to your rails application and create a bucket.
+- In the environment variables section of your Ruby on Rails application on Clever Cloud add the following environment variables:
+```
+CELLAR_ADDON_BUCKET_NAME=<your bucket name>
+CELLAR_ADDON_ENDPOINT=https://cellar-c2.services.clever-cloud.com
+```
+
+You can now commit and push your changes.
+
 ### nginx configuration
 
 nginx settings can be configured by setting environment variables:

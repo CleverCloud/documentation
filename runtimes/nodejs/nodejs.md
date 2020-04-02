@@ -205,6 +205,18 @@ NPM_TOKEN=00000000-0000-0000-0000-000000000000
 As you can see, only the `authToken` value is needed, not the full url you can find in
 your .npmrc.
 
+## Development Dependencies
+
+Development dependencies will not be automatically installed during the deployment. You can control their installation by using the `CC_NODE_DEV_DEPENDENCIES` environment variable which takes `install` or `ignore` as its value. This variable overrides the default behaviour of `NODE_ENV`.
+
+Here are various scenarios:
+- `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
+- `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
+- `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
+- `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
+- `NODE_ENV=production`: Package manager (NPM / Yarn) default behaviour. Development dependencies will not be installed.
+- Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behaviour. Development dependencies will be installed.
+
 ## Custom run command
 
 If you need to run a custom command (or just pass options to the program),

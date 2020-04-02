@@ -359,6 +359,12 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
+    <td>CC_NODE_DEV_DEPENDENCIES</td>
+    <td>Control if development dependencies are installed or not. Values are either `install` or `ignore`</td>
+    <td>`ignore`</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>CC_NODE_START_GOAL</td>
     <td>Defines which node scripts to run</td>
     <td>`start`</td>

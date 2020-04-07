@@ -155,6 +155,15 @@ sDuration -> total session duration time in millis
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
+<div class=“panel panel-warning”>
+  <div class=“panel-heading”>
+    <h4>Note:</h4>
+  </div>
+  <div class=“panel-body”>
+  Look at <i>fetch_accessLogs_key_v0 </i> macro to have a convenient way to explore access log data. <a href="https://www.clever-cloud.com/doc/tools/warp10/#macro">Documentation there</a>.
+  </div>
+</div>
+
 <script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
 A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
@@ -162,6 +171,17 @@ A convenient way to integrate the intercepted data in a workflow is to use [warp
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
 <script src="https://gist.github.com/cnivolle/2ee8607d995daa1316e17ffc3874d047.js"></script>
+
+
+An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :
+```bash
+  '<READ TOKEN>' { 'app_id'  'id' } 'bIn' $NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+```
+
+or to get the latitude of the destination, which is a nested data:
+```bash
+  '<READ TOKEN>' { 'app_id'  'id' } 'd.lt' $NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+```
 
 ## Monitoring' metrics
 

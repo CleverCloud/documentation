@@ -21,14 +21,43 @@ Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpS
 
 > [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
 
+### Time and duration in Warp10
+
+> More information about [date functions here](https://www.warp10.io/tags/date), and [time functions here](https://www.warp10.io/tags/time).
+
 <div class=“panel panel-warning”>
   <div class=“panel-heading”>
     <h4>Note:</h4>
   </div>
   <div class=“panel-body”>
-  Timestamp unit is in <b>microsecond.</b>
+  The plateform's time unit is in <b>microsecond.</b>
   </div>
 </div>
+
+#### Duration is set by the followings symbols
+
+- `d` : day
+- `h` : Hour
+- `ms` : millisecond
+- `ns` : nanosecond
+- `ps` : picosecond
+- `s` : second
+- `us` : microsecond
+- `w` : week
+
+#### Date
+
+Allowed format :
+
+- ISO8601
+- Timestamp in microsecond
+
+Builtin function :
+
+- `NOW` : get the current timestamp
+- `ISO8601` : Convert a string or a timstamp to a iso8601 date format
+
+
 
 ## Endpoint
 
@@ -194,4 +223,25 @@ can be either a timestamp in microseconds or an iso8601 date format.
 
 ```bash
 '<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
+```
+
+### AccessLogs
+
+
+- `fetch_accessLogs_key_v0`
+
+We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here](/doc/tools/metrics/#access-logs-metrics)), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
+
+```bash
+  '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>' $NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+```
+```bash
+  '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' $NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
+```
+> More example in the [metrics part of this documenation](doc/tools/metrics/#access-logs-metrics).
+
+**Nested keys** can be reached using a dot (`.`) to represent the depth.
+
+```bash
+'<READ TOKEN>' '<LABELS>' '<KEY>' '<START>' '<END>' @clevercloud/fetch_accessLogs_key_v0
 ```

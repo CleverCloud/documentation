@@ -175,12 +175,12 @@ In the following example, we get the `accessLogs` status codes and create a GTS 
 
 An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :
 ```bash
-  '<READ TOKEN>' { 'app_id'  'id' } 'bIn' $NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+  '<READ TOKEN>' { 'app_id'  'id' } 'bIn' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 or to get the latitude of the destination, which is a nested data:
 ```bash
-  '<READ TOKEN>' { 'app_id'  'id' } 'd.lt' $NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+  '<READ TOKEN>' { 'app_id'  'id' } 'd.lt' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 ## Monitoring' metrics

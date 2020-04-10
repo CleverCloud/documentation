@@ -238,7 +238,7 @@ We provide the following macro to easily and quickly deep dive into access logs 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' $NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
 ```
-> More example in the [metrics part of this documenation](doc/tools/metrics/#access-logs-metrics).
+> More example in the [metrics part of this documenation](/doc/tools/metrics/#access-logs-metrics).
 
 **Nested keys** can be reached using a dot (`.`) to represent the depth.
 

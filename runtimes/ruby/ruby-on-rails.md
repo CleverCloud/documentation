@@ -215,7 +215,8 @@ Only for Rails >= 5.2.
 - Add `gem "aws-sdk-s3", require: false` to your Gemfile, run `$ bundle install`
 - Add `config.active_storage.service = :clevercloud` in `config/environments/production.yml`
 - Add in `config/storage.yml`:
-```
+
+```yaml
 clevercloud:
   service: S3
   access_key_id: <%= ENV['CELLAR_ADDON_KEY_ID'] %>
@@ -225,8 +226,10 @@ clevercloud:
   endpoint: <%= ENV['CELLAR_ADDON_ENDPOINT'] %>
   force_path_style: true
 ```
+
 - In the clever cloud console create a Cellar S3 storage add-on, name it, link it to your rails application and create a bucket.
 - In the environment variables section of your Ruby on Rails application on Clever Cloud add the following environment variables:
+
 ```
 CELLAR_ADDON_BUCKET_NAME=<your bucket name>
 CELLAR_ADDON_ENDPOINT=https://cellar-c2.services.clever-cloud.com

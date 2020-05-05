@@ -1,3 +1,12 @@
+---
+title: Deploying Elixir apps
+shortdesc: Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine…
+tags:
+- elixir
+- phoenix
+- erlang
+---
+
 ## Overview
 
 Clever Cloud supports Elixir based applications.

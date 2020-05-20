@@ -421,6 +421,8 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
+* Sqreen: The Sqreen agent is started automatically after adding the environment variables (SQREEN_API_APP_NAME and SQREEN_API_TOKEN). 
+
 ## Use Redis to store PHP Sessions
 
 By default, sessions are stored on a replicated file system, so that session data is available on each instance. We also provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis/) to improve performance: if your application is under heavy load, redis persistence for sessions can improve latency.

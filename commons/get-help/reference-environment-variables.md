@@ -516,6 +516,18 @@ So you can alter the build&start process for your application.
     <td>on</td>
     <td></td>
   </tr>
+  <tr>
+    <td>SQREEN_API_APP_NAME</td>
+    <td>The name of your sqreen application.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SQREEN_API_TOKEN</td>
+    <td>Organization token.</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### Python
@@ -966,7 +978,6 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-
 ### New Relic
 
 <table class="table table-bordered" style="text-align:center">
@@ -989,7 +1000,6 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
 </table>
-
 
 ### Socks
 

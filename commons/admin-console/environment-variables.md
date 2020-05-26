@@ -55,6 +55,8 @@ They can be accessed as classic environment variables.
  * `APP_HOME`: The absolute path of your application on the server. Can be used to
  create absolute links in your application (e.g. ${APP_HOME}/foo/bar).
 
+ * `CC_PRETTY_INSTANCE_NAME`: A random string name generated for each instance using pokemon names.
+
  * `INSTANCE_NUMBER`: See below
 
 ### What is the `INSTANCE_NUMBER` variable used for?

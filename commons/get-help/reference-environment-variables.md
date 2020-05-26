@@ -35,6 +35,11 @@ These are read-only variables that are generated for each scaler before they bui
     <td>518c8d8f-e304-4310-81e0-9c4237d55645</td>
   </tr>
   <tr>
+    <td>CC_PRETTY_INSTANCE_NAME</td>
+    <td>The random generated string as instance pretty name using pokemon names.</td>
+    <td>Tiny rhyhorn</td>
+  </tr>
+  <tr>
     <td>APP_ID</td>
     <td>The ID of your Clever Cloud application</td>
     <td>app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>

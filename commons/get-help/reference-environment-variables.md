@@ -65,6 +65,11 @@ These are read-only variables that are generated for each scaler before they bui
     coming from these IP addresses.</td>
     <td>x.y.z.z,x.y.z.z</td>
   </tr>
+  <tr>
+    <td>ELASTIC_APM_SERVICE_NAME</td>
+    <td>Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself</td>
+    <td>Your application's name conforming to Elastic APM naming convention</td>
+  </tr>
 </table>
 
 #### Variables you can define

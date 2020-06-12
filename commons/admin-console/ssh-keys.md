@@ -150,13 +150,13 @@ Please update your Clever Cloud SSH key path accordingly.
 
 ```bash
 # config for Clever Cloud specific key (Paris zone)
-Host ccloud-par
+Host push-par-clevercloud-customers.services.clever-cloud.com
   Hostname push-par-clevercloud-customers.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud
 
 # config for Clever Cloud specific key (Montreal zone)
-Host ccloud-mtl
+Host push-mtl-clevercloud-customers.services.clever-cloud.com
   Hostname push-mtl-clevercloud-customers.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud

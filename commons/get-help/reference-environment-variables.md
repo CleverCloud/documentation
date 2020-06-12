@@ -678,6 +678,18 @@ So you can alter the build&start process for your application.
     <td>`300`</td>
     <td></td>
   </tr>
+  <tr>
+    <td>CC_NGINX_PROXY_BUFFER_SIZE</td>
+    <td>Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_NGINX_PROXY_BUFFERS</td>
+    <td>Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### Ruby
@@ -737,6 +749,18 @@ So you can alter the build&start process for your application.
     <td>NGINX_READ_TIMEOUT</td>
     <td>Read timeout in seconds</td>
     <td>`300`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_NGINX_PROXY_BUFFER_SIZE</td>
+    <td>Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_NGINX_PROXY_BUFFERS</td>
+    <td>Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
+    <td></td>
     <td></td>
   </tr>
 </table>

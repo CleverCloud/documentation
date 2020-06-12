@@ -82,6 +82,15 @@ We also support celery apps out of the box. To deploy a celery app, use the
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Celery dependency needs to be in your requirements.txt</h4>
+  </div>
+  <div class="panel-body">
+    Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
+  </div>
+</div>
+
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log
 dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
 

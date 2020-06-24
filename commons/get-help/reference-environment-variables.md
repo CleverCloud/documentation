@@ -491,6 +491,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_OPCACHE_INTERNED_STRINGS_BUFFER</td>
+    <td>The amount of memory used to store interned strings, in megabytes.</td>
+    <td>Default 4 (PHP5), 8 (PHP7)</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>CC_MTA_SERVER_HOST</td>
     <td>Host of the SMTP server</td>
     <td></td>

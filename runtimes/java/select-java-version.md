@@ -7,7 +7,7 @@ tags:
 
 Simply set the environment variable **CC_JAVA_VERSION** to the version you want
 
-Accepted values are `8`, `11`, `13` or `graalvm-ce`
+Accepted values are `7` to `14` or `graalvm-ce` (for GraalVM 20.1.0, based on OpenJDK 11.0).
 
 <div class="panel panel-warning">
   <div class="panel-heading">

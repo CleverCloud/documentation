@@ -284,8 +284,8 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>CC_JAVA_VERSION</td>
-    <td>Choose the JVM version between 'graalvm-ce' or `8`, `11` or `13` for OpenJDK.</td>
+    <td>[CC_JAVA_VERSION](/doc/java/select-java-version/)</td>
+    <td>Choose the JVM version between `7` to `14` for OpenJDK or `graalvm-ce` for GraalVM 20.1.0 (based on OpenJDK 11.0).</td>
     <td>`11`</td>
     <td></td>
   </tr>
@@ -811,19 +811,19 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>CC_ELIXIR_VERSION</td
+    <td>CC_ELIXIR_VERSION</td>
     <td>Choose the Elixir version between '1.8' or `1.9`</td>
     <td>`1.9`</td>
     <td></td>
   </tr>
   <tr>
-    <td>CC_MIX_BUILD_GOAL</td
+    <td>CC_MIX_BUILD_GOAL</td>
     <td>The mix goal to build the application (default compile)</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td>CC_PHOENIX_ASSETS_DIR</td
+    <td>CC_PHOENIX_ASSETS_DIR</td>
     <td>Folder in which your Phoenix assets are located.</td>
     <td></td>
     <td></td>

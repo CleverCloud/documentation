@@ -135,6 +135,16 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
   </tr>
   <tr>
+    <td>CC_SSH_PRIVATE_KEY</td>
+    <td>A ssh private key to setup for the user running your application</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_SSH_PRIVATE_KEY_FILE</td>
+    <td>The name to use for the file containing the private ssh key</td>
+    <td>id_ed25519</td>
+  </tr>
+  <tr>
     <td>CC_DISABLE_METRICS</td>
     <td>Disable metrics collection.</td>
     <td>`false`</td>

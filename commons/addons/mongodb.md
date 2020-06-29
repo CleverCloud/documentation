@@ -88,3 +88,11 @@ The process consists in three steps:
 <td>150.00€</td>
 </tr>
 </table>
+
+## Encryption at rest
+
+MongoDB dedicated addons can be encrypted using LUKS with `aes-xts`.
+
+The passphrase is encrypted in our database using Cipher and Nonce as bytes arrays.
+
+To enable it, you need to ask to our support then we will perform invoicing configuration (more informations about pricing are available through support) and enable the encryption for your addon. Once it's done, you will need to migrate your addon then the encryption at rest will be up.

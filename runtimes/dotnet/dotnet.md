@@ -1,9 +1,11 @@
 ---
-title: Deploy Dotnet apps
+title: Deploy .NET apps
 shortdesc: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps.
 tags:
+- .NET
 - dotnet
 keywords:
+- .NET
 - dotnet
 - csproj
 - fsproj
@@ -12,21 +14,21 @@ keywords:
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-     <h4>Dotnet support is in beta</h4>
+     <h4>.NET support is in beta</h4>
   </div>
   <div class="panel-body">
     If you encounter an issue, please contact the support.
   </div>
 </div>
 
-Clever Cloud allows you to deploy Dotnet web applications. This page will explain
+Clever Cloud allows you to deploy .NET web applications. This page will explain
 you how to set up your application to run it on our service.
 
 You do not need to change a lot in your application, the *requirements* will
 help you to configure your apps with some mandatory files to add, and
 properties to setup.
 
-## Dotnet version
+## .NET version
 
 The version used on Clever Cloud is `3.1`, so you can deploy applications for the two current LTS versions as shown on this [page](https://dotnet.microsoft.com/download/dotnet-core). No support will be provided for end-of-life versions.
 
@@ -39,7 +41,7 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 Be sure that:
 
 * You have pushed in `master branch`.
-* You listen on `port 8080`, by default each Dotnet application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
+* You listen on `port 8080`, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
 * You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`). If the project file is not at the root of the repository, you can use the APP_FOLDER environment variable. See the list of environment variables [here](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/).
 
 ## Requirements

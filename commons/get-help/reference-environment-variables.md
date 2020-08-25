@@ -817,9 +817,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Dotnet
+### .NET
 
-[Dotnet Documentation](/doc/dotnet/)
+[.NET Documentation](/doc/dotnet/)
 
 <table class="table table-bordered" style="text-align:center">
   <tr>

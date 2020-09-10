@@ -115,9 +115,8 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 const AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
-const endpoint = new AWS.Endpoint('<cellar_host>');
 
-const s3 = new AWS.S3({ endpoint });
+const s3 = new AWS.S3({ '<cellar_host>' });
 
 s3.listBuckets(function(err, res) {
   // handle results

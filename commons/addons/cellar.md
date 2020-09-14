@@ -116,7 +116,7 @@ const AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
 
-const s3 = new AWS.S3({ '<cellar_host>' });
+const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
 
 s3.listBuckets(function(err, res) {
   // handle results

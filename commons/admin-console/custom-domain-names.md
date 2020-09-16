@@ -95,7 +95,7 @@ You can point your domain name to Clever Cloud either with a CNAME record or wit
   </div>
 </div>
 
-If you want to make your application available from a domain name which does not support CNAME records (eg example.com in addition to ``www.example.com``), check if your registrar provides a web redirection service. This way, you only have to make ``www.example.com`` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
+If you want to make your application available from a domain name which does not support CNAME records (eg ``example.com`` in addition to ``www.example.com``), check if your registrar provides a web redirection service. This way, you only have to make ``www.example.com`` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
@@ -108,7 +108,7 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
     <div>
       ``*.example.com`` will match e.g. ``blog.example.com`` or ``www.example.com``.
     </div>
-    <div> But for the raw domain ``example.com``, you will have to add both ``*.example.com`` and example.com to your application.</div>
+    <div> But for the raw domain ``example.com``, you will have to add both ``*.example.com`` and ``example.com`` to your application.</div>
   </div>
 </div>
 <br>

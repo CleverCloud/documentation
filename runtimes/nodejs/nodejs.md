@@ -185,22 +185,32 @@ it from your environment: `process.env.MY_VARIABLE`.
 You can (and should) define the `NODE_ENV=production` environment variable as many frameworks
 rely on it for production mode.
 
-### Special env NPM_TOKEN
 
-Since April 2015, npmjs.com allows you to have private repositories. The bad news is,
-you have to write a specific line in your `.npmrc` for that. The good news is, on Clever
-Cloud, you only need to provide the *token* part, and we set up everything for you!
+### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 
-So to register your npm auth token, you need to add to your application the `NPM_TOKEN`
-environment variable.
+Since April 2015, npmjs.com allows you to have private repositories. If you want to use a private repository on npmjs.com (the default one), you only need to provide the *token* part. To register your auth token, you need to add to your application the `NPM_TOKEN` environment variable.
 
 ``` javascript
 Example:
 NPM_TOKEN=00000000-0000-0000-0000-000000000000
 ```
 
-As you can see, only the `authToken` value is needed, not the full url you can find in
-your .npmrc.
+Then, the .npmrc file will be created automatically for your application, with the registry url and the token.
+
+``` javascript
+//registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
+```
+
+To authenticate to another registry (like github), you can use the `CC_NPM_REGISTRY`  environment variable to define the registry's host.
+
+``` javascript
+Example:
+CC_NPM_REGISTRY=npm.pkg.github.com
+NPM_TOKEN=00000000-0000-0000-0000-000000000000
+```
+``` javascript
+//npm.pkg.github.com/:_authToken=00000000-0000-0000-0000-000000000000
+```
 
 ## Development Dependencies
 

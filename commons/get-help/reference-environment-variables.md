@@ -403,8 +403,14 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_NPM_REGISTRY</td>
+    <td>The host of your private repository, available values: `github` or the registry host.</td>
+    <td>registry.npmjs.org</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>NPM_TOKEN</td>
-    <td>Private repository token for npmjs.com</td>
+    <td>Private repository token</td>
     <td></td>
     <td></td>
   </tr>

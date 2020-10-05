@@ -109,3 +109,8 @@ if ($trustedProxies = $request->server->get('CC_REVERSE_PROXY_IPS')) {
 ```
 
 For more information on configuring symfony behind a reverse proxy, you can read the [official documentation](https://symfony.com/doc/current/deployment/proxies.html).
+
+### Apache 404 error after deployment
+
+If everything looks fine and you still get 404 errors, remember that CleverCloud works with an Apache server, so you'll need an htaccess in the  `/public` directory.
+Symfony got your back on this: just run `composer require symfony/apache-pack`. See [the official documentation of Symfony](https://symfony.com/doc/current/setup/web_server_configuration.html) for more information.

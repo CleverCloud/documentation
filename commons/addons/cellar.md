@@ -235,3 +235,52 @@ A `region` parameter must be provided, although it is not used by Cellar.
 The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception will be raised : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
 
 `force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
+
+
+## Public bucket
+
+You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. Writes won't be allowed to anyone that is not authenticated.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Any object will be exposed publicly</h4>
+  </div>
+  <div class="panel-body">
+    This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
+  </div>
+</div>
+
+To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
+```json
+{
+  "Id": "Policy1587216857769",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1587216727444",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::<bucket-name>/*",
+      "Principal": "*"
+    }
+  ]
+}
+```
+
+Replace the `<bucket-name>` with your bucket name in the policy file. Don't change the `Version` field to the current date, keep it as is.
+
+Now, you can set the policy to your bucket using s3cmd:
+```bash
+s3cmd setpolicy ./policy.json s3://<bucket-name>
+```
+
+All of your objects should now be publicly accessible.
+
+If needed, you can delete this policy by using:
+```bash
+s3cmd delpolicy s3://<bucket-name>
+```
+
+All of your objects should now be restrained to their original ACL.

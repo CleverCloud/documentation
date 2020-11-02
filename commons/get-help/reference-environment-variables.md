@@ -70,6 +70,11 @@ These are read-only variables that are generated for each scaler before they bui
     <td>Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself</td>
     <td>Your application's name conforming to Elastic APM naming convention</td>
   </tr>
+  <tr>
+    <td>CC_CLAMAV</td>
+    <td>Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM.</td>
+    <td>false, true</td>
+  </tr>
 </table>
 
 #### Variables you can define

@@ -46,6 +46,46 @@ The version currently installed by the add-on is :
 <td>Free</td>
 </tr>
 <tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Small Space</span></td>
+<td>yes</td>
+<td>1 GB</td>
+<td>45</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>5.25 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Medium Space</span></td>
+<td>yes</td>
+<td>2 GB</td>
+<td>45</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>6.80 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Big Space</span></td>
+<td>yes</td>
+<td>3 GB</td>
+<td>45</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>7.70 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XS Tiny Space</span></td>
+<td>yes</td>
+<td>2 GB</td>
+<td>75</td>
+<td>1 GB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>13.00 €</td>
+</tr>
+<tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XS Small Space</span></td>
 <td>yes</td>
 <td>5 GB</td>
@@ -104,6 +144,16 @@ The version currently installed by the add-on is :
 <td>Dedicated</td>
 <td>2</td>
 <td>40.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">S Huge Space</span></td>
+<td>yes</td>
+<td>50 GB</td>
+<td>125</td>
+<td>2 GB</td>
+<td>Dedicated</td>
+<td>2</td>
+<td>55.00 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">M Small Space</span></td>

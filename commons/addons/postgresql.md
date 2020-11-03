@@ -235,6 +235,36 @@ The version currently installed by the add-on is :
 <td>10</td>
 <td>1276.00 €</td>
 </tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXXL Small Space</span></td>
+<td>yes</td>
+<td>640 GB</td>
+<td>1200</td>
+<td>64 GB</td>
+<td>Dedicated</td>
+<td>12</td>
+<td>1598.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXXL Medium Space</span></td>
+<td>yes</td>
+<td>960 GB</td>
+<td>1200</td>
+<td>64 GB</td>
+<td>Dedicated</td>
+<td>12</td>
+<td>1822.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXXL Big Space</span></td>
+<td>yes</td>
+<td>1200 GB</td>
+<td>1200</td>
+<td>64 GB</td>
+<td>Dedicated</td>
+<td>12</td>
+<td>1990.00 €</td>
+</tr>
 </table>
 
 ## Migrating from an old database

@@ -12,12 +12,25 @@ these configuration items can be applied to any instance.
 
 ## Private SSH key
 
-If your company manages its own artifacts in a private repository (like, you can only
-access them via git+ssh or sftp), and you need a private key to connect to the server, you
-can commit them in your application's Clever Cloud repository and then add the
-`clevercloud/ssh.json`.
+If your company manages its own artifacts in a private repository (like, you
+can only access them via git+ssh or sftp), and you need a private key to
+connect to the server, you can either set it in an environment variable or
+commit it in your application's Clever Cloud repository.
 
-The content of this file is pretty straight-forward:
+That key will be installed in `~/.ssh/` before the start of the build. So the
+dependency manager will use it to fetch libs only accessible by ssh.
+
+*NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
+
+### Environment variable
+
+Set your key as the value of the `CC_SSH_PRIVATE_KEY` variable. If you want it
+to be saved to a specific file, you can set the `CC_SSH_PRIVATE_KEY_FILE`
+variable.
+
+### Committed file
+
+First, you need to add the file `clevercloud/ssh.json`, its content is pretty straight-forward:
 
 ```javascript
 {
@@ -28,11 +41,6 @@ The content of this file is pretty straight-forward:
 The `privateKeyFile` field must be a path to a SSH private key. The path must be relative
 to the root of your repository. e.g. if your private key file is in the `clevercloud`
 folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
-
-That key will be installed as `~/.ssh/id_rsa` before the start of the build. So the
-dependency manager will use it to fetch libs only accessible by ssh.
-
-*NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
 
 ## Hooks
 

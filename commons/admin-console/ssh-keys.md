@@ -155,9 +155,33 @@ Host push-par-clevercloud-customers.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud
 
+# config for Clever Cloud specific key (Roubaix zone)
+Host push-rbx-clevercloud-customers.services.clever-cloud.com
+  Hostname push-rbx-clevercloud-customers.services.clever-cloud.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
+
+# config for Clever Cloud specific key (Warsaw zone)
+Host push-wsw-clevercloud-customers.services.clever-cloud.com
+  Hostname push-wsw-clevercloud-customers.services.clever-cloud.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
+
 # config for Clever Cloud specific key (Montreal zone)
 Host push-mtl-clevercloud-customers.services.clever-cloud.com
   Hostname push-mtl-clevercloud-customers.services.clever-cloud.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
+
+# config for Clever Cloud specific key (Singapore zone)
+Host push-sgp-clevercloud-customers.services.clever-cloud.com
+  Hostname push-sgp-clevercloud-customers.services.clever-cloud.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
+
+# config for Clever Cloud specific key (Sydney zone)
+Host push-syd-clevercloud-customers.services.clever-cloud.com
+  Hostname push-syd-clevercloud-customers.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud
 ```

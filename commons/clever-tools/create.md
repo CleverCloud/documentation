@@ -47,7 +47,7 @@ Then, in order to create your app in your personal space, use :
     # Create an application for an organization
     clever create --type <type> <app-name> --org <org>
 
-    # Choose the region of your application (par or mtl)
+    # Choose the region of your application (par, rbx, wsw, mtl, sgp or syd)
     clever create --type <type> <app-name> --region <zone>
 
 ### Alias

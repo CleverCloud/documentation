@@ -55,6 +55,53 @@ If you need to configure a custom domain name, follow the steps below.
   </tr>
 </table>
 
+### Your Application Runs in the Europe/Roubaix ('RBX') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    ```
+    {yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.
+    ```
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    ``@ 10800 IN A 87.98.180.173``<br>
+    ``@ 10800 IN A 87.98.182.136``
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Europe/Warsaw ('WSW') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    ```
+    {yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.
+    ```
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    ``@ 10800 IN A 145.239.17.127``<br>
+    ``@ 10800 IN A 145.239.17.192``
+    </td>
+  </tr>
+</table>
 
 ### Your Application Runs in the North-America/Montreal ('MTL') Zone
 
@@ -80,6 +127,53 @@ If you need to configure a custom domain name, follow the steps below.
   </tr>
 </table>
 
+### Your Application Runs in the Asia/Singapore ('SGP') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    ```
+    {yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.
+    ```
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    ``@ 10800 IN A 51.79.197.159``<br>
+    ``@ 10800 IN A 51.79.197.160``
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Oceania/Sydney ('SYD') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    ```
+    {yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.
+    ```
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    ``@ 10800 IN A 139.99.253.215``<br>
+    ``@ 10800 IN A 139.99.253.237``
+    </td>
+  </tr>
+</table>
 
 <br/>
 

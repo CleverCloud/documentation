@@ -77,7 +77,7 @@ If you want to have database migrations automatically run during each deployment
 
 ```
 # Database migrations
-./bin/console doctrine:migrations:migrate
+./bin/console doctrine:migrations:migrate --no-interaction
 
 # Frontend build
 yarn install && yarn run build

@@ -284,3 +284,50 @@ s3cmd delpolicy s3://<bucket-name>
 ```
 
 All of your objects should now be restrained to their original ACL.
+
+## CORS Configuration
+
+You can set a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration on your buckets if you need to share resources on websites that do not have the same origin as the one you are using.
+
+Each CORS configuration can contain multiple rules. Those are defined using an XML document:
+
+```xml
+<CORSConfiguration>
+  <CORSRule>
+    <AllowedOrigin>console.clever-cloud.com</AllowedOrigin>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>DELETE</AllowedMethod>
+    <AllowedHeaders>*</AllowedHeaders>
+    <ExposeHeader>ETag</ExposeHeader>
+  </CORSRule>
+  <CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <MaxAgeSeconds>3600</MaxAgeSeconds>
+  </CORSRule>
+</CORSConfiguration>
+```
+
+Here this configuration has two `CORS` rules:
+- The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. `PUT`, `POST` and `DELETE` methods are allowed to be used by the cross-origin request. Then, all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header are allowed using `AllowedHeaders *`. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
+- The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Updating the `CORS` configuration replaces the old one</h4>
+  </div>
+  <div class="panel-body">
+    If you update your `CORS` configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback. Unfortunately, it doesn't seem that `s3cmd` has a command to do that but you can use any other S3 client / SDK.
+  </div>
+</div>
+
+You can then set this `CORS` configuration using `s3cmd`:
+```
+s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket
+```
+
+If you need to rollback, you can either set the old configuration or completely drop it:
+```
+s3cmd -c s3cfg -s delcors s3://your-bucket
+```

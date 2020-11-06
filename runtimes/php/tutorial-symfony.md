@@ -80,7 +80,7 @@ If you want to have database migrations automatically run during each deployment
 ./bin/console doctrine:migrations:migrate
 
 # Frontend build
-yarn run build
+yarn install && yarn run build
 ```
 
 Make sure this file is executable:

@@ -318,9 +318,14 @@ Here this configuration has two `CORS` rules:
     <h4 class="panel-title">Updating the `CORS` configuration replaces the old one</h4>
   </div>
   <div class="panel-body">
-    If you update your `CORS` configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback. Unfortunately, it doesn't seem that `s3cmd` has a command to do that but you can use any other S3 client / SDK.
+    If you update your `CORS` configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback.
   </div>
 </div>
+
+To view and save your current `CORS` configuration, you can use `s3cmd info`:
+```
+s3cmd -c s3cfg -s info s3://your-bucket
+```
 
 You can then set this `CORS` configuration using `s3cmd`:
 ```

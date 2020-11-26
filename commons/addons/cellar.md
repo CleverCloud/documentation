@@ -72,16 +72,21 @@ To create a bucket, you can use s3cmd:
 ```bash
     s3cmd mb s3://bucket-name
 ```
-You can list files
 
-```bash
-    s3cmd ls s3://bucket-name
-```
+The bucket will now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
 
-You can upload files (`--acl-public` makes the file readable by everyone).
+You can upload files (`--acl-public` makes the file publicly readable):
 
 ```bash
     s3cmd put --acl-public image.jpg s3://bucket-name
+```
+
+The file will then be publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
+
+You can list the files in your bucket, you should see the `image.png` file:
+
+```bash
+    s3cmd ls s3://bucket-name
 ```
 
 ### Using a custom domain
@@ -99,7 +104,7 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
     <h4 class="panel-title">S3 signature algorithm</h4>
   </div>
   <div class="panel-body">
-    New cellar add-ons does now support the `v4` signature algorithm from S3.
+    New cellar add-ons now support the `v4` signature algorithm from S3.
     If you are still using an old account (cellar.services.clever-cloud.com), please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided by the add-on's dashboard is already configured.
   </div>
 </div>

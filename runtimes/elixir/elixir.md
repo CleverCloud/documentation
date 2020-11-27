@@ -35,7 +35,7 @@ In the Clever Cloud web console:
 
 In the envrionment variables section of your Elixir application, set
 
-- **CC_ELIXIR_VERSION** to the value of `$ elixir -v` result. (Available versions as of today are `1.8`, `1.9` or `1.10`)
+- **CC_ELIXIR_VERSION** to the value of `$ elixir -v` result. (Available versions as of today are `1.8`, `1.9`, `1.10` or `1.11`)
 
 #### If you deploy a Phoenix application
 

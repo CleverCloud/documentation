@@ -1,12 +1,12 @@
-+++
-weight = 1
-title = "Quickstart"
+---
+weight: 1
+title: Quickstart
 shortdesc: quickstart guide on Clever Cloud
 tags:
 - getting-started
 keywords:
 - quickstart
-+++
+---
 
 {{< readfile "/content/partials/authentication.md" >}}
 

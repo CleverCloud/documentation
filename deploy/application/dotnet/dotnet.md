@@ -2,24 +2,19 @@
 title: Deploy .NET apps
 shortdesc: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps.
 tags:
-- .NET
-- dotnet
+- deploy
 keywords:
 - .NET
-- dotnet
 - csproj
 - fsproj
 - vbproj
+str_replace_dict:
+  "@application-type@": ".NET"
 ---
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-     <h4>.NET support is in beta</h4>
-  </div>
-  <div class="panel-body">
-    If you encounter an issue, please contact the support.
-  </div>
-</div>
+{{< alert "warning" ".NET support is in beta" >}}
+  If you encounter an issue, please contact the support.
+{{< /alert >}}
 
 Clever Cloud allows you to deploy .NET web applications. This page will explain
 you how to set up your application to run it on our service.
@@ -32,9 +27,7 @@ properties to setup.
 
 The version used on Clever Cloud is `3.1`, so you can deploy applications for the two current LTS versions as shown on this [page](https://dotnet.microsoft.com/download/dotnet-core). No support will be provided for end-of-life versions.
 
-## Create an application
-
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+{{< readfile "/content/partials/create-application.md" >}}
 
 ## Necessary information
 
@@ -118,5 +111,7 @@ Support for private dependencies will be available soon.
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these
-steps](/doc/clever-cloud-overview/add-application/) to deploy your
+steps]({{< ref "getting-started/quickstart.md" >}}) to deploy your
 application.
+
+{{< readfile "/content/partials/more-config.md" >}}

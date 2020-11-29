@@ -2,6 +2,8 @@
 title: Deployment Hooks
 shortdesc: Hooks allow to run custom tasks during deployment
 tags:
+- develop
+keywords:
 - apps
 - hooks
 ---
@@ -23,7 +25,7 @@ The available hooks are:
 ## Setting hooks up
 
 Hooks are set up through [environment
-variables](https://www.clever-cloud.com/doc/admin-console/environment-variables/).
+variables]({{< ref "develop/env-variables.md" >}}).
 To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 

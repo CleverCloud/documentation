@@ -2,26 +2,27 @@
 title: Jar deployment
 position: 3
 shortdesc: Deploy a jar on Clever Cloud...
+keywords:
+- deploy
 tags:
 - java
+str_replace_dict:
+  "@application-type@": "Java + JAR"
 ---
 
-Clever Cloud offers you to run any Java ARchive file. You do not
-need to change your code, but running it on Clever Cloud needs some
-configuration files, here is what you can do:
+## Overview
 
-  * Commit and push a single jar file with all dependencies embedded;
-  * Commit and push your sources, let Clever Cloud build them with maven or gradle, and run the resulting jar;
+Clever Cloud offers you to run any Java ARchive file. You do not need to change your code, but running it on Clever Cloud needs some configuration files or environment variable to specify the the JAR path.
 
-Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
-Please **keep in mind** that you cannot give any parameters to your jar file in commande line. For example, if you use [Dropwizard](http://www.dropwizard.io) framework, you can't set `server` parameter and config file.
+{{< readfile "/content/partials/create-application.md" >}}
 
-## Create an application
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-Create a *Java + Maven* or *Java + Gradle* application, more information is available on the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+{{< readfile "/content/partials/java-versions.md" >}}
 
-## Necessary information
+## Configure your Java application
 
 You *must* either have the `CC_JAR_PATH` environment variable containing the
 path to your jar or provide a `clevercloud/jar.json` file (jar.json file in
@@ -40,9 +41,9 @@ That is the least you need to do. Note that `path/to/jar` *must not*
 start with a `/` and that the path should be relative to your
 repository's root.
 
-## Build options
+### Build options
 
-You do not need to build and commit a jar. Instead you can push your
+You do not need to build and commit a JAR. Instead you can push your
 sources and build them with either gradle, ant or maven. Here is the
 configuration you need to provide in the `clevercloud/jar.json` file:
 
@@ -58,7 +59,7 @@ configuration you need to provide in the `clevercloud/jar.json` file:
 The `goal` field is what will be asked to the build command, like `mvn
 package` for a `maven` build with the `package` goal.
 
-An configuration example with a maven build that generates a jar with
+An configuration example with a maven build that generates a JAR with
 embedded dependencies is:
 
 ```javascript
@@ -72,10 +73,10 @@ embedded dependencies is:
   }
 }
 ```
-## More configuration
+### An example of full configuration
 
 You can pass extra arguments to the `java` command by using the environment
-variable `CC_EXTRA_JAVA_ARGS` and to your jar by using `CC_JAR_ARGS`
+variable `CC_EXTRA_JAVA_ARGS` and to your JAR by using `CC_JAR_ARGS`
 
 The full configuration can look like the following:
 
@@ -124,6 +125,8 @@ You can use the following properties:
   </tbody>
 </table>
 
+{{< readfile "/content/partials/new-relic.md" >}}
+
 ## Custom run command
 
 If you need to run a custom command (or just pass options to the program),
@@ -136,7 +139,7 @@ Example:
 CC_RUN_COMMAND=java -jar somefile.jar <options>
 ```
 
-## Environment injection
+### Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -146,3 +149,10 @@ For Java applications, the environment is injected in the
 `System.getProperties().getProperty("MY_VARIABLE")`.
 
 For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+{{< readfile "/content/partials/more-config.md" >}}
+

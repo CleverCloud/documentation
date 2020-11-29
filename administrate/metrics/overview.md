@@ -1,18 +1,18 @@
 ---
-title: Metrics
+title: Metrics Overview
 shortdesc: Gather metrics on your applications
+weight: 1
 tags:
-- apps, metrics, accesslogs, warp10
+- metrics
+keywords:
+- metrics
+- accesslogs
+- warp10
 ---
-
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4>Warning:</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Warning:" >}}
     Clever Cloud Metrics is still in beta.
-  </div>
-</div>
+{{< /alert >}}
+
 
 In addition to logs, you can have access to metrics to know how your application
 behaves. By default, system metrics like CPU and RAM use are available, as well
@@ -48,13 +48,13 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp10](/doc/tools/warp10/), so you can explore data directly with
-the [quantum](/doc/tools/warp10/) interface, with [WarpScript](http://www.warp10.io/reference/). For instance,
+All metrics are stored in [Warp10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with
+the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference). For instance,
 you can derive metrics over time, do custom aggregations or combine metrics.
 
 ## Access Logs metrics
 
-All your applications access logs are pushed to [Warp10](/doc/tools/warp10/). You are now able to process them directly in the console in the Metrics tab of your applications.
+All your applications access logs are pushed to [Warp10]({{< ref "administrate/metrics/warp10.md" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.
 
 ### Access Log data model
 
@@ -160,13 +160,13 @@ The main ways to use `accessLogs` data is to `FETCH` over it and get interesting
     <h4>Note:</h4>
   </div>
   <div class=“panel-body”>
-  Look at <i>fetch_accessLogs_key_v0 </i> macro to have a convenient way to explore access log data. <a href="https://www.clever-cloud.com/doc/tools/warp10/#macro">Documentation there</a>.
+  Look at <i>fetch_accessLogs_key_v0 </i> macro to have a convenient way to explore access log data. [Documentation there]({{< ref "administrate/metrics/warp10.md" >}}).
   </div>
 </div>
 
 <script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
-A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
+A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
@@ -185,7 +185,7 @@ or to get the latitude of the destination, which is a nested data:
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp10](/doc/tools/warp10/), a Geotimes 
+All applications and VMs instances behind are monitored. Data is sent to [Warp10]({{< ref "administrate/metrics/warp10.md" >}}), a Geotimes 
 series database. 
 All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud 
 Warp10 endpoint.
@@ -440,7 +440,7 @@ Below, the list of all warp10 classes representing Telegraf metrics :
 From the `metrics` tab on the console. You can either open a Quantum console, an online warpscript 
 editor, or either send your warpscript by your own way on the warp10 endpoint (provided by Quantum).
 
-More information about [Quantum and Warp10](/doc/tools/warp10/) in our documentation.
+More information about [Quantum and Warp10]({{< ref "administrate/metrics/warp10.md" >}}) in our documentation.
 
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by 
 minute.
@@ -468,7 +468,7 @@ NOW 'NOW' STORE
 ## Consumption metric
  
 Consumption can also be inferred by our metrics. We provide some helper macros in the 
-[Warp10 documentation](/doc/tools/warp10/).
+[Warp10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
 
 Consumption unit is in **second**. 
 

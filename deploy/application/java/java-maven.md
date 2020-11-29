@@ -3,14 +3,20 @@ title: Java Maven deployment
 position: 3
 shortdesc: Maven is essentially a project management and comprehension tool...
 tags:
+- deploy
+keywords:
 - java
+- maven
+str_replace_dict:
+  "@application-type@": "Java + Maven"
 ---
 
-Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
-
-Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
-
 ## Overview
+
+Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs specific environment variables or configuration files, to add parameters like your targeted container for instance.
+
+Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
+
 Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
 
 * Builds
@@ -21,17 +27,29 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Releases
 * Distribution
 
+{{< readfile "/content/partials/create-application.md" >}}
 
-## About Cargo
+{{< readfile "/content/partials/set-env-vars.md" >}}
+
+## Configure your Java application
+
+### About Cargo
 To run your app, you can, for example, use plugins like cargo
-(<a href="https://codehaus-cargo.github.io/cargo/Maven2+plugin.html">Find it here</a>).
+(<a href="https://codehaus-cargo.GitHub.io/cargo/Maven2+plugin.html">Find it here</a>).
 Your application must be set to listen on the port 8080.
 
-## Create an application
+### Available Java versions
 
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+Simply set the environment variable **CC_JAVA_VERSION** to the version you want.
 
-## Necessary information
+Accepted values are `7` to `12` or `graalvm-ce`
+
+{{< alert "warning" "Default version" >}}
+    <p>We are using Java version 11 by default.</p>
+    <p>New applications will have the **CC_JAVA_VERSION** environment variable set to 11.</p>
+{{< /alert >}}
+
+### Mandatory configuration
 
 The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of you application) file must contain the _goal_ field to indicate how to start your application:
 
@@ -49,7 +67,7 @@ An example of what can be found as a goal value is:
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
 ```
 
-## Optional configuration
+### Optional configuration
 
 The full configuration can look like the following:
 
@@ -92,11 +110,7 @@ You can use the following properties:
   </tbody>
 </table>
 
-## Deploy on Clever Cloud
-
-Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
-
-## Specifying a profile
+### Specifying a profile
 
 If you need to specify a maven profile (either for the `build` or the `deploy` goal, you can add it in the `goal` section:
 
@@ -116,3 +130,10 @@ Example:
 CC_RUN_COMMAND=java -jar somefile.jar <options>
 ```
 
+{{< readfile "/content/partials/new-relic.md" >}}
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+{{< readfile "/content/partials/more-config.md" >}}

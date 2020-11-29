@@ -1,39 +1,51 @@
 ---
-title: Sample Python application with flask
+title: Deploy Flask
 shortdesc: The goal of this article is to show you how configure and deploy a simple Flask application on Clever Cloud.
 tags:
+- deploy
+keywords:
 - python
+- flask
 ---
 
-This is a small Flask app that replies with a header dump to any request. 
 
-You can deploy this application as-is on Clever Cloud:
+## Overview
 
-```bash
-git clone https://github.com/CleverCloud/demo-flask
-git remote add clevercloud {your-clever-cloud-endpoint}
-git push clevercloud master
-```
+The goal of this article is to show you how to deploy a Flask application on Clever Cloud.
+The application is a very basic one it just replies with a header dump to any request. More information about the application:  
 
-And it will do the trick.
+*  [GitHub repo](https://GitHub.com/CleverCloud/demo-flask)
 
-We demonstrate several Clever Cloud possibilities in this application:
+{{< readfile "/content/partials/create-application.md" >}}
 
-## Choose python version
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-Please refer to [choose python version](https://www.clever-cloud.com/doc/python/python_apps/#choose-python-version)
-
-## Build app in a subfolder
+## Configure your Flask application
+### Build app in a subfolder
 
 In the `/clevercloud/python.json` file, we have the `"build"."folder"` field that points to the `app` folder.
 We will build & run the app from this `app` folder.
 
+### Select your module
 
-## Static files
+Clever Cloud runs the "app" Flask application defined in the `hello.py` file. So the "module" field is `hello:app`.
 
-Documentation for Python static files: [Manage your static files](https://www.clever-cloud.com/doc/python/python_apps/#manage-your-static-files)
+### Fine tuning the application
 
-## Run the app
+You can find a lot more configration options such as choosing python version and so [here]({{< ref "/deploy/application/python/python_apps.md" >}})
 
-As explained in [Select your module](https://www.clever-cloud.com/doc/python/python_apps/#select-your-module)
-we ask Clever Cloud to run the "app" Flask application defined in the `hello.py` file. So the "module" field is `hello:app`.
+{{< readfile "/content/partials/new-relic.md" >}}
+
+{{< readfile "/content/partials/env-injection.md" >}}
+
+To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
+```python
+import os
+os.getenv("MY_VARIABLE")
+```
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+{{< readfile "/content/partials/more-config.md" >}}

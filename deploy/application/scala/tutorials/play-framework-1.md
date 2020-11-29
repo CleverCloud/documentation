@@ -1,32 +1,28 @@
 ---
-title: Deploying Play Framework 1.x
+title: Deploy Play Framework 1.x Scala
 position: 1
 shortdesc: Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern.
 tags:
+- deploy
+keywords:
 - scala
+- play
+str_replace_dict:
+  "@application-type@": "Scala"
 ---
 
-# Deploy Play Framework 1.x
+## Overview
 
-Clever Cloud supports Play 1.x applications natively. The present guide
-explains how to set up your application to run on Clever Cloud.
+Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on Clever Cloud.
 
-## Create an application
+{{< readfile "/content/partials/create-application.md" >}}
 
-Create an application of type "Java + Play! 1". Please have a look at
-[Deploy an application on Clever
-Cloud](/doc/clever-cloud-overview/add-application/) for more information on
-creating applications on Clever Cloud.
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-## Necessary information
+## Configure your Scala + Play! 1 application
+### Select Play! 1.x version
 
-* The application must be located at the **root** of the git repository.
-
-## Select Play! version
-
-Clever Cloud supports Play! **1.2**, **1.3**, **1.4**, **1.5**. You can select the Play!
-version for your application by setting the `PLAY1_VERSION` environment
-variable (or by putting it in a file named `clevercloud/play1_version`).
+Clever Cloud supports Play! **1.2**, **1.3**, **1.4**, **1.5**. You can select the Play! version for your application by setting the `PLAY1_VERSION` [environment variable](#setting-up-environment-variables-on-clever-cloud) (or by putting it in a file named `clevercloud/play1_version`).
 
 The `PLAY1_VERSION` environment variable can contain one of the following values:
 
@@ -35,7 +31,7 @@ The `PLAY1_VERSION` environment variable can contain one of the following values
 * `1.4` or `14` for **Play! 1.4**.
 * `1.5` or `15` for **Play! 1.5**.
 
-## Play! configuration
+### Play! configuration with application.conf
 
 By default, your application will run on Clever Cloud with the option `--%clevercloud`.  
 It means that you can define special keys in your `application.conf` file that will be used only on Clever Cloud.
@@ -57,40 +53,20 @@ You can for example:
     %clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}
     ```
 
-More information on [playframework.com](http://www.playframework.com).
+More information on [playframework.com](https://www.playframework.com).
 
-## Environment injection
+### HTTPS support
 
-Clever Cloud can inject environment variables that are defined in the
-dashboard and by add-ons linked to your application.
+HTTPS is handled by Clever Cloud ahead of your application, your application retrieves the traffic in plain http. To be able to use `request.secure`, you have to add `XForwardedSupport=all` in `application.conf`.
 
-To access the environment variables from your application, you need to
-reference them in your application.conf file:
-you just have to put `my.option=${MY_VARIABLE}` in your application.conf file, and then use
-the configuration item `my.option` in your application.
+{{< readfile "/content/partials/new-relic.md" >}}
 
-So for an application using the MySQL add-on, you can set:
+{{< readfile "/content/partials/env-injection.md" >}}
 
-```bash
-%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}
-%clevercloud.db.driver=com.mysql.jdbc.Driver
-%clevercloud.db.user=${MYSQL_ADDON_USER}
-%clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}
-```
+To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`
 
-## HTTPS support
+{{< readfile "/content/partials/deploy-git.md" >}}
 
-HTTPS is handled by Clever Cloud ahead of your application, your application
-retrieves the traffic in plain http. To be able to use `request.secure`, you
-have to add `XForwardedSupport=all` in `application.conf`.
+{{< readfile "/content/partials/link-addon.md" >}}
 
-## Hooks
-
-If you need to run specific tasks during deployment, you can specify hooks that
-will be run during the build. Please have a look at [documentation on
-hooks](/doc/clever-cloud-overview/hooks/)
-
-## Deploy on Clever Cloud
-
-Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to
-deploy your application.
+{{< readfile "/content/partials/more-config.md" >}}

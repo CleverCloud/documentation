@@ -1,14 +1,16 @@
 ---
 title: Support
-position: 1
+weight: 7
 shortdesc: We provide basic support free-of-charge to all our users. Here's how to reach us
 tags:
+- help
+keywords:
 - support
 ---
 
 We provide basic support free-of-charge to all our users, even those who are not paying customers.
 
-## Clever Cloud Help
+## Email
 
 Seek help by querying us by email, allowing you to quickly gain answers to your Clever Cloud specific questions and open a ticket directly with our support staff. We will respond to your email within a few hours, or two business days in the worst case.
 
@@ -20,9 +22,9 @@ You can find in the console a button to start a live chat with one of our engine
 
 ## Critical application support
 
-Clever Cloud offers a premium support option providing 24x7 a direct line to our team of support engineers. Our team’s focus is investigating and solving new problems, getting feedback on the service and working hard to improve the core service.
+Clever Cloud offers a premium support option providing 24/7 a direct line to our team of support engineers. Our team’s focus is investigating and solving new problems, getting feedback on the service and working hard to improve the core service.
 
-Get more information and contact our sales team:
+Get more information and contact our sales team at:
 
-* <deals@clever-cloud.com>
+* <sales@clever-cloud.com>
 

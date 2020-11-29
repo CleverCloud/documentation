@@ -2,12 +2,16 @@
 title: Deploy a fluentd
 shortdesc: How to deploy a fluentd using Docker on Clever Cloud.
 tags:
+- deploy
+keywords:
 - docker
 - ruby
 - fluentd
+str_replace_dict:
+  "@application-type@": "Docker"
 ---
 
-## Introduction
+## Overview
 
 Since you deploy microservices on Clever Cloud, you may need some data pipes between your services to:
 
@@ -17,27 +21,30 @@ Since you deploy microservices on Clever Cloud, you may need some data pipes bet
 * extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
 * and many more ...
 
-Fluentd is an open source data collector, which lets you unify the data collection and consumption for a better use and understanding of data.
+Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 
-## Dependencies
+{{< readfile "/content/partials/create-application.md" >}}
+
+{{< readfile "/content/partials/set-env-vars.md" >}}
+
+## Configure your Fluentd + Docker application
+### Mandatory configuration
 
 To follow this tutorial, you will need:
 
 * Ruby >= 2.4.4 (w/ Rubygems)
-
 * Bundler
-
 * Docker
-
 * Git
-
 * curl
+* a Ruby versions manager
 
-<div class="alert">
-To manage your gems and ruby versions, we recommend <a href="https://github.com/sstephenson/rbenv">rbenv</a>.
-</div>
+{{< alert "info" >}}
+To manage your gems and ruby versions, we recommend <a href="https://GitHub.com/sstephenson/rbenv">rbenv</a>.
+{{< /alert >}}
 
-## Create a fluentd application locally
+### My application does not exists already
+#### Create a fluentd application locally
 
 ```bash
 $ mkdir myFluentd
@@ -49,7 +56,7 @@ $ chmod +x go.sh
 Inside `Gemfile` put the following:
 
 ```ruby
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 ruby '2.4.4'
 
@@ -82,7 +89,7 @@ bundle exec fluentd --use-v1-config -c td-agent.conf
 echo "🌍 Fluentd server started"
 ```
 
-## Test locally
+#### Test locally
 
 Start you service
 
@@ -95,21 +102,15 @@ Verify that it responds to requests
 ```bash
 $ curl 0.0.0.0:9292
 ```
+You can now read [My application already exists](#my-application-already-exists)
 
-## Create a Docker application in the console
+#### Fine tune you application
+You can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins).
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-     <h4>Why I can't just use ruby runtime</h4>
-  </div>
-  <div class="panel-body">
-    Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
-  </div>
-</div>
+### My application already exists
+#### Prepare your application for deployment
 
-First create a [Docker application](./docker.md)
-
-Then inside `Dockerfile` put the following:
+Create a `Dockerfile` at the root of your project and put inside the following (assuming your start script is in `go.sh`):
 
 ```docker
 FROM ruby:2.4.4
@@ -123,6 +124,20 @@ RUN chmod +x go.sh
 CMD [ "/go.sh" ]
 ```
 
-Now you can deploy your application.
+{{< readfile "/content/partials/create-application.md" >}}
 
-Finally, you can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins).
+{{< alert "warning" "Why I can't just use ruby runtime" >}}
+    Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
+{{< /alert >}}
+
+{{< readfile "/content/partials/set-env-vars.md" >}}
+
+{{< readfile "/content/partials/env-injection.md" >}}
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+{{< readfile "/content/partials/more-config.md" >}}
+
+

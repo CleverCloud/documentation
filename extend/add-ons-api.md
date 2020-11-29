@@ -3,7 +3,10 @@ title: Add-on API
 position: 2
 shortdesc: How to integrate your own service as an add-on on Clever Cloud
 tags:
-- developer
+- extend
+keywords:
+- addon api
+- addon
 ---
 
 Clever Cloud offers you to sell your service as an add-on through the dashboard.
@@ -167,7 +170,7 @@ not its name.
 
 * `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
-* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/clever-cloud-addons-api/add-ons-log-collector/](/doc/clever-cloud-addons-api/add-ons-log-collector/)
+* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/clever-cloud-addons-api/add-ons-log-collector/]({{< ref "extend/add-ons-log-collector.md" >}})
 
 * `options` - String -> String map with options. We don't currently support this, so it will be empty for now.
 
@@ -455,8 +458,8 @@ if __name__ == "__main__":
 
 ### Add-on API template using scala and Play! framework 2.
 
-[https://github.com/CleverCloud/addon-provider-template](https://github.com/CleverCloud/addon-provider-template)
+[https://GitHub.com/CleverCloud/addon-provider-template](https://GitHub.com/CleverCloud/addon-provider-template)
 
 ### Add-on API template using NodeJS
 
-[https://github.com/Redsmin/passport-clevercloud](https://github.com/Redsmin/passport-clevercloud)
+[https://GitHub.com/Redsmin/passport-clevercloud](https://GitHub.com/Redsmin/passport-clevercloud)

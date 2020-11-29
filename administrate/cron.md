@@ -1,12 +1,19 @@
 ---
-title: CRON configuration file
+title: CRON
 position: 1
 shortdesc: All you need to know about running crons on Clever Cloud
-tags:
+keywords:
 - apps
+- cron
+- cronjob
+- schedule
+tags:
+- administrate
 ---
 
 The configuration file used for crontab is `/clevercloud/cron.json`.
+
+## Syntax
 
 Here is the general syntax:
 
@@ -29,11 +36,24 @@ M H d m Y command
  - m: Month of the year [1,12]
  - Y: Day of the week [0,6] (0 is Sunday)
 
+{{< alert "warning" "Warning:" >}}
+  <p>All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.</p>
+{{< /alert >}}
+
+_* For more information about the syntax, you can check <a href="https://en.wikipedia.org/wiki/Cron">this page</a>_
+
+## Restrictions
+
 There are two restrictions about the usage of crontab on our platform:
 
 * The special date `@reboot` is not available since the crontab is added after the startup of the instance
 * You must use the absolute path of commands
 
+{{< alert "warning" "Warning:" >}}
+  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
+{{< /alert >}}
+
+## $ROOT
 You can use the special token `$ROOT` to refer to the root folder of your application.
 
 Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
@@ -95,7 +115,7 @@ You might be tempted to put the following in your cron.json file:
 Do *NOT*. Invoking bash here will supersede the shebang and cancel the `bash -l` that
 loads the env. So just put the path to your _executable_ `mycron.sh`.
 
-You can refer to [this list](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
+You can refer to [this list]({{< ref "develop/env-variables.md#special-environment-variables" >}}) to see which variables are available.
 
 ## Deduplicating crons
 
@@ -109,26 +129,10 @@ script by:
 
 ```bash
 #!/bin/bash -l
-
-
 if [[ "$INSTANCE_NUMBER" != "0" ]]; then
     echo "Instance number is ${INSTANCE_NUMBER}. Stop here."
     exit 0
 fi
-
 cd ${APP_HOME} # Which has been loaded by the env.
-
 … # Your part here
 ```
-
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-  <p>All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.</p>
-</div>
-
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
-</div>
-
-_* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_

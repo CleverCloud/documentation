@@ -5,6 +5,7 @@ shortdesc: How to setup and configure environment variables for apps and add-ons
 tags:
 - dashboard-setup
 - apps
+- develop
 keywords:
 - env
 - variables
@@ -46,7 +47,7 @@ They can be accessed as classic environment variables.
  instance of your application and changes every time you deploy it.
 
  * `INSTANCE_TYPE`: The type of the instance (scaler). Its value can be `build` or `production`. `build` is when
- your application is being built on a [dedicated instance](/doc/admin-console/apps-management/#dedicated-build).
+ your application is being built on a [dedicated instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}}).
 
  * `COMMIT_ID`: the commit ID used as a base to deploy your application. As we remove
  the `.git` directory before the deployment (to avoid security problems), it can be used
@@ -77,7 +78,7 @@ We use environment variables for some settings:
  cache archive is created. Must be relative to your application root.
  (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
- * `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files / directories will be cached. (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
+* `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files / directories will be cached. (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
 ## Variable definition constraints
 
@@ -95,51 +96,51 @@ documentations.
 <th>use case</th>
 </tr>
 <tr>
-<td><a href="/doc/go/go/#environment-injection">Go</a>  </td>
+<td>[Go]({{< ref "deploy/application/golang/go#environment-injection" >}}) </td>
 <td>Os.Getenv["MY\_VAR"]</td>
 </tr>
 <tr>
-<td><a href="/doc/haskell/haskell/#environment-injection">Haskell</a>  </td>
+<td>[Haskell]({{< ref "deploy/application/haskell/haskell#environment-injection" >}})  </td>
 <td>getEnv "MY\_VAR"</td>
 </tr>
 <tr>
-<td><a href="/doc/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
+<td>[Node.js]({{< ref "deploy/application/javascript/by-framework/nodejs#environment-injection" >}})  </td>
 <td>process.env["MY\_VAR"]</td>
 </tr>
 <tr>
-<td><a href="/doc/java/java-war/#environment-injection">Java WAR</a> </td>
+<td>[Java WAR]({{< ref "deploy/application/java/java-war#environment-injection" >}}) </td>
 <td>System.getProperties().getProperty("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/doc/php/php-apps/#environment-injection">PHP</a></td>
+<td>[PHP]({{< ref "deploy/application/php/php-apps#environment-injection" >}})</td>
 <td>getenv("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>
-& <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
+<td>[Play! Framework 1]({{< ref "deploy/application/java/by-framework/play-framework-1#environment-injection" >}})
+& [Play! Framework 2]({{< ref "deploy/application/java/by-framework/play-framework-2#environment-injection" >}})</td>
 <td>System.getenv("MY\_VAR") or ${MY\_VAR} in application.conf</td>
 </tr>
 <tr>
-<td><a href="/doc/python/python_apps/#environment-injection">Python</a></td>
+<td>[Python]({{< ref "deploy/application/python/python_apps#environment-injection" >}})</td>
 <td>os.getenv("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/doc/ruby/ruby-on-rails/#environment-injection">Ruby</a></td>
+<td>[Ruby]({{< ref "deploy/application/ruby/ruby-rack#environment-injection" >}})</td>
 <td>ENV["MY\_VAR"]<br></td>
 </tr>
 <tr>
-<td><a href="/doc/rust/rust/#environment-injection">Rust</a></td>
+<td>[Rust]({{< ref "deploy/application/rust/rust#environment-injection" >}})</td>
 <td>std::env::var("MY\_VAR")<br></td>
 </tr>
 <tr>
-<td><a href="/doc/scala/scala/#environment-injection">Scala</a> </td>
+<td>[Scala]({{< ref "deploy/application/scala/scala#environment-injection" >}}) </td>
 <td>System.getenv("MY\_VAR")</td>
 </tr>
 </table>
 
 Please note that the variables are available at build-time, for
 runtimes that support build-time instructions, such as
-<a href="/doc/java/java-war/#environment-injection">Java WAR</a>,
-<a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>,
-<a href="/doc/java/play-framework-2/#environment-injection">Play! Framework 2</a>
-or <a href="/doc/scala/scala/#environment-injection">Scala</a>.
+[Java WAR]({{< ref "deploy/application/java/java-war#environment-injection" >}}),
+[Play! Framework 1]({{< ref "deploy/application/java/by-framework/play-framework-1#environment-injection" >}}),
+[Play! Framework 2]({{< ref "deploy/application/java/by-framework/play-framework-2#environment-injection" >}})
+or [Scala]({{< ref "deploy/application/scala/scala#environment-injection" >}}).

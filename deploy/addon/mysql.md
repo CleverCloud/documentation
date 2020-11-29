@@ -1,5 +1,5 @@
 ---
-title: MySQL add-on
+title: MySQL
 position: 6
 shortdesc: MySQL is an open-source relational database management system (RDBMS).
 tags:
@@ -18,21 +18,17 @@ MySQL is an open-source relational database management system (RDBMS).
 The version currently installed by the add-on is :
 
 - on shared plans (DEV) : MySQL 8.0
-- on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7 or 8.0
+- on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7.20 or 8.0
 
 ## MySQL plans
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Note for Shared databases</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Note for Shared databases" >}}
     As Shared databases (DEV) are shared between multiple applications and delays could appear in case of
   an high demand.<br />
   If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database
   (XS plans and above).
-  </div>
-</div>
+{{< /alert >}}
+
 
 <table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
 <tr>
@@ -246,6 +242,8 @@ The version currently installed by the add-on is :
 <td>1195.00 €</td>
 </tr>
 </table>
+
+{{< readfile "/content/partials/db-backup.md" >}}
 
 ## Migrating from an old database
 

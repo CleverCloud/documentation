@@ -3,7 +3,8 @@ title: Manage your application
 position: 3
 shortdesc: Manage your application using the Clever Cloud CLI tool
 tags:
-- cli-setup
+- cli
+- reference
 keywords:
 - cli
 - clever-tools

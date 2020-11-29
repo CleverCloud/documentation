@@ -1,15 +1,17 @@
 ---
 title: Environment Variable Reference
 position: 3
+shortdesc: List of all the environment variable references
 tags:
-- support
+- reference
+keywords:
+- env
+- env variables
 ---
 
-## Application-related environment variable
+## Commons to all Applications
 
-### Commons to all Applications
-
-#### Set by the deployment process
+### Set by the deployment process
 
 These are read-only variables that are generated for each scaler before they build and start your application.
 
@@ -20,7 +22,7 @@ These are read-only variables that are generated for each scaler before they bui
     <th><center>Example value</center></th>
   </tr>
   <tr>
-    <td>[INSTANCE_NUMBER](/doc/admin-console/environment-variables/#special-environment-variables)</td>
+    <td>[INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}})</td>
     <td>Allows your application to differentiate each running node on the application level.</td>
     <td>0, 1…</td>
   </tr>
@@ -77,7 +79,7 @@ These are read-only variables that are generated for each scaler before they bui
   </tr>
 </table>
 
-#### Variables you can define
+### Variables you can define
 
 So you can alter the build&start process for your application.
 
@@ -93,12 +95,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[CC_TROUBLESHOOT](/doc/clever-cloud-overview/troubleshoot-mode/)</td>
+    <td>[CC_TROUBLESHOOT](({{< ref "find-help/troubleshooting.md" >}})</td>
     <td>Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.</td>
     <td>`false`</td>
   </tr>
   <tr>
-    <td>[CC_WORKER_COMMAND](/doc/clever-cloud-overview/common-application-configuration/#workers)</td>
+    <td>[CC_WORKER_COMMAND]({{< ref "reference/common-configuration.md#workers" >}})</td>
     <td>Command to run in background as a worker process. You can run multiple worker.</td>
     <td></td>
   </tr>
@@ -155,31 +157,31 @@ So you can alter the build&start process for your application.
     <td>`false`</td>
   </tr>
   <tr>
-    <td>[IGNORE_FROM_BUILDCACHE](/doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
+    <td>[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}})</td>
     <td>Allows to specify paths to ignore when the build cache archive is created.</td>
     <td></td>
   </tr>
   <tr>
-    <td>[CC_OVERRIDE_BUILDCACHE](/doc/admin-console/environment-variables/#settings-you-can-define-using-environment-variables)</td>
+    <td>[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}})</td>
     <td>Allows to specify paths that will be in the build cache.
     Only those files / directories will be cached</td>
     <td></td>
   </tr>
   <tr>
-    <td>[CC_METRICS_PROMETHEUS_PORT](/doc/tools/metrics#publish-your-own-metrics)
+    <td>[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}})
     <td>Define the port on which the Prometheus endpoint is available</td>
     <td>`8080`</td>
   </tr>
   <tr>
-    <td>[CC_METRICS_PROMETHEUS_PATH](/doc/tools/metrics#publish-your-own-metrics)
+    <td>[CC_METRICS_PROMETHEUS_PATH](({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}})
     <td>Define the path on which the Prometheus endpoint is available</td>
     <td>`/metrics`</td>
   </tr>
 </table>
 
-### Docker
+## Docker
 
-[Docker Documentation](/doc/docker/)
+[Docker Documentation]({{< ref "deploy/application/docker/docker.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -212,17 +214,11 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td>CC_DOCKERFILE</td>
-    <td>Set an alternative Dockerfile name</td>
-    <td></td>
-    <td></td>
-  </tr>
 </table>
 
-### Go
+## Go
 
-[Go Documentation](/doc/go/)
+[Go Documentation]({{< ref "deploy/application/golang/go.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -236,23 +232,23 @@ So you can alter the build&start process for your application.
     <td>Makes the deployer run go get ${CC_GO_PKG} instead of go get &lt;app_id&gt;. </td>
     <td></td>
     <td></td>
-  </tr>
-  <tr>
-    <td>CC_GO_BUILD_TOOL</td>
-    <td>Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application.</td>
-    <td>`goget`</td>
-    <td></td>
+    <tr>
+      <td>CC_GO_BUILD_TOOL</td>
+      <td>Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application.</td>
+      <td>`goget`</td>
+      <td></td>
+    </tr>
   </tr>
   <tr>
     <td>CC_GO_RUNDIR</td>
     <td>Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`</td>
     <td></td>
-    <td></td>
+  <td></td>
 </table>
 
-### Haskell
+## Haskell
 
-[Haskell Documentation](/doc/haskell/)
+[Haskell Documentation]({{< ref "deploy/application/haskell/haskell.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -269,9 +265,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Java
+## Java
 
-[Java Documentation](/doc/java/)
+[Java Documentation]({{< ref "deploy/application/java/java-jar.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -299,7 +295,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[CC_JAVA_VERSION](/doc/java/select-java-version/)</td>
+    <td>CC_JAVA_VERSION</td>
     <td>Choose the JVM version between `7` to `14` for OpenJDK or `graalvm-ce` for GraalVM 20.1.0 (based on OpenJDK 11.0).</td>
     <td>`11`</td>
     <td></td>
@@ -358,23 +354,11 @@ So you can alter the build&start process for your application.
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td>CC_JAVA_APM_AGENT_ENABLE</td>
-    <td>Attach the APM Java Agent to the currently running JVM processes</td>
-    <td>false</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_JAVA_APM_AGENT_CONTINUOUS</td>
-    <td>Periodically scan and attach the APM Java Agent to any JVM processes it can find over time</td>
-    <td>false</td>
-    <td></td>
-  </tr>
 </table>
 
-### NodeJS
+## NodeJS
 
-[NodeJS Documentation](/doc/nodejs/)
+[NodeJS Documentation]({{< ref "deploy/application/javascript/by-framework/nodejs.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -421,9 +405,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### PHP
+## PHP
 
-[PHP Documentation](/doc/php/)
+[PHP Documentation]({{< ref "deploy/application/php/php-apps.md" >}})
 
 
 <table class="table table-bordered" style="text-align:center">
@@ -477,12 +461,12 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_PHP_VERSION</td>
-    <td>Choose your PHP version between `5.6`, `7.2`, `7.3` and `7.4`</td>
+    <td>Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3`</td>
     <td>`7`</td>
     <td></td>
   </tr>
   <tr>
-    <td>[SESSION_TYPE](/doc/php/php-apps/#use-redis-to-store-php-sessions)</td>
+    <td>[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}})</td>
     <td>Choose `redis` to use it as session store</td>
     <td></td>
     <td></td>
@@ -567,9 +551,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Python
+## Python
 
-[Python Documentation](/doc/python/)
+[Python Documentation]({{< ref "deploy/application/python/python_apps.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -639,7 +623,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[STATIC_URL_PREFIX](/doc/python/python_apps/#manage-your-static-files)</td>
+    <td>[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
     <td>The URL path under which you want to serve static file, usually `/public`</td>
     <td></td>
     <td></td>
@@ -657,7 +641,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[UWSGI_ASYNC](/doc/python/python_apps/#uwsgi-asynchronous-non-blocking-modes)</td>
+    <td>[UWSGI_ASYNC](/{{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
     <td>Number of cores to use for uWSGI asynchronous/non-blocking modes</td>
     <td></td>
     <td></td>
@@ -724,9 +708,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Ruby
+## Ruby
 
-[Ruby Documentation](/doc/ruby/)
+[Ruby Documentation]({{< ref "deploy/application/ruby/ruby-rack.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -766,7 +750,7 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>[STATIC_URL_PREFIX](/doc/python/python_apps/#manage-your-static-files)</td>
+    <td>[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
     <td>The URL path under which you want to serve static file, usually `/public`</td>
     <td></td>
     <td></td>
@@ -797,9 +781,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Rust
+## Rust
 
-[Rust Documentation](/doc/rust/)
+[Rust Documentation]({{< ref "deploy/application/rust/rust.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -816,6 +800,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_RUSTUP_CHANNEL</td>
+    <td>RUSTUP_CHANNEL</td>
     <td>Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0` </td>
     <td>stable</td>
     <td></td>
@@ -830,7 +815,7 @@ So you can alter the build&start process for your application.
 
 ### .NET
 
-[.NET Documentation](/doc/dotnet/)
+[.NET Documentation]({{< ref "deploy/application/dotnet/dotnet.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -859,7 +844,7 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Elixir
+## [Elixir]({{< ref "deploy/application/elixir/elixir.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -867,12 +852,12 @@ So you can alter the build&start process for your application.
     <th><center>Description</center></th>
     <th><center>Default value</center></th>
     <th><center>Read Only</center></th>
-  </tr>
   <tr>
     <td>CC_ELIXIR_VERSION</td>
-    <td>Choose the Elixir version between '1.8' or `1.9`</td>
-    <td>`1.9`</td>
+    <td>Choose the Elixir version between `1.8`, `1.9`, `1.10` or `1.11`</td>
+    <td>`1.11`</td>
     <td></td>
+  </tr>
   </tr>
   <tr>
     <td>CC_MIX_BUILD_GOAL</td>
@@ -909,9 +894,9 @@ So you can alter the build&start process for your application.
 
 ## Addons-related environment variable
 
-### FS Bucket
+## FS Bucket
 
-[FS Bucket Documentation](/doc/addons/fs_buckets/)
+[FS Bucket Documentation]({{< ref "deploy/addon/fs-bucket.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -934,9 +919,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### MongoDB
+## MongoDB
 
-[MongoDB Documentation](/doc/mongodb/)
+[MongoDB Documentation]({{< ref "deploy/addon/mongodb.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -965,9 +950,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### MySQL
+## MySQL
 
-[MySQL Documentation](/doc/mysql/)
+[MySQL Documentation]({{< ref "deploy/addon/mysql.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -1002,9 +987,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### PostgreSQL
+## PostgreSQL
 
-[PostgreSQL Documentation](/doc/postgresql/)
+[PostgreSQL Documentation]({{< ref "deploy/addon/postgresql.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -1039,9 +1024,9 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Redis
+## Redis
 
-[Redis Documentation](/doc/redis/)
+[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -1070,7 +1055,8 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### New Relic
+
+## New Relic
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -1093,7 +1079,8 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### Socks
+
+## Socks
 
 <table class="table table-bordered" style="text-align:center">
   <tr>
@@ -1122,7 +1109,7 @@ So you can alter the build&start process for your application.
   </tr>
 </table>
 
-### VPN
+## VPN
 
 The VPN addon provides a fixed-ip outgoing node. This can be used to work
 with services protected by ip address filtering. `VPN_ADDON_*` variables will

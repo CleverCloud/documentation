@@ -2,24 +2,19 @@
 title: TCP redirections with Clever Tools
 shortdesc: TCP redirections to port 4040 of your instance
 tags:
-- cli-setup
-- apps
+- administrate
 keywords:
 - tcp
+- cli-setup
 - redirection
 ---
-
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">TCP redirections are a BETA feature</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "TCP redirections are a BETA feature" >}}
     <p>
     TCP redirections are currently available free of charge as long as the feature is still considered in a BETA stage.
     Once the feature leaves the BETA stage, it won't be free anymore.
     </p>
-  </div>
-</div>
+{{< /alert >}}
+
 
 ## What is a TCP redirection?
 

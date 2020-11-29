@@ -34,10 +34,7 @@ Invoices are available in the *Invoices* tab in the sidebar of the organization 
 
 * for organization: available in *Information > Billing details*
 
-<figure class="cc-content-img">
-  <img src="/doc/assets/images/billing-infos.png" data-action="zoom"/>
-  <figcaption>Organization information</figcaption>
-</figure>
+{{< image "/images/billing-infos.png" "Organization information" >}}
 
 ## SEPA Direct Debit
 
@@ -66,8 +63,7 @@ Mandate:
 
 ### About invoices issuance and notifications
 
-As explained in the [Monthly Invoice documentation](/doc/clever-cloud-overview/unified-invoicing/#monthly-invoice),
-we issue an invoice at the beginning of every month. We attach the invoice to an email
-we send you. Following SEPA rules and the mandate you agreed to, this email notifies you
-that Clever Cloud is going to charge you on the 5th of the month, three to four days after
+As explained in the [Monthly Invoice documentation]({{< ref "billing/unified-invoices.md#monthly-invoice" >}}),
+we issue an invoice at the beginning of every month. We attach the invoice to an email we send you. In accordance with SEPA rules and the mandate your agreed to, this email will notify you that a debit we send you. 
+Following SEPA rules and the mandate you agreed to, this email notifies you will be attempted the 5th of the month, so three to four days after the notification. that Clever Cloud is going to charge you on the 5th of the month, three to four days after
 the notification.

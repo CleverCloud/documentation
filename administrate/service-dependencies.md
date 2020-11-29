@@ -3,9 +3,11 @@ title: Service Dependencies
 position: 6
 shortdesc: Materialize the logical dependencies between your applications with service dependencies
 tags:
-- dependencies
+- administrate
 keywords:
 - application
+- dependencies
+- services
 - configuration
 ---
 
@@ -21,10 +23,7 @@ to an addon.
 Clever Cloud allows to declare the topology of your micro services graph by
 letting you link applications in the same way you can link addons.
 
-<figure class="cc-content-img" style="width:355px">
-  <img src="/doc/assets/images/service-dependencies-example.png" data-action="zoom">
-  <figcaption>Service dependencies</figcaption>
-</figure>
+{{< image "/images/service-dependencies-example.png" "Service dependencies" "width:355px" >}}
 
 To link an application to another, go to the "Service Dependencies" tab and
 add the applications you depend on.
@@ -36,24 +35,16 @@ For instance an API can expose its URL and credentials to access it. The
 exposed configuration will be injected in the dependent applications'
 environment.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-     <h4>Note:</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Note:" >}}
     The configuration exposed by an application is available in the
     environment variables of the <i>dependent</i> applications, but not in
     the environment of the application itself.
-  </div>
-</div>
+{{< /alert >}}
+
 
 ### Redeploy on configuration update
 
 When an application updates its exposed configuration, all applications
 depending on it are automatically redeployed.
 
-<figure class="cc-content-img" style="width:100%">
-  <img src="/doc/assets/images/service-dependencies-config-update.png" data-action="zoom">
-  <figcaption>Automatic redeployment</figcaption>
-</figure>
-
+{{< image "/images/service-dependencies-config-update.png" "Automatic redeployment" "width:100%" >}}

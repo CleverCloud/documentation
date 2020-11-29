@@ -1,5 +1,5 @@
 ---
-title: MongoDB add-on
+title: MongoDB
 position: 5
 shortdesc: A noSQL and document-oriented database, operated by Clever Cloud.
 tags:
@@ -29,9 +29,7 @@ Free plans are recommended for test and development usage only. Using these data
 
 Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, we set a soft limit of **15 operations/second**. Going above the limit will expose your database to disconnection, would you not answer our notices.
 
-## Daily Backups and Retention
-
-By default, Clever Cloud perfoms a free backup every day, with a retention of seven days. Each backup can be found in the add-on dashboard in the web console, along with the credentials.
+{{< readfile "/content/partials/db-backup.md" >}}
 
 ## Database Migration Process
 

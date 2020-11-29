@@ -1,5 +1,5 @@
 ---
-title: Elastic Stack add-on
+title: Elastic Stack
 position: 7
 shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
 tags:
@@ -57,7 +57,7 @@ Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/g
 
 ### How to setup APM
 
-Any applications linked to the APM application will have the right credentials and APM endpoint automatically available as environment variables. In some cases these variables will be picked up automatically by the APM agent you are using in your application and everything will work automatically. But in some other cases you have to configure it yourself. See for instance the [Rails documentation](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/getting-started-rails.html#getting-started-rails). The list of agents configuration can be found on Elastic's [documentation](https://www.elastic.co/guide/en/apm/get-started/current/agents.html).
+Any applications linked to the APM application will have the right credentials and APM endpoint automatically available as environment variables. In some cases these variables will be picked up automatically by the APM agent you are using in your application and everything will work automatically. But in some other cases you have to configure it yourself. See for instance the [Rails documentation](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/getting-started-rails.html#getting-started-rails). The list of agents configuration can be found on Elastic's [documentation](https://www.elastic.co/guide/en/apm/agent/index.html).
 
 ### APM Server custom configuration
 
@@ -77,14 +77,9 @@ Your Elastic add-on backups are managed by Clever Cloud. When you provision the 
 
 Backups can be managed under the *Backup* tab of the elastic add-on. You can restore, delete or open it directly under Kibana if you opted-in.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4>Warning:</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Warning:" >}}
     <p>If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.</p>
-  </div>
-</div>
+{{< /alert >}}
 
 ## Elastic stack plans
 
@@ -172,4 +167,3 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
           </tr>        
     </tbody>
 </table>
-

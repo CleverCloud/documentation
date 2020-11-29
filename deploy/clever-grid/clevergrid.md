@@ -41,36 +41,22 @@ A **Webapp** keeps the application up and serve via HTTP.
 
 ## Create an application
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Storage on VM</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Storage on VM" >}}
     Remember that an application is **stateless**. To save your data, you need to use an add-on.
-  </div>
-</div>
+{{< /alert >}}
 
 1. Go to https://dashboard.clevergrid.io, create a “brand new application”.
-<figure class="cc-content-img" >
-  <img src="/doc/assets/images/create-application.png" data-action="zoom"/>
-</figure>
+{{< image "/images/create-application.png" "Create application." >}}
 2. Select the application type :
    * Docker (Runner | Webapp)
-<figure class="cc-content-img" >
-  <img src="/doc/assets/images/docker.png"/>
-</figure>
+   {{< image "/images/docker.png" "Docker" >}}
    * Python (Runner | Webapp)
-<figure class="cc-content-img" >
-  <img src="/doc/assets/images/python.png"/>
-</figure>
+   {{< image "/images/python.png" "Python" >}}
    * Java (Runner | Webapp)
-<figure class="cc-content-img" >
-  <img src="/doc/assets/images/java.png"/>
-</figure>
+   {{< image "/images/java.png" "Java" >}}
 3. Select the size of your instance(s) and the number of nodes
 4. (optional) You can choose a Template for your application
-  <div class="panel panel-info">
-  <div class="panel-body">
+  {{< alert "info" >}}
     Template will set up for you a compete ecosystem for a specific application. It provides add-ons and environment 
    variables for you.
    <ul>
@@ -78,41 +64,31 @@ A **Webapp** keeps the application up and serve via HTTP.
       <li>R Notebook</li>
       <li>…</li>
    </ul>
-  </div>
-</div>
+  {{< /alert >}}
 
 ## Create an add-on
 
 1. Go to https://dashboard.clevergrid.io, Add a “a storage service”.
-<figure class="cc-content-img" >
-<img src="/doc/assets/images/addons.png" data-action="zoom"/>
-</figure>
+{{< image "/images/addons.png" "Addons" >}}
 2. Select the storage plan you need
 3. Link it to your applications
-<div class="panel panel-info">
-  <div class="panel-body">
+  {{< alert "info" >}}
     Add-ons's credentials will be automatically set up in your application. Yet it can be found on the "Add-on dashboard" tabs of your dashboard by the Clever Cloud console.
-  </div>
-</div>
+  {{< /alert >}}
+
 
 ## Set-up an application
 
 You can pass some parameter to your application by **environments variables**.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">About port listening</h4>
-  </div>
-  <div class="panel-body">
+  {{< alert "warning" "About port listening" >}}
     If you deploy a Webapp, Clever Grid expects an exposed `PORT` as environment variable listening the port `8080`
-  </div>
-</div>
+  {{< /alert >}}
+
 
 - Go to [dashboard.clevergrid.io](https://dashboard.clevergrid.io) and select your application
 - Manage your environment variables by the tab "Environment variables" 
-<figure class="cc-content-img" >
-<img src="/doc/assets/images/env-selection.png" data-action="zoom"/>
-</figure>
+{{< image "/images/env-selection.png" "Environment selection" >}}
 
 ### Python applications
 
@@ -121,11 +97,10 @@ If there is a `requirements.txt` in the root folder of your application, depeden
 * Starting file
   * Clever Grid need to know  which file runs to start your application. That can be a python file, declare in the
  `CC_MLPYTHON_RUN_MAIN` environment variable or custom bash script in `CC_MLPYTHON_START_SCRIPT` environment variable.
- <div class="panel panel-warning">
-  <div class="panel-body">
+  {{< alert "warning" >}}
     It should contain the path of your main file. The path should be relative to the root of your repository.
-  </div>
-</div>
+  {{< /alert >}}
+
 For example, “pytorch.py” and “./pytorch.py are both valid.
 **Bash scripts are expected to be executable (via `chmod+x`)** 
 
@@ -152,14 +127,11 @@ Your Clever Grid application is now set up to receive your code.
 * Go to your project and add the Clever Grid repository to your repository :
 
       git remote add clever-grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
- <div class="panel panel-info">
-  <div class="panel-body">
+  {{< alert "info" >}}
     You can find the repository address on the overview page of your application
-    <figure class="cc-content-img" >
-<img src="/doc/assets/images/git-url.png" data-action="zoom"/>
-</figure>
-  </div>
-</div>
+    {{< image "/images/git-url.png" "git-url" "width:100%" >}}
+  {{< /alert >}}
+
 * Push your code
 
 ## Command line management

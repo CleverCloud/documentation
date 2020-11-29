@@ -2,25 +2,39 @@
 title: Node.js + MongoDB sample application
 shortdesc: The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
 tags:
+- deploy
+keywords:
 - nodejs
+- mongodb
+str_replace_dict:
+  "@application-type@": "Node"
 ---
 
+## Overview
+
 The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
+The application is a very simple todo list. You can add and delete values. More information about the application:
 
-The application is a very simple list. You can add and delete values. More information about the application:
-
-*  [GitHub repo](https://github.com/CleverCloud/demo-nodejs-mongodb-rest)
+*  [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
 *  [Clever Cloud demo](https://nodejs-demo.cleverapps.io/)
 
+{{< readfile "/content/partials/create-application.md" >}}
 
-<br/>
-If you want to test our platform and deploy this application, just follow these simple steps:
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-1. Fork the [GitHub repo](https://github.com/CleverCloud/demo-nodejs-mongodb-rest).
-2. Create an application from your github repo.
-3. Create a [MongoDB add-on](/doc/addons/clever-cloud-addons/) and link it to your application.
-4. That's all the application will use the environment variables to connect to MongoDB.
+## Configure your Node.js + MongoDB application
+### My application does not exists already
 
+If you want to test easily a Node-js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest) and jump to [My application already exists](#my-application-already-exists)
 
-<br/><br/>If you need further information, feel free to send an email to <support@clever-cloud.com>.
+{{< readfile "/content/partials/env-injection.md" >}}
 
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+## Configure your database
+
+Make sure you have created a MongoDB add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application.
+
+{{< readfile "/content/partials/more-config.md" >}}

@@ -3,16 +3,17 @@ title: Add-on Log Collector
 position: 3
 shortdesc: This article targets the add-on providers who want to integrate logs from their add-ons to Clever Cloud's logging system
 tags:
-- developer
+- extend
+keywords:
+- log
+- log collection
 ---
-# Add-on Log Collector
-
 This article targets the add-on providers who want to integrate logs
 from their add-ons to Clever Cloud's logging system. Doing this
 allows the users to get their add-on's logs in Clever Cloud's
 dashboard.
 
-Note that, for the same reasons as the one mentioned in [Add-on API](/doc/clever-cloud-apis/add-ons-api) article, which you should have read if your reading these lines, if you already are a Heroku add-on provider, you should not be lost using this log collector API.
+Note that, for the same reasons as the one mentioned in [Add-on API]({{< ref "extend/add-ons-api.md" >}}) article, which you should have read if your reading these lines, if you already have a Heroku add-on provider, you should not be lost using this log collector API.
 
 ## Send a line of log
 
@@ -42,7 +43,7 @@ Let's explain this request:
 length <prival>version time hostname logtoken procid msgid structured-data msg
 ```
 
-This message format is documented by the [RFC 5424](http://tools.ietf.org/html/rfc5424).
+This message format is documented by the [RFC 5424](https://tools.ietf.org/html/rfc5424).
 
 * `length` - 72 in the example. It is the length *in bytes* of the encoded log line minus the length field and the following space. It *is not* the number of chars. In our example, this is how it could be done in java:
 ```text
@@ -50,11 +51,11 @@ This message format is documented by the [RFC 5424](http://tools.ietf.org/html/r
 "hostname logtoken_foobar procid - - foo").getBytes().length
 ```
 
-* `prival` - The priority value of the message. Here `190` means "local7.info". ([More doc](http://tools.ietf.org/html/rfc5424#section-6.2.1))
+* `prival` - The priority value of the message. Here `190` means "local7.info". ([More doc](https://tools.ietf.org/html/rfc5424#section-6.2.1))
 
-* `version` - The syslog protocol version. Use `1` here. ([More doc](http://tools.ietf.org/html/rfc5424#section-6.2.2))
+* `version` - The syslog protocol version. Use `1` here. ([More doc](https://tools.ietf.org/html/rfc5424#section-6.2.2))
 
-* `time` - The time the log line was created. The format must follow the [RFC 3339](http://tools.ietf.org/html/rfc3339). ([More doc](http://tools.ietf.org/html/rfc5424#section-6.2.3))
+* `time` - The time the log line was created. The format must follow the [RFC 3339](https://tools.ietf.org/html/rfc3339). ([More doc](https://tools.ietf.org/html/rfc5424#section-6.2.3))
 
 * `hostname` - Make it your add-on id.
 

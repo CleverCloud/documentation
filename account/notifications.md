@@ -12,7 +12,6 @@ keywords:
 - slack
 - flowdock
 ---
-# Notifications management
 
 The *Notifications* service allows you to choose the events of interest to you
 and decide where to send corresponding notifications.

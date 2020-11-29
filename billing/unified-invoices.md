@@ -1,6 +1,7 @@
 ---
 title: Unified Invoicing
 position: 1
+shortdesc: Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc). 
 tags:
 - billing
 keywords:

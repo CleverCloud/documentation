@@ -2,9 +2,10 @@
 title: Application configuration with Clever Tools
 shortdesc: Configure an application using the Clever Cloud CLI tool
 tags:
-- cli-setup
-- apps
+- cli
+- reference
 keywords:
+- apps
 - configuration
 ---
 

@@ -40,6 +40,64 @@ puts markdown.to_html
 ```
 We use highlightjs to perform language detection and syntax highlighting. You can find out which keywords are valid [here](https://highlightjs.org/static/demo/).
 
+
+### Write and use partials
+
+Partials are located under the `partial` folder at the root of this project. They are written in Markdown.
+
+#### Rendering partial in page
+
+Partials are called using the following shortcode: 
+```
+{{< readfile "/path/to/partial/from/root/of/project.md" >}}
+```
+
+#### Using variables in a partial
+
+You may want to display different chunks of partial content depending on which page you are working on.
+This is achieved by creating two things:
+
+1. a placeholder word to replace in the partial content.
+This placeholder word must:
+- begin and finish with an `@`
+- be the most self-explanatory possible
+- be used only once in this partial unless specific case (see note below)
+- not be used in other partials unless you want to replace it with the exact same value
+Example placeholder word: `@addon-name@`
+
+2. creating the key `str_replace_dict` in the front matter section and add to it the matching placeholder word and their replacements.
+You must add this in the front matter of *each* page using the partial.
+e.g: 
+```
+str_replace_dict:
+  "@addon-name@": "my addon name"
+  "@another-variable@": "other variable replacement str"
+```
+
+Notes:
+- the function used to find and replace uses [regex](https://regex-golang.appspot.com/assets/html/index.html), please make sure not to use reserved characters. If you have to use some, think about it twice and if you still need them, escape them properly.
+- the function will only replace the first occurence it founds, if you have to replace two times the same key, have it appear twice in the front matter `str_replace_dict` also.
+e.g:
+```
+partial/mypartial.md
+
+Text @addon-name@ holding two codes @addon-name@.
+```
+
+```
+folder/file.md
+
+---
+...
+str_replace_dict:
+  "@addon-name@": "PostgreSQL"
+  "@addon-name@": "PostgreSQL"
+---
+```
+
+Output: `Text PostgreSQL holding two codes PostgreSQL.`
+
+
 ## Licence
 
 Clever Cloud Doc by Clever Cloud is licensed under a Creative Commons Attribution 4.0 International License.

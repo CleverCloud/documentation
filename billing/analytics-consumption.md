@@ -18,7 +18,8 @@ Apps credit consumption is done on a 10 minute basis per scaler (instance). If y
 In the console, the consumption of each apps is displayed 
 
 <br/>
-<figure class="cc-content-img"><img src="/doc/assets/images/analytics.png"data-action="zoom"></figure>
+
+{{< image "/images/analytics.png" "analytics"  >}}
 
 ## Upscale & Downscale Impacts
 

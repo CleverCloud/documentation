@@ -3,7 +3,10 @@ title: Clever Cloud API
 position: 1
 shortdesc: Getting started with the Clever Cloud API
 tags:
-- developer
+- extend
+keywords:
+- api
+- authentication
 ---
 
 The Clever Cloud console and clever-tools are built on top of an API that
@@ -20,9 +23,9 @@ There are 2 supported methods for the signature: PLAINTEXT and HMAC-SHA1.
 While PLAINTEXT is way easier for testing, you **should** use HMAC-SHA1
 when it comes to production. This ensures that the request is totally verified.
 
-We have a [JavaScript client on GitHub](https://github.com/CleverCloud/clever-client.js)
+We have a [JavaScript client on GitHub](https://gitHub.com/CleverCloud/clever-client.js)
 where you can find a lot of informations.
-Especially in the [src/session.js file](https://github.com/CleverCloud/clever-client.js/blob/master/src/session.js)
+Especially in the [esm/login.js file](https://gitHub.com/CleverCloud/clever-client.js/blob/master/esm/login.js)
 
 This client is being used by the Console. Also, the Console gives you a lot
 of informations in the "network" panel of the devtools. If you're stuck, this
@@ -64,7 +67,7 @@ to the callback URL.
 
 In the callback URL, you have the verifier token:
 
-`http://www.example.com/callback?oauth_verifier=<verifierToken>`
+`https://www.example.com/callback?oauth_verifier=<verifierToken>`
 
 Where `<verifierToken>` is your token.
 
@@ -74,7 +77,7 @@ Make a `POST`  request to get the
  with your request token and the verifier.
 You can use this access token to make OAuth1 signed requests.
 
-More information about [OAuth dance](http://oauth.net/core/1.0/#anchor9).
+More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
 
 ### **API endpoints documentation**
 

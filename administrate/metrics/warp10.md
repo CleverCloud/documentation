@@ -2,7 +2,14 @@
 title: Warp10
 shortdesc: Warp10. Geo Time series database. Presentations, concepts and examples
 tags:
-- GTS, warp10, Quantum, visualization, time series, database
+- metrics
+keywords:
+- GTS
+- warp10
+- Quantum
+- visualization
+- time series
+- database
 ---
 
 ## Main concepts
@@ -15,7 +22,7 @@ A GTS is a GeoTime Serie defined by a `class` and somes `labels`. They are index
 
 A GTS may contain some values which have the following models : `[ timestamp longitude latitude altitude value ]`
 
-Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It's a **stack** based **language using reverse polish notation**.
+Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript). It's a **stack** based **language using reverse polish notation**.
 
 > The metrics ovh team built an other way to request warp10: https://github.com/ovh/tsl/
 
@@ -230,7 +237,7 @@ can be either a timestamp in microseconds or an iso8601 date format.
 
 - `fetch_accessLogs_key_v0`
 
-We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here](/doc/tools/metrics/#access-logs-metrics)), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
+We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here]({{< ref "administrate/metrics/overview.md#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
@@ -238,7 +245,7 @@ We provide the following macro to easily and quickly deep dive into access logs 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
 ```
-> More example in the [metrics part of this documenation](/doc/tools/metrics/#access-logs-metrics).
+> More example in the [metrics part of this documenation]({{< ref "administrate/metrics/overview.md#access-logs-metrics" >}}).
 
 **Nested keys** can be reached using a dot (`.`) to represent the depth.
 

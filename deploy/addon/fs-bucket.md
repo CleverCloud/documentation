@@ -1,5 +1,5 @@
 ---
-title: File System Buckets add-on
+title: File System Buckets
 position: 4
 shortdesc: This add-on allows applications to use a persistent file system, as git-based apps don't have one.
 tags:
@@ -12,12 +12,12 @@ keywords:
 - storage
 ---
 
-When you deploy an application on any PaaS, a new virtual machine is created, the previous one is deleted.
+When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external
 services like S3, you will lose anything stored on the disk.
 
 The Git deployment does not allow you to keep generated data files between deployments. To avoid the loss of your data,
-you have to mount a persistent filesystem. This is why we created File System Buckets.
+you have to mount **a persistent filesystem**. This is why we created File System Buckets.
 
 You will be able to retrieve generated data between two deployments.
 
@@ -46,7 +46,7 @@ You will be able to retrieve generated data between two deployments.
 
 **Notes:** 
 - Back-ups are not included in the public cloud offer. You can still do them manually.
-- FSBuckets are not available for Docker because of security concerns.
+- FSBuckets are not available for Docker applications because of security concerns.
 
 ## Configuring your application
 
@@ -64,19 +64,14 @@ CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
 
 ## Configuring your application with buckets.json (@deprecated)
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Deprecation notice</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Deprecation notice" >}}
     <p>
     This method is deprecated, we strongly recommend that you use environment variables.
     </p>
     <p>
       If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
     </p>
-  </div>
-</div>
+{{< /alert >}}
 
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
@@ -100,15 +95,9 @@ The `buckets.json` file must contain the following structure:
   }
 ]
 ```
-
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h4 class="panel-title">Getting a pre-filled conf file.</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "info" "Getting a pre-filled conf file." >}}
     You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
-  </div>
-</div>
+{{< /alert >}}
 
 It's a json array containing objects with at least two fields:
 
@@ -150,11 +139,7 @@ buckets</td>
 </tbody>
 </table>
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Important note about target folder</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Important note about target folder" >}}
     <p>
     The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
     </p>
@@ -163,23 +148,17 @@ buckets</td>
     content, so it's not the solution. You should prefer to mount the bucket in only one
     folder and then manage multiple subfolders in it.
     </p>
-  </div>
-</div>
+{{< /alert >}}
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Important notes</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Important notes" >}}
     <p>
     You cannot mount two buckets in the same folder for the same app.
     </p>
     <p>
-    If you put the same "folder" value for two entries in the *buckets.json* array, **you better
+    If you put the same "folder" value for two entries in your environment variables or the *buckets.json* array, **you better
     make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
     </p>
-  </div>
-</div>
+{{< /alert >}}
 
 ## Accessing your data inside the FS Bucket
 
@@ -189,11 +168,11 @@ Your bucket is mounted at the configured path, starting from your application's
 root folder.
 
 If you want to use an absolute path, you can use the `APP_HOME` environment
-variable, see [special environment variables](https://www.clever-cloud.com/doc/admin-console/environment-variables/#special-environment-variables)
+variable, see [special environment variables]({{< ref "develop/env-variables.md#special-environment-variables" >}})
 
 ### From the addon dashboard
 
-The **File explorer** tab of the addon dashboard gives you access to your files
+The **File explorer** tab of the **addon dashboard** gives you access to your files
 in the FS bucket.
 
 ### From your favourite FTP client

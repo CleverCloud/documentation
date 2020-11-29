@@ -3,20 +3,25 @@ title: Java War/Ear deployment
 position: 4
 shortdesc: In JEE, applications modules are packaged as EAR and WAR based on their functionality.
 tags:
+- deploy
+keywords:
 - java
+- war
+str_replace_dict:
+  "@application-type@": "Java + WAR"
 ---
-
-Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
-
-Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
 ## Overview
 
-In <abbr title="Java Enterprise Edition">JEE</abbr>, application modules are packaged as EAR and WAR based on their functionality.
+Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
+
+In <abbr title="Java Enterprise Edition">JEE</abbr>, application modules are packaged as EAR and WAR based on their purpose.
 
 * <acronym title="Web Archive">WAR</acronym>: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
 
 * <acronym title="Enterprise Archive">EAR</acronym>: *.war* and *.jar* files are packaged as JAR file with .ear extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root url mapping of web modules.
+
+Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
 ## Available containers
 
@@ -37,23 +42,20 @@ The supported containers are listed below:
 </thead>
 <tbody>
 <tr><td>Apache Tomcat 4.1 (TOMCAT4)</td><td>Jetty 6.1 (JETTY6)</td><td>Jboss 6.1 (JBOSS6)</td><td>Glassfish 3.1 (GLASSFISH3)</td><td>Payara 4.1 (PAYARA4)</td><td>Resin 3.1 (RESIN3)</td><td>WildFly 9.0.2 (WILDFLY9)</td></tr>
-<tr><td>Apache Tomcat 5.5 (TOMCAT5)</td><td>Jetty 7.6 (JETTY7)</td><td>Jboss AS 7.1 (JBOSS7)</td><td>Glassfish 4.1 (GLASSFISH4)</td><td> </td><td> </td><td>WildFly 17.0.1 (WILDFLY17)</td></tr>
-<tr><td>Apache Tomcat 6.0 (TOMCAT6)</td><td>Jetty 8.1 (JETTY8)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
-<tr><td>Apache Tomcat 7.0 (TOMCAT7)</td><td>Jetty 9.0 (JETTY9)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
-<tr><td>Apache Tomcat 8.8 (TOMCAT8)</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 5.5 (TOMCAT5)</td><td>Jetty 7.6 (JETTY7)</td><td>Jboss AS 7.1 (JBOSS7)</td><td>Glassfish 4.1 (GLASSFISH4)</td><td> </td><td> </td><td>WildFly 17.0.1 (WILDFLY17)</td></tr>
+<tr><td>Apache Tomcat 6.0 (TOMCAT6)</td><td>Jetty 8.1 (JETTY8)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 7.0 (TOMCAT7)</td><td>Jetty 9.0 (JETTY9)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 8.8 (TOMCAT8)</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 </tbody>
 </table>
 
+{{< readfile "/content/partials/create-application.md" >}}
 
-## Available Java versions
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-Please refer to <a href="/doc/java/select-java-version/">Java: select version</a>
+{{< readfile "/content/partials/java-versions.md" >}}
 
-## Create an application
-
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
-
-## Configure your application
+## Configure your Java application
 
 <div class="alert alert-hot-problems">
 <h4>**Warning!**</h4>
@@ -153,7 +155,7 @@ Here's what your configuration file can look like:
 </tbody>
 </table>
 
-#### Build your application on Clever Cloud
+#### Let Clever Cloud build your application
 
 The mandatory part alone is enough… if you directly push a dry war file to deploy. You
 might want to just push your code to Clever Cloud and let us build the app and generate
@@ -204,11 +206,6 @@ The goal you want the tool to execute.
 </tbody>
 </table>
 
-#### More configuration
-
-Need more configuration? To run a script at the end of your deployment? To add your
-private SSH key to access private dependencies? Go check the [Common configuration page](/doc/clever-cloud-overview/common-application-configuration/).
-
 ## Available containers
 
 Here's the list of the configuration values for the "container" field in `war.json`:
@@ -224,34 +221,34 @@ Here's the list of the configuration values for the "container" field in `war.js
 <tr>
 <td>GLASSFISH3</td>
 <td>Use Glassfish 3.x
-(see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
+(see <a href="https://glassfish.java.net/">https://glassfish.java.net/</a>)</td>
 </tr>
 <tr>
 <td>GLASSFISH4</td>
 <td>Use Glassfish 4.x
-(see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
+(see <a href="https://glassfish.java.net/">https://glassfish.java.net/</a>)</td>
 </tr>
 <tr>
 <td>JBOSS6</td>
 <td>Use JBoss AS 6.x
-(see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>)</td>
+(see <a href="https://www.jboss.org/jbossas">https://www.jboss.org/jbossas</a>)</td>
 </tr>
 <tr>
 <td>JBOSS7</td>
 <td>Use JBoss AS 7.x
-(see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>) </td>
+(see <a href="https://www.jboss.org/jbossas">https://www.jboss.org/jbossas</a>) </td>
 </tr>
 <tr>
 <td>RESIN3</td>
-<td>Use Resin AS 3.x (see <a href="http://www.caucho.com/resin-3.1/doc/">http://www.caucho.com/resin-3.1/doc/</a>)</td>
+<td>Use Resin AS 3.x (see <a href="https://www.caucho.com/resin-3.1/doc/">https://www.caucho.com/resin-3.1/doc/</a>)</td>
 </tr>
 <tr>
 <td>RESIN4</td>
-<td>Use Resin AS 4.x (see <a href="http://www.caucho.com/resin-4/doc/">http://www.caucho.com/resin-4/doc/</a>)</td>
+<td>Use Resin AS 4.x (see <a href="https://www.caucho.com/resin-4/doc/">https://www.caucho.com/resin-4/doc/</a>)</td>
 </tr>
 <tr>
 <td>JETTY6</td>
-<td>Use Jetty servlet container 6.x (see <a href="http://jetty.codehaus.org/jetty/">http://jetty.codehaus.org/jetty/</a>)</td>
+<td>Use Jetty servlet container 6.x (see <a href="https://jetty.codehaus.org/jetty/">https://jetty.codehaus.org/jetty/</a>)</td>
 </tr>
 <tr>
 <td>JETTY7</td>
@@ -263,7 +260,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 </tr>
 <tr>
 <td>JETTY9</td>
-<td>Use Jetty servlet container 9.x (see <a href="http://www.eclipse.org/jetty/documentation/current/">http://www.eclipse.org/jetty/documentation/current/</a>)</td>
+<td>Use Jetty servlet container 9.x (see <a href="https://www.eclipse.org/jetty/documentation/current/">https://www.eclipse.org/jetty/documentation/current/</a>)</td>
 </tr>
 <tr>
 <td>TOMCAT4</td>
@@ -291,7 +288,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 </tr>
 <tr>
 <td>WILDFLY9</td>
-<td>Use Wildfly servlet container 9.x (see <a href="http://wildfly.org/">http://wildfly.org/</a>)</td>
+<td>Use Wildfly servlet container 9.x (see <a href="https://wildfly.org/">https://wildfly.org/</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -308,15 +305,11 @@ Example:
 CC_RUN_COMMAND=java -jar somefile.jar <options>
 ```
 
-## Environment injection
+{{< readfile "/content/partials/new-relic.md" >}}
 
-Clever Cloud can inject environment variables that are defined in the
-dashboard and by add-ons linked to your application.
+{{< readfile "/content/partials/deploy-git.md" >}}
 
-For WAR/EAR applications, the environment is injected in the
-`System.getProperties()` object. So, to use a variable, you just do
-`System.getProperties().getProperty("MY_VARIABLE")`.
+{{< readfile "/content/partials/link-addon.md" >}}
 
-## Deploy on Clever Cloud
+{{< readfile "/content/partials/more-config.md" >}}
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

@@ -1,7 +1,7 @@
 ---
 title: Cellar, a S3-like object storage service
 position: 3
-shortdesc: Cellar is a Amazon S3-compatible file storage system created and hosted by Clever Cloud.
+shortdesc: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.
 tags:
 - addons
 keywords:
@@ -12,20 +12,18 @@ keywords:
 - files
 ---
 
-Cellar is S3-compatible online file storage web service. You can use it with
-your favorite S3 client.
+Cellar is S3-compatible online file storage web service. You can use it with your favorite S3 client.
 
-To manually manage the files, you can use [s3cmd](http://s3tools.org/s3cmd).
-You can download a s3cmd configuration file from the add-on configuration
-page.
+To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd).
+You can download a s3cmd configuration file from the add-on configuration page.
 
 ## Clever Cloud Cellar plans
 
 <table class="table table-bordered table-striped dataTable"><caption>Cellar storage plans</caption>
 <tr>
 <th>Storage</th>
-<th>Price / GB / mo</th>
-<th>Price / TB / mo</th>
+<th>Price / GB / month</th>
+<th>Price / TB / month</th>
 </tr>
 <tr>
 <td>First 1 TB</td>
@@ -47,8 +45,8 @@ page.
 <table class="table table-bordered table-striped dataTable"><caption>Cellar trafic usage plans</caption>
 <tr>
 <th>Traffic (outbound)</th>
-<th>Price / GB / mo</th>
-<th>Price / TB / mo</th>
+<th>Price / GB / month</th>
+<th>Price / TB / month</th>
 </tr>
 <tr>
 <td>till 10TB </td>
@@ -66,6 +64,9 @@ page.
 
 In Cellar, files are stored in buckets. When you create a Cellar addon, no
 bucket is created yet.
+
+You will need to install the s3cmd on your machine following [these recommendations](https://s3tools.org/s3cmd).
+Once s3cmd is installed, you can go to your add-on menu in the Clever Cloud console. Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link. This will provide you a configuration file that you just need to add to your home on your machine.
 
 To create a bucket, you can use s3cmd:
 
@@ -99,15 +100,11 @@ If you want to use a custom domain, for example cdn.example.com, you need to cre
 
 Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">S3 signature algorithm</h4>
-  </div>
-  <div class="panel-body">
-    New cellar add-ons now support the `v4` signature algorithm from S3.
+{{< alert "warning" "S3 signature algorithm" >}}
+    New cellar add-ons supports the `v4` signature algorithm from S3.
     If you are still using an old account (cellar.services.clever-cloud.com), please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided by the add-on's dashboard is already configured.
-  </div>
-</div>
+{{< /alert >}}
+
 
 ## Using AWS SDK
 
@@ -121,7 +118,7 @@ const AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
 
-const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
+const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
 
 s3.listBuckets(function(err, res) {
   // handle results
@@ -130,7 +127,7 @@ s3.listBuckets(function(err, res) {
 /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
  * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
  * you'll need to use 'putObject' instead.
- * see doc : http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+ * see doc : https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
  */
 s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
 
@@ -157,23 +154,18 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] argv) {
-        ClientConfiguration opts = new ClientConfiguration();
-        
-        // Only needed for "old" Cellar (V1)
+        ClientConfiguration opts = new ClientConfiguration(); // Only needed for "old" Cellar (V1)
         opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
-
         EndpointConfiguration endpointConfiguration = new EndpointConfiguration("<host>", null);
-
         AWSStaticCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(
             new BasicAWSCredentials("<key>", "<secret>"));
-
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
             .withCredentials(credentialsProvider)
             .withClientConfiguration(opts)
             .withEndpointConfiguration(endpointConfiguration)
             .withPathStyleAccessEnabled(Boolean.TRUE)
             .build();
-        
+
         List<Bucket> buckets = s3Client.listBuckets();
 
         // handle results
@@ -181,9 +173,8 @@ public class Main {
         /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
         * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
         * you'll need to use 'HttpMethod.PUT' instead.
-        * see doc : http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html#generatePresignedUrl-java.lang.String-java.lang.String-java.util.Date-com.amazonaws.HttpMethod-
+        * see doc : https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html#generatePresignedUrl-java.lang.String-java.lang.String-java.util.Date-com.amazonaws.HttpMethod-
         */
-        
         URL presignedUrl = s3Client.generatePresignedUrl("<YourBucket>", "<YourFileKey>", <expiration date>, HttpMethod.GET);
     }
 }
@@ -210,7 +201,7 @@ print(b)
 In order to share access to non-public files via HTTP, you need to get a presigned url for a specific key
 the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
 you'll need to use 'putObject' instead.
-see doc : http://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
+see doc : https://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
 """
 b[0].generate_url(60)
 ```
@@ -222,8 +213,6 @@ cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure 
 you must configure a S3 service with a custom endpoint.
 
 Use this configuration in your `config/storage.yml`:
-
-<!-- We're sorry folks, but this keeps the doc compiling : <% const ENV = { fetch:()=>{}} %>-->
 
 ```yaml
 cellar:
@@ -241,19 +230,14 @@ The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Withou
 
 `force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
 
-
 ## Public bucket
 
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. Writes won't be allowed to anyone that is not authenticated.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Any object will be exposed publicly</h4>
-  </div>
-  <div class="panel-body">
+{{< alert "warning" "Any object will be exposed publicly" >}}
     This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
-  </div>
-</div>
+{{< /alert >}}
+
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
 ```json

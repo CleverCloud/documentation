@@ -1,42 +1,44 @@
 ---
-title: Hello World tutorial for Rack-based application
+title: Deploy Rack-based applications
 shortdesc: How to write a hello world web application using Rack and deploy it on Clever Cloud.
 tags:
+- deploy
+keywords:
 - ruby
+- rack
+str_replace_dict:
+  "@application-type@": "Ruby"
 ---
 
-## Introduction
+## Overview Introduction
 
 Currently, Clever Cloud supports Rack-based applications.
-Created in 2007, Rack has become the de-facto standard for ruby
-web applications.
+Created in 2007, Rack has become the de-facto standard for ruby web applications and is used in many frameworks such as Ruby on Rails.
 
-
-## Dependencies
+## Configure your Rack based application
+### Mandatory configuration
 
 To follow this tutorial, you will need:
 
 * Ruby >= 1.9.2 (w/ Rubygems)
-
 * Bundler (`gem install bundler` and you're good to go!)
-
 * Your preferred editor
-
 * Git (for the deploy part)
 
-<div class="alert">
-To manage your gems and ruby versions, we recommend <a href="https://github.com/sstephenson/rbenv">rbenv</a>.
-If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands,
-or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
-</div>
+{{< alert "info" >}}
+To manage your gems and ruby versions, we recommend <a href="https://GitHub.com/sstephenson/rbenv">rbenv</a>.
+If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
+{{< /alert >}}
 
+### My application does not exists already
+#### Create a Ruby + Rake application locally
 
-## Create and write your application
+Our demo for this tutorial is here: <a href="https://helloworld-rack-demo.cleverapps.io/">https://helloworld-rack-demo.cleverapps.io/</a>. You can also doing it manually by following these instructions:
 
 ```bash
 $ mkdir helloworld-rack
 $ cd !$ # or 'helloworld-rack'.
-$ touch hello.rb config.ru gems.rb ## or Gemfile
+$ touch hello.rb config.ru Gemfile ## or gems.rb
 ```
 
 Inside `hello.rb` put the following:
@@ -67,7 +69,9 @@ gem 'rack', '~>1.5.1'
 We don't need any more dependencies. The `gems.rb` or `Gemfile` is mandatory to deploy
 on Clever Cloud.
 
-## Test your application
+Do not forget to init an empty git repository with `$ git init`
+
+#### Test your application locally
 
 To test your application, just fetch the dependencies using bundler:
 
@@ -87,34 +91,20 @@ $ bundle exec rackup # That will start your application
 
 You can now test with your browser at <a href="http://localhost:9292/">localhost:9292</a>.
 
-## Deploy your application
+You can now read [My application already exists](#my-application-already-exists)
 
-1. Using the Clever Cloud console, create a new Ruby application (<a href="https://console.clever-cloud.com/users/me/applications/new">https://console.clever-cloud.com/users/me/applications/new</a>).
-2. Initialize and set up a the git repository for your application:
+### My application already exists
 
-```bash
-$ git init
-Initialized empty Git repository in /*******/helloworld-rack/.git/
-$ git add config.ru hello.rb gems.rb gems.locked # or Gemfile Gemfile.lock
-$ git commit -m "Initial commit, ready for clever push"
-[master (root-commit) eaadcfc] Initial commit, ready for clever push
- 4 files changed, 20 insertions(+)
- create mode 100644 gems.rb
- create mode 100644 gems.locked
- create mode 100644 config.ru
- create mode 100644 hello.rb
-$ git remote add cleverapps git+ssh://git@push.clever-cloud.com/app_xxxxx-xxxxx-xxxxx-xxxxx-xxxxxx.git
-$ git push cleverapps master
-Counting objects: 6, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (6/6), 641 bytes | 0 bytes/s, done.
-Total 6 (delta 0), reused 0 (delta 0)
-remote: {"id":320,"message":"The application has successfully been queued for redeploy.","type":"success"}
-To git+ssh://git@push.clever-cloud.com/app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.git
- * [new branch]      master -> master
-```
+{{< readfile "/content/partials/create-application.md" >}}
 
+{{< readfile "/content/partials/set-env-vars.md" >}}
 
-And now, wait till the end of the deployment. You can check the logs in the console.
-Our demo for this tutorial is here: <a href="https://helloworld-rack-demo.cleverapps.io/">https://helloworld-rack-demo.cleverapps.io/</a>.
+{{< readfile "/content/partials/env-injection.md" >}}
+
+To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+{{< readfile "/content/partials/link-addon.md" >}}
+
+{{< readfile "/content/partials/more-config.md" >}}

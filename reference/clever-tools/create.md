@@ -3,9 +3,9 @@ title: Application creation with Clever Tools
 position: 2
 shortdesc: Create a new application using the Clever Cloud CLI tool
 tags:
-- cli-setup
-keywords:
 - cli
+- reference
+keywords:
 - clever-tools
 - create
 - remove
@@ -63,7 +63,7 @@ When you want to make reference to this application using an other command, use 
 When creating your application, you can link it to GitHub for deployments.
 
     # Link an application to GitHub
-    clever create --github <owner>/<repository>
+    clever create --GitHub <owner>/<repository>
 
 ## Addon creation process
 

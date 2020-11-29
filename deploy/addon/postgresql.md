@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL add-on
+title: PostgreSQL
 position: 7
 shortdesc: PostgreSQL is an open-source relational database management system (RDBMS).
 tags:
@@ -20,7 +20,7 @@ and on standards-compliance.
 The version currently installed by the add-on is :
 
 - on shared plans (DEV) : PostgreSQL 11.1
-- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10, 11, 12
+- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10, 11, 12, 13
 
 ## PostgreSQL plans
 
@@ -45,7 +45,6 @@ The version currently installed by the add-on is :
 <td>Shared</td>
 <td>Free</td>
 </tr>
-<tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXS Small Space</span></td>
 <td>yes</td>
 <td>1 GB</td>
@@ -53,7 +52,7 @@ The version currently installed by the add-on is :
 <td>512 MB</td>
 <td>Dedicated</td>
 <td>1</td>
-<td>5.25 €</td>
+<td>5.25 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXS Medium Space</span></td>
@@ -63,7 +62,7 @@ The version currently installed by the add-on is :
 <td>512 MB</td>
 <td>Dedicated</td>
 <td>1</td>
-<td>6.80 €</td>
+<td>6.80 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXS Big Space</span></td>
@@ -73,7 +72,7 @@ The version currently installed by the add-on is :
 <td>512 MB</td>
 <td>Dedicated</td>
 <td>1</td>
-<td>7.70 €</td>
+<td>7.70 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XS Tiny Space</span></td>
@@ -83,8 +82,9 @@ The version currently installed by the add-on is :
 <td>1 GB</td>
 <td>Dedicated</td>
 <td>1</td>
-<td>13.00 €</td>
+<td>13.00 €</td>
 </tr>
+<tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XS Small Space</span></td>
 <td>yes</td>
@@ -317,6 +317,8 @@ The version currently installed by the add-on is :
 </tr>
 </table>
 
+{{< readfile "/content/partials/db-backup.md" >}}
+
 ## Migrating from an old database
 
 Some applications require a populated database to run properly.
@@ -324,7 +326,8 @@ If you want to import your **SQL** dump, you can use several methods:
 
 1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/).
 2. Command line tool for PostgreSQL administration like `psql`.
-3. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).
+3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/).
+
 
 ## Direct access
 

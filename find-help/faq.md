@@ -12,6 +12,7 @@ keywords:
 - scp
 - ssh
 - on premises
+- pdf
 ---
 
 ## What is a Scaler?
@@ -158,3 +159,7 @@ Specific firewall rules can be enabled on demand to the support or in case of at
 ## Can I `scp` something in a VM
 
 You cannot `scp` something to the VM, you can however easily `scp` something from the VM to the outside.
+
+## I need to convert something to PDF with `wkhtmltopdf`
+
+Sadly `wkhtmltopdf`needs an X server to run, which is not available on our image. You should use `chromium headless` instead.

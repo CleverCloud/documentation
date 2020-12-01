@@ -52,6 +52,45 @@ The version currently installed by the add-on is :
 <td>Free</td>
 </tr>
 <tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Small Space</span></td>
+<td>yes</td>
+<td>512 MB</td>
+<td>15</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>5.00 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Medium Space</span></td>
+<td>yes</td>
+<td>1 GB</td>
+<td>15</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>5.90 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XXS Big Space</span></td>
+<td>yes</td>
+<td>2 GB</td>
+<td>15</td>
+<td>512 MB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>6.80 €</td>
+</tr>
+<tr>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XS Tiny Space</span></td>
+<td>yes</td>
+<td>2 GB</td>
+<td>75</td>
+<td>1 GB</td>
+<td>Dedicated</td>
+<td>1</td>
+<td>13.00 €</td>
+</tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XS Small Space</span></td>
 <td>yes</td>
 <td>5 GB</td>
@@ -209,7 +248,7 @@ The version currently installed by the add-on is :
 <td>32 GB</td>
 <td>Dedicated</td>
 <td>10</td>
-<td>795.00 €</td>
+<td>1022.00 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXL Medium Space</span></td>
@@ -219,7 +258,7 @@ The version currently installed by the add-on is :
 <td>32 GB</td>
 <td>Dedicated</td>
 <td>10</td>
-<td>875.00 €</td>
+<td>1134.00 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXL Big Space</span></td>
@@ -229,7 +268,7 @@ The version currently installed by the add-on is :
 <td>32 GB</td>
 <td>Dedicated</td>
 <td>10</td>
-<td>1035.00 €</td>
+<td>1358.00 €</td>
 </tr>
 <tr>
 <td class="cc-col__price"><span class="label cc-label__price label-info">XXL Huge Space</span></td>
@@ -239,7 +278,7 @@ The version currently installed by the add-on is :
 <td>32 GB</td>
 <td>Dedicated</td>
 <td>10</td>
-<td>1195.00 €</td>
+<td>1582.00 €</td>
 </tr>
 </table>
 

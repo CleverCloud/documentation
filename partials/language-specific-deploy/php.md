@@ -211,6 +211,8 @@ $dbh = new PDO(
 
 We support Composer build out of the box. You just need to provide a `composer.json` file in the root of your repository and we will run `composer.phar install` for you.
 
+You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
+
 {{< alert "info" "Note:" >}}
     <p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
 {{< /alert >}}

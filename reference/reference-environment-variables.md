@@ -466,6 +466,12 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
+    <td>CC_COMPOSER_VERSION</td>
+    <td>Choose your composer version between `1` and `2`</td>
+    <td>`2`</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}})</td>
     <td>Choose `redis` to use it as session store</td>
     <td></td>

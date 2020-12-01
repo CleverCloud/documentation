@@ -15,887 +15,241 @@ keywords:
 
 These are read-only variables that are generated for each scaler before they build and start your application.
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Example value</center></th>
-  </tr>
-  <tr>
-    <td>[INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}})</td>
-    <td>Allows your application to differentiate each running node on the application level.</td>
-    <td>0, 1…</td>
-  </tr>
-  <tr>
-    <td>INSTANCE_TYPE</td>
-    <td>Whether this instance is a "build" instance or a "production" instance.</td>
-    <td>build, production</td>
-  </tr>
-  <tr>
-    <td>INSTANCE_ID</td>
-    <td>The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.</td>
-    <td>518c8d8f-e304-4310-81e0-9c4237d55645</td>
-  </tr>
-  <tr>
-    <td>CC_PRETTY_INSTANCE_NAME</td>
-    <td>The random generated string as instance pretty name using pokemon names.</td>
-    <td>Tiny rhyhorn</td>
-  </tr>
-  <tr>
-    <td>APP_ID</td>
-    <td>The ID of your Clever Cloud application</td>
-    <td>app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>
-  </tr>
-  <tr>
-    <td>APP_HOME</td>
-    <td>The absolute path to your application folder</td>
-    <td>/home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02</td>
-  </tr>
-  <tr>
-    <td>CC_DEPLOYMENT_ID</td>
-    <td>Internal id of current deployment</td>
-    <td>f7efaf04-1a63-45a1-8503-0de7c750ee48</td>
-  </tr>
-  <tr>
-    <td>COMMIT_ID</td>
-    <td>The id of the commit that's currently running</td>
-    <td>d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f</td>
-  </tr>
-  <tr>
-    <td>CC_REVERSE_PROXY_IPS</td>
-    <td>A comma separated list of trusted IP addresses. You should only accept requests
-    coming from these IP addresses.</td>
-    <td>x.y.z.z,x.y.z.z</td>
-  </tr>
-  <tr>
-    <td>ELASTIC_APM_SERVICE_NAME</td>
-    <td>Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself</td>
-    <td>Your application's name conforming to Elastic APM naming convention</td>
-  </tr>
-  <tr>
-    <td>CC_CLAMAV</td>
-    <td>Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM.</td>
-    <td>false, true</td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align : center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Example value</center> |
+ |-----------------------|------------------------------|--------------------------------|
+ |[INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}}) | Allows your application to differentiate each running node on the application level. | 0, 1… |
+ |INSTANCE_TYPE | Whether this instance is a "build" instance or a "production" instance. | build, production |
+ |INSTANCE_ID | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
+ |CC_PRETTY_INSTANCE_NAME | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |
+ |APP_ID | The ID of your Clever Cloud application | app_649a93d1-6677-44bc-aca7-6f46107d6e02 |
+ |APP_HOME | The absolute path to your application folder | /home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02 |
+ |CC_DEPLOYMENT_ID | Internal id of current deployment | f7efaf04-1a63-45a1-8503-0de7c750ee48 |
+ |COMMIT_ID | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
+ |CC_REVERSE_PROXY_IPS | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
+ |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
+ |CC_CLAMAV | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false, true |
+ {{< /table >}}
 
 ### Variables you can define
 
 So you can alter the build&start process for your application.
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-  </tr>
-  <tr>
-    <td>APP_FOLDER</td>
-    <td>Folder in which the application is located (inside the git repository)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[CC_TROUBLESHOOT](({{< ref "find-help/troubleshooting.md" >}})</td>
-    <td>Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.</td>
-    <td>`false`</td>
-  </tr>
-  <tr>
-    <td>[CC_WORKER_COMMAND]({{< ref "reference/common-configuration.md#workers" >}})</td>
-    <td>Command to run in background as a worker process. You can run multiple worker.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_WORKER_RESTART</td>
-    <td>One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.
-        This setting controls all workers.
-    </td>
-    <td>on-failure</td>
-  </tr>
-  <tr>
-    <td>CC_PRE_BUILD_HOOK</td>
-    <td>Ran before the dependencies are fetched. If it fails, the deployment fails.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_POST_BUILD_HOOK</td>
-    <td>Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PRE_RUN_HOOK</td>
-    <td>Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUN_SUCCEEDED_HOOK</td>
-    <td>Ran once the application has started successfuly.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUN_FAILED_HOOK</td>
-    <td>Ran once the application has failed to start.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_CACHE_DEPENDENCIES</td>
-    <td>Enable caching of your build dependencies to speed up following builds.</td>
-    <td>`false`</td>
-  </tr>
-  <tr>
-    <td>CC_SSH_PRIVATE_KEY</td>
-    <td>A ssh private key to setup for the user running your application</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_SSH_PRIVATE_KEY_FILE</td>
-    <td>The name to use for the file containing the private ssh key</td>
-    <td>id_ed25519</td>
-  </tr>
-  <tr>
-    <td>CC_DISABLE_METRICS</td>
-    <td>Disable metrics collection.</td>
-    <td>`false`</td>
-  </tr>
-  <tr>
-    <td>[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}})</td>
-    <td>Allows to specify paths to ignore when the build cache archive is created.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}})</td>
-    <td>Allows to specify paths that will be in the build cache.
-    Only those files / directories will be cached</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}})
-    <td>Define the port on which the Prometheus endpoint is available</td>
-    <td>`8080`</td>
-  </tr>
-  <tr>
-    <td>[CC_METRICS_PROMETHEUS_PATH](({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}})
-    <td>Define the path on which the Prometheus endpoint is available</td>
-    <td>`/metrics`</td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
+ |-----------------------|------------------------------|--------------------------------|
+ |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
+ |[CC_TROUBLESHOOT](({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
+ |[CC_WORKER_COMMAND]({{< ref "reference/common-configuration.md#workers" >}}) | Command to run in background as a worker process. You can run multiple worker. |  |
+ |CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | on-failure |
+ |CC_PRE_BUILD_HOOK | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
+ |CC_POST_BUILD_HOOK | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
+ |CC_PRE_RUN_HOOK | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
+ |CC_RUN_SUCCEEDED_HOOK | Ran once the application has started successfuly. |  |
+ |CC_RUN_FAILED_HOOK | Ran once the application has failed to start. |  |
+ |CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
+ |CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
+ |CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | id_ed25519 |
+ |CC_DISABLE_METRICS | Disable metrics collection. | `false` |
+ |[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
+ |[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
+ |[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
+ |[CC_METRICS_PROMETHEUS_PATH](({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+ {{< /table >}}
 
 ## Docker
 
 [Docker Documentation]({{< ref "deploy/application/docker/docker.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_MOUNT_DOCKER_SOCKET</td>
-    <td>Set to true to access the host Docker socket from inside your container.</td>
-    <td>`false`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_DOCKER_EXPOSED_HTTP_PORT</td>
-    <td>Set to custom HTTP port if your Docker container runs on custom port.</td>
-    <td>`8080`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_DOCKER_EXPOSED_TCP_PORT</td>
-    <td>Set to custom TCP port if your Docker container runs on custom port but **it still needs a support request to make use of it.**</td>
-    <td>`4040`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_DOCKER_FIXED_CIDR_V6</td>
-    <td>Activate the support of IPv6 with an IPv6 subnet int the docker daemon.</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
+ |CC_DOCKER_EXPOSED_HTTP_PORT | Set to custom HTTP port if your Docker container runs on custom port. | `8080` |  |
+ |CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port but **it still needs a support request to make use of it.** | `4040` |  |
+ |CC_DOCKER_FIXED_CIDR_V6 | Activate the support of IPv6 with an IPv6 subnet int the docker daemon. |  |  |
+ {{< /table >}}
 
 ## Go
 
 [Go Documentation]({{< ref "deploy/application/golang/go.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_GO_PKG</td>
-    <td>Makes the deployer run go get ${CC_GO_PKG} instead of go get &lt;app_id&gt;. </td>
-    <td></td>
-    <td></td>
-    <tr>
-      <td>CC_GO_BUILD_TOOL</td>
-      <td>Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application.</td>
-      <td>`goget`</td>
-      <td></td>
-    </tr>
-  </tr>
-  <tr>
-    <td>CC_GO_RUNDIR</td>
-    <td>Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`</td>
-    <td></td>
-  <td></td>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_GO_PKG | Makes the deployer run go get ${CC_GO_PKG} instead of go get &lt;app_id&gt;.  |  |  |
+ |CC_GO_BUILD_TOOL |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. |`goget` | |
+ |CC_GO_RUNDIR | Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project` |  | |
+ {{< /table >}}
 
 ## Haskell
 
 [Haskell Documentation]({{< ref "deploy/application/haskell/haskell.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_RUN_COMMAND</td>
-    <td>Custom command to run your application.</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_RUN_COMMAND | Custom command to run your application. |  |  |
+ {{< /table >}}
 
 ## Java
 
 [Java Documentation]({{< ref "deploy/application/java/java-jar.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_SBT_TARGET_DIR</td>
-    <td>Define where pick the bin to run.</td>
-    <td>`.`</td>
-    <td>Then `/target/universal/stage/bin` is concatenated.</td>
-  </tr>
-  <tr>
-    <td>CC_SBT_TARGET_BIN</td>
-    <td>Define the bin to pick in the `CC_SBT_TARGET_DIR`.</td>
-    <td>The first bin found in the `CC_SBT_TARGET_DIR`.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>GRADLE_DEPLOY_GOAL</td>
-    <td>Define which gradle goals to run during build.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_JAVA_VERSION</td>
-    <td>Choose the JVM version between `7` to `14` for OpenJDK or `graalvm-ce` for GraalVM 20.1.0 (based on OpenJDK 11.0).</td>
-    <td>`11`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>MAVEN_DEPLOY_GOAL</td>
-    <td>Define which maven goals to run during build.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MAVEN_PROFILES</td>
-    <td>Define which maven profile to use during default build.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NUDGE_APPID</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>PLAY1_VERSION</td>
-    <td>Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SBT_DEPLOY_GOAL</td>
-    <td>Define which sbt goals to run during build.</td>
-    <td>`stage`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_JAR_PATH</td>
-    <td>Define the path to your jar.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_EXTRA_JAVA_ARGS</td>
-    <td>Define extra arguments to pass to 'java' for jars.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_JAR_ARGS</td>
-    <td>Define arguments to pass to the jar we launch.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUN_COMMAND</td>
-    <td>Custom command to run your application. Replaces the default behaviour.</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_SBT_TARGET_DIR | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
+ |CC_SBT_TARGET_BIN | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
+ |GRADLE_DEPLOY_GOAL | Define which gradle goals to run during build. |  |  |
+ |CC_JAVA_VERSION | Choose the JVM version between `7` to `14` for OpenJDK or `graalvm-ce` for GraalVM 20.1.0 (based on OpenJDK 11.0). | `11` |  |
+ |MAVEN_DEPLOY_GOAL | Define which maven goals to run during build. |  |  |
+ |CC_MAVEN_PROFILES | Define which maven profile to use during default build. |  |  |
+ |NUDGE_APPID |  |  |  |
+ |PLAY1_VERSION | Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5` |  |  |
+ |SBT_DEPLOY_GOAL | Define which sbt goals to run during build. | `stage` |  |
+ |CC_JAR_PATH | Define the path to your jar. |  |  |
+ |CC_EXTRA_JAVA_ARGS | Define extra arguments to pass to 'java' for jars. |  |  |
+ |CC_JAR_ARGS | Define arguments to pass to the jar we launch. |  |  |
+ |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
+ {{< /table >}}
 
 ## NodeJS
 
 [NodeJS Documentation]({{< ref "deploy/application/javascript/by-framework/nodejs.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_NODE_DEV_DEPENDENCIES</td>
-    <td>Control if development dependencies are installed or not. Values are either `install` or `ignore`</td>
-    <td>`ignore`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NODE_START_GOAL</td>
-    <td>Defines which node scripts to run</td>
-    <td>`start`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUN_COMMAND</td>
-    <td>Define a custom command.</td>
-    <td>Example for Meteor: `node .build/bundle/main.js &lt;options&gt;`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NODE_BUILD_TOOL</td>
-    <td>Choose your build tool between `npm` and `yarn`</td>
-    <td>`npm`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NPM_REGISTRY</td>
-    <td>The host of your private repository, available values: `github` or the registry host.</td>
-    <td>registry.npmjs.org</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NPM_TOKEN</td>
-    <td>Private repository token</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
+ |CC_NODE_START_GOAL | Defines which node scripts to run | `start` |  |
+ |CC_RUN_COMMAND | Define a custom command. | Example for Meteor: `node .build/bundle/main.js &lt;options&gt;` |  |
+ |NODE_BUILD_TOOL | Choose your build tool between `npm` and `yarn` | `npm` |  |
+ |CC_NPM_REGISTRY | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |  |
+ |NPM_TOKEN | Private repository token |  |  |
+ {{< /table >}}
 
 ## PHP
 
 [PHP Documentation]({{< ref "deploy/application/php/php-apps.md" >}})
 
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>ALWAYS_POPULATE_RAW_POST_DATA</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_LDAP_CA_CERT</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_WEBROOT</td>
-    <td>Define the `DocumentRoot` of your project</td>
-    <td>.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>LDAPTLS_CACERT</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>ENABLE_REDIS</td>
-    <td></td>
-    <td>`false`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>HTTP_TIMEOUT</td>
-    <td>Define a custom HTTP timeout</td>
-    <td>`180`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>MAX_INPUT_VARS</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PHP_VERSION</td>
-    <td>Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3`</td>
-    <td>`7`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_COMPOSER_VERSION</td>
-    <td>Choose your composer version between `1` and `2`</td>
-    <td>`2`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}})</td>
-    <td>Choose `redis` to use it as session store</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SOCKSIFY_EVERYTHING</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>USE_SOCKS</td>
-    <td></td>
-    <td>`false`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_OPCACHE_MEMORY</td>
-    <td>Set the shared opcache memory size</td>
-    <td>Default is about 1/8 of the RAM</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_OPCACHE_MAX_ACCELERATED_FILES</td>
-    <td>Maximum number of files handled by opcache.</td>
-    <td>Default depends on the scaler size</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_OPCACHE_INTERNED_STRINGS_BUFFER</td>
-    <td>The amount of memory used to store interned strings, in megabytes.</td>
-    <td>Default 4 (PHP5), 8 (PHP7)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_SERVER_HOST</td>
-    <td>Host of the SMTP server</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_SERVER_PORT</td>
-    <td>Port of the SMTP server</td>
-    <td>465</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_AUTH_USER</td>
-    <td>User to authenticate to the SMTP server</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_AUTH_PASSWORD</td>
-    <td>Password to authenticate to the SMTP server</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_USE_TLS</td>
-    <td>Enable or disable TLS when connecting to the SMTP server</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_MTA_AUTH_METHOD</td>
-    <td>Enable or disable authentication to the SMTP server</td>
-    <td>on</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SQREEN_API_APP_NAME</td>
-    <td>The name of your sqreen application.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SQREEN_API_TOKEN</td>
-    <td>Organization token.</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |ALWAYS_POPULATE_RAW_POST_DATA |  |  |  |
+ |CC_LDAP_CA_CERT |  |  |  |
+ |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |
+ |LDAPTLS_CACERT |  |  |  |
+ |ENABLE_REDIS |  | `false` |  |
+ |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
+ |MAX_INPUT_VARS |  |  |  |
+ |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.1`, `7.2` and `7.3` | `7` |  |
+ |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
+ |[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
+ |SOCKSIFY_EVERYTHING |  |  |  |
+ |USE_SOCKS |  | `false` |  |
+ |CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
+ |CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
+ |CC_OPCACHE_INTERNED_STRINGS_BUFFER | The amount of memory used to store interned strings, in megabytes. | Default 4 (PHP5), 8 (PHP7) |  |
+ |CC_MTA_SERVER_HOST | Host of the SMTP server |  |  |
+ |CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
+ |CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |
+ |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
+ |CC_MTA_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
+ |CC_MTA_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
+ |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
+ |SQREEN_API_TOKEN | Organization token. |  |  |
+ {{< /table >}}
 
 ## Python
 
 [Python Documentation]({{< ref "deploy/application/python/python_apps.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_CELERY_LOGFILE</td>
-    <td>Relative path to your Celery logfile: `/path/to/logdir` </td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_CELERY_MODULE</td>
-    <td>Specify the Celery module you want to start: `mymodule`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_CELERY_USE_BEAT</td>
-    <td>Set to `true` to activate Beat support</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_MODULE</td>
-    <td>Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_USE_GEVENT</td>
-    <td>Set to `true` to enable Gevent</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>HARAKIRI</td>
-    <td>Timeout (in seconds) after which an unresponding process is killed</td>
-    <td>`180`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_BACKEND</td>
-    <td>Choose the Python backend to use between `uwsgi` and `gunicorn`</td>
-    <td>`uwsgi`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PYTHON_VERSION</td>
-    <td>Choose the Python version between `2.7`, `3.6`, `3.7` and `3.8`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>PYTHON_SETUP_PY_GOAL</td>
-    <td>Custom setup goal to be launch after `requirements.txt` have been installed</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_FILES_PATH</td>
-    <td>Relative path to where your static files are stored: `path/to/static`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
-    <td>The URL path under which you want to serve static file, usually `/public`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_WEBROOT</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>UWSGI_INTERCEPT_ERRORS</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[UWSGI_ASYNC](/{{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
-    <td>Number of cores to use for uWSGI asynchronous/non-blocking modes</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>UWSGI_ASYNC_ENGINE</td>
-    <td>Select the asynchronous engine for uWSGI (optional)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_WORKERS</td>
-    <td>Number of workers. (Defaut: automatically setup with the scaler size)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_THREADS</td>
-    <td>Number of threads per worker. (Defaut: automatically setup with the scaler size)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_BUFFER_SIZE</td>
-    <td>Buffer size (in bytes) for uploads.</td>
-    <td>`4096`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>WSGI_POST_BUFFERING</td>
-    <td>Maximal size (in bytes) for the headers of a request. </td>
-    <td>`4096`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>ENABLE_GZIP_COMPRESSION</td>
-    <td>Set to `true` to gzip-compress the output of uwsgi</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>GZIP_TYPES</td>
-    <td>Set the mime types to compress.</td>
-    <td>`text/* application/json application/xml application/javascript image/svg+xml`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NGINX_READ_TIMEOUT</td>
-    <td>Read timeout in seconds</td>
-    <td>`300`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NGINX_PROXY_BUFFER_SIZE</td>
-    <td>Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NGINX_PROXY_BUFFERS</td>
-    <td>Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
+ |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
+ |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
+ |CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
+ |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
+ |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
+ |CC_PYTHON_BACKEND | Choose the Python backend to use between `uwsgi` and `gunicorn` | `uwsgi` |  |
+ |CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.6`, `3.7` and `3.8` |  |  |
+ |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
+ |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
+ |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+ |STATIC_WEBROOT |  |  |  |
+ |UWSGI_INTERCEPT_ERRORS |  |  |  |
+ |[UWSGI_ASYNC](/{{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
+ |UWSGI_ASYNC_ENGINE | Select the asynchronous engine for uWSGI (optional) |  |  |
+ |WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
+ |WSGI_THREADS | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |  |
+ |WSGI_BUFFER_SIZE | Buffer size (in bytes) for uploads. | `4096` |  |
+ |WSGI_POST_BUFFERING | Maximal size (in bytes) for the headers of a request.  | `4096` |  |
+ |ENABLE_GZIP_COMPRESSION | Set to `true` to gzip-compress the output of uwsgi |  |  |
+ |GZIP_TYPES | Set the mime types to compress. | `text/* application/json application/xml application/javascript image/svg+xml` |  |
+ |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
+ |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+ |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+ {{< /table >}}
 
 ## Ruby
 
 [Ruby Documentation]({{< ref "deploy/application/ruby/ruby-rack.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_RACKUP_SERVER</td>
-    <td>The server to use for serving the ruby application</td>
-    <td>puma</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>RACK_ENV</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>RAILS_ENV</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>RUBY_VERSION</td>
-    <td>Choose the Ruby version to use.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_FILES_PATH</td>
-    <td>Relative path to where your static files are stored: `path/to/static`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}})</td>
-    <td>The URL path under which you want to serve static file, usually `/public`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_WEBROOT</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NGINX_READ_TIMEOUT</td>
-    <td>Read timeout in seconds</td>
-    <td>`300`</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NGINX_PROXY_BUFFER_SIZE</td>
-    <td>Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_NGINX_PROXY_BUFFERS</td>
-    <td>Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
+ |RACK_ENV |  |  |  |
+ |RAILS_ENV |  |  |  |
+ |RUBY_VERSION | Choose the Ruby version to use. |  |  |
+ |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
+ |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+ |STATIC_WEBROOT |  |  |  |
+ |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
+ |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+ |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+ {{< /table >}}
 
 ## Rust
 
 [Rust Documentation]({{< ref "deploy/application/rust/rust.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_RUST_BIN</td>
-    <td>The name of the binary to launch once built</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUSTUP_CHANNEL</td>
-    <td>RUSTUP_CHANNEL</td>
-    <td>Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0` </td>
-    <td>stable</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RUST_FEATURES</td>
-    <td>The list of features to enable</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_RUST_BIN | The name of the binary to launch once built |  |  |
+ |CC_RUSTUP_CHANNEL | RUSTUP_CHANNEL | Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0`  | stable |  |
+ |CC_RUST_FEATURES | The list of features to enable |  |  |
+ {{< /table >}}
 
 ### .NET
 
 [.NET Documentation]({{< ref "deploy/application/dotnet/dotnet.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>CC_DOTNET_PROJ</td>
-    <td>The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_DOTNET_TFM</td>
-    <td>Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1`</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_DOTNET_PROFILE</td>
-    <td>Override the build configuration settings in your project.</td>
-    <td>Release</td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_DOTNET_PROJ | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |  |
+ |CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1` |  |  |
+ |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
+ {{< /table >}}
 
 ## [Elixir]({{< ref "deploy/application/elixir/elixir.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  <tr>
-    <td>CC_ELIXIR_VERSION</td>
-    <td>Choose the Elixir version between `1.8`, `1.9`, `1.10` or `1.11`</td>
-    <td>`1.11`</td>
-    <td></td>
-  </tr>
-  </tr>
-  <tr>
-    <td>CC_MIX_BUILD_GOAL</td>
-    <td>The mix goal to build the application (default compile)</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PHOENIX_ASSETS_DIR</td>
-    <td>Folder in which your Phoenix assets are located.</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PHOENIX_DIGEST_GOAL</td>
-    <td>Phoenix digest goal.</td>
-    <td>phx.digest</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PHOENIX_SERVER_GOAL</td>
-    <td>Phoenix server goal.</td>
-    <td>phx.server</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_PHOENIX_RUN_ECTO_MIGRATE</td>
-    <td>Whether to run 'mix ecto.migrate' or not.</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10` or `1.11` | `1.11` |  |
+ |CC_MIX_BUILD_GOAL | The mix goal to build the application (default compile) |  |  |
+ |CC_PHOENIX_ASSETS_DIR | Folder in which your Phoenix assets are located. |  |  |
+ |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |
+ |CC_PHOENIX_SERVER_GOAL | Phoenix server goal. | phx.server |  |
+ |CC_PHOENIX_RUN_ECTO_MIGRATE | Whether to run 'mix ecto.migrate' or not. | true |  |
+ {{< /table >}}
 
 
 ## Addons-related environment variable
@@ -904,216 +258,83 @@ So you can alter the build&start process for your application.
 
 [FS Bucket Documentation]({{< ref "deploy/addon/fs-bucket.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>BUCKET_HOST</td>
-    <td>Hostname of the bucket</td>
-    <td></td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>CC_FS_BUCKET</td>
-    <td>Defines which bucket to mount on which path</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |BUCKET_HOST | Hostname of the bucket |  | X |
+ |CC_FS_BUCKET | Defines which bucket to mount on which path |  |  |
+ {{< /table >}}
 
 ## MongoDB
 
 [MongoDB Documentation]({{< ref "deploy/addon/mongodb.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>MONGODB_ADDON_DB</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>MONGODB_ADDON_PASSWORD</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>MONGODB_ADDON_USER</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |MONGODB_ADDON_DB |  | Generated upon creation | X |
+ |MONGODB_ADDON_PASSWORD |  | Generated upon creation | X  |
+ |MONGODB_ADDON_USER |  | Generated upon creation | X  |
+ {{< /table >}}
 
 ## MySQL
 
 [MySQL Documentation]({{< ref "deploy/addon/mysql.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>MYSQL_ADDON_DB</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>MYSQL_ADDON_PASSWORD</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>MYSQL_ADDON_ROLE</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>MYSQL_ADDON_USER</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |MYSQL_ADDON_DB |  | Generated upon creation | X  |
+ |MYSQL_ADDON_PASSWORD |  | Generated upon creation | X  |
+ |MYSQL_ADDON_ROLE |  | Generated upon creation | X  |
+ |MYSQL_ADDON_USER |  | Generated upon creation | X  |
+ {{< /table >}}
 
 ## PostgreSQL
 
 [PostgreSQL Documentation]({{< ref "deploy/addon/postgresql.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>POSTGRESQL_ADDON_DB</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>POSTGRESQL_ADDON_PASSWORD</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>POSTGRESQL_ADDON_ROLE</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>POSTGRESQL_ADDON_USER</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |POSTGRESQL_ADDON_DB |  | Generated upon creation | X  |
+ |POSTGRESQL_ADDON_PASSWORD |  | Generated upon creation | X  |
+ |POSTGRESQL_ADDON_ROLE |  | Generated upon creation | X  |
+ |POSTGRESQL_ADDON_USER |  | Generated upon creation | X  |
+ {{< /table >}}
 
 ## Redis
 
 [Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>REDIS_HOST</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>REDIS_PORT</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-  <tr>
-    <td>REDIS_PASSWORD</td>
-    <td></td>
-    <td>Generated upon creation</td>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">X</span></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |REDIS_HOST |  | Generated upon creation | X  |
+ |REDIS_PORT |  | Generated upon creation | X  |
+ |REDIS_PASSWORD |  | Generated upon creation | X  |
+ {{< /table >}}
 
 
 ## New Relic
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>NEWRELIC_APPNAME</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NEWRELIC_LICENSE</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |NEWRELIC_APPNAME |  |  |  |
+ |NEWRELIC_LICENSE |  |  |  |
+ {{< /table >}}
 
 
 ## Socks
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>SOCKS_ADDON_HOST</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SOCKS_ADDON_PORT</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SOCKS_ADDON_PRIVATE_KEY</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |SOCKS_ADDON_HOST |  |  |  |
+ |SOCKS_ADDON_PORT |  |  |  |
+ |SOCKS_ADDON_PRIVATE_KEY |  |  |  |
+ {{< /table >}}
 
 ## VPN
 
@@ -1123,54 +344,14 @@ be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Name</center></th>
-    <th><center>Description</center></th>
-    <th><center>Default value</center></th>
-    <th><center>Read Only</center></th>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_CRT</td>
-    <td>Client certificate</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_CACRT</td>
-    <td>Server CA certificate</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_KEY</td>
-    <td>Client certificate private key</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_HOST</td>
-    <td>Server host or IP address</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_PORT</td>
-    <td>Server port</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_ADDON_TAKEY</td>
-    <td>Pre-shared secret</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>VPN_TARGETS</td>
-    <td>Comma-separated list of CIDRs for which you want the traffic to be
-    routed through the exit node</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |VPN_ADDON_CRT | Client certificate |  |  |
+ |VPN_ADDON_CACRT | Server CA certificate |  |  |
+ |VPN_ADDON_KEY | Client certificate private key |  |  |
+ |VPN_ADDON_HOST | Server host or IP address |  |  |
+ |VPN_ADDON_PORT | Server port |  |  |
+ |VPN_ADDON_TAKEY | Pre-shared secret |  |  |
+ |VPN_TARGETS | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |  |  |
+ {{< /table >}}

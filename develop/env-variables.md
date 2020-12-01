@@ -90,53 +90,20 @@ Depending on the type of your application, you will need to use
 different ways. You can find the various ways in the specific instances
 documentations.
 
-<table class="table table-bordered table-striped dataTable">
-<tr>
-<th>language</th>
-<th>use case</th>
-</tr>
-<tr>
-<td>[Go]({{< ref "deploy/application/golang/go#environment-injection" >}}) </td>
-<td>Os.Getenv["MY\_VAR"]</td>
-</tr>
-<tr>
-<td>[Haskell]({{< ref "deploy/application/haskell/haskell#environment-injection" >}})  </td>
-<td>getEnv "MY\_VAR"</td>
-</tr>
-<tr>
-<td>[Node.js]({{< ref "deploy/application/javascript/by-framework/nodejs#environment-injection" >}})  </td>
-<td>process.env["MY\_VAR"]</td>
-</tr>
-<tr>
-<td>[Java WAR]({{< ref "deploy/application/java/java-war#environment-injection" >}}) </td>
-<td>System.getProperties().getProperty("MY\_VAR")</td>
-</tr>
-<tr>
-<td>[PHP]({{< ref "deploy/application/php/php-apps#environment-injection" >}})</td>
-<td>getenv("MY\_VAR")</td>
-</tr>
-<tr>
-<td>[Play! Framework 1]({{< ref "deploy/application/java/by-framework/play-framework-1#environment-injection" >}})
-& [Play! Framework 2]({{< ref "deploy/application/java/by-framework/play-framework-2#environment-injection" >}})</td>
-<td>System.getenv("MY\_VAR") or ${MY\_VAR} in application.conf</td>
-</tr>
-<tr>
-<td>[Python]({{< ref "deploy/application/python/python_apps#environment-injection" >}})</td>
-<td>os.getenv("MY\_VAR")</td>
-</tr>
-<tr>
-<td>[Ruby]({{< ref "deploy/application/ruby/ruby-rack#environment-injection" >}})</td>
-<td>ENV["MY\_VAR"]<br></td>
-</tr>
-<tr>
-<td>[Rust]({{< ref "deploy/application/rust/rust#environment-injection" >}})</td>
-<td>std::env::var("MY\_VAR")<br></td>
-</tr>
-<tr>
-<td>[Scala]({{< ref "deploy/application/scala/scala#environment-injection" >}}) </td>
-<td>System.getenv("MY\_VAR")</td>
-</tr>
-</table>
+{{<table "table table-bordered table-striped dataTable" >}}
+| language | use case | 
+|----------|----------|
+| [Go]({{< ref "deploy/application/golang/go#environment-injection.md" >}}) | Os.Getenv["MY\_VAR"]|
+| [Haskell]({{< ref "deploy/application/haskell/haskell#environment-injection" >}})   |Os.Getenv["MY\_VAR"]  |
+| [Node.js]({{< ref "deploy/application/javascript/by-framework/nodejs#environment-injection" >}})  | process.env["MY\_VAR"]|
+| [Java WAR]({{< ref "deploy/application/java/java-war#environment-injection" >}}) | System.getProperties().getProperty("MY\_VAR") |
+|[PHP]({{< ref "deploy/application/php/php-apps#environment-injection" >}})| getenv("MY\_VAR") | |
+|[Play! Framework 1]({{< ref "deploy/application/java/by-framework/play-framework-1#environment-injection" >}}) & [Play! Framework 2]({{< ref "deploy/application/java/by-framework/play-framework-2#environment-injection" >}})| System.getenv("MY\_VAR") or ${MY\_VAR} in application.conf | 
+|[Python]({{< ref "deploy/application/python/python_apps#environment-injection" >}})| os.getenv("MY\_VAR") | 
+|[Ruby]({{< ref "deploy/application/ruby/ruby-rack#environment-injection" >}})| ENV["MY\_VAR"] | 
+|[Rust]({{< ref "deploy/application/rust/rust#environment-injection" >}})| std::env::var("MY\_VAR")| 
+|[Scala]({{< ref "deploy/application/scala/scala#environment-injection" >}}) | System.getenv("MY\_VAR") | 
+{{</table>}}
 
 Please note that the variables are available at build-time, for
 runtimes that support build-time instructions, such as

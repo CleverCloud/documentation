@@ -42,7 +42,7 @@ You can download a s3cmd configuration file from the add-on configuration page.
 </tr>
 </table>
 
-<table class="table table-bordered table-striped dataTable"><caption>Cellar trafic usage plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>Cellar traffic usage plans</caption>
 <tr>
 <th>Traffic (outbound)</th>
 <th>Price / GB / month</th>

@@ -225,7 +225,7 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
     <tr>
       <td>``example.com``</td>
       <td>No CNAME record needed</td>
-      <td>point ``example.com`` to the two IP adresses of the selected region</td>
+      <td>point ``example.com`` to the two IP addresses of the selected region</td>
       <td>No redirect needed</td>
     </tr>
   </tboby>

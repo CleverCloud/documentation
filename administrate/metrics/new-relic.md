@@ -40,7 +40,7 @@ Before setting up your app, be sure to have a [New Relic Account](https://www.ne
 
 ### Configuration
 
-To configure your New Relic, you need to set the environment variables `NEWRELIC_LICENSE` and `NEWRELIC_APPNAME` (optionnal).
+To configure your New Relic, you need to set the environment variables `NEWRELIC_LICENSE` and `NEWRELIC_APPNAME` (optional).
 
 Alternatively you can create and add a `./clevercloud/newrelic.json` file in your project, with the
 following fields:

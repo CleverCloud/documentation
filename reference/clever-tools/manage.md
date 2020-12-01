@@ -39,7 +39,7 @@ Clever-tools allows you to get and update the environment of your application.
 
 ### Get the whole environment
 
-Simply use the commmand down below to get all your variables.
+Simply use the command down below to get all your variables.
 
     clever env
 

@@ -1,5 +1,5 @@
 ---
-title: Logs managment
+title: Logs management
 position: 3
 shortdesc: How to manage addons and applications log drains
 tags:

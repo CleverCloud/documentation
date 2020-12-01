@@ -13,7 +13,7 @@ In the Clever Cloud Web Console, select **Profile** in the bottom left menu.
 
 You will see several menu entries.
 
-- **Information**: on that page you can edit your name, adress, phone number, profile picture, manage the link between your Clever Cloud and Github account and select the language of your Clever Cloud web console.
+- **Information**: on that page you can edit your name, address, phone number, profile picture, manage the link between your Clever Cloud and Github account and select the language of your Clever Cloud web console.
 
 - **Emails**: manage your linked email addresses.
 

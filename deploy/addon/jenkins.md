@@ -34,4 +34,4 @@ Jenkins comes with the following pre-installed plugins:
 
  ## Backup
 
-By default, Clever Cloud perfoms a free backup every day, with a retention of three days. Retention and frequency can be customized for Premium customers. Each backup can be found in the add-on dashboard in the web console, along with the credentials.
+By default, Clever Cloud performs a free backup every day, with a retention of three days. Retention and frequency can be customized for Premium customers. Each backup can be found in the add-on dashboard in the web console, along with the credentials.

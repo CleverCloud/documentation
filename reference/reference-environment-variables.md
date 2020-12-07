@@ -249,6 +249,7 @@ So you can alter the build&start process for your application.
  |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |
  |CC_PHOENIX_SERVER_GOAL | Phoenix server goal. | phx.server |  |
  |CC_PHOENIX_RUN_ECTO_MIGRATE | Whether to run 'mix ecto.migrate' or not. | true |  |
+ |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
  {{< /table >}}
 
 

@@ -18,12 +18,12 @@ When creating an application, you have two (non exclusive) choices for domain na
 
 You can link one or several domain names in the console.
 
-Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under ``*.cleverapps.io``.
+Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under <code>*.cleverapps.io</code>.
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
-In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: ``yourAppID.cleverapps.io``, which can be removed.
-In your application's domain section, just enter ``example.cleverapps.io``. You have to choose a unique one. Trusted SSL is available on every sub-domain.
+In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
+In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
 
 ## Using Personal Domain Names
@@ -46,18 +46,16 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com. </code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Four records:<br>
-    ``@ 10800 IN A 185.42.117.108``<br>
-    ``@ 10800 IN A 185.42.117.109``<br>
-    ``@ 10800 IN A 46.252.181.103``<br>
-    ``@ 10800 IN A 46.252.181.104``
+    <code>@ 10800 IN A 185.42.117.108</code><br>
+    <code>@ 10800 IN A 185.42.117.109</code><br>
+    <code>@ 10800 IN A 46.252.181.103</code><br>
+    <code>@ 10800 IN A 46.252.181.104</code>
     </td>
   </tr>
 </table>
@@ -72,16 +70,14 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Two records:<br>
-    ``@ 10800 IN A 87.98.180.173``<br>
-    ``@ 10800 IN A 87.98.182.136``
+    <code>@ 10800 IN A 87.98.180.173</code><br>
+    <code>@ 10800 IN A 87.98.182.136</code>
     </td>
   </tr>
 </table>
@@ -96,16 +92,14 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Two records:<br>
-    ``@ 10800 IN A 145.239.17.127``<br>
-    ``@ 10800 IN A 145.239.17.192``
+    <code>@ 10800 IN A 145.239.17.127</code><br>
+    <code>@ 10800 IN A 145.239.17.192</code>
     </td>
   </tr>
 </table>
@@ -122,16 +116,14 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Two records:<br>
-    ``@ 10800 IN A 149.56.147.232``<br>
-    ``@ 10800 IN A 149.56.126.234``<br>
+    <code>@ 10800 IN A 149.56.147.232</code><br>
+    <code>@ 10800 IN A 149.56.126.234</code><br>
     </td>
   </tr>
 </table>
@@ -146,16 +138,14 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Two records:<br>
-    ``@ 10800 IN A 51.79.197.159``<br>
-    ``@ 10800 IN A 51.79.197.160``
+    <code>@ 10800 IN A 51.79.197.159</code><br>
+    <code>@ 10800 IN A 51.79.197.160</code>
     </td>
   </tr>
 </table>
@@ -170,16 +160,14 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    ```
-    {yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.
-    ```
+    <code>{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
     <td>Two records:<br>
-    ``@ 10800 IN A 139.99.253.215``<br>
-    ``@ 10800 IN A 139.99.253.237``
+    <code>@ 10800 IN A 139.99.253.215</code><br>
+    <code>@ 10800 IN A 139.99.253.237</code>
     </td>
   </tr>
 </table>
@@ -189,15 +177,15 @@ Provide the following to your registrar:
 {{< /alert >}}
 
 
-If you want to make your application available from a domain name which does not support CNAME records (eg ``example.com`` in addition to ``www.example.com``), check if your registrar provides a web redirection service. This way, you only have to make ``www.example.com`` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
+If you want to make your application available from a domain name which does not support CNAME records (eg <code>example.com</code> in addition to <code>www.example.com</code>), check if your registrar provides a web redirection service. This way, you only have to make <code>www.example.com</code> point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
 {{< alert "info" "Note on using a domain wildcard" >}}
     <div>
-      ``*.example.com`` will match e.g. ``blog.example.com`` or ``www.example.com``.
+      <code>*.example.com</code> will match e.g. <code>blog.example.com</code> or <code>www.example.com</code>.
     </div>
-    <div> But for the raw domain ``example.com``, you will have to add both ``*.example.com`` and ``example.com`` to your application.</div>
+    <div> But for the raw domain <code>example.com</code>, you will have to add both <code>*.example.com</code> and <code>example.com</code> to your application.</div>
 {{< /alert >}}
 <br>
 
@@ -211,21 +199,21 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
   </thead>
   <tboby>
     <tr>
-      <td>``www.example.com`` <br> ``example.com``</td>
-      <td> point ``www.example.com`` to ``domain.par/mtl.clever-cloud.com.``</td>
+      <td><code>www.example.com</code> <br> <code>example.com</code></td>
+      <td> point <code>www.example.com</code> to <code>domain.par/mtl.clever-cloud.com.</code></td>
       <td>No A record needed</td>
-      <td>Redirect ``example.com`` to ``www.example.com`` </td>
+      <td>Redirect <code>example.com</code> to <code>www.example.com</code> </td>
     </tr>
     <tr>
-      <td>``www.example.com``</td>
-      <td> point ``www.example.com`` to ``domain.par/mtl.clever-cloud.com.``</td>
+      <td><code>www.example.com</code></td>
+      <td> point <code>www.example.com</code> to <code>domain.par/mtl.clever-cloud.com.</code></td>
       <td>No A record needed</td>
       <td>No redirect needed</td>
     </tr>
     <tr>
-      <td>``example.com``</td>
+      <td><code>example.com<code></td>
       <td>No CNAME record needed</td>
-      <td>point ``example.com`` to the two IP addresses of the selected region</td>
+      <td>point <code>example.com</code> to the two IP addresses of the selected region</td>
       <td>No redirect needed</td>
     </tr>
   </tboby>

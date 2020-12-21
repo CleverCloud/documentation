@@ -19,7 +19,7 @@ Symfony applications almost work out of the box on Clever Cloud, you just have a
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
-## Configure your Symphony application
+## Configure your Symfony application
 ### Configure `DocumentRoot`
 
 Add a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_WEBROOT` and set `/public` as its value `CC_WEBROOT=/public`.

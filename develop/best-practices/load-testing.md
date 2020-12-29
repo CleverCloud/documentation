@@ -27,13 +27,13 @@ In the event that you use public front-ends, it is necessary to notify the suppo
 
 In case you have dedicated frontends, note that too much load could impact your other applications behind this frontend. Because in general, the amount of private front-ends is lower than the number of public front-ends (new public front-ends are added on a regular basis).
 
-## Why carry out its tests
+## Why carry out these tests
 
 Performing these tests will allow you:
 
 * to have perspective on the performance and stability of your infrastructure.
 * to be able to identify bottlenecks in particular stress scenarios
-* to improve any weaknesses in architectures via supervision and performance management strategies and increase scalability
+* to identify and remove any weaknesses in architectures via supervision and performance management strategies and increase scalability
 
 The determining elements are:
 
@@ -43,11 +43,11 @@ The determining elements are:
 * Software design in general
 * Hardware limitations such as CPU, RAM, network, etc.
 * bad middleware configurations (databases, server, etc.)
-* The time between the client and the application
+* The response time between the client and the application
 
 ## Online and local load tools
 
-The choice of your tool will depend on several factors. If simplicity and speed are the order of the day, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost, then open source tools will be more interesting.
+Choosing a load-testing solution will depend on several factors. If simplicity and speed are the most important factors, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost,  you may want to use dedicated, local solutions.
 
 ### Online
 

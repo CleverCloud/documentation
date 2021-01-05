@@ -392,3 +392,9 @@ PostgreSQL dedicated addons can be encrypted using LUKS with `aes-xts`.
 The passphrase is encrypted in our database using Cipher and Nonce as bytes arrays.
 
 To enable it, you need to ask to our support then we will perform invoicing configuration (more informations about pricing are available through support) and enable the encryption for your addon. Once it's done, you will need to migrate your addon then the encryption at rest will be up.
+
+## Automatic vacuuming
+
+Autovacuum (https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on postgres addons.  
+The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.  
+Usually this threshold is set to 20%.

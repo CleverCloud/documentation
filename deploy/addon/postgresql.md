@@ -395,6 +395,6 @@ To enable it, you need to ask to our support then we will perform invoicing conf
 
 ## Automatic vacuuming
 
-Autovacuum (https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on postgres addons.  
+[Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.  
 The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.  
 Usually this threshold is set to 20%.

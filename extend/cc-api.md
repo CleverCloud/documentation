@@ -79,6 +79,12 @@ You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
 
+#### This seems cumbersome, is there an easier way?
+
+Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you. 
+
+The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-server](https://github.com/CleverCloud/oauth-consumer-server).
+
 ### **API endpoints documentation**
 
 All the API endpoints are referenced in a swagger documentation.

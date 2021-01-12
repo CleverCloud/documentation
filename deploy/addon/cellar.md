@@ -105,6 +105,16 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
     If you are still using an old account (cellar.services.clever-cloud.com), please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided by the add-on's dashboard is already configured.
 {{< /alert >}}
 
+## Using AWS CLI
+
+You can use the official [AWS cli](https://aws.amazon.com/cli/) with cellar. You will need to configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
+
+```
+aws configure set aws_access_key_id $CELLAR_ADDON_KEY_ID
+aws configure set aws_secret_access_key $CELLAR_ADDON_KEY_SECRET
+```
+
+Sadly the endpoint cannot be configured globally and has to be given as a parameter each time you use the `aws` cli. Here's an example to create a bucket: `aws s3api create-bucket --bucket myBucket  --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com`
 
 ## Using AWS SDK
 

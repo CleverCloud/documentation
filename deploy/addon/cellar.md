@@ -116,6 +116,8 @@ aws configure set aws_secret_access_key $CELLAR_ADDON_KEY_SECRET
 
 Sadly the endpoint cannot be configured globally and has to be given as a parameter each time you use the `aws` cli. Here's an example to create a bucket: `aws s3api create-bucket --bucket myBucket  --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com`
 
+To simplify this, you may want to configure an alias like so: `alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"`.
+
 ## Using AWS SDK
 
 To use cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk).

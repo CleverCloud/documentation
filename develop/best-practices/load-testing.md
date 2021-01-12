@@ -1,7 +1,7 @@
 ---
-title: Load testing your apps
+title: Load testing
 position: 3
-shortdesc: Considerations and methods to perform a load testing on Clever Cloud
+shortdesc: Considerations and methods to perform a load test on Clever Cloud
 tags:
 - develop
 - best-practices

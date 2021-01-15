@@ -18,7 +18,7 @@ Let's say you have a production environment called *Blue*, running for instance 
 Now let's say you have achieved a new feature and want your customers to benefit of it. Using the "Blue/Green" technique, the new code will be used in *Green*. Once *Green* is ready, you will redirect your customers to *Green*, and we will put *Blue* in "sleeping mode". When you will add new modification you will do it on *Blue* this time, then on *Green* again, and so on.
 
 There are many benefits to this approach:
--  if *Green* failsto deploy there will be no downtime for your customers or users as you will not use the broken *Green* and stay on "Blue" until you fix your code so it can start
+-  if *Green* fails to deploy there will be no downtime for your customers or users as you will not use the broken *Green* and stay on "Blue" until you fix your code so it can start
 - if you are not happy with the changes you added in *Green*, you can "awake" *Blue* and get back to the previous version easliy by routing the traffic to it
 
 

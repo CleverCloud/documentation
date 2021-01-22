@@ -89,4 +89,4 @@ The process consists in three steps:
 
 ## Encryption at rest
 
-Encryption at rest is available on MongoDB. You can have more information on the [dedicated page](/administrate/encryption-at-rest/)
+Encryption at rest is available on MongoDB. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest/" >}})

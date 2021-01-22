@@ -387,7 +387,7 @@ Every PostgreSQL database mananged by Clever Cloud comes with the following defa
 
 ## Encryption at rest
 
-Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page](/administrate/encryption-at-rest/)
+Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest/" >}})
 
 ## Automatic vacuuming
 

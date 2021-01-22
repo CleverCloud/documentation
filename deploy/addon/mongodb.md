@@ -89,8 +89,4 @@ The process consists in three steps:
 
 ## Encryption at rest
 
-MongoDB dedicated addons can be encrypted using LUKS with `aes-xts`.
-
-The passphrase is encrypted in our database using Cipher and Nonce as bytes arrays.
-
-To enable it, you need to ask to our support then we will perform invoicing configuration (more informations about pricing are available through support) and enable the encryption for your addon. Once it's done, you will need to migrate your addon then the encryption at rest will be up.
+Encryption at rest is available on MongoDB. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest/" >}})

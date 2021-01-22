@@ -25,7 +25,7 @@ properties to setup.
 
 ## .NET version
 
-The version used on Clever Cloud is `3.1`, so you can deploy applications for the two current LTS versions as shown on this [page](https://dotnet.microsoft.com/download/dotnet-core). No support will be provided for end-of-life versions.
+The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by setting the CC_DOTNET_VERSION environment variable to `3.1`. No support will be provided for end-of-life versions.
 
 {{< readfile "/content/partials/create-application.md" >}}
 

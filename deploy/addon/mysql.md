@@ -305,8 +305,4 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 
 ## Encryption at rest
 
-MySQL dedicated addons can be encrypted using LUKS with `aes-xts`.
-
-The passphrase is encrypted in our database using Cipher and Nonce as bytes arrays.
-
-To enable it, you need to ask to our support then we will perform invoicing configuration (more informations about pricing are available through support) and enable the encryption for your addon. Once it's done, you will need to migrate your addon then the encryption at rest will be up.
+Encryption at rest is available on MySQL. You can have more information on the [dedicated page](/administrate/encryption-at-rest/)

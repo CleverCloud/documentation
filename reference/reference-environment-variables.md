@@ -226,13 +226,14 @@ So you can alter the build&start process for your application.
  |CC_RUST_FEATURES | The list of features to enable |  |  |
  {{< /table >}}
 
-### .NET
+## .NET
 
 [.NET Documentation]({{< ref "deploy/application/dotnet/dotnet.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_DOTNET_VERSION | Choose the .NET Core version between `3.1`,`5.0`. | 5.0 |  |
  |CC_DOTNET_PROJ | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |  |
  |CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1` |  |  |
  |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |

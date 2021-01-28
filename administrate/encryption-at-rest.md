@@ -30,7 +30,7 @@ We also have a small swap partition on add-ons to allow more available RAM for b
 
 Performances may be a bit degraded with encryption enabled but in most of the cases under regular load, it is usually insignificant and an acceptable tradeoff.
 
-Also, depending on wether you are using a single vCPU add-on or a multiple vCPU one, numbers can greatly vary. Single vCPU instances will switch between decrypting/encrypting the data and reading/writing it to the disk while multiple vCPU instances will be able to parallelize those operations, leading to better performances.
+Also, depending on whether you are using a single vCPU add-on or a multiple vCPU one, numbers can greatly vary. Single vCPU instances will switch between decrypting/encrypting the data and reading/writing it to the disk while multiple vCPU instances will be able to parallelize those operations, leading to better performance.
 
 Note that most of the databases either have an in-memory cache or use the system's file cache so if the same data is often read, it may be available in the cache and no decryption occur leading to fast reads.
 

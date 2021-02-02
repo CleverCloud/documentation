@@ -81,6 +81,11 @@ You can connect using only your ssh client:
 
 You can omit the application ID. In that case, you will be prompted to choose an organization and an application.
 
+You can validate connection to remote server with this fingerprint :
+
+    ED25519 key fingerprint is SHA256:lys1oC3plDGyAsWD7Yd5fJVKQUV/Pbn/M5KI5GyAj5s.
+    RSA     key fingerprint is SHA256:0odQb8NQPKYNCme2Nf3Xrz3Bc9kmrDK6eSJGIzj9aEA.
+
 {{< alert "warning" "Don't forget the <code>-t</code> flag" >}}
     <p>
         The <code>-t</code> flag, it is mandatory for the ssh connection to work properly.

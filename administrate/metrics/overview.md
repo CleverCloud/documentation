@@ -3,16 +3,16 @@ title: Metrics Overview
 shortdesc: Gather metrics on your applications
 weight: 1
 tags:
-- metrics
+  - metrics
 keywords:
-- metrics
-- accesslogs
-- warp10
+  - metrics
+  - accesslogs
+  - Warp 10
 ---
-{{< alert "warning" "Warning:" >}}
-    Clever Cloud Metrics is still in beta.
-{{< /alert >}}
 
+{{< alert "warning" "Warning:" >}}
+Clever Cloud Metrics is still in beta.
+{{< /alert >}}
 
 In addition to logs, you can have access to metrics to know how your application
 behaves. By default, system metrics like CPU and RAM use are available, as well
@@ -28,6 +28,7 @@ one [as described here](https://github.com/influxdata/telegraf/tree/master/plugi
 We also support Prometheus metrics collection. By default our agent collects exposed metrics on `localhost:9100/metrics`.
 
 If needed, you can override those settings with the two following environment variables:
+
 - `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
 - `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
@@ -48,23 +49,23 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with
+All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with
 the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference). For instance,
 you can derive metrics over time, do custom aggregations or combine metrics.
 
 ## Access Logs metrics
 
-All your applications access logs are pushed to [Warp10]({{< ref "administrate/metrics/warp10.md" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.
+All your applications access logs are pushed to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.
 
 ### Access Log data model
 
-Access logs are defined in the `'accessLogs'` Warp10 class and there are three Warp10 labels available:
+Access logs are defined in the `'accessLogs'` Warp 10 class and there are three Warp 10 labels available:
 
-* `owner_id`: Organisation ID
-* `app_id` or `addon_id`: Application ID or Addon ID
-* `adc` or `sdc`
-    * `adc` (Application Delivery Controller) are used for HTTP connections
-    * `sdc` (Service Delivery Controller) are used for TCP connections
+- `owner_id`: Organisation ID
+- `app_id` or `addon_id`: Application ID or Addon ID
+- `adc` or `sdc`
+  - `adc` (Application Delivery Controller) are used for HTTP connections
+  - `sdc` (Service Delivery Controller) are used for TCP connections
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
@@ -150,7 +151,6 @@ sdc -> Reverse proxy hostname
 sDuration -> total session duration time in millis
 ```
 
-
 ### Queries examples:
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
@@ -166,34 +166,35 @@ The main ways to use `accessLogs` data is to `FETCH` over it and get interesting
 
 <script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
-A convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
+A convenient way to integrate the intercepted data in a workflow is to use [WarpScript](https://www.warp10.io/content/03_Documentation/04_WarpScript/). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
 <script src="https://gist.github.com/cnivolle/2ee8607d995daa1316e17ffc3874d047.js"></script>
 
-
 An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :
+
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } 'bIn' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 or to get the latitude of the destination, which is a nested data:
+
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } 'd.lt' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp10]({{< ref "administrate/metrics/warp10.md" >}}), a Geotimes 
-series database. 
-All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud 
-Warp10 endpoint.
+All applications and VMs instances behind are monitored. Data is sent to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), a Geotimes
+series database.
+All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud
+Warp 10 endpoint.
 
 ### Monitoring data model
 
-All metrics data follow the same schema in warp10. 
-Each class represents a specific metric. The context is provided by the warp10 labels.
+All metrics data follow the same schema in warp 10.
+Each class represents a specific metric. The context is provided by the Warp 10 labels.
 
 #### Class values and Labels
 
@@ -201,7 +202,7 @@ Each class represents a specific metric. The context is provided by the warp10 l
 
 A telegraf daemon supplies most metrics.
 
-Each metric is recorded as a warp10 class. 
+Each metric is recorded as a Warp 10 class.
 Labels provide additional information about the VMs like instances id, organisation id, reverse proxy used.
 
 ##### Labels
@@ -229,7 +230,7 @@ In metrics' data, mains labels would be :
 
 Telegraf provide lots of metrics described in their [documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs).
 
-Below, the list of all warp10 classes representing Telegraf metrics :
+Below, the list of all Warp 10 classes representing Telegraf metrics :
 
 <table align="center" class="table table-bordered" >
 <tbody>
@@ -437,12 +438,12 @@ Below, the list of all warp10 classes representing Telegraf metrics :
 
 ### Examples and usages
 
-From the `metrics` tab on the console. You can either open a Quantum console, an online warpscript 
-editor, or either send your warpscript by your own way on the warp10 endpoint (provided by Quantum).
+From the `metrics` tab on the console. You can either open a Quantum console, an online WarpScript
+editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).
 
-More information about [Quantum and Warp10]({{< ref "administrate/metrics/warp10.md" >}}) in our documentation.
+More information about [Quantum and Warp 10]({{< ref "administrate/metrics/warp10.md" >}}) in our documentation.
 
-For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by 
+For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
 
 <div class=“panel panel-warning”>
@@ -466,13 +467,13 @@ NOW 'NOW' STORE
 ```
 
 ## Consumption metric
- 
-Consumption can also be inferred by our metrics. We provide some helper macros in the 
-[Warp10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
 
-Consumption unit is in **second**. 
+Consumption can also be inferred by our metrics. We provide some helper macros in the
+[Warp 10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
 
-The following script provides the whole consumption from between start and  end timestamps for all applications 
+Consumption unit is in **second**.
+
+The following script provides the whole consumption from between start and end timestamps for all applications
 under an organisation.
 
 ```bash
@@ -499,14 +500,14 @@ You can use `node-statsd` to publish metrics
 ```javascript
 // npm install node-statsd
 
-const StatsD = require('node-statsd'),
-      client = new StatsD();
+const StatsD = require("node-statsd"),
+  client = new StatsD();
 
 // Increment: Increments a stat by a value (default is 1)
-client.increment('my_counter');
+client.increment("my_counter");
 
 // Gauge: Gauge a stat by a specified amount
-client.gauge('my_gauge', 123.45);
+client.gauge("my_gauge", 123.45);
 ```
 
 ### Haskell example

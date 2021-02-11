@@ -1,20 +1,20 @@
 ---
-title: Warp10
-shortdesc: Warp10. Geo Time series database. Presentations, concepts and examples
+title: Warp 10
+shortdesc: Warp 10. Geo Time series database. Presentations, concepts and examples
 tags:
-- metrics
+  - metrics
 keywords:
-- GTS
-- warp10
-- Quantum
-- visualization
-- time series
-- database
+  - GTS
+  - warp 10
+  - Quantum
+  - visualization
+  - time series
+  - database
 ---
 
 ## Main concepts
 
-Warp10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
+Warp 10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
 
 A GTS is a GeoTime Serie defined by a `class` and somes `labels`. They are indexed and used to quickly retrieved the data.
 
@@ -22,13 +22,13 @@ A GTS is a GeoTime Serie defined by a `class` and somes `labels`. They are index
 
 A GTS may contain some values which have the following models : `[ timestamp longitude latitude altitude value ]`
 
-Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript). It's a **stack** based **language using reverse polish notation**.
+Warp 10 uses [Warp Script](https://www.warp10.io/content/03_Documentation/04_WarpScript). It's a **stack** based **language using reverse polish notation**.
 
-> The metrics ovh team built an other way to request warp10: https://github.com/ovh/tsl/
+> The metrics ovh team built an other way to request Warp 10: https://github.com/ovh/tsl/
 
-> [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
+> [Warp 1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
 
-### Time and duration in Warp10
+### Time and duration in Warp 10
 
 > More information about [date functions here](https://www.warp10.io/tags/date), and [time functions here](https://www.warp10.io/tags/time).
 
@@ -64,11 +64,9 @@ Builtin function :
 - `NOW` : get the current timestamp
 - `ISO8601` : Convert a string or a timstamp to a iso8601 date format
 
-
-
 ## Endpoint
 
-The Clever Cloud warp10 endpoint is:
+The Clever Cloud Warp 10 endpoint is:
 
 ```
 https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
@@ -78,7 +76,7 @@ You can find documentation about endpoint gateway [here](https://www.warp10.io/c
 
 > You can find the endpoint and an available token under the `metric` tab of your application
 
-You can query our warp10 platform with your own script. Here's a curl example :
+You can query our Warp 10 platform with your own script. Here's a curl example :
 
 ```bash
   curl -T <Path/to/a/warpscript_file> https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
@@ -94,13 +92,13 @@ You can find a 5 days available token in the `metric` tab of your application.
 
 ## Technical constraints
 
-The followings limits are defined in warp10. The **soft** one can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. The **hard** one is unsurpassable.
+The followings limits are defined in Warp 10. The **soft** one can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. The **hard** one is unsurpassable.
 
 <table class="table table-bordered">
 <thead>
 <tr>
-<th style="text-align:center">Warpscript Operator</th>
-<th style="text-align:center">Warp10 limit description</th>
+<th style="text-align:center">WarpScript Operator</th>
+<th style="text-align:center">Warp 10 limit description</th>
 <th style="text-align:center">soft limit</th>
 <th style="text-align:center">hard limit</th>
 </tr>
@@ -193,20 +191,20 @@ An example where it is needed to increase the fetch limit by the `LIMIT` functio
 
 ### Quantum
 
-Quantum is a web tool used to run some warpscript. You can access to it from your metrics interface.
+Quantum is a web tool used to run some WarpScript. You can access to it from your metrics interface.
 
-It provide the path to the Clever Cloud warp10 gateway and let you explore your data.
+It provide the path to the Clever Cloud Warp 10 gateway and let you explore your data.
 
 ## Macro
 
-Warp10 provide a server side macro manager. It is a way to release some ready to use warpscript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.
+Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.
 
 <div class=“panel panel-warning”>
   <div class=“panel-heading”>
     <h4>Note:</h4>
   </div>
   <div class=“panel-body”>
-  More information on the <a href="https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros">Warp10' macros documentations</a>.
+  More information on the <a href="https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros">Warp 10' macros documentations</a>.
   </div>
 </div>
 
@@ -217,7 +215,7 @@ The following macros are helpers to compute consumption in seconds
 - `app_consumption`
 
 Return the consumption in **second** by **applications** for a specific **organisation**.
- `Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
+`Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
 
 ```bash
 '<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
@@ -225,7 +223,7 @@ Return the consumption in **second** by **applications** for a specific **organi
 
 - `orga_consumption`
 
-Return **all** the consumption in **second** for a specific **organisation**. `Start` and `End` parameters 
+Return **all** the consumption in **second** for a specific **organisation**. `Start` and `End` parameters
 can be either a timestamp in microseconds or an iso8601 date format.
 
 ```bash
@@ -234,7 +232,6 @@ can be either a timestamp in microseconds or an iso8601 date format.
 
 ### AccessLogs
 
-
 - `fetch_accessLogs_key_v0`
 
 We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here]({{< ref "administrate/metrics/overview.md#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
@@ -242,9 +239,11 @@ We provide the following macro to easily and quickly deep dive into access logs 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
+
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
 ```
+
 > More example in the [metrics part of this documenation]({{< ref "administrate/metrics/overview.md#access-logs-metrics" >}}).
 
 **Nested keys** can be reached using a dot (`.`) to represent the depth.

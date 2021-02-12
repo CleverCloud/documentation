@@ -53,6 +53,8 @@ And remove them if needed
 
 ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
 
+Each day, we will create an index `logstash-<yyyy-MM-dd>` and push logs to it.
+
 #### Datadog logs drains
 
 Datadog has two zones, EU and COM. An account on one zone is not available on the other, make sure to target the good EU or COM intake endpoint.

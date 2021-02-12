@@ -57,6 +57,14 @@ you can derive metrics over time, do custom aggregations or combine metrics.
 
 All your applications access logs are pushed to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.
 
+### Request rate
+
+We provide a request rate metric. It is an average of the access logs request count over 1 minute. It is updated every 30 second.
+
+This can be reached using the Warp 10 class: `request_rate`.
+
+> There are the same labels than for others metrics ([see monitoring-metrics](https://www.clever-cloud.com/doc/administrate/metrics/overview/#monitoring-metrics))
+
 ### Access Log data model
 
 Access logs are defined in the `'accessLogs'` Warp 10 class and there are three Warp 10 labels available:

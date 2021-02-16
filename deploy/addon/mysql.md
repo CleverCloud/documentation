@@ -305,4 +305,4 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 
 ## Encryption at rest
 
-Encryption at rest is available on MySQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest/" >}})
+Encryption at rest is available on MySQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})

@@ -95,6 +95,8 @@ The [environment variable](#setting-up-environment-variables-on-clever-cloud) `N
 * `npm`: Defaults to `npm-install` for now
 * `yarn`: uses [yarn](https://yarnpkg.com/)
 
+If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. To overwrite this behaviour, either delete the `yarn.lock` file or set the `NODE_BUILD_TOOL` environment variable.
+
 ## Automatic HTTPS redirection
 
 You can use the [X-Forwarded-Proto header](https://www.clever-cloud.com/doc/get-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection-) to enable it.

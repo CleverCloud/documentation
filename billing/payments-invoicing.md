@@ -36,6 +36,10 @@ Invoices are available in the *Invoices* tab in the sidebar of the organization 
 
 {{< image "/images/billing-infos.png" "Organization information" >}}
 
+### Change email for receiving invoices
+
+To change the email that is receiving invoices you can add a new member to your organization and configure its role to [Accountant]({{< ref "account/organizations.md#roles-and-privileges" >}})
+
 ## SEPA Direct Debit
 
 When adding your IBAN in the admin console, you accept the following SEPA Direct Debit

@@ -85,7 +85,7 @@ The table below describes rights assigned to roles:
 			<td> </td>
 		</tr>
 		<tr>
-			<th scope="row">Access Bills</th>
+			<th scope="row">Access Bills & Receive Invoices</th>
 			<td>x</td>
 			<td> </td>
 			<td> </td>

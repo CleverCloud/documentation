@@ -28,6 +28,12 @@ In the sidebar of the organization section, there are three alternatives to buy 
 
 Invoices are available in the *Invoices* tab in the sidebar of the organization section. Once paid, invoices are moved to the "Paid invoice" table.
 
+### Receive invoices
+
+You can change the billing email for an organization in *Information > Billing details > Billing email*.
+
+Also an organization member with the accountant role can receive invoices as described in the organization [roles]({{< ref "account/organizations.md#roles-and-privileges" >}}).
+
 ## Change Billing Information
 
 * for personal account: available in *Profile > Informations*
@@ -35,10 +41,6 @@ Invoices are available in the *Invoices* tab in the sidebar of the organization 
 * for organization: available in *Information > Billing details*
 
 {{< image "/images/billing-infos.png" "Organization information" >}}
-
-### Change email for receiving invoices
-
-To change the email that is receiving invoices you can add a new member to your organization and configure its role to [Accountant]({{< ref "account/organizations.md#roles-and-privileges" >}})
 
 ## SEPA Direct Debit
 

@@ -44,7 +44,7 @@ You can download a s3cmd configuration file from the add-on configuration page.
 
 <table class="table table-bordered table-striped dataTable"><caption>Cellar traffic usage plans</caption>
 <tr>
-<th>Traffic (outbound)</th>
+<th>Traffic (outbound*)</th>
 <th>Price / GB / month</th>
 <th>Price / TB / month</th>
 </tr>
@@ -59,6 +59,8 @@ You can download a s3cmd configuration file from the add-on configuration page.
 <td>€ 71.68</td>
 </tr>
 </table>
+
+*Outbound traffic is everything that goes out from your Cellar addon, including internal traffic to your applications.
 
 ## Creating a bucket
 

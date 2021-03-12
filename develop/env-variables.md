@@ -32,6 +32,8 @@ Variables are defined on a per-application basis. They are defined in four ways:
 Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.
 
+Check out our [environment variable reference]({{< ref "reference/reference-environment-variables.md" >}}).
+
 ## Special environment variables
 
 Some variables are injected to the environment of your application when you deploy it,

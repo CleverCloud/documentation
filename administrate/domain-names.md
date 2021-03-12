@@ -23,15 +23,22 @@ Add it in the application configuration: in the console, click on your **applica
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
+
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
 
 ## Using Personal Domain Names
 
-You can point your domain name to Clever Cloud either with a CNAME record or with A records. **The use of a CNAME record is highly recommended.**
+You can point your domain name to Clever Cloud either with a CNAME record or with A records.
+
+**The use of a CNAME record is highly recommended.**
+
 With a CNAME record, your DNS configuration is always up-to-date.
 Using A records will require you to keep the DNS configuration up-to-date manually.
+
 Domain names linked to Clever Cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
+
+We also support wildcard personal domain names, to do so use the standard pattern to describe it: <code>*.example.com</code>
 
 
 ### Your Application Runs in the Europe/Paris ('PAR') Zone

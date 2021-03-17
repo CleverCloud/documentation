@@ -62,3 +62,8 @@ Datadog has two zones, EU and COM. An account on one zone is not available on th
 To create a [Datadog](https://docs.datadoghq.com/api/?lang=python#send-logs-over-http) drain, you just need to use:
 
     clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&host=<HOST>"
+
+#### Logs extended storage
+
+Each organisations or personal space has `Logs extended storage` Cellar addon. This addon will be used to store your applications/addons logs when the hot retention is reached when the feature will be available.
+Then, the most aged logs will be pushed to `Logs extended storage` as cold storage. The retention for cold storage will be user defined via a new log management interface.

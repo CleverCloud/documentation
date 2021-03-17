@@ -38,16 +38,7 @@ To run your app, you can, for example, use plugins like cargo
 (<a href="https://codehaus-cargo.GitHub.io/cargo/Maven2+plugin.html">Find it here</a>).
 Your application must be set to listen on the port 8080.
 
-### Available Java versions
-
-Simply set the environment variable **CC_JAVA_VERSION** to the version you want.
-
-Accepted values are `7` to `12` or `graalvm-ce`
-
-{{< alert "warning" "Default version" >}}
-    <p>We are using Java version 11 by default.</p>
-    <p>New applications will have the **CC_JAVA_VERSION** environment variable set to 11.</p>
-{{< /alert >}}
+{{< readfile "/content/partials/java-versions.md" >}}
 
 ### Mandatory configuration
 

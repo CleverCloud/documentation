@@ -175,7 +175,7 @@ So you can alter the build&start process for your application.
  |CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
  |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
  |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
- |CC_PYTHON_BACKEND | Choose the Python backend to use between `uwsgi` and `gunicorn` | `uwsgi` |  |
+ |CC_PYTHON_BACKEND | Choose the Python backend to use between `uvicorn`, `daphne`, `gunicorn` and `uwsgi` | `uwsgi` |  |
  |CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.6`, `3.7` and `3.8` |  |  |
  |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
  |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |

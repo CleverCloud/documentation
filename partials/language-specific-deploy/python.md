@@ -26,8 +26,11 @@ If you want to use pip **9** instead, create an [environment variable](#setting-
 
 ### Select the python backend
 
-Currently, we support `uwsgi` and `gunicorn` for python backends. If not specified, the default backend is `uwsgi`.
-To select one, set the `CC_PYTHON_BACKEND` [environment variable](#setting-up-environment-variables-on-clever-cloud) with either `uwsgi` or `gunicorn`.
+Currently, we support `uvicorn`, `daphne`, `gunicorn` and `uwsgi` for python backends. If not specified, the default backend is `uwsgi`.
+
+To select one, set the `CC_PYTHON_BACKEND` [environment variable](#setting-up-environment-variables-on-clever-cloud) with either `uvicorn`, `daphne`, `gunicorn` or `uwsgi`.
+
+Please contact the support if you need another backend.
 
 ### Dependencies
 

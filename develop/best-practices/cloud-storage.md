@@ -19,7 +19,7 @@ Clever Cloud uses immutable disposable VMs.
 Every time you redeploy your application, you lose the old instances and all the files stored on their filesystems.
 If you want to avoid that, you have to store your important files outside of your instances.
 
-Cellar and FS Buckets both allow you to store files ouside of your instances for later use. But there are some differences between them.
+Cellar and FS Buckets both allow you to store files outside of your instances for later use. But there are some differences between them.
 
 {{< alert "info" "Don't want to read the guide?" >}}
     If you are coding a new project and need to store files, use Cellar. It will be cheaper and give you way more flexibility.<br />

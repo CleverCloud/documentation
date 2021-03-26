@@ -197,7 +197,7 @@ public class Main {
 
 This has been tested against python 3.6
 
-This script uses boto, the old implentation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar-c2.services.clever-cloud.com` (but check in the clever cloud console).
+This script uses boto, the old implementation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar-c2.services.clever-cloud.com` (but check in the clever cloud console).
 
 ```python
 from boto.s3.key import Key

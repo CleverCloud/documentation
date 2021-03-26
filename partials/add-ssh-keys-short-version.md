@@ -10,8 +10,8 @@ SSH keys are used to establish a secure connection between your computer and Cle
     ```
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
-2.  When prompted in which file you want to save the key, just press entrer.
-    If it says that the file already exists, enter `n` for `no`. Type `ls`, constat the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud). 
+2.  When prompted in which file you want to save the key, just press enter.
+    If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud). 
 
 3.  When asked, enter a passphrase:
 

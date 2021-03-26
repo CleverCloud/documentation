@@ -65,7 +65,7 @@ This shortcode will embed the clever-tools readme.
 
 ## tooltip shortcode
 
-Use the `tooltip` shortcode to provide a definition of the a term in a tooltip. All terms defintions are fetched from the glossary under `/data/glossary.json`.
+Use the `tooltip` shortcode to provide a definition of the a term in a tooltip. All terms definitions are fetched from the glossary under `/data/glossary.json`.
 the `title` parameter is the identifier of the object from `glossary.json`.
 
 This tooltip

@@ -114,7 +114,7 @@ It's a json array containing objects with at least two fields:
 <td><span class="label label-danger">Required</span></td>
 <td>bucket</td>
 <td>The bucket id you can find in the console. It begins with `bucket_`. This is for
-"old-style" buckets (created before the 7 december 2015)</td>
+"old-style" buckets (created before the 7 December 2015)</td>
 </tr>
 <tr>
 <td><span class="label label-danger">Required</span></td>
@@ -175,7 +175,7 @@ variable, see [special environment variables]({{< ref "develop/env-variables.md#
 The **File explorer** tab of the **addon dashboard** gives you access to your files
 in the FS bucket.
 
-### From your favourite FTP client
+### From your favorite FTP client
 
 The **Addon information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.

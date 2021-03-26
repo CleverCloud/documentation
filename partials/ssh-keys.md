@@ -18,8 +18,8 @@ If a key is used by more than one account, a warning will be displayed in the co
     ```
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
-2.  When prompted in wich file you want to save the key, just press entrer.
-    If it says that the file already exists, enter `n` for `no`. Type `ls`, constat the presence of the file and jump to [Add your SSH key on Clever Cloud](#add-your-ssh-key-on-clever-cloud). 
+2.  When prompted in which file you want to save the key, just press enter.
+    If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#add-your-ssh-key-on-clever-cloud).
 
 3.  When asked, enter a passphrase:
 
@@ -53,7 +53,7 @@ You may already have an SSH key and so do not need to generate a new one. To che
 
 #### Linux and Mac
 
-1. Wether you use Mac or Linux, open your Terminal application.
+1. Whether you use Mac or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
 3. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
    Using *id_rsa* and *id_rsa.pub* is fine too. We are just advocating the use of *ed25519*.
@@ -121,7 +121,7 @@ First, you need to add the file `clevercloud/ssh.json`, its content is pretty st
 }
 ```
 
-The `privateKeyFile` field must be a path to a SSH private key. The path must be relativevto the root of your repository. e.g. if your private key file is in the `clevercloud` folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
+The `privateKeyFile` field must be a path to a SSH private key. The path must be relative to the root of your repository. e.g. if your private key file is in the `clevercloud` folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
 
 ## Check your ssh configuration
 

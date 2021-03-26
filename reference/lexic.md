@@ -9,5 +9,5 @@ keywords:
 - glossary
 ---
 
-All terms available in this Lexic can be linked anywhere in the documentation thanks to the [tooltipe shortcode]({{< ref "contribute/shortcodes.md#tooltip-shortcode" >}}).
+All terms available in this Lexic can be linked anywhere in the documentation thanks to the [tooltip shortcode]({{< ref "contribute/shortcodes.md#tooltip-shortcode" >}}).
 {{< lexic >}}

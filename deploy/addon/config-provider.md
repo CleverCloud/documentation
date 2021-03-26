@@ -20,7 +20,7 @@ of your environment variables triggers automatic deployment of the linked applic
 
 Click on "Add an add-on", then choose "Configuration provider" and select the applications
 you want to link. On the dashboard, click on "edit" and input the environment variables.
-The syntax is `NAME=value`, like in the "expert mode" of the environment variables pannel of any application.
+The syntax is `NAME=value`, like in the "expert mode" of the environment variables panel of any application.
 Once you click "Save", all the linked applications will be restarted.
 
 ## Pricing

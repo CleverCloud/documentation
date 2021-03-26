@@ -11,6 +11,6 @@ Refer to {{< ref "/getting-started/" >}} for more details on application creatio
 
 ### via the Clever Tools CLI
 1. Make sure you have clever-tools installed locally. Report to {{< ref "/reference/clever-tools/getting_started.md" >}}
-2. In your code folder, do `clever create --type <type> <app-name> --region <zone> --org <org>` where `type` is the type of technology you rely on, `app-name` the name you want for your application, `zone` deloyment zone (`par` for Paris and `mtl` for Montreal), and `org` the organization ID the application will be created under.
+2. In your code folder, do `clever create --type <type> <app-name> --region <zone> --org <org>` where `type` is the type of technology you rely on, `app-name` the name you want for your application, `zone` deployment zone (`par` for Paris and `mtl` for Montreal), and `org` the organization ID the application will be created under.
 
 Refer to {{< ref "/reference/clever-tools/create.md" >}} for more details on application creation with Clever Tools.

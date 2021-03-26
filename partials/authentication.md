@@ -13,7 +13,7 @@ Do not forget to validate your email by clicking the link you will receive.
 ### GitHub Authentication
 
 The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
-This process asks the following permsissions: 
+This process asks the following permissions: 
 
 * Read your Public Key
 * Read User Repositories

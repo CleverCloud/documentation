@@ -339,7 +339,7 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 
 ## Default extensions
 
-Every PostgreSQL database mananged by Clever Cloud comes with the following default extensions:
+Every PostgreSQL database managed by Clever Cloud comes with the following default extensions:
 `adminpack`,
 `autoinc`,
 `btree_gin`,

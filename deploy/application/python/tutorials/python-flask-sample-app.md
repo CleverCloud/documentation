@@ -32,7 +32,7 @@ Clever Cloud runs the "app" Flask application defined in the `hello.py` file. So
 
 ### Fine tuning the application
 
-You can find a lot more configration options such as choosing python version and so [here]({{< ref "/deploy/application/python/python_apps.md" >}})
+You can find a lot more configuration options such as choosing python version and so [here]({{< ref "/deploy/application/python/python_apps.md" >}})
 
 {{< readfile "/content/partials/new-relic.md" >}}
 

@@ -42,7 +42,7 @@ First, you need to add the file `clevercloud/ssh.json`, its content is pretty st
 }
 ```
 
-The `privateKeyFile` field must be a path to a SSH private key. The path must be relativevto the root of your repository. e.g. if your private key file is in the `clevercloud` folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
+The `privateKeyFile` field must be a path to a SSH private key. The path must be relative to the root of your repository. e.g. if your private key file is in the `clevercloud` folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
 
 ## Hooks
 
@@ -57,7 +57,7 @@ Those are especially useful for environments where you can't have long-running p
 
 The workers run in the same environment as your application. They are launched in the application's directory.
 
-All you need to do is add one (or several) envrionment variables as such:
+All you need to do is add one (or several) environment variables as such:
 
 ```
 CC_WORKER_COMMAND=my-awesome-worker
@@ -70,5 +70,5 @@ CC_WORKER_COMMAND_0=my-awesome-worker
 CC_WORKER_COMMAND_1=my-other-worker
 ```
 
-By default, workers will be restarted if they exit with an error code. You can customise this behaviour by setting the
+By default, workers will be restarted if they exit with an error code. You can customise this behavior by setting the
 environment variable `CC_WORKER_RESTART` to one of `always`, `on-failure` (the default) or `no`.

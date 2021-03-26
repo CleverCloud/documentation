@@ -92,7 +92,7 @@ You can pass some parameter to your application by **environments variables**.
 
 ### Python applications
 
-If there is a `requirements.txt` in the root folder of your application, depedencies will be installed during the deployment.
+If there is a `requirements.txt` in the root folder of your application, dependencies will be installed during the deployment.
 
 * Starting file
   * Clever Grid need to know  which file runs to start your application. That can be a python file, declare in the

@@ -10,7 +10,8 @@ Be sure that:
 * you enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
 
 ### Select node version
-You can use the `engines.node` field in `package.json` to define the wanted version.
+
+You can use the `engines.node` field in `package.json` to define the wanted version, if not provided we will use the latest LTS version.
 
 ### About package.json
 

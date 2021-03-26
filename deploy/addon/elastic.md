@@ -61,7 +61,13 @@ Any applications linked to the APM application will have the right credentials a
 
 ### APM Server custom configuration
 
-The APM server is deployed as an application. As such it's configured as an application. Its default pre run hook is set to `CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 |sh"`. You can change the URL to point to your own custom configuration. A configuration example for RUM activation can be found here:https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh
+The APM server is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
+
+`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 | sh"`
+
+You can change the URL to point to your own custom configuration.
+
+A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
 
 ### Java APM agent
 

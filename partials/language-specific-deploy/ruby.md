@@ -14,7 +14,7 @@ You need to provide a `gems.locked` or `Gemfile.lock` file. To do that ensure yo
 
 If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, otherwise; keep reading.
 
-On your Clever Cloud application create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `RUBY_VERSION=rubyversion` where `rubyversion` represents:
+On your Clever Cloud application create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
  * "2" will select the greatest "2.X.Y" version available.
  * "2.5" will select the greatest "2.5.Y" version available.

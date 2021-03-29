@@ -205,7 +205,7 @@ So you can alter the build&start process for your application.
  |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
  |RACK_ENV |  |  |  |
  |RAILS_ENV |  |  |  |
- |RUBY_VERSION | Choose the Ruby version to use. |  |  |
+ |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
  |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
  |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
  |STATIC_WEBROOT |  |  |  |

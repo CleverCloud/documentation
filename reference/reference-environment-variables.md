@@ -144,6 +144,7 @@ So you can alter the build&start process for your application.
  |ENABLE_REDIS |  | `false` |  |
  |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
  |MAX_INPUT_VARS |  |  |  |
+ |MEMORY_LIMIT | Change the default memory limit |  |  |
  |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4` and `8.0` | `7` |  |
  |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
  |[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |

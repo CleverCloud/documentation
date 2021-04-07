@@ -116,6 +116,29 @@ Here is the list of available settings:
 
 **Note**: You can send a request to the support if you need to change a setting which cannot be changed via a `.user.ini` file and is not in this list.
 
+##### Memory Limit
+
+When php-fpm spawns a worker it allocates a smaller part of the application's memory to the worker, here is the allocated memory for each flavor:
+
+{{<table "table table- bordered" "text-align:center" >}}
+ | <center>Flavor</center> | <center>Memory Limit</center> |
+ |-----------------------|------------------------------|
+ |Pico | 64M |
+ |Nano | 64M |
+ |XS | 128M |
+ |S | 256M |
+ |M | 384M |
+ |L | 512M |
+ |XL | 768M |
+ |2XL | 1024M |
+ |3XL | 1536M |
+ |4XL+ | 2048M |
+ {{< /table >}}
+
+To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "reference/reference-environment-variables.md#php" >}}).
+
+If you define a limit exceeding the application memory it will use the default one.
+
 ##### `pm.max_children`: Maximum PHP Children per instance
 
 You can fix the maximum number of PHP running processes per instance by setting `pm.max_children` (see above).

@@ -30,23 +30,32 @@ For most of Cloud providers, the use of the file system is not a good practice. 
 
 Follow the [File System buckets documentation page]({{< ref "deploy/addon/fs-bucket.md" >}}) to set up an FS Bucket for your application.
 
-
 ## Git issues
+
 ### warning: You appear to have cloned an empty repository
 
 > “Logs are telling me \"warning: You appear to have cloned an empty repository\"”
 
-This usually means that you created an application and asked to start it in the console without having pushed any source code to it before. 
-Under the Clever Cloud console, in your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`. 
+This usually means that you created an application and asked to start it in the console without having pushed any source code to it before.
+
+Under the Clever Cloud console, in your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`.
 You can now push your commits to the new remote with `$ git push clever master`.
 
-It may also be because you are working on another branch than master and pushed this specific branch to Clever Cloud.
+It may also be because you are working on another branch than master and pushed this specific branch to Clever Cloud and you encountered this error:
+
+```bash
+remote: You tried to push to a custom branch.
+remote: This is not allowed.
+remote: error: hook declined to update refs/heads/<yourSpecificBranchName>
+...
+error: failed to push some refs to '<yourSpecificBranchName>'
+```
 
 Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
 What differs if you use another branch than master on your computer is that you need to explicitly tell Clever to consider the specific branch as the master one.
 
 ```bash
-$ git push <cleverRemote> <yourSpcificBranchName>:master
+$ git push <cleverRemote> <yourSpecificBranchName>:master
 ```
 
 If you called the Clever Cloud remote `clever` and your local branch is `production`, this becomes
@@ -54,7 +63,6 @@ If you called the Clever Cloud remote `clever` and your local branch is `product
 ```bash
 $ git push clever production:master
 ```
-
 
 ### fatal: Not a git repository (or any of the parent directories)
 

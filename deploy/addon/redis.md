@@ -16,7 +16,7 @@ Redis is an open source, in-memory data structure store, used as database, cache
 
 ## Redis version
 
-The version currently installed by the add-on is : Redis 4.0.2
+The version currently installed by the add-on is : Redis 6.0.10
 
 ## Redis administration with Redsmin
 

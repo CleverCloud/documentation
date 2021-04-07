@@ -136,3 +136,7 @@ fi
 cd ${APP_HOME} # Which has been loaded by the env.
 … # Your part here
 ```
+
+## Logs collection
+
+Everything coming from stdout & stderr is forwarded to our logs collection system and is available in the web console / CLI logs.

@@ -153,6 +153,7 @@ So you can alter the build&start process for your application.
  |CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
  |CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
  |CC_OPCACHE_INTERNED_STRINGS_BUFFER | The amount of memory used to store interned strings, in megabytes. | Default 4 (PHP5), 8 (PHP7) |  |
+ |CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
  |CC_MTA_SERVER_HOST | Host of the SMTP server |  |  |
  |CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
  |CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |

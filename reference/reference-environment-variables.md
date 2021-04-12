@@ -159,6 +159,7 @@ So you can alter the build&start process for your application.
  |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
  |CC_MTA_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
  |CC_MTA_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
+ |CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
  |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
  |SQREEN_API_TOKEN | Organization token. |  |  |
  {{< /table >}}

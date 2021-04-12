@@ -18,7 +18,7 @@ and the client. Following rules defined by the user, Varnish will cache the data
 ## Limitations
 
 {{< alert "warning" >}}
-<p>Varnish is only available on PHP >= 5.5 applications. Support for other applications is in discussion.</p> 
+<p>Varnish is only available on PHP and Go applications. Support for other applications is in discussion.</p> 
 <p>For more information about it, contact us at <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.</p>
 {{< /alert >}}
 

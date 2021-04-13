@@ -19,49 +19,45 @@ to connect to this API and use it.
 
 Clever Cloud API has an OAuth1 based authentication.
 
-There are 2 supported methods for the signature: PLAINTEXT and HMAC-SHA1.
-While PLAINTEXT is way easier for testing, you **should** use HMAC-SHA1
-when it comes to production. This ensures that the request is totally verified.
+There are 3 supported methods for the signature: `PLAINTEXT`, `HMAC-SHA1` and `HMAC-SHA512`.
 
-We have a [JavaScript client on GitHub](https://gitHub.com/CleverCloud/clever-client.js)
-where you can find a lot of informations.
+While `PLAINTEXT` is way easier for testing, you **should** use `HMAC-SHA512` when it comes to production. This ensures that the request is totally verified.
+
+We have a [JavaScript client on GitHub](https://gitHub.com/CleverCloud/clever-client.js) where you can find a lot of informations.
 Especially in the [esm/login.js file](https://gitHub.com/CleverCloud/clever-client.js/blob/master/esm/login.js)
 
-This client is being used by the Console. Also, the Console gives you a lot
-of informations in the "network" panel of the devtools. If you're stuck, this
-is one way for debugging.
+This client is being used by our web Console and CLI. Also, the Console gives you a lot of information in the "Network" panel of the devtools. If you're stuck, this is one way for debugging.
 
 For the Authorization header, make sure to have something like:
+
 ```bash
- Authorization: OAuth key="value", key2="value2"
+Authorization: OAuth key="value", key2="value2"
 ```
-The ``OAuth`` and doubles quotes around values are mandatory
+
+The `OAuth` and doubles quotes around values are mandatory.
+
 #### **Create consumers tokens**
 
-You need to create an oauth consumer token in the Clever Cloud console.
-A link "Create an oauth consumer" is available under your organization's
-addons list. All created consumers will appear below that link, like your
-applications and addons.
+You need to create an OAuth consumer token in the Clever Cloud console.
 
-These consumers allow you to register an application. By creating a consumer,
-users will be able to grant (or decline) privileges for your application.
+A link **Create an oauth consumer** is available under your organization's addons list.
+
+All created consumers will appear below that link, like your applications and addons.
+
+These consumers allow you to register an application. By creating a consumer, users will be able to grant (or decline) privileges for your application.
+
 For example, the Clever Cloud Console is using an oauth consumer.
 You (most of the time) give it full access to manage your account.
 
-You need to set a callback URL, this is the url your user will be redirected to
-after he has been authenticated.
+You need to set a callback URL, this is the url your user will be redirected to after he has been authenticated.
 
 #### **Get a request token**
 
-You have to make a `POST`request to get a
-[request token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_request_token_post)
-to the API.
+You have to make a `POST`request to get a [request token](https://www.clever-cloud.com/doc/openapi/#post-/oauth/request_token) to the API.
 
 #### **Get the authorization URL**
 
-Ask the API for the [authorization URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
-and go to this URL with a browser. Log in with your account and it will send you
-to the callback URL.
+Ask the API for the [authorization URL](https://www.clever-cloud.com/doc/openapi/#get-/oauth/authorize) and go to this URL with a browser. Log in with your account and it will send you to the callback URL.
 
 #### **Get the verifier token**
 
@@ -72,16 +68,15 @@ In the callback URL, you have the verifier token:
 Where `<verifierToken>` is your token.
 
 #### **Get the access token**
-Make a `POST`  request to get the
-[access token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_access_token_post)
- with your request token and the verifier.
+
+Make a `POST`  request to get the [access token](https://www.clever-cloud.com/doc/openapi/#post-/oauth/access_token) with your request token and the verifier.
 You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
 
 #### This seems cumbersome, is there an easier way?
 
-Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you. 
+Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you.
 
 The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-server](https://github.com/CleverCloud/oauth-consumer-server).
 
@@ -89,11 +84,11 @@ The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-serv
 
 All the API endpoints are referenced in a swagger documentation.
 
- * [https://www.clever-cloud.com/doc/api/](https://www.clever-cloud.com/doc/api/)
+- [https://www.clever-cloud.com/doc/api/](https://www.clever-cloud.com/doc/api/)
 
 The base URL for the API is :
 
- * `https://api.clever-cloud.com/v2/`
+- `https://api.clever-cloud.com/v2/`
 
 ## WebSocket API requests
 
@@ -102,31 +97,35 @@ The base URL for the API is :
 Clever Cloud API can handle WebSocket-Security requests for the logs or events.
 To connect to a WebSocket API URL follow this guide.
 
- * Take a URL in the API for the WebSocket.
- * Ex: `https://api.clever-cloud.com/v2/events/event-socket`
- * Sign the OAuth request with this URL.
- * Replace `https://` by `wss://`
- * `wss://api.clever-cloud.com/v2/events/event-socket`
- * Connect to this URL in WebSocket
- * When the WebSocket connection is opened, you need to send the OAuth1 header in
-this format :
+- Take a URL in the API for the WebSocket.
+  - Ex: `https://api.clever-cloud.com/v2/events/event-socket`
+- Sign the OAuth request with this URL.
+- Replace `https://` by `wss://`
+  - `wss://api.clever-cloud.com/v2/events/event-socket`
+- Connect to this URL in WebSocket.
+
+When the WebSocket connection is opened, you need to send the OAuth1 header in this format :
+
 ```json
 {
-	"message_type": "oauth",
-	"authorization": "<oauth_header>"
+    "message_type": "oauth",
+    "authorization": "<oauth_header>"
 }
 ```
+
 You need to replace `<oauth_header>` by the signed OAuth1 header.
 
-### **Available WebSocket endpoints**
+### **WebSocket endpoints**
 
-#### **Logs-Socket**
+#### **Logs**
 
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
-allow you to receive real-time logs of an application via WebSocket.
+allows you to receive real-time logs of an application via WebSocket.
 
 #### **Events**
+
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
-allow you to receive a stream of events emitted on your account.
+allows you to receive a stream of events emitted on your account.
+
 Events like git push, add or remove an application / addon, deployments success / failed
 are available.

@@ -34,12 +34,18 @@ npm install -g clever-tools@beta
 
 #### Debian/Ubuntu (.deb)
 
+{{< alert "warning" "End of Bintray" >}}
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
+<p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
+{{< /alert >}}
+
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
 > Make sure you can download https hosted sources package. You may install :
-  ```sh
-  apt install apt-transport-https ca-certificates
-  ```
+
+```sh
+apt install apt-transport-https ca-certificates
+```
 
 ```sh
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "379CE192D401AB61"
@@ -58,6 +64,11 @@ echo "deb https://dl.bintray.com/clevercloud/deb unstable beta" | tee -a /etc/ap
 ```
 
 #### CentOS/Fedora (.rpm)
+
+{{< alert "warning" "End of Bintray" >}}
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
+<p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
+{{< /alert >}}
 
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
 
@@ -144,6 +155,11 @@ NOTES:
 
 #### Using chocolatey
 
+{{< alert "warning" "End of Bintray" >}}
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
+<p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
+{{< /alert >}}
+
 If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run: 
 
 ```bash
@@ -198,18 +214,20 @@ Make sure you have `xdg-utils` available as well as a default browser set (or yo
 If you have an already existing application, you can start managing it with
 Clever Tools.
 
-    # First, go to your local repository
-    cd /path/to/your/application
+```sh
+# First, go to your local repository
+cd /path/to/your/application
 
-    # Then, link it to the Clever Cloud application
-    clever link <app_id>
+# Then, link it to the Clever Cloud application
+clever link <app_id>
 
-    # You can also use the application name (make sure to specify the
-    # organization name if your application is in an organization.
-    clever link --org <org_name> <app_name>
+# You can also use the application name (make sure to specify the
+# organization name if your application is in an organization.
+clever link --org <org_name> <app_name>
 
-    # Unlink an application
-    clever unlink <app_id>
+# Unlink an application
+clever unlink <app_id>
+```
 
 {{< alert "info" "Notes on `.clever.json`" >}}
     <div>
@@ -225,8 +243,10 @@ Clever Tools.
 
 After having written new code, you can deploy it to Clever Cloud
 
-    # Will git push your code to Clever Cloud and display logs
-    clever deploy
+```sh
+# Will git push your code to Clever Cloud and display logs
+clever deploy
 
-    # Will open your application
-    clever open
+# Will open your application
+clever open
+```

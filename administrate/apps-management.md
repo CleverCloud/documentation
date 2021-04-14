@@ -22,7 +22,6 @@ You can start, restart, and stop your application in the **Overview** menu of yo
 
 Stop functionality is useful during the development of the application to limit its credit consumption.
 
-
 {{< image "/images/app-management.png" "Manage your application" >}}
 
 ## Deploy an old commit
@@ -38,6 +37,7 @@ You can also enable/disable:
 - **Sticky sessions**: When horizontal scalability is enabled, a user is always served by the same scaler. Some frameworks or technologies require this option.
 - **Dedicated build instance**: Your application will build on a dedicated machine allowing you to use a small scaler to run your application. But, using this option will make your deployment slower (by ~10 seconds)
 - **Cancel ongoing deployment on new push**: A "git push" will cancel any ongoing deployment and start a new one with the last available commit.
+- **Force HTTPS**: Any non secured HTTP request to this application will be redirected to HTTPS with a 301 Moved Permanently status code.
 
 Do not forget to save after editing your configuration.
 

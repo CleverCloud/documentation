@@ -14,6 +14,7 @@ keywords:
 ## Start, restart and stop
 
 You can start, restart, and stop your application in the **Overview** menu of your application in the Clever Cloud console.
+
 - **Start**: will restart a stopped application. This will not trigger a rebuild phase as it will use the build cache.
 - **Re-build and restart**: Same as start but with a build phase and without using using the build cache.
 - **Restart last pushed commit**: will start last commit on the tree even if you reverted deployments to a previous commit.
@@ -25,20 +26,22 @@ Stop functionality is useful during the development of the application to limit 
 {{< image "/images/app-management.png" "Manage your application" >}}
 
 ## Deploy an old commit
+
 If you want to revert to a previous version of your code, you can go to the **Activity** menu of your application in the Clever Cloud console. You will find here all your previous commits. Just select **redeploy this commit** on the desired one. This will trigger a redeploy of your application at this version.
 
 ## Edit application configuration
 
 You can edit your application in the **Overview** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
 You can also enable/disable:
+
 - **Zero downtime deployment**: During a deployment, old scalers are kept up until the new instances work. Updates are thus transparent to the user. Your application has to work correctly with several scalers in parallel (e.g. for connections to databases). *`pico` and `nano` scalers are using this feature by default.*
 - **Sticky sessions**: When horizontal scalability is enabled, a user is always served by the same scaler. Some frameworks or technologies require this option.
 - **Dedicated build instance**: Your application will build on a dedicated machine allowing you to use a small scaler to run your application. But, using this option will make your deployment slower (by ~10 seconds)
 - **Cancel ongoing deployment on new push**: A "git push" will cancel any ongoing deployment and start a new one with the last available commit.
 
 Do not forget to save after editing your configuration.
-{{< image "/images/application-edit.png" "Edit your application" >}}
 
+{{< image "/images/application-edit.png" "Edit your application" >}}
 
 ## Archiving/Unarchiving your application
 

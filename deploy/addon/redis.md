@@ -20,7 +20,7 @@ The version currently installed by the add-on is : Redis 6.0.10
 
 ## Redis administration with Redsmin
 
-Each Redis add-on provides a [Redsmin](https://www.redsmin.com) dasboard, which allows
+Each Redis add-on provides a [Redsmin](https://www.redsmin.com) dashboard, which allows
 you to query and monitor your redis database activity.
 
 {{< readfile "/content/partials/db-backup.md" >}}

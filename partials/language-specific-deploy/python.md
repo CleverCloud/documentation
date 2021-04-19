@@ -34,34 +34,46 @@ Please contact the support if you need another backend.
 
 ### Dependencies
 
-If you do not have a requirements.txt file to commit you can obtain it via the command `pip freeze > requirements.txt` (or `pip3 freeze > requirements.txt` if you use Python 3.x) at the root of your project folder in your terminal.
+If you do not have a `requirements.txt` file to commit you can obtain it via the command `pip freeze > requirements.txt` (or `pip3 freeze > requirements.txt` if you use Python 3.x) at the root of your project folder in your terminal.
 
-For example to install *PostgreSQL* and don't want to use the `pip freeze` command above you have to create a file `/requirements.txt` at the root of the folder:
+For example to install *PostgreSQL* and don't want to use the `pip freeze` command above you have to create a file `requirements.txt` at the root of your application folder:
 
-```javascript
+```txt
 psycopg2>=2.7 --no-binary psycopg2
 ```
+
 **Note**: We recommend using `psycopg2>=2.7 --no-binary psycopg2` to avoid wsgi issues.
+
+You can define a custom `requirements.txt` file with the environnement variable `CC_PIP_REQUIREMENTS_FILE` for example: `CC_PIP_REQUIREMENTS_FILE=config/production.txt`.
 
 {{< readfile "/content/partials/cached-dependencies.md" >}}
 
 ### Use setup.py
 
-We support execution of a single `setup.py` goal. Usually, this would be to execute custom tasks after
-the installation of dependencies. The goal will be launched after the dependencies from `requirements.txt` have been installed.
+We support execution of a single `setup.py` goal. Usually, this would be to execute custom tasks after the installation of dependencies.
+
+The goal will be launched after the dependencies from `requirements.txt` have been installed.
+
 To execute a goal, you can define the [environment variable](#setting-up-environment-variables-on-clever-cloud) `PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
 ### Manage.py tasks with clevercloud/python.json
 
 Clever Cloud supports execution of multiple `manage.py` tasks. The tasks are launched after the dependencies from `requirements.txt` have been installed.
+
 You can declare the `manage.py` tasks in `./clevercloud/python.json` with the following syntax:
+
 ```json
-{ "deploy": { "managetasks": [ "migrate" ]}}
+{
+    "deploy": {
+        "managetasks": [ "migrate" ]
+    }
+}
 ```
 
 {{< readfile "/content/partials/env-injection.md" >}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
+
 ```python
 import os
 os.getenv("MY_VARIABLE")
@@ -73,10 +85,9 @@ To enable Nginx to serve your static resources, you have to set two [environment
 
 `STATIC_FILES_PATH`: should point to a directory where your static files are stored.
 
-`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`)
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`).
 
-Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets]({{< ref "deploy/addon/fs-bucket.md" >}}) section.
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets]({{< ref "deploy/addon/fs-bucket.md" >}}) section.
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
@@ -85,7 +96,8 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 #### Static files example
 
 Here is how to serve static files, the `test.png` being the static file you want to serve:
-```
+
+```txt
 ├── <app_root>
 │   ├── flask-app.py
 │   ├── static
@@ -93,7 +105,7 @@ Here is how to serve static files, the `test.png` being the static file you want
 │   └── requirements.txt
 ```
 
-Using the environment variables `STATIC_FILES_PATH=static/` and `STATIC_URL_PREFIX=/public` the `test.png` file will be accessed under: `https://<domain.tld>/public/test.png`
+Using the environment variables `STATIC_FILES_PATH=static/` and `STATIC_URL_PREFIX=/public` the `test.png` file will be accessed under: `https://<domain.tld>/public/test.png`.
 
 ### uWSGI, Gunicorn and Nginx configuration
 
@@ -101,39 +113,39 @@ uWSGI, gunicorn and nginx settings can be configured by setting [environment var
 
 #### uWSGI
 
- - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
- - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
- - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
- - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
- - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+- `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+- `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+- `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+- `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+- `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
 
 ##### uWSGI asynchronous/non-blocking modes
 
 To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async.html) mode, you can use these two environment variables:
 
- - `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
- - `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional).
+- `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
+- `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional).
 
 #### Gunicorn
 
- - `GUNICORN_WORKER_CLASS`: type of worker to use. Default to `sync`. [Available workers](https://docs.gunicorn.org/en/stable/settings.html#worker-class)
- - `CC_GUNICORN_TIMEOUT`: gunicorn timeout. Defaults to `30`
+- `GUNICORN_WORKER_CLASS`: type of worker to use. Default to `sync`. [Available workers](https://docs.gunicorn.org/en/stable/settings.html#worker-class)
+- `CC_GUNICORN_TIMEOUT`: gunicorn timeout. Defaults to `30`
 
 #### Nginx
 
- - `NGINX_READ_TIMEOUT`: a bit like `HARAKIRI`, the response timeout in seconds. (Defaut: 300)
- - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
- - `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
+- `NGINX_READ_TIMEOUT`: a bit like `HARAKIRI`, the response timeout in seconds. (Defaut: 300)
+- `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
+- `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
 
 #### Nginx optional configuration with `clevercloud/http.json`
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 
- - `languages`: configure a default language and redirections
- - `error_pages`: configure custom files for error pages
- - `force_https`: automatically redirect HTTP traffic to HTTPS
- - `aliases`: set up redirections
- - `charset`: force a specific charset
+- `languages`: configure a default language and redirections
+- `error_pages`: configure custom files for error pages
+- `force_https`: automatically redirect HTTP traffic to HTTPS
+- `aliases`: set up redirections
+- `charset`: force a specific charset
 
 ```json
 {
@@ -164,16 +176,15 @@ To do so, add the `CC_PYTHON_USE_GEVENT` [environment variable](#setting-up-envi
 
 **Note**: Please note that Celery support is not available yet for `gunicorn`.
 
-We also support celery apps out of the box. To deploy a celery app, use the
-`CC_PYTHON_CELERY_MODULE` [environment variable](#setting-up-environment-variables-on-clever-cloud):
+We also support celery apps out of the box. To deploy a celery app, use the `CC_PYTHON_CELERY_MODULE` [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
-```
+```txt
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
+
 {{< alert "warning" "Celery dependency needs to be in your requirements.txt" >}}
     Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
 {{< /alert >}}
-
 
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log
 dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.

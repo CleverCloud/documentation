@@ -172,6 +172,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_PIP_REQUIREMENTS_FILE | Allows you to define a custom `requirements.txt` file  | `requirements.txt`  |  |
  |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
  |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
  |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |

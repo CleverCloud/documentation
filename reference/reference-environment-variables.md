@@ -226,7 +226,7 @@ So you can alter the build&start process for your application.
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_RUST_BIN | The name of the binary to launch once built |  |  |
- |CC_RUSTUP_CHANNEL | RUSTUP_CHANNEL | Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0`  | stable |  |
+ |CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
  |CC_RUST_FEATURES | The list of features to enable |  |  |
  {{< /table >}}
 

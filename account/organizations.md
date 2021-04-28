@@ -71,6 +71,13 @@ The table below describes rights assigned to roles:
 			<td> </td>
 		</tr>
 		<tr>
+			<th scope="row">Add / Remove add-on</th>
+			<td>x</td>
+			<td>x</td>
+			<td></td>
+			<td> </td>
+		</tr>
+		<tr>
 			<th scope="row">Edit Organization</th>
 			<td>x</td>
 			<td>x</td>

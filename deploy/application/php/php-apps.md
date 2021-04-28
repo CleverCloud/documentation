@@ -32,4 +32,10 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 {{< readfile "/content/partials/deploy-ftp.md" >}}
 
+## ProxySQL
+
+{{< readfile "/content/partials/proxysql.md" >}}
+
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/deploy/addon/mysql/proxysql.md" >}})
+
 {{< readfile "/content/partials/more-config.md" >}}

@@ -13,7 +13,7 @@ keywords:
 
 If you are looking for Database as a Service or managed databases, some are available on Clever Cloud:
 
-* [MySQL]({{< ref "/deploy/addon/mysql" >}})
+* [MySQL]({{< ref "/deploy/addon/mysql/mysql" >}})
 * [PostgreSQL]({{< ref "/deploy/addon/postgresql" >}})
 * [MongoDB]({{< ref "/deploy/addon/mongodb" >}})
 * [Redis]({{< ref "/deploy/addon/redis" >}})

@@ -174,7 +174,7 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 
 Clever Cloud provides multiple add-ons to work with your applications:
 
-* [MySQL]({{< ref "/deploy/addon/mysql" >}})
+* [MySQL]({{< ref "/deploy/addon/mysql/mysql" >}})
 * [PostgreSQL]({{< ref "/deploy/addon/postgresql" >}})
 * [MongoDB]({{< ref "/deploy/addon/mongodb" >}})
 * [FS buckets]({{< ref "/deploy/addon/fs-bucket" >}})

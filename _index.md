@@ -347,7 +347,7 @@ disableReadmoreNav = true
 </div>
 
 <div class="col* col-sm-6 col-md-3 col-lg-2 feature__item__list">
-<a href="{{< ref "/deploy/addon/mysql.md" >}}">
+<a href="{{< ref "/deploy/addon/mysql/mysql.md" >}}">
 <div class="feature__list__outer">
 <figure>
 <img src="/images/runtimes_icons/mysql.png" title="MySQL" alt="MySQL tutorial for Clever Cloud">

@@ -165,6 +165,18 @@ So you can alter the build&start process for your application.
  |SQREEN_API_TOKEN | Organization token. |  |  |
  {{< /table >}}
 
+## ProxySQL
+
+[ProxySQL Documentation]({{< ref "deploy/addon/mysql/proxysql.md" >}})
+{{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_ENABLE_MYSQL_PROXYSQL | Enable the ProxySQL  feature | `false`  | |
+ |CC_MYSQL_PROXYSQL_MAX_CONNECTIONS | Defines the maximum number of connections the local ProxySQL will open to your MySQL add-on | `10` | |
+ |CC_MYSQL_PROXYSQL_USE_TLS | Enable or disable secured connection using TLS to your MySQL add-on | `true` | |
+ |CC_MYSQL_PROXYSQL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to ProxySQL | | `true` |
+ {{< /table >}}
+
 ## Python
 
 [Python Documentation]({{< ref "deploy/application/python/python_apps.md" >}})
@@ -285,7 +297,7 @@ So you can alter the build&start process for your application.
 
 ## MySQL
 
-[MySQL Documentation]({{< ref "deploy/addon/mysql.md" >}})
+[MySQL Documentation]({{< ref "deploy/addon/mysql/mysql.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

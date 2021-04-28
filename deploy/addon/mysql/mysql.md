@@ -1,5 +1,5 @@
 ---
-title: MySQL
+title: MySQL add-on
 position: 6
 shortdesc: MySQL is an open-source relational database management system (RDBMS).
 tags:
@@ -306,3 +306,9 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 ## Encryption at rest
 
 Encryption at rest is available on MySQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
+
+## ProxySQL
+
+{{< readfile "/content/partials/proxysql.md" >}}
+
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/deploy/addon/mysql/proxysql.md" >}})

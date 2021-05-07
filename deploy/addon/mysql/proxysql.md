@@ -94,9 +94,9 @@ Here is the summary:
 
 ## Usages
 
-### PHP
+### PHP using PDO
 
-In PHP using `PDO`, you can use it like this:
+Using [PDO](https://www.php.net/manual/en/ref.pdo-mysql.connection.php), you have to use the `unix_socket` option in your DSN:
 
 ```php
 <?php
@@ -127,11 +127,12 @@ define( 'DB_HOST', "localhost:" . getenv("CC_MYSQL_PROXYSQL_SOCKET_PATH") );
 
 ### Node.js
 
-On Node.js, using the `mysql` npm package:
+On Node.js, using the `mysql` npm package, you have to set the `socketPath` property:
 
 ```javascript
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
+  // Get ProxySQL unix domain socket path from the environment
   socketPath : process.env["CC_MYSQL_PROXYSQL_SOCKET_PATH"],
   // Get the database user from the environment
   user       : process.env["MYSQL_ADDON_USER"],

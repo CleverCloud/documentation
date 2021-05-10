@@ -32,13 +32,14 @@ Play is an open source web application framework, written in Scala and Java, whi
 
 You can configure your application start command by adding a `./clevercloud/sbt.json` file with the following fields:
 
-```javascript
+```json
 {
   "deploy":{
     "goal": "yourgoal"
   }
 }
 ```
+
 You can use the following properties:
 <table class="table table-bordered table-striped">
   <thead>
@@ -51,7 +52,7 @@ You can use the following properties:
   <tbody>
     <tr>
       <td><span class="label label-danger">Required</span></td>
-      <td>**deploy -&gt; goal**</td>
+      <td><strong>deploy -&gt; goal</strong></td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
     </tr>
   </tbody>
@@ -75,7 +76,7 @@ You have two options to fix this problem:
 You can set the "play.version" environment variable in the `clevercloud/sbt.json` file.
 For example, for Play 2.0.4:
 
-``` javascript
+``` json
 {
   "deploy": {
     "goal": "-Dplay.version=2.0.4"
@@ -85,7 +86,7 @@ For example, for Play 2.0.4:
 
 Otherwise, you can modify `plugins.sbt` in the project folder of your app like the following:
 
-``` scala
+```scala
 // Comment to get more information during initialization
 logLevel := Level.Warn
 
@@ -100,7 +101,9 @@ The two solutions do the job, you can pick your favorite.
 
 {{< readfile "/content/partials/env-injection.md" >}}
 
-To access environment variables from your code, you need to reference them in your application.conf file with `my.option=${MY_VARIABLE}` and then use the configuration item `my.option` in your application. You can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+To access environment variables from your code, you need to reference them in your application.conf file with `my.option=${MY_VARIABLE}` and then use the configuration item `my.option` in your application.
+
+You can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
 
 {{< readfile "/content/partials/new-relic.md" >}}
 

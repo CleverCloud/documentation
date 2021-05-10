@@ -34,8 +34,8 @@ Maven is essentially a project management and comprehension tool and as such pro
 ## Configure your Java application
 
 ### About Cargo
-To run your app, you can, for example, use plugins like cargo
-(<a href="https://codehaus-cargo.GitHub.io/cargo/Maven2+plugin.html">Find it here</a>).
+
+To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
 {{< readfile "/content/partials/java-versions.md" >}}
@@ -44,7 +44,7 @@ Your application must be set to listen on the port 8080.
 
 The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of you application) file must contain the _goal_ field to indicate how to start your application:
 
-```javascript
+```json
   {
     "deploy": {
       "goal": "yourgoal"
@@ -54,7 +54,7 @@ The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at 
 
 An example of what can be found as a goal value is:  
 
-```haskell
+```txt
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
 ```
 
@@ -62,7 +62,7 @@ An example of what can be found as a goal value is:
 
 The full configuration can look like the following:
 
-```javascript
+```json
 {
   "build": {
     "type": "<string>",
@@ -73,7 +73,9 @@ The full configuration can look like the following:
   }
 }
 ```
+
 You can use the following properties:
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -85,17 +87,17 @@ You can use the following properties:
   <tbody>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; type**</td>
-      <td>can be ``"maven"``, ``"gradle"`` or ``"ant"``</td>
+      <td><strong>build -&gt; type</strong></td>
+      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
     </tr>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; goal**</td>
+      <td><strong>build -&gt; goal</strong></td>
       <td>is the target you want to use to build your project</td>
     </tr>
     <tr>
       <td><span class="label label-danger">Required</span></td>
-      <td>**deploy -&gt; goal**</td>
+      <td><strong>deploy -&gt; goal</strong></td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
     </tr>
   </tbody>
@@ -105,7 +107,7 @@ You can use the following properties:
 
 If you need to specify a maven profile (either for the `build` or the `deploy` goal, you can add it in the `goal` section:
 
-```haskell
+```txt
 "-Pmyprofile package"
 ```
 
@@ -117,8 +119,8 @@ This will override the default `maven run` we use to run your application.
 
 Example:
 
-```
-CC_RUN_COMMAND=java -jar somefile.jar <options>
+```bash
+CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
 {{< readfile "/content/partials/new-relic.md" >}}

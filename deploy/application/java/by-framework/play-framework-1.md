@@ -12,6 +12,7 @@ str_replace_dict:
 ---
 
 ## Overview
+
 Clever Cloud supports Play 1.x applications natively. This guide explains how to set up your application to run
 on Clever Cloud.
 
@@ -21,12 +22,12 @@ on Clever Cloud.
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
-
 ## Configure your Java + Playframework 1 application
+
 ### Mandatory configuration
 
 * The application must be located at the **root** of the git repository.
-*  The application needs listen on `0.0.0.0:8080`
+* The application needs listen on `0.0.0.0:8080`
 
 ### Select Play! version
 
@@ -39,7 +40,6 @@ The `play1_version` file can contain one of the following values:
 * `1.4` or `14` for **Play! 1.4**.
 * `1.5` or `15` for **Play! 1.5**.
 
-
 ### Play! configuration
 
 By default, your application will run on Clever Cloud with the option `--%clevercloud`.  
@@ -49,18 +49,18 @@ You can for example:
 
 * set production mode so the files are compiled at startup time and the errors are logged in a file:
 
-    ```bash
-    %clevercloud.application.mode=prod
-    ```
+```conf
+%clevercloud.application.mode=prod
+```
 
 * set up a mysql database
 
-    ```bash
-    %clevercloud.db.url=jdbc:mysql://{yourcleverdbhost}/{dbname}
-    %clevercloud.db.driver=com.mysql.jdbc.Driver
-    %clevercloud.db.user={yourcleveruser}
-    %clevercloud.db.pass={yourcleverpass}
-    ```
+```conf
+%clevercloud.db.url=jdbc:mysql://{yourcleverdbhost}/{dbname}
+%clevercloud.db.driver=com.mysql.jdbc.Driver
+%clevercloud.db.user={yourcleveruser}
+%clevercloud.db.pass={yourcleverpass}
+```
 
 More information on [playframework.com](https://www.playframework.com).
 

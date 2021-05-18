@@ -189,6 +189,7 @@ So you can alter the build&start process for your application.
  |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
  |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
  |CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
+ |CC_PYTHON_MANAGE_TASKS | Comma-separated list of manage tasks |  |  |
  |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
  |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
  |CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |

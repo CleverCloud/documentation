@@ -11,10 +11,10 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `8.0`
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7 version available.
+
 You can of course change it whenever you want then redeploy your application to use the version you want.
 
-The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
-`/clevercloud` folder at the root of your application.
+The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
 
 ### Change the webroot
 
@@ -36,15 +36,16 @@ of the configuration file *clevercloud/php.json* with the absolute path (*from t
 
 In the following example we want to set the webroot to the folder `/public`:
 
-```javascript
-  {
+```json
+{
     "deploy": {
-      "webroot": "/public"
+        "webroot": "/public"
     }
-  }
+}
 ```
+
 {{< alert "warning" "Warning:" >}}
-    <p>Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+    Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 {{< /alert >}}
 
 ### Change PHP settings
@@ -56,8 +57,7 @@ Most PHP settings can be changed using a `.user.ini` file.
 
 If you want the settings to be applied to the whole application, you should put this file in your `webroot`. If you did not change it (see above), then your `webroot` is the root of the repository.
 
-If you put the `.user.ini` file in a sub-directory; settings will be applied recursively
-starting from this sub-directory.
+If you put the `.user.ini` file in a sub-directory; settings will be applied recursively starting from this sub-directory.
 
 ##### Timezone configuration
 
@@ -65,7 +65,7 @@ All instances on Clever Cloud run on the UTC timezone. We recommend to handle al
 
 Additionally, you can set PHP's time zone setting with `.user.ini`. For instance, to use the french time zone, edit `.user.ini` to add this line:
 
-```
+```ini
 date.timezone=Europe/Paris
 ```
 
@@ -79,7 +79,6 @@ So if you need to inject headers on HTTP responses (for instance for [CORS](http
 you have to do it from PHP (you can't do it from `.htaccess`).
 
 ```php
-<?php
 header("Access-Control-Allow-Origin: *");
 ```
 
@@ -101,12 +100,12 @@ Please refer to the [official documentation](https://www.php.net/manual/en/confi
 
 Other settings than the one mentioned above can be changed by adding the following line in `clevercloud/php.json`:
 
-```javascript
-   {
-      "configuration": {
-         "my.setting": "value"
-      }
-   }
+```json
+{
+    "configuration": {
+        "my.setting": "value"
+    }
+}
 ```
 
 Here is the list of available settings:
@@ -249,33 +248,33 @@ Example of a `composer.json` file:
 
 ```javascript
 {
-   "require": {
-      "laravel/framework": "4.1.*",
-      "ruflin/Elastica": "dev-master",
-      "shift31/laravel-elasticsearch": "dev-master",
-      "natxet/CssMin": "dev-master"
-   },
-   "repositories": [
-      {
-         "type": "vcs",
-         "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
-      }
-   ],
-   "autoload": {
-      "classmap": [
-         "app/controllers",
-         "app/models",
-         "app/database/migrations",
-         "app/database/seeds"
-      ],
-      "psr-0": {
-         "SomeApp": "app"
-      }
-   },
-   "config": {
-      "preferred-install": "dist"
-   },
-   "minimum-stability": "dev"
+    "require": {
+        "laravel/framework": "4.1.*",
+        "ruflin/Elastica": "dev-master",
+        "shift31/laravel-elasticsearch": "dev-master",
+        "natxet/CssMin": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "app/controllers",
+            "app/models",
+            "app/database/migrations",
+            "app/database/seeds"
+        ],
+        "psr-0": {
+            "SomeApp": "app"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev"
 }
 ```
 
@@ -285,7 +284,7 @@ Example of a minimalist PHP application using composer and custom scripts: [php-
 
 Sometimes, you can encounter the following error when downloading dependencies:
 
-```
+```txt
 Failed to download symfony/symfony from dist: Could not authenticate against GitHub.com
 ```
 
@@ -301,7 +300,7 @@ You use Artisan to manage your project and you want to execute _artisan migrate_
 
 To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:
  
-```
+```bash
 CC_POST_BUILD_HOOK=php artisan migrate --force
 ```
 
@@ -314,38 +313,34 @@ The following is the list of tested CMS by our team.
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 <div class="">
-<table class="table table-bordered">
-<tbody>
-<tr>
-<td>WordPress</td>
-<td>Prestashop</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td>Dokuwiki</td>
-<td>Joomla</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td>SugarCRM</td>
-<td>Drupal</td>
-</tr>
-<tr>
-<td>Magento</td>
-<td>Status.net</td>
-</tr>
-<tr>
-<td>Symfony</td>
-<td>Thelia</td>
-</tr>
-<tr>
-<td>Laravel</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>WordPress</td>
+                <td>Prestashop</td>
+            </tr>
+            <tr>
+                <td>Dokuwiki</td>
+                <td>Joomla</td>
+            </tr>
+            <tr>
+                <td>SugarCRM</td>
+                <td>Drupal</td>
+            </tr>
+            <tr>
+                <td>Magento</td>
+                <td>Status.net</td>
+            </tr>
+            <tr>
+                <td>Symfony</td>
+                <td>Thelia</td>
+            </tr>
+            <tr>
+                <td>Laravel</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 ## Available extensions and modules
@@ -359,8 +354,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `memcached`,
-`memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
+The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}})
 to disable them.
@@ -432,10 +426,9 @@ To enable this feature, you need to:
  - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< alert "warning" "Warning:" >}}
-    <p>You must have a [Redis]({{< ref "deploy/addon/redis.md" >}}) add-on
-    [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application)
-    to enable PHP session storage in Redis.<br />
-    If no Redis add-on is linked with your application, the deployment will fail.</p>
+    You must have a [Redis]({{< ref "deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
+
+    If no Redis add-on is linked with your application, the deployment will fail.
 {{< /alert >}}
 
 ## Sending emails
@@ -460,7 +453,7 @@ Services like [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailj
 A lot of frameworks (including Symfony) use Monolog to handle logging. The default configuration of Monolog doesn't allow to log errors into the console.
 Here is a basic configuration of Monolog to send your application's logs into our logging system and access them into the Console:
 
-```
+```yaml
 monolog:
   handlers:
     clever_logs:
@@ -488,6 +481,5 @@ Using basic HTTP authentication, PHP usually gives you the user and password in 
 You can do this to fill them using the Authorization header:
 
 ```php
-<?php
 list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':' , base64_decode(substr($_SERVER['Authorization'], 6)));
 ```

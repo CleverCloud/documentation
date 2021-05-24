@@ -14,7 +14,7 @@ keywords:
 
 MongoDB is an open source NoSQL document-oriented database. We provide these databases with daily backups and monitoring for both shared and dedicated plans.
 
-## MongoDB version
+## Versions
 
 The version currently installed by the add-on is :
 
@@ -45,48 +45,10 @@ The process consists in three steps:
 2. Install `mongorestore` (a tool packaged with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
 3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page. If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...)
 
-
-## MongoDB plans
-
-<table class="table table-bordered table-striped dataTable"><caption>MongoDB pricing plans</caption>
-<tr>
-<th>Name</th>
-<th>Disk</th>
-<th>Cache (Memory)</th>
-<th>Price /mo</th>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">Peanut</span></td>
-<td>500 MB</td>
-<td>SHARED</td>
-<td>Free</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">Hazelnut</span></td>
-<td>1 GB</td>
-<td>512 MB</td>
-<td>20.00€</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">Shamrock</span></td>
-<td>5 GB</td>
-<td>1 GB</td>
-<td>40.00€</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">Vine</span></td>
-<td>30 GB</td>
-<td>2 GB</td>
-<td>75.00€</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">Gunnera</span></td>
-<td>100 GB</td>
-<td>4 GB</td>
-<td>150.00€</td>
-</tr>
-</table>
-
 ## Encryption at rest
 
 Encryption at rest is available on MongoDB. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
+
+## Plans
+
+{{< pricingAddon "mongodb-addon" "[\"cpu\", \"memory\", \"disk-size\", \"has-logs\", \"has-metrics\"]" >}}

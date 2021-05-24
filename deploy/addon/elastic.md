@@ -16,7 +16,7 @@ The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as t
 
 Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
 
-## Elastic Stack version
+## Versions
 
 The current versions supported at add-on creation are 6 and 7.
 
@@ -87,89 +87,6 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
     <p>If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.</p>
 {{< /alert >}}
 
-## Elastic stack plans
+## Plans
 
-<table class="table table-bordered table-striped dataTable"><caption>Elastic Stack pricing plans</caption> 
-    <tbody>
-        <tr>
-          <th><strong>Plan name </strong></th>
-            <th> CPUs </th>
-            <th> DISK </th>
-            <th> MEMORY </th>
-            <th> NODES </th>
-            <th> Price </th>
-        </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XS</span></td>
-              <td class="text-right">1</td>
-              <td class="text-right">10</td>
-              <td class="text-right">1</td>
-              <td class="text-right">1</td>
-              <td class="text-right">17.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">S</span></td>
-              <td class="text-right">1</td>
-              <td class="text-right">60</td>
-              <td class="text-right">2</td>
-              <td class="text-right">1</td>
-              <td class="text-right">34.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">M</span></td>
-              <td class="text-right">2</td>
-              <td class="text-right">120</td>
-              <td class="text-right">4</td>
-              <td class="text-right">1</td>
-              <td class="text-right">58.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">L</span></td>
-              <td class="text-right">4</td>
-              <td class="text-right">240</td>
-              <td class="text-right">8</td>
-              <td class="text-right">1</td>
-              <td class="text-right">122.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XL</span></td>
-              <td class="text-right">6</td>
-              <td class="text-right">450</td>
-              <td class="text-right">16</td>
-              <td class="text-right">1</td>
-              <td class="text-right">237.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XXL</span></td>
-              <td class="text-right">8</td>
-              <td class="text-right">870</td>
-              <td class="text-right">32</td>
-              <td class="text-right">1</td>
-              <td class="text-right">458.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XXXL</span></td>
-              <td class="text-right">16</td>
-              <td class="text-right">1700</td>
-              <td class="text-right">64</td>
-              <td class="text-right">1</td>
-              <td class="text-right">967.00&nbsp;€</td>
-        </tr>
-        <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">4XL</span></td>
-              <td class="text-right">32</td>
-              <td class="text-right">3500</td>
-              <td class="text-right">128</td>
-              <td class="text-right">1</td>
-              <td class="text-right">1887.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">5XL</span></td>            
-              <td class="text-right">64</td>            
-              <td class="text-right">7000</td>            
-              <td class="text-right">256</td>            
-              <td class="text-right">1</td>            
-              <td class="text-right">4151.00&nbsp;€</td>
-          </tr>        
-    </tbody>
-</table>
+{{< pricingAddon "es-addon" "[\"cpu\", \"memory\", \"disk-size\"]" >}}

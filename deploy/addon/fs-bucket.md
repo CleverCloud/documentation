@@ -21,29 +21,6 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-## FS Buckets plans
-
-<table class="table table-bordered table-striped dataTable"><caption>FS Buckets pricing plans</caption>
-<tr>
-<th>Name</th>
-<th>Disk</th>
-<th>Mounts</th>
-<th>Price / Go / Month</th>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
-<td>100 MB</td>
-<td>UNLIMITED</td>
-<td>Free</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-<td>UNLIMITED</td>
-<td>UNLIMITED</td>
-<td>1.50€</td>
-</tr>
-</table>
-
 **Notes:** 
 - Back-ups are not included in the public cloud offer. You can still do them manually.
 - FSBuckets are not available for Docker applications because of security concerns.
@@ -179,3 +156,31 @@ in the FS bucket.
 
 The **Addon information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
+
+## Plans
+
+<!-- TODO: Replace with pricingStorage shortcode when ready -->
+<table class="table table-bordered table-striped dataTable"><caption>FS Buckets pricing plans</caption>
+  <tr>
+    <th>Name</th>
+    <th>Disk</th>
+    <th>Mounts</th>
+    <th>Price / Go / Month</th>
+  </tr>
+  <tr>
+    <td class="cc-col__price ">
+      <span class="label cc-label__price label-info">DEV</span>
+    </td>
+    <td>100 MB</td>
+    <td>UNLIMITED</td>
+    <td>Free</td>
+  </tr>
+  <tr>
+    <td class="cc-col__price ">
+      <span class="label cc-label__price label-info">S</span>
+    </td>
+    <td>UNLIMITED</td>
+    <td>UNLIMITED</td>
+    <td>1.50€</td>
+  </tr>
+</table>

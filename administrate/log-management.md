@@ -30,6 +30,24 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
 clever logs --before 2016-08-11T14:54:33.971Z
 ```
 
+### Access logs
+
+It contains all incoming requests to your application. Here is an example:
+
+```txt
+255.255.255.255 - - [06/Feb/2020:07:59:22 +0100] "GET /aget/to/your/beautiful/website -" 200 1453
+```
+
+They are available in different formats, the most common is CLF which stands for Common Log Format.
+
+You can see access logs with the following command:
+
+```bash
+clever accesslogs
+```
+
+As with the `logs` command, you can specify `--before` and `--after` flags as well as the `--follow`  to display access logs continuously.
+
 ## Exporting logs to an external tools
 
 You can use the logs drains to send your application's logs to an external server with the following command.

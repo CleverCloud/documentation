@@ -47,22 +47,18 @@ The log system retrieves all output from the application and displays it in the 
 
 In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
- 1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. Then, click on the **Add an application** button in the **Organization Manager** panel.
- This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
- 
- If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. Then, click on the **Add an application** button in the **Organization Manager** panel.
 
- 2. Select the language or the framework you need
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 
- 3. *Optional:* For PHP applications, you can choose between FTP and Git deployment.
+If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
- 4. You will be able to fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
-
- 5. Enter the name and description of your application.
-
- 6. *Optional*: The wizard will offer you to [add an add-on]({{< ref "deploy/addon" >}}) to your application.
-
- 7. *Optional*: The wizard will offer you to [add environment variables]({{< ref "develop/env-variables.md" >}}) to your application.
+2. Select the language or the framework you need
+3. *Optional:* For PHP applications, you can choose between FTP and Git deployment.
+4. You will be able to fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+5. Enter the name and description of your application.
+6. *Optional*: The wizard will offer you to [add an add-on]({{< ref "deploy/addon" >}}) to your application.
+7. *Optional*: The wizard will offer you to [add environment variables]({{< ref "develop/env-variables.md" >}}) to your application.
 
 ### Git Deployment
 
@@ -72,28 +68,28 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 Follow these steps to deploy your application:
 
- 1. Get the git deployment url in the application information page, which looks like:
- ``git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git``.
+1. Get the git deployment url in the application information page, which looks like: `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
 
- 2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
+2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
-  ```bash
-  $ git init
-  $ git add .
-  $ git commit -m "first commit"
-  ```
+```bash
+git init
+git add .
+git commit -m "first commit"
+```
 
- 3. Then, link your local repository to Clever Cloud by providing the Git remote url:
+3. Then, link your local repository to Clever Cloud by providing the Git remote url:
 
-  ```bash
-  $ git remote add <remote-name> <your-git-deployment-url>
-  ```
+```bash
+git remote add <remote-name> <your-git-deployment-url>
+```
 
- 4. Push your application to Clever Cloud:
+4. Push your application to Clever Cloud:
 
-  ```bash
-  $ git push <remote-name> <branch-name>:master
-  ```
+```bash
+git push <remote-name> <branch-name>:master
+```
+
 {{< alert "warning" "Warning:" >}}
    <p>You can only push to the <strong>master</strong> branch for deployment.
    Trying to push to another branch will trigger an error.</p>
@@ -124,9 +120,13 @@ Once you have created your application with GitHub, each push on the `master` br
    <p>If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.</p>
 {{< /alert >}}
 
-<strong>Private GitHub repositories are also supported.</strong>
+If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : https://console.clever-cloud.com/users/me/information, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
 
-Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access. However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+**Private GitHub repositories are also supported.**
+
+Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access. 
+
+However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
 
 ### FTP Deployment
 
@@ -177,7 +177,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 * [MySQL]({{< ref "/deploy/addon/mysql/mysql" >}})
 * [PostgreSQL]({{< ref "/deploy/addon/postgresql" >}})
 * [MongoDB]({{< ref "/deploy/addon/mongodb" >}})
-* [FS buckets]({{< ref "/deploy/addon/fs-bucket" >}})
+* [FS Bucket]({{< ref "/deploy/addon/fs-bucket" >}})
 * [Cellar]({{< ref "/deploy/addon/cellar" >}})
 * [Redis]({{< ref "/deploy/addon/redis" >}})
 * [Config Provider]({{< ref "/deploy/addon/config-provider" >}})
@@ -212,14 +212,15 @@ Go to the organization in which you wan to create the add-on, for example your [
 3. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ... on this page or in the corresponding documentation page.
 
 4. You will be able to choose with which application you want to link you add-on.
+
 Linking an add-on to an application will provide configuration to the application through [environment variables]({{< ref "/develop/env-variables.md" >}}).
 The environment variables provided by the add-on are available for use in the linked application.
 
 If you want to use your add-on alone, just don't link it to any application.
 
-5. Choose the name of the add-on and the region where the add-on will be hosted.
+1. Choose the name of the add-on and the region where the add-on will be hosted.
 
-6. Click on the **Create** button and the add-on will now be available in your organization, and corresponding
+2. Click on the **Create** button and the add-on will now be available in your organization, and corresponding
 environment variables will be available for the applications linked to the add-on you just created.
 
 ### Link an existing add-on to your application

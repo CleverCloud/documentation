@@ -111,11 +111,9 @@ header: [Read the Wikipedia page for more informations](https://en.wikipedia.org
 
 ## When my application runs on multiple instances, how can I differentiate them?
 
-If your application needs to differentiate all the running nodes internally,
-you can use the `INSTANCE_NUMBER` environment variable.
+If your application needs to differentiate all the running nodes internally, you can use the `INSTANCE_NUMBER` environment variable.
 
-For example, if 3 instances are running for your application, this environment variable will
-contain `0` on the first, `1` on the second and `2` on the third.
+For example, if 3 instances are running for your application, this environment variable will contain `0` on the first, `1` on the second and `2` on the third.
 
 ## I need a private ssh key to fetch my private dependencies. How do I do that?
 
@@ -129,16 +127,18 @@ The ssh.json file is documented [here]({{< ref "reference/common-configuration.m
 ## I get a `Unsupported major.minor version` error. How can I fix it?
 
 If you get this error on a Java (or any JVM language) application, it means that your application requires a specific version of Java.
-By default, Java 8 is used; but you can change it. Please head [over here]({{< ref "deploy/application/java/java-gradle.md#available-java-versions" >}})
-for more information.
+
+By default, Java 8 is used; but you can change it. Please head [over here]({{< ref "deploy/application/java/java-gradle.md#available-java-versions" >}}) for more information.
 
 ## I want SSH access to my server
 
-Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment. If however, you still need SSH access for debugging purposes, please have a look at [SSH access]({{< ref "reference/clever-tools/ssh-access.md" >}}), but keep in mind that changes made on an instance are not persistent across deployments.
+Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
+
+If however, you still need SSH access for debugging purposes, please have a look at [SSH access]({{< ref "reference/clever-tools/ssh-access.md" >}}), but keep in mind that changes made on an instance are not persistent across deployments.
 
 ## I want to user Clever Cloud on my own premises, is that possible?
 
-Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to <sales@clever-cloud.com> or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more infos.
+Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more infos.
 
 ## Where are my applications and add-ons located?
 
@@ -162,4 +162,5 @@ You cannot `scp` something to the VM, you can however easily `scp` something fro
 
 ## I need to convert something to PDF with `wkhtmltopdf`
 
-Sadly `wkhtmltopdf`needs an X server to run, which is not available on our image. You should use `chromium headless` instead.
+`wkhtmltopdf` is available and fully functional but we deeply recommend to use use `chromium headless` instead.
+

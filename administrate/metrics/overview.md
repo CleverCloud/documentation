@@ -7,23 +7,21 @@ tags:
 keywords:
   - metrics
   - accesslogs
-  - Warp 10
+  - Warp10
 ---
 
-{{< alert "warning" "Warning:" >}}
+{{< alert "warning" "Warning" >}}
 Clever Cloud Metrics is still in beta.
 {{< /alert >}}
 
-In addition to logs, you can have access to metrics to know how your application
-behaves. By default, system metrics like CPU and RAM use are available, as well
-as application-level metrics when available (apache or nginx status for instance).
+In addition to logs, you can have access to metrics to know how your application behaves.
+By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
 
 ## Publish your own metrics
 
 We currently support two ways to push / collect your metrics: the `statsd` protocol and `Prometheus`.
 
-The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced
-one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
+The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
 
 We also support Prometheus metrics collection. By default our agent collects exposed metrics on `localhost:9100/metrics`.
 
@@ -49,9 +47,9 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with
-the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference). For instance,
-you can derive metrics over time, do custom aggregations or combine metrics.
+All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference).
+
+For instance, you can derive metrics over time, do custom aggregations or combine metrics.
 
 ## Access Logs metrics
 
@@ -70,24 +68,17 @@ This can be reached using the Warp 10 class: `request_rate`.
 Access logs are defined in the `'accessLogs'` Warp 10 class and there are three Warp 10 labels available:
 
 - `owner_id`: Organisation ID
-- `app_id` or `addon_id`: Application ID or Addon ID
+- `app_id` : Application ID (ex: `app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` ) or Addon ID (ex: `postgresql_xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx`)
 - `adc` or `sdc`
   - `adc` (Application Delivery Controller) are used for HTTP connections
   - `sdc` (Service Delivery Controller) are used for TCP connections
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>WARNINGS</h4>
-  </div>
-  <div class=“panel-body”>
-  <ul>
-    <li>Add-ons on shared plans (usually DEV plans) do not provide access logs</li>
-    <li>There are no recorded access logs in case of a direct access to an add-on</li>
-  </ul>
-  </div>
-</div>
+{{< alert "warning" "Warning" >}}
+- Add-ons on shared plans (usually DEV plans) do not provide access logs
+- There are no recorded access logs in case of a direct access to an add-on
+{{< /alert >}}
 
 To reduce space used to store access logs, we defined the following key-value models.
 
@@ -95,7 +86,7 @@ To reduce space used to store access logs, we defined the following key-value mo
 
 AccessLogs data models for application. Using HTTP protocol.
 
-```bash
+```txt
 t -> timestamp
 a -> appId or addonId
 o -> ownerId
@@ -135,7 +126,7 @@ tlsV -> tlsVersion (Sozu)
 
 AccessLogs data models for addons. Using TCP protocol.
 
-```bash
+```txt
 t -> timestamp
 a -> appId or addonId
 o -> ownerId
@@ -163,14 +154,9 @@ sDuration -> total session duration time in millis
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Note:</h4>
-  </div>
-  <div class=“panel-body”>
-  Look at <i>fetch_accessLogs_key_v0 </i> macro to have a convenient way to explore access log data. [Documentation there]({{< ref "administrate/metrics/warp10.md" >}}).
-  </div>
-</div>
+{{< alert "info" "Note" >}}
+Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
+{{< /alert >}}
 
 <script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
@@ -182,22 +168,20 @@ In the following example, we get the `accessLogs` status codes and create a GTS 
 
 An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :
 
-```bash
-  '<READ TOKEN>' { 'app_id'  'id' } 'bIn' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+```txt
+'<READ TOKEN>' { 'app_id'  'id' } 'bIn' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 or to get the latitude of the destination, which is a nested data:
 
-```bash
-  '<READ TOKEN>' { 'app_id'  'id' } 'd.lt' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
+```txt
+'<READ TOKEN>' { 'app_id'  'id' } 'd.lt' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
 ```
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), a Geotimes
-series database.
-All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud
-Warp 10 endpoint.
+All applications and VMs instances behind are monitored. Data is sent to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), a Geotimes series database.
+All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.
 
 ### Monitoring data model
 
@@ -225,14 +209,9 @@ In metrics' data, mains labels would be :
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Note:</h4>
-  </div>
-  <div class=“panel-body”>
-  For some specific metrics. Some labels could miss.
-  </div>
-</div>
+{{< alert "warning" "Missing labels" >}}
+For some specific metrics. Some labels could miss.
+{{< /alert >}}
 
 ##### Classes
 
@@ -241,229 +220,319 @@ Telegraf provide lots of metrics described in their [documentation](https://gith
 Below, the list of all Warp 10 classes representing Telegraf metrics :
 
 <table align="center" class="table table-bordered" >
-<tbody>
-<tr>
-<td align="center">conntrack.ip_conntrack_count</td>
-<td align="center">mem.swap_free</td>
-</tr>
-<tr>
-<td align="center">conntrack.ip_conntrack_max</td>
-<td align="center">mem.swap_total</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_guest</td>
-<td align="center">mem.total</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_guest_nice</td>
-<td align="center">mem.used</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_idle</td>
-<td align="center">mem.used_percent</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_iowait</td>
-<td align="center">mem.vmalloc_chunk</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_irq</td>
-<td align="center">mem.vmalloc_total</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_nice</td>
-<td align="center">mem.vmalloc_used</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_softirq</td>
-<td align="center">mem.wired</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_steal</td>
-<td align="center">mem.write_back</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_system</td>
-<td align="center">mem.write_back_tmp</td>
-</tr>
-<tr>
-<td align="center">cpu.usage_user</td>
-<td align="center">net.bytes_recv</td>
-</tr>
-<tr>
-<td align="center">disk.free</td>
-<td align="center">net.bytes_sent</td>
-</tr>
-<tr>
-<td align="center">disk.inodes_free</td>
-<td align="center">net.drop_in</td>
-</tr>
-<tr>
-<td align="center">disk.inodes_total</td>
-<td align="center">net.drop_out</td>
-</tr>
-<tr>
-<td align="center">disk.inodes_used</td>
-<td align="center">net.err_in</td>
-</tr>
-<tr>
-<td align="center">disk.total</td>
-<td align="center">net.err_out</td>
-</tr>
-<tr>
-<td align="center">disk.used</td>
-<td align="center">net.packets_recv</td>
-</tr>
-<tr>
-<td align="center">disk.used_percent</td>
-<td align="center">net.packets_sent</td>
-</tr>
-<tr>
-<td align="center">http_response.http_response_code</td>
-<td align="center">net_response.response_time</td>
-</tr>
-<tr>
-<td align="center">http_response.response_time</td>
-<td align="center">net_response.result_code</td>
-</tr>
-<tr>
-<td align="center">http_response.result_code</td>
-<td align="center">net_response.result_type</td>
-</tr>
-<tr>
-<td align="center">http_response.result_type</td>
-<td align="center">netstat.tcp_close</td>
-</tr>
-<tr>
-<td align="center">kernel.boot_time</td>
-<td align="center">netstat.tcp_close_wait</td>
-</tr>
-<tr>
-<td align="center">kernel.context_switches</td>
-<td align="center">netstat.tcp_closing</td>
-</tr>
-<tr>
-<td align="center">kernel.entropy_avail</td>
-<td align="center">netstat.tcp_established</td>
-</tr>
-<tr>
-<td align="center">kernel.interrupts</td>
-<td align="center">netstat.tcp_fin_wait1</td>
-</tr>
-<tr>
-<td align="center">kernel.processes_forked</td>
-<td align="center">netstat.tcp_fin_wait2</td>
-</tr>
-<tr>
-<td align="center">mem.active</td>
-<td align="center">netstat.tcp_last_ack</td>
-</tr>
-<tr>
-<td align="center">mem.available</td>
-<td align="center">netstat.tcp_listen</td>
-</tr>
-<tr>
-<td align="center">mem.available_percent</td>
-<td align="center">netstat.tcp_none</td>
-</tr>
-<tr>
-<td align="center">mem.buffered</td>
-<td align="center">netstat.tcp_syn_recv</td>
-</tr>
-<tr>
-<td align="center">mem.cached</td>
-<td align="center">netstat.tcp_syn_sent</td>
-</tr>
-<tr>
-<td align="center">mem.commit_limit</td>
-<td align="center">netstat.tcp_time_wait</td>
-</tr>
-<tr>
-<td align="center">mem.committed_as</td>
-<td align="center">netstat.udp_socket</td>
-</tr>
-<tr>
-<td align="center">mem.dirty</td>
-<td align="center">processes.blocked</td>
-</tr>
-<tr>
-<td align="center">mem.free</td>
-<td align="center">processes.dead</td>
-</tr>
-<tr>
-<td align="center">mem.high_free</td>
-<td align="center">processes.idle</td>
-</tr>
-<tr>
-<td align="center">mem.high_total</td>
-<td align="center">processes.paging</td>
-</tr>
-<tr>
-<td align="center">mem.huge_page_size</td>
-<td align="center">processes.running</td>
-</tr>
-<tr>
-<td align="center">mem.huge_pages_free</td>
-<td align="center">processes.sleeping</td>
-</tr>
-<tr>
-<td align="center">mem.huge_pages_total</td>
-<td align="center">processes.stopped</td>
-</tr>
-<tr>
-<td align="center">mem.inactive</td>
-<td align="center">processes.total</td>
-</tr>
-<tr>
-<td align="center">mem.low_free</td>
-<td align="center">processes.total_threads</td>
-</tr>
-<tr>
-<td align="center">mem.low_total</td>
-<td align="center">processes.unknown</td>
-</tr>
-<tr>
-<td align="center">mem.mapped</td>
-<td align="center">processes.zombies</td>
-</tr>
-<tr>
-<td align="center">mem.page_tables</td>
-<td align="center">procstat_lookup.pid_count</td>
-</tr>
-<tr>
-<td align="center">mem.shared</td>
-<td align="center">system.load1</td>
-</tr>
-<tr>
-<td align="center">mem.slab</td>
-<td align="center">system.load1_per_cpu</td>
-</tr>
-<tr>
-<td align="center">mem.swap_cached</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <td align="center">conntrack.ip_conntrack_count</td>
+      <td align="center">mem.swap_free</td>
+    </tr>
+    <tr>
+      <td align="center">conntrack.ip_conntrack_max</td>
+      <td align="center">mem.swap_total</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_guest</td>
+      <td align="center">mem.total</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_guest_nice</td>
+      <td align="center">mem.used</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_idle</td>
+      <td align="center">mem.used_percent</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_iowait</td>
+      <td align="center">mem.vmalloc_chunk</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_irq</td>
+      <td align="center">mem.vmalloc_total</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_nice</td>
+      <td align="center">mem.vmalloc_used</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_softirq</td>
+      <td align="center">mem.wired</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_steal</td>
+      <td align="center">mem.write_back</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_system</td>
+      <td align="center">mem.write_back_tmp</td>
+    </tr>
+    <tr>
+      <td align="center">cpu.usage_user</td>
+      <td align="center">net.bytes_recv</td>
+    </tr>
+    <tr>
+      <td align="center">disk.free</td>
+      <td align="center">net.bytes_sent</td>
+    </tr>
+    <tr>
+      <td align="center">disk.inodes_free</td>
+      <td align="center">net.drop_in</td>
+    </tr>
+    <tr>
+      <td align="center">disk.inodes_total</td>
+      <td align="center">net.drop_out</td>
+    </tr>
+    <tr>
+      <td align="center">disk.inodes_used</td>
+      <td align="center">net.err_in</td>
+    </tr>
+    <tr>
+      <td align="center">disk.total</td>
+      <td align="center">net.err_out</td>
+    </tr>
+    <tr>
+      <td align="center">disk.used</td>
+      <td align="center">net.packets_recv</td>
+    </tr>
+    <tr>
+      <td align="center">disk.used_percent</td>
+      <td align="center">net.packets_sent</td>
+    </tr>
+    <tr>
+      <td align="center">http_response.http_response_code</td>
+      <td align="center">net_response.response_time</td>
+    </tr>
+    <tr>
+      <td align="center">http_response.response_time</td>
+      <td align="center">net_response.result_code</td>
+    </tr>
+    <tr>
+      <td align="center">http_response.result_code</td>
+      <td align="center">net_response.result_type</td>
+    </tr>
+    <tr>
+      <td align="center">http_response.result_type</td>
+      <td align="center">netstat.tcp_close</td>
+    </tr>
+    <tr>
+      <td align="center">kernel.boot_time</td>
+      <td align="center">netstat.tcp_close_wait</td>
+    </tr>
+    <tr>
+      <td align="center">kernel.context_switches</td>
+      <td align="center">netstat.tcp_closing</td>
+    </tr>
+    <tr>
+      <td align="center">kernel.entropy_avail</td>
+      <td align="center">netstat.tcp_established</td>
+    </tr>
+    <tr>
+      <td align="center">kernel.interrupts</td>
+      <td align="center">netstat.tcp_fin_wait1</td>
+    </tr>
+    <tr>
+      <td align="center">kernel.processes_forked</td>
+      <td align="center">netstat.tcp_fin_wait2</td>
+    </tr>
+    <tr>
+      <td align="center">mem.active</td>
+      <td align="center">netstat.tcp_last_ack</td>
+    </tr>
+    <tr>
+      <td align="center">mem.available</td>
+      <td align="center">netstat.tcp_listen</td>
+    </tr>
+    <tr>
+      <td align="center">mem.available_percent</td>
+      <td align="center">netstat.tcp_none</td>
+    </tr>
+    <tr>
+      <td align="center">mem.buffered</td>
+      <td align="center">netstat.tcp_syn_recv</td>
+    </tr>
+    <tr>
+      <td align="center">mem.cached</td>
+      <td align="center">netstat.tcp_syn_sent</td>
+    </tr>
+    <tr>
+      <td align="center">mem.commit_limit</td>
+      <td align="center">netstat.tcp_time_wait</td>
+    </tr>
+    <tr>
+      <td align="center">mem.committed_as</td>
+      <td align="center">netstat.udp_socket</td>
+    </tr>
+    <tr>
+      <td align="center">mem.dirty</td>
+      <td align="center">processes.blocked</td>
+    </tr>
+    <tr>
+      <td align="center">mem.free</td>
+      <td align="center">processes.dead</td>
+    </tr>
+    <tr>
+      <td align="center">mem.high_free</td>
+      <td align="center">processes.idle</td>
+    </tr>
+    <tr>
+      <td align="center">mem.high_total</td>
+      <td align="center">processes.paging</td>
+    </tr>
+    <tr>
+      <td align="center">mem.huge_page_size</td>
+      <td align="center">processes.running</td>
+    </tr>
+    <tr>
+      <td align="center">mem.huge_pages_free</td>
+      <td align="center">processes.sleeping</td>
+    </tr>
+    <tr>
+      <td align="center">mem.huge_pages_total</td>
+      <td align="center">processes.stopped</td>
+    </tr>
+    <tr>
+      <td align="center">mem.inactive</td>
+      <td align="center">processes.total</td>
+    </tr>
+    <tr>
+      <td align="center">mem.low_free</td>
+      <td align="center">processes.total_threads</td>
+    </tr>
+    <tr>
+      <td align="center">mem.low_total</td>
+      <td align="center">processes.unknown</td>
+    </tr>
+    <tr>
+      <td align="center">mem.mapped</td>
+      <td align="center">processes.zombies</td>
+    </tr>
+    <tr>
+      <td align="center">mem.page_tables</td>
+      <td align="center">procstat_lookup.pid_count</td>
+    </tr>
+    <tr>
+      <td align="center">mem.shared</td>
+      <td align="center">system.load1</td>
+    </tr>
+    <tr>
+      <td align="center">mem.slab</td>
+      <td align="center">system.load1_per_cpu</td>
+    </tr>
+    <tr>
+      <td align="center">mem.swap_cached</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_pending-finalization-count.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_loaded-class-count.value</td>
+      <td align=”center”>jvm.metrics_jvm_heapMemoryUsage_used.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value</td>
+      <td align=”center”>jvm.metrics_jvm_nonHeapMemoryUsage_used.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_init.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_used.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_max.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_total_init.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_used.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_used.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_max.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_total-loaded-class-count.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_total_init.value</td>
+      <td align=”center”>jvm.metrics_jvm_thread.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_total_used.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_total_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_compressed-class-space_committed.value</td>
+      <td align=”center”>jvm.metrics_jvm_nonHeapMemoryUsage_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_unloaded-class-count.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_init.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.metrics_jvm_loadedClasses.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_max.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_compressed-class-space_used.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-survivor-space_max.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_nonheap_code-cache_committed.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_committed.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_Scavenge_time.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-old-gen_used.value</td>
+      <td align=”center”>jvm.metrics_jvm_heapMemoryUsage_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_gc_PS_MarkSweep_runtime.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_metaspace_committed.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_committed.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_init.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_total_max.value</td>
+      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_Scavenge_runtime.value</td>
+    </tr>
+    <tr>
+      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_init.value</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples and usages
 
-From the `metrics` tab on the console. You can either open a Quantum console, an online WarpScript
-editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).
+From the `metrics` tab on the console. You can either open a Quantum console, an online WarpScript editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).
 
 More information about [Quantum and Warp 10]({{< ref "administrate/metrics/warp10.md" >}}) in our documentation.
 
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Warning:</h4>
-  </div>
-  <div class=“panel-body”>
-  Computation can be time intensive.
-  </div>
-</div>
+{{< alert "warning" "Warning" >}}
+Computation can be time intensive.
+{{< /alert >}}
 
-```bash
+```txt
 // Fix the NOW timestamp to have the same on over the script
 NOW 'NOW' STORE
 // fetch data over 1 hour
@@ -476,15 +545,14 @@ NOW 'NOW' STORE
 
 ## Consumption metric
 
-Consumption can also be inferred by our metrics. We provide some helper macros in the
-[Warp 10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
+Consumption can also be inferred by our metrics. We provide some helper macros in the [Warp 10 documentation]({{< ref "administrate/metrics/warp10.md" >}}).
 
 Consumption unit is in **second**.
 
 The following script provides the whole consumption from between start and end timestamps for all applications
 under an organisation.
 
-```bash
+```txt
 '<READ TOKEN>' '<ORGANISATION ID>' <START TIMESTAMP> <END TIMESTAMP> @clevercloud/app_consumption
 ```
 
@@ -492,18 +560,18 @@ under an organisation.
 
 You can expose custom metrics via [`statsd`](https://github.com/etsy/statsd#usage).
 These metrics will be gathered and displayed in advanced view as well.
+
 On some platforms, standard metrics published over `statsd` are even integrated on the overview pane.
 
 Metrics published over `statsd` are prefixed with `statsd`.
 
 ### statsd socket
 
-To publish custom metrics, configure to use your client to push to `localhost:8125`
-(it's the default host and port, so it should work with default settings as well).
+To publish custom metrics, configure to use your client to push to `localhost:8125` (it's the default host and port, so it should work with default settings as well).
 
 ### NodeJS example
 
-You can use `node-statsd` to publish metrics
+You can use `node-statsd` to publish metrics:
 
 ```javascript
 // npm install node-statsd

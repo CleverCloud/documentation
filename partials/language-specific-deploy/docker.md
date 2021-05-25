@@ -4,9 +4,9 @@
 Be sure that you:
 
 * push on the **master branch**.
-* have and commit a file named **Dockerfile**, [Here is what it will look like](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices "Dockerfile")
-* run the application with `CMD` or `ENTRYPOINT` in your Dockerfile
-* listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` [environment variable](#setting-up-environment-variables-on-clever-cloud))
+* have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable](https://www.clever-cloud.com/doc/reference/reference-environment-variables/#docker) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
+* run the application with `CMD` or `ENTRYPOINT` in your Dockerfile.
+* listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` [environment variable](#setting-up-environment-variables-on-clever-cloud)).
 
 ### Dockerfile contents
 

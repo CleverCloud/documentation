@@ -6,5 +6,6 @@ You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [
 
 #### Disabling dependencies caching
 
-You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable from the Clever Cloud console, in the **Environment variables** menu of your application. Or by setting it to `CC_CACHE_DEPENDENCIES=false`
+You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` or setting it to `false` environment variable from the Clever Cloud console, in the **Environment variables** menu of your application.
+
 To fully remove cached dependencies, you have to rebuild your application from scratch. You can select "rebuild and restart" from the Clever Cloud console or launch `clever restart --without-cache` with the Clever Tools CLI.

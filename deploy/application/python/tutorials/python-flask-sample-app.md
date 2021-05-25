@@ -21,6 +21,7 @@ The application is a very basic one it just replies with a header dump to any re
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
 ## Configure your Flask application
+
 ### Build app in a subfolder
 
 In the `/clevercloud/python.json` file, we have the `"build"."folder"` field that points to the `app` folder.
@@ -39,6 +40,7 @@ You can find a lot more configuration options such as choosing python version an
 {{< readfile "/content/partials/env-injection.md" >}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
+
 ```python
 import os
 os.getenv("MY_VARIABLE")

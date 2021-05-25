@@ -5,7 +5,7 @@ Python apps can be launched in a variety of ways. You can specify how to start y
 
 To select which module you want to start, use the `CC_PYTHON_MODULE` environment variable.
 
-```
+```bash
 CC_PYTHON_MODULE="mymodule:app"
 ```
 
@@ -178,7 +178,7 @@ To do so, add the `CC_PYTHON_USE_GEVENT` [environment variable](#setting-up-envi
 
 We also support celery apps out of the box. To deploy a celery app, use the `CC_PYTHON_CELERY_MODULE` [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
-```txt
+```bash
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
@@ -186,8 +186,7 @@ CC_PYTHON_CELERY_MODULE="mymodule"
     Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
 {{< /alert >}}
 
-You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log
-dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
+You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
 
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 

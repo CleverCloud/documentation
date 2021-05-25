@@ -147,6 +147,7 @@ So you can alter the build&start process for your application.
  |MEMORY_LIMIT | Change the default memory limit |  |  |
  |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4` and `8.0` | `7` |  |
  |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
+ |[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
  |[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
  |SOCKSIFY_EVERYTHING |  |  |  |
  |USE_SOCKS |  | `false` |  |

@@ -237,16 +237,14 @@ We support Composer build out of the box. You just need to provide a `composer.j
 You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
 
 {{< alert "info" "Note:" >}}
-    <p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
+    If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.
 {{< /alert >}}
 
-You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}) if for example you need to install dev dependencies.
-
-If you need to install development dependencies automatically, please let us know by opening a support ticket. This feature may be implemented using an environment variable in the future if this is often asked.
+You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
 
 Example of a `composer.json` file:
 
-```javascript
+```json
 {
     "require": {
         "laravel/framework": "4.1.*",
@@ -279,6 +277,12 @@ Example of a `composer.json` file:
 ```
 
 Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://GitHub.com/CleverCloud/php-composer-demo)
+
+## Development Dependencies
+
+Development dependencies will not be automatically installed during the deployment. You can control their installation by using the `CC_PHP_DEV_DEPENDENCIES` environment variable which takes `install` value.
+
+Any other value than `install` will prevent developement dependencies from being installed.
 
 ### GitHub rate limit
 

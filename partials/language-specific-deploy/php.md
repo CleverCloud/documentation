@@ -388,6 +388,12 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
 
+* Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
+
+    Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
+    in your application, sending performance metrics and errors to the Elastic APM server.
+    **Warning**: This extension is available starting PHP 7.2.
+
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.

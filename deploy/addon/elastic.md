@@ -46,6 +46,7 @@ Currently, APM agents are available in the following languages:
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
 - [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
+- [PHP](https://www.elastic.co/guide/en/apm/agent/php/current/index.html)
 - [Python](https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html)
 - [Ruby](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html)
 

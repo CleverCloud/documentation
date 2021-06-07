@@ -145,6 +145,7 @@ So you can alter the build&start process for your application.
  |CC_LDAP_CA_CERT |  |  |  |
  |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |
  |LDAPTLS_CACERT |  |  |  |
+ |ENABLE_ELASTIC_APM_AGENT | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise | |
  |ENABLE_REDIS |  | `false` |  |
  |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
  |MAX_INPUT_VARS |  |  |  |

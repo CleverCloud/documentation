@@ -345,7 +345,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |ELASTIC_APM_SERVER_URLS | URI to connect APM Server | Generated upon creation | X  |
+ |ELASTIC_APM_SERVER_URL | URI to connect APM Server | Generated upon creation | X  |
  |ES_ADDON_APM_HOST | APM Server hostname | Generated upon creation | X  |
  |ES_ADDON_APM_AUTH_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |
  |ELASTIC_APM_SECRET_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |

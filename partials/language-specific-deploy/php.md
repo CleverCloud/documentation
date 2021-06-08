@@ -196,12 +196,26 @@ In order to prevent this behavior, you can add the following statements in a `.h
 DirectorySlash Off
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.+[^/])$          %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/  [R=301,L,QSA]
+RewriteRule ^(.+[^/])$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/ [R=301,L,QSA]
 ```
 
 These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header X-Forwarded-Proto is always filled (which is the case on our platform).
 
 If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
+
+### Change the FastCGI module
+
+You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`.
+
+To choose between these two modules you must use the `CC_CGI_IMPLEMENTATION` environment variable with `fastcgi` or `proxy_fcgi` as a value.
+
+{{ < alert "warning" > }}
+We recommend preferring `proxy_fcgi` over `fastcgi`. The `fastcgi` implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
+{{ < /alert > }}
+
+If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content.
+
+To resolve this issue, we advise you to switch the value of `CC_CGI_IMPLEMENTATION` from default to `proxy_fcgi`.
 
 ### Environment injection
 
@@ -480,7 +494,9 @@ Then, set `APP_LOG=syslog` as Clever application environment variable.
 
 ## Using HTTP authentication
 
-Using basic HTTP authentication, PHP usually gives you the user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`. On Clever Cloud, we have enabled an option in Apache to pass directly the Authorization header even though we are using FastCGI; still, PHP does not use the header and the variables mentioned before are empty.
+Using basic HTTP authentication, PHP usually handles the values of user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`.
+
+At Clever Cloud, we have enabled an Apache option to pass directly the Authorization header, even though we are using FastCGI; still, the header is not used by PHP, and the aforementioned variables are empty.
 
 You can do this to fill them using the Authorization header:
 

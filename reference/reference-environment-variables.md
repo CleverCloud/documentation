@@ -145,6 +145,7 @@ So you can alter the build&start process for your application.
  |CC_LDAP_CA_CERT |  |  |  |
  |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |
  |LDAPTLS_CACERT |  |  |  |
+ |ENABLE_ELASTIC_APM_AGENT | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise | |
  |ENABLE_REDIS |  | `false` |  |
  |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
  |MAX_INPUT_VARS |  |  |  |
@@ -345,7 +346,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |ELASTIC_APM_SERVER_URLS | URI to connect APM Server | Generated upon creation | X  |
+ |ELASTIC_APM_SERVER_URL | URI to connect APM Server | Generated upon creation | X  |
  |ES_ADDON_APM_HOST | APM Server hostname | Generated upon creation | X  |
  |ES_ADDON_APM_AUTH_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |
  |ELASTIC_APM_SECRET_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |

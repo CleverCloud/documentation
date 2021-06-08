@@ -35,76 +35,42 @@ There are many way to add secret key to your env and each one is valid. Clever C
 
 1. generate the secret key locally with `rake secret`
 2. add it to your environment in `./config/secret.yml` with:
-```
-production:
-    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-```
 
-### Optional env and rake goals configuration with clevercloud/ruby.json
+  ```yaml
+  production:
+      secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  ```
 
-You can configure your deployment via the `./clevercloud/ruby.json` file using the following syntax:
+### Configure Rake goals
 
-```javascript
-{
-  "deploy" : {
-    "env": "<string>",
-    "rakegoals": [<string>],
-    "sidekiq": true
-  }
-}
+You can specify a list of rake goals to execute before the deployment of your application by using the `CC_RAKEGOALS` environment variable.
+
+The value of this variable must be a comma-separated list of goals:
+
+```bash
+CC_RAKEGOALS="goal1, goal2"
 ```
 
-The following table describes each field:
+We do not execute any rake goals by default.
 
-<table id="nodedeps" class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>Usage</th>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="label label-default">Optional</span></td>
-<td>deploy.env</td>
-<td>This field is only used for overriding the default "production" RAILS_ENV value.</td>
-</tr>
-<tr>
-<td><span class="label label-default">Optional</span></td>
-<td>deploy.rakegoals</td>
-<td>
-Specify a list of rake goals to execute.
-They will be executed in the order of the list:<br />
-<pre>bundle exec rake "goal1"</pre><br />
-<pre>bundle exec rake "goal2"</pre>&hellip;<br />
-We <strong>do not</strong> execute any rake goals by default.
-</td>
-</tr>
-<tr>
-<td><span class="label label-default">Optional</span></td>
-<td>deploy.sidekiq</td>
-<td>
-Run a sidekiq process in background. Please note you will need a redis instance to use this
-feature.
-</td>
-</tr>
-</tbody>
-</table>
+### Configure Sidekiq
 
-#### Sidekiq specific configuration 
+To run a Sidekiq process in background you will need to enable it with the `CC_ENABLE_SIDEKIQ=true` environment variable.
 
-The sidekiq field can also be an array of strings instead of a boolean, like this:
+Please note you will need a redis instance to use this feature.
 
-```javascript
-"sidekiq":  [
-   "./config/sidekiq_1.yml",
-   "./config/sidekiq_2.yml",
-   "./config/sidekiq_3.yml"
-]
+You can specify multiple Sidekiq configuration files with the `CC_SIDEKIQ_FILES` environment variable.
+
+The value of this variable must be a comma-separated list of files:
+
+```bash
+CC_SIDEKIQ_FILES="./config/sidekiq_1.yml,./config/sidekiq_2.yml,./config/sidekiq_3.yml"
 ```
 
-Each string is the path *from the root of the repository* to a sidekiq configuration file.
+**Note:** `CC_SIDEKIQ_FILES` have precedence over `CC_ENABLE_SIDEKIQ` which means that even if `CC_SIDEKIQ_FILES` is defined and `CC_ENABLE_SIDEKIQ` is set to `false`, Sidekiq will still be enabled.
+
+Each path is the path *from the root of the repository* to a sidekiq configuration file.
+
 Each file might contain something like this standard sidekiq.yml file:
 
 ```yaml
@@ -132,14 +98,10 @@ Static files are configured with [environment variables](#setting-up-environment
 
 **Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
 
-If you use the asset pipeline, make sure to include the `assets:precompile` task in the `rakegoals` field of `clevercloud/ruby.json`.
+If you use the asset pipeline, make sure to include the `assets:precompile` task in the `CC_RAKEGOALS` environment variable value.
 
-```json
-{
-    "deploy": {
-        "rakegoals": ["db:migrate", "assets:precompile"]
-    }
-}
+```bash
+CC_RAKEGOALS="db:migrate, assets:precompile"
 ```
 
 **Note**: if your project uses `webpacker`, make sure to enable the dedicated build instance option in the **Information** menu of your application in the Clever Cloud console because `webpacker` needs a lot a ressources when starting.
@@ -152,29 +114,32 @@ Only for Rails >= 5.2.
 - Add `gem "aws-sdk-s3", require: false` to your Gemfile, run `$ bundle install`
 - Add `config.active_storage.service = :clevercloud` in `config/environments/production.yml`
 - Add in `config/storage.yml`:
-```
-clevercloud:
-  service: S3
-  access_key_id: <%= ENV['CELLAR_ADDON_KEY_ID'] %>
-  secret_access_key: <%= ENV['CELLAR_ADDON_KEY_SECRET'] %>
-  region: us-east-1
-  bucket: <%= ENV['CELLAR_ADDON_BUCKET_NAME'] %>
-  endpoint: <%= ENV['CELLAR_ADDON_ENDPOINT'] %>
-  force_path_style: true
-```
+
+  ```yaml
+  clevercloud:
+    service: S3
+    access_key_id: <%= ENV['CELLAR_ADDON_KEY_ID'] %>
+    secret_access_key: <%= ENV['CELLAR_ADDON_KEY_SECRET'] %>
+    region: us-east-1
+    bucket: <%= ENV['CELLAR_ADDON_BUCKET_NAME'] %>
+    endpoint: <%= ENV['CELLAR_ADDON_ENDPOINT'] %>
+    force_path_style: true
+  ```
+
 - In the clever cloud console create a Cellar S3 storage add-on, name it, link it to your rails application and create a bucket.
 - In the environment variables section of your Ruby on Rails application on Clever Cloud add the following environment variables:
-```
-CELLAR_ADDON_BUCKET_NAME=<your bucket name>
-CELLAR_ADDON_ENDPOINT=https://cellar-c2.services.clever-cloud.com
-```
+
+  ```bash
+  CELLAR_ADDON_BUCKET_NAME="<your bucket name>"
+  CELLAR_ADDON_ENDPOINT="https://cellar-c2.services.clever-cloud.com"
+  ```
 
 You can now commit and push your changes.
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
 [File System Buckets]({{< ref "deploy/addon/fs-bucket.md" >}}) section.
 
-### nginx configuration
+### Nginx configuration
 
 nginx settings can be configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
 

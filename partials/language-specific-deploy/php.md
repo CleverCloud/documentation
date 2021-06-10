@@ -209,9 +209,9 @@ You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`.
 
 To choose between these two modules you must use the `CC_CGI_IMPLEMENTATION` environment variable with `fastcgi` or `proxy_fcgi` as a value.
 
-{{ < alert "warning" > }}
+{{< alert "info" "Recommandation" >}}
 We recommend preferring `proxy_fcgi` over `fastcgi`. The `fastcgi` implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
-{{ < /alert > }}
+{{< /alert >}}
 
 If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content.
 

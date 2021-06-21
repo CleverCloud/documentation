@@ -51,7 +51,7 @@ When ProxySQL receives a new SQL query, it will open a new connection to the rem
 
 ## How to configure ProxySQL
 
-The first thing to do to configure ProxySQL is to link your MySQL add-on. To do that, you can go to the `Service Dependencies` page of your application
+In order to configure ProxySQL, the first thing to do is to link your MySQL add-on. To do that, you can go to the `Service Dependencies` page of your application
 and select your MySQL add-on.
 
 Once linked, you can enable the ProxySQL feature by defining the following environment variable: `CC_ENABLE_MYSQL_PROXYSQL=true`.
@@ -67,14 +67,14 @@ path to the Unix Domain Socket you have to connect. See [Usages](#usages) below 
 
 ### Scalability
 
-When the scalability of your application is enabled, you may need to tweak the `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` value. This is what we are going to see.
+When the scalability of your application is enabled, you may need to tweak the `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` value. This is what we are going to see here.
 
 Auto scalability will add or remove instances following your needs. This means that you may have multiple instances running at the same time for a certain period of time.
 If your application restarts, you will have `your current instance number * 2`  instances running in parallel while the deployment finishes and the old instances are stopped.
 A new deployment **starts** new instances with the old ones alongside them.
 
-This means that you can have up to `maximum scalability * 2` instances running at the same time. And if all of your instances open the maximum connections they are allowed to,
-it means that we will have up to `maximum scalability * 2 * CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` connections at the same time. We will call this result `MaxCon`.
+This means that have up to `maximum scalability * 2` instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
+it means there will be up to `maximum scalability * 2 * CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` connections at the same time. We will call this result `MaxCon`.
 
 Each MySQL add-on has a connection limit which varies following the plan you are using. You must be sure that `MaxCon` doesn't exceed your plan's max connections. If it does, you might have issues connecting to the remote MySQL add-on. You have to adjust `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` to a number that makes sense for your scalability parameters.
 

@@ -324,7 +324,7 @@ disableComments = true
                </a>
             </div>
             <div class="col* col-sm-6 col-md-3 col-lg-2 feature__item__list">
-               <a href="{{< ref "/deploy/addon/postgresql.md" >}}">
+               <a href="{{< ref "/deploy/addon/postgresql/postgresql.md" >}}">
                <div class="feature__list__outer">
                   <figure>
                      <img src="/images/runtimes_icons/postgresql.png" title="PostgreSQL" alt="PostgreSQL tutorial for Clever Cloud">

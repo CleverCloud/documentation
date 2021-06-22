@@ -318,7 +318,7 @@ So you can alter the build&start process for your application.
 
 ## PostgreSQL
 
-[PostgreSQL Documentation]({{< ref "deploy/addon/postgresql.md" >}})
+[PostgreSQL Documentation]({{< ref "deploy/addon/postgresql/postgresql.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -327,6 +327,67 @@ So you can alter the build&start process for your application.
  |POSTGRESQL_ADDON_PASSWORD |  | Generated upon creation | X  |
  |POSTGRESQL_ADDON_ROLE |  | Generated upon creation | X  |
  |POSTGRESQL_ADDON_USER |  | Generated upon creation | X  |
+ {{< /table >}}
+
+## Pgpool-II
+
+[Pgpool-II Documentation]({{< ref "deploy/addon/postgresql/pgpool.md" >}})
+
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_PGPOOL | Enables the Pgpool-II feature | `false` | |
+ |CC_PGPOOL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to Pgpool-II | `true` | |
+ |CC_PGPOOL_PCP_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to PCP | `true` | |
+ |CC_PGPOOL_RESERVED_CONNECTIONS | Number of reserved connections | `0` | |
+ |CC_PGPOOL_LISTEN_BACKLOG_MULTIPLIER | Specifies the length of connection queue from frontend to Pgpool-II | `2` | |
+ |CC_PGPOOL_LEADER_WEIGHT | Weight for backend 0 (Leader) | `1` | |
+ |CC_PGPOOL_NUM_INIT_CHILDREN | Number of concurrent sessions allowed | `16` | |
+ |CC_PGPOOL_MAX_POOL | Number of connection pool caches per connection | `1` | |
+ |CC_PGPOOL_CHILD_LIFE_TIME | Pool exits after being idle for this many seconds | `300` | |
+ |CC_PGPOOL_CHILD_MAX_CONNECTIONS | Pool exits after receiving that many connections | `0` (no exit)  | |
+ |CC_PGPOOL_CONNECTION_LIFE_TIME | Connection to backend closes after being idle for this many seconds | `0` (no close) | |
+ |CC_PGPOOL_CLIENT_IDLE_LIMIT | Client is disconnected after being idle for that many seconds (even inside an explicit transactions!) | `0` (no disconnection) | |
+ |CC_PGPOOL_LOG_CONNECTIONS | Log connections | `off` | |
+ |CC_PGPOOL_LOG_DISCONNECTIONS | Log disconnections | `off` | |
+ |CC_PGPOOL_LOG_HOSTNAME | Hostname will be shown in ps status and in logs if connections are logged | `off` | |
+ |CC_PGPOOL_LOG_STATEMENT | Log all statements | `off`  | |
+ |CC_PGPOOL_LOG_PER_NODE_STATEMENT | Log all statements with node and backend informations | `off` | |
+ |CC_PGPOOL_LOG_CLIENT_MESSAGES | Log any client messages | `off` | |
+ |CC_PGPOOL_LOG_STANDBY_DELAY | Log standby delay. Valid values are combinations of `always`, `if_over_threshold` and `none` | `if_over_threshold` | |
+ |CC_PGPOOL_CONNECTION_CACHE | Activate connection pools | `on` | |
+ |CC_PGPOOL_REPLICATE_SELECT | Replicate SELECT statements in replication mode | `off` | |
+ |CC_PGPOOL_INSERT_LOCK | Automatically locks a dummy row or a table with INSERT statements to keep SERIAL data consistency | `on` | |
+ |CC_PGPOOL_LOBJ_LOCK_TABLE | When rewriting lo_creat command in replication mode, specify table name to lock | `''` | |
+ |CC_PGPOOL_REPLICATION_STOP_ON_MISMATCH | On disagreement with the packet kind sent from backend, degenerate the node which is most likely "minority" If off, just force to exit this session | `off` | |
+ |CC_PGPOOL_FAILOVER_IF_AFFECTED_TUPLES_MISMATCH | On disagreement with the number of affected tuples in UPDATE/DELETE queries, then degenerate the node which is most likely "minority". If off, just abort the transaction to keep the consistency | `off` | |
+ |CC_PGPOOL_LOAD_BALANCE_MODE | Activate load balancing mode | `on` | |
+ |CC_PGPOOL_IGNORE_LEADING_WHITE_SPACE | Ignore leading white spaces of each query | `on` | |
+ |CC_PGPOOL_READ_ONLY_FUNCTION_LIST | Comma separated list of function names that don't write to database (regexp are accepted) | `''` | |
+ |CC_PGPOOL_WRITE_FUNCTION_LIST | Comma separated list of function names that write to database (regexp are accepted) | `''` | |
+ |CC_PGPOOL_PRIMARY_ROUTING_QUERY_PATTERN_LIST | Semicolon separated list of query patterns that should be sent to primary node (regexp are accepted) | `''` | |
+ |CC_PGPOOL_DATABASE_REDIRECT_PREFERENCE_LIST | Comma separated list of pairs of database and node id | `''`  | |
+ |CC_PGPOOL_APP_NAME_REDIRECT_PREFERENCE_LIST | Comma separated list of pairs of app name and node id | `''`  | |
+ |CC_PGPOOL_ALLOW_SQL_COMMENTS | If on, ignore SQL comments when judging if load balance or query cache is possible | `off` | |
+ |CC_PGPOOL_DISABLE_LOAD_BALANCE_ON_WRITE | Load balance behavior when write query is issued in an explicit transaction. Valid values are `transaction`, `trans_transaction`, `dml_adaptive` or `always` | `transaction` | |
+ |CC_PGPOOL_DML_ADAPTIVE_OBJECT_RELATIONSHIP_LIST | Comma separated list of object pairs | `''` | |
+ |CC_PGPOOL_STATEMENT_LEVEL_LOAD_BALANCE | Enables statement level load balancing | `off` | |
+ |CC_PGPOOL_SR_CHECK_PERIOD | Streaming replication check period | `10` | |
+ |CC_PGPOOL_DELAY_THRESHOLD | Threshold before not dispatching query to standby node Unit is in bytes | `10000000` | |
+ |CC_PGPOOL_HEALTH_CHECK_PERIOD | Health check period | `20` | |
+ |CC_PGPOOL_HEALTH_CHECK_TIMEOUT | Health check timeout | `20`  | |
+ |CC_PGPOOL_HEALTH_CHECK_MAX_RETRIES | Maximum number of times to retry a failed health check before giving up | `0` | |
+ |CC_PGPOOL_HEALTH_CHECK_RETRY_DELAY | Amount of time to wait (in seconds) between retries | `1`  | |
+ |CC_PGPOOL_CONNECT_TIMEOUT | Timeout value in milliseconds before giving up to connect to backend | `10000` | |
+ |CC_PGPOOL_MEMORY_CACHE_ENABLED | Use the memory cache functionality | `off` | |
+ |CC_PGPOOL_MEMQCACHE_TOTAL_SIZE | Total memory size in bytes for storing memory cache | `64` | |
+ |CC_PGPOOL_MEMQCACHE_MAX_NUM_CACHE | Total number of cache entries | `1000000` | |
+ |CC_PGPOOL_MEMQCACHE_EXPIRE | Memory cache entry life time specified in seconds | `0` | |
+ |CC_PGPOOL_MEMQCACHE_AUTO_CACHE_INVALIDATION | Invalidation of query cache is triggered by corresponding DDL/DML/DCL | `on` | |
+ |CC_PGPOOL_MEMQCACHE_MAXCACHE | Maximum SELECT result size in bytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)  | `400` | |
+ |CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in bytes  | `1` | |
+ |CC_PGPOOL_CACHE_SAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names to memcache that don't write to database (regexp are accepted)  | `''` | |
+ |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
  {{< /table >}}
 
 ## Redis

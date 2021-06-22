@@ -42,6 +42,16 @@ This action will add new environment variables to reach the addon without any pr
 
 Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.
 
+## Encryption at rest
+
+Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
+
+## Pgpool-II
+
+{{< readfile "/content/partials/pgpool.md" >}}
+
+You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/deploy/addon/postgresql/pgpool.md" >}})
+
 ## Default extensions
 
 Every PostgreSQL database managed by Clever Cloud comes with the following default extensions:

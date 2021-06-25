@@ -104,6 +104,12 @@ restart --without-cache` from [CLI](https://github.com/CleverCloud/clever-tools)
 CC_DOTNET_PROFILE=Debug
 ```
 
+### Custom run command
+
+If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+
+For instance, you can have `CC_RUN_COMMAND=./bin/Release/net5.0/myapp <options>`.
+
 ### Private dependencies
 
 Support for private dependencies will be available soon.

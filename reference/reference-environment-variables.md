@@ -248,6 +248,7 @@ So you can alter the build&start process for your application.
  |CC_RUST_BIN | The name of the binary to launch once built |  |  |
  |CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
  |CC_RUST_FEATURES | The list of features to enable |  |  |
+ |CC_RUN_COMMAND | Custom command to run your application. |  |  |
  {{< /table >}}
 
 ## .NET
@@ -261,6 +262,7 @@ So you can alter the build&start process for your application.
  |CC_DOTNET_PROJ | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |  |
  |CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1` |  |  |
  |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
+ |CC_RUN_COMMAND | Custom command to run your application. |  |  |
  {{< /table >}}
 
 ## [Elixir]({{< ref "deploy/application/elixir/elixir.md" >}})

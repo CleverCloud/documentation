@@ -33,6 +33,12 @@ fn main() {
 If your `Cargo.toml` defines multiple targets, you must specify the one you want to run, with the `CC_RUST_BIN` environment variable.
 If `CC_RUST_BIN` is specified, then the executable produced by this target is used to start the application.
 
+### Custom run command
+
+If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+
+For instance, you can have `CC_RUN_COMMAND=./target/release/myapp <options>`.
+
 ### Dependencies
 
 Make sure to list all your dependencies in `Cargo.toml`. For the example above, you need:

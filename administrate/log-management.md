@@ -82,6 +82,10 @@ If the status of your drain is shown as `DISABLED` without you disabling it, it 
 
 ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
 
+```bash
+clever drain create ElasticSearch https://xxx-elasticsearch.services.clever-cloud.com/_bulk --username USERNAME --password PASSWORD
+```
+
 Each day, we will create an index `logstash-<yyyy-MM-dd>` and push logs to it.
 
 ### Datadog

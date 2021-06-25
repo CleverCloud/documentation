@@ -25,7 +25,7 @@ properties to setup.
 
 ## .NET version
 
-The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by setting the CC_DOTNET_VERSION environment variable to `3.1`. No support will be provided for end-of-life versions.
+The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by setting the `CC_DOTNET_VERSION` environment variable to `3.1`. No support will be provided for end-of-life versions.
 
 {{< readfile "/content/partials/create-application.md" >}}
 
@@ -33,16 +33,17 @@ The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by
 
 Be sure that:
 
-* You have pushed in `master branch`.
-* You listen on `port 8080`, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
-* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`). If the project file is not at the root of the repository, you can use the APP_FOLDER environment variable. See the list of environment variables [here](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/).
+* You have pushed in **master** branch.
+* You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
+* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
 ## Requirements
 
 Let's take an example with the Microsoft [TodoApi project](https://github.com/Azure-Samples/dotnet-core-api.git). 
 
-During deployment, the `TodoApi.csproj` file and the target framework `netcoreapp3.1` are automatically detected. Then, the .NET project is published :
-```sh
+During deployment, the `TodoApi.csproj` file and the target framework `netcoreapp3.1` are automatically detected. Then, the .NET project is published:
+
+```bash
 dotnet publish --framework netcoreapp3.1 --configuration Release
 ```
 
@@ -50,9 +51,9 @@ No additional configuration is required (unless multiple project files or target
 
 ### Multiple project files in the repository
 
-If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the 
-`CC_DOTNET_PROJ` environment variable.
-```sh
+If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the `CC_DOTNET_PROJ` environment variable.
+
+```bash
 CC_DOTNET_PROJ=TodoApi2
 ```
 
@@ -68,10 +69,12 @@ If your project file defines multiple targets, like :
   </PropertyGroup>
   ...
 ```
-You must specify the one you want to run, with the `CC_DOTNET_TFM` environment variable. If `CC_DOTNET_TFM` is
-specified, then the executable produced by this target is used to start the
-application.
-```sh
+
+You must specify the one you want to run, with the `CC_DOTNET_TFM` environment variable.
+
+If `CC_DOTNET_TFM` is specified, then the executable produced by this target is used to start the application.
+
+```bash
 CC_DOTNET_TFM=netcoreapp3.1
 ```
 
@@ -92,15 +95,15 @@ Make sure to list all your dependencies in your project file. For example:
 </Project>
 ```
 
-Compiled dependencies are cached by default to speed up deployments. You can
-disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES`
-environment variable. If you want to rebuild your application from scratch,
-you can select "rebuild and restart" from the console or launch `clever
-restart --without-cache` from [CLI](https://github.com/CleverCloud/clever-tools)
+Compiled dependencies are cached by default to speed up deployments. You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable.
 
-### The configuration to publish for
-`Release` by default, you can use the `CC_DOTNET_PROFILE` environment variable to change this configuration.
-```sh
+If you want to rebuild your application from scratch, you can select "rebuild and restart" from the console or launch `clever restart --without-cache` from [CLI](https://github.com/CleverCloud/clever-tools)
+
+### Configure profile
+
+The default profile is `Release` but you can use the `CC_DOTNET_PROFILE` environment variable to change this configuration.
+
+```bash
 CC_DOTNET_PROFILE=Debug
 ```
 
@@ -116,8 +119,6 @@ Support for private dependencies will be available soon.
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these
-steps]({{< ref "getting-started/quickstart.md" >}}) to deploy your
-application.
+Application deployment on Clever Cloud is via Git. Follow [these steps]({{< ref "getting-started/quickstart.md" >}}) to deploy your application.
 
 {{< readfile "/content/partials/more-config.md" >}}

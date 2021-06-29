@@ -206,7 +206,7 @@ So you can alter the build&start process for your application.
  |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
  |STATIC_WEBROOT |  |  |  |
  |UWSGI_INTERCEPT_ERRORS |  |  |  |
- |[UWSGI_ASYNC](/{{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
+ |[UWSGI_ASYNC]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
  |UWSGI_ASYNC_ENGINE | Select the asynchronous engine for uWSGI (optional) |  |  |
  |WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
  |WSGI_THREADS | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |  |

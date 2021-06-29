@@ -137,6 +137,11 @@ cd ${APP_HOME} # Which has been loaded by the env.
 … # Your part here
 ```
 
+{{< alert "warning" "Zero downtime deployment" >}}
+  If [Zero downtime deployment]({{ < ref "administrate/apps-management.md#edit-application-configuration" > }}) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+  You can prevent this by deactivating it.
+{{< /alert >}}
+
 ## Logs collection
 
 Everything coming from stdout & stderr is forwarded to our logs collection system and is available in the web console / CLI logs.

@@ -81,3 +81,11 @@ main = do
       html . pack $ "Hello world " ++ myVar
 ```
 This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
+
+### Specify package target installation
+
+You may have several packages in your application which can be time consuming when building your application, you can target a specific package if you don't want to build everything by using the `CC_STACK_INSTALL_COMMAND` environnement variable.
+
+```bash
+CC_STACK_INSTALL_COMMAND="mypackage"
+```

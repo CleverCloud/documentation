@@ -95,6 +95,7 @@ So you can alter the build&start process for your application.
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_RUN_COMMAND | Custom command to run your application. |  |  |
+ |CC_STACK_INSTALL_COMMAND | Specify package target installation. |  |  |
  {{< /table >}}
 
 ## Java

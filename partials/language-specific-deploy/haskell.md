@@ -82,10 +82,10 @@ main = do
 ```
 This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
 
-### Specify package target installation
+### Specify stack package target
 
-You may have several packages in your application which can be time consuming when building your application, you can target a specific package if you don't want to build everything by using the `CC_STACK_INSTALL_COMMAND` environnement variable.
+You may have several packages in your application which can be time consuming when building them, if you don't want to build every packages you can target a specific package by using the `CC_HASKELL_STACK_TARGET` [environnement variable](#setting-up-environment-variables-on-clever-cloud).
 
 ```bash
-CC_STACK_INSTALL_COMMAND="mypackage"
+CC_HASKELL_STACK_TARGET="mypackage"
 ```

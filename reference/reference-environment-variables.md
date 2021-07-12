@@ -95,7 +95,7 @@ So you can alter the build&start process for your application.
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_RUN_COMMAND | Custom command to run your application. |  |  |
- |[CC_HASKELL_STACK_TARGET]({{ < ref "deploy/application/haskell/haskell.md#specify-stack-package-target" > }}) | Specify stack package target. |  |  |
+ |[CC_HASKELL_STACK_TARGET]({{ < ref "deploy/application/haskell/haskell.md#specify-stack-package-target" > }}) | Specify Stack package target. |  |  |
  {{< /table >}}
 
 ## Java

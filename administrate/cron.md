@@ -13,6 +13,10 @@ tags:
 
 The configuration file used for crontab is `/clevercloud/cron.json`.
 
+{{< alert "warning" "Docker" >}}
+  Crons are not available in the Docker environment as it would require to set them up inside the Docker container.
+{{< /alert >}}
+
 ## Syntax
 
 Here is the general syntax:

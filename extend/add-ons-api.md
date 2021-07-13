@@ -460,6 +460,6 @@ if __name__ == "__main__":
 
 [https://GitHub.com/CleverCloud/addon-provider-template](https://GitHub.com/CleverCloud/addon-provider-template)
 
-### Add-on API template using NodeJS
+### Add-on API template using Node.js
 
 [https://GitHub.com/Redsmin/passport-clevercloud](https://GitHub.com/Redsmin/passport-clevercloud)

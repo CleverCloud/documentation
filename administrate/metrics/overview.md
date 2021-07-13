@@ -569,7 +569,7 @@ Metrics published over `statsd` are prefixed with `statsd`.
 
 To publish custom metrics, configure to use your client to push to `localhost:8125` (it's the default host and port, so it should work with default settings as well).
 
-### NodeJS example
+### Node.js example
 
 You can use `node-statsd` to publish metrics:
 

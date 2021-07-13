@@ -119,9 +119,9 @@ So you can alter the build&start process for your application.
  |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
  {{< /table >}}
 
-## NodeJS
+## Node.js
 
-[NodeJS Documentation]({{< ref "deploy/application/javascript/by-framework/nodejs.md" >}})
+[Node.js Documentation]({{< ref "deploy/application/javascript/by-framework/nodejs.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

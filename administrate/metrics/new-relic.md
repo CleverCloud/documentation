@@ -12,15 +12,15 @@ keywords:
 
 ## Overview
 
-New Relic can be used on Clever Cloud with **Java, NodeJS, PHP, Ruby and Scala** applications.
+New Relic can be used on Clever Cloud with **Java, Node.js, PHP, Ruby and Scala** applications.
 
 [New Relic](https://www.newrelic.com/) is a software analytics company based in the United States.
 New Relic's technology monitors Web and mobile applications in real-time that run in cloud, on-premise, or hybrid environments. You can easily setup a New Relic based monitoring on your application to monitor it and find performances problems.
 
-## New Relic for NodeJS and Ruby
+## New Relic for Node.js and Ruby
 
-New Relic is very simple to install in a NodeJS or Ruby application as it is a simple dependency.
-Install instructions for [NodeJS](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs) and [Ruby](https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-installation) are available in [the New Relic documentation](https://docs.newrelic.com/).
+New Relic is very simple to install in a Node.js or Ruby application as it is a simple dependency.
+Install instructions for [Node.js](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs) and [Ruby](https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-installation) are available in [the New Relic documentation](https://docs.newrelic.com/).
 
 ## New Relic for Python
 

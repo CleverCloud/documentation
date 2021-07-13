@@ -25,7 +25,7 @@ The application is a very simple todo list. You can add and delete values. More 
 ## Configure your Node.js + MongoDB application
 ### My application does not exists already
 
-If you want to test easily a Node-js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest) and jump to [My application already exists](#my-application-already-exists)
+If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest) and jump to [My application already exists](#my-application-already-exists)
 
 {{< readfile "/content/partials/env-injection.md" >}}
 

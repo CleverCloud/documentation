@@ -34,7 +34,7 @@ variable:
 You can either directly put commands in the hook, but if you have complex
 things to do, it's best to put them in a bash script (don't forget to make it
 executable!). Hooks have access to environment variables as well as a working
-NodeJS installation.
+Node.js installation.
 
 ## Can't I use `$BUILD_TOOL`?
 

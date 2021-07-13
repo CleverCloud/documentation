@@ -16,4 +16,4 @@ information: [git-scm.com](https://git-scm.com)*
 
 4. Now push your application on Clever Cloud with `git push <name> master`
 
-Refer to {{< ref "/getting-started/quickstart.html" >}} for more details on git deployments.
+Refer to the [quickstart]({{< ref "/getting-started/quickstart.html" >}}) for more details on git deployments.

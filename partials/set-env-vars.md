@@ -8,8 +8,8 @@
 
 ### With the Clever Tools CLI
 
-1. Make sure you have clever-tools installed locally. Report to {{< ref "/reference/clever-tools/getting_started.md" >}}
+1. Make sure you have clever-tools installed locally. Report to the [getting started]({{< ref "/reference/clever-tools/getting_started.md" >}})
 2. In your code folder, do `clever env set <variable-name> <variable-value>`
 
-Refer to {{< ref "/reference/reference-environment-variables.md" >}} for more details on available environment variables on Clever Cloud.
+Refer to [environement variables reference]({{< ref "/reference/reference-environment-variables.md" >}}) for more details on available environment variables on Clever Cloud.
 You can of course create custom ones with the interface we just demonstrated, they will be available for your application.

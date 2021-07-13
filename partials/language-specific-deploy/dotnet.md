@@ -4,8 +4,6 @@
 
 The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by setting the `CC_DOTNET_VERSION` environment variable to `3.1`. No support will be provided for end-of-life versions.
 
-{{< readfile "/content/partials/create-application.md" >}}
-
 ### Requirements
 
 Be sure that:

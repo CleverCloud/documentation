@@ -8,6 +8,8 @@ keywords:
   - metrics
   - accesslogs
   - Warp10
+  - prometheus
+  - stasd
 ---
 
 {{< alert "warning" "Warning" >}}
@@ -16,19 +18,6 @@ Clever Cloud Metrics is still in beta.
 
 In addition to logs, you can have access to metrics to know how your application behaves.
 By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
-
-## Publish your own metrics
-
-We currently support two ways to push / collect your metrics: the `statsd` protocol and `Prometheus`.
-
-The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
-
-We also support Prometheus metrics collection. By default our agent collects exposed metrics on `localhost:9100/metrics`.
-
-If needed, you can override those settings with the two following environment variables:
-
-- `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
-- `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
 ## Display metrics
 
@@ -556,18 +545,32 @@ under an organisation.
 '<READ TOKEN>' '<ORGANISATION ID>' <START TIMESTAMP> <END TIMESTAMP> @clevercloud/app_consumption
 ```
 
-## Custom metrics
+## Publish your own metrics
 
-You can expose custom metrics via [`statsd`](https://github.com/etsy/statsd#usage).
-These metrics will be gathered and displayed in advanced view as well.
+We currently support two ways to push / collect your metrics: the `statsd` protocol and `prometheus`.
 
-On some platforms, standard metrics published over `statsd` are even integrated on the overview pane.
+The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
 
-Metrics published over `statsd` are prefixed with `statsd`.
+We also support Prometheus metrics collection, by default our agent collects exposed metrics on `localhost:9100/metrics`.
 
-### statsd socket
+If needed, you can override those settings with the two following environment variables:
 
-To publish custom metrics, configure to use your client to push to `localhost:8125` (it's the default host and port, so it should work with default settings as well).
+- `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
+- `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
+
+To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
+
+You can use this query to show all collected metrics:
+
+```txt
+[ 
+  'TOKEN'
+  '~prometheus.*'
+  { 'app_id' 'app_xxxxxxxx' }
+  NOW 5 m
+]
+FETCH
+```
 
 ### NodeJS example
 

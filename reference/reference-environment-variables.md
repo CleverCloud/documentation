@@ -39,7 +39,7 @@ So you can alter the build&start process for your application.
 |-----------------------|------------------------------|--------------------------------|
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
 |[CC_TROUBLESHOOT]({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
-|[CC_WORKER_COMMAND]({{< ref "reference/common-configuration.md#workers" >}}) | Command to run in background as a worker process. You can run multiple worker. |  |
+|[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
 |CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | on-failure |
 |CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | 1 |
 |CC_PRE_BUILD_HOOK | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |

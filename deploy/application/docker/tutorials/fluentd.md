@@ -23,6 +23,10 @@ Since you deploy microservices on Clever Cloud, you may need some data pipes bet
 
 Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 
+{{< alert "info" "Why I can't just use Ruby runtime ?" >}}
+  Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
+{{< /alert >}}
+
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
@@ -123,14 +127,6 @@ RUN chmod +x go.sh
 
 CMD [ "/go.sh" ]
 ```
-
-{{< readfile "/content/partials/create-application.md" >}}
-
-{{< alert "warning" "Why I can't just use ruby runtime" >}}
-    Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
-{{< /alert >}}
-
-{{< readfile "/content/partials/set-env-vars.md" >}}
 
 {{< readfile "/content/partials/env-injection.md" >}}
 

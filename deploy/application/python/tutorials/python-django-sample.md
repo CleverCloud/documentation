@@ -22,6 +22,7 @@ The application is a very basic one. More information about the application:
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
 ## Configure your Django application
+
 ### My application does not exists already
 
 If you want to test easily a Django deployment on Clever Cloud, just clone the [GitHub repo](https://github.com/CleverCloud/django-example) and go the next section.
@@ -38,6 +39,20 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 You can find a lot more configuration options such as choosing python version and more on our dedicated [Python documentation]({{< ref "/deploy/application/python/python_apps.md" >}}).
 
 {{< readfile "/content/partials/new-relic.md" >}}
+
+### Manage.py tasks
+
+Clever Cloud supports execution of multiple [manage.py](https://docs.djangoproject.com/fr/3.2/ref/django-admin/) tasks.
+
+The tasks are launched after the dependencies from `requirements.txt` have been installed.
+
+You can declare the `manage.py` tasks with the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_MANAGE_TASKS="migrate"`.
+
+Values must be separated by a comma:
+
+```bash
+CC_PYTHON_MANAGE_TASKS="migrate, assets:precompile"
+```
 
 {{< readfile "/content/partials/env-injection.md" >}}
 

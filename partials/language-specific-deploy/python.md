@@ -56,20 +56,6 @@ The goal will be launched after the dependencies from `requirements.txt` have be
 
 To execute a goal, you can define the [environment variable](#setting-up-environment-variables-on-clever-cloud) `PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
-### Manage.py tasks with clevercloud/python.json
-
-Clever Cloud supports execution of multiple `manage.py` tasks. The tasks are launched after the dependencies from `requirements.txt` have been installed.
-
-You can declare the `manage.py` tasks in `./clevercloud/python.json` with the following syntax:
-
-```json
-{
-    "deploy": {
-        "managetasks": [ "migrate" ]
-    }
-}
-```
-
 {{< readfile "/content/partials/env-injection.md" >}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:

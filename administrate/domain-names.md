@@ -89,6 +89,28 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 135.125.16.47</code><br>
+    <code>@ 10800 IN A 135.125.16.49</code>
+    </td>
+  </tr>
+</table>
+
 ### Your Application Runs in the Europe/Warsaw ('WSW') Zone
 
 <table class="table table-bordered" style="text-align:center">

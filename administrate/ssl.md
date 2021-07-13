@@ -8,6 +8,7 @@ keywords:
 - certificate
 - https
 - encrypt
+- cloudflare
 tags:
 - administrate
 ---
@@ -26,9 +27,27 @@ It's all you have to do, our internal certificate generator will create a TLS ce
 
 We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one (we can resell one to you, in which case we will deal with the csr generation ourselves, contact the support to know more).
 
+### Cloudflare
+
+If you use Cloudflare to manage your domain, the certificate generation could fail depending on your **SSL/TLS** settings, you will encounter 502 HTTP errors if Cloudflare expects **SSL/TLS** strict mode and automatically redirects to HTTPS.
+
+To prevent this from happening you can create a page rule to bypass this policy as Let's Encrypt needs to access the route `/.well-known/acme-challenge*` via HTTP to generate the certificate:
+
+1. Define a page rule such as this one:
+
+    {{< image "/images/cloudflare-page-rule-ssl.png" "Create a bypass page rule" >}}
+
+    We also recommend to disable the cache level.
+
+2. Turn off HTTP to HTTPS redirection on Cloudflare:
+
+    {{< image "/images/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" >}}
+
+    You can enable [Force HTTPS]({{ < ref "/administrate/apps-management.md#edit-application-configuration" > }}) in the information tab of your Clever Cloud application instead.
+
 ## Uploading my own certificates
 
-You can upload certificates yourself: <https://api.clever-cloud.com/v2/certificates/new>
+You can upload certificates yourself: `https://api.clever-cloud.com/v2/certificates/new`
 
 You need to paste a PEM bundle containing (in this order):
 

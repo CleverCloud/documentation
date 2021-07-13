@@ -13,6 +13,7 @@ keywords:
 - ssh
 - on premises
 - pdf
+- timezone
 ---
 
 ## What is a Scaler?
@@ -164,3 +165,6 @@ You cannot `scp` something to the VM, you can however easily `scp` something fro
 
 `wkhtmltopdf` is available and fully functional but we deeply recommend to use use `chromium headless` instead.
 
+## What is the timezone used by my application/add-on?
+
+All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.

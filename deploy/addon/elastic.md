@@ -70,6 +70,14 @@ You can change the URL to point to your own custom configuration.
 
 A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
 
+### Kibana custom configuration
+
+Kibana is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
+
+`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/7 | sh"`
+
+You can change the URL to point to your own custom configuration.
+
 ### Java APM agent
 
 You have multiple ways to use the APM agent. You can either add it in your dependencies and it should work out of the box or you can attach an agent to the JVM. If you prefer the last option, you have to define the following environment variable to attach the agent to the JVM: `CC_JAVA_APM_AGENT_ENABLE=true`.

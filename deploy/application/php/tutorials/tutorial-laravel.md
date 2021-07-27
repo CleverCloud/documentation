@@ -39,12 +39,12 @@ Make sure `config/app.php` contains the following line:
 
 ### Configure monolog to use syslog
 
-In your environment variables, add the `APP_LOG=syslog` [environment variable](#setting-up-environment-variables-on-clever-cloud). This will allow you to read your application logs directly from the console or the CLI tool.
+In your environment variables, add the `LOG_CHANNEL=syslog` [environment variable](#setting-up-environment-variables-on-clever-cloud). This will allow you to read your application logs directly from the console or the CLI tool.
 
-Make sure `config/app.php` contains the following line:
+Make sure `config/logging.php` contains the following line:
 
 ```php
-  'log' => env('APP_LOG', 'single'),
+  'default' => env('LOG_CHANNEL', 'stack'),
 ```
 
 ### Optional: configure the front-end build

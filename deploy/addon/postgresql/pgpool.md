@@ -297,6 +297,10 @@ You can find all PCP commands in the [official Pgpool-II documentation](https://
 
 ## Usage
 
+{{< alert "info" "Information:" >}}
+Please note that to connect to Pgpool-II, the default port **5432** must be used. So if you already have a different port set in your code, you have to change it or simply remove the port from the connection information.
+{{< /alert >}}
+
 ### PHP using PDO
 
 Using [PDO](https://www.php.net/manual/fr/ref.pdo-pgsql.connection.php), you have to use the `unix_socket` option in your DSN:

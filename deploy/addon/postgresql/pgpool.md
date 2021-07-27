@@ -297,7 +297,9 @@ You can find all PCP commands in the [official Pgpool-II documentation](https://
 
 ## Usage
 
-*Please note that to connect to pgpool-2, the default port 5432 **must** be used. So if you already have a different port set in your code, you have to change it or to simply remove the port setting in the connection config*
+{{< alert "info" "Information:" >}}
+Please note that to connect to Pgpool-II, the default port **5432** must be used. So if you already have a different port set in your code, you have to change it or simply remove the port from the connection information.
+{{< /alert >}}
 
 ### PHP using PDO
 

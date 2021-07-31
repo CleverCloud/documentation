@@ -88,7 +88,7 @@ production:
 
 ### Manage your static files and assets
 
-Static files are configured with [environment variables](#setting-up-environment-variables-on-clever-cloud)s:
+Static files are configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
 
 `STATIC_FILES_PATH`: should point to a directory where your static files are stored.
 

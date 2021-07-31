@@ -185,9 +185,9 @@ To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) 
 clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
 ```
 
-{{ < alert "warning" "zone" > }}
+{{< alert "warning" "zone" >}}
 Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
-{{ < /alert > }}
+{{< /alert >}}
 
 ## Logs extended storage
 

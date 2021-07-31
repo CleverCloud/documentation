@@ -43,7 +43,7 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
     {{< image "/images/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" >}}
 
-    You can enable [Force HTTPS]({{ < ref "/administrate/apps-management.md#edit-application-configuration" > }}) in the information tab of your Clever Cloud application instead.
+    You can enable [Force HTTPS]({{< ref "/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
 ## Uploading my own certificates
 

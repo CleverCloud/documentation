@@ -205,7 +205,7 @@ Here we will assume you want to create a new add-on and link it to your applicat
 In order to create it:
 1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-2. Go to the organization in which you wan to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
+2. Go to the organization in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
 
 3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
    

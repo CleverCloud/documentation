@@ -248,11 +248,11 @@ So you can alter the build&start process for your application.
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
 |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
-|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby_apps.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, asserts:precompile` |  |  |
-|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby_apps.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
+|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, asserts:precompile` |  |  |
+|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
 |CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
-|[STATIC_URL_PREFIX]({{< ref "deploy/application/ruby/ruby_apps.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+|[STATIC_URL_PREFIX]({{< ref "deploy/application/ruby/ruby-rack.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  |  |
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |

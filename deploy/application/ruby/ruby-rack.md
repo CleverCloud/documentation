@@ -19,15 +19,7 @@ Created in 2007, Rack has become the de-facto standard for ruby web applications
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
-## Configure your Ruby and Rake application
-### Mandatory configuration
-
-Be sure that:
-
-* Bundler is installed locally (`gem install bundler`)
-* you have a `config.ru` file
-* Git (for the deploy part)
-* you have a `gems.rb` or `Gemfile` containing your dependencies
+{{< readfile "/content/partials/language-specific-deploy/ruby.md" >}}
 
 ### Tutorial and sample app
 

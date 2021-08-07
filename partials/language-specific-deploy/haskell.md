@@ -49,7 +49,7 @@ You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.
 
 It is enabled by default only for rust and haskell applications.
 
-To disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
+To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
 
 To fully remove cached dependencies, you have to rebuild your application from scratch.
 

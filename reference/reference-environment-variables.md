@@ -461,13 +461,28 @@ provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
 {{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|VPN_ADDON_CRT | Client certificate |  |  |
-|VPN_ADDON_CACRT | Server CA certificate |  |  |
-|VPN_ADDON_KEY | Client certificate private key |  |  |
-|VPN_ADDON_HOST | Server host or IP address |  |  |
-|VPN_ADDON_PORT | Server port |  |  |
-|VPN_ADDON_TAKEY | Pre-shared secret |  |  |
-|VPN_TARGETS | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |  |  |
+| <center>Name</center> | <center>Description</center>                                                                    | <center>Default value</center> | <center>Read Only</center> |
+| --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
+| VPN_ADDON_CRT         | Client certificate                                                                              |                                |                            |
+| VPN_ADDON_CACRT       | Server CA certificate                                                                           |                                |                            |
+| VPN_ADDON_KEY         | Client certificate private key                                                                  |                                |                            |
+| VPN_ADDON_HOST        | Server host or IP address                                                                       |                                |                            |
+| VPN_ADDON_PORT        | Server port                                                                                     |                                |                            |
+| VPN_ADDON_TAKEY       | Pre-shared secret                                                                               |                                |                            |
+| VPN_TARGETS           | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |
+{{< /table >}}
+
+### Pulsar
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center>    | <center>Description</center>              | <center>Default value</center> | <center>Read Only</center> |
+| ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
+| ADDON_PULSAR_BINARY_PORT |                                           |                                | X                          |
+| ADDON_PULSAR_BINARY_URL  | use this complete url in your application |                                | X                          |
+| ADDON_PULSAR_HOSTNAME    |                                           |                                | X                          |
+| ADDON_PULSAR_HTTP_PORT   |                                           |                                | X                          |
+| ADDON_PULSAR_HTTP_URL    |                                           |                                | X                          |
+| ADDON_PULSAR_NAMESPACE   | your addon id                             |                                | X                          |
+| ADDON_PULSAR_TENANT      | your Clever Cloud tenant id               |                                | X                          |
+| ADDON_PULSAR_TOKEN       | biscuit authentication token              |                                | X                          |
 {{< /table >}}

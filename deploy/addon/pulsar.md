@@ -156,7 +156,7 @@ Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
 ==========
 ```
 
-Now the block n°2 ensure that topics must starts with `"my-own-prefix"`.
+Now the block n°2 ensures that topics must start with `"my-own-prefix"`.
 
 You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
 

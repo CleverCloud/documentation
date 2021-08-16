@@ -558,6 +558,15 @@ If needed, you can override those settings with the two following environment va
 - `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
 - `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
+As with Prometheus the exposed host can be the same as the application deployed, you can use a basic authentication to collect the metrics with the two following environment variables:
+
+- `CC_METRICS_PROMETHEUS_USER`: Define the user for the basic auth of the Prometheus endpoint
+- `CC_METRICS_PROMETHEUS_PASSWORD`: Define the password for the basic auth of the Prometheus endpoint
+
+For large custom set of metrics to collect, the default response timeout of the `/metrics` query is 3 seconds. You can update it with the following environment variable:
+
+- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes. 
+
 To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
 
 You can use this query to show all collected metrics:

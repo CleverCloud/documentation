@@ -295,48 +295,6 @@ If you need to rollback, you can either set the old configuration or completely 
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
 
-## Plans
+## Pricing
 
-<!-- TODO: Replace with pricingStorage shortcode when ready -->
-<table class="table table-bordered table-striped dataTable"><caption>Storage plans</caption>
-  <tr>
-    <th>Storage</th>
-    <th>Price / GB / month</th>
-    <th>Price / TB / month</th>
-  </tr>
-  <tr>
-    <td>First 1 TB</td>
-    <td>€ 0.02</td>
-    <td>€ 20.48</td>
-  </tr>
-  <tr>
-    <td>Till 25 TB</td>
-    <td>€ 0.015</td>
-    <td>€ 15.36</td>
-  </tr>
-  <tr>
-    <td>Till 50 TB</td>
-    <td>€ 0.01</td>
-    <td>€ 10.24</td>
-  </tr>
-</table>
-
-<table class="table table-bordered table-striped dataTable"><caption>Traffic usage plans</caption>
-  <tr>
-    <th>Traffic (outbound*)</th>
-    <th>Price / GB / month</th>
-    <th>Price / TB / month</th>
-  </tr>
-  <tr>
-    <td>till 10TB </td>
-    <td>€ 0.09</td>
-    <td>€ 92.16</td>
-  </tr>
-  <tr>
-    <td>Till 40 TB</td>
-    <td>€ 0.07</td>
-    <td>€ 71.68</td>
-  </tr>
-</table>
-
-*Outbound traffic is everything that goes out from your Cellar addon, including internal traffic to your applications.
+{{< pricingConsumption "cellar" >}}

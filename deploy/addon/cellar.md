@@ -256,7 +256,7 @@ Each CORS configuration can contain multiple rules. Those are defined using an X
     <AllowedMethod>PUT</AllowedMethod>
     <AllowedMethod>POST</AllowedMethod>
     <AllowedMethod>DELETE</AllowedMethod>
-    <AllowedHeaders>*</AllowedHeaders>
+    <AllowedHeader>*</AllowedHeader>
     <ExposeHeader>ETag</ExposeHeader>
   </CORSRule>
   <CORSRule>

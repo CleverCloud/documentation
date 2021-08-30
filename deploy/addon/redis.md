@@ -41,4 +41,4 @@ please contact the support to change its policy.
 
 ## Plans
 
-{{< pricingAddon "redis-addon" "[\"cpu\", \"max-db-size\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}
+{{< pricingAddon "redis-addon" "[\"cpu\", \"max-db-size\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\", \"databases\"]" >}}

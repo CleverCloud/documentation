@@ -99,7 +99,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10` or `1.11` | `1.11` |  |
+ |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11` or `1.12` | `1.11` |  |
  |CC_MIX_BUILD_GOAL | The mix goal to build the application (default compile) |  |  |
  |CC_PHOENIX_ASSETS_DIR | Folder in which your Phoenix assets are located. |  |  |
  |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |

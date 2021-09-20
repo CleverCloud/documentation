@@ -2,7 +2,7 @@
 
 ### Mandatory configuration
 
-- Get your Elixir version in your console with `$ elixir -v` and set the environment variable **CC_ELIXIR_VERSION** to its value (available versions as of today are `1.8`, `1.9`, `1.10` or `1.11`).
+- Get your Elixir version in your console with `$ elixir -v` and set the environment variable **CC_ELIXIR_VERSION** to its value (available versions as of today are `1.8`, `1.9`, `1.10`, `1.11` or `1.12`).
 
 #### If you deploy a Phoenix application
 

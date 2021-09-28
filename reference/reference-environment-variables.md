@@ -346,7 +346,7 @@ So you can alter the build&start process for your application.
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_PGPOOL | Enables the Pgpool-II feature | `false` | |
+|CC_ENABLE_PGPOOL | Enables the Pgpool-II feature | `false` | |
 |CC_PGPOOL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to Pgpool-II | `true` | |
 |CC_PGPOOL_PCP_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to PCP | `true` | |
 |CC_PGPOOL_RESERVED_CONNECTIONS | Number of reserved connections | `0` | |

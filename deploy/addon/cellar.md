@@ -83,12 +83,32 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 ### Node.js
 
 ```javascript
+// Load the AWS SDK for Node.js
 const AWS = require('aws-sdk');
 
-AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
+// Set up config
+AWS.config.update({
+  accessKeyId: '<cellar_key_id>', 
+  secretAccessKey: '<cellar_key_secret>'
+});
 
+// Create S3 service object
 const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
 
+// Create the parameters for calling createBucket
+const bucketParams = {
+  Bucket : '<my-bucket-name>',
+  CreateBucketConfiguration: {
+    LocationConstraint: ''
+  }
+};
+
+// call S3 to create the bucket
+s3.createBucket(bucketParams, function(err, data) {
+  // handle results
+});
+
+// Call S3 to list the buckets
 s3.listBuckets(function(err, res) {
   // handle results
 });

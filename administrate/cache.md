@@ -19,7 +19,7 @@ and the client. Following rules defined by the user, Varnish will cache the data
 ## Limitations
 
 {{< alert "warning" >}}
-<p>Varnish is only available on PHP and Go applications. Support for other applications is in discussion.</p> 
+<p>Varnish is only available on PHP, Go and Node.js applications. Support for other applications is in discussion.</p> 
 <p>For more information about it, contact us at <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.</p>
 {{< /alert >}}
 
@@ -34,6 +34,10 @@ If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bu
 {{< /alert >}}
 
 To know how to write your `varnish.vcl` file, please have a look at the [Varnish 6 book](https://info.varnish-software.com/resources/varnish-6-by-example-book).
+
+## Listen on the right port
+
+Once varnish is enabled, your application should no longer listen on port **8080**, but on port **8081**. Because it's Varnish that will listen on port **8080**, and it will have in its configuration your application as backend.
 
 ## Varnish 6 migration
 

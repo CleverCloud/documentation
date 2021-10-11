@@ -140,7 +140,7 @@ So you can alter the build&start process for your application.
 |CC_SBT_TARGET_DIR | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
 |CC_SBT_TARGET_BIN | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
 |GRADLE_DEPLOY_GOAL | Define which gradle goals to run during build. |  |  |
-|CC_JAVA_VERSION | Choose the JVM version between `7` to `15` for OpenJDK or `graalvm-ce` for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | `11` |  |
+|CC_JAVA_VERSION | Choose the JVM version between `7` to `17` for OpenJDK or `graalvm-ce` for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | `11` |  |
 |MAVEN_DEPLOY_GOAL | Define which maven goals to run during build. |  |  |
 |CC_MAVEN_PROFILES | Define which maven profile to use during default build. |  |  |
 |NUDGE_APPID |  |  |  |

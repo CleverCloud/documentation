@@ -256,63 +256,28 @@ By default, Clever Cloud performs a backup every day, with a retention of seven 
 
 ## Plans
 
+Here are the plans of the Jenkins controller as well as its available runner instances.
+
+<!-- Documentation is here: https://www.clever-cloud.com/doc/clever-components/?path=/docs/%F0%9F%9B%A0-pricing-cc-pricing-product--default-story -->
+<script type="module" src="https://components.clever-cloud.com/load.js?version=7&components=cc-pricing-product.smart-addon,cc-pricing-product.smart-runtime"></script>
+
 ### Jenkins Add-on
 
-Those plans correspond to the Jenkins controller instance.
-
-{{< pricingAddon "jenkins" "[\"cpu\", \"memory\", \"disk-size\", \"has-logs\", \"has-metrics\"]" >}}
+Those are the plans of the Jenkins controller instance.
+<div>
+<cc-smart-container context='{"productId": "jenkins", "addonFeatures": ["cpu", "memory", "disk-size", "has-logs", "has-metrics"]}'>
+  <cc-pricing-product mode="addon" action="none">
+    <div slot="head"></div>
+  </cc-pricing-product>
+</cc-smart-container>
+</div>
 
 ### Runners
-
 Those plans are the available runners for your jobs.
-
-<table class="table table-bordered table-striped dataTable"><caption>Jenkins Runners</caption>
-<tr>
-<th>Name</th>
-<th>vCPUs</th>
-<th>RAM</th>
-<th>Price (hour)</th>
-</tr>
-<tr>
-<td>XS</td>
-<td>1</td>
-<td>2 GiB</td>
-<td>€0.10</td>
-</tr>
-<tr>
-<td>S</td>
-<td>2</td>
-<td>4 GiB</td>
-<td>€0.25</td>
-</tr>
-<tr>
-<td>M</td>
-<td>4</td>
-<td>8 GiB</td>
-<td>€0.50</td>
-</tr>
-<tr>
-<td>L</td>
-<td>6</td>
-<td>12 GiB</td>
-<td>€0.75</td>
-</tr>
-<tr>
-<td>XL</td>
-<td>8</td>
-<td>16 GiB</td>
-<td>€1.00</td>
-</tr>
-<tr>
-<td>2XL</td>
-<td>12</td>
-<td>24 GiB</td>
-<td>€2.00</td>
-</tr>
-<tr>
-<td>3XL</td>
-<td>16</td>
-<td>32 GiB</td>
-<td>€4.00</td>
-</tr>
-</table>
+<div>
+<cc-smart-container context='{"productId": "jenkins-runner"}'>
+  <cc-pricing-product mode="runtime" action="none" temporality='[{"type":"minute","digits":5}]'>
+    <div slot="head"></div>
+  </cc-pricing-product>
+</cc-smart-container>
+</div>

@@ -276,7 +276,7 @@ Those are the plans of the Jenkins controller instance.
 Those plans are the available runners for your jobs.
 <div>
 <cc-smart-container context='{"productId": "jenkins-runner"}'>
-  <cc-pricing-product mode="runtime" action="none" temporality='[{"type":"minute","digits":5}]'>
+  <cc-pricing-product mode="runtime" action="none" temporality='[{"type":"minute","digits":5}, {"type": "1000-minutes","digits": 2}]'>
     <div slot="head"></div>
   </cc-pricing-product>
 </cc-smart-container>

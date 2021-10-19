@@ -75,7 +75,7 @@ The supported containers are listed below:
          <td></td>
          <td></td>
          <td></td>
-         <td></td>
+         <td>WildFly 24.0.1 (WILDFLY24)</td>
       </tr>
       <tr>
          <td>Apache Tomcat 8.8 (TOMCAT8)</td>

@@ -12,7 +12,7 @@ str_replace_dict:
 
 ## Overview
 
-Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. You can build Rust web services with frameworks like [Actix](https://actix.rs/) or [Iron](https://ironframework.io/).
+Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. You can build Rust web services with frameworks like [Actix](https://actix.rs/) or [Iron](https://github.com/iron/iron).
 
 Clever Cloud allows you to deploy Rust web applications. This page will explain you how to set up your application to run it on our service.
 

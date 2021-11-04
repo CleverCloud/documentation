@@ -30,7 +30,7 @@ If you want to revert to a previous version of your code, you can go to the **Ac
 
 ## Edit application configuration
 
-You can edit your application in the **Overview** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
+You can edit your application in the **Information** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
 You can also enable/disable:
 
 - **Zero downtime deployment**: During a deployment, old scalers are kept up until the new instances work. Updates are thus transparent to the user. Your application has to work correctly with several scalers in parallel (e.g. for connections to databases). *`pico` and `nano` scalers are using this feature by default.*

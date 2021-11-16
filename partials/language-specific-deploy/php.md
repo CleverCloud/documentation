@@ -372,7 +372,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
+The following extensions are enabled by default: `amqp`, `event`, `imagick`, `libsodium`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}})
 to disable them.

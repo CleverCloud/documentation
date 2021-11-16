@@ -19,8 +19,8 @@ and on standards-compliance.
 
 The version currently installed by the add-on is :
 
-- on shared plans (DEV) : PostgreSQL 11.1
-- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10, 11, 12, 13
+- on shared plans (DEV) : PostgreSQL 11
+- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10, 11, 12, 13, 14
 
 {{< readfile "/content/partials/db-backup.md" >}}
 

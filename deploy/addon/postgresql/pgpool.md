@@ -104,7 +104,7 @@ When using the **Streaming** mode, it's not Pgpool-II that manages the replicati
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the follower(s) to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 
 {{< alert "info" "Information:" >}}
-For the HOST and PORT, you must use the values of the POSTGRESQL_ADDON_DIRECT_HOST and POSTGRESQL_ADDON_DIRECT_PORT variables.
+For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
 {{< /alert >}}
 
 An example of the ``CC_PGPOOL_FOLLOWERS`` variable with two followers: 

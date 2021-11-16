@@ -435,6 +435,21 @@ So you can alter the build&start process for your application.
 |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
 {{< /table >}}
 
+### Pulsar
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center>    | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+| ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
+| ADDON_PULSAR_HOSTNAME    | The host to connect to the Pulsar Cluster | Generated upon creation | X |
+| ADDON_PULSAR_BINARY_URL  | The complete URL to use in your application | Generated upon creation | X |
+| ADDON_PULSAR_BINARY_PORT | The port to connect to the Pulsar Cluster | Generated upon creation | X |
+| ADDON_PULSAR_HTTP_URL    | The complete URL to connect with WebSocket | Generated upon creation | X |
+| ADDON_PULSAR_HTTP_PORT   | The port to connect with WebSocket | Generated upon creation | X |
+| ADDON_PULSAR_TENANT      | Your Clever Cloud tenant ID | Generated upon creation | X |
+| ADDON_PULSAR_NAMESPACE   | Your add-on Pulsar ID | Generated upon creation | X |
+| ADDON_PULSAR_TOKEN       | Your Biscuit authentication token | Generated upon creation        | X |
+{{< /table >}}
+
 ### New Relic
 
 {{<table "table table- bordered" "text-align:center" >}}
@@ -473,19 +488,4 @@ to be routed through the exit node.
 | VPN_ADDON_PORT        | Server port                                                                                     |                                |                            |
 | VPN_ADDON_TAKEY       | Pre-shared secret                                                                               |                                |                            |
 | VPN_TARGETS           | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |
-{{< /table >}}
-
-### Pulsar
-
-{{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center>    | <center>Description</center>              | <center>Default value</center> | <center>Read Only</center> |
-| ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
-| ADDON_PULSAR_BINARY_PORT |                                           |                                | X                          |
-| ADDON_PULSAR_BINARY_URL  | use this complete url in your application |                                | X                          |
-| ADDON_PULSAR_HOSTNAME    |                                           |                                | X                          |
-| ADDON_PULSAR_HTTP_PORT   |                                           |                                | X                          |
-| ADDON_PULSAR_HTTP_URL    |                                           |                                | X                          |
-| ADDON_PULSAR_NAMESPACE   | your addon id                             |                                | X                          |
-| ADDON_PULSAR_TENANT      | your Clever Cloud tenant id               |                                | X                          |
-| ADDON_PULSAR_TOKEN       | biscuit authentication token              |                                | X                          |
 {{< /table >}}

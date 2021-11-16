@@ -107,7 +107,7 @@ Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment 
 For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
 {{< /alert >}}
 
-An example of the ``CC_PGPOOL_FOLLOWERS`` variable with two followers: 
+An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers: 
 ```json
 [
   {

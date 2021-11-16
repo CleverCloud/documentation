@@ -46,6 +46,9 @@ We only support the **Streaming** mode, which is the most used and recommended m
 
 ## How to configure Pgpool-II
 
+### Generate direct variables for your PostgreSQL add-ons.
+Go to the "Add-on dashboard" tab of your PostgreSQL add-ons and click on the "Generate direct hostname and port" button.
+
 ### Enable Pgpool-II for your application
 In order to configure Pgpool-II, the first thing to do is to link your PostgreSQL add-on. To do that, you can go to the `Service Dependencies` page of your application
 and select your PostgreSQL add-on.
@@ -100,16 +103,20 @@ When using the **Streaming** mode, it's not Pgpool-II that manages the replicati
 
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the follower(s) to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 
-An example of the ``CC_PGPOOL_FOLLOWERS`` variable with two followers: 
+{{< alert "info" "Information:" >}}
+For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
+{{< /alert >}}
+
+An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers: 
 ```json
 [
   {
-    "hostname": "<DATABASE>-postgresql.services.clever-cloud.com",
+    "hostname": "<HOST>",
     "port": "<PORT>",
     "weight": "1"
   },
   {
-    "hostname": "<DATABASE>-postgresql.services.clever-cloud.com",
+    "hostname": "<HOST>",
     "port": "<PORT>",
     "weight": "1"
   }

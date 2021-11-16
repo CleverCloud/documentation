@@ -28,6 +28,7 @@ These are read-only variables that are generated for each scaler before they bui
 |COMMIT_ID | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
 |CC_REVERSE_PROXY_IPS | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
 |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
+|CC_APP_NAME | The customer defined application name | cloud-api-production |
 {{< /table >}}
 
 ### Variables you can define

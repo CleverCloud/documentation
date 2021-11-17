@@ -160,7 +160,6 @@ So you can alter the build&start process for your application.
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
-|CC_NODE_START_GOAL | Defines which node scripts to run | `start` |  |
 |CC_RUN_COMMAND | Define a custom command. | Example for Meteor: `node .build/bundle/main.js &lt;options&gt;` |  |
 |NODE_BUILD_TOOL | Choose your build tool between `npm` and `yarn` | `npm` |  |
 |CC_NPM_REGISTRY | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |  |

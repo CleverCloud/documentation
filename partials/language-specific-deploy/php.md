@@ -372,7 +372,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `event`, `imagick`, `libsodium`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
+The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}})
 to disable them.
@@ -407,6 +407,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
     Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
     in your application, sending performance metrics and errors to the Elastic APM server.
     **Warning**: This extension is available starting PHP 7.2.
+
+* Event: set `ENABLE_EVENT` to `true`.
+
+    Event is an extension to schedule I/O, time and signal based events.
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 

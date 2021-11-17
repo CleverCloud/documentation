@@ -174,7 +174,9 @@ A new deployment **starts** new instances alongsides the old ones.
 This means that have up to `maximum scalability * 2` instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
 it means there will be up to `maximum scalability * 2 * CC_PGPOOL_NUM_INIT_CHILDREN` connections at the same time. We will call this result `MaxCon`.
 
+{{< alert "warning" "Connection limit" >}}
 Each PostgreSQL add-on has a connection limit which varies following the plan you are using. You must be sure that `MaxCon` doesn't exceed your plan's max connections. If it does, you might have issues connecting to the remote PostgreSQL add-on. You have to adjust `CC_PGPOOL_NUM_INIT_CHILDREN` to a number that makes sense for your scalability parameters.
+{{< /alert >}}
 
 #### Example
 

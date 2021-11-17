@@ -337,9 +337,28 @@ s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket
 ```
 
 If you need to rollback, you can either set the old configuration or completely drop it:
-```
+
+```bash
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
+
+## Troubleshooting
+
+### SSL error with s3cmd
+
+If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
+
+```log
+[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
+```
+
+The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
+
+For example with a bucket named `blog.mycompany.com`:
+
+Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
+
+It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
 
 ## Pricing
 

@@ -10,20 +10,29 @@ keywords:
 - Storage
 - file
 - files
+- s3cmd
+- aws
 ---
 
 Cellar is S3-compatible online file storage web service. You can use it with your favorite S3 client.
 
-To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd).
-You can download a s3cmd configuration file from the add-on configuration page.
+To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd). You can download a s3cmd configuration file from the add-on configuration page.
+
+{{< alert "warning" "Unavailable s3cmd commands" >}}
+  `ws-*` and `cf*` commands are not avaible with a Cellar add-on.
+{{< /alert >}}
 
 ## Creating a bucket
 
-In Cellar, files are stored in buckets. When you create a Cellar addon, no
-bucket is created yet.
+In Cellar, files are stored in buckets. When you create a Cellar addon, no bucket is created yet.
 
 You will need to install the s3cmd on your machine following [these recommendations](https://s3tools.org/s3cmd).
-Once s3cmd is installed, you can go to your add-on menu in the Clever Cloud console. Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link. This will provide you a configuration file that you just need to add to your home on your machine.
+
+Once s3cmd is installed, you can go to your add-on menu in the Clever Cloud console.
+
+Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link.
+
+This will provide you a configuration file that you just need to add to your home on your machine.
 
 To create a bucket, you can use s3cmd:
 
@@ -49,7 +58,7 @@ You can list the files in your bucket, you should see the `image.png` file:
 
 ### Using a custom domain
 
-If you want to use a custom domain, for example cdn.example.com, you need to create a bucket named exactly like your domain:
+If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
 
 ```bash
     s3cmd mb s3://cdn.example.com
@@ -59,21 +68,29 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
 
 {{< alert "warning" "S3 signature algorithm" >}}
     New cellar add-ons supports the `v4` signature algorithm from S3.
-    If you are still using an old account (cellar.services.clever-cloud.com), please make sure your client is configured to use the `v2` signature algorithm. The s3cmd configuration file provided by the add-on's dashboard is already configured.
+  If you are still using an old account (`cellar.services.clever-cloud.com`), please make sure your client is configured to use the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
 {{< /alert >}}
 
 ## Using AWS CLI
 
 You can use the official [AWS cli](https://aws.amazon.com/cli/) with cellar. You will need to configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
 
-```
+```bash
 aws configure set aws_access_key_id $CELLAR_ADDON_KEY_ID
 aws configure set aws_secret_access_key $CELLAR_ADDON_KEY_SECRET
 ```
 
-Sadly the endpoint cannot be configured globally and has to be given as a parameter each time you use the `aws` cli. Here's an example to create a bucket: `aws s3api create-bucket --bucket myBucket  --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com`
+Sadly the endpoint cannot be configured globally and has to be given as a parameter each time you use the `aws` cli. Here's an example to create a bucket:
 
-To simplify this, you may want to configure an alias like so: `alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"`.
+```bash
+aws s3api create-bucket --bucket myBucket --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com
+```
+
+To simplify this, you may want to configure an alias like so:
+
+```bash
+alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
+```
 
 ## Using AWS SDK
 
@@ -119,7 +136,6 @@ s3.listBuckets(function(err, res) {
  * see doc : https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
  */
 s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
-
 ```
 
 
@@ -168,6 +184,7 @@ public class Main {
     }
 }
 ```
+
 ### Python
 
 This has been tested against python 3.6
@@ -178,11 +195,14 @@ This script uses boto, the old implementation of the aws-sdk in python. Make sur
 from boto.s3.key import Key
 from boto.s3.connection import S3Connection
 from boto.s3.connection import OrdinaryCallingFormat
+
 apikey='<key>'
 secretkey='<secret>'
 host='<host>'
+
 cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
 conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
+
 b = conn.get_all_buckets()
 print(b)
 
@@ -229,6 +249,7 @@ You can upload all your objects with a public ACL, but you can also make your wh
 
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
+
 ```json
 {
   "Id": "Policy1587216857769",
@@ -250,6 +271,7 @@ To set your bucket as public, you have to apply the following policy which you c
 Replace the `<bucket-name>` with your bucket name in the policy file. Don't change the `Version` field to the current date, keep it as is.
 
 Now, you can set the policy to your bucket using s3cmd:
+
 ```bash
 s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
@@ -257,6 +279,7 @@ s3cmd setpolicy ./policy.json s3://<bucket-name>
 All of your objects should now be publicly accessible.
 
 If needed, you can delete this policy by using:
+
 ```bash
 s3cmd delpolicy s3://<bucket-name>
 ```
@@ -288,6 +311,7 @@ Each CORS configuration can contain multiple rules. Those are defined using an X
 ```
 
 Here this configuration has two `CORS` rules:
+
 - The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. `PUT`, `POST` and `DELETE` methods are allowed to be used by the cross-origin request. Then, all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header are allowed using `AllowedHeaders *`. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
 - The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
 
@@ -301,12 +325,14 @@ Here this configuration has two `CORS` rules:
 </div>
 
 To view and save your current `CORS` configuration, you can use `s3cmd info`:
-```
+
+```bash
 s3cmd -c s3cfg -s info s3://your-bucket
 ```
 
 You can then set this `CORS` configuration using `s3cmd`:
-```
+
+```bash
 s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket
 ```
 

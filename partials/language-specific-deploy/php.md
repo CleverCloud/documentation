@@ -389,11 +389,6 @@ If you have a request about modules, feel free to contact our support at <suppor
 Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding
 [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
-* APC: set `ENABLE_APC` to `true`.
-
-    APC is a framework for caching and optimizing PHP intermediate code.
-    **Warning**: APC is only available for PHP 5.4.
-
 * APCu: set `ENABLE_APCU` to `true`.
 
     APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
@@ -411,6 +406,14 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 * Event: set `ENABLE_EVENT` to `true`.
 
     Event is an extension to schedule I/O, time and signal based events.
+
+* GEOS: set `ENABLE_GEOS` to `true`.
+
+    GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
+
+* GnuPG: set `ENABLE_GNUPG` to `true`.
+
+    GnuPG is an extension that provides methods to interact with 
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
@@ -433,15 +436,19 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
 
-* XDebug: set `ENABLE_XDEBUG` to `true`.
+* PCS: set `ENABLE_PCS` to `true`.
 
-    XDebug is a debugger and profiler tool for PHP.
+    PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
 * Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
 * Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`). 
+
+* XDebug: set `ENABLE_XDEBUG` to `true`.
+
+    XDebug is a debugger and profiler tool for PHP.
 
 ## Use Redis to store PHP Sessions
 

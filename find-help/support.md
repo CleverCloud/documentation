@@ -18,7 +18,7 @@ Seek help by querying us by email, allowing you to quickly gain answers to your 
 
 ## Live Chat
 
-You can find in the console a button to start a live chat with one of our engineers. Feel free to use it when this service available, from 10am to 6pm <acronym title="Central European Summer Time">CEST</acronym>+2 during open business days.
+You can find in the console a button to start a live chat with one of our engineers. Feel free to use it when this service available, from 9 a.m to 6 p.m <acronym title="Central European Summer Time">CEST</acronym>+2 during open business days.
 
 ## Critical application support
 

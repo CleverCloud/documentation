@@ -15,4 +15,4 @@ We are using OpenJDK distribution for mentionned Java versions.
 
 {{< alert "warning" "non-LTS versions" >}}
     <p>Every non-LTS versions where <i>Premier support</i> ends will be removed without warning as you should be able to switch to the next available non-LTS version without any trouble.</p>
-{{< /alert >}} 
+{{< /alert >}}

@@ -152,6 +152,7 @@ So you can alter the build&start process for your application.
 |CC_EXTRA_JAVA_ARGS | Define extra arguments to pass to 'java' for jars. |  |  |
 |CC_JAR_ARGS | Define arguments to pass to the jar we launch. |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
+|CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
 {{< /table >}}
 
 ## Node.js

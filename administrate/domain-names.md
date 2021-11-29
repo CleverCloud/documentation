@@ -26,6 +26,9 @@ In the console, in the domain name sub menu of your application, there is a defa
 
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
+{{< alert "warning" "TLS on sub-domain level" >}}
+  `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
+{{< /alert >}}
 
 ## Using Personal Domain Names
 

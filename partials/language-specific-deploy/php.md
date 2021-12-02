@@ -413,7 +413,7 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
 * GnuPG: set `ENABLE_GNUPG` to `true`.
 
-    GnuPG is an extension that provides methods to interact with 
+    GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 

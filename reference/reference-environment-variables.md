@@ -440,14 +440,14 @@ So you can alter the build&start process for your application.
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center>    | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 | ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
-| ADDON_PULSAR_HOSTNAME    | The host to connect to the Pulsar Cluster | Generated upon creation | X |
-| ADDON_PULSAR_BINARY_URL  | The complete URL to use in your application | Generated upon creation | X |
-| ADDON_PULSAR_BINARY_PORT | The port to connect to the Pulsar Cluster | Generated upon creation | X |
-| ADDON_PULSAR_HTTP_URL    | The complete URL to connect with WebSocket | Generated upon creation | X |
-| ADDON_PULSAR_HTTP_PORT   | The port to connect with WebSocket | Generated upon creation | X |
-| ADDON_PULSAR_TENANT      | Your Clever Cloud tenant ID | Generated upon creation | X |
-| ADDON_PULSAR_NAMESPACE   | Your add-on Pulsar ID | Generated upon creation | X |
-| ADDON_PULSAR_TOKEN       | Your Biscuit authentication token | Generated upon creation        | X |
+|ADDON_PULSAR_BINARY_URL | The complete URL to use in your application | Generated upon creation | X |
+|ADDON_PULSAR_BINARY_PORT | The port to connect to the Pulsar Cluster | Generated upon creation | X |
+|ADDON_PULSAR_HOSTNAME | The host to connect to the Pulsar Cluster | Generated upon creation | X |
+|ADDON_PULSAR_HTTP_URL | The complete URL to connect with WebSocket | Generated upon creation | X |
+|ADDON_PULSAR_HTTP_PORT | The port to connect with WebSocket | Generated upon creation | X |
+|ADDON_PULSAR_NAMESPACE | Your add-on Pulsar ID | Generated upon creation | X |
+|ADDON_PULSAR_TENANT | Your Clever Cloud tenant ID | Generated upon creation | X |
+|ADDON_PULSAR_TOKEN | Your Biscuit authentication token | Generated upon creation        | X |
 {{< /table >}}
 
 ### New Relic

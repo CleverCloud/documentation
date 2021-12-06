@@ -168,7 +168,7 @@ curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.c
   "index_patterns": ["logstash-*"], 
   "template": {
     "settings": {
-      "index.lifecycle.name": "logs_drain", 
+      "index.lifecycle.name": "logs_drain"
     }
   }
 }

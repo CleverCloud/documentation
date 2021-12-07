@@ -136,6 +136,9 @@ The request will be the following:
 Request: POST {base_url}
 Request Body: {
   "addon_id": "addon_xxx",
+  "owner_id": "orga_xxx",
+  "owner_name": "My Company",
+  "user_id": "user_yyy",
   "plan": "basic",
   "region": "EU",
   "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
@@ -154,6 +157,13 @@ Response Body: {
 The request body contains the following fields:
 
 * `addon_id` - The id we give to your add-on to identify it on our side.
+
+* `owner_id` - The id of the customer this add-on will belong to.
+
+* `owner_name` - The name of the customer. (Actually, the name of the organisation)
+
+* `user_id` - The id of the user that is performing the action of provisioning this
+  add-on. (The user will do it for the account of `owner_id`).
 
 * `plan` - The slug field for the plan the user chose. You can create
 plans in the dashboard once your add-on manifest has been uploaded to

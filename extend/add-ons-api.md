@@ -18,12 +18,6 @@ There are two faces here:
 
 * [The add-on infos API](#add-on-infos-api) - The API Clever Cloud provides to allow you to get informations about provisioned add-ons and their owners.
 
-## Preamble
-
-In the PaaS world, an add-on system is preceding the others, therefore is well known by a lot of developers: the Heroku one. To ease up the transition between Heroku and Clever Cloud, we decided to support (then iterate over) the Heroku standard for add-on provisioning API.
-
-So, if you already have been integrated as an add-on provider for the Heroku platform, you will have no trouble integrating in Clever Cloud's add-on platform. This explains why we handle "heroku\_id" fields instead of "clevercloud\_id" or equivalent.
-
 ## Add-on Provider API
 
 This is the API *you* need to provide to allow Clever Cloud to provision an add-on for a customer.
@@ -141,7 +135,7 @@ The request will be the following:
 ```json
 Request: POST {base_url}
 Request Body: {
-  "heroku_id": "addon_xxx",
+  "addon_id": "addon_xxx",
   "plan": "basic",
   "region": "EU",
   "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
@@ -159,7 +153,7 @@ Response Body: {
 
 The request body contains the following fields:
 
-* `heroku_id` - The id we give to your add-on to identify it on our side.
+* `addon_id` - The id we give to your add-on to identify it on our side.
 
 * `plan` - The slug field for the plan the user chose. You can create
 plans in the dashboard once your add-on manifest has been uploaded to
@@ -176,7 +170,7 @@ not its name.
 
 The response body contains the following fields:
 
-* `id` - The add-on id as seen from your side. The difference with the heroku api is that the id *MUST* be a String.
+* `id` - The add-on id as seen from your side. It *MUST* be a String.
 
 * `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
 
@@ -205,7 +199,7 @@ The request will be the following:
 ```json
 Request: PUT {base_url}/{addon_id}
 Request Body: {
-  "heroku_id": "addon_xxx",
+  "addon_id": "addon_xxx",
   "plan": "premium"
 }
 Response Body: {
@@ -218,7 +212,7 @@ Response Body: {
 
 The request body contains:
 
-* `heroku_id` - The add-on's id as seen from our side.
+* `addon_id` - The add-on's id as seen from our side.
 
 * `plan` - The name of the new plan.
 
@@ -318,13 +312,13 @@ GET /vendor/apps
 Response Body: [
   {
     "provider_id": "addon-name",
-    "heroku_id": "addon_xxx",
+    "addon_id": "addon_xxx",
     "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
     "plan": "test",
     "owner_id": "user_foobar"
   }, {
     "provider_id": "addon-name",
-    "heroku_id": "addon_yyy",
+    "addon_id": "addon_yyy",
     "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_yyy",
     "plan": "premium",
     "owner_id": "orga_baz"
@@ -334,7 +328,7 @@ Response Body: [
 
 * `provider_id` - Should be the same as the "id" field of your uploaded manifest.
 
-* `heroku_id` - The add-on's id from Clever Cloud's POV.
+* `addon_id` - The add-on's id from Clever Cloud's POV.
 
 * `callback_url` - URL to call to get more informations about this add-on.
 
@@ -376,7 +370,7 @@ This endpoint gives you more informations about a provisioned add-on.
 
 * `owner_email` - One of the owner's email address.
 
-* `owner_emails` - All the owner's email addresses. This is not in the Heroku specification.
+* `owner_emails` - All the owner's email addresses.
 
 * `owner_id` - The id of the owner that provisioned the add-on. This should never change.
 

@@ -61,7 +61,7 @@ s3cmd ls s3://bucket-name
 If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
 
 ```bash
-s3cmd mb s3://cdn.example.com
+s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
 ```
 
 Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.

@@ -82,9 +82,131 @@ We use environment variables for some settings:
 
 * `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files / directories will be cached. (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
-## Variable definition constraints
+## Environment variables rules and formats
 
-*Spaces are not allowed* in the name of the variables.
+You will find below a list of rules applied to our environment variables and
+examples of the formats available on our different modes.
+
+### Rules
+
+* letters (ASCII only, upper case and lower case) 
+  * Valid: 
+    * FoO    
+    * foo
+    * alphabet
+  * Not Valid:
+    * ?foo
+    * bar?
+    * sa.sasa
+    * i am a var
+* digits (but not for first char)
+  * Valid: 
+    * f22oo
+    * b1ar
+    * bar42
+  * Not Valid:
+    * 0bar
+    * 1024bar
+    * 42fOo
+* underscores 
+  * Valid: 
+    * foo_bar
+    * foo_bar_bar
+    * _bar_foo
+    * _bar_foo__
+* everything else is forbidden
+
+### Java properties rules exception
+
+If your application is a Java one you can also use:
+
+* dashes
+  * Valid: 
+    * foo-bar
+    * foo-bar-foo
+    * --foo-bar
+    * --foobar
+* dots
+  * Valid: 
+    * foo.bar
+    * foo.bar.fooo
+    * .bar.foo
+
+### Format
+
+Here are some formats that you can use when changing your variables
+on our expert and Json mode. 
+Please note that for each mode you can obviously have multiple environment variables.
+
+#### Expert
+
+The format of an expert variable is: `VAR_NAME="VALUE"`
+
+Here are some tips for the mode: 
+
+- Multiple variables examples: 
+```bash
+EMPTY=""
+MULTI="line one
+line two
+line three"
+ONE="value ONE"
+TWO="value TWO"
+```
+
+- Multiline:
+```bash
+MULTI="line one
+line two
+line three"
+```
+
+- Empty value:
+```bash
+EMPTY=""
+```
+
+#### Json
+
+The format of a Json variable is: `{ "name": "THE_NAME", "value": "the value" }`. 
+Please note that you must put these variables in an array (see the multiple variable example to see how it goes).
+
+Here are some tips for the mode: 
+- Multiline:
+```json
+{
+  "name": "MULTI",
+  "value": "line one\nline two\nline three"
+}
+```
+- Empty value:
+```json
+{
+  "name": "EMPTY",
+  "value": ""
+}
+```
+- Multiple variables examples: 
+```json
+[
+  {
+    "name": "EMPTY",
+    "value": ""
+  },
+  {
+    "name": "MULTI",
+    "value": "line one\nline two\nline three"
+  },
+  {
+    "name": "ONE",
+    "value": "value ONE"
+  },
+  {
+    "name": "TWO",
+    "value": "value TWO"
+  }
+]
+```
 
 ## How do I use these variables?
 

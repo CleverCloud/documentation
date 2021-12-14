@@ -2,7 +2,7 @@
 
 ### .NET version
 
-The default version used on Clever Cloud is `5.0`. You can change it to `3.1` by setting the `CC_DOTNET_VERSION` environment variable to `3.1`. No support will be provided for end-of-life versions.
+The default version used on Clever Cloud is `6.0`. You can change it to `5.0` by setting the `CC_DOTNET_VERSION` environment variable to `5.0`. No support will be provided for end-of-life versions.
 
 ### Requirements
 
@@ -12,12 +12,14 @@ Be sure that:
 * You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
 * You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
-Let's take an example with the Microsoft [TodoApi project](https://github.com/Azure-Samples/dotnet-core-api.git). 
+Let's take an example with the [simple-feed-reader project](https://github.com/dotnet-architecture/simple-feed-reader). 
 
-During deployment, the `TodoApi.csproj` file and the target framework `netcoreapp3.1` are automatically detected. Then, the .NET project is published:
+First, you need to add the `APP_FOLDER=SimpleFeedReader` environment variable to define the application folder inside the Git repository.
+
+During deployment, the `SimpleFeedReader.csproj` file and the target framework `net5.0` are automatically detected. Then, the .NET project is published:
 
 ```bash
-dotnet publish --framework netcoreapp3.1 --configuration Release
+dotnet publish --framework net5.0 --configuration Release
 ```
 
 No additional configuration is required (unless multiple project files or target frameworks are present, see the documentation below).
@@ -27,7 +29,7 @@ No additional configuration is required (unless multiple project files or target
 If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the `CC_DOTNET_PROJ` environment variable.
 
 ```bash
-CC_DOTNET_PROJ=TodoApi2
+CC_DOTNET_PROJ=SimpleFeedReader
 ```
 
 ### Multiple binary targets
@@ -38,17 +40,18 @@ If your project file defines multiple targets, like :
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0;netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0;net6.0</TargetFramework>
   </PropertyGroup>
   ...
 ```
 
 You must specify the one you want to run, with the `CC_DOTNET_TFM` environment variable.
 
+
 If `CC_DOTNET_TFM` is specified, then the executable produced by this target is used to start the application.
 
 ```bash
-CC_DOTNET_TFM=netcoreapp3.1
+CC_DOTNET_TFM=net5.0
 ```
 
 ### Dependencies
@@ -58,12 +61,9 @@ Make sure to list all your dependencies in your project file. For example:
 ```xml
   ...
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.4.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />
+  </ItemGroup>
   </ItemGroup>
 </Project>
 ```

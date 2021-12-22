@@ -40,19 +40,18 @@ Before setting up your app, be sure to have a [New Relic Account](https://www.ne
 
 ### Configuration
 
-To configure your New Relic, you need to set the environment variables `NEWRELIC_LICENSE` and `NEWRELIC_APPNAME` (optional).
+To configure your New Relic, you need to set the environment variables `NEW_RELIC_LICENSE_KEY` and `NEW_RELIC_APP_NAME` (optional).
 
-Alternatively you can create and add a `./clevercloud/newrelic.json` file in your project, with the
-following fields:
+Alternatively you can create and add a `./clevercloud/newrelic.json` file in your project, with the following fields:
 
-```javascript
+```json
 {
   "license": "licenceID",
   "appname": "NameOfYourApp(optional)"
 }
 ```
 
-If the `appname` or `NEWRELIC_APPNAME` is not specified, we use your application id for the name.
+If the `appname` or `NEW_RELIC_APP_NAME` is not specified, we use your application id for the name.
 
 ### Usage
 

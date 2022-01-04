@@ -100,10 +100,6 @@ Every PostgreSQL database managed by Clever Cloud comes with the following defau
 `"uuid-ossp"`,
 `xml2`
 
-## Encryption at rest
-
-Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
-
 ## Automatic vacuuming
 
 [Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.  

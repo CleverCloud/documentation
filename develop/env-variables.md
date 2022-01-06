@@ -84,65 +84,65 @@ We use environment variables for some settings:
 
 ## Environment variables rules and formats
 
-You will find below a list of rules applied to our environment variables and
+You will find below a list of rules applied to our environment variables keys and
 examples of the formats available on our different modes.
 
 ### Rules
 
-* letters (ASCII only, upper case and lower case) 
+* Letters (ASCII only, upper and lower case) 
   * Valid: 
-    * FoO    
-    * foo
-    * alphabet
+    * user_id    
+    * USER_ID
+    * UsERId
+    * userid
+    * USERID
   * Not Valid:
-    * ?foo
-    * bar?
-    * sa.sasa
-    * i am a var
-* digits (but not for first char)
+    * user_id?
+    * ?userid
+    * user.id
+    * user id
+* Digits (but not for first character)
   * Valid: 
-    * f22oo
-    * b1ar
-    * bar42
+    * user2id
+    * userid42
   * Not Valid:
-    * 0bar
-    * 1024bar
-    * 42fOo
-* underscores 
+    * 2userid
+    * 1user_Id
+* Underscores 
   * Valid: 
-    * foo_bar
-    * foo_bar_bar
-    * _bar_foo
-    * _bar_foo__
-* everything else is forbidden
+    * user_id
+    * all_user_id
+    * _user_id
+    * _user_id__
+* Everything else is not allowed
 
 ### Java properties rules exception
 
-If your application is a Java one you can also use:
+In case of a Java application you can also use:
 
-* dashes
+* Dashes
   * Valid: 
-    * foo-bar
-    * foo-bar-foo
-    * --foo-bar
-    * --foobar
-* dots
+    * spring-boot
+    * spring-boot-database
+    * --spring-boot
+    * --spring
+* Dots
   * Valid: 
-    * foo.bar
-    * foo.bar.fooo
-    * .bar.foo
+    * spring.boot
+    * spring.datasource.url
+    * .spring.url
 
 ### Format
 
 Here are some formats that you can use when changing your variables
-on our expert and Json mode. 
-Please note that for each mode you can obviously have multiple environment variables.
+on our expert and JSON mode. 
+Note: For each mode you can obviously have multiple environment variables.
 
 #### Expert
 
 The format of an expert variable is: `VAR_NAME="VALUE"`
 
-Here are some tips for the mode: 
+Here are some examples for the mode: 
 
 - Multiple variables examples: 
 ```bash
@@ -166,12 +166,12 @@ line three"
 EMPTY=""
 ```
 
-#### Json
+#### JSON
 
-The format of a Json variable is: `{ "name": "THE_NAME", "value": "the value" }`. 
-Please note that you must put these variables in an array (see the multiple variable example to see how it goes).
+The format of a JSON variable is: `{ "name": "THE_NAME", "value": "the value" }`. 
+Note: You must put these variables in an array (see the multiple variable example to see how it goes).
 
-Here are some tips for the mode: 
+Here are some examples for the mode: 
 - Multiline:
 ```json
 {

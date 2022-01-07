@@ -91,29 +91,29 @@ examples of the formats available on our different modes.
 
 * Letters (ASCII only, upper and lower case) 
   * Valid: 
-    * user_id    
-    * USER_ID
-    * UsERId
-    * userid
-    * USERID
+    * `user_id`    
+    * `USER_ID`
+    * `UsERId`
+    * `userid`
+    * `USERID`
   * Not Valid:
-    * user_id?
-    * ?userid
-    * user.id
-    * user id
+    * `user_id?`
+    * `?userid`
+    * `user.id`
+    * `user id`
 * Digits (but not for first character)
   * Valid: 
-    * user2id
-    * userid42
+    * `user2id`
+    * `userid42`
   * Not Valid:
-    * 2userid
-    * 1user_Id
+    * `2userid`
+    * `1user_Id`
 * Underscores 
   * Valid: 
-    * user_id
-    * all_user_id
-    * _user_id
-    * _user_id__
+    * `user_id`
+    * `all_user_id`
+    * `_user_id`
+    * `_user_id__`
 * Everything else is not allowed
 
 ### Java properties rules exception
@@ -122,15 +122,15 @@ In case of a Java application you can also use:
 
 * Dashes
   * Valid: 
-    * spring-boot
-    * spring-boot-database
-    * --spring-boot
-    * --spring
+    * `spring-boot`
+    * `spring-boot-database`
+    * `--spring-boot`
+    * `--spring`
 * Dots
   * Valid: 
-    * spring.boot
-    * spring.datasource.url
-    * .spring.url
+    * `spring.boot`
+    * `spring.datasource.url`
+    * `.spring.url`
 
 ### Format
 

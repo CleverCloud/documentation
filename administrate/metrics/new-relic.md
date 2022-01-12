@@ -6,6 +6,7 @@ tags:
 - apps
 keywords:
 - new relic
+- newrelic
 - metrics
 - monitoring
 ---

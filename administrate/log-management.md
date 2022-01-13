@@ -11,6 +11,8 @@ keywords:
 - log drains
 - drain
 - drains
+- datadog
+- newrelic
 ---
 
 Log management is currently only available through our API and [clever-tools]({{< ref "/getting-started/cli.html" >}}).
@@ -187,4 +189,16 @@ clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input
 
 {{< alert "warning" "zone" >}}
 Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
+{{< /alert >}}
+
+### NewRelic
+
+To create a [Datadog](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
+
+```bash
+clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
+```
+
+{{< alert "warning" "zone" >}}
+NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
 {{< /alert >}}

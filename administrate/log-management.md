@@ -193,7 +193,7 @@ Datadog has two zones, **EU** and **COM**. An account on one zone is not availab
 
 ### NewRelic
 
-To create a [Datadog](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
+To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
 
 ```bash
 clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"

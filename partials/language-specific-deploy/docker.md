@@ -21,10 +21,13 @@ CMD <command to run>
 If the building step of your app crashets because it users more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}})
 
 ```bash
-# Run the memory intensive build on a M instance
+# The base image
+FROM outlinewiki/outline:version-0.44.0
+
+# Run the memory intensive build on an instance with 4 GB of memory (M)
 RUN yarn install && yarn build
 
-# Start the app on a smaller instance
+# Start the app on a smaller instance (nano)
 CMD yarn start
 ```
 

@@ -20,7 +20,7 @@ CMD <command to run>
 
 ### Memory usage during building
 
-If the building step of your app crashets because it users more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}})
+If the building step of your app crashes because it uses more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}})
 
 ```bash
 # The base image

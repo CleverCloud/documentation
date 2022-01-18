@@ -16,6 +16,8 @@ You can virtually put everything you want in your Dockerfile. The only mandatory
 CMD <command to run>
 ```
 
+**command to run**: this is the command that starts your application. Your application **must** listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.
+
 ### Memory usage during building
 
 If the building step of your app crashets because it users more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}})
@@ -30,8 +32,6 @@ RUN yarn install && yarn build
 # Start the app on a smaller instance (nano)
 CMD yarn start
 ```
-
-**command to run**: this is the command that starts your application. Your application **must** listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.
 
 ### TCP support
 

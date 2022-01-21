@@ -254,7 +254,7 @@ So you can alter the build&start process for your application.
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
 |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
-|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, asserts:precompile` |  |  |
+|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
 |[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
 |CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |

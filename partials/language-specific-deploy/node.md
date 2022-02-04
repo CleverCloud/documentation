@@ -89,14 +89,17 @@ If your application has private dependencies, you can add a [Private SSH Key]({{
 
 We support [npm](https://www.npmjs.com) and [yarn](https://yarnpkg.com) as package managers.
 
-The [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_BUILD_TOOL` allows you to define which build tool you want to use. The default value is set to `npm` but it can be any of these values:
+The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which build tool you want to use. The default value is set to `npm` but it can be any of these values:
 
 * `npm-install`: uses [npm install](https://docs.npmjs.com/cli/install)
 * `npm-ci`: uses [npm ci](https://docs.npmjs.com/cli/ci)
 * `npm`: Defaults to `npm-install` for now
-* `yarn`: uses [yarn](https://yarnpkg.com/)
+* `yarn`: uses [yarn](https://classic.yarnpkg.com/lang/en/)
+* `yarn2`: uses [yarn@2](https://yarnpkg.com/)
 
-If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. To overwrite this behaviour, either delete the `yarn.lock` file or set the `NODE_BUILD_TOOL` environment variable.
+If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. To overwrite this behaviour, either delete the `yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+
+If none of the above package managers fit your needs, you can put your own using `CC_CUSTOM_BUILD_TOOL`.
 
 ## Automatic HTTPS redirection
 

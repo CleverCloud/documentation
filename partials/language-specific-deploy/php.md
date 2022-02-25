@@ -240,9 +240,9 @@ $dbh = new PDO(
     <p>Environment variables are displayed in the default output of `phpinfo()`.
     If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
     </p>
- ```php
- phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
- ```
+    ```php
+    phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
+    ```
 {{< /alert >}}
 
 ## Composer

@@ -80,9 +80,9 @@ Fields
 
 * `api/production/sso_url` - The production endpoint for single sign-on.
 
-* `api/test/base_url` - The test endpoint for Clever Cloud api actions. Used to test your service on your own machine. You can skip this field.
+* `api/test/base_url` - The test endpoint for Clever Cloud api actions. Used to test your service when you create an add-on provider. Then it is the `api/production/sso_url` which is used.
 
-* `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service on your own machine. You can skip this field.
+* `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. Then it is the `api/production/base_url` which is used.
 
 ### Authentication
 

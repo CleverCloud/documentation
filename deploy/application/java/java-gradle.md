@@ -29,7 +29,7 @@ Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 ## Configure your Java application
 
 You *must* provide a `clevercloud/gradle.json` file (gradle.json file in
-clevercloud folder which is at the root of you application) that
+clevercloud folder which is at the root of your repository) that
 contains at least the following:
 
 ```json

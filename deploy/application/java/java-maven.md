@@ -42,7 +42,9 @@ Your application must be set to listen on the port 8080.
 
 ### Mandatory configuration
 
-The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of you application) file must contain the _goal_ field to indicate how to start your application:
+#### Option 1: JSON file in repository
+
+The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of your repository) file must contain the _goal_ field to indicate how to start your application:
 
 ```json
   {
@@ -57,6 +59,14 @@ An example of what can be found as a goal value is:
 ```txt
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
 ```
+
+#### Option 2: Environment variable
+
+If you don't want to add a file to your repository, or if you're using a monorepository with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
+
+Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK!
+
+Eg. `MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with spring-boot-maven-plugin
 
 ### Optional configuration
 
@@ -110,6 +120,10 @@ If you need to specify a maven profile (either for the `build` or the `deploy` g
 ```txt
 "-Pmyprofile package"
 ```
+
+Or use the `CC_MAVEN_PROFILES` environment variable.
+
+Eg. `CC_MAVEN_PROFILES="prod"`.
 
 ## Custom run command
 

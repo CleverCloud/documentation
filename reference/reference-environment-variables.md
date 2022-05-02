@@ -41,19 +41,18 @@ So you can alter the build&start process for your application.
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
 |[CC_TROUBLESHOOT]({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
 |[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-|CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | on-failure |
-|CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | 1 |
+|CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
+|CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | `1` |
 |[CC_PRE_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_pre_build_hook" >}}) | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
 |[CC_POST_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_post_build_hook" >}}) | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
 |[CC_PRE_RUN_HOOK]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}}) | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
 |[CC_RUN_SUCCEEDED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
 |[CC_RUN_FAILED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has failed to start. |  |
-|CC_RUN_COMMAND | Custom command to run your application. |  |  |
-|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |  |
-
+|CC_RUN_COMMAND | Custom command to run your application. |  |
+|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
 |CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
 |CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
-|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | id_ed25519 |
+|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
 |CC_DISABLE_METRICS | Disable metrics collection. | `false` |
 |[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
 |[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |

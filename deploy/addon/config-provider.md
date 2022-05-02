@@ -55,7 +55,7 @@ In the console, go to the organisation where you have your applications.
 5. Define a name and click on *"Next"*
 
 Once you have your configuration provider, you can set the variables in the form.
-You can find out more about rules and format in [this page]({{< ref "develop/env-variables/#environment-variables-rules-and-formats" >}}).
+You can find out more about rules and format in [this page]({{< ref "develop/env-variables.md#environment-variables-rules-and-formats" >}}).
 
 **NOTE:** At any point, you can link/unlink an application from the configuration provider by going to the app's _"Service dependencies"_ page.
 

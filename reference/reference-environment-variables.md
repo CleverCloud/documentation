@@ -77,7 +77,7 @@ So you can alter the build&start process for your application.
 |CC_DOCKERFILE | The name of the Dockerfile to build. | `Dockerfile` |  |
 |CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
 |CC_DOCKER_EXPOSED_HTTP_PORT | Set to custom HTTP port if your Docker container runs on custom port. | `8080` |  |
-|CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port but **it still needs a support request to make use of it.** | `4040` |  |
+|CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port. | `4040` |  |
 |CC_DOCKER_FIXED_CIDR_V6 | Activate the support of IPv6 with an IPv6 subnet int the docker daemon. |  |  |
 |CC_DOCKER_LOGIN_USERNAME | The username to login to a private registry. |  |  |
 |CC_DOCKER_LOGIN_PASSWORD | The password of your username. |  |  |

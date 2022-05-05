@@ -50,4 +50,4 @@ If you want to unarchieve your application simply click the **un-archive** butto
 
 ## Deleting your application
 
-You can perform this operation in the **Overview** menu of your application in the Clever Cloud console. You will find a red **remove this application** button at the bottom. This will open a modal where you should type the name of your application. Click **remove** to finish the process. Your application will be deleted and no longer accessible.
+You can perform this operation in the **Information** menu of your application in the Clever Cloud console. You will find a red **remove this application** button at the bottom. This will open a modal where you should type the name of your application. Click **remove** to finish the process. Your application will be deleted and no longer accessible.

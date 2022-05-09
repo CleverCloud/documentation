@@ -84,7 +84,9 @@ Matomo on Clever Cloud is the easiest way to set it up, but you can go further a
 ### Matomo PHP Instances
 
 Those are the plans of the PHP instance:
+
 <script type="module" src="https://components.clever-cloud.com/load.js?version=7&components=cc-pricing-product.smart-runtime"></script>
+
 <div>
 <cc-smart-container context='{"productId": "php" }'>
   <cc-pricing-product mode="runtime" action="none">
@@ -94,9 +96,13 @@ Those are the plans of the PHP instance:
 </div>
 
 ### MySQL database
+
 Those plans are the available MySQL databases:
+
 {{< pricingAddon "mysql-addon" "[\"cpu\", \"memory\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}
 
 ### Redis cache
+
 Those plans are the available Redis cache:
+
 {{< pricingAddon "redis-addon" "[\"cpu\", \"max-db-size\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\", \"databases\"]" >}}

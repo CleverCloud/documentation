@@ -43,7 +43,7 @@ The process consists in three steps:
 
 1. First, perform a backup and download it, either with the Clever Cloud add-on dashboard or the `mongodump` command from your workstation.
 2. Install `mongorestore` (a tool packaged with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
-3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page. If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...)
+3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page (open the "Backup" panel and click on the "Restore" link to find the complete command line to perform the database import). If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...).
 
 ## Encryption at rest
 

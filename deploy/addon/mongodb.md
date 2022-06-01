@@ -18,8 +18,8 @@ MongoDB is an open source NoSQL document-oriented database. We provide these dat
 
 The version currently installed by the add-on is :
 
-- on shared plans (Peanut) : MongoDB 4.0.3
-- on newly created dedicated databases (plans Hazelnut and above) : MongoDB 4.0.3
+- on shared plans (DEV) : MongoDB 4.0.3
+- on newly created dedicated databases (plans XS Small Space and above) : MongoDB 4.0.3
 
 ## About Free Databases
 

@@ -397,12 +397,12 @@ So you can alter the build&start process for your application.
 |CC_PGPOOL_HEALTH_CHECK_RETRY_DELAY | Amount of time to wait (in seconds) between retries | `1`  | |
 |CC_PGPOOL_CONNECT_TIMEOUT | Timeout value in milliseconds before giving up to connect to backend | `10000` | |
 |CC_PGPOOL_MEMORY_CACHE_ENABLED | Use the memory cache functionality | `off` | |
-|CC_PGPOOL_MEMQCACHE_TOTAL_SIZE | Total memory size in bytes for storing memory cache | `64` | |
+|CC_PGPOOL_MEMQCACHE_TOTAL_SIZE | Total memory size in megabytes for storing memory cache | `64` | |
 |CC_PGPOOL_MEMQCACHE_MAX_NUM_CACHE | Total number of cache entries | `1000000` | |
 |CC_PGPOOL_MEMQCACHE_EXPIRE | Memory cache entry life time specified in seconds | `0` | |
 |CC_PGPOOL_MEMQCACHE_AUTO_CACHE_INVALIDATION | Invalidation of query cache is triggered by corresponding DDL/DML/DCL | `on` | |
-|CC_PGPOOL_MEMQCACHE_MAXCACHE | Maximum SELECT result size in bytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)  | `400` | |
-|CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in bytes  | `1` | |
+|CC_PGPOOL_MEMQCACHE_MAXCACHE | Maximum SELECT result size in kilobytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)  | `400` | |
+|CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in megabytes  | `1` | |
 |CC_PGPOOL_CACHE_SAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names to memcache that don't write to database (regexp are accepted)  | `''` | |
 |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
 {{< /table >}}

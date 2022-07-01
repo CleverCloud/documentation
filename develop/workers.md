@@ -10,6 +10,10 @@ keywords:
 
 ## Workers
 
+{{< alert "info" "Docker" >}}
+Note that workers are not available for docker applications.
+{{< /alert >}}
+
 You can run background tasks running in parallel of your application. They will be restarted automatically on error.
 Those are especially useful for environments where you can't have long-running processes such as PHP, Ruby or Python.
 

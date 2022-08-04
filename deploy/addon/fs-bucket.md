@@ -32,7 +32,7 @@ Buckets are configured using environment variables. Add the following to your ap
 ```
 CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com
 ```
-_don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder and your fs-bucket exists) and your fs-bucket host_ 
+_don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder not exists) and your fs-bucket host_ 
 
 You can setup multiple buckets by appending a number at the end of the environment variable's name.
 ```

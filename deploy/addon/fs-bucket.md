@@ -30,8 +30,9 @@ You will be able to retrieve generated data between two deployments.
 Buckets are configured using environment variables. Add the following to your application :
 
 ```
-CC_FS_BUCKET=/some/empty/folder:bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com
+CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com
 ```
+_don't forget to replace the path of the mounted folder and the UUID of the fs-bucket with your informations_
 
 You can setup multiple buckets by appending a number at the end of the environment variable's name.
 ```

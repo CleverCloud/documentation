@@ -58,9 +58,9 @@ You need to paste a PEM bundle containing (in this order):
 You should create a `file.pem`containing:
 
 ```
------BEGIN PRIVATE KEY-----
+-----BEGIN RSA PRIVATE KEY-----
  <the private key>
------END PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 <the certificate>
 -----END CERTIFICATE-----

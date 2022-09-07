@@ -9,22 +9,26 @@ keywords:
 - consumption
 ---
 
-Clever Cloud billing is based on two kind of products: apps and add-ons. Running apps consume credits within the organization, whereas add-ons are directly billed for the coming month.
+Clever Cloud's billing is based on several types of products: applications (Java, PHP, Jenkins, etc.), managed services (MySQL, PostgreSQL), storage services (via FTP with FS Buckets, or via the S3 protocol with Cellar) and other services (Heptapod, Pulsar, etc).
 
-## Applications Bill Calculation
+## Calcul de la facturation
 
-Apps credit consumption is done on a 10 minute basis per scaler (instance). If you have one application running on two scalers, you will be billed each month like this: `Price per month = Number of running x instance price per 10min x 144 x 30`
+The calculation of consumption is based on the second of running. Once your monthly bill has been generated, you can refer to it to find out by service:
 
-In the console, the consumption of each apps is displayed 
+* the size of the instances used
+* the execution time
+* the unit price per second
+* the total monthly amount
 
-<br/>
+To find your consumption history, it is visible in the **Metrics in Grafana** service via a specific Grafana dashboard. This is called the **Uptime Service**.
 
-{{< image "/images/analytics.png" "analytics"  >}}
+
+{{< image "/images/analytics.png" "The Uptime Service dashboard in Grafana"  >}}
 
 ## Upscale & Downscale Impacts
 
-If your apps is experiencing upscale and downscale frequently, like several times per month, your monthly invoice amount will not be exactly the same each month, if auto-scalability is enabled (in your app preferences, tab "Scaling").
+If the auto-scalability option is activated, it is possible that the size of the instances of your applications will vary during the month. This variation will not be systematically identical from one month to the next, which explains the variation in the amount of your bills.
 
 Most of our cutomers apps running with auto-scaling enabled have less than a ±5% variation between consecutive months in their invoice. Especially because upscale events don't last for long before a downscale occurs, usually after 2-3 hours. High traffic is most of the time temporary (a newsletter sendings, a TV show appearance, Techcrunch effect etc.).
 
-In the end, auto-scaling is pretty useful to avoid applications slowdown with a significant impact on your billing.
+In the end, auto-scaling is pretty useful to avoid applications slowdown without a significant impact on your billing.

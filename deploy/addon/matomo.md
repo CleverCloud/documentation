@@ -45,7 +45,7 @@ We've already integrated the Clever Cloud SSO, so you can login directly into yo
 
 1. Make sure you have clever-tools installed locally. Report to the [getting started]({{< ref `/reference/clever-tools/getting_started.md` >}}) guide if needed.
 2. List the available plans and options for Matomo: `clever addon providers show Matomo`.
-3. In your terminal, you can then run `clever addon create jenkins <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
+3. In your terminal, you can then run `clever addon create matomo <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
 
 Refer to the [documentation]({{< ref `/reference/clever-tools/create.md` >}}) for more details on application creation with Clever Tools
 
@@ -63,7 +63,7 @@ This configuration helps you taking advantage of optimizations by using a Redis 
 
 ### Using your Matomo
 
-If you're new with Matomo, you would probably want to read the Matomo's guides on [the official documentation](https://matomo.org/guides/)
+If you're new with Matomo, you would probably want to read the Matomo's guides on [the official documentation](https://matomo.org/guides/).
 
 ## Customize your Matomo instance
 

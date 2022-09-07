@@ -82,9 +82,131 @@ We use environment variables for some settings:
 
 * `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files / directories will be cached. (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
 
-## Variable definition constraints
+## Environment variables rules and formats
 
-*Spaces are not allowed* in the name of the variables.
+You will find below a list of rules applied to our environment variables keys and
+examples of the formats available on our different modes.
+
+### Rules
+
+* Letters (ASCII only, upper and lower case) 
+  * Valid: 
+    * `user_id`    
+    * `USER_ID`
+    * `UsERId`
+    * `userid`
+    * `USERID`
+  * Not Valid:
+    * `user_id?`
+    * `?userid`
+    * `user.id`
+    * `user id`
+* Digits (but not for first character)
+  * Valid: 
+    * `user2id`
+    * `userid42`
+  * Not Valid:
+    * `2userid`
+    * `1user_Id`
+* Underscores 
+  * Valid: 
+    * `user_id`
+    * `all_user_id`
+    * `_user_id`
+    * `_user_id__`
+* Everything else is not allowed
+
+### Java properties rules exception
+
+In case of a Java application you can also use:
+
+* Dashes
+  * Valid: 
+    * `spring-boot`
+    * `spring-boot-database`
+    * `--spring-boot`
+    * `--spring`
+* Dots
+  * Valid: 
+    * `spring.boot`
+    * `spring.datasource.url`
+    * `.spring.url`
+
+### Format
+
+Here are some formats that you can use when changing your variables
+on our expert and JSON mode. 
+Note: For each mode you can obviously have multiple environment variables.
+
+#### Expert
+
+The format of an expert variable is: `VAR_NAME="VALUE"`
+
+Here are some examples for the mode: 
+
+- Multiple variables examples: 
+```bash
+EMPTY=""
+MULTI="line one
+line two
+line three"
+ONE="value ONE"
+TWO="value TWO"
+```
+
+- Multiline:
+```bash
+MULTI="line one
+line two
+line three"
+```
+
+- Empty value:
+```bash
+EMPTY=""
+```
+
+#### JSON
+
+The format of a JSON variable is: `{ "name": "THE_NAME", "value": "the value" }`. 
+Note: You must put these variables in an array (see the multiple variable example to see how it goes).
+
+Here are some examples for the mode: 
+- Multiline:
+```json
+{
+  "name": "MULTI",
+  "value": "line one\nline two\nline three"
+}
+```
+- Empty value:
+```json
+{
+  "name": "EMPTY",
+  "value": ""
+}
+```
+- Multiple variables examples: 
+```json
+[
+  {
+    "name": "EMPTY",
+    "value": ""
+  },
+  {
+    "name": "MULTI",
+    "value": "line one\nline two\nline three"
+  },
+  {
+    "name": "ONE",
+    "value": "value ONE"
+  },
+  {
+    "name": "TWO",
+    "value": "value TWO"
+  }
+]
+```
 
 ## How do I use these variables?
 

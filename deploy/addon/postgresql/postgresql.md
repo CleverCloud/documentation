@@ -46,6 +46,12 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 
 Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
 
+## Note on shared databases
+
+Free databases are instantiated from a shared cluster. The way postgresql works on shared clusters is that a "pg_database" table references the name, and only the name, of other databases in that same cluster. The data, on the other hand, is not accessible.
+
+This referencing does not exist for dedicated databases.
+
 ## Pgpool-II
 
 {{< readfile "/content/partials/pgpool.md" >}}
@@ -99,10 +105,6 @@ Every PostgreSQL database managed by Clever Cloud comes with the following defau
 `unaccent`,
 `"uuid-ossp"`,
 `xml2`
-
-## Encryption at rest
-
-Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
 
 ## Automatic vacuuming
 

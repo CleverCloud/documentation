@@ -37,7 +37,7 @@ This will provide you a configuration file that you just need to add to your hom
 To create a bucket, you can use s3cmd:
 
 ```bash
-    s3cmd mb s3://bucket-name
+s3cmd mb s3://bucket-name
 ```
 
 The bucket will now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
@@ -45,7 +45,7 @@ The bucket will now be available at `https://<bucket-name>.cellar-c2.services.cl
 You can upload files (`--acl-public` makes the file publicly readable):
 
 ```bash
-    s3cmd put --acl-public image.jpg s3://bucket-name
+s3cmd put --acl-public image.jpg s3://bucket-name
 ```
 
 The file will then be publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
@@ -53,7 +53,7 @@ The file will then be publicly available at `https://<bucket-name>.cellar-c2.ser
 You can list the files in your bucket, you should see the `image.png` file:
 
 ```bash
-    s3cmd ls s3://bucket-name
+s3cmd ls s3://bucket-name
 ```
 
 ### Using a custom domain
@@ -61,15 +61,25 @@ You can list the files in your bucket, you should see the `image.png` file:
 If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
 
 ```bash
-    s3cmd mb s3://cdn.example.com
+s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
 ```
 
 Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
 
 {{< alert "warning" "S3 signature algorithm" >}}
-    New cellar add-ons supports the `v4` signature algorithm from S3.
+  New cellar add-ons supports the `v4` signature algorithm from S3.
   If you are still using an old account (`cellar.services.clever-cloud.com`), please make sure your client is configured to use the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
 {{< /alert >}}
+
+#### Static hosting
+
+You can use a bucket to host your static website, this [blog article](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describe well how it can be done.
+
+Be aware that SPA applications won't work because our proxy serving the bucket needs to find an HTML file that match the route.
+
+For example if your path is `/login` you need to have a file `login.html` because the `index.html` is not the default entrypoint to handle the path.
+
+You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
 
 ## Using AWS CLI
 
@@ -158,12 +168,12 @@ import java.net.URL;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] argv) {
-        ClientConfiguration opts = new ClientConfiguration(); // Only needed for "old" Cellar (V1)
-        opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
+    public static void main(String[] argv) {      
         EndpointConfiguration endpointConfiguration = new EndpointConfiguration("<host>", null);
         AWSStaticCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(
-            new BasicAWSCredentials("<key>", "<secret>"));
+            new BasicAWSCredentials("<key>", "<secret>")
+        );
+        
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
             .withCredentials(credentialsProvider)
             .withClientConfiguration(opts)
@@ -244,7 +254,7 @@ The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Withou
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. Writes won't be allowed to anyone that is not authenticated.
 
 {{< alert "warning" "Any object will be exposed publicly" >}}
-    This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
+  This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
 {{< /alert >}}
 
 

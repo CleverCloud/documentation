@@ -13,8 +13,6 @@ from their add-ons to Clever Cloud's logging system. Doing this
 allows the users to get their add-on's logs in Clever Cloud's
 dashboard.
 
-Note that, for the same reasons as the one mentioned in [Add-on API]({{< ref "extend/add-ons-api.md" >}}) article, which you should have read if your reading these lines, if you already have a Heroku add-on provider, you should not be lost using this log collector API.
-
 ## Send a line of log
 
 Log lines must be sent via https. See the following example with the `curl` command:

@@ -16,9 +16,13 @@ Seek help by querying us by email, allowing you to quickly gain answers to your 
 
 * <support@clever-cloud.com>
 
-## Live Chat
+## Ticket Center
 
-You can find in the console a button to start a live chat with one of our engineers. Feel free to use it when this service available, from 9 a.m to 6 p.m <acronym title="Central European Summer Time">CEST</acronym>+2 during open business days.
+You can find in the console a button to start a conversation with our engineers. For each new ticket it will create a new thread, on a specific subject. Therefore, you can create several tickets for each issue.  
+
+If you open a ticket inside an organisation with members, they will be added to the discussion by e-mail.
+
+Feel free to use it when this service available, from 9 a.m to 6 p.m <acronym title="Central European Summer Time">CEST</acronym>+2 during open business days.
 
 ## Critical application support
 

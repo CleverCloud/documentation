@@ -167,7 +167,7 @@ We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) pr
 pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
           --auth-params $ADDON_PULSAR_TOKEN \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
-          namespaces topic $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
+          namespaces topics $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
 ### Rust example

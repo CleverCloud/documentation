@@ -39,6 +39,13 @@ To know how to write your `varnish.vcl` file, please have a look at the [Varnish
 
 Once varnish is enabled, your application should no longer listen on port **8080**, but on port **8081**. Because it's Varnish that will listen on port **8080**, and it will have in its configuration your application as backend.
 
+## Configure the cache size
+
+You can change the storage size specified in the varnish.params file with the `CC_VARNISH_STORAGE_SIZE` environment variable (the default value is `1G`).
+```bash
+CC_VARNISH_STORAGE_SIZE=2G
+```
+
 ## Varnish 6 migration
 
 If you already have a configuration for an older version of varnish, you can read this [guide](https://varnish-cache.org/docs/6.0/whats-new/upgrading-6.0.html) to upgrade to version 6.

@@ -33,6 +33,8 @@ To run your Meteor.js application you need a few mandatory [environment variable
 * `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
 * `PORT`: keep the current value of 8080
 
+With Meteor 2.6.n comes MongoDB 5.n and [the new npm driver](https://guide.meteor.com/2.6-migration.html). You need to append `?directConnection=true` in your `MONGO_URL` to avoid the new mongo driver Service Discovery feature.
+
 ##### Optional Meteor settings as environment variable
 
 Some application require a `settings.json` file to [store api keys and other various private and public Meteor variables](https://docs.meteor.com/api/core.html#Meteor-settings).
@@ -43,12 +45,12 @@ You can declare a `METEOR_SETTINGS` environment variable and past the content of
 Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](https://www.clever-cloud.com/doc/nodejs/nodejs/#requirements) documentation.
 To find out which version is required by your application type the following command `meteor node -v` inside root folder.
 
-Currently with Meteor *1.8.3* the Node.js version is *8.17.0* so you should add the following inside the `package.json` file.
+Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.
 
 ```
   ...
   "engines": {
-    "node": "8.17.0"
+    "node": "14.18.3"
   },
   ...
 ```
@@ -86,6 +88,8 @@ Your application will then be built using `meteor build --server-only` and deplo
 ### Oplog Tailing
 Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following [environment variable](#setting-up-environment-variables-on-clever-cloud):
 - `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
+
+Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and you should not add this to your environment variables.
 
 ## Migrate from a Node.js instance
 

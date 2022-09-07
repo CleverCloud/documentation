@@ -9,10 +9,11 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `7.3`
 - `7.4`
 - `8.0`
+- `8.1`
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7 version available.
 
-You can of course change it whenever you want then redeploy your application to use the version you want.
+You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits `X.Y` not `X.Y.Z`.
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
 
@@ -239,9 +240,9 @@ $dbh = new PDO(
     <p>Environment variables are displayed in the default output of `phpinfo()`.
     If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
     </p>
- ```php
- phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
- ```
+    ```php
+    phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
+    ```
 {{< /alert >}}
 
 ## Composer
@@ -369,10 +370,11 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 7.3](https://php73info.cleverapps.io).
 - [PHP 7.4](https://php74info.cleverapps.io).
 - [PHP 8.0](https://php80info.cleverapps.io).
+- [PHP 8.1](https://php80info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
+The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`, `gRPC`, `protobuf`, `Pspell`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}})
 to disable them.
@@ -388,11 +390,6 @@ If you have a request about modules, feel free to contact our support at <suppor
 
 Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding
 [environment variable](#setting-up-environment-variables-on-clever-cloud):
-
-* APC: set `ENABLE_APC` to `true`.
-
-    APC is a framework for caching and optimizing PHP intermediate code.
-    **Warning**: APC is only available for PHP 5.4.
 
 * APCu: set `ENABLE_APCU` to `true`.
 
@@ -411,6 +408,14 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 * Event: set `ENABLE_EVENT` to `true`.
 
     Event is an extension to schedule I/O, time and signal based events.
+
+* GEOS: set `ENABLE_GEOS` to `true`.
+
+    GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
+
+* GnuPG: set `ENABLE_GNUPG` to `true`.
+
+    GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
@@ -433,15 +438,19 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
 
-* XDebug: set `ENABLE_XDEBUG` to `true`.
+* PCS: set `ENABLE_PCS` to `true`.
 
-    XDebug is a debugger and profiler tool for PHP.
+    PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
 * Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
 * Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`). 
+
+* XDebug: set `ENABLE_XDEBUG` to `true`.
+
+    XDebug is a debugger and profiler tool for PHP.
 
 ## Use Redis to store PHP Sessions
 

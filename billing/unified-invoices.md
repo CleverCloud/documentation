@@ -85,5 +85,4 @@ If a bill is unpaid, several steps are taken before the service is cut off:
 * an announcement of the cut-off from the 15th of the month
 * the effective termination of services and blocking of deployments (variable date)
 
-Support and access to your account will remain available to regularise non-payment situations
-
+Support and access to your account will remain available to regularise non-payment situations.

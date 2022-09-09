@@ -1,7 +1,7 @@
 ---
 title: Unified Invoicing
 position: 1
-shortdesc: Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc). 
+shortdesc: Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
 tags:
 - billing
 keywords:
@@ -17,38 +17,73 @@ Each month, for each organization, a single invoice is generated, including the 
 
 ## Monthly invoice
 
-At the begin of every month, a single new invoice is created. It provisions your account for the month to come:
+At the beginning of each month, a new invoice is generated for each organisation. It details the consumption of services, and the provisioning of your account for the coming month.
 
-* Credits provision based on the previous month consumption
-* Optionally: regularisation for over-consumption from the previous month
-* Add-ons
+The invoice is made up of three distinct sections:
 
-Addons with a fixed monthly price are listed in the invoice, one line per addon. Addons with pay-as-you-go plans are integrated in the credits consumption, on a daily basis.
+* A summary of the total amount to be paid for the current month
+* An exploded view of the invoice calculation, including credits used, coupons, provision for the coming month etc.
+* and full details of the operating time of each service, of each service invoiced, of storage used etc.
 
-## One-shot invoices
+To find your invoices, go to your organisation and click on **Invoices** to see a list of them and their payment status:
 
-When creating an add-on with a fixed monthly add-on price, an initial invoice is emitted for the rest of the month plus the next month. After this period, the add-on will be part of the monthly invoice.
+{{< image "/images/invoices/invoice-list.png" "The list of invoices" >}}
 
-### Example:
+### First section
 
-If you order a new database (€40 / month) on March 25, an invoice of €47.74 will be emitted, covering March 25 - April 30.
-Starting May 1st, the database will be integrated in the monthly invoice.
+This first section shows the fee for the use of Clever Cloud over a month. Any discounts are explained here.
 
-## Payment method management:
+{{< image "/images/invoices/invoice-amount-to-pay.png" "The second section of the invoice"  >}}
 
-You can register payment methods for each organization. The monthly invoice is automatically paid with the default payment method. The other payment means can be used for one-shot invoices. This way, to use a new credit card, you just have to set it as the default one, it will automatically be used for new invoices.  
+### Second section
 
-As of now, only credit cards can be used for monthly invoice payment. More payments methods will soon be available. [Please get in touch](mailto:support@clever-cloud.com) if you have specific needs.
+This part details line by line the evolution of your credit with:
 
-## Over consumption / unpaid invoices:
+* The balance of free credits (a)
+* Pre-paid credits (b)
+* The use of free credits (c)
+* Expired credits (d)
+* Use of your prepaid credits (e)
+* Estimated consumption for the next period (f)
+* Invoiced credits pending payment (g)
+* Amount of prepaid credits to be topped up (h)
 
-If you desire a strong control on costs, you can set up a hard limit for consumption. If you reach it, applications will automatically be undeployed to prevent unexpected charges. By default this is disabled, [please get in touch](mailto:support@clever-cloud.com) if you want to activate it.
+The **amount of prepaid credits to be topped up** and the **new balance of credits after settlement** are explained via calculations of the different types of credits and their use over time.
 
-# Differences with pre-2017 invoicing
+{{< image "/images/invoices/invoice-credits-balance.png" "The second section of the invoice"  >}}
 
-Unified invoicing has been rolled-out during February 2017. Here are the changes introduced by Unified Invoicing:
+### Third section
 
-- Payment methods are now associated with organizations instead of users, which means you can see and change credit cards for organizations in an easier way.
-- Credit consumption and add-ons are unified in a single monthly invoice. Each month, the consumption from the last month is credited on your account.  
-- FS buckets and Cellar consumptions are now integrated in your daily consumption, along with apps.
-- **Going out of credits no longer stops applications (by default).**
+This section of the invoice details the usage of each cloud service.
+
+{{< image "/images/invoices/invoice-runtime-detail.png" "The third section of the invoice"  >}}
+
+## Managed Services
+
+While applications are billed on a per second basis, this may be different for managed services.
+From a billing point of view there are X categories
+
+* time-based billing (per second)
+* resource consumption billing
+
+For example, dedicated databases are charged by the second, just like applications.
+In contrast, services such as Cellar object storage or Pulsar are charged according to the volume of data stored and the volume of outgoing traffic.
+
+## Specific invoices
+
+For specific services performed by the support teams, specific invoices can be created by the administration or support teams. These invoices usually indicate a specific service act.
+
+## Management of payment methods
+
+For each organisation it is possible to register one or more payment methods ([see list of payment methods here]](/doc/billing/payments-invoicing/)). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the "Pay" button.
+
+## Unpaid invoices
+
+If a bill is unpaid, several steps are taken before the service is cut off:
+
+* email reminders (on the 5th, 10th, 15th, 20th, 21st, 22nd, 23rd, 24th and 25th of each month)
+* an announcement of the cut-off from the 15th of the month
+* the effective termination of services and blocking of deployments (variable date)
+
+Support and access to your account will remain available to regularise non-payment situations
+

@@ -11,7 +11,7 @@ keywords:
 
 Clever Cloud's billing is based on several types of products: applications (Java, PHP, Jenkins, etc.), managed services (MySQL, PostgreSQL), storage services (via FTP with FS Buckets, or via the S3 protocol with Cellar) and other services (Heptapod, Pulsar, etc).
 
-## Calcul de la facturation
+## Billing calculation
 
 The calculation of consumption is based on the second of running. Once your monthly bill has been generated, you can refer to it to find out by service:
 

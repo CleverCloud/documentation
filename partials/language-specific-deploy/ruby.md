@@ -45,10 +45,10 @@ There are many way to add secret key to your env and each one is valid. Clever C
 
 You can specify a list of rake goals to execute before the deployment of your application by using the `CC_RAKEGOALS` environment variable.
 
-The value of this variable must be a comma-separated list of goals:
+The value of this variable must be a comma-separated list of goals, for instance:
 
 ```bash
-CC_RAKEGOALS="goal1, goal2"
+CC_RAKEGOALS="db:migrate, assets:precompile"
 ```
 
 We do not execute any rake goals by default.

@@ -96,6 +96,7 @@ The [environment variable](#setting-up-environment-variables-on-clever-cloud) `C
 * `npm`: Defaults to `npm-install` for now
 * `yarn`: uses [yarn](https://classic.yarnpkg.com/lang/en/)
 * `yarn2`: uses [yarn@2](https://yarnpkg.com/)
+* `custom`: uses the build tool set with `CC_CUSTOM_BUILD_TOOL`
 
 If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. To overwrite this behaviour, either delete the `yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
 

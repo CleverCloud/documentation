@@ -72,13 +72,15 @@ monolog:
 You can use the `CC_REVERSE_PROXY_IPS` [environment variable](#setting-up-environment-variables-on-clever-cloud) that contains a list of trusted IP addresses, separated by commas.
 
 ```
-if ($trustedProxies = $request->server->get('CC_REVERSE_PROXY_IPS')) {
-    // trust *all* requests
-    Request::setTrustedProxies(array_merge(['127.0.0.1'], explode(',', $trustedProxies)),
+# .env
+TRUSTED_PROXIES=127.0.0.1,CC_REVERSE_PROXY_IPS
+```
 
-    // trust *all* "X-Forwarded-*" headers
-    Request::HEADER_X_FORWARDED_ALL);
-}
+```
+# config/packages/framework.yaml
+framework:
+    # ...
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
 ```
 
 For more information on configuring symfony behind a reverse proxy, you can read the [official documentation](https://symfony.com/doc/current/deployment/proxies.html).

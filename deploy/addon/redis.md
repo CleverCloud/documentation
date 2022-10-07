@@ -34,6 +34,12 @@ information (host, port, password) to start the replication. The add-on panel wi
 
 While a redis database is configured as a follower, it's read-only.
 
+## Redis-cli usage
+
+You can use Redis URI to connect to your databases with -u option. However, the generated URI in the information tab (`REDIS_URL`) of you add-on is not a legal syntax to use `redis-cli`.
+
+This is the correct syntax for `redis-cli` URI : *redis :// [[username :] password@] host [:port][/database]*
+
 ## Default retention policy
 
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,

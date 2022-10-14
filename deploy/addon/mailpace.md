@@ -39,7 +39,7 @@ Check [MailPace documentation](https://docs.mailpace.com/)
 
 **You have to turn TLS on with port 465** (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working. Enable `STARTTLS` allows to use another port.
 
-These environment variables have to be set :
+These environment variables have to be set with value of :
 - `CC_MTA_SERVER_HOST`: Host of MailPace's SMTP server is `smtp.mailpace.com`.
 - `CC_MTA_SERVER_PORT`: Server port has to be set to `465`. Defaults to `465` whether TLS is enabled or not.
 - `CC_MTA_AUTH_USER`: User to authenticate to MailPace's SMTP server has to be set with `MAILPACE_API_KEY`.
@@ -48,7 +48,7 @@ These environment variables have to be set :
 - `CC_MTA_SERVER_STARTTLS`: Enable or disable STARTTLS. Defaults to `false`.
 - `CC_MTA_SERVER_AUTH_METHOD`: Authentication has to be enabled. Defaults to `on`.
 
-Just redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will be able to send mails with `mail()` function thanks to MailPace's SMTP server.
+Then, redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will be able to send mails with `mail()` function thanks to MailPace's SMTP server.
 
 ### PHP frameworks
 

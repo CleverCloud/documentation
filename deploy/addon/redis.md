@@ -38,7 +38,7 @@ While a redis database is configured as a follower, it's read-only.
 
 You can use Redis URI to connect to your databases with -u option. However, the generated URI in the information tab (`REDIS_URL`) of you add-on is not a legal syntax to use `redis-cli`.
 
-This is the correct syntax for `redis-cli` URI : *redis :// [[username :] password@] host [:port][/database]*
+This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/database]*
 
 ## Default retention policy
 

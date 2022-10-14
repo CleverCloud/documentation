@@ -472,7 +472,7 @@ To enable this feature, you need to:
 
 The PHP language has the `mail` function to directly send emails. While we do not provide a SMTP server (needed to send the emails), you can configure one through environment variables.
 
-We provide Mailpace addon to send emails through PHP `mail()` function. At the moment, you have to turn STARTTLS on (environment variable `CC_MTA_SERVER_STARTTLS=true`) to make Mailpace working.
+We provide Mailpace addon to send emails through PHP `mail()` function. You have to turn TLS on with port 465 (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working.
 
 We also recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) if your project supports it. These services already have everything you need to send emails from your code.
 

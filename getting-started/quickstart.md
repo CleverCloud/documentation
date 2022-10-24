@@ -93,6 +93,7 @@ git push <remote-name> <branch-name>:master
 {{< alert "warning" "Warning:" >}}
    <p>You can only push to the <strong>master</strong> branch for deployment.
    Trying to push to another branch will trigger an error.</p>
+   <p>You cannot push a tag (which refers to a commit) to the remote repository. If you do so, <strong>no deployment</strong> will be triggered.</p>
    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
    <pre>git push &lt;remote&gt; &lt;your branch&gt;:master</pre>
 {{< /alert >}}

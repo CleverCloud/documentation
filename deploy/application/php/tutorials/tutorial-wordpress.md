@@ -70,6 +70,52 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
 }
 ```
 
+### Configure your database
+
+Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them, in `wp-config.php`, as :
+
+```php
+define( 'DB_NAME', getenv("MYSQL_ADDON_DB") );
+define( 'DB_USER', getenv("MYSQL_ADDON_USER") );
+define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
+define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
+```
+
+### Configure storage
+
+To store static files, you need to configure a FS Bucket.
+
+Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
+
+To use the bucket in your wordpress app, there are 2 methods :
+
+#### Environment variables
+
+Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/<path-to-static-files>:<bucket-host>` as its value.
+
+If you need to have many associated buckets with your app, you need to create en new encironment variable, with a suffix : `CC_FS_BUCKET_1`, `CC_FS_BUCKET_2`...
+
+#### JSON
+
+{{< alert "warning" "Deprecation notice" >}}
+   This method is deprecated, we strongly recommend that you use environment variables.
+
+If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
+{{< /alert >}}
+
+At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
+Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "deploy/addon/fs-bucket.md" >}}) section of the FS Bucket add-on.
+    
+```javascript
+    [
+      {
+        "bucket" : "bucketId",
+        "folder" : "/<path-to-static-files>"
+      }
+    ]
+```
+
+
 ## Optimise and speed-up your WordPress
 
 There are multiple ways to optimise your WordPress and speed-up its response time.
@@ -118,31 +164,10 @@ Redis should now work with your WordPress.
 
 {{< readfile "/content/partials/new-relic.md" >}}
 
-{{< readfile "/content/partials/env-injection.md" >}}
+<!-- {{< readfile "/content/partials/env-injection.md" >}} -->
 
 {{< readfile "/content/partials/link-addon.md" >}}
 
-## Configure your database
-
-Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
-
-## Configure storage
-
-Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
-
-Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
-
-At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
-Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "deploy/addon/fs-bucket.md" >}}) section of the FS Bucket add-on.
-    
-```javascript
-    [
-      {
-        "bucket" : "bucketId",
-        "folder" : "/wp-content/uploads"
-      }
-    ]
-```
 
 {{< readfile "/content/partials/deploy-git.md" >}}
 

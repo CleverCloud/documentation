@@ -14,6 +14,10 @@ str_replace_dict:
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
+## FTP : deploy a legacy wordpress
+
+This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
+
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
@@ -22,8 +26,8 @@ str_replace_dict:
 ### Mandatory configuration
 
 * Rename the file `wp-config-sample.php` to `wp-config.php`.
-* Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
-password using the [environment variables]({{< ref "develop/env-variables.md" >}}) of the add-on.
+* Replace in `wp-config.php` the host (for example: `b3edsv5gxaq0dbswxjsh-mysql.services.clever-cloud.com`), port, database name, username and
+password using the [environment variables]({{< ref "/deploy/application/php/tutorials/tutorial-wordpress#configure-your-database" >}}) of the add-on.
 
 ### SSL Configuration
 
@@ -184,7 +188,3 @@ To uninstall the plugin, the procedure is the same as before except that you hav
 {{< readfile "/content/partials/deploy-ftp.md" >}}
 
 {{< readfile "/content/partials/more-config.md" >}}
-
-
-
-

@@ -212,7 +212,7 @@ Provide the following to your registrar:
   </tr>
 </table>
 
-### Your Application Runs in the Jedah ('JED') Zone
+### Your Application Runs in the Jeddah ('JED') Zone
 
 <table class="table table-bordered" style="text-align:center">
   <tr>

@@ -212,6 +212,28 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+### Your Application Runs in the Jedah ('JED') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 158.101.226.110</code><br>
+    <code>@ 10800 IN A 150.230.50.217</code>
+    </td>
+  </tr>
+</table>
+
 {{< alert "warning" "Warning on CNAME Availability" >}}
     You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
 {{< /alert >}}

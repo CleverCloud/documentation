@@ -287,6 +287,43 @@ while (!consumer.hasReachedEndOfTopic()) {
 }
 ```
 
+### Python example
+
+There is an official [Python Pulsar Client](https://pulsar.apache.org/docs/en/client-libraries-python/), import it in your `requirements.txt`:
+
+```
+pulsar-client==2.10.2
+```
+
+```python
+import pulsar
+import os
+import json
+from pulsar import AuthenticationToken
+from transfer import transfer
+
+client = pulsar.Client(
+    os.getenv("ADDON_PULSAR_BINARY_URL"),
+    authentication=AuthenticationToken(os.getenv("ADDON_PULSAR_TOKEN")),
+)
+
+tenant = os.getenv("ADDON_PULSAR_TENANT")
+namespace = os.getenv("ADDON_PULSAR_NAMESPACE")
+topic = "persistent://{}/{}/TOPIC_NAME".format(tenant, namespace)
+
+producer = client.create_producer(topic)
+for i in range(10):
+    producer.send(('Hello-%d' % i).encode('utf-8'))
+
+while True:
+    msg = consumer.receive()
+    print("Received message id='{}' with data\n{}\n".format(msg.message_id(), msg.data()))
+    # Acknowledge successful processing of the message
+    consumer.acknowledge(msg)
+    # Message failed to be processed
+client.close()
+```
+
 ### Operations
 
 The Biscuit token provided by the Pulsar add-on allows you to run several operations on namespace, its policies and the related topics.

@@ -211,7 +211,7 @@ In order to create it:
    
 4. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
 
-5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ... on this page or in the corresponding documentation page.
+5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
 
 6. Choose with which application you want to link you add-on.
 Linking an add-on to an application will provide configuration to the application through [environment variables]({{< ref "/develop/env-variables.md" >}}).

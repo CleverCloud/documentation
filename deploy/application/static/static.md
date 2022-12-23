@@ -50,7 +50,7 @@ To do this with our static applications, you need a `.htaccess` file like this a
 ```
 RewriteEngine On
 
-# If an existing asset or directory is requested go to it as it is
+# If an existing asset or directory is requested, serve it
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]

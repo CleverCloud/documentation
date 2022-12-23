@@ -34,8 +34,8 @@ variable:
 You can directly put commands in the hook. Hooks have access to the environnement variables as well as a working Node.js installation.
 
 If you have complex things to do, the best way is to put the logic in a bash script *(dont forget to make it executable!)*
-To use it, just choose the hook you want to trigger and specify the path of your script.
-The hook will be based on the root path of your application. If your script is in a clevercloud folder at the root of your project then you can define `CC_POST_BUILD_HOOK=./clevercloud/script.sh`
+To use it, set the hook you want to trigger to the path of your script, relative to the root path of your repository.
+E.g. if your script is in a clevercloud folder at the root of your project then you can define `CC_POST_BUILD_HOOK=./clevercloud/script.sh`
 
 ## Can't I use `$BUILD_TOOL`?
 

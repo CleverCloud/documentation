@@ -39,7 +39,7 @@ Supported platforms:
 
 ### How it works
 
-When you push an application's code to git or via FTP, the platform receives it and check the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
+When you push an application's code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
 
 The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
 

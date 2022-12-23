@@ -31,6 +31,16 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
 clever logs --before 2016-08-11T14:54:33.971Z
 ```
 
+You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+
+```bash
+clever logs --addon <addon_xxx>
+```
+
+{{< alert "warning" "Warning:" >}}
+   Only the last 1000 lines of logs are got by `clever logs`.
+{{< /alert >}}
+
 ### Access logs
 
 It contains all incoming requests to your application. Here is an example:

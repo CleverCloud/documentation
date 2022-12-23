@@ -125,6 +125,18 @@ For Wordpress, you can change the `DB_HOST` variable in your `wp-config.php`:
 define( 'DB_HOST', "localhost:" . getenv("CC_MYSQL_PROXYSQL_SOCKET_PATH") );
 ```
 
+### Symfony
+
+For symfony, you will need to edit its [configuration](https://symfony.com/doc/current/configuration.html#configuration-environments).
+
+A working example would be:
+
+```yaml
+dbal:
+  unix_socket: '%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%'
+  url: 'mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%'
+```
+
 ### Node.js
 
 On Node.js, using the `mysql` npm package, you have to set the `socketPath` property:

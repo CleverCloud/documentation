@@ -28,6 +28,10 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 {{< readfile "/content/partials/language-specific-deploy/dotnet.md" >}}
 
+{{< readfile "/content/partials/env-injection.md" >}}
+
+To access environment variables from your code, you can use `System.Environment.GetEnvironmentVariable("MY_VARIABLE")"`.
+
 {{< readfile "/content/partials/deploy-git.md" >}}
 
 {{< readfile "/content/partials/link-addon.md" >}}

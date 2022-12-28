@@ -448,6 +448,12 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
 * Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`). 
 
+* Uopz: set `ENABLE_UOPZ` to `true`.
+    The uopz extension is focused on providing utilities to aid with unit testing PHP code.
+
+* Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
+    The uploadprogress extension is used to track the progress of a file download.
+
 * XDebug: set `ENABLE_XDEBUG` to `true`.
 
     XDebug is a debugger and profiler tool for PHP.

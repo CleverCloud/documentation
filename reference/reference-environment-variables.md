@@ -29,6 +29,7 @@ These are read-only variables that are generated for each scaler before they bui
 |CC_REVERSE_PROXY_IPS | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
 |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
 |CC_APP_NAME | The customer defined application name | cloud-api-production |
+|PORT | The mandatory port value is 8080 | 8080 |
 {{< /table >}}
 
 ### Variables you can define

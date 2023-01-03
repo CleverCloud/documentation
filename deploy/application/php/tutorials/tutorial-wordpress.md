@@ -14,13 +14,19 @@ str_replace_dict:
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-## FTP : deploy a legacy wordpress
-
-This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
+First, you could check [our global PHP documention](/content/deploy/application/php/php-apps/).
 
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+## FTP : deploy a legacy wordpress
+
+This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
+
+{{< readfile "/content/partials/deploy-ftp.md" >}}
 
 ## Configure your WordPress application
 ### Mandatory configuration
@@ -119,6 +125,14 @@ Add the following lines in this file. Do not forget to replace `bucketId` by the
     ]
 ```
 
+### Install a WordPress plugin with Git
+
+If you choose git deployment over FTP, the code of your plugins won't be tracked by git. This implies that you will not be able to install plugins from the administration panel and persist them between two deployments.
+
+To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
+
+The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins. 
+To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.
 
 ## Optimise and speed-up your WordPress
 
@@ -170,21 +184,6 @@ Redis should now work with your WordPress.
 
 <!-- {{< readfile "/content/partials/env-injection.md" >}} -->
 
-{{< readfile "/content/partials/link-addon.md" >}}
-
-
-{{< readfile "/content/partials/deploy-git.md" >}}
-
-### Install a WordPress plugin with Git
-
-If you choose git deployment over FTP, the code of your plugins won't be tracked by git. This implies that you will not be able to install plugins from the administration panel and persist them between two deployments.
-
-To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
-
-The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins. 
-To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.
-
-
-{{< readfile "/content/partials/deploy-ftp.md" >}}
+<!--{{< readfile "/content/partials/link-addon.md" >}}-->
 
 {{< readfile "/content/partials/more-config.md" >}}

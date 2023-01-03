@@ -28,7 +28,7 @@ This tutorial is mainly concerning a Git deployment. However, you can deploy usi
 
 ## Configure your WordPress application
 
-### Where to configure ?
+### Configuration file
 
 Rename the file `wp-config-sample.php` to `wp-config.php`. All the PHP code for the configuration should be written in this file.
 
@@ -44,7 +44,7 @@ define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
 {{< alert "warning" "Warning" >}}
-Excepting MySQL DEV plan, you have to figure the port out in the configuration with the environment variable `MYSQL_ADDON_HOST`
+Excepting MySQL DEV plan, you have to figure the port out in `wp-config.php` with the environment variable `MYSQL_ADDON_HOST` because it is not the default port which is used.
 {{< /alert >}}
 
 ### SSL Configuration

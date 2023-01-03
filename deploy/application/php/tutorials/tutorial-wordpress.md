@@ -16,24 +16,32 @@ str_replace_dict:
 
 First, you could check [our global PHP documention](/content/deploy/application/php/php-apps/).
 
+This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
+
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
 {{< readfile "/content/partials/deploy-git.md" >}}
 
-## FTP : deploy a legacy wordpress
-
-This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
-
 {{< readfile "/content/partials/deploy-ftp.md" >}}
 
 ## Configure your WordPress application
-### Mandatory configuration
 
-* Rename the file `wp-config-sample.php` to `wp-config.php`.
-* Replace in `wp-config.php` the host (for example: `b3edsv5gxaq0dbswxjsh-mysql.services.clever-cloud.com`), port, database name, username and
-password using the [environment variables]({{< ref "/deploy/application/php/tutorials/tutorial-wordpress#configure-your-database" >}}) of the add-on.
+### Where to configure ?
+
+Rename the file `wp-config-sample.php` to `wp-config.php`. All the PHP code for the configuration should be written in this file.
+
+### Configure your database
+
+Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them, in `wp-config.php`, as :
+
+```php
+define( 'DB_NAME', getenv("MYSQL_ADDON_DB") );
+define( 'DB_USER', getenv("MYSQL_ADDON_USER") );
+define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
+define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
+```
 
 ### SSL Configuration
 
@@ -78,17 +86,6 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
 } elseif (isset($_SERVER['X_FORWARDED_PROTO'])) {
 	check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
 }
-```
-
-### Configure your database
-
-Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them, in `wp-config.php`, as :
-
-```php
-define( 'DB_NAME', getenv("MYSQL_ADDON_DB") );
-define( 'DB_USER', getenv("MYSQL_ADDON_USER") );
-define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
-define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
 ### Configure storage

@@ -43,6 +43,10 @@ define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
 define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
+{{< alert "warning" "Warning" >}}
+Excepting MySQL DEV plan, you have to figure the port out in the configuration with the environment variable `MYSQL_ADDON_HOST`
+{{< /alert >}}
+
 ### SSL Configuration
 
 Since your website is behind a reverse proxy managed by Clever Cloud, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. 

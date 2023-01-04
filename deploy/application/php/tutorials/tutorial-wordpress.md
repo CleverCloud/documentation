@@ -14,38 +14,16 @@ str_replace_dict:
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-First, you could check [our global PHP documention](/deploy/application/php/php-apps/).
-
-This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
-
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
-{{< readfile "/content/partials/deploy-git.md" >}}
-
-{{< readfile "/content/partials/deploy-ftp.md" >}}
-
 ## Configure your WordPress application
+### Mandatory configuration
 
-### Configuration file
-
-Rename the file `wp-config-sample.php` to `wp-config.php`. All the PHP code for the configuration should be written in this file.
-
-### Configure your database
-
-Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them, in `wp-config.php`, as :
-
-```php
-define( 'DB_NAME', getenv("MYSQL_ADDON_DB") );
-define( 'DB_USER', getenv("MYSQL_ADDON_USER") );
-define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
-define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
-```
-
-{{< alert "warning" "Warning" >}}
-Excepting MySQL DEV plan, you have to figure the port out in `wp-config.php` with the environment variable `MYSQL_ADDON_HOST` because it is not the default port which is used.
-{{< /alert >}}
+* Rename the file `wp-config-sample.php` to `wp-config.php`.
+* Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
+password using the [environment variables]({{< ref "develop/env-variables.md" >}}) of the add-on.
 
 ### SSL Configuration
 
@@ -91,49 +69,6 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
 	check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
 }
 ```
-
-### Configure storage
-
-To store static files, you need to configure a FS Bucket.
-
-Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
-
-To use the bucket in your wordpress app, there are 2 methods :
-
-#### Environment variables
-
-Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/<path-to-static-files>:<bucket-host>` as its value.
-
-If you need to have many associated buckets with your app, you need to create en new encironment variable, with a suffix : `CC_FS_BUCKET_1`, `CC_FS_BUCKET_2`...
-
-#### JSON
-
-{{< alert "warning" "Deprecation notice" >}}
-   This method is deprecated, we strongly recommend that you use environment variables.
-
-If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
-{{< /alert >}}
-
-At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
-Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "deploy/addon/fs-bucket.md" >}}) section of the FS Bucket add-on.
-    
-```javascript
-    [
-      {
-        "bucket" : "bucketId",
-        "folder" : "/<path-to-static-files>"
-      }
-    ]
-```
-
-### Install a WordPress plugin with Git
-
-If you choose git deployment over FTP, the code of your plugins won't be tracked by git. This implies that you will not be able to install plugins from the administration panel and persist them between two deployments.
-
-To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
-
-The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins. 
-To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.
 
 ## Optimise and speed-up your WordPress
 
@@ -183,12 +118,48 @@ Redis should now work with your WordPress.
 
 {{< readfile "/content/partials/new-relic.md" >}}
 
-## Deploy WordPress the immutable way
+{{< readfile "/content/partials/env-injection.md" >}}
 
-Discover a new way to deploy Wordpress using Composer with Bedrock's boilerplate : [our tutorial on GitHub](https://github.com/CleverCloud/clever-wordpress)
+{{< readfile "/content/partials/link-addon.md" >}}
 
-<!-- {{< readfile "/content/partials/env-injection.md" >}} -->
+## Configure your database
 
-<!--{{< readfile "/content/partials/link-addon.md" >}}-->
+Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
+
+## Configure storage
+
+Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
+
+Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
+
+At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
+Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "deploy/addon/fs-bucket.md" >}}) section of the FS Bucket add-on.
+    
+```javascript
+    [
+      {
+        "bucket" : "bucketId",
+        "folder" : "/wp-content/uploads"
+      }
+    ]
+```
+
+{{< readfile "/content/partials/deploy-git.md" >}}
+
+### Install a WordPress plugin with Git
+
+If you choose git deployment over FTP, the code of your plugins won't be tracked by git. This implies that you will not be able to install plugins from the administration panel and persist them between two deployments.
+
+To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
+
+The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins. 
+To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.
+
+
+{{< readfile "/content/partials/deploy-ftp.md" >}}
 
 {{< readfile "/content/partials/more-config.md" >}}
+
+
+
+

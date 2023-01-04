@@ -227,7 +227,7 @@ documentations.
 |[Ruby]({{< ref "deploy/application/ruby/ruby-rack#environment-injection" >}})| ENV["MY\_VAR"] | 
 |[Rust]({{< ref "deploy/application/rust/rust#environment-injection" >}})| std::env::var("MY\_VAR")| 
 |[Scala]({{< ref "deploy/application/scala/scala#environment-injection" >}}) | System.getenv("MY\_VAR") | 
-|[.NET]({{< ref "deploy/application/dotnet/dotnet#environment-injection" ">}}) | System.Environment.GetEnvironmentVariable("MY\_VAR") |
+|[.NET]({{< ref "deploy/application/dotnet/dotnet#environment-injection" >}}) | System.Environment.GetEnvironmentVariable("MY\_VAR") |
 {{</table>}}
 
 Please note that the variables are available at build-time, for

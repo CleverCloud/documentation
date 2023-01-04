@@ -14,7 +14,7 @@ str_replace_dict:
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-First, you could check [our global PHP documention](/content/deploy/application/php/php-apps/).
+First, you could check [our global PHP documention](/deploy/application/php/php-apps/).
 
 This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
 

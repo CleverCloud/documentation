@@ -161,6 +161,8 @@ However, directives who applies to the entire application must be declared in a 
 If you need basic authentication, you can use the `.htpasswd` file. The path to the `.htpasswd` of the `AuthUserFile` directive has to be absolute. Your site root folder is available at `/var/www/bas/site/`, so the directive should look like:
 `AuthUserFile /var/www/bas/site/.htpasswd`
 
+Alternatively, you can configure basic authentication using [environment variables]({{< ref "reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+
 ### Define a custom HTTP timeout
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`

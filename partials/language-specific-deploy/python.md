@@ -123,6 +123,10 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 - `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
 
+##### Basic authentication
+
+If you need basic authentication, you can enable it using [environment variables]({{< ref "reference/reference-environment-variables.md#python" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+
 #### Nginx optional configuration with `clevercloud/http.json`
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.

@@ -91,11 +91,11 @@ In `.user.ini`, add the following line (you need to create `inject_headers.php` 
 auto_prepend_file=./inject_headers.php
 ```
 
-Please refer to the [official documentation](https://www.php.net/manual/en/configuration.file.per-user.php) for more information. You can review the [available directives](https://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`,
-`PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within
-`.user.ini`.
+Please refer to the [official documentation](https://www.php.net/manual/en/configuration.file.per-user.php) for more information.
 
-**Note**: `.user.ini` files are not loaded by the php cli
+You can review the [available directives](https://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within `.user.ini`.
+
+**Note**: `.user.ini` files are not loaded by the php cli.
 
 #### `clevercloud/php.json` settings
 
@@ -133,7 +133,7 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
  |2XL | 1024M |
  |3XL | 1536M |
  |4XL+ | 2048M |
- {{< /table >}}
+{{< /table >}}
 
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "reference/reference-environment-variables.md#php" >}}).
 
@@ -154,31 +154,27 @@ We use Apache 2 as HTTP Server. In order to configure it, you can create a `.hta
 ### htaccess
 
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
+
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
 ### htpasswd
 
-If you need basic authentication, you can use the `.htpasswd` file. The path to the `.htpasswd` of the `AuthUserFile` directive has to be absolute. Your site root folder is available at `/var/www/bas/site/`, so the directive should look like:
-`AuthUserFile /var/www/bas/site/.htpasswd`
 
-Alternatively, you can configure basic authentication using [environment variables]({{< ref "reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+You can configure basic authentication using [environment variables]({{< ref "reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 ### Define a custom HTTP timeout
 
-You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
-[environment variable]({{< ref "develop/env-variables.md" >}}).
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable]({{< ref "develop/env-variables.md" >}}).
 
 **By default, the HTTP timeout is se to 3 minutes (180 seconds)**.
 
 ### Force HTTPS traffic
 
-Load balancers handle HTTPS traffic ahead of your application. You can use the
-`X-Forwarded-Proto` header to know the original protocol (`http` or `https`).
+Load balancers handle HTTPS traffic ahead of your application. You can use the `X-Forwarded-Proto` header to know the original protocol (`http` or `https`).
 
-Place the following snippet in a `.htaccess` file to ensure that your visitors
-only access your application through HTTPS.
+Place the following snippet in a `.htaccess` file to ensure that your visitors only access your application through HTTPS.
 
-```apache
+```conf
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
@@ -189,13 +185,13 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
 
-eg. if foobar is a directory, Apache will automatically redirect http://example.com/foobar to http://example.com/foobar/
+E.g. if foobar is a directory, Apache will automatically redirect http://example.com/foobar to http://example.com/foobar/.
 
 Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
 
 In order to prevent this behavior, you can add the following statements in a `.htaccess` file:
 
-```apache
+```conf
 DirectorySlash Off
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -d
@@ -229,13 +225,12 @@ To access the variables, use the `getenv` function. So, for example, if
 your application has a postgresql add-on linked:
 
 ```php
-<?php
+$host = getenv("POSTGRESQL_ADDON_HOST");
+$database = getenv("POSTGRESQL_ADDON_DB");
+$username = getenv("POSTGRESQL_ADDON_USER");
+$password = getenv("POSTGRESQL_ADDON_PASSWORD");
 
-$dbh = new PDO(
-  'postgresql:host='.getenv("POSTGRESQL_ADDON_HOST").';dbname='.getenv("POSTGRESQL_ADDON_DB"),
-  getenv("POSTGRESQL_ADDON_USER"),
-  getenv("POSTGRESQL_ADDON_PASSWORD")
-);
+$pg = new PDO("postgresql:host={$host};dbname={$database}, $username, $password);
 ```
 
 {{< alert "warning" "Warning:" >}}
@@ -253,8 +248,8 @@ We support Composer build out of the box. You just need to provide a `composer.j
 
 You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
 
-{{< alert "info" "Note:" >}}
-    If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.
+{{< alert "info" "Composer issues" >}}
+<p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
 {{< /alert >}}
 
 You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
@@ -333,43 +328,43 @@ The following is the list of tested CMS by our team.
 
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
-<div class="">
-    <table class="table table-bordered">
-        <tbody>
-            <tr>
-                <td>WordPress</td>
-                <td>Prestashop</td>
-            </tr>
-            <tr>
-                <td>Dokuwiki</td>
-                <td>Joomla</td>
-            </tr>
-            <tr>
-                <td>SugarCRM</td>
-                <td>Drupal</td>
-            </tr>
-            <tr>
-                <td>Magento</td>
-                <td>Status.net</td>
-            </tr>
-            <tr>
-                <td>Symfony</td>
-                <td>Thelia</td>
-            </tr>
-            <tr>
-                <td>Laravel</td>
-                <td>-</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <td>WordPress</td>
+            <td>Prestashop</td>
+        </tr>
+        <tr>
+            <td>Dokuwiki</td>
+            <td>Joomla</td>
+        </tr>
+        <tr>
+            <td>SugarCRM</td>
+            <td>Drupal</td>
+        </tr>
+        <tr>
+            <td>Magento</td>
+            <td>Status.net</td>
+        </tr>
+        <tr>
+            <td>Symfony</td>
+            <td>Thelia</td>
+        </tr>
+        <tr>
+            <td>Laravel</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Available extensions and modules
 
-You can check enabled extensions and versions by viewing our `phpinfo()` example for
+You can check enabled extensions and versions by viewing our `phpinfo()` example for:
+
 - [PHP 5.6](https://php56info.cleverapps.io).
 - [PHP 7.2](https://php72info.cleverapps.io).
 - [PHP 7.3](https://php73info.cleverapps.io).
+- [PHP 8.1](https://php81info.cleverapps.io).
 - [PHP 7.4](https://php74info.cleverapps.io).
 - [PHP 8.0](https://php80info.cleverapps.io).
 - [PHP 8.1](https://php80info.cleverapps.io).
@@ -378,20 +373,17 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`, `gRPC`, `protobuf`, `Pspell`.
 
-You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}})
-to disable them.
+You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}}) to disable them.
 
 If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
 
-{{< alert "warning" "Warning:" >}}
-    <p>On PHP 7, the memcache extension is not available; only memcached is available</p>
+{{< alert "warning" "memcache" >}}
+<p>On PHP 7, the memcache extension is not available; only <strong>memcached</strong> is available</p>
 {{< /alert >}}
-
 
 ### Enable specific extensions
 
-Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding
-[environment variable](#setting-up-environment-variables-on-clever-cloud):
+Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
 * APCu: set `ENABLE_APCU` to `true`.
 
@@ -462,7 +454,11 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
 ## Use Redis to store PHP Sessions
 
-By default, sessions are stored on a replicated file system, so that session data is available on each instance. We also provide the possibility to store the PHP sessions in a [Redis database]({{< ref "deploy/addon/redis.md" >}}) to improve performance: if your application is under heavy load, redis persistence for sessions can improve latency.
+By default, sessions are stored on a replicated file system, so that session data is available on each instance.
+
+We also provide the possibility to store the PHP sessions in a [Redis database]({{< ref "deploy/addon/redis.md" >}}) to improve performance.
+
+If your application is under heavy load, redis persistence for sessions can improve latency.
 
 To enable this feature, you need to:
 
@@ -499,14 +495,15 @@ Services like [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailj
 ## Configure Monolog
 
 A lot of frameworks (including Symfony) use Monolog to handle logging. The default configuration of Monolog doesn't allow to log errors into the console.
+
 Here is a basic configuration of Monolog to send your application's logs into our logging system and access them into the Console:
 
 ```yaml
 monolog:
   handlers:
     clever_logs:
-      type:     error_log
-      level:    warning
+      type: error_log
+      level: warning
 ```
 
 You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
@@ -514,9 +511,11 @@ You can change the level to whatever level you desire. For Symfony, the configur
 Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. Here, ensure that you have the following line in `config/app.php`:
 
 ```php
-...
-'log' => env('APP_LOG'),
-...
+return [
+    // ...
+    'log' => env('APP_LOG'),
+    // ...
+];
 ```
 
 Then, set `APP_LOG=syslog` as Clever application environment variable.

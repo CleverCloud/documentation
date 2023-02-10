@@ -138,13 +138,13 @@ To deploy via FTP, you need an FTP software installed on your machine. [Filezill
 When you have chosen to deploy your application via FTP, a [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) has been created with an ID
 matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
-[More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+[More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
-{{< alert "warning" "Warning:" >}}
+{{< alert "warning" "Warning" >}}
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 {{< /alert >}}
 
-{{< alert "warning" "Our advice:" >}}
+{{< alert "danger" "Disclaimer" >}}
 <p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
 {{< /alert >}}
 
@@ -188,7 +188,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 There are two kinds of billing:
 
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS-Buckets]({{< ref "/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "/deploy/addon/cellar.md" >}})
+* Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "/deploy/addon/cellar.md" >}})
 
 {{< alert "warning" "Warning on SHARED plans" >}}
   <p>

@@ -62,7 +62,7 @@ If you need to run a custom command (or just pass options to the binary built by
 For instance, for a [hakyll](https://jaspervdj.be/hakyll/) website, you can define:
 
 ```bash
-CC_RUN_COMMAND=~./local/bin/site server --host 0.0.0.0 --port 8080
+CC_RUN_COMMAND="~./local/bin/site server --host 0.0.0.0 --port 8080"
 ```
 
 To access environment variables from your code, just get them from the environment with `getEnv :: String -> IO String` in `System.Environment`.

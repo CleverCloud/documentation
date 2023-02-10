@@ -1,4 +1,5 @@
 ## Configure your Python application
+
 ### General configuration
 
 Python apps can be launched in a variety of ways. You can specify how to start your application (for instance which module to run) by setting [environment variables](#setting-up-environment-variables-on-clever-cloud).
@@ -172,8 +173,8 @@ We also support celery apps out of the box. To deploy a celery app, use the `CC_
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
-{{< alert "warning" "Celery dependency needs to be in your requirements.txt" >}}
-    Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
+{{< alert "warning" "Requirements.txt" >}}
+<p>Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.</p>
 {{< /alert >}}
 
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
@@ -181,5 +182,7 @@ You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a g
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 {{< alert "warning" "Beware of timezones with Celery Beat!" >}}
-   There is a bug in recent versions of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
+There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable.
+
+The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
 {{< /alert >}}

@@ -19,11 +19,20 @@ Created in 2007, Rack has become the de-facto standard for ruby web applications
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
-{{< readfile "/content/partials/language-specific-deploy/ruby.md" >}}
+## Configure your Ruby and Rake application
+
+### Mandatory configuration
+
+Be sure that:
+
+* Bundler is installed locally (`gem install bundler`)
+* you have a `config.ru` file
+* Git (for the deploy part)
+* you have a `gems.rb` or `Gemfile` containing your dependencies
 
 ### Tutorial and sample app
 
-You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "/deploy/application/ruby/tutorials/ruby-rack-app-tutorial.md" >}}) and find the source code of the demo here: <a href="https://helloworld-rack-demo.cleverapps.io/">https://helloworld-rack-demo.cleverapps.io/</a>.
+You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "/deploy/application/ruby/tutorials/ruby-rack-app-tutorial.md" >}}) and find the source code of the demo [here](https://helloworld-rack-demo.cleverapps.io).
 
 {{< readfile "/content/partials/new-relic.md" >}}
 

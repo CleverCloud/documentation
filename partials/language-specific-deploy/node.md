@@ -17,7 +17,7 @@ You can use the `engines.node` field in `package.json` to define the wanted vers
 
 The `package.json` file should look like the following:
 
-```javascript
+```json
 {
   "name" : "myapp",
   "version" : "0.1.0",
@@ -35,41 +35,38 @@ The `package.json` file should look like the following:
 The following table describes each of the fields formerly mentioned.
 
 <table id="nodedeps" class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>Usage</th>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="cc-depusage" rowspan="2"><span class="label label-danger">At least one</span></td>
-<td>scripts.start</td>
-<td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise
-we will use the <code>main</code> field. See below to know how and when to use the `scripts.start` field</td>
-</tr>
-<tr>
-<td>main</td>
-<td>This field allows you to specify the file you want to run. It should
-be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
-</tr>
-<tr>
-<td class="cc-depusage" ><span class="label label-default">Optional</span></td>
-<td>engines.node</td>
-<td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead
-to run the application with the latest "A.B" local version. If this field is
-missing, we use the latest LTS available. If you want to ensure that your app will always run,
-please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cc-depusage" rowspan="2">
+        <span class="label label-danger">At least one</span>
+      </td>
+      <td>scripts.start</td>
+      <td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise we will use the <code>main</code> field. See below to know how and when to use the <code>scripts.start</code> field</td>
+    </tr>
+    <tr>
+      <td>main</td>
+      <td>This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
+    </tr>
+    <tr>
+      <td class="cc-depusage" ><span class="label label-default">Optional</span></td>
+      <td>engines.node</td>
+      <td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead to run the application with the latest "A.B" local version. If this field is missing, we use the latest LTS available. If you want to ensure that your app will always run, please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
+    </tr>
+  </tbody>
 </table>
 
 ### NPM modules dependencies
 
 If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
 
-```javascript
+```json
 {
   "name" : { ... },
   "engines": { ... },
@@ -104,9 +101,15 @@ If none of the above package managers fit your needs, you can put your own using
 
 ## Automatic HTTPS redirection
 
-You can use the [X-Forwarded-Proto header](https://www.clever-cloud.com/doc/get-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection-) to enable it.
+You can use the [X-Forwarded-Proto header]({{< ref "/find-help/faq.md#how-to-know-if-a-user-comes-from-a-secure-connection" >}}) to enable it.
 
-If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding `app.use(enforce.HTTPS({ trustProtoHeader: true }))`.
+If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
+
+```javascript
+app.use(enforce.HTTPS({
+  trustProtoHeader: true
+}));
+```
 
 ### Custom build phase
 
@@ -122,6 +125,7 @@ For more information, see <a href="https://docs.npmjs.com/misc/scripts">the npm 
 Development dependencies will not be automatically installed during the deployment. You can control their installation by using the `CC_NODE_DEV_DEPENDENCIES` environment variable which takes `install` or `ignore` as its value. This variable overrides the default behaviour of `NODE_ENV`.
 
 Here are various scenarios:
+
 - `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
 - `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
 - `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
@@ -133,7 +137,7 @@ Here are various scenarios:
 
 If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
 
-For instance, for a meteor application, you can have `CC_RUN_COMMAND=node .build/bundle/main.js <options>`.
+For instance, for a meteor application, you can have `CC_RUN_COMMAND="node .build/bundle/main.js <options>"`.
 
 ### Custom run phase
 
@@ -144,24 +148,23 @@ contain any build task.
 
 Since April 2015, npmjs.com allows you to have private repositories. If you want to use a private repository on npmjs.com (the default one), you only need to provide the *token* part. To register your auth token, you need to add to your application the `NPM_TOKEN` environment variable.
 
-``` javascript
-Example:
-NPM_TOKEN=00000000-0000-0000-0000-000000000000
+```bash
+NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 ```
 
 Then, the .npmrc file will be created automatically for your application, with the registry url and the token.
 
-``` javascript
+```txt
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
 To authenticate to another registry (like github), you can use the `CC_NPM_REGISTRY`  environment variable to define the registry's host.
 
-``` javascript
-Example:
-CC_NPM_REGISTRY=npm.pkg.github.com
-NPM_TOKEN=00000000-0000-0000-0000-000000000000
+```bash
+CC_NPM_REGISTRY="npm.pkg.github.com"
+NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 ```
-``` javascript
+
+```txt
 //npm.pkg.github.com/:_authToken=00000000-0000-0000-0000-000000000000
 ```

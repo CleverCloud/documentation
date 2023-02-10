@@ -8,7 +8,7 @@ Be sure that:
 * Your application listens on port **8080**
 * You put your main code in a file named `main.go` (if you do not do that, Go will generate a library and not an executable)
 
-Apart from **listening on port 8080**, there is nothing to change on your application.
+Apart from listening on port 8080, there is nothing to change on your application.
 
 ### Go production build on Clever Cloud
 
@@ -33,6 +33,7 @@ For now, you have to add the environment variable `CC_GO_BUILD_TOOL=gomod` to bu
 build with go modules if the `go.mod` file is present at the root of your git tree.
 
 Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to specify it using the following environment variable:
+
 `CC_GO_PKG=./path/to/entrypoint.go`
 
 ### Go build
@@ -59,91 +60,98 @@ You can also force the use of `go get` by setting the environment variable `CC_G
 ### Customize build using environment variables
 
 <table id="go_envs" class="table table-bordered, table-striped">
-<thead>
-<tr><th>Variable</th><th>Usage</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>CC_GO_PKG</td>
-<td>
-Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>` or `go install ${CC_GO_PKG}` instead of `go install <package>`.
-</td>
-</tr>
-<tr>
-<td>CC_GO_BUILD_TOOL</td>
-<td>
-Available values: `gomod`, `goget`, `gobuild`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. If not specified, defaults to `goget`.
-</td>
-</tr>
-<tr>
-<td>CC_GO_RUNDIR</td>
-<td>
-Makes the deployer use the specified directory to run your binary. If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`.
-</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CC_GO_PKG</td>
+            <td>
+                Makes the deployer run <code>go get ${CC_GO_PKG}</code> instead of <code>go get <app_id></code> or <code>go install ${CC_GO_PKG}</code> instead of <code>go install mypackage</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>CC_GO_BUILD_TOOL</td>
+            <td>
+                Available values: <code>gomod</code>, <code>goget</code>, <code>gobuild</code>. Makes the deployer use <code>go modules</code>, <code>go get</code> or <code>go build</code> to build your application. If not specified, defaults to <code>goget</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>CC_GO_RUNDIR</td>
+            <td>
+                Makes the deployer use the specified directory to run your binary. If your application must be in <code>$GOPATH/src/company/project</code> for your vendored dependencies, set this variable to <code>company/project</code>.
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 
-### clevercloud/go.json optional configuration
+### clevercloud/go.json
+
+This configuration file is optional.
 
 If you want to configure precisely your dependencies (e.g. have private libraries, or specific versions of some libraries), here is the way:
 
 1. Make your repository have a `GOPATH` structure:
-   
-   ``` haskell
-   ./
-      src/
-         myapp/
-         foo/
+    ```txt
+    ./
+    src/
+        myapp/
+        foo/
             module1/
             module2/
-         module3/
-   ```
-   
-   Here you have the modules `myapp`, `foo/module1`, `foo/module2` and `module3`.
+        module3/
+    ```
 
-2. Create a `clevercloud/go.json` file at the top of your repository:
-   
-   ```haskell
-   ./
-      clevercloud/
-         go.json
-      src/
-         myapp/
-         ...
-   ```
+    Here you have the modules `myapp`, `foo/module1`, `foo/module2` and `module3`.
 
-3. In the `go.json` file, put the following:
-   
-   ```json
-   {
-       "deploy": {
-           "appIsGoPath": true,
-           "main": "myapp"
-       }
-   }
-   ```
-   
-   If `appIsGoPath` is present and equals `true`, then we consider that
-   your repo root is the `GOPATH`. the `main` field then becomes mandatory
-   and must be the name of the module you want to run. e.g. if you want
-   to run `module1`, `main` must be `foo/module1`.
+2. Create a *clevercloud/go.json* file at the top of your repository:
 
-4. (Optional) Add a `"execDir"` field to the `"deploy"` object:
-   
-   ```json
-   {
-       "deploy": {
-           "appIsGoPath": true,
-           "main": "myapp",
-           "execDir": "src/myapp"
-       }
-   }
-   ```
-   
-   The `execDir` value must be relative to the root of your repo. In the
-   example above, we will run the application in the `src/myapp` directory.
+    ```txt
+    ./
+    clevercloud/
+                go.json
+    src/
+        myapp/
+        ...
+    ```
+
+3. In the go.json file, put the following:
+
+    ```json
+    {
+        "deploy": {
+            "appIsGoPath": true,
+            "main": "myapp"
+        }
+    }
+    ```
+
+    If `appIsGoPath` is present and equals `true`, then we consider that your repo root is the *GOPATH*.
+
+    The `main` field then becomes mandatory and must be the name of the module you want to run.
+
+    E.g. if you want to run `module1`, `main` must be `foo/module1`.
+
+4. (Optional) Add a "execDir" field to the "deploy" object:
+
+    ```json
+    {
+        "deploy": {
+            "appIsGoPath": true,
+            "main": "myapp",
+            "execDir": "src/myapp"
+        }
+    }
+    ```
+
+
+The `execDir` value must be relative to the root of your repo.
+
+In the example above, we will run the application in the src/myapp directory.
 
 {{< readfile "/content/partials/env-injection.md" >}}
 

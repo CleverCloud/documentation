@@ -1,4 +1,5 @@
 ## Configure your Docker application
+
 ### Mandatory configuration
 
 Be sure that you:
@@ -53,6 +54,7 @@ You can make the docker socket available from inside the container by adding the
 ### Private registry
 
 We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few [environment variables](#setting-up-environment-variables-on-clever-cloud):
+
 - `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
 - `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
 - `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
@@ -78,7 +80,7 @@ To make your dockerized application run on clever Cloud, you need to:
 
 For instance, here is the `Dockerfile` used for the Rust application:
 
-```bash
+```Dockerfile
 # rust tooling is provided by `archlinux-rust`
 FROM geal/archlinux-rust
 MAINTAINER Geoffroy Couprie, contact@geoffroycouprie.com
@@ -121,7 +123,7 @@ tail -f /var/log/hhvm/error.log
 
 Since the two servers are running as daemons, we need to start a long-running process. In this case we use `tail -f`. We then add `start.sh` as the `CMD` in the `Dockerfile`
 
-```bash
+```Dockerfile
 # We need HHVM
 FROM jolicode/hhvm
 

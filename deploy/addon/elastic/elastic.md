@@ -1,6 +1,6 @@
 ---
-title: Elastic Stack
-position: 7
+title: Elastic Stack Addon
+position: 6
 shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
 tags:
 - addons

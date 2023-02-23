@@ -73,7 +73,7 @@ You can use the `CC_REVERSE_PROXY_IPS` [environment variable](#setting-up-enviro
 
 ```
 # .env
-TRUSTED_PROXIES=127.0.0.1,CC_REVERSE_PROXY_IPS
+TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}
 ```
 
 ```

@@ -17,6 +17,11 @@ keywords:
 
 Log management is currently only available through our API and [clever-tools]({{< ref "/getting-started/cli.html" >}}).
 
+{{< alert "info" "Logs retention" >}}
+Logs are currently retained for a maximum of 1 day. Logs are flushed daily at midnight.
+You can use log drains if a greater retention is needed.
+{{< /alert >}}
+
 ## Get continuous logs from your application
 
 You can see logs with the command down below.

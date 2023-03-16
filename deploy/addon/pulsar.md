@@ -85,21 +85,19 @@ Inspect your Biscuit token:
 biscuit inspect addon.biscuit
 Authority block:
 == Datalog ==
-right(#authority, #admin);
+right("admin");
 
-== Revocation ids ==
-Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
-Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
+== Revocation id ==
+0392cdc4dbda294fd254269ad0ce5d1ad2e9c6301b189945074dd051890e495dd16bf5390f84e8499a2045bde85795636f2e156309f9b425270979957e50280a
 
 ==========
 
 Block n°1:
 == Datalog ==
-check if topic_operation(#ambient, "user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345668-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2);
+check if namespace("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c") or topic("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $topic);
 
-== Revocation ids ==
-Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
-Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
+== Revocation id ==
+4a72ca17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450c
 
 ==========
 ```
@@ -118,7 +116,7 @@ This will open your `$EDITOR` to type the attenuation.
 Put
 
 ```bash
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix")
+check if topic_operation($operation), $topic.starts_with("my-own-prefix")
 ```
 
 Then it outputs the attenuated token. Inspect it to ensure your attenuation:
@@ -126,31 +124,28 @@ Then it outputs the attenuated token. Inspect it to ensure your attenuation:
 ```bash
 Authority block:
 == Datalog ==
-right(#authority, #admin);
+right("admin");
 
-== Revocation ids ==
-Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
-Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
+== Revocation id ==
+0392cdc4dbda294fd254269ad0ce5d1ad2e9c6301b189945074dd051890e495dd16bf5390f84e8499a2045bde85795636f2e156309f9b425270979957e50280a
 
 ==========
 
 Block n°1:
 == Datalog ==
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_50ee8f69-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $2);
+check if namespace("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c") or topic("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $topic);
 
-== Revocation ids ==
-Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
-Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
+== Revocation id ==
+4a72ca17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450c
 
 ==========
 
 Block n°2:
 == Datalog ==
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix");
+check if topic_operation($operation), $topic.starts_with("my-own-prefix");
 
 == Revocation ids ==
-Content-based: 8eaaa639d5b94c3e053ad840e8dcca6fe66a621442ecc99eadf1df03d6138f1d
-Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
+3b71ba17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450d
 
 ==========
 ```

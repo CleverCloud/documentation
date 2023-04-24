@@ -68,6 +68,26 @@ So you can alter the build&start process for your application.
 |CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
 {{< /table >}}
 
+### Tailscale support
+
+[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances. 
+
+Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys).
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[TAILSCALE_AUTH_KEY](https://tailscale.com/) | Contains your Tailscale Auth key |  |  |
+|TAILSCALE_LOGIN_SERVER| Contains the login server |  |  |
+{{< /table >}}
+
+#### How it works?
+
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}}) : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}})), you can match the instance from your deployment to reach it over VPN.
+
+If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
+
+
 ## Docker
 
 [Docker Documentation]({{< ref "deploy/application/docker/docker.md" >}})
@@ -412,17 +432,6 @@ So you can alter the build&start process for your application.
 |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
 {{< /table >}}
 
-### Redis
-
-[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
-
-{{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|REDIS_HOST |  | Generated upon creation | X  |
-|REDIS_PORT |  | Generated upon creation | X  |
-|REDIS_PASSWORD |  | Generated upon creation | X  |
-{{< /table >}}
 
 ### Elastic Stack
 
@@ -447,6 +456,15 @@ So you can alter the build&start process for your application.
 |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
 {{< /table >}}
 
+### New Relic
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name |  |  |
+|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license |  |  |
+{{< /table >}}
+
 ### Pulsar
 
 {{<table "table table- bordered" "text-align:center" >}}
@@ -462,15 +480,17 @@ So you can alter the build&start process for your application.
 |ADDON_PULSAR_TOKEN | Your Biscuit authentication token | Generated upon creation        | X |
 {{< /table >}}
 
-### New Relic
+### Redis
+
+[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name |  |  |
-|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license |  |  |
+|REDIS_HOST |  | Generated upon creation | X  |
+|REDIS_PORT |  | Generated upon creation | X  |
+|REDIS_PASSWORD |  | Generated upon creation | X  |
 {{< /table >}}
-
 
 ### Socks
 

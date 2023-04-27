@@ -352,7 +352,7 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
         </tr>
         <tr>
             <td>Laravel</td>
-            <td>-</td>
+            <td>Sylius</td>
         </tr>
     </tbody>
 </table>

@@ -65,7 +65,7 @@ If you put the `.user.ini` file in a sub-directory; settings will be applied rec
 To do so, you can use a tiny trick:
 
 1. Add an environment variable `PHP_INI_SCAN_DIR=:/home/bas` in your application. This way php cli will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
-2. Then add a script in your [deployment hook]({{< ref "develop/build-hooks.md" >}}) (like the [Pre Build one]({{< ref "develop/build-hooks.md#pre-build-cc_pre_build_hook" >}})):
+2. Then add a script in your [deployment hook]({{< ref "develop/build-hooks.md" >}}) (like the [Pre Run one]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
    ```
    #!bin/bash -l
    test -f $APP_HOME$CC_WEBROOT/.user.ini && \

@@ -435,7 +435,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Elastic Stack
 
-[Elastic Stack Documentation]({{< ref "deploy/addon/elastic.md" >}})
+[Elastic Stack Documentation]({{< ref "deploy/addon/elastic/elastic.md" >}})
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

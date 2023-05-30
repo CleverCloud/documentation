@@ -250,7 +250,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
 |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
 |CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |
-|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9` and `3.10` |  |  |
+|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
 |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |

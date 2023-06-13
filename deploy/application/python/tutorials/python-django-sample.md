@@ -23,6 +23,10 @@ The application is a very basic one. More information about the application:
 
 ## Configure your Django application
 
+Note : 
+- Select at least a Nano instance (Pico doesn't have enough resources for a Django project).
+- Connect your Django project to Postgresql version 12 if you're using django 4.2+ (postgresql 11 is deprecated since this version).
+
 ### My application does not exists already
 
 If you want to test easily a Django deployment on Clever Cloud, just clone the [GitHub repo](https://github.com/CleverCloud/django-example) and go the next section.

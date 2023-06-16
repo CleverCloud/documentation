@@ -29,6 +29,8 @@ To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
+{{< image "/images/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
+
 ### Advanced pane
 
 Advanced metrics allow you to access all gathered metrics,

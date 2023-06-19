@@ -463,8 +463,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name |  |  |
-|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license |  |  |
+|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name | X |
+|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license | X |
+|[CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) | true | X |  
+|[CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) | true | X |  
+|[CC_NEWRELIC_ERROR_COLLECTOR_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) | obfuscated | X |  
 {{< /table >}}
 
 ### Pulsar

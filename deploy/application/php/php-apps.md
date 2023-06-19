@@ -24,6 +24,8 @@ The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is ex
 
 {{< readfile "/content/partials/new-relic.md" >}}
 
+{{< readfile "/content/partials/blackfire.md" >}}
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**.

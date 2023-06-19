@@ -10,6 +10,7 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `7.4`
 - `8.0`
 - `8.1`
+- `8.2`
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7 version available.
 
@@ -362,10 +363,10 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 5.6](https://php56info.cleverapps.io).
 - [PHP 7.2](https://php72info.cleverapps.io).
 - [PHP 7.3](https://php73info.cleverapps.io).
-- [PHP 8.1](https://php81info.cleverapps.io).
 - [PHP 7.4](https://php74info.cleverapps.io).
 - [PHP 8.0](https://php80info.cleverapps.io).
-- [PHP 8.1](https://php80info.cleverapps.io).
+- [PHP 8.1](https://php81info.cleverapps.io).
+- [PHP 8.2](https://php82info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 

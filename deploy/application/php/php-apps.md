@@ -12,7 +12,7 @@ str_replace_dict:
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
 into HTML.
 
-PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4 and 8.0. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 

@@ -31,6 +31,26 @@ The signature database is updated every 2 hours.
 ## Memory consumption
 ClamAV can consume a lot of resources, make sure you have a scaler with enough memory (at least 1GB available) to avoid a complete shutdown / crash of your application (OOM).
 
+## Unix and/or TCP sockets connections
+
+The ClamAV daemon on Clever Cloud instances listens for incoming connections on the following sockets:
+
+Unix socket: 
+```bash
+/run/clamav/clamd.ctl
+```
+
+TCP socket: 
+```bash
+localhost:3310
+```
+
+Be sure to use these settings when configuring your ClamAV client.
+
 ## Additional configurations
+
+`CC_CLAMAV_MAXTHREADS`: Maximum number of threads running at the same time.  
+`CC_CLAMAV_MAXQUEUE`: Maximum number of queued items.
+
 If you have special needs, you can make a request on our technical support:
   * <support@clever-cloud.com>

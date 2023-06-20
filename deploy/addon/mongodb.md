@@ -16,10 +16,14 @@ MongoDB is an open source NoSQL document-oriented database. We provide these dat
 
 ## Versions
 
-The version currently installed by the add-on is :
+In order to comply with [MongoDB Server Side Public License](https://www.mongodb.com/licensing/server-side-public-license), the version currently installed by the add-on is :
 
 - on shared plans (DEV) : MongoDB 4.0.3
 - on newly created dedicated databases (plans XS Small Space and above) : MongoDB 4.0.3
+
+### Higher Versions
+
+If you puchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, please [contact us](https://www.clever-cloud.com/contact/).
 
 ## About Free Databases
 

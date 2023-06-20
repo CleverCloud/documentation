@@ -42,6 +42,14 @@ All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}
 
 For instance, you can derive metrics over time, do custom aggregations or combine metrics.
 
+### Get alerts
+
+You can set up alerts in Grafana to be notified on your apps and addons consumption. This can be useful to monitor databases capacity or latency.
+
+{{< image "/images/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
+
+For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
+
 ## Access Logs metrics
 
 All your applications access logs are pushed to [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.

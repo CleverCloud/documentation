@@ -463,14 +463,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | '' | X |
-|CC_BLACKFIRE_SERVER_ID | The server id used to authenticate with Blackfire | '' | X |
-|CC_BLACKFIRE_LOG_LEVEL | Sets the verbosity of Agent’s log output | '1' | X |
-|CC_BLACKFIRE_MEMORY_LIMIT | Sets the maximum allowed RAM usage (megabytes) when ingesting traces | '500' | X |
-|CC_BLACKFIRE_COLLECTOR | Sets the URL of Blackfire’s data collector | 'https://blackfire.io' | X |
-|CC_BLACKFIRE_TIMEOUT | Sets the Blackfire API connection timeout | '15' | X |
-|CC_BLACKFIRE_STATSD | Sets the statsd server to send agent’s statistics | '' | X |
-|CC_BLACKFIRE_STATSD_PREFIX | Sets the statsd prefix to use when sending data | 'blackfire' | X |
+|CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | `''` | X |
+|CC_BLACKFIRE_SERVER_ID | The server id used to authenticate with Blackfire | `''` | X |
+|CC_BLACKFIRE_LOG_LEVEL | Sets the verbosity of Agent’s log output | `1` | X |
+|CC_BLACKFIRE_MEMORY_LIMIT | Sets the maximum allowed RAM usage (megabytes) when ingesting traces | `500` | X |
+|CC_BLACKFIRE_COLLECTOR | Sets the URL of Blackfire’s data collector | `https://blackfire.io` | X |
+|CC_BLACKFIRE_TIMEOUT | Sets the Blackfire API connection timeout | `15` | X |
+|CC_BLACKFIRE_STATSD | Sets the statsd server to send agent’s statistics | `''` | X |
+|CC_BLACKFIRE_STATSD_PREFIX | Sets the statsd prefix to use when sending data | `blackfire` | X |
 {{< /table >}}
 
 ### New Relic

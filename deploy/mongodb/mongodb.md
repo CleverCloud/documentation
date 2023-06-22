@@ -1,7 +1,9 @@
 ---
-title: MongoDB
+title: MongoDB addon
 position: 5
 shortdesc: A noSQL and document-oriented database, operated by Clever Cloud.
+aliases:
+- /doc/deploy/addon/mongodb
 tags:
 - addons
 keywords:

@@ -20,7 +20,7 @@ To be able to use Mongo Ops Manager, you'll need a valid MongoDB Enterprise Adva
 The features available with Mongo Ops Manager could be relevant if you managed your infrastructure and the maintenance of your MongoDB databases yourself. However, if you use Clever Cloud to access our Mongo add-ons, you are already opting for a managed service, and will therefore will benefit from the following features similar to Mongo Ops Manager:
 
 - **A centralized interface** to access your database settings and perform operations on them.
-- **A monitoring and alert system** that can be configured with Grafana (an example with Slack alerts can be found [here](https://www.clever-cloud.com/fr/blog/fonctionnalites/2021/12/03/alertes-slack-pour-grafana/)).
+- **A monitoring and alert system** that can be configured with Grafana (an example with Slack alerts can be found [here](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/)).
 - **A backup and restore system** already configured for our add-ons (customizable upon request) with easy migration and one-click importation.
 - The ability to **automate tasks** with our CLI.
 - **Enhanced security** through our default access management on Clever Cloud (encryption at rest, default unauthorized super admin operations, etc.).

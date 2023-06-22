@@ -1,5 +1,5 @@
 +++
 weight = 50
 chapter = true
-title = "Javascript Frameworks"
+title = "JavaScript Frameworks"
 +++

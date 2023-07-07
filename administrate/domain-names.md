@@ -144,6 +144,28 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+### Your Application Runs in the Europe/Gravelines ('GRAHDS') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 188.165.58.196</code><br>
+    <code>@ 10800 IN A 188.165.58.200</code>
+    </td>
+  </tr>
+</table>
+
 ### Your Application Runs in the North-America/Montreal ('MTL') Zone
 
 Provide the following to your registrar:
@@ -237,7 +259,6 @@ Provide the following to your registrar:
 {{< alert "warning" "Warning on CNAME Availability" >}}
     You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
 {{< /alert >}}
-
 
 If you want to make your application available from a domain name which does not support CNAME records (eg <code>example.com</code> in addition to <code>www.example.com</code>), check if your registrar provides a web redirection service. This way, you only have to make <code>www.example.com</code> point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 

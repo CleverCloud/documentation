@@ -78,6 +78,31 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+
+### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Four records:<br>
+    <code>@ 10800 IN A 212.129.27.239</code><br>
+    <code>@ 10800 IN A 212.83.186.147</code>
+    <code>@ 10800 IN A 212.83.186.216</code>
+    <code>@ 10800 IN A 212.129.27.183</code>
+    </td>
+  </tr>
+</table>
+
 ### Your Application Runs in the Europe/Roubaix ('RBX') Zone
 
 <table class="table table-bordered" style="text-align:center">

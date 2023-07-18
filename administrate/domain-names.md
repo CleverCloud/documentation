@@ -286,9 +286,44 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 Requests are routed to applications based on the domain name, but you can also route based
 on a path prefix.
 
-For instance, you can bind `example.com/api` to an app, and `example.com` to another one.
+For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
-the first app. The other requests will be routed to the second app. You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "getting-started/cli.md" >}})).
+the second app. The other requests will be routed to the first app.
+You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "getting-started/cli.md" >}})).
+
+Note that your prefix-routed application **needs** to have a `/prefix` route.
+
+This will work:
+
+```
+example.com        ->      myfirtapp-main-route
+
+example.com/api    ->      mysecond-app-main-route/api
+```
+
+This will NOT work:
+
+```
+example.com        ->      myfirtapp-main-route     (works)
+
+example.com/api    ->      mysecondapp-main-route   (404 response from mysecondapp)
+```
+
+### Prefix routing for static sites
+
+In the case of static files, you usually understand routes as paths in a file tree.
+
+This will work:
+
+```
+example.com/api    ->     my-static-site/api/index.php
+```
+
+This will NOT work:
+
+```
+example.com/api    ->     my-static-site/index.php
+```
 
 ## Gandi CNAME configuration
 

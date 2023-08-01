@@ -118,8 +118,10 @@ Provide the following to your registrar:
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
+    <td>Four records:<br>
     <code>@ 10800 IN A 87.98.180.173</code><br>
+    <code>@ 10800 IN A 87.98.182.176</code><br>
+    <code>@ 10800 IN A 87.98.180.181</code><br>
     <code>@ 10800 IN A 87.98.182.136</code>
     </td>
   </tr>

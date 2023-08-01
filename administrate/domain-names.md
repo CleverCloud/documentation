@@ -89,7 +89,7 @@ Provide the following to your registrar:
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
     <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.</code>
+    <code>{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.</code>
     </td>
   </tr>
   <tr>

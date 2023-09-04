@@ -1,10 +1,10 @@
 ## Create an application on Clever Cloud
 
-### via the web console
+### With the web console
 
 Refer to [our getting started]({{< ref "/getting-started/" >}}) for more details on application creation via the console.
 
-### via the Clever Tools CLI
+### With the Clever Tools CLI
 
 1. Make sure you have clever-tools installed locally or follow our [CLI getting started]({{< ref "/reference/clever-tools/getting_started.md" >}}) guide.
 2. In your code folder, do `clever create --type <type> <app-name> --region <zone> --org <org>` where :

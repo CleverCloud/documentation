@@ -61,6 +61,19 @@ If you want the settings to be applied to the whole application, you should put 
 
 If you put the `.user.ini` file in a sub-directory; settings will be applied recursively starting from this sub-directory.
 
+**Note**: `.user.ini` files are not loaded by the PHP CLI by default.
+
+To do so, you can use a tiny trick:
+
+1. Add the `PHP_INI_SCAN_DIR=:/home/bas` environment variable in your application.
+   This way the PHP CLI will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
+2. Run the following script in a [deployment hook]({{< ref "develop/build-hooks.md" >}}) (e.g. in the [pre-run hook]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
+
+   ```bash
+   #!/bin/bash -l
+   test -f ${APP_HOME}${CC_WEBROOT}/.user.ini && \
+     cp ${APP_HOME}${CC_WEBROOT}/.user.ini ${HOME}/user.ini
+
 ##### Timezone configuration
 
 All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
@@ -95,8 +108,6 @@ auto_prepend_file=./inject_headers.php
 Please refer to the [official documentation](https://www.php.net/manual/en/configuration.file.per-user.php) for more information.
 
 You can review the [available directives](https://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within `.user.ini`.
-
-**Note**: `.user.ini` files are not loaded by the php cli.
 
 #### `clevercloud/php.json` settings
 

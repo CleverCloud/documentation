@@ -60,17 +60,18 @@ If you want the settings to be applied to the whole application, you should put 
 
 If you put the `.user.ini` file in a sub-directory; settings will be applied recursively starting from this sub-directory.
 
-**Note**: `.user.ini` files are not loaded by the php cli by default.
+**Note**: `.user.ini` files are not loaded by the PHP CLI by default.
 
 To do so, you can use a tiny trick:
 
-1. Add an environment variable `PHP_INI_SCAN_DIR=:/home/bas` in your application. This way php cli will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
-2. Then add a script in your [deployment hook]({{< ref "develop/build-hooks.md" >}}) (like the [Pre Run one]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
-   ```
-   #!bin/bash -l
-   test -f $APP_HOME$CC_WEBROOT/.user.ini && \
-     cp $APP_HOME$CC_WEBROOT/.user.ini $HOME/user.ini
-   ```
+1. Add the `PHP_INI_SCAN_DIR=:/home/bas` environment variable in your application.
+   This way the PHP CLI will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
+2. Run the following script in a [deployment hook]({{< ref "develop/build-hooks.md" >}}) (e.g. in the [pre-run hook]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
+
+   ```bash
+   #!/bin/bash -l
+   test -f ${APP_HOME}${CC_WEBROOT}/.user.ini && \
+     cp ${APP_HOME}${CC_WEBROOT}/.user.ini ${HOME}/user.ini
 
 ##### Timezone configuration
 

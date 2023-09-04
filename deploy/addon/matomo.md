@@ -59,15 +59,27 @@ Once you created your add-on, you should get to the dashboard and see a link nam
 
 Once you accessed your Matomo interface, we can start configuring it. A custom Clever Cloud configuration is automatically installed on your instance during the provisioning.
 
-This configuration helps you taking advantage of optimizations by using a Redis cache by default. 
+This configuration helps you taking advantage of optimizations by using a Redis cache by default.
 
 ### Using your Matomo
 
 If you're new with Matomo, you would probably want to read the Matomo's guides on [the official documentation](https://matomo.org/guides/).
 
-## Customize your Matomo instance
+## Matomo plugins
 
-Matomo can be customized following your needs with a multitude of plugins. You can go into `Settings` gear icon and then `Marketplace` to manage them. Ultimately, you can click Install on whatever plugin you could find accurate.
+Your Matomo instance comes with a list of pre-installed plugins. As a managed instance, our Matomo addon won't let you bypass the installation process. Installed plugins already allows a quite advanced use of Matomo, but if you wish to install a specific plugin that's not in your instance, feel free to contact our suport team.
+
+### When activating a deactivated plugin
+
+Keep in mind that some plugins might consume more ressources than you have by default on your PHP instance, since some PHP processes can take a long time, depending on what you are doing.
+
+If you activate a deactivated by default plugin (like [GoogleAnalyticsImporter](https://matomo.org/guide/installation-maintenance/import-google-analytics/)):
+
+- Scale your PHP app
+- Disable autoscalability for the PHP app
+- Scale your Matomo MySQL addon
+
+If you activate the plugin while enabling autoscalability, your PHP insatnce will restart with default settings when scaling, therefore disabling the plugin and killing the process.
 
 Plugins can be browsed from [Matomo own plugin repository](https://plugins.matomo.org/).
 

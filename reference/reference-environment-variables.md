@@ -491,7 +491,7 @@ to be routed through the exit node.
 | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
 | CC_VPN_DNS_OVERRIDES  | Comma-separated list of DNS IP                                                                  |                                |                            |
 | VPN_ADDON_CRT         | Client certificate                                                                              |                                |                            |
-| VPN_ADDON_DEVTYPE     | Kernel virtual interface kind to use                                                            | tap                            |                            |
+| VPN_ADDON_DEVTYPE     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
 | VPN_ADDON_CACRT       | Server CA certificate                                                                           |                                |                            |
 | VPN_ADDON_CIPHER      | Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1              |                            |
 | VPN_ADDON_KEY         | Client certificate private key                                                                  |                                |                            |

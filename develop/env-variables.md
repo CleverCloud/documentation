@@ -206,7 +206,7 @@ Here is a non-exhaustive summary:
 {{<table "table table-bordered table-striped dataTable" >}}
 | Language | Usage |
 |----------|-------|
-| [Go][go] | `Os.Getenv["MY_VAR"]`|
+| [Go][go] | `os.Getenv("MY_VAR")`|
 | [Haskell][haskell] | `Os.Getenv["MY_VAR"]` |
 | [Node.js][node] | `process.env["MY_VAR"]`|
 | [Java WAR][java-war] | `System.getProperties().getProperty("MY_VAR")` |

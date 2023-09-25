@@ -44,7 +44,7 @@ For instance, you can derive metrics over time, do custom aggregations or combin
 
 ### Get alerts
 
-You can set up alerts in Grafana to be notified on your apps and addons consumption. This can be useful to monitor databases capacity or latency.
+You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.
 
 {{< image "/images/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
 

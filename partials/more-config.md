@@ -1,7 +1,8 @@
 ## More configuration
 
-Need more configuration? To run a script at the end of your deployment? To add your
-private SSH key to access private dependencies? Go check the [Common configuration page]({{< ref "reference/common-configuration.md" >}}).
+Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?
+
+Go check the [Common configuration page]({{< ref "reference/common-configuration.md" >}}).
 
 You may want to have an advanced usage of your application, in which case we recommend you to read the **Administrate** documentation section.
 

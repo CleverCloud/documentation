@@ -168,3 +168,23 @@ You cannot `scp` something to the VM, you can however easily `scp` something fro
 ## What is the timezone used by my application/add-on?
 
 All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
+
+## I received an email saying "Addon [my add-on] disk is nearly full". What do I do?
+
+A full disk can cause your database to crash or become unresponsive.
+We advise you to check how many free space there is.
+You might want to do one of the following:
+
+### Remove data from your database
+
+Only you know your data!
+
+You can take a snapshot of your database and export the obsolete data to a cold storage.
+Then you can remove records from your database, reindex your tables and try to perform a VACUUM operation if the database software allows it.
+
+### Migrate your add-on to a bigger plan
+
+… Or to the same plan!
+
+You can buy more disk space by migrating your add-on to a higher plan.
+If a VACUUM operation needs more disk that there is remaining, migrating to the same plan will clean up the file on disk and regain space.

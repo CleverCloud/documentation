@@ -1,6 +1,6 @@
 ---
-title: Elastic Stack
-position: 7
+title: Elastic Stack Addon
+position: 6
 shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
 tags:
 - addons
@@ -18,7 +18,7 @@ Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsea
 
 ## Versions
 
-The current versions supported at add-on creation are 6 and 7.
+The current versions supported at add-on creation are 7 and 8.
 
 ## Elasticsearch
 
@@ -40,7 +40,9 @@ Any member of the Clever Cloud organisation containing the Elastic add-on will b
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).  
+
+Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
 Currently, APM agents are available in the following languages:
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
@@ -55,6 +57,8 @@ It is available as an opt-in option of the Elastic add-on. It will be deployed a
 The created application name follow the pattern *APM - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*. The provisioning of this application might take up a minute to show up in your organisation.
 
 Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
+
+
 
 ### How to setup APM
 

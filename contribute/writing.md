@@ -17,7 +17,7 @@ Before you start writing something new please create a [Github issue](https://gi
 
 ## Writing new content
 
-There are a nomber of things you need to be aware of when writing new content. We use markdown files and Hugo to generate this documentation. The CSS classes available are in Bootstrap 4.5. A list of commonly used Hugo shortcode can be found in its [dedicated page]( {{< ref "contribute/shortcodes" >}} )
+There are a number of things you need to be aware of when writing new content. We use markdown files and Hugo to generate this documentation. The CSS classes available are in Bootstrap 4.5. A list of commonly used Hugo shortcode can be found in its [dedicated page]( {{< ref "contribute/shortcodes" >}} )
 
 
 ### Debug Mode

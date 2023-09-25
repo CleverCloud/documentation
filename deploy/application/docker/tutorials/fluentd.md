@@ -23,11 +23,16 @@ Since you deploy microservices on Clever Cloud, you may need some data pipes bet
 
 Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 
+{{< alert "info" "Why can't I use the Ruby application?" >}}
+  Ruby application on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
+{{< /alert >}}
+
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
 
 ## Configure your Fluentd + Docker application
+
 ### Mandatory configuration
 
 To follow this tutorial, you will need:
@@ -40,17 +45,18 @@ To follow this tutorial, you will need:
 * a Ruby versions manager
 
 {{< alert "info" >}}
-To manage your gems and ruby versions, we recommend <a href="https://GitHub.com/sstephenson/rbenv">rbenv</a>.
+To manage your gems and ruby versions, we recommend [rbenv](https://GitHub.com/sstephenson/rbenv).
 {{< /alert >}}
 
 ### My application does not exists already
+
 #### Create a fluentd application locally
 
 ```bash
-$ mkdir myFluentd
-$ cd myFluentd
-$ touch Gemfile Dockerfile go.sh td-agent.conf
-$ chmod +x go.sh
+mkdir myFluentd
+cd myFluentd
+touch Gemfile Dockerfile go.sh td-agent.conf
+chmod +x go.sh
 ```
 
 Inside `Gemfile` put the following:
@@ -67,7 +73,7 @@ gem 'fluent-plugin-td'
 Then run bundler to install dependencies and generate your `Gemfile.lock`
 
 ```bash
-$ bundle install
+bundle install
 ```
 
 Clever Cloud needs that your application answers on requests made on `0.0.0.0:8080`, we'll use a PORT environment variable for local test purposes (this variable is automatically setup on each application).
@@ -85,7 +91,9 @@ Inside `go.sh` put the following:
 
 ```bash
 #!/bin/sh
+
 bundle exec fluentd --use-v1-config -c td-agent.conf
+
 echo "🌍 Fluentd server started"
 ```
 
@@ -94,25 +102,27 @@ echo "🌍 Fluentd server started"
 Start you service
 
 ```bash
-$ PORT=9292 ./go.sh
+PORT=9292 ./go.sh
 ```
 
 Verify that it responds to requests
 
 ```bash
-$ curl 0.0.0.0:9292
+curl 0.0.0.0:9292
 ```
 You can now read [My application already exists](#my-application-already-exists)
 
 #### Fine tune you application
+
 You can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins).
 
 ### My application already exists
+
 #### Prepare your application for deployment
 
 Create a `Dockerfile` at the root of your project and put inside the following (assuming your start script is in `go.sh`):
 
-```docker
+```dockerfile
 FROM ruby:2.4.4
 EXPOSE 8080
 COPY Gemfile Gemfile.lock td-agent.conf go.sh ./
@@ -123,14 +133,6 @@ RUN chmod +x go.sh
 
 CMD [ "/go.sh" ]
 ```
-
-{{< readfile "/content/partials/create-application.md" >}}
-
-{{< alert "warning" "Why I can't just use ruby runtime" >}}
-    Ruby runtime on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
-{{< /alert >}}
-
-{{< readfile "/content/partials/set-env-vars.md" >}}
 
 {{< readfile "/content/partials/env-injection.md" >}}
 

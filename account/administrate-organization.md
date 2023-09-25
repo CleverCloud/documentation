@@ -26,7 +26,7 @@ By clicking on you application name, a new left menu will open itself.
 
 - **Shared softwares**: 
 
-- **Billing**: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.
+- **Payment methods**: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.
 
 - **Invoices**: See your recent invoices.
 

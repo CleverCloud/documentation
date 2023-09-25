@@ -104,5 +104,6 @@ GitHub does not give us access to organizations created or joined *after* you've
 
 You can of course reach to support@clever-cloud.com if this page was not helpful enough.
 
+## Websites are not accessible
 
-
+Check the status of the services on [clevercloudstatus.com](https://www.clevercloudstatus.com/).

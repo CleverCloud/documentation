@@ -11,9 +11,16 @@ keywords:
 - log drains
 - drain
 - drains
+- datadog
+- newrelic
 ---
 
 Log management is currently only available through our API and [clever-tools]({{< ref "/getting-started/cli.html" >}}).
+
+{{< alert "info" "Logs retention" >}}
+Logs are currently retained for a maximum of 1 day. Logs are flushed daily at midnight.
+You can use log drains if a greater retention is needed.
+{{< /alert >}}
 
 ## Get continuous logs from your application
 
@@ -28,6 +35,16 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
 ```bash
 clever logs --before 2016-08-11T14:54:33.971Z
 ```
+
+You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+
+```bash
+clever logs --addon <addon_xxx>
+```
+
+{{< alert "warning" "Warning:" >}}
+   Only the last 1000 lines of logs are got by `clever logs`.
+{{< /alert >}}
 
 ### Access logs
 
@@ -168,7 +185,7 @@ curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.c
   "index_patterns": ["logstash-*"], 
   "template": {
     "settings": {
-      "index.lifecycle.name": "logs_drain", 
+      "index.lifecycle.name": "logs_drain"
     }
   }
 }
@@ -189,10 +206,14 @@ clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input
 Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
 {{< /alert >}}
 
-## Logs extended storage
+### NewRelic
 
-Each organisations or personal space has a `Logs extended storage` Cellar addon.
-This addon will be used to store your applications/addons logs when the hot retention is reached when the feature will be available.
+To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
 
-The most aged logs will be pushed to `Logs extended storage` as cold storage.
-The retention for cold storage will be user defined via a new log management interface.
+```bash
+clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
+```
+
+{{< alert "warning" "zone" >}}
+NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
+{{< /alert >}}

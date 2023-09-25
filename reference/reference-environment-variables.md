@@ -28,6 +28,8 @@ These are read-only variables that are generated for each scaler before they bui
 |COMMIT_ID | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
 |CC_REVERSE_PROXY_IPS | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
 |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
+|CC_APP_NAME | The customer defined application name | cloud-api-production |
+|PORT | The mandatory port value is 8080 | 8080 |
 {{< /table >}}
 
 ### Variables you can define
@@ -40,23 +42,53 @@ So you can alter the build&start process for your application.
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
 |[CC_TROUBLESHOOT]({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
 |[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-|CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | on-failure |
-|CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | 1 |
-|CC_PRE_BUILD_HOOK | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
-|CC_POST_BUILD_HOOK | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
-|CC_PRE_RUN_HOOK | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
-|CC_RUN_SUCCEEDED_HOOK | Ran once the application has started successfuly. |  |
-|CC_RUN_FAILED_HOOK | Ran once the application has failed to start. |  |
+|CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
+|CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | `1` |
+|[CC_PRE_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_pre_build_hook" >}}) | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
+|[CC_POST_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_post_build_hook" >}}) | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
+|[CC_PRE_RUN_HOOK]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}}) | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
+|[CC_RUN_SUCCEEDED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
+|[CC_RUN_FAILED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has failed to start. |  |
+|CC_RUN_COMMAND | Custom command to run your application. |  |
+|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
 |CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
 |CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
-|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | id_ed25519 |
+|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
 |CC_DISABLE_METRICS | Disable metrics collection. | `false` |
 |[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
 |[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
 |[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
 |[CC_METRICS_PROMETHEUS_PATH]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+|[CC_METRICS_PROMETHEUS_USER]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
 |[CC_CLAMAV]({{< ref "administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
+|[CC_CLAMAV_MAXTHREADS]({{< ref "administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
+|[CC_CLAMAV_MAXQUEUE]({{< ref "administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
+|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version) instead | |
+|[CC_VARNISH_STORAGE_SIZE]({{< ref "administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
+|CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
 {{< /table >}}
+
+### Tailscale support
+
+[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances. 
+
+Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys).
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[TAILSCALE_AUTH_KEY](https://tailscale.com/) | Contains your Tailscale Auth key |  |  |
+|TAILSCALE_LOGIN_SERVER| Contains the login server |  |  |
+{{< /table >}}
+
+#### How it works?
+
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}}) : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}})), you can match the instance from your deployment to reach it over VPN.
+
+If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
+
 
 ## Docker
 
@@ -68,7 +100,7 @@ So you can alter the build&start process for your application.
 |CC_DOCKERFILE | The name of the Dockerfile to build. | `Dockerfile` |  |
 |CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
 |CC_DOCKER_EXPOSED_HTTP_PORT | Set to custom HTTP port if your Docker container runs on custom port. | `8080` |  |
-|CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port but **it still needs a support request to make use of it.** | `4040` |  |
+|CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port. | `4040` |  |
 |CC_DOCKER_FIXED_CIDR_V6 | Activate the support of IPv6 with an IPv6 subnet int the docker daemon. |  |  |
 |CC_DOCKER_LOGIN_USERNAME | The username to login to a private registry. |  |  |
 |CC_DOCKER_LOGIN_PASSWORD | The password of your username. |  |  |
@@ -82,9 +114,9 @@ So you can alter the build&start process for your application.
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_DOTNET_VERSION | Choose the .NET Core version between `3.1`,`5.0`. | 5.0 |  |
+|CC_DOTNET_VERSION | Choose the .NET Core version between `5.0`,`6.0`. | 6.0 |  |
 |CC_DOTNET_PROJ | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |  |
-|CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1` |  |  |
+|CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `net5.0` |  |  |
 |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
@@ -96,7 +128,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10` or `1.11` | `1.11` |  |
+ |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | `1.11` |  |
  |CC_MIX_BUILD_GOAL | The mix goal to build the application (default compile) |  |  |
  |CC_PHOENIX_ASSETS_DIR | Folder in which your Phoenix assets are located. |  |  |
  |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |
@@ -112,7 +144,7 @@ So you can alter the build&start process for your application.
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_GO_PKG | Makes the deployer run go get ${CC_GO_PKG} instead of go get &lt;app_id&gt;.  |  |  |
+|CC_GO_PKG | Makes the deployer run go get `${CC_GO_PKG}` instead of go get `<app_id>`.  |  |  |
 |CC_GO_BUILD_TOOL |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. |`goget` | |
 |CC_GO_RUNDIR | Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project` |  | |
 {{< /table >}}
@@ -137,7 +169,7 @@ So you can alter the build&start process for your application.
 |CC_SBT_TARGET_DIR | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
 |CC_SBT_TARGET_BIN | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
 |GRADLE_DEPLOY_GOAL | Define which gradle goals to run during build. |  |  |
-|CC_JAVA_VERSION | Choose the JVM version between `7` to `15` for OpenJDK or `graalvm-ce` for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | `11` |  |
+|CC_JAVA_VERSION | Choose the JVM version between `7` to `17` for OpenJDK or `graalvm-ce` for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | `11` |  |
 |MAVEN_DEPLOY_GOAL | Define which maven goals to run during build. |  |  |
 |CC_MAVEN_PROFILES | Define which maven profile to use during default build. |  |  |
 |NUDGE_APPID |  |  |  |
@@ -147,6 +179,7 @@ So you can alter the build&start process for your application.
 |CC_EXTRA_JAVA_ARGS | Define extra arguments to pass to 'java' for jars. |  |  |
 |CC_JAR_ARGS | Define arguments to pass to the jar we launch. |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
+|CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
 {{< /table >}}
 
 ## Node.js
@@ -157,9 +190,9 @@ So you can alter the build&start process for your application.
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
-|CC_NODE_START_GOAL | Defines which node scripts to run | `start` |  |
-|CC_RUN_COMMAND | Define a custom command. | Example for Meteor: `node .build/bundle/main.js &lt;options&gt;` |  |
-|NODE_BUILD_TOOL | Choose your build tool between `npm` and `yarn` | `npm` |  |
+|CC_RUN_COMMAND | Define a custom command. | Example for Meteor: `node .build/bundle/main.js <options>` |  |
+|CC_NODE_BUILD_TOOL | Choose your build tool between `npm`, `npm-ci`, `yarn`, `yarn2` and `custom` | `npm` |  |
+|CC_CUSTOM_BUILD_TOOL| A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`) | | |
 |CC_NPM_REGISTRY | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |  |
 |NPM_TOKEN | Private repository token |  |  |
 {{< /table >}}
@@ -180,7 +213,7 @@ So you can alter the build&start process for your application.
 |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
 |MAX_INPUT_VARS |  |  |  |
 |MEMORY_LIMIT | Change the default memory limit |  |  |
-|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4` and `8.0` | `7` |  |
+|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
 |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
 |[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
 |[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
@@ -195,11 +228,12 @@ So you can alter the build&start process for your application.
 |CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
 |CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |
 |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
-|CC_MTA_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
-|CC_MTA_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
+|CC_MTA_SERVER_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
+|CC_MTA_SERVER_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
 |CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
 |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
 |SQREEN_API_TOKEN | Organization token. |  |  |
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 {{< /table >}}
 
 ## Python
@@ -218,7 +252,7 @@ So you can alter the build&start process for your application.
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
 |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
 |CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |
-|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.6`, `3.7` and `3.8` |  |  |
+|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
 |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
@@ -235,6 +269,7 @@ So you can alter the build&start process for your application.
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 {{< /table >}}
 
 ## Ruby
@@ -248,15 +283,16 @@ So you can alter the build&start process for your application.
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
 |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
-|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby_apps.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, asserts:precompile` |  |  |
-|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby_apps.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
+|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
+|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
 |CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
-|[STATIC_URL_PREFIX]({{< ref "deploy/application/ruby/ruby_apps.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+|[STATIC_URL_PREFIX]({{< ref "deploy/application/ruby/ruby-rack.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  |  |
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 {{< /table >}}
 
 ## Rust
@@ -287,7 +323,7 @@ So you can alter the build&start process for your application.
 
 ### MongoDB
 
-[MongoDB Documentation]({{< ref "deploy/addon/mongodb.md" >}})
+[MongoDB Documentation]({{< ref "deploy/addon/mongodb/mongodb.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -343,9 +379,10 @@ So you can alter the build&start process for your application.
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_PGPOOL | Enables the Pgpool-II feature | `false` | |
+|CC_ENABLE_PGPOOL | Enables the Pgpool-II feature | `false` | |
 |CC_PGPOOL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to Pgpool-II | `true` | |
 |CC_PGPOOL_PCP_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to PCP | `true` | |
+|CC_PGPOOL_EXTRA_USERS | Add new user/password pairs to the pool_passwd file, separated by commas (user1:password,user2:password...) | `''` | |
 |CC_PGPOOL_RESERVED_CONNECTIONS | Number of reserved connections | `0` | |
 |CC_PGPOOL_LISTEN_BACKLOG_MULTIPLIER | Specifies the length of connection queue from frontend to Pgpool-II | `2` | |
 |CC_PGPOOL_LEADER_WEIGHT | Weight for backend 0 (Leader) | `1` | |
@@ -387,31 +424,20 @@ So you can alter the build&start process for your application.
 |CC_PGPOOL_HEALTH_CHECK_RETRY_DELAY | Amount of time to wait (in seconds) between retries | `1`  | |
 |CC_PGPOOL_CONNECT_TIMEOUT | Timeout value in milliseconds before giving up to connect to backend | `10000` | |
 |CC_PGPOOL_MEMORY_CACHE_ENABLED | Use the memory cache functionality | `off` | |
-|CC_PGPOOL_MEMQCACHE_TOTAL_SIZE | Total memory size in bytes for storing memory cache | `64` | |
+|CC_PGPOOL_MEMQCACHE_TOTAL_SIZE | Total memory size in megabytes for storing memory cache | `64` | |
 |CC_PGPOOL_MEMQCACHE_MAX_NUM_CACHE | Total number of cache entries | `1000000` | |
 |CC_PGPOOL_MEMQCACHE_EXPIRE | Memory cache entry life time specified in seconds | `0` | |
 |CC_PGPOOL_MEMQCACHE_AUTO_CACHE_INVALIDATION | Invalidation of query cache is triggered by corresponding DDL/DML/DCL | `on` | |
-|CC_PGPOOL_MEMQCACHE_MAXCACHE | Maximum SELECT result size in bytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)  | `400` | |
-|CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in bytes  | `1` | |
+|CC_PGPOOL_MEMQCACHE_MAXCACHE | Maximum SELECT result size in kilobytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)  | `400` | |
+|CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in megabytes  | `1` | |
 |CC_PGPOOL_CACHE_SAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names to memcache that don't write to database (regexp are accepted)  | `''` | |
 |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
 {{< /table >}}
 
-### Redis
-
-[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
-
-{{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|REDIS_HOST |  | Generated upon creation | X  |
-|REDIS_PORT |  | Generated upon creation | X  |
-|REDIS_PASSWORD |  | Generated upon creation | X  |
-{{< /table >}}
 
 ### Elastic Stack
 
-[Elastic Stack Documentation]({{< ref "deploy/addon/elastic.md" >}})
+[Elastic Stack Documentation]({{< ref "deploy/addon/elastic/elastic.md" >}})
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -432,15 +458,61 @@ So you can alter the build&start process for your application.
 |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
 {{< /table >}}
 
+### Blackfire
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | `''` | X |
+|CC_BLACKFIRE_SERVER_ID | The server id used to authenticate with Blackfire | `''` | X |
+|CC_BLACKFIRE_LOG_LEVEL | Sets the verbosity of Agent’s log output | `1` | X |
+|CC_BLACKFIRE_MEMORY_LIMIT | Sets the maximum allowed RAM usage (megabytes) when ingesting traces | `500` | X |
+|CC_BLACKFIRE_COLLECTOR | Sets the URL of Blackfire’s data collector | `https://blackfire.io` | X |
+|CC_BLACKFIRE_TIMEOUT | Sets the Blackfire API connection timeout | `15` | X |
+|CC_BLACKFIRE_STATSD | Sets the statsd server to send agent’s statistics | `''` | X |
+|CC_BLACKFIRE_STATSD_PREFIX | Sets the statsd prefix to use when sending data | `blackfire` | X |
+{{< /table >}}
+
 ### New Relic
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|NEWRELIC_APPNAME |  |  |  |
-|NEWRELIC_LICENSE |  |  |  |
+|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name | X |
+|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license | X |
+|[CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) | true | X |  
+|[CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) | true | X |  
+|[CC_NEWRELIC_ERROR_COLLECTOR_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) | obfuscated | X |  
 {{< /table >}}
 
+### Pulsar
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center>    | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+| ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
+|ADDON_PULSAR_BINARY_URL | The complete URL to use in your application | Generated upon creation | X |
+|ADDON_PULSAR_BINARY_PORT | The port to connect to the Pulsar Cluster | Generated upon creation | X |
+|ADDON_PULSAR_HOSTNAME | The host to connect to the Pulsar Cluster | Generated upon creation | X |
+|ADDON_PULSAR_HTTP_URL | The complete URL to connect with WebSocket | Generated upon creation | X |
+|ADDON_PULSAR_HTTP_PORT | The port to connect with WebSocket | Generated upon creation | X |
+|ADDON_PULSAR_NAMESPACE | Your add-on Pulsar ID | Generated upon creation | X |
+|ADDON_PULSAR_TENANT | Your Clever Cloud tenant ID | Generated upon creation | X |
+|ADDON_PULSAR_TOKEN | Your Biscuit authentication token | Generated upon creation        | X |
+{{< /table >}}
+
+### Redis
+
+[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|REDIS_HOST |  | Generated upon creation | X  |
+|REDIS_PORT |  | Generated upon creation | X  |
+|REDIS_PASSWORD |  | Generated upon creation | X  |
+{{< /table >}}
 
 ### Socks
 
@@ -461,13 +533,16 @@ provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
 {{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|VPN_ADDON_CRT | Client certificate |  |  |
-|VPN_ADDON_CACRT | Server CA certificate |  |  |
-|VPN_ADDON_KEY | Client certificate private key |  |  |
-|VPN_ADDON_HOST | Server host or IP address |  |  |
-|VPN_ADDON_PORT | Server port |  |  |
-|VPN_ADDON_TAKEY | Pre-shared secret |  |  |
-|VPN_TARGETS | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |  |  |
+| <center>Name</center> | <center>Description</center>                                                                    | <center>Default value</center> | <center>Read Only</center> |
+| --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
+| CC_VPN_DNS_OVERRIDES  | Comma-separated list of DNS IP                                                                  |                                |                            |
+| VPN_ADDON_CRT         | Client certificate                                                                              |                                |                            |
+| VPN_ADDON_DEVTYPE     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
+| VPN_ADDON_CACRT       | Server CA certificate                                                                           |                                |                            |
+| VPN_ADDON_CIPHER      | Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1              |                            |
+| VPN_ADDON_KEY         | Client certificate private key                                                                  |                                |                            |
+| VPN_ADDON_HOST        | Server host or IP address                                                                       |                                |                            |
+| VPN_ADDON_PORT        | Server port                                                                                     |                                |                            |
+| VPN_ADDON_TAKEY       | Pre-shared secret                                                                               |                                |                            |
+| VPN_TARGETS           | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |
 {{< /table >}}

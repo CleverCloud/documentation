@@ -46,11 +46,13 @@ To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, 
 ### Private SSH Key
 
 If you want to clone a repository from a private repository, you can add a [Private SSH Key]({{< ref "reference/common-configuration.md#private-ssh-key" >}}) to an application by creating a folder clevercloud at the root of your application and creating the file `clevercloud/ssh.json` with the following content:
-```
+
+```json
 {
     "privateKeyFile": "path/to/file"
 }
 ```
+
 Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.
 
 If you have trouble configuring this key you can refer to [this extended documentation](/getting-started/ssh-keys/)

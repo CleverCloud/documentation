@@ -35,53 +35,48 @@ npm install -g clever-tools@beta
 #### Debian/Ubuntu (.deb)
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+<p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
+<p>If you were using Bintray to install our <code>.deb</code> packages, you will need to edit your <code>/etc/apt/sources.list</code> and remove the old entry with <code>https://dl.bintray.com/clevercloud/deb</code> before going further.</p>
 {{< /alert >}}
 
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
-> Make sure you can download https hosted sources package. You may install :
-
 ```sh
-apt install apt-transport-https ca-certificates
-```
-
-```sh
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "A7B8F38C536F1DF2"
-echo "deb https://nexus.clever-cloud.com/repository/deb bionic stable main" | tee -a /etc/apt/sources.list
-apt update
-apt install clever-tools
+curl -fsSL https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key | gpg --dearmor -o /usr/share/keyrings/cc-nexus-deb.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/cc-nexus-deb.gpg] https://nexus.clever-cloud.com/repository/deb stable main" | tee -a /etc/apt/sources.list
+apt-get update
+apt-get install clever-tools
 ```
 
 NOTES:
 
-* The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [nexus.clever-cloud.com](https://nexus.clever-cloud.com) (our PGP key is required to trust our signed packages).
+* The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).
+* Our PGP key is required to trust the repository.
 * If you want access to the beta channel, you can use this in your `sources.list`:
 
 ```sh
-echo "deb https://nexus.clever-cloud.com/repository/deb bionic unstable beta" | tee -a /etc/apt/sources.list
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/cc-nexus-deb.gpg] https://nexus.clever-cloud.com/repository/deb-beta beta main" | tee -a /etc/apt/sources.list
 ```
 
 #### CentOS/Fedora (.rpm)
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+<p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
+<p>If you were using Bintray to install our <code>.rpm</code> packages, you will need to remove the old <code>/etc/yum.repos.d/bintray-clevercloud-rpm.repo</code> before going further.</p>
 {{< /alert >}}
 
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
 
 ```sh
-curl https://nexus.clever-cloud.com/repository/rpm/ > /etc/yum.repos.d/nexus-clevercloud-rpm.repo
- echo "exclude=*beta*" >> /etc/yum.repos.d/nexus-clevercloud-rpm.repo
+curl -s https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo > /etc/yum.repos.d/cc-nexus-rpm.repo
+yum update
 yum install clever-tools
 ```
 
 NOTES:
 
-* The `.rpm` packages are hosted on Clever Cloud's public Nexus instance available at  [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).
-* If you want access to the beta channel, you can omit the second line which contains an exclude option.
+* The `.rpm` packages are hosted on Clever Cloud's public Nexus instance available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).
+* If you want access to the beta channel, you will need to edit `/etc/yum.repos.d/cc-nexus-rpm.repo` and set `enabled=1` for the `[clever-tools-beta]`.
 
 #### Arch Linux
 
@@ -112,7 +107,7 @@ cave resolve clever-tools-bin -zx
 If you are using another GNU/Linux distribution, you can download a `.tar.gz` archive and extract the binary in your `PATH`:
 
 ```sh
-wget https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+curl -O https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
 tar xvzf clever-tools-latest_linux.tar.gz
 cp clever-tools-latest_linux/clever ~/.local/bin/
 ```
@@ -122,11 +117,11 @@ NOTES:
 * The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_linux.tar.gz](https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz).
 * You can also retrieve any release (including beta) on this Cellar bucket by replacing `latest` (path and filename) with the version number you need.
 
-### On MacOS
+### On macOS
 
 #### Using homebrew
 
-If you are using MacOS and you have [homebrew](https://brew.sh) installed, you can run:
+If you are using macOS and you have [homebrew](https://brew.sh) installed, you can run:
 
 ```sh
 brew install CleverCloud/homebrew-tap/clever-tools
@@ -138,12 +133,12 @@ NOTES:
 
 #### Using the `.tar.gz` archive
 
-If you are using MacOS but you don't have [homebrew](https://brew.sh) installed, you can download a `.tar.gz` archive and extract the binary in your `PATH`:
+If you are using macOS, but you don't have [homebrew](https://brew.sh) installed, you can download a `.tar.gz` archive and extract the binary in your `PATH`:
 
 ```sh
-curl https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz
-tar xvzf clever-tools-latest_linux.tar.gz
-cp clever-tools-latest_linux/clever ~/.local/bin/
+curl -O https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz
+tar xvzf clever-tools-latest_macos.tar.gz
+cp clever-tools-latest_macos/clever ~/.local/bin/
 ```
 
 NOTES:
@@ -156,35 +151,56 @@ NOTES:
 #### Using chocolatey
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+<p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
+<p>If you were using Bintray to install our <code>.nupkg</code> packages, you will need to remove the old source.</p>
 {{< /alert >}}
 
-If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run: 
+If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run:
 
 ```bash
-choco sources add -n=clevercloud -s='https://nexus.clever-cloud.com/repository/nupkg'
+choco sources add -n=clevercloud -s='https://nexus.clever-cloud.com/repository/nupkg/'
 choco install clever-tools
 ```
 
 NOTES:
 
-* If you want access to the beta channel, you can use `choco install --pre clever-tools` instead.
+* If you want access to the beta channel, you can use `choco sources add -n=clevercloud -s='https://nexus.clever-cloud.com/repository/nupkg-beta/'` instead.
 
 #### Using the `.zip` archive
 
-If you are using Windows but you don't have [chocolatey](https://chocolatey.org) installed, you can download a `.zip` archive and extract the binary in your `PATH`.
+If you are using Windows, but you don't have [chocolatey](https://chocolatey.org) installed, you can download a `.zip` archive and extract the binary in your `PATH`.
 
 NOTES:
 
 * The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_win.tar.gz](https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_win.zip).
 * You can also retrieve any release (including beta) on this Cellar bucket by replacing `latest` (path and filename) with the version number you need.
 
+### Via Docker
+
+If you are using docker, you can use the image provided [here](https://hub.docker.com/r/clevercloud/clever-tools/).
+
+```sh
+docker pull clevercloud/clever-tools
+docker run --rm clever-tools <command>
+```
+
+#### Dockerfile
+
+In your `Dockerfile` you can copy the clever-tools CLI from the image itself with a simple one liner:
+
+```Dockerfile
+COPY --from=clevercloud/clever-tools /bin/clever /usr/local/bin/clever
+```
+
+### Via Nix
+
+If you are using Nix, you will find a Nix derivation on Fretlink's GitHub repository: https://github.com/fretlink/clever-tools-nix
+
 ## Enabling autocompletion
 
 The clever-tools CLI comes with a comprehensive auto-completion system.
 Some installation methods like `.deb` packages, `.rpm` packages or brew will try to enable it automatically.
-If it does not work, try this for bash: 
+If it does not work, try this for bash:
 
 ```bash
 clever --bash-autocomplete-script $(which clever) | sudo tee /usr/share/bash-completion/completions/clever

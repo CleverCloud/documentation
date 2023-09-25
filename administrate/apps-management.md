@@ -30,7 +30,7 @@ If you want to revert to a previous version of your code, you can go to the **Ac
 
 ## Edit application configuration
 
-You can edit your application in the **Overview** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
+You can edit your application in the **Information** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
 You can also enable/disable:
 
 - **Zero downtime deployment**: During a deployment, old scalers are kept up until the new instances work. Updates are thus transparent to the user. Your application has to work correctly with several scalers in parallel (e.g. for connections to databases). *`pico` and `nano` scalers are using this feature by default.*
@@ -50,4 +50,4 @@ If you want to unarchieve your application simply click the **un-archive** butto
 
 ## Deleting your application
 
-You can perform this operation in the **Overview** menu of your application in the Clever Cloud console. You will find a red **remove this application** button at the bottom. This will open a modal where you should type the name of your application. Click **remove** to finish the process. Your application will be deleted and no longer accessible.
+You can perform this operation in the **Information** menu of your application in the Clever Cloud console. You will find a red **remove this application** button at the bottom. This will open a modal where you should type the name of your application. Click **remove** to finish the process. Your application will be deleted and no longer accessible.

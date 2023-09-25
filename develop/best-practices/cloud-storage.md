@@ -69,7 +69,7 @@ Your files are stored in a secure way outside of your apps FS. So an attacker wi
 
 You can delegate the authorization part to Cellar by giving signed urls for file downloads and uploads.
 
-The files are stored with a replication factor of 2 or 3, making a hardware drive failure less critical.
+The files are stored with a replication factor of 3, meaning that there are 2 replicas in addition of the original data.
 
 
 ### Downsides

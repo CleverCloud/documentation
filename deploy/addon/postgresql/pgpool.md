@@ -46,6 +46,9 @@ We only support the **Streaming** mode, which is the most used and recommended m
 
 ## How to configure Pgpool-II
 
+### Generate direct variables for your PostgreSQL add-ons.
+Go to the "Add-on dashboard" tab of your PostgreSQL add-ons and click on the "Generate direct hostname and port" button.
+
 ### Enable Pgpool-II for your application
 In order to configure Pgpool-II, the first thing to do is to link your PostgreSQL add-on. To do that, you can go to the `Service Dependencies` page of your application
 and select your PostgreSQL add-on.
@@ -100,16 +103,20 @@ When using the **Streaming** mode, it's not Pgpool-II that manages the replicati
 
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the follower(s) to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 
-An example of the ``CC_PGPOOL_FOLLOWERS`` variable with two followers: 
+{{< alert "info" "Information:" >}}
+For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
+{{< /alert >}}
+
+An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers: 
 ```json
 [
   {
-    "hostname": "<DATABASE>-postgresql.services.clever-cloud.com",
+    "hostname": "<HOST>",
     "port": "<PORT>",
     "weight": "1"
   },
   {
-    "hostname": "<DATABASE>-postgresql.services.clever-cloud.com",
+    "hostname": "<HOST>",
     "port": "<PORT>",
     "weight": "1"
   }
@@ -167,7 +174,9 @@ A new deployment **starts** new instances alongsides the old ones.
 This means that have up to `maximum scalability * 2` instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
 it means there will be up to `maximum scalability * 2 * CC_PGPOOL_NUM_INIT_CHILDREN` connections at the same time. We will call this result `MaxCon`.
 
+{{< alert "warning" "Connection limit" >}}
 Each PostgreSQL add-on has a connection limit which varies following the plan you are using. You must be sure that `MaxCon` doesn't exceed your plan's max connections. If it does, you might have issues connecting to the remote PostgreSQL add-on. You have to adjust `CC_PGPOOL_NUM_INIT_CHILDREN` to a number that makes sense for your scalability parameters.
+{{< /alert >}}
 
 #### Example
 

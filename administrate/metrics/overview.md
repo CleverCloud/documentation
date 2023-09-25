@@ -29,6 +29,8 @@ To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
+{{< image "/images/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
+
 ### Advanced pane
 
 Advanced metrics allow you to access all gathered metrics,
@@ -39,6 +41,14 @@ on a specified time range.
 All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference).
 
 For instance, you can derive metrics over time, do custom aggregations or combine metrics.
+
+### Get alerts
+
+You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.
+
+{{< image "/images/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
+
+For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
 ## Access Logs metrics
 
@@ -557,6 +567,15 @@ If needed, you can override those settings with the two following environment va
 
 - `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
 - `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
+
+As with Prometheus the exposed host can be the same as the application deployed, you can use a basic authentication to collect the metrics with the two following environment variables:
+
+- `CC_METRICS_PROMETHEUS_USER`: Define the user for the basic auth of the Prometheus endpoint
+- `CC_METRICS_PROMETHEUS_PASSWORD`: Define the password for the basic auth of the Prometheus endpoint
+
+For large custom set of metrics to collect, the default response timeout of the `/metrics` query is 3 seconds. You can update it with the following environment variable:
+
+- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes. 
 
 To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
 

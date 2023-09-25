@@ -11,7 +11,7 @@ Make sure that:
 
 The result of `cargo build --release --locked` must be an executable which starts a web server listening on `0.0.0.0:8080`.
 
-For instance, a minimal [iron](https://ironframework.io/) application can look like this:
+For instance, a minimal [iron](https://github.com/iron/iron) application can look like this:
 
 ```rust
 extern crate iron;

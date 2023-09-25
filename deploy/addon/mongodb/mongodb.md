@@ -1,5 +1,5 @@
 ---
-title: MongoDB addon
+title: MongoDB add-on
 position: 5
 shortdesc: A noSQL and document-oriented database, operated by Clever Cloud.
 aliases:

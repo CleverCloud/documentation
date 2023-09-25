@@ -50,8 +50,8 @@ In the following example we want to set the webroot to the folder `/public`:
     Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 {{< /alert >}}
 
-### Change PHP settings
 
+### Change PHP settings
 
 #### PHP settings
 
@@ -462,11 +462,29 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     XDebug is a debugger and profiler tool for PHP.
 
-## Use Redis to store PHP Sessions
+## Configure the session storage
 
-By default, sessions are stored on a replicated file system, so that session data is available on each instance.
+By default, a FS Bucket is created for each PHP applications. It is used to store session files, so that session data is available on each instance.
 
-We also provide the possibility to store the PHP sessions in a [Redis database]({{< ref "deploy/addon/redis.md" >}}) to improve performance.
+This FS Bucket is also used to store TMP files by default.
+You can change this behaviour by setting the `TMPDIR` environment variable.
+You can set it to `/tmp` for example.
+
+### Speed up or disable the session FS Bucket
+
+You can set the following environment variables:
+
+- `CC_PHP_ASYNC_APP_BUCKET=async` to mount the session FS Bucket with the `async` option.
+  It speeds up the FS Bucket usage, but it can corrupt files in case of a network outage.
+- `CC_PHP_DISABLE_APP_BUCKET=(true|yes|disable)` to entirely prevent the session FS Bucket
+  from being mounted.
+  Use this if you don't use the default PHP session library.
+  It will speed up your application but users might lose their session across instances
+  and deployments.
+
+### Use Redis to store PHP Sessions
+
+We provide the possibility to store the PHP sessions in a [Redis database]({{< ref "deploy/addon/redis.md" >}}) to improve reliability.
 
 If your application is under heavy load, redis persistence for sessions can improve latency.
 

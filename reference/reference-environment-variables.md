@@ -206,35 +206,35 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ALWAYS_POPULATE_RAW_POST_DATA |  |  |  |
+|[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
+|CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 |CC_LDAP_CA_CERT |  |  |  |
+|CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
+|CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |
+|CC_MTA_SERVER_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
+|CC_MTA_SERVER_HOST | Host of the SMTP server |  |  |
+|CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
+|CC_MTA_SERVER_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
+|CC_OPCACHE_INTERNED_STRINGS_BUFFER | The amount of memory used to store interned strings, in megabytes. | Default 4 (PHP5), 8 (PHP7) |  |
+|CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
+|CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
+|CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
+|[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
+|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
+|CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
 |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |
-|LDAPTLS_CACERT |  |  |  |
 |ENABLE_ELASTIC_APM_AGENT | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise | |
 |ENABLE_REDIS |  | `false` |  |
 |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
+|LDAPTLS_CACERT |  |  |  |
 |MAX_INPUT_VARS |  |  |  |
 |MEMORY_LIMIT | Change the default memory limit |  |  |
-|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
-|CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
-|[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
-|[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
-|[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
 |SOCKSIFY_EVERYTHING |  |  |  |
-|USE_SOCKS |  | `false` |  |
-|CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
-|CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
-|CC_OPCACHE_INTERNED_STRINGS_BUFFER | The amount of memory used to store interned strings, in megabytes. | Default 4 (PHP5), 8 (PHP7) |  |
-|CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
-|CC_MTA_SERVER_HOST | Host of the SMTP server |  |  |
-|CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
-|CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |
-|CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
-|CC_MTA_SERVER_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
-|CC_MTA_SERVER_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
-|CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
 |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
 |SQREEN_API_TOKEN | Organization token. |  |  |
-|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
+|USE_SOCKS |  | `false` |  |
+|[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
 {{< /table >}}
 
 ## Python

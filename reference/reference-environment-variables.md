@@ -36,38 +36,70 @@ These are read-only variables that are generated for each scaler before they bui
 
 So you can alter the build&start process for your application.
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
-|[CC_TROUBLESHOOT]({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
-|[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
+|CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
+|CC_DISABLE_METRICS | Disable metrics collection. | `false` |
+|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version) instead | |
+|CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
+|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
 |CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
 |CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | `1` |
+|[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
+{{< /table >}}
+
+#### Control build and dependencies cache
+
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> |
+|-----------------------|------------------------------|--------------------------------|
+|CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
+|[CC_IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
+|[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
+|[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
+{{< /table >}}
+
+#### Control the deployment's behavior
+
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> |
+|-----------------------|------------------------------|--------------------------------|
+|CC_RUN_COMMAND | Custom command to run your application. |  |
+|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
+|[CC_TROUBLESHOOT]({{< ref "find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
+{{< /table >}}
+
+#### Deployment hooks
+
+Use these to define [commands to run]({{< ref "develop/build-hooks.md" >}}) between various steps of the deployment. 
+
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> |
+|-----------------------|------------------------------|--------------------------------|
 |[CC_PRE_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_pre_build_hook" >}}) | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
 |[CC_POST_BUILD_HOOK]({{< ref "develop/build-hooks.md#pre-build-cc_post_build_hook" >}}) | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
 |[CC_PRE_RUN_HOOK]({{< ref "develop/build-hooks.md#pre-run-cc_pre_run_hook" >}}) | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
-|[CC_RUN_SUCCEEDED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
 |[CC_RUN_FAILED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has failed to start. |  |
-|CC_RUN_COMMAND | Custom command to run your application. |  |
-|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
-|CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
-|CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
-|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
-|CC_DISABLE_METRICS | Disable metrics collection. | `false` |
-|[IGNORE_FROM_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
-|[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
-|[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
-|[CC_METRICS_PROMETHEUS_PATH]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
-|[CC_METRICS_PROMETHEUS_USER]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
-|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
-|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
+|[CC_RUN_SUCCEEDED_HOOK]({{< ref "develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
+{{< /table >}}
+
+#### Configure extra software
+
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> |
+|-----------------------|------------------------------|--------------------------------|
 |[CC_CLAMAV]({{< ref "administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
-|[CC_CLAMAV_MAXTHREADS]({{< ref "administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
 |[CC_CLAMAV_MAXQUEUE]({{< ref "administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
-|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version) instead | |
+|[CC_CLAMAV_MAXTHREADS]({{< ref "administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
+|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PATH]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+|[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
+|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
+|[CC_METRICS_PROMETHEUS_USER]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
 |[CC_VARNISH_STORAGE_SIZE]({{< ref "administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
-|CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
+|[CC_WORKER_COMMAND]({{< ref "develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
 {{< /table >}}
 
 ### Tailscale support
@@ -98,13 +130,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DOCKERFILE | The name of the Dockerfile to build. | `Dockerfile` |  |
-|CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
 |CC_DOCKER_EXPOSED_HTTP_PORT | Set to custom HTTP port if your Docker container runs on custom port. | `8080` |  |
 |CC_DOCKER_EXPOSED_TCP_PORT | Set to custom TCP port if your Docker container runs on custom port. | `4040` |  |
 |CC_DOCKER_FIXED_CIDR_V6 | Activate the support of IPv6 with an IPv6 subnet int the docker daemon. |  |  |
-|CC_DOCKER_LOGIN_USERNAME | The username to login to a private registry. |  |  |
 |CC_DOCKER_LOGIN_PASSWORD | The password of your username. |  |  |
 |CC_DOCKER_LOGIN_SERVER | The server of your private registry (optional). | `Docker’s public registry` |  |
+|CC_DOCKER_LOGIN_USERNAME | The username to login to a private registry. |  |  |
+|CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
 {{< /table >}}
 
 ## .NET
@@ -114,10 +146,10 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_DOTNET_VERSION | Choose the .NET Core version between `5.0`,`6.0`. | 6.0 |  |
+|CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
 |CC_DOTNET_PROJ | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |  |
 |CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `net5.0` |  |  |
-|CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
+|CC_DOTNET_VERSION | Choose the .NET Core version between `5.0`,`6.0`. | 6.0 |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
 
@@ -132,8 +164,8 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
  |CC_MIX_BUILD_GOAL | The mix goal to build the application (default compile) |  |  |
  |CC_PHOENIX_ASSETS_DIR | Folder in which your Phoenix assets are located. |  |  |
  |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |
- |CC_PHOENIX_SERVER_GOAL | Phoenix server goal. | phx.server |  |
  |CC_PHOENIX_RUN_ECTO_MIGRATE | Whether to run 'mix ecto.migrate' or not. | true |  |
+ |CC_PHOENIX_SERVER_GOAL | Phoenix server goal. | phx.server |  |
  |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
  {{< /table >}}
 
@@ -144,8 +176,8 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_GO_PKG | Makes the deployer run go get `${CC_GO_PKG}` instead of go get `<app_id>`.  |  |  |
 |CC_GO_BUILD_TOOL |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. |`goget` | |
+|CC_GO_PKG | Makes the deployer run go get `${CC_GO_PKG}` instead of go get `<app_id>`.  |  |  |
 |CC_GO_RUNDIR | Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project` |  | |
 {{< /table >}}
 
@@ -156,8 +188,8 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_RUN_COMMAND | Custom command to run your application. |  |  |
 |[CC_HASKELL_STACK_TARGET]({{ < ref "deploy/application/haskell/haskell.md#specify-stack-package-target" > }}) | Specify Stack package target. |  |  |
+|CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
 
 ## Java
@@ -167,20 +199,20 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_SBT_TARGET_DIR | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
-|CC_SBT_TARGET_BIN | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
-|GRADLE_DEPLOY_GOAL | Define which gradle goals to run during build. |  |  |
+|CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
+|CC_EXTRA_JAVA_ARGS | Define extra arguments to pass to 'java' for jars. |  |  |
+|CC_JAR_ARGS | Define arguments to pass to the jar we launch. |  |  |
+|CC_JAR_PATH | Define the path to your jar. |  |  |
 |CC_JAVA_VERSION | Choose the JVM version between `7` to `17` for OpenJDK or `graalvm-ce` for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | `11` |  |
-|MAVEN_DEPLOY_GOAL | Define which maven goals to run during build. |  |  |
 |CC_MAVEN_PROFILES | Define which maven profile to use during default build. |  |  |
+|CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
+|CC_SBT_TARGET_BIN | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
+|CC_SBT_TARGET_DIR | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
+|GRADLE_DEPLOY_GOAL | Define which gradle goals to run during build. |  |  |
+|MAVEN_DEPLOY_GOAL | Define which maven goals to run during build. |  |  |
 |NUDGE_APPID |  |  |  |
 |PLAY1_VERSION | Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5` |  |  |
 |SBT_DEPLOY_GOAL | Define which sbt goals to run during build. | `stage` |  |
-|CC_JAR_PATH | Define the path to your jar. |  |  |
-|CC_EXTRA_JAVA_ARGS | Define extra arguments to pass to 'java' for jars. |  |  |
-|CC_JAR_ARGS | Define arguments to pass to the jar we launch. |  |  |
-|CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
-|CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
 {{< /table >}}
 
 ## Node.js

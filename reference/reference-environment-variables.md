@@ -252,7 +252,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
 |CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
 |CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
+|[CC_PHP_ASYNC_APP_BUCKET]({{< ref "deploy/application/php/php-apps.md#speed-up-or-disable-the-session-fs-bucket" >}}) | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |  |
 |[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
+|[CC_PHP_DISABLE_APP_BUCKET]({{< ref "deploy/application/php/php-apps.md#speed-up-or-disable-the-session-fs-bucket" >}}) | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |  |
 |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
 |CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
 |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |

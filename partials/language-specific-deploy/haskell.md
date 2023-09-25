@@ -85,7 +85,12 @@ main = do
     get "/" $ do
       html . pack $ "Hello world " ++ myVar
 ```
+This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
 
-This loads the environment variable in your `main` function and tests it.
+### Specify Stack package target
 
-This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
+You may have several packages in your application which can be time consuming when building them, if you don't want to build every packages you can target a package by using the `CC_HASKELL_STACK_TARGET` [environnement variable](#setting-up-environment-variables-on-clever-cloud).
+
+```bash
+CC_HASKELL_STACK_TARGET="mypackage"
+```

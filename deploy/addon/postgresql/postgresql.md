@@ -112,6 +112,10 @@ Every PostgreSQL database managed by Clever Cloud comes with the following defau
 The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.  
 Usually this threshold is set to 20%.
 
+## `pg_activity`
+
+If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on an PostgreSQL addon but you get an `Exception: Must be run with database superuser privileges.` you need to add the flag `--rds` when you start it.  
+
 ## Plans
 
 {{< pricingAddon "postgresql-addon" "[\"cpu\", \"memory\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}

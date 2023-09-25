@@ -15,7 +15,7 @@ keywords:
 
 These are read-only variables that are generated for each scaler before they build and start your application.
 
-{{<table "table table- bordered" "text-align : center" >}}
+{{<table "table table-bordered" "text-align : center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Example value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |[INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}}) | Allows your application to differentiate each running node on the application level. | 0, 1… |
@@ -108,7 +108,7 @@ Use these to define [commands to run]({{< ref "develop/build-hooks.md" >}}) betw
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys).
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[TAILSCALE_AUTH_KEY](https://tailscale.com/) | Contains your Tailscale Auth key |  |  |
@@ -126,7 +126,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Docker Documentation]({{< ref "deploy/application/docker/docker.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DOCKERFILE | The name of the Dockerfile to build. | `Dockerfile` |  |
@@ -143,7 +143,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [.NET Documentation]({{< ref "deploy/application/dotnet/dotnet.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
@@ -157,7 +157,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Elixir Documentation]({{< ref "deploy/application/elixir/elixir.md" >}})
 
- {{<table "table table- bordered" "text-align:center" >}}
+ {{<table "table table-bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | `1.11` |  |
@@ -173,7 +173,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Go Documentation]({{< ref "deploy/application/golang/go.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_GO_BUILD_TOOL |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. |`goget` | |
@@ -196,7 +196,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Java Documentation]({{< ref "deploy/application/java/java-jar.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
@@ -219,7 +219,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Node.js Documentation]({{< ref "deploy/application/javascript/by-framework/nodejs.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
@@ -234,12 +234,12 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [PHP Documentation]({{< ref "deploy/application/php/php-apps.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ALWAYS_POPULATE_RAW_POST_DATA |  |  |  |
-|[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
 |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
+|[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
 |CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 |CC_LDAP_CA_CERT |  |  |  |
 |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
@@ -262,81 +262,81 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |LDAPTLS_CACERT |  |  |  |
 |MAX_INPUT_VARS |  |  |  |
 |MEMORY_LIMIT | Change the default memory limit |  |  |
+|[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
 |SOCKSIFY_EVERYTHING |  |  |  |
 |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
 |SQREEN_API_TOKEN | Organization token. |  |  |
 |USE_SOCKS |  | `false` |  |
-|[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
 {{< /table >}}
 
 ## Python
 
 [Python Documentation]({{< ref "deploy/application/python/python_apps.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
+|CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+|CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_PIP_REQUIREMENTS_FILE | Allows you to define a custom `requirements.txt` file  | `requirements.txt`  |  |
+|CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |
 |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
 |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
 |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
-|CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
 |[CC_PYTHON_MANAGE_TASKS]({{< ref "deploy/application/python/tutorials/python-django-sample.md#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |  |
+|CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
-|HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
-|CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |
 |CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
+|ENABLE_GZIP_COMPRESSION | Set to `true` to gzip-compress the output of uwsgi |  |  |
+|GZIP_TYPES | Set the mime types to compress. | `text/* application/json application/xml application/javascript image/svg+xml` |  |
+|HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
+|NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  |  |
-|UWSGI_INTERCEPT_ERRORS |  |  |  |
 |[UWSGI_ASYNC]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
 |UWSGI_ASYNC_ENGINE | Select the asynchronous engine for uWSGI (optional) |  |  |
-|WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
-|WSGI_THREADS | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |  |
+|UWSGI_INTERCEPT_ERRORS |  |  |  |
 |WSGI_BUFFER_SIZE | Buffer size (in bytes) for uploads. | `4096` |  |
 |WSGI_POST_BUFFERING | Maximal size (in bytes) for the headers of a request.  | `4096` |  |
-|ENABLE_GZIP_COMPRESSION | Set to `true` to gzip-compress the output of uwsgi |  |  |
-|GZIP_TYPES | Set the mime types to compress. | `text/* application/json application/xml application/javascript image/svg+xml` |  |
-|NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
-|CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
-|CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
-|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
+|WSGI_THREADS | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |  |
+|WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
 {{< /table >}}
 
 ## Ruby
 
 [Ruby Documentation]({{< ref "deploy/application/ruby/ruby-rack.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
+|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
+|CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
+|CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
+|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
+|CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
+|CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
+|NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
-|CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
-|[CC_RAKEGOALS]({{< ref "deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
-|[CC_ENABLE_SIDEKIQ]({{< ref "deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
-|CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "deploy/application/ruby/ruby-rack.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
-|STATIC_WEBROOT |  |  |  |
-|NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
-|CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
-|CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
-|CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
+|STATIC_WEBROOT |  |  | |
 {{< /table >}}
 
 ## Rust
 
 [Rust Documentation]({{< ref "deploy/application/rust/rust.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_RUST_BIN | The name of the binary to launch once built |  |  |
 |CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
+|CC_RUST_BIN | The name of the binary to launch once built |  |  |
 |CC_RUST_FEATURES | The list of features to enable |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
@@ -347,43 +347,51 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [FS Bucket Documentation]({{< ref "deploy/addon/fs-bucket.md" >}})
 
- {{<table "table table- bordered" "text-align:center" >}}
- | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
- |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |BUCKET_HOST | Hostname of the bucket |  | X |
- |CC_FS_BUCKET | Defines which bucket to mount on which path |  |  |
- {{< /table >}}
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|BUCKET_HOST | Hostname of the bucket |  | X |
+|CC_FS_BUCKET | Defines which bucket to mount on which path |  |  |
+{{< /table >}}
 
 ### MongoDB
 
 [MongoDB Documentation]({{< ref "deploy/addon/mongodb/mongodb.md" >}})
 
- {{<table "table table- bordered" "text-align:center" >}}
- | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
- |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |MONGODB_ADDON_DB |  | Generated upon creation | X |
- |MONGODB_ADDON_PASSWORD |  | Generated upon creation | X  |
- |MONGODB_ADDON_USER |  | Generated upon creation | X  |
- {{< /table >}}
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|MONGODB_ADDON_HOST |  | Generated upon creation | X  |
+|MONGODB_ADDON_PORT |  | Generated upon creation | X  |
+|MONGODB_ADDON_DIRECT_HOST | Points directly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|MONGODB_ADDON_DIRECT_PORT | Points to ectly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|MONGODB_ADDON_DB |  | Generated upon creation | X |
+|MONGODB_ADDON_PASSWORD |  | Generated upon creation | X  |
+|MONGODB_ADDON_USER |  | Generated upon creation | X  |
+{{< /table >}}
 
 ### MySQL
 
 [MySQL Documentation]({{< ref "deploy/addon/mysql/mysql.md" >}})
 
- {{<table "table table- bordered" "text-align:center" >}}
- | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
- |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |MYSQL_ADDON_DB |  | Generated upon creation | X  |
- |MYSQL_ADDON_PASSWORD |  | Generated upon creation | X  |
- |MYSQL_ADDON_ROLE |  | Generated upon creation | X  |
- |MYSQL_ADDON_USER |  | Generated upon creation | X  |
- {{< /table >}}
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|MYSQL_ADDON_HOST |  | Generated upon creation | X  |
+|MYSQL_ADDON_PORT |  | Generated upon creation | X  |
+|MYSQL_ADDON_DIRECT_HOST | Points directly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|MYSQL_ADDON_DIRECT_PORT | Points to ectly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|MYSQL_ADDON_DB |  | Generated upon creation | X  |
+|MYSQL_ADDON_PASSWORD |  | Generated upon creation | X  |
+|MYSQL_ADDON_ROLE |  | Generated upon creation | X  |
+|MYSQL_ADDON_USER |  | Generated upon creation | X  |
+{{< /table >}}
 
 ### ProxySQL
 
 [ProxySQL Documentation]({{< ref "deploy/addon/mysql/proxysql.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_ENABLE_MYSQL_PROXYSQL | Enable the ProxySQL  feature | `false`  | |
@@ -396,20 +404,24 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [PostgreSQL Documentation]({{< ref "deploy/addon/postgresql/postgresql.md" >}})
 
- {{<table "table table- bordered" "text-align:center" >}}
- | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
- |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |POSTGRESQL_ADDON_DB |  | Generated upon creation | X  |
- |POSTGRESQL_ADDON_PASSWORD |  | Generated upon creation | X  |
- |POSTGRESQL_ADDON_ROLE |  | Generated upon creation | X  |
- |POSTGRESQL_ADDON_USER |  | Generated upon creation | X  |
- {{< /table >}}
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|POSTGRESQL_ADDON_HOST |  | Generated upon creation | X  |
+|POSTGRESQL_ADDON_PORT |  | Generated upon creation | X  |
+|POSTGRESQL_ADDON_DIRECT_HOST | Points directly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|POSTGRESQL_ADDON_DIRECT_PORT | Points to ectly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | X  |
+|POSTGRESQL_ADDON_DB |  | Generated upon creation | X  |
+|POSTGRESQL_ADDON_PASSWORD |  | Generated upon creation | X  |
+|POSTGRESQL_ADDON_ROLE |  | Generated upon creation | X  |
+|POSTGRESQL_ADDON_USER |  | Generated upon creation | X  |
+{{< /table >}}
 
 ### Pgpool-II
 
 [Pgpool-II Documentation]({{< ref "deploy/addon/postgresql/pgpool.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_ENABLE_PGPOOL | Enables the Pgpool-II feature | `false` | |
@@ -472,7 +484,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Elastic Stack Documentation]({{< ref "deploy/addon/elastic/elastic.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ELASTIC_APM_SERVER_URL | URI to connect APM Server | Generated upon creation | X  |
@@ -493,7 +505,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Blackfire
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | `''` | X |
@@ -508,7 +520,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### New Relic
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name | X |
@@ -522,7 +534,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Pulsar
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center>    | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 | ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
 |ADDON_PULSAR_BINARY_URL | The complete URL to use in your application | Generated upon creation | X |
@@ -539,7 +551,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |REDIS_HOST |  | Generated upon creation | X  |
@@ -549,13 +561,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Socks
 
- {{<table "table table- bordered" "text-align:center" >}}
- | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
- |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |SOCKS_ADDON_HOST |  |  |  |
- |SOCKS_ADDON_PORT |  |  |  |
- |SOCKS_ADDON_PRIVATE_KEY |  |  |  |
- {{< /table >}}
+{{<table "table table-bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|SOCKS_ADDON_HOST |  |  |  |
+|SOCKS_ADDON_PORT |  |  |  |
+|SOCKS_ADDON_PRIVATE_KEY |  |  |  |
+{{< /table >}}
 
 ### VPN
 
@@ -565,16 +577,16 @@ be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
-{{<table "table table- bordered" "text-align:center" >}}
+{{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center>                                                                    | <center>Default value</center> | <center>Read Only</center> |
 | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
 | CC_VPN_DNS_OVERRIDES  | Comma-separated list of DNS IP                                                                  |                                |                            |
-| VPN_ADDON_CRT         | Client certificate                                                                              |                                |                            |
-| VPN_ADDON_DEVTYPE     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
 | VPN_ADDON_CACRT       | Server CA certificate                                                                           |                                |                            |
 | VPN_ADDON_CIPHER      | Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1              |                            |
-| VPN_ADDON_KEY         | Client certificate private key                                                                  |                                |                            |
+| VPN_ADDON_CRT         | Client certificate                                                                              |                                |                            |
+| VPN_ADDON_DEVTYPE     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
 | VPN_ADDON_HOST        | Server host or IP address                                                                       |                                |                            |
+| VPN_ADDON_KEY         | Client certificate private key                                                                  |                                |                            |
 | VPN_ADDON_PORT        | Server port                                                                                     |                                |                            |
 | VPN_ADDON_TAKEY       | Pre-shared secret                                                                               |                                |                            |
 | VPN_TARGETS           | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |

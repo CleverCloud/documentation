@@ -188,7 +188,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[CC_HASKELL_STACK_TARGET]({{ < ref "deploy/application/haskell/haskell.md#specify-stack-package-target" > }}) | Specify Stack package target. |  |  |
+|[CC_HASKELL_STACK_TARGET]({{< ref "deploy/application/haskell/haskell.md#specify-stack-package-target" >}}) | Specify Stack package target. |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
 

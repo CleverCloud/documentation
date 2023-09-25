@@ -83,6 +83,14 @@ If you activate the plugin while enabling autoscalability, your PHP insatnce wil
 
 Plugins can be browsed from [Matomo own plugin repository](https://plugins.matomo.org/).
 
+{{< alert "warning" "Warning:" >}}
+Plugin files are removed everytime your instance reboots.
+
+**This means you have to reinstall them all again after every reboot.**
+
+This is temporary, and it is something we plan on improving as soon as we can.
+{{< /alert >}}
+
 ## Security and updates
 
 The Matomo add-on is a fully managed application, you don't have to select a particular version. Still its receives updates for both features and security, that we will managed for you with continuously upgraded version over time.

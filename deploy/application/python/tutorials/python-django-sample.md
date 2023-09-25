@@ -48,7 +48,7 @@ You can find a lot more configuration options such as choosing python version an
 
 Clever Cloud supports execution of multiple [manage.py](https://docs.djangoproject.com/fr/3.2/ref/django-admin/) tasks.
 
-The tasks are launched after the dependencies from `requirements.txt` have been installed.
+The tasks are launched after the dependencies from `requirements.txt` have been installed, and before the web server starts.
 
 You can declare the `manage.py` tasks with the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_MANAGE_TASKS="migrate"`.
 

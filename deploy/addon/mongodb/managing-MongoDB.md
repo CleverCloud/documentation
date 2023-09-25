@@ -25,6 +25,6 @@ The features available with Mongo Ops Manager could be relevant if you managed y
 - The ability to **automate tasks** with our CLI.
 - **Enhanced security** through our default access management on Clever Cloud (encryption at rest, default unauthorized super admin operations, etc.).
 
-Note that these features are available for all our databases addons, in addition to MongoDB.
+Note that these features are available for all our databases add-ons, in addition to MongoDB.
 
 **The managed databases provide an advantage if you want to avoid the complexity of installing and deploying databases** and if you want simple-to-use management and monitoring tools.

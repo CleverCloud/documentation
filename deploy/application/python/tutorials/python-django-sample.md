@@ -24,8 +24,8 @@ The application is a very basic one. More information about the application:
 ## Configure your Django application
 
 Note : 
-- Select at least a Nano instance (Pico doesn't have enough resources for a Django project).
-- Connect your Django project to Postgresql version 12 if you're using django 4.2+ (postgresql 11 is deprecated since this version).
+- Select at least a `nano` instance (`pico` doesn't have enough resources for a Django project).
+- Connect your Django project to Postgresql version 12+ if you're using django 4.2+ (postgresql 11 is deprecated since this version).
 
 ### My application does not exists already
 

@@ -11,9 +11,9 @@ tags:
 - managed service
 ---
 
-## Can I use [Mongo Ops Manager](https://www.mongodb.com/products/ops-manager) on Clever Cloud?
+## Can I use Mongo Ops Manager on Clever Cloud?
 
-To be able to use Mongo Ops Manager, you'll need a valid MongoDB Enterprise Advanced subscription and to deploy a [Linux version of their manager solution](https://www.mongodb.com/try/download/ops-manager). If you don't have purchased any license from MongoDB and you are using the Community version, you might be looking for a similar service for your databases.
+To be able to use [Mongo Ops Manager](https://www.mongodb.com/products/ops-manager), you'll need a valid MongoDB Enterprise Advanced subscription and to deploy a [Linux version of their manager solution](https://www.mongodb.com/try/download/ops-manager). If you haven't purchased any license from MongoDB and you are using the Community version, you might be looking for a similar service for your databases.
 
 ## Does Clever Cloud provide a similar service?
 

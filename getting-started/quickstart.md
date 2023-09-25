@@ -18,7 +18,7 @@ An application is defined on Clever Cloud by the following elements:
 
 * a dedicated language/framework
 * a deployment method (FTP and/or Git)
-* RAM and CPU consumption, depending on the language or framework used
+* a RAM and CPU consumption, depending on the language or framework used
 * an optional configuration file you may add to your project
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
@@ -39,7 +39,7 @@ Supported platforms:
 
 ### How it works
 
-When an application's code is pushed to git or via FTP, the platform receives it. It then checks the resources’ requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
+When you push an application's code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
 
 The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
 
@@ -47,15 +47,15 @@ The log system retrieves all output from the application and displays it in the 
 
 In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
-1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. Then, click on the **Add an application** button in the **Organization Manager** panel.
-
+ 1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. 
+ 2. Click on the **Create an application** button in the **Organization Manager** panel.
 This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 2. Select the language or the framework you need
 3. *Optional:* For PHP applications, you can choose between FTP and Git deployment.
-4. You will be able to fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+4. Fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 5. Enter the name and description of your application.
 6. *Optional*: The wizard will offer you to [add an add-on]({{< ref "deploy/addon" >}}) to your application.
 7. *Optional*: The wizard will offer you to [add environment variables]({{< ref "develop/env-variables.md" >}}) to your application.
@@ -109,7 +109,7 @@ You can see your application **logs** in the dashboard to **monitor the deployme
 
 #### Automated Deployment with GitHub
 
-Once you have created your application with GitHub, each push on the `master` branch will trigger a deployment. If you want to deploy an other branch than `master`, you can go to the `information` panel of your application and select the default branch to use.
+Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
 {{< image "/images/github-deployment-branch.png" "Github deployment branch select" >}}
 
@@ -131,11 +131,11 @@ However, if you set up an organization, create the repo under the aegis of the o
 
 ### FTP Deployment
 
-It is possible to deploy via FTP with PHP applications.  
+You can deploy via FTP with PHP applications.  
 
 To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
 
-When you have chosen to deploy your application via FTP, a [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) has been created with an ID
+Deploy your application via FTP, create a [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) with an ID
 matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
 [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
@@ -203,17 +203,18 @@ There are two kinds of billing:
 
 Here we will assume you want to create a new add-on and link it to your application.
 
-In order to create it, go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-Go to the organization in which you wan to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
+In order to create it:
+1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-1. When you are in the organization, click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
+2. Go to the organization in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
 
-2. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
+3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
+   
+4. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
 
-3. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ... on this page or in the corresponding documentation page.
+5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
 
-4. You will be able to choose with which application you want to link you add-on.
-
+6. Choose with which application you want to link you add-on.
 Linking an add-on to an application will provide configuration to the application through [environment variables]({{< ref "/develop/env-variables.md" >}}).
 The environment variables provided by the add-on are available for use in the linked application.
 
@@ -228,10 +229,11 @@ environment variables will be available for the applications linked to the add-o
 
 To link an already existing add-on with your application, just follow these steps:
 
-1. Go in the organization of your application and click on the name of the application you want to link with your add-on.
-2. Go in the **Service dependencies** section.
-3. Select the add-on you want to link under the "Link addons" dropdown menu.
-4. Click on the **Link** button of the add-on you want to link to your application.
+1. Go in the organization of your application.
+2. Click on the name of the application you want to link with your add-on.
+3. Go in the **Service dependencies** section.
+4. Select the add-on you want to link under the "Link addons" dropdown menu.
+5. Click on the **Link** button of the add-on you want to link to your application.
 
 ### Managing your add-on
 
@@ -258,5 +260,8 @@ This screen is managed directly by the provider of the add-on.
 
 ### Delete an add-on
 
-To delete an add-on, go to the *Configuration* page of the add-on, and click on *Remove add-on*.
+To delete an add-on:
+1. Go to the *Configuration* page of the add-on.
+2. Click on *Remove add-on*.
+
 Warning: After deletion of the add-on, all associated data will be removed.

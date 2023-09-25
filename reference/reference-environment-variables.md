@@ -323,7 +323,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### MongoDB
 
-[MongoDB Documentation]({{< ref "deploy/addon/mongodb.md" >}})
+[MongoDB Documentation]({{< ref "deploy/addon/mongodb/mongodb.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

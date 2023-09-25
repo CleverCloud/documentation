@@ -306,7 +306,7 @@ disableComments = true
                </a>
             </div>
             <div class="col* col-sm-6 col-md-3 col-lg-2 feature__item__list">
-               <a href="{{< ref "/deploy/addon/mongodb.md" >}}">
+               <a href="{{< ref "/deploy/addon/mongodb/mongodb.md" >}}">
                <div class="feature__list__outer">
                   <figure>
                      <img src="/images/runtimes_icons/mongodb.png" title="MongoBD" alt="MongoBD tutorial for Clever Cloud">

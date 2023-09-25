@@ -1,10 +1,11 @@
 ## Configure your Haskell application
+
 ### Mandatory configuration
 
 Be sure that:
 
-* you have pushed in <b>master branch</b>
-* you listen on <b>port 8080</b>
+* you have pushed in **master branch**
+* you listen on **port 8080**
 * you have one and only one binary target in your [`.cabal` file](#dependencies)
 * your project has a `stack.yaml` file
 
@@ -31,33 +32,37 @@ main = scotty 8080 $ do
 
 ### Dependencies
 
-Make sure to list all your dependencies in your `.cabal` file. For the example above, you need:
+Make sure to list all your dependencies in your `.cabal` file.
 
-```
-  build-depends:       base
-                     , scotty
+For the example above, you need:
+
+```cabal
+executable myfirstapp
+    main-is: Main.hs
+    build-depends: base
+                 , scotty
 ```
 
 ### Cached dependencies
 
-#### Enabling dependencies caching
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](#setting-up-environment-variables-on-clever-cloud) in your application. It is enabled by default only for rust and haskell applications.
+It is enabled by default only for rust and haskell applications.
 
-#### Disabling dependencies caching
+To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
 
-You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable from the Clever Cloud console, in the **Environment variables** menu of your application. Or by setting it to `CC_CACHE_DEPENDENCIES=false`
-To fully remove cached dependencies, you have to rebuild your application from scratch. You can select "rebuild and restart" from the Clever Cloud console or launch `clever restart --without-cache` with the Clever Tools CLI.
+To fully remove cached dependencies, you have to rebuild your application from scratch.
+
+You can select **rebuild and restart** from the console or launch `clever restart --without-cache` with the Clever Tools CLI.
 
 ### Custom run command
 
-If you need to run a custom command (or just pass options to the binary built
-by stack), you can specify it through the `CC_RUN_COMMAND` environment variable.
+If you need to run a custom command (or just pass options to the binary built by stack), you can specify it through the `CC_RUN_COMMAND` environment variable.
 
-For instance, for a hakyll website, you can put
+For instance, for a [hakyll](https://jaspervdj.be/hakyll/) website, you can define:
 
-```
-CC_RUN_COMMAND=~./local/bin/site server --host 0.0.0.0 --port 8080
+```bash
+CC_RUN_COMMAND="~./local/bin/site server --host 0.0.0.0 --port 8080"
 ```
 
 To access environment variables from your code, just get them from the environment with `getEnv :: String -> IO String` in `System.Environment`.

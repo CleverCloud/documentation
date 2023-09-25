@@ -30,15 +30,25 @@ For more information, please have a look at the [documentation for sbt-native-pa
 
 #### Custom sbt goal
 
-By default, the deployment system runs `sbt stage`. If you want to run another goal, you can specify it with the `SBT_DEPLOY_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud).
-
-Be aware that `SBT_DEPLOY_GOAL` will infer with `CC_SBT_TARGET_DIR`.
+By default, the deployment system execute `sbt stage` and runs the first binary found into `/target/universal/stage/bin`. If you want to run another goal, you can specify it with the `SBT_DEPLOY_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud).
 
 #### Multi-module build
 
-If you have a single repository with multiple modules (and no top-level `stage` task), then you can specify which module to build with `SBT_DEPLOY_GOAL`.
+If you have a single repository with multiple modules or want to build a specific module in a monorepo (and no top-level `stage` task), then you can specify the sbt task with `SBT_DEPLOY_GOAL`.
 
-For instance, if you want to deploy the `service1` module, you have to add `SBT_DEPLOY_GOAL=service1/stage` in the application's [environment variables](#setting-up-environment-variables-on-clever-cloud).
+`CC_SBT_TARGET_DIR` must be set to the relative path of the module and `CC_SBT_TARGET_BIN` to the name of the binary to run.
+
+For instance, if you want to deploy a module named `service1` that produce a binary named "my-binary", you have to define the following variables:
+```
+SBT_DEPLOY_GOAL=service1/stage
+CC_SBT_TARGET_DIR=service1
+CC_SBT_TARGET_BIN=my-binary
+```
+Check details on [environment variables](#setting-up-environment-variables-on-clever-cloud).
+
+Our engine will execute the `sbt service1/stage` and will run `service1/target/universal/stage/bin/my-binary`
+
+**Note:** even when `CC_RUN_COMMAND` is configured `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` should be set to the correct values.
 
 ### HOCON users
 

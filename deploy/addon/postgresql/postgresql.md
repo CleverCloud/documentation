@@ -19,8 +19,8 @@ and on standards-compliance.
 
 The version currently installed by the add-on is :
 
-- on shared plans (DEV) : PostgreSQL 11.1
-- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 9.6, 10, 11, 12, 13
+- on shared plans (DEV) : PostgreSQL 11
+- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 10, 11, 12, 13, 14
 
 {{< readfile "/content/partials/db-backup.md" >}}
 
@@ -45,6 +45,12 @@ Keep in mind that usage of direct access is a trade-off: when you migrate your a
 ## Encryption at rest
 
 Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
+
+## Note on shared databases
+
+Free databases are instantiated from a shared cluster. The way postgresql works on shared clusters is that a "pg_database" table references the name, and only the name, of other databases in that same cluster. The data, on the other hand, is not accessible.
+
+This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
@@ -100,15 +106,15 @@ Every PostgreSQL database managed by Clever Cloud comes with the following defau
 `"uuid-ossp"`,
 `xml2`
 
-## Encryption at rest
-
-Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "administrate/encryption-at-rest.md" >}})
-
 ## Automatic vacuuming
 
 [Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.  
 The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.  
 Usually this threshold is set to 20%.
+
+## `pg_activity`
+
+If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on an PostgreSQL addon but you get an `Exception: Must be run with database superuser privileges.` you need to add the flag `--rds` when you start it.  
 
 ## Plans
 

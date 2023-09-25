@@ -13,15 +13,19 @@ tags:
 
 The configuration file used for crontab is `/clevercloud/cron.json`.
 
+{{< alert "warning" "Docker" >}}
+  Crons are not available in the Docker environment as it would require to set them up inside the Docker container.
+{{< /alert >}}
+
 ## Syntax
 
 Here is the general syntax:
 
 ```json
-  [
-    "<string>",
-    "<string>"
-  ]
+[
+  "<string>",
+  "<string>"
+]
 ```
 
 The string `<string>` must use the cron format:
@@ -30,14 +34,14 @@ The string `<string>` must use the cron format:
 M H d m Y command
 ```
 
- - M: Minute [0,59]
- - H: Hour [0,23]
- - d: Day of the month [1,31]
- - m: Month of the year [1,12]
- - Y: Day of the week [0,6] (0 is Sunday)
+- M: Minute [0,59]
+- H: Hour [0,23]
+- d: Day of the month [1,31]
+- m: Month of the year [1,12]
+- Y: Day of the week [0,6] (0 is Sunday)
 
 {{< alert "warning" "Warning:" >}}
-  <p>All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.</p>
+  All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.
 {{< /alert >}}
 
 _* For more information about the syntax, you can check <a href="https://en.wikipedia.org/wiki/Cron">this page</a>_
@@ -50,7 +54,7 @@ There are two restrictions about the usage of crontab on our platform:
 * You must use the absolute path of commands
 
 {{< alert "warning" "Warning:" >}}
-  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
+  We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.
 {{< /alert >}}
 
 ## $ROOT
@@ -59,9 +63,9 @@ You can use the special token `$ROOT` to refer to the root folder of your applic
 Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
 
 ```json
-  [
-    "*/5 * * * * /usr/bin/php $ROOT/cron.php"
-  ]
+[
+  "*/5 * * * * /usr/bin/php $ROOT/cron.php"
+]
 ```
 
 Note: `$ROOT` is only a token (not an actual variable) which is replaced when setting up the crons by the equivalent of the `APP_HOME` variable (`/home/bas/<app_id>`). Do not write `${ROOT}`, only `$ROOT` will work.
@@ -75,7 +79,7 @@ You need to put it in a bash script, starting with `#!/bin/bash -l`. The *`-l`* 
 important:
 
 ```bash
-#!/bin/bash -l
+#! /bin/bash -l
 
 cd ${APP_HOME} # Which has been loaded by the env.
 bundle exec rake myapp:dosomething
@@ -83,33 +87,34 @@ bundle exec rake myapp:dosomething
 
 Then you need to commit an executable file:
 
-```
-project/ $ chmod +x crons/mycron.sh
-project/ $ git add crons/mycron.sh
-project/ $ git diff --cached
-diff --git a/crons/mycron.sh b/crons/mycron.sh
-old mode 100644
-new mode 100755
-project/ $ git commit -m "Make cron file executable"
+```bash
+chmod +x crons/mycron.sh
+git add crons/mycron.sh
+
+git diff --cached
+$ diff --git a/crons/mycron.sh b/crons/mycron.sh
+$ old mode 100644
+$ new mode 100755
+
+git commit -m "Make cron file executable"
 ```
 
 Then, in `clevercloud/cron.json`:
 
 ```json
-  [
-    "*/5 * * * * $ROOT/crons/mycron.sh"
-  ]
+[
+  "*/5 * * * * $ROOT/crons/mycron.sh"
+]
 ```
-
 
 ### Do *not* double bash!
 
 You might be tempted to put the following in your cron.json file:
 
 ```json
-  [
-    "*/5 * * * * /bin/bash $ROOT/crons/mycron.sh"
-  ]
+[
+  "*/5 * * * * /bin/bash $ROOT/crons/mycron.sh"
+]
 ```
 
 Do *NOT*. Invoking bash here will supersede the shebang and cancel the `bash -l` that
@@ -119,23 +124,28 @@ You can refer to [this list]({{< ref "develop/env-variables.md#special-environme
 
 ## Deduplicating crons
 
-Crons are installed and executed on every scaler of an application.
-This means the same cron may be executed more than once.
-You can use your own techniques to avoid that, like a shared task queue or some other
-locking system.
+Crons are installed and executed on every scaler of an application. This means the same cron may be executed more than once.
 
-If you do want to stay stateless and simple, just your bash wrapper
-script by:
+You can use your own techniques to avoid that, like a shared task queue or some other locking system.
+
+If you do want to stay stateless and simple, just your bash wrapper script by:
 
 ```bash
-#!/bin/bash -l
+#! /bin/bash -l
+
 if [[ "$INSTANCE_NUMBER" != "0" ]]; then
-    echo "Instance number is ${INSTANCE_NUMBER}. Stop here."
-    exit 0
+  echo "Instance number is ${INSTANCE_NUMBER}. Stop here."
+  exit 0
 fi
+
 cd ${APP_HOME} # Which has been loaded by the env.
-… # Your part here
+# Your part here
 ```
+
+{{< alert "warning" "Zero downtime deployment" >}}
+  If [Zero downtime deployment]({{< ref "administrate/apps-management.md#edit-application-configuration" >}}) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+  You can prevent this by deactivating it.
+{{< /alert >}}
 
 ## Logs collection
 

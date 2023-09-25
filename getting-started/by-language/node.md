@@ -1,12 +1,12 @@
 ---
-title: NodeJS
-shortdesc: Getting started with NodeJS on Clever Cloud
+title: Node.js
+shortdesc: Getting started with Node.js on Clever Cloud
 tags:
 - getting-started
 keywords:
 - nodejs
 str_replace_dict:
-  "@application-type@": "NodeJS"
+  "@application-type@": "Node.js"
 ---
 
 {{< readfile "/content/partials/authentication.md" >}}

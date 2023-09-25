@@ -1,4 +1,5 @@
 ## Configure your Python application
+
 ### General configuration
 
 Python apps can be launched in a variety of ways. You can specify how to start your application (for instance which module to run) by setting [environment variables](#setting-up-environment-variables-on-clever-cloud).
@@ -15,9 +16,9 @@ For example with *Flask*, it's gonna be the name of your main server file, follo
 
 ### Choose Python version
 
-The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.6` , `3.7` or `3.8`.
+The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.7`, `3.8`, `3.9`, `3.10` or `3.11`.
 
-**Note**: the version is a number, do not use quotes. values allowed are `2`, `2.7`, `3`, `3.6`, `3.7`, `3.8`.
+**Note**: the version is a number, do not use quotes. values allowed are `2`, `2.7`, `3`, `3.7`, `3.8`, `3.9`, `3.10`, `3.11`.
 
 ### Choose Pip version
 
@@ -55,20 +56,6 @@ We support execution of a single `setup.py` goal. Usually, this would be to exec
 The goal will be launched after the dependencies from `requirements.txt` have been installed.
 
 To execute a goal, you can define the [environment variable](#setting-up-environment-variables-on-clever-cloud) `PYTHON_SETUP_PY_GOAL="<your goal>"`.
-
-### Manage.py tasks with clevercloud/python.json
-
-Clever Cloud supports execution of multiple `manage.py` tasks. The tasks are launched after the dependencies from `requirements.txt` have been installed.
-
-You can declare the `manage.py` tasks in `./clevercloud/python.json` with the following syntax:
-
-```json
-{
-    "deploy": {
-        "managetasks": [ "migrate" ]
-    }
-}
-```
 
 {{< readfile "/content/partials/env-injection.md" >}}
 
@@ -137,6 +124,10 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 - `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
 
+##### Basic authentication
+
+If you need basic authentication, you can enable it using [environment variables]({{< ref "reference/reference-environment-variables.md#python" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+
 #### Nginx optional configuration with `clevercloud/http.json`
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
@@ -182,8 +173,8 @@ We also support celery apps out of the box. To deploy a celery app, use the `CC_
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
-{{< alert "warning" "Celery dependency needs to be in your requirements.txt" >}}
-    Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
+{{< alert "warning" "Requirements.txt" >}}
+<p>Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.</p>
 {{< /alert >}}
 
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
@@ -191,5 +182,7 @@ You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a g
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 {{< alert "warning" "Beware of timezones with Celery Beat!" >}}
-   There is a bug in recent versions of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
+There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable.
+
+The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
 {{< /alert >}}

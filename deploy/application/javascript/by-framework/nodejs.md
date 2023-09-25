@@ -30,7 +30,7 @@ To access environment variables from your code, you can use `process.env.MY_VARI
 
 ## Troubleshooting your application
 
-If you are often experiencing auto restart of your nodeJS instance, maybe you have an application crashing that we automatically restart.
+If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
 To target this behaviour, you can gracefully shutdown with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment so you can fix the problem.
 
 {{< readfile "/content/partials/link-addon.md" >}}

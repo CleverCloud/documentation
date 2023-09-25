@@ -8,6 +8,8 @@ disableComments = true
 type = "openapi"
 +++
 
+<!-- Fix because Hugo wraps the <rapi-doc> in a <p> (not recognized as a standard HTML tag) -->
+<div style="height: 100%;">
 <rapi-doc spec-url="https://api.clever-cloud.com/v2/openapi.json"
     show-header = 'false'
     show-info = 'true'
@@ -26,3 +28,4 @@ type = "openapi"
     render-style = "focused"
     layout="column">
 </rapi-doc>
+</div>

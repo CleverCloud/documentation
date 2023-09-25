@@ -8,6 +8,8 @@ keywords:
   - metrics
   - accesslogs
   - Warp10
+  - prometheus
+  - stasd
 ---
 
 {{< alert "warning" "Warning" >}}
@@ -16,19 +18,6 @@ Clever Cloud Metrics is still in beta.
 
 In addition to logs, you can have access to metrics to know how your application behaves.
 By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
-
-## Publish your own metrics
-
-We currently support two ways to push / collect your metrics: the `statsd` protocol and `Prometheus`.
-
-The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
-
-We also support Prometheus metrics collection. By default our agent collects exposed metrics on `localhost:9100/metrics`.
-
-If needed, you can override those settings with the two following environment variables:
-
-- `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
-- `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
 ## Display metrics
 
@@ -40,6 +29,8 @@ To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
+{{< image "/images/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
+
 ### Advanced pane
 
 Advanced metrics allow you to access all gathered metrics,
@@ -50,6 +41,14 @@ on a specified time range.
 All metrics are stored in [Warp 10]({{< ref "administrate/metrics/warp10.md" >}}), so you can explore data directly with the [quantum]({{< ref "administrate/metrics/warp10.md" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference).
 
 For instance, you can derive metrics over time, do custom aggregations or combine metrics.
+
+### Get alerts
+
+You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.
+
+{{< image "/images/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
+
+For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
 ## Access Logs metrics
 
@@ -556,20 +555,43 @@ under an organisation.
 '<READ TOKEN>' '<ORGANISATION ID>' <START TIMESTAMP> <END TIMESTAMP> @clevercloud/app_consumption
 ```
 
-## Custom metrics
+## Publish your own metrics
 
-You can expose custom metrics via [`statsd`](https://github.com/etsy/statsd#usage).
-These metrics will be gathered and displayed in advanced view as well.
+We currently support two ways to push / collect your metrics: the `statsd` protocol and `prometheus`.
 
-On some platforms, standard metrics published over `statsd` are even integrated on the overview pane.
+The statsd server listens on port `8125`. You can send metrics using regular statsd protocol or using an advanced one [as described here](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd).
 
-Metrics published over `statsd` are prefixed with `statsd`.
+We also support Prometheus metrics collection, by default our agent collects exposed metrics on `localhost:9100/metrics`.
 
-### statsd socket
+If needed, you can override those settings with the two following environment variables:
 
-To publish custom metrics, configure to use your client to push to `localhost:8125` (it's the default host and port, so it should work with default settings as well).
+- `CC_METRICS_PROMETHEUS_PORT`: Define the port on which the Prometheus endpoint is available
+- `CC_METRICS_PROMETHEUS_PATH`: Define the path on which the Prometheus endpoint is available
 
-### NodeJS example
+As with Prometheus the exposed host can be the same as the application deployed, you can use a basic authentication to collect the metrics with the two following environment variables:
+
+- `CC_METRICS_PROMETHEUS_USER`: Define the user for the basic auth of the Prometheus endpoint
+- `CC_METRICS_PROMETHEUS_PASSWORD`: Define the password for the basic auth of the Prometheus endpoint
+
+For large custom set of metrics to collect, the default response timeout of the `/metrics` query is 3 seconds. You can update it with the following environment variable:
+
+- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes. 
+
+To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
+
+You can use this query to show all collected metrics:
+
+```txt
+[ 
+  'TOKEN'
+  '~prometheus.*'
+  { 'app_id' 'app_xxxxxxxx' }
+  NOW 5 m
+]
+FETCH
+```
+
+### Node.js example
 
 You can use `node-statsd` to publish metrics:
 

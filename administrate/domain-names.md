@@ -14,7 +14,7 @@ keywords:
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a **\*.cleverapps.io** free domain, with built-in SSL
+* Using a **\*.cleverapps.io** free domain for dev purposes, with built-in SSL
 
 You can link one or several domain names in the console.
 
@@ -22,10 +22,21 @@ Add it in the application configuration: in the console, click on your **applica
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
+{{< alert "warning" "cleverapps.io domains are for developement only!" >}}
+  `*.cleverapps.io` domains are given for development and tests purpose. They point to
+  specific reverse proxies and have the following weaknesses:
+  - .io TLD is not a stable one
+  - since we offer the domain, the probability that people will abuse it is high. Thus, we
+    do not garantee the same QoS on the cleverapps reverse proxies.
+{{< /alert >}}
+
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
 
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
+{{< alert "warning" "TLS on sub-domain level" >}}
+  `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
+{{< /alert >}}
 
 ## Using Personal Domain Names
 
@@ -67,6 +78,31 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+
+### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Four records:<br>
+    <code>@ 10800 IN A 212.129.27.239</code><br>
+    <code>@ 10800 IN A 212.83.186.147</code>
+    <code>@ 10800 IN A 212.83.186.216</code>
+    <code>@ 10800 IN A 212.129.27.183</code>
+    </td>
+  </tr>
+</table>
+
 ### Your Application Runs in the Europe/Roubaix ('RBX') Zone
 
 <table class="table table-bordered" style="text-align:center">
@@ -82,9 +118,33 @@ Provide the following to your registrar:
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
+    <td>Four records:<br>
     <code>@ 10800 IN A 87.98.180.173</code><br>
+    <code>@ 10800 IN A 87.98.182.176</code><br>
+    <code>@ 10800 IN A 87.98.180.181</code><br>
     <code>@ 10800 IN A 87.98.182.136</code>
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 135.125.16.47</code><br>
+    <code>@ 10800 IN A 135.125.16.49</code>
     </td>
   </tr>
 </table>
@@ -107,6 +167,28 @@ Provide the following to your registrar:
     <td>Two records:<br>
     <code>@ 10800 IN A 145.239.17.127</code><br>
     <code>@ 10800 IN A 145.239.17.192</code>
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Europe/Gravelines ('GRAHDS') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 188.165.58.196</code><br>
+    <code>@ 10800 IN A 188.165.58.200</code>
     </td>
   </tr>
 </table>
@@ -179,10 +261,31 @@ Provide the following to your registrar:
   </tr>
 </table>
 
+### Your Application Runs in the Jeddah ('JED') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 158.101.226.110</code><br>
+    <code>@ 10800 IN A 150.230.50.217</code>
+    </td>
+  </tr>
+</table>
+
 {{< alert "warning" "Warning on CNAME Availability" >}}
     You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
 {{< /alert >}}
-
 
 If you want to make your application available from a domain name which does not support CNAME records (eg <code>example.com</code> in addition to <code>www.example.com</code>), check if your registrar provides a web redirection service. This way, you only have to make <code>www.example.com</code> point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
@@ -231,9 +334,44 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 Requests are routed to applications based on the domain name, but you can also route based
 on a path prefix.
 
-For instance, you can bind `example.com/api` to an app, and `example.com` to another one.
+For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
-the first app. The other requests will be routed to the second app. You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "getting-started/cli.md" >}})).
+the second app. The other requests will be routed to the first app.
+You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "getting-started/cli.md" >}})).
+
+Note that your prefix-routed application **needs** to have a `/prefix` route.
+
+This will work:
+
+```
+example.com        ->      myfirtapp-main-route
+
+example.com/api    ->      mysecond-app-main-route/api
+```
+
+This will NOT work:
+
+```
+example.com        ->      myfirtapp-main-route     (works)
+
+example.com/api    ->      mysecondapp-main-route   (404 response from mysecondapp)
+```
+
+### Prefix routing for static sites
+
+In the case of static files, you usually understand routes as paths in a file tree.
+
+This will work:
+
+```
+example.com/api    ->     my-static-site/api/index.php
+```
+
+This will NOT work:
+
+```
+example.com/api    ->     my-static-site/index.php
+```
 
 ## Gandi CNAME configuration
 

@@ -1,10 +1,11 @@
 ## Configure your Docker application
+
 ### Mandatory configuration
 
 Be sure that you:
 
 * push on the **master branch**.
-* have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable](https://www.clever-cloud.com/doc/reference/reference-environment-variables/#docker) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
+* have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable]({{< ref "reference/reference-environment-variables.md#docker" >}}) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
 * run the application with `CMD` or `ENTRYPOINT` in your Dockerfile.
 * listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` [environment variable](#setting-up-environment-variables-on-clever-cloud)).
 
@@ -18,9 +19,24 @@ CMD <command to run>
 
 **command to run**: this is the command that starts your application. Your application **must** listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.
 
+### Memory usage during building
+
+If the building step of your app crashes because it uses more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "administrate/apps-management.md#edit-application-configuration" >}})
+
+```bash
+# The base image
+FROM outlinewiki/outline:version-0.44.0
+
+# Run the memory intensive build on an instance with 4 GB of memory (M)
+RUN yarn install && yarn build
+
+# Start the app on a smaller instance (nano)
+CMD yarn start
+```
+
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using using the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_DOCKER_EXPOSED_TCP_PORT=<port>` but **it still needs a support request to make use of it**. Refer to the support documentation page to know how to reach to them.
+Clever Cloud enables you to use TCP over Docker applications using using the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections]({{< ref "administrate/tcp-redirections.md" >}}].
 
 ### Docker socket access
 
@@ -38,6 +54,7 @@ You can make the docker socket available from inside the container by adding the
 ### Private registry
 
 We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few [environment variables](#setting-up-environment-variables-on-clever-cloud):
+
 - `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
 - `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
 - `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
@@ -63,7 +80,7 @@ To make your dockerized application run on clever Cloud, you need to:
 
 For instance, here is the `Dockerfile` used for the Rust application:
 
-```bash
+```Dockerfile
 # rust tooling is provided by `archlinux-rust`
 FROM geal/archlinux-rust
 MAINTAINER Geoffroy Couprie, contact@geoffroycouprie.com
@@ -106,7 +123,7 @@ tail -f /var/log/hhvm/error.log
 
 Since the two servers are running as daemons, we need to start a long-running process. In this case we use `tail -f`. We then add `start.sh` as the `CMD` in the `Dockerfile`
 
-```bash
+```Dockerfile
 # We need HHVM
 FROM jolicode/hhvm
 

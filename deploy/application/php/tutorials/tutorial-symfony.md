@@ -72,13 +72,15 @@ monolog:
 You can use the `CC_REVERSE_PROXY_IPS` [environment variable](#setting-up-environment-variables-on-clever-cloud) that contains a list of trusted IP addresses, separated by commas.
 
 ```
-if ($trustedProxies = $request->server->get('CC_REVERSE_PROXY_IPS')) {
-    // trust *all* requests
-    Request::setTrustedProxies(array_merge(['127.0.0.1'], explode(',', $trustedProxies)),
+# .env
+TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}
+```
 
-    // trust *all* "X-Forwarded-*" headers
-    Request::HEADER_X_FORWARDED_ALL);
-}
+```
+# config/packages/framework.yaml
+framework:
+    # ...
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
 ```
 
 For more information on configuring symfony behind a reverse proxy, you can read the [official documentation](https://symfony.com/doc/current/deployment/proxies.html).
@@ -99,6 +101,18 @@ Symfony got your back on this: just run `composer require symfony/apache-pack`. 
 Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application.
 
 Change the default `DATABASE_URL` environment variable used in your `config/packages/doctrine.yaml` to `<ADDON_PREFIX>_ADDON_URI` where `<ADDON_PREFIX>` depending on the database addon you created (e.g. `MYSQL` for MySQL, `POSTGRESQL` for PostgreSQL or `MONGODB` for MongoDB) or be sure to use the environment variable in your production configuration file as explained in the [configuration documentation of Symfony](https://symfony.com/doc/current/configuration.html#configuration-environments).
+
+### Configure ProxySQL for MySQL
+
+To manage your connection pool towards your MySQL add-on, you can set-up a [ProxySQL]({{< ref "/deploy/addon/mysql/proxysql.md" >}}). 
+
+Once you have activated the ProxySQL (through the environment variable), a configuration example would be:
+
+```yaml
+dbal:
+  unix_socket: '%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%'
+  url: 'mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%'
+```
 
 ### Optional: run tasks after build step
 

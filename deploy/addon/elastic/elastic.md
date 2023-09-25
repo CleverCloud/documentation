@@ -1,6 +1,6 @@
 ---
-title: Elastic Stack
-position: 7
+title: Elastic Stack Addon
+position: 6
 shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
 tags:
 - addons
@@ -18,7 +18,7 @@ Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsea
 
 ## Versions
 
-The current versions supported at add-on creation are 6 and 7.
+The current versions supported at add-on creation are 7 and 8.
 
 ## Elasticsearch
 
@@ -40,7 +40,9 @@ Any member of the Clever Cloud organisation containing the Elastic add-on will b
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).  
+
+Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
 Currently, APM agents are available in the following languages:
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
@@ -56,6 +58,8 @@ The created application name follow the pattern *APM - addon_eb464a6d-ce5f-4780-
 
 Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/get-started/current/components.html).
 
+
+
 ### How to setup APM
 
 Any applications linked to the APM application will have the right credentials and APM endpoint automatically available as environment variables. In some cases these variables will be picked up automatically by the APM agent you are using in your application and everything will work automatically. But in some other cases you have to configure it yourself. See for instance the [Rails documentation](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/getting-started-rails.html#getting-started-rails). The list of agents configuration can be found on Elastic's [documentation](https://www.elastic.co/guide/en/apm/agent/index.html).
@@ -69,6 +73,14 @@ The APM server is deployed as an application. As such it's configured as an appl
 You can change the URL to point to your own custom configuration.
 
 A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
+
+### Kibana custom configuration
+
+Kibana is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
+
+`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/7 | sh"`
+
+You can change the URL to point to your own custom configuration.
 
 ### Java APM agent
 

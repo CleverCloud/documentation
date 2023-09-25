@@ -66,7 +66,7 @@ The supported containers are listed below:
          <td></td>
          <td></td>
          <td></td>
-         <td></td>
+         <td>WildFly 23.0.2 (WILDFLY23)</td>
       </tr>
       <tr>
          <td>Apache Tomcat 7.0 (TOMCAT7)</td>
@@ -75,7 +75,7 @@ The supported containers are listed below:
          <td></td>
          <td></td>
          <td></td>
-         <td></td>
+         <td>WildFly 24.0.1 (WILDFLY24)</td>
       </tr>
       <tr>
          <td>Apache Tomcat 8.8 (TOMCAT8)</td>
@@ -334,6 +334,14 @@ Here's the list of the configuration values for the "container" field in `war.js
       <tr>
          <td>WILDFLY9</td>
          <td>Use Wildfly servlet container 9.x (see <a href="https://wildfly.org/">https://wildfly.org/</a>)</td>
+      </tr>
+      <tr>
+         <td>WILDFLY17</td>
+         <td>Use Wildfly servlet container 17.x (see <a href="https://wildfly.org/">https://wildfly.org/</a>)</td>
+      </tr>
+      <tr>
+         <td>WILDFLY23</td>
+         <td>Use Wildfly servlet container 23.x (see <a href="https://wildfly.org/">https://wildfly.org/</a>)</td>
       </tr>
    </tbody>
 </table>

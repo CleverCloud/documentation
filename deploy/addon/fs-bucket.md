@@ -30,15 +30,22 @@ You will be able to retrieve generated data between two deployments.
 Buckets are configured using environment variables. Add the following to your application :
 
 ```
-CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com
+CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com[:async]
 ```
 _don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder not exists) and your fs-bucket host_ 
+
+Optionnally, you can add `:async` to the end of the environment variable.
+This will make Clever Cloud mount the FS Bucket with the `async` option.
+It will make the FS Bucket faster (sometimes 3× faster), but in case of a network issue it may cause file
+corruption.
 
 You can setup multiple buckets by appending a number at the end of the environment variable's name.
 ```
 CC_FS_BUCKET=/some/empty/folder:fs_bucket_host
-CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
+CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host:async
 ```
+
+Note that the `async` parameter can be set per bucket.
 
 ## Configuring your application with buckets.json (@deprecated)
 
@@ -48,6 +55,7 @@ CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
     </p>
     <p>
       If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
+      Also, this method does not support the `async` parameter.
     </p>
 {{< /alert >}}
 

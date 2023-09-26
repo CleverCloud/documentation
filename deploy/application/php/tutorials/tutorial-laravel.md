@@ -92,9 +92,9 @@ For instance for MySQL:
 
 If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_POST_BUILD_HOOK=php artisan migrate --force`
 
-# Automatic Laravel configuration cache update on restart
+# Configure Caching
 
-When deploying a Laravel application on Clever Cloud, it's essential to keep your configuration cache up-to-date, especially when you make changes to your environment variables. To achieve this, you can add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_PRE_RUN_HOOK=php artisan config:cache`.
+When deploying a Laravel application on Clever Cloud, it's essential to keep your configuration, route and events cache up-to-date, especially when you make changes to your environment variables. To achieve this, you can add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_PRE_RUN_HOOK=php artisan config:cache && php artisan route:cache && php artisan event:cache`
 
 ## Configure storage
 

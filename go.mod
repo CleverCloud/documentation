@@ -1,4 +1,4 @@
-module github.com/cnivolle/hextra
+module github.com/cnivolle/hextra //to update
 
 go 1.21.1
 

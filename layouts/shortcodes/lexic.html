@@ -1,0 +1,10 @@
+<table class="table">
+    <tbody>
+    {{ range $elem_key, $elem_val := $.Site.Data.glossary }}
+        <tr>
+            <th scope="row">{{$elem_key}}</th>
+            <td>{{$elem_val}}</td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>

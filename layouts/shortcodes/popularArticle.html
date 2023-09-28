@@ -1,0 +1,44 @@
+{{ .Scratch.Set "content" "" }}
+{{ .Scratch.Set "identifier" "" }}
+
+
+{{ if $.Site.Params.Debug }}
+<div class="shortcode-debug"  >
+  <strong>popularArticle shortcode</strong>
+  <hr />
+{{ end }}
+
+  <div class="popular__item section__top">
+    <div class="containers">
+      <div class="popular__head">
+        <img src="/images/Group-3.png" alt="title">
+        <div class="popular__headRight">
+          <h2 class="title__head">Popular Article</h2>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        {{ range $.Site.Data.popularblogs }}
+        <div class="col* col-sm-6 col-md-6 col-lg-4 popular__item__list">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <a href="{{ .href | relURL }}">
+                <h4>{{ .title }}</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+{{ if $.Site.Params.Debug }}
+</div>
+{{ end }}

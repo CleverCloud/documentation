@@ -1,0 +1,14 @@
+{{ $style := .Get "style" }}
+
+{{ if $.Site.Params.Debug }}
+<div class="shortcode-debug"  >
+  <strong>table shortcode</strong>
+  <hr />
+{{ end }}
+<div class="table {{ $style }}" role="alert">
+    {{ print .Inner | markdownify }}
+</div>
+
+{{ if $.Site.Params.Debug }}
+</div>
+{{ end }}

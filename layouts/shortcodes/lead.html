@@ -1,0 +1,12 @@
+
+{{ if $.Site.Params.Debug }}
+<div class="shortcode-debug"  >
+  <strong>lead shortcode</strong>
+  <hr />
+{{ end }}
+<p class="lead">
+    {{ print .Inner | markdownify }}
+</p>
+{{ if $.Site.Params.Debug }}
+</div>
+{{ end }}

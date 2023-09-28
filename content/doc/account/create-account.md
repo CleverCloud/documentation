@@ -8,6 +8,7 @@ keywords:
 - preferences
 - user
 - creation
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

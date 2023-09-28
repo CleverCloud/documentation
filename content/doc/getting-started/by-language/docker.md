@@ -10,20 +10,20 @@ str_replace_dict:
 type: docs
 ---
 
-{{< readfile file="doc/partials/authentication.md" >}}
+{{< readfile file="/content/partials/authentication.md" >}}
 
-{{< readfile file="doc/partials/add-ssh-keys-short-version.md" >}}
+{{< readfile file="/content/partials/add-ssh-keys-short-version.md" >}}
 
-{{< readfile file="doc/partials/create-application.md" >}}
+{{< readfile file="/content/partials/create-application.md" >}}
 
-{{< readfile file="doc/partials/set-env-vars.md" >}}
+{{< readfile file="/content/partials/set-env-vars.md" >}}
 
-{{< readfile file="doc/partials/language-specific-deploy/docker.md" >}}
+{{< readfile file="/content/partials/language-specific-deploy/docker.md" >}}
 
-{{< readfile file="doc/partials/env-injection.md" >}}
+{{< readfile file="/content/partials/env-injection.md" >}}
 
-{{< readfile file="doc/partials/deploy-git.md" >}}
+{{< readfile file="/content/partials/deploy-git.md" >}}
 
-{{< readfile file="doc/partials/link-addon.md" >}}
+{{< readfile file="/content/partials/link-addon.md" >}}
 
-{{< readfile file="doc/partials/more-config.md" >}}
+{{< readfile file="/content/partials/more-config.md" >}}

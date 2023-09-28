@@ -14,6 +14,8 @@ The module (without .py) must be importable, i.e. be in `PYTHONPATH`. Basically,
 
 For example with *Flask*, it's gonna be the name of your main server file, followed by your Flask object: `server:app` for instance if you have a `server.py` file at the root of your project with a Flask `app` object inside.
 
+You can also use `CC_RUN_COMMAND` to launch Python application your way. In such case, it must listen on port `9000`.
+
 ### Choose Python version
 
 The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.7`, `3.8`, `3.9`, `3.10` or `3.11`.

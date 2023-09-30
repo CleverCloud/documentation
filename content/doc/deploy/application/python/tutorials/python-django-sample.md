@@ -34,9 +34,9 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 ### My application already exists
 
 <br/><br/>
-{{< alert "warning" "Reminder" >}}
+{{< callout type="warning" >}}
   Do not forget to add the `CC_PYTHON_MODULE` environment variable  or the file [clevercloud/python.json](https://github.com/CleverCloud/django-example/blob/master/clevercloud/python.json) in any Python project so that we get your required modules.
-{{< /alert >}}
+{{< /callout >}}
 
 ### Fine tuning the application
 

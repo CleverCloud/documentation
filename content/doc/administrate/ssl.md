@@ -45,7 +45,7 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
     You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
-{{< alert "warning" "Debugging Let’s Encrypt communication:" >}}
+{{< callout type="warning" >}}
  <p>
  If Let’s Encrypt fails to generate the certificate, you can test that the
  acme-challenge url works by running:
@@ -57,7 +57,7 @@ test
 ```
  <p>It should return a HTTP 200 OK with the string "test" as the body. If it does not, check your Cloudflare configuration.</p>
 
-{{< /alert >}}
+{{< /callout >}}
 
 
 ## Uploading my own certificates
@@ -94,9 +94,9 @@ You should note that .pem files use the unix way of terminating lines with a sin
 If you need manual operations on the certificates, the most secure way to transfer your certificates is using a signed and encrypted email.
 Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
 
-{{< alert "warning" "Security" >}}
+{{< callout type="warning" >}}
     Do not send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
-{{< /alert >}}
+{{< /callout >}}
 
 ### Clever Cloud on Keybase
 

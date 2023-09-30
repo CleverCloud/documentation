@@ -11,9 +11,9 @@ keywords:
 - kibana
 ---
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
 To deploy a custom Kibana, you need to ask Clever Cloud Support team to enable superuser permissions for your user.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Overview
 

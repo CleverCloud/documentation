@@ -12,9 +12,9 @@ keywords:
   - stasd
 ---
 
-{{< alert "warning" "Warning" >}}
+{{< callout type="warning" >}}
 Clever Cloud Metrics is still in beta.
-{{< /alert >}}
+{{< /callout >}}
 
 In addition to logs, you can have access to metrics to know how your application behaves.
 By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
@@ -74,10 +74,10 @@ Access logs are defined in the `'accessLogs'` Warp 10 class and there are three 
 
 > Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
 
-{{< alert "warning" "Warning" >}}
+{{< callout type="warning" >}}
 - Add-ons on shared plans (usually DEV plans) do not provide access logs
 - There are no recorded access logs in case of a direct access to an add-on
-{{< /alert >}}
+{{< /callout >}}
 
 To reduce space used to store access logs, we defined the following key-value models.
 
@@ -153,9 +153,9 @@ sDuration -> total session duration time in millis
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
-{{< alert "info" "Note" >}}
+{{< callout type="info" >}}
 Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "doc/administrate/metrics/warp10.md" >}}).
-{{< /alert >}}
+{{< /callout >}}
 
 <script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
 
@@ -208,9 +208,9 @@ In metrics' data, mains labels would be :
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 
-{{< alert "warning" "Missing labels" >}}
+{{< callout type="warning" >}}
 For some specific metrics. Some labels could miss.
-{{< /alert >}}
+{{< /callout >}}
 
 ##### Classes
 
@@ -527,9 +527,9 @@ More information about [Quantum and Warp 10]({{< ref "doc/administrate/metrics/w
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
 
-{{< alert "warning" "Warning" >}}
+{{< callout type="warning" >}}
 Computation can be time intensive.
-{{< /alert >}}
+{{< /callout >}}
 
 ```txt
 // Fix the NOW timestamp to have the same on over the script

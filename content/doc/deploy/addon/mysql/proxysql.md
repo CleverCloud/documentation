@@ -16,10 +16,10 @@ keywords:
 
 ProxySQL is a tool available on applications instances to help you manage your connection pool towards your MySQL add-on.
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
 ProxySQL is not available on Docker instances. If you want to use ProxySQL, you can add it and configure it in
 your Dockerfile.
-{{< /alert >}}
+{{< /callout >}}
 
 ## What is ProxySQL
 
@@ -30,10 +30,10 @@ your Dockerfile.
 You might need ProxySQL if your application can't manage a connection pool. This is usually the case with PHP applications or any other application that do not
 have a connection pooling policy in place.
 
-{{< alert "info" "Information:" >}}
+{{< callout type="info" >}}
 A connection pool will cache your database connections and keep them open for future requests.
 The connections can then be reused if needed or closed if they weren't used after a certain time.
-{{< /alert >}}
+{{< /callout >}}
 
 By using connection pooling from ProxySQL to your MySQL add-on, you make sure that a certain number of connections stay open to your add-on, leading to faster requests.
 

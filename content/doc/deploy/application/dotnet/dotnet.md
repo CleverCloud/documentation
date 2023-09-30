@@ -18,9 +18,9 @@ Clever Cloud allows you to deploy .NET web applications. This page will explain 
 
 You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some mandatory files to add, and properties to setup.
 
-{{< alert "warning" ".NET support is in beta" >}}
+{{< callout type="warning">}}
   If you encounter an issue, please contact the support.
-{{< /alert >}}
+{{< /callout >}}
 
 {{< readfile file="/content/partials/create-application.md" >}}
 

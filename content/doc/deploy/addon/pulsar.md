@@ -14,7 +14,7 @@ keywords:
 - kafka
 ---
 
-{{< alert "warning" "Warning" >}} Pulsar is still in beta. {{< /alert >}}
+{{< callout type="warning" >}} Pulsar is still in beta. {{< /callout >}}
 
 ## Overview
 

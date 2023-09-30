@@ -34,10 +34,10 @@ npm install -g clever-tools@beta
 
 #### Debian/Ubuntu (.deb)
 
-{{< alert "warning" "Bintray to Nexus" >}}
+{{< callout type="warning" >}}
 <p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
 <p>If you were using Bintray to install our <code>.deb</code> packages, you will need to edit your <code>/etc/apt/sources.list</code> and remove the old entry with <code>https://dl.bintray.com/clevercloud/deb</code> before going further.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
@@ -60,10 +60,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/cc-ne
 
 #### CentOS/Fedora (.rpm)
 
-{{< alert "warning" "Bintray to Nexus" >}}
+{{< callout type="warning" >}}
 <p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
 <p>If you were using Bintray to install our <code>.rpm</code> packages, you will need to remove the old <code>/etc/yum.repos.d/bintray-clevercloud-rpm.repo</code> before going further.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
 
@@ -150,10 +150,10 @@ NOTES:
 
 #### Using chocolatey
 
-{{< alert "warning" "Bintray to Nexus" >}}
+{{< callout type="warning" >}}
 <p>We recently moved from Bintray to a self-hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">https://nexus.clever-cloud.com</a>.</p>
 <p>If you were using Bintray to install our <code>.nupkg</code> packages, you will need to remove the old source.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run:
 
@@ -245,11 +245,11 @@ clever link --org <org_name> <app_name>
 clever unlink <app_id>
 ```
 
-{{< alert "info" "Notes on `.clever.json`" >}}
+{{< callout type="info" >}}
   <p>Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.</p>
   <p>This file can be commited safely, others team members working on this repository will not have to link the application again.</p>
   <p>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 <br>
 

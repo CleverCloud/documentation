@@ -53,11 +53,11 @@ You can learn more about ProxySQL on the [dedicated documentation page]({{< ref 
 
 ## Plans
 
-{{< alert "warning" "Note for Shared databases" >}}
+{{< callout type="warning" >}}
 As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand.
 
 If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database (XS plans and above).
-{{< /alert >}}
+{{< /callout >}}
 
 
 {{< pricingAddon "mysql-addon" "[\"cpu\", \"memory\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}

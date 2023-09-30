@@ -13,9 +13,9 @@ tags:
 
 The configuration file used for crontab is `/clevercloud/cron.json`.
 
-{{< alert "warning" "Docker" >}}
+{{< callout type="warning" >}}
   Crons are not available in the Docker environment as it would require to set them up inside the Docker container.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Syntax
 
@@ -40,9 +40,9 @@ M H d m Y command
 - m: Month of the year [1,12]
 - Y: Day of the week [0,6] (0 is Sunday)
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
   All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.
-{{< /alert >}}
+{{< /callout >}}
 
 _* For more information about the syntax, you can check <a href="https://en.wikipedia.org/wiki/Cron">this page</a>_
 
@@ -53,9 +53,9 @@ There are two restrictions about the usage of crontab on our platform:
 * The special date `@reboot` is not available since the crontab is added after the startup of the instance
 * You must use the absolute path of commands
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
   We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.
-{{< /alert >}}
+{{< /callout >}}
 
 ## $ROOT
 You can use the special token `$ROOT` to refer to the root folder of your application.
@@ -142,10 +142,10 @@ cd ${APP_HOME} # Which has been loaded by the env.
 # Your part here
 ```
 
-{{< alert "warning" "Zero downtime deployment" >}}
+{{< callout type="warning" >}}
   If [Zero downtime deployment]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
   You can prevent this by deactivating it.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Logs collection
 

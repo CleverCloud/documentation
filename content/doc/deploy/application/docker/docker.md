@@ -17,9 +17,9 @@ Docker containers can encapsulate any payload, and will run consistently on and 
 
 Clever Cloud allows you to deploy any application running inside a Docker container. This page will explain how to set up your application to run it on our service.
 
-{{< alert "warning" "Note for Docker support" >}}
+{{< callout type="warning" >}}
     Docker at Clever Cloud does not yet support FS Buckets, validation of your Dockerfile, or compose of sorts.
-{{< /alert >}}
+{{< /callout >}}
 
 
 {{< readfile file="/content/partials/create-application.md" >}}

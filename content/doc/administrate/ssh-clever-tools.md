@@ -16,19 +16,19 @@ Clever Cloud allows you to connect to running instances via SSH.
 
 While direct SSH access to instances is not recommended in an [immutable infrastructure](https://boxfuse.com/blog/no-ssh.html) setup, it can be useful for debugging purposes.
 
-{{< alert "warning" "SSH access is meant only for debugging purposes" >}}
+{{< callout type="warning" >}}
     <p>
     Clever Cloud instances are to be seen as <i>read-only</i> resources. Any change made on an instance <b>will not be persisted</b>. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
-{{< alert "warning" "SSH access is disabled on Docker instances" >}}
+{{< callout type="warning">}}
     <p>
     For security reasons, you can't connect on the instance that hosts your Docker application.<br/>
     Instead, if `bash` is installed in your Docker application, you will be able to connect directly inside your container.<br/>
     Contact the support if you need help to debug your Docker applications.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 
 ## Requirements
@@ -88,12 +88,12 @@ You can validate connection to remote server with this fingerprint :
     ED25519 key fingerprint is SHA256:lys1oC3plDGyAsWD7Yd5fJVKQUV/Pbn/M5KI5GyAj5s.
     RSA     key fingerprint is SHA256:0odQb8NQPKYNCme2Nf3Xrz3Bc9kmrDK6eSJGIzj9aEA.
 
-{{< alert "warning" "Don't forget the <code>-t</code> flag" >}}
+{{< callout type="warning" >}}
     <p>
         The <code>-t</code> flag, it is mandatory for the ssh connection to work properly.
         If your terminal hangs and you see <code>pseudo-terminal will not be allocated because stdin is not a terminal</code>, it's likely you've forgotten the <code>-t</code> flag.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 
 ## Access your application's folder

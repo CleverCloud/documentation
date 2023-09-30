@@ -83,13 +83,13 @@ All connections are handled by load-balancers ahead of your applications and for
 
 Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '*http*' or '*https*'.
 
-{{< alert "warning" "Note for Play Framework! 1.2.x users" >}}
+{{< callout type="warning" >}}
     In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your *application.conf*.
-{{< /alert >}}
+{{< /callout >}}
 
-{{< alert "warning" "Note for Play Framework! 2.3+ users" >}}
+{{< callout type="warning" >}}
     In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.
-{{< /alert >}}
+{{< /callout >}}
 
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?

@@ -41,9 +41,9 @@ A **Webapp** keeps the application up and serve via HTTP.
 
 ## Create an application
 
-{{< alert "warning" "Storage on VM" >}}
+{{< callout type="warning" >}}
     Remember that an application is **stateless**. To save your data, you need to use an add-on.
-{{< /alert >}}
+{{< /callout >}}
 
 1. Go to https://dashboard.clevergrid.io, create a “brand new application”.
 {{< image "/images/create-application.png" "Create application." >}}
@@ -56,7 +56,7 @@ A **Webapp** keeps the application up and serve via HTTP.
    {{< image "/images/java.png" "Java" >}}
 3. Select the size of your instance(s) and the number of nodes
 4. (optional) You can choose a Template for your application
-  {{< alert "info" >}}
+  {{< callout type="info" >}}
     Template will set up for you a compete ecosystem for a specific application. It provides add-ons and environment 
    variables for you.
    <ul>
@@ -64,7 +64,7 @@ A **Webapp** keeps the application up and serve via HTTP.
       <li>R Notebook</li>
       <li>…</li>
    </ul>
-  {{< /alert >}}
+  {{< /callout >}}
 
 ## Create an add-on
 
@@ -72,18 +72,18 @@ A **Webapp** keeps the application up and serve via HTTP.
 {{< image "/images/addons.png" "Addons" >}}
 2. Select the storage plan you need
 3. Link it to your applications
-  {{< alert "info" >}}
+  {{< callout type="info" >}}
     Add-ons's credentials will be automatically set up in your application. Yet it can be found on the "Add-on dashboard" tabs of your dashboard by the Clever Cloud console.
-  {{< /alert >}}
+  {{< /callout >}}
 
 
 ## Set-up an application
 
 You can pass some parameter to your application by **environments variables**.
 
-  {{< alert "warning" "About port listening" >}}
+  {{< callout type="warning" >}}
     If you deploy a Webapp, Clever Grid expects an exposed `PORT` as environment variable listening the port `8080`
-  {{< /alert >}}
+  {{< /callout >}}
 
 
 - Go to [dashboard.clevergrid.io](https://dashboard.clevergrid.io) and select your application
@@ -97,9 +97,9 @@ If there is a `requirements.txt` in the root folder of your application, depende
 * Starting file
   * Clever Grid need to know  which file runs to start your application. That can be a python file, declare in the
  `CC_MLPYTHON_RUN_MAIN` environment variable or custom bash script in `CC_MLPYTHON_START_SCRIPT` environment variable.
-  {{< alert "warning" >}}
+  {{< callout type="warning" >}}
     It should contain the path of your main file. The path should be relative to the root of your repository.
-  {{< /alert >}}
+  {{< /callout >}}
 
 For example, “pytorch.py” and “./pytorch.py are both valid.
 **Bash scripts are expected to be executable (via `chmod+x`)** 
@@ -127,10 +127,10 @@ Your Clever Grid application is now set up to receive your code.
 * Go to your project and add the Clever Grid repository to your repository :
 
       git remote add clever-grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/<APP_ID>
-  {{< alert "info" >}}
+  {{< callout type="info" >}}
     You can find the repository address on the overview page of your application
     {{< image "/images/git-url.png" "git-url" "width:100%" >}}
-  {{< /alert >}}
+  {{< /callout >}}
 
 * Push your code
 

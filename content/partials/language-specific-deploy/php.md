@@ -46,9 +46,9 @@ In the following example we want to set the webroot to the folder `/public`:
 }
 ```
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
     Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
-{{< /alert >}}
+{{< /callout >}}
 
 
 ### Change PHP settings
@@ -220,9 +220,9 @@ You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`.
 
 To choose between these two modules you must use the `CC_CGI_IMPLEMENTATION` environment variable with `fastcgi` or `proxy_fcgi` as a value.
 
-{{< alert "info" "Recommandation" >}}
+{{< callout type="info" >}}
 We recommend preferring `proxy_fcgi` over `fastcgi`. The `fastcgi` implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
-{{< /alert >}}
+{{< /callout >}}
 
 If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content.
 
@@ -245,12 +245,12 @@ $password = getenv("POSTGRESQL_ADDON_PASSWORD");
 $pg = new PDO("postgresql:host={$host};dbname={$database}, $username, $password);
 ```
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
     <p>Environment variables are displayed in the default output of `phpinfo()`.
     If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
     </p>
     <code>phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)</code>
-{{< /alert >}}
+{{< /callout >}}
 
 ## Composer
 
@@ -258,9 +258,9 @@ We support Composer build out of the box. You just need to provide a `composer.j
 
 You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
 
-{{< alert "info" "Composer issues" >}}
+{{< callout type="info" >}}
 <p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "doc/develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
 
@@ -387,9 +387,9 @@ You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< 
 
 If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
 
-{{< alert "warning" "memcache" >}}
+{{< callout type="warning" >}}
 <p>On PHP 7, the memcache extension is not available; only <strong>memcached</strong> is available</p>
-{{< /alert >}}
+{{< /callout >}}
 
 ### Enable specific extensions
 
@@ -494,11 +494,11 @@ To enable this feature, you need to:
  - create and link a Redis add-on
  - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
     You must have a [Redis]({{< ref "doc/deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
 
     If no Redis add-on is linked with your application, the deployment will fail.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Sending emails
 

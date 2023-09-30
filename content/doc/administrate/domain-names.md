@@ -22,21 +22,21 @@ Add it in the application configuration: in the console, click on your **applica
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
-{{< alert "warning" "cleverapps.io domains are for developement only!" >}}
+{{< callout type="warning" >}}
   `*.cleverapps.io` domains are given for development and tests purpose. They point to
   specific reverse proxies and have the following weaknesses:
   - .io TLD is not a stable one
   - since we offer the domain, the probability that people will abuse it is high. Thus, we
     do not garantee the same QoS on the cleverapps reverse proxies.
-{{< /alert >}}
+{{< /callout >}}
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
 
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
-{{< alert "warning" "TLS on sub-domain level" >}}
+{{< callout type="warning" >}}
   `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Using Personal Domain Names
 
@@ -283,20 +283,20 @@ Provide the following to your registrar:
   </tr>
 </table>
 
-{{< alert "warning" "Warning on CNAME Availability" >}}
+{{< callout type="warning" >}}
     You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
-{{< /alert >}}
+{{< /callout >}}
 
 If you want to make your application available from a domain name which does not support CNAME records (eg <code>example.com</code> in addition to <code>www.example.com</code>), check if your registrar provides a web redirection service. This way, you only have to make <code>www.example.com</code> point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
-{{< alert "info" "Note on using a domain wildcard" >}}
+{{< callout type="info" >}}
     <div>
       <code>*.example.com</code> will match e.g. <code>blog.example.com</code> or <code>www.example.com</code>.
     </div>
     <div> But for the raw domain <code>example.com</code>, you will have to add both <code>*.example.com</code> and <code>example.com</code> to your application.</div>
-{{< /alert >}}
+{{< /callout >}}
 <br>
 
 ### Contextual Example

@@ -18,9 +18,9 @@ Cellar is S3-compatible online file storage web service. You can use it with you
 
 To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd). You can download a s3cmd configuration file from the add-on configuration page.
 
-{{< alert "warning" "Unavailable s3cmd commands" >}}
+{{< callout type="warning">}}
   `ws-*` and `cf*` commands are not avaible with a Cellar add-on.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Creating a bucket
 
@@ -66,10 +66,10 @@ s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
 
 Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
 
-{{< alert "warning" "S3 signature algorithm" >}}
+{{< callout type="warning" >}}
   New cellar add-ons supports the `v4` signature algorithm from S3.
   If you are still using an old account (`cellar.services.clever-cloud.com`), please make sure your client is configured to use the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
-{{< /alert >}}
+{{< /callout >}}
 
 #### Static hosting
 
@@ -253,9 +253,9 @@ The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Withou
 
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. Writes won't be allowed to anyone that is not authenticated.
 
-{{< alert "warning" "Any object will be exposed publicly" >}}
+{{< callout type="warning" >}}
   This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
-{{< /alert >}}
+{{< /callout >}}
 
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:

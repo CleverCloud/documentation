@@ -91,22 +91,22 @@ git remote add <remote-name> <your-git-deployment-url>
 git push <remote-name> <branch-name>:master
 ```
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
    <p>You can only push to the <strong>master</strong> branch for deployment.
    Trying to push to another branch will trigger an error.</p>
    <p>You cannot push a tag (which refers to a commit) to the remote repository. If you do so, <strong>no deployment</strong> will be triggered.</p>
    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
    <pre>git push &lt;remote&gt; &lt;your branch&gt;:master</pre>
-{{< /alert >}}
+{{< /callout >}}
 
 You can see your application **logs** in the dashboard to **monitor the deployment**.
 
-{{< alert "warning" "Troubleshooting:" >}}
+{{< callout type="warning" >}}
    <p>If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
    <br>Add your SSH key to your profile here:
    <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
    <p>The full tutorial about adding SSH key is here: <a href="/account/ssh-keys-managment/">Adding SSH keys</a> </p>
-{{< /alert >}}
+{{< /callout >}}
 
 #### Automated Deployment with GitHub
 
@@ -114,13 +114,13 @@ Once you have created your application with GitHub, each push on the `master` br
 
 {{< image "/images/github-deployment-branch.png" "Github deployment branch select" >}}
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
    <p>You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.</p>
    <p>If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :</p>
    <pre>fatal: '/data/repositories/&lt;app_id&gt;.git' does not appear to be a git repository</pre>
    <p>Indeed, no git repository is created on Clever Cloud because the application is directly cloned from GitHub.</p>
    <p>If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : https://console.clever-cloud.com/users/me/information, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
 
@@ -141,13 +141,13 @@ matching your application's ID. You will find the FTP credentials in the configu
 
 [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
-{{< alert "warning" "Warning" >}}
+{{< callout type="warning" >}}
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 {{< alert "danger" "Disclaimer" >}}
 <p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 ### Application management generalities
 
@@ -191,12 +191,12 @@ There are two kinds of billing:
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
 * Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "doc/deploy/addon/cellar.md" >}})
 
-{{< alert "warning" "Warning on SHARED plans" >}}
+{{< callout type="warning" >}}
   <p>
     Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.<hr>
     Shared clusters may not be running the same version as dedicated instances.
   </p>
-{{< /alert >}}
+{{< /callout >}}
 
 **Note:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
 

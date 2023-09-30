@@ -17,10 +17,10 @@ keywords:
 
 Log management is currently only available through our API and [clever-tools]({{< ref "doc/getting-started/cli.html" >}}).
 
-{{< alert "info" "Logs retention" >}}
+{{< callout type="info">}}
 Logs are currently retained for a maximum of 1 day. Logs are flushed daily at midnight.
 You can use log drains if a greater retention is needed.
-{{< /alert >}}
+{{< /callout >}}
 
 ## Get continuous logs from your application
 
@@ -42,9 +42,9 @@ You can also get your add-on's logs by using `--addon` flag, the value must be t
 clever logs --addon <addon_xxx>
 ```
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
    Only the last 1000 lines of logs are got by `clever logs`.
-{{< /alert >}}
+{{< /callout >}}
 
 ### Access logs
 
@@ -202,9 +202,9 @@ To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) 
 clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
 ```
 
-{{< alert "warning" "zone" >}}
+{{< callout type="warning" >}}
 Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
-{{< /alert >}}
+{{< /callout >}}
 
 ### NewRelic
 
@@ -214,6 +214,6 @@ To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-
 clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
 ```
 
-{{< alert "warning" "zone" >}}
+{{< callout type="warning" >}}
 NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
-{{< /alert >}}
+{{< /callout >}}

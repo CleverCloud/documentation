@@ -7,6 +7,7 @@ tags:
 keywords:
 - ssh
 - ssh keys
+type: docs
 ---
 
 {{< readfile file="/content/partials/ssh-keys.md" >}}

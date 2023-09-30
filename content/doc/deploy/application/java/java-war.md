@@ -97,9 +97,9 @@ The supported containers are listed below:
 
 ## Configure your Java application
 
-{{< alert "warning" >}}
+{{< callout type="warning" >}}
 <p>You <strong>must</strong> provide a <code>clevercloud/war.json</code> file in your application repository.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 ### Full configuration example
 

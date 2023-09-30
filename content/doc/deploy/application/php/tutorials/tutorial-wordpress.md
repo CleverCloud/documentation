@@ -43,9 +43,9 @@ define( 'DB_PASSWORD', getenv("MYSQL_ADDON_PASSWORD") );
 define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
-{{< alert "warning" "Warning" >}}
+{{< callout type="warning" >}}
 Excepting MySQL DEV plan, you have to figure the port out in `wp-config.php` with the environment variable `MYSQL_ADDON_HOST` because it is not the default port which is used.
-{{< /alert >}}
+{{< /callout >}}
 
 ### SSL Configuration
 
@@ -108,11 +108,11 @@ If you need to have many associated buckets with your app, you need to create en
 
 #### JSON
 
-{{< alert "warning" "Deprecation notice" >}}
+{{< callout type="warning" >}}
    This method is deprecated, we strongly recommend that you use environment variables.
 
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
-{{< /alert >}}
+{{< /callout >}}
 
 At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
 Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) section of the FS Bucket add-on.
@@ -141,10 +141,10 @@ There are multiple ways to optimise your WordPress and speed-up its response tim
 We provide different tools and software to help you in this task as [Varnish]({{< ref "doc/administrate/cache.md" >}}) for the HTTP cache, and [Redis]({{< ref "doc/deploy/addon/redis.md" >}}) for the object caching.
 
 ### Performance plugins
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
  <p>We recommend you to <strong>not</strong> use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.<br />
  We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis if you need performance optimisations on Clever Cloud.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 
 ### HTTP Cache with Varnish

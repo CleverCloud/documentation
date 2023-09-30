@@ -23,9 +23,9 @@ Since you deploy microservices on Clever Cloud, you may need some data pipes bet
 
 Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 
-{{< alert "info" "Why can't I use the Ruby application?" >}}
+{{< callout type="info" >}}
   Ruby application on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
-{{< /alert >}}
+{{< /callout >}}
 
 {{< readfile file="/content/partials/create-application.md" >}}
 
@@ -44,9 +44,9 @@ To follow this tutorial, you will need:
 * curl
 * a Ruby versions manager
 
-{{< alert "info" >}}
+{{< callout type="info" >}}
 To manage your gems and ruby versions, we recommend [rbenv](https://GitHub.com/sstephenson/rbenv).
-{{< /alert >}}
+{{< /callout >}}
 
 ### My application does not exists already
 

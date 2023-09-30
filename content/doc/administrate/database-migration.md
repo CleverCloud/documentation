@@ -11,9 +11,9 @@ tags:
 
 ## Migrating any database and updating its security
 
-{{< alert "warning" "Read only users" >}}
+{{< callout type="warning" >}}
     We do not support the migration of read only users except for PostgreSQL addons. If you have any, you will have to create new ones at the end of the migration.
-{{< /alert >}}
+{{< /callout >}}
 
 You can migrate any database easily in Clever Cloud to upgrade the size of the addon and improve its security by updating underlaying softwares.
 

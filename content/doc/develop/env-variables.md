@@ -232,11 +232,11 @@ Here is a non-exhaustive summary:
 [dotnet]: {{< ref "doc/deploy/application/dotnet/dotnet#environment-injection" >}}
 {{</table>}}
 
-{{< alert "info" "Usage at build time" >}}
+{{< callout type="info" >}}
 Please note that the variables are available at build time
 for runtimes that support build time instructions, such as
 [Java WAR]({{< ref "doc/deploy/application/java/java-war#environment-injection" >}}),
 [Play! Framework 1]({{< ref "doc/deploy/application/java/by-framework/play-framework-1#environment-injection" >}}),
 [Play! Framework 2]({{< ref "doc/deploy/application/java/by-framework/play-framework-2#environment-injection" >}})
 or [Scala]({{< ref "doc/deploy/application/scala/scala#environment-injection" >}}).
-{{< /alert >}}
+{{< /callout >}}

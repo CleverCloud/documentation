@@ -2,10 +2,10 @@
 
 Simply set the environment variable **CC_JAVA_VERSION** to the version you want.
 
-{{< alert "info" "Default version" >}}
+{{< callout type="info" >}}
     <p>We are using Java version 11 by default.</p>
     <p>New applications will have the <strong>CC_JAVA_VERSION</strong> environment variable set to 11.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 Accepted values are `7`, `8`, `11`, `17` or `graalvm-ce` (for GraalVM 21.0.0.2, based on OpenJDK 11.0).
 
@@ -13,6 +13,6 @@ We follow the official Java [roadmap](https://www.oracle.com/java/technologies/j
 
 We are using OpenJDK distribution for mentionned Java versions. 
 
-{{< alert "warning" "non-LTS versions" >}}
+{{< callout type="warning" >}}
     <p>Every non-LTS versions where <i>Premier support</i> ends will be removed without warning as you should be able to switch to the next available non-LTS version without any trouble.</p>
-{{< /alert >}}
+{{< /callout >}}

@@ -18,9 +18,9 @@ keywords:
 
 Pgpool-II is a tool available on application instances to help manage your connection pool and load balancing of your PostgreSQL add-ons.
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
 Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, you can add it and configure it in your Dockerfile.
-{{< /alert >}}
+{{< /callout >}}
 
 ## What is Pgpool-II?
 
@@ -40,9 +40,9 @@ Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, yo
 
 The various features are available in the [official Pgpool documentation](https://www.pgpool.net/docs/latest/en/html/index.html).
 
-{{< alert "info" "Information:" >}}
+{{< callout type="info" >}}
 We only support the **Streaming** mode, which is the most used and recommended mode for Pgpool-II. If you need other modes or features that are not supported on Clever Cloud, please contact us at <support@clever-cloud.com> 
-{{< /alert >}}
+{{< /callout >}}
 
 ## How to configure Pgpool-II
 
@@ -103,9 +103,9 @@ When using the **Streaming** mode, it's not Pgpool-II that manages the replicati
 
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the follower(s) to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 
-{{< alert "info" "Information:" >}}
+{{< callout type="info" >}}
 For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
-{{< /alert >}}
+{{< /callout >}}
 
 An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers: 
 ```json
@@ -125,9 +125,9 @@ An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers:
 
 The weight is used to specify the load balance ratio of the backends, you can also configure the weight of the leader with the `CC_PGPOOL_LEADER_WEIGHT` variable.
 
-{{< alert "info" "Information:" >}}
+{{< callout type="info" >}}
 You can set a higher value for followers to avoid overloading the leader with `SELECT` queries that could be made on followers.
-{{< /alert >}}
+{{< /callout >}}
 
 Many other **load balancing** options are configurable with environment variables. You can refer to our [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) and the [official Pgpool-II documentation](https://www.pgpool.net/docs/latest/en/html/runtime-config-load-balancing.html) for more information.
 
@@ -174,9 +174,9 @@ A new deployment **starts** new instances alongsides the old ones.
 This means that have up to `maximum scalability * 2` instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
 it means there will be up to `maximum scalability * 2 * CC_PGPOOL_NUM_INIT_CHILDREN` connections at the same time. We will call this result `MaxCon`.
 
-{{< alert "warning" "Connection limit" >}}
+{{< callout type="warning" >}}
 Each PostgreSQL add-on has a connection limit which varies following the plan you are using. You must be sure that `MaxCon` doesn't exceed your plan's max connections. If it does, you might have issues connecting to the remote PostgreSQL add-on. You have to adjust `CC_PGPOOL_NUM_INIT_CHILDREN` to a number that makes sense for your scalability parameters.
-{{< /alert >}}
+{{< /callout >}}
 
 #### Example
 
@@ -306,9 +306,9 @@ You can find all PCP commands in the [official Pgpool-II documentation](https://
 
 ## Usage
 
-{{< alert "info" "Information:" >}}
+{{< callout type="info" >}}
 Please note that to connect to Pgpool-II, the default port **5432** must be used. So if you already have a different port set in your code, you have to change it or simply remove the port from the connection information.
-{{< /alert >}}
+{{< /callout >}}
 
 ### PHP using PDO
 

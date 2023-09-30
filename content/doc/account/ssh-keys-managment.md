@@ -17,11 +17,11 @@ keywords:
 You need to add a SSH key to your Clever Cloud's account to deploy via Git.
 SSH keys are used to establish a secure connection between your computer and Clever Cloud. A user can have multiple SSH keys.
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning">}}
 <p>Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
 associated with only one account.<br />
 If a key is used by more than one account, a warning will be displayed in the console.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 ## How to add your SSH key on Clever Cloud?
 
@@ -101,9 +101,9 @@ To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, 
 
 Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_[ed25519/rsa].pub** file including the `id_ed25519/ssh-rsa` part and your email.
 
-{{< alert "warning" "Remember" >}}
+{{< callout type="warning">}}
 <p>Your public SSH key must be associated with only one account.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment), your SSH Keys may be invalid or not available on Clever Cloud. Please check that you SSH Key is present and valid in your profile.
 

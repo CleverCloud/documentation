@@ -12,18 +12,18 @@ keywords:
 
 While direct SSH access to instances is not recommended in an [immutable infrastructure](https://boxfuse.com/blog/no-ssh.html) setup, it can be useful for debugging purposes. Clever Cloud allows you to connect to running instances via SSH.
 
-{{< alert "warning" "SSH access is meant only for debugging purposes" >}}
+{{< callout type="warning" >}}
     <p>
     Clever Cloud instances are to be seen as <i>read-only</i> resources. Any change made on an instance <b>will not be persisted</b>. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 
-  {{< alert "warning" "SSH on Docker instance" >}}
+  {{< callout type="warning" >}}
     <p>
       SSH on docker instances will attach to the running container. You must have `/bin/bash` installed (usually from the `bash` package) otherwise attaching to the container will fail.
     </p>
-  {{< /alert >}}
+  {{< /callout >}}
 
 
 ## Requirements

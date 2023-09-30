@@ -96,9 +96,9 @@ Your Elastic add-on backups are managed by Clever Cloud. When you provision the 
 
 Backups can be managed under the *Backup* tab of the elastic add-on. You can restore, delete or open it directly under Kibana if you opted-in.
 
-{{< alert "warning" "Warning:" >}}
+{{< callout type="warning" >}}
     <p>If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.</p>
-{{< /alert >}}
+{{< /callout >}}
 
 ## Plans
 

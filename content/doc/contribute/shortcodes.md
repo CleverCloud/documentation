@@ -20,16 +20,16 @@ Use the `alert` shortcode when you want to outline something in particular. The 
 Here's an example for a warning alert:
 
 ```
-{{</* alert  "warning" "Warning:" */>}}
+{{</* callout  type="warning"*/>}}
 This is the message of the warning.
-{{</* /alert */>}}. 
+{{</* /callout */>}}. 
 ```
 
 This will render:
 
-{{< alert  "warning" "Warning:" >}}
+{{< callout type="warning" >}}
 This is the message of the warning.
-{{< /alert >}}. 
+{{< /callout >}}. 
 
 ## image shortcode
 

@@ -42,11 +42,11 @@ Clever Cloud enables you to use TCP over Docker applications using using the [en
 
 Some containers require access to the docker socket, to spawn sibling containers for instance.
 
-{{< alert "warning" "Giving access to the docker socket breaks isolation" >}}
+{{< callout type="warning" >}}
     <p>
     Giving access to the docker socket breaks all isolation provided by docker. **DO NOT** give socket access to untrusted code.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 
 You can make the docker socket available from inside the container by adding the `CC_MOUNT_DOCKER_SOCKET=true` [environment variable](#setting-up-environment-variables-on-clever-cloud). In that case, docker is started in the namespaced mode, and in bridge network mode.

@@ -26,11 +26,11 @@ To follow this tutorial, you will need:
 * Your preferred editor
 * Git (for the deploy part)
 
-{{< alert "info" "Rbenv" >}}
+{{< callout type="info">}}
 To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv).
 
 If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
-{{< /alert >}}
+{{< /callout >}}
 
 ### My application does not exists already
 #### Create a Ruby + Rake application locally

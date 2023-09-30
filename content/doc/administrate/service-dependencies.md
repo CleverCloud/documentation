@@ -35,11 +35,11 @@ For instance an API can expose its URL and credentials to access it. The
 exposed configuration will be injected in the dependent applications'
 environment.
 
-{{< alert "warning" "Note:" >}}
+{{< callout type="warning" >}}
     The configuration exposed by an application is available in the
     environment variables of the <i>dependent</i> applications, but not in
     the environment of the application itself.
-{{< /alert >}}
+{{< /callout >}}
 
 
 ### Redeploy on configuration update

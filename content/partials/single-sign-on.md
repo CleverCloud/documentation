@@ -4,7 +4,7 @@ to the services in the same organization, using their Clever Cloud account.
 When a service will need to authenticate you, you will be redirected to a login form. Please enter your Clever Cloud
 credentials as well as your 2FA Authentication code if needed.
 
-{{< alert "info" "First time using the Clever Cloud SSO" >}}
+{{< callout type="info" >}}
   If it's the first time you use the Clever Cloud SSO, a few OAuth rights will be displayed for you to accept them. All the rights
   listed should be accepted otherwise the backend service might not work correctly.
 
@@ -14,4 +14,4 @@ credentials as well as your 2FA Authentication code if needed.
   - First, go to your user's OAuth token in the [Web console](https://console.clever-cloud.com/users/me/tokens)
   - Then, find all tokens named `Keycloak Consumer` and revoke them
   - Try to log-in again. The rights list should now be displayed.
-{{< /alert >}}
+{{< /callout >}}

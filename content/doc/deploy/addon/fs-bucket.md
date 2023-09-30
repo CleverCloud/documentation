@@ -49,7 +49,7 @@ Note that the `async` parameter can be set per bucket.
 
 ## Configuring your application with buckets.json (@deprecated)
 
-{{< alert "warning" "Deprecation notice" >}}
+{{< callout type="warning" >}}
     <p>
     This method is deprecated, we strongly recommend that you use environment variables.
     </p>
@@ -57,7 +57,7 @@ Note that the `async` parameter can be set per bucket.
       If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
       Also, this method does not support the `async` parameter.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
@@ -81,9 +81,9 @@ The `buckets.json` file must contain the following structure:
   }
 ]
 ```
-{{< alert "info" "Getting a pre-filled conf file." >}}
+{{< callout type="info" >}}
     You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
-{{< /alert >}}
+{{< /callout >}}
 
 It's a json array containing objects with at least two fields:
 
@@ -125,7 +125,7 @@ buckets</td>
 </tbody>
 </table>
 
-{{< alert "warning" "Important note about target folder" >}}
+{{< callout type="warning" >}}
     <p>
     The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
     </p>
@@ -134,9 +134,9 @@ buckets</td>
     content, so it's not the solution. You should prefer to mount the bucket in only one
     folder and then manage multiple subfolders in it.
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
-{{< alert "warning" "Important notes" >}}
+{{< callout type="warning" >}}
     <p>
     You cannot mount two buckets in the same folder for the same app.
     </p>
@@ -144,7 +144,7 @@ buckets</td>
     If you put the same "folder" value for two entries in your environment variables or the *buckets.json* array, **you better
     make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
     </p>
-{{< /alert >}}
+{{< /callout >}}
 
 ## Accessing your data inside the FS Bucket
 

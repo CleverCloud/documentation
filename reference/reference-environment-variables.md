@@ -307,6 +307,8 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
 {{< /table >}}
 
+When your Python application doesn't use one of the supported backends, with `CC_RUN_COMMAND` for example, it must listen on port `9000`, not `8080`.
+
 ## Ruby
 
 [Ruby Documentation]({{< ref "deploy/application/ruby/ruby-rack.md" >}})

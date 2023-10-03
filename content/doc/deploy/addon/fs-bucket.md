@@ -1,4 +1,5 @@
 ---
+type: docs
 title: File System Buckets
 position: 4
 shortdesc: This add-on allows applications to use a persistent file system, as git-based apps don't have one.

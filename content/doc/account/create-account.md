@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Create an Account
 shortdesc: How to create your account
 tags:
@@ -8,7 +9,6 @@ keywords:
 - preferences
 - user
 - creation
-type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

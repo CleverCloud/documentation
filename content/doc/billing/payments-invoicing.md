@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Payments & invoicing
 position: 5
 shortdesc: Managing invoices and payment on Clever Cloud

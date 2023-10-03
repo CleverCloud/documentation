@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Roles and Organizations
 position: 4
 shortdesc: Managing users and roles in organizations

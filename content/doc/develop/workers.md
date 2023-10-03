@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Workers
 shortdesc: Workers allow to run background tasks running in parallel of your application
 tags:

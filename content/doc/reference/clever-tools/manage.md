@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Manage your application
 position: 3
 shortdesc: Manage your application using the Clever Cloud CLI tool

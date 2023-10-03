@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Matomo
 position: 10
 shortdesc: This add-on provides a Matomo Analytics solution based on existing Clever Cloud services.

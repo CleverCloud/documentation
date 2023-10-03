@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Magento
 
 draft: true

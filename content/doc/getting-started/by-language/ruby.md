@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Ruby
 shortdesc: Getting started with Ruby on Clever Cloud
 tags:

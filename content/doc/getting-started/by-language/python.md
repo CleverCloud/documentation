@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Python
 shortdesc: Getting started with Python on Clever Cloud
 tags:

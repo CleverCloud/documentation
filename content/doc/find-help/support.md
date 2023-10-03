@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Support
 weight: 7
 shortdesc: We provide basic support free-of-charge to all our users. Here's how to reach us

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Domain names
 position: 3
 shortdesc: How to setup and configure domains names for your apps

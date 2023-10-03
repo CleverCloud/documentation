@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Installing TLS Certificates
 position: 3
 shortdesc: How to get HTTPS on Clever Cloud

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: PHP
 layout: hextra-home
 disableSidebar: false

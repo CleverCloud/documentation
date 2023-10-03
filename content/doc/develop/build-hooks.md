@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deployment Hooks
 shortdesc: Hooks allow to run custom tasks during deployment
 tags:

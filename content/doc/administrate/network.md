@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Networking and IP addresses ranges
 position: 3
 shortdesc: What are my application's outgoing IP?

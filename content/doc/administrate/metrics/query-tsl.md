@@ -1,3 +1,4 @@
 ---
-Title: Query TSL
+type: docs
+title: Query TSL
 ---

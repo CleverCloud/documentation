@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Getting started with Clever Cloud CLI
 position: 1
 shortdesc: Installing and using the Clever Cloud CLI tool

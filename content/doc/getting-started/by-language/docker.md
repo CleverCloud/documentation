@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Docker
 shortdesc: Getting started with docker on Clever Cloud
 tags:
@@ -7,7 +8,6 @@ keywords:
 - docker
 str_replace_dict:
   "@application-type@": "Docker"
-type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

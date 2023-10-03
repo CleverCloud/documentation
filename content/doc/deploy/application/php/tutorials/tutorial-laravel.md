@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy a Laravel application
 shortdesc: This article shows you how to deploy a laravel application on Clever Cloud.
 tags:

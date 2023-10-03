@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Rust
 shortdesc: Getting started with Rust on Clever Cloud
 tags:

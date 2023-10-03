@@ -1,4 +1,5 @@
 ---
+type: docs
 title: The Twelve-Factor App
 shortdesc: 12 factors are a great way to learn about cloud deployment.
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Jenkins
 position: 10
 shortdesc: This add-on provides a Jenkins master instance with a list of preinstalled plugins.

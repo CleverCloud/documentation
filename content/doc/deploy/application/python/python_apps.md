@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Python applications
 position: 1
 shortdesc: Python 2.7 and 3.11 are available on our platform. You can use Git to deploy your application.

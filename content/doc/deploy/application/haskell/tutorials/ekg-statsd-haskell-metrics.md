@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Using ekg-statsd to push custom metrics
 shortdesc: This tutorial helps you configure ekg-statsd package on your Haskell application to push custom metrics
 tags:

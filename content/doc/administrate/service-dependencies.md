@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Service Dependencies
 position: 6
 shortdesc: Materialize the logical dependencies between your applications with service dependencies

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Rust applications
 shortdesc: Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
 tags:

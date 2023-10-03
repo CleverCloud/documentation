@@ -1,3 +1,4 @@
 ---
-Title: Query warpscropt
+type: docs
+title: Query warpscropt
 ---

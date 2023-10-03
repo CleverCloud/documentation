@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Delete an account
 shortdesc: How to delete your account
 tags:

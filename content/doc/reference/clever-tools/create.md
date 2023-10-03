@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Application creation with Clever Tools
 position: 2
 shortdesc: Create a new application using the Clever Cloud CLI tool

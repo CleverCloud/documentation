@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Java
 shortdesc: Getting started with Java on Clever Cloud
 tags:

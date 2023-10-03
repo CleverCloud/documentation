@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Push custom metrics with node-statsd for Node.js
 shortdesc: This tutorial helps you configure node-statsd package on your Node.js application to push custom metrics
 tags:

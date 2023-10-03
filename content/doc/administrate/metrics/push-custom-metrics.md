@@ -1,3 +1,4 @@
 ---
-Title: Push Custom Metrics
+type: docs
+title: Push Custom Metrics
 ---

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Machine Learning with Clever Grid
 position: 4
 shortdesc: Clever Grid is the machine learning oriented platform by Clever Cloud. It provides a unified GPU ecosystem to run your scripts.

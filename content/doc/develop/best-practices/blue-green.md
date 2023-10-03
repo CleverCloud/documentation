@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Blue/Green Deployments
 shortdesc: An explanation of what is Blue/Green deployment
 tags:

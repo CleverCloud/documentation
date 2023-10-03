@@ -1,4 +1,5 @@
 ---
+type: docs
 title: MailPace
 shortdesc: MailPace is a fast & Reliable Transactional Email 
 tags:

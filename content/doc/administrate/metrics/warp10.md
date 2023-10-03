@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Warp 10
 shortdesc: Warp 10. Geo Time series database. Presentations, concepts and examples
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Database migration and security updates
 shortdesc: How to migrate your database
 keywords:

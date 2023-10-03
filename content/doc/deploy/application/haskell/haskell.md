@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Haskell applications
 shortdesc: Haskell is love, haskell is life
 tags:

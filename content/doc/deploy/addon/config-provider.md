@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Configuration provider
 shortdesc: Share configuration between apps
 tags:

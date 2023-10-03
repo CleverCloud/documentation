@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Scala
 shortdesc: Getting started with Scala on Clever Cloud
 tags:

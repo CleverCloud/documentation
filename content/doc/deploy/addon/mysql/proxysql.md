@@ -1,4 +1,5 @@
 ---
+type: docs
 title: ProxySQL for MySQL add-ons
 position: 3
 shortdesc: How to configure and use ProxySQL for MySQL add-ons

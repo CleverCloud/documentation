@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Docker images
 shortdesc: Docker is an easy, lightweight virtualized environment for portable applications.
 keywords:

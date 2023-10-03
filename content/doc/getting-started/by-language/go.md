@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Go
 shortdesc: Getting started with Go on Clever Cloud
 tags:

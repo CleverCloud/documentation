@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Troubleshooting
 position: 4
 shortdesc: Common issues and errors you may have

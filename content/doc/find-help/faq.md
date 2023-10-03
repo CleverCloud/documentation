@@ -1,4 +1,5 @@
 ---
+type: docs
 title: FAQ
 position: 3
 tags:

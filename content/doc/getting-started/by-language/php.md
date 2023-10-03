@@ -1,4 +1,5 @@
 ---
+type: docs
 title: PHP
 shortdesc: Getting started with PHP on Clever Cloud
 tags:

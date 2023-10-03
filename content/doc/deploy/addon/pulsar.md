@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Pulsar
 shortdesc: A distributed messaging and streaming platform on the publish/subsribe model
 tags:

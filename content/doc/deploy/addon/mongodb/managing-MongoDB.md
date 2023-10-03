@@ -1,4 +1,5 @@
 ---
+type: docs
 title: "Managing your MongoDB"
 date: 2023-06-20T15:01:20+02:00
 position: 3

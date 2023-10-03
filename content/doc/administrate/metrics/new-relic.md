@@ -1,4 +1,5 @@
 ---
+type: docs
 title: New Relic
 position: 2
 shortdesc: Configuring Newrelic on Clever Cloud

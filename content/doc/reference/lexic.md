@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Lexic
 position: 3
 shortdesc: Learn more about terms found in this documentation 

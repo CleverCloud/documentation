@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Gradle deployment
 position: 3
 shortdesc: Gradle is a project automation tool that builds…

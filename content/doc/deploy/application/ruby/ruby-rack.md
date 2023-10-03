@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Ruby and Rack-based applications
 shortdesc: How to deploy a web application using Rack on Clever Cloud.
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: SSH access with Clever Tools
 shortdesc: SSH access to running instances
 tags:

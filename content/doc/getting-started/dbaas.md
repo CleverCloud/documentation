@@ -1,4 +1,5 @@
 ---
+type: docs
 title: DBaaS
 position: 4
 shortdesc: Database as a service on Clever Cloud

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: TCP redirections with Clever Tools
 shortdesc: TCP redirections to port 4040 of your instance
 tags:

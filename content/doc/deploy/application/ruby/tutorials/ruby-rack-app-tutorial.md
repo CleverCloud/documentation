@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Rack-based applications
 shortdesc: How to write a hello world web application using Rack and deploy it on Clever Cloud.
 tags:

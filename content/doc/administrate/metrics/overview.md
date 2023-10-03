@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Metrics Overview
 shortdesc: Gather metrics on your applications
 weight: 1

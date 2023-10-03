@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Pgpool-II for PostgreSQL add-ons
 position: 3
 shortdesc: How to configure and use Pgpool-II for PostgreSQL add-ons

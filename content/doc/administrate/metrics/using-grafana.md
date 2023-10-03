@@ -1,3 +1,4 @@
 ---
-Title: Using Grafana
+type: docs
+title: Using Grafana
 ---

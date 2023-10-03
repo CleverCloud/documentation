@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Node.js
 shortdesc: Getting started with Node.js on Clever Cloud
 tags:

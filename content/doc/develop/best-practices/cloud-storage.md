@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Cloud Storage
 position: 3
 shortdesc: This will help you understand the difference between Cellar and FS Buckets.

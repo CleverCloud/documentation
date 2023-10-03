@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Load testing
 position: 3
 shortdesc: Considerations and methods to perform a load test on Clever Cloud

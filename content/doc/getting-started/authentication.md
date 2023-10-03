@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Authentication
 weight: 3
 shortdesc: Getting started with Authentication.

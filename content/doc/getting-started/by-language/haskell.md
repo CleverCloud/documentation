@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Haskell
 shortdesc: Getting started with Haskell on Clever Cloud
 tags:

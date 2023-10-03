@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Elixir
 shortdesc: Getting started with Elixir on Clever Cloud
 tags:

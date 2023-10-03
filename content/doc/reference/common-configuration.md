@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Configuration items available on every instance type
 position: 5
 shortdesc: Learn how to do some basic setup configuration to get started

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Zone Migration
 tags:
 - migration

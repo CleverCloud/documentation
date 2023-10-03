@@ -1,4 +1,5 @@
 ---
+type: docs
 title: MySQL add-on
 position: 6
 shortdesc: MySQL is an open-source relational database management system (RDBMS).

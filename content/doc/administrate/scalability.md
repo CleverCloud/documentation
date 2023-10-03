@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Application scaling
 position: 3
 shortdesc: How does Clever Cloud give your application the resources it needs?

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: SSH access to running instances
 shortdesc: How to SSH access running instances on Clever Cloud
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Analytics and consumption
 position: 6
 shortdesc: How credit consumption and add-on billing works.

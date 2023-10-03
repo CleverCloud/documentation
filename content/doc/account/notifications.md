@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Notifications management
 position: 9
 shortdesc: How to setup and configure notifications via the dashboard

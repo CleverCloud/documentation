@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy static files
 shortdesc: Perfect for pure-javascript applications
 tags:

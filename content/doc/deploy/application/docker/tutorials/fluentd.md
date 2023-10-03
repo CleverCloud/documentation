@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy a fluentd
 shortdesc: How to deploy a fluentd using Docker on Clever Cloud.
 tags:

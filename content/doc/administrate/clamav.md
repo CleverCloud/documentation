@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Clamav
 position: 3
 shortdesc: Configuring Clamav on Clever Cloud

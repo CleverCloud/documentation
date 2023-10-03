@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy .NET apps
 shortdesc: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps.
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Go applications
 shortdesc: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language.
 tags:

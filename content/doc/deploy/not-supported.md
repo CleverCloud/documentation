@@ -1,4 +1,5 @@
 ---
+type: docs
 title: "How to deploy X if it is not natively supported"
 type: docs
 ---

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Tutorials
 layout: hextra-home
 disableSidebar: false

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Notifications management with Clever Tools
 position: 5
 shortdesc: How to setup and configure notifications via clever-tools

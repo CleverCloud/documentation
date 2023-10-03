@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy Elixir applications
 shortdesc: Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine…
 tags:

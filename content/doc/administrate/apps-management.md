@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Application Management
 position: 7
 shortdesc: Starting, restarting, stopping your applications

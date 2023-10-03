@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy a Symfony application
 shortdesc: This article shows you how to deploy a Symfony application on Clever Cloud.
 tags:

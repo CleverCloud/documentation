@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Cellar, a S3-like object storage service
 position: 3
 shortdesc: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.

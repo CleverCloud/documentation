@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Deploy a WordPress website
 shortdesc: This article shows you how to deploy a WordPress-based website on Clever Cloud.
 tags:

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: CouchBase
 type: docs
 ---

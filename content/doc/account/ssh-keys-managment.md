@@ -1,4 +1,5 @@
 ---
+type: docs
 title: SSH Keys
 position: 2
 shortdesc: Add and manage SSH keys for push and deployments

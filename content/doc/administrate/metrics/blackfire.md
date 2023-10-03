@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Blackfire
 position: 2
 shortdesc: Configuring Blackfire on Clever Cloud

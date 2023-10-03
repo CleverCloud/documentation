@@ -1,4 +1,5 @@
 ---
+type: docs
 title: CLI
 weight: 3
 shortdesc: Getting started with our CLI clever-tools.

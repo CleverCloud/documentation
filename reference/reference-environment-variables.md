@@ -224,11 +224,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
 |CC_RUN_COMMAND | Define a custom command. | Example for Meteor: `node .build/bundle/main.js <options>` |  |
-|CC_NODE_BUILD_TOOL | Choose your build tool between `npm`, `npm-ci`, `yarn`, `yarn2` and `custom` | `npm` |  |
+|CC_NODE_BUILD_TOOL | Choose your build tool between `npm`, `npm-ci`, `bun`, `yarn`, `yarn2` and `custom` | `npm` |  |
 |CC_CUSTOM_BUILD_TOOL| A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`) | | |
 |CC_NPM_REGISTRY | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |  |
 |NPM_TOKEN | Private repository token |  |  |
 {{< /table >}}
+
+If a `bun.lockb` or a `yarn.lock` file is detected and `CC_NODE_BUILD_TOOL` is not set, bun/yarn is automaticaly used as the build tool.
 
 ## PHP
 

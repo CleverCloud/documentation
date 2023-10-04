@@ -7,7 +7,7 @@
   --primary-hue: -165deg;
 }
 
-.content h1,
+h1, .content h1,
 .content h2,
 .content h3,
 .content h3 {

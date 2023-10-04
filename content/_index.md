@@ -25,7 +25,7 @@ type: default
 </div>
 
 <div class="mb-6">
-{{< hextra/hero-button text="Get Started" link="/getting-started/quickstart/" >}}
+{{< hextra/hero-button text="Get Started" link="/getting-started/doc/getting-started/quickstart/" >}}
 </div>
 
 <div class="mt-6"></div>

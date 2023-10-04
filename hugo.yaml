@@ -93,17 +93,18 @@ menu:
       url: "https://github.com/imfing/hextra"
       params:
         icon: github
+
   sidebar:
     - identifier: more
       name: More
       params:
         type: separator
-      weight: 1
+      weight: 2
     - identifier: about
       name: "Tutotal"
       pageRef: "/tutotal"
-      weight: 2
+      weight: 3
     - identifier: hugoDocs
       name: "Hugo Docs ↗"
       url: "https://gohugo.io/documentation/"
-      weight: 3
+      weight: 4

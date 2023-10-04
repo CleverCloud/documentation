@@ -1,12 +1,13 @@
 ---
-weight: 1
+weight: 2
 title: Clever Cloud Documentation
-type: "docs"
+type: docs
 comments : false
+linkTitle: Documentation
 ---
 
 {{< hextra/hero-subtitle >}}
-  Fast, batteries-included Hugo theme&nbsp;<br class="sm:block hidden" />for creating beautiful static websites
+  Everything you need to know&nbsp;<br class="sm:block hidden" />for your Clever Cloud journey
 {{< /hextra/hero-subtitle >}}
 
 
@@ -16,8 +17,8 @@ comments : false
   {{< card link="../doc/getting-started" title="Getting Started" subtitle="Get ready to deploy and app in 5 minutes" icon="arrow-circle-right" >}}
   {{< card link="../doc/develop" title="Develop" subtitle="Best practices on Cloud deployments, sheduling jobs, etc." icon="code" >}}
   {{< card link="../doc/administrate" title="Administrate" subtitle="Access metrics, logs, manage domains, set up scalability..." icon="library" >}}
-  {{< card link="../doc/deploy" title="Deploy" subtitle="Deploy any app on Clever Cloud" icon="terminal" >}}
-  {{< card link="../doc/find-help" title="Find help" subtitle="Lost? See how to get help" icon="support" >}}
+  {{< card link="../doc/deploy" title="Deploy" subtitle="Deploy any app on Clever Cloud." icon="terminal" >}}
+  {{< card link="../doc/find-help" title="Find help" subtitle="Lost? See how to get help." icon="support" >}}
   {{< card link="../doc/extend" title="Extend" subtitle="Access Clever Cloud API, collect add-ons logs... " icon="puzzle" >}}
   {{< card link="../doc/reference" title="References" subtitle="List of environment variables your can use on Clever Clever Cloud, CLI commands..." icon="collection" >}}
   {{< card link="../doc/account" title="User Account" subtitle="Set up your account, collaborate and manage permissions." icon="user-circle" >}}
@@ -26,7 +27,7 @@ comments : false
 {{< /cards >}}
 
 {{< hextra/hero-subtitle >}}
-  Can't find what your want ? &nbsp;<br class="sm:block hidden" />for creating beautiful static websites
+  See our step by step tutorials &nbsp;<br class="sm:block hidden" />
 {{< /hextra/hero-subtitle >}}
 
 <div class="mt-8"></div>

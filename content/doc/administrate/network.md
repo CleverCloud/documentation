@@ -10,6 +10,7 @@ keywords:
 - security
 tags:
 - administrate
+type: docs
 ---
 
 Some services external to Clever Cloud require filtering their clients' source IPs. They

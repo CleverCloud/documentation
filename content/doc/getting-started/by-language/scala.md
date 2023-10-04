@@ -8,6 +8,7 @@ keywords:
 - sbt
 str_replace_dict:
   "@application-type@": "SBT + Scala"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

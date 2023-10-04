@@ -8,5 +8,7 @@ tags:
 keywords:
 - cli
 - clever-tools
+type: docs
 ---
+
 {{< githubReadme "CleverCloud/clever-tools" >}}

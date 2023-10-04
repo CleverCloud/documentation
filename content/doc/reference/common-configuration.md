@@ -9,6 +9,7 @@ keywords:
 - common
 - configuration
 - hooks
+type: docs
 ---
 
 Each instance type (php,java,python,go,ruby…) has its own configuration. However, some of

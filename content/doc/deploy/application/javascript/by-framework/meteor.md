@@ -9,6 +9,7 @@ keywords:
 - nodejs
 str_replace_dict:
   "@application-type@": "Meteor.js"
+type: docs
 ---
 
 ## Overview

@@ -16,6 +16,7 @@ keywords:
 - neural
 - deep 
 - learning
+type: docs
 ---
 
 ## Concepts in Clever Grid

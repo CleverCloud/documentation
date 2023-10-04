@@ -10,6 +10,7 @@ keywords:
 - buckets
 - fs buckets
 - storage
+type: docs
 ---
 
 When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted.

@@ -7,6 +7,7 @@ keywords:
 - scala
 str_replace_dict:
   "@application-type@": "SBT + Scala"
+type: docs
 ---
 
 ## Overview

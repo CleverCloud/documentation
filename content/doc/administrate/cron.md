@@ -9,6 +9,7 @@ keywords:
 - schedule
 tags:
 - administrate
+type: docs
 ---
 
 The configuration file used for crontab is `/clevercloud/cron.json`.

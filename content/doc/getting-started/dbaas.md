@@ -9,6 +9,7 @@ keywords:
 - dbaas
 - database as a service
 - databases
+type: docs
 ---
 
 If you are looking for Database as a Service or managed databases, some are available on Clever Cloud:

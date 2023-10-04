@@ -5,6 +5,7 @@ tags:
 - php
 str_replace_dict:
   "@application-type@": "PHP"
+type: docs
 ---
 
 ## Overview

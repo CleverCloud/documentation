@@ -7,6 +7,8 @@ keywords:
 - elixir
 str_replace_dict:
   "@application-type@": "Elixir"
+type: docs
+
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

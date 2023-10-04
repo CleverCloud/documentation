@@ -9,6 +9,7 @@ keywords:
 - mysql
 - mariadb
 - RDBMS
+type: docs
 ---
 
 MySQL is an open-source relational database management system (RDBMS).

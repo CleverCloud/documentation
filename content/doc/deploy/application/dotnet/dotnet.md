@@ -10,6 +10,7 @@ keywords:
 - vbproj
 str_replace_dict:
   "@application-type@": ".NET"
+type: docs
 ---
 
 ## Overview

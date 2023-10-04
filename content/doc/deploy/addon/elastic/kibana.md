@@ -9,6 +9,8 @@ keywords:
 - elsaticsearch
 - elastic
 - kibana
+type: docs
+
 ---
 
 {{< callout type="warning" >}}

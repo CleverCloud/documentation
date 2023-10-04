@@ -9,6 +9,7 @@ keywords:
 - erlang
 str_replace_dict:
   "@application-type@": "Elixir"
+type: docs
 ---
 
 ## Overview

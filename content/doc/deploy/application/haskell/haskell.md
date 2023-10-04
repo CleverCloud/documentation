@@ -8,6 +8,7 @@ keywords:
 - stack
 str_replace_dict:
   "@application-type@": "Haskell"
+type: docs
 ---
 
 ## Overview

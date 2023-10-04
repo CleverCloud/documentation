@@ -9,6 +9,7 @@ keywords:
 - deploy
 - restart
 - logs
+type: docs
 ---
 
 ## Start, restart and stop

@@ -8,6 +8,7 @@ keywords:
 - cli
 - clever-tools
 - putty
+type: docs
 ---
 
 ## Overview

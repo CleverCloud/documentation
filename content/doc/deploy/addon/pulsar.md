@@ -12,6 +12,7 @@ keywords:
 - biscuit
 - rabbitmq
 - kafka
+type: docs
 ---
 
 {{< callout type="warning" >}} Pulsar is still in beta. {{< /callout >}}

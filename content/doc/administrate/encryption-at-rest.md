@@ -4,6 +4,7 @@ tags:
 - encryption
 - rest
 - security
+type: docs
 ---
 
 ## Introduction

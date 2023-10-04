@@ -6,6 +6,7 @@ tags:
 - help
 keywords:
 - support
+type: docs
 ---
 
 We provide basic support free-of-charge to all our users, even those who are not paying customers.

@@ -6,6 +6,7 @@ tags:
 keywords:
 - configuration
 - environment variables
+type: docs
 ---
 
 The configuration provider add-on helps you to create groups of environment variables that you can share with multiple applications.

@@ -7,12 +7,11 @@ keywords:
 - tcp
 - cli-setup
 - redirection
+type: docs
 ---
 {{< callout type="warning" >}}
-    <p>
-    TCP redirections are currently available free of charge as long as the feature is still considered in a BETA stage.
-    Once the feature leaves the BETA stage, it won't be free anymore.
-    </p>
+TCP redirections are currently available free of charge as long as the feature is still considered in a BETA stage.
+Once the feature leaves the BETA stage, it won't be free anymore.    
 {{< /callout >}}
 
 

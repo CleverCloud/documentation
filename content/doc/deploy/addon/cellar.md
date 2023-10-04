@@ -12,6 +12,7 @@ keywords:
 - files
 - s3cmd
 - aws
+type: docs
 ---
 
 Cellar is S3-compatible online file storage web service. You can use it with your favorite S3 client.

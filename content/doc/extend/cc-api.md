@@ -7,6 +7,7 @@ tags:
 keywords:
 - api
 - authentication
+type: docs
 ---
 
 The Clever Cloud console and clever-tools are built on top of an API that

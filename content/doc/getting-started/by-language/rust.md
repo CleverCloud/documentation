@@ -7,6 +7,7 @@ keywords:
 - rust
 str_replace_dict:
   "@application-type@": "Rust"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

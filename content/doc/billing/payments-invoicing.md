@@ -12,6 +12,7 @@ keywords:
 - payment
 - stripe
 - sepa
+type: docs
 ---
 
 ## Make a payment

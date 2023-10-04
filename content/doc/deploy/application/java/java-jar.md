@@ -8,6 +8,7 @@ tags:
 - java
 str_replace_dict:
   "@application-type@": "Java + JAR"
+type: docs
 ---
 
 ## Overview

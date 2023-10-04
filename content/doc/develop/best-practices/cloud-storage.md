@@ -11,6 +11,7 @@ keywords:
 - Storage
 - file
 - files
+type: docs
 ---
 
 You want to store files but you can't decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.

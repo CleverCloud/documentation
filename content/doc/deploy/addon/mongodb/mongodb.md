@@ -12,6 +12,7 @@ keywords:
 - document
 - nosql
 - database
+type: docs
 ---
 
 MongoDB is an open source NoSQL document-oriented database. We provide these databases with daily backups and monitoring for both shared and dedicated plans.

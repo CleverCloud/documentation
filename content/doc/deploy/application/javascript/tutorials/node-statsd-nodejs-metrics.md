@@ -8,6 +8,7 @@ keywords:
 - metrics
 - logs
 - node-statsd
+type: docs
 ---
 
 ## Overview

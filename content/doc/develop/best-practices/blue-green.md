@@ -7,6 +7,8 @@ tags:
 keywords:
 - blue/green
 - deployment
+
+type: docs
 ---
 
 Blue/Green deployment is a technique used in automated deployment of applications, databases and services.

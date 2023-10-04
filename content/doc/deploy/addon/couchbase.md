@@ -1,6 +1,6 @@
 ---
 title: CouchBase
-
+type: docs
 ---
 
 CouchBase is a database wich automation is still in beta on Clever Cloud. 

@@ -7,6 +7,7 @@ keywords:
 - migration
 tags:
 - administrate
+type: docs
 ---
 
 ## Migrating any database and updating its security

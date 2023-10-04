@@ -7,6 +7,7 @@ keywords:
 - ruby
 str_replace_dict:
   "@application-type@": "Ruby"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

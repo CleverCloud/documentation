@@ -8,6 +8,7 @@ keywords:
 - support
 - git issues
 - troubleshoot
+type: docs
 ---
 
 ## TROUBLESHOOT Mode

@@ -7,6 +7,7 @@ keywords:
 - static
 str_replace_dict:
   "@application-type@": "Static"
+type: docs
 ---
 
 ## Overview

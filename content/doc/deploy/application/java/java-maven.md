@@ -9,6 +9,7 @@ keywords:
 - maven
 str_replace_dict:
   "@application-type@": "Java + Maven"
+type: docs
 ---
 
 ## Overview

@@ -13,16 +13,16 @@ comments : false
 <div class="mt-8"></div>
 
 {{< cards >}}
-  {{< card link="drupal-tutotal" title="Getting Started" icon="arrow-circle-right" >}}
-  {{< card link="customization" title="Develop" icon="code" >}}
-  {{< card link="comments" title="Administrate" icon="library" >}}
-  {{< card link="comments" title="Deploy" icon="terminal" >}}
-  {{< card link="comments" title="Find help" icon="support" >}}
-  {{< card link="extend/" title="Extend" icon="puzzle" >}}
-  {{< card link="comments" title="Reference" icon="collection" >}}
-  {{< card link="comments" title="User Account" icon="user-circle" >}}
-  {{< card link="comments" title="Billing" icon="credit-card" >}}
-  {{< card link="comments" title="Contribute" icon="pencil-alt" >}}
+  {{< card link="../doc/getting-started" title="Getting Started" subtitle="Get ready to deploy and app in 5 minutes" icon="arrow-circle-right" >}}
+  {{< card link="../doc/develop" title="Develop" subtitle="Best practices on Cloud deployments, sheduling jobs, etc." icon="code" >}}
+  {{< card link="../doc/administrate" title="Administrate" subtitle="Access metrics, logs, manage domains, set up scalability..." icon="library" >}}
+  {{< card link="../doc/deploy" title="Deploy" subtitle="Deploy any app on Clever Cloud" icon="terminal" >}}
+  {{< card link="../doc/find-help" title="Find help" subtitle="Lost? See how to get help" icon="support" >}}
+  {{< card link="../doc/extend" title="Extend" subtitle="Access Clever Cloud API, collect add-ons logs... " icon="puzzle" >}}
+  {{< card link="../doc/reference" title="References" subtitle="List of environment variables your can use on Clever Clever Cloud, CLI commands..." icon="collection" >}}
+  {{< card link="../doc/account" title="User Account" subtitle="Set up your account, collaborate and manage permissions." icon="user-circle" >}}
+  {{< card link="../doc/billing" title="Billing" subtitle="Find invoices, analyse consumption and understand pricing." icon="credit-card" >}}
+  {{< card link="../doc/contribute" title="Contribute" subtitle="See how to contribute to this documentation." icon="pencil-alt" >}}
 {{< /cards >}}
 
 {{< hextra/hero-subtitle >}}

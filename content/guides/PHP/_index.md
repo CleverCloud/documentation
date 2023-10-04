@@ -4,6 +4,7 @@ title: PHP
 layout: hextra-home
 disableSidebar: false
 type: default
+comments : false
 ---
 
 {{< hextra/hero-badge >}}

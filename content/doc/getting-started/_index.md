@@ -1,11 +1,11 @@
 +++
-weight = 1
+weight = 2
 chapter = true
 title = "Getting Started"
 type= "docs"
 [sidebar]
 open = true
-comments = false
+comments = false 
 +++
 
 

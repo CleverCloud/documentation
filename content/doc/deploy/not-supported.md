@@ -1,5 +1,6 @@
 ---
 title: "How to deploy X if it is not natively supported"
+type: docs
 ---
 
 If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.

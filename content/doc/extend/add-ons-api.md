@@ -7,6 +7,7 @@ tags:
 keywords:
 - addon api
 - addon
+type: docs
 ---
 
 Clever Cloud offers you to sell your service as an add-on through the dashboard.

@@ -8,6 +8,7 @@ keywords:
 - golang
 str_replace_dict:
   "@application-type@": "Go"
+type: docs
 ---
 
 ## Overview

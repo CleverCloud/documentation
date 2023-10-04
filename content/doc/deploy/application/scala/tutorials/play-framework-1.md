@@ -9,6 +9,7 @@ keywords:
 - play
 str_replace_dict:
   "@application-type@": "Scala"
+type: docs
 ---
 
 ## Overview

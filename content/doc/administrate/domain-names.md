@@ -9,6 +9,7 @@ keywords:
 - DNS
 - domain
 - URL
+type: docs
 ---
 
 When creating an application, you have two (non exclusive) choices for domain names:

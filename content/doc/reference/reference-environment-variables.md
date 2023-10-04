@@ -7,6 +7,7 @@ tags:
 keywords:
 - env
 - env variables
+type: docs
 ---
 
 ## Commons to all applications

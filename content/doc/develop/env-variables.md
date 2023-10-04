@@ -10,6 +10,7 @@ keywords:
 - env
 - variables
 - environment variables
+type: docs
 ---
 
 Clever Cloud allows you to define environment variables that will be

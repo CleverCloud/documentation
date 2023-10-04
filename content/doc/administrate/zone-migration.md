@@ -5,6 +5,7 @@ tags:
 - zone
 - application
 - addon
+type: docs
 ---
 
 # Migrate your services from one zone to another

@@ -13,6 +13,7 @@ keywords:
 - drains
 - datadog
 - newrelic
+type: docs
 ---
 
 Log management is currently only available through our API and [clever-tools]({{< ref "doc/getting-started/cli.html" >}}).

@@ -7,6 +7,7 @@ keywords:
 - haskell
 str_replace_dict:
   "@application-type@": "Haskell"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

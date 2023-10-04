@@ -8,6 +8,7 @@ keywords:
 - cargo
 str_replace_dict:
   "@application-type@": "Rust"
+type: docs
 ---
 
 ## Overview

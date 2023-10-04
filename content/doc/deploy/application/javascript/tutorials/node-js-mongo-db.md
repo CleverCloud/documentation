@@ -8,6 +8,7 @@ keywords:
 - mongodb
 str_replace_dict:
   "@application-type@": "Node"
+type: docs
 ---
 
 ## Overview

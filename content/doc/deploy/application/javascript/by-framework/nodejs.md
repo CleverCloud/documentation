@@ -7,6 +7,7 @@ keywords:
 - nodejs
 str_replace_dict:
   "@application-type@": "Node"
+type: docs
 ---
 
 ## Overview

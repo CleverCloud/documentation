@@ -9,6 +9,7 @@ keywords:
 - war
 str_replace_dict:
   "@application-type@": "Java + WAR"
+type: docs
 ---
 
 ## Overview

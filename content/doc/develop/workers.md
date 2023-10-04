@@ -6,6 +6,7 @@ tags:
 keywords:
 - apps
 - workers
+type: docs
 ---
 
 ## Workers

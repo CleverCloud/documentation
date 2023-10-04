@@ -7,6 +7,7 @@ keywords:
 - Go
 str_replace_dict:
   "@application-type@": "Go"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

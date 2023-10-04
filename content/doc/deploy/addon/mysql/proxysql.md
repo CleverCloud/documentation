@@ -12,6 +12,7 @@ keywords:
 - connection
 - limit
 - pool
+type: docs
 ---
 
 ProxySQL is a tool available on applications instances to help you manage your connection pool towards your MySQL add-on.

@@ -14,6 +14,7 @@ keywords:
 - on premises
 - pdf
 - timezone
+type: docs
 ---
 
 ## What is a Scaler?

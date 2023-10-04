@@ -7,6 +7,7 @@ tags:
 - getting-started
 keywords:
 - authentication
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

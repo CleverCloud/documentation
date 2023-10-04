@@ -8,6 +8,7 @@ keywords:
 - scale
 - scalability
 - autoscale
+type: docs
 ---
 
 When your application is running, you don't have the same number of users all the time. During an event for example,

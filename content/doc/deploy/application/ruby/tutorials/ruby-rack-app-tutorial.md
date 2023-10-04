@@ -8,6 +8,7 @@ keywords:
 - rack
 str_replace_dict:
   "@application-type@": "Ruby"
+type: docs
 ---
 
 ## Overview Introduction

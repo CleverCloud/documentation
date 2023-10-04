@@ -7,6 +7,7 @@ keywords:
 - python
 str_replace_dict:
   "@application-type@": "Python"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

@@ -9,6 +9,7 @@ tags:
 - nosql
 - database
 - managed service
+type: docs
 ---
 
 ## Can I use Mongo Ops Manager on Clever Cloud?

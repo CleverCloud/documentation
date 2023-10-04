@@ -6,6 +6,7 @@ tags:
 keywords:
 - python
 - django
+type: docs
 ---
 
 

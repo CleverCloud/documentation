@@ -10,6 +10,7 @@ keywords:
 - continuous deployment
 - ci/cd
 - runner
+type: docs
 ---
 
 Jenkins is an an open source automation server which enables developers to build, test, and deploy their software. It facilitates continuous integration (CI) and continuous delivery (CD).

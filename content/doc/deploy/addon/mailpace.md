@@ -9,6 +9,7 @@ keywords:
 - email
 - smtp
 - php mail function
+type: docs
 ---
 
 MailPace is a fast & Reliable Transactional Email.

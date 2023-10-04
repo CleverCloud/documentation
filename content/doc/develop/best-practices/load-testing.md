@@ -10,6 +10,7 @@ keywords:
 - stress
 - load
 - performance
+type: docs
 ---
 ## Overview
 

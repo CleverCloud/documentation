@@ -9,6 +9,7 @@ keywords:
 - play
 str_replace_dict:
   "@application-type@": "Java + Play! 1"
+type: docs
 ---
 
 ## Overview

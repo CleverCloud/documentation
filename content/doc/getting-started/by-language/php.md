@@ -7,6 +7,7 @@ keywords:
 - php
 str_replace_dict:
   "@application-type@": "PHP"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

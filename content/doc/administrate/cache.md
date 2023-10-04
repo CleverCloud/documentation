@@ -9,6 +9,7 @@ keywords:
 - varnish-modules
 - caching
 - cache
+type: docs
 ---
 
 ## Overview

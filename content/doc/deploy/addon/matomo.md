@@ -10,6 +10,7 @@ keywords:
 - google analytics
 - privacy
 - gdpr
+type: docs
 ---
 
 Matomo is an open-source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org).

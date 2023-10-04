@@ -6,6 +6,7 @@ tags:
 keywords:
 - apps
 - hooks
+type: docs
 ---
 ## Deployment lifecycle
 

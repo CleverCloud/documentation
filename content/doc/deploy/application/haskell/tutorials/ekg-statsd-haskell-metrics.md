@@ -9,6 +9,7 @@ keywords:
 - ekg-statsd
 - logs
 - metrics
+type: docs
 ---
 
 ## Overview

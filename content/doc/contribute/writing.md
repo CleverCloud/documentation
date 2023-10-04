@@ -9,6 +9,7 @@ keywords:
 - contribution
 - shortcode
 - writing
+type: docs
 ---
 
 ## Before writing something new

@@ -29,7 +29,7 @@ Supported platforms:
 * [Docker]({{< ref "doc/deploy/application/docker/docker" >}})
 * [Go]({{< ref "doc/deploy/application/golang/go" >}})
 * [Haskell]({{< ref "doc/deploy/application/haskell/haskell" >}})
-* [Java]({{< ref "doc/deploy/application/java/" >}}) [Play Framework 1 & 2, Maven, War files… ]
+* [Java]({{< ref "doc/deploy/application/java/" >}}) (Play Framework 1 & 2, Maven, War files… )
 * [Node.js]({{< ref "doc/deploy/application/javascript/by-framework/nodejs" >}})
 * [PHP]({{< ref "doc/deploy/application/php/php-apps" >}})
 * [Python]({{< ref "doc/deploy/application/python/python_apps" >}})

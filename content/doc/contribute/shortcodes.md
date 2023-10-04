@@ -9,6 +9,7 @@ keywords:
 - contribution
 - shortcode
 - writing
+type: docs
 ---
 
 To call a shortcode you need to write {{</* myshortcode */>}}. 

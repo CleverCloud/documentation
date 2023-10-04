@@ -9,6 +9,7 @@ keywords:
 - dependencies
 - services
 - configuration
+type: docs
 ---
 
 On Clever Cloud, each application depends on one or more backing addons. Each

@@ -9,7 +9,7 @@ keywords:
 - gradle
 str_replace_dict:
   "@application-type@": "Java or Groovy + Gradle" 
-
+type: docs
 ---
 
 ## Overview

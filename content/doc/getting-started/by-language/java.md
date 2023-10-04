@@ -7,6 +7,7 @@ keywords:
 - java
 str_replace_dict:
   "@application-type@": "Java"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

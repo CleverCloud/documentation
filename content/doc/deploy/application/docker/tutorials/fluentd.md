@@ -9,6 +9,7 @@ keywords:
 - fluentd
 str_replace_dict:
   "@application-type@": "Docker"
+type: docs
 ---
 
 ## Overview

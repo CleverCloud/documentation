@@ -7,6 +7,7 @@ keywords:
 - nodejs
 str_replace_dict:
   "@application-type@": "Node.js"
+type: docs
 ---
 
 {{< readfile file="/content/partials/authentication.md" >}}

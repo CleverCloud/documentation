@@ -1,5 +1,6 @@
-+++
-weight = 50
-chapter = true
-title = "Collaboration"
-+++
+---
+weight: 50
+chapter: true
+title: "Collaboration"
+
+---

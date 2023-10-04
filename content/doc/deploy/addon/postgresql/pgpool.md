@@ -14,6 +14,7 @@ keywords:
 - postgres
 - proxy
 - sql
+type: docs
 ---
 
 Pgpool-II is a tool available on application instances to help manage your connection pool and load balancing of your PostgreSQL add-ons.

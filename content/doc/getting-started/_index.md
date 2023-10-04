@@ -5,6 +5,7 @@ title = "Getting Started"
 type= "docs"
 [sidebar]
 open = true
+comments = false
 +++
 
 

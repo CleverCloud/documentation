@@ -2,6 +2,7 @@
 type: docs
 title: Java
 disableSidebar: false
+comments : false
 ---
 This section covers some advanced topics of the theme.
 

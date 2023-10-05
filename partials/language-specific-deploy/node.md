@@ -48,7 +48,7 @@ The following table describes each of the fields formerly mentioned.
         <span class="label label-danger">At least one</span>
       </td>
       <td>scripts.start</td>
-      <td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise we will use the <code>main</code> field. See below to know how and when to use the <code>scripts.start</code> field</td>
+      <td>If defined, this field provides a command line to run. Otherwise we will use the <code>main</code> field. See below to know how and when to use the <code>scripts.start</code> field</td>
     </tr>
     <tr>
       <td>main</td>
@@ -62,9 +62,30 @@ The following table describes each of the fields formerly mentioned.
   </tbody>
 </table>
 
+The run phase is executed from `scripts.start` if defined. This phase is only meant to start your application and should not contain any build task. 
+
+#### Custom run
+
+As `bun` is not only a build tool, if it's used, it can also run your app through the `script.start` value. For example:
+
+```json
+{
+  "name" : "my bun app",
+  "version" : "0.1.0",
+  "scripts" : {
+    "start" : "bun index.ts"
+  }
+}
+```
+
+If you set the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud) it bypass the `package.json` instructions:
+* For a meteor application, you can have `CC_RUN_COMMAND="node .build/bundle/main.js <options>"`
+* For a bun application, you can have `CC_RUN_COMMAND="bun build` or `CC_RUN_COMMAND="bun app.js"`
+* For a Bash script, you can have `CC_RUN_COMMAND="bash script.sh"` or `CC_RUN_COMMAND="python app.py"`
+
 ### NPM modules dependencies
 
-If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
+If you need some modules you can easily add some with the *dependencies* field in your `package.json`:
 
 ```json
 {
@@ -91,13 +112,17 @@ The [environment variable](#setting-up-environment-variables-on-clever-cloud) `C
 * `npm-install`: uses [npm install](https://docs.npmjs.com/cli/install)
 * `npm-ci`: uses [npm ci](https://docs.npmjs.com/cli/ci)
 * `npm`: Defaults to `npm-install` for now
+* `bun`: uses [bun](https://bun.sh)
 * `yarn`: uses [yarn](https://classic.yarnpkg.com/lang/en/)
 * `yarn2`: uses [yarn@2](https://yarnpkg.com/)
 * `custom`: uses the build tool set with `CC_CUSTOM_BUILD_TOOL`
 
-If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. To overwrite this behaviour, either delete the `yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+If a `yarn.lock` file exists in your application's main folder, then the `yarn` package manager will be automatically used. If a `bun.lockb` file exists in your application's main folder, then the `bun` package manager will be automatically used. To overwrite this behaviour, either delete the lockfile or set the `CC_NODE_BUILD_TOOL` environment variable. If none of the above package managers fit your needs, you can put your own using `CC_CUSTOM_BUILD_TOOL`.
 
-If none of the above package managers fit your needs, you can put your own using `CC_CUSTOM_BUILD_TOOL`.
+For example if you need a specific version of `bun` you can set :
+* `CC_PRE_BUILD_HOOK="npm install -g bun@1.0.2"`
+* `CC_NODE_BUILD_TOOL="custom"`
+* `CC_CUSTOM_BUILD_TOOL="bun install"`
 
 ## Automatic HTTPS redirection
 
@@ -132,17 +157,6 @@ Here are various scenarios:
 - `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
 - `NODE_ENV=production`: Package manager (NPM / Yarn) default behaviour. Development dependencies will not be installed.
 - Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behaviour. Development dependencies will be installed.
-
-### Custom run command
-
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
-
-For instance, for a meteor application, you can have `CC_RUN_COMMAND="node .build/bundle/main.js <options>"`.
-
-### Custom run phase
-
-The run phase is executed from `scripts.start` if defined. This phase is only meant to start your application and should not
-contain any build task.
 
 ### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 

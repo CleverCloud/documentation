@@ -92,6 +92,12 @@ For instance for MySQL:
 
 If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_POST_BUILD_HOOK=php artisan migrate --force`
 
+# Configure Caching
+
+Clever Cloud archives the generated code to speed up the next deployments. However, Laravel caches the actual database creds it gets from environment variables. When you redeploy your application after changing your database creds or such, the cached values will still be used. It may prevent your application from working correctly.
+
+That's why when deploying a Laravel application on Clever Cloud, it's essential to keep your configuration, route and events cache up-to-date, especially when you make changes to your environment variables. To achieve this, you can add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_PRE_RUN_HOOK=php artisan config:cache && php artisan route:cache && php artisan event:cache`.
+
 ## Configure storage
 
 Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.

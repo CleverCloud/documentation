@@ -1,0 +1,1016 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – metrics</title>
+    <link>https://devcenter.clever-cloud.com/tags/metrics/</link>
+    <description>Recent content in metrics on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Metrics Overview</title>
+      <link>https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/</guid>
+      <description>
+        
+        
+        
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Clever Cloud Metrics is still in beta.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In addition to logs, you can have access to metrics to know how your application behaves.
+By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).&lt;/p&gt;
+&lt;h2&gt;Display metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;display-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For each application, there is a &lt;code&gt;Metrics&lt;/code&gt; tab in the console.&lt;/p&gt;
+&lt;h3&gt;Overview pane&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview-pane&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview-pane&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To get a quick overview of the current state of your scalers, the overview pane
+displays the current CPU, RAM, Disk and Network activity. On supported platforms,
+you can also have access to requests / second, and GC statistics.&lt;/p&gt;
+
+
+
+
+&lt;figure class=&#34;cc-content-img&#34;&gt;
+    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/grafana-from-oveview-pane.png&#34; alt=&#34;Direct link from Overview pane to app dashboard in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;figcaption&gt;
+        Direct link from Overview pane to app dashboard in Grafana
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;h3&gt;Advanced pane&lt;span class=&#34;absolute -mt-20&#34; id=&#34;advanced-pane&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#advanced-pane&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Advanced metrics allow you to access all gathered metrics,
+on a specified time range.&lt;/p&gt;
+&lt;h3&gt;Custom queries&lt;span class=&#34;absolute -mt-20&#34; id=&#34;custom-queries&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-queries&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All metrics are stored in &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, so you can explore data directly with the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;quantum&lt;/a&gt; interface, with &lt;a href=&#34;https://www.warp10.io/doc/reference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WarpScript&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For instance, you can derive metrics over time, do custom aggregations or combine metrics.&lt;/p&gt;
+&lt;h3&gt;Get alerts&lt;span class=&#34;absolute -mt-20&#34; id=&#34;get-alerts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#get-alerts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.&lt;/p&gt;
+
+
+
+
+&lt;figure class=&#34;cc-content-img&#34;&gt;
+    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/grafana-alerts.png&#34; alt=&#34;Alert option from the general menu in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;figcaption&gt;
+        Alert option from the general menu in Grafana
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;p&gt;For example, check &lt;a href=&#34;https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this tutorial on how to create Slack alerts with Grafana&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Access Logs metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;access-logs-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#access-logs-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All your applications access logs are pushed to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;. You are now able to process them directly in the console in the Metrics tab of your applications.&lt;/p&gt;
+&lt;h3&gt;Request rate&lt;span class=&#34;absolute -mt-20&#34; id=&#34;request-rate&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#request-rate&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide a request rate metric. It is an average of the access logs request count over 1 minute. It is updated every 30 second.&lt;/p&gt;
+&lt;p&gt;This can be reached using the Warp 10 class: &lt;code&gt;request_rate&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are the same labels than for others metrics (&lt;a href=&#34;https://www.clever-cloud.com/doc/administrate/metrics/overview/#monitoring-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;see monitoring-metrics&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Access Log data model&lt;span class=&#34;absolute -mt-20&#34; id=&#34;access-log-data-model&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#access-log-data-model&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Access logs are defined in the &lt;code&gt;&#39;accessLogs&#39;&lt;/code&gt; Warp 10 class and there are three Warp 10 labels available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;owner_id&lt;/code&gt;: Organisation ID&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app_id&lt;/code&gt; : Application ID (ex: &lt;code&gt;app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx&lt;/code&gt; ) or Addon ID (ex: &lt;code&gt;postgresql_xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;adc&lt;/code&gt; or &lt;code&gt;sdc&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;adc&lt;/code&gt; (Application Delivery Controller) are used for HTTP connections&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sdc&lt;/code&gt; (Service Delivery Controller) are used for TCP connections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Available addons for the field &lt;code&gt;addon_id&lt;/code&gt; are mysql, redis, mongodb and postgresql addons.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;ul&gt;
+&lt;li&gt;Add-ons on shared plans (usually DEV plans) do not provide access logs&lt;/li&gt;
+&lt;li&gt;There are no recorded access logs in case of a direct access to an add-on&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;To reduce space used to store access logs, we defined the following key-value models.&lt;/p&gt;
+&lt;h4&gt;Key-Value model for applications&lt;span class=&#34;absolute -mt-20&#34; id=&#34;key-value-model-for-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-value-model-for-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;AccessLogs data models for application. Using HTTP protocol.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;t -&amp;gt; timestamp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;a -&amp;gt; appId or addonId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;o -&amp;gt; ownerId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;i -&amp;gt; instanceId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ipS -&amp;gt; ipSource
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pS -&amp;gt; portSource # 0 if undefined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s -&amp;gt; source
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lt -&amp;gt; latitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lg -&amp;gt; longitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ct -&amp;gt; city
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  co -&amp;gt; country
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ipD -&amp;gt; ipDestination
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pD -&amp;gt; portDestination # 0 if undefined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;d -&amp;gt; destination
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lt -&amp;gt; latitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lg -&amp;gt; longitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ct -&amp;gt; city
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  co -&amp;gt; country
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vb -&amp;gt; verb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;path -&amp;gt; path
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bIn -&amp;gt; bytesInt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bOut -&amp;gt; bytesOut
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;h -&amp;gt; hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rTime -&amp;gt; responseTime
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sTime -&amp;gt; serviceTime
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scheme -&amp;gt; scheme
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sC -&amp;gt; statusCode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sT -&amp;gt; statusText
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tS -&amp;gt; Haproxy termination_state
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adc -&amp;gt; Reverse proxy hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;w -&amp;gt; workerId (Sozu)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;r -&amp;gt; requestId (Sozu)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tlsV -&amp;gt; tlsVersion (Sozu)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Key-Value model for addons&lt;span class=&#34;absolute -mt-20&#34; id=&#34;key-value-model-for-addons&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-value-model-for-addons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;AccessLogs data models for addons. Using TCP protocol.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;t -&amp;gt; timestamp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;a -&amp;gt; appId or addonId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;o -&amp;gt; ownerId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;i -&amp;gt; instanceId
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ipS -&amp;gt; ipSource
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pS -&amp;gt; portSource # 0 if undefined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s -&amp;gt; source
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lt -&amp;gt; latitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lg -&amp;gt; longitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ct -&amp;gt; city
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  co -&amp;gt; country
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ipD -&amp;gt; ipDestination
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pD -&amp;gt; portDestination # 0 if undefined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;d -&amp;gt; destination
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lt -&amp;gt; latitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  lg -&amp;gt; longitude
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ct -&amp;gt; city
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  co -&amp;gt; country
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tS -&amp;gt; Haproxy termination_state
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sdc -&amp;gt; Reverse proxy hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sDuration -&amp;gt; total session duration time in millis&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Queries examples:&lt;span class=&#34;absolute -mt-20&#34; id=&#34;queries-examples&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#queries-examples&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The main ways to use &lt;code&gt;accessLogs&lt;/code&gt; data is to &lt;code&gt;FETCH&lt;/code&gt; over it and get interesting values by a JSON processing.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Look at &lt;em&gt;fetch_accessLogs_key_v0&lt;/em&gt; macro to have a convenient way to explore access log data, see &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp 10 documentation&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;A convenient way to integrate the intercepted data in a workflow is to use &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/04_WarpScript/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WarpScript&lt;/a&gt;. It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.&lt;/p&gt;
+&lt;p&gt;In the following example, we get the &lt;code&gt;accessLogs&lt;/code&gt; status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.&lt;/p&gt;
+&lt;script src=&#34;https://gist.github.com/cnivolle/2ee8607d995daa1316e17ffc3874d047.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39; { &amp;#39;app_id&amp;#39;  &amp;#39;id&amp;#39; } &amp;#39;bIn&amp;#39; NOW 1 h  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;or to get the latitude of the destination, which is a nested data:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39; { &amp;#39;app_id&amp;#39;  &amp;#39;id&amp;#39; } &amp;#39;d.lt&amp;#39; NOW 1 h  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Monitoring&amp;rsquo; metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitoring-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitoring-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All applications and VMs instances behind are monitored. Data is sent to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, a Geotimes series database.
+All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.&lt;/p&gt;
+&lt;h3&gt;Monitoring data model&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitoring-data-model&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitoring-data-model&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All metrics data follow the same schema in warp 10.
+Each class represents a specific metric. The context is provided by the Warp 10 labels.&lt;/p&gt;
+&lt;h4&gt;Class values and Labels&lt;span class=&#34;absolute -mt-20&#34; id=&#34;class-values-and-labels&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#class-values-and-labels&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h5&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;A telegraf daemon supplies most metrics.&lt;/p&gt;
+&lt;p&gt;Each metric is recorded as a Warp 10 class.
+Labels provide additional information about the VMs like instances id, organisation id, reverse proxy used.&lt;/p&gt;
+&lt;h5&gt;Labels&lt;span class=&#34;absolute -mt-20&#34; id=&#34;labels&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#labels&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;In metrics&amp;rsquo; data, mains labels would be :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;owner_id&lt;/code&gt; : A unique ID by organisation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app_id&lt;/code&gt; : A unique ID of application&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;host&lt;/code&gt; : HV id hosting the VM instance&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;adc&lt;/code&gt; : Reverse proxy ID for http connexion (ie: applications)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sdc&lt;/code&gt; : Reverse proxy ID for tcp connexion (ie: addons)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vm_type&lt;/code&gt; : &lt;code&gt;volatile&lt;/code&gt; or &lt;code&gt;persistent&lt;/code&gt;. Is it a stateless application or a stateful add-on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deployment_id&lt;/code&gt; : ID of the deployment&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      For some specific metrics. Some labels could miss.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h5&gt;Classes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;classes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#classes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Telegraf provide lots of metrics described in their &lt;a href=&#34;https://github.com/influxdata/telegraf/tree/master/plugins/inputs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Below, the list of all Warp 10 classes representing Telegraf metrics :&lt;/p&gt;
+&lt;table align=&#34;center&#34; class=&#34;table table-bordered&#34; &gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;conntrack.ip_conntrack_count&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.swap_free&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;conntrack.ip_conntrack_max&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.swap_total&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_guest&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.total&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_guest_nice&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.used&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_idle&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.used_percent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_iowait&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.vmalloc_chunk&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_irq&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.vmalloc_total&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_nice&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.vmalloc_used&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_softirq&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.wired&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_steal&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.write_back&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_system&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.write_back_tmp&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;cpu.usage_user&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.bytes_recv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.bytes_sent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.inodes_free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.drop_in&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.inodes_total&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.drop_out&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.inodes_used&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.err_in&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.total&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.err_out&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.used&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.packets_recv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;disk.used_percent&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net.packets_sent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;http_response.http_response_code&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net_response.response_time&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;http_response.response_time&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net_response.result_code&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;http_response.result_code&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;net_response.result_type&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;http_response.result_type&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_close&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;kernel.boot_time&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_close_wait&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;kernel.context_switches&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_closing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;kernel.entropy_avail&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_established&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;kernel.interrupts&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_fin_wait1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;kernel.processes_forked&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_fin_wait2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.active&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_last_ack&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.available&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_listen&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.available_percent&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_none&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.buffered&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_syn_recv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.cached&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_syn_sent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.commit_limit&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.tcp_time_wait&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.committed_as&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;netstat.udp_socket&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.dirty&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.blocked&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.dead&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.high_free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.idle&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.high_total&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.paging&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.huge_page_size&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.running&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.huge_pages_free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.sleeping&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.huge_pages_total&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.stopped&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.inactive&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.total&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.low_free&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.total_threads&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.low_total&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.unknown&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.mapped&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;processes.zombies&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.page_tables&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;procstat_lookup.pid_count&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.shared&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;system.load1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.slab&lt;/td&gt;
+      &lt;td align=&#34;center&#34;&gt;system.load1_per_cpu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;mem.swap_cached&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_pending-finalization-count.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_total_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_loaded-class-count.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.metrics_jvm_heapMemoryUsage_used.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.metrics_jvm_nonHeapMemoryUsage_used.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_metaspace_init.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_total_used.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_total_max.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_total_init.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_code-cache_used.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_metaspace_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_metaspace_max.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_total-loaded-class-count.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_total_init.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.metrics_jvm_thread.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_total_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_total_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_compressed-class-space_committed.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.metrics_jvm_nonHeapMemoryUsage_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_unloaded-class-count.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_code-cache_init.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.metrics_jvm_loadedClasses.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_code-cache_max.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_compressed-class-space_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_ps-survivor-space_max.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_nonheap_code-cache_committed.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_ps-old-gen_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-survivor-space_committed.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_gc_PS_Scavenge_time.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-old-gen_used.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.metrics_jvm_heapMemoryUsage_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_gc_PS_MarkSweep_runtime.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_nonheap_metaspace_committed.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-eden-space_committed.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_heap_ps-old-gen_init.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_total_max.value&lt;/td&gt;
+      &lt;td align=”center”&gt;jvm.statsd-jvm-profiler_gc_PS_Scavenge_runtime.value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&#34;center&#34;&gt;jvm.statsd-jvm-profiler_heap_ps-survivor-space_init.value&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Examples and usages&lt;span class=&#34;absolute -mt-20&#34; id=&#34;examples-and-usages&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#examples-and-usages&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;From the &lt;code&gt;metrics&lt;/code&gt; tab on the console. You can either open a Quantum console, an online WarpScript editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).&lt;/p&gt;
+&lt;p&gt;More information about &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;Quantum and Warp 10&lt;/a&gt; in our documentation.&lt;/p&gt;
+&lt;p&gt;For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
+minute.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Computation can be time intensive.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// Fix the NOW timestamp to have the same on over the script
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NOW &amp;#39;NOW&amp;#39; STORE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// fetch data over 1 hour
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[ &amp;lt;READ TOKEN&amp;gt; &amp;#39;mem.available&amp;#39; { &amp;#39;app_id&amp;#39; &amp;#39;&amp;lt;APPLICATION ID&amp;gt;&amp;#39; } $NOW 1 h ] FETCH
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// Average the data by bucket of 1 min from the last point timestamped at NOW
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[ SWAP bucketizer.mean $NOW 1 m 0 ] BUCKETIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// From the instance granularity to application granularity. Timestamps to timestamps merge
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[ SWAP [ &amp;#39;app_id&amp;#39; ] reducer.mean ] REDUCE&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Consumption metric&lt;span class=&#34;absolute -mt-20&#34; id=&#34;consumption-metric&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#consumption-metric&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Consumption can also be inferred by our metrics. We provide some helper macros in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/&#34; &gt;Warp 10 documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Consumption unit is in &lt;strong&gt;second&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The following script provides the whole consumption from between start and end timestamps for all applications
+under an organisation.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-5&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39; &amp;#39;&amp;lt;ORGANISATION ID&amp;gt;&amp;#39; &amp;lt;START TIMESTAMP&amp;gt; &amp;lt;END TIMESTAMP&amp;gt; @clevercloud/app_consumption&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-5&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Publish your own metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;publish-your-own-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#publish-your-own-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We currently support two ways to push / collect your metrics: the &lt;code&gt;statsd&lt;/code&gt; protocol and &lt;code&gt;prometheus&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The statsd server listens on port &lt;code&gt;8125&lt;/code&gt;. You can send metrics using regular statsd protocol or using an advanced one &lt;a href=&#34;https://github.com/influxdata/telegraf/tree/master/plugins/inputs/statsd#influx-statsd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;as described here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We also support Prometheus metrics collection, by default our agent collects exposed metrics on &lt;code&gt;localhost:9100/metrics&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If needed, you can override those settings with the two following environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_METRICS_PROMETHEUS_PORT&lt;/code&gt;: Define the port on which the Prometheus endpoint is available&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_METRICS_PROMETHEUS_PATH&lt;/code&gt;: Define the path on which the Prometheus endpoint is available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As with Prometheus the exposed host can be the same as the application deployed, you can use a basic authentication to collect the metrics with the two following environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_METRICS_PROMETHEUS_USER&lt;/code&gt;: Define the user for the basic auth of the Prometheus endpoint&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_METRICS_PROMETHEUS_PASSWORD&lt;/code&gt;: Define the password for the basic auth of the Prometheus endpoint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For large custom set of metrics to collect, the default response timeout of the &lt;code&gt;/metrics&lt;/code&gt; query is 3 seconds. You can update it with the following environment variable:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT&lt;/code&gt;: Define the timeout in seconds to collect the application metrics. This value &lt;strong&gt;must&lt;/strong&gt; be below 60 seconds as data are collected every minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To access your metrics from Warp10 you need to use the prefix &lt;code&gt;prometheus.&lt;/code&gt; or &lt;code&gt;statsd.&lt;/code&gt; based on what you used to publish your metrics.&lt;/p&gt;
+&lt;p&gt;You can use this query to show all collected metrics:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-6&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[ 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#39;TOKEN&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#39;~prometheus.*&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  { &amp;#39;app_id&amp;#39; &amp;#39;app_xxxxxxxx&amp;#39; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  NOW 5 m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FETCH&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-6&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Node.js example&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nodejs-example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#nodejs-example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;code&gt;node-statsd&lt;/code&gt; to publish metrics:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-7&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// npm install node-statsd
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;StatsD&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;node-statsd&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;client&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;StatsD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Increment: Increments a stat by a value (default is 1)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;client&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_counter&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Gauge: Gauge a stat by a specified amount
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;client&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gauge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_gauge&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;123.45&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-7&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Haskell example&lt;span class=&#34;absolute -mt-20&#34; id=&#34;haskell-example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#haskell-example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;!-- Maybe this should be put in haskell documentation? --&gt;
+&lt;p&gt;In Haskell, metrics are usually gathered with &lt;a href=&#34;https://hackage.haskell.org/package/ekg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EKG&lt;/a&gt;.
+The package &lt;code&gt;ekg-statsd&lt;/code&gt; allows to push EKG metrics over &lt;code&gt;statsd&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re using &lt;a href=&#34;https://hackage.haskell.org/package/warp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;warp&lt;/a&gt;, you can use
+&lt;code&gt;wai-middleware-metrics&lt;/code&gt; to report request distributions (request count,
+responses count aggregated by status code,
+responses latency distribution).&lt;/p&gt;
+&lt;p&gt;EKG allows you to have access to GC metrics, make sure you compile your application
+with &lt;code&gt;&amp;quot;-with-rtsopts=-T -N&amp;quot;&lt;/code&gt; to enable profiling.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-8&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- you need the following packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- ekg-core&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- ekg-statsd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- scotty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- wai-middleware-metrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Control.Monad&lt;/span&gt;                   &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Network.Wai.Metrics&lt;/span&gt;             &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;WaiMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;metrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                  &lt;span class=&#34;nf&#34;&gt;registerWaiMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;System.Metrics&lt;/span&gt;                  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;newStore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;registerGcMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;System.Remote.Monitoring.Statsd&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;defaultStatsdOptions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                  &lt;span class=&#34;nf&#34;&gt;forkStatsd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Web.Scotty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;handleMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;::&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;WaiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;handleMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;newStore&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;registerGcMetrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;registerWaiMetrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;sendMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maybe&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;False&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lookupEnv&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;ENABLE_METRICS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sendMetrics&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;putStrLn&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;statsd reporting enabled&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;forkStatsd&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;defaultStatsdOptions&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;handleMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;scotty&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8080&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;middleware&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;metrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;n&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Hello world&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-8&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Warp 10</title>
+      <link>https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Main concepts&lt;span class=&#34;absolute -mt-20&#34; id=&#34;main-concepts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#main-concepts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Warp 10 is a time series database. The notion of &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;labels&lt;/code&gt;, &lt;code&gt;longitude&lt;/code&gt;, &lt;code&gt;latitude&lt;/code&gt;, &lt;code&gt;altitude&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; are used.&lt;/p&gt;
+&lt;p&gt;A GTS is a GeoTime Serie defined by a &lt;code&gt;class&lt;/code&gt; and somes &lt;code&gt;labels&lt;/code&gt;. They are indexed and used to quickly retrieved the data.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;labels&lt;/code&gt; is a kind of dictionnary. That is called a &lt;strong&gt;map&lt;/strong&gt; under the warp10 terminology.&lt;/p&gt;
+&lt;p&gt;A GTS may contain some values which have the following models : &lt;code&gt;[ timestamp longitude latitude altitude value ]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Warp 10 uses &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/04_WarpScript&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp Script&lt;/a&gt;. It&amp;rsquo;s a &lt;strong&gt;stack&lt;/strong&gt; based &lt;strong&gt;language using reverse polish notation&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The metrics ovh team built an other way to request Warp 10: &lt;a href=&#34;https://github.com/ovh/tsl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ovh/tsl/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.warp10.io/doc/reference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp 1O documentation is availlable on their website&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Time and duration in Warp 10&lt;span class=&#34;absolute -mt-20&#34; id=&#34;time-and-duration-in-warp-10&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#time-and-duration-in-warp-10&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;More information about &lt;a href=&#34;https://www.warp10.io/tags/date&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;date functions here&lt;/a&gt;, and &lt;a href=&#34;https://www.warp10.io/tags/time&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;time functions here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=“panel panel-warning”&gt;
+  &lt;div class=“panel-heading”&gt;
+    &lt;h4&gt;Note:&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class=“panel-body”&gt;
+  The plateform&#39;s time unit is in &lt;b&gt;microsecond.&lt;/b&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Duration is set by the followings symbols&lt;span class=&#34;absolute -mt-20&#34; id=&#34;duration-is-set-by-the-followings-symbols&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#duration-is-set-by-the-followings-symbols&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt; : day&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt; : Hour&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ms&lt;/code&gt; : millisecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ns&lt;/code&gt; : nanosecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt; : picosecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; : second&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;us&lt;/code&gt; : microsecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; : week&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Date&lt;span class=&#34;absolute -mt-20&#34; id=&#34;date&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#date&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Allowed format :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ISO8601&lt;/li&gt;
+&lt;li&gt;Timestamp in microsecond&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Builtin function :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NOW&lt;/code&gt; : get the current timestamp&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ISO8601&lt;/code&gt; : Convert a string or a timstamp to a iso8601 date format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Endpoint&lt;span class=&#34;absolute -mt-20&#34; id=&#34;endpoint&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#endpoint&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Clever Cloud Warp 10 endpoint is:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-0&#34;&gt;https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You can find documentation about endpoint gateway &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find the endpoint and an available token under the &lt;code&gt;metric&lt;/code&gt; tab of your application&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can query our Warp 10 platform with your own script. Here&amp;rsquo;s a curl example :&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  curl -T &amp;lt;Path/to/a/warpscript_file&amp;gt; https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do not forget the endpoint. &lt;code&gt;exec&lt;/code&gt; in the previous exemple.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Token&lt;span class=&#34;absolute -mt-20&#34; id=&#34;token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Tokens are based on your application with the notion of producer and owner. Hence, only the data owner can see it.&lt;/p&gt;
+&lt;p&gt;You can find a 5 days available token in the &lt;code&gt;metric&lt;/code&gt; tab of your application.&lt;/p&gt;
+&lt;h2&gt;Technical constraints&lt;span class=&#34;absolute -mt-20&#34; id=&#34;technical-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#technical-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The followings limits are defined in Warp 10. The &lt;strong&gt;soft&lt;/strong&gt; one can be passed over by an &lt;a href=&#34;https://www.warp10.io/doc/AUTHENTICATE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;AUTHENTICATE&lt;/code&gt;&lt;/a&gt; operation. The &lt;strong&gt;hard&lt;/strong&gt; one is unsurpassable.&lt;/p&gt;
+&lt;table class=&#34;table table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;WarpScript Operator&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Warp 10 limit description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;soft limit&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;hard limit&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXGTS&#34;&gt;MAXGTS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Maximum number of GTS which can be fetched&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/LIMIT&#34;&gt;LIMIT&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of datapoints which can be fetched during a script execution&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXBUCKETS&#34;&gt;MAXBUCKETS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of buckets which can be created by a call to BUCKETIZE&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;50e5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXDEPTH&#34;&gt;MAXDEPTH&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum depth (number of levels) of the execution stack&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXLOOP&#34;&gt;MAXLOOP&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of &lt;strong&gt;milliseconds&lt;/strong&gt; which can be spent in a loop&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXOPS&#34;&gt;MAXOPS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of operations which can be performed during a single WarpScript execution&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5e7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXSYMBOLS&#34;&gt;MAXSYMBOLS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;64&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;256&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXGEOCELLS&#34;&gt;MAXGEOCELLS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum number of cells a GEOSHAPE&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXPIXELS&#34;&gt;MAXPIXELS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum size (in pixels) of images which can be created by PGraphics&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10e5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.warp10.io/doc/MAXRECURSION&#34;&gt;MAXRECURSION&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;maximum nesting depth of macro calls&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;16&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=“panel panel-warning”&gt;
+  &lt;div class=“panel-heading”&gt;
+    &lt;h4&gt;Warning:&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class=“panel-body”&gt;
+    operation over &lt;i&gt; soft limts &lt;/i&gt; may be really intensives.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Usage:&lt;span class=&#34;absolute -mt-20&#34; id=&#34;usage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#usage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An example where it is needed to increase the fetch limit by the &lt;code&gt;LIMIT&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-2&#34;&gt;&amp;#39;&amp;lt;READTOKEN&amp;gt;&amp;#39; AUTHENTICATE
+50e6 TOLONG LIMIT
+// Fetch on the &amp;#39;accessLogs&amp;#39; class for your application id as labels
+[ &amp;#39;&amp;lt;READTOKEN&amp;gt;&amp;#39; &amp;#39;accessLogs&amp;#39; { &amp;#39;app_id&amp;#39; &amp;#39;&amp;lt;APP_ID&amp;gt;&amp;#39;  } NOW 1 w ] FETCH&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Visualization and exploration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;visualization-and-exploration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#visualization-and-exploration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Quantum&lt;span class=&#34;absolute -mt-20&#34; id=&#34;quantum&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#quantum&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Quantum is a web tool used to run some WarpScript. You can access to it from your metrics interface.&lt;/p&gt;
+&lt;p&gt;It provide the path to the Clever Cloud Warp 10 gateway and let you explore your data.&lt;/p&gt;
+&lt;h2&gt;Macro&lt;span class=&#34;absolute -mt-20&#34; id=&#34;macro&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#macro&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.&lt;/p&gt;
+&lt;div class=“panel panel-warning”&gt;
+  &lt;div class=“panel-heading”&gt;
+    &lt;h4&gt;Note:&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class=“panel-body”&gt;
+  More information on the &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros&#34;&gt;Warp 10&#39; macros documentations&lt;/a&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Consumption&lt;span class=&#34;absolute -mt-20&#34; id=&#34;consumption&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#consumption&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following macros are helpers to compute consumption in seconds&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app_consumption&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return the consumption in &lt;strong&gt;second&lt;/strong&gt; by &lt;strong&gt;applications&lt;/strong&gt; for a specific &lt;strong&gt;organisation&lt;/strong&gt;.
+&lt;code&gt;Start&lt;/code&gt; and &lt;code&gt;End&lt;/code&gt; parameters can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;ORGANISATION ID&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/app_consumption&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;orga_consumption&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return &lt;strong&gt;all&lt;/strong&gt; the consumption in &lt;strong&gt;second&lt;/strong&gt; for a specific &lt;strong&gt;organisation&lt;/strong&gt;. &lt;code&gt;Start&lt;/code&gt; and &lt;code&gt;End&lt;/code&gt; parameters
+can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;ORGANISATION ID&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/app_consumption&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;AccessLogs&lt;span class=&#34;absolute -mt-20&#34; id=&#34;accesslogs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#accesslogs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fetch_accessLogs_key_v0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series (&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. it allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole Json.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-5&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;app_id&amp;#39;&lt;/span&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;1stLevelKey&amp;gt;&amp;#39;&lt;/span&gt; NOW &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; h  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-5&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-6&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;app_id&amp;#39;&lt;/span&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;1stLevelKey&amp;gt;.&amp;lt;2ndLevelKey&amp;gt;&amp;#39;&lt;/span&gt; NOW &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; m  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-6&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More example in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#access-logs-metrics&#34; &gt;metrics part of this documenation&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nested keys&lt;/strong&gt; can be reached using a dot (&lt;code&gt;.&lt;/code&gt;) to represent the depth.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-7&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;LABELS&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;KEY&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-7&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

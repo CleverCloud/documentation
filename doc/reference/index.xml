@@ -1,0 +1,2567 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Reference</title>
+    <link>https://devcenter.clever-cloud.com/doc/reference/</link>
+    <description>Recent content in Reference on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Clever Tools CLI</title>
+      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Configuration items available on every instance type</title>
+      <link>https://devcenter.clever-cloud.com/doc/reference/common-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/reference/common-configuration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Each instance type (php,java,python,go,ruby…) has its own configuration. However, some of
+these configuration items can be applied to any instance.&lt;/p&gt;
+&lt;h2&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If your company manages its own artifacts in a private repository (like, you
+can only access them via git+ssh or sftp), and you need a private key to
+connect to the server, you can either set it in an environment variable or
+commit it in your application&amp;rsquo;s Clever Cloud repository.&lt;/p&gt;
+&lt;p&gt;That key will be installed in &lt;code&gt;~/.ssh/&lt;/code&gt; before the start of the build. So the
+dependency manager will use it to fetch libs only accessible by ssh.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;NB: Please provide a key without pass phrase, or the system will be unable to unlock it&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Environment variable&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-variable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-variable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Set your key as the value of the &lt;code&gt;CC_SSH_PRIVATE_KEY&lt;/code&gt; variable. If you want it
+to be saved to a specific file, you can set the &lt;code&gt;CC_SSH_PRIVATE_KEY_FILE&lt;/code&gt;
+variable.&lt;/p&gt;
+&lt;h3&gt;Committed file&lt;span class=&#34;absolute -mt-20&#34; id=&#34;committed-file&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#committed-file&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, you need to add the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt;, its content is pretty straight-forward:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;privateKeyFile&lt;/code&gt; field must be a path to an SSH private key. The path must be relative to the root of your repository.&lt;/p&gt;
+&lt;p&gt;For example, if your private key file is in the &lt;code&gt;clevercloud&lt;/code&gt; folder and is named &lt;code&gt;my_key&lt;/code&gt;, the &lt;code&gt;privateKeyFile&lt;/code&gt; field will be &lt;code&gt;&amp;quot;clevercloud/my_key&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Hooks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;hooks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can run specific tasks during the deployment of your application.&lt;/p&gt;
+&lt;p&gt;Please refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/&#34; &gt;hooks documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
+&lt;h2&gt;Workers&lt;span class=&#34;absolute -mt-20&#34; id=&#34;workers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#workers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can run background tasks running in parallel of your application.&lt;/p&gt;
+&lt;p&gt;Please refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; &gt;workers documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Environment Variable Reference</title>
+      <link>https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Commons to all applications&lt;span class=&#34;absolute -mt-20&#34; id=&#34;commons-to-all-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#commons-to-all-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Set by the deployment process&lt;span class=&#34;absolute -mt-20&#34; id=&#34;set-by-the-deployment-process&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#set-by-the-deployment-process&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;These are read-only variables that are generated for each scaler before they build and start your application.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Example value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INSTANCE_NUMBER&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Allows your application to differentiate each running node on the application level.&lt;/td&gt;
+&lt;td&gt;0, 1…&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INSTANCE_TYPE&lt;/td&gt;
+&lt;td&gt;Whether this instance is a &amp;ldquo;build&amp;rdquo; instance or a &amp;ldquo;production&amp;rdquo; instance.&lt;/td&gt;
+&lt;td&gt;build, production&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INSTANCE_ID&lt;/td&gt;
+&lt;td&gt;The ID of the current instance (scaler) of your application. It&amp;rsquo;s unique for each instance of your application and changes every time you deploy it.&lt;/td&gt;
+&lt;td&gt;518c8d8f-e304-4310-81e0-9c4237d55645&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PRETTY_INSTANCE_NAME&lt;/td&gt;
+&lt;td&gt;The random generated string as instance pretty name using pokemon names.&lt;/td&gt;
+&lt;td&gt;Tiny rhyhorn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;APP_ID&lt;/td&gt;
+&lt;td&gt;The ID of your Clever Cloud application&lt;/td&gt;
+&lt;td&gt;app_649a93d1-6677-44bc-aca7-6f46107d6e02&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;APP_HOME&lt;/td&gt;
+&lt;td&gt;The absolute path to your application folder&lt;/td&gt;
+&lt;td&gt;/home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DEPLOYMENT_ID&lt;/td&gt;
+&lt;td&gt;Internal id of current deployment&lt;/td&gt;
+&lt;td&gt;f7efaf04-1a63-45a1-8503-0de7c750ee48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;COMMIT_ID&lt;/td&gt;
+&lt;td&gt;The id of the commit that&amp;rsquo;s currently running&lt;/td&gt;
+&lt;td&gt;d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_REVERSE_PROXY_IPS&lt;/td&gt;
+&lt;td&gt;A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses.&lt;/td&gt;
+&lt;td&gt;x.y.z.z,x.y.z.z&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ELASTIC_APM_SERVICE_NAME&lt;/td&gt;
+&lt;td&gt;Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself&lt;/td&gt;
+&lt;td&gt;Your application&amp;rsquo;s name conforming to Elastic APM naming convention&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_APP_NAME&lt;/td&gt;
+&lt;td&gt;The customer defined application name&lt;/td&gt;
+&lt;td&gt;cloud-api-production&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PORT&lt;/td&gt;
+&lt;td&gt;The mandatory port value is 8080&lt;/td&gt;
+&lt;td&gt;8080&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Variables you can define&lt;span class=&#34;absolute -mt-20&#34; id=&#34;variables-you-can-define&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#variables-you-can-define&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;So you can alter the build&amp;amp;start process for your application.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;APP_FOLDER&lt;/td&gt;
+&lt;td&gt;Folder in which the application is located (inside the git repository)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DISABLE_GIT_SUBMODULES&lt;/td&gt;
+&lt;td&gt;Disable Git submodules initialization &amp;amp; synchronization&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DISABLE_METRICS&lt;/td&gt;
+&lt;td&gt;Disable metrics collection.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NODE_VERSION&lt;/td&gt;
+&lt;td&gt;Set Node.js version on non-Node.js application. Don&amp;rsquo;t use it for Node.js applications, use &lt;a href=&#34;https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; instead&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_SSH_PRIVATE_KEY&lt;/td&gt;
+&lt;td&gt;A ssh private key to setup for the user running your application&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_SSH_PRIVATE_KEY_FILE&lt;/td&gt;
+&lt;td&gt;The name to use for the file containing the private ssh key&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;id_ed25519&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_WORKER_RESTART&lt;/td&gt;
+&lt;td&gt;One of &lt;code&gt;always&lt;/code&gt;, &lt;code&gt;on-failure&lt;/code&gt; or &lt;code&gt;no&lt;/code&gt;. Control whether workers need to be restarted when they exit.&lt;br /&gt;This setting controls all workers.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on-failure&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_WORKER_RESTART_DELAY&lt;/td&gt;
+&lt;td&gt;Define a delay in seconds to restart the worker when they exit.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Command to run in background as a worker process. You can run multiple workers.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4&gt;Control build and dependencies cache&lt;span class=&#34;absolute -mt-20&#34; id=&#34;control-build-and-dependencies-cache&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#control-build-and-dependencies-cache&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_CACHE_DEPENDENCIES&lt;/td&gt;
+&lt;td&gt;Enable caching of your build dependencies to speed up following builds.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Allows to specify paths to ignore when the build cache archive is created.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(Deprecated) Allows to specify paths to ignore when the build cache archive is created.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_OVERRIDE_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Allows to specify paths that will be in the build cache. &lt;br /&gt;Only those files / directories will be cached&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4&gt;Control the deployment&amp;rsquo;s behavior&lt;span class=&#34;absolute -mt-20&#34; id=&#34;control-the-deployments-behavior&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#control-the-deployments-behavior&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_TASK&lt;/td&gt;
+&lt;td&gt;If set as true, the deployer runs &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; and close the instance after havind run the task. Trigger an execution using &lt;code&gt;git push&lt;/code&gt; or starting your instance&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/troubleshooting/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_TROUBLESHOOT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don&amp;rsquo;t forget to cancel deployment if you push a new commit.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4&gt;Deployment hooks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deployment-hooks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Use these to define &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/&#34; &gt;commands to run&lt;/a&gt; between various steps of the deployment.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-build-cc_pre_build_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PRE_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ran before the dependencies are fetched. If it fails, the deployment fails.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-build-cc_post_build_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_POST_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PRE_RUN_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RUN_FAILED_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ran once the application has failed to start.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RUN_SUCCEEDED_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ran once the application has started successfuly.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4&gt;Configure extra software&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-extra-software&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-extra-software&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV_MAXQUEUE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Maximum number of queued items.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;100&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV_MAXTHREADS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Maximum number of threads running at the same time.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PASSWORD&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Define the password for the basic auth of the Prometheus endpoint&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PATH&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Define the path on which the Prometheus endpoint is available&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/metrics&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PORT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Define the port on which the Prometheus endpoint is available&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;8080&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Define the timeout in seconds to collect the application metrics. This value &lt;strong&gt;must&lt;/strong&gt; be below 60 seconds as data are collected every minutes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;3&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_USER&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Define the user for the basic auth of the Prometheus endpoint&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cache/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_VARNISH_STORAGE_SIZE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Configure the size of the Varnish cache.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1G&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Command to run in background as a worker process. You can run multiple workers.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Tailscale support&lt;span class=&#34;absolute -mt-20&#34; id=&#34;tailscale-support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tailscale-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://tailscale.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tailscale&lt;/a&gt; is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application&amp;rsquo;s instances.&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;Reusable keys&lt;/code&gt; are required to use multiple instances. You can &lt;a href=&#34;https://login.tailscale.com/admin/settings/keys&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;generate one here&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://tailscale.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TAILSCALE_AUTH_KEY&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contains your Tailscale Auth key&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TAILSCALE_LOGIN_SERVER&lt;/td&gt;
+&lt;td&gt;Contains the login server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4&gt;How it works?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-it-works&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-it-works&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;For a given application with &lt;code&gt;TAILSCALE_AUTH_KEY&lt;/code&gt; configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt; : &lt;code&gt;CC-&amp;lt;NAME&amp;gt;-&amp;lt;INSTANCE_NUMBER&amp;gt;&lt;/code&gt;. If you have multiple instances and use one of them for being an admin instance (using &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt;), you can match the instance from your deployment to reach it over VPN.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;TAILSCALE_LOGIN_SERVER&lt;/code&gt; is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can&amp;rsquo;t be responsible. An alternative control server can still be useful to use for constraints environements. &lt;a href=&#34;https://github.com/juanfont/headscale/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Headscale&lt;/a&gt; is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.&lt;/p&gt;
+&lt;h2&gt;Docker&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/&#34; &gt;Docker Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKERFILE&lt;/td&gt;
+&lt;td&gt;The name of the Dockerfile to build.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Dockerfile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_EXPOSED_HTTP_PORT&lt;/td&gt;
+&lt;td&gt;Set to custom HTTP port if your Docker container runs on custom port.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;8080&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_EXPOSED_TCP_PORT&lt;/td&gt;
+&lt;td&gt;Set to custom TCP port if your Docker container runs on custom port.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4040&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_FIXED_CIDR_V6&lt;/td&gt;
+&lt;td&gt;Activate the support of IPv6 with an IPv6 subnet int the docker daemon.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_LOGIN_PASSWORD&lt;/td&gt;
+&lt;td&gt;The password of your username.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_LOGIN_SERVER&lt;/td&gt;
+&lt;td&gt;The server of your private registry (optional).&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Docker’s public registry&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOCKER_LOGIN_USERNAME&lt;/td&gt;
+&lt;td&gt;The username to login to a private registry.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MOUNT_DOCKER_SOCKET&lt;/td&gt;
+&lt;td&gt;Set to true to access the host Docker socket from inside your container.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;.NET&lt;span class=&#34;absolute -mt-20&#34; id=&#34;net&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#net&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/&#34; &gt;.NET Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOTNET_PROFILE&lt;/td&gt;
+&lt;td&gt;Override the build configuration settings in your project.&lt;/td&gt;
+&lt;td&gt;Release&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOTNET_PROJ&lt;/td&gt;
+&lt;td&gt;The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOTNET_TFM&lt;/td&gt;
+&lt;td&gt;Compiles for a specific framework. The framework must be defined in the project file. Example : &lt;code&gt;net5.0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DOTNET_VERSION&lt;/td&gt;
+&lt;td&gt;Choose the .NET Core version between &lt;code&gt;5.0&lt;/code&gt;,&lt;code&gt;6.0&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;6.0&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Elixir&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elixir&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#elixir&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_ELIXIR_VERSION&lt;/td&gt;
+&lt;td&gt;Choose the Elixir version between &lt;code&gt;1.8&lt;/code&gt;, &lt;code&gt;1.9&lt;/code&gt;, &lt;code&gt;1.10&lt;/code&gt;, &lt;code&gt;1.11&lt;/code&gt;, &lt;code&gt;1.12&lt;/code&gt;, &lt;code&gt;1.13&lt;/code&gt; or &lt;code&gt;1.14&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.11&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MIX_BUILD_GOAL&lt;/td&gt;
+&lt;td&gt;The mix goal to build the application (default compile)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PHOENIX_ASSETS_DIR&lt;/td&gt;
+&lt;td&gt;Folder in which your Phoenix assets are located.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PHOENIX_DIGEST_GOAL&lt;/td&gt;
+&lt;td&gt;Phoenix digest goal.&lt;/td&gt;
+&lt;td&gt;phx.digest&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PHOENIX_RUN_ECTO_MIGRATE&lt;/td&gt;
+&lt;td&gt;Whether to run &amp;lsquo;mix ecto.migrate&amp;rsquo; or not.&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PHOENIX_SERVER_GOAL&lt;/td&gt;
+&lt;td&gt;Phoenix server goal.&lt;/td&gt;
+&lt;td&gt;phx.server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application. Replaces the default behaviour.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Go&lt;span class=&#34;absolute -mt-20&#34; id=&#34;go&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#go&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/&#34; &gt;Go Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_GO_BUILD_TOOL&lt;/td&gt;
+&lt;td&gt;Available values: &lt;code&gt;gomod&lt;/code&gt;, &lt;code&gt;gobuild&lt;/code&gt;, &lt;code&gt;goget&lt;/code&gt;. Makes the deployer use &lt;code&gt;go modules&lt;/code&gt;, &lt;code&gt;go get&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt; to build your application.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;goget&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_GO_PKG&lt;/td&gt;
+&lt;td&gt;Makes the deployer run go get &lt;code&gt;${CC_GO_PKG}&lt;/code&gt; instead of go get &lt;code&gt;&amp;lt;app_id&amp;gt;&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_GO_RUNDIR&lt;/td&gt;
+&lt;td&gt;Makes the deployer use the specified directory to run your binary.&lt;br&gt;If your application must be in &lt;code&gt;$GOPATH/src/company/project&lt;/code&gt; for your vendored dependencies, set this variable to &lt;code&gt;company/project&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Haskell&lt;span class=&#34;absolute -mt-20&#34; id=&#34;haskell&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#haskell&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#specify-stack-package-target&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_HASKELL_STACK_TARGET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Specify Stack package target.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Java&lt;span class=&#34;absolute -mt-20&#34; id=&#34;java&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#java&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-jar/&#34; &gt;Java Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_DISABLE_MAX_METASPACE&lt;/td&gt;
+&lt;td&gt;Allows to disable the Java option -XX:MaxMetaspaceSize&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_EXTRA_JAVA_ARGS&lt;/td&gt;
+&lt;td&gt;Define extra arguments to pass to &amp;lsquo;java&amp;rsquo; for jars.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_JAR_ARGS&lt;/td&gt;
+&lt;td&gt;Define arguments to pass to the jar we launch.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_JAR_PATH&lt;/td&gt;
+&lt;td&gt;Define the path to your jar.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_JAVA_VERSION&lt;/td&gt;
+&lt;td&gt;Choose the JVM version between &lt;code&gt;7&lt;/code&gt; to &lt;code&gt;17&lt;/code&gt; for OpenJDK or &lt;code&gt;graalvm-ce&lt;/code&gt; for GraalVM 21.0.0.2 (based on OpenJDK 11.0).&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;11&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MAVEN_PROFILES&lt;/td&gt;
+&lt;td&gt;Define which maven profile to use during default build.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application. Replaces the default behaviour.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_SBT_TARGET_BIN&lt;/td&gt;
+&lt;td&gt;Define the bin to pick in the &lt;code&gt;CC_SBT_TARGET_DIR&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;The first bin found in the &lt;code&gt;CC_SBT_TARGET_DIR&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_SBT_TARGET_DIR&lt;/td&gt;
+&lt;td&gt;Define where pick the bin to run.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Then &lt;code&gt;/target/universal/stage/bin&lt;/code&gt; is concatenated.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GRADLE_DEPLOY_GOAL&lt;/td&gt;
+&lt;td&gt;Define which gradle goals to run during build.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MAVEN_DEPLOY_GOAL&lt;/td&gt;
+&lt;td&gt;Define which maven goals to run during build.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NUDGE_APPID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PLAY1_VERSION&lt;/td&gt;
+&lt;td&gt;Define which play1 version to use between &lt;code&gt;1.2&lt;/code&gt;, &lt;code&gt;1.3&lt;/code&gt;, &lt;code&gt;1.4&lt;/code&gt; and &lt;code&gt;1.5&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SBT_DEPLOY_GOAL&lt;/td&gt;
+&lt;td&gt;Define which sbt goals to run during build.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;stage&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Node.js&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nodejs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#nodejs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NODE_DEV_DEPENDENCIES&lt;/td&gt;
+&lt;td&gt;Control if development dependencies are installed or not. Values are either &lt;code&gt;install&lt;/code&gt; or &lt;code&gt;ignore&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ignore&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Define a custom command.&lt;/td&gt;
+&lt;td&gt;Example for Meteor: &lt;code&gt;node .build/bundle/main.js &amp;lt;options&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NODE_BUILD_TOOL&lt;/td&gt;
+&lt;td&gt;Choose your build tool between &lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;npm-ci&lt;/code&gt;, &lt;code&gt;yarn&lt;/code&gt;, &lt;code&gt;yarn2&lt;/code&gt; and &lt;code&gt;custom&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_CUSTOM_BUILD_TOOL&lt;/td&gt;
+&lt;td&gt;A custom command to run (with &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; set to &lt;code&gt;custom&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NPM_REGISTRY&lt;/td&gt;
+&lt;td&gt;The host of your private repository, available values: &lt;code&gt;github&lt;/code&gt; or the registry host.&lt;/td&gt;
+&lt;td&gt;registry.npmjs.org&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NPM_TOKEN&lt;/td&gt;
+&lt;td&gt;Private repository token&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;PHP&lt;span class=&#34;absolute -mt-20&#34; id=&#34;php&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#php&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/&#34; &gt;PHP Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ALWAYS_POPULATE_RAW_POST_DATA&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_COMPOSER_VERSION&lt;/td&gt;
+&lt;td&gt;Choose your composer version between &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#development-dependencies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CGI_IMPLEMENTATION&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Choose the Apache FastCGI module between &lt;code&gt;fastcgi&lt;/code&gt; and &lt;code&gt;proxy_fcgi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;fastcgi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_HTTP_BASIC_AUTH&lt;/td&gt;
+&lt;td&gt;Restrict HTTP access to your application. Example: &lt;code&gt;login:password&lt;/code&gt;. You can define multiple credentials using additional &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) environment variables.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_LDAP_CA_CERT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_AUTH_PASSWORD&lt;/td&gt;
+&lt;td&gt;Password to authenticate to the SMTP server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_AUTH_USER&lt;/td&gt;
+&lt;td&gt;User to authenticate to the SMTP server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_SERVER_AUTH_METHOD&lt;/td&gt;
+&lt;td&gt;Enable or disable authentication to the SMTP server&lt;/td&gt;
+&lt;td&gt;on&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_SERVER_HOST&lt;/td&gt;
+&lt;td&gt;Host of the SMTP server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_SERVER_PORT&lt;/td&gt;
+&lt;td&gt;Port of the SMTP server&lt;/td&gt;
+&lt;td&gt;465&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MTA_SERVER_USE_TLS&lt;/td&gt;
+&lt;td&gt;Enable or disable TLS when connecting to the SMTP server&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_OPCACHE_INTERNED_STRINGS_BUFFER&lt;/td&gt;
+&lt;td&gt;The amount of memory used to store interned strings, in megabytes.&lt;/td&gt;
+&lt;td&gt;Default 4 (PHP5), 8 (PHP7)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_OPCACHE_MAX_ACCELERATED_FILES&lt;/td&gt;
+&lt;td&gt;Maximum number of files handled by opcache.&lt;/td&gt;
+&lt;td&gt;Default depends on the scaler size&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_OPCACHE_MEMORY&lt;/td&gt;
+&lt;td&gt;Set the shared opcache memory size&lt;/td&gt;
+&lt;td&gt;Default is about 1/8 of the RAM&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_OPCACHE_PRELOAD&lt;/td&gt;
+&lt;td&gt;The path of the PHP preload file (PHP version 7.4 or higher).&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_ASYNC_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Mount the default app FS bucket asynchronously. If set, should have value &lt;code&gt;async&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#development-dependencies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_DEV_DEPENDENCIES&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Control if development dependencies are installed or not. Values are either &lt;code&gt;install&lt;/code&gt; or &lt;code&gt;ignore&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_DISABLE_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Disable entirely the app FS Bucket. Values are either &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;yes&lt;/code&gt; or &lt;code&gt;disable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PHP_VERSION&lt;/td&gt;
+&lt;td&gt;Choose your PHP version between &lt;code&gt;5.6&lt;/code&gt;, &lt;code&gt;7.2&lt;/code&gt;, &lt;code&gt;7.3&lt;/code&gt;, &lt;code&gt;7.4&lt;/code&gt;, &lt;code&gt;8.0&lt;/code&gt;, &lt;code&gt;8.1&lt;/code&gt; and &lt;code&gt;8.2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;7&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_REALPATH_CACHE_TTL&lt;/td&gt;
+&lt;td&gt;The size of the realpath cache to be used by PHP&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_WEBROOT&lt;/td&gt;
+&lt;td&gt;Define the &lt;code&gt;DocumentRoot&lt;/code&gt; of your project&lt;/td&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENABLE_ELASTIC_APM_AGENT&lt;/td&gt;
+&lt;td&gt;Elastic APM Agent for PHP&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt; if &lt;code&gt;ELASTIC_APM_SERVER_URL&lt;/code&gt; is defined, &lt;code&gt;false&lt;/code&gt; otherwise&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENABLE_REDIS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTTP_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Define a custom HTTP timeout&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;180&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LDAPTLS_CACERT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MAX_INPUT_VARS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MEMORY_LIMIT&lt;/td&gt;
+&lt;td&gt;Change the default memory limit&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#use-redis-to-store-php-sessions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SESSION_TYPE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Choose &lt;code&gt;redis&lt;/code&gt; to use it as session store&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SOCKSIFY_EVERYTHING&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQREEN_API_APP_NAME&lt;/td&gt;
+&lt;td&gt;The name of your sqreen application.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQREEN_API_TOKEN&lt;/td&gt;
+&lt;td&gt;Organization token.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;USE_SOCKS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Python&lt;span class=&#34;absolute -mt-20&#34; id=&#34;python&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#python&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/&#34; &gt;Python Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_HTTP_BASIC_AUTH&lt;/td&gt;
+&lt;td&gt;Restrict HTTP access to your application. Example: &lt;code&gt;login:password&lt;/code&gt;. You can define multiple credentials using additional &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) environment variables.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NGINX_PROXY_BUFFERS&lt;/td&gt;
+&lt;td&gt;Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Nginx documentation&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NGINX_PROXY_BUFFER_SIZE&lt;/td&gt;
+&lt;td&gt;Sets the size of the buffer used for reading the first part of the response received from the proxied server. &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Nginx documentation&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PIP_REQUIREMENTS_FILE&lt;/td&gt;
+&lt;td&gt;Allows you to define a custom &lt;code&gt;requirements.txt&lt;/code&gt; file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;requirements.txt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_BACKEND&lt;/td&gt;
+&lt;td&gt;Choose the Python backend to use between &lt;code&gt;daphne&lt;/code&gt;, &lt;code&gt;gunicorn&lt;/code&gt;, &lt;code&gt;uvicorn&lt;/code&gt; and &lt;code&gt;uwsgi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;uwsgi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_CELERY_LOGFILE&lt;/td&gt;
+&lt;td&gt;Relative path to your Celery logfile: &lt;code&gt;/path/to/logdir&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_CELERY_MODULE&lt;/td&gt;
+&lt;td&gt;Specify the Celery module you want to start: &lt;code&gt;mymodule&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_CELERY_USE_BEAT&lt;/td&gt;
+&lt;td&gt;Set to &lt;code&gt;true&lt;/code&gt; to activate Beat support&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/tutorials/python-django-sample/#manage-py-tasks&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PYTHON_MANAGE_TASKS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Comma-separated list of Django manage tasks&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_MODULE&lt;/td&gt;
+&lt;td&gt;Select which module you want to start: &lt;code&gt;mymodule:app&lt;/code&gt;. &amp;lsquo;mymodule&amp;rsquo; refers to the path to the folder containing the app object. So a module called &amp;lsquo;server.py&amp;rsquo; in a folder called &amp;lsquo;app&amp;rsquo; would be used here as &lt;code&gt;app.server:app&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_USE_GEVENT&lt;/td&gt;
+&lt;td&gt;Set to &lt;code&gt;true&lt;/code&gt; to enable Gevent&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PYTHON_VERSION&lt;/td&gt;
+&lt;td&gt;Choose the Python version between &lt;code&gt;2.7&lt;/code&gt;, &lt;code&gt;3.7&lt;/code&gt;, &lt;code&gt;3.8&lt;/code&gt;, &lt;code&gt;3.9&lt;/code&gt;, &lt;code&gt;3.10&lt;/code&gt; and &lt;code&gt;3.11&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENABLE_GZIP_COMPRESSION&lt;/td&gt;
+&lt;td&gt;Set to &lt;code&gt;true&lt;/code&gt; to gzip-compress the output of uwsgi&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GZIP_TYPES&lt;/td&gt;
+&lt;td&gt;Set the mime types to compress.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;text/* application/json application/xml application/javascript image/svg+xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HARAKIRI&lt;/td&gt;
+&lt;td&gt;Timeout (in seconds) after which an unresponding process is killed&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;180&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NGINX_READ_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Read timeout in seconds&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;300&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PYTHON_SETUP_PY_GOAL&lt;/td&gt;
+&lt;td&gt;Custom setup goal to be launch after &lt;code&gt;requirements.txt&lt;/code&gt; have been installed&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;STATIC_FILES_PATH&lt;/td&gt;
+&lt;td&gt;Relative path to where your static files are stored: &lt;code&gt;path/to/static&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The URL path under which you want to serve static file, usually &lt;code&gt;/public&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;STATIC_WEBROOT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UWSGI_ASYNC&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Number of cores to use for uWSGI asynchronous/non-blocking modes&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UWSGI_ASYNC_ENGINE&lt;/td&gt;
+&lt;td&gt;Select the asynchronous engine for uWSGI (optional)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UWSGI_INTERCEPT_ERRORS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WSGI_BUFFER_SIZE&lt;/td&gt;
+&lt;td&gt;Buffer size (in bytes) for uploads.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4096&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WSGI_POST_BUFFERING&lt;/td&gt;
+&lt;td&gt;Maximal size (in bytes) for the headers of a request.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4096&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WSGI_THREADS&lt;/td&gt;
+&lt;td&gt;Number of threads per worker. (Defaut: automatically setup with the scaler size)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WSGI_WORKERS&lt;/td&gt;
+&lt;td&gt;Number of workers. (Defaut: automatically setup with the scaler size)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Ruby&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ruby&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ruby&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#configure-sidekiq&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_ENABLE_SIDEKIQ&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Enable Sidekiq background process&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_HTTP_BASIC_AUTH&lt;/td&gt;
+&lt;td&gt;Restrict HTTP access to your application. Example: &lt;code&gt;login:password&lt;/code&gt;. You can define multiple credentials using additional &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) environment variables.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NGINX_PROXY_BUFFERS&lt;/td&gt;
+&lt;td&gt;Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Nginx documentation&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_NGINX_PROXY_BUFFER_SIZE&lt;/td&gt;
+&lt;td&gt;Sets the size of the buffer used for reading the first part of the response received from the proxied server. &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Nginx documentation&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RACKUP_SERVER&lt;/td&gt;
+&lt;td&gt;The server to use for serving the ruby application&lt;/td&gt;
+&lt;td&gt;puma&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#configure-rake-goals&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RAKEGOALS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A list of comma-separated rake goals to execute e.g. &lt;code&gt;db:migrate, assets:precompile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUBY_VERSION&lt;/td&gt;
+&lt;td&gt;Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_SIDEKIQ_FILES&lt;/td&gt;
+&lt;td&gt;Specify a list of Sidekiq configuration files e.g. &lt;code&gt;./config/sidekiq_1.yml,./config/sidekiq_2.yml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NGINX_READ_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Read timeout in seconds&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;300&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RACK_ENV&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAILS_ENV&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;STATIC_FILES_PATH&lt;/td&gt;
+&lt;td&gt;Relative path to where your static files are stored: &lt;code&gt;path/to/static&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#manage-your-static-files-and-assets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The URL path under which you want to serve static file, usually &lt;code&gt;/public&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;STATIC_WEBROOT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Rust&lt;span class=&#34;absolute -mt-20&#34; id=&#34;rust&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#rust&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/&#34; &gt;Rust Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUSTUP_CHANNEL&lt;/td&gt;
+&lt;td&gt;The rust channel to use. Use a specific channel version with &lt;code&gt;stable&lt;/code&gt;, &lt;code&gt;beta&lt;/code&gt;, &lt;code&gt;nightly&lt;/code&gt; or a specific version like &lt;code&gt;1.13.0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;stable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUST_BIN&lt;/td&gt;
+&lt;td&gt;The name of the binary to launch once built&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUST_FEATURES&lt;/td&gt;
+&lt;td&gt;The list of features to enable&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_RUN_COMMAND&lt;/td&gt;
+&lt;td&gt;Custom command to run your application.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;Addons-related environment variable&lt;span class=&#34;absolute -mt-20&#34; id=&#34;addons-related-environment-variable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#addons-related-environment-variable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;FS Bucket&lt;span class=&#34;absolute -mt-20&#34; id=&#34;fs-bucket&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#fs-bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;BUCKET_HOST&lt;/td&gt;
+&lt;td&gt;Hostname of the bucket&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_FS_BUCKET&lt;/td&gt;
+&lt;td&gt;Defines which bucket to mount on which path&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;MongoDB&lt;span class=&#34;absolute -mt-20&#34; id=&#34;mongodb&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mongodb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/mongodb/&#34; &gt;MongoDB Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_PORT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_DIRECT_HOST&lt;/td&gt;
+&lt;td&gt;Points directly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_DIRECT_PORT&lt;/td&gt;
+&lt;td&gt;Points to ectly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_DB&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_PASSWORD&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MONGODB_ADDON_USER&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;MySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;mysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_PORT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_DIRECT_HOST&lt;/td&gt;
+&lt;td&gt;Points directly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_DIRECT_PORT&lt;/td&gt;
+&lt;td&gt;Points to ectly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_DB&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_PASSWORD&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_ROLE&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MYSQL_ADDON_USER&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/&#34; &gt;ProxySQL Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_ENABLE_MYSQL_PROXYSQL&lt;/td&gt;
+&lt;td&gt;Enable the ProxySQL  feature&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/td&gt;
+&lt;td&gt;Defines the maximum number of connections the local ProxySQL will open to your MySQL add-on&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MYSQL_PROXYSQL_USE_TLS&lt;/td&gt;
+&lt;td&gt;Enable or disable secured connection using TLS to your MySQL add-on&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_MYSQL_PROXYSQL_SOCKET_PATH&lt;/td&gt;
+&lt;td&gt;Contains the path to the Unix Datagram Socket to connect to ProxySQL&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;PostgreSQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;postgresql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#postgresql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/postgresql/&#34; &gt;PostgreSQL Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_PORT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_DIRECT_HOST&lt;/td&gt;
+&lt;td&gt;Points directly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_DIRECT_PORT&lt;/td&gt;
+&lt;td&gt;Points to ectly to the VM, bypassing reverse proxies&lt;/td&gt;
+&lt;td&gt;Generated on demand via the dashboard&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_DB&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_PASSWORD&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_ROLE&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POSTGRESQL_ADDON_USER&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Pgpool-II&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pgpool-ii&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pgpool-ii&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/&#34; &gt;Pgpool-II Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_ENABLE_PGPOOL&lt;/td&gt;
+&lt;td&gt;Enables the Pgpool-II feature&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_SOCKET_PATH&lt;/td&gt;
+&lt;td&gt;Contains the path to the Unix Datagram Socket to connect to Pgpool-II&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_PCP_SOCKET_PATH&lt;/td&gt;
+&lt;td&gt;Contains the path to the Unix Datagram Socket to connect to PCP&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_EXTRA_USERS&lt;/td&gt;
+&lt;td&gt;Add new user/password pairs to the pool_passwd file, separated by commas (user1:password,user2:password&amp;hellip;)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_RESERVED_CONNECTIONS&lt;/td&gt;
+&lt;td&gt;Number of reserved connections&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LISTEN_BACKLOG_MULTIPLIER&lt;/td&gt;
+&lt;td&gt;Specifies the length of connection queue from frontend to Pgpool-II&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LEADER_WEIGHT&lt;/td&gt;
+&lt;td&gt;Weight for backend 0 (Leader)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_NUM_INIT_CHILDREN&lt;/td&gt;
+&lt;td&gt;Number of concurrent sessions allowed&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MAX_POOL&lt;/td&gt;
+&lt;td&gt;Number of connection pool caches per connection&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CHILD_LIFE_TIME&lt;/td&gt;
+&lt;td&gt;Pool exits after being idle for this many seconds&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;300&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CHILD_MAX_CONNECTIONS&lt;/td&gt;
+&lt;td&gt;Pool exits after receiving that many connections&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt; (no exit)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CONNECTION_LIFE_TIME&lt;/td&gt;
+&lt;td&gt;Connection to backend closes after being idle for this many seconds&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt; (no close)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CLIENT_IDLE_LIMIT&lt;/td&gt;
+&lt;td&gt;Client is disconnected after being idle for that many seconds (even inside an explicit transactions!)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt; (no disconnection)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_CONNECTIONS&lt;/td&gt;
+&lt;td&gt;Log connections&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_DISCONNECTIONS&lt;/td&gt;
+&lt;td&gt;Log disconnections&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_HOSTNAME&lt;/td&gt;
+&lt;td&gt;Hostname will be shown in ps status and in logs if connections are logged&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_STATEMENT&lt;/td&gt;
+&lt;td&gt;Log all statements&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_PER_NODE_STATEMENT&lt;/td&gt;
+&lt;td&gt;Log all statements with node and backend informations&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_CLIENT_MESSAGES&lt;/td&gt;
+&lt;td&gt;Log any client messages&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOG_STANDBY_DELAY&lt;/td&gt;
+&lt;td&gt;Log standby delay. Valid values are combinations of &lt;code&gt;always&lt;/code&gt;, &lt;code&gt;if_over_threshold&lt;/code&gt; and &lt;code&gt;none&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;if_over_threshold&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CONNECTION_CACHE&lt;/td&gt;
+&lt;td&gt;Activate connection pools&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_REPLICATE_SELECT&lt;/td&gt;
+&lt;td&gt;Replicate SELECT statements in replication mode&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_INSERT_LOCK&lt;/td&gt;
+&lt;td&gt;Automatically locks a dummy row or a table with INSERT statements to keep SERIAL data consistency&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOBJ_LOCK_TABLE&lt;/td&gt;
+&lt;td&gt;When rewriting lo_creat command in replication mode, specify table name to lock&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_REPLICATION_STOP_ON_MISMATCH&lt;/td&gt;
+&lt;td&gt;On disagreement with the packet kind sent from backend, degenerate the node which is most likely &amp;ldquo;minority&amp;rdquo; If off, just force to exit this session&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_FAILOVER_IF_AFFECTED_TUPLES_MISMATCH&lt;/td&gt;
+&lt;td&gt;On disagreement with the number of affected tuples in UPDATE/DELETE queries, then degenerate the node which is most likely &amp;ldquo;minority&amp;rdquo;. If off, just abort the transaction to keep the consistency&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_LOAD_BALANCE_MODE&lt;/td&gt;
+&lt;td&gt;Activate load balancing mode&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_IGNORE_LEADING_WHITE_SPACE&lt;/td&gt;
+&lt;td&gt;Ignore leading white spaces of each query&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_READ_ONLY_FUNCTION_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of function names that don&amp;rsquo;t write to database (regexp are accepted)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_WRITE_FUNCTION_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of function names that write to database (regexp are accepted)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_PRIMARY_ROUTING_QUERY_PATTERN_LIST&lt;/td&gt;
+&lt;td&gt;Semicolon separated list of query patterns that should be sent to primary node (regexp are accepted)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_DATABASE_REDIRECT_PREFERENCE_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of pairs of database and node id&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_APP_NAME_REDIRECT_PREFERENCE_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of pairs of app name and node id&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_ALLOW_SQL_COMMENTS&lt;/td&gt;
+&lt;td&gt;If on, ignore SQL comments when judging if load balance or query cache is possible&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_DISABLE_LOAD_BALANCE_ON_WRITE&lt;/td&gt;
+&lt;td&gt;Load balance behavior when write query is issued in an explicit transaction. Valid values are &lt;code&gt;transaction&lt;/code&gt;, &lt;code&gt;trans_transaction&lt;/code&gt;, &lt;code&gt;dml_adaptive&lt;/code&gt; or &lt;code&gt;always&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;transaction&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_DML_ADAPTIVE_OBJECT_RELATIONSHIP_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of object pairs&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_STATEMENT_LEVEL_LOAD_BALANCE&lt;/td&gt;
+&lt;td&gt;Enables statement level load balancing&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_SR_CHECK_PERIOD&lt;/td&gt;
+&lt;td&gt;Streaming replication check period&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_DELAY_THRESHOLD&lt;/td&gt;
+&lt;td&gt;Threshold before not dispatching query to standby node Unit is in bytes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10000000&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_HEALTH_CHECK_PERIOD&lt;/td&gt;
+&lt;td&gt;Health check period&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_HEALTH_CHECK_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Health check timeout&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_HEALTH_CHECK_MAX_RETRIES&lt;/td&gt;
+&lt;td&gt;Maximum number of times to retry a failed health check before giving up&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_HEALTH_CHECK_RETRY_DELAY&lt;/td&gt;
+&lt;td&gt;Amount of time to wait (in seconds) between retries&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CONNECT_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Timeout value in milliseconds before giving up to connect to backend&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10000&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMORY_CACHE_ENABLED&lt;/td&gt;
+&lt;td&gt;Use the memory cache functionality&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_TOTAL_SIZE&lt;/td&gt;
+&lt;td&gt;Total memory size in megabytes for storing memory cache&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_MAX_NUM_CACHE&lt;/td&gt;
+&lt;td&gt;Total number of cache entries&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1000000&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_EXPIRE&lt;/td&gt;
+&lt;td&gt;Memory cache entry life time specified in seconds&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_AUTO_CACHE_INVALIDATION&lt;/td&gt;
+&lt;td&gt;Invalidation of query cache is triggered by corresponding DDL/DML/DCL&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_MAXCACHE&lt;/td&gt;
+&lt;td&gt;Maximum SELECT result size in kilobytes (must be smaller than MEMQCACHE_CACHE_BLOCK_SIZE)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;400&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE&lt;/td&gt;
+&lt;td&gt;Cache block size in megabytes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CACHE_SAFE_MEMQCACHE_TABLE_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of table names to memcache that don&amp;rsquo;t write to database (regexp are accepted)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST&lt;/td&gt;
+&lt;td&gt;Comma separated list of table names not to memcache that don&amp;rsquo;t write to database (regexp are accepted)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Elastic Stack&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elastic-stack&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#elastic-stack&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/elastic/&#34; &gt;Elastic Stack Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ELASTIC_APM_SERVER_URL&lt;/td&gt;
+&lt;td&gt;URI to connect APM Server&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_APM_HOST&lt;/td&gt;
+&lt;td&gt;APM Server hostname&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_APM_AUTH_TOKEN&lt;/td&gt;
+&lt;td&gt;Authentication token to send metrics to APM Server&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ELASTIC_APM_SECRET_TOKEN&lt;/td&gt;
+&lt;td&gt;Authentication token to send metrics to APM Server&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_APM_USER&lt;/td&gt;
+&lt;td&gt;Username credential used by APM Server to send metrics to Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_APM_PASSWORD&lt;/td&gt;
+&lt;td&gt;Password credential used by APM Server to send metrics to Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_KIBANA_HOST&lt;/td&gt;
+&lt;td&gt;Kibana hostname&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_KIBANA_USER&lt;/td&gt;
+&lt;td&gt;Username credential used by Kibana to query Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_KIBANA_PASSWORD&lt;/td&gt;
+&lt;td&gt;Password credential used by Kibana to query Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_URI&lt;/td&gt;
+&lt;td&gt;URI to query Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;Elasticsearch hostname&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_USER&lt;/td&gt;
+&lt;td&gt;Username credential to authenticate to Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_PASSWORD&lt;/td&gt;
+&lt;td&gt;Password credential to authenticate to Elasticsearch&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES_ADDON_VERSION&lt;/td&gt;
+&lt;td&gt;ElasticSearch Version&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Blackfire&lt;span class=&#34;absolute -mt-20&#34; id=&#34;blackfire&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#blackfire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_SERVER_TOKEN&lt;/td&gt;
+&lt;td&gt;The server token used to authenticate with Blackfire&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_SERVER_ID&lt;/td&gt;
+&lt;td&gt;The server id used to authenticate with Blackfire&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_LOG_LEVEL&lt;/td&gt;
+&lt;td&gt;Sets the verbosity of Agent’s log output&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_MEMORY_LIMIT&lt;/td&gt;
+&lt;td&gt;Sets the maximum allowed RAM usage (megabytes) when ingesting traces&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;500&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_COLLECTOR&lt;/td&gt;
+&lt;td&gt;Sets the URL of Blackfire’s data collector&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://blackfire.io&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_TIMEOUT&lt;/td&gt;
+&lt;td&gt;Sets the Blackfire API connection timeout&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;15&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_STATSD&lt;/td&gt;
+&lt;td&gt;Sets the statsd server to send agent’s statistics&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_BLACKFIRE_STATSD_PREFIX&lt;/td&gt;
+&lt;td&gt;Sets the statsd prefix to use when sending data&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;blackfire&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NEW_RELIC_APP_NAME&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contains the application name&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NEW_RELIC_LICENSE_KEY&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contains your New Relic account license&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_NEWRELIC_ERROR_COLLECTOR_ENABLED&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_NEWRELIC_TRANSACTION_TRACER_ENABLED&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;obfuscated&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Pulsar&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pulsar&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pulsar&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_BINARY_URL&lt;/td&gt;
+&lt;td&gt;The complete URL to use in your application&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_BINARY_PORT&lt;/td&gt;
+&lt;td&gt;The port to connect to the Pulsar Cluster&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_HOSTNAME&lt;/td&gt;
+&lt;td&gt;The host to connect to the Pulsar Cluster&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_HTTP_URL&lt;/td&gt;
+&lt;td&gt;The complete URL to connect with WebSocket&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_HTTP_PORT&lt;/td&gt;
+&lt;td&gt;The port to connect with WebSocket&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_NAMESPACE&lt;/td&gt;
+&lt;td&gt;Your add-on Pulsar ID&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_TENANT&lt;/td&gt;
+&lt;td&gt;Your Clever Cloud tenant ID&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADDON_PULSAR_TOKEN&lt;/td&gt;
+&lt;td&gt;Your Biscuit authentication token&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Redis&lt;span class=&#34;absolute -mt-20&#34; id=&#34;redis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis Documentation&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;REDIS_HOST&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;REDIS_PORT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;REDIS_PASSWORD&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Generated upon creation&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;Socks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;socks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#socks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SOCKS_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SOCKS_ADDON_PORT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SOCKS_ADDON_PRIVATE_KEY&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt;VPN&lt;span class=&#34;absolute -mt-20&#34; id=&#34;vpn&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vpn&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The VPN addon provides a fixed-ip outgoing node. This can be used to work
+with services protected by ip address filtering. &lt;code&gt;VPN_ADDON_*&lt;/code&gt; variables will
+be provided by Clever Cloud upon setup, the only configuration you have to
+provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
+to be routed through the exit node.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;center&gt;Name&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Description&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Default value&lt;/center&gt;&lt;/th&gt;
+&lt;th&gt;&lt;center&gt;Read Only&lt;/center&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CC_VPN_DNS_OVERRIDES&lt;/td&gt;
+&lt;td&gt;Comma-separated list of DNS IP&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_CACRT&lt;/td&gt;
+&lt;td&gt;Server CA certificate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_CIPHER&lt;/td&gt;
+&lt;td&gt;Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}&lt;/td&gt;
+&lt;td&gt;DES-EDE3-CBC:SHA1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_CRT&lt;/td&gt;
+&lt;td&gt;Client certificate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_DEVTYPE&lt;/td&gt;
+&lt;td&gt;Kernel virtual interface kind to use (&amp;ldquo;tap&amp;rdquo; or &amp;ldquo;tun&amp;rdquo;)&lt;/td&gt;
+&lt;td&gt;tap&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_HOST&lt;/td&gt;
+&lt;td&gt;Server host or IP address&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_KEY&lt;/td&gt;
+&lt;td&gt;Client certificate private key&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_PORT&lt;/td&gt;
+&lt;td&gt;Server port&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_ADDON_TAKEY&lt;/td&gt;
+&lt;td&gt;Pre-shared secret&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN_TARGETS&lt;/td&gt;
+&lt;td&gt;Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Lexic</title>
+      <link>https://devcenter.clever-cloud.com/doc/reference/lexic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/reference/lexic/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All terms available in this Lexic can be linked anywhere in the documentation thanks to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/contribute/shortcodes/#tooltip-shortcode&#34; &gt;tooltip shortcode&lt;/a&gt;.
+&lt;table class=&#34;table&#34;&gt;
+    &lt;tbody&gt;
+    
+        &lt;tr&gt;
+            &lt;th scope=&#34;row&#34;&gt;iaas&lt;/th&gt;
+            &lt;td&gt;Infrastructure as a Service&lt;/td&gt;
+        &lt;/tr&gt;
+    
+        &lt;tr&gt;
+            &lt;th scope=&#34;row&#34;&gt;paas&lt;/th&gt;
+            &lt;td&gt;Platform as a Service&lt;/td&gt;
+        &lt;/tr&gt;
+    
+    &lt;/tbody&gt;
+&lt;/table&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

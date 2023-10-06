@@ -1,0 +1,355 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Clever Grid</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/clever-grid/</link>
+    <description>Recent content in Clever Grid on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/clever-grid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Machine Learning with Clever Grid</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/clever-grid/clevergrid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/clever-grid/clevergrid/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Concepts in Clever Grid&lt;span class=&#34;absolute -mt-20&#34; id=&#34;concepts-in-clever-grid&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#concepts-in-clever-grid&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Grid is the machine learning oriented platform by Clever Cloud. It provides a unified GPU ecosystem to run your scripts.&lt;/p&gt;
+&lt;h3&gt;Organization, Application, Add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;organization-application-add-on&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#organization-application-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In Clever Grid you create some &lt;strong&gt;applications&lt;/strong&gt; under one &lt;strong&gt;organization&lt;/strong&gt;.
+Organization is useful to manage roles and team collaboration.&lt;/p&gt;
+&lt;p&gt;An application is a &lt;strong&gt;stateless&lt;/strong&gt; virtual machine which runs your code.&lt;/p&gt;
+&lt;p&gt;Additionally to an application, you can link one or more &lt;strong&gt;stateful&lt;/strong&gt; virtual machine called &lt;strong&gt;add-on&lt;/strong&gt; in Clever Grid. That lets
+you keep your data&lt;/p&gt;
+&lt;h3&gt;Application as Runner, Application as Webapp&lt;span class=&#34;absolute -mt-20&#34; id=&#34;application-as-runner-application-as-webapp&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#application-as-runner-application-as-webapp&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In some case, you may just need a one run of a script. To train a model or proceed a huge calculation for example. That the
+interest of &lt;strong&gt;Runner&lt;/strong&gt;. A Runner runs a script and then go away.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;Webapp&lt;/strong&gt; keeps the application up and serve via HTTP.&lt;/p&gt;
+&lt;h2&gt;Create an application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;Remember that an application is **stateless**. To save your data, you need to use an add-on.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://dashboard.clevergrid.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://dashboard.clevergrid.io&lt;/a&gt;, create a “brand new application”.
+
+
+
+
+&lt;figure class=&#34;cc-content-img&#34;&gt;
+    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/create-application.png&#34; alt=&#34;Create application.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;figcaption&gt;
+        Create application.
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Select the application type :
+&lt;ul&gt;
+&lt;li&gt;Docker (Runner | Webapp)
+
+   
+   
+   
+   &lt;figure class=&#34;cc-content-img&#34;&gt;
+       &lt;img src=&#34;https://devcenter.clever-cloud.com/images/docker.png&#34; alt=&#34;Docker&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+       &lt;figcaption&gt;
+           Docker
+       &lt;/figcaption&gt;
+     &lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Python (Runner | Webapp)
+
+   
+   
+   
+   &lt;figure class=&#34;cc-content-img&#34;&gt;
+       &lt;img src=&#34;https://devcenter.clever-cloud.com/images/python.png&#34; alt=&#34;Python&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+       &lt;figcaption&gt;
+           Python
+       &lt;/figcaption&gt;
+     &lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Java (Runner | Webapp)
+
+   
+   
+   
+   &lt;figure class=&#34;cc-content-img&#34;&gt;
+       &lt;img src=&#34;https://devcenter.clever-cloud.com/images/java.png&#34; alt=&#34;Java&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+       &lt;figcaption&gt;
+           Java
+       &lt;/figcaption&gt;
+     &lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Select the size of your instance(s) and the number of nodes&lt;/li&gt;
+&lt;li&gt;(optional) You can choose a Template for your application
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;Template will set up for you a compete ecosystem for a specific application. It provides add-ons and environment 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;variables for you.&lt;/p&gt;
+   &lt;ul&gt;
+      &lt;li&gt;Jupyter Notebook&lt;/li&gt;
+      &lt;li&gt;R Notebook&lt;/li&gt;
+      &lt;li&gt;…&lt;/li&gt;
+   &lt;/ul&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Create an add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-add-on&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://dashboard.clevergrid.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://dashboard.clevergrid.io&lt;/a&gt;, Add a “a storage service”.
+
+
+
+
+&lt;figure class=&#34;cc-content-img&#34;&gt;
+    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/addons.png&#34; alt=&#34;Addons&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;figcaption&gt;
+        Addons
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Select the storage plan you need&lt;/li&gt;
+&lt;li&gt;Link it to your applications
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;Add-ons&#39;s credentials will be automatically set up in your application. Yet it can be found on the &amp;quot;Add-on dashboard&amp;quot; tabs of your dashboard by the Clever Cloud console.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Set-up an application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;set-up-an-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#set-up-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can pass some parameter to your application by &lt;strong&gt;environments variables&lt;/strong&gt;.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;If you deploy a Webapp, Clever Grid expects an exposed `PORT` as environment variable listening the port `8080`
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://dashboard.clevergrid.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dashboard.clevergrid.io&lt;/a&gt; and select your application&lt;/li&gt;
+&lt;li&gt;Manage your environment variables by the tab &amp;ldquo;Environment variables&amp;rdquo;
+
+
+
+
+&lt;figure class=&#34;cc-content-img&#34;&gt;
+    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/env-selection.png&#34; alt=&#34;Environment selection&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;figcaption&gt;
+        Environment selection
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Python applications&lt;span class=&#34;absolute -mt-20&#34; id=&#34;python-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#python-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If there is a &lt;code&gt;requirements.txt&lt;/code&gt; in the root folder of your application, dependencies will be installed during the deployment.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Starting file
+&lt;ul&gt;
+&lt;li&gt;Clever Grid need to know  which file runs to start your application. That can be a python file, declare in the
+&lt;code&gt;CC_MLPYTHON_RUN_MAIN&lt;/code&gt; environment variable or custom bash script in &lt;code&gt;CC_MLPYTHON_START_SCRIPT&lt;/code&gt; environment variable.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;It should contain the path of your main file. The path should be relative to the root of your repository.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, “pytorch.py” and “./pytorch.py are both valid.
+&lt;strong&gt;Bash scripts are expected to be executable (via &lt;code&gt;chmod+x&lt;/code&gt;)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python version :
+&lt;ul&gt;
+&lt;li&gt;You can select the python version with the &lt;code&gt;PYTHON_VERSION&lt;/code&gt; environment variable. Valid values are documented here: &lt;a href=&#34;https://www.clever-cloud.com/doc/python/python_apps/#choose-python-version&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;www.clever-cloud.com/doc/python/python_apps/#choose-python-version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Docker application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to the Clever Cloud documentation : &lt;a href=&#34;https://www.clever-cloud.com/doc/docker/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/doc/docker/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Java application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;java-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#java-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to the Clever Cloud documentation : &lt;a href=&#34;https://www.clever-cloud.com/doc/java/java-jar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/doc/java/java-jar/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Hooking build steps&lt;span class=&#34;absolute -mt-20&#34; id=&#34;hooking-build-steps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hooking-build-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Between the build steps and before running the script, you can hook scripts. The hooks are documented here: &lt;a href=&#34;https://www.clever-cloud.com/doc/clever-cloud-overview/hooks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/doc/clever-cloud-overview/hooks/&lt;/a&gt;
+E.g. you can have a post build hook to initialize conda and stuff.&lt;/p&gt;
+&lt;h2&gt;Send your code&lt;span class=&#34;absolute -mt-20&#34; id=&#34;send-your-code&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#send-your-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Your Clever Grid application is now set up to receive your code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Go to your project and add the Clever Grid repository to your repository :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git remote add clever-grid git+ssh://git@push-clevergrid-clevercloud-customers.services.clever-cloud.com/&amp;lt;APP_ID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;You can find the repository address on the overview page of your application
+
+
+
+
+&amp;lt;figure class=&amp;quot;cc-content-img&amp;quot;style=&amp;quot;width:100%&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;/images/git-url.png&amp;quot; alt=&amp;quot;git-url&amp;quot; class=&amp;quot;img-fluid&amp;quot; data-action=&amp;quot;zoom&amp;quot; /&amp;gt;
+    &amp;lt;figcaption&amp;gt;
+        git-url
+    &amp;lt;/figcaption&amp;gt;
+  &amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Push your code&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Command line management&lt;span class=&#34;absolute -mt-20&#34; id=&#34;command-line-management&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#command-line-management&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In addition to the Clever Grid console, you can manage your add-ons and applications from the command line with Clever Tools.&lt;/p&gt;
+&lt;p&gt;see : &lt;a href=&#34;https://www.clever-cloud.com/doc/clever-tools/getting_started/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/doc/clever-tools/getting_started/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Billing&lt;span class=&#34;absolute -mt-20&#34; id=&#34;billing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#billing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Grid application are reports on the Clever Cloud platform to billing purpose&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 GPU cost 10 euros by day. Charged per minute.&lt;/li&gt;
+&lt;li&gt;Storage add-ons are based on the Clever Cloud billing : &lt;a href=&#34;https://www.clever-cloud.com/en/pricing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/en/pricing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Support&lt;span class=&#34;absolute -mt-20&#34; id=&#34;support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you are having issues, please let us know &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

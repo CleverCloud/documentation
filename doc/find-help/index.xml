@@ -1,0 +1,332 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Find Help</title>
+    <link>https://devcenter.clever-cloud.com/doc/find-help/</link>
+    <description>Recent content in Find Help on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/find-help/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Community</title>
+      <link>https://devcenter.clever-cloud.com/doc/find-help/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/find-help/community/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Engage in our Developer Community by seeking or providing advice on application and development level questions. We have a community of developers using our platform and you can help and be helped there.&lt;/p&gt;
+&lt;h2&gt;Gitter&lt;span class=&#34;absolute -mt-20&#34; id=&#34;gitter&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gitter&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;English room: &lt;a href=&#34;https://gitter.im/CleverCloud/chatroom-en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gitter.im/CleverCloud/chatroom-en&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;French room: &lt;a href=&#34;https://gitter.im/CleverCloud/chatroom-fr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gitter.im/CleverCloud/chatroom-fr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Public IRC Channel&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-irc-channel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#public-irc-channel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We’re also available on IRC. You can join our channel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;irc://irc.freenode.net:6667/clevercloud&#34; &gt;#clevercloud on irc.freenode.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Support</title>
+      <link>https://devcenter.clever-cloud.com/doc/find-help/support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/find-help/support/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We provide basic support free-of-charge to all our users, even those who are not paying customers.&lt;/p&gt;
+&lt;h2&gt;Email&lt;span class=&#34;absolute -mt-20&#34; id=&#34;email&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#email&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Seek help by querying us by email, allowing you to quickly gain answers to your Clever Cloud specific questions and open a ticket directly with our support staff. We will respond to your email within a few hours, or two business days in the worst case.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Ticket Center&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ticket-center&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ticket-center&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can find in the console a button to start a conversation with our engineers. For each new ticket it will create a new thread, on a specific subject. Therefore, you can create several tickets for each issue.&lt;/p&gt;
+&lt;p&gt;If you open a ticket inside an organisation with members, they will be added to the discussion by e-mail.&lt;/p&gt;
+&lt;p&gt;Feel free to use it when this service available, from 9 a.m to 6 p.m &lt;acronym title=&#34;Central European Summer Time&#34;&gt;CEST&lt;/acronym&gt;+2 during open business days.&lt;/p&gt;
+&lt;h2&gt;Critical application support&lt;span class=&#34;absolute -mt-20&#34; id=&#34;critical-application-support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#critical-application-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud offers a premium support option providing 24/7 a direct line to our team of support engineers. Our team’s focus is investigating and solving new problems, getting feedback on the service and working hard to improve the core service.&lt;/p&gt;
+&lt;p&gt;Get more information and contact our sales team at:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;mailto:sales@clever-cloud.com&#34; &gt;sales@clever-cloud.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://devcenter.clever-cloud.com/doc/find-help/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/find-help/faq/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;What is a Scaler?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-a-scaler&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-a-scaler&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;dfn id=&#34;def-scaler&#34;&gt;scaler&lt;/dfn&gt; is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.&lt;/p&gt;
+&lt;p&gt;Each &lt;a href=&#34;#def-scaler&#34; &gt;scaler&lt;/a&gt; is given a fixed set of resources.
+When enabling auto-scalability, you have to set a minimum and a maximum of active &lt;a href=&#34;#def-scaler&#34; &gt;scalers&lt;/a&gt; in your apps settings. This way you can precisely control your monthly fee.&lt;/p&gt;
+&lt;h2&gt;What languages and frameworks are supported by Clever Cloud?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-languages-and-frameworks-are-supported-by-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-languages-and-frameworks-are-supported-by-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Currently Clever Cloud supports:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java (Play Framework 1 &amp;amp; 2, Maven, War files… )&lt;/li&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;PHP (&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/&#34; &gt;see frameworks and CMS&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Python (Django)&lt;/li&gt;
+&lt;li&gt;Ruby&lt;/li&gt;
+&lt;li&gt;Go&lt;/li&gt;
+&lt;li&gt;Haskell&lt;/li&gt;
+&lt;li&gt;Scala&lt;/li&gt;
+&lt;li&gt;Rust&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How many applications can I create with Clever Cloud?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-many-applications-can-i-create-with-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-many-applications-can-i-create-with-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As many as you want. We&amp;rsquo;ve not set a limited number of apps by developer.&lt;/p&gt;
+&lt;h2&gt;How to setup domain names I own?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-setup-domain-names-i-own&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-setup-domain-names-i-own&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can bind custom domain names to your applications. Please have a look at &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/domain-names/&#34; &gt;Custom Domain Names&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How can I disable one of my existing applications?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-can-i-disable-one-of-my-existing-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-can-i-disable-one-of-my-existing-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Log in with your account to &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;console.clever-cloud.com&lt;/a&gt;, and select the appropriate organization and app in the left column. Then click on the application name and select &lt;strong&gt;Overview&lt;/strong&gt;. Click on the &lt;strong&gt;Stop&lt;/strong&gt; button to stop your app.&lt;/p&gt;
+&lt;h2&gt;What type of content is allowed on Clever Cloud?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-type-of-content-is-allowed-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-type-of-content-is-allowed-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Please refer to our Terms and Conditions, article 6, &lt;em&gt;Obligations and responsibilities of the client&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;How do I add or remove members in my organizations?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-do-i-add-or-remove-members-in-my-organizations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-do-i-add-or-remove-members-in-my-organizations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Log in with your account to &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;console.clever-cloud.com&lt;/a&gt;, and select the appropriate organization in the left panel. Then click on &lt;strong&gt;Members&lt;/strong&gt; in the mid pane. You&amp;rsquo;ll see a list of the organization&amp;rsquo;s members. If your are an admin, you can revoke or grant permissions.&lt;/p&gt;
+&lt;h2&gt;How do I report an application that is in violation of your Terms and Conditions?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-do-i-report-an-application-that-is-in-violation-of-your-terms-and-conditions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-do-i-report-an-application-that-is-in-violation-of-your-terms-and-conditions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To report an application that is in violation of Clever Cloud&amp;rsquo;s Terms and Conditions, please contact us at &lt;a href=&#34;mailto:abuse@clever-cloud.com&#34; &gt;abuse@clever-cloud.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will investigate and contact the application&amp;rsquo;s owner over the violation if needed.&lt;/p&gt;
+&lt;h2&gt;Does Clever Cloud support TLS/SSL (HTTPS)?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;does-clever-cloud-support-tlsssl-https&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#does-clever-cloud-support-tlsssl-https&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Absolutely! For testing purposes, &lt;code&gt;cleverapps.io&lt;/code&gt; domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
+Have a look at &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/ssl/&#34; &gt;installing SSL certificates&lt;/a&gt;, and feel free to contact us at &lt;a href=&#34;mailto:contact@clever-cloud.com&#34; &gt;contact@clever-cloud.com&lt;/a&gt; if you have questions.&lt;/p&gt;
+&lt;h2&gt;I&amp;rsquo;d like to have two applications available on the same domain name&lt;span class=&#34;absolute -mt-20&#34; id=&#34;id-like-to-have-two-applications-available-on-the-same-domain-name&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#id-like-to-have-two-applications-available-on-the-same-domain-name&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Please refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/domain-names/#prefix-routing&#34; &gt;prefix routing&lt;/a&gt; to learn how to have two applications share a domain name.&lt;/p&gt;
+&lt;h2&gt;How do I define cron jobs for my application?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-do-i-define-cron-jobs-for-my-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-do-i-define-cron-jobs-for-my-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;See &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cron/&#34; &gt;Cron Configuration File&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;h2&gt;How to know if a user comes from a secure connection?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-know-if-a-user-comes-from-a-secure-connection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-know-if-a-user-comes-from-a-secure-connection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All connections are handled by load-balancers ahead of your applications and forwarded in plain http, you cannot rely on the server port to know the scheme used by the user.&lt;/p&gt;
+&lt;p&gt;Instead, you can use the &lt;code&gt;X-Forwarded-Proto&lt;/code&gt; HTTP header to get the information, it is set to either &amp;lsquo;&lt;em&gt;http&lt;/em&gt;&amp;rsquo; or &amp;lsquo;&lt;em&gt;https&lt;/em&gt;&amp;rsquo;.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your *application.conf*.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;PHP: &lt;code&gt;$_SERVER&lt;/code&gt; auth variables are always empty, how do I make this work?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;php-_server-auth-variables-are-always-empty-how-do-i-make-this-work&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#php-_server-auth-variables-are-always-empty-how-do-i-make-this-work&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s explained &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#using-http-authentication&#34; &gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How to get the user&amp;rsquo;s IP address?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-get-the-users-ip-address&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-get-the-users-ip-address&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All connections are handled by load-balancers ahead of your applications
+and forwarded in plain http.&lt;/p&gt;
+&lt;p&gt;So if you get the &lt;code&gt;REMOTE_ADDR&lt;/code&gt; or &lt;code&gt;Client-IP&lt;/code&gt; header, you will only
+get the IP of the front load balancer that forwarded the user request.&lt;/p&gt;
+&lt;p&gt;Instead of these headers you need to use the &lt;code&gt;X-Forwarded-For&lt;/code&gt; HTTP
+header, which is set by our load balancer to the client&amp;rsquo;s address. Please
+remember that it is a list, containing the address of each proxy the request
+has been through, if the said proxy has modified the &lt;code&gt;X-Forwarded-For&lt;/code&gt;
+header: &lt;a href=&#34;https://en.wikipedia.org/wiki/X-Forwarded-For&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read the Wikipedia page for more informations&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;When my application runs on multiple instances, how can I differentiate them?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;when-my-application-runs-on-multiple-instances-how-can-i-differentiate-them&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#when-my-application-runs-on-multiple-instances-how-can-i-differentiate-them&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If your application needs to differentiate all the running nodes internally, you can use the &lt;code&gt;INSTANCE_NUMBER&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;p&gt;For example, if 3 instances are running for your application, this environment variable will contain &lt;code&gt;0&lt;/code&gt; on the first, &lt;code&gt;1&lt;/code&gt; on the second and &lt;code&gt;2&lt;/code&gt; on the third.&lt;/p&gt;
+&lt;h2&gt;I need a private ssh key to fetch my private dependencies. How do I do that?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-need-a-private-ssh-key-to-fetch-my-private-dependencies-how-do-i-do-that&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-need-a-private-ssh-key-to-fetch-my-private-dependencies-how-do-i-do-that&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If your company manages its own artifacts in a private repository (like, you can only
+access them via git+ssh or sftp), and you need a private key to connect to the server, you
+can commit them in your application&amp;rsquo;s Clever Cloud repository and then add a
+&lt;code&gt;clevercloud/ssh.json&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;The ssh.json file is documented &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;I get a &lt;code&gt;Unsupported major.minor version&lt;/code&gt; error. How can I fix it?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-get-a-unsupported-majorminor-version-error-how-can-i-fix-it&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-get-a-unsupported-majorminor-version-error-how-can-i-fix-it&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you get this error on a Java (or any JVM language) application, it means that your application requires a specific version of Java.&lt;/p&gt;
+&lt;p&gt;By default, Java 8 is used; but you can change it. Please head &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-gradle/#available-java-versions&#34; &gt;over here&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;h2&gt;I want SSH access to my server&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-want-ssh-access-to-my-server&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-want-ssh-access-to-my-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.&lt;/p&gt;
+&lt;p&gt;If however, you still need SSH access for debugging purposes, please have a look at &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/ssh-access/&#34; &gt;SSH access&lt;/a&gt;, but keep in mind that changes made on an instance are not persistent across deployments.&lt;/p&gt;
+&lt;h2&gt;I want to user Clever Cloud on my own premises, is that possible?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-want-to-user-clever-cloud-on-my-own-premises-is-that-possible&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-want-to-user-clever-cloud-on-my-own-premises-is-that-possible&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called &amp;ldquo;Clever Cloud On Premises&amp;rdquo; is avaialble upon request: you can send a mail to &lt;a href=&#34;mailto:sales@clever-cloud.com&#34; &gt;sales@clever-cloud.com&lt;/a&gt; or visit &lt;a href=&#34;https://www.clever-cloud.com/on-premises&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clever-cloud.com/on-premises&lt;/a&gt; for more infos.&lt;/p&gt;
+&lt;h2&gt;Where are my applications and add-ons located?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;where-are-my-applications-and-add-ons-located&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#where-are-my-applications-and-add-ons-located&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Applications and add-ons are located in either &lt;em&gt;Paris, France&lt;/em&gt; or &lt;em&gt;Montreal,
+Canada&lt;/em&gt;. You can choose where you want it to be when you create an application
+and a Clever Cloud add-on.&lt;/p&gt;
+&lt;p&gt;Clever Cloud is based in Nantes, France.&lt;/p&gt;
+&lt;h2&gt;I want to run Kubernetes on top of Clever CLoud, is that possible?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-want-to-run-kubernetes-on-top-of-clever-cloud-is-that-possible&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-want-to-run-kubernetes-on-top-of-clever-cloud-is-that-possible&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s currently not possible to use Kubernetes on our platform. It is however on our Roadmap.&lt;/p&gt;
+&lt;h2&gt;How to setup a firewall on Clever Cloud?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-setup-a-firewall-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-setup-a-firewall-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Specific firewall rules can be enabled on demand to the support or in case of attack.&lt;/p&gt;
+&lt;h2&gt;Can I &lt;code&gt;scp&lt;/code&gt; something in a VM&lt;span class=&#34;absolute -mt-20&#34; id=&#34;can-i-scp-something-in-a-vm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#can-i-scp-something-in-a-vm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You cannot &lt;code&gt;scp&lt;/code&gt; something to the VM, you can however easily &lt;code&gt;scp&lt;/code&gt; something from the VM to the outside.&lt;/p&gt;
+&lt;h2&gt;I need to convert something to PDF with &lt;code&gt;wkhtmltopdf&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-need-to-convert-something-to-pdf-with-wkhtmltopdf&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-need-to-convert-something-to-pdf-with-wkhtmltopdf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;wkhtmltopdf&lt;/code&gt; is available and fully functional but we deeply recommend to use use &lt;code&gt;chromium headless&lt;/code&gt; instead.&lt;/p&gt;
+&lt;h2&gt;What is the timezone used by my application/add-on?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-the-timezone-used-by-my-applicationadd-on&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-the-timezone-used-by-my-applicationadd-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.&lt;/p&gt;
+&lt;h2&gt;I received an email saying &amp;ldquo;Addon [my add-on] disk is nearly full&amp;rdquo;. What do I do?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;i-received-an-email-saying-addon-my-add-on-disk-is-nearly-full-what-do-i-do&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#i-received-an-email-saying-addon-my-add-on-disk-is-nearly-full-what-do-i-do&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A full disk can cause your database to crash or become unresponsive.
+We advise you to check how many free space there is.
+You might want to do one of the following:&lt;/p&gt;
+&lt;h3&gt;Remove data from your database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;remove-data-from-your-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#remove-data-from-your-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Only you know your data!&lt;/p&gt;
+&lt;p&gt;You can take a snapshot of your database and export the obsolete data to a cold storage.
+Then you can remove records from your database, reindex your tables and try to perform a VACUUM operation if the database software allows it.&lt;/p&gt;
+&lt;h3&gt;Migrate your add-on to a bigger plan&lt;span class=&#34;absolute -mt-20&#34; id=&#34;migrate-your-add-on-to-a-bigger-plan&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#migrate-your-add-on-to-a-bigger-plan&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;… Or to the same plan!&lt;/p&gt;
+&lt;p&gt;You can buy more disk space by migrating your add-on to a higher plan.
+If a VACUUM operation needs more disk that there is remaining, migrating to the same plan will clean up the file on disk and regain space.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://devcenter.clever-cloud.com/doc/find-help/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/find-help/troubleshooting/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;TROUBLESHOOT Mode&lt;span class=&#34;absolute -mt-20&#34; id=&#34;troubleshoot-mode&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#troubleshoot-mode&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sometimes, when something goes wrong during the deployment, it can be hard to find out what happens. The troubleshoot mode allows you to keep the instances up while you find out what has happened.
+Additionally, the troubleshoot modes increases the overall verbosity of the deployment process.&lt;/p&gt;
+&lt;p&gt;To enable the troubleshoot mode, simply add &lt;code&gt;CC_TROUBLESHOOT=true&lt;/code&gt; to your environment variables.&lt;/p&gt;
+&lt;p&gt;In addition to this, here are some common issues and how to fix them.&lt;/p&gt;
+&lt;h2&gt;File Persistence issues&lt;span class=&#34;absolute -mt-20&#34; id=&#34;file-persistence-issues&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#file-persistence-issues&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Why are my files disappearing after an application restart?”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Clever Cloud use Git to transfer your code and application&amp;rsquo;s assets from your local host to your scaler. If your application writes files on the local file system, those files are not committed: so you can&amp;rsquo;t save these files from a instance to an other.&lt;/p&gt;
+&lt;p&gt;For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That&amp;rsquo;s why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.&lt;/p&gt;
+&lt;p&gt;Follow the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;File System buckets documentation page&lt;/a&gt; to set up an FS Bucket for your application.&lt;/p&gt;
+&lt;h2&gt;Git issues&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-issues&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-issues&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;warning: You appear to have cloned an empty repository&lt;span class=&#34;absolute -mt-20&#34; id=&#34;warning-you-appear-to-have-cloned-an-empty-repository&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#warning-you-appear-to-have-cloned-an-empty-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;“Logs are telling me &amp;quot;warning: You appear to have cloned an empty repository&amp;quot;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This usually means that you created an application and asked to start it in the console without having pushed any source code to it before.&lt;/p&gt;
+&lt;p&gt;Under the Clever Cloud console, in your application&amp;rsquo;s information menu you will find a deployment url. Add it to your local repository git remotes with &lt;code&gt;$ git remote add clever &amp;lt;your deployment url&amp;gt;&lt;/code&gt;.
+You can now push your commits to the new remote with &lt;code&gt;$ git push clever master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It may also be because you are working on another branch than master and pushed this specific branch to Clever Cloud and you encountered this error:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: You tried to push to a custom branch.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: This is not allowed.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: error: hook declined to update refs/heads/&amp;lt;yourSpecificBranchName&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error: failed to push some refs to &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;yourSpecificBranchName&amp;gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
+What differs if you use another branch than master on your computer is that you need to explicitly tell Clever to consider the specific branch as the master one.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push &amp;lt;cleverRemote&amp;gt; &amp;lt;yourSpecificBranchName&amp;gt;:master&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If you called the Clever Cloud remote &lt;code&gt;clever&lt;/code&gt; and your local branch is &lt;code&gt;production&lt;/code&gt;, this becomes&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push clever production:master&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;fatal: Not a git repository (or any of the parent directories)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;fatal-not-a-git-repository-or-any-of-the-parent-directories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#fatal-not-a-git-repository-or-any-of-the-parent-directories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This means that the folder in which you are is not a git repository.
+In your console, at the root of your project, type &lt;code&gt;$ git init&lt;/code&gt;. This will create a new git repository for your folder locally. Link it to Clever Cloud by going under the Clever Cloud console. In your application&amp;rsquo;s information menu you will find a deployment url. Add it to your local repository git remotes with &lt;code&gt;$ git remote add clever &amp;lt;your deployment url&amp;gt;&lt;/code&gt;.
+You can add all your files with &lt;code&gt;$ git add .&lt;/code&gt;, then you need to commit the files with &lt;code&gt;$ git commit -m &amp;quot;&amp;lt;your commit message&amp;gt;&amp;quot;&lt;/code&gt;.
+You will finally push your code with &lt;code&gt;$ git push clever master&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;fatal: &amp;lsquo;clever&amp;rsquo; does not appear to be a git repository&lt;span class=&#34;absolute -mt-20&#34; id=&#34;fatal-clever-does-not-appear-to-be-a-git-repository&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#fatal-clever-does-not-appear-to-be-a-git-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&amp;ldquo;clever&amp;rdquo; is a name used in our examples to represent the Clever Cloud servers.
+In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git remote add clever &amp;lt;your-git-deployment-url&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You can find your deployment url under the Clever Cloud console in your application&amp;rsquo;s information menu.&lt;/p&gt;
+&lt;h3&gt;Fail to push to a repository&lt;span class=&#34;absolute -mt-20&#34; id=&#34;fail-to-push-to-a-repository&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#fail-to-push-to-a-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;It might be because your SSH agent is not properly configured. Please check &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/account/ssh-keys-managment/#i-maybe-have-ssh-keys-i-want-to-check&#34; &gt;the SSH documentation page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Node application failed to deploy silently&lt;span class=&#34;absolute -mt-20&#34; id=&#34;node-application-failed-to-deploy-silently&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#node-application-failed-to-deploy-silently&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;“My Node.js application is unable to start. Logs are not helping”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This kind of silent error may be due to the server port your have setup in your application. Make sure your application is listening on port 8080.
+Most of the time, this simple line could do the trick in your main JS file:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Listen on port 8080
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;listen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8080&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;My GitHub organization is not listed on the application creation page&lt;span class=&#34;absolute -mt-20&#34; id=&#34;my-github-organization-is-not-listed-on-the-application-creation-page&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#my-github-organization-is-not-listed-on-the-application-creation-page&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;GitHub does not give us access to organizations created or joined &lt;em&gt;after&lt;/em&gt; you&amp;rsquo;ve linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on &lt;a href=&#34;https://GitHub.com/settings/applications&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://GitHub.com/settings/applications&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can of course reach to &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt; if this page was not helpful enough.&lt;/p&gt;
+&lt;h2&gt;Websites are not accessible&lt;span class=&#34;absolute -mt-20&#34; id=&#34;websites-are-not-accessible&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#websites-are-not-accessible&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Check the status of the services on &lt;a href=&#34;https://www.clevercloudstatus.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clevercloudstatus.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

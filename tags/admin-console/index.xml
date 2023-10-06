@@ -1,0 +1,88 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – admin-console</title>
+    <link>https://devcenter.clever-cloud.com/tags/admin-console/</link>
+    <description>Recent content in admin-console on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/tags/admin-console/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Notifications management</title>
+      <link>https://devcenter.clever-cloud.com/doc/account/notifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/account/notifications/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The &lt;em&gt;Notifications&lt;/em&gt; service allows you to choose the events of interest to you
+and decide where to send corresponding notifications.&lt;/p&gt;
+&lt;h2&gt;E-mails&lt;span class=&#34;absolute -mt-20&#34; id=&#34;e-mails&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#e-mails&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Historically and by default, deployment result e-mails (deployment succeeded or
+failed) were always sent to the owners of an application, namely the user
+themselves or the organization&amp;rsquo;s members.&lt;/p&gt;
+&lt;p&gt;To disable the deployment result e-mails or restrict it to only some applications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go in &lt;strong&gt;Organization Manager&lt;/strong&gt; &amp;gt; &lt;strong&gt;Notifications&lt;/strong&gt; panel.&lt;/li&gt;
+&lt;li&gt;Delete the hook named &lt;em&gt;Default deployment result e-mails&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Add a new one.&lt;/li&gt;
+&lt;li&gt;Set it to your liking.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the future, this service will also handle credits warning notifications and
+others to come. You will be able to choose wether or not to receive an e-mail
+and/or for these events to be forwarded to a web service via a &lt;em&gt;webhook&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Webhooks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;webhooks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#webhooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;From Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A webhook in web development is a method of augmenting or altering the
+behavior of a web page, or web application, with custom callbacks. These
+callbacks may be maintained, modified, and managed by third-party users and
+developers who may not necessarily be affiliated with the originating website
+or application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In practical terms, this means that you can choose to receive all deployment
+result events on an endpoint of your application without having to listen to
+all events via the Websocket API. No more lost events and having to reconnect
+to the websocket if and when it fails.&lt;/p&gt;
+&lt;p&gt;To create a webhook stay on the &lt;strong&gt;Notifications&lt;/strong&gt; panel:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on &lt;strong&gt;Webhooks&lt;/strong&gt; button at the top of the Notifications window.&lt;/li&gt;
+&lt;li&gt;Add a new one.&lt;/li&gt;
+&lt;li&gt;Choose the URL which will receive the data through a &lt;em&gt;POST&lt;/em&gt; request and the format it will be sent as.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As of now, you can choose between 3 formats: &lt;em&gt;raw&lt;/em&gt;, &lt;em&gt;slack&lt;/em&gt; and &lt;em&gt;flowdock&lt;/em&gt;. The &lt;em&gt;raw&lt;/em&gt; format is the Clever Cloud internal representation of events, it is identical to events sent by the Websocket API. &lt;em&gt;Slack&lt;/em&gt; and &lt;em&gt;Flowdock&lt;/em&gt; formats are to be used with the
+corresponding services: &lt;a href=&#34;https://slack.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://www.flowdock.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Flowdock&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also choose which events you want and restrict notifications to a list
+of applications and addons.&lt;/p&gt;
+&lt;h3&gt;Example: Slack deployment results Webhook&lt;span class=&#34;absolute -mt-20&#34; id=&#34;example-slack-deployment-results-webhook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-slack-deployment-results-webhook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, you will have to create the &lt;em&gt;Incoming WebHooks&lt;/em&gt; integration on Slack:&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s go to the &lt;a href=&#34;https://slack.com/apps/manage/custom-integrations&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;custom integrations
+page&lt;/a&gt;, once there go to
+&lt;em&gt;Incoming WebHooks&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;You will find an &lt;em&gt;Add Configuration&lt;/em&gt; button on the left which will take you to
+the page where you need to configure the integration. You just need to select
+the channel where you want the notifications to be posted, then it will show
+you the Webhook URL, it starts with &lt;code&gt;https://hooks.slack.com/services/&lt;/code&gt;. Copy
+that URL.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s create the Webhook!&lt;/p&gt;
+&lt;p&gt;You should already have a tab opened on the Webhook creation page; if it&amp;rsquo;s not
+the case, follow the &lt;em&gt;Webhooks&lt;/em&gt; section above.&lt;/p&gt;
+&lt;p&gt;There, you just need to paste the URL you copied before in the Webhook URL
+field, then select &lt;em&gt;Result of deployments (success/fail)&lt;/em&gt; in the &lt;em&gt;Only send
+notification for these events&lt;/em&gt; menu.&lt;/p&gt;
+&lt;p&gt;You can now push your application or restart it and you will see
+the result of the deployment in your Slack channel.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

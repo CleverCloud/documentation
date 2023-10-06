@@ -1,0 +1,1676 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – PHP Tutorials</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/</link>
+    <description>Recent content in PHP Tutorials on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Deploy a Drupal website</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-drupal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-drupal/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://drupal.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Drupal&lt;/a&gt; applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Environment injection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;absolute -mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud, please refer to the full list and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, you will see &lt;strong&gt;Applications&lt;/strong&gt; screen, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application will automatically be linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link addons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it&amp;rsquo;s linked to your application. When it&amp;rsquo;s done, you will be able to access all of your add-on &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt; from the application. You can use them as &lt;code&gt;DATABASE_URL=$MYSQL_ADDON_URI&lt;/code&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Git specific Drupal instructions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-specific-drupal-instructions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-specific-drupal-instructions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We at this point assume you have downloaded the source files of drupal from &lt;a href=&#34;https://drupal.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;drupal.org&lt;/a&gt; and already have linked your MySQL add-on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open &lt;code&gt;.gitignore&lt;/code&gt; file and delete &lt;code&gt;sites/*/settings*.php&lt;/code&gt; line&lt;/li&gt;
+&lt;li&gt;Copy the file &lt;code&gt;sites/default/default.settings.php&lt;/code&gt; to &lt;code&gt;sites/default/settings.php&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;sites/default/settings.php&lt;/code&gt; and line 213, replace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$databases&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;by&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$databases&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;array&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s1&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;array&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;s1&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;k&#34;&gt;array&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;database&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_DB&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_USER&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;port&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_PORT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;driver&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;prefix&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Replace the line &lt;code&gt;$settings[&#39;hash_salt&#39;] = &#39;&#39;&lt;/code&gt; (&lt;code&gt;$drupal_hash_salt&lt;/code&gt; for Drupal 7) with &lt;code&gt;$settings[&#39;hash_salt&#39;] = getenv(&#39;DRUPAL_SALT&#39;)&lt;/code&gt;. You can generate salts with &lt;a href=&#34;https://www.passwordtool.hu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this link&lt;/a&gt;. Add a new &lt;code&gt;DRUPAL_SALT&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#configure-your-php-application&#34; &gt;environment variable&lt;/a&gt; to the application with the salt you have generated.&lt;/li&gt;
+&lt;li&gt;As mentioned in this &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;article&lt;/a&gt;, with Git deployments, files that are uploaded by users must be
+persisted in a File System Bucket. In order to do so, &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;add a File Bucket&lt;/a&gt; via the console.&lt;/li&gt;
+&lt;li&gt;At the root of your application, create a &lt;code&gt;clevercloud/buckets.json&lt;/code&gt; file (create a &lt;code&gt;clevercloud&lt;/code&gt;
+folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li&gt;
+&lt;li&gt;Copy the &lt;code&gt;bucket.json&lt;/code&gt; content from the FS bucket addon dashboard (make sure to edit the &lt;code&gt;folder&lt;/code&gt; field):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;bucket_host&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;bucket-id&amp;gt;-fsbucket.services.clever-cloud.com&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;folder&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/sites/default/files&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Send these Drupal files via Git.&lt;/li&gt;
+&lt;li&gt;When finished, get the url that you can find in the &lt;em&gt;domains&lt;/em&gt; panel in the left sidebar. Then open the following link:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;https://yourapplication.cleverapps.io/install.php&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Do not forget the &lt;strong&gt;/install.php&lt;/strong&gt; page otherwise installation will not happen.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; or an other FTP software installed in your machine.&lt;/p&gt;
+&lt;p&gt;When you have chosen to deploy your application via FTP at the application creation, a free &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; has been created with an ID matching your application&amp;rsquo;s ID.&lt;/p&gt;
+&lt;p&gt;You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Just follow the instructions of your FTP Software to send code to Clever Cloud.&lt;/p&gt;
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      An FTP application is automatically started once the application is created, even if no code has been sent.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Deploy a Laravel application</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Laravel applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your Laravel application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-laravel-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-laravel-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Configure &lt;code&gt;DocumentRoot&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-documentroot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-documentroot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a new &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; called &lt;code&gt;CC_WEBROOT&lt;/code&gt; and set &lt;code&gt;/public&lt;/code&gt; as its value.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-0&#34;&gt;clever env set CC_WEBROOT /public &lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Configure your application key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-application-key&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-application-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Locally, run &lt;code&gt;php artisan key:generate&lt;/code&gt;. It should output something like &lt;code&gt;base64:tQbFzxwUfOfKKqNlbjXuduwaUFDQUy+NL8DBfgb3o3s=&lt;/code&gt;. Copy this value and add an &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;APP_KEY&lt;/code&gt;, with this value.&lt;/p&gt;
+&lt;p&gt;Make sure &lt;code&gt;config/app.php&lt;/code&gt; contains the following line:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;APP_KEY&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Configure monolog to use syslog&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-monolog-to-use-syslog&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-monolog-to-use-syslog&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In your environment variables, add the &lt;code&gt;LOG_CHANNEL=syslog&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;. This will allow you to read your application logs directly from the console or the CLI tool.&lt;/p&gt;
+&lt;p&gt;Make sure &lt;code&gt;config/logging.php&lt;/code&gt; contains the following line:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;LOG_CHANNEL&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;stack&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Optional: configure the front-end build&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optionalconfigure-the-front-end-build&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optionalconfigure-the-front-end-build&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the &lt;code&gt;CC_POST_BUILD_HOOK&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For example, if you launch the build with &lt;code&gt;npm run prod&lt;/code&gt;: &lt;code&gt;CC_POST_BUILD_HOOK=npm install &amp;amp;&amp;amp; npm run prod&lt;/code&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Environment injection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;absolute -mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud, please refer to the full list and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, you will see &lt;strong&gt;Applications&lt;/strong&gt; screen, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application will automatically be linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link addons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have created a database add-on in the Clever Cloud console, and that it&amp;rsquo;s linked to your application. When it&amp;rsquo;s done, edit &lt;code&gt;config/database.php&lt;/code&gt; to set the correct environment variable names (&lt;code&gt;MYSQL_ADDON_xxx&lt;/code&gt; instead of &lt;code&gt;DB_xxx&lt;/code&gt; for a mysql database).&lt;/p&gt;
+&lt;p&gt;For instance for MySQL:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;   &lt;span class=&#34;s1&#34;&gt;&amp;#39;connections&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;driver&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;port&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_PORT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;3306&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;database&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_DB&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;forge&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_USER&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;forge&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MYSQL_ADDON_PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;unix_socket&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_SOCKET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;charset&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8mb4&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;collation&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8mb4_unicode_ci&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;prefix&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;strict&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s1&#34;&gt;&amp;#39;engine&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Optional: automatically run migrations upon deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optional-automatically-run-migrations-upon-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-automatically-run-migrations-upon-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to have database migrations automatically run during each deployment, add this hook instruction to the application&amp;rsquo;s &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt; &lt;code&gt;CC_POST_BUILD_HOOK=php artisan migrate --force&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Configure storage&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-storage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-storage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like &lt;code&gt;bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Create a new &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; called &lt;code&gt;CC_FS_BUCKET&lt;/code&gt; and set &lt;code&gt;/storage/app:&amp;lt;bucket-host&amp;gt;&lt;/code&gt; as its value.&lt;/p&gt;
+&lt;h3&gt;Optional: configure task scheduling&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optional-configure-task-scheduling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-configure-task-scheduling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your app uses &lt;a href=&#34;https://laravel.com/docs/scheduling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;task scheduling&lt;/a&gt;, you need to configure a cron to run the scheduling process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a &lt;code&gt;clevercloud/cron.json&lt;/code&gt; file in your project, containing:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;* * * * * $ROOT/clevercloud/cron.sh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This installs a cron that will run &lt;code&gt;clevercloud/cron.sh&lt;/code&gt; every minute.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Create a &lt;code&gt;clevercloud/cron.sh&lt;/code&gt; file in your project (with execute permissions), containing:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-5&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash -l
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -euo pipefail
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$APP_HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;php artisan schedule:run &amp;gt;&amp;gt; /dev/null 2&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-5&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Note: the PHP CLI process will use a &lt;code&gt;memory_limit&lt;/code&gt; configuration value that depends on the instance&amp;rsquo;s size (you can check it by connecting to your app using SSH and running &lt;code&gt;php -i&lt;/code&gt;).
+If one of your scheduled tasks needs to allocate more memory than this limit, the &lt;code&gt;php artisan schedule:run&lt;/code&gt; process will silently crash.
+To allow it to use more memory, you can call &lt;a href=&#34;https://www.php.net/manual/en/function.ini-set&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;ini_set()&lt;/code&gt;&lt;/a&gt; inside a &lt;code&gt;php_sapi_name() === &#39;cli&#39;&lt;/code&gt; condition from an early hook to the app&amp;rsquo;s lifecycle (like the &lt;code&gt;AppServiceProvider&lt;/code&gt;).
+See &lt;a href=&#34;https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this Gist&lt;/a&gt; for an example implementation.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; or an other FTP software installed in your machine.&lt;/p&gt;
+&lt;p&gt;When you have chosen to deploy your application via FTP at the application creation, a free &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; has been created with an ID matching your application&amp;rsquo;s ID.&lt;/p&gt;
+&lt;p&gt;You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Just follow the instructions of your FTP Software to send code to Clever Cloud.&lt;/p&gt;
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      An FTP application is automatically started once the application is created, even if no code has been sent.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Deploy a Symfony application</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-symfony/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-symfony/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This tutorial assumes that your application is based on Symfony &amp;gt;= 3.4 and Symfony Flex.
+Symfony applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your Symfony application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-symfony-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-symfony-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Configure &lt;code&gt;DocumentRoot&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-documentroot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-documentroot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a new &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; called &lt;code&gt;CC_WEBROOT&lt;/code&gt; and set &lt;code&gt;/public&lt;/code&gt; as its value &lt;code&gt;CC_WEBROOT=/public&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Configure your application secret&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-application-secret&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-application-secret&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;APP_SECRET&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; is required to generate CSRF tokens. By default for &lt;a href=&#34;https://GitHub.com/symfony/framework-bundle&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;symfony/framework-bundle&lt;/a&gt; generates one when it&amp;rsquo;s installed via &lt;a href=&#34;https://GitHub.com/symfony/flex&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Symfony Flex&lt;/a&gt;.
+If you do not use Flex, make sure to change your &lt;code&gt;APP_SECRET&lt;/code&gt;. The default value is &lt;code&gt;ThisTokenIsNotSoSecretChangeIt&lt;/code&gt;, &lt;strong&gt;change it&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Configure the Symfony environment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-the-symfony-environment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-the-symfony-environment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re using &lt;a href=&#34;https://symfony.com/blog/improvements-to-the-handling-of-env-files-for-all-symfony-versions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;.env&lt;/code&gt; file&lt;/a&gt; in your application, please don&amp;rsquo;t commit productions credentials in this file or in a &lt;code&gt;.env.production&lt;/code&gt; file. They are not meant to be committed alongside your applications. Clever Cloud allows you to inject environment in your app, so you can dynamically link databases and have separate environments with the same code base.&lt;/p&gt;
+&lt;p&gt;From the console, you can edit the application&amp;rsquo;s environment variables. Click on &amp;ldquo;expert mode&amp;rdquo;, you&amp;rsquo;ll be able to directly paste the contents of the &lt;code&gt;.env&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;From the CLI, it&amp;rsquo;s even simpler: &lt;code&gt;clever env import &amp;lt; .env&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You will also need to set the environment variable &lt;code&gt;APP_ENV&lt;/code&gt; to one of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dev&lt;/li&gt;
+&lt;li&gt;test&lt;/li&gt;
+&lt;li&gt;prod&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can anyway add your environment with any of the methods mentionned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;Setting up environment variables on Clever Cloud&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Configure monolog to get application logs&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-monolog-to-get-application-logs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-monolog-to-get-application-logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For your application logs to be collected and available in the console and CLI, you need to configure monolog to use its &lt;code&gt;error_log&lt;/code&gt; output.
+That does not mean that it will only output error level logs, you can set it to use any level, here is an exemple with the info level (and above):&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-0&#34;&gt;monolog:
+    handlers:
+        filter_for_errors:
+            type: fingers_crossed
+            action_level: error
+            handler: error_log_handler
+            excluded_404s:
+                 # regex: exclude all 404 errors from the logs
+                 - ^/
+
+        error_log_handler:
+            type: error_log
+            level: info&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Configure Symfony to work behind Clever Cloud reverse proxies&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-symfony-to-work-behind-clever-cloud-reverse-proxies&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-symfony-to-work-behind-clever-cloud-reverse-proxies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use the &lt;code&gt;CC_REVERSE_PROXY_IPS&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; that contains a list of trusted IP addresses, separated by commas.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-1&#34;&gt;# .env
+TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-2&#34;&gt;# config/packages/framework.yaml
+framework:
+    # ...
+    trusted_proxies: &amp;#39;%env(TRUSTED_PROXIES)%&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;For more information on configuring symfony behind a reverse proxy, you can read the &lt;a href=&#34;https://symfony.com/doc/current/deployment/proxies.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Apache 404 error after deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;apache-404-error-after-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#apache-404-error-after-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If everything looks fine and you still get 404 errors, remember that CleverCloud works with an Apache server, so you&amp;rsquo;ll need an htaccess in the  &lt;code&gt;/public&lt;/code&gt; directory.
+Symfony got your back on this: just run &lt;code&gt;composer require symfony/apache-pack&lt;/code&gt;. See &lt;a href=&#34;https://symfony.com/doc/current/setup/web_server_configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the official documentation of Symfony&lt;/a&gt; for more information.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Environment injection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;absolute -mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud, please refer to the full list and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, you will see &lt;strong&gt;Applications&lt;/strong&gt; screen, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application will automatically be linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link addons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have created a database add-on in the Clever Cloud console, and that it&amp;rsquo;s linked to your application. When it&amp;rsquo;s done, you will be able to access all of your add-on &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt; from the application.&lt;/p&gt;
+&lt;p&gt;Change the default &lt;code&gt;DATABASE_URL&lt;/code&gt; environment variable used in your &lt;code&gt;config/packages/doctrine.yaml&lt;/code&gt; to &lt;code&gt;&amp;lt;ADDON_PREFIX&amp;gt;_ADDON_URI&lt;/code&gt; where &lt;code&gt;&amp;lt;ADDON_PREFIX&amp;gt;&lt;/code&gt; depending on the database addon you created (e.g. &lt;code&gt;MYSQL&lt;/code&gt; for MySQL, &lt;code&gt;POSTGRESQL&lt;/code&gt; for PostgreSQL or &lt;code&gt;MONGODB&lt;/code&gt; for MongoDB) or be sure to use the environment variable in your production configuration file as explained in the &lt;a href=&#34;https://symfony.com/doc/current/configuration.html#configuration-environments&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;configuration documentation of Symfony&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Configure ProxySQL for MySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-proxysql-for-mysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-proxysql-for-mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To manage your connection pool towards your MySQL add-on, you can set-up a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/&#34; &gt;ProxySQL&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you have activated the ProxySQL (through the environment variable), a configuration example would be:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;dbal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;unix_socket&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Optional: run tasks after build step&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optional-run-tasks-after-build-step&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-run-tasks-after-build-step&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to have database migrations automatically run during each deployment, or frontend assets which must be built, you can write all these commands in &lt;code&gt;clevercloud/post_build.sh&lt;/code&gt; like this one:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-4&#34;&gt;# Database migrations
+./bin/console doctrine:migrations:migrate --no-interaction
+
+# Frontend build
+ yarn install &amp;amp;&amp;amp; yarn run build&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Make sure this file is executable:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-5&#34;&gt;chmod &amp;#43;x clevercloud/post_build.sh&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-5&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Then, add this to the application&amp;rsquo;s environment variables &lt;code&gt;CC_POST_BUILD_HOOK=./clevercloud/post_build.sh&lt;/code&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; or an other FTP software installed in your machine.&lt;/p&gt;
+&lt;p&gt;When you have chosen to deploy your application via FTP at the application creation, a free &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; has been created with an ID matching your application&amp;rsquo;s ID.&lt;/p&gt;
+&lt;p&gt;You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Just follow the instructions of your FTP Software to send code to Clever Cloud.&lt;/p&gt;
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      An FTP application is automatically started once the application is created, even if no code has been sent.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Deploy a WordPress website</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://WordPress.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WordPress&lt;/a&gt; applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.&lt;/p&gt;
+&lt;p&gt;First, you could check &lt;a href=&#34;https://devcenter.clever-cloud.com/deploy/application/php/php-apps/&#34; &gt;our global PHP documention&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose &amp;ldquo;FTP&amp;rdquo; when you create a new PHP app.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; or an other FTP software installed in your machine.&lt;/p&gt;
+&lt;p&gt;When you have chosen to deploy your application via FTP at the application creation, a free &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; has been created with an ID matching your application&amp;rsquo;s ID.&lt;/p&gt;
+&lt;p&gt;You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Just follow the instructions of your FTP Software to send code to Clever Cloud.&lt;/p&gt;
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      An FTP application is automatically started once the application is created, even if no code has been sent.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Configure your WordPress application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-wordpress-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-wordpress-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Configuration file&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configuration-file&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configuration-file&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rename the file &lt;code&gt;wp-config-sample.php&lt;/code&gt; to &lt;code&gt;wp-config.php&lt;/code&gt;. All the PHP code for the configuration should be written in this file.&lt;/p&gt;
+&lt;h3&gt;Configure your database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it&amp;rsquo;s linked to your application. When it&amp;rsquo;s done, you will be able to access all of your add-on &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt; from the application. You can use them, in &lt;code&gt;wp-config.php&lt;/code&gt;, as :&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_NAME&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_DB&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_USER&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_PASSWORD&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_HOST&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_PORT&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Excepting MySQL DEV plan, you have to figure the port out in &lt;code&gt;wp-config.php&lt;/code&gt; with the environment variable &lt;code&gt;MYSQL_ADDON_HOST&lt;/code&gt; because it is not the default port which is used.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;SSL Configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ssl-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ssl-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Since your website is behind a reverse proxy managed by Clever Cloud, you need to detect specific headers like &lt;strong&gt;X_FORWARDED_PROTO&lt;/strong&gt; or &lt;strong&gt;HTTP_X_FORWARDED_PROTO&lt;/strong&gt; to enable SSL.
+To do so edit &lt;code&gt;wp-config.php&lt;/code&gt; and add the following code above the last &lt;code&gt;require_once&lt;/code&gt; call.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;elseif&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Using a CDN as Cloudflare with SSL (avoid infinite loops)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;using-a-cdn-as-cloudflare-with-ssl-avoid-infinite-loops&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-a-cdn-as-cloudflare-with-ssl-avoid-infinite-loops&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;As with SSL configuration, you need to detect specific headers like &lt;strong&gt;X_FORWARDED_PROTO&lt;/strong&gt; or &lt;strong&gt;HTTP_X_FORWARDED_PROTO&lt;/strong&gt; to enable SSL. In this case, the chained proxies might concatenate those headers. As a result, headers values can look like
+&lt;code&gt;php [HTTP_X_FORWARDED_PROTO] =&amp;gt; https, https&lt;/code&gt;
+The previous code snippet would not enable SSL on the Clever Cloud application, resulting in mixed content or infinite loop.&lt;/p&gt;
+&lt;p&gt;In order to avoid this, you&amp;rsquo;ll need to add the following code snippet to your &lt;code&gt;wp-config.php&lt;/code&gt; file (it replaces the previous code snippet). Add the following code above the last &lt;code&gt;require_once&lt;/code&gt; call or at the beginning of the &lt;code&gt;wp-config.php&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;To do so edit &lt;code&gt;wp-config.php&lt;/code&gt; and add the following code above the last &lt;code&gt;require_once&lt;/code&gt; call.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;check_proto_set_ssl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$forwarded_protocols&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nv&#34;&gt;$secure&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;off&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$forwarded_protocols&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nv&#34;&gt;$previous&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;k&#34;&gt;foreach&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;explode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$forwarded_protocols&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$previous&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;				&lt;span class=&#34;nx&#34;&gt;trim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$previous&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;trim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$secure&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$secure&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;off&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nv&#34;&gt;$previous&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;trim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;HTTPS&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$secure&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nv&#34;&gt;$forwarded_protocols&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;HTTPS&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;HTTPS&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$secure&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;off&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nx&#34;&gt;check_proto_set_ssl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;elseif&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nx&#34;&gt;check_proto_set_ssl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Configure storage&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-storage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-storage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To store static files, you need to configure a FS Bucket.&lt;/p&gt;
+&lt;p&gt;Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like &lt;code&gt;bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To use the bucket in your wordpress app, there are 2 methods :&lt;/p&gt;
+&lt;h4&gt;Environment variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Create a new &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; called &lt;code&gt;CC_FS_BUCKET&lt;/code&gt; and set &lt;code&gt;/&amp;lt;path-to-static-files&amp;gt;:&amp;lt;bucket-host&amp;gt;&lt;/code&gt; as its value.&lt;/p&gt;
+&lt;p&gt;If you need to have many associated buckets with your app, you need to create en new encironment variable, with a suffix : &lt;code&gt;CC_FS_BUCKET_1&lt;/code&gt;, &lt;code&gt;CC_FS_BUCKET_2&lt;/code&gt;&amp;hellip;&lt;/p&gt;
+&lt;h4&gt;JSON&lt;span class=&#34;absolute -mt-20&#34; id=&#34;json&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#json&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;p&gt;This method is deprecated, we strongly recommend that you use environment variables.&lt;/p&gt;
+&lt;p&gt;If you want to switch from this method to the environment variables, you need to remove the &lt;code&gt;buckets.json&lt;/code&gt; file. Otherwise, the environment variables will be ignored.&lt;/p&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;At the root of your application, create a &lt;code&gt;clevercloud/buckets.json&lt;/code&gt; file (create a &lt;code&gt;clevercloud&lt;/code&gt; folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).
+Add the following lines in this file. Do not forget to replace &lt;code&gt;bucketId&lt;/code&gt; by the bucketId displayed in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;information&lt;/a&gt; section of the FS Bucket add-on.&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;bucket&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bucketId&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;folder&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/&amp;lt;path-to-static-files&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Install a WordPress plugin with Git&lt;span class=&#34;absolute -mt-20&#34; id=&#34;install-a-wordpress-plugin-with-git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#install-a-wordpress-plugin-with-git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you choose git deployment over FTP, the code of your plugins won&amp;rsquo;t be tracked by git. This implies that you will not be able to install plugins from the administration panel and persist them between two deployments.&lt;/p&gt;
+&lt;p&gt;To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the &lt;code&gt;/wp-content/plugins/&lt;/code&gt; folder, add the new files to git and then deploy your application.&lt;/p&gt;
+&lt;p&gt;The plugin will then be available in the &lt;strong&gt;Extensions&lt;/strong&gt; section of your admin panel and you will be able to manage it as others WordPress plugins.
+To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.&lt;/p&gt;
+&lt;h2&gt;Optimise and speed-up your WordPress&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optimise-and-speed-up-your-wordpress&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optimise-and-speed-up-your-wordpress&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There are multiple ways to optimise your WordPress and speed-up its response time.
+We provide different tools and software to help you in this task as &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cache/&#34; &gt;Varnish&lt;/a&gt; for the HTTP cache, and &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt; for the object caching.&lt;/p&gt;
+&lt;h3&gt;Performance plugins&lt;span class=&#34;absolute -mt-20&#34; id=&#34;performance-plugins&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#performance-plugins&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      We recommend you to &lt;strong&gt;not&lt;/strong&gt; use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.&lt;br /&gt;
+ We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis if you need performance optimisations on Clever Cloud.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;HTTP Cache with Varnish&lt;span class=&#34;absolute -mt-20&#34; id=&#34;http-cache-with-varnish&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#http-cache-with-varnish&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Enabling &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cache/&#34; &gt;Varnish&lt;/a&gt; for your application is very simple. All instances of PHP provide &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cache/&#34; &gt;Varnish&lt;/a&gt;, you just have to configure your application to use it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;To use Varnish in your application, you have to create a &lt;code&gt;varnish.vcl&lt;/code&gt; file in the &lt;code&gt;clevercloud&lt;/code&gt; folder of your application. If this folder doesn&amp;rsquo;t exist, create it in the &lt;strong&gt;root&lt;/strong&gt; of your project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy &lt;a href=&#34;https://raw.githubusercontent.com/CleverCloud/varnish-examples/master/wordpress.vcl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this code&lt;/a&gt; into the &lt;code&gt;varnish.vcl&lt;/code&gt; file you just created. It&amp;rsquo;ll configure Varnish to work with your WordPress.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, &amp;hellip; we recommend you to install the &lt;a href=&#34;https://WordPress.org/plugins/varnish-http-purge/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Varnish HTTP Purge&lt;/a&gt; plugin to your WordPress. It&amp;rsquo;ll purge the Varnish cache for you and give you the possibility to purge it manually.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you need to manually purge the Varnish cache, the plugin provides a &lt;strong&gt;Purge Varnish cache&lt;/strong&gt; button on the top bar of your website.&lt;/p&gt;
+&lt;h3&gt;Object cache with Redis&lt;span class=&#34;absolute -mt-20&#34; id=&#34;object-cache-with-redis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#object-cache-with-redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt; is an &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;add-on&lt;/a&gt; that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.&lt;/p&gt;
+&lt;p&gt;To enable &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt; for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by &lt;em&gt;W3 Total Cache&lt;/em&gt; for example). Make sure they aren&amp;rsquo;t enabled to avoid conflicts and performance problems.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Create a Redis add-on&lt;/a&gt; for your application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to your &lt;code&gt;wp-config.php&lt;/code&gt; file. Make sure they are &lt;strong&gt;before&lt;/strong&gt; the &lt;code&gt;require_once(ABSPATH . &#39;wp-settings.php&#39;);&lt;/code&gt; line, otherwise the Redis connexion will not work for your application and your application will return only white pages!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_CACHE_KEY_SALT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;tvm_&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_REDIS_CLIENT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;pecl&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_REDIS_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;REDIS_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_REDIS_PORT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;REDIS_PORT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_REDIS_PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;REDIS_PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://plugins.svn.WordPress.org/redis-cache/trunk/includes/object-cache.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this file&lt;/a&gt; who manages the connexion with Redis and WordPress and moves it to your &lt;code&gt;/wp-content&lt;/code&gt; folder. The file &lt;strong&gt;must&lt;/strong&gt; be named &lt;code&gt;object-cache.php&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Redis should now work with your WordPress.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Deploy WordPress the immutable way&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deploy-wordpress-the-immutable-way&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deploy-wordpress-the-immutable-way&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Discover a new way to deploy Wordpress using Composer with Bedrock&amp;rsquo;s boilerplate : &lt;a href=&#34;https://github.com/CleverCloud/clever-wordpress&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our tutorial on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;!-- 
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Environment injection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.
+
+ --&gt;
+&lt;!--
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;absolute -mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud, please refer to the full list and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, you will see &lt;strong&gt;Applications&lt;/strong&gt; screen, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application will automatically be linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link addons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+
+
+--&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -130,37 +130,12 @@ git remote add <remote-name> <your-git-deployment-url>
 ```bash
 git push <remote-name> <branch-name>:master
 ```
-{{% /details %}}
-
-{{< callout type="warning" >}}
-
-You can only push to the **master** branch for deployment.
-
-Trying to push to another branch will trigger an error.
-
-You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
-
-In order to push to **master** from a non-master local branch, use this syntax:
-
-```bash
-git push <remote-name> <branch-name>:master
-```
-
-{{< /callout >}}
 
 You can see your application **logs** in the dashboard to **monitor the deployment**.
 
-{{< callout type="error" >}}
+{{% /details %}}
 
-If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
 
-**Add your SSH key to your profile here:**
-
-   https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys
-   
-   The full tutorial about adding SSH key is here: [Adding SSH keys](/account/ssh-keys-managment)
-
-{{< /callout >}}
 
 {{% details title= " Deploy automatically from GitHub" closed="true" icon="github" %}}
 
@@ -179,8 +154,57 @@ However, if you set up an organization, create the repo under the aegis of the o
 
 {{% /details %}}
 
-{{< callout type="warning" >}}
+{{% details title="📂 FTP Deployment" closed="true" %}}
 
+You can deploy via FTP with PHP applications.  
+
+To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
+
+Deploy your application via FTP, create a [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) with an ID
+matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+
+[More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
+
+{{< icon "exclamation-circle" >}} An FTP application is automatically started once the application is created, even if no code has been sent.
+
+{{% /details %}}
+
+{{< callout type="warning" >}}
+FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
+
+{{< /callout >}}
+
+### Troubleshooting Deployments
+
+#### Git
+
+{{% details title= "Remote is asking for a password" closed="true" %}}
+
+If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
+
+**Add your SSH key to your profile here:**
+
+https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys
+   
+The full tutorial about adding SSH key is here: [Adding SSH keys](/account/ssh-keys-managment)
+
+{{% /details %}}
+
+{{% details title= "Git is unable to resolve the reference master" closed="true" %}}
+You are probably trying to push from another branch. Remeber that:
+
+- You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
+- You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
+- In order to push to **master** from a non-master local branch, use this syntax:
+
+```bash
+git push <remote-name> <branch-name>:master
+```
+{{% /details %}}
+
+#### GitHub
+
+{{% details title= "Does not appear to be a git repository" closed="true" %}}
 You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.
 
 If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :
@@ -194,31 +218,7 @@ Indeed, no git repository is created on Clever Cloud because the application is 
 
 If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.
 
-{{< /callout >}}
-
-{{% details title="📂 FTP Deployment" closed="true" %}}
-
-You can deploy via FTP with PHP applications.  
-
-To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
-
-Deploy your application via FTP, create a [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) with an ID
-matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
-
-[More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
-
 {{% /details %}}
-
-{{< callout type="info" >}}
-
-An FTP application is automatically started once the application is created, even if no code has been sent.
-
-{{< /callout >}}
-
-{{< callout type="warning" >}}
-FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
-
-{{< /callout >}}
 
 ## Manage your stack
 
@@ -275,11 +275,10 @@ There are two kinds of billing:
 {{% /details %}}
 
 {{< callout type="warning" >}}
-
-Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.
+Add-ons having a free plan are meant for testing purposes.
+They are for not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.
 
 Shared clusters may not be running the same version as dedicated instances.
-
 {{< /callout >}}
 
 {{< callout emoji="📊" >}}

@@ -48,3 +48,8 @@ h1, .content h1,
   margin-left: -41px;
     content: counter(step);
 }
+
+.bg-gray-100 {
+  background-color: #f1f0fb;
+}
+

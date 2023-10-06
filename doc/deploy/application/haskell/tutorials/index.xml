@@ -1,0 +1,78 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Haskell Tutorials</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/</link>
+    <description>Recent content in Haskell Tutorials on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Using ekg-statsd to push custom metrics</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In Haskell, metrics are usually gathered with &lt;a href=&#34;https://hackage.haskell.org/package/ekg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EKG&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The package &lt;code&gt;ekg-statsd&lt;/code&gt; allows to push EKG metrics over &lt;code&gt;statsd&lt;/code&gt;.
+EKG allows you to have access to GC metrics, make sure you compile your application with &lt;code&gt;&amp;quot;-with-rtsopts=-T -N&amp;quot;&lt;/code&gt; to enable profiling.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re using &lt;a href=&#34;https://hackage.haskell.org/package/warp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;warp&lt;/a&gt;, you can use &lt;code&gt;wai-middleware-metrics&lt;/code&gt; to report request distributions (request count, responses count aggregated by status code, responses latency distribution).&lt;/p&gt;
+&lt;h3&gt;Configure logs for your Haskell application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-logs-for-your-haskell-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-logs-for-your-haskell-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need the following packages in your &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#dependencies&#34; &gt;dependencies&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ekg-core&lt;/li&gt;
+&lt;li&gt;ekg-statsd&lt;/li&gt;
+&lt;li&gt;scotty&lt;/li&gt;
+&lt;li&gt;wai-middleware-metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then add this Hello World code to your application and modify it to fit your needs:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Control.Monad&lt;/span&gt;                   &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Network.Wai.Metrics&lt;/span&gt;             &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;WaiMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;metrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                  &lt;span class=&#34;nf&#34;&gt;registerWaiMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;System.Metrics&lt;/span&gt;                  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;newStore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;registerGcMetrics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;System.Remote.Monitoring.Statsd&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;defaultStatsdOptions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                  &lt;span class=&#34;nf&#34;&gt;forkStatsd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;nn&#34;&gt;Web.Scotty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;handleMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;::&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;WaiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;handleMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;newStore&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;registerGcMetrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;registerWaiMetrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;sendMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maybe&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;False&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lookupEnv&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;ENABLE_METRICS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sendMetrics&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;putStrLn&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;statsd reporting enabled&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;forkStatsd&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;defaultStatsdOptions&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;handleMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;scotty&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8080&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;middleware&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;metrics&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;waiMetrics&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;n&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Hello world&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

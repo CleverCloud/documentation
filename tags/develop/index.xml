@@ -1,0 +1,715 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – develop</title>
+    <link>https://devcenter.clever-cloud.com/tags/develop/</link>
+    <description>Recent content in develop on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/tags/develop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blue/Green Deployments</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Blue/Green deployment is a technique used in automated deployment of applications, databases and services.
+Its main goal is to minimize the downtime and risks of an application by running two identical environment instances, one called &lt;em&gt;Blue&lt;/em&gt; and the other one called &lt;em&gt;Green&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Contextual example&lt;span class=&#34;absolute -mt-20&#34; id=&#34;contextual-example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#contextual-example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s say you have a production environment called &lt;em&gt;Blue&lt;/em&gt;, running for instance an e-commerce application. Your customers are routed to this &lt;em&gt;Blue&lt;/em&gt; instance. In parallel, you will have a &amp;ldquo;sleeping clone&amp;rdquo; of &lt;em&gt;Blue&lt;/em&gt;, named &lt;em&gt;Green&lt;/em&gt;.
+Now let&amp;rsquo;s say you have achieved a new feature and want your customers to benefit of it. Using the &amp;ldquo;Blue/Green&amp;rdquo; technique, the new code will be used in &lt;em&gt;Green&lt;/em&gt;. Once &lt;em&gt;Green&lt;/em&gt; is ready, you will redirect your customers to &lt;em&gt;Green&lt;/em&gt;, and we will put &lt;em&gt;Blue&lt;/em&gt; in &amp;ldquo;sleeping mode&amp;rdquo;. When you will add new modification you will do it on &lt;em&gt;Blue&lt;/em&gt; this time, then on &lt;em&gt;Green&lt;/em&gt; again, and so on.&lt;/p&gt;
+&lt;p&gt;There are many benefits to this approach:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if &lt;em&gt;Green&lt;/em&gt; fails to deploy there will be no downtime for your customers or users as you will not use the broken &lt;em&gt;Green&lt;/em&gt; and stay on &amp;ldquo;Blue&amp;rdquo; until you fix your code so it can start&lt;/li&gt;
+&lt;li&gt;if you are not happy with the changes you added in &lt;em&gt;Green&lt;/em&gt;, you can &amp;ldquo;awake&amp;rdquo; &lt;em&gt;Blue&lt;/em&gt; and get back to the previous version easily by routing the traffic to it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;In the Clever Cloud context&lt;span class=&#34;absolute -mt-20&#34; id=&#34;in-the-clever-cloud-context&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#in-the-clever-cloud-context&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you push your source code to the Clever Cloud git remote, Clever Cloud will automatically use the &amp;ldquo;Blue/Green&amp;rdquo; pattern to apply your changes to your production.&lt;/p&gt;
+&lt;p&gt;A new VM, let&amp;rsquo;s call it &lt;em&gt;Blue&lt;/em&gt; is created. The deployment is successful when there&amp;rsquo;s no error in the build phase and the server answers on :8080/ with a non error code. And that&amp;rsquo;s it, you will use the new version on production within seconds.&lt;/p&gt;
+&lt;p&gt;If you push new changes, a &lt;em&gt;Green&lt;/em&gt; VM will be created.&lt;/p&gt;
+&lt;h4&gt;Deployment succeeds&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deployment-succeeds&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-succeeds&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If the deployment succeeds, &lt;em&gt;Green&lt;/em&gt; will be the version in production and &lt;em&gt;Blue&lt;/em&gt; will be turned off minutes later.
+This way, if you are not happy with the changes you made, just go the Clever Cloud web console, select your application and in the &lt;strong&gt;Overview&lt;/strong&gt; menu, click the &amp;ldquo;Start last pushed commit&amp;rdquo; button, this will &amp;ldquo;awake&amp;rdquo; &lt;em&gt;Blue&lt;/em&gt; and reverse your changes in production within a few minutes.&lt;/p&gt;
+&lt;h4&gt;Deployment fails&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deployment-fails&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-fails&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If there is an error during the build phase or if the &lt;em&gt;Green&lt;/em&gt; servers answers an error code on :8080/, we will alert you by email and &lt;em&gt;Blue&lt;/em&gt; will remain the production server.&lt;/p&gt;
+&lt;p&gt;Next time you push code a new &lt;em&gt;Green&lt;/em&gt; VM will be created, then a &lt;em&gt;Blue&lt;/em&gt; one, and so on.&lt;/p&gt;
+&lt;p&gt;You also may see some deployments that you haven&amp;rsquo;t triggered in your logs. It is because Clever Cloud uses &amp;ldquo;Blue/Green&amp;rdquo; pattern to update VMs, either security patches or versions updates.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Cloud Storage</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</guid>
+      <description>
+        
+        
+        &lt;p&gt;You want to store files but you can&amp;rsquo;t decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.&lt;/p&gt;
+&lt;p&gt;Clever Cloud uses immutable disposable VMs.
+Every time you redeploy your application, you lose the old instances and all the files stored on their filesystems.
+If you want to avoid that, you have to store your important files outside of your instances.&lt;/p&gt;
+&lt;p&gt;Cellar and FS Buckets both allow you to store files outside of your instances for later use. But there are some differences between them.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;If you are coding a new project and need to store files, use Cellar. It will be cheaper and give you way more flexibility.&amp;lt;br /&amp;gt;
+If your want to run a WordPress site or some OSS PHP application and are in a hurry, you may not get to choose: use FS Buckets.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;What is FS Bucket?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-fs-bucket&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-fs-bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configuring FS Buckets in your application will give you a folder &lt;em&gt;in your filesystem&lt;/em&gt;. This folder is shared between instances/applications. It&amp;rsquo;s mounted over the network. As for any network filesystem there are upsides and downsides.&lt;/p&gt;
+&lt;h3&gt;Upsides&lt;span class=&#34;absolute -mt-20&#34; id=&#34;upsides&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#upsides&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your application manages files on a filesystem, you don&amp;rsquo;t have to change anything.
+Just setup your FS Bucket to mount on a given folder, setup your application to write in that folder and you are good to go!&lt;/p&gt;
+&lt;p&gt;Since the folder is mounted over the network, multiple instances/applications can read it like any file on the system. At the same time.&lt;/p&gt;
+&lt;h3&gt;Downsides&lt;span class=&#34;absolute -mt-20&#34; id=&#34;downsides&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#downsides&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Since it&amp;rsquo;s a file on a filesystem, you can be tempted to store a SQLite (or equivalent) database in it. This would be wrong.
+If many instances try to write in it at the same time, you might end up with a corrupted database.&lt;/p&gt;
+&lt;p&gt;For the same reason, anything accessing a file in write at the same time might corrupt the data you put in it.&lt;/p&gt;
+&lt;h2&gt;What is Cellar?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-cellar&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-cellar&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cellar is an Amazon S3 API implementation using &lt;a href=&#34;https://ceph.com/ceph-storage/object-storage/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ceph Rados Gateway&lt;/a&gt;.
+It provides an HTTP API that can be used with any S3 API Client.
+Clients exist for a lot of languages.
+You can use any S3 Client, from the official Amazon ones to the community ones.&lt;/p&gt;
+&lt;p&gt;If you already use S3, you will be in your element.&lt;/p&gt;
+&lt;p&gt;To store a file, issue a PUT HTTP request to Cellar&amp;rsquo;s API.
+To get a file, issue a GET request to the API.
+You need secret and public keys to authenticate your requests.
+You can manage ACLs and generate signed URLs with an expiration date.&lt;/p&gt;
+&lt;h3&gt;Upsides&lt;span class=&#34;absolute -mt-20&#34; id=&#34;upsides-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#upsides-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can move the file uploads to your client entirely.
+Just give it a temporary signed URL (generated by your backend) and it will be able to upload directly to Cellar.
+That way, you don&amp;rsquo;t have to handle the receive-and-upload part on the server side.&lt;/p&gt;
+&lt;p&gt;Your files are stored in a secure way outside of your apps FS. So an attacker will have a harder time to find it.&lt;/p&gt;
+&lt;p&gt;You can delegate the authorization part to Cellar by giving signed urls for file downloads and uploads.&lt;/p&gt;
+&lt;p&gt;The files are stored with a replication factor of 3, meaning that there are 2 replicas in addition of the original data.&lt;/p&gt;
+&lt;h3&gt;Downsides&lt;span class=&#34;absolute -mt-20&#34; id=&#34;downsides-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#downsides-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When deploying an application you did not write, file uploads may already be developed using local files. Like in WordPress, PrestaShop, etc. So you would have to use plugins or hack it to upload to Cellar.&lt;/p&gt;
+&lt;h2&gt;What should I choose?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-should-i-choose&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-should-i-choose&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Well, you read the upsides and downsides of both.
+You may understand where our preference goes, by now!
+If you can, use Cellar.
+S3 Client library exist in almost all languages.
+It&amp;rsquo;s &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;cheaper&lt;/a&gt;.
+It&amp;rsquo;s more resilient to hardware failures.
+It gives you free processing power: when using files on your filesystem, you have to process them yourself.
+When using Cellar, you can delegate the handling of the upload to Cellar itself.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t have a choice, use whatever you have to use.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Deployment Hooks</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/build-hooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/build-hooks/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Deployment lifecycle&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deployment-lifecycle&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-lifecycle&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;An application deployed on Clever Cloud goes through two distinct phases. The
+&lt;code&gt;build&lt;/code&gt; phase where dependencies are fetched and the application built, and the
+&lt;code&gt;run&lt;/code&gt; phase where the application is launched. Hooks allow you to run specific
+tasks before and after those phases.&lt;/p&gt;
+&lt;p&gt;The available hooks are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pre Build&lt;/li&gt;
+&lt;li&gt;Post Build&lt;/li&gt;
+&lt;li&gt;Pre Run&lt;/li&gt;
+&lt;li&gt;On Run Succeeded&lt;/li&gt;
+&lt;li&gt;On Run Failed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Setting hooks up&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-hooks-up&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-hooks-up&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hooks are set up through &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment
+variables&lt;/a&gt;.
+To set up a Post Build hook, you need to define a &lt;code&gt;CC_POST_BUILD_HOOK&lt;/code&gt;
+variable:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CC_POST_BUILD_HOOK=echo &amp;quot;it works!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can directly put commands in the hook. Hooks have access to the environnement variables as well as a working Node.js installation.&lt;/p&gt;
+&lt;p&gt;If you have complex things to do, the best way is to put the logic in a bash script &lt;em&gt;(dont forget to make it executable!)&lt;/em&gt;
+To use it, set the hook you want to trigger to the path of your script, relative to the root path of your repository.
+E.g. if your script is in a clevercloud folder at the root of your project then you can define &lt;code&gt;CC_POST_BUILD_HOOK=./clevercloud/script.sh&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Can&amp;rsquo;t I use &lt;code&gt;$BUILD_TOOL&lt;/code&gt;?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;cant-i-use-build_tool&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cant-i-use-build_tool&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hooks are designed as an escape hatch for steps you can&amp;rsquo;t integrate properly in
+your build tool. In many case, you can (and you should) integrate as much as
+possible with your build tool, but sometimes it&amp;rsquo;s not possible. Another reason
+to use hooks is to integrate Clever Cloud-specific tasks which don&amp;rsquo;t belong in
+the project&amp;rsquo;s build configuration.&lt;/p&gt;
+&lt;h2&gt;Exceptions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;exceptions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#exceptions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some application types do not have hooks support or only some of them.&lt;/p&gt;
+&lt;h3&gt;Docker&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For Docker, because you can do pretty much anything yourself inside your Dockerfile, only the following hooks are available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CC_RUN_SUCCEEDED_HOOK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you need support for other hooks, please reach out to our support and explain your use case.&lt;/p&gt;
+&lt;h2&gt;Hooks types&lt;span class=&#34;absolute -mt-20&#34; id=&#34;hooks-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hooks-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Pre Build (&lt;code&gt;CC_PRE_BUILD_HOOK&lt;/code&gt;)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pre-build-cc_pre_build_hook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pre-build-cc_pre_build_hook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This hook is ran before the dependencies are fetched. If it fails, the
+deployment fails.&lt;/p&gt;
+&lt;p&gt;This hook is ran every time.&lt;/p&gt;
+&lt;p&gt;This hook is perfect for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;build tool configuration (eg setting up a &lt;code&gt;.npmrc&lt;/code&gt; with private tokens)&lt;/li&gt;
+&lt;li&gt;extra dependencies fetching (eg &lt;code&gt;npm install&lt;/code&gt; for frontend deps)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Post Build (&lt;code&gt;CC_POST_BUILD_HOOK&lt;/code&gt;)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;post-build-cc_post_build_hook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#post-build-cc_post_build_hook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This hook is ran after the project is built, and before the cache archive is
+generated. If it fails, the deployment fails.&lt;/p&gt;
+&lt;p&gt;This hook is not ran during deployments from cache.&lt;/p&gt;
+&lt;p&gt;This hook is perfect for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;extra build steps that you want to cache (eg bundling your frontend assets)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Pre Run (&lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt;)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pre-run-cc_pre_run_hook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pre-run-cc_pre_run_hook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This hook is ran before the application is started, but after the cache archive
+has been generated. If it fails, the deployment fails.&lt;/p&gt;
+&lt;p&gt;This hook is ran every time.&lt;/p&gt;
+&lt;p&gt;This hook is perfect for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preparation tasks that need to be ran every time (eg a database migration check)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Run Succeeded (&lt;code&gt;CC_RUN_SUCCEEDED_HOOK&lt;/code&gt;) or Failed (&lt;code&gt;CC_RUN_FAILED_HOOK&lt;/code&gt;)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;These hooks are ran once the application has started (or has failed starting).
+Their failure doesn&amp;rsquo;t cause the deployment to fail.&lt;/p&gt;
+&lt;p&gt;One of these hooks is ran every time.&lt;/p&gt;
+&lt;p&gt;These hooks are perfect for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;notifications&lt;/li&gt;
+&lt;li&gt;clean-up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;code&gt;hooks.postDeploy&lt;/code&gt; is deprecated&lt;span class=&#34;absolute -mt-20&#34; id=&#34;hookspostdeploy-is-deprecated&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hookspostdeploy-is-deprecated&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;These hooks replace the older &lt;code&gt;postDeploy&lt;/code&gt; hook, which is now deprecated.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Environment variables</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/env-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/env-variables/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Clever Cloud allows you to define environment variables that will be
+injected in your application&amp;rsquo;s environment.&lt;/p&gt;
+&lt;h2&gt;How are variables defined?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-are-variables-defined&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-are-variables-defined&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Variables are defined on a per-application basis. They are defined in four ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;By provisioned add-ons linked to applications. The variables names
+are listed in the add-on&amp;rsquo;s information panel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By linked applications with exposed configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By adding variables yourself in the &amp;ldquo;Environment variables&amp;rdquo; panel of your application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some environment variables are added automatically for each application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please note that if you define or modify environment variables, you will
+need to redeploy your application to make it use the new variables.&lt;/p&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variable reference&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Special environment variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;special-environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#special-environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some variables are injected to the environment of your application when you deploy it,
+to inform you about the current context of your application and about the application itself.&lt;/p&gt;
+&lt;p&gt;They can be accessed as classic environment variables.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;APP_ID&lt;/code&gt;: the ID of the application. Each application has a unique identifier used to
+identify it in our system. This ID is the same than the one you can find in the information
+section of your application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;INSTANCE_ID&lt;/code&gt;: the ID of the current instance (scaler) of your application. It&amp;rsquo;s unique for each
+instance of your application and changes every time you deploy it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;INSTANCE_TYPE&lt;/code&gt;: The type of the instance (scaler). Its value can be &lt;code&gt;build&lt;/code&gt; or &lt;code&gt;production&lt;/code&gt;.
+&lt;code&gt;build&lt;/code&gt; is when your application is being built on a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;dedicated instance&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;COMMIT_ID&lt;/code&gt;: the commit ID used as a base to deploy your application. As we remove
+the &lt;code&gt;.git&lt;/code&gt; directory before the deployment (to avoid security problems), it can be used
+to know which version of your application is running on the server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;APP_HOME&lt;/code&gt;: The absolute path of your application on the server. Can be used to
+create absolute links in your application (e.g. &lt;code&gt;${APP_HOME}/foo/bar&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;CC_PRETTY_INSTANCE_NAME&lt;/code&gt;: A random string name generated for each instance using pokemon names.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;INSTANCE_NUMBER&lt;/code&gt;: See below&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What is the &lt;code&gt;INSTANCE_NUMBER&lt;/code&gt; variable used for?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-the-instance_number-variable-used-for&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-the-instance_number-variable-used-for&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This variable allows your application to differentiate each running node on the application level.&lt;/p&gt;
+&lt;p&gt;It will contain a different number for each instance of your application.&lt;/p&gt;
+&lt;p&gt;For example, if three instances are running, it will contain &lt;code&gt;0&lt;/code&gt; for the first,
+&lt;code&gt;1&lt;/code&gt; for the second and &lt;code&gt;2&lt;/code&gt; for the third.
+It&amp;rsquo;s handy if you want to only run crons on 1 instance (e.g. only on instance 0).&lt;/p&gt;
+&lt;h2&gt;Settings you can define using environment variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;settings-you-can-define-using-environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#settings-you-can-define-using-environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We use environment variables for some settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;IGNORE_FROM_BUILDCACHE&lt;/code&gt;: allows you to specify paths to ignore when the build
+cache archive is created. Must be relative to your application root.
+(e.g. &lt;code&gt;foo/bar:foo/baz&lt;/code&gt; where &lt;code&gt;bar&lt;/code&gt; or &lt;code&gt;baz&lt;/code&gt; can be either a directory or a file)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;CC_OVERRIDE_BUILDCACHE&lt;/code&gt;: allows you to specify paths that will be in the build cache.
+Only those files/directories will be cached
+(e.g. &lt;code&gt;foo/bar:foo/baz&lt;/code&gt; where &lt;code&gt;bar&lt;/code&gt; or &lt;code&gt;baz&lt;/code&gt; can be either a directory or a file).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Environment variables rules and formats&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-variables-rules-and-formats&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-variables-rules-and-formats&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You will find below a list of rules applied to our environment variables keys and
+examples of the formats available on our different modes.&lt;/p&gt;
+&lt;h3&gt;Rules&lt;span class=&#34;absolute -mt-20&#34; id=&#34;rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Letters (ASCII only, upper and lower case)
+&lt;ul&gt;
+&lt;li&gt;Valid: &lt;code&gt;user_id&lt;/code&gt;, &lt;code&gt;USER_ID&lt;/code&gt;, &lt;code&gt;UsERId&lt;/code&gt;, &lt;code&gt;userid&lt;/code&gt;, &lt;code&gt;USERID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Invalid: &lt;code&gt;user_id?&lt;/code&gt;, &lt;code&gt;?userid&lt;/code&gt;, &lt;code&gt;user.id&lt;/code&gt;, &lt;code&gt;user id&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Digits (but not for first character)
+&lt;ul&gt;
+&lt;li&gt;Valid: &lt;code&gt;user2id&lt;/code&gt;, &lt;code&gt;userid42&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Invalid: &lt;code&gt;2userid&lt;/code&gt;, &lt;code&gt;1user_Id&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Underscores
+&lt;ul&gt;
+&lt;li&gt;Valid: &lt;code&gt;user_id&lt;/code&gt;, &lt;code&gt;all_user_id&lt;/code&gt;, &lt;code&gt;_user_id&lt;/code&gt;, &lt;code&gt;_user_id__&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Everything else is not allowed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Java properties rules exception&lt;span class=&#34;absolute -mt-20&#34; id=&#34;java-properties-rules-exception&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#java-properties-rules-exception&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In case of a Java application you can also use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dashes
+&lt;ul&gt;
+&lt;li&gt;Valid: &lt;code&gt;spring-boot&lt;/code&gt;, &lt;code&gt;spring-boot-database&lt;/code&gt;, &lt;code&gt;--spring-boot&lt;/code&gt;, &lt;code&gt;--spring&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dots
+&lt;ul&gt;
+&lt;li&gt;Valid: &lt;code&gt;spring.boot&lt;/code&gt;, &lt;code&gt;spring.datasource.url&lt;/code&gt;, &lt;code&gt;.spring.url&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Format&lt;span class=&#34;absolute -mt-20&#34; id=&#34;format&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#format&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Here are some formats that you can use when editing your variables
+in our &lt;a href=&#34;#expert&#34; &gt;&amp;ldquo;expert&amp;rdquo;&lt;/a&gt; and &lt;a href=&#34;#json&#34; &gt;JSON&lt;/a&gt; modes.&lt;/p&gt;
+&lt;h4&gt;Expert&lt;span class=&#34;absolute -mt-20&#34; id=&#34;expert&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#expert&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The format of an expert variable is &lt;code&gt;VAR_NAME=&amp;quot;VAR_VALUE&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here are some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Multiple variables examples:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;EMPTY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MULTI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;line one
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;line two
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;line three&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ONE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;value ONE&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;TWO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;value TWO&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multiline:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MULTI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;line one
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;line two
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;line three&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Empty value:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;EMPTY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;JSON&lt;span class=&#34;absolute -mt-20&#34; id=&#34;json&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#json&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The format of a JSON variable is &lt;code&gt;{ &amp;quot;name&amp;quot;: &amp;quot;VAR_NAME&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;VAR_VALUE&amp;quot; }&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Note: You must put these variables in an array (see the multiple variable example to see how it goes).&lt;/p&gt;
+&lt;p&gt;Here are some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Multiline:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;MULTI&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;line one\nline two\nline three&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Empty value:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;EMPTY&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multiple variables examples:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-5&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;EMPTY&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;MULTI&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;line one\nline two\nline three&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ONE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;value ONE&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;TWO&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;value TWO&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-5&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How do I use these variables?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-do-i-use-these-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-do-i-use-these-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Depending on the type of your application, the code will differ.
+You can find more information in the documentation pages related to your application type.&lt;/p&gt;
+&lt;p&gt;Here is a non-exhaustive summary:&lt;/p&gt;
+
+
+
+&lt;div class=&#34;table &#34; role=&#34;alert&#34;&gt;
+    &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Language&lt;/th&gt;
+&lt;th&gt;Usage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/#environment-injection.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;os.Getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Haskell&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Os.Getenv[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;process.env[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;System.getProperties().getProperty(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt; or &lt;code&gt;${MY_VAR}&lt;/code&gt; in &lt;code&gt;application.conf&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;os.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ENV[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;std::env::var(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.NET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;System.Environment.GetEnvironmentVariable(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Please note that the variables are available at build time
+for runtimes that support build time instructions, such as
+&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;,
+&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt;,
+&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;
+or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Load testing</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Performing a performance test is the best way to determine how your application will perform under heavy load.&lt;/p&gt;
+&lt;p&gt;In general, these tests make it possible to identify:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the maximum number of concurrent users&lt;/li&gt;
+&lt;li&gt;whether the current resources are sufficient to operate your application in good conditions&lt;/li&gt;
+&lt;li&gt;and the maximum operational capacity of your application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Considerations to take into account&lt;span class=&#34;absolute -mt-20&#34; id=&#34;considerations-to-take-into-account&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#considerations-to-take-into-account&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In the event that you use public front-ends, it is necessary to notify the support. Indeed, depending on the nature of the load, it is possible that a form of network blocking is performed by our teams if they are not notified.&lt;/p&gt;
+&lt;p&gt;In case you have dedicated frontends, note that too much load could impact your other applications behind this frontend. Because in general, the amount of private front-ends is lower than the number of public front-ends (new public front-ends are added on a regular basis).&lt;/p&gt;
+&lt;h2&gt;Why carry out these tests&lt;span class=&#34;absolute -mt-20&#34; id=&#34;why-carry-out-these-tests&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#why-carry-out-these-tests&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Performing these tests will allow you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;to have perspective on the performance and stability of your infrastructure.&lt;/li&gt;
+&lt;li&gt;to be able to identify bottlenecks in particular stress scenarios&lt;/li&gt;
+&lt;li&gt;to identify and remove any weaknesses in architectures via supervision and performance management strategies and increase scalability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The determining elements are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The response time of your transactions (poorly optimized requests, etc.)&lt;/li&gt;
+&lt;li&gt;The performance of the application (single-threaded application, expectations of external services, generation of logs in a file, etc.)&lt;/li&gt;
+&lt;li&gt;The performance of managed services such as databases (lack of indexes, unnecessary iterations, etc.)&lt;/li&gt;
+&lt;li&gt;Software design in general&lt;/li&gt;
+&lt;li&gt;Hardware limitations such as CPU, RAM, network, etc.&lt;/li&gt;
+&lt;li&gt;bad middleware configurations (databases, server, etc.)&lt;/li&gt;
+&lt;li&gt;The response time between the client and the application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Online and local load tools&lt;span class=&#34;absolute -mt-20&#34; id=&#34;online-and-local-load-tools&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#online-and-local-load-tools&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Choosing a load-testing solution will depend on several factors. If simplicity and speed are the most important factors, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost,  you may want to use dedicated, local solutions.&lt;/p&gt;
+&lt;h3&gt;Online&lt;span class=&#34;absolute -mt-20&#34; id=&#34;online&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#online&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Online services are available to perform your tests. Most offer typical user journey scenarios to allow you to simulate a user:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://k6.io/cloud&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://octoperf.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Octoperf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loader.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Loader.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Local, with open-source alternatives&lt;span class=&#34;absolute -mt-20&#34; id=&#34;local-with-open-source-alternatives&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#local-with-open-source-alternatives&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some open source services to be installed on an infrastructure (workstation or IaaS in the best case) are also available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gatling.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gatling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fcsonline/drill&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Drill&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://locust.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Locust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmeter.apache.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jmeter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>The Twelve-Factor App</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The twelve-factor app is a methodology for writing software delivered as a service, which is what you are doing by pushing your code to Clever Cloud and for container deployment in general. By writing code following these principles, your application will be cloud ready by design.&lt;/p&gt;
+&lt;p&gt;As a lot has already been written on the subject, we strongly recommend that you read some of the following links to begin with this methodology:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://12factor.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://12factor.net/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy learning !&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Workers</title>
+      <link>https://devcenter.clever-cloud.com/doc/develop/workers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/develop/workers/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Workers&lt;span class=&#34;absolute -mt-20&#34; id=&#34;workers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#workers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      Note that workers are not available for docker applications.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You can run background tasks running in parallel of your application. They will be restarted automatically on error.
+Those are especially useful for environments where you can&amp;rsquo;t have long-running processes such as PHP, Ruby or Python.&lt;/p&gt;
+&lt;p&gt;The workers run in the same environment as your application. They are launched as services by systemd, in the application&amp;rsquo;s directory.&lt;/p&gt;
+&lt;p&gt;All you need to do is add one (or several) environment variables as such:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_WORKER_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my-awesome-worker&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_WORKER_COMMAND_0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my-awesome-worker
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_WORKER_COMMAND_1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my-other-worker&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;By default, workers will be restarted if they exit with an error code. You can customise this behavior by setting the
+environment variable &lt;code&gt;CC_WORKER_RESTART&lt;/code&gt; to one of &lt;code&gt;always&lt;/code&gt;, &lt;code&gt;on-failure&lt;/code&gt; (the default) or &lt;code&gt;no&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can define a delay to restart your worker with the environement variable &lt;code&gt;CC_WORKER_RESTART_DELAY&lt;/code&gt;, the value is in seconds with a default value of &lt;code&gt;1&lt;/code&gt;. It will apply to all registered workers.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      If the &lt;code&gt;CC_WORKER_RESTART_DELAY&lt;/code&gt; value is too low and the restart policy is set to &lt;code&gt;always&lt;/code&gt;, your worker might hit the restart burst limit, which may prevent your worker from being correctly restarted.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If you want to have a restart delay less than 1 second and expect your script to restart multiple times in a very short time, please let us know on our support.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

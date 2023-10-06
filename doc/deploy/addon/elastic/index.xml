@@ -1,0 +1,187 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Elastic Stack</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/</link>
+    <description>Recent content in Elastic Stack on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Customize Kibana</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/kibana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/kibana/</guid>
+      <description>
+        
+        
+        
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      To deploy a custom Kibana, you need to ask Clever Cloud Support team to enable superuser permissions for your user.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.elastic.co/fr/kibana/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kibana&lt;/a&gt; is the web interface available on the Clever Cloud&amp;rsquo;s platform to manage your Elastic Stack.&lt;/p&gt;
+&lt;p&gt;By default, you can enable Kibana when you create an Elastic Stack add-on.&lt;/p&gt;
+&lt;h2&gt;Enable Kibana with your Elastic Stack add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;enable-kibana-with-your-elastic-stack-add-on&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-kibana-with-your-elastic-stack-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kibana can be enabled at the add-on creation. Choose &amp;ldquo;Create an add-on&amp;rdquo; &amp;gt; &amp;ldquo;Elastic Stack&amp;rdquo;. Select your plan, applications which will use the Elastic Stack and name the add-on. On the &amp;ldquo;options&amp;rdquo; step, enable Kibana. Then, confirm the options and your add-on will start with a Kibana instance.&lt;/p&gt;
+&lt;h3&gt;Customize the Kibana configuration file&lt;span class=&#34;absolute -mt-20&#34; id=&#34;customize-the-kibana-configuration-file&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#customize-the-kibana-configuration-file&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The configuration is set with this deployment hook :
+&lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt; = &lt;code&gt;curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/&amp;lt;your elastic version&amp;gt; | sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To modify this default configuration (&lt;a href=&#34;https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuration file for Kibana 8.3.3&lt;/a&gt;), you need to host your own config file (we strongly recommend &lt;a href=&#34;https://devcenter.clever-cloud.com/deploy/addon/cellar&#34; &gt;Cellar&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Check other available configuration file on &lt;a href=&#34;https://github.com/CleverCloud/custom-kibana-config&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Disable SSO authentication&lt;span class=&#34;absolute -mt-20&#34; id=&#34;disable-sso-authentication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#disable-sso-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To disable SSO authentication and use elastic users instead, you need to modify Kibana&amp;rsquo;s configuration file and &lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt; in environment variables.&lt;/p&gt;
+&lt;p&gt;For example for Kibana 8.3.3:
+&lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt; = &lt;code&gt;curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3 | sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.&lt;/p&gt;
+&lt;h3&gt;Add custom domain name&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-custom-domain-name&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-custom-domain-name&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need to disable SSO authentication first. Then, you will be able to add a custom domain name in &amp;ldquo;Domain name&amp;rdquo; tab of your Kibana app.&lt;/p&gt;
+&lt;h2&gt;Deploy Kibana on localhost&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deploy-kibana-on-localhost&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deploy-kibana-on-localhost&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Kibana version should match with the ElasticSearch version.&lt;/p&gt;
+&lt;p&gt;Follow these steps :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download/unzip Kibana in version which match with your Elastic Stack version&lt;/li&gt;
+&lt;li&gt;Edit kibana.yml :
+&lt;ul&gt;
+&lt;li&gt;line 43 : &lt;code&gt;elasticsearch.host: &amp;lt;elastic-addon-host&amp;gt;:443&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;line 49 : &lt;code&gt;elasticsearch.username: kibana&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;line 50 : &lt;code&gt;elasticsearch.password: &amp;lt;password&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Launch Kibana (&lt;code&gt;&amp;lt;path_to_kibana&amp;gt;/bin/kibana&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Go to Kibana through the dedicated &lt;a href=&#34;http://localhost:5601&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;local address&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Connect to ElasticSearch with your Elastic username and password&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Elastic Stack Addon</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/elastic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/elastic/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). Reliably and securely take data from any source, in any format, then search, analyze, and visualize it in real time. Find out more about it on &lt;a href=&#34;https://www.elastic.co/products/elastic-stack&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Elastic&amp;rsquo;s website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.&lt;/p&gt;
+&lt;h2&gt;Versions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;versions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#versions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The current versions supported at add-on creation are 7 and 8.&lt;/p&gt;
+&lt;h2&gt;Elasticsearch&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elasticsearch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#elasticsearch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.&lt;/p&gt;
+&lt;h2&gt;Kibana&lt;span class=&#34;absolute -mt-20&#34; id=&#34;kibana&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kibana&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack so you can do anything from tracking query load to understanding the way requests flow through your apps.&lt;/p&gt;
+&lt;p&gt;It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.&lt;/p&gt;
+&lt;p&gt;The created application name follow the pattern &lt;em&gt;Kibana - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06&lt;/em&gt;. The provisioning of this application might take up a minute to show up in your organisation.&lt;/p&gt;
+&lt;p&gt;Learn more on &lt;a href=&#34;https://www.elastic.co/guide/en/kibana/current/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kibana official documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Authentication&lt;span class=&#34;absolute -mt-20&#34; id=&#34;authentication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system.&lt;/p&gt;
+&lt;h2&gt;Elastic APM&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elastic-apm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#elastic-apm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an &lt;em&gt;APM agent&lt;/em&gt; to your application. In some cases, you&amp;rsquo;ll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in &lt;a href=&#34;https://github.com/CleverCloud/Elastic-APM-example-configuration-files&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our public repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won&amp;rsquo;t see it as a human).&lt;/p&gt;
+&lt;p&gt;Currently, APM agents are available in the following languages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/php/current/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.&lt;/p&gt;
+&lt;p&gt;The created application name follow the pattern &lt;em&gt;APM - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06&lt;/em&gt;. The provisioning of this application might take up a minute to show up in your organisation.&lt;/p&gt;
+&lt;p&gt;Learn more on &lt;a href=&#34;https://www.elastic.co/guide/en/apm/get-started/current/components.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;APM official documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;How to setup APM&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-setup-apm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-setup-apm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Any applications linked to the APM application will have the right credentials and APM endpoint automatically available as environment variables. In some cases these variables will be picked up automatically by the APM agent you are using in your application and everything will work automatically. But in some other cases you have to configure it yourself. See for instance the &lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/ruby/3.x/getting-started-rails.html#getting-started-rails&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rails documentation&lt;/a&gt;. The list of agents configuration can be found on Elastic&amp;rsquo;s &lt;a href=&#34;https://www.elastic.co/guide/en/apm/agent/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;APM Server custom configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;apm-server-custom-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#apm-server-custom-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The APM server is deployed as an application. As such it&amp;rsquo;s configured as an application. Its default pre run hook is set to:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CC_PRE_RUN_HOOK=&amp;quot;curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 | sh&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can change the URL to point to your own custom configuration.&lt;/p&gt;
+&lt;p&gt;A configuration example for RUM activation can be found here: &lt;a href=&#34;https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;es-apm-serverconfig.sh&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Kibana custom configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;kibana-custom-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kibana-custom-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Kibana is deployed as an application. As such it&amp;rsquo;s configured as an application. Its default pre run hook is set to:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CC_PRE_RUN_HOOK=&amp;quot;curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/7 | sh&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can change the URL to point to your own custom configuration.&lt;/p&gt;
+&lt;h3&gt;Java APM agent&lt;span class=&#34;absolute -mt-20&#34; id=&#34;java-apm-agent&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#java-apm-agent&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You have multiple ways to use the APM agent. You can either add it in your dependencies and it should work out of the box or you can attach an agent to the JVM. If you prefer the last option, you have to define the following environment variable to attach the agent to the JVM: &lt;code&gt;CC_JAVA_APM_AGENT_ENABLE=true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The agent will list all JVMs on the system and attach to all of them, only once. If you know that your application will spawn multiple JVM processes (not threads) over time and you want the agent to also monitor those processes, you can add this environment variable: &lt;code&gt;CC_JAVA_APM_AGENT_CONTINUOUS=true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The agent will periodically scan for JVM processes and will attach to them if needed.&lt;/p&gt;
+&lt;h2&gt;Backups&lt;span class=&#34;absolute -mt-20&#34; id=&#34;backups&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backups&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Your Elastic add-on backups are managed by Clever Cloud. When you provision the add-on, we automatically create a Cellar add-on instance named Backups. You will find it in your organisation. Backups are taken daily and are stored in this Cellar add-on instance. As such &lt;em&gt;additional credits will be consumed by your backups&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Backups can be managed under the &lt;em&gt;Backup&lt;/em&gt; tab of the elastic add-on. You can restore, delete or open it directly under Kibana if you opted-in.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Plans&lt;span class=&#34;absolute -mt-20&#34; id=&#34;plans&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#plans&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+&lt;script type=&#34;module&#34; src=&#34;https://components.clever-cloud.com/load.js?version=6&amp;components=cc-pricing-product.smart-addon&#34;&gt;&lt;/script&gt;
+&lt;cc-smart-container context=&#39;{&#34;productId&#34;: &#34;es-addon&#34;, &#34;addonFeatures&#34;: [&amp;#34;cpu&amp;#34;, &amp;#34;memory&amp;#34;, &amp;#34;disk-size&amp;#34;]}&#39;&gt;
+  &lt;cc-pricing-product mode=&#34;addon&#34; action=&#34;none&#34;&gt;
+    &lt;div slot=&#34;head&#34;&gt;&lt;/div&gt;
+  &lt;/cc-pricing-product&gt;
+&lt;/cc-smart-container&gt;
+  
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

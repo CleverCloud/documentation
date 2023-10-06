@@ -1,0 +1,471 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Docker</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/application/docker/</link>
+    <description>Recent content in Docker on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/application/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docker tutorials</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/docker/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/docker/tutorials/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Deploy Docker images</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;absolute -mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Docker is an easy, lightweight virtualized environment for portable applications.&lt;/p&gt;
+&lt;p&gt;Docker containers can encapsulate any payload, and will run consistently on and between virtually any server. The same container that a developer builds and tests on a laptop will run at scale, in production, on VMs, bare-metal servers, public instances, or combinations of the above.&lt;/p&gt;
+&lt;p&gt;Clever Cloud allows you to deploy any application running inside a Docker container. This page will explain how to set up your application to run it on our service.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;Docker at Clever Cloud does not yet support FS Buckets, validation of your Dockerfile, or compose of sorts.
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Configure your Docker application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-your-docker-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-docker-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Mandatory configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;mandatory-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mandatory-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Be sure that you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;push on the &lt;strong&gt;master branch&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;have and commit a file named &lt;strong&gt;Dockerfile&lt;/strong&gt; or use the &lt;strong&gt;CC_DOCKERFILE&lt;/strong&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#docker&#34; &gt;environment variable&lt;/a&gt; if your Dockerfile has a different name, &lt;a href=&#34;https://docs.docker.com/develop/develop-images/dockerfile_best-practices&#34; title=&#34;Dockerfile&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here is what it will look like&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;run the application with &lt;code&gt;CMD&lt;/code&gt; or &lt;code&gt;ENTRYPOINT&lt;/code&gt; in your Dockerfile.&lt;/li&gt;
+&lt;li&gt;listen on HTTP &lt;strong&gt;port 8080&lt;/strong&gt; by default (you can set your own port using &lt;code&gt;CC_DOCKER_EXPOSED_HTTP_PORT=&amp;lt;port&amp;gt;&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dockerfile contents&lt;span class=&#34;absolute -mt-20&#34; id=&#34;dockerfile-contents&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerfile-contents&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can virtually put everything you want in your Dockerfile. The only mandatory (for us) instruction to put in it is:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CMD &amp;lt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; to run&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;command to run&lt;/strong&gt;: this is the command that starts your application. Your application &lt;strong&gt;must&lt;/strong&gt; listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.&lt;/p&gt;
+&lt;h3&gt;Memory usage during building&lt;span class=&#34;absolute -mt-20&#34; id=&#34;memory-usage-during-building&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#memory-usage-during-building&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If the building step of your app crashes because it uses more memory that it&amp;rsquo;s available, you&amp;rsquo;ll have to split the building and running steps and enable &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Dedicated build instance&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# The base image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FROM outlinewiki/outline:version-0.44.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Run the memory intensive build on an instance with 4 GB of memory (M)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RUN yarn install &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn build
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Start the app on a smaller instance (nano)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CMD yarn start&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;TCP support&lt;span class=&#34;absolute -mt-20&#34; id=&#34;tcp-support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tcp-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud enables you to use TCP over Docker applications using using the &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;CC_DOCKER_EXPOSED_TCP_PORT=&amp;lt;port&amp;gt;&lt;/code&gt;. Refer to the documentation page to know how to create [TCP redirections](https://devcenter.clever-cloud.com/doc/administrate/tcp-redirections/].&lt;/p&gt;
+&lt;h3&gt;Docker socket access&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker-socket-access&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-socket-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some containers require access to the docker socket, to spawn sibling containers for instance.&lt;/p&gt;
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;
+Giving access to the docker socket breaks all isolation provided by docker. **DO NOT** give socket access to untrusted code.
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You can make the docker socket available from inside the container by adding the &lt;code&gt;CC_MOUNT_DOCKER_SOCKET=true&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;. In that case, docker is started in the namespaced mode, and in bridge network mode.&lt;/p&gt;
+&lt;h3&gt;Private registry&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-registry&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#private-registry&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We support pulling private images through the &lt;code&gt;docker build&lt;/code&gt; command. To login to a private registry, you need to set a few &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_DOCKER_LOGIN_USERNAME&lt;/code&gt;: the username to use to login&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_DOCKER_LOGIN_PASSWORD&lt;/code&gt;: the password of your username&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_DOCKER_LOGIN_SERVER&lt;/code&gt; (optional): the server of your private registry. Defaults to Docker&amp;rsquo;s public registry.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This uses the &lt;code&gt;docker login&lt;/code&gt; command under the hood.&lt;/p&gt;
+&lt;h3&gt;Enable IPv6 networking&lt;span class=&#34;absolute -mt-20&#34; id=&#34;enable-ipv6-networking&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-ipv6-networking&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can activate the support of IPv6 with a IPv6 subnet in the docker daemon by adding the &lt;code&gt;CC_DOCKER_FIXED-CIDR-V6=&amp;lt;IP&amp;gt;&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Build-time variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;build-time-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#build-time-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use the &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/#arg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ARG&lt;/a&gt; instruction to define build-time environment variables.&lt;/p&gt;
+&lt;p&gt;Every environment variable defined for your application will be passed as a build environment variable using the &lt;code&gt;--build-arg=&amp;lt;ENV&amp;gt;&lt;/code&gt; parameter during the &lt;code&gt;docker build&lt;/code&gt; phase.&lt;/p&gt;
+&lt;h3&gt;Dockerized Rust application Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;dockerized-rust-application-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerized-rust-application-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make your dockerized application run on clever Cloud, you need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;expose port 8080 in your docker file&lt;/li&gt;
+&lt;li&gt;run the application with &lt;code&gt;CMD&lt;/code&gt; or &lt;code&gt;ENTRYPOINT&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For instance, here is the &lt;code&gt;Dockerfile&lt;/code&gt; used for the Rust application:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# rust tooling is provided by `archlinux-rust`&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; geal/archlinux-rust&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; Geoffroy Couprie, contact@geoffroycouprie.com&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# needed by rust&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ENV&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;:/usr/local/lib&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# relevant files are in `./source`&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; . /source&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /source&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Clever Cloud expects your app to listen on port 8080&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 8080&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; rustc -V&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Build your application&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; cargo build&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Run the application with `CMD`&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; cargo run&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Dockerized HHVM application Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;dockerized-hhvm-application-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerized-hhvm-application-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Deploying a &lt;a href=&#34;https://hhvm.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HHVM&lt;/a&gt; application is a bit trickier as it needs to have both HHVM and &lt;a href=&#34;https://www.nginx.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nginx&lt;/a&gt; running as daemons. To be able to have them running both, we need to put them in a start script:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hhvm --mode server -vServer.Type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;fastcgi -vServer.Port&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;9000&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;service nginx start
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer install
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;App running on port 8080&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tail -f /var/log/hhvm/error.log&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Since the two servers are running as daemons, we need to start a long-running process. In this case we use &lt;code&gt;tail -f&lt;/code&gt;. We then add &lt;code&gt;start.sh&lt;/code&gt; as the &lt;code&gt;CMD&lt;/code&gt; in the &lt;code&gt;Dockerfile&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# We need HHVM&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; jolicode/hhvm&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# We need nginx&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; sudo apt-get update &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt-get install -y nginx&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; . /root&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; sudo chmod +x /root/start.sh&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Nginx configuration&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; hhvm.hdf /etc/hhvm/server.hdf&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; nginx.conf /etc/nginx/sites-available/hack.conf&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; sudo ln -s /etc/nginx/sites-available/hack.conf /etc/nginx/sites-enabled/hack.conf&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Checking nginx config&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; sudo nginx -t&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; sudo chown -R www-data:www-data /root&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /root&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# The app needs to listen on port 8080&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 8080&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Launch the start script&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sudo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/root/start.sh&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-4&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Sample dockerized applications&lt;span class=&#34;absolute -mt-20&#34; id=&#34;sample-dockerized-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sample-dockerized-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide a few examples of dockerized applications on Clever Cloud.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Elixir App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://GitHub.com/CleverCloud/demo-haskell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Haskell App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://GitHub.com/CleverCloud/demo-hhvm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hack / HHVM App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://GitHub.com/CleverCloud/demo-seaside&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seaside / Smalltalk App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://GitHub.com/CleverCloud/demo-rust&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Environment injection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;absolute -mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud, please refer to the full list and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, you will see &lt;strong&gt;Applications&lt;/strong&gt; screen, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application will automatically be linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link addons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+		
+		
+
+	
+
+
+
+
+&lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,359 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – MySQL</title>
+    <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/</link>
+    <description>Recent content in MySQL on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>MySQL add-on</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MySQL is an open-source relational database management system (RDBMS).&lt;/p&gt;
+&lt;h2&gt;Versions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;versions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#versions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The version currently installed by the add-on is :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;on shared plans (DEV) : MySQL 8.0&lt;/li&gt;
+&lt;li&gt;on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7.20 or 8.0&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;h2&gt;Database Daily Backup and Retention&lt;span class=&#34;absolute -mt-20&#34; id=&#34;database-daily-backup-and-retention&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#database-daily-backup-and-retention&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default, Clever Cloud performs a free backup every day, with a retention of seven days. Retention and frequency can be customized for Premium customers.&lt;/p&gt;
+&lt;p&gt;Each backup can be found in the add-on dashboard in the web console, along with the credentials.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Migrating from an old database&lt;span class=&#34;absolute -mt-20&#34; id=&#34;migrating-from-an-old-database&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#migrating-from-an-old-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some applications require a populated database to run properly.
+If you want to import your &lt;strong&gt;SQL&lt;/strong&gt; dump, you can use several methods:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://dbms-pma.clever-cloud.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Our WebGUI (PHP My Admin)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Command line tool for MySQL administration.&lt;/li&gt;
+&lt;li&gt;Any MySQL client such as &lt;a href=&#34;https://www.mysql.fr/products/workbench/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MySQL Workbench&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you need to import a very large dump, please send an email to &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Direct access&lt;span class=&#34;absolute -mt-20&#34; id=&#34;direct-access&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#direct-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the &amp;ldquo;Generate direct hostname and port&amp;rdquo; on the addon dashboard.&lt;/p&gt;
+&lt;p&gt;This action will add new environment variables to reach the addon without any proxy.&lt;/p&gt;
+&lt;p&gt;Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.&lt;/p&gt;
+&lt;h2&gt;Encryption at rest&lt;span class=&#34;absolute -mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MySQL. You can have more information on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;p&gt;ProxySQL is a tool that acts like a proxy between your application and your MySQL add-on. Instead of connecting to your MySQL add-on, you can connect
+to the local ProxySQL and it will forward all your requests to your MySQL add-on.&lt;/p&gt;
+&lt;p&gt;This allows you to let ProxySQL take care of some interesting features like connection pooling or leader / follower setup.&lt;/p&gt;
+
+
+
+&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Plans&lt;span class=&#34;absolute -mt-20&#34; id=&#34;plans&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#plans&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      &lt;p&gt;As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand.&lt;/p&gt;
+&lt;p&gt;If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database (XS plans and above).&lt;/p&gt;
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;script type=&#34;module&#34; src=&#34;https://components.clever-cloud.com/load.js?version=6&amp;components=cc-pricing-product.smart-addon&#34;&gt;&lt;/script&gt;
+&lt;cc-smart-container context=&#39;{&#34;productId&#34;: &#34;mysql-addon&#34;, &#34;addonFeatures&#34;: [&amp;#34;cpu&amp;#34;, &amp;#34;memory&amp;#34;, &amp;#34;disk-size&amp;#34;, &amp;#34;connection-limit&amp;#34;, &amp;#34;has-logs&amp;#34;, &amp;#34;has-metrics&amp;#34;]}&#39;&gt;
+  &lt;cc-pricing-product mode=&#34;addon&#34; action=&#34;none&#34;&gt;
+    &lt;div slot=&#34;head&#34;&gt;&lt;/div&gt;
+  &lt;/cc-pricing-product&gt;
+&lt;/cc-smart-container&gt;
+  
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>ProxySQL for MySQL add-ons</title>
+      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ProxySQL is a tool available on applications instances to help you manage your connection pool towards your MySQL add-on.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      ProxySQL is not available on Docker instances. If you want to use ProxySQL, you can add it and configure it in
+your Dockerfile.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;What is ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;what-is-proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;p&gt;ProxySQL is a tool that acts like a proxy between your application and your MySQL add-on. Instead of connecting to your MySQL add-on, you can connect
+to the local ProxySQL and it will forward all your requests to your MySQL add-on.&lt;/p&gt;
+&lt;p&gt;This allows you to let ProxySQL take care of some interesting features like connection pooling or leader / follower setup.&lt;/p&gt;
+
+
+
+&lt;h2&gt;When do I need ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;when-do-ineed-proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#when-do-ineed-proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You might need ProxySQL if your application can&amp;rsquo;t manage a connection pool. This is usually the case with PHP applications or any other application that do not
+have a connection pooling policy in place.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
+  &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
+    &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
+      A connection pool will cache your database connections and keep them open for future requests.
+The connections can then be reused if needed or closed if they weren&amp;rsquo;t used after a certain time.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;By using connection pooling from ProxySQL to your MySQL add-on, you make sure that a certain number of connections stay open to your add-on, leading to faster requests.&lt;/p&gt;
+&lt;p&gt;For example, on a PHP application, each HTTP request will spawn a new Apache worker and your PHP code will be executed. If your application does an SQL request, a new TCP connection will be open to the remote MySQL add-on. Once your SQL request is done, the TCP connection will be closed and a new one will need to be opened on the next SQL query.&lt;/p&gt;
+&lt;p&gt;Each new connection means a new &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TCP handshake&lt;/a&gt; which takes some time.
+If you use TLS to secure the connection, then there is an &lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aditionnal handshake&lt;/a&gt;. All of this, multiplied
+by the number of connections you make to your add-on can greatly increase your application&amp;rsquo;s response time.&lt;/p&gt;
+&lt;p&gt;One of the goals of ProxySQL is to keep the connections open to your MySQL add-on. Your application can then connect to the local proxy
+using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Unix_domain_socket&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unix Domain Socket&lt;/a&gt; for each SQL request it has to do.
+Unix Domain Sockets are faster than TCP sockets because there are no handshakes and the connection is made locally on the same machine.&lt;/p&gt;
+&lt;p&gt;When ProxySQL receives a new SQL query, it will open a new connection to the remote MySQL add-on if no connection is currently available. But if one is available, it will be reused and the query should take less time. The connection will then be kept for further use.&lt;/p&gt;
+&lt;h2&gt;How to configure ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-to-configure-proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-configure-proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In order to configure ProxySQL, the first thing to do is to link your MySQL add-on. To do that, you can go to the &lt;code&gt;Service Dependencies&lt;/code&gt; page of your application
+and select your MySQL add-on.&lt;/p&gt;
+&lt;p&gt;Once linked, you can enable the ProxySQL feature by defining the following environment variable: &lt;code&gt;CC_ENABLE_MYSQL_PROXYSQL=true&lt;/code&gt;.
+If you ever need to stop using ProxySQL, you can remove this variable or set it to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can customize some other parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/code&gt;: Integer. This is the maximum connections ProxySQL will open to your add-on. See the &lt;a href=&#34;#scalability&#34; &gt;Scalability&lt;/a&gt; part
+below for more explanations on how to customize this variable. Defaults to &lt;code&gt;10&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MYSQL_PROXYSQL_USE_TLS&lt;/code&gt;: Boolean (&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;). This controls whether ProxySQL should open a secure connection using &lt;code&gt;TLS&lt;/code&gt; to your add-on. Defaults to &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To connect to ProxySQL, a special environment variable will be injected to your environment variables: &lt;code&gt;CC_MYSQL_PROXYSQL_SOCKET_PATH&lt;/code&gt;. This variable contains the
+path to the Unix Domain Socket you have to connect. See &lt;a href=&#34;#usages&#34; &gt;Usages&lt;/a&gt; below for some example on how to use it.&lt;/p&gt;
+&lt;h3&gt;Scalability&lt;span class=&#34;absolute -mt-20&#34; id=&#34;scalability&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scalability&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When the scalability of your application is enabled, you may need to tweak the &lt;code&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/code&gt; value. This is what we are going to see here.&lt;/p&gt;
+&lt;p&gt;Auto scalability will add or remove instances following your needs. This means that you may have multiple instances running at the same time for a certain period of time.
+If your application restarts, you will have &lt;code&gt;your current instance number * 2&lt;/code&gt;  instances running in parallel while the deployment finishes and the old instances are stopped.
+A new deployment &lt;strong&gt;starts&lt;/strong&gt; new instances with the old ones alongside them.&lt;/p&gt;
+&lt;p&gt;This means that have up to &lt;code&gt;maximum scalability * 2&lt;/code&gt; instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
+it means there will be up to &lt;code&gt;maximum scalability * 2 * CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/code&gt; connections at the same time. We will call this result &lt;code&gt;MaxCon&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Each MySQL add-on has a connection limit which varies following the plan you are using. You must be sure that &lt;code&gt;MaxCon&lt;/code&gt; doesn&amp;rsquo;t exceed your plan&amp;rsquo;s max connections. If it does, you might have issues connecting to the remote MySQL add-on. You have to adjust &lt;code&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/code&gt; to a number that makes sense for your scalability parameters.&lt;/p&gt;
+&lt;h4&gt;Example&lt;span class=&#34;absolute -mt-20&#34; id=&#34;example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Let&amp;rsquo;s say that I&amp;rsquo;m hosting a simple PHP application on &lt;code&gt;1 XS&lt;/code&gt; instance, with a scalability that can go up to &lt;code&gt;4 M&lt;/code&gt; instances. And I&amp;rsquo;m using the MySQL &lt;code&gt;S Small Space&lt;/code&gt; plan
+which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now my application receives a lot of traffic and scales up to &lt;code&gt;4 M&lt;/code&gt; instances. But at the same time, I also need to deploy a hot fix. This means that &lt;code&gt;4 new M&lt;/code&gt; instances will be started, alongside the already existing &lt;code&gt;4 M&lt;/code&gt; instances. I need to make sure that &lt;code&gt;MaxCon&lt;/code&gt; doesn&amp;rsquo;t go above &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here is the summary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8 instances: 4 currently running, 4 currently deploying my hot fix&lt;/li&gt;
+&lt;li&gt;125 max connections: the maximum number of connections of my MySQL add-on&amp;rsquo;s plan&lt;/li&gt;
+&lt;li&gt;5 other connections: I want to be able to use PHPMyAdmin or any CLI tool at the same time, in case I need it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS = ( (125 - 5) / 8 ) = 15&lt;/code&gt;. If I set &lt;code&gt;CC_MYSQL_PROXYSQL_MAX_CONNECTIONS&lt;/code&gt; to &lt;code&gt;15&lt;/code&gt;, each instance should have enough connections to query the database without errors. And it also let you some spare connections (&lt;code&gt;5&lt;/code&gt;) available if anything goes wrong and you need to connect to your database using a CLI tool or PHPMyAdmin.&lt;/p&gt;
+&lt;h2&gt;Usages&lt;span class=&#34;absolute -mt-20&#34; id=&#34;usages&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#usages&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;PHP using PDO&lt;span class=&#34;absolute -mt-20&#34; id=&#34;php-using-pdo&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#php-using-pdo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using &lt;a href=&#34;https://www.php.net/manual/en/ref.pdo-mysql.connection.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDO&lt;/a&gt;, you have to use the &lt;code&gt;unix_socket&lt;/code&gt; option in your DSN:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Get the database name from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$db&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_DB&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Get the database user from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Get the database password from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$pass&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_PASSWORD&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// This variable is injected during the deployment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$socket&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CC_MYSQL_PROXYSQL_SOCKET_PATH&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$dsn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mysql:unix_socket=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$socket&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;;dbname=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$db&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;nv&#34;&gt;$pdo&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;PDO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$dsn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$pass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;PDOException&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;PDOException&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getMessage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-0&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Wordpress&lt;span class=&#34;absolute -mt-20&#34; id=&#34;wordpress&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#wordpress&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For Wordpress, you can change the &lt;code&gt;DB_HOST&lt;/code&gt; variable in your &lt;code&gt;wp-config.php&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// To connect using a socket, the syntax is: `localhost:/path/to/socket`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_HOST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;localhost:&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CC_MYSQL_PROXYSQL_SOCKET_PATH&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-1&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Symfony&lt;span class=&#34;absolute -mt-20&#34; id=&#34;symfony&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#symfony&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For symfony, you will need to edit its &lt;a href=&#34;https://symfony.com/doc/current/configuration.html#configuration-environments&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A working example would be:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;dbal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;unix_socket&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-2&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Node.js&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nodejs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#nodejs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;On Node.js, using the &lt;code&gt;mysql&lt;/code&gt; npm package, you have to set the &lt;code&gt;socketPath&lt;/code&gt; property:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mysql&lt;/span&gt;      &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mysql&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;connection&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createConnection&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// Get ProxySQL unix domain socket path from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;socketPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CC_MYSQL_PROXYSQL_SOCKET_PATH&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// Get the database user from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;user&lt;/span&gt;       &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// Get the database password from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;password&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_PASSWORD&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// Get the database name from the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;database&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MYSQL_ADDON_DB&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;connection&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;connect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;error connecting: &amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;connected as id &amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;connection&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;threadId&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34; title=&#34;Copy code&#34; data-clipboard-target=&#34;#code-block-3&#34;&gt;
+      &lt;svg class=&#34;group-[.copied]/copybtn:hidden pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&#34; /&gt;&lt;/svg&gt;
+      &lt;svg class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 13l4 4L19 7&#34;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ProxySQL exposes some metrics using Prometheus. Some of those metrics are ingested in our metrics system. You can then explore them
+in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#display-metrics&#34; &gt;Web Console&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is the list of currently tracked metrics, those may evolve over time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_access_denied_max_connections_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_access_denied_max_user_connections_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_access_denied_wrong_password_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_client_connections_connected&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_client_connections_hostgroup_locked&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_client_connections_non_idle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_client_connections_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_conns&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_conns_latency_us&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_conns_queries_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_conns_status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_conns_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_data_bytes_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_get_conn_failure_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_get_conn_success_immediate_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_get_conn_success_latency_awareness_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_get_conn_success_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_connpool_memory_bytes&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_mysql_error_total&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prometheus.proxysql_server_connections_connected&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those metrics might help you follow how effective your connection pool is or have more insights into your client&amp;rsquo;s requests.&lt;/p&gt;
+&lt;p&gt;Keep in mind that each instance will have those metrics because each instance has its own ProxySQL service.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

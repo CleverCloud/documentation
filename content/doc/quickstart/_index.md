@@ -162,7 +162,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 
 {{< /callout >}}
 
-{{% details title="🦊 Deploy automatically from GitHub" closed="true" %}}
+{{% details title= " Deploy automatically from GitHub" closed="true" icon="github" %}}
 
 Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 

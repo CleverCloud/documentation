@@ -1,2 +1,2 @@
 .DS_Store
-/public/
+#/public/ #Needs to be commited on Clever Cloud

@@ -13,3 +13,38 @@ h1, .content h1,
 .content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+.steps h4 {
+  counter-increment: step;
+}
+.steps h4:before {
+  position: absolute;
+  height: 33px;
+  width: 33px;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+:is(html[class~="dark"] .steps h4):before {
+  --tw-border-opacity: 1;
+  border-color: rgb(17 17 17 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+
+/* Allow inserting "steps" shortcode with h4.
+   To customize to perfectly fit h4 (currently fits h3) */
+.steps h4:before {
+  border-radius: 9999px;
+  text-align: center;
+  text-indent: -1px;
+  font-size: 1rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+  margin-top: 3px;
+  margin-left: -41px;
+    content: counter(step);
+}

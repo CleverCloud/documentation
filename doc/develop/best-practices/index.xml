@@ -108,9 +108,8 @@ If you want to avoid that, you have to store your important files outside of you
   &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;ℹ️&lt;/div&gt;
   &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
     &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
-      &lt;pre&gt;&lt;code&gt;If you are coding a new project and need to store files, use Cellar. It will be cheaper and give you way more flexibility.&amp;lt;br /&amp;gt;
-If your want to run a WordPress site or some OSS PHP application and are in a hurry, you may not get to choose: use FS Buckets.
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;If you are coding a new project and need to store files, use Cellar. It will be cheaper and give you way more flexibility.&lt;/p&gt;
+&lt;p&gt;If your want to run a WordPress site or some OSS PHP application and are in a hurry, you may not get to choose: use FS Buckets.&lt;/p&gt;
 
     &lt;/p&gt;
   &lt;/div&gt;

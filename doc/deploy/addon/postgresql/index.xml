@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – PostgreSQL</title>
-    <link>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/</link>
+    <link>/doc/deploy/addon/postgresql/</link>
     <description>Recent content in PostgreSQL on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/deploy/addon/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Pgpool-II for PostgreSQL add-ons</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/</link>
+      <link>/doc/deploy/addon/postgresql/pgpool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/</guid>
+      <guid>/doc/deploy/addon/postgresql/pgpool/</guid>
       <description>
         
         
@@ -499,10 +499,10 @@ which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>PostgreSQL</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/postgresql/</link>
+      <link>/doc/deploy/addon/postgresql/postgresql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/postgresql/</guid>
+      <guid>/doc/deploy/addon/postgresql/postgresql/</guid>
       <description>
         
         
@@ -545,7 +545,7 @@ If you want to import your &lt;strong&gt;SQL&lt;/strong&gt; dump, you can use se
 &lt;p&gt;This action will add new environment variables to reach the addon without any proxy.&lt;/p&gt;
 &lt;p&gt;Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.&lt;/p&gt;
 &lt;h2&gt;Encryption at rest&lt;span class=&#34;absolute -mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on PostgreSQL. You can have more information on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on PostgreSQL. You can have more information on the &lt;a href=&#34;/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Note on shared databases&lt;span class=&#34;absolute -mt-20&#34; id=&#34;note-on-shared-databases&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#note-on-shared-databases&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Free databases are instantiated from a shared cluster. The way postgresql works on shared clusters is that a &amp;ldquo;pg_database&amp;rdquo; table references the name, and only the name, of other databases in that same cluster. The data, on the other hand, is not accessible.&lt;/p&gt;
 &lt;p&gt;This referencing does not exist for dedicated databases.&lt;/p&gt;
@@ -567,7 +567,7 @@ If you want to import your &lt;strong&gt;SQL&lt;/strong&gt; dump, you can use se
 
 
 
-&lt;p&gt;You can learn more about Pgpool-II on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can learn more about Pgpool-II on the &lt;a href=&#34;/doc/deploy/addon/postgresql/pgpool/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Default extensions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;default-extensions&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#default-extensions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Every PostgreSQL database managed by Clever Cloud comes with the following default extensions:
 &lt;code&gt;adminpack&lt;/code&gt;,

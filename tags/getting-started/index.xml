@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – getting-started</title>
-    <link>https://devcenter.clever-cloud.com/tags/getting-started/</link>
+    <link>/tags/getting-started/</link>
     <description>Recent content in getting-started on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Quickstart</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/quickstart/</link>
+      <link>/doc/getting-started/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/quickstart/</guid>
+      <guid>/doc/getting-started/quickstart/</guid>
       <description>
         
         
@@ -99,17 +99,17 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
 &lt;p&gt;If one of these elements is missing, Clever Cloud can&amp;rsquo;t deploy your application properly (except the configuration file, optional in some cases).&lt;/p&gt;
 &lt;p&gt;Supported platforms:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/&#34; &gt;Docker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/&#34; &gt;Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/&#34; &gt;Java&lt;/a&gt; (Play Framework 1 &amp;amp; 2, Maven, War files… )&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/&#34; &gt;PHP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/&#34; &gt;Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/&#34; &gt;Rust&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/&#34; &gt;Scala&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/docker/docker/&#34; &gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/golang/go/&#34; &gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/java/&#34; &gt;Java&lt;/a&gt; (Play Framework 1 &amp;amp; 2, Maven, War files… )&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/&#34; &gt;PHP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/&#34; &gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/rust/rust/&#34; &gt;Rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/scala/scala/&#34; &gt;Scala&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;How it works&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-it-works&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#how-it-works&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When you push an application&amp;rsquo;s code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.&lt;/p&gt;
@@ -127,12 +127,12 @@ This starts the application creation wizard. If your account has been linked to 
 &lt;li&gt;&lt;em&gt;Optional:&lt;/em&gt; For PHP applications, you can choose between FTP and Git deployment.&lt;/li&gt;
 &lt;li&gt;Fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.&lt;/li&gt;
 &lt;li&gt;Enter the name and description of your application.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/&#34; &gt;add an add-on&lt;/a&gt; to your application.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;add environment variables&lt;/a&gt; to your application.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;/doc/deploy/addon/&#34; &gt;add an add-on&lt;/a&gt; to your application.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;add environment variables&lt;/a&gt; to your application.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Git Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#git-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;To deploy via Git, you need it installed on your machine. You can find more information on Git website: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Follow these steps to deploy your application:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -224,7 +224,7 @@ This starts the application creation wizard. If your account has been linked to 
          &lt;p&gt;If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
    &lt;br&gt;Add your SSH key to your profile here:
    &lt;a href=&#34;https://console.clever-cloud.com/users/me/ssh-keys&#34;&gt;https://console.clever-cloud.com/users/me/ssh-keys&lt;/a&gt;&lt;/p&gt;
-   &lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;https://devcenter.clever-cloud.com/account/ssh-keys-managment/&#34;&gt;Adding SSH keys&lt;/a&gt; &lt;/p&gt;
+   &lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;/account/ssh-keys-managment/&#34;&gt;Adding SSH keys&lt;/a&gt; &lt;/p&gt;
 
     &lt;/p&gt;
   &lt;/div&gt;
@@ -236,7 +236,7 @@ This starts the application creation wizard. If your account has been linked to 
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Github deployment branch select
     &lt;/figcaption&gt;
@@ -278,7 +278,7 @@ This starts the application creation wizard. If your account has been linked to 
 &lt;h3&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can deploy via FTP with PHP applications.&lt;/p&gt;
 &lt;p&gt;To deploy via FTP, you need an FTP software installed on your machine. &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; is one of them.&lt;/p&gt;
-&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; with an ID
+&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; with an ID
 matching your application&amp;rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More documentation about Filezilla&lt;/a&gt;.&lt;/p&gt;
 
@@ -330,23 +330,23 @@ matching your application&amp;rsquo;s ID. You will find the FTP credentials in t
 &lt;h2&gt;Create your first add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-your-first-add-on&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-your-first-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.&lt;/p&gt;
 &lt;p&gt;An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.&lt;/p&gt;
-&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
 &lt;h3&gt;Available add-ons&lt;span class=&#34;absolute -mt-20&#34; id=&#34;available-add-ons&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#available-add-ons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud provides multiple add-ons to work with your applications:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/config-provider/&#34; &gt;Config Provider&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/config-provider/&#34; &gt;Config Provider&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Add-on Billing&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-billing&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#add-on-billing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There are two kinds of billing:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)&lt;/li&gt;
-&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -395,7 +395,7 @@ matching your application&amp;rsquo;s ID. You will find the FTP credentials in t
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Choose with which application you want to link you add-on.
-Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variables&lt;/a&gt;.
+Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variables&lt;/a&gt;.
 The environment variables provided by the add-on are available for use in the linked application.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -433,7 +433,7 @@ Features and environment variables (if applicable) are shown.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the information tab of an add-on
     &lt;/figcaption&gt;
@@ -447,7 +447,7 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the configuration tab of an add-on
     &lt;/figcaption&gt;
@@ -466,10 +466,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>Quickstart</title>
-      <link>https://devcenter.clever-cloud.com/doc/quickstart/</link>
+      <link>/doc/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/quickstart/</guid>
+      <guid>/doc/quickstart/</guid>
       <description>
         
         
@@ -620,10 +620,10 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
     &lt;a href=&#34;#enter-the-name-and-description-of-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h4&gt;Optional steps&lt;span class=&#34;absolute -mt-20&#34; id=&#34;optional-steps&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#optional-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;add an add-on&lt;/a&gt; to your application&lt;/p&gt;
+&lt;p&gt;The wizard will offer you to &lt;a href=&#34;/doc/deploy/addon/&#34; &gt;add an add-on&lt;/a&gt; to your application&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;add environment variables&lt;/a&gt; to your application&lt;/p&gt;
+&lt;p&gt;The wizard will offer you to &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;add environment variables&lt;/a&gt; to your application&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -663,7 +663,7 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
   data-state=&#34;selected&#34;
 &gt;
   &lt;p&gt;&lt;em&gt;To deploy via Git, you need it installed on your machine. You can find more information on Git website: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Follow these steps to deploy your application:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -716,7 +716,7 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
 &gt;
   &lt;p&gt;Once you have created your application with GitHub, each push on the &lt;code&gt;master&lt;/code&gt; branch trigger a deployment. To deploy an other branch than &lt;code&gt;master&lt;/code&gt;, go to the &lt;code&gt;information&lt;/code&gt; panel of your application and select the default branch to use.&lt;/p&gt;
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Github deployment branch select
     &lt;/figcaption&gt;
@@ -738,7 +738,7 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
 &gt;
   &lt;p&gt;You can deploy via FTP with PHP applications.&lt;/p&gt;
 &lt;p&gt;To deploy via FTP, you need an FTP software installed on your machine. &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; is one of them.&lt;/p&gt;
-&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FS Bucket&lt;/a&gt; with an ID matching your application&amp;rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; with an ID matching your application&amp;rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More documentation about Filezilla&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;inline-block align-text-bottom icon&#34;&gt;&lt;svg height=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
 An FTP application is automatically started once the application is created, even if no code has been sent.&lt;/p&gt;
@@ -764,7 +764,7 @@ An FTP application is automatically started once the application is created, eve
     &lt;p&gt;If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Add your SSH key to your profile here:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.clever-cloud.com/users/me/ssh-keys%22%3ehttps://console.clever-cloud.com/users/me/ssh-keys&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://console.clever-cloud.com/users/me/ssh-keys&#34;&gt;https://console.clever-cloud.com/users/me/ssh-keys&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;https://devcenter.clever-cloud.com/account/ssh-keys-managment&#34; &gt;Adding SSH keys&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;/account/ssh-keys-managment&#34; &gt;Adding SSH keys&lt;/a&gt;&lt;/p&gt;
   &lt;/div&gt;
 &lt;/details&gt;
 &lt;details class=&#34;last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group&#34; &gt;
@@ -822,7 +822,7 @@ An FTP application is automatically started once the application is created, eve
 &lt;h3&gt;Create your first add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-your-first-add-on&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-your-first-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.&lt;/p&gt;
 &lt;p&gt;An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.&lt;/p&gt;
-&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
 &lt;h4&gt;Available add-ons&lt;span class=&#34;absolute -mt-20&#34; id=&#34;available-add-ons&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#available-add-ons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Clever Cloud provides multiple add-ons to work with your applications:&lt;/p&gt;
 
@@ -868,7 +868,7 @@ An FTP application is automatically started once the application is created, eve
     &lt;p&gt;There are two kinds of billing:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)&lt;/li&gt;
-&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cellar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/details&gt;
@@ -954,7 +954,7 @@ They are for not production usage. These add-ons usually rely on shared resource
 &lt;li&gt;Click on &lt;strong&gt;Add an add-on&lt;/strong&gt;. This space let you create and configure the add-on according to your needs.&lt;/li&gt;
 &lt;li&gt;Choose which &lt;em&gt;type&lt;/em&gt; of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.&lt;/li&gt;
 &lt;li&gt;Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.&lt;/li&gt;
-&lt;li&gt;Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;environment variables&lt;/a&gt;. The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don&amp;rsquo;t link it to any application.&lt;/li&gt;
+&lt;li&gt;Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variables&lt;/a&gt;. The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don&amp;rsquo;t link it to any application.&lt;/li&gt;
 &lt;li&gt;Choose the name of the add-on and the region where the add-on will be hosted.&lt;/li&gt;
 &lt;li&gt;Click on the &lt;strong&gt;Create&lt;/strong&gt; button.&lt;/li&gt;
 &lt;/ol&gt;
@@ -999,7 +999,7 @@ Features and environment variables (if applicable) are shown.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the information tab of an add-on
     &lt;/figcaption&gt;
@@ -1013,7 +1013,7 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the configuration tab of an add-on
     &lt;/figcaption&gt;
@@ -1032,10 +1032,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>Authentication</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/authentication/</link>
+      <link>/doc/getting-started/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/authentication/</guid>
+      <guid>/doc/getting-started/authentication/</guid>
       <description>
         
         
@@ -1109,10 +1109,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>CLI</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/cli/</link>
+      <link>/doc/getting-started/cli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/cli/</guid>
+      <guid>/doc/getting-started/cli/</guid>
       <description>
         
         
@@ -1522,10 +1522,10 @@ If you want to know more or if you need to release a new version, please read &l
     
     <item>
       <title>SSH Keys</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/ssh-keys/</link>
+      <link>/doc/getting-started/ssh-keys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/ssh-keys/</guid>
+      <guid>/doc/getting-started/ssh-keys/</guid>
       <description>
         
         
@@ -1750,20 +1750,20 @@ Please update your Clever Cloud SSH key path accordingly.&lt;/p&gt;
     
     <item>
       <title>DBaaS</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/dbaas/</link>
+      <link>/doc/getting-started/dbaas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/dbaas/</guid>
+      <guid>/doc/getting-started/dbaas/</guid>
       <description>
         
         
         &lt;p&gt;If you are looking for Database as a Service or managed databases, some are available on Clever Cloud:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/&#34; &gt;Elastic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/elastic/&#34; &gt;Elastic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;All Databases available on Clever Cloud have automated backups, monitoring, logs and metrics management.&lt;/p&gt;
 
@@ -1772,10 +1772,10 @@ Please update your Clever Cloud SSH key path accordingly.&lt;/p&gt;
     
     <item>
       <title>Docker</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/docker/</link>
+      <link>/doc/getting-started/by-language/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/docker/</guid>
+      <guid>/doc/getting-started/by-language/docker/</guid>
       <description>
         
         
@@ -1925,7 +1925,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -1936,7 +1936,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1963,10 +1963,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -1976,7 +1976,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -2012,10 +2012,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -2046,7 +2046,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#mandatory-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Be sure that you:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;push on the &lt;strong&gt;master branch&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;have and commit a file named &lt;strong&gt;Dockerfile&lt;/strong&gt; or use the &lt;strong&gt;CC_DOCKERFILE&lt;/strong&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#docker&#34; &gt;environment variable&lt;/a&gt; if your Dockerfile has a different name, &lt;a href=&#34;https://docs.docker.com/develop/develop-images/dockerfile_best-practices&#34; title=&#34;Dockerfile&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here is what it will look like&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;have and commit a file named &lt;strong&gt;Dockerfile&lt;/strong&gt; or use the &lt;strong&gt;CC_DOCKERFILE&lt;/strong&gt; &lt;a href=&#34;/doc/reference/reference-environment-variables/#docker&#34; &gt;environment variable&lt;/a&gt; if your Dockerfile has a different name, &lt;a href=&#34;https://docs.docker.com/develop/develop-images/dockerfile_best-practices&#34; title=&#34;Dockerfile&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here is what it will look like&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;run the application with &lt;code&gt;CMD&lt;/code&gt; or &lt;code&gt;ENTRYPOINT&lt;/code&gt; in your Dockerfile.&lt;/li&gt;
 &lt;li&gt;listen on HTTP &lt;strong&gt;port 8080&lt;/strong&gt; by default (you can set your own port using &lt;code&gt;CC_DOCKER_EXPOSED_HTTP_PORT=&amp;lt;port&amp;gt;&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
@@ -2061,7 +2061,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;command to run&lt;/strong&gt;: this is the command that starts your application. Your application &lt;strong&gt;must&lt;/strong&gt; listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.&lt;/p&gt;
 &lt;h3&gt;Memory usage during building&lt;span class=&#34;absolute -mt-20&#34; id=&#34;memory-usage-during-building&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#memory-usage-during-building&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If the building step of your app crashes because it uses more memory that it&amp;rsquo;s available, you&amp;rsquo;ll have to split the building and running steps and enable &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Dedicated build instance&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#memory-usage-during-building&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If the building step of your app crashes because it uses more memory that it&amp;rsquo;s available, you&amp;rsquo;ll have to split the building and running steps and enable &lt;a href=&#34;/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Dedicated build instance&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# The base image&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FROM outlinewiki/outline:version-0.44.0
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -2077,7 +2077,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;TCP support&lt;span class=&#34;absolute -mt-20&#34; id=&#34;tcp-support&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#tcp-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud enables you to use TCP over Docker applications using using the &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;CC_DOCKER_EXPOSED_TCP_PORT=&amp;lt;port&amp;gt;&lt;/code&gt;. Refer to the documentation page to know how to create [TCP redirections](https://devcenter.clever-cloud.com/doc/administrate/tcp-redirections/].&lt;/p&gt;
+    &lt;a href=&#34;#tcp-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud enables you to use TCP over Docker applications using using the &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;CC_DOCKER_EXPOSED_TCP_PORT=&amp;lt;port&amp;gt;&lt;/code&gt;. Refer to the documentation page to know how to create [TCP redirections](/doc/administrate/tcp-redirections/].&lt;/p&gt;
 &lt;h3&gt;Docker socket access&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker-socket-access&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#docker-socket-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some containers require access to the docker socket, to spawn sibling containers for instance.&lt;/p&gt;
 &lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
@@ -2272,7 +2272,7 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2331,9 +2331,9 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -2343,10 +2343,10 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
     
     <item>
       <title>Elixir</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/elixir/</link>
+      <link>/doc/getting-started/by-language/elixir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/elixir/</guid>
+      <guid>/doc/getting-started/by-language/elixir/</guid>
       <description>
         
         
@@ -2496,7 +2496,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -2507,7 +2507,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -2534,10 +2534,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -2547,7 +2547,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -2584,10 +2584,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -2696,7 +2696,7 @@ To change the folder for the entire build / run process, you should use &lt;stro
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2755,9 +2755,9 @@ To change the folder for the entire build / run process, you should use &lt;stro
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -2767,10 +2767,10 @@ To change the folder for the entire build / run process, you should use &lt;stro
     
     <item>
       <title>Go</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/go/</link>
+      <link>/doc/getting-started/by-language/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/go/</guid>
+      <guid>/doc/getting-started/by-language/go/</guid>
       <description>
         
         
@@ -2920,7 +2920,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -2931,7 +2931,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -2958,10 +2958,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -2971,7 +2971,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -3007,10 +3007,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -3060,7 +3060,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;li&gt;&lt;code&gt;go get&lt;/code&gt; (default)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Go modules&lt;span class=&#34;absolute -mt-20&#34; id=&#34;go-modules&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#go-modules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your project is compatible with go modules, be sure that the &lt;code&gt;go.mod&lt;/code&gt; file is in your git tree. Note that it &lt;strong&gt;must&lt;/strong&gt; be at the root of your application (see the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;&lt;code&gt;APP_FOLDER&lt;/code&gt; environment variable if it isn&amp;rsquo;t&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#go-modules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your project is compatible with go modules, be sure that the &lt;code&gt;go.mod&lt;/code&gt; file is in your git tree. Note that it &lt;strong&gt;must&lt;/strong&gt; be at the root of your application (see the &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;&lt;code&gt;APP_FOLDER&lt;/code&gt; environment variable if it isn&amp;rsquo;t&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;For now, you have to add the environment variable &lt;code&gt;CC_GO_BUILD_TOOL=gomod&lt;/code&gt; to build using the go modules. In a future release, we will automatically
 build with go modules if the &lt;code&gt;go.mod&lt;/code&gt; file is present at the root of your git tree.&lt;/p&gt;
 &lt;p&gt;Your project&amp;rsquo;s entrypoint should be in the same folder as the &lt;code&gt;go.mod&lt;/code&gt; file and be named &lt;code&gt;main.go&lt;/code&gt;. If it isn&amp;rsquo;t, you have to specify it using the following environment variable:&lt;/p&gt;
@@ -3231,7 +3231,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3290,9 +3290,9 @@ do not do that, go will generate a library and not an executable. So if you get 
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -3302,10 +3302,10 @@ do not do that, go will generate a library and not an executable. So if you get 
     
     <item>
       <title>Haskell</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/haskell/</link>
+      <link>/doc/getting-started/by-language/haskell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/haskell/</guid>
+      <guid>/doc/getting-started/by-language/haskell/</guid>
       <description>
         
         
@@ -3455,7 +3455,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -3466,7 +3466,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -3493,10 +3493,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -3506,7 +3506,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -3542,10 +3542,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -3711,7 +3711,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3770,9 +3770,9 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -3782,10 +3782,10 @@ You can add any key already present in your GitHub account by clicking on the im
     
     <item>
       <title>Java</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/java/</link>
+      <link>/doc/getting-started/by-language/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/java/</guid>
+      <guid>/doc/getting-started/by-language/java/</guid>
       <description>
         
         
@@ -3935,7 +3935,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -3946,7 +3946,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -3973,10 +3973,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -3986,7 +3986,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -4022,10 +4022,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -4099,7 +4099,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4158,9 +4158,9 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -4170,10 +4170,10 @@ You can add any key already present in your GitHub account by clicking on the im
     
     <item>
       <title>Node.js</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/node/</link>
+      <link>/doc/getting-started/by-language/node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/node/</guid>
+      <guid>/doc/getting-started/by-language/node/</guid>
       <description>
         
         
@@ -4323,7 +4323,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -4334,7 +4334,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -4361,10 +4361,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -4374,7 +4374,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -4410,10 +4410,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -4517,7 +4517,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4&gt;Private dependencies&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-dependencies&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If your application has private dependencies, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt;.&lt;/p&gt;
+    &lt;a href=&#34;#private-dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If your application has private dependencies, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Supported package managers&lt;span class=&#34;absolute -mt-20&#34; id=&#34;supported-package-managers&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#supported-package-managers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We support &lt;a href=&#34;https://www.npmjs.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;npm&lt;/a&gt; and &lt;a href=&#34;https://yarnpkg.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;yarn&lt;/a&gt; as package managers.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; allows you to define which build tool you want to use. The default value is set to &lt;code&gt;npm&lt;/code&gt; but it can be any of these values:&lt;/p&gt;
@@ -4532,7 +4532,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;p&gt;If a &lt;code&gt;yarn.lock&lt;/code&gt; file exists in your application&amp;rsquo;s main folder, then the &lt;code&gt;yarn&lt;/code&gt; package manager will be automatically used. To overwrite this behaviour, either delete the &lt;code&gt;yarn.lock&lt;/code&gt; file or set the &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; environment variable.&lt;/p&gt;
 &lt;p&gt;If none of the above package managers fit your needs, you can put your own using &lt;code&gt;CC_CUSTOM_BUILD_TOOL&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Automatic HTTPS redirection&lt;span class=&#34;absolute -mt-20&#34; id=&#34;automatic-https-redirection&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#automatic-https-redirection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can use the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection&#34; &gt;X-Forwarded-Proto header&lt;/a&gt; to enable it.&lt;/p&gt;
+    &lt;a href=&#34;#automatic-https-redirection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can use the &lt;a href=&#34;/doc/find-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection&#34; &gt;X-Forwarded-Proto header&lt;/a&gt; to enable it.&lt;/p&gt;
 &lt;p&gt;If you are using &lt;a href=&#34;https://expressjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Express.js&lt;/a&gt;, you can use &lt;a href=&#34;https://www.npmjs.com/package/express-sslify&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;express-sslify&lt;/a&gt; by adding:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enforce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;HTTPS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;trustProtoHeader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
@@ -4646,7 +4646,7 @@ contain any build task.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4705,9 +4705,9 @@ contain any build task.&lt;/p&gt;
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -4717,10 +4717,10 @@ contain any build task.&lt;/p&gt;
     
     <item>
       <title>PHP</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/php/</link>
+      <link>/doc/getting-started/by-language/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/php/</guid>
+      <guid>/doc/getting-started/by-language/php/</guid>
       <description>
         
         
@@ -4870,7 +4870,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -4881,7 +4881,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -4908,10 +4908,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -4921,7 +4921,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -4957,10 +4957,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -5051,7 +5051,7 @@ of the configuration file &lt;em&gt;clevercloud/php.json&lt;/em&gt; with the abs
 This way the PHP CLI will try to find a &lt;code&gt;.ini&lt;/code&gt; file in &lt;code&gt;/home/bas&lt;/code&gt; after loading all other configuration files.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Run the following script in a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/&#34; &gt;deployment hook&lt;/a&gt; (e.g. in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; &gt;pre-run hook&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Run the following script in a &lt;a href=&#34;/doc/develop/build-hooks/&#34; &gt;deployment hook&lt;/a&gt; (e.g. in the &lt;a href=&#34;/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; &gt;pre-run hook&lt;/a&gt;):&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash -l
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt; -f &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;APP_HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CC_WEBROOT&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.user.ini &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  cp &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;APP_HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CC_WEBROOT&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.user.ini &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/user.ini&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -5170,7 +5170,7 @@ you have to do it from PHP (you can&amp;rsquo;t do it from &lt;code&gt;.htaccess
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;p&gt;To change this limit you can define &lt;code&gt;MEMORY_LIMIT&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#php&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To change this limit you can define &lt;code&gt;MEMORY_LIMIT&lt;/code&gt; &lt;a href=&#34;/doc/reference/reference-environment-variables/#php&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you define a limit exceeding the application memory it will use the default one.&lt;/p&gt;
 &lt;h5&gt;&lt;code&gt;pm.max_children&lt;/code&gt;: Maximum PHP Children per instance&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pmmax_children-maximum-php-children-per-instance&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#pmmax_children-maximum-php-children-per-instance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;You can fix the maximum number of PHP running processes per instance by setting &lt;code&gt;pm.max_children&lt;/code&gt; (see above).&lt;/p&gt;
@@ -5182,9 +5182,9 @@ you have to do it from PHP (you can&amp;rsquo;t do it from &lt;code&gt;.htaccess
     &lt;a href=&#34;#htaccess&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.htaccess&lt;/code&gt; file can be created everywhere in you app, depending of the part of the application covered by directives.&lt;/p&gt;
 &lt;p&gt;However, directives who applies to the entire application must be declared in a &lt;code&gt;.htaccess&lt;/code&gt; file to the application root.&lt;/p&gt;
 &lt;h3&gt;htpasswd&lt;span class=&#34;absolute -mt-20&#34; id=&#34;htpasswd&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#htpasswd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can configure basic authentication using &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#php&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
+    &lt;a href=&#34;#htpasswd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can configure basic authentication using &lt;a href=&#34;/doc/reference/reference-environment-variables/#php&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
 &lt;h3&gt;Define a custom HTTP timeout&lt;span class=&#34;absolute -mt-20&#34; id=&#34;define-a-custom-http-timeout&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#define-a-custom-http-timeout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can define the timeout of an HTTP request in Apache using the &lt;code&gt;HTTP_TIMEOUT&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+    &lt;a href=&#34;#define-a-custom-http-timeout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can define the timeout of an HTTP request in Apache using the &lt;code&gt;HTTP_TIMEOUT&lt;/code&gt; &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;By default, the HTTP timeout is se to 3 minutes (180 seconds)&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3&gt;Force HTTPS traffic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;force-https-traffic&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#force-https-traffic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Load balancers handle HTTPS traffic ahead of your application. You can use the &lt;code&gt;X-Forwarded-Proto&lt;/code&gt; header to know the original protocol (&lt;code&gt;http&lt;/code&gt; or &lt;code&gt;https&lt;/code&gt;).&lt;/p&gt;
@@ -5271,7 +5271,7 @@ If you want to use `phpinfo()` without exposing environment variables, you have 
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;You can perform your own &lt;code&gt;composer.phar install&lt;/code&gt; by using the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#post-build-cc_post_build_hook&#34; &gt;Post Build hook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can perform your own &lt;code&gt;composer.phar install&lt;/code&gt; by using the &lt;a href=&#34;/doc/develop/build-hooks/#post-build-cc_post_build_hook&#34; &gt;Post Build hook&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Example of a &lt;code&gt;composer.json&lt;/code&gt; file:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-10&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;require&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -5380,7 +5380,7 @@ we recommend you to add &lt;code&gt;oauth&lt;/code&gt; token in your composer co
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: some extensions need to be &lt;a href=&#34;#enable-specific-extensions&#34; &gt;enabled explicitely&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The following extensions are enabled by default: &lt;code&gt;amqp&lt;/code&gt;, &lt;code&gt;imagick&lt;/code&gt;, &lt;code&gt;libsodium&lt;/code&gt;, &lt;code&gt;mcrypt&lt;/code&gt;, &lt;code&gt;memcached&lt;/code&gt;, &lt;code&gt;memcache&lt;/code&gt;, &lt;code&gt;mongodb&lt;/code&gt;, &lt;code&gt;opcache&lt;/code&gt;, &lt;code&gt;redis&lt;/code&gt;, &lt;code&gt;solr&lt;/code&gt;, &lt;code&gt;ssh2&lt;/code&gt;, &lt;code&gt;zip&lt;/code&gt;, &lt;code&gt;gRPC&lt;/code&gt;, &lt;code&gt;protobuf&lt;/code&gt;, &lt;code&gt;Pspell&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can add &lt;code&gt;DISABLE_&amp;lt;extension_name&amp;gt;: true&lt;/code&gt; in your &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; to disable them.&lt;/p&gt;
+&lt;p&gt;You can add &lt;code&gt;DISABLE_&amp;lt;extension_name&amp;gt;: true&lt;/code&gt; in your &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; to disable them.&lt;/p&gt;
 &lt;p&gt;If you have a request about modules, feel free to contact our support at &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200&#34;&gt;
   &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
@@ -5481,11 +5481,11 @@ It will speed up your application but users might lose their session across inst
 and deployments.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Use Redis to store PHP Sessions&lt;span class=&#34;absolute -mt-20&#34; id=&#34;use-redis-to-store-php-sessions&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#use-redis-to-store-php-sessions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide the possibility to store the PHP sessions in a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis database&lt;/a&gt; to improve reliability.&lt;/p&gt;
+    &lt;a href=&#34;#use-redis-to-store-php-sessions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide the possibility to store the PHP sessions in a &lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis database&lt;/a&gt; to improve reliability.&lt;/p&gt;
 &lt;p&gt;If your application is under heavy load, redis persistence for sessions can improve latency.&lt;/p&gt;
 &lt;p&gt;To enable this feature, you need to:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;enable Redis support on the application (create an &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;ENABLE_REDIS&lt;/code&gt; with the value &lt;code&gt;true&lt;/code&gt;.)&lt;/li&gt;
+&lt;li&gt;enable Redis support on the application (create an &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;ENABLE_REDIS&lt;/code&gt; with the value &lt;code&gt;true&lt;/code&gt;.)&lt;/li&gt;
 &lt;li&gt;create and link a Redis add-on&lt;/li&gt;
 &lt;li&gt;create an &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;SESSION_TYPE&lt;/code&gt; with the value &lt;code&gt;redis&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -5493,7 +5493,7 @@ and deployments.&lt;/li&gt;
   &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
   &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
     &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
-      &lt;pre&gt;&lt;code&gt;You must have a [Redis](https://devcenter.clever-cloud.com/doc/deploy/addon/redis/) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
+      &lt;pre&gt;&lt;code&gt;You must have a [Redis](/doc/deploy/addon/redis/) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
 &lt;p&gt;If no Redis add-on is linked with your application, the deployment will fail.
 &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;/p&amp;gt;
@@ -5602,7 +5602,7 @@ and deployments.&lt;/li&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -5661,9 +5661,9 @@ and deployments.&lt;/li&gt;
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -5673,10 +5673,10 @@ and deployments.&lt;/li&gt;
     
     <item>
       <title>Python</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/python/</link>
+      <link>/doc/getting-started/by-language/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/python/</guid>
+      <guid>/doc/getting-started/by-language/python/</guid>
       <description>
         
         
@@ -5826,7 +5826,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -5837,7 +5837,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -5864,10 +5864,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -5877,7 +5877,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -5913,10 +5913,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -6004,7 +6004,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
     &lt;a href=&#34;#manage-your-static-files&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To enable Nginx to serve your static resources, you have to set two &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;STATIC_FILES_PATH&lt;/code&gt;: should point to a directory where your static files are stored.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;STATIC_URL_PREFIX&lt;/code&gt;: the URL path under which you want to serve static files (e.g. &lt;code&gt;/public&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;File System Buckets&lt;/a&gt; section.&lt;/p&gt;
+&lt;p&gt;Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;File System Buckets&lt;/a&gt; section.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: the path of your folder must be absolute regarding the root of your application.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: setting the &lt;code&gt;STATIC_URL_PREFIX&lt;/code&gt; to &lt;code&gt;/&lt;/code&gt; will cause the deployment failure.&lt;/p&gt;
 &lt;h4&gt;Static files example&lt;span class=&#34;absolute -mt-20&#34; id=&#34;static-files-example&#34;&gt;&lt;/span&gt;
@@ -6049,7 +6049,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;li&gt;&lt;code&gt;GZIP_TYPES&lt;/code&gt;: the mime types to gzip. Defaults to &lt;code&gt;text/* application/json application/xml application/javascript image/svg+xml&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5&gt;Basic authentication&lt;span class=&#34;absolute -mt-20&#34; id=&#34;basic-authentication&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#basic-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;If you need basic authentication, you can enable it using &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#python&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
+    &lt;a href=&#34;#basic-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;If you need basic authentication, you can enable it using &lt;a href=&#34;/doc/reference/reference-environment-variables/#python&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
 &lt;h4&gt;Nginx optional configuration with &lt;code&gt;clevercloud/http.json&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx-optional-configuration-with-clevercloudhttpjson&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nginx-optional-configuration-with-clevercloudhttpjson&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Nginx settings can be configured further in &lt;code&gt;clevercloud/http.json&lt;/code&gt;. All its fields are optional.&lt;/p&gt;
 &lt;ul&gt;
@@ -6084,7 +6084,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;p&gt;To do so, add the &lt;code&gt;CC_PYTHON_USE_GEVENT&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; to your application, with the &lt;code&gt;true&lt;/code&gt; value.&lt;/p&gt;
 &lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;absolute -mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
-&lt;p&gt;Please refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;/doc/administrate/metrics/new-relic/&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
 &lt;h2&gt;Celery apps&lt;span class=&#34;absolute -mt-20&#34; id=&#34;celery-apps&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#celery-apps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Please note that Celery support is not available yet for &lt;code&gt;gunicorn&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We also support celery apps out of the box. To deploy a celery app, use the &lt;code&gt;CC_PYTHON_CELERY_MODULE&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;:&lt;/p&gt;
@@ -6163,7 +6163,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -6222,9 +6222,9 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -6234,10 +6234,10 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
     
     <item>
       <title>Ruby</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/ruby/</link>
+      <link>/doc/getting-started/by-language/ruby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/ruby/</guid>
+      <guid>/doc/getting-started/by-language/ruby/</guid>
       <description>
         
         
@@ -6387,7 +6387,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -6398,7 +6398,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -6425,10 +6425,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -6438,7 +6438,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -6474,10 +6474,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -6643,14 +6643,14 @@ Most used values are &lt;code&gt;production&lt;/code&gt; and &lt;code&gt;develop
 &lt;/ul&gt;
 &lt;p&gt;You can now commit and push your changes.&lt;/p&gt;
 &lt;p&gt;Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;File System Buckets&lt;/a&gt; section.&lt;/p&gt;
+&lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;File System Buckets&lt;/a&gt; section.&lt;/p&gt;
 &lt;h3&gt;Nginx configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nginx-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;nginx settings can be configured with &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;NGINX_READ_TIMEOUT&lt;/code&gt;: the response timeout in seconds. (Defaut: 300)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Basic authentication&lt;span class=&#34;absolute -mt-20&#34; id=&#34;basic-authentication&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#basic-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If you need basic authentication, you can enable it using &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/#ruby&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
+    &lt;a href=&#34;#basic-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If you need basic authentication, you can enable it using &lt;a href=&#34;/doc/reference/reference-environment-variables/#ruby&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
 &lt;h4&gt;Nginx optional configuration with &lt;code&gt;clevercloud/http.json&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx-optional-configuration-with-clevercloudhttpjson&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nginx-optional-configuration-with-clevercloudhttpjson&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Nginx settings can be configured further in &lt;code&gt;clevercloud/http.json&lt;/code&gt;. All its fields are optional.&lt;/p&gt;
 &lt;ul&gt;
@@ -6740,7 +6740,7 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -6799,9 +6799,9 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -6811,10 +6811,10 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
     
     <item>
       <title>Rust</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/rust/</link>
+      <link>/doc/getting-started/by-language/rust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/rust/</guid>
+      <guid>/doc/getting-started/by-language/rust/</guid>
       <description>
         
         
@@ -6964,7 +6964,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -6975,7 +6975,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -7002,10 +7002,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -7015,7 +7015,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -7051,10 +7051,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -7238,7 +7238,7 @@ environment variable to the list of features to enable.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -7297,9 +7297,9 @@ environment variable to the list of features to enable.&lt;/p&gt;
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -7309,10 +7309,10 @@ environment variable to the list of features to enable.&lt;/p&gt;
     
     <item>
       <title>Scala</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/scala/</link>
+      <link>/doc/getting-started/by-language/scala/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/scala/</guid>
+      <guid>/doc/getting-started/by-language/scala/</guid>
       <description>
         
         
@@ -7462,7 +7462,7 @@ You can add any key already present in your GitHub account by clicking on the im
     &lt;a href=&#34;#add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Public SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;public-ssh-key&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#public-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab, add the key by entering a name and the public SSH key. The key is the entire content of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
 &lt;h3&gt;Private SSH Key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;private-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#private-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
@@ -7473,7 +7473,7 @@ You can add any key already present in your GitHub account by clicking on the im
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
-&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have trouble configuring this key you can refer to &lt;a href=&#34;/getting-started/ssh-keys/&#34; &gt;this extended documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -7500,10 +7500,10 @@ You can add any key already present in your GitHub account by clicking on the im
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -7513,7 +7513,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -7549,10 +7549,10 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -7682,7 +7682,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -7741,9 +7741,9 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 

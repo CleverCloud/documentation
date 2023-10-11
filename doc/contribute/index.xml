@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Contribute</title>
-    <link>https://devcenter.clever-cloud.com/doc/contribute/</link>
+    <link>/doc/contribute/</link>
     <description>Recent content in Contribute on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/contribute/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/contribute/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,17 +16,17 @@
     
     <item>
       <title>Write new Content</title>
-      <link>https://devcenter.clever-cloud.com/doc/contribute/writing/</link>
+      <link>/doc/contribute/writing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/contribute/writing/</guid>
+      <guid>/doc/contribute/writing/</guid>
       <description>
         
         
         &lt;h2&gt;Before writing something new&lt;span class=&#34;absolute -mt-20&#34; id=&#34;before-writing-something-new&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#before-writing-something-new&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you start writing something new please create a &lt;a href=&#34;https://github.com/CleverCloud/doc.clever-cloud.com/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github issue&lt;/a&gt; so we can talk about it. Moslty to make sure someone is not already working on the same thing.&lt;/p&gt;
 &lt;h2&gt;Writing new content&lt;span class=&#34;absolute -mt-20&#34; id=&#34;writing-new-content&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#writing-new-content&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There are a number of things you need to be aware of when writing new content. We use markdown files and Hugo to generate this documentation. The CSS classes available are in Bootstrap 4.5. A list of commonly used Hugo shortcode can be found in its &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/contribute/shortcodes/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#writing-new-content&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There are a number of things you need to be aware of when writing new content. We use markdown files and Hugo to generate this documentation. The CSS classes available are in Bootstrap 4.5. A list of commonly used Hugo shortcode can be found in its &lt;a href=&#34;/doc/contribute/shortcodes/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Debug Mode&lt;span class=&#34;absolute -mt-20&#34; id=&#34;debug-mode&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#debug-mode&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you add &lt;code&gt;debug=true&lt;/code&gt; as params of your Hugo site, you should see every shortcode outlined on your website like so:&lt;/p&gt;
 &lt;div class=&#34;shortcode-debug&#34;&gt;&lt;strong&gt;myshortcode &lt;/strong&gt;&lt;p&gt;This is a shortcode being used&lt;/div&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>Shortcode</title>
-      <link>https://devcenter.clever-cloud.com/doc/contribute/shortcodes/</link>
+      <link>/doc/contribute/shortcodes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/contribute/shortcodes/</guid>
+      <guid>/doc/contribute/shortcodes/</guid>
       <description>
         
         

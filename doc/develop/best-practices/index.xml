@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Best Practices</title>
-    <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/</link>
+    <link>/doc/develop/best-practices/</link>
     <description>Recent content in Best Practices on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/develop/best-practices/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/develop/best-practices/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Collaboration</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/collaboration/</link>
+      <link>/doc/develop/best-practices/collaboration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/collaboration/</guid>
+      <guid>/doc/develop/best-practices/collaboration/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>E-Commerce</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/ecommerce/</link>
+      <link>/doc/develop/best-practices/ecommerce/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/ecommerce/</guid>
+      <guid>/doc/develop/best-practices/ecommerce/</guid>
       <description>
         
         
@@ -42,10 +42,10 @@
     
     <item>
       <title>Blue/Green Deployments</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</link>
+      <link>/doc/develop/best-practices/blue-green/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</guid>
+      <guid>/doc/develop/best-practices/blue-green/</guid>
       <description>
         
         
@@ -76,10 +76,10 @@ This way, if you are not happy with the changes you made, just go the Clever Clo
     
     <item>
       <title>Cloud Storage</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</link>
+      <link>/doc/develop/best-practices/cloud-storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</guid>
+      <guid>/doc/develop/best-practices/cloud-storage/</guid>
       <description>
         
         
@@ -148,7 +148,7 @@ That way, you don&amp;rsquo;t have to handle the receive-and-upload part on the 
 You may understand where our preference goes, by now!
 If you can, use Cellar.
 S3 Client library exist in almost all languages.
-It&amp;rsquo;s &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;cheaper&lt;/a&gt;.
+It&amp;rsquo;s &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;cheaper&lt;/a&gt;.
 It&amp;rsquo;s more resilient to hardware failures.
 It gives you free processing power: when using files on your filesystem, you have to process them yourself.
 When using Cellar, you can delegate the handling of the upload to Cellar itself.&lt;/p&gt;
@@ -159,10 +159,10 @@ When using Cellar, you can delegate the handling of the upload to Cellar itself.
     
     <item>
       <title>Load testing</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</link>
+      <link>/doc/develop/best-practices/load-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</guid>
+      <guid>/doc/develop/best-practices/load-testing/</guid>
       <description>
         
         
@@ -217,10 +217,10 @@ When using Cellar, you can delegate the handling of the upload to Cellar itself.
     
     <item>
       <title>The Twelve-Factor App</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</link>
+      <link>/doc/develop/best-practices/12-factors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</guid>
+      <guid>/doc/develop/best-practices/12-factors/</guid>
       <description>
         
         

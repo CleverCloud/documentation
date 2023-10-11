@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Addon</title>
-    <link>https://devcenter.clever-cloud.com/doc/deploy/addon/</link>
+    <link>/doc/deploy/addon/</link>
     <description>Recent content in Addon on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/addon/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/deploy/addon/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Elastic Stack</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/</link>
+      <link>/doc/deploy/addon/elastic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/</guid>
+      <guid>/doc/deploy/addon/elastic/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>MongoDB</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/</link>
+      <link>/doc/deploy/addon/mongodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/</guid>
+      <guid>/doc/deploy/addon/mongodb/</guid>
       <description>
         
         
@@ -42,10 +42,10 @@
     
     <item>
       <title>MySQL</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/</link>
+      <link>/doc/deploy/addon/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/</guid>
+      <guid>/doc/deploy/addon/mysql/</guid>
       <description>
         
         
@@ -55,10 +55,10 @@
     
     <item>
       <title>PostgreSQL</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/</link>
+      <link>/doc/deploy/addon/postgresql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/</guid>
+      <guid>/doc/deploy/addon/postgresql/</guid>
       <description>
         
         
@@ -68,10 +68,10 @@
     
     <item>
       <title>Cellar, a S3-like object storage service</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/</link>
+      <link>/doc/deploy/addon/cellar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/</guid>
+      <guid>/doc/deploy/addon/cellar/</guid>
       <description>
         
         
@@ -504,10 +504,10 @@ The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Withou
     
     <item>
       <title>Configuration provider</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/config-provider/</link>
+      <link>/doc/deploy/addon/config-provider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/config-provider/</guid>
+      <guid>/doc/deploy/addon/config-provider/</guid>
       <description>
         
         
@@ -531,7 +531,7 @@ The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Withou
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/schema-config-provider-01.png&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/schema-config-provider-01.png&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Two Node.js applications with their own environment variables
     &lt;/figcaption&gt;
@@ -547,7 +547,7 @@ It will allow us to define those common variables in one place and inject them i
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/schema-config-provider-02.png&#34; alt=&#34;Two Node.js applications sharing the 2 variables from a configuration provider&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/schema-config-provider-02.png&#34; alt=&#34;Two Node.js applications sharing the 2 variables from a configuration provider&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Two Node.js applications sharing the 2 variables from a configuration provider
     &lt;/figcaption&gt;
@@ -559,7 +559,7 @@ It will allow us to define those common variables in one place and inject them i
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/schema-config-provider-03.png&#34; alt=&#34;One application overriding the environment variable value for PULSAR_TOPIC&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/schema-config-provider-03.png&#34; alt=&#34;One application overriding the environment variable value for PULSAR_TOPIC&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         One application overriding the environment variable value for PULSAR_TOPIC
     &lt;/figcaption&gt;
@@ -576,7 +576,7 @@ It will allow us to define those common variables in one place and inject them i
 &lt;li&gt;Define a name and click on &lt;em&gt;&amp;ldquo;Next&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Once you have your configuration provider, you can set the variables in the form.
-You can find out more about rules and format in &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#environment-variables-rules-and-formats&#34; &gt;this page&lt;/a&gt;.&lt;/p&gt;
+You can find out more about rules and format in &lt;a href=&#34;/doc/develop/env-variables/#environment-variables-rules-and-formats&#34; &gt;this page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; At any point, you can link/unlink an application from the configuration provider by going to the app&amp;rsquo;s &lt;em&gt;&amp;ldquo;Service dependencies&amp;rdquo;&lt;/em&gt; page.&lt;/p&gt;
 &lt;h2&gt;Details and behaviour&lt;span class=&#34;absolute -mt-20&#34; id=&#34;details-and-behaviour&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#details-and-behaviour&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
@@ -594,10 +594,10 @@ No fee will be invoiced to you while using this kind of add-on.&lt;/p&gt;
     
     <item>
       <title>CouchBase</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/couchbase/</link>
+      <link>/doc/deploy/addon/couchbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/couchbase/</guid>
+      <guid>/doc/deploy/addon/couchbase/</guid>
       <description>
         
         
@@ -609,10 +609,10 @@ Please reach to our support if you would like to use this database, they will ki
     
     <item>
       <title>File System Buckets</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/</link>
+      <link>/doc/deploy/addon/fs-bucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/</guid>
+      <guid>/doc/deploy/addon/fs-bucket/</guid>
       <description>
         
         
@@ -841,7 +841,7 @@ make sure** that the &amp;quot;apps&amp;quot; fields make the two buckets mutual
     &lt;a href=&#34;#from-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your bucket is mounted at the configured path, starting from your application&amp;rsquo;s
 root folder.&lt;/p&gt;
 &lt;p&gt;If you want to use an absolute path, you can use the &lt;code&gt;APP_HOME&lt;/code&gt; environment
-variable, see &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#special-environment-variables&#34; &gt;special environment variables&lt;/a&gt;&lt;/p&gt;
+variable, see &lt;a href=&#34;/doc/develop/env-variables/#special-environment-variables&#34; &gt;special environment variables&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;From the addon dashboard&lt;span class=&#34;absolute -mt-20&#34; id=&#34;from-the-addon-dashboard&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#from-the-addon-dashboard&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;strong&gt;File explorer&lt;/strong&gt; tab of the &lt;strong&gt;addon dashboard&lt;/strong&gt; gives you access to your files
 in the FS bucket.&lt;/p&gt;
@@ -866,10 +866,10 @@ you need to connect to your bucket using FTP.&lt;/p&gt;
     
     <item>
       <title>Jenkins</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/jenkins/</link>
+      <link>/doc/deploy/addon/jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/jenkins/</guid>
+      <guid>/doc/deploy/addon/jenkins/</guid>
       <description>
         
         
@@ -881,7 +881,7 @@ You can find out more about Jenkins on &lt;a href=&#34;https://www.jenkins.io&#3
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/full-dashboard.png&#34; alt=&#34;Jenkins Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/full-dashboard.png&#34; alt=&#34;Jenkins Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins Dashboard
     &lt;/figcaption&gt;
@@ -903,11 +903,11 @@ The Weekly version isn&amp;rsquo;t available during the creation, yet, but if yo
 &lt;/ol&gt;
 &lt;h3&gt;CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
 &lt;li&gt;List the available plans and options for Jenkins: &lt;code&gt;clever addon providers show jenkins&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;In your terminal, you can then run &lt;code&gt;clever addon create jenkins &amp;lt;app-name&amp;gt; --region &amp;lt;region&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where &lt;code&gt;app-name&lt;/code&gt; is the name you want for your add-on, &lt;code&gt;region&lt;/code&gt; deployment region, and &lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
 &lt;h2&gt;Accessing the Jenkins interface&lt;span class=&#34;absolute -mt-20&#34; id=&#34;accessing-the-jenkins-interface&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-the-jenkins-interface&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once you created your add-on, you should get to the dashboard. You should see a link named &lt;code&gt;Access Jenkins&lt;/code&gt;. Opening that link will redirect you to our SSO
 authentication.&lt;/p&gt;
@@ -934,7 +934,7 @@ credentials as well as your 2FA Authentication code if needed.&lt;/p&gt;
       &lt;p&gt;If it&amp;rsquo;s the first time you use the Clever Cloud SSO, a few OAuth rights will be displayed for you to accept them. All the rights
 listed should be accepted otherwise the backend service might not work correctly.&lt;/p&gt;
   &lt;figure class=&#34;cc-content-img&#34;&gt;
-      &lt;img src=&#34;https://devcenter.clever-cloud.com/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+      &lt;img src=&#34;/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
       &lt;figcaption&gt;
           SSO Needed Rights
       &lt;/figcaption&gt;
@@ -990,7 +990,7 @@ any rate limiting.&lt;/li&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/cloud-configuration.png&#34; alt=&#34;Jenkins Cloud configuration&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/cloud-configuration.png&#34; alt=&#34;Jenkins Cloud configuration&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins Cloud configuration
     &lt;/figcaption&gt;
@@ -1049,7 +1049,7 @@ You should also see after a few seconds a pending Job in the &lt;code&gt;Build h
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/jobs-history.png&#34; alt=&#34;Jenkins jobs history&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/jobs-history.png&#34; alt=&#34;Jenkins jobs history&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins jobs history
     &lt;/figcaption&gt;
@@ -1062,7 +1062,7 @@ will start to be executed.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/runner-deploying.png&#34; alt=&#34;Jenkins runner deploying&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/runner-deploying.png&#34; alt=&#34;Jenkins runner deploying&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins runner deploying
     &lt;/figcaption&gt;
@@ -1146,7 +1146,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/update-available-cc-dashboard.png&#34; alt=&#34;Jenkins update available&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/update-available-cc-dashboard.png&#34; alt=&#34;Jenkins update available&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins update available
     &lt;/figcaption&gt;
@@ -1160,7 +1160,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/jenkins/update-available.png&#34; alt=&#34;Jenkins update message&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/jenkins/update-available.png&#34; alt=&#34;Jenkins update message&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins update message
     &lt;/figcaption&gt;
@@ -1201,10 +1201,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>MailPace</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mailpace/</link>
+      <link>/doc/deploy/addon/mailpace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mailpace/</guid>
+      <guid>/doc/deploy/addon/mailpace/</guid>
       <description>
         
         
@@ -1245,10 +1245,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>Matomo</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/matomo/</link>
+      <link>/doc/deploy/addon/matomo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/matomo/</guid>
+      <guid>/doc/deploy/addon/matomo/</guid>
       <description>
         
         
@@ -1259,7 +1259,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/matomo/full-dashboard.png&#34; alt=&#34;Matomo Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/matomo/full-dashboard.png&#34; alt=&#34;Matomo Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Matomo Dashboard
     &lt;/figcaption&gt;
@@ -1286,11 +1286,11 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 &lt;/ol&gt;
 &lt;h3&gt;CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
 &lt;li&gt;List the available plans and options for Matomo: &lt;code&gt;clever addon providers show Matomo&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;In your terminal, you can then run &lt;code&gt;clever addon create matomo &amp;lt;app-name&amp;gt; --region &amp;lt;region&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where &lt;code&gt;app-name&lt;/code&gt; is the name you want for your add-on, &lt;code&gt;region&lt;/code&gt; deployment region, and &lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
 &lt;h2&gt;Accessing the Matomo interface&lt;span class=&#34;absolute -mt-20&#34; id=&#34;accessing-the-matomo-interface&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-the-matomo-interface&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once you created your add-on, you should get to the dashboard and see a link named &lt;code&gt;Access Matomo&lt;/code&gt;. Opening that link will redirect you to our SSO authentication.&lt;/p&gt;
 
@@ -1316,7 +1316,7 @@ credentials as well as your 2FA Authentication code if needed.&lt;/p&gt;
       &lt;p&gt;If it&amp;rsquo;s the first time you use the Clever Cloud SSO, a few OAuth rights will be displayed for you to accept them. All the rights
 listed should be accepted otherwise the backend service might not work correctly.&lt;/p&gt;
   &lt;figure class=&#34;cc-content-img&#34;&gt;
-      &lt;img src=&#34;https://devcenter.clever-cloud.com/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+      &lt;img src=&#34;/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
       &lt;figcaption&gt;
           SSO Needed Rights
       &lt;/figcaption&gt;
@@ -1429,10 +1429,10 @@ listed should be accepted otherwise the backend service might not work correctly
     
     <item>
       <title>Pulsar</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/pulsar/</link>
+      <link>/doc/deploy/addon/pulsar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/pulsar/</guid>
+      <guid>/doc/deploy/addon/pulsar/</guid>
       <description>
         
         
@@ -1891,7 +1891,7 @@ TTL_WRITE&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-
 &lt;/div&gt;
 &lt;h3&gt;Offload storage to Cellar (S3)&lt;span class=&#34;absolute -mt-20&#34; id=&#34;offload-storage-to-cellar-s3&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#offload-storage-to-cellar-s3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Pulsar has a &lt;a href=&#34;https://pulsar.apache.org/docs/en/tiered-storage-overview/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tiered storage feature&lt;/a&gt; allowing to offload heavy data to cold storage once a threshold is reached.&lt;/p&gt;
-&lt;p&gt;For each Pulsar add-on we provide, we also provide a hidden &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;Cellar add-on&lt;/a&gt;, our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.&lt;/p&gt;
+&lt;p&gt;For each Pulsar add-on we provide, we also provide a hidden &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar add-on&lt;/a&gt;, our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.&lt;/p&gt;
 &lt;p&gt;The offload threshold of the namespace is deactivated by default, you can activate it with:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-17&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Example to set offload to run when hot storage is &amp;gt; 10G and put data to Cellar Addon&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulsarctl --admin-service-url &lt;span class=&#34;nv&#34;&gt;$ADDON_PULSAR_HTTP_URL&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
@@ -1923,10 +1923,10 @@ TTL_WRITE&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 transition group-
     
     <item>
       <title>Redis</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/redis/</link>
+      <link>/doc/deploy/addon/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/redis/</guid>
+      <guid>/doc/deploy/addon/redis/</guid>
       <description>
         
         

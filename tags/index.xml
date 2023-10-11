@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Tags</title>
-    <link>https://devcenter.clever-cloud.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 Jun 2023 15:01:20 +0200</lastBuildDate>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       

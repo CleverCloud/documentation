@@ -12,9 +12,8 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 
   <title>Quickstart – Clever Cloud Documentation</title>
-  <meta name="description" content="Create a Clever Cloud Account 🔑 Choose Your Authentication Method The API of Clever Cloud uses OAuth 1 to perform authentication actions. There are two ways to signup to Clever Cloud: email or GitHub login.
-Go to the Clever Cloud Console and select the method you prefer.
-@ Email Authentication This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters. Do not forget to validate your email by clicking the link you will receive." />
+  <meta name="description" content="Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+Create a Clever Cloud Account The API of Clever Cloud uses OAuth 1 to perform authentication actions. There are two ways to signup to Clever Cloud: email or GitHub login." />
 
   
 
@@ -33,7 +32,7 @@ Go to the Clever Cloud Console and select the method you prefer.
 
 
 
-  <link href="/css/custom.min.b24bab3cf89251133adcda8642fcd97109b122bc63d33224eee58ebd831f2aa9.css" rel="stylesheet" integrity="sha256-skurPPiSURM63NqGQvzZcQmxIrxj0zIk7uWOvYMfKqk=" />
+  <link href="/css/custom.min.9dced4aa6108962b19f6893219be9b14d66652f1fc7bcac395ca61b1ed853337.css" rel="stylesheet" integrity="sha256-nc7UqmEIlisZ9okyGb6bFNZmUvH8e8rDlcphse2FMzc=" />
 
 
 
@@ -165,21 +164,9 @@ Go to the Clever Cloud Console and select the method you prefer.
             </li>
           <li>
               <a
-                href="#create-an-application-step-by-step"
+                href="#manage-your-application"
                 class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border flex gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
-              >Create an application step by step</a>
-            </li>
-          <li>
-              <a
-                href="#choose-how-to-deploy"
-                class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border flex gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
-              >Choose how to deploy</a>
-            </li>
-          <li>
-              <a
-                href="#manage-your-stack"
-                class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border flex gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
-              >Manage your stack</a>
+              >Manage your Application</a>
             </li>
           </ul>
   
@@ -3709,63 +3696,91 @@ Go to the Clever Cloud Console and select the method you prefer.
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-12 rtl:pr-12 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#two-factor-authentication-2fa">Two Factor Authentication (2FA)
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
         <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#deploy-your-code">Deploy your code
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#supported-platforms">Supported platforms:
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#whats-an-application-on-clever-cloud">What&rsquo;s an Application on Clever Cloud
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#create-an-application-step-by-step">Create an application step by step
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#how-it-works">How it Works
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#select-the-proper-organization-you-want-to-add-the-application-to">Select the proper organization you want to add the application to
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#supported-platforms">Supported Platforms:
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#click-on-the-create-an-application-button">Click on the &ldquo;Create an application&rdquo; button
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#create-an-application-step-by-step">Create an Application Step by Step
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#select-the-language-or-the-framework-you-need">Select the language or the framework you need
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#select-the-proper-organization-you-want-to-add-the-application-to">Select the proper organization you want to add the application to
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#fine-tune-your-scaling-configuration">Fine-tune your scaling configuration
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#click-on-the-create-an-application-button">Click on the &ldquo;Create an application&rdquo; button
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#enter-the-name-and-description-of-your-application">Enter the name and description of your application.
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#select-the-language-or-the-framework-you-need">Select the language or the framework you need
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#optional-steps">Optional steps
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#fine-tune-your-scaling-configuration">Fine-tune your scaling configuration
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#choose-how-to-deploy">Choose how to deploy
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#enter-the-name-and-description-of-your-application">Enter the name and description of your application.
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#troubleshooting-deployments">Troubleshooting Deployments
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#optional-steps">Optional steps
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#git">Git
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#choose-how-to-deploy">Choose How to Deploy
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#github">GitHub
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#troubleshooting-git-deployments">Troubleshooting Git Deployments
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#manage-your-stack">Manage your stack
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#troubleshooting-github-deployments">Troubleshooting GitHub Deployments
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#available-add-ons">Available add-ons
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#manage-your-application">Manage your Application
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#create-your-first-add-on">Create your first add-on
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#available-add-ons">Available add-ons
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#manage-your-add-on">Manage your Add-on
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#information-screen">Information screen
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#configuration-screen">Configuration screen
+        </a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#delete-an-add-on">Delete an add-on
         </a>
       </li></ul>
       <div class="mt-8 border-t bg-white pt-8 shadow-[0_-12px_16px_white] dark:bg-dark dark:shadow-[0_-12px_16px_#111] sticky bottom-0 flex flex-col items-start gap-2 pb-8 dark:border-neutral-800 contrast-more:border-t contrast-more:border-neutral-400 contrast-more:shadow-none contrast-more:dark:border-neutral-400"><a class="text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 contrast-more:text-gray-800 contrast-more:dark:text-gray-50" href="https://github.com/cnivolle/doc.clever-cloud.com/doc/quickstart/_index.md" target="_blank" rel="noreferer">Edit this page on GitHub →</a></div>
@@ -3783,39 +3798,69 @@ Go to the Clever Cloud Console and select the method you prefer.
 
         <div class="content">
           <h1>Quickstart</h1>
-          <h2>Create a Clever Cloud Account<span class="absolute -mt-20" id="create-a-clever-cloud-account"></span>
-    <a href="#create-a-clever-cloud-account" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🔑 Choose Your Authentication Method</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>The API of Clever Cloud uses OAuth 1 to perform authentication actions.
+          <p>Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.</p>
+<h2>Create a Clever Cloud Account<span class="absolute -mt-20" id="create-a-clever-cloud-account"></span>
+    <a href="#create-a-clever-cloud-account" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to signup to Clever Cloud: <strong>email</strong> or <strong>GitHub login</strong>.</p>
-<p>Go to the <a href="https://console.clever-cloud.com/" target="_blank" rel="noopener">Clever Cloud Console</a> and select the method you prefer.</p>
-<h4>@ Email Authentication<span class="absolute -mt-20" id="-email-authentication"></span>
-    <a href="#-email-authentication" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters.
-Do not forget to validate your email by clicking the link you will receive.</p>
-<h4><span class="inline-block align-text-bottom icon"><svg height=1em xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 128 128"><g fill="#181616"><path fill-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388c0 26.682 17.303 49.317 41.297 57.303c3.017.56 4.125-1.31 4.125-2.905c0-1.44-.056-6.197-.082-11.243c-16.8 3.653-20.345-7.125-20.345-7.125c-2.747-6.98-6.705-8.836-6.705-8.836c-5.48-3.748.413-3.67.413-3.67c6.063.425 9.257 6.223 9.257 6.223c5.386 9.23 14.127 6.562 17.573 5.02c.542-3.903 2.107-6.568 3.834-8.076c-13.413-1.525-27.514-6.704-27.514-29.843c0-6.593 2.36-11.98 6.223-16.21c-.628-1.52-2.695-7.662.584-15.98c0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033c11.526-7.813 16.59-6.19 16.59-6.19c3.287 8.317 1.22 14.46.593 15.98c3.872 4.23 6.215 9.617 6.215 16.21c0 23.194-14.127 28.3-27.574 29.796c2.167 1.874 4.097 5.55 4.097 11.183c0 8.08-.07 14.583-.07 16.572c0 1.607 1.088 3.49 4.148 2.897c23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z" clip-rule="evenodd"/><path d="M26.484 91.806c-.133.3-.605.39-1.035.185c-.44-.196-.685-.605-.543-.906c.13-.31.603-.395 1.04-.188c.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28c-.396-.42-.47-.983-.177-1.254c.298-.266.844-.14 1.24.28c.394.426.472.984.17 1.255zm2.382 3.477c-.37.258-.976.017-1.35-.52c-.37-.538-.37-1.183.01-1.44c.373-.258.97-.025 1.35.507c.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23c-.527-.487-.674-1.18-.343-1.544c.336-.366 1.045-.264 1.564.23c.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486c-.683-.207-1.13-.76-.99-1.238c.14-.477.823-.7 1.512-.485c.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92c-.723.017-1.308-.387-1.315-.877c0-.503.568-.91 1.29-.924c.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117c-.7.13-1.35-.172-1.44-.653c-.086-.498.422-.997 1.122-1.126c.714-.123 1.354.17 1.444.663zm0 0"/></g></svg></span>
- GitHub Authentication<span class="absolute -mt-20" id="hahahugoshortcodes0hbhb-github-authentication"></span>
-    <a href="#hahahugoshortcodes0hbhb-github-authentication" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
-This process asks the following permissions: </p>
+<p><div class="mt-4 flex w-max min-w-full border-b border-gray-200 pb-px dark:border-neutral-800"><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-0"
+      aria-selected="true"
+      tabindex="0"
+      data-state="selected"
+    >Email</button><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-1"
+      
+      
+      
+    > GitHub</button></div>
+<div>
+  
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-0"
+  role="tabpanel"
+  tabindex="0"
+  data-state="selected"
+>
+  This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters.
+Do not forget to validate your email by clicking the link you will receive.
+</div>
+
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-1"
+  role="tabpanel"
+  
+  
+>
+  <p>The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
+This process asks the following permissions:</p>
 <ul>
 <li>Read your Public Key</li>
 <li>Read User Repositories</li>
 </ul>
-<p>The &ldquo;repository permission&rdquo; is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.</p>
-<p>If you need to give access to Clever Cloud&rsquo;s API to a specific GitHub organization, you
-can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc" target="_blank" rel="noopener">do it here</a>.</p>
-<h5>🔐 Two Factor Authentication (2FA)<span class="absolute -mt-20" id="-two-factor-authentication-2fa"></span>
-    <a href="#-two-factor-authentication-2fa" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>Clever Cloud supports 2FA. You can enable it here: <a href="https://console.clever-cloud.com/users/me/authentication" target="_blank" rel="noopener">https://console.clever-cloud.com/users/me/authentication</a></p>
+<p>The &ldquo;repository permission&rdquo; is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
+If you need to give access to Clever Cloud&rsquo;s API to a specific GitHub organization, you can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc" target="_blank" rel="noopener">do it here</a>.</p>
+
+</div>
+
+  
+
+</div>
+
+Go to the <a href="https://console.clever-cloud.com/" target="_blank" rel="noopener">Clever Cloud Console</a> and select the method you prefer.</p>
+<h5>Two Factor Authentication (2FA)<span class="absolute -mt-20" id="two-factor-authentication-2fa"></span>
+    <a href="#two-factor-authentication-2fa" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>Clever Cloud supports 2FA. You can enable it here: <a href="https://console.clever-cloud.com/users/me/authentication" target="_blank" rel="noopener">https://console.clever-cloud.com/users/me/authentication</a></p>
 <p>Please, backup your recovery codes, we won&rsquo;t be able to restore access to your account if you lose access to your regular codes.</p>
-  </div>
-</details>
 <h2>Deploy your code<span class="absolute -mt-20" id="deploy-your-code"></span>
-    <a href="#deploy-your-code" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🎓 What&rsquo;s an Application on Clever Cloud</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>An application is defined on Clever Cloud by the following elements:</p>
+    <a href="#deploy-your-code" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>What&rsquo;s an Application on Clever Cloud<span class="absolute -mt-20" id="whats-an-application-on-clever-cloud"></span>
+    <a href="#whats-an-application-on-clever-cloud" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>An application is defined on Clever Cloud by the following elements:</p>
 <ul>
 <li>a dedicated language/framework;</li>
 <li>a deployment method (FTP and/or Git);</li>
@@ -3823,9 +3868,10 @@ can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2c
 <li>an optional configuration file you may add to your project.</li>
 </ul>
 <p>If one of these elements is missing, Clever Cloud can&rsquo;t deploy your application properly (except the configuration file, optional in some cases).</p>
-  </div>
-</details>
-<h3>Supported platforms:<span class="absolute -mt-20" id="supported-platforms"></span>
+<h3>How it Works<span class="absolute -mt-20" id="how-it-works"></span>
+    <a href="#how-it-works" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>When you push an application&rsquo;s code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.</p>
+<p>The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.</p>
+<h3>Supported Platforms:<span class="absolute -mt-20" id="supported-platforms"></span>
     <a href="#supported-platforms" class="subheading-anchor" aria-label="Permalink for this section"></a></h3>
 
 <div class="hextra-cards mt-4 gap-4 grid not-prose" style="--rows: 3;">
@@ -3882,30 +3928,22 @@ can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2c
 
 </div>
 
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">📍 How it works</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>When you push an application&rsquo;s code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.</p>
-<p>The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.</p>
-  </div>
-</details>
-<h2>Create an application step by step<span class="absolute -mt-20" id="create-an-application-step-by-step"></span>
-    <a href="#create-an-application-step-by-step" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>In the <a href="https://console.clever-cloud.com/" target="_blank" rel="noopener">Clever Cloud Console</a>:</p>
+<h3>Create an Application Step by Step<span class="absolute -mt-20" id="create-an-application-step-by-step"></span>
+    <a href="#create-an-application-step-by-step" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>In the <a href="https://console.clever-cloud.com/" target="_blank" rel="noopener">Clever Cloud Console</a>:</p>
 <div class="steps ml-4 mb-12 border-l border-gray-200 pl-6 dark:border-neutral-800 [counter-reset:step]">
-<h3>Select the proper organization you want to add the application to<span class="absolute -mt-20" id="select-the-proper-organization-you-want-to-add-the-application-to"></span>
-    <a href="#select-the-proper-organization-you-want-to-add-the-application-to" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>At this point you must only have the Personal Space but you can create one.</p>
-<h3>Click on the &ldquo;Create an application&rdquo; button<span class="absolute -mt-20" id="click-on-the-create-an-application-button"></span>
-    <a href="#click-on-the-create-an-application-button" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Find it in the <strong>Organization Manager</strong> panel.</p>
+<h4>Select the proper organization you want to add the application to<span class="absolute -mt-20" id="select-the-proper-organization-you-want-to-add-the-application-to"></span>
+    <a href="#select-the-proper-organization-you-want-to-add-the-application-to" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>At this point you must only have the Personal Space but you can create one.</p>
+<h4>Click on the &ldquo;Create an application&rdquo; button<span class="absolute -mt-20" id="click-on-the-create-an-application-button"></span>
+    <a href="#click-on-the-create-an-application-button" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Find it in the <strong>Organization Manager</strong> panel.</p>
 <p>This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.</p>
 <p>If you want to deploy an application within a GitHub organisation, first <a href="https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc" target="_blank" rel="noopener">grant the Clever Cloud API access to it</a>.</p>
-<h3>Select the language or the framework you need<span class="absolute -mt-20" id="select-the-language-or-the-framework-you-need"></span>
-    <a href="#select-the-language-or-the-framework-you-need" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>💡 Optional:</strong> For PHP applications, you can choose between FTP and Git deployment.</p>
-<h3>Fine-tune your scaling configuration<span class="absolute -mt-20" id="fine-tune-your-scaling-configuration"></span>
-    <a href="#fine-tune-your-scaling-configuration" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.</p>
-<h3>Enter the name and description of your application.<span class="absolute -mt-20" id="enter-the-name-and-description-of-your-application"></span>
-    <a href="#enter-the-name-and-description-of-your-application" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h3>Optional steps<span class="absolute -mt-20" id="optional-steps"></span>
-    <a href="#optional-steps" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<h4>Select the language or the framework you need<span class="absolute -mt-20" id="select-the-language-or-the-framework-you-need"></span>
+    <a href="#select-the-language-or-the-framework-you-need" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><strong>💡 Optional:</strong> For PHP applications, you can choose between FTP and Git deployment.</p>
+<h4>Fine-tune your scaling configuration<span class="absolute -mt-20" id="fine-tune-your-scaling-configuration"></span>
+    <a href="#fine-tune-your-scaling-configuration" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.</p>
+<h4>Enter the name and description of your application.<span class="absolute -mt-20" id="enter-the-name-and-description-of-your-application"></span>
+    <a href="#enter-the-name-and-description-of-your-application" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><h4>Optional steps<span class="absolute -mt-20" id="optional-steps"></span>
+    <a href="#optional-steps" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li>
 <p>The wizard will offer you to <a href="https://devcenter.clever-cloud.com/doc/deploy/addon/" target="_blank" rel="noopener">add an add-on</a> to your application</p>
 </li>
@@ -3914,12 +3952,42 @@ can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2c
 </li>
 </ul>
 </div>
-<h2>Choose how to deploy<span class="absolute -mt-20" id="choose-how-to-deploy"></span>
-    <a href="#choose-how-to-deploy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🌱 Deploy with Git Step by Step</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p><em>To deploy via Git, you need it installed on your machine. You can find more information on Git website: <a href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com</a></em></p>
+<h4>Choose How to Deploy<span class="absolute -mt-20" id="choose-how-to-deploy"></span>
+    <a href="#choose-how-to-deploy" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><div class="mt-4 flex w-max min-w-full border-b border-gray-200 pb-px dark:border-neutral-800"><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-0"
+      aria-selected="true"
+      tabindex="0"
+      data-state="selected"
+    >Git</button><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-1"
+      
+      
+      
+    >GitHub</button><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-2"
+      
+      
+      
+    > FTP</button></div>
+<div>
+  
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-0"
+  role="tabpanel"
+  tabindex="0"
+  data-state="selected"
+>
+  <p><em>To deploy via Git, you need it installed on your machine. You can find more information on Git website: <a href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com</a></em></p>
 <p><em>Note:</em> During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the <code>COMMIT_ID</code> <a href="https://devcenter.clever-cloud.com/doc/develop/env-variables/" target="_blank" rel="noopener">environment variable</a>.</p>
 <p>Follow these steps to deploy your application:</p>
 <ol>
@@ -3960,13 +4028,18 @@ can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2c
   </div>
 </div>
 <p>You can see your application <strong>logs</strong> in the dashboard to <strong>monitor the deployment</strong>.</p>
-  </div>
-</details>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 128 128"><g fill="#181616"><path fill-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388c0 26.682 17.303 49.317 41.297 57.303c3.017.56 4.125-1.31 4.125-2.905c0-1.44-.056-6.197-.082-11.243c-16.8 3.653-20.345-7.125-20.345-7.125c-2.747-6.98-6.705-8.836-6.705-8.836c-5.48-3.748.413-3.67.413-3.67c6.063.425 9.257 6.223 9.257 6.223c5.386 9.23 14.127 6.562 17.573 5.02c.542-3.903 2.107-6.568 3.834-8.076c-13.413-1.525-27.514-6.704-27.514-29.843c0-6.593 2.36-11.98 6.223-16.21c-.628-1.52-2.695-7.662.584-15.98c0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033c11.526-7.813 16.59-6.19 16.59-6.19c3.287 8.317 1.22 14.46.593 15.98c3.872 4.23 6.215 9.617 6.215 16.21c0 23.194-14.127 28.3-27.574 29.796c2.167 1.874 4.097 5.55 4.097 11.183c0 8.08-.07 14.583-.07 16.572c0 1.607 1.088 3.49 4.148 2.897c23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z" clip-rule="evenodd"/><path d="M26.484 91.806c-.133.3-.605.39-1.035.185c-.44-.196-.685-.605-.543-.906c.13-.31.603-.395 1.04-.188c.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28c-.396-.42-.47-.983-.177-1.254c.298-.266.844-.14 1.24.28c.394.426.472.984.17 1.255zm2.382 3.477c-.37.258-.976.017-1.35-.52c-.37-.538-.37-1.183.01-1.44c.373-.258.97-.025 1.35.507c.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23c-.527-.487-.674-1.18-.343-1.544c.336-.366 1.045-.264 1.564.23c.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486c-.683-.207-1.13-.76-.99-1.238c.14-.477.823-.7 1.512-.485c.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92c-.723.017-1.308-.387-1.315-.877c0-.503.568-.91 1.29-.924c.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117c-.7.13-1.35-.172-1.44-.653c-.086-.498.422-.997 1.122-1.126c.714-.123 1.354.17 1.444.663zm0 0"/></g></svg><strong class="text-lg">Deploy automatically from GitHub</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>Once you have created your application with GitHub, each push on the <code>master</code> branch trigger a deployment. To deploy an other branch than <code>master</code>, go to the <code>information</code> panel of your application and select the default branch to use.</p>
+
+</div>
+
+
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-1"
+  role="tabpanel"
+  
+  
+>
+  <p>Once you have created your application with GitHub, each push on the <code>master</code> branch trigger a deployment. To deploy an other branch than <code>master</code>, go to the <code>information</code> panel of your application and select the default branch to use.</p>
 <figure class="cc-content-img">
     <img src="/images/github-deployment-branch.png" alt="Github deployment branch select" class="img-fluid" data-action="zoom" />
     <figcaption>
@@ -3977,48 +4050,39 @@ can <a href="https://GitHub.com/settings/connections/applications/d96bd8fd996d2c
 <p><strong>Private GitHub repositories are also supported.</strong></p>
 <p>Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they&rsquo;re a collaborator) or they have no access.</p>
 <p>However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).</p>
-  </div>
-</details>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">📂 FTP Deployment</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>You can deploy via FTP with PHP applications.</p>
+
+</div>
+
+
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-2"
+  role="tabpanel"
+  
+  
+>
+  <p>You can deploy via FTP with PHP applications.</p>
 <p>To deploy via FTP, you need an FTP software installed on your machine. <a href="https://filezilla-project.org/" target="_blank" rel="noopener">Filezilla</a> is one of them.</p>
-<p>Deploy your application via FTP, create a <a href="https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/" target="_blank" rel="noopener">FS Bucket</a> with an ID
-matching your application&rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.</p>
+<p>Deploy your application via FTP, create a <a href="https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/" target="_blank" rel="noopener">FS Bucket</a> with an ID matching your application&rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.</p>
 <p><a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29" target="_blank" rel="noopener">More documentation about Filezilla</a>.</p>
 <p><span class="inline-block align-text-bottom icon"><svg height=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
 An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-  </div>
-</details>
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
 <div class="overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200">
-  <div class="select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2" style='font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'>⚠️</div>
-  <div class="w-full min-w-0 leading-7">
-    <p class="mt-6 leading-7 first:mt-0">
-      FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <strong>Git</strong> deployment for <strong>large PHP websites</strong>.
-    </p>
-  </div>
+<div class="select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2" style='font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'>⚠️</div>
+<div class="w-full min-w-0 leading-7">
+  <p class="mt-6 leading-7 first:mt-0">
+    FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <strong>Git</strong> deployment for <strong>large PHP websites</strong>.
+  </p>
 </div>
-<h3>Troubleshooting Deployments<span class="absolute -mt-20" id="troubleshooting-deployments"></span>
-    <a href="#troubleshooting-deployments" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Git<span class="absolute -mt-20" id="git"></span>
-    <a href="#git" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
+</div>
+
+</div>
+
+
+</div>
+
+<h3>Troubleshooting Git Deployments<span class="absolute -mt-20" id="troubleshooting-git-deployments"></span>
+    <a href="#troubleshooting-git-deployments" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
   <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">Remote is asking for a password</strong>
   </summary>
   <div class="p-2 overflow-hidden">
@@ -4047,8 +4111,8 @@ An FTP application is automatically started once the application is created, eve
 </div>
   </div>
 </details>
-<h4>GitHub<span class="absolute -mt-20" id="github"></span>
-    <a href="#github" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
+<h3>Troubleshooting GitHub Deployments<span class="absolute -mt-20" id="troubleshooting-github-deployments"></span>
+    <a href="#troubleshooting-github-deployments" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
   <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">Does not appear to be a git repository</strong>
   </summary>
   <div class="p-2 overflow-hidden">
@@ -4066,12 +4130,8 @@ An FTP application is automatically started once the application is created, eve
 <p>If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.</p>
   </div>
 </details>
-<h2>Manage your stack<span class="absolute -mt-20" id="manage-your-stack"></span>
-    <a href="#manage-your-stack" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🌐 Manage your Application from the Dashboard</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>There are many tabs available in the application&rsquo;s menu:</p>
+<h2>Manage your Application<span class="absolute -mt-20" id="manage-your-application"></span>
+    <a href="#manage-your-application" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>There are many tabs available in the application&rsquo;s menu on Clever Console:</p>
 <ul>
 <li><strong>Information:</strong> General information about your application</li>
 <li><strong>Scalability:</strong> Set-up scalability options</li>
@@ -4084,19 +4144,12 @@ An FTP application is automatically started once the application is created, eve
 <li><strong>Metrics:</strong> Visualize application&rsquo;s metrics</li>
 <li><strong>Consumption:</strong> Visualize your application&rsquo;s consumption.</li>
 </ul>
-  </div>
-</details>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🔌 Create your first add-on</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.</p>
+<h3>Create your first add-on<span class="absolute -mt-20" id="create-your-first-add-on"></span>
+    <a href="#create-your-first-add-on" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.</p>
 <p>An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.</p>
-<p>Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (<a href="https://devcenter.clever-cloud.com/doc/extend/cc-api/" target="_blank" rel="noopener">See how to integrate your SaaS with Clever Cloud</a>)</p>
-  </div>
-</details>
-<h3>Available add-ons<span class="absolute -mt-20" id="available-add-ons"></span>
-    <a href="#available-add-ons" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Clever Cloud provides multiple add-ons to work with your applications:</p>
+<p>Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (<a href="https://devcenter.clever-cloud.com/doc/extend/cc-api/" >See how to integrate your SaaS with Clever Cloud</a>)</p>
+<h4>Available add-ons<span class="absolute -mt-20" id="available-add-ons"></span>
+    <a href="#available-add-ons" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Clever Cloud provides multiple add-ons to work with your applications:</p>
 
 
 <div class="hextra-cards mt-4 gap-4 grid not-prose" style="--rows: 3;">
@@ -4111,7 +4164,7 @@ An FTP application is automatically started once the application is created, eve
 
   <a
     class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-    href="../deploy/addon/mongodb"><span class="flex font-semibold items-start gap-2 pt-4 px-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115c-.28-.394-.53-.954-.735-1.44c-.036.495-.055.685-.523 1.184c-.723.566-4.438 3.682-4.74 10.02c-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481a28.48 28.48 0 0 1 .51-3.07c.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695c-.381-.045-.765-1.76-.765-2.405z"/></svg>MongDB</span><div class="line-clamp-3 text-sm font-normal text-gray-500 dark:text-gray-400 px-4 mb-4 mt-2">The NoSQL document-oriented database</div></a>
+    href="../deploy/addon/mongodb"><span class="flex font-semibold items-start gap-2 pt-4 px-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" width="24" heihugo serverght="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115c-.28-.394-.53-.954-.735-1.44c-.036.495-.055.685-.523 1.184c-.723.566-4.438 3.682-4.74 10.02c-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481a28.48 28.48 0 0 1 .51-3.07c.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695c-.381-.045-.765-1.76-.765-2.405z"/></svg>MongDB</span><div class="line-clamp-3 text-sm font-normal text-gray-500 dark:text-gray-400 px-4 mb-4 mt-2">The NoSQL document-oriented database</div></a>
 
   <a
     class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
@@ -4193,11 +4246,33 @@ They are for not production usage. These add-ons usually rely on shared resource
     </p>
   </div>
 </div>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🪄 Create an add-on for an existing application</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>Here we will assume you want to create a new add-on and link it to your application.</p>
+<div class="mt-4 flex w-max min-w-full border-b border-gray-200 pb-px dark:border-neutral-800"><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-0"
+      aria-selected="true"
+      tabindex="0"
+      data-state="selected"
+    >Create an add-on for an existing application</button><button
+      class="tabs-toggle data-[state=selected]:border-primary-500 data-[state=selected]:text-primary-600 mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2 border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white"
+      role="tab"
+      type="button"
+      aria-controls="tabs-panel-1"
+      
+      
+      
+    >Link an existing add-on to your application</button></div>
+<div>
+  
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-0"
+  role="tabpanel"
+  tabindex="0"
+  data-state="selected"
+>
+  <p>Here we will assume you want to create a new add-on and link it to your application.</p>
 <ol>
 <li>Go to the <a href="https://console.clever-cloud.com/" target="_blank" rel="noopener">Clever Cloud Console</a>.</li>
 <li>Go to the organization in which you want to create the add-on, for example your <a href="https://console.clever-cloud.com/users/me" target="_blank" rel="noopener">personal space</a>.</li>
@@ -4209,13 +4284,18 @@ They are for not production usage. These add-ons usually rely on shared resource
 <li>Click on the <strong>Create</strong> button.</li>
 </ol>
 <p>The add-on will now be available in your organization, and corresponding environment variables will be available for the applications linked to the add-on you just created.</p>
-  </div>
-</details>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">🔗 Link an existing add-on to your application</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>To link an already existing add-on with your application, just follow these steps:</p>
+
+</div>
+
+  
+  <div
+  class="tabs-panel rounded pt-6 hidden data-[state=selected]:block"
+  id="tabs-panel-1"
+  role="tabpanel"
+  
+  
+>
+  <p>To link an already existing add-on with your application, just follow these steps:</p>
 <ol>
 <li>Go in the organization of your application.</li>
 <li>Click on the name of the application you want to link with your add-on.</li>
@@ -4223,36 +4303,47 @@ They are for not production usage. These add-ons usually rely on shared resource
 <li>Select the add-on you want to link under the &ldquo;Link addons&rdquo; dropdown menu.</li>
 <li>Click on the <strong>Link</strong> button of the add-on you want to link to your application.</li>
 </ol>
-  </div>
-</details>
-<details class="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4 group" >
-  <summary class="flex items-center cursor-pointer select-none list-none p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 before:mr-1 before:inline-block before:transition-transform before:content-[''] dark:before:invert rtl:before:rotate-180 group-open:before:rotate-90 gap-2"><strong class="text-lg">⚙️ Managing your add-on</strong>
-  </summary>
-  <div class="p-2 overflow-hidden">
-    <p>Once an add-on is created, at least two management tabs are available in the Clever Cloud console:</p>
+
+</div>
+
+
+</div>
+
+<h3>Manage your Add-on<span class="absolute -mt-20" id="manage-your-add-on"></span>
+    <a href="#manage-your-add-on" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Once an add-on is created, at least two management tabs are available in the Clever Cloud console:</p>
 <ul>
-<li>the Information tab</li>
-<li>the Configuration tab</li>
+<li>The <strong>Information</strong> tab</li>
+<li>The <strong>Configuration</strong> tab</li>
 </ul>
 <p>Other tabs may be available, depending on the add-on type.</p>
 <h4>Information screen<span class="absolute -mt-20" id="information-screen"></span>
     <a href="#information-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>This screen sums-up the characteristics of the selected add-on.
 Features and environment variables (if applicable) are shown.</p>
+
+
+
+
 <figure class="cc-content-img">
     <img src="/images/managing-addons-info.png" alt="Example of the information tab of an add-on" class="img-fluid" data-action="zoom" />
     <figcaption>
         Example of the information tab of an add-on
     </figcaption>
   </figure>
+
 <h4>Configuration screen<span class="absolute -mt-20" id="configuration-screen"></span>
     <a href="#configuration-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Add-ons can be managed from the Configuration tab.
 This screen is managed directly by the provider of the add-on.</p>
+
+
+
+
 <figure class="cc-content-img">
     <img src="/images/managing-addons-config.png" alt="Example of the configuration tab of an add-on" class="img-fluid" data-action="zoom" />
     <figcaption>
         Example of the configuration tab of an add-on
     </figcaption>
   </figure>
+
 <h3>Delete an add-on<span class="absolute -mt-20" id="delete-an-add-on"></span>
     <a href="#delete-an-add-on" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>To delete an add-on:</p>
 <ol>
@@ -4260,11 +4351,10 @@ This screen is managed directly by the provider of the add-on.</p>
 <li>Click on <em>Remove add-on</em>.</li>
 </ol>
 <p>⚠️ Warning: After deletion of the add-on, all associated data will be removed.</p>
-  </div>
-</details>
+
         </div>
         
-    <div class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400">Last updated on <time datetime="2023-10-07T01:22:42.000Z">October 7, 2023</time></div>
+    <div class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400">Last updated on <time datetime="2023-10-11T11:31:26.000Z">October 11, 2023</time></div>
         
         
   

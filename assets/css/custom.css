@@ -52,4 +52,7 @@ h1, .content h1,
 .bg-gray-100 {
   background-color: #f1f0fb;
 }
+.bg-gray-200 {
+  background-color: rgb(214, 207, 251);
+}
 

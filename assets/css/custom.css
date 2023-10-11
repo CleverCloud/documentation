@@ -44,7 +44,7 @@ h1, .content h1,
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));
-  margin-top: 3px;
+  margin-top: -1px;
   margin-left: -41px;
     content: counter(step);
 }

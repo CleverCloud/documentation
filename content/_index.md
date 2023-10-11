@@ -14,46 +14,47 @@ type: default
 
 <div class="mt-6 mb-6">
 {{< hextra/hero-headline >}}
-  Build modern websites&nbsp;<br class="sm:block hidden" />with Markdown and Hugo
+  Deploy and manage your apps&nbsp;<br class="sm:block hidden" />on Clever Cloud
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="mb-12">
 {{< hextra/hero-subtitle >}}
-  Fast, batteries-included Hugo theme&nbsp;<br class="sm:block hidden" />for creating beautiful static websites
+  Documentation and guides to deploy,&nbsp;<br class="sm:block hidden" />manage, and monitor your apps.
 {{< /hextra/hero-subtitle >}}
 </div>
 
 <div class="mb-6">
-{{< hextra/hero-button text="Get Started" link="/getting-started/doc/getting-started/quickstart/" >}}
+{{< hero-button-primary text="Quickstart" link="doc/quickstart" >}}
+{{< hero-button-secondary text="Explore" link="doc/" >}}
 </div>
 
 <div class="mt-6"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Fast and Full-featured"
+    title="Deploy a Static Site"
     subtitle="Simple and easy to use, yet powerful and feature-rich."
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+    style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);"
   >}}
   {{< hextra/feature-card
-    title="Markdown is All You Need"
+    title="Deploy a Rust App"
     subtitle="Compose with just Markdown. Enrich with Shortcode components."
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
     image="images/hextra-markdown.webp"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
+    style="background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);"
   >}}
   {{< hextra/feature-card
-    title="Full Text Search"
+    title="Migrate a Database"
     subtitle="Built-in full text search with FlexSearch, no extra setup required."
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-search.webp"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
+    style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);"
   >}}
   {{< hextra/feature-card
     title="Lightweight as a Feather"

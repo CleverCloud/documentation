@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Clever Tools CLI</title>
-    <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</link>
+    <link>/doc/reference/clever-tools/</link>
     <description>Recent content in Clever Tools CLI on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/reference/clever-tools/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/reference/clever-tools/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Application configuration with Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/configure/</link>
+      <link>/doc/reference/clever-tools/configure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/configure/</guid>
+      <guid>/doc/reference/clever-tools/configure/</guid>
       <description>
         
         
@@ -74,10 +74,10 @@ Force redirection of HTTP to HTTPS: enabled&lt;/code&gt;&lt;/pre&gt;&lt;div clas
     
     <item>
       <title>Application creation with Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/</link>
+      <link>/doc/reference/clever-tools/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/</guid>
+      <guid>/doc/reference/clever-tools/create/</guid>
       <description>
         
         
@@ -187,10 +187,10 @@ clever published-config rm &amp;lt;variable-name&amp;gt;
     
     <item>
       <title>Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/clever-tools/</link>
+      <link>/doc/reference/clever-tools/clever-tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/clever-tools/</guid>
+      <guid>/doc/reference/clever-tools/clever-tools/</guid>
       <description>
         
         
@@ -200,10 +200,10 @@ clever published-config rm &amp;lt;variable-name&amp;gt;
     
     <item>
       <title>Getting started with Clever Cloud CLI</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/</link>
+      <link>/doc/reference/clever-tools/getting_started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/</guid>
+      <guid>/doc/reference/clever-tools/getting_started/</guid>
       <description>
         
         
@@ -561,10 +561,10 @@ Clever Tools.&lt;/p&gt;
     
     <item>
       <title>Informations about your application lifecycle</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/lifecycle/</link>
+      <link>/doc/reference/clever-tools/lifecycle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/lifecycle/</guid>
+      <guid>/doc/reference/clever-tools/lifecycle/</guid>
       <description>
         
         
@@ -603,10 +603,10 @@ clever applications --only-aliases
     
     <item>
       <title>Manage your application</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/manage/</link>
+      <link>/doc/reference/clever-tools/manage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/manage/</guid>
+      <guid>/doc/reference/clever-tools/manage/</guid>
       <description>
         
         
@@ -675,10 +675,10 @@ clever domain remove &amp;lt;domain-name&amp;gt;
     
     <item>
       <title>Notifications management with Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/notifications/</link>
+      <link>/doc/reference/clever-tools/notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/notifications/</guid>
+      <guid>/doc/reference/clever-tools/notifications/</guid>
       <description>
         
         
@@ -806,10 +806,10 @@ channel.&lt;/p&gt;
     
     <item>
       <title>SSH access with Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/ssh-access/</link>
+      <link>/doc/reference/clever-tools/ssh-access/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/ssh-access/</guid>
+      <guid>/doc/reference/clever-tools/ssh-access/</guid>
       <description>
         
         
@@ -873,7 +873,7 @@ Clever Cloud instances are to be seen as &amp;lt;i&amp;gt;read-only&amp;lt;/i&am
 &lt;h2&gt;Requirements&lt;span class=&#34;absolute -mt-20&#34; id=&#34;requirements&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You need to have the Clever Tools CLI installed locally.&lt;/p&gt;
 &lt;h3&gt;Make sure you have a properly configured SSH key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;make-sure-you-have-a-properly-configured-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/account/ssh-keys-managment/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
+    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;/doc/account/ssh-keys-managment/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
 &lt;h2&gt;Accessing your machine with Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;accessing-your-machine-with-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-your-machine-with-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In order to access the machine via SSH using the Clever Tools CLI&lt;/p&gt;
 &lt;p&gt;you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with &lt;code&gt;clever link --org &amp;lt;your_application&#39;s_organization_id&amp;gt; &amp;lt;your_application_id&amp;gt;&lt;/code&gt;&lt;/p&gt;

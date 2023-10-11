@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – extend</title>
-    <link>https://devcenter.clever-cloud.com/tags/extend/</link>
+    <link>/tags/extend/</link>
     <description>Recent content in extend on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/extend/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/extend/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Add-on API</title>
-      <link>https://devcenter.clever-cloud.com/doc/extend/add-ons-api/</link>
+      <link>/doc/extend/add-ons-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/extend/add-ons-api/</guid>
+      <guid>/doc/extend/add-ons-api/</guid>
       <description>
         
         
@@ -201,7 +201,7 @@ not its name.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;callback_url&lt;/code&gt; - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can&amp;rsquo;t use this URL during the POST call.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;logplex_token&lt;/code&gt; - Token used to identify what you send to our log collector. The log collector API doc is here: &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/extend/add-ons-log-collector/&#34; &gt;/clever-cloud-addons-api/add-ons-log-collector/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;logplex_token&lt;/code&gt; - Token used to identify what you send to our log collector. The log collector API doc is here: &lt;a href=&#34;/doc/extend/add-ons-log-collector/&#34; &gt;/clever-cloud-addons-api/add-ons-log-collector/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;options&lt;/code&gt; - String -&amp;gt; String map with options. We don&amp;rsquo;t currently support this, so it will be empty for now.&lt;/p&gt;
@@ -539,10 +539,10 @@ during the provisioning.&lt;/p&gt;
     
     <item>
       <title>Add-on Log Collector</title>
-      <link>https://devcenter.clever-cloud.com/doc/extend/add-ons-log-collector/</link>
+      <link>/doc/extend/add-ons-log-collector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/extend/add-ons-log-collector/</guid>
+      <guid>/doc/extend/add-ons-log-collector/</guid>
       <description>
         
         
@@ -632,10 +632,10 @@ dashboard.&lt;/p&gt;
     
     <item>
       <title>Clever Cloud API</title>
-      <link>https://devcenter.clever-cloud.com/doc/extend/cc-api/</link>
+      <link>/doc/extend/cc-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/extend/cc-api/</guid>
+      <guid>/doc/extend/cc-api/</guid>
       <description>
         
         

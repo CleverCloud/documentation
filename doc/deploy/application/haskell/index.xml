@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Haskell</title>
-    <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/</link>
+    <link>/doc/deploy/application/haskell/</link>
     <description>Recent content in Haskell on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/application/haskell/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/deploy/application/haskell/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Haskell Tutorials</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/</link>
+      <link>/doc/deploy/application/haskell/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/</guid>
+      <guid>/doc/deploy/application/haskell/tutorials/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>Deploy Haskell applications</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/</link>
+      <link>/doc/deploy/application/haskell/haskell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/</guid>
+      <guid>/doc/deploy/application/haskell/haskell/</guid>
       <description>
         
         
@@ -62,10 +62,10 @@
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
@@ -75,7 +75,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/clever-tools/create/&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
 
 
 
@@ -111,10 +111,10 @@
 &lt;/ol&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
 
 
@@ -280,7 +280,7 @@
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -339,9 +339,9 @@
 
 &lt;h2&gt;More configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
-&lt;p&gt;Go check the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;/doc/reference/common-configuration/&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
-&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;/doc/find-help/support/&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
 
 
 

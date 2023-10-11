@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – apps</title>
-    <link>https://devcenter.clever-cloud.com/tags/apps/</link>
+    <link>/tags/apps/</link>
     <description>Recent content in apps on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/apps/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/apps/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blackfire</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/metrics/blackfire/</link>
+      <link>/doc/administrate/metrics/blackfire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/metrics/blackfire/</guid>
+      <guid>/doc/administrate/metrics/blackfire/</guid>
       <description>
         
         
@@ -53,10 +53,10 @@
     
     <item>
       <title>Domain names</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/domain-names/</link>
+      <link>/doc/administrate/domain-names/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/domain-names/</guid>
+      <guid>/doc/administrate/domain-names/</guid>
       <description>
         
         
@@ -432,7 +432,7 @@ on a path prefix.&lt;/p&gt;
 &lt;p&gt;For instance, you can bind &lt;code&gt;example.com&lt;/code&gt; to an app, and &lt;code&gt;example.com/api&lt;/code&gt; to another one.
 All the HTTP requests on &lt;code&gt;example.com&lt;/code&gt; where the path starts with &lt;code&gt;/api&lt;/code&gt; will be routed to
 the second app. The other requests will be routed to the first app.
-You can add a path after every domain name you bind in the console (or with &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/cli/&#34; &gt;clever tools&lt;/a&gt;).&lt;/p&gt;
+You can add a path after every domain name you bind in the console (or with &lt;a href=&#34;/doc/getting-started/cli/&#34; &gt;clever tools&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Note that your prefix-routed application &lt;strong&gt;needs&lt;/strong&gt; to have a &lt;code&gt;/prefix&lt;/code&gt; route.&lt;/p&gt;
 &lt;p&gt;This will work:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-0&#34;&gt;example.com        -&amp;gt;      myfirtapp-main-route
@@ -480,10 +480,10 @@ example.com/api    -&amp;gt;      mysecondapp-main-route   (404 response from my
     
     <item>
       <title>Environment variables</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/env-variables/</link>
+      <link>/doc/develop/env-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/env-variables/</guid>
+      <guid>/doc/develop/env-variables/</guid>
       <description>
         
         
@@ -508,7 +508,7 @@ are listed in the add-on&amp;rsquo;s information panel.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.&lt;/p&gt;
-&lt;p&gt;Check out our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variable reference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variable reference&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Special environment variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;special-environment-variables&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#special-environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.&lt;/p&gt;
@@ -525,7 +525,7 @@ instance of your application and changes every time you deploy it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;INSTANCE_TYPE&lt;/code&gt;: The type of the instance (scaler). Its value can be &lt;code&gt;build&lt;/code&gt; or &lt;code&gt;production&lt;/code&gt;.
-&lt;code&gt;build&lt;/code&gt; is when your application is being built on a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;dedicated instance&lt;/a&gt;.&lt;/p&gt;
+&lt;code&gt;build&lt;/code&gt; is when your application is being built on a &lt;a href=&#34;/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;dedicated instance&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;COMMIT_ID&lt;/code&gt;: the commit ID used as a base to deploy your application. As we remove
@@ -722,47 +722,47 @@ You can find more information in the documentation pages related to your applica
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/#environment-injection.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/golang/go/#environment-injection.md&#34; &gt;Go&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;os.Getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Haskell&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/#environment-injection&#34; &gt;Haskell&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Os.Getenv[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/javascript/by-framework/nodejs/#environment-injection&#34; &gt;Node.js&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;process.env[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/java/java-war/#environment-injection&#34; &gt;Java WAR&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getProperties().getProperty(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#environment-injection&#34; &gt;PHP&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; &gt;Play! Framework 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; &gt;Play! Framework 2&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt; or &lt;code&gt;${MY_VAR}&lt;/code&gt; in &lt;code&gt;application.conf&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/#environment-injection&#34; &gt;Python&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;os.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/#environment-injection&#34; &gt;Ruby&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;ENV[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/rust/rust/#environment-injection&#34; &gt;Rust&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;std::env::var(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/scala/scala/#environment-injection&#34; &gt;Scala&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.NET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/dotnet/dotnet/#environment-injection&#34; &gt;.NET&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.Environment.GetEnvironmentVariable(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -793,10 +793,10 @@ You can find more information in the documentation pages related to your applica
     &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
       Please note that the variables are available at build time
 for runtimes that support build time instructions, such as
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;,
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt;,
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;
-or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;.
+&lt;a href=&#34;/doc/deploy/application/java/java-war/#environment-injection&#34; &gt;Java WAR&lt;/a&gt;,
+&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; &gt;Play! Framework 1&lt;/a&gt;,
+&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; &gt;Play! Framework 2&lt;/a&gt;
+or &lt;a href=&#34;/doc/deploy/application/scala/scala/#environment-injection&#34; &gt;Scala&lt;/a&gt;.
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -806,10 +806,10 @@ or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/sca
     
     <item>
       <title>New Relic</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/</link>
+      <link>/doc/administrate/metrics/new-relic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/</guid>
+      <guid>/doc/administrate/metrics/new-relic/</guid>
       <description>
         
         

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – MySQL</title>
-    <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/</link>
+    <link>/doc/deploy/addon/mysql/</link>
     <description>Recent content in MySQL on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/deploy/addon/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>MySQL add-on</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/</link>
+      <link>/doc/deploy/addon/mysql/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/</guid>
+      <guid>/doc/deploy/addon/mysql/mysql/</guid>
       <description>
         
         
@@ -62,7 +62,7 @@ If you want to import your &lt;strong&gt;SQL&lt;/strong&gt; dump, you can use se
 &lt;p&gt;This action will add new environment variables to reach the addon without any proxy.&lt;/p&gt;
 &lt;p&gt;Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.&lt;/p&gt;
 &lt;h2&gt;Encryption at rest&lt;span class=&#34;absolute -mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MySQL. You can have more information on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MySQL. You can have more information on the &lt;a href=&#34;/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 
@@ -82,7 +82,7 @@ to the local ProxySQL and it will forward all your requests to your MySQL add-on
 
 
 
-&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;/doc/deploy/addon/mysql/proxysql/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Plans&lt;span class=&#34;absolute -mt-20&#34; id=&#34;plans&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#plans&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 
@@ -129,10 +129,10 @@ to the local ProxySQL and it will forward all your requests to your MySQL add-on
     
     <item>
       <title>ProxySQL for MySQL add-ons</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/</link>
+      <link>/doc/deploy/addon/mysql/proxysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/</guid>
+      <guid>/doc/deploy/addon/mysql/proxysql/</guid>
       <description>
         
         
@@ -325,7 +325,7 @@ which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2&gt;Metrics&lt;span class=&#34;absolute -mt-20&#34; id=&#34;metrics&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ProxySQL exposes some metrics using Prometheus. Some of those metrics are ingested in our metrics system. You can then explore them
-in the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#display-metrics&#34; &gt;Web Console&lt;/a&gt;.&lt;/p&gt;
+in the &lt;a href=&#34;/doc/administrate/metrics/overview/#display-metrics&#34; &gt;Web Console&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is the list of currently tracked metrics, those may evolve over time:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;prometheus.proxysql_access_denied_max_connections_total&lt;/code&gt;&lt;/li&gt;

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – administrate</title>
-    <link>https://devcenter.clever-cloud.com/tags/administrate/</link>
+    <link>/tags/administrate/</link>
     <description>Recent content in administrate on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/administrate/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/administrate/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Application scaling</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/scalability/</link>
+      <link>/doc/administrate/scalability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/scalability/</guid>
+      <guid>/doc/administrate/scalability/</guid>
       <description>
         
         
@@ -51,7 +51,7 @@ reasonable level&lt;/strong&gt; is reached.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/scaling_horizontal_scheme.jpg&#34; alt=&#34;You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/scaling_horizontal_scheme.jpg&#34; alt=&#34;You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.
     &lt;/figcaption&gt;
@@ -63,7 +63,7 @@ reasonable level&lt;/strong&gt; is reached.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;width:355px&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/select-scalab.png&#34; alt=&#34;Horizontal scaling: the amount of scaler will increase, not the scaler size.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/select-scalab.png&#34; alt=&#34;Horizontal scaling: the amount of scaler will increase, not the scaler size.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Horizontal scaling: the amount of scaler will increase, not the scaler size.
     &lt;/figcaption&gt;
@@ -80,7 +80,7 @@ load, the larger the instance.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/scaling_vertical_scheme.jpg&#34; alt=&#34;vertical scaling&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/scaling_vertical_scheme.jpg&#34; alt=&#34;vertical scaling&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         vertical scaling
     &lt;/figcaption&gt;
@@ -92,7 +92,7 @@ load, the larger the instance.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/select-scalab.png&#34; alt=&#34;Vertical scaling: the amount of scalers will not increase in this configuration, but the scaler size will, from S to XL.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/select-scalab.png&#34; alt=&#34;Vertical scaling: the amount of scalers will not increase in this configuration, but the scaler size will, from S to XL.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Vertical scaling: the amount of scalers will not increase in this configuration, but the scaler size will, from S to XL.
     &lt;/figcaption&gt;
@@ -111,10 +111,10 @@ This is how it&amp;rsquo;ll be done:&lt;/p&gt;
     
     <item>
       <title>Clamav</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/clamav/</link>
+      <link>/doc/administrate/clamav/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/clamav/</guid>
+      <guid>/doc/administrate/clamav/</guid>
       <description>
         
         
@@ -170,10 +170,10 @@ This is how it&amp;rsquo;ll be done:&lt;/p&gt;
     
     <item>
       <title>CRON</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/cron/</link>
+      <link>/doc/administrate/cron/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/cron/</guid>
+      <guid>/doc/administrate/cron/</guid>
       <description>
         
         
@@ -351,7 +351,7 @@ important:&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Do &lt;em&gt;NOT&lt;/em&gt;. Invoking bash here will supersede the shebang and cancel the &lt;code&gt;bash -l&lt;/code&gt; that
 loads the env. So just put the path to your &lt;em&gt;executable&lt;/em&gt; &lt;code&gt;mycron.sh&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#special-environment-variables&#34; &gt;this list&lt;/a&gt; to see which variables are available.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;/doc/develop/env-variables/#special-environment-variables&#34; &gt;this list&lt;/a&gt; to see which variables are available.&lt;/p&gt;
 &lt;h2&gt;Deduplicating crons&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deduplicating-crons&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#deduplicating-crons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Crons are installed and executed on every scaler of an application. This means the same cron may be executed more than once.&lt;/p&gt;
 &lt;p&gt;You can use your own techniques to avoid that, like a shared task queue or some other locking system.&lt;/p&gt;
@@ -391,7 +391,7 @@ loads the env. So just put the path to your &lt;em&gt;executable&lt;/em&gt; &lt;
   &lt;div class=&#34;select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2&#34; style=&#39;font-family: &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;;&#39;&gt;⚠️&lt;/div&gt;
   &lt;div class=&#34;w-full min-w-0 leading-7&#34;&gt;
     &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
-      If &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Zero downtime deployment&lt;/a&gt; is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+      If &lt;a href=&#34;/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Zero downtime deployment&lt;/a&gt; is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
 You can prevent this by deactivating it.
     &lt;/p&gt;
   &lt;/div&gt;
@@ -404,10 +404,10 @@ You can prevent this by deactivating it.
     
     <item>
       <title>Database migration and security updates</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/database-migration/</link>
+      <link>/doc/administrate/database-migration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/database-migration/</guid>
+      <guid>/doc/administrate/database-migration/</guid>
       <description>
         
         
@@ -451,7 +451,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/database-migration-01.png&#34; alt=&#34;Migrate/Upgrade section&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/database-migration-01.png&#34; alt=&#34;Migrate/Upgrade section&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Migrate/Upgrade section
     &lt;/figcaption&gt;
@@ -465,7 +465,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/database-migration-02.png&#34; alt=&#34;Migration settings&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/database-migration-02.png&#34; alt=&#34;Migration settings&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Migration settings
     &lt;/figcaption&gt;
@@ -480,7 +480,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/database-migration-03.png&#34; alt=&#34;Confirmation prompt screen&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/database-migration-03.png&#34; alt=&#34;Confirmation prompt screen&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Confirmation prompt screen
     &lt;/figcaption&gt;
@@ -492,7 +492,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/database-migration-04.png&#34; alt=&#34;Migration in progress&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/database-migration-04.png&#34; alt=&#34;Migration in progress&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Migration in progress
     &lt;/figcaption&gt;
@@ -504,7 +504,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/database-migration-05.png&#34; alt=&#34;Migration successful&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/database-migration-05.png&#34; alt=&#34;Migration successful&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Migration successful
     &lt;/figcaption&gt;
@@ -517,10 +517,10 @@ Unless you want to upgrade your database to a new major version or to give it mo
     
     <item>
       <title>Installing TLS Certificates</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/ssl/</link>
+      <link>/doc/administrate/ssl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/ssl/</guid>
+      <guid>/doc/administrate/ssl/</guid>
       <description>
         
         
@@ -545,7 +545,7 @@ It&amp;rsquo;s all you have to do, our internal certificate generator will creat
     
     
     &lt;figure class=&#34;cc-content-img&#34;&gt;
-        &lt;img src=&#34;https://devcenter.clever-cloud.com/images/cloudflare-page-rule-ssl.png&#34; alt=&#34;Create a bypass page rule&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+        &lt;img src=&#34;/images/cloudflare-page-rule-ssl.png&#34; alt=&#34;Create a bypass page rule&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
         &lt;figcaption&gt;
             Create a bypass page rule
         &lt;/figcaption&gt;
@@ -560,13 +560,13 @@ It&amp;rsquo;s all you have to do, our internal certificate generator will creat
     
     
     &lt;figure class=&#34;cc-content-img&#34;&gt;
-        &lt;img src=&#34;https://devcenter.clever-cloud.com/images/cloudflare-https-setting.png&#34; alt=&#34;Turn off automatic HTTPS redirection&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+        &lt;img src=&#34;/images/cloudflare-https-setting.png&#34; alt=&#34;Turn off automatic HTTPS redirection&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
         &lt;figcaption&gt;
             Turn off automatic HTTPS redirection
         &lt;/figcaption&gt;
       &lt;/figure&gt;
 
-&lt;p&gt;You can enable &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Force HTTPS&lt;/a&gt; in the information tab of your Clever Cloud application instead.&lt;/p&gt;
+&lt;p&gt;You can enable &lt;a href=&#34;/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;Force HTTPS&lt;/a&gt; in the information tab of your Clever Cloud application instead.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -738,14 +738,14 @@ Our dedicated email for receiving certificates is &lt;a href=&#34;mailto:ssl@cle
     
     <item>
       <title>Logs management</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/log-management/</link>
+      <link>/doc/administrate/log-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/log-management/</guid>
+      <guid>/doc/administrate/log-management/</guid>
       <description>
         
         
-        &lt;p&gt;Log management is currently only available through our API and &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/getting-started/cli/&#34; &gt;clever-tools&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Log management is currently only available through our API and &lt;a href=&#34;/doc/getting-started/cli/&#34; &gt;clever-tools&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -1054,10 +1054,10 @@ You can use log drains if a greater retention is needed.
     
     <item>
       <title>Networking and IP addresses ranges</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/network/</link>
+      <link>/doc/administrate/network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/network/</guid>
+      <guid>/doc/administrate/network/</guid>
       <description>
         
         
@@ -1112,10 +1112,10 @@ In this case, we use the IPs they provide to us and have no control over the ran
     
     <item>
       <title>Service Dependencies</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/service-dependencies/</link>
+      <link>/doc/administrate/service-dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/service-dependencies/</guid>
+      <guid>/doc/administrate/service-dependencies/</guid>
       <description>
         
         
@@ -1133,7 +1133,7 @@ letting you link applications in the same way you can link addons.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;width:355px&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/service-dependencies-example.png&#34; alt=&#34;Service dependencies&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/service-dependencies-example.png&#34; alt=&#34;Service dependencies&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Service dependencies
     &lt;/figcaption&gt;
@@ -1182,7 +1182,7 @@ depending on it are automatically redeployed.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;width:100%&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/service-dependencies-config-update.png&#34; alt=&#34;Automatic redeployment&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/service-dependencies-config-update.png&#34; alt=&#34;Automatic redeployment&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Automatic redeployment
     &lt;/figcaption&gt;
@@ -1194,10 +1194,10 @@ depending on it are automatically redeployed.&lt;/p&gt;
     
     <item>
       <title>SSH access to running instances</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/ssh-clever-tools/</link>
+      <link>/doc/administrate/ssh-clever-tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/ssh-clever-tools/</guid>
+      <guid>/doc/administrate/ssh-clever-tools/</guid>
       <description>
         
         
@@ -1271,7 +1271,7 @@ Contact the support if you need help to debug your Docker applications.
 &lt;li&gt;an SSH client (e.g &lt;a href=&#34;https://putty.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;putty&lt;/a&gt; for windows users)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Make sure you have a properly configured SSH key&lt;span class=&#34;absolute -mt-20&#34; id=&#34;make-sure-you-have-a-properly-configured-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/account/ssh-keys-managment/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
+    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;/doc/account/ssh-keys-managment/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
 &lt;h2&gt;Using Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;using-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#using-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In order to access the machine via SSH using the Clever Tools CLI&lt;/p&gt;
 &lt;p&gt;you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with &lt;code&gt;clever link --org &amp;lt;your_application&#39;s_organization_id&amp;gt; &amp;lt;your_application_id&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -1344,10 +1344,10 @@ RSA     key fingerprint is SHA256:0odQb8NQPKYNCme2Nf3Xrz3Bc9kmrDK6eSJGIzj9aEA.
     
     <item>
       <title>TCP redirections with Clever Tools</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/tcp-redirections/</link>
+      <link>/doc/administrate/tcp-redirections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/tcp-redirections/</guid>
+      <guid>/doc/administrate/tcp-redirections/</guid>
       <description>
         
         
@@ -1409,10 +1409,10 @@ the active TCP redirections to make sure you have the proper data.&lt;/p&gt;
     
     <item>
       <title>Using ekg-statsd to push custom metrics</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</link>
+      <link>/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</guid>
+      <guid>/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</guid>
       <description>
         
         
@@ -1422,7 +1422,7 @@ the active TCP redirections to make sure you have the proper data.&lt;/p&gt;
 EKG allows you to have access to GC metrics, make sure you compile your application with &lt;code&gt;&amp;quot;-with-rtsopts=-T -N&amp;quot;&lt;/code&gt; to enable profiling.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re using &lt;a href=&#34;https://hackage.haskell.org/package/warp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;warp&lt;/a&gt;, you can use &lt;code&gt;wai-middleware-metrics&lt;/code&gt; to report request distributions (request count, responses count aggregated by status code, responses latency distribution).&lt;/p&gt;
 &lt;h3&gt;Configure logs for your Haskell application&lt;span class=&#34;absolute -mt-20&#34; id=&#34;configure-logs-for-your-haskell-application&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#configure-logs-for-your-haskell-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need the following packages in your &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#dependencies&#34; &gt;dependencies&lt;/a&gt;:&lt;/p&gt;
+    &lt;a href=&#34;#configure-logs-for-your-haskell-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need the following packages in your &lt;a href=&#34;/doc/deploy/application/haskell/haskell/#dependencies&#34; &gt;dependencies&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ekg-core&lt;/li&gt;
 &lt;li&gt;ekg-statsd&lt;/li&gt;
@@ -1469,10 +1469,10 @@ EKG allows you to have access to GC metrics, make sure you compile your applicat
     
     <item>
       <title>Varnish as HTTP Cache</title>
-      <link>https://devcenter.clever-cloud.com/doc/administrate/cache/</link>
+      <link>/doc/administrate/cache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/administrate/cache/</guid>
+      <guid>/doc/administrate/cache/</guid>
       <description>
         
         

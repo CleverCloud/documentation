@@ -2,795 +2,795 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/</loc>
+    <loc>/doc/administrate/metrics/overview/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/quickstart/</loc>
+    <loc>/doc/getting-started/quickstart/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/quickstart/</loc>
+    <loc>/doc/quickstart/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/</loc>
+    <loc>/doc/getting-started/by-language/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/</loc>
+    <loc>/doc/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/</loc>
+    <loc>/doc/getting-started/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/authentication/</loc>
+    <loc>/doc/getting-started/authentication/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/cli/</loc>
+    <loc>/doc/getting-started/cli/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/ssh-keys/</loc>
+    <loc>/doc/getting-started/ssh-keys/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/find-help/community/</loc>
+    <loc>/doc/find-help/community/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/find-help/support/</loc>
+    <loc>/doc/find-help/support/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/contribute/writing/</loc>
+    <loc>/doc/contribute/writing/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/</loc>
+    <loc>/doc/develop/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/</loc>
+    <loc>/doc/administrate/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/</loc>
+    <loc>/doc/deploy/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/</loc>
+    <loc>/doc/administrate/metrics/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/</loc>
+    <loc>/doc/deploy/addon/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/</loc>
+    <loc>/doc/deploy/application/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/</loc>
+    <loc>/doc/develop/best-practices/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</loc>
+    <loc>/doc/reference/clever-tools/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/collaboration/</loc>
+    <loc>/doc/develop/best-practices/collaboration/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/docker/</loc>
+    <loc>/doc/deploy/application/docker/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/docker/tutorials/</loc>
+    <loc>/doc/deploy/application/docker/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/</loc>
+    <loc>/doc/deploy/application/dotnet/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/ecommerce/</loc>
+    <loc>/doc/develop/best-practices/ecommerce/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/</loc>
+    <loc>/doc/deploy/addon/elastic/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/elixir/</loc>
+    <loc>/doc/deploy/application/elixir/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/golang/</loc>
+    <loc>/doc/deploy/application/golang/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/</loc>
+    <loc>/doc/deploy/application/haskell/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/</loc>
+    <loc>/doc/deploy/application/haskell/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/</loc>
+    <loc>/doc/deploy/application/java/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/</loc>
+    <loc>/doc/deploy/application/java/by-framework/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/</loc>
+    <loc>/doc/deploy/application/javascript/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/</loc>
+    <loc>/doc/deploy/application/javascript/by-framework/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/tutorials/</loc>
+    <loc>/doc/deploy/application/javascript/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/kotlin/</loc>
+    <loc>/doc/deploy/application/kotlin/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/</loc>
+    <loc>/guides/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/</loc>
+    <loc>/doc/deploy/addon/mongodb/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/</loc>
+    <loc>/doc/deploy/addon/mysql/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/node/</loc>
+    <loc>/doc/deploy/application/node/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/</loc>
+    <loc>/doc/deploy/application/php/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/</loc>
+    <loc>/doc/deploy/application/php/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/</loc>
+    <loc>/doc/deploy/addon/postgresql/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/python/</loc>
+    <loc>/doc/deploy/application/python/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/python/tutorials/</loc>
+    <loc>/doc/deploy/application/python/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/</loc>
+    <loc>/doc/deploy/application/ruby/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/by-framework/</loc>
+    <loc>/doc/deploy/application/ruby/by-framework/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/tutorials/</loc>
+    <loc>/doc/deploy/application/ruby/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/rust/</loc>
+    <loc>/doc/deploy/application/rust/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/scala/</loc>
+    <loc>/doc/deploy/application/scala/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/scala/tutorials/</loc>
+    <loc>/doc/deploy/application/scala/tutorials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/static/</loc>
+    <loc>/doc/deploy/application/static/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/find-help/</loc>
+    <loc>/doc/find-help/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/extend/</loc>
+    <loc>/doc/extend/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/</loc>
+    <loc>/doc/reference/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/clever-grid/</loc>
+    <loc>/doc/deploy/clever-grid/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/</loc>
+    <loc>/doc/account/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/billing/</loc>
+    <loc>/doc/billing/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/contribute/</loc>
+    <loc>/doc/contribute/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/contribute/shortcodes/</loc>
+    <loc>/doc/contribute/shortcodes/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/</loc>
+    <loc>/partials/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/database/</loc>
+    <loc>/tags/database/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/document/</loc>
+    <loc>/tags/document/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/managed-service/</loc>
+    <loc>/tags/managed-service/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/managing-mongodb/</loc>
+    <loc>/doc/deploy/addon/mongodb/managing-mongodb/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/monitoring/</loc>
+    <loc>/tags/monitoring/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/nosql/</loc>
+    <loc>/tags/nosql/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/tags/"
+                href="/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/tags/"
+                href="/tags/"
                 />
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/add-ssh-keys-short-version/</loc>
+    <loc>/partials/add-ssh-keys-short-version/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/authentication/</loc>
+    <loc>/partials/authentication/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/bintray-to-nexus/</loc>
+    <loc>/partials/bintray-to-nexus/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/blackfire/</loc>
+    <loc>/partials/blackfire/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/cached-dependencies/</loc>
+    <loc>/partials/cached-dependencies/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/create-application/</loc>
+    <loc>/partials/create-application/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/db-backup/</loc>
+    <loc>/partials/db-backup/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/deploy-ftp/</loc>
+    <loc>/partials/deploy-ftp/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/deploy-git/</loc>
+    <loc>/partials/deploy-git/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/env-injection/</loc>
+    <loc>/partials/env-injection/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/java-versions/</loc>
+    <loc>/partials/java-versions/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/docker/</loc>
+    <loc>/partials/language-specific-deploy/docker/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/dotnet/</loc>
+    <loc>/partials/language-specific-deploy/dotnet/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/elixir/</loc>
+    <loc>/partials/language-specific-deploy/elixir/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/go/</loc>
+    <loc>/partials/language-specific-deploy/go/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/haskell/</loc>
+    <loc>/partials/language-specific-deploy/haskell/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/java/</loc>
+    <loc>/partials/language-specific-deploy/java/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/node/</loc>
+    <loc>/partials/language-specific-deploy/node/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/php/</loc>
+    <loc>/partials/language-specific-deploy/php/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/python/</loc>
+    <loc>/partials/language-specific-deploy/python/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/ruby/</loc>
+    <loc>/partials/language-specific-deploy/ruby/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/rust/</loc>
+    <loc>/partials/language-specific-deploy/rust/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/language-specific-deploy/scala/</loc>
+    <loc>/partials/language-specific-deploy/scala/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/link-addon/</loc>
+    <loc>/partials/link-addon/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/more-config/</loc>
+    <loc>/partials/more-config/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/new-relic/</loc>
+    <loc>/partials/new-relic/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/pgpool/</loc>
+    <loc>/partials/pgpool/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/proxysql/</loc>
+    <loc>/partials/proxysql/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/set-env-vars/</loc>
+    <loc>/partials/set-env-vars/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/single-sign-on/</loc>
+    <loc>/partials/single-sign-on/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/partials/ssh-keys/</loc>
+    <loc>/partials/ssh-keys/</loc>
     <lastmod>2023-09-30T19:12:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/account/</loc>
+    <loc>/tags/account/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/account-setup/</loc>
+    <loc>/tags/account-setup/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/extend/add-ons-api/</loc>
+    <loc>/doc/extend/add-ons-api/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/extend/add-ons-log-collector/</loc>
+    <loc>/doc/extend/add-ons-log-collector/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/addon/</loc>
+    <loc>/tags/addon/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/addons/</loc>
+    <loc>/tags/addons/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/admin-console/</loc>
+    <loc>/tags/admin-console/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/administrate/</loc>
+    <loc>/tags/administrate/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/billing/analytics-consumption/</loc>
+    <loc>/doc/billing/analytics-consumption/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/application/</loc>
+    <loc>/tags/application/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/configure/</loc>
+    <loc>/doc/reference/clever-tools/configure/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/create/</loc>
+    <loc>/doc/reference/clever-tools/create/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/apps-management/</loc>
+    <loc>/doc/administrate/apps-management/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/scalability/</loc>
+    <loc>/doc/administrate/scalability/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/apps/</loc>
+    <loc>/tags/apps/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/best-practices/</loc>
+    <loc>/tags/best-practices/</loc>
     <lastmod>2023-10-07T01:40:03+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/billing/</loc>
+    <loc>/tags/billing/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/blackfire/</loc>
+    <loc>/doc/administrate/metrics/blackfire/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</loc>
+    <loc>/doc/develop/best-practices/blue-green/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/categories/"
+                href="/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/</loc>
+    <loc>/doc/deploy/addon/cellar/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/clamav/</loc>
+    <loc>/doc/administrate/clamav/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/extend/cc-api/</loc>
+    <loc>/doc/extend/cc-api/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/clever-tools/</loc>
+    <loc>/doc/reference/clever-tools/clever-tools/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/cli/</loc>
+    <loc>/tags/cli/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</loc>
+    <loc>/doc/develop/best-practices/cloud-storage/</loc>
     <lastmod>2023-10-07T01:40:03+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/common-configuration/</loc>
+    <loc>/doc/reference/common-configuration/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/config-provider/</loc>
+    <loc>/doc/deploy/addon/config-provider/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/contribute/</loc>
+    <loc>/tags/contribute/</loc>
     <lastmod>2023-10-04T16:59:25+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/couchbase/</loc>
+    <loc>/doc/deploy/addon/couchbase/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/create-account/</loc>
+    <loc>/doc/account/create-account/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/cron/</loc>
+    <loc>/doc/administrate/cron/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/kibana/</loc>
+    <loc>/doc/deploy/addon/elastic/kibana/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/dashboard-setup/</loc>
+    <loc>/tags/dashboard-setup/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/database-migration/</loc>
+    <loc>/doc/administrate/database-migration/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/dbaas/</loc>
+    <loc>/doc/getting-started/dbaas/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/delete-account/</loc>
+    <loc>/doc/account/delete-account/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/deploy/</loc>
+    <loc>/tags/deploy/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/</loc>
+    <loc>/doc/deploy/application/dotnet/dotnet/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-drupal/</loc>
+    <loc>/doc/deploy/application/php/tutorials/tutorial-drupal/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/java/wordpress/</loc>
+    <loc>/guides/java/wordpress/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/php/drupal-tutotal/</loc>
+    <loc>/guides/php/drupal-tutotal/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/php/matomaux-tutotal/</loc>
+    <loc>/guides/php/matomaux-tutotal/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/docker/tutorials/fluentd/</loc>
+    <loc>/doc/deploy/application/docker/tutorials/fluentd/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/</loc>
+    <loc>/doc/deploy/application/php/tutorials/tutorial-laravel/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-symfony/</loc>
+    <loc>/doc/deploy/application/php/tutorials/tutorial-symfony/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/</loc>
+    <loc>/doc/deploy/application/php/tutorials/tutorial-wordpress/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/python/tutorials/python-django-sample/</loc>
+    <loc>/doc/deploy/application/python/tutorials/python-django-sample/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/</loc>
+    <loc>/doc/deploy/application/docker/docker/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/elixir/elixir/</loc>
+    <loc>/doc/deploy/application/elixir/elixir/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/python/tutorials/python-flask-sample-app/</loc>
+    <loc>/doc/deploy/application/python/tutorials/python-flask-sample-app/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/</loc>
+    <loc>/doc/deploy/application/golang/go/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/</loc>
+    <loc>/doc/deploy/application/haskell/haskell/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/meteor/</loc>
+    <loc>/doc/deploy/application/javascript/by-framework/meteor/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/</loc>
+    <loc>/doc/deploy/application/javascript/by-framework/nodejs/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/</loc>
+    <loc>/doc/deploy/application/php/php-apps/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/</loc>
+    <loc>/doc/deploy/application/java/by-framework/play-framework-1/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/scala/tutorials/play-framework-1/</loc>
+    <loc>/doc/deploy/application/scala/tutorials/play-framework-1/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/</loc>
+    <loc>/doc/deploy/application/java/by-framework/play-framework-2/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/scala/tutorials/play-framework-2/</loc>
+    <loc>/doc/deploy/application/scala/tutorials/play-framework-2/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/</loc>
+    <loc>/doc/deploy/application/python/python_apps/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/tutorials/ruby-rack-app-tutorial/</loc>
+    <loc>/doc/deploy/application/ruby/tutorials/ruby-rack-app-tutorial/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/</loc>
+    <loc>/doc/deploy/application/ruby/ruby-rack/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/by-framework/ruby-on-rails/</loc>
+    <loc>/doc/deploy/application/ruby/by-framework/ruby-on-rails/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/</loc>
+    <loc>/doc/deploy/application/rust/rust/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/</loc>
+    <loc>/doc/deploy/application/scala/scala/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/static/static/</loc>
+    <loc>/doc/deploy/application/static/static/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/build-hooks/</loc>
+    <loc>/doc/develop/build-hooks/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/develop/</loc>
+    <loc>/tags/develop/</loc>
     <lastmod>2023-10-07T01:40:03+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/developer/</loc>
+    <loc>/tags/developer/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/docker/</loc>
+    <loc>/doc/getting-started/by-language/docker/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/domain-names/</loc>
+    <loc>/doc/administrate/domain-names/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/elastic/</loc>
+    <loc>/doc/deploy/addon/elastic/elastic/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/elixir/</loc>
+    <loc>/doc/getting-started/by-language/elixir/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/encryption/</loc>
+    <loc>/tags/encryption/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/encryption-at-rest/</loc>
+    <loc>/doc/administrate/encryption-at-rest/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/</loc>
+    <loc>/doc/reference/reference-environment-variables/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/env-variables/</loc>
+    <loc>/doc/develop/env-variables/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/extend/</loc>
+    <loc>/tags/extend/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/find-help/faq/</loc>
+    <loc>/doc/find-help/faq/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/</loc>
+    <loc>/doc/deploy/addon/fs-bucket/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/getting_started/</loc>
+    <loc>/doc/reference/clever-tools/getting_started/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/getting-started/</loc>
+    <loc>/tags/getting-started/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/go/</loc>
+    <loc>/doc/getting-started/by-language/go/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/java-gradle/</loc>
+    <loc>/doc/deploy/application/java/java-gradle/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/haskell/</loc>
+    <loc>/doc/getting-started/by-language/haskell/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/help/</loc>
+    <loc>/tags/help/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/not-supported/</loc>
+    <loc>/doc/deploy/not-supported/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/extend/api-how-to-use/</loc>
+    <loc>/doc/extend/api-how-to-use/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/lifecycle/</loc>
+    <loc>/doc/reference/clever-tools/lifecycle/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/ssl/</loc>
+    <loc>/doc/administrate/ssl/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/java-jar/</loc>
+    <loc>/doc/deploy/application/java/java-jar/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/java/</loc>
+    <loc>/tags/java/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/java/</loc>
+    <loc>/doc/getting-started/by-language/java/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/java/</loc>
+    <loc>/guides/java/</loc>
     <lastmod>2023-10-04T17:16:14+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/java-maven/</loc>
+    <loc>/doc/deploy/application/java/java-maven/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/</loc>
+    <loc>/doc/deploy/application/java/java-war/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/jenkins/</loc>
+    <loc>/doc/deploy/addon/jenkins/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/lexic/</loc>
+    <loc>/doc/reference/lexic/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</loc>
+    <loc>/doc/develop/best-practices/load-testing/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/log-management/</loc>
+    <loc>/doc/administrate/log-management/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/clever-grid/clevergrid/</loc>
+    <loc>/doc/deploy/clever-grid/clevergrid/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mailpace/</loc>
+    <loc>/doc/deploy/addon/mailpace/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/administrate-organization/</loc>
+    <loc>/doc/account/administrate-organization/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/manage-account/</loc>
+    <loc>/doc/account/manage-account/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/manage/</loc>
+    <loc>/doc/reference/clever-tools/manage/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/matomo/</loc>
+    <loc>/doc/deploy/addon/matomo/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/metrics/</loc>
+    <loc>/tags/metrics/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/migration/</loc>
+    <loc>/tags/migration/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/mongodb/</loc>
+    <loc>/doc/deploy/addon/mongodb/mongodb/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/</loc>
+    <loc>/doc/deploy/addon/mysql/mysql/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/network/</loc>
+    <loc>/doc/administrate/network/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/new-relic/</loc>
+    <loc>/doc/administrate/metrics/new-relic/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/node/</loc>
+    <loc>/doc/getting-started/by-language/node/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/tutorials/node-js-mongo-db/</loc>
+    <loc>/doc/deploy/application/javascript/tutorials/node-js-mongo-db/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/notifications/</loc>
+    <loc>/doc/account/notifications/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/notifications/</loc>
+    <loc>/doc/reference/clever-tools/notifications/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/billing/payments-invoicing/</loc>
+    <loc>/doc/billing/payments-invoicing/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/</loc>
+    <loc>/doc/deploy/addon/postgresql/pgpool/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/php/</loc>
+    <loc>/tags/php/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/php/</loc>
+    <loc>/doc/getting-started/by-language/php/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/guides/php/</loc>
+    <loc>/guides/php/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/postgresql/</loc>
+    <loc>/doc/deploy/addon/postgresql/postgresql/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/billing/pricing/</loc>
+    <loc>/doc/billing/pricing/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/</loc>
+    <loc>/doc/deploy/addon/mysql/proxysql/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/pulsar/</loc>
+    <loc>/doc/deploy/addon/pulsar/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/push-custom-metrics/</loc>
+    <loc>/doc/administrate/metrics/push-custom-metrics/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/tutorials/node-statsd-nodejs-metrics/</loc>
+    <loc>/doc/deploy/application/javascript/tutorials/node-statsd-nodejs-metrics/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/python/</loc>
+    <loc>/doc/getting-started/by-language/python/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/query-tsl/</loc>
+    <loc>/doc/administrate/metrics/query-tsl/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/query-warpscropt/</loc>
+    <loc>/doc/administrate/metrics/query-warpscropt/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/addon/redis/</loc>
+    <loc>/doc/deploy/addon/redis/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/reference/</loc>
+    <loc>/tags/reference/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/rest/</loc>
+    <loc>/tags/rest/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/organizations/</loc>
+    <loc>/doc/account/organizations/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/ruby/</loc>
+    <loc>/doc/getting-started/by-language/ruby/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/rust/</loc>
+    <loc>/doc/getting-started/by-language/rust/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/getting-started/by-language/scala/</loc>
+    <loc>/doc/getting-started/by-language/scala/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/security/</loc>
+    <loc>/tags/security/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/service-dependencies/</loc>
+    <loc>/doc/administrate/service-dependencies/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/ssh-clever-tools/</loc>
+    <loc>/doc/administrate/ssh-clever-tools/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/reference/clever-tools/ssh-access/</loc>
+    <loc>/doc/reference/clever-tools/ssh-access/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/account/ssh-keys-managment/</loc>
+    <loc>/doc/account/ssh-keys-managment/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/tcp-redirections/</loc>
+    <loc>/doc/administrate/tcp-redirections/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</loc>
+    <loc>/doc/develop/best-practices/12-factors/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/find-help/troubleshooting/</loc>
+    <loc>/doc/find-help/troubleshooting/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/</loc>
+    <loc>/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/"
+                href="/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/"
+                href="/"
                 />
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/billing/unified-invoices/</loc>
+    <loc>/doc/billing/unified-invoices/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</loc>
+    <loc>/doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/using-grafana/</loc>
+    <loc>/doc/administrate/metrics/using-grafana/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/cache/</loc>
+    <loc>/doc/administrate/cache/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/metrics/warp10/</loc>
+    <loc>/doc/administrate/metrics/warp10/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/develop/workers/</loc>
+    <loc>/doc/develop/workers/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/tags/zone/</loc>
+    <loc>/tags/zone/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/doc/administrate/zone-migration/</loc>
+    <loc>/doc/administrate/zone-migration/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url>
 </urlset>

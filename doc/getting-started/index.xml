@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Getting Started</title>
-    <link>https://devcenter.clever-cloud.com/doc/getting-started/</link>
+    <link>/doc/getting-started/</link>
     <description>Recent content in Getting Started on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Quickstart</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/quickstart/</link>
+      <link>/doc/getting-started/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/quickstart/</guid>
+      <guid>/doc/getting-started/quickstart/</guid>
       <description>
         
         
@@ -99,17 +99,17 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
 &lt;p&gt;If one of these elements is missing, Clever Cloud can&amp;rsquo;t deploy your application properly (except the configuration file, optional in some cases).&lt;/p&gt;
 &lt;p&gt;Supported platforms:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/&#34; &gt;Docker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/&#34; &gt;Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/&#34; &gt;Java&lt;/a&gt; (Play Framework 1 &amp;amp; 2, Maven, War files… )&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/&#34; &gt;PHP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/&#34; &gt;Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/&#34; &gt;Rust&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/&#34; &gt;Scala&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/docker/docker/&#34; &gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/golang/go/&#34; &gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/java/&#34; &gt;Java&lt;/a&gt; (Play Framework 1 &amp;amp; 2, Maven, War files… )&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/&#34; &gt;PHP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/&#34; &gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/rust/rust/&#34; &gt;Rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/scala/scala/&#34; &gt;Scala&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;How it works&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-it-works&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#how-it-works&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When you push an application&amp;rsquo;s code to git or via FTP, the platform receives it and checks the resource’s requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.&lt;/p&gt;
@@ -127,12 +127,12 @@ This starts the application creation wizard. If your account has been linked to 
 &lt;li&gt;&lt;em&gt;Optional:&lt;/em&gt; For PHP applications, you can choose between FTP and Git deployment.&lt;/li&gt;
 &lt;li&gt;Fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.&lt;/li&gt;
 &lt;li&gt;Enter the name and description of your application.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/&#34; &gt;add an add-on&lt;/a&gt; to your application.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;add environment variables&lt;/a&gt; to your application.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;/doc/deploy/addon/&#34; &gt;add an add-on&lt;/a&gt; to your application.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: The wizard will offer you to &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;add environment variables&lt;/a&gt; to your application.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Git Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;git-deployment&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#git-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;To deploy via Git, you need it installed on your machine. You can find more information on Git website: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the &lt;code&gt;COMMIT_ID&lt;/code&gt; &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Follow these steps to deploy your application:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -224,7 +224,7 @@ This starts the application creation wizard. If your account has been linked to 
          &lt;p&gt;If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
    &lt;br&gt;Add your SSH key to your profile here:
    &lt;a href=&#34;https://console.clever-cloud.com/users/me/ssh-keys&#34;&gt;https://console.clever-cloud.com/users/me/ssh-keys&lt;/a&gt;&lt;/p&gt;
-   &lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;https://devcenter.clever-cloud.com/account/ssh-keys-managment/&#34;&gt;Adding SSH keys&lt;/a&gt; &lt;/p&gt;
+   &lt;p&gt;The full tutorial about adding SSH key is here: &lt;a href=&#34;/account/ssh-keys-managment/&#34;&gt;Adding SSH keys&lt;/a&gt; &lt;/p&gt;
 
     &lt;/p&gt;
   &lt;/div&gt;
@@ -236,7 +236,7 @@ This starts the application creation wizard. If your account has been linked to 
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/github-deployment-branch.png&#34; alt=&#34;Github deployment branch select&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Github deployment branch select
     &lt;/figcaption&gt;
@@ -278,7 +278,7 @@ This starts the application creation wizard. If your account has been linked to 
 &lt;h3&gt;FTP Deployment&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can deploy via FTP with PHP applications.&lt;/p&gt;
 &lt;p&gt;To deploy via FTP, you need an FTP software installed on your machine. &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; is one of them.&lt;/p&gt;
-&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; with an ID
+&lt;p&gt;Deploy your application via FTP, create a &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; with an ID
 matching your application&amp;rsquo;s ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More documentation about Filezilla&lt;/a&gt;.&lt;/p&gt;
 
@@ -330,23 +330,23 @@ matching your application&amp;rsquo;s ID. You will find the FTP credentials in t
 &lt;h2&gt;Create your first add-on&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-your-first-add-on&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-your-first-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.&lt;/p&gt;
 &lt;p&gt;An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.&lt;/p&gt;
-&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud (&lt;a href=&#34;/doc/extend/cc-api/&#34; &gt;See how to integrate your SaaS with Clever Cloud&lt;/a&gt;)&lt;/p&gt;
 &lt;h3&gt;Available add-ons&lt;span class=&#34;absolute -mt-20&#34; id=&#34;available-add-ons&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#available-add-ons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud provides multiple add-ons to work with your applications:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/config-provider/&#34; &gt;Config Provider&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/config-provider/&#34; &gt;Config Provider&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Add-on Billing&lt;span class=&#34;absolute -mt-20&#34; id=&#34;add-on-billing&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#add-on-billing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There are two kinds of billing:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)&lt;/li&gt;
-&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Per-usage billing: Add-ons based on consumption, like &lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket&lt;/a&gt; and &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;Cellar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -395,7 +395,7 @@ matching your application&amp;rsquo;s ID. You will find the FTP credentials in t
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Choose with which application you want to link you add-on.
-Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment variables&lt;/a&gt;.
+Linking an add-on to an application will provide configuration to the application through &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment variables&lt;/a&gt;.
 The environment variables provided by the add-on are available for use in the linked application.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -433,7 +433,7 @@ Features and environment variables (if applicable) are shown.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-info.png&#34; alt=&#34;Example of the information tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the information tab of an add-on
     &lt;/figcaption&gt;
@@ -447,7 +447,7 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://devcenter.clever-cloud.com/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;/images/managing-addons-config.png&#34; alt=&#34;Example of the configuration tab of an add-on&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Example of the configuration tab of an add-on
     &lt;/figcaption&gt;
@@ -466,10 +466,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>By language</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/by-language/</link>
+      <link>/doc/getting-started/by-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/by-language/</guid>
+      <guid>/doc/getting-started/by-language/</guid>
       <description>
         
         
@@ -479,10 +479,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>Authentication</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/authentication/</link>
+      <link>/doc/getting-started/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/authentication/</guid>
+      <guid>/doc/getting-started/authentication/</guid>
       <description>
         
         
@@ -556,10 +556,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>CLI</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/cli/</link>
+      <link>/doc/getting-started/cli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/cli/</guid>
+      <guid>/doc/getting-started/cli/</guid>
       <description>
         
         
@@ -969,10 +969,10 @@ If you want to know more or if you need to release a new version, please read &l
     
     <item>
       <title>SSH Keys</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/ssh-keys/</link>
+      <link>/doc/getting-started/ssh-keys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/ssh-keys/</guid>
+      <guid>/doc/getting-started/ssh-keys/</guid>
       <description>
         
         
@@ -1197,20 +1197,20 @@ Please update your Clever Cloud SSH key path accordingly.&lt;/p&gt;
     
     <item>
       <title>DBaaS</title>
-      <link>https://devcenter.clever-cloud.com/doc/getting-started/dbaas/</link>
+      <link>/doc/getting-started/dbaas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/getting-started/dbaas/</guid>
+      <guid>/doc/getting-started/dbaas/</guid>
       <description>
         
         
         &lt;p&gt;If you are looking for Database as a Service or managed databases, some are available on Clever Cloud:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/&#34; &gt;Elastic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/mongodb/&#34; &gt;MongoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/doc/deploy/addon/elastic/&#34; &gt;Elastic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;All Databases available on Clever Cloud have automated backups, monitoring, logs and metrics management.&lt;/p&gt;
 

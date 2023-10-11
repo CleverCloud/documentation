@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – E-Commerce</title>
-    <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/ecommerce/</link>
+    <link>/doc/develop/best-practices/ecommerce/</link>
     <description>Recent content in E-Commerce on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/develop/best-practices/ecommerce/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/develop/best-practices/ecommerce/index.xml" rel="self" type="application/rss+xml" />
     
     
       

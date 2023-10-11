@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Reference</title>
-    <link>https://devcenter.clever-cloud.com/doc/reference/</link>
+    <link>/doc/reference/</link>
     <description>Recent content in Reference on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/reference/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/reference/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Clever Tools CLI</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</link>
+      <link>/doc/reference/clever-tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/clever-tools/</guid>
+      <guid>/doc/reference/clever-tools/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>Configuration items available on every instance type</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/common-configuration/</link>
+      <link>/doc/reference/common-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/common-configuration/</guid>
+      <guid>/doc/reference/common-configuration/</guid>
       <description>
         
         
@@ -65,20 +65,20 @@ variable.&lt;/p&gt;
 &lt;p&gt;For example, if your private key file is in the &lt;code&gt;clevercloud&lt;/code&gt; folder and is named &lt;code&gt;my_key&lt;/code&gt;, the &lt;code&gt;privateKeyFile&lt;/code&gt; field will be &lt;code&gt;&amp;quot;clevercloud/my_key&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Hooks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;hooks&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can run specific tasks during the deployment of your application.&lt;/p&gt;
-&lt;p&gt;Please refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/&#34; &gt;hooks documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
+&lt;p&gt;Please refer to the &lt;a href=&#34;/doc/develop/build-hooks/&#34; &gt;hooks documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
 &lt;h2&gt;Workers&lt;span class=&#34;absolute -mt-20&#34; id=&#34;workers&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#workers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can run background tasks running in parallel of your application.&lt;/p&gt;
-&lt;p&gt;Please refer to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; &gt;workers documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
+&lt;p&gt;Please refer to the &lt;a href=&#34;/doc/develop/workers/&#34; &gt;workers documentation&lt;/a&gt; to learn more about them.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Environment Variable Reference</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/</link>
+      <link>/doc/reference/reference-environment-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/</guid>
+      <guid>/doc/reference/reference-environment-variables/</guid>
       <description>
         
         
@@ -99,7 +99,7 @@ variable.&lt;/p&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INSTANCE_NUMBER&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Allows your application to differentiate each running node on the application level.&lt;/td&gt;
 &lt;td&gt;0, 1…&lt;/td&gt;
 &lt;/tr&gt;
@@ -220,7 +220,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/workers/&#34; &gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Command to run in background as a worker process. You can run multiple workers.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -250,17 +250,17 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; &gt;CC_IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Allows to specify paths to ignore when the build cache archive is created.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; &gt;IGNORE_FROM_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;(Deprecated) Allows to specify paths to ignore when the build cache archive is created.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_OVERRIDE_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/env-variables/#settings-you-can-define-using-environment-variables&#34; &gt;CC_OVERRIDE_BUILDCACHE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Allows to specify paths that will be in the build cache. &lt;br /&gt;Only those files / directories will be cached&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -295,7 +295,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/find-help/troubleshooting/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_TROUBLESHOOT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/find-help/troubleshooting/&#34; &gt;CC_TROUBLESHOOT&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don&amp;rsquo;t forget to cancel deployment if you push a new commit.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -306,7 +306,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h4&gt;Deployment hooks&lt;span class=&#34;absolute -mt-20&#34; id=&#34;deployment-hooks&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#deployment-hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Use these to define &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/&#34; &gt;commands to run&lt;/a&gt; between various steps of the deployment.&lt;/p&gt;
+    &lt;a href=&#34;#deployment-hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Use these to define &lt;a href=&#34;/doc/develop/build-hooks/&#34; &gt;commands to run&lt;/a&gt; between various steps of the deployment.&lt;/p&gt;
 
 
 
@@ -321,27 +321,27 @@ variable.&lt;/p&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-build-cc_pre_build_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PRE_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/build-hooks/#pre-build-cc_pre_build_hook&#34; &gt;CC_PRE_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Ran before the dependencies are fetched. If it fails, the deployment fails.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-build-cc_post_build_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_POST_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/build-hooks/#pre-build-cc_post_build_hook&#34; &gt;CC_POST_BUILD_HOOK&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PRE_RUN_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; &gt;CC_PRE_RUN_HOOK&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RUN_FAILED_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; &gt;CC_RUN_FAILED_HOOK&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Ran once the application has failed to start.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RUN_SUCCEEDED_HOOK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook&#34; &gt;CC_RUN_SUCCEEDED_HOOK&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Ran once the application has started successfuly.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -366,52 +366,52 @@ variable.&lt;/p&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/clamav/&#34; &gt;CC_CLAMAV&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV_MAXQUEUE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/clamav/&#34; &gt;CC_CLAMAV_MAXQUEUE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Maximum number of queued items.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;100&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/clamav/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CLAMAV_MAXTHREADS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/clamav/&#34; &gt;CC_CLAMAV_MAXTHREADS&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Maximum number of threads running at the same time.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;10&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PASSWORD&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; &gt;CC_METRICS_PROMETHEUS_PASSWORD&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Define the password for the basic auth of the Prometheus endpoint&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PATH&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; &gt;CC_METRICS_PROMETHEUS_PATH&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Define the path on which the Prometheus endpoint is available&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;/metrics&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_PORT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; &gt;CC_METRICS_PROMETHEUS_PORT&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Define the port on which the Prometheus endpoint is available&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;8080&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; &gt;CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Define the timeout in seconds to collect the application metrics. This value &lt;strong&gt;must&lt;/strong&gt; be below 60 seconds as data are collected every minutes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;3&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_METRICS_PROMETHEUS_USER&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/metrics/overview/#publish-your-own-metrics&#34; &gt;CC_METRICS_PROMETHEUS_USER&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Define the user for the basic auth of the Prometheus endpoint&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/cache/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_VARNISH_STORAGE_SIZE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/administrate/cache/&#34; &gt;CC_VARNISH_STORAGE_SIZE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Configure the size of the Varnish cache.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;1G&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/workers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/develop/workers/&#34; &gt;CC_WORKER_COMMAND&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Command to run in background as a worker process. You can run multiple workers.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -457,10 +457,10 @@ variable.&lt;/p&gt;
 
 
 &lt;h4&gt;How it works?&lt;span class=&#34;absolute -mt-20&#34; id=&#34;how-it-works&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#how-it-works&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;For a given application with &lt;code&gt;TAILSCALE_AUTH_KEY&lt;/code&gt; configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt; : &lt;code&gt;CC-&amp;lt;NAME&amp;gt;-&amp;lt;INSTANCE_NUMBER&amp;gt;&lt;/code&gt;. If you have multiple instances and use one of them for being an admin instance (using &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt;), you can match the instance from your deployment to reach it over VPN.&lt;/p&gt;
+    &lt;a href=&#34;#how-it-works&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;For a given application with &lt;code&gt;TAILSCALE_AUTH_KEY&lt;/code&gt; configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt; : &lt;code&gt;CC-&amp;lt;NAME&amp;gt;-&amp;lt;INSTANCE_NUMBER&amp;gt;&lt;/code&gt;. If you have multiple instances and use one of them for being an admin instance (using &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;INSTANCE_NUMBER&lt;/a&gt;), you can match the instance from your deployment to reach it over VPN.&lt;/p&gt;
 &lt;p&gt;If &lt;code&gt;TAILSCALE_LOGIN_SERVER&lt;/code&gt; is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can&amp;rsquo;t be responsible. An alternative control server can still be useful to use for constraints environements. &lt;a href=&#34;https://github.com/juanfont/headscale/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Headscale&lt;/a&gt; is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.&lt;/p&gt;
 &lt;h2&gt;Docker&lt;span class=&#34;absolute -mt-20&#34; id=&#34;docker&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#docker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/docker/docker/&#34; &gt;Docker Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#docker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/docker/docker/&#34; &gt;Docker Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -530,7 +530,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;.NET&lt;span class=&#34;absolute -mt-20&#34; id=&#34;net&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#net&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/&#34; &gt;.NET Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#net&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/dotnet/dotnet/&#34; &gt;.NET Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -582,7 +582,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Elixir&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elixir&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#elixir&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#elixir&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/elixir/elixir/&#34; &gt;Elixir Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -646,7 +646,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Go&lt;span class=&#34;absolute -mt-20&#34; id=&#34;go&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#go&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/&#34; &gt;Go Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#go&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/golang/go/&#34; &gt;Go Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -686,7 +686,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Haskell&lt;span class=&#34;absolute -mt-20&#34; id=&#34;haskell&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#haskell&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#haskell&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/&#34; &gt;Haskell Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -702,7 +702,7 @@ variable.&lt;/p&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#specify-stack-package-target&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_HASKELL_STACK_TARGET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/#specify-stack-package-target&#34; &gt;CC_HASKELL_STACK_TARGET&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Specify Stack package target.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -720,7 +720,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Java&lt;span class=&#34;absolute -mt-20&#34; id=&#34;java&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#java&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-jar/&#34; &gt;Java Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#java&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/java/java-jar/&#34; &gt;Java Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -826,7 +826,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Node.js&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nodejs&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#nodejs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#nodejs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/javascript/by-framework/nodejs/&#34; &gt;Node.js Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -884,7 +884,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;PHP&lt;span class=&#34;absolute -mt-20&#34; id=&#34;php&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#php&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/&#34; &gt;PHP Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#php&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/&#34; &gt;PHP Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -912,7 +912,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#development-dependencies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_CGI_IMPLEMENTATION&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#development-dependencies&#34; &gt;CC_CGI_IMPLEMENTATION&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Choose the Apache FastCGI module between &lt;code&gt;fastcgi&lt;/code&gt; and &lt;code&gt;proxy_fcgi&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;fastcgi&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -990,19 +990,19 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_ASYNC_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; &gt;CC_PHP_ASYNC_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Mount the default app FS bucket asynchronously. If set, should have value &lt;code&gt;async&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#development-dependencies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_DEV_DEPENDENCIES&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#development-dependencies&#34; &gt;CC_PHP_DEV_DEPENDENCIES&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Control if development dependencies are installed or not. Values are either &lt;code&gt;install&lt;/code&gt; or &lt;code&gt;ignore&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PHP_DISABLE_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#speed-up-or-disable-the-session-fs-bucket&#34; &gt;CC_PHP_DISABLE_APP_BUCKET&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Disable entirely the app FS Bucket. Values are either &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;yes&lt;/code&gt; or &lt;code&gt;disable&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1062,7 +1062,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#use-redis-to-store-php-sessions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SESSION_TYPE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#use-redis-to-store-php-sessions&#34; &gt;SESSION_TYPE&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Choose &lt;code&gt;redis&lt;/code&gt; to use it as session store&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1098,7 +1098,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Python&lt;span class=&#34;absolute -mt-20&#34; id=&#34;python&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#python&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/&#34; &gt;Python Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#python&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/&#34; &gt;Python Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1162,7 +1162,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/tutorials/python-django-sample/#manage-py-tasks&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_PYTHON_MANAGE_TASKS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/python/tutorials/python-django-sample/#manage-py-tasks&#34; &gt;CC_PYTHON_MANAGE_TASKS&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Comma-separated list of Django manage tasks&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1222,7 +1222,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; &gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;The URL path under which you want to serve static file, usually &lt;code&gt;/public&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1234,7 +1234,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UWSGI_ASYNC&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/#configure-your-python-application&#34; &gt;UWSGI_ASYNC&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Number of cores to use for uWSGI asynchronous/non-blocking modes&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1282,7 +1282,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Ruby&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ruby&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#ruby&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#ruby&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/&#34; &gt;Ruby Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1298,7 +1298,7 @@ variable.&lt;/p&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#configure-sidekiq&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_ENABLE_SIDEKIQ&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/#configure-sidekiq&#34; &gt;CC_ENABLE_SIDEKIQ&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Enable Sidekiq background process&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1328,7 +1328,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#configure-rake-goals&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC_RAKEGOALS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/#configure-rake-goals&#34; &gt;CC_RAKEGOALS&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;A list of comma-separated rake goals to execute e.g. &lt;code&gt;db:migrate, assets:precompile&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1370,7 +1370,7 @@ variable.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#manage-your-static-files-and-assets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/#manage-your-static-files-and-assets&#34; &gt;STATIC_URL_PREFIX&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;The URL path under which you want to serve static file, usually &lt;code&gt;/public&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -1388,7 +1388,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h2&gt;Rust&lt;span class=&#34;absolute -mt-20&#34; id=&#34;rust&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#rust&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/&#34; &gt;Rust Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#rust&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/application/rust/rust/&#34; &gt;Rust Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1435,7 +1435,7 @@ variable.&lt;/p&gt;
 
 &lt;h2&gt;Addons-related environment variable&lt;span class=&#34;absolute -mt-20&#34; id=&#34;addons-related-environment-variable&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#addons-related-environment-variable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;FS Bucket&lt;span class=&#34;absolute -mt-20&#34; id=&#34;fs-bucket&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#fs-bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#fs-bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/fs-bucket/&#34; &gt;FS Bucket Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1469,7 +1469,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;MongoDB&lt;span class=&#34;absolute -mt-20&#34; id=&#34;mongodb&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#mongodb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mongodb/mongodb/&#34; &gt;MongoDB Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#mongodb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/mongodb/mongodb/&#34; &gt;MongoDB Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1533,7 +1533,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;MySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;mysql&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/mysql/&#34; &gt;MySQL Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1603,7 +1603,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;ProxySQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/mysql/proxysql/&#34; &gt;ProxySQL Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/mysql/proxysql/&#34; &gt;ProxySQL Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1649,7 +1649,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;PostgreSQL&lt;span class=&#34;absolute -mt-20&#34; id=&#34;postgresql&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#postgresql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/postgresql/&#34; &gt;PostgreSQL Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#postgresql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/postgresql/&#34; &gt;PostgreSQL Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -1719,7 +1719,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;Pgpool-II&lt;span class=&#34;absolute -mt-20&#34; id=&#34;pgpool-ii&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pgpool-ii&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/postgresql/pgpool/&#34; &gt;Pgpool-II Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#pgpool-ii&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/postgresql/pgpool/&#34; &gt;Pgpool-II Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -2059,7 +2059,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;Elastic Stack&lt;span class=&#34;absolute -mt-20&#34; id=&#34;elastic-stack&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#elastic-stack&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/elastic/elastic/&#34; &gt;Elastic Stack Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#elastic-stack&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/elastic/elastic/&#34; &gt;Elastic Stack Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -2366,7 +2366,7 @@ variable.&lt;/p&gt;
 
 
 &lt;h3&gt;Redis&lt;span class=&#34;absolute -mt-20&#34; id=&#34;redis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/redis/&#34; &gt;Redis Documentation&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;/doc/deploy/addon/redis/&#34; &gt;Redis Documentation&lt;/a&gt;&lt;/p&gt;
 
 
 
@@ -2536,14 +2536,14 @@ to be routed through the exit node.&lt;/p&gt;
     
     <item>
       <title>Lexic</title>
-      <link>https://devcenter.clever-cloud.com/doc/reference/lexic/</link>
+      <link>/doc/reference/lexic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/reference/lexic/</guid>
+      <guid>/doc/reference/lexic/</guid>
       <description>
         
         
-        &lt;p&gt;All terms available in this Lexic can be linked anywhere in the documentation thanks to the &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/contribute/shortcodes/#tooltip-shortcode&#34; &gt;tooltip shortcode&lt;/a&gt;.
+        &lt;p&gt;All terms available in this Lexic can be linked anywhere in the documentation thanks to the &lt;a href=&#34;/doc/contribute/shortcodes/#tooltip-shortcode&#34; &gt;tooltip shortcode&lt;/a&gt;.
 &lt;table class=&#34;table&#34;&gt;
     &lt;tbody&gt;
     

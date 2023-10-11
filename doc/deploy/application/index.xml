@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Application</title>
-    <link>https://devcenter.clever-cloud.com/doc/deploy/application/</link>
+    <link>/doc/deploy/application/</link>
     <description>Recent content in Application on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/doc/deploy/application/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/doc/deploy/application/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docker</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/docker/</link>
+      <link>/doc/deploy/application/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/docker/</guid>
+      <guid>/doc/deploy/application/docker/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>Dotnet</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/</link>
+      <link>/doc/deploy/application/dotnet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/</guid>
+      <guid>/doc/deploy/application/dotnet/</guid>
       <description>
         
         
@@ -42,10 +42,10 @@
     
     <item>
       <title>Elixir</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/elixir/</link>
+      <link>/doc/deploy/application/elixir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/elixir/</guid>
+      <guid>/doc/deploy/application/elixir/</guid>
       <description>
         
         
@@ -55,10 +55,10 @@
     
     <item>
       <title>Go</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/golang/</link>
+      <link>/doc/deploy/application/golang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/golang/</guid>
+      <guid>/doc/deploy/application/golang/</guid>
       <description>
         
         
@@ -68,10 +68,10 @@
     
     <item>
       <title>Haskell</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/</link>
+      <link>/doc/deploy/application/haskell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/haskell/</guid>
+      <guid>/doc/deploy/application/haskell/</guid>
       <description>
         
         
@@ -81,10 +81,10 @@
     
     <item>
       <title>Java</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/java/</link>
+      <link>/doc/deploy/application/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/java/</guid>
+      <guid>/doc/deploy/application/java/</guid>
       <description>
         
         
@@ -94,10 +94,10 @@
     
     <item>
       <title>JavaScript</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/</link>
+      <link>/doc/deploy/application/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/javascript/</guid>
+      <guid>/doc/deploy/application/javascript/</guid>
       <description>
         
         
@@ -107,10 +107,10 @@
     
     <item>
       <title>Kotlin</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/kotlin/</link>
+      <link>/doc/deploy/application/kotlin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/kotlin/</guid>
+      <guid>/doc/deploy/application/kotlin/</guid>
       <description>
         
         
@@ -120,10 +120,10 @@
     
     <item>
       <title>Node</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/node/</link>
+      <link>/doc/deploy/application/node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/node/</guid>
+      <guid>/doc/deploy/application/node/</guid>
       <description>
         
         
@@ -133,10 +133,10 @@
     
     <item>
       <title>PHP</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/php/</link>
+      <link>/doc/deploy/application/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/php/</guid>
+      <guid>/doc/deploy/application/php/</guid>
       <description>
         
         
@@ -146,10 +146,10 @@
     
     <item>
       <title>Python</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/python/</link>
+      <link>/doc/deploy/application/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/python/</guid>
+      <guid>/doc/deploy/application/python/</guid>
       <description>
         
         
@@ -159,10 +159,10 @@
     
     <item>
       <title>Ruby</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/</link>
+      <link>/doc/deploy/application/ruby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/ruby/</guid>
+      <guid>/doc/deploy/application/ruby/</guid>
       <description>
         
         
@@ -172,10 +172,10 @@
     
     <item>
       <title>Rust</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/rust/</link>
+      <link>/doc/deploy/application/rust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/rust/</guid>
+      <guid>/doc/deploy/application/rust/</guid>
       <description>
         
         
@@ -185,10 +185,10 @@
     
     <item>
       <title>Scala</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/scala/</link>
+      <link>/doc/deploy/application/scala/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/scala/</guid>
+      <guid>/doc/deploy/application/scala/</guid>
       <description>
         
         
@@ -198,10 +198,10 @@
     
     <item>
       <title>Static</title>
-      <link>https://devcenter.clever-cloud.com/doc/deploy/application/static/</link>
+      <link>/doc/deploy/application/static/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/deploy/application/static/</guid>
+      <guid>/doc/deploy/application/static/</guid>
       <description>
         
         

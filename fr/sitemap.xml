@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://devcenter.clever-cloud.com/fr/categories/</loc>
+    <loc>/fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/categories/"
+                href="/fr/categories/"
                 />
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/fr/</loc>
+    <loc>/fr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/"
+                href="/fr/"
                 />
   </url><url>
-    <loc>https://devcenter.clever-cloud.com/fr/tags/</loc>
+    <loc>/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://devcenter.clever-cloud.com/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://devcenter.clever-cloud.com/fr/tags/"
+                href="/fr/tags/"
                 />
   </url>
 </urlset>

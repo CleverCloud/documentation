@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – develop</title>
-    <link>https://devcenter.clever-cloud.com/tags/develop/</link>
+    <link>/tags/develop/</link>
     <description>Recent content in develop on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://devcenter.clever-cloud.com/tags/develop/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tags/develop/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blue/Green Deployments</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</link>
+      <link>/doc/develop/best-practices/blue-green/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/blue-green/</guid>
+      <guid>/doc/develop/best-practices/blue-green/</guid>
       <description>
         
         
@@ -50,10 +50,10 @@ This way, if you are not happy with the changes you made, just go the Clever Clo
     
     <item>
       <title>Cloud Storage</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</link>
+      <link>/doc/develop/best-practices/cloud-storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/cloud-storage/</guid>
+      <guid>/doc/develop/best-practices/cloud-storage/</guid>
       <description>
         
         
@@ -122,7 +122,7 @@ That way, you don&amp;rsquo;t have to handle the receive-and-upload part on the 
 You may understand where our preference goes, by now!
 If you can, use Cellar.
 S3 Client library exist in almost all languages.
-It&amp;rsquo;s &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/addon/cellar/&#34; &gt;cheaper&lt;/a&gt;.
+It&amp;rsquo;s &lt;a href=&#34;/doc/deploy/addon/cellar/&#34; &gt;cheaper&lt;/a&gt;.
 It&amp;rsquo;s more resilient to hardware failures.
 It gives you free processing power: when using files on your filesystem, you have to process them yourself.
 When using Cellar, you can delegate the handling of the upload to Cellar itself.&lt;/p&gt;
@@ -133,10 +133,10 @@ When using Cellar, you can delegate the handling of the upload to Cellar itself.
     
     <item>
       <title>Deployment Hooks</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/build-hooks/</link>
+      <link>/doc/develop/build-hooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/build-hooks/</guid>
+      <guid>/doc/develop/build-hooks/</guid>
       <description>
         
         
@@ -154,7 +154,7 @@ tasks before and after those phases.&lt;/p&gt;
 &lt;li&gt;On Run Failed&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Setting hooks up&lt;span class=&#34;absolute -mt-20&#34; id=&#34;setting-hooks-up&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#setting-hooks-up&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hooks are set up through &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/develop/env-variables/&#34; &gt;environment
+    &lt;a href=&#34;#setting-hooks-up&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hooks are set up through &lt;a href=&#34;/doc/develop/env-variables/&#34; &gt;environment
 variables&lt;/a&gt;.
 To set up a Post Build hook, you need to define a &lt;code&gt;CC_POST_BUILD_HOOK&lt;/code&gt;
 variable:&lt;/p&gt;
@@ -221,10 +221,10 @@ Their failure doesn&amp;rsquo;t cause the deployment to fail.&lt;/p&gt;
     
     <item>
       <title>Environment variables</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/env-variables/</link>
+      <link>/doc/develop/env-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/env-variables/</guid>
+      <guid>/doc/develop/env-variables/</guid>
       <description>
         
         
@@ -249,7 +249,7 @@ are listed in the add-on&amp;rsquo;s information panel.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.&lt;/p&gt;
-&lt;p&gt;Check out our &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/reference/reference-environment-variables/&#34; &gt;environment variable reference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;/doc/reference/reference-environment-variables/&#34; &gt;environment variable reference&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Special environment variables&lt;span class=&#34;absolute -mt-20&#34; id=&#34;special-environment-variables&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#special-environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.&lt;/p&gt;
@@ -266,7 +266,7 @@ instance of your application and changes every time you deploy it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;INSTANCE_TYPE&lt;/code&gt;: The type of the instance (scaler). Its value can be &lt;code&gt;build&lt;/code&gt; or &lt;code&gt;production&lt;/code&gt;.
-&lt;code&gt;build&lt;/code&gt; is when your application is being built on a &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;dedicated instance&lt;/a&gt;.&lt;/p&gt;
+&lt;code&gt;build&lt;/code&gt; is when your application is being built on a &lt;a href=&#34;/doc/administrate/apps-management/#edit-application-configuration&#34; &gt;dedicated instance&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;COMMIT_ID&lt;/code&gt;: the commit ID used as a base to deploy your application. As we remove
@@ -463,47 +463,47 @@ You can find more information in the documentation pages related to your applica
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/golang/go/#environment-injection.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/golang/go/#environment-injection.md&#34; &gt;Go&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;os.Getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/haskell/haskell/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Haskell&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/haskell/haskell/#environment-injection&#34; &gt;Haskell&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Os.Getenv[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/javascript/by-framework/nodejs/#environment-injection&#34; &gt;Node.js&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;process.env[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/java/java-war/#environment-injection&#34; &gt;Java WAR&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getProperties().getProperty(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/php/php-apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/php/php-apps/#environment-injection&#34; &gt;PHP&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; &gt;Play! Framework 1&lt;/a&gt; &amp;amp; &lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; &gt;Play! Framework 2&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt; or &lt;code&gt;${MY_VAR}&lt;/code&gt; in &lt;code&gt;application.conf&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/python/python_apps/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/python/python_apps/#environment-injection&#34; &gt;Python&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;os.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/ruby/ruby-rack/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/ruby/ruby-rack/#environment-injection&#34; &gt;Ruby&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;ENV[&amp;quot;MY_VAR&amp;quot;]&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/rust/rust/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/rust/rust/#environment-injection&#34; &gt;Rust&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;std::env::var(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/scala/scala/#environment-injection&#34; &gt;Scala&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.getenv(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/dotnet/dotnet/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.NET&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;/doc/deploy/application/dotnet/dotnet/#environment-injection&#34; &gt;.NET&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;System.Environment.GetEnvironmentVariable(&amp;quot;MY_VAR&amp;quot;)&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -534,10 +534,10 @@ You can find more information in the documentation pages related to your applica
     &lt;p class=&#34;mt-6 leading-7 first:mt-0&#34;&gt;
       Please note that the variables are available at build time
 for runtimes that support build time instructions, such as
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/java-war/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java WAR&lt;/a&gt;,
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 1&lt;/a&gt;,
-&lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Play! Framework 2&lt;/a&gt;
-or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/scala/scala/#environment-injection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scala&lt;/a&gt;.
+&lt;a href=&#34;/doc/deploy/application/java/java-war/#environment-injection&#34; &gt;Java WAR&lt;/a&gt;,
+&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-1/#environment-injection&#34; &gt;Play! Framework 1&lt;/a&gt;,
+&lt;a href=&#34;/doc/deploy/application/java/by-framework/play-framework-2/#environment-injection&#34; &gt;Play! Framework 2&lt;/a&gt;
+or &lt;a href=&#34;/doc/deploy/application/scala/scala/#environment-injection&#34; &gt;Scala&lt;/a&gt;.
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -547,10 +547,10 @@ or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/sca
     
     <item>
       <title>Load testing</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</link>
+      <link>/doc/develop/best-practices/load-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/load-testing/</guid>
+      <guid>/doc/develop/best-practices/load-testing/</guid>
       <description>
         
         
@@ -605,10 +605,10 @@ or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/sca
     
     <item>
       <title>The Twelve-Factor App</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</link>
+      <link>/doc/develop/best-practices/12-factors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/best-practices/12-factors/</guid>
+      <guid>/doc/develop/best-practices/12-factors/</guid>
       <description>
         
         
@@ -626,10 +626,10 @@ or &lt;a href=&#34;https://devcenter.clever-cloud.com/doc/deploy/application/sca
     
     <item>
       <title>Workers</title>
-      <link>https://devcenter.clever-cloud.com/doc/develop/workers/</link>
+      <link>/doc/develop/workers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devcenter.clever-cloud.com/doc/develop/workers/</guid>
+      <guid>/doc/develop/workers/</guid>
       <description>
         
         

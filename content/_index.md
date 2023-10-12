@@ -50,9 +50,9 @@ type: default
   >}}
   {{< hextra/feature-card
     title="Migrate a Database"
-    subtitle="Built-in full text search with FlexSearch, no extra setup required."
+    subtitle="Use native tools integrated into Clever Cloud console."
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
-    image="images/hextra-search.webp"
+    image="images/pg-studio.png"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}

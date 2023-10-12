@@ -18,7 +18,7 @@ Clever Cloud provides an automated hosting platform for developpers. Deploy your
 The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 
-{{< tabs items="Email, GitHub" >}}
+{{< tabs items="Email Auth, GitHub Auth" >}}
   {{< tab >}}
   This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters.
   Do not forget to validate your email by clicking the link you will receive.
@@ -88,19 +88,21 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 {{% steps %}}
 
-#### Select the proper organization you want to add the application to
+#### Select the organization
 
-At this point you must only have the Personal Space but you can create one.
+Choose the organization you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
 
-#### Click on the "Create an application" button
+#### Click on "Create an application"
 
-Find it in the **Organization Manager** panel.
+Find it in the **Organization Manager** panel, at the top left of the left menu.
 
 This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
-#### Select the language or the framework you need
+#### Select the language
+
+Choose the language or the framework you want to deploy.
 
 **💡 Optional:** For PHP applications, you can choose between FTP and Git deployment.
 
@@ -108,7 +110,9 @@ If you want to deploy an application within a GitHub organisation, first [grant 
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
-#### Enter the name and description of your application.
+#### Name your application
+
+Enter the name and the description of your application.
 
 #### Optional steps
 
@@ -186,9 +190,9 @@ Horizontal scaling is the number of instances that can run at the same time. Ver
   {{< /tab >}}
 {{< /tabs >}}
 
-### Troubleshooting Git Deployments
+### Troubleshooting
 
-{{% details title= "Remote is asking for a password" closed="true" %}}
+{{% details title="Git ⋅ Remote is asking for a password" closed="true" %}}
 
 If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
 
@@ -200,7 +204,7 @@ The full tutorial about adding SSH key is here: [Adding SSH keys](/account/ssh-k
 
 {{% /details %}}
 
-{{% details title= "Git is unable to resolve the reference master" closed="true" %}}
+{{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
 You are probably trying to push from another branch. Remeber that:
 
 - You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
@@ -212,9 +216,7 @@ git push <remote-name> <branch-name>:master
 ```
 {{% /details %}}
 
-### Troubleshooting GitHub Deployments
-
-{{% details title= "Does not appear to be a git repository" closed="true" %}}
+{{% details title= "GitHub ⋅ Does not appear to be a git repository" closed="true" %}}
 You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.
 
 If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :
@@ -268,24 +270,19 @@ Clever Cloud provides multiple add-ons to work with your applications:
   
 {{< /cards >}}
 
-{{% details title="💰 Add-on Billing" closed="true" %}}
+##### Add-on Billing
 
 There are two kinds of billing:
 
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
 * Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "doc/deploy/addon/cellar.md" >}})
 
-{{% /details %}}
-
 {{< callout type="warning" >}}
-Add-ons having a free plan are meant for testing purposes.
-They are for not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability.
-
-Shared clusters may not be running the same version as dedicated instances.
+**Free Plan:** Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
 {{< /callout >}}
 
 {{< callout emoji="📊" >}}
-**Note:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
+**Your invoice:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
 {{< /callout >}}
 
 {{< tabs items="Create an add-on for an existing application,Link an existing add-on to your application" >}}
@@ -297,7 +294,7 @@ Shared clusters may not be running the same version as dedicated instances.
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables]({{< ref "doc/develop/env-variables.md" >}}). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](doc/develop/env-variables.md"). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 
@@ -317,26 +314,16 @@ Shared clusters may not be running the same version as dedicated instances.
 
 ### Manage your Add-on
 
-Once an add-on is created, at least two management tabs are available in the Clever Cloud console:
+Once an add-on is created, at least two tabs are available in the Clever Cloud console:
 
-* The **Information** tab
-* The **Configuration** tab
+- **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
 
-Other tabs may be available, depending on the add-on type.
+{{< image "/images/addon-dashboard.png" "Example of the dashoard tab of an add-on" >}}
 
-#### Information screen
-
-This screen sums-up the characteristics of the selected add-on.
+- **Information tab:** This screen sums-up the characteristics of the selected add-on.
 Features and environment variables (if applicable) are shown.
 
-{{< image "/images/managing-addons-info.png" "Example of the information tab of an add-on" >}}
-
-#### Configuration screen
-
-Add-ons can be managed from the Configuration tab.
-This screen is managed directly by the provider of the add-on.
-
-{{< image "/images/managing-addons-config.png" "Example of the configuration tab of an add-on" >}}
+Other tabs may be available, depending on the add-on type.
 
 ### Delete an add-on
 
@@ -344,4 +331,6 @@ To delete an add-on:
 1. Go to the *Configuration* page of the add-on.
 2. Click on *Remove add-on*.
 
-⚠️ Warning: After deletion of the add-on, all associated data will be removed.
+{{< callout type="warning" >}}
+After deletion of the add-on, all associated data will be removed.
+{{< /callout >}}

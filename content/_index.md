@@ -4,6 +4,7 @@ title: Tutorials
 layout: hextra-home
 disableSidebar: false
 type: default
+width: normal
 ---
 
 {{< hextra/hero-badge link="https://github.com/clevercloud/doc.clever-cloud.com">}}

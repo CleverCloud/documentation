@@ -10,7 +10,11 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 
 - [Main branch](https://doc-2024.cleverapps.io)
 - [Other branches](https://doc-2024-compare.cleverapps.io)
+<<<<<<< HEAD
 
+=======
+- 
+>>>>>>> 5f34b4b (add links to deployed versions)
 ## Features
 
 - **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.

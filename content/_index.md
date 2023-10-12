@@ -38,7 +38,7 @@ type: default
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"
-    style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Deploy a Rust App"
@@ -46,7 +46,7 @@ type: default
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
     image="images/hextra-markdown.webp"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"
-    style="background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Migrate a Database"
@@ -54,12 +54,13 @@ type: default
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-search.webp"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
-    style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Lightweight as a Feather"
     subtitle="No dependency or Node.js is needed to use Hextra. Powered by Hugo, one of *the fastest* static site generators, building your site in just seconds with a single binary."
   >}}
+  
   {{< hextra/feature-card
     title="Reponsive with Dark Mode Included"
     subtitle="Looks great on different screen sizes. Built-in dark mode support, with auto-switching based on user's system preference."

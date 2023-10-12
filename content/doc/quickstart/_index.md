@@ -328,7 +328,7 @@ Other tabs may be available, depending on the add-on type.
 ### Delete an add-on
 
 To delete an add-on:
-1. Go to the *Configuration* page of the add-on.
+1. Go to the **Information** tab of the add-on.
 2. Click on *Remove add-on*.
 
 {{< callout type="warning" >}}

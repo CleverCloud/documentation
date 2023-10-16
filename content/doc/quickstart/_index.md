@@ -6,6 +6,9 @@ tags:
 - getting-started
 keywords:
 - quickstart
+
+aliases:
+- /doc/getting-started/quickstart.md
 type: "docs"
 comments: false
 

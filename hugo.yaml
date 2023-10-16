@@ -84,14 +84,10 @@ menu:
       name: Guides
       pageRef: /guides
       weight: 2
-    - identifier: api
-      name: API
-      url: "https://www.clever-cloud.com/doc/openapi/#overview"
-      weight: 4
-    - identifier: components
-      name: UI components
-      url: "https://www.clever-cloud.com/doc/clever-components/?path=/story/readme--page"
-      weight: 5
+    - identifier: openapi
+      name: openAPI
+      pageRef: /openapi
+      weight: 3
     - name: Search
       weight: 6
       params:

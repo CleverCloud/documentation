@@ -270,22 +270,9 @@ Clever Cloud provides multiple add-ons to work with your applications:
   
 {{< /cards >}}
 
-##### Add-on Billing
+**If your add-on:**
 
-There are two kinds of billing:
-
-* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "doc/deploy/addon/cellar.md" >}})
-
-{{< callout type="warning" >}}
-**Free Plan:** Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
-{{< /callout >}}
-
-{{< callout emoji="📊" >}}
-**Your invoice:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
-{{< /callout >}}
-
-{{< tabs items="Create an add-on for an existing application,Link an existing add-on to your application" >}}
+{{< tabs items="Doesn't exist yet,Already exists" >}}
   {{< tab >}}
   Here we will assume you want to create a new add-on and link it to your application.
 
@@ -311,6 +298,21 @@ There are two kinds of billing:
   5. Click on the **Link** button of the add-on you want to link to your application.
   {{< /tab >}}
 {{< /tabs >}}
+
+##### Add-on Billing
+
+There are two kinds of billing:
+
+* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
+* Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "doc/deploy/addon/cellar.md" >}})
+
+{{< callout type="warning" >}}
+**Free Plan:** Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
+{{< /callout >}}
+
+{{< callout emoji="📊" >}}
+**Your invoice:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
+{{< /callout >}}
 
 ### Manage your Add-on
 

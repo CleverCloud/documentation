@@ -64,4 +64,3 @@ This is why the Clever Cloud application running this app needs to have a webroo
 ## Testing and deployment
 
 A specific application
->>>>>>> 92b6647 (add go modules)

@@ -16,4 +16,4 @@
 
 5. Now push your application on Clever Cloud with `git push <name> master`
 
-Refer to [git deployments]({{< ref "/doc/getting-started/quickstart.html" >}}) for more details.
+Refer to [git deployments]({{< ref "/doc/quickstart" >}}) for more details.

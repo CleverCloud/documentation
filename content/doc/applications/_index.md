@@ -13,18 +13,34 @@ type: "docs"
 comments: false
 ---
 
+## Choose your stack
+
+Find here specific instructions related to your application's language.
+
 {{< cards >}}
-  {{< card link="../deploy/application/docker/docker" title="Docker" icon="docker" >}}
-  {{< card link="../deploy/application/golang/go" title="Go" icon="go" >}}
-  {{< card link="../deploy/application/haskell/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="../deploy/application/java/" title="Java" icon="java" >}}
-  {{< card link="../deploy/application/javascript/by-framework/nodejs" title="Node.js" icon="node" >}}
-  {{< card link="../deploy/application/ruby/ruby-rack" title="Ruby" icon="ruby" >}}
-  {{< card link="../deploy/application/php/php-apps" title="PHP" icon="php" >}}
-  {{< card link="../deploy/application/python/python_apps" title="Python" icon="python" >}}
-  {{< card link="../deploy/application/rust/rust" title="Rust" icon="rust" >}}
-  {{< card link="../deploy/application/scala/scala" title="Scala" icon="scala" >}}
-  {{< card link="../deploy/application/elixir/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="../deploy/application/dotnet/dotnet.md" title=".NET" icon="dotnet" >}}
+  {{< card link="../applications/docker/" title="Docker" icon="docker" >}}
+  {{< card link="../applications/golang/go" title="Go" icon="go" >}}
+  {{< card link="../applications/haskell/haskell" title="Haskell" icon= "haskell">}}
+  {{< card link="../applications/java/" title="Java" icon="java" >}}
+  {{< card link="../applications/javascript/by-framework/nodejs" title="Node.js" icon="node" >}}
+  {{< card link="../applications/ruby/ruby-rack" title="Ruby" icon="ruby" >}}
+  {{< card link="../applications/php/php-apps" title="PHP" icon="php" >}}
+  {{< card link="../applications/python/python_apps" title="Python" icon="python" >}}
+  {{< card link="../applications/rust/rust" title="Rust" icon="rust" >}}
+  {{< card link="../applications/scala/scala" title="Scala" icon="scala" >}}
+  {{< card link="../applications/elixir/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="../applications/dotnet/dotnet.md" title=".NET" icon="dotnet" >}}
   
 {{< /cards >}}
+
+## Environment variables
+
+Here goes common environment varibales applicables to all apps.
+
+### Ports
+
+Here goes a short explanation on port 8080.
+
+## Immutability
+
+Here goes a short explanation on immunatble deployments and how the server works.

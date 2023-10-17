@@ -12,4 +12,4 @@ Just follow the instructions of your FTP Software to send code to Clever Cloud.
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 {{< /callout >}}
 
-Refer to  our [Quick Start - FTP deployment]({{< ref "/doc/getting-started/quickstart.html#ftp-deployment" >}}) for more details.
+Refer to  our [Quick Start - FTP deployment]({{< ref "/doc/quickstart#ftp-deployment" >}}) for more details.

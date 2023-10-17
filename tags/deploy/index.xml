@@ -309,7 +309,7 @@
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -600,7 +600,7 @@
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -700,7 +700,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -959,7 +959,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1059,7 +1059,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1318,7 +1318,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1418,7 +1418,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1677,7 +1677,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1777,7 +1777,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2138,7 +2138,7 @@ Inside &lt;code&gt;td-agent.conf&lt;/code&gt; put the following:&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2528,7 +2528,7 @@ See &lt;a href=&#34;https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2566,7 +2566,7 @@ See &lt;a href=&#34;https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2924,7 +2924,7 @@ Symfony got your back on this: just run &lt;code&gt;composer require symfony/apa
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2962,7 +2962,7 @@ Symfony got your back on this: just run &lt;code&gt;composer require symfony/apa
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3137,7 +3137,7 @@ Symfony got your back on this: just run &lt;code&gt;composer require symfony/apa
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3175,7 +3175,7 @@ Symfony got your back on this: just run &lt;code&gt;composer require symfony/apa
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3711,7 +3711,7 @@ The application is a very basic one. More information about the application:&lt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4133,7 +4133,7 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4397,7 +4397,7 @@ To change the folder for the entire build / run process, you should use &lt;stro
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4630,7 +4630,7 @@ We will build &amp;amp; run the app from this &lt;code&gt;app&lt;/code&gt; folde
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4990,7 +4990,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -5312,7 +5312,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -5583,7 +5583,7 @@ Your application will then be built using &lt;code&gt;meteor build --server-only
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -6034,7 +6034,7 @@ contain any build task.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -6343,7 +6343,7 @@ It means that you can define special keys in your &lt;code&gt;application.conf&l
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -6643,7 +6643,7 @@ It means that you can define special keys in your &lt;code&gt;application.conf&l
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -7026,7 +7026,7 @@ For example, for Play 2.0.4:&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -7311,7 +7311,7 @@ You can also use the &lt;code&gt;System.getenv(&amp;quot;MY_VARIABLE&amp;quot;)&
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -7775,7 +7775,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -8130,7 +8130,7 @@ on Clever Cloud.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -8400,7 +8400,7 @@ Created in 2007, Rack has become the de-facto standard for ruby web applications
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -8874,7 +8874,7 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -9214,7 +9214,7 @@ environment variable to the list of features to enable.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -9555,7 +9555,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -9787,7 +9787,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -9825,7 +9825,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -10230,7 +10230,7 @@ dashboard and by add-ons linked to your application.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -10588,7 +10588,7 @@ This will override the default &lt;code&gt;maven run&lt;/code&gt; we use to run 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -11222,7 +11222,7 @@ This will override the default way of running your application.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -11460,7 +11460,7 @@ The application is a very simple todo list. You can add and delete values. More 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 

@@ -325,7 +325,7 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/getting-started/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to  our &lt;a href=&#34;/doc/quickstart/#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
 
       </description>
     </item>
@@ -363,7 +363,7 @@ Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_bl
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
       </description>
     </item>

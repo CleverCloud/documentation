@@ -245,7 +245,7 @@ It means that you can define special keys in your &lt;code&gt;application.conf&l
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -530,7 +530,7 @@ You can also use the &lt;code&gt;System.getenv(&amp;quot;MY_VARIABLE&amp;quot;)&
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 

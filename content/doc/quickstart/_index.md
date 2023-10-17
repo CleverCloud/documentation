@@ -8,7 +8,7 @@ keywords:
 - quickstart
 
 aliases:
-- /doc/getting-started/quickstart
+- /doc/quickstart
 type: "docs"
 comments: false
 

@@ -337,7 +337,7 @@ dashboard and by add-ons linked to your application.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -709,7 +709,7 @@ dashboard and by add-ons linked to your application.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1099,7 +1099,7 @@ This will override the default &lt;code&gt;maven run&lt;/code&gt; we use to run 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1733,7 +1733,7 @@ This will override the default way of running your application.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 

@@ -516,7 +516,7 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -940,7 +940,7 @@ To change the folder for the entire build / run process, you should use &lt;stro
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1475,7 +1475,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -1955,7 +1955,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2343,7 +2343,7 @@ You can add any key already present in your GitHub account by clicking on the im
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -2890,7 +2890,7 @@ contain any build task.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -3846,7 +3846,7 @@ and deployments.&lt;/li&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4407,7 +4407,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -4984,7 +4984,7 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -5482,7 +5482,7 @@ environment variable to the list of features to enable.&lt;/p&gt;
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 
@@ -5926,7 +5926,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 &lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;/doc/quickstart/&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
 
 
 

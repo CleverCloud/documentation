@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b470345 (add readme)
 <div align="center">
   <h1 align="center">Clever Cloud Documentation</h1>
   <p align="center">
@@ -72,3 +75,5 @@ This is why the Clever Cloud application running this app needs to have a webroo
 ## Testing and deployment
 
 A specific application
+=======
+>>>>>>> ada3d87 (add links to deployed versions)

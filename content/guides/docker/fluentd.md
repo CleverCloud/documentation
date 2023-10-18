@@ -11,6 +11,8 @@ keywords:
 str_replace_dict:
   "@application-type@": "Docker"
 type: docs
+aliases:
+- /doc/deploy/applications/docker/tutorials/fluentd
 ---
 
 ## Overview

@@ -17,7 +17,7 @@ keywords:
 type: docs
 ---
 
-Log management is currently only available through our API and [clever-tools]({{< ref "../CLI" >}}).
+Log management is currently only available through our API and [clever-tools]({{< ref "/doc/CLI" >}}).
 
 {{< callout type="info">}}
 Logs are currently retained for a maximum of 1 day. Logs are flushed daily at midnight.

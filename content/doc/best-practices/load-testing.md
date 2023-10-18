@@ -12,6 +12,8 @@ keywords:
 - load
 - performance
 type: docs
+aliases:
+- /doc/develop/load-testing
 ---
 ## Overview
 

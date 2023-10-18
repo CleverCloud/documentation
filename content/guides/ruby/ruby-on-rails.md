@@ -1,6 +1,7 @@
 ---
 type: docs
-title: Deploy Ruby on Rails applications
+title: Ruby on Rails
+weight: 1
 shortdesc: Ruby on Rails is an open source web application framework which runs on the Ruby programming language.
 tags:
 - deploy
@@ -10,6 +11,8 @@ keywords:
 str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
+aliases:
+- /doc/deploy/application/ruby/ruby-on-rails
 ---
 
 ## Overview

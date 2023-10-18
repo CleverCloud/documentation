@@ -1,6 +1,7 @@
 ---
 type: docs
-title: Deploy Rack-based applications
+title: Rack full tutorial
+weight: 3
 shortdesc: How to write a hello world web application using Rack and deploy it on Clever Cloud.
 tags:
 - deploy
@@ -10,6 +11,8 @@ keywords:
 str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
+aliases:
+- /doc/deploy/application/ruby/ruby-rack-app-tutorial
 ---
 
 ## Overview Introduction
@@ -29,9 +32,7 @@ To follow this tutorial, you will need:
 * Git (for the deploy part)
 
 {{< callout type="info">}}
-To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv).
-
-If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
+To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv). If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
 {{< /callout >}}
 
 ### My application does not exists already

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Getting Started</title>
-    <link>/doc/getting-started/</link>
+    <link>//doc/quickstart</link>
     <description>Recent content in Getting Started on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="/doc/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="//doc/quickstartindex.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -466,10 +466,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>By language</title>
-      <link>/doc/getting-started/by-language/</link>
+      <link>//doc/quickstartby-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/doc/getting-started/by-language/</guid>
+      <guid>//doc/quickstartby-language/</guid>
       <description>
         
         
@@ -479,10 +479,10 @@ This screen is managed directly by the provider of the add-on.&lt;/p&gt;
     
     <item>
       <title>Authentication</title>
-      <link>/doc/getting-started/authentication/</link>
+      <link>//doc/quickstartauthentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/doc/getting-started/authentication/</guid>
+      <guid>//doc/quickstartauthentication/</guid>
       <description>
         
         
@@ -556,10 +556,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>CLI</title>
-      <link>/doc/getting-started/cli/</link>
+      <link>//doc/quickstartcli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/doc/getting-started/cli/</guid>
+      <guid>//doc/quickstartcli/</guid>
       <description>
         
         
@@ -969,10 +969,10 @@ If you want to know more or if you need to release a new version, please read &l
     
     <item>
       <title>SSH Keys</title>
-      <link>/doc/getting-started/ssh-keys/</link>
+      <link>//doc/quickstartssh-keys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/doc/getting-started/ssh-keys/</guid>
+      <guid>//doc/quickstartssh-keys/</guid>
       <description>
         
         
@@ -1197,10 +1197,10 @@ Please update your Clever Cloud SSH key path accordingly.&lt;/p&gt;
     
     <item>
       <title>DBaaS</title>
-      <link>/doc/getting-started/dbaas/</link>
+      <link>//doc/quickstartdbaas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/doc/getting-started/dbaas/</guid>
+      <guid>//doc/quickstartdbaas/</guid>
       <description>
         
         

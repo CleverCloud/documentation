@@ -971,7 +971,7 @@ on a path prefix.&lt;/p&gt;
 &lt;p&gt;For instance, you can bind &lt;code&gt;example.com&lt;/code&gt; to an app, and &lt;code&gt;example.com/api&lt;/code&gt; to another one.
 All the HTTP requests on &lt;code&gt;example.com&lt;/code&gt; where the path starts with &lt;code&gt;/api&lt;/code&gt; will be routed to
 the second app. The other requests will be routed to the first app.
-You can add a path after every domain name you bind in the console (or with &lt;a href=&#34;/doc/getting-started/cli/&#34; &gt;clever tools&lt;/a&gt;).&lt;/p&gt;
+You can add a path after every domain name you bind in the console (or with &lt;a href=&#34;//doc/quickstartcli/&#34; &gt;clever tools&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Note that your prefix-routed application &lt;strong&gt;needs&lt;/strong&gt; to have a &lt;code&gt;/prefix&lt;/code&gt; route.&lt;/p&gt;
 &lt;p&gt;This will work:&lt;/p&gt;
 &lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;pre&gt;&lt;code id=&#34;code-block-0&#34;&gt;example.com        -&amp;gt;      myfirtapp-main-route
@@ -1294,7 +1294,7 @@ Our dedicated email for receiving certificates is &lt;a href=&#34;mailto:ssl@cle
       <description>
         
         
-        &lt;p&gt;Log management is currently only available through our API and &lt;a href=&#34;/doc/getting-started/cli/&#34; &gt;clever-tools&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Log management is currently only available through our API and &lt;a href=&#34;//doc/quickstartcli/&#34; &gt;clever-tools&lt;/a&gt;.&lt;/p&gt;
 
 
 

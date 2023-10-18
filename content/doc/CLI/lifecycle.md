@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Informations about your application lifecycle
-position: 4
+title: Get an application lifecycle
+weight: 5
 shortdesc: Get informations about your application using the Clever Cloud CLI tool
 tags:
 - cli
@@ -18,6 +18,8 @@ keywords:
 - status
 - activity
 - list
+aliases:
+- /doc/administrate/clever-tools/lifecycle
 ---
 ## Status of your application
 

@@ -1,8 +1,8 @@
 ---
 type: docs
-title: Application creation with Clever Tools
-position: 2
-shortdesc: Create a new application using the Clever Cloud CLI tool
+title: Create
+weight: 2
+shortdesc: Create an application with Clever Tools
 tags:
 - cli
 - reference
@@ -18,6 +18,9 @@ keywords:
 - linked application
 - dependency
 - exposed configuration
+aliases:
+- /doc/administrate/clever-tools/create
+
 ---
 ## Apps creation process
 

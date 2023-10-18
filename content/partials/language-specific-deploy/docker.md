@@ -43,9 +43,7 @@ Clever Cloud enables you to use TCP over Docker applications using using the [en
 Some containers require access to the docker socket, to spawn sibling containers for instance.
 
 {{< callout type="warning" >}}
-    <p>
-    Giving access to the docker socket breaks all isolation provided by docker. **DO NOT** give socket access to untrusted code.
-    </p>
+Giving access to the docker socket breaks all isolation provided by docker. **DO NOT** give socket access to untrusted code.
 {{< /callout >}}
 
 

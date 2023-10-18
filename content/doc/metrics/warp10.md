@@ -235,7 +235,7 @@ can be either a timestamp in microseconds or an iso8601 date format.
 
 - `fetch_accessLogs_key_v0`
 
-We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here]({{< ref "doc/administrate/metrics/overview.md#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
+We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here]({{< ref "doc/metrics/overview.md#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
@@ -245,7 +245,7 @@ We provide the following macro to easily and quickly deep dive into access logs 
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
 ```
 
-> More example in the [metrics part of this documenation]({{< ref "doc/administrate/metrics/overview.md#access-logs-metrics" >}}).
+> More example in the [metrics part of this documenation]({{< ref "doc/metrics/overview.md#access-logs-metrics" >}}).
 
 **Nested keys** can be reached using a dot (`.`) to represent the depth.
 

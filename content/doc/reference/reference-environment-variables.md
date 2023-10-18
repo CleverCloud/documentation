@@ -95,11 +95,11 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[CC_CLAMAV]({{< ref "doc/administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
 |[CC_CLAMAV_MAXQUEUE]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
 |[CC_CLAMAV_MAXTHREADS]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
-|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "doc/administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
-|[CC_METRICS_PROMETHEUS_PATH]({{< ref "doc/administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
-|[CC_METRICS_PROMETHEUS_PORT]({{< ref "doc/administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
-|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "doc/administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
-|[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PATH]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+|[CC_METRICS_PROMETHEUS_PORT]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
+|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
+|[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
 |[CC_VARNISH_STORAGE_SIZE]({{< ref "doc/administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
 |[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
 {{< /table >}}

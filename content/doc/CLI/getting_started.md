@@ -1,14 +1,17 @@
 ---
 type: docs
-title: Getting started with Clever Cloud CLI
-position: 1
-shortdesc: Installing and using the Clever Cloud CLI tool
+title: Install
+weight: 1
+shortdesc: Getting started with Clever Cloud CLI
 tags:
 - cli
 - reference
 keywords:
 - clever-tools
 - get started
+aliases:
+- /doc/administrate/clever-tools/getting_started
+
 ---
 
 In addition to the Clever Cloud console, you can manage your addons and applications from the command line with Clever Tools.

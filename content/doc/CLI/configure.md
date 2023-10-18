@@ -1,13 +1,15 @@
 ---
 type: docs
-title: Application configuration with Clever Tools
-shortdesc: Configure an application using the Clever Cloud CLI tool
+title: Configure
+weight: 3
 tags:
 - cli
 - reference
 keywords:
 - apps
 - configuration
+aliases:
+- /doc/administrate/clever-tools/configure
 ---
 
 ## Inspect the current configuration

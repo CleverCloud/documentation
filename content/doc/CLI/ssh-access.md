@@ -1,6 +1,7 @@
 ---
 type: docs
-title: SSH access with Clever Tools
+title: SSH access
+weight: 5
 shortdesc: SSH access to running instances
 tags:
 - cli
@@ -9,6 +10,9 @@ keywords:
 - ssh
 - shell
 - console
+aliases:
+- /doc/administrate/clever-tools/ssh-access
+
 ---
 
 While direct SSH access to instances is not recommended in an [immutable infrastructure](https://boxfuse.com/blog/no-ssh.html) setup, it can be useful for debugging purposes. Clever Cloud allows you to connect to running instances via SSH.

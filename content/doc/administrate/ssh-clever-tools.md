@@ -38,7 +38,7 @@ While direct SSH access to instances is not recommended in an [immutable infrast
 You need to have at least one of the following installed locally:
 * the Clever Tools CLI
 
-[//]: # (ref "doc/getting-started/clever-tools-intro.md)
+[//]: # (ref "/doc/quickstartclever-tools-intro.md)
 
 * an SSH client (e.g [putty](https://putty.org/) for windows users)
 
@@ -50,7 +50,7 @@ To use SSH access, you need to have a SSH key properly configured in your Clever
 
 In order to access the machine via SSH using the Clever Tools CLI
 
-[//]: # (ref "doc/getting-started/clever-tools-intro.md)
+[//]: # (ref "/doc/quickstartclever-tools-intro.md)
 
 you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organization_id> <your_application_id>`
 

@@ -2,7 +2,7 @@
 
 ### With the web console
 
-Refer to [our getting started]({{< ref "doc/getting-started/" >}}) for more details on application creation via the console.
+Refer to [our getting started]({{< ref "/doc/quickstart" >}}) for more details on application creation via the console.
 
 ### With the Clever Tools CLI
 

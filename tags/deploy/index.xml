@@ -73,7 +73,7 @@
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -412,7 +412,7 @@
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -771,7 +771,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -1130,7 +1130,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -1489,7 +1489,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -1880,7 +1880,7 @@ folder in which you create a &lt;code&gt;buckets.json&lt;/code&gt; file).&lt;/li
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -2241,7 +2241,7 @@ Inside &lt;code&gt;td-agent.conf&lt;/code&gt; put the following:&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -2638,7 +2638,7 @@ Symfony applications almost work out of the box on Clever Cloud, you just have a
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -3035,7 +3035,7 @@ Symfony got your back on this: just run &lt;code&gt;composer require symfony/apa
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -3536,7 +3536,7 @@ The application is a very basic one. More information about the application:&lt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -3824,7 +3824,7 @@ The application is a very basic one. More information about the application:&lt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -4236,7 +4236,7 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -4495,7 +4495,7 @@ The application is a very basic one it just replies with a header dump to any re
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -4717,7 +4717,7 @@ We will build &amp;amp; run the app from this &lt;code&gt;app&lt;/code&gt; folde
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -5094,7 +5094,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -5416,7 +5416,7 @@ do not do that, go will generate a library and not an executable. So if you get 
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -5696,7 +5696,7 @@ This page will explain you how to set up your application to run it on our servi
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -6143,7 +6143,7 @@ on Clever Cloud.&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -6446,7 +6446,7 @@ It means that you can define special keys in your &lt;code&gt;application.conf&l
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -6747,7 +6747,7 @@ It means that you can define special keys in your &lt;code&gt;application.conf&l
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -7129,7 +7129,7 @@ For example, for Play 2.0.4:&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -7476,7 +7476,7 @@ You have two options to fix this problem:&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -8002,7 +8002,7 @@ on Clever Cloud.&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -8234,7 +8234,7 @@ Created in 2007, Rack has become the de-facto standard for ruby web applications
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -8506,7 +8506,7 @@ You do not need to change a lot in your application, the &lt;em&gt;requirements&
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -8978,7 +8978,7 @@ We also fill the &lt;code&gt;WEB_CONCURRENCY&lt;/code&gt; and &lt;code&gt;RAILS_
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -9320,7 +9320,7 @@ environment variable to the list of features to enable.&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -9659,7 +9659,7 @@ CC_SBT_TARGET_BIN=my-binary&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -9956,7 +9956,7 @@ RewriteRule ^ /index.html&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;opacity-0 t
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -10312,7 +10312,7 @@ dashboard and by add-ons linked to your application.&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -10764,7 +10764,7 @@ The supported containers are listed below:&lt;/p&gt;
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
@@ -11330,7 +11330,7 @@ The application is a very simple todo list. You can add and delete values. More 
 
 &lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;absolute -mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;/doc/getting-started/&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;//doc/quickstart&#34; &gt;our getting started&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
 &lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;/doc/reference/clever-tools/getting_started/&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;

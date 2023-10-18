@@ -11,22 +11,22 @@
     <loc>/doc/quickstart/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/</loc>
+    <loc>//doc/quickstartby-language/</loc>
     <lastmod>2023-09-28T16:36:05+02:00</lastmod>
   </url><url>
     <loc>/doc/</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/</loc>
+    <loc>//doc/quickstart</loc>
     <lastmod>2023-10-04T23:35:36+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/authentication/</loc>
+    <loc>//doc/quickstartauthentication/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/cli/</loc>
+    <loc>//doc/quickstartcli/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/ssh-keys/</loc>
+    <loc>//doc/quickstartssh-keys/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/find-help/community/</loc>
@@ -423,7 +423,7 @@
     <loc>/doc/administrate/database-migration/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/dbaas/</loc>
+    <loc>//doc/quickstartdbaas/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/account/delete-account/</loc>
@@ -528,7 +528,7 @@
     <loc>/tags/developer/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/docker/</loc>
+    <loc>//doc/quickstartby-language/docker/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/administrate/domain-names/</loc>
@@ -537,7 +537,7 @@
     <loc>/doc/deploy/addon/elastic/elastic/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/elixir/</loc>
+    <loc>//doc/quickstartby-language/elixir/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/tags/encryption/</loc>
@@ -567,13 +567,13 @@
     <loc>/tags/getting-started/</loc>
     <lastmod>2023-10-11T11:31:26+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/go/</loc>
+    <loc>//doc/quickstartby-language/go/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/deploy/application/java/java-gradle/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/haskell/</loc>
+    <loc>//doc/quickstartby-language/haskell/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/tags/help/</loc>
@@ -597,7 +597,7 @@
     <loc>/tags/java/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/java/</loc>
+    <loc>//doc/quickstartby-language/java/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/guides/java/</loc>
@@ -657,7 +657,7 @@
     <loc>/doc/administrate/metrics/new-relic/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/node/</loc>
+    <loc>//doc/quickstartby-language/node/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/deploy/application/javascript/tutorials/node-js-mongo-db/</loc>
@@ -678,7 +678,7 @@
     <loc>/tags/php/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/php/</loc>
+    <loc>//doc/quickstartby-language/php/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/guides/php/</loc>
@@ -702,7 +702,7 @@
     <loc>/doc/deploy/application/javascript/tutorials/node-statsd-nodejs-metrics/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/python/</loc>
+    <loc>//doc/quickstartby-language/python/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/doc/administrate/metrics/query-tsl/</loc>
@@ -723,13 +723,13 @@
     <loc>/doc/account/organizations/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/ruby/</loc>
+    <loc>//doc/quickstartby-language/ruby/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/rust/</loc>
+    <loc>//doc/quickstartby-language/rust/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
-    <loc>/doc/getting-started/by-language/scala/</loc>
+    <loc>//doc/quickstartby-language/scala/</loc>
     <lastmod>2023-10-03T18:50:57+02:00</lastmod>
   </url><url>
     <loc>/tags/security/</loc>

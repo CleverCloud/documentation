@@ -1,9 +1,6 @@
 ---
 type: docs
-title: Magento
-
+title: Testing
 draft: true
-
 type: docs
-
 ---

@@ -1,9 +1,6 @@
 ---
 type: docs
-title: Magento
-
+title: CLI Best Practices
 draft: true
-
 type: docs
-
 ---

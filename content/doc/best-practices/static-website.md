@@ -1,9 +1,6 @@
 ---
 type: docs
-title: Magento
-
+title: Static Website
 draft: true
-
 type: docs
-
 ---

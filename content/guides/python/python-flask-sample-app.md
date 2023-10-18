@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy Flask
+title: Flask
 shortdesc: The goal of this article is to show you how configure and deploy a simple Flask application on Clever Cloud.
 tags:
 - deploy

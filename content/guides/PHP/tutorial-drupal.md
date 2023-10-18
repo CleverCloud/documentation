@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy a Drupal website
+title: Deploy Drupal
 shortdesc: This article shows you how to deploy a Drupal-based website on Clever Cloud.
 tags:
 - deploy
@@ -9,6 +9,8 @@ keywords:
 - drupal
 str_replace_dict:
   "@application-type@": "PHP"
+aliases:
+- /doc/deploy/applications/php/tutorials/tutorial-drupal
 ---
 
 ## Overview

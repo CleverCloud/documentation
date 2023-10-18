@@ -47,7 +47,7 @@ In the following example we want to set the webroot to the folder `/public`:
 ```
 
 {{< callout type="warning" >}}
-    Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
+Note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 {{< /callout >}}
 
 
@@ -246,10 +246,7 @@ $pg = new PDO("postgresql:host={$host};dbname={$database}, $username, $password)
 ```
 
 {{< callout type="warning" >}}
-    <p>Environment variables are displayed in the default output of `phpinfo()`.
-    If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
-    </p>
-    <code>phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)</code>
+Environment variables are displayed in the default output of `phpinfo()`. If you want to use `phpinfo()` without exposing environment variables, you have to call it this way: `phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)`
 {{< /callout >}}
 
 ## Composer
@@ -495,9 +492,7 @@ To enable this feature, you need to:
  - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< callout type="warning" >}}
-    You must have a [Redis]({{< ref "doc/deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
-
-    If no Redis add-on is linked with your application, the deployment will fail.
+You must have a [Redis]({{< ref "doc/deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
 {{< /callout >}}
 
 ## Sending emails

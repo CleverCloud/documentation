@@ -10,6 +10,8 @@ keywords:
 - logs
 - node-statsd
 type: docs
+aliases:
+- /doc/deploy/applications/javascript/tutorials/node-statsd-nodejs-metrics
 ---
 
 ## Overview

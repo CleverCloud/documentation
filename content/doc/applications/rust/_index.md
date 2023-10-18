@@ -12,6 +12,7 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/deploy/application/rust/rust
+comments: false
 ---
 
 ## Overview

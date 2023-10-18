@@ -11,5 +11,6 @@ aliases:
 - /doc/quickstart
 type: "docs"
 comments: false
-
+aliases:
+- /doc/develop/best-practices
 ---

@@ -13,6 +13,8 @@ keywords:
 - file
 - files
 type: docs
+aliases:
+- /doc/develop/cloud-storage
 ---
 
 You want to store files but you can't decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.

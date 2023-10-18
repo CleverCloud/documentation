@@ -1,9 +1,6 @@
 ---
 type: docs
-title: Magento
-
+title: Micro Services Architecture
 draft: true
-
 type: docs
-
 ---

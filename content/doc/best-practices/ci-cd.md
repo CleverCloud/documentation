@@ -1,9 +1,7 @@
 ---
 type: docs
-title: Magento
-
+title: CI/CD
 draft: true
-
 type: docs
 
 ---

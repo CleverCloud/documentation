@@ -339,7 +339,7 @@ on a path prefix.
 For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
 the second app. The other requests will be routed to the first app.
-You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "/doc/quickstartcli.md" >}})).
+You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "../CLI" >}})).
 
 Note that your prefix-routed application **needs** to have a `/prefix` route.
 

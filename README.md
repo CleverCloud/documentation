@@ -21,6 +21,7 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 - 
@@ -34,6 +35,9 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 =======
  
 >>>>>>> b1c4c9c (add go modules)
+=======
+
+>>>>>>> 905afad (reorganize content)
 ## Features
 
 - **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.

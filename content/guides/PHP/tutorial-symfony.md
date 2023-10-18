@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy a Symfony application
+title: Deploy Symfony
 shortdesc: This article shows you how to deploy a Symfony application on Clever Cloud.
 tags:
 - deploy
@@ -9,6 +9,8 @@ keywords:
 - symfony
 str_replace_dict:
   "@application-type@": "PHP"
+aliases:
+- /doc/deploy/applications/php/tutorials/tutorial-symfony
 ---
 
 ## Overview

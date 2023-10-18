@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy Play Framework 2
+title: Play Framework 2
 position: 2
 shortdesc: Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern.
 tags:
@@ -11,6 +11,8 @@ keywords:
 str_replace_dict:
   "@application-type@": "Java or Scala + Play! 2"
 type: docs
+aliases:
+- /doc/deploy/application/java/by-framework/play-framework-2
 ---
 
 ## Overview

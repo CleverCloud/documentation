@@ -174,7 +174,7 @@ CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
 {{< callout type="warning" >}}
-<p>Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.</p>
+Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
 {{< /callout >}}
 
 You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
@@ -182,7 +182,5 @@ You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a g
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 {{< callout type="warning"  >}}
-There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable.
-
-The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
+There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
 {{< /callout >}}

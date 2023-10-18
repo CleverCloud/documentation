@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy a Laravel application
+title: Deploy Laravel
 shortdesc: This article shows you how to deploy a laravel application on Clever Cloud.
 tags:
 - deploy
@@ -9,6 +9,8 @@ keywords:
 - laravel
 str_replace_dict:
   "@application-type@": "PHP"
+aliases:
+- /doc/deploy/applications/php/tutorials/tutorial-laravel
 ---
 
 ## Overview

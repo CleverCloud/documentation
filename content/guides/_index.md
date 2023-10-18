@@ -1,8 +1,17 @@
-+++
-weight = 50
-chapter = true
-title = "Les Tutorials"
-+++
+---
+title: Guides
+shortdesc: Step by step guides to deploy specifc apps and frameworks on Clever Cloud
+tags:
+- guides
+keywords:
+- 
+
+aliases:
+- /doc/deploy/applications/docker/tutorials
+type: "docs"
+comments: false
+---
+Here goes all the the tutorials in cute cards
 
 {{< cards >}}
   {{< card link="../guides/php/drupal-tutotal/" title="Drupal" icon="warning" >}}

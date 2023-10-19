@@ -44,7 +44,7 @@ So you can alter the build&start process for your application.
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
 |CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
 |CC_DISABLE_METRICS | Disable metrics collection. | `false` |
-|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version) instead | |
+|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/applications/javascript/nodejs/#select-node-version) instead | |
 |CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
 |CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
 |CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
@@ -126,7 +126,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Docker
 
-[Docker Documentation]({{< ref "doc/deploy/application/docker/docker.md" >}})
+[Docker Documentation]({{< ref "doc/applications/docker" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -143,7 +143,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## .NET
 
-[.NET Documentation]({{< ref "doc/deploy/application/dotnet/dotnet.md" >}})
+[.NET Documentation]({{< ref "doc/applications/dotnet" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -157,7 +157,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Elixir
 
-[Elixir Documentation]({{< ref "doc/deploy/application/elixir/elixir.md" >}})
+[Elixir Documentation]({{< ref "doc/applications/elixir" >}})
 
  {{<table "table table-bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -173,7 +173,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Go
 
-[Go Documentation]({{< ref "doc/deploy/application/golang/go.md" >}})
+[Go Documentation]({{< ref "doc/applications/golang" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -185,18 +185,18 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Haskell
 
-[Haskell Documentation]({{< ref "doc/deploy/application/haskell/haskell.md" >}})
+[Haskell Documentation]({{< ref "doc/applications/haskell" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[CC_HASKELL_STACK_TARGET]({{< ref "doc/deploy/application/haskell/haskell.md#specify-stack-package-target" >}}) | Specify Stack package target. |  |  |
+|[CC_HASKELL_STACK_TARGET]({{< ref "doc/applications/haskell#specify-stack-package-target" >}}) | Specify Stack package target. |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
 {{< /table >}}
 
 ## Java
 
-[Java Documentation]({{< ref "doc/deploy/application/java/java-jar.md" >}})
+[Java Documentation]({{< ref "doc/applications/java/java-jar" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -219,7 +219,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Node.js
 
-[Node.js Documentation]({{< ref "doc/deploy/application/javascript/by-framework/nodejs.md" >}})
+[Node.js Documentation]({{< ref "doc/applications/javascript/nodejs.md" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -234,14 +234,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## PHP
 
-[PHP Documentation]({{< ref "doc/deploy/application/php/php-apps.md" >}})
+[PHP Documentation]({{< ref "doc/applications/php" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ALWAYS_POPULATE_RAW_POST_DATA |  |  |  |
 |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
-|[CC_CGI_IMPLEMENTATION]({{< ref "doc/deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
+|[CC_CGI_IMPLEMENTATION]({{< ref "doc/applications/php#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
 |CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 |CC_LDAP_CA_CERT |  |  |  |
 |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
@@ -254,9 +254,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
 |CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
 |CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
-|[CC_PHP_ASYNC_APP_BUCKET]({{< ref "doc/deploy/application/php/php-apps.md#speed-up-or-disable-the-session-fs-bucket" >}}) | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |  |
-|[CC_PHP_DEV_DEPENDENCIES]({{< ref "doc/deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
-|[CC_PHP_DISABLE_APP_BUCKET]({{< ref "doc/deploy/application/php/php-apps.md#speed-up-or-disable-the-session-fs-bucket" >}}) | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |  |
+|[CC_PHP_ASYNC_APP_BUCKET]({{< ref "doc/applications/php#speed-up-or-disable-the-session-fs-bucket" >}}) | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |  |
+|[CC_PHP_DEV_DEPENDENCIES]({{< ref "doc/applications/php#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
+|[CC_PHP_DISABLE_APP_BUCKET]({{< ref "doc/applications/php#speed-up-or-disable-the-session-fs-bucket" >}}) | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |  |
 |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
 |CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
 |CC_WEBROOT | Define the `DocumentRoot` of your project | . |  |
@@ -266,7 +266,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |LDAPTLS_CACERT |  |  |  |
 |MAX_INPUT_VARS |  |  |  |
 |MEMORY_LIMIT | Change the default memory limit |  |  |
-|[SESSION_TYPE]({{< ref "doc/deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
+|[SESSION_TYPE]({{< ref "doc/applications/php#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
 |SOCKSIFY_EVERYTHING |  |  |  |
 |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
 |SQREEN_API_TOKEN | Organization token. |  |  |
@@ -275,7 +275,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Python
 
-[Python Documentation]({{< ref "doc/deploy/application/python/python_apps.md" >}})
+[Python Documentation]({{< ref "doc/applications/python" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -288,7 +288,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
 |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
 |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
-|[CC_PYTHON_MANAGE_TASKS]({{< ref "doc/deploy/application/python/tutorials/python-django-sample.md#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |  |
+|[CC_PYTHON_MANAGE_TASKS]({{< ref "/guides/python/python-django-sample#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |  |
 |CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
 |CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
@@ -298,9 +298,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
-|[STATIC_URL_PREFIX]({{< ref "doc/deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+|[STATIC_URL_PREFIX]({{< ref "doc/applications/python#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  |  |
-|[UWSGI_ASYNC]({{< ref "doc/deploy/application/python/python_apps.md#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
+|[UWSGI_ASYNC]({{< ref "doc/applications/python#configure-your-python-application" >}}) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |  |
 |UWSGI_ASYNC_ENGINE | Select the asynchronous engine for uWSGI (optional) |  |  |
 |UWSGI_INTERCEPT_ERRORS |  |  |  |
 |WSGI_BUFFER_SIZE | Buffer size (in bytes) for uploads. | `4096` |  |
@@ -311,30 +311,30 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Ruby
 
-[Ruby Documentation]({{< ref "doc/deploy/application/ruby/ruby-rack.md" >}})
+[Ruby Documentation]({{< ref "guides/ruby/ruby-rack-app-tutorial.md" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[CC_ENABLE_SIDEKIQ]({{< ref "doc/deploy/application/ruby/ruby-rack.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
+|[CC_ENABLE_SIDEKIQ]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
 |CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
-|[CC_RAKEGOALS]({{< ref "doc/deploy/application/ruby/ruby-rack.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
+|[CC_RAKEGOALS]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
 |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
-|[STATIC_URL_PREFIX]({{< ref "doc/deploy/application/ruby/ruby-rack.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+|[STATIC_URL_PREFIX]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  | |
 {{< /table >}}
 
 ## Rust
 
-[Rust Documentation]({{< ref "doc/deploy/application/rust/rust.md" >}})
+[Rust Documentation]({{< ref "doc/applications/rust" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

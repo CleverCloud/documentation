@@ -12,7 +12,7 @@ str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
 aliases:
-- /doc/deploy/application/ruby/ruby-rack
+- /guides/ruby/ruby-rack-app-tutorial
 ---
 
 ## Overview
@@ -37,7 +37,7 @@ Be sure that:
 
 ### Tutorial and sample app
 
-You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "doc/deploy/application/ruby/tutorials/ruby-rack-app-tutorial.md" >}}) and find the source code of the demo [here](https://helloworld-rack-demo.cleverapps.io).
+You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "/guides/ruby/ruby-rack-app-tutorial" >}}) and find the source code of the demo [here](https://helloworld-rack-demo.cleverapps.io).
 
 {{< readfile file="/content/partials/new-relic.md" >}}
 

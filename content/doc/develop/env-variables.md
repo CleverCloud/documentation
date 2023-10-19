@@ -220,25 +220,25 @@ Here is a non-exhaustive summary:
 | [Scala][scala] | `System.getenv("MY_VAR")` |
 | [.NET][dotnet] | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
-[go]: {{< ref "doc/deploy/application/golang/go#environment-injection.md" >}}
-[haskell]: {{< ref "doc/deploy/application/haskell/haskell#environment-injection" >}}
-[node]: {{< ref "doc/deploy/application/javascript/by-framework/nodejs#environment-injection" >}}
-[java-war]: {{< ref "doc/deploy/application/java/java-war#environment-injection" >}}
-[php]: {{< ref "doc/deploy/application/php/php-apps#environment-injection" >}}
-[play-1]: {{< ref "doc/deploy/application/java/by-framework/play-framework-1#environment-injection" >}}
-[play-2]: {{< ref "doc/deploy/application/java/by-framework/play-framework-2#environment-injection" >}}
-[python]: {{< ref "doc/deploy/application/python/python_apps#environment-injection" >}}
-[ruby]: {{< ref "doc/deploy/application/ruby/ruby-rack#environment-injection" >}}
-[rust]: {{< ref "doc/deploy/application/rust/rust#environment-injection" >}}
-[scala]: {{< ref "doc/deploy/application/scala/scala#environment-injection" >}}
-[dotnet]: {{< ref "doc/deploy/application/dotnet/dotnet#environment-injection" >}}
+[go]: {{< ref "doc/applications/golang#environment-injection.md" >}}
+[haskell]: {{< ref "doc/applications/haskell#environment-injection" >}}
+[node]: {{< ref "doc/applications/javascript/nodejs#environment-injection" >}}
+[java-war]: {{< ref "doc/applications/java/java-war#environment-injection" >}}
+[php]: {{< ref "doc/applications/php#environment-injection" >}}
+[play-1]: {{< ref "doc/applications/java/play-framework-1#environment-injection" >}}
+[play-2]: {{< ref "doc/applications/java/play-framework-2#environment-injection" >}}
+[python]: {{< ref "doc/applications/python#environment-injection" >}}
+[ruby]: {{< ref "guides/ruby/ruby-rack-app-tutorial#environment-injection" >}}
+[rust]: {{< ref "doc/applications/rust#environment-injection" >}}
+[scala]: {{< ref "doc/applications/scala#environment-injection" >}}
+[dotnet]: {{< ref "doc/applications/dotnet#environment-injection" >}}
 {{</table>}}
 
 {{< callout type="info" >}}
 Please note that the variables are available at build time
 for runtimes that support build time instructions, such as
-[Java WAR]({{< ref "doc/deploy/application/java/java-war#environment-injection" >}}),
-[Play! Framework 1]({{< ref "doc/deploy/application/java/by-framework/play-framework-1#environment-injection" >}}),
-[Play! Framework 2]({{< ref "doc/deploy/application/java/by-framework/play-framework-2#environment-injection" >}})
-or [Scala]({{< ref "doc/deploy/application/scala/scala#environment-injection" >}}).
+[Java WAR]({{< ref "doc/applications/java/java-war#environment-injection" >}}),
+[Play! Framework 1]({{< ref "doc/applications/java/play-framework-1#environment-injection" >}}),
+[Play! Framework 2]({{< ref "doc/applications/java/play-framework-2#environment-injection" >}})
+or [Scala]({{< ref "doc/applications/scala#environment-injection" >}}).
 {{< /callout >}}

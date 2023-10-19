@@ -11,7 +11,7 @@ str_replace_dict:
   "@application-type@": "Rust"
 type: docs
 aliases:
-- /doc/deploy/application/rust/rust
+- /doc/applications/rust
 comments: false
 ---
 

@@ -18,7 +18,7 @@ comments: false
 
 If you only need to serve static files without executing any code on the backend, for instance for a javascript Single Page Application (SPA), you can create a static application.
 
-This runtime is based on apache, so shares a lot with the [PHP runtime]({{< ref "doc/deploy/application/php/php-apps.md" >}}). This means you can use `.htaccess` files for redirection or access control.
+This runtime is based on apache, so shares a lot with the [PHP runtime]({{< ref "doc/applications/php" >}}). This means you can use `.htaccess` files for redirection or access control.
 
 {{< readfile file="/content/partials/create-application.md" >}}
 

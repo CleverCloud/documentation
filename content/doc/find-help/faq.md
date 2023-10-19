@@ -31,7 +31,7 @@ Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS]({{< ref "doc/deploy/application/php/tutorials/" >}}))
+* PHP ([see frameworks and CMS]({{< ref "/guides/php" >}}))
 * Python (Django)
 * Ruby
 * Go
@@ -96,7 +96,7 @@ Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information,
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-It's explained [here]({{< ref "doc/deploy/application/php/php-apps.md#using-http-authentication" >}}).
+It's explained [here]({{< ref "doc/applications/php#using-http-authentication" >}}).
 
 ## How to get the user's IP address?
 
@@ -131,7 +131,7 @@ The ssh.json file is documented [here]({{< ref "doc/reference/common-configurati
 
 If you get this error on a Java (or any JVM language) application, it means that your application requires a specific version of Java.
 
-By default, Java 8 is used; but you can change it. Please head [over here]({{< ref "doc/deploy/application/java/java-gradle.md#available-java-versions" >}}) for more information.
+By default, Java 8 is used; but you can change it. Please head [over here]({{< ref "doc/applications/java/java-gradle#available-java-versions" >}}) for more information.
 
 ## I want SSH access to my server
 

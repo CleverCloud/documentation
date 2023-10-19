@@ -12,7 +12,7 @@ str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
 aliases:
-- /doc/deploy/application/ruby/ruby-rack-app-tutorial
+- /guides/ruby/ruby-rack-app-tutorial-app-tutorial
 ---
 
 ## Overview Introduction

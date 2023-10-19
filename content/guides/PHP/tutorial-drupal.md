@@ -63,7 +63,7 @@ by
     );
 ```
 
-* Replace the line `$settings['hash_salt'] = ''` (`$drupal_hash_salt` for Drupal 7) with `$settings['hash_salt'] = getenv('DRUPAL_SALT')`. You can generate salts with [this link](https://www.passwordtool.hu/). Add a new `DRUPAL_SALT` [environment variable]({{< ref "doc/deploy/application/php/php-apps.md#configure-your-php-application" >}}) to the application with the salt you have generated.
+* Replace the line `$settings['hash_salt'] = ''` (`$drupal_hash_salt` for Drupal 7) with `$settings['hash_salt'] = getenv('DRUPAL_SALT')`. You can generate salts with [this link](https://www.passwordtool.hu/). Add a new `DRUPAL_SALT` [environment variable]({{< ref "doc/applications/php#configure-your-php-application" >}}) to the application with the salt you have generated.
 * As mentioned in this [article]({{< ref "doc/deploy/addon/fs-bucket.md" >}}), with Git deployments, files that are uploaded by users must be
 persisted in a File System Bucket. In order to do so, [add a File Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) via the console.
 * At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud`

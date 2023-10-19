@@ -20,7 +20,7 @@ In Node.js, you can use the `node-statsd` package to push custom metrics.
 
 ### Configure metrics for your Node.js application
 
-You only need the `node-statsd` package in your [dependencies]({{< ref "doc/deploy/application/javascript/by-framework/nodejs.md#npm-module-dependencies" >}}):
+You only need the `node-statsd` package in your [dependencies]({{< ref "doc/applications/javascript/nodejs.md#npm-module-dependencies" >}}):
 
 Then add this Hello World code to your application and modify it to fit your needs:
 

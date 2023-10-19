@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Java Maven deployment
+title: Maven
 position: 3
 shortdesc: Maven is essentially a project management and comprehension tool...
 tags:

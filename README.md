@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b470345 (add readme)
-=======
-=======
->>>>>>> b1c4c9c (add go modules)
-=======
 
->>>>>>> 378021f (fix readme bc wtf happened here)
 <div align="center">
   <h1 align="center">Clever Cloud Documentation</h1>
   <p align="center">
@@ -21,27 +9,7 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 
 - [Main branch](https://doc-2024.cleverapps.io)
 - [Other branches](https://doc-2024-compare.cleverapps.io)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-- 
->>>>>>> 5f34b4b (add links to deployed versions)
-=======
-  
->>>>>>> a72c902 (fix readme)
-=======
-
->>>>>>> 565c417 (change quickstart path in all files)
-=======
- 
->>>>>>> b1c4c9c (add go modules)
-=======
-
->>>>>>> 905afad (reorganize content)
 ## Features
 
 - **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.

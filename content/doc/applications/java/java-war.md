@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Java War/Ear deployment
+title: War/Ear
 position: 4
 shortdesc: In JEE, applications modules are packaged as EAR and WAR based on their functionality.
 tags:

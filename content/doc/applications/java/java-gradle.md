@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Gradle deployment
-position: 3
+title: Gradle
+position: 2
 shortdesc: Gradle is a project automation tool that builds…
 tags:
 - deploy

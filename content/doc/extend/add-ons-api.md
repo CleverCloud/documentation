@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Add-on API
-position: 2
+weight: 3
 shortdesc: How to integrate your own service as an add-on on Clever Cloud
 tags:
 - extend

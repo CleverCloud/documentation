@@ -30,7 +30,7 @@ Clever Cloud use Git to transfer your code and application's assets from your lo
 
 For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
 
-Follow the [File System buckets documentation page]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) to set up an FS Bucket for your application.
+Follow the [File System buckets documentation page]({{< ref "doc/addons/fs-bucket" >}}) to set up an FS Bucket for your application.
 
 ## Git issues
 

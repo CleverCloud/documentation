@@ -119,7 +119,7 @@ Enter the name and the description of your application.
 
 #### Optional steps
 
-- The wizard will offer you to [add an add-on]({{< ref "doc/deploy/addon" >}}) to your application
+- The wizard will offer you to [add an add-on]({{< ref "doc/addons" >}}) to your application
 
 - The wizard will offer you to [add environment variables]({{< ref "doc/develop/env-variables.md" >}}) to your application
 
@@ -181,7 +181,7 @@ Enter the name and the description of your application.
   
   To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
   
-  Deploy your application via FTP, create a [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+  Deploy your application via FTP, create a [FS Bucket]({{< ref "doc/addons/fs-bucket" >}}) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
   
   [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
   
@@ -307,7 +307,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 There are two kinds of billing:
 
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) and [Cellar]({{< ref "doc/deploy/addon/cellar.md" >}})
+* Per-usage billing: Add-ons based on consumption, like [FS Bucket]({{< ref "doc/addons/fs-bucket" >}}) and [Cellar]({{< ref "doc/addons/cellar.md" >}})
 
 {{< callout type="warning" >}}
 **Free Plan:** Add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.

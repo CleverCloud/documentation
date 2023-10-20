@@ -94,17 +94,17 @@ menu:
       params:
         icon: github
 
-  sidebar:
-    - identifier: more
-      name: More
-      params:
-        type: separator
-      weight: 2
-    - identifier: about
-      name: "Tutotal"
-      pageRef: "/tutotal"
-      weight: 3
-    - identifier: hugoDocs
-      name: "Hugo Docs ↗"
-      url: "https://gohugo.io/documentation/"
-      weight: 4
+  #sidebar:
+    #- identifier: more
+      #name: More
+      #params:
+        #type: separator
+      #weight: 2
+    #- identifier: about
+      #name: "Tutotal"
+      #pageRef: "/tutotal"
+      #weight: 3
+    #- identifier: hugoDocs
+      #name: "Hugo Docs ↗"
+      #url: "https://gohugo.io/documentation/"
+      #weight: 4

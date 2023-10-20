@@ -228,7 +228,7 @@ Here is a non-exhaustive summary:
 [play-1]: {{< ref "doc/applications/java/play-framework-1#environment-injection" >}}
 [play-2]: {{< ref "doc/applications/java/play-framework-2#environment-injection" >}}
 [python]: {{< ref "doc/applications/python#environment-injection" >}}
-[ruby]: {{< ref "guides/ruby/ruby-rack-app-tutorial#environment-injection" >}}
+[ruby]: {{< ref "/guides/ruby-rack-app-tutorial#environment-injection" >}}
 [rust]: {{< ref "doc/applications/rust#environment-injection" >}}
 [scala]: {{< ref "doc/applications/scala#environment-injection" >}}
 [dotnet]: {{< ref "doc/applications/dotnet#environment-injection" >}}

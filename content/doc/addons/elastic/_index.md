@@ -13,7 +13,7 @@ keywords:
 - apm
 type: docs
 aliases:
-- /doc/deploy/addon/elastic/elastic
+- /doc/addons/elastic/elastic
 comments: false
 ---
 

@@ -34,8 +34,9 @@ width: normal
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Deploy a Static Site"
-    subtitle="Simple and easy to use, yet powerful and feature-rich."
+    title="Deploy a Django App"
+    subtitle="Learn how to deploy a Django application on Clever Cloud"
+    link="guides/python-django-sample"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"

@@ -95,11 +95,11 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[CC_CLAMAV]({{< ref "doc/administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
 |[CC_CLAMAV_MAXQUEUE]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
 |[CC_CLAMAV_MAXTHREADS]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
-|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
-|[CC_METRICS_PROMETHEUS_PATH]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
-|[CC_METRICS_PROMETHEUS_PORT]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
-|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
-|[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/metrics/overview.md#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
+|[CC_METRICS_PROMETHEUS_PATH]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+|[CC_METRICS_PROMETHEUS_PORT]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
+|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
+|[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
 |[CC_VARNISH_STORAGE_SIZE]({{< ref "doc/administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
 |[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
 {{< /table >}}
@@ -288,7 +288,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
 |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
 |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
-|[CC_PYTHON_MANAGE_TASKS]({{< ref "/guides/python/python-django-sample#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |  |
+|[CC_PYTHON_MANAGE_TASKS]({{< ref "/guides/python-django-sample#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |  |
 |CC_PYTHON_MODULE | Select which module you want to start: `mymodule:app`. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as `app.server:app` |  |  |
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
 |CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
@@ -311,24 +311,24 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Ruby
 
-[Ruby Documentation]({{< ref "guides/ruby/ruby-rack-app-tutorial.md" >}})
+[Ruby Documentation]({{< ref "/guides/ruby-rack-app-tutorial.md" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[CC_ENABLE_SIDEKIQ]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
+|[CC_ENABLE_SIDEKIQ]({{< ref "/guides/ruby-rack-app-tutorial.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
 |CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
 |CC_NGINX_PROXY_BUFFERS | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_NGINX_PROXY_BUFFER_SIZE | Sets the size of the buffer used for reading the first part of the response received from the proxied server. <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size" target="_blank" rel="noreferrer noopener">Nginx documentation</a> |  |  |
 |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
-|[CC_RAKEGOALS]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
+|[CC_RAKEGOALS]({{< ref "/guides/ruby-rack-app-tutorial.md#configure-rake-goals" >}}) | A list of comma-separated rake goals to execute e.g. `db:migrate, assets:precompile` |  |  |
 |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |CC_SIDEKIQ_FILES | Specify a list of Sidekiq configuration files e.g. `./config/sidekiq_1.yml,./config/sidekiq_2.yml` |  |  |
 |NGINX_READ_TIMEOUT | Read timeout in seconds | `300` |  |
 |RACK_ENV |  |  |  |
 |RAILS_ENV |  |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
-|[STATIC_URL_PREFIX]({{< ref "guides/ruby/ruby-rack-app-tutorial.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
+|[STATIC_URL_PREFIX]({{< ref "/guides/ruby-rack-app-tutorial.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  | |
 {{< /table >}}
 
@@ -349,7 +349,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### FS Bucket
 
-[FS Bucket Documentation]({{< ref "doc/deploy/addon/fs-bucket.md" >}})
+[FS Bucket Documentation]({{< ref "doc/addons/fs-bucket" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -360,7 +360,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### MongoDB
 
-[MongoDB Documentation]({{< ref "doc/deploy/addon/mongodb/mongodb.md" >}})
+[MongoDB Documentation]({{< ref "doc/addons/mongodb" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -376,7 +376,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### MySQL
 
-[MySQL Documentation]({{< ref "doc/deploy/addon/mysql/mysql.md" >}})
+[MySQL Documentation]({{< ref "doc/addons/mysql" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -393,7 +393,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### ProxySQL
 
-[ProxySQL Documentation]({{< ref "doc/deploy/addon/mysql/proxysql.md" >}})
+[ProxySQL Documentation]({{< ref "/guides/proxysql" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -406,7 +406,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### PostgreSQL
 
-[PostgreSQL Documentation]({{< ref "doc/deploy/addon/postgresql/postgresql.md" >}})
+[PostgreSQL Documentation]({{< ref "doc/addons/postgresql" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -423,7 +423,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Pgpool-II
 
-[Pgpool-II Documentation]({{< ref "doc/deploy/addon/postgresql/pgpool.md" >}})
+[Pgpool-II Documentation]({{< ref "/guides/pgpool" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -486,7 +486,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Elastic Stack
 
-[Elastic Stack Documentation]({{< ref "doc/deploy/addon/elastic/elastic.md" >}})
+[Elastic Stack Documentation]({{< ref "doc/addons/elastic" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -553,7 +553,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Redis
 
-[Redis Documentation]({{< ref "doc/deploy/addon/redis.md" >}})
+[Redis Documentation]({{< ref "doc/addons/redis" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

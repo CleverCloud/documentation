@@ -31,7 +31,7 @@ Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS]({{< ref "/guides/php" >}}))
+* PHP ([see frameworks and CMS]({{< ref "/guides" >}}))
 * Python (Django)
 * Ruby
 * Go

@@ -1,6 +1,5 @@
-+++
-weight = 100
-chapter = true
-title = "User Account"
-comments = false
-+++
+---
+weight: 7
+title: "User Account"
+comments: false
+---

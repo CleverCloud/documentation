@@ -1,6 +1,5 @@
-+++
-weight = 20
-chapter = true
-title = "Develop"
-comments = false
-+++
+---
+weight: 8
+title: "Develop"
+comments: false
+---

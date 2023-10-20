@@ -1,6 +1,5 @@
-+++
-weight = 40
-chapter = true
-title = "Administrate"
-comments = false
-+++
+---
+weight: 9
+title: "Administrate"
+comments: false
+---

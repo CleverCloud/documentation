@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Clever Cloud API
-position: 1
+weight: 1
 shortdesc: Getting started with the Clever Cloud API
 tags:
 - extend

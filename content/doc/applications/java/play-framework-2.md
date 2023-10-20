@@ -13,7 +13,7 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/applications/java/play-framework-2
-toc: false
+
 ---
 
 ## Overview

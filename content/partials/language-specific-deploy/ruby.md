@@ -138,7 +138,7 @@ Only for Rails >= 5.2.
 You can now commit and push your changes.
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) section.
+[File System Buckets]({{< ref "doc/addons/fs-bucket" >}}) section.
 
 ### Nginx configuration
 

@@ -74,7 +74,7 @@ To enable Nginx to serve your static resources, you have to set two [environment
 
 `STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`).
 
-Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets]({{< ref "doc/deploy/addon/fs-bucket.md" >}}) section.
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets]({{< ref "doc/addons/fs-bucket" >}}) section.
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 

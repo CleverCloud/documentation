@@ -85,7 +85,7 @@ Well, you read the upsides and downsides of both.
 You may understand where our preference goes, by now!
 If you can, use Cellar.
 S3 Client library exist in almost all languages.
-It's [cheaper]({{< ref "doc/deploy/addon/cellar.md" >}}).
+It's [cheaper]({{< ref "doc/addons/cellar.md" >}}).
 It's more resilient to hardware failures.
 It gives you free processing power: when using files on your filesystem, you have to process them yourself.
 When using Cellar, you can delegate the handling of the upload to Cellar itself.

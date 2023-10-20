@@ -33,6 +33,15 @@ Find here specific instructions related to your application's language.
   
 {{< /cards >}}
 
+## How to deploy X if it is not natively supported
+
+If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.
+You will probably find a basic Docker file for your technology on the Docker hub.
+
+Refer to the [Docker](/doc/applications/docker) section of this documentation to know how to deploy your Dockerized application.
+
+If you are out of options, contact our support team and we'll come up with a solution with you.
+
 ## Environment variables
 
 Here goes common environment varibales applicables to all apps.

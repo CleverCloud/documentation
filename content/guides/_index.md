@@ -14,6 +14,6 @@ comments: false
 Here goes all the the tutorials in cute cards
 
 {{< cards >}}
-  {{< card link="../guides/php/drupal-tutotal/" title="Drupal" icon="warning" >}}
+  {{< card link="../guides/drupal-tutotal/" title="Drupal" icon="warning" >}}
   {{< card link="/" title="No Icon" >}}
 {{< /cards >}}

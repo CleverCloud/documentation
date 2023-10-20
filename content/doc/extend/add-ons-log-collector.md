@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Add-on Log Collector
-position: 3
+weight: 4
 shortdesc: This article targets the add-on providers who want to integrate logs from their add-ons to Clever Cloud's logging system
 tags:
 - extend

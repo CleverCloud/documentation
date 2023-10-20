@@ -8,7 +8,7 @@ keywords:
 - deploy
 
 aliases:
-- /doc/deploy/addon
+- /doc/addons
 type: "docs"
 comments: false
 ---

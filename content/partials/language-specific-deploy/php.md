@@ -481,7 +481,7 @@ You can set the following environment variables:
 
 ### Use Redis to store PHP Sessions
 
-We provide the possibility to store the PHP sessions in a [Redis database]({{< ref "doc/deploy/addon/redis.md" >}}) to improve reliability.
+We provide the possibility to store the PHP sessions in a [Redis database]({{< ref "doc/addons/redis" >}}) to improve reliability.
 
 If your application is under heavy load, redis persistence for sessions can improve latency.
 
@@ -492,7 +492,7 @@ To enable this feature, you need to:
  - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< callout type="warning" >}}
-You must have a [Redis]({{< ref "doc/deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
+You must have a [Redis]({{< ref "doc/addons/redis" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
 {{< /callout >}}
 
 ## Sending emails

@@ -1,4 +1,9 @@
+image: clevercloud/clever-tools:latest
+#-------------------------------
+# Deploy
+#-------------------------------
+
 deploy to production:
   stage: deploy
-  script: git push clever main:master
+  script: clever link ${APP_ID} && clever deploy
   environment: production

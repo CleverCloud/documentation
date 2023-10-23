@@ -1,15 +1,4 @@
-image: clevercloud/clever-tools:latest
-#-------------------------------
-# Deploy
-#-------------------------------
-production:deploy:to:clever-cloud:
-  only:
-    - master    
-  environment:
-    name: doc-2024
-    url: https://doc-2024.cleverapps.io
-  script: clever link ${APP_ID}
-
-deploy:
+deploy to production:
   stage: deploy
-  script: clever deploy
+  script: git push clever main:master
+  environment: production

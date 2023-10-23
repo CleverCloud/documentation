@@ -6,11 +6,10 @@ production:deploy:to:clever-cloud:
   only:
     - master    
   environment:
-    environment:
-      name: doc-2024
-      url: https://doc-2024.cleverapps.io
+    name: doc-2024
+    url: https://doc-2024.cleverapps.io
 
 stage: deploy
   script:
-    clever link ${APP_ID}
-    clever deploy
+    - clever link ${APP_ID}
+    - clever deploy

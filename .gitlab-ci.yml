@@ -9,7 +9,6 @@ production:deploy:to:clever-cloud:
     name: doc-2024
     url: https://doc-2024.cleverapps.io
 
-stage: deploy
-  script:
-    - clever link ${APP_ID}
-    - clever deploy
+deploy:
+  stage: deploy
+  script: clever link ${APP_ID} && clever deploy

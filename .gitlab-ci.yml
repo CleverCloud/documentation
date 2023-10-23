@@ -1,0 +1,13 @@
+image: clevercloud/clever-tools:latest
+#-------------------------------
+# Deploy
+#-------------------------------
+production:deploy:to:clever-cloud:
+  only:
+    - master    
+  environment:
+    name: main/${CI_PROJECT_NAME}
+    url:  https://${CI_PROJECT_NAME}.cleverapps.io
+  script:
+    clever link ${APP_ID}
+    clever deploy

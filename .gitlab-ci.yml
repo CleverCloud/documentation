@@ -4,7 +4,7 @@ image: clevercloud/clever-tools:latest
 #-------------------------------
 test cli:
   stage: test
-  script: clever link ${APP_ID}
+  script: sleep 10; clever link ${APP_ID}
 
 deploy to production:
   stage: deploy

@@ -58,4 +58,4 @@ This is why the Clever Cloud application running this app needs to have a webroo
 
 ## Testing and deployment
  
- Add here local tests instructions
+ [Add here local tests instructions]

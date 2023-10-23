@@ -2,8 +2,11 @@ image: clevercloud/clever-tools:latest
 #-------------------------------
 # Deploy
 #-------------------------------
+test cli:
+  stage: test
+  script: clever link ${APP_ID}
 
 deploy to production:
   stage: deploy
-  script: clever link ${APP_ID} && clever deploy
+  script: clever deploy
   environment: production

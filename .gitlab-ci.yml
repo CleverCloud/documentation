@@ -7,5 +7,5 @@ image:
 #-------------------------------
 deploy to production:
   stage: deploy
-  script: script: clever link app_d7c53054-02ba-4ce9-bab8-2c00112c69f4; clever deploy
+  script: clever link app_d7c53054-02ba-4ce9-bab8-2c00112c69f4; clever deploy
   environment: production

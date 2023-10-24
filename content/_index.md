@@ -32,43 +32,49 @@ width: normal
 
 <div class="mt-6"></div>
 
-{{< hextra/feature-grid >}}
-  {{< hextra/feature-card
+{{< feature-grid >}}
+  {{< feature-card
     title="Environment Variables"
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
+    link="/doc/develop/reference-environment-variables"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
+  {{< feature-card
     title="API"
     subtitle="The Clever Cloud API reference."
+    link="/doc/extend/cc-api"
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
     image="images/hextra-markdown.webp"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
+  {{< feature-card
     title="The CLI Clever Tools"
     subtitle="An official Command Line Interface for Clever Cloud."
+    link="/doc/cli"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/pg-studio.png"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
+  {{< feature-card
     title="Steps by Steps Guides"
     subtitle="Find detailed tutorials to deploy your favorite framework on Clever Cloud"
+    link="/guides"
   >}}
   
-  {{< hextra/feature-card
+  {{< feature-card
     title="Deploy an application"
     subtitle="See supported languages and how to configure your app to deploy successfully"
+    link="/doc/applications"
   >}}
-  {{< hextra/feature-card
+  {{< feature-card
     title="Connect your application to dependencies"
     subtitle="See our available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic..."
+    link="/doc/addons"
   >}}
   
-{{< /hextra/feature-grid >}}
+{{< /feature-grid >}}

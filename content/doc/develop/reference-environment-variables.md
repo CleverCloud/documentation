@@ -423,7 +423,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Pgpool-II
 
-[Pgpool-II Documentation]({{< ref "/guides/pgpool" >}})
+[Pgpool-II Documentation]({{< ref "/guides/postgresql/pgpool" >}})
 
 {{<table "table table-bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |

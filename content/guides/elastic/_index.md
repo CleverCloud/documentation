@@ -1,6 +1,7 @@
 ---
 title: Elastic
 shortdesc: Elastic guides
+weight: 1
 tags:
 - guides
 keywords:

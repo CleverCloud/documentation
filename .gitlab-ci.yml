@@ -1,4 +1,7 @@
-image: clevercloud/clever-tools:latest
+image:
+  name: clevercloud/clever-tools:latest
+  entrypoint: [""]
+  
 #-------------------------------
 # Deploy
 #-------------------------------

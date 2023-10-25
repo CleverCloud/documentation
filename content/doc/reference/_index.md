@@ -1,5 +1,5 @@
 ---
-title: Tools
+title: Configuration List
 weight: 12
 Description: All Clever Cloud advanced features and tools
 tags:

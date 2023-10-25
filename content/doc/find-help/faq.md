@@ -137,7 +137,7 @@ By default, Java 8 is used; but you can change it. Please head [over here]({{< r
 
 Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
 
-If however, you still need SSH access for debugging purposes, please have a look at [SSH access]({{< ref "doc/reference/clever-tools/ssh-access.md" >}}), but keep in mind that changes made on an instance are not persistent across deployments.
+If however, you still need SSH access for debugging purposes, please have a look at [SSH access]({{< ref "doc/cli/ssh-access.md" >}}), but keep in mind that changes made on an instance are not persistent across deployments.
 
 ## I want to user Clever Cloud on my own premises, is that possible?
 

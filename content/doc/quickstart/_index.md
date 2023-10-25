@@ -263,13 +263,13 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
-  {{< card link="../deploy/addon/mysql/mysql" title="MySQL" icon="mysql" >}}
-  {{< card link="../deploy/addon/postgresql" title="PostgreSQL" icon="pg" >}}
-  {{< card link="../deploy/addon/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="../deploy/addon/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="../deploy/addon/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
-  {{< card link="../deploy/addon/redis" title="Redis" subtitle="In-memory database" icon="redis" >}}
-  {{< card link="../deploy/addon/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
+  {{< card link="/doc/addons/mysql" title="MySQL" icon="mysql" >}}
+  {{< card link="/doc/addons/postgresql" title="PostgreSQL" icon="pg" >}}
+  {{< card link="/doc/addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="/doc/addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
+  {{< card link="/doc/addons/redis" title="Redis" subtitle="In-memory database" icon="redis" >}}
+  {{< card link="/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
   
 {{< /cards >}}
 

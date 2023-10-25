@@ -11,20 +11,22 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/deploy/application/java
+comments: false
 ---
 
+<div class="mb-12">
+{{< hextra/hero-subtitle >}}
+<br>
+  Find detailed instructions according to your framework&nbsp;<br class="sm:block hidden" />
+{{< /hextra/hero-subtitle >}}
+</div>
+
 {{< cards >}}
-  {{< card link="/doc/applications/docker/docker" title="Docker" icon="docker" >}}
-  {{< card link="/doc/applications/golang/go" title="Go" icon="go" >}}
-  {{< card link="/doc/applications/haskell/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="/doc/applications/java/" title="Java" icon="java" >}}
-  {{< card link="/doc/applications/javascript/by-framework/nodejs" title="Node.js" icon="node" >}}
-  {{< card link="/doc/applications/ruby/ruby-rack" title="Ruby" icon="ruby" >}}
-  {{< card link="/doc/applications/php/php-apps" title="PHP" icon="php" >}}
-  {{< card link="/doc/applications/python/python_apps" title="Python" icon="python" >}}
-  {{< card link="/doc/applications/rust/rust" title="Rust" icon="rust" >}}
-  {{< card link="/doc/applications/scala/scala" title="Scala" icon="scala" >}}
-  {{< card link="/doc/applications/elixir/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/doc/applications/dotnet/dotnet.md" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
+  {{< card link="/doc/applications/java/java-jar" title="Jar" icon="java" >}}
+  {{< card link="/doc/applications/java/java-maven" title="Maven" icon= "maven">}}
+  {{< card link="/doc/applications/java/java-war" title="War/Ear" icon="java" >}}
+  {{< card link="/doc/applications/java/play-framework-1" title="Play 1" icon="play" >}}
+  {{< card link="/doc/applications/java/play-framework-2" title="Play 2" icon="play" >}}
   
 {{< /cards >}}

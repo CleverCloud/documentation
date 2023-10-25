@@ -28,7 +28,7 @@ comments: false
   {{< card link="/guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
   {{< card link="/guides/node-statsd-nodejs-metrics" title="node-statsd" subtitle= "Configure node-statsd package on your Node.js application to push custom metrics" icon="node" >}}
   {{< card link="/guides/play-framework-1" title="Play 1 x Scala" subtitle= "Set up your Play 1 + Scala application to run on Clever Cloud" icon="play" >}}
-  {{< card link="/guides/play-framework-2" title="Play 1 x Scala" subtitle= "Set up your Play 2 + Scala application to run on Clever Cloud" icon="play" >}}
+  {{< card link="/guides/play-framework-2" title="Play 2 x Scala" subtitle= "Set up your Play 2 + Scala application to run on Clever Cloud" icon="play" >}}
   {{< card link="/guides/ruby-on-rails" title="Ruby On Rails" subtitle= "How to deploy Ruby on Rails framework" icon="ruby" >}}
   {{< card link="/guides/ruby-rack" title="Ruby Rack" subtitle= "Set up a Ruby Rack application and deploy on Clever Cloud" icon="ruby" >}}
   {{< card link="/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}

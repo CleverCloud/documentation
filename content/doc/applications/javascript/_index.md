@@ -14,5 +14,15 @@ aliases:
 - /doc/deploy/application/javascript
 comments: false
 ---
+<div class="mb-12">
+{{< hextra/hero-subtitle >}}
+<br>
+  Find detailed instructions according to your framework&nbsp;<br class="sm:block hidden" />
+{{< /hextra/hero-subtitle >}}
+</div>
 
-Put here cards with links and guides
+{{< cards >}}
+  {{< card link="/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="/doc/applications/java/java-jar" title="Node.js" icon="node" >}}
+  
+{{< /cards >}}

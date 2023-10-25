@@ -1,5 +1,6 @@
 ---
 type: docs
+weight: 3
 title: Manage an Organization
 shortdesc: Information, members, billing, notifications...
 tags:

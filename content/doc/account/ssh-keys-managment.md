@@ -1,7 +1,7 @@
 ---
 type: docs
 title: SSH Keys
-position: 2
+weight: 6
 shortdesc: Add and manage SSH keys for push and deployments
 tags:
 - account-setup

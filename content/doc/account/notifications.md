@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Notifications management
-position: 9
+title: Notifications
+weight: 5
 shortdesc: How to setup and configure notifications via the dashboard
 tags:
 - admin-console

@@ -45,11 +45,11 @@ We've already integrated the Clever Cloud SSO, so you can login directly into yo
 
 ### CLI
 
-1. Make sure you have clever-tools installed locally. Report to the [getting started]({{< ref `doc/reference/clever-tools/getting_started.md` >}}) guide if needed.
+1. Make sure you have clever-tools installed locally. Report to the [getting started]({{< ref `doc/cli/getting_started.md` >}}) guide if needed.
 2. List the available plans and options for Matomo: `clever addon providers show Matomo`.
 3. In your terminal, you can then run `clever addon create matomo <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
 
-Refer to the [documentation]({{< ref `doc/reference/clever-tools/create.md` >}}) for more details on application creation with Clever Tools
+Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details on application creation with Clever Tools
 
 ## Accessing the Matomo interface
 

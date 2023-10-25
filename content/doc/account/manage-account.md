@@ -1,5 +1,6 @@
 ---
 type: docs
+weight: 2
 title: Manage your account
 shortdesc: Edit your personal informations
 tags:

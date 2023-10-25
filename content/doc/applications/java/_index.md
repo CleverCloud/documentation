@@ -30,3 +30,15 @@ comments: false
   {{< card link="/doc/applications/java/play-framework-2" title="Play 2" icon="play" >}}
   
 {{< /cards >}}
+
+### More Frameworks
+
+Looking for instructions on a specific framework deployment?
+
+{{< cards >}}
+{{< card
+    title="Check our Guides"
+    link="/guides"
+    icon="science"
+  >}}
+  {{< /cards >}}

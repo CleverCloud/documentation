@@ -30,7 +30,7 @@ Docker at Clever Cloud does not yet support FS Buckets, validation of your Docke
 
 {{< readfile file="/content/partials/set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/language-specific-deploy/docker.md" >}}
+{{< readfile file="/contentdoc/cli/.md" >}}
 
 {{< readfile file="/content/partials/env-injection.md" >}}
 

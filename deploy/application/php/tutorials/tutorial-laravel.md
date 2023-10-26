@@ -90,7 +90,7 @@ For instance for MySQL:
 
 ### Optional: automatically run migrations upon deployment
 
-If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_POST_BUILD_HOOK=php artisan migrate --force`
+If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_PRE_RUN_HOOK=php artisan migrate --force`
 
 # Configure Caching
 

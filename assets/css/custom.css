@@ -69,3 +69,25 @@ a.no-underline {
     margin-left: -41px;
       content: counter(step);
   }
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+  border-right: none;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+    
+}
+
+/* Text in tables*/
+.content table:not(.code-block table) tr {
+  font-size: 0.8rem;
+  text-align: left;
+}
+  
+  

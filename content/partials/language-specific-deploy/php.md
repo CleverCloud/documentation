@@ -132,7 +132,7 @@ Here is the list of available settings:
 
 When php-fpm spawns a worker it allocates a smaller part of the application's memory to the worker, here is the allocated memory for each flavor:
 
-{{<table "table table- bordered" "text-align:center" >}}
+   
  | <center>Flavor</center> | <center>Memory Limit</center> |
  |-----------------------|------------------------------|
  |Pico | 64M |
@@ -145,7 +145,7 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
  |2XL | 1024M |
  |3XL | 1536M |
  |4XL+ | 2048M |
-{{< /table >}}
+  
 
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "doc/reference/reference-environment-variables.md#php" >}}).
 

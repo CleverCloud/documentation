@@ -205,7 +205,7 @@ You can find more information in the documentation pages related to your applica
 
 Here is a non-exhaustive summary:
 
-{{<table "table table-bordered table-striped dataTable" >}}
+
 | Language | Usage |
 |----------|-------|
 | [Go][go] | `os.Getenv("MY_VAR")`|
@@ -232,7 +232,7 @@ Here is a non-exhaustive summary:
 [rust]: {{< ref "doc/applications/rust#environment-injection" >}}
 [scala]: {{< ref "doc/applications/scala#environment-injection" >}}
 [dotnet]: {{< ref "doc/applications/dotnet#environment-injection" >}}
-{{</table>}}
+
 
 {{< callout type="info" >}}
 Please note that the variables are available at build time

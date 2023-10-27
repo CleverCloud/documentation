@@ -51,7 +51,7 @@ Encryption at rest is available on MySQL. You can have more information on the [
 
 {{< readfile file="/content/partials/proxysql.md" >}}
 
-You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}})
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/mysql/proxysql" >}})
 
 ## Plans
 

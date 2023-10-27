@@ -10,7 +10,7 @@
 
 <a href="{{ $link }}"
   {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
-  class="{{ $class }} hextra-feature-card relative overflow-hidden rounded-3xl border border-gray-200 hover:border-gray-300 dark:border-neutral-800 dark:hover:border-neutral-700 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient"
+  class="{{ $class }} no-underline hextra-feature-card relative overflow-hidden rounded-3xl border border-gray-200 hover:border-gray-300 dark:border-neutral-800 dark:hover:border-neutral-700 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient"
 >
   <div class="relative w-full p-6 hover:border-gray-300 dark:hover:border-neutral-700 hover:scale-110">
     <h3 class="text-2xl font-medium leading-6 mb-2 flex items-center">
@@ -21,7 +21,7 @@
       {{ end -}}
       <span>{{ $title }}</span>
     </h3>
-    <p class="text-gray-500 dark:text-gray-400 text-sm leading-6">{{ $subtitle | markdownify }}</p>
+    <p class="no-link-style text-gray-500 dark:text-gray-400 text-sm leading-6">{{ $subtitle | markdownify }}</p>
   </div>
   {{- with $image -}}
     <img src="{{ . }}" class="absolute max-w-none {{ $imageClass }}" alt="{{ $title }}" />

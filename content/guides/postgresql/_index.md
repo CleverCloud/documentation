@@ -16,4 +16,9 @@ keywords:
 - proxy
 - sql
 type: docs
+comments: false
 ---
+
+{{< cards >}}
+ {{< card link="/guides/postgresql/pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
+{{< /cards >}}

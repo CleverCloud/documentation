@@ -70,18 +70,18 @@ The log system retrieves all output from the application and displays it in the 
 ### Supported Platforms:
 
 {{< cards >}}
-  {{< card link="../deploy/application/docker/docker" title="Docker" icon="docker" >}}
-  {{< card link="../deploy/application/golang/go" title="Go" icon="go" >}}
-  {{< card link="../deploy/application/haskell/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="../deploy/application/java/" title="Java" icon="java" >}}
-  {{< card link="../deploy/application/javascript/by-framework/nodejs" title="Node.js" icon="node" >}}
-  {{< card link="../deploy/application/ruby/ruby-rack" title="Ruby" icon="ruby" >}}
-  {{< card link="../deploy/application/php/php-apps" title="PHP" icon="php" >}}
-  {{< card link="../deploy/application/python/python_apps" title="Python" icon="python" >}}
-  {{< card link="../deploy/application/rust/rust" title="Rust" icon="rust" >}}
-  {{< card link="../deploy/application/scala/scala" title="Scala" icon="scala" >}}
-  {{< card link="../deploy/application/elixir/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="../deploy/application/dotnet/dotnet.md" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/doc/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/doc/applications/haskell" title="Haskell" icon= "haskell">}}
+  {{< card link="/doc/applications/java" title="Java" icon="java" >}}
+  {{< card link="/doc/applications/javascript" title="Node.js" icon="node" >}}
+  {{< card link="/doc/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/doc/applications/php" title="PHP" icon="php" >}}
+  {{< card link="/doc/applications/python" title="Python" icon="python" >}}
+  {{< card link="/doc/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/doc/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/doc/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   
 {{< /cards >}}
 
@@ -263,13 +263,13 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
-  {{< card link="../deploy/addon/mysql/mysql" title="MySQL" icon="mysql" >}}
-  {{< card link="../deploy/addon/postgresql" title="PostgreSQL" icon="pg" >}}
-  {{< card link="../deploy/addon/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="../deploy/addon/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="../deploy/addon/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
-  {{< card link="../deploy/addon/redis" title="Redis" subtitle="In-memory database" icon="redis" >}}
-  {{< card link="../deploy/addon/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
+  {{< card link="/doc/addons/mysql" title="MySQL" icon="mysql" >}}
+  {{< card link="/doc/addons/postgresql" title="PostgreSQL" icon="pg" >}}
+  {{< card link="/doc/addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="/doc/addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
+  {{< card link="/doc/addons/redis" title="Redis" subtitle="In-memory database" icon="redis" >}}
+  {{< card link="/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
   
 {{< /cards >}}
 

@@ -1,5 +1,6 @@
 ---
 type: docs
+weight: 1
 title: Create an Account
 shortdesc: How to create your account
 tags:

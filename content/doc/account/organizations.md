@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Roles and Organizations
-position: 4
+weight: 4
 shortdesc: Managing users and roles in organizations
 tags:
 - dashboard-setup

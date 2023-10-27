@@ -1,5 +1,6 @@
 ---
 type: docs
+weight: 7
 title: Delete an account
 shortdesc: How to delete your account
 tags:

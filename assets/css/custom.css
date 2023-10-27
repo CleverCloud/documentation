@@ -76,29 +76,46 @@ a.no-underline {
                           Table Styling
 ----------------------------------------------------------*/ 
 
-/* Table titles */
-.thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-/* Cells formatting */
-.content table:not(.code-block table) th {
-border-right-width: 0px;
-border-left-width: 0px;
+/* Overriding default theme configuration and classes in files */
+center {
+  display: block;
+  text-align: left; /* Overrides centered titles */
 }
 
+/* Table headers formatting */
+.content table:not(.code-block table) th {
+  border-right-width: 0px;
+  border-left-width: 0px; 
+  border-top: none;
+  text-transform: uppercase;
+  color: rgba(115, 115, 142, 1);
+}
+
+/* Table headers formatting for dark mode */
+html[class~="dark"] .content table:not(.code-block table) th {
+  color: rgb(193, 193, 196);
+}
+
+
+/* Remove internal borders */
 .content table:not(.code-block table) td {
   margin: 0px;
   border-width: 0px;
   --tw-border-opacity: 0;
 }
 
-/* Text inside table*/
+/* Text in cells */
 .content table:not(.code-block table) tr {
   font-size: 0.8rem;
   text-align: left;
   border-width: 0px;
+  color: rgba(58, 56, 113, 1)
 }
+/* Text in cells for dark mode */
+html[class~="dark"] .content table:not(.code-block table) tr {
+    color: #ececfe;
+  }  
+
+  
 
   

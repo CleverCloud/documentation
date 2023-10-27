@@ -17,7 +17,7 @@ type: docs
 
 These are read-only variables that are generated for each scaler before they build and start your application.
 
-{{<table "table table-bordered" "text-align : center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Example value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |[INSTANCE_NUMBER]({{< ref "doc/develop/env-variables.md" >}}) | Allows your application to differentiate each running node on the application level. | 0, 1… |
@@ -32,13 +32,13 @@ These are read-only variables that are generated for each scaler before they bui
 |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
 |CC_APP_NAME | The customer defined application name | cloud-api-production |
 |PORT | The mandatory port value is 8080 | 8080 |
-{{< /table >}}
+  
 
 ### Variables you can define
 
 So you can alter the build&start process for your application.
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
@@ -50,34 +50,34 @@ So you can alter the build&start process for your application.
 |CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
 |CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | `1` |
 |[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-{{< /table >}}
+  
 
 #### Control build and dependencies cache
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
 |[CC_IGNORE_FROM_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
 |[IGNORE_FROM_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
 |[CC_OVERRIDE_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
-{{< /table >}}
+  
 
 #### Control the deployment's behavior
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |CC_RUN_COMMAND | Custom command to run your application. |  |
 |CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
 |[CC_TROUBLESHOOT]({{< ref "doc/find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
-{{< /table >}}
+  
 
 #### Deployment hooks
 
 Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment. 
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |[CC_PRE_BUILD_HOOK]({{< ref "doc/develop/build-hooks.md#pre-build-cc_pre_build_hook" >}}) | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
@@ -85,11 +85,11 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[CC_PRE_RUN_HOOK]({{< ref "doc/develop/build-hooks.md#pre-run-cc_pre_run_hook" >}}) | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
 |[CC_RUN_FAILED_HOOK]({{< ref "doc/develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has failed to start. |  |
 |[CC_RUN_SUCCEEDED_HOOK]({{< ref "doc/develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
-{{< /table >}}
+  
 
 #### Configure extra software
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> |
 |-----------------------|------------------------------|--------------------------------|
 |[CC_CLAMAV]({{< ref "doc/administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
@@ -102,7 +102,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
 |[CC_VARNISH_STORAGE_SIZE]({{< ref "doc/administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
 |[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-{{< /table >}}
+  
 
 ### Tailscale support
 
@@ -110,12 +110,12 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys).
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[TAILSCALE_AUTH_KEY](https://tailscale.com/) | Contains your Tailscale Auth key |  |  |
 |TAILSCALE_LOGIN_SERVER| Contains the login server |  |  |
-{{< /table >}}
+  
 
 #### How it works?
 
@@ -128,7 +128,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Docker Documentation]({{< ref "doc/applications/docker" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DOCKERFILE | The name of the Dockerfile to build. | `Dockerfile` |  |
@@ -139,13 +139,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_DOCKER_LOGIN_SERVER | The server of your private registry (optional). | `Docker’s public registry` |  |
 |CC_DOCKER_LOGIN_USERNAME | The username to login to a private registry. |  |  |
 |CC_MOUNT_DOCKER_SOCKET | Set to true to access the host Docker socket from inside your container. | `false` |  |
-{{< /table >}}
+  
 
 ## .NET
 
 [.NET Documentation]({{< ref "doc/applications/dotnet" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DOTNET_PROFILE | Override the build configuration settings in your project. | Release |  |
@@ -153,13 +153,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_DOTNET_TFM | Compiles for a specific framework. The framework must be defined in the project file. Example : `net5.0` |  |  |
 |CC_DOTNET_VERSION | Choose the .NET Core version between `5.0`,`6.0`. | 6.0 |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
-{{< /table >}}
+  
 
 ## Elixir
 
 [Elixir Documentation]({{< ref "doc/applications/elixir" >}})
 
- {{<table "table table-bordered" "text-align:center" >}}
+   
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | `1.11` |  |
@@ -169,36 +169,36 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
  |CC_PHOENIX_RUN_ECTO_MIGRATE | Whether to run 'mix ecto.migrate' or not. | true |  |
  |CC_PHOENIX_SERVER_GOAL | Phoenix server goal. | phx.server |  |
  |CC_RUN_COMMAND | Custom command to run your application. Replaces the default behaviour. |  |  |
- {{< /table >}}
+ 
 
 ## Go
 
 [Go Documentation]({{< ref "doc/applications/golang" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_GO_BUILD_TOOL |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. |`goget` | |
 |CC_GO_PKG | Makes the deployer run go get `${CC_GO_PKG}` instead of go get `<app_id>`.  |  |  |
 |CC_GO_RUNDIR | Makes the deployer use the specified directory to run your binary.<br>If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project` |  | |
-{{< /table >}}
+  
 
 ## Haskell
 
 [Haskell Documentation]({{< ref "doc/applications/haskell" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[CC_HASKELL_STACK_TARGET]({{< ref "doc/applications/haskell#specify-stack-package-target" >}}) | Specify Stack package target. |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
-{{< /table >}}
+  
 
 ## Java
 
 [Java Documentation]({{< ref "doc/applications/java/java-jar" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_DISABLE_MAX_METASPACE | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
@@ -215,13 +215,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |NUDGE_APPID |  |  |  |
 |PLAY1_VERSION | Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5` |  |  |
 |SBT_DEPLOY_GOAL | Define which sbt goals to run during build. | `stage` |  |
-{{< /table >}}
+  
 
 ## Node.js
 
 [Node.js Documentation]({{< ref "doc/applications/javascript/nodejs.md" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_NODE_DEV_DEPENDENCIES | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |  |
@@ -230,13 +230,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_CUSTOM_BUILD_TOOL| A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`) | | |
 |CC_NPM_REGISTRY | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |  |
 |NPM_TOKEN | Private repository token |  |  |
-{{< /table >}}
+  
 
 ## PHP
 
 [PHP Documentation]({{< ref "doc/applications/php" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ALWAYS_POPULATE_RAW_POST_DATA |  |  |  |
@@ -271,13 +271,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
 |SQREEN_API_TOKEN | Organization token. |  |  |
 |USE_SOCKS |  | `false` |  |
-{{< /table >}}
+  
 
 ## Python
 
 [Python Documentation]({{< ref "doc/applications/python" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_HTTP_BASIC_AUTH | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |  |
@@ -307,13 +307,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |WSGI_POST_BUFFERING | Maximal size (in bytes) for the headers of a request.  | `4096` |  |
 |WSGI_THREADS | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |  |
 |WSGI_WORKERS | Number of workers. (Defaut: automatically setup with the scaler size) |  |  |
-{{< /table >}}
+  
 
 ## Ruby
 
 [Ruby Documentation]({{< ref "/guides/ruby-rack-app-tutorial.md" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[CC_ENABLE_SIDEKIQ]({{< ref "/guides/ruby-rack-app-tutorial.md#configure-sidekiq" >}}) | Enable Sidekiq background process | `false` |  |
@@ -330,20 +330,20 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "/guides/ruby-rack-app-tutorial.md#manage-your-static-files-and-assets" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
 |STATIC_WEBROOT |  |  | |
-{{< /table >}}
+  
 
 ## Rust
 
 [Rust Documentation]({{< ref "doc/applications/rust" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
 |CC_RUST_BIN | The name of the binary to launch once built |  |  |
 |CC_RUST_FEATURES | The list of features to enable |  |  |
 |CC_RUN_COMMAND | Custom command to run your application. |  |  |
-{{< /table >}}
+  
 
 ## Addons-related environment variable
 
@@ -351,18 +351,18 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [FS Bucket Documentation]({{< ref "doc/addons/fs-bucket" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |BUCKET_HOST | Hostname of the bucket |  | X |
 |CC_FS_BUCKET | Defines which bucket to mount on which path |  |  |
-{{< /table >}}
+  
 
 ### MongoDB
 
 [MongoDB Documentation]({{< ref "doc/addons/mongodb" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |MONGODB_ADDON_HOST |  | Generated upon creation | X  |
@@ -372,13 +372,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |MONGODB_ADDON_DB |  | Generated upon creation | X |
 |MONGODB_ADDON_PASSWORD |  | Generated upon creation | X  |
 |MONGODB_ADDON_USER |  | Generated upon creation | X  |
-{{< /table >}}
+  
 
 ### MySQL
 
 [MySQL Documentation]({{< ref "doc/addons/mysql" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |MYSQL_ADDON_HOST |  | Generated upon creation | X  |
@@ -389,26 +389,26 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |MYSQL_ADDON_PASSWORD |  | Generated upon creation | X  |
 |MYSQL_ADDON_ROLE |  | Generated upon creation | X  |
 |MYSQL_ADDON_USER |  | Generated upon creation | X  |
-{{< /table >}}
+  
 
 ### ProxySQL
 
 [ProxySQL Documentation]({{< ref "/guides/mysql/proxysql" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_ENABLE_MYSQL_PROXYSQL | Enable the ProxySQL  feature | `false`  | |
 |CC_MYSQL_PROXYSQL_MAX_CONNECTIONS | Defines the maximum number of connections the local ProxySQL will open to your MySQL add-on | `10` | |
 |CC_MYSQL_PROXYSQL_USE_TLS | Enable or disable secured connection using TLS to your MySQL add-on | `true` | |
 |CC_MYSQL_PROXYSQL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to ProxySQL | | `true` |
-{{< /table >}}
+  
 
 ### PostgreSQL
 
 [PostgreSQL Documentation]({{< ref "doc/addons/postgresql" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |POSTGRESQL_ADDON_HOST |  | Generated upon creation | X  |
@@ -419,13 +419,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |POSTGRESQL_ADDON_PASSWORD |  | Generated upon creation | X  |
 |POSTGRESQL_ADDON_ROLE |  | Generated upon creation | X  |
 |POSTGRESQL_ADDON_USER |  | Generated upon creation | X  |
-{{< /table >}}
+  
 
 ### Pgpool-II
 
 [Pgpool-II Documentation]({{< ref "/guides/postgresql/pgpool" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_ENABLE_PGPOOL | Enables the Pgpool-II feature | `false` | |
@@ -481,14 +481,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_PGPOOL_MEMQCACHE_CACHE_BLOCK_SIZE | Cache block size in megabytes  | `1` | |
 |CC_PGPOOL_CACHE_SAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names to memcache that don't write to database (regexp are accepted)  | `''` | |
 |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
-{{< /table >}}
+  
 
 
 ### Elastic Stack
 
 [Elastic Stack Documentation]({{< ref "doc/addons/elastic" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |ELASTIC_APM_SERVER_URL | URI to connect APM Server | Generated upon creation | X  |
@@ -505,11 +505,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |ES_ADDON_USER | Username credential to authenticate to Elasticsearch | Generated upon creation | X  |
 |ES_ADDON_PASSWORD | Password credential to authenticate to Elasticsearch | Generated upon creation | X  |
 |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
-{{< /table >}}
+  
 
 ### Blackfire
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | `''` | X |
@@ -520,11 +520,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |CC_BLACKFIRE_TIMEOUT | Sets the Blackfire API connection timeout | `15` | X |
 |CC_BLACKFIRE_STATSD | Sets the statsd server to send agent’s statistics | `''` | X |
 |CC_BLACKFIRE_STATSD_PREFIX | Sets the statsd prefix to use when sending data | `blackfire` | X |
-{{< /table >}}
+  
 
 ### New Relic
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name | X |
@@ -534,11 +534,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[CC_NEWRELIC_ERROR_COLLECTOR_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) | true | X |  
 |[CC_NEWRELIC_TRANSACTION_TRACER_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) | true | X |  
 |[CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) | obfuscated | X |  
-{{< /table >}}
+  
 
 ### Pulsar
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center>    | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 | ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
 |ADDON_PULSAR_BINARY_URL | The complete URL to use in your application | Generated upon creation | X |
@@ -549,29 +549,29 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |ADDON_PULSAR_NAMESPACE | Your add-on Pulsar ID | Generated upon creation | X |
 |ADDON_PULSAR_TENANT | Your Clever Cloud tenant ID | Generated upon creation | X |
 |ADDON_PULSAR_TOKEN | Your Biscuit authentication token | Generated upon creation        | X |
-{{< /table >}}
+  
 
 ### Redis
 
 [Redis Documentation]({{< ref "doc/addons/redis" >}})
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |REDIS_HOST |  | Generated upon creation | X  |
 |REDIS_PORT |  | Generated upon creation | X  |
 |REDIS_PASSWORD |  | Generated upon creation | X  |
-{{< /table >}}
+  
 
 ### Socks
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |SOCKS_ADDON_HOST |  |  |  |
 |SOCKS_ADDON_PORT |  |  |  |
 |SOCKS_ADDON_PRIVATE_KEY |  |  |  |
-{{< /table >}}
+  
 
 ### VPN
 
@@ -581,7 +581,7 @@ be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
-{{<table "table table-bordered" "text-align:center" >}}
+  
 | <center>Name</center> | <center>Description</center>                                                                    | <center>Default value</center> | <center>Read Only</center> |
 | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
 | CC_VPN_DNS_OVERRIDES  | Comma-separated list of DNS IP                                                                  |                                |                            |
@@ -594,4 +594,4 @@ to be routed through the exit node.
 | VPN_ADDON_PORT        | Server port                                                                                     |                                |                            |
 | VPN_ADDON_TAKEY       | Pre-shared secret                                                                               |                                |                            |
 | VPN_TARGETS           | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |
-{{< /table >}}
+  

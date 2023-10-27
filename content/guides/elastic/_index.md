@@ -14,4 +14,7 @@ aliases:
 type: "docs"
 comments: false
 ---
-Here goes the elastic home
+{{< cards >}}
+ {{< card link="/guides/elastic/kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}
+
+{{< /cards >}}

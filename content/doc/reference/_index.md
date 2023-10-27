@@ -1,5 +1,5 @@
 ---
-title: Tools
+title: Configuration List
 weight: 12
 Description: All Clever Cloud advanced features and tools
 tags:
@@ -17,3 +17,9 @@ type: "docs"
 comments: false
 
 ---
+
+{{< cards >}}
+  {{< card link="/doc/reference/common-configuration" title="Common configuration for all instances" icon="cog-6-tooth" >}}
+  {{< card link="/doc/reference/reference-environment-variables" title="All environment variables" icon="creds" >}}
+  {{< card link="/doc/reference/lexic" title="Lexic" icon="book-open" >}}
+{{< /cards >}}

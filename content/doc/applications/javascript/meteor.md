@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Deploy Meteor.js
+title: Meteor.js
 shortdesc: Meteor is an open source platform for web, mobile, and desktop.
 tags:
 - deploy

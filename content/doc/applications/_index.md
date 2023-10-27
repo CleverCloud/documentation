@@ -18,18 +18,18 @@ comments: false
 Find here specific instructions related to your application's language.
 
 {{< cards >}}
-  {{< card link="../applications/docker/" title="Docker" icon="docker" >}}
-  {{< card link="../applications/golang/go" title="Go" icon="go" >}}
-  {{< card link="../applications/haskell/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="../applications/java/" title="Java" icon="java" >}}
-  {{< card link="../applications/javascript/by-framework/nodejs" title="Node.js" icon="node" >}}
-  {{< card link="../applications/ruby/ruby-rack" title="Ruby" icon="ruby" >}}
-  {{< card link="../applications/php/php-apps" title="PHP" icon="php" >}}
-  {{< card link="../applications/python/python_apps" title="Python" icon="python" >}}
-  {{< card link="../applications/rust/rust" title="Rust" icon="rust" >}}
-  {{< card link="../applications/scala/scala" title="Scala" icon="scala" >}}
-  {{< card link="../applications/elixir/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="../applications/dotnet/dotnet.md" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/doc/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/doc/applications/haskell" title="Haskell" icon= "haskell">}}
+  {{< card link="/doc/applications/java" title="Java" icon="java" >}}
+  {{< card link="/doc/applications/javascript" title="Node.js" icon="node" >}}
+  {{< card link="/doc/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/doc/applications/php" title="PHP" icon="php" >}}
+  {{< card link="/doc/applications/python" title="Python" icon="python" >}}
+  {{< card link="/doc/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/doc/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/doc/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   
 {{< /cards >}}
 

@@ -32,52 +32,49 @@ width: normal
 
 <div class="mt-6"></div>
 
-{{< hextra/feature-grid >}}
-  {{< hextra/feature-card
-    title="Deploy a Django App"
-    subtitle="Learn how to deploy a Django application on Clever Cloud"
-    link="guides/python-django-sample"
+{{< feature-grid >}}
+  {{< feature-card
+    title="Environment Variables"
+    subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
+    link="/doc/develop/reference-environment-variables"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
-    title="Deploy a Rust App"
-    subtitle="Compose with just Markdown. Enrich with Shortcode components."
+  {{< feature-card
+    title="API"
+    subtitle="The Clever Cloud API reference."
+    link="/doc/extend/cc-api"
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
     image="images/hextra-markdown.webp"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
-    title="Migrate a Database"
-    subtitle="Use native tools integrated into Clever Cloud console."
+  {{< feature-card
+    title="The CLI Clever Tools"
+    subtitle="An official Command Line Interface for Clever Cloud."
+    link="/doc/cli"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/pg-studio.png"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< hextra/feature-card
-    title="Lightweight as a Feather"
-    subtitle="No dependency or Node.js is needed to use Hextra. Powered by Hugo, one of *the fastest* static site generators, building your site in just seconds with a single binary."
+  {{< feature-card
+    title="Steps by Steps Guides"
+    subtitle="Find detailed tutorials to deploy your favorite framework on Clever Cloud"
+    link="/guides"
   >}}
   
-  {{< hextra/feature-card
-    title="Reponsive with Dark Mode Included"
-    subtitle="Looks great on different screen sizes. Built-in dark mode support, with auto-switching based on user's system preference."
+  {{< feature-card
+    title="Deploy an application"
+    subtitle="See supported languages and how to configure your app to deploy successfully"
+    link="/doc/applications"
   >}}
-  {{< hextra/feature-card
-    title="Build and Host for Free"
-    subtitle="Build with GitHub Actions, and host for free on GitHub Pages. Alternatively it can be hosted on any static hosting service."
+  {{< feature-card
+    title="Connect your application to dependencies"
+    subtitle="See our available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic..."
+    link="/doc/addons"
   >}}
-  {{< hextra/feature-card
-    title="Multi-Language Made Easy"
-    subtitle="Create multi-language pages by just adding locales suffix to the Markdown file. Adding i18n support to your site is intuitive."
-  >}}
-  {{< hextra/feature-card
-    title="And Much More..."
-    icon="sparkles"
-    subtitle="Syntax highlighting / Table of contents / SEO / RSS / LaTeX / Mermaid / Customizable / and more..."
-  >}}
-{{< /hextra/feature-grid >}}
+  
+{{< /feature-grid >}}

@@ -44,6 +44,9 @@ h1, .content h1,
 .bg-gray-200 {
   background-color: rgb(214, 207, 251);
 }
+.bg-gray-custom {
+  background-color: #f5f5f5;
+}
 
 /* Prevent linked text to be underlined or change color.
   Useful for beautiful cards */
@@ -69,25 +72,33 @@ a.no-underline {
     margin-left: -41px;
       content: counter(step);
   }
+/*--------------------------------------------------------
+                          Table Styling
+----------------------------------------------------------*/ 
 
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  display: table;
-  border-right: none;
-}
-
-thead {
+/* Table titles */
+.thead {
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
-    
+}
+/* Cells formatting */
+.content table:not(.code-block table) th {
+border-right-width: 0px;
+border-left-width: 0px;
 }
 
-/* Text in tables*/
+.content table:not(.code-block table) td {
+  margin: 0px;
+  border-width: 0px;
+  --tw-border-opacity: 0;
+}
+
+/* Text inside table*/
 .content table:not(.code-block table) tr {
   font-size: 0.8rem;
   text-align: left;
+  border-width: 0px;
 }
-  
+
   

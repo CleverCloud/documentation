@@ -35,7 +35,7 @@ params:
       link: /
       width: 175
   comments:
-    enable: true
+    enable: false
     type: giscus
 
     # https://giscus.app/

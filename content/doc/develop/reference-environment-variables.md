@@ -17,7 +17,6 @@ type: docs
 
 These are read-only variables that are generated for each scaler before they build and start your application.
 
-  
 |  Name  | Description | Example value |
 |-----------------------|------------------------------|--------------------------------|
 |[`INSTANCE_NUMBER`](/doc/develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
@@ -33,45 +32,38 @@ These are read-only variables that are generated for each scaler before they bui
 |`CC_APP_NAME` | The customer defined application name | cloud-api-production |
 |`PORT` | The mandatory port value is 8080 | 8080 |
   
-
 ### Variables you can define
 
 So you can alter the build&start process for your application.
 
-  
 | Name | Description |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|APP_FOLDER | Folder in which the application is located (inside the git repository) |  |
-|CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
-|CC_DISABLE_METRICS | Disable metrics collection. | `false` |
-|CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/applications/javascript/nodejs/#select-node-version) instead | |
-|CC_SSH_PRIVATE_KEY | A ssh private key to setup for the user running your application |  |
-|CC_SSH_PRIVATE_KEY_FILE | The name to use for the file containing the private ssh key | `id_ed25519` |
-|CC_WORKER_RESTART | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit.<br />This setting controls all workers. | `on-failure` |
-|CC_WORKER_RESTART_DELAY | Define a delay in seconds to restart the worker when they exit. | `1` |
-|[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-  
+|`APP_FOLDER` | Folder in which the application is located (inside the git repository) |  |
+|`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
+|`CC_DISABLE_METRICS` | Disable metrics collection. | false |
+|`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](/doc/applications/javascript/nodejs/#select-node-version "Select node version") instead | |
+|`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
+|`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
+|`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
+|`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
+|[`CC_WORKER_COMMAND`](/doc/develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
 
 #### Control build and dependencies cache
 
-  
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|CC_CACHE_DEPENDENCIES | Enable caching of your build dependencies to speed up following builds. | `false` |
-|[CC_IGNORE_FROM_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths to ignore when the build cache archive is created. |  |
-|[IGNORE_FROM_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
-|[CC_OVERRIDE_BUILDCACHE]({{< ref "doc/develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
-  
+|`CC_CACHE_DEPENDENCIES` | Enable caching of your build dependencies to speed up following builds. | false |
+|[`CC_IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`CC_OVERRIDE_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
 
 #### Control the deployment's behavior
 
-  
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|CC_RUN_COMMAND | Custom command to run your application. |  |
-|CC_TASK | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | `false` |
-|[CC_TROUBLESHOOT]({{< ref "doc/find-help/troubleshooting.md" >}}) | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | `false` |
-  
+|`CC_RUN_COMMAND` | Custom command to run your application. |  |
+|`CC_TASK` | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | false |
+|[`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 #### Deployment hooks
 

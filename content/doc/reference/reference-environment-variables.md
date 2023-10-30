@@ -18,9 +18,9 @@ type: docs
 These are read-only variables that are generated for each scaler before they build and start your application.
 
 
-| Name | <center>Description</center> | <center>Example value</center> |
+| Name | Description | Example value |
 |-----------------------|------------------------------|--------------------------------|
-|[INSTANCE_NUMBER]({{< ref "doc/develop/env-variables.md" >}}) | Allows your application to differentiate each running node on the application level. | 0, 1… |
+|<code><a href="/doc/develop/env-variables" target="_blank" rel="noopener"></a></code> | Allows your application to differentiate each running node on the application level. | 0, 1… |
 |INSTANCE_TYPE | Whether this instance is a "build" instance or a "production" instance. | build, production |
 |INSTANCE_ID | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
 |CC_PRETTY_INSTANCE_NAME | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |

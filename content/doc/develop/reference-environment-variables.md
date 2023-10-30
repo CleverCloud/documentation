@@ -20,8 +20,8 @@ These are read-only variables that are generated for each scaler before they bui
   
 | <center>Name</center> | <center>Description</center> | <center>Example value</center> |
 |-----------------------|------------------------------|--------------------------------|
-|[INSTANCE_NUMBER]({{< ref "doc/develop/env-variables.md" >}}) | Allows your application to differentiate each running node on the application level. | 0, 1… |
-|INSTANCE_TYPE | Whether this instance is a "build" instance or a "production" instance. | build, production |
+|[`INSTANCE_NUMBER`](/doc/develop/env-variables) | Allows your application to differentiate each running node on the application level. | 0, 1… |
+|`INSTANCE_TYPE` | Whether this instance is a "build" instance or a "production" instance. | build, production |
 |INSTANCE_ID | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
 |CC_PRETTY_INSTANCE_NAME | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |
 |APP_ID | The ID of your Clever Cloud application | app_649a93d1-6677-44bc-aca7-6f46107d6e02 |

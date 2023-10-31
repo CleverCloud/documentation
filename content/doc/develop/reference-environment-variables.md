@@ -70,31 +70,28 @@ So you can alter the build&start process for your application.
 Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment. 
 
   
-|  Name  |  Description  |  Default value  |
-|-----------------------|------------------------------|--------------------------------|
-|[CC_PRE_BUILD_HOOK]({{< ref "doc/develop/build-hooks.md#pre-build-cc_pre_build_hook" >}}) | Ran before the dependencies are fetched. If it fails, the deployment fails. |  |
-|[CC_POST_BUILD_HOOK]({{< ref "doc/develop/build-hooks.md#pre-build-cc_post_build_hook" >}}) | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |  |
-|[CC_PRE_RUN_HOOK]({{< ref "doc/develop/build-hooks.md#pre-run-cc_pre_run_hook" >}}) | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |  |
-|[CC_RUN_FAILED_HOOK]({{< ref "doc/develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has failed to start. |  |
-|[CC_RUN_SUCCEEDED_HOOK]({{< ref "doc/develop/build-hooks.md#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook" >}}) | Ran once the application has started successfuly. |  |
-  
+|  Name  |  Description  |
+|-----------------------|------------------------------|
+|[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build-cc_pre_build_hook "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
+|[`CC_POST_BUILD_HOOK`](/doc/develop/build-hooks/pre-build-cc_post_build_hook "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
+|[`CC_PRE_RUN_HOOK`](/doc/develop/build-hooks/#pre-run-cc_pre_run_hook "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
+|[`CC_RUN_FAILED_HOOK`](/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook "Run succeeded/failed hook") | Ran once the application has failed to start. |
+|[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
-
   
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[CC_CLAMAV]({{< ref "doc/administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
-|[CC_CLAMAV_MAXQUEUE]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
-|[CC_CLAMAV_MAXTHREADS]({{< ref "doc/administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
-|[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
-|[CC_METRICS_PROMETHEUS_PATH]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
-|[CC_METRICS_PROMETHEUS_PORT]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
-|[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
-|[CC_METRICS_PROMETHEUS_USER]({{< ref "doc/metrics#publish-your-own-metrics" >}}) | Define the user for the basic auth of the Prometheus endpoint | |
-|[CC_VARNISH_STORAGE_SIZE]({{< ref "doc/administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
-|[CC_WORKER_COMMAND]({{< ref "doc/develop/workers.md" >}}) | Command to run in background as a worker process. You can run multiple workers. |  |
-  
+|[`CC_CLAMAV`](/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
+|[`CC_CLAMAV_MAXQUEUE`](/doc/administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
+|[`CC_CLAMAV_MAXTHREADS`](/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
+|[`CC_METRICS_PROMETHEUS_PASSWORD`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
+|[`CC_METRICS_PROMETHEUS_PATH`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
+|[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 8080 |
+|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
+|[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_WORKER_COMMAND`](/doc/develop/workers.md "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 ### Tailscale support
 

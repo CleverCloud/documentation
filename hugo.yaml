@@ -102,7 +102,7 @@ menu:
       weight: 2
     - identifier: envar
       name: "Environment Variables"
-      pageRef: "/doc/develop/reference-environment-variables"
+      pageRef: "/doc/reference/reference-environment-variables"
       weight: 4
     - identifier: cli
       name: "CLI"

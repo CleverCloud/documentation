@@ -60,6 +60,8 @@ _______________________________________________________*/
 
 .content p a:not(.code) {
   text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgb(204, 203, 203);
 }
 
 .no-link-style a {

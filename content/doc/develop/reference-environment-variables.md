@@ -302,16 +302,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Rust
 
-[Rust Documentation]({{< ref "doc/applications/rust" >}})
+[Rust Documentation](doc/applications/rust)
 
-  
-|  Name  |  Description  |  Default value  |  Read Only  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
-|CC_RUST_BIN | The name of the binary to launch once built |  |  |
-|CC_RUST_FEATURES | The list of features to enable |  |  |
-|CC_RUN_COMMAND | Custom command to run your application. |  |  |
-  
+|  Name  |  Description  |  Default value  |
+|-----------------------|------------------------------|--------------------------------|
+|`CC_RUSTUP_CHANNEL` | The rust channel to use. Use a specific channel version with stable, beta, nightly or a specific version like 1.13.0  | stable |
+|`CC_RUST_BIN` | The name of the binary to launch once built |  |
+|`CC_RUST_FEATURES` | The list of features to enable |  |
+|`CC_RUN_COMMAND` | Custom command to run your application. |  |
 
 ## Addons-related environment variable
 

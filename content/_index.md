@@ -36,7 +36,7 @@ width: normal
   {{< feature-card
     title="Environment Variables"
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
-    link="/doc/develop/reference-environment-variables"
+    link="/doc/reference/reference-environment-variables"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
     image="images/hextra-doc.webp"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"

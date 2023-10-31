@@ -54,9 +54,14 @@ _______________________________________________________*/
 
 /* Prevent linked text to be underlined or change color.
   Useful for beautiful cards */
-a.no-underline {
+/*a.no-underline {
   text-decoration: none;
+}*/
+
+.content p a:not(.code) {
+  text-decoration-line: underline;
 }
+
 .no-link-style a {
   color: inherit;
   text-decoration: none;
@@ -64,8 +69,8 @@ a.no-underline {
 
 /* Allow linking in a variable environment withoutt
 changing the style and adding an a arrow at the end of the text */
-.content a:not(.code-block code) {
-  text-decoration-line: none;
+.content a:not(.code) {
+  text-decoration: none;
   color: inherit;
 }
 
@@ -74,6 +79,7 @@ changing the style and adding an a arrow at the end of the text */
   color: tomato;
   font-size: 1rem;
 }
+
  
 
 /* Allow inserting "steps" shortcode with h4.

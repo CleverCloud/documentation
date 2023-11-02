@@ -32,79 +32,14 @@ In order to add an organization, just click on "Add an organization" in the top 
 
 The table below describes rights assigned to roles:
 
-<table class="table table-condensed table-bordered table-hover text-center">
-	<thead>
-		<tr>
-			<th> </th>
-			<th class="text-center">Admin</th>
-			<th class="text-center">Manager</th>
-			<th class="text-center">Developer</th>
-			<th class="text-center">Accountant</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">Add Member</th>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Remove Member</th>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Add Application</th>
-			<td>x</td>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Remove Application</th>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Add / Remove add-on</th>
-			<td>x</td>
-			<td>x</td>
-			<td></td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Edit Organization</th>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Delete Organization</th>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<th scope="row">Access Bills & Receive Invoices</th>
-			<td>x</td>
-			<td> </td>
-			<td> </td>
-			<td>x</td>
-		</tr>
-		<tr>
-			<th scope="row">Access Repositories</th>
-			<td>x</td>
-			<td>x</td>
-			<td>x</td>
-			<td> </td>
-		</tr>
-	</tbody>
-</table>
+Role | Admin | Manager | Developer | Accountant |
+-----|-------|---------|-----------|------------|
+Add Member | ✓ | ✓ |  |  |
+Remove Member | ✓ | ✓ |  |  |
+Add Application | ✓ | ✓ | ✓ |  |
+Remove Application | ✓ | ✓ |  |  |
+Add / Remove add-on | ✓ | ✓ |  |  |
+Edit Organization | ✓ | ✓ |  |  |
+Delete Organization | ✓ |  |  |  |
+Access Bills & Receive Invoices | ✓ |  |  | ✓ |
+Access Repositories | ✓ | ✓ | ✓ |  |

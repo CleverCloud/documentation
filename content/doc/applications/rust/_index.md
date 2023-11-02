@@ -32,7 +32,7 @@ Clever Cloud allows you to deploy Rust web applications. This page will explain 
 
 ### Deployment Video
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/mz_8jzrM13Y?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="mz_8jzrM13Y" >}}
 
 {{< readfile file="link-addon.md" >}}
 

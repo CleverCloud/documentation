@@ -42,10 +42,26 @@ h1, .content h1,
   border-radius: 0rem;
 }
 
-/* Buttons */
-.btn {
+/* Hero buttons */
+.btn-primary {
+  border-radius: 0rem;
+  background-color: rgba(58, 56, 113, 1);
+}
+
+.btn-primary:hover {
+  background-color: rgba(197, 195, 226, 1);
+  color: black;
+}
+
+.btn-secondary {
   border-radius: 0rem;
 }
+.btn-secondary:hover {
+  background-color: rgb(80, 78, 145);
+  color: white;
+}
+
+
 
 /* Cards */
 .hextra-cards {

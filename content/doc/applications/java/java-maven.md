@@ -29,9 +29,9 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Releases
 * Distribution
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Java application
 
@@ -40,7 +40,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
-{{< readfile file="/content/partials/java-versions.md" >}}
+{{< readfile file="java-versions.md" >}}
 
 ### Mandatory configuration
 
@@ -139,10 +139,10 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

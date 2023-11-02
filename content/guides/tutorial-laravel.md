@@ -17,9 +17,9 @@ aliases:
 
 Laravel applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Laravel application
 ### Configure `DocumentRoot`
@@ -56,11 +56,11 @@ If you need to build your frontend assets (eg. javascript or CSS files), you can
 
 For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=npm install && npm run prod`.
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
 ## Configure your database
 
@@ -130,9 +130,9 @@ If one of your scheduled tasks needs to allocate more memory than this limit, th
 To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
 See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/deploy-ftp.md" >}}
+{{< readfile file="deploy-ftp.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}
 

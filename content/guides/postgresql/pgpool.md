@@ -26,7 +26,7 @@ Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, yo
 
 ## What is Pgpool-II?
 
-{{< readfile file="/content/partials/pgpool.md" >}}
+{{< readfile file="pgpool.md" >}}
 
 ## Why use Pgpool-II?
 

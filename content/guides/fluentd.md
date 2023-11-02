@@ -31,9 +31,9 @@ Fluentd is an open source data collector written in Ruby, which lets you unify t
   Ruby application on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
 {{< /callout >}}
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Fluentd + Docker application
 
@@ -138,12 +138,12 @@ RUN chmod +x go.sh
 CMD [ "/go.sh" ]
 ```
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}
 
 

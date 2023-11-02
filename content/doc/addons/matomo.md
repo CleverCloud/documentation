@@ -55,7 +55,7 @@ Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details o
 
 Once you created your add-on, you should get to the dashboard and see a link named `Access Matomo`. Opening that link will redirect you to our SSO authentication.
 
-{{< readfile file=`/content/partials/single-sign-on.md` >}}
+{{< readfile file="single-sign-on.md" >}}
 
 ## Configure your Matomo instance
 

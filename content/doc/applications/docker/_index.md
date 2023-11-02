@@ -25,17 +25,16 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 Docker at Clever Cloud does not yet support FS Buckets, validation of your Dockerfile, or compose of sorts.
 {{< /callout >}}
 
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="language-specific-deploy/docker.md" >}}
 
-{{< readfile file="/content/partials/language-specific-deploy/docker.md" >}}
+{{< readfile file="env-injection.md" >}}
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
-
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

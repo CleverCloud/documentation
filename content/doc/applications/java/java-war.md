@@ -91,11 +91,11 @@ The supported containers are listed below:
    </tbody>
 </table>
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/java-versions.md" >}}
+{{< readfile file="java-versions.md" >}}
 
 ## Configure your Java application
 
@@ -360,10 +360,10 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

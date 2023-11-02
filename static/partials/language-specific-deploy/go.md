@@ -153,6 +153,6 @@ The `execDir` value must be relative to the root of your repo.
 
 In the example above, we will run the application in the src/myapp directory.
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
 To access environment variables from your code, just get them from the environment with `PATH`: `os.Getenv("MY_VARIABLE")`.

@@ -23,9 +23,9 @@ on Clever Cloud.
 
 [Play](https://www.playframework.com) is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern. It aims at optimizing developer productivity by using convention over configuration, hot code reloading and display of errors in the browser.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Java + Playframework 1 application
 
@@ -73,14 +73,14 @@ More information on [playframework.com](https://www.playframework.com).
 
 HTTPS is handled by Clever Cloud ahead of your application, your application retrieves the traffic in plain http. To be able to use `request.secure`, you have to add `XForwardedSupport=all` in `application.conf`.
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
 To access environment variables from your code, you need to reference them in your application.conf file with `my.option=${MY_VARIABLE}` and then use the configuration item `my.option` in your application.
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

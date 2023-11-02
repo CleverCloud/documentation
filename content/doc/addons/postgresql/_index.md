@@ -24,7 +24,7 @@ The version currently installed by the add-on is :
 - on shared plans (DEV) : PostgreSQL 11
 - on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 10, 11, 12, 13, 14
 
-{{< readfile file="/content/partials/db-backup.md" >}}
+{{< readfile file="db-backup.md" >}}
 
 ## Migrating from an old database
 
@@ -56,7 +56,7 @@ This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
-{{< readfile file="/content/partials/pgpool.md" >}}
+{{< readfile file="pgpool.md" >}}
 
 You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/postgresql/pgpool" >}})
 

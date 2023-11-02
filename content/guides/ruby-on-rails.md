@@ -23,20 +23,20 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest) an example of Ruby on Rails application on Clever Cloud.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/language-specific-deploy/ruby.md" >}}
+{{< readfile file="language-specific-deploy/ruby.md" >}}
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

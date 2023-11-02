@@ -12,4 +12,4 @@ keywords:
 - creation
 ---
 
-{{< readfile file="/content/partials/authentication.md" >}}
+{{< readfile file="authentication.md" >}}

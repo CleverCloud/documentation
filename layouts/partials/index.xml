@@ -6,7 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="/partials/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="index.xml" rel="self" type="application/rss+xml" />
     
     
       

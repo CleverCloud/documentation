@@ -25,7 +25,7 @@ The version currently installed by the add-on is : Redis 7.0.11
 Each Redis add-on provides a [Redsmin](https://www.redsmin.com) dashboard, which allows
 you to query and monitor your redis database activity.
 
-{{< readfile file="/content/partials/db-backup.md" >}}
+{{< readfile file="db-backup.md" >}}
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 

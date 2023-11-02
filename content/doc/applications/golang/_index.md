@@ -22,7 +22,6 @@ We currently support single module applications only. That means that your sourc
 
 You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
-
 {{< readfile file="create-application.md" >}}
 
 {{< readfile file="set-env-vars.md" >}}

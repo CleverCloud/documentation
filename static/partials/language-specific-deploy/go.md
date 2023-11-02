@@ -59,35 +59,15 @@ You can also force the use of `go get` by setting the environment variable `CC_G
 
 ### Customize build using environment variables
 
-<table id="go_envs" class="table table-bordered, table-striped">
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Usage</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CC_GO_PKG</td>
-            <td>
-                Makes the deployer run <code>go get ${CC_GO_PKG}</code> instead of <code>go get <app_id></code> or <code>go install ${CC_GO_PKG}</code> instead of <code>go install mypackage</code>.
-            </td>
-        </tr>
-        <tr>
-            <td>CC_GO_BUILD_TOOL</td>
-            <td>
-                Available values: <code>gomod</code>, <code>goget</code>, <code>gobuild</code>. Makes the deployer use <code>go modules</code>, <code>go get</code> or <code>go build</code> to build your application. If not specified, defaults to <code>goget</code>.
-            </td>
-        </tr>
-        <tr>
-            <td>CC_GO_RUNDIR</td>
-            <td>
-                Makes the deployer use the specified directory to run your binary. If your application must be in <code>$GOPATH/src/company/project</code> for your vendored dependencies, set this variable to <code>company/project</code>.
-            </td>
-        </tr>
-    </tbody>
-</table>
+### Customize build using environment variables
 
+You can customize the build process of your Go application using the following environment variables:
+
+Variable | Usage
+---------|------
+`CC_GO_PKG` | Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>` or `go install ${CC_GO_PKG}` instead of `go install mypackage`.
+`CC_GO_BUILD_TOOL` | Available values: `gomod`, `goget`, `gobuild`. Makes the deployer use `go modules`, `go get`, or `go build` to build your application. If not specified, defaults to `goget`.
+`CC_GO_RUNDIR` | Makes the deployer use the specified directory to run your binary. If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project`.
 
 ### clevercloud/go.json
 

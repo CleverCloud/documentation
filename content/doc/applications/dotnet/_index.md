@@ -26,18 +26,18 @@ You do not need to change a lot in your application, the *requirements* will hel
   If you encounter an issue, please contact the support.
 {{< /callout >}}
 
-{{ readfile file="/static/partials/create-application.md" }}
+{{< readfile file="create-application.md" >}}
 
-{{ readfile file="set-env-vars.md" }}
+{{< readfile file="set-env-vars.md" >}}
 
-{{ readfile file="language-specific-deploy/dotnet.md" }}
+{{< readfile file="language-specific-deploy/dotnet.md" >}}
 
-{{ readfile file="env-injection.md" }}
+{{< readfile file="env-injection.md" >}}
 
 To access environment variables from your code, you can use `System.Environment.GetEnvironmentVariable("MY_VARIABLE")"`.
 
-{{ readfile file="deploy-git.md" }}
+{{< readfile file="deploy-git.md" >}}
 
-{{ readfile file="link-addon.md" }}
+{{< readfile file="link-addon.md" >}}
 
-{{ readfile file="more-config.md" }}
+{{< readfile file="more-config.md" >}}

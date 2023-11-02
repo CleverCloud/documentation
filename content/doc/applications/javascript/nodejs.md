@@ -43,4 +43,4 @@ To target this behaviour, you can gracefully shutdown with events handlers on `u
 
 ## Deployment video
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/dxhSjHnrrhA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="dxhSjHnrrhA" >}}

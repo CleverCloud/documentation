@@ -13,7 +13,7 @@ type: docs
 ## Workers
 
 {{< callout type="info" >}}
-Note that workers are not available for docker applications.
+Workers are not available for docker applications.
 {{< /callout >}}
 
 You can run background tasks running in parallel of your application. They will be restarted automatically on error.

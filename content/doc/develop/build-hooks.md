@@ -31,7 +31,9 @@ variables]({{< ref "doc/develop/env-variables.md" >}}).
 To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 
-	CC_POST_BUILD_HOOK=echo "it works!"
+```
+CC_POST_BUILD_HOOK=echo "it works!"
+```
 
 You can directly put commands in the hook. Hooks have access to the environnement variables as well as a working Node.js installation.
 
@@ -39,7 +41,7 @@ If you have complex things to do, the best way is to put the logic in a bash scr
 To use it, set the hook you want to trigger to the path of your script, relative to the root path of your repository.
 E.g. if your script is in a clevercloud folder at the root of your project then you can define `CC_POST_BUILD_HOOK=./clevercloud/script.sh`
 
-## Can't I use `$BUILD_TOOL`?
+## Can't I use $BUILD_TOOL?
 
 Hooks are designed as an escape hatch for steps you can't integrate properly in
 your build tool. In many case, you can (and you should) integrate as much as
@@ -55,13 +57,15 @@ Some application types do not have hooks support or only some of them.
 
 For Docker, because you can do pretty much anything yourself inside your Dockerfile, only the following hooks are available:
 
-- CC_RUN_SUCCEEDED_HOOK
+- `CC_RUN_SUCCEEDED_HOOK`
 
 If you need support for other hooks, please reach out to our support and explain your use case.
 
 ## Hooks types
 
-### Pre Build (`CC_PRE_BUILD_HOOK`)
+### Pre Build
+
+**By using `CC_PRE_BUILD_HOOK`**.
 
 This hook is ran before the dependencies are fetched. If it fails, the
 deployment fails.
@@ -73,7 +77,9 @@ This hook is perfect for:
  - build tool configuration (eg setting up a `.npmrc` with private tokens)
  - extra dependencies fetching (eg `npm install` for frontend deps)
 
-### Post Build (`CC_POST_BUILD_HOOK`)
+### Post Build
+
+**By using `CC_POST_BUILD_HOOK`.**
 
 This hook is ran after the project is built, and before the cache archive is
 generated. If it fails, the deployment fails.
@@ -84,7 +90,9 @@ This hook is perfect for:
 
  - extra build steps that you want to cache (eg bundling your frontend assets)
 
-### Pre Run (`CC_PRE_RUN_HOOK`)
+### Pre Run
+
+**By using `CC_PRE_RUN_HOOK`.**
 
 This hook is ran before the application is started, but after the cache archive
 has been generated. If it fails, the deployment fails.
@@ -95,7 +103,9 @@ This hook is perfect for:
 
  - preparation tasks that need to be ran every time (eg a database migration check)
 
-### Run Succeeded (`CC_RUN_SUCCEEDED_HOOK`) or Failed (`CC_RUN_FAILED_HOOK`)
+### Run Success/Fail
+
+**By using `CC_RUN_SUCCEEDED_HOOK` or `CC_RUN_FAILED_HOOK`.**
 
 These hooks are ran once the application has started (or has failed starting).
 Their failure doesn't cause the deployment to fail.
@@ -107,6 +117,6 @@ These hooks are perfect for:
  - notifications
  - clean-up
 
-### `hooks.postDeploy` is deprecated
-
+{{< callout type="warning" >}}
 These hooks replace the older `postDeploy` hook, which is now deprecated.
+{{< /callout >}}

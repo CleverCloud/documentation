@@ -32,7 +32,7 @@ To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
-{{< image "/images/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
+{{< image "/images/doc/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
 
 ### Advanced pane
 
@@ -49,7 +49,7 @@ For instance, you can derive metrics over time, do custom aggregations or combin
 
 You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.
 
-{{< image "/images/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
+{{< image "/images/doc/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
 
 For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
@@ -220,305 +220,69 @@ Telegraf provide lots of metrics described in their [documentation](https://gith
 
 Below, the list of all Warp 10 classes representing Telegraf metrics :
 
-<table align="center" class="table table-bordered" >
-  <tbody>
-    <tr>
-      <td align="center">conntrack.ip_conntrack_count</td>
-      <td align="center">mem.swap_free</td>
-    </tr>
-    <tr>
-      <td align="center">conntrack.ip_conntrack_max</td>
-      <td align="center">mem.swap_total</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_guest</td>
-      <td align="center">mem.total</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_guest_nice</td>
-      <td align="center">mem.used</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_idle</td>
-      <td align="center">mem.used_percent</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_iowait</td>
-      <td align="center">mem.vmalloc_chunk</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_irq</td>
-      <td align="center">mem.vmalloc_total</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_nice</td>
-      <td align="center">mem.vmalloc_used</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_softirq</td>
-      <td align="center">mem.wired</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_steal</td>
-      <td align="center">mem.write_back</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_system</td>
-      <td align="center">mem.write_back_tmp</td>
-    </tr>
-    <tr>
-      <td align="center">cpu.usage_user</td>
-      <td align="center">net.bytes_recv</td>
-    </tr>
-    <tr>
-      <td align="center">disk.free</td>
-      <td align="center">net.bytes_sent</td>
-    </tr>
-    <tr>
-      <td align="center">disk.inodes_free</td>
-      <td align="center">net.drop_in</td>
-    </tr>
-    <tr>
-      <td align="center">disk.inodes_total</td>
-      <td align="center">net.drop_out</td>
-    </tr>
-    <tr>
-      <td align="center">disk.inodes_used</td>
-      <td align="center">net.err_in</td>
-    </tr>
-    <tr>
-      <td align="center">disk.total</td>
-      <td align="center">net.err_out</td>
-    </tr>
-    <tr>
-      <td align="center">disk.used</td>
-      <td align="center">net.packets_recv</td>
-    </tr>
-    <tr>
-      <td align="center">disk.used_percent</td>
-      <td align="center">net.packets_sent</td>
-    </tr>
-    <tr>
-      <td align="center">http_response.http_response_code</td>
-      <td align="center">net_response.response_time</td>
-    </tr>
-    <tr>
-      <td align="center">http_response.response_time</td>
-      <td align="center">net_response.result_code</td>
-    </tr>
-    <tr>
-      <td align="center">http_response.result_code</td>
-      <td align="center">net_response.result_type</td>
-    </tr>
-    <tr>
-      <td align="center">http_response.result_type</td>
-      <td align="center">netstat.tcp_close</td>
-    </tr>
-    <tr>
-      <td align="center">kernel.boot_time</td>
-      <td align="center">netstat.tcp_close_wait</td>
-    </tr>
-    <tr>
-      <td align="center">kernel.context_switches</td>
-      <td align="center">netstat.tcp_closing</td>
-    </tr>
-    <tr>
-      <td align="center">kernel.entropy_avail</td>
-      <td align="center">netstat.tcp_established</td>
-    </tr>
-    <tr>
-      <td align="center">kernel.interrupts</td>
-      <td align="center">netstat.tcp_fin_wait1</td>
-    </tr>
-    <tr>
-      <td align="center">kernel.processes_forked</td>
-      <td align="center">netstat.tcp_fin_wait2</td>
-    </tr>
-    <tr>
-      <td align="center">mem.active</td>
-      <td align="center">netstat.tcp_last_ack</td>
-    </tr>
-    <tr>
-      <td align="center">mem.available</td>
-      <td align="center">netstat.tcp_listen</td>
-    </tr>
-    <tr>
-      <td align="center">mem.available_percent</td>
-      <td align="center">netstat.tcp_none</td>
-    </tr>
-    <tr>
-      <td align="center">mem.buffered</td>
-      <td align="center">netstat.tcp_syn_recv</td>
-    </tr>
-    <tr>
-      <td align="center">mem.cached</td>
-      <td align="center">netstat.tcp_syn_sent</td>
-    </tr>
-    <tr>
-      <td align="center">mem.commit_limit</td>
-      <td align="center">netstat.tcp_time_wait</td>
-    </tr>
-    <tr>
-      <td align="center">mem.committed_as</td>
-      <td align="center">netstat.udp_socket</td>
-    </tr>
-    <tr>
-      <td align="center">mem.dirty</td>
-      <td align="center">processes.blocked</td>
-    </tr>
-    <tr>
-      <td align="center">mem.free</td>
-      <td align="center">processes.dead</td>
-    </tr>
-    <tr>
-      <td align="center">mem.high_free</td>
-      <td align="center">processes.idle</td>
-    </tr>
-    <tr>
-      <td align="center">mem.high_total</td>
-      <td align="center">processes.paging</td>
-    </tr>
-    <tr>
-      <td align="center">mem.huge_page_size</td>
-      <td align="center">processes.running</td>
-    </tr>
-    <tr>
-      <td align="center">mem.huge_pages_free</td>
-      <td align="center">processes.sleeping</td>
-    </tr>
-    <tr>
-      <td align="center">mem.huge_pages_total</td>
-      <td align="center">processes.stopped</td>
-    </tr>
-    <tr>
-      <td align="center">mem.inactive</td>
-      <td align="center">processes.total</td>
-    </tr>
-    <tr>
-      <td align="center">mem.low_free</td>
-      <td align="center">processes.total_threads</td>
-    </tr>
-    <tr>
-      <td align="center">mem.low_total</td>
-      <td align="center">processes.unknown</td>
-    </tr>
-    <tr>
-      <td align="center">mem.mapped</td>
-      <td align="center">processes.zombies</td>
-    </tr>
-    <tr>
-      <td align="center">mem.page_tables</td>
-      <td align="center">procstat_lookup.pid_count</td>
-    </tr>
-    <tr>
-      <td align="center">mem.shared</td>
-      <td align="center">system.load1</td>
-    </tr>
-    <tr>
-      <td align="center">mem.slab</td>
-      <td align="center">system.load1_per_cpu</td>
-    </tr>
-    <tr>
-      <td align="center">mem.swap_cached</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_pending-finalization-count.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_loaded-class-count.value</td>
-      <td align=”center”>jvm.metrics_jvm_heapMemoryUsage_used.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value</td>
-      <td align=”center”>jvm.metrics_jvm_nonHeapMemoryUsage_used.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_init.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_used.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_total_max.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_total_init.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_used.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_used.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_metaspace_max.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_total-loaded-class-count.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_total_init.value</td>
-      <td align=”center”>jvm.metrics_jvm_thread.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_total_used.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_total_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_compressed-class-space_committed.value</td>
-      <td align=”center”>jvm.metrics_jvm_nonHeapMemoryUsage_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_unloaded-class-count.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_init.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.metrics_jvm_loadedClasses.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_code-cache_max.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_compressed-class-space_used.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-survivor-space_max.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_nonheap_code-cache_committed.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_committed.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_Scavenge_time.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-old-gen_used.value</td>
-      <td align=”center”>jvm.metrics_jvm_heapMemoryUsage_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_gc_PS_MarkSweep_runtime.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_nonheap_metaspace_committed.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-eden-space_committed.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_heap_ps-old-gen_init.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_total_max.value</td>
-      <td align=”center”>jvm.statsd-jvm-profiler_gc_PS_Scavenge_runtime.value</td>
-    </tr>
-    <tr>
-      <td align="center">jvm.statsd-jvm-profiler_heap_ps-survivor-space_init.value</td>
-    </tr>
-  </tbody>
-</table>
+| Metric                              | Metric                              |
+| ----------------------------------- | ----------------------------------- |
+| conntrack.ip_conntrack_count        | mem.swap_free                       |
+| conntrack.ip_conntrack_max          | mem.swap_total                      |
+| cpu.usage_guest                     | mem.total                           |
+| cpu.usage_guest_nice                | mem.used                            |
+| cpu.usage_idle                      | mem.used_percent                    |
+| cpu.usage_iowait                    | mem.vmalloc_chunk                   |
+| cpu.usage_irq                       | mem.vmalloc_total                   |
+| cpu.usage_nice                      | mem.vmalloc_used                    |
+| cpu.usage_softirq                   | mem.wired                           |
+| cpu.usage_steal                     | mem.write_back                      |
+| cpu.usage_system                    | mem.write_back_tmp                  |
+| cpu.usage_user                      | net.bytes_recv                      |
+| disk.free                           | net.bytes_sent                      |
+| disk.inodes_free                    | net.drop_in                         |
+| disk.inodes_total                   | net.drop_out                        |
+| disk.inodes_used                    | net.err_in                          |
+| disk.total                          | net.err_out                         |
+| disk.used                           | net.packets_recv                    |
+| disk.used_percent                   | net.packets_sent                    |
+| http_response.http_response_code     | net_response.response_time          |
+| http_response.response_time          | net_response.result_code            |
+| http_response.result_code            | net_response.result_type            |
+| http_response.result_type            | netstat.tcp_close                   |
+| kernel.boot_time                     | netstat.tcp_close_wait              |
+| kernel.context_switches              | netstat.tcp_closing                 |
+| kernel.entropy_avail                 | netstat.tcp_established             |
+| kernel.interrupts                    | netstat.tcp_fin_wait1               |
+| kernel.processes_forked              | netstat.tcp_fin_wait2               |
+| mem.active                          | netstat.tcp_last_ack                |
+| mem.available                       | netstat.tcp_listen                  |
+| mem.available_percent               | netstat.tcp_none                    |
+| mem.buffered                        | netstat.tcp_syn_recv                |
+| mem.cached                          | netstat.tcp_syn_sent                |
+| mem.commit_limit                    | netstat.tcp_time_wait               |
+| mem.committed_as                    | netstat.udp_socket                  |
+| mem.dirty                           | processes.blocked                   |
+| mem.free                            | processes.dead                      |
+| mem.high_free                       | processes.idle                      |
+| mem.high_total                      | processes.paging                    |
+| mem.huge_page_size                  | processes.running                   |
+| mem.huge_pages_free                 | processes.sleeping                  |
+| mem.huge_pages_total                | processes.stopped                   |
+| mem.inactive                        | processes.total                     |
+| mem.low_free                        | processes.total_threads             |
+| mem.low_total                       | processes.unknown                   |
+| mem.mapped                          | processes.zombies                   |
+| mem.page_tables                     | procstat_lookup.pid_count           |
+| mem.shared                          | system.load1                        |
+| mem.slab                            | system.load1_per_cpu                |
+| mem.swap_cached                     | jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value |
+| jvm.statsd-jvm-profiler_pending-finalization-count.value | jvm.statsd-jvm-profiler_nonheap_total_committed.value |
+| jvm.statsd-jvm-profiler_loaded-class-count.value | jvm.metrics_jvm_heapMemoryUsage_used.value |
+| jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value | jvm.metrics_jvm_nonHeapMemoryUsage_used.value |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_init.value | jvm.statsd-jvm-profiler_nonheap_total_used.value |
+| jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value | jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value |
+| jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value | jvm.statsd-jvm-profiler_nonheap_total_max.value |
+| jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value |
+| jvm.statsd-jvm-profiler_heap_total_init.value | jvm.statsd-jvm-profiler_nonheap_code-cache_used.value |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_used.value | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_max.value | jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value |
+| jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value |                                   |
 
 ### Examples and usages
 

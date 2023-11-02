@@ -52,13 +52,9 @@ Note that the `async` parameter can be set per bucket.
 ## Configuring your application with buckets.json (@deprecated)
 
 {{< callout type="warning" >}}
-    <p>
-    This method is deprecated, we strongly recommend that you use environment variables.
-    </p>
-    <p>
-      If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
-      Also, this method does not support the `async` parameter.
-    </p>
+This method is deprecated, we strongly recommend that you use environment variables.
+If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
+Also, this method does not support the `async` parameter.
 {{< /callout >}}
 
 To configure your application to use buckets, use the
@@ -84,68 +80,33 @@ The `buckets.json` file must contain the following structure:
 ]
 ```
 {{< callout type="info" >}}
-    You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
+You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
 {{< /callout >}}
 
 It's a json array containing objects with at least two fields:
 
-<table id="nodedeps" class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>Usage</th>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="label label-danger">Required</span></td>
-<td>bucket</td>
-<td>The bucket id you can find in the console. It begins with `bucket_`. This is for
-"old-style" buckets (created before the 7 December 2015)</td>
-</tr>
-<tr>
-<td><span class="label label-danger">Required</span></td>
-<td>bucket_host</td>
-<td>The bucket host you can find in the console. It begins with `bucket-` and ends with
-`services.clever-cloud.com`. This is for "new-style" buckets.</td>
-</tr>
-<tr>
-<td><span class="label label-danger">Required</span></td>
-<td>folder</td>
-<td>The folder you want the bucket to be mounted in. Should start with `/`. Using the example
-*myFolder*, you can access your bucket via the *myFolder* folder at
-the root of your application (which absolute path is available in the `APP_HOME` environment variable)</td>
-</tr>
-<tr>
-<td class="cc-depusage"><span class="label label-default">Optional</span></td>
-<td>apps</td>
-<td>Whitelist of the applications allowed to mount this bucket. It's helpful if you need
-to deploy a *preprod* app and a *prod* app using the exact same codebase but different
-buckets</td>
-</tr>
-</tbody>
-</table>
+## Configuring your application with buckets.json (@deprecated)
 
 {{< callout type="warning" >}}
-    <p>
-    The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
-    </p>
-    <p>
-    You can mount the same bucket in different folders, but they will share the same
-    content, so it's not the solution. You should prefer to mount the bucket in only one
-    folder and then manage multiple subfolders in it.
-    </p>
+This method is deprecated, we strongly recommend that you use environment variables.
+If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
+Also, this method does not support the `async` parameter.
 {{< /callout >}}
 
+To configure your application to use buckets, use the following markdown table:
+
+Usage    | Field        | Description
+---------|--------------|--------------------------------------------------------------
+Required | bucket       | The bucket id you can find in the console. It begins with `bucket_`. This is for "old-style" buckets (created before the 7 December 2015)
+Required | bucket_host  | The bucket host you can find in the console. It begins with `bucket-` and ends with `services.clever-cloud.com`. This is for "new-style" buckets.
+Required | folder       | The folder you want the bucket to be mounted in. Should start with `/`. Using the example *myFolder*, you can access your bucket via the *myFolder* folder at the root of your application (which absolute path is available in the `APP_HOME` environment variable)
+Optional | apps         | Whitelist of the applications allowed to mount this bucket. It's helpful if you need to deploy a *preprod* app and a *prod* app using the exact same codebase but different buckets
+
+The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
+You can mount the same bucket in different folders, but they will share the same content, so it's not the solution. You should prefer to mount the bucket in only one folder and then manage multiple subfolders in it.
+
 {{< callout type="warning" >}}
-    <p>
-    You cannot mount two buckets in the same folder for the same app.
-    </p>
-    <p>
-    If you put the same "folder" value for two entries in your environment variables or the *buckets.json* array, **you better
-    make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
-    </p>
+You cannot mount two buckets in the same folder for the same app. If you put the same "folder" value for two entries in your environment variables or the *buckets.json* array, **make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
 {{< /callout >}}
 
 ## Accessing your data inside the FS Bucket

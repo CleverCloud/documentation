@@ -95,87 +95,22 @@ You can find a 5 days available token in the `metric` tab of your application.
 
 The followings limits are defined in Warp 10. The **soft** one can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. The **hard** one is unsurpassable.
 
-<table class="table table-bordered">
-<thead>
-<tr>
-<th style="text-align:center">WarpScript Operator</th>
-<th style="text-align:center">Warp 10 limit description</th>
-<th style="text-align:center">soft limit</th>
-<th style="text-align:center">hard limit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXGTS">MAXGTS</a></td>
-<td style="text-align:center">Maximum number of GTS which can be fetched</td>
-<td style="text-align:center">10e5</td>
-<td style="text-align:center">5e7</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/LIMIT">LIMIT</a></td>
-<td style="text-align:center">maximum number of datapoints which can be fetched during a script execution</td>
-<td style="text-align:center">10e6</td>
-<td style="text-align:center">10e7</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXBUCKETS">MAXBUCKETS</a></td>
-<td style="text-align:center">maximum number of buckets which can be created by a call to BUCKETIZE</td>
-<td style="text-align:center">10e5</td>
-<td style="text-align:center">50e5</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXDEPTH">MAXDEPTH</a></td>
-<td style="text-align:center">maximum depth (number of levels) of the execution stack</td>
-<td style="text-align:center">5e3</td>
-<td style="text-align:center">5e3</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXLOOP">MAXLOOP</a></td>
-<td style="text-align:center">maximum number of <strong>milliseconds</strong> which can be spent in a loop</td>
-<td style="text-align:center">5e3</td>
-<td style="text-align:center">10e3</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXOPS">MAXOPS</a></td>
-<td style="text-align:center">maximum number of operations which can be performed during a single WarpScript execution</td>
-<td style="text-align:center">5e6</td>
-<td style="text-align:center">5e7</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXSYMBOLS">MAXSYMBOLS</a></td>
-<td style="text-align:center">maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution</td>
-<td style="text-align:center">64</td>
-<td style="text-align:center">256</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXGEOCELLS">MAXGEOCELLS</a></td>
-<td style="text-align:center">maximum number of cells a GEOSHAPE</td>
-<td style="text-align:center">10e3</td>
-<td style="text-align:center">10e4</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXPIXELS">MAXPIXELS</a></td>
-<td style="text-align:center">maximum size (in pixels) of images which can be created by PGraphics</td>
-<td style="text-align:center">10e5</td>
-<td style="text-align:center">10e5</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://www.warp10.io/doc/MAXRECURSION">MAXRECURSION</a></td>
-<td style="text-align:center">maximum nesting depth of macro calls</td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">32</td>
-</tr>
-</tbody>
-</table>
+| WarpScript Operator | Warp 10 limit description | soft limit | hard limit |
+| ------------------- | ------------------------------------------------------------- | ---------- | ---------- |
+| MAXGTS | Maximum number of GTS which can be fetched | 10e5 | 5e7 |
+| LIMIT | Maximum number of datapoints which can be fetched during a script execution | 10e6 | 10e7 |
+| MAXBUCKETS | Maximum number of buckets which can be created by a call to BUCKETIZE | 10e5 | 50e5 |
+| MAXDEPTH | Maximum depth (number of levels) of the execution stack | 5e3 | 5e3 |
+| MAXLOOP | Maximum number of milliseconds which can be spent in a loop | 5e3 | 10e3 |
+| MAXOPS | Maximum number of operations which can be performed during a single WarpScript execution | 5e6 | 5e7 |
+| MAXSYMBOLS | Maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution | 64 | 256 |
+| MAXGEOCELLS | Maximum number of cells a GEOSHAPE | 10e3 | 10e4 |
+| MAXPIXELS | Maximum size (in pixels) of images which can be created by PGraphics | 10e5 | 10e5 |
+| MAXRECURSION | Maximum nesting depth of macro calls | 16 | 32 |
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Warning:</h4>
-  </div>
-  <div class=“panel-body”>
-    operation over <i> soft limts </i> may be really intensives.
-  </div>
-</div>
+{{< callout type="warning" >}}
+Operation over **soft limts** may be intensives.
+{{< /callout >}}
 
 ### Usage:
 

@@ -220,25 +220,26 @@ Here is a non-exhaustive summary:
 | [Scala][scala] | `System.getenv("MY_VAR")` |
 | [.NET][dotnet] | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
-[go]: {{< ref "doc/applications/golang#environment-injection.md" >}}
-[haskell]: {{< ref "doc/applications/haskell#environment-injection" >}}
-[node]: {{< ref "doc/applications/javascript/nodejs#environment-injection" >}}
-[java-war]: {{< ref "doc/applications/java/java-war#environment-injection" >}}
-[php]: {{< ref "doc/applications/php#environment-injection" >}}
-[play-1]: {{< ref "doc/applications/java/play-framework-1#environment-injection" >}}
-[play-2]: {{< ref "doc/applications/java/play-framework-2#environment-injection" >}}
-[python]: {{< ref "doc/applications/python#environment-injection" >}}
-[ruby]: {{< ref "/guides/ruby-rack-app-tutorial#environment-injection" >}}
-[rust]: {{< ref "doc/applications/rust#environment-injection" >}}
-[scala]: {{< ref "doc/applications/scala#environment-injection" >}}
-[dotnet]: {{< ref "doc/applications/dotnet#environment-injection" >}}
+## Specific languages
 
+- [Go](/doc/applications/golang/#environment-injection)
+- [Haskell](/doc/applications/haskell/#environment-injection)
+- [Node.js](/doc/applications/javascript/nodejs/#environment-injection)
+- [Java-war](/doc/applications/java/java-war/#environment-injection)
+- [PHP](/doc/applications/php/#environment-injection)
+- [Play-1](/doc/applications/java/play-framework-1/#environment-injection)
+- [Play-2](/doc/applications/java/play-framework-2/#environment-injection)
+- [Python](/doc/applications/python/#environment-injection)
+- [Ruby](/guides/ruby-rack-app-tutorial/#environment-injection)
+- [Rust](/doc/applications/rust/#environment-injection)
+- [Scala](/doc/applications/scala/#environment-injection)
+- [.NET](doc/applications/dotnet/#environment-injection)
 
 {{< callout type="info" >}}
-Please note that the variables are available at build time
+Variables are available at build time
 for runtimes that support build time instructions, such as
-[Java WAR]({{< ref "doc/applications/java/java-war#environment-injection" >}}),
-[Play! Framework 1]({{< ref "doc/applications/java/play-framework-1#environment-injection" >}}),
-[Play! Framework 2]({{< ref "doc/applications/java/play-framework-2#environment-injection" >}})
-or [Scala]({{< ref "doc/applications/scala#environment-injection" >}}).
+[Java WAR](/doc/applications/java/java-war/#environment-injection),
+[Play! Framework 1](/doc/applications/java/play-framework-1/#environment-injection),
+[Play! Framework 2](/doc/applications/java/play-framework-2/#environment-injection)
+or [Scala](/doc/applications/scala/#environment-injection).
 {{< /callout >}}

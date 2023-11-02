@@ -13,7 +13,7 @@ tags:
 type: docs
 ---
 
-The configuration file used for crontab is `/clevercloud/cron.json`.
+The configuration file used for crontab is `<PROJECT ROOT>/clevercloud/cron.json`.
 
 {{< callout type="warning" >}}
   Crons are not available in the Docker environment as it would require to set them up inside the Docker container.

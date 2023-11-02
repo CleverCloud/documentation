@@ -21,28 +21,28 @@ PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/language-specific-deploy/php.md" >}}
+{{< readfile file="language-specific-deploy/php.md" >}}
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/blackfire.md" >}}
+{{< readfile file="blackfire.md" >}}
 
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**.
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/deploy-ftp.md" >}}
+{{< readfile file="deploy-ftp.md" >}}
 
 ## ProxySQL
 
-{{< readfile file="/content/partials/proxysql.md" >}}
+{{< readfile file="proxysql.md" >}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/mysql/proxysql" >}})
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

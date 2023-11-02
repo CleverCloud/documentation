@@ -21,9 +21,9 @@ Clever Cloud allows you to deploy any Meteor.js application. This page will expl
 
 Be sure your `.meteor` folder is in your git repository.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 
 ## Configure your Meteor.js based application
@@ -83,11 +83,11 @@ At each deployment, the needed Meteor.js version will be read from `.meteor/rele
 Your application will then be built using `meteor build --server-only` and deployed from the files created by this command.
 
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
 ### Oplog Tailing
 Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following [environment variable](#setting-up-environment-variables-on-clever-cloud):
@@ -100,4 +100,4 @@ Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and y
 If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
 support@clever-cloud.com with the application id.
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

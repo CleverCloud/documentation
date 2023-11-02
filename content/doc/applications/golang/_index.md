@@ -23,14 +23,14 @@ We currently support single module applications only. That means that your sourc
 You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/language-specific-deploy/go.md" >}}
+{{< readfile file="language-specific-deploy/go.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

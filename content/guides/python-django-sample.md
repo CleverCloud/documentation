@@ -19,9 +19,9 @@ The application is a very basic one. More information about the application:
 *  [GitHub repo](https://github.com/CleverCloud/django-example)
 *  [Clever Cloud demo](https://django.cleverapps.io/)
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Django application
 
@@ -44,7 +44,7 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 
 You can find a lot more configuration options such as choosing python version and more on our dedicated [Python documentation]({{< ref "doc/applications/python" >}}).
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
 ### Manage.py tasks
 
@@ -60,7 +60,7 @@ Values must be separated by a comma:
 CC_PYTHON_MANAGE_TASKS="migrate, assets:precompile"
 ```
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
 
@@ -69,8 +69,8 @@ import os
 os.getenv("MY_VARIABLE")
 ```
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

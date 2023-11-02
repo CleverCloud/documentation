@@ -18,11 +18,11 @@ Clever Cloud offers you to run any Java ARchive file. You do not need to change 
 
 Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/java-versions.md" >}}
+{{< readfile file="java-versions.md" >}}
 
 ## Configure your Java application
 
@@ -127,7 +127,7 @@ You can use the following properties:
   </tbody>
 </table>
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
 ## Custom run command
 
@@ -152,9 +152,9 @@ So, to use a variable, you just need `System.getProperties().getProperty("MY_VAR
 
 For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}
 

@@ -22,7 +22,7 @@ The version currently installed by the add-on is :
 - on shared plans (DEV) : MySQL 8.0
 - on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7.20 or 8.0
 
-{{< readfile file="/content/partials/db-backup.md" >}}
+{{< readfile file="db-backup.md" >}}
 
 ## Migrating from an old database
 
@@ -49,7 +49,7 @@ Encryption at rest is available on MySQL. You can have more information on the [
 
 ## ProxySQL
 
-{{< readfile file="/content/partials/proxysql.md" >}}
+{{< readfile file="proxysql.md" >}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/mysql/proxysql" >}})
 

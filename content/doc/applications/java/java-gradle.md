@@ -21,11 +21,11 @@ Gradle is a project automation tool that builds upon the concepts of Apache Ant 
 
 Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="/content/partials/java-versions.md" >}}
+{{< readfile file="java-versions.md" >}}
 
 ## Configure your Java application
 
@@ -128,8 +128,8 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
 	src/
 ```
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

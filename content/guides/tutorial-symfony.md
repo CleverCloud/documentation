@@ -18,9 +18,9 @@ aliases:
 This tutorial assumes that your application is based on Symfony >= 3.4 and Symfony Flex.
 Symfony applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Symfony application
 ### Configure `DocumentRoot`
@@ -93,11 +93,11 @@ For more information on configuring symfony behind a reverse proxy, you can read
 If everything looks fine and you still get 404 errors, remember that CleverCloud works with an Apache server, so you'll need an htaccess in the  `/public` directory.
 Symfony got your back on this: just run `composer require symfony/apache-pack`. See [the official documentation of Symfony](https://symfony.com/doc/current/setup/web_server_configuration.html) for more information.
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
 ## Configure your database
 
@@ -138,8 +138,8 @@ chmod +x clevercloud/post_build.sh
 Then, add this to the application's environment variables `CC_POST_BUILD_HOOK=./clevercloud/post_build.sh`.
 
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/deploy-ftp.md" >}}
+{{< readfile file="deploy-ftp.md" >}}
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

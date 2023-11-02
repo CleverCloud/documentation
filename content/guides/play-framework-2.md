@@ -17,9 +17,9 @@ type: docs
 
 Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run on Clever Cloud.
 
-{{< readfile file="/content/partials/create-application.md" >}}
+{{< readfile file="create-application.md" >}}
 
-{{< readfile file="/content/partials/set-env-vars.md" >}}
+{{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Scala + Play! 2 application
 ### Mandatory configuration
@@ -60,17 +60,17 @@ If you have a single repository with multiple modules, then you can specify whic
 For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add
 `CC_SBT_TARGET_DIR=play` environment variable.
 
-{{< readfile file="/content/partials/new-relic.md" >}}
+{{< readfile file="new-relic.md" >}}
 
 
-{{< readfile file="/content/partials/env-injection.md" >}}
+{{< readfile file="env-injection.md" >}}
 
 To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`.
 You can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
 
-{{< readfile file="/content/partials/deploy-git.md" >}}
+{{< readfile file="deploy-git.md" >}}
 
-{{< readfile file="/content/partials/link-addon.md" >}}
+{{< readfile file="link-addon.md" >}}
 
 ## Known problems with Play! 2
 
@@ -131,4 +131,4 @@ db.default.maxConnectionsPerPartition=5
 db.default.minConnectionsPerPartition=5
 ```
 
-{{< readfile file="/content/partials/more-config.md" >}}
+{{< readfile file="more-config.md" >}}

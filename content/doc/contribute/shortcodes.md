@@ -44,7 +44,7 @@ Use the `image` shortcode if you want to embed an image. The first parameter is 
 
 Use the `readfile` shortcode to include a partial document in your content. It acts as a templating solution to enable reuse of common content.
 
-{{</* readfile "/content/partials/commonContent.html" */>}}
+{{</* readfile "commonContent.html" */>}}
 
 It's possible to search and replace variable during templating. Make sure you have a dictionary called `str_replace_dict` in the frontmatter section of the page.
 

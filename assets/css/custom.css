@@ -7,6 +7,7 @@
   --primary-hue: -165deg;
 }
 
+
 h1, .content h1,
 .content h2,
 .content h3,
@@ -14,6 +15,45 @@ h1, .content h1,
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* -----------------------------------------
+            Customize shortcodes
+-------------------------------------------*/
+/* Code block */
+.code-block pre:not(.lntable pre) {
+  border-radius: 0rem;
+}
+
+.search-input {
+  border-radius: 0rem;
+}
+
+/* Callout */
+.callout {
+  border-radius: 0rem;
+}
+
+/* Images */
+.content img {
+  border-radius: 0rem;
+}
+
+/* Details */
+.content details {
+  border-radius: 0rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0.5rem;
+}
+
+/* Cards */
+.hextra-cards {
+  border-radius: 0.5rem;
+}
+.hextra-feature-card {
+  border-radius: 0.5rem;
+}
 /* I have no idea what that was for (YOLO)*/
 .steps h4 {
   counter-increment: step;

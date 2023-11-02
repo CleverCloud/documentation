@@ -6,10 +6,10 @@
   {{ $emoji = index $calloutEmojiDict $type }}
 {{ end }}
 
-{{ $defaultClass := "bg-gray-100 text-gray-800 dark:border-gray-400/30 dark:bg-gray-400/20 dark:text-gray-800" }}
-{{ $infoClass := "border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200" }}
-{{ $warningClass := "border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200" }}
-{{ $errorClass := "border-red-200 bg-red-100 text-red-900 dark:border-red-200/30 dark:bg-red-900/30 dark:text-red-200" }}
+{{ $defaultClass := " callout bg-gray-100 text-gray-800 dark:border-gray-400/30 dark:bg-gray-400/20 dark:text-gray-800" }}
+{{ $infoClass := "callout border-blue-200 bg-blue-100 text-blue-900 dark:border-blue-200/30 dark:bg-blue-900/30 dark:text-blue-200" }}
+{{ $warningClass := "callout border-yellow-100 bg-yellow-50 text-yellow-900 dark:border-yellow-200/30 dark:bg-yellow-700/30 dark:text-yellow-200" }}
+{{ $errorClass := "callout border-red-200 bg-red-100 text-red-900 dark:border-red-200/30 dark:bg-red-900/30 dark:text-red-200" }}
 
 
 {{ $class := cond (eq $type "info") $infoClass (cond (eq $type "warning") $warningClass (cond (eq $type "error") $errorClass $defaultClass)) }}

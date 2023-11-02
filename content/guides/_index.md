@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud Guides
+title: Guides
 shortdesc: Step by step guides to deploy specifc apps and frameworks on Clever Cloud
 tags:
 - guides

@@ -58,15 +58,15 @@ h1, .content h1,
 }
 
 .btn-primary:hover {
-  background-color: rgba(197, 195, 226, 1);
-  color: black;
+  background-color: rgba(203, 28, 66, 1);
+  color: white;
 }
 
 .btn-secondary {
   border-radius: 0rem;
 }
 .btn-secondary:hover {
-  background-color: rgb(80, 78, 145);
+  background-color: rgba(245, 116, 97, 1);
   color: white;
 }
 

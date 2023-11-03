@@ -15,6 +15,16 @@ h1, .content h1,
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* Overriding default theme configuration and classes in files */
+
+.rounded {
+  border-radius: 0rem;
+}
+
+.rounded-lg {
+  border-radius: 0rem;
+}
+
 /* -----------------------------------------
             Customize shortcodes
 -------------------------------------------*/
@@ -60,6 +70,7 @@ h1, .content h1,
   background-color: rgb(80, 78, 145);
   color: white;
 }
+
 
 /* Cards */
 .hextra-cards {
@@ -155,16 +166,6 @@ changing the style and adding an a arrow at the end of the text */
 /*--------------------------------------------------------
                           Table Styling
 ----------------------------------------------------------*/ 
-
-/* Overriding default theme configuration and classes in files */
-center {
-  display: block;
-  text-align: left; /* Overrides centered titles */
-}
-
-.rounded {
-  border-radius: 0rem;
-}
 
 /* Table headers formatting */
 .content table:not(.code-block table) th {

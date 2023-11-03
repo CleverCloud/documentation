@@ -46,15 +46,18 @@ If you are out of options, contact our support team and we'll come up with a sol
 
 You can control deployments and set your application configuration with environment variables:
 {{< cards >}}
-  {{< card link="/doc/reference/reference-environment-variables/#set-by-the-deployment-process" title="Common to all applications" subtitle="Set by the deployment process." >}}
-  {{< card link="/doc/reference/reference-environment-variables/#variables-you-can-define" title="Define" subtitle="Variables you can define." >}}
-  {{< card link="/doc/reference/reference-environment-variables/#control-build-and-dependencies-cache" title="Cache" subtitle="Control the build and deployment cache." >}}
-  {{< card link="/doc/reference/reference-environment-variables/#control-the-deployments-behavior" title="Run" subtitle="Control the deployment behavior." >}}
-  {{< card link="/doc/reference/reference-environment-variables/#deployment-hooks" title="Hooks" subtitle="Define commands to run between various steps of the deployment." >}}
-  {{< card link="/doc/reference/reference-environment-variables" title="How to" subtitle="How to to configure your application with environment variables." >}}
+  {{< card link="/doc/reference/reference-environment-variables/#set-by-the-deployment-process" title="Common to all applications" subtitle="Set by the deployment process." icon="server-stack" >}}
+  {{< card link="/doc/reference/reference-environment-variables/#variables-you-can-define" title="Define" subtitle="Variables you can define." icon="pencil-square" >}}
+  {{< card link="/doc/reference/reference-environment-variables/#control-build-and-dependencies-cache" title="Cache" subtitle="Control the build and deployment cache." icon="arrow-up-on-square-stack" >}}
+  {{< card link="/doc/reference/reference-environment-variables/#control-the-deployments-behavior" title="Run" subtitle="Control the deployment behavior." icon="play-circle" >}}
+  {{< card link="/doc/reference/reference-environment-variables/#deployment-hooks" title="Hooks" subtitle="Define commands to run between various steps of the deployment." icon="eye-dropper" >}}
+  {{< card link="/doc/reference/reference-environment-variables" title="How to" subtitle="How to to configure your application with environment variables." icon="book-open" >}}
 {{< /cards >}}
 
 ### Common to All Applications
 
 - Applications on Clever Cloud listen on **port 8080**. Be sure you application is able to listen on port 8080 before deploying.
-- Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables. 💡 [Learn more about immutablity and application management](/doc/administrate/apps-management).
+- Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables. 
+
+💡 [Learn more about immutablity and application management](/doc/administrate/apps-management).
+

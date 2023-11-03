@@ -24,7 +24,9 @@ You can start, restart, and stop your application in the **Overview** menu of yo
 
 Stop functionality is useful during the development of the application to limit its credit consumption.
 
-{{< image "/images/app-management.png" "Manage your application" >}}
+{{< cards >}}
+  {{< card link="/" title="Manage your application" image="/images/app-management.png" method="resize" options="900x q80 webp">}}
+{{< /cards >}}
 
 ## Deploy an old commit
 

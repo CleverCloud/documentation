@@ -28,6 +28,7 @@ linkTitle: Documentation
   {{< card link="../doc/contribute" title="Contribute" subtitle="See how to contribute to this documentation." icon="pencil-alt" >}}
 {{< /cards >}}
 
+<br>
 {{< hextra/hero-subtitle >}}
   See our step by step tutorials &nbsp;<br class="sm:block hidden" />
 {{< /hextra/hero-subtitle >}}

@@ -44,7 +44,16 @@ If you are out of options, contact our support team and we'll come up with a sol
 
 ## Environment variables
 
-Here goes common environment varibales applicables to all apps.
+You can control deployments and set your application configuration with environment variables:
+{{< cards >}}
+  {{< card link="/doc/reference/reference-environment-variables/#set-by-the-deployment-process" title="Common to all applications" subtitle="Set by the deployment process." >}}
+  {{< card link="/doc/reference/reference-environment-variables/#variables-you-can-define" title="Define" subtitle="Variables you can define." >}}
+  {{< card link="/doc/reference/reference-environment-variables/#control-build-and-dependencies-cache" title="Cache" subtitle="Control the build and deployment cache." >}}
+  {{< card link="/doc/reference/reference-environment-variables/#control-the-deployments-behavior" title="Run" subtitle="Control the deployment behavior." >}}
+  {{< card link="/doc/reference/reference-environment-variables/#deployment-hooks" title="Hooks" subtitle="Define commands to run between various steps of the deployment." >}}
+  {{< card link="/doc/reference/reference-environment-variables" title="How to" subtitle="How to to configure your application with environment variables." >}}
+{{< /cards >}}
+
 
 ### Ports
 

@@ -61,8 +61,6 @@ h1, .content h1,
   color: white;
 }
 
-
-
 /* Cards */
 .hextra-cards {
   border-radius: 0.5rem;
@@ -162,6 +160,10 @@ changing the style and adding an a arrow at the end of the text */
 center {
   display: block;
   text-align: left; /* Overrides centered titles */
+}
+
+.rounded {
+  border-radius: 0rem;
 }
 
 /* Table headers formatting */

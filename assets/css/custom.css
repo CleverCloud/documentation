@@ -126,7 +126,8 @@ _______________________________________________________*/
   text-decoration: none;
 }*/
 
-.content p a:not(.code) {
+.content p a:not(.code),
+.content li a:not(.code) {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: rgb(204, 203, 203);
@@ -139,7 +140,7 @@ _______________________________________________________*/
 
 /* Allow linking in a variable environment without
 changing the style and adding an a arrow at the end of the text */
-.content a:not(.code) {
+.content a:not(.code) { 
   text-decoration: none;
   color: inherit;
 }

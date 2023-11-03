@@ -68,7 +68,6 @@ So you can alter the build&start process for your application.
 #### Deployment hooks
 
 Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment. 
-
   
 |  Name  |  Description  |
 |-----------------------|------------------------------|

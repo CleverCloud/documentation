@@ -13,7 +13,7 @@ type: "docs"
 comments: false
 ---
 
-## Choose your stack
+## Choose your Stack
 
 Find here specific instructions related to your application's language.
 
@@ -33,7 +33,7 @@ Find here specific instructions related to your application's language.
   
 {{< /cards >}}
 
-## How to deploy X if it is not natively supported
+## How To Deploy X if It Isn't Natively Supported
 
 If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.
 You will probably find a basic Docker file for your technology on the Docker hub.
@@ -42,7 +42,7 @@ Refer to the [Docker](/doc/applications/docker) section of this documentation to
 
 If you are out of options, contact our support team and we'll come up with a solution with you.
 
-## Environment variables
+## Environment Variables
 
 You can control deployments and set your application configuration with environment variables:
 {{< cards >}}
@@ -54,11 +54,7 @@ You can control deployments and set your application configuration with environm
   {{< card link="/doc/reference/reference-environment-variables" title="How to" subtitle="How to to configure your application with environment variables." >}}
 {{< /cards >}}
 
+### Common to All Applications
 
-### Ports
-
-Here goes a short explanation on port 8080.
-
-## Immutability
-
-Here goes a short explanation on immunatble deployments and how the server works.
+- Applications on Clever Cloud listen on **port 8080**. Be sure you application is able to listen on port 8080 before deploying.
+- Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables. 💡 [Learn more about immutablity and application management](/doc/administrate/apps-management).

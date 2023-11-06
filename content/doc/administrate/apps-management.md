@@ -28,7 +28,6 @@ Stop functionality is useful during the development of the application to limit 
 {{< imgproc link="/" caption="Manage your application" image="/images/app-management.png" method="resize" options="900x q80 webp">}}
 {{< /img-grid >}}
 
-
 {{< cards >}}
 {{< card link="/" title="Manage your application" image="/images/app-management.png" method="resize" options="900x q80 webp">}}
 {{< /cards >}}

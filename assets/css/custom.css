@@ -143,7 +143,8 @@ _______________________________________________________*/
 .content li a:not(.code) {
   text-decoration-line: underline;
   text-decoration-style: dotted;
-  text-decoration-color: rgb(204, 203, 203);
+  text-decoration-color: rgb(214, 207, 251);
+  color: rgb(90, 66, 212);
 }
 
 .no-link-style a {

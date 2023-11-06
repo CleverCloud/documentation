@@ -45,26 +45,6 @@ h1, .content h1,
   transition: transform 0.3s ease-in-out;
 }
 
-/* Create a pseudo-element that covers the entire page */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s ease-in-out;
-  z-index: 9999;
-  pointer-events: none;
-}
-.content img:hover {
-  transform: scale(2.1);
-}
-/* Darken the pseudo-element when an image is hovered over */
-.img-grid img:hover ~ body::before {
-  background: rgba(0, 0, 0, 0.5);
-}
 /* Code block */
 .code-block pre:not(.lntable pre) {
   border-radius: 0rem;
@@ -107,7 +87,7 @@ body::before {
 
 .img-grid {
   grid-template-columns: repeat(auto-fill, minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr));
-  width: 100%; /* Add this line */
+  width: 100%;
   height: 100%; 
 }
 .img-grid.mt-4.gap-4.grid.not-prose {

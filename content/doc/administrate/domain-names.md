@@ -37,7 +37,7 @@ In the console, in the domain name sub menu of your application, there is a defa
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
 {{< callout type="warning" >}}
-  `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
+`*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
 {{< /callout >}}
 
 ## Using Personal Domain Names
@@ -58,278 +58,97 @@ We also support wildcard personal domain names, to do so use the standard patter
 
 Provide the following to your registrar:
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com. </code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Four records:<br>
-    <code>@ 10800 IN A 185.42.117.108</code><br>
-    <code>@ 10800 IN A 185.42.117.109</code><br>
-    <code>@ 10800 IN A 46.252.181.103</code><br>
-    <code>@ 10800 IN A 46.252.181.104</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 185.42.117.108`<br>`@ 10800 IN A 185.42.117.109`<br>`@ 10800 IN A 46.252.181.103`<br>`@ 10800 IN A 46.252.181.104` |
 
 
 ### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Four records:<br>
-    <code>@ 10800 IN A 212.129.27.239</code><br>
-    <code>@ 10800 IN A 212.83.186.147</code>
-    <code>@ 10800 IN A 212.83.186.216</code>
-    <code>@ 10800 IN A 212.129.27.183</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 212.129.27.239`<br>`@ 10800 IN A 212.83.186.147`<br>`@ 10800 IN A 212.83.186.216`<br>`@ 10800 IN A 212.129.27.183` |
 
 ### Your Application Runs in the Europe/Roubaix ('RBX') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Four records:<br>
-    <code>@ 10800 IN A 87.98.180.173</code><br>
-    <code>@ 10800 IN A 87.98.182.176</code><br>
-    <code>@ 10800 IN A 87.98.180.181</code><br>
-    <code>@ 10800 IN A 87.98.182.136</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.176`<br>`@ 10800 IN A 87.98.180.181`<br>`@ 10800 IN A 87.98.182.136` |
 
 ### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 135.125.16.47</code><br>
-    <code>@ 10800 IN A 135.125.16.49</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49` |
 
 ### Your Application Runs in the Europe/Warsaw ('WSW') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 145.239.17.127</code><br>
-    <code>@ 10800 IN A 145.239.17.192</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 145.239.17.127`<br>`@ 10800 IN A 145.239.17.192` |
 
 ### Your Application Runs in the Europe/Gravelines ('GRAHDS') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 188.165.58.196</code><br>
-    <code>@ 10800 IN A 188.165.58.200</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com. |
+| A<br>Only if CNAME is not available | @ 10800 IN A 188.165.58.196<br>@ 10800 IN A 188.165.58.200 |
 
 ### Your Application Runs in the North-America/Montreal ('MTL') Zone
 
 Provide the following to your registrar:
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 149.56.147.232</code><br>
-    <code>@ 10800 IN A 149.56.126.234</code><br>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com. |
+| A<br>Only if CNAME is not available | @ 10800 IN A 149.56.147.232<br>@ 10800 IN A 149.56.126.234 |
 
 ### Your Application Runs in the Asia/Singapore ('SGP') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 51.79.197.159</code><br>
-    <code>@ 10800 IN A 51.79.197.160</code>
-    </td>
-  </tr>
-</table>
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com. |
+| A<br>Only if CNAME is not available | @ 10800 IN A 51.79.197.159<br>@ 10800 IN A 51.79.197.160 |
 
 ### Your Application Runs in the Oceania/Sydney ('SYD') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 139.99.253.215</code><br>
-    <code>@ 10800 IN A 139.99.253.237</code>
-    </td>
-  </tr>
-</table>
+
+| Record Type                                   | Value                                                                             |
+| --------------------------------------------- | --------------------------------------------------------------------------------- |
+| CNAME<br>Recommended</span></sub></sup> | `{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.`                   |
+| A<br>Only if CNAME is not available                         | Two records: <br> `@ 10800 IN A 139.99.253.215` <br> `@ 10800 IN A 139.99.253.237` |
 
 ### Your Application Runs in the Jeddah ('JED') Zone
 
-<table class="table table-bordered" style="text-align:center">
-  <tr>
-    <th><center>Record Type</center></th>
-    <th><center>Value</center></th>
-  </tr>
-  <tr>
-    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>
-    <code>{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.</code>
-    </td>
-  </tr>
-  <tr>
-    <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records:<br>
-    <code>@ 10800 IN A 158.101.226.110</code><br>
-    <code>@ 10800 IN A 150.230.50.217</code>
-    </td>
-  </tr>
-</table>
+| Record Type         | Value                                                        |
+|---------------------|--------------------------------------------------------------|
+| CNAME               | {yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com. |
+| A<br>Only if CNAME is not available | Two records: <br>@ 10800 IN A 158.101.226.110<br>@ 10800 IN A 150.230.50.217 |
 
 {{< callout type="warning" >}}
-    You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
+You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
 {{< /callout >}}
 
-If you want to make your application available from a domain name which does not support CNAME records (eg <code>example.com</code> in addition to <code>www.example.com</code>), check if your registrar provides a web redirection service. This way, you only have to make <code>www.example.com</code> point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
+If you want to make your application available from a domain name which does not support CNAME records (eg `example.com` in addition to `www.example.com`), check if your registrar provides a web redirection service. This way, you only have to make `www.example.com` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
 {{< callout type="info" >}}
-    <div>
-      <code>*.example.com</code> will match e.g. <code>blog.example.com</code> or <code>www.example.com</code>.
-    </div>
-    <div> But for the raw domain <code>example.com</code>, you will have to add both <code>*.example.com</code> and <code>example.com</code> to your application.</div>
+`*.example.com` will match e.g. `blog.example.com` or `www.example.com`. But for the raw domain `example.com`, you will have to add both `*.example.com` and `example.com` to your application.
 {{< /callout >}}
-<br>
 
 ### Contextual Example
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Domain Name Use Case</th> <th>CNAME config</th> <th>record A config</th> <th>Web redirections</th>
-    </tr>
-  </thead>
-  <tboby>
-    <tr>
-      <td><code>www.example.com</code> <br> <code>example.com</code></td>
-      <td> point <code>www.example.com</code> to <code>domain.par/mtl.clever-cloud.com.</code></td>
-      <td>No A record needed</td>
-      <td>Redirect <code>example.com</code> to <code>www.example.com</code> </td>
-    </tr>
-    <tr>
-      <td><code>www.example.com</code></td>
-      <td> point <code>www.example.com</code> to <code>domain.par/mtl.clever-cloud.com.</code></td>
-      <td>No A record needed</td>
-      <td>No redirect needed</td>
-    </tr>
-    <tr>
-      <td><code>example.com<code></td>
-      <td>No CNAME record needed</td>
-      <td>point <code>example.com</code> to the two IP addresses of the selected region</td>
-      <td>No redirect needed</td>
-    </tr>
-  </tboby>
-</table>
+| Domain Name Use Case        | CNAME config                                    | Record A config                                                | Web redirections                            |
+|-----------------------------|-------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------|
+| `www.example.com` <br> `example.com` | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                            | Redirect `example.com` to `www.example.com` |
+| `www.example.com`           | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                            | No redirect needed                          |
+| `example.com`               | No CNAME record needed                           | Point `example.com` to the two IP addresses of the selected region | No redirect needed                          |
 
 ## Prefix routing
 
@@ -377,4 +196,4 @@ example.com/api    ->     my-static-site/index.php
 
 ## Gandi CNAME configuration
 
-Here is <a href="https://blog.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud/" target="_blank">an article that demonstrates a simple setup for Gandi CNAMEs</a>.
+Here is [an article that demonstrates a simple setup for Gandi CNAMEs](https://blog.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud).

@@ -49,11 +49,11 @@ reasonable level** is reached.
 
 The following scheme depicts a Scaler replication in case of a load increase:
 
-{{< image "/images/scaling_horizontal_scheme.jpg" "You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20." >}}
+{{< image "/images/doc/scaling_horizontal_scheme.jpg" "You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40." >}}
 
 You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.
 
-{{< image "/images/select-scalab.png" "Horizontal scaling: the amount of scaler will increase, not the scaler size." "width:355px" >}}
+{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of scaler will increase and the sclaer size will vary between XS and S" >}}
 
 ## Vertical scaling
 
@@ -66,11 +66,11 @@ load, the larger the instance.
 
 The following scheme depicts a larger Scaler replacement in case of a load increase:
 
-{{< image "/images/scaling_vertical_scheme.jpg" "vertical scaling" >}}
+{{< image "/images/doc/scaling_vertical_scheme.jpg" "vertical scaling" >}}
 
 You can choose the type of Scalers you consider by defining a maximum instance size manually or just let Clever Cloud choose for you by defining nothing:
 
-{{< image "/images/select-scalab.png" "Vertical scaling: the amount of scalers will not increase in this configuration, but the scaler size will, from S to XL." >}}
+{{< image "/images/doc/select-scalab.png" "Vertical scaling: the scaler size will from S to XL." >}}
 
 ## Combination of both scalings
 

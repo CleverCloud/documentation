@@ -25,7 +25,7 @@ to an addon.
 Clever Cloud allows to declare the topology of your micro services graph by
 letting you link applications in the same way you can link addons.
 
-{{< image "/images/service-dependencies-example.png" "Service dependencies" "width:355px" >}}
+{{< image "/images/doc/service-dependencies-example.png" "Service dependencies" "width:355px" >}}
 
 To link an application to another, go to the "Service Dependencies" tab and
 add the applications you depend on.
@@ -38,9 +38,7 @@ exposed configuration will be injected in the dependent applications'
 environment.
 
 {{< callout type="warning" >}}
-    The configuration exposed by an application is available in the
-    environment variables of the <i>dependent</i> applications, but not in
-    the environment of the application itself.
+The configuration exposed by an application is available in the environment variables of the **dependent** applications, but not in the environment of the application itself.
 {{< /callout >}}
 
 
@@ -49,4 +47,4 @@ environment.
 When an application updates its exposed configuration, all applications
 depending on it are automatically redeployed.
 
-{{< image "/images/service-dependencies-config-update.png" "Automatic redeployment" "width:100%" >}}
+{{< image "/images/doc/service-dependencies-config-update.png" "Automatic redeployment" "width:100%" >}}

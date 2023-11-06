@@ -179,9 +179,10 @@ changing the style and adding an a arrow at the end of the text */
 }
 /* Display an arrow at the end of the linked variable */
 .content a:not(.code-block code) code::after {
-  content: " ↗";
+  content: "\00a0↗";
   color: tomato;
   font-size: 1rem;
+
 }
 
 

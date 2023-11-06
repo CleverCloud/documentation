@@ -477,10 +477,10 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[`NEW_RELIC_APP_NAME`](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME "New Relic documentation") | Contains the application name |  |
 |[`NEW_RELIC_LICENSE_KEY`](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY "New Relic documentation" ) | Contains your New Relic account license | |
 |[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum "New Relic documentation" ) |  |  |  
-|[CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled "New Relic documentation" ) | | |  
-|[CC_NEWRELIC_ERROR_COLLECTOR_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled "New Relic documentation" ) | | |  
-|[CC_NEWRELIC_TRANSACTION_TRACER_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable "New Relic documentation" ) | | |  
-|[CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql "New Relic documentation" ) | obfuscated | |  
+|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled "New Relic documentation" ) | | |  
+|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled "New Relic documentation" ) | | |  
+|[`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable "New Relic documentation" ) | | |  
+|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql "New Relic documentation" ) | obfuscated | |  
 
 ### Pulsar
   
@@ -509,9 +509,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|SOCKS_ADDON_HOST |  |  |  |
-|SOCKS_ADDON_PORT |  |  |  |
-|SOCKS_ADDON_PRIVATE_KEY |  |  |  |
+|`SOCKS_ADDON_HOST` |  |  |  |
+|`SOCKS_ADDON_PORT` |  |  |  |
+|`SOCKS_ADDON_PRIVATE_KEY` |  |  |  |
 
 ### VPN
 

@@ -1,0 +1,60 @@
+{{- $context := . -}}
+{{- $caption := .Get "caption" -}}
+{{- $image := .Get "image" -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- $imageStyle := .Get "imageStyle" -}}
+
+{{/* Image processing options */}}
+{{- $method := .Get "method" | default "Resize" | humanize -}}
+{{- $options := .Get "options" | default "900x webp q95" -}}
+
+{{- if and $image (not (urls.Parse $image).Scheme) -}}
+  {{/* Process images in assets */}}
+  {{- with resources.Get $image -}}
+    {{- $processed := "" -}}
+    {{- if eq $method "Resize" -}}
+      {{- $processed = (.Resize $options) -}}
+    {{- else if eq $method "Fit" -}}
+      {{- $processed = (.Fit $options) -}}
+    {{- else if eq $method "Fill" -}}
+      {{- $processed = (.Fill $options) -}}
+    {{- else if eq $method "Crop" -}}
+      {{- $processed = (.Crop $options) -}}
+    {{- else -}}
+      {{- errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize." -}}
+    {{- end -}}
+    {{- $width = $processed.Width -}}
+    {{- $height = $processed.Height -}}
+    {{- $image = $processed.RelPermalink -}}
+  {{- else -}}
+    {{/* Otherwise, use relative link of the image */}}
+    {{- if hasPrefix $image "/" -}}
+      {{- $image = relURL (strings.TrimPrefix "/" $image) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<a
+  class="hextra-card justify-center no-underline"
+>
+<img
+alt="{{ $caption }}"
+loading="lazy"
+decoding="async"
+src="{{ $image | safeURL }}"
+{{ with $width }}width="{{ . }}"{{ end }}
+{{ with $height }}height="{{ . }}"{{ end }}
+{{ with $imageStyle }}style="{{ . | safeCSS }}"{{ end }}
+/>
+
+{{- $padding := "p-4" -}}
+{{- with $caption -}}
+  {{- $padding = "pt-4 px-4" -}}
+{{- end -}}
+
+{{- with $caption -}}
+<div class="line-clamp-3 text-sm font-normal text-gray-500 dark:text-gray-400 px-4 mb-4 mt-2 justify-center">{{- $caption | markdownify -}}</div>
+{{- end -}}
+
+</a>

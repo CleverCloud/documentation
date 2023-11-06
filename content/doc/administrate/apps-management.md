@@ -50,7 +50,7 @@ You can also enable/disable:
 
 Do not forget to save after editing your configuration.
 
-{{< image "/images/application-edit.png" "Edit your application" >}}
+{{< image "/images/doc/application-edit.png" "Edit your application" >}}
 
 ## Archiving/Unarchiving your application
 

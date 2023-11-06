@@ -1,0 +1,5 @@
+{{ $rows := .Get "rows" | default "2" }}
+
+<div class="img-grid mt-4 gap-4 grid not-prose" style="--rows: {{ $rows }}; ">
+  {{ .Inner }}
+</div>

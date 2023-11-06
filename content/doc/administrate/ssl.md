@@ -37,29 +37,23 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
 1. Define a page rule such as this one:
 
-    {{< image "/images/cloudflare-page-rule-ssl.png" "Create a bypass page rule" >}}
+    {{< image "/images/doc/cloudflare-page-rule-ssl.png" "Create a bypass page rule" >}}
 
     We also recommend to disable the cache level.
 
 2. Turn off HTTP to HTTPS redirection on Cloudflare:
 
-    {{< image "/images/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" >}}
+    {{< image "/images/doc/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" >}}
 
     You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
-{{< callout type="warning" >}}
- <p>
- If Let’s Encrypt fails to generate the certificate, you can test that the
- acme-challenge url works by running:
- </p>
+💡 **If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running:
 
 ```
 $ curl http://<your-domain>/.well-known/acme-challenge/test
 test
 ```
- <p>It should return a HTTP 200 OK with the string "test" as the body. If it does not, check your Cloudflare configuration.</p>
-
-{{< /callout >}}
+It should return a HTTP 200 OK with the string "test" as the body. If it does not, check your Cloudflare configuration.
 
 
 ## Uploading my own certificates
@@ -97,7 +91,7 @@ If you need manual operations on the certificates, the most secure way to transf
 Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
 
 {{< callout type="warning" >}}
-    Do not send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
+Don't send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
 {{< /callout >}}
 
 ### Clever Cloud on Keybase

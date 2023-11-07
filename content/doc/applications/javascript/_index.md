@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Javascript
+title: JavaScript
 
 tags:
 - deploy

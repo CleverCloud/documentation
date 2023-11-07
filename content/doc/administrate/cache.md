@@ -20,10 +20,9 @@ and the client. Following rules defined by the user, Varnish will cache the data
 
 ## Limitations
 
-{{< callout type="warning" >}}
-<p>Varnish is only available on PHP, Go and Node.js applications. Support for other applications is in discussion.</p> 
-<p>For more information about it, contact us at <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.</p>
-{{< /callout >}}
+Varnish is only available on **PHP**, **Go** and **Node.js** applications. Support for other applications is in discussion.
+
+For more information about it, contact us at [support@clever-cloud.com](mailto:support@clever-cloud.com).
 
 ## Enable Varnish for your application
 
@@ -35,7 +34,7 @@ The `vcl 4.1;` and backend section of the `varnish.vcl` configuration file are n
 If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bucket, make sure you redeploy the application for the changes to take effect.
 {{< /callout >}}
 
-To know how to write your `varnish.vcl` file, please have a look at the [Varnish 6 book](https://info.varnish-software.com/resources/varnish-6-by-example-book).
+To know how to write your `varnish.vcl` file, have a look at the [Varnish 6 book](https://info.varnish-software.com/resources/varnish-6-by-example-book).
 
 ## Listen on the right port
 
@@ -44,6 +43,7 @@ Once varnish is enabled, your application should no longer listen on port **8080
 ## Configure the cache size
 
 You can change the storage size specified in the varnish.params file with the `CC_VARNISH_STORAGE_SIZE` environment variable (the default value is `1G`).
+
 ```bash
 CC_VARNISH_STORAGE_SIZE=2G
 ```

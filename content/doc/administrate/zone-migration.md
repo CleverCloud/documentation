@@ -101,7 +101,7 @@ Add-ons can be migrated from one zone to another. For some of them, our support 
 
 ### PostgreSQL, MySQL, MongoDB, Redis
 
-These add-ons can be migrated using the [Migration Tool]({{< ref "doc/administrate/database-migration" >}}).
+These add-ons can be migrated using the [Migration Tool](/doc/administrate/database-migration).
 
 Once your migration is over, the services connecting to the add-on might be impacted by an increased latency due to DNS updates. The domain of your add-on will have its DNS records
 changed but it will take up to 1 hour for them to propagate. This means that during that time, your services might still connect to the old zone, which will then redirect to the target zone
@@ -115,8 +115,8 @@ These add-ons can not be automatically migrated across zones. Please reach out t
 
 FSBuckets can not be migrated across zones either. You will have to create a new FSBucket in the target zone and transfer its content from the old to the new one.
 
-To do so, you can use the `lftp` or `rclone` tools. Or you can ask our support team and we will be able to do it for you.
+To do so, you can use the [`lftp`](https://lftp.yar.ru/) or [`rclone`](https://rclone.org/) tools. Or you can ask our support team and we will be able to do it for you.
 
 {{< callout type="warning" >}}
-In case of a FSBucket add-on (and not a PHP+FTP add-on), you will have to remember to link it to your application once it has been migrated to the new zone.
+In case of a FSBucket add-on (and not a PHP+FTP add-on), remember to link it to your application once it has been migrated to the new zone.
 {{< /callout >}}

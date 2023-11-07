@@ -36,19 +36,19 @@ h1, .content h1,
 }
 
 /* Override border-radius class to fit Clever's theme */
-.rounded, .rounded-xl,.rounded-3xl,.rounded-lg,.rounded-md ,.rounded-sm {
+.rounded,
+.rounded-xl,
+.rounded-3xl,
+.rounded-lg,
+.rounded-md,
+.rounded-sm,
+.code-block pre:not(.lntable pre),
+.content img,
+.content div.gist-file  /* What is overriding this? */ {
   border-radius: 0rem;
-}
-/* Images */
-.content img {
-  border-radius: 0rem;
-  transition: transform 0.3s ease-in-out;
 }
 
-/* Code block */
-.code-block pre:not(.lntable pre) {
-  border-radius: 0rem;
-}
+
 /* -----------------------------------------
             Customize shortcodes
 -------------------------------------------*/
@@ -135,9 +135,9 @@ _______________________________________________________*/
 
 /* Prevent linked text to be underlined or change color.
   Useful for beautiful cards */
-/*a.no-underline {
+a.no-underline {
   text-decoration: none;
-}*/
+}
 
 .content p a:not(.code),
 .content li a:not(.code) {
@@ -205,7 +205,3 @@ html[class~="dark"] .content table:not(.code-block table) th {
 html[class~="dark"] .content table:not(.code-block table) tr {
     color: #ececfe;
   } 
-
-
-
-  

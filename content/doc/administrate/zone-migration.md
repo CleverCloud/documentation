@@ -115,7 +115,7 @@ These add-ons can not be automatically migrated across zones. Please reach out t
 
 FSBuckets can not be migrated across zones either. You will have to create a new FSBucket in the target zone and transfer its content from the old to the new one.
 
-To do so, you can use the [`lftp`](https://lftp.yar.ru/) or [`rclone`](https://rclone.org/) tools. Or you can ask our support team and we will be able to do it for you.
+To do so, you can use the [LFTP](https://lftp.yar.ru/) or [Rclone](https://rclone.org/) tools. Or you can ask our support team and we will be able to do it for you.
 
 {{< callout type="warning" >}}
 In case of a FSBucket add-on (and not a PHP+FTP add-on), remember to link it to your application once it has been migrated to the new zone.

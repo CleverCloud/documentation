@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 14
 chapter: true
 title: Contribute
 shortdesc: Learn about the available shortcodes to write new documentation.
@@ -12,14 +12,15 @@ keywords:
 type: docs
 ---
 
+Would you like to contribute to this documentation?
+
 ## Before writing something new
 
 Before you start writing something new please create a [Github issue](https://github.com/CleverCloud/doc.clever-cloud.com/issues) so we can talk about it. Moslty to make sure someone is not already working on the same thing.
 
 ## Writing new content
 
-There are a number of things you need to be aware of when writing new content. We use markdown files and Hugo to generate this documentation. The CSS classes available are in Bootstrap 4.5. A list of commonly used Hugo shortcode can be found in its [dedicated page]( {{< ref "doc/contribute/shortcodes" >}} )
-
+There are a number of things you need to be aware of when writing new content. We use Markdown files and [Hugo](https://gohugo.io/) to generate this documentation.
 
 ### Debug Mode
 

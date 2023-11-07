@@ -34,7 +34,7 @@ Invoices are available in the *Invoices* tab in the sidebar of the organization 
 
 You can change the billing email for an organization in *Information > Billing details > Billing email*.
 
-Also an organization member with the accountant role can receive invoices as described in the organization [roles]({{< ref "doc/account/organizations.md#roles-and-privileges" >}}).
+Also an organization member with the accountant role can receive invoices as described in the organization [roles](/doc/account/organizations/#roles-and-privileges).
 
 ## Change Billing Information
 
@@ -42,7 +42,7 @@ Also an organization member with the accountant role can receive invoices as des
 
 * for organization: available in *Information > Billing details*
 
-{{< image "/images/billing-infos.png" "Organization information" >}}
+{{< image "/images/doc/billing-infos.png" "Organization information" >}}
 
 ## SEPA Direct Debit
 

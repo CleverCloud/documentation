@@ -10,6 +10,7 @@ keywords:
 - shortcode
 - writing
 type: docs
+draft: true
 ---
 
 To call a shortcode you need to write {{</* myshortcode */>}}. 

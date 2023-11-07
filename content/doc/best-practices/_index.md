@@ -1,4 +1,5 @@
 ---
+weight: 12
 title: Best practices
 shortdesc: Learn best practices on Clever Cloud
 tags:

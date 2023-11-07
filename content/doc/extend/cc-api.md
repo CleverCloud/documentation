@@ -117,14 +117,14 @@ When the WebSocket connection is opened, you need to send the OAuth1 header in t
 
 You need to replace `<oauth_header>` by the signed OAuth1 header.
 
-### **WebSocket endpoints**
+### WebSocket endpoints
 
-#### **Logs**
+#### Logs
 
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
 allows you to receive real-time logs of an application via WebSocket.
 
-#### **Events**
+#### Events
 
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
 allows you to receive a stream of events emitted on your account.

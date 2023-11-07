@@ -18,6 +18,7 @@ keywords:
 - deep 
 - learning
 type: docs
+draft: true
 ---
 
 ## Concepts in Clever Grid

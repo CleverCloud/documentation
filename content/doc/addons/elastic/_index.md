@@ -103,6 +103,3 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
 If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.
 {{< /callout >}}
 
-## Plans
-
-{{< pricingAddon "es-addon" "[\"cpu\", \"memory\", \"disk-size\"]" >}}

@@ -46,7 +46,3 @@ This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/d
 
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,
 please contact the support to change its policy.
-
-## Plans
-
-{{< pricingAddon "redis-addon" "[\"cpu\", \"max-db-size\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\", \"databases\"]" >}}

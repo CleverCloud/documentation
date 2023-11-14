@@ -86,7 +86,7 @@ You can find your deployment url under the Clever Cloud console in your applicat
 
 ### Fail to push to a repository
 
-It might be because your SSH agent is not properly configured. Please check [the SSH documentation page]({{< ref "doc/account/ssh-keys-managment.md#i-maybe-have-ssh-keys-i-want-to-check" >}}).
+It might be because your SSH agent is not properly configured. Please check [the SSH documentation page]({{< ref "doc/account/ssh-keys-management#i-maybe-have-ssh-keys-i-want-to-check" >}}).
 
 ## Node application failed to deploy silently
 

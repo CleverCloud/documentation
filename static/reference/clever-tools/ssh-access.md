@@ -36,7 +36,7 @@ You need to have the Clever Tools CLI installed locally.
 
 ### Make sure you have a properly configured SSH key
 
-To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation]({{< ref "doc/account/ssh-keys-managment.md" >}}) to know how to set up your SSH keys.
+To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation]({{< ref "doc/account/ssh-keys-management" >}}) to know how to set up your SSH keys.
 
 ## Accessing your machine with Clever Tools CLI
 

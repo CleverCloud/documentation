@@ -75,6 +75,3 @@ Note that these features are available for all our databases add-ons, in additio
 
 **The managed databases provide an advantage if you want to avoid the complexity of installing and deploying databases** and if you want simple-to-use management and monitoring tools.
 
-## Plans
-
-{{< pricingAddon "mongodb-addon" "[\"cpu\", \"memory\", \"disk-size\", \"has-logs\", \"has-metrics\"]" >}}

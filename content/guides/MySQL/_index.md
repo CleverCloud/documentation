@@ -12,5 +12,5 @@ type: docs
 comments: false
 ---
 {{< cards >}}
- {{< card link="/guides/mysql/pgpool" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
+ {{< card link="/guides/mysql/proxysql" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
 {{< /cards >}}

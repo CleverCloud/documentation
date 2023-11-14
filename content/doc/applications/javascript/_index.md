@@ -22,8 +22,8 @@ comments: false
 </div>
 
 {{< cards >}}
-  {{< card link="/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/doc/applications/java/java-jar" title="Node.js" icon="node" >}}
+  {{< card link="/doc/applications/javascript/meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="/doc/applications/javascript/nodejs" title="Node.js" icon="node" >}}
   
 {{< /cards >}}
 

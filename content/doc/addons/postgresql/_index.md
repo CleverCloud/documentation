@@ -118,6 +118,3 @@ Usually this threshold is set to 20%.
 
 If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on an PostgreSQL addon but you get an `Exception: Must be run with database superuser privileges.` you need to add the flag `--rds` when you start it.  
 
-## Plans
-
-{{< pricingAddon "postgresql-addon" "[\"cpu\", \"memory\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}

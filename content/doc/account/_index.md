@@ -10,6 +10,6 @@ comments: false
   {{< card link="/doc/account/administrate-organization" title="Manage an organization" icon="building-library" >}}
   {{< card link="/doc/account/organizations" title="Roles and organizations" icon="user-group" >}}
   {{< card link="/doc/account/notifications" title="Manage notifications" icon="bell" >}}
-  {{< card link="/doc/account/ssh-keys-management" title="Manage SS keys" icon="key" >}}
+  {{< card link="/doc/account/ssh-keys-management" title="Manage SSH keys" icon="key" >}}
   {{< card link="/doc/account/delete-account" title="Delete an account" icon="trash" >}}
 {{< /cards >}}

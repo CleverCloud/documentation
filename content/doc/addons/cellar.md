@@ -372,6 +372,3 @@ Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.myc
 
 It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
 
-## Pricing
-
-{{< pricingConsumption "cellar" >}}

@@ -12,7 +12,7 @@ comments: false
   {{< card link="/doc/administrate/database-migration" title="Database migration and security update" icon="circle-stack" >}}
   {{< card link="/doc/administrate/domain-names" title="Domain names" icon="at-symbol" >}}
   {{< card link="/doc/administrate/encryption-at-rest" title="Encryption at rest" icon="lock-closed" >}}
-  {{< card link="/doc/administrate/apps-ssl" title="Installing TLS certificate" icon="document-check" >}}
+  {{< card link="/doc/administrate/ssl" title="Installing TLS certificate" icon="document-check" >}}
   {{< card link="/doc/administrate/log-management" title="Log management" icon="document-text" >}}
   {{< card link="/doc/administrate/network" title="Network and IP adresses ranges" icon="globe-alt" >}}
   {{< card link="/doc/administrate/service-dependencies" title="Service dependencies" icon="plug" >}}

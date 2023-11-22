@@ -101,6 +101,11 @@ menu:
       url: "https://github.com/cnivolle/doc.clever-cloud.com"
       params:
         icon: github
+    - name: Website
+      weight: 8
+      url: "https://clever-cloud.com"
+      params:
+        icon: globe-alt
 
   sidebar:
     - identifier: more

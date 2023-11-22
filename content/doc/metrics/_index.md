@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 4
 title: Metrics
 shortdesc: Access and manage metrics on Clever Cloud
 tags:

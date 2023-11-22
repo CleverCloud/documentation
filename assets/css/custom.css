@@ -153,6 +153,14 @@ changing the style and adding an a arrow at the end of the text */
 
 }
 
+/* Display arrow for external links in the main menu.
+  Don't display it if it's an icon */ 
+.nav-container a[href^="http://"]:not(:has(svg))::after,
+.nav-container a[href^="https://"]:not(:has(svg))::after {
+  content: "\00a0↗";
+  font-size: 1rem;
+}
+
 
 
 /*--------------------------------------------------------

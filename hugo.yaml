@@ -80,16 +80,24 @@ menu:
       name: Documentation
       pageRef: /doc
       weight: 1
-    - identifier: Tutorials
+    - identifier: tutorials
       name: Guides
       pageRef: /guides
       weight: 2
-    - name: Search
+    - identifier: api
+      name: API
+      url: "https://www.clever-cloud.com/doc/openapi/#overview"
+      weight: 4
+    - identifier: components
+      name: UI components
+      url: "https://www.clever-cloud.com/doc/clever-components/?path=/story/readme--page"
       weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 6
+      weight: 7
       url: "https://github.com/cnivolle/doc.clever-cloud.com"
       params:
         icon: github

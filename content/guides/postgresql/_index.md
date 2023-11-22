@@ -17,8 +17,9 @@ keywords:
 - sql
 type: docs
 comments: false
+draft: true
 ---
 
 {{< cards >}}
- {{< card link="/guides/postgresql/pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
+ {{< card link="/guides/pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
 {{< /cards >}}

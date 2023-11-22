@@ -107,7 +107,7 @@ Change the default `DATABASE_URL` environment variable used in your `config/pack
 
 ### Configure ProxySQL for MySQL
 
-To manage your connection pool towards your MySQL add-on, you can set-up a [ProxySQL]({{< ref "/guides/mysql/proxysql" >}}). 
+To manage your connection pool towards your MySQL add-on, you can set-up a [ProxySQL]({{< ref "/guides/proxysql" >}}). 
 
 Once you have activated the ProxySQL (through the environment variable), a configuration example would be:
 

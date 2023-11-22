@@ -1,4 +1,5 @@
 ---
+weight: 12
 title: Billing
 shortdesc: Learn best practices on Clever Cloud
 tags:

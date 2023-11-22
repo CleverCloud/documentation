@@ -1,5 +1,5 @@
 ---
-weight: 4
+weight: 8
 title: CLI
 shortdesc: Use Clever Cloud CLI
 tags:

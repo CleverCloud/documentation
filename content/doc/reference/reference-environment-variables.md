@@ -352,7 +352,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### ProxySQL
 
-[ProxySQL Documentation](/guides/mysql/proxysql)
+[ProxySQL Documentation](/guides/proxysql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -378,7 +378,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ### Pgpool-II
 
-[Pgpool-II Documentation](/guides/postgresql/pgpool)
+[Pgpool-II Documentation](/guides/pgpool)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|

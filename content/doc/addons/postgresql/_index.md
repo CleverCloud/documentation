@@ -58,7 +58,7 @@ This referencing does not exist for dedicated databases.
 
 {{< readfile file="pgpool.md" >}}
 
-You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/postgresql/pgpool" >}})
+You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/pgpool" >}})
 
 ## Default extensions
 

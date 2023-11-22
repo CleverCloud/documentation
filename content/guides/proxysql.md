@@ -1,7 +1,7 @@
 ---
 type: docs
 title: ProxySQL
-position: 3
+
 shortdesc: How to configure and use ProxySQL for MySQL add-ons
 tags:
 - addons

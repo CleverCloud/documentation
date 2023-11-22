@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Customize Kibana
+title: Kibana
 position: 7
 shortdesc: How  to deploy a custom Kibana for specific using cases.
 tags:

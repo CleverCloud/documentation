@@ -20,10 +20,10 @@ languages:
     languageName: English
     weight: 1
     title: Clever Cloud Documentation
-  fr:
-    languageName: Français
-    weight: 2
-    title: "Documentation de Clever Cloud "
+  #fr:
+    #languageName: Français
+    #weight: 2
+    #title: "Documentation de Clever Cloud "
 
 params:
   navbar:

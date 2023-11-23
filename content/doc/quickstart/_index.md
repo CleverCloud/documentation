@@ -132,7 +132,7 @@ Enter the name and the description of your application.
   {{< tab >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable]({{< ref "doc/develop/env-variables.md" >}}).
+  *Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](content/doc/reference/reference-environment-variables).
 
   Follow these steps to deploy your application:
 

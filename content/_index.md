@@ -38,7 +38,7 @@ width: normal
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
     link="/doc/reference/reference-environment-variables"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
-    image="images/hextra-doc.webp"
+    image="/images/icons.png"
     imageClass="top-[40%] left-[24px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
@@ -47,7 +47,7 @@ width: normal
     subtitle="The Clever Cloud API reference."
     link="/doc/extend/cc-api"
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
-    image="images/hextra-markdown.webp"
+    image="/images/metrics-home.png"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
@@ -56,7 +56,7 @@ width: normal
     subtitle="An official Command Line Interface for Clever Cloud."
     link="/doc/cli"
     class="aspect-auto md:aspect-[1.1/1] max-md:min-h-[340px]"
-    image="images/pg-studio.png"
+    image="/images/brand.png"
     imageClass="top-[40%] left-[36px] w-[110%] sm:w-[110%] dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}

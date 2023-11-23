@@ -88,25 +88,21 @@ menu:
       name: openAPI
       pageRef: /openapi
       weight: 3
-    - identifier: api
-      name: API
-      url: "https://www.clever-cloud.com/doc/openapi/#overview"
-      weight: 4
     - identifier: components
       name: UI components
       url: "https://www.clever-cloud.com/doc/clever-components/?path=/story/readme--page"
-      weight: 5
+      weight: 4
     - name: Search
-      weight: 6
+      weight: 5
       params:
         type: search
     - name: GitHub
-      weight: 7
+      weight: 6
       url: "https://github.com/cnivolle/doc.clever-cloud.com"
       params:
         icon: github
     - name: Website
-      weight: 8
+      weight: 7
       url: "https://clever-cloud.com"
       params:
         icon: globe-alt

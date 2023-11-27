@@ -15,6 +15,8 @@ keywords:
 - postgres
 - proxy
 - sql
+aliases:
+- /doc/deploy/addon/postgresql/pgpool
 type: docs
 ---
 

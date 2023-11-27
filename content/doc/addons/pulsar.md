@@ -13,6 +13,8 @@ keywords:
 - biscuit
 - rabbitmq
 - kafka
+aliases:
+- /doc/deploy/addon/pulsar
 type: docs
 ---
 

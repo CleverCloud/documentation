@@ -8,7 +8,8 @@ keywords:
 - deploy
 
 aliases:
-- /doc/addons
+
+- /doc/getting-started/dbaas
 type: "docs"
 comments: false
 ---

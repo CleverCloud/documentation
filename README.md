@@ -56,6 +56,17 @@ This is why the Clever Cloud application running this app needs to have a webroo
 
 ## Adding or modifying content
 
+Follox these instructions to contibute to the doc.
+
+### Run locally
+
+1. Clone this repo
+2. Go to the repo root `cd clever-documentation-2024`
+3. Start the theme module: `hugo mod get github.com/imfing/hextra`
+4. Run `hugo server`
+
+Local site is displayed on http://localhost:3000
+
 ## Testing and deployment
  
 [Add here local tests instructions]

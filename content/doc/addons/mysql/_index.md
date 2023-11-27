@@ -11,7 +11,7 @@ keywords:
 - mariadb
 - RDBMS
 aliases:
-- /doc/deploy/addon/mysql
+- /doc/deploy/addon/mysql/mysql
 type: docs
 ---
 

@@ -13,7 +13,7 @@ keywords:
 - mariadb
 
 aliases: 
-- /doc/deploy/addon/postgresql
+- /doc/deploy/addon/postgresql/postgresql
 
 type: docs
 ---

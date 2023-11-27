@@ -10,6 +10,8 @@ keywords:
 - preferences
 - user
 - creation
+aliases:
+- /doc/account/create-account
 ---
 
 {{< readfile file="authentication.md" >}}

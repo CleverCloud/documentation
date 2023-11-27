@@ -9,7 +9,7 @@ keywords:
 
 aliases:
 - /doc/getting-started/quickstart
-- /doc/getting-started/authentication
+
 type: "docs"
 comments: false
 

@@ -10,6 +10,8 @@ keywords:
 - maven
 str_replace_dict:
   "@application-type@": "Java + Maven"
+aliases:
+- /doc/deploy/application/java/java-maven
 type: docs
 ---
 

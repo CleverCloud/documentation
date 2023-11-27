@@ -11,7 +11,8 @@ str_replace_dict:
   "@application-type@": "Python"
 type: docs
 aliases:
-- /doc/deploy/application/python_apps
+- /doc/deploy/application/python/python_apps/
+- /doc/getting-started/by-language/python
 comments: false
 ---
 

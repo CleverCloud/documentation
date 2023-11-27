@@ -9,6 +9,8 @@ tags:
 - java
 str_replace_dict:
   "@application-type@": "Java + JAR"
+aliases:
+- /doc/deploy/application/java/java-jar
 type: docs
 ---
 

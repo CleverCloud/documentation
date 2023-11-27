@@ -12,8 +12,9 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/deploy/application/node
+- /doc/getting-started/by-language/node
 
 draft: true
 ---
 
-Put here cards
+Content top be included in guides

@@ -10,7 +10,8 @@ str_replace_dict:
   "@application-type@": "Docker"
 type: docs
 aliases:
-- /doc/deploy/application/docker
+- /doc/deploy/application/docker/docker
+- /doc/getting-started/by-language/docker/
 ---
 
 ## Overview

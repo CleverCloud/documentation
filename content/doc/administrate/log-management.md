@@ -14,6 +14,8 @@ keywords:
 - drains
 - datadog
 - newrelic
+aliases: 
+- doc/administrate/log-management/#get-continuous-logs-from-your-application
 type: docs
 ---
 

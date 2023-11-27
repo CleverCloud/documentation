@@ -11,7 +11,7 @@ keywords:
 - warp10
 
 aliases:
-- /doc/administrate/metrics
+- /doc/administrate/metrics/overview
 type: "docs"
 comments: false
 ---

@@ -13,6 +13,8 @@ keywords:
 - ssh
 - sshkeys
 - private ssh
+aliases:
+- /doc/getting-started/ssh-keys
 ---
 
 You need to add a SSH key to your Clever Cloud's account to deploy via Git.

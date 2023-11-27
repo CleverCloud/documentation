@@ -8,7 +8,8 @@ keywords:
 - clever-tools
 
 aliases:
-- /doc/quickstartcli.md
+- /doc/quickstartcli
+- /doc/getting-started/cli
 type: "docs"
 comments: false
 ---

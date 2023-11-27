@@ -13,6 +13,8 @@ keywords:
 - files
 - s3cmd
 - aws
+aliases:
+- /doc/deploy/addon/cellar
 type: docs
 ---
 

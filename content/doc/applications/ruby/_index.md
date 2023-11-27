@@ -12,6 +12,7 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
+- /doc/deploy/application/ruby/ruby-rack
 comments: false
 ---
 

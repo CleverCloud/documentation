@@ -11,6 +11,10 @@ keywords:
 - pg
 - pgsql
 - mariadb
+
+aliases: 
+- /doc/deploy/addon/postgresql
+
 type: docs
 ---
 

@@ -13,6 +13,9 @@ keywords:
 - document
 - nosql
 - database
+aliases:
+- /doc/deploy/addon/mongodb/mongodb
+- /doc/deploy/addon/mongodb/managing-mongodb
 type: docs
 ---
 

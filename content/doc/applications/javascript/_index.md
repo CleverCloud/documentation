@@ -11,6 +11,7 @@ str_replace_dict:
   "@application-type@": "Javascript"
 type: docs
 aliases:
+- /doc/deploy/application/javascript/
 - /doc/deploy/application/javascript/by-framework/meteor
 - /doc/deploy/application/javascript/by-framework/nodejs
 comments: false

@@ -9,7 +9,8 @@ str_replace_dict:
   "@application-type@": "PHP"
 type: docs
 aliases:
-- /doc/deploy/application/php/php-apps/
+- /doc/deploy/application/php
+- /doc/deploy/application/php/php-apps
 - /doc/getting-started/by-language/php
 ---
 

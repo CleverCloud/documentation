@@ -11,6 +11,8 @@ keywords:
 - google analytics
 - privacy
 - gdpr
+aliases:
+-/doc/deploy/addon/matomo
 type: docs
 ---
 

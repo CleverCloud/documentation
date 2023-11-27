@@ -10,6 +10,8 @@ keywords:
 - mysql
 - mariadb
 - RDBMS
+aliases:
+- /doc/deploy/addon/mysql
 type: docs
 ---
 

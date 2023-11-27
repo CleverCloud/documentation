@@ -7,6 +7,8 @@ tags:
 keywords:
 - configuration
 - environment variables
+aliases:
+- /doc/deploy/addon/config-provider
 type: docs
 ---
 

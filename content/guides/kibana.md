@@ -10,6 +10,8 @@ keywords:
 - elsaticsearch
 - elastic
 - kibana
+aliases:
+- /doc/deploy/addon/elastic/kibana
 type: docs
 
 ---

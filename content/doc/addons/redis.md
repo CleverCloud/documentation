@@ -11,6 +11,8 @@ keywords:
 - key value
 - key-value
 - in-memory
+aliases:
+- /doc/deploy/addon/redis
 type: docs
 ---
 

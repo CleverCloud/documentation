@@ -11,6 +11,8 @@ keywords:
 - continuous deployment
 - ci/cd
 - runner
+aliases:
+- /doc/deploy/addon/jenkins
 type: docs
 ---
 

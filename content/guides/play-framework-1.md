@@ -10,6 +10,9 @@ keywords:
 - play
 str_replace_dict:
   "@application-type@": "Scala"
+aliases:
+- /doc/applications/java/play-framework-1
+
 type: docs
 ---
 

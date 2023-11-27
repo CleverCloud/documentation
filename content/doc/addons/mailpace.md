@@ -10,6 +10,8 @@ keywords:
 - email
 - smtp
 - php mail function
+aliases:
+- /doc/deploy/addon/mailpace
 type: docs
 ---
 

@@ -12,7 +12,7 @@ keywords:
 - privacy
 - gdpr
 aliases:
--/doc/deploy/addon/matomo
+- /doc/deploy/addon/matomo
 type: docs
 ---
 

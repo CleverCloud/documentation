@@ -7,6 +7,8 @@ tags:
 keywords:
 - python
 - django
+aliases:
+- /doc/deploy/application/python/tutorials/python-django-sample
 type: docs
 ---
 

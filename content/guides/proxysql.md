@@ -13,6 +13,8 @@ keywords:
 - connection
 - limit
 - pool
+aliases:
+- /doc/deploy/addon/mysql/proxysql
 type: docs
 ---
 

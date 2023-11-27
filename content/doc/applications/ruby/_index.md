@@ -11,7 +11,7 @@ str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
 aliases:
-- /doc/deploy/application/ruby
+- /doc/deploy/application/ruby/by-framework/ruby-on-rails
 comments: false
 ---
 

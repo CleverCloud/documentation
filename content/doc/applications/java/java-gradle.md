@@ -10,6 +10,8 @@ keywords:
 - gradle
 str_replace_dict:
   "@application-type@": "Java or Groovy + Gradle" 
+aliases:
+- /doc/deploy/application/java/java-gradle
 type: docs
 ---
 

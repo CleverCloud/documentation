@@ -11,7 +11,7 @@ keywords:
 str_replace_dict:
   "@application-type@": "Java or Scala + Play! 2"
 aliases:
-- /doc/applications/java/play-framework-2
+- /doc/deploy/application/java/by-framework/play-framework-2
 type: docs
 ---
 

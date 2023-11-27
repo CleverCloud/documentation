@@ -11,7 +11,7 @@ keywords:
 - user
 - creation
 aliases:
-- /doc/account/create-account
+- /doc/getting-started/authentication
 ---
 
 {{< readfile file="authentication.md" >}}

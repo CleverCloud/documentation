@@ -7,7 +7,7 @@ type: default
 width: normal
 ---
 
-{{< hextra/hero-badge link="https://github.com/clevercloud/doc.clever-cloud.com">}}
+{{< hextra/hero-badge link="https://github.com/clevercloud/documentation">}}
   <div class="w-2 h-2 rounded-full bg-primary-400"></div>
   <span>Contribute</span>
   {{< icon name="arrow-circle-right" attributes="height=14" >}}

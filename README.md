@@ -5,10 +5,13 @@
 This is a Hugo project with a theme called "Hextra" added a module..</p>
 </div>
 
-## See deployed versions
+## See deployed Documentation
 
-- [Main branch](https://doc-2024.cleverapps.io)
-- [Other branches](https://doc-2024-compare.cleverapps.io)
+- [Developers Hub](https://developers.clever-cloud.com/)
+- [Developers Documentation](https://developers.clever-cloud.com/doc/)
+- [Reference Environnement Variables](https://developers.clever-cloud.com/doc/reference/reference-environment-variables/)
+- [Guides and Tutorials](https://developers.clever-cloud.com/guides/)
+
 
 ## Features
 

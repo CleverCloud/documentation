@@ -26,9 +26,7 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 
 ### Clone this repo
 
-To begin your journey with the Clever Cloud Documentation, you need to clone this repo with this command :
-
-`git clone <git@gitlab.corp.clever-cloud.com>:clever-cloud/clever-documentation-2024.git`
+To begin your journey with the Clever Cloud Documentation, you need to clone this repo.
 
 Check your Go version, it need to be above go `1.21.1`.
 

@@ -117,3 +117,5 @@ You can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

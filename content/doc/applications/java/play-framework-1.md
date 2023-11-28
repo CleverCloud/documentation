@@ -84,3 +84,5 @@ To access environment variables from your code, you need to reference them in yo
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

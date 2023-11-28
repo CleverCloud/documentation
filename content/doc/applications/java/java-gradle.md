@@ -133,3 +133,5 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
 {{< readfile file="deploy-git.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

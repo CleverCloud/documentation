@@ -1,4 +1,9 @@
-# Clever Cloud Documentation
+# Clever Cloud Documentation V.1
+
+🪦 This repository has been archived. **Find V.2 [here](https://github.com/CleverCloud/documentation).**
+
+
+--------------------------------------
 
 In this repo you will find all the content from the [Clever Cloud Doc](https://www.clever-cloud.com/doc/).
 

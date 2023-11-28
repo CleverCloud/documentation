@@ -127,11 +127,25 @@ can commit them in your application's Clever Cloud repository and then add a
 
 The ssh.json file is documented [here](/doc/reference/common-configuration/#private-ssh-key).
 
-## I get a `Unsupported major.minor version` error. How can I fix it?
+## I get a `java.lang.UnsupportedClassVersionError : Unsupported major.minor version` error. How can I fix it?
 
-If you get this error on a Java (or any JVM language) application, it means that your application requires a specific version of Java.
+If you get this error on a Java (or any JVM language) application, it means that your application was compiled with a newer Java version than the one used to run it.
 
-By default, Java 8 is used; but you can change it. Please head [over here](doc/applications/java/java-gradle#available-java-versions) for more information.
+As an example, if a Spring Boot application was compiled with Java `17` and run with Java `11`, the following error will occur :
+
+> java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+
+By default, Java `11` is used, but it can be changed. Please head [over here](doc/applications/java/java-jar/#available-java-versions) for more information.
+
+For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
+
+| Java version | Class file version |
+| ------------ | ------------------ |
+| 7            | 51.0               |
+| 8            | 52.0               |
+| 11           | 55.0               |
+| 17           | 61.0               |
+| 21           | 65.0               |
 
 ## I want SSH access to my server
 

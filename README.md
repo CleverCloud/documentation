@@ -68,8 +68,4 @@ Follox these instructions to contibute to the doc.
 3. Start the theme module: `hugo mod get github.com/imfing/hextra`
 4. Run `hugo server`
 
-Local site is displayed on http://localhost:3000
-
-## Testing and deployment
- 
-[Add here local tests instructions]
+Local site is displayed on http://localhost:1313

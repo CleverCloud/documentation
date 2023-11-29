@@ -38,4 +38,4 @@ jobs:
       - run: clever env set CC_COMPOSER_VERSION "2"
       - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Deploy
-        run: clever deploy -b ${{ env.BRANCH_NAME }}
+        run: clever deploy

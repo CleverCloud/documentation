@@ -1,17 +1,15 @@
-name: Review app on pull request
-
-on:
-  pull_request:
-    branches: main
+---
+deploy:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Set up app
+      run: clever deploy
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-
+  CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+  CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+  ORG_ID: ${{ secrets.ORG_ID }}
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up app
-        run: clever deploy
   set-env:
     runs-on: ubuntu-latest
     steps:
@@ -38,9 +36,13 @@ jobs:
     steps:
       - id: install
         run: npm install -g clever-tools
+      - id: connect
+        run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
       - id: create
         run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - id: link
         run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
-
-
+name: Review app on pull request
+'on':
+  pull_request:
+    branches: main

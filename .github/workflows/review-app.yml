@@ -1,27 +1,12 @@
-## Script might not be operational (WIP)
-
-name: Review app on pull request
-
-on:
-  pull_request:
-    branches: main
-
+---
 env:
- BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-
-env:
- BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 jobs:
-  setup:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: install
-        run: npm install -g clever-tools
-      - id: create
-        run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
-      - id: link
-        run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
+      - name: Set up app
+        run: clever deploy
   set-env:
     runs-on: ubuntu-latest
     steps:
@@ -32,20 +17,27 @@ jobs:
       - name: hugo-env
         run: clever env set HUGO_ENV "production"
       - name: hugo-version
-        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
+        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}
       - name: php
         run: clever env set CC_PHP_VERSION "7"
       - name: hugo-env
-        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
+        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}
       - name: cgi
         run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
       - name: composer
         run: clever env set CC_COMPOSER_VERSION "2"
       - name: domain
         run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
-
-  deploy:
+  setup:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up app
-      run: clever deploy
+      - id: install
+        run: npm install -g clever-tools
+      - id: create
+        run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+      - id: link
+        run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
+name: Review app on pull request
+'on':
+  pull_request:
+    branches: main## Script might not be operational (WIP)

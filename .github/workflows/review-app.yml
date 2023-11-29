@@ -1,10 +1,12 @@
-## Script isn't operational and is WIP: check how to refer to branches
+## Script might not be operational (WIP)
 
 name: Review app on pull request
 
 on:
   pull_request:
     branches: [ "main" ]
+env:
+ BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 
 jobs:
   setup:
@@ -13,10 +15,10 @@ jobs:
       - id: install
         run: npm install -g clever-tools
       - id: create
-        run: clever create --type static-apache {branch} --alias {branch} --region par --org ${{secrets.ORGA_ID}}
+        run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - id: link
-        run: clever link --org  ${{secrets.ORGA_ID}} {branch} --alias {branch} && clever scale --flavor XS
-  env:
+        run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
+  set-env:
     runs-on: ubuntu-latest
     steps:
      - id: prebuild
@@ -25,7 +27,7 @@ jobs:
         run: clever env set CC_WEBROOT "/public"
       - id: hugo-env
         run: clever env set HUGO_ENV "production"
-      - id: hugo-env
+      - id: hugo-version
         run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
       - id: php
         run: clever env set CC_PHP_VERSION "7"
@@ -36,7 +38,7 @@ jobs:
       - id: composer
         run: clever env set CC_COMPOSER_VERSION "2"
       - id: domain
-        run: clever domain add {branch}.cleverapps.io  && 
+        run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
 
   deploy:
     runs-on: ubuntu-latest

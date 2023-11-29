@@ -21,8 +21,6 @@ jobs:
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
       - id: create
         run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
-      - id: link
-        run: clever link ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
   set-env:
     runs-on: ubuntu-latest
     steps:
@@ -47,5 +45,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: link
+        run: clever link ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
       - name: Set up app
         run: clever deploy

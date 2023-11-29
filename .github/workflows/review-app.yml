@@ -1,36 +1,17 @@
----
-deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Set up app
-      run: clever deploy
+name: Review app on pull request
+
+on:
+  pull_request:
+    branches: main
+
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
   CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
   CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-  ORG_ID: ${{ secrets.ORG_ID }}
+  #ORGA_ID: ${{ secrets.ORGA_ID }}
+  HUGO_VERSION: 
+
 jobs:
-  set-env:
-    runs-on: ubuntu-latest
-    steps:
-      - name: prebuild
-        run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
-      - name: index
-        run: clever env set CC_WEBROOT "/public"
-      - name: hugo-env
-        run: clever env set HUGO_ENV "production"
-      - name: hugo-version
-        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}
-      - name: php
-        run: clever env set CC_PHP_VERSION "7"
-      - name: hugo-env
-        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}
-      - name: cgi
-        run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
-      - name: composer
-        run: clever env set CC_COMPOSER_VERSION "2"
-      - name: domain
-        run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
   setup:
     runs-on: ubuntu-latest
     steps:
@@ -41,8 +22,30 @@ jobs:
       - id: create
         run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - id: link
-        run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
-name: Review app on pull request
-'on':
-  pull_request:
-    branches: main
+        run: clever link ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
+  set-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: prebuild
+        run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+      - name: index
+        run: clever env set CC_WEBROOT "/public"
+      - name: hugo-env
+        run: clever env set HUGO_ENV "production"
+      - name: hugo-version
+        run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+      - name: php
+        run: clever env set CC_PHP_VERSION "7"
+      - name: hugo-env
+        run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+      - name: cgi
+        run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+      - name: composer
+        run: clever env set CC_COMPOSER_VERSION "2"
+      - name: domain
+        run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up app
+        run: clever deploy

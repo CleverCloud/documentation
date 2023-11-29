@@ -13,6 +13,10 @@ jobs:
     #    run: npm install -g clever-tools
     #  - id: command
     #    run: clever --version
+      - id: clone
+        run: git clone https://github.com/CleverCloud/documentation.git
+      - id: enter
+        run: cd documentation
       - id: path
         run: pwd
       - id: files

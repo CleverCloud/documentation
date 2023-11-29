@@ -24,23 +24,23 @@ jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
-     - id: prebuild
+     - name: prebuild
        run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
-      - id: index
+      - name: index
         run: clever env set CC_WEBROOT "/public"
-      - id: hugo-env
+      - name: hugo-env
         run: clever env set HUGO_ENV "production"
-      - id: hugo-version
+      - name: hugo-version
         run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
-      - id: php
+      - name: php
         run: clever env set CC_PHP_VERSION "7"
-      - id: hugo-env
+      - name: hugo-env
         run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
-      - id: cgi
+      - name: cgi
         run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
-      - id: composer
+      - name: composer
         run: clever env set CC_COMPOSER_VERSION "2"
-      - id: domain
+      - name: domain
         run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
 
   deploy:

@@ -24,8 +24,8 @@ jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
-     - name: prebuild
-       run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+      - name: prebuild
+        run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
       - name: index
         run: clever env set CC_WEBROOT "/public"
       - name: hugo-env

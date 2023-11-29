@@ -9,7 +9,7 @@ env:
   CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
   CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
   #ORGA_ID: ${{ secrets.ORGA_ID }}
-  HUGO_VERSION: 
+  HUGO_VERSION: ${{ secrets.HUGO_VERSION }} 
 
 jobs:
   deploy:
@@ -42,6 +42,6 @@ jobs:
       - name: composer
         run: clever env set CC_COMPOSER_VERSION "2"
       - name: domain
-        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}-${{env.RANDOM}}.cleverapps.io
+        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}-${{ env.RANDOM }}.cleverapps.io
       - name: Set up app
         run: clever deploy -b ${{ env.BRANCH_NAME }}

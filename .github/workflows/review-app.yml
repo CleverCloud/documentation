@@ -2,12 +2,13 @@
 
 name: Review app on pull request
 
+on:
+  pull_request:
+    branches: main
+
 env:
  BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 
-on:
-  pull_request:
-    branches: ${{ env.BRANCH_NAME }}
 env:
  BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 

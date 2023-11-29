@@ -9,39 +9,33 @@ env:
   CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
   CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
   #ORGA_ID: ${{ secrets.ORGA_ID }}
-  HUGO_VERSION: ${{ secrets.HUGO_VERSION }} 
+  HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  install:
+    runs-on: ubuntu-latest 
     steps:
-      - name: install
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: install clever-tools
         run: npm install -g clever-tools
-      - name: clone
-        run: git clone https://github.com/CleverCloud/documentation.git
-      - name: enter
-        run: cd documentation
-      - name: connect
+      - name: Create app
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - name: create
-        run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
-      - name: prebuild
-        run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
-      - name: index
-        run: clever env set CC_WEBROOT "/public"
-      - name: hugo-env
-        run: clever env set HUGO_ENV "production"
-      - name: hugo-version
-        run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
-      - name: php
-        run: clever env set CC_PHP_VERSION "7"
-      - name: hugo-env
-        run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
-      - name: cgi
-        run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
-      - name: composer
-        run: clever env set CC_COMPOSER_VERSION "2"
-      - name: domain
-        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}-${{ env.RANDOM }}.cleverapps.io
-      - name: Set up app
+      - run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+      - run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+      - run: clever env set CC_WEBROOT "/public"
+      - run: clever env set HUGO_ENV "production"
+      - run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+      - run: clever env set CC_PHP_VERSION "7"
+      - run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+      - run: clever env set CC_COMPOSER_VERSION "2"
+      - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+      - name: Deploy
         run: clever deploy -b ${{ env.BRANCH_NAME }}

@@ -38,8 +38,6 @@ jobs:
       - name: composer
         run: clever env set CC_COMPOSER_VERSION "2"
       - name: domain
-        run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
-      - name: link
-        run: clever link ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
+        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Set up app
         run: clever deploy

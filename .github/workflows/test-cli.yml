@@ -15,8 +15,8 @@ jobs:
     #    run: clever --version
       - id: clone
         run: git clone https://github.com/CleverCloud/documentation.git
-      - id: enter
-        run: cd documentation/documentation
+    #  - id: enter
+    #    run: cd documentation/documentation
       - id: path
         run: pwd
       - id: files

@@ -15,7 +15,7 @@ jobs:
     #    run: clever --version
     
       - id: enter
-        run: cd documentation/documentation
+        run: cd documentation
       - id: path
         run: pwd
       - id: files

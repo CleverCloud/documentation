@@ -12,7 +12,6 @@ This is a Hugo project with a theme called "Hextra" added a module..</p>
 - [Reference Environnement Variables](https://developers.clever-cloud.com/doc/reference/reference-environment-variables/)
 - [Guides and Tutorials](https://developers.clever-cloud.com/guides/)
 
-
 ## Features
 
 - **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.

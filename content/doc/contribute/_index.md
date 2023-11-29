@@ -16,7 +16,7 @@ Would you like to contribute to this documentation?
 
 ## Before writing something new
 
-Before you start writing something new please create a [Github issue](https://github.com/CleverCloud/doc.clever-cloud.com/issues) so we can talk about it. Moslty to make sure someone is not already working on the same thing.
+Before you start writing something new please create a [Github issue](https://github.com/CleverCloud/documentation/issues) so we can talk about it. Moslty to make sure someone is not already working on the same thing.
 
 ## Writing new content
 

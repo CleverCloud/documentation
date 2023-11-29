@@ -1,6 +1,11 @@
----
+name: Review app on pull request
+
+on:
+  pull_request:
+    branches: main
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -37,7 +42,5 @@ jobs:
         run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - id: link
         run: clever link --org  ${{secrets.ORGA_ID}} ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
-name: Review app on pull request
-'on':
-  pull_request:
-    branches: main## Script might not be operational (WIP)
+
+

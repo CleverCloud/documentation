@@ -12,18 +12,15 @@ env:
   HUGO_VERSION: 
 
 jobs:
-  setup:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: install
+      - name: install
         run: npm install -g clever-tools
-      - id: connect
+      - name: connect
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - id: create
+      - name: create
         run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
-  set-env:
-    runs-on: ubuntu-latest
-    steps:
       - name: prebuild
         run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
       - name: index
@@ -42,9 +39,6 @@ jobs:
         run: clever env set CC_COMPOSER_VERSION "2"
       - name: domain
         run: clever domain add ${{ env.BRANCH_NAME }}.cleverapps.io
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: link
         run: clever link ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} && clever scale --flavor XS
       - name: Set up app

@@ -1,0 +1,19 @@
+name: Test CLI
+
+on:
+  push:
+    branches:
+      - ci-cd
+
+jobs:
+  install:
+    runs-on: ubuntu-latest 
+    steps:
+    #  - id: install
+    #    run: npm install -g clever-tools
+    #  - id: command
+    #    run: clever --version
+      - id: path
+        run: pwd
+      - id: files
+        run: ls -a

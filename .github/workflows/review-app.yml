@@ -1,0 +1,45 @@
+## Script isn't operational and is WIP: check how to refer to branches
+
+name: Review app on pull request
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - id: install
+        run: npm install -g clever-tools
+      - id: create
+        run: clever create --type static-apache {branch} --alias {branch} --region par --org ${{secrets.ORGA_ID}}
+      - id: link
+        run: clever link --org  ${{secrets.ORGA_ID}} {branch} --alias {branch} && clever scale --flavor XS
+  env:
+    runs-on: ubuntu-latest
+    steps:
+     - id: prebuild
+       run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+      - id: index
+        run: clever env set CC_WEBROOT "/public"
+      - id: hugo-env
+        run: clever env set HUGO_ENV "production"
+      - id: hugo-env
+        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
+      - id: php
+        run: clever env set CC_PHP_VERSION "7"
+      - id: hugo-env
+        run: clever env set HUGO_VERSION "${{secrets.HUGO_VERSION}}"
+      - id: cgi
+        run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+      - id: composer
+        run: clever env set CC_COMPOSER_VERSION "2"
+      - id: domain
+        run: clever domain add {branch}.cleverapps.io  && 
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up app
+      run: clever deploy

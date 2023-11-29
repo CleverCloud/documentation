@@ -61,9 +61,9 @@ Follox these instructions to contibute to the doc.
 
 ### Run locally
 
-1. Clone this repo
+1. Clone this repo: `git clone git@github.com:CleverCloud/documentation.git`
 2. Go to the repo root `cd documentation`
-3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, might be needed to update the theme if you encounter errors in step 4)
+3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4,to update the theme)
 4. Run `hugo server`
 
 Local site is displayed on http://localhost:1313

@@ -62,5 +62,5 @@ comments: false
 {{< cards >}}
  {{< card link="/guides/kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}
  {{< card link="/guides/pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
- {{< card link="/guides/mysql/pgpool" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
+ {{< card link="/guides/pgpool" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
 {{< /cards >}}

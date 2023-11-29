@@ -27,7 +27,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: git fetch --unshallow
+      #- run: git fetch --unshallow
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Create app

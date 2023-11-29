@@ -18,7 +18,9 @@ jobs:
       - name: install
         run: npm install -g clever-tools
       - name: clone
-        run: git clone https://github.com/CleverCloud/documentation.git && cd documentation
+        run: git clone https://github.com/CleverCloud/documentation.git
+      - name: enter
+        run: cd documentation
       - name: connect
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
       - name: create

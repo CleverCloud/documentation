@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: install
         run: npm install -g clever-tools
+      - name: clone
+        run: git clone https://github.com/CleverCloud/documentation.git && cd documentation
       - name: connect
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
       - name: create
@@ -38,6 +40,6 @@ jobs:
       - name: composer
         run: clever env set CC_COMPOSER_VERSION "2"
       - name: domain
-        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+        run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}-${{env.RANDOM}}.cleverapps.io
       - name: Set up app
-        run: clever deploy
+        run: clever deploy -b ${{ env.BRANCH_NAME }}

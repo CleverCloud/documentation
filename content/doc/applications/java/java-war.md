@@ -48,9 +48,9 @@ The supported containers are listed below:
       <tr>
          <td>Apache Tomcat 4.1 (TOMCAT4)</td>
          <td>Jetty 6.1 (JETTY6)</td>
-         <td>Jboss 6.1 (JBOSS6)</td>
+         <td>Jboss 6.1<br>(JBOSS6)</td>
          <td>Glassfish 3.1 (GLASSFISH3)</td>
-         <td>Payara 4.1 (PAYARA4)</td>
+         <td>Payara 4.1<br>(PAYARA4)</td>
          <td>Resin 3.1 (RESIN3)</td>
          <td>WildFly 9.0.2 (WILDFLY9)</td>
       </tr>
@@ -59,7 +59,7 @@ The supported containers are listed below:
          <td>Jetty 7.6 (JETTY7)</td>
          <td>Jboss AS 7.1 (JBOSS7)</td>
          <td>Glassfish 4.1 (GLASSFISH4)</td>
-         <td></td>
+         <td>Payara 5.2022 (PAYARA5)</td>
          <td></td>
          <td>WildFly 17.0.1 (WILDFLY17)</td>
       </tr>
@@ -68,7 +68,7 @@ The supported containers are listed below:
          <td>Jetty 8.1 (JETTY8)</td>
          <td></td>
          <td></td>
-         <td></td>
+         <td>Payara 6.2023 (PAYARA6)</td>
          <td></td>
          <td>WildFly 23.0.2 (WILDFLY23)</td>
       </tr>
@@ -349,6 +349,8 @@ Here's the list of the configuration values for the "container" field in `war.js
       </tr>
    </tbody>
 </table>
+
+{{< readfile file="url_healthcheck.md" >}}
 
 ## Custom run command
 

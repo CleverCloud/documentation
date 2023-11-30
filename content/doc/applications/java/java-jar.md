@@ -160,3 +160,5 @@ For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
 {{< readfile file="more-config.md" >}}
 
+{{< readfile file="url_healthcheck.md" >}}
+

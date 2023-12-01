@@ -51,8 +51,6 @@ The following scheme depicts a Scaler replication in case of a load increase:
 
 {{< image "/images/doc/scaling_horizontal_scheme.jpg" "You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40." >}}
 
-You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 20.
-
 {{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of scaler will increase and the sclaer size will vary between XS and S" >}}
 
 ## Vertical scaling

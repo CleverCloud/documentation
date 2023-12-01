@@ -277,7 +277,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`WSGI_POST_BUFFERING` | Maximal size (in bytes) for the headers of a request.  | 4096 |
 |`WSGI_THREADS` | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |
 |`WSGI_WORKERS` | Number of workers. (Defaut: automatically setup with the scaler size) |  |
-  
+
+When your Python application doesn't use one of the supported backends, with `CC_RUN_COMMAND` for example, it must listen on port `9000`, not `8080`.
+
 ## Ruby
 
 [Ruby Documentation](/guides/ruby-rack-app-tutorial)

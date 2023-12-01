@@ -50,7 +50,6 @@ h1, .content h1,
   border-radius: 0rem;
 }
 
-
 /* -----------------------------------------
             Customize shortcodes
 -------------------------------------------*/
@@ -138,6 +137,11 @@ selectors in css can't be grained to target Markdown syntax
   color: rgb(90, 66, 212);
 }
 
+html[class~="dark"] .content p a:not(.code),
+html[class~="dark"] .content li a:not(.code) {
+  color: rgb(0, 172, 230);
+}
+
 /* Allow linking in a variable environment without
 changing the style and adding an a arrow at the end of the text */
 .content a:not(.code) { 
@@ -161,8 +165,6 @@ changing the style and adding an a arrow at the end of the text */
   font-size: 1rem;
 }
 
-
-
 /*--------------------------------------------------------
                           Table Styling
 ----------------------------------------------------------*/ 
@@ -180,7 +182,6 @@ changing the style and adding an a arrow at the end of the text */
 html[class~="dark"] .content table:not(.code-block table) th {
   color: rgb(193, 193, 196);
 }
-
 
 /* Remove internal borders */
 .content table:not(.code-block table) td {

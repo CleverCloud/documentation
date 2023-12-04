@@ -60,3 +60,10 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  delete:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - run: npm install -g clever-tools
+      - run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
+      - run: echo "${{ env.BRANCH_NAME }}" | clever delete --alias ${{ env.BRANCH_NAME }}

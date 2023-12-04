@@ -14,7 +14,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: PR review apps
+    environment:
+      name: PR review apps
+      url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code

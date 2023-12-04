@@ -14,8 +14,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: 
-      name: PR review apps
+    environment: PR review apps
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code

@@ -61,7 +61,7 @@ Provide the following to your registrar:
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 185.42.117.108`<br>`@ 10800 IN A 185.42.117.109`<br>`@ 10800 IN A 46.252.181.103`<br>`@ 10800 IN A 46.252.181.104` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 185.42.117.108`<br>`@ 10800 IN A 185.42.117.109`<br>`@ 10800 IN A 46.252.181.103`<br>`@ 10800 IN A 46.252.181.104`<br>`@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`  |
 
 
 ### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
@@ -85,7 +85,7 @@ Provide the following to your registrar:
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49` |
 
-### Your Application Runs in the Europe/Warsaw ('WSW') Zone
+### Your Application Runs in the EuropPlease note that cleverapps.io domains are provided for testing purposes and must not be used in production.e/Warsaw ('WSW') Zone
 
 | Record Type | Value |
 | ----------- | ----- |

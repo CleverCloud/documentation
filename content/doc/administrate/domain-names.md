@@ -196,4 +196,4 @@ example.com/api    ->     my-static-site/index.php
 
 ## Gandi CNAME configuration
 
-Here is [an article that demonstrates a simple setup for Gandi CNAMEs](https://blog.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud).
+Here is [an article that demonstrates a simple setup for Gandi CNAMEs](https://www.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud/).

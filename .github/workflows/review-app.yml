@@ -1,7 +1,9 @@
 name: Review app on pull request
 
 on:
+
   pull_request_target:
+    types: [opened, synchronize, reopened, closed]
     branches: [ main ]
 
 env:
@@ -12,8 +14,10 @@ env:
   HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
 
 jobs:
+  # Deploy when a PR is openened
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
     environment:
       name: PR review apps
       url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
@@ -35,7 +39,7 @@ jobs:
         run: npm install -g clever-tools
       - name: Create app
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+      - run: clever create --type static-apache doc-${{ env.BRANCH_NAME }} --alias doc-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
       - run: clever env set CC_WEBROOT "/public"
       - run: clever env set HUGO_ENV "production"
@@ -46,24 +50,78 @@ jobs:
       - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Deploy
         run: clever deploy
-      - name: Comment PR
-        uses: actions/github-script@v5
+      - run: ls -a
+      - name: Upload clever.json
+        uses: actions/upload-artifact@v2
         with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const message = `Deployment has finished. Your app is available at https://clever-doc-preprod-${process.env.BRANCH_NAME}.cleverapps.io`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: message
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: clever-config
+          path: ${{ github.workspace }}/clever.json
+
+  # Delete app on new push or when PR is closed
   delete:
     runs-on: ubuntu-latest
-    if: github.event.action == 'closed'
+    if: ${{ github.event_name == 'pull_request' && (github.event.action == 'synchronize'|| github.event.action == 'closed' || github.event.action == 'reopened') }}
     steps:
+      - name: Install jq
+        run: sudo apt-get install jq
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Download clever.json
+        uses: actions/download-artifact@v2
+        with:
+          name: clever-config
+          path: ${{ github.workspace }}/clever.json
+      - name: Get app_id from clever.json
+        id: get_app_id
+        run: |
+          APP_ID=$(jq -r '.app_id' path/to/download/location/clever.json)
+          echo "APP_ID=$APP_ID" >> $GITHUB_ENV
+      - name: Use APP_ID
+        run: echo "The app_id is $APP_ID"
       - run: npm install -g clever-tools
       - run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - run: echo "${{ env.BRANCH_NAME }}" | clever delete --alias ${{ env.BRANCH_NAME }}
+      - name: Delete existing app
+        run: clever link $APP_ID
+      - run: echo "${{ env.BRANCH_NAME }}" | clever delete --alias doc-${{ env.BRANCH_NAME }}
+  deploy_on_sync:
+    needs: delete
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'synchronize' }}
+    environment:
+      name: PR review apps
+      url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+    steps:
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          #path: ${{ env.BRANCH_NAME }}
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      #- run: git fetch --unshallow
+      - name: install clever-tools
+        run: npm install -g clever-tools
+      - name: Create app
+        run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
+      - run: clever create --type static-apache doc-${{ env.BRANCH_NAME }} --alias doc-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+      - run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+      - run: clever env set CC_WEBROOT "/public"
+      - run: clever env set HUGO_ENV "production"
+      - run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+      - run: clever env set CC_PHP_VERSION "7"
+      - run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+      - run: clever env set CC_COMPOSER_VERSION "2"
+      - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+      - name: Deploy
+        run: clever deploy
+      - run: ls -a
+      - name: Upload clever.json
+        uses: actions/upload-artifact@v2
+        with:
+          name: clever-config
+          path: ${{ github.workspace }}/clever.json

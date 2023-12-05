@@ -95,7 +95,6 @@ jobs:
           echo "access_key = ${{ secrets.CELLAR_ADDON_KEY_ID }}" >> ~/.s3cfg
           echo "secret_key = ${{ secrets.CELLAR_ADDON_KEY_SECRET }}" >> ~/.s3cfg
           echo "host_base" = ${{ secrets.CELLAR_ADDON_HOST }}
-          echo "bucket_location = US" >> ~/.s3cfg
           echo "use_https = True" >> ~/.s3cfg
       - name: Upload app_id to S3
         run: s3cmd put app_id_${{ env.BRANCH_NAME }}.txt s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt
@@ -111,7 +110,6 @@ jobs:
           echo "access_key = ${{ secrets.CELLAR_ADDON_KEY_ID }}" >> ~/.s3cfg
           echo "secret_key = ${{ secrets.CELLAR_ADDON_KEY_SECRET }}" >> ~/.s3cfg
           echo "host_base" = ${{ secrets.CELLAR_ADDON_HOST }}
-          echo "bucket_location = US" >> ~/.s3cfg
           echo "use_https = True" >> ~/.s3cfg
       - name: Download app_id from Cellar
         run: s3cmd get s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt

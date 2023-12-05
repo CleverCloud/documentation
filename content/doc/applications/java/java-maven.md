@@ -148,3 +148,5 @@ CC_RUN_COMMAND="java -jar somefile.jar <options>"
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

@@ -111,7 +111,6 @@ jobs:
         run: npm install -g clever-tools
       - name: Delete app
         run: |
-          APP_ID=${{ steps.get_app_id.outputs.app_id }}
           clever link $APP_ID
           clever delete --alias doc-${{ env.BRANCH_NAME }} --yes
       

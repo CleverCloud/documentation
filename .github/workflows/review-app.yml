@@ -112,6 +112,6 @@ jobs:
       - name: Delete app
         run: |
           clever link $APP_ID
-          clever delete --alias doc-${{ env.BRANCH_NAME }} --yes
+          clever delete --alias ${{ env.BRANCH_NAME }} --yes
       
     

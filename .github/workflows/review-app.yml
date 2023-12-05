@@ -2,7 +2,9 @@ name: Review app on pull request
 
 on:
   pull_request_target:
+    types: [opened, closed]
     branches: [ main ]
+
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
@@ -13,7 +15,11 @@ env:
 
 jobs:
   deploy:
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     environment:
       name: PR review apps
       url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
@@ -33,17 +39,18 @@ jobs:
       #- run: git fetch --unshallow
       - name: install clever-tools
         run: npm install -g clever-tools
-      - name: Create app
-        run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
-      - run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
-      - run: clever env set CC_WEBROOT "/public"
-      - run: clever env set HUGO_ENV "production"
-      - run: clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
-      - run: clever env set CC_PHP_VERSION "7"
-      - run: clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
-      - run: clever env set CC_COMPOSER_VERSION "2"
-      - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+      - name: Create app and configure app
+        run: | 
+          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
+          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+          clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+          clever env set CC_WEBROOT "/public"
+          clever env set HUGO_ENV "production"
+          clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+          clever env set CC_PHP_VERSION "7"
+          clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+          clever env set CC_COMPOSER_VERSION "2"
+          clever domain add clever-doc-review-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Deploy
         run: clever deploy
       - name: Comment PR
@@ -51,7 +58,7 @@ jobs:
         with:
           script: |
             const issue_number = context.payload.pull_request.number;
-            const message = `Deployment has finished. Your app is available [here](https://clever-doc-preprod-${process.env.BRANCH_NAME}.cleverapps.io)`;
+            const message = `Deployment has finished 👁️👄👁️ Your app is available [here](https://clever-doc-preprod-${process.env.BRANCH_NAME}.cleverapps.io)`;
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -60,3 +67,55 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract app_id
+        id: extract_app_id
+        run: |
+          APP_ID=$(jq -r '.apps[0].app_id' .clever.json)
+          echo "::set-output name=app_id::$APP_ID"
+          echo "$APP_ID" > app_id_${{ env.BRANCH_NAME }}.txt
+      - name: Install and configure s3cmd
+        run: |
+          sudo apt-get install s3cmd
+      - name: Upload app_id to S3
+        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" put app_id_${{ env.BRANCH_NAME }}.txt s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
+     
+  delete:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
+    steps:
+      - name: install clever-tools
+        run: npm install -g clever-tools
+      - name: Install and configure s3cmd
+        run: |
+          sudo apt-get install s3cmd
+      - name: Download app_id from Cellar
+        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" get s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
+      - name: Get APP_ID
+        id: get_app_id
+        run: |
+          echo "APP_ID=$(<app_id_${{ env.BRANCH_NAME }}.txt)" >> $GITHUB_ENV
+      - name: Delete app
+        run: |
+          clever link $APP_ID
+          clever delete --alias doc-review-${{ env.BRANCH_NAME }} --yes
+      - name: Delete S3 file
+        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" del s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
+      - name: Comment PR
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const message = `Your review app has been deleted 👋`;
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: message
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+    

@@ -43,6 +43,9 @@ In case of large traffic, we detect a high load on your application and spawn **
 This will automatically set up another identical application with same size. Both will run in parallel with load
 balancing. If the traffic grows even more, we will repeat the process until the maximum instances count you defined.
 
+{{< callout type="info" >}}
+The maximum number of Scalers you can set for an application is 40.
+{{< /callout >}}
 
 This process is exactly the opposite when the **load decreases**. A Scaler is removed and so on till a **minimum
 reasonable level** is reached.
@@ -51,11 +54,15 @@ The following scheme depicts a Scaler replication in case of a load increase:
 
 {{< image "/images/doc/scaling_horizontal_scheme.jpg" "You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40." >}}
 
-{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of scaler will increase and the sclaer size will vary between XS and S" >}}
+{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of Scalers will increase and the sclaer size will vary between XS and S" >}}
 
 ## Vertical scaling
 
 In case of large traffic, we detect a high load on your application and set up **a new larger Scaler**.
+
+{{< callout type="info" >}}
+The maximum Scaler size is 3XL: 16 vCPUs and 32 GiB of memory.
+{{< /callout >}}
 
 In case of low traffic, we detect a low load and set up **a new smaller Scaler**.
 
@@ -66,17 +73,17 @@ The following scheme depicts a larger Scaler replacement in case of a load incre
 
 {{< image "/images/doc/scaling_vertical_scheme.jpg" "vertical scaling" >}}
 
-You can choose the type of Scalers you consider by defining a maximum instance size manually or just let Clever Cloud choose for you by defining nothing:
+You can choose the size of Scalers you want by defining a maximum instance size manually:
 
-{{< image "/images/doc/select-scalab.png" "Vertical scaling: the scaler size will from S to XL." >}}
+{{< image "/images/doc/select-scalab.png" "Vertical scaling: the Scaler size will go from S to XL." >}}
 
 ## Combination of both scalings
 
 When both scalings are set up, **vertical scaling** is privileged over **horizontal scaling**. In the case you set the
-vertical scaling from S to L, and the horizontal scaling from 2 scalers to 4 scalers, Clever Cloud will firstly increase
-the size of the 2 scalers already launched.
+vertical scaling from S to L, and the horizontal scaling from 2 Scalers to 4 Scalers, Clever Cloud will firstly increase
+the size of the 2 Scalers already launched.
 
-If the 2 initials scalers are at their maximum size, Clever Cloud will launch new scalers with the maximum size of scalers.
+If the 2 initials Scalers are at their maximum size, Clever Cloud will launch new Scalers with the maximum Scalers size.
 This is how it'll be done:
 
 2-S => 2-M => 2-L => 3-L => 4-L.

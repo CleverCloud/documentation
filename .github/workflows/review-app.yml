@@ -106,11 +106,10 @@ jobs:
       - name: Get APP_ID
         id: get_app_id
         run: |
-          APP_ID=$(cat app_id_${{ env.BRANCH_NAME }}.txt)
-          echo "::set-output name=app_id::$APP_ID"
+          echo "APP_ID=$(<app_id_${{ env.BRANCH_NAME }}.txt)" >> $GITHUB_ENV
       - name: install clever-tools
         run: npm install -g clever-tools
-      - name: Link app
+      - name: Delete app
         run: |
           APP_ID=${{ steps.get_app_id.outputs.app_id }}
           clever link $APP_ID

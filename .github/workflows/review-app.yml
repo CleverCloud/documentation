@@ -15,6 +15,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: always() && github.event_name == 'pull_request_target' && github.event.action == 'opened'
     permissions:
       issues: write
       pull-requests: write
@@ -73,7 +74,7 @@ jobs:
       
   delete:
     runs-on: ubuntu-latest
-    if: always() && github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
       - name: install clever-tools
         run: npm install -g clever-tools

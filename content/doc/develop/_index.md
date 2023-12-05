@@ -10,4 +10,5 @@ comments: false
   {{< card link="/doc/reference/reference-environment-variables" title="Environment variables references" icon="creds" >}}
   {{< card link="/doc/develop/env-variables" title="How environment variables work" icon="question-mark-circle" >}}
   {{< card link="/doc/develop/workers" title="Workers" icon="arrow-path" >}}
+  {{< card link="/doc/develop/healthcheck" title="Deployment healthcheck path" icon="check" >}}
 {{< /cards >}}

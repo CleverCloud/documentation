@@ -42,7 +42,7 @@ jobs:
       - name: Create app and configure app
         run: | 
           clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
           clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
           clever env set CC_WEBROOT "/public"
           clever env set HUGO_ENV "production"
@@ -97,7 +97,7 @@ jobs:
       - name: Delete app
         run: |
           clever link $APP_ID
-          clever delete --alias ${{ env.BRANCH_NAME }} --yes
+          clever delete --alias doc-review-${{ env.BRANCH_NAME }} --yes
       - name: Delete S3 file
         run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" del s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
       - name: Comment PR

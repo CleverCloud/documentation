@@ -134,3 +134,5 @@ db.default.minConnectionsPerPartition=5
 ```
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

@@ -41,6 +41,7 @@ So you can alter the build&start process for your application.
 |`APP_FOLDER` | Folder in which the application is located (inside the git repository) |  |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_DISABLE_METRICS` | Disable metrics collection. | false |
+|[`CC_HEALTH_CHECK_PATH`](/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
 |`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](/doc/applications/javascript/nodejs/#select-node-version "Select node version") instead | |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
@@ -64,6 +65,7 @@ So you can alter the build&start process for your application.
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 |`CC_TASK` | If set as true, the deployer runs `CC_RUN_COMMAND` and close the instance after havind run the task. Trigger an execution using `git push` or starting your instance  | false |
 |[`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
+
 
 #### Deployment hooks
 

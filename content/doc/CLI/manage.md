@@ -63,6 +63,11 @@ clever env set <variable-name> <variable-value>
 # Remove an environment variable
 clever env rm <variable-name>
 ```
+If your environment variable contains a `-`, then write: `clever env set test -- ---foo---`
+
+Or you can put the dashes before the remaining arguments, as follows: `clever -- env set test ---bar---`
+
+The `--` indicates that there are no options to be parsed.
 
 ### Load environment variables
 

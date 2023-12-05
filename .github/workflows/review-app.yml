@@ -2,6 +2,7 @@ name: Review app on pull request
 
 on:
   pull_request_target:
+    types: [opened, closed]
     branches: [ main ]
 
 env:

@@ -15,7 +15,6 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: always() && github.event_name == 'pull_request_target' && github.event.action == 'opened'
     permissions:
       issues: write
       pull-requests: write
@@ -70,16 +69,30 @@ jobs:
         run: |
           APP_ID=$(jq -r '.apps[0].id' .clever.json)
           echo "::set-output name=app_id::$APP_ID"
-        shell: bash
+          echo "$APP_ID" > app_id.txt
+      - name: Upload app_id
+        uses: actions/upload-artifact@v2
+        with:
+          name: app_id
+          path: app_id.txt
       
   delete:
     runs-on: ubuntu-latest
     if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
+      - name: Download app_id
+        uses: actions/download-artifact@v2
+        with:
+          name: app_id
+      - name: Get APP_ID
+        id: get_app_id
+        run: |
+          APP_ID=$(cat app_id.txt)
+          echo "::set-output name=app_id::$APP_ID"
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Link app
         run: |
-          APP_ID=${{ needs.deploy.outputs.app_id }}
+          APP_ID=${{ steps.get_app_id.outputs.app_id }}
           clever link $APP_ID
           clever delete --alias doc-${{ env.BRANCH_NAME }} --yes

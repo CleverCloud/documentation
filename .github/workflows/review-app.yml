@@ -85,7 +85,7 @@ jobs:
       - name: Extract app_id
         id: extract_app_id
         run: |
-          APP_ID=$(jq -r '.apps[0].id' .clever.json)
+          APP_ID=$(jq -r '.apps[0].app_id' .clever.json)
           echo "::set-output name=app_id::$APP_ID"
           echo "$APP_ID" > app_id_${{ env.BRANCH_NAME }}.txt
       - name: Install and configure s3cmd
@@ -98,6 +98,8 @@ jobs:
     runs-on: ubuntu-latest
     if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
+      - name: install clever-tools
+        run: npm install -g clever-tools
       - name: Install and configure s3cmd
         run: |
           sudo apt-get install s3cmd
@@ -107,8 +109,6 @@ jobs:
         id: get_app_id
         run: |
           echo "APP_ID=$(<app_id_${{ env.BRANCH_NAME }}.txt)" >> $GITHUB_ENV
-      - name: install clever-tools
-        run: npm install -g clever-tools
       - name: Delete app
         run: |
           clever link $APP_ID

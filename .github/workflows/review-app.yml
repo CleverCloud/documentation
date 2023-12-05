@@ -73,7 +73,7 @@ jobs:
   delete:
     needs: deploy
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
       - name: install clever-tools
         run: npm install -g clever-tools

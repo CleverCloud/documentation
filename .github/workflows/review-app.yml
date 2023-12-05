@@ -32,6 +32,7 @@ env:
 
 jobs:
   deploy:
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
     permissions:
       issues: write

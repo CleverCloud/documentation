@@ -5,6 +5,24 @@ on:
     types: [opened, closed]
     branches: [ main ]
 
+  workflow_call:
+    inputs:
+      branch_name:
+        required: true
+        type: string
+    outputs:
+      app_id:
+        description: "Review app_id"
+        value: ${{ jobs.deploy.outputs.app_id }}
+    secrets:
+      CLEVER_SECRET:
+        required: true
+      CLEVER_TOKEN:
+        required: true
+      HUGO_VERSION:
+        required: true
+
+
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
   CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
@@ -69,25 +87,38 @@ jobs:
         run: |
           APP_ID=$(jq -r '.apps[0].id' .clever.json)
           echo "::set-output name=app_id::$APP_ID"
-          echo "$APP_ID" > app_id.txt
-      - name: Upload app_id
-        uses: actions/upload-artifact@v2
-        with:
-          name: app_id
-          path: app_id.txt
-      
+          echo "$APP_ID" > app_id_${{ env.BRANCH_NAME }}.txt
+      - name: Install and configure s3cmd
+        run: |
+          sudo apt-get install s3cmd
+          echo "[default]" > ~/.s3cfg
+          echo "access_key = ${{ secrets.CELLAR_ADDON_KEY_ID }}" >> ~/.s3cfg
+          echo "secret_key = ${{ secrets.CELLAR_ADDON_KEY_SECRET }}" >> ~/.s3cfg
+          echo "host_base" = ${{ secrets.CELLAR_ADDON_HOST }}
+          echo "bucket_location = US" >> ~/.s3cfg
+          echo "use_https = True" >> ~/.s3cfg
+      - name: Upload app_id to S3
+        run: s3cmd put app_id_${{ env.BRANCH_NAME }}.txt s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt
+     
   delete:
     runs-on: ubuntu-latest
     if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
-      - name: Download app_id
-        uses: actions/download-artifact@v2
-        with:
-          name: app_id
+      - name: Install and configure s3cmd
+        run: |
+          sudo apt-get install s3cmd
+          echo "[default]" > ~/.s3cfg
+          echo "access_key = ${{ secrets.CELLAR_ADDON_KEY_ID }}" >> ~/.s3cfg
+          echo "secret_key = ${{ secrets.CELLAR_ADDON_KEY_SECRET }}" >> ~/.s3cfg
+          echo "host_base" = ${{ secrets.CELLAR_ADDON_HOST }}
+          echo "bucket_location = US" >> ~/.s3cfg
+          echo "use_https = True" >> ~/.s3cfg
+      - name: Download app_id from Cellar
+        run: s3cmd get s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt
       - name: Get APP_ID
         id: get_app_id
         run: |
-          APP_ID=$(cat app_id.txt)
+          APP_ID=$(cat app_id_${{ env.BRANCH_NAME }}.txt)
           echo "::set-output name=app_id::$APP_ID"
       - name: install clever-tools
         run: npm install -g clever-tools
@@ -96,3 +127,5 @@ jobs:
           APP_ID=${{ steps.get_app_id.outputs.app_id }}
           clever link $APP_ID
           clever delete --alias doc-${{ env.BRANCH_NAME }} --yes
+      
+    

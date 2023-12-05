@@ -98,7 +98,7 @@ menu:
         type: search
     - name: GitHub
       weight: 6
-      url: "https://github.com/cnivolle/doc.clever-cloud.com"
+      url: "https://github.com/CleverCloud/documentation"
       params:
         icon: github
     - name: Website

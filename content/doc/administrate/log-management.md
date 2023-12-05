@@ -112,7 +112,7 @@ If you need to change the ouput you can specify the `--format` flag with one of 
     }
   ```
 
-## Exporting logs to an external tools
+## Exporting logs to an external tool
 
 You can use the logs drains to send your application's logs to an external server with the following command.
 

@@ -101,13 +101,8 @@ jobs:
       - name: Install and configure s3cmd
         run: |
           sudo apt-get install s3cmd
-          echo "[default]" > ~/.s3cfg
-          echo "access_key = ${{ secrets.CELLAR_ADDON_KEY_ID }}" >> ~/.s3cfg
-          echo "secret_key = ${{ secrets.CELLAR_ADDON_KEY_SECRET }}" >> ~/.s3cfg
-          echo "host_base" = ${{ secrets.CELLAR_ADDON_HOST }}
-          echo "use_https = True" >> ~/.s3cfg
       - name: Download app_id from Cellar
-        run: s3cmd get s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt
+        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" get s3://github-actions/app_id_${{ env.BRANCH_NAME }}.txt
       - name: Get APP_ID
         id: get_app_id
         run: |

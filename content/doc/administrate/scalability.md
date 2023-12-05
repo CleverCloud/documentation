@@ -52,9 +52,9 @@ reasonable level** is reached.
 
 The following scheme depicts a Scaler replication in case of a load increase:
 
-{{< image "/images/doc/scaling_horizontal_scheme.jpg" "You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40." >}}
+{{< image "/images/doc/scaling_horizontal_scheme.jpg" "Horizontal scaling: you can define the min and max numbers of Scalers you need." >}}
 
-{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of Scalers will increase and the sclaer size will vary between XS and S" >}}
+{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of Scalers will evolve between 1 and 15." >}}
 
 ## Vertical scaling
 

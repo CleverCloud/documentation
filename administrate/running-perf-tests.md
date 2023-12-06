@@ -1,4 +1,0 @@
----
-title: Running Performance Tests
-
----

@@ -1,4 +1,0 @@
----
-title: Deploy NextJS applications
-
----

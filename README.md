@@ -140,6 +140,7 @@ str_replace_dict:
 Notes:
 - the function used to find and replace uses [regex](https://regex-golang.appspot.com/assets/html/index.html), please make sure not to use reserved characters. If you have to use some, think about it twice and if you still need them, escape them properly.
 - the function will only replace the first occurence it founds, if you have to replace two times the same key, have it appear twice in the front matter `str_replace_dict` also.
+
 e.g:
 ```
 partial/mypartial.md
@@ -159,7 +160,6 @@ str_replace_dict:
 ```
 
 Output: `Text PostgreSQL holding two codes PostgreSQL.`
-
 
 ## Licence
 

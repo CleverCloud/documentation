@@ -4,15 +4,15 @@ title: Python
 
 shortdesc: Python 2.7 and 3.11 are available on our platform. You can use Git to deploy your application.
 tags:
-- deploy
+  - deploy
 keywords:
-- python
+  - python
 str_replace_dict:
   "@application-type@": "Python"
 type: docs
 aliases:
-- /doc/deploy/application/python/python_apps/
-- /doc/getting-started/by-language/python
+  - /doc/deploy/application/python/python_apps/
+  - /doc/getting-started/by-language/python
 comments: false
 ---
 

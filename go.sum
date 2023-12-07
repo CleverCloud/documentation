@@ -1,3 +1,5 @@
+github.com/CleverCloud/doc.clever-cloud.com v0.0.0-20231206214952-45055411ca67 h1:yXnDU9IPlIM8OFHTiL/EiJL63klQ7cOEVaV66rWROp4=
+github.com/CleverCloud/doc.clever-cloud.com v0.0.0-20231206214952-45055411ca67/go.mod h1:XHOGQihaGsrVSXqaGdTtEtE0y0YD+U3FW1dbZc/UV1A=
 github.com/imfing/hextra v0.3.0 h1:+JMYIhQ1HwXO4HoJDeSf57oyIecaoY+6O/p0l0p9T18=
 github.com/imfing/hextra v0.3.0/go.mod h1:cEfel3lU/bSx7lTE/+uuR4GJaphyOyiwNR3PTqFTXpI=
 github.com/imfing/hextra v0.4.0 h1:IwPL9eRAn2ukdhgaJHe5fPm1L/U0c5i5JkyPkyOZ9Qk=
@@ -12,3 +14,5 @@ github.com/imfing/hextra v0.6.1 h1:l2PGNO3OgfYGrLcA74ngwVqxj00wg4tBwUHtemSPggw=
 github.com/imfing/hextra v0.6.1/go.mod h1:cEfel3lU/bSx7lTE/+uuR4GJaphyOyiwNR3PTqFTXpI=
 github.com/imfing/hextra v0.6.5 h1:1hRZsZp6J/dum0VEUH4gHP9Zi5sPMtyAaRuxMt1HuiM=
 github.com/imfing/hextra v0.6.5/go.mod h1:cEfel3lU/bSx7lTE/+uuR4GJaphyOyiwNR3PTqFTXpI=
+github.com/imfing/hextra v0.7.0 h1:4kK/R5Uks+LvZII4P4/bOGoTHxmM2MSRYLlRjhFCJDo=
+github.com/imfing/hextra v0.7.0/go.mod h1:cEfel3lU/bSx7lTE/+uuR4GJaphyOyiwNR3PTqFTXpI=

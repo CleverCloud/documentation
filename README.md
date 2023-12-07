@@ -101,6 +101,7 @@ require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
+
 We use highlightjs to perform language detection and syntax highlighting. You can find out which keywords are valid [here](https://highlightjs.org/static/demo/).
 
 

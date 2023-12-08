@@ -155,49 +155,66 @@ s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
 
 ### Java
 
-Make sure to use at least version `1.11.232`. Older versions don't support
-Server Name Indication, so if you have SSL certificates errors, check that
-you're not using an old version.
+Import the AWS SDK S3 library.
+With maven, it can be done with the following dependency :
+
+```xml
+<dependency>
+  <groupId>software.amazon.awssdk</groupId>
+  <artifactId>s3</artifactId>
+  <version>2.21.35</version>
+</dependency>
+```
+
+Make sur to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
+
+Below is a sample Java class, written in Java 21, listing the objects of all buckets : 
 
 ```java
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.HttpMethod;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.Bucket;
-import java.net.URL;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.Bucket;
+import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
+
+import java.net.URI;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] argv) {      
-        EndpointConfiguration endpointConfiguration = new EndpointConfiguration("<host>", null);
-        AWSStaticCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(
-            new BasicAWSCredentials("<key>", "<secret>")
-        );
-        
-        AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
-            .withCredentials(credentialsProvider)
-            .withClientConfiguration(opts)
-            .withEndpointConfiguration(endpointConfiguration)
-            .withPathStyleAccessEnabled(Boolean.TRUE)
-            .build();
+public class CleverCloudCellarDemoApplication {
 
-        List<Bucket> buckets = s3Client.listBuckets();
+    // replace those values with your own keys, load them from properties or env vars
+    private static final String CELLAR_HOST = "";
+    private static final String CELLAR_KEY_ID = "";
+    private static final String CELLAR_KEY_SECRET = "";
 
-        // handle results
+    public static void main(String[] args) {
+        // initialize credentials with Cellar Key ID and Secret
+        // you can also use `EnvironmentVariableCredentialsProvider` by setting AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env vars
+        var credentialsProvider = StaticCredentialsProvider.create(AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET));
 
-        /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
-        * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
-        * you'll need to use 'HttpMethod.PUT' instead.
-        * see doc : https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html#generatePresignedUrl-java.lang.String-java.lang.String-java.util.Date-com.amazonaws.HttpMethod-
-        */
-        URL presignedUrl = s3Client.generatePresignedUrl("<YourBucket>", "<YourFileKey>", <expiration date>, HttpMethod.GET);
+        // create a client builder
+        var s3ClientBuilder = S3Client.builder()
+                // override the S3 endpoint with the cellar Host (starting with 'https://'
+                .endpointOverride(URI.create(CELLAR_HOST))
+                .credentialsProvider(credentialsProvider);
+
+        // initialize the s3 client
+        try (S3Client s3 = s3ClientBuilder.build()) {
+            // list buckets
+            List<Bucket> buckets = s3.listBuckets().buckets();
+            buckets.forEach(bucket -> {
+                // list bucket objects
+                var listObjectsRequest = ListObjectsRequest.builder().bucket(bucket.name()).build();
+                var objects = s3.listObjects(listObjectsRequest).contents();
+                // handle results
+            });
+
+        }
     }
 }
 ```
+
+See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
 
 ### Python
 

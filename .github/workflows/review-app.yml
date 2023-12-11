@@ -3,7 +3,9 @@ name: Review app on pull request
 on:
   pull_request_target:
     types: [opened, closed]
+    types: [opened, closed]
     branches: [ main ]
+
 
 
 env:
@@ -16,7 +18,11 @@ env:
 jobs:
   deploy:
     if: github.event.action == 'opened'
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     permissions:
       issues: write
       pull-requests: write
@@ -39,6 +45,18 @@ jobs:
       #- run: git fetch --unshallow
       - name: install clever-tools
         run: npm install -g clever-tools
+      - name: Create app and configure app
+        run: | 
+          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
+          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+          clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
+          clever env set CC_WEBROOT "/public"
+          clever env set HUGO_ENV "production"
+          clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+          clever env set CC_PHP_VERSION "7"
+          clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
+          clever env set CC_COMPOSER_VERSION "2"
+          clever domain add clever-doc-review-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Create app and configure app
         run: | 
           clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
@@ -96,5 +114,7 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+    
       
     

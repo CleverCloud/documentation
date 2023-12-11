@@ -67,17 +67,6 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Extract app_id
-        id: extract_app_id
-        run: |
-          APP_ID=$(jq -r '.apps[0].app_id' .clever.json)
-          echo "::set-output name=app_id::$APP_ID"
-          echo "$APP_ID" > app_id_${{ env.BRANCH_NAME }}.txt
-      - name: Install and configure s3cmd
-        run: |
-          sudo apt-get install s3cmd
-      - name: Upload app_id to S3
-        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" put app_id_${{ env.BRANCH_NAME }}.txt s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
      
   delete:
     runs-on: ubuntu-latest

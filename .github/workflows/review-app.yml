@@ -10,7 +10,7 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
   CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
   CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-  #ORGA_ID: ${{ secrets.ORGA_ID }}
+  ORGA_ID: ${{ secrets.ORGA_ID }}
   HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
 
 jobs:
@@ -88,21 +88,11 @@ jobs:
     steps:
       - name: install clever-tools
         run: npm install -g clever-tools
-      - name: Install and configure s3cmd
-        run: |
-          sudo apt-get install s3cmd
-      - name: Download app_id from Cellar
-        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" get s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
-      - name: Get APP_ID
-        id: get_app_id
-        run: |
-          echo "APP_ID=$(<app_id_${{ env.BRANCH_NAME }}.txt)" >> $GITHUB_ENV
       - name: Delete app
         run: |
-          clever link $APP_ID
+          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
+          clever link -o ${{ env.ORGA_ID }} doc-review-${{ env.BRANCH_NAME }}
           clever delete --alias doc-review-${{ env.BRANCH_NAME }} --yes
-      - name: Delete S3 file
-        run: s3cmd --host ${{ secrets.CELLAR_ADDON_HOST }} --access_key ${{ secrets.CELLAR_ADDON_KEY_ID }} --secret_key ${{ secrets.CELLAR_ADDON_KEY_SECRET }} --host-bucket "%(bucket)s.${{ secrets.CELLAR_ADDON_HOST }}" del s3://${{ secrets.CELLAR_BUCKET }}/app_id_${{ env.BRANCH_NAME }}.txt
       - name: Comment PR
         uses: actions/github-script@v5
         with:

@@ -6,11 +6,11 @@ image:
 # Deploy
 #-------------------------------
 workflow:
+  before_script:
+    - 'which git || (apt-get update -y && apt-get install -y git)'
+    - git fetch --unshallow
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
-before_script:
-  - git fetch --unshallow
   
 deploy to production:
   stage: deploy

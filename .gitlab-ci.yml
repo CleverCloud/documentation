@@ -10,9 +10,6 @@ workflow:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   
 deploy to production:
-  before_script:
-    - 'which git || (apt-get update -y && apt-get install -y git)'
-    - git fetch --unshallow
   stage: deploy
   script: clever link ${APP_ID}; clever deploy
   environment: production

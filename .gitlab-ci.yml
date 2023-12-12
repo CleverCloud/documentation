@@ -8,6 +8,9 @@ image:
 workflow:
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+before_script:
+  - git fetch --unshallow
   
 deploy to production:
   stage: deploy

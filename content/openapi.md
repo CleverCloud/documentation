@@ -7,5 +7,6 @@ disableReadmoreNav = true
 disableComments =true
 type = "openapi"
 Description = "Complete reference documentation for the Clever Cloud API. Includes methods and examples to automate deployments and orchestration."
+alias = ['/doc/openapi']
 +++
 

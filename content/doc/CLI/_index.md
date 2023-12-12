@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/quickstartcli
 - /doc/getting-started/cli
+- /doc/reference/clever-tools/getting_started
 type: "docs"
 comments: false
 ---

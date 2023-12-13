@@ -20,6 +20,7 @@ keywords:
 - list
 aliases:
 - /doc/administrate/clever-tools/lifecycle
+- /doc/clever-tools/lifecycle/
 ---
 ## Status of your application
 

@@ -75,6 +75,23 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar-
   If you are still using an old account (`cellar.services.clever-cloud.com`), please make sure your client is configured to use the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
 {{< /callout >}}
 
+#### SSL error with s3cmd
+
+If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
+
+```log
+[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
+```
+
+The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
+
+For example with a bucket named `blog.mycompany.com`:
+
+Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
+
+It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
+
+
 #### Static hosting
 
 You can use a bucket to host your static website, this [blog article](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describe well how it can be done.
@@ -372,22 +389,3 @@ If you need to rollback, you can either set the old configuration or completely 
 ```bash
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
-
-## Troubleshooting
-
-### SSL error with s3cmd
-
-If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
-
-```log
-[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
-```
-
-The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
-
-For example with a bucket named `blog.mycompany.com`:
-
-Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
-
-It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
-

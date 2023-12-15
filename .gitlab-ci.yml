@@ -1,3 +1,6 @@
+variables:
+  GIT_DEPTH: "0"
+
 image:
   name: clevercloud/clever-tools:latest
   entrypoint: [""]

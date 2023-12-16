@@ -71,6 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      contents: read
       pull-requests: write
     steps:
       - name: Check out repository code
@@ -81,7 +82,6 @@ jobs:
         run: npm install -g clever-tools
       - name: Link and update app
         run: | 
-          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
           clever link -o ${{ env.ORGA_ID }} doc-review-${{ env.BRANCH_NAME }}
           clever deploy
       - name: Comment PR

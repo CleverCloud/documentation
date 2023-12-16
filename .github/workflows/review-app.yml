@@ -20,6 +20,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+      contents: read
     environment:
       name: PR review apps
       url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io

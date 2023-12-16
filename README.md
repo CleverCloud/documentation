@@ -66,5 +66,3 @@ Follox these instructions to contibute to the doc.
 4. Run `hugo server`
 
 Local site is displayed on http://localhost:1313
-
-Note 7

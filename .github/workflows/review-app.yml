@@ -2,7 +2,7 @@ name: Review app on pull request
 
 on:
   pull_request_target:
-    types: [opened, closed]
+    types: [opened, closed, synchronize]
     branches: [ main ]
 
 
@@ -20,6 +20,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+      contents: read
     environment:
       name: PR review apps
       url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
@@ -28,15 +29,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
-          #path: ${{ env.BRANCH_NAME }}
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      #- run: git fetch --unshallow
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Create app and configure app
@@ -67,7 +67,41 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     
+  
+  update:
+    if: github.event.action == 'synchronize'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0  
+      - name: install clever-tools
+        run: npm install -g clever-tools
+      - name: Link and update app
+        run: | 
+          clever link -o ${{ env.ORGA_ID }} doc-review-${{ env.BRANCH_NAME }}
+          clever deploy
+      - name: Comment PR
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const message = `🚀 Your app has been updated and is available [here](https://clever-doc-review-${process.env.BRANCH_NAME}.cleverapps.io)`;
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: message
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   delete:
     runs-on: ubuntu-latest
     permissions:

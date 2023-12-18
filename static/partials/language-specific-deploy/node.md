@@ -26,7 +26,7 @@ The `package.json` file should look like the following:
     "start" : "node myapp.js"
   },
   "engines" : {
-    "node" : "^10"
+    "node" : "^20"
   }
 }
 ```
@@ -71,9 +71,9 @@ If you need some modules you can easily add some with the *dependencies* field i
   "name" : { ... },
   "engines": { ... },
   "dependencies": {
-    "express": "3.x",
-    "socket.io": "0.9.x",
-    "underscore": "1.4.3"
+    "express": "4.x",
+    "socket.io": "4.7.x",
+    "underscore": "1.13.6"
   }
 }
 ```

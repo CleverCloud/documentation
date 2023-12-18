@@ -183,7 +183,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_EXTRA_JAVA_ARGS` | Define extra arguments to pass to 'java' for jars. |  |  |
 |`CC_JAR_ARGS` | Define arguments to pass to the jar we launch. |  |  |
 |`CC_JAR_PATH` | Define the path to your jar. |  |  |
-|`CC_JAVA_VERSION` | Choose the JVM version between 7 to 17 for OpenJDK or graalvm-ce for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | 11 |  |
+|`CC_JAVA_VERSION` | Choose the JVM version between 7 to 17 for OpenJDK or graalvm-ce for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | 21 |  |
 |`CC_MAVEN_PROFILES` | Define which maven profile to use during default build. |  |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. Replaces the default behaviour. |  |  |
 |`CC_SBT_TARGET_BIN` | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
@@ -231,7 +231,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
 |[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
 |[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
-|`CC_PHP_VERSION` | Choose your PHP version between 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2 | 7 |
+|`CC_PHP_VERSION` | Choose your PHP version between 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2 | 8 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |

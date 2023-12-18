@@ -47,9 +47,6 @@ jobs:
           clever env set CC_WEBROOT "/public"
           clever env set HUGO_ENV "production"
           clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
-          clever env set CC_PHP_VERSION "7"
-          clever env set CC_CGI_IMPLEMENTATION "proxy_fcgi"
-          clever env set CC_COMPOSER_VERSION "2"
           clever domain add clever-doc-review-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Deploy
         run: clever deploy

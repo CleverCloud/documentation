@@ -3,6 +3,7 @@ name: Review app on pull request
 on:
   pull_request_target:
     types: [opened, closed, synchronize]
+    types: [opened, closed, synchronize]
     branches: [ main ]
 
 

@@ -9,6 +9,7 @@ keywords:
 
 aliases:
 - /doc/getting-started/quickstart
+- /doc/deploy
 
 type: "docs"
 comments: false

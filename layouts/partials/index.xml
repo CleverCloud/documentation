@@ -1271,7 +1271,7 @@ contain any build task.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;8.1&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;8.2&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;All new PHP applications are created with a default &lt;code&gt;CC_PHP_VERSION&lt;/code&gt;, set to 7, which means latest php 7 version available.&lt;/p&gt;
+&lt;p&gt;All new PHP applications are created with a default &lt;code&gt;CC_PHP_VERSION&lt;/code&gt;, set to 8, which means latest php 8 version available.&lt;/p&gt;
 &lt;p&gt;You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits &lt;code&gt;X.Y&lt;/code&gt; not &lt;code&gt;X.Y.Z&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The configuration file for your PHP application must be &lt;code&gt;/clevercloud/php.json&lt;/code&gt;, that is a &lt;em&gt;php.json&lt;/em&gt; file in a &lt;code&gt;/clevercloud&lt;/code&gt; folder at the root of your application.&lt;/p&gt;
 &lt;h3&gt;Change the webroot&lt;span class=&#34;absolute -mt-20&#34; id=&#34;change-the-webroot&#34;&gt;&lt;/span&gt;

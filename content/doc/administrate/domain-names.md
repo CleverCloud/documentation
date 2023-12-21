@@ -93,7 +93,7 @@ Provide the following to your registrar:
 
 | Record Type | Value |
 | ----------- | ----- |
-| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com. |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 188.165.58.196<br>@ 10800 IN A 188.165.58.200 |
 
 ### Your Application Runs in the North-America/Montreal ('MTL') Zone
@@ -102,14 +102,14 @@ Provide the following to your registrar:
 
 | Record Type | Value |
 | ----------- | ----- |
-| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com. |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 149.56.147.232<br>@ 10800 IN A 149.56.126.234 |
 
 ### Your Application Runs in the Asia/Singapore ('SGP') Zone
 
 | Record Type | Value |
 | ----------- | ----- |
-| CNAME<br>Recommended | {yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com. |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 51.79.197.159<br>@ 10800 IN A 51.79.197.160 |
 
 ### Your Application Runs in the Oceania/Sydney ('SYD') Zone
@@ -124,7 +124,7 @@ Provide the following to your registrar:
 
 | Record Type         | Value                                                        |
 |---------------------|--------------------------------------------------------------|
-| CNAME               | {yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com. |
+| CNAME               | `{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | Two records: <br>@ 10800 IN A 158.101.226.110<br>@ 10800 IN A 150.230.50.217 |
 
 {{< callout type="warning" >}}

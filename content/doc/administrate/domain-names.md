@@ -125,7 +125,7 @@ Provide the following to your registrar:
 | Record Type         | Value                                                        |
 |---------------------|--------------------------------------------------------------|
 | CNAME               | `{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | Two records: <br>@ 10800 IN A 158.101.226.110<br>@ 10800 IN A 150.230.50.217 |
+| A<br>Only if CNAME is not available | Two records: <br> `@ 10800 IN A 158.101.226.110` <br> `@ 10800 IN A 150.230.50.217` |
 
 {{< callout type="warning" >}}
 You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.

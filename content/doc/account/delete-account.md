@@ -2,7 +2,7 @@
 type: docs
 weight: 7
 title: Delete an account
-shortdesc: How to delete your account
+description: Need to delete your Clever Cloud account? Our guide walks you through the process, ensuring a smooth and secure account termination on our PaaS service.
 tags:
 - account
 keywords:

@@ -2,7 +2,7 @@
 type: docs
 weight: 3
 title: Manage an Organization
-shortdesc: Information, members, billing, notifications...
+description: Learn how to effectively administrate organizations on your Clever Cloud account. This guide provides step-by-step instructions for managing members, payments, invoices, and settings in our PaaS environment.
 tags:
 - account
 keywords:

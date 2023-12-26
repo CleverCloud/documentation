@@ -10,6 +10,8 @@ keywords:
 - https
 - encrypt
 - cloudflare
+- rsa
+- ECDSA
 tags:
 - administrate
 type: docs
@@ -22,55 +24,68 @@ There is two ways to get HTTPS for your apps:
 - **Let's Encrypt**: Provided by default by Clever Cloud. Free. Nothing to configure.
 - **Your own certificates**: If you already have a certificate, you can upload it securely.
 
-## Using the provided Let's Encrypt certificate
+## Getting Certificates with *Let's Encrypt*
 
 We automatically generate certificates when you add a domain name to your app.
 It's all you have to do, our internal certificate generator will create a TLS certificate for a domain or a sub-domain.
 
 We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one (we can resell one to you, in which case we will deal with the csr generation ourselves, contact the support to know more).
 
-### Cloudflare
+### Cloudflare configuration
 
 If you use Cloudflare to manage your domain, the certificate generation could fail depending on your **SSL/TLS** settings, you will encounter 502 HTTP errors if Cloudflare expects **SSL/TLS** strict mode and automatically redirects to HTTPS.
 
 To prevent this from happening you can create a page rule to bypass this policy as Let's Encrypt needs to access the route `/.well-known/acme-challenge*` via HTTP to generate the certificate:
 
-1. Define a page rule such as this one:
+{{% steps %}}
 
-    {{< image "/images/doc/cloudflare-page-rule-ssl.png" "Create a bypass page rule" >}}
+#### Define a page rule
 
-    We also recommend to disable the cache level.
+ {{< image "/images/doc/cloudflare-page-rule-ssl.png" "Create a bypass page rule" "max-width:700px" >}}
 
-2. Turn off HTTP to HTTPS redirection on Cloudflare:
+ We also recommend to disable the cache level.
 
-    {{< image "/images/doc/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" >}}
+#### Turn off HTTP to HTTPS redirection on Cloudflare
 
-    You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
+ {{< image "/images/doc/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" "max-width:700px">}}
 
-💡 **If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running:
+ You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
-```
+
+{{< callout emoji="💡" >}}
+**If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below: 
+{{< /callout >}}
+
+```Bash
 $ curl http://<your-domain>/.well-known/acme-challenge/test
 test
 ```
 It should return a HTTP 200 OK with the string "test" as the body. If it does not, check your Cloudflare configuration.
 
+{{% /steps %}}
 
 ## Uploading my own certificates
 
-You can upload certificates yourself: `https://api.clever-cloud.com/v2/certificates/new`
+You can upload certificates yourself: [https://api.clever-cloud.com/v2/certificates/new ↗](https://api.clever-cloud.com/v2/certificates/new)
+
+### Prerequisites
 
 You need to paste a PEM bundle containing (in this order):
 
  - the private key
  - the certificate itself
- - intermediate certificates
+ - intermediate certificates (optionnal)
 
-You should create a `file.pem`containing:
+{{< callout type="warning" >}}
+  Only certificates with RSA 2048 and RSA 4096 keys are supported.  
+  **ECDSA certificates are not currently handled**.
+{{< /callout >}}
 
-```
+You should create a `file.pem` containing:
+
+```text {filename="file.pem"}
 -----BEGIN RSA PRIVATE KEY-----
- <the private key>
+<the private key>
 -----END RSA PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 <the certificate>
@@ -83,25 +98,42 @@ You can add optionnal intermediate certificates by appending them to the file as
 -----END CERTIFICATE-----
 ```
 
-You should note that .pem files use the unix way of terminating lines with a single line feed character. Make sure your text editor does the same.
+You should note that `.pem`` files use the unix way of terminating lines with a single line feed character. Make sure your text editor does the same.
 
-## Transmitting your files manually (not recommended)
+### Certificate Submission Checklist
 
-If you need manual operations on the certificates, the most secure way to transfer your certificates is using a signed and encrypted email.
-Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
+You `.pem` file must be correctly formatted to successfully upload your certificate. This checklist might help you troubleshoot uncesuccessful certificate submission.
 
-{{< callout type="warning" >}}
+| Certificate Specifications |
+|------------------------|
+| ✅   The private key is included |
+| ✅   Keys lenght are RSA and either 2048 or 4096 |
+| ✅   ECDSA is not used to create your certificate |
+| ✅   The line feed (LF) characters at the end |
+| ✅   The certificate chain include your certificate together with all the intermediary CA certificates that signed it, in that order |
+
+## Sending Certificates Manually <span class="bg-red-100 border-red-200 not-prose inline-flex items-center px-2 py-1 text-xs text-red-900 dark:border-red-200/30 dark:bg-red-900/30 dark:text-red-200 border transition-all ease-in duration-200">(not recommended)</span>
+
+In the event that you request the installation of a certificate by the support team, this operation will be charged on a one-off basis for each request. Please contact us for installation rates.
+
+{{< callout type="error" >}}
 Don't send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
 {{< /callout >}}
 
-### Clever Cloud on Keybase
+### Sharing Certificates via Keybase
+
+Another way to transmit your certificates is Keybase.  
+Keybase is an encrypted social networking service providing a key directory that maps social media identities to encryption keys (including, but not limited to PGP keys) in a publicly auditable manner. Additionally it offers an end-to-end encrypted chat, you can use to share sensitive informations, such as SSL/TLS certificates.
 
 If your are a Keybase.io user, you can find us at [keybase.io/clevercloud](https://keybase.io/clevercloud).
 
-### Clever Cloud's Public Key (for GPG users)
+### Sharing Certificates via GPG
 
-* fingerprint:  `03943517934C1FA5ED4E2F61218B86BD5278460F`
-* 64-bit: `218B86BD5278460F`
+Email can be a secure way to transfer your certificates **when using a signed and encrypted email with GPG**.
+Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
+
+* fingerprint:  `03943517934C1FA5ED4E2F61218B86BD5278470F`
+* 64-bit: `218B86BD5278470F`
 
 ```bash
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -136,7 +168,7 @@ KX7GBYRhPwWB0sjSHhRttLkCDQRWuGyTARAAp2fLCM77rmEREyt4Rn2Psd+RU6Ad
 d62w+86ZcI+av3ncAKAihZsuZeZiI4NldCFoaJUu2Ixt/Bk4ppY+Uo0MkdL3Rq/6
 pEt4WGjOm+KMY38mSYGgzkdyOrncZ8+XY8UFvza/MAu4ukuduh+uozXRvCiaeiEx
 4OhPR4TksZ6RrP++f/ZywTf19Qn3/7ickW4TU7F/khGMg+xtTkgFA+pdes2JrfgF
-G7zvLIsQqfB7rNTNPHaQhazdQDWX9ylzg+Az/uoF3nMcEgLdawm2X60cyzo0ogt1
+G7zvLIsQqfB7rNTNPHaQhazdQDWX9ylzg+Az/uoF3nMcEgLdawm2X70cyzo0ogt1
 F1f+juMvJJ+W7ao7Dfve0qoSQtEOmmR8sc4vVBzdPAFCOh8QYqm1z4JGbDcmWfG4
 ypGbBXBiGLyeJRm3o4iRBkAl7jkSNJeDnO4ajrTmZYSpO/NecbWAiybIxpoqQ3Yy
 36XyTJJp6sie/6BWEF+tJUC4w4jQiuGeE+As9VwkGnsH0+m9gOwiO/TUocrxOHal

@@ -40,8 +40,8 @@ jobs:
         run: |
           git remote add ${{ github.event.pull_request.user.login }} git@github.com:${{ github.event.pull_request.head.repo.full_name }}.git
           git fetch ${{ github.event.pull_request.user.login }}
-          git checkout -b ${{ github.event.pull_request.head.ref }}
-          git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}
+          git checkout -b ${{ github.event.pull_request.head.ref }}-PR-${{ github.event.pull_request.number }}
+          git pull ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.ref }}-PR-${{ github.event.pull_request.number }} --no-rebase
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
@@ -98,8 +98,8 @@ jobs:
         run: |
           git remote add ${{ github.event.pull_request.user.login }} git@github.com:/${{ github.event.pull_request.head.repo.full_name }}.git
           git fetch ${{ github.event.pull_request.user.login }}
-          git checkout ${{ github.event.pull_request.head.ref }}
-          git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}
+          git checkout ${{ github.event.pull_request.head.ref }}-PR-${{ github.event.pull_request.number }}
+          git pull ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.ref }} --no-rebase
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Link and update app

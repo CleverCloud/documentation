@@ -4,6 +4,8 @@ title: Warp 10
 shortdesc: Warp 10. Geo Time series database. Presentations, concepts and examples
 tags:
   - metrics
+aliases:
+- /doc/administrate/metrics/warp10/
 keywords:
   - GTS
   - warp 10
@@ -70,7 +72,7 @@ Builtin function :
 The Clever Cloud Warp 10 endpoint is:
 
 ```
-https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
+https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
 ```
 
 You can find documentation about endpoint gateway [here](https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction).
@@ -80,7 +82,7 @@ You can find documentation about endpoint gateway [here](https://www.warp10.io/c
 You can query our Warp 10 platform with your own script. Here's a curl example :
 
 ```bash
-  curl -T <Path/to/a/warpscript_file> https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
+  curl -T <Path/to/a/warpscript_file> https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
 ```
 
 > Do not forget the endpoint. `exec` in the previous exemple.

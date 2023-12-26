@@ -23,8 +23,15 @@ jobs:
       contents: read
     environment:
       name: PR review apps
-      url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
+      #url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
     steps:
+      - name: Add forked repository as remote and pull changes
+        if: github.event.pull_request.head.repo.fork
+        run: |
+          git remote add ${{ github.event.pull_request.user.login }} https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          git fetch ${{ github.event.pull_request.user.login }}
+          git checkout -b ${{ github.event.pull_request.head.ref }}
+          git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -73,6 +80,13 @@ jobs:
       contents: read
       pull-requests: write
     steps:
+      - name: Add forked repository as remote and pull changes
+        if: github.event.pull_request.head.repo.fork
+        run: |
+          git remote add ${{ github.event.pull_request.user.login }} https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          git fetch ${{ github.event.pull_request.user.login }}
+          git checkout ${{ github.event.pull_request.head.ref }}
+          git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}
       - name: Check out repository code
         uses: actions/checkout@v4
         with:

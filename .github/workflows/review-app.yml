@@ -31,6 +31,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+      - name: Configure Git
+        run: |
+          git config user.email "julia.navarro@clever-cloud.com"
+          git config user.name "Julia"    
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.8.0
         with:
@@ -89,6 +93,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+      - name: Configure Git
+        run: |
+          git config user.email "julia.navarro@clever-cloud.com"
+          git config user.name "Julia"
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.8.0
         with:

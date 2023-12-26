@@ -69,6 +69,6 @@ Local site is displayed on http://localhost:1313
 
 ### Submitting Pull Requests
 
-Create a branch and start working on the changes you want to submit, then **push your branch to origin**. If you fork this repositroy and submit a pull request from it, **the review app will fail**, because your fork won't have access to the repository secrets needed to deploy (more information [here](https://github.com/CleverCloud/clever-cloud-review-app#secrets-youll-need))
+Create a branch and start working on the changes you want to submit, then **push your branch to origin**. If you fork this repositroy and submit a pull request from it, **the review app script running at the base of this repository will fail**, because your branch won't exist. (more information [here](https://github.com/CleverCloud/clever-cloud-review-app#secrets-youll-need)).
 
 If you've already forked it, consider adding this repository as a remote with `git add cc-github git@github.com:CleverCloud/documentation.git` and pushing your branch to deploy your review app and accelerate the review process.

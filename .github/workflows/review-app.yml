@@ -28,7 +28,7 @@ jobs:
       - name: Add forked repository as remote and pull changes
         if: github.event.pull_request.head.repo.fork
         run: |
-          git remote add ${{ github.event.pull_request.user.login }} https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          git remote add ${{ github.event.pull_request.user.login }} git@github.com:${{ github.event.pull_request.head.repo.full_name }}.git
           git fetch ${{ github.event.pull_request.user.login }}
           git checkout -b ${{ github.event.pull_request.head.ref }}
           git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}
@@ -83,7 +83,7 @@ jobs:
       - name: Add forked repository as remote and pull changes
         if: github.event.pull_request.head.repo.fork
         run: |
-          git remote add ${{ github.event.pull_request.user.login }} https://github.com/${{ github.event.pull_request.head.repo.full_name }}.git
+          git remote add ${{ github.event.pull_request.user.login }} git@github.com:/${{ github.event.pull_request.head.repo.full_name }}.git
           git fetch ${{ github.event.pull_request.user.login }}
           git checkout ${{ github.event.pull_request.head.ref }}
           git pull ${{ github.event.pull_request.user.login }} --no-rebase ${{ github.event.pull_request.head.ref }}

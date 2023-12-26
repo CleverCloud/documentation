@@ -2,7 +2,7 @@ name: Review app on pull request
 
 on:
   pull_request_target:
-    types: [opened, closed, synchronize]
+    types: [opened, closed, synchronize, reopened]
     branches: [ main ]
 
 
@@ -15,7 +15,7 @@ env:
 
 jobs:
   deploy:
-    if: github.event.action == 'opened'
+    if: github.event.action == 'opened' || github.event.action == 'reopened'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -149,3 +149,4 @@ jobs:
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  

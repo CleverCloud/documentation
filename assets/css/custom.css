@@ -199,7 +199,7 @@ html[class~="dark"] .content table:not(.code-block table) th {
 
 /* Text in cells */
 .content table:not(.code-block table) tr {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: left;
   border-width: 0px;
   color: rgba(58, 56, 113, 1);

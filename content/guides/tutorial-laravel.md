@@ -62,7 +62,7 @@ For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=np
 
 {{< readfile file="link-addon.md" >}}
 
-## Configure your database
+### Configure your database
 
 Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, edit `config/database.php` to set the correct environment variable names (`MYSQL_ADDON_xxx` instead of `DB_xxx` for a mysql database).
 
@@ -95,13 +95,13 @@ For instance for MySQL:
 
 If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_POST_BUILD_HOOK=php artisan migrate --force`
 
-## Configure storage
+### Configure storage
 
 Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
 
 Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
 
-### Optional: configure task scheduling
+### Optional: Configure task scheduling
 
 If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron to run the scheduling process:
 
@@ -129,6 +129,21 @@ Note: the PHP CLI process will use a `memory_limit` configuration value that dep
 If one of your scheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process will silently crash.
 To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
 See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
+
+### Optional: Configure trusted proxy
+
+To ensure Laravel correctly handles HTTP requests when using the Clever Cloud HTTP reverse proxy (Sōzu), add the following code to the `config/trustedproxy.php` file:
+
+```php
+<?php
+
+return [
+    'proxies' => '*',
+];
+
+```
+
+This configuration specifies that all proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxy.
 
 {{< readfile file="deploy-git.md" >}}
 

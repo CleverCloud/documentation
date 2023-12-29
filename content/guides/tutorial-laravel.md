@@ -138,7 +138,7 @@ To ensure Laravel correctly handles HTTP requests when using the Clever Cloud HT
 <?php
 
 return [
-    'proxies' => env('CC_REVERSE_PROXY_IPS', ''),
+    'proxies' => env('CC_REVERSE_PROXY_IPS'),
 ];
 
 ```

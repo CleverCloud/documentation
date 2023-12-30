@@ -36,6 +36,9 @@ comments: false
   
 {{< /cards >}}
 
+## Static Site Generator (SSG)
+{{< readfile file="guides/cards-static.md" >}}
+
 ## Starter Tutorials
 
 <br>

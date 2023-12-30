@@ -6,4 +6,5 @@
  {{< card link="/guides/static/hexo" title="Hexo" subtitle= "Build and deploy a static Hexo based website on Clever Cloud" icon="hexo" >}}
  {{< card link="/guides/static/hugo" title="Hugo" subtitle= "Build and deploy a static Hugo based website on Clever Cloud" icon="hugo" >}}
   {{< card link="/guides/static/lume-deno" title="Lume (Deno)" subtitle= "Build and deploy a static Lume (Deno) based websiteon Clever Cloud" icon="deno" >}}
+  {{< card link="/guides/static/mkdocs" title="MkDocs" subtitle= "Build and deploy a static MkDocs based websiteon Clever Cloud" icon="docs" >}}
 {{< /cards >}}

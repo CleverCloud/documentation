@@ -1,12 +1,14 @@
-+++
-weight = 1
-chapter = false
-toc = false
-title = "Clever Cloud API Reference"
-disableReadmoreNav = true
-disableComments =true
-type = "openapi"
-Description = "Complete reference documentation for the Clever Cloud API. Includes methods and examples to automate deployments and orchestration."
-alias = ['/doc/openapi']
-+++
-
+---
+title: "APIv2 Reference"
+Description: "Reference documentation for the Clever Cloud API. Includes methods and examples to automate deployments and orchestration."
+type: "openapi"
+keywords: 
+- openapi
+- api
+- reference
+- endpoint
+aliases:
+- "/doc/openapi"
+width: full 
+disableComments: true
+---

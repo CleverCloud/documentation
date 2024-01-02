@@ -22,6 +22,7 @@ Laravel applications almost work out of the box on Clever Cloud, you just have a
 {{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Laravel application
+
 ### Configure `DocumentRoot`
 
 Add a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_WEBROOT` and set `/public` as its value.
@@ -62,7 +63,7 @@ For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=np
 
 {{< readfile file="link-addon.md" >}}
 
-### Configure your database
+### Connect a database
 
 Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, edit `config/database.php` to set the correct environment variable names (`MYSQL_ADDON_xxx` instead of `DB_xxx` for a mysql database).
 
@@ -143,7 +144,7 @@ return [
 
 ```
 
-This configuration specifies that all proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxy.
+This environment variable exists in any Clever Cloud instance. This configuration specifies that Clever Cloud proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxy.
 
 {{< readfile file="deploy-git.md" >}}
 

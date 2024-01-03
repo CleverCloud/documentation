@@ -2,7 +2,7 @@
 type: docs
 title: Notifications
 weight: 5
-shortdesc: How to setup and configure notifications via the dashboard
+description: Learn how to customize notifications for account and deployment activity on Clever Cloud, service updates, and more on our PaaS service.
 tags:
 - admin-console
 keywords:

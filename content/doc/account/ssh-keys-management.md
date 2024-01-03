@@ -2,7 +2,7 @@
 type: docs
 title: SSH Keys
 weight: 6
-shortdesc: Add and manage SSH keys for push and deployments
+description: Secure your PaaS deployments with SSH key management on Clever Cloud. Learn how to generate, add, and manage SSH keys for secure access to your services.
 tags:
 - account-setup
 keywords:

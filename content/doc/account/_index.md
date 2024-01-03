@@ -1,6 +1,7 @@
 ---
 weight: 11
-title: "User Account"
+title: User Account
+description: Learn how to manage your account on Clever Cloud. Discover detailed instructions for account creation, organization administration, and more in our PaaS platform.
 comments: false
 ---
 

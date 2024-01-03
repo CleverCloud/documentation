@@ -1,7 +1,6 @@
 ---
-title: Deploy a Docusaurus based static website on Clever Cloud
+title: Docusaurus
 description: Build your website with the Docusaurus Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
-weight: 2
 tags:
 - guides
 keywords:

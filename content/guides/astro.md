@@ -1,7 +1,6 @@
 ---
-title: Deploy an Astro based static website on Clever Cloud
+title: Astro
 description: Build your website with the Astro Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
-weight: 1
 tags:
 - guides
 keywords:

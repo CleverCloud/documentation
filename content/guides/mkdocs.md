@@ -1,5 +1,5 @@
 ---
-title: Deploy a MkDocs based static website on Clever Cloud
+title: MkDocs
 description: Build your website with the MkDocs Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
 - guides

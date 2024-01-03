@@ -1,5 +1,5 @@
 ---
-title: Deploy a Hexo based static website on Clever Cloud
+title: Hexo
 description: Build your website with the Hexo Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
 - guides

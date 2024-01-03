@@ -1,7 +1,6 @@
 ---
-title: Deploy an Eleventy (11ty) based static website on Clever Cloud
+title: Eleventy (11ty)
 description: Build your website with the Eleventy (11ty) Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
-weight: 3
 tags:
 - guides
 keywords:

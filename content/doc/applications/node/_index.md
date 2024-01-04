@@ -13,6 +13,7 @@ type: docs
 aliases:
 - /doc/deploy/application/node
 - /doc/getting-started/by-language/node
+- /doc/partials/language-specific-deploy/node
 
 draft: true
 ---

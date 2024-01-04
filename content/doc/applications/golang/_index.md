@@ -11,8 +11,10 @@ str_replace_dict:
   "@application-type@": "Go"
 type: docs
 aliases:
+- /doc/deploy/application/golang
 - /doc/deploy/application/golang/go
 - /doc/getting-started/by-language/go
+- /doc/partials/language-specific-deploy/go
 ---
 
 ## Overview

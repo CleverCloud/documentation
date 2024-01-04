@@ -64,7 +64,7 @@ params:
     width: full
   editURL:
     enable: true
-    base: "https://github.com/cnivolle/doc.clever-cloud.com/"
+    base: "https://github.com/CleverCloud/documentation/edit/main/content"
 
 markup:
   goldmark:

@@ -11,7 +11,9 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/getting-started/by-language/scala
+- /doc/deploy/application/scala
 - /doc/deploy/application/scala/scala/
+- /doc/partials/language-specific-deploy/scala
 comments: false
 ---
 

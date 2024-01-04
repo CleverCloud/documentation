@@ -11,8 +11,10 @@ str_replace_dict:
   "@application-type@": "Haskell"
 type: docs
 aliases:
+- /doc/deploy/application/haskell
 - /doc/deploy/application/haskell/haskell
 - /doc/getting-started/by-language/haskell
+- /doc/partials/language-specific-deploy/haskell
 ---
 
 ## Overview

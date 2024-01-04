@@ -10,7 +10,9 @@ str_replace_dict:
   "@application-type@": "Static"
 type: docs
 aliases:
+- /doc/deploy/application/static
 - /doc/deploy/application/static/static
+- /doc/partials/language-specific-deploy/static
 comments: false
 ---
 

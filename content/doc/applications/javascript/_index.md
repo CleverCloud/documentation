@@ -16,6 +16,7 @@ aliases:
 - /doc/deploy/application/javascript/
 - /doc/deploy/application/javascript/by-framework/meteor
 - /doc/deploy/application/javascript/by-framework/nodejs
+- /doc/partials/language-specific-deploy/node
 comments: false
 ---
 <div class="mb-12">

@@ -11,6 +11,7 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/applications/javascript/by-framework/nodejs
+- /doc/nodejs/nodejs
 ---
 
 ## Overview

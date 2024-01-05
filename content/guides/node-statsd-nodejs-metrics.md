@@ -11,7 +11,7 @@ keywords:
 - node-statsd
 type: docs
 aliases:
-- /doc/deploy/applications/javascript/tutorials/node-statsd-nodejs-metrics
+- /doc/deploy/application/javascript/tutorials/node-statsd-nodejs-metrics
 ---
 
 ## Overview

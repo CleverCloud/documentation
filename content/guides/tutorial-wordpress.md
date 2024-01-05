@@ -10,7 +10,7 @@ keywords:
 str_replace_dict:
   "@application-type@": "PHP"
 aliases:
-- /doc/deploy/applications/php/tutorials/tutorial-wordpress
+- /doc/deploy/application/php/tutorials/tutorial-wordpress
 ---
 
 ## Overview

@@ -11,7 +11,7 @@ str_replace_dict:
   "@application-type@": "Node"
 type: docs
 aliases:
-- /doc/deploy/applications/javascript/tutorials/node-js-mongo-db
+- /doc/deploy/application/javascript/tutorials/node-js-mongo-db
 ---
 
 ## Overview

@@ -10,7 +10,7 @@ keywords:
 str_replace_dict:
   "@application-type@": "PHP"
 aliases:
-- /doc/deploy/applications/php/tutorials/tutorial-laravel
+- /doc/deploy/application/php/tutorials/tutorial-laravel
 ---
 
 ## Overview
@@ -144,7 +144,7 @@ return [
 
 ```
 
-This environment variable exists in any Clever Cloud instance. This configuration specifies that Clever Cloud proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxy.
+This environment variable exists in any Clever Cloud instance. This configuration specifies that Clever Cloud proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxyhugo server.
 
 {{< readfile file="deploy-git.md" >}}
 

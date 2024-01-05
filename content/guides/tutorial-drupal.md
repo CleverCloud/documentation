@@ -10,7 +10,7 @@ keywords:
 str_replace_dict:
   "@application-type@": "PHP"
 aliases:
-- /doc/deploy/applications/php/tutorials/tutorial-drupal
+- /doc/deploy/application/php/tutorials/tutorial-drupal
 ---
 
 ## Overview

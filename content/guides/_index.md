@@ -7,7 +7,7 @@ keywords:
 - 
 
 aliases:
-- /doc/deploy/applications/docker/tutorials
+- /doc/deploy/application/docker/tutorials
 type: "docs"
 comments: false
 ---

@@ -29,23 +29,25 @@ aliases:
 
 ## Configure your database
 
-Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
+Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on environment variables from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
 
 {{< readfile file="deploy-git.md" >}}
 
 ### Git specific Drupal instructions
 
 We at this point assume you have downloaded the source files of drupal from [drupal.org](https://drupal.org) and already have linked your MySQL add-on.
+
 * Open `.gitignore` file and delete `sites/*/settings*.php` line
 * Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
 * Open `sites/default/settings.php` and line 213, replace
 
-```php
+```php{linenos=table}
 $databases = array();
 ```
+
 by
 
-```php
+```php{linenos=table}
     $databases = array (
       'default' =>
         array (
@@ -70,7 +72,7 @@ persisted in a File System Bucket. In order to do so, [add a File Bucket]({{< re
 folder in which you create a `buckets.json` file).
 * Copy the `bucket.json` content from the FS bucket addon dashboard (make sure to edit the `folder` field):
 
-```javascript
+```javascript{linenos=table}
 [
    {
       "bucket_host": "<bucket-id>-fsbucket.services.clever-cloud.com",

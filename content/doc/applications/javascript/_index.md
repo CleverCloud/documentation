@@ -18,12 +18,10 @@ aliases:
 - /doc/deploy/application/javascript/by-framework/nodejs
 comments: false
 ---
-<div class="mb-12">
+
 {{< hextra/hero-subtitle >}}
-<br>
-  Find detailed instructions according to your framework&nbsp;<br class="sm:block hidden" />
+Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
-</div>
 
 {{< cards >}}
   {{< card link="/doc/applications/javascript/meteor" title="Meteor.js" icon="meteor" >}}
@@ -42,3 +40,4 @@ Looking for instructions on a specific framework deployment?
     icon="science"
   >}}
   {{< /cards >}}
+  

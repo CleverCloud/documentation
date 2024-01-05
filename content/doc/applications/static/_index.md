@@ -52,7 +52,7 @@ By this we mean for all requests that don't have a matching file on disk to serv
 
 To do this with our static applications, you need a `.htaccess` file like this at the root of your project:
 
-```
+```ApacheConf
 RewriteEngine On
 
 # If an existing asset or directory is requested, serve it

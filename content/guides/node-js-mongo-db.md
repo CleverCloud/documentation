@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Node.js + MongoDB sample application
-shortdesc: The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
+title: Node.js & MongoDB
+description: The goal of this article is to show you how to deploy a Node.js with MongoDB application on Clever Cloud.
 tags:
 - deploy
 keywords:
@@ -19,17 +19,18 @@ aliases:
 The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
 The application is a very simple todo list. You can add and delete values. More information about the application:
 
-*  [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
-*  [Clever Cloud demo](https://nodejs-demo.cleverapps.io/)
+* [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
+* [Clever Cloud demo](https://nodejs-demo.cleverapps.io/)
 
 {{< readfile file="create-application.md" >}}
 
 {{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Node.js + MongoDB application
+
 ### My application does not exists already
 
-If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest) and jump to [My application already exists](#my-application-already-exists)
+If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest).
 
 {{< readfile file="env-injection.md" >}}
 

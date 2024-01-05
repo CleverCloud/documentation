@@ -52,9 +52,10 @@ Excepting MySQL DEV plan, you have to figure the port out in `wp-config.php` wit
 
 ### SSL Configuration
 
-Since your website is behind a reverse proxy managed by Clever Cloud, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. 
+Since your website is behind a reverse proxy managed by Clever Cloud, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL.
 To do so edit `wp-config.php` and add the following code above the last `require_once` call.
-```php
+
+```php{linenos=table}
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
     $_SERVER['HTTPS'] = 'on';
 } elseif (isset($_SERVER['X_FORWARDED_PROTO']) && $_SERVER['X_FORWARDED_PROTO'] == 'https') {
@@ -64,34 +65,35 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 
 #### Using a CDN as Cloudflare with SSL (avoid infinite loops)
 
-As with SSL configuration, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. In this case, the chained proxies might concatenate those headers. As a result, headers values can look like 
+As with SSL configuration, you need to detect specific headers like **X_FORWARDED_PROTO** or **HTTP_X_FORWARDED_PROTO** to enable SSL. In this case, the chained proxies might concatenate those headers. As a result, headers values can look like
 ```php [HTTP_X_FORWARDED_PROTO] => https, https```
 The previous code snippet would not enable SSL on the Clever Cloud application, resulting in mixed content or infinite loop.
 
 In order to avoid this, you'll need to add the following code snippet to your `wp-config.php` file (it replaces the previous code snippet). Add the following code above the last `require_once` call or at the beginning of the `wp-config.php` file.
 
 To do so edit `wp-config.php` and add the following code above the last `require_once` call.
+
 ```php
 function check_proto_set_ssl($forwarded_protocols){
-	$secure = 'off';
-	if ( strstr($forwarded_protocols , ",") ) {
-		$previous = null;
-		foreach ( explode(",", $forwarded_protocols) as $value ) {
-			if ( $previous ) {
-				trim($value) == $previous && trim($value) == 'https' ? $secure = 'on' : $secure = 'off';
-			}
-			$previous = trim($value);
-		}
-		$_SERVER["HTTPS"] = $secure;
-	}else{
-		$forwarded_protocols == 'https' ? $_SERVER["HTTPS"] = 'on' : $_SERVER["HTTPS"] = $secure = 'off';
-	}
+  $secure = 'off';
+  if ( strstr($forwarded_protocols , ",") ) {
+    $previous = null;
+    foreach ( explode(",", $forwarded_protocols) as $value ) {
+    if ( $previous ) {
+      trim($value) == $previous && trim($value) == 'https' ? $secure = 'on' : $secure = 'off';
+      }
+      $previous = trim($value);
+    }
+    $_SERVER["HTTPS"] = $secure;
+  }else{
+    $forwarded_protocols == 'https' ? $_SERVER["HTTPS"] = 'on' : $_SERVER["HTTPS"] = $secure = 'off';
+  }
 }
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-	check_proto_set_ssl($_SERVER['HTTP_X_FORWARDED_PROTO']);
+  check_proto_set_ssl($_SERVER['HTTP_X_FORWARDED_PROTO']);
 } elseif (isset($_SERVER['X_FORWARDED_PROTO'])) {
-	check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
+  check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
 }
 ```
 
@@ -111,15 +113,16 @@ If you need to have many associated buckets with your app, you need to create en
 
 #### JSON
 
-{{< callout type="warning" >}}
-   This method is deprecated, we strongly recommend that you use environment variables.
+{{< callout emoji="🧹" >}}
+**This method is deprecated**  
+We strongly recommend that you use environment variables.
 
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
 {{< /callout >}}
 
 At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
 Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information]({{< ref "doc/addons/fs-bucket" >}}) section of the FS Bucket add-on.
-    
+
 ```javascript
     [
       {
@@ -135,7 +138,7 @@ If you choose git deployment over FTP, the code of your plugins won't be tracked
 
 To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the `/wp-content/plugins/` folder, add the new files to git and then deploy your application.
 
-The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins. 
+The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it as others WordPress plugins.
 To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.
 
 ## Optimise and speed-up your WordPress
@@ -144,11 +147,11 @@ There are multiple ways to optimise your WordPress and speed-up its response tim
 We provide different tools and software to help you in this task as [Varnish]({{< ref "doc/administrate/cache.md" >}}) for the HTTP cache, and [Redis]({{< ref "doc/addons/redis" >}}) for the object caching.
 
 ### Performance plugins
-{{< callout type="warning" >}}
- <p>We recommend you to <strong>not</strong> use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.<br />
- We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis if you need performance optimisations on Clever Cloud.</p>
-{{< /callout >}}
 
+{{< callout type="warning" >}}
+We recommend you to **not** use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.  
+We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis if you need performance optimisations on Clever Cloud.
+{{< /callout >}}
 
 ### HTTP Cache with Varnish
 
@@ -162,7 +165,6 @@ Enabling [Varnish]({{< ref "doc/administrate/cache.md" >}}) for your application
 
 If you need to manually purge the Varnish cache, the plugin provides a **Purge Varnish cache** button on the top bar of your website.
 
-
 ### Object cache with Redis
 
 [Redis]({{< ref "doc/addons/redis" >}}) is an [add-on](#linking-a-database-or-any-other-add-on-to-your-application) that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.
@@ -172,6 +174,7 @@ To enable [Redis]({{< ref "doc/addons/redis" >}}) for your WordPress, you need t
 1. [Create a Redis add-on]({{< ref "doc/addons/redis" >}}) for your application.
 
 2. Add the following lines to your `wp-config.php` file. Make sure they are **before** the `require_once(ABSPATH . 'wp-settings.php');` line, otherwise the Redis connexion will not work for your application and your application will return only white pages!
+
 ```php
 define('WP_CACHE_KEY_SALT', 'tvm_');
 define('WP_REDIS_CLIENT', 'pecl');

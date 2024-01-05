@@ -62,6 +62,7 @@ Once linked, you can enable the ProxySQL feature by defining the following envir
 If you ever need to stop using ProxySQL, you can remove this variable or set it to `false`.
 
 You can customize some other parameters:
+
 - `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS`: Integer. This is the maximum connections ProxySQL will open to your add-on. See the [Scalability](#scalability) part
 below for more explanations on how to customize this variable. Defaults to `10`.
 - `CC_MYSQL_PROXYSQL_USE_TLS`: Boolean (`true` or `false`). This controls whether ProxySQL should open a secure connection using `TLS` to your add-on. Defaults to `true`.
@@ -90,6 +91,7 @@ which has a connection limit of `125`.
 Now my application receives a lot of traffic and scales up to `4 M` instances. But at the same time, I also need to deploy a hot fix. This means that `4 new M` instances will be started, alongside the already existing `4 M` instances. I need to make sure that `MaxCon` doesn't go above `125`.
 
 Here is the summary:
+
 - 8 instances: 4 currently running, 4 currently deploying my hot fix
 - 125 max connections: the maximum number of connections of my MySQL add-on's plan
 - 5 other connections: I want to be able to use PHPMyAdmin or any CLI tool at the same time, in case I need it

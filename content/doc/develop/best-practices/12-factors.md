@@ -21,5 +21,4 @@ As a lot has already been written on the subject, we strongly recommend that you
 - [https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/](https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/)
 - [https://12factor.net/](https://12factor.net/)
 
-
 Happy learning !

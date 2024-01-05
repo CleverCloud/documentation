@@ -13,12 +13,9 @@ comments: false
 ---
 ## Frameworks
 
-<div class="mb-12">
-{{< hextra/hero-subtitle >}}
-<br>
-  Step by steps guides to deploy your favorite framework on Clever Cloud&nbsp;<br class="sm:block hidden" />
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Step by steps guides to deploy your favorite framework on Clever Cloud
 {{< /hextra/hero-subtitle >}}
-</div>
 
 {{< cards >}}
   {{< card link="/guides/python-django-sample" title="Django" subtitle= "Configure your Django application to run on Clever Cloud" icon="django" >}}
@@ -38,12 +35,9 @@ comments: false
 
 ## Starter Tutorials
 
-<br>
-<div class="mb-12">
-{{< hextra/hero-subtitle >}}
-  Tutorials to learn the basis of app configuration and deployments&nbsp;<br class="sm:block hidden" />
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Tutorials to learn the basis of app configuration and deployments
 {{< /hextra/hero-subtitle >}}
-</div>
 
 {{< cards >}}
  {{< card link="/guides/node-js-mongo-db" title="Node.js + MongoDB starter" subtitle= "Starter tutorial to deploy a Node.js + MongoDB application on Clever Cloud" icon="node" >}}
@@ -52,12 +46,9 @@ comments: false
 
 ## Level Up your Add-ons
 
-<br>
-<div class="mb-12">
-{{< hextra/hero-subtitle >}}
-  Take your dependencies to the next level&nbsp;<br class="sm:block hidden" />
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Take your dependencies to the next level
 {{< /hextra/hero-subtitle >}}
-</div>
 
 {{< cards >}}
  {{< card link="/guides/kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}

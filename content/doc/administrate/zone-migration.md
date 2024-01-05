@@ -9,12 +9,8 @@ tags:
 type: docs
 ---
 
-# Migrate your services from one zone to another
-
-In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.
-
-For most of the services, you will be able to migrate them as-is. For others, you will need to create them and do a manual migration.
-
+In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.  
+For most of the services, you will be able to migrate them as-is. For others, you will need to create them and do a manual migration.  
 Keep in mind that our support team remains available, should you have any questions regarding zone migration.
 
 ## Application migration
@@ -30,6 +26,7 @@ In this case, please read the prerequisites below first and then follow the righ
 ### Prerequisites
 
 Besides redeploying your application in your target zone, you have to keep a few things in mind:
+
 - Increased latency might be observed during DNS propagation (more below)
 - You will need to update your DNS settings, so make sure you have access to your DNS registrar
 

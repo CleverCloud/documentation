@@ -41,7 +41,6 @@ environment.
 The configuration exposed by an application is available in the environment variables of the **dependent** applications, but not in the environment of the application itself.
 {{< /callout >}}
 
-
 ### Redeploy on configuration update
 
 When an application updates its exposed configuration, all applications

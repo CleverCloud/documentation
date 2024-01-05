@@ -151,7 +151,7 @@ sdc -> Reverse proxy hostname
 sDuration -> total session duration time in millis
 ```
 
-### Queries examples:
+### Queries examples
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
@@ -159,13 +159,52 @@ The main ways to use `accessLogs` data is to `FETCH` over it and get interesting
 Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "doc/metrics/warp10" >}}).
 {{< /callout >}}
 
-<script src="https://gist.github.com/cnivolle/4a9b20254131c0256cd7e4246d3070a7.js"></script>
+```text
+// Fetch on the 'accessLogs' class for your application id as labels
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
+
+// get the path field
+<% 
+    DROP
+    VALUES
+    <% DROP
+        JSON->
+        'path' GET
+    %> LMAP
+%> LMAP
+FLATTEN
+
+// distinct|unique results
+UNIQUE
+```
 
 A convenient way to integrate the intercepted data in a workflow is to use [WarpScript](https://www.warp10.io/content/03_Documentation/04_WarpScript/). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
-<script src="https://gist.github.com/cnivolle/2ee8607d995daa1316e17ffc3874d047.js"></script>
+```text
+// Get all application status code  for the last hour
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 10 m ] FETCH
+<%
+  DROP
+  'gts' STORE
+  // output new GTS
+  NEWGTS
+  $gts 
+  <%
+    DUP
+    // store the timestamp
+    0 GET 'ts' STORE
+    // store the status code
+    -1 GET JSON-> 'sC' GET 'sC' STORE
+    // Keep the same labels in the output GTS than in the input ones
+    $gts LABELS RELABEL
+    // Add timestamp and status code value to the output GTS
+    [ $ts NaN NaN NaN $sC ] ADDVALUE
+  %>
+  FOREACH
+%> LMAP
+```
 
 An example using the provided Clever Cloud macro to straightforward access to the access logs input byte :
 
@@ -341,7 +380,7 @@ As with Prometheus the exposed host can be the same as the application deployed,
 
 For large custom set of metrics to collect, the default response timeout of the `/metrics` query is 3 seconds. You can update it with the following environment variable:
 
-- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes. 
+- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes.
 
 To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
 

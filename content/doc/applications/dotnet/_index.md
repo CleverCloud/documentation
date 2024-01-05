@@ -30,7 +30,7 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 {{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="language-specific-deploy/dotnet.md" >}}
+{{% readfile file="language-specific-deploy/dotnet.md" %}}
 
 {{< readfile file="env-injection.md" >}}
 

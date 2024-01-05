@@ -15,12 +15,10 @@ aliases:
 comments: false
 ---
 
-<div class="mb-12">
+
 {{< hextra/hero-subtitle >}}
-<br>
-  Find detailed instructions according to your framework&nbsp;<br class="sm:block hidden" />
+Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
-</div>
 
 {{< cards >}}
   {{< card link="/doc/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
@@ -43,3 +41,4 @@ Looking for instructions on a specific framework deployment?
     icon="science"
   >}}
   {{< /cards >}}
+  

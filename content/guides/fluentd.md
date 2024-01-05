@@ -114,6 +114,7 @@ Verify that it responds to requests
 ```bash
 curl 0.0.0.0:9292
 ```
+
 You can now read [My application already exists](#my-application-already-exists)
 
 #### Fine tune you application
@@ -145,5 +146,3 @@ CMD [ "/go.sh" ]
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
-
-

@@ -20,13 +20,11 @@ Once you create an organization, you can add collaborators and assign them [role
 
 Each organization have its own identifier looking like `orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
-
 ## Add an organization
 
 Organization names are unique. It means that you cannot use an already used organization name.
 
 In order to add an organization, just click on "Add an organization" in the top left sidebar.
-
 
 ## Roles and privileges
 

@@ -13,7 +13,9 @@ str_replace_dict:
   "@application-type@": ".NET"
 type: docs
 aliases:
+- /doc/deploy/application/dotnet
 - /doc/deploy/application/dotnet/dotnet
+- /doc/partials/language-specific-deploy/dotnet
 ---
 
 ## Overview

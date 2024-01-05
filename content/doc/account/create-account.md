@@ -2,7 +2,7 @@
 type: docs
 weight: 1
 title: Create an Account
-shortdesc: How to create your account
+description: Start your journey with Clever Cloud by creating an account. Follow this easy guide to sign up and access a wide range of cloud computing resources on our PaaS platform.
 tags:
 - account
 keywords:

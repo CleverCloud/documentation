@@ -28,6 +28,10 @@ Stop functionality is useful during the development of the application to limit 
 {{< imgproc link="/" caption="Manage your application" image="/images/app-management.png" method="resize" options="900x q80 webp">}}
 {{< /img-grid >}}
 
+{{< callout type="info" >}}
+  If you set `CC_DISABLE_BUILD_CACHE_UPLOAD` environment variable to `true`, the cache archive won't be created nor uploaded.
+{{< /callout >}}
+
 ## Deploy an old commit
 
 If you want to revert to a previous version of your code, you can go to the **Activity** menu of your application in the Clever Cloud console. You will find here all your previous commits. Just select **redeploy this commit** on the desired one. This will trigger a redeploy of your application at this version.

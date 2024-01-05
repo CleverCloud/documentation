@@ -3,17 +3,18 @@ SSH keys are used to establish a secure connection between your computer and Cle
 
 ## I need to create my SSH key
 
-1.  In your Terminal, enter the following bash line:
+1. In your Terminal, enter the following bash line:
 
     ```bash
     ssh-keygen -t ed25519 -C "your_email@youremail.com"
     ```
+
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
-2.  When prompted in which file you want to save the key, just press enter.
-    If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud). 
+2. When prompted in which file you want to save the key, just press enter.
+    If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud).
 
-3.  When asked, enter a passphrase:
+3. When asked, enter a passphrase:
 
 ```bash
 Generating public/private ed25519 key pair.

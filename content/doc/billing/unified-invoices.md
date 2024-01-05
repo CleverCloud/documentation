@@ -2,7 +2,7 @@
 type: docs
 title: Unified Invoicing
 position: 1
-shortdesc: Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
+shortdesc: Each month, for each organization, a single Factur-X compatible invoice is generated, including the whole activity (credits, add-on etc).
 tags:
 - billing
 keywords:
@@ -16,6 +16,10 @@ type: docs
 ---
 
 Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
+
+{{< callout type="info" >}}
+  Since 2021, we provide invoices compatible with the [Factur-X e-invoice format](https://fnfe-mpe.org/factur-x/factur-x_en/). 
+{{< /callout >}}
 
 ## Monthly invoice
 

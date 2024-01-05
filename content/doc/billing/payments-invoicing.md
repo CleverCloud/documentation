@@ -2,7 +2,7 @@
 type: docs
 title: Payments & invoicing
 position: 5
-shortdesc: Managing invoices and payment on Clever Cloud
+shortdesc: Managing your Factur-X compatible invoices and payments on Clever Cloud
 tags:
 - billing
 keywords:
@@ -28,7 +28,11 @@ In the sidebar of the organization section, there are three alternatives to buy 
 
 ## Invoices
 
-Invoices are available in the *Invoices* tab in the sidebar of the organization section. Once paid, invoices are moved to the "Paid invoice" table.
+Invoices are available in the *Invoices* tab in the sidebar of the organization section. Once paid, they are moved to the "Paid invoice" table.
+
+{{< callout type="info" >}}
+  Since 2021, we provide invoices compatible with the [Factur-X e-invoice format](https://fnfe-mpe.org/factur-x/factur-x_en/). 
+{{< /callout >}}
 
 ### Receive invoices
 

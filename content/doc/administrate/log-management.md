@@ -19,10 +19,10 @@ aliases:
 type: docs
 ---
 
-Log management is currently only available through our API and [clever-tools]({{< ref "/doc/CLI" >}}).
+Log management is currently only available through our API and [clever-tools]({{< ref "/doc/CLI" >}}). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`.
 
 {{< callout type="info">}}
-Logs are currently retained for a maximum of 7 days. Logs are flushed daily at midnight.
+Logs are currently retained for a maximum of 7 days, flushed daily at midnight.
 You can use log drains if a greater retention is needed.
 {{< /callout >}}
 

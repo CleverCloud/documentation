@@ -19,11 +19,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy any Go application. This page will explain you how to set up your application to run it on our service.
-
-We currently support single module applications only. That means that your sources files just need to be at the project's root, and you can't have multiple modules running.
-
-You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
+Clever Cloud allows you to deploy any Go application. This page will explain you how to set up your project to run it on our service. You won't not need to change a lot, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
 {{< readfile file="create-application.md" >}}
 

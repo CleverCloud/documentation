@@ -161,11 +161,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Go Documentation](/doc/applications/golang)
 
-|  Name  |  Description  |  Default value  |
-|-----------------------|------------------------------|--------------------------------|
-|`CC_GO_BUILD_TOOL` |Available values: `gomod`, `gobuild`, `goget`. Makes the deployer use `go modules`, `go get` or `go build` to build your application. | `goget` |
-|`CC_GO_PKG` | Makes the deployer run go get `${CC_GO_PKG}` instead of go get `<app_id>`.  |  |
-|`CC_GO_RUNDIR` | Makes the deployer use the specified directory to run your binary. If your application must be in `$GOPATH/src/company/project` for your vendored dependencies, set this variable to `company/project` |  |
+| Name | Descrption |
+| :------- | :---- |
+| `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`. Build and install your application. `goget` still exists but is deprecated. |
+| `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |
+| `CC_GO_PKG` | Tell the `CC_GO_BUILD_TOOL` which file contains the `main()` function, default `main.go`. |
 
 ## Haskell
 

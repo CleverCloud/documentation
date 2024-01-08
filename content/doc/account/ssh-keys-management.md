@@ -21,43 +21,55 @@ You need to add a SSH key to your Clever Cloud's account to deploy via Git.
 SSH keys are used to establish a secure connection between your computer and Clever Cloud. A user can have multiple SSH keys.
 
 {{< callout type="warning">}}
-<p>Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
-associated with only one account.<br />
-If a key is used by more than one account, a warning will be displayed in the console.</p>
+  Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
+  associated with only one account. If a key is used by more than one account, a warning will be displayed in the console.
 {{< /callout >}}
 
-## How to add your SSH key on Clever Cloud?
+## How to add a SSH key on Clever Cloud?
+### Generate a classic SSH key
+In your terminal, enter the following command:
 
-### I don't have any, I want to create an SSH key
+```bash
+ssh-keygen -t ed25519 -C "your_email@youremail.com"
+```
+It creates a new SSH key using the provided email, so that the owner of the key can be identified.
 
-1.  In your Terminal, enter the following bash line:
+### Generate a FIDO/U2F SSH key
+Since [OpenSSH 8.2](https://www.openssh.com/txt/release-8.2 ), generated keys can require a security device compatible with the FIDO/U2F standards (such as Nitrokeys, Solokeys or Yubikeys) to complete the authentication process. To generate such key, plug the device to your machine and enter this command:
 
-    ```bash
-    ssh-keygen -t ed25519 -C "your_email@youremail.com"
-    ```
-    This command creates a new SSH key using the provided email, so that the owner of the key can be identified.
+```bash
+ssh-keygen -t ed25519-sk -C "your_email@youremail.com"
+```
 
-2.  When prompted in which file you want to save the key, just press enter.
-    If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud).
+Under macOS, you may need to install [Homebrew](https://brew.sh/), an OpenSSH version including full FIDO/U2F support, and use [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key format:
 
-3.  When asked, enter a passphrase:
+```bash
+brew install openssh
+ssh-keygen -t ecdsa-sk -C "your_email@youremail.com"
+```
 
-    ```bash
-    Generating public/private ed25519 key pair.
-    Enter file in which to save the key (/your_home_path/.ssh/id_ed25519):
-    # Now you should enter a passphrase.
-    Enter passphrase (empty for no passphrase): [Type a passphrase]
-    Enter same passphrase again: [Type passphrase again]
-    ```
+{{< callout type="info" >}}
+  You can use options related to security devices adding them with the `-O` argument (for example `-O resident`). They're detailed [here](https://man.openbsd.org/ssh-keygen#FIDO_AUTHENTICATOR).
+{{< /callout >}}
 
-    Which should give you something like this:
+### Choose the location of the key and a passphrase
+When prompted in which file you want to save the key, just press enter. If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#AddYourSSHKeysOnCleverCloud). When asked, enter a passphrase:
 
-    ```bash
-    Your identification has been saved in /your_home_path/.ssh/id_ed25519.
-    Your public key has been saved in /your_home_path/.ssh/id_ed25519.pub.
-    The key fingerprint is:
-    01:0e:e5:2d:ab:98:d6:17:a1:6d:f0:68:9f:d0:a2:db your_email@youremail.com
-    ```
+  ```bash
+  Generating public/private ed25519 key pair.
+  Enter file in which to save the key (/your_home_path/.ssh/id_ed25519):
+  Enter passphrase (empty for no passphrase): [Type a passphrase]
+  Enter same passphrase again: [Type passphrase again]
+  ```
+
+  Which should give you something like this:
+
+  ```bash
+  Your identification has been saved in /your_home_path/.ssh/id_ed25519.
+  Your public key has been saved in /your_home_path/.ssh/id_ed25519.pub.
+  The key fingerprint is:
+  01:0e:e5:2d:ab:98:d6:17:a1:6d:f0:68:9f:d0:a2:db your_email@youremail.com
+  ```
 
 ## I maybe have SSH keys, I want to check
 

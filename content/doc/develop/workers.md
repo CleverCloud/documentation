@@ -40,7 +40,7 @@ environment variable `CC_WORKER_RESTART` to one of `always`, `on-failure` (the d
 You can define a delay to restart your worker with the environement variable `CC_WORKER_RESTART_DELAY`, the value is in seconds with a default value of `1`. It will apply to all registered workers.
 
 {{< callout type="warning" >}}
-If the `CC_WORKER_RESTART_DELAY` value is too low and the restart policy is set to `always`, your worker might hit the restart burst limit, which may prevent your worker from being correctly restarted. 
+If the `CC_WORKER_RESTART_DELAY` value is too low and the restart policy is set to `always`, your worker might hit the restart burst limit, which may prevent your worker from being correctly restarted.
 {{< /callout >}}
 
 If you want to have a restart delay less than 1 second and expect your script to restart multiple times in a very short time, please let us know on our support.

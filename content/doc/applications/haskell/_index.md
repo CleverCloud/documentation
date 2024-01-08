@@ -34,4 +34,3 @@ There are many ways to write web applications in haskell, from raw [WAI](https:/
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
-

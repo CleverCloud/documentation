@@ -26,7 +26,9 @@ commit it in your application's Clever Cloud repository.
 That key will be installed in `~/.ssh/` before the start of the build. So the
 dependency manager will use it to fetch libs only accessible by ssh.
 
-*NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
+{{< callout type="info" >}}
+  Please provide a key without pass phrase, or the system will be unable to unlock it
+{{< /callout >}}
 
 ### Environment variable
 

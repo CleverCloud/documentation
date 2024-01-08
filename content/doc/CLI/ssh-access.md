@@ -18,7 +18,7 @@ aliases:
 While direct SSH access to instances is not recommended in an [immutable infrastructure](https://boxfuse.com/blog/no-ssh.html) setup, it can be useful for debugging purposes. Clever Cloud allows you to connect to running instances via SSH.
 
 {{< callout type="warning" >}}
-Clever Cloud instances are to be seen as <i>read-only</i> resources. Any change made on an instance <b>will not be persisted</b>. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
+Clever Cloud instances are to be seen as *read-only* resources. Any change made on an instance **will not be persisted**. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
 {{< /callout >}}
 
 {{< callout type="info" >}}
@@ -37,7 +37,7 @@ To use SSH access, you need to have an SSH key properly configured in your Cleve
 
 ## Accessing your machine with Clever Tools CLI
 
-In order to access the machine via SSH using the Clever Tools CLI 
+In order to access the machine via SSH using the Clever Tools CLI
 
 [//]: # (ref "/doc/quickstartclever-tools-intro.md)
 
@@ -68,7 +68,7 @@ You are now connected to the machine.
 
 ### Note for Windows users
 
-`$ clever ssh` command will fail on PowerShell or cmd.exe if there is no `ssh.exe` in your path. 
+`$ clever ssh` command will fail on PowerShell or cmd.exe if there is no `ssh.exe` in your path.
 The most straightforward solution is to start `$ clever ssh` from `git-bash` but you can also add `ssh.exe` in your path..
 
 ## Access your application's folder

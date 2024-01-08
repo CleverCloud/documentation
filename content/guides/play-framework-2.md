@@ -24,6 +24,7 @@ Clever Cloud supports Play! 2 applications natively. The following guide explain
 {{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Scala + Play! 2 application
+
 ### Mandatory configuration
 
 * Starting from **Play 2.4**, your application needs **Java 8** to run. Please read [select java version](https://www.clever-cloud.com/doc/java/select-java-version/) for more information.
@@ -64,7 +65,6 @@ For instance, if your Sbt project contains a `shared` and `play` module and you 
 
 {{< readfile file="new-relic.md" >}}
 
-
 {{< readfile file="env-injection.md" >}}
 
 To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`.
@@ -104,10 +104,9 @@ resolvers += "Typesafe repository" at "https://repo.typesafe.com/typesafe/releas
 addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the configuration
 ```
 
-The two solutions do the job, you can pick your favorite.
+Both alternatives effectively fulfill the task at hand; you are free to select the one that best suits your preference.
 
-More info on <a target="_blank" href="https://www.playframework.com">playframework.com</a>.
-
+More info on [playframework.com](https://www.playframework.com).
 
 ### Bad root server path error
 

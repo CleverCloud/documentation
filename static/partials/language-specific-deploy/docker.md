@@ -7,7 +7,7 @@ Be sure that you:
 * push on the **master branch**.
 * have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable]({{< ref "doc/reference/reference-environment-variables.md#docker" >}}) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
 * run the application with `CMD` or `ENTRYPOINT` in your Dockerfile.
-* listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` [environment variable](#setting-up-environment-variables-on-clever-cloud)).
+* listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` environment variable).
 
 ### Dockerfile contents
 
@@ -36,7 +36,7 @@ CMD yarn start
 
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using using the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections]({{< ref "doc/administrate/tcp-redirections.md" >}}].
+Clever Cloud enables you to use TCP over Docker applications using using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections]({{< ref "doc/administrate/tcp-redirections.md" >}}].
 
 ### Docker socket access
 
@@ -46,22 +46,21 @@ Some containers require access to the docker socket, to spawn sibling containers
 Giving access to the docker socket breaks all isolation provided by docker. **DO NOT** give socket access to untrusted code.
 {{< /callout >}}
 
-
-You can make the docker socket available from inside the container by adding the `CC_MOUNT_DOCKER_SOCKET=true` [environment variable](#setting-up-environment-variables-on-clever-cloud). In that case, docker is started in the namespaced mode, and in bridge network mode.
+You can make the docker socket available from inside the container by adding the `CC_MOUNT_DOCKER_SOCKET=true` environment variable. In that case, docker is started in the namespaced mode, and in bridge network mode.
 
 ### Private registry
 
-We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few [environment variables](#setting-up-environment-variables-on-clever-cloud):
+We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few environment variables:
 
-- `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
-- `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
-- `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
+* `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
+* `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
+* `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
 
 This uses the `docker login` command under the hood.
 
 ### Enable IPv6 networking
 
-You can activate the support of IPv6 with a IPv6 subnet in the docker daemon by adding the `CC_DOCKER_FIXED-CIDR-V6=<IP>` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+You can activate the support of IPv6 with a IPv6 subnet in the docker daemon by adding the `CC_DOCKER_FIXED-CIDR-V6=<IP>` environment variable.
 
 ### Build-time variables
 
@@ -69,8 +68,8 @@ You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) ins
 
 Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>` parameter during the `docker build` phase.
 
-
 ### Dockerized Rust application Deployment
+
 To make your dockerized application run on clever Cloud, you need to:
 
 * expose port 8080 in your docker file
@@ -78,7 +77,7 @@ To make your dockerized application run on clever Cloud, you need to:
 
 For instance, here is the `Dockerfile` used for the Rust application:
 
-```Dockerfile
+```Dockerfile{linenos=table}
 # rust tooling is provided by `archlinux-rust`
 FROM geal/archlinux-rust
 MAINTAINER Geoffroy Couprie, contact@geoffroycouprie.com
@@ -105,7 +104,7 @@ CMD cargo run
 
 Deploying a [HHVM](https://hhvm.com/) application is a bit trickier as it needs to have both HHVM and [nginx](https://www.nginx.com/) running as daemons. To be able to have them running both, we need to put them in a start script:
 
-```bash
+```bash{linenos=table}
 #!/bin/sh
 
 hhvm --mode server -vServer.Type=fastcgi -vServer.Port=9000&
@@ -121,7 +120,7 @@ tail -f /var/log/hhvm/error.log
 
 Since the two servers are running as daemons, we need to start a long-running process. In this case we use `tail -f`. We then add `start.sh` as the `CMD` in the `Dockerfile`
 
-```Dockerfile
+```Dockerfile{linenos=table}
 # We need HHVM
 FROM jolicode/hhvm
 

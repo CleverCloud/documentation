@@ -16,10 +16,7 @@ type: docs
 ## Overview
 
 The goal of this article is to show you how to deploy a Django application on Clever Cloud.
-The application is a very basic one. More information about the application:  
-
-*  [GitHub repo](https://github.com/CleverCloud/django-example)
-*  [Clever Cloud demo](https://django.cleverapps.io/)
+The application is a very basic one. More information about the application in the[GitHub repo](https://github.com/CleverCloud/django-example).
 
 {{< readfile file="create-application.md" >}}
 
@@ -27,7 +24,8 @@ The application is a very basic one. More information about the application:
 
 ## Configure your Django application
 
-Note : 
+Note :
+
 - Select at least a `nano` instance (`pico` doesn't have enough resources for a Django project).
 - Connect your Django project to Postgresql version 12+ if you're using django 4.2+ (postgresql 11 is deprecated since this version).
 
@@ -37,7 +35,6 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 
 ### My application already exists
 
-<br/><br/>
 {{< callout type="warning" >}}
   Do not forget to add the `CC_PYTHON_MODULE` environment variable  or the file [clevercloud/python.json](https://github.com/CleverCloud/django-example/blob/master/clevercloud/python.json) in any Python project so that we get your required modules.
 {{< /callout >}}
@@ -54,7 +51,7 @@ Clever Cloud supports execution of multiple [manage.py](https://docs.djangoproje
 
 The tasks are launched after the dependencies from `requirements.txt` have been installed, and before the web server starts.
 
-You can declare the `manage.py` tasks with the [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_MANAGE_TASKS="migrate"`.
+You can declare the `manage.py` tasks with the environment variable `CC_PYTHON_MANAGE_TASKS="migrate"`.
 
 Values must be separated by a comma:
 
@@ -64,7 +61,7 @@ CC_PYTHON_MANAGE_TASKS="migrate, assets:precompile"
 
 {{< readfile file="env-injection.md" >}}
 
-To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
+To access environment variables from your code, just get them from the environment with:
 
 ```python
 import os

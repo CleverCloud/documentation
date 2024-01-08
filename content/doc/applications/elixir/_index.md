@@ -12,8 +12,10 @@ str_replace_dict:
   "@application-type@": "Elixir"
 type: docs
 aliases:
+- /doc/deploy/application/elixir
 - /doc/deploy/application/elixir/elixir
 - /doc/getting-started/by-language/elixir/
+- /doc/partials/language-specific-deploy/elixir
 ---
 
 ## Overview

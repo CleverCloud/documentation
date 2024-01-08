@@ -10,8 +10,10 @@ str_replace_dict:
   "@application-type@": "Java"
 type: docs
 aliases:
+- /doc/deploy/application/java
 - /doc/deploy/application/java/java
 - /doc/getting-started/by-language/java
+- /doc/partials/language-specific-deploy/java
 comments: false
 ---
 

@@ -11,6 +11,7 @@ str_replace_dict:
 type: docs
 aliases:
 - /doc/applications/javascript/by-framework/nodejs
+- /doc/nodejs/nodejs
 ---
 
 ## Overview
@@ -40,6 +41,8 @@ To target this behaviour, you can gracefully shutdown with events handlers on `u
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="env-injection.md" >}}
 
 ## Deployment video
 

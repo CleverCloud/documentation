@@ -12,7 +12,7 @@ str_replace_dict:
   "@application-type@": "Docker"
 type: docs
 aliases:
-- /doc/deploy/applications/docker/tutorials/fluentd
+- /doc/deploy/application/docker/tutorials/fluentd
 ---
 
 ## Overview

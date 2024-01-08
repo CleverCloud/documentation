@@ -12,7 +12,7 @@ keywords:
 - metrics
 type: docs
 aliases:
-- /doc/deploy/applications/haskell/tutorials/ekg-statsd-haskell-metrics.md
+- /doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics.md
 ---
 
 ## Overview

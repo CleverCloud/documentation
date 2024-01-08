@@ -59,7 +59,7 @@ jobs:
           clever env set CC_WEBROOT "/public"
           clever env set HUGO_ENV "production"
           clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
-          clever domain add clever-doc-review-${{ env.BRANCH_NAME }}.cleverapps.io
+          clever domain add clever-doc-review-${{ env.BRANCH_NAME }}-PR-${{ github.event.number }}.cleverapps.io
       - name: Deploy
         run: clever deploy
       - name: Comment PR

@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Notifications management with Clever Tools
+title: Notifications
 position: 5
 shortdesc: How to setup and configure notifications via clever-tools
 tags:
@@ -13,6 +13,9 @@ keywords:
 - email
 - slack
 - flowdock
+aliases:
+- /doc/administrate/clever-tools/notifications
+
 ---
 
 The *Notifications* service allows you to choose the events of interest to you
@@ -38,13 +41,16 @@ and/or for these events to be forwarded to a web service via a *webhook*.
 
 ## Webhooks
 
-From Wikipedia:
+Webhooks are defined as follows:
 
 > A webhook in web development is a method of augmenting or altering the
 > behavior of a web page, or web application, with custom callbacks. These
 > callbacks may be maintained, modified, and managed by third-party users and
 > developers who may not necessarily be affiliated with the originating website
 > or application.
+> — <cite>Wikipedia[^1]</cite>
+
+[^1]: Excerpted from Wikipedia's [webhook page](https://en.wikipedia.org/wiki/Webhook)
 
 In practical terms, this means that you can choose to receive all deployment
 result events on an endpoint of your application without having to listen to
@@ -75,7 +81,7 @@ Now, let's create the Webhook!
 Go into the application directory for which you want to receive notifications
 and there issue this command:
 
-```
+```shell
 clever webhooks add "deployment results on Slack" https://hooks.slack.com/services/xxxxxx/yyyyyy/zzzzzzzzzzzzz --format slack --event META_DEPLOYMENT_RESULT
 ```
 
@@ -84,15 +90,18 @@ clever webhooks add "deployment results on Slack" https://hooks.slack.com/servic
 The list of values that can be assigned to `--event` option:
 
 **Account:**
+
 - `ACCOUNT_CREATION`
 - `ACCOUNT_DELETION`
 - `ACCOUNT_EDITION`
 
 **Addon:**
+
 - `ADDON_CREATION`
 - `ADDON_DELETION`
 
 **Application:**
+
 - `APPLICATION_CREATION`
 - `APPLICATION_DELETION`
 - `APPLICATION_EDITION`
@@ -100,6 +109,7 @@ The list of values that can be assigned to `--event` option:
 - `APPLICATION_STOP`
 
 **Deployment:**
+
 - `DEPLOYMENT_ACTION_BEGIN`
 - `DEPLOYMENT_ACTION_END`
 - `DEPLOYMENT_FAIL`
@@ -107,32 +117,35 @@ The list of values that can be assigned to `--event` option:
 - `GIT_PUSH`
 
 **Organisation:**
+
 - `ORGANISATION_CREATION`
 - `ORGANISATION_DELETION`
 - `ORGANISATION_EDITION`
 - `ORGANISATION_USER_ADDITION`
 
 **Meta:**
+
 - `META_SERVICE_LIFECYCLE` = APPLICATION_STOP, DEPLOYMENT_ACTION_BEGIN, DEPLOYMENT_FAIL, DEPLOYMENT_SUCCESS
 - `META_DEPLOYMENT_RESULT` = DEPLOYMENT_FAIL, DEPLOYMENT_SUCCESS
 - `META_SERVICE_MANAGEMENT` = ADDON_CREATION, ADDON_DELETION APPLICATION_CREATION, APPLICATION_EDITION, APPLICATION_DELETION`
 - `META_CREDITS` = CREDITS_ADDED
 
 **Others:**
+
 - `CLEVER_TOOLS_REQUEST`
 - `CREDITS_ADDED`
 
-##### Examples:
+##### Examples
 
 Get a message in a Slack channel when the deployment for an application failed:
 
-```
+```shell
 clever webhooks add "The application failed to deploy" https://hooks.slack.com/services/xxxxxx/ --format slack --event DEPLOYMENT_FAIL
 ```
 
 Notify your accounting service when credits are added:
 
-```
+```shell
 clever webhooks add "credits added" https://hooks.slack.com/services/xxxxxx/yyyyyy/zzzzzzzzzzzzz --format raw --event META_CREDITS
 ```
 

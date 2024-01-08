@@ -15,5 +15,3 @@ This feature has yet to be released for all images. At the time of writing this 
 {{< /callout >}}
 
 {{< readfile file="url_healthcheck.md" >}}
-
-

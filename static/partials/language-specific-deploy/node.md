@@ -1,4 +1,5 @@
 ## Configure your Node.js application
+
 ### Mandatory configuration
 
 Be sure that:
@@ -30,43 +31,22 @@ The `package.json` file should look like the following:
   }
 }
 ```
+
 #### The json fields
 
 The following table describes each of the fields formerly mentioned.
 
-<table id="nodedeps" class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Usage</th>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="cc-depusage" rowspan="2">
-        <span class="label label-danger">At least one</span>
-      </td>
-      <td>scripts.start</td>
-      <td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise we will use the <code>main</code> field. See below to know how and when to use the <code>scripts.start</code> field</td>
-    </tr>
-    <tr>
-      <td>main</td>
-      <td>This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
-    </tr>
-    <tr>
-      <td class="cc-depusage" ><span class="label label-default">Optional</span></td>
-      <td>engines.node</td>
-      <td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead to run the application with the latest "A.B" local version. If this field is missing, we use the latest LTS available. If you want to ensure that your app will always run, please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
-    </tr>
-  </tbody>
-</table>
+| Usage        | Field         | Description                                |
+|--------------|---------------|--------------------------------------------|
+| **At least one** | `scripts.start` | This field provides a command line to run. If defined, npm start will be launched. Otherwise we will use the main field. See below to know how and when to use the scripts.start field                   |
+| **At least one** | `main`          | This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if scripts.start is not defined. |
+| Otionnal     | `engines.node`  | Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead to run the application with the latest "A.B" local version. If this field is missing, we use the latest LTS available. If you want to ensure that your app will always run, please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".            |
 
 ### NPM modules dependencies
 
 If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
 
-```json
+```json  {linenos=table}
 {
   "name" : { ... },
   "engines": { ... },
@@ -118,7 +98,7 @@ It's meant to build the whole application including dependencies and / or assets
 
 All the build part should be written into the `scripts.install` field of the `package.json` file. You can also add a custom bash script and execute it with: `"scripts.install": "./build.sh"`
 
-For more information, see <a href="https://docs.npmjs.com/misc/scripts">the npm documentation</a>
+For more information, see [the npm documentation](https://docs.npmjs.com/misc/scripts)
 
 ## Development Dependencies
 
@@ -126,12 +106,12 @@ Development dependencies will not be automatically installed during the deployme
 
 Here are various scenarios:
 
-- `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
-- `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
-- `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
-- `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
-- `NODE_ENV=production`: Package manager (NPM / Yarn) default behaviour. Development dependencies will not be installed.
-- Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behaviour. Development dependencies will be installed.
+* `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
+* `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
+* `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
+* `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
+* `NODE_ENV=production`: Package manager (NPM / Yarn) default behaviour. Development dependencies will not be installed.
+* Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behaviour. Development dependencies will be installed.
 
 ### Custom run command
 

@@ -18,11 +18,11 @@ tasks before and after those phases.
 
 The available hooks are:
 
- - Pre Build
- - Post Build
- - Pre Run
- - On Run Succeeded
- - On Run Failed
+- Pre Build
+- Post Build
+- Pre Run
+- On Run Succeeded
+- On Run Failed
 
 ## Setting hooks up
 
@@ -31,7 +31,7 @@ variables]({{< ref "doc/develop/env-variables.md" >}}).
 To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 
-```
+```shell
 CC_POST_BUILD_HOOK=echo "it works!"
 ```
 
@@ -74,8 +74,8 @@ This hook is ran every time.
 
 This hook is perfect for:
 
- - build tool configuration (eg setting up a `.npmrc` with private tokens)
- - extra dependencies fetching (eg `npm install` for frontend deps)
+- build tool configuration (eg setting up a `.npmrc` with private tokens)
+- extra dependencies fetching (eg `npm install` for frontend deps)
 
 ### Post Build
 
@@ -88,7 +88,7 @@ This hook is not ran during deployments from cache.
 
 This hook is perfect for:
 
- - extra build steps that you want to cache (eg bundling your frontend assets)
+- extra build steps that you want to cache (eg bundling your frontend assets)
 
 ### Pre Run
 
@@ -101,7 +101,7 @@ This hook is ran every time.
 
 This hook is perfect for:
 
- - preparation tasks that need to be ran every time (eg a database migration check)
+- preparation tasks that need to be ran every time (eg a database migration check)
 
 ### Run Success/Fail
 
@@ -114,9 +114,10 @@ One of these hooks is ran every time.
 
 These hooks are perfect for:
 
- - notifications
- - clean-up
+- notifications
+- clean-up
 
-{{< callout type="warning" >}}
+{{< callout emoji="🧹" >}}
+**This hook is deprecated**  
 These hooks replace the older `postDeploy` hook, which is now deprecated.
 {{< /callout >}}

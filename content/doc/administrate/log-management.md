@@ -40,7 +40,7 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
 clever logs --before 2016-08-11T14:54:33.971Z
 ```
 
-You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
 
 ```bash
 clever logs --addon <addon_xxx>
@@ -142,7 +142,7 @@ clever drain remove [--alias <alias>] <DRAIN-ID>
 
 If the status of your drain is shown as `DISABLED` without you disabling it, it may be because we  have not been able to send your logs to your drain endpoint or because the requests timed out after **25 seconds**.
 
-You can also use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+You can also use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
 
 ### Elasticsearch
 

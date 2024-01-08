@@ -28,12 +28,13 @@ When you subscribe the Matomo add-on, we automatically setup a PHP instance base
 
 We have chosen to let you see and manage these companion add-ons in the Console so that you could adjust them to your needs. You can change their settings and use the Clever Cloud ability to migrate from an S flavored database or cache to an L or XL if required. You can also activate autoscalabity (horizontal and/or vertical scaling).
 
-By default, Matomo on Clever Cloud comes with small sized add-ons: 
+By default, Matomo on Clever Cloud comes with small sized add-ons:
+
 - PHP Nano
 - MySQL XXS BigStorage
 - Redis S
 
-We've already integrated the Clever Cloud SSO, so you can login directly into your matomo instance from the Console, start to integrate your website, create different users. 
+We've already integrated the Clever Cloud SSO, so you can login directly into your matomo instance from the Console, start to integrate your website, create different users.
 
 ## Create Matomo add-on
 

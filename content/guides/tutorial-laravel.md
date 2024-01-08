@@ -25,15 +25,15 @@ Laravel applications almost work out of the box on Clever Cloud, you just have a
 
 ### Configure `DocumentRoot`
 
-Add a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_WEBROOT` and set `/public` as its value.
+Add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
 
-```
+```bash
 clever env set CC_WEBROOT /public 
 ```
 
 ### Configure your application key
 
-Locally, run `php artisan key:generate`. It should output something like `base64:tQbFzxwUfOfKKqNlbjXuduwaUFDQUy+NL8DBfgb3o3s=`. Copy this value and add an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `APP_KEY`, with this value.
+Locally, run `php artisan key:generate`. It should output something like `base64:tQbFzxwUfOfKKqNlbjXuduwaUFDQUy+NL8DBfgb3o3s=`. Copy this value and add an environment variable named `APP_KEY`, with this value.
 
 Make sure `config/app.php` contains the following line:
 
@@ -43,7 +43,7 @@ Make sure `config/app.php` contains the following line:
 
 ### Configure monolog to use syslog
 
-In your environment variables, add the `LOG_CHANNEL=syslog` [environment variable](#setting-up-environment-variables-on-clever-cloud). This will allow you to read your application logs directly from the console or the CLI tool.
+In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This will allow you to read your application logs directly from the console or the CLI tool.
 
 Make sure `config/logging.php` contains the following line:
 
@@ -53,7 +53,7 @@ Make sure `config/logging.php` contains the following line:
 
 ### Optional: configure the front-end build
 
-If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` environment variable.
 
 For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=npm install && npm run prod`.
 
@@ -69,7 +69,7 @@ Make sure you have created a database add-on in the Clever Cloud console, and th
 
 For instance for MySQL:
 
-```php
+```php{linenos=table}
    // ...
    'connections' => [
      // ...
@@ -94,13 +94,13 @@ For instance for MySQL:
 
 ### Optional: automatically run migrations upon deployment
 
-If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's [environment variables](#setting-up-environment-variables-on-clever-cloud) `CC_POST_BUILD_HOOK=php artisan migrate --force`
+If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's environment variables `CC_POST_BUILD_HOOK=php artisan migrate --force`
 
 ### Configure storage
 
 Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
 
-Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
+Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
 
 ### Optional: Configure task scheduling
 
@@ -135,13 +135,11 @@ See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f002
 
 To ensure Laravel correctly handles HTTP requests when using the Clever Cloud HTTP reverse proxy (Sōzu), add the following code to the `config/trustedproxy.php` file:
 
-```php
+```php{linenos=table}
 <?php
-
 return [
     'proxies' => env('CC_REVERSE_PROXY_IPS'),
 ];
-
 ```
 
 This environment variable exists in any Clever Cloud instance. This configuration specifies that Clever Cloud proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxyhugo server.
@@ -151,4 +149,3 @@ This environment variable exists in any Clever Cloud instance. This configuratio
 {{< readfile file="deploy-ftp.md" >}}
 
 {{< readfile file="more-config.md" >}}
-

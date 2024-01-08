@@ -11,7 +11,7 @@ Accepted values are `7`, `8`, `11`, `17`, `21` or `graalvm-ce` (for GraalVM 21.0
 
 We follow the official Java [roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) by supporting both LTS and latest non-LTS versions.
 
-We are using OpenJDK distribution for mentionned Java versions. 
+We are using OpenJDK distribution for mentionned Java versions.
 
 {{< callout type="warning" >}}
 Every non-LTS versions where _Premier support_ ends will be removed without warning as you should be able to switch to the next available non-LTS version without any trouble.

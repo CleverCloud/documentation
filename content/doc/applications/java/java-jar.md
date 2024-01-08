@@ -97,37 +97,12 @@ The full configuration can look like the following:
 
 You can use the following properties:
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Usage</th>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; type</strong></td>
-      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
-    </tr>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; goal</strong></td>
-      <td>is the target you want to use to build your project</td>
-    </tr>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>deploy -&gt; goal</strong></td>
-      <td>the goal/target and options you want to execute to deploy/run you project</td>
-    </tr>
-    <tr>
-      <td><span class="label label-danger">Required</span></td>
-      <td><strong>build -&gt; jarName</strong></td>
-      <td>jar file name of your application</td>
-    </tr>
-  </tbody>
-</table>
+| Usage    | Field               | Description                                                               |
+|----------|---------------------|---------------------------------------------------------------------------|
+| Optional | **build → type**    | can be `maven`, `gradle` or `ant`                                         |
+| Optional | **build → goal**    | is the target you want to use to build your project                       |
+| Optional | **deploy → goal**   | the goal/target and options you want to execute to deploy/run you project |
+| Required | **build → jarName** | jar file name of your application                                         |
 
 {{< readfile file="new-relic.md" >}}
 
@@ -161,4 +136,3 @@ For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 {{< readfile file="more-config.md" >}}
 
 {{< readfile file="url_healthcheck.md" >}}
-

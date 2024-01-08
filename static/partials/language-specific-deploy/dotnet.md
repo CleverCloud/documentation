@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041-->
 ## Configure your Dotnet application
 
 ### .NET version
@@ -12,7 +13,7 @@ Be sure that:
 * You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
 * You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
-Let's take an example with the [simple-feed-reader project](https://github.com/dotnet-architecture/simple-feed-reader). 
+Let's take an example with the [simple-feed-reader project](https://github.com/dotnet-architecture/simple-feed-reader).
 
 First, you need to add the `APP_FOLDER=SimpleFeedReader` environment variable to define the application folder inside the Git repository.
 
@@ -36,7 +37,7 @@ CC_DOTNET_PROJ=SimpleFeedReader
 
 If your project file defines multiple targets, like :
 
-```xml
+```xml{linenos=table}
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -46,7 +47,6 @@ If your project file defines multiple targets, like :
 ```
 
 You must specify the one you want to run, with the `CC_DOTNET_TFM` environment variable.
-
 
 If `CC_DOTNET_TFM` is specified, then the executable produced by this target is used to start the application.
 
@@ -58,7 +58,7 @@ CC_DOTNET_TFM=net5.0
 
 Make sure to list all your dependencies in your project file. For example:
 
-```xml
+```xml{linenos=table}
   ...
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
@@ -82,7 +82,7 @@ CC_DOTNET_PROFILE=Debug
 
 ### Custom run command
 
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` environment variable.
 
 For instance, you can have `CC_RUN_COMMAND=./bin/Release/net5.0/myapp <options>`.
 

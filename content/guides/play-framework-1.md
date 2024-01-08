@@ -25,6 +25,7 @@ Clever Cloud supports Play 1.x applications natively. The present guide explains
 {{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Scala + Play! 1 application
+
 ### Select Play! 1.x version
 
 Clever Cloud supports Play! **1.2**, **1.3**, **1.4**, **1.5**. You can select the Play! version for your application by setting the `PLAY1_VERSION` [environment variable](#setting-up-environment-variables-on-clever-cloud) (or by putting it in a file named `clevercloud/play1_version`).

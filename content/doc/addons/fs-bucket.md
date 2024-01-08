@@ -25,26 +25,29 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-**Notes:** 
-- Back-ups are not included in the public cloud offer. You can still do them manually.
-- FSBuckets are not available for Docker applications because of security concerns.
+{{< callout type="warning" >}}**Warning**  
+• Back-ups are **not included** in the public cloud offer. You can still do them manually.  
+• FSBuckets are not available for Docker applications because of security concerns.
+{{< /callout >}}
 
 ## Configuring your application
 
 Buckets are configured using environment variables. Add the following to your application :
 
-```
+```text
 CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com[:async]
 ```
-_don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder not exists) and your fs-bucket host_ 
+
+Don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder does not exists) and your fs-bucket host.
 
 Optionnally, you can add `:async` to the end of the environment variable.
 This will make Clever Cloud mount the FS Bucket with the `async` option.
-It will make the FS Bucket faster (sometimes 3× faster), but in case of a network issue it may cause file
+It will make the FS Bucket faster (sometimes up to 3 times faster), but in case of a network issue it may cause file
 corruption.
 
 You can setup multiple buckets by appending a number at the end of the environment variable's name.
-```
+
+```text
 CC_FS_BUCKET=/some/empty/folder:fs_bucket_host
 CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host:async
 ```
@@ -53,17 +56,16 @@ Note that the `async` parameter can be set per bucket.
 
 ## Configuring your application with buckets.json (@deprecated)
 
-{{< callout type="warning" >}}
+{{< callout emoji="🧹" >}}
+**This method is deprecated**  
 This method is deprecated, we strongly recommend that you use environment variables.
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
 Also, this method does not support the `async` parameter.
 {{< /callout >}}
 
 To configure your application to use buckets, use the
-`clevercloud/buckets.json` file.
-
-The `clevercloud` folder must be located at the root of your application.
-
+`clevercloud/buckets.json` file.  
+The `clevercloud` folder must be located at the root of your application.  
 The `buckets.json` file must contain the following structure:
 
 ```javascript
@@ -81,21 +83,12 @@ The `buckets.json` file must contain the following structure:
   }
 ]
 ```
+
 {{< callout type="info" >}}
 You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
 {{< /callout >}}
 
 It's a json array containing objects with at least two fields:
-
-## Configuring your application with buckets.json (@deprecated)
-
-{{< callout type="warning" >}}
-This method is deprecated, we strongly recommend that you use environment variables.
-If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
-Also, this method does not support the `async` parameter.
-{{< /callout >}}
-
-To configure your application to use buckets, use the following markdown table:
 
 Usage    | Field        | Description
 ---------|--------------|--------------------------------------------------------------
@@ -130,4 +123,3 @@ in the FS bucket.
 
 The **Addon information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
-

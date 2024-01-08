@@ -24,8 +24,8 @@ can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd99
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 
-##### 🔐 Two Factor Authentication (2FA)
+### 🔐 Two Factor Authentication (2FA)
 
-Clever Cloud supports 2FA. You can enable it here: https://console.clever-cloud.com/users/me/authentication
+Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
 
 Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.

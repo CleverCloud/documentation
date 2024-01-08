@@ -40,27 +40,29 @@ Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, yo
 
 **Limiting Exceeding Connections**: PostgreSQL puts a limit on the amount of concurrent connections, so that new connections are rejected when this number is reached. Raising this maximum number of connections, however, increases resource consumption and has a negative impact on overall system performance. Pgpool-II also limits the number of concurrent connections, but extra connections will be queued instead of returning an error immediately. Or you can configure it to return an error when the connection limit is exceeded (`4.1` or later).
 
-**In Memory Query Cache**: In memory query cache allows to save a `SELECT` statement with its result. If an identical `SELECT` comes in, Pgpool-II returns the value from cache. Since neither SQL parsing nor access to PostgreSQL are involved, using in memory cache is extremely fast. On the other hand, it might be slower than the normal path in some cases, because it adds some overhead of storing cache data. 
+**In Memory Query Cache**: In memory query cache allows to save a `SELECT` statement with its result. If an identical `SELECT` comes in, Pgpool-II returns the value from cache. Since neither SQL parsing nor access to PostgreSQL are involved, using in memory cache is extremely fast. On the other hand, it might be slower than the normal path in some cases, because it adds some overhead of storing cache data.
 
 The various features are available in the [official Pgpool documentation](https://www.pgpool.net/docs/latest/en/html/index.html).
 
 {{< callout type="info" >}}
-We only support the **Streaming** mode, which is the most used and recommended mode for Pgpool-II. If you need other modes or features that are not supported on Clever Cloud, please contact us at <support@clever-cloud.com> 
+We only support the **Streaming** mode, which is the most used and recommended mode for Pgpool-II. If you need other modes or features that are not supported on Clever Cloud, please contact us at <support@clever-cloud.com>
 {{< /callout >}}
 
 ## How to configure Pgpool-II
 
-### Generate direct variables for your PostgreSQL add-ons.
+### Generate direct variables for PG
+
 Go to the "Add-on dashboard" tab of your PostgreSQL add-ons and click on the "Generate direct hostname and port" button.
 
-### Enable Pgpool-II for your application
+### Enable Pgpool-II
+
 In order to configure Pgpool-II, the first thing to do is to link your PostgreSQL add-on. To do that, you can go to the `Service Dependencies` page of your application
 and select your PostgreSQL add-on.
 
 Once linked, you can enable the Pgpool-II feature by defining the following environment variable: `CC_ENABLE_PGPOOL=true`.
 If you ever need to stop using Pgpool-II, you can remove this variable or set it to `false`.
 
-Your application will use a Unix Domain Socket to connect to Pgpool-II. Unix domain sockets are faster than TCP sockets because there is no handshake and the connection is made locally on the same machine. A special environment variable will be injected to your environment variables: `CC_PGPOOL_SOCKET_PATH`. This variable contains the path to the Unix Domain Socket you have to connect to. See [Usages](#usages) below for some examples on how to use it.
+Your application will use a Unix Domain Socket to connect to Pgpool-II. Unix domain sockets are faster than TCP sockets because there is no handshake and the connection is made locally on the same machine. A special environment variable will be injected to your environment variables: `CC_PGPOOL_SOCKET_PATH`. This variable contains the path to the Unix Domain Socket you have to connect to. See [Usage](#usage) below for some examples on how to use it.
 
 The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/).  
 
@@ -68,20 +70,21 @@ The available Pgpool-II variables and their descriptions are available on our [e
 
 You can use the `CC_PGPOOL_NUM_INIT_CHILDREN` and `CC_PGPOOL_MAX_POOL` environment variables to set the number of **concurrent sessions** and the number of **connection pool caches per connection**.
 
-Let's take an example where you have 3 PostgreSQL servers, and the `CC_PGPOOL_NUM_INIT_CHILDREN` variable configured with a value of **32**. 
+Let's take an example where you have 3 PostgreSQL servers, and the `CC_PGPOOL_NUM_INIT_CHILDREN` variable configured with a value of **32**.
 
 On startup, Pgpool-II will start **32** processes, one process per connection. The `CC_PGPOOL_MAX_POOL` variable is used to configure the number of cached connections per connection (process). This option is mostly used when you have different credentials for the same PostgreSQL server (database, user...). But in the case of **Streaming** mode on Clever Cloud, you have access to only one database, and the credentials are the same on all add-ons with binary replication. You should not need to change the default value of this variable (**1** by default).
 
 An example of the `SHOW POOL_POOLS;` command with `CC_PGPOOL_NUM_INIT_CHILDREN=32` and `CC_PGPOOL_MAX_POOL=1`:
-```sql
-psql -U u5dh6v2ymn********** -d bjzfhkl5qc**********
+
+```shell
+psql -U u1mgltc2ezvkylo2cjno -d bjzfhkl5qcdhdqatyqjk
 
 bjzfhkl5qc**********=> show pool_pools;
  pool_pid |     start_time      | pool_id | backend_id |       database       |       username       |     create_time     | pool_backendpid |
 ----------+---------------------+---------+------------+----------------------+----------------------+---------------------+-----------------+
- 3526     | 2021-06-02 15:22:12 | 0       | 0          | bjzfhkl5qc********** | u5dh6v2ymn********** | 2021-06-02 15:22:35 | 1520665         | 
- 3526     | 2021-06-02 15:22:12 | 0       | 1          | bjzfhkl5qc********** | u5dh6v2ymn********** | 2021-06-02 15:22:35 | 1665071         | 
- 3526     | 2021-06-02 15:22:12 | 0       | 2          | bjzfhkl5qc********** | u5dh6v2ymn********** | 2021-06-02 15:22:35 | 531483          | 
+ 3526     | 2021-06-02 15:22:12 | 0       | 0          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1520665         | 
+ 3526     | 2021-06-02 15:22:12 | 0       | 1          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1665071         | 
+ 3526     | 2021-06-02 15:22:12 | 0       | 2          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 531483          | 
  3527     | 2021-06-02 15:22:12 | 0       | 0          |                      |                      |                     | 0               | 
  3527     | 2021-06-02 15:22:12 | 0       | 1          |                      |                      |                     | 0               | 
  3527     | 2021-06-02 15:22:12 | 0       | 2          |                      |                      |                     | 0               | 
@@ -111,8 +114,9 @@ Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment 
 For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
 {{< /callout >}}
 
-An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers: 
-```json
+An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers:
+
+```json{linenos=table}
 [
   {
     "hostname": "<HOST>",
@@ -137,7 +141,7 @@ Many other **load balancing** options are configurable with environment variable
 
 ### Health check
 
-Pgpool-II periodically connects to the configured PostgreSQL backends to detect any error on the servers or networks. If an error is detected, Pgpool-II performs failover or degeneration depending on the configurations. 
+Pgpool-II periodically connects to the configured PostgreSQL backends to detect any error on the servers or networks. If an error is detected, Pgpool-II performs failover or degeneration depending on the configurations.
 
 The health check is not activated by default, but you can activate it with the `CC_PGPOOL_HEALTH_CHECK_PERIOD` variable.
 
@@ -190,6 +194,7 @@ which has a connection limit of `125`.
 Now my application receives a lot of traffic and scales up to `4 M` instances. But at the same time, I also need to deploy a hot fix. This means that `4 new M` instances will be started, alongside the already existing `4 M` instances. I need to make sure that `MaxCon` doesn't go above `125`.
 
 Here is the summary:
+
 - 8 instances: 4 currently running, 4 currently deploying my hot fix
 - 125 max connections: the maximum number of connections of my PostgreSQL add-on's plan
 - 5 other connections: I want to be able to use PG Studio or any CLI tool at the same time, in case I need it
@@ -198,20 +203,25 @@ Here is the summary:
 
 ## Tips / debug
 
-### How can I access Pgpool-II from my application?
+### Connecting to Pgpool-II
 
 Connect via [ssh](https://www.clever-cloud.com/doc/administrate/ssh-clever-tools/) to your application and use the [psql](https://docs.postgresql.fr/10/app-psql.html) command.
+
 ```bash
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com <app_id>
 ```
+
+Then, launch the `psql` command with :
+
 ```bash
 psql
 ```
 
-### How can I see the configured nodes?
+### Showing configured nodes
 
 You can use the [`SHOW POOL_NODES;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-nodes.html) command.
-```sql
+
+```shell
 bjzfhkl5qc**********=> SHOW POOL_NODES;
  node_id |                         hostname                          | port | status | lb_weight |  role   | select_cnt | load_balance_node |
 ---------+-----------------------------------------------------------+------+--------+-----------+---------+------------+-------------------+
@@ -220,10 +230,11 @@ bjzfhkl5qc**********=> SHOW POOL_NODES;
  2       | bmtwtemn40**********-postgresql.services.clever-cloud.com | 57** | up     | 0.333333  | standby | 1          | true              |
 ```
 
-### How can I see the Pgpool-II processes waiting for connections and processing a connection?
+### Watching Pgpool-II processes
 
-You can use the [`SHOW POOL_PROCESSES;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-processes.html) command.
-```sql
+You can use the [`SHOW POOL_PROCESSES;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-processes.html) command to see processes waiting for connections and processing a connection.
+
+```shell
 bjzfhkl5qc**********=> SHOW POOL_PROCESSES;
  pool_pid |     start_time      |       database       |       username       |     create_time     | pool_counter
 ----------+---------------------+----------------------+----------------------+---------------------+--------------
@@ -233,10 +244,11 @@ bjzfhkl5qc**********=> SHOW POOL_PROCESSES;
  21566    | 2021-06-03 11:29:20 |                      |                      |                     |
 ```
 
-### How can I see the list of pools managed by Pgpool-II?
+### Listing managed pools
 
-You can use the [`SHOW POOL_POOLS;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-pools.html) command.
-```sql
+You can use the [`SHOW POOL_POOLS;`](https://www.pgpool.net/docs/latest/en/html/shell-show-pool-pools.html) command to see the list of pools managed by Pgpool-II.
+
+```shell
 bjzfhkl5qc**********=> SHOW POOL_POOLS;
  pool_pid |     start_time      | pool_id | backend_id |       database       |       username       |     create_time     | pool_backendpid |
 ----------+---------------------+---------+------------+----------------------+----------------------+---------------------+-----------------+
@@ -254,10 +266,11 @@ bjzfhkl5qc**********=> SHOW POOL_POOLS;
  21566    | 2021-06-03 11:29:20 | 0       | 2          |                      |                      |                     | 0               |
 ```
 
-### How can I see the statistics of SQL commands?
+### Statistics of SQL commands
 
-You can use the [`SHOW POOL_BACKEND_STATS;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-backend-stats.html) command.
-```sql
+You can use the [`SHOW POOL_BACKEND_STATS;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-backend-stats.html) command to see the statistics of SQL commands.
+
+```shell
 bjzfhkl5qc**********=> SHOW POOL_BACKEND_STATS;
  node_id |                         hostname                          | port | status |  role   | select_cnt | insert_cnt | update_cnt | delete_cnt |
 ---------+-----------------------------------------------------------+------+--------+---------+------------+------------+------------+------------+
@@ -266,21 +279,26 @@ bjzfhkl5qc**********=> SHOW POOL_BACKEND_STATS;
  2       | bmtwtemn40**********-postgresql.services.clever-cloud.com | 57** | up     | standby | 1          | 0          | 0          | 0          |
 ```
 
-### Is it possible to use the PCP command?
+### Using the PCP command
 
-Yes, the [PCP tool](https://www.pgpool.net/docs/latest/en/html/pcp-commands.html) is preconfigured and available on your application.
+The [PCP tool](https://www.pgpool.net/docs/latest/en/html/pcp-commands.html) is preconfigured and available on your application.
+
 ```bash
 pcp_pool_status -h /tmp -U pcp -w
 ```
 
-###  Attach or detach a given node to Pgpool-II:
+### Managing nodes
+
+Attach or detach a given node to Pgpool-II;
 
 ```bash
 pcp_pool_status -h /tmp -U pcp -w -n 0
 pcp_pool_status -h /tmp -U pcp -w -n 0
 ```
 
-### Display the statistical data of the health check on the given node ID:
+### Statistical data
+
+Display the statistical data of the health check on the given node ID
 
 ```bash
 pcp_pool_status -h /tmp -U pcp -w -n 0 -v
@@ -318,7 +336,7 @@ Please note that to connect to Pgpool-II, the default port **5432** must be used
 
 Using [PDO](https://www.php.net/manual/fr/ref.pdo-pgsql.connection.php), you have to use the `unix_socket` option in your DSN:
 
-```php
+```php{linenos=table}
 <?php
 // This variable is injected during deployment
 $host = getenv("CC_PGPOOL_SOCKET_PATH");
@@ -334,7 +352,7 @@ $dsn = "pgsql:host=$host;dbname=$database;user=$user;password=$password";
 try {
     $conn = new PDO($dsn);
     if($conn){
-	echo "Successfully connected to $dbname!";
+  echo "Successfully connected to $dbname!";
      }
 } catch (PDOException $e){
      echo $e->getMessage();
@@ -345,7 +363,8 @@ try {
 ### Wordpress
 
 For WordPress, you can change the `DB_HOST` variable in your `wp-config.php`:
-```php
+
+```php{linenos=table}
 // To connect using a socket, the syntax is: `localhost:/path/to/socket`
 define( 'DB_HOST', "localhost:" . getenv("CC_PGPOOL_SOCKET_PATH") );
 ```
@@ -354,7 +373,7 @@ define( 'DB_HOST', "localhost:" . getenv("CC_PGPOOL_SOCKET_PATH") );
 
 On Node.js, using the `pg` npm package:
 
-```javascript
+```javascript{linenos=table}
 const { Client } = require('pg');
 client = new Client({
     // This variable is injected during the deployment
@@ -369,4 +388,3 @@ client = new Client({
 
 client.connect();
 ```
-

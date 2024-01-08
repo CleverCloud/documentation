@@ -26,4 +26,6 @@ There are a number of things you need to be aware of when writing new content. W
 
 If you add `debug=true` as params of your Hugo site, you should see every shortcode outlined on your website like so:
 
+```html
 <div class="shortcode-debug"><strong>myshortcode </strong><p>This is a shortcode being used</div>
+```

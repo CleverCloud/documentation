@@ -107,7 +107,6 @@ If you don't want any confirmation, use `--yes`.
     # Delete an addon
     clever addon delete <addon-name>
 
-
 ## Dependencies
 
 ### Link an application or an addon

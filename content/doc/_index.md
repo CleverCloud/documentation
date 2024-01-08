@@ -7,11 +7,8 @@ linkTitle: Documentation
 ---
 
 {{< hextra/hero-subtitle >}}
-  Everything you need to know&nbsp;<br class="sm:block hidden" />for your Clever Cloud journey
+  Everything you need to know for your Clever Cloud journey
 {{< /hextra/hero-subtitle >}}
-
-
-<div class="mt-8"></div>
 
 {{< cards >}}
   {{< card link="/doc/quickstart" title="Getting Started" subtitle="Get ready to deploy and app in 5 minutes" icon="arrow-circle-right" >}}
@@ -28,12 +25,9 @@ linkTitle: Documentation
   {{< card link="../doc/contribute" title="Contribute" subtitle="See how to contribute to this documentation." icon="pencil-alt" >}}
 {{< /cards >}}
 
-<br>
-{{< hextra/hero-subtitle >}}
-  See our step by step tutorials &nbsp;<br class="sm:block hidden" />
+{{< hextra/hero-subtitle style="margin:20px 0">}}
+  See our step by step tutorials
 {{< /hextra/hero-subtitle >}}
-
-<div class="mt-8"></div>
 
 {{< feature-grid >}}
   {{< feature-card

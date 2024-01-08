@@ -17,7 +17,7 @@ aliases:
 
 ## Overview
 
-In Haskell, metrics are usually gathered with [EKG](https://hackage.haskell.org/package/ekg). 
+In Haskell, metrics are usually gathered with [EKG](https://hackage.haskell.org/package/ekg).
 
 The package `ekg-statsd` allows to push EKG metrics over `statsd`.
 EKG allows you to have access to GC metrics, make sure you compile your application with `"-with-rtsopts=-T -N"` to enable profiling.
@@ -27,6 +27,7 @@ If you're using [warp](https://hackage.haskell.org/package/warp), you can use `w
 ### Configure logs for your Haskell application
 
 You need the following packages in your [dependencies]({{< ref "doc/applications/haskell#dependencies" >}}):
+
 * ekg-core
 * ekg-statsd
 * scotty
@@ -63,4 +64,3 @@ main = do
      get "/" $
        html $ "Hello world"
 ```
-

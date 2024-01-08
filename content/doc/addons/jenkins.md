@@ -54,7 +54,7 @@ Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details o
 Once you created your add-on, you should get to the dashboard. You should see a link named `Access Jenkins`. Opening that link will redirect you to our SSO
 authentication.
 
-{{< readfile "file"=`/partials/single-sign-on.md` >}}
+{{< readfile file="single-sign-on.md" >}}
 
 ## Configure your Jenkins instance
 
@@ -64,11 +64,13 @@ This plugin will allow you to configure the runners Jenkins will start to execut
 ### Configure your runners
 
 Using our Jenkins plugin, you can configure multiple runners. Runners can have multiple configuration customized:
+
 - Label: Only Jobs that require this label will be able to use that runner. [More on that below](#labels).
 - Docker image: Select which docker image your job will use to run. [More on that below](#docker-image-requirements).
 - Virtual machine size: The size of the Clever Cloud scaler to use.
 
 Before configuring the runners themselves, we have to configure a new Cloud. To do so:
+
 - Open the left menu, open the `Manage Jenkins` link.
 - Then, under `System configuration`, open the `Manage nodes and Clouds` item.
 - On the left menu, open the `Configure Clouds` link.
@@ -78,10 +80,12 @@ Before configuring the runners themselves, we have to configure a new Cloud. To 
 any rate limiting.
 
 From there, we will be able to create runner templates. You can have multiple runner templates for multiple workflows. For example, you might need two runner templates:
+
 - One for building and testing your Java Maven projects.
 - One for building and testing your Frontend projects.
 
 Let's configure a runner template for Java Maven projects:
+
 - Click on `Add a runner template`.
 - Name your runner template, for example `Jenkins maven agent`.
 - Set `maven` as the label. Jobs that require a `maven` runner will then be able to execute on this runner.
@@ -99,10 +103,12 @@ We can now start configuring a new Job that will execute on a runner that will b
 Label is a very important setting. Labels will restrict on which runners a given project can be run.
 
 For example, if you have two runners templates with the following labels:
+
 - maven
 - nodejs
 
 And you have two jobs:
+
 - A first job that builds and test a Java Maven project
 - A second job that builds and test a frontend application
 
@@ -130,6 +136,7 @@ read [Jenkin's documentation](https://www.jenkins.io/doc/).
 In this example, the job will execute on a runner using the maven runner template we created earlier. It will basically print `Hello world` and `sleep` a bit.
 
 First, on the left menu, click on `New item`. This will open the available jobs types:
+
 - Enter a name for your project, let's say `My Maven Project`
 - Select the `Freestyle project` option and click `Ok`
 - We will use a Maven runner template we previously configured to execute the job: Tick the `Restrict where this project can be run` option and enter `maven` in the text field
@@ -140,6 +147,7 @@ First, on the left menu, click on `New item`. This will open the available jobs 
 echo 'Hello World!'
 sleep 60
 ```
+
 - Save the settings.
 
 Now that the job is configured, we can start it by clicking on the `Build now` button in the left menu. A message saying that the build has been scheduled should be printed.
@@ -263,25 +271,25 @@ By default, Clever Cloud performs a backup every day, with a retention of seven 
 Here are the plans of the Jenkins controller as well as its available runner instances.
 
 <!-- Documentation is here: https://www.clever-cloud.com/doc/clever-components/?path=/docs/%F0%9F%9B%A0-pricing-cc-pricing-product--default-story -->
+<!-- markdownlint-disable MD033 -->
 <script type="module" src="https://components.clever-cloud.com/load.js?version=7&components=cc-pricing-product.smart-addon,cc-pricing-product.smart-runtime"></script>
 
 ### Jenkins Add-on
 
 Those are the plans of the Jenkins controller instance.
-<div>
+<!-- markdownlint-disable MD033 -->
 <cc-smart-container context='{"productId": "jenkins", "addonFeatures": ["cpu", "memory", "disk-size", "has-logs", "has-metrics"]}'>
   <cc-pricing-product mode="addon" action="none">
     <div slot="head"></div>
   </cc-pricing-product>
 </cc-smart-container>
-</div>
 
 ### Runners
+
 Those plans are the available runners for your jobs.
-<div>
+<!-- markdownlint-disable MD033 -->
 <cc-smart-container context='{"productId": "jenkins-runner"}'>
   <cc-pricing-product mode="runtime" action="none" temporality='[{"type":"minute","digits":5}, {"type": "1000-minutes","digits": 2}]'>
     <div slot="head"></div>
   </cc-pricing-product>
 </cc-smart-container>
-</div>

@@ -18,7 +18,7 @@ comments: false
 ---
 
 {{< hextra/hero-subtitle >}}
-  Manage your applications&nbsp;<br class="sm:block hidden" />from your terminal.
+  Manage your applications from your terminal.
 {{< /hextra/hero-subtitle >}}
 
 In addition to the Clever Cloud console, you can manage your addons and applications from the command line with Clever Tools.

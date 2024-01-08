@@ -75,8 +75,9 @@ First, you need to use the `HTTPS` url as the git url for your dependency in you
 `private-dep = { git = "https://github.com/user/my-private-dep.git" }`
 
 Then, you need to create a personal access token. It allows to not use your password:
-- `Github`: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-- `Gitlab`: https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html (API rights are needed)
+
+* `Github`: <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
+* `Gitlab`: <https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html> (API rights are needed)
 
 Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
 
@@ -94,16 +95,16 @@ If you have multiple private repositories, add them accordingly.
 
 Now, go into the environment variables page of your application and create those environment variables:
 
-- `GIT_USERNAME`: your Github / gitlab / other username
-- `GIT_PASSWORD`: your Github / gitlab / other password
-- `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
-- `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
+* `GIT_USERNAME`: your Github / gitlab / other username
+* `GIT_PASSWORD`: your Github / gitlab / other password
+* `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
+* `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
 
 This adds the git configuration before the build start and it cleans it after the build has been done.
 
 ### Rust channels
 
-By default, your application is built with the latest stable rust version. If you require beta, nightly or a specific Rust version, you can set `CC_RUSTUP_CHANNEL` [environment variable](#setting-up-environment-variables-on-clever-cloud) value to `beta`, `nightly` or a specific version (eg. `1.36.0`). 
+By default, your application is built with the latest stable rust version. If you require beta, nightly or a specific Rust version, you can set `CC_RUSTUP_CHANNEL` [environment variable](#setting-up-environment-variables-on-clever-cloud) value to `beta`, `nightly` or a specific version (eg. `1.36.0`).
 
 The build uses `rustup` to select the Rust version you need.
 

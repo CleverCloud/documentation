@@ -28,11 +28,9 @@ Install instructions for [Node.js](https://docs.newrelic.com/docs/agents/nodejs-
 
 To use New Relic in Python, you have to add the [newrelic](https://pypi.python.org/pypi/newrelic) dependency into your `requirements.txt` file.
 
-
 ## New Relic for Java, Scala and PHP
 
 To use New Relic in Java, Scala or PHP instances, you need to configure it as it is provided directly inside the instances.
-
 
 ## New Relic configuration
 

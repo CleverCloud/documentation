@@ -60,7 +60,6 @@ Clever-tools allows you to load variables from STDIN.
 
     cat <env-file> | clever env import
 
-
 ## Scalability
 
 ### Flavors
@@ -82,7 +81,6 @@ You can choose the number of parallels instances using `--instances <instances>`
 
     # Set the minimum and maximum number of parallels instances
     clever scale --min-instances <min-instances> --max-instances <max-instances>
-
 
 ## Domains
 

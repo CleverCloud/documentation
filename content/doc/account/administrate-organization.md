@@ -18,7 +18,7 @@ Give it a name, description, specify if it is a company and add billing informat
 
 ## Administrate an organization
 
-By clicking on you application name, a new left menu will open itself. 
+By clicking on you application name, a new left menu will open itself.
 
 - **Overview**: Simple metrics about your applications within this organization
 
@@ -26,7 +26,7 @@ By clicking on you application name, a new left menu will open itself.
 
 - **Members**: Manage team members. Team members must have a Clever Cloud account.  On this page you can add and remove team members. You can also edit their roles in order to manage their permissions.
 
-- **Shared softwares**: 
+- **Shared softwares**:
 
 - **Payment methods**: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.
 
@@ -39,6 +39,3 @@ By clicking on you application name, a new left menu will open itself.
 ## Delete an organization
 
 In the **Information** page, click the *remove this organization* button. You will be prompted to enter the name of the organization in order to confirm the organization deletion.
-
-
-

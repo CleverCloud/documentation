@@ -28,7 +28,7 @@ MailPace provides an HTTPS API, SMTP Server and several libraries for sending em
 Create the add-on from Clever Cloud's Console. You need to verify you domain name by adding the provided DNS entry in your DNS provider's dashboard. Then, you will get an `API KEY` that you should add to your application (as environment variable with PHP, see section below).
 
 - Host : `smtp.mailpace.com`
-- Port : `25`, `465`, `587`, `2525` 
+- Port : `25`, `465`, `587`, `2525`
 - User : `API KEY`
 - Password : `API KEY`
 - Encryption : usage of `TLS` or `STARTTLS` are highly recommended.
@@ -44,6 +44,7 @@ Check [MailPace documentation](https://docs.mailpace.com/)
 **You have to turn TLS on with port 465** (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working. Enable `STARTTLS` allows to use another port.
 
 These environment variables have to be set with the value of :
+
 - `CC_MTA_SERVER_HOST`: Host of MailPace's SMTP server is `smtp.mailpace.com`.
 - `CC_MTA_SERVER_PORT`: Server port has to be set to `465`. Defaults to `465` whether TLS is enabled or not.
 - `CC_MTA_AUTH_USER`: User to authenticate to MailPace's SMTP server has to be set with `MAILPACE_API_KEY`.

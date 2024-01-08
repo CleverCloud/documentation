@@ -91,7 +91,6 @@ Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.myc
 
 It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
 
-
 #### Static hosting
 
 You can use a bucket to host your static website, this [blog article](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describe well how it can be done.
@@ -169,7 +168,6 @@ s3.listBuckets(function(err, res) {
 s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
 ```
 
-
 ### Java
 
 Import the AWS SDK S3 library.
@@ -185,7 +183,7 @@ With maven, it can be done with the following dependency :
 
 Make sur to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
 
-Below is a sample Java class, written in Java 21, listing the objects of all buckets : 
+Below is a sample Java class, written in Java 21, listing the objects of all buckets :
 
 ```java
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
@@ -265,13 +263,12 @@ b[0].generate_url(60)
 
 ### Active Storage (Ruby On Rails)
 
-[Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various 
-cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
+[Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
 you must configure a S3 service with a custom endpoint.
 
 Use this configuration in your `config/storage.yml`:
 
-```yaml
+```yaml {filename="config/storage.yml"}
 cellar:
   service: S3
   access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
@@ -294,7 +291,6 @@ You can upload all your objects with a public ACL, but you can also make your wh
 {{< callout type="warning" >}}
   This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
 {{< /callout >}}
-
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
 
@@ -363,22 +359,20 @@ Here this configuration has two `CORS` rules:
 - The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. `PUT`, `POST` and `DELETE` methods are allowed to be used by the cross-origin request. Then, all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header are allowed using `AllowedHeaders *`. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
 - The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Updating the `CORS` configuration replaces the old one</h4>
-  </div>
-  <div class="panel-body">
-    If you update your `CORS` configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback.
-  </div>
-</div>
+{{< callout type="warning" >}}
 
-To view and save your current `CORS` configuration, you can use `s3cmd info`:
+**Updating the CORS configuration replaces the old one**  
+If you update your CORS configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback.
+
+{{< /callout >}}
+
+To view and save your current CORS configuration, you can use `s3cmd info`:
 
 ```bash
 s3cmd -c s3cfg -s info s3://your-bucket
 ```
 
-You can then set this `CORS` configuration using `s3cmd`:
+You can then set this CORS configuration using `s3cmd`:
 
 ```bash
 s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket

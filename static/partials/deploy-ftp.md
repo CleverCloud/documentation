@@ -9,7 +9,7 @@ You will find the FTP credentials in the configuration tab of this particular FS
 Just follow the instructions of your FTP Software to send code to Clever Cloud.
 
 {{< callout type="warning" >}}
-<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+An FTP application is automatically started once the application is created, even if no code has been sent.
 {{< /callout >}}
 
 Refer to  our [Quick Start - FTP deployment]({{< ref "/doc/quickstart#ftp-deployment" >}}) for more details.

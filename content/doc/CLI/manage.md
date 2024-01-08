@@ -57,12 +57,13 @@ clever env
 Use `set` to add or update an environment variable and `rm` to remove one.
 
 ```shell
-Add or update an environment variable
+# Add or update an environment variable
 clever env set <variable-name> <variable-value>
 
 # Remove an environment variable
 clever env rm <variable-name>
 ```
+
 If your environment variable contains a `-`, then write: `clever env set test -- ---foo---`
 
 Or you can put the dashes before the remaining arguments, as follows: `clever -- env set test ---bar---`
@@ -95,7 +96,7 @@ clever scale --min-flavor <min-flavor> --max-flavor <max-flavor>
 
 You can choose the number of parallels instances using `--instances <instances>` where `<instance>` is a number between 1 and 20.
 
-``shell
+```shell
 # Change the number of parallels instances
 clever scale --instances <instances>
 

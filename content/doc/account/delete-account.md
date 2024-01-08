@@ -13,6 +13,7 @@ keywords:
 ---
 
 To delete your account:
+
 1. Open the Clever Cloud Web Console.
 2. Select **Profile** in the bottom left menu.
 3. Select **Delete my account** in the top menu of the freshly opened page.

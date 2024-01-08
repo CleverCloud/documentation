@@ -12,9 +12,8 @@ type: docs
 ---
 {{< callout type="warning" >}}
 TCP redirections are currently available free of charge as long as the feature is still considered in a BETA stage.
-Once the feature leaves the BETA stage, it won't be free anymore.    
+Once the feature leaves the BETA stage, it won't be free anymore.
 {{< /callout >}}
-
 
 ## What is a TCP redirection?
 

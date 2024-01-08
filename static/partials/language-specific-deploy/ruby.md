@@ -17,9 +17,9 @@ If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, othe
 
 On your Clever Cloud application create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
- * "2" will select the greatest "2.X.Y" version available.
- * "2.5" will select the greatest "2.5.Y" version available.
- * "2.5.3" will select the "2.5.3" version.
+* "2" will select the greatest "2.X.Y" version available.
+* "2.5" will select the greatest "2.5.Y" version available.
+* "2.5.3" will select the "2.5.3" version.
 
 Due to current landscape in ruby applications, the default version is the greatest 2.5.Y. We provide also the 2.4.Y and 2.3.Y version.
 
@@ -111,10 +111,10 @@ CC_RAKEGOALS="db:migrate, assets:precompile"
 
 Only for Rails >= 5.2.
 
-- Enable Active Storage for your application: `$ rails active_storage:install` then `$ rake db:migrate`
-- Add `gem "aws-sdk-s3", require: false` to your Gemfile, run `$ bundle install`
-- Add `config.active_storage.service = :clevercloud` in `config/environments/production.yml`
-- Add in `config/storage.yml`:
+* Enable Active Storage for your application: `$ rails active_storage:install` then `$ rake db:migrate`
+* Add `gem "aws-sdk-s3", require: false` to your Gemfile, run `$ bundle install`
+* Add `config.active_storage.service = :clevercloud` in `config/environments/production.yml`
+* Add in `config/storage.yml`:
 
   ```yaml
   clevercloud:
@@ -127,8 +127,8 @@ Only for Rails >= 5.2.
     force_path_style: true
   ```
 
-- In the clever cloud console create a Cellar S3 storage add-on, name it, link it to your rails application and create a bucket.
-- In the environment variables section of your Ruby on Rails application on Clever Cloud add the following environment variables:
+* In the clever cloud console create a Cellar S3 storage add-on, name it, link it to your rails application and create a bucket.
+* In the environment variables section of your Ruby on Rails application on Clever Cloud add the following environment variables:
 
   ```bash
   CELLAR_ADDON_BUCKET_NAME="<your bucket name>"
@@ -144,7 +144,7 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 
 nginx settings can be configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
 
- - `NGINX_READ_TIMEOUT`: the response timeout in seconds. (Defaut: 300)
+* `NGINX_READ_TIMEOUT`: the response timeout in seconds. (Defaut: 300)
 
 #### Basic authentication
 
@@ -154,11 +154,11 @@ If you need basic authentication, you can enable it using [environment variables
 
 Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 
- - `languages`: configure a default language and redirections
- - `error_pages`: configure custom files for error pages
- - `force_https`: automatically redirect HTTP traffic to HTTPS
- - `aliases`: set up redirections
- - `charset`: force a specific charset
+* `languages`: configure a default language and redirections
+* `error_pages`: configure custom files for error pages
+* `force_https`: automatically redirect HTTP traffic to HTTPS
+* `aliases`: set up redirections
+* `charset`: force a specific charset
 
 ```json
 {
@@ -182,7 +182,7 @@ Nginx settings can be configured further in `clevercloud/http.json`. All its fie
 Puma reads its configuration from the `config/puma.rb` file. See [the puma documentation](https://GitHub.com/puma/puma/blob/master/README.md) for more information.
 
 You can override this configuration with [environment variables](#setting-up-environment-variables-on-clever-cloud).
-Each of them, when specified, will be be preferred over the setting from `config/puma.rb`. 
+Each of them, when specified, will be be preferred over the setting from `config/puma.rb`.
 
 * `CC_PUMA_WORKERS` overrides the number of workers (e.g. `CC_PUMA_WORKERS=2`)
 * `CC_PUMA_THREADS` overrides the number of threads per worker, can be a raw number or a range (e.g. `CC_PUMA_THREADS=6` or `CC_PUMA_THREADS=4:8`)

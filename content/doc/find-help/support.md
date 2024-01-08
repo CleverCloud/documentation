@@ -24,7 +24,7 @@ You can find in the console a button to start a conversation with our engineers.
 
 If you open a ticket inside an organisation with members, they will be added to the discussion by e-mail.
 
-Feel free to use it when this service available, from 9 a.m to 6 p.m <acronym title="Central European Summer Time">CEST</acronym>+2 during open business days.
+Feel free to use it when this service available, from 9 a.m to 6 p.m CEST+2 during open business days.
 
 ## Critical application support
 
@@ -33,4 +33,3 @@ Clever Cloud offers a premium support option providing 24/7 a direct line to our
 Get more information and contact our sales team at:
 
 * <sales@clever-cloud.com>
-

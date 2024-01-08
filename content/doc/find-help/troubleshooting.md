@@ -19,7 +19,6 @@ Additionally, the troubleshoot modes increases the overall verbosity of the depl
 
 To enable the troubleshoot mode, simply add `CC_TROUBLESHOOT=true` to your environment variables.
 
-
 In addition to this, here are some common issues and how to fix them.
 
 ## File Persistence issues
@@ -57,13 +56,13 @@ Clever Cloud uses the master branch to deploy your application but this does not
 What differs if you use another branch than master on your computer is that you need to explicitly tell Clever to consider the specific branch as the master one.
 
 ```bash
-$ git push <cleverRemote> <yourSpecificBranchName>:master
+git push <cleverRemote> <yourSpecificBranchName>:master
 ```
 
 If you called the Clever Cloud remote `clever` and your local branch is `production`, this becomes
 
 ```bash
-$ git push clever production:master
+git push clever production:master
 ```
 
 ### fatal: Not a git repository (or any of the parent directories)
@@ -79,7 +78,7 @@ You will finally push your code with `$ git push clever master`.
 In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:
 
 ```bash
-$ git remote add clever <your-git-deployment-url>
+git remote add clever <your-git-deployment-url>
 ```
 
 You can find your deployment url under the Clever Cloud console in your application's information menu.
@@ -104,7 +103,7 @@ server.listen(8080);
 
 GitHub does not give us access to organizations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
 
-You can of course reach to support@clever-cloud.com if this page was not helpful enough.
+You can of course reach to <support@clever-cloud.com> if this page was not helpful enough.
 
 ## Websites are not accessible
 

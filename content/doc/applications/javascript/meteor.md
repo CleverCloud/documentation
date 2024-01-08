@@ -25,13 +25,13 @@ Be sure your `.meteor` folder is in your git repository.
 
 {{< readfile file="set-env-vars.md" >}}
 
-
 ## Configure your Meteor.js based application
+
 ### Mandatory configuration
 
 #### Set up environment variables
 
-To run your Meteor.js application you need a few mandatory [environment variables](#setting-up-environment-variables-on-clever-cloud):
+To run your Meteor.js application you need a few mandatory environment variables:
 
 * `MONGO_URL`: this is the mongo uri you can find in your mongodb's dashboard, it has to start with `mongodb://`
 * `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
@@ -39,7 +39,7 @@ To run your Meteor.js application you need a few mandatory [environment variable
 
 With Meteor 2.6.n comes MongoDB 5.n and [the new npm driver](https://guide.meteor.com/2.6-migration.html). You need to append `?directConnection=true` in your `MONGO_URL` to avoid the new mongo driver Service Discovery feature.
 
-##### Optional Meteor settings as environment variable
+#### Optional Meteor settings as environment variable
 
 Some application require a `settings.json` file to [store api keys and other various private and public Meteor variables](https://docs.meteor.com/api/core.html#Meteor-settings).
 You can declare a `METEOR_SETTINGS` environment variable and past the content of the json file as the value of this key.
@@ -51,18 +51,17 @@ To find out which version is required by your application type the following com
 
 Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.
 
-```
+```json
   ...
   "engines": {
     "node": "14.18.3"
   },
   ...
 ```
+
 You may change the node version value according to the application requirements.
 
-
-
-#### Activate the dedicated build
+### Activate the dedicated build
 
 Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature](https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build) and set your vertical scaling size at least to **M**.
 
@@ -79,9 +78,8 @@ Add in the `scripts.start` field of the package.json: `node .build/bundle/main.j
 
 ### Deployment process on Clever Cloud
 
-At each deployment, the needed Meteor.js version will be read from `.meteor/release` and installed. 
+At each deployment, the needed Meteor.js version will be read from `.meteor/release` and installed.
 Your application will then be built using `meteor build --server-only` and deployed from the files created by this command.
-
 
 {{< readfile file="env-injection.md" >}}
 
@@ -90,14 +88,16 @@ Your application will then be built using `meteor build --server-only` and deplo
 {{< readfile file="link-addon.md" >}}
 
 ### Oplog Tailing
-Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following [environment variable](#setting-up-environment-variables-on-clever-cloud):
-- `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
+
+Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following environment variable:
+
+* `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
 
 Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and you should not add this to your environment variables.
 
 ## Migrate from a Node.js instance
 
 If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
-support@clever-cloud.com with the application id.
+<support@clever-cloud.com> with the application id.
 
 {{< readfile file="more-config.md" >}}

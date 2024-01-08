@@ -43,7 +43,7 @@ Check other available configuration file on [Github](https://github.com/CleverCl
 
 To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
 
-For example for Kibana 8.3.3: 
+For example for Kibana 8.3.3:
 `CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3 | sh`
 
 Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
@@ -57,11 +57,12 @@ You need to disable SSO authentication first. Then, you will be able to add a cu
 The Kibana version should match with the ElasticSearch version.
 
 Follow these steps :
-- Download/unzip Kibana in version which match with your Elastic Stack version
-- Edit kibana.yml :
-    - line 43 : `elasticsearch.host: <elastic-addon-host>:443` 
-    - line 49 : `elasticsearch.username: kibana`
-    - line 50 : `elasticsearch.password: <password>`
-- Launch Kibana (`<path_to_kibana>/bin/kibana`)
-- Go to Kibana through the dedicated [local address](http://localhost:5601)
-- Connect to ElasticSearch with your Elastic username and password
+
+1. Download/unzip Kibana in version which match with your Elastic Stack version
+2. Edit kibana.yml :
+   * line 43 : `elasticsearch.host: <elastic-addon-host>:443`
+   * line 49 : `elasticsearch.username: kibana`
+   * line 50 : `elasticsearch.password: <password>`
+   * Launch Kibana (`<path_to_kibana>/bin/kibana`)
+3. Go to Kibana through the dedicated [local address](http://localhost:5601)
+4. Connect to ElasticSearch with your Elastic username and password

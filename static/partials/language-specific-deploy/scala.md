@@ -1,10 +1,12 @@
 ## Configure your Scala application
+
 ### Mandatory configuration
 
 Your application has to listen on port `8080` for worldwide connections (`0.0.0.0`). We set the system variable `http.port` to `8080` for you so in many cases (like for play applications) you don't have anything to do.
 You need to use the [sbt-native-packager](#the-sbt-native-packager) in your project.
 
 ### The sbt-native-packager
+
 We rely on `sbt-native-packager` to run applications. This plugin provides a `stage` task which is run during deployment.
 
 If your project doesn't already use [sbt-native-packager](https://GitHub.com/sbt/sbt-native-packager), you need to add it to `project/plugins.sbt`. Please make sure you use an up-to-date version.
@@ -39,11 +41,13 @@ If you have a single repository with multiple modules or want to build a specifi
 `CC_SBT_TARGET_DIR` must be set to the relative path of the module and `CC_SBT_TARGET_BIN` to the name of the binary to run.
 
 For instance, if you want to deploy a module named `service1` that produce a binary named "my-binary", you have to define the following variables:
-```
+
+```shell
 SBT_DEPLOY_GOAL=service1/stage
 CC_SBT_TARGET_DIR=service1
 CC_SBT_TARGET_BIN=my-binary
 ```
+
 Check details on [environment variables](#setting-up-environment-variables-on-clever-cloud).
 
 Our engine will execute the `sbt service1/stage` and will run `service1/target/universal/stage/bin/my-binary`
@@ -55,6 +59,6 @@ Our engine will execute the `sbt service1/stage` and will run `service1/target/u
 If you're using
 [HOCON](https://GitHub.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation) configuration files, then you can have direct acces to environment variables from the configuration file:
 
-```
+```shell
 application.secret=${APPLICATION_SECRET}
 ```

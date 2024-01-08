@@ -70,10 +70,9 @@ So you can alter the build&start process for your application.
   `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/applications/docker/#dockerized-rust-application-deployment).
 {{< /callout >}}
 
-
 #### Deployment hooks
 
-Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment. 
+Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment.
   
 |  Name  |  Description  |
 |-----------------------|------------------------------|
@@ -100,17 +99,15 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 ### Tailscale support
 
-[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances. 
+[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances.
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys "Generate tailscale key").
 
-  
 |  Name  |  Description  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key |
 |`TAILSCALE_LOGIN_SERVER`| Contains the login server |
   
-
 #### How it works?
 
 For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
@@ -147,7 +144,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 ## Elixir
 
 [Elixir Documentation](/doc/applications/elixir)
-   
+
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
  |`CC_ELIXIR_VERSION` | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | 1.11 |
@@ -372,7 +369,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 ### PostgreSQL
 
 [PostgreSQL Documentation](/doc/addons/postgresql)
- 
+
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |`POSTGRESQL_ADDON_HOST` |  | Generated upon creation | ✓ |
@@ -473,7 +470,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_BLACKFIRE_SERVER_ID` | The server id used to authenticate with Blackfire | ' ' | ✓ |
 |`CC_BLACKFIRE_LOG_LEVEL` | Sets the verbosity of Agent’s log output | 1 | ✓ |
 |`CC_BLACKFIRE_MEMORY_LIMIT` | Sets the maximum allowed RAM usage (megabytes) when ingesting traces | 500 | ✓ |
-|`CC_BLACKFIRE_COLLECTOR` | Sets the URL of Blackfire’s data collector | https://blackfire.io | ✓ |
+|`CC_BLACKFIRE_COLLECTOR` | Sets the URL of Blackfire’s data collector | <https://blackfire.io> | ✓ |
 |`CC_BLACKFIRE_TIMEOUT` | Sets the Blackfire API connection timeout | 15 | ✓ |
 |`CC_BLACKFIRE_STATSD` | Sets the statsd server to send agent’s statistics | ' ' | ✓ |
 |`CC_BLACKFIRE_STATSD_PREFIX` | Sets the statsd prefix to use when sending data | blackfire | ✓ |

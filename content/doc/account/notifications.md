@@ -24,6 +24,7 @@ failed) were always sent to the owners of an application, namely the user
 themselves or the organization's members.
 
 To disable the deployment result e-mails or restrict it to only some applications:
+
 1. Go in **Organization Manager** > **Notifications** panel.
 2. Delete the hook named *Default deployment result e-mails*.
 3. Add a new one.
@@ -49,6 +50,7 @@ all events via the Websocket API. No more lost events and having to reconnect
 to the websocket if and when it fails.
 
 To create a webhook stay on the **Notifications** panel:
+
 1. Click on **Webhooks** button at the top of the Notifications window.
 2. Add a new one.
 3. Choose the URL which will receive the data through a *POST* request and the format it will be sent as.

@@ -18,9 +18,9 @@ type: docs
 9. In your project, run `git init` and add the git remote
 10. The run `npm run build`
 11. Connect your app to your database
-12. In `medusa-config.js`, set the ssl database options: 
+12. In `medusa-config.js`, set the ssl database options:
 
-```javascript
+```javascript{filename="medusa-config.js"}
 module.exports = {
   projectConfig: {
     // ...
@@ -28,8 +28,9 @@ module.exports = {
   },
 }
 ```
-12. Add the admin to enable deploying with the backend: `npm install @medusajs/admin`
-13. Set the port: 
+
+13. Add the admin to enable deploying with the backend: `npm install @medusajs/admin`
+14. Set the port:
 
 ```javascript
 const plugins = [

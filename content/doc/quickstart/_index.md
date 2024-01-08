@@ -32,9 +32,9 @@ There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
   The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
   This process asks the following permissions:
   
-  * Read your Public Key
-  * Read User Repositories
-  
+* Read your Public Key
+* Read User Repositories
+
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
   If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
@@ -42,17 +42,15 @@ There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 {{< /tabs >}}
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 
-##### Two Factor Authentication (2FA)
+### Two Factor Authentication (2FA)
 
-Clever Cloud supports 2FA. You can enable it here: https://console.clever-cloud.com/users/me/authentication
+Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
 
 Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.
-
 
 ## Deploy your code
 
 ### What's an Application on Clever Cloud
-
 
 An application is defined on Clever Cloud by the following elements:
 
@@ -69,7 +67,7 @@ When you push an application's code to git or via FTP, the platform receives it 
 
 The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
 
-### Supported Platforms:
+### Supported Platforms
 
 {{< cards >}}
   {{< card link="/doc/applications/docker" title="Docker" icon="docker" >}}
@@ -121,10 +119,8 @@ Enter the name and the description of your application.
 
 #### Optional steps
 
-- The wizard will offer you to [add an add-on]({{< ref "doc/addons" >}}) to your application
-
-- The wizard will offer you to [add environment variables]({{< ref "doc/develop/env-variables.md" >}}) to your application
-
+* The wizard will offer you to [add an add-on]({{< ref "doc/addons" >}}) to your application
+* The wizard will offer you to [add environment variables]({{< ref "doc/develop/env-variables.md" >}}) to your application
 
 {{% /steps %}}
 
@@ -138,27 +134,27 @@ Enter the name and the description of your application.
 
   Follow these steps to deploy your application:
 
-  1. Get the git deployment url in the application information page, which looks like: `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
+1. Get the git deployment url in the application information page, which looks like: `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
 
-  2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
+2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
   ```bash
   git init
   git add .
   git commit -m "first commit"
-  ```
+```
 
-  3. Then, link your local repository to Clever Cloud by providing the Git remote url:
+3. Then, link your local repository to Clever Cloud by providing the Git remote url:
 
-  ```bash
-  git remote add <remote-name> <your-git-deployment-url>
-  ```
+```bash
+git remote add <remote-name> <your-git-deployment-url>
+```
 
-  4. Push your application to Clever Cloud:
+4. Push your application to Clever Cloud:
 
-  ```bash
-  git push <remote-name> <branch-name>:master
-  ```
+```bash
+git push <remote-name> <branch-name>:master
+```
 
   You can see your application **logs** in the dashboard to **monitor the deployment**.
 
@@ -169,11 +165,11 @@ Enter the name and the description of your application.
 
   {{< image "/images/doc/github-deployment-branch.png" "Github deployment branch select" >}}
   
-  If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : https://console.clever-cloud.com/users/me/information, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
+  If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
 
   **Private GitHub repositories are also supported.**
   
-  Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access. 
+  Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access.
   
   However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
   {{< /tab >}}
@@ -202,9 +198,8 @@ Enter the name and the description of your application.
 If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
 
 **Add your SSH key to your profile here:**
+<https://console.clever-cloud.com/users/me/ssh-keys>
 
-https://console.clever-cloud.com/users/me/ssh-keys" > https://console.clever-cloud.com/users/me/ssh-keys
-   
 The full tutorial about adding SSH key is here: [Adding SSH keys](/doc/account/ssh-keys-management)
 
 {{% /details %}}
@@ -212,13 +207,14 @@ The full tutorial about adding SSH key is here: [Adding SSH keys](/doc/account/s
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
 You are probably trying to push from another branch. Remeber that:
 
-- You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
-- You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
-- In order to push to **master** from a non-master local branch, use this syntax:
+* You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
+* You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
+* In order to push to **master** from a non-master local branch, use this syntax:
 
 ```bash
 git push <remote-name> <branch-name>:master
 ```
+
 {{% /details %}}
 
 {{% details title= "GitHub ⋅ Does not appear to be a git repository" closed="true" %}}
@@ -241,16 +237,16 @@ If you have to push directly to a repo in order to deploy an application (eg if 
 
 There are many tabs available in the application's menu on Clever Console:
 
-- **Information:** General information about your application
-- **Scalability:** Set-up scalability options
-- **Domain names:** Manage custom domain names
-- **Environment variables:** Manage environment variables
-- **Service dependencies:** Link add-ons and applications
-- **Exposed configuration:** Manage exposed environment variables
-- **Activity:** Track last deployments
-- **Logs:** Visualize application's logs
-- **Metrics:** Visualize application's metrics
-- **Consumption:** Visualize your application's consumption.
+* **Information:** General information about your application
+* **Scalability:** Set-up scalability options
+* **Domain names:** Manage custom domain names
+* **Environment variables:** Manage environment variables
+* **Service dependencies:** Link add-ons and applications
+* **Exposed configuration:** Manage exposed environment variables
+* **Activity:** Track last deployments
+* **Logs:** Visualize application's logs
+* **Metrics:** Visualize application's metrics
+* **Consumption:** Visualize your application's consumption.
 
 ### Create your first add-on
 
@@ -325,11 +321,11 @@ There are two kinds of billing:
 
 Once an add-on is created, at least two tabs are available in the Clever Cloud console:
 
-- **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
+* **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
 
 {{< image "/images/addon-dashboard.png" "Example of the dashoard tab of an add-on" >}}
 
-- **Information tab:** This screen sums-up the characteristics of the selected add-on.
+* **Information tab:** This screen sums-up the characteristics of the selected add-on.
 Features and environment variables (if applicable) are shown.
 
 Other tabs may be available, depending on the add-on type.
@@ -337,6 +333,7 @@ Other tabs may be available, depending on the add-on type.
 ### Delete an add-on
 
 To delete an add-on:
+
 1. Go to the **Information** tab of the add-on.
 2. Click on *Remove add-on*.
 

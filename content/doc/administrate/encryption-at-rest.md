@@ -56,6 +56,7 @@ With encrypted disk, the number of transactions per second was 635. On the unenc
 ## Availability
 
 Encryption at rest is currently available for the following add-ons:
+
 - PostgreSQL
 - MySQL
 - MongoDB

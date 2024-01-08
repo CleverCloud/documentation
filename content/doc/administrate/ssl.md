@@ -51,15 +51,15 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
  You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
-
 {{< callout emoji="💡" >}}
-**If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below: 
+**If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below:
 {{< /callout >}}
 
 ```Bash
 $ curl http://<your-domain>/.well-known/acme-challenge/test
 test
 ```
+
 It should return a HTTP 200 OK with the string "test" as the body. If it does not, check your Cloudflare configuration.
 
 {{% /steps %}}
@@ -72,9 +72,9 @@ You can upload certificates yourself: [https://api.clever-cloud.com/v2/certifica
 
 You need to paste a PEM bundle containing (in this order):
 
- - the private key
- - the certificate itself
- - intermediate certificates (optionnal)
+- the private key
+- the certificate itself
+- intermediate certificates (optionnal)
 
 {{< callout type="warning" >}}
   Only certificates with RSA 2048 and RSA 4096 keys are supported.  
@@ -91,8 +91,10 @@ You should create a `file.pem` containing:
 <the certificate>
 -----END CERTIFICATE-----
 ```
+
 You can add optionnal intermediate certificates by appending them to the file as
-```
+
+```text
 -----BEGIN CERTIFICATE-----
 <the certificate>
 -----END CERTIFICATE-----
@@ -112,13 +114,15 @@ You `.pem` file must be correctly formatted to successfully upload your certific
 | ✅   The line feed (LF) characters at the end |
 | ✅   The certificate chain include your certificate together with all the intermediary CA certificates that signed it, in that order |
 
-## Sending Certificates Manually <span class="bg-red-100 border-red-200 not-prose inline-flex items-center px-2 py-1 text-xs text-red-900 dark:border-red-200/30 dark:bg-red-900/30 dark:text-red-200 border transition-all ease-in duration-200">(not recommended)</span>
+## Sending Certificates Manually
+
+{{< callout emoji="👎" >}}
+You should be aware that sending certificates manually is **NOT RECOMMENDED**.  
+Prefer another method, such as the certificate generation integrated into *Let's Encrypt*, or using our certificate [upload tool ↗](https://api.clever-cloud.com/v2/certificates/new).  
+If you have no other choice, then do not send these files by a means that is not secure. The integrity of your certificate will no longer be guaranteed.
+{{< /callout >}}
 
 In the event that you request the installation of a certificate by the support team, this operation will be charged on a one-off basis for each request. Please contact us for installation rates.
-
-{{< callout type="error" >}}
-Don't send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
-{{< /callout >}}
 
 ### Sharing Certificates via Keybase
 
@@ -132,8 +136,8 @@ If your are a Keybase.io user, you can find us at [keybase.io/clevercloud](https
 Email can be a secure way to transfer your certificates **when using a signed and encrypted email with GPG**.
 Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
 
-* fingerprint:  `03943517934C1FA5ED4E2F61218B86BD5278470F`
-* 64-bit: `218B86BD5278470F`
+- fingerprint:  `03943517934C1FA5ED4E2F61218B86BD5278470F`
+- 64-bit: `218B86BD5278470F`
 
 ```bash
 -----BEGIN PGP PUBLIC KEY BLOCK-----

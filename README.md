@@ -1,9 +1,7 @@
 
-<div align="center">
-  <h1 align="center">Clever Cloud Documentation</h1>
-  <p align="center">
+# Clever Cloud Documentation
+
 This is a Hugo project with a theme called "Hextra" added a module..</p>
-</div>
 
 ## See deployed Documentation
 
@@ -65,4 +63,21 @@ Follox these instructions to contibute to the doc.
 3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4,to update the theme)
 4. Run `hugo server`
 
-Local site is displayed on http://localhost:1313
+Local site is displayed on <http://localhost:1313>
+
+### Linting Markdown
+
+Hugo uses [Goldmak](https://github.com/yuin/goldmark), a Markdown parser written in Go, compliant with CommonMark 0.30(see [the specification here](https://spec.commonmark.org/)).
+
+Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.  
+We strongly recommend that you follow the validation rules described here: <https://github.com/DavidAnson/markdownlint#rules--aliases>.
+
+This linter can be downloaded and run locally, or used via VSCode:
+
+- <https://github.com/DavidAnson/vscode-markdownlint> for VSCode
+- <https://github.com/DavidAnson/markdownlint-cli2> as a NPM package
+
+#### Linting Configuration
+
+**Ignored markdown files** are listed in the `.markdownlintignore`.  
+**Ignored specifications**, such as some HTML tag of webcopponents, are configured in the `.markdownlint.jsonc`

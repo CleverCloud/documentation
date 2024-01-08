@@ -10,17 +10,18 @@ If a key is used by more than one account, a warning will be displayed in the co
 
 ### I don't have any, I want to create an SSH key
 
-1.  In your Terminal, enter the following bash line:
+1. In your Terminal, enter the following bash line:
 
     ```bash
     ssh-keygen -t ed25519 -C "your_email@youremail.com"
     ```
+
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
-2.  When prompted in which file you want to save the key, just press enter.
+2. When prompted in which file you want to save the key, just press enter.
     If it says that the file already exists, enter `n` for `no`. Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#add-your-ssh-key-on-clever-cloud).
 
-3.  When asked, enter a passphrase:
+3. When asked, enter a passphrase:
 
     ```bash
     Generating public/private ed25519 key pair.
@@ -62,8 +63,6 @@ It is smaller to copy and way stronger than 2048-bit RSA keys.
 
 If you can find them, you do not need to generate a new one, simply go to the following "Add your key on Clever Cloud" part!
 
-<br/>
-
 #### Windows
 
 1. If you don't have it, download [Git for Windows](https://git-for-windows.GitHub.io/) and install it.
@@ -81,7 +80,7 @@ If you can find them, you do not need to generate a new one, simply go to the fo
 
 If you want to use a specific key for Clever Cloud, you can set it in your SSH config by adding this:
 
-```
+```shell
 Host *.clever-cloud.com 
   IdentityFile ~/.ssh/clevercloud
 ```
@@ -94,13 +93,11 @@ To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, 
 
 Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_[ed25519/rsa].pub** file including the `id_ed25519/ssh-rsa` part and your email.
 
-
 {{< callout type="warning" >}}
-<p>Your public SSH key must be associated with only one account.</p>
+Your public SSH key must be associated with only one account.
 {{< /callout >}}
 
 If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment), your SSH Keys may be invalid or not available on Clever Cloud. Please check that you SSH Key is present and valid in your profile.
-
 
 ## Private SSH Key
 
@@ -112,7 +109,7 @@ commit it in your application's Clever Cloud repository.
 That key will be installed in `~/.ssh/` before the start of the build. So the
 dependency manager will use it to fetch libs only accessible by ssh.
 
-*NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
+NB: Please provide a key without pass phrase, or the system will be unable to unlock it
 
 ### Environment variable
 
@@ -144,7 +141,7 @@ The first time, you may have to type "yes" to continue.
 
 If you see:
 
-```
+```shell
 > git@push-par-clevercloud-customers.services.clever-cloud.com: Permission denied (publickey).
 >
 > fatal: Could not read from remote repository.
@@ -201,6 +198,7 @@ Host push-syd-clevercloud-customers.services.clever-cloud.com
   IdentityFile ~/.ssh/id_ed25519_clevercloud
 ```
 
-<i class="icon-question-sign"></i> **Need help about SSH keys?**  
-
+{{< callout emoji="❔" >}}
+**Need h elp about SSH keys?**  
 Contact us at <support@clever-cloud.com> or you can [read more about SSH Keys](https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
+{{< /callout >}}

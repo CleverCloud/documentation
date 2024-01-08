@@ -46,6 +46,7 @@ length <prival>version time hostname logtoken procid msgid structured-data msg
 This message format is documented by the [RFC 5424](https://tools.ietf.org/html/rfc5424).
 
 * `length` - 72 in the example. It is the length *in bytes* of the encoded log line minus the length field and the following space. It *is not* the number of chars. In our example, this is how it could be done in java:
+
 ```text
 ("<190>1 2013-03-27T20:02:24+00:00 " +
 "hostname logtoken_foobar procid - - foo").getBytes().length

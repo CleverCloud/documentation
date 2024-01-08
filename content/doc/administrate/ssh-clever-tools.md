@@ -29,8 +29,8 @@ For security reasons, you can't connect on the instance that hosts your Docker a
 ## Requirements
 
 You need to have at least one of the following installed locally:
-* the Clever Tools CLI(/doc/cli)
 
+* the Clever Tools CLI(/doc/cli)
 * an SSH client (e.g [putty](https://putty.org/) for windows users)
 
 ### Make sure you have a properly configured SSH key

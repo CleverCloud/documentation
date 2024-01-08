@@ -50,7 +50,7 @@ They can be accessed as classic environment variables.
   instance of your application and changes every time you deploy it.
 
 * `INSTANCE_TYPE`: The type of the instance (scaler). Its value can be `build` or `production`.
-  `build` is when your application is being built on a [dedicated instance][dedicated-instance].
+  `build` is when your application is being built on a dedicated instance.
 
 * `COMMIT_ID`: the commit ID used as a base to deploy your application. As we remove
   the `.git` directory before the deployment (to avoid security problems), it can be used
@@ -205,35 +205,34 @@ You can find more information in the documentation pages related to your applica
 
 Here is a non-exhaustive summary:
 
-
 | Language | Usage |
 |----------|-------|
-| [Go][go] | `os.Getenv("MY_VAR")`|
-| [Haskell][haskell] | `Os.Getenv["MY_VAR"]` |
-| [Node.js][node] | `process.env["MY_VAR"]`|
-| [Java WAR][java-war] | `System.getProperties().getProperty("MY_VAR")` |
-| [PHP][php] | `getenv("MY_VAR")` |
-| [Play! Framework 1][play-1] & [Play! Framework 2][play-2] | `System.getenv("MY_VAR")` or `${MY_VAR}` in `application.conf` |
-| [Python][python] | `os.getenv("MY_VAR")` |
-| [Ruby][ruby] | `ENV["MY_VAR"]` |
-| [Rust][rust] | `std::env::var("MY_VAR")` |
-| [Scala][scala] | `System.getenv("MY_VAR")` |
-| [.NET][dotnet] | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
+| Go | `os.Getenv("MY_VAR")`|
+| Haskell | `Os.Getenv["MY_VAR"]` |
+| Node.js | `process.env["MY_VAR"]`|
+| Java WAR | `System.getProperties().getProperty("MY_VAR")` |
+| PHP | `getenv("MY_VAR")` |
+| Play! Framework 1 & Play! Framework 2 | `System.getenv("MY_VAR")` or `${MY_VAR}` in `application.conf` |
+| Python | `os.getenv("MY_VAR")` |
+| Ruby | `ENV["MY_VAR"]` |
+| Rust | `std::env::var("MY_VAR")` |
+| Scala | `System.getenv("MY_VAR")` |
+| .NET | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
 ## Specific languages
 
-- [Go](/doc/applications/golang/#environment-injection)
-- [Haskell](/doc/applications/haskell/#environment-injection)
-- [Node.js](/doc/applications/javascript/nodejs/#environment-injection)
-- [Java-war](/doc/applications/java/java-war/#environment-injection)
-- [PHP](/doc/applications/php/#environment-injection)
-- [Play-1](/doc/applications/java/play-framework-1/#environment-injection)
-- [Play-2](/doc/applications/java/play-framework-2/#environment-injection)
-- [Python](/doc/applications/python/#environment-injection)
-- [Ruby](/guides/ruby-rack-app-tutorial/#environment-injection)
-- [Rust](/doc/applications/rust/#environment-injection)
-- [Scala](/doc/applications/scala/#environment-injection)
-- [.NET](doc/applications/dotnet/#environment-injection)
+* [Go](/doc/applications/golang/#environment-injection)
+* [Haskell](/doc/applications/haskell/#environment-injection)
+* [Node.js](/doc/applications/javascript/nodejs/#environment-injection)
+* [Java-war](/doc/applications/java/java-war/#environment-injection)
+* [PHP](/doc/applications/php/#environment-injection)
+* [Play-1](/doc/applications/java/play-framework-1/#environment-injection)
+* [Play-2](/doc/applications/java/play-framework-2/#environment-injection)
+* [Python](/doc/applications/python/#environment-injection)
+* [Ruby](/guides/ruby-rack-app-tutorial/#environment-injection)
+* [Rust](/doc/applications/rust/#environment-injection)
+* [Scala](/doc/applications/scala/#environment-injection)
+* [.NET](doc/applications/dotnet/#environment-injection)
 
 {{< callout type="info" >}}
 Variables are available at build time

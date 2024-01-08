@@ -26,17 +26,12 @@ jobs:
       #url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out main branch code if PR is from a fork
-        if: github.event.pull_request.head.repo.fork
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: main
-          fetch-depth: 0
-      - name: Check out PR code if PR is not from a fork
-        if: github.event.pull_request.head.repo.fork == false
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       - name: Configure Git
         if: github.event.pull_request.head.repo.fork
@@ -48,12 +43,6 @@ jobs:
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Add forked repository as remote and pull changes
-        if: github.event.pull_request.head.repo.fork
-        run: |
-          git remote add ${{ github.event.pull_request.user.login }} git@github.com:${{ github.event.pull_request.head.repo.full_name }}.git
-          git checkout -b ${{ github.event.pull_request.head.ref }}-PR-${{ github.event.pull_request.number }}
-          git pull --allow-unrelated-histories ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.ref }} --no-rebase
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
@@ -96,17 +85,12 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Check out main branch code if PR is from a fork
-        if: github.event.pull_request.head.repo.fork
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: main
-          fetch-depth: 0
-      - name: Check out PR code if PR is not from a fork
-        if: github.event.pull_request.head.repo.fork == false
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       - name: Configure Git
         if: github.event.pull_request.head.repo.fork
@@ -118,12 +102,6 @@ jobs:
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Add forked repository as remote and pull changes
-        if: github.event.pull_request.head.repo.fork
-        run: |
-          git remote add ${{ github.event.pull_request.user.login }} git@github.com:${{ github.event.pull_request.head.repo.full_name }}.git
-          git checkout -b ${{ github.event.pull_request.head.ref }}-PR-${{ github.event.pull_request.number }}
-          git pull --allow-unrelated-histories ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.ref }} --no-rebase
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Link and update app

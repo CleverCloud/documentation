@@ -78,7 +78,7 @@ You can change the URL to point to your own custom configuration.
 
 Here is a configuration example for RUM activation:
 
-```bash
+```bash{filename="es-apm-serverconfig.sh"}
 #!/bin/bash -l
 
 cat <<EOF >apm-server.yml

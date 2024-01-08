@@ -19,24 +19,29 @@ A module can be installed locally or from a remote repository if you pass its UR
 If you want to limit from where a package can be imported it [should placed](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public functions, if not it's a private function.
 
 For a complete project, a common files/folders organization can be:
-```
-application-root/
-├── go.work
-├── Makefile
-├── cmd/
-│   ├── main.go
-│   ├── other-file.go
-│   ├── other-package.go
-|   └── ...
-└── module/
-        ├── go.mod
-        ├── go.sum
-        ├── main.go
-        ├── other-module-file.go
-        └──internal/
-            └── internal-package/
-                └── internal-package-file.go
-```
+{{< filetree/container >}}
+  {{< filetree/folder name="application-root/" >}}
+    {{< filetree/file name="go.work" >}}
+    {{< filetree/file name="Makefile" >}}
+    {{< filetree/folder name="cmd/" >}}
+      {{< filetree/file name="main.go" >}}
+      {{< filetree/file name="other-file.go" >}}
+      {{< filetree/file name="other-package.go" >}}
+      {{< filetree/file name="…" >}}
+    {{< /filetree/folder >}}
+        {{< filetree/folder name="module/" >}}
+          {{< filetree/file name="go.mod" >}}
+          {{< filetree/file name="go.sum" >}}
+          {{< filetree/file name="main.go" >}}
+          {{< filetree/file name="other-module-file.go" >}}
+            {{< filetree/folder name="internal/" >}}
+              {{< filetree/folder name="internal-package/" >}}
+                {{< filetree/file name="internal-package-file.go" >}}
+              {{< /filetree/folder >}}
+            {{< /filetree/folder >}}
+      {{< /filetree/folder >}}
+  {{< /filetree/folder >}}
+{{< /filetree/container >}}
 
 ### Go build and deploy on Clever Cloud
 In such a situation, our strategy is to let the user choose how to build/run its application and make the deployment easy anyway. At first, we used the `goget` method, which is now deprecated. Thus, you can now use `gobuild` (for packages), `gomod` (for modules) or a configuration file. The latter will allow you to define a `Makefile` for custom build and a `main` executable to start the application.
@@ -48,8 +53,7 @@ In such a situation, our strategy is to let the user choose how to build/run its
 #### Through Makefile and JSON configuration
 Create a file name `go.json` in a `clevercloud/` folder at the root of your repository. It will allow you to ask for a custom build through a `Makefile` ([learn more about it](https://en.wikipedia.org/wiki/Make_(software)#Makefiles)). For example with a single package in `main.go`:
 
-`/clevercloud/go.json`
-```json
+```json {filename="clevercloud/go.json"}
 {
   "deploy": {
     "makefile": "Makefile",
@@ -58,8 +62,7 @@ Create a file name `go.json` in a `clevercloud/` folder at the root of your repo
 }
 ```
 
-`/Makefile`
-```Makefile
+```Makefile {filename="Makefile"}
 BINARY=bin/myApp
 
 build:

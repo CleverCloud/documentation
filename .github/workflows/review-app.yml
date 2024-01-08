@@ -33,16 +33,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - name: Configure Git
-        if: github.event.pull_request.head.repo.fork
-        run: |
-          git config user.email "julia.navarro@clever-cloud.com"
-          git config user.name "Julia"    
-      - name: Setup SSH
-        if: github.event.pull_request.head.repo.fork
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
@@ -92,16 +82,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - name: Configure Git
-        if: github.event.pull_request.head.repo.fork
-        run: |
-          git config user.email "julia.navarro@clever-cloud.com"
-          git config user.name "Julia"
-      - name: Setup SSH
-        if: github.event.pull_request.head.repo.fork
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Link and update app

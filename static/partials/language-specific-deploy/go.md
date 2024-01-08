@@ -6,7 +6,10 @@ By default, we consider that your repository contains a single application. Be s
 * It listens on port `8080`
 * You follow our build/run instructions
 
-In most cases you won't need to change anything to your application, except host/port and some configuration variables.
+In most cases you won't need to change anything to your application, except host/port and some configuration variables. 
+
+### Complementary runtime
+If you need a runtime environment such as Node.js or tools to build a frontend for example, some are available in our Go instances. You can use them through scripts launched by [deployments hooks](/doc/develop/build-hooks/) and [Environment variables](/doc/reference/reference-environment-variables/) sometimes allow you to configure them. So if you need a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `20` or `21.5.0`).
 
 ### Modern Go project structure
 There are multiple ways to build/run a Go application, and this has evolved over the years. In its modern form a Go project can be a:

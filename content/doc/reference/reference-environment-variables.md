@@ -39,8 +39,9 @@ So you can alter the build&start process for your application.
 | Name | Description |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`APP_FOLDER` | Folder in which the application is located (inside the git repository) |  |
+|`CC_DISABLE_JVM_AGENT` | Disable JVM agent activation | |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
-|`CC_DISABLE_METRICS` | Disable metrics collection. | false |
+|`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
 |[`CC_HEALTH_CHECK_PATH`](/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
 |`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](/doc/applications/javascript/nodejs/#select-node-version "Select node version") instead | |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |

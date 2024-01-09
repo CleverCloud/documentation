@@ -30,6 +30,7 @@ comments: false
   {{< card link="/guides/ruby-rack" title="Ruby Rack" subtitle= "Set up a Ruby Rack application and deploy on Clever Cloud" icon="ruby" >}}
   {{< card link="/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
   {{< card link="/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
+   {{< card link="https://docs.moodle.org/403/en/Installation_quick_guide" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
   
 {{< /cards >}}
 

@@ -159,6 +159,7 @@ The main ways to use `accessLogs` data is to `FETCH` over it and get interesting
 Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "doc/metrics/warp10" >}}).
 {{< /callout >}}
 
+
 ```text
 // Fetch on the 'accessLogs' class for your application id as labels
 [ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
@@ -181,6 +182,7 @@ UNIQUE
 A convenient way to integrate the intercepted data in a workflow is to use [WarpScript](https://www.warp10.io/content/03_Documentation/04_WarpScript/). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
+
 
 ```text
 // Get all application status code  for the last hour

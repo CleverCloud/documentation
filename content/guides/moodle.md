@@ -102,7 +102,7 @@ Don't forget to update `URL="<your-url"` if you haven't yet.
 
 ### Deploy
 
-Get the remote in your application menu > **Information** > ** Deployùment URL** and add it to Git with `git remote add clever <clever-remote-url>`. Then, push your code with `git push clever -u master`
+Get the remote in your application menu > **Information** > **Deployment URL** and add it to Git with `git remote add clever <clever-remote-url>`. Then, push your code with `git push clever -u master`
 
 💡 If you get a reference error when pushing, try this: `git push clever main:master`.
 

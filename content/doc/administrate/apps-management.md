@@ -29,7 +29,7 @@ Stop functionality is useful during the development of the application to limit 
 {{< /img-grid >}}
 
 {{< callout type="info" >}}
-  If you set `CC_DISABLE_BUILD_CACHE_UPLOAD` environment variable to `true`, the cache archive won't be created nor uploaded.
+  If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
 {{< /callout >}}
 
 ## Deploy an old commit

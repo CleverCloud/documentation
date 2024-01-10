@@ -26,6 +26,8 @@ languages:
     #title: "Documentation de Clever Cloud "
 
 params:
+  images:
+  - favicon.svg
   navbar:
     displayTitle: false
     displayLogo: true

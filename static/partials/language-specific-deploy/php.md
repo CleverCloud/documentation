@@ -25,9 +25,9 @@ want to set another webroot than the default one (*the root of your application*
 
 #### Using an environment variable
 
-Add a new environment variable called `CC_WEBROOT` and set `/public` as its value. 
+Add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
 
-```
+```shell
 clever env set CC_WEBROOT /public
 ```
 
@@ -49,7 +49,6 @@ In the following example we want to set the webroot to the folder `/public`:
 {{< callout type="warning" >}}
 Note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 {{< /callout >}}
-
 
 ### Change PHP settings
 
@@ -123,8 +122,8 @@ Other settings than the one mentioned above can be changed by adding the followi
 
 Here is the list of available settings:
 
-* `mbstring.func_overload`
-* `pm.max_children`
+- `mbstring.func_overload`
+- `pm.max_children`
 
 **Note**: You can send a request to the support if you need to change a setting which cannot be changed via a `.user.ini` file and is not in this list.
 
@@ -132,21 +131,19 @@ Here is the list of available settings:
 
 When php-fpm spawns a worker it allocates a smaller part of the application's memory to the worker, here is the allocated memory for each flavor:
 
-   
- | <center>Flavor</center> | <center>Memory Limit</center> |
- |-----------------------|------------------------------|
- |Pico | 64M |
- |Nano | 64M |
- |XS | 128M |
- |S | 256M |
- |M | 384M |
- |L | 512M |
- |XL | 768M |
- |2XL | 1024M |
- |3XL | 1536M |
- |4XL+ | 2048M |
+ | Flavor    | Memory Limit |
+ |--------------------------|
+ |Pico      | 64M           |
+ |Nano      | 64M           |
+ |XS        | 128M          |
+ |S         | 256M          |
+ |M         | 384M          |
+ |L         | 512M          |
+ |XL        | 768M          |
+ |2XL       | 1024M         |
+ |3XL       | 1536M         |
+ |4XL+      | 2048M         |
   
-
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "doc/reference/reference-environment-variables.md#php" >}}).
 
 If you define a limit exceeding the application memory it will use the default one.
@@ -170,7 +167,6 @@ The `.htaccess` file can be created everywhere in you app, depending of the part
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
 ### htpasswd
-
 
 You can configure basic authentication using [environment variables]({{< ref "doc/reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
@@ -197,7 +193,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
 
-E.g. if foobar is a directory, Apache will automatically redirect http://example.com/foobar to http://example.com/foobar/.
+E.g. if foobar is a directory, Apache will automatically redirect <http://example.com/foobar> to <http://example.com/foobar/>.
 
 Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
 
@@ -256,14 +252,14 @@ We support Composer build out of the box. You just need to provide a `composer.j
 You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
 
 {{< callout type="info" >}}
-<p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
+If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.
 {{< /callout >}}
 
 You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "doc/develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
 
 Example of a `composer.json` file:
 
-```json
+```json{linenos=table}
 {
     "require": {
         "laravel/framework": "4.1.*",
@@ -319,15 +315,15 @@ You can find more documentation about composer configuration at [getcomposer.com
 
 #### Example
 
-You use Artisan to manage your project and you want to execute _artisan migrate_ before running your app.
+You use Artisan to manage your project and you want to execute *artisan migrate* before running your app.
 
 To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:
- 
+
 ```bash
 CC_POST_BUILD_HOOK=php artisan migrate --force
 ```
 
-<strong>Note: </strong>You must add the _execute_ permission to your file (`chmod u+x yourfile`) before pushing it.
+**Note:** You must add the *execute* permission to your file (`chmod u+x yourfile`) before pushing it.
 
 ## Frameworks and CMS
 
@@ -335,34 +331,12 @@ The following is the list of tested CMS by our team.
 
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
-<table class="table table-bordered">
-    <tbody>
-        <tr>
-            <td>WordPress</td>
-            <td>Prestashop</td>
-        </tr>
-        <tr>
-            <td>Dokuwiki</td>
-            <td>Joomla</td>
-        </tr>
-        <tr>
-            <td>SugarCRM</td>
-            <td>Drupal</td>
-        </tr>
-        <tr>
-            <td>Magento</td>
-            <td>Status.net</td>
-        </tr>
-        <tr>
-            <td>Symfony</td>
-            <td>Thelia</td>
-        </tr>
-        <tr>
-            <td>Laravel</td>
-            <td>Sylius</td>
-        </tr>
-    </tbody>
-</table>
+| WordPress | Prestashop |
+| Dokuwiki  | Joomla     |
+| SugarCRM  | Drupal     |
+| Magento   | Status.net |
+| Symfony   | Thelia     |
+| Laravel   | Sylius     |
 
 ## Available extensions and modules
 
@@ -385,77 +359,77 @@ You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< 
 If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
 
 {{< callout type="warning" >}}
-<p>On PHP 7, the memcache extension is not available; only <strong>memcached</strong> is available</p>
+On PHP 7, the memcache extension is not available; only **memcached** is available.
 {{< /callout >}}
 
 ### Enable specific extensions
 
 Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
-* APCu: set `ENABLE_APCU` to `true`.
+- APCu: set `ENABLE_APCU` to `true`.
 
     APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
 
-* Couchbase: set `ENABLE_COUCHBASE` and `ENABLE_PCS` to `true`
+- Couchbase: set `ENABLE_COUCHBASE` and `ENABLE_PCS` to `true`
 
     Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
 
-* Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
+- Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
 
     Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
     in your application, sending performance metrics and errors to the Elastic APM server.
     **Warning**: This extension is available starting PHP 7.2.
 
-* Event: set `ENABLE_EVENT` to `true`.
+- Event: set `ENABLE_EVENT` to `true`.
 
     Event is an extension to schedule I/O, time and signal based events.
 
-* GEOS: set `ENABLE_GEOS` to `true`.
+- GEOS: set `ENABLE_GEOS` to `true`.
 
     GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
 
-* GnuPG: set `ENABLE_GNUPG` to `true`.
+- GnuPG: set `ENABLE_GNUPG` to `true`.
 
     GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
 
-* IonCube: set `ENABLE_IONCUBE` to `true`.
+- IonCube: set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.
 
-* Mailparse: set `ENABLE_MAILPARSE` to `true`.
+- Mailparse: set `ENABLE_MAILPARSE` to `true`.
 
     Mailparse is an extension for parsing and working with email messages. It can deal with RFC 822 and RFC 2045 (MIME) compliant messages.
 
-* Mongo: set `ENABLE_MONGO` to `true`.
+- Mongo: set `ENABLE_MONGO` to `true`.
 
     MongoDB is a NoSQL Database. This extension allows to use it from PHP.
     **Warning**: this extension is now superseded by the `mongodb` extension. We provide it for backward compatibility.
 
-* NewRelic: set `ENABLE_NEWRELIC` to `true`.
+- NewRelic: set `ENABLE_NEWRELIC` to `true`.
 
     Newrelic Agent for PHP. Newrelic is a software analytics tool.
 
-* OAuth: set `ENABLE_OAUTH` to `true`.
+- OAuth: set `ENABLE_OAUTH` to `true`.
 
     OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
 
-* PCS: set `ENABLE_PCS` to `true`.
+- PCS: set `ENABLE_PCS` to `true`.
 
     PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
-* Rdkafka: set `ENABLE_RDKAFKA` to `true`.
+- Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
-* Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`). 
+- Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
 
-* Uopz: set `ENABLE_UOPZ` to `true`.
+- Uopz: set `ENABLE_UOPZ` to `true`.
     The uopz extension is focused on providing utilities to aid with unit testing PHP code.
 
-* Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
+- Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
     The uploadprogress extension is used to track the progress of a file download.
 
-* XDebug: set `ENABLE_XDEBUG` to `true`.
+- XDebug: set `ENABLE_XDEBUG` to `true`.
 
     XDebug is a debugger and profiler tool for PHP.
 
@@ -487,9 +461,9 @@ If your application is under heavy load, redis persistence for sessions can impr
 
 To enable this feature, you need to:
 
- - enable Redis support on the application (create an [environment variable]({{< ref "doc/develop/env-variables.md" >}}) named `ENABLE_REDIS` with the value `true`.)
- - create and link a Redis add-on
- - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
+- enable Redis support on the application (create an [environment variable]({{< ref "doc/develop/env-variables.md" >}}) named `ENABLE_REDIS` with the value `true`.)
+- create and link a Redis add-on
+- create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< callout type="warning" >}}
 You must have a [Redis]({{< ref "doc/addons/redis" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
@@ -542,7 +516,6 @@ return [
 ```
 
 Then, set `APP_LOG=syslog` as Clever application environment variable.
-
 
 ## Using HTTP authentication
 

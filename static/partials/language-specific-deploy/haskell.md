@@ -11,16 +11,16 @@ Be sure that:
 
 The steps ran in order are:
 
- - `stack setup`
- - `stack install --only-dependencies`
- - `stack install`
- - `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
+* `stack setup`
+* `stack install --only-dependencies`
+* `stack install`
+* `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
 
 The executable built by `stack build` (or the command you specify) must start a web server listening on `0.0.0.0:8080`.
 
 For instance, a minimal [scotty](https://hackage.haskell.org/package/scotty) application can look like this:
 
-```haskell
+```haskell {linenos=table}
 {-# LANGUAGE OverloadedStrings #-}
 
 import Web.Scotty
@@ -36,7 +36,7 @@ Make sure to list all your dependencies in your `.cabal` file.
 
 For the example above, you need:
 
-```cabal
+```haskell  {linenos=table}
 executable myfirstapp
     main-is: Main.hs
     build-depends: base
@@ -45,12 +45,10 @@ executable myfirstapp
 
 ### Cached dependencies
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.
-
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.  
 It is enabled by default only for rust and haskell applications.
 
-To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
-
+To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.  
 To fully remove cached dependencies, you have to rebuild your application from scratch.
 
 You can select **rebuild and restart** from the console or launch `clever restart --without-cache` with the Clever Tools CLI.
@@ -69,7 +67,7 @@ To access environment variables from your code, just get them from the environme
 
 If some environment variables are critical to your application, here is an approach you can use:
 
-```haskell
+```haskell {linenos=table}
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
@@ -85,6 +83,7 @@ main = do
     get "/" $ do
       html . pack $ "Hello world " ++ myVar
 ```
+
 This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
 
 ### Specify Stack package target

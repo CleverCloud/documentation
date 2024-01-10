@@ -63,32 +63,11 @@ The full configuration can look like the following:
 
 You can use the following properties:
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Usage</th>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; type</strong></td>
-      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
-    </tr>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; goal</strong></td>
-      <td>is the target you want to use to build your project</td>
-    </tr>
-    <tr>
-      <td><span class="label label-danger">Required</span></td>
-      <td><strong>deploy -&gt; goal</strong></td>
-      <td>the goal/target and options you want to execute to deploy/run you project</td>
-    </tr>
-  </tbody>
-</table>
+| Usage    | Field             | Description                                                               |
+|----------|-------------------|---------------------------------------------------------------------------|
+| Optional | **build → type**  | can be maven, gradle or ant                                               |
+| Optional | **build → goal**  | is the target you want to use to build your project                       |
+| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |
 
 ## Custom run command
 
@@ -115,20 +94,26 @@ For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
 ## The Gradle Wrapper
 
-Since Gradle can come in many versions, Clever Cloud automatically support the [Gradle Wrapper|https://www.gradle.org/docs/current/userguide/gradle_wrapper.html].
+Since Gradle can come in many versions, Clever Cloud automatically support the [Gradle Wrapper ↗](https://www.gradle.org/docs/current/userguide/gradle_wrapper.html).
 
-Just create and commit the `gradlew` file and the wrapper `jar` and `properties` files:
+Just create and commit the `gradlew` file and the wrapper `jar` and `properties` files. Your working repository should look like this:
 
-```txt
-./
-	clevercloud/
-		gradle.json
-	gradlew
-	gradle/wrapper/
-		gradle-wrapper.jar
-		gradle-wrapper.properties
-	src/
-```
+{{< filetree/container >}}
+  {{< filetree/folder name="." >}}
+    {{< filetree/folder name="clevercloud" >}}
+      {{< filetree/file name="gradle.json" >}}
+    {{< /filetree/folder >}}
+    {{< filetree/file name="gradlew" >}}
+    {{< filetree/folder name="graddle" >}}
+      {{< filetree/folder name="wrapper" >}}
+        {{< filetree/file name="gradle-wrapper.jar" >}}
+        {{< filetree/file name="gradle-wrapper.properties" >}}
+      {{< /filetree/folder >}}
+    {{< /filetree/folder >}}
+    {{< filetree/folder name="src" >}}
+    {{< /filetree/folder >}}
+  {{< /filetree/folder >}}
+{{< /filetree/container >}}
 
 {{< readfile file="new-relic.md" >}}
 

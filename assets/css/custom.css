@@ -42,7 +42,11 @@ h1, .content h1,
 .content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
-
+/* Override line color in code block */
+:is(html[class~="dark"] .chroma .ln), :is(html[class~="dark"] .chroma .lnt:not(.hl > .lnt)), :is(html[class~="dark"] .chroma .hl:not(.line)),
+.chroma .ln, .chroma .lnt:not(.hl > .lnt), .chroma .hl:not(.line) {
+color: rgb(82 82 82 / .7)
+}
 /* Override border-radius class to fit Clever's theme */
 .rounded,
 .rounded-xl,
@@ -52,6 +56,7 @@ h1, .content h1,
 .rounded-sm,
 .code-block pre:not(.lntable pre),
 .code-block .filename,
+.chroma .lntable,
 .content img,
 .content div.gist-file,
 .btn-secondary,

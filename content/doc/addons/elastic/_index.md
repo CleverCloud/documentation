@@ -42,7 +42,7 @@ Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/ki
 
 ### Authentication
 
-Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system. 
+Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system.
 
 ## Elastic APM
 
@@ -51,6 +51,7 @@ Elastic APM is an Application performance management tool chain based on the Ela
 Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
 Currently, APM agents are available in the following languages:
+
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
 - [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
@@ -134,4 +135,3 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
 {{< callout type="warning" >}}
 If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.
 {{< /callout >}}
-

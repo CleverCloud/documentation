@@ -18,18 +18,15 @@ Blackfire can be used on Clever Cloud with **PHP** applications.
 
 [Blackfire](https://www.blackfire.io/) helps to improve web applications, performance at each step of its lifecycle: from development to test, staging and production.
 
-
 ## Blackfire configuration
 
 ### Necessary information
 
 Before setting up your app, be sure to have a [Blackfire Account](https://www.blackfire.io/).
 
-
 ### Configuration
 
 To configure Blackfire, you need to set the environment variables `CC_BLACKFIRE_SERVER_TOKEN` and `CC_BLACKFIRE_SERVER_ID`.
-
 
 ### Optional configuration
 
@@ -47,4 +44,3 @@ CC_BLACKFIRE_STATSD_PREFIX
 ### Usage
 
 Just redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will begin sending data to Blackfire. Once Blackfire receives the data, your application will be listed in the dashboard.
-

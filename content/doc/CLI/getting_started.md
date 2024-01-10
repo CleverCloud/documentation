@@ -39,7 +39,7 @@ npm install -g clever-tools@beta
 #### Debian/Ubuntu (.deb)
 
 {{< callout type="warning" >}}
-We recently moved from Bintray to a self-hosted Nexus repository available at https://nexus.clever-cloud.com. If you were using Bintray to install our <code>.deb</code> packages, you will need to edit your `/etc/apt/sources.list` and remove the old entry with `https://dl.bintray.com/clevercloud/deb` before going further.
+We recently moved from Bintray to a self-hosted Nexus repository available at <https://nexus.clever-cloud.com>. If you were using Bintray to install our `.deb` packages, you will need to edit your `/etc/apt/sources.list` and remove the old entry with `https://dl.bintray.com/clevercloud/deb` before going further.
 {{< /callout >}}
 
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
@@ -64,7 +64,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/cc-ne
 #### CentOS/Fedora (.rpm)
 
 {{< callout type="warning" >}}
-We recently moved from Bintray to a self-hosted Nexus repository available at https://nexus.clever-cloud.com. If you were using Bintray to install our `.rpm` packages, you will need to remove the old `/etc/yum.repos.d/bintray-clevercloud-rpm.repo` before going further.
+We recently moved from Bintray to a self-hosted Nexus repository available at <https://nexus.clever-cloud.com>. If you were using Bintray to install our `.rpm` packages, you will need to remove the old `/etc/yum.repos.d/bintray-clevercloud-rpm.repo` before going further.
 {{< /callout >}}
 
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
@@ -153,7 +153,7 @@ NOTES:
 #### Using chocolatey
 
 {{< callout type="warning" >}}
-We recently moved from Bintray to a self-hosted Nexus repository available at https://nexus.clever-cloud.com.
+We recently moved from Bintray to a self-hosted Nexus repository available at <https://nexus.clever-cloud.com>.
 If you were using Bintray to install our `nupkg` packages, you will need to remove the old source.
 {{< /callout >}}
 
@@ -196,7 +196,7 @@ COPY --from=clevercloud/clever-tools /bin/clever /usr/local/bin/clever
 
 ### Via Nix
 
-If you are using Nix, you will find a Nix derivation on Fretlink's GitHub repository: https://github.com/fretlink/clever-tools-nix
+If you are using Nix, you will find a Nix derivation on Fretlink's GitHub repository: <https://github.com/fretlink/clever-tools-nix>
 
 ## Enabling autocompletion
 
@@ -252,8 +252,6 @@ Once you have linked an application, clever-tools will create a Json configurati
 This file can be commited safely, others team members working on this repository will not have to link the application again.
 This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.
 {{< /callout >}}
-
-<br>
 
 ## Deploying new code
 

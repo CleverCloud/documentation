@@ -151,7 +151,7 @@ sdc -> Reverse proxy hostname
 sDuration -> total session duration time in millis
 ```
 
-### Queries examples:
+### Queries examples
 
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
@@ -159,7 +159,8 @@ The main ways to use `accessLogs` data is to `FETCH` over it and get interesting
 Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "doc/metrics/warp10" >}}).
 {{< /callout >}}
 
-```
+
+```text
 // Fetch on the 'accessLogs' class for your application id as labels
 [ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
 
@@ -182,8 +183,9 @@ A convenient way to integrate the intercepted data in a workflow is to use [Warp
 
 In the following example, we get the `accessLogs` status codes and create a GTS as an output to be able to use FILTER or any other transformation on it a second time.
 
-```
-// Get all application status code for the last hour
+
+```text
+// Get all application status code  for the last hour
 [ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 10 m ] FETCH
 <%
   DROP
@@ -380,7 +382,7 @@ As with Prometheus the exposed host can be the same as the application deployed,
 
 For large custom set of metrics to collect, the default response timeout of the `/metrics` query is 3 seconds. You can update it with the following environment variable:
 
-- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes. 
+- `CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`: Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes.
 
 To access your metrics from Warp10 you need to use the prefix `prometheus.` or `statsd.` based on what you used to publish your metrics.
 

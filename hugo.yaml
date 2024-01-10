@@ -37,6 +37,9 @@ params:
   comments:
     enable: false
     type: giscus
+  blog:
+    list:
+      displayTags: true
 
     # https://giscus.app/
     giscus:
@@ -68,7 +71,7 @@ params:
 
 markup:
   goldmark:
-    renderer: 
+    renderer:
       unsafe: true
   highlight:
     noClasses: false
@@ -76,6 +79,7 @@ markup:
 enableInlineShortcodes: true
 menu:
   main:
+
     - identifier: documentation
       name: Documentation
       pageRef: /doc
@@ -84,25 +88,29 @@ menu:
       name: Guides
       pageRef: /guides
       weight: 2
-    - identifier: openapi
-      name: openAPI
+    - identifier: api
+      name: API
       pageRef: /openapi
       weight: 3
-    - identifier: components
-      name: UI components
-      url: "https://www.clever-cloud.com/doc/clever-components/?path=/story/readme--page"
+    - identifier: changelog
+      name: Changelog
+      pageRef: /changelog
       weight: 4
-    - name: Search
+    - identifier: components
+      name: Web Components
+      url: "https://www.clever-cloud.com/doc/clever-components/?path=/story/readme--page"
       weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 6
+      weight: 7
       url: "https://github.com/CleverCloud/documentation"
       params:
         icon: github
     - name: Website
-      weight: 7
+      weight: 8
       url: "https://clever-cloud.com"
       params:
         icon: globe-alt

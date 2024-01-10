@@ -27,7 +27,7 @@ languages:
 
 params:
   images:
-  - favicon.svg
+  - images/feature.png
   navbar:
     displayTitle: false
     displayLogo: true

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Kibana
-position: 7
+#position: 7
 shortdesc: How  to deploy a custom Kibana for specific using cases.
 tags:
 - addons

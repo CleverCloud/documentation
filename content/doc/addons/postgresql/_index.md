@@ -39,7 +39,6 @@ If you want to import your **SQL** dump, you can use several methods:
 2. Command line tool for PostgreSQL administration like `psql`.
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/).
 
-
 ## Direct access
 
 All our dedicated PostgreSQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.
@@ -121,4 +120,3 @@ Usually this threshold is set to 20%.
 ## `pg_activity`
 
 If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on an PostgreSQL addon but you get an `Exception: Must be run with database superuser privileges.` you need to add the flag `--rds` when you start it.  
-

@@ -46,20 +46,21 @@ M H d m Y command
   All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.
 {{< /callout >}}
 
-_* For more information about the syntax, you can check <a href="https://en.wikipedia.org/wiki/Cron">this page</a>_
+For more information about the syntax, you can check [the Wikipedia page of cron](https://en.wikipedia.org/wiki/Cron).
 
 ## Restrictions
 
 There are two restrictions about the usage of crontab on our platform:
 
-* The special date `@reboot` is not available since the crontab is added after the startup of the instance
-* You must use the absolute path of commands
+- The special date `@reboot` is not available since the crontab is added after the startup of the instance
+- You must use the absolute path of commands
 
 {{< callout type="warning" >}}
   We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.
 {{< /callout >}}
 
 ## $ROOT
+
 You can use the special token `$ROOT` to refer to the root folder of your application.
 
 Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
@@ -109,7 +110,7 @@ Then, in `clevercloud/cron.json`:
 ]
 ```
 
-### Do *not* double bash!
+### Avoiding double bash
 
 You might be tempted to put the following in your cron.json file:
 
@@ -119,8 +120,8 @@ You might be tempted to put the following in your cron.json file:
 ]
 ```
 
-Do *NOT*. Invoking bash here will supersede the shebang and cancel the `bash -l` that
-loads the env. So just put the path to your _executable_ `mycron.sh`.
+Do *NOT* do this. Invoking bash here will supersede the shebang and cancel the `bash -l` that
+loads the env. So just put the path to your *executable* `mycron.sh`.
 
 You can refer to [this list]({{< ref "doc/develop/env-variables.md#special-environment-variables" >}}) to see which variables are available.
 

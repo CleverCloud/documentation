@@ -91,32 +91,11 @@ The full configuration can look like the following:
 
 You can use the following properties:
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Usage</th>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; type</strong></td>
-      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
-    </tr>
-    <tr>
-      <td><span class="label label-default">Optional</span></td>
-      <td><strong>build -&gt; goal</strong></td>
-      <td>is the target you want to use to build your project</td>
-    </tr>
-    <tr>
-      <td><span class="label label-danger">Required</span></td>
-      <td><strong>deploy -&gt; goal</strong></td>
-      <td>the goal/target and options you want to execute to deploy/run you project</td>
-    </tr>
-  </tbody>
-</table>
+| Usage    | Field             | Description                                                               |
+|----------|-------------------|---------------------------------------------------------------------------|
+| Optional | **build → type**  | can be `maven`, `gradle` or `ant`                                         |
+| Optional | **build → goal**  | is the target you want to use to build your project                       |
+| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |
 
 ### Specifying a profile
 

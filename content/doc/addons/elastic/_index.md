@@ -42,7 +42,7 @@ Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/ki
 
 ### Authentication
 
-Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system. 
+Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system.
 
 ## Elastic APM
 
@@ -51,6 +51,7 @@ Elastic APM is an Application performance management tool chain based on the Ela
 Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
 Currently, APM agents are available in the following languages:
+
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
 - [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
@@ -76,7 +77,38 @@ The APM server is deployed as an application. As such it's configured as an appl
 
 You can change the URL to point to your own custom configuration.
 
-A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
+Here is a configuration example for RUM activation:
+
+```bash{filename="es-apm-serverconfig.sh"}
+#!/bin/bash -l
+
+cat <<EOF >apm-server.yml
+apm-server:
+    host: "0.0.0.0:8080"
+    secret_token: "${ES_ADDON_APM_AUTH_TOKEN}"
+
+output.elasticsearch:
+    hosts: ["${ES_ADDON_HOST}:443"]
+    protocol: "https"
+    username: "${ES_ADDON_APM_USER}"
+    password: "${ES_ADDON_APM_PASSWORD}"
+
+path.home: "${APP_HOME}"
+
+logging:
+    to_syslog: true
+    to_files: false
+
+apm-server.rum.enabled: true
+apm-server.rum.event_rate.limit: 300
+apm-server.rum.event_rate.lru_size: 1000
+apm-server.rum.allow_origins: ['*']
+apm-server.rum.library_pattern: "node_modules|bower_components|~"
+apm-server.rum.exclude_from_grouping: "^/webpack"
+apm-server.rum.source_mapping.enabled: true
+apm-server.rum.source_mapping.cache.expiration: 5m
+apm-server.rum.source_mapping.index_pattern: "apm-*-sourcemap*"
+```
 
 ### Kibana custom configuration
 
@@ -103,4 +135,3 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
 {{< callout type="warning" >}}
 If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.
 {{< /callout >}}
-

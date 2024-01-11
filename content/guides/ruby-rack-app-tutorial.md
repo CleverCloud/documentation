@@ -35,6 +35,7 @@ To manage your gems and ruby versions, we recommend [rbenv](https://github.com/s
 {{< /callout >}}
 
 ### My application does not exists already
+
 #### Create a Ruby + Rake application locally
 
 Our demo for this tutorial is here: [https://helloworld-rack-demo.cleverapps.io/](https://helloworld-rack-demo.cleverapps.io/).
@@ -52,7 +53,7 @@ Inside `hello.rb` put the following:
 ```ruby
 class HelloWorld
   def call(env)
-	 [200, {"Content-Type" => "text/plain"}, ["Hello world!"]]
+   [200, {"Content-Type" => "text/plain"}, ["Hello world!"]]
   end
 end
 ```
@@ -81,10 +82,8 @@ Do not forget to init an empty git repository with `$ git init`
 
 To test your application, just fetch the dependencies using bundler:
 
-```bash
-bundle install
-```
-```txt
+```shell
+$ bundle install
 Fetching gem metadata from https://rubygems.org/..........
 Resolving dependencies...
 Using rack (1.5.2)
@@ -96,15 +95,13 @@ Use `bundle show [gemname]` to see where a bundled gem is installed.
 And start your application:
 
 ```bash
-bundle exec rackup
-```
-```txt
+$ bundle exec rackup
 [2013-09-16 17:35:26] INFO  WEBrick 1.3.1
 [2013-09-16 17:35:26] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
 [2013-09-16 17:35:26] INFO  WEBrick::HTTPServer#start: pid=5656 port=9292
 ```
 
-You can now test with your browser at <a href="http://localhost:9292/">localhost:9292</a>.
+You can now test with your browser at <localhost:9292>.
 
 You can now read [My application already exists](#my-application-already-exists)
 

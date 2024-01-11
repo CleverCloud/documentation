@@ -20,7 +20,7 @@ When creating an application, you have two (non exclusive) choices for domain na
 
 You can link one or several domain names in the console.
 
-Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under <code>*.cleverapps.io</code>.
+Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under `*.cleverapps.io`.
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
@@ -29,9 +29,9 @@ Add it in the application configuration: in the console, click on your **applica
   specific reverse proxies and have the following weaknesses: .io TLD is not a stable one, and since we offer the domain, the probability that people will abuse it is high. Thus, we do not garantee the same QoS on the cleverapps reverse proxies.
 {{< /callout >}}
 
-In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
+In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: `yourAppID.cleverapps.io`, which can be removed.
 
-In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
+In your application's domain section, just enter `example.cleverapps.io`. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
 {{< callout type="warning" >}}
 `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
@@ -48,8 +48,7 @@ Using A records will require you to keep the DNS configuration up-to-date manual
 
 Domain names linked to Clever Cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
 
-We also support wildcard personal domain names, to do so use the standard pattern to describe it: <code>*.example.com</code>
-
+We also support wildcard personal domain names, to do so use the standard pattern to describe it: `*.example.com`
 
 ### Your Application Runs in the Europe/Paris ('PAR') Zone
 
@@ -59,7 +58,6 @@ Provide the following to your registrar:
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 185.42.117.108`<br>`@ 10800 IN A 185.42.117.109`<br>`@ 10800 IN A 46.252.181.103`<br>`@ 10800 IN A 46.252.181.104`<br>`@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`  |
-
 
 ### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
 
@@ -114,7 +112,6 @@ Provide the following to your registrar:
 
 ### Your Application Runs in the Oceania/Sydney ('SYD') Zone
 
-
 | Record Type                                   | Value                                                                             |
 | --------------------------------------------- | --------------------------------------------------------------------------------- |
 | CNAME<br>Recommended</span></sub></sup> | `{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.`                   |
@@ -161,7 +158,7 @@ Note that your prefix-routed application **needs** to have a `/prefix` route.
 
 This will work:
 
-```
+```text
 example.com        ->      myfirtapp-main-route
 
 example.com/api    ->      mysecond-app-main-route/api
@@ -169,7 +166,7 @@ example.com/api    ->      mysecond-app-main-route/api
 
 This will NOT work:
 
-```
+```text
 example.com        ->      myfirtapp-main-route     (works)
 
 example.com/api    ->      mysecondapp-main-route   (404 response from mysecondapp)
@@ -181,13 +178,13 @@ In the case of static files, you usually understand routes as paths in a file tr
 
 This will work:
 
-```
+```text
 example.com/api    ->     my-static-site/api/index.php
 ```
 
 This will NOT work:
 
-```
+```text
 example.com/api    ->     my-static-site/index.php
 ```
 

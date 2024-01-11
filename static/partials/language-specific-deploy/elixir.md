@@ -6,7 +6,7 @@
 
 #### Compatibility between Elixir and Erlang/OTP
 
-- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/1.12.3/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp).    
+- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/1.12.3/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp).
 
 #### If you deploy a Phoenix application
 
@@ -14,7 +14,6 @@
 - Generate a secret token with `$ mix phx.gen.secret`.
 - set environment variable **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
 - set envrionment variable **CC_PHOENIX_RUN_ECTO_MIGRATE** to `true` if you need to trigger the command `$ mix ecto.migrate`
-
 
 ## Build, deployment phases and custom configuration
 
@@ -26,7 +25,7 @@ mix deps.compile
 npm install
 ```
 
-These commands will compile your dependencies at the root of your project folder. 
+These commands will compile your dependencies at the root of your project folder.
 If you want to use another folder for `npm install`, specify it via the environment variable **CC_PHOENIX_ASSETS_DIR**.
 To change the folder for the entire build / run process, you should use **APP_FOLDER** environment variable.
 

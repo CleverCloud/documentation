@@ -17,8 +17,8 @@ Engage in our Developer Community by seeking or providing advice on application 
 
 ## Gitter
 
-* English room: https://gitter.im/CleverCloud/chatroom-en
-* French room: https://gitter.im/CleverCloud/chatroom-fr
+* English room: <https://gitter.im/CleverCloud/chatroom-en>
+* French room: <https://gitter.im/CleverCloud/chatroom-fr>
 
 ## Public IRC Channel
 

@@ -23,13 +23,14 @@ Symfony applications almost work out of the box on Clever Cloud, you just have a
 {{< readfile file="set-env-vars.md" >}}
 
 ## Configure your Symfony application
+
 ### Configure `DocumentRoot`
 
 Add a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_WEBROOT` and set `/public` as its value `CC_WEBROOT=/public`.
 
 ### Configure your application secret
 
-`APP_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) is required to generate CSRF tokens. By default for [symfony/framework-bundle](https://GitHub.com/symfony/framework-bundle) generates one when it's installed via [Symfony Flex](https://GitHub.com/symfony/flex). 
+`APP_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) is required to generate CSRF tokens. By default for [symfony/framework-bundle](https://GitHub.com/symfony/framework-bundle) generates one when it's installed via [Symfony Flex](https://GitHub.com/symfony/flex).
 If you do not use Flex, make sure to change your `APP_SECRET`. The default value is `ThisTokenIsNotSoSecretChangeIt`, **change it**.
 
 ### Configure the Symfony environment
@@ -42,9 +43,9 @@ From the CLI, it's even simpler: `clever env import < .env`.
 
 You will also need to set the environment variable `APP_ENV` to one of:
 
--  dev
--  test
--  prod
+- dev
+- test
+- prod
 
 You can anyway add your environment with any of the methods mentionned in [Setting up environment variables on Clever Cloud](#setting-up-environment-variables-on-clever-cloud).
 
@@ -53,7 +54,7 @@ You can anyway add your environment with any of the methods mentionned in [Setti
 For your application logs to be collected and available in the console and CLI, you need to configure monolog to use its `error_log` output.
 That does not mean that it will only output error level logs, you can set it to use any level, here is an exemple with the info level (and above):
 
-```
+```yaml{filename="config_prod.yml"}
 monolog:
     handlers:
         filter_for_errors:
@@ -69,18 +70,15 @@ monolog:
             level: info
 ```
 
-
 ### Configure Symfony to work behind Clever Cloud reverse proxies
 
 You can use the `CC_REVERSE_PROXY_IPS` [environment variable](#setting-up-environment-variables-on-clever-cloud) that contains a list of trusted IP addresses, separated by commas.
 
-```
-# .env
+```shell{filename=".env"}
 TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}
 ```
 
-```
-# config/packages/framework.yaml
+```yaml{filename="config/packages/framework.yaml"}
 framework:
     # ...
     trusted_proxies: '%env(TRUSTED_PROXIES)%'
@@ -107,11 +105,11 @@ Change the default `DATABASE_URL` environment variable used in your `config/pack
 
 ### Configure ProxySQL for MySQL
 
-To manage your connection pool towards your MySQL add-on, you can set-up a [ProxySQL]({{< ref "/guides/proxysql" >}}). 
+To manage your connection pool towards your MySQL add-on, you can set-up a [ProxySQL]({{< ref "/guides/proxysql" >}}).
 
 Once you have activated the ProxySQL (through the environment variable), a configuration example would be:
 
-```yaml
+```yaml{filename="doctrine.yaml"}
 dbal:
   unix_socket: '%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%'
   url: 'mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%'
@@ -121,7 +119,7 @@ dbal:
 
 If you want to have database migrations automatically run during each deployment, or frontend assets which must be built, you can write all these commands in `clevercloud/post_build.sh` like this one:
 
-```
+```shell{filename="clevercloud/post_build.sh"}
 # Database migrations
 ./bin/console doctrine:migrations:migrate --no-interaction
 
@@ -131,12 +129,11 @@ If you want to have database migrations automatically run during each deployment
 
 Make sure this file is executable:
 
-```
+```shell
 chmod +x clevercloud/post_build.sh
 ```
 
 Then, add this to the application's environment variables `CC_POST_BUILD_HOOK=./clevercloud/post_build.sh`.
-
 
 {{< readfile file="deploy-git.md" >}}
 

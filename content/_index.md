@@ -1,27 +1,29 @@
 ---
 type: docs
-title: Tutorials
+title: Clever Cloud Documentation
 layout: hextra-home
 disableSidebar: false
 type: default
 width: normal
 ---
-
+<!-- markdownlint-disable MD033 MD034-->
 {{< hextra/hero-badge link="https://github.com/clevercloud/documentation">}}
   <div class="w-2 h-2 rounded-full bg-primary-400"></div>
-  <span>Contribute</span>
+  Contribute
   {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}}
 
 <div class="mt-6 mb-6">
 {{< hextra/hero-headline >}}
-  Deploy and manage your apps&nbsp;<br class="sm:block hidden" />on Clever Cloud
+  Deploy and manage your apps  
+  on Clever Cloud
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="mb-12">
-{{< hextra/hero-subtitle >}}
-  Documentation and guides to deploy,&nbsp;<br class="sm:block hidden" />manage, and monitor your apps.
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Documentation and guides to deploy,  
+  manage, and monitor your apps.
 {{< /hextra/hero-subtitle >}}
 </div>
 

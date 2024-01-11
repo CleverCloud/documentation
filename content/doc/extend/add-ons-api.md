@@ -127,7 +127,6 @@ def requires_auth(f):
     return decorated
 ```
 
-
 ### Provisioning
 
 When a customer installs your add-on, Clever Cloud issues a POST request to your service to provision a ressource for his app.
@@ -287,7 +286,7 @@ print token
 
 This will return:
 
-```
+```text
 'aca601ba464437cbaa12b2fedd7db755c32ddb5e'
 ```
 
@@ -301,7 +300,7 @@ https://api.clever-cloud.com/v2
 
 You should prefix your calls by this base URL.
 
-### Authentication
+### Authentication for Add-on Infos API
 
 To secure the calls between your API and Clever Cloud, The Clever Cloud
 API is behind a HTTPS connection. The second step to secure your calls is to use a Basic
@@ -312,7 +311,7 @@ set in your manifest.
 #### Example call to Clever Cloud add-on infos API
 
 ```bash
-$ curl -XGET https://api.clever-cloud.com/v2/vendor/apps -u addon-name:44ca82ddf8d4e74d52494ce2895152ee
+curl -XGET https://api.clever-cloud.com/v2/vendor/apps -u addon-name:44ca82ddf8d4e74d52494ce2895152ee
 ```
 
 ### Endpoints
@@ -347,7 +346,6 @@ Response Body: [
 * `plan` - The current plan of this add-on.
 
 * `owner_id` - The id of the owner that provisioned the add-on. This should never change.
-
 
 #### Get informations about a specific add-on
 
@@ -405,6 +403,7 @@ Request Body: {
 }
 Response Status: 200 OK
 ```
+
 The object should only contain the `config` object your API returned
 during the provisioning.
 
@@ -462,7 +461,7 @@ if __name__ == "__main__":
   app.run(host='0.0.0.0',port=9000,debug=True)
 ```
 
-### Add-on API template using scala and Play! framework 2.
+### Add-on API template using scala and Play! framework 2
 
 [https://GitHub.com/CleverCloud/addon-provider-template](https://GitHub.com/CleverCloud/addon-provider-template)
 

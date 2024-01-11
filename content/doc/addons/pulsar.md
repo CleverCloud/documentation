@@ -24,11 +24,30 @@ type: docs
 
 [Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies ranging around 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
 
-```
-client               Pulsar             client
-publishes to   =>    topic      <=  subscribes to
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily':'Arial',
+      'primaryColor': '#FFFFFF',
+      'primaryTextColor': '#6b7280',
+      'primaryBorderColor': '#e5e7eb',
+      'lineColor': '#545191',
+      'secondaryColor': '#FFFFFFCC',
+      'tertiaryColor': '#e5e7eb'
+    }
+  }
+}%%
 
-"producer"                           "consumer"
+flowchart RL
+    B("Pulsar Topic"):::pulsar
+    direction LR
+        C[Client producer] -- publishes to --> B
+    direction RL
+        D["Client consumer"]-- subscribes to --> B
+
+    classDef pulsar stroke:#188FFF
 ```
 
 They are several modes of subscription. A consumer may subscribe exclusively, or share the subscription with other consumers. There is the subscription mode types:
@@ -108,8 +127,8 @@ check if namespace("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6
 ==========
 ```
 
-* The authority block is the cluster authentication block (the cluster admin Biscuit token).
-* The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
+- The authority block is the cluster authentication block (the cluster admin Biscuit token).
+- The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
 
 Attenuate it:
 
@@ -292,7 +311,7 @@ while (!consumer.hasReachedEndOfTopic()) {
 
 There is an official [Python Pulsar Client](https://pulsar.apache.org/docs/en/client-libraries-python/), import it in your `requirements.txt`:
 
-```
+```text
 pulsar-client==2.10.2
 ```
 
@@ -335,7 +354,7 @@ These operations might change in the future. Don't hesitate to write to our supp
 
 Authorized namespace operations:
 
-```
+```text
 CREATE_TOPIC
 GET_TOPIC
 GET_TOPICS
@@ -349,7 +368,7 @@ UNSUBSCRIBE
 
 Authorized topics operations:
 
-```
+```text
 LOOKUP
 PRODUCE
 CONSUME
@@ -374,7 +393,7 @@ SET_REPLICATED_SUBSCRIPTION_STATUS
 
 Authorized namespace/topic policies operations:
 
-```
+```text
 ALL_READ
 ANTI_AFFINITY_READ
 AUTO_SUBSCRIPTION_CREATION_READ

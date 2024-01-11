@@ -27,22 +27,16 @@ A GTS may contain some values which have the following models : `[ timestamp lon
 
 Warp 10 uses [Warp Script](https://www.warp10.io/content/03_Documentation/04_WarpScript). It's a **stack** based **language using reverse polish notation**.
 
-> The metrics ovh team built an other way to request Warp 10: https://github.com/ovh/tsl/
-
-> [Warp 1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
+> The metrics ovh team built an other way to request Warp 10: <https://github.com/ovh/tsl/>  
+> Warp 1O documentation [is availlable on their website](https://www.warp10.io/doc/reference)
 
 ### Time and duration in Warp 10
 
 > More information about [date functions here](https://www.warp10.io/tags/date), and [time functions here](https://www.warp10.io/tags/time).
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Note:</h4>
-  </div>
-  <div class=“panel-body”>
-  The plateform's time unit is in <b>microsecond.</b>
-  </div>
-</div>
+{{< callout type="info" >}}
+The plateform's time unit is in **microsecond**.
+{{< /callout >}}
 
 #### Duration is set by the followings symbols
 
@@ -71,7 +65,7 @@ Builtin function :
 
 The Clever Cloud Warp 10 endpoint is:
 
-```
+```html
 https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
 ```
 
@@ -85,7 +79,9 @@ You can query our Warp 10 platform with your own script. Here's a curl example :
   curl -T <Path/to/a/warpscript_file> https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
 ```
 
-> Do not forget the endpoint. `exec` in the previous exemple.
+{{< callout type="warning" >}}
+Do not forget the endpoint. `exec` in the previous exemple.
+{{< /callout >}}
 
 ## Token
 
@@ -114,7 +110,7 @@ The followings limits are defined in Warp 10. The **soft** one can be passed ove
 Operation over **soft limts** may be intensives.
 {{< /callout >}}
 
-### Usage:
+### Usage
 
 An example where it is needed to increase the fetch limit by the `LIMIT` function
 
@@ -137,14 +133,9 @@ It provide the path to the Clever Cloud Warp 10 gateway and let you explore your
 
 Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.
 
-<div class=“panel panel-warning”>
-  <div class=“panel-heading”>
-    <h4>Note:</h4>
-  </div>
-  <div class=“panel-body”>
-  More information on the <a href="https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros">Warp 10' macros documentations</a>.
-  </div>
-</div>
+{{< callout type="info" >}}
+More information on the [Warp 10' macros documentations](https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros).
+{{< /callout >}}
 
 ### Consumption
 

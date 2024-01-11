@@ -27,7 +27,7 @@ languages:
 
 params:
   images:
-  - images/feature.png
+  - /images/feature.png
   navbar:
     displayTitle: false
     displayLogo: true

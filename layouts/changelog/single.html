@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{- $effectiveOn := (T "effectiveOn") | default "Effective on " -}} {{/* i18n for strings */}}
   <div class="mx-auto flex max-w-screen-xl">
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
     {{ partial "toc.html" . }}
@@ -6,8 +7,8 @@
       <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
         {{ partial "breadcrumb.html" . }}
         <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1>
-        <div class="mt-4 mb-10 text-gray-500 text-sm flex items-center flex-wrap gap-y-2">
-          {{- with $date := .Date }}<span class="mr-1">{{ partial "utils/format-date" $date }}</span>{{ end -}}
+        <div class="mt-4 mb-10 text-gray-500 dark:text-gray-400 text-sm flex items-center flex-wrap gap-y-2">
+          {{- with $date := .Date }}<span class="mr-1">{{ $effectiveOn }}{{ partial "utils/format-date" $date}}</span>{{ end -}}
           {{- $lazyLoading := site.Params.enableImageLazyLoading | default true -}}
           {{ if and .Date .Params.authors }}<span class="mx-1">·</span>{{ end -}}
           {{- with $.Params.authors -}}

@@ -144,7 +144,8 @@ This will be applied also to code (except in tables):
 selectors in css can't be grained to target Markdown syntax
 (for now) */
 .content p a:not(.code),
-.content li a:not(.code) {
+.content li a:not(.code),
+article a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: rgb(214, 207, 251);
@@ -152,7 +153,8 @@ selectors in css can't be grained to target Markdown syntax
 }
 
 html[class~="dark"] .content p a:not(.code),
-html[class~="dark"] .content li a:not(.code) {
+html[class~="dark"] .content li a:not(.code),
+html[class~="dark"] article a {
   color: rgb(0, 172, 230);
 }
 

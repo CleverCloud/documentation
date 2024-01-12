@@ -154,7 +154,7 @@ article a {
 
 html[class~="dark"] .content p a:not(.code),
 html[class~="dark"] .content li a:not(.code),
-article a {
+html[class~="dark"] article a {
   color: rgb(0, 172, 230);
 }
 

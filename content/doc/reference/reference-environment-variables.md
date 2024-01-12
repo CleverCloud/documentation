@@ -92,7 +92,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_CLAMAV_MAXTHREADS`](/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
 |[`CC_METRICS_PROMETHEUS_PASSWORD`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
 |[`CC_METRICS_PROMETHEUS_PATH`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
-|[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 8080 |
+|[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
 |[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |

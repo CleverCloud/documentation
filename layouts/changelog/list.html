@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- $newFeature := (T "newFeature") | default "New" -}} {{/* i18n for strings */}}
+  {{- $newFeature := (T "newFeature") | default "New" -}} {{/* i18n for strings */}}
   {{- $nextPage := (T "nextPage") | default "Next" -}}
   {{- $previousPage := (T "previousPage") | default "Previous" -}}
   <div class="mx-auto flex {{ partial `utils/page-width` . }}">
@@ -7,29 +7,43 @@
     <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
       <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
         <br class="mt-1.5 text-sm" />
-        <h1 class="text-center mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1>
-        <div class="content text-center">{{ .Content }}</div>
+        <h1 class="text-center mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          {{ .Title }}
+        </h1>
+        <div class="content text-center">
+          {{ .Content }}
+        </div>
         {{ $paginator := .Paginate (where .Data.Pages "Type" "changelog") }}
         {{ range $paginator.Pages.GroupByDate "January, 2006" }}
-        <h3 style="text-decoration: none;" class="block font-semibold mt-8 text-2xl text-gray-500 dark:text-gray-300">
-          <span class="inline-block align-text-bottom icon">
+        <h3 style="text-decoration: none;"
+        class="block font-semibold mt-8 text-2xl text-gray-500 dark:text-gray-300">
+          <span
+          class="inline-block align-text-bottom icon">
             {{- partial "utils/icon.html" (dict "name" "clock" "attributes" "height=24") -}}
           </span>
           {{ .Key }}
         </h3>
           {{ range .Pages }}
-            <div class="mb-2 ml-4">
-              <h4 class="">
-                <a style="color: inherit; text-decoration: none;" class="block font-semibold mt-2 text-l;" href="{{ .RelPermalink }}">
+            <div class="mb-6 ml-4 pl-5">
+              <h4>
+                <a
+                style="color: inherit; text-decoration: none;"
+                class="block font-semibold mt-2 text-l;"
+                href="{{ .RelPermalink }}">
                   <span class="inline-block align-text-bottom icon">
-                  {{- partial "utils/icon.html" (dict "name" "minus-sm" "attributes" "height=16") -}} </span>{{ .Title }}
-                    {{ if in .Params.categories "new" }}
+                  </span>{{ .Title }}
+                    {{ if in .Params.categories "new" }} {{/* Show a label "new" if category is set to "new"*/}}
                       <span class="ml-4 not-prose inline-flex items-center gap-2 px-2 py-0 text-xs text-white" style="background: linear-gradient(90deg, #A51050 0%, #CB1C42 50.48%, #F57461 100%);border-radius:2px;">
                         {{- $newFeature -}}
                       </span>
                   {{- end -}}
                 </a>
               </h4>
+              <a
+              href="{{ .RelPermalink }}"
+              class="opacity-50 text-sm text-gray-800 dark:text-gray-300 no-underline">{{/* Show date */}}
+                {{ .Date | time.Format "2006-01-02" }}
+              </a>
               {{- if site.Params.blog.list.displayTags -}} {{/* Show tags */}}
                 {{ with .Params.tags }}
                   <span class="opacity-80 text-sm ml-1 ">
@@ -44,15 +58,21 @@
         <div class="mb-8 mt-8 flex items-center pt-2  print:hidden {{ if gt $paginator.TotalPages 1 }} border-t dark:border-neutral-800 contrast-more:border-neutral-400 dark:contrast-more:border-neutral-400 {{ end }} "> {{/* Hides pagnination separator if no pages */}}
           {{ if $paginator.HasPrev }}
 
-              <a href="{{ $paginator.Prev.URL }}" class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:pr-4 rtl:pl-4">
-                {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"inline h-5 shrink-0 ltr:rotate-180\"") -}} {{- $previousPage -}}
+              <a
+              href="{{ $paginator.Prev.URL }}"
+              class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:pr-4 rtl:pl-4">
+                {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"inline h-5 shrink-0 ltr:rotate-180\"") -}}
+                {{- $previousPage -}}
               </a>
 
           {{ end }}
           {{ if $paginator.HasNext }}
 
-              <a href="{{ $paginator.Next.URL }}" class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:ml-auto ltr:pl-4 ltr:text-right rtl:mr-auto rtl:pr-4 rtl:text-left">
-                {{- $nextPage -}} {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"inline h-5 shrink-0\"") -}}
+              <a
+              href="{{ $paginator.Next.URL }}"
+              class="flex max-w-[50%] items-center gap-1 py-4 text-base font-medium text-gray-600 transition-colors [word-break:break-word] hover:text-primary-600 dark:text-gray-300 md:text-lg ltr:ml-auto ltr:pl-4 ltr:text-right rtl:mr-auto rtl:pr-4 rtl:text-left">
+                {{- $nextPage -}}
+                {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"inline h-5 shrink-0\"") -}}
               </a>
           {{ end }}
         </div>

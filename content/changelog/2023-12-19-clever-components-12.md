@@ -1,10 +1,12 @@
 ---
-title: Clever Web Components update
+title: Clever Web Components updated to version 12
 date: 2023-12-19
 tags:
   - components
+categories:
+- new
 excludeSearch: true
-description: Clever Web Components updated to version 12
+description: Clever Web Components updated to version 12 with new components for the future log UI.
 ---
 
 The Clever Web Components has been updated to version 12. On the menu:

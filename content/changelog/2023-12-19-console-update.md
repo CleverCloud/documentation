@@ -1,10 +1,10 @@
 ---
-title: Console update
+title: Console update with new icons
 date: 2023-12-19
 tags:
   - console
 excludeSearch: true
-description: Console update with new icons
+description: Console update with new icons for the documentation
 ---
 
 Among other changes under the hood, in the side menu when consulting an app, the link to the documentation is now:

@@ -25,6 +25,6 @@ A new version of Redis™  (`7.2.4`) is now available for each new instancied Re
 
 ## Bug fixes
 
-*¨Fix crashes of cluster commands clusters with mixed versions of 7.0 and 7.2 (#12805, #12832)
-*¨Fix slot ownership not being properly handled when deleting a slot from a node (#12564)
-*¨Fix atomicity issues with the RedisModuleEvent_Key module API event (#12733)
+* Fix crashes of cluster commands clusters with mixed versions of 7.0 and 7.2 (#12805, #12832)
+* Fix slot ownership not being properly handled when deleting a slot from a node (#12564)
+* Fix atomicity issues with the RedisModuleEvent_Key module API event (#12733)

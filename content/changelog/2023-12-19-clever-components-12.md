@@ -1,5 +1,5 @@
 ---
-title: Clever Web Components updated to version 12
+title: Clever Web Components updated to v12
 date: 2023-12-19
 tags:
   - components

@@ -20,7 +20,7 @@ Redis is an open source, in-memory data structure store, used as database, cache
 
 ## Version
 
-The version currently installed by the add-on is : Redis 7.0.11
+The version currently installed by the add-on is : Redis 7.2.4
 
 {{< readfile file="db-backup.md" >}}
 

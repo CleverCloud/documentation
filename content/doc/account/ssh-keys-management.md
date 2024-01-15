@@ -21,10 +21,12 @@ You need to add a SSH key to your Clever Cloud's account to deploy via Git.
 SSH keys are used to establish a secure connection between your computer and Clever Cloud. A user can have multiple SSH keys.
 
 {{< callout type="warning">}}
-Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
-associated with only one account.  
-If a key is used by more than one account, a warning will be displayed in the console.
+
+  Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
+  associated with only one account. **If a key is used by more than one account, a warning will be displayed in the console**.
+  
 {{< /callout >}}
+
 
 ## How to add your SSH key on Clever Cloud?
 
@@ -68,6 +70,25 @@ The key fingerprint is:
 ```
 
 {{% /steps %}}
+
+## Add a FIDO/U2F SSH key
+
+Since [OpenSSH 8.2](https://www.openssh.com/txt/release-8.2 ), generated keys can require a security device compatible with the FIDO/U2F standards (such as Nitrokeys, Solokeys or Yubikeys) to complete the authentication process. To generate such key, plug the device to your machine and enter this command:
+
+```bash
+ssh-keygen -t ed25519-sk -C "your_email@youremail.com"
+```
+
+Under macOS, you may need to install [Homebrew](https://brew.sh/), an OpenSSH version including full FIDO/U2F support, and use [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key format:
+
+```bash
+brew install openssh
+ssh-keygen -t ecdsa-sk -C "your_email@youremail.com"
+```
+
+{{< callout type="info" >}}
+  You can use options related to security devices adding them with the `-O` argument (for example `-O resident`). They're detailed [here](https://man.openbsd.org/ssh-keygen#FIDO_AUTHENTICATOR).
+{{< /callout >}}
 
 ## Checking of existing SSH keys
 

@@ -1,15 +1,22 @@
 ---
-title: API update for tasks VM
+title: Identify VM Tasks through the API
 date: 2023-11-29
 tags:
   - api
+  - applications
+authors:
+  - name: Alexandre Duval
+    link: https://github.com/kannarfr
+    image: https://github.com/kannarfr.png?size=40
+  - name: David Legrand
+    link: https://github.com/davlgd
+    image: https://github.com/davlgd.png?size=40
+description: You can now check if an application is a task via the Clever Cloud API
 excludeSearch: true
-description: You can now check if an application is a task via the API
 ---
-The API has been updated to return a "TASK" state in the `instance.lifetime` object on the path `https://api.clever-cloud.com/v2/self/applications/{appId}`.  
-It is now easier to know whether an instance is of type "TASK" or not.
+For years you can deploy applications on Clever Cloud as a `Task` with the API or more recently the `CC_TASK=true` environment variable. As this feature will be widely available and used, the API has been updated to return such a state in the `instance.lifetime` object:
 
-```json{filename="GET https://api.clever-cloud.com/v2/self/applications/<appId>",linenos=table,hl_lines=[10]}
+```json{filename="GET https://api.clever-cloud.com/v2/self/applications/<appId>",linenos=table,hl_lines=[17]}
 {
   "id": "string",
   "name": "string",
@@ -17,13 +24,20 @@ It is now easier to know whether an instance is of type "TASK" or not.
   "zone": "string",
   "zoneId": "string",
   "instance": {
-    …
-    "defaultEnv": {},
-    "lifetime": "REGULAR",    //Allowed: REGULAR┃MIGRATION┃TASK
+    "type": "string",
+    "version": "string",
+    "variant": {},
+    "minInstances": int,
+    "maxInstances": int,
+    "maxAllowedInstances": int,
+    "minFlavor": {},
+    "maxFlavor": {},
+    "flavors": [],
+    "lifetime": "string",  //Allowed: REGULAR ┃ MIGRATION ┃ TASK
     "instanceAndVersion": "string"
   },
-  …
+  ...
 }
 ```
 
-You can find the full API [documentation here](http://developers.clever-cloud.com/openapi/#get-/self/applications/-appId-).
+You can read the full APIv2 documentation [here](http://developers.clever-cloud.com/openapi).

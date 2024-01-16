@@ -1,9 +1,9 @@
 ---
-title: Changelog added
+title: Learn what's new on Clever Cloud platform
 date: 2024-01-10
 tags:
   - changelog
-  - new
+  - documentation
 authors:
   - name: Julia March
     link: https://github.com/juliamrch
@@ -14,8 +14,8 @@ authors:
   - name: Clément Nivolle
     link: https://github.com/cnivolle
     image: https://github.com/cnivolle.png?size=40
+description: You can now check Clever Cloud's evolutions in our new changelog, RSS feed included
 excludeSearch: true
-description: Pulsar version 3.2.0 is deployed
 ---
 
-A new changelog has been added to the [Developer Center](/changelog). It will be regularly edited by the various Clever Cloud teams, to give to our users an overview of our new features, changes and deprecations made on the platform.
+A changelog has been [added](/changelog) to our [Developer Center](/). It will be regularly updated by the Clever Cloud teams to to give you an overview of our new features, but also changes made and deprecations planned on the platform.

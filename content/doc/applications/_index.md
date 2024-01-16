@@ -30,6 +30,7 @@ Find here specific instructions related to your application's language.
   {{< card link="/doc/applications/scala" title="Scala" icon="scala" >}}
   {{< card link="/doc/applications/elixir" title="Elixir" icon="elixir" >}}
   {{< card link="/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/static" title=".Static" icon="feather" >}}
   
 {{< /cards >}}
 

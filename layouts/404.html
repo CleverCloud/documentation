@@ -1,0 +1,49 @@
+{{ define "main" }}
+  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+      
+        <div 
+          class="mt-6 mb-6 animate__headShake" 
+          style="display: flex; justify-content: center; align-items: center; height: 50vh; flex-direction: column;">
+          
+          <img
+            src="/images/404.png"
+            alt="Clever Cloud 404 logo"
+            id="error-heading"
+            width="200"
+            height="200">
+          
+          <h1
+            id="error-heading"
+            class="not-prose text-4xl font-bold leading-none tracking-tighter md:text-5xl py-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
+              404
+          </h1>
+          
+          <p 
+            style="margin-bottom: 20px">
+              This page could not be found.
+          </p>
+          
+          <a
+          href="/doc"
+          class="btn-primary hero-button-primary font-medium cursor-pointer px-6 py-3 text-center text-white inline-block focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800 transition-all ease-in duration-200">
+            Go to the docs
+          </a>
+        </div>
+        
+        {{ partial "components/pager.html" . }}
+        {{ partial "components/comments.html" . }}
+      </main>
+    </article>
+    
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      var element = document.querySelector('#error-heading');
+      if(element) {
+        element.classList.add('animate__animated', 'animate__headShake');
+      }
+    });
+  </script>
+  {{ end }}

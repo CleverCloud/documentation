@@ -157,4 +157,4 @@ curl 'https://${ELASTIC_SEARCH_HOST}/_index_template/test/' -u ${ELASTIC_SEARCH_
 '
 ```
 
-This is important here to set a `number_of_replicas` to zero to avoid triggering cluster issues. Priority must be above 1 as `cc_singlenode_template` template has a default one of 1.
+It's important here to set `number_of_replicas` to zero to avoid triggering cluster problems. The priority must be greater than 1, as the `cc_singlenode_template` template has a default priority of 1.

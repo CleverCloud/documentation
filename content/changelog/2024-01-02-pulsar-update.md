@@ -1,10 +1,15 @@
 ---
-title: Pulsar update
+title: Pulsar update is available
 date: 2024-01-02
 tags:
+  - addons
   - pulsar
+authors:
+  - name: Alexandre Duval
+    link: https://github.com/kannarfr
+    image: https://github.com/kannarfr.png?size=40
+description: The Clever Cloud Pulsar stack has been updated and is more stable
 excludeSearch: true
-description: Pulsar version 3.2.0 is deployed
 ---
 
-Version 3.2.0 is now deployed and used on our platform. Our aim is to improve the availability of topics, by avoiding conflicts between namesspaces and bundle unloading.
+We've deployed a new version of Apache Pulsar on our platform. Our aim is to improve topics availability, avoiding conflicts between namespaces and bundle unloading.

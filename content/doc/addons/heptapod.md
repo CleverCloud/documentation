@@ -20,7 +20,7 @@ type: docs
 
 The Heptapod DevOps platform is edited by [Octobus](https://octobus.net), a team of experts with experience in Mercurial and Rust, derived from Gitlab Community Edition.
 
-Clever Cloud users can benefit the **Heptapod Cloud** software, along with **Heptapod Runner** for CI/CD operations.
+Clever Cloud users can benefit from **Heptapod Cloud** software, along with **Heptapod Runner** for CI/CD operations.
 
 {{< figure src="/images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
 
@@ -42,7 +42,7 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 * **Embedded Wiki and Documentation:** Knowledge sharing is crucial for high-performing teams. Easily create and maintain comprehensive documentation for your projects, centralise and share knowledge, and provide a smooth experience for new collaborators.
 
 
-## Accessing to Heptapod Cloud
+## Accessing Heptapod Cloud
 
 {{< callout type="info" >}}
   **Requirements**  
@@ -51,7 +51,7 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 {{% steps %}}
 
-### Create an organisation
+### Create an organization
 
 You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](/doc/account/administrate-organization/).
 Every organization you have access to will have its corresponding group on the Heptapod Cloud instance.
@@ -105,7 +105,7 @@ The pricing will vary on the selected flavour (size, see also below), which is "
 
 #### Activation
 
-On <heptapod.host>, the Shared Runners are disabled by default at Group creation time, and Projects created while they are disabled on the Group also will have them disabled.
+On heptapod.host, the Shared Runners are disabled by default at Group creation time, and Projects created while they are disabled on the Group also will have them disabled.
 
 This is nothing but the standard GitLab mechanism. If you maintain your own Group or Project runners, this makes sure the Clever Cloud Runner does not steal jobs from them, as chances are high that they would require a specific setup. Also, this avoids billing users for a service that they did not ask for and may not be aware of.
 
@@ -144,9 +144,9 @@ Except for provisioning, everything happens as if the job was launched by a stan
   For Git projects, there is no difference between Heptapod Runner and GitLab Runner
 {{< /callout >}}
 
-So typically, you would create a Docker image with all the needed dependencies, perhaps host it on registry.heptapod.host, and use it as the base context for your job.
+To simplify, you can create a Docker image containing the required dependencies. You might store it on registry.heptapod.host and then use it as the starting point for your job.
 
-Notably, the job can make use of services – these will run inside the same virtual machine as the main job.
+The job can make use of services, which will run inside the same virtual machine as the main job.
 
 Here's a full example making use of a PostgreSQL database, relying on the base image built by our Demo Project for CI image to provide the PostgreSQL client utilities (psql, createdb, etc.)
 
@@ -205,7 +205,7 @@ Jobs performing big compilation tasks (OS kernels, desktop applications) may ben
 At the opposite side of the spectrum, jobs for unit tests or fast linting of small projects may content themselves with a tiny system.
 In other words, one size does not fit all.
 
-Jobs executed by the Clever Cloud Runner can specify the scale (flavour) of the Docker host it needs, using the CI_CLEVER_CLOUD_FLAVOR variable.
+Jobs executed by the Clever Cloud Runner can specify the scale (flavour) of the Docker host it needs, using the `CI_CLEVER_CLOUD_FLAVOR` variable.
 
 ```yaml{filename=".gitlab-ci.yml"}
 small-job:

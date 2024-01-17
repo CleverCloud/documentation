@@ -11,7 +11,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this new content form!
-    - type: dropdown
+  - type: dropdown
     id: version
     attributes:
       label: Version
@@ -31,7 +31,7 @@ body:
       value: "add"
     validations:
       required: true
-       - type: textarea
+  - type: textarea
     id: additional-context
     attributes:
       label: Add more context if needed

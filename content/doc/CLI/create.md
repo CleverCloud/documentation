@@ -72,7 +72,7 @@ When creating your application, you can link it to GitHub for deployments.
 
 ```shell
 # Link an application to GitHub
-clever create --GitHub <owner>/<repository>
+clever create --github <owner>/<repository>
 ```
 
 ## Addon creation process

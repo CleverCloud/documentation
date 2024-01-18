@@ -140,7 +140,7 @@ If you are using Elasticsearch 6, backups are not deleted automatically, you wil
 
 When creating an Elasticsearch add-on, a single node is setup. By default we apply `cc_singlenode_template` that forces the amount of data replication to zero. This index template is only available for data streams.
 
-If you use a tool that requires native Elasticsearch index or add a new one through the API, a custom template is needed. It can be created either using Kibana or the Elasticsearch API. For the latter, you can use a cURL request such as:
+If you use a tool that requires native Elasticsearch index or that adds a new one through the API, a custom template is needed. It can be created either using Kibana or the Elasticsearch API. For the latter, you can use a cURL request such as:
 
 ```sh
 curl 'https://${ELASTIC_SEARCH_HOST}/_index_template/test/' -u ${ELASTIC_SEARCH_USER} -H 'Content-Type: application/json' -X PUT -d'

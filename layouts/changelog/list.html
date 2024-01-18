@@ -16,7 +16,7 @@
         {{ $paginator := .Paginate (where .Data.Pages "Type" "changelog") }}
         {{ range $paginator.Pages.GroupByDate "January, 2006" }}
         <h3 style="text-decoration: none;"
-        class="block font-semibold mt-8 text-2xl text-gray-500 dark:text-gray-300">
+        class="block font-semibold flex items-center gap-1 mt-8 text-2xl text-gray-500 dark:text-gray-300">
           <span
           class="inline-block align-text-bottom icon">
             {{- partial "utils/icon.html" (dict "name" "clock" "attributes" "height=24") -}}
@@ -81,3 +81,4 @@
     <div class="max-xl:hidden h-0 w-64 shrink-0"></div>
   </div>
 {{ end }}
+

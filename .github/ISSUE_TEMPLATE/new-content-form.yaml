@@ -2,7 +2,6 @@ name: New content form
 description: Suggest new content for the documentation
 title: "[Docs]: "
 labels: ["documentation"]
-projects: ["CleverCloud/documentation"]
 assignees:
   - cnivolle
   - juliamrch
@@ -11,24 +10,20 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this new content form!
-  - type: dropdown
-    id: version
+  - type: checkboxes
+    id: existing-issue
     attributes:
-      label: Version
-      description: "Have you checked your request hasn't been already addressed in another issue?"
+      label: Checking for existing issue
+      description: Have you checked your request hasn't been already addressed in another issue?
       options:
-        - Yes
-        - No
-      default: 0
-    validations:
-      required: true
+        - label: I have checked for existing [issues](https://github.com/CleverCloud/documentation/issues)-
+          required: true
   - type: textarea
     id: describe-content
     attributes:
       label: "Describe the content you'd like to see"
       description: "A clear and concise description of what you want to happen."
       placeholder: "I'd like to have a new section about…"
-      value: "add"
     validations:
       required: true
   - type: textarea
@@ -36,7 +31,6 @@ body:
     attributes:
       label: Add more context if needed
       description: Add any other context or screenshots about the feature request here
-      placeholder: ""
-      value: "add"
+      placeholder: "Here's a screenshot"
     validations:
       required: false

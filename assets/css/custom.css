@@ -71,6 +71,11 @@ color: rgb(82 82 82 / .7)
 /* Hero buttons */
 .btn-primary {
   background-color: rgba(58, 56, 113, 1);
+  text-decoration: none;
+}
+
+html[class~="dark"] .btn-primary {
+  color: white;
 }
 
 .btn-primary:hover {

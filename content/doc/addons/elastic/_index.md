@@ -135,3 +135,26 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
 {{< callout type="warning" >}}
 If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.
 {{< /callout >}}
+
+## Create an index on Elasticsearch
+
+When creating an Elasticsearch add-on, a single node is setup. By default we apply `cc_singlenode_template` that forces the amount of data replication to zero. This index template is only available for data streams.
+
+If you are using a tool that requires native Elasticsearch indexes or are accessing them through the Elasticsearch API, you will need an index template. They can be created either using Kibana or the Elasticsearch API. For the latter, you can use a cURL request such as:
+
+```sh
+curl 'https://${ELASTIC_SEARCH_HOST}/_index_template/test/' -u ${ELASTIC_SEARCH_USER} -H 'Content-Type: application/json' -X PUT -d'
+{
+  "index_patterns" : ["${ELASTIC_INDEX_PATTERN}*"],
+  "priority": 2,
+  "template": {
+    "settings" : {
+        "number_of_shards" : 1,
+        "number_of_replicas": 0
+    }
+  }
+}
+'
+```
+
+It's important here to set `number_of_replicas` to zero to avoid triggering cluster problems. The priority must be greater than 1, as the `cc_singlenode_template` template has a default priority of 1.

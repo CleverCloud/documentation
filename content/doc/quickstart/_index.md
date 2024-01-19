@@ -1,22 +1,19 @@
 ---
 weight: 1
 title: Quickstart
-shortdesc: quickstart guide on Clever Cloud
+description: Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
 tags:
 - getting-started
 keywords:
 - quickstart
-
 aliases:
 - /doc/getting-started/quickstart
 - /doc/deploy
-
 type: "docs"
-comments: false
-
 ---
-
-Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+{{< hextra/hero-subtitle >}}
+  Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+{{< /hextra/hero-subtitle >}}
 
 ## Create a Clever Cloud Account
 
@@ -98,16 +95,16 @@ Choose the organization you want to deploy in from the left menu. At this point 
 #### Click on "Create an application"
 
 Find it in the **Organization Manager** panel, at the top left of the left menu.
-
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
-
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.  
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 #### Select the language
 
 Choose the language or the framework you want to deploy.
 
-**💡 Optional:** For PHP applications, you can choose between FTP and Git deployment.
+ {{< callout emoji="💡" >}}
+  **Optional:** For PHP applications, you can choose between FTP and Git deployment.
+  {{< /callout >}}
 
 #### Fine-tune your scaling configuration
 

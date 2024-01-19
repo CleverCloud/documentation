@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.Home.Sitemap.Filename | absURL }}

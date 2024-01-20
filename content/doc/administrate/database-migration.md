@@ -11,19 +11,21 @@ tags:
 type: docs
 ---
 
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Clever Cloud features a simple, elegant way of migrating your databases to change the size of the instance, or improving its security by updating the middleware on it.
+{{< /hextra/hero-subtitle >}}
+
 ## Migrating any database and updating its security
 
-{{< callout type="warning" >}}
-We do not support the migration of read only users except for PostgreSQL addons. If you have any, you will have to create new ones at the end of the migration.
-{{< /callout >}}
-
-You can migrate any database easily in Clever Cloud to upgrade the size of the addon and improve its security by updating underlaying softwares.
-
-Indeed, our databases add-ons are deployed on immutable Virtual Machines. No updates are made on those VMs.
+Our databases add-ons are deployed on immutable Virtual Machines. No updates are made on those VMs.
 To improve security, you need to perform a "migration", which will boot a new VM with up-to-date system and database.
 Unless you want to upgrade your database to a new major version or to give it more resources, you just have to perform a migration on the same zone, same plan and same major version.
 
 These updates are not related to your addon (PostgreSQL, MySQL...) major version. Only patches or minor versions of the addon software along with system upgrades (security patches and new kernel features) are performed. For example, you can keep *PostgreSQL 11* if you want to.
+
+{{< callout type="warning" >}}
+We **do not** support the migration of read only users except for PostgreSQL addons. If you have any, you will have to create new ones at the end of the migration.
+{{< /callout >}}
 
 ## Migration (updating) step-by-step
 

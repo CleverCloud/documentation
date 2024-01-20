@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Database migration and security updates
-shortdesc: How to migrate your database
+title: Database migration
+description: How to migrate your database to improve performance or security
 keywords:
 - database
 - dbaas

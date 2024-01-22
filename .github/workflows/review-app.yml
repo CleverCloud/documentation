@@ -12,6 +12,7 @@ env:
   CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
   ORGA_ID: ${{ secrets.ORGA_ID }}
   HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   deploy:
@@ -43,12 +44,12 @@ jobs:
         run: npm install -g clever-tools
       - name: Create app and configure app
         run: | 
-          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+          clever login --token "$CLEVER_TOKEN" --secret "$CLEVER_SECRET"
+          clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org "$ORGA_ID"
           clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
           clever env set CC_WEBROOT "/public"
           clever env set HUGO_ENV "production"
-          clever env set HUGO_VERSION ${{env.HUGO_VERSION}}
+          clever env set HUGO_VERSION "$HUGO_VERSION"
           clever domain add clever-doc-review-${{ env.BRANCH_NAME }}-PR-${{ github.event.number }}.cleverapps.io
       - name: Deploy
         run: clever deploy
@@ -64,9 +65,7 @@ jobs:
               issue_number: issue_number,
               body: message
             });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+
   update:
     if: github.event.action == 'synchronize'
     runs-on: ubuntu-latest
@@ -86,7 +85,7 @@ jobs:
         run: npm install -g clever-tools
       - name: Link and update app
         run: | 
-          clever link -o ${{ env.ORGA_ID }} doc-review-${{ env.BRANCH_NAME }}
+          clever link -o "$ORGA_ID" doc-review-${{ env.BRANCH_NAME }}
           clever deploy --force
       - name: Comment PR
         uses: actions/github-script@v7
@@ -100,8 +99,6 @@ jobs:
               issue_number: issue_number,
               body: message
             });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   delete:
     runs-on: ubuntu-latest
@@ -114,8 +111,8 @@ jobs:
         run: npm install -g clever-tools
       - name: Delete app
         run: |
-          clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-          clever link -o ${{ env.ORGA_ID }} doc-review-${{ env.BRANCH_NAME }}
+          clever login --token "$CLEVER_TOKEN --secret "$CLEVER_SECRET"
+          clever link -o "$ORGA_ID" doc-review-${{ env.BRANCH_NAME }}
           clever delete --alias doc-review-${{ env.BRANCH_NAME }} --yes
       - name: Comment PR
         uses: actions/github-script@v7
@@ -129,6 +126,5 @@ jobs:
               issue_number: issue_number,
               body: message
             });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
   

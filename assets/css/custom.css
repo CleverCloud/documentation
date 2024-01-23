@@ -42,6 +42,7 @@ h1, .content h1,
 .content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
 /* Override line color in code block */
 :is(html[class~="dark"] .chroma .ln), :is(html[class~="dark"] .chroma .lnt:not(.hl > .lnt)), :is(html[class~="dark"] .chroma .hl:not(.line)),
 .chroma .ln, .chroma .lnt:not(.hl > .lnt), .chroma .hl:not(.line) {
@@ -106,30 +107,37 @@ Allow inserting "steps" shortcode with h4 */
 .steps h4 {
   counter-increment: step;
 }
-  
-.steps h4:before {
+
+.steps h4:before,.steps h3:before {
   position: absolute;
   height: 33px;
   width: 33px;
   border-width: 4px;
   --tw-border-opacity: 1;
   border-radius: 9999px;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  border-color: #5754aa;
+  background-color: #5754aa;
   text-align: center;
-  text-indent: -1px;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight:700;
   --tw-text-opacity: 1;
-  color: rgb(163 163 163 / var(--tw-text-opacity));
+  color: white;
   margin-top: -1px;
   margin-left: -41px;
   content: counter(step);
   }
-  
-:is(html[class~="dark"] .steps h4):before {
+
+  .steps h3:before{
+    margin-top:2px
+  }
+
+.steps h4,.steps h3{
+  font-family: inherit;
+}
+
+:is(html[class~="dark"] .steps h4):before,:is(html[class~="dark"] .steps h3):before {
   --tw-border-opacity: 1;
-  border-color: rgb(17 17 17 / var(--tw-border-opacity));
+  border-color: rgb(38 38 38 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
@@ -269,4 +277,13 @@ html[class~="dark"] .content table:not(.code-block table) tr {
         -webkit-transform: translateX(0);
         transform:translateX(0)
     }
+}
+
+/* -----------------------------------------
+            Customize paragraphs
+-------------------------------------------*/
+.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-top: .3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.75rem;
 }

@@ -31,16 +31,29 @@
   {{- end }}
 
   <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
-  <script>
-    /* Initialize light/dark mode */
-    if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.style.colorScheme = "dark";
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.style.colorScheme = "light";
-    }
-  </script>
+    <script>
+    const defaultTheme = "system",
+        setDarkTheme = () => {
+            document.documentElement.classList.add("dark"),
+            document.documentElement.style.colorScheme = "dark"
+        },
+        setLightTheme = () => {
+            document.documentElement.classList.remove("dark"),
+            document.documentElement.style.colorScheme = "light"
+        };
+    "color-theme" in localStorage ? localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme() : (defaultTheme === "dark" ? setDarkTheme() : setLightTheme(), defaultTheme === "system" && (window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme()))
+
+    document.addEventListener('DOMContentLoaded', function () {;
+      const themeToggleButtons2 = document.querySelectorAll(".theme-toggle");
+      // Add click event handler to the buttons, and reload the page for the RAPIDOC documentation to update
+      themeToggleButtons2.forEach((el) => {
+        el.addEventListener("click", function () {
+          window.location.reload();
+        })
+      });
+    })
+
+    </script>
   {{ partial "custom/head-end.html" . }}
 </head>
 

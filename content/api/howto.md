@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Clever Cloud API
+title: Clever Cloud API Overview
 weight: 1
 shortdesc: Getting started with the Clever Cloud API
 tags:

@@ -4,7 +4,8 @@ type: docs
 comments : false
 #linkTitle: Documentation
 draft: false
-
+aliases:
+- /doc/openapi
 ---
 
 {{< hextra/hero-subtitle >}}
@@ -12,9 +13,9 @@ draft: false
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/api/cc-api" title="Overview" subtitle="Learn how Clever Cloud API works and how to use it." icon="api" >}}
-  {{< card link="/api/openapi" title="API endpoints" subtitle="Full list of all the available API endpoints." icon="endpoints" >}}
-  {{< card link="/api/api-v4" title="APIv4" subtitle="Added functionnalities and new endpoints in development " icon="new" >}}
+  {{< card link="/api/howto" title="How to use our API" subtitle="Learn more about Clever Cloud API, endpoints, auth and how to access it from multiple tools." icon="api" >}}
+  {{< card link="/api/v2" title="APIv2 Reference" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
+  {{< card link="/api/v4" title="APIv4 Reference" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
   
 {{< /cards >}}
 

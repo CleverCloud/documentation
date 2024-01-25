@@ -18,9 +18,11 @@ When creating an application, you have two (non exclusive) choices for domain na
 * Using a personal domain name
 * Using a **\*.cleverapps.io** free domain for dev purposes, with built-in SSL
 
-You can link one or several domain names in the console.
-
 Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under `*.cleverapps.io`.
+
+{{< callout type="info" >}}
+  You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [prefix routing](#prefix-routing).
+{{< /callout >}}
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 

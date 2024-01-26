@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Clever Cloud API
+title: Clever Cloud API Overview
 weight: 1
 shortdesc: Getting started with the Clever Cloud API
 tags:
@@ -55,11 +55,11 @@ You need to set a callback URL, this is the url your user will be redirected to 
 
 #### **Get a request token**
 
-You have to make a `POST`request to get a [request token](https://www.clever-cloud.com/doc/openapi/#post-/oauth/request_token) to the API.
+You have to make a `POST`request to get a [request token](/api/v2/#post-/oauth/request_token) to the API.
 
 #### **Get the authorization URL**
 
-Ask the API for the [authorization URL](https://www.clever-cloud.com/doc/openapi/#get-/oauth/authorize) and go to this URL with a browser. Log in with your account and it will send you to the callback URL.
+Ask the API for the [authorization URL](/api/v2/#get-/oauth/authorize) and go to this URL with a browser. Log in with your account and it will send you to the callback URL.
 
 #### **Get the verifier token**
 
@@ -71,7 +71,7 @@ Where `<verifierToken>` is your token.
 
 #### **Get the access token**
 
-Make a `POST`  request to get the [access token](https://www.clever-cloud.com/doc/openapi/#post-/oauth/access_token) with your request token and the verifier.
+Make a `POST`  request to get the [access token](/api/v2/#post-/oauth/access_token) with your request token and the verifier.
 You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
@@ -84,13 +84,14 @@ The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-serv
 
 ### **API endpoints documentation**
 
-All the API endpoints are referenced in a swagger documentation.
+All the API endpoints are referenced in a swagger documentation. **The base URL for the API is V2**.
 
-- [https://www.clever-cloud.com/doc/api/](https://www.clever-cloud.com/doc/api/)
+{{< cards >}}
 
-The base URL for the API is :
-
-- `https://api.clever-cloud.com/v2/`
+  {{< card link="/api/v2" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
+  {{< card link="/api/v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
+  
+{{< /cards >}}
 
 ## WebSocket API requests
 

@@ -18,4 +18,3 @@ aliases:
   {{< card link="/api/v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
   
 {{< /cards >}}
-

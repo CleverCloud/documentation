@@ -59,7 +59,7 @@ Every organization you have access to will have its corresponding group on the H
 In the Clever Cloud console, click **Add an Organization** and fill the form to create one.
 Organization are the way users collaborate and share applications.
 
-### Access to Heptod via SSO
+### Access to Heptapod via SSO
 
 Accessing to Heptapod Cloud is done with the built-in of Clever Cloud.
 To launch Heptapod Cloud go to **<https://heptapod.host>**.

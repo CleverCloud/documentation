@@ -93,7 +93,7 @@ menu:
       weight: 2
     - identifier: api
       name: API
-      pageRef: /openapi
+      pageRef: /api
       weight: 3
     - identifier: changelog
       name: Changelog

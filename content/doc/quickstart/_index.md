@@ -251,7 +251,7 @@ Applications often requires one or more services in addition to the runtime itse
 
 An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
 
-Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud]({{< ref "doc/extend/cc-api.md" >}}))
+Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/../api))
 
 #### Available add-ons
 
@@ -270,6 +270,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
    {{< card link="/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
    {{< card link="/doc/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
 {{< /cards >}}
+
 **If your add-on:**
 
 {{< tabs items="Doesn't exist yet,Already exists" >}}

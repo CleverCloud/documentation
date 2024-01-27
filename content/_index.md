@@ -47,7 +47,7 @@ width: normal
   {{< feature-card
     title="API"
     subtitle="The Clever Cloud API reference."
-    link="/doc/extend/api"
+    link="/api"
     class="aspect-auto md:aspect-[1.1/1] max-lg:min-h-[340px]"
     image="/images/metrics-home.png"
     imageClass="top-[40%] left-[36px] w-[180%] sm:w-[110%] dark:opacity-80"

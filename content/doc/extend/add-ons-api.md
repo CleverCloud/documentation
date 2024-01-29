@@ -177,7 +177,7 @@ not its name.
 
 * `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/clever-cloud-addons-api/add-ons-log-collector/]({{< ref "doc/extend/add-ons-log-collector.md" >}})
 
-* `options` - String -> String map with options. We don't currently support this, so it will be empty for now.
+* `options` - String -> String map with options.
 
 The response body contains the following fields:
 

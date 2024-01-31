@@ -26,7 +26,7 @@ Matomo on Clever Cloud will allow your marketing team to effortlessly setup a ta
 
 When you subscribe the Matomo add-on, we automatically setup a PHP instance based on the latest Matomo release. It comes with the required MySQL database and an optional Redis cache.
 
-We have chosen to let you see and manage these companion add-ons in the Console so that you could adjust them to your needs. You can change their settings and use the Clever Cloud ability to migrate from an S flavored database or cache to an L or XL if required. You can also activate autoscalabity (horizontal and/or vertical scaling).
+We have chosen to let you see and manage these companion add-ons in the Console so that you could adjust them to your needs. You can change their settings and use the Clever Cloud ability to migrate from an S flavored database or cache to an L or XL if required. You can also activate auto-scalability (horizontal and/or vertical scaling).
 
 By default, Matomo on Clever Cloud comes with small sized add-ons:
 

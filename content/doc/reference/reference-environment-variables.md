@@ -26,12 +26,12 @@ These are read-only variables that are generated for each scaler before they bui
 |`APP_ID` | The ID of your Clever Cloud application | app_649a93d1-6677-44bc-aca7-6f46107d6e02 |
 |`APP_HOME` | The absolute path to your application folder | /home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02 |
 |`CC_DEPLOYMENT_ID` | Internal id of current deployment | f7efaf04-1a63-45a1-8503-0de7c750ee48 |
-|`COMMIT_ID` | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
+|`CC_COMMIT_ID` | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
 |`CC_REVERSE_PROXY_IPS` | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
 |`ELASTIC_APM_SERVICE_NAME` | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
 |`CC_APP_NAME` | The customer defined application name | cloud-api-production |
 |`PORT` | The mandatory port value is 8080 | 8080 |
-  
+
 ### Variables you can define
 
 So you can alter the build&start process for your application.

@@ -16,22 +16,18 @@ type: docs
   If you're having trouble deploying applications or with with git, this section is for you. From git issues to configuration errors, problems can arise at different stages of your deployments.
 {{< /hextra/hero-subtitle >}}
 
-## Activating the troubleshooting mode
+## Git-related issues
 
-Sometimes, when something goes wrong during the deployment, it can be hard to find out what happens. The troubleshoot mode allows you to keep the instances up while you find out what has happened.
-Additionally, the troubleshoot mode increases the overall verbosity of the deployment process.
-
-To enable this mode, simply add `CC_TROUBLESHOOT=true` to your environment variables.
-
-## Some files disappear after an application restart
+{{% details title="Some files disappear after an application restart" closed="true" %}}
 
 Clever Cloud use Git to transfer your code and application's assets from your local host to your scaler. If your application writes files on the local file system, those files are not committed: so you can't save these files from a instance to an other.
 
 For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
 
 Follow the [File System buckets documentation page]({{< ref "doc/addons/fs-bucket" >}}) to set up an FS Bucket for your application.
+{{% /details %}}
 
-## Troubleshooting empty repository git error
+{{% details title="Troubleshooting empty repository git error" closed="true" %}}
 
 In some cases, git may display this type of error message:
 
@@ -69,7 +65,9 @@ If you called the Clever Cloud remote `clever` and your local branch is `product
 git push clever production:master
 ```
 
-## Troubleshooting "Not a git repository" error
+{{% /details %}}
+
+{{% details title="Troubleshooting 'Not a git repository' error" closed="true" %}}
 
 ```text
 fatal: Not a git repository (or any of the parent directories)
@@ -79,8 +77,9 @@ This means that the folder in which you are is not a git repository.
 In your console, at the root of your project, type `$ git init`. This will create a new git repository for your folder locally. Link it to Clever Cloud by going under the Clever Cloud console. In your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`.
 You can add all your files with `$ git add .`, then you need to commit the files with `$ git commit -m "<your commit message>"`.
 You will finally push your code with `$ git push clever master`.
+{{% /details %}}
 
-## Troubleshooting "fatal: 'clever' does not appear to be a git repository"
+{{% details title="Troubleshooting 'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
 
 "clever" is a name used in our examples to represent the Clever Cloud servers.
 In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:
@@ -90,12 +89,25 @@ git remote add clever <your-git-deployment-url>
 ```
 
 You can find your deployment url under the Clever Cloud console in your application's information menu.
+{{% /details %}}
 
-## Fail to push to a repository
+{{% details title="Fail to push to a repository" closed="true" %}}
 
 It might be because your SSH agent is not properly configured. Please check [the SSH documentation page]({{< ref "doc/account/ssh-keys-management#i-maybe-have-ssh-keys-i-want-to-check" >}}).
+{{% /details %}}
 
-## Node application failed to deploy silently
+## Deployments issues
+
+{{% details title="Activating the troubleshooting mode" closed="true" %}}
+
+Sometimes, when something goes wrong during the deployment, it can be hard to find out what happens. The troubleshoot mode allows you to keep the instances up while you find out what has happened.
+Additionally, the troubleshoot mode increases the overall verbosity of the deployment process.
+
+To enable this mode, simply add `CC_TROUBLESHOOT=true` to your environment variables.
+
+{{% /details %}}
+
+{{% details title="Node application failed to deploy silently" closed="true" %}}
 
 This kind of silent error may be due to the server port your have setup in your application. Make sure your application is listening on port 8080.
 Most of the time, this simple line could do the trick in your main JS file:
@@ -105,12 +117,19 @@ Most of the time, this simple line could do the trick in your main JS file:
 server.listen(8080);
 ```
 
-## Missing GitHub organization on the application creation page
+{{% /details %}}
+
+## Others issues
+
+{{% details title="Missing GitHub organization on the application creation page" closed="true" %}}
 
 GitHub does not give us access to organizations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
 
 You can of course reach to <support@clever-cloud.com> if this page was not helpful enough.
 
-## My application is not accessible for an unknown reason
+{{% /details %}}
+
+{{% details title="My application is not accessible for an unknown reason" closed="true" %}}
 
 Check the status of the services on [clevercloudstatus.com](https://www.clevercloudstatus.com/). The support team is also there to help you identify any potential errors or misconfiguration.
+{{% /details %}}

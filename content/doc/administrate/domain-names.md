@@ -73,7 +73,7 @@ Provide the following to your registrar:
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.176`<br>`@ 10800 IN A 87.98.180.181`<br>`@ 10800 IN A 87.98.182.136` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.177.176`<br>`@ 10800 IN A 87.98.177.181`<br>`@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.136` |
 
 ### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
 

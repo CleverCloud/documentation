@@ -173,7 +173,7 @@ html[class~="dark"] article a {
 
 /* Allow linking in a variable environment without
 changing the style and adding an a arrow at the end of the text */
-.content a:not(.code) { 
+.content a:has(code){
   text-decoration: none;
   color: inherit;
 }
@@ -182,7 +182,7 @@ changing the style and adding an a arrow at the end of the text */
 .content a:not(.code-block code) code::after {
   content: "\00a0↗";
   color: tomato;
-  font-size: 1rem;
+  font-size: 1.1rem;
 
 }
 

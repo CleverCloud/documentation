@@ -15,17 +15,22 @@ aliases:
 - /doc/getting-started/by-language/docker/
 - /doc/partials/language-specific-deploy/docker
 ---
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Clever Cloud offers support for Docker containers. These are deployed inside virtual machines to guarantee a secure level of isolation.
+{{< /hextra/hero-subtitle >}}
 
 ## Overview
-
-Docker is an easy, lightweight virtualized environment for portable applications.
 
 Docker containers can encapsulate any payload, and will run consistently on and between virtually any server. The same container that a developer builds and tests on a laptop will run at scale, in production, on VMs, bare-metal servers, public instances, or combinations of the above.
 
 Clever Cloud allows you to deploy any application running inside a Docker container. This page will explain how to set up your application to run it on our service.
 
+{{< callout type="info" >}}
+  Clever Cloud supports many languages, but some users have specific application needs. With Docker, they can create custom stacks without relying on Clever Cloud's specific support.
+{{< /callout >}}
+
 {{< callout type="warning" >}}
-Docker at Clever Cloud does not yet support FS Buckets, validation of your Dockerfile, or compose of sorts.
+[FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
 
 {{< readfile file="set-env-vars.md" >}}

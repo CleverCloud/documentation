@@ -30,7 +30,7 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-Currently, [FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
+[FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
 
 {{< readfile file="set-env-vars.md" >}}

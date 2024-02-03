@@ -4,6 +4,7 @@ Once all these steps have been completed, commit your content to the local repos
 git add .
 git commit -m "First deploy"
 clever deploy
+clever open
 ```
 You can display your website's URL or add a custom domain to it (you'll need to configure DNS):
 ```bash

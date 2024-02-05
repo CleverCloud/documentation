@@ -158,6 +158,7 @@ selectors in css can't be grained to target Markdown syntax
 (for now) */
 .content p a:not(.code),
 .content li a:not(.code),
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
 article a {
   text-decoration-line: underline;
   text-decoration-style: dotted;

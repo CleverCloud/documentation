@@ -7,11 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install xsltproc
+        run: sudo apt-get update && sudo apt-get install -y xsltproc
       - name: Vale Linter
         uses: errata-ai/vale-action@reviewdog
         with:
           files: all # This will lint all files, but `filter_mode` will narrow it down
           reporter: github-pr-check # How results are reported
-          filter_mode: added # Consider only changes in the context of the PR diff
+          filter_mode: diff_context # Consider only changes in the context of the PR diff
           fail_on_error: true # Optional: fail the action if errors are found
           token: ${{ secrets.GITHUB_TOKEN }} # GitHub token

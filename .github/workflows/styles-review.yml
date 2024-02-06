@@ -1,4 +1,4 @@
-name: Linting with Vale
+name: Check editorial style
 on: [pull_request]
 
 jobs:
@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install xsltproc
-        run: sudo apt-get update && sudo apt-get install -y xsltproc
       - uses: errata-ai/vale-action@reviewdog
         with:
           reporter: github-pr-check # How results are reported
-          filter_mode: diff_context # Consider only changes in the context of the PR diff
-          fail_on_error: true # Optional: fail the action if errors are found
-          token: ${{ secrets.GITHUB_TOKEN }} # G
+          filter_mode: added # Consider only changes in the modified or added lines
+          fail_on_error: true # Fail the action if errors are found
+          token: ${{ secrets.GITHUB_TOKEN }} # Post review

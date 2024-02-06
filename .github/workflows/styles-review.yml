@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install xsltproc
+        run: sudo apt-get update && sudo apt-get install -y xsltproc
       - uses: errata-ai/vale-action@reviewdog
         with:
           reporter: github-pr-check # How results are reported
           filter_mode: diff_context # Consider only changes in the context of the PR diff
           fail_on_error: true # Optional: fail the action if errors are found
-          token: ${{ secrets.GITHUB_TOKEN }} # GitHub token
+          token: ${{ secrets.GITHUB_TOKEN }} # G

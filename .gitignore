@@ -2,3 +2,5 @@
 /public/*
 /resources
 .clever.json
+.vale.ini
+/styles

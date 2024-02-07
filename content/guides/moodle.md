@@ -112,7 +112,7 @@ Get the remote in your application menu > **Information** > **Deployment URL** a
 
 Moodle [recommends to set up a Cron job](https://docs.moodle.org/403/en/Cron) that runs every minute. For the Cron to execute as a PHP file, you will need to add a shebang at the very top of `admin/cli/cron.php`, like this: `#!/usr/bin/env php`.
 
-### Declare the Cron in Clever Cloud
+### Declare the cron in Clever Cloud
 
 Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`every minute: 
 
@@ -124,7 +124,7 @@ Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`e
 
 You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, we reccomend you to use a dedicated tool like [rclone](https://rclone.org).
 
-**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [Cron job](https://developers.clever-cloud.com/doc/administrate/cron/)).
+**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](https://developers.clever-cloud.com/doc/administrate/cron/)).
 
 ## 🎓 Further Help
 

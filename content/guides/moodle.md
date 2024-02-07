@@ -124,7 +124,7 @@ Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`e
 
 You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, we reccomend you to use a dedicated tool like [rclone](https://rclone.org).
 
-**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [CRON job](https://developers.clever-cloud.com/doc/administrate/cron/)).
+**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [Cron job](https://developers.clever-cloud.com/doc/administrate/cron/)).
 
 ## 🎓 Further Help
 

@@ -12,7 +12,7 @@ aliases:
 type: "docs"
 ---
 {{< hextra/hero-subtitle >}}
-  Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+  Clever Cloud provides an automated hosting platform for  developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
 ## Create a Clever Cloud Account

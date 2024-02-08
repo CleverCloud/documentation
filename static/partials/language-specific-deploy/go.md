@@ -9,7 +9,7 @@ By default, we consider that your repository contains a single application. Be s
 In most cases you won't need to change anything to your application, except host/port and some configuration variables. 
 
 ### Complementary runtime
-If you need a runtime environment such as Node.js or tools to build a frontend for example, some are available in our Go instances. You can use them through scripts launched by [deployments hooks](/doc/develop/build-hooks/) and [Environment variables](/doc/reference/reference-environment-variables/) sometimes allow you to configure them. So if you need a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `20` or `21.5.0`).
+If you need a runtime environment such as [Node.js](/doc/applications/javascript/nodejs/) or tools to build a frontend for example, some are available in our Go instances. You can use them through scripts launched by [deployments hooks](/doc/develop/build-hooks/) and [Environment variables](/doc/reference/reference-environment-variables/) sometimes allow you to configure them. So if you need a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `20` or `21.5.0`).
 
 ### Modern Go project structure
 There are multiple ways to build/run a Go application, and this has evolved over the years. In its modern form a Go project can be a:
@@ -94,6 +94,11 @@ To build a Go package, your project may include vendored dependencies (in the `v
 - **gomod**
 To build a Go module, be sure that the `go.mod` file is in your git tree and at the root of your application. Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to set `CC_GO_PKG=path/to/entrypoint.go`.
 
+The final command will be: 
+
+```
+go install $CC_GO_PKG
+```
 {{< readfile file="env-injection.md" >}}
 
 To access environment variables from your code, just get them from the environment with `PATH`: `os.Getenv("MY_VARIABLE")`.

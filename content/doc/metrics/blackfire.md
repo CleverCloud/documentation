@@ -9,6 +9,8 @@ keywords:
 - blackfire
 - metrics
 - monitoring
+aliases:
+- /doc/administrate/metrics/blackfire/
 ---
 
 

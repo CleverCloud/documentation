@@ -123,15 +123,6 @@ If you can find them, you do not need to generate a new one, simply go to the fo
 
 {{< /tabs >}}
 
-## Specific SSH key for Clever Cloud
-
-If you want to use a specific key for Clever Cloud, you can set it in your SSH config by adding this :
-
-```shell{filename="~/.ssh/.config"}
-Host *.clever-cloud.com 
-   IdentityFile ~/.ssh/clevercloud
-```
-
 ## Add a public SSH key on Clever Cloud
 
 ### From the Console
@@ -192,45 +183,13 @@ To fix this you will need to configure your SSH agent.
 
 ## Configure your SSH agent
 
-You can add those lines into your `~/.ssh/config` file. It tells your SSH agent which key to pick for a given hostname.
-Please update your Clever Cloud SSH key path accordingly.
+You can add those lines into your `~/.ssh/config` file. It tells your SSH agent which key to pick for a given hostname. Update your Clever Cloud SSH key path accordingly.
 
 ```bash {filename= "~/.ssh/config"}
-# config for Clever Cloud specific key (Paris zone)
-Host push-par-clevercloud-customers.services.clever-cloud.com
-  Hostname push-par-clevercloud-customers.services.clever-cloud.com
+Host push-*.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud
-
-# config for Clever Cloud specific key (Roubaix zone)
-Host push-rbx-clevercloud-customers.services.clever-cloud.com
-  Hostname push-rbx-clevercloud-customers.services.clever-cloud.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_clevercloud
-
-# config for Clever Cloud specific key (Warsaw zone)
-Host push-wsw-clevercloud-customers.services.clever-cloud.com
-  Hostname push-wsw-clevercloud-customers.services.clever-cloud.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_clevercloud
-
-# config for Clever Cloud specific key (Montreal zone)
-Host push-mtl-clevercloud-customers.services.clever-cloud.com
-  Hostname push-mtl-clevercloud-customers.services.clever-cloud.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_clevercloud
-
-# config for Clever Cloud specific key (Singapore zone)
-Host push-sgp-clevercloud-customers.services.clever-cloud.com
-  Hostname push-sgp-clevercloud-customers.services.clever-cloud.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_clevercloud
-
-# config for Clever Cloud specific key (Sydney zone)
-Host push-syd-clevercloud-customers.services.clever-cloud.com
-  Hostname push-syd-clevercloud-customers.services.clever-cloud.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_clevercloud
+  IdentitiesOnly yes
 ```
 
 {{< callout type="info" >}}

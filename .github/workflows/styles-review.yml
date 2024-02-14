@@ -1,0 +1,15 @@
+name: Check editorial style
+on: [pull_request]
+
+jobs:
+  vale:
+    name: Run Vale Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          reporter: github-pr-check # How results are reported
+          filter_mode: added # Consider only changes in the modified or added lines
+          fail_on_error: true # Fail the action if errors are found
+          token: ${{ secrets.GITHUB_TOKEN }} # Post review

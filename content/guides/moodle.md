@@ -88,7 +88,7 @@ If you don't have an domain for your Moodle application yet, you'll be able to a
 
 ### Set Up `moodledata` Folder
 
-In this step you enable storage outside of your application, which [is required by Moodle to run](https://docs.moodle.org/403/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
+In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/403/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
 
 Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable. It should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`.
 

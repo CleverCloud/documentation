@@ -6,3 +6,7 @@ Hextra
 shortcode
 OAuth
 cron
+Moodle
+application
+rclone
+

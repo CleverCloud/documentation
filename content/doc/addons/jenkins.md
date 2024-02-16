@@ -265,31 +265,3 @@ All plugins will be downloaded. You can enable the option `Restart Jenkins when 
 ## Backup
 
 By default, Clever Cloud performs a backup every day, with a retention of seven days. Retention and frequency can be customized for Premium customers. Backups can be found in the Clever Cloud Console in the `backups` menu of your add-on.
-
-## Plans
-
-Here are the plans of the Jenkins controller as well as its available runner instances.
-
-<!-- Documentation is here: https://www.clever-cloud.com/doc/clever-components/?path=/docs/%F0%9F%9B%A0-pricing-cc-pricing-product--default-story -->
-<!-- markdownlint-disable MD033 -->
-<script type="module" src="https://components.clever-cloud.com/load.js?version=7&components=cc-pricing-product.smart-addon,cc-pricing-product.smart-runtime"></script>
-
-### Jenkins Add-on
-
-Those are the plans of the Jenkins controller instance.
-<!-- markdownlint-disable MD033 -->
-<cc-smart-container context='{"productId": "jenkins", "addonFeatures": ["cpu", "memory", "disk-size", "has-logs", "has-metrics"]}'>
-  <cc-pricing-product mode="addon" action="none">
-    <div slot="head"></div>
-  </cc-pricing-product>
-</cc-smart-container>
-
-### Runners
-
-Those plans are the available runners for your jobs.
-<!-- markdownlint-disable MD033 -->
-<cc-smart-container context='{"productId": "jenkins-runner"}'>
-  <cc-pricing-product mode="runtime" action="none" temporality='[{"type":"minute","digits":5}, {"type": "1000-minutes","digits": 2}]'>
-    <div slot="head"></div>
-  </cc-pricing-product>
-</cc-smart-container>

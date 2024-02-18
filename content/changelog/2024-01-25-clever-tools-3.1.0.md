@@ -24,7 +24,7 @@ If 3.0.x branch brought new log stack (faster, longer, order), you now get updat
 
 `clever deploy` can now be used with the `--same-commit-policy` or `-p` flag to set policy to apply when the local commit is the same as the remote one: `error`, `ignore`, `restart` or `rebuild` (default: `error`).
 
-Of course, there are also some bugfixes. And be prepared: more new features are on the way!
+Of course, there are also some bug fixes. And be prepared: more new features are on the way!
 
 To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with npm: 
 

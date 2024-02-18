@@ -15,7 +15,7 @@ description: And more is coming!
 excludeSearch: true
 ---
 
-As mentionned [in the previous release](/changelog/2024-01-25-clever-tools-3.1.0/), the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with [the 3.2.0](https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0) adding the log auto retry feature on network failures and some fixes:
+As mentioned [in the previous release](/changelog/2024-01-25-clever-tools-3.1.0/), the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with [the 3.2.0](https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0) adding the log auto retry feature on network failures and some fixes:
 
 * **api:** improve error message with `EAI_AGAIN` and `ECONNRESET` ([b134213](https://github.com/CleverCloud/clever-tools/commit/b134213f30d46dd7f5690a38425deb4fd752148c))
 * **logs:** improve error message with `EAI_AGAIN` and `ECONNRESET` ([fada067](https://github.com/CleverCloud/clever-tools/commit/fada06771369173e579f5fd3a708ff3cef40c95f))

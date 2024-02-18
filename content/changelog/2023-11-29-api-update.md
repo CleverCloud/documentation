@@ -14,7 +14,7 @@ authors:
 description: You can now check if an application is a task via the Clever Cloud API
 excludeSearch: true
 ---
-For years you can deploy applications on Clever Cloud as a `Task` with the API or more recently the `CC_TASK=true` environment variable. As this feature will be widely available and used, the API has been updated to return such a state in the `instance.lifetime` object:
+For years, you can deploy applications on Clever Cloud as a `Task` with the API or more recently the `CC_TASK=true` environment variable. As this feature will be widely available and used, the API has been updated to return such a state in the `instance.lifetime` object:
 
 ```json{filename="GET https://api.clever-cloud.com/v2/self/applications/<appId>",linenos=table,hl_lines=[17]}
 {

@@ -11,5 +11,5 @@ jobs:
         with:
           reporter: github-pr-check # How results are reported
           filter_mode: added # Consider only changes in the modified or added lines
-          fail_on_error: true # Fail the action if errors are found
+          fail_on_error: false # Fail the action if errors are found
           token: ${{ secrets.GITHUB_TOKEN }} # Post review

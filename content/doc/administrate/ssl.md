@@ -84,13 +84,16 @@ You need to paste a PEM bundle containing (in this order):
 You should create a `file.pem` containing:
 
 ```text {filename="file.pem"}
------BEGIN RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
 <the private key>
------END RSA PRIVATE KEY-----
+-----END PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 <the certificate>
 -----END CERTIFICATE-----
 ```
+
+Remove any possible mention of the algorithm in the footer and header.
+For instance, the API does not parse `-----BEGIN RSA PRIVATE KEY-----`, remove the `RSA` part.
 
 You can add optionnal intermediate certificates by appending them to the file as
 

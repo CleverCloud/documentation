@@ -23,6 +23,8 @@ Laravel applications almost work out of the box on Clever Cloud, you just have a
 
 ## Configure your Laravel application
 
+{{% steps %}}
+
 ### Configure `DocumentRoot`
 
 Add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
@@ -53,15 +55,17 @@ Make sure `config/logging.php` contains the following line:
 
 ### Optional: configure the front-end build
 
-If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` environment variable.
+If you need to build your frontend assets (eg. JavaScript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` environment variable.
 
 For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=npm install && npm run prod`.
 
-{{< readfile file="new-relic.md" >}}
+{{% /steps %}}
 
-{{< readfile file="env-injection.md" >}}
+{{% content/new-relic %}}
 
-{{< readfile file="link-addon.md" >}}
+{{% content/env-injection %}}
+
+{{% content/link-addon %}}
 
 ### Connect a database
 
@@ -102,6 +106,7 @@ Create a FS Bucket add-on and link it to your application. Note its host (you ca
 
 Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
 
+
 ### Optional: Configure task scheduling
 
 If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron to run the scheduling process:
@@ -128,7 +133,9 @@ php artisan schedule:run >> /dev/null 2>&1
 
 Note: the PHP CLI process will use a `memory_limit` configuration value that depends on the instance's size (you can check it by connecting to your app using SSH and running `php -i`).
 If one of your scheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process will silently crash.
+
 To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
+
 See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
 
 ### Optional: Configure trusted proxy

@@ -19,30 +19,30 @@ aliases:
 Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application. We do support **any stable version of node >= 0.6**.
 This page will explain you how to set up your application to run it on our service.
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/node.md" >}}
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access environment variables from your code, you can use `process.env.MY_VARIABLE`.
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
 ## Troubleshooting your application
 
 If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
 To target this behaviour, you can gracefully shutdown with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment so you can fix the problem.
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 ## Deployment video
 

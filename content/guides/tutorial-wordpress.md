@@ -21,13 +21,13 @@ First, you could check [our global PHP documention](/deploy/application/php/php-
 
 This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="deploy-ftp.md" >}}
+{{% content/deploy-ftp %}}
 
 ## Configure your WordPress application
 
@@ -187,14 +187,14 @@ define('WP_REDIS_PASSWORD', getenv('REDIS_PASSWORD'));
 
 Redis should now work with your WordPress.
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
 ## Deploy WordPress the immutable way
 
 Discover a new way to deploy WordPress using Composer with Bedrock's boilerplate : [our tutorial on GitHub](https://github.com/CleverCloud/bedrock-wordpress)
 
-<!-- {{< readfile file="env-injection.md" >}} -->
+<!--  {{% content/env-injection %}} -->
 
-<!--{{< readfile file="link-addon.md" >}}-->
+<!-- {{% content/link-addon %}}-->
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

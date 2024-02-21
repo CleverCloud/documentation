@@ -21,14 +21,14 @@ aliases:
 
 Clever Cloud allows you to deploy any Go application. This page will explain you how to set up your project to run it on our service. You won't not need to change a lot, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/go.md" >}}
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

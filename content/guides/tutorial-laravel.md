@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Laravel
-shortdesc: This article shows you how to deploy a laravel application on Clever Cloud.
+shortdesc: This article shows you how to deploy a Laravel application on Clever Cloud.
 tags:
 - deploy
 keywords:
@@ -15,9 +15,8 @@ aliases:
 
 ## Overview
 
-Laravel applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
+Laravel is a PHP web application framework with expressive, elegant syntax. To deploy Laravel on Clever Cloud, use a PHP application, a database add-on (MySQL or PostgreSQL), and configure external storage (FS Bucket or Cellar). This guide walks you through the minimal requirements to successfully deploy your app.
 
-{{% content/create-application %}}
 
 {{% content/set-env-vars %}}
 
@@ -27,7 +26,7 @@ Laravel applications almost work out of the box on Clever Cloud, you just have a
 
 ### Configure `DocumentRoot`
 
-Add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
+From the Clever Cloud Console, add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
 
 ```bash
 clever env set CC_WEBROOT /public 

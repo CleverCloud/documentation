@@ -4,10 +4,10 @@ Make sure you have [Filezilla](https://filezilla-project.org/) or an other FTP s
 
 When you have chosen to deploy your application via FTP at the application creation, a free [FS Bucket](/doc/addons/fs-bucket) has been created with an ID matching your application's ID.
 
-You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+Find the FTP credentials in the configuration tab of this particular FS Bucket.
 
 Just follow the instructions of your FTP Software to send code to Clever Cloud.
 
-⚠️ **An FTP application is automatically started once the application is created, even if no code has been sent.**
+⚠️ **An FTP application automatically starts once you create the application, even if you don't send any code yet.**
 
 Refer to  [Quick Start - FTP deployment](/doc/quickstart#ftp-deployment) for more details.

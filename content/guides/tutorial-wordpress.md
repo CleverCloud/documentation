@@ -191,7 +191,7 @@ Redis should now work with your WordPress.
 
 ## Deploy WordPress the immutable way
 
-Discover a new way to deploy Wordpress using Composer with Bedrock's boilerplate : [our tutorial on GitHub](https://github.com/CleverCloud/bedrock-wordpress)
+Discover a new way to deploy WordPress using Composer with Bedrock's boilerplate : [our tutorial on GitHub](https://github.com/CleverCloud/bedrock-wordpress)
 
 <!-- {{< readfile file="env-injection.md" >}} -->
 

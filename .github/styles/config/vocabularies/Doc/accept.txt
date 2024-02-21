@@ -9,4 +9,8 @@ cron
 Moodle
 application
 rclone
+Laravel
+monolog
+syslog
+proxyhugo
 

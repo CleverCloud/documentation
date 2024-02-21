@@ -17,9 +17,9 @@ aliases:
 
 Laravel applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{{< readfile file="create-application.md" >}}
+{{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+{{% content/set-env-vars %}}
 
 ## Configure your Laravel application
 
@@ -102,10 +102,9 @@ If you want to have database migrations automatically run during each deployment
 
 ### Configure storage
 
-Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the addon). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
+Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the addon configuration panel, or in the environment variables exported by the add-on). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
 
 Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
-
 
 ### Optional: Configure task scheduling
 
@@ -119,7 +118,7 @@ If your app uses [task scheduling](https://laravel.com/docs/scheduling), you nee
 ]
 ```
 
-This installs a cron that will run `clevercloud/cron.sh` every minute.
+This installs a cron to run `clevercloud/cron.sh` every minute.
 
 2. Create a `clevercloud/cron.sh` file in your project (with execute permissions), containing:
 
@@ -151,8 +150,8 @@ return [
 
 This environment variable exists in any Clever Cloud instance. This configuration specifies that Clever Cloud proxies are trusted, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxyhugo server.
 
-{{< readfile file="deploy-git.md" >}}
+{{% content/deploy-git %}}
 
-{{< readfile file="deploy-ftp.md" >}}
+{{% content/deploy-ftp %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

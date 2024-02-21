@@ -183,7 +183,7 @@ If you are using docker, you can use the image provided [here](https://hub.docke
 
 ```sh
 docker pull clevercloud/clever-tools
-docker run --rm clever-tools <command>
+docker run --rm clevercloud/clever-tools <command>
 ```
 
 #### Dockerfile

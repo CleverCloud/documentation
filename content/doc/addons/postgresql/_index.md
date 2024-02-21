@@ -18,42 +18,38 @@ aliases:
 type: docs
 ---
 
-PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility
-and on standards-compliance.
+PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
 
 ## Versions
 
-The version currently installed by the add-on is :
-
-- on shared plans (DEV) : PostgreSQL 15
-- on newly created dedicated databases (plans XS Small Space and above) : PostgreSQL 10, 11, 12, 13, 14, 15
+Versions currently available for order are as follows:
+- On our shared (DEV) cluster: PostgreSQL version 15
+- On dedicated plans: PostgreSQL versions 10, 11, 12, 13, 14 and 15
 
 {{< readfile file="db-backup.md" >}}
 
 ## Migrating from an old database
 
-Some applications require a populated database to run properly.
-If you want to import your **SQL** dump, you can use several methods:
-
-1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/).
-2. Command line tool for PostgreSQL administration like `psql`.
-3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/).
+Some applications require a non-empty database to run properly. If you want to import your **SQL** dump, you can use several methods:
+1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/)
+2. Command line tool for PostgreSQL administration like `psql`
+3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
 ## Direct access
 
-All our dedicated PostgreSQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.
+All our dedicated PostgreSQL databases are served through a proxy. In some cases, this can add some latency between applications and their database. If this is an issue, the proxy can be bypassed by generating a direct host-name and port for the add-on. You can do so by clicking the "Generate direct hostname and port" button in the add-on dashboard.
 
-This action will add new environment variables to reach the addon without any proxy.
+Doing this will add new variables to the add-on's environment, allowing connections without going through the proxy.
 
-Keep in mind that usage of direct access is a trade-off: when you migrate your addon, you will need to to generate hostname and port again so your application must update these environment while proxy usage changes nothing.
+{{< callout type="info" >}} 
+Bear in mind that there is a trade-off with direct access. After migrating an add-on, you will need to re-generate the host name and port. This means applications linked through direct access will not be able to connect until you manually regenerate them. 
 
-## Encryption at rest
-
-Encryption at rest is available on PostgreSQL. You can have more information on the [dedicated page]({{< ref "doc/administrate/encryption-at-rest.md" >}})
+Such a limitation doesn't exist when using proxy access.
+{{< /callout >}}
 
 ## Note on shared databases
 
-Free databases are instantiated from a shared cluster. The way postgresql works on shared clusters is that a "pg_database" table references the name, and only the name, of other databases in that same cluster. The data, on the other hand, is not accessible.
+Encryption at rest is available on PostgreSQL. You can find more information on the [dedicated page]({{< ref "doc/administrate/encryption-at-rest.md" >}})
 
 This referencing does not exist for dedicated databases.
 
@@ -119,4 +115,4 @@ Usually this threshold is set to 20%.
 
 ## `pg_activity`
 
-If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on an PostgreSQL addon but you get an `Exception: Must be run with database superuser privileges.` you need to add the flag `--rds` when you start it.  
+If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on a PostgreSQL add-on, but you encounter the following error `Exception: Must be run with database superuser privileges.`, you need to add the `--rds` flag when you start it.

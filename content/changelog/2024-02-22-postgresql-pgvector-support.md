@@ -18,10 +18,10 @@ description: Your wishes are our commands
 excludeSearch: true
 ---
 
-PostgreSQL databases managed by Clever Cloud come with [lots of extensions activated by default](/doc/addons/postgresql/#default-extensions). There are also [some you can ask for](/doc/addons/postgresql/#on-demand-extensions), and we'll set them up, like `pg_cron`, `pgtap` or `timescaledb`.
+PostgreSQL databases managed by Clever Cloud come with [lots of extensions enabled by default](/doc/addons/postgresql/#default-extensions). There are also [some you can ask for](/doc/addons/postgresql/#on-demand-extensions), and we'll set them up, like `pg_cron`, `pgtap` or `timescaledb`.
 
-Recently, some customers also asked us a `pgvector` support, needed for specific (AI) workloads. So we started to work on it and integrated this extension to our workflow. We are now able to provide it on-demand.
+We recently noticed an increased interest from our clients in supporting the `pgvector` extension, needed for specific (AI) workloads. To answer these needs, we've packaged it and are now able to provide it on-demand.
 
-So if you need `pgvector`, just raise a ticket to our support team through [the Console Ticket Center](https://console.clever-cloud.com/ticket-center-choice). And if there is any other extension you need, feel free to ask, we will check how easy it is for us to provide it.
+If you need `pgvector`, open a ticket to our support team through [the Console Ticket Center](https://console.clever-cloud.com/ticket-center-choice). If you need any other extension, feel free to ask, we will try our best to respond to your use-case.
 
 - Learn more about `pgvector` [on GitHub](https://github.com/pgvector/pgvector) {{< icon "github" >}}

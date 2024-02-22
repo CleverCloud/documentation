@@ -52,7 +52,7 @@ clever create --type <type> <app-name>
 # Create an application for an organization
 clever create --type <type> <app-name> --org <org>
 
-# Choose the region of your application (par, rbx, wsw, mtl, sgp, syd or jed)
+# Choose the region of your application (par, rbx, wsw, mtl, sgp, syd)
 clever create --type <type> <app-name> --region <zone>
 ```
 

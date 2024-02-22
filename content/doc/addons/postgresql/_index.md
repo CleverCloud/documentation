@@ -23,7 +23,7 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 ## Versions
 
 Versions currently available for order are as follows:
-- On our shared (DEV) cluster: PostgreSQL version 15
+- On shared (DEV) cluster: PostgreSQL version 15
 - On dedicated plans: PostgreSQL versions 10, 11, 12, 13, 14 and 15
 
 {{< readfile file="db-backup.md" >}}
@@ -31,18 +31,18 @@ Versions currently available for order are as follows:
 ## Migrating from an old database
 
 Some applications require a non-empty database to run properly. If you want to import your **SQL** dump, you can use several methods:
-1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/)
+1. [WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/)
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
 ## Direct access
 
-All our dedicated PostgreSQL databases are served through a proxy. In some cases, this can add some latency between applications and their database. If this is an issue, the proxy can be bypassed by generating a direct host-name and port for the add-on. You can do so by clicking the "Generate direct hostname and port" button in the add-on dashboard.
+A proxy serves all dedicated PostgreSQL databases. In some cases, this can add some latency between applications and their database. If this is an issue, you must generate a direct hostname and port for the add-on to bypass the proxy, using the "Generate direct hostname and port" button in the add-on dashboard.
 
-Doing this will add new variables to the add-on's environment, allowing connections without going through the proxy.
+Generating direct access adds new variables to the add-on's environment, allowing connections without going through the proxy.
 
 {{< callout type="info" >}} 
-Bear in mind that there is a trade-off with direct access. After migrating an add-on, you will need to re-generate the host name and port. This means applications linked through direct access will not be able to connect until you manually regenerate them. 
+Direct access doesn't persist after upgrading/migrating a database. Manually re-generate direct host name and port after an upgrade to allow applications linked through direct access to connect to the database. 
 
 Such a limitation doesn't exist when using proxy access.
 {{< /callout >}}

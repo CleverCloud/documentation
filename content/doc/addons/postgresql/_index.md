@@ -37,19 +37,23 @@ Some applications require a non-empty database to run properly. If you want to i
 
 ## Direct access
 
-A proxy serves all dedicated PostgreSQL databases. In some cases, this can add some latency between applications and their database. If this is an issue, you must generate a direct hostname and port for the add-on to bypass the proxy, using the "Generate direct hostname and port" button in the add-on dashboard.
+A proxy serves all dedicated PostgreSQL databases. In some cases, this can add some latency between applications and their database. If this is an issue, you can generate a direct hostname and port for the add-on to bypass the proxy, using the "Generate direct hostname and port" button in the add-on dashboard.
 
 Generating direct access adds new variables to the add-on's environment, allowing connections without going through the proxy.
 
 {{< callout type="info" >}} 
-Direct access doesn't persist after upgrading/migrating a database. Manually re-generate direct host name and port after an upgrade to allow applications linked through direct access to connect to the database. 
+Direct access doesn't persist after migrating a database. Manually re-generate direct host name and port after a migration to allow applications linked through direct access to connect to the database. 
 
 Such a limitation doesn't exist when using proxy access.
 {{< /callout >}}
 
-## Note on shared databases
+## Encryption at rest
 
 Encryption at rest is available on PostgreSQL. You can find more information on the [dedicated page]({{< ref "doc/administrate/encryption-at-rest.md" >}})
+
+## Note on shared databases
+
+If you try to list the databases on the shared cluster, you will see the names of the databases of all other users of the cluster. This is normal behaviour. Rest assured, permissions are set properly, meaning no one but your user can read or write data to your database.
 
 This referencing does not exist for dedicated databases.
 

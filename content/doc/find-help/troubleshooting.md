@@ -119,6 +119,42 @@ server.listen(8080);
 
 {{% /details %}}
 
+## Moderation
+
+{{% details title="What is moderation?" closed="true" %}}
+
+Moderation means your account is not accessible anymore. You might have broken some important rules of Clever Cloud's General Terms of Use.
+
+You are not allowed to create apps and add-ons, and run your current apps.
+
+{{% /details %}}
+
+{{% details title="Possible reasons why your app has been moderated" closed="true" %}}
+
+The main reasons why your account has been moderated are:
+- You run some forbidden apps such as those described on [this page](https://www.clever-cloud.com/acceptable-use-policy/)
+- You have not paid your pending invoices older than 30 days
+-  Clever Cloud system considers the lack of personal information or missing payment information as suspicious
+- Our payment platform has spotted you as emitting fraudulent payments.
+
+{{% /details %}}
+
+{{% details title="How to recover your application online?" closed="true" %}}
+
+Contact Clever Cloud's Support team at [support@clever-cloud.com](mailto:support@clever-cloud.com) to explain what your apps do.
+
+Ensure all your pending invoices are paid.
+
+{{% /details %}}
+
+{{% details title="How to recover your data?" closed="true" %}}
+
+In case of a pending invoice aged more than 30 days, Clever Cloud might delete your apps and add-ons. However, we keep backups for 30 days after deletion.
+
+You have to pay all of your pending invoices to recover your data.
+
+{{% /details %}}
+
 ## Others issues
 
 {{% details title="Missing GitHub organization on the application creation page" closed="true" %}}

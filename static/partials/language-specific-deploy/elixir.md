@@ -2,11 +2,11 @@
 
 ### Mandatory configuration
 
-- Get your Elixir version in your console with `$ elixir -v` and set the environment variable **CC_ELIXIR_VERSION** to its value (available versions as of today are `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14`).  
+- Get your Elixir version in your console with `$ elixir -v` and set the environment variable **CC_ELIXIR_VERSION** to its value (available versions as of today are `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13`, `1.14`, `1.15` or `1.16`).  
 
 #### Compatibility between Elixir and Erlang/OTP
 
-- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/1.12.3/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp).
+- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/1.16.1/compatibility-and-deprecations.html#between-elixir-and-erlang-otp).
 
 #### If you deploy a Phoenix application
 

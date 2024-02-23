@@ -149,7 +149,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
- |`CC_ELIXIR_VERSION` | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | 1.11 |
+ |`CC_ELIXIR_VERSION` | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13`, `1.14`, `1.15` or `1.16` | 1.16 |
  |`CC_MIX_BUILD_GOAL` | The mix goal to build the application (default compile) |  |
  |`CC_PHOENIX_ASSETS_DIR` | Folder in which your Phoenix assets are located. |  |
  |`CC_PHOENIX_DIGEST_GOAL` | Phoenix digest goal. | phx.digest |

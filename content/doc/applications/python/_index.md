@@ -35,3 +35,5 @@ Python 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 are available on Clever Cloud. You can 
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

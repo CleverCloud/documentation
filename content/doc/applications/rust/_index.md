@@ -39,3 +39,5 @@ Clever Cloud allows you to deploy Rust web applications. This page will explain 
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

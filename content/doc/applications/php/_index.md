@@ -49,3 +49,5 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}})
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

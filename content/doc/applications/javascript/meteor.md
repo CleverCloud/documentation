@@ -101,3 +101,5 @@ If you want to migrate from your classic node.js app to a meteor application, co
 <support@clever-cloud.com> with the application id.
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

@@ -42,7 +42,7 @@ To target this behaviour, you can gracefully shutdown with events handlers on `u
 
 {{< readfile file="more-config.md" >}}
 
-{{< readfile file="env-injection.md" >}}
+{{< readfile file="url_healthcheck.md" >}}
 
 ## Deployment video
 

@@ -45,3 +45,5 @@ To access environment variables from your code, just get them from the environme
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
+
+{{< readfile file="url_healthcheck.md" >}}

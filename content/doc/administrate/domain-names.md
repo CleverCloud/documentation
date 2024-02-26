@@ -103,7 +103,7 @@ Provide the following to your registrar:
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | @ 10800 IN A 149.56.147.232<br>@ 10800 IN A 149.56.126.234 |
+| A<br>Only if CNAME is not available | @ 10800 IN A 158.69.109.229<br>@ 10800 IN A 149.56.117.183 |
 
 ### Your Application Runs in the Asia/Singapore ('SGP') Zone
 

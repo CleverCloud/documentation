@@ -40,9 +40,9 @@ The supported containers are listed below:
 | Apache Tomcat 7.0 (TOMCAT7) | Jetty 9.0 (JETTY9) | WildFly 24.0.1 (WILDFLY24) |
 | Apache Tomcat 8.8 (TOMCAT8) |
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 {{< readfile file="java-versions.md" >}}
 
@@ -170,10 +170,10 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

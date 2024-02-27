@@ -107,16 +107,16 @@ You can now read [My application already exists](#my-application-already-exists)
 
 ### My application already exists
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

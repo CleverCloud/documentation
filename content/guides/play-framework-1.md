@@ -20,9 +20,9 @@ type: docs
 
 Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on Clever Cloud.
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 ## Configure your Scala + Play! 1 application
 
@@ -65,16 +65,16 @@ More information on [playframework.com](https://www.playframework.com).
 
 HTTPS is handled by Clever Cloud ahead of your application, your application retrieves the traffic in plain http. To be able to use `request.secure`, you have to add `XForwardedSupport=all` in `application.conf`.
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}
 
 {{< readfile file="url_healthcheck.md" >}}

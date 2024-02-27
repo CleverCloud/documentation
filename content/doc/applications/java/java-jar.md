@@ -20,9 +20,9 @@ Clever Cloud offers you to run any Java ARchive file. You do not need to change 
 
 Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 {{< readfile file="java-versions.md" >}}
 
@@ -104,7 +104,7 @@ You can use the following properties:
 | Optional | **deploy → goal**   | the goal/target and options you want to execute to deploy/run you project |
 | Required | **build → jarName** | jar file name of your application                                         |
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
 ## Custom run command
 
@@ -129,10 +129,10 @@ So, to use a variable, you just need `System.getProperties().getProperty("MY_VAR
 
 For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}
 
 {{< readfile file="url_healthcheck.md" >}}

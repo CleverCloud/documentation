@@ -32,9 +32,9 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Releases
 * Distribution
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 ## Configure your Java application
 
@@ -121,12 +121,12 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}
 
 {{< readfile file="url_healthcheck.md" >}}

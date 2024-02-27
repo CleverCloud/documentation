@@ -19,7 +19,7 @@ type: docs
 educators, administrators and learners with a single robust, secure and
 integrated system to create personalised learning environments.
 
-This doc explains how to configure Moddle from source. Alternatively, an already configured repository exists as well on [Clever Cloud's GitHub page](https://github.com/CleverCloud/moodle).
+This doc explains how to configure Moodle from source. Alternatively, an already configured repository exists as well on [Clever Cloud's GitHub page](https://github.com/CleverCloud/moodle).
 
 ## How to Configure and Deploy Moodle on Clever Cloud
 
@@ -72,7 +72,7 @@ Commit changes.
 
 ### Declare the PHP Application
 
-On Clever Cloud Console, click on **Create** > **An application** and choose a [PHP](/doc/applications/php) application with Git deployment. Add a [MySQL](/doc/addons/mysql) add-on during the process.
+On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](/doc/applications/php) application with Git deployment. Add a [MySQL](/doc/addons/mysql) add-on during the process.
 
 ### Set Up Environment Variables
 
@@ -84,13 +84,13 @@ MAX_INPUT_VARS="5000"
 URL="<your-url"
 ```
 
-If you don't have an domain for your Moodle applicaiton yet, you'll be able to add a test domain provided by Clever Cloud in step 6.
+If you don't have an domain for your Moodle application yet, you'll be able to add a test domain provided by Clever Cloud in step 6.
 
 ### Set Up `moodledata` Folder
 
-This step will allow you to store your files outside of your application and [is required by Moodle to run](https://docs.moodle.org/403/en/Site_backup). All uploaded files and appearence set ups will be stored in a [File System Bucket](/doc/addons/fs-bucket) away from the appmlication server, as recommended by Moodle.
+In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/403/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
 
-Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable (it should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`)
+Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable. It should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`.
 
 Add this variable to your **PHP application** and replace `/some/empty/folder` by `/moodledata`. Don't forget to **update changes**.
 
@@ -122,9 +122,9 @@ Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`e
 ]
 ```
 
-You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, we reccomend you to use a dedicated tool like [rclone](https://rclone.org).
+You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, look for a dedicated tool like [rclone](https://rclone.org).
 
-**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](https://developers.clever-cloud.com/doc/administrate/cron/)).
+**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](https://developers.clever-cloud.com/doc/administrate/cron/).
 
 ## 🎓 Further Help
 

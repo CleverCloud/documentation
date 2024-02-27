@@ -24,14 +24,16 @@ Python is a programming language that lets you work more quickly and integrate y
 
 Python 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 are available on Clever Cloud. You can use Git to deploy your application.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/python.md" >}}
 
- {{% content/deploy-git %}}
+{{% content/deploy-git %}}
 
- {{% content/link-addon %}}
+{{% content/link-addon %}}
 
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}

@@ -28,18 +28,21 @@ You do not need to change a lot in your application, the *requirements* will hel
   If you encounter an issue, please contact the support.
 {{< /callout >}}
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{% readfile file="language-specific-deploy/dotnet.md" %}}
 
- {{% content/env-injection %}}
+{{% content/env-injection %}}
 
 To access environment variables from your code, you can use `System.Environment.GetEnvironmentVariable("MY_VARIABLE")"`.
 
- {{% content/deploy-git %}}
+{{% content/deploy-git %}}
 
- {{% content/link-addon %}}
-
+{{% content/link-addon %}}
+ 
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}
+

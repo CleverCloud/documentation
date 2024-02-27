@@ -24,18 +24,21 @@ Rust is a system programming language that runs blazingly fast, prevents segfaul
 
 Clever Cloud allows you to deploy Rust web applications. This page will explain you how to set up your application to run it on our service.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/rust.md" >}}
 
- {{% content/deploy-git %}}
+{{% content/deploy-git %}}
 
 ### Deployment Video
 
 {{< youtube id="mz_8jzrM13Y" >}}
 
- {{% content/link-addon %}}
+{{% content/link-addon %}}
 
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}
+

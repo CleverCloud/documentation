@@ -21,9 +21,9 @@ Clever Cloud allows you to deploy any Meteor.js application. This page will expl
 
 Be sure your `.meteor` folder is in your git repository.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 ## Configure your Meteor.js based application
 
@@ -101,3 +101,5 @@ If you want to migrate from your classic node.js app to a meteor application, co
 <support@clever-cloud.com> with the application id.
 
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}

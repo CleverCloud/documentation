@@ -43,4 +43,7 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 
  {{% content/link-addon %}}
 
+
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}

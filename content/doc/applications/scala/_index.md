@@ -23,20 +23,23 @@ Clever Cloud allows you to deploy Scala (and Java) applications built with SBT. 
 
 If you're looking to deploy a [Play Framework](https://www.playframework.com) application, you can have a look at our dedicated [deployment guide for play framework applications]({{< ref "/guides/play-framework-2" >}})
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/scala.md" >}}
 
- {{% content/new-relic %}}
+{{% content/new-relic %}}
 
- {{% content/env-injection %}}
+{{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with `System.getenv("MY_VARIABLE")`. Be aware that it can return null.
 
- {{% content/deploy-git %}}
+{{% content/deploy-git %}}
 
- {{% content/link-addon %}}
+{{% content/link-addon %}}
 
 {{% content/more-config %}}
+
+{{< readfile file="url_healthcheck.md" >}}
+

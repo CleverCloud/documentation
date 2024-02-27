@@ -99,6 +99,6 @@ The final command will be:
 ```
 go install $CC_GO_PKG
 ```
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with `PATH`: `os.Getenv("MY_VARIABLE")`.

@@ -18,9 +18,9 @@ type: docs
 The goal of this article is to show you how to deploy a Django application on Clever Cloud.
 The application is a very basic one. More information about the application in the[GitHub repo](https://github.com/CleverCloud/django-example).
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 ## Configure your Django application
 
@@ -43,7 +43,7 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 
 You can find a lot more configuration options such as choosing python version and more on our dedicated [Python documentation]({{< ref "doc/applications/python" >}}).
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
 ### Manage.py tasks
 
@@ -59,7 +59,7 @@ Values must be separated by a comma:
 CC_PYTHON_MANAGE_TASKS="migrate, assets:precompile"
 ```
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with:
 
@@ -68,8 +68,8 @@ import os
 os.getenv("MY_VARIABLE")
 ```
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

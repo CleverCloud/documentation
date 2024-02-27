@@ -6,3 +6,14 @@ Hextra
 shortcode
 OAuth
 cron
+Moodle
+application
+rclone
+Laravel
+monolog
+syslog
+proxyhugo
+Filezilla
+eg
+CLI
+FTP

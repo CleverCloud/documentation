@@ -21,9 +21,9 @@ Clever Cloud allows you to deploy any Meteor.js application. This page will expl
 
 Be sure your `.meteor` folder is in your git repository.
 
-{{< readfile file="create-application.md" >}}
+{{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+{{% content/set-env-vars %}}
 
 ## Configure your Meteor.js based application
 
@@ -81,11 +81,11 @@ Add in the `scripts.start` field of the package.json: `node .build/bundle/main.j
 At each deployment, the needed Meteor.js version will be read from `.meteor/release` and installed.
 Your application will then be built using `meteor build --server-only` and deployed from the files created by this command.
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
 ### Oplog Tailing
 
@@ -100,6 +100,6 @@ Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and y
 If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
 <support@clever-cloud.com> with the application id.
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}
 
 {{< readfile file="url_healthcheck.md" >}}

@@ -19,9 +19,9 @@ aliases:
 Currently, Clever Cloud supports Rack-based applications.
 Created in 2007, Rack has become the de-facto standard for ruby web applications and is used in many frameworks such as Ruby on Rails.
 
-{{< readfile file="create-application.md" >}}
+{ {{% content/create-application %}}
 
-{{< readfile file="set-env-vars.md" >}}
+ {{% content/set-env-vars %}}
 
 ## Configure your Ruby and Rake application
 
@@ -38,14 +38,14 @@ Be sure that:
 
 You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "//guides/ruby-rack-app-tutorial" >}}) and find the source code of the demo [here](https://helloworld-rack-demo.cleverapps.io).
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
-{{< readfile file="deploy-git.md" >}}
+ {{% content/deploy-git %}}
 
-{{< readfile file="link-addon.md" >}}
+ {{% content/link-addon %}}
 
-{{< readfile file="more-config.md" >}}
+{{% content/more-config %}}

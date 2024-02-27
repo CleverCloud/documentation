@@ -59,7 +59,7 @@ The goal will be launched after the dependencies from `requirements.txt` have be
 
 To execute a goal, you can define the [environment variable](#setting-up-environment-variables-on-clever-cloud) `PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
-{{< readfile file="env-injection.md" >}}
+ {{% content/env-injection %}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
 
@@ -163,7 +163,7 @@ Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
 
 To do so, add the `CC_PYTHON_USE_GEVENT` [environment variable](#setting-up-environment-variables-on-clever-cloud) to your application, with the `true` value.
 
-{{< readfile file="new-relic.md" >}}
+ {{% content/new-relic %}}
 
 ## Celery apps
 

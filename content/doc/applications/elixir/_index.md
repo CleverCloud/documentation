@@ -22,9 +22,9 @@ aliases:
 
 Clever Cloud supports Elixir based applications.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/elixir.md" >}}
 

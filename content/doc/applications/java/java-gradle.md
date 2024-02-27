@@ -23,9 +23,9 @@ Gradle is a project automation tool that builds upon the concepts of Apache Ant 
 
 Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="java-versions.md" >}}
 

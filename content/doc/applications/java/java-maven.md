@@ -32,9 +32,9 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Releases
 * Distribution
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 ## Configure your Java application
 

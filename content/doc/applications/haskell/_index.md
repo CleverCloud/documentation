@@ -23,14 +23,14 @@ Haskell is a purely functional language, especially suited for robust web applic
 
 There are many ways to write web applications in haskell, from raw [WAI](https://hackage.haskell.org/package/wai) to full-stack frameworks like [Yesod](https://www.yesodweb.com/), simple libraries like [scotty](https://hackage.haskell.org/package/scotty) or type-safe solutions like [servant](https://haskell-servant.GitHub.io/).
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="language-specific-deploy/haskell.md" >}}
 
- {{% content/deploy-git %}}
+{{% content/deploy-git %}}
 
- {{% content/link-addon %}}
+{{% content/link-addon %}}
 
 {{% content/more-config %}}

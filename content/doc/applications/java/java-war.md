@@ -40,9 +40,9 @@ The supported containers are listed below:
 | Apache Tomcat 7.0 (TOMCAT7) | Jetty 9.0 (JETTY9) | WildFly 24.0.1 (WILDFLY24) |
 | Apache Tomcat 8.8 (TOMCAT8) |
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="java-versions.md" >}}
 

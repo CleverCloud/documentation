@@ -20,9 +20,9 @@ Clever Cloud offers you to run any Java ARchive file. You do not need to change 
 
 Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 {{< readfile file="java-versions.md" >}}
 

@@ -204,7 +204,6 @@ There is a side project, available on GitHub which enables to create a drain to 
 
 You could host it as an app and an add-on on Clever Cloud. A complete README explains all the features.
 
-You can find the repository of the project [here](https://github.com/sebartyr/http-logs-drain).
 
 ### Datadog
 

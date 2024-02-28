@@ -198,6 +198,13 @@ curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.c
 
 For more information, please refer to the [official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/set-up-lifecycle-policy.html).
 
+### HTTPS
+
+Some tools available on GitHub enable to create a drain to collect logs through an HTTPS endpoint. [This project](https://github.com/sebartyr/http-logs-drain), for example, is fully compatible with Clever Cloud 
+
+You could host it as an app and an add-on on Clever Cloud. A complete README explains all the features.
+
+
 ### Datadog
 
 To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) drain, you just need to use:

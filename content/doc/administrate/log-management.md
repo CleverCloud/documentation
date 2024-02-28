@@ -200,7 +200,7 @@ For more information, please refer to the [official documentation](https://www.e
 
 ### HTTPS
 
-There is a side project, available on GitHub which enables to create a HTTPS logs drain, fully compatible with Clever Cloud.
+There is a side project, available on GitHub which enables to create a drain to collect logs through an HTTPS endpoint. It is fully compatible with Clever Cloud.
 
 You could host it as an app and an add-on on Clever Cloud. A complete README explains all the features.
 

@@ -73,7 +73,11 @@ CMD yarn start
 
 ### TCP support
 
+<<<<<<< HEAD
 Clever Cloud enables you to use TCP over Docker applications using using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](/doc/administrate/tcp-redirections).
+=======
+Clever Cloud enables you to use TCP over Docker applications using using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections]({{< ref "doc/administrate/tcp-redirections.md" >}}].
+>>>>>>> 56168d8d (chore: delete partials used once and reindex the rest)
 
 ### Docker socket access
 

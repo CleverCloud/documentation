@@ -11,19 +11,22 @@ keywords:
 - services
 - configuration
 type: docs
+
+aliases:
+- /doc/admin-console/service-dependencies
 ---
 
-On Clever Cloud, each application depends on one or more backing addons. Each
-addon exposes configuration, which allows the user to choose which addon link
+On Clever Cloud, each application depends on one or more backing add-ons. Each
+add-on exposes configuration, which allows the user to choose which add-on link
 to an application.
 
-In a micro services architecture, backing services can be addons or other
+In a micro services architecture, backing services can be add-ons or other
 applications. Clever Cloud allows you to declare the dependencies between
 applications in the same way you can declare a dependency from an application
-to an addon.
+to an add-on.
 
 Clever Cloud allows to declare the topology of your micro services graph by
-letting you link applications in the same way you can link addons.
+letting you link applications in the same way you can link add-ons.
 
 {{< image "/images/doc/service-dependencies-example.png" "Service dependencies" "width:355px" >}}
 

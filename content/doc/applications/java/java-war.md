@@ -44,7 +44,7 @@ The supported containers are listed below:
 
 {{% content/set-env-vars %}}
 
-{{< readfile file="java-versions.md" >}}
+{{% content/java-versions %}}
 
 ## Configure your Java application
 
@@ -156,7 +156,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 | WILDFLY17  | Use Wildfly servlet container 17.x (see <https://wildfly.org/>)                              |
 | WILDFLY23  | Use Wildfly servlet container 23.x (see <https://wildfly.org/>)                              |
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 
 ## Custom run command
 

@@ -49,7 +49,7 @@ psycopg2>=2.7 --no-binary psycopg2
 
 You can define a custom `requirements.txt` file with the environnement variable `CC_PIP_REQUIREMENTS_FILE` for example: `CC_PIP_REQUIREMENTS_FILE=config/production.txt`.
 
-{{< readfile file="cached-dependencies.md" >}}
+{{% content/cached-dependencies %}}
 
 ### Use setup.py
 

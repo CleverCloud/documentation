@@ -33,5 +33,5 @@ Clever Cloud allows you to deploy any Go application. This page will explain you
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 

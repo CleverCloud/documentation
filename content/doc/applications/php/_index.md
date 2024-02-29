@@ -32,7 +32,7 @@ The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is ex
 
 {{% content/new-relic %}}
 
-{{< readfile file="blackfire.md" >}}
+{{% content/blackfire %}}
 
 ## Deploy on Clever Cloud
 
@@ -44,11 +44,11 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 ## ProxySQL
 
-{{< readfile file="proxysql.md" >}}
+{{% content/proxysql %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}})
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 

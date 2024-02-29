@@ -36,4 +36,4 @@ Python 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 are available on Clever Cloud. You can 
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

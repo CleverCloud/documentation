@@ -24,7 +24,7 @@ Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
 {{% content/set-env-vars %}}
 
-{{< readfile file="java-versions.md" >}}
+{{% content/java-versions %}}
 
 ## Configure your Java application
 
@@ -135,4 +135,4 @@ For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

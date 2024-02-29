@@ -44,7 +44,7 @@ To target this behaviour, you can gracefully shutdown with events handlers on `u
 
 {{% content/env-injection %}}
  
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 
 
 ## Deployment video

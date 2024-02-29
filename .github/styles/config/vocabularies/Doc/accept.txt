@@ -16,4 +16,5 @@ proxyhugo
 Filezilla
 eg
 CLI
-FTP
+healthcheck
+downtimes

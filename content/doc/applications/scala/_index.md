@@ -41,5 +41,5 @@ To access environment variables from your code, just get them from the environme
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 

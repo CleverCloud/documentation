@@ -44,5 +44,5 @@ To access environment variables from your code, you can use `System.Environment.
  
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 

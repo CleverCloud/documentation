@@ -40,5 +40,5 @@ Clever Cloud allows you to deploy Rust web applications. This page will explain 
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}
 

@@ -43,7 +43,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
-{{< readfile file="java-versions.md" >}}
+{{% content/java-versions %}}
 
 ### Mandatory configuration
 
@@ -129,4 +129,4 @@ CC_RUN_COMMAND="java -jar somefile.jar <options>"
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

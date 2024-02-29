@@ -30,7 +30,7 @@ This runtime is based on apache, so shares a lot with the [PHP runtime]({{< ref 
 
 Application deployment on Clever Cloud is via **Git or FTP**.
 
-{{% content/deploy-git %}}
+ {{% content/deploy-git %}}
 
 {{% content/deploy-ftp %}}
 

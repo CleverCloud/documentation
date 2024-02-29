@@ -23,7 +23,7 @@ In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packag
 
 * {{< tooltip title="WAR" >}}WAR{{< /tooltip >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
 
-* {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root url mapping of web modules.
+* {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
 
 Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
@@ -80,7 +80,7 @@ Here's what your configuration file can look like:
 }
 ```
 
-### Breakingdown the configuration
+### Breaking down the configuration
 
 #### Requirements
 
@@ -105,7 +105,7 @@ Here are the mandatory fields:
 |----------|--------|------------------------------------------------------------------------|
 |Required  |**container**|Name of the container to use. Should contain one of the values inside parentheses in the containers table (uppercase).|
 |Required  |file         |Should contain the path of the war/ear file relative to your application root.|
-| Optional |context      |- Must start with a slash (/), can be "/". <br>- Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path. <br>- Not needed for an `ear` file. <br>- The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context.|
+| Optional |context      |- Must start with a slash (/), can be "/" <br>- Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path. <br>- Not needed for an `ear` file. <br>- The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context.|
 | Optional |checkMe      |- This field is recommended. <br>- A path to GET in order to test if the application is really running. <br>- By default we will consider that the application is up if the container is up. <br>- With this option, we will try to GET `/{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.|
 
 #### Let Clever Cloud build your application

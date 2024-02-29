@@ -67,9 +67,9 @@ An example of what can be found as a goal value is:
 
 #### Option 2: Environment variable
 
-If you don't want to add a file to your repository, or if you're using a monorepository with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
+If you don't want to add a file to your repository, or if you're using a monorepo with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
 
-Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK!
+Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK
 
 Eg. `MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with spring-boot-maven-plugin
 

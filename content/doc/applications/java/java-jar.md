@@ -16,7 +16,7 @@ type: docs
 
 ## Overview
 
-Clever Cloud offers you to run any Java ARchive file. You do not need to change your code, but running it on Clever Cloud needs some configuration files or environment variable to specify the the JAR path.
+Clever Cloud offers you to run any Java ARchive file. You do not need to change your code, but running it on Clever Cloud needs some configuration files or environment variable to specify the JAR path.
 
 Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 

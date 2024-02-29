@@ -26,13 +26,13 @@ Pgpool-II is a tool available on application instances to help manage your conne
 Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, you can add it and configure it in your Dockerfile.
 {{< /callout >}}
 
-## What is Pgpool-II?
+## What's Pgpool-II?
 
 {{% content/pgpool %}}
 
 ## Why use Pgpool-II?
 
-**Connection pooling**: Pgpool-II maintains established connections to the PostgreSQL servers, and reuses them whenever a new connection with the same properties (i.e. user name, database, protocol version, and other connection parameters if any) comes in. It reduces the connection overhead, and improves the system's overall throughput.
+**Connection pooling**: Pgpool-II maintains established connections to the PostgreSQL servers, and reuses them whenever a new connection with the same properties (user name, database, protocol version, and other connection parameters if any) comes in. It reduces the connection overhead, and improves the system's overall throughput.
 
 **Load balancing**: If a database is replicated (because running in either replication mode or native replication mode), performing a `SELECT` query on any server will return the same result. Pgpool-II takes advantage of the replication feature in order to reduce the load on each PostgreSQL server. It does that by distributing `SELECT` queries among available servers, improving the system's overall throughput. In an ideal scenario, read performance could improve proportionally to the number of PostgreSQL servers. Load balancing works best in a scenario where a lot of users execute many read-only queries at the same time.
 
@@ -108,7 +108,7 @@ Use Pgpool-II to distribute the load and separate **WRITE** and **READ** queries
 
 When using the **Streaming** mode, it's not Pgpool-II that manages the replication of your databases. Replication must be set up on the PostgreSQL side, otherwise known as **binary**, **Hot Standby** or **Streaming** replication. To schedule this procedure, you can contact our support at <support@clever-cloud.com> or make a request via our [sales form](https://www.clever-cloud.com/en/contact-sales).
 
-Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the follower(s) to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
+Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the followers to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 
 {{< callout type="info" >}}
 For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRECT_HOST` and `POSTGRESQL_ADDON_DIRECT_PORT` variables.
@@ -177,7 +177,7 @@ When the scalability of your application is enabled, you may need to tweak the `
 
 Auto scalability will add or remove instances following your needs. This means that you may have multiple instances running at the same time for a certain period of time.
 If your application restarts, you will have `your current instance number * 2`  instances running in parallel while the deployment finishes and the old instances are stopped.
-A new deployment **starts** new instances alongsides the old ones.
+A new deployment **starts** new instances alongside the old ones.
 
 This means that have up to `maximum scalability * 2` instances can run at the same time. And if all of your instances open the maximum connections they are allowed to,
 it means there will be up to `maximum scalability * 2 * CC_PGPOOL_NUM_INIT_CHILDREN` connections at the same time. We will call this result `MaxCon`.
@@ -281,7 +281,7 @@ bjzfhkl5qc**********=> SHOW POOL_BACKEND_STATS;
 
 ### Using the PCP command
 
-The [PCP tool](https://www.pgpool.net/docs/latest/en/html/pcp-commands.html) is preconfigured and available on your application.
+The [PCP tool](https://www.pgpool.net/docs/latest/en/html/pcp-commands.html) is pre-configured and available on your application.
 
 ```bash
 pcp_pool_status -h /tmp -U pcp -w
@@ -360,7 +360,7 @@ try {
 ?>
 ```
 
-### Wordpress
+### WordPress
 
 For WordPress, you can change the `DB_HOST` variable in your `wp-config.php`:
 

@@ -16,6 +16,7 @@ type: "docs"
 comments: false
 draft: false
 ---
+
 If you need an example source code, get [Astrowind](https://github.com/onwidget/astrowind) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 ```bash
 git clone https://github.com/onwidget/astrowind myStaticApp
@@ -24,7 +25,9 @@ git clone https://github.com/onwidget/astrowind myStaticApp
 {{% content/language-specific-deploy/create-static %}}
 
 ## Configure environment variables
+
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+
 ```bash
 clever scale --build-flavor M
 clever scale --flavor nano

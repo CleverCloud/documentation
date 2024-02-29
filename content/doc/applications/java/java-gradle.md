@@ -73,7 +73,7 @@ You can use the following properties:
 
 If you need to run a custom command
 you can specify it through the `CC_RUN_COMMAND` environment variable.
-This will override the default way of runing your application.
+This will override the default way of running your application.
 
 Example:
 

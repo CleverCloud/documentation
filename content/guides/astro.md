@@ -21,7 +21,7 @@ If you need an example source code, get [Astrowind](https://github.com/onwidget/
 git clone https://github.com/onwidget/astrowind myStaticApp
 ```
 
-{{< readfile file="guides/create-static.md" >}}
+{{% content/language-specific-deploy/create-static %}}
 
 ## Configure environment variables
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
@@ -36,4 +36,4 @@ clever env set CC_PRE_BUILD_HOOK "npm install && npm run astro telemetry disable
 clever env set CC_POST_BUILD_HOOK "npm run build"
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% content/git-push %}}

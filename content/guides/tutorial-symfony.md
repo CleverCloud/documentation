@@ -18,9 +18,9 @@ aliases:
 This tutorial assumes that your application is based on Symfony >= 3.4 and Symfony Flex.
 Symfony applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
 ## Configure your Symfony application
 
@@ -47,12 +47,12 @@ You will also need to set the environment variable `APP_ENV` to one of:
 - test
 - prod
 
-You can anyway add your environment with any of the methods mentionned in [Setting up environment variables on Clever Cloud](#setting-up-environment-variables-on-clever-cloud).
+You can anyway add your environment with any of the methods mentioned in [Setting up environment variables on Clever Cloud](#setting-up-environment-variables-on-clever-cloud).
 
 ### Configure monolog to get application logs
 
 For your application logs to be collected and available in the console and CLI, you need to configure monolog to use its `error_log` output.
-That does not mean that it will only output error level logs, you can set it to use any level, here is an exemple with the info level (and above):
+That does not mean that it will only output error level logs, you can set it to use any level, here is an example with the info level (and above):
 
 ```yaml{filename="config_prod.yml"}
 monolog:

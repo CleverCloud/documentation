@@ -48,6 +48,11 @@ h1, .content h1,
 .chroma .ln, .chroma .lnt:not(.hl > .lnt), .chroma .hl:not(.line) {
 color: rgb(82 82 82 / .7)
 }
+
+.highlight .chroma .err {
+  color: #a61717;
+background-color: rgba(227, 210, 210, 0);
+}
 /* Override border-radius class to fit Clever's theme */
 .rounded,
 .rounded-xl,

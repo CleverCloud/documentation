@@ -16,9 +16,9 @@ This article will document how you can technically plug into the platform to pro
 
 There are two faces here:
 
-* [The add-on provider API](#add-on-provider-api) - The API *you* need to provide and document to allow Clever Cloud's backend to request provision and deprovision of add-ons.
+* [The add-on provider API](#add-on-provider-api) - The API *you* need to provide and document to allow Clever Cloud's backend to request provision and de-provision of add-ons.
 
-* [The add-on infos API](#add-on-infos-api) - The API Clever Cloud provides to allow you to get informations about provisioned add-ons and their owners.
+* [The add-on infos API](#add-on-infos-api) - The API Clever Cloud provides to allow you to get information about provisioned add-ons and their owners.
 
 ## Add-on Provider API
 
@@ -129,7 +129,7 @@ def requires_auth(f):
 
 ### Provisioning
 
-When a customer installs your add-on, Clever Cloud issues a POST request to your service to provision a ressource for his app.
+When a customer installs your add-on, Clever Cloud issues a POST request to your service to provision a resource for his app.
 
 The request will be the following:
 

@@ -17,11 +17,11 @@ If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, othe
 
 On your Clever Cloud application create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
-* "2" will select the greatest "2.X.Y" version available.
-* "2.5" will select the greatest "2.5.Y" version available.
-* "2.5.3" will select the "2.5.3" version.
+* "3" will select the greatest "3.X.Y" version available.
+* "3.3" will select the greatest "3.3.Y" version available.
+* "3.3.1" will select the "3.3.1" version.
 
-Due to current landscape in ruby applications, the default version is the greatest 2.5.Y. We provide also the 2.4.Y and 2.3.Y version.
+Due to current landscape in ruby applications, the default version is the greatest 3.3.Y. We also provide versions 2.3.Y, 2.4.Y, 2.5.Y, 2.6.Y and 2.7.Y.
 
 If given `rubyversion` does not match any available version, your deployment will fail.
 

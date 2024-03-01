@@ -361,12 +361,28 @@ The following is the list of tested CMS by our team.
 
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
-| WordPress | Prestashop |
-| Dokuwiki  | Joomla     |
-| SugarCRM  | Drupal     |
-| Magento   | Status.net |
-| Symfony   | Thelia     |
-| Laravel   | Sylius     |
+{{< cards >}}
+  {{< card link="/guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
+  {{< card link="/guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
+  {{< card link="/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
+  {{< card link="/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
+   {{< card link="/guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
+  
+{{< /cards >}}
+
+Others PHP frameworks tested on Clever Cloud:
+
+- Prestashop
+- Dokuwiki
+- Joomla
+- SugarCRM
+- Drupal
+- Magento
+- Status.net
+- Symfony
+- Thelia
+- Laravel
+- Sylius
 
 ## Available extensions and modules
 

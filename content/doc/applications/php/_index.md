@@ -161,18 +161,18 @@ Here is the list of available settings:
 
 When php-fpm spawns a worker it allocates a smaller part of the application's memory to the worker, here is the allocated memory for each flavor:
 
- | Flavor    | Memory Limit |
- |--------------------------|
- |Pico      | 64M           |
- |Nano      | 64M           |
- |XS        | 128M          |
- |S         | 256M          |
- |M         | 384M          |
- |L         | 512M          |
- |XL        | 768M          |
- |2XL       | 1024M         |
- |3XL       | 1536M         |
- |4XL+      | 2048M         |
+ | Flavor   | Memory Limit |
+ |----------|--------------|
+ |Pico      | 64M          |
+ |Nano      | 64M          |
+ |XS        | 128M         |
+ |S         | 256M         |
+ |M         | 384M         |
+ |L         | 512M         |
+ |XL        | 768M         |
+ |2XL       | 1024M        |
+ |3XL       | 1536M        |
+ |4XL+      | 2048M        |
   
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "doc/reference/reference-environment-variables.md#php" >}}).
 

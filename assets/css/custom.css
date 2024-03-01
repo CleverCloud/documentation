@@ -51,7 +51,7 @@ color: rgb(82 82 82 / .7)
 
 .highlight .chroma .err {
   color: #a61717;
-background-color: rgba(227, 210, 210, 0);
+  background-color: rgba(227, 210, 210, 0);
 }
 /* Override border-radius class to fit Clever's theme */
 .rounded,

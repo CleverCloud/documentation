@@ -31,7 +31,7 @@ Fluentd is an open source data collector written in Ruby, which lets you unify t
   Ruby application on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
 {{< /callout >}}
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

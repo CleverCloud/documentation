@@ -107,7 +107,7 @@ You can now read [My application already exists](#my-application-already-exists)
 
 ### My application already exists
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

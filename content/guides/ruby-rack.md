@@ -19,7 +19,7 @@ aliases:
 Currently, Clever Cloud supports Rack-based applications.
 Created in 2007, Rack has become the de-facto standard for ruby web applications and is used in many frameworks such as Ruby on Rails.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

@@ -17,15 +17,15 @@ aliases:
 
 [Drupal](https://drupal.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
- {{% content/set-env-vars %}}
+{{% content/set-env-vars %}}
 
- {{% content/new-relic %}}
+{{% content/new-relic %}}
 
- {{% content/env-injection %}}
+{{% content/env-injection %}}
 
- {{% content/link-addon %}}
+{{% content/link-addon %}}
 
 ## Configure your database
 

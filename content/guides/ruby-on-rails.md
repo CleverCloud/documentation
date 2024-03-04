@@ -23,7 +23,7 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest) an example of Ruby on Rails application on Clever Cloud.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

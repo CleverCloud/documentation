@@ -20,7 +20,7 @@ type: docs
 
 Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on Clever Cloud.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

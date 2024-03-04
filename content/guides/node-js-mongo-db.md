@@ -22,7 +22,7 @@ The application is a very simple todo list. You can add and delete values. More 
 * [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
 * [Clever Cloud demo](https://nodejs-demo.cleverapps.io/)
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

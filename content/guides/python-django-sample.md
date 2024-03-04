@@ -18,7 +18,7 @@ type: docs
 The goal of this article is to show you how to deploy a Django application on Clever Cloud.
 The application is a very basic one. More information about the application in the[GitHub repo](https://github.com/CleverCloud/django-example).
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

@@ -21,7 +21,7 @@ First, you could check [our global PHP documention](/deploy/application/php/php-
 
 This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
 
-{ {{% content/create-application %}}
+{{% content/create-application %}}
 
  {{% content/set-env-vars %}}
 

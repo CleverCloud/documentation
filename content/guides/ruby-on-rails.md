@@ -27,7 +27,7 @@ You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest
 
  {{% content/set-env-vars %}}
 
-{{< readfile file="language-specific-deploy/ruby.md" >}}
+{{% content/language-specific-deploy/ruby %}}
 
  {{% content/new-relic %}}
 

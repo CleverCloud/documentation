@@ -2322,10 +2322,10 @@ If you want to use pip <strong>9</strong> instead, create an <a href="#setting-u
 <h4>uWSGI<span class="absolute -mt-20" id="uwsgi"></span>
     <a href="#uwsgi" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li><code>HARAKIRI</code>: timeout (in seconds) after which an unresponding process is killed. (Default: 180)</li>
-<li><code>WSGI_BUFFER_SIZE</code>: maximal size (in bytes) for the headers of a request. (Defaut: 4096)</li>
-<li><code>WSGI_POST_BUFFERING</code>: buffer size (in bytes) for uploads. (Defaut: 4096)</li>
-<li><code>WSGI_WORKERS</code>: number of workers. (Defaut: depends on the scaler)</li>
-<li><code>WSGI_THREADS</code>: number of threads per worker. (Defaut: depends on the scaler)</li>
+<li><code>WSGI_BUFFER_SIZE</code>: maximal size (in bytes) for the headers of a request. (Default: 4096)</li>
+<li><code>WSGI_POST_BUFFERING</code>: buffer size (in bytes) for uploads. (Default: 4096)</li>
+<li><code>WSGI_WORKERS</code>: number of workers. (Default: depends on the scaler)</li>
+<li><code>WSGI_THREADS</code>: number of threads per worker. (Default: depends on the scaler)</li>
 </ul>
 <h5>uWSGI asynchronous/non-blocking modes<span class="absolute -mt-20" id="uwsgi-asynchronousnon-blocking-modes"></span>
     <a href="#uwsgi-asynchronousnon-blocking-modes" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>To enable <a href="https://uwsgi-docs.readthedocs.io/en/latest/Async.html" target="_blank" rel="noopener">uWSGI asynchronous</a> mode, you can use these two environment variables:</p>
@@ -2340,7 +2340,7 @@ If you want to use pip <strong>9</strong> instead, create an <a href="#setting-u
 </ul>
 <h4>Nginx<span class="absolute -mt-20" id="nginx"></span>
     <a href="#nginx" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><code>NGINX_READ_TIMEOUT</code>: a bit like <code>HARAKIRI</code>, the response timeout in seconds. (Defaut: 300)</li>
+<li><code>NGINX_READ_TIMEOUT</code>: a bit like <code>HARAKIRI</code>, the response timeout in seconds. (Default: 300)</li>
 <li><code>ENABLE_GZIP_COMPRESSION</code>: &ldquo;on|yes|true&rdquo; gzip-compress the output of uwsgi.</li>
 <li><code>GZIP_TYPES</code>: the mime types to gzip. Defaults to <code>text/* application/json application/xml application/javascript image/svg+xml</code>.</li>
 </ul>

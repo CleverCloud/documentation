@@ -32,7 +32,7 @@ You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest
 
 {{% content/set-env-vars %}}
 
-{{< readfile file="language-specific-deploy/ruby.md" >}}
+{{% content/language-specific-deploy/ruby %}}
 
 {{% content/new-relic %}}
 
@@ -46,4 +46,4 @@ To access environment variables from your code, just get them from the environme
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

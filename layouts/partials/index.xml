@@ -2056,10 +2056,10 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;h4&gt;uWSGI&lt;span class=&#34;absolute -mt-20&#34; id=&#34;uwsgi&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#uwsgi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;HARAKIRI&lt;/code&gt;: timeout (in seconds) after which an unresponding process is killed. (Default: 180)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;WSGI_BUFFER_SIZE&lt;/code&gt;: maximal size (in bytes) for the headers of a request. (Defaut: 4096)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;WSGI_POST_BUFFERING&lt;/code&gt;: buffer size (in bytes) for uploads. (Defaut: 4096)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;WSGI_WORKERS&lt;/code&gt;: number of workers. (Defaut: depends on the scaler)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;WSGI_THREADS&lt;/code&gt;: number of threads per worker. (Defaut: depends on the scaler)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WSGI_BUFFER_SIZE&lt;/code&gt;: maximal size (in bytes) for the headers of a request. (Default: 4096)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WSGI_POST_BUFFERING&lt;/code&gt;: buffer size (in bytes) for uploads. (Default: 4096)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WSGI_WORKERS&lt;/code&gt;: number of workers. (Default: depends on the scaler)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WSGI_THREADS&lt;/code&gt;: number of threads per worker. (Default: depends on the scaler)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5&gt;uWSGI asynchronous/non-blocking modes&lt;span class=&#34;absolute -mt-20&#34; id=&#34;uwsgi-asynchronousnon-blocking-modes&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#uwsgi-asynchronousnon-blocking-modes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;To enable &lt;a href=&#34;https://uwsgi-docs.readthedocs.io/en/latest/Async.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uWSGI asynchronous&lt;/a&gt; mode, you can use these two environment variables:&lt;/p&gt;
@@ -2074,7 +2074,7 @@ If you want to use pip &lt;strong&gt;9&lt;/strong&gt; instead, create an &lt;a h
 &lt;/ul&gt;
 &lt;h4&gt;Nginx&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nginx&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;NGINX_READ_TIMEOUT&lt;/code&gt;: a bit like &lt;code&gt;HARAKIRI&lt;/code&gt;, the response timeout in seconds. (Defaut: 300)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NGINX_READ_TIMEOUT&lt;/code&gt;: a bit like &lt;code&gt;HARAKIRI&lt;/code&gt;, the response timeout in seconds. (Default: 300)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ENABLE_GZIP_COMPRESSION&lt;/code&gt;: &amp;ldquo;on|yes|true&amp;rdquo; gzip-compress the output of uwsgi.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;GZIP_TYPES&lt;/code&gt;: the mime types to gzip. Defaults to &lt;code&gt;text/* application/json application/xml application/javascript image/svg+xml&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -2349,7 +2349,7 @@ Most used values are &lt;code&gt;production&lt;/code&gt; and &lt;code&gt;develop
 &lt;h3&gt;Nginx configuration&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx-configuration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nginx-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;nginx settings can be configured with &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variables&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;NGINX_READ_TIMEOUT&lt;/code&gt;: the response timeout in seconds. (Defaut: 300)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NGINX_READ_TIMEOUT&lt;/code&gt;: the response timeout in seconds. (Default: 300)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Basic authentication&lt;span class=&#34;absolute -mt-20&#34; id=&#34;basic-authentication&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#basic-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If you need basic authentication, you can enable it using &lt;a href=&#34;/doc/reference/reference-environment-variables/#ruby&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;

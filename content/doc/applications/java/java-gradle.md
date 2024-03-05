@@ -27,7 +27,7 @@ Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
 {{% content/set-env-vars %}}
 
-{{< readfile file="java-versions.md" >}}
+{{% content/java-versions %}}
 
 ## Configure your Java application
 
@@ -73,7 +73,7 @@ You can use the following properties:
 
 If you need to run a custom command
 you can specify it through the `CC_RUN_COMMAND` environment variable.
-This will override the default way of runing your application.
+This will override the default way of running your application.
 
 Example:
 
@@ -121,4 +121,4 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

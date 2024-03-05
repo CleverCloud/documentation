@@ -26,7 +26,7 @@ Versions currently available for order are as follows:
 - On shared (DEV) cluster: PostgreSQL version 15
 - On dedicated plans: PostgreSQL versions 10, 11, 12, 13, 14 and 15
 
-{{< readfile file="db-backup.md" >}}
+{{% content/db-backup %}}
 
 ## Migrating from an old database
 
@@ -59,7 +59,7 @@ This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
-{{< readfile file="pgpool.md" >}}
+{{% content/pgpool %}}
 
 You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/pgpool" >}})
 

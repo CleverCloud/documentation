@@ -54,7 +54,7 @@ Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details o
 Once you created your add-on, you should get to the dashboard. You should see a link named `Access Jenkins`. Opening that link will redirect you to our SSO
 authentication.
 
-{{< readfile file="single-sign-on.md" >}}
+{{% content/single-sign-on %}}
 
 ## Configure your Jenkins instance
 

@@ -27,7 +27,7 @@ your Dockerfile.
 
 ## What is ProxySQL
 
-{{< readfile file="proxysql.md" >}}
+{{% content/proxysql %}}
 
 ## When do I need ProxySQL
 

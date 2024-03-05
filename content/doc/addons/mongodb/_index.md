@@ -40,7 +40,7 @@ Free plans are recommended for test and development usage only. Using these data
 
 Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, we set a soft limit of **15 operations/second**. Going above the limit will expose your database to disconnection, would you not answer our notices.
 
-{{< readfile file="db-backup.md" >}}
+{{% content/db-backup %}}
 
 ## Database Migration Process
 

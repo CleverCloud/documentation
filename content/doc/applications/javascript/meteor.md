@@ -102,4 +102,4 @@ If you want to migrate from your classic node.js app to a meteor application, co
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

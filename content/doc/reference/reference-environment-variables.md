@@ -280,8 +280,8 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`UWSGI_INTERCEPT_ERRORS` |  |
 |`WSGI_BUFFER_SIZE` | Buffer size (in bytes) for uploads. | 4096 |
 |`WSGI_POST_BUFFERING` | Maximal size (in bytes) for the headers of a request.  | 4096 |
-|`WSGI_THREADS` | Number of threads per worker. (Defaut: automatically setup with the scaler size) |  |
-|`WSGI_WORKERS` | Number of workers. (Defaut: automatically setup with the scaler size) |  |
+|`WSGI_THREADS` | Number of threads per worker. (Default: automatically setup with the scaler size) |  |
+|`WSGI_WORKERS` | Number of workers. (Default: automatically setup with the scaler size) |  |
 
 When your Python application doesn't use one of the supported backends, with `CC_RUN_COMMAND` for example, it must listen on port `9000`, not `8080`.
 

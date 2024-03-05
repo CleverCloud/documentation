@@ -22,7 +22,7 @@ If you need an example source code, use [Theme mini](https://github.com/nodejh/h
 git clone https://github.com/nodejh/hugo-theme-mini myStaticApp
 ```
 
-{{< readfile file="guides/create-static.md" >}}
+{{% content/language-specific-deploy/create-static %}}
 
 ## Configure environment variables and deploy script
 
@@ -53,7 +53,7 @@ tar xvf ${FILENAME} -C ${DEST_BIN}
 rm ${FILENAME}
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% content/git-push %}}
 
 ## 404 Redirections
 

@@ -133,10 +133,10 @@ uWSGI, gunicorn and nginx settings can be configured by setting [environment var
 #### uWSGI
 
 - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
-- `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
-- `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
-- `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
-- `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+- `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Default: 4096)
+- `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Default: 4096)
+- `WSGI_WORKERS`: number of workers. (Default: depends on the scaler)
+- `WSGI_THREADS`: number of threads per worker. (Default: depends on the scaler)
 
 ##### uWSGI asynchronous/non-blocking modes
 
@@ -152,7 +152,7 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 
 #### Nginx
 
-- `NGINX_READ_TIMEOUT`: a bit like `HARAKIRI`, the response timeout in seconds. (Defaut: 300)
+- `NGINX_READ_TIMEOUT`: a bit like `HARAKIRI`, the response timeout in seconds. (Default: 300)
 - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 - `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
 

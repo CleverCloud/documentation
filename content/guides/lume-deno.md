@@ -20,7 +20,7 @@ If you need an example source code, use [Lume website](https://github.com/lumela
 ```bash
 git clone https://github.com/lumeland/lume.land myStaticApp
 ```
-{{< readfile file="guides/create-static.md" >}}
+{{% content/language-specific-deploy/create-static %}}
 
 ## Configure environment variables and deploy script
 Next, configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
@@ -47,4 +47,4 @@ unzip ${FILENAME} -d ${DEST_BIN}
 rm ${FILENAME}
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% content/git-push %}}

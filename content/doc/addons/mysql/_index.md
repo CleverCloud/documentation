@@ -21,7 +21,7 @@ MySQL is an open-source relational database management system (RDBMS).
 
 {{< software_versions_shared_dedicated mysql>}}
 
-{{< readfile file="db-backup.md" >}}
+{{% content/db-backup %}}
 
 ## Migrating from an old database
 
@@ -50,7 +50,7 @@ Encryption at rest is available on MySQL. You can have more information on the [
 
 ## ProxySQL
 
-{{< readfile file="proxysql.md" >}}
+{{% content/proxysql %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}})
 

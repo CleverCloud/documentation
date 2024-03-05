@@ -26,7 +26,7 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 {{< software_versions_shared_dedicated pg>}}
 
 
-{{< readfile file="db-backup.md" >}}
+{{% content/db-backup %}}
 
 ## Migrating from an old database
 
@@ -59,7 +59,7 @@ This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
-{{< readfile file="pgpool.md" >}}
+{{% content/pgpool %}}
 
 You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/pgpool" >}})
 

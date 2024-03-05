@@ -43,7 +43,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
-{{< readfile file="java-versions.md" >}}
+{{% content/java-versions %}}
 
 ### Mandatory configuration
 
@@ -67,9 +67,9 @@ An example of what can be found as a goal value is:
 
 #### Option 2: Environment variable
 
-If you don't want to add a file to your repository, or if you're using a monorepository with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
+If you don't want to add a file to your repository, or if you're using a monorepo with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
 
-Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK!
+Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK
 
 Eg. `MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with spring-boot-maven-plugin
 
@@ -129,4 +129,4 @@ CC_RUN_COMMAND="java -jar somefile.jar <options>"
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

@@ -26,7 +26,7 @@ For this project to work, don't import the theme with `git clone` but as a submo
 git submodule add https://github.com/probberechts/hexo-theme-cactus.git themes/cactus 
 ```
 
-{{< readfile file="guides/create-static.md" >}}
+{{% content/language-specific-deploy/create-static %}}
 
 ## Configure environment variables
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
@@ -41,4 +41,4 @@ clever env set CC_PRE_BUILD_HOOK "npm i -g hexo && npm install"
 clever enc set CC_POST_BUILD_HOOK "hexo generate"
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% content/git-push %}}

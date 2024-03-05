@@ -77,4 +77,4 @@ To access the environment variables from your code, you need to add `my.option=$
 
 {{% content/more-config %}}
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

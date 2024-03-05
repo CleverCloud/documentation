@@ -28,11 +28,11 @@ If given `rubyversion` does not match any available version, your deployment wil
 ### Choose your environment
 
 You can set the `RUBY_ENV` [environment variable](#setting-up-environment-variables-on-clever-cloud) to the value you want. By default it is set to `production`.
-Most used values are `production` and `development` but you can use any custom one as long as you have setted up of the required variables for this environment in your `./config/` folder files.
+Most used values are `production` and `development` but you can use any custom one as long as you have set up of the required variables for this environment in your `./config/` folder files.
 
 ### Secure configuration of secret key
 
-There are many way to add secret key to your env and each one is valid. Clever Cloud provides you a secure way so you don't have to commit any file containing it.
+There are many way to add secret key to your environment and each one is valid. Clever Cloud provides you a secure way so you don't have to commit any file containing it.
 
 1. generate the secret key locally with `rake secret`
 2. add it to your environment in `./config/secret.yml` with:
@@ -58,7 +58,7 @@ We do not execute any rake goals by default.
 
 To run a Sidekiq process in background you will need to enable it with the `CC_ENABLE_SIDEKIQ=true` environment variable.
 
-Please note you will need a redis instance to use this feature.
+Please note you will need a Redis instance to use this feature.
 
 You can specify multiple Sidekiq configuration files with the `CC_SIDEKIQ_FILES` environment variable.
 
@@ -93,7 +93,7 @@ Static files are configured with [environment variables](#setting-up-environment
 
 `STATIC_FILES_PATH`: should point to a directory where your static files are stored.
 
-`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (for example `/public/`)
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
@@ -105,7 +105,7 @@ If you use the asset pipeline, make sure to include the `assets:precompile` task
 CC_RAKEGOALS="db:migrate, assets:precompile"
 ```
 
-**Note**: if your project uses `webpacker`, make sure to enable the dedicated build instance option in the **Information** menu of your application in the Clever Cloud console because `webpacker` needs a lot a ressources when starting.
+**Note**: if your project uses `webpacker`, make sure to enable the dedicated build instance option in the **Information** menu of your application in the Clever Cloud console because `webpacker` needs a lot a resources when starting.
 
 ### Using Active Storage and Cellar S3
 
@@ -138,21 +138,21 @@ Only for Rails >= 5.2.
 You can now commit and push your changes.
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets]({{< ref "doc/addons/fs-bucket" >}}) section.
+[File System Buckets](/doc/addons/fs-bucket) section.
 
-### Nginx configuration
+### NGINX configuration
 
-nginx settings can be configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
+NGINX settings can be configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
 
-* `NGINX_READ_TIMEOUT`: the response timeout in seconds. (Defaut: 300)
+* `NGINX_READ_TIMEOUT`: the response timeout in seconds. (Default: 300)
 
 #### Basic authentication
 
-If you need basic authentication, you can enable it using [environment variables]({{< ref "doc/reference/reference-environment-variables.md#ruby" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+If you need basic authentication, you can enable it using [environment variables](/doc/reference/reference-environment-variables/#ruby). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
-#### Nginx optional configuration with `clevercloud/http.json`
+#### NGINX optional configuration with `clevercloud/http.json`
 
-Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
+NGINX settings can be configured further in `clevercloud/http.json`. All its fields are optional.
 
 * `languages`: configure a default language and redirections
 * `error_pages`: configure custom files for error pages
@@ -182,14 +182,14 @@ Nginx settings can be configured further in `clevercloud/http.json`. All its fie
 Puma reads its configuration from the `config/puma.rb` file. See [the puma documentation](https://GitHub.com/puma/puma/blob/master/README.md) for more information.
 
 You can override this configuration with [environment variables](#setting-up-environment-variables-on-clever-cloud).
-Each of them, when specified, will be be preferred over the setting from `config/puma.rb`.
+Each of them, when specified, will be preferred over the setting from `config/puma.rb`.
 
-* `CC_PUMA_WORKERS` overrides the number of workers (e.g. `CC_PUMA_WORKERS=2`)
-* `CC_PUMA_THREADS` overrides the number of threads per worker, can be a raw number or a range (e.g. `CC_PUMA_THREADS=6` or `CC_PUMA_THREADS=4:8`)
+* `CC_PUMA_WORKERS` overrides the number of workers (for example, `CC_PUMA_WORKERS=2`)
+* `CC_PUMA_THREADS` overrides the number of threads per worker, can be a raw number or a range (for example, `CC_PUMA_THREADS=6` or `CC_PUMA_THREADS=4:8`)
 
 If they are not defined in the environment nor in `config/puma.rb` we will setup the values depending on the size of the scaler your application is running on.
 We also fill the `WEB_CONCURRENCY` and `RAILS_MAX_THREADS` environment variable if they are not present as they may be used by rails' puma configuration.
 
-## Overridding rackup application server
+## Overriding rackup application server
 
 You can override the puma default server by setting an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_RACKUP_SERVER=yourserver`. We do not recommend you do it.

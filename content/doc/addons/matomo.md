@@ -20,8 +20,6 @@ Matomo is an open-source web analytics solution which gives you full ownership o
 
 Matomo on Clever Cloud will allow your marketing team to effortlessly setup a tailored web analytics solution, that can be adjusted to your needs and workloads.
 
-{{< image "/images/matomo/full-dashboard.png" "Matomo Dashboard" >}}
-
 ## How it works?
 
 When you subscribe the Matomo add-on, we automatically setup a PHP instance based on the latest Matomo release. It comes with the required MySQL database and an optional Redis cache.
@@ -58,7 +56,7 @@ Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details o
 
 Once you created your add-on, you should get to the dashboard and see a link named `Access Matomo`. Opening that link will redirect you to our SSO authentication.
 
-{{< readfile file="single-sign-on.md" >}}
+{{% content/single-sign-on %}}
 
 ## Configure your Matomo instance
 

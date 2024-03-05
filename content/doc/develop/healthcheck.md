@@ -10,4 +10,4 @@ keywords:
 type: docs
 ---
 
-{{< readfile file="url_healthcheck.md" >}}
+{{% content/url_healthcheck %}}

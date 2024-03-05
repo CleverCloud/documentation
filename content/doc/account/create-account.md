@@ -14,4 +14,4 @@ aliases:
 - /doc/getting-started/authentication
 ---
 
-{{< readfile file="authentication.md" >}}
+{{% content/authentication %}}

@@ -38,12 +38,25 @@ TODO: document how to do it.
 
 ### With the `CC_TASK=true` environment variable
 
-You can temporarily turn a "normal" app to a "task" one by deploying it with this
-environment variable set.
+You can temporarily turn a "normal" app to a "task" one. You just need to add the
+`CC_TASK` environment variable with the value `true`. The deployment will be a "task" one
+while the variable exists in the application.
 
-## Define the actual command to run
+## Define the actual command to run (mandatory)
 
-To run your task, you need to 
+To run your task, you need to define a `CC_RUN_COMMAND` variable with the command that
+will be executed. If this variable is not set, the task deployment **will not** go through.
+
+### Examples
+
+Here are some ways to run your task script:
+
+```
+CC_RUN_COMMAND="php my-special-script.php"
+CC_RUN_COMMAND="./my-special-script.sh"
+CC_RUN_COMMAND="node my-special-script.js"
+CC_RUN_COMMAND="cd mytask; ./task1.sh && ./task2.sh"
+```
 
 {{< readfile file="set-env-vars.md" >}}
 

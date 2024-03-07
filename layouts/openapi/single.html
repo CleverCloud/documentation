@@ -29,6 +29,26 @@
             }
             });
           </script>
+          <script defer>
+            /** 
+             * FIXME: 
+             * This is a temporary solution to an issue caused by 3rd party scripts.
+             * Once they fix the issue, we should remove this.
+             *
+             * see https://github.com/CleverCloud/documentation/issues/218 for more info
+             */
+            document.addEventListener("DOMContentLoaded", (event) => {
+              const rapiDocElement = document.getElementById('api-doc');
+              rapiDocElement.addEventListener('keydown', (event) => {
+                const formElementTagNames = ['INPUT', 'SELECT', 'TEXTAREA', 'BUTTON'];
+                const triggerElement = event.composedPath()[0];
+                
+                if (formElementTagNames.includes(triggerElement.tagName)) {
+                  event.stopPropagation();
+                }
+              });
+            })
+          </script>
       </main>
     </article>
   </div>

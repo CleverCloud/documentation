@@ -11,6 +11,7 @@ str_replace_dict:
   "@application-type@": "PHP"
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-laravel
+- /doc/php/tutorial-laravel
 ---
 
 {{< hextra/hero-subtitle >}}

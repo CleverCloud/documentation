@@ -29,8 +29,6 @@ Check your Go version, it need to be above go `1.21.1`.
 
 ### Start locally
 
-To start you can build the project with the command `hugo`. This will generate the files of the static site inside the folder called `/public/` at the root of the project.
-
 To run the site in your browser, there is a server built in Hugo you can summon with:  
 `hugo server`  
 A bunch of option a available:
@@ -44,17 +42,21 @@ A bunch of option a available:
       --disableFastRender      enables full re-renders on changes
 ```
 
+Hugo refreshes the site as you modify the files, you can keep the server running with no need to restart.
+
+There is no need to build before submitting your Pull Request or before deploying.
+
 ## Project basic configuration and architecture
 
 The theme used here is called [Hexa](https://imfing.github.io/hextra/).
 
-The `hugo.sh` script will run the compilation with the right options and server the content of the public folder.
+The `hugo.sh` script runs the compilation with the right options and server the content of the public folder.
 
 This is why the Clever Cloud application running this app needs to have a webroot serving `/public/`.
 
 ## Adding or modifying content
 
-Follox these instructions to contibute to the doc.
+Follow these instructions to contribute to the doc.
 
 ### Run locally
 
@@ -81,6 +83,13 @@ This linter can be downloaded and run locally, or used via VSCode:
 
 **Ignored markdown files** are listed in the `.markdownlintignore`.  
 **Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
+**Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.
+
+## Adding a new Guide
+
+Run `hugo new content guides/<framework>.md`. Hugo generates a new file from a guide template (stored in `/archetypes`).
+
+In this new guide file's metadata, set `draft: true` to publish it.
 
 ## Adding changelog entries *(internal only)*
 

@@ -222,13 +222,14 @@ clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-
 NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
 {{< /callout >}}
 
-### Third-party software
+### Community software
 
 {{< callout type="info">}}
-Third-party software is not directly supported by Clever Cloud. We do not garantee they will be free of problems.
+Community software is not directly supported by Clever Cloud. It is developed by our community. We do not garantee they will be free of problems.
+You had better open issues on their Git repository instead of contacting our support.
 {{< /callout >}}
 
-#### HTTPS
+#### HTTPS-based solution
 
 Some tools available on GitHub enable to create a drain to collect logs through an HTTPS endpoint. [This project](https://github.com/sebartyr/http-logs-drain), for example, is fully compatible with Clever Cloud.
 

@@ -226,7 +226,7 @@ NewRelic has two zones, **EU** and **US**. An account on one zone is not availab
 
 {{< callout type="info">}}
 Community software is not directly supported by Clever Cloud. It is developed by our community. We do not garantee they will be free of problems.
-You had better open issues on their Git repository instead of contacting our support.
+You had better open issues on their Git repositories instead of contacting our support.
 {{< /callout >}}
 
 #### HTTPS-based solution

@@ -48,3 +48,5 @@ Pgpool
 psql
 npm
 hostname
+webroot
+VSCode

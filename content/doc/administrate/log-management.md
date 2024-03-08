@@ -198,13 +198,6 @@ curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.c
 
 For more information, please refer to the [official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/set-up-lifecycle-policy.html).
 
-### HTTPS
-
-Some tools available on GitHub enable to create a drain to collect logs through an HTTPS endpoint. [This project](https://github.com/sebartyr/http-logs-drain), for example, is fully compatible with Clever Cloud 
-
-You could host it as an app and an add-on on Clever Cloud. A complete README explains all the features.
-
-
 ### Datadog
 
 To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) drain, you just need to use:
@@ -228,3 +221,15 @@ clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-
 {{< callout type="warning" >}}
 NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
 {{< /callout >}}
+
+### Third-party software
+
+{{< callout type="info">}}
+Third-party software is not directly supported by Clever Cloud. We do not garantee they will be free of problems.
+{{< /callout >}}
+
+#### HTTPS
+
+Some tools available on GitHub enable to create a drain to collect logs through an HTTPS endpoint. [This project](https://github.com/sebartyr/http-logs-drain), for example, is fully compatible with Clever Cloud.
+
+You could host it as an app and an add-on on Clever Cloud. A complete README explains all the features.

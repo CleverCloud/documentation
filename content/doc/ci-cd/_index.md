@@ -56,10 +56,15 @@ include:
   - component: gitlab.com/CleverCloud/clever-cloud-pipeline/deploy-to-prod@~latest
 ```
 
-This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) triggers a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
+This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) triggers
+ a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
 
 - `APP_ID`: you app_id on Clever Cloud, find it at the top right in Clever Cloud Console, in your application tab.
 - `CLEVER_TOKEN` and `CLEVER_SECRET`: find it in your machine, usually in `~/.config/clever-cloud/clever-tools.json`, after [installing the CLI](/doc/CLI).
+
+{{< callout type="warning" >}}
+  `CLEVER_TOKEN` and `CLEVER_SECRET` expire after one year. Make sure to set a reminder to inject the new ones to avoid breaking your pipelines.
+{{< /callout >}}
 
 ### Deploy from a self-hosted GitLab instance
 

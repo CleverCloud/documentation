@@ -15,6 +15,8 @@ type: docs
 
 Clever Cloud provides a GitHub integration to deploy any repository hosted on GitHub to Clever Cloud. You can deploy the same repository to multiple Clever Cloud applications from different branches. Select the appropriate branch in you application menu, in **Information** > **Application edition** > **Used GitHub branch for deployment**.
 
+![GitHub branch deployment](/images/doc/github-branches.png)
+
 Clever Cloud asks for permission to access your GitHub repositories. Accept the permissions to allow the deployment. You can deploy both public or private repositories.
 
 ### Deploy review apps from a PR on GitHub
@@ -54,7 +56,7 @@ include:
   - component: gitlab.com/CleverCloud/clever-cloud-pipeline/deploy-to-prod@~latest
 ```
 
-This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) will trigger a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
+This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) triggers a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
 
 - `APP_ID`: you app_id on Clever Cloud, find it at the top right in Clever Cloud Console, in your application tab.
 - `CLEVER_TOKEN` and `CLEVER_SECRET`: find it in your machine, usually in `~/.config/clever-cloud/clever-tools.json`, after [installing the CLI](/doc/CLI).

@@ -18,7 +18,9 @@ linkTitle: Documentation
    {{< card link="../doc/addons" title="Connect an add-on" subtitle="Connect a managed database and set up cloud storage." icon="plug" >}}
   {{< card link="../doc/find-help" title="Find help" subtitle="Lost? See how to get help." icon="support" >}}
   {{< card link="../doc/extend" title="Extend" subtitle="Access Clever Cloud API, collect add-ons logs... " icon="puzzle" >}}
-   {{< card link="../doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
+  {{< card link="../doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
+  {{< card link="../doc/ci-cd" title="CI/CD" subtitle="Deploy to Clever Cloud from GitHub or GitLab." icon="gitlab" >}}
+  
   {{< card link="../doc/reference" title="References" subtitle="List of environment variables your can use on Clever Clever Cloud, common configuration an all instances... " icon="collection" >}}
   {{< card link="../doc/account" title="User Account" subtitle="Set up your account, collaborate and manage permissions." icon="user-circle" >}}
   {{< card link="../doc/billing" title="Billing" subtitle="Find invoices, analyse consumption and understand pricing." icon="credit-card" >}}

@@ -40,6 +40,21 @@ You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
+## Make sure to log on stdout
+
+Since January 2024, your logs may no longer show in your Clever Cloud console.
+In production.rb, you should find something like:
+
+```ruby
+if ENV['RAILS_LOG_TO_STDOUT'].present?
+  logger           = ActiveSupport::Logger.new($stdout)
+  logger.formatter = config.log_formatter
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
+end
+```
+
+It means you need to add `RAILS_LOG_TO_STDOUT=true` in your environment variables.
+
 {{% content/deploy-git %}}
 
 {{% content/link-addon %}}

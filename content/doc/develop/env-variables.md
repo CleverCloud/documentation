@@ -242,11 +242,6 @@ Here is a non-exhaustive summary:
   
 {{< /cards >}}
 
-Fix 404 in whole doc
-* [Play-1](/guides/play-framework-1/#environment-injection)
-* [Play-2](/guides/play-framework-2/#environment-injection)
-
-
 {{< callout type="info" >}}
 Variables are available at build time
 for runtimes that support build time instructions, such as

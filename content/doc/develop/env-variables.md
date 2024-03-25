@@ -237,7 +237,7 @@ Here is a non-exhaustive summary:
   {{< card link="/doc/applications/rust/#environment-injection" title="Rust" icon="rust" >}}
   {{< card link="/doc/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
   {{< card link="/doc/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
-  {{< card link="doc/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
   {{< card link="/doc/applications/static/#setting-up-environment-variables-on-clever-cloud" title=".Static" icon="feather" >}}
   
 {{< /cards >}}

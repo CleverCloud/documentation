@@ -223,19 +223,29 @@ Here is a non-exhaustive summary:
 | .NET | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
 ## Specific languages
+{{< cards >}}
+  {{< card link="/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/doc/applications/golang/#environment-injection" title="Go" icon="go" >}}
+  {{< card link="/doc/applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
+  {{< card link="/doc/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
+  {{< card link="/guides/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
+  {{< card link="/guides/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
+  {{< card link="/doc/applications/javascript/nodejs/#environment-injection" title="Node.js" icon="node" >}}
+  {{< card link="/guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
+  {{< card link="/doc/applications/php/#environment-injection" title="PHP" icon="php" >}}
+  {{< card link="/doc/applications/python/#environment-injection" title="Python" icon="python" >}}
+  {{< card link="/doc/applications/rust/#environment-injection" title="Rust" icon="rust" >}}
+  {{< card link="/doc/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
+  {{< card link="/doc/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
+  {{< card link="doc/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
+  {{< card link="/doc/applications/static/#setting-up-environment-variables-on-clever-cloud" title=".Static" icon="feather" >}}
+  
+{{< /cards >}}
 
-* [Go](/doc/applications/golang/#environment-injection)
-* [Haskell](/doc/applications/haskell/#environment-injection)
-* [Node.js](/doc/applications/javascript/nodejs/#environment-injection)
-* [Java-war](/doc/applications/java/java-war/#environment-injection)
-* [PHP](/doc/applications/php/#environment-injection)
+Fix 404 in whole doc
 * [Play-1](/doc/applications/java/play-framework-1/#environment-injection)
 * [Play-2](/doc/applications/java/play-framework-2/#environment-injection)
-* [Python](/doc/applications/python/#environment-injection)
-* [Ruby](/guides/ruby-rack-app-tutorial/#environment-injection)
-* [Rust](/doc/applications/rust/#environment-injection)
-* [Scala](/doc/applications/scala/#environment-injection)
-* [.NET](doc/applications/dotnet/#environment-injection)
+
 
 {{< callout type="info" >}}
 Variables are available at build time

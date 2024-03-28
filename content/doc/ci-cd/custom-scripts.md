@@ -50,9 +50,12 @@ before_script: # Download clever-tools before any script executes
   Using `before_script` in your GitLab pipeline affects your other scripts as well. Consider including it **in a separate job** if you run other test scripts unrelated to Clever Cloud deployments in your pipeline.
 {{< /callout >}}
 
+{{% content/ci-cd-configuration %}}
+
 ## 🎓 Go further
 
 {{< cards >}}
+  {{< card link="https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables" title="GitHub variables" subtitle="List of GitHub default CI/CD variables" icon="github" >}}
   {{< card link="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html" title="GitLab variables" subtitle="List of GitLab predefined variables" icon="gitlab" >}}
   {{< card link="/doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
 {{< /cards >}}

@@ -51,3 +51,4 @@ hostname
 webroot
 VSCode
 app_id
+Heptapod

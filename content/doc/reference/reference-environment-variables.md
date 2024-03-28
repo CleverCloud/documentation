@@ -140,7 +140,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_DOTNET_PROFILE` | Override the build configuration settings in your project. | Release |
 |`CC_DOTNET_PROJ` | The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension. |  |
 |`CC_DOTNET_TFM` | Compiles for a specific framework. The framework must be defined in the project file. Example : `net5.0` |  |
-|`CC_DOTNET_VERSION` | Choose the .NET Core version between `5.0`,`6.0`. | 6.0 |
+|`CC_DOTNET_VERSION` | Choose the .NET Core version between `6.0`,`8.0`. | 8.0 |
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 
 ## Elixir

@@ -38,31 +38,110 @@ TODO: document how to do it.
 
 ### With the `CC_TASK=true` environment variable
 
-You can temporarily turn a "normal" app to a "task" one. You just need to add the
-`CC_TASK` environment variable with the value `true`. The deployment will be a "task" one
-while the variable exists in the application.
+You can temporarily deploy a "normal" app as a "task" one.e
+You just need to add the `CC_TASK` environment variable with the value `true`.
+The deployment will be a "task" one while the variable exists in the application.
 
 ## Define the actual command to run (mandatory)
 
-To run your task, you need to define a `CC_RUN_COMMAND` variable with the command that
+To run your task, you **have to** define a `CC_RUN_COMMAND` variable with the command that
 will be executed. If this variable is not set, the task deployment **will not** go through.
 
 ### Examples
 
-Here are some ways to run your task script:
+Here are some example commands to run:
 
 ```
 CC_RUN_COMMAND="php my-special-script.php"
+CC_RUN_COMMAND="python manage.py migrate"
+CC_RUN_COMMAND="npm run app:test"
 CC_RUN_COMMAND="./my-special-script.sh"
 CC_RUN_COMMAND="node my-special-script.js"
 CC_RUN_COMMAND="cd mytask; ./task1.sh && ./task2.sh"
 ```
 
+Note that you can only set **one** `CC_RUN_COMMAND`.
+If you need to run multiple commands, separate them with `;`, `&&` or put them in a bash script.
+
+Your environment is loaded before running your commands, so you have access to all the
+environment variables you might have set.
+
 {{< readfile file="set-env-vars.md" >}}
 
-{{< readfile file="new-relic.md" >}}
+## What's in tasks apps? What is not?
 
-{{< readfile file="env-injection.md" >}}
+"Task" apps are a quick way to run a script.
+When deploying, Clever Cloud just starts VMs, run the given command and then stop the VM.
+
+### Current limitation
+
+At the time of publishing this doc, here are some limitations around tasks:
+
+- You cannot deploy the same app multiple times in parallel, executing different tasks.
+  We will start the latter one after the former one ends.
+- Due to this limitation, running a task deployment on an existing app will block "normal"
+  deployments for the duration of the command. Event the ones from the monitoring.
+- There is no out-of-the-box cron definition at the moment.
+  You'll have to do that on your own.
+
+### Tips and examples
+
+#### Running from a cron
+
+`clever-tools` is available on all our VMs.
+You can trigger the deployment of a task by running a few `clever` commands.
+For example, you can setup a cron on your web application that runs as a normal app, and
+run something like this:
+
+```bash
+#!/bin/bash
+
+mkdir task
+pushd task
+
+# Make sure to have CLEVER_TOKEN and CLEVER_SECRET in your env
+
+clever link {task app_id}
+clever restart --quiet # That's if you don't care for the logs to show in here
+
+popd
+rm -rf task
+```
+
+#### Running a script with different parameters
+
+You can write a script that takes specific environment variables and acts on it.
+
+Let's say your app needs to trigger the processing of a specific file after a customer
+uploaded it.
+
+Make your processing script use the value from `FILE_TO_PROCESS` as the source:
+
+```bash
+#!/bin/bash
+
+wget "${FILE_TO_PROCESS}" -O "to-process.csv"
+
+process-my-file "to-process.csv"
+```
+
+Then in your main app, trigger the task like this:
+
+```bash
+#!/bin/bash
+
+mkdir task
+pushd task
+
+# Make sure to have CLEVER_TOKEN and CLEVER_SECRET in your env
+
+clever link {task app_id}
+clever env set FILE_TO_PROCESS "https://mybucket.cellar-c2.services.clever-cloud.com/some-file-20240231.csv"
+clever restart --quiet # That's if you don't care for the logs to show in here
+
+popd
+rm -rf task
+```
 
 {{< readfile file="link-addon.md" >}}
 

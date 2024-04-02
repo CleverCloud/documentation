@@ -10,7 +10,7 @@ type: docs
   There are several ways to automate your workflow when deploying your application to Clever Cloud from either GitHub or GitLab. This page explains how to write your custom CI/CD from both platforms.
 {{< /hextra/hero-subtitle >}}
 
-## Use Clever Cloud CLI
+## Use Clever Tools
 
 You can write your own pipeline to deploy from either GitHub or GitLab. Use Clever Cloud CLI using either [clever-tools](https://github.com/CleverCloud/clever-tools) Docker or Node image. Place the following snippets at the top of your `.gitlab-ci.yml` file:
 

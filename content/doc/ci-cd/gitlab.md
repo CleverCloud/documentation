@@ -39,7 +39,7 @@ This assumes you have a running app on Clever Cloud. Any commit on your default 
 
 ### Deploy from a self-hosted GitLab instance
 
-You can use pipeline components to deploy from a self-hosted GitLab instance, by including it as a project and mirroring the Pipeline repository. Follow [GitLab documentation](https://docs.gitlab.com/ee/ci/components/#use-a-gitlabcom-component-in-a-self-managed-instance) to get full instructions.
+You can use pipeline components to deploy from a self-hosted GitLab instance, by including it as a project and mirroring the pipeline repository. Follow [GitLab documentation](https://docs.gitlab.com/ee/ci/components/#use-a-gitlabcom-component-in-a-self-managed-instance) to get full instructions.
 
 #### Deploy directly from Heptapod
 

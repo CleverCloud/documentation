@@ -43,7 +43,7 @@ You can use pipeline components to deploy from a self-hosted GitLab instance, by
 
 #### Deploy directly from Heptapod
 
-The self-hosted GitLab service on Clever Cloud with [Heptapod](/doc/addons/heptapod) already hosts the components, you don't need to do any set up like you would in a self-hosted instance.
+The self-hosted GitLab service on Clever Cloud with [Heptapod](/doc/addons/heptapod) already hosts the components, you don't need to do any set up like you would in a self-hosted instance:
 
 1. Create a `.gitlab-ci.yml` at the root of your repository with [the component to use](/doc/ci-cd/gitlab/#use-the-components-catalog)
 2. Add [the variables](/doc/ci-cd/gitlab/#mandatory-configuration) to your repository settings

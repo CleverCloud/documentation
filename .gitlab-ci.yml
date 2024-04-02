@@ -1,18 +1,7 @@
-variables:
-  GIT_DEPTH: "0"
+include:
+  - component: $CI_SERVER_HOST/pipelines/clever-cloud-pipeline/deploy-to-prod@~latest
+    inputs:
+      stage: deploy
+      when: always
 
-image:
-  name: clevercloud/clever-tools:latest
-  entrypoint: [""]
 
-#-------------------------------
-# Deploy
-#-------------------------------
-workflow:
-  rules:
-  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  
-deploy to production:
-  stage: deploy
-  script: clever link ${APP_ID}; clever deploy
-  environment: production

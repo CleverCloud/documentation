@@ -12,7 +12,7 @@ type: docs
 
 ## Use Clever Tools
 
-You can write your own pipeline to deploy from either GitHub or GitLab. Use Clever Cloud CLI using either [clever-tools](https://github.com/CleverCloud/clever-tools) Docker or Node image. Place the following snippets at the top of your `.gitlab-ci.yml` file:
+You can write your own pipeline to deploy from either GitHub or GitLab. Use [Clever Cloud CLI](https://github.com/CleverCloud/clever-tools) with either Docker or Node image. Place the following snippets at the top of your `.gitlab-ci.yml` file:
 
 {{< tabs items="Docker image, Node image" >}}
 

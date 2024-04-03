@@ -27,86 +27,57 @@ To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd). Yo
 
 ## Creating a bucket
 
-In Cellar, files are stored in buckets. When you create a Cellar addon, no bucket is created yet.
+Cellar stores files in buckets. When you create a Cellar add-on, no bucket exists yet.
 
-You will need to install the s3cmd on your machine following [these recommendations](https://s3tools.org/s3cmd).
+### From Clever Cloud Console
 
-Once s3cmd is installed, you can go to your add-on menu in the Clever Cloud console.
+{{% steps %}}
 
-Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link.
+#### Go to Cellar options
 
-This will provide you a configuration file that you just need to add to your home on your machine.
+Click on your Cellar add-on in your deployed services list to see its menu.
 
-To create a bucket, you can use s3cmd:
+#### Name your bucket
 
-```bash
-s3cmd mb s3://bucket-name
-```
-
-The bucket will now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
+From **Addon Dashboard**, insert the name of your bucket.
 
 {{< callout type="info">}}
   Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region.
 {{< /callout >}}
 
-You can upload files (`--acl-public` makes the file publicly readable):
+#### Create bucket
+
+Click on **Create bucket**. Your new bucket should now be listed in the list below.
+
+{{% /steps %}}
+
+### With s3cmd
+
+{{% steps %}}
+
+#### Install s3cmd
+
+Install s3cmd on your machine following [these recommendations](https://s3tools.org/s3cmd).
+
+#### Download the configuration file
+
+Go to your add-on menu in the Clever Cloud console. Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
+
+#### Create a bucket
+
+To create a bucket, you can use this s3cmd command:
 
 ```bash
-s3cmd put --acl-public image.jpg s3://bucket-name
+s3cmd mb s3://bucket-name
 ```
 
-The file will then be publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
+The bucket is now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
 
-You can list the files in your bucket, you should see the `image.png` file:
+{{% /steps %}}
 
-```bash
-s3cmd ls s3://bucket-name
-```
+### With AWS CLI
 
-### Using a custom domain
-
-If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
-
-```bash
-s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
-```
-
-Then, you just have to create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
-
-{{< callout type="warning" >}}
-  New cellar add-ons supports the `v4` signature algorithm from S3.
-  If you are still using an old account (`cellar.services.clever-cloud.com`), please make sure your client is configured to use the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
-{{< /callout >}}
-
-#### SSL error with s3cmd
-
-If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
-
-```log
-[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
-```
-
-The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
-
-For example with a bucket named `blog.mycompany.com`:
-
-Our certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
-
-It can be solved by forcing s3cmd to use path style endpoint with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
-
-#### Static hosting
-
-You can use a bucket to host your static website, this [blog article](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describe well how it can be done.
-
-Be aware that SPA applications won't work because our proxy serving the bucket needs to find an HTML file that match the route.
-
-For example if your path is `/login` you need to have a file `login.html` because the `index.html` is not the default entrypoint to handle the path.
-
-You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
-
-## Using AWS CLI
-
-You can use the official [AWS cli](https://aws.amazon.com/cli/) with cellar. You will need to configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
+You can use the official [AWS cli](https://aws.amazon.com/cli/) with Cellar. Configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
 
 ```bash
 aws configure set aws_access_key_id $CELLAR_ADDON_KEY_ID
@@ -124,6 +95,61 @@ To simplify this, you may want to configure an alias like so:
 ```bash
 alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
 ```
+
+## Managing your buckets
+
+There are several ways to manage your buckets, find here a list of option.
+
+### Using S3 clients
+
+Some clients allows you to upload files, list them, delete them, etc, like:
+
+- [Cyberduck](https://cyberduck.io)
+- [Filestash](https://filestash.app)
+
+This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/discussions/new?category=general).
+
+### Using s3cmd
+
+`s3cmd` allows you to manage your buckets using its commands, after [configuring it on your machine](#with-s3cmd)
+
+{{< tabs items="Upload,List" >}}
+
+  {{< tab >}}
+  You can upload files (`--acl-public` makes the file publicly readable) with:
+
+  ```bash
+  s3cmd put --acl-public image.jpg s3://bucket-name
+  ```
+  
+  The file is then be publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
+  {{< /tab >}}
+
+  {{< tab >}}
+  You can list the files in your bucket, you should see the `image.png` file:
+
+  ```bash
+  s3cmd ls s3://bucket-name
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+#### Custom domain
+
+If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
+
+```bash
+s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
+```
+
+Then, create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
+
+{{< callout type="info" >}}
+  New cellar add-ons supports the `v4` signature algorithm from S3.
+  If you are still using an old account (`cellar.services.clever-cloud.com`), make sure your client configuration uses the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
+{{< /callout >}}
 
 ## Using AWS SDK
 
@@ -386,3 +412,36 @@ If you need to rollback, you can either set the old configuration or completely 
 ```bash
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
+
+## Static hosting
+
+You can use a bucket to host your static website, this [blog post](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describes how to. Be aware that SPA applications won't work because Clever Cloud proxy serving the bucket needs to find an HTML file that match the route.
+
+For example if your path is `/login` you need to have a file `login.html` because the `index.html` is not the default entrypoint to handle the path.
+
+You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
+
+## Troubleshooting
+
+{{% details title="SSL error with s3cmd" %}}
+
+If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
+
+```log
+[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
+```
+
+The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
+
+For example with a bucket named `blog.mycompany.com`:
+
+Clever Cloud certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
+
+Solve it by **forcing s3cmd to use path style endpoint** with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
+{{% /details %}}
+
+{{% details title="I can't delete a bucket/Cellar add-on" %}}
+
+The buckets need to be empty before you can delete them. Solve this error by deleting the content of your bucket using a [bucket management option](#managing-your-buckets).
+
+{{% /details %}}

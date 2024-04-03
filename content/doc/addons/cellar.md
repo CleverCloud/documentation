@@ -1,7 +1,6 @@
 ---
 type: docs
 title: Cellar, a S3-like object storage service
-position: 3
 shortdesc: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.
 tags:
 - addons
@@ -23,7 +22,7 @@ Cellar is S3-compatible online file storage web service. You can use it with you
 To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd). You can download a s3cmd configuration file from the add-on configuration page.
 
 {{< callout type="warning">}}
-  `ws-*` and `cf*` commands are not avaible with a Cellar add-on.
+  `ws-*` and `cf*` commands are not available with a Cellar add-on.
 {{< /callout >}}
 
 ## Creating a bucket
@@ -45,6 +44,10 @@ s3cmd mb s3://bucket-name
 ```
 
 The bucket will now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
+
+{{< callout type="info">}}
+  Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region.
+{{< /callout >}}
 
 You can upload files (`--acl-public` makes the file publicly readable):
 

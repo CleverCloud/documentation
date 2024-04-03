@@ -16,6 +16,7 @@ aliases:
 - /doc/deploy/application/dotnet
 - /doc/deploy/application/dotnet/dotnet
 - /doc/partials/language-specific-deploy/dotnet
+- /doc/develop/env-variables/doc/applications/dotnet/
 ---
 
 ## Overview

@@ -54,3 +54,4 @@ app_id
 Heptapod
 Cyberduck
 Filestash
+boto

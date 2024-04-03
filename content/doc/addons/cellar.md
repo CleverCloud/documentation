@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Cellar, a S3-like object storage service
-shortdesc: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.
+description: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.
 tags:
 - addons
 keywords:
@@ -16,14 +16,10 @@ aliases:
 - /doc/deploy/addon/cellar
 type: docs
 ---
+{{< hextra/hero-subtitle >}}
+  Cellar is S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
 
-Cellar is S3-compatible online file storage web service. You can use it with your favorite S3 client.
-
-To manually manage the files, you can use [s3cmd](https://s3tools.org/s3cmd). You can download a s3cmd configuration file from the add-on configuration page.
-
-{{< callout type="warning">}}
-  `ws-*` and `cf*` commands are not available with a Cellar add-on.
-{{< /callout >}}
+{{< /hextra/hero-subtitle >}}
 
 ## Creating a bucket
 
@@ -47,7 +43,7 @@ From **Addon Dashboard**, insert the name of your bucket.
 
 #### Create bucket
 
-Click on **Create bucket**. Your new bucket should now be listed in the list below.
+Click on **Create bucket**. Your new bucket should appear in the list below.
 
 {{% /steps %}}
 
@@ -75,6 +71,10 @@ The bucket is now be available at `https://<bucket-name>.cellar-c2.services.clev
 
 {{% /steps %}}
 
+{{< callout type="warning">}}
+  `ws-*` and `cf*` commands aren't available with a Cellar add-on.
+{{< /callout >}}
+
 ### With AWS CLI
 
 You can use the official [AWS cli](https://aws.amazon.com/cli/) with Cellar. Configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
@@ -84,7 +84,7 @@ aws configure set aws_access_key_id $CELLAR_ADDON_KEY_ID
 aws configure set aws_secret_access_key $CELLAR_ADDON_KEY_SECRET
 ```
 
-Sadly the endpoint cannot be configured globally and has to be given as a parameter each time you use the `aws` cli. Here's an example to create a bucket:
+Global endpoint configuration isn't available, so include the parameter each time you use the `aws` cli. Here's an example to create a bucket:
 
 ```bash
 aws s3api create-bucket --bucket myBucket --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com
@@ -156,169 +156,181 @@ Then, create a CNAME record on your domain pointing to `cellar-c2.services.cleve
 To use cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk).
 You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.com`).
 
-### Node.js
+{{< tabs items="Node.js,Java,Python,Ruby" >}}
 
-```javascript
-// Load the AWS SDK for Node.js
-const AWS = require('aws-sdk');
+  {{< tab >}}
+  **Node.js**
 
-// Set up config
-AWS.config.update({
-  accessKeyId: '<cellar_key_id>', 
-  secretAccessKey: '<cellar_key_secret>'
-});
+  ```javascript
+  // Load the AWS SDK for Node.js
+  const AWS = require('aws-sdk');
 
-// Create S3 service object
-const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
+  // Set up config
+  AWS.config.update({
+    accessKeyId: '<cellar_key_id>', 
+    secretAccessKey: '<cellar_key_secret>'
+  });
 
-// Create the parameters for calling createBucket
-const bucketParams = {
-  Bucket : '<my-bucket-name>',
-  CreateBucketConfiguration: {
-    LocationConstraint: ''
-  }
-};
+  // Create S3 service object
+  const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
 
-// call S3 to create the bucket
-s3.createBucket(bucketParams, function(err, data) {
-  // handle results
-});
-
-// Call S3 to list the buckets
-s3.listBuckets(function(err, res) {
-  // handle results
-});
-
-/* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
- * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
- * you'll need to use 'putObject' instead.
- * see doc : https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
- */
-s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
-```
-
-### Java
-
-Import the AWS SDK S3 library.
-With maven, it can be done with the following dependency :
-
-```xml
-<dependency>
-  <groupId>software.amazon.awssdk</groupId>
-  <artifactId>s3</artifactId>
-  <version>2.21.35</version>
-</dependency>
-```
-
-Make sur to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
-
-Below is a sample Java class, written in Java 21, listing the objects of all buckets :
-
-```java
-import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
-import software.amazon.awssdk.services.s3.S3Client;
-import software.amazon.awssdk.services.s3.model.Bucket;
-import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
-
-import java.net.URI;
-import java.util.List;
-
-public class CleverCloudCellarDemoApplication {
-
-    // replace those values with your own keys, load them from properties or env vars
-    private static final String CELLAR_HOST = "";
-    private static final String CELLAR_KEY_ID = "";
-    private static final String CELLAR_KEY_SECRET = "";
-
-    public static void main(String[] args) {
-        // initialize credentials with Cellar Key ID and Secret
-        // you can also use `EnvironmentVariableCredentialsProvider` by setting AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env vars
-        var credentialsProvider = StaticCredentialsProvider.create(AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET));
-
-        // create a client builder
-        var s3ClientBuilder = S3Client.builder()
-                // override the S3 endpoint with the cellar Host (starting with 'https://'
-                .endpointOverride(URI.create(CELLAR_HOST))
-                .credentialsProvider(credentialsProvider);
-
-        // initialize the s3 client
-        try (S3Client s3 = s3ClientBuilder.build()) {
-            // list buckets
-            List<Bucket> buckets = s3.listBuckets().buckets();
-            buckets.forEach(bucket -> {
-                // list bucket objects
-                var listObjectsRequest = ListObjectsRequest.builder().bucket(bucket.name()).build();
-                var objects = s3.listObjects(listObjectsRequest).contents();
-                // handle results
-            });
-
-        }
+  // Create the parameters for calling createBucket
+  const bucketParams = {
+    Bucket : '<my-bucket-name>',
+    CreateBucketConfiguration: {
+      LocationConstraint: ''
     }
-}
-```
+  };
 
-See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
+  // call S3 to create the bucket
+  s3.createBucket(bucketParams, function(err, data) {
+    // handle results
+  });
 
-### Python
+  // Call S3 to list the buckets
+  s3.listBuckets(function(err, res) {
+    // handle results
+  });
 
-This has been tested against python 3.6
+  /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
+   * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
+   * you'll need to use 'putObject' instead.
+   * see doc : https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+   */
+  s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
+  ```
 
-This script uses boto, the old implementation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. For the moment, the host endpoint is `cellar-c2.services.clever-cloud.com` (but check in the clever cloud console).
+  {{< /tab >}}
 
-```python
-from boto.s3.key import Key
-from boto.s3.connection import S3Connection
-from boto.s3.connection import OrdinaryCallingFormat
+  {{< tab >}}
+  **Java**
 
-apikey='<key>'
-secretkey='<secret>'
-host='<host>'
+  Import the AWS SDK S3 library. Maven uses the following dependency to do so :
 
-cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
-conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
+  ```xml
+  <dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>s3</artifactId>
+    <version>2.21.35</version>
+  </dependency>
+  ```
 
-b = conn.get_all_buckets()
-print(b)
+  Make sure to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
 
-"""
-In order to share access to non-public files via HTTP, you need to get a presigned url for a specific key
-the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
-you'll need to use 'putObject' instead.
-see doc : https://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
-"""
-b[0].generate_url(60)
-```
+  Below is a sample Java class, written in Java 21, listing the objects of all buckets :
 
-### Active Storage (Ruby On Rails)
+  ```java
+  import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+  import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+  import software.amazon.awssdk.services.s3.S3Client;
+  import software.amazon.awssdk.services.s3.model.Bucket;
+  import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
 
-[Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
-you must configure a S3 service with a custom endpoint.
+  import java.net.URI;
+  import java.util.List;
 
-Use this configuration in your `config/storage.yml`:
+  public class CleverCloudCellarDemoApplication {
 
-```yaml {filename="config/storage.yml"}
-cellar:
-  service: S3
-  access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
-  secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
-  endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
-  region: 'us-west-1'
-  force_path_style: true
-  bucket: mybucket
-```
+      // replace those values with your own keys, load them from properties or env vars
+      private static final String CELLAR_HOST = "";
+      private static final String CELLAR_KEY_ID = "";
+      private static final String CELLAR_KEY_SECRET = "";
 
-A `region` parameter must be provided, although it is not used by Cellar.
-The region value is used to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception will be raised : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
+      public static void main(String[] args) {
+          // initialize credentials with Cellar Key ID and Secret
+          // you can also use `EnvironmentVariableCredentialsProvider` by setting AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env vars
+          var credentialsProvider = StaticCredentialsProvider.create(AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET));
 
-`force_path_style` must be set to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
+          // create a client builder
+          var s3ClientBuilder = S3Client.builder()
+                  // override the S3 endpoint with the cellar Host (starting with 'https://'
+                  .endpointOverride(URI.create(CELLAR_HOST))
+                  .credentialsProvider(credentialsProvider);
+
+          // initialize the s3 client
+          try (S3Client s3 = s3ClientBuilder.build()) {
+              // list buckets
+              List<Bucket> buckets = s3.listBuckets().buckets();
+              buckets.forEach(bucket -> {
+                  // list bucket objects
+                  var listObjectsRequest = ListObjectsRequest.builder().bucket(bucket.name()).build();
+                  var objects = s3.listObjects(listObjectsRequest).contents();
+                  // handle results
+              });
+
+          }
+      }
+  }
+  ```
+
+  See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
+  {{< /tab >}}
+
+{{< tab >}}
+  **Python**
+
+  Tested with Python 3.6.
+
+  This script uses boto, the old implementation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. The host endpoint is `cellar-c2.services.clever-cloud.com` (verify the `CELLAR_ADDON_HOST` variable value in the Clever Cloud console, from the **Information** option).
+
+  ```python
+  from boto.s3.key import Key
+  from boto.s3.connection import S3Connection
+  from boto.s3.connection import OrdinaryCallingFormat
+
+  apikey='<key>'
+  secretkey='<secret>'
+  host='<host>'
+
+  cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
+  conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
+
+  b = conn.get_all_buckets()
+  print(b)
+
+  """
+  In order to share access to non-public files via HTTP, you need to get a presigned url for a specific key
+  the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
+  you'll need to use 'putObject' instead.
+  see doc : https://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
+  """
+  b[0].generate_url(60)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab >}}
+  **Active Storage (Ruby On Rails)**
+
+  [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
+  you must configure a S3 service with a custom endpoint.
+
+  Use this configuration in your `config/storage.yml`:
+
+  ```yaml {filename="config/storage.yml"}
+  cellar:
+    service: S3
+    access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
+    secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
+    endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
+    region: 'us-west-1'
+    force_path_style: true
+    bucket: mybucket
+  ```
+
+  Although the `region` parameter appears, it's not used by Cellar. The region value serves to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception would raise : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
+
+  Set `force_path_style` to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
+  {{< /tab >}}
+
+{{< /tabs >}}
 
 ## Public bucket
 
-You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. Writes won't be allowed to anyone that is not authenticated.
+You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
 
 {{< callout type="warning" >}}
-  This will make all of your bucket's objects publicly available to anyone. Be careful that there are no objects you do not want to be publicly exposed.
+  This make all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want to be publicly exposed (like your feet pics collection).
 {{< /callout >}}
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
@@ -357,13 +369,13 @@ If needed, you can delete this policy by using:
 s3cmd delpolicy s3://<bucket-name>
 ```
 
-All of your objects should now be restrained to their original ACL.
+The original ACL should apply to all of your objects after that.
 
 ## CORS Configuration
 
-You can set a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration on your buckets if you need to share resources on websites that do not have the same origin as the one you are using.
+You can set a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration on your buckets if you need to share resources on websites that don't have the same origin as the one you are using.
 
-Each CORS configuration can contain multiple rules. Those are defined using an XML document:
+Each CORS configuration can contain multiple rules, defined in an XML document:
 
 ```xml
 <CORSConfiguration>
@@ -385,15 +397,19 @@ Each CORS configuration can contain multiple rules. Those are defined using an X
 
 Here this configuration has two `CORS` rules:
 
-- The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. `PUT`, `POST` and `DELETE` methods are allowed to be used by the cross-origin request. Then, all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header are allowed using `AllowedHeaders *`. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
+- The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. Allowed cross-origin request methods are `PUT`, `POST` and `DELETE`. Using `AllowedHeaders *` allows all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
 - The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
 
-{{< callout type="warning" >}}
+{{< callout type="info" >}}
 
 **Updating the CORS configuration replaces the old one**  
-If you update your CORS configuration, the old configuration will be replaced by the new one. Be sure to save it before you update it if you ever need to rollback.
+If you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to rollback.
 
 {{< /callout >}}
+
+{{% steps %}}
+
+### View and save your current CORS configuration
 
 To view and save your current CORS configuration, you can use `s3cmd info`:
 
@@ -401,29 +417,33 @@ To view and save your current CORS configuration, you can use `s3cmd info`:
 s3cmd -c s3cfg -s info s3://your-bucket
 ```
 
+### Set the CORS configuration
+
 You can then set this CORS configuration using `s3cmd`:
 
 ```bash
 s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket
 ```
 
-If you need to rollback, you can either set the old configuration or completely drop it:
+If you need to **rollback**, you can either set the old configuration or completely drop it:
 
 ```bash
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
 
+{{% /steps %}}
+
 ## Static hosting
 
 You can use a bucket to host your static website, this [blog post](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describes how to. Be aware that SPA applications won't work because Clever Cloud proxy serving the bucket needs to find an HTML file that match the route.
 
-For example if your path is `/login` you need to have a file `login.html` because the `index.html` is not the default entrypoint to handle the path.
+For example if your path is `/login` you need to have a file `login.html` because the `index.html` isn't the default entrypoint to handle the path.
 
 You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
 
 ## Troubleshooting
 
-{{% details title="SSL error with s3cmd" %}}
+{{% details title="SSL error with s3cmd" closed="true" %}}
 
 If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
 
@@ -440,7 +460,7 @@ Clever Cloud certificate covers `*.cellar-c2.services.clever-cloud.com` but not 
 Solve it by **forcing s3cmd to use path style endpoint** with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
 {{% /details %}}
 
-{{% details title="I can't delete a bucket/Cellar add-on" %}}
+{{% details title="I can't delete a bucket/Cellar add-on" closed="true" %}}
 
 The buckets need to be empty before you can delete them. Solve this error by deleting the content of your bucket using a [bucket management option](#managing-your-buckets).
 

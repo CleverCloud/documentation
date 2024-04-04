@@ -175,7 +175,7 @@ not its name.
 
 * `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
-* `logplex_token` - Deprecated, do not use it.
+* `logplex_token` - Deprecated, don't use it.
 
 * `options` - String -> String map with options.
 

@@ -3,5 +3,9 @@ title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 description:
 date: {{ .Date }}
 draft: true
-#type: docs
+type: docs
 ---
+
+{{< hextra/hero-subtitle >}}
+  Page short description.
+{{< /hextra/hero-subtitle >}}

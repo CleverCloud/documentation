@@ -48,8 +48,6 @@ You can point your domain name to Clever Cloud either with a CNAME record or wit
 With a CNAME record, your DNS configuration is always up-to-date.
 Using A records will require you to keep the DNS configuration up-to-date manually.
 
-Domain names linked to Clever Cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
-
 We also support wildcard personal domain names, to do so use the standard pattern to describe it: `*.example.com`
 
 ### Your Application Runs in the Europe/Paris ('PAR') Zone

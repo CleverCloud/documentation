@@ -17,7 +17,7 @@ aliases:
 type: docs
 ---
 {{< hextra/hero-subtitle >}}
-  Cellar is S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
+  Cellar is a S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
 
 {{< /hextra/hero-subtitle >}}
 
@@ -38,7 +38,7 @@ Click on your Cellar add-on in your deployed services list to see its menu.
 From **Addon Dashboard**, insert the name of your bucket.
 
 {{< callout type="info">}}
-  Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region.
+  Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region. bucket names can't use underscores `(_)`.
 {{< /callout >}}
 
 #### Create bucket
@@ -98,7 +98,7 @@ alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
 
 ## Managing your buckets
 
-There are several ways to manage your buckets, find here a list of option.
+There are several ways to manage your buckets, find in this section a list of options.
 
 ### Using S3 clients
 
@@ -109,7 +109,7 @@ Some clients allows you to upload files, list them, delete them, etc, like:
 
 This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/discussions/new?category=general).
 
-### Using s3cmd
+### Using s3cmd command line tools
 
 `s3cmd` allows you to manage your buckets using its commands, after [configuring it on your machine](#with-s3cmd)
 
@@ -122,7 +122,7 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
   s3cmd put --acl-public image.jpg s3://bucket-name
   ```
   
-  The file is then be publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
+  The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
   {{< tab >}}
@@ -145,11 +145,6 @@ s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
 ```
 
 Then, create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
-
-{{< callout type="info" >}}
-  New cellar add-ons supports the `v4` signature algorithm from S3.
-  If you are still using an old account (`cellar.services.clever-cloud.com`), make sure your client configuration uses the `v2` signature algorithm. The `s3cmd` configuration file provided by the add-on's dashboard is already configured.
-{{< /callout >}}
 
 ## Using AWS SDK
 
@@ -271,7 +266,7 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
   Tested with Python 3.6.
 
-  This script uses boto, the old implementation of the aws-sdk in python. Make sure to not use boto3, the API is completely different. The host endpoint is `cellar-c2.services.clever-cloud.com` (verify the `CELLAR_ADDON_HOST` variable value in the Clever Cloud console, from the **Information** option).
+  This script uses boto, the old implementation of the aws-sdk in python. The host endpoint is `cellar-c2.services.clever-cloud.com` (verify the `CELLAR_ADDON_HOST` variable value in the Clever Cloud console, from the **Information** option).
 
   ```python
   from boto.s3.key import Key
@@ -330,7 +325,7 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
 
 {{< callout type="warning" >}}
-  This make all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want to be publicly exposed (like your feet pics collection).
+  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want to be publicly exposed.
 {{< /callout >}}
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:

@@ -22,7 +22,19 @@ Based on Clever Cloud services, the Keycloak add-on takes advantage of all Cleve
 We have thought of the Keycloak add-on as the most convenient and ready-to-use for the most classic needs.
 To build the best product, we work with [*Please Open-it*](https://please-open.it/). They have been recognized experts in authentication and Keycloak solutions for years. Together, we built the most efficient and straightforward Keycloak service.
 
-## Technical preview. What does that mean ?
+## Technical preview. What does that mean?
+
+We are proud to release a great product, fit for the industry, and the easiest to use we can do.
+
+To do that, we need feedback. We also want to be sure we have worked in a good direction. Hence, we have to fire-test the product.
+
+During that time:
+- Pricing may evolve
+- Feature consistency is battle-tested
+- UX and interface may evolve
+- Bug and potential issues are deeply sought
+
+Suggestions are welcome!
 
 ## Key features
 With the Keycloak add-on, you have access to a wide panel of services such as:
@@ -86,7 +98,8 @@ The admin interface is accessible on the `/admin` endpoint:
 > Here, the URL comes from the information panel in the console and we add `/admin` at the end.
 
 ### Admin User and Password
-__At your first connection, you will have to change your password__
+- A default user and password is provided in the Java application's environment variables
+- __At your first connection, you will have to change the password__
 
 ### Realms management
 We recommend using __as few Realm as possible__. That is a cost factor in Keycloak by impacting the performances significantly.
@@ -120,4 +133,11 @@ Keycloak on Clever Cloud is the easiest way to set it up, but you can go further
 Additionally to the base plan, we add an extra cost for maintenance, configuration, and platform cost. **It is free during the BETA deployment, time for us to adjust the cost**
 
 ### Known issues
-- Java application failled to deployed
+#### Java application deployment may fail.
+
+> Sometimes, application dependencies such as PostgreSQL may take a longer time to be started. Wait and relaunch the deployment to fix this issue
+
+- On the `Overview` tab from the Java application page
+- Click on `RE-BUILD AND RESTART`
+
+

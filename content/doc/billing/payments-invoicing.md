@@ -66,6 +66,6 @@ Mandate:
 
 ### About invoices issuance and notifications
 
-As explained in the [Monthly Invoice documentation]({{< ref "doc/billing/unified-invoices.md#monthly-invoice" >}}), we issue an invoice at the beginning of every month.
-We attach the invoice to an email we send you.
-In accordance with SEPA rules and the mandate your agreed to, this email will notify you that a debit we be attempted 5 days after invoice issuance.
+As explained in the [Monthly Invoice documentation]({{< ref "doc/billing/unified-invoices.md#monthly-invoice" >}}), Clever Cloud issues an invoice at the beginning of every month.
+The invoice is emailed to you.
+In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.

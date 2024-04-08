@@ -79,12 +79,16 @@ For specific services performed by the support teams, specific invoices can be c
 
 For each organisation it is possible to register one or more payment methods ([see list of payment methods here]](/doc/billing/payments-invoicing/)). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the "Pay" button.
 
-## Unpaid invoices
+## Payments and reminders
 
-If a bill is unpaid, several steps are taken before the service is cut off:
+As long as an invoice remains *pending*, we will perform these actions on specific days: 
 
-* email reminders (on the 5th, 10th, 15th, 20th, 21st, 22nd, 23rd, 24th and 25th of each month)
-* an announcement of the cut-off from the 15th of the month
-* the effective termination of services and blocking of deployments (variable date)
+* Try to issue an automatic payment using your favorite payment method everyday from the
+  5th to the 15th day after issuing the invoice, then every 5 days after that.
+* Send a reminder via email every 5 days if the payment remains unsuccessful.
+* Shutdown of your services everyday starting day 31 after invoice issue.
+
+This schedule can be adapted according to your company's payment delays.
+Please reach out to us via the support to ensure the best experience.
 
 Support and access to your account will remain available to regularise non-payment situations.

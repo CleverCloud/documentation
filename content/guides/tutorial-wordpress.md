@@ -47,7 +47,7 @@ define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
 {{< callout type="warning" >}}
-Excepting MySQL DEV plan, you have to figure the port out in `wp-config.php` with the environment variable `MYSQL_ADDON_HOST` because it is not the default port which is used.
+**Make sure you use the port we give you** in `wp-config.php`! Use the `MYSQL_ADDON_PORT` environment variable for that. We do **not** use the default MySQL port.
 {{< /callout >}}
 
 ### SSL Configuration

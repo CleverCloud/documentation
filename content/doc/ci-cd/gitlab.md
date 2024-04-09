@@ -18,7 +18,7 @@ To use a component, add this snippet to your `.gitlab-ci.yml` file:
 
 ```yaml
 include:
-  - component: $CI_SERVER_HOST/$CI_PROJECT_PATH/<component-name>@~latest
+  - component: $CI_SERVER_HOST/<CI_PROJECT_PATH>/<component-name>@~latest
 ```
 
 {{% content/ci-cd-configuration %}}
@@ -29,13 +29,35 @@ For example, to deploy any commit on your production app, use:
 
 ```yaml
 include:
-  - component: $CI_SERVER_HOST/$CI_PROJECT_PATH/deploy-to-prod@~latest
+  - component: $CI_SERVER_HOST/<CI_PROJECT_PATH>/deploy-to-prod@~latest
 ```
 
 This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) triggers a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
 
 - `APP_ID`: Find it at the top right in [Clever Cloud Console](https://console.clevercloud.com), in your application tab.
 - `CLEVER_TOKEN` and `CLEVER_SECRET`
+
+### `<CI_PROJECT_PATH>` configuration
+
+In the project you want to deploy, replace `<CI_PROJECT_PATH>` with the actual path of the components, otherwise this variable fetches your project current path (which doesn't host the CI/CD components). Depending on your platform, path can be different.
+
+#### On gitlab.com
+
+```yaml
+- component: $CI_SERVER_HOST/CleverCloud/clever-cloud-pipeline/deploy-to-prod@~latest
+```
+
+#### On [Heptapod](https://developers.clever-cloud.com/doc/addons/heptapod/)
+
+```yaml
+- component: $CI_SERVER_HOST/pipelines/clever-cloud-pipeline/deploy-to-prod@~latest
+```
+
+#### On your self-hosted instance
+
+```yaml
+- component: $CI_SERVER_HOST/<group>/<project>/deploy-to-prod@~latest
+```
 
 ### Deploy from a self-hosted GitLab instance
 

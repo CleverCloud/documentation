@@ -30,7 +30,7 @@ To do that, we need feedback. We also want to be sure we have worked in a good d
 
 During that time:
 - Pricing may evolve
-- addon management fees are free
+- add-on management fees are free
 - Feature consistency is battle-tested
 - UX and interface may evolve
 - Bug and potential issues are deeply sought
@@ -107,7 +107,7 @@ The admin interface is accessible on the `/admin` endpoint:
 We recommend using __as few Realm as possible__. That is a cost factor in Keycloak by impacting the performances significantly.
 
 Realms can be managed in two way
-1. __RECOMMENDED:__ using Clever Cloud's Keycloak addon environment variables
+1. __RECOMMENDED:__ using Clever Cloud's Keycloak add-on environment variables
 - In your Keycloak java application, go to the `Environment variables` panel and set as many Realms you need, separate by `,`.
 - Rebuild and redeploy your Java application after the change
 
@@ -141,7 +141,7 @@ It starts with
 We add services management fees for maintenance, configuration, platform costs, and support. During the technical review, this service management is free.
 
 Hence, the total price by month for the base plan is (according to the [pricing page](https://www.clever-cloud.com/pricing/)):
-- `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + `addon management fees` (O€) = 31€/month
+- `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + `add-on management fees` (O€) = 31€/month
 
 > You can go further and adjust the flavor of your JAVA instance or database to fit your needs. We provide [different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/).
 

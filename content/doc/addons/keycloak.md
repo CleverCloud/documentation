@@ -121,9 +121,22 @@ Realms can be managed in two way
 ### Custome Themes and Plugins
 We used FSBucket to install themes or plugins. To deploy a custom theme or custom plugins. Download them into the respective `Theme` or `providers` folder in your FSBucket.
 
-### Export and Import
-If you export your Keycloak. An export file will be created in your FSBuckeet, under the `Export` folder.
-To import data from another Keycloak. You can download your data in the `Import` folder in your FSBucket.
+### Exporting data
+There are two ways to export in Keycloak:
+- A partial export using the Keycloak console
+     - from the `Realm Settings` panel
+     - On the top right, click on the dropdown`action` menu
+     - Select `partial Export`
+- A cold export can be done at the start
+
+> This is a total export, including the client's secrets and hashed password
+
+- Set in the environment variables tab of the Keycloak Java application from the Clever Cloud console:
+    - `CC_EXPORT_REALM`
+- restart the Java application from the Clever Cloud console
+
+### Importing data
+Importing Realm is done by adding priory exported in the `Import` folder in the associated FSBucket. After restarting the Java application, they would be imported.
 
 ## Security and updates
 The Keyclaok add-on is a fully managed application, you don't have to select a particular version. Still, it receives updates for both features and security, that we will manage for you with continuously upgraded versions over time.

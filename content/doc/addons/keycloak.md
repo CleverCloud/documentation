@@ -126,11 +126,32 @@ To import data from another Keycloak. You can download your data in the `Import`
 ## Security and updates
 The Keyclaok add-on is a fully managed application, you don't have to select a particular version. Still, it receives updates for both features and security, that we will manage for you with continuously upgraded versions over time.
 After being updated, your Keycloak add-on could need to be restarted.
+
 ## Plans
-### Base price
-Keycloak on Clever Cloud is the easiest way to set it up, but you can go further and adjust the flavor of your instance, database, or cache. We provide [different plans for Java and MySQL](https://www.clever-cloud.com/pricing/).
-### Software management and set-up
-Additionally to the base plan, we add an extra cost for maintenance, configuration, and platform cost. **It is free during the BETA deployment, time for us to adjust the cost**
+### Technical Review base plan
+Keycloak on Clever Cloud is the easiest way to set it up a ready-to-use Keycloak.
+
+It start with
+- Java 17: XS
+- PostgreSQL: XS Tiny Space
+- FSBucket
+
+We add a services management fees for maintenance, configuration, and platform cost. During the technical review, this service management is free.
+
+Hence, the total price by month for the base plan is (according to the [pricing page](https://www.clever-cloud.com/pricing/)):
+- `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + addon management fees = 31€/month
+
+> You can go further and adjust the flavor of your JAVA instance or database to fit your need. We provide [different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/).
+
+#### Technical Review base plan sizing
+
+Even if the Keycloak may handle a heavy traffic and an important number of simultaneaous connection, we suggest the following recommandation according to [Keycloak](https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing):
+- 5 login/s
+- 90 credential grants/s
+- 70 refresh token/s
+
+We are benshmarking for more precise limitations
+
 
 ### Known issues
 #### Java application deployment may fail.

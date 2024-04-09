@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Keycloak
-shortdesc: This add-on provides a Keycloak single sign-on and indentity and access management (IAM) solution based on existing Clever Cloud services and taking the adventage of the *Please open-it* experiences, our Keycloak expert partner.
+shortdesc: This add-on provides a Keycloak single sign-on and indentity and access management (IAM) solution based on existing Clever Cloud services and taking the advantage of the *Please open-it* experiences, our Keycloak expert partner.
 tags:
 - addons
 keywords:

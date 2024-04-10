@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Keycloak
-shortdesc: This add-on provides a Keycloak single sign-on and identity and access management (IAM) solution based on existing Clever Cloud services and taking advantage of the *Please open-it* experiences, our Keycloak expert partner.
+shortdesc: This add-on provides a one-click Keycloak single sign-on and identity and access management (IAM) solution based on existing Clever Cloud services and taking advantage of the *Please open-it* experiences, our Keycloak expert partner.
 tags:
 - addons
 keywords:
@@ -17,10 +17,9 @@ aliases:
 type: docs
 ---
 
-Keycloak is an open-source identity and access management (IAM) solution that gives you powerful features to secure applications and services.
-Based on Clever Cloud services, the Keycloak add-on takes advantage of all Clever Cloud features such as monitoring, scalability, high level of SLA, and simplicity.
-We have thought of the Keycloak add-on as the most convenient and ready-to-use for the most classic needs.
-To build the best product, we work with [*Please Open-it*](https://please-open.it/). They have been recognized experts in authentication and Keycloak solutions for years. Together, we built the most efficient and straightforward Keycloak service.
+Keycloak is an open-source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organization in just one click. And it obviously leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
+To fit the most common needs, the Keycloak add-on comes with batteries included : sensible defaults, realms import/export for easy migration, Clever Cloud SSO, Keycloak Metrics, default theme, etc.
+We have partnered with [*Please Open-it*](https://please-open.it/) to offer the most efficient and straightforward Keycloak service. They have been recognized experts for years and are a go-to reference for advanced deployments and consulting.
 
 ## Technical preview. What does that mean?
 
@@ -29,11 +28,11 @@ We are proud to release a great product, fit for the industry, and the easiest t
 To do that, we need feedback. We also want to be sure we have worked in a good direction. Hence, we have to fire-test the product.
 
 During that time:
-- Pricing may evolve
-- add-on management fees are free
 - Feature consistency is battle-tested
 - UX and interface may evolve
 - Bug and potential issues are deeply sought
+- Features and pricing may evolve
+- Free of charge service management fees
 
 Suggestions are welcome!
 
@@ -49,29 +48,25 @@ With the Keycloak add-on, you have access to a wide panel of services such as:
 - Export and Import
 - Support and Maintenance
 
-Keyclaok on Clever Cloud will allow your team to effortlessly set up a tailored authentication and access management solution, that can be adjusted to your needs and workloads. We also provide expertizing with our partner [*Please Open-it*](https://please-open.it/) in case of needs.
+Keycloak on Clever Cloud will allow your team to effortlessly set up a tailored authentication and access management solution, that can be adjusted to your needs and workloads. We also provide expertizing with our partner [*Please Open-it*](https://please-open.it/) in case of needs.
 
 ## A specific use? Going further with Please Open-it!
-[*Please Open-it*](https://please-open.it/) is not only an expertized company helping us to build a great add-on. They have years of experience in authentication and access management, and they are used to help companies configure and architect their tools.
+The Clever Cloud Keycloak add-on is an efficient and affordable service to fit the most common needs. However, realizing how central and criticial authentication needs are for companies, we decided to tackle the issue and recommend expert advice for the most complex and loaded systems.
 
-Realizing how central such tooling needs for companies. We decided to tackle the need and provide expert advice and help as demand for the most complex and loaded systems.
-
-With [*Please Open-it*](https://please-open.it/), we are proud to provide an efficient and affordable service to fit the most common needs.
-However, you may need to address the most complex and specific use case!
-__[*Please Open-it*](https://please-open.it/) provide Keycloak expertise on demand. [Reach us for more information](mailto:sales@clever-cloud.com)__.
+[*Please Open-it*](https://please-open.it/) are not only the Keycloak experts who helped us building a great add-on. They have years of experience in authentication and access management, and are here to help architect and configure complex authentication projects. [Contact them directly for more information](mailto:sales@clever-cloud.com)__.
 
 ## How it works?
-When you subscribe to the Keyckloak add-on, we automatically set a Java instance based on a preconfigured Keycloak release built-in with our partner [*Please Open-it*](https://please-open.it/). It comes with the required PostgreSQL database and an FSBucket used for themes, plugging, and import or export.
-
-We have chosen to let you see and manage these companion add-ons in the Console so that you can adjust them to your needs. You can change their settings and use the Clever Cloud ability to migrate from an XS-flavored database to another one if required. 
-However, we thought the basic setup to power the most common usage. It should be able to handle millions of simultaneous connections and suits a majority of needs.
-
-> You can also activate auto-scalability (horizontal and/or vertical scaling)
+When you subscribe to the Keycloak add-on, we automatically deploy a Java instance with Keycloak pre-loaded and configured. We also deploy the required PostgreSQL database and an FSBucket used for themes, pluggins and import/export storage needs. 
 
 By default, Keycloak on Clever Cloud comes with small-sized add-ons:
 - Java 17: XS
 - PostgreSQL: XS Tiny Space
 - FSBucket
+
+We have sized those resources to power the most common usage. It should be able to handle millions of simultaneous connections and suits a majority of needs.You can manage and adjust these resources directly in the Console to fit your needs. You can for example change their settings, migrate from an XS-flavored database to another if required, etc. Please note that this is a feature available in the Tech Preview and may change in the future.
+
+> You can also activate auto-scalability (horizontal and/or vertical scaling)
+
 
 ## Create Keycloak add-on
 ### Web Console
@@ -79,15 +74,15 @@ By default, Keycloak on Clever Cloud comes with small-sized add-ons:
 2. Select the Keycloak add-on.
 3. You can skip linking the add-on to an application, it won't be needed.
 4. Enter the name of your Keycloak add-on and select the zone where you wish to deploy it.
-5. It's done!
+5. That's it !
 ### CLI
 1. Make sure you have `clever-tools` installed locally. Report to the [getting started]({{< ref `doc/cli/getting_started.md` >}}) guide if needed.
 2. List the available plans and options for Matomo: `clever addon providers show Keycloak`.
-3. In your terminal, you can then run `clever addon create Keyclaok <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
+3. In your terminal, you can then run `clever addon create Keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
 Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details on application creation with Clever Tools
 
 ## Accessing the Keycloak interface
-Once you created your add-on, you can go to your Java application page in the console and __click on "Open the application"__ 
+Once you have created your add-on, you can go to the Keycloak Java runtime page in the console and __click on "Open the application"__ 
 
 ![Open the application button]({{< ref `assets/images/open_the_app_ico.png` >}})
 
@@ -104,7 +99,7 @@ The admin interface is accessible on the `/admin` endpoint:
 - __At your first connection, you will have to change the password__
 
 ### Realms management
-We recommend using __as few Realm as possible__. That is a cost factor in Keycloak by impacting the performances significantly.
+We recommend using __as few Realm as possible__ : they may significantly impact the overall performances.
 
 Realms can be managed in two way
 1. __RECOMMENDED:__ using Clever Cloud's Keycloak add-on environment variables
@@ -118,7 +113,7 @@ Realms can be managed in two way
 
 > A Realm __created by Clever Cloud's environment variables is set up with an optimized configuration__.
 
-### Custome Themes and Plugins
+### Custom Themes and Plugins
 We used FSBucket to install themes or plugins. To deploy a custom theme or custom plugins. Download them into the respective `Theme` or `providers` folder in your FSBucket.
 
 ### Exporting data
@@ -139,7 +134,7 @@ There are two ways to export in Keycloak:
 Importing Realm is done by adding priory exported in the `Import` folder in the associated FSBucket. After restarting the Java application, they would be imported.
 
 ## Security and updates
-The Keyclaok add-on is a fully managed application, you don't have to select a particular version. Still, it receives updates for both features and security, that we will manage for you with continuously upgraded versions over time.
+The Keycloak add-on is a fully managed application, you don't have to select a particular version. Still, it receives updates for both features and security, that we will manage for you with continuously upgraded versions over time.
 After being updated, your Keycloak add-on could need to be restarted.
 
 ## Pricing plans

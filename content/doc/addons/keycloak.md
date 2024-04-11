@@ -63,7 +63,8 @@ By default, Keycloak on Clever Cloud comes with small-sized add-ons:
 - PostgreSQL: XS Tiny Space
 - FSBucket
 
-We have sized those resources to power the most common usage. It should be able to handle millions of simultaneous connections and suits a majority of needs.You can manage and adjust these resources directly in the Console to fit your needs. You can for example change their settings, migrate from an XS-flavored database to another if required, etc. Please note that this is a feature available in the Tech Preview and may change in the future.
+We have sized those resources to power the most common usage. It should suit a majority of needs. You can manage and adjust these resources directly in the Console to fit your them. You can for example change their settings, migrate from an XS-flavored database to another if required, etc. Please note that this is a feature available in the Tech Preview and may change in the future.
+
 
 > You can also activate auto-scalability (horizontal and/or vertical scaling)
 

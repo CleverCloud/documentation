@@ -106,7 +106,7 @@ Realms can be managed in two way
 - In your Keycloak java application, go to the `Environment variables` panel and set as many Realms you need, separate by `,`.
 - Rebuild and redeploy your Java application after the change
 
-> to deploy two realm `realm_1`, `realm_2` just set `REALMS=realm_1,realm_2`
+> to deploy two realms `realm_1`, `realm_2` just set `REALMS=realm_1,realm_2`
 
 2. Create a Realm from the Keycloak admin console
 - On the dropdown menu from the top left corner in the Keycloak admin console, click on `create realm`.
@@ -149,7 +149,7 @@ It starts with
 We add services management fees for maintenance, configuration, platform costs, and support. During the technical review, this service management is free.
 
 Hence, the total price for 30 days for the base plan is (according to the [pricing page](https://www.clever-cloud.com/pricing/)):
-- `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + `add-on management fees` (O€) = 31€/month
+- `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + `add-on management fees` (O€) = 31€/30 days
 
 > You can go further and adjust the flavor of your JAVA instance or database to fit your needs. We provide [different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/).
 

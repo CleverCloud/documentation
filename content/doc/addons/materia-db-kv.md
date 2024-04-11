@@ -22,7 +22,7 @@ MateriaDB KV features compatibility layers allowing you to communicate with the 
 
 {{< callout type="warning" >}}
 
-**MateriaDB KV is an alpha stage product.** At Clever Cloud, we're really excited to introduce you to MateriaDB KV, currently in its alpha stage. As we fine-tune and enhance its capabilities, we invite you to join us in testing and providing valuable feedback. While MateriaDB KV holds immense potential, we advise against using it for production purposes at this time. Please be aware that during this alpha phase, all data stored within MateriaDB KV may be subject to wiping. Your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our MAteriaDB community page](https://github.com/CleverCloud/Community/discussions/categories/materiadb). Thank you for being a part of our journey towards innovation and improvement!
+**MateriaDB KV is an alpha stage product.** At Clever Cloud, we're really excited to introduce you to MateriaDB KV, currently in its alpha stage. As we fine-tune and enhance its capabilities, we invite you to join us in testing and providing valuable feedback. While MateriaDB KV holds immense potential, we advise against using the alpha release for production purposes. During this alpha phase, **all data stored within MateriaDB KV may be subject to wiping**. Your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our MAteriaDB community page](https://github.com/CleverCloud/Community/discussions/categories/materiadb). Thank you for being a part of our journey towards innovation and improvement!
 
 {{< /callout >}}
 

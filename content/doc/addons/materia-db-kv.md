@@ -14,7 +14,7 @@ draft: false
 
 {{< hextra/hero-subtitle >}}
   
-MateriaDB KV is a key-value database service based on our serverless offer MateriaDB.
+MateriaDB KV is a key-value database service based on Clever Cloud serverless offer MateriaDB.
 
 MateriaDB KV is built with compatibility layers allowing you to communicate with the database using well known and widely used protocols, SDKs and clients. Our first layer is made to be compatible with Redis (and it's variants as Reddict or Valkey) clients and SDKs.
 

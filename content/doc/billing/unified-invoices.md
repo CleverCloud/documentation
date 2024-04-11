@@ -77,7 +77,7 @@ For specific services performed by the support teams, specific invoices can be c
 
 ## Management of payment methods
 
-For each organisation it is possible to register one or more payment methods ([see list of payment methods here]](/doc/billing/payments-invoicing/)). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the "Pay" button.
+For each organisation it is possible to register one or more payment methods ([see list of payment methods here](/doc/billing/payments-invoicing/)). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the "Pay" button.
 
 ## Payments and reminders
 

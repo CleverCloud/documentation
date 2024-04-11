@@ -148,7 +148,7 @@ It starts with
 
 We add services management fees for maintenance, configuration, platform costs, and support. During the technical review, this service management is free.
 
-Hence, the total price by month for the base plan is (according to the [pricing page](https://www.clever-cloud.com/pricing/)):
+Hence, the total price for 30 days for the base plan is (according to the [pricing page](https://www.clever-cloud.com/pricing/)):
 - `JAVA XS` (16€) + `PostgreSQL XS Tiny Space` (15€) + `< 100MB FSBucket` (0€) + `add-on management fees` (O€) = 31€/month
 
 > You can go further and adjust the flavor of your JAVA instance or database to fit your needs. We provide [different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/).

@@ -30,7 +30,7 @@ MateriaDB KV features compatibility layers allowing you to communicate with the 
 
 You can use the Clever CLI to create your MateriaDB KV addon: `clever addon create kv DATABASE_NAME`
 
-Then you can set the environement variables you need to connect to your MateriaDB KV, `source <(clever addon env addon ADDON_ID -F shell)`.
+Then you can set the environment variables you need to connect to your MateriaDB KV, `source <(clever addon env addon ADDON_ID -F shell)`.
 
 Example:
 

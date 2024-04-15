@@ -69,7 +69,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 ### GUI usage
 
-We have tested the compatibilitywith some of the most popular Redis GUI:
+We have tested the compatibility with some of the most popular Redis GUI:
 
 - [Redis Insight](https://redis.com/redis-enterprise/redis-insight/)
 

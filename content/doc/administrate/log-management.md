@@ -19,25 +19,31 @@ aliases:
 type: docs
 ---
 
-Log management is currently only available through our API and [clever-tools]({{< ref "/doc/CLI" >}}). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`.
+Clever Cloud new logs stack, based on Vector and Apache Pulsar, is available for applications and through the new [Console](https://console.clever-cloud.com) dedicated section, in public beta. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse. The settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local time, to show the instances name or not. 
+
+![New logs interfaces](/images/doc/new-logs-beta.webp)
+
+During beta, you can send us your feed back through our GitHub Community:
+
+* [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
-Logs are currently retained for a maximum of 7 days, flushed daily at midnight.
-You can use log drains if a greater retention is needed.
+Logs are retained for 7 days, sometimes more for specific customers/needs. On our old stack, they are flushed daily at midnight. 
 {{< /callout >}}
 
 ## Get continuous logs from your application
 
-You can see logs with the command down below.
+Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and our [APIv4](/api/v4/#logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`.You can see logs with the command down below.
 
 ```bash
 clever logs
 ```
 
-You can also add a flag `--before` or `--after` followed by a date (ISO8601 format).
+You can add `--since`, followed by a duration or a date (ISO8601 format). The `--until` flag should be followed by a date (ISO8601 format).
 
 ```bash
-clever logs --before 2016-08-11T14:54:33.971Z
+clever logs --since 2h
+clever logs --until 2024-04-15T13:37:42Z 
 ```
 
 You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
@@ -47,7 +53,7 @@ clever logs --addon <addon_xxx>
 ```
 
 {{< callout type="warning" >}}
-   Only the last 1000 lines of logs are got by `clever logs`.
+   With add-ons, only the last 1000 lines of logs are got by `clever logs`.
 {{< /callout >}}
 
 ### Access logs

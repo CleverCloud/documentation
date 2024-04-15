@@ -88,7 +88,7 @@ Most other Redis GUI should also work.
 
 ### Supported types
 
-During this alpha stage, please note that we don't provide 100% compatibility with the Redis value types. Currently supported value types are:
+During this alpha stage, we don't provide 100% compatibility with the Redis value types. Currently supported value types are:
 
 - String
 - List

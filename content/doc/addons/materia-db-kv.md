@@ -64,7 +64,7 @@ As explained in the response to the creation command, you can set these paramete
 You can directly use the environement variables to connect to MateriaDB KV using `redis-cli`:
 
 ```bash
-redis-cli -h $KV_HOST -p $KV_PORT
+redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
 
 ### GUI usage
@@ -99,11 +99,15 @@ During this alpha stage, please note that we don't provide 100% compatibility wi
 
 During this alpha stage, please note that we don't provide 100% compatibility with the Redis API. Here you have the list of we currently supported commands:
 
-- `APPEND`:
+- `APPEND`: If `key` already exists and is a string, this command appends the value at the end of the string. If `key` does not exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case.
 
 - `AUTH`: Authenticate the current connection using the biscuit token as `password`
 
+- `CLUSTER INFO`: Indicates that cluster support is disabled, i.e. MateriaDB KV is naturally distributed and doesn't support or needs Redis clustering.
+
 - `COMMAND`: Return an array with details about every supported command.
+
+- `DBSIZE`: Return the number of keys in the currently-selected database.
 
 - `DECR`: Decrements the number stored at `key` by one. If the `key` does not exist, it is set to 0 before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.
 
@@ -113,13 +117,21 @@ During this alpha stage, please note that we don't provide 100% compatibility wi
 
 - `GET` : Get the value of key. If the key does not exist the special value nil is returned. An error is returned if the value stored at key is not a string, because `GET` only handles string values.
 
-- `GETRANGE`:
+- `GETRANGE`: Returns the substring of the string value stored at key, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So -1 means the last character, -2 the penultimate and so forth.
+
+The function handles out of range requests by limiting the resulting range to the actual length of the string.
 
 - `FLUSHDB`: Delete all the keys of the currently selected DB. This command never fails. Currently we only support the synchronous mode of `FLUSHDB`.
+
+- `HGET`: Returns the values associated with the specified fields in the hash stored at `key`. For every field that does not exist in the hash, a `nil` value is returned. Because non-existing keys are treated as empty hashes, running `HMGET` against a non-existing `key` will return a list of nil values.
+
+- `HMSET`: Sets the specified fields to their respective values in the hash stored at `key`. This command overwrites any specified fields already existing in the hash. If `key` does not exist, a new key holding a hash is created.
 
 - `HSCAN`: Incrementally iterate over fields of Hash types and their associated values. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0.
 
 - `INCR`: Increments the number stored at `key` by one. If the `key` does not exist, it is set to 0 before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.
+
+- `KEYS`: Returns all keys matching `pattern`.
 
 - `LLEN`: Returns the length of the list stored at `key`. If `key` does not exist, it is interpreted as an empty list and 0 is returned. An error is returned when the value stored at `key` is not a list.
 
@@ -154,3 +166,5 @@ During this alpha stage, please note that we don't provide 100% compatibility wi
 - `STRLEN`: Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value.
 
 - `TTL`: Returns the remaining time to live of a key that has a timeout. During the alpha phase, key timeouts aren't implemented. Nevertheless, for compatibility reasons, we support the `TTL` command. The command returns -2 if the key does not exist, it returns -1 if the key exists with no defined timeout.
+
+- `TYPE`: Returns the string representation of the type of the value stored at `key`. The different types that can be returned are: `string`, `list` and `hash`.

@@ -97,7 +97,7 @@ During this alpha stage, we don't provide 100% compatibility with the Redis valu
 
 ### Supported commands
 
-During this alpha stage, please note that we don't provide 100% compatibility with the Redis API. Here you have the list of we currently supported commands:
+During this alpha stage, we don't provide 100% compatibility with the Redis API. Find below the list of we currently supported commands:
 
 - `APPEND`: If `key` already exists and is a string, this command appends the value at the end of the string. If `key` does not exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case.
 

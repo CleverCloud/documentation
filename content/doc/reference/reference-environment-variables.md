@@ -468,6 +468,7 @@ When your Python application doesn't use one of the supported backends, with `CC
   
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
+|`ENABLE_BLACKFIRE` | Enable the Blackfire extension | false |  |
 |`CC_BLACKFIRE_SERVER_TOKEN` | The server token used to authenticate with Blackfire | ' ' | ✓ |
 |`CC_BLACKFIRE_SERVER_ID` | The server id used to authenticate with Blackfire | ' ' | ✓ |
 |`CC_BLACKFIRE_LOG_LEVEL` | Sets the verbosity of Agent’s log output | 1 | ✓ |

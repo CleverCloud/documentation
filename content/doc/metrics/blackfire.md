@@ -28,7 +28,8 @@ Before setting up your app, be sure to have a [Blackfire Account](https://www.bl
 
 ### Configuration
 
-To configure Blackfire, you need to set the environment variables `CC_BLACKFIRE_SERVER_TOKEN` and `CC_BLACKFIRE_SERVER_ID`.
+- Add ENABLE_BLACKFIRE=true environment variable to load Blackfire extension.
+- Add at least the CC_BLACKFIRE_SERVER_TOKEN and CC_BLACKFIRE_SERVER_ID environment variables.`CC_BLACKFIRE_SERVER_ID`.
 
 ### Optional configuration
 

@@ -21,5 +21,5 @@ This new feature is available for **applications only**.
 
 In this new interface you'll get better access to your instance/deployments, dark/light themes, a text filter, multiple settings (stored into your Clever Cloud account).
 
-* [Learn more about our new Logs interface](https://www.clever-cloud.com/blog/company/2024/04/15/our-new-logs-interface/) ([FR](/fr/blog/entreprise/2024/04/15/notre-nouvelle-interface-de-logs-est-disponible/))
+* [Learn more about our new Logs interface](https://www.clever-cloud.com/blog/company/2024/04/15/our-new-logs-interface/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/15/notre-nouvelle-interface-de-logs-est-disponible/))
 * [Give us feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)

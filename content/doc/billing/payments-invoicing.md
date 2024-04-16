@@ -60,13 +60,12 @@ Mandate:
 > Debit instructions are issued in the following cases:
 >
 > * when you confirm an invoice payment;
-> * on the 5th of the month, when we issue an automatic invoice on the 1st of that month, would you set your IBAN as default payment method;
-> * would the first debit fail, new attempts will be made on the 5th, 10th, 15th and 20th of that month.
+> * starting 5 days after issuing the invoice, would you set your IBAN as default payment method;
+> * would the first debit fail, new attempts will be made every day up to 15 days after invoice issuance and every 5 days after that.
 > Your rights are explained in a statement that you can obtain from your bank.
 
 ### About invoices issuance and notifications
 
-As explained in the [Monthly Invoice documentation]({{< ref "doc/billing/unified-invoices.md#monthly-invoice" >}}),
-we issue an invoice at the beginning of every month. We attach the invoice to an email we send you. In accordance with SEPA rules and the mandate your agreed to, this email will notify you that a debit we send you.
-Following SEPA rules and the mandate you agreed to, this email notifies you will be attempted the 5th of the month, so three to four days after the notification. that Clever Cloud is going to charge you on the 5th of the month, three to four days after
-the notification.
+As explained in the [Monthly Invoice documentation]({{< ref "doc/billing/unified-invoices.md#monthly-invoice" >}}), Clever Cloud issues an invoice at the beginning of every month.
+The invoice is emailed to you.
+In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.

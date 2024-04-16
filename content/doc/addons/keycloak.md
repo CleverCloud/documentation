@@ -19,7 +19,7 @@ type: docs
 
 Keycloak is an open-source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
-To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Clever Cloud SSO, Keycloak Metrics, default theme, etc.
+To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
 We have partnered with [*Please Open-it*](https://please-open.it/) to develop this add-on and to offer the most efficient and straightforward Keycloak service. They are experts for many years and are a go-to reference for advanced deployments and consulting.
 
@@ -61,7 +61,7 @@ By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 
 Those resources are dimensioned to suit a majority of needs. You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. 
 
-> You can also activate auto-scalability (horizontal and/or vertical scaling)
+> Vertical auto-scalability can be activated now, with horizontal auto-scalability set to arrive soon!
 
 Note: The setting of resource sizes manually is a Tech Preview feature that may change in the future.
 
@@ -130,7 +130,10 @@ There are two ways to export Keycloak data:
 > This is a total export, including the client's secrets and hashed password
 
 2. Set in the environment variables tab of the Keycloak Java application from the Clever Cloud console.
-    - In the Java application, set the `CC_EXPORT_REALM` environment variable to `True`;
+    - In the Java application, you can explicit Realms you want to export as arguments to  the `CC_EXPORT_REALM` environment variable;
+
+    > For instance, the following values will export Realm1 and Realm2 after a restart:
+    `CC_EXPORT_REALM=Realm_1,Realm_2`
     - restart the Java application from the Clever Cloud console.
 
 > Don't forget to apply change at the bottom of the environment variable page if you use the console.

@@ -55,3 +55,4 @@ Heptapod
 Cyberduck
 Filestash
 boto
+Blackfire

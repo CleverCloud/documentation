@@ -67,6 +67,10 @@ You can easily use MateriaDB KV with 'redis-cli', with such commands:
 source <(clever addon env addon_4997cfe3-f104-xxxx-xxxx-xxxxxxxxx -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
+
+
+You can also deploy MateriaDB KV add-ons with [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/materiadb_kv) (OpenTofu compatible).
+
 {{< callout type="info" >}}
 
 **MateriaDB KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage and keys to a maximum of 1 kB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.

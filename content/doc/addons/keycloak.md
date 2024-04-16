@@ -25,7 +25,7 @@ We have partnered with [*Please Open-it*](https://please-open.it/) to develop th
 
 ## Technical preview? What does that mean?
 
-We are proud to release great products, fit for the industry, and the easiest to use. To do that, we need your feedback. We also want to be sure we have worked in a good direction. Hence, we have to fire-test the product. That is why the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
+We are proud to release great products, fit for the industry, and the easiest to use. To do that, we need your [feedback](https://www.clever-cloud.com/fr/contact-sales/). We also want to be sure we have worked in a good direction. Hence, we have to fire-test the product. That is why the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
 
 During the Tech Preview period:
 - Features consistencies are battle-tested and may evolve; 

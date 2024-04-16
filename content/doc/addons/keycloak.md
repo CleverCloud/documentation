@@ -82,7 +82,7 @@ Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details o
 ## Accessing the Keycloak interface
 Once you have created your add-on, please go to the Console Keycloak Java runtime page and __click on "Open the application"__ 
 
-![Open the application button]({{< ref `/images/doc/open_the_app_ico.png` >}})
+{{< image "/images/doc/open_the_app_ico.png" "Open the application button" >}}
 
 You also can get the Keycloak add-on URL from the Clever Cloud console, in the information panel of your Keycloak add-on.
 

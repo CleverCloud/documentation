@@ -5,14 +5,14 @@ The healthcheck allows you to limit downtimes. Indeed, you can provide Clever Cl
 Add one (or several) environment variable as such:
 
 ```bash
-CC_HEALTH_CHECK_PATH=my/awesome/path
+CC_HEALTH_CHECK_PATH=/my/awesome/path
 ```
 
 Or
 
 ```bash
-CC_HEALTH_CHECK_PATH_0=my/awesome/path
-CC_HEALTH_CHECK_PATH_1=my/other/path
+CC_HEALTH_CHECK_PATH_0=/my/awesome/path
+CC_HEALTH_CHECK_PATH_1=/my/other/path
 ```
 
 The deployment process checks all paths. All of them must reply with a `200 OK` response code.

@@ -73,7 +73,7 @@ You can also deploy MateriaDB KV add-ons with [Terraform provider](https://regis
 
 {{< callout type="info" >}}
 
-**MateriaDB KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage and keys to a maximum of 1 kB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.
+**MateriaDB KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage, requests sent to the server can't exceed 1 kB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.
 
 {{< /callout >}}
 
@@ -81,7 +81,7 @@ You can also deploy MateriaDB KV add-ons with [Terraform provider](https://regis
 
 ### Environment variables and CLI usage
 
-To connect to a MateriaDB KV add-on, you need 3 parameters: the host, the port and a ([biscuit](https://biscuitsec.org) based) token. You can set these parameters as environment variables by doing `source <(clever addon env addon <ADDON_ID> -F shell)`. The variables set are:
+To connect to a MateriaDB KV add-on, you need 3 parameters: the host, the port and a ([biscuit](https://biscuitsec.org) based) token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
 
 * `$KV_HOST` and its alias `$REDIS_HOST`
 * `$KV_PORT` and its alias `$REDIS_PORT`
@@ -127,7 +127,7 @@ Find below the list of currently supported commands:
 | `DBSIZE` | Return the number of keys in the currently-selected database. |
 | `DECR` | Decrements the number stored at `key` by one. If the `key` does not exist, it is set to 0 before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `DEL` | Removes the specified `key`. A key is ignored if it does not exist. |
-| `EXIST` | Returns if `key` exists. |
+| `EXISTS` | Returns if `key` exists. |
 | `GET` | Get the value of key. If the key does not exist the special value nil is returned. An error is returned if the value stored at key is not a string, because `GET` only handles string values. |
 | `GETRANGE` | Returns the substring of the string value stored at key, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So -1 means the last character, -2 the penultimate and so forth. The function handles out of range requests by limiting the resulting range to the actual length of the string. |
 | `FLUSHDB` | Delete all the keys of the currently selected DB. This command never fails. Curently we only support the synchronous mode of `FLUSHDB`. |
@@ -141,7 +141,7 @@ Find below the list of currently supported commands:
 | `HSET` | Sets the specified fields to their respective values in the hash stored at `key`. This command overwrites the values of specified fields that exist in the hash. If `key` doesn't exist, a new key holding a hash is created. |
 | `INCR` | Increments the number stored at `key` by one. If the `key` does not exist, it is set to 0 before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INFO` | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans. |
-| `KEYS` | Returns all keys matching `pattern`. |
+| `KEYS` | Returns all keys matching `pattern`, can be `*` |
 | `LLEN` | Returns the length of the list stored at `key`. If `key` does not exist, it is interpreted as an empty list and 0 is returned. An error is returned when the value stored at `key` is not a list. |
 | `LPOP` | Removes and returns the first elements of the list stored at `key`. |
 | `LPUSH` | Insert all the specified values at the head of the list stored at `key`. If `key` does not exist, it is created as empty list before performing the push operations. When `key` holds a value that is not a list, an error is returned. |
@@ -158,8 +158,8 @@ Find below the list of currently supported commands:
 | `RPUSH` | Insert all the specified values at the tail of the list stored at `key`. If `key` does not exist, it is created as empty list before performing the push operation. When `key` holds a value that is not a list, an error is returned. |
 | `RPUSHX` | Inserts specified values at the tail of the list stored at `key`, only if `key` already exists and holds a list. In contrary to `RPUSH`, no operation will be performed when `key` does not yet exist. |
 | `SCAN` | Incrementally iterate over a collection of elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. |
-| `SET` | Set `key` to hold the string `value`. If `key` already holds a value, it is overwritten, regardless of its type. Value length is currently limited to 1 kB. |
-| `SELECT` | Select the logical database having the specified zero-based numeric index. In MateriaDB KV only SELECT 0 can be used, since it only supports database zero. |
+| `SET` | Set `key` to hold the string `value`. If `key` already holds a value, it is overwritten, regardless of its type. |
+| `SELECT` | Select the logical database having the specified zero-based numeric index. In MateriaDB KV only SELECT 0 can be used. |
 | `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `TTL` | Returns the remaining time to live of a key that has a timeout. During the alpha phase, key timeouts aren't implemented. Nevertheless, for compatibility reasons, we support the `TTL` command. The command returns -2 if the key does not exist, it returns -1 if the key exists with no defined timeout. |
-| `TYPE` | Returns the string representation of the type of the value stored at `key`. The different types that can be returned are: `string`, `list` and `hash`.
+| `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list` or `string`.

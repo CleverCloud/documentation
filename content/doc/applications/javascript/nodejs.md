@@ -104,6 +104,28 @@ If a `yarn.lock` file exists in your application's main folder, then the `yarn` 
 
 If none of the above package managers fit your needs, you can put your own using `CC_CUSTOM_BUILD_TOOL`.
 
+#### Example: Deploy with pnpm
+
+To deploy an  application with pnpm, set the following environment variables:
+
+```bash
+CC_NODE_BUILD_TOOL="custom"
+CC_PRE_BUILD_HOOK="npm install -g pnpm"
+CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
+```
+
+This performs the following steps:
+
+1. `CC_NODE_BUILD_TOOL` indicates that your applications is using a custom build tool
+2. `CC_PRE_BUILD_HOOK` installs `pnpm` globally
+3. `CC_CUSTOM_BUILD_TOOL` installs the dependencies and builds the app
+
+Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your environment variables, with the appropriate command to run your application. For example, to deploy an [Astro](https://astro.build/) application in a Node.js runtime, use `CC_RUN_COMMAND="pnpm start --port 8080 --host 0.0.0.0"`.
+
+{{< callout type="info" >}}
+`CC_RUN_COMMAND` depends on your framework and your stack. The one in this example starts an Astro app, [which takes the port and the host as arguments](https://docs.astro.build/en/reference/cli-reference/#--port-number). To run your app, make sure you are using the correct command by checking the accurate framework documentation.
+{{< /callout >}}
+
 ## Automatic HTTPS redirection
 
 You can use the [X-Forwarded-Proto header]({{< ref "doc/find-help/faq.md#how-to-know-if-a-user-comes-from-a-secure-connection" >}}) to enable it.

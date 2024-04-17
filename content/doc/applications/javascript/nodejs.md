@@ -108,16 +108,35 @@ If none of the above package managers fit your needs, you can put your own using
 
 To deploy an  application with pnpm, set the following environment variables:
 
-```bash
-CC_NODE_BUILD_TOOL="custom"
-CC_PRE_BUILD_HOOK="npm install -g pnpm"
-CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
-```
+
+{{< tabs items="npm, Corepack" >}}
+
+  {{< tab >}}**Install with `npm`**:
+  
+  ```bash
+  CC_NODE_BUILD_TOOL="custom"
+  CC_PRE_BUILD_HOOK="npm install -g pnpm"
+  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
+  ```
+
+  {{< /tab >}}
+
+  {{< tab >}}**Enable with Corepack**:
+  
+  ```bash
+  CC_PRE_BUILD_HOOK="corepack enable pnpm"
+  CC_PRE_BUILD_HOOK="npm install -g pnpm"
+  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
 
 This performs the following steps:
 
 1. `CC_NODE_BUILD_TOOL` indicates that your applications is using a custom build tool
-2. `CC_PRE_BUILD_HOOK` installs `pnpm` globally
+2. `CC_PRE_BUILD_HOOK` installs/enable `pnpm` globally
 3. `CC_CUSTOM_BUILD_TOOL` installs the dependencies and builds the app
 
 Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your environment variables, with the appropriate command to run your application. For example, to deploy an [Astro](https://astro.build/) application in a Node.js runtime, use `CC_RUN_COMMAND="pnpm start --port 8080 --host 0.0.0.0"`.

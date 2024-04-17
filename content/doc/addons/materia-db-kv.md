@@ -97,6 +97,14 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 MateriaDB KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
 
+### Fish shell users
+
+If you use the Fish shell, you can use the following command to set the environment variables:
+
+```fish
+clever addon env ADDON_ID -F shell | source
+```
+
 ### Supported types and commands
 
 During this alpha stage, we don't provide 100% compatibility with the Redis API. Curently supported value types are:

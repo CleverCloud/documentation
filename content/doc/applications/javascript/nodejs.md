@@ -124,8 +124,8 @@ To deploy an  application with pnpm, set the following environment variables:
   {{< tab >}}**Enable with Corepack**:
   
   ```bash
+  CC_NODE_BUILD_TOOL="custom"
   CC_PRE_BUILD_HOOK="corepack enable pnpm"
-  CC_PRE_BUILD_HOOK="npm install -g pnpm"
   CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
   ```
 

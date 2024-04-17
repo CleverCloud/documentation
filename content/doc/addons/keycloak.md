@@ -130,10 +130,10 @@ There are two ways to export Keycloak data:
 > This is a total export, including the client's secrets and hashed password
 
 2. Set in the environment variables tab of the Keycloak Java application from the Clever Cloud console.
-    - In the Java application, you can explicit Realms you want to export as arguments to  the `CC_EXPORT_REALM` environment variable;
+    - In the Java application, you can explicit Realm you want to export as arguments to  the `CC_EXPORT_REALM` environment variable;
 
-    > For instance, the following values will export Realm1 and Realm2 after a restart:
-    `CC_EXPORT_REALM=Realm_1,Realm_2`
+    > For instance, the following values will export `my_realm` after a restart:
+    `CC_EXPORT_REALM=my_realm`
     - restart the Java application from the Clever Cloud console.
 
 > Don't forget to apply change at the bottom of the environment variable page if you use the console.

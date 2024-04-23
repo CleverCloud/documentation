@@ -329,7 +329,7 @@ Cellar allows you to create policies to control the actions on your buckets. Fin
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
 
 {{< callout type="warning" >}}
-  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want to be publicly exposed.
+  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want publicly exposed.
 {{< /callout >}}
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:

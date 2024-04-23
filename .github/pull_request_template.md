@@ -9,6 +9,6 @@ _Summarize your changes here : explain what, how, and why. Be as explicict as yo
 - [ ] I've read the [contributing guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
 
 
-## Reviewes
+## Reviewers
 _Who should review these changes?_ @
 

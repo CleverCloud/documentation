@@ -48,7 +48,6 @@ Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentica
 ## Need expert advice?
 The Clever Cloud Keycloak add-on is designed to meet the most common needs. However, realizing how central and critical authentication needs are for companies, we decided to tackle the issue and recommend expert advice for the most complex and loaded systems.
 
-[*Please Open-it*](https://please-open.it/) are not only the Keycloak experts who helped us build a great add-on, but they also are recognized experts in authentication and access management, with years of experience. They are here to help architect and configure complex authentication projects. [Contact them directly for more information](mailto:sales@clever-cloud.com)__.
 
 ## How it works?
 When you create the Keycloak add-on, Clever Cloud automatically deploys:

@@ -28,7 +28,7 @@ Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/
 
 During the Tech Preview period:
 - Features consistencies are battle-tested and may evolve; 
-- UX and interface are not final and may also evolve;
+- UX and interface aren't final and may also evolve;
 - Bugs and potential issues feedback are deeply sought;
 - Features and pricing may evolve;
 - 0 € service & maintenance fees.

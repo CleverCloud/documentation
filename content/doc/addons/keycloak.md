@@ -59,7 +59,7 @@ When you create the Keycloak add-on, Clever Cloud automatically deploys:
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 - XS Java 17;
 - XS Tiny Space PostgreSQL;
-- Less than 100MB FSBucket.
+- Less than 100 MB FSBucket.
 
 Those resources are dimensioned to suit a majority of needs. You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. 
 

@@ -81,7 +81,7 @@ Note: The setting of resource sizes manually is a Tech Preview feature that may 
 Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details on add-on creation with Clever Tools.
 
 ## Accessing the Keycloak interface
-Once you have created your add-on, please go to the Console Keycloak Java runtime page and __click on "Open the application"__ 
+Once you have created your add-on, go to the Console Keycloak Java runtime page and __click on "Open the application"__ 
 
 ![Open the application button](/images/doc/open_the_app_ico.png )
 

@@ -34,7 +34,7 @@ During the Tech Preview period:
 - 0 € service & maintenance fees.
 
 ## Key features
-Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentication and access management solution, that can be adjusted to your needs and workloads. It offers a wide panel of services such as:
+Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentication and access management solution, that you can adjust to your needs and workloads. It offers a wide panel of services such as:
 - Secure Identity Management;
 - Single Sign-On (SSO);
 - Centralized Administration;

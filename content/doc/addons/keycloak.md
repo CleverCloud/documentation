@@ -51,7 +51,11 @@ The Clever Cloud Keycloak add-on is designed to meet the most common needs. Howe
 [*Please Open-it*](https://please-open.it/) are not only the Keycloak experts who helped us build a great add-on, but they also are recognized experts in authentication and access management, with years of experience. They are here to help architect and configure complex authentication projects. [Contact them directly for more information](mailto:sales@clever-cloud.com)__.
 
 ## How it works?
-When you subscribe to the Keycloak add-on, we automatically deploy a [Java](https://developers.clever-cloud.com/doc/applications/java/java-jar/) instance with Keycloak pre-loaded and configured. We also deploy a [PostgreSQL](https://developers.clever-cloud.com/doc/addons/postgresql/) database and an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) used for themes, plugins, and import/export storage needs. 
+When you create the Keycloak add-on, Clever Cloud automatically deploys:
+
+-  A [Java](https://developers.clever-cloud.com/doc/applications/java/java-jar/) instance with Keycloak pre-loaded and configured
+- A [PostgreSQL](https://developers.clever-cloud.com/doc/addons/postgresql/) database
+- An [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) used for themes, plugins, and import/export storage needs. 
 
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 - XS Java 17;

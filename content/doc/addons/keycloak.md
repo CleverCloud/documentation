@@ -74,7 +74,6 @@ Note: The setting of resource sizes manually is a Tech Preview feature that may 
 2. Select the Keycloak add-on.
 3. You can skip linking the add-on to an application, it won't be needed.
 4. Enter a name for your Keycloak add-on and select the zone where you want it to be deployed.
-5. That's it!
 ### Using the CLI
 1. Make sure you have `clever-tools` installed locally. Please refer to the [getting started]({{< ref `doc/cli/getting_started.md` >}}) guide if needed.
 2.  List the available plans and options for Keycloak: `clever addon providers show addon-keycloak`.

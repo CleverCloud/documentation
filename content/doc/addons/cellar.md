@@ -383,7 +383,7 @@ Cellar doesn't natively support creating different user accesses for the same ad
 1. Create your main Cellar add-on (we'll call it `Cellar-1`)
 2. Download `Cellar 1` s3cfg file
 3. Create a second Cellar add-on (we'll call it `Cellar-2`)
-4. Get the `ADDON ID` from `Cellar-2` dashboard ( it should look like `cellar_xxx`)
+4. Get the `ADDON ID` from `Cellar-2` dashboard (it should look like `cellar_xxx`)
 5. Create a policy for `Cellar-1` and inject the `ADDON ID` from `Cellar-2` as the user.
 
 Now, you can pass `Cellar-2` credentials to a third party to grant read-only access to `Cellar-1` buckets.

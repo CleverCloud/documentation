@@ -77,7 +77,7 @@ Note: The setting of resource sizes manually is a Tech Preview feature that may 
 ### Using the CLI
 1. Make sure you have `clever-tools` installed locally. Please refer to the [getting started]({{< ref `doc/cli/getting_started.md` >}}) guide if needed.
 2.  List the available plans and options for Keycloak: `clever addon providers show addon-keycloak`.
-3. In your terminal, you can then run `clever addon create addon-keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
+3. In your terminal, run `clever addon create addon-keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID where to create it.
 Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details on add-on creation with Clever Tools.
 
 ## Accessing the Keycloak interface

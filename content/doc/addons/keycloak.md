@@ -21,7 +21,6 @@ Keycloak is an open source identity and access management (IAM) solution that of
 
 To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
-We have partnered with [*Please Open-it*](https://please-open.it/) to develop this add-on and to offer the most efficient and straightforward Keycloak service. They are experts for many years and are a go-to reference for advanced deployments and consulting.
 
 ## Technical preview? What does that mean?
 

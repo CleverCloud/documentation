@@ -6,9 +6,9 @@ _Summarize your changes here : explain what, how, and why. Be as explicict as yo
 ## Checklist
 
 - [ ] My PR is related to an opened issue : #
-- [ ] I've read the [contributing guidelines](../CONTRIBUTING.md)
+- [ ] I've read the [contributing guidelines](/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
 
 
-## Reviewes
+## Reviewers
 _Who should review these changes?_ @
 

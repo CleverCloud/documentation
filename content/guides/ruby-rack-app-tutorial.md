@@ -71,6 +71,9 @@ The `gems.rb` or `Gemfile` file will contain our dependencies:
 source 'https://rubygems.org'
 
 gem 'rack', '~>1.5.1'
+
+
+gem "puma", "~> 6.4"
 ```
 
 We don't need any more dependencies. The `gems.rb` or `Gemfile` is mandatory to deploy
@@ -87,6 +90,7 @@ $ bundle install
 Fetching gem metadata from https://rubygems.org/..........
 Resolving dependencies...
 Using rack (1.5.2)
+Using puma (6.4.2)
 Using bundler (1.3.5)
 Your bundle is complete!
 Use `bundle show [gemname]` to see where a bundled gem is installed.

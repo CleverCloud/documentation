@@ -161,7 +161,7 @@ The Tech Preview pricing is simple: it only consists of the sum of the deployed 
 Note: During the Technical Preview, no extra service management fees are applied.
 
 
-> You can go further and adjust the flavor of your JAVA instance or database to fit your needs. We provide [different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/).
+> You can go further and adjust the flavor of your Java instance or database to fit your needs. [Different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/) are available on Clever Cloud.
 
 #### Technical Review plan sizing
 

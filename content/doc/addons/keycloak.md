@@ -139,7 +139,7 @@ There are two ways to export Keycloak data:
 > Don't forget to apply change at the bottom of the environment variable page if you use the console.
 
 ### Importing realms data
-Importing realms data is done by uploading previously exported data in the `Import` folder in the associated FSBucket. The realms data will be imported after restarting the Java application.
+Uploading previously exported data in the `Import` folder in the associated FSBucket enables importing realms data. The import process starts after restarting the Java application.
 
 ## Security and updates
 Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It is automatically upgraded and updated both for features and security.

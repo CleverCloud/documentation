@@ -62,7 +62,7 @@ By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 
 Those resources are dimensioned to suit a majority of needs. You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. 
 
-> Vertical auto-scalability can be activated now, with horizontal auto-scalability set to arrive soon!
+> Vertical auto-scalability is available for this service.
 
 Note: The setting of resource sizes manually is a Tech Preview feature that may change in the future.
 

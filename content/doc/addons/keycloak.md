@@ -24,7 +24,7 @@ To fit the most common needs, the Keycloak add-on comes with batteries included:
 
 ## Technical preview? What does that mean?
 
-Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/) to release products fit for the industry and easy to use. A technical preview enables our users to fire-test the product.  Hence, the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
+Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/) to release products fit for the industry and easy to use. A technical preview enables our users to fire-test the product. Hence, the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
 
 During the Tech Preview period:
 - Features consistencies are battle-tested and may evolve; 

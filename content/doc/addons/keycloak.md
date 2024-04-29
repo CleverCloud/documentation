@@ -149,7 +149,7 @@ After being updated, your Keycloak add-on may need to be restarted.
 
 ## Pricing plans
 ### Technical Review price plan
-The Tech Preview pricing is simple: it only consists of the sum of the deployed resources. In details, [as per the pricing plan](https://www.clever-cloud.com/pricing/), the default configuration is priced as such:
+The Tech Preview pricing consists of the sum of the deployed resources. In details, [as per the pricing plan](https://www.clever-cloud.com/pricing/), the default configuration is priced as such:
 
 | Resource                 | Price / 30 days |
 | :----------------------- | --------------: |

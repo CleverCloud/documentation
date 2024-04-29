@@ -117,7 +117,7 @@ Realms can be managed in two ways
 > A Realm __created by Clever Cloud's environment variables is set up with an optimized configuration__ such as brute-force detection and specific metrics.
 
 ### Custom Themes and Plugins
-We use [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
+Keycloak uses an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
 ### Exporting data
 There are two ways to export Keycloak data:

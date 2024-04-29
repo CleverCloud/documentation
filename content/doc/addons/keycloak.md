@@ -170,7 +170,6 @@ Even if this Keycloak add-on might handle heavy traffic and an important number 
 - 90 credential grants by the second;
 - 70 refresh tokens by second.
 
-We are benchmarking for more precise load estimates.
 
 ### Known issues
 #### Java application deployment may fail

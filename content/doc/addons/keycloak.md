@@ -123,7 +123,7 @@ Keycloak uses an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bu
 There are two ways to export Keycloak data:
 1. A partial export using the Keycloak console.
      - from the `Realm Settings` panel;
-     - On the top right, click on the dropdown`action` menu;
+     - On the top right, click the dropdown`action` menu;
      - Select `partial Export`;
      - A cold export can be done at the start.
 

@@ -173,7 +173,7 @@ Even if this Keycloak add-on might handle heavy traffic and an important number 
 We are benchmarking for more precise load estimates.
 
 ### Known issues
-#### Java application deployment may fail.
+#### Java application deployment may fail
 
 > Sometimes, application dependencies such as PostgreSQL may take a longer time to be start. Wait and relaunch the deployment to fix this issue
 

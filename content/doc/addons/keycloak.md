@@ -175,7 +175,7 @@ We are benchmarking for more precise load estimates.
 ### Known issues
 #### Java application deployment may fail.
 
-> Sometimes, application dependencies such as PostgreSQL may take a longer time to be started. Wait and relaunch the deployment to fix this issue
+> Sometimes, application dependencies such as PostgreSQL may take a longer time to be start. Wait and relaunch the deployment to fix this issue
 
 - On the `Overview` tab from the Java application page;
 - Click `RE-BUILD AND RESTART`.

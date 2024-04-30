@@ -21,7 +21,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy .NET web applications. This page explains you how to set up your application to run it on the Clever Cloud service.
+Clever Cloud allows you to deploy .NET web applications. This page explains you how to set up your application to run it with the .NET runtime.
 
 You don't need to change a lot in your application, the *requirements* helps you to configure your apps with some mandatory files to add, and properties to setup.
 
@@ -118,11 +118,31 @@ CC_DOTNET_PROFILE=Debug
 
 If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` environment variable.
 
-For instance, you can have `CC_RUN_COMMAND=./bin/Release/net6.0/myapp <options>`.
+For instance, you can have `CC_RUN_COMMAND=./bin/Release/net6.0/exherbo-x64/myapp <options>`.
 
 ### Private dependencies
 
-Support for private dependencies will be available soon.
+Clever Cloud supports private dependency management with NuGet package manager.
+
+Add the configuration file `nuget.config` :
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+ <packageSources>
+     <clear />
+     <add key="my_nuget_repo" value="%PACKAGE_REGISTRY_URI%" />
+ </packageSources>
+ <packageSourceCredentials>
+     <my_nuget_repo>
+         <add key="Username" value="%PACKAGE_REGISTRY_USERNAME%" />
+         <add key="ClearTextPassword" value="%PACKAGE_REGISTRY_PASSWORD%" />
+     </my_nuget_repo>
+ </packageSourceCredentials>
+</configuration>
+```
+
+Set environment variables in the console according to your own information : `PACKAGE_REGISTRY_URI`, `PACKAGE_REGISTRY_USERNAME` and `PACKAGE_REGISTRY_PASSWORD`
 
 {{% content/env-injection %}}
 

@@ -23,7 +23,7 @@ aliases:
 
 Clever Cloud allows you to deploy .NET web applications. This page explains you how to set up your application to run it with the .NET runtime.
 
-You don't need to change a lot in your application, the *requirements* helps you to configure your apps with some mandatory files to add, and properties to setup.
+You don't need to change a lot in your application, the *requirements* section explains how to configure your apps with some mandatory files to add, and properties to setup.
 
 {{< callout type="warning">}}
   If you encounter an issue, please contact the support.

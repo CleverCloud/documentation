@@ -51,7 +51,7 @@ Take an example with the [cc-dotnet-demo](https://github.com/CleverCloud/cc-dotn
 
 If needed, you could add the `APP_FOLDER=<your_app_folder>` environment variable to define the application folder inside the Git repository (where `.*proj` is stored).
 
-During deployment, the runtime automatically detects the `test-dotnet.csproj` file and the target framework `net8.0`. Then, it publishes the .NET project:
+During deployment, the runtime automatically detects the `cc-dotnet-demo.csproj` file and the target framework `net8.0`. Then, it publishes the .NET project:
 
 ```bash
 dotnet publish --framework net8.0 --configuration Release
@@ -64,7 +64,7 @@ No additional configuration is required (unless multiple project files or target
 If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the `CC_DOTNET_PROJ` environment variable.
 
 ```bash
-CC_DOTNET_PROJ=test-dotnet
+CC_DOTNET_PROJ=cc-dotnet-demo
 ```
 
 ### Multiple binary targets

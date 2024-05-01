@@ -24,7 +24,7 @@ To fit the most common needs, the Keycloak add-on comes with batteries included:
 
 ## Technical preview? What does that mean?
 
-Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/) to release products fit for the industry and easy to use. A technical preview enables our users to fire-test the product. Hence, the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
+Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/) to release products fit for the industry and easy to use. A technical preview enables users to fire-test the product. Hence, the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
 
 During the Tech Preview period:
 - Features consistencies are battle-tested and may evolve; 
@@ -90,31 +90,31 @@ You also can get the Keycloak add-on URL from the Clever Cloud console, in the i
 The admin interface is accessible on the `/admin` endpoint:
 
 - `iffslonattslbta6eilb-keycloak.services.clever-cloud.com/admin`
-> Here, the URL comes from the information panel in the console and we add `/admin` at the end.
+> Here, the URL comes from the information panel in the console. Note the added `/admin` at the end.
 
 ### Admin User and Password
 - A default user and password are provided in the Java application by the environment variables `CC_KEYCLOAK_ADMIN` and `CC_KEYCLOAK_ADMIN_PASSWORD`.
-- You will be asked to __change the password at your first connection__
+- __Password change requested at the first connection__
 
 ### Realms management
-We recommend using __as few realms as possible__: they may significantly impact the overall performances.
+Realm numbers significantly impact the overall performances. __Use as few realms as possible.__
 
-Realms can be managed in two ways
+There are two ways to manage Realms:
 1. __RECOMMENDED:__ by using the environment variables of the Clever Cloud Java application associated with the Keycloak add-on.
 
 - In your Keycloak java application, go to the `Environment variables` panel and declare as many realms as you need, separating each of them by `,`.
 
->  `REALMS=realm_1,realm_2` will declare two realms : `realm_1`, `realm_2`.
+>  `REALMS=realm_1,realm_2` declare two realms : `realm_1`, `realm_2`.
 
 > Don't forget to apply change at the bottom of the environment variable page if you use the console.
 
 - `Restart` your Java application after the change.
 
-2. Create a realm from the Keycloak admin console.
+2. Create a realm from the Keycloak administrator console.
 
-- On the dropdown menu from the top left corner in the Keycloak admin console, click `create realm`.
+- On the dropdown menu from the top left corner in the Keycloak administrator console, click `create realm`.
 
-> A Realm __created by Clever Cloud's environment variables is set up with an optimized configuration__ such as brute-force detection and specific metrics.
+> A Realm __created by Clever Cloud's environment variables comes with an optimized configuration__ such as brute-force detection and specific metrics.
 
 ### Custom Themes and Plugins
 Keycloak uses an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
@@ -127,25 +127,30 @@ There are two ways to export Keycloak data:
      - Select `partial Export`;
      - A cold export can be done at the start.
 
-> This is a total export, including the client's secrets and hashed password
 
-2. Set in the environment variables tab of the Keycloak Java application from the Clever Cloud console.
-    - In the Java application, you can explicit Realm you want to export as arguments to  the `CC_EXPORT_REALM` environment variable;
+2. A full export using the environment variables of the Keycloak Java application from the Clever Cloud console.
+    - Go to the Keycloak Java application in the Clever Cloud console
+    - In the Java application, you can explicitly Realm you want to export as arguments to  the `CC_EXPORT_REALM` environment variable;
 
-    > For instance, the following values will export `my_realm` after a restart:
-    `CC_EXPORT_REALM=my_realm`
+    > For instance, the following values export `my_realm` after the application restart:
+        `CC_EXPORT_REALM=my_realm`
+    
     - restart the Java application from the Clever Cloud console.
 
-> Don't forget to apply change at the bottom of the environment variable page if you use the console.
+    > Don't forget to apply change at the bottom of the environment variable page if you use the console.
+
+> This is a total export, including the client's secrets and hashed password
+
 
 ### Importing realms data
 Uploading previously exported data in the `Import` folder in the associated FSBucket enables importing realms data. The import process starts after restarting the Java application.
 
 ## Security and updates
-Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It is automatically upgraded and updated both for features and security.
-After being updated, you might need to restart your Keycloak add-on.
+Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It's automatically upgraded and updated both for features and security.
 
-> We will warn you when a restart is required.
+An add-on update might require a restart.
+
+> Required actions are notified by email.
 
 ## Pricing plans
 ### Technical Review price plan
@@ -158,7 +163,7 @@ The Tech Preview pricing consists of the sum of the deployed resources. In detai
 | FS Bucket < 100 MB       |              0€ |
 | Service and Management   |              0€ |
 | **Total**                    |             **31€** |
-Note: During the Technical Preview, no extra service management fees are applied.
+Note: During the Technical Preview, there are no extra service management fees applied..
 
 
 > You can go further and adjust the flavor of your Java instance or database to fit your needs. [Different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/) are available on Clever Cloud.
@@ -174,7 +179,7 @@ Even if this Keycloak add-on might handle heavy traffic and an important number 
 ### Known issues
 #### Java application deployment may fail
 
-> Sometimes, application dependencies such as PostgreSQL may take a longer time to be start. Wait and relaunch the deployment to fix this issue
+> Sometimes, application dependencies such as PostgreSQL may take a longer time to start. Wait and relaunch the deployment to fix this issue
 
 - On the `Overview` tab from the Java application page;
 - Click `RE-BUILD AND RESTART`.

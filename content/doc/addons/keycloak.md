@@ -143,7 +143,7 @@ Uploading previously exported data in the `Import` folder in the associated FSBu
 
 ## Security and updates
 Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It is automatically upgraded and updated both for features and security.
-After being updated, your Keycloak add-on may need to be restarted.
+After being updated, you might need to restart your Keycloak add-on.
 
 > We will warn you when a restart is required.
 

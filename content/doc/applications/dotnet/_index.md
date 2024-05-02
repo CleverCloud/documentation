@@ -21,9 +21,9 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy .NET web applications. This page will explain you how to set up your application to run it on our service.
+Clever Cloud allows you to deploy .NET web applications. This page explains you how to set up your application to run it with the .NET runtime.
 
-You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some mandatory files to add, and properties to setup.
+You don't need to change a lot in your application, the *requirements* section explains how to configure your apps with some mandatory files to add, and properties to setup.
 
 {{< callout type="warning">}}
   If you encounter an issue, please contact the support.
@@ -37,7 +37,7 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 ### .NET version
 
-The default version used on Clever Cloud is `8.0`. You can change it by setting the `CC_DOTNET_VERSION` environment variable to `6.0`. We don't support non-LTS and older versions.
+The default version used on Clever Cloud is `8.0`. You can change it by setting the `CC_DOTNET_VERSION` environment variable to `6.0`. Clever Cloud doesn't support non-LTS and older versions.
 
 ### Requirements
 
@@ -47,11 +47,11 @@ Be sure that:
 * You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
 * You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
-Let's take an example with the [simple-feed-reader project](https://github.com/dotnet-architecture/simple-feed-reader).
+Take an example with the [cc-dotnet-demo](https://github.com/CleverCloud/cc-dotnet-demo).
 
-First, you need to add the `APP_FOLDER=SimpleFeedReader` environment variable to define the application folder inside the Git repository.
+If needed, you could add the `APP_FOLDER=<your_app_folder>` environment variable to define the application folder inside the Git repository (where `.*proj` is stored).
 
-During deployment, the runtime automatically detects the `SimpleFeedReader.csproj` file and the target framework `net8.0`. Then, it publishes the .NET project:
+During deployment, the runtime automatically detects the `cc-dotnet-demo.csproj` file and the target framework `net8.0`. Then, it publishes the .NET project:
 
 ```bash
 dotnet publish --framework net8.0 --configuration Release
@@ -64,7 +64,7 @@ No additional configuration is required (unless multiple project files or target
 If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the `CC_DOTNET_PROJ` environment variable.
 
 ```bash
-CC_DOTNET_PROJ=SimpleFeedReader
+CC_DOTNET_PROJ=cc-dotnet-demo
 ```
 
 ### Multiple binary targets
@@ -102,7 +102,7 @@ Make sure to list all your dependencies in your project file. For example:
 </Project>
 ```
 
-Compiled dependencies are cached by default to speed up deployments. You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable.
+Compiled dependencies are cached by default to speed up deployments. You can turn off dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable.
 
 If you want to rebuild your application from scratch, you can select "rebuild and restart" from the console or launch `clever restart --without-cache` from [CLI](https://github.com/CleverCloud/clever-tools)
 
@@ -118,11 +118,31 @@ CC_DOTNET_PROFILE=Debug
 
 If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` environment variable.
 
-For instance, you can have `CC_RUN_COMMAND=./bin/Release/net6.0/myapp <options>`.
+For instance, you can have `CC_RUN_COMMAND=./bin/Release/net6.0/exherbo-x64/myapp <options>`.
 
 ### Private dependencies
 
-Support for private dependencies will be available soon.
+Clever Cloud supports private dependency management with NuGet package manager.
+
+Add the configuration file `nuget.config` :
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+ <packageSources>
+     <clear />
+     <add key="my_nuget_repo" value="%PACKAGE_REGISTRY_URI%" />
+ </packageSources>
+ <packageSourceCredentials>
+     <my_nuget_repo>
+         <add key="Username" value="%PACKAGE_REGISTRY_USERNAME%" />
+         <add key="ClearTextPassword" value="%PACKAGE_REGISTRY_PASSWORD%" />
+     </my_nuget_repo>
+ </packageSourceCredentials>
+</configuration>
+```
+
+Set environment variables in the console according to your own information : `PACKAGE_REGISTRY_URI`, `PACKAGE_REGISTRY_USERNAME` and `PACKAGE_REGISTRY_PASSWORD`
 
 {{% content/env-injection %}}
 
@@ -131,8 +151,7 @@ To access environment variables from your code, you can use `System.Environment.
 {{% content/deploy-git %}}
 
 {{% content/link-addon %}}
- 
+
 {{% content/more-config %}}
 
 {{% content/url_healthcheck %}}
-

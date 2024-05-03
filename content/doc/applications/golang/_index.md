@@ -148,7 +148,7 @@ To access environment variables from your code, just get them from the environme
 
 ### Deploy an off-the-shelf application
 
-This example will deploy [echoip](https://github.com/mpolden/echoip) as an example golang application.
+This example deploys [echoip](https://github.com/mpolden/echoip) as an example golang application.
 
 First clone echoip's repository:
 ```
@@ -164,7 +164,7 @@ ID: app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myechoip
 ```
 
-This will create a `.clever.json` with the necessary informations for the application.
+This creates a `.clever.json` with the necessary informations for the application.
 
 Create the necessary files to build and run the application:
 ```

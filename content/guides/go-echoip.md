@@ -13,7 +13,7 @@ draft: false
 type: docs
 ---
 
-[EchoIP](https://github.com/mpolden/echoip) is a sumple service for looking up
+[EchoIP](https://github.com/mpolden/echoip) is a simple service for looking up
  your IP address.
 
 

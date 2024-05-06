@@ -416,7 +416,7 @@ Replace the `<bucket-name>` with your bucket name in the policy file.
 Set the policy to your bucket using s3cmd:
 
 ```bash
-s3cmd setpolicy ./policy.json s3://<bucket-name>
+s3cmd --config=<path/to/s3cfg-file> setpolicy ./policy.json s3://<bucket-name>
 ```
 
 💡Download the [configuration file from Clever Cloud](#download-the-configuration-file):

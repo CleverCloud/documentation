@@ -17,7 +17,7 @@ type: docs
  your IP address.
 
 
-This doc explains how to install and configure Echoip from source.
+This doc explains how to install and configure EchoIP from source.
 
 
 ## How to Configure and Deploy EchoIP on Clever Cloud

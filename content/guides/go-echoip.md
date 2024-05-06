@@ -21,8 +21,6 @@ This doc explains how to install and configure Echoip from source.
 
 ## How to Configure and Deploy EchoIP on Clever Cloud
 
-{{% steps %}}
-
 
 ### Download EchoIP
 

@@ -127,7 +127,7 @@ To build a Go package, your project may include vendored dependencies (in the `v
 - **gomod**
 To build a Go module, be sure that the `go.mod` file is in your git tree and at the root of your application. Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to set `CC_GO_PKG=path/to/entrypoint.go`.
 
-The final command will be:
+The final command is:
 
 ```
 go install $CC_GO_PKG

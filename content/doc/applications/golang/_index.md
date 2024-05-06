@@ -34,7 +34,7 @@ By default, we consider that your repository contains a single application. Be s
 * It listens on port `8080`
 * You follow our build/run instructions
 
-In most cases you won't need to change anything to your application, except host/port and some configuration variables. 
+In most cases you won't need to change anything to your application, except host/port and some configuration variables.
 
 ### Complementary runtime
 
@@ -47,7 +47,7 @@ There are multiple ways to build/run a Go application, and this has evolved over
 - `Module`: one or more packages you can `install`, defined in a `go.mod` file (`go.sum` for checksums)
 - `Workspace`: one or more modules seamlessly combined, defined in a `go.work` file
 
-A module can be installed locally or from a remote repository if you pass its URL to the `install` command. A `Makefile` is sometimes used to define how a Go project is built, run and/or cleaned. The lightest form of a Go project is a `main.go` file to build. Some years ago, the `src/` folder was often used for source code, but using the `cmd/` folder instead is now a common practice. 
+A module can be installed locally or from a remote repository if you pass its URL to the `install` command. A `Makefile` is sometimes used to define how a Go project is built, run and/or cleaned. The lightest form of a Go project is a `main.go` file to build. Some years ago, the `src/` folder was often used for source code, but using the `cmd/` folder instead is now a common practice.
 
 If you want to limit from where a package can be imported it [should placed](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public functions, if not it's a private function.
 
@@ -127,7 +127,7 @@ To build a Go package, your project may include vendored dependencies (in the `v
 - **gomod**
 To build a Go module, be sure that the `go.mod` file is in your git tree and at the root of your application. Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to set `CC_GO_PKG=path/to/entrypoint.go`.
 
-The final command will be: 
+The final command will be:
 
 ```
 go install $CC_GO_PKG
@@ -164,7 +164,7 @@ ID: app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myechoip
 ```
 
-This creates a `.clever.json` with the necessary informations for the application.
+This creates a `.clever.json` with the necessary tokens for the application.
 
 Create the necessary files to build and run the application:
 ```

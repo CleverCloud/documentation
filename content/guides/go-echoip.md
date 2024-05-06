@@ -1,6 +1,6 @@
 ---
 title: Go - Echoip
-description: Deploy echoip on Clever Cloud
+description: Deploy EchoIP on Clever Cloud
 tags:
 - guides
 keywords:
@@ -29,7 +29,7 @@ This doc explains how to install and configure Echoip from source.
 You can download EchoIP from <https://github.com/mpolden/echoip> and create a new origin.
 
 
-First clone echoip's repository:
+First clone EchoIP's repository:
 ```
 $ git clone https://github.com/mpolden/echoip
 $ cd echoip

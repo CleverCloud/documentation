@@ -6,14 +6,15 @@ tags:
 keywords:
 - go
 - echoip
+- EchoIP
 type: "docs"
 #date: 2024-05-06T09:11:52+01:00
 draft: false
 type: docs
 ---
 
-[Echoip](https://github.com/mpolden/echoip) is a sumple service for looking up
- your ip address.
+[EchoIP](https://github.com/mpolden/echoip) is a sumple service for looking up
+ your IP address.
 
 
 This doc explains how to install and configure Echoip from source.

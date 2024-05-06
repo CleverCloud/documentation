@@ -29,7 +29,7 @@ You can download EchoIP from <https://github.com/mpolden/echoip> and create a ne
 
 First clone EchoIP's repository:
 ```
-~ $ git clone https://github.com/mpolden/echoip
+~ $ git clone https://github.com/mpolden/echoip.git
 ~ $ cd echoip
 ```
 

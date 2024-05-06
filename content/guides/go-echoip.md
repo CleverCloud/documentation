@@ -29,16 +29,16 @@ You can download EchoIP from <https://github.com/mpolden/echoip> and create a ne
 
 First clone EchoIP's repository:
 ```
-$ git clone https://github.com/mpolden/echoip
-$ cd echoip
+~ $ git clone https://github.com/mpolden/echoip
+~ $ cd echoip
 ```
 
 ### Configure `clevercloud/go.json`
 
 Create the necessary files to build and run the application:
 ```
-$ mkdir clevercloud
-$ cat << EOF > clevercloud/go.json
+echoip/ ~ $ mkdir clevercloud
+echoip/ ~ $ cat << EOF > clevercloud/go.json
 {
   "deploy": {
     "makefile": "Makefile",
@@ -46,11 +46,10 @@ $ cat << EOF > clevercloud/go.json
   }
 }
 EOF
-$ git add clevercloud/
-$ git commit -m "add clevercloud files" clevercloud/
+echoip/ ~ $ git add clevercloud/
+echoip/ ~ $ git commit -m "add clevercloud files" clevercloud/
 ```
 
-### Configure the environment
 
  {{% content/set-env-vars %}}
 
@@ -58,7 +57,7 @@ $ git commit -m "add clevercloud files" clevercloud/
 
 Define necessary environment variables (this is specific to EchoIP):
 ```
-$ clever env set CC_RUN_COMMAND "~/go_home/bin/echoip -H X-Forwarded-For"
+echoip/ ~ $ clever env set CC_RUN_COMMAND "~/go_home/bin/echoip -H X-Forwarded-For"
 Your environment variable has been successfully saved
 ```
 
@@ -69,16 +68,16 @@ Your environment variable has been successfully saved
 
 Add the clevercloud git remote:
 ```
-$ git remote add clevercloud $(jq -r '.apps[0].git_ssh_url' < .clever.json)
+echoip/ ~ $ git remote add clevercloud $(jq -r '.apps[0].git_ssh_url' < .clever.json)
 ```
 
 Push the app for deployment:
 ```
-$ git push clevercloud master
+echoip/ ~ $ git push clevercloud master
 ```
 
 Check the deployment logs:
 ```
-$ clever logs
+echoip/ ~ $ clever logs
 ```
 

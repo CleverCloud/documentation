@@ -320,12 +320,16 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
 {{< /tabs >}}
 
-## Public bucket
+## Policies
+
+Cellar allows you to create policies to control the actions on your buckets. Find below two policies examples, and further documentation [here](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/).
+
+### Public bucket policy
 
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
 
 {{< callout type="warning" >}}
-  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want to be publicly exposed.
+  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want publicly exposed.
 {{< /callout >}}
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
@@ -356,6 +360,12 @@ Now, you can set the policy to your bucket using s3cmd:
 s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
 
+💡 If you encounter errors, you might need to specify the [configuration file path](#download-the-configuration-file):
+
+```bash
+s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>
+```
+
 All of your objects should now be publicly accessible.
 
 If needed, you can delete this policy by using:
@@ -365,6 +375,55 @@ s3cmd delpolicy s3://<bucket-name>
 ```
 
 The original ACL should apply to all of your objects after that.
+
+### User access
+
+Cellar doesn't natively support creating different user accesses for the same add-on. Granting access to your Cellar add-on grants full access to all of your buckets. To grant limited access to a bucket, do the following:
+
+1. Create your main Cellar add-on (we'll call it `Cellar-1`)
+2. Download `Cellar 1` s3cfg file
+3. Create a second Cellar add-on (we'll call it `Cellar-2`)
+4. Get the `ADDON ID` from `Cellar-2` dashboard (it should look like `cellar_xxx`)
+5. Create a policy for `Cellar-1` and inject the `ADDON ID` from `Cellar-2` as the user.
+
+Now, you can pass `Cellar-2` credentials to a third party to grant read-only access to `Cellar-1` buckets.
+
+#### Read-only policy example
+
+This policy example grants read-only access to a bucket for another user, using the preceding procedure.
+
+```json {filename="read-only-policy.json"}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": [
+          "s3:GetObject",
+          "s3:ListBucket"
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::<bucket-name>/*",
+        "Principal": {"AWS": "arn:aws:iam::cellar_xxx"}
+
+      }
+    ]
+  }
+
+```
+
+Replace the `<bucket-name>` with your bucket name in the policy file.
+
+Set the policy to your bucket using s3cmd:
+
+```bash
+s3cmd --config=<path/to/s3cfg-file> setpolicy ./policy.json s3://<bucket-name>
+```
+
+💡Download the [configuration file from Clever Cloud](#download-the-configuration-file):
+
+```bash
+s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>
+````
 
 ## CORS Configuration
 

@@ -47,7 +47,7 @@ There are multiple ways to build/run a Go application, and this has evolved over
 - `Module`: one or more packages you can `install`, defined in a `go.mod` file (`go.sum` for checksums)
 - `Workspace`: one or more modules seamlessly combined, defined in a `go.work` file
 
-A module can be installed locally or from a remote repository if you pass its URL to the `install` command. A `Makefile` is sometimes used to define how a Go project is built, run and/or cleaned. The lightest form of a Go project is a `main.go` file to build. Some years ago, the `src/` folder was often used for source code, but using the `cmd/` folder instead is now a common practice.
+Install any module locally or from a remote repository by passing its URL to the `install` command. A `Makefile` is sometimes used to define how to build, run and/or clean a Go project. The lightest form of a Go project is a `main.go` file to build. The `src/` folder was often used for source code, but using the `cmd/` folder instead is now a common practice.
 
 If you want to limit from where a package can be imported it [should placed](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public functions, if not it's a private function.
 

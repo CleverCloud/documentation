@@ -17,21 +17,15 @@ aliases:
 type: docs
 ---
 
+{{< callout type="warning" >}}
+  This add-on is currently in **Technical Preview**.
+{{< /callout >}}
+
 Keycloak is an open source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
 To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
-
-## Technical preview? What does that mean?
-
-Clever Cloud uses your [feedback](https://www.clever-cloud.com/fr/contact-sales/) to release products fit for the industry and easy to use. A technical preview enables users to fire-test the product. Hence, the Keycloak add-on is first **offered as a Tech Preview**, before releasing it for production use.
-
-During the Tech Preview period:
-- Features consistencies are battle-tested and may evolve; 
-- UX and interface aren't final and may also evolve;
-- Bugs and potential issues feedback are deeply sought;
-- Features and pricing may evolve;
-- 0 € service & maintenance fees.
+{{% content/tech-preview %}}
 
 ## Key features
 Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentication and access management solution, that you can adjust to your needs and workloads. It offers a wide panel of services such as:

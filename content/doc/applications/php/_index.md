@@ -102,6 +102,7 @@ To do so, you can use a tiny trick:
    #!/bin/bash -l
    test -f ${APP_HOME}${CC_WEBROOT}/.user.ini && \
      cp ${APP_HOME}${CC_WEBROOT}/.user.ini ${HOME}/user.ini
+    ```
 
 ##### Timezone configuration
 
@@ -173,7 +174,7 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
  |2XL       | 1024M        |
  |3XL       | 1536M        |
  |4XL+      | 2048M        |
-  
+
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "doc/reference/reference-environment-variables.md#php" >}}).
 
 If you define a limit exceeding the application memory it will use the default one.
@@ -367,7 +368,7 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
   {{< card link="/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
   {{< card link="/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
   {{< card link="/guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
-  
+
 {{< /cards >}}
 
 Others PHP frameworks tested on Clever Cloud:
@@ -398,7 +399,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`, `gRPC`, `protobuf`, `Pspell`.
+Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
 

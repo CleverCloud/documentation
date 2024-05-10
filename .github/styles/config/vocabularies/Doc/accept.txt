@@ -60,4 +60,5 @@ Keycloak
 FSBucket
 serverless
 Redict
+Astro
 Keycloak

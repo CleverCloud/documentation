@@ -19,7 +19,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy any Go application. This page will explain you how to set up your project to run it on our service. You won't not need to change a lot, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
+Clever Cloud allows you to deploy any Go application. This page explains how to set up your project to run it on our service. You won't need to change a lot, the *requirements* will help you configure your applications with some mandatory files to add, and properties to set up.
 
 {{% content/create-application %}}
 
@@ -49,7 +49,7 @@ There are multiple ways to build/run a Go application, and this has evolved over
 
 Install any module locally or from a remote repository by passing its URL to the `install` command. A `Makefile` is sometimes used to define how to build, run and/or clean a Go project. The lightest form of a Go project is a `main.go` file to build. The `src/` folder was often used for source code, but using the `cmd/` folder instead is now a common practice.
 
-If you want to limit from where a package can be imported it [should placed](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public functions, if not it's a private function.
+If you want to limit from where a package can be imported, [place it](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public function, if not it's a private function.
 
 For a complete project, a common files/folders organization can be:
 {{< filetree/container >}}
@@ -78,24 +78,42 @@ For a complete project, a common files/folders organization can be:
 
 ### Go build and deploy on Clever Cloud
 
-In such a situation, our strategy is to let the user choose how to build/run its application and make the deployment easy anyway. At first, we used the `goget` method, which is now deprecated. Thus, you can now use `gobuild` (for packages), `gomod` (for modules) or a configuration file. The latter will allow you to define a `Makefile` for custom build and a `main` executable to start the application.
+In such a situation, our strategy is to let the user choose how to build/run its application and make the deployment easy anyway. At first, we used the `goget` method, which is now deprecated. Thus, you can now use `gobuild` (for packages), `gomod` (for modules) or `makefile`. The latter will allow you to define custom build steps and a `main` executable to start the application.
 
 {{< callout type="info" >}}
   If the required Go version declared in the `go.mod` is superior to the version built in the instance, it will be automatically updated.
 {{< /callout >}}
 
-#### Through Makefile and JSON configuration
+### Environment variables
 
-Create a file name `go.json` in a `clevercloud/` folder at the root of your repository. It will allow you to ask for a custom build through a `Makefile` ([learn more about it](https://en.wikipedia.org/wiki/Make_(software)#Makefiles)). For example with a single package in `main.go`:
+If you don't want to add a file to your project, you can set one of these environment variables:
 
-```json {filename="clevercloud/go.json"}
-{
-  "deploy": {
-    "makefile": "Makefile",
-    "main": "bin/myApp"
-  }
-}
-```
+| Name | Description |
+| :------- | :---- |
+| `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`, `makefile`. Build and install your application. `goget` still exists but is deprecated. |
+| `CC_GO_BINARY` | Mandatory for a `Makefile` build, path to the built binary, used to launch your application. |
+| `CC_GO_PKG` | Tell the `CC_GO_BUILD_TOOL` which file contains the `main()` function, default `main.go`. |
+| `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |
+
+{{< callout type="info" >}}
+  The default `GO_PATH` is `${HOME}/go_home`. 
+  The command executed to launch the application is `go install $CC_GO_PKG`. \
+  Your project may include vendored dependencies (in the `vendor/` folder).
+{{< /callout >}}
+
+#### gobuild
+
+To build a Go package. `CC_GO_PKG` can be set to define the main file of your application (default `main.go`).
+
+#### gomod
+
+To build a Go module, be sure that the `go.mod` file is in your git tree and at the root of your application. Your project's entry point should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to set `CC_GO_PKG=path/to/entrypoint.go`.
+
+#### makefile
+
+To build a Go project with a `Makefile`. You have to set `CC_GO_BINARY` with the path to the built binary, used to launch your application. If a `Makefile` is present with a `CC_GO_BINARY` set and no `go.mod` file at the root of your project, the `makefile` method will automatically be used.
+
+An example of a `Makefile`, to use with `CC_GO_BINARY=bin/myApp`:
 
 ```Makefile {filename="Makefile"}
 BINARY=bin/myApp
@@ -111,27 +129,10 @@ build:
 
 You'll find a more complex project using a Go Workspace and a `Makefile` [here](https://github.com/CleverCloud/go-workspaces).
 
-#### Through Environment variables
+{{< callout type="warning" >}}
+  Using `clevercloud/go.json` to define Makefile and binary paths is a deprecated method and should no longer be used.
+{{< /callout >}}
 
-If you don't want to add a file to your project, you can set one of these environment variables:
-
-| Name | Description |
-| :------- | :---- |
-| `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`. Build and install your application. `goget` still exists but is deprecated. |
-| `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |
-| `CC_GO_PKG` | Tell the `CC_GO_BUILD_TOOL` which file contains the `main()` function, default `main.go`. |
-
-- **gobuild**
-To build a Go package, your project may include vendored dependencies (in the `vendor/` folder). `CC_GO_PKG` can be set to define the main file of your application (default `main.go`).
-
-- **gomod**
-To build a Go module, be sure that the `go.mod` file is in your git tree and at the root of your application. Your project's entrypoint should be in the same folder as the `go.mod` file and be named `main.go`. If it isn't, you have to set `CC_GO_PKG=path/to/entrypoint.go`.
-
-The final command is:
-
-```
-go install $CC_GO_PKG
-```
  {{% content/env-injection %}}
 
 To access environment variables from your code, just get them from the environment with `PATH`: `os.Getenv("MY_VARIABLE")`.

@@ -218,7 +218,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
-|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | fastcgi |
+|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 |`CC_LDAP_CA_CERT` |  |  |
 |`CC_MTA_AUTH_PASSWORD` | Password to authenticate to the SMTP server |  |

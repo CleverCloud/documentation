@@ -127,6 +127,10 @@ pgtap       | Unit testing for PostgreSQL
 pgvector    | Vector data type and ivfflat and hnsw access methods
 timescaledb | Enables scalable inserts and complex queries for time-series data (Community Edition)
 
+{{< callout type="warning" >}}
+On-demand extensions are not available for DEV addons.
+{{< /callout >}}
+
 ## Automatic vacuuming
 
 [Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.  

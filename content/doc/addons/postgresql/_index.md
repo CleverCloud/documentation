@@ -128,7 +128,7 @@ pgvector    | Vector data type and ivfflat and hnsw access methods
 timescaledb | Enables scalable inserts and complex queries for time-series data (Community Edition)
 
 {{< callout type="warning" >}}
-On-demand extensions are not available for DEV addons.
+On-demand extensions aren't available for DEV plans.
 {{< /callout >}}
 
 ## Automatic vacuuming

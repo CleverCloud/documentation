@@ -29,5 +29,5 @@ Connect your application to an add-on:
   {{< card link="/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
   {{< card link="/doc/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
   {{< card link="/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial." icon="git" >}}
-  {{< card link="/doc/addons/keycloak" title="Keycloak" subtitle="Authentication to applications and secure services with minimum effort." icon="keycloak" >}}
+  {{< card link="/doc/addons/keycloak" title="Keycloak" subtitle="Authentication to applications and secure services with minimum effort." icon="keycloak" tag="Tech preview" >}}
 {{< /cards >}}

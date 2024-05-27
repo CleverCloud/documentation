@@ -28,6 +28,13 @@
 .bg-gray-custom {
   background-color: #f5f5f5;
 }
+.bg-red-500 {
+  background-color: rgba(245, 117, 97, 0.608);
+}
+.text-white {
+  color: white;
+}
+
 
 /* Colors for dark theme */
 .dark {
@@ -41,6 +48,10 @@ h1, .content h1,
 .content h3,
 .content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.text-xxs {
+  font-size: 0.65rem;
 }
 
 /* Override line color in code block */
@@ -99,6 +110,22 @@ html[class~="dark"] .btn-primary {
 .hextra-feature-card,
 .hextra-card {
   border-radius: 0.29rem;
+  position: relative;
+}
+
+/* If tag, position upright on the card */
+.up-right {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+}
+
+
+/* Override styles for RTL languages */
+[dir="rtl"] .up-right {
+  right: auto; /* Reset the right property */
+  left: 0; /* Position to the left */
 }
 
 .img-grid {
@@ -293,3 +320,5 @@ html[class~="dark"] .content table:not(.code-block table) tr {
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
 }
+
+

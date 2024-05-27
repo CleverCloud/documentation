@@ -7,6 +7,7 @@
 {{- $width := 0 -}}
 {{- $height := 0 -}}
 {{- $imageStyle := .Get "imageStyle" -}}
+{{- $tag := .Get "tag" -}}
 
 {{/* Image processing options */}}
 {{- $method := .Get "method" | default "Resize" | humanize -}}
@@ -54,6 +55,10 @@
     target="_blank" rel="noreferrer"
   {{- end -}}
 >
+  {{- if $tag }}
+    
+  <span class="flex up-right text-gray-600 text-xxs bg-gray-100 border dark:bg-neutral-800 dark:text-neutral-200 rounded-full px-2 py-1">{{ $tag }}</span>
+  {{- end }}
   {{- with $image -}}
     <img
       alt="{{ $title }}"

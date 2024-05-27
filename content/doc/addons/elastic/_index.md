@@ -169,5 +169,5 @@ Most settings are available for modifications and update from Kibana, for exampl
 - Frequencies of back-ups
 - The lifecycle of backups indexes
 - Backups destination
- 
+
 If you think your system might require some customization (like some plugins activation), contact Clever Cloud support to explain your use case and we will work with you to find a solution.

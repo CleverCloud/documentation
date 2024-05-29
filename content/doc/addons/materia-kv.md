@@ -1,36 +1,38 @@
 ---
 type: docs
-title: MateriaDB KV
-description: MateriaDB KV is a serverless key-value database, with high availability and open compatibility
+title: Materia KV
+description: Materia KV is a serverless key-value database, with high availability and open compatibility
 tags:
 - addons
 keywords:
-- materiadb
+- materia
 - kv
 - dynamodb
 - graphql
 - redis
+aliases:
+- /doc/addons/materia-db-kv/
 type: docs
 draft: false
 ---
 
-MateriaDB is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.
+Materia is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.
 
-MateriaDB KV is the first publicly available product of this family. It's a key-value database which comes with simplicity in mind. You have no instance size to choose, no storage capacity to worry about. We simply provide you with a host address, a port and a token: you’re ready to go! Once our servers send a reply message, your data is durable: it's synchronously replicated over 3 datacenters in Paris.
+Materia KV is the first publicly available product of this family. It's a key-value database which comes with simplicity in mind. You have no instance size to choose, no storage capacity to worry about. We simply provide you with a host address, a port and a token: you’re ready to go! Once our servers send a reply message, your data is durable: it's synchronously replicated over 3 datacenters in Paris.
 
 You don't have to configure leaders, followers: high availability is included, by design.
 
 {{< callout type="info" >}}
 
-**MateriaDB KV is in Alpha testing phase** Your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materiadb). Thank you for being a part of our journey towards innovation and improvement!
+* Materia KV is in Alpha testing phase** Your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
 
 {{< /callout >}}
 
 ## Compatibility layers
 
-We didn’t want this MateriaDB KV to come at the cost of complex configuration, requiring the use of special clients and ORMs. That’s why we’ve developed its compatibility layers. To “talk” to it, you don’t need a special API or tools specific to Clever Cloud. You'll be able to use it with existing solutions for **DynamoDB, GraphQL or Redis**. The first available layer is compatible with Redis API (and its variants as Reddict or Valkey).
+We didn’t want this Materia KV to come at the cost of complex configuration, requiring the use of special clients and ORMs. That’s why we’ve developed its compatibility layers. To “talk” to it, you don’t need a special API or tools specific to Clever Cloud. You'll be able to use it with existing solutions for **DynamoDB, GraphQL or Redis**. The first available layer is compatible with Redis API (and its variants as Reddict or Valkey).
 
-Thus, you can use a MateriaDB KV add-on with any compatible client within your applications, `redis-cli` or alternatives such as [iredis](https://github.com/laixintao/iredis). You can also use it with graphical interface (GUI). We tested many of them with success:
+Thus, you can use a Materia KV add-on with any compatible client within your applications, `redis-cli` or alternatives such as [iredis](https://github.com/laixintao/iredis). You can also use it with graphical interface (GUI). We tested many of them with success:
 
 - [Another Redis Desktop Client](https://goanother.com/)
 - [PX3 Redis UI](https://github.com/patrikx3/redis-ui)
@@ -38,13 +40,13 @@ Thus, you can use a MateriaDB KV add-on with any compatible client within your a
 - [Redis Commander](https://github.com/joeferner/redis-commander)
 - [Redis Insight](https://redis.com/redis-enterprise/redis-insight/)
 
-## Create a MateriaDB KV add-on
+## Create a Materia KV add-on
 
-You can create a MateriaDB KV add-on as simply as any other Clever Cloud service in the Console, [following this link](https://console.clever-cloud.com/users/me/addons/new). Select the Alpha plan (free during testing phase), an application to link to (or none), give it a name, and you'll get access to its dashboard giving you connection details. Environment variables shared with a linked application are listed in the `Service dependencies` section.
+You can create a Materia KV add-on as simply as any other Clever Cloud service in the Console, [following this link](https://console.clever-cloud.com/users/me/addons/new). Select the Alpha plan (free during testing phase), an application to link to (or none), give it a name, and you'll get access to its dashboard giving you connection details. Environment variables shared with a linked application are listed in the `Service dependencies` section.
 
-We included them with the `REDIS_` format. Thus, you can just try to replace a Redis instance by MateriaDB KV. It's as simple as linking the new add-on, unlinking the old one and restarting your application! (Check commands you'll need first).
+We included them with the `REDIS_` format. Thus, you can just try to replace a Redis instance by Materia KV. It's as simple as linking the new add-on, unlinking the old one and restarting your application! (Check commands you'll need first).
 
-You can also use clever tools to create a MateriaDB KV add-on and set environment variables to test it with a `PING` command:
+You can also use clever tools to create a Materia KV add-on and set environment variables to test it with a `PING` command:
 
 ```
 clever addon create kv DATABASE_NAME
@@ -62,18 +64,18 @@ ID: addon_4997cfe3-f104-4d05-9fe4-xxxxxxxxx
 Real ID: kv_01HV6NCSRD1TV2AJW4RKFBJ07R
 Name: testKV
 
-/!\ The MateriaDB KV provider is in Alpha testing phase, don't store sensitive or production grade data
-You can easily use MateriaDB KV with 'redis-cli', with such commands:
+/!\ The Materia KV provider is in Alpha testing phase, don't store sensitive or production grade data
+You can easily use Materia KV with 'redis-cli', with such commands:
 source <(clever addon env addon_4997cfe3-f104-xxxx-xxxx-xxxxxxxxx -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
 
 
-You can also deploy MateriaDB KV add-ons with [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/materiadb_kv) (OpenTofu compatible).
+You can also deploy Materia KV add-ons with [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/materiadb_kv) (OpenTofu compatible).
 
 {{< callout type="info" >}}
 
-**MateriaDB KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage, requests sent to the server can't exceed 1 kB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.
+**Materia KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage, requests sent to the server can't exceed 1 kB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.
 
 {{< /callout >}}
 
@@ -81,7 +83,7 @@ You can also deploy MateriaDB KV add-ons with [Terraform provider](https://regis
 
 ### Environment variables and CLI usage
 
-To connect to a MateriaDB KV add-on, you need 3 parameters: the host, the port and a ([biscuit](https://biscuitsec.org) based) token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
+To connect to a Materia KV add-on, you need 3 parameters: the host, the port and a ([biscuit](https://biscuitsec.org) based) token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
 
 * `$KV_HOST` and its alias `$REDIS_HOST`
 * `$KV_PORT` and its alias `$REDIS_PORT`
@@ -89,13 +91,13 @@ To connect to a MateriaDB KV add-on, you need 3 parameters: the host, the port a
 * `$REDIS_CLI_URL`
 * `$REDISCLI_AUTH`
 
-You can directly use these environment variables to connect to a MateriaDB KV add-on using `redis-cli` if `REDISCLI_AUTH` is set:
+You can directly use these environment variables to connect to a Materia KV add-on using `redis-cli` if `REDISCLI_AUTH` is set:
 
 ```bash
 redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
 
-MateriaDB KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
+Materia KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
 
 ### Fish shell users
 
@@ -119,9 +121,9 @@ Find below the list of currently supported commands:
 | ------- | ----------- |
 | `APPEND` | If `key` already exists and is a string, this command appends the value at the end of the string. If `key` does not exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case. |
 | `AUTH` | Authenticate the current connection using the biscuit token as `password`. |
-| `CLUSTER INFO` | Indicates that cluster support is disabled, i.e. MateriaDB KV is naturally distributed and doesn't support or needs Redis clustering. |
+| `CLUSTER INFO` | Indicates that cluster support is disabled, i.e. Materia KV is naturally distributed and doesn't support or needs Redis clustering. |
 | `COMMAND` | Return an array with details about every supported command. |
-| `COMMAND INFO` | Returns @array-reply of details about multiple MateriaDB KV commands. Same result format as `COMMAND` except you can specify which commands get returned. If you request details about non-existing commands, their return position will be `nil`. |
+| `COMMAND INFO` | Returns @array-reply of details about multiple Materia KV commands. Same result format as `COMMAND` except you can specify which commands get returned. If you request details about non-existing commands, their return position will be `nil`. |
 | `COMMAND LIST` | Return an array of the server's command names. |
 | `COMMAND DOCS` | Return documentary information about commands. By default, the reply includes all the server's commands. You can use the optional command-name argument to specify the names of one or more commands. The reply includes a map for each returned command. |
 | `DBSIZE` | Return the number of keys in the currently-selected database. |
@@ -159,7 +161,7 @@ Find below the list of currently supported commands:
 | `RPUSHX` | Inserts specified values at the tail of the list stored at `key`, only if `key` already exists and holds a list. In contrary to `RPUSH`, no operation will be performed when `key` does not yet exist. |
 | `SCAN` | Incrementally iterate over a collection of elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. |
 | `SET` | Set `key` to hold the string `value`. If `key` already holds a value, it is overwritten, regardless of its type. |
-| `SELECT` | Select the logical database having the specified zero-based numeric index. In MateriaDB KV only SELECT 0 can be used. |
+| `SELECT` | Select the logical database having the specified zero-based numeric index. In Materia KV only SELECT 0 can be used. |
 | `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `TTL` | Returns the remaining time to live of a key that has a timeout. During the alpha phase, key timeouts aren't implemented. Nevertheless, for compatibility reasons, we support the `TTL` command. The command returns -2 if the key does not exist, it returns -1 if the key exists with no defined timeout. |
 | `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list` or `string`.

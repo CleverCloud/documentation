@@ -41,14 +41,14 @@ clever env set CC_RUN_COMMAND "bash a_bash_script.sh"
 ```
 Clever Tasks will evolve with enhancements planed over the coming months. Feel free to tell us about your needs or ideas on this subject!
 
-Last but not least, we're introducing the access to MateriaDB KV. Those granted with alpha access can now create a serverless, synchronously-replicated (over our 3 datacenters in Paris) key-value add-on. You'll be able to use it with multiples kind of clients. First to be supported is Redis API. Thus, you can run:
+Last but not least, we're introducing the access to Materia KV. Those granted with alpha access can now create a serverless, synchronously-replicated (over our 3 datacenters in Paris) key-value add-on. You'll be able to use it with multiples kind of clients. First to be supported is Redis API. Thus, you can run:
 
 ````
 clever addon create kv myKV
 source <(clever addon env addon_myKV_id -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 ````
-* [Learn more about MateriaDB KV](https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
+* [Learn more about Materia KV](https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
 
 To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with npm:
 

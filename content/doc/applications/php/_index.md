@@ -20,7 +20,7 @@ aliases:
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
 into HTML.
 
-PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2 and 8.3. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
@@ -41,10 +41,9 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `8.0`
 - `8.1`
 - `8.2`
+- `8.3`
 
-All new PHP applications are created with a default `CC_PHP_VERSION`, set to 8, which means latest php 8 a version available.
-
-You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits `X.Y` not `X.Y.Z`.
+All new PHP applications are created with a default `CC_PHP_VERSION`, set to `8.3`. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`).
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
 
@@ -88,7 +87,7 @@ Most PHP settings can be changed using a `.user.ini` file.
 
 If you want the settings to be applied to the whole application, you should put this file in your `webroot`. If you did not change it (see above), then your `webroot` is the root of the repository.
 
-If you put the `.user.ini` file in a sub-directory; settings will be applied recursively starting from this sub-directory.
+If you put the `.user.ini` file in a subdirectory; settings will be applied recursively starting from this subdirectory.
 
 **Note**: `.user.ini` files are not loaded by the PHP CLI by default.
 
@@ -205,7 +204,7 @@ You can configure basic authentication using [environment variables]({{< ref "do
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable]({{< ref "doc/develop/env-variables.md" >}}).
 
-**By default, the HTTP timeout is se to 3 minutes (180 seconds)**.
+**By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
 
 ### Force HTTPS traffic
 
@@ -237,7 +236,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.+[^/])$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/ [R=301,L,QSA]
 ```
 
-These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header X-Forwarded-Proto is always filled (which is the case on our platform).
+These statements will keep the former protocol of the request when issuing the redirect. Assuming that the header `X-Forwarded-Proto` is always filled (which is the case on our platform).
 
 If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
@@ -257,7 +256,7 @@ To resolve this issue, we advise you to switch the value of `CC_CGI_IMPLEMENTATI
 
 ### Environment injection
 
-As mentionned above, Clever Cloud can inject environment variables that are defined in the
+As mentioned above, Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
 
 To access the variables, use the `getenv` function. So, for example, if
@@ -328,7 +327,7 @@ Example of a minimalist PHP application using composer and custom scripts: [php-
 
 Development dependencies will not be automatically installed during the deployment. You can control their installation by using the `CC_PHP_DEV_DEPENDENCIES` environment variable which takes `install` value.
 
-Any other value than `install` will prevent developement dependencies from being installed.
+Any other value than `install` will prevent development dependencies from being installed.
 
 ### GitHub rate limit
 
@@ -389,15 +388,16 @@ Others PHP frameworks tested on Clever Cloud:
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for:
 
-- [PHP 5.6](https://php56info.cleverapps.io).
-- [PHP 7.2](https://php72info.cleverapps.io).
-- [PHP 7.3](https://php73info.cleverapps.io).
-- [PHP 7.4](https://php74info.cleverapps.io).
-- [PHP 8.0](https://php80info.cleverapps.io).
-- [PHP 8.1](https://php81info.cleverapps.io).
-- [PHP 8.2](https://php82info.cleverapps.io).
+- [PHP 5.6](https://php56info.cleverapps.io)
+- [PHP 7.2](https://php72info.cleverapps.io)
+- [PHP 7.3](https://php73info.cleverapps.io)
+- [PHP 7.4](https://php74info.cleverapps.io)
+- [PHP 8.0](https://php80info.cleverapps.io)
+- [PHP 8.1](https://php81info.cleverapps.io)
+- [PHP 8.2](https://php82info.cleverapps.io)
+- [PHP 8.3](https://php83info.cleverapps.io)
 
-**Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
+**Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
 
 Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
 

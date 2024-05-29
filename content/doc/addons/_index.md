@@ -30,4 +30,5 @@ Connect your application to an add-on:
   {{< card link="/doc/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
   {{< card link="/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial." icon="git" >}}
   {{< card link="/doc/addons/keycloak" title="Keycloak" subtitle="Authentication to applications and secure services with minimum effort." icon="keycloak" tag="Tech preview" >}}
+  {{< card link="/doc/addons/materia-db-kv/" title="Materia KV" subtitle="Serverless databases with built-in compatibility layers." icon="materia" tag="Alpha" >}}
 {{< /cards >}}

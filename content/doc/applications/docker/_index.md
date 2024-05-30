@@ -90,7 +90,7 @@ You can make the docker socket available from inside the container by adding the
 We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few environment variables:
 
 * `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
-* `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
+* `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
 * `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
 
 This uses the `docker login` command under the hood.

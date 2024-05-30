@@ -159,4 +159,15 @@ curl 'https://${ELASTIC_SEARCH_HOST}/_index_template/test/' -u ${ELASTIC_SEARCH_
 
 It's important here to set `number_of_replicas` to zero to avoid triggering cluster problems. The priority must be greater than 1, as the `cc_singlenode_template` template has a default priority of 1.
 
-{{% content/managed-services %}}
+## 🔑 Rights and permissions
+
+Elastic Stack add-ons are **managed services**, with Clever Cloud in charge of configuring and maintaining native configuration files. Some operations like adding an oauth source to connect to Kibana can't be added, as well as some native settings modifications. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+
+Most settings are available for modifications and update from Kibana, for example: 
+
+- Managing users permissions
+- Frequencies of back-ups
+- The lifecycle of backups indexes
+- Backups destination
+ 
+If you think your system might require some customization (like some plugins activation), contact Clever Cloud support to explain your use case and we will work with you to find a solution.

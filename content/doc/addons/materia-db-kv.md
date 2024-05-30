@@ -164,5 +164,4 @@ Find below the list of currently supported commands:
 | `TTL` | Returns the remaining time to live of a key that has a timeout. During the alpha phase, key timeouts aren't implemented. Nevertheless, for compatibility reasons, we support the `TTL` command. The command returns -2 if the key does not exist, it returns -1 if the key exists with no defined timeout. |
 | `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list` or `string`.
 
- {{% content/managed-services %}}
  

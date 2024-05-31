@@ -13,8 +13,9 @@ keywords:
 ## Overview
 
 This will guide you in the process of creating a "task-only" application that will just
-run scalers for the duration of a single task and shutdown these scalers once the task is
-done.
+run scalers for the duration of a given command and shutdown these scalers once the task is
+done. This type of application is not expected to listen to incoming requests. As such, no
+HTTP or TCP traffic from outside is routed towards the scalers.
 
 ## Create a "task" application
 
@@ -34,13 +35,9 @@ Refer to [clever create]({{< ref "doc/cli/create.md" >}}) for more details on ap
 
 ### With the console
 
-TODO: document how to do it.
+To declare an application as a Task, check the corresponding box in the `Information` tab.
 
-### With the `CC_TASK=true` environment variable
-
-You can temporarily deploy a "normal" app as a "task" one.e
-You just need to add the `CC_TASK` environment variable with the value `true`.
-The deployment will be a "task" one while the variable exists in the application.
+{{< figure src="/images/changelog/clever-tasks.webp" caption="Defines a Clever Cloud application as a Task in Console" width="800px">}}
 
 ## Define the actual command to run (mandatory)
 

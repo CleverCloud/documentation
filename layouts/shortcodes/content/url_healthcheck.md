@@ -17,6 +17,8 @@ CC_HEALTH_CHECK_PATH_1=/my/other/path
 
 The deployment process checks all paths. All of them must reply with a `200 OK` response code.
 
+When no envrionment variable is defined the default is to get the root path, `/`.
+
 ### Example
 
 Using the path listed above, below are the expected logs:

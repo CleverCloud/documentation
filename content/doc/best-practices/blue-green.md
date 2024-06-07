@@ -31,7 +31,7 @@ There are many benefits to this approach:
 
 When you push your source code to the Clever Cloud git remote, Clever Cloud will automatically use the "Blue/Green" pattern to apply your changes to your production.
 
-A new VM, let's call it *Blue* is created. The deployment is successful when there's no error in the build phase and the server answers on :8080/ with a non error code. And that's it, you will use the new version on production within seconds.
+A new VM, let's call it *Blue* is created. The deployment is successful when there's no error in the build phase and the [deployment healtcheck](https://developers.clever-cloud.com/doc/develop/healthcheck/) is succesful. And that's it, you will use the new version on production within seconds.
 
 If you push new changes, a *Green* VM will be created.
 

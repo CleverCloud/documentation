@@ -140,3 +140,5 @@ Usually this threshold is set to 20%.
 ## `pg_activity`
 
 If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on a PostgreSQL add-on, but you encounter the following error `Exception: Must be run with database superuser privileges.`, you need to add the `--rds` flag when you start it.
+
+{{% content/managed-services %}}

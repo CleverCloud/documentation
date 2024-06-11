@@ -163,7 +163,7 @@ It's important here to set `number_of_replicas` to zero to avoid triggering clus
 
 Elastic Stack add-ons are **managed services**, with Clever Cloud in charge of configuring and maintaining native configuration files. Some operations like adding an oauth source to connect to Kibana can't be added, as well as some native settings modifications. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
-Most settings are available for modifications and update from Kibana, for example: 
+Most settings are available for modifications and update from Kibana or by API, for example: 
 
 - Managing users permissions
 - Frequencies of back-ups

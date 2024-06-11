@@ -38,12 +38,14 @@ jobs:
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
           HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
+          HEXTRA_VERSION: ${{ secrets.HEXTRA_VERSION }}
         run: | 
           clever create --type static-apache ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }} --alias doc-review-PR-${{ github.event.number }} --region par --org "$ORGA_ID"
           clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
           clever env set CC_WEBROOT "/public"
           clever env set HUGO_ENV "production"
           clever env set HUGO_VERSION "$HUGO_VERSION"
+          clever env set HEXTRA_VERSION "$HEXTRA_VERSION"
           clever domain add ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io
           clever deploy
       - name: Comment PR

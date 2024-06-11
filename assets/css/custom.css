@@ -43,10 +43,10 @@
 
 
 /* Fonts */
-h1, .content h1,
-.content h2,
-.content h3,
-.content h3 {
+h1, .hx-content h1,
+.hx-content h2,
+.hx-content h3,
+.hx-content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -65,17 +65,17 @@ color: rgb(82 82 82 / .7)
   background-color: rgba(227, 210, 210, 0);
 }
 /* Override border-radius class to fit Clever's theme */
-.rounded,
-.rounded-xl,
-.rounded-3xl,
-.rounded-lg,
-.rounded-md,
-.rounded-sm,
-.code-block pre:not(.lntable pre),
-.code-block .filename,
-.chroma .lntable,
-.content img,
-.content div.gist-file,
+.hx-rounded,
+.hx-rounded-xl,
+.hx-rounded-3xl,
+.hx-rounded-lg,
+.hx-rounded-md,
+.hx-rounded-sm,
+.hx-code-block pre:not(.lntable pre),
+.hx-code-block .filename,
+.hx-chroma .lntable,
+.hx-content img,
+.hx-content div.gist-file,
 .btn-secondary,
 .btn-primary  {
   border-radius: 0rem;
@@ -188,9 +188,9 @@ a.no-underline {
 This will be applied also to code (except in tables): 
 selectors in css can't be grained to target Markdown syntax
 (for now) */
-.content p a:not(.code),
-.content li a:not(.code),
-.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
+.hx-content p a:not(.code),
+.hx-content li a:not(.code),
+.hx-content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
 article a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
@@ -198,21 +198,21 @@ article a {
   color: rgb(90, 66, 212);
 }
 
-html[class~="dark"] .content p a:not(.code),
-html[class~="dark"] .content li a:not(.code),
+html[class~="dark"] .hx-content p a:not(.code),
+html[class~="dark"] .hx-content li a:not(.code),
 html[class~="dark"] article a {
   color: rgb(0, 172, 230);
 }
 
 /* Allow linking in a variable environment without
 changing the style and adding an a arrow at the end of the text */
-.content a:has(code){
+.hx-content a:has(code){
   text-decoration: none;
   color: inherit;
 }
 
 /* Display an arrow at the end of the linked variable */
-.content a:not(.code-block code) code::after {
+.hx-content a:not(.code-block code) code::after {
   content: "\00a0↗";
   color: tomato;
   font-size: 1.1rem;
@@ -232,7 +232,7 @@ changing the style and adding an a arrow at the end of the text */
 ----------------------------------------------------------*/ 
 
 /* Table headers formatting */
-.content table:not(.code-block table) th {
+.hx-content table:not(.code-block table) th {
   border-right-width: 0px;
   border-left-width: 0px; 
   border-top: none;
@@ -241,26 +241,26 @@ changing the style and adding an a arrow at the end of the text */
 }
 
 /* Table headers formatting for dark mode */
-html[class~="dark"] .content table:not(.code-block table) th {
+html[class~="dark"] .hx-content table:not(.code-block table) th {
   color: rgb(193, 193, 196);
 }
 
 /* Remove internal borders */
-.content table:not(.code-block table) td {
+.hx-content table:not(.code-block table) td {
   margin: 0px;
   border-width: 0px;
   --tw-border-opacity: 0;
 }
 
 /* Text in cells */
-.content table:not(.code-block table) tr {
+.hx-content table:not(.code-block table) tr {
   font-size: 0.8rem;
   text-align: left;
   border-width: 0px;
   color: rgba(58, 56, 113, 1);
 }
 /* Text in cells for dark mode */
-html[class~="dark"] .content table:not(.code-block table) tr {
+html[class~="dark"] .hx-content table:not(.code-block table) tr {
     color: #ececfe;
   }
 
@@ -315,7 +315,7 @@ html[class~="dark"] .content table:not(.code-block table) tr {
 /* -----------------------------------------
             Customize paragraphs
 -------------------------------------------*/
-.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+.hx-content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
   margin-top: .3rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;

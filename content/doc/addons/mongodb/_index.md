@@ -77,3 +77,5 @@ The features available with Mongo Ops Manager could be relevant if you managed y
 Note that these features are available for all our databases add-ons, in addition to MongoDB.
 
 **The managed databases provide an advantage if you want to avoid the complexity of installing and deploying databases** and if you want simple-to-use management and monitoring tools.
+
+{{% content/managed-services %}}

@@ -16,13 +16,15 @@ type: docs
 draft: false
 ---
 
-[Materia](https://www.clever-cloud.com/materia/) is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.
+Materia is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.
+
 
 Materia KV is the first publicly available product of this family. It's a key-value database which comes with simplicity in mind. You have no instance size to choose, no storage capacity to worry about. We simply provide you with a host address, a port and a token: you’re ready to go! Once our servers send a reply message, your data is durable: it's synchronously replicated over 3 datacenters in Paris.
 
 You don't have to configure leaders, followers: high availability is included, by design.
 
 {{< callout type="info" >}}
+
 **Materia KV is in Alpha testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
@@ -76,14 +78,6 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 {{< /callout >}}
 
-### Fish shell users
-
-If you use the Fish shell, you can use the following command to set the environment variables:
-
-```fish
-clever addon env ADDON_ID -F shell | source
-```
-
 ## Using the Redis API compatible layer
 
 ### Environment variables and CLI usage
@@ -103,6 +97,15 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
 
 Materia KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
+
+
+### Fish shell users
+
+If you use the Fish shell, you can use the following command to set the environment variables:
+
+```fish
+clever addon env ADDON_ID -F shell | source
+```
 
 {{< callout type="info" >}}
 By default, Materia KV uses TLS on the 6379 port. You can use non-TLS connections on the 6378 port for testing purposes.

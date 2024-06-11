@@ -18,14 +18,14 @@ draft: false
 
 Materia is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.
 
+
 Materia KV is the first publicly available product of this family. It's a key-value database which comes with simplicity in mind. You have no instance size to choose, no storage capacity to worry about. We simply provide you with a host address, a port and a token: you’re ready to go! Once our servers send a reply message, your data is durable: it's synchronously replicated over 3 datacenters in Paris.
 
 You don't have to configure leaders, followers: high availability is included, by design.
 
 {{< callout type="info" >}}
 
-* Materia KV is in Alpha testing phase** Your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
-
+**Materia KV is in Alpha testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
 ## Compatibility layers
@@ -61,7 +61,7 @@ $ clever addon create kv testKV
 
 Add-on created successfully!
 ID: addon_4997cfe3-f104-4d05-9fe4-xxxxxxxxx
-Real ID: kv_01HV6NCSRD1TV2AJW4RKFBJ07R
+Real ID: kv_01HV6NCSRDxxxxxxxxxxxxxxxx
 Name: testKV
 
 /!\ The Materia KV provider is in Alpha testing phase, don't store sensitive or production grade data
@@ -69,7 +69,6 @@ You can easily use Materia KV with 'redis-cli', with such commands:
 source <(clever addon env addon_4997cfe3-f104-xxxx-xxxx-xxxxxxxxx -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
-
 
 You can also deploy Materia KV add-ons with [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/materiadb_kv) (OpenTofu compatible).
 
@@ -99,6 +98,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 Materia KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
 
+
 ### Fish shell users
 
 If you use the Fish shell, you can use the following command to set the environment variables:
@@ -106,6 +106,24 @@ If you use the Fish shell, you can use the following command to set the environm
 ```fish
 clever addon env ADDON_ID -F shell | source
 ```
+
+{{< callout type="info" >}}
+By default, Materia KV uses TLS on the 6379 port. You can use non-TLS connections on the 6378 port for testing purposes.
+{{< /callout >}}
+
+### Clever KV
+
+We're exploring how [Clever Tools](https://github.com/CleverCloud/clever-tools/) can natively support Materia KV and helps you to manage such add-ons without any additional software or configuration. We've enabled the `clever kv` command in a testing branch available [here](https://github.com/CleverCloud/clever-tools/pull/725). You can download it as a binary and only need the `KV_TOKEN` environment variable to be set to use it, or target a specific add-on with the `--addon` option.
+
+* [Learn more about Clever KV](https://github.com/CleverCloud/clever-tools/blob/davlgd-embedded-kv-client/docs/kv.md)
+
+### Demos and examples
+
+We've prepared a few examples to help you get started with Materia KV:
+
+* [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
+* [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
+* [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
 
 ### Supported types and commands
 

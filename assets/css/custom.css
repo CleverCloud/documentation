@@ -17,21 +17,21 @@
   --primary-hue: 235deg;
 }
 
-.bg-gray-100 {
+.hx-bg-gray-100 {
   background-color: #f1f0fb;
 }
 
-.bg-gray-200 {
+.hx-bg-gray-200 {
   background-color: rgb(214, 207, 251);
 }
 
-.bg-gray-custom {
+.hx-bg-gray-custom {
   background-color: #f5f5f5;
 }
-.bg-red-500 {
+.hx-bg-red-500 {
   background-color: rgba(245, 117, 97, 0.608);
 }
-.text-white {
+.hx-text-white {
   color: white;
 }
 
@@ -73,7 +73,7 @@ color: rgb(82 82 82 / .7)
 .hx-rounded-sm,
 .hx-code-block pre:not(.lntable pre),
 .hx-code-block .filename,
-.hx-chroma .lntable,
+.chroma .lntable,
 .hx-content img,
 .hx-content div.gist-file,
 .btn-secondary,
@@ -180,7 +180,7 @@ _______________________________________________________*/
 
 /* Prevent linked text to be underlined or change color.
   Useful for beautiful cards */
-a.no-underline {
+a.hx-no-underline {
   text-decoration: none;
 }
 
@@ -319,6 +319,11 @@ html[class~="dark"] .hx-content table:not(.code-block table) tr {
   margin-top: .3rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
+}
+
+/* -- Add padding to the left for changelog listing --*/
+.hx-pl-5 {
+  padding-left: 1.25rem;
 }
 
 

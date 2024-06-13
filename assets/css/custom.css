@@ -50,7 +50,7 @@ h1, .content h1,
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.text-xxs {
+.hx-text-xxs {
   font-size: 0.65rem;
 }
 
@@ -173,6 +173,10 @@ Allow inserting "steps" shortcode with h4 */
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
+
+
+/* Tabs */
+
 
 /* -----------------------------------------------------
                Links styles

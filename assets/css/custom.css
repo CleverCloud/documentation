@@ -43,10 +43,10 @@
 
 
 /* Fonts */
-h1, .hx-content h1,
-.hx-content h2,
-.hx-content h3,
-.hx-content h3 {
+h1, .content h1,
+.content h2,
+.content h3,
+.content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -71,11 +71,11 @@ color: rgb(82 82 82 / .7)
 .hx-rounded-lg,
 .hx-rounded-md,
 .hx-rounded-sm,
-.hx-code-block pre:not(.lntable pre),
-.hx-code-block .filename,
+.hextra-code-block pre:not(.lntable pre),
+.hextra-code-block .filename,
 .chroma .lntable,
-.hx-content img,
-.hx-content div.gist-file,
+.content img,
+.content div.gist-file,
 .btn-secondary,
 .btn-primary  {
   border-radius: 0rem;
@@ -188,9 +188,9 @@ a.hx-no-underline {
 This will be applied also to code (except in tables): 
 selectors in css can't be grained to target Markdown syntax
 (for now) */
-.hx-content p a:not(.code),
-.hx-content li a:not(.code),
-.hx-content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
+.content p a:not(.code),
+.content li a:not(.code),
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
 article a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
@@ -206,13 +206,13 @@ html[class~="dark"] article a {
 
 /* Allow linking in a variable environment without
 changing the style and adding an a arrow at the end of the text */
-.hx-content a:has(code){
+.content a:has(code){
   text-decoration: none;
   color: inherit;
 }
 
 /* Display an arrow at the end of the linked variable */
-.hx-content a:not(.code-block code) code::after {
+.content a:not(.code-block code) code::after {
   content: "\00a0↗";
   color: tomato;
   font-size: 1.1rem;
@@ -232,7 +232,7 @@ changing the style and adding an a arrow at the end of the text */
 ----------------------------------------------------------*/ 
 
 /* Table headers formatting */
-.hx-content table:not(.code-block table) th {
+.content table:not(.code-block table) th {
   border-right-width: 0px;
   border-left-width: 0px; 
   border-top: none;
@@ -241,19 +241,19 @@ changing the style and adding an a arrow at the end of the text */
 }
 
 /* Table headers formatting for dark mode */
-html[class~="dark"] .hx-content table:not(.code-block table) th {
+html[class~="dark"] .content table:not(.code-block table) th {
   color: rgb(193, 193, 196);
 }
 
 /* Remove internal borders */
-.hx-content table:not(.code-block table) td {
+.content table:not(.code-block table) td {
   margin: 0px;
   border-width: 0px;
   --tw-border-opacity: 0;
 }
 
 /* Text in cells */
-.hx-content table:not(.code-block table) tr {
+.content table:not(.code-block table) tr {
   font-size: 0.8rem;
   text-align: left;
   border-width: 0px;
@@ -315,13 +315,13 @@ html[class~="dark"] .hx-content table:not(.code-block table) tr {
 /* -----------------------------------------
             Customize paragraphs
 -------------------------------------------*/
-.hx-content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
   margin-top: .3rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
 }
 
-/* -- Add padding to the left for changelog listing --*/
+/* -- Add padding to the left for changelog listing--*/
 .hx-pl-5 {
   padding-left: 1.25rem;
 }

@@ -183,8 +183,8 @@ The response body contains:
 
 You can find templates for add-on providers in various languages on GitHub:
 
-* [https://github.com/Redsmin/passport-clevercloud](Node.js)
-* [https://github.com/CleverCloud/addon-provider-template](Scala with Play! Framework 2)
+* [Node.js](https://github.com/Redsmin/passport-clevercloud)
+* [Scala with Play! Framework 2](https://github.com/CleverCloud/addon-provider-template)
 
 ## Add-on Infos API
 

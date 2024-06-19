@@ -40,6 +40,7 @@ Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentica
 - Support and Maintenance.
 
 ## Need expert advice?
+
 The Clever Cloud Keycloak add-on is designed to meet the most common needs. For the most complex and loaded systems, [*Please Open-it*](https://please-open.it/), our partners and Keycloak experts behind this add-on, can provide assistance: [Contact us for more information](mailto:sales@clever-cloud.com).
 
 ## How it works?
@@ -50,6 +51,7 @@ When you create the Keycloak add-on, Clever Cloud automatically deploys:
 - An [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) used for themes, plugins, and import/export storage needs. 
 
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
+
 - XS Java 17;
 - XS Tiny Space PostgreSQL;
 - Less than 100 MB FSBucket.
@@ -62,18 +64,22 @@ Note: The setting of resource sizes manually is a Tech Preview feature that may 
 
 
 ## Create a Keycloak add-on
+
 ### From the Web Console
 1. Create a new add-on by clicking the **Create...** dropdown in the sidebar and then **an add-on**.
 2. Select the Keycloak add-on.
 3. You can skip linking the add-on to an application, it won't be needed.
 4. Enter a name for your Keycloak add-on and select the zone where you want it to be deployed.
+  
 ### Using the CLI
+
 1. Make sure you have `clever-tools` installed locally. Please refer to the [getting started]({{< ref `doc/cli/getting_started.md` >}}) guide if needed.
 2.  List the available plans and options for Keycloak: `clever addon providers show addon-keycloak`.
 3. In your terminal, run `clever addon create addon-keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID where to create it.
 Refer to the [documentation]({{< ref `doc/cli/create.md` >}}) for more details on add-on creation with Clever Tools.
 
 ## Accessing the Keycloak interface
+
 Once you have created your add-on, go to the Console Keycloak Java runtime page and click "Open the application"
 
 ![Open the application button](/images/doc/open_the_app_ico.png )
@@ -81,16 +87,19 @@ Once you have created your add-on, go to the Console Keycloak Java runtime page 
 You also can get the Keycloak add-on URL from the Clever Cloud console, in the information panel of your Keycloak add-on.
 
 ### Keycloak admin interface
+
 The admin interface is accessible on the `/admin` endpoint:
 
 - `iffslonattslbta6eilb-keycloak.services.clever-cloud.com/admin`
 > Here, the URL comes from the information panel in the console. Note the added `/admin` at the end.
 
 ### Admin User and Password
+
 - A default user and password are provided in the Java application by the environment variables `CC_KEYCLOAK_ADMIN` and `CC_KEYCLOAK_ADMIN_PASSWORD`.
 - __Password change requested at the first connection__
 
 ### Realms management
+
 Realm numbers significantly impact the overall performances. __Use as few realms as possible.__
 
 There are two ways to manage Realms:
@@ -111,9 +120,11 @@ There are two ways to manage Realms:
 > A Realm __created by Clever Cloud's environment variables comes with an optimized configuration__ such as brute-force detection and specific metrics.
 
 ### Custom Themes and Plugins
+
 Keycloak uses an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
 ### Exporting data
+
 There are two ways to export Keycloak data:
 1. A partial export using the Keycloak console.
      - from the `Realm Settings` panel;
@@ -137,6 +148,7 @@ There are two ways to export Keycloak data:
 
 
 ### Importing realms data
+
 Uploading previously exported data in the `Import` folder in the associated FSBucket enables importing realms data. The import process starts after restarting the Java application.
 
 ## Security and updates
@@ -147,7 +159,9 @@ An add-on update might require a restart.
 > Required actions are notified by email.
 
 ## Pricing plans
+
 ### Technical Review price plan
+
 The Tech Preview pricing consists of the sum of the deployed resources. In details, [as per the pricing plan](https://www.clever-cloud.com/pricing/), the default configuration is priced as such:
 
 | Resource                 | Price / 30 days |
@@ -157,6 +171,7 @@ The Tech Preview pricing consists of the sum of the deployed resources. In detai
 | FS Bucket < 100 MB       |              0€ |
 | Service and Management   |              0€ |
 | **Total**                    |             **31€** |
+
 Note: During the Technical Preview, there are no extra service management fees applied..
 
 

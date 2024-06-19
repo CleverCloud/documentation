@@ -111,6 +111,23 @@ html[class~="dark"] .btn-primary {
 .hextra-card {
   border-radius: 0.29rem;
   position: relative;
+  color: inherit;
+}
+.hextra-feature-card h3 {
+  font-family: inherit; /* Ensures font family is inherited */
+  font-size: 1.5rem; /* Example size */
+  color: inherit; /* Ensures color is inherited */
+}
+
+html[class~="dark"] .hextra-feature-card {
+  color: inherit;
+}
+
+/*--cc-cards {
+  border-radius: 0.29rem;
+  position: relative;
+  color: inherit;
+  font-weight: 500;
 }
 
 /* If tag, position upright on the card */
@@ -202,8 +219,8 @@ article a {
   color: rgb(90, 66, 212);
 }
 
-html[class~="dark"] .hx-content p a:not(.code),
-html[class~="dark"] .hx-content li a:not(.code),
+html[class~="dark"] .content p a:not(.code),
+html[class~="dark"] .content li a:not(.code),
 html[class~="dark"] article a {
   color: rgb(0, 172, 230);
 }

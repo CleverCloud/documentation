@@ -8,6 +8,7 @@ keywords:
 - Partners
 aliases:
 - /doc/extend/addon-api/
+- /doc/extend/add-ons-api/
 type: docs
 comments: false
 weight: 13

@@ -21,11 +21,14 @@ The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 
 {{< tabs items="Email Auth, GitHub Auth" >}}
+
   {{< tab >}}
   This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters.
   Do not forget to validate your email by clicking the link you will receive.
   {{< /tab >}}
+
   {{< tab >}}
+
   The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
   This process asks the following permissions:
   
@@ -37,6 +40,7 @@ There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 {{< /tab >}}
   
 {{< /tabs >}}
+
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 
 ### Two Factor Authentication (2FA)

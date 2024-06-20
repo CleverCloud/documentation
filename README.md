@@ -164,3 +164,12 @@ Example :
 ```go
 {{< figure src="/images/changelog/console-new-ip-par.png" caption="The new IP shown in the console" width="800px">}}
 ```
+
+### Adding a new partial
+
+Partials are reusable content you can include in several pages. To use this feature:
+
+1. Create a new partial in `/layouts/shortcodes/content`
+2. Add it to the relevant pages like this: `{{% content/your-partial %}}``
+
+

@@ -17,6 +17,8 @@ CC_HEALTH_CHECK_PATH_1=/my/other/path
 
 The deployment process checks all paths. All of them must reply with a `200 OK` response code.
 
+By default, when no [environment variable](/doc/reference/reference-environment-variables) (for ex: `APP_HOME`) is defined, the monitoring checks your repository root path `/`.
+
 ### Example
 
 Using the path listed above, below are the expected logs:

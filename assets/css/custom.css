@@ -111,7 +111,7 @@ html[class~="dark"] .btn-primary {
 .hextra-card {
   border-radius: 0.29rem;
   position: relative;
-  color: inherit;
+
 }
 .hextra-feature-card h3 {
   font-family: inherit; /* Ensures font family is inherited */
@@ -123,12 +123,6 @@ html[class~="dark"] .hextra-feature-card {
   color: inherit;
 }
 
-/*--cc-cards {
-  border-radius: 0.29rem;
-  position: relative;
-  color: inherit;
-  font-weight: 500;
-}
 
 /* If tag, position upright on the card */
 .up-right {
@@ -192,8 +186,6 @@ Allow inserting "steps" shortcode with h4 */
 }
 
 
-/* Tabs */
-
 
 /* -----------------------------------------------------
                Links styles
@@ -231,6 +223,12 @@ changing the style and adding an a arrow at the end of the text */
   text-decoration: none;
   color: inherit;
 }
+
+/* Enforce white color in dark mode for code blocks containing a link */ 
+html[class~="dark"] .content a:has(code){
+  color: #ececfe;
+}
+
 
 /* Display an arrow at the end of the linked variable */
 .content a:not(.code-block code) code::after {
@@ -281,7 +279,7 @@ html[class~="dark"] .content table:not(.code-block table) th {
   color: rgba(58, 56, 113, 1);
 }
 /* Text in cells for dark mode */
-html[class~="dark"] .hx-content table:not(.code-block table) tr {
+.content :where(table):not(:where(.hextra-code-block table, [class~=not-prose],[class~=not-prose] *)) td:is(html[class~="dark"] *) {
     color: #ececfe;
   }
 

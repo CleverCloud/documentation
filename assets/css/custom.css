@@ -111,7 +111,7 @@ html[class~="dark"] .btn-primary {
 .hextra-card {
   border-radius: 0.29rem;
   position: relative;
-  hugo s
+
 }
 .hextra-feature-card h3 {
   font-family: inherit; /* Ensures font family is inherited */
@@ -123,12 +123,6 @@ html[class~="dark"] .hextra-feature-card {
   color: inherit;
 }
 
-/*--cc-cards {
-  border-radius: 0.29rem;
-  position: relative;
-  color: inherit;
-  font-weight: 500;
-}
 
 /* If tag, position upright on the card */
 .up-right {

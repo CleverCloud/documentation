@@ -78,11 +78,11 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
   
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build-cc_pre_build_hook "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
-|[`CC_POST_BUILD_HOOK`](/doc/develop/build-hooks/pre-build-cc_post_build_hook "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
-|[`CC_PRE_RUN_HOOK`](/doc/develop/build-hooks/#pre-run-cc_pre_run_hook "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
-|[`CC_RUN_FAILED_HOOK`](/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook "Run succeeded/failed hook") | Ran once the application has failed to start. |
-|[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-succeeded-cc_run_succeeded_hook-or-failed-cc_run_failed_hook "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
+|[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
+|[`CC_POST_BUILD_HOOK`](/doc/develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
+|[`CC_PRE_RUN_HOOK`](/doc/develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
+|[`CC_RUN_FAILED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
+|[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
   

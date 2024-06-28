@@ -14,21 +14,23 @@ keywords:
 - drains
 - datadog
 - newrelic
-aliases: 
+aliases:
 - doc/administrate/log-management/#get-continuous-logs-from-your-application
 type: docs
 ---
 
-Clever Cloud new logs stack, based on Vector and Apache Pulsar, is available for applications and through the new [Console](https://console.clever-cloud.com) dedicated section, in public beta. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse. The settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local time, to show the instances name or not. 
+Clever Cloud new logs stack is currently in public beta. Activated on-demand in the dedicated section of any application in the [Console](https://console.clever-cloud.com). It's not available for add-ons yet. It's based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse.
 
-![New logs interfaces](/images/doc/new-logs-beta.webp)
+There are two text filter modes: exact match (case-sensitive) and regular expression. Settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local, to show the instances name or not.
 
-During beta, you can send us your feed back through our GitHub Community:
+![New logs interface](/images/doc/new-logs-beta.webp)
+
+During beta, you can send us your feedback through our GitHub Community:
 
 * [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
-Logs are retained for 7 days, sometimes more for specific customers/needs. On our old stack, they are flushed daily at midnight. 
+Logs are retained for 7 days, sometimes more for specific customers/needs. On our old stack, they are flushed daily at midnight.
 {{< /callout >}}
 
 ## Get continuous logs from your application
@@ -43,7 +45,7 @@ You can add `--since`, followed by a duration or a date (ISO8601 format). The `-
 
 ```bash
 clever logs --since 2h
-clever logs --until 2024-04-15T13:37:42Z 
+clever logs --until 2024-04-15T13:37:42Z
 ```
 
 You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
@@ -80,7 +82,7 @@ If you need to change the ouput you can specify the `--format` flag with one of 
 - extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever-cloud.com / 200`
 - clf: `255.255.255.255 - - [25/Jun/2021:12:11:35 +0200] "GET / -" 200 562`
 - json:
-  
+
   ```json
     {
         "t":"2021-06-25T10:11:35.358209Z",
@@ -178,7 +180,7 @@ curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.c
       "delete": {
         "min_age": "30d",
         "actions": {
-          "delete": {} 
+          "delete": {}
         }
       }
     }
@@ -192,7 +194,7 @@ An index template example to apply the policy based on an index pattern:
 ```bash
 curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.com/_index_template/logs_drain?pretty" -H 'Content-Type: application/json' -d'
 {
-  "index_patterns": ["logstash-*"], 
+  "index_patterns": ["logstash-*"],
   "template": {
     "settings": {
       "index.lifecycle.name": "logs_drain"

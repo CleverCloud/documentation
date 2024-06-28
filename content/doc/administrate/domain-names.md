@@ -57,7 +57,7 @@ Provide the following to your registrar:
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 185.42.117.108`<br>`@ 10800 IN A 185.42.117.109`<br>`@ 10800 IN A 46.252.181.103`<br>`@ 10800 IN A 46.252.181.104`<br>`@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`  |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
 
 ### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
 

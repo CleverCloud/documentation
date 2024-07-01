@@ -92,8 +92,9 @@ You should create a `file.pem` containing:
 -----END CERTIFICATE-----
 ```
 
-Remove any possible mention of the algorithm in the footer and header.
-For instance, the API does not parse `-----BEGIN RSA PRIVATE KEY-----`, remove the `RSA` part.
+You may need to mention the algorithm in the footer and header.
+For instance, if the previous format doesn't work, try to use :  
+`-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----`
 
 You can add optionnal intermediate certificates by appending them to the file as
 

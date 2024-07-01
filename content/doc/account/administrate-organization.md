@@ -2,7 +2,7 @@
 type: docs
 weight: 3
 title: Manage an Organization
-description: Learn how to effectively administrate organizations on your Clever Cloud account. This guide provides step-by-step instructions for managing members, payments, invoices, and settings in our PaaS environment.
+description: Learn how to effectively administrate organizations on your Clever Cloud account. This guide provides step-by-step instructions for managing members, payments, Factur-X compatible invoices, and settings in our PaaS environment.
 tags:
 - account
 keywords:
@@ -30,7 +30,7 @@ By clicking on you application name, a new left menu will open itself.
 
 - **Payment methods**: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.
 
-- **Invoices**: See your recent invoices.
+- **Invoices**: See your recent invoices ([Factur-X](https://fnfe-mpe.org/factur-x/factur-x_en/) compatible).
 
 - **Notifications**: Manage email notifications and web hooks for team members.
 

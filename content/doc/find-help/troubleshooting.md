@@ -170,7 +170,7 @@ You can of course reach to <support@clever-cloud.com> if this page was not helpf
 Check the status of the services on [clevercloudstatus.com](https://www.clevercloudstatus.com/). The support team is also there to help you identify any potential errors or misconfiguration.
 {{% /details %}}
 
-{{% details title="A lot of port appear open after a scan of my domain" closed="true" %}}
+{{% details title="There are a lot of open ports, according to a port scan." closed="true" %}}
 
 If you tried to scan your domain, you may not only have scanned your app, but also several public load balancers.
 Here is an explanation of the different port you may see.

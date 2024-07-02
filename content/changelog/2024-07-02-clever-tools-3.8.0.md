@@ -1,5 +1,5 @@
 ---
-title: 'Clever Tools 3.8.0: "Big Summer Update" is available'
+title: 'Clever Tools 3.8: "Big Summer Update" is available'
 date: 2024-07-02
 tags:
   - clever-tools
@@ -11,7 +11,7 @@ authors:
   - name: Hubert Sablonière
     link: https://github.com/hsablonniere
     image: https://github.com/hsablonniere.png?size=40
-description: cURL is fixed, some enhancements
+description: Better manage your apps, lots of new features
 excludeSearch: true
 ---
 
@@ -53,7 +53,7 @@ These changes are available thanks to a `cliparse` update [introducing private o
 
 Multiple new features are also available in this "Big Summer Update". Access Logs feature now uses `v4` API. It's faster and more reliable, only available for applications and as an alpha test for now. It's available through `clever accesslogs` command.
 
-`--no-color` or `--color true|false` global option is available. It's used by default when the output is not a terminal. `clever console` now opens the [Console](https://console.clever-cloud.com) even if your not in a folder with a linked application.
+`--no-color` or `--color true|false` global option is available. It's used by default when the output is not a terminal. `clever console` now opens the [Console](https://console.clever-cloud.com) even if your not in a folder with a linked application. [3.8.1 release](https://github.com/CleverCloud/clever-tools/releases/tag/3.8.1) comes with some minor fixes.
 
 To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with npm:
 

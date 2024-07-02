@@ -178,7 +178,7 @@ Here is an explanation of the different port you may see.
 - Port 9999 : Zabbix use this port to monitor the hypervisor.
 - Ports 5000 to 6000 : The TCP redirection feature use these port to work. If you see the port in this range open but don't have the feature enabled, it means other app also present on the same hypervisor uses this feature. The load balancer link a specific port to an app, you don't have to worry about other people using this port to access your app.
 - Port 3000 : Juggernaut, the daemon torrent for the VM images use this port.
-- Ports 1080 and 1081 : They are necessary for the reverse-proxy Sozu to be able to redirect traffic to your application. Port 1080 is for HTTP and 1081 for HTTPS
+- Ports 1080 and 1081 : Those are necessary for the reverse-proxy Sōzu to be able to redirect traffic to your application. Port 1080 is for HTTP and 1081 for HTTPS
 - Port 80 and 443 : Your app use these ports to receive HTTP and HTTPS traffic
 
 {{% /details %}}

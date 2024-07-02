@@ -82,8 +82,8 @@ You can however manage and adjust them directly in the Console to fit your needs
 ### Using the CLI
 
 1. Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed
-2. List the available plans and options for Keycloak: `clever addon providers show addon-keycloak`
-3. In your terminal, run `clever addon create addon-keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID where to create it
+2. List the available plans and options for Keycloak: `clever addon providers show keycloak`
+3. In your terminal, run `clever addon create keycloak <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID where to create it
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
 

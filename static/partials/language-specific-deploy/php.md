@@ -2,7 +2,7 @@
 
 ### Choose your PHP version
 
-Set the `CC_PHP_VERSION` environment variable to one of the following values: {{< runtimes_versions PHP >}}.
+Set the `CC_PHP_VERSION` environment variable to one of the following values: {{< runtimes_versions PHP >}}
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 8, which means latest php 8 a version  available.
 

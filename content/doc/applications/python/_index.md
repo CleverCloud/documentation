@@ -22,7 +22,7 @@ comments: false
 
 Python is a programming language that lets you work more quickly and integrate your systems more efficiently.
 
-### Supported Versions
+### Supported versions
 
 The supported versions are {{< runtimes_versions python >}}
 

@@ -21,7 +21,11 @@ type: docs
 
 PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
 
+<<<<<<< HEAD
 ### Supported versions
+=======
+### Supported Versions
+>>>>>>> 3b2daa01 (adding shortcodes for mongo, mysql and postgresql)
 
 {{< software_versions_shared_dedicated pg>}}
 

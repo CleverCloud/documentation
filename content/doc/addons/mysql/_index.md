@@ -17,7 +17,11 @@ type: docs
 ## Overview
 MySQL is an open-source relational database management system (RDBMS).
 
+<<<<<<< HEAD
 ### Supported versions
+=======
+### Supported Versions
+>>>>>>> 3b2daa01 (adding shortcodes for mongo, mysql and postgresql)
 
 {{< software_versions_shared_dedicated mysql>}}
 

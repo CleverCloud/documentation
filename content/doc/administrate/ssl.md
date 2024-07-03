@@ -93,7 +93,7 @@ You should create a `file.pem` containing:
 ```
 
 You may need to mention the algorithm in the footer and header.
-For instance, if the previous format doesn't work, try to use :  
+For instance, if the previous format doesn't work, try to use  
 `-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----`
 
 You can add optionnal intermediate certificates by appending them to the file as

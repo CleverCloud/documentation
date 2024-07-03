@@ -24,7 +24,7 @@ Python is a programming language that lets you work more quickly and integrate y
 
 ### Supported versions
 
-The supported versions are {{< runtimes_versions python >}}
+The supported versions are: {{< runtimes_versions python >}}
 
 {{% content/create-application %}}
 

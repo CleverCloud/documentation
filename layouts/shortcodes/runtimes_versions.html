@@ -1,0 +1,8 @@
+{{ $software :=  or (.Get 0) }}
+{{ $version_list := .Site.Data.runtime_versions }}
+
+  {{ with index $version_list $software }}
+        {{ range . }}
+    <code>{{ . }}</code>
+    {{ end }}. 
+  {{ end }}

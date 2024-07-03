@@ -22,7 +22,7 @@ into HTML.
 
 ### Supported Versions
 
-The supported versions are {{< runtimes_versions PHP >}}.
+The supported versions are: {{< runtimes_versions PHP >}}
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 

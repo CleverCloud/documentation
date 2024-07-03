@@ -36,7 +36,7 @@ Be sure that:
 
 ### Set Node.js version
 
-You can use the `engines.node` field in `package.json` to define the wanted version, if not provided we will use the latest LTS version available on our platform.
+You can use the `engines.node` field in `package.json` to define the wanted version, if not provided we will use the latest LTS version available on Clever Cloud.
 
 ### About package.json
 

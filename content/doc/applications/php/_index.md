@@ -20,7 +20,7 @@ aliases:
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
 into HTML.
 
-### Supported Versions
+### Supported versions
 
 The supported versions are: {{< runtimes_versions PHP >}}
 

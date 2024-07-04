@@ -204,3 +204,9 @@ Then you can remove records from your database, reindex your tables and try to p
 
 You can buy more disk space by migrating your add-on to a higher plan.
 If a VACUUM operation needs more disk that there is remaining, migrating to the same plan will clean up the file on disk and regain space.
+
+## Where are my backups stored?
+
+Clever Cloud store all your backups on [cellar](https://www.clever-cloud.com/product/cellar-object-storage/).
+Cellar has a replication system to protect the data stored inside it. Cellar create three copies of your backups, each stored in a different datacenters in the PAR region.
+This way, even if one datacenter has an accident, your backup are still safe in two different datacenters.

@@ -22,11 +22,11 @@ As our network evolves, we've updated [IP list for Paris (PAR) zone](/doc/admini
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
 
-4 IP addresses will be removed in the coming weeks and **should not be used anymore**:
+We are going to remove 4 IPs that **you must stop to use between now and August 23rd**:
 
 - 46.252.181.103
 - 46.252.181.104
 - 185.42.117.108
 - 185.42.117.109
 
-You'll find the updated values in the `Domain names` section of your application in [the Console](https://console.clever-cloud.com).
+ After this date, they won't answer to requests anymore. You'll find the updated values in the `Domain names` section of your application in [the Console](https://console.clever-cloud.com). If you have any question about this change, feel free to ask [our customer support](https://console.clever-cloud.com/ticket-center-choice) about it.

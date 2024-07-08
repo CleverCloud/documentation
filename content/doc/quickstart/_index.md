@@ -88,6 +88,8 @@ The log system retrieves all output from the application and displays it in the 
 
 ### Create an Application Step by Step
 
+{{< youtube 9ww_t0o-GmA >}}
+
 In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 {{% steps %}}

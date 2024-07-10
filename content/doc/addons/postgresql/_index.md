@@ -12,7 +12,7 @@ keywords:
 - pgsql
 - mariadb
 
-aliases: 
+aliases:
 - /doc/deploy/addon/postgresql/postgresql
 
 type: docs
@@ -41,8 +41,8 @@ A proxy serves all dedicated PostgreSQL databases. In some cases, this can add s
 
 Generating direct access adds new variables to the add-on's environment, allowing connections without going through the proxy.
 
-{{< callout type="info" >}} 
-Direct access doesn't persist after migrating a database. Manually re-generate direct host name and port after a migration to allow applications linked through direct access to connect to the database. 
+{{< callout type="info" >}}
+Direct access doesn't persist after migrating a database. Manually re-generate direct host name and port after a migration to allow applications linked through direct access to connect to the database.
 
 Such a limitation doesn't exist when using proxy access.
 {{< /callout >}}
@@ -98,6 +98,7 @@ Extension               | Description
  pgcrypto               | Cryptographic functions
  pgrowlocks             | Show row-level locking information
  pgstattuple            | Show tuple-level statistics
+ pgvector               | Vector data type and ivfflat and hnsw access methods
  plcoffee               | PL/CoffeeScript (v8) trusted procedural language
  plls                   | PL/LiveScript (v8) trusted procedural language
  plpgsql                | PL/pgSQL procedural language
@@ -123,8 +124,8 @@ In the [Console's Ticket Center](https://console.clever-cloud.com/ticket-center-
 Extension   | Description
 ----------- | -----------
 pg_cron     | Job scheduler for PostgreSQL
+pg_ivm      | Incremental view maintenance for PostgreSQL
 pgtap       | Unit testing for PostgreSQL
-pgvector    | Vector data type and ivfflat and hnsw access methods
 timescaledb | Enables scalable inserts and complex queries for time-series data (Community Edition)
 
 {{< callout type="warning" >}}
@@ -133,8 +134,8 @@ On-demand extensions aren't available for DEV plans.
 
 ## Automatic vacuuming
 
-[Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.  
-The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.  
+[Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.
+The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.
 Usually this threshold is set to 20%.
 
 ## `pg_activity`

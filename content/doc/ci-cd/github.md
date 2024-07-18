@@ -26,8 +26,42 @@ You can automate deployments for review apps when a Pull Request opens on your G
 
 Two things are necessary to use the action:
 
-1. **Use the script:** Place [the script](https://github.com/CleverCloud/clever-cloud-review-app/blob/main/action.yml) in your `.github/workflows` directory and input the appropriate value to deploy your app. The script already provides a template you can modify at your convenience.
-2. **Inject the environment variables from your repository:** From your GitHub repository go to **Settings** > **Secrets and variables**. Inject them both in "Environment secrets" and "Repository secrets" to allow deployments from forked repositories.
+1. **A workflow file to run the action**. For example, `.github/workflow/review-app.yml`. At the top of this file, define the event trigger for running the action:
+
+```yaml
+on:
+  pull_request_target:
+    types: [opened, closed, synchronize, reopened]
+    branches: [ main ]
+```
+Then, use the action and define the mandatory input:
+
+```yaml
+- name: Create review app
+        uses: CleverCloud/clever-cloud-review-app@latest
+        env:
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+          ORGA_ID: ${{ secrets.ORGA_ID }}
+        with:
+          type: '<type-of-app>'
+```
+
+2. **Inject the environment variables from your repository:** From your GitHub repository go to **Settings** > **Secrets and variables**. Inject them both in "Environment secrets" and "Repository secrets" to allow deployments from forked repositories. Then add them with an `GH_` prefix in your workflow file (this will prevent the injection of the GitHub runner variables in your app). Finally, enable the injection with `set-env: true`:
+
+```yaml
+name: Create review app
+        uses: CleverCloud/clever-cloud-review-app@latest
+        env:
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+          ORGA_ID: ${{ secrets.ORGA_ID }}
+          GH_CC_RUN_SUCCEEDED_HOOK: ${{ secrets.CC_RUN_SUCCEEDED_HOOK }} # This environment variable will be set on Clever Cloud
+        with:
+          type: '<type-of-app>'
+          set-env: true # Enables the command to set en vars on Clever Cloud
+```
+
 
 {{% content/ci-cd-configuration %}}
 
@@ -35,7 +69,7 @@ Full instructions are available on the [Action project](https://github.com/Cleve
 
 #### Review App workflow example
 
-To see a Review App workflow already in use, see [this workflow on GitHub](https://github.com/CleverCloud/documentation/blob/main/.github/workflows/review-app.yml).
+To see a Review App workflow already in use, see [this workflow on GitHub](https://github.com/CleverCloud/clever-cloud-review-app/blob/main/.github/workflows/main.yml)).
 
 ## Troubleshooting
 

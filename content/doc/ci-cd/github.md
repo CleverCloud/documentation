@@ -69,7 +69,7 @@ Full instructions are available on the [Action project](https://github.com/Cleve
 
 #### Review App workflow example
 
-To see a Review App workflow already in use, see [this workflow on GitHub](https://github.com/CleverCloud/clever-cloud-review-app/blob/main/.github/workflows/main.yml)).
+To see a Review App workflow already in use, see [this workflow on GitHub](https://github.com/CleverCloud/clever-cloud-review-app/blob/main/.github/workflows/main.yml).
 
 ## Troubleshooting
 

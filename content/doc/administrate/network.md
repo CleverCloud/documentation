@@ -57,8 +57,6 @@ IP addresses ranges.
 
 Here are the current four addresses ranges your application may have an outgoing IP in:
 
-- 185.42.117.0/24
-- 46.252.181.0/24
 - 91.208.207.0/24
 - 185.133.116.0/22
 

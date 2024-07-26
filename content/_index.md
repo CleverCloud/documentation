@@ -34,8 +34,8 @@ width: normal
 
 <div class="hx-mt-6"></div>
 
-{{< feature-grid >}}
-  {{< feature-card
+{{< hextra/feature-grid >}}
+  {{< hextra/feature-card
     title="Environment Variables"
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
     link="/doc/reference/reference-environment-variables"
@@ -44,7 +44,7 @@ width: normal
     imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="API"
     subtitle="The Clever Cloud API reference."
     link="/api"
@@ -53,7 +53,7 @@ width: normal
     imageClass="hx-top-[40%] hx-left-[36px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="The CLI Clever Tools"
     subtitle="An official Command Line Interface for Clever Cloud."
     link="/doc/cli"
@@ -62,21 +62,21 @@ width: normal
     imageClass="hx-top-[40%] hx-left-[36px] hx-w-[110%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="Steps by Steps Guides"
     subtitle="Find detailed tutorials to deploy your favorite framework on Clever Cloud"
     link="/guides"
   >}}
   
-  {{< feature-card
+  {{< hextra/feature-card
     title="Deploy an application"
     subtitle="See supported languages and how to configure your app to deploy successfully"
     link="/doc/applications"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="Connect your application to dependencies"
     subtitle="See available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic..."
     link="/doc/addons"
   >}}
   
-{{< /feature-grid >}}
+{{< /hextra/feature-grid >}}

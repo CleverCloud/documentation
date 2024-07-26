@@ -345,4 +345,10 @@ html[class~="dark"] .content table:not(.code-block table) th {
   padding-left: 1.25rem;
 }
 
+/* Override for hextra/feature-card */ 
+.hextra-feature-card h3,
+.hextra-feature-card {
+    text-decoration: none;
+    color: black;
 
+}

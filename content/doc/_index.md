@@ -31,24 +31,24 @@ linkTitle: Documentation
   See our step by step tutorials
 {{< /hextra/hero-subtitle >}}
 
-{{< feature-grid >}}
-  {{< feature-card
+{{< hextra/feature-grid >}}
+  {{< hextra/feature-card
     title="Find your framework"
     subtitle="Deploy your favorite framework with our step by step guides."
     link="/guides"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.15),hsla(0,0%,100%,0));"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="Starter tutorials"
     subtitle="Make a starter app and deploy it on Clever Cloud."
     link="/guides/#starter-tutorials"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.15),hsla(0,0%,100%,0));"
   >}}
-  {{< feature-card
+  {{< hextra/feature-card
     title="Add-ons guides"
     subtitle="Take your dependencies management to the next level."
     link="/guides/#level-up-your-add-ons"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(165, 16, 80, 0.15),hsla(0,0%,100%,0));"
   >}}
 
-{{< /feature-grid >}}
+{{< /hextra/feature-grid >}}

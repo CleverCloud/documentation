@@ -1,3 +1,0 @@
-{{- $file_path := .Get "file" -}}
-{{- $file_content := readFile (printf "/static/partials/%s" $file_path) -}}
-{{- $file_content | markdownify -}}

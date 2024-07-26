@@ -124,7 +124,7 @@ NOTES:
 {{< callout type="warning" >}}
 If you have an apple processor, an error may occur during the installation.  
 This is because clever tools currently only work on MacOS with an Intel processor.
-To resolve this problem, you can install Rosetta, a program that let apple processor run program made for Intel.  
+To resolve this problem, you can install Rosetta, a program that lets Apple processors run programs compiled for Intel processors.  
 To install it, you can use the command `/usr/sbin/softwareupdate --install-rosetta`
 {{< /callout >}}
 

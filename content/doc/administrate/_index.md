@@ -6,6 +6,7 @@ comments: false
 
 {{< cards >}}
   {{< card link="/doc/administrate/apps-management" title="Application management" icon="cursor-arrow-ripple" >}}
+  {{< card link="/doc/administrate/activity" title="Activity" icon="clock" >}}
   {{< card link="/doc/administrate/scalability" title="Application scaling" icon="arrow-trending-up" >}}
   {{< card link="/doc/administrate/clamav" title="CLAMAV" icon="clamav" >}}
   {{< card link="/doc/administrate/cron" title="CRON" icon="code-bracket" >}}

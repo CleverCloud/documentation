@@ -17,7 +17,7 @@ type: docs
 Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:
 
  - An action performed by you or by a member of your organization
- - An action performed by the monitoring
+ - An action performed by Clever Cloud
  
  ## Re-deployment triggered by you
  
@@ -39,7 +39,7 @@ Each block indicates if the deployment was successful or unsuccessful, along wit
 
 ## Re-deployments triggered by Clever Cloud
 
-If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
+Clever Cloud might also trigger re-deployments, either when you're being assisted by the Support, or automatically by the monitoring system. If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
 
 ![Re-deployment triggered by the monitoring](/images/doc/monitoring.png)
 

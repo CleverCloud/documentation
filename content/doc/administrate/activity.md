@@ -25,6 +25,7 @@ This happens when you or a member of your organization performs an action on the
 
 - [Restart or rebuild](/doc/administrate/apps-management/#start-restart-and-stop) from the Console or [the CLI](/doc/cli/)
 - Push a new commit from Git or GitHub
+- Stop your application
  
  Here's what you might see on the timeline:
 

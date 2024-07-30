@@ -27,7 +27,7 @@ Each block indicates if the deployment was successful or unsuccessful, along wit
 
 ## Re-deployments triggered by the monitoring
 
-If the monitoring triggers a redeployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
+If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
 
 ![Re-deployment triggered by the monitoring](/images/doc/monitoring.png)
 

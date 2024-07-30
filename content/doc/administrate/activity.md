@@ -37,7 +37,7 @@ Each block indicates if the deployment was successful or unsuccessful, along wit
 - **Commit ID**: on which commit the activity happened
 - **Redeploy this commit**: the option to redeploy a previous commit (useful to quickly roll-back if needed)
 
-## Re-deployments triggered by the monitoring
+## Re-deployments triggered by Clever Cloud
 
 If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
 

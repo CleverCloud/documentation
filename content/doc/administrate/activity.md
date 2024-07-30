@@ -14,7 +14,19 @@ keywords:
 type: docs
 ---
 
-Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application restarts or rebuilds, a new block appears on the timeline. Here's what you might see on the timeline:
+Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:
+
+ - An action performed by you or by a member of your organization
+ - An action performed by the monitoring
+ 
+ ## Re-deployment triggered by you
+ 
+This happens when you or a member of your organization performs an action on the application, like:
+
+- [Restart or rebuild](/doc/administrate/apps-management/#start-restart-and-stop) from the Console or [the CLI](/doc/cli/)
+- Push a new commit from Git or GitHub
+ 
+ Here's what you might see on the timeline:
 
 ![Activity timeline](/images/doc/activity.png)
 

@@ -25,7 +25,6 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 
 {{< software_versions_shared_dedicated pg>}}
 
-
 {{% content/db-backup %}}
 
 ## Migrating from an old database

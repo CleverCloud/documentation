@@ -7,130 +7,29 @@ on:
 
 jobs:
   deploy:
-    if: github.event.action == 'opened' || github.event.action == 'reopened'
+    name: Review app
     runs-on: ubuntu-latest
     permissions:
-      issues: write
-      pull-requests: write
-      contents: read
-    environment:
-      name: PR review apps
+        issues: write
+        pull-requests: write
+        contents: read
     steps:
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: install clever-tools
-        run: npm install -g clever-tools
-      - name: Create app and configure app
+      - name: Manage reveiw app
+        uses: CleverCloud/clever-cloud-review-app@v1.1.0
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
-          HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
-          HEXTRA_VERSION: ${{ secrets.HEXTRA_VERSION }}
-        run: | 
-          clever create --type static-apache ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }} --alias doc-review-PR-${{ github.event.number }} --region par --org "$ORGA_ID"
-          clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
-          clever env set CC_WEBROOT "/public"
-          clever env set HUGO_ENV "production"
-          clever env set HUGO_VERSION "$HUGO_VERSION"
-          clever env set HEXTRA_VERSION "$HEXTRA_VERSION"
-          clever domain add ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io
-          clever deploy
-      - name: Comment PR
-        uses: actions/github-script@v7
+          GH_HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
+          GH_HEXTRA_VERSION: ${{ secrets.HEXTRA_VERSION }}
         with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const message = `Deployment has finished 👁️👄👁️ Your app is available [here](https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io)`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: message
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  update:
-    if: github.event.action == 'synchronize'
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-      - name: install clever-tools
-        run: npm install -g clever-tools
-      - name: Link and update app
-        env:
-          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
-          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-          ORGA_ID: ${{ secrets.ORGA_ID }}
-        run: | 
-          clever link -o "$ORGA_ID" ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}
-          clever deploy --force
-      - name: Comment PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const message = `🚀 Your app has been updated and is available [here](https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io)`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: message
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  delete:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-    if: always() && github.event_name == 'pull_request_target' && github.event.action == 'closed'
-    steps:
-      - name: install clever-tools
-        run: npm install -g clever-tools
-      - name: Delete app
-        env:
-          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
-          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-          ORGA_ID: ${{ secrets.ORGA_ID }}
-        run: |
-          clever link -o "$ORGA_ID" ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}
-          clever delete --alias  ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }} --yes
-      - name: Comment PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const message = `Your review app has been deleted 👋`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: message
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          type: 'static-apache'
+          set-env: true
+          environment: 'review'

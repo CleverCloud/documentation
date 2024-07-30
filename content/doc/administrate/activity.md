@@ -14,7 +14,7 @@ keywords:
 type: docs
 ---
 
-Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application restarts, a new block appears on the timeline. Here's what you might see on the timeline:
+Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application restarts or rebuilds, a new block appears on the timeline. Here's what you might see on the timeline:
 
 ![Activity timeline](/images/doc/activity.png)
 

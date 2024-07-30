@@ -20,7 +20,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - name: Manage reveiw app
+      - name: Manage review app
         uses: CleverCloud/clever-cloud-review-app@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -45,6 +45,6 @@ Clever Cloud might also trigger re-deployments, either when you're being assiste
 
 - `Unreachable`: The monitoring servers couldn't open a TCP connection with at least one monitoring agent hosted on instances of the application.
 - `Timeout`: The monitoring servers has succeed to open TCP connections on all monitoring agents hosted on instances of the application, but at least one did not send its probes in time.
-- `Scaling`: We trigger a new deployment with more instances (virtual machines) or more resources of the application as we detect that the consumption is greater that the determined threshold on memory or cpu usage. For further details, see [Scalability](../scalability)
+- `Scaling`: Clever Cloud triggers a new deployment with more instances (virtual machines) or more resources of the application as the platform detects that the consumption is greater that the determined threshold on memory or CPU usage. For further details, see [Scalability](../scalability)
 - `Maintenance`: Clever Cloud performed a maintenance deployment of the application to integrate new configurations, security patches, operating system updates, runtime updates and so on...
 - `DiskFull`: Rarely appears, but you could see this message if you haven't enabled the auto-scalability, after the app crashed and the monitoring restarted it.

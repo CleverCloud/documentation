@@ -1,0 +1,19 @@
+{{ $software :=  or (.Get 0) }}
+{{ $version_list := .Site.Data.software_versions_shared_dedicated }}
+<p>
+<strong>Shared clusters</strong><br/>
+  {{ with index $version_list $software }}
+        {{ range .dev }}
+    <code>{{ . }}</code> 
+    {{ end }}
+  {{ end }}
+</p>
+
+<p>
+<strong>Dedicated instance</strong><br/>
+  {{ with index $version_list $software }}
+    {{ range .dedicated }}
+          <code>{{ . }}</code> 
+    {{ end }}
+  {{ end }}
+</p>

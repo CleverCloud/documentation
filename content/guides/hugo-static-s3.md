@@ -9,10 +9,11 @@ type: "docs"
 comments: false
 draft: false
 ---
-When creating a static website, it's possible to host it using a runtime.
-You can also also use Cellar, a S3-compatible object storage. This hosting method saves time on configuration and application management, and is fast.
 
-To do so, you will need:
+When creating a static website, it's possible to host it using a runtime.
+You can also use Cellar, a S3-compatible object storage. This hosting method saves time on configuration and application management, and is fast.
+
+To do so, you need:
 
 - a [Clever Cloud account](https://developers.clever-cloud.com/doc/quickstart/)
 - [Hugo](https://gohugo.io/) on your machine
@@ -23,7 +24,7 @@ To do so, you will need:
 
 To create a bucket:
 
-- you can follow the [bucket creation page](https://developers.clever-cloud.com/doc/addons/cellar/#creating-a-bucket),
+- Follow the [bucket creation instructions](https://developers.clever-cloud.com/doc/addons/cellar/#creating-a-bucket),
 - or use third party software like [s3cmd](https://s3tools.org/s3cmd).
 
 {{< callout type="warning" >}}
@@ -117,15 +118,20 @@ Open it, then add the following (according to the programing language):
       ]
     }
   }
+    ```
+ 
 
 {{< /tab >}}
 
   {{< tab >}}**YAML**
+
   ```json {filename="hugo.yaml"}
   deployment:
   targets:
     - name: "(a name for your own reference)"
     - URL: "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
+    ```
+
   {{< /tab >}}
   
   
@@ -135,6 +141,8 @@ Open it, then add the following (according to the programing language):
 [[deployment.targets]]
 name: "(a name for your own reference)"
 URL: "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
+    ```
+
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -150,7 +158,6 @@ To deploy, proceed as usual: `hugo` to build the website locally, then `hugo dep
 If all the steps have been correctly completed, you are now able to access your website with: 
  `https://<BUCKET_NAME>.<CELLAR_HOST>`
 
-<!--- // Gestion des certificats : si ca manque, voir le support pour forcer la gen d'un certificat. Sinon le faire en mode workaround dans la console. --->
 
 Is's possible to encounter an error where the website warns the user with a "not secure" message. 
 This happens when the SSL certificate was not properly generated. 
@@ -159,9 +166,6 @@ The certification propagation takes about 10-15mn.
 
 If you still encounter an issue at this point, please contact our support team. 
 
-<!--- // Ajouter une étape pour mettre en place le nom de domaine avec le bucket. Reprendre une partie de la page Cellar sur la section "Custom Domains" --->
 
 
 
-
-<!--- //Rajouter une section prelim en début pour expliquer pourquoi passer par Cellar plutôt que runtime >

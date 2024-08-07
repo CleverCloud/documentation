@@ -51,6 +51,8 @@ comments: false
   {{< card link="/guides/mkdocs" title="MkDocs" subtitle= "Build and deploy a static MkDocs based website on Clever Cloud" icon="docs" >}}
   {{< card link="/guides/mdbook" title="mdBook" subtitle= "Build and deploy a static mbBook based website on Clever Cloud" icon="mdbook" >}}
   {{< card link="/guides/nuxt" title="Nuxt" subtitle= "Build and deploy a static Nuxt based website on Clever Cloud" icon="nuxt" >}}
+
+   {{< card link="/guides/hugo-static-s3" title="Hugo + Cellar" subtitle= "Build and deploy a static Hugo based website and host it using Cellar" icon="hugo" >}}
 {{< /cards >}}
 
 ## Starter Tutorials

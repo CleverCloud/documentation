@@ -19,7 +19,7 @@ pg:
 mysql:
   dedicated:
     - "v5.7.20"
-    - "v8.0"
+    - "v8.0.36"
   dev:
     - "v8.0"
 mongo:

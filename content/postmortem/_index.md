@@ -6,9 +6,5 @@ draft: false
 type: docs
 ---
 
-{{< hextra/hero-subtitle >}}
-  Page short description.
-{{< /hextra/hero-subtitle >}}
-
 
 - [2024-08-02](./2024-08-02)

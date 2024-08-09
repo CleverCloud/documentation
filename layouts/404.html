@@ -1,11 +1,10 @@
 {{ define "main" }}
-  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
-    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+  <div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12 hx-flex hx-flex-col hx-items-center hx-justify-center">
       
         <div 
-          class="mt-6hx-mb-6 animate__headShake" 
-          style="display: flex; justify-content: center; align-items: center; height: 50vh; flex-direction: column;">
+          class="hx-mt-6 hx-mb-6 hx-flex hx-flex-col hx-items-center hx-justify-center animate__headShake">
           
           <img
             src="/images/404.png"
@@ -16,7 +15,7 @@
           
           <h1
             id="error-heading"
-            class="not-prose text-4xl font-bold leading-none tracking-tighter md:text-5xl py-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
+            class="not-prose hx-text-4xl font-bold leading-none tracking-tighter md:text-5xl py-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
               404
           </h1>
           
@@ -27,7 +26,7 @@
           
           <a
           href="/doc"
-          class="btn-primary hero-button-primary font-medium cursor-pointer px-6 py-3 text-center text-white inline-block focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800 transition-all ease-in duration-200">
+          class="btn-primary hero-button-primary hx-font-medium hx-cursor-pointer hx-px-6 hx-py-3 hx-text-center hx-text-white inline-block focus:hx-outline-none focus:hx-ring-4 focus:hx-ring-primary-300 dark:focus:hx-ring-primary-800 transition-all ease-in duration-200">
             Go to the docs
           </a>
         </div>

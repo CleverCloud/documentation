@@ -91,7 +91,8 @@ color: rgb(82 82 82 / .7)
   text-decoration: none;
 }
 
-html[class~="dark"] .btn-primary {
+html[class~="dark"] .btn-primary
+ {
   color: white;
 }
 
@@ -351,4 +352,7 @@ html[class~="dark"] .content table:not(.code-block table) th {
     text-decoration: none;
     color: black;
 
+}
+html[class~="dark"] .hextra-feature-card h3 {
+  color: white;
 }

@@ -37,7 +37,11 @@ You don't need to change a lot in your application, the *requirements* section e
 
 ### .NET version
 
-The default version used on Clever Cloud is `8.0`. You can change it by setting the `CC_DOTNET_VERSION` environment variable to `6.0`. Clever Cloud doesn't support non-LTS and older versions.
+The versions used on Clever Cloud are the following:
+
+{{< runtimes_versions dotnet >}}
+
+You can change the default version by setting the `CC_DOTNET_VERSION` environment variable to `6.0`. Clever Cloud doesn't support non-LTS and older versions.
 
 ### Requirements
 

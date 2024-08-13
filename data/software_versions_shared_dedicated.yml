@@ -27,3 +27,10 @@ mongo:
     - "v4.0.3"
   dev:
     - "v4.0.3"
+elasticsearch:
+  dedicated:
+    - "v7.17.10"
+    - "v8.10.2"
+redis:
+  dedicated:
+    - "v7.2.4"

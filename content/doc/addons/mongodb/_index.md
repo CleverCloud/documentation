@@ -22,7 +22,7 @@ type: docs
 
 MongoDB is an open source NoSQL document-oriented database. We provide these databases with daily backups and monitoring for both shared and dedicated plans.
 
-### Supported Versions
+## Supported Versions
 
 In order to comply with [MongoDB Server Side Public License](https://www.mongodb.com/licensing/server-side-public-license), the version currently installed by the add-on is:
 

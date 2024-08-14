@@ -24,9 +24,9 @@ python:
     - "3.11"
 dotnet:
   default:
-    - "8.0"
-  accepted:
     - "6.0"
+  accepted:
+    - "8.0"
 elixir:
   default:
     - "1.16"

@@ -65,7 +65,7 @@ If you have a `/clevercloud/varnish.vcl` file at the root of your monorepo, all 
 
 To resolve this issue, you can create a symlink during the deployments.  
 First, you need to put your `varnish.vcl` file anywhere but at the root of your monorepo.  
-Then, you need to create a symlink inside a `CC_PRE_RUN_HOOK`.  
+Then, you need to create a symlink inside a `CC_PRE_BUILD_HOOK`.  
 Here is an example :
 
 ```bash

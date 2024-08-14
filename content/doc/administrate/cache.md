@@ -72,4 +72,4 @@ Here is an example :
 CC_PRE_BUILD_HOOK="mkdir $APP_HOME/clevercloud; ln -s $APP_HOME/path/to/your/file/varnish.vcl $APP_HOME/clevercloud/varnish.vcl"
 ```
 
-This way, you only need to add the `CC_PRE_RUN_HOOK` when you want your app to use Varnish. If you don't, the application won't use it.
+This way, you only need to add the `CC_PRE_BUILD_HOOK` when you want your app to use Varnish. If you don't, the application won't use it.

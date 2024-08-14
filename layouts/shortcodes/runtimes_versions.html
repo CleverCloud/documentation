@@ -1,8 +1,33 @@
-{{ $software :=  or (.Get 0) }}
+{{ $software := or (.Get 0) }}
 {{ $version_list := .Site.Data.runtime_versions }}
 
-  {{ with index $version_list $software }}
+{{ with index $version_list $software }}
+  <div>
+    {{ if reflect.IsSlice . }}
+      <h4>Versions</h4>
+      <p>
         {{ range . }}
-    <code>{{ . }}</code>
-    {{ end }}. 
-  {{ end }}
+          <code>{{ . }}</code>
+        {{ end }}
+      </p>
+    {{ else }}
+      {{ if .default }}
+        <h4>Default</h4>
+        <p>
+          {{ range .default }}
+            <code>{{ . }}</code>
+          {{ end }}
+        </p>
+      {{ end }}
+      
+      {{ if .accepted }}
+        <h4>Accepted versions</h4>
+        <p>
+          {{ range .accepted }}
+            <code>{{ . }}</code>
+          {{ end }}
+        </p>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

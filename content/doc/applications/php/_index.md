@@ -20,10 +20,6 @@ aliases:
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
 into HTML.
 
-### Supported Versions
-
-The supported versions are {{< runtimes_versions PHP >}}
-
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
 {{% content/create-application %}}
@@ -34,18 +30,11 @@ The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is ex
 
 ### Choose your PHP version
 
-Set the `CC_PHP_VERSION` environment variable to one of the following values:
+Set the `CC_PHP_VERSION` environment variable to one of the following versions.
 
-- `5.6`
-- `7.2`
-- `7.3`
-- `7.4`
-- `8.0`
-- `8.1`
-- `8.2`
-- `8.3`
+{{< runtimes_versions PHP >}}
 
-All new PHP applications are created with a default `CC_PHP_VERSION`, set to `8.3`. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`).
+All new PHP applications are created with a default `CC_PHP_VERSION`. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`).
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
 

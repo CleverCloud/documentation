@@ -14,15 +14,12 @@ aliases:
 - /doc/deploy/addon/mysql/mysql
 type: docs
 ---
-
+## Overview
 MySQL is an open-source relational database management system (RDBMS).
 
-## Versions
+## Supported Versions
 
-The version currently installed by the add-on is :
-
-- on shared plans (DEV) : MySQL 8.0
-- on newly created dedicated databases (plans XS Small Space and above) : MySQL 5.7.20 or 8.0
+{{< software_versions_shared_dedicated mysql>}}
 
 {{% content/db-backup %}}
 

@@ -45,6 +45,10 @@ Your application must be set to listen on the port 8080.
 
 {{% content/java-versions %}}
 
+{{< runtimes_versions java >}}
+
+(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
+
 ### Mandatory configuration
 
 #### Option 1: JSON file in repository

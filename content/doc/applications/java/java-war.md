@@ -46,6 +46,10 @@ The supported containers are listed below:
 
 {{% content/java-versions %}}
 
+{{< runtimes_versions java >}}
+
+(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
+
 ## Configure your Java application
 
 {{< callout type="warning" >}}

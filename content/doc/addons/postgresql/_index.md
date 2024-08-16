@@ -17,14 +17,13 @@ aliases:
 
 type: docs
 ---
+## Overview
 
 PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
 
-## Versions
+## Supported Versions
 
-Versions currently available for order are as follows:
-- On shared (DEV) cluster: PostgreSQL version 15
-- On dedicated plans: PostgreSQL versions 10, 11, 12, 13, 14 and 15
+{{< software_versions_shared_dedicated pg>}}
 
 {{% content/db-backup %}}
 

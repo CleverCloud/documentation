@@ -1,27 +1,38 @@
-{{ $software := .Get 0 }}
+{{ $software := or (.Get 0) }}
 {{ $version_list := .Site.Data.software_versions_shared_dedicated }}
+{{ $software_versions := index $version_list $software }}
+{{ $has_dev := false }}
 
-{{ with index $version_list $software }}
-<div>
-<h3>Shared clusters</h3>
-  <p>
-  {{ if .dev }}
-    {{ range .dev }}
-      <code>{{ . }}</code>
-    {{ end }}
-  {{ else }}
-    There isn't any dev plan for this add-on.</br>
-    ⚠️ Dev plans are free and for test purposes only. They don't offer the same guarantees and SLAs as dedicated plans.
-
-  </p>
-  {{ end }}
-
-  
-  <h3>Dedicated instance</h3>
-  <p>
-  {{ range .dedicated }}
-    <code>{{ . }}</code> 
-  {{ end }}
-  </p>
-</div>
+{{ if $software_versions.dev }}
+  {{ $has_dev = true }}
 {{ end }}
+<table>
+  <thead>
+    <tr>
+      <th>Dedicated</th>
+      {{ if $has_dev }}
+        <th>Dev</th>
+      {{ end }}
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $index, $dedicated_version := $software_versions.dedicated }}
+    <tr>
+      <td><code>{{ $dedicated_version }}</code></td>
+      {{ if $has_dev }}
+        <td>
+          {{ with index $software_versions.dev $index }}
+            <code>{{ . }}</code>
+          {{ else }}
+            <!-- If the index is outside the dev values -->
+          {{ end }}
+        </td>
+      {{ end }}
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ if $has_dev }}
+  {{ $.Page.RenderString "<!-- markdown -->{{< callout type=\"warning\">}}  <strong>Important</strong>: Dev plans are free and intended <u>solely for testing purposes</u>. They do not provide the same guarantees or SLAs as dedicated plans. {{< /callout >}}" | safeHTML }}
+{{ end }}
+

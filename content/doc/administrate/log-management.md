@@ -75,7 +75,7 @@ clever accesslogs
 ```
 
 As with the `logs` command, you can specify `--before` and `--after` flags.
-If no options are specified, the logs will be displayed continuously.  
+If no options are specified, the logs display continuously.  
 
 If you need to change the output you can specify the `--format` flag with one of these values:
 

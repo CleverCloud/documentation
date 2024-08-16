@@ -24,7 +24,8 @@ Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsea
 
 ## Versions
 
-The current versions supported at add-on creation are 7 and 8.
+The current versions supported at add-on creation are the following:
+{{< software_versions_shared_dedicated elasticsearch>}}
 
 ## Elasticsearch
 

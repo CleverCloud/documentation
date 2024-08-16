@@ -30,7 +30,9 @@ Clever Cloud supports Elixir based applications.
 
 ### Mandatory configuration
 
-- Get your Elixir version in your console with `$ elixir -v` and set the environment variable **CC_ELIXIR_VERSION** to its value (available versions as of today are `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13`, `1.14`, `1.15` or `1.16`).  
+Get your Elixir version in your console with `$ elixir -v` and set the environment variable `CC_ELIXIR_VERSION` to its value. Available versions as of today are the following:
+
+{{< runtimes_versions elixir >}}
 
 #### Compatibility between Elixir and Erlang/OTP
 

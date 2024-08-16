@@ -29,6 +29,12 @@ Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
 
 {{% content/java-versions %}}
 
+Accepted values are the following:
+
+{{< runtimes_versions java >}}
+
+(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
+
 ## Configure your Java application
 
 You *must* provide a `clevercloud/gradle.json` file (gradle.json file in

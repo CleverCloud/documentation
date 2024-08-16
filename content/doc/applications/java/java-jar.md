@@ -26,6 +26,10 @@ Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
 {{% content/java-versions %}}
 
+{{< runtimes_versions java >}}
+
+(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
+
 ## Configure your Java application
 
 You *must* either have the `CC_JAR_PATH` environment variable containing the

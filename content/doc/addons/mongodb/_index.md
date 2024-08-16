@@ -18,15 +18,15 @@ aliases:
 - /doc/deploy/addon/mongodb/managing-mongodb
 type: docs
 ---
+## Overview
 
 MongoDB is an open source NoSQL document-oriented database. We provide these databases with daily backups and monitoring for both shared and dedicated plans.
 
-## Versions
+## Supported Versions
 
 In order to comply with [MongoDB Server Side Public License](https://www.mongodb.com/licensing/server-side-public-license), the version currently installed by the add-on is:
 
-- on shared plans (DEV) : MongoDB 4.0.3
-- on newly created dedicated databases (plans XS Small Space and above) : MongoDB 4.0.3
+{{< software_versions_shared_dedicated mongo>}}
 
 ### Higher Versions
 

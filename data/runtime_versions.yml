@@ -1,6 +1,6 @@
 node:
   default:
-  - "20.14.0"
+  - "v20.15.0"
 PHP:
   default:
     - "8.3"
@@ -14,7 +14,7 @@ PHP:
     - "8.2"
 python:
   default:
-    - "3.12"
+    - "3.12.4"
   accepted:
     - "2.7"
     - "3.7"
@@ -22,6 +22,7 @@ python:
     - "3.9"
     - "3.10"
     - "3.11"
+    - "3.12"
 dotnet:
   default:
     - "6.0"

@@ -75,9 +75,9 @@ clever accesslogs
 ```
 
 As with the `logs` command, you can specify `--before` and `--after` flags.
-If no options are specified, the logs display continuously.  
+If you don't specify any options, the logs display continuously.  
 
-If you need to change the output you can specify the `--format` flag with one of these values:
+To change the output, specify the `--format` flag with one of these values:
 
 - simple: `2021-06-25T10:11:35.358Z 255.255.255.255 GET /`
 - extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever-cloud.com / 200`
@@ -149,9 +149,9 @@ And remove them if needed
 clever drain remove [--alias <alias>] <DRAIN-ID>
 ```
 
-If the status of your drain is shown as `DISABLED` without you disabling it, it may be because we have not been able to send your logs to your drain endpoint or because the requests timed out after **25 seconds**.
+If the status of your drain appears as `DISABLED` without you disabling it, it may be because it haven't been able to send your application logs to your drain endpoint or because the requests timed out after **25 seconds**.
 
-You can also use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
+Use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`.
 
 ### Elasticsearch
 

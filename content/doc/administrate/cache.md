@@ -64,7 +64,8 @@ If you use a monorepo, you may want to use Varnish for only some of the applicat
 If you have a `/clevercloud/varnish.vcl` file at the root of your monorepo, all of your applications automatically start using Varnish.
 
 To resolve this issue, you can create a symlink during the deployments.  
-First, you need to put your `varnish.vcl` file anywhere but at the root of your monorepo.  
+
+1. Put your `varnish.vcl` file anywhere but at the root of your monorepo.  
 2. Create a symlink inside a `CC_PRE_BUILD_HOOK`.
   
 Here is an example :

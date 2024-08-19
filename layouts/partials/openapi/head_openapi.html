@@ -25,7 +25,7 @@
 
 
   <!-- Google Analytics -->
-  {{- if and .Site.GoogleAnalytics (eq hugo.Environment "production") }}
+  {{- if and .Site.Config.Services.GoogleAnalytics.ID (eq hugo.Environment "production") }}
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     {{ partial "google-analytics.html" . }}
   {{- end }}

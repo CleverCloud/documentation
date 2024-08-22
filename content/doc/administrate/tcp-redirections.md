@@ -11,7 +11,7 @@ keywords:
 type: docs
 ---
 {{< callout type="warning" >}}
-TCP redirections are currently available free of charge as long as the feature in BETA stage.
+TCP redirections are currently available free of charge as long as the feature is in BETA stage.
 Once the feature leaves the BETA stage, it won't be free anymore.
 {{< /callout >}}
 
@@ -25,18 +25,16 @@ In that case, you can use a TCP redirection to route TCP traffic from reverse pr
 
 The IN port on reverse proxies (public side) is the usual 4040.
 The TCP redirection assigns a random OUT port specifically to your application (starting from port 5000)
-The application must be configured to be listening to this provided port.
+Configure the application to listen to this provided port.
 
 Once done, your application can now send and receive TCP traffic.
 
 
-<!-- A regular application on Clever Cloud needs to listen on port 8080 and answer to HTTP traffic.
 Our reverse proxies then make your application available using HTTP(s) using your domain name.
 
 Some applications might additionally want to use a binary protocol, with raw TCP interactions.
 For this scenario, your application will have to listen for TCP traffic on port 4040.
 Once this is done, all you need to do is add a TCP redirection to your application. A port will be
-provided to you, and your TCP listener will be available on your domain name using the provided port. -->
 
 
 ## What is a namespace?
@@ -56,10 +54,10 @@ This command lists all the possible namespaces current application.
 
 ### With the console
 
-From your console, select your application. In the secondary menu, go to `TCP redirections`.
-From there, you can create a `default` or `cleverapps` TCP redirection (see above for namespaces)
+From your console, select your application. In the secondary menu, go to **TCP redirections**.
+From there, you can create a `default` or `cleverapps` TCP redirection ( see [namespaces doc](#what-is-a-namespace?))
 
-The creation is instantaneous. The assigned port to the application can be seen on this page. 
+The creation is instantaneous. Find the application assigned port on this page. 
 
 ![Redirection console](/images/doc/TCP_redirection_console.png)
 
@@ -71,10 +69,8 @@ Depending on your situation, you should replace `default` with the appropriate n
 The port assigned to your application is displayed right after the TCP redirection creation.
 You can then contact your application's TCP listener using `tcp://your-domain-name:the-port/`.
 
-<!--Creating a new TCP redirection is as simple as `clever tcp-redirs add --namespace default` where
 you can obviously replace "default" by the namespace of your choice. You will be prompted with
 the port that has been assigned to you and you will be able to contact your application's TCP
-listener using `tcp://your-domain-name:the-port/` -->
 
 ## Managing redirections
 
@@ -97,13 +93,12 @@ To delete a redirection on an application:
 - from the Clever CLI, use:
 
 ```bash
-`clever tcp-redirs remove (port) --namespace (namespace)`
+clever tcp-redirs remove (port) --namespace (namespace)
 ```
 
 Example: if your redirection is on port **5500** and the **default** namespace, the command would be
 `clever tcp-redirs remove 5500 --namespace default`
 
-<!--
 ## Listing active TCP redirections
 
 You can list active TCP redirections for the current application using `clever tcp-redirs`
@@ -115,4 +110,3 @@ the active TCP redirections to make sure you have the proper data.
 
 We'll use namespace "default" and port "42" for this example.
 
-You can now remove your TCP redirection using `clever tcp-redirs remove 42 --namespace default`. -->

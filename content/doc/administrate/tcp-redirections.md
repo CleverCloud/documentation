@@ -20,7 +20,7 @@ Once the feature leaves the BETA stage, it won't be free anymore.
 Every application hosted Clever Cloud must listen on port 8080 and answer to HTTP traffic.
 This is useful for both routing requests and monitoring purposes.
 
-However, some applications might additionnally require binary protocol, with raw TCP interactions.
+However, some applications might additionally require binary protocol, with raw TCP interactions.
 In that case, you can use a TCP redirection to route TCP traffic, through our reverse proxies, to your application.
 
 Every application can be configured to receive TCP traffic on the port 4040.

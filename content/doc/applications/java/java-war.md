@@ -32,11 +32,11 @@ Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 Clever Cloud supports many servlet containers.
 The supported containers are listed below:
 
-| Apache                      | Jetty                  | Payara                  |  Wildfly                   |
-|-----------------------------|------------------------|-------------------------|----------------------------|
-| Apache Tomcat 6.0 (TOMCAT6) | Jetty 9.0 (JETTY9)     | Payara 5.2022 (PAYARA5) | WildFly 26.0.0 (WILDFLY26) |
-| Apache Tomcat 7.0 (TOMCAT7) | Jetty 11.0.6 (JETTY11) | Payara 6.2023 (PAYARA6) | WildFly 27.0.1 (WILDFLY27) |
-| Apache Tomcat 8.8 (TOMCAT8) |                        |                         | WildFly 33.0.1 (WILDFLY33) |
+| Apache Tomcat                 | Jetty                  | Payara                  |  Wildfly                   |
+|-------------------------------|------------------------|-------------------------|----------------------------|
+| Apache Tomcat 6.0 (TOMCAT6)   | Jetty 9.0 (JETTY9)     | Payara 5.2022 (PAYARA5) | WildFly 26.0.0 (WILDFLY26) |
+| Apache Tomcat 8.8 (TOMCAT8)   | Jetty 11.0.6 (JETTY11) | Payara 6.2023 (PAYARA6) | WildFly 27.0.1 (WILDFLY27) |
+| Apache Tomcat 10.0 (TOMCAT10) |                        |                         | WildFly 33.0.1 (WILDFLY33) |
 
 {{% content/create-application %}}
 

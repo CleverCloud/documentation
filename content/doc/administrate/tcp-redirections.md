@@ -24,7 +24,7 @@ However, some applications might additionally require binary protocol, with raw 
 In that case, you can use a TCP redirection to route TCP traffic, through Clever Cloud reverse proxies, to your application.
 
 Every application can be configured to receive TCP traffic on the port 4040.
-We then assign a specific port to your application to expose it to TCP traffic. This port is chosen at random above 5000.
+Clever Cloud then assigns a specific port to your application to expose it to TCP traffic. This port is chosen at random above 5000.
 
 Use this specific port to send and receive TCP traffic.
 

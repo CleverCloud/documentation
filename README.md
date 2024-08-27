@@ -1,7 +1,7 @@
 
 # Clever Cloud Documentation
 
-This is a Hugo project with a theme called "Hextra" added a module..</p>
+This is a Hugo project with a theme called "Hextra" added as a Hugo module.
 
 ## See deployed Documentation
 

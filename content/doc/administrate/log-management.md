@@ -248,7 +248,8 @@ On your terminal, use the following command:
   ```shell
   clever drain create TCPSyslog tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
   Replace the following values:
-    
+  ```
+  
   - `<host>`
   - `<application-alias>`
   - `<token>`

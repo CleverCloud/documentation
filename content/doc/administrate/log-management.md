@@ -221,7 +221,7 @@ Datadog has two zones, **EU** and **COM**. An account on one zone is not availab
 
 ### NewRelic
 
-To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
+To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, use:
 
 ```bash
 clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
@@ -230,6 +230,48 @@ clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-
 {{< callout type="warning" >}}
 NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
 {{< /callout >}}
+
+### OVH Logs Data Platform
+
+To export logs from an application or an add-on to [OVH Logs Data Platform](https://help.ovhcloud.com/csm/en-ie-logs-data-platform-quick-start?id=kb_article_view&sysparm_article=KB0055819), use the following setup:
+
+- A **TCP** drain log with `clever drain create TCPSyslog`
+- Your Logs Data Platform **host** with **port** `514` (SSL ports aren't supported for TCP drains)
+- The **write token** for your stream (provided on your Logs Data Platform console)
+
+On your terminal, use the following command:
+
+{{< tabs items="Application,Add-on" >}}
+
+  {{< tab >}}**Exporting logs from an application**:
+    
+  ```shell
+  clever drain create TCPSyslog tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
+  ```
+  
+  Replace the following values:
+  
+  - `<host>`
+  - `<application-alias>`
+  - `<token>`
+
+  {{< /tab >}}
+
+  {{< tab >}}**Exporting logs from an add-on**:
+  
+  ```shell
+  clever drain create TCPSyslog tcp://<host>:514 -addon <addon_id> --sd-params="X-OVH-TOKEN=\"<token>\""
+  ```
+  
+  Replace the following values:
+    
+  - `<host>`
+  - `<addon_id>`
+  - `<token>`
+  
+  {{< /tab >}}
+
+{{< /tabs >}}
 
 ### Community software
 

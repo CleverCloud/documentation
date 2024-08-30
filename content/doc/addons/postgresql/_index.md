@@ -125,7 +125,7 @@ Extension   | Description
 pg_cron     | Job scheduler for PostgreSQL
 pg_ivm      | Incremental view maintenance for PostgreSQL
 pgtap       | Unit testing for PostgreSQL
-timescaledb | Enables scalable inserts and complex queries for time-series data (Community Edition)
+timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)
 
 {{< callout type="warning" >}}
 On-demand extensions aren't available for DEV plans.

@@ -2,8 +2,8 @@
 title: "Montreal (MTL) zone: new deployment URL"
 date: 2024-08-30
 tags:
-  - Applications
-  - Montreal
+  - applications
+  - montreal
 authors:
   - name: Arnaud Lefebvre
     link: https://github.com/BlackYoup

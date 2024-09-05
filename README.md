@@ -33,7 +33,7 @@ Either [install Hugo](https://gohugo.io/installation/) globally in your system o
 
 ### Start locally
 
-To run the site in your browser, there is a server built in Hugo you can summon with: `hugo server`.
+To run the site locally, there is a server built in Hugo you can summon with: `hugo server`.
 A bunch of options are available:
 
 ```bash

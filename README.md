@@ -29,8 +29,8 @@ Check your Go version, it need to be above go `1.21.1`.
 
 ### Start locally
 
-To run the site in your browser, there is a server built in Hugo you can summon with:  
-`hugo server`  
+To run the site in your browser, there is a server built in Hugo you can summon with:
+`hugo server`
 A bunch of option a available:
 
 ```bash
@@ -71,7 +71,7 @@ Local site is displayed on <http://localhost:1313>
 
 Hugo uses [Goldmak](https://github.com/yuin/goldmark), a Markdown parser written in Go, compliant with CommonMark 0.30(see [the specification here](https://spec.commonmark.org/)).
 
-Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.  
+Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.
 We strongly recommend that you follow the validation rules described here: <https://github.com/DavidAnson/markdownlint#rules--aliases>.
 
 This linter can be downloaded and run locally, or used via VSCode:
@@ -81,7 +81,7 @@ This linter can be downloaded and run locally, or used via VSCode:
 
 #### Linting configuration
 
-**Ignored markdown files** are listed in the `.markdownlintignore`.  
+**Ignored markdown files** are listed in the `.markdownlintignore`.
 **Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
 **Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.
 
@@ -171,5 +171,3 @@ Partials are reusable content you can include in several pages. To use this feat
 
 1. Create a new partial in `/layouts/shortcodes/content`
 2. Add it to the relevant pages like this: `{{% content/your-partial %}}`
-
-

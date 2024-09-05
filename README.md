@@ -1,7 +1,7 @@
 
 # Clever Cloud Documentation
 
-This is a Hugo project with a theme called "Hextra" added a module..</p>
+This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added a module..</p>
 
 ## See deployed Documentation
 
@@ -27,11 +27,14 @@ To begin your journey with the Clever Cloud Documentation, you need to clone thi
 
 Check your Go version, it need to be above go `1.21.1`.
 
+### Install Hugo
+
+Either [install Hugo](https://gohugo.io/installation/) globally in your system or put its [executable](https://github.com/gohugoio/hugo/releases) in the projet's root.
+
 ### Start locally
 
-To run the site in your browser, there is a server built in Hugo you can summon with:
-`hugo server`
-A bunch of option a available:
+To run the site in your browser, there is a server built in Hugo you can summon with: `hugo server`.
+A bunch of option are available:
 
 ```bash
  -b, --baseURL string         hostname and path to the root
@@ -61,8 +64,8 @@ Follow these instructions to contribute to the doc.
 ### Run locally
 
 1. Clone this repo: `git clone git@github.com:CleverCloud/documentation.git`
-2. Go to the repo root `cd documentation`
-3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4,to update the theme)
+2. Go to the repo root: `cd documentation`
+3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4, to update the theme)
 4. Run `hugo server`
 
 Local site is displayed on <http://localhost:1313>

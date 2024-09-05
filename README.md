@@ -1,7 +1,7 @@
 
 # Clever Cloud Documentation
 
-This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added a module..</p>
+This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added as a module.</p>
 
 ## See deployed Documentation
 
@@ -51,7 +51,7 @@ There is no need to build before submitting your Pull Request or before deployin
 
 ## Project basic configuration and architecture
 
-The theme used here is called [Hexa](https://imfing.github.io/hextra/).
+The theme used here is called [Hextra](https://imfing.github.io/hextra/).
 
 The `hugo.sh` script runs the compilation with the right options and server the content of the public folder.
 

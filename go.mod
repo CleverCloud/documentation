@@ -1,4 +1,4 @@
-module github.com/cnivolle/hextra //to update
+module github.com/CleverCloud/documentation
 
 go 1.21
 

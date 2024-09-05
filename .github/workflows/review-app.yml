@@ -32,7 +32,7 @@ jobs:
           GH_CC_WEBROOT: '/public'
           GH_HEXTRA_VERSION: 'v0.8.2'
           GH_HUGO_ENV: 'production'
-          GH_HUGO_VERSION: '0.133.0'
+          GH_HUGO_VERSION: '0.133.1'
         with:
           type: 'static-apache'
           set-env: true

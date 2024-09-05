@@ -9,6 +9,11 @@ enableGitInfo: true
 module:
   imports:
     - path: github.com/imfing/hextra
+  hugoVersion:
+    extended: true
+    min: "0.133.0"
+    max: "0.133.1"
+
 outputs:
   home: [HTML]
   page: [HTML]

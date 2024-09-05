@@ -2,8 +2,8 @@
 title: "Java servlet containers cleanup, Wildfly upgrade"
 date: 2024-08-26
 tags:
-  - Applications
-  - Java
+  - applications
+  - java
 authors:
   - name: Julien Durillon
     link: https://github.com/judu

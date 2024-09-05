@@ -19,23 +19,23 @@ keywords:
 
 Warp 10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
 
-A GTS is a GeoTime Serie defined by a `class` and somes `labels`. They are indexed and used to quickly retrieved the data.
+A GTS is a GeoTime Serie defined by a `class` and some `labels`. They're indexed and used to quickly retrieved the data.
 
-`labels` is a kind of dictionnary. That is called a **map** under the warp10 terminology.
+`labels` is a kind of dictionary. That's called a **map** under the warp10 terminology.
 
 A GTS may contain some values which have the following models : `[ timestamp longitude latitude altitude value ]`
 
 Warp 10 uses [Warp Script](https://www.warp10.io/content/03_Documentation/04_WarpScript). It's a **stack** based **language using reverse polish notation**.
 
-> The metrics ovh team built an other way to request Warp 10: <https://github.com/ovh/tsl/>  
-> Warp 1O documentation [is availlable on their website](https://www.warp10.io/doc/reference)
+> The metrics OVHcloud team built an other way to request Warp 10: <https://github.com/ovh/tsl/>
+> Warp 1O documentation [is available on their website](https://www.warp10.io/doc/reference)
 
 ### Time and duration in Warp 10
 
 > More information about [date functions here](https://www.warp10.io/tags/date), and [time functions here](https://www.warp10.io/tags/time).
 
 {{< callout type="info" >}}
-The plateform's time unit is in **microsecond**.
+The platform's time unit is in **microsecond**.
 {{< /callout >}}
 
 #### Duration is set by the followings symbols
@@ -59,7 +59,7 @@ Allowed format :
 Builtin function :
 
 - `NOW` : get the current timestamp
-- `ISO8601` : Convert a string or a timstamp to a iso8601 date format
+- `ISO8601` : Convert a string or a timestamp to a ISO8601 date format
 
 ## Endpoint
 
@@ -80,7 +80,7 @@ You can query our Warp 10 platform with your own script. Here's a curl example :
 ```
 
 {{< callout type="warning" >}}
-Do not forget the endpoint. `exec` in the previous exemple.
+Do not forget the endpoint. `exec` in the previous example.
 {{< /callout >}}
 
 ## Token
@@ -107,7 +107,7 @@ The followings limits are defined in Warp 10. The **soft** one can be passed ove
 | MAXRECURSION | Maximum nesting depth of macro calls | 16 | 32 |
 
 {{< callout type="warning" >}}
-Operation over **soft limts** may be intensives.
+Operation over **soft limits** may be intensives.
 {{< /callout >}}
 
 ### Usage
@@ -127,11 +127,11 @@ An example where it is needed to increase the fetch limit by the `LIMIT` functio
 
 Quantum is a web tool used to run some WarpScript. You can access to it from your metrics interface.
 
-It provide the path to the Clever Cloud Warp 10 gateway and let you explore your data.
+It provides the path to the Clever Cloud Warp 10 gateway and let you explore your data.
 
 ## Macro
 
-Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redondant and often need code.
+Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redundant and often need code.
 
 {{< callout type="info" >}}
 More information on the [Warp 10' macros documentations](https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros).
@@ -159,11 +159,11 @@ can be either a timestamp in microseconds or an iso8601 date format.
 '<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
 ```
 
-### AccessLogs
+### Access Logs
 
 - `fetch_accessLogs_key_v0`
 
-We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a Json value in a geotime series ([metrics documentation here]({{< ref "doc/metrics#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. it allows you to fetch the `accessLogs` class and get only wanted value instead of the whole Json.
+We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series ([metrics documentation here]({{< ref "doc/metrics#access-logs-metrics" >}})), this macro can be useful for straightforward access to a specific key. It allows you to fetch the `accessLogs` class and get only wanted value instead of the whole JSON.
 
 ```bash
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>' NOW 1 h  @clevercloud/fetch_accessLogs_key_v0
@@ -173,7 +173,7 @@ We provide the following macro to easily and quickly deep dive into access logs 
   '<READ TOKEN>' { 'app_id'  'id' } '<1stLevelKey>.<2ndLevelKey>' NOW 10 m  @clevercloud/fetch_accessLogs_key_v0
 ```
 
-> More example in the [metrics part of this documenation]({{< ref "doc/metrics#access-logs-metrics" >}}).
+> More example in the [metrics part of this documentation]({{< ref "doc/metrics#access-logs-metrics" >}}).
 
 **Nested keys** can be reached using a dot (`.`) to represent the depth.
 

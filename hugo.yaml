@@ -19,6 +19,9 @@ outputs:
   page: [HTML]
   section: [HTML, RSS]
 
+  privacy:
+  youtube:
+    privacyEnhanced: true
 
 defaultContentLanguage: en
 languages:

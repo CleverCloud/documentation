@@ -53,7 +53,7 @@ There is no need to build before submitting your Pull Request or before deployin
 
 The theme used here is called [Hextra](https://imfing.github.io/hextra/).
 
-The `hugo.sh` script runs the compilation with the right options and server the content of the public folder.
+The `clevercloud-deploy-script.sh` script runs the compilation with the right options and serves the content of the public folder.
 
 This is why the Clever Cloud application running this app needs to have a webroot serving `/public/`.
 

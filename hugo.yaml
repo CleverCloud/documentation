@@ -1,7 +1,7 @@
 baseURL: https://developers.clever-cloud.com
 languageCode: en-us
 title: Clever Cloud Documentation
-paginate: 50 #Number of item to show in the changelog section before pagination
+pagination.pagerSize: 50 #Number of item to show in the changelog section before pagination
 
 enableRobotsTXT: true
 enableGitInfo: true
@@ -12,7 +12,7 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.133.1"
+    max: "0.134.1"
 
 outputs:
   home: [HTML]

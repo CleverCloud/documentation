@@ -13,30 +13,30 @@ keywords:
 type: docs
 ---
 
-When creating an application, you have two (non exclusive) choices for domain names:
+When creating an application, you have two (non-exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a **\*.cleverapps.io** free domain for dev purposes, with built-in SSL
+* Using a `cleverapps.io` free domain for dev purposes, with built-in SSL
 
-Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under `*.cleverapps.io`.
+Add it in the application configuration: in the console, click **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a subdomain under `*.cleverapps.io`.
 
 {{< callout type="info" >}}
-  You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [prefix routing](#prefix-routing).
+  You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [path routing](#path-routing).
 {{< /callout >}}
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
 {{< callout type="warning" >}}
   `*.cleverapps.io` domains are given for development and tests purpose. They point to
-  specific reverse proxies and have the following weaknesses: .io TLD is not a stable one, and since we offer the domain, the probability that people will abuse it is high. Thus, we do not garantee the same QoS on the cleverapps reverse proxies.
+  specific reverse proxies and have the following weaknesses: `.io` TLD is not a stable one, and since we offer the domain, the probability that people will abuse it is high. Thus, we do not guarantee the same QoS on the `cleverapps` reverse proxies.
 {{< /callout >}}
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: `yourAppID.cleverapps.io`, which can be removed.
 
-In your application's domain section, just enter `example.cleverapps.io`. You have to choose a unique one. Trusted SSL is available on every sub-domain.
+In your application's domain section, just enter `example.cleverapps.io`. You have to choose a unique one. Trusted SSL is available on every subdomain.
 
 {{< callout type="warning" >}}
-`*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
+`*.cleverapps.io` certificate is only valid for the first subdomain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
 {{< /callout >}}
 
 ## Using Personal Domain Names
@@ -118,7 +118,7 @@ Provide the following to your registrar:
 | A<br>Only if CNAME is not available                         | Two records: <br> `@ 10800 IN A 139.99.253.215` <br> `@ 10800 IN A 139.99.253.237` |
 
 {{< callout type="warning" >}}
-You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
+You cannot use a CNAME on a top-level domain, or on a subdomain which already has DNS records.
 {{< /callout >}}
 
 If you want to make your application available from a domain name which does not support CNAME records (eg `example.com` in addition to `www.example.com`), check if your registrar provides a web redirection service. This way, you only have to make `www.example.com` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
@@ -137,17 +137,16 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 | `www.example.com`           | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                            | No redirect needed                          |
 | `example.com`               | No CNAME record needed                           | Point `example.com` to the two IP addresses of the selected region | No redirect needed                          |
 
-## Prefix routing
+## Path routing
 
-Requests are routed to applications based on the domain name, but you can also route based
-on a path prefix.
+Requests are routed to applications based on the domain name, but you can also route depending on its path.
 
 For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
 the second app. The other requests will be routed to the first app.
 You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "/doc/CLI" >}})).
 
-Note that your prefix-routed application **needs** to have a `/prefix` route.
+Note that your path-routed application **needs** to have a `/whatever` route.
 
 This will work:
 
@@ -165,7 +164,7 @@ example.com        ->      myfirtapp-main-route     (works)
 example.com/api    ->      mysecondapp-main-route   (404 response from mysecondapp)
 ```
 
-### Prefix routing for static sites
+### Path routing for static sites
 
 In the case of static files, you usually understand routes as paths in a file tree.
 

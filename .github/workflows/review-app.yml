@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: Review app
     runs-on: ubuntu-latest
+    environment: PR review apps
     permissions:
         issues: write
         pull-requests: write

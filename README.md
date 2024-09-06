@@ -1,7 +1,7 @@
 
 # Clever Cloud Documentation
 
-This is a Hugo project with a theme called "Hextra" added a module..</p>
+This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added as a module.</p>
 
 ## See deployed Documentation
 
@@ -27,11 +27,14 @@ To begin your journey with the Clever Cloud Documentation, you need to clone thi
 
 Check your Go version, it need to be above go `1.21.1`.
 
+### Install Hugo
+
+Either [install Hugo](https://gohugo.io/installation/) globally in your system or put its [executable](https://github.com/gohugoio/hugo/releases) in the projet's root.
+
 ### Start locally
 
-To run the site in your browser, there is a server built in Hugo you can summon with:  
-`hugo server`  
-A bunch of option a available:
+To run the site locally, there is a server built in Hugo you can summon with: `hugo server`.
+A bunch of options are available:
 
 ```bash
  -b, --baseURL string         hostname and path to the root
@@ -48,9 +51,9 @@ There is no need to build before submitting your Pull Request or before deployin
 
 ## Project basic configuration and architecture
 
-The theme used here is called [Hexa](https://imfing.github.io/hextra/).
+The theme used here is called [Hextra](https://imfing.github.io/hextra/).
 
-The `hugo.sh` script runs the compilation with the right options and server the content of the public folder.
+The `clevercloud-deploy-script.sh` script runs the compilation with the right options and serves the content of the public folder.
 
 This is why the Clever Cloud application running this app needs to have a webroot serving `/public/`.
 
@@ -61,8 +64,8 @@ Follow these instructions to contribute to the doc.
 ### Run locally
 
 1. Clone this repo: `git clone git@github.com:CleverCloud/documentation.git`
-2. Go to the repo root `cd documentation`
-3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4,to update the theme)
+2. Go to the repo root: `cd documentation`
+3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4, to update the theme)
 4. Run `hugo server`
 
 Local site is displayed on <http://localhost:1313>
@@ -71,7 +74,7 @@ Local site is displayed on <http://localhost:1313>
 
 Hugo uses [Goldmak](https://github.com/yuin/goldmark), a Markdown parser written in Go, compliant with CommonMark 0.30(see [the specification here](https://spec.commonmark.org/)).
 
-Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.  
+Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.
 We strongly recommend that you follow the validation rules described here: <https://github.com/DavidAnson/markdownlint#rules--aliases>.
 
 This linter can be downloaded and run locally, or used via VSCode:
@@ -81,7 +84,7 @@ This linter can be downloaded and run locally, or used via VSCode:
 
 #### Linting configuration
 
-**Ignored markdown files** are listed in the `.markdownlintignore`.  
+**Ignored markdown files** are listed in the `.markdownlintignore`.
 **Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
 **Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.
 
@@ -171,5 +174,3 @@ Partials are reusable content you can include in several pages. To use this feat
 
 1. Create a new partial in `/layouts/shortcodes/content`
 2. Add it to the relevant pages like this: `{{% content/your-partial %}}`
-
-

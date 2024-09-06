@@ -4,3 +4,5 @@
 .clever.json
 .vale.ini
 /styles
+/.hugo_build.lock
+/hugo

@@ -19,4 +19,4 @@ Some months ago, we released [a new GitLab Component](https://gitlab.com/explore
 
 **Breaking changes**: Input `deploy` have been removed to prevent users to script the environment variables injection before deploying the app. Remove it from your `.gitlab-ci.yml` file if it's set up, to avoid breaking your pipeline.
 
-- [Learn more about how to deploy from GitHub to Clever Cloud](/doc/ci-cd/gitlab/)
+- [Learn more about how to deploy from GitLab to Clever Cloud](/doc/ci-cd/gitlab/)

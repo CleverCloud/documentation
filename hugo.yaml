@@ -19,7 +19,7 @@ outputs:
   page: [HTML]
   section: [HTML, RSS]
 
-  privacy:
+privacy:
   youtube:
     privacyEnhanced: true
 

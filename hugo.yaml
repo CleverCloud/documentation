@@ -1,7 +1,8 @@
 baseURL: https://developers.clever-cloud.com
 languageCode: en-us
 title: Clever Cloud Documentation
-pagination.pagerSize: 50 #Number of item to show in the changelog section before pagination
+pagination:
+  pagerSize: 21 # Number of entries in Changelog section before pagination
 
 enableRobotsTXT: true
 enableGitInfo: true
@@ -19,7 +20,7 @@ outputs:
   page: [HTML]
   section: [HTML, RSS]
 
-  privacy:
+privacy:
   youtube:
     privacyEnhanced: true
 

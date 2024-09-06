@@ -20,8 +20,8 @@ outputs:
   section: [HTML, RSS]
 
 privacy:
-youtube:
-  privacyEnhanced: true
+  youtube:
+    privacyEnhanced: true
 
 defaultContentLanguage: en
 languages:

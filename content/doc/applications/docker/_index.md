@@ -39,7 +39,7 @@ When you create a Docker application on Clever Cloud, the deployment process inv
 
 1. **Install/Login:**
    - The system checks for a Dockerfile and an entrypoint.
-- It logs into the docker registry that was configured in the Dockerfile, if any, to find the necessary image (**note:** the name of the docker registry may vary depending on the provider. It is called "container registry" in Github, for instance)
+  - It logs into the docker registry that was configured in the Dockerfile, if any, to find the necessary image (**note:** the name of the docker registry may vary depending on the provider. It is called "container registry" in Github, for instance)
 2. **Build:**
    - The application pulls the specified image and execute commands you specified in Dockerfile.
    - **Note:** This step focuses on executing commands in your Dockerfile and doesn't require build instructions if you are using a pre-compiled image.

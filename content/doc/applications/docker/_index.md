@@ -41,7 +41,7 @@ When you create a Docker application on Clever Cloud, the deployment process inv
    - The system checks for a Dockerfile and an entrypoint.
    - It logs into the appropriate registry if necessary.
 2. **Build:**
-   - The application pulls the specified image an execute commands you specified in Dockerfile.
+   - The application pulls the specified image and execute commands you specified in Dockerfile.
    - **Note:** This step focuses on executing commands in your Dockerfile and doesn't require build instructions if you are using a pre-compiled image.
 3. **Run:**
    - The application starts in a Docker container and exposes the service on port 8080 by default.

@@ -22,7 +22,7 @@ Redis is an open source, in-memory data structure store, used as database, cache
 
 The version currently installed by the add-on are the following :
 
-{{< software_versions_shared_dedicated elasticsearch>}}
+{{< software_versions_shared_dedicated redis>}}
 
 {{% content/db-backup %}}
 

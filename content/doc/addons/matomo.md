@@ -90,6 +90,13 @@ Plugins can be browsed from [Matomo own plugin repository](https://plugins.matom
 Plugin files are removed everytime your instance reboots. **This means you have to reinstall them all again after every reboot.** This is temporary, and it is something we plan on improving as soon as we can.
 {{< /callout >}}
 
+### QueudTracking
+
+By default, the QueudTracking plugin is enabled on matomo instances, with a queue size of 25.  
+This means that the plugin store 25 visits in a queue before they appear in matomo.  
+This help to prevent the server from receiving too many request at once.  
+You can change the size of the queue in the settings of your matomo, the parameter to modify is `Number of requests that are processed in one batch`.
+
 ## Security and updates
 
 The Matomo add-on is a fully managed application, you don't have to select a particular version. Still its receives updates for both features and security, that we will managed for you with continuously upgraded version over time.

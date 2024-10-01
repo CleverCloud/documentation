@@ -1,0 +1,8 @@
+---
+title: External doc
+labels: documentation
+---
+
+Update the external documentation.
+
+{{ payload.sender.login }}.

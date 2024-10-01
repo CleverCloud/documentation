@@ -34,9 +34,8 @@ jobs:
         uses: JasonEtco/create-an-issue@v2
         with:
           filename: .github/external-doc-issue.yml
-          assignees: |
-            ${{ github.event.pull_request.user.login }}
-            juliamrch
+          assignees: ${{ github.event.pull_request.user.login }}
+        
       - name: Run step if external doc has changed
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:

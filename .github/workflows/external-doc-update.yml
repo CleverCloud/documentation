@@ -39,7 +39,7 @@ jobs:
         with:
           filename: .github/external-doc-issue.yml
           assignees: ${{ github.event.pull_request.user.login }}
-          update_existing: false
+          update_existing: true
           search_existing: all
       - name: Create or update a comment
         env:
@@ -52,5 +52,7 @@ jobs:
             
             See it or modify it here: 
               * ${{ steps.create-issue.outputs.url }}
+            
+            _This unique comment uses the very cool [taoliujun/action-unique-comment](https://github.com/marketplace/actions/unique-comment). Thank you <3_
 
       

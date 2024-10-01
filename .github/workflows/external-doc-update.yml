@@ -2,7 +2,7 @@ name: Update external doc?
 
 on:
   pull_request_target:
-    types: [opened, closed, synchronize, reopened]
+    types: [opened, synchronize]
     branches: [ main ]
 
 jobs:
@@ -28,6 +28,7 @@ jobs:
           files: |
             content/guides/astro.md
       - name: Create issue
+        id: create-issue
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,27 +39,18 @@ jobs:
         with:
           filename: .github/external-doc-issue.yml
           assignees: ${{ github.event.pull_request.user.login }}
-        
-      - name: Run step if external doc has changed
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
+          update_existing: false
+          search_existing: all
+      - name: Create or update a comment
         env:
           CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/github-script@v7
+        uses: taoliujun/action-unique-comment@v1
         with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const message = `You updated ${{ env.CHANGED_FILES }}.
-                
-                Update the external doc as well by making a PR on either:
+          uniqueIdentifier: ${{ github.workflow }}
+          body: |
+            You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created has been created and asigned to you 🫵👁️👄👁️
             
-            * [Astro](https://github.com/withastro/docs).
-            * More to come ;)?
-            `;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: message
-                });
+            See it or modify it here: 
+              * ${{ steps.create-issue.outputs.url }}
+
       

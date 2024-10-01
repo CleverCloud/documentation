@@ -2,7 +2,7 @@
 type: docs
 title: Python
 
-shortdesc: Python 2.7 and 3.11 are available on our platform. You can use Git to deploy your application.
+shortdesc: Python 2.7 and 3.12 are available on our platform. You can use git to deploy your application.
 tags:
 - deploy
 keywords:
@@ -24,7 +24,14 @@ Python is a programming language that lets you work more quickly and integrate y
 
 ### Supported Versions
 
+The default version of Python on Clever Cloud is the latest we support from branch `3.x`. If you want to use Python `2.x`, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_VERSION` set to `2`, it will default to Python 2.7. Other supported values are :
+
 {{< runtimes_versions python >}}
+
+{{< callout type="warning" >}}
+Python 3.7 [is end of life since 27 June 2023](https://devguide.python.org/versions/#python-release-cycle), we considered it as deprecated. It will be removed from our images [starting December, 1st](/changelog/2024-10-01-python-image-changes/).\
+Latest 3.x version will be used after this date. To prevent this, upgrade your `CC_PYTHON_VERSION` towards your needs.
+{{< /callout >}}
 
 {{% content/create-application %}}
 
@@ -48,16 +55,15 @@ For example with *Flask*, it's gonna be the name of your main server file, follo
 
 You can also use `CC_RUN_COMMAND` to launch Python application your way. In such case, it must listen on port `9000`.
 
-### Choose Python version
+### Use uv as a package manager
 
-The default version of python on Clever Cloud is **2.7**. If you want to use python **3.x** instead, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_PYTHON_VERSION` equal to either `3` (which will default to the most up-to-date version), `3.7`, `3.8`, `3.9`, `3.10` or `3.11`.
+Built in Rust, `uv` is a modern package and project manager for Python. It's fast to install dependencies, can be used as a drop-in replacement for `pip` and to sideload unsupported versions of Python. For example to use it with a `app.py` file, you just need to set `CC_RUN_COMMAND="uv run app.py"`. If your application listens on port `9000` with `0.0.0.0` as host, it will work fine on Clever Cloud.
 
-**Note**: the version is a number, do not use quotes. values allowed are `2`, `2.7`, `3`, `3.7`, `3.8`, `3.9`, `3.10`, `3.11`.
+* [Learn more about uv](https://github.com/astral-sh/uv)
 
-### Choose Pip version
-
-The default version of pip on Clever Cloud is **19**.
-If you want to use pip **9** instead, create an [environment variable](#setting-up-environment-variables-on-clever-cloud) like `CC_PIP_VERSION=9`.
+{{< callout type="info" >}}
+  `uv` is part of our Enthusiast tools initiative, it's included and can be used, but there is no active support for it yet.
+{{< /callout >}}
 
 ### Select the python backend
 

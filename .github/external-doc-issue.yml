@@ -1,8 +1,10 @@
 ---
-title: External doc
+title: External doc update from ${{ env.PR_NUMBER }}
 labels: documentation
 ---
 
-Update the external documentation.
+Update the external documentation:
 
-{{ payload.sender.login }}.
+- Author: '@${{ payload.sender.login }}'
+- PR: ${{ env.PR_URL }}
+- Modified files: ${{ env.CHANGED_FILES }}

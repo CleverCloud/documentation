@@ -31,6 +31,9 @@ jobs:
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.number }}
+          CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         uses: JasonEtco/create-an-issue@v2
         with:
           filename: .github/external-doc-issue.yml
@@ -45,7 +48,9 @@ jobs:
         with:
           script: |
             const issue_number = context.payload.pull_request.number;
-            const message = `You updated $CHANGED_FILES. Update the external doc as well by making a PR on either:
+            const message = `You updated ${{ env.CHANGED_FILES }}.
+                
+                Update the external doc as well by making a PR on either:
             
             * [Astro](https://github.com/withastro/docs).
             * More to come ;)?

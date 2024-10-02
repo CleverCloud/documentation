@@ -54,7 +54,7 @@ jobs:
         with:
           uniqueIdentifier: ${{ github.workflow }}
           body: |
-            You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created has been created and asigned to you 🫵👁️👄👁️
+            You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created and assigned to you 🫵👁️👄👁️
             
             See it or modify it here: 
               * ${{ steps.create-issue.outputs.url }}

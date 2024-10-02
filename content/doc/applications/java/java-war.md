@@ -136,27 +136,27 @@ That you can do, by setting the "build" field object in the `war.json` file:
 
 Here's the list of the configuration values for the "container" field in `war.json`:
 
-| Value      | Description                                                                                  |
-|------------|----------------------------------------------------------------------------------------------|
-| GLASSFISH3 | Use Glassfish 3.x (see <https://glassfish.java.net/>)                                        |
-| GLASSFISH4 | Use Glassfish 4.x (see <https://glassfish.java.net/>)                                        |
-| JBOSS6     | Use JBoss AS 6.x (see <https://www.jboss.org/jbossas>)                                       |
-| JBOSS7     | Use JBoss AS 7.x (see <https://www.jboss.org/jbossas>)                                       |
-| RESIN3     | Use Resin AS 3.x (see <https://www.caucho.com/resin-3.1/doc/>)                               |
-| RESIN4     | Use Resin AS 4.x (see <https://www.caucho.com/resin-4/doc/>)                                 |
-| JETTY6     | Use Jetty servlet container 6.x (see <https://jetty.codehaus.org/jetty/>)                    |
-| JETTY7     | Use Jetty servlet container 7.x (see <https://www.eclipse.org/jetty/>)                       |
-| JETTY8     | Use Jetty servlet container 8.x (see <https://www.eclipse.org/jetty/>)                       |
-| JETTY9     | Use Jetty servlet container 9.x (see <https://www.eclipse.org/jetty/documentation/current/>) |
-| TOMCAT4    | Use Tomcat servlet container 4.x (see <https://tomcat.apache.org/>)                          |
-| TOMCAT5    | Use Tomcat servlet container 5.x (see <https://tomcat.apache.org/>)                          |
-| TOMCAT6    | Use Tomcat servlet container 6.x (see <https://tomcat.apache.org/>)                          |
-| TOMCAT7    | Use Tomcat servlet container 7.x (see <https://tomcat.apache.org/>)                          |
-| TOMCAT8    | Use Tomcat servlet container 8.x (see <https://tomcat.apache.org/>)                          |
-| PAYARA4    | Use Payara servlet container 4.x (see <https://www.payara.fish/>)                            |
-| WILDFLY9   | Use Wildfly servlet container 9.x (see <https://wildfly.org/>)                               |
-| WILDFLY17  | Use Wildfly servlet container 17.x (see <https://wildfly.org/>)                              |
-| WILDFLY23  | Use Wildfly servlet container 23.x (see <https://wildfly.org/>)                              |
+| Value      | Description                                                                                  | EOL |
+|------------|----------------------------------------------------------------------------------------------|-----|
+| GLASSFISH3 | Use Glassfish 3.x (see <https://glassfish.java.net/>)                                        |     |
+| GLASSFISH4 | Use Glassfish 4.x (see <https://glassfish.java.net/>)                                        |     |
+| JBOSS6     | Use JBoss AS 6.x (see <https://www.jboss.org/jbossas>)                                       |     |
+| JBOSS7     | Use JBoss AS 7.x (see <https://www.jboss.org/jbossas>)                                       |     |
+| RESIN3     | Use Resin AS 3.x (see <https://www.caucho.com/resin-3.1/doc/>)                               |     |
+| RESIN4     | Use Resin AS 4.x (see <https://www.caucho.com/resin-4/doc/>)                                 |     |
+| JETTY6     | Use Jetty servlet container 6.x (see <https://jetty.codehaus.org/jetty/>)                    | EOL |
+| JETTY7     | Use Jetty servlet container 7.x (see <https://jetty.org/>)                                   | EOL |
+| JETTY8     | Use Jetty servlet container 8.x (see <https://jetty.org/>)                                   | EOL |
+| JETTY9     | Use Jetty servlet container 9.x (see <https://jetty.org/>)                                   | EOL |
+| TOMCAT4    | Use Tomcat servlet container 4.x (see <https://tomcat.apache.org/>)                          |     |
+| TOMCAT5    | Use Tomcat servlet container 5.x (see <https://tomcat.apache.org/>)                          |     |
+| TOMCAT6    | Use Tomcat servlet container 6.x (see <https://tomcat.apache.org/>)                          |     |
+| TOMCAT7    | Use Tomcat servlet container 7.x (see <https://tomcat.apache.org/>)                          |     |
+| TOMCAT8    | Use Tomcat servlet container 8.x (see <https://tomcat.apache.org/>)                          |     |
+| PAYARA4    | Use Payara servlet container 4.x (see <https://www.payara.fish/>)                            |     |
+| WILDFLY9   | Use Wildfly servlet container 9.x (see <https://wildfly.org/>)                               |     |
+| WILDFLY17  | Use Wildfly servlet container 17.x (see <https://wildfly.org/>)                              |     |
+| WILDFLY23  | Use Wildfly servlet container 23.x (see <https://wildfly.org/>)                              |     |
 
 {{% content/url_healthcheck %}}
 

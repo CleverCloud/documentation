@@ -31,4 +31,5 @@ Connect your application to an add-on:
   {{< card link="/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial." icon="git" >}}
   {{< card link="/doc/addons/keycloak" title="Keycloak" subtitle="Authentication to applications and secure services with minimum effort." icon="keycloak" tag="Tech preview" >}}
   {{< card link="/doc/addons/materia-db-kv/" title="Materia KV" subtitle="Serverless databases with built-in compatibility layers." icon="materia" tag="Alpha" >}}
+  {{< card link="/doc/addons/metabase" title="Metabase" subtitle="The simplest, fastest way to get business intelligence and analytics to everyone in your company." icon="metabase" tag="Beta" >}}
 {{< /cards >}}

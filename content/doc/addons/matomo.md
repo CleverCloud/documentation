@@ -99,7 +99,7 @@ You can change the size of the queue in the settings of your matomo, the paramet
 
 ## Security and updates
 
-The Matomo add-on is a fully managed application, you don't have to select a particular version. Still its receives updates for both features and security, that we will managed for you with continuously upgraded version over time.
+The Matomo add-on is a fully managed application, you don't have to select a particular version. Clever Cloud updates it for both features and security, and manages it continuously to apply regular version upgrades.
 
 After being updated, you Matomo add-on could need to be restarted.
 

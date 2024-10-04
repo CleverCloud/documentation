@@ -95,7 +95,7 @@ Plugin files are removed everytime your instance reboots. **This means you have 
 By default, the QueudTracking plugin is enabled on Matomo instances, with a queue size of 25.  
 This means that the plugin stores 25 visits in a queue before they appear in Matomo.  
 This helps to prevent the server from receiving too many request at once.  
-You can change the size of the queue in the settings of your matomo, the parameter to modify is `Number of requests that are processed in one batch`.
+You can change the size of the queue in your Matomo settings, by modifying the **Number of requests that are processed in one batch** parameter.
 
 ## Security and updates
 

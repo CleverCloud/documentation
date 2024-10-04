@@ -31,9 +31,9 @@ jobs:
           ORGA_ID: ${{ secrets.ORGA_ID }}
           GH_CC_PRE_BUILD_HOOK: './clevercloud-deploy-script.sh'
           GH_CC_WEBROOT: '/public'
-          GH_HEXTRA_VERSION: 'v0.8.2'
+          GH_HEXTRA_VERSION: 'v0.8.4'
           GH_HUGO_ENV: 'production'
-          GH_HUGO_VERSION: '0.134.2'
+          GH_HUGO_VERSION: '0.135.0'
         with:
           type: 'static-apache'
           set-env: true

@@ -7,3 +7,4 @@
 /styles
 /.hugo_build.lock
 /hugo
+/.idea/*

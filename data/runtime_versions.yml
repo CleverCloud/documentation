@@ -19,8 +19,9 @@ python:
   default:
     - "3.12"
   accepted:
+    - "2"
     - "3"
-    - "3.7"
+    - "3.7 (deprecated)"
     - "3.8"
     - "3.9"
     - "3.10"

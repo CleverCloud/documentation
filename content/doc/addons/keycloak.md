@@ -23,7 +23,7 @@ To fit the most common needs, the Keycloak add-on comes with batteries included:
 
 {{< callout type="info" >}}
 
-**Keycloak is in Alpha testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak). Thank you for being a part of our journey towards innovation and improvement!
+**Keycloak is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak). Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
 ## Key features
@@ -60,12 +60,12 @@ An add-on update might require a restart.
 
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 
-- XS Java
-- XS Tiny Space PostgreSQL
+- S Java
+- XXS Small Space PostgreSQL
 - Less than 100 MB in FS Bucket
 
 They are dimensioned to suit a majority of needs. Even if this Keycloak add-on might handle heavy traffic and an important number of simultaneous connections, the default configuration should handle the following load (based on [Keycloak](https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing) sizing recommendation):
-- 5 login by second
+- 5 logins by second
 - 90 credential grants by the second
 - 70 refresh tokens by second
 
@@ -142,6 +142,10 @@ Two specific authentication flows with an IP addresses based filter are especial
 
 Those flows could be affected to your own clients if you need.
 
+## Metrics
+
+Since  version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/metrics/#publish-your-own-metrics) to visualize them.
+
 ## Hostnames
 
 By default, your Keycloak instance is exposed through a Clever Cloud domain, as mentioned in the `Service dependencies` tab of your add-on.
@@ -149,7 +153,6 @@ By default, your Keycloak instance is exposed through a Clever Cloud domain, as 
 ### Custom hostname
 
 You can use your own domain. [Just set it](/doc/administrate/domain-names/) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
-
 
 ### Admin hostname
 

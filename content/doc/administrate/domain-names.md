@@ -47,7 +47,7 @@ It's possible to point your personalized domain name to Clever Cloud with either
 {{< /callout >}}
 
 With a `CNAME` record, your DNS configuration is always up-to-date.
-Using `A` records require you to keep the DNS configuration up-to-date manually.
+Using `A` records requires you to keep the DNS configuration up-to-date manually.
 
 We also support wildcard personal domain names, to do so use the standard pattern to describe it: `*.example.com`
 

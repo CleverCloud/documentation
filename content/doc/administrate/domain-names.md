@@ -27,7 +27,7 @@ Add it in the application configuration: in the console, click **application nam
 ## Testing with `cleverapps.io` Domain
 
 {{< callout type="warning" >}}
-  Clever Cloud provides `*.cleverapps.io` domains for development and testing purposes. They point to specific reverse proxies and have the following drawbacks: the `.io` TLD is not made for production, and since we offer the domain, the likelihood of people abusing it can be very high. **It is therefore not possible to guarantee a high level of quality on cleverapps domains**.
+  Clever Cloud provides `*.cleverapps.io` domains for development and testing purposes. They point to specific reverse proxies and have the following drawbacks: the `.io` TLD isn't made for production, and since we offer the domain, the likelihood of people abusing it can be very high. **It's therefore not possible to guarantee a high level of quality on cleverapps domains**.
 {{< /callout >}}
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: `yourAppID.cleverapps.io`, which can be removed.

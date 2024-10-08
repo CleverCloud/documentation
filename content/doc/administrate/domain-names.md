@@ -16,7 +16,7 @@ type: docs
 When creating an application, you have two (non-exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a `cleverapps.io` free domain for dev purposes, with built-in SSL
+* Using a `cleverapps.io` free domain for development and testing purposes, with built-in SSL
 
 Add it in the application configuration: in the console, click **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a subdomain under `*.cleverapps.io`.
 
@@ -24,33 +24,34 @@ Add it in the application configuration: in the console, click **application nam
   You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [path routing](#path-routing).
 {{< /callout >}}
 
-## Using a **\*.cleverapps.io** free domain, with built-in SSL
+## Testing with `cleverapps.io` Domain
 
 {{< callout type="warning" >}}
-  `*.cleverapps.io` domains are given for development and tests purpose. They point to
-  specific reverse proxies and have the following weaknesses: `.io` TLD is not a stable one, and since we offer the domain, the probability that people will abuse it is high. Thus, we do not guarantee the same QoS on the `cleverapps` reverse proxies.
+  Clever Cloud provides `*.cleverapps.io` domains for development and testing purposes. They point to specific reverse proxies and have the following drawbacks: the `.io` TLD isn't made for production, and since we offer the domain, the likelihood of people abusing it can be very high. **It's therefore not possible to guarantee a high level of quality on cleverapps domains**.
 {{< /callout >}}
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: `yourAppID.cleverapps.io`, which can be removed.
 
 In your application's domain section, just enter `example.cleverapps.io`. You have to choose a unique one. Trusted SSL is available on every subdomain.
 
-{{< callout type="warning" >}}
+{{< callout emoji="🌐" >}}
 `*.cleverapps.io` certificate is only valid for the first subdomain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
 {{< /callout >}}
 
-## Using Personal Domain Names
+## Configuring Domain Names by Region
 
-You can point your domain name to Clever Cloud either with a CNAME record or with A records.
+It's possible to point your personalized domain name to Clever Cloud with either a type `A` or `CNAME` record through your registrar.
 
-**The use of a CNAME record is highly recommended.**
+{{< callout type="warning" >}}
+  The use of a CNAME record is **highly** recommended.
+{{< /callout >}}
 
-With a CNAME record, your DNS configuration is always up-to-date.
-Using A records will require you to keep the DNS configuration up-to-date manually.
+With a `CNAME` record, your DNS configuration is always up-to-date.
+Using `A` records requires you to keep the DNS configuration up-to-date manually.
 
 We also support wildcard personal domain names, to do so use the standard pattern to describe it: `*.example.com`
 
-### Your Application Runs in the Europe/Paris ('PAR') Zone
+### Europe/Paris (PAR)
 
 Provide the following to your registrar:
 
@@ -59,42 +60,42 @@ Provide the following to your registrar:
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
 
-### Your Application Runs in the Europe/Paris onto Scaleway ('SCW') Zone
+### Europe/Paris onto Scaleway (SCW)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 212.129.27.239`<br>`@ 10800 IN A 212.83.186.147`<br>`@ 10800 IN A 212.83.186.216`<br>`@ 10800 IN A 212.129.27.183` |
 
-### Your Application Runs in the Europe/Roubaix ('RBX') Zone
+### Europe/Roubaix (RBX)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.177.176`<br>`@ 10800 IN A 87.98.177.181`<br>`@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.136` |
 
-### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
+### Europe/Roubaix HDS (RBXHDS)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49` |
 
-### Your Application Runs in the Europe/Warsaw ('WSW') Zone
+### Europe/Warsaw (WSW)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 145.239.17.127`<br>`@ 10800 IN A 145.239.17.192` |
 
-### Your Application Runs in the Europe/Gravelines ('GRAHDS') Zone
+### Europe/Gravelines (GRAHDS)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 188.165.58.196<br>@ 10800 IN A 188.165.58.200 |
 
-### Your Application Runs in the North-America/Montreal ('MTL') Zone
+### North-America/Montreal (MTL)
 
 Provide the following to your registrar:
 
@@ -103,14 +104,14 @@ Provide the following to your registrar:
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 158.69.109.229<br>@ 10800 IN A 149.56.117.183 |
 
-### Your Application Runs in the Asia/Singapore ('SGP') Zone
+### Asia/Singapore (SGP)
 
 | Record Type | Value |
 | ----------- | ----- |
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | @ 10800 IN A 51.79.197.159<br>@ 10800 IN A 51.79.197.160 |
 
-### Your Application Runs in the Oceania/Sydney ('SYD') Zone
+### Oceania/Sydney (SYD)
 
 | Record Type                                   | Value                                                                             |
 | --------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -121,12 +122,12 @@ Provide the following to your registrar:
 You cannot use a CNAME on a top-level domain, or on a subdomain which already has DNS records.
 {{< /callout >}}
 
-If you want to make your application available from a domain name which does not support CNAME records (eg `example.com` in addition to `www.example.com`), check if your registrar provides a web redirection service. This way, you only have to make `www.example.com` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
+If you want to make your application available from a domain name which doesn't support CNAME records (eg `example.com` in addition to `www.example.com`), check if your registrar provides a web redirection service. This way, you only have to make `www.example.com` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
 {{< callout type="info" >}}
-`*.example.com` will match e.g. `blog.example.com` or `www.example.com`. But for the raw domain `example.com`, you will have to add both `*.example.com` and `example.com` to your application.
+`*.example.com` match for instance `blog.example.com` or `www.example.com`. But for the raw domain `example.com`, you have to add both `*.example.com` and `example.com` to your application.
 {{< /callout >}}
 
 ### Contextual Example
@@ -142,8 +143,8 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 Requests are routed to applications based on the domain name, but you can also route depending on its path.
 
 For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
-All the HTTP requests on `example.com` where the path starts with `/api` will be routed to
-the second app. The other requests will be routed to the first app.
+All the HTTP requests on `example.com` where the path starts with `/api` are routed to
+the second app. The other requests are routed to the first app.
 You can add a path after every domain name you bind in the console (or with [clever tools]({{< ref "/doc/CLI" >}})).
 
 Note that your path-routed application **needs** to have a `/whatever` route.

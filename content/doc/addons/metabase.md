@@ -89,11 +89,14 @@ They are dimensioned to suit a majority of needs. You can however manage and adj
 The Metabase add-on is a fully managed application, so you don't have to do anything to update it: by default **it is automatically updated** to match the latest Community Edition release. Your add-on will be automatically restarted when a new Metabase release is available, but thanks to Clever Cloud this will be done without downtime. All deployed versions are reviewed and tested before being released.
 
 Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable.
-This variable can be modified to specify which version of Metabase you want. This variable must contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.) :
+This variable can be modified to specify which version of Metabase you want. This variable must contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
 - `CC_METABASE_VERSION=community-latest` (_default_): use the latest version of the Community Edition _(same as `0`, `0.*`, `^0` or empty)
 - `CC_METABASE_VERSION=0.50.3`: use the `0.50.3` version _(same as `=0.50.3`)
 - `CC_METABASE_VERSION=0.50`: use the latest available version starting with `0.50` _(same as `^0.50.0`, `~0.50.0`)
+
+To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#restart).
+The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
 {{< callout type="warning" >}}
 **With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.50.3`) or a specific "branch" (for example, `0.50`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
@@ -131,7 +134,6 @@ When you add a new data source to Metabase, its credentials are stored into Meta
 When you deploy a Metabase add-on, this **at-rest encryption is enabled by default**.
 This is why the Java app of your add-on has a `MB_ENCRYPTION_SECRET_KEY` environment variable that contains a randomly generated value.
 
-
 ## Configuring a SMTP Server
 
 While this is not strictly required to successfully operate Metabase, it might be useful to configure a SMTP server.
@@ -145,7 +147,6 @@ You can use a [MailPace](/doc/addons/mailpace/) add-on or any other SMTP server.
 
 The SMTP server can be configured (and tested) in Metabase administration interface.
 See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
-
 
 ### Using a MailPace Add-On
 

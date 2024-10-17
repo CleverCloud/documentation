@@ -50,7 +50,7 @@ please contact the support to change its policy.
 
 Add-ons are managed services, meaning that users have **standard access** to the database. Some operations like database and user creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
-If you think your system might require more advanced administrative access, contact Clever Cloud support to explain your use case and we will work with you to find a solution.
+If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case and we will work with you to find a solution.
 
 Here is the list of actions that you won't be able to perform:
 - Database administration (for example you won't be able to create new databases).
@@ -58,7 +58,7 @@ Here is the list of actions that you won't be able to perform:
 - Modules installation
 - Back-up frequency or retention control.
 
-Please refer to Clever Cloud support if you want to perform one of these actions.
+Ask Clever Cloud support if you want to perform one of these actions.
 
 Authorized actions:
 - Access one or more databases depending on you plan

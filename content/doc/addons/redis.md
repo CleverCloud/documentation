@@ -46,4 +46,21 @@ This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/d
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,
 please contact the support to change its policy.
 
-{{% content/managed-services %}}
+## 🔑 Rights and permissions
+
+Add-ons are managed services, meaning that users have **standard access** to the database. Some operations like database and user creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+
+If you think your system might require more advanced administrative access, contact Clever Cloud support to explain your use case and we will work with you to find a solution.
+
+Here is the list of actions that you won't be able to perform:
+- Database administration (for example you won't be able to recreate a database after a flush).
+- Server configuration update.
+- Modules installation
+- Back-up frequency or retention control.
+
+Please refer to Clever Cloud support if you want to perform one of these actions.
+
+Authorized actions:
+- Access one or more databases depending on you plan
+- Manage tables (create, delete...)
+- Set up replica via clever cloud console

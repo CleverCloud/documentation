@@ -78,4 +78,22 @@ Note that these features are available for all our databases add-ons, in additio
 
 **The managed databases provide an advantage if you want to avoid the complexity of installing and deploying databases** and if you want simple-to-use management and monitoring tools.
 
-{{% content/managed-services %}}
+## 🔑 Rights and permissions
+
+Add-ons are managed services, meaning that users have **standard access** to the database (role **owner**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+
+Authorized actions:
+- Manage collections (create, delete...).
+- Manage indexes.
+- Manage documents.
+
+If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+
+Here is the list of actions that you won't be able to perform:
+- Database administration (for example you won't be able to create new databases).
+- Users administration (you won't be able to create other users than the one handled with our control plane, ie the base owner and read-only users).
+- Server configuration update.
+- Cluster creation.
+- Backup frequency or retention control.
+
+Ask Clever Cloud support if you want to perform one of these actions.

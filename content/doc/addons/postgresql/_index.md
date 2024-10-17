@@ -159,3 +159,7 @@ Please refer to Clever Cloud support if you want to perform one of these actions
 
 Authorized actions:
 - Manage tables (create, delete...)
+- Manage schemas
+- Manage indexes
+- Access information from **pg_catalog** (except **pg_database** on DEV plan)
+- Access to basic maintenance operations such as VACUUM and ANALYZE.

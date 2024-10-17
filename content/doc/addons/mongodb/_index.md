@@ -95,3 +95,5 @@ Please refer to Clever Cloud support if you want to perform one of these actions
 
 Authorized actions:
 - Manage collections (create, delete...)
+- Manage indexes
+- Manage documents

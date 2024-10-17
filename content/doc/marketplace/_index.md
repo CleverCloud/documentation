@@ -66,9 +66,10 @@ Fields
 
 * `api/production/sso_url` - The production endpoint for single sign-on.
 
-* `api/test/base_url` - The test endpoint on which Clever Cloud sends actions requests. Used to test your service when you create an add-on provider. After the add-on creation,`api/production/base_url` is used.
+* `api/test/base_url` - The test endpoint on which Clever Cloud sends actions requests. Used to test your service when you create an add-on provider. After the add-on creation,`api/production/base_url` is used. If you're **not using** a test environment, set the same value as `api/production/base_url`.
 
-* `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. After that, the `api/production/sso_url` is used.
+* `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. After that, the `api/production/sso_url` is used. If you're **not using** a test environment, set the same value as 
+`api/production/sso_url`.
 
 ## Add-on Provider requests
 

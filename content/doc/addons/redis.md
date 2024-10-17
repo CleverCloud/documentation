@@ -53,7 +53,7 @@ Add-ons are managed services, meaning that users have **standard access** to the
 If you think your system might require more advanced administrative access, contact Clever Cloud support to explain your use case and we will work with you to find a solution.
 
 Here is the list of actions that you won't be able to perform:
-- Database administration (for example you won't be able to recreate a database after a flush).
+- Database administration (for example you won't be able to create new databases).
 - Server configuration update.
 - Modules installation
 - Back-up frequency or retention control.

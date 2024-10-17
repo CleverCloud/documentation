@@ -67,7 +67,7 @@ Add-ons are managed services, meaning that users have **standard access** to the
 If you think your system might require more advanced administrative access, contact Clever Cloud support to explain your use case and we will work with you to find a solution.
 
 Here is the list of actions that you won't be able to perform:
-- Database administration (for example you won't be able to recreate a database after a DROP).
+- Database administration (for example you won't be able to create new databases).
 - Users administration (you won't be able to create other users than the one handled with our control plane, ie the base owner and read-only users).
 - Server configuration update.
 - Plugins installation

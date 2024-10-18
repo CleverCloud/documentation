@@ -90,9 +90,16 @@ Plugins can be browsed from [Matomo own plugin repository](https://plugins.matom
 Plugin files are removed everytime your instance reboots. **This means you have to reinstall them all again after every reboot.** This is temporary, and it is something we plan on improving as soon as we can.
 {{< /callout >}}
 
+### QueudTracking
+
+By default, the QueudTracking plugin is enabled on Matomo instances, with a queue size of 25.  
+This means that the plugin stores 25 visits in a queue before they appear in Matomo.  
+This helps to prevent the server from receiving too many request at once.  
+You can change the size of the queue in your Matomo settings, by modifying the **Number of requests that are processed in one batch** parameter in **Administration->System->General settings**.
+
 ## Security and updates
 
-The Matomo add-on is a fully managed application, you don't have to select a particular version. Still its receives updates for both features and security, that we will managed for you with continuously upgraded version over time.
+The Matomo add-on is a fully managed application, you don't have to select a particular version. Clever Cloud updates it for both features and security, and manages it continuously to apply regular version upgrades.
 
 After being updated, you Matomo add-on could need to be restarted.
 

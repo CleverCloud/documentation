@@ -11,7 +11,7 @@ linkTitle: Documentation
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/doc/quickstart" title="Getting Started" subtitle="Get ready to deploy and app in 5 minutes" icon="arrow-circle-right" >}}
+  {{< card link="../doc/quickstart" title="Getting Started" subtitle="Get ready to deploy and app in 5 minutes" icon="arrow-circle-right" >}}
   {{< card link="../doc/develop" title="Develop" subtitle="Best practices on Cloud deployments, sheduling jobs, etc." icon="code" >}}
   {{< card link="../doc/administrate" title="Administrate" subtitle="Access metrics, logs, manage domains, set up scalability..." icon="library" >}}
   {{< card link="../doc/applications" title="Deploy" subtitle="Deploy any app on Clever Cloud." icon="rocket-launch" >}}

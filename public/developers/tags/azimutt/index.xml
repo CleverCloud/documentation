@@ -1,0 +1,39 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Azimutt</title>
+    <link>https://lafillepassympa.com/developers/tags/azimutt/</link>
+    <description>Recent content in Azimutt on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/azimutt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Azimutt is available as an add-on on Clever Cloud</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Azimutt is &lt;a href=&#34;https://github.com/azimuttapp/azimutt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an open-source project&lt;/a&gt; we follow for a long time. Created by Loïc Knuchel, it helps you to explore, analyze and manage your database in a pleasant graphical interface. It&amp;rsquo;s a member of the &lt;a href=&#34;https://www.clever-cloud.com/up-program/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud startup program&lt;/a&gt;, for some weeks and now part of our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/marketplace/&#34; &gt;Marketplace&lt;/a&gt;. Thus, you can create an Azimutt account, free or with a subscription, directly &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;from the Console&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You just have to provide a compatible database URI, hosted by Clever Cloud or not, and start exploring it. Our integration is based on a gateway hosted by Clever Cloud. No credentials are shared with Azimutt, and they&amp;rsquo;re kept safely in your browser.&lt;/p&gt;
+&lt;p&gt;Feel free to let us know what you think about this tool and if you want a deeper integration in &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/dbaas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our GitHub Community&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://azimutt.app/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Azimutt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azimutt.app/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Azimutt documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

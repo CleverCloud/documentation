@@ -1,0 +1,574 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Metrics</title>
+    <link>https://lafillepassympa.com/developers/doc/metrics/</link>
+    <description>Recent content in Metrics on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/doc/metrics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blackfire</title>
+      <link>https://lafillepassympa.com/developers/doc/metrics/blackfire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/metrics/blackfire/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Blackfire can be used on Clever Cloud with &lt;strong&gt;PHP&lt;/strong&gt; applications.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.blackfire.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blackfire&lt;/a&gt; helps to improve web applications, performance at each step of its lifecycle: from development to test, staging and production.&lt;/p&gt;
+&lt;h2&gt;Blackfire configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;blackfire-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#blackfire-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Necessary information&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;necessary-information&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#necessary-information&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before setting up your app, be sure to have a &lt;a href=&#34;https://www.blackfire.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blackfire Account&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Add ENABLE_BLACKFIRE=true environment variable to load Blackfire extension.&lt;/li&gt;
+&lt;li&gt;Add at least the CC_BLACKFIRE_SERVER_TOKEN and CC_BLACKFIRE_SERVER_ID environment variables.&lt;code&gt;CC_BLACKFIRE_SERVER_ID&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Optional configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;optional-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to fine-tune agent settings, you can use the following environment variables:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_LOG_LEVEL
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_MEMORY_LIMIT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_COLLECTOR
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_TIMEOUT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_STATSD
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CC_BLACKFIRE_STATSD_PREFIX&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Usage&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;usage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#usage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Just redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will begin sending data to Blackfire. Once Blackfire receives the data, your application will be listed in the dashboard.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>New Relic</title>
+      <link>https://lafillepassympa.com/developers/doc/metrics/new-relic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/metrics/new-relic/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;New Relic can be used on Clever Cloud with &lt;strong&gt;Java, Node.js, PHP, Ruby and Scala&lt;/strong&gt; applications.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; is a software analytics company based in the United States.
+New Relic&amp;rsquo;s technology monitors Web and mobile applications in real-time that run in cloud, on-premise, or hybrid environments. You can easily setup a New Relic based monitoring on your application to monitor it and find performances problems.&lt;/p&gt;
+&lt;h2&gt;New Relic for Node.js and Ruby&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;new-relic-for-nodejs-and-ruby&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#new-relic-for-nodejs-and-ruby&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;New Relic is very simple to install in a Node.js or Ruby application as it is a simple dependency.
+Install instructions for &lt;a href=&#34;https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt; and &lt;a href=&#34;https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-installation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt; are available in &lt;a href=&#34;https://docs.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the New Relic documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;New Relic for Python&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;new-relic-for-python&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#new-relic-for-python&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To use New Relic in Python, you have to add the &lt;a href=&#34;https://pypi.python.org/pypi/newrelic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;newrelic&lt;/a&gt; dependency into your &lt;code&gt;requirements.txt&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2&gt;New Relic for Java, Scala and PHP&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;new-relic-for-java-scala-and-php&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#new-relic-for-java-scala-and-php&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To use New Relic in Java, Scala or PHP instances, you need to configure it as it is provided directly inside the instances.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      New Relic trigger auto-insertion of JavaScript fragments  on PHP applications, for browser monitoring. You can disable it with &lt;code&gt;newrelic.browser_monitoring.auto_instrument&lt;/code&gt; in &lt;code&gt;.user.ini&lt;/code&gt;.
+&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more on New Relic&amp;rsquo;s documentation&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;New Relic configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;new-relic-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#new-relic-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Necessary information&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;necessary-information&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#necessary-information&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before setting up your app, be sure to have a &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic Account&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To configure your New Relic, you need to set the environment variables &lt;code&gt;NEW_RELIC_LICENSE_KEY&lt;/code&gt; and &lt;code&gt;NEW_RELIC_APP_NAME&lt;/code&gt; (optional).&lt;/p&gt;
+&lt;p&gt;Alternatively you can create and add a &lt;code&gt;./clevercloud/newrelic.json&lt;/code&gt; file in your project, with the following fields:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;license&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;licenceID&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;appname&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;NameOfYourApp(optional)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;If the &lt;code&gt;appname&lt;/code&gt; or &lt;code&gt;NEW_RELIC_APP_NAME&lt;/code&gt; is not specified, we use your application id for the name.&lt;/p&gt;
+&lt;h3&gt;Optional configuration (PHP only)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;optional-configuration-php-only&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-configuration-php-only&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to fine-tune agent settings, you can use the following environment variables:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Variable&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC_NEWRELIC_ERROR_COLLECTOR_ENABLED&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC_NEWRELIC_TRANSACTION_TRACER_ENABLED&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Usage&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;usage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#usage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will begin sending data to New Relic. Once New Relic receives the data, your application will be listed in the dashboard.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Warp 10</title>
+      <link>https://lafillepassympa.com/developers/doc/metrics/warp10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/metrics/warp10/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Main concepts&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;main-concepts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#main-concepts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Warp 10 is a time series database. The notion of &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;labels&lt;/code&gt;, &lt;code&gt;longitude&lt;/code&gt;, &lt;code&gt;latitude&lt;/code&gt;, &lt;code&gt;altitude&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; are used.&lt;/p&gt;
+&lt;p&gt;A GTS is a GeoTime Serie defined by a &lt;code&gt;class&lt;/code&gt; and some &lt;code&gt;labels&lt;/code&gt;. They&amp;rsquo;re indexed and used to quickly retrieved the data.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;labels&lt;/code&gt; is a kind of dictionary. That&amp;rsquo;s called a &lt;strong&gt;map&lt;/strong&gt; under the warp10 terminology.&lt;/p&gt;
+&lt;p&gt;A GTS may contain some values which have the following models : &lt;code&gt;[ timestamp longitude latitude altitude value ]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Warp 10 uses &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/04_WarpScript&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp Script&lt;/a&gt;. It&amp;rsquo;s a &lt;strong&gt;stack&lt;/strong&gt; based &lt;strong&gt;language using reverse polish notation&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The metrics OVHcloud team built an other way to request Warp 10: &lt;a href=&#34;https://github.com/ovh/tsl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ovh/tsl/&lt;/a&gt;
+Warp 1O documentation &lt;a href=&#34;https://www.warp10.io/doc/reference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;is available on their website&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Time and duration in Warp 10&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;time-and-duration-in-warp-10&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#time-and-duration-in-warp-10&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;More information about &lt;a href=&#34;https://www.warp10.io/tags/date&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;date functions here&lt;/a&gt;, and &lt;a href=&#34;https://www.warp10.io/tags/time&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;time functions here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      The platform&amp;rsquo;s time unit is in &lt;strong&gt;microsecond&lt;/strong&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Duration is set by the followings symbols&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;duration-is-set-by-the-followings-symbols&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#duration-is-set-by-the-followings-symbols&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt; : day&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt; : Hour&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ms&lt;/code&gt; : millisecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ns&lt;/code&gt; : nanosecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt; : picosecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; : second&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;us&lt;/code&gt; : microsecond&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; : week&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Date&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;date&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#date&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Allowed format :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ISO8601&lt;/li&gt;
+&lt;li&gt;Timestamp in microsecond&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Builtin function :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NOW&lt;/code&gt; : get the current timestamp&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ISO8601&lt;/code&gt; : Convert a string or a timestamp to a ISO8601 date format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Endpoint&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;endpoint&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#endpoint&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Clever Cloud Warp 10 endpoint is:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You can find documentation about endpoint gateway &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find the endpoint and an available token under the &lt;code&gt;metric&lt;/code&gt; tab of your application&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can query our Warp 10 platform with your own script. Here&amp;rsquo;s a curl example :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  curl -T &amp;lt;Path/to/a/warpscript_file&amp;gt; https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Do not forget the endpoint. &lt;code&gt;exec&lt;/code&gt; in the previous example.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Token&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Tokens are based on your application with the notion of producer and owner. Hence, only the data owner can see it.&lt;/p&gt;
+&lt;p&gt;You can find a 5 days available token in the &lt;code&gt;metric&lt;/code&gt; tab of your application.&lt;/p&gt;
+&lt;h2&gt;Technical constraints&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;technical-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#technical-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The followings limits are defined in Warp 10. The &lt;strong&gt;soft&lt;/strong&gt; one can be passed over by an &lt;a href=&#34;https://www.warp10.io/doc/AUTHENTICATE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;AUTHENTICATE&lt;/code&gt;&lt;/a&gt; operation. The &lt;strong&gt;hard&lt;/strong&gt; one is unsurpassable.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;WarpScript Operator&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Warp 10 limit description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;soft limit&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;hard limit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXGTS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of GTS which can be fetched&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;LIMIT&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of datapoints which can be fetched during a script execution&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXBUCKETS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of buckets which can be created by a call to BUCKETIZE&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;50e5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXDEPTH&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum depth (number of levels) of the execution stack&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXLOOP&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of milliseconds which can be spent in a loop&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXOPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of operations which can be performed during a single WarpScript execution&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5e7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXSYMBOLS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;64&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;256&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXGEOCELLS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum number of cells a GEOSHAPE&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e4&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXPIXELS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum size (in pixels) of images which can be created by PGraphics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10e5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MAXRECURSION&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maximum nesting depth of macro calls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;16&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;32&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Operation over &lt;strong&gt;soft limits&lt;/strong&gt; may be intensives.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Usage&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;usage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#usage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;An example where it is needed to increase the fetch limit by the &lt;code&gt;LIMIT&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;&amp;#39;&amp;lt;READTOKEN&amp;gt;&amp;#39; AUTHENTICATE
+50e6 TOLONG LIMIT
+// Fetch on the &amp;#39;accessLogs&amp;#39; class for your application id as labels
+[ &amp;#39;&amp;lt;READTOKEN&amp;gt;&amp;#39; &amp;#39;accessLogs&amp;#39; { &amp;#39;app_id&amp;#39; &amp;#39;&amp;lt;APP_ID&amp;gt;&amp;#39;  } NOW 1 w ] FETCH&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;Visualization and exploration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;visualization-and-exploration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#visualization-and-exploration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Quantum&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;quantum&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#quantum&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Quantum is a web tool used to run some WarpScript. You can access to it from your metrics interface.&lt;/p&gt;
+&lt;p&gt;It provides the path to the Clever Cloud Warp 10 gateway and let you explore your data.&lt;/p&gt;
+&lt;h2&gt;Macro&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;macro&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#macro&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redundant and often need code.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      More information on the &lt;a href=&#34;https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp 10&amp;rsquo; macros documentations&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Consumption&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;consumption&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#consumption&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The following macros are helpers to compute consumption in seconds&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app_consumption&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return the consumption in &lt;strong&gt;second&lt;/strong&gt; by &lt;strong&gt;applications&lt;/strong&gt; for a specific &lt;strong&gt;organisation&lt;/strong&gt;.
+&lt;code&gt;Start&lt;/code&gt; and &lt;code&gt;End&lt;/code&gt; parameters can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;ORGANISATION ID&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/app_consumption&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;orga_consumption&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return &lt;strong&gt;all&lt;/strong&gt; the consumption in &lt;strong&gt;second&lt;/strong&gt; for a specific &lt;strong&gt;organisation&lt;/strong&gt;. &lt;code&gt;Start&lt;/code&gt; and &lt;code&gt;End&lt;/code&gt; parameters
+can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;ORGANISATION ID&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/app_consumption&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Access Logs&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-logs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#access-logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fetch_accessLogs_key_v0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series (&lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. It allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole JSON.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;app_id&amp;#39;&lt;/span&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;1stLevelKey&amp;gt;&amp;#39;&lt;/span&gt; NOW &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; h  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;app_id&amp;#39;&lt;/span&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;1stLevelKey&amp;gt;.&amp;lt;2ndLevelKey&amp;gt;&amp;#39;&lt;/span&gt; NOW &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; m  @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More example in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics part of this documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nested keys&lt;/strong&gt; can be reached using a dot (&lt;code&gt;.&lt;/code&gt;) to represent the depth.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;READ TOKEN&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;LABELS&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;KEY&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;START&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;END&amp;gt;&amp;#39;&lt;/span&gt; @clevercloud/fetch_accessLogs_key_v0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

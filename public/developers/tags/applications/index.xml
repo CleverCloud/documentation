@@ -1,0 +1,627 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Applications</title>
+    <link>https://lafillepassympa.com/developers/tags/applications/</link>
+    <description>Recent content in Applications on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/applications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Applications</title>
+      <link>https://lafillepassympa.com/developers/doc/applications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/applications/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Choose your Stack&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;choose-your-stack&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#choose-your-stack&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Find here specific instructions related to your application&amp;rsquo;s language.&lt;/p&gt;
+&lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/docker&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M20.17 9.82a4.76 4.76 0 0 0-.84.07a3.12 3.12 0 0 0-1.43-2.14l-.28-.16l-.19.27a3.7 3.7 0 0 0-.51 1.19a2.84 2.84 0 0 0 .33 2.22a4.11 4.11 0 0 1-1.45.35H2.63a.63.63 0 0 0-.63.62a9.6 9.6 0 0 0 .58 3.39a5 5 0 0 0 2 2.6a8.86 8.86 0 0 0 4.42.95a13.27 13.27 0 0 0 2.42-.18a10.09 10.09 0 0 0 3.19-1.15A8.9 8.9 0 0 0 16.78 16a11.94 11.94 0 0 0 2.13-3.67h.19a3.08 3.08 0 0 0 2.23-.84a2.36 2.36 0 0 0 .59-.87l.08-.22l-.2-.16a2.69 2.69 0 0 0-1.63-.42z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M5.61 9.35H3.85a.16.16 0 0 0-.16.15v1.58a.16.16 0 0 0 .16.15h1.76a.16.16 0 0 0 .16-.15V9.5a.16.16 0 0 0-.16-.15zm2.44 0H6.28a.16.16 0 0 0-.16.15v1.58a.16.16 0 0 0 .16.15h1.77a.15.15 0 0 0 .15-.15V9.5a.15.15 0 0 0-.15-.15zm2.47 0H8.75a.15.15 0 0 0-.15.15v1.58a.15.15 0 0 0 .15.15h1.77a.15.15 0 0 0 .15-.15V9.5a.15.15 0 0 0-.15-.15zm.67 0a.15.15 0 0 0-.19.15v1.58a.15.15 0 0 0 .15.15H13a.15.15 0 0 0 .15-.15V9.5a.15.15 0 0 0-.15-.15zM6.28 7.09H8a.16.16 0 0 1 .16.16v1.56A.16.16 0 0 1 8 9H6.28a.15.15 0 0 1-.15-.15V7.24a.15.15 0 0 1 .15-.15zm2.47 0h1.77a.15.15 0 0 1 .15.15v1.57a.16.16 0 0 1-.16.16H8.75a.15.15 0 0 1-.15-.15V7.24a.15.15 0 0 1 .15-.15zm2.44 0H13a.15.15 0 0 1 .15.15v1.57A.15.15 0 0 1 13 9h-1.81a.16.16 0 0 1-.19-.19V7.24a.15.15 0 0 1 .19-.15z&#34;/&gt;&lt;rect width=&#34;2.07&#34; height=&#34;1.88&#34; x=&#34;11.04&#34; y=&#34;4.82&#34; fill=&#34;currentColor&#34; rx=&#34;.15&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M13.65 9.35a.15.15 0 0 0-.15.15v1.58a.15.15 0 0 0 .15.15h1.77a.15.15 0 0 0 .15-.15V9.5a.15.15 0 0 0-.15-.15z&#34;/&gt;&lt;/svg&gt;Docker&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/golang&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M128.464 166.858c-11.63 0-21.059 10.206-21.059 22.796s9.428 22.796 21.059 22.796s21.059-10.206 21.059-22.796s-9.429-22.796-21.059-22.796zm9.553 33.869c-2.757 0-4.994-2.625-4.994-5.862s2.236-5.862 4.994-5.862c2.758 0 4.994 2.625 4.994 5.862s-2.236 5.862-4.994 5.862zm166.432-39.498c-11.391 0-20.625 10.206-20.625 22.796s9.234 22.796 20.625 22.796s20.625-10.206 20.625-22.796s-9.234-22.796-20.625-22.796zm9.552 33.868c-2.638 0-4.776-2.625-4.776-5.862s2.139-5.862 4.776-5.862s4.776 2.625 4.776 5.862c0 3.238-2.139 5.862-4.776 5.862zm156.698-89.596c-15.197-4.125-31.697-1.085-47.546 9.552c-14.112-11.941-30.395-21.059-48.632-28.007c-32.349-11.941-70.017-16.5-121.036-16.5c-54.493 4.342-94.983 12.809-128.418 29.092c-13.46 6.513-25.401 14.329-35.822 23.448c-16.066-9.987-32.783-12.375-48.197-7.599c-14.329 4.342-26.704 14.546-34.086 27.789s-9.118 28.441-4.125 41.467c4.994 13.026 16.5 23.231 33.651 29.526c-5.428 21.928-8.25 45.158-8.684 70.776c-1.57 57.604 7.998 135.389 8.853 156.405h455.512c.115-19.254 4.075-91.488-4.752-171.385c-2.388-23.013-6.079-44.29-11.289-64.263c17.586-6.731 29.092-17.803 33.651-32.131c4.342-13.244 2.171-28.224-5.211-41.467c-7.599-13.026-19.757-22.796-33.868-26.704zM92.208 202.464c-4.559-23.013.434-42.987 13.46-58.185c11.724-13.678 29.526-22.362 48.849-24.967c19.322-2.388 38.862 1.519 53.625 11.507c16.5 11.072 26.487 28.658 27.79 51.237c4.776 80.981-123.316 100.303-143.724 20.408zM245.75 317.382c-.217 3.908-.434 5.428-.651 7.599c-.434 8.033-.403 10.918.248 16.998c-10.546 11.166-18.61 12.283-23 4.817c-5.21-9.118-6.404-21.69-4.915-32.733l28.287-8.933s.465 7.259.031 12.252zm36.807 15.577c0 4.125-.217 7.816-.868 11.289c-1.519 2.606-5.466 7.548-12.784 7.556s-10.401-4.245-12.789-9.673c-.651-5.862.043-23.788.478-27.695c.434-4.993.478-7.683.478-10.505c0 0 22.92 5.73 24.353 7.64s1.135 17.914 1.135 21.387zm20.94-31.747c-4.125 4.559-8.25 6.079-13.243 5.862c-3.908-.217-6.513-1.303-15.197-4.776c-8.684-3.691-13.461-4.993-19.106-5.211c-5.428-.651-11.334.74-22.796 4.776c-17.061 6.008-24.75 5.428-29.96-4.125c-7.227-13.048 2.442-30.356 16.812-34.093c-.727-1.408-1.253-2.8-1.427-4.653c-.609-13.802 10.315-24.608 27.845-27.343c16.178-2.524 35.571 2.892 39.647 17.886c1.296 4.882.286 9.467-2.862 13.418c8.495 4.155 15.904 9.541 20.504 15.245c6.513 7.816 6.731 15.632-.217 23.013zm96.044-82.016c-11.072 13.46-28.007 22.579-46.895 25.835c-41.467 6.947-79.026-14.546-86.191-56.665v-.217c-5.211-85.323 125.053-108.118 144.375-24.967c5.211 21.71.868 41.033-11.289 56.013zm-119.002 31.827c1.003 3.787-.099 7.078-3.368 10.059c-8.736 7.967-30.468 10.959-43.869 6.04c-3.754-1.377-8.346-3.99-9.012-8.627c-.314-8.481 5.565-18.46 23.019-21.184c18.379-2.865 30.834 4.923 33.23 13.712z&#34;/&gt;&lt;/svg&gt;Go&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/haskell&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M0 3.535L5.647 12L0 20.465h4.235L9.883 12L4.235 3.535zm5.647 0L11.294 12l-5.647 8.465h4.235l3.53-5.29l3.53 5.29h4.234L9.883 3.535zm8.941 4.938l1.883 2.822H24V8.473zm2.824 4.232l1.882 2.822H24v-2.822z&#34;/&gt;&lt;/svg&gt;Haskell&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/java&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M9.37 17.51c-3.09.86 1.87 2.64 5.8 1a7.18 7.18 0 0 1-1.1-.54a11.59 11.59 0 0 1-4.16.18c-1.31-.15-.54-.64-.54-.64zm5.33-1.68a16.27 16.27 0 0 1-5.36.26c-1.31-.14-.45-.77-.45-.77c-3.4 1.12 1.89 2.4 6.64 1a2.25 2.25 0 0 1-.83-.49zm1.82-9.73s-6.87 1.71-3.59 5.49a1.47 1.47 0 0 1-.25 2.12s2.46-1.27 1.33-2.86s-1.86-2.22 2.51-4.75z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M18.13 19.14s.56.46-.63.82c-2.27.69-9.43.9-11.42 0c-.72-.31.62-.74 1-.83a2.54 2.54 0 0 1 .69-.08c-.8-.56-5.15 1.1-2.21 1.58c8.05 1.37 14.64-.56 12.57-1.49zm-2.76-4.88a7 7 0 0 1 .92-.49s-1.51.27-3 .4a28.11 28.11 0 0 1-4.82.05C6.09 13.91 9.74 13 9.74 13a6.81 6.81 0 0 0-3.16.75c-2.06 1.03 5.09 1.48 8.79.51zm.91 2.44a.39.39 0 0 1-.08.09c5-1.32 3.18-4.65.78-3.81a.71.71 0 0 0-.33.25s.14-.05.43-.12c1.22-.25 2.92 1.63-.8 3.59zM12 13c-.74-1.67-3.26-3.14 0-5.71C16.09 4.08 14 2 14 2c.84 3.31-3 4.31-4.34 6.37c-.93 1.41.47 2.92 2.34 4.63z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M16.41 21.32a29.75 29.75 0 0 1-9.14.14s.46.38 2.84.53c3.61.23 9.15-.12 9.29-1.83c0 0-.26.64-2.99 1.16z&#34;/&gt;&lt;/svg&gt;Java&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/javascript&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 32 32&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M15.994 3c-.365 0-.73.09-1.045.27L5.04 8.99C4.4 9.36 4 10.06 4 10.8v10.38c0 .75.4 1.44 1.04 1.81l2.6 1.5c1.26.62 1.71.62 2.28.62c1.87 0 2.94-1.13 2.94-3.09V11.31a.29.29 0 0 0-.29-.29h-1.25a.286.286 0 0 0-.29.29v10.7c0 .88-.91 1.74-2.38 1.01l-2.72-1.57a.303.303 0 0 1-.16-.27V10.81c0-.12.06-.22.16-.28l9.91-5.72a.29.29 0 0 1 .31 0l9.91 5.72c.1.06.16.16.16.27v10.38c0 .11-.06.22-.15.27l-9.92 5.73a.34.34 0 0 1-.31 0l-2.55-1.51a.23.23 0 0 0-.24-.02c-.71.4-.84.45-1.5.68c-.16.05-.41.15.09.43l3.31 1.96c.32.18.68.28 1.04.28c.37 0 .73-.1 1.05-.28l9.92-5.73c.64-.37 1.04-1.06 1.04-1.81V10.81c0-.75-.4-1.44-1.04-1.81l-9.92-5.73c-.316-.18-.68-.27-1.046-.27zm2.666 8.006c-2.83 0-4.52 1.2-4.52 3.2c0 2.17 1.68 2.768 4.4 3.038c3.25.32 3.5.802 3.5 1.442c0 1.1-.89 1.57-2.98 1.57c-2.63 0-3.21-.661-3.4-1.961a.28.28 0 0 0-.28-.24h-1.29a.28.28 0 0 0-.28.28c0 1.67.91 3.66 5.25 3.66c3.14 0 4.94-1.24 4.94-3.4c0-2.14-1.45-2.71-4.49-3.12c-3.09-.4-3.4-.61-3.4-1.33c0-.6.27-1.39 2.55-1.39c2.03 0 2.79.44 3.1 1.81c.03.13.14.23.28.23h1.29c.08 0 .15-.04.21-.1a.27.27 0 0 0 .07-.22c-.2-2.36-1.77-3.47-4.95-3.47z&#34;/&gt;&lt;/svg&gt;Node.js&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/ruby&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 15 15&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M4.293 4L8.058.236L9.73 4H4.293Zm10-4l-3.632 3.632L9.047 0h5.246ZM.236 8.058L4 9.73V4.293L.236 8.058Zm3.396 2.603L0 9.047v5.246l3.632-3.632ZM5 9.293L9.293 5H5v4.293Zm10 4.438l-3.907-9.117L15 .707v13.024Zm-.952.317l-3.717-8.672l-4.955 4.955l8.672 3.717Zm-9.434-2.955L13.731 15H.707l3.907-3.907Z&#34;/&gt;&lt;/svg&gt;Ruby&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/php&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 16 16&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M7.198 3.06a2.883 2.883 0 0 0-2.886 2.88v6.407A2.155 2.155 0 0 1 2.156 14.5A2.155 2.155 0 0 1 0 12.347a.78.78 0 0 1 1.563 0a.593.593 0 0 0 1.187 0V5.941A4.444 4.444 0 0 1 7.198 1.5a4.449 4.449 0 0 1 4.274 3.206A4.673 4.673 0 0 1 16 9.373a.785.785 0 0 1-.008.114a.784.784 0 0 1 .008.115v4.118c0 .43-.35.78-.781.78H7.198a.78.78 0 0 1-.781-.78V9.602c0-.431.35-.78.78-.78a2.883 2.883 0 0 0 2.886-2.881A2.883 2.883 0 0 0 7.198 3.06Zm7.248 6.427a.784.784 0 0 1-.008-.114a3.112 3.112 0 0 0-2.805-3.095a4.446 4.446 0 0 1-3.654 4.035v2.627h2.448v-1.737a.78.78 0 0 1 1.563 0v1.737h2.447V9.602c0-.04.003-.077.009-.115Z&#34;/&gt;&lt;/svg&gt;PHP&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/python&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.936 3C7.362 3 7.647 4.983 7.647 4.983l.006 2.055h4.363v.617H5.92s-2.927-.332-2.927 4.282s2.555 4.45 2.555 4.45h1.524v-2.141s-.083-2.554 2.513-2.554zm-.056-5.74a.784.784 0 1 1 0-1.57a.784.784 0 1 1 0 1.57z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M18.452 7.532h-1.524v2.141s.083 2.554-2.513 2.554h-4.328s-2.432-.04-2.432 2.35v3.951s-.369 2.391 4.409 2.391c4.573 0 4.288-1.983 4.288-1.983l-.006-2.054h-4.363v-.617h6.097s2.927.332 2.927-4.282s-2.555-4.451-2.555-4.451zm-3.981 10.436a.784.784 0 1 1 0 1.57a.784.784 0 1 1 0-1.57z&#34;/&gt;&lt;/svg&gt;Python&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/rust&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;m23.835 11.703l-1.008-.623a13.727 13.727 0 0 0-.028-.294l.866-.807a.348.348 0 0 0-.116-.578l-1.106-.414a8.496 8.496 0 0 0-.087-.285l.69-.96a.346.346 0 0 0-.226-.544l-1.166-.19a9.357 9.357 0 0 0-.14-.261l.49-1.076a.344.344 0 0 0-.028-.336a.349.349 0 0 0-.3-.154l-1.185.041a6.744 6.744 0 0 0-.188-.227l.273-1.153a.347.347 0 0 0-.417-.417l-1.153.273a14.018 14.018 0 0 0-.228-.188l.041-1.184a.344.344 0 0 0-.49-.328l-1.076.49l-.262-.14l-.19-1.167a.348.348 0 0 0-.545-.226l-.96.69a8.487 8.487 0 0 0-.285-.086L14.597.453a.348.348 0 0 0-.578-.116l-.807.867a9.294 9.294 0 0 0-.294-.028L12.295.168a.346.346 0 0 0-.59 0l-.623 1.008a13.738 13.738 0 0 0-.294.028L9.98.337a.346.346 0 0 0-.578.116l-.414 1.106l-.285.086l-.959-.69a.348.348 0 0 0-.545.226l-.19 1.167a9.357 9.357 0 0 0-.262.14l-1.076-.49a.346.346 0 0 0-.49.328l.041 1.184a7.983 7.983 0 0 0-.228.187l-1.153-.272a.347.347 0 0 0-.417.417l.271 1.153l-.186.227l-1.184-.042a.346.346 0 0 0-.328.49l.49 1.077a9.167 9.167 0 0 0-.14.262l-1.166.19a.348.348 0 0 0-.226.544l.69.958a13.303 13.303 0 0 0-.087.286l-1.106.414a.348.348 0 0 0-.116.578l.866.807a9.294 9.294 0 0 0-.028.294l-1.008.623a.344.344 0 0 0 0 .59l1.008.623c.008.098.018.196.028.294l-.866.807a.346.346 0 0 0 .116.578l1.106.415c.028.096.057.191.087.285l-.69.959a.345.345 0 0 0 .227.544l1.166.19c.046.088.092.175.14.262l-.49 1.076a.346.346 0 0 0 .328.49l1.183-.041c.062.077.124.152.187.227l-.27 1.154a.346.346 0 0 0 .416.417l1.153-.272c.075.064.151.126.228.187l-.041 1.184a.344.344 0 0 0 .49.327l1.076-.49c.087.049.174.095.262.14l.19 1.167a.348.348 0 0 0 .545.227l.959-.69a9.299 9.299 0 0 0 .285.086l.414 1.107a.345.345 0 0 0 .578.115l.808-.865l.294.03l.623 1.006a.347.347 0 0 0 .59 0l.623-1.007c.098-.009.197-.018.294-.03l.807.866a.348.348 0 0 0 .578-.115l.414-1.107a8.463 8.463 0 0 0 .285-.087l.959.69a.345.345 0 0 0 .545-.226l.19-1.166l.262-.14l1.076.49a.347.347 0 0 0 .49-.328l-.041-1.184a6.727 6.727 0 0 0 .227-.187l1.153.272a.347.347 0 0 0 .417-.416l-.272-1.155c.063-.075.126-.15.187-.227l1.184.041a.344.344 0 0 0 .328-.49l-.49-1.076c.048-.087.095-.174.141-.262l1.166-.19a.348.348 0 0 0 .226-.544l-.69-.959l.087-.285l1.106-.414a.346.346 0 0 0 .116-.579l-.866-.807c.01-.098.02-.196.028-.294l1.008-.624a.344.344 0 0 0 0-.589zm-6.742 8.355a.714.714 0 0 1 .299-1.396a.714.714 0 1 1-.3 1.396zm-.342-2.314a.649.649 0 0 0-.771.5l-.358 1.669a8.73 8.73 0 0 1-3.619.78a8.737 8.737 0 0 1-3.695-.815L7.95 18.21a.648.648 0 0 0-.772-.5l-1.473.317a8.722 8.722 0 0 1-.761-.898h7.167c.081 0 .136-.014.136-.088v-2.536c0-.074-.054-.088-.136-.088h-2.096v-1.608h2.268c.206 0 1.106.059 1.393 1.209c.09.353.288 1.504.424 1.873c.134.413.683 1.238 1.268 1.238h3.572a.75.75 0 0 0 .13-.013a8.787 8.787 0 0 1-.813.952zm-9.914 2.28a.714.714 0 1 1-.3-1.396a.714.714 0 0 1 .3 1.396zM4.117 8.997a.714.714 0 1 1-1.303.58a.714.714 0 0 1 1.304-.58zm-.834 1.981l1.534-.682a.65.65 0 0 0 .33-.858l-.316-.715h1.244v5.602H3.567a8.775 8.775 0 0 1-.284-3.348zm6.734-.543V8.784h2.96c.153 0 1.08.177 1.08.87c0 .574-.712.78-1.296.78zm10.757 1.486c0 .219-.008.436-.024.651h-.9c-.09 0-.127.059-.127.148v.413c0 .973-.548 1.184-1.03 1.238c-.457.052-.964-.191-1.027-.472c-.27-1.518-.72-1.843-1.43-2.403c.882-.56 1.799-1.386 1.799-2.492c0-1.193-.82-1.945-1.377-2.315c-.783-.516-1.65-.62-1.883-.62H5.468a8.765 8.765 0 0 1 4.907-2.77l1.098 1.152a.648.648 0 0 0 .918.02l1.227-1.173a8.775 8.775 0 0 1 6.004 4.276l-.84 1.898a.652.652 0 0 0 .33.859l1.618.718c.028.288.042.577.042.872zm-9.3-9.6a.713.713 0 1 1 .984 1.032a.714.714 0 0 1-.984-1.031zm8.339 6.71a.71.71 0 0 1 .939-.362a.714.714 0 1 1-.94.364z&#34;/&gt;&lt;/svg&gt;Rust&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/scala&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M4.589 24c4.537 0 13.81-1.516 14.821-3v-5.729c-.957 1.408-10.284 2.912-14.821 2.912V24zm0-7.635c4.537 0 13.81-1.516 14.821-3V7.636c-.957 1.408-10.284 2.912-14.821 2.912v5.817zm0-7.636c4.537 0 13.81-1.516 14.821-3V0C18.453 1.408 9.126 2.912 4.589 2.912v5.817z&#34;/&gt;&lt;/svg&gt;Scala&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/elixir&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 128 128&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M90.1 80c.8-.5 1.7-1 2.5-1.5c5.6-4.8 3.6-13.5-5.9-25.7c.2 6.1 1.2 12.4 2.2 19.1c.4 2.6.8 5.3 1.2 8.1zM36 103.2c3.2 13.7 11.3 21.1 20.5 24.2c5.1.9 10.2.7 15.3-.4c.8-.4 1.5-.9 2.2-1.4c2-1.3 3.7-2.8 5.3-4.3c-6.5-2.8-13.1-8.2-19.3-14.6c-4.8-.3-9.5-.8-13.6-1.4c-4-.4-7.4-1.1-10.4-2.1zm-1.4-64.5l-.2 1.4c-1.4 7.9-1.5 15-.4 21.2c1.1-7.4 2.6-15 4.7-22.3c.3-1.1.6-2.3 1-3.5h.1c1.6-5 3.4-9.8 5.5-14.3c-4 5.3-7.5 11.2-10.7 17.5z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M33.9 114c3.5 4.4 7.5 7.6 11.9 9.9c-5.6-4.6-10-11.5-12-21.4c-3.8-1.4-6.8-3.3-9.1-5.7c1.6 6.4 4.6 12.3 9.2 17.2zm-.6-47c-1.8-5.9-2.4-12.7-1.8-20.4c-1.1 2.3-2.1 4.8-3.2 7.3c-4.5 13.1-6.5 26.7-4.6 38.7c2.1 3.2 5.2 5.8 9.6 7.6c-1.4-7.7-1.5-19.9 0-33.2zm2.2 33.8c0 .1 0 .1 0 0c3.2 1.2 6.8 2 11.1 2.5c3.5.6 7.3 1 11.3 1.3c-8.3-9.1-15.6-19.8-20.3-28.6c-1.1-1.6-2-3.3-2.8-5c-1.1 12.2-.8 23.1.7 29.8zm51.4-28.7c-1.1-7.5-2.3-15.1-2.3-22.3C71.9 38 59.6 25.4 60.1 5.1c-.4.3-.8.6-1.1.9c-2.2 1.9-4.4 4-6.5 6.3c-4.5 6.4-8.1 14.6-10.9 23.5c-1.6 11.6 9.6 34.3 24.5 51.7c7.2-.3 14.8-2.5 22.1-6.5c-.4-2.9-.8-5.9-1.3-8.9zm10 39.7c-2.6-.5-5.2-1.4-7.8-2.6c-1.3 4.1-3.4 7.9-6.4 11.4c1.1.3 2.1.6 3.1.7c4.2-2.5 8-5.8 11.1-9.5z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M62.1 3.6C61 23.1 72.2 35.5 84.4 46.8C73.7 32.6 67.5 24.1 67.5.3c-1.7.9-3.5 2-5.4 3.3zm21.1 102.2c-5.3.8-10.8 1.1-16.2 1.1c-1.4 0-2.9 0-4.3-.1c5.8 5.8 12 10.6 18 13c3.2-3.5 5.3-7.4 6.6-11.6c-1.4-.7-2.8-1.5-4.1-2.4zm-2.4-1.6c-2-1.4-3.8-2.9-5.5-4.4c-3.5-3.1-6.9-6.5-10.1-10.2c-7.1.1-13.7-1.6-19.1-5.1c-.8-.5-1.6-1.1-2.3-1.7c4.6 7.3 10.5 15.3 16.9 22c6.5.3 13.5.2 20.1-.6zm9.6.2c-.2 1-.4 1.9-.7 2.9c2.8 1.4 5.7 2.4 8.6 2.7c2.5-3.4 4.5-7.2 5.7-11.3c-3.7 2.5-8.4 4.4-13.6 5.7z&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M47.2 82.8c4.7 3 10.3 4.6 16.3 4.8c-12.3-14.6-21.8-32.4-23.7-45c-2.3 8.9-3.1 14.4-4.4 23.6v.2c.9 2.3 2.1 5.1 3.7 8.1c2.1 3.4 4.8 6.2 8.1 8.3zm41.3.4c-6.8 3.7-13.9 5.8-20.7 6.3c2.9 3.2 5.8 6.2 8.8 8.8c2.1 1.9 4.5 3.8 7.1 5.5c1.7-.3 3.3-.6 4.9-.9c1-6.3.7-12.9-.1-19.7zm2.2 19.1c5.6-1.5 10.5-3.6 14.1-6.6c1.5-6.9 1-14.4-2.3-22.4c-2.9-4.9-5.7-9.2-8.3-13c4.8 8.8 4.7 15.2-.4 19.6l-.1.1c-1.1.7-2.2 1.4-3.4 2.1c.9 6.9 1.3 13.8.4 20.2z&#34;/&gt;&lt;/svg&gt;Elixir&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/dotnet&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 128 128&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M61.195 0h4.953c12.918.535 25.688 4.89 36.043 12.676c9.809 7.289 17.473 17.437 21.727 28.906c2.441 6.387 3.664 13.18 4.082 19.992v4.211c-.414 11.293-3.664 22.52-9.73 32.082c-6.801 10.895-16.922 19.73-28.727 24.828A64.399 64.399 0 0 1 65.082 128h-2.144c-11.735-.191-23.41-3.66-33.297-9.992c-11.196-7.113-20.114-17.785-25.028-30.117C1.891 81.19.441 74.02 0 66.812v-4.957c.504-14.39 5.953-28.609 15.41-39.496C23.168 13.31 33.5 6.48 44.887 2.937C50.172 1.27 55.676.41 61.195 0M25.191 37.523c-.03 12.153-.011 24.305-.011 36.454c1.43.011 2.86.011 4.293.011c-.075-10.433.101-20.863-.106-31.293c.48.907.918 1.84 1.465 2.707C37.035 54.91 43.105 64.5 49.309 74c1.738-.023 3.476-.023 5.214.004c-.003-12.16-.007-24.32.004-36.48a308.076 308.076 0 0 0-4.25-.012c.075 10.32-.136 20.64.125 30.949c-6.507-10.352-13.101-20.645-19.695-30.945a370.85 370.85 0 0 0-5.516.007m38.844-.011c-.129 12.16-.004 24.32-.047 36.476c6.469-.015 12.938.024 19.41-.02a83.36 83.36 0 0 1 .024-3.952c-5.012-.016-10.027.007-15.043-.02c-.074-4.21-.004-8.426-.04-12.637c4.395-.078 8.79.012 13.18-.047c-.011-1.277-.011-2.554-.019-3.832c-4.387.141-8.773-.054-13.164.012c.012-4.023.02-8.05.02-12.078c4.699 0 9.398-.02 14.093.012c-.008-1.301 0-2.606.016-3.906c-6.145-.016-12.29-.008-18.43-.008m22.602.054c.004 1.266.004 2.528.008 3.79c3.488-.04 6.972.109 10.46.035c-.023 10.863.004 21.718-.011 32.574c1.46.043 2.93.035 4.39-.09c-.12-5.992.118-11.988-.156-17.977c.067-2.699-.07-5.394.117-8.09c.106-2.14-.277-4.277-.035-6.417c3.516.047 7.035.015 10.55.015a59.774 59.774 0 0 1 .075-3.832c-8.469-.105-16.937-.094-25.398-.008M13.55 69.094c-1.977.91-2.106 4.023-.149 5.027c1.72 1.18 4.305-.371 4.227-2.41c.133-2.004-2.29-3.688-4.078-2.617m29.23 15.289c-4.277 3.469-4.226 11.195.5 14.25c2.668 1.695 6.102 1.344 8.922.215c.012-.621.027-1.239.05-1.86c-2.671 1.395-6.41 1.68-8.675-.61c-2.965-3.237-2.297-9.269 1.613-11.476c2.211-1.164 4.907-.824 7.086.239c-.007-.66-.004-1.32 0-1.98c-3.097-1.099-6.922-1.04-9.496 1.222m17.207 2.71c-1.89.22-3.758 1.22-4.633 2.966c-1.253 2.496-1.109 5.867.864 7.96c2.035 2.297 5.945 2.32 8.18.297c2.425-2.308 2.699-6.468.757-9.164c-1.148-1.629-3.273-2.183-5.168-2.058m17.887 2.722c-1.66 2.883-1.332 7.25 1.598 9.211c2.183 1.22 4.933.832 7.074-.308c-.004-.617.004-1.235.031-1.848c-1.687 1.07-3.937 1.856-5.812.777c-1.309-.722-1.704-2.257-1.914-3.625c2.875-.039 5.746-.082 8.625-.074c-.075-1.828-.118-3.894-1.45-5.308c-2.199-2.43-6.644-1.657-8.152 1.175M69.46 87.48v12.008c.652 0 1.312 0 1.973.004c.023-2.195-.04-4.394.023-6.594c.016-1.27.527-2.558 1.484-3.414c.801-.605 1.883-.27 2.801-.246c-.012-.636-.02-1.27-.023-1.902c-1.793-.398-3.336.652-4.242 2.117c-.02-.633-.04-1.266-.051-1.894c-.656-.024-1.313-.051-1.965-.079zm0 0&#34;/&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M58.758 89.223c1.652-.805 4.023-.41 4.945 1.3c1.05 1.887 1.027 4.383-.137 6.211c-1.52 2.286-5.527 1.786-6.523-.742c-1.008-2.258-.617-5.484 1.715-6.77zm20.282 3.191c.046-1.574 1.144-3.137 2.726-3.48c.976-.164 2.097.007 2.773.793c.672.714.813 1.714.98 2.64c-2.16.012-4.32-.031-6.48.047zm0 0&#34;/&gt;&lt;/svg&gt;.NET&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/applications/static&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M278.5 215.6L23 471c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l57-57h68c49.7 0 97.9-14.4 139-41c11.1-7.2 5.5-23-7.8-23c-5.1 0-9.2-4.1-9.2-9.2c0-4.1 2.7-7.6 6.5-8.8l81-24.3c2.5-.8 4.8-2.1 6.7-4l22.4-22.4c10.1-10.1 2.9-27.3-11.3-27.3H377c-5.1 0-9.2-4.1-9.2-9.2c0-4.1 2.7-7.6 6.5-8.8l112-33.6c4-1.2 7.4-3.9 9.3-7.7c10.8-21 16.4-44.5 16.4-68.6c0-41-16.3-80.3-45.3-109.3l-5.5-5.5C432.3 16.3 393 0 352 0s-80.3 16.3-109.3 45.3L139 149c-48 48-75 113.1-75 181v55.3l189.6-189.5c6.2-6.2 16.4-6.2 22.6 0c5.4 5.4 6.1 13.6 2.2 19.8z&#34;/&gt;&lt;/svg&gt;.Static&lt;/span&gt;&lt;/a&gt;
+  
+&lt;/div&gt;
+
+&lt;h2&gt;How To Deploy X if It Isn&amp;rsquo;t Natively Supported&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;how-to-deploy-x-if-it-isnt-natively-supported&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-deploy-x-if-it-isnt-natively-supported&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.
+You will probably find a basic Docker file for your technology on the Docker hub.&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/docker&#34; &gt;Docker&lt;/a&gt; section of this documentation to know how to deploy your Dockerized application.&lt;/p&gt;
+&lt;p&gt;If you are out of options, contact our support team and we&amp;rsquo;ll come up with a solution with you.&lt;/p&gt;
+&lt;h2&gt;Environment Variables&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can control deployments and set your application configuration with environment variables:
+&lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#set-by-the-deployment-process&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z&#34; /&gt;&lt;/svg&gt;Common to all applications&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Set by the deployment process.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#variables-you-can-define&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10&#34; /&gt;&lt;/svg&gt;Define&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Variables you can define.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#control-build-and-dependencies-cache&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M7.5 7.5h-.75A2.25 2.25 0 004.5 9.75v7.5a2.25 2.25 0 002.25 2.25h7.5a2.25 2.25 0 002.25-2.25v-7.5a2.25 2.25 0 00-2.25-2.25h-.75m0-3l-3-3m0 0l-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-7.5a2.25 2.25 0 01-2.25-2.25v-.75&#34; /&gt;&lt;/svg&gt;Cache&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Control the build and deployment cache.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#control-the-deployments-behavior&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34; /&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z&#34; /&gt;&lt;/svg&gt;Run&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Control the deployment behavior.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#deployment-hooks&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M15 11.25l1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 10-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25L12.75 9&#34; /&gt;&lt;/svg&gt;Hooks&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Define commands to run between various steps of the deployment.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253&#34;/&gt;&lt;/svg&gt;How to&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;How to to configure your application with environment variables.&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3&gt;Common to All Applications&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;common-to-all-applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#common-to-all-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Applications on Clever Cloud listen on &lt;strong&gt;port 8080&lt;/strong&gt;. Be sure you application is able to listen on port 8080 before deploying.&lt;/li&gt;
+&lt;li&gt;Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/apps-management&#34; &gt;immutablity and application management&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Add-ons</title>
+      <link>https://lafillepassympa.com/developers/doc/addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/addons/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Connect your application to an add-on:&lt;/p&gt;
+&lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/mysql&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 128 128&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;m125.477 122.783l-2.616-2.537c-2.479-3.292-5.668-6.184-9.015-8.585c-2.669-1.916-8.661-4.504-9.775-7.609l-.205-.195c1.893-.214 4.103-.898 5.85-1.367c2.934-.786 5.356-.583 8.386-1.365c1.366-.39 2.899-.781 3.899-1.171v-.78c-1-1.571-2.427-3.651-4.097-5.073c-4.369-3.72-9.041-7.437-13.951-10.537c-2.723-1.718-6.041-2.835-8.926-4.292c-.971-.491-2.652-.746-3.294-1.562c-1.517-1.932-2.328-4.382-3.498-6.633c-2.449-4.717-4.849-9.868-7.019-14.831c-1.48-3.384-2.443-6.72-4.289-9.756c-8.86-14.567-18.395-23.358-33.167-32c-3.145-1.838-6.929-2.563-10.929-3.513c-2.144-.129-4.291-.26-6.437-.391c-1.311-.546-2.674-2.149-3.902-2.927c-4.896-3.092-17.449-9.817-21.074-.975c-2.289 5.581 3.42 11.025 5.462 13.854c1.435 1.982 3.27 4.207 4.293 6.438c.675 1.467.79 2.938 1.367 4.489c1.418 3.822 2.651 7.98 4.487 11.511c.927 1.788 1.949 3.67 3.122 5.268c.718.981 1.95 1.413 2.145 2.927c-1.204 1.686-1.273 4.304-1.95 6.44c-3.05 9.615-1.898 21.567 2.537 28.683c1.36 2.186 4.566 6.871 8.975 5.073c3.856-1.57 3.226-6.438 4.329-10.732c.249-.972-.185-1.688.815-2.341v.195a128.6 128.6 0 0 0 3.282 7.024c2.6 4.187 6.889 8.562 10.798 11.514c2.027 1.531 3.92 4.177 5.92 5.073v-.101h.221c-.507-1-1.302-1.167-1.95-1.804c-1.527-1.496-3.226-3.382-4.487-5.097c-3.556-4.827-6.698-10.122-9.561-15.622c-1.368-2.626-2.557-5.529-3.709-8.201c-.443-1.03-.438-2.592-1.364-3.125c-1.263 1.958-3.122 3.54-4.099 5.853c-1.561 3.696-1.762 8.204-2.341 12.877c-.343.122-.19.038-.391.194c-2.718-.655-3.672-3.452-4.683-5.853c-2.555-6.07-3.029-15.843-.781-22.829c.582-1.809 3.211-7.501 2.146-9.172c-.508-1.665-2.184-2.63-3.121-3.903c-1.161-1.574-2.319-3.646-3.123-5.464c-2.091-4.731-3.066-10.044-5.268-14.828c-1.053-2.287-2.832-4.602-4.293-6.634c-1.617-2.253-3.429-3.912-4.684-6.635c-.445-.968-1.051-2.518-.39-3.513c.21-.671.507-.951 1.171-1.17c1.133-.873 4.283.29 5.463.779c3.129 1.3 5.741 2.5 8.392 4.256c1.271.844 2.559 1.89 4.097 2.89h1.756c2.747 0 5.824.232 8.391 1.012c4.535 1.379 8.6 3.542 12.292 5.873c11.246 7.102 20.441 17.22 26.732 29.278c1.012 1.942 1.45 3.799 2.341 5.858c1.798 4.153 4.064 8.428 5.853 12.489c1.786 4.053 3.526 8.142 6.05 11.514c1.327 1.772 6.451 2.724 8.78 3.709c1.633.689 4.308 1.409 5.854 2.34c2.953 1.782 5.814 3.904 8.586 5.855c1.384.974 5.64 3.114 5.853 4.878c-6.863-.188-12.104.452-16.585 2.341c-1.273.537-3.305.552-3.513 2.147c.7.733.809 1.829 1.365 2.731c1.069 1.73 2.876 4.052 4.488 5.268c1.762 1.33 3.576 2.751 5.464 3.902c3.359 2.047 7.107 3.217 10.341 5.268c1.906 1.21 3.958 2.733 5.815 4.097c.92.675.891 1.724 2.891 2.147v-.194c-.999-.795-.946-1.893-1.522-2.728zM29.514 23.465c-1.431-.027-2.514.157-3.514.389V24h.198c.683 1 1.888 2.33 2.731 3.538l1.952 4.108l.193-.187c1.209-.853 1.763-2.211 1.756-4.291c-.483-.509-.556-1.146-.974-1.754c-.558-.809-1.639-1.268-2.342-1.949z&#34;/&gt;&lt;/svg&gt;MySQL&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Your self-hosted managed relational database&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M23.56 14.723a.527.527 0 0 0-.057-.12c-.139-.262-.477-.341-1.007-.231c-1.654.34-2.294.13-2.526-.02c1.342-2.048 2.445-4.522 3.041-6.83c.272-1.05.798-3.523.122-4.73a1.564 1.564 0 0 0-.15-.236C21.692.91 19.8.025 17.51.001c-1.495-.016-2.77.346-3.116.479a9.449 9.449 0 0 0-.516-.082a8.044 8.044 0 0 0-1.312-.127c-1.182-.019-2.203.264-3.05.84C8.66.79 4.729-.534 2.296 1.19C.935 2.153.309 3.873.43 6.304c.041.818.507 3.334 1.243 5.744c.46 1.506.938 2.702 1.433 3.582c.553.994 1.126 1.593 1.714 1.79c.448.148 1.133.143 1.858-.729a55.982 55.982 0 0 1 1.945-2.206c.435.235.906.362 1.39.377a.057.057 0 0 0 0 .004a11.031 11.031 0 0 0-.247.305c-.339.43-.41.52-1.5.745c-.31.064-1.134.233-1.146.811a.591.591 0 0 0 .091.327c.227.423.922.61 1.015.633c1.335.333 2.505.092 3.372-.679c-.017 2.231.077 4.418.345 5.088c.221.553.762 1.904 2.47 1.904c.25 0 .526-.03.829-.094c1.782-.382 2.556-1.17 2.855-2.906c.15-.87.402-2.875.539-4.101c.017-.07.036-.12.057-.136c0 0 .07-.048.427.03a.367.367 0 0 0 .044.007l.254.022l.015.001c.847.039 1.911-.142 2.531-.43c.644-.3 1.806-1.033 1.595-1.67zM2.37 11.876c-.744-2.435-1.178-4.885-1.212-5.571c-.109-2.172.417-3.683 1.562-4.493c1.837-1.299 4.84-.54 6.108-.13l-.01.01C6.795 3.734 6.843 7.226 6.85 7.44c0 .082.006.199.016.36c.034.586.1 1.68-.074 2.918c-.16 1.15.194 2.276.973 3.089c.08.084.165.163.252.237c-.347.371-1.1 1.193-1.903 2.158c-.568.682-.96.551-1.088.508c-.392-.13-.813-.587-1.239-1.322c-.48-.839-.963-2.032-1.415-3.512zm6.007 5.088a1.626 1.626 0 0 1-.432-.178c.089-.039.237-.09.483-.14c1.284-.265 1.482-.451 1.915-1a7.52 7.52 0 0 1 .367-.443a.355.355 0 0 0 .074-.13c.17-.151.272-.11.436-.042c.156.065.308.26.37.475c.03.102.062.295-.045.445c-.904 1.266-2.222 1.25-3.168 1.013zm2.094-3.988l-.052.14c-.133.357-.257.689-.334 1.004c-.667-.002-1.317-.288-1.81-.803c-.628-.655-.913-1.566-.783-2.5c.183-1.308.116-2.447.08-3.059l-.013-.22c.296-.262 1.666-.996 2.643-.772c.446.102.718.406.83.928c.585 2.704.078 3.83-.33 4.736a8.784 8.784 0 0 0-.23.546zm7.364 4.572c-.017.177-.036.376-.062.596l-.146.438a.355.355 0 0 0-.018.108c-.006.475-.054.649-.115.87a4.798 4.798 0 0 0-.18 1.057c-.11 1.414-.878 2.227-2.417 2.556c-1.515.325-1.784-.496-2.02-1.221a6.582 6.582 0 0 0-.078-.227c-.215-.586-.19-1.412-.157-2.555c.016-.561-.025-1.901-.33-2.646c.004-.293.01-.591.019-.892a.353.353 0 0 0-.016-.113a1.493 1.493 0 0 0-.044-.208c-.122-.428-.42-.786-.78-.935c-.142-.059-.403-.167-.717-.087c.067-.276.183-.587.309-.925l.053-.142c.06-.16.134-.325.213-.5c.426-.948 1.01-2.246.376-5.178c-.237-1.098-1.03-1.634-2.232-1.51c-.72.075-1.38.366-1.709.532a5.672 5.672 0 0 0-.196.104c.092-1.106.439-3.174 1.736-4.482a4.03 4.03 0 0 1 .303-.276a.353.353 0 0 0 .145-.064c.752-.57 1.695-.85 2.802-.833c.41.007.802.034 1.174.081c1.94.355 3.244 1.447 4.036 2.383c.814.962 1.255 1.931 1.431 2.454c-1.323-.134-2.223.127-2.68.78c-.992 1.418.544 4.172 1.282 5.496c.135.242.252.452.289.54c.24.583.551.972.778 1.256c.07.087.138.171.189.245c-.4.116-1.12.383-1.055 1.717a35.18 35.18 0 0 1-.084.815c-.046.208-.07.46-.1.766zm.89-1.621c-.04-.832.27-.919.597-1.01a2.857 2.857 0 0 0 .135-.041a1.202 1.202 0 0 0 .134.103c.57.376 1.583.421 3.007.134c-.202.177-.519.4-.953.601c-.41.19-1.096.333-1.747.364c-.72.034-1.086-.08-1.173-.151zm.57-9.271a7.25 7.25 0 0 1-.105 1.001c-.055.358-.112.728-.127 1.177c-.014.436.04.89.093 1.33c.107.887.216 1.8-.207 2.701a3.527 3.527 0 0 1-.188-.385a7.57 7.57 0 0 0-.325-.617c-.616-1.104-2.057-3.69-1.32-4.744c.38-.543 1.342-.566 2.179-.463zm.228 7.013a12.376 12.376 0 0 0-.085-.107l-.035-.044c.726-1.2.584-2.387.457-3.439c-.052-.432-.1-.84-.088-1.222c.013-.407.066-.755.118-1.092c.064-.415.13-.844.111-1.35a.559.559 0 0 0 .012-.19c-.046-.486-.6-1.938-1.73-3.253a7.803 7.803 0 0 0-2.688-2.04A9.251 9.251 0 0 1 17.62.746c2.052.046 3.675.814 4.824 2.283a.908.908 0 0 1 .067.1c.723 1.356-.276 6.275-2.987 10.54zm-8.816-6.116c-.025.18-.31.423-.621.423a.582.582 0 0 1-.081-.006a.797.797 0 0 1-.506-.315c-.046-.06-.12-.178-.106-.285a.223.223 0 0 1 .093-.149c.118-.089.352-.122.61-.086c.316.044.642.193.61.418zm7.93-.411c.011.08-.049.2-.153.31a.722.722 0 0 1-.408.223a.546.546 0 0 1-.075.005c-.293 0-.541-.234-.56-.371c-.024-.177.264-.31.56-.352c.298-.042.612.009.636.185z&#34;/&gt;&lt;/svg&gt;PostgreSQL&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;The not-only-SQL database, self hosted and managed&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/mongodb&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; heihugo serverght=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115c-.28-.394-.53-.954-.735-1.44c-.036.495-.055.685-.523 1.184c-.723.566-4.438 3.682-4.74 10.02c-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481a28.48 28.48 0 0 1 .51-3.07c.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695c-.381-.045-.765-1.76-.765-2.405z&#34;/&gt;&lt;/svg&gt;MongDB&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;The NoSQL document-oriented database&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/elastic&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;m20.345 16.33l-3.959-.926l-1.05-2.01l5.177-4.535a3.962 3.962 0 0 1 2.559 3.702a4.006 4.006 0 0 1-2.727 3.77m-2.976 4.68c-.616 0-1.22-.207-1.714-.587l.782-4.077l3.596.841c.115.31.172.642.172.987a2.839 2.839 0 0 1-2.836 2.836m-2.637-.586a5.92 5.92 0 0 1-4.908 2.6A5.947 5.947 0 0 1 4 15.905l5.167-4.67l5.272 2.403l1.167 2.23zM.928 11.443a4.007 4.007 0 0 1 2.726-3.77l3.95.933l.927 1.98l-5.05 4.565a3.97 3.97 0 0 1-2.553-3.708m5.703-8.45a2.841 2.841 0 0 1 1.723.58l-.789 4.092l-3.598-.85a2.842 2.842 0 0 1-.172-.986A2.84 2.84 0 0 1 6.63 2.992m2.66.59A5.92 5.92 0 0 1 20.1 6.93c0 .4-.038.781-.114 1.164l-5.299 4.643l-5.251-2.394l-1.026-2.19zM24 12.571a4.723 4.723 0 0 0-3.124-4.454a6.695 6.695 0 0 0 .126-1.29A6.789 6.789 0 0 0 14.22.047A6.769 6.769 0 0 0 8.727 2.86a3.586 3.586 0 0 0-2.204-.754A3.604 3.604 0 0 0 3.15 6.959A4.786 4.786 0 0 0 0 11.431A4.727 4.727 0 0 0 3.139 15.9a6.876 6.876 0 0 0-.124 1.289a6.773 6.773 0 0 0 6.765 6.765c2.19 0 4.22-1.052 5.49-2.824a3.568 3.568 0 0 0 2.207.769a3.603 3.603 0 0 0 3.374-4.854A4.785 4.785 0 0 0 24 12.572&#34;/&gt;&lt;/svg&gt;Elastic Stack&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy your Elastic Stack in one click&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/fs-bucket&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M16 420a28 28 0 0 0 28 28h424a28 28 0 0 0 28-28V208H16Zm480-296a28 28 0 0 0-28-28H212.84l-48-32H44a28 28 0 0 0-28 28v84h480Z&#34;/&gt;&lt;/svg&gt;FS Bucket&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;External File System for your apps&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/cellar&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18c-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18c.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15L6.04 7.5L12 10.85l5.96-3.35L12 4.15M5 15.91l6 3.38v-6.71L5 9.21v6.7m14 0v-6.7l-6 3.37v6.71l6-3.38Z&#34;/&gt;&lt;/svg&gt;Cellar&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Object storage&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/redis&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 128 128&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M6.2 52.7c6.7 3.2 43.7 18.1 49.5 20.9c5.8 2.8 10 2.8 17.4-1c7.4-3.9 42.2-18.1 48.9-21.6c3.4-1.8 4.9-3.2 4.9-4.4V34.1c0-1.3-1.7-2.4-5-3.6c-6.5-2.4-41.1-16.1-47.7-18.6c-6.6-2.4-9.3-2.3-17.1.5C49.3 15.2 12.6 29.6 6 32.2c-3.2 1.3-5 2.4-5 3.7H.8v12.7c.2 1.2 2.1 2.5 5.4 4.1zm60.4 1.8l-20.3-8.4l29.1-4.5l-8.8 12.9zm44.1-20l-17.2 6.8l-1.9.7l-17.2-6.8l19.1-7.5l17.2 6.8zM60.1 22l-2.8-5.2l8.8 3.4l8.3-2.7l-2.2 5.4l8.4 3.2l-10.9 1.1l-2.4 5.9l-3.9-6.5l-12.6-1.1l9.3-3.5zm-21.7 7.3c8.6 0 15.6 2.7 15.6 6s-7 6-15.6 6s-15.6-2.7-15.6-6s7-6 15.6-6zM122 59.8c-6.7 3.5-41.4 17.8-48.8 21.6c-7.4 3.9-11.5 3.8-17.3 1c-5.8-2.8-43-17.7-49.6-20.9C2.9 59.9 1 58.6 1 57.3V70c0 1.3 1.9 2.6 5.2 4.2c6.7 3.2 43.7 18.1 49.5 20.9c5.8 2.8 10 2.8 17.4-1c7.4-3.9 42.2-18.1 48.9-21.6c3.4-1.8 4.9-3.2 4.9-4.4V55.6c0 1.1-1.6 2.5-4.9 4.2zm0 20.7c-6.7 3.5-41.4 17.8-48.8 21.6c-7.4 3.9-11.5 3.8-17.3 1c-5.8-2.8-43-17.7-49.6-20.9C2.9 80.7 1 79.3 1 78v12.7c0 1.3 1.9 2.6 5.2 4.2c6.7 3.2 43.7 18.1 49.5 20.9c5.8 2.8 10 2.8 17.4-1c7.4-3.9 42.2-18.1 48.9-21.6c3.4-1.8 4.9-3.2 4.9-4.4V76.3c0 1.2-1.6 2.5-4.9 4.2z&#34;/&gt;&lt;/svg&gt;Redis&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Managed in-memory database&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/config-provider&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 36 36&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M26 21.15a6.91 6.91 0 0 0-4.38-3.32a26 26 0 0 0-2.62-.64V8.12A10.05 10.05 0 0 1 23.86 10a1 1 0 0 0 1.33-1.5A11.75 11.75 0 0 0 19 6.1V3a1 1 0 0 0-2 0v3c-4.4.1-6.83 2.29-7.57 4.18A5.56 5.56 0 0 0 11.66 17A13.2 13.2 0 0 0 17 18.84V28a12.3 12.3 0 0 1-7.14-2.74a1 1 0 1 0-1.37 1.44A14.09 14.09 0 0 0 17 30v3a1 1 0 0 0 2 0v-3c2.82-.19 6.07-1.09 7.3-4.76a5.33 5.33 0 0 0-.3-4.09Zm-13.21-5.83a3.57 3.57 0 0 1-1.49-4.39c.11-.3 1.23-2.81 5.7-2.93v8.8a10.7 10.7 0 0 1-4.21-1.48Zm11.61 9.24c-.72 2.14-2.32 3.17-5.4 3.4v-8.73c.64.14 1.3.3 2 .51a5 5 0 0 1 3.19 2.32a3.34 3.34 0 0 1 .21 2.5Z&#34; class=&#34;clr-i-outline clr-i-outline-path-1&#34;/&gt;&lt;path fill=&#34;none&#34; d=&#34;M0 0h36v36H0z&#34;/&gt;&lt;/svg&gt;Config Provider&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;More freedom to manage, import and inject your credentials&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/pulsar&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M24 8.925h-5.866c-1.586-3.041-3.262-5.402-5.544-5.402c-2.97 0-4.367 2.593-5.717 5.115l-.118.22H0v1.5h3.934c1.39 0 1.673.468 1.673.468c-1.09 1.691-2.4 3.363-4.584 3.363H0v1.574h1.03c4.234 0 6.083-3.434 7.567-6.193c1.361-2.541 2.31-4.08 3.993-4.08c1.747 0 3.584 3.801 5.201 7.157c.237.488.477.988.72 1.483c-6.2.197-9.155 1.649-11.559 2.833c-1.759.866-3.147 1.94-5.433 1.94H0v1.574h1.507c2.754 0 4.47-.85 6.295-1.751c2.53-1.243 5.398-2.652 12.157-2.652h3.907V14.5H21.66a1.18 1.18 0 0 1-.972-.393a70.83 70.83 0 0 1-1.133-2.321l-.511-1.047s.366-.393 1.38-.393H24Z&#34;/&gt;&lt;/svg&gt;Pulsar&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Open-source, distributed messaging and streaming platform built for the cloud.&lt;/div&gt;&lt;div class=&#34;hextra-badge hextra-card-tag&#34;&gt;
+    &lt;div class=&#34;hx-inline-flex hx-items-center hx-rounded-full hx-px-2.5 hx-leading-6 hx-text-[.65rem] hx-border hx-text-gray-600 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-text-neutral-200 hx-border-gray-200 dark:hx-border-neutral-700&#34;&gt;Beta&lt;/div&gt;
+  &lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/jenkins&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M2.872 24h-.975a3.866 3.866 0 0 1-.07-.197c-.215-.666-.594-1.49-.692-2.154c-.146-.984.78-1.039 1.374-1.465c.915-.66 1.635-1.025 2.627-1.62c.295-.179 1.182-.624 1.281-.829c.201-.408-.345-.982-.49-1.3c-.225-.507-.345-.937-.376-1.435c-.824-.13-1.455-.627-1.844-1.185c-.63-.925-1.066-2.635-.525-3.936c.045-.103.254-.305.285-.463c.06-.308-.105-.72-.12-1.048c-.06-1.692.284-3.15 1.425-3.66c.463-1.84 2.113-2.453 3.673-3.367c.58-.342 1.224-.562 1.89-.807c2.372-.877 6.027-.712 7.994.783c.836.633 2.176 1.97 2.656 2.939c1.262 2.555 1.17 6.825.287 9.934c-.12.421-.29 1.032-.533 1.533c-.168.35-.689 1.05-.625 1.36c.064.314 1.19 1.17 1.432 1.395c.434.422 1.26.975 1.324 1.5c.07.557-.248 1.336-.41 1.875c-.217.721-.436 1.441-.654 2.131H2.87zm11.104-3.54a7.723 7.723 0 0 0-2.065-.757c-.87-.164-.78 1.188-.75 1.994c.03.643.36 1.316.51 1.744c.076.197.09.41.256.449c.3.068 1.29-.326 1.575-.479c.6-.328 1.064-.844 1.574-1.189c.016-.17.016-.34.03-.508a2.648 2.648 0 0 0-1.095-.277c.314-.15.75-.15 1.035-.332l.016-.193c-.496-.03-.69-.254-1.021-.436zm7.454 2.935a17.78 17.78 0 0 0 .465-1.752c.06-.287.215-.918.178-1.176c-.059-.459-.684-.799-1.004-1.086c-.584-.525-.95-.975-1.56-1.469c-.249.375-.78.615-.983.914c1.447-.689 1.71 2.625 1.141 3.69c.09.329.391.45.514.735l-.086.166h1.29c.013 0 .03 0 .044.014zm-6.634-.012c-.05-.074-.1-.135-.15-.209l-.301.195h.45zm2.77 0c.008-.209.018-.404.03-.598c-.53.029-.825-.48-1.196-.527c-.324-.045-.6.361-1.02.195c-.095.105-.183.227-.284.316c.154.18.295.375.424.584h.815a.298.298 0 0 1 .3-.285c.165 0 .284.121.284.27h.66zm2.116 0c-.314-.479-.947-.898-1.68-.555l-.03.541h1.71zm-8.51 0l-.104-.344c-.225-.72-.36-1.26-.405-1.68c-.914-.436-1.875-.87-2.654-1.426c-.15-.105-1.109-1.35-1.23-1.305c-1.739.676-3.359 1.86-4.814 2.984c.256.557.48 1.141.69 1.74h8.505zm8.265-2.113c-.029-.512-.164-1.56-.48-1.74c-.66-.39-1.846.78-2.34.943c.045.15.135.271.15.48c.285-.074.645-.029.898.092c-.299.03-.629.03-.824.164c-.074.195.016.48-.029.764c.69.197 1.5.303 2.385.332c.164-.227.225-.645.211-1.082zm-4.08-.36c-.044.375.046.51.12.943c1.26.391 1.034-1.74-.135-.959zM8.76 19.5c-.45.457 1.27 1.082 1.814 1.115c0-.29.165-.564.135-.77c-.65-.118-1.502-.042-1.945-.347zm5.565.215c0 .043-.061.03-.068.064c.58.451 1.014.545 1.802.51c.354-.262.67-.563 1.043-.807c-.855.074-1.931.607-2.774.23zm3.42-17.726c-1.606-.906-4.35-1.591-6.076-.731c-1.38.692-3.27 1.84-3.899 3.292c.6 1.402-.166 2.686-.226 4.109c-.018.757.36 1.42.391 2.242c-.2.338-.825.38-1.26.356c-.146-.729-.4-1.549-1.155-1.63c-1.064-.116-1.845.764-1.89 1.683c-.06 1.08.833 2.864 2.085 2.745c.488-.046.608-.54 1.139-.54c.285.57-.445.75-.523 1.154c-.016.105.06.511.104.705c.233.944.744 2.16 1.245 2.88c.635.9 1.884 1.051 3.229 1.141c.24-.525 1.125-.48 1.706-.346c-.691-.27-1.336-.945-1.875-1.529c-.615-.676-1.23-1.41-1.261-2.28c1.155 1.604 2.1 3 4.2 3.704c1.59.525 3.45-.254 4.664-1.109c.51-.359.811-.93 1.17-1.439c1.35-1.936 1.98-4.71 1.846-7.394c-.06-1.111-.06-2.221-.436-2.955c-.389-.781-1.695-1.471-2.475-.781c-.15-.764.63-1.23 1.545-.96c-.66-.854-1.336-1.858-2.266-2.384zM13.58 14.896c.615 1.544 2.724 1.363 4.505 1.323c-.084.194-.256.435-.465.515c-.57.232-2.145.408-2.937-.012c-.506-.27-.824-.873-1.102-1.227c-.137-.172-.795-.608-.012-.609zm.164-.87c.893.464 2.52.517 3.731.48c.066.267.066.593.068.913c-1.55.08-3.386-.304-3.794-1.395h-.005zm6.675-.586c-.473.9-1.145 1.897-2.539 1.928c-.023-.284-.045-.735 0-.904c1.064-.103 1.727-.646 2.543-1.017zm-.649-.667c-1.02.66-2.154 1.375-3.824 1.21c-.351-.31-.485-1-.14-1.458c.181.313.06.885.57.97c.944.165 2.038-.579 2.73-.84c.42-.713-.046-.976-.42-1.433c-.782-.93-1.83-2.1-1.802-3.51c.314-.224.346.346.391.45c.404.96 1.424 2.175 2.174 3c.18.21.48.39.51.524c.092.39-.254.854-.209 1.11zm-13.439-.675c-.314-.184-.393-.99-.768-1.01c-.535-.03-.438 1.05-.436 1.68c-.37-.33-.435-1.365-.164-1.89c-.308-.15-.445.164-.618.284c.22-1.59 2.34-.734 1.99.96zM4.713 5.995c-.685.756-.54 2.174-.459 3.188c1.244-.785 2.898.06 2.883 1.394c.595-.016.223-.744.115-1.215c-.353-1.528.592-3.187.041-4.59c-1.064.084-1.939.52-2.578 1.215zm9.12 1.113c.307.562.404 1.148.84 1.57c.195.19.574.424.387.95c-.045.121-.365.391-.551.45c-.674.195-2.254.03-1.721-.81c.563.015 1.314.36 1.732-.045c-.314-.524-.885-1.53-.674-2.13zm6.198-.013h.068c.33.668.6 1.375 1.004 1.965c-.27.628-2.053 1.19-2.023.057c.39-.17 1.05-.035 1.395-.25c-.193-.556-.48-1.006-.434-1.771zm-6.927-1.617c-1.422-.33-2.131.592-2.56 1.553c-.384-.094-.231-.615-.135-.883c.255-.701 1.28-1.633 2.119-1.506c.359.057.848.386.576.834zM9.642 1.593c-1.56.44-3.56 1.574-4.2 2.974c.495-.07.84-.321 1.33-.351c.186-.016.428.074.641.015c.424-.104.78-1.065 1.102-1.41c.31-.345.685-.496.94-.81c.167-.09.409-.074.42-.33c-.073-.075-.15-.135-.232-.105v.017z&#34;/&gt;&lt;/svg&gt;Jenkins&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;The leading open source automation server&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/matomo&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M6.664 15.37a3.336 3.336 0 0 1-3.332 3.332C1.495 18.702 0 17.208 0 15.37s1.495-3.333 3.332-3.333a3.338 3.338 0 0 1 3.332 3.333zm11.565-3.644a3.658 3.658 0 0 1-1.987.591a3.642 3.642 0 0 1-1.872-.529l.008.012a3.728 3.728 0 0 1-1.235-1.19l-2.612-3.693a.17.17 0 0 1-.027-.033A3.312 3.312 0 0 0 7.67 5.298a3.318 3.318 0 0 0-2.848 1.586a.146.146 0 0 1-.021.028l-3.428 5.343a3.663 3.663 0 0 1 5.094 1.18a.13.13 0 0 1 .015.018l2.756 3.869a3.305 3.305 0 0 0 2.699 1.38a3.31 3.31 0 0 0 2.711-1.379l.009-.013c.073-.103.137-.202.195-.305l1.442-2.255l1.935-3.024zm5.275 1.902l-.014-.028l-.044-.066a1.109 1.109 0 0 0-.029-.044l-3.525-5.37c.024.168.052.335.052.51c0 .741-.219 1.457-.634 2.068l-2.803 4.38l1.416 2.179l-.002.002a.131.131 0 0 1 .024.028a3.338 3.338 0 0 0 2.723 1.415A3.335 3.335 0 0 0 24 15.37c0-.613-.171-1.216-.496-1.742zm-7.262-1.666a3.336 3.336 0 0 0 3.332-3.333a3.336 3.336 0 0 0-3.332-3.332a3.336 3.336 0 0 0-3.332 3.332a3.338 3.338 0 0 0 3.332 3.333z&#34;/&gt;&lt;/svg&gt;Matomo&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Best Google Analytics alternative&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/heptapod&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 48 48&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M4.21 22.12a2.87 2.87 0 0 0 0 3.77L22.12 43.8a2.87 2.87 0 0 0 3.77 0l17.9-17.91a2.85 2.85 0 0 0 0-3.77L25.89 4.21a2.68 2.68 0 0 0-1.89-.7h0a2.66 2.66 0 0 0-1.88.71Zm22.12-4.27l3.82 3.82M17.4 8.92l4.27 4.27&#34;/&gt;&lt;circle cx=&#34;24&#34; cy=&#34;32.41&#34; r=&#34;3.3&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;/&gt;&lt;circle cx=&#34;24&#34; cy=&#34;15.52&#34; r=&#34;3.3&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;/&gt;&lt;circle cx=&#34;32.48&#34; cy=&#34;24&#34; r=&#34;3.3&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;/&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M24 29.11V18.82&#34;/&gt;&lt;/svg&gt;Heptapod&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;The friendly fork of GitLab Community Edition that adds support for Mercurial.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/keycloak&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;m18.742 1.182l-12.493.002C4.155 4.784 2.079 8.393 0 12.002c2.071 3.612 4.162 7.214 6.252 10.816l12.49-.004l3.089-5.404h2.158v-.002H24L23.996 6.59h-2.168zM8.327 4.792h2.081l1.04 1.8l-3.12 5.413l3.117 5.403l-1.035 1.81H8.327a2048 2048 0 0 0-4.168-7.204zm6.241 0l2.086.003q2.088 3.608 4.166 7.222l-4.167 7.2h-2.08c-.382-.562-1.038-1.808-1.038-1.808l3.123-5.405l-3.124-5.413z&#34;/&gt;&lt;/svg&gt;Keycloak&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Authentication to applications and secure services with minimum effort.&lt;/div&gt;&lt;div class=&#34;hextra-badge hextra-card-tag&#34;&gt;
+    &lt;div class=&#34;hx-inline-flex hx-items-center hx-rounded-full hx-px-2.5 hx-leading-6 hx-text-[.65rem] hx-border hx-text-gray-600 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-text-neutral-200 hx-border-gray-200 dark:hx-border-neutral-700&#34;&gt;Beta&lt;/div&gt;
+  &lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/materia-db-kv/&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M255.875 19.5C206.14 19.5 160.037 34.86 122 61.063c33.35 9.71 66.81 10.924 98.563 4.624c23.058-19.33 50.26-33.13 81.156-41.75a238 238 0 0 0-45.845-4.437zm84.28 15.47c-39.835 5.745-73.35 19.004-100.78 39.874c31.776 38.663 58.146 80.623 77.063 126.937l2.125 1.064l67.906 33.812c9.494-23.477 16.547-46.637 16.124-70.47c-14.33-36.806-21.36-73.78-21.375-110.75a235.3 235.3 0 0 0-41.064-20.467zm60.033 33.686c1.4 29.016 7.45 58.036 18.406 87.188L478 175.188c-15.394-42.552-42.668-79.38-77.813-106.532zm-294.25 6.75c-4.492 30.815-4.006 59.867 2.624 90.75l137.22 72.438c19.06-5.428 37.233-15.08 54.124-27.813c-18.547-46.068-44.764-87.854-76.875-126.5c-37.813 7.266-77.826 4.59-117.093-8.874zm-20.72 16.938c-38.897 40.635-63.402 95.16-65.374 155.437c12.708-9.902 24.53-20.713 35.625-32.31c-.035-.084-.06-.17-.095-.25l.53-.22c12.524-13.14 24.12-27.26 34.94-42.25c-6.154-27.393-7.755-53.692-5.626-80.406zm335.844 83.97c-1.416 25.13-9.332 48.69-18.75 71.342c27.002 39.79 45.036 85.1 54.188 132.72c22.526-36.18 35.53-78.914 35.53-124.72c0-20.237-2.535-39.886-7.31-58.625l-63.658-20.718zm-316.25 9c-8.685 11.924-17.89 23.38-27.687 34.28c17.71 47.887 24.35 96.876 27.625 145.72c19.492 1.947 44.6-.948 65.28-9.252c14.61-38.1 33.473-73.77 58.94-105.218l-124.157-65.53zm210.75 36.905c-20.514 16.267-43.27 28.78-67.937 35.218c-25.362 29.9-44.158 64.425-58.875 102.03c25.945 16.47 49.38 35.766 66.5 60.844c53.625-28.136 118.39-54.17 174.875-69.625c-9.758-33.28-24.35-64.76-43.72-93.156zM62.688 234.812C49.61 247.83 35.511 259.882 20.22 270.78c2.602 41.27 15.764 79.64 36.843 112.44c10.402-1.57 19.94-6.687 29.187-14.22c-2.964-45.772-8.778-90.685-23.563-134.188zm372.25 133.968c-56.05 15.36-121.654 41.877-174.593 70c-10.558 17.43-13.517 34.648-13.938 52.814c3.145.124 6.294.187 9.47.187c75.177 0 142.078-35.016 185.31-89.655a364 364 0 0 0-6.248-33.344zm-258.843 4.876c-25.448 10.093-54.342 12.98-77.875 9.594c-8.802 7.15-18.705 13.085-29.595 16.375c37.79 49.093 94.466 82.86 159.22 90.5c.59-18.247 3.69-37.243 13.874-56.156c-15.817-24.467-38.78-43.577-65.626-60.314z&#34;/&gt;&lt;/svg&gt;Materia KV&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Serverless databases with built-in compatibility layers.&lt;/div&gt;&lt;div class=&#34;hextra-badge hextra-card-tag&#34;&gt;
+    &lt;div class=&#34;hx-inline-flex hx-items-center hx-rounded-full hx-px-2.5 hx-leading-6 hx-text-[.65rem] hx-border hx-text-gray-600 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-text-neutral-200 hx-border-gray-200 dark:hx-border-neutral-700&#34;&gt;Alpha&lt;/div&gt;
+  &lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/addons/metabase&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M5.385 6.136c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-1.438 2.63c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461zm5.465-2.63c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.499-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm-1.088 5.592c.794 0 1.438-.654 1.438-1.461s-.644-1.461-1.438-1.461-1.438.654-1.438 1.461.643 1.461 1.438 1.461zm5.464-5.592c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111S11.4 7.247 12 7.247s1.088-.498 1.088-1.111zm.35-4.675c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461S11.206 0 12 0s1.438.654 1.438 1.461zm-.35 0C13.088.848 12.6.35 12 .35s-1.088.498-1.088 1.111S11.4 2.572 12 2.572s1.088-.498 1.088-1.111zm.35 8.806c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.499 1.088-1.111zm4.376-4.131c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm2.939 1.461c.794 0 1.438-.654 1.438-1.461s-.644-1.461-1.438-1.461-1.438.654-1.438 1.461.644 1.461 1.438 1.461zm-4.027 1.209c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.643-1.461-1.438-1.461zm4.027 0c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461zM3.947 12.857a1.45 1.45 0 0 0-1.438 1.461c0 .807.644 1.461 1.438 1.461s1.438-.654 1.438-1.461a1.45 1.45 0 0 0-1.438-1.461zm5.465 1.5c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.655 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zM12 12.896c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461zm5.464 1.461c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.655 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm2.939-1.461c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461zM3.947 16.948c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461zm5.465 1.5c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm4.376 0c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm.35 4.091c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111S11.4 23.65 12 23.65s1.088-.498 1.088-1.111zm4.376-4.091c0 .807-.644 1.461-1.438 1.461s-1.438-.654-1.438-1.461.644-1.461 1.438-1.461 1.438.654 1.438 1.461zm-.35 0c0-.613-.488-1.111-1.088-1.111s-1.088.498-1.088 1.111.488 1.111 1.088 1.111 1.088-.498 1.088-1.111zm2.939-1.461c-.794 0-1.438.654-1.438 1.461s.644 1.461 1.438 1.461 1.438-.654 1.438-1.461-.644-1.461-1.438-1.461z&#34;/&gt;&lt;/svg&gt;Metabase&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;The simplest, fastest way to get business intelligence and analytics to everyone in your company.&lt;/div&gt;&lt;div class=&#34;hextra-badge hextra-card-tag&#34;&gt;
+    &lt;div class=&#34;hx-inline-flex hx-items-center hx-rounded-full hx-px-2.5 hx-leading-6 hx-text-[.65rem] hx-border hx-text-gray-600 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-text-neutral-200 hx-border-gray-200 dark:hx-border-neutral-700&#34;&gt;Beta&lt;/div&gt;
+  &lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Montreal (MTL) zone: new deployment URL</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-08-30-deploy-url-mtl/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-08-30-deploy-url-mtl/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We improved our git services on Montreal zone. Newly created applications now use &lt;code&gt;push-n2-mtl-clevercloud-customers.services.clever-cloud.com&lt;/code&gt; as deployment URL. Applications still using the previous URL starting with &lt;code&gt;push-n1&lt;/code&gt; won&amp;rsquo;t be impacted by this change. If the new URL is not in your known hosts, you can see a warning during &lt;code&gt;git+ssh&lt;/code&gt; operations:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;❯ git clone git&amp;#43;ssh://git@push-n2-mtl-clevercloud-customers.services.clever-cloud.com/app_xxx.git
+Cloning into &amp;#39;app_xxx&amp;#39;...
+The authenticity of host &amp;#39;push-n2-mtl-clevercloud-customers.services.clever-cloud.com (192.99.188.152)&amp;#39; can&amp;#39;t be established.
+...
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:2142: push-n1-mtl-clevercloud-customers.services.clever-cloud.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Java servlet containers cleanup, Wildfly upgrade</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-08-26-java-containers-update/</link>
+      <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-08-26-java-containers-update/</guid>
+      <description>
+        
+        
+        &lt;p&gt;As part of our images enhancement process, we&amp;rsquo;ve tidied up the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/java-war/#available-containers&#34; &gt;list of supported servlet containers&lt;/a&gt;. Those that are not longer used by our customers are removed from the Java image. If you need a container which is not listed &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/java-war/#available-containers&#34; &gt;here&lt;/a&gt; or a specific version, please contact &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our support team&lt;/a&gt;. This release also includes a &lt;a href=&#34;https://github.com/wildfly/wildfly&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wildfly&lt;/a&gt; upgrade. Versions 27.0.1 and 33.0.1 are now available.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/&#34; &gt;Java on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PHP: a warning message when a deprecated version is used</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</link>
+      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PHP ecosystem is evolving at a steady pace with a clear lifecycle: 1 version per year, 2 years of active support, plus 1 year of security support. PHP 8.2 is actively supported, while 8.1 is in its security support window. ALL previous releases are considered end-of-life (EOL) by PHP Team. PHP 5.x branch is EOL since 2019, 7.x branch since the end of 2022.&lt;/p&gt;
+&lt;p&gt;As we still see a lot of applications using deprecated versions, the new PHP image we&amp;rsquo;ll release next week will start to better inform our users about this. When PHP 8.0 or a previous release is used, a warning will be shown during deployment, asking to set &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; to &lt;code&gt;8&lt;/code&gt; (latest 8.x), &lt;code&gt;8.2&lt;/code&gt; currently on Clever Cloud. In the coming month, we&amp;rsquo;ll extend such informative warnings to other runtimes. We&amp;rsquo;ll also explore ways to show them in other interfaces and send emails about it.&lt;/p&gt;
+&lt;p&gt;There is no short term plan to cut access to supported versions such as PHP 5.6 or 7.x, but you do it at your own risks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://www.php.net/supported-versions.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP releases lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>API: set environment variables at application creation</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-03-07-env-vars-app-creation-api/</link>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-03-07-env-vars-app-creation-api/</guid>
+      <description>
+        
+        
+        &lt;p&gt;When you create an application with the Clever Cloud API, you can now set environment variables directly. This feature is available in the &lt;code&gt;POST v2/organisations/{id}/applications&lt;/code&gt; endpoint, with an object to set:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;ENV_VAR&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;ANOTHER_ENV_VAR&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;another value&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The response will contain an &lt;code&gt;env&lt;/code&gt; object, with the environment variables set:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ENV_VAR&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ANOTHER_ENV_VAR&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;another value&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You can get this object from the applications endpoints, such as &lt;code&gt;GET v2/organisations/{id}/applications/{appId}&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Custom healthcheck paths for all applications</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-02-26-healthcheck-for-everyone/</link>
+      <pubDate>Mon, 26 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-02-26-healthcheck-for-everyone/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Up until now, the deployment process only checked whether the application is listening to TCP port &lt;code&gt;8080&lt;/code&gt;. That doesn&amp;rsquo;t always mean that the application has started correctly.&lt;/p&gt;
+&lt;p&gt;You can now define the paths that the orchestrator will call to validate a deployment for applications through one or multiple &lt;code&gt;CC_HEALTH_CHECK_PATH&lt;/code&gt; environment variables. It works as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the application responds on this specified path, and the response code is between &lt;code&gt;200&lt;/code&gt; and &lt;code&gt;300&lt;/code&gt;, the orchestrator considers that the deployment has been validated.&lt;/li&gt;
+&lt;li&gt;If it responds with a code outside this interval, the application is considered to have failed its deployment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Read the documentation about &lt;a href=&#34;https://developers.clever-cloud.com/doc/develop/healthcheck/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deployment healthcheck path&lt;/a&gt; 📖&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Montreal region (MTL): A records update for your domains/DNS</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</link>
+      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</guid>
+      <description>
+        
+        
+        &lt;p&gt;As we&amp;rsquo;re upgrading our infrastructure and load balancers in Montreal, we&amp;rsquo;ve added new failover IPs in this region.&lt;/p&gt;
+&lt;p&gt;If you configure your domains through CNAME records, this update will be transparent. But if you use A records, switch to CNAME or update your &lt;a href=&#34;https://developers.clever-cloud.com/doc/administrate/domain-names/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DNS configuration&lt;/a&gt;. Old IPs will continue to work for a while, but we recommend you to update your DNS as soon as possible to avoid any service interruption.&lt;/p&gt;
+&lt;h2&gt;Applications&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;applications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Record Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CNAME&lt;br&gt;Recommended&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;A&lt;br&gt;Only if CNAME is not available&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;@ 10800 IN A 158.69.109.229&lt;br&gt;@ 10800 IN A 149.56.117.183&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Add-ons&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-ons&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-ons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Record Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CNAME&lt;br&gt;Recommended&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;{yoursubdomain} 10800 IN CNAME domain-sdc.mtl.clever-cloud.com.&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;A&lt;br&gt;Only if CNAME is not available&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;@ 10800 IN A 54.39.154.128&lt;br&gt;@ 10800 IN A 167.114.35.164&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>New Gravelines HDS region</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For some time now, you can deploy your applications and add-ons through Clever Cloud, to Health Data Hosting (HDS) certified servers provided by OVHcloud in Roubaix. We also provide an object storage service (Cellar) from cluster composed of such servers in Roubaix and Gravelines (separated by ~100 km), available as the &lt;code&gt;fr-north-hds&lt;/code&gt; region.&lt;/p&gt;
+&lt;p&gt;Some customers asked us to make the Gravelines HDS region available independently for applications and add-ons, we listened to them. You can now deploy to it from &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clever-tools&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console&lt;/a&gt; as &lt;code&gt;grahds&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Please note that Clever Cloud’s services and infrastructures obtained the ISO 9001 certification last year, we’re waiting for the definitive approval of ISO 27001. HDS certification is the next step and our current priority&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ruby 3.3.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-01-24-ruby-3.3.0/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-01-24-ruby-3.3.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;You can now choose the &lt;code&gt;3.3.0&lt;/code&gt; release of Ruby when you deploy Ruby on Rails applications on Clever Cloud. It can be set either through your &lt;code&gt;Gemfile&lt;/code&gt; or the &lt;code&gt;CC_RUBY_VERSION&lt;/code&gt; &lt;a href=&#34;https://developers.clever-cloud.com/doc/reference/reference-environment-variables/#ruby&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about Ruby 3.3.0 release &lt;a href=&#34;https://www.ruby-lang.org/en/news/2023/12/25/ruby-3-3-0-released/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      If you use Node.js on this image, be aware that default version is now 20.11.0 (LTS). If you need another release to deploy your application, set the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Java 21 now used by default</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-12-18-java-21-default/</link>
+      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-12-18-java-21-default/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Java version 21 is available on Clever Cloud for several weeks, but is now deployed as the default version for new applications. Of course, you can set the one of your choice between those available through &lt;code&gt;CC_JAVA_VERSION&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read our documentation &lt;a href=&#34;doc/applications/java/&#34; &gt;about Java&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Latest PHP 8.x now used by default</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-12-18-php-8-default/</link>
+      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-12-18-php-8-default/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PHP 8.x is available for years on Clever Cloud, but is now deployed as the default version for new applications. Of course, you can set the one of your choice between those available through &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read our documentation &lt;a href=&#34;doc/applications/php/#choose-your-php-version&#34; &gt;about PHP version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Updated DNS entries for the PAR region</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-12-18-new-par-ip-console/</link>
+      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-12-18-new-par-ip-console/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Setup of our new infrastructure in Paris implies addition of new IP which can be used for DNS entries. They are now detailed in the &lt;strong&gt;Domain Names&lt;/strong&gt; section of your applications in the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/console-new-ip-par.webp&#34;
+    alt=&#34;The new IP of the PAR region in the Console&#34; width=&#34;800px&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;The new IP of the PAR region in the Console&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Identify VM Tasks through the API</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-11-29-api-update/</link>
+      <pubDate>Wed, 29 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-11-29-api-update/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For years, you can deploy applications on Clever Cloud as a &lt;code&gt;Task&lt;/code&gt; with the API or more recently the &lt;code&gt;CC_TASK=true&lt;/code&gt; environment variable. As this feature will be widely available and used, the API has been updated to return such a state in the &lt;code&gt;instance.lifetime&lt;/code&gt; object:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div class=&#34;filename&#34; dir=&#34;auto&#34;&gt;GET https://api.clever-cloud.com/v2/self/applications/&amp;lt;appId&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;hl&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;zone&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;zoneId&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;instance&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;variant&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;minInstances&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;maxInstances&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;maxAllowedInstances&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;minFlavor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;maxFlavor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;flavors&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line hl&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lifetime&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//Allowed: REGULAR ┃ MIGRATION ┃ TASK
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;instanceAndVersion&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You can read the full APIv2 documentation &lt;a href=&#34;http://developers.clever-cloud.com/openapi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Custom healthcheck paths for Java applications</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-11-10-healthcheck-for-java/</link>
+      <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-11-10-healthcheck-for-java/</guid>
+      <description>
+        
+        
+        &lt;p&gt;You can now define the paths that the orchestrator will call to validate a deployment for Java applications through one or multiple &lt;code&gt;CC_HEALTH_CHECK_PATH&lt;/code&gt; environment variables. It works as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the application responds on this specified path, and the response code is between &lt;code&gt;200&lt;/code&gt; and &lt;code&gt;300&lt;/code&gt;, the orchestrator considers that the deployment has been validated.&lt;/li&gt;
+&lt;li&gt;If it responds with another error code outside this interval, the application is considered to have failed its deployment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Currently, the orchestrator only checks whether the application is listening to TCP port &lt;code&gt;8080&lt;/code&gt;. It does not always mean that the application has started correctly.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read the documentation about &lt;a href=&#34;https://developers.clever-cloud.com/doc/develop/healthcheck/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deployment healthcheck path&lt;/a&gt; 📖&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,58 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Matomo</title>
+    <link>https://lafillepassympa.com/developers/tags/matomo/</link>
+    <description>Recent content in Matomo on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Matomo v5.1.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Our &lt;a href=&#34;https://matomo.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Matomo&lt;/a&gt; add-on has been updated to version &lt;code&gt;5.1.0&lt;/code&gt; which is now used by default. You can deploy this latest release from our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; or &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;. Existing customers add-ons are already up-to-date.&lt;/p&gt;
+&lt;p&gt;Here are the changes since previous deployed version (&lt;code&gt;5.0.1&lt;/code&gt;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://matomo.org/changelog/matomo-5-0-2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Matomo 5.0.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://matomo.org/changelog/matomo-5-0-3/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Matomo 5.0.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://matomo.org/changelog/matomo-5-1-0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Matomo 5.1.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Matomo v5.0.1 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://matomo.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Matomo&lt;/a&gt; 5.0 was released mid-December, version 5.0.1 is now available. Since then, we&amp;rsquo;ve worked on the support of this new branch on Clever Cloud. It&amp;rsquo;s done! You can deploy this latest version right now from our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; or &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Existing customers add-ons are already up-to-date.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://matomo.org/changelog/matomo-5-0-0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Matomo 5.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://matomo.org/changelog/matomo-5-0-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Matomo 5.0.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

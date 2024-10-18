@@ -1,0 +1,59 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Domain</title>
+    <link>https://lafillepassympa.com/developers/tags/domain/</link>
+    <description>Recent content in Domain on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/domain/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>IP list update on Paris zone</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-06-28-new-ip-list-paris/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-06-28-new-ip-list-paris/</guid>
+      <description>
+        
+        
+        &lt;p&gt;As our network evolves, we&amp;rsquo;ve updated &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone&#34; &gt;IP list for Paris (PAR) zone&lt;/a&gt;. If you use A records for DNS configuration, update them. 4 new IP addresses should be added (&lt;code&gt;91.208.207.220&lt;/code&gt; to &lt;code&gt;91.208.207.223&lt;/code&gt;). &lt;strong&gt;We strongly recommend using CNAME records instead.&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Record Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CNAME&lt;br&gt;Recommended&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;A&lt;br&gt;Only if CNAME is not available&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;@ 10800 IN A 91.208.207.214&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.215&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.216&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.217&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.218&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.220&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.221&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.222&lt;/code&gt;&lt;br&gt;&lt;code&gt;@ 10800 IN A 91.208.207.223&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We are going to remove 4 IPs that &lt;strong&gt;you must stop to use between now and August 23rd&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;46.252.181.103&lt;/li&gt;
+&lt;li&gt;46.252.181.104&lt;/li&gt;
+&lt;li&gt;185.42.117.108&lt;/li&gt;
+&lt;li&gt;185.42.117.109&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After this date, they won&amp;rsquo;t answer to requests anymore. You&amp;rsquo;ll find the updated values in the &lt;code&gt;Domain names&lt;/code&gt; section of your application in &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console&lt;/a&gt;. If you have any question about this change, feel free to ask &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our customer support&lt;/a&gt; about it.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

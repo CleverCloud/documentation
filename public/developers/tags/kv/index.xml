@@ -1,0 +1,39 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Kv</title>
+    <link>https://lafillepassympa.com/developers/tags/kv/</link>
+    <description>Recent content in Kv on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/kv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Materia KV enters public Alpha</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</link>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</guid>
+      <description>
+        
+        
+        &lt;p&gt;At Devoxx France 2024, we introduced our new &lt;a href=&#34;https://www.clever-cloud.com/materia/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Materia&lt;/a&gt; databases offering. The first &amp;ldquo;flavor&amp;rdquo;, KV, is now available in public Alpha to all our customers. It&amp;rsquo;s a key-value data store, compatible with Redis protocol and soon DynamoDB, GraphQL. You can create such an add-on from &lt;a href=&#34;https://developers.clever-cloud.com/api/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;API&lt;/a&gt;, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com/users/me/addons/new&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;. Let us know what to improve !&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Materia KV public announcement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.clever-cloud.com/doc/addons/materia-kv/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Materia KV documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/materia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Give us your feedback&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width=&#34;800&#34; height=&#34;450&#34; src=&#34;https://www.youtube-nocookie.com/embed/B8wQEG8qkqs?si=bPJcw3zvgfLLFjFk&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

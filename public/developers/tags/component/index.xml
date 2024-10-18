@@ -1,0 +1,37 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Component</title>
+    <link>https://lafillepassympa.com/developers/tags/component/</link>
+    <description>Recent content in Component on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/component/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Version 2.0 of our GitLab Component for review applications is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-09-03-gitlab-components-review-apps/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-09-03-gitlab-components-review-apps/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Some months ago, we released &lt;a href=&#34;https://gitlab.com/explore/catalog/CleverCloud/clever-cloud-pipeline&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a new GitLab Component&lt;/a&gt; to deploy applications from GitLab to Clever Cloud. Version 2.0 is available with variables injection from GitLab CI/CD and automatic releases. You can now use it with the &lt;code&gt;latest&lt;/code&gt; tag for tests, or &lt;code&gt;2.0.1&lt;/code&gt; tag for production.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Breaking changes&lt;/strong&gt;: Input &lt;code&gt;deploy&lt;/code&gt; have been removed to prevent users to script the environment variables injection before deploying the app. Remove it from your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; file if it&amp;rsquo;s set up, to avoid breaking your pipeline.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/gitlab/&#34; &gt;Learn more about how to deploy from GitLab to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

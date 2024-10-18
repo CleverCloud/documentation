@@ -1,0 +1,37 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Mongodb</title>
+    <link>https://lafillepassympa.com/developers/tags/mongodb/</link>
+    <description>Recent content in Mongodb on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Deploy MongoDB add-ons with our Terraform provider</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-06-10-mongo-db-terraform/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-06-10-mongo-db-terraform/</guid>
+      <description>
+        
+        
+        &lt;p&gt;If you can deploy on Clever Cloud through our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;, our CLI (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;), or our &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API&lt;/a&gt;, you can also use Terraform and compatible tools such as &lt;a href=&#34;https://opentofu.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenTofu&lt;/a&gt;. We maintain a provider that allows you to manage your resources as code, from applications to add-ons (object storage, databases, etc.).&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve recently added support for Python and &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/materia-kv/&#34; &gt;Materia KV&lt;/a&gt;. It&amp;rsquo;s MongoDB&amp;rsquo;s turn &lt;a href=&#34;https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/mongodb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;to be available&lt;/a&gt;. You can now create such an add-on, choose its plan, region and get the credentials to connect to it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our Terraform provider&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

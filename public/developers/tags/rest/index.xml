@@ -1,0 +1,65 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Rest</title>
+    <link>https://lafillepassympa.com/developers/tags/rest/</link>
+    <description>Recent content in Rest on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Encryption at rest</title>
+      <link>https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encrypting your data at rest provides another security layer to protect your data from various security threats. By default and unless you implemented it in your code, the data stored on disk is not encrypted. Enabling encryption at rest allows you to make sure your data can&amp;rsquo;t be read by anyone having a physical access to the hard drive.&lt;/p&gt;
+&lt;p&gt;Encryption at rest only protects the data &amp;ldquo;at rest&amp;rdquo;, meaning that if your data is sent over an unencrypted channel on the network, it could be read on the fly. The scenario encryption at rest covers are mostly hard drives stealing or unauthorized access once the hard drive got removed.&lt;/p&gt;
+&lt;p&gt;Here at Clever Cloud, before removing a hard drive, either because it is faulty or not used anymore, we first &lt;a href=&#34;https://linux.die.net/man/1/shred&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shred&lt;/a&gt; the hard drive with multiple passes. Then it is physically damaged by the data center operators before being thrown away. If one of those steps are missing or fail for some reason, your data could still be read if you didn&amp;rsquo;t use encryption at rest. If you did, no one will be able to access it.&lt;/p&gt;
+&lt;h2&gt;Technical details&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;technical-details&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#technical-details&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest works by decrypting the encrypted data disk and exposing it to the system in an unencrypted volume. Each time you read data on this unencrypted volume, the system will fetch the data on the encrypted disk and decrypt it. If you write data, the opposite happens: the data to be written is encrypted and then its encrypted content is written to the encrypted disk.&lt;/p&gt;
+&lt;p&gt;Each add-on has a randomly generated encryption key used to encrypt the data disk. The key will stay the same during the add-on life but can be changed if needed. In that case, a migration will use the new passphrase.&lt;/p&gt;
+&lt;p&gt;We use the &lt;a href=&#34;https://gitlab.com/cryptsetup/cryptsetup&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cryptsetup tool&lt;/a&gt; to operate encrypted disks. Cryptsetup&amp;rsquo;s current default is &lt;a href=&#34;https://gitlab.com/cryptsetup/LUKS2-docs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LUKS2&lt;/a&gt; with &lt;code&gt;aes-xts&lt;/code&gt; as the encryption algorithm. This may be subject to change as cryptsetup and the security algorithms evolve.&lt;/p&gt;
+&lt;p&gt;The encryption key is only stored encrypted on our systems and is not stored on your add-on. When your add-on boots, the key is downloaded over HTTPS from our systems and the disk is then mounted.&lt;/p&gt;
+&lt;p&gt;We also have a small swap partition on add-ons to allow more available RAM for background services. This swap file is also encrypted to avoid any encrypted data leak.&lt;/p&gt;
+&lt;h3&gt;Performances&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;performances&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#performances&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Performances may be a bit degraded with encryption enabled but in most of the cases under regular load, it is usually insignificant and an acceptable tradeoff.&lt;/p&gt;
+&lt;p&gt;Also, depending on whether you are using a single vCPU add-on or a multiple vCPU one, numbers can greatly vary. Single vCPU instances will switch between decrypting/encrypting the data and reading/writing it to the disk while multiple vCPU instances will be able to parallelize those operations, leading to better performance.&lt;/p&gt;
+&lt;p&gt;Note that most of the databases either have an in-memory cache or use the system&amp;rsquo;s file cache so if the same data is often read, it may be available in the cache and no decryption occur leading to fast reads.&lt;/p&gt;
+&lt;p&gt;Those tests were made using a 4 vCPU instance with 4 GiB of RAM.
+Before each test, the system&amp;rsquo;s cache was dropped to avoid having reads that are faster than they should be: &lt;code&gt;sync; echo 1 &amp;gt; /proc/sys/vm/drop_caches&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Note: The &lt;code&gt;dd&lt;/code&gt; tool wasn&amp;rsquo;t used for this benchmark as it does not represent a valid workload, leading to results that can greatly vary depending on disk performance.&lt;/p&gt;
+&lt;h4&gt;Using pgbench for PostgreSQL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-pgbench-for-postgresql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-pgbench-for-postgresql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Using &lt;code&gt;pgbench&lt;/code&gt; with 20 jobs and 20 clients, we see a difference between 3% and 5% less transactions per second on the encrypted disk and no real CPU difference.&lt;/p&gt;
+&lt;p&gt;With encrypted disk, the number of transactions per second was 315. On the unencrypted one, it was 330 per second.&lt;/p&gt;
+&lt;h4&gt;Using sysbench for MySQL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-sysbench-for-mysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-sysbench-for-mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Using &lt;code&gt;sysbench&lt;/code&gt; with 6 threads, the difference is between 5% and 10% less transactions per second. The CPU usage is also between 5% and 10% higher depending on the work load (reads or writes).&lt;/p&gt;
+&lt;p&gt;With encrypted disk, the number of transactions per second was 635. On the unencrypted one, it was 703 per second.&lt;/p&gt;
+&lt;h2&gt;Availability&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;availability&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#availability&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is currently available for the following add-ons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;li&gt;Redis&lt;/li&gt;
+&lt;li&gt;Elastic Stack&lt;/li&gt;
+&lt;li&gt;Jenkins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Only dedicated add-ons have the option. If your add-on is not encrypted, you can ask our support team to configure it. A migration will then be needed to encrypt your disk.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

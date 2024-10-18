@@ -1,0 +1,465 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Clever-Tools</title>
+    <link>https://lafillepassympa.com/developers/tags/clever-tools/</link>
+    <description>Recent content in Clever-Tools on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/clever-tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Clever Tools 3.8.3 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
+      <description>
+        
+        
+        &lt;p&gt;After two minor releases fixing issues with drains, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.8.3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools 3.8.3&lt;/a&gt; is available. It fixes Nix support, &lt;code&gt;update-notifier&lt;/code&gt; and enhances the add-on deletion command. It will now only need the add-on ID or name if it&amp;rsquo;s in an organization linked to your account.&lt;/p&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.8: &#34;Big Summer Update&#34; is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
+      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.8.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools 3.8&lt;/a&gt; is now available. It&amp;rsquo;s an important release, as we&amp;rsquo;ve worked on some of its features for several weeks.&lt;/p&gt;
+&lt;h2&gt;Brand new application management&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;brand-new-application-management&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#brand-new-application-management&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;It introduces a complete new way to use our CLI with &lt;code&gt;--app&lt;/code&gt; option, available to every application-related commands. It allows you to target any application available from your account, by its ID or its name. You can for example restart an application this way:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever restart --app app_id
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever restart --app my_app_name
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever restart --app my_app_name --org my_org_name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;clever applications list&lt;/code&gt; new command can be used from any folder of your system. It prints details about applications across your organizations. You can filter the result with &lt;code&gt;--org&lt;/code&gt; or &lt;code&gt;-o&lt;/code&gt; option. It includes IDs, names and local aliases (if available) in a table.&lt;/p&gt;
+&lt;h2&gt;More (consistent) options&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;more-consistent-options&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-consistent-options&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For most commands, you can now get a result in the format of your choice with &lt;code&gt;--format&lt;/code&gt; or &lt;code&gt;-F&lt;/code&gt; option. In most cases, you can use &lt;code&gt;human&lt;/code&gt; (default) or &lt;code&gt;json&lt;/code&gt;, but sometimes &lt;code&gt;json-stream&lt;/code&gt; or &lt;code&gt;shell&lt;/code&gt; are available too (for example).&lt;/p&gt;
+&lt;p&gt;You can now define when to stop logs streaming during a &lt;code&gt;clever deploy&lt;/code&gt; or a &lt;code&gt;clever restart&lt;/code&gt; with &lt;code&gt;exit-on&lt;/code&gt; option. Available values are: &lt;code&gt;deploy-start&lt;/code&gt;, &lt;code&gt;deploy-end&lt;/code&gt; and &lt;code&gt;never&lt;/code&gt; (default: &lt;code&gt;deploy-end&lt;/code&gt;). Thus, the &lt;code&gt;--follow&lt;/code&gt; option is now deprecated.&lt;/p&gt;
+&lt;p&gt;Of course, you can combine these new options:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# We show ID and name of all applications in JSON format&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever applications list --org my_org_name --format json &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq &lt;span class=&#34;s1&#34;&gt;&amp;#39;.[].applications[] | {app_id, name}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# We check status of an application&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever status --app app_id_or_name -F json &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq &lt;span class=&#34;s1&#34;&gt;&amp;#39;.status&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# If it&amp;#39;s running, we restart it and stop the logs streaming when the deployment starts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever restart --app app_id_or_name --exit-on deploy-start&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;These changes are available thanks to a &lt;code&gt;cliparse&lt;/code&gt; update &lt;a href=&#34;https://github.com/CleverCloud/cliparse-node/commit/023bd72ddce66337c5b0716ddb3c2a103ff252a8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;introducing private options&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Lots of new features&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;lots-of-new-features&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#lots-of-new-features&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Multiple new features are also available in this &amp;ldquo;Big Summer Update&amp;rdquo;. Access Logs feature now uses &lt;code&gt;v4&lt;/code&gt; API. It&amp;rsquo;s faster and more reliable, only available for applications and as an alpha test for now. It&amp;rsquo;s available through &lt;code&gt;clever accesslogs&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--no-color&lt;/code&gt; or &lt;code&gt;--color true|false&lt;/code&gt; global option is available. It&amp;rsquo;s used by default when the output is not a terminal. &lt;code&gt;clever console&lt;/code&gt; now opens the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; even if your not in a folder with a linked application. &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.8.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.8.1 release&lt;/a&gt; comes with some minor fixes.&lt;/p&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Note that we reintroduced &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#nix-package-manager&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nix support&lt;/a&gt; with this release.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.7.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.7.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools 3.7&lt;/a&gt; is now available, with some bug fixes, including &lt;code&gt;clever curl&lt;/code&gt; in packaged and node versions. We&amp;rsquo;ve also enhanced &lt;code&gt;activity&lt;/code&gt; and &lt;code&gt;addon&lt;/code&gt;. With the latest, selected plan is now always the cheapest by default at creation.&lt;/p&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.6.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Clever Tools 3.6 is now available, with some minor fixes and a new feature: the support of SD-PARAMS (&lt;a href=&#34;https://www.rfc-editor.org/rfc/rfc5424.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RFC 5424&lt;/a&gt;) for UDP and TCP drains with &lt;code&gt;clever drain create --sd-params &amp;quot;SD_PARAMS_STRING&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>New logs interface is available in public beta</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
+      <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Since 2023, applications use a new Logs stack based on Pulsar and Vector, through CLI. Thanks to it, we provide a more reliable service, with new filtering features. It&amp;rsquo;s now available from &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console&lt;/a&gt; too! As it&amp;rsquo;s in public beta stage, you&amp;rsquo;ll need to activate it through the &amp;ldquo;Try the new Logs experience&amp;rdquo; link. You can revert this choice if needed.&lt;/p&gt;
+&lt;p&gt;This new feature is available for &lt;strong&gt;applications only&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In this new interface you&amp;rsquo;ll get better access to your instance/deployments, dark/light themes, a text filter, multiple settings (stored into your Clever Cloud account).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.clever-cloud.com/blog/company/2024/04/15/our-new-logs-interface/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about our new Logs interface&lt;/a&gt; (&lt;a href=&#34;https://www.clever-cloud.com/fr/blog/entreprise/2024/04/15/notre-nouvelle-interface-de-logs-est-disponible/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FR&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Give us feedback about new Logs interface&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.5.2 is available with cURL, KV, Tasks and more!</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
+      <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;JSON format is supported for more commands, the &lt;code&gt;--since&lt;/code&gt; option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use &lt;code&gt;clever logs --since 2h&lt;/code&gt;. This command documentation is available &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Clever Tasks can now be directly created and configured from Clever Tools. They&amp;rsquo;re applications which can be run on demand, not awaiting any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port, but needing a &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; to execute. Once it&amp;rsquo;s done, the application stops. You&amp;rsquo;re just billed for the execution time. It can help you to make some checks, compilation, file conversions, etc.&lt;/p&gt;
+&lt;p&gt;To create a Clever Task using Python for example:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;# We create a Python App and its Git repository
+mkdir pythonTask &amp;amp;&amp;amp; cd pythonTask
+echo &amp;#39;print(&amp;#34;Hello, from a Clever Cloud Task!&amp;#34;)&amp;#39; &amp;gt; task.py
+git init &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; git commit -m &amp;#34;Initial commit&amp;#34;
+
+# We deploy this app as a Task
+clever create -t python --task &amp;#39;python task.py&amp;#39;
+clever deploy&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;If you want to check if an application will deploy as a &lt;code&gt;TASK&lt;/code&gt; or the &lt;code&gt;REGULAR&lt;/code&gt; way, use &lt;code&gt;clever status&lt;/code&gt;. Change the executed command using an environment variable. Set another value, for example with a bash script:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever env set CC_RUN_COMMAND &amp;#34;bash a_bash_script.sh&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Clever Tasks will evolve with enhancements planed over the coming months. Feel free to tell us about your needs or ideas on this subject!&lt;/p&gt;
+&lt;p&gt;Last but not least, we&amp;rsquo;re introducing the access to Materia KV. Those granted with alpha access can now create a serverless, synchronously-replicated (over our 3 datacenters in Paris) key-value add-on. You&amp;rsquo;ll be able to use it with multiples kind of clients. First to be supported is Redis API. Thus, you can run:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever addon create kv myKV
+source &amp;lt;(clever addon env addon_myKV_id -F shell)
+redis-cli -h $KV_HOST -p $KV_PORT --tls PING&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about Materia KV&lt;/a&gt; (&lt;a href=&#34;https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FR&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.4.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</link>
+      <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This week, we published two Clever Tools updates in a row. 3.3.0 was about adding &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/&#34; &gt;our new Gravelines HDS region&lt;/a&gt; support and fixing a bug in our add-ons logs feature. 3.4.0 brings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;json-stream&lt;/code&gt; formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (&lt;code&gt;jq&lt;/code&gt; compatible). You can learn more about it &lt;a href=&#34;https://github.com/ndjson/ndjson-spec/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But it&amp;rsquo;s the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;deploy&lt;/code&gt; commands which are the most improved by this release. First, you&amp;rsquo;ll now get the application or add-on name confirmed after creation. You can also get a JSON response adding &lt;code&gt;--format json&lt;/code&gt; or &lt;code&gt;-F json&lt;/code&gt; to the &lt;code&gt;create&lt;/code&gt; or &lt;code&gt;create-addon&lt;/code&gt; command. Second, the current folder name is now used as default application name if none is provided.&lt;/p&gt;
+&lt;p&gt;To create a Node.js application once logged in, you can now just:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever create -t node&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;If you need a JSON response for a Go application deployed on Gravelines HDS:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever create --type go --region grahds --format json&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Last but not least: you can deploy a specific tag from your local git repository adding the &lt;code&gt;--tag&lt;/code&gt; or &lt;code&gt;-t&lt;/code&gt; option:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever deploy --tag v0.4.2&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.2.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;As mentioned &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/&#34; &gt;in the previous release&lt;/a&gt;, the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the 3.2.0&lt;/a&gt; adding the log auto retry feature on network failures and some fixes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;api:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/b134213f30d46dd7f5690a38425deb4fd752148c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;b134213&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/fada06771369173e579f5fd3a708ff3cef40c95f&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fada067&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; improve open and error debug message (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/28dd9968bec8de9545c6b940be732d3f8f87a8f9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;28dd996&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; increase connection timeout (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/a4ec4b90b5d3938e27679edeb7d375281def3776&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a4ec4b9&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; only print SSE errors as debug when verbose mode is enabled (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/3ea21c6a4ff75db8df5f8177bba10ef17c2962e0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3ea21c6&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Clever Tools 3.1.0 is available</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For several months, we were preparing our CLI, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;, for big changes. It starts to be ready for prime time with the 3.1.0 release. First, the packaging process moved to GitHub Actions with some improvements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can now get the &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;list of releases&lt;/a&gt; with a changelog and source code archives&lt;/li&gt;
+&lt;li&gt;No more beta channel: you&amp;rsquo;ll be able to test new features easier&lt;/li&gt;
+&lt;li&gt;Better process, quicker tests, more releases!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If 3.0.x branch brought new log stack (faster, longer, order), you now get updated runtimes and zones lists &lt;a href=&#34;https://github.com/CleverCloud/clever-tools?tab=readme-ov-file#enabling-autocompletion&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;in autocomplete&lt;/a&gt;, details about application owner during deployment, &lt;code&gt;git+ssh&lt;/code&gt; URL in new linked/created applications informations.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;clever deploy&lt;/code&gt; can now be used with the &lt;code&gt;--same-commit-policy&lt;/code&gt; or &lt;code&gt;-p&lt;/code&gt; flag to set policy to apply when the local commit is the same as the remote one: &lt;code&gt;error&lt;/code&gt;, &lt;code&gt;ignore&lt;/code&gt;, &lt;code&gt;restart&lt;/code&gt; or &lt;code&gt;rebuild&lt;/code&gt; (default: &lt;code&gt;error&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Of course, there are also some bug fixes. And be prepared: more new features are on the way!&lt;/p&gt;
+&lt;p&gt;To upgrade Clever Tools, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;use your favorite package manager&lt;/a&gt;. For example with npm:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;npm update -g clever-tools
+clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

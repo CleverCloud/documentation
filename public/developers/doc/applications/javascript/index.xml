@@ -1,0 +1,785 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – JavaScript</title>
+    <link>https://lafillepassympa.com/developers/doc/applications/javascript/</link>
+    <description>Recent content in JavaScript on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/doc/applications/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Meteor.js</title>
+      <link>https://lafillepassympa.com/developers/doc/applications/javascript/meteor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/applications/javascript/meteor/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud allows you to deploy any Meteor.js application. This page will explain how to set up your application to run it on our services.&lt;/p&gt;
+&lt;p&gt;Be sure your &lt;code&gt;.meteor&lt;/code&gt; folder is in your git repository.&lt;/p&gt;
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;Quickstart&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/create&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+&lt;h2&gt;Configure your Meteor.js based application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-your-meteorjs-based-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-meteorjs-based-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Mandatory configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mandatory-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mandatory-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Set up environment variables&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;set-up-environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#set-up-environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;To run your Meteor.js application you need a few mandatory environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MONGO_URL&lt;/code&gt;: this is the mongo uri you can find in your mongodb&amp;rsquo;s dashboard, it has to start with &lt;code&gt;mongodb://&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ROOT_URL&lt;/code&gt;: this is your application&amp;rsquo;s root url. It has to start with &lt;code&gt;http://&lt;/code&gt; or &lt;code&gt;https://&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PORT&lt;/code&gt;: keep the current value of 8080&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With Meteor 2.6.n comes MongoDB 5.n and &lt;a href=&#34;https://guide.meteor.com/2.6-migration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the new npm driver&lt;/a&gt;. You need to append &lt;code&gt;?directConnection=true&lt;/code&gt; in your &lt;code&gt;MONGO_URL&lt;/code&gt; to avoid the new mongo driver Service Discovery feature.&lt;/p&gt;
+&lt;h4&gt;Optional Meteor settings as environment variable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;optional-meteor-settings-as-environment-variable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#optional-meteor-settings-as-environment-variable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Some application require a &lt;code&gt;settings.json&lt;/code&gt; file to &lt;a href=&#34;https://docs.meteor.com/api/core.html#Meteor-settings&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;store api keys and other various private and public Meteor variables&lt;/a&gt;.
+You can declare a &lt;code&gt;METEOR_SETTINGS&lt;/code&gt; environment variable and past the content of the json file as the value of this key.&lt;/p&gt;
+&lt;h2&gt;Specify required Node.js version&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;specify-required-nodejs-version&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#specify-required-nodejs-version&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Since building with the latest version of Node.js might fail, you should specify in the &lt;code&gt;package.json&lt;/code&gt; file of the application the version needed for your Meteor application ; as shown in &lt;a href=&#34;https://www.clever-cloud.com/doc/nodejs/nodejs/#requirements&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deploying Node.js apps&lt;/a&gt; documentation.
+To find out which version is required by your application type the following command &lt;code&gt;meteor node -v&lt;/code&gt; inside root folder.&lt;/p&gt;
+&lt;p&gt;Currently with Meteor &lt;em&gt;2.6.1&lt;/em&gt; the Node.js version is &lt;em&gt;14.18.3&lt;/em&gt; so you should add the following inside the &lt;code&gt;package.json&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;engines&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;14.18.3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You may change the node version value according to the application requirements.&lt;/p&gt;
+&lt;h3&gt;Activate the dedicated build&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;activate-the-dedicated-build&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#activate-the-dedicated-build&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Meteor.js uses a lot of memory during the build. You most likely will need to activate the &lt;a href=&#34;https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dedicated build feature&lt;/a&gt; and set your vertical scaling size at least to &lt;strong&gt;M&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If your build still fails after you enabled the feature, please contact us on the support so we can set you a bigger scaler.&lt;/p&gt;
+&lt;h3&gt;Automatic HTTPS redirection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;automatic-https-redirection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#automatic-https-redirection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use the &lt;a href=&#34;https://atmospherejs.com/meteor/force-ssl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;force-ssl&lt;/a&gt; atmosphere package to redirect your users to the HTTPS version of your application.&lt;/p&gt;
+&lt;h3&gt;Custom start parameters&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-start-parameters&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-start-parameters&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you want to set custom start parameters, the main entry point of built meteor applications is: &lt;code&gt;.build/bundle/main.js&lt;/code&gt;.
+Add in the &lt;code&gt;scripts.start&lt;/code&gt; field of the package.json: &lt;code&gt;node .build/bundle/main.js &amp;lt;parameters&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Deployment process on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deployment-process-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-process-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;At each deployment, the needed Meteor.js version will be read from &lt;code&gt;.meteor/release&lt;/code&gt; and installed.
+Your application will then be built using &lt;code&gt;meteor build --server-only&lt;/code&gt; and deployed from the files created by this command.&lt;/p&gt;
+&lt;h2&gt;Environment injection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Custom build configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-build-configurations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-build-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;On Clever Cloud you can define some build configuration: like the app folder to deploy or the path to validate your application deployment is ready
+To do that follow the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#variables-you-can-define&#34; &gt;documentation here&lt;/a&gt; and add the environement variable you need.&lt;/p&gt;
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud: refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons&#34; &gt;the full list&lt;/a&gt; and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, an &lt;strong&gt;Applications&lt;/strong&gt; screen appears, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application is automatically linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link add-ons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+&lt;h3&gt;Oplog Tailing&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;oplog-tailing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#oplog-tailing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following environment variable:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MONGO_OPLOG_URL&lt;/code&gt;: &lt;code&gt;mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since Meteor 2.6.n the mongo driver detect the &lt;code&gt;MONGO_OPLOG_URL&lt;/code&gt; by itself and you should not add this to your environment variables.&lt;/p&gt;
+&lt;h2&gt;Migrate from a Node.js instance&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;migrate-from-a-nodejs-instance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#migrate-from-a-nodejs-instance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
+&lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt; with the application id.&lt;/p&gt;
+&lt;h2&gt;More configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/find-help/support&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Enable health check during deployment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;enable-health-check-during-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-health-check-during-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The healthcheck allows you to limit downtimes. Indeed, you can provide Clever Cloud with paths to check. If these paths return something other than 200, the deployment will fail.&lt;/p&gt;
+&lt;p&gt;Add one (or several) environment variable as such:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/other/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The deployment process checks all paths. All of them must reply with a &lt;code&gt;200 OK&lt;/code&gt; response code.&lt;/p&gt;
+&lt;p&gt;By default, when no &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variable&lt;/a&gt; (for ex: &lt;code&gt;APP_HOME&lt;/code&gt;) is defined, the monitoring checks your repository root path &lt;code&gt;/&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Example&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using the path listed above, below are the expected logs:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/awesome/path is 200
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/other/path is 500
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Health check failed:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- GET /my/other/path returned 500.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;If the deployment fails after this message, please update your configuration and redeploy.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;In this example, the first path is OK, but the second one failed. This gives you a hint on what failed in your application.&lt;/p&gt;
+&lt;h3&gt;Best practice for healthcheck endpoints&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;best-practice-for-healthcheck-endpoints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#best-practice-for-healthcheck-endpoints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make the most of a healthcheck endpoint, have it check your critical dependencies. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;execute &lt;code&gt;SELECT 1 + 1;&lt;/code&gt; on your database&lt;/li&gt;
+&lt;li&gt;retrieve a specific Cellar file&lt;/li&gt;
+&lt;li&gt;ping a specific IP through a VPN&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://lafillepassympa.com/developers/doc/applications/javascript/nodejs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/applications/javascript/nodejs/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud allows you to deploy any &lt;a href=&#34;https://nodejs.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt; application. We do support &lt;strong&gt;any stable version of Node.js&lt;/strong&gt;. Their release schedule is available &lt;a href=&#34;https://nodejs.org/en/about/previous-releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. This page explains how to set up your application to run it on our service.&lt;/p&gt;
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;Quickstart&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/create&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+&lt;h2&gt;Configure your Node.js application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-your-nodejs-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-nodejs-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Mandatory configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mandatory-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mandatory-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Be sure that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you listen on HTTP port &lt;strong&gt;0.0.0.0:8080&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;you have a &lt;code&gt;package.json&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;your &lt;code&gt;package.json&lt;/code&gt; either has a &lt;strong&gt;scripts.start&lt;/strong&gt; or &lt;strong&gt;main&lt;/strong&gt; field&lt;/li&gt;
+&lt;li&gt;the folder &lt;code&gt;/node_modules&lt;/code&gt; is mentioned in your &lt;code&gt;.gitignore&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;you enable production mode by setting the &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;NODE_ENV=production&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Set Node.js version&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;set-nodejs-version&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#set-nodejs-version&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use the &lt;code&gt;engines.node&lt;/code&gt; field in &lt;code&gt;package.json&lt;/code&gt; to define the wanted version, if not provided we will use the latest LTS version available on Clever Cloud.&lt;/p&gt;
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          
+            &lt;th&gt;Default Version&lt;/th&gt;
+          
+          
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;v20.15.0&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+          
+        &lt;/tr&gt;
+        
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+
+&lt;h3&gt;About package.json&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;about-packagejson&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#about-packagejson&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;package.json&lt;/code&gt; file should look like the following:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;myapp&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;0.1.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;myapp.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;start&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;node myapp.js&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;engines&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^20&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The following table describes each of the fields formerly mentioned:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Usage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Field&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;At least one&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;scripts.start&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;This field provides a command line to run. If defined, &lt;code&gt;npm start&lt;/code&gt; will be launched. Otherwise, we will use the &lt;code&gt;main&lt;/code&gt; field. See below to know how and when to use the &lt;code&gt;scripts.start&lt;/code&gt; field.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;At least one&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;main&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project&amp;rsquo;s root. It&amp;rsquo;s used to launch your application if &lt;code&gt;scripts.start&lt;/code&gt; is not defined.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Optional&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;engines.node&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sets the Node.js version you app runs with. Any &lt;code&gt;A.B.x&lt;/code&gt; or &lt;code&gt;^A.B.C&lt;/code&gt; or &lt;code&gt;~A.B&lt;/code&gt; version will lead to run the application with the latest &lt;code&gt;A.B&lt;/code&gt; local version. If this field is missing, we use the latest LTS available. If you want to ensure that your app will always run, please put something of the form &lt;code&gt;^A.B.C&lt;/code&gt; and avoid setting only &lt;code&gt;&amp;gt;=A.B.C&lt;/code&gt;.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Dependencies&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dependencies&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need some modules you can easily add some with the &lt;em&gt;dependencies&lt;/em&gt; field in your &lt;code&gt;package.json&lt;/code&gt;. Here is an example:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;engines&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;express&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;4.x&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;socket.io&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;4.7.x&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;underscore&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;1.13.6&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;If your application has private dependencies, you can add a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration/#private-ssh-key&#34; &gt;Private SSH Key&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Development Dependencies&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;development-dependencies&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#development-dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Development dependencies will not be automatically installed during the deployment. You can control their installation setting &lt;code&gt;CC_NODE_DEV_DEPENDENCIES&lt;/code&gt; environment variable to &lt;code&gt;install&lt;/code&gt; or &lt;code&gt;ignore&lt;/code&gt;. This variable overrides the default behavior of &lt;code&gt;NODE_ENV&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here are various scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_NODE_DEV_DEPENDENCIES=install&lt;/code&gt;: Development dependencies will be installed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_NODE_DEV_DEPENDENCIES=ignore&lt;/code&gt;: Development dependencies will not be installed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install&lt;/code&gt;: Development dependencies will be installed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore&lt;/code&gt;: Development dependencies will not be installed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NODE_ENV=production&lt;/code&gt;: Package manager (NPM / Yarn) default behavior. Development dependencies will not be installed.&lt;/li&gt;
+&lt;li&gt;Neither &lt;code&gt;NODE_ENV&lt;/code&gt; nor &lt;code&gt;CC_NODE_DEV_DEPENDENCIES&lt;/code&gt; are defined: Package manager (NPM / Yarn) default behavior. Development dependencies will be installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Supported package managers&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;supported-package-managers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#supported-package-managers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We support any package manager compatible with Node.js. The &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; allows you to define which one you want to use. The default value is set to &lt;code&gt;npm&lt;/code&gt;, but it can be any of these values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;npm-install&lt;/code&gt;: uses &lt;a href=&#34;https://docs.npmjs.com/cli/install&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;npm install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm-ci&lt;/code&gt;: uses &lt;a href=&#34;https://docs.npmjs.com/cli/ci&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;npm clean-install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm&lt;/code&gt;: Defaults to &lt;code&gt;npm-install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn&lt;/code&gt;: uses &lt;a href=&#34;https://classic.yarnpkg.com/lang/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;yarn@1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn2&lt;/code&gt;: uses &lt;a href=&#34;https://yarnpkg.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;yarn@2 or later versions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;custom&lt;/code&gt;: use another package manager (bun, pnpm, etc.) with &lt;code&gt;CC_CUSTOM_BUILD_TOOL&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If a &lt;code&gt;yarn.lock&lt;/code&gt; file exists in your application&amp;rsquo;s main folder, &lt;code&gt;yarn&lt;/code&gt; will be set as package manager. To overwrite this behavior, either delete the &lt;code&gt;yarn.lock&lt;/code&gt; file or set the &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;h4&gt;Yarn 3.x and 4.x support&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;yarn-3x-and-4x-support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#yarn-3x-and-4x-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With recent versions of Yarn, you need to put the global folder within your application to manage restarts from build cache. You can do it by setting &lt;code&gt;YARN_GLOBAL_FOLDER&lt;/code&gt; to &lt;code&gt;$APP_HOME/.yarncache/&lt;/code&gt; for example, in the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; or through &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;clever env set YARN_GLOBAL_FOLDER &amp;#39;$APP_HOME/.yarncache/&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h4&gt;Corepack and packageManager support&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;corepack-and-packagemanager-support&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#corepack-and-packagemanager-support&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Since Node.js v14.19.0 and v16.9.0, you can use &lt;a href=&#34;https://nodejs.org/api/corepack.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corepack&lt;/a&gt; as an experimental feature to set a package manager from &lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;pnpm&lt;/code&gt; or &lt;code&gt;yarn&lt;/code&gt;, and its version. It can be achieved through a simple command (e.g.: &lt;code&gt;corepack use yarn@*&lt;/code&gt;) or the &lt;a href=&#34;https://nodejs.org/api/packages.html#packagemanager&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;packageManager&lt;/code&gt;&lt;/a&gt; field in &lt;code&gt;package.json&lt;/code&gt;. If you use &lt;code&gt;pnpm&lt;/code&gt; or &lt;code&gt;yarn&lt;/code&gt;, you should always set &lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; and &lt;code&gt;CC_CUSTOM_BUILD_TOOL&lt;/code&gt; for &lt;code&gt;pnpm&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Custom build phase&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-build-phase&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-build-phase&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The build phase installs the dependencies and executes the &lt;code&gt;scripts.install&lt;/code&gt; you might have defined in your &lt;code&gt;package.json&lt;/code&gt;. It&amp;rsquo;s meant to build the whole application including dependencies and / or assets (if there are any).&lt;/p&gt;
+&lt;p&gt;All the build part should be written into the &lt;code&gt;scripts.install&lt;/code&gt; field of the &lt;code&gt;package.json&lt;/code&gt; file. You can also add a custom bash script and execute it with: &lt;code&gt;&amp;quot;scripts.install&amp;quot;: &amp;quot;./build.sh&amp;quot;&lt;/code&gt;. For more information, see &lt;a href=&#34;https://docs.npmjs.com/misc/scripts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the npm documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Custom run phase&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-run-phase&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-run-phase&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The run phase is executed from &lt;code&gt;scripts.start&lt;/code&gt; if defined. It&amp;rsquo;s only meant to start your application and should not
+contain any build task.&lt;/p&gt;
+&lt;h3&gt;Custom run command&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-run-command&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-run-command&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to run a custom command (or just pass options to the program), you can specify it through the &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;. For instance, to launch &lt;code&gt;scripts.start&lt;/code&gt; with a yarn based application, you must have &lt;code&gt;CC_RUN_COMMAND=&amp;quot;yarn start&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Alternative runtimes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;alternative-runtimes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#alternative-runtimes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There are multiples JavaScript server runtimes out there. On Clever Cloud, you can deploy your applications with the one of your choice. You&amp;rsquo;ll find guides for &lt;a href=&#34;https://www.clever-cloud.com/fr/blog/fonctionnalites/2023/09/19/bun-comment-heberger-vos-applications-sur-clever-cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bun&lt;/a&gt; or &lt;a href=&#34;https://lafillepassympa.com/developers/guides/lume-deno/&#34; &gt;Deno&lt;/a&gt; for example.&lt;/p&gt;
+&lt;h3&gt;Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-private-repositories-with-cc_npm_registry-and-npm_token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#use-private-repositories-with-cc_npm_registry-and-npm_token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Since April 2015, &lt;code&gt;npm&lt;/code&gt; allows you to have private repositories. If you want to use such a feature, you only need to provide the auth token. Add it to your application through the &lt;code&gt;NPM_TOKEN&lt;/code&gt; environment variable:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NPM_TOKEN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;00000000-0000-0000-0000-000000000000&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Then, the &lt;code&gt;.npmrc&lt;/code&gt; file will be created automatically for your application, with the registry URL and the token.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;To authenticate to another registry (like GitHub), you can use the &lt;code&gt;CC_NPM_REGISTRY&lt;/code&gt; environment variable to define its host.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_NPM_REGISTRY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;npm.pkg.github.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NPM_TOKEN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;00000000-0000-0000-0000-000000000000&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//npm.pkg.github.com/:_authToken=00000000-0000-0000-0000-000000000000&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/new-relic&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+&lt;h2&gt;Environment injection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Custom build configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-build-configurations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-build-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;On Clever Cloud you can define some build configuration: like the app folder to deploy or the path to validate your application deployment is ready
+To do that follow the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#variables-you-can-define&#34; &gt;documentation here&lt;/a&gt; and add the environement variable you need.&lt;/p&gt;
+&lt;p&gt;To access environment variables from your code, you can use &lt;code&gt;process.env.MY_VARIABLE&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h4&gt;Example: Deploy with pnpm&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-deploy-with-pnpm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-deploy-with-pnpm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;To deploy an  application with pnpm, set the following environment variables:&lt;/p&gt;
+&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
+  &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
+        class=&#34;hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white&#34;
+        role=&#34;tab&#34;
+        type=&#34;button&#34;
+        aria-controls=&#34;tabs-panel-0&#34; aria-selected=&#34;true&#34;  tabindex=&#34;0&#34;  data-state=&#34;selected&#34;&gt;npm&lt;/button&gt;&lt;button
+        class=&#34;hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white&#34;
+        role=&#34;tab&#34;
+        type=&#34;button&#34;
+        aria-controls=&#34;tabs-panel-1&#34;&gt; Corepack&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+
+  &lt;div
+  class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
+  id=&#34;tabs-panel-0&#34;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;p&gt;&lt;strong&gt;Install with &lt;code&gt;npm&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_NODE_BUILD_TOOL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;custom&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_PRE_BUILD_HOOK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;npm install -g pnpm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_CUSTOM_BUILD_TOOL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;pnpm install &amp;amp;&amp;amp; pnpm build&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div
+  class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
+  id=&#34;tabs-panel-1&#34;
+  role=&#34;tabpanel&#34;&gt;&lt;p&gt;&lt;strong&gt;Enable with Corepack&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_NODE_BUILD_TOOL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;custom&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_PRE_BUILD_HOOK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;corepack enable pnpm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_CUSTOM_BUILD_TOOL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;pnpm install &amp;amp;&amp;amp; pnpm build&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;p&gt;This performs the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;CC_NODE_BUILD_TOOL&lt;/code&gt; indicates that your applications is using a custom build tool&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_PRE_BUILD_HOOK&lt;/code&gt; installs/enable &lt;code&gt;pnpm&lt;/code&gt; globally&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_CUSTOM_BUILD_TOOL&lt;/code&gt; installs the dependencies and builds the app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Depending on your stack, you may also need to add &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; to your environment variables, with the appropriate command to run your application. For example, to deploy an &lt;a href=&#34;https://astro.build/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Astro&lt;/a&gt; application in a Node.js runtime, use &lt;code&gt;CC_RUN_COMMAND=&amp;quot;pnpm start --port 8080 --host 0.0.0.0&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; depends on your framework and your stack. The one in this example starts an Astro app, &lt;a href=&#34;https://docs.astro.build/en/reference/cli-reference/#--port-number&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;which takes the port and the host as arguments&lt;/a&gt;. To run your app, make sure you are using the correct command by checking the accurate framework documentation.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Automatic HTTPS redirection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;automatic-https-redirection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#automatic-https-redirection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can use the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/find-help/faq/#how-to-know-if-a-user-comes-from-a-secure-connection&#34; &gt;X-Forwarded-Proto header&lt;/a&gt; to enable it.&lt;/p&gt;
+&lt;p&gt;If you are using &lt;a href=&#34;https://expressjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Express.js&lt;/a&gt;, you can use &lt;a href=&#34;https://www.npmjs.com/package/express-sslify&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;express-sslify&lt;/a&gt; by adding:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enforce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;HTTPS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;trustProtoHeader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}));&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;Troubleshooting your application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;troubleshooting-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#troubleshooting-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
+To target this behavior, you can gracefully shut down with events handlers on &lt;code&gt;uncaughtExeption&lt;/code&gt; &lt;code&gt;unhandledRejection&lt;/code&gt; &lt;code&gt;sigint&lt;/code&gt; and &lt;code&gt;sigterm&lt;/code&gt; and log at this moment, so you can fix the problem.&lt;/p&gt;
+&lt;h2&gt;Linking a database or any other add-on to your application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;linking-a-database-or-any-other-add-on-to-your-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By linking an application to an add-on, the application has the add-on environment variables in its own environment by default.&lt;/p&gt;
+&lt;h3&gt;On add-on creation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;on-add-on-creation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#on-add-on-creation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Many add-ons do exist on Clever Cloud: refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons&#34; &gt;the full list&lt;/a&gt; and check add-ons dedicated pages for full instructions.&lt;/p&gt;
+&lt;p&gt;During add-on creation, an &lt;strong&gt;Applications&lt;/strong&gt; screen appears, with a list of your applications. You can toggle the button to &lt;em&gt;Link&lt;/em&gt; and click &lt;em&gt;next&lt;/em&gt;. If you finish the process of add-on creation, the application is automatically linked to it.&lt;/p&gt;
+&lt;h3&gt;Add-on already exists&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-on-already-exists&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-on-already-exists&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the Clever Cloud console, under the &lt;strong&gt;Service Dependencies&lt;/strong&gt; menu of your application, you can use the &lt;em&gt;Link add-ons&lt;/em&gt; dropdown menu to select the name of the add-on you want to link and use the &lt;em&gt;add&lt;/em&gt; button to finish the process.&lt;/p&gt;
+&lt;p&gt;You can also link another application from the same page in the Clever Cloud console, using the &lt;em&gt;Link applications&lt;/em&gt; dropdown menu.&lt;/p&gt;
+&lt;h2&gt;More configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/find-help/support&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Environment injection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-injection-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud injects environment variables from your application settings as mentioned in &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;setting up environment variables&lt;/a&gt; and is also injecting in your application production environment, those from your &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked add-ons&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Custom build configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-build-configurations-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#custom-build-configurations-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;On Clever Cloud you can define some build configuration: like the app folder to deploy or the path to validate your application deployment is ready
+To do that follow the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#variables-you-can-define&#34; &gt;documentation here&lt;/a&gt; and add the environement variable you need.&lt;/p&gt;
+&lt;h2&gt;Enable health check during deployment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;enable-health-check-during-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-health-check-during-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The healthcheck allows you to limit downtimes. Indeed, you can provide Clever Cloud with paths to check. If these paths return something other than 200, the deployment will fail.&lt;/p&gt;
+&lt;p&gt;Add one (or several) environment variable as such:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/other/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The deployment process checks all paths. All of them must reply with a &lt;code&gt;200 OK&lt;/code&gt; response code.&lt;/p&gt;
+&lt;p&gt;By default, when no &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variable&lt;/a&gt; (for ex: &lt;code&gt;APP_HOME&lt;/code&gt;) is defined, the monitoring checks your repository root path &lt;code&gt;/&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Example&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using the path listed above, below are the expected logs:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/awesome/path is 200
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/other/path is 500
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Health check failed:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- GET /my/other/path returned 500.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;If the deployment fails after this message, please update your configuration and redeploy.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;In this example, the first path is OK, but the second one failed. This gives you a hint on what failed in your application.&lt;/p&gt;
+&lt;h3&gt;Best practice for healthcheck endpoints&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;best-practice-for-healthcheck-endpoints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#best-practice-for-healthcheck-endpoints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make the most of a healthcheck endpoint, have it check your critical dependencies. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;execute &lt;code&gt;SELECT 1 + 1;&lt;/code&gt; on your database&lt;/li&gt;
+&lt;li&gt;retrieve a specific Cellar file&lt;/li&gt;
+&lt;li&gt;ping a specific IP through a VPN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Deployment video&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deployment-video&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deployment-video&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/dxhSjHnrrhA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

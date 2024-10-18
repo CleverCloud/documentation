@@ -1,0 +1,58 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Logs</title>
+    <link>https://lafillepassympa.com/developers/tags/logs/</link>
+    <description>Recent content in Logs on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jul 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/logs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Console: new logs interface is now used by default</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</guid>
+      <description>
+        
+        
+        &lt;p&gt;New logs interface is available in the Console in public beta &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/&#34; &gt;for some months&lt;/a&gt;, and we already &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/&#34; &gt;enhanced it&lt;/a&gt;. We&amp;rsquo;re now confident enough to use it by default. You can still disable it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Better new Logs</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We recently introduced a new Logs interface for applications in &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console&lt;/a&gt;, available on-demand in public beta. Since, we listened customers feedbacks and improved this feature. An updated version is now available, with two modes in the text filter field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exact match (case-sensitive)&lt;/li&gt;
+&lt;li&gt;Regular expression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can select one or the other using the buttons to the right of the text field. This is only a first step, as we&amp;rsquo;ll later introduce a new stack with indexed logs to better handle such filters and provide new features.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/changelog/new-logs-update.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Some of you also asked for a change of the default behavior of this Logs interface. Until now, users were redirected to &lt;code&gt;Live&lt;/code&gt; view during a deployment, otherwise to the &lt;code&gt;7 days&lt;/code&gt; view, containing all available deployments/instances, with logs of the last deployment shown. We today introduce a new mechanism and now remember the last choice of a user, per application.&lt;/p&gt;
+&lt;p&gt;Depending on your feedback, we&amp;rsquo;ll improve this further in the coming weeks. Here again, this is a first step as the indexed logs will open up a wide range of possibilities in this area.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Share your comments and ideas on our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

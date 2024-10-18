@@ -1,0 +1,1252 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Php</title>
+    <link>https://lafillepassympa.com/developers/tags/php/</link>
+    <description>Recent content in Php on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Apr 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PHP: a warning message when a deprecated version is used</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</link>
+      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PHP ecosystem is evolving at a steady pace with a clear lifecycle: 1 version per year, 2 years of active support, plus 1 year of security support. PHP 8.2 is actively supported, while 8.1 is in its security support window. ALL previous releases are considered end-of-life (EOL) by PHP Team. PHP 5.x branch is EOL since 2019, 7.x branch since the end of 2022.&lt;/p&gt;
+&lt;p&gt;As we still see a lot of applications using deprecated versions, the new PHP image we&amp;rsquo;ll release next week will start to better inform our users about this. When PHP 8.0 or a previous release is used, a warning will be shown during deployment, asking to set &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; to &lt;code&gt;8&lt;/code&gt; (latest 8.x), &lt;code&gt;8.2&lt;/code&gt; currently on Clever Cloud. In the coming month, we&amp;rsquo;ll extend such informative warnings to other runtimes. We&amp;rsquo;ll also explore ways to show them in other interfaces and send emails about it.&lt;/p&gt;
+&lt;p&gt;There is no short term plan to cut access to supported versions such as PHP 5.6 or 7.x, but you do it at your own risks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://www.php.net/supported-versions.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP releases lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Latest PHP 8.x now used by default</title>
+      <link>https://lafillepassympa.com/developers/changelog/2023-12-18-php-8-default/</link>
+      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2023-12-18-php-8-default/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PHP 8.x is available for years on Clever Cloud, but is now deployed as the default version for new applications. Of course, you can set the one of your choice between those available through &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read our documentation &lt;a href=&#34;doc/applications/php/#choose-your-php-version&#34; &gt;about PHP version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://lafillepassympa.com/developers/doc/applications/php/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/applications/php/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
+into HTML.&lt;/p&gt;
+&lt;p&gt;The HTTP server is &lt;a href=&#34;https://httpd.apache.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache 2&lt;/a&gt;, and the PHP code is executed by &lt;a href=&#34;https://php-fpm.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP-FPM&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Create an application on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-an-application-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-application-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the web console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-web-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-web-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;Quickstart&lt;/a&gt; for more details on application creation via the console.&lt;/p&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally or follow our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt; guide.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever create --type &amp;lt;type&amp;gt; &amp;lt;app-name&amp;gt; --region &amp;lt;zone&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where :
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; is the type of technology you rely on&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app-name&lt;/code&gt; the name you want for your application,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zone&lt;/code&gt; deployment zone (&lt;code&gt;par&lt;/code&gt; for Paris and &lt;code&gt;mtl&lt;/code&gt; for Montreal)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/create&#34; &gt;clever create&lt;/a&gt; for more details on application creation with Clever Tools.&lt;/p&gt;
+&lt;h2&gt;Setting up environment variables on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-environment-variables-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;With the Clever Cloud console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-cloud-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-cloud-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to the Clever Cloud console, and find the app you want to fine tune under it&amp;rsquo;s organization.&lt;/li&gt;
+&lt;li&gt;Find the &lt;strong&gt;Environment variables&lt;/strong&gt; menu and select it.&lt;/li&gt;
+&lt;li&gt;In this menu, you will see a form with &lt;em&gt;VARIABLE_NAME&lt;/em&gt; and &lt;em&gt;variable value&lt;/em&gt; fields.&lt;/li&gt;
+&lt;li&gt;Fill them with the desired values then select &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget to &amp;ldquo;Update Changes&amp;rdquo; at the end of the menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;With the Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-tools-cli-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#with-the-clever-tools-cli-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started&#34; &gt;CLI getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In your code folder, do &lt;code&gt;clever env set &amp;lt;variable-name&amp;gt; &amp;lt;variable-value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variables reference&lt;/a&gt; for more details on available environment variables on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;You can of course create custom ones with the interface we just demonstrated, they will be available for your application.&lt;/p&gt;
+&lt;h2&gt;Configure your PHP application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-your-php-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-php-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Choose your PHP version&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;choose-your-php-version&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#choose-your-php-version&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Set the &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; environment variable to one of the following versions.&lt;/p&gt;
+
+
+
+
+    
+    
+    
+    
+    
+    
+      
+    
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          
+            &lt;th&gt;Default Version&lt;/th&gt;
+          
+          
+            &lt;th&gt;Accepted Versions&lt;/th&gt;
+          
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8.3&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;5.6&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;7&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;7.2&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;7.3&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;7.4&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8.0&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8.1&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8.2&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+        &lt;tr&gt;
+          
+            &lt;td&gt;
+              
+              
+            &lt;/td&gt;
+          
+          
+            &lt;td&gt;
+              
+                &lt;code&gt;8.3&lt;/code&gt;
+              
+            &lt;/td&gt;
+          
+        &lt;/tr&gt;
+        
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+
+&lt;p&gt;All new PHP applications are created with a default &lt;code&gt;CC_PHP_VERSION&lt;/code&gt;. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (&lt;code&gt;X&lt;/code&gt; or &lt;code&gt;X.Y&lt;/code&gt;, not &lt;code&gt;X.Y.Z&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;The configuration file for your PHP application must be &lt;code&gt;/clevercloud/php.json&lt;/code&gt;, that is a &lt;em&gt;php.json&lt;/em&gt; file in a &lt;code&gt;/clevercloud&lt;/code&gt; folder at the root of your application.&lt;/p&gt;
+&lt;h3&gt;Change the webroot&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;change-the-webroot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#change-the-webroot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may
+want to set another webroot than the default one (&lt;em&gt;the root of your application&lt;/em&gt;).&lt;/p&gt;
+&lt;h4&gt;Using an environment variable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-an-environment-variable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-an-environment-variable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Add a new environment variable called &lt;code&gt;CC_WEBROOT&lt;/code&gt; and set &lt;code&gt;/public&lt;/code&gt; as its value.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever env &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; CC_WEBROOT /public&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h4&gt;Using a configuration file&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-a-configuration-file&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-a-configuration-file&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;To change the webroot, just set the key &lt;code&gt;webroot&lt;/code&gt; in the &lt;code&gt;deploy&lt;/code&gt; part
+of the configuration file &lt;em&gt;clevercloud/php.json&lt;/em&gt; with the absolute path (&lt;em&gt;from the root of your application&lt;/em&gt;) of your new public folder.&lt;/p&gt;
+&lt;p&gt;In the following example we want to set the webroot to the folder &lt;code&gt;/public&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;deploy&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;webroot&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/public&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Note the absolute path style: &lt;code&gt;/public&lt;/code&gt;. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Change PHP settings&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;change-php-settings&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#change-php-settings&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;PHP settings&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;php-settings&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#php-settings&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Most PHP settings can be changed using a &lt;code&gt;.user.ini&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;If you want the settings to be applied to the whole application, you should put this file in your &lt;code&gt;webroot&lt;/code&gt;. If you did not change it (see above), then your &lt;code&gt;webroot&lt;/code&gt; is the root of the repository.&lt;/p&gt;
+&lt;p&gt;If you put the &lt;code&gt;.user.ini&lt;/code&gt; file in a subdirectory; settings will be applied recursively starting from this subdirectory.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code&gt;.user.ini&lt;/code&gt; files are not loaded by the PHP CLI by default.&lt;/p&gt;
+&lt;p&gt;To do so, you can use a tiny trick:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add the &lt;code&gt;PHP_INI_SCAN_DIR=:/home/bas&lt;/code&gt; environment variable in your application.
+This way the PHP CLI will try to find a &lt;code&gt;.ini&lt;/code&gt; file in &lt;code&gt;/home/bas&lt;/code&gt; after loading all other configuration files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the following script in a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/build-hooks/&#34; &gt;deployment hook&lt;/a&gt; (e.g. in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/build-hooks/#pre-run-cc_pre_run_hook&#34; &gt;pre-run hook&lt;/a&gt;):&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash -l
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt; -f &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;APP_HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CC_WEBROOT&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.user.ini &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  cp &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;APP_HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CC_WEBROOT&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.user.ini &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/user.ini&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5&gt;Timezone configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;timezone-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#timezone-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.&lt;/p&gt;
+&lt;p&gt;Additionally, you can set PHP&amp;rsquo;s time zone setting with &lt;code&gt;.user.ini&lt;/code&gt;. For instance, to use the french time zone, edit &lt;code&gt;.user.ini&lt;/code&gt; to add this line:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;date.timezone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Europe/Paris&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h5&gt;Header injection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;header-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#header-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Usually, you can use an &lt;code&gt;.htaccess&lt;/code&gt; file to create / update / delete headers.
+You won&amp;rsquo;t be able to do it from the &lt;code&gt;.htaccess&lt;/code&gt; file if the headers come from a &lt;code&gt;.php&lt;/code&gt; file, because &lt;code&gt;php-fpm&lt;/code&gt; ignores the &lt;code&gt;mod_headers&lt;/code&gt; plugin.
+It works fine for static files directly served by apache.&lt;/p&gt;
+&lt;p&gt;So if you need to inject headers on HTTP responses (for instance for &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CORS&lt;/a&gt;),
+you have to do it from PHP (you can&amp;rsquo;t do it from &lt;code&gt;.htaccess&lt;/code&gt;).&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Access-Control-Allow-Origin: *&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;If you want to keep this separate from your application, you can configure the application to execute some code on every request.&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;.user.ini&lt;/code&gt;, add the following line (you need to create &lt;code&gt;inject_headers.php&lt;/code&gt; first):&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;auto_prepend_file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;./inject_headers.php&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Please refer to the &lt;a href=&#34;https://www.php.net/manual/en/configuration.file.per-user.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official documentation&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You can review the &lt;a href=&#34;https://www.php.net/manual/en/ini.list.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;available directives&lt;/a&gt;; all the &lt;code&gt;PHP_INI_USER&lt;/code&gt;, &lt;code&gt;PHP_INI_PERDIR&lt;/code&gt;, and &lt;code&gt;PHP_INI_ALL&lt;/code&gt; directives can be set from within &lt;code&gt;.user.ini&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;clevercloud/php.json&lt;/code&gt; settings&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;clevercloudphpjson-settings&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#clevercloudphpjson-settings&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Other settings than the one mentioned above can be changed by adding the following line in &lt;code&gt;clevercloud/php.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;configuration&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;my.setting&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Here is the list of available settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mbstring.func_overload&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pm.max_children&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You can send a request to the support if you need to change a setting which cannot be changed via a &lt;code&gt;.user.ini&lt;/code&gt; file and is not in this list.&lt;/p&gt;
+&lt;h5&gt;Memory Limit&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;memory-limit&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#memory-limit&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;When php-fpm spawns a worker it allocates a smaller part of the application&amp;rsquo;s memory to the worker, here is the allocated memory for each flavor:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Flavor&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Memory Limit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pico&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;64M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Nano&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;64M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;XS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;128M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;S&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;256M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;M&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;384M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;L&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;512M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;XL&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;768M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2XL&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1024M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3XL&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1536M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4XL+&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2048M&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;To change this limit you can define &lt;code&gt;MEMORY_LIMIT&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#php&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you define a limit exceeding the application memory it will use the default one.&lt;/p&gt;
+&lt;h5&gt;&lt;code&gt;pm.max_children&lt;/code&gt;: Maximum PHP Children per instance&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;pmmax_children-maximum-php-children-per-instance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pmmax_children-maximum-php-children-per-instance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;You can fix the maximum number of PHP running processes per instance by setting &lt;code&gt;pm.max_children&lt;/code&gt; (see above).&lt;/p&gt;
+&lt;p&gt;This setting is useful if you need to limit the number of running processes according to the maximum connections limit of your MySQL or PostgreSQL database.&lt;/p&gt;
+&lt;p&gt;By default, &lt;code&gt;pm.max_children&lt;/code&gt; is set to &lt;strong&gt;10&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Configure Apache&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-apache&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-apache&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We use Apache 2 as HTTP Server. In order to configure it, you can create a &lt;code&gt;.htaccess&lt;/code&gt; file and set directives inside this file.&lt;/p&gt;
+&lt;h3&gt;htaccess&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;htaccess&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#htaccess&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.htaccess&lt;/code&gt; file can be created everywhere in you app, depending of the part of the application covered by directives.&lt;/p&gt;
+&lt;p&gt;However, directives who applies to the entire application must be declared in a &lt;code&gt;.htaccess&lt;/code&gt; file to the application root.&lt;/p&gt;
+&lt;h3&gt;htpasswd&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;htpasswd&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#htpasswd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can configure basic authentication using &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#php&#34; &gt;environment variables&lt;/a&gt;. You will need to set &lt;code&gt;CC_HTTP_BASIC_AUTH&lt;/code&gt; variable to your own &lt;code&gt;login:password&lt;/code&gt; pair. If you need to allow access to multiple users, you can create additional environment &lt;code&gt;CC_HTTP_BASIC_AUTH_n&lt;/code&gt; (where &lt;code&gt;n&lt;/code&gt; is a number) variables.&lt;/p&gt;
+&lt;h3&gt;Define a custom HTTP timeout&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;define-a-custom-http-timeout&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#define-a-custom-http-timeout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can define the timeout of an HTTP request in Apache using the &lt;code&gt;HTTP_TIMEOUT&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;By default, the HTTP timeout is set to 3 minutes (180 seconds)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Force HTTPS traffic&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;force-https-traffic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#force-https-traffic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Load balancers handle HTTPS traffic ahead of your application. You can use the &lt;code&gt;X-Forwarded-Proto&lt;/code&gt; header to know the original protocol (&lt;code&gt;http&lt;/code&gt; or &lt;code&gt;https&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Place the following snippet in a &lt;code&gt;.htaccess&lt;/code&gt; file to ensure that your visitors only access your application through HTTPS.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;prevent-apache-to-redirect-https-calls-to-http-when-adding-a-trailing-slash&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#prevent-apache-to-redirect-https-calls-to-http-when-adding-a-trailing-slash&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;DirectorySlash&lt;/code&gt; is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.&lt;/p&gt;
+&lt;p&gt;E.g. if foobar is a directory, Apache will automatically redirect &lt;a href=&#34;http://example.com/foobar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://example.com/foobar&lt;/a&gt; to &lt;a href=&#34;http://example.com/foobar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://example.com/foobar/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.&lt;/p&gt;
+&lt;p&gt;In order to prevent this behavior, you can add the following statements in a &lt;code&gt;.htaccess&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;DirectorySlash Off
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.&amp;#43;[^/])$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/ [R=301,L,QSA]&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;These statements will keep the former protocol of the request when issuing the redirect. Assuming that the header &lt;code&gt;X-Forwarded-Proto&lt;/code&gt; is always filled (which is the case on our platform).&lt;/p&gt;
+&lt;p&gt;If you want to force all redirects to HTTPS, you can replace &lt;code&gt;%{HTTP:X-Forwarded-Proto}&lt;/code&gt; with &lt;code&gt;https&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Change the FastCGI module&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;change-the-fastcgi-module&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#change-the-fastcgi-module&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can choose between two FastCGI modules, &lt;code&gt;fastcgi&lt;/code&gt; and &lt;code&gt;proxy_fcgi&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To choose between these two modules you must use the &lt;code&gt;CC_CGI_IMPLEMENTATION&lt;/code&gt; environment variable with &lt;code&gt;fastcgi&lt;/code&gt; or &lt;code&gt;proxy_fcgi&lt;/code&gt; as a value.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      We recommend preferring &lt;code&gt;proxy_fcgi&lt;/code&gt; over &lt;code&gt;fastcgi&lt;/code&gt;. The &lt;code&gt;fastcgi&lt;/code&gt; implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If you have issues with downloading content, it could be related to the &lt;code&gt;fastcgi&lt;/code&gt; module not working correctly in combination with the &lt;code&gt;deflate&lt;/code&gt; module, as the &lt;code&gt;Content-Length&lt;/code&gt; header is not updated to the new size of the encoded content.&lt;/p&gt;
+&lt;p&gt;To resolve this issue, we advise you to switch the value of &lt;code&gt;CC_CGI_IMPLEMENTATION&lt;/code&gt; from default to &lt;code&gt;proxy_fcgi&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Environment injection&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-injection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-injection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As mentioned above, Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.&lt;/p&gt;
+&lt;p&gt;To access the variables, use the &lt;code&gt;getenv&lt;/code&gt; function. So, for example, if
+your application has a postgresql add-on linked:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$host&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;POSTGRESQL_ADDON_HOST&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$database&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;POSTGRESQL_ADDON_DB&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$username&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;POSTGRESQL_ADDON_USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$password&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;POSTGRESQL_ADDON_PASSWORD&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$pg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;PDO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;postgresql:host=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$host&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;;dbname=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$database&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$username&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$password&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Environment variables are displayed in the default output of &lt;code&gt;phpinfo()&lt;/code&gt;. If you want to use &lt;code&gt;phpinfo()&lt;/code&gt; without exposing environment variables, you have to call it this way: &lt;code&gt;phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)&lt;/code&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Composer&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;composer&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#composer&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We support Composer build out of the box. You just need to provide a &lt;code&gt;composer.json&lt;/code&gt; file in the root of your repository and we will run &lt;code&gt;composer.phar install --no-ansi --no-progress --no-interaction --no-dev&lt;/code&gt; for you.&lt;/p&gt;
+&lt;p&gt;You can also set the &lt;code&gt;CC_COMPOSER_VERSION&lt;/code&gt; to &lt;code&gt;1&lt;/code&gt; or &lt;code&gt;2&lt;/code&gt; to select the composer version to use.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      If you encounter any issues, add your own &lt;code&gt;composer.phar&lt;/code&gt; file in the root of your repository which will override the version we use.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You can perform your own &lt;code&gt;composer.phar install&lt;/code&gt; by using the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/build-hooks/#post-build-cc_post_build_hook&#34; &gt;Post Build hook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Example of a &lt;code&gt;composer.json&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;require&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;laravel/framework&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;4.1.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;ruflin/Elastica&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dev-master&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;shift31/laravel-elasticsearch&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dev-master&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;natxet/CssMin&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dev-master&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;repositories&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;vcs&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://GitHub.com/timothylhuillier/laravel-elasticsearch.git&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;autoload&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;classmap&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s2&#34;&gt;&amp;#34;app/controllers&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s2&#34;&gt;&amp;#34;app/models&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s2&#34;&gt;&amp;#34;app/database/migrations&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;s2&#34;&gt;&amp;#34;app/database/seeds&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;psr-0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;SomeApp&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;app&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;preferred-install&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dist&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;minimum-stability&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dev&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Example of a minimalist PHP application using composer and custom scripts: &lt;a href=&#34;https://GitHub.com/CleverCloud/php-composer-demo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;php-composer-demo&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Development Dependencies&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;development-dependencies&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#development-dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Development dependencies will not be automatically installed during the deployment. You can control their installation by using the &lt;code&gt;CC_PHP_DEV_DEPENDENCIES&lt;/code&gt; environment variable which takes &lt;code&gt;install&lt;/code&gt; value.&lt;/p&gt;
+&lt;p&gt;Any other value than &lt;code&gt;install&lt;/code&gt; will prevent development dependencies from being installed.&lt;/p&gt;
+&lt;h3&gt;GitHub rate limit&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;github-rate-limit&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#github-rate-limit&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Sometimes, you can encounter the following error when downloading dependencies:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Failed to download symfony/symfony from dist: Could not authenticate against GitHub.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;To prevent this download dependencies&amp;rsquo;s fails that is often caused by rate limit of GitHub API while deploying your apps,
+we recommend you to add &lt;code&gt;oauth&lt;/code&gt; token in your composer configuration file or in separate file named as described in
+&lt;a href=&#34;https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;composer FAQ (API rate limit and OAuth tokens)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find more documentation about composer configuration at &lt;a href=&#34;https://getcomposer.org/doc/04-schema.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;getcomposer.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Example&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You use Artisan to manage your project and you want to execute &lt;em&gt;artisan migrate&lt;/em&gt; before running your app.&lt;/p&gt;
+&lt;p&gt;To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_POST_BUILD_HOOK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;php artisan migrate --force&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You must add the &lt;em&gt;execute&lt;/em&gt; permission to your file (&lt;code&gt;chmod u+x yourfile&lt;/code&gt;) before pushing it.&lt;/p&gt;
+&lt;h2&gt;Frameworks and CMS&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;frameworks-and-cms&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#frameworks-and-cms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following is the list of tested CMS by our team.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s quite not exhaustive, so it does not mean that other CMS can&amp;rsquo;t work on the Clever Cloud platform.&lt;/p&gt;
+&lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/guides/tutorial-drupal&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;-3 -2 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M13.134 3.711c-1.022-.635-1.989-.884-2.953-1.52C9.583 1.788 8.754.827 8.058 0c-.134 1.327-.54 1.866-1.003 2.251c-.982.768-1.6.998-2.45 1.46c-.714.366-4.592 2.673-4.592 7.634S4.201 19.96 8.85 19.96c4.65 0 8.683-3.365 8.683-8.46c0-5.096-3.782-7.403-4.4-7.788zm.078 14.308c-.097.096-.984.711-2.026.808c-1.042.096-2.45.153-3.299-.616c-.135-.135-.097-.326 0-.402c.096-.079.173-.136.29-.136c.116 0 .095 0 .154.038c.386.308.964.557 2.198.557c1.236 0 2.105-.344 2.49-.634c.174-.134.25-.019.27.058c.02.077.058.193-.077.327zm-3.344-1.618c.213-.193.56-.501.89-.635c.327-.135.499-.116.809-.116c.308 0 .637.02.868.174c.231.154.367.5.442.69c.078.194 0 .309-.153.386c-.134.076-.154.038-.289-.211c-.134-.25-.25-.5-.926-.5c-.675 0-.887.23-1.215.5c-.328.269-.444.365-.56.211c-.116-.153-.077-.308.134-.5zm6.964-3.666c0 .596-.192 1.672-.656 2.345c-.462.674-.75.925-1.293.886c-.695-.059-2.084-2.212-2.971-2.252c-1.118-.037-3.55 2.33-5.46 2.33c-1.159 0-1.505-.174-1.89-.425c-.58-.404-.87-1.019-.85-1.865c.02-1.5 1.427-2.903 3.203-2.922c2.256-.02 3.821 2.229 4.958 2.21c.965-.017 2.818-1.903 3.725-1.903c.964 0 1.234.998 1.234 1.596z&#34;/&gt;&lt;/svg&gt;Drupal&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy a Drupal-based website on Clever Cloud&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/guides/tutorial-laravel&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M21.7 6.53c.01.02.01.05.01.08v4.29c0 .1-.06.22-.15.27l-3.61 2.08v4.11c0 .11-.05.21-.15.27l-7.52 4.33c-.02.01-.04.04-.06.04H10s0-.03-.04-.04l-7.52-4.33a.315.315 0 0 1-.15-.27V4.5c0-.05 0-.08.01-.1c0-.01.01-.02.01-.03c0-.02.01-.03.02-.05c0-.01.01-.02.02-.03l.03-.03l.03-.03c.01-.01.02-.02.03-.02L6.2 2.04c.1-.04.22-.04.3 0l3.78 2.17c.01.01.02.01.03.02l.03.03l.03.03c.01.01.02.02.02.03c.01.02.02.03.02.05c0 .01.01.02.01.03c.01.03.01.05.01.1v8l3.14-1.78V6.61c0-.03 0-.06.01-.08l.01-.03s.01-.03.02-.05c0-.01.01-.02.02-.03l.03-.03l.03-.03c.01-.01.02-.02.03-.02l3.78-2.17c.08-.06.2-.06.3 0l3.76 2.17c.01 0 .02.01.03.02l.03.03l.03.03c.01.01.01.02.02.03c.01.02.01.05.02.05s.01 0 .01.03m-.61 4.19V7.15l-3.14 1.8v3.55l3.14-1.78m-3.76 6.46V13.6l-6.9 3.94v3.61l6.9-3.97M2.91 5v12.18l6.9 3.97v-3.61l-3.6-2.04H6.2c-.01 0-.02 0-.03-.03c-.01 0-.02-.01-.03-.02l-.03-.03c-.01-.01-.01-.02-.02-.03c-.01-.02-.01-.03-.02-.04c0-.02-.01-.03-.01-.04c-.01-.01-.01-.03-.01-.04V6.82L2.91 5m3.45-2.32L3.23 4.5l3.13 1.78L9.5 4.5L6.36 2.68m3.45 10.2V5L6.67 6.82v7.87l3.14-1.81m7.83-8.08L14.5 6.61l3.14 1.8l3.13-1.8l-3.13-1.81m-.31 4.15l-3.14-1.8v3.57l3.14 1.78V8.95M10.12 17L17 13.06l-3.12-1.8L7 15.23L10.12 17Z&#34;/&gt;&lt;/svg&gt;Laravel&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy a Laravel app on Clever Cloud&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/guides/tutorial-symfony&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.37 3.7c1.02-.03 1.78.43 1.84 1.14c.01.31-.17.91-.79.93c-.47.02-.79-.27-.8-.68c-.01-.16.26-.67.26-.76c-.01-.27-.41-.28-.52-.27c-1.5.05-1.9 2.07-2.22 3.72l-.14.87c.84.13 1.46-.03 1.8-.25c.48-.31-.14-.63-.06-.99c.08-.37.41-.54.67-.55c.37-.01.63.37.62.76c-.03.64-.86 1.52-2.53 1.48c-.22 0-.41-.02-.59-.04c-.61 3.1-.99 4.94-2.35 6.52c-1.17 1.39-2.36 1.6-2.89 1.62c-1 .04-1.67-.49-1.67-1.2c-.03-.68.57-1.06.97-1.07c.53-.02.9.37.91.81c.02.37-.18.49-.31.56c-.07.07-.22.15-.21.3c0 .07.07.22.29.21c.42-.01.69-.22.89-.36c.96-.8 1.34-2.21 1.83-4.77c.26-1.45.45-2.38.73-3.3c-.68-.51-1.1-1.15-2.01-1.38c-.63-.19-1.01-.04-1.28.3c-.31.41-.21.93.09 1.24c1.15 1.28 1.49 1.84 1.36 2.6c-.2 1.21-1.64 2.13-3.34 1.61c-1.45-.45-1.72-1.47-1.55-2.04c.16-.49.55-.59.94-.47c.42.13.58.63.46 1.02c-.02.04-.22.41-.27.53c-.09.31.33.52.62.61c.65.2 1.28-.14 1.43-.67c.15-.48-.15-.82-.28-.95c-.89-.98-1.51-1.85-1.21-2.83c.12-.37.36-.77.72-1.04c.75-.55 1.57-.65 2.34-.41c1.01.27 1.49.94 2.12 1.45c.35-1.02.84-2.03 1.57-2.88c.66-.77 1.54-1.33 2.56-1.37Z&#34;/&gt;&lt;/svg&gt;Symfony&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy a Symfony application on Clever Cloud&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/guides/tutorial-wordpress&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2zM3.01 12c0-1.3.28-2.54.78-3.66l4.29 11.75c-3-1.46-5.07-4.53-5.07-8.09zM12 20.99c-.88 0-1.73-.13-2.54-.37l2.7-7.84l2.76 7.57c.02.04.04.09.06.12c-.93.34-1.93.52-2.98.52zm1.24-13.21c.54-.03 1.03-.09 1.03-.09c.48-.06.43-.77-.06-.74c0 0-1.46.11-2.4.11c-.88 0-2.37-.11-2.37-.11c-.48-.02-.54.72-.05.75c0 0 .46.06.94.09l1.4 3.84l-1.97 5.9l-3.27-9.75c.54-.02 1.03-.08 1.03-.08c.48-.06.43-.77-.06-.74c0 0-1.46.11-2.4.11c-.17 0-.37 0-.58-.01C6.1 4.62 8.86 3.01 12 3.01c2.34 0 4.47.89 6.07 2.36c-.04 0-.08-.01-.12-.01c-.88 0-1.51.77-1.51 1.6c0 .74.43 1.37.88 2.11c.34.6.74 1.37.74 2.48c0 .77-.3 1.66-.68 2.91l-.9 3l-3.24-9.68zm6.65-.09a8.988 8.988 0 0 1-3.37 12.08l2.75-7.94c.51-1.28.68-2.31.68-3.22c0-.33-.02-.64-.06-.92z&#34;/&gt;&lt;/svg&gt;WordPress&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy WordPress on Clever Cloud&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/guides/moodle&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M337.179 86.713C195.049 104.138 130.417 116.483 8 187.447l1.136 3.223l9.729.099c-.892 9.798-2.447 34.016-.461 70.433c-13.583 39.31-.345 66.015 12.087 95.065c1.97-30.216 1.768-63.31-7.512-96.246c-1.943-36.172-.347-59.956.53-69.207l81.152.775a371.222 371.222 0 0 0 2.403 47.57l.006.002c-1.134 6.657-1.703 13.71-1.703 21.161v164.964h79.367V269.517c-.013-8.703.945-16.233 2.858-22.611c20.455-3.355 39.75-10.883 56.958-22.184c13.423 6.674 20.14 21.6 20.14 44.795v155.77h79.353v-155.77c.058-32.575 13.514-48.857 40.373-48.847c26.858.01 40.287 16.291 40.287 48.847v155.77H504V260.322c-.01-33.995-11.815-59.715-35.412-77.164c-20.758-15.587-48.833-23.38-84.229-23.38c-38.714 0-65.392 9.202-80.03 27.61c-3.877-4.202-8.25-7.917-13.113-11.16c-10.753-12.04-31.792-28.45-31.792-28.45l78.763-57.555z&#34;/&gt;&lt;/svg&gt;Moodle&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Full Moodle installation and configuration guide&lt;/div&gt;&lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Others PHP frameworks tested on Clever Cloud:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prestashop&lt;/li&gt;
+&lt;li&gt;Dokuwiki&lt;/li&gt;
+&lt;li&gt;Joomla&lt;/li&gt;
+&lt;li&gt;SugarCRM&lt;/li&gt;
+&lt;li&gt;Drupal&lt;/li&gt;
+&lt;li&gt;Magento&lt;/li&gt;
+&lt;li&gt;Status.net&lt;/li&gt;
+&lt;li&gt;Symfony&lt;/li&gt;
+&lt;li&gt;Thelia&lt;/li&gt;
+&lt;li&gt;Laravel&lt;/li&gt;
+&lt;li&gt;Sylius&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Available extensions and modules&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;available-extensions-and-modules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#available-extensions-and-modules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can check enabled extensions and versions by viewing our &lt;code&gt;phpinfo()&lt;/code&gt; example for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://php56info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 5.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php72info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 7.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php73info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 7.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php74info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 7.4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php80info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 8.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php81info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 8.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php82info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 8.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://php83info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP 8.3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: some extensions need to be &lt;a href=&#34;#enable-specific-extensions&#34; &gt;enabled explicitly&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Clever Cloud PHP application enables the following PHP extensions by default: &lt;code&gt;amqp&lt;/code&gt;, &lt;code&gt;bcmath&lt;/code&gt;, &lt;code&gt;bz2&lt;/code&gt;, &lt;code&gt;ctype&lt;/code&gt;, &lt;code&gt;curl&lt;/code&gt;, &lt;code&gt;date&lt;/code&gt;, &lt;code&gt;dba&lt;/code&gt;, &lt;code&gt;dom&lt;/code&gt;, &lt;code&gt;exif&lt;/code&gt;, &lt;code&gt;fileinfo&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt;, &lt;code&gt;ftp&lt;/code&gt;, &lt;code&gt;gd&lt;/code&gt;, &lt;code&gt;gettext&lt;/code&gt;, &lt;code&gt;gmp&lt;/code&gt;, &lt;code&gt;gRPC&lt;/code&gt;, &lt;code&gt;hash&lt;/code&gt;, &lt;code&gt;icon&lt;/code&gt;, &lt;code&gt;imap&lt;/code&gt;, &lt;code&gt;imagick&lt;/code&gt;, &lt;code&gt;intl&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;ldap&lt;/code&gt;, &lt;code&gt;libsodium&lt;/code&gt;, &lt;code&gt;mbstring&lt;/code&gt;, &lt;code&gt;mcrypt&lt;/code&gt;, &lt;code&gt;memcached&lt;/code&gt;, &lt;code&gt;memcache&lt;/code&gt;, &lt;code&gt;mongodb&lt;/code&gt;, &lt;code&gt;mysqli&lt;/code&gt;, &lt;code&gt;mysqlnd&lt;/code&gt;, &lt;code&gt;odbc&lt;/code&gt;, &lt;code&gt;opcache&lt;/code&gt;, &lt;code&gt;openssl&lt;/code&gt;, &lt;code&gt;pnctl&lt;/code&gt;, &lt;code&gt;pcre&lt;/code&gt;, &lt;code&gt;PDO&lt;/code&gt;, &lt;code&gt;pgsql&lt;/code&gt;, &lt;code&gt;Phar&lt;/code&gt;, &lt;code&gt;posix&lt;/code&gt;, &lt;code&gt;protobuf&lt;/code&gt;, &lt;code&gt;Pspell&lt;/code&gt;, &lt;code&gt;random&lt;/code&gt;, &lt;code&gt;readline&lt;/code&gt;, &lt;code&gt;redis&lt;/code&gt;, &lt;code&gt;reflection&lt;/code&gt;, &lt;code&gt;session&lt;/code&gt;, &lt;code&gt;simplexml&lt;/code&gt;, &lt;code&gt;soap&lt;/code&gt;, &lt;code&gt;sockets&lt;/code&gt;, &lt;code&gt;solr&lt;/code&gt;, &lt;code&gt;SPL&lt;/code&gt;, &lt;code&gt;ssh2&lt;/code&gt;, &lt;code&gt;sqlite3&lt;/code&gt;, &lt;code&gt;tidy&lt;/code&gt;, &lt;code&gt;tokenizer&lt;/code&gt;, &lt;code&gt;xml&lt;/code&gt;, &lt;code&gt;xmlreader&lt;/code&gt;, &lt;code&gt;xmlwriter&lt;/code&gt;, &lt;code&gt;xsl&lt;/code&gt;, &lt;code&gt;zip&lt;/code&gt;, &lt;code&gt;zlib&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can add &lt;code&gt;DISABLE_&amp;lt;extension_name&amp;gt;: true&lt;/code&gt; in your &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; to disable them.&lt;/p&gt;
+&lt;p&gt;If you have a request about modules, feel free to contact our support at &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      On PHP 7, the memcache extension is not available; only &lt;strong&gt;memcached&lt;/strong&gt; is available.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Enable specific extensions&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;enable-specific-extensions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-specific-extensions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some extensions need to be enabled explicitly. To enable these extensions, you&amp;rsquo;ll need to set the corresponding &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;APCu: set &lt;code&gt;ENABLE_APCU&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Couchbase: set &lt;code&gt;ENABLE_COUCHBASE&lt;/code&gt; and &lt;code&gt;ENABLE_PCS&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Elastic APM Agent: set &lt;code&gt;ENABLE_ELASTIC_APM_AGENT&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; (default if &lt;code&gt;ELASTIC_APM_SERVER_URL&lt;/code&gt; is defined).&lt;/p&gt;
+&lt;p&gt;Elastic APM agent is Elastic&amp;rsquo;s APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
+in your application, sending performance metrics and errors to the Elastic APM server.
+&lt;strong&gt;Warning&lt;/strong&gt;: This extension is available starting PHP 7.2.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Event: set &lt;code&gt;ENABLE_EVENT&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Event is an extension to schedule I/O, time and signal based events.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GEOS: set &lt;code&gt;ENABLE_GEOS&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GnuPG: set &lt;code&gt;ENABLE_GNUPG&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IonCube: set &lt;code&gt;ENABLE_IONCUBE&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;IonCube is a tool to obfuscate PHP code. It&amp;rsquo;s often used by paying Prestashop and WordPress plugins.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mailparse: set &lt;code&gt;ENABLE_MAILPARSE&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Mailparse is an extension for parsing and working with email messages. It can deal with RFC 822 and RFC 2045 (MIME) compliant messages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mongo: set &lt;code&gt;ENABLE_MONGO&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;MongoDB is a NoSQL Database. This extension allows to use it from PHP.
+&lt;strong&gt;Warning&lt;/strong&gt;: this extension is now superseded by the &lt;code&gt;mongodb&lt;/code&gt; extension. We provide it for backward compatibility.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NewRelic: set &lt;code&gt;ENABLE_NEWRELIC&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Newrelic Agent for PHP. Newrelic is a software analytics tool.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;OAuth: set &lt;code&gt;ENABLE_OAUTH&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PCS: set &lt;code&gt;ENABLE_PCS&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;PCS provides a fast and easy way to mix C and PHP code in your PHP extension.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rdkafka: set &lt;code&gt;ENABLE_RDKAFKA&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sqreen: The Sqreen agent is started automatically after adding the environment variables (&lt;code&gt;SQREEN_API_APP_NAME&lt;/code&gt; and &lt;code&gt;SQREEN_API_TOKEN&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uopz: set &lt;code&gt;ENABLE_UOPZ&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.
+The uopz extension is focused on providing utilities to aid with unit testing PHP code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uploadprogress: set &lt;code&gt;ENABLE_UPLOADPROGRESS&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.
+The uploadprogress extension is used to track the progress of a file download.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XDebug: set &lt;code&gt;ENABLE_XDEBUG&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;XDebug is a debugger and profiler tool for PHP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Configure the session storage&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-the-session-storage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-the-session-storage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default, a FS Bucket is created for each PHP applications. It is used to store session files, so that session data is available on each instance.&lt;/p&gt;
+&lt;p&gt;This FS Bucket is also used to store TMP files by default.
+You can change this behaviour by setting the &lt;code&gt;TMPDIR&lt;/code&gt; environment variable.
+You can set it to &lt;code&gt;/tmp&lt;/code&gt; for example.&lt;/p&gt;
+&lt;h3&gt;Speed up or disable the session FS Bucket&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;speed-up-or-disable-the-session-fs-bucket&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#speed-up-or-disable-the-session-fs-bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can set the following environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_PHP_ASYNC_APP_BUCKET=async&lt;/code&gt; to mount the session FS Bucket with the &lt;code&gt;async&lt;/code&gt; option.
+It speeds up the FS Bucket usage, but it can corrupt files in case of a network outage.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_PHP_DISABLE_APP_BUCKET=(true|yes|disable)&lt;/code&gt; to entirely prevent the session FS Bucket
+from being mounted.
+Use this if you don&amp;rsquo;t use the default PHP session library.
+It will speed up your application but users might lose their session across instances
+and deployments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Use Redis to store PHP Sessions&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-redis-to-store-php-sessions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#use-redis-to-store-php-sessions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide the possibility to store the PHP sessions in a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/redis/&#34; &gt;Redis database&lt;/a&gt; to improve reliability.&lt;/p&gt;
+&lt;p&gt;If your application is under heavy load, redis persistence for sessions can improve latency.&lt;/p&gt;
+&lt;p&gt;To enable this feature, you need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;enable Redis support on the application (create an &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;ENABLE_REDIS&lt;/code&gt; with the value &lt;code&gt;true&lt;/code&gt;.)&lt;/li&gt;
+&lt;li&gt;create and link a Redis add-on&lt;/li&gt;
+&lt;li&gt;create an &lt;a href=&#34;#setting-up-environment-variables-on-clever-cloud&#34; &gt;environment variable&lt;/a&gt; named &lt;code&gt;SESSION_TYPE&lt;/code&gt; with the value &lt;code&gt;redis&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      You must have a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/redis/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis&lt;/a&gt; add-on &lt;a href=&#34;#linking-a-database-or-any-other-add-on-to-your-application&#34; &gt;linked with your application&lt;/a&gt; to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Sending emails&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;sending-emails&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sending-emails&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The PHP language has the &lt;code&gt;mail&lt;/code&gt; function to directly send emails. While we do not provide a SMTP server (needed to send the emails), you can configure one through environment variables.&lt;/p&gt;
+&lt;p&gt;We provide Mailpace addon to send emails through PHP &lt;code&gt;mail()&lt;/code&gt; function. You have to turn TLS on with port 465 (environment variable &lt;code&gt;CC_MTA_SERVER_USE_TLS=true&lt;/code&gt;) to make Mailpace working.&lt;/p&gt;
+&lt;p&gt;We also recommend you to use &lt;a href=&#34;https://www.mailgun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mailgun&lt;/a&gt; or &lt;a href=&#34;https://www.mailjet.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mailjet&lt;/a&gt; if your project supports it. These services already have everything you need to send emails from your code.&lt;/p&gt;
+&lt;h3&gt;Configure the SMTP server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-the-smtp-server&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-the-smtp-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Services like &lt;a href=&#34;https://www.mailgun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mailgun&lt;/a&gt; or &lt;a href=&#34;https://www.mailjet.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mailjet&lt;/a&gt; provide SMTP servers. If your application has no other way but to use the &lt;code&gt;mail&lt;/code&gt; function of PHP to send emails, you have to configure a SMTP server. This can be done through environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_SERVER_HOST&lt;/code&gt;: Host of the SMTP server.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_SERVER_PORT&lt;/code&gt;: Port of the SMTP server. Defaults to &lt;code&gt;465&lt;/code&gt; whether TLS is enabled or not.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_AUTH_USER&lt;/code&gt;: User to authenticate to the SMTP server.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_AUTH_PASSWORD&lt;/code&gt;: Password to authenticate to the SMTP server.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_SERVER_USE_TLS&lt;/code&gt;: Enable or disable TLS. Defaults to &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_SERVER_STARTTLS&lt;/code&gt;: Enable or disable STARTTLS. Defaults to &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_MTA_SERVER_AUTH_METHOD&lt;/code&gt;: Enable or disable authentication. Defaults to &lt;code&gt;on&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Configure Monolog&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-monolog&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-monolog&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A lot of frameworks (including Symfony) use Monolog to handle logging. The default configuration of Monolog doesn&amp;rsquo;t allow to log errors into the console.&lt;/p&gt;
+&lt;p&gt;Here is a basic configuration of Monolog to send your application&amp;rsquo;s logs into our logging system and access them into the Console:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;monolog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;handlers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;clever_logs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;error_log&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;warning&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You can change the level to whatever level you desire. For Symfony, the configuration file is &lt;code&gt;app/config/config_prod.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Laravel doesn&amp;rsquo;t need Monolog to retrieve logs via Clever console or Clever CLI. Here, ensure that you have the following line in &lt;code&gt;config/app.php&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;s1&#34;&gt;&amp;#39;log&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;APP_LOG&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Then, set &lt;code&gt;APP_LOG=syslog&lt;/code&gt; as Clever application environment variable.&lt;/p&gt;
+&lt;h2&gt;Using HTTP authentication&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-http-authentication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-http-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Using basic HTTP authentication, PHP usually handles the values of user and password in variables named &lt;code&gt;$_SERVER[&#39;PHP_AUTH_USER&#39;]&lt;/code&gt; and &lt;code&gt;$_SERVER[&#39;PHP_AUTH_PW&#39;]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;At Clever Cloud, we have enabled an Apache option to pass directly the Authorization header, even though we are using FastCGI; still, the header is not used by PHP, and the aforementioned variables are empty.&lt;/p&gt;
+&lt;p&gt;You can do this to fill them using the Authorization header:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;PHP_AUTH_USER&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;PHP_AUTH_PW&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;explode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;base64_decode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;substr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Authorization&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)));&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Monitor your application with New Relic&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;monitor-your-application-with-new-relic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-new-relic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.newrelic.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;New Relic&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/new-relic&#34; &gt;New Relic documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+&lt;h3&gt;Monitor your application with Blackfire&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;monitor-your-application-with-blackfire&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monitor-your-application-with-blackfire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use &lt;a href=&#34;https://www.blackfire.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blackfire&lt;/a&gt; to monitor your application on Clever Cloud.&lt;/p&gt;
+&lt;p&gt;Please refer to our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/blackfire&#34; &gt;Blackfire documentation&lt;/a&gt; to configure it for your application.&lt;/p&gt;
+&lt;h2&gt;Deploy on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deploy-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#deploy-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Application deployment on Clever Cloud is via &lt;strong&gt;Git or FTP&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Git Deployment on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-deployment-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-deployment-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: &lt;a href=&#34;https://git-scm.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git-scm.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Setting up your remotes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-your-remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-your-remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ldquo;Information&amp;rdquo; page of your app gives you your Git deployment URL, it looks like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git+ssh://git@push.clever-cloud.com/&amp;lt;your_app_id&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy it in your clipboard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Locally, under your code folder, type in &lt;code&gt;git init&lt;/code&gt; to set up a new git repository or skip this step if you already have one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the deploy URL with &lt;code&gt;git remote add &amp;lt;name&amp;gt; &amp;lt;your-git-deployment-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your files via &lt;code&gt;git add &amp;lt;files path&amp;gt;&lt;/code&gt; and commit them via &lt;code&gt;git commit -m &amp;lt;your commit message&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now push your application on Clever Cloud with &lt;code&gt;git push &amp;lt;name&amp;gt; master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart&#34; &gt;git deployments&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h2&gt;FTP Deployment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ftp-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ftp-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure you have &lt;a href=&#34;https://filezilla-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filezilla&lt;/a&gt; or an other FTP software installed in your machine.&lt;/p&gt;
+&lt;p&gt;When you chose to deploy your application via FTP at the application creation, the system creates a free &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/fs-bucket&#34; &gt;FS Bucket&lt;/a&gt; with an ID matching your application&amp;rsquo;s ID.&lt;/p&gt;
+&lt;p&gt;Find the FTP credentials in the configuration tab of this particular FS Bucket.&lt;/p&gt;
+&lt;p&gt;Just follow the instructions of your FTP Software to send code to Clever Cloud.&lt;/p&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;An FTP application automatically starts once you create the application, even if you don&amp;rsquo;t send any code yet.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refer to  &lt;a href=&#34;https://lafillepassympa.com/developers/doc/quickstart#ftp-deployment&#34; &gt;Quick Start - FTP deployment&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h2&gt;ProxySQL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ProxySQL is a tool that acts like a proxy between your application and your MySQL add-on. Instead of connecting to your MySQL add-on, you can connect
+to the local ProxySQL and it will forward all your requests to your MySQL add-on.&lt;/p&gt;
+&lt;p&gt;This allows you to let ProxySQL take care of some interesting features like connection pooling or leader / follower setup.&lt;/p&gt;
+&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;https://lafillepassympa.com/developers/guides/proxysql&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;More configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;more-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#more-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?&lt;/p&gt;
+&lt;p&gt;Go check the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration&#34; &gt;Common configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to have an advanced usage of your application, in which case we recommend you to read the &lt;strong&gt;Administrate&lt;/strong&gt; documentation section.&lt;/p&gt;
+&lt;p&gt;If you can&amp;rsquo;t find something or have a specific need like using a non supported version of a particular software, please reach out to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/find-help/support&#34; &gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Enable health check during deployment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;enable-health-check-during-deployment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enable-health-check-during-deployment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The healthcheck allows you to limit downtimes. Indeed, you can provide Clever Cloud with paths to check. If these paths return something other than 200, the deployment will fail.&lt;/p&gt;
+&lt;p&gt;Add one (or several) environment variable as such:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/awesome/path
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC_HEALTH_CHECK_PATH_1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/my/other/path&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The deployment process checks all paths. All of them must reply with a &lt;code&gt;200 OK&lt;/code&gt; response code.&lt;/p&gt;
+&lt;p&gt;By default, when no &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34; &gt;environment variable&lt;/a&gt; (for ex: &lt;code&gt;APP_HOME&lt;/code&gt;) is defined, the monitoring checks your repository root path &lt;code&gt;/&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Example&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using the path listed above, below are the expected logs:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/awesome/path is 200
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Response from GET /my/other/path is 500
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Health check failed:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- GET /my/other/path returned 500.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;If the deployment fails after this message, please update your configuration and redeploy.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;In this example, the first path is OK, but the second one failed. This gives you a hint on what failed in your application.&lt;/p&gt;
+&lt;h3&gt;Best practice for healthcheck endpoints&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;best-practice-for-healthcheck-endpoints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#best-practice-for-healthcheck-endpoints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make the most of a healthcheck endpoint, have it check your critical dependencies. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;execute &lt;code&gt;SELECT 1 + 1;&lt;/code&gt; on your database&lt;/li&gt;
+&lt;li&gt;retrieve a specific Cellar file&lt;/li&gt;
+&lt;li&gt;ping a specific IP through a VPN&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

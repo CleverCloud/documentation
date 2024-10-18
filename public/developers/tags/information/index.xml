@@ -1,0 +1,38 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Information</title>
+    <link>https://lafillepassympa.com/developers/tags/information/</link>
+    <description>Recent content in Information on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Apr 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/information/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PHP: a warning message when a deprecated version is used</title>
+      <link>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</link>
+      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;PHP ecosystem is evolving at a steady pace with a clear lifecycle: 1 version per year, 2 years of active support, plus 1 year of security support. PHP 8.2 is actively supported, while 8.1 is in its security support window. ALL previous releases are considered end-of-life (EOL) by PHP Team. PHP 5.x branch is EOL since 2019, 7.x branch since the end of 2022.&lt;/p&gt;
+&lt;p&gt;As we still see a lot of applications using deprecated versions, the new PHP image we&amp;rsquo;ll release next week will start to better inform our users about this. When PHP 8.0 or a previous release is used, a warning will be shown during deployment, asking to set &lt;code&gt;CC_PHP_VERSION&lt;/code&gt; to &lt;code&gt;8&lt;/code&gt; (latest 8.x), &lt;code&gt;8.2&lt;/code&gt; currently on Clever Cloud. In the coming month, we&amp;rsquo;ll extend such informative warnings to other runtimes. We&amp;rsquo;ll also explore ways to show them in other interfaces and send emails about it.&lt;/p&gt;
+&lt;p&gt;There is no short term plan to cut access to supported versions such as PHP 5.6 or 7.x, but you do it at your own risks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://www.php.net/supported-versions.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PHP releases lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

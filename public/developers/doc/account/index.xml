@@ -1,0 +1,672 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – User Account</title>
+    <link>https://lafillepassympa.com/developers/doc/account/</link>
+    <description>Recent content in User Account on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/doc/account/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Create an Account</title>
+      <link>https://lafillepassympa.com/developers/doc/account/create-account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/create-account/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The API of Clever Cloud uses OAuth 1 to perform authentication actions.
+There are two ways to signup to Clever Cloud: &lt;strong&gt;email&lt;/strong&gt; or &lt;strong&gt;GitHub login&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Email&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;email&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#email&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This kind of auth requires a valid and non-temporary disposable e-mail, and a password having at least 6 characters.&lt;/p&gt;
+&lt;p&gt;Do not forget to validate your email by clicking the link you will receive.&lt;/p&gt;
+&lt;h2&gt;GitHub&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;github&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#github&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.&lt;/p&gt;
+&lt;p&gt;This process asks the following permissions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read your Public Key&lt;/li&gt;
+&lt;li&gt;Read User Repositories&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &amp;ldquo;repository permission&amp;rdquo; is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.&lt;/p&gt;
+&lt;p&gt;If you need to give access to Clever Cloud&amp;rsquo;s API to a specific GitHub organization, you
+can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;do it here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go to the &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud Console&lt;/a&gt; and select the method you prefer.&lt;/p&gt;
+&lt;h3&gt;🔐 Two Factor Authentication (2FA)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-two-factor-authentication-2fa&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-two-factor-authentication-2fa&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud supports 2FA. You can enable it here: &lt;a href=&#34;https://console.clever-cloud.com/users/me/authentication&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://console.clever-cloud.com/users/me/authentication&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please, backup your recovery codes, we won&amp;rsquo;t be able to restore access to your account if you lose access to your regular codes.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Manage your account</title>
+      <link>https://lafillepassympa.com/developers/doc/account/manage-account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/manage-account/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In the Clever Cloud Web Console, select &lt;strong&gt;Profile&lt;/strong&gt; in the bottom left menu.&lt;/p&gt;
+&lt;p&gt;You see several menu entries.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Information&lt;/strong&gt;: on that page you can edit your name, address, phone number, profile picture, manage the link between your Clever Cloud and GitHub account and select the language of your Clever Cloud web console.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Emails&lt;/strong&gt;: manage your linked email addresses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: Change your password, enable or turn off Two Factor Authentication.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SSH keys&lt;/strong&gt;: add or remove your SSH keys, manage your GitHub SSH keys if you have linked your GitHub account.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Oauth tokens&lt;/strong&gt;: See and revoke your access tokens&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Delete my account&lt;/strong&gt;: Delete your Clever Cloud account&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Manage an Organization</title>
+      <link>https://lafillepassympa.com/developers/doc/account/administrate-organization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/administrate-organization/</guid>
+      <description>
+        
+        
+        &lt;p&gt;After you create an account, your account is tied to a first organization named as &amp;lsquo;Personal Space&amp;rsquo;. You can use the Personal Space for individual projects or personal use, but only you as a user can access it.&lt;/p&gt;
+&lt;p&gt;To collaborate with others, manage team access, or handle separate billing for a group, you need to create an organization.&lt;/p&gt;
+&lt;h2&gt;Create an organization&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-an-organization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In the Clever Cloud Web Console, select &lt;strong&gt;Add an organization&lt;/strong&gt; in the left menu.&lt;/p&gt;
+&lt;p&gt;Give it a name, description, specify if it&amp;rsquo;s a company and add billing information.&lt;/p&gt;
+&lt;h2&gt;Administrate an organization&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;administrate-an-organization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#administrate-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By clicking on you application name, a new left menu open.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Overview&lt;/strong&gt;: Simple metrics about your applications within this organization&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Information&lt;/strong&gt;: See and edit organization&amp;rsquo;s name, description, billing address and image. That also is where you can delete your organization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Members&lt;/strong&gt;: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shared software&lt;/strong&gt;: It&amp;rsquo;s a section displaying third party software, like &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/heptapod/&#34; &gt;Heptapod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Invoices&lt;/strong&gt;: See your recent invoices.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt;: Manage email notifications and web hooks for team members.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consumption&lt;/strong&gt;: See metrics about your organization&amp;rsquo;s consumptions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Delete an organization&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;delete-an-organization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#delete-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In the &lt;strong&gt;Information&lt;/strong&gt; page, click the &lt;em&gt;remove this organization&lt;/em&gt; button. You&amp;rsquo;re then prompted to enter the name of the organization to confirm the organization deletion.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Roles and Organizations</title>
+      <link>https://lafillepassympa.com/developers/doc/account/organizations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/organizations/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations. Each organization has its own billing, leaning that you can create as much as orgnanization you&amp;rsquo;d like. Most use-cases include the billing separation of private and business applications, several businesses or business units (within one company, for instance).&lt;/p&gt;
+&lt;p&gt;Once you create an organization, you can add collaborators and assign them &lt;a href=&#34;#roles-and-privileges&#34; &gt;roles&lt;/a&gt; which gives them rights.&lt;/p&gt;
+&lt;p&gt;Each organization have its own identifier looking like &lt;code&gt;orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Add an organization&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-an-organization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Organization names are unique. It means that you cannot use an already used organization name.&lt;/p&gt;
+&lt;p&gt;In order to add an organization, just click on &amp;ldquo;Add an organization&amp;rdquo; in the top left sidebar.&lt;/p&gt;
+&lt;h2&gt;Roles and privileges&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;roles-and-privileges&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#roles-and-privileges&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The table below describes rights assigned to roles:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Admin&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Manager&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Developer&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Accountant&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Add Member&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Remove Member&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Add Application&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Remove Application&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Add / Remove add-on&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Edit Organization&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Delete Organization&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Access Bills &amp;amp; Receive Invoices&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Access Repositories&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;✓&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Notifications</title>
+      <link>https://lafillepassympa.com/developers/doc/account/notifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/notifications/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The &lt;em&gt;Notifications&lt;/em&gt; service allows you to choose the events of interest to you
+and decide where to send corresponding notifications.&lt;/p&gt;
+&lt;h2&gt;E-mails&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;e-mails&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#e-mails&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Historically and by default, deployment result e-mails (deployment succeeded or
+failed) were always sent to the owners of an application, namely the user
+themselves or the organization&amp;rsquo;s members.&lt;/p&gt;
+&lt;p&gt;To disable the deployment result e-mails or restrict it to only some applications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go in &lt;strong&gt;Organization Manager&lt;/strong&gt; &amp;gt; &lt;strong&gt;Notifications&lt;/strong&gt; panel.&lt;/li&gt;
+&lt;li&gt;Delete the hook named &lt;em&gt;Default deployment result e-mails&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Add a new one.&lt;/li&gt;
+&lt;li&gt;Set it to your liking.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the future, this service will also handle credits warning notifications and
+others to come. You will be able to choose wether or not to receive an e-mail
+and/or for these events to be forwarded to a web service via a &lt;em&gt;webhook&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Webhooks&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;webhooks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#webhooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;From Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A webhook in web development is a method of augmenting or altering the
+behavior of a web page, or web application, with custom callbacks. These
+callbacks may be maintained, modified, and managed by third-party users and
+developers who may not necessarily be affiliated with the originating website
+or application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In practical terms, this means that you can choose to receive all deployment
+result events on an endpoint of your application without having to listen to
+all events via the Websocket API. No more lost events and having to reconnect
+to the websocket if and when it fails.&lt;/p&gt;
+&lt;p&gt;To create a webhook stay on the &lt;strong&gt;Notifications&lt;/strong&gt; panel:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on &lt;strong&gt;Webhooks&lt;/strong&gt; button at the top of the Notifications window.&lt;/li&gt;
+&lt;li&gt;Add a new one.&lt;/li&gt;
+&lt;li&gt;Choose the URL which will receive the data through a &lt;em&gt;POST&lt;/em&gt; request and the format it will be sent as.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As of now, you can choose between 3 formats: &lt;em&gt;raw&lt;/em&gt;, &lt;em&gt;slack&lt;/em&gt; and &lt;em&gt;flowdock&lt;/em&gt;. The &lt;em&gt;raw&lt;/em&gt; format is the Clever Cloud internal representation of events, it is identical to events sent by the Websocket API. &lt;em&gt;Slack&lt;/em&gt; and &lt;em&gt;Flowdock&lt;/em&gt; formats are to be used with the
+corresponding services: &lt;a href=&#34;https://slack.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slack&lt;/a&gt; and &lt;a href=&#34;https://www.flowdock.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Flowdock&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also choose which events you want and restrict notifications to a list
+of applications and addons.&lt;/p&gt;
+&lt;h3&gt;Example: Slack deployment results Webhook&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-slack-deployment-results-webhook&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-slack-deployment-results-webhook&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, you will have to create the &lt;em&gt;Incoming WebHooks&lt;/em&gt; integration on Slack:&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s go to the &lt;a href=&#34;https://slack.com/apps/manage/custom-integrations&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;custom integrations
+page&lt;/a&gt;, once there go to
+&lt;em&gt;Incoming WebHooks&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;You will find an &lt;em&gt;Add Configuration&lt;/em&gt; button on the left which will take you to
+the page where you need to configure the integration. You just need to select
+the channel where you want the notifications to be posted, then it will show
+you the Webhook URL, it starts with &lt;code&gt;https://hooks.slack.com/services/&lt;/code&gt;. Copy
+that URL.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s create the Webhook!&lt;/p&gt;
+&lt;p&gt;You should already have a tab opened on the Webhook creation page; if it&amp;rsquo;s not
+the case, follow the &lt;em&gt;Webhooks&lt;/em&gt; section above.&lt;/p&gt;
+&lt;p&gt;There, you just need to paste the URL you copied before in the Webhook URL
+field, then select &lt;em&gt;Result of deployments (success/fail)&lt;/em&gt; in the &lt;em&gt;Only send
+notification for these events&lt;/em&gt; menu.&lt;/p&gt;
+&lt;p&gt;You can now push your application or restart it and you will see
+the result of the deployment in your Slack channel.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>SSH Keys</title>
+      <link>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</guid>
+      <description>
+        
+        
+        &lt;p&gt;You need to add a SSH key to your Clever Cloud&amp;rsquo;s account to deploy via Git.
+SSH keys are used to establish a secure connection between your computer and Clever Cloud. A user can have multiple SSH keys.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
+associated with only one account. &lt;strong&gt;If a key is used by more than one account, a warning will be displayed in the console&lt;/strong&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;How to add your SSH key on Clever Cloud?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;how-to-add-your-ssh-key-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-add-your-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]&#34;&gt;
+&lt;h3&gt;Generate the key&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;generate-the-key&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#generate-the-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In your Terminal, enter the following bash line:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t ed25519 -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;your_email@youremail.com&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;This command creates a new SSH key using the provided email, so that the owner of the key can be identified.&lt;/p&gt;
+&lt;h3&gt;Save the key&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;save-the-key&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#save-the-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When prompted in which file you want to save the key, just press enter.&lt;br&gt;
+If it says that the file already exists, enter &lt;code&gt;n&lt;/code&gt; for &lt;code&gt;no&lt;/code&gt;.&lt;br&gt;
+Type &lt;code&gt;ls&lt;/code&gt;, verify the presence of the file and jump to &lt;a href=&#34;#add-a-public-ssh-key-on-clever-cloud&#34; &gt;Add your SSH key on Clever Cloud&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Enter a passphrase&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;enter-a-passphrase&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enter-a-passphrase&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When asked, enter a passphrase:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Generating public/private ed25519 key pair.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Enter file in which to save the key &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/your_home_path/.ssh/id_ed25519&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Now you should enter a passphrase.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Enter passphrase &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;empty &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; no passphrase&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Type a passphrase&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Enter same passphrase again: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Type passphrase again&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Which should give you something like this:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Your identification has been saved in /your_home_path/.ssh/id_ed25519.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Your public key has been saved in /your_home_path/.ssh/id_ed25519.pub.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The key fingerprint is:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;01:0e:e5:2d:ab:98:d6:17:a1:6d:f0:68:9f:d0:a2:db your_email@youremail.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Add a FIDO/U2F SSH key&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-a-fidou2f-ssh-key&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-a-fidou2f-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Since &lt;a href=&#34;https://www.openssh.com/txt/release-8.2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenSSH 8.2&lt;/a&gt;, generated keys can require a security device compatible with the FIDO/U2F standards (such as Nitrokeys, Solokeys or Yubikeys) to complete the authentication process. To generate such key, plug the device to your machine and enter this command:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t ed25519-sk -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;your_email@youremail.com&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Under macOS, you may need to install &lt;a href=&#34;https://brew.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Homebrew&lt;/a&gt;, an OpenSSH version including full FIDO/U2F support, and use &lt;a href=&#34;https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ECDSA&lt;/a&gt; key format:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install openssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t ecdsa-sk -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;your_email@youremail.com&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      You can use options related to security devices adding them with the &lt;code&gt;-O&lt;/code&gt; argument (for example &lt;code&gt;-O resident&lt;/code&gt;). They&amp;rsquo;re detailed &lt;a href=&#34;https://man.openbsd.org/ssh-keygen#FIDO_AUTHENTICATOR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Checking of existing SSH keys&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;checking-of-existing-ssh-keys&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#checking-of-existing-ssh-keys&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;GitHub account and SSH key on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;github-account-and-ssh-key-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#github-account-and-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your account is linked to GitHub, a panel with your GitHub SSH keys will appear in the &amp;ldquo;SSH Keys&amp;rdquo; tab.
+You can add any key already present in your GitHub account by clicking on the import button next to it.&lt;/p&gt;
+&lt;h3&gt;Finding SSH key locally&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;finding-ssh-key-locally&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#finding-ssh-key-locally&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You may already have an SSH key and so do not need to generate a new one. To check if you have one, follow these steps:&lt;/p&gt;
+&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
+  &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
+        class=&#34;hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white&#34;
+        role=&#34;tab&#34;
+        type=&#34;button&#34;
+        aria-controls=&#34;tabs-panel-0&#34; aria-selected=&#34;true&#34;  tabindex=&#34;0&#34;  data-state=&#34;selected&#34;&gt;Linux and macOS&lt;/button&gt;&lt;button
+        class=&#34;hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white&#34;
+        role=&#34;tab&#34;
+        type=&#34;button&#34;
+        aria-controls=&#34;tabs-panel-1&#34;&gt;Windows&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+
+&lt;div
+  class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
+  id=&#34;tabs-panel-0&#34;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;ol&gt;
+&lt;li&gt;Whether you use macOS or Linux, open your Terminal application.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;cd ~/.ssh/&lt;/code&gt; in your Terminal.&lt;/li&gt;
+&lt;li&gt;If the folder exists, run &lt;code&gt;ls&lt;/code&gt; and check if a pair of key exists : &lt;em&gt;id_ed25519&lt;/em&gt; and &lt;em&gt;id_ed25519.pub&lt;/em&gt;.
+Using &lt;em&gt;id_rsa&lt;/em&gt; and &lt;em&gt;id_rsa.pub&lt;/em&gt; is fine too. We are just advocating the use of &lt;em&gt;ed25519&lt;/em&gt;.&lt;br&gt;
+Smaller to copy and way stronger than 2048-bit RSA keys.&lt;br&gt;
+If you can find them, you do not need to generate a new one, simply go to the following
+&amp;ldquo;Add your key on Clever Cloud&amp;rdquo; part!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div
+  class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
+  id=&#34;tabs-panel-1&#34;
+  role=&#34;tabpanel&#34;&gt;&lt;ol&gt;
+&lt;li&gt;If you don&amp;rsquo;t have it, download &lt;a href=&#34;https://git-for-windows.GitHub.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git for Windows&lt;/a&gt; and install it.&lt;/li&gt;
+&lt;li&gt;Run &lt;strong&gt;Git Bash&lt;/strong&gt; (from the &lt;em&gt;Start Menu&lt;/em&gt; or from the &lt;em&gt;Explorer&lt;/em&gt; with the contextual menu (right click)).&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;cd ~/.ssh/&lt;/code&gt; in your Terminal.&lt;/li&gt;
+&lt;li&gt;If the folder exists, run &lt;code&gt;ls&lt;/code&gt; and check if a pair of key exists : &lt;em&gt;id_ed25519&lt;/em&gt; and &lt;em&gt;id_ed25519.pub&lt;/em&gt; or &lt;em&gt;id_rsa&lt;/em&gt; and &lt;em&gt;id_rsa.pub&lt;/em&gt;. We would recommend using &lt;em&gt;ed25519&lt;/em&gt; keys. Smaller to copy and way stronger than 2048-bit RSA keys. If you can find them, you do not need to generate a new one, simply go to the following &amp;ldquo;Add your key on Clever Cloud&amp;rdquo; part!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;h2&gt;Add a public SSH key on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-a-public-ssh-key-on-clever-cloud&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#add-a-public-ssh-key-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;From the Console&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;from-the-console&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#from-the-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To declare your &lt;strong&gt;public SSH Key&lt;/strong&gt; on Clever Cloud, in the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;&amp;rsquo;s left navigation bar, go in &amp;ldquo;Profile&amp;rdquo; and in the &amp;ldquo;SSH Keys&amp;rdquo; tab.&lt;/p&gt;
+&lt;p&gt;Add the key by entering a name and the public SSH key. The key is the entire contents of the &lt;strong&gt;id_[ed25519/rsa].pub&lt;/strong&gt; file including the &lt;code&gt;id_ed25519/ssh-rsa&lt;/code&gt; part and your email.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ⚠️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Your public SSH key must be associated with only one account.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If you see &amp;ldquo;&lt;em&gt;access denied&lt;/em&gt;&amp;rdquo; or &amp;ldquo;&lt;em&gt;password:&lt;/em&gt;&amp;rdquo; when you &lt;a href=&#34;https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;push on Clever Cloud&lt;/a&gt;, your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.&lt;/p&gt;
+&lt;h3&gt;Through CC API or Clever cURL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;through-cc-api-or-clever-curl&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#through-cc-api-or-clever-curl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can also add a &lt;strong&gt;public SSH key&lt;/strong&gt; from the command line with a simple cURL request to &lt;a href=&#34;../openapi&#34; &gt;our API&lt;/a&gt;. The simpler way to do that is to use our CLI, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;, and its &lt;code&gt;clever curl&lt;/code&gt; command once logged in:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clever curl -X PUT -H &lt;span class=&#34;s2&#34;&gt;&amp;#34;Content-Type: application/json&amp;#34;&lt;/span&gt; --data &lt;span class=&#34;s2&#34;&gt;&amp;#34;\&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;cat ~/.ssh/yourkey.pub&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;\&amp;#34;&amp;#34;&lt;/span&gt; https://api.clever-cloud.com/v2/self/keys/newkeyname&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;Use a private SSH key in an application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-a-private-ssh-key-in-an-application&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#use-a-private-ssh-key-in-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration/##private-ssh-key&#34; &gt;private SSH key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div class=&#34;filename&#34; dir=&#34;auto&#34;&gt;clevercloud/ssh.json&lt;/div&gt;&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;privateKeyFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;path/to/file&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.&lt;/p&gt;
+&lt;h2&gt;Check your SSH configuration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;check-your-ssh-configuration&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#check-your-ssh-configuration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To check if your SSH key is correctly configured, you can try to run:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh git@push.clever-cloud.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The first time, you may have to type &amp;ldquo;yes&amp;rdquo; to continue.&lt;/p&gt;
+&lt;p&gt;If you see:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git@push-par-clevercloud-customers.services.clever-cloud.com: Permission denied (publickey).
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fatal: Could not read from remote repository.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Please make sure you have the correct access rights
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;and the repository exists.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;This error can occur when your SSH agent has not be configured to use your SSH key.&lt;/p&gt;
+&lt;p&gt;Most of the time, it is due to the presence of multiple SSH keys generated by 3rd party software, like GitHub for macOS.
+To fix this you will need to configure your SSH agent.&lt;/p&gt;
+&lt;h2&gt;Configure your SSH agent&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-your-ssh-agent&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-your-ssh-agent&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can add those lines into your &lt;code&gt;~/.ssh/config&lt;/code&gt; file. It tells your SSH agent which key to pick for a given hostname. Update your Clever Cloud SSH key path accordingly.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div class=&#34;filename&#34; dir=&#34;auto&#34;&gt;~/.ssh/config&lt;/div&gt;&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Host push-*.services.clever-cloud.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  User git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  IdentityFile ~/.ssh/id_ed25519_clevercloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  IdentitiesOnly yes&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        ℹ️
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Need help about SSH keys?&lt;br&gt;
+Contact us at &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@clever-cloud.com&lt;/a&gt; or you can read more about SSH Keys &lt;a href=&#34;https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;on the official Git Documentation ↗&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Delete an account</title>
+      <link>https://lafillepassympa.com/developers/doc/account/delete-account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/doc/account/delete-account/</guid>
+      <description>
+        
+        
+        &lt;p&gt;To delete your account:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the Clever Cloud Web Console.&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;Profile&lt;/strong&gt; in the bottom left menu.&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;Delete my account&lt;/strong&gt; in the top menu of the freshly opened page.&lt;/li&gt;
+&lt;li&gt;Click the red &lt;strong&gt;Send me a confirmation email&lt;/strong&gt; button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You will get an email with a link you must click to confirm your account deletion.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,142 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clever Cloud Documentation – Extend</title>
+    <link>https://lafillepassympa.com/developers/tags/extend/</link>
+    <description>Recent content in Extend on Clever Cloud Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="https://lafillepassympa.com/developers/tags/extend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Clever Cloud API Overview</title>
+      <link>https://lafillepassympa.com/developers/api/howto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lafillepassympa.com/developers/api/howto/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The Clever Cloud console and clever-tools are built on top of an API that
+allows you to manage your account and products. This article will explain how
+to connect to this API and use it.&lt;/p&gt;
+&lt;h2&gt;HTTP calls&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;http-calls&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#http-calls&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;authentication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud API has an OAuth1 based authentication.&lt;/p&gt;
+&lt;p&gt;There are 3 supported methods for the signature: &lt;code&gt;PLAINTEXT&lt;/code&gt;, &lt;code&gt;HMAC-SHA1&lt;/code&gt; and &lt;code&gt;HMAC-SHA512&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;While &lt;code&gt;PLAINTEXT&lt;/code&gt; is way easier for testing, you &lt;strong&gt;should&lt;/strong&gt; use &lt;code&gt;HMAC-SHA512&lt;/code&gt; when it comes to production. This ensures that the request is totally verified.&lt;/p&gt;
+&lt;p&gt;We have a &lt;a href=&#34;https://gitHub.com/CleverCloud/clever-client.js&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JavaScript client on GitHub&lt;/a&gt; where you can find a lot of informations.
+Especially in the &lt;a href=&#34;https://gitHub.com/CleverCloud/clever-client.js/blob/master/esm/login.js&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esm/login.js file&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This client is being used by our web Console and CLI. Also, the Console gives you a lot of information in the &amp;ldquo;Network&amp;rdquo; panel of the devtools. If you&amp;rsquo;re stuck, this is one way for debugging.&lt;/p&gt;
+&lt;p&gt;For the Authorization header, make sure to have something like:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Authorization: OAuth &lt;span class=&#34;nv&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;key2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;value2&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;OAuth&lt;/code&gt; and doubles quotes around values are mandatory.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Create consumers tokens&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-consumers-tokens&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-consumers-tokens&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You need to create an OAuth consumer token in the Clever Cloud console.&lt;/p&gt;
+&lt;p&gt;A link &lt;strong&gt;Create an oauth consumer&lt;/strong&gt; is available under your organization&amp;rsquo;s addons list.&lt;/p&gt;
+&lt;p&gt;All created consumers will appear below that link, like your applications and addons.&lt;/p&gt;
+&lt;p&gt;These consumers allow you to register an application. By creating a consumer, users will be able to grant (or decline) privileges for your application.&lt;/p&gt;
+&lt;p&gt;For example, the Clever Cloud Console is using an oauth consumer.
+You (most of the time) give it full access to manage your account.&lt;/p&gt;
+&lt;p&gt;You need to set a callback URL, this is the url your user will be redirected to after he has been authenticated.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Get a request token&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-a-request-token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#get-a-request-token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You have to make a &lt;code&gt;POST&lt;/code&gt;request to get a &lt;a href=&#34;https://lafillepassympa.com/developers/api/v2/#post-/oauth/request_token&#34; &gt;request token&lt;/a&gt; to the API.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Get the authorization URL&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-the-authorization-url&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#get-the-authorization-url&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Ask the API for the &lt;a href=&#34;https://lafillepassympa.com/developers/api/v2/#get-/oauth/authorize&#34; &gt;authorization URL&lt;/a&gt; and go to this URL with a browser. Log in with your account and it will send you to the callback URL.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Get the verifier token&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-the-verifier-token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#get-the-verifier-token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In the callback URL, you have the verifier token:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://www.example.com/callback?oauth_verifier=&amp;lt;verifierToken&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;&amp;lt;verifierToken&amp;gt;&lt;/code&gt; is your token.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Get the access token&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-the-access-token&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#get-the-access-token&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Make a &lt;code&gt;POST&lt;/code&gt;  request to get the &lt;a href=&#34;https://lafillepassympa.com/developers/api/v2/#post-/oauth/access_token&#34; &gt;access token&lt;/a&gt; with your request token and the verifier.
+You can use this access token to make OAuth1 signed requests.&lt;/p&gt;
+&lt;p&gt;More information about &lt;a href=&#34;https://oauth.net/core/1.0/#anchor9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OAuth dance&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;This seems cumbersome, is there an easier way?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;this-seems-cumbersome-is-there-an-easier-way&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#this-seems-cumbersome-is-there-an-easier-way&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you.&lt;/p&gt;
+&lt;p&gt;The code and tutorial are on &lt;a href=&#34;https://github.com/CleverCloud/oauth-consumer-server&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/CleverCloud/oauth-consumer-server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;API endpoints documentation&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;api-endpoints-documentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#api-endpoints-documentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All the API endpoints are referenced in a swagger documentation. &lt;strong&gt;The base URL for the API is V2&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
+
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/api/v2&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 32 32&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M26 22a3.86 3.86 0 0 0-2 .57l-3.09-3.1a6 6 0 0 0 0-6.94L24 9.43a3.86 3.86 0 0 0 2 .57a4 4 0 1 0-4-4a3.86 3.86 0 0 0 .57 2l-3.1 3.09a6 6 0 0 0-6.94 0L9.43 8A3.86 3.86 0 0 0 10 6a4 4 0 1 0-4 4a3.86 3.86 0 0 0 2-.57l3.09 3.1a6 6 0 0 0 0 6.94L8 22.57A3.86 3.86 0 0 0 6 22a4 4 0 1 0 4 4a3.86 3.86 0 0 0-.57-2l3.1-3.09a6 6 0 0 0 6.94 0l3.1 3.09a3.86 3.86 0 0 0-.57 2a4 4 0 1 0 4-4m0-18a2 2 0 1 1-2 2a2 2 0 0 1 2-2M4 6a2 2 0 1 1 2 2a2 2 0 0 1-2-2m2 22a2 2 0 1 1 2-2a2 2 0 0 1-2 2m10-8a4 4 0 1 1 4-4a4 4 0 0 1-4 4m10 8a2 2 0 1 1 2-2a2 2 0 0 1-2 2&#34;/&gt;&lt;/svg&gt;Base v2 Endpoints&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Our base API endpoints with users, organisations, applications, add-ons, etc.&lt;/div&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/api/v4&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M5.5 19.5v-3h-3v-1h3v-3h1v3h3v1h-3v3zm6.77-1.5v-5.27h-3v-3H4V7.616q0-.666.475-1.14Q4.949 6 5.615 6h9q.542 0 1.017.263q.474.264.787.702L20 12l-3.58 5.073q-.333.439-.79.683q-.457.244-1.015.244z&#34;/&gt;&lt;/svg&gt;New v4 Endpoints&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;More recent API endpoints with billing, deployments, load balancers, logs, etc.&lt;/div&gt;&lt;/a&gt;
+  
+&lt;/div&gt;
+
+&lt;h2&gt;WebSocket API requests&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;websocket-api-requests&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#websocket-api-requests&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;Connection protocol&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;connection-protocol&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#connection-protocol&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Clever Cloud API can handle WebSocket-Security requests for the logs or events.
+To connect to a WebSocket API URL follow this guide.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Take a URL in the API for the WebSocket.
+&lt;ul&gt;
+&lt;li&gt;Ex: &lt;code&gt;https://api.clever-cloud.com/v2/events/event-socket&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Sign the OAuth request with this URL.&lt;/li&gt;
+&lt;li&gt;Replace &lt;code&gt;https://&lt;/code&gt; by &lt;code&gt;wss://&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wss://api.clever-cloud.com/v2/events/event-socket&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Connect to this URL in WebSocket.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When the WebSocket connection is opened, you need to send the OAuth1 header in this format :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;message_type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;oauth&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;authorization&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;oauth_header&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;You need to replace &lt;code&gt;&amp;lt;oauth_header&amp;gt;&lt;/code&gt; by the signed OAuth1 header.&lt;/p&gt;
+&lt;h3&gt;WebSocket endpoints&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;websocket-endpoints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#websocket-endpoints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Logs&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;logs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This endpoint&lt;/a&gt;
+allows you to receive real-time logs of an application via WebSocket.&lt;/p&gt;
+&lt;h4&gt;Events&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This endpoint&lt;/a&gt;
+allows you to receive a stream of events emitted on your account.&lt;/p&gt;
+&lt;p&gt;Events like git push, add or remove an application / addon, deployments success / failed
+are available.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

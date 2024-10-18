@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Go</title>
-    <link>https://lafillepassympa.com/developers/tags/go/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/go/</link>
     <description>Recent content in Go on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Go Client v0.0.8 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-15-go-sdk-v0.0.8/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-15-go-sdk-v0.0.8/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-15-go-sdk-v0.0.8/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-15-go-sdk-v0.0.8/</guid>
       <description>
         
         

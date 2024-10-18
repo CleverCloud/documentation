@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Update</title>
-    <link>https://lafillepassympa.com/developers/tags/update/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/update/</link>
     <description>Recent content in Update on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 01 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/update/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/update/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,16 +17,16 @@
     
     <item>
       <title>Python image: what&#39;s new and what&#39;s to come</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-01-python-image-changes/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-python-image-changes/</link>
       <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-01-python-image-changes/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-python-image-changes/</guid>
       <description>
         
         
         &lt;p&gt;Python ecosystem is diverse, with lots of legacy versions and practices. But in the recent months, it evolved on many fronts. So, we&amp;rsquo;ve decided to handle it and start to revise how you can deploy Python applications on Clever Cloud.&lt;/p&gt;
 &lt;h2&gt;Package management: uv on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;package-management-uv-on-clever-cloud&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#package-management-uv-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We only support &lt;a href=&#34;https://packaging.python.org/en/latest/tutorials/installing-packages/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pip&lt;/a&gt;, &lt;code&gt;requirements.txt&lt;/code&gt; and &lt;code&gt;setup.py&lt;/code&gt; natively. For some weeks, we&amp;rsquo;ve included &lt;a href=&#34;https://docs.astral.sh/uv/getting-started/features/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uv&lt;/a&gt; in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/python/#use-uv-as-a-package-manager&#34; &gt;It&amp;rsquo;s now a part&lt;/a&gt; of our &amp;ldquo;Enthusiast tools&amp;rdquo; initiative and will be updated regularly. Thus, there is no active support for it yet.&lt;/p&gt;
+    &lt;a href=&#34;#package-management-uv-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We only support &lt;a href=&#34;https://packaging.python.org/en/latest/tutorials/installing-packages/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pip&lt;/a&gt;, &lt;code&gt;requirements.txt&lt;/code&gt; and &lt;code&gt;setup.py&lt;/code&gt; natively. For some weeks, we&amp;rsquo;ve included &lt;a href=&#34;https://docs.astral.sh/uv/getting-started/features/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uv&lt;/a&gt; in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/python/#use-uv-as-a-package-manager&#34; &gt;It&amp;rsquo;s now a part&lt;/a&gt; of our &amp;ldquo;Enthusiast tools&amp;rdquo; initiative and will be updated regularly. Thus, there is no active support for it yet.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ll enhance its native support in coming releases of our Python image.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/astral-sh/uv&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about uv&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -38,9 +38,9 @@
 &lt;h2&gt;Python versions: time to clean up&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;python-versions-time-to-clean-up&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#python-versions-time-to-clean-up&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We&amp;rsquo;re in 2024 and Python 2.x still coexists with Python 3.x. As it&amp;rsquo;s always used by some of our customers, we&amp;rsquo;ve decided to continue to support it. Python 3.x is now the default version for new Python applications. We&amp;rsquo;ll make this change for other runtimes (where Python is also included), starting 2025. If you need Python 2.x, set &lt;code&gt;CC_PYTHON_VERSION=2&lt;/code&gt; in your applications.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ll also get closer to &lt;a href=&#34;https://devguide.python.org/versions/#python-release-cycle&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the official Python release cycle&lt;/a&gt;, which is 5 years of support. Thus, we&amp;rsquo;ll stop using Python 3.7 starting December 1st, 2024. Next year, we&amp;rsquo;ll deprecate Python 3.8 and stop providing it. If an application is asking for a deprecated version, it will use the latest available by default. So, upgrade your &lt;code&gt;CC_PYTHON_VERSION&lt;/code&gt; towards your needs.&lt;/p&gt;
-&lt;p&gt;If you need to sideload unsupported Python versions, &lt;code&gt;uv&lt;/code&gt; &lt;a href=&#34;https://docs.astral.sh/uv/guides/install-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;can help you&lt;/a&gt;. You can also deploy your applications through &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/docker&#34; &gt;Docker&lt;/a&gt;, but you should avoid to use end of life runtime in your applications.&lt;/p&gt;
+&lt;p&gt;If you need to sideload unsupported Python versions, &lt;code&gt;uv&lt;/code&gt; &lt;a href=&#34;https://docs.astral.sh/uv/guides/install-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;can help you&lt;/a&gt;. You can also deploy your applications through &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/docker&#34; &gt;Docker&lt;/a&gt;, but you should avoid to use end of life runtime in your applications.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/python/&#34; &gt;Python on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/python/&#34; &gt;Python on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;What&amp;rsquo;s next?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;whats-next&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#whats-next&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We&amp;rsquo;ll enhance our Python images to better support modern Python ecosystem and simplify the deployment process. Python 3.13, &lt;a href=&#34;https://docs.python.org/3.13/whatsnew/3.13.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;released today&lt;/a&gt;, will be available on Clever Cloud in the coming weeks.&lt;/p&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>Docker and Python image update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-08-09-python-3.12-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-08-09-python-3.12-update/</link>
       <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-08-09-python-3.12-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-08-09-python-3.12-update/</guid>
       <description>
         
         
@@ -83,10 +83,10 @@
     
     <item>
       <title>Elasticsearch and Jenkins update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
       <description>
         
         
@@ -110,10 +110,10 @@
     
     <item>
       <title>MySQL and PostgreSQL update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
       <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
       <description>
         
         
@@ -139,10 +139,10 @@
     
     <item>
       <title>Go, Haskell and Ruby images update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-05-go-haskell-ruby-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-05-go-haskell-ruby-update/</link>
       <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-05-go-haskell-ruby-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-05-go-haskell-ruby-update/</guid>
       <description>
         
         
@@ -171,10 +171,10 @@
     
     <item>
       <title>PHP 8.2.21 and 8.3.9 image update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-04-apache-php-image-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-04-apache-php-image-update/</link>
       <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-04-apache-php-image-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-04-apache-php-image-update/</guid>
       <description>
         
         
@@ -186,7 +186,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Over the past few weeks, we have also included &lt;a href=&#34;https://dlcdn.apache.org/httpd/CHANGES_2.4.60&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache 2.4.60&lt;/a&gt;, fixing CVE-2024-36387, 38472, 38473, 38474, 38475, 38476, 38477, 39573 and &lt;a href=&#34;https://github.com/composer/composer/releases/tag/2.7.7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Composer 2.7.7&lt;/a&gt;, fixing CVE-2024-35241, 35242.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/php/&#34; &gt;PHP on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/php/&#34; &gt;PHP on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -194,10 +194,10 @@
     
     <item>
       <title>PHP 8.3, Composer 2.7.6 and Java 22 are available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-05-30-php-8.3-java-22/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-05-30-php-8.3-java-22/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-05-30-php-8.3-java-22/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-05-30-php-8.3-java-22/</guid>
       <description>
         
         
@@ -228,7 +228,7 @@
 &lt;li&gt;&lt;strong&gt;PHP:&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Composer 2.7.6&lt;/li&gt;
-&lt;li&gt;Support for PHP 8.3 with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/php/#available-extensions-and-modules&#34; &gt;all supported extensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support for PHP 8.3 with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/php/#available-extensions-and-modules&#34; &gt;all supported extensions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PHP info apps are available for PHP &lt;a href=&#34;https://php80info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.0&lt;/a&gt;, &lt;a href=&#34;https://php81info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.1&lt;/a&gt;, &lt;a href=&#34;https://php82info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.2&lt;/a&gt; and &lt;a href=&#34;https://php83info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -239,10 +239,10 @@
     
     <item>
       <title>Our new images stack enters production</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-26-new-images-stack/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-26-new-images-stack/</link>
       <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-26-new-images-stack/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-26-new-images-stack/</guid>
       <description>
         
         
@@ -254,10 +254,10 @@
     
     <item>
       <title>Images: April 2024 update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-25-images-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-25-images-update/</link>
       <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-25-images-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-25-images-update/</guid>
       <description>
         
         
@@ -288,7 +288,7 @@
 &lt;/ul&gt;
 &lt;p&gt;We had to delay the release of PHP image with 8.3 version support, to better support some extensions and include latest security fixes. It will start to deploy next week and include an informative message when a deprecated version of PHP is used.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about the &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/&#34; &gt;message for deprecated PHP versions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Learn more about the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-24-php-deprecate-warning/&#34; &gt;message for deprecated PHP versions&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -296,20 +296,20 @@
     
     <item>
       <title>February 2024 images update (part 2)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-27-images-update-part2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-images-update-part2/</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-27-images-update-part2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-images-update-part2/</guid>
       <description>
         
         
-        &lt;p&gt;Earlier this month, we published &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/&#34; &gt;a first set of updates&lt;/a&gt; for Docker, Erlang, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-26-healthcheck-for-everyone/&#34; &gt;the new &lt;code&gt;healthcheck&lt;/code&gt; feature&lt;/a&gt; available for all applications.&lt;/p&gt;
-&lt;p&gt;New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
+        &lt;p&gt;Earlier this month, we published &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/&#34; &gt;a first set of updates&lt;/a&gt; for Docker, Erlang, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-healthcheck-for-everyone/&#34; &gt;the new &lt;code&gt;healthcheck&lt;/code&gt; feature&lt;/a&gt; available for all applications.&lt;/p&gt;
+&lt;p&gt;New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;.Net:&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Version 8.0 support&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CC_DOTNET_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#net&#34; &gt;environment variable&lt;/a&gt; can be &lt;code&gt;6.0&lt;/code&gt; or &lt;code&gt;8.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_DOTNET_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#net&#34; &gt;environment variable&lt;/a&gt; can be &lt;code&gt;6.0&lt;/code&gt; or &lt;code&gt;8.0&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Java - Elastic / APM:&lt;/strong&gt;
@@ -319,22 +319,22 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;New PHP image is next to come, with 8.3 version support, we&amp;rsquo;re currently working on it. After that, we&amp;rsquo;ll bring our new strategy to build images into production. We&amp;rsquo;re currently testing it, and preparing enhancements for multiples runtimes. Your applications will automatically benefit from it when available. &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/index.xml&#34; &gt;Stay tuned&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;New PHP image is next to come, with 8.3 version support, we&amp;rsquo;re currently working on it. After that, we&amp;rsquo;ll bring our new strategy to build images into production. We&amp;rsquo;re currently testing it, and preparing enhancements for multiples runtimes. Your applications will automatically benefit from it when available. &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/index.xml&#34; &gt;Stay tuned&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>February 2024 images update (part 1)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/</link>
       <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/</guid>
       <description>
         
         
         &lt;p&gt;Over the past few months, we&amp;rsquo;ve overhauled the way we build our applications and add-ons images from tooling to included binaries. We&amp;rsquo;ll deliver soon the first public milestone of this project, which will leads us to more frequent releases.&lt;/p&gt;
-&lt;p&gt;In the meantime, we&amp;rsquo;ve updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
+&lt;p&gt;In the meantime, we&amp;rsquo;ve updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;:
 &lt;ul&gt;

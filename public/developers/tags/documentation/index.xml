@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Documentation</title>
-    <link>https://lafillepassympa.com/developers/tags/documentation/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/documentation/</link>
     <description>Recent content in Documentation on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,14 +17,14 @@
     
     <item>
       <title>Learn what&#39;s new on Clever Cloud platform</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-10-documentation-changelog/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-10-documentation-changelog/</link>
       <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-10-documentation-changelog/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-10-documentation-changelog/</guid>
       <description>
         
         
-        &lt;p&gt;A changelog has been &lt;a href=&#34;https://lafillepassympa.com/developers/changelog&#34; &gt;added&lt;/a&gt; to our &lt;a href=&#34;https://lafillepassympa.com/developers/&#34; &gt;Developer Center&lt;/a&gt;. It will be regularly updated by the Clever Cloud teams to give you an overview of our new features, but also changes made and deprecations planned on the platform.&lt;/p&gt;
+        &lt;p&gt;A changelog has been &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog&#34; &gt;added&lt;/a&gt; to our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/&#34; &gt;Developer Center&lt;/a&gt;. It will be regularly updated by the Clever Cloud teams to give you an overview of our new features, but also changes made and deprecations planned on the platform.&lt;/p&gt;
 
       </description>
     </item>

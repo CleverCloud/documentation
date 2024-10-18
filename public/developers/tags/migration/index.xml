@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Migration</title>
-    <link>https://lafillepassympa.com/developers/tags/migration/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/migration/</link>
     <description>Recent content in Migration on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/migration/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/migration/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Zone Migration</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/zone-migration/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/zone-migration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/zone-migration/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/zone-migration/</guid>
       <description>
         
         
@@ -120,7 +120,7 @@ If you are using FTP, please read the &lt;a href=&#34;#fsbucket&#34; &gt;FSBucke
 &lt;h2&gt;Add-on migration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;add-on-migration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#add-on-migration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Add-ons can be migrated from one zone to another. For some of them, our support team can help you do it.&lt;/p&gt;
 &lt;h3&gt;PostgreSQL, MySQL, MongoDB, Redis&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;postgresql-mysql-mongodb-redis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#postgresql-mysql-mongodb-redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;These add-ons can be migrated using the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/database-migration&#34; &gt;Migration Tool&lt;/a&gt;.&lt;/p&gt;
+    &lt;a href=&#34;#postgresql-mysql-mongodb-redis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;These add-ons can be migrated using the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/database-migration&#34; &gt;Migration Tool&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Once your migration is over, the services connecting to the add-on might be impacted by an increased latency due to DNS updates. The domain of your add-on will have its DNS records
 changed but it will take up to 1 hour for them to propagate. This means that during that time, your services might still connect to the old zone, which will then redirect to the target zone
 where your database has been migrated.&lt;/p&gt;

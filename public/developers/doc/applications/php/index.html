@@ -18,7 +18,7 @@ Create an application on Clever Cloud With the web console Refer to Quickstart f
 With the Clever Tools CLI Make sure you have clever-tools installed locally or follow our CLI getting started guide. In your code folder, do clever create --type &lt;type&gt; &lt;app-name&gt; --region &lt;zone&gt; --org &lt;org&gt; where : type is the type of technology you rely on app-name the name you want for your application, zone deployment zone (par for Paris and mtl for Montreal) org the organization ID the application will be created under. Refer to clever create for more details on application creation with Clever Tools." />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/doc/applications/php/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/doc/applications/php/" itemprop="url" />
   
 
   
@@ -26,7 +26,7 @@ With the Clever Tools CLI Make sure you have clever-tools installed locally or f
 <meta property="og:title" content="PHP" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/doc/applications/php/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/>
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/doc/applications/php/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/>
 
   
   <meta itemprop="name" content="PHP">
@@ -36,10 +36,10 @@ Create an application on Clever Cloud With the web console Refer to Quickstart f
 With the Clever Tools CLI Make sure you have clever-tools installed locally or follow our CLI getting started guide. In your code folder, do clever create --type &lt;type&gt; &lt;app-name&gt; --region &lt;zone&gt; --org &lt;org&gt; where : type is the type of technology you rely on app-name the name you want for your application, zone deployment zone (par for Paris and mtl for Montreal) org the organization ID the application will be created under. Refer to clever create for more details on application creation with Clever Tools.">
   <meta itemprop="dateModified" content="2024-08-16T17:07:02+02:00">
   <meta itemprop="wordCount" content="3917">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="Php,Deploy">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="PHP">
   <meta name="twitter:description" content="Overview PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 The HTTP server is Apache 2, and the PHP code is executed by PHP-FPM.
@@ -3616,7 +3616,7 @@ of the configuration file <em>clevercloud/php.json</em> with the absolute path (
 This way the PHP CLI will try to find a <code>.ini</code> file in <code>/home/bas</code> after loading all other configuration files.</p>
 </li>
 <li>
-<p>Run the following script in a <a href="https://lafillepassympa.com/developers/doc/develop/build-hooks/" >deployment hook</a> (e.g. in the <a href="https://lafillepassympa.com/developers/doc/develop/build-hooks/#pre-run-cc_pre_run_hook" >pre-run hook</a>):</p>
+<p>Run the following script in a <a href="https://stagingv6.cleverapps.io/developers/doc/develop/build-hooks/" >deployment hook</a> (e.g. in the <a href="https://stagingv6.cleverapps.io/developers/doc/develop/build-hooks/#pre-run-cc_pre_run_hook" >pre-run hook</a>):</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
@@ -3773,7 +3773,7 @@ you have to do it from PHP (you can&rsquo;t do it from <code>.htaccess</code>).<
       </tr>
   </tbody>
 </table>
-<p>To change this limit you can define <code>MEMORY_LIMIT</code> <a href="https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#php" >environment variable</a>.</p>
+<p>To change this limit you can define <code>MEMORY_LIMIT</code> <a href="https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#php" >environment variable</a>.</p>
 <p>If you define a limit exceeding the application memory it will use the default one.</p>
 <h5><code>pm.max_children</code>: Maximum PHP Children per instance<span class="hx-absolute -hx-mt-20" id="pmmax_children-maximum-php-children-per-instance"></span>
     <a href="#pmmax_children-maximum-php-children-per-instance" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>You can fix the maximum number of PHP running processes per instance by setting <code>pm.max_children</code> (see above).</p>
@@ -3785,9 +3785,9 @@ you have to do it from PHP (you can&rsquo;t do it from <code>.htaccess</code>).<
     <a href="#htaccess" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The <code>.htaccess</code> file can be created everywhere in you app, depending of the part of the application covered by directives.</p>
 <p>However, directives who applies to the entire application must be declared in a <code>.htaccess</code> file to the application root.</p>
 <h3>htpasswd<span class="hx-absolute -hx-mt-20" id="htpasswd"></span>
-    <a href="#htpasswd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>You can configure basic authentication using <a href="https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#php" >environment variables</a>. You will need to set <code>CC_HTTP_BASIC_AUTH</code> variable to your own <code>login:password</code> pair. If you need to allow access to multiple users, you can create additional environment <code>CC_HTTP_BASIC_AUTH_n</code> (where <code>n</code> is a number) variables.</p>
+    <a href="#htpasswd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>You can configure basic authentication using <a href="https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#php" >environment variables</a>. You will need to set <code>CC_HTTP_BASIC_AUTH</code> variable to your own <code>login:password</code> pair. If you need to allow access to multiple users, you can create additional environment <code>CC_HTTP_BASIC_AUTH_n</code> (where <code>n</code> is a number) variables.</p>
 <h3>Define a custom HTTP timeout<span class="hx-absolute -hx-mt-20" id="define-a-custom-http-timeout"></span>
-    <a href="#define-a-custom-http-timeout" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>You can define the timeout of an HTTP request in Apache using the <code>HTTP_TIMEOUT</code> <a href="https://lafillepassympa.com/developers/doc/develop/env-variables/" >environment variable</a>.</p>
+    <a href="#define-a-custom-http-timeout" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>You can define the timeout of an HTTP request in Apache using the <code>HTTP_TIMEOUT</code> <a href="https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/" >environment variable</a>.</p>
 <p><strong>By default, the HTTP timeout is set to 3 minutes (180 seconds)</strong>.</p>
 <h3>Force HTTPS traffic<span class="hx-absolute -hx-mt-20" id="force-https-traffic"></span>
     <a href="#force-https-traffic" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Load balancers handle HTTPS traffic ahead of your application. You can use the <code>X-Forwarded-Proto</code> header to know the original protocol (<code>http</code> or <code>https</code>).</p>
@@ -3956,7 +3956,7 @@ your application has a postgresql add-on linked:</p>
     </div>
   </div>
 </div>
-<p>You can perform your own <code>composer.phar install</code> by using the <a href="https://lafillepassympa.com/developers/doc/develop/build-hooks/#post-build-cc_post_build_hook" >Post Build hook</a>.</p>
+<p>You can perform your own <code>composer.phar install</code> by using the <a href="https://stagingv6.cleverapps.io/developers/doc/develop/build-hooks/#post-build-cc_post_build_hook" >Post Build hook</a>.</p>
 <p>Example of a <code>composer.json</code> file:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
@@ -4130,7 +4130,7 @@ we recommend you to add <code>oauth</code> token in your composer configuration 
 </ul>
 <p><strong>Warning</strong>: some extensions need to be <a href="#enable-specific-extensions" >enabled explicitly</a></p>
 <p>Clever Cloud PHP application enables the following PHP extensions by default: <code>amqp</code>, <code>bcmath</code>, <code>bz2</code>, <code>ctype</code>, <code>curl</code>, <code>date</code>, <code>dba</code>, <code>dom</code>, <code>exif</code>, <code>fileinfo</code>, <code>filter</code>, <code>ftp</code>, <code>gd</code>, <code>gettext</code>, <code>gmp</code>, <code>gRPC</code>, <code>hash</code>, <code>icon</code>, <code>imap</code>, <code>imagick</code>, <code>intl</code>, <code>json</code>, <code>ldap</code>, <code>libsodium</code>, <code>mbstring</code>, <code>mcrypt</code>, <code>memcached</code>, <code>memcache</code>, <code>mongodb</code>, <code>mysqli</code>, <code>mysqlnd</code>, <code>odbc</code>, <code>opcache</code>, <code>openssl</code>, <code>pnctl</code>, <code>pcre</code>, <code>PDO</code>, <code>pgsql</code>, <code>Phar</code>, <code>posix</code>, <code>protobuf</code>, <code>Pspell</code>, <code>random</code>, <code>readline</code>, <code>redis</code>, <code>reflection</code>, <code>session</code>, <code>simplexml</code>, <code>soap</code>, <code>sockets</code>, <code>solr</code>, <code>SPL</code>, <code>ssh2</code>, <code>sqlite3</code>, <code>tidy</code>, <code>tokenizer</code>, <code>xml</code>, <code>xmlreader</code>, <code>xmlwriter</code>, <code>xsl</code>, <code>zip</code>, <code>zlib</code></p>
-<p>You can add <code>DISABLE_&lt;extension_name&gt;: true</code> in your <a href="https://lafillepassympa.com/developers/doc/develop/env-variables/" >environment variable</a> to disable them.</p>
+<p>You can add <code>DISABLE_&lt;extension_name&gt;: true</code> in your <a href="https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/" >environment variable</a> to disable them.</p>
 <p>If you have a request about modules, feel free to contact our support at <a href="mailto:support@clever-cloud.com" >support@clever-cloud.com</a>.</p>
 
 
@@ -4252,11 +4252,11 @@ It will speed up your application but users might lose their session across inst
 and deployments.</li>
 </ul>
 <h3>Use Redis to store PHP Sessions<span class="hx-absolute -hx-mt-20" id="use-redis-to-store-php-sessions"></span>
-    <a href="#use-redis-to-store-php-sessions" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>We provide the possibility to store the PHP sessions in a <a href="https://lafillepassympa.com/developers/doc/addons/redis/" >Redis database</a> to improve reliability.</p>
+    <a href="#use-redis-to-store-php-sessions" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>We provide the possibility to store the PHP sessions in a <a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" >Redis database</a> to improve reliability.</p>
 <p>If your application is under heavy load, redis persistence for sessions can improve latency.</p>
 <p>To enable this feature, you need to:</p>
 <ul>
-<li>enable Redis support on the application (create an <a href="https://lafillepassympa.com/developers/doc/develop/env-variables/" >environment variable</a> named <code>ENABLE_REDIS</code> with the value <code>true</code>.)</li>
+<li>enable Redis support on the application (create an <a href="https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/" >environment variable</a> named <code>ENABLE_REDIS</code> with the value <code>true</code>.)</li>
 <li>create and link a Redis add-on</li>
 <li>create an <a href="#setting-up-environment-variables-on-clever-cloud" >environment variable</a> named <code>SESSION_TYPE</code> with the value <code>redis</code>.</li>
 </ul>
@@ -4285,7 +4285,7 @@ and deployments.</li>
 
   <div class="hx-w-full hx-min-w-0 hx-leading-7">
     <div class="hx-mt-6 hx-leading-7 first:hx-mt-0">
-      You must have a <a href="https://lafillepassympa.com/developers/doc/addons/redis/" target="_blank" rel="noopener">Redis</a> add-on <a href="#linking-a-database-or-any-other-add-on-to-your-application" >linked with your application</a> to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
+      You must have a <a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" target="_blank" rel="noopener">Redis</a> add-on <a href="#linking-a-database-or-any-other-add-on-to-your-application" >linked with your application</a> to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
     </div>
   </div>
 </div>

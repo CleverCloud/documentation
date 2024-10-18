@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Github</title>
-    <link>https://lafillepassympa.com/developers/tags/github/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/github/</link>
     <description>Recent content in Github on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Jul 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,16 +17,16 @@
     
     <item>
       <title>Version 1.1 of our GitHub Action for review applications is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-30-github-action-1.1/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-30-github-action-1.1/</link>
       <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-30-github-action-1.1/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-30-github-action-1.1/</guid>
       <description>
         
         
         &lt;p&gt;Update for &lt;a href=&#34;https://github.com/marketplace/actions/clever-cloud-review-app-on-prs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Action&lt;/a&gt; to deploy applications from GitHub to Clever Cloud. Version 1.1 simplifies workflow files and gives conditional comments depending on the actions performed on the PR (deploy, update, delete).&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -34,10 +34,10 @@
     
     <item>
       <title>Version 1.0 of our GitHub Action for review applications is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-18-github-action-review-apps/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-github-action-review-apps/</link>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-18-github-action-review-apps/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-github-action-review-apps/</guid>
       <description>
         
         
@@ -65,7 +65,7 @@
   
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

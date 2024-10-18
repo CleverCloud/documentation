@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Addons</title>
-    <link>https://lafillepassympa.com/developers/tags/addons/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/addons/</link>
     <description>Recent content in Addons on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/addons/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/addons/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,14 +17,14 @@
     
     <item>
       <title>Azimutt is available as an add-on on Clever Cloud</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-18-azimutt-available/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-18-azimutt-available/</guid>
       <description>
         
         
-        &lt;p&gt;Azimutt is &lt;a href=&#34;https://github.com/azimuttapp/azimutt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an open-source project&lt;/a&gt; we follow for a long time. Created by Loïc Knuchel, it helps you to explore, analyze and manage your database in a pleasant graphical interface. It&amp;rsquo;s a member of the &lt;a href=&#34;https://www.clever-cloud.com/up-program/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud startup program&lt;/a&gt;, for some weeks and now part of our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/marketplace/&#34; &gt;Marketplace&lt;/a&gt;. Thus, you can create an Azimutt account, free or with a subscription, directly &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;from the Console&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Azimutt is &lt;a href=&#34;https://github.com/azimuttapp/azimutt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an open-source project&lt;/a&gt; we follow for a long time. Created by Loïc Knuchel, it helps you to explore, analyze and manage your database in a pleasant graphical interface. It&amp;rsquo;s a member of the &lt;a href=&#34;https://www.clever-cloud.com/up-program/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud startup program&lt;/a&gt;, for some weeks and now part of our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/marketplace/&#34; &gt;Marketplace&lt;/a&gt;. Thus, you can create an Azimutt account, free or with a subscription, directly &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;from the Console&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You just have to provide a compatible database URI, hosted by Clever Cloud or not, and start exploring it. Our integration is based on a gateway hosted by Clever Cloud. No credentials are shared with Azimutt, and they&amp;rsquo;re kept safely in your browser.&lt;/p&gt;
 &lt;p&gt;Feel free to let us know what you think about this tool and if you want a deeper integration in &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/dbaas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our GitHub Community&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
@@ -37,18 +37,18 @@
     
     <item>
       <title>Keycloak updated to 25.0.6, now in public beta</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-04-keycloak-beta-release/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-keycloak-beta-release/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-04-keycloak-beta-release/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-keycloak-beta-release/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud&amp;rsquo;s Keycloak add-on, developed with Please Open-it, is now available in public beta. We enhanced user experience, performances and features since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/&#34; &gt;the alpha stage&lt;/a&gt;. We revised the default configuration of underlying resources. We now use a &lt;code&gt;S flavored&lt;/code&gt; Java application with more memory and a XXS Small Space PostgreSQL database which is enough for low-volume needs. Of course, you can change it according to your needs at any time.&lt;/p&gt;
-&lt;p&gt;The default Keycloak version is now 25.0.6. If you want to upgrade, change the &lt;code&gt;CC_KEYCLOAK_VERSION&lt;/code&gt; environment variable to &lt;code&gt;25.0.6&lt;/code&gt; and restart the Java application. You can also add the new &lt;code&gt;CC_METRICS_PROMETHEUS_PATH=/metrics&lt;/code&gt; and &lt;code&gt;CC_METRICS_PROMETHEUS_PORT=9000&lt;/code&gt;to access metrics &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;from Grafana&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud&amp;rsquo;s Keycloak add-on, developed with Please Open-it, is now available in public beta. We enhanced user experience, performances and features since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/&#34; &gt;the alpha stage&lt;/a&gt;. We revised the default configuration of underlying resources. We now use a &lt;code&gt;S flavored&lt;/code&gt; Java application with more memory and a XXS Small Space PostgreSQL database which is enough for low-volume needs. Of course, you can change it according to your needs at any time.&lt;/p&gt;
+&lt;p&gt;The default Keycloak version is now 25.0.6. If you want to upgrade, change the &lt;code&gt;CC_KEYCLOAK_VERSION&lt;/code&gt; environment variable to &lt;code&gt;25.0.6&lt;/code&gt; and restart the Java application. You can also add the new &lt;code&gt;CC_METRICS_PROMETHEUS_PATH=/metrics&lt;/code&gt; and &lt;code&gt;CC_METRICS_PROMETHEUS_PORT=9000&lt;/code&gt;to access metrics &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;from Grafana&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We plan to upgrade to &lt;a href=&#34;https://github.com/keycloak/keycloak/releases/tag/26.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;26.x&lt;/a&gt; in the next few weeks after checking its stability and validating it for our platform.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -56,10 +56,10 @@
     
     <item>
       <title>Elasticsearch and Jenkins update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
       <description>
         
         
@@ -83,16 +83,16 @@
     
     <item>
       <title>Keycloak add-on in public alpha</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/</link>
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud provides a Keycloak add-on, developed with Please Open-it, for some months in private alpha. We&amp;rsquo;re releasing it publicly, with a new version and some fixes. Any Clever Cloud user can now deploy a Keycloak service from &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API&lt;/a&gt;, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; and use it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/keycloak&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud provides a Keycloak add-on, developed with Please Open-it, for some months in private alpha. We&amp;rsquo;re releasing it publicly, with a new version and some fixes. Any Clever Cloud user can now deploy a Keycloak service from &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API&lt;/a&gt;, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; and use it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/keycloak&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -100,10 +100,10 @@
     
     <item>
       <title>Pulsar 3.3.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-11-pulsar-3.3.0-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-11-pulsar-3.3.0-update/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-11-pulsar-3.3.0-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-11-pulsar-3.3.0-update/</guid>
       <description>
         
         
@@ -117,10 +117,10 @@
     
     <item>
       <title>MySQL and PostgreSQL update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
       <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
       <description>
         
         
@@ -146,10 +146,10 @@
     
     <item>
       <title>Matomo v5.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
       <description>
         
         
@@ -166,14 +166,14 @@
     
     <item>
       <title>Pulsar: 3.2.1 release and storage policies</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-20-pulsar-3.2.1-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-20-pulsar-3.2.1-update/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-20-pulsar-3.2.1-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-20-pulsar-3.2.1-update/</guid>
       <description>
         
         
-        &lt;p&gt;We&amp;rsquo;ve deployed the &lt;a href=&#34;https://github.com/apache/pulsar/releases/tag/v3.2.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.2.1 release&lt;/a&gt; of Apache Pulsar on our platform. It brings lots of fixes and some new features. Please note we also added &lt;a href=&#34;https://lafillepassympa.com/developers/api/v4/#pulsar-policies&#34; &gt;a new v4 endpoint&lt;/a&gt; in our API to control Pulsar&amp;rsquo;s storage policies (offload, retention).&lt;/p&gt;
+        &lt;p&gt;We&amp;rsquo;ve deployed the &lt;a href=&#34;https://github.com/apache/pulsar/releases/tag/v3.2.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.2.1 release&lt;/a&gt; of Apache Pulsar on our platform. It brings lots of fixes and some new features. Please note we also added &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/v4/#pulsar-policies&#34; &gt;a new v4 endpoint&lt;/a&gt; in our API to control Pulsar&amp;rsquo;s storage policies (offload, retention).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn more about &lt;a href=&#34;https://www.clever-cloud.com/product/pulsar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Pulsar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -183,10 +183,10 @@
     
     <item>
       <title>Montreal region (MTL): A records update for your domains/DNS</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-mtl-iplb-update/</link>
       <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-mtl-iplb-update/</guid>
       <description>
         
         
@@ -236,14 +236,14 @@
     
     <item>
       <title>PostgreSQL: ask for pgvector support</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-22-postgresql-pgvector-support/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-22-postgresql-pgvector-support/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-22-postgresql-pgvector-support/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-22-postgresql-pgvector-support/</guid>
       <description>
         
         
-        &lt;p&gt;PostgreSQL databases managed by Clever Cloud come with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/#default-extensions&#34; &gt;lots of extensions enabled by default&lt;/a&gt;. There are also &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/#on-demand-extensions&#34; &gt;some you can ask for&lt;/a&gt;, and we&amp;rsquo;ll set them up, like &lt;code&gt;pg_cron&lt;/code&gt;, &lt;code&gt;pgtap&lt;/code&gt; or &lt;code&gt;timescaledb&lt;/code&gt;.&lt;/p&gt;
+        &lt;p&gt;PostgreSQL databases managed by Clever Cloud come with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/#default-extensions&#34; &gt;lots of extensions enabled by default&lt;/a&gt;. There are also &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/#on-demand-extensions&#34; &gt;some you can ask for&lt;/a&gt;, and we&amp;rsquo;ll set them up, like &lt;code&gt;pg_cron&lt;/code&gt;, &lt;code&gt;pgtap&lt;/code&gt; or &lt;code&gt;timescaledb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We recently noticed an increased interest from our clients in supporting the &lt;code&gt;pgvector&lt;/code&gt; extension, needed for specific (AI) workloads. To answer these needs, we&amp;rsquo;ve packaged it and are now able to provide it on-demand.&lt;/p&gt;
 &lt;p&gt;If you need &lt;code&gt;pgvector&lt;/code&gt;, open a ticket to our support team through &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console Ticket Center&lt;/a&gt;. If you need any other extension, feel free to ask, we will try our best to respond to your use-case.&lt;/p&gt;
 &lt;ul&gt;
@@ -259,10 +259,10 @@
     
     <item>
       <title>New Gravelines HDS region</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-12-new-grahds-region/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-12-new-grahds-region/</guid>
       <description>
         
         
@@ -275,10 +275,10 @@
     
     <item>
       <title>Matomo v5.0.1 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-22-matomo-5.0.1/</link>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-22-matomo-5.0.1/</guid>
       <description>
         
         
@@ -294,10 +294,10 @@
     
     <item>
       <title>Redis 7.2.4 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-11-redis-7.2.4/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-11-redis-7.2.4/</link>
       <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-11-redis-7.2.4/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-11-redis-7.2.4/</guid>
       <description>
         
         
@@ -319,10 +319,10 @@
     
     <item>
       <title>Pulsar update is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-02-pulsar-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-02-pulsar-update/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-02-pulsar-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-02-pulsar-update/</guid>
       <description>
         
         
@@ -333,10 +333,10 @@
     
     <item>
       <title>Cellar migration tool 2.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-13-cellar-migration-tool-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-13-cellar-migration-tool-update/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-13-cellar-migration-tool-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-13-cellar-migration-tool-update/</guid>
       <description>
         
         
@@ -354,10 +354,10 @@
     
     <item>
       <title>Cellar, a S3-like object storage service</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/cellar/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/cellar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/cellar/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/cellar/</guid>
       <description>
         
         
@@ -1169,10 +1169,10 @@ title=&amp;ldquo;Copy code&amp;rdquo;&lt;/p&gt;
     
     <item>
       <title>Configuration provider</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/config-provider/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/config-provider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/config-provider/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/config-provider/</guid>
       <description>
         
         
@@ -1197,7 +1197,7 @@ title=&amp;ldquo;Copy code&amp;rdquo;&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/schema-config-provider-01.svg&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/schema-config-provider-01.svg&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Two Node.js applications with their own environment variables
     &lt;/figcaption&gt;
@@ -1214,7 +1214,7 @@ It will allow us to define those common variables in one place and inject them i
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/schema-config-provider-02.svg&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/schema-config-provider-02.svg&#34; alt=&#34;Two Node.js applications with their own environment variables&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Two Node.js applications with their own environment variables
     &lt;/figcaption&gt;
@@ -1227,7 +1227,7 @@ It will allow us to define those common variables in one place and inject them i
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width: 900px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/schema-config-provider-03.svg&#34; alt=&#34;One application overriding the environment variable value for PULSAR_TOPIC&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/schema-config-provider-03.svg&#34; alt=&#34;One application overriding the environment variable value for PULSAR_TOPIC&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         One application overriding the environment variable value for PULSAR_TOPIC
     &lt;/figcaption&gt;
@@ -1244,7 +1244,7 @@ It will allow us to define those common variables in one place and inject them i
 &lt;li&gt;Define a name and click on &lt;strong&gt;Next&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Once you have your configuration provider, you can set the variables in the form.
-You can find out more about rules and format in &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/#environment-variables-rules-and-formats&#34; &gt;this page&lt;/a&gt;.&lt;/p&gt;
+You can find out more about rules and format in &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/#environment-variables-rules-and-formats&#34; &gt;this page&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -1290,10 +1290,10 @@ No fee will be invoiced to you while using this kind of add-on.&lt;/p&gt;
     
     <item>
       <title>Elastic Stack</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/elastic/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/elastic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/elastic/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/elastic/</guid>
       <description>
         
         
@@ -1490,10 +1490,10 @@ No fee will be invoiced to you while using this kind of add-on.&lt;/p&gt;
     
     <item>
       <title>File System Buckets</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/fs-bucket/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/fs-bucket/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/</guid>
       <description>
         
         
@@ -1733,7 +1733,7 @@ You can mount the same bucket in different folders, but they will share the same
     &lt;a href=&#34;#from-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your bucket is mounted at the configured path, starting from your application&amp;rsquo;s
 root folder.&lt;/p&gt;
 &lt;p&gt;If you want to use an absolute path, you can use the &lt;code&gt;APP_HOME&lt;/code&gt; environment
-variable, see &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/#special-environment-variables&#34; &gt;special environment variables&lt;/a&gt;&lt;/p&gt;
+variable, see &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/#special-environment-variables&#34; &gt;special environment variables&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;From the addon dashboard&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;from-the-addon-dashboard&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#from-the-addon-dashboard&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;strong&gt;File explorer&lt;/strong&gt; tab of the &lt;strong&gt;addon dashboard&lt;/strong&gt; gives you access to your files
 in the FS bucket.&lt;/p&gt;
@@ -1746,10 +1746,10 @@ you need to connect to your bucket using FTP.&lt;/p&gt;
     
     <item>
       <title>Heptapod</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/heptapod/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/heptapod/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/heptapod/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/heptapod/</guid>
       <description>
         
         
@@ -1763,7 +1763,7 @@ you need to connect to your bucket using FTP.&lt;/p&gt;
 &lt;h2&gt;Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Heptapod DevOps platform is edited by &lt;a href=&#34;https://octobus.net&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Octobus&lt;/a&gt;, a team of experts with experience in Mercurial and Rust, derived from Gitlab Community Edition.&lt;/p&gt;
 &lt;p&gt;Clever Cloud users can benefit from &lt;strong&gt;Heptapod Cloud&lt;/strong&gt; software, along with &lt;strong&gt;Heptapod Runner&lt;/strong&gt; for CI/CD operations.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg&#34;
     alt=&#34;A diagram on how the Heptapod Cloud and Runners interact with Clever cloud&#34; width=&#34;900px&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;Heptapod and Runners&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -1812,13 +1812,13 @@ you need to connect to your bucket using FTP.&lt;/p&gt;
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
     &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
       &lt;strong&gt;Requirements&lt;/strong&gt;&lt;br&gt;
-Using Heptapod Cloud require a Clever Cloud account and an &lt;a href=&#34;https://lafillepassympa.com/developers/doc/account/administrate-organization/&#34; &gt;organization&lt;/a&gt;.
+Using Heptapod Cloud require a Clever Cloud account and an &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/account/administrate-organization/&#34; &gt;organization&lt;/a&gt;.
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]&#34;&gt;
 &lt;h3&gt;Create an organization&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-an-organization&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#create-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You will need a &lt;strong&gt;Heptapod group&lt;/strong&gt; to create your projects in. &lt;strong&gt;Heptapod groups&lt;/strong&gt; are mapped to Clever Cloud &lt;a href=&#34;https://lafillepassympa.com/developers/doc/account/administrate-organization/&#34; &gt;organizations&lt;/a&gt;.
+    &lt;a href=&#34;#create-an-organization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You will need a &lt;strong&gt;Heptapod group&lt;/strong&gt; to create your projects in. &lt;strong&gt;Heptapod groups&lt;/strong&gt; are mapped to Clever Cloud &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/account/administrate-organization/&#34; &gt;organizations&lt;/a&gt;.
 Every organization you have access to will have its corresponding group on the Heptapod Cloud instance.&lt;/p&gt;
 &lt;p&gt;In the Clever Cloud console, click &lt;strong&gt;Add an Organization&lt;/strong&gt; and fill the form to create one.
 Organization are the way users collaborate and share applications.&lt;/p&gt;
@@ -1828,7 +1828,7 @@ To launch Heptapod Cloud go to &lt;strong&gt;&lt;a href=&#34;https://heptapod.ho
 &lt;h3&gt;Usage and billing&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;usage-and-billing&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#usage-and-billing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Heptapod Cloud is billed on a per-usage model, explained and simulated &lt;a href=&#34;https://www.clever-cloud.com/fr/product/heptapod-cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;on our product page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can check your Heptapod Cloud usage of repositories and users in the &lt;strong&gt;Shared Software&lt;/strong&gt; tab of your organization.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/heptapod-billing.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/heptapod-billing.png&#34;
     alt=&#34;A screen capture of the Heptapod billing section&#34; width=&#34;600px&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;You can check your organization&amp;rsquo;s Heptapod usage in the Share&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -1844,7 +1844,7 @@ Fully integrated with Heptapod Cloud, the service can also be used from a self-m
 &lt;li&gt;&lt;strong&gt;Quick activation:&lt;/strong&gt; Activate Clever Cloud Runners for Heptapod for your organization with just one click.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Easy customization:&lt;/strong&gt; Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Integrated tracking:&lt;/strong&gt; Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/gitlab/#deploy-directly-from-heptapod&#34; &gt;Components Catalog&lt;/a&gt;:&lt;/strong&gt; Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/#deploy-directly-from-heptapod&#34; &gt;Components Catalog&lt;/a&gt;:&lt;/strong&gt; Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Provisioning&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;provisioning&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#provisioning&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With the Clever Cloud Runner, you may run a great number of parallel jobs, paying for your actual consumption without any threshold effect.&lt;/p&gt;
@@ -2016,10 +2016,10 @@ In other words, one size does not fit all.&lt;/p&gt;
     
     <item>
       <title>Jenkins</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/jenkins/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/jenkins/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/jenkins/</guid>
       <description>
         
         
@@ -2032,7 +2032,7 @@ You can find out more about Jenkins on &lt;a href=&#34;https://www.jenkins.io&#3
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/full-dashboard.png&#34; alt=&#34;Jenkins Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/full-dashboard.png&#34; alt=&#34;Jenkins Dashboard&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins Dashboard
     &lt;/figcaption&gt;
@@ -2054,11 +2054,11 @@ The Weekly version isn&amp;rsquo;t available during the creation, yet, but if yo
 &lt;/ol&gt;
 &lt;h3&gt;CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
 &lt;li&gt;List the available plans and options for Jenkins: &lt;code&gt;clever addon providers show jenkins&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;In your terminal, you can then run &lt;code&gt;clever addon create jenkins &amp;lt;app-name&amp;gt; --region &amp;lt;region&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where &lt;code&gt;app-name&lt;/code&gt; is the name you want for your add-on, &lt;code&gt;region&lt;/code&gt; deployment region, and &lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
 &lt;h2&gt;Accessing the Jenkins interface&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;accessing-the-jenkins-interface&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-the-jenkins-interface&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once you created your add-on, you should get to the dashboard. You should see a link named &lt;code&gt;Access Jenkins&lt;/code&gt;. Opening that link will redirect you to our SSO
 authentication.&lt;/p&gt;
@@ -2066,7 +2066,7 @@ authentication.&lt;/p&gt;
 &lt;p&gt;When a service needs to authenticate you, it redirects to a login form. Enter your Clever Cloud
 credentials as well as your 2FA Authentication code if needed.&lt;/p&gt;
 &lt;p&gt;If it&amp;rsquo;s the first time you use the Clever Cloud SSO, accept the tokens permissions when asked for. Accept all the rights listed, otherwise the backend service might not work correctly.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;If you mistakenly disabled some rights at some point, you have to revoke all tokens generated by this OAuth consumer:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;First, go to your user&amp;rsquo;s OAuth token in the &lt;a href=&#34;https://console.clever-cloud.com/users/me/tokens&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Web console&lt;/a&gt;&lt;/li&gt;
@@ -2112,7 +2112,7 @@ any rate limiting.&lt;/li&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/cloud-configuration.png&#34; alt=&#34;Jenkins Cloud configuration&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/cloud-configuration.png&#34; alt=&#34;Jenkins Cloud configuration&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins Cloud configuration
     &lt;/figcaption&gt;
@@ -2180,7 +2180,7 @@ You should also see after a few seconds a pending Job in the &lt;code&gt;Build h
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/jobs-history.png&#34; alt=&#34;Jenkins jobs history&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/jobs-history.png&#34; alt=&#34;Jenkins jobs history&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins jobs history
     &lt;/figcaption&gt;
@@ -2194,7 +2194,7 @@ will start to be executed.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/runner-deploying.png&#34; alt=&#34;Jenkins runner deploying&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/runner-deploying.png&#34; alt=&#34;Jenkins runner deploying&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins runner deploying
     &lt;/figcaption&gt;
@@ -2287,7 +2287,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/update-available-cc-dashboard.png&#34; alt=&#34;Jenkins update available&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/update-available-cc-dashboard.png&#34; alt=&#34;Jenkins update available&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins update available
     &lt;/figcaption&gt;
@@ -2302,7 +2302,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/jenkins/update-available.png&#34; alt=&#34;Jenkins update message&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/jenkins/update-available.png&#34; alt=&#34;Jenkins update message&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Jenkins update message
     &lt;/figcaption&gt;
@@ -2321,10 +2321,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>Keycloak</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/keycloak/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/keycloak/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/</guid>
       <description>
         
         
@@ -2457,11 +2457,11 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 &lt;/ul&gt;
 &lt;p&gt;Those flows could be affected to your own clients if you need.&lt;/p&gt;
 &lt;h2&gt;Metrics&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;metrics&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Since  version &lt;code&gt;25.06&lt;/code&gt;, Keycloak add-on exposes &lt;a href=&#34;https://prometheus.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prometheus&lt;/a&gt; metrics on port &lt;code&gt;9000&lt;/code&gt;. Use Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;Grafana integration&lt;/a&gt; to visualize them.&lt;/p&gt;
+    &lt;a href=&#34;#metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Since  version &lt;code&gt;25.06&lt;/code&gt;, Keycloak add-on exposes &lt;a href=&#34;https://prometheus.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prometheus&lt;/a&gt; metrics on port &lt;code&gt;9000&lt;/code&gt;. Use Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;Grafana integration&lt;/a&gt; to visualize them.&lt;/p&gt;
 &lt;h2&gt;Hostnames&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;hostnames&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#hostnames&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default, your Keycloak instance is exposed through a Clever Cloud domain, as mentioned in the &lt;code&gt;Service dependencies&lt;/code&gt; tab of your add-on.&lt;/p&gt;
 &lt;h3&gt;Custom hostname&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-hostname&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#custom-hostname&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use your own domain. &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/domain-names/&#34; &gt;Just set it&lt;/a&gt; in the &lt;code&gt;Domains&lt;/code&gt; section of the Java application of the Keycloak add-on. Then, edit the &lt;code&gt;CC_KEYCLOAK_HOSTNAME&lt;/code&gt; environment variable, apply this change and restart the application.&lt;/p&gt;
+    &lt;a href=&#34;#custom-hostname&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use your own domain. &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/domain-names/&#34; &gt;Just set it&lt;/a&gt; in the &lt;code&gt;Domains&lt;/code&gt; section of the Java application of the Keycloak add-on. Then, edit the &lt;code&gt;CC_KEYCLOAK_HOSTNAME&lt;/code&gt; environment variable, apply this change and restart the application.&lt;/p&gt;
 &lt;h3&gt;Admin hostname&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;admin-hostname&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#admin-hostname&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By default, Keycloak expose administration console on the same hostname, but &lt;a href=&#34;https://www.keycloak.org/server/hostname#_exposing_the_administration_console_on_a_separate_hostname&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;you can use another one&lt;/a&gt;. Add its domain to the application and set it through the &lt;code&gt;CC_KEYCLOAK_HOSTNAME_ADMIN&lt;/code&gt; environment variable. Then apply this change and restart the application.&lt;/p&gt;
 &lt;h2&gt;Known issues&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;known-issues&#34;&gt;&lt;/span&gt;
@@ -2479,10 +2479,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>Kibana</title>
-      <link>https://lafillepassympa.com/developers/guides/kibana/</link>
+      <link>https://stagingv6.cleverapps.io/developers/guides/kibana/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/guides/kibana/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/guides/kibana/</guid>
       <description>
         
         
@@ -2523,7 +2523,7 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
 &lt;h3&gt;Customize the Kibana configuration file&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;customize-the-kibana-configuration-file&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#customize-the-kibana-configuration-file&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The configuration is set with this deployment hook :
 &lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt; = &lt;code&gt;curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/&amp;lt;your elastic version&amp;gt; | sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;To modify this default configuration (&lt;a href=&#34;https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuration file for Kibana 8.3.3&lt;/a&gt;), you need to host your own config file (we strongly recommend &lt;a href=&#34;https://lafillepassympa.com/developers/deploy/addon/cellar&#34; &gt;Cellar&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;To modify this default configuration (&lt;a href=&#34;https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuration file for Kibana 8.3.3&lt;/a&gt;), you need to host your own config file (we strongly recommend &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/deploy/addon/cellar&#34; &gt;Cellar&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Check other available configuration file on &lt;a href=&#34;https://github.com/CleverCloud/custom-kibana-config&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Disable SSO authentication&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;disable-sso-authentication&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#disable-sso-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To disable SSO authentication and use elastic users instead, you need to modify Kibana&amp;rsquo;s configuration file and &lt;code&gt;CC_PRE_RUN_HOOK&lt;/code&gt; in environment variables.&lt;/p&gt;
@@ -2554,10 +2554,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>MailPace</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/mailpace/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/mailpace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/mailpace/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/mailpace/</guid>
       <description>
         
         
@@ -2598,10 +2598,10 @@ it will be displayed as a notification and as a message in the &lt;code&gt;Manag
     
     <item>
       <title>Materia KV</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/materia-kv/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/materia-kv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/materia-kv/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/materia-kv/</guid>
       <description>
         
         
@@ -2971,10 +2971,10 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#
     
     <item>
       <title>Matomo</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/matomo/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/matomo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/matomo/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/matomo/</guid>
       <description>
         
         
@@ -3001,18 +3001,18 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#
 &lt;/ol&gt;
 &lt;h3&gt;CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
+&lt;li&gt;Make sure you have clever-tools installed locally. Report to the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli/getting_started/&#34; &gt;getting started&lt;/a&gt; guide if needed.&lt;/li&gt;
 &lt;li&gt;List the available plans and options for Matomo: &lt;code&gt;clever addon providers show Matomo&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;In your terminal, you can then run &lt;code&gt;clever addon create matomo &amp;lt;app-name&amp;gt; --region &amp;lt;region&amp;gt; --org &amp;lt;org&amp;gt;&lt;/code&gt; where &lt;code&gt;app-name&lt;/code&gt; is the name you want for your add-on, &lt;code&gt;region&lt;/code&gt; deployment region, and &lt;code&gt;org&lt;/code&gt; the organization ID the application will be created under.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refer to the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli/create/&#34; &gt;documentation&lt;/a&gt; for more details on application creation with Clever Tools&lt;/p&gt;
 &lt;h2&gt;Accessing the Matomo interface&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;accessing-the-matomo-interface&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-the-matomo-interface&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once you created your add-on, you should get to the dashboard and see a link named &lt;code&gt;Access Matomo&lt;/code&gt;. Opening that link will redirect you to our SSO authentication.&lt;/p&gt;
 &lt;p&gt;Clever Cloud has its own SSO (Single Sign-On) authentication to authenticate to various services. All members of your organization will be able to authenticate to the services in the same organization, using their Clever Cloud account.&lt;/p&gt;
 &lt;p&gt;When a service needs to authenticate you, it redirects to a login form. Enter your Clever Cloud
 credentials as well as your 2FA Authentication code if needed.&lt;/p&gt;
 &lt;p&gt;If it&amp;rsquo;s the first time you use the Clever Cloud SSO, accept the tokens permissions when asked for. Accept all the rights listed, otherwise the backend service might not work correctly.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/sso-needed-rights.png&#34; alt=&#34;SSO Needed Rights&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;If you mistakenly disabled some rights at some point, you have to revoke all tokens generated by this OAuth consumer:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;First, go to your user&amp;rsquo;s OAuth token in the &lt;a href=&#34;https://console.clever-cloud.com/users/me/tokens&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Web console&lt;/a&gt;&lt;/li&gt;
@@ -3081,10 +3081,10 @@ You can change the size of the queue in your Matomo settings, by modifying the &
     
     <item>
       <title>Metabase</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/metabase/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/metabase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/metabase/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/metabase/</guid>
       <description>
         
         
@@ -3129,7 +3129,7 @@ Thank you for being a part of our journey towards innovation and improvement!
 &lt;li&gt;&lt;strong&gt;Share&lt;/strong&gt; a questions/dashboard to anyone using an anonymous link&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Periodically send&lt;/strong&gt; results of a question/dashboard by email/Slack&lt;/li&gt;
 &lt;li&gt;Configure &lt;strong&gt;data visualization&lt;/strong&gt; for questions results: table, line chart, pie chart, gauge, single number, etc.&lt;/li&gt;
-&lt;li&gt;Connect &lt;strong&gt;external databases&lt;/strong&gt;; it works with add-ons such as &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/mysql/&#34; &gt;MySQL&lt;/a&gt;, &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/mongodb/&#34; &gt;MongoDB&lt;/a&gt; and &lt;a href=&#34;https://www.metabase.com/data_sources/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;many other data sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Connect &lt;strong&gt;external databases&lt;/strong&gt;; it works with add-ons such as &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/mysql/&#34; &gt;MySQL&lt;/a&gt;, &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/mongodb/&#34; &gt;MongoDB&lt;/a&gt; and &lt;a href=&#34;https://www.metabase.com/data_sources/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;many other data sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Create &lt;em&gt;questions&lt;/em&gt; either by typing in &lt;code&gt;SELECT&lt;/code&gt; SQL queries or by using Metabase’s UI to build such queries &lt;strong&gt;without using SQL&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can also save questions and &lt;strong&gt;organize&lt;/strong&gt; them in &lt;em&gt;collections&lt;/em&gt;. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with &lt;strong&gt;groups and permissions&lt;/strong&gt;: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.&lt;/p&gt;
@@ -3169,8 +3169,8 @@ METABASE_URL=&amp;#34;https://an_id-metabase.services.clever-cloud.com&amp;#34;&
 &lt;h2&gt;Underlying Resources&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;underlying-resources&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#underlying-resources&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When you create the Metabase add-on, Clever Cloud automatically deploys:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/java-jar/&#34; &gt;Java&lt;/a&gt; instance with Metabase pre-loaded&lt;/li&gt;
-&lt;li&gt;A &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt; database (for internal Metabase use)&lt;/li&gt;
+&lt;li&gt;A &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/java/java-jar/&#34; &gt;Java&lt;/a&gt; instance with Metabase pre-loaded&lt;/li&gt;
+&lt;li&gt;A &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/&#34; &gt;PostgreSQL&lt;/a&gt; database (for internal Metabase use)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;When you first connect to your Metabase instance, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.&lt;/p&gt;
 &lt;ul&gt;
@@ -3280,11 +3280,11 @@ There are two main usages:&lt;/p&gt;
 &lt;li&gt;Sending questions/dashboards emails (when users created subscriptions to them)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Clever Cloud does not provide a SMTP server for your Metabase add-on.
-You can use a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/mailpace/&#34; &gt;MailPace&lt;/a&gt; add-on or any other SMTP server.&lt;/p&gt;
+You can use a &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/mailpace/&#34; &gt;MailPace&lt;/a&gt; add-on or any other SMTP server.&lt;/p&gt;
 &lt;p&gt;The SMTP server can be configured (and tested) in Metabase administration interface.
 See &lt;a href=&#34;https://www.metabase.com/docs/latest/configuring-metabase/email&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt; for more details.&lt;/p&gt;
 &lt;h3&gt;Using a MailPace Add-On&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-a-mailpace-add-on&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#using-a-mailpace-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you have a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/mailpace/&#34; &gt;MailPace&lt;/a&gt; add-on, you can link it to the Java application of your Metabase add-on using &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud&amp;rsquo;s console&lt;/a&gt;:&lt;/p&gt;
+    &lt;a href=&#34;#using-a-mailpace-add-on&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you have a &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/mailpace/&#34; &gt;MailPace&lt;/a&gt; add-on, you can link it to the Java application of your Metabase add-on using &lt;a href=&#34;https://console.clever-cloud.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud&amp;rsquo;s console&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to the Java application of the Metabase add-on&lt;/li&gt;
 &lt;li&gt;Open the &amp;ldquo;Service dependencies&amp;rdquo; page&lt;/li&gt;
@@ -3314,10 +3314,10 @@ See &lt;a href=&#34;https://www.metabase.com/docs/latest/configuring-metabase/em
     
     <item>
       <title>MongoDB</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/mongodb/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/mongodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/mongodb/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/mongodb/</guid>
       <description>
         
         
@@ -3413,7 +3413,7 @@ See &lt;a href=&#34;https://www.metabase.com/docs/latest/configuring-metabase/em
 &lt;li&gt;On your workstation, use the taylor-made &lt;code&gt;mongorestore&lt;/code&gt; command line located in your mongodb dashboard page (open the &amp;ldquo;Backup&amp;rdquo; panel and click on the &amp;ldquo;Restore&amp;rdquo; link to find the complete command line to perform the database import). If needed, change the &lt;code&gt;nsFrom&lt;/code&gt; and &lt;code&gt;nsTo&lt;/code&gt; flags, depending on what you actually want to do (importing this database in another, importing another to this one, &amp;hellip;).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Encryption at rest&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MongoDB. You can have more information on the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MongoDB. You can have more information on the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Can I use Mongo Ops Manager on Clever Cloud?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;can-i-use-mongo-ops-manager-on-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#can-i-use-mongo-ops-manager-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To be able to use &lt;a href=&#34;https://www.mongodb.com/products/ops-manager&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mongo Ops Manager&lt;/a&gt;, you&amp;rsquo;ll need a valid MongoDB Enterprise Advanced subscription and to deploy a &lt;a href=&#34;https://www.mongodb.com/try/download/ops-manager&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux version of their manager solution&lt;/a&gt;. If you haven&amp;rsquo;t purchased any license from MongoDB and you are using the Community version, you might be looking for a similar service for your databases.&lt;/p&gt;
 &lt;h3&gt;Does Clever Cloud provide a similar service?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;does-clever-cloud-provide-a-similar-service&#34;&gt;&lt;/span&gt;
@@ -3436,10 +3436,10 @@ See &lt;a href=&#34;https://www.metabase.com/docs/latest/configuring-metabase/em
     
     <item>
       <title>MySQL</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/mysql/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/mysql/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/mysql/</guid>
       <description>
         
         
@@ -3567,12 +3567,12 @@ If you want to import your &lt;strong&gt;SQL&lt;/strong&gt; dump, you can use se
 &lt;p&gt;All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the &amp;ldquo;Generate direct hostname and port&amp;rdquo; on the addon dashboard.&lt;/p&gt;
 &lt;p&gt;This action will add new environment variables to reach the addon without any proxy.&lt;/p&gt;
 &lt;h2&gt;Encryption at rest&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MySQL. You can have more information on the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on MySQL. You can have more information on the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;ProxySQL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;proxysql&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#proxysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ProxySQL is a tool that acts like a proxy between your application and your MySQL add-on. Instead of connecting to your MySQL add-on, you can connect
 to the local ProxySQL and it will forward all your requests to your MySQL add-on.&lt;/p&gt;
 &lt;p&gt;This allows you to let ProxySQL take care of some interesting features like connection pooling or leader / follower setup.&lt;/p&gt;
-&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;https://lafillepassympa.com/developers/guides/proxysql/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can learn more about ProxySQL on the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/guides/proxysql/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Plans&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;plans&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#plans&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 
@@ -3612,10 +3612,10 @@ to the local ProxySQL and it will forward all your requests to your MySQL add-on
     
     <item>
       <title>Pgpool-II</title>
-      <link>https://lafillepassympa.com/developers/guides/pgpool/</link>
+      <link>https://stagingv6.cleverapps.io/developers/guides/pgpool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/guides/pgpool/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/guides/pgpool/</guid>
       <description>
         
         
@@ -4297,10 +4297,10 @@ which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>PostgreSQL</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/postgresql/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/postgresql/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/</guid>
       <description>
         
         
@@ -4461,14 +4461,14 @@ which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Encryption at rest&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;encryption-at-rest&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on PostgreSQL. You can find more information on the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&#34;#encryption-at-rest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Encryption at rest is available on PostgreSQL. You can find more information on the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/encryption-at-rest/&#34; &gt;dedicated page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Note on shared databases&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;note-on-shared-databases&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#note-on-shared-databases&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you try to list the databases on the shared cluster, you will see the names of the databases of all other users of the cluster. This is normal behaviour. Rest assured, permissions are set properly, meaning no one but your user can read or write data to your database.&lt;/p&gt;
 &lt;p&gt;This referencing does not exist for dedicated databases.&lt;/p&gt;
 &lt;h2&gt;Pgpool-II&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;pgpool-ii&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#pgpool-ii&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pgpool-II is a proxy software that sits between PostgreSQL servers and a PostgreSQL database client.&lt;/p&gt;
 &lt;p&gt;You can read the &lt;a href=&#34;https://www.pgpool.net/docs/latest/en/html/intro-whatis.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official project page&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;p&gt;You can learn more about Pgpool-II on the &lt;a href=&#34;https://lafillepassympa.com/developers/guides/pgpool/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can learn more about Pgpool-II on the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/guides/pgpool/&#34; &gt;dedicated documentation page&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Default extensions&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;default-extensions&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#default-extensions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PostgreSQL databases managed by Clever Cloud comes with these extensions:&lt;/p&gt;
 &lt;table&gt;
@@ -4741,10 +4741,10 @@ Usually this threshold is set to 20%.&lt;/p&gt;
     
     <item>
       <title>ProxySQL</title>
-      <link>https://lafillepassympa.com/developers/guides/proxysql/</link>
+      <link>https://stagingv6.cleverapps.io/developers/guides/proxysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/guides/proxysql/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/guides/proxysql/</guid>
       <description>
         
         
@@ -4964,7 +4964,7 @@ which has a connection limit of &lt;code&gt;125&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2&gt;Metrics&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;metrics&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ProxySQL exposes some metrics using Prometheus. Some of those metrics are ingested in our metrics system. You can then explore them
-in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#display-metrics&#34; &gt;Web Console&lt;/a&gt;.&lt;/p&gt;
+in the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#display-metrics&#34; &gt;Web Console&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is the list of currently tracked metrics, those may evolve over time:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;prometheus.proxysql_access_denied_max_connections_total&lt;/code&gt;&lt;/li&gt;
@@ -4996,10 +4996,10 @@ in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#displ
     
     <item>
       <title>Pulsar</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/pulsar/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/pulsar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/pulsar/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/pulsar/</guid>
       <description>
         
         
@@ -5603,7 +5603,7 @@ Here is a minimal example that produces (publishes) a &lt;em&gt;&amp;ldquo;Hello
 &lt;/div&gt;
 &lt;h3&gt;Offload storage to Cellar (S3)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;offload-storage-to-cellar-s3&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#offload-storage-to-cellar-s3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Pulsar has a &lt;a href=&#34;https://pulsar.apache.org/docs/en/tiered-storage-overview/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tiered storage feature&lt;/a&gt; allowing to offload heavy data to cold storage once a threshold is reached.&lt;/p&gt;
-&lt;p&gt;For each Pulsar add-on we provide, we also provide a hidden &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/cellar/&#34; &gt;Cellar add-on&lt;/a&gt;, our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.&lt;/p&gt;
+&lt;p&gt;For each Pulsar add-on we provide, we also provide a hidden &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/cellar/&#34; &gt;Cellar add-on&lt;/a&gt;, our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.&lt;/p&gt;
 &lt;p&gt;The offload threshold of the namespace is deactivated by default, you can activate it with:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -5630,10 +5630,10 @@ Here is a minimal example that produces (publishes) a &lt;em&gt;&amp;ldquo;Hello
     
     <item>
       <title>Redis</title>
-      <link>https://lafillepassympa.com/developers/doc/addons/redis/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/addons/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/addons/redis/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/addons/redis/</guid>
       <description>
         
         

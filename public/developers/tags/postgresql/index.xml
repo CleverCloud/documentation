@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Postgresql</title>
-    <link>https://lafillepassympa.com/developers/tags/postgresql/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/postgresql/</link>
     <description>Recent content in Postgresql on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,14 +17,14 @@
     
     <item>
       <title>PostgreSQL: ask for pgvector support</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-22-postgresql-pgvector-support/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-22-postgresql-pgvector-support/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-22-postgresql-pgvector-support/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-22-postgresql-pgvector-support/</guid>
       <description>
         
         
-        &lt;p&gt;PostgreSQL databases managed by Clever Cloud come with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/#default-extensions&#34; &gt;lots of extensions enabled by default&lt;/a&gt;. There are also &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/postgresql/#on-demand-extensions&#34; &gt;some you can ask for&lt;/a&gt;, and we&amp;rsquo;ll set them up, like &lt;code&gt;pg_cron&lt;/code&gt;, &lt;code&gt;pgtap&lt;/code&gt; or &lt;code&gt;timescaledb&lt;/code&gt;.&lt;/p&gt;
+        &lt;p&gt;PostgreSQL databases managed by Clever Cloud come with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/#default-extensions&#34; &gt;lots of extensions enabled by default&lt;/a&gt;. There are also &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/postgresql/#on-demand-extensions&#34; &gt;some you can ask for&lt;/a&gt;, and we&amp;rsquo;ll set them up, like &lt;code&gt;pg_cron&lt;/code&gt;, &lt;code&gt;pgtap&lt;/code&gt; or &lt;code&gt;timescaledb&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We recently noticed an increased interest from our clients in supporting the &lt;code&gt;pgvector&lt;/code&gt; extension, needed for specific (AI) workloads. To answer these needs, we&amp;rsquo;ve packaged it and are now able to provide it on-demand.&lt;/p&gt;
 &lt;p&gt;If you need &lt;code&gt;pgvector&lt;/code&gt;, open a ticket to our support team through &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Console Ticket Center&lt;/a&gt;. If you need any other extension, feel free to ask, we will try our best to respond to your use-case.&lt;/p&gt;
 &lt;ul&gt;

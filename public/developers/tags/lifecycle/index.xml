@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Lifecycle</title>
-    <link>https://lafillepassympa.com/developers/tags/lifecycle/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/lifecycle/</link>
     <description>Recent content in Lifecycle on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/lifecycle/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/lifecycle/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Activity</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/activity/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/activity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/activity/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/activity/</guid>
       <description>
         
         
@@ -31,11 +31,11 @@
 &lt;h2&gt;Re-deployment triggered by you&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;re-deployment-triggered-by-you&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#re-deployment-triggered-by-you&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This happens when you or a member of your organization performs an action on the application, like:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/apps-management/#start-restart-and-stop&#34; &gt;Restart or rebuild&lt;/a&gt; from the Console or &lt;a href=&#34;https://lafillepassympa.com/developers/doc/cli/&#34; &gt;the CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/apps-management/#start-restart-and-stop&#34; &gt;Restart or rebuild&lt;/a&gt; from the Console or &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli/&#34; &gt;the CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Push a new commit from Git or GitHub&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here&amp;rsquo;s what you might see on the timeline:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/doc/activity.png&#34; alt=&#34;Activity timeline&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/doc/activity.png&#34; alt=&#34;Activity timeline&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Each block indicates if the deployment was successful or unsuccessful, along with the following information:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: when the activity happened and from where (&lt;code&gt;Console&lt;/code&gt;, &lt;code&gt;Git&lt;/code&gt;, &lt;code&gt;Github&lt;/code&gt; or &lt;code&gt;Monitoring&lt;/code&gt;)&lt;/li&gt;
@@ -45,7 +45,7 @@
 &lt;/ul&gt;
 &lt;h2&gt;Re-deployments triggered by Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;re-deployments-triggered-by-clever-cloud&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#re-deployments-triggered-by-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud might also trigger re-deployments, either when you&amp;rsquo;re being assisted by the Support, or automatically by the monitoring system. If the monitoring triggers a re-deployment, you&amp;rsquo;ll see no author and the message explaining the reason, like &lt;code&gt;Monitoring/Unreachable&lt;/code&gt;. The messages you might get are the following:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/doc/monitoring.png&#34; alt=&#34;Re-deployment triggered by the monitoring&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/doc/monitoring.png&#34; alt=&#34;Re-deployment triggered by the monitoring&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Unreachable&lt;/code&gt;: The monitoring servers couldn&amp;rsquo;t open a TCP connection with at least one monitoring agent hosted on instances of the application.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Timeout&lt;/code&gt;: The monitoring servers has succeed to open TCP connections on all monitoring agents hosted on instances of the application, but at least one did not send its probes in time.&lt;/li&gt;

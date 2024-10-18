@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – User Account</title>
-    <link>https://lafillepassympa.com/developers/doc/account/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/account/</link>
     <description>Recent content in User Account on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/account/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/account/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Create an Account</title>
-      <link>https://lafillepassympa.com/developers/doc/account/create-account/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/create-account/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/create-account/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/create-account/</guid>
       <description>
         
         
@@ -48,10 +48,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>Manage your account</title>
-      <link>https://lafillepassympa.com/developers/doc/account/manage-account/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/manage-account/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/manage-account/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/manage-account/</guid>
       <description>
         
         
@@ -71,10 +71,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>Manage an Organization</title>
-      <link>https://lafillepassympa.com/developers/doc/account/administrate-organization/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/administrate-organization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/administrate-organization/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/administrate-organization/</guid>
       <description>
         
         
@@ -89,7 +89,7 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
 &lt;li&gt;&lt;strong&gt;Overview&lt;/strong&gt;: Simple metrics about your applications within this organization&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Information&lt;/strong&gt;: See and edit organization&amp;rsquo;s name, description, billing address and image. That also is where you can delete your organization.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Members&lt;/strong&gt;: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shared software&lt;/strong&gt;: It&amp;rsquo;s a section displaying third party software, like &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/heptapod/&#34; &gt;Heptapod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shared software&lt;/strong&gt;: It&amp;rsquo;s a section displaying third party software, like &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/heptapod/&#34; &gt;Heptapod&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;: Manage provisioning of your organization, manage credit cards and add here potential discount codes or coupons.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Invoices&lt;/strong&gt;: See your recent invoices.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt;: Manage email notifications and web hooks for team members.&lt;/li&gt;
@@ -103,10 +103,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>Roles and Organizations</title>
-      <link>https://lafillepassympa.com/developers/doc/account/organizations/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/organizations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/organizations/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/organizations/</guid>
       <description>
         
         
@@ -200,10 +200,10 @@ can &lt;a href=&#34;https://GitHub.com/settings/connections/applications/d96bd8f
     
     <item>
       <title>Notifications</title>
-      <link>https://lafillepassympa.com/developers/doc/account/notifications/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/notifications/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/notifications/</guid>
       <description>
         
         
@@ -270,10 +270,10 @@ the result of the deployment in your Slack channel.&lt;/p&gt;
     
     <item>
       <title>SSH Keys</title>
-      <link>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management/</guid>
       <description>
         
         
@@ -534,7 +534,7 @@ If you can find them, you do not need to generate a new one, simply go to the fo
   
 &lt;/div&gt;
 &lt;h2&gt;Use a private SSH key in an application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-a-private-ssh-key-in-an-application&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#use-a-private-ssh-key-in-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration/##private-ssh-key&#34; &gt;private SSH key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#use-a-private-ssh-key-in-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/common-configuration/##private-ssh-key&#34; &gt;private SSH key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -649,10 +649,10 @@ Contact us at &lt;a href=&#34;mailto:support@clever-cloud.com&#34; &gt;support@c
     
     <item>
       <title>Delete an account</title>
-      <link>https://lafillepassympa.com/developers/doc/account/delete-account/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/delete-account/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/delete-account/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/delete-account/</guid>
       <description>
         
         

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Sozu</title>
-    <link>https://lafillepassympa.com/developers/tags/sozu/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/sozu/</link>
     <description>Recent content in Sozu on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 17 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/sozu/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/sozu/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,14 +17,14 @@
     
     <item>
       <title>Sōzu 1.0.5 is available and deployed</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-17-sozu-1.0.5/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-17-sozu-1.0.5/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-17-sozu-1.0.5/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-17-sozu-1.0.5/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;https://www.sozu.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu&lt;/a&gt; 1.0.5 is now available and deployed on &lt;code&gt;cleverapps.io&lt;/code&gt; domains, we&amp;rsquo;re progressively rolling it out on our own domains and dedicated load balancers. Since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-10-04-sozu-1.0.2/&#34; &gt;the release of Sōzu 1.0.2&lt;/a&gt; we&amp;rsquo;ve fixed some bugs, improved CLI, metrics and performances.&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;https://www.sozu.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu&lt;/a&gt; 1.0.5 is now available and deployed on &lt;code&gt;cleverapps.io&lt;/code&gt; domains, we&amp;rsquo;re progressively rolling it out on our own domains and dedicated load balancers. Since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-sozu-1.0.2/&#34; &gt;the release of Sōzu 1.0.2&lt;/a&gt; we&amp;rsquo;ve fixed some bugs, improved CLI, metrics and performances.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;re currently testing the 1.1.0 release candidate of Sōzu, with HTTP/2 support, coming soon on Clever Cloud.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn more about &lt;a href=&#34;https://github.com/sozu-proxy/sozu/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu new releases&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>Sōzu 1.0.2 is available and deployed</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-07-sozu-1.0.2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-07-sozu-1.0.2/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-07-sozu-1.0.2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-07-sozu-1.0.2/</guid>
       <description>
         
         
@@ -63,10 +63,10 @@
     
     <item>
       <title>Montreal region (MTL): A records update for your domains/DNS</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-mtl-iplb-update/</link>
       <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-26-mtl-iplb-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-mtl-iplb-update/</guid>
       <description>
         
         
@@ -116,10 +116,10 @@
     
     <item>
       <title>Sōzu 0.15.19 is available, 1.0 is coming</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-08-sozu-0.15.19/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-08-sozu-0.15.19/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-08-sozu-0.15.19/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-08-sozu-0.15.19/</guid>
       <description>
         
         
@@ -138,10 +138,10 @@
     
     <item>
       <title>Wider Sōzu usage</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-22-sozu-wider-usage/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-22-sozu-wider-usage/</link>
       <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-22-sozu-wider-usage/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-22-sozu-wider-usage/</guid>
       <description>
         
         
@@ -152,10 +152,10 @@
     
     <item>
       <title>Sōzu 0.15.18 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-15-sozu-0.15.18/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-15-sozu-0.15.18/</link>
       <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-15-sozu-0.15.18/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-15-sozu-0.15.18/</guid>
       <description>
         
         

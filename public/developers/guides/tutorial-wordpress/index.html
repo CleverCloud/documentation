@@ -18,7 +18,7 @@ This tutorial is mainly concerning a Git deployment. However, you can deploy usi
 Create an application on Clever Cloud With the web console Refer to Quickstart for more details on application creation via the console." />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/guides/tutorial-wordpress/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/guides/tutorial-wordpress/" itemprop="url" />
   
 
   
@@ -32,7 +32,7 @@ Create an application on Clever Cloud
     With the web console
     Refer to Quickstart for more details on application creation via the console." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/guides/tutorial-wordpress/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/><meta property="article:section" content="guides" />
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/guides/tutorial-wordpress/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/><meta property="article:section" content="guides" />
 
 <meta property="article:modified_time" content="2024-04-12T11:18:59+02:00" />
 
@@ -44,10 +44,10 @@ This tutorial is mainly concerning a Git deployment. However, you can deploy usi
 Create an application on Clever Cloud With the web console Refer to Quickstart for more details on application creation via the console.">
   <meta itemprop="dateModified" content="2024-04-12T11:18:59+02:00">
   <meta itemprop="wordCount" content="1820">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="php,wordpress">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="WordPress">
   <meta name="twitter:description" content="Overview WordPress applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 First, you could check our global PHP documention.
@@ -2709,7 +2709,7 @@ We strongly recommend that you use environment variables.</p>
   </div>
 </div>
 <p>At the root of your application, create a <code>clevercloud/buckets.json</code> file (create a <code>clevercloud</code> folder in which you create a <code>buckets.json</code> file).
-Add the following lines in this file. Do not forget to replace <code>bucketId</code> by the bucketId displayed in the <a href="https://lafillepassympa.com/developers/doc/addons/fs-bucket/" >information</a> section of the FS Bucket add-on.</p>
+Add the following lines in this file. Do not forget to replace <code>bucketId</code> by the bucketId displayed in the <a href="https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/" >information</a> section of the FS Bucket add-on.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
@@ -2737,7 +2737,7 @@ Add the following lines in this file. Do not forget to replace <code>bucketId</c
 To uninstall the plugin, the procedure is the same as before except that you have to delete the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend you to delete it from you admin panel before removing the file, in order to clean your database and all files that the plugin could have created.</p>
 <h2>Optimise and speed-up your WordPress<span class="hx-absolute -hx-mt-20" id="optimise-and-speed-up-your-wordpress"></span>
     <a href="#optimise-and-speed-up-your-wordpress" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>There are multiple ways to optimise your WordPress and speed-up its response time.
-We provide different tools and software to help you in this task as <a href="https://lafillepassympa.com/developers/doc/administrate/cache/" >Varnish</a> for the HTTP cache, and <a href="https://lafillepassympa.com/developers/doc/addons/redis/" >Redis</a> for the object caching.</p>
+We provide different tools and software to help you in this task as <a href="https://stagingv6.cleverapps.io/developers/doc/administrate/cache/" >Varnish</a> for the HTTP cache, and <a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" >Redis</a> for the object caching.</p>
 <h3>Performance plugins<span class="hx-absolute -hx-mt-20" id="performance-plugins"></span>
     <a href="#performance-plugins" class="subheading-anchor" aria-label="Permalink for this section"></a></h3>
 
@@ -2770,7 +2770,7 @@ We noticed performances problems when performance plugins are enabled and we rec
   </div>
 </div>
 <h3>HTTP Cache with Varnish<span class="hx-absolute -hx-mt-20" id="http-cache-with-varnish"></span>
-    <a href="#http-cache-with-varnish" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Enabling <a href="https://lafillepassympa.com/developers/doc/administrate/cache/" >Varnish</a> for your application is very simple. All instances of PHP provide <a href="https://lafillepassympa.com/developers/doc/administrate/cache/" >Varnish</a>, you just have to configure your application to use it.</p>
+    <a href="#http-cache-with-varnish" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Enabling <a href="https://stagingv6.cleverapps.io/developers/doc/administrate/cache/" >Varnish</a> for your application is very simple. All instances of PHP provide <a href="https://stagingv6.cleverapps.io/developers/doc/administrate/cache/" >Varnish</a>, you just have to configure your application to use it.</p>
 <ol>
 <li>
 <p>To use Varnish in your application, you have to create a <code>varnish.vcl</code> file in the <code>clevercloud</code> folder of your application. If this folder doesn&rsquo;t exist, create it in the <strong>root</strong> of your project.</p>
@@ -2784,11 +2784,11 @@ We noticed performances problems when performance plugins are enabled and we rec
 </ol>
 <p>If you need to manually purge the Varnish cache, the plugin provides a <strong>Purge Varnish cache</strong> button on the top bar of your website.</p>
 <h3>Object cache with Redis<span class="hx-absolute -hx-mt-20" id="object-cache-with-redis"></span>
-    <a href="#object-cache-with-redis" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><a href="https://lafillepassympa.com/developers/doc/addons/redis/" >Redis</a> is an <a href="#linking-a-database-or-any-other-add-on-to-your-application" >add-on</a> that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.</p>
-<p>To enable <a href="https://lafillepassympa.com/developers/doc/addons/redis/" >Redis</a> for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by <em>W3 Total Cache</em> for example). Make sure they aren&rsquo;t enabled to avoid conflicts and performance problems.</p>
+    <a href="#object-cache-with-redis" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" >Redis</a> is an <a href="#linking-a-database-or-any-other-add-on-to-your-application" >add-on</a> that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.</p>
+<p>To enable <a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" >Redis</a> for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by <em>W3 Total Cache</em> for example). Make sure they aren&rsquo;t enabled to avoid conflicts and performance problems.</p>
 <ol>
 <li>
-<p><a href="https://lafillepassympa.com/developers/doc/addons/redis/" >Create a Redis add-on</a> for your application.</p>
+<p><a href="https://stagingv6.cleverapps.io/developers/doc/addons/redis/" >Create a Redis add-on</a> for your application.</p>
 </li>
 <li>
 <p>Add the following lines to your <code>wp-config.php</code> file. Make sure they are <strong>before</strong> the <code>require_once(ABSPATH . 'wp-settings.php');</code> line, otherwise the Redis connexion will not work for your application and your application will return only white pages!</p>

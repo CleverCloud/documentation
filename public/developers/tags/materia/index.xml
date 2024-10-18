@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Materia</title>
-    <link>https://lafillepassympa.com/developers/tags/materia/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/materia/</link>
     <description>Recent content in Materia on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/materia/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/materia/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Materia KV enters public Alpha</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-materia-kv-public-alpha/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-materia-kv-public-alpha/</guid>
       <description>
         
         

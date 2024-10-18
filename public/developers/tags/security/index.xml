@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Security</title>
-    <link>https://lafillepassympa.com/developers/tags/security/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/security/</link>
     <description>Recent content in Security on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>CVE-2024-47561: we upgraded Avro and Apache Pulsar</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-07-cve-2024-47561/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-07-cve-2024-47561/</link>
       <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-07-cve-2024-47561/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-07-cve-2024-47561/</guid>
       <description>
         
         
@@ -32,10 +32,10 @@
     
     <item>
       <title>regreSSHion (CVE-2024-6387): our response</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-10-cve-2024-6387/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-10-cve-2024-6387/</link>
       <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-10-cve-2024-6387/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-10-cve-2024-6387/</guid>
       <description>
         
         
@@ -49,10 +49,10 @@
     
     <item>
       <title>Backdoor in xz/liblzma (CVE-2024-3094): our response</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-04-cve-2024-3094/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-04-cve-2024-3094/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-04-cve-2024-3094/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-04-cve-2024-3094/</guid>
       <description>
         
         
@@ -74,10 +74,10 @@
     
     <item>
       <title>OAuth tokens expiration</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-12-oauth-token-expiration/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-12-oauth-token-expiration/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-12-oauth-token-expiration/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-12-oauth-token-expiration/</guid>
       <description>
         
         
@@ -90,15 +90,15 @@
     
     <item>
       <title>February 2024 images update (part 1)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/</link>
       <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/</guid>
       <description>
         
         
         &lt;p&gt;Over the past few months, we&amp;rsquo;ve overhauled the way we build our applications and add-ons images from tooling to included binaries. We&amp;rsquo;ll deliver soon the first public milestone of this project, which will leads us to more frequent releases.&lt;/p&gt;
-&lt;p&gt;In the meantime, we&amp;rsquo;ve updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
+&lt;p&gt;In the meantime, we&amp;rsquo;ve updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;:
 &lt;ul&gt;
@@ -134,10 +134,10 @@
     
     <item>
       <title>Encryption at rest</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/encryption-at-rest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/encryption-at-rest/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/encryption-at-rest/</guid>
       <description>
         
         

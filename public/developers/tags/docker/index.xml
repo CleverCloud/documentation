@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Docker</title>
-    <link>https://lafillepassympa.com/developers/tags/docker/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/docker/</link>
     <description>Recent content in Docker on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 03 Jul 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Deploy Docker containers on Clever Cloud with Terraform (or OpenTofu)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-03-docker-terraform/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-03-docker-terraform/</link>
       <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-03-docker-terraform/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-03-docker-terraform/</guid>
       <description>
         
         

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Ruby</title>
-    <link>https://lafillepassympa.com/developers/tags/ruby/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/ruby/</link>
     <description>Recent content in Ruby on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Ruby 3.3.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-24-ruby-3.3.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-24-ruby-3.3.0/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-24-ruby-3.3.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-24-ruby-3.3.0/</guid>
       <description>
         
         
@@ -53,7 +53,7 @@
 
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
     &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
-      If you use Node.js on this image, be aware that default version is now 20.11.0 (LTS). If you need another release to deploy your application, set the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.
+      If you use Node.js on this image, be aware that default version is now 20.11.0 (LTS). If you need another release to deploy your application, set the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/&#34; &gt;environment variable&lt;/a&gt;.
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;

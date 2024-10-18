@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Metrics</title>
-    <link>https://lafillepassympa.com/developers/tags/metrics/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/metrics/</link>
     <description>Recent content in Metrics on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Metrics</title>
-      <link>https://lafillepassympa.com/developers/doc/metrics/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/metrics/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/metrics/</guid>
       <description>
         
         
@@ -66,7 +66,7 @@ you can also have access to requests / second, and GC statistics.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/grafana-from-oveview-pane.png&#34; alt=&#34;Direct link from Overview pane to app dashboard in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/grafana-from-oveview-pane.png&#34; alt=&#34;Direct link from Overview pane to app dashboard in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Direct link from Overview pane to app dashboard in Grafana
     &lt;/figcaption&gt;
@@ -76,7 +76,7 @@ you can also have access to requests / second, and GC statistics.&lt;/p&gt;
     &lt;a href=&#34;#advanced-pane&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Advanced metrics allow you to access all gathered metrics,
 on a specified time range.&lt;/p&gt;
 &lt;h3&gt;Custom queries&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;custom-queries&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#custom-queries&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All metrics are stored in &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, so you can explore data directly with the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;quantum&lt;/a&gt; interface, with &lt;a href=&#34;https://www.warp10.io/doc/reference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WarpScript&lt;/a&gt;.&lt;/p&gt;
+    &lt;a href=&#34;#custom-queries&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All metrics are stored in &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, so you can explore data directly with the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;quantum&lt;/a&gt; interface, with &lt;a href=&#34;https://www.warp10.io/doc/reference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WarpScript&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For instance, you can derive metrics over time, do custom aggregations or combine metrics.&lt;/p&gt;
 &lt;h3&gt;Get alerts&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-alerts&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#get-alerts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.&lt;/p&gt;
@@ -86,7 +86,7 @@ on a specified time range.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/grafana-alerts.png&#34; alt=&#34;Alert option from the general menu in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/grafana-alerts.png&#34; alt=&#34;Alert option from the general menu in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Alert option from the general menu in Grafana
     &lt;/figcaption&gt;
@@ -94,7 +94,7 @@ on a specified time range.&lt;/p&gt;
 
 &lt;p&gt;For example, check &lt;a href=&#34;https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this tutorial on how to create Slack alerts with Grafana&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Access Logs metrics&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-logs-metrics&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#access-logs-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All your applications access logs are pushed to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;. You are now able to process them directly in the console in the Metrics tab of your applications.&lt;/p&gt;
+    &lt;a href=&#34;#access-logs-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All your applications access logs are pushed to &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;. You are now able to process them directly in the console in the Metrics tab of your applications.&lt;/p&gt;
 &lt;h3&gt;Request rate&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;request-rate&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#request-rate&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We provide a request rate metric. It is an average of the access logs request count over 1 minute. It is updated every 30 second.&lt;/p&gt;
 &lt;p&gt;This can be reached using the Warp 10 class: &lt;code&gt;request_rate&lt;/code&gt;.&lt;/p&gt;
@@ -259,7 +259,7 @@ on a specified time range.&lt;/p&gt;
 
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
     &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
-      Look at &lt;em&gt;fetch_accessLogs_key_v0&lt;/em&gt; macro to have a convenient way to explore access log data, see &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp 10 documentation&lt;/a&gt;.
+      Look at &lt;em&gt;fetch_accessLogs_key_v0&lt;/em&gt; macro to have a convenient way to explore access log data, see &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Warp 10 documentation&lt;/a&gt;.
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -363,7 +363,7 @@ on a specified time range.&lt;/p&gt;
   
 &lt;/div&gt;
 &lt;h2&gt;Monitoring&amp;rsquo; metrics&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;monitoring-metrics&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#monitoring-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All applications and VMs instances behind are monitored. Data is sent to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, a Geotimes series database.
+    &lt;a href=&#34;#monitoring-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;All applications and VMs instances behind are monitored. Data is sent to &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;Warp 10&lt;/a&gt;, a Geotimes series database.
 All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.&lt;/p&gt;
 &lt;h3&gt;Monitoring data model&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;monitoring-data-model&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#monitoring-data-model&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;All metrics data follow the same schema in warp 10.
@@ -672,7 +672,7 @@ Labels provide additional information about the VMs like instances id, organisat
 &lt;/table&gt;
 &lt;h3&gt;Examples and usages&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;examples-and-usages&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#examples-and-usages&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;From the &lt;code&gt;metrics&lt;/code&gt; tab on the console. You can either open a Quantum console, an online WarpScript editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).&lt;/p&gt;
-&lt;p&gt;More information about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;Quantum and Warp 10&lt;/a&gt; in our documentation.&lt;/p&gt;
+&lt;p&gt;More information about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;Quantum and Warp 10&lt;/a&gt; in our documentation.&lt;/p&gt;
 &lt;p&gt;For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.&lt;/p&gt;
 
@@ -727,7 +727,7 @@ minute.&lt;/p&gt;
   
 &lt;/div&gt;
 &lt;h2&gt;Consumption metric&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;consumption-metric&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#consumption-metric&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Consumption can also be inferred by our metrics. We provide some helper macros in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/warp10/&#34; &gt;Warp 10 documentation&lt;/a&gt;.&lt;/p&gt;
+    &lt;a href=&#34;#consumption-metric&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Consumption can also be inferred by our metrics. We provide some helper macros in the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/&#34; &gt;Warp 10 documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Consumption unit is in &lt;strong&gt;second&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The following script provides the whole consumption from between start and end timestamps for all applications
 under an organisation.&lt;/p&gt;
@@ -877,10 +877,10 @@ with &lt;code&gt;&amp;quot;-with-rtsopts=-T -N&amp;quot;&lt;/code&gt; to enable 
     
     <item>
       <title>Warp 10</title>
-      <link>https://lafillepassympa.com/developers/doc/metrics/warp10/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/metrics/warp10/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/</guid>
       <description>
         
         
@@ -1222,7 +1222,7 @@ can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
     &lt;a href=&#34;#access-logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;fetch_accessLogs_key_v0&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series (&lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. It allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole JSON.&lt;/p&gt;
+&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series (&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. It allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole JSON.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -1254,7 +1254,7 @@ can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
   
 &lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;More example in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics part of this documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More example in the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics part of this documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nested keys&lt;/strong&gt; can be reached using a dot (&lt;code&gt;.&lt;/code&gt;) to represent the depth.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lafillepassympa.com/developers/sitemap.xml
+Sitemap: https://stagingv6.cleverapps.io/developers/sitemap.xml

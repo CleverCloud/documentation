@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Admin-Console</title>
-    <link>https://lafillepassympa.com/developers/tags/admin-console/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/admin-console/</link>
     <description>Recent content in Admin-Console on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/admin-console/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/admin-console/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Notifications</title>
-      <link>https://lafillepassympa.com/developers/doc/account/notifications/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/notifications/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/notifications/</guid>
       <description>
         
         

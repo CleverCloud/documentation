@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Billing</title>
-    <link>https://lafillepassympa.com/developers/doc/billing/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/billing/</link>
     <description>Recent content in Billing on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/billing/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/billing/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Analytics and consumption</title>
-      <link>https://lafillepassympa.com/developers/doc/billing/analytics-consumption/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/billing/analytics-consumption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/billing/analytics-consumption/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/billing/analytics-consumption/</guid>
       <description>
         
         
@@ -39,7 +39,7 @@
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/analytics.png&#34; alt=&#34;The Uptime Service dashboard in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/analytics.png&#34; alt=&#34;The Uptime Service dashboard in Grafana&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         The Uptime Service dashboard in Grafana
     &lt;/figcaption&gt;
@@ -55,10 +55,10 @@
     
     <item>
       <title>Payments &amp; invoicing</title>
-      <link>https://lafillepassympa.com/developers/doc/billing/payments-invoicing/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/billing/payments-invoicing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/billing/payments-invoicing/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/billing/payments-invoicing/</guid>
       <description>
         
         
@@ -74,7 +74,7 @@
     &lt;a href=&#34;#invoices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Invoices are available in the &lt;em&gt;Invoices&lt;/em&gt; tab in the sidebar of the organization section. Once paid, invoices are moved to the &amp;ldquo;Paid invoice&amp;rdquo; table.&lt;/p&gt;
 &lt;h3&gt;Receive invoices&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;receive-invoices&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#receive-invoices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can change the billing email for an organization in &lt;em&gt;Information &amp;gt; Billing details &amp;gt; Billing email&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Also an organization member with the accountant role can receive invoices as described in the organization &lt;a href=&#34;https://lafillepassympa.com/developers/doc/account/organizations/#roles-and-privileges&#34; &gt;roles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also an organization member with the accountant role can receive invoices as described in the organization &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/account/organizations/#roles-and-privileges&#34; &gt;roles&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Change Billing Information&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;change-billing-information&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#change-billing-information&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -90,7 +90,7 @@
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/billing-infos.png&#34; alt=&#34;Organization information&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/billing-infos.png&#34; alt=&#34;Organization information&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Organization information
     &lt;/figcaption&gt;
@@ -116,7 +116,7 @@ Your rights are explained in a statement that you can obtain from your bank.&lt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;About invoices issuance and notifications&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;about-invoices-issuance-and-notifications&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#about-invoices-issuance-and-notifications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As explained in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/billing/unified-invoices/#monthly-invoice&#34; &gt;Monthly Invoice documentation&lt;/a&gt;, Clever Cloud issues an invoice at the beginning of every month.
+    &lt;a href=&#34;#about-invoices-issuance-and-notifications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As explained in the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/billing/unified-invoices/#monthly-invoice&#34; &gt;Monthly Invoice documentation&lt;/a&gt;, Clever Cloud issues an invoice at the beginning of every month.
 The invoice is emailed to you.
 In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.&lt;/p&gt;
 
@@ -125,10 +125,10 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
     
     <item>
       <title>Pricing</title>
-      <link>https://lafillepassympa.com/developers/doc/billing/pricing/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/billing/pricing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/billing/pricing/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/billing/pricing/</guid>
       <description>
         
         
@@ -139,10 +139,10 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
     
     <item>
       <title>Unified Invoicing</title>
-      <link>https://lafillepassympa.com/developers/doc/billing/unified-invoices/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/billing/unified-invoices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/billing/unified-invoices/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/billing/unified-invoices/</guid>
       <description>
         
         
@@ -162,7 +162,7 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/invoice-list.png&#34; alt=&#34;The list of invoices&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/invoice-list.png&#34; alt=&#34;The list of invoices&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         The list of invoices
     &lt;/figcaption&gt;
@@ -176,7 +176,7 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/invoice-amount-to-pay.png&#34; alt=&#34;The second section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/invoice-amount-to-pay.png&#34; alt=&#34;The second section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         The second section of the invoice
     &lt;/figcaption&gt;
@@ -201,7 +201,7 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/invoice-credits-balance.png&#34; alt=&#34;The second section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/invoice-credits-balance.png&#34; alt=&#34;The second section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         The second section of the invoice
     &lt;/figcaption&gt;
@@ -215,7 +215,7 @@ In accordance with SEPA rules and the mandate your agreed to, this email also no
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/invoice-runtime-detail.png&#34; alt=&#34;The third section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/invoice-runtime-detail.png&#34; alt=&#34;The third section of the invoice&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         The third section of the invoice
     &lt;/figcaption&gt;
@@ -233,7 +233,7 @@ In contrast, services such as Cellar object storage or Pulsar are charged accord
 &lt;h2&gt;Specific invoices&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;specific-invoices&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#specific-invoices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For specific services performed by the support teams, specific invoices can be created by the administration or support teams. These invoices usually indicate a specific service act.&lt;/p&gt;
 &lt;h2&gt;Management of payment methods&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;management-of-payment-methods&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#management-of-payment-methods&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For each organisation it is possible to register one or more payment methods (&lt;a href=&#34;https://lafillepassympa.com/developers/doc/billing/payments-invoicing/&#34; &gt;see list of payment methods here&lt;/a&gt;). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the &amp;ldquo;Pay&amp;rdquo; button.&lt;/p&gt;
+    &lt;a href=&#34;#management-of-payment-methods&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For each organisation it is possible to register one or more payment methods (&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/billing/payments-invoicing/&#34; &gt;see list of payment methods here&lt;/a&gt;). Invoices will be automatically paid with the default payment method a few days after their generation. For the one-off invoices mentioned above, the invoice must be paid manually, via the invoice page via the &amp;ldquo;Pay&amp;rdquo; button.&lt;/p&gt;
 &lt;h2&gt;Payments and reminders&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;payments-and-reminders&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#payments-and-reminders&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As long as an invoice remains &lt;em&gt;pending&lt;/em&gt;, we will perform these actions on specific days:&lt;/p&gt;
 &lt;ul&gt;

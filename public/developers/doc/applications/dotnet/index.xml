@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – .NET</title>
-    <link>https://lafillepassympa.com/developers/doc/applications/dotnet/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/applications/dotnet/</link>
     <description>Recent content in .NET on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/applications/dotnet/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/applications/dotnet/index.xml" rel="self" type="application/rss+xml" />
     
     
       

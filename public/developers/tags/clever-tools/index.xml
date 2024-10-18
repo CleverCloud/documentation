@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Clever-Tools</title>
-    <link>https://lafillepassympa.com/developers/tags/clever-tools/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/clever-tools/</link>
     <description>Recent content in Clever-Tools on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/clever-tools/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/clever-tools/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Clever Tools 3.8.3 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
       <description>
         
         
@@ -48,10 +48,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.8: &#34;Big Summer Update&#34; is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
       <description>
         
         
@@ -130,10 +130,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.7.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
       <description>
         
         
@@ -161,10 +161,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.6.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
       <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
       <description>
         
         
@@ -192,10 +192,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>New logs interface is available in public beta</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
       <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
       <description>
         
         
@@ -212,14 +212,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.5.2 is available with cURL, KV, Tasks and more!</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
       <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
+        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;JSON format is supported for more commands, the &lt;code&gt;--since&lt;/code&gt; option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use &lt;code&gt;clever logs --since 2h&lt;/code&gt;. This command documentation is available &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Clever Tasks can now be directly created and configured from Clever Tools. They&amp;rsquo;re applications which can be run on demand, not awaiting any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port, but needing a &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; to execute. Once it&amp;rsquo;s done, the application stops. You&amp;rsquo;re just billed for the execution time. It can help you to make some checks, compilation, file conversions, etc.&lt;/p&gt;
 &lt;p&gt;To create a Clever Task using Python for example:&lt;/p&gt;
@@ -306,14 +306,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.4.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-16-clever-tools-3.4.0/</link>
       <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-16-clever-tools-3.4.0/</guid>
       <description>
         
         
-        &lt;p&gt;This week, we published two Clever Tools updates in a row. 3.3.0 was about adding &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/&#34; &gt;our new Gravelines HDS region&lt;/a&gt; support and fixing a bug in our add-ons logs feature. 3.4.0 brings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;json-stream&lt;/code&gt; formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (&lt;code&gt;jq&lt;/code&gt; compatible). You can learn more about it &lt;a href=&#34;https://github.com/ndjson/ndjson-spec/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;This week, we published two Clever Tools updates in a row. 3.3.0 was about adding &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-12-new-grahds-region/&#34; &gt;our new Gravelines HDS region&lt;/a&gt; support and fixing a bug in our add-ons logs feature. 3.4.0 brings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;json-stream&lt;/code&gt; formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (&lt;code&gt;jq&lt;/code&gt; compatible). You can learn more about it &lt;a href=&#34;https://github.com/ndjson/ndjson-spec/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But it&amp;rsquo;s the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;deploy&lt;/code&gt; commands which are the most improved by this release. First, you&amp;rsquo;ll now get the application or add-on name confirmed after creation. You can also get a JSON response adding &lt;code&gt;--format json&lt;/code&gt; or &lt;code&gt;-F json&lt;/code&gt; to the &lt;code&gt;create&lt;/code&gt; or &lt;code&gt;create-addon&lt;/code&gt; command. Second, the current folder name is now used as default application name if none is provided.&lt;/p&gt;
 &lt;p&gt;To create a Node.js application once logged in, you can now just:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
@@ -386,14 +386,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.2.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-07-clever-tools-3.2.0/</link>
       <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-07-clever-tools-3.2.0/</guid>
       <description>
         
         
-        &lt;p&gt;As mentioned &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/&#34; &gt;in the previous release&lt;/a&gt;, the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the 3.2.0&lt;/a&gt; adding the log auto retry feature on network failures and some fixes:&lt;/p&gt;
+        &lt;p&gt;As mentioned &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/&#34; &gt;in the previous release&lt;/a&gt;, the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the 3.2.0&lt;/a&gt; adding the log auto retry feature on network failures and some fixes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;api:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/b134213f30d46dd7f5690a38425deb4fd752148c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;b134213&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/fada06771369173e579f5fd3a708ff3cef40c95f&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fada067&lt;/a&gt;)&lt;/li&gt;
@@ -424,10 +424,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/</link>
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/</guid>
       <description>
         
         

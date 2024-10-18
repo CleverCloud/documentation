@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Changelog</title>
-    <link>https://lafillepassympa.com/developers/changelog/</link>
+    <link>https://stagingv6.cleverapps.io/developers/changelog/</link>
     <description>Recent content in Changelog on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/changelog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/changelog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,14 +16,14 @@
     
     <item>
       <title>Azimutt is available as an add-on on Clever Cloud</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-18-azimutt-available/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-18-azimutt-available/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-18-azimutt-available/</guid>
       <description>
         
         
-        &lt;p&gt;Azimutt is &lt;a href=&#34;https://github.com/azimuttapp/azimutt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an open-source project&lt;/a&gt; we follow for a long time. Created by Loïc Knuchel, it helps you to explore, analyze and manage your database in a pleasant graphical interface. It&amp;rsquo;s a member of the &lt;a href=&#34;https://www.clever-cloud.com/up-program/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud startup program&lt;/a&gt;, for some weeks and now part of our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/marketplace/&#34; &gt;Marketplace&lt;/a&gt;. Thus, you can create an Azimutt account, free or with a subscription, directly &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;from the Console&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Azimutt is &lt;a href=&#34;https://github.com/azimuttapp/azimutt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an open-source project&lt;/a&gt; we follow for a long time. Created by Loïc Knuchel, it helps you to explore, analyze and manage your database in a pleasant graphical interface. It&amp;rsquo;s a member of the &lt;a href=&#34;https://www.clever-cloud.com/up-program/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Cloud startup program&lt;/a&gt;, for some weeks and now part of our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/marketplace/&#34; &gt;Marketplace&lt;/a&gt;. Thus, you can create an Azimutt account, free or with a subscription, directly &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;from the Console&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You just have to provide a compatible database URI, hosted by Clever Cloud or not, and start exploring it. Our integration is based on a gateway hosted by Clever Cloud. No credentials are shared with Azimutt, and they&amp;rsquo;re kept safely in your browser.&lt;/p&gt;
 &lt;p&gt;Feel free to let us know what you think about this tool and if you want a deeper integration in &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/dbaas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our GitHub Community&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
@@ -36,14 +36,14 @@
     
     <item>
       <title>Sōzu 1.0.5 is available and deployed</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-17-sozu-1.0.5/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-17-sozu-1.0.5/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-17-sozu-1.0.5/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-17-sozu-1.0.5/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;https://www.sozu.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu&lt;/a&gt; 1.0.5 is now available and deployed on &lt;code&gt;cleverapps.io&lt;/code&gt; domains, we&amp;rsquo;re progressively rolling it out on our own domains and dedicated load balancers. Since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-10-04-sozu-1.0.2/&#34; &gt;the release of Sōzu 1.0.2&lt;/a&gt; we&amp;rsquo;ve fixed some bugs, improved CLI, metrics and performances.&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;https://www.sozu.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu&lt;/a&gt; 1.0.5 is now available and deployed on &lt;code&gt;cleverapps.io&lt;/code&gt; domains, we&amp;rsquo;re progressively rolling it out on our own domains and dedicated load balancers. Since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-sozu-1.0.2/&#34; &gt;the release of Sōzu 1.0.2&lt;/a&gt; we&amp;rsquo;ve fixed some bugs, improved CLI, metrics and performances.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;re currently testing the 1.1.0 release candidate of Sōzu, with HTTP/2 support, coming soon on Clever Cloud.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn more about &lt;a href=&#34;https://github.com/sozu-proxy/sozu/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sōzu new releases&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -58,10 +58,10 @@
     
     <item>
       <title>CVE-2024-47561: we upgraded Avro and Apache Pulsar</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-07-cve-2024-47561/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-07-cve-2024-47561/</link>
       <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-07-cve-2024-47561/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-07-cve-2024-47561/</guid>
       <description>
         
         
@@ -73,18 +73,18 @@
     
     <item>
       <title>Keycloak updated to 25.0.6, now in public beta</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-04-keycloak-beta-release/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-keycloak-beta-release/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-04-keycloak-beta-release/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-04-keycloak-beta-release/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud&amp;rsquo;s Keycloak add-on, developed with Please Open-it, is now available in public beta. We enhanced user experience, performances and features since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/&#34; &gt;the alpha stage&lt;/a&gt;. We revised the default configuration of underlying resources. We now use a &lt;code&gt;S flavored&lt;/code&gt; Java application with more memory and a XXS Small Space PostgreSQL database which is enough for low-volume needs. Of course, you can change it according to your needs at any time.&lt;/p&gt;
-&lt;p&gt;The default Keycloak version is now 25.0.6. If you want to upgrade, change the &lt;code&gt;CC_KEYCLOAK_VERSION&lt;/code&gt; environment variable to &lt;code&gt;25.0.6&lt;/code&gt; and restart the Java application. You can also add the new &lt;code&gt;CC_METRICS_PROMETHEUS_PATH=/metrics&lt;/code&gt; and &lt;code&gt;CC_METRICS_PROMETHEUS_PORT=9000&lt;/code&gt;to access metrics &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;from Grafana&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud&amp;rsquo;s Keycloak add-on, developed with Please Open-it, is now available in public beta. We enhanced user experience, performances and features since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/&#34; &gt;the alpha stage&lt;/a&gt;. We revised the default configuration of underlying resources. We now use a &lt;code&gt;S flavored&lt;/code&gt; Java application with more memory and a XXS Small Space PostgreSQL database which is enough for low-volume needs. Of course, you can change it according to your needs at any time.&lt;/p&gt;
+&lt;p&gt;The default Keycloak version is now 25.0.6. If you want to upgrade, change the &lt;code&gt;CC_KEYCLOAK_VERSION&lt;/code&gt; environment variable to &lt;code&gt;25.0.6&lt;/code&gt; and restart the Java application. You can also add the new &lt;code&gt;CC_METRICS_PROMETHEUS_PATH=/metrics&lt;/code&gt; and &lt;code&gt;CC_METRICS_PROMETHEUS_PORT=9000&lt;/code&gt;to access metrics &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#publish-your-own-metrics&#34; &gt;from Grafana&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We plan to upgrade to &lt;a href=&#34;https://github.com/keycloak/keycloak/releases/tag/26.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;26.x&lt;/a&gt; in the next few weeks after checking its stability and validating it for our platform.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -92,15 +92,15 @@
     
     <item>
       <title>Materia KV: layer update, with TTL support</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-01-materia-kv-ttl-layer-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-materia-kv-ttl-layer-update/</link>
       <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-01-materia-kv-ttl-layer-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-materia-kv-ttl-layer-update/</guid>
       <description>
         
         
-        &lt;p&gt;After the first release of our &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/materia-kv&#34; &gt;Materia KV add-on&lt;/a&gt;, we discussed with users and what they wanted to see in the next version. A major milestone for us was to add support for &lt;code&gt;TTL&lt;/code&gt; (Time To Live) command, and those related to it such as &lt;code&gt;EXPIRE&lt;/code&gt;, &lt;code&gt;PEXPIRE&lt;/code&gt;, &lt;code&gt;PTTL&lt;/code&gt;, &lt;code&gt;SET EX&lt;/code&gt;. It&amp;rsquo;s now available and will helps us, for example, to bring Materia KV support to PHP sessions.&lt;/p&gt;
-&lt;p&gt;This new release of our Redis API compatible layer brings a new design, helping us to better support more commands in the future. In the meantime, we&amp;rsquo;ve retired hash and list commands, to enhance them. They will be back soon. Some others are added, like &lt;code&gt;CLIENT ID&lt;/code&gt;, &lt;code&gt;DECRBY&lt;/code&gt;, &lt;code&gt;INCRBY&lt;/code&gt;,&lt;code&gt;GETBIT&lt;/code&gt;, &lt;code&gt;SETBIT&lt;/code&gt;, etc. The full list is available &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/materia-kv/#supported-types-and-commands&#34; &gt;here&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;After the first release of our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/materia-kv&#34; &gt;Materia KV add-on&lt;/a&gt;, we discussed with users and what they wanted to see in the next version. A major milestone for us was to add support for &lt;code&gt;TTL&lt;/code&gt; (Time To Live) command, and those related to it such as &lt;code&gt;EXPIRE&lt;/code&gt;, &lt;code&gt;PEXPIRE&lt;/code&gt;, &lt;code&gt;PTTL&lt;/code&gt;, &lt;code&gt;SET EX&lt;/code&gt;. It&amp;rsquo;s now available and will helps us, for example, to bring Materia KV support to PHP sessions.&lt;/p&gt;
+&lt;p&gt;This new release of our Redis API compatible layer brings a new design, helping us to better support more commands in the future. In the meantime, we&amp;rsquo;ve retired hash and list commands, to enhance them. They will be back soon. Some others are added, like &lt;code&gt;CLIENT ID&lt;/code&gt;, &lt;code&gt;DECRBY&lt;/code&gt;, &lt;code&gt;INCRBY&lt;/code&gt;,&lt;code&gt;GETBIT&lt;/code&gt;, &lt;code&gt;SETBIT&lt;/code&gt;, etc. The full list is available &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/materia-kv/#supported-types-and-commands&#34; &gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you have any questions or feedback, let&amp;rsquo;s discuss it on our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/materia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community&lt;/a&gt;.&lt;/p&gt;
 
       </description>
@@ -108,16 +108,16 @@
     
     <item>
       <title>Python image: what&#39;s new and what&#39;s to come</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-10-01-python-image-changes/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-python-image-changes/</link>
       <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-10-01-python-image-changes/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-10-01-python-image-changes/</guid>
       <description>
         
         
         &lt;p&gt;Python ecosystem is diverse, with lots of legacy versions and practices. But in the recent months, it evolved on many fronts. So, we&amp;rsquo;ve decided to handle it and start to revise how you can deploy Python applications on Clever Cloud.&lt;/p&gt;
 &lt;h2&gt;Package management: uv on Clever Cloud&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;package-management-uv-on-clever-cloud&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#package-management-uv-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We only support &lt;a href=&#34;https://packaging.python.org/en/latest/tutorials/installing-packages/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pip&lt;/a&gt;, &lt;code&gt;requirements.txt&lt;/code&gt; and &lt;code&gt;setup.py&lt;/code&gt; natively. For some weeks, we&amp;rsquo;ve included &lt;a href=&#34;https://docs.astral.sh/uv/getting-started/features/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uv&lt;/a&gt; in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/python/#use-uv-as-a-package-manager&#34; &gt;It&amp;rsquo;s now a part&lt;/a&gt; of our &amp;ldquo;Enthusiast tools&amp;rdquo; initiative and will be updated regularly. Thus, there is no active support for it yet.&lt;/p&gt;
+    &lt;a href=&#34;#package-management-uv-on-clever-cloud&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We only support &lt;a href=&#34;https://packaging.python.org/en/latest/tutorials/installing-packages/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pip&lt;/a&gt;, &lt;code&gt;requirements.txt&lt;/code&gt; and &lt;code&gt;setup.py&lt;/code&gt; natively. For some weeks, we&amp;rsquo;ve included &lt;a href=&#34;https://docs.astral.sh/uv/getting-started/features/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uv&lt;/a&gt; in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/python/#use-uv-as-a-package-manager&#34; &gt;It&amp;rsquo;s now a part&lt;/a&gt; of our &amp;ldquo;Enthusiast tools&amp;rdquo; initiative and will be updated regularly. Thus, there is no active support for it yet.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ll enhance its native support in coming releases of our Python image.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/astral-sh/uv&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn more about uv&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -129,9 +129,9 @@
 &lt;h2&gt;Python versions: time to clean up&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;python-versions-time-to-clean-up&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#python-versions-time-to-clean-up&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We&amp;rsquo;re in 2024 and Python 2.x still coexists with Python 3.x. As it&amp;rsquo;s always used by some of our customers, we&amp;rsquo;ve decided to continue to support it. Python 3.x is now the default version for new Python applications. We&amp;rsquo;ll make this change for other runtimes (where Python is also included), starting 2025. If you need Python 2.x, set &lt;code&gt;CC_PYTHON_VERSION=2&lt;/code&gt; in your applications.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ll also get closer to &lt;a href=&#34;https://devguide.python.org/versions/#python-release-cycle&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the official Python release cycle&lt;/a&gt;, which is 5 years of support. Thus, we&amp;rsquo;ll stop using Python 3.7 starting December 1st, 2024. Next year, we&amp;rsquo;ll deprecate Python 3.8 and stop providing it. If an application is asking for a deprecated version, it will use the latest available by default. So, upgrade your &lt;code&gt;CC_PYTHON_VERSION&lt;/code&gt; towards your needs.&lt;/p&gt;
-&lt;p&gt;If you need to sideload unsupported Python versions, &lt;code&gt;uv&lt;/code&gt; &lt;a href=&#34;https://docs.astral.sh/uv/guides/install-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;can help you&lt;/a&gt;. You can also deploy your applications through &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/docker&#34; &gt;Docker&lt;/a&gt;, but you should avoid to use end of life runtime in your applications.&lt;/p&gt;
+&lt;p&gt;If you need to sideload unsupported Python versions, &lt;code&gt;uv&lt;/code&gt; &lt;a href=&#34;https://docs.astral.sh/uv/guides/install-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;can help you&lt;/a&gt;. You can also deploy your applications through &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/docker&#34; &gt;Docker&lt;/a&gt;, but you should avoid to use end of life runtime in your applications.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/python/&#34; &gt;Python on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/python/&#34; &gt;Python on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;What&amp;rsquo;s next?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;whats-next&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#whats-next&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We&amp;rsquo;ll enhance our Python images to better support modern Python ecosystem and simplify the deployment process. Python 3.13, &lt;a href=&#34;https://docs.python.org/3.13/whatsnew/3.13.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;released today&lt;/a&gt;, will be available on Clever Cloud in the coming weeks.&lt;/p&gt;
@@ -142,10 +142,10 @@
     
     <item>
       <title>Clever Tools 3.8.3 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
       <description>
         
         
@@ -173,10 +173,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>JS Client 9.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-09-12-js-client-9.0.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-js-client-9.0.0/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-09-12-js-client-9.0.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-js-client-9.0.0/</guid>
       <description>
         
         
@@ -187,17 +187,17 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Version 2.0 of our GitLab Component for review applications is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-09-03-gitlab-components-review-apps/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-09-03-gitlab-components-review-apps/</link>
       <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-09-03-gitlab-components-review-apps/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-09-03-gitlab-components-review-apps/</guid>
       <description>
         
         
         &lt;p&gt;Some months ago, we released &lt;a href=&#34;https://gitlab.com/explore/catalog/CleverCloud/clever-cloud-pipeline&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a new GitLab Component&lt;/a&gt; to deploy applications from GitLab to Clever Cloud. Version 2.0 is available with variables injection from GitLab CI/CD and automatic releases. You can now use it with the &lt;code&gt;latest&lt;/code&gt; tag for tests, or &lt;code&gt;2.0.1&lt;/code&gt; tag for production.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Breaking changes&lt;/strong&gt;: Input &lt;code&gt;deploy&lt;/code&gt; have been removed to prevent users to script the environment variables injection before deploying the app. Remove it from your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; file if it&amp;rsquo;s set up, to avoid breaking your pipeline.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/gitlab/&#34; &gt;Learn more about how to deploy from GitLab to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/&#34; &gt;Learn more about how to deploy from GitLab to Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -205,10 +205,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Montreal (MTL) zone: new deployment URL</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-08-30-deploy-url-mtl/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-08-30-deploy-url-mtl/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-08-30-deploy-url-mtl/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-08-30-deploy-url-mtl/</guid>
       <description>
         
         
@@ -240,16 +240,16 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Java servlet containers cleanup, Wildfly upgrade</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-08-26-java-containers-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-08-26-java-containers-update/</link>
       <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-08-26-java-containers-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-08-26-java-containers-update/</guid>
       <description>
         
         
-        &lt;p&gt;As part of our images enhancement process, we&amp;rsquo;ve tidied up the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/java-war/#available-containers&#34; &gt;list of supported servlet containers&lt;/a&gt;. Those that are not longer used by our customers are removed from the Java image. If you need a container which is not listed &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/java-war/#available-containers&#34; &gt;here&lt;/a&gt; or a specific version, please contact &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our support team&lt;/a&gt;. This release also includes a &lt;a href=&#34;https://github.com/wildfly/wildfly&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wildfly&lt;/a&gt; upgrade. Versions 27.0.1 and 33.0.1 are now available.&lt;/p&gt;
+        &lt;p&gt;As part of our images enhancement process, we&amp;rsquo;ve tidied up the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/java/java-war/#available-containers&#34; &gt;list of supported servlet containers&lt;/a&gt;. Those that are not longer used by our customers are removed from the Java image. If you need a container which is not listed &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/java/java-war/#available-containers&#34; &gt;here&lt;/a&gt; or a specific version, please contact &lt;a href=&#34;https://console.clever-cloud.com/ticket-center-choice&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our support team&lt;/a&gt;. This release also includes a &lt;a href=&#34;https://github.com/wildfly/wildfly&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wildfly&lt;/a&gt; upgrade. Versions 27.0.1 and 33.0.1 are now available.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/java/&#34; &gt;Java on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/java/&#34; &gt;Java on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -257,10 +257,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Docker and Python image update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-08-09-python-3.12-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-08-09-python-3.12-update/</link>
       <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-08-09-python-3.12-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-08-09-python-3.12-update/</guid>
       <description>
         
         
@@ -289,10 +289,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Lagging server: our Sōzu testing tool available as a Rust Crate</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-08-01-lagging-server-crate/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-08-01-lagging-server-crate/</link>
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-08-01-lagging-server-crate/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-08-01-lagging-server-crate/</guid>
       <description>
         
         
@@ -310,16 +310,16 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Version 1.1 of our GitHub Action for review applications is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-30-github-action-1.1/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-30-github-action-1.1/</link>
       <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-30-github-action-1.1/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-30-github-action-1.1/</guid>
       <description>
         
         
         &lt;p&gt;Update for &lt;a href=&#34;https://github.com/marketplace/actions/clever-cloud-review-app-on-prs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Action&lt;/a&gt; to deploy applications from GitHub to Clever Cloud. Version 1.1 simplifies workflow files and gives conditional comments depending on the actions performed on the PR (deploy, update, delete).&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -327,14 +327,14 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Console: new Domains management interface</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-26-domains-console-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-26-domains-console-update/</link>
       <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-26-domains-console-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-26-domains-console-update/</guid>
       <description>
         
         
-        &lt;p&gt;We&amp;rsquo;ve upgraded the applications&amp;rsquo; Domains page in the Console. It&amp;rsquo;s now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/domain-names/#path-routing&#34; &gt;path routing&lt;/a&gt;. You also now have:&lt;/p&gt;
+        &lt;p&gt;We&amp;rsquo;ve upgraded the applications&amp;rsquo; Domains page in the Console. It&amp;rsquo;s now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/domain-names/#path-routing&#34; &gt;path routing&lt;/a&gt;. You also now have:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A unique form to add a custom domain or a test domain (&lt;code&gt;cleverapps.io&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;A unique list of test and custom domains&lt;/li&gt;
@@ -349,10 +349,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Elasticsearch and Jenkins update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</link>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-elastic-8.10.2-jenkins-2.452.3/</guid>
       <description>
         
         
@@ -376,10 +376,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Version 1.0 of our GitHub Action for review applications is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-18-github-action-review-apps/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-github-action-review-apps/</link>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-18-github-action-review-apps/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-18-github-action-review-apps/</guid>
       <description>
         
         
@@ -407,7 +407,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
   
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/&#34; &gt;Learn more about how to deploy from GitHub to Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -415,30 +415,30 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Console: new logs interface is now used by default</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-new-logs-default/</link>
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-new-logs-default/</guid>
       <description>
         
         
-        &lt;p&gt;New logs interface is available in the Console in public beta &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/&#34; &gt;for some months&lt;/a&gt;, and we already &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/&#34; &gt;enhanced it&lt;/a&gt;. We&amp;rsquo;re now confident enough to use it by default. You can still disable it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;New logs interface is available in the Console in public beta &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/&#34; &gt;for some months&lt;/a&gt;, and we already &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/&#34; &gt;enhanced it&lt;/a&gt;. We&amp;rsquo;re now confident enough to use it by default. You can still disable it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Keycloak add-on in public alpha</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/</link>
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-17-keycloak-public-release/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-keycloak-public-release/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud provides a Keycloak add-on, developed with Please Open-it, for some months in private alpha. We&amp;rsquo;re releasing it publicly, with a new version and some fixes. Any Clever Cloud user can now deploy a Keycloak service from &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API&lt;/a&gt;, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; and use it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/keycloak&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud provides a Keycloak add-on, developed with Please Open-it, for some months in private alpha. We&amp;rsquo;re releasing it publicly, with a new version and some fixes. Any Clever Cloud user can now deploy a Keycloak service from &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API&lt;/a&gt;, &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; or &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; and use it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/keycloak&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/keycloak/&#34; &gt;Learn more about Keycloak on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -446,10 +446,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Console: a fix for accountant access</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-12-accountant-access-console-fix/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-12-accountant-access-console-fix/</link>
       <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-12-accountant-access-console-fix/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-12-accountant-access-console-fix/</guid>
       <description>
         
         
@@ -460,10 +460,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Pulsar 3.3.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-11-pulsar-3.3.0-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-11-pulsar-3.3.0-update/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-11-pulsar-3.3.0-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-11-pulsar-3.3.0-update/</guid>
       <description>
         
         
@@ -477,10 +477,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>regreSSHion (CVE-2024-6387): our response</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-10-cve-2024-6387/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-10-cve-2024-6387/</link>
       <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-10-cve-2024-6387/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-10-cve-2024-6387/</guid>
       <description>
         
         
@@ -494,10 +494,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>MySQL and PostgreSQL update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</link>
       <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-06-mysql-pgsql-update/</guid>
       <description>
         
         
@@ -523,10 +523,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Go, Haskell and Ruby images update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-05-go-haskell-ruby-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-05-go-haskell-ruby-update/</link>
       <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-05-go-haskell-ruby-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-05-go-haskell-ruby-update/</guid>
       <description>
         
         
@@ -555,10 +555,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>PHP 8.2.21 and 8.3.9 image update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-04-apache-php-image-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-04-apache-php-image-update/</link>
       <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-04-apache-php-image-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-04-apache-php-image-update/</guid>
       <description>
         
         
@@ -570,7 +570,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
 &lt;/ul&gt;
 &lt;p&gt;Over the past few weeks, we have also included &lt;a href=&#34;https://dlcdn.apache.org/httpd/CHANGES_2.4.60&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache 2.4.60&lt;/a&gt;, fixing CVE-2024-36387, 38472, 38473, 38474, 38475, 38476, 38477, 39573 and &lt;a href=&#34;https://github.com/composer/composer/releases/tag/2.7.7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Composer 2.7.7&lt;/a&gt;, fixing CVE-2024-35241, 35242.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/php/&#34; &gt;PHP on Clever Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Learn more about &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/php/&#34; &gt;PHP on Clever Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -578,10 +578,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Deploy Docker containers on Clever Cloud with Terraform (or OpenTofu)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-03-docker-terraform/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-03-docker-terraform/</link>
       <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-03-docker-terraform/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-03-docker-terraform/</guid>
       <description>
         
         
@@ -596,10 +596,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?&lt;/code&gt
     
     <item>
       <title>Clever Tools 3.8: &#34;Big Summer Update&#34; is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
       <description>
         
         
@@ -678,10 +678,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Matomo v5.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
       <description>
         
         
@@ -698,14 +698,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>IP list update on Paris zone</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-28-new-ip-list-paris/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-28-new-ip-list-paris/</link>
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-28-new-ip-list-paris/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-28-new-ip-list-paris/</guid>
       <description>
         
         
-        &lt;p&gt;As our network evolves, we&amp;rsquo;ve updated &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone&#34; &gt;IP list for Paris (PAR) zone&lt;/a&gt;. If you use A records for DNS configuration, update them. 4 new IP addresses should be added (&lt;code&gt;91.208.207.220&lt;/code&gt; to &lt;code&gt;91.208.207.223&lt;/code&gt;). &lt;strong&gt;We strongly recommend using CNAME records instead.&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;As our network evolves, we&amp;rsquo;ve updated &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone&#34; &gt;IP list for Paris (PAR) zone&lt;/a&gt;. If you use A records for DNS configuration, update them. 4 new IP addresses should be added (&lt;code&gt;91.208.207.220&lt;/code&gt; to &lt;code&gt;91.208.207.223&lt;/code&gt;). &lt;strong&gt;We strongly recommend using CNAME records instead.&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -738,10 +738,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Better new Logs</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/</guid>
       <description>
         
         
@@ -751,7 +751,7 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
 &lt;li&gt;Regular expression&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can select one or the other using the buttons to the right of the text field. This is only a first step, as we&amp;rsquo;ll later introduce a new stack with indexed logs to better handle such filters and provide new features.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/changelog/new-logs-update.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/changelog/new-logs-update.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Some of you also asked for a change of the default behavior of this Logs interface. Until now, users were redirected to &lt;code&gt;Live&lt;/code&gt; view during a deployment, otherwise to the &lt;code&gt;7 days&lt;/code&gt; view, containing all available deployments/instances, with logs of the last deployment shown. We today introduce a new mechanism and now remember the last choice of a user, per application.&lt;/p&gt;
 &lt;p&gt;Depending on your feedback, we&amp;rsquo;ll improve this further in the coming weeks. Here again, this is a first step as the indexed logs will open up a wide range of possibilities in this area.&lt;/p&gt;
 &lt;ul&gt;
@@ -763,10 +763,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.7.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
       <description>
         
         
@@ -794,10 +794,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Materia KV enters public Alpha</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-materia-kv-public-alpha/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-materia-kv-public-alpha/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-materia-kv-public-alpha/</guid>
       <description>
         
         
@@ -814,15 +814,15 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Deploy MongoDB add-ons with our Terraform provider</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-10-mongo-db-terraform/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-10-mongo-db-terraform/</link>
       <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-10-mongo-db-terraform/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-10-mongo-db-terraform/</guid>
       <description>
         
         
-        &lt;p&gt;If you can deploy on Clever Cloud through our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;, our CLI (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;), or our &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API&lt;/a&gt;, you can also use Terraform and compatible tools such as &lt;a href=&#34;https://opentofu.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenTofu&lt;/a&gt;. We maintain a provider that allows you to manage your resources as code, from applications to add-ons (object storage, databases, etc.).&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ve recently added support for Python and &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/materia-kv/&#34; &gt;Materia KV&lt;/a&gt;. It&amp;rsquo;s MongoDB&amp;rsquo;s turn &lt;a href=&#34;https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/mongodb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;to be available&lt;/a&gt;. You can now create such an add-on, choose its plan, region and get the credentials to connect to it.&lt;/p&gt;
+        &lt;p&gt;If you can deploy on Clever Cloud through our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;, our CLI (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt;), or our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API&lt;/a&gt;, you can also use Terraform and compatible tools such as &lt;a href=&#34;https://opentofu.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenTofu&lt;/a&gt;. We maintain a provider that allows you to manage your resources as code, from applications to add-ons (object storage, databases, etc.).&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve recently added support for Python and &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/materia-kv/&#34; &gt;Materia KV&lt;/a&gt;. It&amp;rsquo;s MongoDB&amp;rsquo;s turn &lt;a href=&#34;https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/mongodb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;to be available&lt;/a&gt;. You can now create such an add-on, choose its plan, region and get the credentials to connect to it.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn more about &lt;a href=&#34;https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our Terraform provider&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -832,10 +832,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Sōzu 1.0.2 is available and deployed</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-07-sozu-1.0.2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-07-sozu-1.0.2/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-07-sozu-1.0.2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-07-sozu-1.0.2/</guid>
       <description>
         
         
@@ -856,10 +856,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>PHP 8.3, Composer 2.7.6 and Java 22 are available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-05-30-php-8.3-java-22/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-05-30-php-8.3-java-22/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-05-30-php-8.3-java-22/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-05-30-php-8.3-java-22/</guid>
       <description>
         
         
@@ -890,7 +890,7 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
 &lt;li&gt;&lt;strong&gt;PHP:&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Composer 2.7.6&lt;/li&gt;
-&lt;li&gt;Support for PHP 8.3 with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/php/#available-extensions-and-modules&#34; &gt;all supported extensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support for PHP 8.3 with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/php/#available-extensions-and-modules&#34; &gt;all supported extensions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PHP info apps are available for PHP &lt;a href=&#34;https://php80info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.0&lt;/a&gt;, &lt;a href=&#34;https://php81info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.1&lt;/a&gt;, &lt;a href=&#34;https://php82info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.2&lt;/a&gt; and &lt;a href=&#34;https://php83info.cleverapps.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -901,16 +901,16 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Manage Clever Tasks in the Console</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-05-28-tasks-in-console/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-05-28-tasks-in-console/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-05-28-tasks-in-console/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-05-28-tasks-in-console/</guid>
       <description>
         
         
-        &lt;p&gt;Since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/&#34; &gt;its release 3.5.2&lt;/a&gt;, Clever Tools is able to manage Clever Tasks. It&amp;rsquo;s now possible to create, configure and deploy them directly from the Console. To declare an application as a Task, check the corresponding box in the &lt;code&gt;Information&lt;/code&gt; tab.&lt;/p&gt;
+        &lt;p&gt;Since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/&#34; &gt;its release 3.5.2&lt;/a&gt;, Clever Tools is able to manage Clever Tasks. It&amp;rsquo;s now possible to create, configure and deploy them directly from the Console. To declare an application as a Task, check the corresponding box in the &lt;code&gt;Information&lt;/code&gt; tab.&lt;/p&gt;
 &lt;p&gt;A Clever Task can be run on demand. It executes the command you&amp;rsquo;ve set in the &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; environment variable, without waiting for any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port. After that, the application stops. It&amp;rsquo;s just billed for the execution time.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/clever-tasks.webp&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/changelog/clever-tasks.webp&#34;
     alt=&#34;Defines a Clever Cloud application as a Task in Console&#34; width=&#34;800px&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;Defines a Clever Cloud application as a Task in Console&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -922,10 +922,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Our new images stack enters production</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-26-new-images-stack/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-26-new-images-stack/</link>
       <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-26-new-images-stack/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-26-new-images-stack/</guid>
       <description>
         
         
@@ -937,10 +937,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Images: April 2024 update</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-25-images-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-25-images-update/</link>
       <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-25-images-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-25-images-update/</guid>
       <description>
         
         
@@ -971,7 +971,7 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
 &lt;/ul&gt;
 &lt;p&gt;We had to delay the release of PHP image with 8.3 version support, to better support some extensions and include latest security fixes. It will start to deploy next week and include an informative message when a deprecated version of PHP is used.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn more about the &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/&#34; &gt;message for deprecated PHP versions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Learn more about the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-24-php-deprecate-warning/&#34; &gt;message for deprecated PHP versions&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -979,10 +979,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>PHP: a warning message when a deprecated version is used</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-24-php-deprecate-warning/</link>
       <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-24-php-deprecate-warning/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-24-php-deprecate-warning/</guid>
       <description>
         
         
@@ -998,10 +998,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.6.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
       <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
       <description>
         
         
@@ -1029,10 +1029,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>New logs interface is available in public beta</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
       <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
       <description>
         
         
@@ -1049,14 +1049,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.5.2 is available with cURL, KV, Tasks and more!</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
       <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
+        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;JSON format is supported for more commands, the &lt;code&gt;--since&lt;/code&gt; option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use &lt;code&gt;clever logs --since 2h&lt;/code&gt;. This command documentation is available &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Clever Tasks can now be directly created and configured from Clever Tools. They&amp;rsquo;re applications which can be run on demand, not awaiting any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port, but needing a &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; to execute. Once it&amp;rsquo;s done, the application stops. You&amp;rsquo;re just billed for the execution time. It can help you to make some checks, compilation, file conversions, etc.&lt;/p&gt;
 &lt;p&gt;To create a Clever Task using Python for example:&lt;/p&gt;
@@ -1143,10 +1143,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Backdoor in xz/liblzma (CVE-2024-3094): our response</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-04-cve-2024-3094/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-04-cve-2024-3094/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-04-cve-2024-3094/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-04-cve-2024-3094/</guid>
       <description>
         
         
@@ -1168,14 +1168,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Pulsar: 3.2.1 release and storage policies</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-20-pulsar-3.2.1-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-20-pulsar-3.2.1-update/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-20-pulsar-3.2.1-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-20-pulsar-3.2.1-update/</guid>
       <description>
         
         
-        &lt;p&gt;We&amp;rsquo;ve deployed the &lt;a href=&#34;https://github.com/apache/pulsar/releases/tag/v3.2.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.2.1 release&lt;/a&gt; of Apache Pulsar on our platform. It brings lots of fixes and some new features. Please note we also added &lt;a href=&#34;https://lafillepassympa.com/developers/api/v4/#pulsar-policies&#34; &gt;a new v4 endpoint&lt;/a&gt; in our API to control Pulsar&amp;rsquo;s storage policies (offload, retention).&lt;/p&gt;
+        &lt;p&gt;We&amp;rsquo;ve deployed the &lt;a href=&#34;https://github.com/apache/pulsar/releases/tag/v3.2.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.2.1 release&lt;/a&gt; of Apache Pulsar on our platform. It brings lots of fixes and some new features. Please note we also added &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/v4/#pulsar-policies&#34; &gt;a new v4 endpoint&lt;/a&gt; in our API to control Pulsar&amp;rsquo;s storage policies (offload, retention).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn more about &lt;a href=&#34;https://www.clever-cloud.com/product/pulsar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Pulsar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1185,24 +1185,24 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Console&#39;s components upgrade</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</guid>
       <description>
         
         
-        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
+        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>OAuth tokens expiration</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-12-oauth-token-expiration/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-12-oauth-token-expiration/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-12-oauth-token-expiration/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-12-oauth-token-expiration/</guid>
       <description>
         
         
@@ -1215,10 +1215,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>API: set environment variables at application creation</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-07-env-vars-app-creation-api/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-env-vars-app-creation-api/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-07-env-vars-app-creation-api/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-env-vars-app-creation-api/</guid>
       <description>
         
         
@@ -1272,14 +1272,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Web Components v13</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://lafillepassympa.com/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
 &lt;p&gt;A standardized API is used for UI components that depend on a smart component. It includes a &lt;code&gt;state&lt;/code&gt; property receiving state type: &lt;code&gt;loaded&lt;/code&gt;, &lt;code&gt;loading&lt;/code&gt;, &lt;code&gt;error&lt;/code&gt; and data. Latest smart components no longer rely on &lt;code&gt;rxjs&lt;/code&gt;, making them easier to maintain.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Read the &lt;a href=&#34;https://github.com/CleverCloud/clever-components/releases/tag/13.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;full changelog&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -1294,20 +1294,20 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>February 2024 images update (part 2)</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-27-images-update-part2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-images-update-part2/</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-27-images-update-part2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-images-update-part2/</guid>
       <description>
         
         
-        &lt;p&gt;Earlier this month, we published &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-02-images-update/&#34; &gt;a first set of updates&lt;/a&gt; for Docker, Erlang, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-26-healthcheck-for-everyone/&#34; &gt;the new &lt;code&gt;healthcheck&lt;/code&gt; feature&lt;/a&gt; available for all applications.&lt;/p&gt;
-&lt;p&gt;New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
+        &lt;p&gt;Earlier this month, we published &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-02-images-update/&#34; &gt;a first set of updates&lt;/a&gt; for Docker, Erlang, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-26-healthcheck-for-everyone/&#34; &gt;the new &lt;code&gt;healthcheck&lt;/code&gt; feature&lt;/a&gt; available for all applications.&lt;/p&gt;
+&lt;p&gt;New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the &lt;code&gt;CC_NODE_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#commons-to-all-applications&#34; &gt;environment variable&lt;/a&gt;. Other changes are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;.Net:&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Version 8.0 support&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CC_DOTNET_VERSION&lt;/code&gt; &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#net&#34; &gt;environment variable&lt;/a&gt; can be &lt;code&gt;6.0&lt;/code&gt; or &lt;code&gt;8.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC_DOTNET_VERSION&lt;/code&gt; &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#net&#34; &gt;environment variable&lt;/a&gt; can be &lt;code&gt;6.0&lt;/code&gt; or &lt;code&gt;8.0&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Java - Elastic / APM:&lt;/strong&gt;
@@ -1317,21 +1317,21 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;New PHP image is next to come, with 8.3 version support, we&amp;rsquo;re currently working on it. After that, we&amp;rsquo;ll bring our new strategy to build images into production. We&amp;rsquo;re currently testing it, and preparing enhancements for multiples runtimes. Your applications will automatically benefit from it when available. &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/index.xml&#34; &gt;Stay tuned&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;New PHP image is next to come, with 8.3 version support, we&amp;rsquo;re currently working on it. After that, we&amp;rsquo;ll bring our new strategy to build images into production. We&amp;rsquo;re currently testing it, and preparing enhancements for multiples runtimes. Your applications will automatically benefit from it when available. &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/index.xml&#34; &gt;Stay tuned&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>JS Client 8.2.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-27-js-client-8.2.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-js-client-8.2.0/</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-27-js-client-8.2.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-js-client-8.2.0/</guid>
       <description>
         
         
-        &lt;p&gt;Since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-01-30-js-client-8.0.3/&#34; &gt;latest big update&lt;/a&gt; of the &lt;a href=&#34;https://www.npmjs.com/package/@clevercloud/client/v/8.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JS Client&lt;/a&gt;, we&amp;rsquo;ve fixed multiple issues with Server-Sent Events (SSE). &lt;a href=&#34;https://github.com/CleverCloud/clever-client.js/blob/master/CHANGELOG.md#820-2024-02-27&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.2.0 release&lt;/a&gt; allows error handling from legacy client and brings support repeatable query parameters, which is a feature enabler for some tools.&lt;/p&gt;
+        &lt;p&gt;Since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-01-30-js-client-8.0.3/&#34; &gt;latest big update&lt;/a&gt; of the &lt;a href=&#34;https://www.npmjs.com/package/@clevercloud/client/v/8.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JS Client&lt;/a&gt;, we&amp;rsquo;ve fixed multiple issues with Server-Sent Events (SSE). &lt;a href=&#34;https://github.com/CleverCloud/clever-client.js/blob/master/CHANGELOG.md#820-2024-02-27&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8.2.0 release&lt;/a&gt; allows error handling from legacy client and brings support repeatable query parameters, which is a feature enabler for some tools.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Check this project &lt;a href=&#34;https://github.com/CleverCloud/clever-client.js&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;on GitHub&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
   &lt;path d=&#34;M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z&#34;&gt;&lt;/path&gt;

@@ -15,7 +15,7 @@
   <meta name="description" content=" Clever Cloud offers support for Docker containers. These are deployed inside virtual machines to guarantee a secure level of isolation. Overview Docker containers can encapsulate any payload, and will run consistently on and between virtually any server. The same container that a developer builds and tests on a laptop will run at scale, in production, on VMs, bare-metal servers, public instances, or combinations of the above." />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/doc/applications/docker/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/doc/applications/docker/" itemprop="url" />
   
 
   
@@ -23,17 +23,17 @@
 <meta property="og:title" content="Docker" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/doc/applications/docker/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/>
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/doc/applications/docker/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/>
 
   
   <meta itemprop="name" content="Docker">
   <meta itemprop="description" content=" Clever Cloud offers support for Docker containers. These are deployed inside virtual machines to guarantee a secure level of isolation. Overview Docker containers can encapsulate any payload, and will run consistently on and between virtually any server. The same container that a developer builds and tests on a laptop will run at scale, in production, on VMs, bare-metal servers, public instances, or combinations of the above.">
   <meta itemprop="dateModified" content="2024-09-18T17:34:42+02:00">
   <meta itemprop="wordCount" content="1826">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="docker">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="Docker">
   <meta name="twitter:description" content=" Clever Cloud offers support for Docker containers. These are deployed inside virtual machines to guarantee a secure level of isolation. Overview Docker containers can encapsulate any payload, and will run consistently on and between virtually any server. The same container that a developer builds and tests on a laptop will run at scale, in production, on VMs, bare-metal servers, public instances, or combinations of the above.">
 
@@ -3239,7 +3239,7 @@
     <a href="#mandatory-configuration" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Be sure that you:</p>
 <ul>
 <li>push on the <strong>master branch</strong>.</li>
-<li>have and commit a file named <strong>Dockerfile</strong> or use the <strong>CC_DOCKERFILE</strong> <a href="https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#docker" >environment variable</a> if your Dockerfile has a different name, <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices" title="Dockerfile"target="_blank" rel="noopener">Here is what it will look like</a>.</li>
+<li>have and commit a file named <strong>Dockerfile</strong> or use the <strong>CC_DOCKERFILE</strong> <a href="https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#docker" >environment variable</a> if your Dockerfile has a different name, <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices" title="Dockerfile"target="_blank" rel="noopener">Here is what it will look like</a>.</li>
 <li>run the application with <code>CMD</code> or <code>ENTRYPOINT</code> in your Dockerfile.</li>
 <li>listen on HTTP <strong>port 8080</strong> by default (you can set your own port using <code>CC_DOCKER_EXPOSED_HTTP_PORT=&lt;port&gt;</code> environment variable).</li>
 </ul>
@@ -3262,7 +3262,7 @@
 </div>
 <p><strong>command to run</strong>: this is the command that starts your application. Your application <strong>must</strong> listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.</p>
 <h3>Memory usage during building<span class="hx-absolute -hx-mt-20" id="memory-usage-during-building"></span>
-    <a href="#memory-usage-during-building" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>If the building step of your app crashes because it uses more memory that it&rsquo;s available, you&rsquo;ll have to split the building and running steps and enable <a href="https://lafillepassympa.com/developers/doc/administrate/apps-management/#edit-application-configuration" >Dedicated build instance</a></p>
+    <a href="#memory-usage-during-building" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>If the building step of your app crashes because it uses more memory that it&rsquo;s available, you&rsquo;ll have to split the building and running steps and enable <a href="https://stagingv6.cleverapps.io/developers/doc/administrate/apps-management/#edit-application-configuration" >Dedicated build instance</a></p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 

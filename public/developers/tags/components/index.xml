@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Components</title>
-    <link>https://lafillepassympa.com/developers/tags/components/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/components/</link>
     <description>Recent content in Components on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 12 Mar 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/components/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/components/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,28 +17,28 @@
     
     <item>
       <title>Console&#39;s components upgrade</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</guid>
       <description>
         
         
-        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
+        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Clever Web Components v13</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://lafillepassympa.com/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
 &lt;p&gt;A standardized API is used for UI components that depend on a smart component. It includes a &lt;code&gt;state&lt;/code&gt; property receiving state type: &lt;code&gt;loaded&lt;/code&gt;, &lt;code&gt;loading&lt;/code&gt;, &lt;code&gt;error&lt;/code&gt; and data. Latest smart components no longer rely on &lt;code&gt;rxjs&lt;/code&gt;, making them easier to maintain.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Read the &lt;a href=&#34;https://github.com/CleverCloud/clever-components/releases/tag/13.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;full changelog&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -53,10 +53,10 @@
     
     <item>
       <title>Console update and Clever Web Components v12</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-19-console-web-components-v12/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-19-console-web-components-v12/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-19-console-web-components-v12/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-19-console-web-components-v12/</guid>
       <description>
         
         
@@ -65,7 +65,7 @@
 &lt;li&gt;Read the &lt;a href=&#34;https://github.com/CleverCloud/clever-components/releases/tag/12.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;full changelog&lt;/a&gt; 📖&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Links to the new documentation are now available in the Console. They&amp;rsquo;re more precise depending on the &lt;code&gt;variant&lt;/code&gt; (e.g. PHP/Static), use small icons to boost visibility and are now effective for applications and add-ons:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/doc-link-console.webp&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/changelog/doc-link-console.webp&#34;
     alt=&#34;The new documentation link in the Console&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;The new documentation link in the Console&lt;/p&gt;
     &lt;/figcaption&gt;

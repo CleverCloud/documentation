@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Matomo</title>
-    <link>https://lafillepassympa.com/developers/tags/matomo/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/matomo/</link>
     <description>Recent content in Matomo on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Matomo v5.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-01-matomo-5.1.0/</guid>
       <description>
         
         
@@ -37,10 +37,10 @@
     
     <item>
       <title>Matomo v5.0.1 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-22-matomo-5.0.1/</link>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-22-matomo-5.0.1/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-22-matomo-5.0.1/</guid>
       <description>
         
         

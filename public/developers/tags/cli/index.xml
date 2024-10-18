@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Cli</title>
-    <link>https://lafillepassympa.com/developers/tags/cli/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/cli/</link>
     <description>Recent content in Cli on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Install</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/getting_started/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/getting_started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/getting_started/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/getting_started/</guid>
       <description>
         
         
@@ -567,10 +567,10 @@ This configuration file contains the AppID, so keep this in mind if you publish 
     
     <item>
       <title>Create</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/create/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/create/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/create/</guid>
       <description>
         
         
@@ -823,10 +823,10 @@ If you don&amp;rsquo;t want any confirmation, use &lt;code&gt;--yes&lt;/code&gt;
     
     <item>
       <title>Configure</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/configure/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/configure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/configure/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/configure/</guid>
       <description>
         
         
@@ -913,10 +913,10 @@ If you don&amp;rsquo;t want any confirmation, use &lt;code&gt;--yes&lt;/code&gt;
     
     <item>
       <title>Manage</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/manage/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/manage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/manage/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/manage/</guid>
       <description>
         
         
@@ -1092,10 +1092,10 @@ If you want to restart your application, you can use :&lt;/p&gt;
     
     <item>
       <title>Get an application lifecycle</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/lifecycle/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/lifecycle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/lifecycle/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/lifecycle/</guid>
       <description>
         
         
@@ -1160,10 +1160,10 @@ If you want to restart your application, you can use :&lt;/p&gt;
     
     <item>
       <title>SSH access</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/ssh-access/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/ssh-access/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/ssh-access/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/ssh-access/</guid>
       <description>
         
         
@@ -1229,7 +1229,7 @@ If you want to restart your application, you can use :&lt;/p&gt;
 &lt;h2&gt;Requirements&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;requirements&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You need to have the Clever Tools CLI installed locally.&lt;/p&gt;
 &lt;h3&gt;Make sure you have a properly configured SSH key&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;make-sure-you-have-a-properly-configured-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/account/ssh-keys-management/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
+    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have an SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management/&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
 &lt;h2&gt;Accessing your machine with Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;accessing-your-machine-with-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#accessing-your-machine-with-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In order to access the machine via SSH using the Clever Tools CLI&lt;/p&gt;
 &lt;p&gt;you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with &lt;code&gt;clever link --org &amp;lt;your_application&#39;s_organization_id&amp;gt; &amp;lt;your_application_id&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -1303,10 +1303,10 @@ The most straightforward solution is to start &lt;code&gt;$ clever ssh&lt;/code&
     
     <item>
       <title>CLI</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/</guid>
       <description>
         
         
@@ -1348,19 +1348,19 @@ The most straightforward solution is to start &lt;code&gt;$ clever ssh&lt;/code&
     
     <item>
       <title>Configuration List</title>
-      <link>https://lafillepassympa.com/developers/doc/reference/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/reference/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/reference/</guid>
       <description>
         
         
         &lt;div class=&#34;hextra-cards hx-mt-4 hx-gap-4 hx-grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
   &lt;a
-    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration&#34;
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/common-configuration&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z&#34; /&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M15 12a3 3 0 11-6 0 3 3 0 016 0z&#34; /&gt;&lt;/svg&gt;Common configuration for all instances&lt;/span&gt;&lt;/a&gt;
   &lt;a
-    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/reference/reference-environment-variables&#34;
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 36 36&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M26 21.15a6.91 6.91 0 0 0-4.38-3.32a26 26 0 0 0-2.62-.64V8.12A10.05 10.05 0 0 1 23.86 10a1 1 0 0 0 1.33-1.5A11.75 11.75 0 0 0 19 6.1V3a1 1 0 0 0-2 0v3c-4.4.1-6.83 2.29-7.57 4.18A5.56 5.56 0 0 0 11.66 17A13.2 13.2 0 0 0 17 18.84V28a12.3 12.3 0 0 1-7.14-2.74a1 1 0 1 0-1.37 1.44A14.09 14.09 0 0 0 17 30v3a1 1 0 0 0 2 0v-3c2.82-.19 6.07-1.09 7.3-4.76a5.33 5.33 0 0 0-.3-4.09Zm-13.21-5.83a3.57 3.57 0 0 1-1.49-4.39c.11-.3 1.23-2.81 5.7-2.93v8.8a10.7 10.7 0 0 1-4.21-1.48Zm11.61 9.24c-.72 2.14-2.32 3.17-5.4 3.4v-8.73c.64.14 1.3.3 2 .51a5 5 0 0 1 3.19 2.32a3.34 3.34 0 0 1 .21 2.5Z&#34; class=&#34;clr-i-outline clr-i-outline-path-1&#34;/&gt;&lt;path fill=&#34;none&#34; d=&#34;M0 0h36v36H0z&#34;/&gt;&lt;/svg&gt;All environment variables&lt;/span&gt;&lt;/a&gt;
 &lt;/div&gt;
 
@@ -1370,10 +1370,10 @@ The most straightforward solution is to start &lt;code&gt;$ clever ssh&lt;/code&
     
     <item>
       <title>Clever Tools 3.8.3 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-09-12-clever-tools-3.8.3/</guid>
       <description>
         
         
@@ -1401,10 +1401,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.8: &#34;Big Summer Update&#34; is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-02-clever-tools-3.8.0/</guid>
       <description>
         
         
@@ -1483,10 +1483,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.7.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-11-clever-tools-3.7.0/</guid>
       <description>
         
         
@@ -1514,10 +1514,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.6.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</link>
       <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-16-clever-tools-3.6.0/</guid>
       <description>
         
         
@@ -1545,10 +1545,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>New logs interface is available in public beta</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</link>
       <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/</guid>
       <description>
         
         
@@ -1565,14 +1565,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.5.2 is available with cURL, KV, Tasks and more!</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</link>
       <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://lafillepassympa.com/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
+        &lt;p&gt;Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, &lt;code&gt;clever curl&lt;/code&gt; is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/&#34; &gt;API v2 or v4&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;JSON format is supported for more commands, the &lt;code&gt;--since&lt;/code&gt; option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use &lt;code&gt;clever logs --since 2h&lt;/code&gt;. This command documentation is available &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Clever Tasks can now be directly created and configured from Clever Tools. They&amp;rsquo;re applications which can be run on demand, not awaiting any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port, but needing a &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; to execute. Once it&amp;rsquo;s done, the application stops. You&amp;rsquo;re just billed for the execution time. It can help you to make some checks, compilation, file conversions, etc.&lt;/p&gt;
 &lt;p&gt;To create a Clever Task using Python for example:&lt;/p&gt;
@@ -1659,14 +1659,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.4.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-16-clever-tools-3.4.0/</link>
       <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-16-clever-tools-3.4.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-16-clever-tools-3.4.0/</guid>
       <description>
         
         
-        &lt;p&gt;This week, we published two Clever Tools updates in a row. 3.3.0 was about adding &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-12-new-grahds-region/&#34; &gt;our new Gravelines HDS region&lt;/a&gt; support and fixing a bug in our add-ons logs feature. 3.4.0 brings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;json-stream&lt;/code&gt; formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (&lt;code&gt;jq&lt;/code&gt; compatible). You can learn more about it &lt;a href=&#34;https://github.com/ndjson/ndjson-spec/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;This week, we published two Clever Tools updates in a row. 3.3.0 was about adding &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-12-new-grahds-region/&#34; &gt;our new Gravelines HDS region&lt;/a&gt; support and fixing a bug in our add-ons logs feature. 3.4.0 brings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;json-stream&lt;/code&gt; formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (&lt;code&gt;jq&lt;/code&gt; compatible). You can learn more about it &lt;a href=&#34;https://github.com/ndjson/ndjson-spec/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But it&amp;rsquo;s the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;deploy&lt;/code&gt; commands which are the most improved by this release. First, you&amp;rsquo;ll now get the application or add-on name confirmed after creation. You can also get a JSON response adding &lt;code&gt;--format json&lt;/code&gt; or &lt;code&gt;-F json&lt;/code&gt; to the &lt;code&gt;create&lt;/code&gt; or &lt;code&gt;create-addon&lt;/code&gt; command. Second, the current folder name is now used as default application name if none is provided.&lt;/p&gt;
 &lt;p&gt;To create a Node.js application once logged in, you can now just:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
@@ -1739,14 +1739,14 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.2.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-02-07-clever-tools-3.2.0/</link>
       <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-02-07-clever-tools-3.2.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-02-07-clever-tools-3.2.0/</guid>
       <description>
         
         
-        &lt;p&gt;As mentioned &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/&#34; &gt;in the previous release&lt;/a&gt;, the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the 3.2.0&lt;/a&gt; adding the log auto retry feature on network failures and some fixes:&lt;/p&gt;
+        &lt;p&gt;As mentioned &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/&#34; &gt;in the previous release&lt;/a&gt;, the packaging process moved to GitHub Actions to provide a better process, quicker tests and more frequent releases. We start with &lt;a href=&#34;https://github.com/CleverCloud/clever-tools/releases/tag/3.2.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the 3.2.0&lt;/a&gt; adding the log auto retry feature on network failures and some fixes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;api:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/b134213f30d46dd7f5690a38425deb4fd752148c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;b134213&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;logs:&lt;/strong&gt; improve error message with &lt;code&gt;EAI_AGAIN&lt;/code&gt; and &lt;code&gt;ECONNRESET&lt;/code&gt; (&lt;a href=&#34;https://github.com/CleverCloud/clever-tools/commit/fada06771369173e579f5fd3a708ff3cef40c95f&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fada067&lt;/a&gt;)&lt;/li&gt;
@@ -1777,10 +1777,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Clever Tools 3.1.0 is available</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/</link>
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-01-25-clever-tools-3.1.0/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-01-25-clever-tools-3.1.0/</guid>
       <description>
         
         
@@ -1816,10 +1816,10 @@ clever version&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-c
     
     <item>
       <title>Notifications</title>
-      <link>https://lafillepassympa.com/developers/doc/cli/notifications/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/cli/notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/cli/notifications/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/cli/notifications/</guid>
       <description>
         
         

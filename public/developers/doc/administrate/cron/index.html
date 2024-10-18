@@ -16,7 +16,7 @@
 ⚠️ Crons are not available in the Docker environment as it would require to set them up inside the Docker container. Syntax Here is the general syntax:" />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/doc/administrate/cron/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/doc/administrate/cron/" itemprop="url" />
   
 
   
@@ -55,7 +55,7 @@
 Syntax
     Here is the general syntax:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/doc/administrate/cron/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/><meta property="article:section" content="doc" />
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/doc/administrate/cron/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/><meta property="article:section" content="doc" />
 
 <meta property="article:modified_time" content="2024-01-08T19:05:58+01:00" />
 
@@ -65,10 +65,10 @@ Syntax
 ⚠️ Crons are not available in the Docker environment as it would require to set them up inside the Docker container. Syntax Here is the general syntax:">
   <meta itemprop="dateModified" content="2024-01-08T19:05:58+01:00">
   <meta itemprop="wordCount" content="585">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="apps,cron,cronjob,schedule">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="CRON">
   <meta name="twitter:description" content="The configuration file used for crontab is &lt;PROJECT ROOT&gt;/clevercloud/cron.json.
 ⚠️ Crons are not available in the Docker environment as it would require to set them up inside the Docker container. Syntax Here is the general syntax:">
@@ -3313,7 +3313,7 @@ important:</p>
 </div>
 <p>Do <em>NOT</em> do this. Invoking bash here will supersede the shebang and cancel the <code>bash -l</code> that
 loads the env. So just put the path to your <em>executable</em> <code>mycron.sh</code>.</p>
-<p>You can refer to <a href="https://lafillepassympa.com/developers/doc/develop/env-variables/#special-environment-variables" >this list</a> to see which variables are available.</p>
+<p>You can refer to <a href="https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/#special-environment-variables" >this list</a> to see which variables are available.</p>
 <h2>Deduplicating crons<span class="hx-absolute -hx-mt-20" id="deduplicating-crons"></span>
     <a href="#deduplicating-crons" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Crons are installed and executed on every scaler of an application. This means the same cron may be executed more than once.</p>
 <p>You can use your own techniques to avoid that, like a shared task queue or some other locking system.</p>
@@ -3366,7 +3366,7 @@ loads the env. So just put the path to your <em>executable</em> <code>mycron.sh<
 
   <div class="hx-w-full hx-min-w-0 hx-leading-7">
     <div class="hx-mt-6 hx-leading-7 first:hx-mt-0">
-      If <a href="https://lafillepassympa.com/developers/doc/administrate/apps-management/#edit-application-configuration" target="_blank" rel="noopener">Zero downtime deployment</a> is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+      If <a href="https://stagingv6.cleverapps.io/developers/doc/administrate/apps-management/#edit-application-configuration" target="_blank" rel="noopener">Zero downtime deployment</a> is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
 You can prevent this by deactivating it.
     </div>
   </div>

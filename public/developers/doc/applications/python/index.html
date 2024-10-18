@@ -18,7 +18,7 @@ Default Version Accepted Versions 3.12 2 3 3.7 (deprecated) 3.8 3.9 3.10 3.11 3.
 Latest 3.x version will be used after this date. To prevent this, upgrade your CC_PYTHON_VERSION towards your needs. Create an application on Clever Cloud With the web console Refer to Quickstart for more details on application creation via the console." />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/doc/applications/python/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/doc/applications/python/" itemprop="url" />
   
 
   
@@ -26,7 +26,7 @@ Latest 3.x version will be used after this date. To prevent this, upgrade your C
 <meta property="og:title" content="Python" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/doc/applications/python/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/>
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/doc/applications/python/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/>
 
   
   <meta itemprop="name" content="Python">
@@ -36,10 +36,10 @@ Default Version Accepted Versions 3.12 2 3 3.7 (deprecated) 3.8 3.9 3.10 3.11 3.
 Latest 3.x version will be used after this date. To prevent this, upgrade your CC_PYTHON_VERSION towards your needs. Create an application on Clever Cloud With the web console Refer to Quickstart for more details on application creation via the console.">
   <meta itemprop="dateModified" content="2024-10-01T13:44:09+02:00">
   <meta itemprop="wordCount" content="2124">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="python">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="Python">
   <meta name="twitter:description" content="Overview Python is a programming language that lets you work more quickly and integrate your systems more efficiently.
 Supported Versions The default version of Python on Clever Cloud is the latest we support from branch 3.x. If you want to use Python 2.x, create an environment variable CC_PYTHON_VERSION set to 2, it will default to Python 2.7. Other supported values are :
@@ -3540,7 +3540,7 @@ To do that follow the <a href="/doc/reference/reference-environment-variables/#v
     <a href="#manage-your-static-files" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>To enable Nginx to serve your static resources, you have to set two <a href="#setting-up-environment-variables-on-clever-cloud" >environment variables</a>.</p>
 <p><code>STATIC_FILES_PATH</code>: should point to a directory where your static files are stored.</p>
 <p><code>STATIC_URL_PREFIX</code>: the URL path under which you want to serve static files (e.g. <code>/public</code>).</p>
-<p>Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the <a href="https://lafillepassympa.com/developers/doc/addons/fs-bucket/" >File System Buckets</a> section.</p>
+<p>Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the <a href="https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/" >File System Buckets</a> section.</p>
 <p><strong>Note</strong>: the path of your folder must be absolute regarding the root of your application.</p>
 <p><strong>Note</strong>: setting the <code>STATIC_URL_PREFIX</code> to <code>/</code> will cause the deployment failure.</p>
 <h4>Static files example<span class="hx-absolute -hx-mt-20" id="static-files-example"></span>
@@ -3593,7 +3593,7 @@ To do that follow the <a href="/doc/reference/reference-environment-variables/#v
 <li><code>GZIP_TYPES</code>: the mime types to gzip. Defaults to <code>text/* application/json application/xml application/javascript image/svg+xml</code>.</li>
 </ul>
 <h5>Basic authentication<span class="hx-absolute -hx-mt-20" id="basic-authentication"></span>
-    <a href="#basic-authentication" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>If you need basic authentication, you can enable it using <a href="https://lafillepassympa.com/developers/doc/reference/reference-environment-variables/#python" >environment variables</a>. You will need to set <code>CC_HTTP_BASIC_AUTH</code> variable to your own <code>login:password</code> pair. If you need to allow access to multiple users, you can create additional environment <code>CC_HTTP_BASIC_AUTH_n</code> (where <code>n</code> is a number) variables.</p>
+    <a href="#basic-authentication" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>If you need basic authentication, you can enable it using <a href="https://stagingv6.cleverapps.io/developers/doc/reference/reference-environment-variables/#python" >environment variables</a>. You will need to set <code>CC_HTTP_BASIC_AUTH</code> variable to your own <code>login:password</code> pair. If you need to allow access to multiple users, you can create additional environment <code>CC_HTTP_BASIC_AUTH_n</code> (where <code>n</code> is a number) variables.</p>
 <h4>Nginx optional configuration with <code>clevercloud/http.json</code><span class="hx-absolute -hx-mt-20" id="nginx-optional-configuration-with-clevercloudhttpjson"></span>
     <a href="#nginx-optional-configuration-with-clevercloudhttpjson" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Nginx settings can be configured further in <code>clevercloud/http.json</code>. All its fields are optional.</p>
 <ul>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Quickstart</title>
-    <link>https://lafillepassympa.com/developers/doc/quickstart/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/quickstart/</link>
     <description>Recent content in Quickstart on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/quickstart/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/quickstart/index.xml" rel="self" type="application/rss+xml" />
     
     
       

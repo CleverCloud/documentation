@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Account-Setup</title>
-    <link>https://lafillepassympa.com/developers/tags/account-setup/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/account-setup/</link>
     <description>Recent content in Account-Setup on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/account-setup/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/account-setup/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>SSH Keys</title>
-      <link>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/account/ssh-keys-management/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management/</guid>
       <description>
         
         
@@ -280,7 +280,7 @@ If you can find them, you do not need to generate a new one, simply go to the fo
   
 &lt;/div&gt;
 &lt;h2&gt;Use a private SSH key in an application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-a-private-ssh-key-in-an-application&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#use-a-private-ssh-key-in-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://lafillepassympa.com/developers/doc/reference/common-configuration/##private-ssh-key&#34; &gt;private SSH key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
+    &lt;a href=&#34;#use-a-private-ssh-key-in-an-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you want to clone a repository from a private repository, you can add a &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/reference/common-configuration/##private-ssh-key&#34; &gt;private SSH key&lt;/a&gt; to an application by creating a folder clevercloud at the root of your application and creating the file &lt;code&gt;clevercloud/ssh.json&lt;/code&gt; with the following content:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 

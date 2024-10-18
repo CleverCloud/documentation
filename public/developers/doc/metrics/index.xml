@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Metrics</title>
-    <link>https://lafillepassympa.com/developers/doc/metrics/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/metrics/</link>
     <description>Recent content in Metrics on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/metrics/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/metrics/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blackfire</title>
-      <link>https://lafillepassympa.com/developers/doc/metrics/blackfire/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/metrics/blackfire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/metrics/blackfire/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/metrics/blackfire/</guid>
       <description>
         
         
@@ -64,10 +64,10 @@
     
     <item>
       <title>New Relic</title>
-      <link>https://lafillepassympa.com/developers/doc/metrics/new-relic/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/metrics/new-relic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/metrics/new-relic/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/metrics/new-relic/</guid>
       <description>
         
         
@@ -171,10 +171,10 @@ Install instructions for &lt;a href=&#34;https://docs.newrelic.com/docs/agents/n
     
     <item>
       <title>Warp 10</title>
-      <link>https://lafillepassympa.com/developers/doc/metrics/warp10/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/metrics/warp10/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/metrics/warp10/</guid>
       <description>
         
         
@@ -516,7 +516,7 @@ can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
     &lt;a href=&#34;#access-logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;fetch_accessLogs_key_v0&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series (&lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. It allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole JSON.&lt;/p&gt;
+&lt;p&gt;We provide the following macro to easily and quickly deep dive into access logs data. As we store access log as a JSON value in a geotime series (&lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics documentation here&lt;/a&gt;), this macro can be useful for straightforward access to a specific key. It allows you to fetch the &lt;code&gt;accessLogs&lt;/code&gt; class and get only wanted value instead of the whole JSON.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -548,7 +548,7 @@ can be either a timestamp in microseconds or an iso8601 date format.&lt;/p&gt;
   
 &lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;More example in the &lt;a href=&#34;https://lafillepassympa.com/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics part of this documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More example in the &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/metrics/#access-logs-metrics&#34; &gt;metrics part of this documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nested keys&lt;/strong&gt; can be reached using a dot (&lt;code&gt;.&lt;/code&gt;) to represent the depth.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Console</title>
-    <link>https://lafillepassympa.com/developers/tags/console/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/console/</link>
     <description>Recent content in Console on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/console/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/console/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,14 +17,14 @@
     
     <item>
       <title>Console: new Domains management interface</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-26-domains-console-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-26-domains-console-update/</link>
       <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-26-domains-console-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-26-domains-console-update/</guid>
       <description>
         
         
-        &lt;p&gt;We&amp;rsquo;ve upgraded the applications&amp;rsquo; Domains page in the Console. It&amp;rsquo;s now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/domain-names/#path-routing&#34; &gt;path routing&lt;/a&gt;. You also now have:&lt;/p&gt;
+        &lt;p&gt;We&amp;rsquo;ve upgraded the applications&amp;rsquo; Domains page in the Console. It&amp;rsquo;s now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/domain-names/#path-routing&#34; &gt;path routing&lt;/a&gt;. You also now have:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A unique form to add a custom domain or a test domain (&lt;code&gt;cleverapps.io&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;A unique list of test and custom domains&lt;/li&gt;
@@ -39,24 +39,24 @@
     
     <item>
       <title>Console: new logs interface is now used by default</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-new-logs-default/</link>
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-17-new-logs-default/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-17-new-logs-default/</guid>
       <description>
         
         
-        &lt;p&gt;New logs interface is available in the Console in public beta &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-15-new-logs-interface-public-beta/&#34; &gt;for some months&lt;/a&gt;, and we already &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/&#34; &gt;enhanced it&lt;/a&gt;. We&amp;rsquo;re now confident enough to use it by default. You can still disable it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;New logs interface is available in the Console in public beta &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-15-new-logs-interface-public-beta/&#34; &gt;for some months&lt;/a&gt;, and we already &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/&#34; &gt;enhanced it&lt;/a&gt;. We&amp;rsquo;re now confident enough to use it by default. You can still disable it. If you have any question or feedback, use our &lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Community space&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Console: a fix for accountant access</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-07-12-accountant-access-console-fix/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-07-12-accountant-access-console-fix/</link>
       <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-07-12-accountant-access-console-fix/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-07-12-accountant-access-console-fix/</guid>
       <description>
         
         
@@ -67,10 +67,10 @@
     
     <item>
       <title>Better new Logs</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-06-21-better-new-logs/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-06-21-better-new-logs/</guid>
       <description>
         
         
@@ -80,7 +80,7 @@
 &lt;li&gt;Regular expression&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can select one or the other using the buttons to the right of the text field. This is only a first step, as we&amp;rsquo;ll later introduce a new stack with indexed logs to better handle such filters and provide new features.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/changelog/new-logs-update.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/changelog/new-logs-update.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Some of you also asked for a change of the default behavior of this Logs interface. Until now, users were redirected to &lt;code&gt;Live&lt;/code&gt; view during a deployment, otherwise to the &lt;code&gt;7 days&lt;/code&gt; view, containing all available deployments/instances, with logs of the last deployment shown. We today introduce a new mechanism and now remember the last choice of a user, per application.&lt;/p&gt;
 &lt;p&gt;Depending on your feedback, we&amp;rsquo;ll improve this further in the coming weeks. Here again, this is a first step as the indexed logs will open up a wide range of possibilities in this area.&lt;/p&gt;
 &lt;ul&gt;
@@ -92,16 +92,16 @@
     
     <item>
       <title>Manage Clever Tasks in the Console</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-05-28-tasks-in-console/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-05-28-tasks-in-console/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-05-28-tasks-in-console/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-05-28-tasks-in-console/</guid>
       <description>
         
         
-        &lt;p&gt;Since &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-04-11-clever-tools-3.5.2/&#34; &gt;its release 3.5.2&lt;/a&gt;, Clever Tools is able to manage Clever Tasks. It&amp;rsquo;s now possible to create, configure and deploy them directly from the Console. To declare an application as a Task, check the corresponding box in the &lt;code&gt;Information&lt;/code&gt; tab.&lt;/p&gt;
+        &lt;p&gt;Since &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-04-11-clever-tools-3.5.2/&#34; &gt;its release 3.5.2&lt;/a&gt;, Clever Tools is able to manage Clever Tasks. It&amp;rsquo;s now possible to create, configure and deploy them directly from the Console. To declare an application as a Task, check the corresponding box in the &lt;code&gt;Information&lt;/code&gt; tab.&lt;/p&gt;
 &lt;p&gt;A Clever Task can be run on demand. It executes the command you&amp;rsquo;ve set in the &lt;code&gt;CC_RUN_COMMAND&lt;/code&gt; environment variable, without waiting for any HTTP request on the &lt;code&gt;8080&lt;/code&gt; port. After that, the application stops. It&amp;rsquo;s just billed for the execution time.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/clever-tasks.webp&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/changelog/clever-tasks.webp&#34;
     alt=&#34;Defines a Clever Cloud application as a Task in Console&#34; width=&#34;800px&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;Defines a Clever Cloud application as a Task in Console&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -113,28 +113,28 @@
     
     <item>
       <title>Console&#39;s components upgrade</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-11-console-components-update/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-11-console-components-update/</guid>
       <description>
         
         
-        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
+        &lt;p&gt;In our ongoing effort to improve our &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt; experience, we upgraded some of its components. It now uses &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-02-27-js-client-8.2.0/&#34; &gt;JS Client 8.2.0&lt;/a&gt; and &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/&#34; &gt;Web Components 13.0.0&lt;/a&gt;. This update also brings some fixes regarding deployment logs links and Warp10 calls.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Clever Web Components v13</title>
-      <link>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2024-03-07-web-components-v13/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2024-03-07-web-components-v13/</guid>
       <description>
         
         
-        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://lafillepassympa.com/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
+        &lt;p&gt;Clever Cloud&amp;rsquo;s &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/clever-components/&#34; &gt;Web Components&lt;/a&gt; v13 are available, with bug fixes, refactoring, and new features. We introduced new possibilities to highlight form fields (larger labels, with color), paving the way for our new add-on/application creation process.&lt;/p&gt;
 &lt;p&gt;A standardized API is used for UI components that depend on a smart component. It includes a &lt;code&gt;state&lt;/code&gt; property receiving state type: &lt;code&gt;loaded&lt;/code&gt;, &lt;code&gt;loading&lt;/code&gt;, &lt;code&gt;error&lt;/code&gt; and data. Latest smart components no longer rely on &lt;code&gt;rxjs&lt;/code&gt;, making them easier to maintain.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Read the &lt;a href=&#34;https://github.com/CleverCloud/clever-components/releases/tag/13.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;full changelog&lt;/a&gt; &lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=1em fill=&#34;currentColor&#34; viewBox=&#34;3 3 18 18&#34;&gt;
@@ -149,10 +149,10 @@
     
     <item>
       <title>Console update and Clever Web Components v12</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-19-console-web-components-v12/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-19-console-web-components-v12/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-19-console-web-components-v12/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-19-console-web-components-v12/</guid>
       <description>
         
         
@@ -161,7 +161,7 @@
 &lt;li&gt;Read the &lt;a href=&#34;https://github.com/CleverCloud/clever-components/releases/tag/12.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;full changelog&lt;/a&gt; 📖&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Links to the new documentation are now available in the Console. They&amp;rsquo;re more precise depending on the &lt;code&gt;variant&lt;/code&gt; (e.g. PHP/Static), use small icons to boost visibility and are now effective for applications and add-ons:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/doc-link-console.webp&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/changelog/doc-link-console.webp&#34;
     alt=&#34;The new documentation link in the Console&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;The new documentation link in the Console&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -173,15 +173,15 @@
     
     <item>
       <title>Updated DNS entries for the PAR region</title>
-      <link>https://lafillepassympa.com/developers/changelog/2023-12-18-new-par-ip-console/</link>
+      <link>https://stagingv6.cleverapps.io/developers/changelog/2023-12-18-new-par-ip-console/</link>
       <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/changelog/2023-12-18-new-par-ip-console/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/changelog/2023-12-18-new-par-ip-console/</guid>
       <description>
         
         
         &lt;p&gt;Setup of our new infrastructure in Paris implies addition of new IP which can be used for DNS entries. They are now detailed in the &lt;strong&gt;Domain Names&lt;/strong&gt; section of your applications in the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/images/changelog/console-new-ip-par.webp&#34;
+&lt;figure&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/changelog/console-new-ip-par.webp&#34;
     alt=&#34;The new IP of the PAR region in the Console&#34; width=&#34;800px&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;The new IP of the PAR region in the Console&lt;/p&gt;
     &lt;/figcaption&gt;

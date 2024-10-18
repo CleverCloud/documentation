@@ -15,7 +15,7 @@
   <meta name="description" content="This article shows you how to deploy a Drupal-based website on Clever Cloud." />
 
   
-    <link rel="canonical" href="https://lafillepassympa.com/developers/guides/tutorial-drupal/" itemprop="url" />
+    <link rel="canonical" href="https://stagingv6.cleverapps.io/developers/guides/tutorial-drupal/" itemprop="url" />
   
 
   
@@ -23,7 +23,7 @@
 <meta property="og:title" content="Drupal" />
 <meta property="og:description" content="This article shows you how to deploy a Drupal-based website on Clever Cloud." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lafillepassympa.com/developers/guides/tutorial-drupal/" /><meta property="og:image" content="https://lafillepassympa.com/images/feature.png"/><meta property="article:section" content="guides" />
+<meta property="og:url" content="https://stagingv6.cleverapps.io/developers/guides/tutorial-drupal/" /><meta property="og:image" content="https://stagingv6.cleverapps.io/images/feature.png"/><meta property="article:section" content="guides" />
 
 <meta property="article:modified_time" content="2024-03-04T14:45:19+01:00" />
 
@@ -32,10 +32,10 @@
   <meta itemprop="description" content="This article shows you how to deploy a Drupal-based website on Clever Cloud.">
   <meta itemprop="dateModified" content="2024-03-04T14:45:19+01:00">
   <meta itemprop="wordCount" content="1139">
-  <meta itemprop="image" content="https://lafillepassympa.com/images/feature.png">
+  <meta itemprop="image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta itemprop="keywords" content="php,drupal">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lafillepassympa.com/images/feature.png">
+  <meta name="twitter:image" content="https://stagingv6.cleverapps.io/images/feature.png">
   <meta name="twitter:title" content="Drupal">
   <meta name="twitter:description" content="This article shows you how to deploy a Drupal-based website on Clever Cloud.">
 
@@ -2591,9 +2591,9 @@ To do that follow the <a href="/doc/reference/reference-environment-variables/#v
   
 </div>
 <ul>
-<li>Replace the line <code>$settings['hash_salt'] = ''</code> (<code>$drupal_hash_salt</code> for Drupal 7) with <code>$settings['hash_salt'] = getenv('DRUPAL_SALT')</code>. You can generate salts with <a href="https://www.passwordtool.hu/" target="_blank" rel="noopener">this link</a>. Add a new <code>DRUPAL_SALT</code> <a href="https://lafillepassympa.com/developers/doc/applications/php/#configure-your-php-application" >environment variable</a> to the application with the salt you have generated.</li>
-<li>As mentioned in this <a href="https://lafillepassympa.com/developers/doc/addons/fs-bucket/" >article</a>, with Git deployments, files that are uploaded by users must be
-persisted in a File System Bucket. In order to do so, <a href="https://lafillepassympa.com/developers/doc/addons/fs-bucket/" >add a File Bucket</a> via the console.</li>
+<li>Replace the line <code>$settings['hash_salt'] = ''</code> (<code>$drupal_hash_salt</code> for Drupal 7) with <code>$settings['hash_salt'] = getenv('DRUPAL_SALT')</code>. You can generate salts with <a href="https://www.passwordtool.hu/" target="_blank" rel="noopener">this link</a>. Add a new <code>DRUPAL_SALT</code> <a href="https://stagingv6.cleverapps.io/developers/doc/applications/php/#configure-your-php-application" >environment variable</a> to the application with the salt you have generated.</li>
+<li>As mentioned in this <a href="https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/" >article</a>, with Git deployments, files that are uploaded by users must be
+persisted in a File System Bucket. In order to do so, <a href="https://stagingv6.cleverapps.io/developers/doc/addons/fs-bucket/" >add a File Bucket</a> via the console.</li>
 <li>At the root of your application, create a <code>clevercloud/buckets.json</code> file (create a <code>clevercloud</code>
 folder in which you create a <code>buckets.json</code> file).</li>
 <li>Copy the <code>bucket.json</code> content from the FS bucket addon dashboard (make sure to edit the <code>folder</code> field):</li>

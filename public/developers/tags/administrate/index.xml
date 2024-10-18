@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – Administrate</title>
-    <link>https://lafillepassympa.com/developers/tags/administrate/</link>
+    <link>https://stagingv6.cleverapps.io/developers/tags/administrate/</link>
     <description>Recent content in Administrate on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://lafillepassympa.com/developers/tags/administrate/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/tags/administrate/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Application scaling</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/scalability/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/scalability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/scalability/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/scalability/</guid>
       <description>
         
         
@@ -81,7 +81,7 @@ reasonable level&lt;/strong&gt; is reached.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/scaling_horizontal_scheme.jpg&#34; alt=&#34;Horizontal scaling: you can define the min and max numbers of Scalers you need.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/scaling_horizontal_scheme.jpg&#34; alt=&#34;Horizontal scaling: you can define the min and max numbers of Scalers you need.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Horizontal scaling: you can define the min and max numbers of Scalers you need.
     &lt;/figcaption&gt;
@@ -93,7 +93,7 @@ reasonable level&lt;/strong&gt; is reached.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/select-scalab-horizontal.png&#34; alt=&#34;Horizontal scaling: the amount of Scalers will evolve between 1 and 15.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/select-scalab-horizontal.png&#34; alt=&#34;Horizontal scaling: the amount of Scalers will evolve between 1 and 15.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Horizontal scaling: the amount of Scalers will evolve between 1 and 15.
     &lt;/figcaption&gt;
@@ -140,7 +140,7 @@ load, the larger the instance.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/scaling_vertical_scheme.jpg&#34; alt=&#34;vertical scaling&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/scaling_vertical_scheme.jpg&#34; alt=&#34;vertical scaling&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         vertical scaling
     &lt;/figcaption&gt;
@@ -153,7 +153,7 @@ load, the larger the instance.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/select-scalab.png&#34; alt=&#34;Vertical scaling: the Scaler size will go from S to XL.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/select-scalab.png&#34; alt=&#34;Vertical scaling: the Scaler size will go from S to XL.&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Vertical scaling: the Scaler size will go from S to XL.
     &lt;/figcaption&gt;
@@ -172,10 +172,10 @@ This is how it&amp;rsquo;ll be done:&lt;/p&gt;
     
     <item>
       <title>Clamav</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/clamav/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/clamav/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/clamav/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/clamav/</guid>
       <description>
         
         
@@ -255,10 +255,10 @@ This is how it&amp;rsquo;ll be done:&lt;/p&gt;
     
     <item>
       <title>CRON</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/cron/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/cron/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/cron/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/cron/</guid>
       <description>
         
         
@@ -507,7 +507,7 @@ important:&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Do &lt;em&gt;NOT&lt;/em&gt; do this. Invoking bash here will supersede the shebang and cancel the &lt;code&gt;bash -l&lt;/code&gt; that
 loads the env. So just put the path to your &lt;em&gt;executable&lt;/em&gt; &lt;code&gt;mycron.sh&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/develop/env-variables/#special-environment-variables&#34; &gt;this list&lt;/a&gt; to see which variables are available.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/develop/env-variables/#special-environment-variables&#34; &gt;this list&lt;/a&gt; to see which variables are available.&lt;/p&gt;
 &lt;h2&gt;Deduplicating crons&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deduplicating-crons&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#deduplicating-crons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Crons are installed and executed on every scaler of an application. This means the same cron may be executed more than once.&lt;/p&gt;
 &lt;p&gt;You can use your own techniques to avoid that, like a shared task queue or some other locking system.&lt;/p&gt;
@@ -560,7 +560,7 @@ loads the env. So just put the path to your &lt;em&gt;executable&lt;/em&gt; &lt;
 
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
     &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
-      If &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/apps-management/#edit-application-configuration&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Zero downtime deployment&lt;/a&gt; is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+      If &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/apps-management/#edit-application-configuration&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Zero downtime deployment&lt;/a&gt; is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
 You can prevent this by deactivating it.
     &lt;/div&gt;
   &lt;/div&gt;
@@ -573,10 +573,10 @@ You can prevent this by deactivating it.
     
     <item>
       <title>Database migration</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/database-migration/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/database-migration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/database-migration/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/database-migration/</guid>
       <description>
         
         
@@ -644,10 +644,10 @@ Unless you want to upgrade your database to a new major version or to give it mo
     
     <item>
       <title>Ekg-statsd</title>
-      <link>https://lafillepassympa.com/developers/guides/ekg-statsd-haskell-metrics/</link>
+      <link>https://stagingv6.cleverapps.io/developers/guides/ekg-statsd-haskell-metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/guides/ekg-statsd-haskell-metrics/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/guides/ekg-statsd-haskell-metrics/</guid>
       <description>
         
         
@@ -657,7 +657,7 @@ Unless you want to upgrade your database to a new major version or to give it mo
 EKG allows you to have access to GC metrics, make sure you compile your application with &lt;code&gt;&amp;quot;-with-rtsopts=-T -N&amp;quot;&lt;/code&gt; to enable profiling.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re using &lt;a href=&#34;https://hackage.haskell.org/package/warp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;warp&lt;/a&gt;, you can use &lt;code&gt;wai-middleware-metrics&lt;/code&gt; to report request distributions (request count, responses count aggregated by status code, responses latency distribution).&lt;/p&gt;
 &lt;h3&gt;Configure logs for your Haskell application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-logs-for-your-haskell-application&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#configure-logs-for-your-haskell-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need the following packages in your &lt;a href=&#34;https://lafillepassympa.com/developers/doc/applications/haskell/#dependencies&#34; &gt;dependencies&lt;/a&gt;:&lt;/p&gt;
+    &lt;a href=&#34;#configure-logs-for-your-haskell-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You need the following packages in your &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/applications/haskell/#dependencies&#34; &gt;dependencies&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ekg-core&lt;/li&gt;
 &lt;li&gt;ekg-statsd&lt;/li&gt;
@@ -712,10 +712,10 @@ EKG allows you to have access to GC metrics, make sure you compile your applicat
     
     <item>
       <title>Installing TLS Certificates</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/ssl/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/ssl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/ssl/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/ssl/</guid>
       <description>
         
         
@@ -736,7 +736,7 @@ It&amp;rsquo;s all you have to do, our internal certificate generator will creat
 &lt;h4&gt;Define a page rule&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;define-a-page-rule&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#define-a-page-rule&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt; &lt;/p&gt;
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width:700px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/cloudflare-page-rule-ssl.png&#34; alt=&#34;Create a bypass page rule&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/cloudflare-page-rule-ssl.png&#34; alt=&#34;Create a bypass page rule&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Create a bypass page rule
     &lt;/figcaption&gt;
@@ -745,12 +745,12 @@ It&amp;rsquo;s all you have to do, our internal certificate generator will creat
 &lt;h4&gt;Turn off HTTP to HTTPS redirection on Cloudflare&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;turn-off-http-to-https-redirection-on-cloudflare&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#turn-off-http-to-https-redirection-on-cloudflare&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt; &lt;/p&gt;
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;max-width:700px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/cloudflare-https-setting.png&#34; alt=&#34;Turn off automatic HTTPS redirection&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/cloudflare-https-setting.png&#34; alt=&#34;Turn off automatic HTTPS redirection&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Turn off automatic HTTPS redirection
     &lt;/figcaption&gt;
   &lt;/figure&gt;
-&lt;p&gt; You can enable &lt;a href=&#34;https://lafillepassympa.com/developers/doc/administrate/apps-management/#edit-application-configuration&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Force HTTPS&lt;/a&gt; in the information tab of your Clever Cloud application instead.&lt;/p&gt;
+&lt;p&gt; You can enable &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/administrate/apps-management/#edit-application-configuration&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Force HTTPS&lt;/a&gt; in the information tab of your Clever Cloud application instead.&lt;/p&gt;
 &lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current callout hx-bg-gray-100 hxtext-gray-800 dark:hx-border-blue-200/30 dark:hx-bg-neutral-800 dark:hx-text-blue-200&#34;&gt;
   &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
         💡
@@ -1001,16 +1001,16 @@ Our dedicated email for receiving certificates is &lt;a href=&#34;mailto:ssl@cle
     
     <item>
       <title>Logs management</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/log-management/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/log-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/log-management/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/log-management/</guid>
       <description>
         
         
         &lt;p&gt;Clever Cloud new logs stack is currently in public beta. Activated on-demand in the dedicated section of any application in the &lt;a href=&#34;https://console.clever-cloud.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Console&lt;/a&gt;. It&amp;rsquo;s not available for add-ons yet. It&amp;rsquo;s based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse.&lt;/p&gt;
 &lt;p&gt;There are two text filter modes: exact match (case-sensitive) and regular expression. Settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local, to show the instances name or not.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/doc/new-logs-beta.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/doc/new-logs-beta.webp&#34; alt=&#34;New logs interface&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;During beta, you can send us your feedback through our GitHub Community:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Give your feedback about new Logs interface&lt;/a&gt;&lt;/li&gt;
@@ -1045,7 +1045,7 @@ Our dedicated email for receiving certificates is &lt;a href=&#34;mailto:ssl@cle
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Get continuous logs from your application&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;get-continuous-logs-from-your-application&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#get-continuous-logs-from-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Log management is also available through &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; and our &lt;a href=&#34;https://lafillepassympa.com/developers/api/v4/#logs&#34; &gt;APIv4&lt;/a&gt;. They&amp;rsquo;re collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the &lt;code&gt;CC_PREVENT_LOGSCOLLECTION&lt;/code&gt; environment variable to &lt;code&gt;true&lt;/code&gt;. You can see logs with the command down below.&lt;/p&gt;
+    &lt;a href=&#34;#get-continuous-logs-from-your-application&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Log management is also available through &lt;a href=&#34;https://github.com/CleverCloud/clever-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clever Tools&lt;/a&gt; and our &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/api/v4/#logs&#34; &gt;APIv4&lt;/a&gt;. They&amp;rsquo;re collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the &lt;code&gt;CC_PREVENT_LOGSCOLLECTION&lt;/code&gt; environment variable to &lt;code&gt;true&lt;/code&gt;. You can see logs with the command down below.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -1566,10 +1566,10 @@ You are better off opening issues on their GitHub repositories than contacting C
     
     <item>
       <title>Networking and IP addresses ranges</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/network/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/network/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/network/</guid>
       <description>
         
         
@@ -1622,10 +1622,10 @@ In this case, we use the IPs they provide to us and have no control over the ran
     
     <item>
       <title>Service Dependencies</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/service-dependencies/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/service-dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/service-dependencies/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/service-dependencies/</guid>
       <description>
         
         
@@ -1644,7 +1644,7 @@ letting you link applications in the same way you can link add-ons.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;width:355px&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/service-dependencies-example.png&#34; alt=&#34;Service dependencies&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/service-dependencies-example.png&#34; alt=&#34;Service dependencies&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Service dependencies
     &lt;/figcaption&gt;
@@ -1695,7 +1695,7 @@ depending on it are automatically redeployed.&lt;/p&gt;
 
 
 &lt;figure class=&#34;cc-content-img&#34;style=&#34;width:100%&#34;&gt;
-    &lt;img src=&#34;https://lafillepassympa.com/developers/images/doc/service-dependencies-config-update.png&#34; alt=&#34;Automatic redeployment&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
+    &lt;img src=&#34;https://stagingv6.cleverapps.io/developers/images/doc/service-dependencies-config-update.png&#34; alt=&#34;Automatic redeployment&#34; class=&#34;img-fluid&#34; data-action=&#34;zoom&#34; /&gt;
     &lt;figcaption&gt;
         Automatic redeployment
     &lt;/figcaption&gt;
@@ -1707,10 +1707,10 @@ depending on it are automatically redeployed.&lt;/p&gt;
     
     <item>
       <title>SSH access to running instances</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/ssh-clever-tools/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/ssh-clever-tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/ssh-clever-tools/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/ssh-clever-tools/</guid>
       <description>
         
         
@@ -1755,7 +1755,7 @@ depending on it are automatically redeployed.&lt;/p&gt;
 &lt;li&gt;an SSH client (e.g &lt;a href=&#34;https://putty.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;putty&lt;/a&gt; for windows users)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Make sure you have a properly configured SSH key&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;make-sure-you-have-a-properly-configured-ssh-key&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://lafillepassympa.com/developers/doc/account/ssh-keys-management&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
+    &lt;a href=&#34;#make-sure-you-have-a-properly-configured-ssh-key&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/account/ssh-keys-management&#34; &gt;the SSH keys section of the documentation&lt;/a&gt; to know how to set up your SSH keys.&lt;/p&gt;
 &lt;h2&gt;Using Clever Tools CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-clever-tools-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#using-clever-tools-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In order to access the machine via SSH using the Clever Tools CLI
 you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with &lt;code&gt;clever link --org &amp;lt;your_application&#39;s_organization_id&amp;gt; &amp;lt;your_application_id&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -1893,10 +1893,10 @@ you need to have an application running on Clever Cloud and have linked it with 
     
     <item>
       <title>TCP redirections</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/tcp-redirections/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/tcp-redirections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/tcp-redirections/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/tcp-redirections/</guid>
       <description>
         
         
@@ -2001,7 +2001,7 @@ You should use one or the other depending on the domain name you use in your req
     &lt;a href=&#34;#with-the-console&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;From your console, select your application. In the secondary menu, go to &lt;strong&gt;TCP redirections&lt;/strong&gt;.
 From there, you can create a TCP redirection for a specific namespace (see &lt;a href=&#34;#what-is-a-namespace?&#34; &gt;namespaces doc&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;The creation is instantaneous. Find the TCP redirection port on this page.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/doc/TCP_redirection_console.png&#34; alt=&#34;Redirection console&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/doc/TCP_redirection_console.png&#34; alt=&#34;Redirection console&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;With the Clever CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;with-the-clever-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#with-the-clever-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use the following command to create a TCP redirection from the CLI:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
@@ -2087,10 +2087,10 @@ You can then contact your application over TCP using &lt;code&gt;tcp://your-doma
     
     <item>
       <title>Varnish as HTTP Cache</title>
-      <link>https://lafillepassympa.com/developers/doc/administrate/cache/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/administrate/cache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/administrate/cache/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/administrate/cache/</guid>
       <description>
         
         

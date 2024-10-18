@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clever Cloud Documentation – CI/CD</title>
-    <link>https://lafillepassympa.com/developers/doc/ci-cd/</link>
+    <link>https://stagingv6.cleverapps.io/developers/doc/ci-cd/</link>
     <description>Recent content in CI/CD on Clever Cloud Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Mar 2024 13:14:53 +0100</lastBuildDate>
     
-	  <atom:link href="https://lafillepassympa.com/developers/doc/ci-cd/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://stagingv6.cleverapps.io/developers/doc/ci-cd/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Write your own CI/CD</title>
-      <link>https://lafillepassympa.com/developers/doc/ci-cd/custom-scripts/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/ci-cd/custom-scripts/</link>
       <pubDate>Thu, 28 Mar 2024 12:28:19 +0100</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/ci-cd/custom-scripts/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/ci-cd/custom-scripts/</guid>
       <description>
         
         
@@ -151,7 +151,7 @@
   &lt;/svg&gt;
   GitLab variables&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;List of GitLab predefined variables&lt;/div&gt;&lt;/a&gt;
   &lt;a
-    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/cli&#34;
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z&#34; /&gt;&lt;/svg&gt;Clever Tools CLI&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy and manage your applications and dependencies from your terminal.&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;
 
@@ -161,10 +161,10 @@
     
     <item>
       <title>Deploy from GitHub</title>
-      <link>https://lafillepassympa.com/developers/doc/ci-cd/github/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/</link>
       <pubDate>Thu, 28 Mar 2024 12:04:20 +0100</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/ci-cd/github/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/ci-cd/github/</guid>
       <description>
         
         
@@ -177,10 +177,10 @@
 
 &lt;h2&gt;Use the GitHub integration&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;use-the-github-integration&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#use-the-github-integration&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Clever Cloud provides a GitHub integration to deploy any repository hosted on GitHub to Clever Cloud. You can deploy the same repository to multiple Clever Cloud applications from different branches. Select the appropriate branch in you application menu, in &lt;strong&gt;Information&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application edition&lt;/strong&gt; &amp;gt; &lt;strong&gt;Used GitHub branch for deployment&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lafillepassympa.com/developers/developers/images/doc/github-branches.png&#34; alt=&#34;GitHub branch deployment&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://stagingv6.cleverapps.io/developers/developers/images/doc/github-branches.png&#34; alt=&#34;GitHub branch deployment&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Clever Cloud asks for permission to access your GitHub repositories. Accept the permissions to allow the deployment. You can deploy both public or private repositories.&lt;/p&gt;
 &lt;h3&gt;Deploy review apps from a PR on GitHub&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deploy-review-apps-from-a-pr-on-github&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#deploy-review-apps-from-a-pr-on-github&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can automate deployments for review apps when a Pull Request opens on your GitHub repository by using Clever Cloud &lt;a href=&#34;https://github.com/marketplace/actions/clever-cloud-review-app-on-pull-requests&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Action&lt;/a&gt;. This action uses &lt;a href=&#34;https://lafillepassympa.com/developers/doc/CLI&#34; &gt;Clever Tools&lt;/a&gt; to deploy a new app from the branch the Pull Request is based on and post a comment with the URL of the review app. The action redeploys the app on every new commit and deletes it when the Pull Request is closed (merged or not).&lt;/p&gt;
+    &lt;a href=&#34;#deploy-review-apps-from-a-pr-on-github&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can automate deployments for review apps when a Pull Request opens on your GitHub repository by using Clever Cloud &lt;a href=&#34;https://github.com/marketplace/actions/clever-cloud-review-app-on-pull-requests&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Action&lt;/a&gt;. This action uses &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/CLI&#34; &gt;Clever Tools&lt;/a&gt; to deploy a new app from the branch the Pull Request is based on and post a comment with the URL of the review app. The action redeploys the app on every new commit and deletes it when the Pull Request is closed (merged or not).&lt;/p&gt;
 &lt;h4&gt;How to use the Review App GitHub Action&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;how-to-use-the-review-app-github-action&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#how-to-use-the-review-app-github-action&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Two things are necessary to use the action:&lt;/p&gt;
 &lt;ol&gt;
@@ -276,7 +276,7 @@
   &lt;/svg&gt;
   GitHub Actions documentation&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Find help in GitHub Actions documentation&lt;/div&gt;&lt;/a&gt;
   &lt;a
-    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/cli&#34;
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z&#34; /&gt;&lt;/svg&gt;Clever Tools CLI&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy and manage your applications and dependencies from your terminal.&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;
 
@@ -286,10 +286,10 @@
     
     <item>
       <title>Deploy from GitLab</title>
-      <link>https://lafillepassympa.com/developers/doc/ci-cd/gitlab/</link>
+      <link>https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/</link>
       <pubDate>Thu, 28 Mar 2024 12:04:11 +0100</pubDate>
       
-      <guid>https://lafillepassympa.com/developers/doc/ci-cd/gitlab/</guid>
+      <guid>https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/</guid>
       <description>
         
         
@@ -403,10 +403,10 @@
 &lt;h3&gt;Deploy from a self-hosted GitLab instance&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deploy-from-a-self-hosted-gitlab-instance&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#deploy-from-a-self-hosted-gitlab-instance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can use pipeline components to deploy from a self-hosted GitLab instance, by including it as a project and mirroring the pipeline repository. Follow &lt;a href=&#34;https://docs.gitlab.com/ee/ci/components/#use-a-gitlabcom-component-in-a-self-managed-instance&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab documentation&lt;/a&gt; to get full instructions.&lt;/p&gt;
 &lt;h4&gt;Deploy directly from Heptapod&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;deploy-directly-from-heptapod&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#deploy-directly-from-heptapod&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The self-hosted GitLab service on Clever Cloud with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/addons/heptapod&#34; &gt;Heptapod&lt;/a&gt; already hosts the components, you don&amp;rsquo;t need to do any set up like you would in a self-hosted instance:&lt;/p&gt;
+    &lt;a href=&#34;#deploy-directly-from-heptapod&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The self-hosted GitLab service on Clever Cloud with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/addons/heptapod&#34; &gt;Heptapod&lt;/a&gt; already hosts the components, you don&amp;rsquo;t need to do any set up like you would in a self-hosted instance:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Create a &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; at the root of your repository with &lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/gitlab/#use-the-components-catalog&#34; &gt;the component to use&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Add &lt;a href=&#34;https://lafillepassympa.com/developers/doc/ci-cd/gitlab/#mandatory-configuration&#34; &gt;the variables&lt;/a&gt; to your repository settings&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; at the root of your repository with &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/#use-the-components-catalog&#34; &gt;the component to use&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;a href=&#34;https://stagingv6.cleverapps.io/developers/doc/ci-cd/gitlab/#mandatory-configuration&#34; &gt;the variables&lt;/a&gt; to your repository settings&lt;/li&gt;
 &lt;li&gt;Run the pipeline&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Troubleshooting&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;troubleshooting&#34;&gt;&lt;/span&gt;
@@ -420,7 +420,7 @@
   &lt;/svg&gt;
   GitLab Components&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Learn how to use GitLab components&lt;/div&gt;&lt;/a&gt;
   &lt;a
-    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://lafillepassympa.com/developers/doc/cli&#34;
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;https://stagingv6.cleverapps.io/developers/doc/cli&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-pt-4 hx-px-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;1.5&#34; stroke=&#34;currentColor&#34; class=&#34;w-6 h-6&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z&#34; /&gt;&lt;/svg&gt;Clever Tools CLI&lt;/span&gt;&lt;div class=&#34;hextra-card-subtitle hx-line-clamp-3 hx-text-sm hx-font-normal hx-text-gray-500 dark:hx-text-gray-400 hx-px-4 hx-mb-4 hx-mt-2&#34;&gt;Deploy and manage your applications and dependencies from your terminal.&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;
 

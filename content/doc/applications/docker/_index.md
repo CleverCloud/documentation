@@ -14,6 +14,7 @@ aliases:
 - /doc/deploy/application/docker/docker
 - /doc/getting-started/by-language/docker/
 - /doc/partials/language-specific-deploy/docker
+- /doc/applications/docker
 ---
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
   Clever Cloud offers support for Docker containers. These are deployed inside virtual machines to guarantee a secure level of isolation.

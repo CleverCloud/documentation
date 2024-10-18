@@ -1,4 +1,4 @@
-baseURL: https://stagingv6.cleverapps.io/developers/
+baseURL: https://stagingv6.cleverapps.io/
 publishDir: public/developers
 languageCode: en-us
 title: Clever Cloud Documentation

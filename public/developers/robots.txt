@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://stagingv6.cleverapps.io/developers/sitemap.xml

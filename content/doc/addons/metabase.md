@@ -169,12 +169,12 @@ Here is how you can do it:
 
 1. Create an instance of the Metabase add-on in your Clever Cloud organization
 2. In the add-on Java application, set `CC_METABASE_VERSION` to the same version as your existing self-hosted instance
-3. Stop the Java application of your Clever Cloud add-on
-4. Stop your self-hosted instance
-5. Use `pg_dump` to export the whole internal database of your self-hosted instance
-6. Using pgAdmin (or another PostgreSQL client of you choice), connect to the PostgreSQL database of your Clever Cloud add-on, delete the `public` schema and recreate it (so that it is empty)
-6. Use `pg_restore` to restore the dump to the PostgreSQL database of your Clever Cloud add-on (use the `--no-owner` to avoid errors related to objects ownership)
-7. _(optional)_ Configure the Java application domain and update your DNS record accordingly; if you use a custom domain, you should also update the `MB_SITE_URL` environment variable (it defines the base URL used by links in Metabase emails, among other things)
-8. Start the Java application of your Clever Cloud add-on
+3. In the add-on Java application, set `MB_ENCRYPTION_SECRET_KEY` to the same value as it is in your existing self-hosted instance (or let it to its current random value if you did not enable credentials encryption in your existing self-hosted instance)
+4. Stop the Java application of your Clever Cloud add-on
+5. Stop your self-hosted instance (but let its database up!)
+6. Use `pg_dump` to export the whole internal database of your self-hosted instance: `pg_dump -d postgresql://[your-self-hosted-instance-connection-URI] --format c --compress 7 --schema public --verbose > metabase.backup`
+7. Use `pg_restore` to restore the dump to the PostgreSQL database of your Clever Cloud add-on: `pg_restore -d postgresql://[your-addon-database-connection-URI] --no-owner --clean --if-exists --schema public --verbose metabase.backup`
+8. _(optional)_ Configure the Java application domain and update your DNS record accordingly; if you use a custom domain, you should also update the `MB_SITE_URL` environment variable (it defines the base URL used by links in Metabase emails, among other things)
+9. Start the Java application of your Clever Cloud add-on (without build cache)
 
 If everything seems OK, set `CC_METABASE_VERSION` to the value you wish (for example, `community-latest`) in the Java application of your Clever Cloud add-on and restart it. [Contact the Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) if you need advice or help doing that.

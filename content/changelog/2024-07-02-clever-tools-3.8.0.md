@@ -8,7 +8,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-  - name: Hubert Sablonière
+  - name: Hubert Sablonnière
     link: https://github.com/hsablonniere
     image: https://github.com/hsablonniere.png?size=40
 description: Better manage your apps, lots of new features
@@ -55,7 +55,7 @@ Multiple new features are also available in this "Big Summer Update". Access Log
 
 `--no-color` or `--color true|false` global option is available. It's used by default when the output is not a terminal. `clever console` now opens the [Console](https://console.clever-cloud.com) even if your not in a folder with a linked application. [3.8.1 release](https://github.com/CleverCloud/clever-tools/releases/tag/3.8.1) comes with some minor fixes.
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with npm:
+To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
 
 ```
 npm update -g clever-tools

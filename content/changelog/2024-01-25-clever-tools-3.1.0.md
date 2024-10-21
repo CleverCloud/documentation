@@ -8,7 +8,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-  - name: Hubert Sablonière
+  - name: Hubert Sablonnière
     link: https://github.com/hsablonniere
     image: https://github.com/hsablonniere.png?size=40
 description: Be prepared for a new wave of Clever Tools starting this release 3.1.0!
@@ -26,7 +26,7 @@ If 3.0.x branch brought new log stack (faster, longer, order), you now get updat
 
 Of course, there are also some bug fixes. And be prepared: more new features are on the way!
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with npm: 
+To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
 
 ```
 npm update -g clever-tools

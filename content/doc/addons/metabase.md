@@ -23,7 +23,7 @@ Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
 
-## Key Features
+## Key features
 
 Metabase on Clever Cloud is a preconfigured set of resources, benefiting from all features the platform provides such as monitoring, scalability, up-to date systems, blue/green deployments, etc. It's easy to manage and allows you to make better sense of the business metrics produced by your application. Once deployed, Metabase takes form of a web application in which you can:
 
@@ -49,31 +49,37 @@ You can also save questions and **organize** them in _collections_. When opening
 
 ### Using the CLI
 
-1. Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed
-2. List the available plans and options for Metabase: `clever addon providers show metabase`
-3. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional)
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+
+```
+$ clever addon create metabase myMetabase
+Add-on created successfully!
+ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Real ID: metabase_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name: myMetabase
+
+Your Metabase is starting:
+ - Access it: https://xxxxxxxxxxxxxxxxxxxx-metabase.services.clever-cloud.com
+ - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+/!\ The metabase provider is in beta testing phase
+Learn more about Metabase on Clever Cloud: https://developers.clever-cloud.com/doc/addons/metabase/
+```
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md) for more details on add-on management.
 
-## Acessing the Metabase Interface
+## Accessing the Metabase interface
 
-Once deployed, Metabase is accessible through an URL provided in the add-on's `Service dependencies` page. You can also go in the environment variables page of the Java application and look for `MB_SITE_URL` value. To get this URL with Clever Tools, use the add-on ID:
+Once you created your add-on, open the management URL or look for `MB_SITE_URL` value in the Metabase dashboard from the Console. The first time you connect, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.
 
-```
-$ clever addon env ADDON_ID
-METABASE_URL="https://an_id-metabase.services.clever-cloud.com"
-````
+* [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
 
-## Underlying Resources
+## Underlying resources
 
 When you create the Metabase add-on, Clever Cloud automatically deploys:
 
 - A [Java](/doc/applications/java/java-jar/) instance with Metabase pre-loaded
 - A [PostgreSQL](/doc/addons/postgresql/) database (for internal Metabase use)
-
-When you first connect to your Metabase instance, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.
-
-* [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
 
 ## Plan sizing
 
@@ -113,7 +119,7 @@ If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VE
 
 You must then add your license key in Metabase's settings (see [documentation](https://www.metabase.com/docs/latest/paid-features/activating-the-enterprise-edition#how-to-activate-your-token-when-self-hosting)).
 
-### Version Rollbacks
+### Version rollbacks
 
 There is nothing stopping you from rolling back your Metabase instance to an older version (using the `CC_METABASE_VERSION` environment variable), but **this may break things**. When starting, Metabase checks its attached internal PostgreSQL database and may apply database migrations to evolves its structure. But not all new versions of Metabase add new migrations (patch versions may not, thus this is not a contract).
 
@@ -127,14 +133,14 @@ There are two cases:
 If you need to rollback to an older version (for example, because a new version introduced a blocking regression), it is your responsibility to check if this can be done safely.
 {{< /callout >}}
 
-## Credentials At-Rest Encryption
+## Credentials at-rest encryption
 
 When you add a new data source to Metabase, its credentials are stored into Metabase internal database. Metabase offers an [optional feature](https://www.metabase.com/docs/latest/databases/encrypting-details-at-rest) that allows you to encrypt such credentials before storing them in the database.
 
 When you deploy a Metabase add-on, this **at-rest encryption is enabled by default**.
 This is why the Java app of your add-on has a `MB_ENCRYPTION_SECRET_KEY` environment variable that contains a randomly generated value.
 
-## Configuring a SMTP Server
+## Configuring a SMTP server
 
 While this is not strictly required to successfully operate Metabase, it might be useful to configure a SMTP server.
 There are two main usages:
@@ -148,7 +154,7 @@ You can use a [MailPace](/doc/addons/mailpace/) add-on or any other SMTP server.
 The SMTP server can be configured (and tested) in Metabase administration interface.
 See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
 
-### Using a MailPace Add-On
+### Using a MailPace add-on
 
 If you have a [MailPace](/doc/addons/mailpace/) add-on, you can link it to the Java application of your Metabase add-on using [Clever Cloud's console](https://console.clever-cloud.com/):
 
@@ -161,7 +167,7 @@ When a MailPace add-on is linked, Metabase will automatically get the SMTP serve
 
 You still need to specify the email address which Metabase must use as sender (use Metabase administration interface or set the `MB_EMAIL_FROM_ADDRESS` environment variable). Make sure you MailPace account is able to send email from this address/domain.
 
-## Migrating From a Self-Hosted Instance
+## Migrating from a self-hosted instance
 
 Even if you already have a self-hosted Metabase instance, you might want to migrate to the Metabase add-on in order to benefit from automatic upgrades. This is possible if your self-hosted instance uses PostgreSQL as its internal database.
 

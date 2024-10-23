@@ -81,9 +81,26 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### Using the CLI
 
-1. Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed
-2. List the available plans and options for Keycloak: `clever addon providers show keycloak`
-3. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional)
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+
+```
+$ clever addon create keycloak myKeycloak
+Add-on created successfully!
+ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Real ID: keycloak_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name: mykeycloak
+
+Your Keycloak is starting:
+ - Access it: https://xxxxxxxxxxxxxxxxxxxx-keycloak.services.clever-cloud.com
+ - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+An initial account has been created, you'll be invited to change the password at first login:
+ - Admin user name: cc-account-admin
+ - Temporary password: xxxxxxxxxxxxxxxx
+
+/!\ The keycloak provider is in beta testing phase
+Learn more about Keycloak on Clever Cloud: https://developers.clever-cloud.com/doc/addons/keycloak/
+```
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
 
@@ -144,7 +161,7 @@ Those flows could be affected to your own clients if you need.
 
 ## Metrics
 
-Since  version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/metrics/#publish-your-own-metrics) to visualize them.
+Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/metrics/#publish-your-own-metrics) to visualize them.
 
 ## Hostnames
 

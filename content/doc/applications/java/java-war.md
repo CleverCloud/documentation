@@ -134,7 +134,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
 
 ## Available containers for war.json
 
-Here's the list of the configuration values for the "container" field in `war.json` (with **End Of Life** versions tagged as `EOL`:
+Here's the list of the configuration values for the "container" field in `war.json` (with **End Of Life** versions tagged as `EOL`):
 
 | Value      | Description                                                                                  | EOL |
 |------------|----------------------------------------------------------------------------------------------|-----|

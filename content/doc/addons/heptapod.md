@@ -22,7 +22,7 @@ The Heptapod DevOps platform is edited by [Octobus](https://octobus.net), a team
 
 Clever Cloud users can benefit from **Heptapod Cloud** software, along with **Heptapod Runner** for CI/CD operations.
 
-{{< figure src="/images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
+{{< figure src="../../../images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
 
 ## Heptapod Cloud
 
@@ -41,19 +41,18 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 * **Collaboration and Code Review:** Heptapod provides a wide range of features for effective collaboration, code or document reviews, online comments, and real-time collaboration tools. Work seamlessly with your team, track exchanges, merge requests, and improve the overall quality of your projects.
 * **Embedded Wiki and Documentation:** Knowledge sharing is crucial for high-performing teams. Easily create and maintain comprehensive documentation for your projects, centralise and share knowledge, and provide a smooth experience for new collaborators.
 
-
 ## Accessing Heptapod Cloud
 
 {{< callout type="info" >}}
   **Requirements**  
-  Using Heptapod Cloud require a Clever Cloud account and an [organization](/doc/account/administrate-organization/).
+  Using Heptapod Cloud require a Clever Cloud account and an [organization](../../account/administrate-organization).
 {{< /callout >}}
 
 {{% steps %}}
 
 ### Create an organization
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](/doc/account/administrate-organization/).
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](../../account/administrate-organization/).
 Every organization you have access to will have its corresponding group on the Heptapod Cloud instance.
 
 In the Clever Cloud console, click **Add an Organization** and fill the form to create one.
@@ -70,7 +69,7 @@ Heptapod Cloud is billed on a per-usage model, explained and simulated [on our p
 
 You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organization.
 
-{{< figure src="/images/doc/heptapod-billing.png" caption="You can check your organization's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
+{{< figure src="../../../images/doc/heptapod-billing.png" caption="You can check your organization's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
 
 Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever-cloud.com/product/clever-cloud-runners-for-heptapod/).
 
@@ -88,7 +87,7 @@ Clever Cloud Runners for Heptapod comes with the following features:
 * **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organization with just one click.
 * **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
 * **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
-* **[Components Catalog](/doc/ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
+* **[Components Catalog](../../ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
 
 #### Provisioning
 

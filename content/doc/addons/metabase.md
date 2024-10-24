@@ -33,7 +33,7 @@ Metabase on Clever Cloud is a preconfigured set of resources, benefiting from al
 - **Share** a questions/dashboard to anyone using an anonymous link
 - **Periodically send** results of a question/dashboard by email/Slack
 - Configure **data visualization** for questions results: table, line chart, pie chart, gauge, single number, etc.
-- Connect **external databases**; it works with add-ons such as [MySQL](/doc/addons/mysql/), [PostgreSQL](/doc/addons/postgresql/), [MongoDB](/doc/addons/mongodb/) and [many other data sources](https://www.metabase.com/data_sources/)
+- Connect **external databases**; it works with add-ons such as [MySQL](../mysql/), [PostgreSQL](../postgresql/), [MongoDB](../mongodb/) and [many other data sources](https://www.metabase.com/data_sources/)
 - Create _questions_ either by typing in `SELECT` SQL queries or by using Metabase’s UI to build such queries **without using SQL**
 
 You can also save questions and **organize** them in _collections_. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with **groups and permissions**: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.
@@ -63,7 +63,6 @@ Your Metabase is starting:
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 /!\ The metabase provider is in beta testing phase
-Learn more about Metabase on Clever Cloud: https://developers.clever-cloud.com/doc/addons/metabase/
 ```
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md) for more details on add-on management.
@@ -78,8 +77,8 @@ Once you created your add-on, open the management URL or look for `MB_SITE_URL` 
 
 When you create the Metabase add-on, Clever Cloud automatically deploys:
 
-- A [Java](/doc/applications/java/java-jar/) instance with Metabase pre-loaded
-- A [PostgreSQL](/doc/addons/postgresql/) database (for internal Metabase use)
+- A [Java](../../applications/java/java-jar/) instance with Metabase pre-loaded
+- A [PostgreSQL](../postgresql/) database (for internal Metabase use)
 
 ## Plan sizing
 
@@ -149,7 +148,7 @@ There are two main usages:
 2. Sending questions/dashboards emails (when users created subscriptions to them)
 
 Clever Cloud does not provide a SMTP server for your Metabase add-on.
-You can use a [MailPace](/doc/addons/mailpace/) add-on or any other SMTP server.
+You can use a [MailPace](../mailpace/) add-on or any other SMTP server.
 
 The SMTP server can be configured (and tested) in Metabase administration interface.
 See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.

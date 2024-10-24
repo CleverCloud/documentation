@@ -75,7 +75,7 @@ So you can alter the build&start process for your application.
 #### Deployment hooks
 
 Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) between various steps of the deployment.
-  
+
 |  Name  |  Description  |
 |-----------------------|------------------------------|
 |[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
@@ -85,7 +85,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
-  
+
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |[`CC_CLAMAV`](/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
@@ -109,7 +109,7 @@ Note that `Reusable keys` are required to use multiple instances. You can [gener
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key |
 |`TAILSCALE_LOGIN_SERVER`| Contains the login server |
-  
+
 #### How it works?
 
 For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
@@ -134,7 +134,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 ## .NET
 
 [.NET Documentation](/doc/applications/dotnet)
-  
+
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_DOTNET_PROFILE` | Override the build configuration settings in your project. | Release |
@@ -223,7 +223,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_LDAP_CA_CERT` |  |  |
 |`CC_MTA_AUTH_PASSWORD` | Password to authenticate to the SMTP server |  |
 |`CC_MTA_AUTH_USER` | User to authenticate to the SMTP server |  |
-|`CC_MTA_SERVER_AUTH_METHOD` | Enable or disable authentication to the SMTP server | on |  
+|`CC_MTA_SERVER_AUTH_METHOD` | Enable or disable authentication to the SMTP server | on |
 |`CC_MTA_SERVER_HOST` | Host of the SMTP server |  |
 |`CC_MTA_SERVER_PORT` | Port of the SMTP server | 465 |
 |`CC_MTA_SERVER_USE_TLS` | Enable or disable TLS when connecting to the SMTP server | true |
@@ -267,7 +267,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
 |`CC_PYTHON_VERSION` | Choose the Python version between 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 |  |
-|`ENABLE_GZIP_COMPRESSION` | Set to true to gzip-compress the output of uwsgi |  |
+|`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
 |`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
@@ -299,10 +299,12 @@ When your Python application doesn't use one of the supported backends, with `CC
 |[`CC_RAKEGOALS`](/guides/ruby-rack-app-tutorial/#configure-rake-goals "Configure rake goals") | A list of comma-separated rake goals to execute e.g. db:migrate, assets:precompile |  |
 |`CC_RUBY_VERSION` | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |`CC_SIDEKIQ_FILES` | Specify a list of Sidekiq configuration files e.g. "./config/sidekiq_1.yml,./config/sidekiq_2.yml" |  |
+|`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
+|`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`RACK_ENV` |  |  |
 |`RAILS_ENV` |  |  |  |
-|`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |  
+|`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
 |[`STATIC_URL_PREFIX`](/guides/ruby-rack-app-tutorial/#manage-your-static-files-and-assets "Manage static assets") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
 
@@ -446,7 +448,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 ### Elastic Stack
 
 [Elastic Stack Documentation](/doc/addons/elastic)
-  
+
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |`ELASTIC_APM_SERVER_URL` | URI to connect APM Server | Generated upon creation | ✓ |
@@ -465,7 +467,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`ES_ADDON_VERSION` | ElasticSearch Version | 7 | ✓ |
 
 ### Blackfire
-  
+
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |`ENABLE_BLACKFIRE` | Enable the Blackfire extension | false |  |
@@ -484,14 +486,14 @@ When your Python application doesn't use one of the supported backends, with `CC
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |[`NEW_RELIC_APP_NAME`](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME "New Relic documentation") | Contains the application name |  |
 |[`NEW_RELIC_LICENSE_KEY`](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY "New Relic documentation" ) | Contains your New Relic account license | |
-|[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum "New Relic documentation" ) |  |  |  
-|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled "New Relic documentation" ) | | |  
-|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled "New Relic documentation" ) | | |  
-|[`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable "New Relic documentation" ) | | |  
-|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql "New Relic documentation" ) | obfuscated | |  
+|[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum "New Relic documentation" ) |  |  |
+|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled "New Relic documentation" ) | | |
+|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled "New Relic documentation" ) | | |
+|[`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable "New Relic documentation" ) | | |
+|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql "New Relic documentation" ) | obfuscated | |
 
 ### Pulsar
-  
+
 |  Name     |  Description  |  Default value  |  Read Only  |
 | ------------------------ | ----------------------------------------- | ------------------------------ | -------------------------- |
 |`ADDON_PULSAR_BINARY_URL` | The complete URL to use in your application | Generated upon creation | ✓ |
@@ -528,7 +530,7 @@ with services protected by ip address filtering. `VPN_ADDON_*` variables will
 be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
-  
+
 |  Name  |  Description |  Default value  |  Read Only  |
 | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
 | `CC_VPN_DNS_OVERRIDES`  | Comma-separated list of DNS IP                                                                  |                                |                            |

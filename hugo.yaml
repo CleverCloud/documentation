@@ -45,7 +45,7 @@ params:
     logo:
       path: images/logo.svg
       dark: images/logo-dark.svg
-      link: /
+      link: /developers
       width: 175
   comments:
     enable: false

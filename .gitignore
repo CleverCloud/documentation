@@ -1,5 +1,5 @@
 .DS_Store
-/developers/*
+/public/developers/*
 /resources
 .clever.json
 .vale.ini

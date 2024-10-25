@@ -82,7 +82,7 @@ If you need some modules you can easily add some with the *dependencies* field i
 }
 ```
 
-If your application has private dependencies, you can add a [Private SSH Key]({{< ref "doc/reference/common-configuration.md#private-ssh-key" >}}).
+If your application has private dependencies, you can add a [Private SSH Key]({{< ref "doc/reference/common-configuration/#private-ssh-key" >}}).
 
 #### Development Dependencies
 

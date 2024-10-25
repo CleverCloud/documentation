@@ -23,12 +23,12 @@ Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/doc/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
-  {{< card link="/doc/applications/java/java-jar" title="Jar" icon="java" >}}
-  {{< card link="/doc/applications/java/java-maven" title="Maven" icon= "maven">}}
-  {{< card link="/doc/applications/java/java-war" title="War/Ear" icon="java" >}}
-  {{< card link="/guides/play-framework-1" title="Play 1" icon="play" >}}
-  {{< card link="/guides/play-framework-2" title="Play 2" icon="play" >}}
+  {{< card link="java-gradle" title="Gradle" icon="gradle" >}}
+  {{< card link="java-jar" title="Jar" icon="java" >}}
+  {{< card link="java-maven" title="Maven" icon= "maven">}}
+  {{< card link="java-war" title="War/Ear" icon="java" >}}
+  {{< card link="../../../guides/play-framework-1" title="Play 1" icon="play" >}}
+  {{< card link="../../../guides/play-framework-2" title="Play 2" icon="play" >}}
   
 {{< /cards >}}
 
@@ -39,7 +39,7 @@ Looking for instructions on a specific framework deployment?
 {{< cards >}}
 {{< card
     title="Check our Guides"
-    link="/guides"
+    link="../../../guides"
     icon="science"
   >}}
   {{< /cards >}}

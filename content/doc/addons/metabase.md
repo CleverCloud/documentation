@@ -155,7 +155,7 @@ See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/em
 
 ### Using a MailPace add-on
 
-If you have a [MailPace](/doc/addons/mailpace/) add-on, you can link it to the Java application of your Metabase add-on using [Clever Cloud's console](https://console.clever-cloud.com/):
+If you have a [MailPace](../mailpace/) add-on, you can link it to the Java application of your Metabase add-on using [Clever Cloud's console](https://console.clever-cloud.com/):
 
 - Go to the Java application of the Metabase add-on
 - Open the "Service dependencies" page

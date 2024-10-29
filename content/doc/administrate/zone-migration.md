@@ -98,7 +98,7 @@ Add-ons can be migrated from one zone to another. For some of them, our support 
 
 ### PostgreSQL, MySQL, MongoDB, Redis
 
-These add-ons can be migrated using the [Migration Tool]({{< ref "/doc/administrate/database-migration" >}}).
+You can migrate these add-ons using the [Migration Tool]({{< ref "/doc/administrate/database-migration" >}}).
 
 Once your migration is over, the services connecting to the add-on might be impacted by an increased latency due to DNS updates. The domain of your add-on will have its DNS records
 changed but it will take up to 1 hour for them to propagate. This means that during that time, your services might still connect to the old zone, which will then redirect to the target zone

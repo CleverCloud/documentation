@@ -19,7 +19,7 @@ These are read-only variables that are generated for each scaler before they bui
 
 |  Name  | Description | Example value |
 |-----------------------|------------------------------|--------------------------------|
-|[`INSTANCE_NUMBER`](/doc/develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
+|[`INSTANCE_NUMBER`](../../develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
 |`INSTANCE_TYPE` | Whether this instance is a "build" instance or a "production" instance. | build, production |
 |`INSTANCE_ID` | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
 |`CC_PRETTY_INSTANCE_NAME` | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |
@@ -42,23 +42,23 @@ So you can alter the build&start process for your application.
 |`CC_DISABLE_JVM_AGENT` | Disable JVM agent activation | |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
-|[`CC_HEALTH_CHECK_PATH`](/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
-|`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](/doc/applications/javascript/nodejs/#select-node-version "Select node version") instead | |
+|[`CC_HEALTH_CHECK_PATH`](../../develop/healthcheck) | Custom path to validate your application deployment |  |
+|`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](../../applications/javascript/nodejs/#select-node-version "Select node version") instead | |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
 |`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
 |`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
-|[`CC_WORKER_COMMAND`](/doc/develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_WORKER_COMMAND`](../../develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
 
 #### Control build and dependencies cache
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_CACHE_DEPENDENCIES` | Enable caching of your build dependencies to speed up following builds. | false |
-|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
-|[`CC_IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`CC_OVERRIDE_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
+|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
+|[`CC_IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`CC_OVERRIDE_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
 
 #### Control the deployment's behavior
 
@@ -66,10 +66,10 @@ So you can alter the build&start process for your application.
 |-----------------------|------------------------------|--------------------------------|
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 |`CC_TASK` | If set to true, the deployer runs `CC_RUN_COMMAND` and terminates the instance after running the task. Trigger an execution using `git push` or starting your instance  | false |
-|[`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
+|[`CC_TROUBLESHOOT`](../../find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 {{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/applications/docker/#dockerized-rust-application-deployment).
+  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](../../applications/docker/#dockerized-rust-application-deployment).
 {{< /callout >}}
 
 #### Deployment hooks
@@ -78,26 +78,26 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
-|[`CC_POST_BUILD_HOOK`](/doc/develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
-|[`CC_PRE_RUN_HOOK`](/doc/develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
-|[`CC_RUN_FAILED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
-|[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
+|[`CC_PRE_BUILD_HOOK`](../../develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
+|[`CC_POST_BUILD_HOOK`](../../develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
+|[`CC_PRE_RUN_HOOK`](../../develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
+|[`CC_RUN_FAILED_HOOK`](../../develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
+|[`CC_RUN_SUCCEEDED_HOOK`](../../develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_CLAMAV`](/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
-|[`CC_CLAMAV_MAXQUEUE`](/doc/administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
-|[`CC_CLAMAV_MAXTHREADS`](/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
-|[`CC_METRICS_PROMETHEUS_PASSWORD`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
-|[`CC_METRICS_PROMETHEUS_PATH`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
-|[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
-|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
-|[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
-|[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
-|[`CC_WORKER_COMMAND`](/doc/develop/workers.md "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_CLAMAV`](../../administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
+|[`CC_CLAMAV_MAXQUEUE`](../../administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
+|[`CC_CLAMAV_MAXTHREADS`](../../administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
+|[`CC_METRICS_PROMETHEUS_PASSWORD`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
+|[`CC_METRICS_PROMETHEUS_PATH`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
+|[`CC_METRICS_PROMETHEUS_PORT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
+|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
+|[`CC_METRICS_PROMETHEUS_USER`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_WORKER_COMMAND`](../../develop/workers.md "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 ### Tailscale support
 
@@ -112,13 +112,13 @@ Note that `Reusable keys` are required to use multiple instances. You can [gener
 
 #### How it works?
 
-For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](../../develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](../../develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
 
 If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
 
 ## Docker
 
-[Docker Documentation](/doc/applications/docker)
+[Docker Documentation](../../applications/docker)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -133,7 +133,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## .NET
 
-[.NET Documentation](/doc/applications/dotnet)
+[.NET Documentation](../../applications/dotnet)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -145,7 +145,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Elixir
 
-[Elixir Documentation](/doc/applications/elixir)
+[Elixir Documentation](../../applications/elixir)
 
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
@@ -159,7 +159,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Go
 
-[Go Documentation](/doc/applications/golang)
+[Go Documentation](../../applications/golang)
 
 | Name | Descrption |
 | :------- | :---- |
@@ -169,16 +169,16 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Haskell
 
-[Haskell Documentation](/doc/applications/haskell)
+[Haskell Documentation](../../applications/haskell)
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_HASKELL_STACK_TARGET`](/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
+|[`CC_HASKELL_STACK_TARGET`](../../applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
 |`CC_RUN_COMMAND` | Custom command to run your application. |
 
 ## Java
 
-[Java Documentation](/doc/applications/java/java-jar)
+[Java Documentation](../../applications/java/java-jar)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -199,7 +199,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Node.js
 
-[Node.js Documentation](/doc/applications/javascript/nodejs)
+[Node.js Documentation](../../applications/javascript/nodejs)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -212,13 +212,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## PHP
 
-[PHP Documentation](/doc/applications/php)
+[PHP Documentation](../../applications/php)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
-|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | fastcgi |
+|[`CC_CGI_IMPLEMENTATION`](../../applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | fastcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 |`CC_LDAP_CA_CERT` |  |  |
 |`CC_MTA_AUTH_PASSWORD` | Password to authenticate to the SMTP server |  |
@@ -231,9 +231,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|[`CC_PHP_ASYNC_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](../../applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
 |`CC_PHP_VERSION` | Choose your PHP version between 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2 | 8 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
@@ -243,7 +243,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](../../applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | Organization token. |  |
@@ -251,7 +251,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Python
 
-[Python Documentation](/doc/applications/python)
+[Python Documentation](../../applications/python)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -273,9 +273,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`PYTHON_SETUP_PY_GOAL` | Custom setup goal to be launch after requirements.txt have been installed |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](/doc/applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`](../../applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
-|[`UWSGI_ASYNC`](/doc/applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
+|[`UWSGI_ASYNC`](../../applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
 |`UWSGI_ASYNC_ENGINE` | Select the asynchronous engine for uWSGI (optional) |  |
 |`UWSGI_INTERCEPT_ERRORS` |  |
 |`WSGI_BUFFER_SIZE` | Buffer size (in bytes) for uploads. | 4096 |
@@ -310,7 +310,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Rust
 
-[Rust Documentation](/doc/applications/rust)
+[Rust Documentation](../../applications/rust)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -323,7 +323,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### FS Bucket
 
-[FS Bucket Documentation](/doc/addons/fs-bucket)
+[FS Bucket Documentation](../../addons/fs-bucket)
 
 |  Name  |  Description  | Read Only  |
 |-----------------------|------------------------------|--------------------------------|
@@ -332,7 +332,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MongoDB
 
-[MongoDB Documentation](/doc/addons/mongodb)
+[MongoDB Documentation](../../addons/mongodb)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -346,7 +346,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MySQL
 
-[MySQL Documentation](/doc/addons/mysql)
+[MySQL Documentation](../../addons/mysql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -372,7 +372,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### PostgreSQL
 
-[PostgreSQL Documentation](/doc/addons/postgresql)
+[PostgreSQL Documentation](../../addons/postgresql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -447,7 +447,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Elastic Stack
 
-[Elastic Stack Documentation](/doc/addons/elastic)
+[Elastic Stack Documentation](../../addons/elastic)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -507,7 +507,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Redis
 
-[Redis Documentation](/doc/addons/redis)
+[Redis Documentation](../../addons/redis)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|

@@ -64,7 +64,7 @@ If you ever need to stop using Pgpool-II, you can remove this variable or set it
 
 Your application will use a Unix Domain Socket to connect to Pgpool-II. Unix domain sockets are faster than TCP sockets because there is no handshake and the connection is made locally on the same machine. A special environment variable will be injected to your environment variables: `CC_PGPOOL_SOCKET_PATH`. This variable contains the path to the Unix Domain Socket you have to connect to. See [Usage](#usage) below for some examples on how to use it.
 
-The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/).  
+The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](../../doc/reference/reference-environment-variables/).  
 
 ### Concurrent session and pool size  
 
@@ -137,7 +137,7 @@ The weight is used to specify the load balance ratio of the backends, you can al
 You can set a higher value for followers to avoid overloading the leader with `SELECT` queries that could be made on followers.
 {{< /callout >}}
 
-Many other **load balancing** options are configurable with environment variables. You can refer to our [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) and the [official Pgpool-II documentation](https://www.pgpool.net/docs/latest/en/html/runtime-config-load-balancing.html) for more information.
+Many other **load balancing** options are configurable with environment variables. You can refer to our [environment variables reference page](../../doc/reference/reference-environment-variables/) and the [official Pgpool-II documentation](https://www.pgpool.net/docs/latest/en/html/runtime-config-load-balancing.html) for more information.
 
 ### Health check
 
@@ -205,7 +205,7 @@ Here is the summary:
 
 ### Connecting to Pgpool-II
 
-Connect via [ssh](https://www.clever-cloud.com/doc/administrate/ssh-clever-tools/) to your application and use the [psql](https://docs.postgresql.fr/10/app-psql.html) command.
+Connect via [ssh](../../doc/administrate/ssh-clever-tools/) to your application and use the [psql](https://docs.postgresql.fr/10/app-psql.html) command.
 
 ```bash
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com <app_id>

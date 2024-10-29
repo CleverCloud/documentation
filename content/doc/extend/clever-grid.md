@@ -99,19 +99,19 @@ For example, “pytorch.py” and “./pytorch.py are both valid.
 **Bash scripts are expected to be executable (via `chmod+x`)**
 
 * Python version :
-  * You can select the python version with the `PYTHON_VERSION` environment variable. Valid values are documented here: [www.clever-cloud.com/doc/python/python_apps/#choose-python-version](https://www.clever-cloud.com/doc/python/python_apps/#choose-python-version)
+  * You can select the python version with the `PYTHON_VERSION` environment variable. Valid values are documented here: [doc url](doc-url)
 
 ### Docker application
 
-Refer to the Clever Cloud documentation : <https://www.clever-cloud.com/doc/docker/>
+Refer to the Clever Cloud documentation : <doc url>
 
 ### Java application
 
-Refer to the Clever Cloud documentation : <https://www.clever-cloud.com/doc/java/java-jar/>
+Refer to the Clever Cloud documentation : <doc url>
 
 ### Hooking build steps
 
-Between the build steps and before running the script, you can hook scripts. The hooks are documented here: <https://www.clever-cloud.com/doc/clever-cloud-overview/hooks/>
+Between the build steps and before running the script, you can hook scripts. The hooks are documented here: <doc url>
 E.g. you can have a post build hook to initialize conda and stuff.
 
 ## Send your code
@@ -134,7 +134,7 @@ You can find the repository address on the overview page of your application
 
 In addition to the Clever Grid console, you can manage your add-ons and applications from the command line with Clever Tools.
 
-see : <https://www.clever-cloud.com/doc/clever-tools/getting_started/>
+see : <doc url>
 
 ## Billing
 

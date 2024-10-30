@@ -47,6 +47,7 @@ Applications on Clever Cloud listen on port **8080**. If your project requires t
       "astro": "astro"
     } 
     ```
+  
   {{< /tab >}}
 
   {{< tab >}}
@@ -159,6 +160,13 @@ If you're deploying from **GitHub**, your deployment should start automatically.
 {{< callout emoji="💡" >}}
   To deploy from branches other than `master`, use `git push clever <branch>:master`. For example, if you want to deploy your local `main` branch without renaming it, use `git push clever main:master`.
 {{< /callout >}}
+
+### Serve the site from server
+
+If the app uses the [Node.js adapter](https://docs.astro.build/en/guides/integrations-guide/node/), it can start by either:
+
+- Injecting `CC_RUN_COMMAND=./dist/server/entry.mjs` in environment variables. `CC_RUN_COMMAND` variable always overrides start script in `package.json`.
+- Setting `./dist/server/entry.mjs` as start script in `package.json`. 
 
 ## Deploy an Astro site using the CLI
 

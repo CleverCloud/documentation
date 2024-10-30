@@ -15,7 +15,7 @@ description: Lots of new features included!
 excludeSearch: true
 ---
 
-Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, `clever curl` is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud [API v2 or v4](/api/).
+Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, `clever curl` is now public and listed as an official command. It helps you to send cURL requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud [API v2 or v4](/api/)..
 
 JSON format is supported for more commands, the `--since` option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use `clever logs --since 2h`. This command documentation is available [there](https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs).
 
@@ -39,9 +39,7 @@ If you want to check if an application will deploy as a `TASK` or the `REGULAR` 
 ```
 clever env set CC_RUN_COMMAND "bash a_bash_script.sh"
 ```
-Clever Tasks will evolve with enhancements planed over the coming months. Feel free to tell us about your needs or ideas on this!
-
-* [Learn more about Clever Tasks](/doc/develop/tasks/)
+Clever Tasks will evolve with enhancements planed over the coming months. Feel free to tell us about your needs or ideas on this subject!
 
 Last but not least, we're introducing the access to Materia KV. Those granted with alpha access can now create a serverless, synchronously-replicated (over our 3 datacenters in Paris) key-value add-on. You'll be able to use it with multiples kind of clients. First to be supported is Redis API. Thus, you can run:
 

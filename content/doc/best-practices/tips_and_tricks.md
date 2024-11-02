@@ -9,6 +9,7 @@ keywords:
 - tips
 - tricks
 type: docs
+draft: true
 ---
 
 Clever Cloud is an easy-to-use platform, designed with developers in mind. Whether you're a beginner or a more experienced user, we try to fit your needs bringing you the best possible experience through our web Console, Clever Tools, API, SDK, integrations.

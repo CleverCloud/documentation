@@ -133,23 +133,19 @@ menu:
       params:
         type: separator
       weight: 2
-    - identifier: tips-tricks
-      name: "Tips & Tricks"
-      pageRef: "/doc/best-practices/tips_and_tricks"
-      weight: 3
     - identifier: cli
       name: "Clever Tools CLI"
       url: "https://github.com/CleverCloud/clever-tools/tree/master/docs#readme"
-      weight: 4
+      weight: 3
     - identifier: envar
       name: "Environment Variables"
       pageRef: "/doc/reference/reference-environment-variables"
-      weight: 5
+      weight: 4
     - identifier: common
       name: "Common Configuration"
       pageRef: "/doc/develop/common-configuration"
-      weight: 6
+      weight: 5
     - identifier: postmortem
       name: "Postmortem"
       pageRef: "/postmortem"
-      weight: 7
+      weight: 6

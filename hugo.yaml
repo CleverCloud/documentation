@@ -133,22 +133,19 @@ menu:
       params:
         type: separator
       weight: 2
+    - identifier: cli
+      name: "Clever Tools CLI"
+      url: "https://github.com/CleverCloud/clever-tools/tree/master/docs#readme"
+      weight: 3
     - identifier: envar
       name: "Environment Variables"
       pageRef: "/doc/reference/reference-environment-variables"
       weight: 4
-    - identifier: cli
-      name: "CLI"
-      pageRef: "/doc/CLI"
-      #url: "https://gohugo.io/documentation/"
-      weight: 3
     - identifier: common
       name: "Common Configuration"
       pageRef: "/doc/develop/common-configuration"
-      #url: "https://gohugo.io/documentation/"
       weight: 5
     - identifier: postmortem
       name: "Postmortem"
       pageRef: "/postmortem"
-      #url: "https://gohugo.io/documentation/"
       weight: 6

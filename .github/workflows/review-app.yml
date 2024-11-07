@@ -38,3 +38,4 @@ jobs:
           type: 'static-apache'
           set-env: true
           environment: 'review'
+          domain: 'https://stagingv6.cleverapps.io/developers'

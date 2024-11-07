@@ -4,6 +4,9 @@ on:
   pull_request_target:
     types: [opened, closed, synchronize, reopened]
     branches: [ main ]
+  push:
+    branches:
+      - new-root
 
 jobs:
   deploy:
@@ -23,7 +26,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       - name: Manage review app
-        uses: CleverCloud/clever-cloud-review-app@v1.1.0
+        uses: CleverCloud/clever-cloud-review-app@input-domain
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
@@ -38,4 +41,4 @@ jobs:
           type: 'static-apache'
           set-env: true
           environment: 'review'
-          domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
+          domain: 'stagingv6.cleverapps.io/developers'

@@ -38,4 +38,4 @@ jobs:
           type: 'static-apache'
           set-env: true
           environment: 'review'
-          domain: 'https://stagingv6.cleverapps.io/developers'
+          domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}-${{ github.event.pull_request.head.sha | slice: 0, 7 }}.cleverapps.io/developers'

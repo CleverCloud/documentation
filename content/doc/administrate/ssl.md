@@ -31,7 +31,7 @@ Clever Cloud automatically generates and renews TLS certificates for your domain
 1. Add your domain to the application:
    - Use the Console or
    - Use clever-tools
-2. [Configure your DNS records](./domain-names) to point to Clever Cloud's load balancers
+2. [Configure your DNS records](../domain-names) to point to Clever Cloud's load balancers
 
 {{< callout type="info" >}}
   Note: Certificate generation attempts occur **only during the first 3 days** after adding a domain. To restart this window, remove and re-add the domain to your application.
@@ -51,8 +51,6 @@ Clever Cloud's automatic certificate generation doesn't support wildcard certifi
 - [Contact support](https://console.clever-cloud.com/ticket-center-choice) for a quote on managed certificate services
 
 Need immediate certificate generation? [Contact the support team](https://console.clever-cloud.com/ticket-center-choice) for manual activation.
-If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
-If you don’t wish to handle the whole certificate ordering yourself, [contact the support](https://console.clever-cloud.com/ticket-center-choice) to get a quote.
 
 ### Cloudflare configuration
 

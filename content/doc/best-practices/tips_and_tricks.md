@@ -11,221 +11,345 @@ keywords:
 type: docs
 draft: true
 ---
+{{< hextra/hero-subtitle >}}
+  Clever Cloud offers many powerful features designed to make your development work easier. This guide reveals useful capabilities you might not know about, from shortcuts to time-saving tools.
+{{< /hextra/hero-subtitle >}}
 
-Clever Cloud is an easy-to-use platform, designed with developers in mind. Whether you're a beginner or a more experienced user, we try to fit your needs bringing you the best possible experience through our web Console, Clever Tools, API, SDK, integrations.
+## Web Console Features
 
-We like to pay attention to those small details, those features, that make Clever Cloud better to use, unique. Over the time, we've developed them but found out that most of our users or new team members don't know about them. This page exists to help spread the word.
+The Clever Cloud Console (<https://console.clever-cloud.com>) is your control center for managing applications, add-ons, and organizations. Here are features that can enhance your workflow:
 
-## Web Console
+### Advanced Menu Filtering
 
-Access Clever Cloud Console to manage your applications, add-ons, organizations and so on: https://console.clever-cloud.com
+The left sidebar menu includes a powerful search function. Beyond simple name searches, you can use special keywords to filter your resources:
 
-### Menu advanced filter
-
-The left side menu is a powerful tool with a text field to filter your applications and add-ons. You can type the name of the items you want to find and see results matching your search instantly. But do you know that you can also use specific keywords? Here is the list:
-
-| Keyword        | Description |
+| Keyword        | What it Shows |
 | -------        | ----------- |
-| `is:addon`     | Filter add-ons |
-| `is:app`       | Filter applications |
-| `is:[addon]`   | Filter add-ons (for example, `is:kv`, `is:keycloak`, `is:postgresql`) |
-| `is:[runtime]` | Filter by runtime name (for example, `is:node`, `is:php`, `is:static-apache`) |
+| `is:addon`     | Lists all your add-ons |
+| `is:app`       | Shows only applications |
+| `is:[addon]`   | Filters specific add-on types (Examples: `is:postgresql`, `is:redis`, `is:mysql`) |
+| `is:[runtime]` | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`) |
 
-### Environment variables are multi-line
+### Multi-line Environment Variables
 
-When you edit an environment variable, in simple mode, you see a text input for each variable. But if you press the `Enter` key, the value splits into multiple lines. Thus, you can put the full content of a configuration file in it for example. Of course, you can do the same with expert and JSON modes, through Clever Tools or the API. Environment variables ARE multi-line.
+Environment variables support more than just single-line values. When editing variables in simple mode:
 
-- [Clever Cloud Environment variables reference](/doc/reference/reference-environment-variables)
+1. Click in any variable's value field
+2. Press `Enter` to create multiple lines
+3. Add configuration files, long texts, or structured data
 
-### Validate new environment variables with ease
+This works across all input modes (simple, expert, and JSON) as well as through Clever Tools and the API.
 
-When you create a new environment variable in simple mode, add it pressing the `Add` button or the `CTRL+Enter` keys.
+[Learn more about environment variables](/doc/reference/reference-environment-variables)
+
+### Quick Variable Creation
+
+Speed up environment variable creation with these shortcuts:
+
+- Use the `Add` button or press `CTRL+Enter` to create new variables
+- Switch between simple, expert, and JSON modes for different input styles
 
 {{< callout type="info" >}}
-  Don’t forget to press the `UPDATE CHANGES` button at the bottom before leaving the environment variables page
+Always select `UPDATE CHANGES` before leaving the environment variables page to save your modifications
 {{< /callout >}}
 
-### Clever Logs come supercharged
+### Enhanced Logging System
 
-The Console provides a powerful logs management interface for applications. You can filter by day, time, text, regular expression, instance per instance. You can apply color themes to it, strip ANSI codes, wrap lines, change date format, time zone, etc. Want to share them? Just select logs lines and copy them in clipboard through keyboard and/or mouse.
+The Console includes a sophisticated logging interface with features for debugging and monitoring:
 
-Logs are retained for 7 days, they're part of the Clever Cloud all-inclusive experience.
+- Filter logs by:
+  - Date and time ranges
+  - Text content
+  - Regular expressions
+  - Specific instances
+- Customize your view with:
+  - Multiple color themes
+  - ANSI code stripping
+  - Line wrapping
+  - Configurable date formats and time zones
+- Share logs easily by selecting and copying lines
 
-* [Learn more about Logs on Clever Cloud](/doc/administrate/log-management/)
+Clever Cloud retains your logs for 7 days as part of the standard service.
 
-### Universal link
+[Explore logging features](/doc/administrate/log-management/)
 
-If you need to access an application or an add-on knowing just its ID, use the `goto` link:
+### Universal Resource Access
 
-```
+Navigate quickly to any resource using these features:
+
+#### Quick Access Link
+
+Access any application or add-on directly using its ID:
+
+```shell
 https://console.clever-cloud.com/goto/id
 ```
 
-### Universal search
+#### Global Search
 
-If you need to search an add-on, application, organization by its ID or its name, just press the `/` key and start typing.
+Press the `/` key anywhere in the Console to search for applications, add-ons, or organizations by name or ID.
 
-### Keyboard shortcuts
+#### Keyboard Navigation
 
-When you look at an add-on or an application, press one of the following keys:
+Use these shortcuts when viewing applications or add-ons:
 
-| Key | Description |
+| Key | Takes You To |
 | --- | ----------- |
-| `?` | Show keyboard shortcuts help |
-| `a` | Jump to application activity |
-| `d` | Jump to application domains |
-| `e` | Jump to application environment variables |
-| `i` | Jump to application / add-on information |
-| `l` | Jump to application / add-on logs |
-| `m` | Jump to Application metrics |
-| `o` | Jump to application overview |
-| `s` | Jump to application scalability |
+| `?` | Keyboard shortcuts help |
+| `a` | Application activity |
+| `d` | Domain settings |
+| `e` | Environment variables |
+| `i` | Resource information |
+| `l` | Logs view |
+| `m` | Application metrics |
+| `o` | Overview page |
+| `s` | Scalability settings |
 
-### Launch applications as one-time tasks
+### Running One-Time Tasks
 
-One of our missions is to keep your applications and services up and running, providing logs, metrics, scaling features, and more. But sometimes, you need to launch an application to execute a one-time task. On Clever Cloud, there is an option for that.
+While Clever Cloud primarily runs continuous services, you can also execute one-time tasks:
 
-Just define an application as a task in its `Information` panel or at creation with Clever Tools (`clever create --type TYPE --task "command to execute"`). The application will start, fetch its dependencies and build as usual, but then just execute the command and stop.
+1. Define an application as a task in the `Information` panel, or
+2. Create it through Clever Tools: `clever create --type TYPE --task "command to execute"`
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+The application is going to :
 
-### Patch update or redeploy a database
+1. Start normally
+2. Install dependencies
+3. Complete the build process
+4. Execute your specified command
+5. Stop automatically when finished
 
-When Clever Cloud release a new major/minor version of a database add-on, you can use the migration tool from the Console to upgrade it without downtime. It also allows to move the add-on to another zone. But sometimes, you just need the latest patch version or to redeploy your database. In such case, migrate it to the exact same version, plan, zone and launch the migration process.
+[Learn more about task execution](/doc/develop/tasks/)
 
-- [Learn more about Clever Cloud database add-ons](/doc/addons/)
-- [Learn more about Clever Cloud database migration](/doc/administrate/database-migration/)
+### Database Management Tips
 
-## Clever Tools
+Need to update your database? The Console's migration tool offers several options:
 
-[Installing our CLI](https://github.com/CleverCloud/clever-tools/blob/58032c8c3ffdd56eb9da3a847d1fd2485eb489b9/docs/setup-systems.md#how-to-install-clever-tools) is as easy as `npm i -g clever-tools`. Then, just run `clever login`, you're ready to go.
+- Upgrade to new major/minor versions without downtime
+- Move databases between zones
+- Apply patch updates
+- Redeploy existing databases
 
-### SSH in any application without effort
+To get the latest patch version or redeploy, simply migrate to the same version, plan, and zone.
 
-Clever Cloud Platform-as-a-Service (PaaS) provides immutable infrastructure. While SSH access isn't necessary nor recommended, Clever Tools provides a `clever ssh` command to SSH into instances, helpful for debugging purposes. You can pass a key to it:
+[Database add-ons documentation](/doc/addons/)  
+[Migration guide](/doc/administrate/database-migration/)
+
+## Clever Tools Features
+
+The Clever Cloud CLI provides powerful command-line capabilities. Install it with:
 
 ```bash
-clever ssh
-clever ssh --app app_id_or_name
-clever ssh -a app_id_or_name -i ~/.ssh/id_ed25519
+npm i -g clever-tools
 ```
 
-If you need to diagnose a problem, you can set the `CC_TROUBLESHOOT` environment variable to `true`. Once started, the application will stay up even if there is an error (up to 1 hour).
+Then run `clever login` to get started.
 
-- [Lean more about SSH on Clever Cloud](/doc/account/ssh-keys-management/)
+### SSH Access Made Simple
 
-### Diagnose domains DNS configuration of your applications
-
-Clever Tools provides a `domain diag` command to check the DNS configuration of domains linked to your applications. It doesn't cover cases such as when you use a CDN or private load balancers, but it will tell you if everything is OK or if you need to fix something.
+While the platform uses immutable infrastructure, sometimes you need SSH access for debugging. Use these commands:
 
 ```bash
-clever domain diag
-clever domain diag -a app_id_or_name
-clever domain diag --app app_id_or_name --filter text_to_filter
+clever ssh                                         # Connect to default app
+clever ssh --app app_id_or_name                    # Connect to specific app
+clever ssh -a app_id_or_name -i ~/.ssh/id_ed25519  # Use specific key
 ```
 
-### Get the full list of your applications
+For extended debugging sessions, set `CC_TROUBLESHOOT=true` as an environment variable. This keeps your application running for up to 1 hour, even if errors occur.
 
-You can get the full list of your applications, grouped by organization, with `clever applications list`.
+[SSH key management guide](/doc/account/ssh-keys-management/)
 
-### Get anything in JSON format
+### Domain Configuration Diagnostics
 
-(Almost) all Clever Tools commands can be used with the `--format json` or `-f json` option to get the result in JSON format. It makes it easier to use for scripts or CI/CD, or with tools such as `jq`, `jless` or `jql` for example.
-
-### The amazing power of `clever curl`
-
-You want to query our API or use it in scripts, CI/CD, etc. But you don't want to manage authentication and tokens? There is a Clever Tools feature for that: `clever curl`. It's just a `curl` wrapper, executed with your credentials and token automatically. For example, just run:
+Check your domain setup with the built-in diagnostic tool:
 
 ```bash
+clever domain diag                           # Check current application
+clever domain diag -a app_id_or_name        # Check specific application
+clever domain diag --app app_id_or_name --filter keyword  # Filter results
+```
+
+{{< callout type="info" >}}
+  This tool may not catch all scenarios involving CDNs or private load balancers.
+{{< /callout >}}
+
+### Application Management
+
+View all your applications with:
+
+```bash
+clever applications list
+```
+
+This command groups applications by organization for easy reference.
+
+### JSON Output Support
+
+Add `--format json` or `-f json` to most commands for machine-readable output:
+
+```bash
+clever applications list --format json
+```
+
+This works well with tools like `jq`, `jless`, or `jql` for further processing.
+
+### The Power of `clever curl`
+
+Access the Clever Cloud API without managing authentication tokens using `clever curl`. It automatically handles credentials for you:
+
+```bash
+# Get your account details
 clever curl https://api.clever-cloud.com/v2/self
-```
 
-You'll get all the details of your account. Use it with `jq` or `jless` to make it more powerful:
-
-```bash
+# View all resources with JSON viewer
 clever curl https://api.clever-cloud.com/v2/summary | jless
 ```
 
-You'll get a JSON object and could navigate in every resource accessible to your account: applications, add-ons, organizations, etc.
+This tool helps you:
 
-* [Learn more about Clever Cloud API](/api/)
+- Test API endpoints quickly
+- Create automation scripts
+- Set up CI/CD pipelines
+- Explore available resources
 
-### Open the Console or an application in your browser
+[Explore the API documentation](/api/)
 
-Clever Tools provides commands to access an application in your browser through its favorite domain or to open it in the Clever Cloud Console:
+### Browser Integration
+
+Open your applications directly from the command line:
 
 ```bash
+# Open default application
 clever open
 clever open --app app_id_or_name
 
+# Access Console
 clever console
 clever console --app app_id_or_name
 ```
 
-### Pass your authentication to Clever Tools
+### Authentication Options
 
-To use Clever Tools with your account, you need to use the `clever login` command. But you can also login with your credentials and token directly or pass them as environment variables for a one-time use:
+Multiple ways to authenticate with Clever Tools:
 
 ```bash
-# Login with credentials as environment variables
+# Use environment variables for login
 export CLEVER_TOKEN=TOKEN
 export CLEVER_SECRET=SECRET
 clever login
 
-# Pass your token and secret directly to the login command
+# Direct login with credentials
 clever login --token TOKEN --secret SECRET
 
-# Use your credentials and token for a one-time use
+# One-time use without saving credentials
 CLEVER_TOKEN=TOKEN CLEVER_SECRET=SECRET clever profile
 ```
 
-### Need something? Ask (or contribute)!
+### Contributing to Clever Tools
 
-Clever Tools is an open-source project, build with Node.js. It's easy to use and extend. Multiple members of our team are working on it, but we're happy to receive ideas, issues, pull requests. Want to be part of it? [Join us!](https://github.com/CleverCloud/clever-tools)
+Clever Tools is open source and built with Node.js. You can:
 
-- [Learn more about Clever Tools](https://github.com/CleverCloud/clever-tools/tree/master/docs#readme)
+- Report issues
+- Suggest new features
+- Submit pull requests
+- Join the development community
 
-## Did you know?
+[Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs#readme)
 
-### Learn what's new on Clever Cloud
+## Did You Know?
 
-We're constantly improving our platform. You can follow our [blog](https://www.clever-cloud.com/blog/) to learn more about Clever Cloud's journey. But if you want technical updates about our services, read our public Changelog or subscribe to its RSS feed.
+### Stay Updated with Clever Cloud
 
-- [Clever Cloud Changelog](/changelog/)
-- [Clever Cloud Changelog RSS feed](/changelog/index.xml)
+Track platform improvements through:
 
-### Our runtimes come batteries included
+- [Technical Changelog](/changelog/)
+- [RSS Feed](/changelog/index.xml)
+- [Blog Updates](https://www.clever-cloud.com/blog/)
 
-In each runtime, we provide a set of tools you can directly use for your applications and scripts. For example, if you need Node.js in a specific version in another runtime than `node`, just declare `CC_NODE_VERSION`. But you'll also find Python, Ruby, tools such as Clever Tools, `jq`, `tmux`. If you need a local in-memory Redis instance, you can use `redis-server`, and so on. One day, we'll provide a maintained public list of them.
+### Built-in Runtime Tools
 
-### One domain, multiple applications: discover Path routing
+Every runtime includes useful tools:
 
-You can easily link a (sub-)domain to an application on Clever Cloud. We generate a TLS certificate for you and apply it instantly, thanks to our [open-source load balancer Sõzu](https://github.com/sozu-proxy/sozu). But you can also use the same (sub-)domain for multiple applications with different paths. For example, you can have an application for your blog linked to `mydomain.com/blog` and another one for your API linked to `mydomain.com/api`.
+- Node.js (customize version with `CC_NODE_VERSION`)
+- Python
+- Ruby
+- Development tools (`jq`, `tmux`)
+- Local Redis server (`redis-server`)
 
-- [Learn more about Path routing](/doc/administrate/domain-names/#path-routing)
+### Path Routing Capabilities
 
-### Create and distribute your own add-ons for you, your customers or Clever Cloud's
+Thanks to the [open source load-balancer Sõzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain
 
-If you provide a service, you can distribute it on Clever Cloud through an add-on provider. Thus, it can be available as an add-on, to link it to applications for you and across your organizations. It can also join Clever Cloud's Marketplace and become available to our customers.
+```bash
+mydomain.com/blog  → Blog application
+mydomain.com/api   → API application
+```
 
-- [Learn more about Add-on Provider and Marketplace API](/doc/marketplace/)
+Each application maintains:
 
-### Use the `cleverapps.io` you want with your applications
+- Independent scaling
+- Separate logs
+- Individual environment variables
+- Automatic TLS certificate generation
 
-Clever Cloud provides a free domain `cleverapps.io` for your applications. It's not intended to be used for production, as we sometimes make changes to it, but it's enough for demo and testing environments. Once created, we provide a `app_id.cleverapps.io` domain for each application. But you can set any subdomain you want. Have fun with it! (But don't abuse it, it's a shared resource).
+[Path routing documentation](/doc/administrate/domain-names/#path-routing)
 
-And if you use your own custom domain, just remove the `cleverapps.io` one.
+### Create Custom Add-ons
 
-### Clever Cloud is built on top of its own public API
+Distribute your services through Clever Cloud:
 
-How do we ensure that our API is great to use, and how do we push ourselves to make it better every day? We use it. Everything you can do with our Console, Clever Tools, SDK and integrations, you can build the same with our public API.
+1. Create an add-on provider
+2. Make it available in your organizations
+3. Optionally list it in the Clever Cloud Marketplace
 
-- [Learn more about Clever Cloud API](/api)
+[Marketplace API documentation](/doc/marketplace/)
 
-### Use our Web Components and make your own Clever Cloud interface
+### Domain Management
 
-All our new Console features are built with open-source Web Components and accessibility. You don't need a specific framework to use them, just those good old standards. They're available [as a npm package](https://www.npmjs.com/package/@clevercloud/components). Our team work on them [on a public repository](https://github.com/CleverCloud/clever-components), detailing its choices through Architecture Decision Records (ADRs). Want to now more or to contribute? Just take a look at our [Storybook](/doc/clever-components/?path=/docs/readme--docs).
+The `cleverapps.io` domain system offers:
 
-### You need anything? Ask us!
+- Automatic `app_id.cleverapps.io` domains for new applications
+- Custom subdomain creation
+- Perfect for testing and staging environments
 
-Our main mission is to help our customers. We do it providing the Clever Cloud platform as a public cloud on our or partners infrastructure, on-premise or on edge devices in specific cases, all with the same Control Plane. But we also provide a lot of dedicated, off catalogue, services to help users to get the best out of Clever Cloud. You need anything special? [Ask us!](https://www.clever-cloud.com/contact/) Our sales team will be happy to help.
+Remove these domains when moving to production with your custom domain.
+
+### API-First Platform
+
+Clever Cloud's entire platform runs on its public API:
+
+- Console interface
+- Clever Tools
+- SDK features
+- Custom integrations
+
+This ensures API reliability and continuous improvement.
+
+[API documentation](/api)
+
+### Web Components
+
+Build custom Clever Cloud interfaces using :
+
+- Open-source Web Components
+- Standard-based architecture
+- Accessibility-focused design
+
+Available through:
+
+- [npm package](https://www.npmjs.com/package/@clevercloud/components)
+- [Public repository](https://github.com/CleverCloud/clever-components)
+- [Storybook documentation](/doc/clever-components/?path=/docs/readme--docs)
+
+### Custom Solutions
+
+Clever Cloud offers:
+
+- Public cloud hosting
+- On-premise deployments
+- Edge computing solutions
+- Custom service integration
+- Dedicated support
+
+[Contact the sales team](https://www.clever-cloud.com/contact/) to discuss your specific needs.

@@ -26,10 +26,22 @@ There is two ways to get HTTPS for your apps:
 
 ## Getting Certificates with *Let's Encrypt*
 
-We automatically generate certificates when you add a domain name to your app.
-It's all you have to do, our internal certificate generator will create a TLS certificate for a domain or a sub-domain.
+To have a free, auto-generated, auto-renewed certificate, you need to ensure the two
+following conditions:
+1. Add the domain to your application, via the console or clever-tools
+2. [Configure your DNS zone](./domain-names) to have your domain or subdomain point
+   to Clever Cloud’s load balancers.
 
-We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one (we can resell one to you, in which case we will deal with the csr generation ourselves, contact the support to know more).
+The second condition has to be met before the third day after adding the domain.
+If needed, you can remove the domain and add it back to re-trigger a certificate generation.
+
+If you do not wish to have a lack of certificate for a few minutes
+(e.g. if you are migrating an existing domain to Clever Cloud from another hosting provider),
+you can first upload an existing certificate by following [this guide](#uploading-my-own-certificates).
+When the provided certificate expires, Clever Cloud will trigger a Let’s Encrypt certificate generation.
+
+We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
+We can resell one to you, in which case we will deal with the csr generation ourselves. Contact the support to know more.
 
 ### Cloudflare configuration
 

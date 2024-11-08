@@ -33,7 +33,7 @@ following conditions:
    to Clever Cloud’s load balancers.
 
 Clever Cloud’s certificates manager only tries to trigger a certificate generation for 3
-days after the domain is added on the application.
+days after adding the domain to the application.
 If needed, you can remove the domain and add it back to re-trigger a certificate generation.
 The support team is also able to manually trigger a certificate upon request.
 

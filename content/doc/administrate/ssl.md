@@ -26,23 +26,31 @@ There is two ways to get HTTPS for your apps:
 
 ## Getting Certificates with *Let's Encrypt*
 
-To have a free, auto-generated, auto-renewed certificate, you need to ensure the two
-following conditions:
-1. Add the domain to your application, via the console or clever-tools
-2. [Configure your DNS zone](./domain-names) to have your domain or subdomain point
-   to Clever Cloud’s load balancers.
+Clever Cloud automatically generates and renews TLS certificates for your domains. To enable this:
 
-Clever Cloud’s certificates manager only tries to trigger a certificate generation for 3
-days after adding the domain to the application.
-If needed, you can remove the domain and add it back to re-trigger a certificate generation.
-The support team is also able to manually trigger a certificate upon request.
+1. Add your domain to the application:
+   - Use the Console or
+   - Use clever-tools
+2. [Configure your DNS records](./domain-names) to point to Clever Cloud's load balancers
 
-If you don’t wish to have a lack of certificate for a few minutes
-(for example if you are migrating an existing domain to Clever Cloud from another hosting provider),
-you can first upload an existing certificate by following [this guide](#uploading-my-own-certificates).
-When the provided certificate expires, Clever Cloud triggers a Let’s Encrypt certificate generation.
+{{< callout type="info" >}}
+  Note: Certificate generation attempts occur **only during the first 3 days** after adding a domain. To restart this window, remove and re-add the domain to your application.
+{{< /callout >}}
 
-Clever Cloud doesn’t support wildcard Let's Encrypt certificates at the moment.
+### Alternative Options
+
+#### Immediate Certificate Coverage
+To avoid any period without certificate coverage (e.g., during migration from another provider):
+1. [Upload your existing certificate](#uploading-my-own-certificates) first
+2. Let Clever Cloud generate a new certificate automatically when your uploaded one expires
+
+#### Wildcard Certificates
+Clever Cloud's automatic certificate generation doesn't support wildcard certificates. For wildcard certificates, you can:
+- Generate your own Let's Encrypt certificate
+- Purchase a commercial certificate
+- [Contact support](https://console.clever-cloud.com/ticket-center-choice) for a quote on managed certificate services
+
+Need immediate certificate generation? [Contact the support team](https://console.clever-cloud.com/ticket-center-choice) for manual activation.
 If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
 If you don’t wish to handle the whole certificate ordering yourself, [contact the support](https://console.clever-cloud.com/ticket-center-choice) to get a quote.
 

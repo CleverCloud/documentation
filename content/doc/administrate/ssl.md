@@ -44,7 +44,7 @@ When the provided certificate expires, Clever Cloud triggers a Let’s Encrypt c
 
 Clever Cloud doesn’t support wildcard Let's Encrypt certificates at the moment.
 If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
-If you don’t wish to handle the whole certificate ordering yourself, contact the support to get a quote.
+If you don’t wish to handle the whole certificate ordering yourself, [contact the support](https://console.clever-cloud.com/ticket-center-choice) to get a quote.
 
 ### Cloudflare configuration
 

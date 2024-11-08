@@ -32,7 +32,8 @@ following conditions:
 2. [Configure your DNS zone](./domain-names) to have your domain or subdomain point
    to Clever Cloud’s load balancers.
 
-The second condition has to be met before the third day after adding the domain.
+Clever Cloud’s certificates manager only tries to trigger a certificate generation for 3
+days after the domain is added on the application.
 If needed, you can remove the domain and add it back to re-trigger a certificate generation.
 The support team is also able to manually trigger a certificate upon request.
 

@@ -181,7 +181,7 @@ CLEVER_TOKEN=TOKEN CLEVER_SECRET=SECRET clever profile
 
 ### Need something? Ask (or contribute)!
 
-Clever Tools is an open-source project, build with Node.js. It's easy to use and extend. Multiple members of our team are working on it, but we're happy to receive ideas, issues, pull requests. Want to be part of it? [Join us!](https://github.com/CleverCloud/clever-tools)
+Clever Tools is an open source project, build with Node.js. It's easy to use and extend. Multiple members of our team are working on it, but we're happy to receive ideas, issues, pull requests. Want to be part of it? [Join us!](https://github.com/CleverCloud/clever-tools)
 
 - [Learn more about Clever Tools](https://github.com/CleverCloud/clever-tools/tree/master/docs#readme)
 
@@ -200,7 +200,7 @@ In each runtime, we provide a set of tools you can directly use for your applica
 
 ### One domain, multiple applications: discover Path routing
 
-You can easily link a (sub-)domain to an application on Clever Cloud. We generate a TLS certificate for you and apply it instantly, thanks to our [open-source load balancer Sõzu](https://github.com/sozu-proxy/sozu). But you can also use the same (sub-)domain for multiple applications with different paths. For example, you can have an application for your blog linked to `mydomain.com/blog` and another one for your API linked to `mydomain.com/api`.
+You can easily link a (sub-)domain to an application on Clever Cloud. We generate a TLS certificate for you and apply it instantly, thanks to our [open source load balancer Sõzu](https://github.com/sozu-proxy/sozu). But you can also use the same (sub-)domain for multiple applications with different paths. For example, you can have an application for your blog linked to `mydomain.com/blog` and another one for your API linked to `mydomain.com/api`.
 
 - [Learn more about Path routing](/doc/administrate/domain-names/#path-routing)
 
@@ -224,7 +224,7 @@ How do we ensure that our API is great to use, and how do we push ourselves to m
 
 ### Use our Web Components and make your own Clever Cloud interface
 
-All our new Console features are built with open-source Web Components and accessibility. You don't need a specific framework to use them, just those good old standards. They're available [as a npm package](https://www.npmjs.com/package/@clevercloud/components). Our team work on them [on a public repository](https://github.com/CleverCloud/clever-components), detailing its choices through Architecture Decision Records (ADRs). Want to now more or to contribute? Just take a look at our [Storybook](/doc/clever-components/?path=/docs/readme--docs).
+All our new Console features are built with open source Web Components and accessibility. You don't need a specific framework to use them, just those good old standards. They're available [as a npm package](https://www.npmjs.com/package/@clevercloud/components). Our team work on them [on a public repository](https://github.com/CleverCloud/clever-components), detailing its choices through Architecture Decision Records (ADRs). Want to now more or to contribute? Just take a look at our [Storybook](/doc/clever-components/?path=/docs/readme--docs).
 
 ### You need anything? Ask us!
 

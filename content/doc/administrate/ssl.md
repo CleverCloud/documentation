@@ -37,13 +37,14 @@ days after the domain is added on the application.
 If needed, you can remove the domain and add it back to re-trigger a certificate generation.
 The support team is also able to manually trigger a certificate upon request.
 
-If you do not wish to have a lack of certificate for a few minutes
-(e.g. if you are migrating an existing domain to Clever Cloud from another hosting provider),
+If you don’t wish to have a lack of certificate for a few minutes
+(for example if you are migrating an existing domain to Clever Cloud from another hosting provider),
 you can first upload an existing certificate by following [this guide](#uploading-my-own-certificates).
-When the provided certificate expires, Clever Cloud will trigger a Let’s Encrypt certificate generation.
+When the provided certificate expires, Clever Cloud triggers a Let’s Encrypt certificate generation.
 
-We do not support wildcard Let's Encrypt certificates at the moment. If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
-We can resell one to you, in which case we will deal with the csr generation ourselves. Contact the support to know more.
+Clever Cloud doesn’t support wildcard Let's Encrypt certificates at the moment.
+If you need a wildcard certificate, you can either generate a Let's Encrypt certificate yourself or buy one.
+If you don’t wish to handle the whole certificate ordering yourself, contact the support to get a quote.
 
 ### Cloudflare configuration
 

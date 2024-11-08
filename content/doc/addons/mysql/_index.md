@@ -34,7 +34,7 @@ If you want to import your **SQL** dump, you can use several methods:
 2. Command line tool for MySQL administration.
 3. Any MySQL client such as [MySQL Workbench](https://www.mysql.fr/products/workbench/).
 
-If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
+If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Direct access
 
@@ -70,7 +70,7 @@ Authorized actions:
 - Manage tables (create, delete...).
 - Manage indexes.
 
-If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+If you think your system might require more advanced administrative access, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
 
 Here is the list of actions that you won't be able to perform:
 - Database administration (for example you won't be able to create new databases).

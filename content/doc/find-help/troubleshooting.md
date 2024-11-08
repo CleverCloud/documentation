@@ -141,7 +141,7 @@ The main reasons why your account has been moderated are:
 
 {{% details title="How to recover your application online?" closed="true" %}}
 
-Contact Clever Cloud's Support team at [support@clever-cloud.com](mailto:support@clever-cloud.com) to explain what your apps do.
+Contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) to explain what your apps do.
 
 Ensure all your pending invoices are paid.
 
@@ -161,7 +161,7 @@ You have to pay all of your pending invoices to recover your data.
 
 GitHub does not give us access to organizations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
 
-You can of course reach to <support@clever-cloud.com> if this page was not helpful enough.
+You can of course reach to [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) if this page was not helpful enough.
 
 {{% /details %}}
 

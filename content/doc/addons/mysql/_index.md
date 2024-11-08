@@ -15,9 +15,11 @@ aliases:
 type: docs
 ---
 ## Overview
-MySQL is an open-source relational database management system (RDBMS).
+MySQL is an open-source relational database management system (RDBMS). Clever Cloud's add-on uses the [Percona Server](https://www.percona.com/mysql/software/percona-server-for-mysql), a 100% compatible open-source implementation, with performances improvements and more features.
 
 ## Supported Versions
+
+MySQL is available in regular versions and `early` for 8.4. That means it's the first release (8.4.0) of this long term support (LTS) branch, so you should consider it mostly to make some tests and discover what's new. But we recommend waiting a bit before using a new branch in production.
 
 {{< software_versions_shared_dedicated mysql>}}
 

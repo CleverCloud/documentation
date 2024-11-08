@@ -238,7 +238,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |
+|`ENABLE_GRPC` | Enable the use of gRPC module | false |
 |`ENABLE_REDIS` |  | false |
+|`ENABLE_PDFLIB` | Enable the use of PDFlib module | false |
 |`HTTP_TIMEOUT` | Define a custom HTTP timeout | 180 |
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |

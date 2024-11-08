@@ -34,6 +34,7 @@ following conditions:
 
 The second condition has to be met before the third day after adding the domain.
 If needed, you can remove the domain and add it back to re-trigger a certificate generation.
+The support team is also able to manually trigger a certificate upon request.
 
 If you do not wish to have a lack of certificate for a few minutes
 (e.g. if you are migrating an existing domain to Clever Cloud from another hosting provider),

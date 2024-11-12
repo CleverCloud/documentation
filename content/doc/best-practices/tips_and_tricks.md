@@ -112,7 +112,7 @@ While Clever Cloud primarily runs continuous services, you can also execute one-
 1. Define an application as a task in the `Information` panel, or
 2. Create it through Clever Tools: `clever create --type TYPE --task "command to execute"`
 
-The application is going to :
+After pushing your code, the application:
 
 1. Start normally
 2. Install dependencies

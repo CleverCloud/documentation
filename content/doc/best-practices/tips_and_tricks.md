@@ -114,7 +114,7 @@ While Clever Cloud primarily runs continuous services, you can also execute one-
 
 After pushing your code, the application:
 
-1. Start normally
+1. Starts normally
 2. Install dependencies
 3. Complete the build process
 4. Execute your specified command

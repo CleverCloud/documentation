@@ -20,7 +20,7 @@ type: docs
 
 ## What is a Scaler?
 
-A _scaler_is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
+A _scaler_ is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
 
 Each scaler is given a fixed set of resources.
 
@@ -208,5 +208,5 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 ## Where are my backups stored?
 
 Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
-Cellar has a replication system to protect the data stored inside. It create three copies of your backups, each stored in a different datacenters in the PAR region.  
+Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different datacenters in the PAR region.  
 This way, even if one datacenter has an accident, your backup are still safe in two different datacenters.

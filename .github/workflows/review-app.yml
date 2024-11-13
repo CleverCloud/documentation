@@ -4,9 +4,6 @@ on:
   pull_request_target:
     types: [opened, closed, synchronize, reopened]
     branches: [ main ]
-  push:
-    branches:
-      - new-root
 
 jobs:
   deploy:
@@ -26,7 +23,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       - name: Manage review app
-        uses: CleverCloud/clever-cloud-review-app@input-domain
+        uses: CleverCloud/clever-cloud-review-app@v1.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}

@@ -225,14 +225,14 @@ Here is a non-exhaustive summary:
 ## Specific languages
 
 {{< cards >}}
-  {{< card link="../../applications../..ker" title="Docker" icon="docker" >}}
+  {{< card link="../../applications/docker" title="Docker" icon="docker" >}}
   {{< card link="../../applications/golang/#environment-injection" title="Go" icon="go" >}}
   {{< card link="../../applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
   {{< card link="../../applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
   {{< card link="../../../guides/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
   {{< card link="../../../guides/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
   {{< card link="../../applications/javascript/nodejs/#environment-injection" title="Node.js" icon="node" >}}
-  {{< card link="/guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
+  {{< card link="../../../guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="../../applications/php/#environment-injection" title="PHP" icon="php" >}}
   {{< card link="../../applications/python/#environment-injection" title="Python" icon="python" >}}
   {{< card link="../../applications/rust/#environment-injection" title="Rust" icon="rust" >}}
@@ -247,7 +247,7 @@ Here is a non-exhaustive summary:
 Variables are available at build time
 for runtimes that support build time instructions, such as
 [Java WAR](../../applications/java/java-war/#environment-injection),
-[Play! Framework 1](/guides/play-framework-1/#environment-injection),
-[Play! Framework 2](/guides/play-framework-2/#environment-injection)
+[Play! Framework 1](../../../guides/play-framework-1/#environment-injection),
+[Play! Framework 2](../../../guides/play-framework-2/#environment-injection)
 or [Scala](../../applications/scala/#environment-injection).
 {{< /callout >}}

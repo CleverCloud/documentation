@@ -147,4 +147,4 @@ To access environment variables from your code, just get them from the environme
 
 ## See also
 
-* [Deploy EchoIP guide](/guides/go-echoip/)
+* [Deploy EchoIP guide](../../../guides/go-echoip/)

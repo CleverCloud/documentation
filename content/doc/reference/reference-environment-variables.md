@@ -263,7 +263,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_PYTHON_CELERY_LOGFILE` | Relative path to your Celery logfile: /path/to/logdir  |  |
 |`CC_PYTHON_CELERY_MODULE` | Specify the Celery module you want to start |  |
 |`CC_PYTHON_CELERY_USE_BEAT` | Set to "true" to activate Beat support |  |
-|[`CC_PYTHON_MANAGE_TASKS`](/guides/python-django-sample/#manage-py-tasks "Manage py tasks") | Comma-separated list of Django manage tasks |  |
+|[`CC_PYTHON_MANAGE_TASKS`]({{< ref "/guides/python-django-sample/#manage-py-tasks" >}}) | Comma-separated list of Django manage tasks |  |
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
 |`CC_PYTHON_VERSION` | Choose the Python version between 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 |  |
@@ -287,16 +287,17 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Ruby
 
-[Ruby Documentation](/guides/ruby-rack-app-tutorial)
+- [Ruby Guide]({{< ref "/guides/ruby-rack-app-tutorial" >}} "Ruby Tutorial")
+- [Ruby Documentation]({{< ref "/doc/applications/ruby" >}} "Ruby documentation")
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_ENABLE_SIDEKIQ`](/guides/ruby-rack-app-tutorial/#configure-sidekiq "Configure sidekiq") | Enable Sidekiq background process | false |
+|[`CC_ENABLE_SIDEKIQ`]({{< ref "/doc/applications/ruby/#configure-sidekiq" >}} "Configure sidekiq") | Enable Sidekiq background process | false |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 |`CC_NGINX_PROXY_BUFFERS` | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. [Nginx documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers "Nginx documentation") |  |
 |`CC_NGINX_PROXY_BUFFER_SIZE` | Sets the size of the buffer used for reading the first part of the response received from the proxied server. [Nginx documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size "Nginx documentation") |  |
 |`CC_RACKUP_SERVER` | The server to use for serving the ruby application | puma |  |
-|[`CC_RAKEGOALS`](/guides/ruby-rack-app-tutorial/#configure-rake-goals "Configure rake goals") | A list of comma-separated rake goals to execute e.g. db:migrate, assets:precompile |  |
+|[`CC_RAKEGOALS`]({{< ref "/doc/applications/ruby/#configure-rake-goals" >}} "Configure rake goals") | A list of comma-separated rake goals to execute e.g. db:migrate, assets:precompile |  |
 |`CC_RUBY_VERSION` | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |`CC_SIDEKIQ_FILES` | Specify a list of Sidekiq configuration files e.g. "./config/sidekiq_1.yml,./config/sidekiq_2.yml" |  |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
@@ -305,7 +306,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`RACK_ENV` |  |  |
 |`RAILS_ENV` |  |  |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](/guides/ruby-rack-app-tutorial/#manage-your-static-files-and-assets "Manage static assets") | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`]({{< ref "/doc/applications/ruby/#manage-your-static-files-and-assets" >}} "Manage static assets") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
 
 ## Rust
@@ -361,7 +362,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### ProxySQL
 
-[ProxySQL Documentation](/guides/proxysql)
+[ProxySQL Documentation]({{< ref "/guides/proxysql" >}} "ProxySQL documentation")
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -387,7 +388,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Pgpool-II
 
-[Pgpool-II Documentation](/guides/pgpool)
+[Pgpool-II Documentation]({{< ref "/guides/pgpool" >}} "Pgpool documentation")
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|

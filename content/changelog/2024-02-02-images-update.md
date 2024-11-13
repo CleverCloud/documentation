@@ -15,7 +15,7 @@ excludeSearch: true
 
 Over the past few months, we've overhauled the way we build our applications and add-ons images from tooling to included binaries. We'll deliver soon the first public milestone of this project, which will leads us to more frequent releases.
 
-In the meantime, we've updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the `CC_NODE_VERSION` [environment variable](/doc/reference/reference-environment-variables/#commons-to-all-applications). Other changes are as follows:
+In the meantime, we've updated Docker, Erlang, Go, Haskell, Ruby and Rust images into production with no impact for our users. They include security patches and now use Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can change it in the updated images via the `CC_NODE_VERSION` [environment variable](../../doc/reference/reference-environment-variables/#commons-to-all-applications). Other changes are as follows:
 
 - **Docker**:
   - moby 25.0.2

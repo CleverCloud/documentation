@@ -9,7 +9,8 @@ jobs:
   changed_files:
     runs-on: ubuntu-latest
     name: Test changed-files
-    permissions: # Needed to post comments and create issues
+    # Needed to post comments and create issues
+    permissions:
         issues: write
         pull-requests: write
         contents: read

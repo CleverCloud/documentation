@@ -70,7 +70,7 @@ Applications on Clever Cloud listen on port **8080**. If your project requires t
 
 ## Deploy Astro  from the Console
 
-To deploy your Astro project to Clever Cloud, you **create a new application**. 
+To deploy your Astro project to Clever Cloud, you need to **create a new application**. 
 
 {{% steps %}}
 

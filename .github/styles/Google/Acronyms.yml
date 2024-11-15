@@ -8,10 +8,12 @@ first: '\b([A-Z]{3,5})\b'
 second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
+  - ANSI
   - API
   - ASP
   - CLI
   - CPU
+  - CDN
   - CSS
   - CSV
   - DEBUG
@@ -44,6 +46,7 @@ exceptions:
   - RAM
   - REPL
   - RSA
+  - RSS
   - SCM
   - SCSS
   - SDK
@@ -54,6 +57,7 @@ exceptions:
   - TBD
   - TCP
   - TODO
+  - TLS
   - URI
   - URL
   - USB

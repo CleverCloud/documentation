@@ -104,8 +104,9 @@ There are several ways to manage your buckets, find in this section a list of op
 
 Some clients allows you to upload files, list them, delete them, etc, like:
 
+- [WinSCP](https://winscp.net)
 - [Cyberduck](https://cyberduck.io)
-- [Filestash](https://filestash.app)
+- [Filestash](https://www.filestash.app/)
 
 This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/discussions/new?category=general).
 

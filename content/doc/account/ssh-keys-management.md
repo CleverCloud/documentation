@@ -139,7 +139,7 @@ If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](..
 
 ### Through CC API or Clever cURL
 
-You can also add a **public SSH key** from the command line with a simple cURL request to [our API](../openapi). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:  
+You can also add a **public SSH key** from the command line with a simple cURL request to [our API]({{< ref "api" >}} "OpenAPI"). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:  
 
 ```bash
 clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yourkey.pub)\"" https://api.clever-cloud.com/v2/self/keys/newkeyname

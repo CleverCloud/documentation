@@ -27,7 +27,7 @@ your Dockerfile.
 
 ## What is ProxySQL
 
-{{% content %}}
+{{% content/proxysql %}}
 
 ## When do I need ProxySQL
 

@@ -583,7 +583,7 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 {{% content/proxysql %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page](../../../proxysql)
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}} "ProxySQL")
 
 {{% content/more-config %}}
 

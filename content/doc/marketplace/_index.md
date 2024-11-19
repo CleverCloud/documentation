@@ -148,38 +148,6 @@ Response Status: 200
 
 * `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
 
-### Plan change
-
-When a customer wants to change its add-on's plan, Clever Cloud issues a PUT request to your service.
-
-The request will be the following:
-
-```json
-Request: PUT {base_url}/{addon_id}
-Request Body: {
-  "addon_id": "addon_xxx",
-  "plan": "premium"
-}
-Response Body: {
-  "config": { ... },
-  "message": "your message here"
-}
-```
-
-* `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
-
-The request body contains:
-
-* `addon_id` - The add-on's id as seen from our side.
-
-* `plan` - The name of the new plan.
-
-The response body contains:
-
-* `config` - The value for the new config map. Same constraints as in the provisioning response.
-
-* `message` - A message displayed in our dashboard.
-
 ### Examples
 
 You can find templates for add-on providers in various languages on GitHub:

@@ -174,9 +174,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |  Name  |  Description  |
 |-----------------------|------------------------------|
 |[`CC_HASKELL_STACK_TARGET`](/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
-|`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `SETUP` step when running Haskell |
-|`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `INSTALL` step when running Haskell |
-|`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the `INSTALL DEPENDENCIES` one when running Haskell |
+|`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `setup` Stack step command |
+|`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `install` Stack step command |
+|`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
 |`CC_RUN_COMMAND` | Custom command to run your application. |
 
 ## Java

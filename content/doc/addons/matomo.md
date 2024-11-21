@@ -16,9 +16,13 @@ aliases:
 type: docs
 ---
 
-Matomo is an open source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org).
+Matomo is an open source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org). Matomo on Clever Cloud allows your marketing team to setup a tailored web analytics solution, that adapts to your needs and workloads.
 
-Matomo on Clever Cloud will allow your marketing team to effortlessly setup a tailored web analytics solution, that can be adjusted to your needs and workloads.
+{{< callout type="info" >}}
+**Matomo is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform.
+To share your feedback, visit [our community forum](https://github.com/CleverCloud/Community/discussions/categories/matomo).
+Thank you for being a part of our journey towards innovation and improvement!
+{{< /callout >}}
 
 ## How it works?
 

@@ -51,7 +51,7 @@ The determining elements are:
 
 ## Online and local load tools
 
-Choosing a load-testing solution will depend on several factors. If simplicity and speed are the most important factors, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost,  you may want to use dedicated, local solutions.
+Choosing a load-testing solution will depend on several factors. If simplicity and speed are the most important factors, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost, you may want to use dedicated, local solutions.
 
 ### Online
 
@@ -61,7 +61,7 @@ Online services are available to perform your tests. Most offer typical user jou
 * [Octoperf](https://octoperf.com)
 * [Loader.io](https://loader.io)
 
-### Local, with open-source alternatives
+### Local, with open source alternatives
 
 Some open source services to be installed on an infrastructure (workstation or IaaS in the best case) are also available:
 

@@ -23,6 +23,7 @@ Connect your application to an add-on:
   {{< card link="/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
   {{< card link="/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
   {{< card link="/doc/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
+
   {{< card link="/doc/addons/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
 {{< /cards >}}
 
@@ -31,7 +32,7 @@ Connect your application to an add-on:
 {{< cards >}}
   {{< card link="/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
   {{< card link="/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/doc/addons/pulsar" title="Pulsar" subtitle="Open-source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
 {{< /cards >}}
 
 ## Services & Tools

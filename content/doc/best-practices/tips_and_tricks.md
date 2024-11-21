@@ -279,7 +279,7 @@ Every runtime includes useful tools:
 
 ### Path Routing Capabilities
 
-Thanks to the [open source load-balancer Sõzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain
+Thanks to the [open source load-balancer Sōzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain:
 
 ```bash
 mydomain.com/blog  → Blog application
@@ -292,6 +292,7 @@ Each application maintains:
 - Separate logs
 - Individual environment variables
 - Automatic TLS certificate generation
+
 
 [Path routing documentation](/doc/administrate/domain-names/#path-routing)
 
@@ -315,6 +316,7 @@ The `cleverapps.io` domain system offers:
 
 Remove these domains when moving to production with your custom domain.
 
+
 ### API-First Platform
 
 Clever Cloud's entire platform runs on its public API:
@@ -332,7 +334,7 @@ This ensures API reliability and continuous improvement.
 
 Build custom Clever Cloud interfaces using :
 
-- Open-source Web Components
+- Open source Web Components
 - Standard-based architecture
 - Accessibility-focused design
 

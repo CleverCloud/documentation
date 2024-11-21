@@ -279,7 +279,7 @@ Every runtime includes useful tools:
 
 ### Path Routing Capabilities
 
-Thanks to the [open source load-balancer Sõzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain:
+Thanks to the [open source load-balancer Sōzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain:
 
 ```bash
 mydomain.com/blog  → Blog application

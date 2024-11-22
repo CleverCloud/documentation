@@ -1,9 +1,11 @@
 add-on
 ant
+APIs
 app_id
 application
 Astro
 Astrowind
+Azimutt
 Blackfire
 boto
 callout
@@ -35,6 +37,7 @@ Jboss
 Keycloak
 Laravel
 maven
+Matomo
 Metabase
 monolog
 monorepo
@@ -44,6 +47,7 @@ npm
 Nuxt
 OAuth
 Payara
+Percona
 Pgpool
 proxyhugo
 psql

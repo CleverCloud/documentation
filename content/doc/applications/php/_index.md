@@ -111,7 +111,8 @@ date.timezone=Europe/Paris
 To inject headers on HTTP responses, add this configuration to `.htaccess` file:
 
 ```sh
-Header set Access-Control-Allow-Origin "*"
+Header Set Access-Control-Allow-Origin "https://www.example.com"
+Header Set Access-Control-Allow-Headers "Authorization"
 ```
 
 {{< callout type="info" >}}
@@ -123,7 +124,8 @@ You can use a `.htaccess` file to create or update headers, but you can't delete
 You can also do it from PHP:
 
 ```php
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://www.example.com");
+header("Access-Control-Allow-Headers: Authorization");
 ```
 
 If you want to keep this separate from your application, you can configure the application to execute some code on every request.

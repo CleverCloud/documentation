@@ -112,6 +112,11 @@ To inject headers on HTTP responses, add this configuration to `.htaccess` file:
 
 ```sh
 Header set Access-Control-Allow-Origin "*"
+```
+
+{{< callout type="info" >}}
+You can use a .htaccess file to create or update headers, but you not delete them.
+{{< /callout >}}
 
 ###### With PHP
 

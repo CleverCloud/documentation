@@ -115,7 +115,7 @@ Header set Access-Control-Allow-Origin "*"
 ```
 
 {{< callout type="info" >}}
-You can use a .htaccess file to create or update headers, but you can't delete them.
+You can use a `.htaccess` file to create or update headers, but you can't delete them.
 {{< /callout >}}
 
 ###### With PHP

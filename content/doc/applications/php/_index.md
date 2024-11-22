@@ -106,18 +106,26 @@ date.timezone=Europe/Paris
 
 ##### Header injection
 
-Usually, you can use an `.htaccess` file to create / update / delete headers.
-You won't be able to do it from the `.htaccess` file if the headers come from a `.php` file, because `php-fpm` ignores the `mod_headers` plugin.
-It works fine for static files directly served by apache.
+###### With .htaccess
 
-So if you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
-you have to do it from PHP (you can't do it from `.htaccess`).
+You can use a `.htaccess` file to create or update headers, but you can't delete them.
+
+If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
+you can do it like this :
+
+```sh
+Header set Access-Control-Allow-Origin "*"
+```
+
+###### With PHP
+
+You can also do it from PHP.
 
 ```php
 header("Access-Control-Allow-Origin: *");
 ```
 
-If you want to keep this separate from your application, you can configure the application to execute some code on every request.
+f you want to keep this separate from your application, you can configure the application to execute some code on every request.
 
 In `.user.ini`, add the following line (you need to create `inject_headers.php` first):
 

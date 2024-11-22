@@ -125,7 +125,7 @@ You can also do it from PHP.
 header("Access-Control-Allow-Origin: *");
 ```
 
-f you want to keep this separate from your application, you can configure the application to execute some code on every request.
+If you want to keep this separate from your application, you can configure the application to execute some code on every request.
 
 In `.user.ini`, add the following line (you need to create `inject_headers.php` first):
 

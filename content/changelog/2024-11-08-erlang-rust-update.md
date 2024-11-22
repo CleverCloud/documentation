@@ -10,6 +10,8 @@ authors:
     image: https://github.com/davlgd.png?size=40
 description: New versions, tools, colors and more
 excludeSearch: true
+aliases:
+  - /changelog/2024-11-11-08-erlang-rust-update
 ---
 
 We’ve updated Erlang and Rust images. They were deployed without any impact for our users.

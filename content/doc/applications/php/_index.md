@@ -108,14 +108,10 @@ date.timezone=Europe/Paris
 
 ###### With .htaccess
 
-You can use a `.htaccess` file to create or update headers, but you can't delete them.
-
-If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
-you can do it like this :
+To inject headers on HTTP responses, add this configuration to `.htaccess` file:
 
 ```sh
 Header set Access-Control-Allow-Origin "*"
-```
 
 ###### With PHP
 

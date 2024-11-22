@@ -119,7 +119,7 @@ Header set Access-Control-Allow-Origin "*"
 
 ###### With PHP
 
-You can also do it from PHP.
+You can also do it from PHP:
 
 ```php
 header("Access-Control-Allow-Origin: *");

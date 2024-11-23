@@ -62,7 +62,7 @@ Fields
 
 * `api/regions` - The list of geographical zones supported by your add-on. It cannot be empty. As for now, it *MUST* contain the element "eu". More will be supported.
 
-* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision, deprovision, and plan change).
+* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision and deprovision).
 
 * `api/production/sso_url` - The production endpoint for single sign-on.
 

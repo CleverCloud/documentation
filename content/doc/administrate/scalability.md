@@ -77,6 +77,11 @@ You can choose the size of Scalers you want by defining a maximum instance size 
 
 {{< image "/images/doc/select-scalab.png" "Vertical scaling: the Scaler size will go from S to XL." >}}
 
+
+{{< callout type="warning" >}}
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
+{{< /callout >}}
+
 ## Combination of both scalings
 
 When both scalings are set up, **vertical scaling** is privileged over **horizontal scaling**. In the case you set the

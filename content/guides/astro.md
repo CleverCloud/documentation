@@ -30,45 +30,7 @@ If you need an example source code, get [Astrowind](https://github.com/onwidget/
 git clone https://github.com/onwidget/astrowind myStaticApp
 ```
 
-## Port and host
-
-Applications on Clever Cloud listen on port **8080**. If your project requires this configuration, set your port and host in Astro in one of two locations:
-
-{{< tabs items="package.json scripts,astro.config.mjs" >}}
-
-  {{< tab >}}
-
-   ```json {filename="package.json"}
-    "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro check && astro build",
-      "preview": "astro preview --host 0.0.0.0 --port 8080",
-      "astro": "astro"
-    } 
-    ```
-  
-  {{< /tab >}}
-
-  {{< tab >}}
-
-   ```javascript {filename="astro.config.mjs"}
-    import { defineConfig } from 'astro/config';
-
-    export default defineConfig({
-      server: {
-        port: 8080,
-        host: true
-      }
-    });
-    ```
-
-  {{< /tab >}}
-
-
-{{< /tabs >}}
-
-## Deploy Astro  from the Console
+## Deploy a static Astro site
 
 To deploy your Astro project to Clever Cloud, you need to **create a new application**. 
 
@@ -79,21 +41,30 @@ To deploy your Astro project to Clever Cloud, you need to **create a new applica
 In this step, you set up the following parameters:
 
 - Deployment (using Git or GitHub)
-- Application : Node.js or Static
+- Application : Node.js or Static (both can serve a static site)
 - Instance size and scalability options : Astro sites can typically be deployed using the **Nano** instance
 - Region
 - Dependencies, if needed
 
 ### Inject environment variables
 
-For **Node.js**, no specific environment variable is needed to deploy Astro if you're using **npm**. If you're using **yarn** or **pnpm**, or deploying on a Static application, set the following environment variables:
+Environment variables are used to control the deplotment behavior, and depend on the type of application and your package manager. Find right below the ones that apply for your application.
 
 {{% /steps %}}
 
-#### Node.js variables
+#### Node.js application environment variables
 
-{{< tabs items="pnpm,yarn" >}}
-  
+If you're using a **Node.js** application to serve a static Astro site, inject the following environment variables:
+
+{{< tabs items="npm,pnpm,yarn" >}}
+  {{< tab >}}
+
+  ```shell
+    CC_POST_BUILD_HOOK="npm run build"
+    ```
+
+  {{< /tab >}}
+
   {{< tab >}}
 
   ```shell
@@ -108,16 +79,18 @@ For **Node.js**, no specific environment variable is needed to deploy Astro if y
   {{< tab >}}
 
   ```shell
-      CC_NODE_BUILD_TOOL="yarn"
-      CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable && yarn build"
-      CC_RUN_COMMAND="yarn run preview"
+    CC_NODE_BUILD_TOOL="yarn"
+    CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable && yarn build"
+    CC_RUN_COMMAND="yarn run preview"
     ```
 
   {{< /tab >}}
 
 {{< /tabs >}}
 
-#### Static application variables
+#### Static application
+
+If you're using a **Static** application to serve a static Astro site, inject the following environment variables:
 
 {{< tabs items="npm,pnpm,yarn" >}}
   
@@ -161,14 +134,7 @@ If you're deploying from **GitHub**, your deployment should start automatically.
   To deploy from branches other than `master`, use `git push clever <branch>:master`. For example, if you want to deploy your local `main` branch without renaming it, use `git push clever main:master`.
 {{< /callout >}}
 
-### Serve the site from server
-
-If the app uses the [Node.js adapter](https://docs.astro.build/en/guides/integrations-guide/node/), it can start by either:
-
-- Injecting `CC_RUN_COMMAND=./dist/server/entry.mjs` in environment variables. `CC_RUN_COMMAND` variable always overrides start script in `package.json`.
-- Setting `./dist/server/entry.mjs` as start script in `package.json`. 
-
-## Deploy an Astro site using the CLI
+## Deploy a static Astro site using the CLI
 
 {{% content/language-specific-deploy/create-static %}}
 
@@ -188,6 +154,66 @@ clever env set CC_POST_BUILD_HOOK "npm run build"
 ```
 
 {{% content/git-push %}}
+
+## Deploying an Astro Project with Server-Side Rendering (SSR)
+
+To deploy an Astro SSR project, consider using a **Node.js** application on Clever Cloud. This is especially useful if your project uses the [Node.js adapter](https://docs.astro.build/en/guides/integrations-guide/node/).
+
+### Port and host
+
+For SSR deployments, ensure to configure your application to listen on port **8080** as required by Clever Cloud. This differs from static deployments where such configurations are typically unnecessary.
+
+Set your port and host in your `astro dev` script for development mode, and/or configure it directly for production:
+
+{{< tabs items="dev,production" >}}
+
+  {{< tab >}}
+
+  To quickly deploy on dev mode:
+
+   ```json {filename="package.json"}
+    "scripts": {
+      "dev": "astro dev",
+      "start": "astro dev",
+      "build": "astro check && astro build",
+      "preview": "astro preview --host 0.0.0.0 --port 8080",
+      "astro": "astro"
+    } 
+    ```
+  
+  {{< /tab >}}
+
+  {{< tab >}}
+
+  When deploying for production:
+
+   ```javascript {filename="astro.config.mjs"}
+    import { defineConfig } from 'astro/config';
+
+    export default defineConfig({
+      server: {
+        port: 8080,
+        host: true
+      }
+    });
+    ```
+  ```json {filename="package.json"}
+    "scripts": {
+      "dev": "astro dev",
+      "start": "astro build && node ./dist/server/entry.mjs",
+      "build": "astro check && astro build",
+      "preview": "astro preview --host 0.0.0.0 --port 8080",
+      "astro": "astro"
+    } 
+    ```
+
+  {{< /tab >}}
+
+
+{{< /tabs >}}
+
+### Deploying for production
+
 
 ## Learn more
 

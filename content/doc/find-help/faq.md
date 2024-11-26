@@ -70,7 +70,7 @@ We will investigate and contact the application's owner over the violation if ne
 ## Does Clever Cloud support TLS/SSL (HTTPS)?
 
 Absolutely! For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
-Have a look at [installing SSL certificates](doc/administrate/ssl), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
+Have a look at [installing SSL certificates](/doc/administrate/ssl), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
 
 ## I'd like to have two applications available on the same domain name
 
@@ -135,7 +135,7 @@ As an example, if a Spring Boot application was compiled with Java `17` and run 
 
 > java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 
-By default, Java `11` is used, but it can be changed. Please head [over here](doc/applications/java/java-jar/#available-java-versions) for more information.
+By default, Java `11` is used, but it can be changed. Please head [over here](/doc/applications/java/java-jar/#available-java-versions) for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 

@@ -97,7 +97,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
 |[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
-|[`CC_WORKER_COMMAND`](/doc/develop/workers.md "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_WORKER_COMMAND`](/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 ### Tailscale support
 

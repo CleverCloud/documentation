@@ -70,12 +70,12 @@ This can be reached using the Warp 10 class: `request_rate`.
 Access logs are defined in the `'accessLogs'` Warp 10 class and there are three Warp 10 labels available:
 
 - `owner_id`: Organisation ID
-- `app_id` : Application ID (ex: `app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` ) or Addon ID (ex: `postgresql_xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx`)
+- `app_id` : Application ID (ex: `app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` ) or Add-on ID (ex: `postgresql_xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx`)
 - `adc` or `sdc`
   - `adc` (Application Delivery Controller) are used for HTTP connections
   - `sdc` (Service Delivery Controller) are used for TCP connections
 
-> Available addons for the field `addon_id` are mysql, redis, mongodb and postgresql addons.
+> Available add-ons for the field `addon_id` are mysql, redis, mongodb and postgresql add-ons.
 
 {{< callout type="warning" >}}
 Add-ons on shared plans (usually DEV plans) do not provide access logs. There are no recorded access logs in case of a direct access to an add-on
@@ -123,9 +123,9 @@ r -> requestId (Sozu)
 tlsV -> tlsVersion (Sozu)
 ```
 
-#### Key-Value model for addons
+#### Key-Value model for add-ons
 
-AccessLogs data models for addons. Using TCP protocol.
+AccessLogs data models for add-ons. Using TCP protocol.
 
 ```txt
 t -> timestamp
@@ -165,7 +165,7 @@ Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore acce
 [ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
 
 // get the path field
-<% 
+<%
     DROP
     VALUES
     <% DROP
@@ -192,7 +192,7 @@ In the following example, we get the `accessLogs` status codes and create a GTS 
   'gts' STORE
   // output new GTS
   NEWGTS
-  $gts 
+  $gts
   <%
     DUP
     // store the timestamp
@@ -247,7 +247,7 @@ In metrics' data, mains labels would be :
 - `app_id` : A unique ID of application
 - `host` : HV id hosting the VM instance
 - `adc` : Reverse proxy ID for http connexion (ie: applications)
-- `sdc` : Reverse proxy ID for tcp connexion (ie: addons)
+- `sdc` : Reverse proxy ID for tcp connexion (ie: add-ons)
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 
@@ -389,7 +389,7 @@ To access your metrics from Warp10 you need to use the prefix `prometheus.` or `
 You can use this query to show all collected metrics:
 
 ```txt
-[ 
+[
   'TOKEN'
   '~prometheus.*'
   { 'app_id' 'app_xxxxxxxx' }

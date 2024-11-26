@@ -59,7 +59,7 @@ As of now, you can choose between 3 formats: *raw*, *slack* and *flowdock*. The 
 corresponding services: [Slack](https://slack.com) and [Flowdock](https://www.flowdock.com).
 
 You can also choose which events you want and restrict notifications to a list
-of applications and addons.
+of applications and add-ons.
 
 ### Example: Slack deployment results Webhook
 

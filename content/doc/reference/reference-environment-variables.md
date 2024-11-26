@@ -324,7 +324,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_RUST_FEATURES` | The list of features to enable |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 
-## Addons-related environment variable
+## Add-ons environment variables
 
 ### FS Bucket
 
@@ -530,7 +530,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### VPN
 
-The VPN addon provides a fixed-ip outgoing node. This can be used to work
+The VPN add-on provides a fixed-ip outgoing node. This can be used to work
 with services protected by ip address filtering. `VPN_ADDON_*` variables will
 be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic

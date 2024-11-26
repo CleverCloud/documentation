@@ -20,7 +20,7 @@ type: docs
 
 ## What is a Scaler?
 
-A _scaler_ is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
+A _scaler_is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
 
 Each scaler is given a fixed set of resources.
 
@@ -185,7 +185,7 @@ You cannot `scp` something to the VM, you can however easily `scp` something fro
 
 All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
 
-## I received an email saying "Addon [my add-on] disk is nearly full". What do I do?
+## I received an email saying "Add-on [my add-on] disk is nearly full". What do I do?
 
 A full disk can cause your database to crash or become unresponsive.
 We advise you to check how many free space there is.

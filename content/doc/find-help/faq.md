@@ -211,5 +211,5 @@ Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/pro
 Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different datacenters in the PAR region.  
 This way, even if one datacenter has an accident, your backup are still safe in two different datacenters.
 
-If you have a custom backup configuration with multiple retention policies and periods, the Clever Cloud console will not display all the available backups for restoration. 
-However, you can restore a specific backup using the CLI. This allows for greater flexibility in managing and restoring backups outside the standard console interface.
+If you have a custom backup configuration with multiple retention policies and periods, the Clever Cloud Console will not display all the available backups for restoration. 
+However, you can restore a specific backup using [Clever Tools](https://github.com/CleverCloud/clever-tools). This allows for greater flexibility in managing and restoring backups outside the standard Console interface.

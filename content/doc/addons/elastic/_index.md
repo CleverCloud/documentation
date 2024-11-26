@@ -2,7 +2,7 @@
 type: docs
 title: Elastic Stack
 
-shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
+shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack).
 tags:
 - addons
 keywords:
@@ -20,7 +20,7 @@ comments: false
 
 The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). Reliably and securely take data from any source, in any format, then search, analyze, and visualize it in real time. Find out more about it on [Elastic's website](https://www.elastic.co/products/elastic-stack).
 
-Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
+Provisioning the Elastic Stack add-on on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
 
 ## Versions
 
@@ -47,7 +47,7 @@ Any member of the Clever Cloud organisation containing the Elastic add-on will b
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).  
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).
 
 Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
@@ -164,7 +164,7 @@ It's important here to set `number_of_replicas` to zero to avoid triggering clus
 
 Elastic Stack add-ons are **managed services**, with Clever Cloud in charge of configuring and maintaining native configuration files. Some operations like adding an oauth source to connect to Kibana can't be added, as well as some native settings modifications. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
-Most settings are available for modifications and update from Kibana or by API, for example: 
+Most settings are available for modifications and update from Kibana or by API, for example:
 
 - Managing users permissions
 - Frequencies of back-ups

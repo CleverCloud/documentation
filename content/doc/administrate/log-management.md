@@ -2,7 +2,7 @@
 type: docs
 title: Logs management
 position: 3
-shortdesc: How to manage addons and applications logs and drains
+shortdesc: How to manage add-ons and applications logs and drains
 tags:
  - administrate
 keywords:

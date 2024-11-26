@@ -42,9 +42,9 @@ The `OAuth` and doubles quotes around values are mandatory.
 
 You need to create an OAuth consumer token in the Clever Cloud console.
 
-A link **Create an oauth consumer** is available under your organization's addons list.
+A link **Create an oauth consumer** is available under your organization's add-ons list.
 
-All created consumers will appear below that link, like your applications and addons.
+All created consumers will appear below that link, like your applications and add-ons.
 
 These consumers allow you to register an application. By creating a consumer, users will be able to grant (or decline) privileges for your application.
 
@@ -90,7 +90,7 @@ All the API endpoints are referenced in a swagger documentation. **The base URL 
 
   {{< card link="/api/v2" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
   {{< card link="/api/v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
-  
+
 {{< /cards >}}
 
 ## WebSocket API requests
@@ -130,5 +130,5 @@ allows you to receive real-time logs of an application via WebSocket.
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
 allows you to receive a stream of events emitted on your account.
 
-Events like git push, add or remove an application / addon, deployments success / failed
+Events like git push, add or remove an application / add-on, deployments success / failed
 are available.

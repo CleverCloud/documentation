@@ -25,8 +25,8 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-{{< callout type="warning" >}}**Warning**  
-• Back-ups are **not included** in the public cloud offer. You can still do them manually.  
+{{< callout type="warning" >}}**Warning**
+• Back-ups are **not included** in the public cloud offer. You can still do them manually.
 • FSBuckets are not available for Docker applications because of security concerns.
 {{< /callout >}}
 
@@ -57,15 +57,15 @@ Note that the `async` parameter can be set per bucket.
 ## Configuring your application with buckets.json (@deprecated)
 
 {{< callout emoji="🧹" >}}
-**This method is deprecated**  
+**This method is deprecated**
 This method is deprecated, we strongly recommend that you use environment variables.
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
 Also, this method does not support the `async` parameter.
 {{< /callout >}}
 
 To configure your application to use buckets, use the
-`clevercloud/buckets.json` file.  
-The `clevercloud` folder must be located at the root of your application.  
+`clevercloud/buckets.json` file.
+The `clevercloud` folder must be located at the root of your application.
 The `buckets.json` file must contain the following structure:
 
 ```javascript
@@ -114,12 +114,12 @@ root folder.
 If you want to use an absolute path, you can use the `APP_HOME` environment
 variable, see [special environment variables]({{< ref "doc/develop/env-variables.md#special-environment-variables" >}})
 
-### From the addon dashboard
+### From the add-on dashboard
 
-The **File explorer** tab of the **addon dashboard** gives you access to your files
+The **File explorer** tab of the **add-on dashboard** gives you access to your files
 in the FS bucket.
 
 ### From your favorite FTP client
 
-The **Addon information** tab of your FS Bucket add-on displays the information
+The **Add-on information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.

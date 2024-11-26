@@ -59,4 +59,4 @@ As soon as you do so, the database will be set in read-only mode and the migrati
 
 If the process succeeds, you will get a success screen. Every linked applications will automatically restart to use the new configuration. Please make sure to update configuration that do not use environment variable if you have some.
 
-In case the database migration fails, you will be informed at wich point it did and a button to contact our support team will appear. Reach out to [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) with you add-on ID (available in the **Addon Dashboard** section) and they will help you finish the process.
+In case the database migration fails, you will be informed at which point it did and a button to contact our support team will appear. Reach out to [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) with you add-on ID (available in the **Addon Dashboard** section) and they will help you finish the process.

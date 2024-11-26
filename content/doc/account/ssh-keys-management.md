@@ -108,7 +108,7 @@ You may already have an SSH key and so do not need to generate a new one. To che
 1. Whether you use macOS or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
 3. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
-Using *id_rsa* and *id_rsa.pub* is fine too. We are just advocating the use of *ed25519*.
+Using *id_rsa* and *id_rsa.pub* is fine too. The recommendation here is to consider using *ed25519* instead.
 Smaller to copy and way stronger than 2048-bit RSA keys.
 If you can find them, you do not need to generate a new one, simply go to the following
 "Add your key on Clever Cloud" part!
@@ -139,7 +139,7 @@ If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](ht
 
 ### Through CC API or Clever cURL
 
-You can also add a **public SSH key** from the command line with a simple cURL request to [our API](../openapi). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
+You can also add a **public SSH key** from the command line using a cURL request to [our API](../openapi). The simpler way to do that is to use Clever Cloud CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
 
 ```bash
 clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yourkey.pub)\"" https://api.clever-cloud.com/v2/self/keys/newkeyname

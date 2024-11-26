@@ -20,7 +20,7 @@ Clever Cloud asks for permission to access your GitHub repositories. Accept the 
 
 ### Deploy review apps from a PR on GitHub
 
-You can automate deployments for review apps when a Pull Request opens on your GitHub repository by using Clever Cloud [GitHub Action](https://github.com/marketplace/actions/clever-cloud-review-app-on-pull-requests). This action uses [Clever Tools](/doc/CLI) to deploy a new app from the branch the Pull Request is based on and post a comment with the URL of the review app. The action redeploys the app on every new commit and deletes it when the Pull Request is closed (merged or not).
+You can automate deployments for review apps when a Pull Request opens on your GitHub repository by using Clever Cloud [GitHub Action](https://github.com/marketplace/actions/clever-cloud-review-app-on-pull-requests). This action uses [Clever Tools](/doc/cli) to deploy a new app from the branch the Pull Request is based on and post a comment with the URL of the review app. The action redeploys the app on every new commit and deletes it when the Pull Request is closed (merged or not).
 
 #### How to use the Review App GitHub Action
 

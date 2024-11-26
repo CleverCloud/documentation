@@ -212,7 +212,6 @@ Set your port and host in your `astro dev` script for development mode, and/or c
 
 {{< /tabs >}}
 
-### Deploying for production
 
 
 ## Learn more

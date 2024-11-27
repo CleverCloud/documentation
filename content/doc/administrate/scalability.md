@@ -35,6 +35,10 @@ exclusive methods**: horizontal and vertical scaling.
 To enable the scalability of your application, open the [console](https://console.clever-cloud.com/) and go in the
 "scalability" section of your application. Then, enable the auto-scalability.
 
+{{< callout type="warning" >}}
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
+{{< /callout >}}
+
 ## Horizontal scaling
 
 You can enable it by defining how many maximum instances you need under the "Horizontal scaling" section of the "Scaling" menu.
@@ -76,11 +80,6 @@ The following scheme depicts a larger Scaler replacement in case of a load incre
 You can choose the size of Scalers you want by defining a maximum instance size manually:
 
 {{< image "/images/doc/select-scalab.png" "Vertical scaling: the Scaler size will go from S to XL." >}}
-
-
-{{< callout type="warning" >}}
-  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
-{{< /callout >}}
 
 ## Combination of both scalings
 

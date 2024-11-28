@@ -117,7 +117,7 @@ Choose the language or the framework you want to deploy.
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
 {{< callout emoji="💡" >}}
-  You can learn more about scaling & instances size [here](https://developers.clever-cloud.com/doc/administrate/scalability/).
+  You can learn more about scaling & instances size [here](/doc/administrate/scalability).
   {{< /callout >}}
 
 

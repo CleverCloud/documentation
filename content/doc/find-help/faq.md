@@ -55,7 +55,7 @@ You can bind custom domain names to your applications. Please have a look at [Cu
 
 Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
 
-## What type fof content can I deploy?
+## What type of content can I deploy?
 
 Please refer to our Terms and Conditions, article 6, *Obligations and responsibilities of the client*.
 
@@ -113,9 +113,11 @@ It's explained [here](/doc/applications/php/#using-http-authentication).
 Load-balancers ahead of your applications handle all connections and forward them in plain HTTP.
 So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
 
-Instead of these headers you need to use the `X-Forwarded-For` HTTP header, which is set by the load balancer to the client's address. 
+To get the original client's IP address, use the `X-Forwarded-For` HTTP header. The load balancer automatically adds this header to each request.
 
-Keep in mind that it is a list, containing the address of each proxy the request has been through, if the said proxy has modified the `X-Forwarded-For` header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For).
+The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application.
+[Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
+
 
 ## How do I identify different instances of my application?
 

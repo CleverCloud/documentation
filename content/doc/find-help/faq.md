@@ -69,12 +69,20 @@ We will investigate and contact the application's owner over the violation if ne
 
 ## Does Clever Cloud support TLS/SSL (HTTPS)?
 
-Absolutely! For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
-Have a look at [installing SSL certificates](doc/administrate/ssl), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or use an existing one.
+Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
+
+## What are the supported ciphers ?
+
+As this information can change over time with security updates, here's the nmap command to look up SSL/TLS ciphers on a Clever Cloud configured domain:
+
+```shell 
+nmap --script ssl-enum-ciphers -p 443 example.com
+```
 
 ## I'd like to have two applications available on the same domain name
 
-Please refer to [prefix routing](/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
+Refer to [prefix routing](/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
 
 ## How do I define cron jobs for my application?
 

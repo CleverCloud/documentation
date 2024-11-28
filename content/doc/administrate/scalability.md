@@ -30,6 +30,10 @@ A **Scaler** is a Clever Cloud "instance". It is an individual and independent v
 With the Scalers, Clever Cloud gives you the ability to scale your application **up and down** with **two non
 exclusive methods**: horizontal and vertical scaling.
 
+{{< callout type="warning" >}}
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
+{{< /callout >}}
+
 ### Enable auto-scalability
 
 To enable the scalability of your application, open the [console](https://console.clever-cloud.com/) and go in the

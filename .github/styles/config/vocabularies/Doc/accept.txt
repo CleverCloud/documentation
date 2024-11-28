@@ -43,12 +43,14 @@ monolog
 monorepo
 monorepository
 Moodle
+nmap
 npm
 Nuxt
 OAuth
 Payara
 Percona
 Pgpool
+pico
 proxyhugo
 psql
 rackup
@@ -57,6 +59,7 @@ Redict
 redirections
 runtimes
 sbt
+scalers
 SCMs
 serverless
 Servlet

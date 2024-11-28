@@ -43,6 +43,7 @@ monolog
 monorepo
 monorepository
 Moodle
+nano
 nmap
 npm
 Nuxt

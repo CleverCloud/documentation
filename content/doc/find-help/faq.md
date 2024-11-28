@@ -20,14 +20,17 @@ type: docs
 
 ## What is a Scaler?
 
-A _scaler_is an individual instance hosting your app. You can attribute one or more Scalers to your apps. Scalers come in many sizes based on each language requirements from Pico to XL.
+A _scaler_ is an individual instance hosting your app. You can attribute one or more scalers to your apps. scalers come in many sizes based on each language requirements from pico to XL.
 
-Each scaler is given a fixed set of resources.
+A fixed set of resources supports each scaler.
 
 When enabling auto-scalability, you have to set a minimum and a maximum of active scalers in your apps settings. This way you can precisely control your monthly fee.
 
-## What languages and frameworks are supported by Clever Cloud?
+{{< callout type="warning" >}}
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads).
+{{< /callout >}}
 
+## What languages and frameworks are supported by Clever Cloud?
 Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
@@ -41,8 +44,7 @@ Currently Clever Cloud supports:
 * Rust
 * Docker
 
-## How many applications can I create with Clever Cloud?
-
+## How many applications can I create?
 As many as you want. We've not set a limited number of apps by developer.
 
 ## How to setup domain names I own?
@@ -53,7 +55,7 @@ You can bind custom domain names to your applications. Please have a look at [Cu
 
 Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
 
-## What type of content is allowed on Clever Cloud?
+## What type fof content can I deploy?
 
 Please refer to our Terms and Conditions, article 6, *Obligations and responsibilities of the client*.
 
@@ -61,7 +63,7 @@ Please refer to our Terms and Conditions, article 6, *Obligations and responsibi
 
 Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant permissions.
 
-## How do I report an application that is in violation of your Terms and Conditions?
+## How do I report an application that's in violation of your Terms and Conditions?
 
 To report an application that is in violation of Clever Cloud's Terms and Conditions, please contact us at <abuse@clever-cloud.com>.
 
@@ -90,7 +92,7 @@ See [Cron Configuration File](/doc/administrate/cron) for more information.
 
 ## How to know if a user comes from a secure connection?
 
-All connections are handled by load-balancers ahead of your applications and forwarded in plain http, you cannot rely on the server port to know the scheme used by the user.
+All connections are handled by load-balancers ahead of your applications and forwarded in plain HTTP, you can't rely on the server port to know the scheme used by the user.
 
 Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '*http*' or '*https*'.
 
@@ -108,19 +110,14 @@ It's explained [here](/doc/applications/php/#using-http-authentication).
 
 ## How to get the user's IP address?
 
-All connections are handled by load-balancers ahead of your applications
-and forwarded in plain http.
+Load-balancers ahead of your applications handle all connections and forward them in plain HTTP.
+So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
 
-So if you get the `REMOTE_ADDR` or `Client-IP` header, you will only
-get the IP of the front load balancer that forwarded the user request.
+Instead of these headers you need to use the `X-Forwarded-For` HTTP header, which is set by the load balancer to the client's address. 
 
-Instead of these headers you need to use the `X-Forwarded-For` HTTP
-header, which is set by our load balancer to the client's address. Please
-remember that it is a list, containing the address of each proxy the request
-has been through, if the said proxy has modified the `X-Forwarded-For`
-header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For)
+Keep in mind that it is a list, containing the address of each proxy the request has been through, if the said proxy has modified the `X-Forwarded-For` header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For).
 
-## When my application runs on multiple instances, how can I differentiate them?
+## How do I identify different instances of my application?
 
 If your application needs to differentiate all the running nodes internally, you can use the `INSTANCE_NUMBER` environment variable.
 
@@ -135,15 +132,17 @@ can commit them in your application's Clever Cloud repository and then add a
 
 The ssh.json file is documented [here](/doc/reference/common-configuration/#private-ssh-key).
 
-## I get a `java.lang.UnsupportedClassVersionError : Unsupported major.minor version` error. How can I fix it?
+## I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?
 
 If you get this error on a Java (or any JVM language) application, it means that your application was compiled with a newer Java version than the one used to run it.
 
-As an example, if a Spring Boot application was compiled with Java `17` and run with Java `11`, the following error will occur :
+As an example, if a Spring Boot application was compiled with Java `17` and run with Java `11`, the following error occurs:
 
-> java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+```bash
+java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+```
 
-By default, Java `11` is used, but it can be changed. Please head [over here](doc/applications/java/java-jar/#available-java-versions) for more information.
+By default, Java `11` is used, but it can be changed. Please head [over here](/doc/applications/java/java-jar/#available-java-versions) for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 
@@ -196,15 +195,13 @@ All instances on Clever Cloud run on the UTC timezone. We recommend to handle al
 ## I received an email saying "Add-on [my add-on] disk is nearly full". What do I do?
 
 A full disk can cause your database to crash or become unresponsive.
-We advise you to check how many free space there is.
+We advise you to select how many free space there is.
 You might want to do one of the following:
 
 ### Remove data from your database
 
-Only you know your data!
-
 You can take a snapshot of your database and export the obsolete data to a cold storage.
-Then you can remove records from your database, reindex your tables and try to perform a VACUUM operation if the database software allows it.
+Then you can remove records from your database, re-index your tables and try to perform a VACUUM operation if the database software allows it.
 
 ### Migrate your add-on to a bigger plan
 

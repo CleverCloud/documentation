@@ -57,15 +57,15 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 ## What type of content can I deploy?
 
-Please refer to our Terms and Conditions, article 6, *Obligations and responsibilities of the client*.
+Please refer to the Acceptable Use Policy, article 2, _Reasonable use of the Platform_.
 
 ## How do I add or remove members in my organizations?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an administrator, you can revoke or grant permissions.
 
 ## How do I report an application that's in violation of your Terms and Conditions?
 
-To report an application that is in violation of Clever Cloud's Terms and Conditions, please contact us at <abuse@clever-cloud.com>.
+To report an application that's in violation of Clever Cloud's Terms and Conditions, please contact the legal team at <abuse@clever-cloud.com>.
 
 We will investigate and contact the application's owner over the violation if needed.
 
@@ -94,14 +94,14 @@ See [Cron Configuration File](/doc/administrate/cron) for more information.
 
 All connections are handled by load-balancers ahead of your applications and forwarded in plain HTTP, you can't rely on the server port to know the scheme used by the user.
 
-Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '*http*' or '*https*'.
+Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '_http_' or '_https_'.
 
 {{< callout type="info" >}}
-In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your *application.conf*.
+In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your _application.conf_.
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.
+In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your _application.conf_.
 {{< /callout >}}
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
@@ -118,7 +118,6 @@ To get the original client's IP address, use the `X-Forwarded-For` HTTP header. 
 The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application.
 [Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
 
-
 ## How do I identify different instances of my application?
 
 If your application needs to differentiate all the running nodes internally, you can use the `INSTANCE_NUMBER` environment variable.
@@ -128,7 +127,7 @@ For example, if 3 instances are running for your application, this environment v
 ## I need a private ssh key to fetch my private dependencies. How do I do that?
 
 If your company manages its own artifacts in a private repository (like, you can only
-access them via git+ssh or sftp), and you need a private key to connect to the server, you
+access them via git+ssh or sFTP), and you need a private key to connect to the server, you
 can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
@@ -164,12 +163,11 @@ If however, you still need SSH access for debugging purposes, please have a look
 
 ## I want to user Clever Cloud on my own premises, is that possible?
 
-Yes, since 2016 Clever Cloud is packaged for private datacenter. This offer called "Clever Cloud On Premises" is avaialble upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more infos.
+Yes, since 2016 Clever Cloud is packaged for private data-center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more info.
 
 ## Where are my applications and add-ons located?
 
-Applications and add-ons are located in either *Paris, France* or *Montreal,
-Canada*. You can choose where you want it to be when you create an application
+Applications and add-ons are located in either _Paris, France_ or _Montreal, Canada_. You can choose where you want it to be when you create an application
 and a Clever Cloud add-on.
 
 Clever Cloud is based in Nantes, France.
@@ -188,7 +186,7 @@ You cannot `scp` something to the VM, you can however easily `scp` something fro
 
 ## I need to convert something to PDF with `wkhtmltopdf`
 
-`wkhtmltopdf` is available and fully functional but we deeply recommend to use use `chromium headless` instead.
+`wkhtmltopdf` is available and fully functional but we deeply recommend to use `chromium headless` instead.
 
 ## What is the timezone used by my application/add-on?
 
@@ -207,13 +205,13 @@ Then you can remove records from your database, re-index your tables and try to 
 
 ### Migrate your add-on to a bigger plan
 
-… Or to the same plan!
+…Or to the same plan.
 
 You can buy more disk space by migrating your add-on to a higher plan.
-If a VACUUM operation needs more disk that there is remaining, migrating to the same plan will clean up the file on disk and regain space.
+If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regain space.
 
-## Where are my backups stored?
+## Where are the backups stored?
 
 Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
-Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different datacenters in the PAR region.  
-This way, even if one datacenter has an accident, your backup are still safe in two different datacenters.
+Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different data-centers in the PAR region.  
+This way, even if one data-center has an accident, your backup are still safe in two different data-centers.

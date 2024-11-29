@@ -1,2 +1,6 @@
 addon
 addons
+plug-in
+plug-ins
+e-mail
+e-mails

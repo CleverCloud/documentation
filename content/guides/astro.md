@@ -48,7 +48,7 @@ In this step, you set up the following parameters:
 
 ### Inject environment variables
 
-Environment variables are used to control the deplotment behavior, and depend on the type of application and your package manager. Find right below the ones that apply for your application.
+Environment variables are used to control the deployment behavior, and depend on the type of application and your package manager. Find right below the ones that apply for your application.
 
 {{% /steps %}}
 

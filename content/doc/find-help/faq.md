@@ -92,9 +92,9 @@ See [Cron Configuration File](/doc/administrate/cron) for more information.
 
 ## How to know if a user comes from a secure connection?
 
-All connections are handled by load-balancers ahead of your applications and forwarded in plain HTTP, you can't rely on the server port to know the scheme used by the user.
+Load-balancers handles all connections ahead of your applications and forward them in plain HTTP, you can't rely on the server port to know the scheme used by the user.
 
-Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '_http_' or '_https_'.
+Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '_http_' or '_https_'.
 
 {{< callout type="info" >}}
 In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.

@@ -57,7 +57,7 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 ## What type of content can I deploy?
 
-Please refer to the Acceptable Use Policy, article 2, _Reasonable use of the Platform_.
+Please refer to the Acceptable Use Policy, article 2, [_Reasonable use of the Platform_](https://www.clever-cloud.com/acceptable-use-policy/).
 
 ## How do I add or remove members in my organizations?
 

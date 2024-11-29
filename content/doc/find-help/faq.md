@@ -61,17 +61,17 @@ Please refer to the Acceptable Use Policy, article 2, [_Reasonable use of the Pl
 
 ## How do I add or remove members in my organizations?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an administrator, you can revoke or grant permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant permissions.
 
-## How do I report an application that's in violation of your Terms and Conditions?
+## How do I report an application that infringes your Terms and Conditions?
 
-To report an application that's in violation of Clever Cloud's Terms and Conditions, please contact the legal team at <abuse@clever-cloud.com>.
+To report an application that infringes Clever Cloud's Terms and Conditions, please contact the legal team at <abuse@clever-cloud.com>.
 
 We will investigate and contact the application's owner over the violation if needed.
 
 ## Does Clever Cloud support TLS/SSL (HTTPS)?
 
-Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or use an existing one.
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one]{{< ref "doc/administrate/ssl/#uploading-my-own-certificates" >}}).
 Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
 
 ## What are the supported ciphers ?
@@ -84,7 +84,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 ## I'd like to have two applications available on the same domain name
 
-Refer to [prefix routing](/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
+Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing >}}) to learn how to have two applications share a domain name.
 
 ## How do I define cron jobs for my application?
 
@@ -97,11 +97,11 @@ All connections are handled by load-balancers ahead of your applications and for
 Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to either '_http_' or '_https_'.
 
 {{< callout type="info" >}}
-In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your _application.conf_.
+In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your _application.conf_.
+In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your `application.conf`.
 {{< /callout >}}
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
@@ -163,7 +163,7 @@ If however, you still need SSH access for debugging purposes, please have a look
 
 ## I want to user Clever Cloud on my own premises, is that possible?
 
-Yes, since 2016 Clever Cloud is packaged for private data-center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more info.
+Yes, since 2016 Clever Cloud is packaged for private data center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever-cloud.com/on-premises](https://www.clever-cloud.com/on-premises) for more info.
 
 ## Where are my applications and add-ons located?
 
@@ -195,7 +195,7 @@ All instances on Clever Cloud run on the UTC timezone. We recommend to handle al
 ## I received an email saying "Add-on [my add-on] disk is nearly full". What do I do?
 
 A full disk can cause your database to crash or become unresponsive.
-We advise you to select how many free space there is.
+Consider upgrading your add-on plan.
 You might want to do one of the following:
 
 ### Remove data from your database
@@ -205,13 +205,13 @@ Then you can remove records from your database, re-index your tables and try to 
 
 ### Migrate your add-on to a bigger plan
 
-…Or to the same plan.
+… or to the same plan.
 
 You can buy more disk space by migrating your add-on to a higher plan.
-If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regain space.
+If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regains space.
 
 ## Where are the backups stored?
 
 Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
-Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different data-centers in the PAR region.  
-This way, even if one data-center has an accident, your backup are still safe in two different data-centers.
+Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different data centers in the PAR region.  
+This way, even if one data center has an accident, your backup are still safe in two different data centers.

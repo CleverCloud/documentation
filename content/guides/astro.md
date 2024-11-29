@@ -42,13 +42,13 @@ In this step, you set up the following parameters:
 
 - Deployment (using Git or GitHub)
 - Application : Node.js or Static (both can serve a static site)
-- Instance size and scalability options : Astro sites can typically be deployed using the **Nano** instance
+- Instance size and scalability options : You can usually deploy an Astro site using the **Nano** instance
 - Region
 - Dependencies, if needed
 
 ### Inject environment variables
 
-Environment variables are used to control the deployment behavior, and depend on the type of application and your package manager. Find right below the ones that apply for your application.
+Use environment variables to control the deployment behavior, which depends on the type of application and your package manager. Find right below the ones that apply for your application.
 
 {{% /steps %}}
 
@@ -165,11 +165,11 @@ For SSR deployments, ensure to configure your application to listen on port **80
 
 Set your port and host in your `astro dev` script for development mode, and/or configure it directly for production:
 
-{{< tabs items="dev,production" >}}
+{{< tabs items="development,production" >}}
 
   {{< tab >}}
 
-  To quickly deploy on dev mode:
+  To quickly deploy on development mode:
 
    ```json {filename="package.json"}
     "scripts": {

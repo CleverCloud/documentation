@@ -84,7 +84,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 ## I'd like to have two applications available on the same domain name
 
-Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing >}}) to learn how to have two applications share a domain name.
+Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing" >}}) to learn how to have two applications share a domain name.
 
 ## How do I define cron jobs for my application?
 

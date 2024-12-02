@@ -218,5 +218,5 @@ This way, even if one data center has an accident, your backup are still safe in
 
 ## I can't create my add-on
 
-The creation of add-ons require you to fill the information of your account, such as the city, ZIP code, etc.
+To create add-ons, you need to complete your account information, including your city and ZIP code. 
 For example, you can't create a Matomo add-on if those information aren't present.

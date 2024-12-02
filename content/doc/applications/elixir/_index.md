@@ -36,7 +36,7 @@ Get your Elixir version in your console with `$ elixir -v` and set the environme
 
 #### Compatibility between Elixir and Erlang/OTP
 
-- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/1.16.1/compatibility-and-deprecations.html#between-elixir-and-erlang-otp).
+- Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#between-elixir-and-erlang-otp).
 
 #### If you deploy a Phoenix application
 

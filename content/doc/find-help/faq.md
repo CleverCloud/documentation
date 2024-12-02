@@ -215,3 +215,8 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
 Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different data centers in the PAR region.  
 This way, even if one data center has an accident, your backup are still safe in two different data centers.
+
+## I can't create my add-on
+
+To create add-ons, you need to complete your account information, including your city and ZIP code. 
+For instance, you cannot create a Matomo add-on until you provide these details.

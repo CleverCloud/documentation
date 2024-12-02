@@ -16,9 +16,11 @@ exceptions:
   - CDN
   - CSS
   - CSV
+  - CORS
   - DEBUG
   - DOM
   - DPI
+  - EOL
   - FAQ
   - GCC
   - GDB

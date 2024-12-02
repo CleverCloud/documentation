@@ -21,10 +21,10 @@ Our databases add-ons are deployed on immutable Virtual Machines. No updates are
 To improve security, you need to perform a "migration", which will boot a new VM with up-to-date system and database.
 Unless you want to upgrade your database to a new major version or to give it more resources, you just have to perform a migration on the same zone, same plan and same major version.
 
-These updates are not related to your addon (PostgreSQL, MySQL...) major version. Only patches or minor versions of the addon software along with system upgrades (security patches and new kernel features) are performed. For example, you can keep *PostgreSQL 11* if you want to.
+These updates are not related to your add-on (PostgreSQL, MySQL...) major version. Only patches or minor versions of the add-on software along with system upgrades (security patches and new kernel features) are performed. For example, you can keep *PostgreSQL 11* if you want to.
 
 {{< callout type="warning" >}}
-We **do not** support the migration of read only users except for PostgreSQL addons. If you have any, you will have to create new ones at the end of the migration.
+We **do not** support the migration of read only users except for PostgreSQL add-ons. If you have any, you will have to create new ones at the end of the migration.
 {{< /callout >}}
 
 ## Migration (updating) step-by-step

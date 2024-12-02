@@ -39,12 +39,12 @@ If you need to import a very large dump, please send an email to <support@clever
 ## Direct access
 
 {{< callout type="warning">}}
-Using direct access is a trade-off: if you migrate your addon, you will need to generate the hostname and port again, so your application will need to update that environment, while using a proxy does not change anything.
+Using direct access is a trade-off: if you migrate your add-on, you will need to generate the hostname and port again, so your application will need to update that environment, while using a proxy does not change anything.
 {{< /callout>}}
 
-All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the addon. You can do it by clicking the "Generate direct hostname and port" on the addon dashboard.
+All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the add-on. You can do it by clicking the "Generate direct hostname and port" on the add-on dashboard.
 
-This action will add new environment variables to reach the addon without any proxy.
+This action will add new environment variables to reach the add-on without any proxy.
 
 ## Encryption at rest
 

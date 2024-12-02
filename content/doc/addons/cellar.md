@@ -35,7 +35,7 @@ Click on your Cellar add-on in your deployed services list to see its menu.
 
 #### Name your bucket
 
-From **Addon Dashboard**, insert the name of your bucket.
+From **Add-on Dashboard**, insert the name of your bucket.
 
 {{< callout type="info">}}
   Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region. bucket names can't use underscores `(_)`.
@@ -57,7 +57,7 @@ Install s3cmd on your machine following [these recommendations](https://s3tools.
 
 #### Download the configuration file
 
-Go to your add-on menu in the Clever Cloud console. Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
+Go to your add-on menu in the Clever Cloud console. Under the **Add-on Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
 
 #### Create a bucket
 
@@ -124,7 +124,7 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
   ```bash
   s3cmd put --acl-public image.jpg s3://bucket-name
   ```
-  
+
   The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
@@ -165,7 +165,7 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
   // Set up config
   AWS.config.update({
-    accessKeyId: '<cellar_key_id>', 
+    accessKeyId: '<cellar_key_id>',
     secretAccessKey: '<cellar_key_secret>'
   });
 
@@ -459,8 +459,7 @@ Here this configuration has two `CORS` rules:
 
 {{< callout type="info" >}}
 
-**Updating the CORS configuration replaces the old one**  
-If you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to rollback.
+**Updating the CORS configuration replaces the old one:** if you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to roll back.
 
 {{< /callout >}}
 

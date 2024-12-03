@@ -405,7 +405,7 @@ Clever Cloud PHP application enables the following PHP extensions by default: `a
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
 
-If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
+If you have a request about modules, feel free to contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 {{< callout type="warning" >}}
 On PHP 7, the memcache extension is not available; only **memcached** is available.

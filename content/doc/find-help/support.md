@@ -20,7 +20,7 @@ Seek help by querying us by email, allowing you to quickly gain answers to your 
 
 ## Ticket Center
 
-You can find in the console a button to start a conversation with our engineers. For each new ticket it will create a new thread, on a specific subject. Therefore, you can create several tickets for each issue.  
+You can find in the console a button to [start a conversation](https://console.clever-cloud.com/ticket-center-choice) with our engineers. For each new ticket it will create a new thread, on a specific subject. Therefore, you can create several tickets for each issue.
 
 If you open a ticket inside an organisation with members, they will be added to the discussion by e-mail.
 

@@ -45,7 +45,7 @@ Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, yo
 The various features are available in the [official Pgpool documentation](https://www.pgpool.net/docs/latest/en/html/index.html).
 
 {{< callout type="info" >}}
-We only support the **Streaming** mode, which is the most used and recommended mode for Pgpool-II. If you need other modes or features that are not supported on Clever Cloud, please contact us at <support@clever-cloud.com>
+PostreSQL add-ons only support the **Streaming** mode, which is the most used and recommended mode for Pgpool-II. If you need other modes or features that aren't supported on Clever Cloud, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 {{< /callout >}}
 
 ## How to configure Pgpool-II
@@ -64,9 +64,9 @@ If you ever need to stop using Pgpool-II, you can remove this variable or set it
 
 Your application will use a Unix Domain Socket to connect to Pgpool-II. Unix domain sockets are faster than TCP sockets because there is no handshake and the connection is made locally on the same machine. A special environment variable will be injected to your environment variables: `CC_PGPOOL_SOCKET_PATH`. This variable contains the path to the Unix Domain Socket you have to connect to. See [Usage](#usage) below for some examples on how to use it.
 
-The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/).  
+The available Pgpool-II variables and their descriptions are available on the [environment variables reference page](https://www.clever-cloud.com/doc/reference/reference-environment-variables/).
 
-### Concurrent session and pool size  
+### Concurrent session and pool size
 
 You can use the `CC_PGPOOL_NUM_INIT_CHILDREN` and `CC_PGPOOL_MAX_POOL` environment variables to set the number of **concurrent sessions** and the number of **connection pool caches per connection**.
 
@@ -82,16 +82,16 @@ psql -U u1mgltc2ezvkylo2cjno -d bjzfhkl5qcdhdqatyqjk
 bjzfhkl5qc**********=> show pool_pools;
  pool_pid |     start_time      | pool_id | backend_id |       database       |       username       |     create_time     | pool_backendpid |
 ----------+---------------------+---------+------------+----------------------+----------------------+---------------------+-----------------+
- 3526     | 2021-06-02 15:22:12 | 0       | 0          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1520665         | 
- 3526     | 2021-06-02 15:22:12 | 0       | 1          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1665071         | 
- 3526     | 2021-06-02 15:22:12 | 0       | 2          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 531483          | 
- 3527     | 2021-06-02 15:22:12 | 0       | 0          |                      |                      |                     | 0               | 
- 3527     | 2021-06-02 15:22:12 | 0       | 1          |                      |                      |                     | 0               | 
- 3527     | 2021-06-02 15:22:12 | 0       | 2          |                      |                      |                     | 0               | 
- 3528     | 2021-06-02 15:22:12 | 0       | 0          |                      |                      |                     | 0               | 
- 3528     | 2021-06-02 15:22:12 | 0       | 1          |                      |                      |                     | 0               | 
- 3528     | 2021-06-02 15:22:12 | 0       | 2          |                      |                      |                     | 0               | 
- ...      | ...                 | .       | .          |                      |                      |                     | .               | 
+ 3526     | 2021-06-02 15:22:12 | 0       | 0          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1520665         |
+ 3526     | 2021-06-02 15:22:12 | 0       | 1          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 1665071         |
+ 3526     | 2021-06-02 15:22:12 | 0       | 2          | bjzfhkl5qcdhdqatyqjk | u1mgltc2ezvkylo2cjno | 2021-06-02 15:22:35 | 531483          |
+ 3527     | 2021-06-02 15:22:12 | 0       | 0          |                      |                      |                     | 0               |
+ 3527     | 2021-06-02 15:22:12 | 0       | 1          |                      |                      |                     | 0               |
+ 3527     | 2021-06-02 15:22:12 | 0       | 2          |                      |                      |                     | 0               |
+ 3528     | 2021-06-02 15:22:12 | 0       | 0          |                      |                      |                     | 0               |
+ 3528     | 2021-06-02 15:22:12 | 0       | 1          |                      |                      |                     | 0               |
+ 3528     | 2021-06-02 15:22:12 | 0       | 2          |                      |                      |                     | 0               |
+ ...      | ...                 | .       | .          |                      |                      |                     | .               |
 ```
 
 We can see the 32 available processes (**3526**, **3527**, **3528...**), and active connections for process **3526**, with an open connection for each PostgreSQL server (**1520665**, **1665071** and **531483**).
@@ -106,7 +106,7 @@ It's also possible to specify the lifetime of a Pgpool-II child process (`CC_PGP
 
 Use Pgpool-II to distribute the load and separate **WRITE** and **READ** queries between your PostgreSQL servers.
 
-When using the **Streaming** mode, it's not Pgpool-II that manages the replication of your databases. Replication must be set up on the PostgreSQL side, otherwise known as **binary**, **Hot Standby** or **Streaming** replication. To schedule this procedure, you can contact our support at <support@clever-cloud.com> or make a request via our [sales form](https://www.clever-cloud.com/en/contact-sales).
+When using the **Streaming** mode, it's not Pgpool-II that manages the replication of your databases. Clever Cloud engineers must manually set up the replication on the PostgreSQL side, otherwise known as **binary**, **Hot Standby** or **Streaming** replication. To schedule this procedure, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) or make a request via our [sales form](https://www.clever-cloud.com/en/contact-sales).
 
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the followers to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 

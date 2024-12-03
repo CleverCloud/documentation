@@ -101,7 +101,7 @@ Symfony got your back on this: just run `composer require symfony/apache-pack`. 
 
 Make sure you have created a database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application.
 
-Change the default `DATABASE_URL` environment variable used in your `config/packages/doctrine.yaml` to `<ADDON_PREFIX>_ADDON_URI` where `<ADDON_PREFIX>` depending on the database addon you created (e.g. `MYSQL` for MySQL, `POSTGRESQL` for PostgreSQL or `MONGODB` for MongoDB) or be sure to use the environment variable in your production configuration file as explained in the [configuration documentation of Symfony](https://symfony.com/doc/current/configuration.html#configuration-environments).
+Change the default `DATABASE_URL` environment variable used in your `config/packages/doctrine.yaml` to `<ADDON_PREFIX>_ADDON_URI` where `<ADDON_PREFIX>` depending on the database add-on you created (e.g. `MYSQL` for MySQL, `POSTGRESQL` for PostgreSQL or `MONGODB` for MongoDB) or be sure to use the environment variable in your production configuration file as explained in the [configuration documentation of Symfony](https://symfony.com/doc/current/configuration.html#configuration-environments).
 
 ### Configure ProxySQL for MySQL
 

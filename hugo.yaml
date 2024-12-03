@@ -132,6 +132,10 @@ menu:
       name: References
       params:
         type: separator
+      weight: 1
+    - identifier: tips_and_tricks
+      name: "Tips & Tricks"
+      url: "/doc/best-practices/tips_and_tricks/"
       weight: 2
     - identifier: cli
       name: "Clever Tools CLI"

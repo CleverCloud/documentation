@@ -77,6 +77,8 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 {{< /callout >}}
 
+{{% content/kv-explorer %}}
+
 ## Using the Redis API compatible layer
 
 ### Environment variables and CLI usage

@@ -41,6 +41,8 @@ You can use Redis URI to connect to your databases with -u option. However, the 
 
 This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/database]*
 
+{{% content/kv-explorer %}}
+
 ## Default retention policy
 
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,

@@ -31,14 +31,14 @@ There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 
   The GitHub signup allows you to create an account or link your existing one to GitHub, in one click.
   This process asks the following permissions:
-  
+
 * Read your Public Key
 * Read User Repositories
 
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
   If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
-  
+
 {{< /tabs >}}
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
@@ -83,7 +83,7 @@ The log system retrieves all output from the application and displays it in the 
   {{< card link="/doc/applications/scala" title="Scala" icon="scala" >}}
   {{< card link="/doc/applications/elixir" title="Elixir" icon="elixir" >}}
   {{< card link="/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
-  
+
 {{< /cards >}}
 
 ### Create an Application Step by Step
@@ -101,7 +101,7 @@ Choose the organization you want to deploy in from the left menu. At this point 
 #### Click on "Create an application"
 
 Find it in the **Organization Manager** panel, at the top left of the left menu.
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.  
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 #### Select the language
@@ -115,6 +115,11 @@ Choose the language or the framework you want to deploy.
 #### Fine-tune your scaling configuration
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+
+{{< callout emoji="💡" >}}
+  You can learn more about scaling & instances size [here](/doc/administrate/scalability).
+  {{< /callout >}}
+
 
 #### Name your application
 
@@ -167,27 +172,27 @@ git push <remote-name> <branch-name>:master
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
   {{< image "/images/doc/github-deployment-branch.png" "Github deployment branch select" >}}
-  
+
   If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
 
   **Private GitHub repositories are also supported.**
-  
+
   Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access.
-  
+
   However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
   {{< /tab >}}
 
   {{< tab >}}
   You can deploy via FTP with PHP applications.
-  
+
   To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
-  
+
   Deploy your application via FTP, create a [FS Bucket]({{< ref "doc/addons/fs-bucket" >}}) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
-  
+
   [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
-  
+
   {{< icon "exclamation-circle" >}} An FTP application is automatically started once the application is created, even if no code has been sent.
-  
+
   {{< callout type="warning" >}}
   FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
   {{< /callout >}}
@@ -272,7 +277,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< card link="/doc/addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
   {{< card link="/doc/addons/redis" title="Redis" subtitle="Managed in-memory database" icon="redis" >}}
   {{< card link="/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
-  {{< card link="/doc/addons/pulsar" title="Pulsar" subtitle="Open-source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
+  {{< card link="/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
    {{< card link="/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
    {{< card link="/doc/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
 {{< /cards >}}
@@ -294,7 +299,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 
   The add-on will now be available in your organization, and corresponding environment variables will be available for the applications linked to the add-on you just created.
   {{< /tab >}}
-  
+
   {{< tab >}}
   To link an already existing add-on with your application, just follow these steps:
 

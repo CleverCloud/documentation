@@ -174,6 +174,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |  Name  |  Description  |
 |-----------------------|------------------------------|
 |[`CC_HASKELL_STACK_TARGET`](/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
+|`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `setup` Stack step command |
+|`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `install` Stack step command |
+|`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
 |`CC_RUN_COMMAND` | Custom command to run your application. |
 
 ## Java
@@ -234,10 +237,12 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
 |[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
 |[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
-|`CC_PHP_VERSION` | Choose your PHP version between 5.6, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2 | 8 |
+|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#choose-your-php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |
+|`ENABLE_GRPC` | Enable the use of gRPC module | false |
+|`ENABLE_PDFLIB` | Enable the use of PDFlib module | false |
 |`ENABLE_REDIS` |  | false |
 |`HTTP_TIMEOUT` | Define a custom HTTP timeout | 180 |
 |`LDAPTLS_CACERT` |  |  |
@@ -319,7 +324,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_RUST_FEATURES` | The list of features to enable |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 
-## Addons-related environment variable
+## Add-ons environment variables
 
 ### FS Bucket
 
@@ -525,7 +530,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### VPN
 
-The VPN addon provides a fixed-ip outgoing node. This can be used to work
+The VPN add-on provides a fixed-ip outgoing node. This can be used to work
 with services protected by ip address filtering. `VPN_ADDON_*` variables will
 be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic

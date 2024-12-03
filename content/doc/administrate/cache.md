@@ -22,7 +22,7 @@ and the client. Following rules defined by the user, Varnish will cache the data
 
 Varnish is only available on **PHP**, **Go** and **Node.js** applications. Support for other applications is in discussion.
 
-For more information about it, contact us at [support@clever-cloud.com](mailto:support@clever-cloud.com).
+For more information about it, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Enable Varnish for your application
 
@@ -60,14 +60,14 @@ rename the file to `varnish.vcl` and move it in the `/clevercloud` folder.
 
 ## Varnish with a monorepo
 
-If you use a monorepo, you may want to use Varnish for only some of the applications inside it.  
+If you use a monorepo, you may want to use Varnish for only some of the applications inside it.
 If you have a `/clevercloud/varnish.vcl` file at the root of your monorepo, all of your applications automatically start using Varnish.
 
-To resolve this issue, you can create a symlink during the deployments.  
+To resolve this issue, you can create a symlink during the deployments.
 
-1. Put your `varnish.vcl` file anywhere but at the root of your monorepo.  
+1. Put your `varnish.vcl` file anywhere but at the root of your monorepo.
 2. Create a symlink inside a `CC_PRE_BUILD_HOOK`.
-  
+
 Here is an example :
 
 ```bash

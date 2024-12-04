@@ -36,6 +36,7 @@ jarName
 Jboss
 Keycloak
 Laravel
+Let's Encrypt
 maven
 Matomo
 Metabase

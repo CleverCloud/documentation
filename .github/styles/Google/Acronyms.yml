@@ -36,6 +36,7 @@ exceptions:
   - JSON
   - JSX
   - LESS
+  - LLM
   - LLDB
   - NET
   - NOTE
@@ -64,6 +65,7 @@ exceptions:
   - URL
   - USB
   - UTF
+  - WAF
   - XML
   - XSS
   - YAML

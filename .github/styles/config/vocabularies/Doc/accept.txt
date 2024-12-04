@@ -15,6 +15,7 @@ checkMe
 Clever Cloud
 CLI
 Cloud
+Coraza
 cron
 Cyberduck
 Dockerfile
@@ -48,6 +49,7 @@ nmap
 npm
 Nuxt
 OAuth
+Otoroshi
 Payara
 Percona
 Pgpool

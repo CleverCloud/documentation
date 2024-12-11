@@ -270,17 +270,17 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
-  {{< card link="/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
-  {{< card link="/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
-  {{< card link="/addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
-  {{< card link="/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
-  {{< card link="/addons/redis" title="Redis" subtitle="Managed in-memory database" icon="redis" >}}
-  {{< card link="/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
-  {{< card link="/addons/pulsar" title="Pulsar" subtitle="Open-source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
-   {{< card link="/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-   {{< card link="/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
+  {{< card link="../addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
+  {{< card link="../addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
+  {{< card link="../addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="../addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
+  {{< card link="../addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="../addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
+  {{< card link="../addons/redis" title="Redis" subtitle="Managed in-memory database" icon="redis" >}}
+  {{< card link="../addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
+  {{< card link="../addons/pulsar" title="Pulsar" subtitle="Open-source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
+   {{< card link="../addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
+   {{< card link="../addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
 {{< /cards >}}
 
 **If your add-on:**

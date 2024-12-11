@@ -97,8 +97,7 @@ Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and y
 
 ## Migrate from a Node.js instance
 
-If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
-<support@clever-cloud.com> with the application id.
+If you want to migrate from your classic node.js app to a meteor application, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) with the application id.
 
 {{% content/more-config %}}
 

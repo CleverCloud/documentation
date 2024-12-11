@@ -96,9 +96,9 @@ The Metabase add-on is a fully managed application, so you don't have to do anyt
 Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable.
 This variable can be modified to specify which version of Metabase you want. This variable must contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
-- `CC_METABASE_VERSION=community-latest` (_default_): use the latest version of the Community Edition _(same as `0`, `0.*`, `^0` or empty)
-- `CC_METABASE_VERSION=0.50.3`: use the `0.50.3` version _(same as `=0.50.3`)
-- `CC_METABASE_VERSION=0.50`: use the latest available version starting with `0.50` _(same as `^0.50.0`, `~0.50.0`)
+- `CC_METABASE_VERSION=community-latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
+- `CC_METABASE_VERSION=0.50.3`: use the `0.50.3` version (_same as `=0.50.3`_)
+- `CC_METABASE_VERSION=0.50`: use the latest available version starting with `0.50` (_same as `^0.50.0`, `~0.50.0`_)
 
 To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#restart).
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.

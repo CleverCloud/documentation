@@ -24,9 +24,8 @@ SSH keys are used to establish a secure connection between your computer and Cle
 
   Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
   associated with only one account. **If a key is used by more than one account, a warning will be displayed in the console**.
-  
-{{< /callout >}}
 
+{{< /callout >}}
 
 ## How to add your SSH key on Clever Cloud?
 
@@ -44,8 +43,8 @@ This command creates a new SSH key using the provided email, so that the owner o
 
 ### Save the key
 
-When prompted in which file you want to save the key, just press enter.  
-If it says that the file already exists, enter `n` for `no`.  
+When prompted in which file you want to save the key, just press enter.
+If it says that the file already exists, enter `n` for `no`.
 Type `ls`, verify the presence of the file and jump to [Add your SSH key on Clever Cloud](#add-a-public-ssh-key-on-clever-cloud).
 
 ### Enter a passphrase
@@ -108,8 +107,8 @@ You may already have an SSH key and so do not need to generate a new one. To che
 1. Whether you use macOS or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
 3. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub*.
-Using *id_rsa* and *id_rsa.pub* is fine too. We are just advocating the use of *ed25519*.  
-Smaller to copy and way stronger than 2048-bit RSA keys.  
+Using *id_rsa* and *id_rsa.pub* is fine too. The recommendation here is to consider using *ed25519* instead.
+Smaller to copy and way stronger than 2048-bit RSA keys.
 If you can find them, you do not need to generate a new one, simply go to the following
 "Add your key on Clever Cloud" part!
 
@@ -193,6 +192,6 @@ Host push-*.services.clever-cloud.com
 ```
 
 {{< callout type="info" >}}
-Need help about SSH keys?  
-Contact us at <support@clever-cloud.com> or you can read more about SSH Keys [on the official Git Documentation ↗](https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
+Need help about SSH keys?
+Contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) or you can read more about SSH Keys [on the official Git Documentation ↗](https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
 {{< /callout >}}

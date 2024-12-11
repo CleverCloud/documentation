@@ -17,7 +17,7 @@ weight: 13
 
 Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).
 
-You want to help us to offer more services to our users? Just reach us: [partnership@clever-cloud.com](mailto:partnership@clever-cloud.com?subject=I%20want%20to%20become%20a%20Clever%20Cloud%20Marketplace%20partner). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
+You want to help us to offer more services to our users? [Contact us](https://partners.clever-cloud.com). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
 
 * [Add-on Manifest](#add-on-manifest): to provide your service as an add-on
 * [Add-on provider requests](#add-on-provider-requests): to provision, modify or delete add-ons
@@ -62,7 +62,7 @@ Fields
 
 * `api/regions` - The list of geographical zones supported by your add-on. It cannot be empty. As for now, it *MUST* contain the element "eu". More will be supported.
 
-* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision, deprovision, and plan change).
+* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision and deprovision).
 
 * `api/production/sso_url` - The production endpoint for single sign-on.
 
@@ -147,38 +147,6 @@ Response Status: 200
 ```
 
 * `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
-
-### Plan change
-
-When a customer wants to change its add-on's plan, Clever Cloud issues a PUT request to your service.
-
-The request will be the following:
-
-```json
-Request: PUT {base_url}/{addon_id}
-Request Body: {
-  "addon_id": "addon_xxx",
-  "plan": "premium"
-}
-Response Body: {
-  "config": { ... },
-  "message": "your message here"
-}
-```
-
-* `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
-
-The request body contains:
-
-* `addon_id` - The add-on's id as seen from our side.
-
-* `plan` - The name of the new plan.
-
-The response body contains:
-
-* `config` - The value for the new config map. Same constraints as in the provisioning response.
-
-* `message` - A message displayed in our dashboard.
 
 ### Examples
 

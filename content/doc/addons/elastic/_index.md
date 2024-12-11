@@ -2,7 +2,7 @@
 type: docs
 title: Elastic Stack
 
-shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). 
+shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack).
 tags:
 - addons
 keywords:
@@ -20,7 +20,7 @@ comments: false
 
 The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). Reliably and securely take data from any source, in any format, then search, analyze, and visualize it in real time. Find out more about it on [Elastic's website](https://www.elastic.co/products/elastic-stack).
 
-Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
+Provisioning the Elastic Stack add-on on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
 
 ## Versions
 
@@ -47,7 +47,7 @@ Any member of the Clever Cloud organisation containing the Elastic add-on will b
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).  
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. In some cases, you'll need to add a configuration file, or add it as a dependency in you application. You can find configuration files examples in [our public repository](https://github.com/CleverCloud/Elastic-APM-example-configuration-files).
 
 Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
@@ -127,6 +127,30 @@ The agent will list all JVMs on the system and attach to all of them, only once.
 
 The agent will periodically scan for JVM processes and will attach to them if needed.
 
+## Plugins
+
+Elasticsearch managed by Clever Cloud comes with these plugins, you can activate at add-on creation:
+
+| Plugin | Description |
+| ------ | ----------- |
+| analysis-icu | Adds extended Unicode support using the ICU libraries |
+| analysis-kuromoji | Advanced analysis of Japanese using the Kuromoji analyzer |
+| analysis-nori | Morphological analysis of Korean using the Lucene Nori analyzer |
+| analysis-phonetic | Analyzes tokens into their phonetic equivalent using Soundex, Metaphone, Caverphone, and other codecs |
+| analysis-smartcn | An analyzer for Chinese or mixed Chinese-English text |
+| analysis-stempel | Provides high quality stemming for Polish |
+| analysis-ukrainian | Provides stemming for Ukrainian |
+| discovery-ec2 | Uses the AWS API to identify the addresses of seed hosts |
+| discovery-azure-classic | Uses the Azure Classic API to identify the addresses of seed hosts |
+| discovery-gce | Uses the GCE API to identify the addresses of seed hosts |
+| mapper-size | Provides the `_size` metadata field which, when enabled, indexes the size in bytes of the original `_source` field |
+| mapper-murmur3 | Allows hashes to be computed at index-time and stored in the index for later use with the cardinality aggregation |
+| mapper-annotated-text | Provides the ability to index text that is a combination of free-text and special markup |
+
+{{< callout type="info" >}}
+Plugin activation is only available at add-on creation, through [API](/api) or the `--option` flag of [Clever Tools](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#create--rename--delete). You must pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To modify enabled plugins on an existing add-on, contact [support team](https://console.clever-cloud.com/ticket-center-choice).
+{{< /callout >}}
+
 ## Backups
 
 Your Elastic add-on backups are managed by Clever Cloud. When you provision the add-on, we automatically create a Cellar add-on instance named Backups. You will find it in your organisation. Backups are taken daily and are stored in this Cellar add-on instance. As such *additional credits will be consumed by your backups*.
@@ -164,7 +188,7 @@ It's important here to set `number_of_replicas` to zero to avoid triggering clus
 
 Elastic Stack add-ons are **managed services**, with Clever Cloud in charge of configuring and maintaining native configuration files. Some operations like adding an oauth source to connect to Kibana can't be added, as well as some native settings modifications. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
-Most settings are available for modifications and update from Kibana or by API, for example: 
+Most settings are available for modifications and update from Kibana or by API, for example:
 
 - Managing users permissions
 - Frequencies of back-ups

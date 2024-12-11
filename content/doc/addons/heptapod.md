@@ -13,7 +13,7 @@ type: docs
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
-  Heptapod Cloud and Runner is a SaaS DevOps platform, managed by Clever Cloud. It is based on the open-source Heptapod, a variation of GitLab Community Edition supporting Git and Mercurial.
+  Heptapod Cloud and Runner is a SaaS DevOps platform, managed by Clever Cloud. It is based on the open source Heptapod, a variation of GitLab Community Edition supporting Git and Mercurial.
 {{< /hextra/hero-subtitle >}}
 
 ## Overview
@@ -183,7 +183,7 @@ tests:
 
   The automatic Dependency Proxy should be mostly transparent to users, except in case of services using a namespaced Docker image and not having an explicit alias. For these, we provide a single service network name whereas the standard executor provides two (replacing forward slashes either by double underscores or dashes). We chose the dash-based RFC compliant one. In short, use octobus-heptapod to reach a service whose Docker image is octobus/heptapod:sometag, or better, set your own explicit alias.
 
-**Job cache**  
+**Job cache**
 Currently, the job cache is discarded at the end of each job.
 This is because we don't have offloading capabilities for the cache yet, and the entire virtual machine gets decommissioned at the end of the job.
 

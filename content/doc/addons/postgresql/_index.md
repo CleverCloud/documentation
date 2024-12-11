@@ -2,7 +2,7 @@
 type: docs
 title: PostgreSQL
 position: 7
-shortdesc: PostgreSQL is an open-source relational database management system (RDBMS).
+shortdesc: PostgreSQL is an open source relational database management system (RDBMS).
 tags:
 - addons
 keywords:

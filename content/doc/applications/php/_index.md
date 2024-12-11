@@ -106,15 +106,26 @@ date.timezone=Europe/Paris
 
 ##### Header injection
 
-Usually, you can use an `.htaccess` file to create / update / delete headers.
-You won't be able to do it from the `.htaccess` file if the headers come from a `.php` file, because `php-fpm` ignores the `mod_headers` plugin.
-It works fine for static files directly served by apache.
+###### With .htaccess
 
-So if you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
-you have to do it from PHP (you can't do it from `.htaccess`).
+To inject headers on HTTP responses, add this configuration to `.htaccess` file:
+
+```sh
+Header Set Access-Control-Allow-Origin "https://www.example.com"
+Header Set Access-Control-Allow-Headers "Authorization"
+```
+
+{{< callout type="info" >}}
+You can use a `.htaccess` file to create or update headers, but you can't delete them.
+{{< /callout >}}
+
+###### With PHP
+
+You can also do it from PHP:
 
 ```php
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://www.example.com");
+header("Access-Control-Allow-Headers: Authorization");
 ```
 
 If you want to keep this separate from your application, you can configure the application to execute some code on every request.
@@ -394,7 +405,7 @@ Clever Cloud PHP application enables the following PHP extensions by default: `a
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
 
-If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
+If you have a request about modules, feel free to contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 {{< callout type="warning" >}}
 On PHP 7, the memcache extension is not available; only **memcached** is available.
@@ -511,7 +522,7 @@ You must have a [Redis]({{< ref "doc/addons/redis" >}}) add-on [linked with your
 
 The PHP language has the `mail` function to directly send emails. While we do not provide a SMTP server (needed to send the emails), you can configure one through environment variables.
 
-We provide Mailpace addon to send emails through PHP `mail()` function. You have to turn TLS on with port 465 (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working.
+We provide Mailpace add-on to send emails through PHP `mail()` function. You have to turn TLS on with port 465 (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working.
 
 We also recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) if your project supports it. These services already have everything you need to send emails from your code.
 

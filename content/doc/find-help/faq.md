@@ -229,3 +229,8 @@ This way, even if one data center has an accident, your backup are still safe in
 
 To create add-ons, you need to complete your account information, including your city and ZIP code. 
 For instance, you cannot create a Matomo add-on until you provide these details.
+
+## I get unknown regular requests, is there a problem ? 
+
+For monitoring purposes, our system regularly talks to apps in HTTP to ensure they're operationnal. This ping occurs regularly (every 2mn), and might appear in your logs. This is not a safety risk. 
+You can identify this ping by filtering `X-Clever-Monitoring`: requests with this header are legitimate ones from our monitoring system. 

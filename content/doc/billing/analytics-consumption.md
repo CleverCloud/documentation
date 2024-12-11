@@ -24,7 +24,7 @@ The calculation of consumption is based on the second of running. Once your mont
 
 To find your consumption history, it is visible in the **Metrics in Grafana** service via a specific Grafana dashboard. This is called the **Uptime Service**.
 
-{{< image "/images/doc/analytics.png" "The Uptime Service dashboard in Grafana"  >}}
+![Grafana dashboard](/images/doc/analytics.png "The Uptime Service dashboard in Grafana")
 
 ## Upscale & Downscale Impacts
 

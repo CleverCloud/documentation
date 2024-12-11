@@ -36,7 +36,7 @@ Be sure that:
 
 ### Tutorial and sample app
 
-You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "/guides/ruby-rack-app-tutorial" >}}) and find the source code of the demo [here](https://helloworld-rack-demo.cleverapps.io).
+You can find an hello world tutorial of a Ruby and Rack application [here]({{< ref "/guides/ruby-rack-app-tutorial" >}}) and find the source code of the demo [here](https://github.com/CleverCloud/rack-example).
 
  {{% content/new-relic %}}
 

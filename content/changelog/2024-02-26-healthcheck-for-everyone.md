@@ -18,5 +18,5 @@ You can now define the paths that the orchestrator will call to validate a deplo
 * If the application responds on this specified path, and the response code is between `200` and `300`, the orchestrator considers that the deployment has been validated.
 * If it responds with a code outside this interval, the application is considered to have failed its deployment.
 
-- Read the documentation about [Deployment healthcheck path](https://developers.clever-cloud.com/doc/develop/healthcheck/) 📖
+- Read the documentation about [Deployment healthcheck path](../../doc/develop/healthcheck/) 📖
 

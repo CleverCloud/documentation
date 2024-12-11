@@ -38,7 +38,7 @@ width: normal
   {{< hextra/feature-card
     title="Environment Variables"
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
-    link="/doc/reference/reference-environment-variables"
+    link="doc/reference/reference-environment-variables"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     image="/images/icons.png"
     imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
@@ -47,7 +47,7 @@ width: normal
   {{< hextra/feature-card
     title="API"
     subtitle="The Clever Cloud API reference."
-    link="/api"
+    link="api"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-lg:hx-min-h-[340px]"
     image="/images/metrics-home.png"
     imageClass="hx-top-[40%] hx-left-[36px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
@@ -56,7 +56,7 @@ width: normal
   {{< hextra/feature-card
     title="The CLI Clever Tools"
     subtitle="An official Command Line Interface for Clever Cloud."
-    link="/doc/cli"
+    link="doc/cli"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     image="/images/brand.png"
     imageClass="hx-top-[40%] hx-left-[36px] hx-w-[110%] sm:hx-w-[110%] dark:hx-opacity-80"
@@ -65,18 +65,18 @@ width: normal
   {{< hextra/feature-card
     title="Steps by Steps Guides"
     subtitle="Find detailed tutorials to deploy your favorite framework on Clever Cloud"
-    link="/guides"
+    link="guides"
   >}}
   
   {{< hextra/feature-card
     title="Deploy an application"
     subtitle="See supported languages and how to configure your app to deploy successfully"
-    link="/doc/applications"
+    link="doc/applications"
   >}}
   {{< hextra/feature-card
     title="Connect your application to dependencies"
     subtitle="See available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic..."
-    link="/doc/addons"
+    link="doc/addons"
   >}}
   
 {{< /hextra/feature-grid >}}

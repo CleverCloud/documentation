@@ -15,16 +15,16 @@ You can also use Cellar, a S3-compatible object storage. This hosting method sav
 
 To do so, you need:
 
-- a [Clever Cloud account](https://developers.clever-cloud.com/doc/quickstart/)
+- a [Clever Cloud account](../../doc/quickstart/)
 - [Hugo](https://gohugo.io/) on your machine
 - to have [created your website](https://gohugo.io/getting-started/quick-start/) files with Hugo
-- a Cellar add-on; if you have never created an add-on, you can follow [this guide](https://developers.clever-cloud.com/doc/quickstart/#create-your-first-add-on)
+- a Cellar add-on; if you have never created an add-on, you can follow [this guide](../../doc/quickstart/#create-your-first-add-on)
 
 ## Bucket creation and management
 
 To create a bucket:
 
-- Follow the [bucket creation instructions](https://developers.clever-cloud.com/doc/addons/cellar/#creating-a-bucket),
+- Follow the [bucket creation instructions](../../doc/addons/cellar/#creating-a-bucket),
 - or use third party software like [s3cmd](https://s3tools.org/s3cmd).
 
 {{< callout type="warning" >}}

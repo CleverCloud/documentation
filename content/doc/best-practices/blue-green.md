@@ -31,7 +31,7 @@ There are many benefits to this approach:
 
 When you push your source code to the Clever Cloud git remote, Clever Cloud will automatically use the "Blue/Green" pattern to apply your changes to your production.
 
-A new VM, let's call it *Blue* is created. The deployment is successful when there's no error in the build phase and the [deployment healthcheck](https://developers.clever-cloud.com/doc/develop/healthcheck/) is successful. And that's it, you will use the new version on production within seconds.
+A new VM, let's call it *Blue* is created. The deployment is successful when there's no error in the build phase and the [deployment healthcheck]({{< ref "doc/develop/healthcheck" >}}) is successful. And that's it, you will use the new version on production within seconds.
 
 If you push new changes, a *Green* VM will be created.
 
@@ -46,4 +46,4 @@ If there is an error during the build phase or if the *Green* servers answers an
 
 Next time you push code a new *Green* VM will be created, then a *Blue* one, and so on.
 
-You also may see some deployments that you haven't triggered in your logs. It is because Clever Cloud uses "Blue/Green" pattern to update VMs, either security patches or versions updates.
+You also may see some deployments that you haven't triggered in your logs. It's because Clever Cloud uses "Blue/Green" pattern to update VMs, either security patches or versions updates.

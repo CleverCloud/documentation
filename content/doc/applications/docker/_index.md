@@ -30,7 +30,7 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-[FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
+[FS Buckets](../../best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
 
 ### How it works
@@ -87,7 +87,7 @@ CMD yarn start
 
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](/doc/administrate/tcp-redirections).
+Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](../../administrate/tcp-redirections).
 
 ### Docker socket access
 

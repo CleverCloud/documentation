@@ -29,7 +29,7 @@ SSH on docker instances will attach to the running container. You must have `/bi
 
 You need to have the Clever Tools CLI installed locally.
 
-[//]: # (ref "/doc/quickstartclever-tools-intro.md)
+[//]: # (ref "/doc/quickstartclever-tools-intro")
 
 ### Make sure you have a properly configured SSH key
 
@@ -39,7 +39,7 @@ To use SSH access, you need to have an SSH key properly configured in your Cleve
 
 In order to access the machine via SSH using the Clever Tools CLI
 
-[//]: # (ref "/doc/quickstartclever-tools-intro.md)
+[//]: # (ref "/doc/quickstartclever-tools-intro)
 
 you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organization_id> <your_application_id>`
 

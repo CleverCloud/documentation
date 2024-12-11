@@ -25,8 +25,8 @@ Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/doc/applications/javascript/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/doc/applications/javascript/nodejs" title="Node.js" icon="node" >}}
+  {{< card link="meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="nodejs" title="Node.js" icon="node" >}}
   
 {{< /cards >}}
 
@@ -37,7 +37,7 @@ Looking for instructions on a specific framework deployment?
 {{< cards >}}
 {{< card
     title="Check our Guides"
-    link="/guides"
+    link="../../../guides"
     icon="science"
   >}}
   {{< /cards >}}

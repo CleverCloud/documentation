@@ -18,7 +18,7 @@ excludeSearch: true
 
 As we're upgrading our infrastructure and load balancers in Montreal, we've added new failover IPs in this region. 
 
-If you configure your domains through CNAME records, this update will be transparent. But if you use A records, switch to CNAME or update your [DNS configuration](https://developers.clever-cloud.com/doc/administrate/domain-names/). Old IPs will continue to work for a while, but we recommend you to update your DNS as soon as possible to avoid any service interruption.
+If you configure your domains through CNAME records, this update will be transparent. But if you use A records, switch to CNAME or update your [DNS configuration](../../doc/administrate/domain-names/). Old IPs will continue to work for a while, but we recommend you to update your DNS as soon as possible to avoid any service interruption.
 
 ## Applications
 

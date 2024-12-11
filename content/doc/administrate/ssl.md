@@ -62,13 +62,13 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
 #### Define a page rule
 
- {{< image "/images/doc/cloudflare-page-rule-ssl.png" "Create a bypass page rule" "max-width:700px" >}}
+![Bypass page rule on Cloudflare](/images/doc/cloudflare-page-rule-ssl.png "Create a bypass page rule")
 
  We also recommend to disable the cache level.
 
 #### Turn off HTTP to HTTPS redirection on Cloudflare
 
- {{< image "/images/doc/cloudflare-https-setting.png" "Turn off automatic HTTPS redirection" "max-width:700px">}}
+![HTTPS set up on Cloudflare](/images/doc/cloudflare-https-setting.png "Turn off automatic HTTPS redirection")
 
  You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 
@@ -95,7 +95,7 @@ You need to paste a PEM bundle containing (in this order):
 
 - the private key
 - the certificate itself
-- intermediate certificates (optionnal)
+- intermediate certificates (optional)
 
 {{< callout type="warning" >}}
   Only certificates with RSA 2048 and RSA 4096 keys are supported.  

@@ -122,7 +122,7 @@ You need to replace `<oauth_header>` by the signed OAuth1 header.
 
 #### Logs
 
-[This endpoint](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
+[This endpoint](https://www.clever-cloud.com/api/#!/logs/logs_logs-socket_appId_get)
 allows you to receive real-time logs of an application via WebSocket.
 
 #### Events

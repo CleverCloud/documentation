@@ -271,7 +271,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[`CC_PYTHON_MANAGE_TASKS`](/guides/python-django-sample/#manage-py-tasks "Manage py tasks") | Comma-separated list of Django manage tasks |  |
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
-|`CC_PYTHON_VERSION` | Choose the Python version between 2.7, 3.7, 3.8, 3.9, 3.10 and 3.11 |  |
+|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#supported-versions) | 3 |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
 |`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |

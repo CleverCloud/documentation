@@ -19,16 +19,16 @@ PHP:
 python:
   eol_source: "https://devguide.python.org/versions/#python-release-cycle"
   default:
-    - "3.12"
+    - "3"
   accepted:
     - "2"
     - "3"
-    - "3.7 (EOL)"
     - "3.8 (EOL)"
     - "3.9"
     - "3.10"
     - "3.11"
     - "3.12"
+    - "3.13"
 dotnet:
   eol_source: "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core"
   default:

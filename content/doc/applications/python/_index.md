@@ -28,11 +28,6 @@ The default version of Python on Clever Cloud is the latest we support from bran
 
 {{< runtimes_versions python >}}
 
-{{< callout type="warning" >}}
-Python 3.7 [is end of life since 27 June 2023](https://devguide.python.org/versions/#python-release-cycle), we considered it as deprecated. It will be removed from our images [starting December, 1st](/changelog/2024-10-01-python-image-changes/).\
-Latest 3.x version will be used after this date. To prevent this, upgrade your `CC_PYTHON_VERSION` towards your needs.
-{{< /callout >}}
-
 {{% content/create-application %}}
 
 {{% content/set-env-vars %}}

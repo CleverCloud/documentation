@@ -2,9 +2,7 @@ name: Suggest a new page or section
 description: Suggest new content for the documentation
 title: "Doc: "
 labels: ["documentation"]
-assignees:
-  - cnivolle
-  - juliamrch
+projects: "CleverCloud/10"
 body:
   - type: markdown
     attributes:

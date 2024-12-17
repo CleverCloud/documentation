@@ -379,6 +379,55 @@ s3cmd delpolicy s3://<bucket-name>
 
 The original ACL should apply to all of your objects after that.
 
+
+### IP restrictions
+
+If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
+To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
+
+- Replace the `<bucket-name>` with your bucket name in the policy file.  
+- Change the `Effect` to "`Allow` or `Deny` depending on your needs.  
+- Change the IP address under `Condition` to select which IP should trigger the rule.
+
+```json {filename="IP-restriction-policy.json"}
+{
+    "Version": "2012-10-17",
+    "Id": "S3PolicyIPRestrict",
+    "Statement": [
+        {
+            "Sid": "IPAllow",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::<bucket>",
+                "arn:aws:s3:::<bucket>/*"
+            ],
+            "Condition" : {
+                "IpAddress" : {
+                    "aws:SourceIp": ["0.0.0.0/0"]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": ["192.168.1.6/32"]
+                }
+            }
+        }
+    ]
+}
+```
+
+To apply the policy, use this command:
+```
+s3cmd setpolicy ./policy.json s3://<bucket-name>
+```
+
+To delete the policy, use this command:
+``` 
+s3cmd delpolicy ./policy.json s3://<bucket-name>
+```
+
 ### User access
 
 Cellar doesn't natively support creating different user accesses for the same add-on. Granting access to your Cellar add-on grants full access to all of your buckets. To grant limited access to a bucket, do the following:

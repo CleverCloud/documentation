@@ -386,7 +386,7 @@ If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
 To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
 
 - Replace the `<bucket-name>` with your bucket name in the policy file.  
-- Change the `Effect` to "`Allow` or `Deny` depending on your needs.  
+- Change the `Effect` to `Allow` or `Deny` depending on your needs.  
 - Change the IP address under `Condition` to select which IP should trigger the rule.
 
 ```json {filename="IP-restriction-policy.json"}

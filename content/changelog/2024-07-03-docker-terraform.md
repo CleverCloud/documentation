@@ -15,7 +15,7 @@ description: Manage your Docker containers on Clever Cloud with Terraform or com
 excludeSearch: true
 ---
 
-To manage your resources as code on Clever Cloud, from applications to add-ons (object storage, databases, etc.), you can use our Terraform provider. It's compatible with tools such as [OpenTofu](https://opentofu.org/) and can now deploy applications using [our Docker runtime](https://developers.clever-cloud.com/doc/applications/docker/).
+To manage your resources as code on Clever Cloud, from applications to add-ons (object storage, databases, etc.), you can use our Terraform provider. It's compatible with tools such as [OpenTofu](https://opentofu.org/) and can now deploy applications using [our Docker runtime](../../doc/applications/docker/).
 
 You can define instances count or flavors, region, dependencies, ports, Dockerfile and application paths, registry credentials and more. Full parameters list is available [here](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/docker).
 

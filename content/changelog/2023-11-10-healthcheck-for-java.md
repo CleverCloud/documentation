@@ -19,4 +19,4 @@ You can now define the paths that the orchestrator will call to validate a deplo
 
 Currently, the orchestrator only checks whether the application is listening to TCP port `8080`. It does not always mean that the application has started correctly.
 
-- Read the documentation about [Deployment healthcheck path](https://developers.clever-cloud.com/doc/develop/healthcheck/) 📖
+- Read the documentation about [Deployment healthcheck path](../../doc/develop/healthcheck/) 📖

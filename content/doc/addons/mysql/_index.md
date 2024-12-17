@@ -59,7 +59,7 @@ You can learn more about ProxySQL on the [dedicated documentation page]({{< ref 
 ## Plans
 
 {{< callout type="warning" >}}
-As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand. If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database (XS plans and above).
+As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand. If this delays create problems in your application or are problematic, we recommend you to use a dedicated database (XS plans and above).
 {{< /callout >}}
 
 ## 🔑 Rights and permissions
@@ -79,5 +79,6 @@ Here is the list of actions that you won't be able to perform:
 - Plugins installation.
 - Replica creation.
 - Backup frequency or retention control.
+- Create Trigger or Function (Only on DEV plan)
 
 Ask Clever Cloud support if you want to perform one of these actions.

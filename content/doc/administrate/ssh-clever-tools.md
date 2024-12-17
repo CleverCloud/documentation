@@ -30,12 +30,12 @@ For security reasons, you can't connect on the instance that hosts your Docker a
 
 You need to have at least one of the following installed locally:
 
-* the Clever Tools CLI(/doc/cli)
+* the [Clever Tools CLI](../../cli)
 * an SSH client (e.g [putty](https://putty.org/) for windows users)
 
 ### Make sure you have a properly configured SSH key
 
-To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation](/doc/account/ssh-keys-management) to know how to set up your SSH keys.
+To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation](../../account/ssh-keys-management) to know how to set up your SSH keys.
 
 ## Using Clever Tools CLI
 

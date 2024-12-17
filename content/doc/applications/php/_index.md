@@ -399,10 +399,15 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 8.1](https://php81info.cleverapps.io)
 - [PHP 8.2](https://php82info.cleverapps.io)
 - [PHP 8.3](https://php83info.cleverapps.io)
+- [PHP 8.4](https://php84info.cleverapps.io)
 
 **Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
 
 Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
+
+{{< callout type="info" >}}
+Only some extensions support PHP 8.4 for now: `apcu`, `event`, `imap`,  `memcache`, `mongodb`, `pspell`, `rdkafka`, `redis`, `ssh2`, `tideways`, `uploadprogress`, `zip`. We'll add support for more extensions as they are released.
+{{< /callout >}}
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
 

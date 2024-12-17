@@ -65,7 +65,6 @@ Your Matomo is starting:
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 /!\ The addon-matomo provider is in beta testing phase
-Learn more about Matomo on Clever Cloud: https://developers.clever-cloud.com/doc/addons/matomo/
 ```
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md) for more details on add-on management.

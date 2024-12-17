@@ -40,4 +40,4 @@ For years, you can deploy applications on Clever Cloud as a `Task` with the API 
 }
 ```
 
-You can read the full APIv2 documentation [here](http://developers.clever-cloud.com/openapi).
+You can read the full APIv2 documentation [here]({{< ref "/api/v2" >}} "OpenAPI").

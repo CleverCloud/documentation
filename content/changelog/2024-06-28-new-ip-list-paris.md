@@ -15,7 +15,7 @@ description: A big step forward for our open source reverse proxy
 excludeSearch: true
 ---
 
-As our network evolves, we've updated [IP list for Paris (PAR) zone](/doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone). If you use A records for DNS configuration, update them. 4 new IP addresses should be added (`91.208.207.220` to `91.208.207.223`). **We strongly recommend using CNAME records instead.**
+As our network evolves, we've updated [IP list for Paris (PAR) zone](../../doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone). If you use A records for DNS configuration, update them. 4 new IP addresses should be added (`91.208.207.220` to `91.208.207.223`). **We strongly recommend using CNAME records instead.**
 
 | Record Type | Value |
 | ----------- | ----- |

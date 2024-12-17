@@ -30,7 +30,7 @@ The `payment-api` application needs the following environment variables:
 * `USER_API_HOST=https://user.example.com/api`
 * `ENABLE_SEPA=false`
 
-{{< image "/images/doc/schema-config-provider-01.svg" "Two Node.js applications with their own environment variables" "max-width: 900px" >}}
+![Two Node.js applications with their own environment variables](/images/doc/schema-config-provider-01.svg "Two Node.js applications with their own environment variables")
 
 As you can see, we had to define `PULSAR_TOPIC` and `USER_API_HOST` in both applications with the same value.
 If we ever need to change these values, we'll have to apply the updates in both apps and restart them.
@@ -40,11 +40,11 @@ NOTE: This is a simple example, but we could have more than just 2 microservices
 To simplify this process, we will create a configuration provider add-on.
 It will allow us to define those common variables in one place and inject them in our 2 applications.
 
-{{< image "/images/doc/schema-config-provider-02.svg" "Two Node.js applications with their own environment variables" "max-width: 900px" >}}
+![Two Node.js applications with their own environment variables](/images/doc/schema-config-provider-02.svg "Two Node.js applications with their own environment variables")
 
 Think of a configuration provider as a way to group a set of environment variables and share them with any application.
 
-{{< image "/images/doc/schema-config-provider-03.svg" "One application overriding the environment variable value for PULSAR_TOPIC" "max-width: 900px" >}}
+![One application overriding the environment variable value for PULSAR_TOPIC](/images/doc/schema-config-provider-03.svg "One application overriding the environment variable value for PULSAR_TOPIC")
 
 If a variable is defined in a configuration provider **and** also in the application, the value defined in the application wins.
 

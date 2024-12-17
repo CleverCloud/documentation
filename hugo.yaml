@@ -1,6 +1,7 @@
-baseURL: https://developers.clever-cloud.com
+baseURL: https://stagingv6.cleverapps.io/developers 
 languageCode: en-us
 title: Clever Cloud Documentation
+publishDir: public/developers
 pagination:
   pagerSize: 21 # Number of entries in Changelog section before pagination
 
@@ -44,7 +45,7 @@ params:
     logo:
       path: images/logo.svg
       dark: images/logo-dark.svg
-      link: /
+      link: /developers
       width: 175
   comments:
     enable: false

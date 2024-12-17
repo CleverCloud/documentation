@@ -57,7 +57,7 @@ rm ${FILENAME}
 
 ## 404 Redirections
 
-Since your are using [`CC_WEBROOT`](/doc/reference/reference-environment-variables/#php) environment variable, this is where Apache is going to looks for directives. To allow redirecting to your `404.html` theme or custom page in Hugo, put the following `.htaccess` file in your `/static` folder :
+Since your are using [`CC_WEBROOT`](../../doc/reference/reference-environment-variables/#php) environment variable, this is where Apache is going to looks for directives. To allow redirecting to your `404.html` theme or custom page in Hugo, put the following `.htaccess` file in your `/static` folder :
 
 ```ApacheConf {filename=".htaccess"}
 RewriteEngine On

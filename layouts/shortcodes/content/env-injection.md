@@ -5,4 +5,4 @@ Clever Cloud injects environment variables from your application settings as men
 ### Custom build configurations
 
 On Clever Cloud you can define some build configuration: like the app folder to deploy or the path to validate your application deployment is ready 
-To do that follow the [documentation here](/doc/reference/reference-environment-variables/#variables-you-can-define) and add the environement variable you need. 
+To do that follow the [documentation here](/developers/doc/reference/reference-environment-variables/#variables-you-can-define) and add the environment variable you need. 

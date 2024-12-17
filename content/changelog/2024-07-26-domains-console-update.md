@@ -15,7 +15,7 @@ description: Did you know about path routing?
 excludeSearch: true
 ---
 
-We've upgraded the applications' Domains page in the Console. It's now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as [path routing](/doc/administrate/domain-names/#path-routing). You also now have:
+We've upgraded the applications' Domains page in the Console. It's now more clear, complete and easy to use. We designed it to highlight some of our underrated features such as [path routing](../../doc/administrate/domain-names/#path-routing). You also now have:
 
 - A unique form to add a custom domain or a test domain (`cleverapps.io`)
 - A unique list of test and custom domains

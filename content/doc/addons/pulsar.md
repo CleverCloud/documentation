@@ -465,7 +465,7 @@ pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
 
 Pulsar has a [tiered storage feature](https://pulsar.apache.org/docs/en/tiered-storage-overview/) allowing to offload heavy data to cold storage once a threshold is reached.
 
-For each Pulsar add-on we provide, we also provide a hidden [Cellar add-on]({{< ref "/doc/addons/cellar" >}}), our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.
+For each Pulsar add-on we provide, we also provide a hidden [Cellar add-on](../cellar), our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.
 
 The offload threshold of the namespace is deactivated by default, you can activate it with:
 

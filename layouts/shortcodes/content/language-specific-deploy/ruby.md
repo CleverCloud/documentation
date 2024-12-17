@@ -138,7 +138,7 @@ Only for Rails >= 5.2.
 You can now commit and push your changes.
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets](/doc/addons/fs-bucket) section.
+[File System Buckets](/developers/doc/addons/fs-bucket) section.
 
 ### NGINX configuration
 
@@ -148,7 +148,7 @@ NGINX settings can be configured with [environment variables](#setting-up-enviro
 
 #### Basic authentication
 
-If you need basic authentication, you can enable it using [environment variables](/doc/reference/reference-environment-variables/#ruby). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+If you need basic authentication, you can enable it using [environment variables](/developers/doc/reference/reference-environment-variables/#ruby). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 #### NGINX optional configuration with `clevercloud/http.json`
 

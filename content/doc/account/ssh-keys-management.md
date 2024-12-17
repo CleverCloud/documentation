@@ -27,7 +27,6 @@ SSH keys are used to establish a secure connection between your computer and Cle
 
 {{< /callout >}}
 
-
 ## How to add your SSH key on Clever Cloud?
 
 {{% steps %}}
@@ -135,11 +134,11 @@ Add the key by entering a name and the public SSH key. The key is the entire con
 Your public SSH key must be associated with only one account.
 {{< /callout >}}
 
-If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment), your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.
+If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](../../quickstart/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.
 
 ### Through CC API or Clever cURL
 
-You can also add a **public SSH key** from the command line using a cURL request to [our API](../openapi). The simpler way to do that is to use Clever Cloud CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
+You can also add a **public SSH key** from the command line with a simple cURL request to [our API]({{< ref "api" >}} "OpenAPI"). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:  
 
 ```bash
 clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yourkey.pub)\"" https://api.clever-cloud.com/v2/self/keys/newkeyname

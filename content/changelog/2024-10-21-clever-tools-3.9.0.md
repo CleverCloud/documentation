@@ -31,7 +31,7 @@ The `clever domain diag` command allows you to check domains' configuration for 
 
 ## Post-creation instructions for add-ons and fixes
 
-This release also provides bug fixes, the token expiry date/time in `clever profile` and a better experience with add-ons like [Keycloak](/doc/addons/keycloak/), [Matomo](/doc/addons/matomo) or [Metabase](/doc/addons/metabase/). Once created, you get post-creation instructions such as management/Console URL, temporary credentials and a link to the add-on's documentation.
+This release also provides bug fixes, the token expiry date/time in `clever profile` and a better experience with add-ons like [Keycloak](/doc/addons/keycloak/), [Matomo](../../doc/addons/matomo) or [Metabase](../../doc/addons/metabase/). Once created, you get post-creation instructions such as management/Console URL, temporary credentials and a link to the add-on's documentation.
 
 To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
 

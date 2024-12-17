@@ -47,7 +47,7 @@ In the project you want to deploy, replace `<CI_PROJECT_PATH>` with the actual p
 - component: $CI_SERVER_HOST/CleverCloud/clever-cloud-pipeline/deploy-to-prod@~latest
 ```
 
-#### On [Heptapod](https://developers.clever-cloud.com/doc/addons/heptapod/)
+#### On Heptapod
 
 ```yaml
 - component: $CI_SERVER_HOST/pipelines/clever-cloud-pipeline/deploy-to-prod@~latest
@@ -65,10 +65,10 @@ You can use pipeline components to deploy from a self-hosted GitLab instance, by
 
 #### Deploy directly from Heptapod
 
-The self-hosted GitLab service on Clever Cloud with [Heptapod](/doc/addons/heptapod) already hosts the components, you don't need to do any set up like you would in a self-hosted instance:
+The self-hosted GitLab service on Clever Cloud with [Heptapod]({{< ref "/doc/addons/heptapod" >}}) already hosts the components, you don't need to do any set up like you would in a self-hosted instance:
 
-1. Create a `.gitlab-ci.yml` at the root of your repository with [the component to use](/doc/ci-cd/gitlab/#use-the-components-catalog)
-2. Add [the variables](/doc/ci-cd/gitlab/#mandatory-configuration) to your repository settings
+1. Create a `.gitlab-ci.yml` at the root of your repository with [the component to use]({{< ref "/doc/ci-cd/gitlab/#use-the-components-catalog" >}})
+2. Add [the variables]({{< ref "/doc/ci-cd/gitlab/#mandatory-configuration" >}}) to your repository settings
 3. Run the pipeline
 
 ## Troubleshooting
@@ -79,5 +79,5 @@ If you encounter troubles or bugs using the GitLab component, feel free to open 
 
 {{< cards >}}
   {{< card link="https://docs.gitlab.com/ee/ci/components" title="GitLab Components" subtitle="Learn how to use GitLab components" icon="gitlab" >}}
-  {{< card link="/doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
+  {{< card link="../../cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
 {{< /cards >}}

@@ -18,7 +18,7 @@ description: Your wishes are our commands
 excludeSearch: true
 ---
 
-PostgreSQL databases managed by Clever Cloud come with [lots of extensions enabled by default](/doc/addons/postgresql/#default-extensions). There are also [some you can ask for](/doc/addons/postgresql/#on-demand-extensions), and we'll set them up, like `pg_cron`, `pgtap` or `timescaledb`.
+PostgreSQL databases managed by Clever Cloud come with [lots of extensions enabled by default](../../doc/addons/postgresql/#default-extensions). There are also [some you can ask for](../../doc/addons/postgresql/#on-demand-extensions), and we'll set them up, like `pg_cron`, `pgtap` or `timescaledb`.
 
 We recently noticed an increased interest from our clients in supporting the `pgvector` extension, needed for specific (AI) workloads. To answer these needs, we've packaged it and are now able to provide it on-demand.
 

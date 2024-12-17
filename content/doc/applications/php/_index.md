@@ -364,11 +364,11 @@ The following is the list of tested CMS by our team.
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 {{< cards >}}
-  {{< card link="/guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
-  {{< card link="/guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
-  {{< card link="/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
-  {{< card link="/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
-  {{< card link="/guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
+  {{< card link="../../..../../../guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
+  {{< card link="../../..../../../guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
+  {{< card link="../../..../../../guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
+  {{< card link="../../..../../../guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
+  {{< card link="../../..../../../guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
 
 {{< /cards >}}
 
@@ -594,7 +594,7 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 {{% content/proxysql %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page](/guides/proxysql)
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}} "ProxySQL")
 
 {{% content/more-config %}}
 

@@ -19,4 +19,4 @@ We've updated our PHP image to support versions [8.2.21](https://www.php.net/Cha
 
 Over the past few weeks, we have also included [Apache 2.4.60](https://dlcdn.apache.org/httpd/CHANGES_2.4.60), fixing CVE-2024-36387, 38472, 38473, 38474, 38475, 38476, 38477, 39573 and [Composer 2.7.7](https://github.com/composer/composer/releases/tag/2.7.7), fixing CVE-2024-35241, 35242.
 
-* Learn more about [PHP on Clever Cloud](/doc/applications/php/)
+* Learn more about [PHP on Clever Cloud](../../doc/applications/php/)

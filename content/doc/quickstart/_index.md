@@ -7,8 +7,8 @@ tags:
 keywords:
 - quickstart
 aliases:
-- /doc/getting-started/quickstart
-- /doc/deploy
+- /getting-started/quickstart
+- /deploy
 type: "docs"
 ---
 {{< hextra/hero-subtitle >}}
@@ -36,7 +36,7 @@ There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 * Read User Repositories
 
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+  If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections../applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -71,19 +71,19 @@ The log system retrieves all output from the application and displays it in the 
 ### Supported Platforms
 
 {{< cards >}}
-  {{< card link="/doc/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/doc/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/doc/applications/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="/doc/applications/java" title="Java" icon="java" >}}
-  {{< card link="/doc/applications/javascript" title="Node.js" icon="node" >}}
-  {{< card link="/doc/applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="/doc/applications/php" title="PHP" icon="php" >}}
-  {{< card link="/doc/applications/python" title="Python" icon="python" >}}
-  {{< card link="/doc/applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="/doc/applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
-
+  {{< card link="../applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="../applications/golang" title="Go" icon="go" >}}
+  {{< card link="../applications/haskell" title="Haskell" icon= "haskell">}}
+  {{< card link="../applications/java" title="Java" icon="java" >}}
+  {{< card link="../applications/javascript" title="Node.js" icon="node" >}}
+  {{< card link="../applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="../applications/php" title="PHP" icon="php" >}}
+  {{< card link="../applications/python" title="Python" icon="python" >}}
+  {{< card link="../applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="../applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="../applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="../applications/dotnet" title=".NET" icon="dotnet" >}}
+  
 {{< /cards >}}
 
 ### Create an Application Step by Step
@@ -101,8 +101,9 @@ Choose the organization you want to deploy in from the left menu. At this point 
 #### Click on "Create an application"
 
 Find it in the **Organization Manager** panel, at the top left of the left menu.
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
-If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.  
+If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections../applications/d96bd8fd996d2ca783cc).
 
 #### Select the language
 
@@ -138,7 +139,7 @@ Enter the name and the description of your application.
   {{< tab >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables).
+  *Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/reference/reference-environment-variables).
 
   Follow these steps to deploy your application:
 
@@ -171,9 +172,9 @@ git push <remote-name> <branch-name>:master
   {{< tab >}}
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
-  {{< image "/images/doc/github-deployment-branch.png" "Github deployment branch select" >}}
-
-  If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
+  {{< image "/images/github-deployment-branch.png" "Github deployment branch select" >}}
+  
+  If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings../applications) and link again your Github account to your Clever Cloud account.
 
   **Private GitHub repositories are also supported.**
 
@@ -208,7 +209,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 **Add your SSH key to your profile here:**
 <https://console.clever-cloud.com/users/me/ssh-keys>
 
-The full tutorial about adding SSH key is here: [Adding SSH keys](/doc/account/ssh-keys-management)
+The full tutorial about adding SSH key is here: [Adding SSH keys](/account/ssh-keys-management)
 
 {{% /details %}}
 
@@ -269,17 +270,17 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
-  {{< card link="/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
-  {{< card link="/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
-  {{< card link="/doc/addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="/doc/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
-  {{< card link="/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/doc/addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
-  {{< card link="/doc/addons/redis" title="Redis" subtitle="Managed in-memory database" icon="redis" >}}
-  {{< card link="/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
-  {{< card link="/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
-   {{< card link="/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-   {{< card link="/doc/addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
+  {{< card link="../addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
+  {{< card link="../addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
+  {{< card link="../addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="../addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
+  {{< card link="../addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="../addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}
+  {{< card link="../addons/redis" title="Redis" subtitle="Managed in-memory database" icon="redis" >}}
+  {{< card link="../addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your credentials" icon="creds" >}}
+  {{< card link="../addons/pulsar" title="Pulsar" subtitle="Open-source, distributed messaging and streaming platform built for the cloud." icon="pulsar" >}}
+   {{< card link="../addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
+   {{< card link="../addons/matomo" title="Matomo" subtitle="Best Google Analytics alternative" icon="matomo" >}}
 {{< /cards >}}
 
 **If your add-on:**
@@ -293,7 +294,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/develop/env-variables). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/develop/env-variables). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 

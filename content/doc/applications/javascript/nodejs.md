@@ -82,7 +82,7 @@ If you need some modules you can easily add some with the *dependencies* field i
 }
 ```
 
-If your application has private dependencies, you can add a [Private SSH Key]({{< ref "doc/reference/common-configuration.md#private-ssh-key" >}}).
+If your application has private dependencies, you can add a [Private SSH Key]({{< ref "doc/reference/common-configuration/#private-ssh-key" >}}).
 
 #### Development Dependencies
 
@@ -139,7 +139,7 @@ If you need to run a custom command (or just pass options to the program), you c
 
 ### Alternative runtimes
 
-There are multiples JavaScript server runtimes out there. On Clever Cloud, you can deploy your applications with the one of your choice. You'll find guides for [Bun](https://www.clever-cloud.com/fr/blog/fonctionnalites/2023/09/19/bun-comment-heberger-vos-applications-sur-clever-cloud/) or [Deno](/guides/lume-deno/) for example.
+There are multiples JavaScript server runtimes out there. On Clever Cloud, you can deploy your applications with the one of your choice. You'll find guides for [Bun](https://www.clever-cloud.com/fr/blog/fonctionnalites/2023/09/19/bun-comment-heberger-vos-applications-sur-clever-cloud/) or [Deno]({{< ref "guides/lume-deno/" >}}) for example.
 
 ### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 

@@ -16,7 +16,7 @@ Python ecosystem is diverse, with lots of legacy versions and practices. But in 
 
 ## Package management: uv on Clever Cloud
 
-We only support [pip](https://packaging.python.org/en/latest/tutorials/installing-packages/), `requirements.txt` and `setup.py` natively. For some weeks, we've included [uv](https://docs.astral.sh/uv/getting-started/features/) in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. [It's now a part](/doc/applications/python/#use-uv-as-a-package-manager) of our "Enthusiast tools" initiative and will be updated regularly. Thus, there is no active support for it yet.
+We only support [pip](https://packaging.python.org/en/latest/tutorials/installing-packages/), `requirements.txt` and `setup.py` natively. For some weeks, we've included [uv](https://docs.astral.sh/uv/getting-started/features/) in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. [It's now a part](/applications/python/#use-uv-as-a-package-manager) of our "Enthusiast tools" initiative and will be updated regularly. Thus, there is no active support for it yet.
 
 We'll enhance its native support in coming releases of our Python image.
 
@@ -28,9 +28,9 @@ We're in 2024 and Python 2.x still coexists with Python 3.x. As it's always used
 
 We'll also get closer to [the official Python release cycle](https://devguide.python.org/versions/#python-release-cycle), which is 5 years of support. Thus, we'll stop using Python 3.7 starting December 1st, 2024. Next year, we'll deprecate Python 3.8 and stop providing it. If an application is asking for a deprecated version, it will use the latest available by default. So, upgrade your `CC_PYTHON_VERSION` towards your needs.
 
-If you need to sideload unsupported Python versions, `uv` [can help you](https://docs.astral.sh/uv/guides/install-python/). You can also deploy your applications through [Docker](/doc/applications/docker), but you should avoid to use end of life runtime in your applications.
+If you need to sideload unsupported Python versions, `uv` [can help you](https://docs.astral.sh/uv/guides/install-python/). You can also deploy your applications through [Docker](../../doc/applications/docker), but you should avoid to use end of life runtime in your applications.
 
-* Learn more about [Python on Clever Cloud](/doc/applications/python/)
+* Learn more about [Python on Clever Cloud](../../doc/applications/python/)
 
 ## What's next?
 

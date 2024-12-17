@@ -23,7 +23,7 @@ Follow your application activities and lifecycle from the **Activity** option in
  
 This happens when you or a member of your organization performs an action on the application, like:
 
-- [Restart or rebuild](/doc/administrate/apps-management/#start-restart-and-stop) from the Console or [the CLI](/doc/cli/)
+- [Restart or rebuild](../apps-management/#start-restart-and-stop) from the Console or [the CLI](../../cli/)
 - Push a new commit from Git or GitHub
  
  Here's what you might see on the timeline:

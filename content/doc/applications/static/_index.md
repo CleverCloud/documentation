@@ -70,4 +70,4 @@ RewriteRule ^ /index.html
 
 If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.
   
-If you don't set the [`CC_WEBROOT`](/doc/reference/reference-environment-variables/#php) environment variable, the root of your project is the root of your web server.
+If you don't set the [`CC_WEBROOT`]({{< ref "/doc/reference/reference-environment-variables/#php" >}}) environment variable, the root of your project is the root of your web server.

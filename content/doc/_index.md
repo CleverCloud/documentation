@@ -1,6 +1,6 @@
 ---
 weight: 2
-title: Clever ClouDocumentation
+title: Clever Cloud Documentation
 type: docs
 comments: false
 linkTitle: Documentation

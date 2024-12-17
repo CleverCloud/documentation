@@ -333,7 +333,7 @@ Once an add-on is created, at least two tabs are available in the Clever Cloud c
 
 * **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
 
-{{< image "/images/addon-dashboard.png" "Example of the dashoard tab of an add-on" >}}
+{{< image "/developers/images/addon-dashboard.png" "Example of the dashoard tab of an add-on" >}}
 
 * **Information tab:** This screen sums-up the characteristics of the selected add-on.
 Features and environment variables (if applicable) are shown.

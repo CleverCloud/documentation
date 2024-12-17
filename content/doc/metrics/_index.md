@@ -32,7 +32,7 @@ To get a quick overview of the current state of your scalers, the overview pane
 displays the current CPU, RAM, Disk and Network activity. On supported platforms,
 you can also have access to requests / second, and GC statistics.
 
-{{< image "/images/doc/grafana-from-oveview-pane.png" "Direct link from Overview pane to app dashboard in Grafana"  >}}
+![Overview pane on Grafana](/images/doc/grafana-from-oveview-pane.png "Direct link from Overview pane to app dashboard in Grafana")
 
 ### Advanced pane
 
@@ -49,7 +49,7 @@ For instance, you can derive metrics over time, do custom aggregations or combin
 
 You can set up alerts in Grafana to be notified on your apps and add-ons consumption. This can be useful to monitor databases capacity or latency.
 
-{{< image "/images/doc/grafana-alerts.png" "Alert option from the general menu in Grafana"  >}}
+![Alert option](/images/doc/grafana-alerts.png "Alert option from the general menu in Grafana")
 
 For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
@@ -63,7 +63,7 @@ We provide a request rate metric. It is an average of the access logs request co
 
 This can be reached using the Warp 10 class: `request_rate`.
 
-> There are the same labels than for others metrics ([see monitoring-metrics](https://www.clever-cloud.com/doc/administrate/metrics/overview/#monitoring-metrics))
+> There are the same labels than for others metrics ([see monitoring-metrics](../administrate/metrics/overview/#monitoring-metrics))
 
 ### Access Log data model
 

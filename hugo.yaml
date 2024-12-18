@@ -14,7 +14,7 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.135.0"
+    max: "0.139.5"
 
 outputs:
   home: [HTML]

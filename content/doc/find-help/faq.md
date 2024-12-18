@@ -232,5 +232,5 @@ For instance, you cannot create a Matomo add-on until you provide these details.
 
 ## I get unknown regular requests, is there a problem ? 
 
-For monitoring purposes, our system regularly talks to apps in HTTP to ensure they're operationnal. This ping occurs regularly (every 2mn), and might appear in your logs. This is not a safety risk. 
+The platform performs routine health checks by sending HTTP requests to applications every 2 minutes. You may notice these periodic pings in your logs - they're part of the standard monitoring process.
 You can identify this ping by filtering `X-Clever-Monitoring`: requests with this header are legitimate ones from our monitoring system. 

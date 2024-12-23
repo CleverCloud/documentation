@@ -36,197 +36,47 @@ git clone https://github.com/fayazara/zooper myStaticApp
 
 To deploy your Nuxt project to Clever Cloud, you need to **create a new application**. 
 
-### Create a static application from the Console
-
-In this step, you set up the following parameters:
-
-- Deployment (using Git or GitHub)
-- Application : Static
-- Instance size and scalability options : You can usually deploy an Nuxt site using the **Nano** instance
-- Region
-- Dependencies, if needed
-- Change build option to **M** instance 
-
 {{% content/language-specific-deploy/create-static %}}
+
+### Configure environment variables
 
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
 
 ```bash
 clever scale --build-flavor M
 clever scale --flavor nano
-```
-
-### Inject environment variables
-
-Use environment variables to control the deployment behavior, which depends on the type of application and your package manager. Find right below the ones that apply for your application.
-
-If you're using a **Node.js** application to serve a static Astro site, inject the following environment variables:
-
-{{< tabs items="npm,pnpm,yarn" >}}
-  {{< tab >}}
-
-  ```shell
-    CC_POST_BUILD_HOOK="npm run build"
-    ```
-
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  ```shell
-    CC_NODE_BUILD_TOOL="custom"
-    CC_PRE_BUILD_HOOK="npm install -g pnpm && pnpm install"
-    CC_CUSTOM_BUILD_TOOL="pnpm build"
-    CC_POST_BUILD_HOOK="npx nuxi generate"
-    ```
-
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  ```shell
-    CC_NODE_BUILD_TOOL="yarn"
-    CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable && yarn build"
-    CC_RUN_COMMAND="yarn run preview"
-    ```
-
-  {{< /tab >}}
-
-{{< /tabs >}}
-
-#### Static application
-
-If you're using a **Static** application to serve a static Astro site, inject the following environment variables:
-
-{{< tabs items="npm,pnpm,yarn" >}}
-  
-  {{< tab >}}
-
-  ```shell
-    CC_POST_BUILD_HOOK="npm run build"
-    CC_PRE_BUILD_HOOK="npm install && npm run astro telemetry disable"
-    CC_WEBROOT="/dist"
-  ```
-
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  ```shell
-    CC_POST_BUILD_HOOK="pnpm build"
-    CC_PRE_BUILD_HOOK="npm install -g pnpm && pnpm install && pnpm run astro telemetry disable"
-    CC_WEBROOT="/dist"
-  ```
-
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  ```shell
-    CC_POST_BUILD_HOOK="yarn build"
-    CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable"
-    CC_WEBROOT="/dist"
-  ```
-
-  {{< /tab >}}
-
-{{< /tabs >}}
-
-
-
-### Deploy
-
-If you're deploying from **GitHub**, your deployment should start automatically. If you're using **Git**, copy the remote and push on the **master** branch.
-
-{{< callout emoji="💡" >}}
-  To deploy from branches other than `master`, use `git push clever <branch>:master`. For example, if you want to deploy your local `main` branch without renaming it, use `git push clever main:master`.
-{{< /callout >}}
-
-## Deploy a static Astro site using the CLI
-
-{{% content/language-specific-deploy/create-static %}}
-
-## Configure environment variables
-
-Next, configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. Clever Cloud uses standard configurations, so you only need to define a few variables:
-
-```bash
-clever scale --build-flavor M
-clever scale --flavor nano
 
 clever env set CC_NODE_VERSION "20"
-clever env set CC_WEBROOT "/dist"
-clever env set CC_OVERRIDE_BUILDCACHE "/dist"
-clever env set CC_PRE_BUILD_HOOK "npm install && npm run astro telemetry disable"
-clever env set CC_POST_BUILD_HOOK "npm run build"
+clever env set CC_WEBROOT "/.output/public"
+clever env set CC_OVERRIDE_BUILDCACHE "/.output/public"
+clever env set CC_PRE_BUILD_HOOK "npm install"
+clever env set CC_POST_BUILD_HOOK "npx nuxi generate"
 ```
 
-{{% content/git-push %}}
+## Deploy a server Nuxt site
 
-## Deploying an Astro Project with Server-Side Rendering (SSR)
-
-To deploy an Astro SSR project, consider using a **Node.js** application on Clever Cloud. This is especially useful if your project uses the [Node.js adapter](https://docs.astro.build/en/guides/integrations-guide/node/).
-
-### Port and host
-
-For SSR deployments, ensure to configure your application to listen on port **8080** as required by Clever Cloud. This differs from static deployments where such configurations are typically unnecessary.
-
-Set your port and host in your `astro dev` script for development mode, and/or configure it directly for production:
-
-{{< tabs items="development,production" >}}
-
-  {{< tab >}}
-
-  To quickly deploy on development mode:
-
-   ```json {filename="package.json"}
-    "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro check && astro build",
-      "preview": "astro preview --host 0.0.0.0 --port 8080",
-      "astro": "astro"
-    } 
-    ```
-  
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  When deploying for production:
-
-   ```javascript {filename="astro.config.mjs"}
-    import { defineConfig } from 'astro/config';
-
-    export default defineConfig({
-      server: {
-        port: 8080,
-        host: true
-      }
-    });
-    ```
-  ```json {filename="package.json"}
-    "scripts": {
-      "dev": "astro dev",
-      "start": "astro build && node ./dist/server/entry.mjs",
-      "build": "astro check && astro build",
-      "preview": "astro preview --host 0.0.0.0 --port 8080",
-      "astro": "astro"
-    } 
-    ```
-
-  {{< /tab >}}
+To deploy your Nuxt project to Clever Cloud, you need to **create a new application**. 
 
 
-{{< /tabs >}}
+### Create a static application
 
+You can create an application in our [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools/):
 
+```bash
+npm i -g clever-tools
+clever login
 
+cd myStaticApp
+clever create -t node mNuxtApp
+```
 
+To deploy on Clever Cloud, your local folder need to be a git repository (if not, `git init`) linked to an application. If you already have an application on Clever Cloud and want to link it to the current local folder:
 
-{{% content/language-specific-deploy/create-static %}}
+```bash
+clever link your_app_name_or_ID
+```
 
-## Configure environment variables
+### Configure environment variables
 
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
 

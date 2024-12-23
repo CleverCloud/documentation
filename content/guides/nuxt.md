@@ -58,7 +58,7 @@ clever env set CC_POST_BUILD_HOOK "npx nuxi generate"
 To deploy your Nuxt project to Clever Cloud, you need to **create a new application**. 
 
 
-### Create a static application
+### Create a Node.js application
 
 You can create an application in our [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools/):
 
@@ -78,17 +78,14 @@ clever link your_app_name_or_ID
 
 ### Configure environment variables
 
-Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+Next, we configure the application with a medium build instance. The host instance is XS, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
 
 ```bash
 clever scale --build-flavor M
-clever scale --flavor nano
+clever scale --flavor xs
 
 clever env set CC_NODE_VERSION "20"
-clever env set CC_WEBROOT "/.output/public"
-clever env set CC_OVERRIDE_BUILDCACHE "/.output/public"
-clever env set CC_PRE_BUILD_HOOK "npm install"
-clever env set CC_POST_BUILD_HOOK "npx nuxi generate"
+clever env set CC_RUN_COMMAND "node .output/server/index.mjs"
 ```
 
 {{% content/git-push %}}

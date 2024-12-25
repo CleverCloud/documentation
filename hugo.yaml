@@ -17,9 +17,15 @@ module:
     max: "0.135.0"
 
 outputs:
-  home: [HTML]
+  home: [HTML, LLMS]
   page: [HTML]
   section: [HTML, RSS]
+
+outputFormats:
+  LLMS:
+    mediaType: "text/plain"
+    baseName: "llms"
+    isPlainText: true
 
 privacy:
   youtube:

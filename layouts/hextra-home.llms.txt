@@ -1,0 +1,47 @@
+{{- if eq .Kind "home" -}}
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+{{- $mainSections := where .Site.Sections "Type" "docs" -}}
+{{- $sortedSections := sort $mainSections "Title" }}
+{{- range $sortedSections }}
+{{- if not .Params.optional }}
+{{- $allSections := slice . -}}
+{{- range .Sections -}}
+    {{- if not .Params.optional -}}
+        {{- $allSections = $allSections | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- $sortedAllSections := sort $allSections "Title" -}}
+{{- range $sortedAllSections }}
+
+## {{ .Title }}
+{{- $pages := sort .Pages "Title" "asc" }}
+{{- range $pages }}
+- [{{ .Title }}]({{ .RelPermalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+## Optional
+{{- range $mainSections }}
+{{- if .Params.optional }}
+{{- $pages := sort .Pages "Title" "asc" }}
+{{- range $pages }}
+- [{{ .Title }}]({{ .RelPermalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}
+{{- end }}
+{{- range .Sections }}
+{{- if .Params.optional }}
+{{- $pages := sort .Pages "Title" "asc" }}
+{{- range $pages }}
+- [{{ .Title }}]({{ .RelPermalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- else -}}
+{{- .RawContent | .Page.RenderString -}}
+{{- end -}}

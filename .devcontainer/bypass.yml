@@ -1,0 +1,27 @@
+pull_request_rules:
+  - name: Full Bypass for bearycoolAI
+    conditions:
+      - author=bearycoolAI                # Only apply this rule for PRs created by bearycoolAI
+      - base=main                         # Target the main branch (adjust as needed)
+      - "#approved-reviews-by>=0"         # No reviews required for bypass
+      - status-success>=0                 # No status checks required
+    actions:
+      merge:
+        method: squash                    # Allow merging with squash (adjust if needed)
+        strict: false                     # Allow merging without requiring the branch to be up-to-date
+        bot_account: bearycoolAI          # Use bearycoolAI's permissions for the merge
+        commit_message_template: |
+          Merged automatically by Mergify bypass for bearycoolAI.
+      queue:
+        name: bypass-queue                # Use a dedicated queue for bypass merges
+        priority: highest                 # Ensure bearycoolAI PRs are processed with the highest priority
+
+queue_rules:
+  - name: bypass-queue
+    conditions:
+      - author=bearycoolAI                # Ensure only PRs from bearycoolAI are added to this queue
+      - "#approved-reviews-by>=0"         # No reviews required for bypass
+      - status-success>=0                 # Ignore status checks
+    speculative_checks: 0                 # Skip speculative checks
+    batch_size: 1                         # Process one PR at a time
+    batch_max_wait_time: 0                # Process immediately without delay

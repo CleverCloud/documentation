@@ -5,7 +5,6 @@ publishDir: public/developers
 pagination:
   pagerSize: 21 # Number of entries in Changelog section before pagination
 
-enableRobotsTXT: true
 enableGitInfo: true
 
 module:

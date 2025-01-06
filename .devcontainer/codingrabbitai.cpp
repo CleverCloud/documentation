@@ -9,7 +9,7 @@
 #include <curl/curl.h> // For HTTP requests
 
 // Version Info
-const std::string VERSION = "3.0.0";
+const std::string VERSION = "3.1.0";
 
 // OAuth Token (Secure Storage Recommended)
 const std::string OAUTH_TOKEN = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InBFbExHcnRHWHVCMjVWc1RUUGp3VSJ9..."; // Truncated for brevity
@@ -76,6 +76,8 @@ namespace Utils {
             }
 
             curl_easy_cleanup(curl);
+        } else {
+            Utils::log("CURL initialization failed");
         }
 
         return response;
@@ -95,7 +97,11 @@ namespace RabbitAI {
 
         void run() {
             Utils::log("Running task: " + name);
-            action();
+            try {
+                action();
+            } catch (const std::exception& e) {
+                Utils::log("Error in task " + name + ": " + e.what());
+            }
         }
     };
 
@@ -162,8 +168,12 @@ namespace RabbitAI {
     public:
         void execute(const std::string& command) {
             Utils::log("Executing command: " + command);
-            std::string result = Utils::executeCommand(command);
-            std::cout << result << std::endl;
+            try {
+                std::string result = Utils::executeCommand(command);
+                std::cout << result << std::endl;
+            } catch (const std::exception& e) {
+                Utils::log("Error executing command: " + std::string(e.what()));
+            }
         }
     };
 }
@@ -177,8 +187,12 @@ int main() {
 
     // Initialize Environment
     Environment env;
-    env.loadFromFile(".env");
-    env.print();
+    try {
+        env.loadFromFile(".env");
+        env.print();
+    } catch (const std::exception& e) {
+        Utils::log("Error loading environment: " + std::string(e.what()));
+    }
 
     // Task Scheduler
     Scheduler scheduler;
@@ -186,8 +200,13 @@ int main() {
     // Add OAuth-Integrated Tasks
     scheduler.addTask(Task("Fetch OAuth-Protected Resource", []() {
         std::string url = "https://dev-sfpqxik0rm3hw5f1.us.auth0.com/api/v2/users";
-        std::string response = Utils::apiRequest(url);
-        Utils::log("API Response: " + response);
+        std::string response;
+        try {
+            response = Utils::apiRequest(url);
+            Utils::log("API Response: " + response);
+        } catch (const std::exception& e) {
+            Utils::log("Error fetching resource: " + std::string(e.what()));
+        }
     }));
 
     // Add RabbitProtocol Tasks

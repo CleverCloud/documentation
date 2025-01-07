@@ -30,19 +30,15 @@ In order to comply with [MongoDB Server Side Public License](https://www.mongodb
 
 ### Higher Versions
 
-If you puchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, please [contact us](https://www.clever-cloud.com/contact/).
-
-## About Free Databases
-
-Free plans are recommended for test and development usage only. Using these databases in production is not recommended, because performance may vary depending on the global usage of the cluster. Therefore, before switching to production, consider upgrading to a dedicated database for better performance.
+If you purchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, [contact us](https://www.clever-cloud.com/contact/).
 
 {{< callout type="warning" >}}
-The ability to create free plan for MongoDB is currently turned off. It may come back in the future.
+DEV plan is no longer available for MongoDB.
 {{< /callout >}}
 
-### Important Note About Fair Use on Free Databases
+### Important note about fair use on DEV plans
 
-Heavy usage of free databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, we set a soft limit of **15 operations/second**. Going above the limit will expose your database to disconnection, would you not answer our notices.
+Heavy usage of DEV databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, DEV plan has a limit of **15 operations/second**. Going above the limit might disconnect your database. 
 
 {{% content/db-backup %}}
 

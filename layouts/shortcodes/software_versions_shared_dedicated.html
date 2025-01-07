@@ -33,6 +33,6 @@
   </tbody>
 </table>
 {{ if $has_dev }}
-  {{ $.Page.RenderString "<!-- markdown -->{{< callout type=\"warning\">}}  <strong>Important</strong>: Dev plan is free but <u>for testing purposes</u>. It has lower performances and no SLA. You can find more info [here](/doc/find-help/faq.md)  {{< /callout >}}" | safeHTML }}
+  {{ $.Page.RenderString "<!-- markdown -->{{< callout type=\"warning\">}}  <strong>Important</strong>: DEV plan is free, <u>for testing purposes only</u>. It has lower performances and no SLA. You can find more info [in the FAQ](/doc/find-help/faq.md)  {{< /callout >}}" | safeHTML }}
 {{ end }}
 

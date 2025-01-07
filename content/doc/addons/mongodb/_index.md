@@ -30,13 +30,13 @@ In order to comply with [MongoDB Server Side Public License](https://www.mongodb
 
 ### Higher Versions
 
-If you purchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, please [contact us](https://www.clever-cloud.com/contact/).
+If you purchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, [contact us](https://www.clever-cloud.com/contact/).
 
 {{< callout type="warning" >}}
 DEV plan is no longer available for MongoDB.
 {{< /callout >}}
 
-### Important Note About Fair Use on DEV plans
+### Important note about fair use on DEV plans
 
 Heavy usage of DEV databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, DEV plan has a limit of **15 operations/second**. Going above the limit might disconnect your database. 
 

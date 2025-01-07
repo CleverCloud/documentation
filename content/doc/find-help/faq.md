@@ -234,6 +234,6 @@ For instance, you cannot create a Matomo add-on until you provide these details.
 
 DEV plan is a free-tier plan available for some databases, designed to let customers explore and test these products. They operate on shared clusters, which may result in variable performance; they also have no SLA guarantees.
 
-Some features such as simultaneous connections numbers, functions...might be reduced or unavailable. 
+Some features such as simultaneous connections numbers, functions... might be reduced or unavailable. 
 
 Support is not able to provide help in case of DEV plan.

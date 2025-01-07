@@ -66,6 +66,34 @@ RewriteRule ^ - [L]
 RewriteRule ^ /index.html
 ```
 
+## Prerendering with Prerender.io
+
+When you use and SPA framework, you are using Client side rendering.
+One of the problem of this method is poor SEO as search engine crawler have more difficulty reading the content of this type of application.
+To avoid this problem, you can try to prerender your application.
+
+If you want to Prerender your application on Clever Cloud, one solution is to use [Prerender.io](https://prerender.io/).  
+To use it with our static applications, you need a `.htaccess` file like this at the root of your project:
+
+```ApacheConf
+<IfModule mod_headers.c>
+    RequestHeader set X-Prerender-Token "<YOUR_TOKEN>"
+    RequestHeader set X-Prerender-Version "prerender-apache@2.0.0"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <IfModule mod_proxy_http.c>
+        RewriteCond %{HTTP_USER_AGENT} googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest\/0\.|pinterestbot|slackbot|vkShare|W3C_Validator|whatsapp|redditbot|applebot|flipboard|tumblr|bitlybot|skypeuripreview|nuzzel|discordbot|google\ page\ speed|qwantify|bitrix\ link\ preview|xing-contenttabreceiver|google-inspectiontool|chrome-lighthouse|telegrambot [NC,OR]
+        RewriteCond %{QUERY_STRING} _escaped_fragment_
+        RewriteCond %{REQUEST_URI} ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff|\.svg))
+
+        RewriteRule ^(index\.html|index\.php)?(.*) http://service.prerender.io/%{REQUEST_SCHEME}://%{HTTP_HOST}$2 [P,END]
+    </IfModule>
+</IfModule>
+```
+
 ## Apache Configuration with `CC_WEBROOT`
 
 If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.

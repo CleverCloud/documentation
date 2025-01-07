@@ -212,11 +212,6 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 
 ## Where are the backups stored?
 
-Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
+Clever Cloud stores all backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
-Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different datacenters in the PAR region.  
-This way, even if one datacenter has an accident, your backup are still safe in two different datacenters.
-
-If you have a custom backup configuration with multiple retention policies and periods, the Clever Cloud Console won't display all the available backups for restoration. 
-However, you can restore a specific backup using [Clever Tools](https://github.com/CleverCloud/clever-tools). This allows for greater flexibility in managing and restoring backups outside the standard Console interface.
-
+For custom configurations (e.g., multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#database-backups).

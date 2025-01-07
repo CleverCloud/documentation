@@ -68,7 +68,7 @@ RewriteRule ^ /index.html
 
 ## Prerendering with Prerender.io
 
-When you use and SPA framework, you are using Client side rendering.
+When you use a SPA framework, you are using Client side rendering.
 One of the problem of this method is poor SEO as search engine crawler have more difficulty reading the content of this type of application.
 To avoid this problem, you can try to prerender your application.
 

@@ -70,7 +70,7 @@ cd myStaticApp
 clever create -t node mNuxtApp
 ```
 
-To deploy on Clever Cloud, your local folder need to be a git repository (if not, `git init`) linked to an application. If you already have an application on Clever Cloud and want to link it to the current local folder:
+To deploy on Clever Cloud, your local folder needs to be a git repository (if not, `git init`) linked to an application. If you already have an application on Clever Cloud and want to link it to the current local folder:
 
 ```bash
 clever link your_app_name_or_ID

@@ -1,8 +1,7 @@
 
 # Contributing guidelines
 
-This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from [Google's Developer Documentation Style Guide](https://developers.google.com/style/tone), and the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project.
-
+This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. 
 ## Standards
 
 Those are general standards to fulfill for every modification in this repository.
@@ -20,6 +19,8 @@ Follow the established structure in this doc. If you wish to propose changes to 
 ### ✒️ Content
 
 Follow these guidelines while writing new content. The goal is to help you write in a **clear, precise, and unambiguous language**. They're not meant to be a burden, but to help you deliver the best content possible.
+
+Sources for quality content are currently being updated.
 
 #### 👍 Do
 

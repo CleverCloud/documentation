@@ -48,18 +48,18 @@ jobs:
           search_existing: all
       
       # Post a single comment with auto-updating body
-      - name: Create or update a comment
-        env:
-          CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
-        uses: taoliujun/action-unique-comment@v1
-        with:
-          uniqueIdentifier: ${{ github.workflow }}
-          body: |
-            You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created and assigned to you 🫵👁️👄👁️
-            
-            See it or modify it here: 
-              * ${{ steps.create-issue.outputs.url }}
-            
-            _This unique comment uses the very cool [taoliujun/action-unique-comment](https://github.com/marketplace/actions/unique-comment). Thank you <3_
+      #- name: Create or update a comment
+      #  env:
+      #    CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+      #  uses: taoliujun/action-unique-comment@v1
+      #  with:
+      #    uniqueIdentifier: ${{ github.workflow }}
+      #    body: |
+      #      You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created and assigned to you 🫵👁️👄👁️
+      #      
+      #      See it or modify it here: 
+      #        * ${{ steps.create-issue.outputs.url }}
+      #      
+      #      _This unique comment uses the very cool [taoliujun/action-unique-comment](https://github.com/marketplace/actions/unique-comment). Thank you <3_
 
       

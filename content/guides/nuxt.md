@@ -78,7 +78,7 @@ clever link your_app_name_or_ID
 
 ### Configure environment variables
 
-Next, we configure the application with a medium build instance. The host instance is XS, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+Next, configure the application with a medium build instance. The host instance is XS, enough for a simple website. As Clever Cloud uses industry standards, you only need to define a few variables:
 
 ```bash
 clever scale --build-flavor M

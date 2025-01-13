@@ -60,7 +60,7 @@ To deploy your Nuxt project to Clever Cloud, you need to **create a new applicat
 
 ### Create a Node.js application
 
-You can create an application in our [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools/):
+You can create an application from the [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools/):
 
 ```bash
 npm i -g clever-tools

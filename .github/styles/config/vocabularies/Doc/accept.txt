@@ -15,6 +15,7 @@ checkMe
 Clever Cloud
 CLI
 Cloud
+Coraza
 cron
 Cyberduck
 Dockerfile
@@ -36,6 +37,7 @@ jarName
 Jboss
 Keycloak
 Laravel
+Let's Encrypt
 maven
 Matomo
 Metabase
@@ -48,6 +50,7 @@ nmap
 npm
 Nuxt
 OAuth
+Otoroshi
 Payara
 Percona
 Pgpool

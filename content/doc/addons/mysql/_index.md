@@ -34,7 +34,7 @@ If you want to import your **SQL** dump, you can use several methods:
 2. Command line tool for MySQL administration.
 3. Any MySQL client such as [MySQL Workbench](https://www.mysql.fr/products/workbench/).
 
-If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
+If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Direct access
 
@@ -59,7 +59,7 @@ You can learn more about ProxySQL on the [dedicated documentation page]({{< ref 
 ## Plans
 
 {{< callout type="warning" >}}
-As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand. If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database (XS plans and above).
+As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand. If this delays create problems in your application or are problematic, we recommend you to use a dedicated database (XS plans and above).
 {{< /callout >}}
 
 ## 🔑 Rights and permissions
@@ -70,7 +70,7 @@ Authorized actions:
 - Manage tables (create, delete...).
 - Manage indexes.
 
-If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+If you think your system might require more advanced administrative access, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
 
 Here is the list of actions that you won't be able to perform:
 - Database administration (for example you won't be able to create new databases).
@@ -79,5 +79,6 @@ Here is the list of actions that you won't be able to perform:
 - Plugins installation.
 - Replica creation.
 - Backup frequency or retention control.
+- Create Trigger or Function (Only on DEV plan)
 
 Ask Clever Cloud support if you want to perform one of these actions.

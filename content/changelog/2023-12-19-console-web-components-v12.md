@@ -18,4 +18,4 @@ Among other changes under the hood, our [Console](https://console.clever-cloud.c
 
 Links to the new documentation are now available in the Console. They're more precise depending on the `variant` (e.g. PHP/Static), use small icons to boost visibility and are now effective for applications and add-ons:
 
-{{< figure src="/images/changelog/doc-link-console.webp" caption="The new documentation link in the Console" >}}
+{{< figure src="/developers/images/changelog/doc-link-console.webp" caption="The new documentation link in the Console" >}}

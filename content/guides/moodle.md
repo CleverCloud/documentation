@@ -72,11 +72,11 @@ Commit changes.
 
 ### Declare the PHP Application
 
-On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](/doc/applications/php) application with Git deployment. Add a [MySQL](/doc/addons/mysql) add-on during the process.
+On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](../../doc/applications/php) application with Git deployment. Add a [MySQL](../../doc/addons/mysql) add-on during the process.
 
 ### Set Up Environment Variables
 
-Add the following [environment variables](/doc/develop/env-variables) to tour PHP application:
+Add the following [environment variables](../../doc/develop/env-variables) to tour PHP application:
 
 ```shell
 CC_PHP_VERSION="8"
@@ -88,7 +88,7 @@ If you don't have an domain for your Moodle application yet, you'll be able to a
 
 ### Set Up `moodledata` Folder
 
-In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/403/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
+In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/403/en/Site_backup). Use a [File System Bucket](../../doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
 
 Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable. It should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`.
 
@@ -124,16 +124,16 @@ Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`e
 
 You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, look for a dedicated tool like [rclone](https://rclone.org).
 
-**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](https://developers.clever-cloud.com/doc/administrate/cron/).
+**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](../../doc/administrate/cron/).
 
 ## 🎓 Further Help
 
 {{< cards >}}
   {{< card link="https://docs.moodle.org/403/en/Installation_quick_guide" title="Moodle Documentation" subtitle="Check Moodle installation guide" icon="moodle" >}}
-  {{< card link="/doc/applications/php" title="PHP" subtitle="Deploy a PHP application on Clever Cloud" icon="php" >}}
-  {{< card link="/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
-  {{< card link="/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/doc/administrate/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
+  {{< card link="../../doc/applications/php" title="PHP" subtitle="Deploy a PHP application on Clever Cloud" icon="php" >}}
+  {{< card link="../../doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
+  {{< card link="../../doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="../../doc/administrate/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
 
 {{< /cards >}}
 

@@ -35,7 +35,7 @@ Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS](/guides))
+* PHP ([see frameworks and CMS]({{< ref "/guides" >}}))
 * Python (Django)
 * Ruby
 * Go
@@ -49,7 +49,7 @@ As many as you want. We've not set a limited number of apps by developer.
 
 ## How to setup domain names I own?
 
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/administrate/domain-names).
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](../../administrate/domain-names).
 
 ## How can I disable one of my existing applications?
 
@@ -88,7 +88,7 @@ Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing
 
 ## How do I define cron jobs for my application?
 
-See [Cron Configuration File](/doc/administrate/cron) for more information.
+See [Cron Configuration File](../../administrate/cron) for more information.
 
 ## How to know if a user comes from a secure connection?
 
@@ -106,7 +106,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-It's explained [here](/doc/applications/php/#using-http-authentication).
+It's explained [here](../../applications/php/#using-http-authentication).
 
 ## How to get the user's IP address?
 
@@ -131,7 +131,7 @@ access them via git+ssh or sFTP), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
-The ssh.json file is documented [here](/doc/reference/common-configuration/#private-ssh-key).
+The ssh.json file is documented [here](../../reference/common-configuration/#private-ssh-key).
 
 ## I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?
 
@@ -143,7 +143,7 @@ As an example, if a Spring Boot application was compiled with Java `17` and run 
 java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 ```
 
-By default, Java `11` is used, but it can be changed. Please head [over here](/doc/applications/java/java-jar/#available-java-versions) for more information.
+By default, Java apps on Clever Cloud use Java `11`, but you can change it. Please head [over here]({{< ref "doc/applications/java/java-jar/#available-java-versions" >}} "Java versions") for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 
@@ -159,7 +159,7 @@ For reference, the table below lists the class file version for each major Java 
 
 Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
 
-If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/cli/ssh-access), but keep in mind that changes made on an instance are not persistent across deployments.
+If however, you still need SSH access for debugging purposes, please have a look at [SSH access](../../cli/ssh-access), but keep in mind that changes made on an instance are not persistent across deployments.
 
 ## I want to user Clever Cloud on my own premises, is that possible?
 
@@ -215,3 +215,22 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 Clever Cloud stores all backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
 For custom configurations (e.g., multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#database-backups).
+
+
+## I can't create my add-on
+
+To create add-ons, you need to complete your account information, including your city and ZIP code. 
+For instance, you cannot create a Matomo add-on until you provide these details.
+
+## I get unknown regular requests, is there a problem ? 
+
+The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clever-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
+
+## What is a DEV plan ? 
+
+DEV plan is a free-tier plan available for some databases, designed to let customers explore and test these products. They operate on shared clusters, which may result in variable performance; they also have no SLA guarantees.
+
+Some features such as simultaneous connections numbers, functions… might be reduced or unavailable. 
+
+Support is not able to provide help in case of DEV plan.
+

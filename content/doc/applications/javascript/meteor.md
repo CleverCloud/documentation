@@ -41,12 +41,12 @@ With Meteor 2.6.n comes MongoDB 5.n and [the new npm driver](https://guide.meteo
 
 #### Optional Meteor settings as environment variable
 
-Some application require a `settings.json` file to [store api keys and other various private and public Meteor variables](https://docs.meteor.com/api/core.html#Meteor-settings).
+Some application require a `settings.json` file to [store api keys and other various private and public Meteor variables](https://v2-docs.meteor.com/api/core#Meteor-settings).
 You can declare a `METEOR_SETTINGS` environment variable and past the content of the json file as the value of this key.
 
 ## Specify required Node.js version
 
-Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](https://www.clever-cloud.com/doc/nodejs/nodejs/#requirements) documentation.
+Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps]({{< ref "nodejs/#requirements" >}}) documentation.
 To find out which version is required by your application type the following command `meteor node -v` inside root folder.
 
 Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.
@@ -63,7 +63,7 @@ You may change the node version value according to the application requirements.
 
 ### Activate the dedicated build
 
-Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature](https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build) and set your vertical scaling size at least to **M**.
+Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature]({{< ref "apps-management/#edit-application-configuration" >}}) and set your vertical scaling size at least to **M**.
 
 If your build still fails after you enabled the feature, please contact us on the support so we can set you a bigger scaler.
 
@@ -97,8 +97,7 @@ Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and y
 
 ## Migrate from a Node.js instance
 
-If you want to migrate from your classic node.js app to a meteor application, contact our support in the console or at
-<support@clever-cloud.com> with the application id.
+If you want to migrate from your classic node.js app to a meteor application, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) with the application id.
 
 {{% content/more-config %}}
 

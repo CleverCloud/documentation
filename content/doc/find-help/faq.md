@@ -214,7 +214,7 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 
 Clever Cloud stores all backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
-For custom configurations (e.g., multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#database-backups).
+For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#database-backups).
 
 
 ## I can't create my add-on

@@ -19,12 +19,14 @@ llmsTxtOptional: true
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
+  {{< card link="astro" title="Astro" subtitle= "Build and deploy a Astro application on Clever Cloud" icon="astro" >}}
   {{< card link="python-django-sample" title="Django" subtitle= "Configure your Django application to run on Clever Cloud" icon="django" >}}
   {{< card link="tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
   {{< card link="ekg-statsd-haskell-metrics/" title="ekg-statsd" subtitle= "How to configure ekg-statsd package in your Haskell application" icon="haskell" >}}
   {{< card link="fluentd/" title="Fluentd" subtitle= "How to deploy Fluentd using Docker on Clever Cloud" icon="fluentd" >}}
   {{< card link="tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
   {{< card link="node-statsd-nodejs-metrics" title="node-statsd" subtitle= "Configure node-statsd package on your Node.js application to push custom metrics" icon="node" >}}
+  {{< card link="nuxt" title="Nuxt" subtitle= "Build and deploy a Nuxt application on Clever Cloud" icon="nuxt" >}}
   {{< card link="play-framework-1" title="Play 1 x Scala" subtitle= "Set up your Play 1 + Scala application to run on Clever Cloud" icon="play" >}}
   {{< card link="play-framework-2" title="Play 2 x Scala" subtitle= "Set up your Play 2 + Scala application to run on Clever Cloud" icon="play" >}}
   {{< card link="ruby-on-rails" title="Ruby On Rails" subtitle= "How to deploy Ruby on Rails framework" icon="ruby" >}}
@@ -43,7 +45,6 @@ llmsTxtOptional: true
   Use Clever Cloud as a runner to build an efficient static website and host it in minutes!&nbsp;<br class="sm:block hidden" />
 {{< /hextra/hero-subtitle >}}
 </div>{{< cards >}}
- {{< card link="astro" title="Astro" subtitle= "Build and deploy a static Astro based website on Clever Cloud" icon="astro" >}}
   {{< card link="docusaurus" title="Docusaurus" subtitle= "Build and deploy a static Docusaurus based website on Clever Cloud" icon="docusaurus" >}}
   {{< card link="eleventy" title="Eleventy (11ty)" subtitle= "Build and deploy a static Eleventy (11ty) based website on Clever Cloud" icon="11ty" >}}
  {{< card link="hexo" title="Hexo" subtitle= "Build and deploy a static Hexo based website on Clever Cloud" icon="hexo" >}}
@@ -51,8 +52,6 @@ llmsTxtOptional: true
   {{< card link="lume-deno" title="Lume (Deno)" subtitle= "Build and deploy a static Lume (Deno) based website on Clever Cloud" icon="deno" >}}
   {{< card link="mkdocs" title="MkDocs" subtitle= "Build and deploy a static MkDocs based website on Clever Cloud" icon="docs" >}}
   {{< card link="mdbook" title="mdBook" subtitle= "Build and deploy a static mbBook based website on Clever Cloud" icon="mdbook" >}}
-  {{< card link="nuxt" title="Nuxt" subtitle= "Build and deploy a static Nuxt based website on Clever Cloud" icon="nuxt" >}}
-
    {{< card link="hugo-static-s3" title="Hugo + Cellar" subtitle= "Build and deploy a static Hugo based website and host it using Cellar" icon="hugo" >}}
 {{< /cards >}}
 

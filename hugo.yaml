@@ -13,7 +13,7 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.140.0"
+    max: "0.140.2"
 
 outputs:
   home: [HTML, LLMS]

@@ -9,7 +9,7 @@ jobs:
   changed_files:
     runs-on: ubuntu-latest
     name: Test changed-files
-    environment: PR review apps
+    environment: update doc
     # Needed to post comments and create issues
     permissions:
         issues: write

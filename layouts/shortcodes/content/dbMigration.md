@@ -7,5 +7,6 @@ With a migration, you can change to a higher plan, a new version or to another r
 A migration work by creating a new instances and moving your data over to that new instances, the old one is then stopped. In case of a failure during migration, the new instance is deleted and you go back to the original one.
 The duration may vary depending on how much data your add-on has. Your database become read only for the entire duration.
 
-You can also migrate your applications to the same plan.  
-Since add-on aren't automatically redeployed when a new patch release, migrating to the same plan allow you to redeploy your add-on on the most recent patch.
+If you want to restart your add-on or update to the last supported version of the current branch, migrate it to the same plan, version, zone. 
+
+- [More Clever Cloud Tips and Tricks](/developers/doc/best-practices/tips_and_tricks/)

@@ -1,4 +1,4 @@
-## Upgrading to a higher plan
+## Migrate your database
 
 Clever Cloud provides an add-on Migration/Upgrade tool. You can access it from the [Console](https://console.clever-cloud.com), in the left menu when an add-on is selected. It allows to choose a higher plan, a new version or another deployment zone.
 

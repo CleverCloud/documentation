@@ -99,6 +99,23 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
+### Redirection.io support
+
+[Redirection.io](https://redirection.io) can help reduce HTTP traffic issues on your website. It gives a complete control on how HTTP requests are handled, which helps make it SEO-friendly. It can perform redirections and comes with lots of features. You can link any application to a Redirection.io project easily, setting up the proxy mode with following environment variables:
+
+|  Name  |  Description  |  Default value  |
+|-----------------------|------------------------------|--------------------------------|
+|`CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | false |
+|`CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
+|`CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
+|`CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
+
+The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
+
+{{< callout type="info" >}}
+  Redirection.io easy setup is available in the Node.js runtime and will progressively be available on all our compatible images.
+{{< /callout >}}
+
 ### Tailscale support
 
 [Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances.

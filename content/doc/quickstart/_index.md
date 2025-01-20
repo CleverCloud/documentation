@@ -172,7 +172,7 @@ git push <remote-name> <branch-name>:master
   {{< tab >}}
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
-  {{< image "/images/github-deployment-branch.png" "Github deployment branch select" >}}
+  {{< image "/developers/images/doc/github-deployment-branch.png" "Github deployment branch select" >}}
   
   If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings../applications) and link again your GitHub account to your Clever Cloud account.
 

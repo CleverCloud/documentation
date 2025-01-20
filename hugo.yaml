@@ -5,7 +5,6 @@ publishDir: public/developers
 pagination:
   pagerSize: 21 # Number of entries in Changelog section before pagination
 
-enableRobotsTXT: true
 enableGitInfo: true
 
 module:
@@ -14,12 +13,21 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.135.0"
+    max: "0.140.2"
 
 outputs:
-  home: [HTML]
-  page: [HTML]
-  section: [HTML, RSS]
+  home: [HTML, LLMS]
+  page: [HTML, Markdown]
+  section: [HTML, Markdown, RSS]
+
+outputFormats:
+  LLMS:
+    mediaType: "text/plain"
+    baseName: "llms"
+    isPlainText: true
+
+  Markdown:
+    baseName: index.html
 
 privacy:
   youtube:
@@ -37,6 +45,7 @@ languages:
     #title: "Documentation de Clever Cloud "
 
 params:
+  description: Clever Cloud is a Platform-as-a-Service (PaaS) cloud provider, an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up
   images:
   - /images/feature.png
   navbar:

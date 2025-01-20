@@ -71,14 +71,6 @@ We will investigate and contact the application's owner over the violation if ne
 
 ## Does Clever Cloud support TLS/SSL (HTTPS)?
 
-<<<<<<< HEAD
-Absolutely! For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
-Have a look at [installing SSL certificates]({{< ref"doc/administrate/ssl" >}} "Install a certificate SSL"), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
-
-## I'd like to have two applications available on the same domain name
-
-Please refer to [prefix routing](../../administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
-=======
 Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one]{{< ref "doc/administrate/ssl/#uploading-my-own-certificates" >}}).
 Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
 
@@ -93,7 +85,6 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 ## I'd like to have two applications available on the same domain name
 
 Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing" >}}) to learn how to have two applications share a domain name.
->>>>>>> origin/main
 
 ## How do I define cron jobs for my application?
 
@@ -221,11 +212,25 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 
 ## Where are the backups stored?
 
-Clever Cloud store all your backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/). 
-Cellar has a replication system to protect the data stored inside. It creates three copies of your backups, each stored in a different data centers in the PAR region.  
-This way, even if one data center has an accident, your backup are still safe in two different data centers.
+Clever Cloud stores all backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
+
+For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md#database-backups).
+
 
 ## I can't create my add-on
 
 To create add-ons, you need to complete your account information, including your city and ZIP code. 
 For instance, you cannot create a Matomo add-on until you provide these details.
+
+## I get unknown regular requests, is there a problem ? 
+
+The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clever-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
+
+## What is a DEV plan ? 
+
+DEV plan is a free-tier plan available for some databases, designed to let customers explore and test these products. They operate on shared clusters, which may result in variable performance; they also have no SLA guarantees.
+
+Some features such as simultaneous connections numbers, functions… might be reduced or unavailable. 
+
+Support is not able to provide help in case of DEV plan.
+

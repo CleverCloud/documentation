@@ -60,6 +60,8 @@ The process consists in three steps:
 
 Encryption at rest is available on MongoDB. You can have more information on the [dedicated page]({{< ref "doc/administrate/encryption-at-rest.md" >}})
 
+{{% content/dbMigration %}}
+
 ## Can I use Mongo Ops Manager on Clever Cloud?
 
 To be able to use [Mongo Ops Manager](https://www.mongodb.com/products/ops-manager), you'll need a valid MongoDB Enterprise Advanced subscription and to deploy a [Linux version of their manager solution](https://www.mongodb.com/try/download/ops-manager). If you haven't purchased any license from MongoDB and you are using the Community version, you might be looking for a similar service for your databases.

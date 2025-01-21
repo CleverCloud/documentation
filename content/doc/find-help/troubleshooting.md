@@ -164,7 +164,7 @@ Clever Cloud uses [Sōzu](https://www.sozu.io) as its load balancer and reverse 
 For operations that may exceed the 180-second limit, implement one of these approaches:
 
 1. Use long polling to send periodic status checks from the client
-2. Create an asynchronous worker system : move long-running tasks to a background [worker]({{< ref "doc/develop/workers/" >}} "workers")
+2. Create an asynchronous worker system: move long-running tasks to a background [worker]({{< ref "doc/develop/workers/" >}} "workers")
 3. [Purchase a custom load balancer from Clever Cloud](https://www.clever-cloud.com/fr/contact/) with different timeouts
 
 ##### Additional considerations:

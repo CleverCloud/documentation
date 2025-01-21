@@ -155,6 +155,27 @@ You have to pay all of your pending invoices to recover your data.
 
 {{% /details %}}
 
+## Network
+
+{{% details title="Backend Timeout Limits" closed="true" %}}
+
+Clever Cloud uses [Sōzu](https://www.sozu.io) as its load balancer and reverse proxy. Sōzu enforces a 180-second timeout for all backend operations to prevent resource exhaustion from hanging requests.
+
+For operations that may exceed the 180-second limit, implement one of these approaches:
+
+1. Use long polling to send periodic status checks from the client
+2. Create an asynchronous worker system : move long-running tasks to a background [worker]({{< ref "doc/develop/workers/" >}} "workers")
+3. [Purchase a custom load balancer from Clever Cloud](https://www.clever-cloud.com/fr/contact/) with different timeouts
+
+##### Additional considerations:
+
+- Design your application architecture to handle timeouts gracefully
+- Break up long-running operations into smaller tasks
+
+Use your embedded [Grafana]({{< ref "doc/metrics/">}} "Grafana on Clever Cloud") to monitor resource usage when implementing any of these solutions.
+  
+{{% /details %}}
+
 ## Others issues
 
 {{% details title="Missing GitHub organization on the application creation page" closed="true" %}}

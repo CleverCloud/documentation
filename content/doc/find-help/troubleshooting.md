@@ -27,7 +27,7 @@ For most of Cloud providers, the use of the file system is not a good practice. 
 Follow the [File System buckets documentation page]({{< ref "doc/addons/fs-bucket" >}}) to set up an FS Bucket for your application.
 {{% /details %}}
 
-{{% details title="Troubleshooting empty repository git error" closed="true" %}}
+{{% details title="Empty repository git error" closed="true" %}}
 
 In some cases, git may display this type of error message:
 
@@ -67,7 +67,7 @@ git push clever production:master
 
 {{% /details %}}
 
-{{% details title="Troubleshooting 'Not a git repository' error" closed="true" %}}
+{{% details title="'Not a git repository' error" closed="true" %}}
 
 ```text
 fatal: Not a git repository (or any of the parent directories)
@@ -79,7 +79,7 @@ You can add all your files with `$ git add .`, then you need to commit the files
 You will finally push your code with `$ git push clever master`.
 {{% /details %}}
 
-{{% details title="Troubleshooting 'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
+{{% details title="'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
 
 "clever" is a name used in our examples to represent the Clever Cloud servers.
 In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:

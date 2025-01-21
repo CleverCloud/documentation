@@ -29,6 +29,7 @@ Gemfile
 Glassfish
 Gradle
 gradle
+Grafana
 healthcheck
 Heptapod
 Hextra

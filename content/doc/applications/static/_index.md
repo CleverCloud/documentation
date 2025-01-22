@@ -69,7 +69,7 @@ RewriteRule ^ /index.html
 ## Prerendering with Prerender.io
 
 When you use a SPA framework, you are using Client side rendering.
-One of the problem of this method is poor SEO as search engine crawler have more difficulty reading the content of this type of application.
+One of the problem with this method is a poor SEO as search engine crawlers have more difficulty reading the content of this type of application.
 To minimize this issue, prerendering can be a solution.
 
 If you want to Prerender your application on Clever Cloud, one solution is to use [Prerender.io](https://prerender.io/).  

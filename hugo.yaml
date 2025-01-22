@@ -47,7 +47,7 @@ languages:
 params:
   description: Clever Cloud is a Platform-as-a-Service (PaaS) cloud provider, an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up
   images:
-  - /images/feature.png
+  - images/feature.png
   navbar:
     displayTitle: false
     displayLogo: true

@@ -17,7 +17,7 @@ weight: 13
 
 Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).
 
-You want to help us to offer more services to our users? Just reach us: [partnership@clever-cloud.com](mailto:partnership@clever-cloud.com?subject=I%20want%20to%20become%20a%20Clever%20Cloud%20Marketplace%20partner). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
+You want to help us to offer more services to our users? [Contact us](https://partners.clever-cloud.com). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
 
 * [Add-on Manifest](#add-on-manifest): to provide your service as an add-on
 * [Add-on provider requests](#add-on-provider-requests): to provision, modify or delete add-ons
@@ -48,26 +48,17 @@ First, provide a JSON manifest file that describes your add-on:
 }
 ```
 
-Fields
+### Available fields
 
 * `id` - An ID for your add-on. All lower case, no spaces or punctuation. Underscores and dashes are allowed. This can’t be changed after the first push. It is also used for HTTP basic auth when making provisioning calls.
-
 * `name` (Optional) - A human-readable name for your add-on. You will be able to change it later in the dashboard, so you don't even have to provide it right now.
-
 * `api/config_vars` - A list of configuration variables that will be returned on provisioning calls. Each `config_var` name must start with the capitalized, add-on id with underscores, as in the example.
-
 * `api/password` - Password that Clever Cloud will send in HTTP basic auth when making provisioning calls. You should generate a long random string for that field.
-
 * `api/sso_salt` - Shared secret used in single sign-on between the Clever Cloud admin panel and your service’s admin panel. You should generate a long random string for that field.
-
 * `api/regions` - The list of geographical zones supported by your add-on. It cannot be empty. As for now, it *MUST* contain the element "eu". More will be supported.
-
-* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision, deprovision, and plan change).
-
+* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision and deprovision).
 * `api/production/sso_url` - The production endpoint for single sign-on.
-
 * `api/test/base_url` - The test endpoint on which Clever Cloud sends actions requests. Used to test your service when you create an add-on provider. After the add-on creation,`api/production/base_url` is used. If you're **not using** a test environment, set the same value as `api/production/base_url`.
-
 * `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. After that, the `api/production/sso_url` is used. If you're **not using** a test environment, set the same value as 
 `api/production/sso_url`.
 
@@ -79,7 +70,7 @@ When a Clever Cloud's customer interacts with your add-on, you'll receive reques
 
 When a customer installs your add-on, Clever Cloud issues a POST request to your service to provision a resource for his app.
 
-The request will be the following:
+Clever Cloud will send the following request:
 
 ```json
 Request: POST {base_url}
@@ -106,38 +97,26 @@ Response Body: {
 The request body contains the following fields:
 
 * `addon_id` - The id we give to your add-on to identify it on our side.
-
 * `owner_id` - The id of the customer this add-on will belong to.
-
 * `owner_name` - The name of the customer. (Actually, the name of the organisation)
-
 * `user_id` - The id of the user that is performing the action of provisioning this
   add-on. (The user will do it for the account of `owner_id`).
-
 * `plan` - The slug field for the plan the user chose. You can create
 plans in the dashboard once your add-on manifest has been uploaded to
 the Clever Cloud platform. We send you the slug of the given plan,
 not its name.
-
 * `region` - The region to provision the add-on. As for now, only "EU" will be sent.
-
-* `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
-
+* `callback_url` - The URL you can use to get details about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 * `logplex_token` - Deprecated, don't use it.
-
 * `options` - String -> String map with options.
-
 The response body contains the following fields:
-
 * `id` - The add-on id as seen from your side. It *MUST* be a String.
-
 * `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
-
 * `message` (Optional) - A creation message we will display in the dashboard.
 
-### Deprovisioning
+### De-provisioning
 
-When a customer deletes your add-on, Clever Cloud issues a DELETE request to your service to deprovision a ressource for his app.
+When a customer deletes your add-on, Clever Cloud issues a DELETE request to your service to de-provision a resource for his app.
 
 The request will be the following:
 
@@ -148,38 +127,6 @@ Response Status: 200
 ```
 
 * `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
-
-### Plan change
-
-When a customer wants to change its add-on's plan, Clever Cloud issues a PUT request to your service.
-
-The request will be the following:
-
-```json
-Request: PUT {base_url}/{addon_id}
-Request Body: {
-  "addon_id": "addon_xxx",
-  "plan": "premium"
-}
-Response Body: {
-  "config": { ... },
-  "message": "your message here"
-}
-```
-
-* `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
-
-The request body contains:
-
-* `addon_id` - The add-on's id as seen from our side.
-
-* `plan` - The name of the new plan.
-
-The response body contains:
-
-* `config` - The value for the new config map. Same constraints as in the provisioning response.
-
-* `message` - A message displayed in our dashboard.
 
 ### Examples
 
@@ -221,7 +168,7 @@ Response Body: [
 
 * `addon_id` - The add-on's id from Clever Cloud's POV.
 
-* `callback_url` - URL to call to get more informations about this add-on.
+* `callback_url` - URL to call to get more details about this add-on.
 
 * `plan` - The current plan of this add-on.
 
@@ -254,7 +201,7 @@ This endpoint gives you more information about a provisioned add-on.
 
 * `name` - The name the user gave to this add-on in the Clever Cloud dashboard.
 
-* `config` - Config vars as you defined during the provision call.
+* `config` - Configuration variables as you defined during the provision call.
 
 * `callback_url` - The URL you just called.
 
@@ -264,7 +211,7 @@ This endpoint gives you more information about a provisioned add-on.
 
 * `owner_id` - The id of the owner that provisioned the add-on. This should never change.
 
-* `region` - The region this add-on is located in. As for now, we only support "eu".
+* `region` - The region this add-on is located in. As for now, only "eu" is supported.
 
 * `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
 
@@ -404,9 +351,9 @@ Where:
 * `id` - The id of the connecting add-on. This is the id you returned on
 the provision call.
 
-* `sso_salt` - The sso_salt field defined in your manifest.
+* `sso_salt` - The `sso_salt` field defined in your manifest.
 
-* `timestamp` - The timestamp field of the sso request.
+* `timestamp` - The timestamp field of the SSO request.
 
 ### Sample in Python
 
@@ -421,7 +368,7 @@ token = sha1(id + ':' + salt + ':' + timestamp).hexdigest()
 print token
 ```
 
-This will return:
+This code returns:
 
 ```text
 'aca601ba464437cbaa12b2fedd7db755c32ddb5e'

@@ -23,7 +23,7 @@ To fit the most common needs, the Keycloak add-on comes with batteries included:
 
 {{< callout type="info" >}}
 
-**Keycloak is in Alpha testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak). Thank you for being a part of our journey towards innovation and improvement!
+**Keycloak is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak). Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
 ## Key features
@@ -45,9 +45,9 @@ The Clever Cloud Keycloak add-on is designed to meet the most common needs, buil
 ## How it works?
 When you create the Keycloak add-on, Clever Cloud automatically deploys:
 
-- A [Java](https://developers.clever-cloud.com/doc/applications/java/java-jar/) instance with Keycloak pre-loaded and configured
-- A [PostgreSQL](https://developers.clever-cloud.com/doc/addons/postgresql/) database
-- A [FS Bucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) used for themes, plugins, and import/export storage needs
+- A [Java](../../applications/java/java-jar) instance with Keycloak pre-loaded and configured
+- A [PostgreSQL](../postgresql) database
+- A [FS Bucket](../fs-bucket) used for themes, plugins, and import/export storage needs
 
 ## Security and updates
 Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It's automatically upgraded and updated both for features and security.
@@ -60,12 +60,12 @@ An add-on update might require a restart.
 
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 
-- XS Java
-- XS Tiny Space PostgreSQL
+- S Java
+- XXS Small Space PostgreSQL
 - Less than 100 MB in FS Bucket
 
 They are dimensioned to suit a majority of needs. Even if this Keycloak add-on might handle heavy traffic and an important number of simultaneous connections, the default configuration should handle the following load (based on [Keycloak](https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing) sizing recommendation):
-- 5 login by second
+- 5 logins by second
 - 90 credential grants by the second
 - 70 refresh tokens by second
 
@@ -81,9 +81,25 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### Using the CLI
 
-1. Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed
-2. List the available plans and options for Keycloak: `clever addon providers show keycloak`
-3. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional)
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+
+```
+$ clever addon create keycloak myKeycloak
+Add-on created successfully!
+ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Real ID: keycloak_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name: mykeycloak
+
+Your Keycloak is starting:
+ - Access it: https://xxxxxxxxxxxxxxxxxxxx-keycloak.services.clever-cloud.com
+ - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+An initial account has been created, you'll be invited to change the password at first login:
+ - Admin user name: cc-account-admin
+ - Temporary password: xxxxxxxxxxxxxxxx
+
+/!\ The keycloak provider is in beta testing phase
+```
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
 
@@ -130,7 +146,7 @@ Uploading previously exported data in `realms/import` folder in the associated F
 
 ## Custom Themes and Plugins
 
-Keycloak uses an [FSBucket](https://developers.clever-cloud.com/doc/addons/fs-bucket/) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
+Keycloak uses an [FSBucket](../fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
 ## Add IP filtering in Keycloak for admin console
 
@@ -142,14 +158,17 @@ Two specific authentication flows with an IP addresses based filter are especial
 
 Those flows could be affected to your own clients if you need.
 
+## Metrics
+
+Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](../../metrics/#publish-your-own-metrics) to visualize them.
+
 ## Hostnames
 
 By default, your Keycloak instance is exposed through a Clever Cloud domain, as mentioned in the `Service dependencies` tab of your add-on.
 
 ### Custom hostname
 
-You can use your own domain. [Just set it](/doc/administrate/domain-names/) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
-
+You can use your own domain. [Just set it](../../administrate/domain-names) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
 
 ### Admin hostname
 

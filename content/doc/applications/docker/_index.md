@@ -30,8 +30,22 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-[FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
+[FS Buckets](../../best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
+
+### How it works
+
+When you create a Docker application on Clever Cloud, the deployment process involves the following steps:
+
+1. **Install/Login:**
+   - The system checks for a Dockerfile and an entrypoint.
+    - It logs into the docker registry that you configured in the Dockerfile, if any, to find the necessary image (**note:** the name of the Docker registry may vary depending on the provider. It's called "container registry" in GitHub, for instance)
+2. **Build:**
+   - The application pulls the specified image and execute commands you specified in Dockerfile.
+   - **Note:** This step focuses on executing commands in your Dockerfile and doesn't require build instructions if you are using a pre-compiled image.
+3. **Run:**
+   - The application starts in a Docker container and exposes the service on port 8080 by default.
+   - If you need to expose your application on a different port, you can specify this using the environment variable `CC_DOCKER_EXPOSED_HTTP_PORT`.
 
  {{% content/set-env-vars %}}
 
@@ -73,7 +87,7 @@ CMD yarn start
 
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](/doc/administrate/tcp-redirections).
+Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](../../administrate/tcp-redirections).
 
 ### Docker socket access
 
@@ -190,7 +204,6 @@ CMD ["sudo","/root/start.sh"]
 We provide a few examples of dockerized applications on Clever Cloud.
 
 * [Elixir App](https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-* [Haskell App](https://GitHub.com/CleverCloud/demo-haskell)
 * [Hack / HHVM App](https://GitHub.com/CleverCloud/demo-hhvm)
 * [Seaside / Smalltalk App](https://GitHub.com/CleverCloud/demo-seaside)
 * [Rust App](https://GitHub.com/CleverCloud/demo-rust)

@@ -35,7 +35,7 @@ Click on your Cellar add-on in your deployed services list to see its menu.
 
 #### Name your bucket
 
-From **Addon Dashboard**, insert the name of your bucket.
+From **Add-on Dashboard**, insert the name of your bucket.
 
 {{< callout type="info">}}
   Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region. bucket names can't use underscores `(_)`.
@@ -57,7 +57,7 @@ Install s3cmd on your machine following [these recommendations](https://s3tools.
 
 #### Download the configuration file
 
-Go to your add-on menu in the Clever Cloud console. Under the **Addon Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
+Go to your add-on menu in the Clever Cloud console. Under the **Add-on Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
 
 #### Create a bucket
 
@@ -105,7 +105,10 @@ There are several ways to manage your buckets, find in this section a list of op
 Some clients allows you to upload files, list them, delete them, etc, like:
 
 - [Cyberduck](https://cyberduck.io)
-- [Filestash](https://filestash.app)
+- [Filestash](https://www.filestash.app/)
+- [MinIO](https://min.io/docs/minio/linux/reference/minio-mc.html)
+- [S3 Browser](https://s3browser.com/)
+- [WinSCP](https://winscp.net)
 
 This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/discussions/new?category=general).
 
@@ -121,7 +124,7 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
   ```bash
   s3cmd put --acl-public image.jpg s3://bucket-name
   ```
-  
+
   The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
@@ -162,7 +165,7 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
   // Set up config
   AWS.config.update({
-    accessKeyId: '<cellar_key_id>', 
+    accessKeyId: '<cellar_key_id>',
     secretAccessKey: '<cellar_key_secret>'
   });
 
@@ -376,6 +379,55 @@ s3cmd delpolicy s3://<bucket-name>
 
 The original ACL should apply to all of your objects after that.
 
+
+### IP restrictions
+
+If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
+To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
+
+- Replace the `<bucket-name>` with your bucket name in the policy file.  
+- Change the `Effect` to `Allow` or `Deny` depending on your needs.  
+- Change the IP address under `Condition` to select which IP should trigger the rule.
+
+```json {filename="IP-restriction-policy.json"}
+{
+    "Version": "2012-10-17",
+    "Id": "S3PolicyIPRestrict",
+    "Statement": [
+        {
+            "Sid": "IPAllow",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::<bucket>",
+                "arn:aws:s3:::<bucket>/*"
+            ],
+            "Condition" : {
+                "IpAddress" : {
+                    "aws:SourceIp": ["0.0.0.0/0"]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": ["192.168.1.6/32"]
+                }
+            }
+        }
+    ]
+}
+```
+
+To apply the policy, use this command:
+```
+s3cmd setpolicy ./policy.json s3://<bucket-name>
+```
+
+To delete the policy, use this command:
+``` 
+s3cmd delpolicy ./policy.json s3://<bucket-name>
+```
+
 ### User access
 
 Cellar doesn't natively support creating different user accesses for the same add-on. Granting access to your Cellar add-on grants full access to all of your buckets. To grant limited access to a bucket, do the following:
@@ -456,8 +508,7 @@ Here this configuration has two `CORS` rules:
 
 {{< callout type="info" >}}
 
-**Updating the CORS configuration replaces the old one**  
-If you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to rollback.
+**Updating the CORS configuration replaces the old one:** if you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to roll back.
 
 {{< /callout >}}
 

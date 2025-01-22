@@ -34,6 +34,8 @@ Some applications require a non-empty database to run properly. If you want to i
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
+{{% content/dbMigration %}}
+
 ## Direct access
 
 A proxy serves all dedicated PostgreSQL databases. In some cases, this can add some latency between applications and their database. If this is an issue, you can generate a direct hostname and port for the add-on to bypass the proxy, using the "Generate direct hostname and port" button in the add-on dashboard.

@@ -77,7 +77,7 @@ To use it with our static applications, you need a `.htaccess` file like this at
 
 ```ApacheConf
 <IfModule mod_headers.c>
-    RequestHeader set X-Prerender-Token "<YOUR_TOKEN>"
+    RequestHeader set X-Prerender-Token "<PRERENDER_TOKEN>"
     RequestHeader set X-Prerender-Version "prerender-apache@2.0.0"
 </IfModule>
 

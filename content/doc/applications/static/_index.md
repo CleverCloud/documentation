@@ -93,7 +93,9 @@ To use it with our static applications, you need a `.htaccess` file like this at
     </IfModule>
 </IfModule>
 ```
+You can find your `PRERENDER_TOKEN` on your [Prerender.io account](https://prerender.io/). 
 
+You can verify your configuration work using [this guide](https://docs.prerender.io/docs/how-to-test-your-site-after-you-have-successfully-validated-your-prerender-integration).
 ## Apache Configuration with `CC_WEBROOT`
 
 If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.

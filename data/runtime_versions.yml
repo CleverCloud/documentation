@@ -50,7 +50,7 @@ elixir:
     - "1.15"
     - "1.16"
 java:
-  eol_source: "https://www.oracle.com/fr/java/technologies/java-se-support-roadmap.html"
+  eol_source: "https://adoptium.net/fr/support/"
   default:
     - "11"
   accepted:

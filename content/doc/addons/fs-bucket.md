@@ -123,3 +123,35 @@ in the FS bucket.
 
 The **Add-on information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
+
+You can use port 21 for an FTP connection and port 22 for SFTP.
+
+#### FRS Fingerprints
+
+When connecting via FTP, you may be prompted to confirm the fingerprint where your bucket is located:
+- Paris Clever cloud:  
+  - par-frs-n1
+  - par-frs-n2
+  - par-frs-n3
+  - par-frs-n4
+  - par-frs-n5
+- Paris Scaleway:
+  - scw-frs-n1
+- Gravelines HDS:
+  - grahds-frs-n1
+- Roubaix HDS:
+  - rbxhds-frs-n1
+- Roubaix:
+  - rbx-frs-n2
+- Numspot:
+  - numspot-frs-n1
+- Middle East:
+  - mea-frs-n1
+- Montreal:
+  - mtl-frs-n5
+- Singapore:
+  - sgp-frs-n1
+- Sydney:
+  - syd-frs-n1
+- Warsaw:
+  - wsw-frs-n1

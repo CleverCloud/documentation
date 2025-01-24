@@ -38,19 +38,20 @@ dotnet:
 elixir:
   eol_source: "https://hexdocs.pm/elixir/compatibility-and-deprecations.html"
   default:
-    - "1.17"
+    - "1.18"
   accepted:
     - "1.8 (EOL)"
     - "1.9 (EOL)"
     - "1.10 (EOL)"
     - "1.11 (EOL)"
     - "1.12 (EOL)"
-    - "1.13"
+    - "1.13 (EOL)"
     - "1.14"
     - "1.15"
     - "1.16"
+    - "1.17"
 java:
-  eol_source: "https://www.oracle.com/fr/java/technologies/java-se-support-roadmap.html"
+  eol_source: "https://adoptium.net/fr/support/"
   default:
     - "11"
   accepted:

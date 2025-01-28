@@ -27,7 +27,7 @@ For most of Cloud providers, the use of the file system is not a good practice. 
 Follow the [File System buckets documentation page]({{< ref "doc/addons/fs-bucket" >}}) to set up an FS Bucket for your application.
 {{% /details %}}
 
-{{% details title="Troubleshooting empty repository git error" closed="true" %}}
+{{% details title="Empty repository git error" closed="true" %}}
 
 In some cases, git may display this type of error message:
 
@@ -67,7 +67,7 @@ git push clever production:master
 
 {{% /details %}}
 
-{{% details title="Troubleshooting 'Not a git repository' error" closed="true" %}}
+{{% details title="'Not a git repository' error" closed="true" %}}
 
 ```text
 fatal: Not a git repository (or any of the parent directories)
@@ -79,7 +79,7 @@ You can add all your files with `$ git add .`, then you need to commit the files
 You will finally push your code with `$ git push clever master`.
 {{% /details %}}
 
-{{% details title="Troubleshooting 'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
+{{% details title="'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
 
 "clever" is a name used in our examples to represent the Clever Cloud servers.
 In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:
@@ -141,7 +141,7 @@ The main reasons why your account has been moderated are:
 
 {{% details title="How to recover your application online?" closed="true" %}}
 
-Contact Clever Cloud's Support team at [support@clever-cloud.com](mailto:support@clever-cloud.com) to explain what your apps do.
+Contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) to explain what your apps do.
 
 Ensure all your pending invoices are paid.
 
@@ -155,13 +155,34 @@ You have to pay all of your pending invoices to recover your data.
 
 {{% /details %}}
 
+## Network
+
+{{% details title="Backend Timeout Limits" closed="true" %}}
+
+Clever Cloud uses [Sōzu](https://www.sozu.io) as its load balancer and reverse proxy. Sōzu enforces a 180-second timeout for all backend operations to prevent resource exhaustion from hanging requests.
+
+For operations that may exceed the 180-second limit, implement one of these approaches:
+
+1. Use long polling to send periodic status checks from the client
+2. Create an asynchronous worker system: move long-running tasks to a background [worker]({{< ref "doc/develop/workers/" >}} "workers")
+3. [Purchase a custom load balancer from Clever Cloud](https://www.clever-cloud.com/fr/contact/) with different timeouts
+
+##### Additional considerations:
+
+- Design your application architecture to handle timeouts gracefully
+- Break up long-running operations into smaller tasks
+
+Use your embedded [Grafana]({{< ref "doc/metrics/">}} "Grafana on Clever Cloud") to monitor resource usage when implementing any of these solutions.
+  
+{{% /details %}}
+
 ## Others issues
 
 {{% details title="Missing GitHub organization on the application creation page" closed="true" %}}
 
 GitHub does not give us access to organizations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
 
-You can of course reach to <support@clever-cloud.com> if this page was not helpful enough.
+Feel free to reach to [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) if this page wasn't helpful enough.
 
 {{% /details %}}
 

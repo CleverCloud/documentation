@@ -30,6 +30,10 @@ A **Scaler** is a Clever Cloud "instance". It is an individual and independent v
 With the Scalers, Clever Cloud gives you the ability to scale your application **up and down** with **two non
 exclusive methods**: horizontal and vertical scaling.
 
+{{< callout type="warning" >}}
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
+{{< /callout >}}
+
 ### Enable auto-scalability
 
 To enable the scalability of your application, open the [console](https://console.clever-cloud.com/) and go in the
@@ -52,9 +56,9 @@ reasonable level** is reached.
 
 The following scheme depicts a Scaler replication in case of a load increase:
 
-{{< image "/images/doc/scaling_horizontal_scheme.jpg" "Horizontal scaling: you can define the min and max numbers of Scalers you need." >}}
+![Horizontal scaling: numbers of scalers](/images/doc/scaling_horizontal_scheme.jpg "Horizontal scaling: you can define the min and max numbers of Scalers you need.")
 
-{{< image "/images/doc/select-scalab-horizontal.png" "Horizontal scaling: the amount of Scalers will evolve between 1 and 15." >}}
+![Numbers of scalers between 1 and 15](/images/doc/select-scalab-horizontal.png "Horizontal scaling: the amount of Scalers will evolve between 1 and 15.")
 
 ## Vertical scaling
 
@@ -71,11 +75,11 @@ load, the larger the instance.
 
 The following scheme depicts a larger Scaler replacement in case of a load increase:
 
-{{< image "/images/doc/scaling_vertical_scheme.jpg" "vertical scaling" >}}
+![Vertical scaling](/images/doc/scaling_vertical_scheme.jpg "Vertical scaling")
 
 You can choose the size of Scalers you want by defining a maximum instance size manually:
 
-{{< image "/images/doc/select-scalab.png" "Vertical scaling: the Scaler size will go from S to XL." >}}
+![Scaler size from S to XL](/images/doc/select-scalab.png "Vertical scaling: the Scaler size will go from S to XL.")
 
 ## Combination of both scalings
 

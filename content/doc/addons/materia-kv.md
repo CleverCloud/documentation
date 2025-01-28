@@ -77,6 +77,8 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 {{< /callout >}}
 
+{{% content/kv-explorer %}}
+
 ## Using the Redis API compatible layer
 
 ### Environment variables and CLI usage
@@ -157,6 +159,7 @@ Find below the list of currently supported commands:
 | `INCRBY` | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INFO` | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans. |
 | `KEYS` | Returns all keys matching `pattern`, can be `*` |
+| `LOLWUT` | Returns Materia KV's version and might be hiding an easter egg 👀 |
 | `MGET` | Returns the values of all specified keys. For every key that doesn't hold a string value or doesn't exist, the special value `nil` is returned. Because of this, the operation never fails. |
 | `MSET` | Sets the given keys to their respective values. `MSET` replaces existing values with new values, just as regular `SET`. `MSET` is atomic, so all given keys are set at once. It is not possible for clients to see that some keys were updated while others are unchanged. |
 | `PERSIST` | Remove the existing time to live associated with the `key`. |

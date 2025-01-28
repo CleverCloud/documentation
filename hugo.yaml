@@ -1,10 +1,10 @@
-baseURL: https://developers.clever-cloud.com
+baseURL: https://www.clever-cloud.com/developers 
 languageCode: en-us
 title: Clever Cloud Documentation
+publishDir: public/developers
 pagination:
   pagerSize: 21 # Number of entries in Changelog section before pagination
 
-enableRobotsTXT: true
 enableGitInfo: true
 
 module:
@@ -13,12 +13,21 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.135.0"
+    max: "0.140.2"
 
 outputs:
-  home: [HTML]
-  page: [HTML]
-  section: [HTML, RSS]
+  home: [HTML, LLMS]
+  page: [HTML, Markdown]
+  section: [HTML, Markdown, RSS]
+
+outputFormats:
+  LLMS:
+    mediaType: "text/plain"
+    baseName: "llms"
+    isPlainText: true
+
+  Markdown:
+    baseName: index.html
 
 privacy:
   youtube:
@@ -36,15 +45,16 @@ languages:
     #title: "Documentation de Clever Cloud "
 
 params:
+  description: Clever Cloud is a Platform-as-a-Service (PaaS) cloud provider, an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up
   images:
-  - /images/feature.png
+  - images/feature.png
   navbar:
     displayTitle: false
     displayLogo: true
     logo:
       path: images/logo.svg
       dark: images/logo-dark.svg
-      link: /
+      link: /developers
       width: 175
   comments:
     enable: false
@@ -132,6 +142,10 @@ menu:
       name: References
       params:
         type: separator
+      weight: 1
+    - identifier: tips_and_tricks
+      name: "Tips & Tricks"
+      url: "/doc/best-practices/tips_and_tricks/"
       weight: 2
     - identifier: cli
       name: "Clever Tools CLI"

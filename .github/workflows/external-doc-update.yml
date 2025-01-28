@@ -1,0 +1,67 @@
+name: Update external doc?
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+    branches: [ main ]
+
+jobs:
+  changed_files:
+    runs-on: ubuntu-latest
+    name: Test changed-files
+    environment: update doc
+    # Needed to post comments and create issues
+    permissions:
+        issues: write
+        pull-requests: write
+        contents: read
+    steps:
+      - uses: actions/checkout@v4
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      # Check if any external doc needs an update
+      - name: Get files linked to external doc
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            content/guides/astro.md
+            context/guides/nuxt.md
+      
+      # Create issue and assign PR author
+      - name: Create issue
+        id: create-issue
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.number }}
+          CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+        uses: JasonEtco/create-an-issue@v2
+        with:
+          filename: .github/external-doc-issue.yml
+          assignees: ${{ github.event.pull_request.user.login }}
+          update_existing: true
+          search_existing: all
+      
+      # Post a single comment with auto-updating body
+      #- name: Create or update a comment
+      #  env:
+      #    CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+      #  uses: taoliujun/action-unique-comment@v1
+      #  with:
+      #    uniqueIdentifier: ${{ github.workflow }}
+      #    body: |
+      #      You updated ${{ env.CHANGED_FILES }}. This content is also listed on external doc. Issue number ${{ steps.create-issue.outputs.number }} has been created and assigned to you 🫵👁️👄👁️
+      #      
+      #      See it or modify it here: 
+      #        * ${{ steps.create-issue.outputs.url }}
+      #      
+      #      _This unique comment uses the very cool [taoliujun/action-unique-comment](https://github.com/marketplace/actions/unique-comment). Thank you <3_
+
+      

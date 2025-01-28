@@ -28,6 +28,8 @@ The version currently installed by the add-on are the following :
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 
+{{% content/dbMigration %}}
+
 ## Leader / follower topology
 
 By default, all redis add-ons are configured as leaders. You can set up a redis add-on as a follower from the add-on panel (in the "Add-on information" tab). You need to set the leader
@@ -40,6 +42,8 @@ While a redis database is configured as a follower, it's read-only.
 You can use Redis URI to connect to your databases with -u option. However, the generated URI in the information tab (`REDIS_URL`) of you add-on is not a legal syntax to use `redis-cli`.
 
 This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/database]*
+
+{{% content/kv-explorer %}}
 
 ## Default retention policy
 

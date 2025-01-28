@@ -2,7 +2,7 @@
 type: docs
 title: PostgreSQL
 position: 7
-shortdesc: PostgreSQL is an open-source relational database management system (RDBMS).
+shortdesc: PostgreSQL is an open source relational database management system (RDBMS).
 tags:
 - addons
 keywords:
@@ -33,6 +33,8 @@ Some applications require a non-empty database to run properly. If you want to i
 1. [WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/)
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
+
+{{% content/dbMigration %}}
 
 ## Direct access
 

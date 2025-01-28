@@ -25,8 +25,8 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-{{< callout type="warning" >}}**Warning**  
-• Back-ups are **not included** in the public cloud offer. You can still do them manually.  
+{{< callout type="warning" >}}**Warning**
+• Back-ups are **not included** in the public cloud offer. You can still do them manually.
 • FSBuckets are not available for Docker applications because of security concerns.
 {{< /callout >}}
 
@@ -57,15 +57,15 @@ Note that the `async` parameter can be set per bucket.
 ## Configuring your application with buckets.json (@deprecated)
 
 {{< callout emoji="🧹" >}}
-**This method is deprecated**  
+**This method is deprecated**
 This method is deprecated, we strongly recommend that you use environment variables.
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
 Also, this method does not support the `async` parameter.
 {{< /callout >}}
 
 To configure your application to use buckets, use the
-`clevercloud/buckets.json` file.  
-The `clevercloud` folder must be located at the root of your application.  
+`clevercloud/buckets.json` file.
+The `clevercloud` folder must be located at the root of your application.
 The `buckets.json` file must contain the following structure:
 
 ```javascript
@@ -114,12 +114,41 @@ root folder.
 If you want to use an absolute path, you can use the `APP_HOME` environment
 variable, see [special environment variables]({{< ref "doc/develop/env-variables.md#special-environment-variables" >}})
 
-### From the addon dashboard
+### From the add-on dashboard
 
-The **File explorer** tab of the **addon dashboard** gives you access to your files
+The **File explorer** tab of the **add-on dashboard** gives you access to your files
 in the FS bucket.
+
+### From your favorite SFTP client
+
+The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https://console.clever-cloud.com) displays information you need to connect using SSH File Transfer Protocol (SFTP). You can use the following SSH public keys to ensure the connection is authentic and trusted:
+
+| Algorithm | Key size | Fingerprint                                        |
+|-----------|----------|----------------------------------------------------|
+| ED25519   | 256      | `SHA256:+ku6hhQb1O3OVzkZa2B+htPD+P+5K/X6QQYWXym/4Zo` |
+| ED25519   | 256      | `SHA256:8tZzRvA3Fh9poG7g1bu8m0LQS819UBh7AYcEXJYiPqw` |
+| ED25519   | 256      | `SHA256:HHGCP5cf0jQbQrIRXjiC9aYJGNQ+L9ijOmJUueLp+9A` |
+| ED25519   | 256      | `SHA256:Hyt6ox+v2Lrvdfl29jwe1/dBq9zh2fmq2DO6rqurl7o` |
+| ED25519   | 256      | `SHA256:drShQbl3Ox+sYYYP+urOCtuMiJFh7k1kECdvZ4hMuAE` |
+| ED25519   | 256      | `SHA256:h1oUNRkYaIycchUsyAXPQHnu6MtTF2YUEYuisu+vnOE` |
+| RSA       | 4096     | `SHA256:+550bmBCNAHscjOmKrdweueVUz2E6h1KzmSV+0c0U7w` |
+| RSA       | 4096     | `SHA256:1O7d6cdmqj42Dw4nX90Y+6zIFTUI+aIwD0SLMQuj0ko` |
+| RSA       | 4096     | `SHA256:AkHQnQXJ1lFEtliLHl8hlG7NiIZZgVn/uuRMCZJOKJk` |
+| RSA       | 4096     | `SHA256:Atxhx7U0MOuZC7e4vs1tpyTJmNttB7d4+HNC5hiavFo` |
+| RSA       | 4096     | `SHA256:Bla7GeL6hggg+rf6iDlKMrzIhxEBYB3VL7Q6PYGJYt4` |
+| RSA       | 4096     | `SHA256:H5ZhQ/5JdMPSG49ojUNEhwSuRD663mnIJb/YDFFntyk` |
+| RSA       | 4096     | `SHA256:TZr6eFrzoJmn4RS55Tb6yTd+WV9lTGtW0q+uLVbI7IE` |
+| RSA       | 4096     | `SHA256:ZYFb1AsB+q++NRf7yW8E5rNOfxTRwjpJt6hqFP/NBNs` |
+| RSA       | 4096     | `SHA256:d+nTyowvYtcxF28mCUu1ilqPJuLMExGyJ16Sv/pvoVY` |
+| RSA       | 4096     | `SHA256:flpv4s3VxOrQFc/IG+BpR1s9dgDvR07A6zunNqO4Co0` |
+| RSA       | 4096     | `SHA256:hvZN8rgSG82weLOeMTXdh1VwhjuRv+MJNnUt/X9R39g` |
+| RSA       | 4096     | `SHA256:ls20B8C6Jdqx7RPQAjzVX7KmnrHizJum2sEvNhMcl60` |
+| RSA       | 4096     | `SHA256:u1AzFc2AdFmlPRdNIZsn0sQJ/CKbfC2ZmXnQfabPek4` |
+| RSA       | 4096     | `SHA256:wUPBX3X5gALgxXqD+IwG5qPRb0jbiOZ8/U1BOZeNhtk` |
+| RSA       | 4096     | `SHA256:yRHC/tAlBpHLlRZ5rwbZ1z+159Bj3yg0VxHf+hXINLg` |
+| RSA       | 4096     | `SHA256:yhn79aqxOGQZ+LXdN1/vIY+jwRIbBamlVT1+HdFoA6o` |
 
 ### From your favorite FTP client
 
-The **Addon information** tab of your FS Bucket add-on displays the information
+The **Add-on information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.

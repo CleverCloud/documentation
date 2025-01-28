@@ -4,7 +4,7 @@ By linking an application to an add-on, the application has the add-on environme
 
 ### On add-on creation
 
-Many add-ons do exist on Clever Cloud: refer to [the full list](/doc/addons) and check add-ons dedicated pages for full instructions.
+Many add-ons do exist on Clever Cloud: refer to [the full list](/developers/doc/addons) and check add-ons dedicated pages for full instructions.
 
 During add-on creation, an **Applications** screen appears, with a list of your applications. You can toggle the button to *Link* and click *next*. If you finish the process of add-on creation, the application is automatically linked to it.
 

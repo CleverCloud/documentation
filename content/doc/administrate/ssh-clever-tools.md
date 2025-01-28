@@ -103,3 +103,28 @@ journalctl -efa -u bas-deploy.service
 ```
 
 You can also use `journalctl` [with other options](https://www.commandlinux.com/man-page/man1/journalctl.1.html) if you need to.
+
+## Troubleshooting
+
+A commonly encountered issue when inputting `clever ssh <application>` is:
+```
+Error: Failed to choose instance: 'Error while running choice script: Error: This application has no instances you can ssh to'
+Connection to sshgateway-clevercloud-customers.services.clever-cloud.com closed. 
+```
+
+The most common causes are:
+- your application is not running. You cannot access a non-running instance, your application must be running.
+- you do not have the right to access this instance or/and organization.
+
+For the second cause, it's very likely to be a key management issue. In order to fix it:
+* make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](../../account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud) 
+* make sure your client is using the proper private key
+
+A useful command for debugging is:
+```
+ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
+```
+
+The line `debug1: Will attempt key:` shows you the key(s) used to connect.
+
+If your key is present but not resolved as the first one, you can [force the use of a specific key](../../account/ssh-keys-management/#configure-your-ssh-agent)

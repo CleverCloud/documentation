@@ -113,7 +113,7 @@ Connection to sshgateway-clevercloud-customers.services.clever-cloud.com closed.
 ```
 
 The most common causes are:
-- your application is not running. You cannot access a non-running instance, your application must be running.
+- your application isn't running. You cannot access a non-running instance, your application must be running.
 - you do not have the right to access this instance or/and organization.
 
 For the second cause, it's very likely to be a key management issue. In order to fix it:

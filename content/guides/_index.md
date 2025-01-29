@@ -10,6 +10,7 @@ aliases:
 - /doc/deploy/application/docker/tutorials
 type: "docs"
 comments: false
+llmsTxtOptional: true
 ---
 ## Frameworks
 

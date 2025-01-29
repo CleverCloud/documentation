@@ -28,6 +28,8 @@ The version currently installed by the add-on are the following :
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 
+{{% content/dbMigration %}}
+
 ## Leader / follower topology
 
 By default, all redis add-ons are configured as leaders. You can set up a redis add-on as a follower from the add-on panel (in the "Add-on information" tab). You need to set the leader

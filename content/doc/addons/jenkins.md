@@ -21,7 +21,7 @@ You can find out more about Jenkins on [their website](https://www.jenkins.io).
 
 Jenkins on Clever Cloud will allow your team to effortlessly setup CI/CD pipelines, executed on runners that deploy on Clever Cloud docker applications. This way, you will only pay for the CI/CD you really consume, to the second. You will also be able to access Jenkins interface by using the Clever Cloud SSO (Single Sign-On) Authentication.
 
-{{< image "/images/jenkins/full-dashboard.png" "Jenkins Dashboard" >}}
+{{< image "/developers/images/jenkins/full-dashboard.png" "Jenkins Dashboard" >}}
 
 ## Create Jenkins add-on
 
@@ -92,7 +92,7 @@ Let's configure a runner template for Java Maven projects:
 - Set the docker image your jobs will use. For example `jenkins/jnlp-agent-maven`. Be sure to read the [section about Docker image requiremetns](#docker-image-requirements).
 - Select the virtual machine size you need. For Java projects, let's use a M instance that has 4 vCPUs and 8 GiB of RAM.
 
-{{< image "/images/jenkins/cloud-configuration.png" "Jenkins Cloud configuration" >}}
+{{< image "/developers/images/jenkins/cloud-configuration.png" "Jenkins Cloud configuration" >}}
 
 Once you configured everything, click on `Save` at the end. You should now have a runner template ready for Java Maven projects.
 
@@ -153,12 +153,12 @@ sleep 60
 Now that the job is configured, we can start it by clicking on the `Build now` button in the left menu. A message saying that the build has been scheduled should be printed.
 You should also see after a few seconds a pending Job in the `Build history`, on your left.
 
-{{< image "/images/jenkins/jobs-history.png" "Jenkins jobs history" >}}
+{{< image "/developers/images/jenkins/jobs-history.png" "Jenkins jobs history" >}}
 
 At the same time, a new application should have been created in your organization, named `Jenkins agent <UUID>`. The application should be deploying and once it gets deployed, the job
 will start to be executed.
 
-{{< image "/images/jenkins/runner-deploying.png" "Jenkins runner deploying" >}}
+{{< image "/developers/images/jenkins/runner-deploying.png" "Jenkins runner deploying" >}}
 
 At some point the application should have deployed and you should be able to click on the Job's number in the `build history` list. From there, you can open the `Console Output`
 which is basically your job logs.
@@ -242,7 +242,7 @@ it will be displayed as a notification and as a message in the `Manage Jenkins` 
 
 The Clever Cloud Jenkins dashboard also has an item informing you about available Jenkins updates.
 
-{{< image "/images/jenkins/update-available-cc-dashboard.png" "Jenkins update available" >}}
+{{< image "/developers/images/jenkins/update-available-cc-dashboard.png" "Jenkins update available" >}}
 
 After Jenkins or some plugins were updated, Jenkins will need to restart.
 
@@ -250,7 +250,7 @@ After Jenkins or some plugins were updated, Jenkins will need to restart.
 
 To update Jenkins, you can go into the `Manage Jenkins` administration page. If an update is available, it should ask you if you want to install it with a message looking like this:
 
-{{< image "/images/jenkins/update-available.png" "Jenkins update message" >}}
+{{< image "/developers/images/jenkins/update-available.png" "Jenkins update message" >}}
 
 You can then click on the `Or upgrade automatically` button. It should start downloading and installing the update. You can enable the option `Restart Jenkins when installation is complete and no jobs are running` and Jenkins will restart automatically. After a few minutes, it should be available again.
 

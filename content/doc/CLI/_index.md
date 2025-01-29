@@ -27,7 +27,7 @@ In addition to the Clever Cloud console, you can manage your add-ons and applica
   {{< card link="getting_started" title="Install" icon="arrow-down-tray" >}}
   {{< card link="create" title="Create an application or an add-on" icon="command-line" >}}
   {{< card link="configure" title="Configure an application" icon= "adjustments-horizontal">}}
-  {{< card link="configure" title="Manage an application" icon="wrench-screwdriver" >}}
+  {{< card link="manage" title="Manage an application" icon="wrench-screwdriver" >}}
   {{< card link="lifecycle" title="Manage an application's lifecycle" icon="arrow-path" >}}
   {{< card link="notifications" title="Set notifications" icon="bell" >}}
   {{< card link="ssh-access" title="SSH access an application" icon="key" >}}

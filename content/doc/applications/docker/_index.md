@@ -204,7 +204,6 @@ CMD ["sudo","/root/start.sh"]
 We provide a few examples of dockerized applications on Clever Cloud.
 
 * [Elixir App](https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-* [Haskell App](https://GitHub.com/CleverCloud/demo-haskell)
 * [Hack / HHVM App](https://GitHub.com/CleverCloud/demo-hhvm)
 * [Seaside / Smalltalk App](https://GitHub.com/CleverCloud/demo-seaside)
 * [Rust App](https://GitHub.com/CleverCloud/demo-rust)

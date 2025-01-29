@@ -35,3 +35,5 @@ elasticsearch:
 redis:
   dedicated:
     - "v7.2.4"
+
+dev_message: "**Important**: Dev plans are free and **solely for testing purposes**. They don't provide the same guarantees or SLAs as dedicated plans."

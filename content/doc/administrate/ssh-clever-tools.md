@@ -123,7 +123,7 @@ A useful command for debugging is:
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
 ```
 
-This command will show information about your SSH connection attempt, such as the key, and the organization your key is linked to.  
+This command shows information about your SSH connection attempt, such as the key, and the organization your key is linked to.  
 
 If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).  
 If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](../../account/ssh-keys-management/#configure-your-ssh-agent)

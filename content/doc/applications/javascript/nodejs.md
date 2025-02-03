@@ -53,7 +53,7 @@ The `package.json` file should look like the following:
     "start" : "node myapp.js"
   },
   "engines" : {
-    "node" : "^20"
+    "node" : "^22"
   }
 }
 ```

@@ -92,7 +92,7 @@ The `-t` flag is mandatory for the ssh connection to work properly. If your term
 
 ## Access your application's folder
 
-No matter wich way you've decided to use to SSH to the machine, your application's folder is located at: `/home/bas/<app_id>`.
+No matter which way you've decided to use to SSH to the machine, your application's folder is located at: `/home/bas/<app_id>`.
 
 ## Show your application's logs
 
@@ -103,3 +103,27 @@ journalctl -efa -u bas-deploy.service
 ```
 
 You can also use `journalctl` [with other options](https://www.commandlinux.com/man-page/man1/journalctl.1.html) if you need to.
+
+## Troubleshooting
+
+A commonly encountered issue when using `clever ssh` is:
+```
+Error: Failed to choose instance: 'Error while running choice script: Error: This application has no instances you can ssh to'
+```
+
+First, make sure your application is running, otherwise there is no instance to connect to.
+
+If your application is up, this means you aren't allowed to access the organization or application. This might be due to permission issue.  
+If you're supposed to have access to the application, this is likely due to a key management issue. To fix it:
+* make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](../../account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud) 
+* make sure your SSH agent is using the proper private key
+
+A useful command for debugging is:
+```
+ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
+```
+
+This command shows information about your SSH connection attempt, such as the key, and the organization your key is linked to.  
+
+If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).  
+If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](../../account/ssh-keys-management/#configure-your-ssh-agent)

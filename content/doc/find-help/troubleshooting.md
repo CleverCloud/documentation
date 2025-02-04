@@ -173,6 +173,13 @@ For operations that may exceed the 180-second limit, implement one of these appr
 - Break up long-running operations into smaller tasks
 
 Use your embedded [Grafana]({{< ref "doc/metrics/">}} "Grafana on Clever Cloud") to monitor resource usage when implementing any of these solutions.
+
+##### How can I diagnosing Network Issue with `curl`
+
+To gather detailed timing information for each step of the connection process, run the following `curl` command:
+``` bash
+curl -o /dev/null -s -w "DNS resolution: %{time_namelookup}s\nTCP connection: %{time_connect}s\nTLS handshake: %{time_appconnect}s\nTime to first byte: %{time_starttransfer}s\nTotal time: %{time_total}s\n" https://<example.com>
+```
   
 {{% /details %}}
 

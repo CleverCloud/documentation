@@ -92,8 +92,8 @@ Here are various scenarios:
 
 * `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
 * `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
-* `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
-* `NODE_ENV=production, CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
+* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
+* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
 * `NODE_ENV=production`: Package manager (NPM / Yarn) default behavior. Development dependencies will not be installed.
 * Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behavior. Development dependencies will be installed.
 
@@ -182,7 +182,7 @@ To deploy an  application with pnpm, set the following environment variables:
 {{< tabs items="npm, Corepack" >}}
 
   {{< tab >}}**Install with `npm`**:
-  
+
   ```bash
   CC_NODE_BUILD_TOOL="custom"
   CC_PRE_BUILD_HOOK="npm install -g pnpm"
@@ -192,7 +192,7 @@ To deploy an  application with pnpm, set the following environment variables:
   {{< /tab >}}
 
   {{< tab >}}**Enable with Corepack**:
-  
+
   ```bash
   CC_NODE_BUILD_TOOL="custom"
   CC_PRE_BUILD_HOOK="corepack enable pnpm"

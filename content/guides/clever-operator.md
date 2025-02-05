@@ -15,7 +15,7 @@ draft: false
 
 ## What's the Clever Operator
 
-The [Clever Operator](https://github.com/CleverCloud/clever-operator) is an open-source project designed to seamlessly integrate [Clever Cloud](https://www.clever-cloud.com/)’s managed services into Kubernetes environments. By leveraging Kubernetes [Custom Resource Definitions (CRDs)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions)), the Clever Operator enables developers to manage Clever Cloud resources directly from their Kubernetes clusters, aligning cloud-native practices with Clever Cloud’s powerful platform.
+The [Clever Operator](https://github.com/CleverCloud/clever-operator) is an open source project designed to seamlessly integrate [Clever Cloud](https://www.clever-cloud.com/)’s managed services into Kubernetes environments. By leveraging Kubernetes [Custom Resource Definitions (CRDs)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions)), the Clever Operator enables developers to manage Clever Cloud resources directly from their Kubernetes clusters, aligning cloud-native practices with Clever Cloud’s powerful platform.
 
 Modern applications often require a combination of containerized workloads and managed services, such as databases or caches. Managing these resources separately across platforms can become complex and error-prone. The Clever Operator simplifies this process by acting as a bridge, allowing developers to define and interact with Clever Cloud’s resources using familiar Kubernetes paradigms.
 
@@ -26,7 +26,7 @@ Key features of the Clever Operator include:
 - **Seamless Integration:** Interact with Clever Cloud’s API securely and efficiently.
 - **Scalability and Flexibility:** Manage resources across multiple namespaces with consistent configurations.
 
-This documentation will guide you through:
+This documentation guide you through:
 
 - Installing and configuring the Clever Operator in your Kubernetes cluster.
 - Managing Clever Cloud resources such as PostgreSQL and Redis through examples.
@@ -39,7 +39,7 @@ Before you begin, ensure that you have the following tools and resources based o
 ### To Build the Operator
 
 - **Git:** Clone the Clever Operator repository to access the source code.
-- **Rust Toolchain:** Install the Rust programming language and its toolchain to compile the operator from source. Follow the installation guide at [https://rustup.rs/](https://rustup.rs/).
+- **Rust toolchain:** Install the Rust programming language and its toolchain to compile the operator from source. Follow the installation guide at [https://rustup.rs/](https://rustup.rs/).
 - **Docker:** Build container images for deploying the operator in Kubernetes.
 
 ### To Deploy the Operator
@@ -52,7 +52,7 @@ These prerequisites are essential for getting started with the Clever Operator, 
 
 ## Installation
 
-We suggest you to deploy the Clever Operator either directly from Dockerhub or using the Helm chart.
+The simplest ways to deploy the Clever Operator are either directly from Docker Hub or using the Helm chart.
 
 ### Deploying from DockerHub
 
@@ -137,7 +137,7 @@ Global configuration settings apply across all namespaces and are defined via en
     - `CLEVER_OPERATOR_API_CONSUMER_KEY`: Your Clever Cloud consumer key
     - `CLEVER_OPERATOR_API_CONSUMER_SECRET`: Your Clever Cloud consumer secret.
 
-- **Configuration Files:** By default, if the `--config` flag is not provided to the binary, the operator will look at the following locations to retrieve its configuration (in order of priority):
+- **Configuration Files:** By default, if the `--config` flag isn't provided to the binary, the operator looks at the following locations to retrieve its configuration (in order of priority):
     
     1. `/usr/share/clever-operator/config.{toml,yaml,json}`
     2. `/etc/clever-operator/config.{toml,yaml,json}`
@@ -148,7 +148,7 @@ Global configuration settings apply across all namespaces and are defined via en
 
 ### Namespace-Level Configuration
 
-Namespace-level configurations override the global settings for specific namespaces. They are defined using a Kubernetes Secret resource named `clever-operator` with the `config` key.
+Namespace-level configurations override the global settings for specific namespaces. They're defined using a Kubernetes Secret resource named `clever-operator` with the `config` key.
 
 - **Creating a Namespace-Level Configuration:** Create a Kubernetes Secret with the necessary configuration keys:
     
@@ -182,7 +182,7 @@ The operator automatically detects and applies namespace-specific configurations
 
 ### Validating Configuration
 
-To ensure your configuration is applied correctly, check the operator logs for any errors or warnings:
+To ensure your configuration is applied correctly, look at the operator logs for any errors or warnings:
 
 ```bash
 kubectl logs -n clever-operator <operator-pod-name>
@@ -253,5 +253,5 @@ The Clever Operator enables you to manage Clever Cloud resources directly from y
     
 - **Accessing Redis:** Retrieve the connection details from the Clever Cloud dashboard or the resource’s status field.
 
-These examples demonstrate the simplicity and power of using the Clever Operator to manage cloud resources declaratively in Kubernetes.
+These examples demonstrate the simplicity and power of using the Clever Operator to manage cloud resources in a declarative way in Kubernetes.
 

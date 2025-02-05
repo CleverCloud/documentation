@@ -546,6 +546,81 @@ For example if your path is `/login` you need to have a file `login.html` becaus
 
 You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
 
+## Retaining multiple version of an object with Versioning
+
+### What is bucket versioning
+
+Versioning allow you to store multiple variants of an object inside of your bucket. When you upload a file with the same name as one already present in the bucket, Cellar  store a version of the previous content. This protect you from unintended action such as the accidental deletion of a file. 
+
+When you store a new version of a file, only this version is visible. The previous one is hidden but still stored inside of the bucket.  
+For example, if you uploaded 5 time a file named `test.txt`, with different text each time. You would only see the most recent version, but the 4 previous version are still stored somewhere in the bucket. This would allow you to recover a previous version like the third one.
+
+### How does versioning work
+
+Versioning can't be enabled for file, it can only be enabled for an entire bucket.  
+A bucket can be in one of thee state :
+
+ - Unversioned (The default)
+ - Versioning-enabled
+ - Versioning-suspended
+
+You enable and suspend versioning at the bucket level. After you version-enable a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket.
+Once versioning is enabled, any object you add have a unique version ID. Object that already existed before enabling versioning have a version ID of `null`.
+
+### Activate Versioning with AWS CLI
+
+To activate Versioning, you can use AWS CLI. You can use the following commande to enable it on a bucket.
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
+```
+
+If you want to turn off Versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+
+You can check that Versioning is enabled for your bucket with :
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-bucket-versioning --bucket <bucket_name>
+```
+
+### How to use Versioning
+
+When Versioning is enabled, the object added will automatically have a VersionID added to them. Only the latest version of an object if visible.
+
+#### List all Versioned Object
+
+If you need to list all the object in your bucket, including the different version of file stored in it, you can run : 
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket <bucket_name>
+```
+
+#### List all the version of a specific Object
+
+If you want to find the versions of only a specific object, you can use the following command. In this example, we find the versions of test.txt :
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket bucket-with-versioning --prefix <file_name>
+```
+
+#### Get the version of an Object
+
+If you want to get the previous version of an object, you need the VersionID that you can get with the two previous command. You can then use :
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
+```
+
+To remove a version of an object, you can use this command : 
+
+```sh
+aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>
+```
+
+{{< callout type="warning">}}
+Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.
+{{< /callout>}}
+
 ## Troubleshooting
 
 {{% details title="SSL error with s3cmd" closed="true" %}}

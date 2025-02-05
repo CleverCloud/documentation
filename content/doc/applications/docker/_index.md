@@ -119,94 +119,17 @@ You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) ins
 
 Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>` parameter during the `docker build` phase.
 
-### Dockerized Rust application Deployment
-
-To make your dockerized application run on clever Cloud, you need to:
-
-* expose port 8080 in your docker file
-* run the application with `CMD` or `ENTRYPOINT`
-
-For instance, here is the `Dockerfile` used for the Rust application:
-
-```Dockerfile{linenos=table}
-# rust tooling is provided by `archlinux-rust`
-FROM geal/archlinux-rust
-MAINTAINER Geoffroy Couprie, contact@geoffroycouprie.com
-
-# needed by rust
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-
-# relevant files are in `./source`
-ADD . /source
-WORKDIR /source
-
-# Clever Cloud expects your app to listen on port 8080
-EXPOSE 8080
-RUN rustc -V
-
-# Build your application
-RUN cargo build
-
-# Run the application with `CMD`
-CMD cargo run
-```
-
-### Dockerized HHVM application Deployment
-
-Deploying a [HHVM](https://hhvm.com/) application is a bit trickier as it needs to have both HHVM and [nginx](https://www.nginx.com/) running as daemons. To be able to have them running both, we need to put them in a start script:
-
-```bash{linenos=table}
-#!/bin/sh
-
-hhvm --mode server -vServer.Type=fastcgi -vServer.Port=9000&
-
-service nginx start
-
-composer install
-
-echo "App running on port 8080"
-
-tail -f /var/log/hhvm/error.log
-```
-
-Since the two servers are running as daemons, we need to start a long-running process. In this case we use `tail -f`. We then add `start.sh` as the `CMD` in the `Dockerfile`
-
-```Dockerfile{linenos=table}
-# We need HHVM
-FROM jolicode/hhvm
-
-# We need nginx
-RUN sudo apt-get update \
- && sudo apt-get install -y nginx
-
-ADD . /root
-RUN sudo chmod +x /root/start.sh
-
-# Nginx configuration
-ADD hhvm.hdf /etc/hhvm/server.hdf
-ADD nginx.conf /etc/nginx/sites-available/hack.conf
-RUN sudo ln -s /etc/nginx/sites-available/hack.conf /etc/nginx/sites-enabled/hack.conf
-# Checking nginx config
-RUN sudo nginx -t
-
-RUN sudo chown -R www-data:www-data /root
-WORKDIR /root
-
-# The app needs to listen on port 8080
-EXPOSE 8080
-
-# Launch the start script
-CMD ["sudo","/root/start.sh"]
-```
-
 ### Sample dockerized applications
+
 
 We provide a few examples of dockerized applications on Clever Cloud.
 
 * [Elixir App](https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-* [Hack / HHVM App](https://GitHub.com/CleverCloud/demo-hhvm)
 * [Seaside / Smalltalk App](https://GitHub.com/CleverCloud/demo-seaside)
 * [Rust App](https://GitHub.com/CleverCloud/demo-rust)
+
+You might need to use the `CC_DOCKERFILE = <name of your Dockerfile>` variable.
+
 
 {{% content/env-injection %}}
 

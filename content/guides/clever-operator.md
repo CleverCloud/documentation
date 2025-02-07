@@ -182,7 +182,7 @@ The operator automatically detects and applies namespace-specific configurations
 
 ### Validating Configuration
 
-To ensure your configuration is applied correctly, look at the operator logs for any errors or warnings:
+To ensure your configuration applies correctly, look at the operator logs for any errors or warnings:
 
 ```bash
 kubectl logs -n clever-operator <operator-pod-name>

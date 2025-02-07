@@ -46,7 +46,7 @@ Before you begin, ensure that you have the following tools and resources based o
 
 - **Kubernetes Cluster:** Ensure you have access to a running Kubernetes cluster.
 - **Kubectl:** Install Kubernetes command-line tool for managing cluster resources Installation guide available at https://kubernetes.io/docs/tasks/tools/.
-- **Clever Cloud Account Credentials:** Obtain API tokens and secrets from your Clever Cloud account to configure the operator.
+- **Clever Cloud Account Credentials:** [Obtain API tokens and secrets from your Clever Cloud]({{< ref "/api/howto" >}} "API Overview") account to configure the operator.
 
 These prerequisites are essential for getting started with the Clever Operator, whether you're contributing to its development or deploying it in production.
 

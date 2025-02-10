@@ -52,19 +52,19 @@ These prerequisites are essential for getting started with the Clever Operator, 
 
 ## Getting the credentials
 
-The Clever Operator requires configuration to connect to Clever Cloud's API and manage resources within your Kubernetes cluster. This configuration is based on four credentials:
+The Clever Operator requires configuration to connect to Clever Cloud's API and manage resources within your Kubernetes cluster. This configuration requires four credentials:
 
 - _Consumer key_
 - _Consumer Secret_
 - _Token_
 - _Secret_
 
-To obtain them, you need to connect to the Clever Cloud API, that has an OAuth1 based authentication. As explained in the [Clever Cloud API Overview](/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key and the _Consumer Secret_, and do the Oauth authentication dance to get the _Token_ and _Secret_.
+To obtain them, you need to connect to the Clever Cloud API, that has an OAuth1 based authentication. As explained in the [Clever Cloud API Overview](/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and do the OAuth authentication dance to get the _Token_ and _Secret_.
 
 
 > #### This seems cumbersome, is there an easier way?
 >
-> Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you.
+> Yes the OAuth dance is complex. If you want a simpler setup, there is a small application that you can deploy on Clever Cloud and that automates most of the pain away from you.
 >
 > The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-server](https://github.com/CleverCloud/oauth-consumer-server).
 
@@ -215,7 +215,7 @@ Namespace-level configurations override the global settings for specific namespa
       name: clever-secret
       namespace: <your_namespace>
     stringData:
-      config.toml: |
+      config: |
         [api]
         endpoint = "https://api.clever-cloud.com/v2"
         token = <your_token>

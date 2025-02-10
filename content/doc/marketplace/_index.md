@@ -34,8 +34,8 @@ First, provide a JSON manifest file that describes your add-on:
   "api": {
     "config_vars": [ "ADDON_NAME_MY_VAR" ],
     "regions": [ "eu" ],
-    "password": "44ca82ddf8d4e74d52494ce2895152ee",
-    "sso_salt": "fcb5b3add85d65e1dddda87a115b429f",
+    "password": "<YOUR BEST RANDOM 35+ CHARS>",
+    "sso_salt": "<YOUR VERY BEST RANDOM 35+ CHARS>",
     "production": {
       "base_url": "https://yourservice.com/clevercloud/resources",
       "sso_url": "https://yourservice.com/clevercloud/sso/login"
@@ -81,7 +81,6 @@ Request Body: {
   "plan": "basic",
   "region": "EU",
   "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
-  "logplex_token": "logtoken_yyy",
   "options": {}
 }
 Response Body: {
@@ -106,7 +105,6 @@ the Clever Cloud platform. We send you the slug of the given plan,
 not its name.
 * `region` - The region to provision the add-on. As for now, only "EU" will be sent.
 * `callback_url` - The URL you can use to get details about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
-* `logplex_token` - Deprecated, don't use it.
 * `options` - String -> String map with options.
 The response body contains the following fields:
 * `id` - The add-on id as seen from your side. It *MUST* be a String.
@@ -299,7 +297,7 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    return password == '44ca82ddf8d4e74d52494ce2895152ee'
+    return password == '<THE PASSWORD>'
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
@@ -320,55 +318,59 @@ def requires_auth(f):
 
 ## SSO
 
-Your service probably has a web UI admin panel that your users log into to manage and view their resources. Clever Cloud customers will be able to access the admin panel for their resource if you implement single sign-on (SSO).
+Your service probably has a web UI admin panel that your users log into to manage and view their resources.
+Clever Cloud customers will be able to access the admin panel for their resource if you implement single sign-on (SSO).
 
-Clever Cloud will generate a single sign-on token by combining the salt (a shared secret), timestamp, and resource ID. The user’s browser will be redirected to your site with this token. Your site can confirm the authenticity of the token, then set a cookie for the user session and redirect them to the admin panel for their resource.
+Clever Cloud will generate a single sign-on signature by combining the salt (a shared secret you defined in your manifest) with the rest of the body (see below).
+Clever Cloud redirects the user’s browser to your SSO URL with this signature.
+Your site can confirm the authenticity of the signature, then set a cookie for the user session and redirect them to the admin panel for their resource.
 
-When the user clicks your add-on in their add-on menu, they will be directed via HTTP POST to a URL defined in your manifest.
+When the user opens your add-on dashboard in their add-on menu, they will be directed via HTTP POST to the SSO URL defined in your manifest.
 
 ```http
 POST <production/sso_url>
-Request Body: id=<id>&token=<token>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>
+Content-Type: application/x-www-form-urlencoded
+
+id=<id>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>&user_id=<user_id>&signature=<signature>
 ```
 
 * The hostname or `sso_url` comes from your add-on manifest
 * The `id` is the ID for the previously provisioned resource
-* The `timestamp` is a millisecond timestamp. You *SHOULD* verify that it's not older than 15 minutes
-* The `token` is computed using the formula below
-* The `nav-data` contains information like the current app name and installed add-ons for Clever Cloud's Console.
+* The `timestamp` is a millisecond timestamp. You *SHOULD* verify that it's not older than a few minutes (like 5)
+* The `user_id` is a unique string identifying the current user on the Clever Cloud platform
+* The `email` is the current primary email of the current user on the Clever Cloud platform
+* The `nav-data` contains information like the current app name and installed add-ons for Clever Cloud's Console. At the time of writing this doc, this field is always empty
+* The `signature` is computed using the formula below
 
 ### Token
 
-The token field in the SSO call, is created as follows:
+The `signature` field in the SSO call is created as follows:
 
 ```javascript
-sha1sum(id + ':' + sso_salt + ':' + timestamp)
+sha512sum(id + ':' + user_id + ':' + email + ':' + nav-data + ':' + sso_salt + ':' + timestamp)
 ```
 
-Where:
-
-* `id` - The id of the connecting add-on. This is the id you returned on
-the provision call.
-
-* `sso_salt` - The `sso_salt` field defined in your manifest.
-
-* `timestamp` - The timestamp field of the SSO request.
+Where `sso_salt` is the shared secret you defined while registering in the marketplace.
+The other fields are the url-decoded fields previously enumerated.
 
 ### Sample in Python
 
 ```python
-from hashlib import sha1
+from hashlib import sha512
 import time
 
 id = "1234"
-salt = "fcb5b3add85d65e1dddda87a115b429f"
+salt = "<SOME RANDOM STRING>"
+user_id = "user_cccdddee-efff-4445-5566-6777888999aa"
+email = "me@my.self"
+nav_data = ""
 timestamp = str(time.time())
-token = sha1(id + ':' + salt + ':' + timestamp).hexdigest()
-print token
+sig = sha512((id + ':' + user_id + ':' + email + ':' + nav_data + ':' + sso_salt + ':' + timestamp).encode("utf-8")).hexdigest()
+print sig
 ```
 
 This code returns:
 
-```text
-'aca601ba464437cbaa12b2fedd7db755c32ddb5e'
+```python
+'2a79420ccb4dccb2f18985da60393d1383d4ef4ac02cef3274a543bb3fe82d15e5dee19cbca753e8eac24e6383d332ef258daea6ea3340c3526af175329e7dd8'
 ```

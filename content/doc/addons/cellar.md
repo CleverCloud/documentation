@@ -558,7 +558,7 @@ For example, if you uploaded 5 time a file named `test.txt`, with different text
 ### How does versioning work
 
 Versioning can't be enabled for file, it can only be enabled for an entire bucket.  
-A bucket can be in one of thee state :
+A bucket can be in one of three state :
 
  - Unversioned (The default)
  - Versioning-enabled
@@ -585,11 +585,11 @@ aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.s
 
 ### How to use Versioning
 
-When Versioning is enabled, the object added will automatically have a VersionID added to them. Only the latest version of an object if visible.
+When Versioning is enabled, the object added automatically have a VersionID added to them. Only the latest version of an object if shown.
 
 #### List all Versioned Object
 
-If you need to list all the object in your bucket, including the different version of file stored in it, you can run : 
+If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
 
 ```sh
 aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket <bucket_name>

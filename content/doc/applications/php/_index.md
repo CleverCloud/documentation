@@ -391,6 +391,7 @@ Others PHP frameworks tested on Clever Cloud:
 You can check enabled extensions and versions by viewing our `phpinfo()` example for:
 
 - [PHP 5.6](https://php56info.cleverapps.io)
+- [PHP 7.1](https://php71info.cleverapps.io)
 - [PHP 7.2](https://php72info.cleverapps.io)
 - [PHP 7.3](https://php73info.cleverapps.io)
 - [PHP 7.4](https://php74info.cleverapps.io)

@@ -74,15 +74,17 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
 
 ### Deploying from DockerHub
 
-1. Clone the repository:
+{{% steps %}}
+
+#### Clone the repository
 
     ```bash
     git clone https://github.com/CleverCloud/clever-operator/
     ```
 
-1. Insert your credentials into the manifests.
+#### Insert your credentials into the manifests
 
-    The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
+The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
 
     ```yaml
     apiVersion: v1
@@ -102,23 +104,26 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
 
     Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
-1. Apply the manifests to deploy the operator.
+#### Apply the manifests to deploy the operator
 
-
-    ```bash
+   ```bash
     kubectl apply -f /deployments/kubernetes/v1.24.0/10-custom-resource-definition.yaml 
     kubectl apply -f /deployments/kubernetes/v1.24.0/20-deployment.yaml
     ```
 
+{{% /steps %}}
+
 ### Installing via Helm Chart
 
-1. Clone the repository:
+{{% steps %}}
+
+#### Clone the repository
 
     ```bash
     git clone https://github.com/CleverCloud/clever-operator/
     ```
 
-1. Configure your credentials in the `config` section of the file `values.yaml` in `deployments/kubernetes/helm`.
+#### Configure your credentials in the `config` section of the file `values.yaml` in `deployments/kubernetes/helm`
 
     ```yaml
     config:
@@ -129,22 +134,26 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
     ```
     Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
-1. Install the chart:
+#### Install the chart:
 
     ```bash
       helm install clever-operator -n clever-operator --create-namespace -f values.yaml .
     ```
 
+{{% /steps %}}
+
 ### Building from Source
 
-1. Clone the repository:
+{{% steps %}}
+
+#### Clone the repository
 
   ```bash
   git clone https://github.com/CleverCloud/clever-operator.git
   cd clever-operator
   ```
 
-1. Insert your credentials into the manifests.
+#### Insert your credentials into the manifests.
 
     The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
 
@@ -166,13 +175,13 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
 
     Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
-1. Build the binary:
+#### Build the binary:
 
     ```bash
     make build
     ```
 
-1. Running the operator:
+#### Running the operator:
 
     ```bash
     target/release/clever-operator
@@ -181,6 +190,7 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
 ## Configuration
 
 Configuration options are available at two levels: global (applies to all namespaces) and namespace-specific. 
+
 ### Global Configuration
 
 Global configuration settings apply across all namespaces. Global configuration can be provided through a `ConfigMap`, a `Secret` or by the environment.

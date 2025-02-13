@@ -186,6 +186,7 @@ The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `Conf
     ```bash
     target/release/clever-operator
     ```
+{{% /steps %}}
 
 ## Configuration
 

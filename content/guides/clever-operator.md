@@ -78,38 +78,37 @@ The simplest ways to deploy the Clever Operator are either directly from Docker 
 
 #### Clone the repository
 
-    ```bash
-    git clone https://github.com/CleverCloud/clever-operator/
-    ```
+```bash
+git clone https://github.com/CleverCloud/clever-operator/
+```
 
 #### Insert your credentials into the manifests
 
 The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: clever-operator-configuration
+  namespace: clever-operator-system
+  data:
+    config.toml: |
+      [api]
+      endpoint = "https://api.clever-cloud.com/v2"
+      token = "<your_token>"
+      secret = "<your_secret>"
+      consumerKey = "<your_consumer_key>"
+      consumerSecret = "<your_consumer_secret>"
+```
 
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: clever-operator-configuration
-      namespace: clever-operator-system
-    data:
-      config.toml: |
-        [api]
-        endpoint = "https://api.clever-cloud.com/v2"
-        token = "<your_token>"
-        secret = "<your_secret>"
-        consumerKey = "<your_consumer_key>"
-        consumerSecret = "<your_consumer_secret>"
-    ```
-
-    Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
+Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
 #### Apply the manifests to deploy the operator
 
-   ```bash
-    kubectl apply -f /deployments/kubernetes/v1.24.0/10-custom-resource-definition.yaml 
-    kubectl apply -f /deployments/kubernetes/v1.24.0/20-deployment.yaml
-    ```
+```bash
+kubectl apply -f /deployments/kubernetes/v1.24.0/10-custom-resource-definition.yaml 
+kubectl apply -f /deployments/kubernetes/v1.24.0/20-deployment.yaml
+```
 
 {{% /steps %}}
 
@@ -119,26 +118,27 @@ The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `Conf
 
 #### Clone the repository
 
-    ```bash
-    git clone https://github.com/CleverCloud/clever-operator/
-    ```
+```bash
+git clone https://github.com/CleverCloud/clever-operator/
+```
 
 #### Configure your credentials in the `config` section of the file `values.yaml` in `deployments/kubernetes/helm`
 
-    ```yaml
-    config:
-      token: "<your_token>"
-      secret: "<your_secret>"
-      consumerKey: "<your_consumer_key>"
-      consumerSecret: "<your_consumer_secret>"
-    ```
-    Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
+```yaml
+  config:
+    token: "<your_token>"
+    secret: "<your_secret>"
+    consumerKey: "<your_consumer_key>"
+    consumerSecret: "<your_consumer_secret>"
+```
+
+Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
 #### Install the chart:
 
-    ```bash
-      helm install clever-operator -n clever-operator --create-namespace -f values.yaml .
-    ```
+```bash
+helm install clever-operator -n clever-operator --create-namespace -f values.yaml .
+```
 
 {{% /steps %}}
 
@@ -148,44 +148,45 @@ The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `Conf
 
 #### Clone the repository
 
-  ```bash
-  git clone https://github.com/CleverCloud/clever-operator.git
-  cd clever-operator
-  ```
+```bash
+git clone https://github.com/CleverCloud/clever-operator.git
+cd clever-operator
+```
 
 #### Insert your credentials into the manifests.
 
-    The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
+The manifests are on folder `/deployments/kubernetes/v1.24.0/`. Modify the `ConfigMap` object in file `/deployments/kubernetes/v1.24.0/:
 
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: clever-operator-configuration
-      namespace: clever-operator-system
-    data:
-      config.toml: |
-        [api]
-        endpoint = "https://api.clever-cloud.com/v2"
-        token = "<your_token>"
-        secret = "<your_secret>"
-        consumerKey = "<your_consumer_key>"
-        consumerSecret = "<your_consumer_secret>"
-    ```
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: clever-operator-configuration
+  namespace: clever-operator-system
+  data:
+    config.toml: |
+      [api]
+      endpoint = "https://api.clever-cloud.com/v2"
+      token = "<your_token>"
+      secret = "<your_secret>"
+      consumerKey = "<your_consumer_key>"
+      consumerSecret = "<your_consumer_secret>"
+```
 
-    Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
+Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_consumer_secret>` by the credentials obtained in the precedent section.
 
 #### Build the binary:
 
-    ```bash
-    make build
-    ```
+```bash
+make build
+```
 
 #### Running the operator:
 
-    ```bash
-    target/release/clever-operator
-    ```
+```bash
+target/release/clever-operator
+```
+
 {{% /steps %}}
 
 ## Configuration

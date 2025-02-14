@@ -75,3 +75,8 @@ VSCode
 webroot
 Wildfly
 Zooper
+CRDs
+namespace
+namespaces
+Kubectl
+toolchain

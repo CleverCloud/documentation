@@ -99,7 +99,7 @@ php myscript.php
 
 This appends the current directory while still loading the default configuration.
 
-**Note**: The `:` at the beginning of the string is mandatory. It indicates defaults files must still be loaded.
+**Note**: The `:` at the beginning of the string is mandatory. It indicates defaults files must still load.
 
 A specific `.ini` file can be loaded with:
 

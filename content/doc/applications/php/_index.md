@@ -80,19 +80,37 @@ If you want the settings to be applied to the whole application, you should put 
 
 If you put the `.user.ini` file in a subdirectory; settings will be applied recursively starting from this subdirectory.
 
-**Note**: `.user.ini` files are not loaded by the PHP CLI by default.
+#### Same configuration between PHP-CLI and PHP-FPM.
 
-To do so, you can use a tiny trick:
+`.user.ini` files aren't loaded by the PHP CLI by default.
 
-1. Add the `PHP_INI_SCAN_DIR=:/home/bas` environment variable in your application.
-   This way the PHP CLI will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
-2. Run the following script in a [deployment hook]({{< ref "doc/develop/build-hooks.md" >}}) (e.g. in the [pre-run hook]({{< ref "doc/develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
+However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-   ```bash
-   #!/bin/bash -l
-   test -f ${APP_HOME}${CC_WEBROOT}/.user.ini && \
-     cp ${APP_HOME}${CC_WEBROOT}/.user.ini ${HOME}/user.ini
-    ```
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](https://www.clever-cloud.com/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+
+Assuming the script runs at the root-folder of the application:
+
+```bash
+#!/usr/bin/env bash
+
+export PHP_INI_SCAN_DIR=":."
+php myscript.php
+```
+
+This appends the current directory while still loading the default configuration.
+
+**Note**: The `:` at the beginning of the string is mandatory. It indicates defaults files must still load.
+
+A specific `.ini` file can be loaded with:
+
+```
+#!/usr/bin/env bash
+
+export PHP_INI_SCAN_DIR=":.php-configuration/"
+php myscript.php
+```
+
+This loads every `.ini` files in the `php-configuration/` directory.
 
 ##### Timezone configuration
 

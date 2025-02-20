@@ -1,8 +1,8 @@
 add-on
 ant
 APIs
-app_id
 application
+app_id
 Astro
 Astrowind
 Azimutt
@@ -16,6 +16,7 @@ Clever Cloud
 CLI
 Cloud
 Coraza
+CRDs
 cron
 Cyberduck
 Dockerfile
@@ -24,6 +25,7 @@ eg
 failover
 Filestash
 Filezilla
+FPM
 FSBucket
 Gemfile
 Glassfish
@@ -37,15 +39,18 @@ hostname
 jarName
 Jboss
 Keycloak
+Kubectl
 Laravel
 Let's Encrypt
-maven
 Matomo
+maven
 Metabase
 monolog
 monorepo
 monorepository
 Moodle
+namespace
+namespaces
 nano
 nmap
 npm
@@ -71,12 +76,8 @@ Servlet
 shortcode
 Sidekiq
 syslog
+toolchain
 VSCode
 webroot
 Wildfly
 Zooper
-CRDs
-namespace
-namespaces
-Kubectl
-toolchain

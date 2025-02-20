@@ -110,7 +110,7 @@ export PHP_INI_SCAN_DIR=":.php-configuration/"
 php myscript.php
 ```
 
-This will load every `.ini` files in the `php-configuration/` directory.
+This loads every `.ini` files in the `php-configuration/` directory.
 
 ##### Timezone configuration
 

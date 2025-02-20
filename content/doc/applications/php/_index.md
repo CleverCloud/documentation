@@ -88,7 +88,7 @@ However, some PHP applications may want to check for the PHP-FPM configuration p
 
 To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](https://www.clever-cloud.com/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
 
-Assuming the script is run in the root-folder of the application:
+Assuming the script runs at the root-folder of the application:
 
 ```bash
 #!/usr/bin/env bash

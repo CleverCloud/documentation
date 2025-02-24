@@ -567,55 +567,111 @@ A bucket can be in one of three state :
 You enable and suspend versioning at the bucket level. After you version-enable a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket.
 Once versioning is enabled, any object you add have a unique version ID. Object that already existed before enabling versioning have a version ID of `null`.
 
-### Activate Versioning with AWS CLI
+{{< tabs items="MinIO,  AWS CLI" >}}
 
-To activate Versioning, you can use AWS CLI. You can use the following commande to enable it on a bucket.
+  {{< tab >}}
+  
+  To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must firt creare an alias.
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
-```
+  ```sh
+  mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>
+  ```
 
-If you want to turn off Versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+  ### Activate Versioning with MinIO
 
-You can check that Versioning is enabled for your bucket with :
+  To activate Versioning, you can use MinIO and the following command.
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-bucket-versioning --bucket <bucket_name>
-```
+  ```sh
+  mc version enable <alias>/<bucket-name>
+  ```
 
-### How to use Versioning
+  If you want to suspend versioning, you can replace `enable` by `suspend`
 
-When Versioning is enabled, the object added automatically have a VersionID added to them. Only the latest version of an object if shown.
+  You can check that Versioning is enabled for your bucket with :
 
-#### List all Versioned Object
+  ```sh
+  mc version info <alias>/<bucket-name> --json
+  ```
 
-If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+  ### How to use Versioning
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket <bucket_name>
-```
+  When Versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
 
-#### List all the version of a specific Object
+  #### List Versioned Object
 
-If you want to find the versions of only a specific object, you can use the following command. In this example, we find the versions of test.txt :
+  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket bucket-with-versioning --prefix <file_name>
-```
+  ```sh
+  mc ls --versions --recursive <alias>/<bucket-name>
+  ```
 
-#### Get the version of an Object
+  You can list all the version of a specific file with 
 
-If you want to get the previous version of an object, you need the VersionID that you can get with the two previous command. You can then use :
+  ```sh
+  mc ls --versions <alias>/<bucket-name>/<object_name>
+  ```
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
-```
+  #### Get a version of an object 
 
-To remove a version of an object, you can use this command : 
+  
 
-```sh
-aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>
-```
+  {{< /tab >}}
+
+  {{< tab >}}
+
+  ### Activate Versioning with AWS CLI
+
+  To activate Versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
+  ```
+
+  If you want to turn off Versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+
+  You can check that Versioning is enabled for your bucket with :
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-bucket-versioning --bucket <bucket_name>
+  ```
+
+  ### How to use Versioning
+
+  When Versioning is enabled, the object added automatically have a VersionID added to them. Only the latest version of an object if shown.
+
+  #### List all Versioned Object
+
+  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket <bucket_name>
+  ```
+
+  #### List all the version of a specific Object
+
+  If you want to find the versions of only a specific object, you can use the following command. In this example, we find the versions of test.txt :
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api list-object-versions --bucket bucket-with-versioning --prefix <file_name>
+  ```
+
+  #### Get the version of an Object
+
+  If you want to get the previous version of an object, you need the VersionID that you can get with the two previous command. You can then use :
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
+  ```
+
+  To remove a version of an object, you can use this command : 
+
+  ```sh
+  aws --profile <profile_name> --region default --endpoint-url https://cellar-c2.services.clever-cloud.com s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>
+  ```
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 {{< callout type="warning">}}
 Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.

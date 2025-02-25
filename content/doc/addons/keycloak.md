@@ -117,8 +117,8 @@ The number of realms significantly impacts the overall performances. **Use as fe
 
 **The recommended way** to create realms is by using the environment variables of the Java application of the Keycloak add-on. Thus, it comes with an optimized configuration such as brute-force detection and specific metrics:
 
-- In the Java application, go to the `Environment variables` panel and declare as many realms as you need, separated by a `,`
-- Restart the application after the change. For example `REALMS=realm_1,realm_2` declares `realm_1` and `realm_2`
+- In the Java application, go to the `Environment variables` panel and in the `CC_KEYCLOAK_REALMS` environment variable, declare as many realms as you need, separated by a `,`. For example `CC_KEYCLOAK_REALMS=realm_1,realm_2` declares `realm_1` and `realm_2`.
+- Restart the application after the change.
 
 You can also create a realm from the Keycloak administrator console. On the dropdown menu from the top left corner, click `create realm`.
 

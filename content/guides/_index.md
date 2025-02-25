@@ -35,15 +35,15 @@ llmsTxtOptional: true
   
 {{< /cards >}}
 
-## Static Site Generator (SSG)
+## Static Site Generator (SSG)/ Server Side Rendering (SSR)
 
 <br>
 <div class="mb-12">
 {{< hextra/hero-subtitle >}}
-  Use Clever Cloud as a runner to build an efficient static website and host it in minutes!&nbsp;<br class="sm:block hidden" />
+  Use Clever Cloud as a runner to build an efficient static website and host it in minutes.&nbsp;<br class="sm:block hidden" />
 {{< /hextra/hero-subtitle >}}
 </div>{{< cards >}}
- {{< card link="astro" title="Astro" subtitle= "Build and deploy a static Astro based website on Clever Cloud" icon="astro" >}}
+  {{< card link="astro" title="Astro" subtitle= "Build and deploy a Astro application on Clever Cloud" icon="astro" >}}
   {{< card link="docusaurus" title="Docusaurus" subtitle= "Build and deploy a static Docusaurus based website on Clever Cloud" icon="docusaurus" >}}
   {{< card link="eleventy" title="Eleventy (11ty)" subtitle= "Build and deploy a static Eleventy (11ty) based website on Clever Cloud" icon="11ty" >}}
  {{< card link="hexo" title="Hexo" subtitle= "Build and deploy a static Hexo based website on Clever Cloud" icon="hexo" >}}
@@ -51,8 +51,7 @@ llmsTxtOptional: true
   {{< card link="lume-deno" title="Lume (Deno)" subtitle= "Build and deploy a static Lume (Deno) based website on Clever Cloud" icon="deno" >}}
   {{< card link="mkdocs" title="MkDocs" subtitle= "Build and deploy a static MkDocs based website on Clever Cloud" icon="docs" >}}
   {{< card link="mdbook" title="mdBook" subtitle= "Build and deploy a static mbBook based website on Clever Cloud" icon="mdbook" >}}
-  {{< card link="nuxt" title="Nuxt" subtitle= "Build and deploy a static Nuxt based website on Clever Cloud" icon="nuxt" >}}
-
+  {{< card link="nuxt" title="Nuxt" subtitle= "Build and deploy a Nuxt application on Clever Cloud" icon="nuxt" >}}
    {{< card link="hugo-static-s3" title="Hugo + Cellar" subtitle= "Build and deploy a static Hugo based website and host it using Cellar" icon="hugo" >}}
 {{< /cards >}}
 

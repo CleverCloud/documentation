@@ -19,10 +19,8 @@ Otoroshi is a lightweight API management solution built on a modern HTTP reverse
 The solution excels at dynamic service management, offering essential API gateway functionalities including request routing, security enforcement, traffic management, and comprehensive monitoring. Its event-driven architecture and flexible deployment model make it particularly effective in cloud-native and PaaS environments.
 
 On Clever Cloud, it comes with pre-configured with features included such as [Coraza Web Appplication Firewall](#coraza-waf-web-application-firewall) or the [LLM extension](#llm-extension).
-{{< callout type="info" >}}
 
-**Otoroshi is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/otoroshi). Thank you for being a part of our journey towards innovation and improvement!
-{{< /callout >}}
+{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/otoroshi){{< /callout >}}
 
 ## Create an Otoroshi with LLM add-on
 
@@ -75,14 +73,14 @@ When you create the Otoroshi add-on, Clever Cloud automatically deploys:
 
 By default, Otoroshi with LLM on Clever Cloud uses small-size resources, i.e:
 
-- XS Java
+- S Java
 - S Redis®
 
 They are dimensioned to suit a majority of needs. You can however manage and adjust them directly [in the Console](https://console.clever-cloud.com/).
 
 ## LLM extension
 
-Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface. This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, Gemini, Groq, Hugging Face, and OVH AI Endpoints.
+Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever-cloud.com/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Gemini, Groq, Hugging Face, OVH and Scaleway AI Endpoints.
 
 ### Smarter AI operations
 The extension enhances your LLM operations with intelligent workload distribution and automatic failover mechanisms, ensuring consistent service availability. It implements sophisticated features such as semantic caching to optimize response times and reduce costs, while providing comprehensive quota management capabilities for effective resource allocation.

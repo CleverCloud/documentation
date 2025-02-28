@@ -16,12 +16,7 @@ type: docs
 
 [Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
-{{< callout type="info" >}}
-**Metabase is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform.
-To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase).
-Thank you for being a part of our journey towards innovation and improvement!
-{{< /callout >}}
-
+{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase){{< /callout >}}
 
 ## Key features
 

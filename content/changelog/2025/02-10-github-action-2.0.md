@@ -1,5 +1,5 @@
 ---
-title: "Version 1.1 of our GitHub Action for review applications is available"
+title: "Version 2.0 of our GitHub Action for review applications is available"
 date: 2025-02-10
 tags:
   - github

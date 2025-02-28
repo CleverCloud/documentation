@@ -20,7 +20,7 @@ The solution excels at dynamic service management, offering essential API gatewa
 
 On Clever Cloud, it comes with pre-configured with features included such as [Coraza Web Appplication Firewall](#coraza-waf-web-application-firewall) or the [LLM extension](#llm-extension).
 
-{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/otoroshi){{< /callout >}}
+{{< callout type="info" >}}Share your feedback on Otoroshi operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/otoroshi){{< /callout >}}
 
 ## Create an Otoroshi with LLM add-on
 

@@ -1,5 +1,5 @@
 ---
-title: "Metabase 52 is available"
+title: "Metabase 53 is available"
 date: 2025-02-10
 tags:
   - addons

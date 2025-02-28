@@ -16,7 +16,7 @@ type: docs
 
 [Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
-{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase){{< /callout >}}
+{{< callout type="info" >}}Share your feedback on Metabase operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase){{< /callout >}}
 
 ## Key features
 
@@ -44,7 +44,7 @@ You can also save questions and **organize** them in _collections_. When opening
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
 
 ```
 $ clever addon create metabase myMetabase

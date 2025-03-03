@@ -1,5 +1,5 @@
 ---
-title: "Keycloak 26.1 is available (security update)"
+title: "Keycloak 26.1 is available"
 date: 2025-01-31
 tags:
   - addons

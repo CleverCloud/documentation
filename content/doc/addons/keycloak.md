@@ -126,20 +126,20 @@ You can create a partial export using the Keycloak console:
 - From the `Realm Settings` panel
 - On the top right, click the dropdown`action` menu
 - Select `partial Export`
-- A cold export can be done at the start
+- A cold export can be done at the build
 
 You can create a full export using the environment variables of the Keycloak Java application:
 
 - Go to the Keycloak Java application in the Clever Cloud Console
 - In the Java application, create the `CC_KEYCLOAK_EXPORT_REALMS` environment variable
 - Set the realms you want to export, separated by a `,`
-- Restart the Java application from the Clever Cloud console
+- Rebuild the Java application from the Clever Cloud console
 
 It's a total export, including the client's secrets and hashed password. Exported realms are available in `realms/export` folder of the FS Bucket.
 
 ### Importing realms data
 
-Uploading previously exported data in `realms/import` folder in the associated FS Bucket enables importing realms data. The import process starts after restarting the Java application.
+Uploading previously exported data in `realms/import` folder in the associated FS Bucket enables importing realms data. The import process starts after rebuilding the Java application.
 
 ## Custom Themes and Plugins
 

@@ -226,6 +226,10 @@ You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
 
 **By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
 
+### Header size
+
+Default Apache header size is `8k`. If you need to increase it, you can set `CC_APACHE_HEADERS_SIZE` environment variable, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value.
+
 ### Force HTTPS traffic
 
 Load balancers handle HTTPS traffic ahead of your application. You can use the `X-Forwarded-Proto` header to know the original protocol (`http` or `https`).

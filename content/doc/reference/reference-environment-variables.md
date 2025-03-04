@@ -240,6 +240,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
 |[`CC_CGI_IMPLEMENTATION`](../../applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | fastcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
+| `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
 |`CC_LDAP_CA_CERT` |  |  |
 |`CC_MTA_AUTH_PASSWORD` | Password to authenticate to the SMTP server |  |
 |`CC_MTA_AUTH_USER` | User to authenticate to the SMTP server |  |

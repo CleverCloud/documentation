@@ -64,7 +64,7 @@ Clever Cloud may change these ranges at any moment while we expand our infrastru
 filtering source IPs is important to you, please check this page, or opt into our Unique
 IP service or a VPN Service.
 
-Please note that allowing all four ranges means you "allow" **all Clever Cloud
+Please note that allowing all ranges means you "allow" **all Clever Cloud
 applications** running in the Paris region to access that service.
 This means you should not base all that service security solely on filtering source IPs!
 

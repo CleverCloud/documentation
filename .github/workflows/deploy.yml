@@ -24,7 +24,6 @@ jobs:
           interval: 5
           timeout: 60
           sha: ${{ github.event.pull_request.head.sha || github.sha }}
-#      - run: mkdir -p review-app
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}
@@ -52,6 +51,3 @@ jobs:
           type: static-apache
           comment: true
           domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
-# Deploy the artifact to Clever Cloud
-# Use CC_WEBROOT or git init in the artifact directory?
-# Tests: ls -a in the runner

@@ -32,4 +32,3 @@ winget upgrade CleverTools
 We'll add WinGet support to our automatic release process and start deprecating Chocolatey, as it began more difficult to install it through our Nexus instance over the recent releases. You can also continue to download a `.zip` archive [and extract the binary](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#binary-zip).
 
 - [Learn more about Clever Tools](https://github.com/CleverCloud/clever-tools) {{< icon "github" >}}
--

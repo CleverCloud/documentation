@@ -11,124 +11,107 @@ keywords:
 type: docs
 ---
 
-The Clever Cloud console and clever-tools are built on top of an API that
-allows you to manage your account and products. This article will explain how
-to connect to this API and use it.
+The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](https://github.com/CleverCloud/clever-tools) allow you to manage your account and products with the same public API you can use for your own services and integrations. This article will explain how to connect to this API and use it.
 
-## HTTP calls
+{{< cards >}}
+  {{< card link="/developers/api/v2/" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organizations, applications, add-ons, etc." icon="endpoints" >}}
+  {{< card link="/developers/api/v4/" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
+{{< /cards >}}
 
-### **Authentication**
+## Request the API
 
-Clever Cloud API has an OAuth1 based authentication.
+Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
 
-There are 3 supported methods for the signature: `PLAINTEXT`, `HMAC-SHA1` and `HMAC-SHA512`.
+* **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources.
 
-While `PLAINTEXT` is way easier for testing, you **should** use `HMAC-SHA512` when it comes to production. This ensures that the request is totally verified.
+* **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
 
-We have a [JavaScript client on GitHub](https://gitHub.com/CleverCloud/clever-client.js) where you can find a lot of informations.
-Especially in the [esm/login.js file](https://gitHub.com/CleverCloud/clever-client.js/blob/master/esm/login.js)
+Choose the authentication method that best aligns with your specific integration requirements and security considerations.
 
-This client is being used by our web Console and CLI. Also, the Console gives you a lot of information in the "Network" panel of the devtools. If you're stuck, this is one way for debugging.
+### API tokens
 
-For the Authorization header, make sure to have something like:
+{{< callout type="info" >}}
+The API tokens are in Beta testing phase, they will be available from the Console in the coming weeks.
+{{< /callout >}}
+
+#### From Clever Tools
+
+To create a token, you can use [Clever Tools](https://github.com/CleverCloud/clever-tools). This feature needs to be enabled:
+
+```bash
+clever features enable tokens
+clever tokens create "CI job Foobar"
+clever tokens create "Quick local test" --expiration 1h
+```
+
+You can also list or revoke tokens:
+
+```bash
+clever tokens -F json
+clever tokens revoke api_tokens_xxx
+```
+
+Once created, API tokens must be used through the bridge URL:
+
+```bash
+curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_TOKEN]"
+```
+
+### clever curl
+
+`clever curl` is a wrapper around `curl`, it supports the same arguments and handles the authentication automatically for you using the CLI account you're currently logged in with. It's a simple way to make requests to the Clever Cloud API if [Clever Tools](https://github.com/CleverCloud/clever-tools) are installed on your system.
+
+```bash
+clever curl https://api.clever-cloud.com/v2/self
+clever curl https://api.clever-cloud.com/v2/summary
+clever curl https://api.clever-cloud.com/v4/products/zones
+clever curl https://api.clever-cloud.com/v2/organisations/<ORGANISATION_ID>/applications | jq '.[].id'
+clever curl https://api.clever-cloud.com/v4/billing/organisations/<ORGANISATION_ID>/<INVOICE_NUMBER>.pdf > invoice.pdf
+```
+
+### Official clients/SDKs
+
+You can request the Clever Cloud API from multiple languages through our official clients/SDKs:
+- [Go](https://github.com/CleverCloud/clevercloud-client-go)
+- [JavaScript](https://github.com/CleverCloud/clever-client.js)
+- [Rust](https://github.com/CleverCloud/clevercloud-sdk-rust)
+
+### OAuth1
+
+If you have an application that needs to access Clever Cloud resources on behalf of your users, you can use OAuth1. This is the recommended way to authenticate third-party applications.
+
+#### Create an OAuth consumer
+
+First, you'll need to create an OAuth consumer for your application. This can be done in the [Clever Cloud console](https://console.clever-cloud.com). Go to your organization, click on **Create...**, then on **an OAuth consumer** and fill the form. You will get a consumer key and a consumer secret for your application.
+
+#### Integrate your application
+
+Your application must implement the OAuth 1 dance. It mostly consists of the following steps:
+
+* Get a "request token"
+  * [`POST /oauth/request_token`](/developers/api/v2/#post-/oauth/request_token)
+  * You will get a temporary `oauth_token` and `oauth_token_secret`
+* Redirect the user to the authorization page with the `oauth_token`
+  * [`GET /oauth/authorize`](/developers/api/v2/#get-/oauth/authorize)
+  * Once the user is logged in, the browser will be redirected to your application with the query params `oauth_verifier` and `oauth_token`
+* Make sure the `oauth_token` from the first step matches the one you get after the redirection
+* Get the "access token" with the `oauth_token`, `oauth_token_secret` and `oauth_verifier`
+  * [`POST /oauth/access_token`](/developers/api/v2/#post-/oauth/access_token)
+  * You will get the user `oauth_token` and `oauth_token_secret`
+
+Once done, your application can make API requests on behalf of the user with an OAuth 1 compatible client and the following tokens:
+
+* Consumer key
+* Consumer secret
+* User token
+* User token secret
+
+More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
+
+#### About the OAuth1 signature
+
+There are 3 supported methods for the signature: `PLAINTEXT`, `HMAC-SHA1` and `HMAC-SHA512`. While `PLAINTEXT` is way easier, `HMAC-SHA512` ensures that the request is totally verified. The `Authorization` header must start with `OAuth`, with a specific format for key/values:
 
 ```bash
 Authorization: OAuth key="value", key2="value2"
 ```
-
-The `OAuth` and doubles quotes around values are mandatory.
-
-#### **Create consumers tokens**
-
-You need to create an OAuth consumer token in the Clever Cloud console.
-
-A link **Create an oauth consumer** is available under your organization's add-ons list.
-
-All created consumers will appear below that link, like your applications and add-ons.
-
-These consumers allow you to register an application. By creating a consumer, users will be able to grant (or decline) privileges for your application.
-
-For example, the Clever Cloud Console is using an oauth consumer.
-You (most of the time) give it full access to manage your account.
-
-You need to set a callback URL, this is the url your user will be redirected to after he has been authenticated.
-
-#### **Get a request token**
-
-You have to make a `POST`request to get a [request token](/developers/api/v2/#post-/oauth/request_token) to the API.
-
-#### **Get the authorization URL**
-
-Ask the API for the [authorization URL](/developers/api/v2/#get-/oauth/authorize) and go to this URL with a browser. Log in with your account and it will send you to the callback URL.
-
-#### **Get the verifier token**
-
-In the callback URL, you have the verifier token:
-
-`https://www.example.com/callback?oauth_verifier=<verifierToken>`
-
-Where `<verifierToken>` is your token.
-
-#### **Get the access token**
-
-Make a `POST`  request to get the [access token](/developers/api/v2/#post-/oauth/access_token) with your request token and the verifier.
-You can use this access token to make OAuth1 signed requests.
-
-More information about [OAuth dance](https://oauth.net/core/1.0/#anchor9).
-
-#### This seems cumbersome, is there an easier way?
-
-Yes the OAuth dance can be complicated, we created a small application that you can deploy on Clever Cloud. It will automate most of the pain away from you.
-
-The code and tutorial are on [https://github.com/CleverCloud/oauth-consumer-server](https://github.com/CleverCloud/oauth-consumer-server).
-
-### **API endpoints documentation**
-
-All the API endpoints are referenced in a swagger documentation. **The base URL for the API is V2**.
-
-{{< cards >}}
-
-  {{< card link="/developers/api/v2/" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
-  {{< card link="/developers/api/v4/" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
-
-{{< /cards >}}
-
-## WebSocket API requests
-
-### **Connection protocol**
-
-Clever Cloud API can handle WebSocket-Security requests for the logs or events.
-To connect to a WebSocket API URL follow this guide.
-
-- Take a URL in the API for the WebSocket.
-  - Ex: `https://api.clever-cloud.com/v2/events/event-socket`
-- Sign the OAuth request with this URL.
-- Replace `https://` by `wss://`
-  - `wss://api.clever-cloud.com/v2/events/event-socket`
-- Connect to this URL in WebSocket.
-
-When the WebSocket connection is opened, you need to send the OAuth1 header in this format :
-
-```json
-{
-    "message_type": "oauth",
-    "authorization": "<oauth_header>"
-}
-```
-
-You need to replace `<oauth_header>` by the signed OAuth1 header.
-
-### WebSocket endpoints
-
-#### Logs
-
-[This endpoint](https://www.clever-cloud.com/api/#!/logs/logs_logs-socket_appId_get)
-allows you to receive real-time logs of an application via WebSocket.
-
-#### Events
-
-[This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
-allows you to receive a stream of events emitted on your account.
-
-Events like git push, add or remove an application / add-on, deployments success / failed
-are available.

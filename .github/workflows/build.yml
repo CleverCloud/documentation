@@ -1,0 +1,81 @@
+name: Build
+
+on:
+  pull_request:
+    types: [opened, closed, synchronize, reopened]
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build in Fork Context
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+
+    steps:
+      - uses: actions/checkout@v4
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Build fork
+        env:
+          HUGO_VERSION: '0.140.2'
+          HEXTRA_VERSION: 'v0.9.4'
+        run: ./clevercloud-deploy-script.sh
+      
+#      - name: Prepare review-app directory
+#        run: |
+#          mkdir -p review-app
+#          cp -r public/* review-app/
+#          cp -r .git review-app/
+      
+      - name: Upload artifact
+        id: artifact-upload-step
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.event.pull_request.head.sha }}
+          path: public/
+          include-hidden-files: true
+      
+      - name: Output artifact ID
+        run:  echo 'Artifact name is ${{ github.sha }}, ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
+
+# Previous workflow
+#  deploy:
+
+    # name: Review app
+    # runs-on: ubuntu-latest
+    # environment: PR review apps
+    # permissions:
+    #     issues: write
+    #     pull-requests: write
+    #     contents: read
+    # steps:
+    #   - uses: actions/checkout@v4
+    #     if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+    #     with:
+    #       repository: ${{ github.event.pull_request.head.repo.full_name }}
+    #       ref: ${{ github.event.pull_request.head.ref }}
+    #       token: ${{ secrets.GITHUB_TOKEN }}
+    #       fetch-depth: 0
+    #   - name: Manage review app
+    #     uses: CleverCloud/clever-cloud-review-app@v2.0.0
+    #     env:
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #       CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+    #       CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+    #       ORGA_ID: ${{ secrets.ORGA_ID }}
+    #       GH_CC_PRE_BUILD_HOOK: './clevercloud-deploy-script.sh'
+    #       GH_CC_WEBROOT: '/public'
+    #       GH_HEXTRA_VERSION: 'v0.9.3'
+    #       GH_HUGO_ENV: 'production'
+    #       GH_HUGO_VERSION: '0.140.2'
+
+    #     with:
+    #       type: 'static-apache'
+    #       set-env: true
+    #       environment: 'review'
+    #       domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'

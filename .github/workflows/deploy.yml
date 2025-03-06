@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  pull_request_target:
+    types: [opened, closed, synchronize, reopened]
+    branches: [ main ]
+
+jobs:
+  review-app:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Wait on Workflow
+        id: wait-workflow
+        uses: lucasssvaz/wait-on-workflow@v1
+        with:
+          workflow: build.yml
+          max-wait: 3
+          interval: 5
+          timeout: 60
+          sha: ${{ github.event.pull_request.head.sha || github.sha }}
+#      - run: mkdir -p review-app
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.event.pull_request.head.sha }}
+          run-id: ${{ steps.wait-workflow.outputs.run-id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -a
+          git init
+          git add .
+          git config --global user.name "GH runner ${{ steps.wait-workflow.outputs.run-id }}"
+          git config --global user.email "you@example.com"
+          git commit -m "Deploy PR ${{ github.event.number }}"
+      - name: Deploy on CC
+        uses: CleverCloud/clever-cloud-review-app@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+          ORGA_ID: ${{ secrets.ORGA_ID }}
+        with:
+          type: static-apache
+          comment: true
+          domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
+# Deploy the artifact to Clever Cloud
+# Use CC_WEBROOT or git init in the artifact directory?
+# Tests: ls -a in the runner

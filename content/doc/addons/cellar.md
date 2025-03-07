@@ -613,7 +613,11 @@ Once versioning is enabled, any object you add have a unique version ID. Object 
 
   #### Get a version of an object 
 
-  
+  You can get the speicif version of an object using it's version ID obtained with the previous command
+
+  ```sh
+  mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>
+  ```
 
   {{< /tab >}}
 

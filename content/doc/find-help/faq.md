@@ -224,7 +224,7 @@ For instance, you cannot create a Matomo add-on until you provide these details.
 
 ## I get unknown regular requests, is there a problem ? 
 
-The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clever-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
+The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clevercloud-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
 
 ## What is a DEV plan ? 
 

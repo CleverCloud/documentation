@@ -16,6 +16,7 @@ jobs:
 
     steps:
       - name: Wait on Workflow
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         id: wait-workflow
         uses: lucasssvaz/wait-on-workflow@v1
         with:
@@ -25,12 +26,14 @@ jobs:
           timeout: 60
           sha: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/download-artifact@v4
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         with:
           name: build-${{ github.event.pull_request.head.sha }}
           run-id: ${{ steps.wait-workflow.outputs.run-id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

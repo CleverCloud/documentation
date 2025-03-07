@@ -67,7 +67,7 @@ Priority goes to PRs that reference a problem addressed in an issue fitting the 
 
 ### 🥸 When reviewing a PR
 
-- **Latency:** Long PR review latency can be disappointing for the authors, and make merge conflicts arise in their branch. Long latency kills productivity and moral, so make sure to review PRs in a timely manner.
+- **Latency:** Long PR review latency can be disappointing for the authors, and make merge conflicts arise in their branch. Long latency kills productivity and morale, so make sure to review PRs in a timely manner.
 - **Don't nitpick:** If the PR respects the preceding standards and provide updated content, don't ask for changes just for the sake of it. If you think something isn't perfect, but it's not a big deal, don't ask for changes.
 - **Provide alternatives:** If you think the author needs to change something, provide an example to illustrate your point. Use the `suggestion` feature on GitHub so the author can commit it directly if they agree with it.
 - **It's OK to make mistakes:** Explain what's wrong, why, and how to improve. If someone is violating a standard, refer to this doc to explain.

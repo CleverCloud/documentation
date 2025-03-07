@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Network Groups
-Description: Link resources over a private secure network based on Wireguard
+Description: Link resources over a private secure network based on WireGuard
 tags:
 - network
 - groups
@@ -17,7 +17,7 @@ keywords:
 -
 ---
 
-Network Groups (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [Wireguard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
+Network Groups (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
 
 * Network Group: a group of resources that can communicate with each through an encrypted tunnel
 * Member: a resource that can be part of a Network Group (`application`, `addon` or `external`)
@@ -25,7 +25,7 @@ Network Groups (NG) are a way to create a private secure network between resourc
 
 A Network Group is defined by an ID (`ngId`) and a `label`. It can be completed by a `description` and `tags`.
 
-When you create a Network Group, a Wireguard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, link an application and an add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
+When you create a Network Group, a WireGuard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, link an application and an add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
 
 {{< callout type="info" >}}
 During beta testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported. \
@@ -45,23 +45,27 @@ When a resource is linked to a Network Group, you can reach it on any port insid
 ```mermaid
 flowchart TD
     User((User)) --> API[API/Clever Tools]
-    API --> NG[10.x.y.z/16]
+    API --> NG[ 10.x.y.z/16]
 
-    subgraph "Network Group CIDR"
+    subgraph "Network Group"
         NG --> CC[addon/app members]
         NG --> Ext[external members]
 
         subgraph "Clever Cloud infrastructure"
             CC --> App[application_id.m.ng_id.cc-ng.cloud]
             CC --> DB[addon_id.m.ng_id.cc-ng.cloud]
-            App --- AppP1[Clever Peer\n10.x.y.1]
-            App --- AppP2[Clever Peer\n10.x.y.2]
-            DB --- DBP[Clever Peer\n10.x.y.3]
+            App --- AppP1[Clever Peer
+            10.x.y.1]
+            App --- AppP2[Clever Peer
+            10.x.y.2]
+            DB --- DBP[Clever Peer
+            10.x.y.3]
         end
 
-        subgraph "External infrastructure"
+        subgraph "External Infrastructure"
             Ext --> ExtRes[external_id.m.ngID.cc-ng.cloud]
-            ExtRes --- ExtP[External Peer\n10.x.y.4]
+            ExtRes --- ExtP[External Peer
+            10.x.y.4]
         end
 
 

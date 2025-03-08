@@ -11,7 +11,7 @@ keywords:
 - get started
 aliases:
 - /doc/administrate/clever-tools/getting_started
-
+draft: true
 ---
 
 In addition to the Clever Cloud console, you can manage your addons and applications from the command line with Clever Tools.
@@ -122,9 +122,9 @@ NOTES:
 ### On macOS
 
 {{< callout type="warning" >}}
-If you have an Apple processor, an error may occur during the installation.  
+If you have an Apple processor, an error may occur during the installation.
 This is because clever tools currently only work on MacOS with an Intel processor.
-To resolve this problem, you can install Rosetta, a program that lets Apple processors run programs compiled for Intel processors.  
+To resolve this problem, you can install Rosetta, a program that lets Apple processors run programs compiled for Intel processors.
 To install it, you can use the command `/usr/sbin/softwareupdate --install-rosetta`
 {{< /callout >}}
 

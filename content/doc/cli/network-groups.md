@@ -1,4 +1,8 @@
-# Clever Cloud Network Groups
+---
+type: docs
+title: Network Groups
+description: Use Network Groups directly from Clever Tools
+---
 
 [Network Groups](/developers/doc/develop/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [Wireguard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
 

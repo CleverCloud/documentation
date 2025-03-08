@@ -19,7 +19,7 @@ keywords:
 
 aliases:
 - /doc/administrate/clever-tools/manage
-
+draft: true
 ---
 
 ## Stop or restart your application

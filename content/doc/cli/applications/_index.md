@@ -1,4 +1,11 @@
-# Clever Cloud Applications: management
+---
+type: docs
+weight: 3
+title: Applications
+description: Create and manage Clever Cloud applications with Clever Tools
+aliases:
+- /doc/administrate/clever-tools/create
+---
 
 ## create
 

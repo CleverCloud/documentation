@@ -1,4 +1,10 @@
-# Clever Cloud services: notifications and hooks
+---
+type: docs
+title: Notifications, Web Hooks
+description: Configure Clever Cloud Nexus repository for you distribution
+aliases:
+- /doc/administrate/clever-tools/notifications
+---
 
 When events happen on Clever Cloud, during add-ons or applications lifecycle for example, you can send email notifications or trigger webhooks. For each of the following command, you can list all items and/or target a specific user/organization through these parameters:
 

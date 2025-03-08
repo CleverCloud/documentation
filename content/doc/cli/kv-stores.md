@@ -1,4 +1,8 @@
-# Clever KV
+---
+type: docs
+title: KV stores
+description: Use Materia KV and Redis directly from Clever Tools
+---
 
 If you're using [Materia KV](/developers/doc/addons/materia-kv/), our next generation of key-value databases, serverless, distributed, synchronously-replicated, compatible with the Redis® protocol (and later DynamoDB, GraphQL), you can easily create an add-on with Clever Tools:
 

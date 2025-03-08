@@ -1,22 +1,31 @@
-# How to install Clever Tools
+---
+type: docs
+weight: 1
+title: Install Clever Tools
+description: Getting started with Clever Cloud CLI
+aliases:
+- /doc/administrate/clever-tools/getting_started
+- /developers/doc/cli/getting_started/
+---
 
 Clever Cloud CLI is based on Node.js. We thought it to be easily available on any platform. Thus, you can download Clever Tools as [a npm package](https://www.npmjs.com/package/clever-tools), but also through package managers or as a binary on many systems:
 
-- [GNU/Linux](setup-systems#gnulinux)
-  - [Arch Linux (AUR)](setup-systems#arch-linux-aur)
-  - [CentOS/Fedora (.rpm)](setup-systems#centosfedora-rpm)
-  - [Debian/Ubuntu (.deb)](setup-systems#debianubuntu-deb)
-  - [Exherbo](setup-systems#exherbo)
-  - [Binary (.tar.gz)](setup-systems#other-distributions-targz)
-- [macOS](setup-systems#macos)
-  - [Homebrew](setup-systems#homebrew)
-  - [Binary (.tar.gz)](setup-systems#binary-zip)
-- [Windows](setup-systems#windows)
-  - [Winget](setup-systems#winget)
-  - [Chocolatey](setup-systems#chocolatey)
-  - [Binary (.zip)](setup-systems#binary-zip)
-- [Docker](setup-systems#docker)
-- [Nix package manager](setup-systems#nix-package-manager)
+- [GNU/Linux](#gnulinux)
+  - [Arch Linux (AUR)](#arch-linux-aur)
+  - [CentOS/Fedora (.rpm)](#centosfedora-rpm)
+  - [Debian/Ubuntu (.deb)](#debianubuntu-deb)
+  - [Exherbo](#exherbo)
+  - [Other distributions (.tar.gz)](#other-distributions-targz)
+- [macOS](#macos)
+  - [Homebrew](#homebrew)
+  - [Binary (.tar.gz)](#binary-targz)
+- [Windows](#windows)
+  - [Winget](#winget)
+  - [Chocolatey](#chocolatey)
+  - [Binary (.zip)](#binary-zip)
+- [Docker](#docker)
+  - [Dockerfile](#dockerfile)
+- [Nix package manager](#nix-package-manager)
 
 ## GNU/Linux
 

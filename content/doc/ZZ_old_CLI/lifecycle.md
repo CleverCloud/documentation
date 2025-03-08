@@ -21,6 +21,7 @@ keywords:
 aliases:
 - /doc/administrate/clever-tools/lifecycle
 - /doc/clever-tools/lifecycle/
+draft: true
 ---
 ## Status of your application
 

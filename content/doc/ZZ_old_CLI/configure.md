@@ -10,6 +10,7 @@ keywords:
 - configuration
 aliases:
 - /doc/administrate/clever-tools/configure
+draft: true
 ---
 
 ## Inspect the current configuration

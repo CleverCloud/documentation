@@ -1,6 +1,11 @@
-# Clever Cloud Add-ons: management and backups
+---
+type: "docs"
+weight: 2
+title: Add-ons, Backups
+description: Create and manage Clever Cloud add-ons, backups with Clever Tools
+---
 
-Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through ` clever addon provider`. For each of the following commands, you can target a specific user/organisation:
+Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon provider`. For each of the following commands, you can target a specific user/organization:
 
 ```
 [--org, -o, --owner]                Organisation ID (or name, if unambiguous)

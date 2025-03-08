@@ -1,26 +1,34 @@
+---
+type: "docs"
+weight: 8
+title: Clever Tools (CLI)
+description: Use Clever Cloud CLI, Clever Tools
+aliases:
+- /doc/quickstartcli
+- /doc/getting-started/cli
+- /doc/reference/clever-tools/getting_started
+- /doc/reference/clever-tools
+---
 
-# How to use Clever Tools
+Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it to create and manage multiple services of the platform as applications, databases or storage add-ons. It also provides easy authenticated access to Clever Cloud public APIv2 and APIv4 through the [`clever curl` command](#curl). It's an [easy to set up](install) multiplatform and open source tool, based on Node.js.
 
-Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it to create and manage multiple services of the platform as applications, databases or storage add-ons. It also provides easy authenticated access to Clever Cloud public APIv2 and APIv4 through the [`clever curl` command](#curl).
+You can contribute to it through [issue](https://github.com/CleverCloud/clever-tools/issues) or [pull requests](https://github.com/CleverCloud/clever-tools/pulls). Ask for new features, enhancements or help us to provide them to our community.
 
-It's an [easy to set up](setup-systems) multiplatform and open source tool, based on Node.js. You can contribute to it through
-[issue](https://github.com/CleverCloud/clever-tools/issues) or [pull requests](https://github.com/CleverCloud/clever-tools/pulls). You're free
-to ask for new features, enhancements or help us to provide them to our community.
-
-- [How to install Clever Tools](setup-systems)
+- [How to install Clever Tools](install)
 - [Create a Clever Cloud account](https://console.clever-cloud.com)
 
 You'll find below the first commands to know to connect Clever Tools to your account, get its information and manage some options. Others are developed in dedicated pages:
 
-- [Materia KV](kv)
-- [Network Groups](ng)
-- [Applications: configuration](applications-config)
-- [Applications: management](applications-management)
-- [Applications: deployment and lifecycle](applications-deployment-lifecycle)
-- [Add-ons: management and backups](addons-backups)
-- [Services: dependencies](services-depedencies)
-- [Services: logs drains](services-logs-drains)
-- [Services: notifications and webhooks](services-notifications-webhooks)
+{{< cards >}}
+  {{< card link="install" title="Install" icon="arrow-down-tray" >}}
+  {{< card link="addons" title="Create and manage add-ons" icon= "wrench-screwdriver" >}}
+  {{< card link="applications" title="Create and manage applications" icon="code-bracket" >}}
+  {{< card link="kv-stores" title="Manage KV stores" icon="server-stack" >}}
+  {{< card link="logs-drains" title="Manage logs, drains" icon="command-line" >}}
+  {{< card link="network-groups" title="Network Groups" icon="tcp-ip-service" >}}
+  {{< card link="notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
+  {{< card link="services-depedencies" title="Services dependencies" icon="endpoints" >}}
+{{< /cards >}}
 
 ## basic commands
 
@@ -150,5 +158,5 @@ To revoke a token, use:
 clever tokens revoke myTokenId
 ```
 
-> [!INFO]
+> [!NOTE]
 > The `clever tokens` command is an experimental feature, activate it with `clever features enable tokens` command

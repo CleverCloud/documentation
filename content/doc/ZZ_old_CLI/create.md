@@ -20,7 +20,7 @@ keywords:
 - exposed configuration
 aliases:
 - /doc/administrate/clever-tools/create
-
+draft: true
 ---
 ## Apps creation process
 

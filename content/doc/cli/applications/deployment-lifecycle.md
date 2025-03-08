@@ -1,4 +1,14 @@
-# Clever Cloud Applications: deployment and lifecycle
+---
+type: docs
+title: Deployment, Lifecycle
+description: Manage your application using the Clever Cloud CLI tool
+aliases:
+- /developers/doc/cli/lifecycle/
+- /developers/doc/cli/manage/
+- /doc/administrate/clever-tools/lifecycle
+- /doc/administrate/clever-tools/manage
+- /doc/clever-tools/lifecycle/
+---
 
 A Clever Cloud application can easily be deployed and accessed once created, through following commands. Most can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`).
 
@@ -83,60 +93,6 @@ To ssh a specific application, use:
 ```
 clever ssh --app APP_ID_OR_NAME
 ```
-
-## logs
-
-When you deploy an application on Clever Cloud, we collect its logs, hosted in our internal Pulsar stack, all included. To listen to the stream, use:
-
-```
-clever logs
-```
-
-You can also get logs from a specific timeline, deployment or add-on through options:
-
-```
-[--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--search] SEARCH                   Fetch logs matching this pattern
-[--deployment-id] DEPLOYMENT_ID     Fetch logs for a given deployment
-[--addon] ADDON_ID                  Add-on ID
-[--format, -F] FORMAT               Output format (human, json, json-stream) (default: human)
-```
-
-## access logs
-
-When you deploy an application on Clever Cloud, we collect its access logs, hosted in our internal Pulsar stack, all included. To listen to the stream, use:
-
-```
-clever accesslogs
-```
-
-> [!TIP]
->  This now uses our v4 API, it's available as Alpha feature for now.
-
-You can also get access logs from a specific timeline or add-on through options, in multiple formats:
-
-```
-[--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--format, -F] FORMAT          Output format (human, json, json-stream) (default: human)
-```
-
-You can for example get access logs in JSON format for the last hour with:
-
-```
-clever accesslogs --format json --since 1h
-```
-
-or use `jq` to filter the output:
-
-```
-clever accesslogs --app APP_NAME --since 2024-06-21T13:37:42 --until 1d -F json | jq '[.[] | {date, countryCode: .source.countryCode, ip: .source.ip, port: .source.port}]'
-clever accesslogs --app APP_NAME --since 2024-06-21T13:37:42 --until 1d -F json | jq '.[] | [.date, .source.countryCode, .source.ip, .source.port] | @sh'
-```
-
-> [!TIP]
-> `jq` offers multiple table formatting options, like `@csv`, `@tsv`, `@json`, `@html`, `@uri`, `@base64`, etc.
 
 ## activity
 

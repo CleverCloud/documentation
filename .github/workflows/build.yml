@@ -22,10 +22,10 @@ jobs:
 
       - name: Build fork
         env:
-          HUGO_VERSION: '0.140.2'
-          HEXTRA_VERSION: 'v0.9.4'
+          HUGO_VERSION: '0.145.0'
+          HEXTRA_VERSION: 'v0.9.5'
         run: ./clevercloud-deploy-script.sh
-      
+
       - name: Upload artifact
         id: artifact-upload-step
         uses: actions/upload-artifact@v4
@@ -33,6 +33,6 @@ jobs:
           name: build-${{ github.event.pull_request.head.sha }}
           path: public/
           include-hidden-files: true
-      
+
       - name: Output artifact ID
         run:  echo 'Artifact name is ${{ github.sha }}, ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'

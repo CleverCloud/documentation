@@ -15,7 +15,8 @@ keywords:
 - flowdock
 aliases:
 - /doc/administrate/clever-tools/notifications
-
+- /developers/doc/cli/notifications/
+draft: true
 ---
 
 The *Notifications* service allows you to choose the events of interest to you

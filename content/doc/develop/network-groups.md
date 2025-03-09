@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Network Groups
-Description: Link resources over a private secure network based on WireGuard
+description: Link resources over a private secure network based on WireGuard
 tags:
 - network
 - groups
@@ -14,7 +14,6 @@ keywords:
 - wireguard
 - members
 - peers
--
 ---
 
 Network Groups (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:

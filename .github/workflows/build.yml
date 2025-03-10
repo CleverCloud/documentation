@@ -22,8 +22,8 @@ jobs:
 
       - name: Build fork
         env:
-          HUGO_VERSION: '0.140.2'
-          HEXTRA_VERSION: 'v0.9.4'
+          HUGO_VERSION: '0.145.0'
+          HEXTRA_VERSION: 'v0.9.5'
         run: ./clevercloud-deploy-script.sh
       
       - name: Upload artifact

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Network Groups
-Description: Link resources over a private secure network based on WireGuard
+description: Link resources over a private secure network based on WireGuard
 tags:
 - network
 - groups
@@ -14,7 +14,6 @@ keywords:
 - wireguard
 - members
 - peers
--
 ---
 
 Network Groups (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
@@ -34,9 +33,8 @@ A Network Group member domain name is composed this way: `<memberID>.m.<ngID>cc-
 
 When a resource is linked to a Network Group, you can reach it on any port inside this private network with its domain name. An application instance is a peer, you can reach through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
 
-
 - [Network Groups demo application](https://github.com/CleverCloud/network-groups-example)
-- [How to use Network Groups from Clever Tools](https://github.com/CleverCloud/clever-tools/blob/master/docs/ng.md#clever-cloud-network-groups)
+- [How to use Network Groups from Clever Tools](/developers/doc/cli/network-groups/)
 - [Keycloak and Otoroshi native support for Network Groups](/developers/api/v4/#network-groups)
 - [Tell us what you think of Network Groups and what features you need from it in](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
 

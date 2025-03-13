@@ -47,7 +47,7 @@ We included them with the `REDIS_` format. Thus, you can just try to replace a R
 
 You can also use clever tools to create a Materia KV add-on and set environment variables to test it with a `PING` command:
 
-```
+```bash
 clever addon create kv DATABASE_NAME
 source <(clever addon env addon ADDON_ID -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls PING
@@ -158,6 +158,9 @@ Find below the list of currently supported commands:
 | `INCR` | Increments the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INCRBY` | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INFO` | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans. |
+| `JSON.DEL` | Deletes JSON value at path from key. Returns the number of paths deleted. Can delete array elements or object fields. |
+| `JSON.GET` | Gets JSON value at path from key. Supports both single and multiple path queries with different path notations. |
+| `JSON.SET` | Sets JSON value at root path (`$`) and updating existing paths in key. Creates new key if it doesn't exist. |
 | `KEYS` | Returns all keys matching `pattern`, can be `*` |
 | `LOLWUT` | Returns Materia KV's version and might be hiding an easter egg 👀 |
 | `MGET` | Returns the values of all specified keys. For every key that doesn't hold a string value or doesn't exist, the special value `nil` is returned. Because of this, the operation never fails. |
@@ -172,3 +175,54 @@ Find below the list of currently supported commands:
 | `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `TTL` | Returns the remaining time to live of a `key`, in seconds. |
 | `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list` or `string`. |
+
+### JSON commands
+
+Materia KV provides preliminary support for JSON data type operations, compatible with Redis API JSON commands and clients. Unlike Redis JSON which uses a dedicated data type, our implementation works directly with classic string data types while maintaining API compatibility.
+
+#### Path Syntax and Behavior
+- `$`: Root element (required for setting values, optional for `GET`/`DEL`)
+- `$.field`: Access field in object
+- `$..field`: Recursively search for all matching fields
+- `$.array[index]`: Access array element by index
+- `.field`: Shorthand notation (without `$`) returns a direct value instead of an array wrapper
+
+#### Examples
+
+```bash
+# Setting and getting JSON
+> JSON.SET myJsonKey $ '{"a":"23"}'
+OK
+> JSON.GET myJsonKey
+"{\"a\":\"23\"}"
+> JSON.GET myJsonKey $
+"[{\"a\":\"23\"}]"
+> JSON.GET myJsonKey $.a
+"[\"23\"]"
+
+# Multiple paths with different notations
+> JSON.SET myJsonKey $ '{"f1":{"k1":["foo",42],"k2":["bar",53]},"f2":{"k1":["Hello",61]}}'
+OK
+> JSON.GET myJsonKey $.f1 $.f2
+"{\"$.f1\":[{\"k1\":[\"foo\",42],\"k2\":[\"bar\",53]}],\"$.f2\":[{\"k1\":[\"Hello\",61]}]}"
+> JSON.GET myJsonKey .f1 .f2
+"{\".f1\":{\"k1\":[\"foo\",42],\"k2\":[\"bar\",53]},\".f2\":{\"k1\":[\"Hello\",61]}}"
+
+# Recursive search
+> JSON.GET myJsonKey $..k1
+"[[\"foo\",42],[\"Hello\",61]]"
+
+# Array manipulation
+> JSON.SET myJsonKey $ '{"a":[1,2,3,4]}'
+OK
+> JSON.DEL myJsonKey $.a[1]
+(integer) 1
+> JSON.GET myJsonKey
+"{\"a\":[1,3,4]}"
+```
+
+#### Current Limitations
+- `JSON.SET` can only create new documents at root path (`$`)
+- `JSON.SET` can't create new fields in existing documents
+- Nested path creation is not supported (e.g., `$.new.child.field`)
+- Keys in your JSON must not contains characters like `..`, `*`, `[?(`

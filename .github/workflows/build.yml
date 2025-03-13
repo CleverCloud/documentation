@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  pull_request:
+    types: [opened, closed, synchronize, reopened]
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build in Fork Context
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+
+    steps:
+      - uses: actions/checkout@v4
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Build fork
+        env:
+          HUGO_VERSION: '0.145.0'
+          HEXTRA_VERSION: 'v0.9.5'
+        run: ./clevercloud-deploy-script.sh
+
+      - name: Upload artifact
+        id: artifact-upload-step
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.event.pull_request.head.sha }}
+          path: public/
+          include-hidden-files: true
+
+      - name: Output artifact ID
+        run:  echo 'Artifact name is ${{ github.sha }}, ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'

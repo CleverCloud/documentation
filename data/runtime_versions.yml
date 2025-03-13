@@ -1,6 +1,6 @@
 node:
   default:
-  - "v20.15.0"
+  - "v22.13.0"
 PHP:
   eol_source: "https://www.php.net/supported-versions.php"
   default:
@@ -8,6 +8,7 @@ PHP:
   accepted:
     - "5.6 (EOL)"
     - "7 (EOL)"
+    - "7.1 (EOL)"
     - "7.2 (EOL)"
     - "7.3 (EOL)"
     - "7.4 (EOL)"
@@ -16,6 +17,7 @@ PHP:
     - "8.1"
     - "8.2"
     - "8.3"
+    - "8.4"
 python:
   eol_source: "https://devguide.python.org/versions/#python-release-cycle"
   default:

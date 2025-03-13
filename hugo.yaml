@@ -1,4 +1,4 @@
-baseURL: https://www.clever-cloud.com/developers 
+baseURL: https://www.clever-cloud.com/developers
 languageCode: en-us
 title: Clever Cloud Documentation
 publishDir: public/developers
@@ -13,7 +13,7 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-    max: "0.140.2"
+    max: "0.145.0"
 
 outputs:
   home: [HTML, LLMS]

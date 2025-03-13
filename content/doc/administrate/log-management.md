@@ -19,18 +19,18 @@ aliases:
 type: docs
 ---
 
-Clever Cloud new logs stack is currently in public beta. Activated on-demand in the dedicated section of any application in the [Console](https://console.clever-cloud.com). It's not available for add-ons yet. It's based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse.
+Clever Cloud new logs stack is based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse. It's not available for add-ons yet.
 
 There are two text filter modes: exact match (case-sensitive) and regular expression. Settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local, to show the instances name or not.
 
-![New logs interface](/images/doc/new-logs-beta.webp)
+![New logs interface](/images/doc/new-logs.webp)
 
-During beta, you can send us your feedback through our GitHub Community:
+This interface is constantly improving, send us your feedback through our GitHub Community:
 
 * [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
-Logs are retained for 7 days, sometimes more for specific customers/needs. On our old stack, they are flushed daily at midnight.
+Logs are retained for 7 days, sometimes more for specific customers/needs.
 {{< /callout >}}
 
 ## Get continuous logs from your application

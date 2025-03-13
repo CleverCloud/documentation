@@ -80,19 +80,37 @@ If you want the settings to be applied to the whole application, you should put 
 
 If you put the `.user.ini` file in a subdirectory; settings will be applied recursively starting from this subdirectory.
 
-**Note**: `.user.ini` files are not loaded by the PHP CLI by default.
+#### Same configuration between PHP-CLI and PHP-FPM.
 
-To do so, you can use a tiny trick:
+`.user.ini` files aren't loaded by the PHP CLI by default.
 
-1. Add the `PHP_INI_SCAN_DIR=:/home/bas` environment variable in your application.
-   This way the PHP CLI will try to find a `.ini` file in `/home/bas` after loading all other configuration files.
-2. Run the following script in a [deployment hook]({{< ref "doc/develop/build-hooks.md" >}}) (e.g. in the [pre-run hook]({{< ref "doc/develop/build-hooks.md#pre-run-cc_pre_run_hook" >}})):
+However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-   ```bash
-   #!/bin/bash -l
-   test -f ${APP_HOME}${CC_WEBROOT}/.user.ini && \
-     cp ${APP_HOME}${CC_WEBROOT}/.user.ini ${HOME}/user.ini
-    ```
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](https://www.clever-cloud.com/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+
+Assuming the script runs at the root-folder of the application:
+
+```bash
+#!/usr/bin/env bash
+
+export PHP_INI_SCAN_DIR=":."
+php myscript.php
+```
+
+This appends the current directory while still loading the default configuration.
+
+**Note**: The `:` at the beginning of the string is mandatory. It indicates defaults files must still load.
+
+A specific `.ini` file can be loaded with:
+
+```
+#!/usr/bin/env bash
+
+export PHP_INI_SCAN_DIR=":.php-configuration/"
+php myscript.php
+```
+
+This loads every `.ini` files in the `php-configuration/` directory.
 
 ##### Timezone configuration
 
@@ -207,6 +225,10 @@ You can configure basic authentication using [environment variables]({{< ref "do
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable]({{< ref "doc/develop/env-variables.md" >}}).
 
 **By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
+
+### Header size
+
+Default Apache header size is `8k`. If you need to increase it, you can set `CC_APACHE_HEADERS_SIZE` environment variable, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value.
 
 ### Force HTTPS traffic
 
@@ -391,6 +413,7 @@ Others PHP frameworks tested on Clever Cloud:
 You can check enabled extensions and versions by viewing our `phpinfo()` example for:
 
 - [PHP 5.6](https://php56info.cleverapps.io)
+- [PHP 7.1](https://php71info.cleverapps.io)
 - [PHP 7.2](https://php72info.cleverapps.io)
 - [PHP 7.3](https://php73info.cleverapps.io)
 - [PHP 7.4](https://php74info.cleverapps.io)
@@ -398,10 +421,15 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 8.1](https://php81info.cleverapps.io)
 - [PHP 8.2](https://php82info.cleverapps.io)
 - [PHP 8.3](https://php83info.cleverapps.io)
+- [PHP 8.4](https://php84info.cleverapps.io)
 
 **Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
 
 Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
+
+{{< callout type="info" >}}
+Only some extensions support PHP 8.4 for now: `apcu`, `event`, `imap`,  `memcache`, `mongodb`, `pspell`, `rdkafka`, `redis`, `ssh2`, `tideways`, `uploadprogress`, `zip`. We'll add support for more extensions as they are released.
+{{< /callout >}}
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
 

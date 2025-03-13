@@ -8,7 +8,7 @@ keywords:
 - Keycloak
 - IAM
 - Security
-- Autentication
+- Authentication
 - Identity
 - OAuth
 - OpenID
@@ -21,10 +21,7 @@ Keycloak is an open source identity and access management (IAM) solution that of
 
 To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
-{{< callout type="info" >}}
-
-**Keycloak is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak). Thank you for being a part of our journey towards innovation and improvement!
-{{< /callout >}}
+{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak){{< /callout >}}
 
 ## Key features
 Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentication and access management solution, that you can adjust to your needs and workloads. It offers a wide panel of services such as:
@@ -117,8 +114,8 @@ The number of realms significantly impacts the overall performances. **Use as fe
 
 **The recommended way** to create realms is by using the environment variables of the Java application of the Keycloak add-on. Thus, it comes with an optimized configuration such as brute-force detection and specific metrics:
 
-- In the Java application, go to the `Environment variables` panel and declare as many realms as you need, separated by a `,`
-- Restart the application after the change. For example `REALMS=realm_1,realm_2` declares `realm_1` and `realm_2`
+- In the Java application, go to the `Environment variables` panel and in the `CC_KEYCLOAK_REALMS` environment variable, declare as many realms as you need, separated by a `,`. For example `CC_KEYCLOAK_REALMS=realm_1,realm_2` declares `realm_1` and `realm_2`.
+- Restart the application after the change.
 
 You can also create a realm from the Keycloak administrator console. On the dropdown menu from the top left corner, click `create realm`.
 
@@ -129,20 +126,20 @@ You can create a partial export using the Keycloak console:
 - From the `Realm Settings` panel
 - On the top right, click the dropdown`action` menu
 - Select `partial Export`
-- A cold export can be done at the start
+- A cold export can be done at the build
 
 You can create a full export using the environment variables of the Keycloak Java application:
 
 - Go to the Keycloak Java application in the Clever Cloud Console
 - In the Java application, create the `CC_KEYCLOAK_EXPORT_REALMS` environment variable
 - Set the realms you want to export, separated by a `,`
-- Restart the Java application from the Clever Cloud console
+- Rebuild the Java application from the Clever Cloud console
 
 It's a total export, including the client's secrets and hashed password. Exported realms are available in `realms/export` folder of the FS Bucket.
 
 ### Importing realms data
 
-Uploading previously exported data in `realms/import` folder in the associated FS Bucket enables importing realms data. The import process starts after restarting the Java application.
+Uploading previously exported data in `realms/import` folder in the associated FS Bucket enables importing realms data. The import process starts after rebuilding the Java application.
 
 ## Custom Themes and Plugins
 

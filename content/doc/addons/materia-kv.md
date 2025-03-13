@@ -125,7 +125,8 @@ We've prepared a few examples to help you get started with Materia KV:
 * [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
 * [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
 * [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
-
+* [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
+*
 ### Supported types and commands
 
 During this alpha stage, we don't provide 100% compatibility with the Redis API. Currently supported value types are:

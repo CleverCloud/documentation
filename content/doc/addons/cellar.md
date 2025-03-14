@@ -635,7 +635,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   {{< tab >}}
 
-  The following command assume you have [configured your AWS CLI](/doc/addons/cellar/) and added an alias.
+  The following command assume you have configured your AWS CLI and added an alias as showed earlier in the section `With AWS CLI `.
 
   ### Activate Versioning with AWS CLI
 

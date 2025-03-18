@@ -33,7 +33,7 @@ On Clever Cloud, it comes with pre-configured with features included such as [Co
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
 
 ```
 $ clever addon create otoroshi myOtoroshi
@@ -54,7 +54,7 @@ An initial account has been created, change the password at first login (Securit
 Learn more about Otoroshi with LLM on Clever Cloud: https://developers.clever-cloud.com/doc/addons/otoroshi/
 ```
 
-Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md) for more details on add-on management.
+Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
 
 ## Accessing the Otoroshi with LLM interface
 

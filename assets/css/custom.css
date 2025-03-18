@@ -341,11 +341,13 @@ html[class~="dark"] .content table:not(.code-block table) th {
 /* -----------------------------------------
             Customize paragraphs
 -------------------------------------------*/
-.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+/*Apply to content and exclude alerts <p> from this style*/
+.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)):not(:where(.hx-overflow-x-auto *, .hx-border p)) {
   margin-top: .3rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
 }
+
 
 /* -- Add padding to the left for changelog listing--*/
 .hx-pl-5 {

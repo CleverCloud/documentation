@@ -78,7 +78,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
 
 ```
 $ clever addon create keycloak myKeycloak

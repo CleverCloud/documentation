@@ -17,4 +17,4 @@ PostgreSQL 16.8 and 17.4 are now available for add-on creation and migration. So
 We also updated PostgreSQL 15 to release 15.12, PostgreSQL 14 to release 14.17, PostgreSQL 13 to release 13.20. Migrate your database to the desired major version to get the latest release.
 
 * [Learn more about PostgreSQL on Clever Cloud](/developers/doc/addons/postgresql/)
-* [PostgreSQL realease notes](https://www.postgresql.org/docs/release/)
+* [PostgreSQL release notes](https://www.postgresql.org/docs/release/)

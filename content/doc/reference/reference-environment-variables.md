@@ -270,7 +270,6 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | Organization token. |  |
-|`USE_SOCKS` |  | false |
 
 ## Python
 
@@ -538,14 +537,6 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`REDIS_HOST` |  | Generated upon creation | ✓ |
 |`REDIS_PORT` |  | Generated upon creation | ✓ |
 |`REDIS_PASSWORD` |  | Generated upon creation | ✓ |
-
-### Socks
-
-|  Name  |  Description  |  Default value  |  Read Only  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|`SOCKS_ADDON_HOST` |  |  |  |
-|`SOCKS_ADDON_PORT` |  |  |  |
-|`SOCKS_ADDON_PRIVATE_KEY` |  |  |  |
 
 ### VPN
 

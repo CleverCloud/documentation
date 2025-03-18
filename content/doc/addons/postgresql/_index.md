@@ -70,7 +70,7 @@ PostgreSQL databases managed by Clever Cloud comes with these extensions:
 
 Extension               | Description
 ----------------------- | -----------
- adminpack              | Administrative functions for PostgreSQL
+ adminpack              | Administrative functions for PostgreSQL (not supported on PostgreSQL 17+)
  autoinc                | Functions for autoincrementing fields
  btree_gin              | Support for indexing common datatypes in GIN
  btree_gist             | Support for indexing common datatypes in GiST
@@ -100,10 +100,10 @@ Extension               | Description
  pgrowlocks             | Show row-level locking information
  pgstattuple            | Show tuple-level statistics
  pgvector               | Vector data type and ivfflat and hnsw access methods
- plcoffee               | PL/CoffeeScript (v8) trusted procedural language
- plls                   | PL/LiveScript (v8) trusted procedural language
+ plcoffee               | PL/CoffeeScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
+ plls                   | PL/LiveScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
  plpgsql                | PL/pgSQL procedural language
- plv8                   | PL/JavaScript (v8) trusted procedural language
+ plv8                   | PL/JavaScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
  postgis                | PostGIS geometry and geography spatial types and functions
  postgis_raster         | PostGIS raster types and functions
  postgis_tiger_geocoder | PostGIS tiger geocoder and reverse geocoder

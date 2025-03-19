@@ -68,6 +68,42 @@ Once you created your add-on, open the management URL or look for `MB_SITE_URL` 
 
 * [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
 
+## Password reset
+
+To be able to reset your password, you must have [set up an active SMTP server](#configuring-a-smtp-server) in the `e-mail` section of the administrator settings. You can also do it [using a Mailpace add-on](#using-a-mailpace-add-on). Once done, the forgot password procedure will ask you the user email address and send a reset link to it.
+
+If you don't have an active SMTP server configured, there is a manual procedure to get the reset link:
+
+{{% steps %}}
+
+### Identify the Java application of your Metabase add-on
+
+Its name is the same as the add-on name, followed by the add-on ID.
+
+### Go to its environment variables page and add the password reset command
+
+Add a `CC_PRE_RUN_HOOK` environment variable with this value (replace `email@example.com` with your own address):
+
+```
+MB_DB_CONNECTION_URI="$POSTGRESQL_ADDON_URI" java --add-opens java.base/java.nio=ALL-UNNAMED -jar metabase.jar reset-password email@example.com
+```
+
+Press `Update changes` and restart the Java application.
+
+### Get the reset token
+
+In the applications logs, during the application start, you'll see a line like `OK [[[TOKEN]]]`
+
+### Reset the password
+
+Go to the Metabase instance URL followed by `/auth/reset_password/TOKEN` and reset the password
+
+### Clean up
+
+Remove the `CC_PRE_RUN_HOOK` environment variable from the Java application and restart it
+
+{{% /steps %}}
+
 ## Underlying resources
 
 When you create the Metabase add-on, Clever Cloud automatically deploys:

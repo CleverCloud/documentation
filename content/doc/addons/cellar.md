@@ -546,6 +546,153 @@ For example if your path is `/login` you need to have a file `login.html` becaus
 
 You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
 
+## Versioning
+
+### What is bucket versioning
+
+Versioning allow you to store multiple variants of an object inside of your bucket. When you upload a file with the same name as one already present in the bucket, Cellar  store a version of the previous content. This protect you from unintended action such as the accidental deletion of a file. 
+
+When you store a new version of a file, only the most recent version is visible. The previous one are hidden but still stored inside of the bucket. This allow you to recover an older version of a file in case of error.
+
+### How does versioning work
+
+Versioning can't be enabled for file, it can only be enabled for an entire bucket.  
+A bucket can be in one of three state :
+
+ - Unversioned (The default)
+ - Versioning-enabled
+ - Versioning-suspended
+
+You enable and suspend versioning at the bucket level. After you version-enable a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket.
+Once versioning is enabled, any object you add have a unique version ID. Object that already existed before enabling versioning have a version ID of `null`.
+
+{{< callout type="warning">}}
+Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.  
+{{< /callout>}}
+
+{{< tabs items="MinIO,  AWS CLI" >}}
+
+  {{< tab >}}
+  
+  To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
+
+  ```sh
+  mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>
+  ```
+
+  ### Activate Versioning with MinIO
+
+  To activate versioning, you can use MinIO and the following command.
+
+  ```sh
+  mc version enable <alias>/<bucket-name>
+  ```
+
+  If you want to suspend versioning, you can replace `enable` by `suspend`
+
+  You can check that Versioning is enabled for your bucket with :
+
+  ```sh
+  mc version info <alias>/<bucket-name> --json
+  ```
+
+  ### How to use Versioning
+
+  When Versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
+
+  #### List Versioned Object
+
+  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+
+  ```sh
+  mc ls --versions --recursive <alias>/<bucket-name>
+  ```
+
+  You can list all the version of a specific file with 
+
+  ```sh
+  mc ls --versions <alias>/<bucket-name>/<object_name>
+  ```
+
+  #### Get a version of an object 
+
+  You can get the specific version of an object using it's version ID obtained with the previous command
+
+  ```sh
+  mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>
+  ```
+
+  #### Delete a version of an object 
+
+  You can delete the specific version of an object using it's version ID
+
+  ```sh
+  mc rm --vid <version_id> <alias>/<bucket-name>/<object_name>
+  ```
+
+
+  {{< /tab >}}
+
+  {{< tab >}}
+
+  The following command assume you have configured your AWS CLI and added an alias as showed earlier in the section `With AWS CLI `.
+
+  ### Activate Versioning with AWS CLI
+
+  To activate Versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
+
+  ```sh
+  aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
+  ```
+
+  If you want to turn off Versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+
+  You can check that Versioning is enabled for your bucket with :
+
+  ```sh
+  aws s3api get-bucket-versioning --bucket <bucket_name>
+  ```
+
+  ### How to use Versioning
+
+  When Versioning is enabled, the object added automatically have a VersionID added to them. Only the latest version of an object if shown.
+
+  #### List all Versioned Object
+
+  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+
+  ```sh
+  aws s3api list-object-versions --bucket <bucket_name>
+  ```
+
+  #### List all the version of a specific Object
+
+  If you want to find the versions of only a specific object, you can use the following command. In this example, we find the versions of test.txt :
+
+  ```sh
+  aws s3api list-object-versions --bucket <bucket_name> --prefix <file_name>
+  ```
+
+  #### Get the version of an Object
+
+  If you want to get the previous version of an object, you need the VersionID that you can get with the two previous command. You can then use :
+
+  ```sh
+  aws s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
+  ```
+
+  #### Delete the version of an object
+
+  To remove a version of an object, you can use this command : 
+
+  ```sh
+  aws s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>
+  ```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
 ## Troubleshooting
 
 {{% details title="SSL error with s3cmd" closed="true" %}}

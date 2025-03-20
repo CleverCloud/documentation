@@ -582,7 +582,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   ### Activate Versioning with MinIO
 
-  To activate Versioning, you can use MinIO and the following command.
+  To activate versioning, you can use MinIO and the following command.
 
   ```sh
   mc version enable <alias>/<bucket-name>

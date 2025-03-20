@@ -1,5 +1,5 @@
 ---
-title: Terrform provider 0.7.0 is available with more resources you can update
+title: Terraform provider 0.7.0 is available with more resources you can update
 description: Yet more to come
 date: 2025-03-19
 tags:

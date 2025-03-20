@@ -574,7 +574,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   {{< tab >}}
   
-  To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must first creare an alias.
+  To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
 
   ```sh
   mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>

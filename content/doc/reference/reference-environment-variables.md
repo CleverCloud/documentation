@@ -1,6 +1,7 @@
 ---
 type: docs
 title: Environment Variable Reference
+linktitle: EnvVar Reference
 position: 3
 shortdesc: List of all the environment variable references
 tags:

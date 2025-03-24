@@ -8,7 +8,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-description: Releases are getting bigger
+description: New week, new release!
 excludeSearch: true
 ---
 

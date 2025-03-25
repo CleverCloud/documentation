@@ -580,7 +580,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
   mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>
   ```
 
-  ### Activate Versioning with MinIO
+  ### Activate versioning with MinIO
 
   To activate versioning, you can use MinIO and the following command.
 
@@ -590,17 +590,17 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   If you want to suspend versioning, you can replace `enable` by `suspend`
 
-  You can check that Versioning is enabled for your bucket with :
+  You can check that versioning is enabled for your bucket with :
 
   ```sh
   mc version info <alias>/<bucket-name> --json
   ```
 
-  ### How to use Versioning
+  ### How to use versioning
 
-  When Versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
+  When versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
 
-  #### List Versioned Object
+  #### List versioned Object
 
   If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
 
@@ -637,27 +637,27 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   The following command assume you have configured your AWS CLI and added an alias as showed earlier in the section `With AWS CLI `.
 
-  ### Activate Versioning with AWS CLI
+  ### Activate versioning with AWS CLI
 
-  To activate Versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
+  To activate versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
 
   ```sh
   aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
   ```
 
-  If you want to turn off Versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+  If you want to turn off versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
 
-  You can check that Versioning is enabled for your bucket with :
+  You can check that versioning is enabled for your bucket with :
 
   ```sh
   aws s3api get-bucket-versioning --bucket <bucket_name>
   ```
 
-  ### How to use Versioning
+  ### How to use versioning
 
-  When Versioning is enabled, the object added automatically have a VersionID added to them. Only the latest version of an object if shown.
+  When versioning is enabled, the object added automatically have a versionID added to them. Only the latest version of an object if shown.
 
-  #### List all Versioned Object
+  #### List all versioned Object
 
   If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
 
@@ -675,7 +675,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   #### Get the version of an Object
 
-  If you want to get the previous version of an object, you need the VersionID that you can get with the two previous command. You can then use :
+  If you want to get the previous version of an object, you need the versionID that you can get with the two previous command. You can then use :
 
   ```sh
   aws s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt

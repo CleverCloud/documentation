@@ -26,6 +26,7 @@ failover
 Filestash
 Filezilla
 FPM
+FrankenPHP
 FSBucket
 Gemfile
 Glassfish

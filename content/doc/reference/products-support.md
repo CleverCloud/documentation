@@ -7,10 +7,11 @@ tags: []
 keywords: []
 type: docs
 ---
+This is a product matrix showing the services that are available with our Terraform provider and K8S-Operator.
 
-# Addons
+## Add-ons available on Terraform and K8S-Operator
 
-| #              | Terraform | K8S operator |
+| Product        | Terraform | K8S operator |
 |----------------|-----------|--------------|
 | MateriaKV      | ✅         | ✅            |
 | Cellar         | ✅         |              |
@@ -29,9 +30,9 @@ type: docs
 | Otoroshi       |           |              |
 
 
-# Runtimes
+## Runtimes available on Terraform and K8S-Operator
 
-| #      | Terraform | K8S operator |
+| Product| Terraform | K8S operator |
 |--------|-----------|--------------|
 | Docker | ✅         |              |
 | Java   | ✅         |              |

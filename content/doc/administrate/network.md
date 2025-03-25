@@ -1,6 +1,7 @@
 ---
 type: docs
 title: Networking and IP addresses ranges
+linkTitle: Networking and IP
 position: 3
 shortdesc: What are my application's outgoing IP?
 keywords:

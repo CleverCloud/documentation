@@ -3,13 +3,15 @@ type: docs
 title: Deploy, Lifecycle
 description: Manage your application using the Clever Cloud CLI tool
 aliases:
-- /developers/doc/cli/ssh-access
 - /developers/doc/cli/lifecycle
 - /developers/doc/cli/manage
+- /developers/doc/cli/ssh-access
 - /doc/administrate/clever-tools/lifecycle
 - /doc/administrate/clever-tools/manage
 - /doc/administrate/clever-tools/ssh-access
 - /doc/clever-tools/lifecycle
+- /doc/cli/manage
+- /doc/cli/ssh-access
 ---
 
 A Clever Cloud application can easily be deployed and accessed once created, through following commands. Most can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`).

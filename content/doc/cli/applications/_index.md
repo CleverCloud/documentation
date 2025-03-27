@@ -5,7 +5,7 @@ title: Applications
 description: Create and manage Clever Cloud applications with Clever Tools
 aliases:
 - /doc/administrate/clever-tools/create
-- /developers/doc/cli/create
+- /doc/cli/create
 ---
 
 ## create

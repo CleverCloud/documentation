@@ -10,7 +10,7 @@
 
 ### With the Clever Tools CLI
 
-1. Make sure you have clever-tools installed locally. Refer to our [CLI getting started](/developers/doc/cli/getting_started).
+1. Make sure you have clever-tools installed locally. Refer to our [CLI getting started](/doc/cli/).
 2. In your code folder, do `clever env set <variable-name> <variable-value>`
 
 Refer to [environment variables reference](/developers/doc/reference/reference-environment-variables) for more details on available environment variables on Clever Cloud.

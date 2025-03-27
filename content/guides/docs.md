@@ -8,6 +8,8 @@ keywords:
 
 draft: false
 type: docs
+config:
+  look: handDrawn
 ---
 
 {{< hextra/hero-subtitle >}}
@@ -16,9 +18,35 @@ type: docs
 
 ## Docs architecture overview
 
+Docs runs on a Python backend and displays the application on a React/Next frontend. A yjs provider completes the stack to enable collaborative features. Here's an overview of its architecture:
 
+```mermaid
+---
+config:
+  look: classic
+  theme: mc
+---
+flowchart TD
+ subgraph s1["Python"]
+        n6["Backend"]
+  end
+ subgraph s2["Node.JS"]
+        n7["Frontend"]
+  end
+ subgraph s3["Node.js"]
+        n8["yjs provider"]
+  end
+    n1["PostrgreSQL"] --> s1
+    s1 --> n1 & s2 & n2["Keycloak"] & n4["Cellar"] & s3
+    n2 --> s2 & s1
+    s3 --> s1
+    n4 --> s2
+    n1@{ shape: cyl}
+    n2@{ shape: hex}
+    n4@{ shape: rect}
+```
 
-## How to Configure Docs
+## How to configure Docs
 
 Docs depends on some services that needs configuration before it can function. Use the **Create > an add-on** fonction to create each dependency on Clever Cloud.
 

@@ -16,7 +16,7 @@ llmsTxtOptional: true
 {{< cards >}}
   {{< card link="astro" title="Astro" subtitle= "Build and deploy a Astro application on Clever Cloud" icon="astro" >}}
   {{< card link="clever-operator" title="Clever Operator" subtitle= "Manage your Clever Cloud databases and addons seamlessly from Kubernetes" icon="kubernetes" >}}
-  {{< card link="docs" title="Docs" subtitle= "Deploy the open source document and live collaboration editor on Clever Cloud." icon="docs-suite" >}}
+  {{< card link="docs" title="Docs" subtitle= "Deploy the open source document and live collaboration editor on Clever Cloud" icon="docs-suite" >}}
   {{< card link="docusaurus" title="Docusaurus" subtitle= "Build and deploy a static Docusaurus based website on Clever Cloud" icon="docusaurus" >}}
   {{< card link="django" title="Django" subtitle= "Configure your Django application to run on Clever Cloud" icon="django" >}}
   {{< card link="tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}

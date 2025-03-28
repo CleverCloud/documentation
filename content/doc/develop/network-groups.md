@@ -38,7 +38,7 @@ When a resource is linked to a Network Group, you can reach it on any port insid
 - [Keycloak and Otoroshi native support for Network Groups](/developers/api/v4/#network-groups)
 - [Tell us what you think of Network Groups and what features you need from it in](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
 
-## Architecure
+## Architecture
 
 ```mermaid
 flowchart TD

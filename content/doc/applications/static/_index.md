@@ -1,7 +1,7 @@
 ---
 type: docs
-title: Static
-shortdesc: Deploy Static files on Clever Cloud
+title: Static with Apache
+shortdesc: Deploy Static files with Apache HTTP server on Clever Cloud
 tags:
 - deploy
 keywords:

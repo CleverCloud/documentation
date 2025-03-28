@@ -1,7 +1,7 @@
 ---
 type: docs
-title: PHP
-shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
+title: PHP with Apache
+shortdesc: Deploy PHP applications with Apache HTTP server on Clever Cloud
 tags:
 - php
 - deploy

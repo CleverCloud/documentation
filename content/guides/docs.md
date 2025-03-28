@@ -46,6 +46,120 @@ flowchart TD
     n4@{ shape: rect}
 ```
 
+## Deploy Docs
+
+Docs runs using:
+
+- a **Python** application for the backend (in `src/backend`)
+- a **Node.js** application for the frontend (in `src/frontend`)
+- a **Node.js** application for the y-provider (in `src/frontend/servers/y-provider`)
+
+This guide walks you trough a deployment from the root of Docs repository. Follow the steps in this order to deploy Docs with a minimal configuration.
+
+### Deploy the backend
+
+{{% steps %}}
+
+#### Create a Python application
+
+Select at least an `XS` plan. Smaller instances can make the build to fail.
+
+#### Create a PosgreSQL add-on
+
+#### Inject environment variables
+
+```env
+APP_FOLDER="/src/backend"
+CC_PRE_BUILD_HOOK="cd src/backend && pip install pip-tools && pip-compile pyproject.toml &&
+pip-sync requirements.txt"
+CC_PYTHON_MODULE="impress.wsgi:application"
+CC_PYTHON_VERSION="3"
+CC_RUN_SUCCEEDED_HOOK="cd src/backend && python manage.py migrate"
+DJANGO_CONFIGURATION="Production"
+DJANGO_SECRET_KEY="<your-key>"
+DJANGO_SETTINGS_MODULE="impress.settings"
+DJANGO_SUPERUSER_PASSWORD="<your-password>"
+```
+
+Before pushing your code, add the missing variables:
+
+#### Inject the DB credentials
+
+Enable Docs to get the database credentials:
+
+```env
+DB_HOST="<postrgresql_addon_host_value>"
+DB_NAME="<postrgresql_addon_name_value>"
+DB_PASSWORD="<postrgresql_addon_password_value>"
+DB_PORT="<postrgresql_addon_port_value>"
+DB_USER="<postrgresql_addon_user_value>"
+```
+
+#### Set the backend domain name
+
+Select **Domain names** and add use the path routing feature on Clever Cloud to set the domain ans follows:
+
+- Domain name: `<docs-base-domain>`
+- Route: `/api/v1.0`
+
+You can use `.cleverapps.io` domains for tests. Make sure to set a custom domain before releasing for production.
+
+Then, inject the following environment variables:
+
+```env
+DJANGO_ALLOWED_HOSTS="<docs-base-domain>"
+DJANGO_CSRF_TRUSTED_ORIGINS="<docs-base-domain>"
+DJANGO_ALLOWED_HOSTS="<docs-base-domain>"
+IMPRESS_BASE_URL="<docs-base-domain>"
+LOGIN_REDIRECT_URL="<docs-base-domain>"
+LOGOUT_REDIRECT_URL="<docs-base-domain>/*"
+```
+
+#### Push your code
+
+If you push using git, add the remote as `clever-backend`, for example.
+
+{{% /steps %}}
+
+### Deploy the frontend
+
+{{% steps %}}
+
+#### Create a Node.js application
+
+Select at least a `M` instance for the build.
+
+#### Inject the environment variables
+
+```env
+APP_FOLDER="./src/frontend"
+CC_NODE_BUILD_TOOL="yarn"
+CC_PRE_BUILD_HOOK="cd ./src/frontend && yarn install --frozen-lockfile && yarn app:build"
+CC_RUN_COMMAND="cd ./src/frontend && yarn app:start"
+NEXT_PUBLIC_API_BASE_PATH="/"
+NEXT_PUBLIC_SW_DEACTIVATED="true"
+NODE_OPTIONS="--max-old-space-size=4096"
+```
+
+#### Set the frontend domain name
+
+Select **Domain names** and set the base domain for Docs. No route is needed for the frontend.
+
+#### Add the domain to the environment variables
+
+Inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
+
+#### Push your code
+
+If you push using git, add the remote as `clever-frontend`, for example.
+
+{{% /steps %}}
+
+### Deploy the y-provider
+
+{{% steps %}}
+{{% /steps %}}
+
 ## How to configure Docs
 
 Docs depends on some services that needs configuration before it can function. Use the **Create > an add-on** fonction to create each dependency on Clever Cloud.

@@ -8,8 +8,6 @@ keywords:
 
 draft: false
 type: docs
-config:
-  look: handDrawn
 ---
 
 {{< hextra/hero-subtitle >}}
@@ -18,14 +16,9 @@ config:
 
 ## Docs architecture overview
 
-Docs runs on a Python backend and displays the application on a React/Next frontend. A yjs provider completes the stack to enable collaborative features. Here's an overview of its architecture:
+[Docs](https://github.com/suitenumerique/docs) runs on a Python backend and displays the application on a React/Next frontend. A [yjs provider](https://github.com/yjs/yjs) completes the stack to enable collaborative features.
 
 ```mermaid
----
-config:
-  look: classic
-  theme: mc
----
 flowchart TD
  subgraph s1["Python"]
         n6["Backend"]
@@ -54,7 +47,7 @@ Docs runs using:
 - a **Node.js** application for the frontend (in `src/frontend`)
 - a **Node.js** application for the y-provider (in `src/frontend/servers/y-provider`)
 
-This guide walks you trough a deployment from the root of Docs repository. Follow the steps in this order to deploy Docs with a minimal configuration.
+This guide walks you trough a deployment from the root of [Docs repository](https://github.com/suitenumerique/docs). Clone the repository and follow the steps to deploy Docs with a minimal configuration.
 
 ### Deploy the backend
 
@@ -64,9 +57,7 @@ This guide walks you trough a deployment from the root of Docs repository. Follo
 
 Select at least an `XS` plan. Smaller instances can make the build to fail.
 
-#### Create a PosgreSQL add-on
-
-#### Inject environment variables
+Inject the following environment variables
 
 ```env
 APP_FOLDER="/src/backend"
@@ -81,11 +72,9 @@ DJANGO_SETTINGS_MODULE="impress.settings"
 DJANGO_SUPERUSER_PASSWORD="<your-password>"
 ```
 
-Before pushing your code, add the missing variables:
+#### Create a PosgreSQL add-on
 
-#### Inject the DB credentials
-
-Enable Docs to get the database credentials:
+Inject the DB credentials into the Python application:
 
 ```env
 DB_HOST="<postrgresql_addon_host_value>"
@@ -100,7 +89,9 @@ DB_USER="<postrgresql_addon_user_value>"
 Select **Domain names** and add use the path routing feature on Clever Cloud to set the domain ans follows:
 
 - Domain name: `<docs-base-domain>`
-- Route: `/api/v1.0`
+- Route: `/api/v1.0/`
+
+**⚠️ Don't skip the trailing slash at the end of the route.**
 
 You can use `.cleverapps.io` domains for tests. Make sure to set a custom domain before releasing for production.
 
@@ -127,9 +118,7 @@ If you push using git, add the remote as `clever-backend`, for example.
 
 #### Create a Node.js application
 
-Select at least a `M` instance for the build.
-
-#### Inject the environment variables
+Select at least a `M` instance for the build, and inject the following environment variables:
 
 ```env
 APP_FOLDER="./src/frontend"
@@ -143,11 +132,8 @@ NODE_OPTIONS="--max-old-space-size=4096"
 
 #### Set the frontend domain name
 
-Select **Domain names** and set the base domain for Docs. No route is needed for the frontend.
-
-#### Add the domain to the environment variables
-
-Inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
+- Select **Domain names** and set the base domain for Docs. The frontend doesn't need any route.
+- Add the domain to the environment variables: inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
 
 #### Push your code
 
@@ -158,15 +144,56 @@ If you push using git, add the remote as `clever-frontend`, for example.
 ### Deploy the y-provider
 
 {{% steps %}}
+
+#### Create a Node.js application
+
+Inject the following environment variables:
+
+```env
+APP_FOLDER="/src/frontend/servers/y-provider"
+CC_NODE_BUILD_TOOL="yarn"
+CC_PRE_BUILD_HOOK="cd ./src/frontend/servers/y-provider && yarn install --frozen-lockfile && yarn build"
+CC_RUN_COMMAND="cd ./src/frontend/servers/y-provider && yarn start"
+COLLABORATION_LOGGING="true"
+COLLABORATION_SERVER_ORIGIN="https://<docs-base-domain>"
+COLLABORATION_SERVER_SECRET="<server-secret>"
+Y_PROVIDER_API_KEY="<generated-api-key>"
+```
+
+#### Set y-provider domain
+
+Select **Domain names** and add the following domains:
+
+- Domain: `<docs-base-domain>`
+- Route: `/collaboration/api/`
+
+- Domain: `<docs-base-domain>`
+- Route: `/ws/`
+
+#### Connect to the backend
+
+Select **Exposed configuration** and inject the following environment variables:
+
+```env
+COLLABORATION_API_URL="https://<docs-base-domain>/collaboration/api/"
+COLLABORATION_SERVER_SECRET="<server-secret>"
+```
+
+Then select the **backend** application > **Service dependencies** > **Link applications** and choose the y-provider application.
+
+#### Push your code
+
+If you push using git, add the remote as `clever-y-provider`, for example.
+
 {{% /steps %}}
 
 ## How to configure Docs
 
-Docs depends on some services that needs configuration before it can function. Use the **Create > an add-on** fonction to create each dependency on Clever Cloud.
+Docs depends on some services that needs configuration before it can function. Use the **Create > an add-on** function to create each dependency on Clever Cloud.
 
 ### Keycloak
 
-Docs uses Keycloak as an authentification provider. Configure it by follwoing these steps:
+Docs uses Keycloak as an authentication provider. Configure it by following these steps:
 
 {{% steps %}}
 
@@ -200,8 +227,8 @@ Name it `impress` as well.
 
 ##### Capability config
 
-- Client authentication: ON
-- Authorization: OFF
+- Client authentication: On
+- Authorization: Off
 - Authentication flow: Standard flow
 
 ##### Find the Client Secret
@@ -210,7 +237,7 @@ Find it in **Clients > impress > credentials**, named **Client secret*.
 
 ##### Optional : Add an identity provider
 
-You can choose among different identity providers : GitHub, Google, etc, and even Clever Cloud.
+You can choose among different identity providers (GitHub, Google, etc, and even Clever Cloud).
 
 #### Inject the variables in the **backend** application
 
@@ -257,5 +284,5 @@ AWS_STORAGE_BUCKET_NAME="<name-of-your-bucket>"
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="" title="Card title" subtitle="Card subtiltle" icon="adjustments-horizontal" >}}
+  {{< card link="https://github.com/suitenumerique/docs/blob/main/docs/installation.md#preparation" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
 {{< /cards >}}

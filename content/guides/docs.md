@@ -99,11 +99,10 @@ Then, inject the following environment variables:
 
 ```env
 DJANGO_ALLOWED_HOSTS="<docs-base-domain>"
-DJANGO_CSRF_TRUSTED_ORIGINS="<docs-base-domain>"
-DJANGO_ALLOWED_HOSTS="<docs-base-domain>"
-IMPRESS_BASE_URL="<docs-base-domain>"
-LOGIN_REDIRECT_URL="<docs-base-domain>"
-LOGOUT_REDIRECT_URL="<docs-base-domain>/*"
+DJANGO_CSRF_TRUSTED_ORIGINS="https://<docs-base-domain>"
+IMPRESS_BASE_URL="https://<docs-base-domain>"
+LOGIN_REDIRECT_URL="https://<docs-base-domain>"
+LOGOUT_REDIRECT_URL="https://<docs-base-domain>/*"
 ```
 
 #### Push your code

@@ -34,7 +34,7 @@ You can create an application as a task without command to execute and define it
 
 To declare an application as a Task, check the corresponding box in the `Information` tab.
 
-{{< figure src="/images/changelog/clever-tasks.webp" caption="Defines a Clever Cloud application as a Task in Console" width="800px">}}
+{{< figure src="/developers/images/changelog/clever-tasks.webp" caption="Defines a Clever Cloud application as a Task in Console" width="800px">}}
 
 ## Define the command to run (mandatory)
 

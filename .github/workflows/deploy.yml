@@ -54,3 +54,9 @@ jobs:
           type: static-apache
           comment: true
           domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
+      - name: Run links checker
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+        run: |
+          pip install pipx
+          pipx install linkchecker
+          linkchecker --no-warnings --no-status "${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers" || echo "Link check found some issues, but proceeding with deployment"

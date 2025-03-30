@@ -7,12 +7,14 @@ tags:
 keywords:
 - quickstart
 aliases:
-- /getting-started/quickstart
 - /deploy
+- /developers/doc/getting-started/quickstart
+- /doc/getting-started/quickstart
+- /getting-started/quickstart
 type: "docs"
 ---
 {{< hextra/hero-subtitle >}}
-  Clever Cloud provides an automated hosting platform for  developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+  Clever Cloud provides an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
 ## Create a Clever Cloud Account
@@ -36,7 +38,7 @@ There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
 * Read User Repositories
 
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections../applications/d96bd8fd996d2ca783cc).
+  If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -83,7 +85,7 @@ The log system retrieves all output from the application and displays it in the 
   {{< card link="../applications/scala" title="Scala" icon="scala" >}}
   {{< card link="../applications/elixir" title="Elixir" icon="elixir" >}}
   {{< card link="../applications/dotnet" title=".NET" icon="dotnet" >}}
-  
+
 {{< /cards >}}
 
 ### Create an Application Step by Step
@@ -102,8 +104,8 @@ Choose the organization you want to deploy in from the left menu. At this point 
 
 Find it in the **Organization Manager** panel, at the top left of the left menu.
 
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.  
-If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections../applications/d96bd8fd996d2ca783cc).
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
+If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 #### Select the language
 
@@ -118,7 +120,7 @@ Choose the language or the framework you want to deploy.
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
 {{< callout emoji="💡" >}}
-  You can learn more about scaling & instances size [here](/doc/administrate/scalability).
+  You can learn more about scaling & instances size [here](/developers/doc/administrate/scalability).
   {{< /callout >}}
 
 
@@ -139,7 +141,7 @@ Enter the name and the description of your application.
   {{< tab >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/reference/reference-environment-variables).
+  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/developers/doc/reference/reference-environment-variables/).
 
   Follow these steps to deploy your application:
 
@@ -173,8 +175,8 @@ git push <remote-name> <branch-name>:master
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
   {{< image "/developers/images/doc/github-deployment-branch.png" "Github deployment branch select" >}}
-  
-  If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings../applications) and link again your GitHub account to your Clever Cloud account.
+
+  If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings/applications) and link again your GitHub account to your Clever Cloud account.
 
   **Private GitHub repositories are also supported.**
 
@@ -209,7 +211,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 **Add your SSH key to your profile here:**
 <https://console.clever-cloud.com/users/me/ssh-keys>
 
-The full tutorial about adding SSH key is here: [adding SSH keys](/account/ssh-keys-management)
+The full tutorial about adding SSH key is here: [adding SSH keys](/developers/doc/account/ssh-keys-management/)
 
 {{% /details %}}
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
@@ -262,7 +264,7 @@ Applications often requires one or more services in addition to the runtime itse
 
 An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
 
-Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/../api))
+Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/developers/api))
 
 #### Available add-ons
 
@@ -293,7 +295,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/develop/env-variables). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/developers/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 

@@ -15,7 +15,7 @@ weight: 13
 
 ---
 
-Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).
+Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/developers/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).
 
 You want to help us to offer more services to our users? [Contact us](https://partners.clever-cloud.com). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
 

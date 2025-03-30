@@ -11,7 +11,6 @@ aliases:
 - /doc/quickstartcli
 - /doc/reference/clever-tools/getting_started
 - /doc/reference/clever-tools
-
 ---
 
 Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it to create and manage multiple services of the platform as applications, databases or storage add-ons. It also provides easy authenticated access to Clever Cloud public APIv2 and APIv4 through the [`clever curl` command](#curl). It's an [easy to set up](install) multiplatform and open source tool, based on Node.js.

@@ -661,7 +661,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   #### List all versioned Object
 
-  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+  If you need to list all the objects in your bucket, including the different versions of the files stored in it, you can use : 
 
   ```sh
   aws s3api list-object-versions --bucket <bucket_name>

@@ -563,7 +563,7 @@ A bucket can be in one of three state :
  - Versioning-enabled
  - Versioning-suspended
 
-You enable and suspend versioning at the bucket level. After you version-enable a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket.
+You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time. 
 Once versioning is enabled, any object you add have a unique version ID. Object that already existed before enabling versioning have a version ID of `null`.
 
 {{< callout type="warning">}}

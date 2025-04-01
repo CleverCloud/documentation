@@ -649,7 +649,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   If you want to turn off versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
 
-  You can check that versioning is enabled for your bucket with :
+  You can check if versioning is enabled on your bucket with :
 
   ```sh
   aws s3api get-bucket-versioning --bucket <bucket_name>

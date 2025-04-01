@@ -657,7 +657,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   ### How to use versioning
 
-  When versioning is enabled, the object added automatically have a versionID added to them. Only the latest version of an object if shown.
+  When versioning is enabled, the added object automatically gets a versionID. Only the latest version of an object if shown.
 
   #### List all versioned Object
 

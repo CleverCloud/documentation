@@ -669,7 +669,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   #### List all the version of a specific Object
 
-  If you want to find the versions of only a specific object, you can use the following command. In this example, we find the versions of test.txt :
+  If you want to check the different versions of a specific object, you can use the following command. In this example, we find the versions of test.txt :
 
   ```sh
   aws s3api list-object-versions --bucket <bucket_name> --prefix <file_name>

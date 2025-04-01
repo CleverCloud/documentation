@@ -556,7 +556,7 @@ Only the latest version of a file is visible, while previous versions remain hid
 
 ### How does versioning work
 
-Versioning can't be enabled for file, it can only be enabled for an entire bucket.  
+Versioning can't be enabled for a single file: it will cover the entire bucket.
 A bucket can be in one of three state :
 
  - Unversioned (The default)

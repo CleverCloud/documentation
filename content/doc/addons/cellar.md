@@ -550,7 +550,7 @@ You may use SSG (Static Site Generated) to  dynamically generate your content du
 
 ### What is bucket versioning
 
-Versioning allow you to store multiple variants of an object inside of your bucket. When you upload a file with the same name as one already present in the bucket, Cellar  store a version of the previous content. This protect you from unintended action such as the accidental deletion of a file. 
+Versioning enables you to store multiple versions of an object in your bucket. When you upload a file with the same name as an existing one, Cellar automatically saves the previous version of that object. This safeguards your data against accidental actions, such as deleting a file by mistake.
 
 When you store a new version of a file, only the most recent version is visible. The previous one are hidden but still stored inside of the bucket. This allow you to recover an older version of a file in case of error.
 

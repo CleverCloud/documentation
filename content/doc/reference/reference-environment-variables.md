@@ -113,9 +113,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
 
-{{< callout type="info" >}}
-  Redirection.io easy setup is available in the Node.js runtime and will progressively be available on all our compatible images.
-{{< /callout >}}
+>[!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support
 

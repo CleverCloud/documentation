@@ -677,7 +677,7 @@ Versioning can quickly take up a lot of space since multiple version of an objec
 
   #### Get the version of an Object
 
-  If you want to get the previous version of an object, you need the versionID that you can get with the two previous command. You can then use :
+  If you want to retrieve the previous version of an object, you need the versionID that you can get with any of the two previous command. You can use :
 
   ```sh
   aws s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt

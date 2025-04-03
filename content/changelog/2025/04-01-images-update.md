@@ -21,4 +21,3 @@ We deployed and updated all our images, except Docker and Java, with no impact f
   * uv 0.6.11
 * **Rust:**
   * Update to 1.85.1
-

@@ -121,10 +121,12 @@ The Redirection.io agent will start as a service, listen to `8080` port and forw
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys "Generate tailscale key").
 
-|  Name  |  Description  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key |
-|`TAILSCALE_LOGIN_SERVER`| Contains the login server |
+|  Name  |  Description  |  Default value  |
+|-----------------------|------------------------------|--------------------------------|
+| [`TAILSCALE_ACCEPT_DNS`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-dns-settings) | Tailscale use its default DNS settings | `true` |
+| [`TAILSCALE_ACCEPT_ROUTE`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets) | Tailscale uses its subnets settings | `false` |
+| [`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key | |
+| `TAILSCALE_LOGIN_SERVER`| Contains the login server | |
 
 #### How it works?
 

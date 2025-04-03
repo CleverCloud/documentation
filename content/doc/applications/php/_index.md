@@ -385,7 +385,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
 
-Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
+Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pdo_sqlsrv`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `sqlsrv`,`ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
 
 {{< callout type="info" >}}
 Only some extensions support PHP 8.4 for now: `apcu`, `event`, `imap`,  `memcache`, `mongodb`, `pspell`, `rdkafka`, `redis`, `ssh2`, `tideways`, `uploadprogress`, `zip`. We'll add support for more extensions as they are released.
@@ -457,6 +457,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 - Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
+
+- SQL Server: set `ENABLE_SQLSRV` or `ENABLE_PDO_SQLSRV` to `true`.
+
+    These extensions enable drivers that rely on the Microsoft ODBC Driver to handle the low-level communication with SQL Server. The `SQLSRV` extension provides a procedural interface while the `PDO_SQLSRV` extension implements PDO for accessing data in all editions of SQL Server 2012 and later (including Azure SQL DB).
 
 - Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
 

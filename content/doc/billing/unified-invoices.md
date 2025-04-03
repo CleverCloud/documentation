@@ -13,6 +13,9 @@ keywords:
 - payment
 - payments
 type: docs
+aliases:
+- /developers/doc/clever-cloud-overview/unified-invoicing
+- /doc/clever-cloud-overview/unified-invoicing
 ---
 
 Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).

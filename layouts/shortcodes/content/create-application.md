@@ -14,4 +14,4 @@ Refer to [Quickstart](/developers/doc/quickstart) for more details on applicatio
    3. `zone` deployment zone (`par` for Paris and `mtl` for Montreal)
    4. `org` the organization ID the application will be created under.
 
-Refer to [clever create](/doc/cli/applications/) for more details on application creation with Clever Tools.
+Refer to [clever create](/developers/doc/cli/applications/) for more details on application creation with Clever Tools.

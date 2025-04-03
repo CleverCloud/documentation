@@ -10,9 +10,11 @@ str_replace_dict:
   "@application-type@": "Docker"
 type: docs
 aliases:
+- /developers/doc/docker/docker
 - /doc/deploy/application/docker
 - /doc/deploy/application/docker/docker
-- /doc/getting-started/by-language/docker/
+- /doc/docker/docker
+- /doc/getting-started/by-language/docker
 - /doc/partials/language-specific-deploy/docker
 ---
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

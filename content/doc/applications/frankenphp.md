@@ -73,7 +73,7 @@ Use your own command to run your FrankenPHP application to define flags such as 
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 
-FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/cli/applications/#tasks):
+FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/developers/doc/cli/applications/#tasks):
 
 ```bash
 clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"

@@ -35,7 +35,7 @@ Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elast
 The configuration is set with this deployment hook :
 `CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
 
-To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/deploy/addon/cellar)).
+To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/developers/doc/deploy/addon/cellar)).
 
 Check other available configuration file on [Github](https://github.com/CleverCloud/custom-kibana-config)
 

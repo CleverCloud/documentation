@@ -21,10 +21,10 @@ draft: false
   Nuxt is a powerful and versatile web framework for building modern web applications, offering a seamless development experience with server-side rendering, static site generation, and hybrid capabilities. Learn in this guide how to deploy a Nuxt site on Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-Clever Cloud supports deploying both [fully static and on-demand rendered](https://nuxt.com/docs/guide/concepts/rendering) Nuxt 3 projects:   
+Clever Cloud supports deploying both [fully static and on-demand rendered](https://nuxt.com/docs/guide/concepts/rendering) Nuxt 3 projects:
 
-- The `static` rendering mode is ideal for most content-oriented websites where you don't need per-visitor server-side customization. Consider using a [Static runtime](/doc/applications/static/) when using this mode, with the site generation handled in a post-build hook. Learn more about [static hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#static-hosting). 
-- The `server` or `hybrid` rendering modes are optimal for dynamic applications requiring server-side customization or a mix of static and server-rendered pages. For these modes, consider using a [Node.js runtime](/doc/applications/javascript/nodejs/). Learn more about [Node.js hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#nodejs-server).
+- The `static` rendering mode is ideal for most content-oriented websites where you don't need per-visitor server-side customization. Consider using a [Static runtime](/developers/doc/applications/static/) when using this mode, with the site generation handled in a post-build hook. Learn more about [static hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#static-hosting).
+- The `server` or `hybrid` rendering modes are optimal for dynamic applications requiring server-side customization or a mix of static and server-rendered pages. For these modes, consider using a [Node.js runtime](/developers/doc/applications/javascript/nodejs/). Learn more about [Node.js hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#nodejs-server).
 
 If you need an example source code compatible with Nuxt static generation, get [Zooper](https://github.com/fayazara/zooper) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 
@@ -34,7 +34,7 @@ git clone https://github.com/fayazara/zooper myStaticApp
 
 ## Deploy a static Nuxt site
 
-To deploy your Nuxt project to Clever Cloud, you need to **create a new application**. 
+To deploy your Nuxt project to Clever Cloud, you need to **create a new application**.
 
 {{% content/language-specific-deploy/create-static %}}
 
@@ -55,7 +55,7 @@ clever env set CC_POST_BUILD_HOOK "npx nuxi generate"
 
 ## Deploy a server Nuxt site
 
-To deploy your Nuxt project to Clever Cloud, you need to **create a new application**. 
+To deploy your Nuxt project to Clever Cloud, you need to **create a new application**.
 
 
 ### Create a Node.js application

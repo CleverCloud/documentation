@@ -12,6 +12,8 @@ keywords:
 - fs buckets
 - storage
 aliases:
+- /developers/doc/addons/fs_buckets
+- /doc/addons/fs_buckets
 - /doc/deploy/addon/fs-bucket
 type: docs
 ---

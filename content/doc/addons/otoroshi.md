@@ -66,8 +66,8 @@ Once you created your add-on, open the management URL or look for `CC_OTOROSHI_U
 
 When you create the Otoroshi add-on, Clever Cloud automatically deploys:
 
-- A [Java](/doc/applications/java/java-jar/) instance with Otoroshi with LLM pre-loaded
-- A [Redis](/doc/addons/postgresql/) database (for internal Otoroshi use)
+- A [Java](/developers/doc/applications/java/java-jar/) instance with Otoroshi with LLM pre-loaded
+- A [Redis](/developers/doc/addons/postgresql/) database (for internal Otoroshi use)
 
 ## Plan sizing
 
@@ -93,7 +93,7 @@ Security is paramount with built-in features for API key management through Otor
 ### Observability and Enhancement
 Every LLM interaction is thoroughly audited, capturing detailed information about consumers, providers, and usage patterns. The extension also includes robust prompt engineering capabilities, allowing you to create and maintain a library of contextually enhanced prompts and templates for improved efficiency and consistency in LLM interactions.
 
-- [Otoroshi LLM extension documentation](https://www.otoroshi.io/docs/llm-endpoints/)
+- [Otoroshi LLM extension documentation](https://cloud-apim.github.io/otoroshi-llm-extension/docs/overview)
 - [Otoroshi LLM extension video tutorials](https://www.youtube.com/watch?v=M8PbydxPw4A&list=PLNHaf5rXAx3FWk7dn2fKGwQXxeLCPhZCh)
 
 ## Coraza WAF (Web Application Firewall)

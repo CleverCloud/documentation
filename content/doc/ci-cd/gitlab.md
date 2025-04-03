@@ -12,7 +12,7 @@ How to set up you CI/CD from GitLab to deploy to Clever Cloud.
 
 ## Use the Components Catalog
 
-GitLab provides it's own way of deploying applications to any host provider. The CI/CD system differs from GitHub Actions, but Clever Cloud has already worked on ways to ease the process. Find components in [GitLab Components Catalog](https://gitlab.com/explore/catalog/CleverCloud/clever-cloud-pipeline) to build a modular pipeline for your project.
+GitLab provides its own way of deploying applications to any host provider. The CI/CD system differs from GitHub Actions, but Clever Cloud has already worked on ways to ease the process. Find components in [GitLab Components Catalog](https://gitlab.com/explore/catalog/CleverCloud/clever-cloud-pipeline) to build a modular pipeline for your project.
 
 To use a component, add this snippet to your `.gitlab-ci.yml` file:
 
@@ -73,7 +73,7 @@ The self-hosted GitLab service on Clever Cloud with [Heptapod]({{< ref "/doc/add
 
 ## Troubleshooting
 
-If you encounter troubles or bugs using the GitLab component, feel free to open an issue [on the repository](https://gitlab.com/CleverCloud/clever-cloud-pipeline/-/issues/new):
+If you encounter troubles or bugs using the GitLab component, feel free to open an issue [on the repository](https://gitlab.com/CleverCloud/clever-cloud-pipeline/-/issues):
 
 ## 🎓 Go further
 

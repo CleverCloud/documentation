@@ -3,6 +3,7 @@ type: docs
 title: Deploy, Lifecycle
 description: Manage your application using the Clever Cloud CLI tool
 aliases:
+- /developers/doc/clever-tools/ssh-access
 - /developers/doc/cli/lifecycle
 - /developers/doc/cli/manage
 - /developers/doc/cli/ssh-access
@@ -10,6 +11,7 @@ aliases:
 - /doc/administrate/clever-tools/manage
 - /doc/administrate/clever-tools/ssh-access
 - /doc/clever-tools/lifecycle
+- /doc/clever-tools/ssh-access
 - /doc/cli/manage
 - /doc/cli/ssh-access
 ---

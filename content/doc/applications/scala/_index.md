@@ -10,10 +10,12 @@ str_replace_dict:
   "@application-type@": "SBT + Scala"
 type: docs
 aliases:
+- /developers/doc/scala/scala
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala
-- /doc/deploy/application/scala/scala/
+- /doc/deploy/application/scala/scala
 - /doc/partials/language-specific-deploy/scala
+- /doc/scala/scala
 comments: false
 ---
 

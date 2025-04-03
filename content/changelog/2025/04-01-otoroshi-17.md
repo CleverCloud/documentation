@@ -1,5 +1,5 @@
 ---
-title: "Otoroshi v17.0.0 is available, OpenAI web search and ecological impact/cost tracking in LLM extension"
+title: "Otoroshi v17.0.0 is available: OpenAI web search and ecological impact/cost tracking in LLM extension"
 date: 2025-04-01
 tags:
   - addons

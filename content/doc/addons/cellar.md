@@ -617,7 +617,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   #### Get a version of an object 
 
-  You can get the specific version of an object using it's version ID obtained with the previous command
+  You can get the specific version of an object using its version ID obtained using the previous command.
 
   ```sh
   mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>

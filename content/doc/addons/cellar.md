@@ -599,7 +599,7 @@ For that reason, we do recommend you to enable versioning when creating a new bu
 
   ### How to use versioning
 
-  When versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
+When versioning is enabled, the newly added object is automatically provided with a unique identifier. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
 
   #### List versioned objects
 

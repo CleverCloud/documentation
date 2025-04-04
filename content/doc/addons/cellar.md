@@ -625,7 +625,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   #### Delete a version of an object 
 
-  You can delete the specific version of an object using it's version ID
+  You can delete the specific version of an object using its version ID.
 
   ```sh
   mc rm --vid <version_id> <alias>/<bucket-name>/<object_name>

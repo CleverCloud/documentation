@@ -568,9 +568,8 @@ Once versioning is enabled, any object you add have a unique version ID. Object 
 
 For that reason, we do recommend you to enable versioning when creating a new bucket. It will be easier to navigate through version IDs.
 
-{{< callout type="warning">}}
-Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.  
-{{< /callout>}}
+> [!WARNING]
+> Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.  
 
 {{< tabs items="MinIO,  AWS CLI" >}}
 

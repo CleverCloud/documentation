@@ -646,7 +646,10 @@ When versioning is enabled, the newly added object is automatically provided wit
   aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
   ```
 
-  If you want to turn off versioning, you just need to set `--versioning-configuration` with `Status=Suspended`
+  If you want to turn off versioning, you can use the following:
+  
+```sh
+  aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Suspended
 
   You can check if versioning is enabled on your bucket with :
 

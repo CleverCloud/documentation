@@ -636,7 +636,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   {{< tab >}}
 
-  The following command assume you have configured your AWS CLI and added an alias as showed earlier in the section `With AWS CLI `.
+  The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](https://www.clever-cloud.com/developers/doc/addons/cellar/#with-aws-cli)
 
   ### Activate versioning with AWS CLI
 

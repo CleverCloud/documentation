@@ -601,7 +601,7 @@ For that reason, we do recommend you to enable versioning when creating a new bu
 
   When versioning is enabled, the object added automatically have a Unique identifier added to them. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
 
-  #### List versioned Object
+  #### List versioned objects
 
   If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
 

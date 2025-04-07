@@ -106,16 +106,14 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|`CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | false |
-|`CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
-|`CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
-|`CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
+| `CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | `false` |
+| `CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
+| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
+| `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
 
 The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
 
-{{< callout type="info" >}}
-  Redirection.io easy setup is available in the Node.js runtime and will progressively be available on all our compatible images.
-{{< /callout >}}
+>[!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support
 
@@ -123,10 +121,12 @@ The Redirection.io agent will start as a service, listen to `8080` port and forw
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys "Generate tailscale key").
 
-|  Name  |  Description  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key |
-|`TAILSCALE_LOGIN_SERVER`| Contains the login server |
+|  Name  |  Description  |  Default value  |
+|-----------------------|------------------------------|--------------------------------|
+| [`TAILSCALE_ACCEPT_DNS`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-dns-settings) | Tailscale use its default DNS settings | `true` |
+| [`TAILSCALE_ACCEPT_ROUTE`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets) | Tailscale uses its subnets settings | `false` |
+| [`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key | |
+| `TAILSCALE_LOGIN_SERVER`| Contains the login server | |
 
 #### How it works?
 
@@ -174,6 +174,17 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
  |`CC_PHOENIX_RUN_ECTO_MIGRATE` | Whether to run 'mix ecto.migrate' or not. | true |
  |`CC_PHOENIX_SERVER_GOAL` | Phoenix server goal. | phx.server |
  |`CC_RUN_COMMAND` | Custom command to run your application. Replaces the default behaviour. |  |
+
+## FrankenPHP
+
+[FrankenPHP Documentation](../../applications/frankenphp)
+
+| Name | Description | Default value |
+|---------------|-------------| ---------------|
+| `CC_FRANKENPHP_WORKER` | Path to the worker script, relative to the root of your project (e.g. `/worker/scrip.php`) | |
+| `CC_PHP_COMPOSER_FLAGS` | Flags to pass to Composer | `-n --no-dev --no-progress --no-scripts` |
+| `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build | |
+| `CC_WEBROOT` | Path to the web content to serve, relative to the root of your application | `/` |
 
 ## Go
 

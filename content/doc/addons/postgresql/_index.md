@@ -36,6 +36,17 @@ Some applications require a non-empty database to run properly. If you want to i
 
 {{% content/dbMigration %}}
 
+## Replication
+
+You can add up to 2 replicas to an existing PostgreSQL (v12 or higher) database on Clever Cloud to enhance performance and reliability. They're set up as read-only [standby servers](https://www.postgresql.org/docs/current/runtime-config-replication.html#RUNTIME-CONFIG-REPLICATION-STANDBY) with full physical replication, in a different availability zone (AZ) or region if requested.
+
+You can see if a database is a [primary server](https://www.postgresql.org/docs/current/runtime-config-replication.html#RUNTIME-CONFIG-REPLICATION-PRIMARY) or a replica from PostgreSQL dashboard in [the Console](https://console.clever-cloud.com). If a primary server isn't available, you can promote a replica as a standalone server and link it to applications. This database will:
+- Become a primary server (using `pg_ctl promote` command internally) with read/write capabilities
+- Delete its replication link to the original primary server
+
+> [!Note] Replication setup isn't yet available from API or the Console
+>  To create and configure PostgreSQL replicas, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+
 ## Direct access
 
 A proxy serves all dedicated PostgreSQL databases. In some cases, this can add some latency between applications and their database. If this is an issue, you can generate a direct hostname and port for the add-on to bypass the proxy, using the "Generate direct hostname and port" button in the add-on dashboard.
@@ -70,7 +81,7 @@ PostgreSQL databases managed by Clever Cloud comes with these extensions:
 
 Extension               | Description
 ----------------------- | -----------
- adminpack              | Administrative functions for PostgreSQL
+ adminpack              | Administrative functions for PostgreSQL (not supported on PostgreSQL 17+)
  autoinc                | Functions for autoincrementing fields
  btree_gin              | Support for indexing common datatypes in GIN
  btree_gist             | Support for indexing common datatypes in GiST
@@ -100,10 +111,10 @@ Extension               | Description
  pgrowlocks             | Show row-level locking information
  pgstattuple            | Show tuple-level statistics
  pgvector               | Vector data type and ivfflat and hnsw access methods
- plcoffee               | PL/CoffeeScript (v8) trusted procedural language
- plls                   | PL/LiveScript (v8) trusted procedural language
+ plcoffee               | PL/CoffeeScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
+ plls                   | PL/LiveScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
  plpgsql                | PL/pgSQL procedural language
- plv8                   | PL/JavaScript (v8) trusted procedural language
+ plv8                   | PL/JavaScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
  postgis                | PostGIS geometry and geography spatial types and functions
  postgis_raster         | PostGIS raster types and functions
  postgis_tiger_geocoder | PostGIS tiger geocoder and reverse geocoder

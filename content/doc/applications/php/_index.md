@@ -1,7 +1,7 @@
 ---
 type: docs
-title: PHP
-shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
+title: PHP with Apache
+shortdesc: Deploy PHP applications with Apache HTTP server on Clever Cloud
 tags:
 - php
 - deploy
@@ -36,8 +36,6 @@ Set the `CC_PHP_VERSION` environment variable to one of the following versions.
 
 All new PHP applications are created with a default `CC_PHP_VERSION`. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`).
 
-The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
-
 ### Change the webroot
 
 Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may
@@ -50,25 +48,6 @@ Add a new environment variable called `CC_WEBROOT` and set `/public` as its valu
 ```shell
 clever env set CC_WEBROOT /public
 ```
-
-#### Using a configuration file
-
-To change the webroot, just set the key `webroot` in the `deploy` part
-of the configuration file *clevercloud/php.json* with the absolute path (*from the root of your application*) of your new public folder.
-
-In the following example we want to set the webroot to the folder `/public`:
-
-```json
-{
-    "deploy": {
-        "webroot": "/public"
-    }
-}
-```
-
-{{< callout type="warning" >}}
-Note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
-{{< /callout >}}
 
 ### Change PHP settings
 
@@ -157,25 +136,6 @@ auto_prepend_file=./inject_headers.php
 Please refer to the [official documentation](https://www.php.net/manual/en/configuration.file.per-user.php) for more information.
 
 You can review the [available directives](https://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within `.user.ini`.
-
-#### `clevercloud/php.json` settings
-
-Other settings than the one mentioned above can be changed by adding the following line in `clevercloud/php.json`:
-
-```json
-{
-    "configuration": {
-        "my.setting": "value"
-    }
-}
-```
-
-Here is the list of available settings:
-
-- `mbstring.func_overload`
-- `pm.max_children`
-
-**Note**: You can send a request to the support if you need to change a setting which cannot be changed via a `.user.ini` file and is not in this list.
 
 ##### Memory Limit
 
@@ -425,7 +385,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
 
-Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
+Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pdo_sqlsrv`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `sqlsrv`,`ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
 
 {{< callout type="info" >}}
 Only some extensions support PHP 8.4 for now: `apcu`, `event`, `imap`,  `memcache`, `mongodb`, `pspell`, `rdkafka`, `redis`, `ssh2`, `tideways`, `uploadprogress`, `zip`. We'll add support for more extensions as they are released.
@@ -497,6 +457,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 - Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
+
+- SQL Server: set `ENABLE_SQLSRV` or `ENABLE_PDO_SQLSRV` to `true`.
+
+    These extensions enable drivers that rely on the Microsoft ODBC Driver to handle the low-level communication with SQL Server. The `SQLSRV` extension provides a procedural interface while the `PDO_SQLSRV` extension implements PDO for accessing data in all editions of SQL Server 2012 and later (including Azure SQL DB).
 
 - Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
 

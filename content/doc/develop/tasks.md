@@ -23,7 +23,7 @@ This will guide you in the process of creating a Clever Task: an application tha
 
 ### With the Clever Tools CLI
 
-Make sure you have [Clever Tools installed](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools) and in your project folder, run `clever create --type <type> --task <command>`. You can also add options such as `<app-name> --region <zone> --org <org>` where:
+Make sure you have [Clever Tools installed](/developers/doc/cli/) and in your project folder, run `clever create --type <type> --task <command>`. You can also add options such as `<app-name> --region <zone> --org <org>` where:
    1. `app-name` the name you want for your application,
    2. `zone` deployment zone (`par` for Paris or `mtl` for Montreal for example)
    3. `org` the organization ID the application will be created under
@@ -34,7 +34,7 @@ You can create an application as a task without command to execute and define it
 
 To declare an application as a Task, check the corresponding box in the `Information` tab.
 
-{{< figure src="/images/changelog/clever-tasks.webp" caption="Defines a Clever Cloud application as a Task in Console" width="800px">}}
+{{< figure src="/developers/images/changelog/clever-tasks.webp" caption="Defines a Clever Cloud application as a Task in Console" width="800px">}}
 
 ## Define the command to run (mandatory)
 

@@ -44,7 +44,7 @@ You can also save questions and **organize** them in _collections_. When opening
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
 
 ```
 $ clever addon create metabase myMetabase
@@ -60,13 +60,49 @@ Your Metabase is starting:
 /!\ The metabase provider is in beta testing phase
 ```
 
-Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/blob/master/docs/addons-backups.md) for more details on add-on management.
+Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
 
 ## Accessing the Metabase interface
 
 Once you created your add-on, open the management URL or look for `MB_SITE_URL` value in the Metabase dashboard from the Console. The first time you connect, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.
 
 * [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
+
+## Password reset
+
+To be able to reset your password, you must have [set up an active SMTP server](#configuring-a-smtp-server) in the `e-mail` section of the administrator settings. You can also do it [using a Mailpace add-on](#using-a-mailpace-add-on). Once done, the forgot password procedure will ask you the user email address and send a reset link to it.
+
+If you don't have an active SMTP server configured, there is a manual procedure to get the reset link:
+
+{{% steps %}}
+
+### Identify the Java application of your Metabase add-on
+
+Its name is the same as the add-on name, followed by the add-on ID.
+
+### Go to its environment variables page and add the password reset command
+
+Add a `CC_PRE_RUN_HOOK` environment variable with this value (replace `email@example.com` with your own address):
+
+```
+MB_DB_CONNECTION_URI="$POSTGRESQL_ADDON_URI" java --add-opens java.base/java.nio=ALL-UNNAMED -jar metabase.jar reset-password email@example.com
+```
+
+Press `Update changes` and restart the Java application.
+
+### Get the reset token
+
+In the applications logs, during the application start, you'll see a line like `OK [[[TOKEN]]]`
+
+### Reset the password
+
+Go to the Metabase instance URL followed by `/auth/reset_password/TOKEN` and reset the password
+
+### Clean up
+
+Remove the `CC_PRE_RUN_HOOK` environment variable from the Java application and restart it
+
+{{% /steps %}}
 
 ## Underlying resources
 
@@ -95,7 +131,7 @@ This variable can be modified to specify which version of Metabase you want. Thi
 - `CC_METABASE_VERSION=0.50.3`: use the `0.50.3` version (_same as `=0.50.3`_)
 - `CC_METABASE_VERSION=0.50`: use the latest available version starting with `0.50` (_same as `^0.50.0`, `~0.50.0`_)
 
-To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#restart).
+To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/developers/doc/cli/applications/deployment-lifecycle/#restart).
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
 {{< callout type="warning" >}}

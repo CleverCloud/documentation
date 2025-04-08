@@ -109,10 +109,10 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|`CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | false |
-|`CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
-|`CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
-|`CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
+| `CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | `false` |
+| `CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
+| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
+| `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
 
 The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
 
@@ -124,10 +124,12 @@ The Redirection.io agent will start as a service, listen to `8080` port and forw
 
 Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys "Generate tailscale key").
 
-|  Name  |  Description  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key |
-|`TAILSCALE_LOGIN_SERVER`| Contains the login server |
+|  Name  |  Description  |  Default value  |
+|-----------------------|------------------------------|--------------------------------|
+| [`TAILSCALE_ACCEPT_DNS`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-dns-settings) | Tailscale use its default DNS settings | `true` |
+| [`TAILSCALE_ACCEPT_ROUTE`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets) | Tailscale uses its subnets settings | `false` |
+| [`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key | |
+| `TAILSCALE_LOGIN_SERVER`| Contains the login server | |
 
 #### How it works?
 

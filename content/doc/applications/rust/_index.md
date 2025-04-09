@@ -11,10 +11,12 @@ str_replace_dict:
   "@application-type@": "Rust"
 type: docs
 aliases:
+- /developers/doc/rust/rust
 - /doc/deploy/application/rust
-- /doc/getting-started/by-language/rust
 - /doc/deploy/application/rust/rust
+- /doc/getting-started/by-language/rust
 - /doc/partials/language-specific-deploy/rust
+- /doc/rust/rust
 comments: false
 ---
 
@@ -107,7 +109,7 @@ First, you need to use the `HTTPS` url as the git url for your dependency in you
 Then, you need to create a personal access token. It allows to not use your password:
 
 * `Github`: <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
-* `Gitlab`: <https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html> (API rights are needed)
+* `GitLab`: <https://docs.gitlab.com/user/profile/personal_access_tokens/> (API rights are needed)
 
 Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
 

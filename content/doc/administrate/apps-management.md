@@ -11,6 +11,9 @@ keywords:
 - restart
 - logs
 type: docs
+aliases:
+- /developers/doc/admin-console/apps-management
+- /doc/admin-console/apps-management
 ---
 
 ## Start, restart and stop

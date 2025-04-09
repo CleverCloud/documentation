@@ -138,8 +138,8 @@ Here's the list of the configuration values for the "container" field in `war.js
 
 | Value      | Description                                                                                  | EOL |
 |------------|----------------------------------------------------------------------------------------------|-----|
-| GLASSFISH3 | Use Glassfish 3.x (see <https://glassfish.java.net/>)                                        |     |
-| GLASSFISH4 | Use Glassfish 4.x (see <https://glassfish.java.net/>)                                        |     |
+| GLASSFISH3 | Use Glassfish 3.x (see <https://glassfish.org/>)                                        |     |
+| GLASSFISH4 | Use Glassfish 4.x (see <https://glassfish.org/>)                                        |     |
 | JBOSS6     | Use JBoss AS 6.x (see <https://www.jboss.org/jbossas>)                                       |     |
 | JBOSS7     | Use JBoss AS 7.x (see <https://www.jboss.org/jbossas>)                                       |     |
 | RESIN3     | Use Resin AS 3.x (see <https://www.caucho.com/resin-3.1/doc/>)                               |     |

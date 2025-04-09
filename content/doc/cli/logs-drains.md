@@ -113,7 +113,7 @@ The `host` query parameter is not mandatory: in the Datadog pipeline configurati
 
 ### NewRelic logs drains
 
-NewRelic has two zones, EU and US. An account on one zone is not available on the other, make sure to target the good EU or US intake endpoint. To create a [NewRelic](https://docs.newrelic.comlogs/log-api/introduction-log-api/) drain, you just need to use:
+NewRelic has two zones, EU and US. An account on one zone is not available on the other, make sure to target the good EU or US intake endpoint. To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
 
 ```
 clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key <API_KEY>

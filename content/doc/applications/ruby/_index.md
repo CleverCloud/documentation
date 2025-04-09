@@ -11,11 +11,13 @@ str_replace_dict:
   "@application-type@": "Ruby"
 type: docs
 aliases:
+- /developers/doc/ruby/ruby-on-rails
 - /doc/deploy/application/ruby
-- /doc/getting-started/by-language/ruby
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
 - /doc/deploy/application/ruby/ruby-rack
+- /doc/getting-started/by-language/ruby
 - /doc/partials/language-specific-deploy/ruby
+- /doc/ruby/ruby-on-rails
 comments: false
 ---
 

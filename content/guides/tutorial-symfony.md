@@ -10,7 +10,9 @@ keywords:
 str_replace_dict:
   "@application-type@": "PHP"
 aliases:
+- /developers/doc/php/tutorial-symfony
 - /doc/deploy/application/php/tutorials/tutorial-symfony
+- /doc/php/tutorial-symfony
 ---
 
 ## Overview

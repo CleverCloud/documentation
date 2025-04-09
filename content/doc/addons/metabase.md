@@ -28,7 +28,7 @@ Metabase on Clever Cloud is a preconfigured set of resources, benefiting from al
 - **Share** a questions/dashboard to anyone using an anonymous link
 - **Periodically send** results of a question/dashboard by email/Slack
 - Configure **data visualization** for questions results: table, line chart, pie chart, gauge, single number, etc.
-- Connect **external databases**; it works with add-ons such as [MySQL](../mysql/), [PostgreSQL](../postgresql/), [MongoDB](../mongodb/) and [many other data sources](https://www.metabase.com/data_sources/)
+- Connect **external databases**; it works with add-ons such as [MySQL](../mysql/), [PostgreSQL](../postgresql/), [MongoDB](../mongodb/) and [many other data sources](https://www.metabase.com/data-sources/)
 - Create _questions_ either by typing in `SELECT` SQL queries or by using Metabase’s UI to build such queries **without using SQL**
 
 You can also save questions and **organize** them in _collections_. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with **groups and permissions**: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.

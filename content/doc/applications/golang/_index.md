@@ -11,9 +11,11 @@ str_replace_dict:
   "@application-type@": "Go"
 type: docs
 aliases:
+- /developers/doc/go/go
 - /doc/deploy/application/golang
 - /doc/deploy/application/golang/go
 - /doc/getting-started/by-language/go
+- /doc/go/go
 - /doc/partials/language-specific-deploy/go
 ---
 
@@ -96,7 +98,7 @@ If you don't want to add a file to your project, you can set one of these enviro
 | `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |
 
 {{< callout type="info" >}}
-  The default `GO_PATH` is `${HOME}/go_home`. 
+  The default `GO_PATH` is `${HOME}/go_home`.
   The command executed to launch the application is `go install $CC_GO_PKG`. \
   Your project may include vendored dependencies (in the `vendor/` folder).
 {{< /callout >}}

@@ -64,7 +64,7 @@ If you ever need to stop using Pgpool-II, you can remove this variable or set it
 
 Your application will use a Unix Domain Socket to connect to Pgpool-II. Unix domain sockets are faster than TCP sockets because there is no handshake and the connection is made locally on the same machine. A special environment variable will be injected to your environment variables: `CC_PGPOOL_SOCKET_PATH`. This variable contains the path to the Unix Domain Socket you have to connect to. See [Usage](#usage) below for some examples on how to use it.
 
-The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](../../doc/reference/reference-environment-variables/).  
+The available Pgpool-II variables and their descriptions are available on our [environment variables reference page](../../doc/reference/reference-environment-variables/).
 
 ### Concurrent session and pool size
 
@@ -246,7 +246,7 @@ bjzfhkl5qc**********=> SHOW POOL_PROCESSES;
 
 ### Listing managed pools
 
-You can use the [`SHOW POOL_POOLS;`](https://www.pgpool.net/docs/latest/en/html/shell-show-pool-pools.html) command to see the list of pools managed by Pgpool-II.
+You can use the [`SHOW POOL_POOLS;`](https://www.pgpool.net/docs/latest/en/html/sql-show-pool-pools.html) command to see the list of pools managed by Pgpool-II.
 
 ```shell
 bjzfhkl5qc**********=> SHOW POOL_POOLS;

@@ -46,7 +46,7 @@ Before you begin, ensure that you have the following tools and resources based o
 
 - **Kubernetes Cluster:** Ensure you have access to a running Kubernetes cluster.
 - **Kubectl:** Install Kubernetes command-line tool for managing cluster resources Installation guide available at https://kubernetes.io/docs/tasks/tools/.
-- **Clever Cloud Account Credentials:** [Obtain API tokens and secrets from your Clever Cloud]({{< ref "/api/howto" >}} "API Overview") account to configure the operator.
+- **Clever Cloud Account Credentials:** [Obtain API tokens and secrets from your Clever Cloud](/developers/api/howto) account to configure the operator.
 
 These prerequisites are essential for getting started with the Clever Operator, whether you're contributing to its development or deploying it in production.
 
@@ -59,7 +59,7 @@ The Clever Operator requires configuration to connect to Clever Cloud's API and 
 - _Token_
 - _Secret_
 
-To obtain them, you need to connect to the Clever Cloud API, that has an OAuth1 based authentication. As explained in the [Clever Cloud API Overview](/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and do the OAuth authentication dance to get the _Token_ and _Secret_.
+To obtain them, you need to connect to the Clever Cloud API, that has an OAuth1 based authentication. As explained in the [Clever Cloud API Overview](/developers/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and do the OAuth authentication dance to get the _Token_ and _Secret_.
 
 
 > #### This seems cumbersome, is there an easier way?
@@ -106,7 +106,7 @@ Replacing `<your_token>`, `<your_secret>`, `<your_consumer_key>` and `<your_cons
 #### Apply the manifests to deploy the operator
 
 ```bash
-kubectl apply -f /deployments/kubernetes/v1.24.0/10-custom-resource-definition.yaml 
+kubectl apply -f /deployments/kubernetes/v1.24.0/10-custom-resource-definition.yaml
 kubectl apply -f /deployments/kubernetes/v1.24.0/20-deployment.yaml
 ```
 
@@ -191,14 +191,14 @@ target/release/clever-operator
 
 ## Configuration
 
-Configuration options are available at two levels: global (applies to all namespaces) and namespace-specific. 
+Configuration options are available at two levels: global (applies to all namespaces) and namespace-specific.
 
 ### Global Configuration
 
 Global configuration settings apply across all namespaces. Global configuration can be provided through a `ConfigMap`, a `Secret` or by the environment.
 
 - **Environment Variables:**
-    
+
     - `CLEVER_OPERATOR_API_ENDPOINT`: The endpoint for the Clever Cloud API.
     - `CLEVER_OPERATOR_API_TOKEN`: Your Clever Cloud API token.
     - `CLEVER_OPERATOR_API_SECRET`: The secret associated with your API token.
@@ -206,7 +206,7 @@ Global configuration settings apply across all namespaces. Global configuration 
     - `CLEVER_OPERATOR_API_CONSUMER_SECRET`: Your Clever Cloud consumer secret.
 
 - **Configuration Files:** By default, if the `--config` flag isn't provided to the binary, the operator looks at the following locations to retrieve its configuration (in order of priority):
-    
+
     1. `/usr/share/clever-operator/config.{toml,yaml,json}`
     2. `/etc/clever-operator/config.{toml,yaml,json}`
     3. `$HOME/.config/clever-operator/config.{toml,yaml,json}`
@@ -219,7 +219,7 @@ Global configuration settings apply across all namespaces. Global configuration 
 Namespace-level configurations override the global settings for specific namespaces. They're defined using a Kubernetes Secret resource named `clever-operator` with the `config` key.
 
 - **Creating a Namespace-Level Configuration:** Create a Kubernetes Secret with the necessary configuration keys:
-    
+
     ```yaml
     apiVersion: v1
     kind: Secret
@@ -235,13 +235,13 @@ Namespace-level configurations override the global settings for specific namespa
         consumerKey = <your_consumer_key>
         consumerSecret = <your_consumer_secret>
     ```
-    
+
 - **Applying the Configuration:** Apply the Secret to your namespace:
-    
+
     ```bash
     kubectl apply -f namespace-config.yaml
     ```
-    
+
 
 The operator automatically detects and applies namespace-specific configurations when interacting with resources in that namespace.
 
@@ -260,7 +260,7 @@ The Clever Operator enables you to manage Clever Cloud resources directly from y
 ### Managing PostgreSQL Resources
 
 - **Creating a PostgreSQL Instance:** Define a YAML manifest for the PostgreSQL resource:
-    
+
     ```yaml
     apiVersion: clever-cloud.com/v1
     kind: PostgreSQL
@@ -272,26 +272,26 @@ The Clever Operator enables you to manage Clever Cloud resources directly from y
       plan: "dev"
       region: "par"
     ```
-    
+
     Apply the manifest to your cluster:
-    
+
     ```bash
     kubectl apply -f postgresql.yaml
     ```
-    
+
 - **Verifying the Deployment:** Check the status of the PostgreSQL resource:
-    
+
     ```bash
     kubectl get postgresql my-postgresql -o yaml
     ```
-    
+
 - **Accessing PostgreSQL:** Retrieve the connection details from the Clever Cloud dashboard or the resource’s status field.
 
 
 ### Managing Redis Resources
 
 - **Creating a Redis Instance:** Define a YAML manifest for the Redis resource:
-    
+
     ```yaml
     apiVersion: clever-cloud.com/v1
     kind: Redis
@@ -303,19 +303,19 @@ The Clever Operator enables you to manage Clever Cloud resources directly from y
       plan: "dev"
       region: "par"
     ```
-    
+
     Apply the manifest to your cluster:
-    
+
     ```bash
     kubectl apply -f redis.yaml
     ```
-    
+
 - **Verifying the Deployment:** Check the status of the Redis resource:
-    
+
     ```bash
     kubectl get redis my-redis -o yaml
     ```
-    
+
 - **Accessing Redis:** Retrieve the connection details from the Clever Cloud dashboard or the resource’s status field.
 
 These examples demonstrate the simplicity and power of using the Clever Operator to manage cloud resources in a declarative way in Kubernetes.

@@ -15,7 +15,9 @@ keywords:
 - datadog
 - newrelic
 aliases:
-- doc/administrate/log-management/#get-continuous-logs-from-your-application
+- /developers/doc/clever-cloud-apis/add-ons-log-collector
+- /doc/administrate/log-management/#get-continuous-logs-from-your-application
+- /doc/clever-cloud-apis/add-ons-log-collector
 type: docs
 ---
 
@@ -35,7 +37,7 @@ Logs are retained for 7 days, sometimes more for specific customers/needs.
 
 ## Get continuous logs from your application
 
-Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and our [APIv4](/api/v4/#logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`. You can see logs with the command down below.
+Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and our [APIv4](/developers/api/v4/#logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`. You can see logs with the command down below.
 
 ```bash
 clever logs

@@ -11,6 +11,9 @@ keywords:
 tags:
 - administrate
 type: docs
+aliases:
+- /developers/doc/tools/crons
+- /doc/tools/crons
 ---
 
 The configuration file used for crontab is `<PROJECT ROOT>/clevercloud/cron.json`.

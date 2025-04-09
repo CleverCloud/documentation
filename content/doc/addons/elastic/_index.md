@@ -148,7 +148,7 @@ Elasticsearch managed by Clever Cloud comes with these plugins, you can activate
 | mapper-annotated-text | Provides the ability to index text that is a combination of free-text and special markup |
 
 {{< callout type="info" >}}
-Plugin activation is only available at add-on creation, through [API](/api) or the `--option` flag of [Clever Tools](/developers/doc/cli/addons/#create--rename--delete). You must pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To modify enabled plugins on an existing add-on, contact [support team](https://console.clever-cloud.com/ticket-center-choice).
+Plugin activation is only available at add-on creation, through [API](/developers/api) or the `--option` flag of [Clever Tools](/developers/doc/cli/addons/#create--rename--delete). You must pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To modify enabled plugins on an existing add-on, contact [support team](https://console.clever-cloud.com/ticket-center-choice).
 {{< /callout >}}
 
 ## Backups

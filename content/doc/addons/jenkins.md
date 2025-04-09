@@ -43,11 +43,11 @@ To create a Jenkins add-on, you can either use our web console or our CLI:
 
 ### CLI
 
-1. Make sure you have clever-tools installed locally. Report to the [getting started](/doc/cli/) guide if needed.
+1. Make sure you have clever-tools installed locally. Report to the [getting started](/developers/doc/cli/) guide if needed.
 2. List the available plans and options for Jenkins: `clever addon providers show jenkins`.
 3. In your terminal, you can then run `clever addon create jenkins <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
 
-Refer to the [documentation](/doc/cli/applications/) for more details on application creation with Clever Tools
+Refer to the [documentation](/developers/doc/cli/applications/) for more details on application creation with Clever Tools
 
 ## Accessing the Jenkins interface
 
@@ -169,8 +169,7 @@ You should now be able to start creating jobs that automatically build and test 
 
 ### Jenkins File example
 
-Here is an example of a Jenkins file taken from our [CLI repository](https://github.com/CleverCloud/clever-tools/blob/master/Jenkinsfile). It should
-be at the root directory of your project for Jenkins to pick it up. It basically builds our CLI project and publish it to various platforms.
+Here is an example of a Jenkins file. It should be at the root directory of your project for Jenkins to pick it up. It basically builds our CLI project and publish it to various platforms.
 
 ```bash
 pipeline {

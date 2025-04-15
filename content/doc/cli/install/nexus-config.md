@@ -20,13 +20,13 @@ The repository is signed with the PGP key `Clever Cloud Nexus (deb)`. The public
 
 We have a repository for `.nupkg` packages, available [here](https://nexus.clever-cloud.com/#browse/browse:nupkg)
 
-* Link to Nexus [nuget-repositories docs](https://help.sonatype.com/repomanager3/formats/nuget-repositories)
+* Link to Nexus [nuget-repositories docs](https://help.sonatype.com/en/nuget-repositories.html)
 
 ### `.rpm` repository
 
 We have a repository for `.rpm` packages, available [here](https://nexus.clever-cloud.com/#browse/browse:rpm).
 
-* Link to Nexus [yum-repositories docs](https://help.sonatype.com/repomanager3/formats/yum-repositories)
+* Link to Nexus [yum-repositories docs](https://help.sonatype.com/en/yum-repositories.html)
 
 The repository is not signed, but the `.rpm` packages are.
 

@@ -22,7 +22,7 @@ mysql:
   dedicated:
     - "5.7"
     - "8.0"
-    - "8.4_early"
+    - "8.4"
   dev:
     - "8.0"
 mongo:

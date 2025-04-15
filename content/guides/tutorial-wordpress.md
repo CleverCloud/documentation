@@ -10,14 +10,16 @@ keywords:
 str_replace_dict:
   "@application-type@": "PHP"
 aliases:
+- /developers/doc/php/tutorial-wordpress
 - /doc/deploy/application/php/tutorials/tutorial-wordpress
+- /doc/php/tutorial-wordpress
 ---
 
 ## Overview
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-First, you could check [our global PHP documention](/deploy/application/php/php-apps/).
+First, you could check [our global PHP documention](/developers/doc/deploy/application/php/php-apps/).
 
 This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
 
@@ -59,7 +61,7 @@ To do so edit `wp-config.php` and add the following code above the last `require
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
     $_SERVER['HTTPS'] = 'on';
 } elseif (isset($_SERVER['X_FORWARDED_PROTO']) && $_SERVER['X_FORWARDED_PROTO'] == 'https') {
-    $_SERVER['HTTPS'] = 'on';  
+    $_SERVER['HTTPS'] = 'on';
 }
 ```
 
@@ -114,7 +116,7 @@ If you need to have many associated buckets with your app, you need to create en
 #### JSON
 
 {{< callout emoji="🧹" >}}
-**This method is deprecated**  
+**This method is deprecated**
 We strongly recommend that you use environment variables.
 
 If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
@@ -149,7 +151,7 @@ We provide different tools and software to help you in this task as [Varnish]({{
 ### Performance plugins
 
 {{< callout type="warning" >}}
-We recommend you to **not** use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.  
+We recommend you to **not** use performance plugins like W3 Total Cache or JetPack as they are intended to be used on a shared hosting server.
 We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis if you need performance optimisations on Clever Cloud.
 {{< /callout >}}
 

@@ -4,7 +4,7 @@ description: Build your website with the Astro Static Site Generator (SSG) and h
 tags:
 - guides
 keywords:
-- astro 
+- astro
 - nodejs
 - static
 - ssg
@@ -24,8 +24,8 @@ draft: false
 ## Overview
 
 Clever Cloud supports deploying both [fully static and on-demand rendered](https://docs.astro.build/en/basics/rendering-modes/) Astro projects:
-- The `static` output mode is ideal for most content-oriented website, for which you have no need for per-visitor server-side customisation. Consider using a [Static runtime](/doc/applications/static/) when using this output mode, with the site generation in a post-build hook.
--  The `server` or `hybrid` output modes: consider using a [Node.js runtime](/doc/applications/javascript/nodejs/) runtime with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
+- The `static` output mode is ideal for most content-oriented website, for which you have no need for per-visitor server-side customisation. Consider using a [Static runtime](/developers/doc/applications/static/) when using this output mode, with the site generation in a post-build hook.
+-  The `server` or `hybrid` output modes: consider using a [Node.js runtime](/developers/doc/applications/javascript/nodejs/) runtime with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
 
 If you need an example source code, get [Astrowind](https://github.com/onwidget/astrowind) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 ```bash
@@ -34,7 +34,7 @@ git clone https://github.com/onwidget/astrowind myStaticApp
 
 ## Deploy a static Astro site
 
-To deploy your Astro project to Clever Cloud, you need to **create a new application**. 
+To deploy your Astro project to Clever Cloud, you need to **create a new application**.
 
 {{% steps %}}
 
@@ -95,7 +95,7 @@ If you're using a **Node.js** application to serve a static Astro site, inject t
 If you're using a **Static** application to serve a static Astro site, inject the following environment variables:
 
 {{< tabs items="npm,pnpm,yarn" >}}
-  
+
   {{< tab >}}
 
   ```shell
@@ -180,9 +180,9 @@ Set your port and host in your `astro dev` script for development mode, and/or c
       "build": "astro check && astro build",
       "preview": "astro preview --host 0.0.0.0 --port 8080",
       "astro": "astro"
-    } 
+    }
     ```
-  
+
   {{< /tab >}}
 
   {{< tab >}}
@@ -206,7 +206,7 @@ Set your port and host in your `astro dev` script for development mode, and/or c
       "build": "astro check && astro build",
       "preview": "astro preview --host 0.0.0.0 --port 8080",
       "astro": "astro"
-    } 
+    }
     ```
 
   {{< /tab >}}
@@ -222,5 +222,5 @@ Set your port and host in your `astro dev` script for development mode, and/or c
   {{< card link="../../doc/applications/javascript/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application on Clever Cloud" icon="node" >}}
   {{< card link="../../doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application on Clever Cloud" icon="feather" >}}
   {{< card link="https://docs.astro.build/" title="Learn Astro" subtitle="Astro full documentation" icon="rocket-launch" >}}
-  
+
 {{< /cards >}}

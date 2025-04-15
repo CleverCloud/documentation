@@ -8,7 +8,9 @@ keywords:
 - python
 - django
 aliases:
+- /developers/doc/python/python-django-sample
 - /doc/deploy/application/python/tutorials/python-django-sample
+- /doc/python/python-django-sample
 type: docs
 ---
 

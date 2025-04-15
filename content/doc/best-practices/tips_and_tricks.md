@@ -40,7 +40,7 @@ Environment variables support more than just single-line values. When editing va
 
 This works across all input modes (simple, expert, and JSON) as well as through Clever Tools and the API.
 
-[Learn more about environment variables](/doc/reference/reference-environment-variables)
+[Learn more about environment variables](/developers/doc/reference/reference-environment-variables)
 
 ### Quick Variable Creation
 
@@ -71,7 +71,7 @@ The Console includes a sophisticated logging interface with features for debuggi
 
 Clever Cloud retains your logs for 7 days as part of the standard service.
 
-[Explore logging features](/doc/administrate/log-management/)
+[Explore logging features](/developers/doc/administrate/log-management/)
 
 ### Universal Resource Access
 
@@ -120,7 +120,7 @@ After pushing your code, the application:
 4. Executes your specified command
 5. Stops automatically when finished
 
-[Learn more about task execution](/doc/develop/tasks/)
+[Learn more about task execution](/developers/doc/develop/tasks/)
 
 ### Database Management Tips
 
@@ -133,8 +133,8 @@ Need to update your database? The Console's migration tool offers several option
 
 To get the latest patch version or redeploy, simply migrate to the same version, plan, and zone.
 
-[Database add-ons documentation](/doc/addons/)  
-[Migration guide](/doc/administrate/database-migration/)
+[Database add-ons documentation](/developers/doc/addons/)
+[Migration guide](/developers/doc/administrate/database-migration/)
 
 ## Clever Tools Features
 
@@ -158,7 +158,7 @@ clever ssh -a app_id_or_name -i ~/.ssh/id_ed25519  # Use specific key
 
 For extended debugging sessions, set `CC_TROUBLESHOOT=true` as an environment variable. This keeps your application running for up to 1 hour, even if errors occur.
 
-[SSH key management guide](/doc/account/ssh-keys-management/)
+[SSH key management guide](/developers/doc/account/ssh-keys-management/)
 
 ### Domain Configuration Diagnostics
 
@@ -213,7 +213,7 @@ This tool helps you:
 - Set up CI/CD pipelines
 - Explore available resources
 
-[Explore the API documentation](/api/)
+[Explore the API documentation](/developers/api/)
 
 ### Browser Integration
 
@@ -263,8 +263,8 @@ Clever Tools is open source and built with Node.js. You can:
 
 Track platform improvements through:
 
-- [Technical Changelog](/changelog/)
-- [RSS Feed](/changelog/index.xml)
+- [Technical Changelog](/developers/changelog/)
+- [RSS Feed](/developers/changelog/index.xml)
 - [Blog Updates](https://www.clever-cloud.com/blog/)
 
 ### Built-in Runtime Tools
@@ -294,7 +294,7 @@ Each application maintains:
 - Automatic TLS certificate generation
 
 
-[Path routing documentation](/doc/administrate/domain-names/#path-routing)
+[Path routing documentation](/developers/doc/administrate/domain-names/#path-routing)
 
 ### Create Custom Add-ons
 
@@ -304,7 +304,7 @@ Distribute your services through Clever Cloud:
 2. Make it available in your organizations
 3. Optionally list it in the Clever Cloud Marketplace
 
-[Marketplace API documentation](/doc/marketplace/)
+[Marketplace API documentation](/developers/doc/marketplace/)
 
 ### Domain Management
 
@@ -328,7 +328,7 @@ Clever Cloud's entire platform runs on its public API:
 
 This ensures API reliability and continuous improvement.
 
-[API documentation](/api)
+[API documentation](/developers/api)
 
 ### Web Components
 

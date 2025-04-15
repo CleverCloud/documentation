@@ -54,3 +54,7 @@ jobs:
           type: static-apache
           comment: true
           domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
+      - name: Links checker
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+        run: |
+          pipx run linkchecker --no-warnings --no-status --check-extern 'https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers' || echo "Link checker found some issues, but proceeding with preview app deployment"

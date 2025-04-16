@@ -15,7 +15,7 @@ description: Preparing new features
 excludeSearch: true
 ---
 
-[Clever Kubernetes Operator v0.6.0](https://github.com/CleverCloud/clever-operator/releases/tag/v0.6.0) is available. It now uses [clevercloud-sdk-rust v0.12.0](https://github.com/CleverCloud/clevercloud-sdk-rust/releases/tag/v0.12.0) and [oauth10a v2.0.0](https://github.com/CleverCloud/oauth10a-rust/releases/tag/v2.0.0) to simplify authentication through API Tokens or Basic Auth. This release also adds Materia KV add-ons support as custom resource.
+[Clever Kubernetes Operator v0.6.0](https://github.com/CleverCloud/clever-kubernetes-operator/releases/tag/v0.6.0) is available. It now uses [clevercloud-sdk-rust v0.12.0](https://github.com/CleverCloud/clevercloud-sdk-rust/releases/tag/v0.12.0) and [oauth10a v2.0.0](https://github.com/CleverCloud/oauth10a-rust/releases/tag/v2.0.0) to simplify authentication through API Tokens or Basic Auth. This release also adds Materia KV add-ons support as custom resource.
 
-- [Learn more about Clever Kubernetes Operator](/developers/guides/clever-operator)
+- [Learn more about Clever Kubernetes Operator](/developers/guides/kubernetes-operator)
 - [Learn more about Materia KV](/developers/doc/addons/materia-kv)

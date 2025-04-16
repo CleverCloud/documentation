@@ -70,7 +70,7 @@ llmsTxtOptional: true
 
 {{< cards >}}
  {{< card link="kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}
- {{< card link="kunernetes-operator" title="Kubernetes Operator" subtitle= "Manage your Clever Cloud databases and add-ons seamlessly from Kubernetes" icon="kubernetes" >}}
+ {{< card link="kubernetes-operator" title="Kubernetes Operator" subtitle= "Manage your Clever Cloud databases and add-ons seamlessly from Kubernetes" icon="kubernetes" >}}
  {{< card link="pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
  {{< card link="proxysql" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
 {{< /cards >}}

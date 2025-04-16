@@ -127,7 +127,7 @@ Note that `Reusable keys` are required to use multiple instances. You can [gener
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 | [`TAILSCALE_ACCEPT_DNS`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-dns-settings) | Tailscale use its default DNS settings | `true` |
-| [`TAILSCALE_ACCEPT_ROUTE`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets) | Tailscale uses its subnets settings | `false` |
+| [`TAILSCALE_ACCEPT_ROUTES`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets) | Tailscale uses its subnets settings | `false` |
 | [`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com") | Contains your Tailscale Auth key | |
 | `TAILSCALE_LOGIN_SERVER`| Contains the login server | |
 

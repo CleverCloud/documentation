@@ -11,8 +11,8 @@ keywords:
 type: "docs"
 comments: false
 draft: false
-alias:
-- /developers/guides/clever-operator/
+aliases:
+- /guides/clever-operator
 ---
 
 ## What's the Clever Kubernetes Operator

@@ -158,14 +158,6 @@ To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< re
 
 If you define a limit exceeding the application memory it will use the default one.
 
-##### `pm.max_children`: Maximum PHP Children per instance
-
-You can fix the maximum number of PHP running processes per instance by setting `pm.max_children` (see above).
-
-This setting is useful if you need to limit the number of running processes according to the maximum connections limit of your MySQL or PostgreSQL database.
-
-By default, `pm.max_children` is set to **10**.
-
 ## Configure Apache
 
 We use Apache 2 as HTTP Server. In order to configure it, you can create a `.htaccess` file and set directives inside this file.

@@ -45,3 +45,4 @@ llmsTxtOptional: true
   {{< card link="tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
   {{< card link="tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
 {{< /cards >}}
+

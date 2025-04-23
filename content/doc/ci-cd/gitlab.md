@@ -34,7 +34,7 @@ include:
 
 This assumes you have a running app on Clever Cloud. Any commit on your default branch (`main`, `master` or other name) triggers a deployment for this app. [Inject the following variables in your GitLab repository settings](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project):
 
-- `APP_ID`: Find it at the top right in [Clever Cloud Console](https://console.clevercloud.com), in your application tab.
+- `APP_ID`: Find it at the top right in [Clever Cloud Console](https://console.clever-cloud.com), in your application tab.
 - `CLEVER_TOKEN` and `CLEVER_SECRET`
 
 ### `<CI_PROJECT_PATH>` configuration

@@ -71,10 +71,10 @@ We've natively integrated Network Groups to our Keycloak and Otoroshi operators.
 
 ```bash
 curl -XPOST -H "Authorization: Bearer [API_TOKEN]" \
-  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-keycloak/addons/keycloak_id/ng
+  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-keycloak/addons/keycloak_id/networkgroup
 
 curl -XDELETE -H "Authorization: Bearer [API_TOKEN]" \
-  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-keycloak/addons/keycloak_id/ng
+  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-keycloak/addons/keycloak_id/networkgroup
 ```
 
 {{< callout type="info" >}}
@@ -85,10 +85,10 @@ With Otoroshi, activating a Network Group links the underlying Java application 
 
 ```bash
 curl -XPOST -H "Authorization: Bearer [API_TOKEN]" \
-  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-otoroshi/addons/otoroshi_id/ng
+  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-otoroshi/addons/otoroshi_id/networkgroup
 
 curl -XDELETE -H "Authorization: Bearer [API_TOKEN]" \
-  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-otoroshi/addons/otoroshi_id/ng
+  https://api-bridge.clever-cloud.com/v4/addon-providers/addon-otoroshi/addons/otoroshi_id/networkgroup
 ```
 
 As this beta feature evolves, we'll add demos, documentations and videos to help you to fully take advantage of Network Groups.

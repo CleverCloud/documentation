@@ -20,7 +20,7 @@ pg:
     - "v15"
 mysql:
   dedicated:
-    - "5.7"
+    - "5.7 (EOL)"
     - "8.0"
     - "8.4"
   dev:

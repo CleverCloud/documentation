@@ -17,7 +17,7 @@ aliases:
 
 ## Overview
 
-[Drupal](https://drupal.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
+[Drupal](https://new.drupal.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
 {{% content/create-application %}}
 
@@ -37,7 +37,7 @@ Make sure you have created a MySQL database add-on in the Clever Cloud console, 
 
 ### Git specific Drupal instructions
 
-We at this point assume you have downloaded the source files of drupal from [drupal.org](https://drupal.org) and already have linked your MySQL add-on.
+We at this point assume you have downloaded the source files of drupal from [drupal.org](https://new.drupal.org/download) and already have linked your MySQL add-on.
 
 * Open `.gitignore` file and delete `sites/*/settings*.php` line
 * Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`

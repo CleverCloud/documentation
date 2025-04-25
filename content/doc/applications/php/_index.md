@@ -199,7 +199,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
 
-E.g. if foobar is a directory, Apache will automatically redirect <http://example.com/foobar> to <http://example.com/foobar/>.
+E.g. if foobar is a directory, Apache will automatically redirect `http://example.com/foobar` to `http://example.com/foobar/`.
 
 Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
 

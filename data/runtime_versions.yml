@@ -1,6 +1,6 @@
 node:
   default:
-  - "v22.13.0"
+  - "v22.14.0"
 PHP:
   eol_source: "https://www.php.net/supported-versions.php"
   default:

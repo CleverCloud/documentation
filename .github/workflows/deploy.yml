@@ -57,4 +57,7 @@ jobs:
       - name: Links checker
         if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         run: |
-          pipx run linkchecker --no-warnings --no-status --check-extern 'https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers' || echo "Link checker found some issues, but proceeding with preview app deployment"
+          pipx run linkchecker --no-warnings --no-status --check-extern \
+            --user-agent 'Mozilla/5.0 (X11; Linux i686; rv:137.0) Gecko/20100101 Firefox/137.0' \
+            --ignore-url 'https://crates.io/crates/' \
+            'https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers' || echo "Link checker found some issues, but proceeding with preview app deployment"

@@ -342,7 +342,7 @@ Available through:
 
 - [npm package](https://www.npmjs.com/package/@clevercloud/components)
 - [Public repository](https://github.com/CleverCloud/clever-components)
-- [Storybook documentation](/doc/clever-components/?path=/docs/readme--docs)
+- [Storybook documentation](https://www.clever-cloud.com/doc/clever-components)
 
 ### Custom Solutions
 

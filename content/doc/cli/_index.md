@@ -143,7 +143,7 @@ You can query Clever Cloud public API with a bearer token thanks to the Auth Bri
 clever tokens create myTokenName
 ```
 
-Once created, you can use it replacing the API endpoint with https://auth-bridge.clever-cloud.com. For example:
+Once created, you can use it replacing the API endpoint with `https://auth-bridge.clever-cloud.com`. For example:
 
 ```
 curl https://auth-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer myToken"

@@ -113,10 +113,10 @@ By default, the `QueudTracking` plugin is enabled on Matomo instances, with a qu
 
 ## Delete old archive
 
-By default, Matomo is not configured to delete the data that it receive. This can cause the databases to accumulate a lot of old data that may not be useful anymore and completely fill the databases.  
+By default, Matomo isn't configured to delete the data that it receive. This can cause the databases to accumulate a lot of old data that may not be useful anymore and completely fill the databases.  
 To resolve this issue, you can setup and automatic deletion of old achives in Matomo settings.  
 
-To do this, you must go to the **Anonymize data** menu in **Administration->Privacy->Anoymize data**. You have two option you can activate to delete old achives, `Regularly delete old raw data` and `Delete old aggregated report data`. When you activate one of those options, you can select how old the date needs to be for it to get deleted. When one of the two options is activated, you can schedule the frequency (every day, month, year) you at witch you wish to delete the data in **Schedule old data deletion**.
+To do this, you must go to the **Anonymize data** menu in **Administration->Privacy->Anoymize data**. You have two option you can activate to delete old achives, `Regularly delete old raw data` and `Delete old aggregated report data`. When you activate one of those options, you can select how old the date needs to be for it to get deleted. When one of the two options is activated, you can schedule the frequency (every day, month, year) at which you wish to delete the data in **Schedule old data deletion**.
 
 ## Security and updates
 

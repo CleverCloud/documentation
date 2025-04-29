@@ -276,6 +276,8 @@ AWS_S3_ENDPOINT_URL="<cellar-addon_host_value>"
 AWS_S3_REGION_NAME="auto"
 AWS_S3_SECRET_ACCESS_KEY="<cellar-addon_key_secret_value>"
 AWS_STORAGE_BUCKET_NAME="<name-of-your-bucket>"
+AWS_REQUEST_CHECKSUM_CALCULATION="when_required"
+AWS_RESPONSE_CHECKSUM_VALIDATION="when_required"
 ```
 
 {{% /steps %}}

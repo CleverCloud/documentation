@@ -38,9 +38,7 @@ To manage your gems and ruby versions, we recommend [rbenv](https://github.com/s
 
 #### Create a Ruby + Rake application locally
 
-Our demo for this tutorial is here: [https://helloworld-rack-demo.cleverapps.io/](https://helloworld-rack-demo.cleverapps.io/).
-
-You can also doing it manually by following these instructions:
+You can deploy a demo application by following these instructions:
 
 ```bash
 mkdir helloworld-rack
@@ -105,7 +103,7 @@ $ bundle exec rackup
 [2013-09-16 17:35:26] INFO  WEBrick::HTTPServer#start: pid=5656 port=9292
 ```
 
-You can now test with your browser at <localhost:9292>.
+You can now test with your browser at `http://localhost:9292`.
 
 You can now read [My application already exists](#my-application-already-exists)
 

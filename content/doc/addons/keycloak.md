@@ -49,7 +49,7 @@ When you create the Keycloak add-on, Clever Cloud automatically deploys:
 ## Security and updates
 Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It's automatically upgraded and updated both for features and security.
 
-An add-on update might require a restart.
+An add-on update might require a rebuild.
 
 > Required actions are notified by email
 
@@ -108,6 +108,12 @@ The admin interface is accessible on the `/admin` endpoint. The default user and
 
 A password change is requested at the first connection.
 
+### Bootstrap admin client
+
+You can set up a new client with the `admin` role for `master` realm during build time using `CC_KEYCLOAK_BOOTSTRAP_ADMIN_CLIENT_ID` and `CC_KEYCLOAK_BOOTSTRAP_ADMIN_CLIENT_SECRET` environment variables of the Java application. Once created, delete the environment variables from your application.
+
+Bootstrap client [should be temporary](https://www.keycloak.org/server/bootstrap-admin-recovery) and is mostly necessary for provisioning.
+
 ## Realms management
 
 The number of realms significantly impacts the overall performances. **Use as few realms as possible.**
@@ -118,6 +124,9 @@ The number of realms significantly impacts the overall performances. **Use as fe
 - Restart the application after the change.
 
 You can also create a realm from the Keycloak administrator console. On the dropdown menu from the top left corner, click `create realm`.
+
+>[!NOTE]
+Starting with `26.2` release, Keycloak add-ons on Clever Cloud come with `admin-cli` client disabled by default. If you need it for provisioning through a `direct access grant`, you must enable it first.
 
 ### Exporting realms data
 
@@ -155,9 +164,16 @@ Two specific authentication flows with an IP addresses based filter are especial
 
 Those flows could be affected to your own clients if you need.
 
-## Metrics
+## Grafana dashboard & Metrics
 
 Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](../../metrics/#publish-your-own-metrics) to visualize them.
+
+You can also use a Grafana dashboard ready to import, available starting with Keycloak `26.2` release:
+- Go to the `Metrics in Grafana` section of your organization or personal space in [Console](https://console.clever-cloud.com/)
+- Open Grafana, click on the `+` icon in the upper right corner and select `Import` dashboard
+- Import this [JSON file](https://cc-keycloak.cellar-c2.services.clever-cloud.com/keycloak-grafana-dashboard.json)
+
+Then you'll have a `Keycloak dashboard` in your Grafana folders. Just select your Keycloak add-on in the `runtime section`, you'll automatically get instance information, metrics, cache and performance data, etc.
 
 ## Hostnames
 

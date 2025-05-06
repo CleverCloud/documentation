@@ -1,6 +1,7 @@
 node:
+  eol_source: "https://nodejs.org/en/about/releases/"
   default:
-  - "v22.14.0"
+  - "22.15.0 (npm 10.9.2)"
 PHP:
   eol_source: "https://www.php.net/supported-versions.php"
   default:

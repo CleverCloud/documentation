@@ -18,7 +18,7 @@ We updated all our images, except Java. Deployment is in progress for all our us
   * Linux kernel 6.14.2
   * Mise 2025.4.2
   * OpenSSH 10.0p2
-  * OpenSSL 3.5.0 8
+  * OpenSSL 3.5.0
   * Tailscale 1.82.0
 * **Node.js:**
   * Bun 1.2.9

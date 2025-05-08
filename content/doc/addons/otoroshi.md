@@ -108,6 +108,22 @@ The integration provides advanced security capabilities through OWASP CRS implem
 ### Enterprise Capabilities
 Designed for production environments, the Coraza WAF plugin offers flexible configuration options, supporting both detection and prevention modes. It enables customized rule sets per domain and provides detailed security event tracking through Otoroshi's event management system. The implementation is optimized for minimal performance impact while maintaining robust security controls.
 
+### Block single IPs
+
+To block a single IP, you don't need Coraza WAF. In the "routes" section, choose the route you want to protect and then you should be able to add the plugin "IP Block list" and block one or several IPs.
+
+Coraza is able to block IPs (or CIDR) too but you need to add customs rules based on "X-Forwarded-For" header such as:
+
+```coraza
+SecRule REQUEST_HEADERS:X-Forwarded-For "@ipMatch 82.0.0.0/8" \
+    "id:100006,\
+    phase:1,\
+    drop,\
+    status:503,\
+    log,\
+    msg:'Forbidden IP range detected in Forwarded header'"
+```
+
 - [Otoroshi Coraza WAF documentation](https://maif.github.io/otoroshi/manual/how-to-s/instantiate-waf-coraza.html)
 
 ## Manage Otoroshi from its API

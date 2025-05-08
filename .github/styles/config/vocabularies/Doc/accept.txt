@@ -15,6 +15,7 @@ checkMe
 Clever Cloud
 CLI
 Cloud
+config
 Coraza
 CRDs
 cron
@@ -78,7 +79,9 @@ shortcode
 Sidekiq
 syslog
 toolchain
+URIs
 VSCode
 webroot
 Wildfly
+yjs
 Zooper

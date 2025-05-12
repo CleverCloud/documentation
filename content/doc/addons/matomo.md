@@ -111,6 +111,13 @@ Plugin files are removed every time your instance reboots. **This means you have
 
 By default, the `QueudTracking` plugin is enabled on Matomo instances, with a queue size of `25`. This means that the plugin stores 25 visits in a queue before they appear in Matomo. This helps to prevent the server from receiving too many request at once. You can change this setting by modifying the **Number of requests that are processed in one batch** parameter in **Administration->System->General settings**.
 
+## Delete old archive
+
+By default, Matomo isn't configured to delete the data that it receive. This can cause the databases to accumulate a lot of old data that may not be useful anymore and completely fill the databases.  
+To resolve this issue, you can setup and automatic deletion of old achives in Matomo settings.  
+
+To do this, you must go to the **Anonymize data** menu in **Administration->Privacy->Anoymize data**. You have two option you can activate to delete old achives, `Regularly delete old raw data` and `Delete old aggregated report data`. When you activate one of those options, you can select how old the date needs to be for it to get deleted. When one of the two options is activated, you can schedule the frequency (every day, month, year) at which you wish to delete the data in **Schedule old data deletion**.
+
 ## Security and updates
 
 The Matomo add-on is a fully managed application, you don't have to select a particular version. Clever Cloud updates it for both features and security, and manages it continuously to apply regular version upgrades. After being updated, you Matomo add-on could need to be restarted.

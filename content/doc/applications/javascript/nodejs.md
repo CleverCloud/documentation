@@ -18,10 +18,6 @@ aliases:
 
 Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application. We do support **any stable version of Node.js**. Their release schedule is available [here](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
 
-{{% content/create-application %}}
-
-{{% content/set-env-vars %}}
-
 ## Configure your Node.js application
 
 ### Mandatory configuration
@@ -36,9 +32,12 @@ Be sure that:
 
 ### Set Node.js version
 
-You can use the `engines.node` field in `package.json` to define the wanted version, if not provided we will use the latest LTS version available on Clever Cloud.
+If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor or patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable is not set, the latest LTS version available on Clever Cloud will be used.
 
 {{< runtimes_versions node >}}
+
+>[!NOTE]
+You can also set the `engines.node` field in `package.json`. For legacy reasons, this value is prioritized over the `CC_NODE_VERSION` environment variable. If both are set, the `engines.node` value will be used.
 
 ### About package.json
 
@@ -46,15 +45,21 @@ The `package.json` file should look like the following:
 
 ```json
 {
-  "name" : "myapp",
+  "name" : "myApp",
   "version" : "0.1.0",
-  "main" : "myapp.js",
   "scripts" : {
-    "start" : "node myapp.js"
-  },
-  "engines" : {
-    "node" : "^22"
+    "start" : "node myApp.js"
   }
+}
+```
+
+or
+
+```json
+{
+  "name" : "myApp",
+  "version" : "0.1.0",
+  "main" : "myApp.js",
 }
 ```
 
@@ -64,7 +69,6 @@ The following table describes each of the fields formerly mentioned:
 |--------------|---------------|--------------------------------------------|
 | **At least one** | `scripts.start` | This field provides a command line to run. If defined, `npm start` will be launched. Otherwise, we will use the `main` field. See below to know how and when to use the `scripts.start` field.                   |
 | **At least one** | `main`          | This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if `scripts.start` is not defined. |
-| Optional     | `engines.node`  | Sets the Node.js version you app runs with. Any `A.B.x` or `^A.B.C` or `~A.B` version will lead to run the application with the latest `A.B` local version. If this field is missing, we use the latest LTS available. If you want to ensure that your app will always run, please put something of the form `^A.B.C` and avoid setting only `>=A.B.C`.            |
 
 ### Dependencies
 
@@ -75,9 +79,9 @@ If you need some modules you can easily add some with the *dependencies* field i
   "name" : { ... },
   "engines": { ... },
   "dependencies": {
-    "express": "4.x",
-    "socket.io": "4.7.x",
-    "underscore": "1.13.6"
+    "express": "5.x",
+    "socket.io": "4.8.x",
+    "underscore": "1.13.7"
   }
 }
 ```

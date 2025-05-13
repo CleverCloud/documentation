@@ -38,7 +38,7 @@ To find your invoices, go to your organisation and click on **Invoices** to see 
 
 This first section shows the fee for the use of Clever Cloud over a month. Any discounts are explained here.
 
-![Second section of the invoice](/images/doc/invoice-amount-to-pay.png "The second section of the invoice")
+![First section of the invoice](/images/doc/invoice-amount-to-pay.png "The first section of the invoice")
 
 ### Second section
 

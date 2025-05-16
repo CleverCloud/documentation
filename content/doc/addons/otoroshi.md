@@ -43,14 +43,13 @@ Real ID: otoroshi_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myOtoroshi
 
 Your Otoroshi with LLM is starting:
- - Access it: https://xxxxxxxxxxxxxxxxxxxx-otoroshi.services.clever-cloud.com
+ - Access it: https://xxxxxxxxxxxx-api-otoroshi.services.clever-cloud.com
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 An initial account has been created, change the password at first login (Security -> Administrators -> Edit user):
- - Admin user name: xxxxxxxxxxxxxxxxxxxxxxxx
- - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxx
+ - Admin user name: cc-account-admin
+ - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-/!\ The otoroshi provider is in beta testing phase
 Learn more about Otoroshi with LLM on Clever Cloud: https://developers.clever-cloud.com/doc/addons/otoroshi/
 ```
 
@@ -117,5 +116,5 @@ Otoroshi exposes a comprehensive REST API that enables programmatic control over
 An OpenAPI descriptor is available from your instance:
 
 ```
-https://your-instance-subdomain-otoroshi.services.clever-cloud.com/apis/openapi.json
+https://xxxxxxxxxxxx-api-otoroshi.services/apis/openapi.json
 ```

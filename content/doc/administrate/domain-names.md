@@ -24,6 +24,17 @@ Add it in the application configuration: in the console, click **application nam
   You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [path routing](#path-routing).
 {{< /callout >}}
 
+## Primary (favourite) domain name
+
+You can set multiple custom or `cleverapps.io` domain names to an application, but only set one of them as the **primary (favourite)**. This is the one that will be used by default when you access your application with the `clever open` command of Clever Tools or through the link in the upper right corner of the Console:
+
+![Primary domain link](/images/doc/primary-domain-link.webp)
+
+To select the primary domain name:
+- Click the star icon next to the domain name in the **Domain names** section of your application in the Console
+- Use the `clever domain favourite set example.com` command in [Clever Tools](/developers/doc/cli/applications/configuration/#domain)
+- Use the dedicated `/vhosts/favourite` endpoint [in the API](/developers/api/v2/#put-/organisations/-id-/applications/-appId-/vhosts/favourite)
+
 ## Testing with `cleverapps.io` Domain
 
 {{< callout type="warning" >}}

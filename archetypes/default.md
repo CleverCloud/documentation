@@ -1,7 +1,7 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 description:
-date: {{ .Date }}
+date: '{{ .Date }}'
 draft: true
 type: docs
 ---

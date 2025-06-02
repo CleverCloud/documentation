@@ -65,11 +65,14 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 * [Learn more about Laravel Octane](https://laravel.com/docs/master/octane#frankenphp)
 * [Learn more about Symfony Runtime](https://symfony.com/doc/current/components/runtime.html)
 
+## Configurable port
+
+By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#redirectionio-support) for example.
+
 ## Custom FrankenPHP run command
 
 Use your own command to run your FrankenPHP application to define flags such as `--debug`, `--mercure` or `--no-compress`. To do so, set the `CC_RUN_COMMAND` environment variable, starting with `frankenphp php-server --listen 0.0.0.0:8080`.
 
-> [!TIP] If you need to use a service in front of FrankenPHP, use the custom run command to change the FrankenPHP listen port
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 

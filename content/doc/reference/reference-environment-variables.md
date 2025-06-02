@@ -184,6 +184,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 | Name | Description | Default value |
 |---------------|-------------| ---------------|
+| `CC_FRANKENPHP_PORT` | The port on which FrankenPHP listens for HTTP requests | `8080` |
 | `CC_FRANKENPHP_WORKER` | Path to the worker script, relative to the root of your project (e.g. `/worker/scrip.php`) | |
 | `CC_PHP_COMPOSER_FLAGS` | Flags to pass to Composer | `-n --no-dev --no-progress --no-scripts` |
 | `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build | |

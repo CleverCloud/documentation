@@ -110,16 +110,19 @@ Here are various scenarios:
 
 We support any package manager compatible with Node.js. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use. The default value is set to `npm`, but it can be any of these values:
 
-* `npm-install`: uses [npm install](https://docs.npmjs.com/cli/install)
+* `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
+* `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
 * `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
-* `npm`: Defaults to `npm-install`
-* `yarn`: uses [yarn@1](https://classic.yarnpkg.com/lang/en/)
-* `yarn2`: uses [yarn@2 or later versions](https://yarnpkg.com/)
-* `custom`: use another package manager (bun, pnpm, etc.) with `CC_CUSTOM_BUILD_TOOL`
+* `yarn`: uses [Yarn Classic (v1)](https://classic.yarnpkg.com/lang/en/)
+* `yarn2`: uses [Yarn Berry (v2 or later)](https://yarnpkg.com/)
+* `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
 
-If a `yarn.lock` file exists in your application's main folder, `yarn` will be set as package manager. To overwrite this behavior, either delete the `yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+You can also deploy using Deno with additional configuration. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
 
-#### Yarn 3.x and 4.x support
+>[!NOTE]
+> If a `bun.lock` or a `yarn.lock` file exists in your application's main folder, `bun`/`yarn` will be used. To overwrite this behavior, either delete the `bun.lock`/`yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+
+### Yarn 3.x and 4.x support
 
 With recent versions of Yarn, you need to put the global folder within your application to manage restarts from build cache. You can do it by setting `YARN_GLOBAL_FOLDER` to `$APP_HOME/.yarncache/` for example, in the [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools):
 

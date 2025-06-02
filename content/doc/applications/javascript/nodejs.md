@@ -32,6 +32,12 @@ If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You 
 >[!NOTE]
 You can also set the `engines.node` field in `package.json`. For legacy reasons, this value is prioritized over the `CC_NODE_VERSION` environment variable. If both are set, the `engines.node` value will be used.
 
+### Bun version
+
+If you use Bun, it will use the latest available version on Clever Cloud:
+
+{{< runtimes_versions bun >}}
+
 ### About package.json
 
 A valid `package.json` file should look like the following:

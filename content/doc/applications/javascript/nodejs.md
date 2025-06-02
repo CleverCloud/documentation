@@ -34,7 +34,17 @@ You can also set the `engines.node` field in `package.json`. For legacy reasons,
 
 ### About package.json
 
-The `package.json` file should look like the following:
+A valid `package.json` file should look like the following:
+
+```json
+{
+  "name" : "myApp",
+  "version" : "0.1.0",
+  "main" : "myApp.js",
+}
+```
+
+or
 
 ```json
 {
@@ -46,22 +56,24 @@ The `package.json` file should look like the following:
 }
 ```
 
-or
+You can use additional scripts as an alternative to [Clever Cloud hooks](/developers/doc/develop/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
 
 ```json
 {
   "name" : "myApp",
   "version" : "0.1.0",
-  "main" : "myApp.js",
+  "scripts" : {
+    "preinstall": "./download.sh",  // during build phase, before dependencies installation
+    "postinstall": "./cleanup.sh",  // during build phase, after dependencies installation
+    "prestart": "./prepare.sh",     // during run phase, before the start command
+    "start" : "node myApp.js",
+  }
 }
 ```
 
-The following table describes each of the fields formerly mentioned:
+### Custom run command
 
-| Usage        | Field         | Description                                |
-|--------------|---------------|--------------------------------------------|
-| **At least one** | `scripts.start` | This field provides a command line to run. If defined, `npm start` will be launched. Otherwise, we will use the `main` field. See below to know how and when to use the `scripts.start` field.                   |
-| **At least one** | `main`          | This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if `scripts.start` is not defined. |
+If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud). For instance, to launch `scripts.start` with a yarn based application, you must have `CC_RUN_COMMAND="yarn start"`.
 
 ### Dependencies
 
@@ -118,21 +130,6 @@ clever env set YARN_GLOBAL_FOLDER '$APP_HOME/.yarncache/'
 #### Corepack and packageManager support
 
 Since Node.js v14.19.0 and v16.9.0, you can use [Corepack](https://nodejs.org/api/corepack.html) as an experimental feature to set a package manager from `npm`, `pnpm` or `yarn`, and its version. It can be achieved through a simple command (e.g.: `corepack use yarn@*`) or the [`packageManager`](https://nodejs.org/api/packages.html#packagemanager) field in `package.json`. If you use `pnpm` or `yarn`, you should always set `CC_NODE_BUILD_TOOL` and `CC_CUSTOM_BUILD_TOOL` for `pnpm`.
-
-### Custom build phase
-
-The build phase installs the dependencies and executes the `scripts.install` you might have defined in your `package.json`. It's meant to build the whole application including dependencies and / or assets (if there are any).
-
-All the build part should be written into the `scripts.install` field of the `package.json` file. You can also add a custom bash script and execute it with: `"scripts.install": "./build.sh"`. For more information, see [the npm documentation](https://docs.npmjs.com/misc/scripts)
-
-### Custom run phase
-
-The run phase is executed from `scripts.start` if defined. It's only meant to start your application and should not
-contain any build task.
-
-### Custom run command
-
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud). For instance, to launch `scripts.start` with a yarn based application, you must have `CC_RUN_COMMAND="yarn start"`.
 
 ### Alternative runtimes
 

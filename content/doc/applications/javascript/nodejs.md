@@ -1,14 +1,7 @@
 ---
 type: docs
 title: Node.js
-shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
-tags:
-- deploy
-keywords:
-- nodejs
-str_replace_dict:
-  "@application-type@": "Node"
-type: docs
+description: Run JavaScript application on Clever Cloud with Node.js and npm, or alternative tools (Bun, Deno, pnpm or Yarn)
 aliases:
 - /doc/applications/javascript/by-framework/nodejs
 - /doc/nodejs/nodejs

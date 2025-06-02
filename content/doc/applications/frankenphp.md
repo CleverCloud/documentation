@@ -48,6 +48,10 @@ To install development dependencies, set the `CC_PHP_DEV_DEPENDENCIES` environme
 
 > [!TIP] To use a local Composer to install dependencies, put the `composer.phar` file at the root of your project
 
+## Custom PHP configuration
+
+To load your own PHP configuration directives, put a `php.ini` file at the root of your project. FrankenPHP will automatically use it.
+
 ## FrankenPHP and Materia KV
 
 Materia KV is Clever Cloud's distributed serverless key-value store based on FoundationDB, compatible with existing ecosystems such as Redis®, with TTL for sessions support and JSON commands.
@@ -73,6 +77,7 @@ By default, FrankenPHP listens on port `8080`. If you want to change it, set the
 
 Use your own command to run your FrankenPHP application to define flags such as `--debug`, `--mercure` or `--no-compress`. To do so, set the `CC_RUN_COMMAND` environment variable, starting with `frankenphp php-server --listen 0.0.0.0:8080`.
 
+You can also use this to load [a custom Caddyfile](https://frankenphp.dev/docs/config/#caddyfile-config), starting `CC_RUN_COMMAND` with `frankenphp run --config /path/to/Caddyfile`.
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 

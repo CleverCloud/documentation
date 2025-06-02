@@ -1,7 +1,7 @@
 ---
 type: docs
 title: JavaScript
-description: Run JavaScript application on Clever Cloud with Node.js and npm, or alternative tools (Bun, Deno, Meteor.js, pnpm or Yarn)
+description: Run JavaScript applications on Clever Cloud with Node.js and npm, or alternative tools (Bun, Deno, Meteor.js, pnpm or Yarn)
 tags:
 - deploy
 keywords:
@@ -21,13 +21,12 @@ comments: false
 ---
 
 {{< hextra/hero-subtitle >}}
-Find detailed instructions according to your framework
+Find detailed instructions according to your preferred tools:
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="nodejs" title="Node.js" icon="node" >}}
-  
+  {{< card link="meteor" title="Meteor.js" subtitle="Build and deploy JavaScript applications using the Meteor.js full-stack framework" icon="meteor" >}}
+  {{< card link="nodejs" title="Node.js" subtitle="Build and deploy JavaScript applications using Node.js and npm or Bun, Deno, pnpm, Yarn" icon="node" >}}
 {{< /cards >}}
 
 ### More Frameworks
@@ -41,4 +40,3 @@ Looking for instructions on a specific framework deployment?
     icon="science"
   >}}
   {{< /cards >}}
-  

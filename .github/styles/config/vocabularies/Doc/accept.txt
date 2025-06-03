@@ -47,7 +47,11 @@ Keycloak
 Kubectl
 Laravel
 Let's Encrypt
+Luma
 Lume
+Mailpace
+Mathieu
+Ancelin
 Matomo
 maven
 Metabase
@@ -62,6 +66,7 @@ nmap
 npm
 Nuxt
 OAuth
+Ollama
 Otoroshi
 packageManager
 Payara
@@ -73,16 +78,19 @@ proxyhugo
 psql
 rackup
 rclone
+RDBMS
 Redict
 redirections
 runtimes
 sbt
 scalers
+Scaleway
 SCMs
 serverless
 Servlet
 shortcode
 Sidekiq
+Sōzu
 Symfony
 syslog
 toolchain

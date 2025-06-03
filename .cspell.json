@@ -1,0 +1,46 @@
+{
+  "language": "en",
+  "dictionaryDefinitions": [
+  {
+    "name": "vale-words",
+    "path": "./.github/styles/config/vocabularies/Doc/accept.txt",
+    "addWords": true
+  }
+],
+"dictionaries": [
+    "vale-words",
+    "en-gb",
+    "companies",
+    "computing-acronyms",
+    "softwareTerms",
+    "bash",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "html",
+    "node",
+    "npm",
+    "php",
+    "powershell",
+    "python",
+    "ruby",
+    "typescript",
+  ],
+  "ignoreRegExpList": [
+    // any characters between / and /
+    "/\\*.*?\\*/",
+    // any characters between ` and `
+    "`.*?`",
+    // any characters between { and }
+    "{.*?}",
+    // any characters between - and -
+    "-.*?-",
+    // any characters between < and >
+    "<.*?>",
+    // any characters between " -" and ":"
+    "\" -.*?:",
+    // any characters after "- name:"
+    "- name:.*",
+  ],
+}

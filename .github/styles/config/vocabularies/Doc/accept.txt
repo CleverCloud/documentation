@@ -8,6 +8,8 @@ Astrowind
 Azimutt
 Blackfire
 boto
+Caddy
+Caddyfile
 callout
 CDNs
 charset
@@ -81,6 +83,7 @@ serverless
 Servlet
 shortcode
 Sidekiq
+Symfony
 syslog
 toolchain
 VSCode

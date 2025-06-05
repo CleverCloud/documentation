@@ -111,7 +111,7 @@ Designed for production environments, the Coraza WAF plugin offers flexible conf
 
 ## Manage Otoroshi from its API
 
-Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. A Swagger UI detailing available endpoints is available [here](https://maif.github.io/otoroshi/swagger-ui/index.html).
+Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. [A Swagger UI detailing available endpoints is available](https://maif.github.io/otoroshi/swagger-ui/index.html).
 
 An OpenAPI descriptor is available from your instance:
 

@@ -129,7 +129,7 @@ build:
 	go build -o ${BINARY} main.go
 ```
 
-You'll find a more complex project using a Go Workspace and a `Makefile` [here](https://github.com/CleverCloud/go-workspaces).
+- [A more complex project using a Go Workspace and a Makefile](https://github.com/CleverCloud/go-workspaces)
 
 {{< callout type="warning" >}}
   Using `clevercloud/go.json` to define Makefile and binary paths is a deprecated method and should no longer be used.

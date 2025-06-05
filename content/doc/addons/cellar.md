@@ -326,7 +326,7 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
 ## Policies
 
-Cellar allows you to create policies to control the actions on your buckets. Find below two policies examples, and further documentation [here](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/).
+Cellar allows you to create policies to control the actions on your buckets. Find below two policies examples, and [further documentation](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/).
 
 ### Public bucket policy
 
@@ -386,8 +386,8 @@ The original ACL should apply to all of your objects after that.
 If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
 To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
 
-- Replace the `<bucket-name>` with your bucket name in the policy file.  
-- Change the `Effect` to `Allow` or `Deny` depending on your needs.  
+- Replace the `<bucket-name>` with your bucket name in the policy file.
+- Change the `Effect` to `Allow` or `Deny` depending on your needs.
 - Change the IP address under `Condition` to select which IP should trigger the rule.
 
 ```json {filename="IP-restriction-policy.json"}
@@ -425,7 +425,7 @@ s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
 
 To delete the policy, use this command:
-``` 
+```
 s3cmd delpolicy ./policy.json s3://<bucket-name>
 ```
 

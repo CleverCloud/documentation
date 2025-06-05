@@ -17,7 +17,7 @@ aliases:
 excludeSearch: true
 ---
 
-This week, we published two Clever Tools updates in a row. 3.3.0 was about adding [our new Gravelines HDS region](../02-12-new-grahds-region/) support and fixing a bug in our add-ons logs feature. 3.4.0 brings `json` and `json-stream` formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (`jq` compatible). You can learn more about it [here](https://github.com/ndjson/ndjson-spec/blob/master/README.md).
+This week, we published two Clever Tools updates in a row. 3.3.0 was about adding [our new Gravelines HDS region](../02-12-new-grahds-region/) support and fixing a bug in our add-ons logs feature. 3.4.0 brings `json` and `json-stream` formats for applications logs. The latter uses the Newline delimited JSON (NDJSON) specification (`jq` compatible). You can learn more about [ndjson/ndjson-spec/ on GitHub](https://github.com/ndjson/ndjson-spec/blob/master/README.md).
 
 But it's the `create` and `deploy` commands which are the most improved by this release. First, you'll now get the application or add-on name confirmed after creation. You can also get a JSON response adding `--format json` or `-F json` to the `create` or `create-addon` command. Second, the current folder name is now used as default application name if none is provided.
 

@@ -28,7 +28,7 @@ Ruby on Rails is an open source web application framework which runs on the Ruby
 Clever Cloud allows you to deploy any Ruby on Rails application. This page will explain you how to set up your application to run it on our service.
 You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
-You can find [here](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest) an example of Ruby on Rails application on Clever Cloud.
+- [An example of Ruby on Rails application on Clever Cloud](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest)
 
 {{% content/create-application %}}
 

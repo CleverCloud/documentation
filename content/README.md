@@ -5,4 +5,4 @@ This repo contains all the content from the [Clever Cloud Doc](https://developer
 
 This repo is automatically updated with a Git hook at the same time the main project is.
 
-Find all updates and contibuting guidelines on the main repo [here](https://github.com/CleverCloud/documentation).
+Find [all updates and contributing guidelines on the main repository](https://github.com/CleverCloud/documentation).

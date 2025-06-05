@@ -47,12 +47,16 @@ So you can alter the build&start process for your application.
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
 |[`CC_HEALTH_CHECK_PATH`](../../develop/healthcheck) | Custom path to validate your application deployment |  |
-|`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](../../applications/javascript/nodejs/#set-nodejs-version "Select node version") instead | |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
 |`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
 |`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
 |[`CC_WORKER_COMMAND`](../../develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
+
+You can set some tools' version in any runtime (except Docker):
+
+| Name | Description |
+|`CC_NODE_VERSION`| Set Node.js version, for example `24`, `23.11` or `22.15.1` |
 
 #### Control build and dependencies cache
 

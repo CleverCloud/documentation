@@ -32,6 +32,6 @@ If you created your Clever Cloud account through the GitHub integration, you'll 
 
 ## Clever Tools and API tips in the Console
 
-This interface also introduces a new [Web Component](https://www.clever-cloud.com/doc/clever-components/) to show Clever Tools commands and API requests related to the page you visit. In the coming weeks, we'll add more of these tips over the Clever Cloud Console.
+This interface also introduces a new [Web Component](https://www.clever-cloud.com/developers/clever-components) to show Clever Tools commands and API requests related to the page you visit. In the coming weeks, we'll add more of these tips over the Clever Cloud Console.
 
 ![API Tokens API & Clever Tools Tips](/images/changelog/console-api-tokens-tips.webp)

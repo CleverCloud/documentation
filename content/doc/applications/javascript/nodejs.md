@@ -9,7 +9,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application. We do support **any stable version of Node.js**. Their release schedule is available [here](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
+Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application. We do support **any stable version of Node.js**. Learn more about [Node.js release schedule](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
 
 ## Configure your Node.js application
 

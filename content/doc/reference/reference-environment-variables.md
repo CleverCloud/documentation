@@ -243,6 +243,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
+|[`CC_NODE_VERSION`](/developers/doc/applications/javascript/nodejs/#set-nodejs-version)| Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 |`CC_NODE_DEV_DEPENDENCIES` | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |
 |`CC_RUN_COMMAND` | Define a custom command. Example for Meteor: `node .build/bundle/main.js <options>`  | |
 |`CC_NODE_BUILD_TOOL` | Choose your build tool between npm, npm-ci, yarn, yarn2 and custom | npm |

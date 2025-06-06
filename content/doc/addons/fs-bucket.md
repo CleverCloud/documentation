@@ -27,10 +27,14 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-{{< callout type="warning" >}}**Warning**
-• Back-ups are **not included** in the public cloud offer. You can still do them manually.
-• FSBuckets are not available for Docker applications because of security concerns.
-{{< /callout >}}
+> [!WARNING]
+> The public cloud offer does not include automated backups. You can still create and manage backups manually if needed.
+
+> [!IMPORTANT]
+> FSBuckets aren't available for Docker applications because of security concerns.
+
+> [!NOTE]
+> The Health Data Hosting (HDS) region doesn’t support FS Buckets. PHP applications include a default FS Bucket for session storage, so they can’t deploy on HDS unless you turn it off it with `CC_PHP_DISABLE_APP_BUCKET=true`. Use Redis instead to manage PHP sessions.
 
 ## Configuring your application
 

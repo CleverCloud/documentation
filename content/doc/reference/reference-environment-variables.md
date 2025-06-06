@@ -63,6 +63,7 @@ You can set some tools' version in any runtime (except Docker):
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_CACHE_DEPENDENCIES` | Enable caching of your build dependencies to speed up following builds. | false |
+|`CC_CACHE_DEPENDENCIES_EXTRA_PATHS` | Adds additional paths to dependencies cache, relative to the application folder, separated by a `:` (e.g. `vendor:../dependencies`) |  |
 |[`CC_DISABLE_BUILD_CACHE_UPLOAD`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
 |[`CC_IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
 |[`IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |

@@ -201,7 +201,7 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 
 ## Deployment video
 
-{{< youtube id="dxhSjHnrrhA" >}}
+{{< youtube id="9ww_t0o-GmA" >}}
 
 ## Automatic HTTPS redirection
 

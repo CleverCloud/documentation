@@ -128,6 +128,68 @@ clever profile open
 clever profile -F json
 ```
 
+## emails
+
+To list primary email and secondary emails associated with your Clever Cloud account, you can use:
+
+```
+clever emails
+```
+
+To open the email management page in your browser, use:
+
+```
+clever emails open
+```
+
+To add a secondary email, use:
+
+```
+clever emails add email@example.com
+```
+
+To set a secondary email as primary, use:
+
+```
+clever emails primary email@example.com
+```
+
+To remove one or all secondary emails, use:
+
+```
+clever emails remove email@example.com
+clever emails remove-all
+clever emails remove-all --yes
+```
+
+## ssh-keys
+
+To list public SSH keys associated with your Clever Cloud account, you can use:
+
+```
+clever ssh-keys
+```
+
+To open the public SSH keys management page in your browser, use:
+
+```
+clever ssh-keys open
+```
+
+To add a new public SSH key, use:
+
+```
+clever ssh-keys add myPublicKey ~/.ssh/id_ecdsa.pub
+```
+
+To remove one or all public SSH keys, use:
+
+```
+clever ssh-keys remove myPublicKey
+clever ssh-keys remove-all
+clever ssh-keys remove-all --yes
+```
+
 ## curl
 
 To use our public API, you need to be authenticated for most endpoints. If you're logged in through Clever Tools, there is a simple way to make any request you want: `clever curl`. It's `curl`, but in an authenticated context for Clever Cloud API.
@@ -137,10 +199,11 @@ To use our public API, you need to be authenticated for most endpoints. If you'r
 
 ## tokens
 
-You can query Clever Cloud public API with a bearer token thanks to the Auth Bridge. To get a token, use:
+You can query [Clever Cloud public API](/developers/api/) with a bearer token thanks to the Auth Bridge. To create a token, use:
 
 ```
 clever tokens create myTokenName
+clever tokens create myTokenName --expiration 2w --format json
 ```
 
 Once created, you can use it replacing the API endpoint with `https://auth-bridge.clever-cloud.com`. For example:
@@ -153,8 +216,7 @@ To list all your tokens, use:
 
 ```
 clever tokens
-clever tokens list
-clever tokens list -F json
+clever tokens -F json
 ```
 
 To revoke a token, use:
@@ -162,6 +224,3 @@ To revoke a token, use:
 ```
 clever tokens revoke myTokenId
 ```
-
-> [!NOTE]
-> The `clever tokens` command is an experimental feature, activate it with `clever features enable tokens` command

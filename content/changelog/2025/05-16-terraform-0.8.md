@@ -1,6 +1,6 @@
 ---
 title: Terraform provider 0.8.0 is available
-description: FS Bukets support and Cellar add-ons update
+description: FS Buckets support and Cellar add-ons update
 date: 2025-05-16
 tags:
   - addons

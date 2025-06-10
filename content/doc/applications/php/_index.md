@@ -218,17 +218,9 @@ If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded
 
 ### Change the FastCGI module
 
-You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`.
+You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`, using the `CC_CGI_IMPLEMENTATION` environment variable. If you don't set it `proxy_fcgi` is used as default value. We recommend it, as `fastcgi` implementation is not maintained anymore.
 
-To choose between these two modules you must use the `CC_CGI_IMPLEMENTATION` environment variable with `fastcgi` or `proxy_fcgi` as a value.
-
-{{< callout type="info" >}}
-We recommend preferring `proxy_fcgi` over `fastcgi`. The `fastcgi` implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
-{{< /callout >}}
-
-If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content.
-
-To resolve this issue, we advise you to switch the value of `CC_CGI_IMPLEMENTATION` from default to `proxy_fcgi`.
+If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content. To resolve this issue, use `proxy_fcgi`.
 
 ### Environment injection
 

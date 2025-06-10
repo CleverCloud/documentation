@@ -57,7 +57,7 @@ Multiple new features are also available in this "Big Summer Update". Access Log
 
 `--no-color` or `--color true|false` global option is available. It's used by default when the output is not a terminal. `clever console` now opens the [Console](https://console.clever-cloud.com) even if your not in a folder with a linked application. [3.8.1 release](https://github.com/CleverCloud/clever-tools/releases/tag/3.8.1) comes with some minor fixes.
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install)
 
 ```
 npm update -g clever-tools

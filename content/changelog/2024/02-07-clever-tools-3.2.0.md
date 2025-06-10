@@ -25,7 +25,7 @@ As mentioned [in the previous release](../01-25-clever-tools-3.1.0/), the packag
 * **logs:** increase connection timeout ([a4ec4b9](https://github.com/CleverCloud/clever-tools/commit/a4ec4b90b5d3938e27679edeb7d375281def3776))
 * **logs:** only print SSE errors as debug when verbose mode is enabled ([3ea21c6](https://github.com/CleverCloud/clever-tools/commit/3ea21c6a4ff75db8df5f8177bba10ef17c2962e0))
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install). For example with `npm`:
 
 ```
 npm update -g clever-tools

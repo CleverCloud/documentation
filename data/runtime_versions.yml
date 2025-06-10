@@ -5,7 +5,7 @@ node:
 bun:
   eol_source: "https://github.com/oven-sh/bun/releases"
   default:
-  - "1.2.15"
+  - "1.2.16"
 PHP:
   eol_source: "https://www.php.net/supported-versions.php"
   default:

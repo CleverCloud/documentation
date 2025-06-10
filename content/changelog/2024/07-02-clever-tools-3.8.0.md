@@ -64,4 +64,4 @@ npm update -g clever-tools
 clever version
 ```
 
-Note that we reintroduced [Nix support](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#nix-package-manager) with this release.
+Note that we reintroduced [Nix support](/developers/doc/cli/install/#nix-package-manager) with this release.

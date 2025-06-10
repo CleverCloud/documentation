@@ -16,11 +16,11 @@ type: docs
 ## Overview
 
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
-and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 6.6.0 and varnish-modules 0.18.0**.
+and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 7.7.1 and varnish-modules 0.26.0**.
 
 ## Limitations
 
-Varnish is only available on **PHP**, **Go** and **Node.js** applications. Support for other applications is in discussion.
+Varnish is available on **FrakenPHP**, **Go**, **Node.js** and **PHP with Apache** applications. Support for other applications is in discussion.
 
 For more information about it, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 

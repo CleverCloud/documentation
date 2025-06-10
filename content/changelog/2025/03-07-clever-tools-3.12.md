@@ -97,7 +97,7 @@ As this beta feature evolves, we'll add demos, documentations and videos to help
 - [Give your feedback about Network Groups](https://github.com/CleverCloud/Community/discussions/categories/network-groups)
 
 ## How to upgrade
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install). For example with `npm`:
 
 ```
 npm update -g clever-tools

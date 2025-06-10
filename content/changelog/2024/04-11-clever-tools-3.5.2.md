@@ -54,7 +54,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 ````
 * [Learn more about Materia KV](https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install)
 
 ```
 npm update -g clever-tools

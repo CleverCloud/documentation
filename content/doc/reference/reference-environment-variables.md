@@ -56,6 +56,7 @@ So you can alter the build&start process for your application.
 You can set some tools' version in any runtime (except Docker):
 
 | Name | Description |
+|-----------------|--------------------------|
 |`CC_NODE_VERSION`| Set Node.js version, for example `24`, `23.11` or `22.15.1` |
 
 #### Control build and dependencies cache

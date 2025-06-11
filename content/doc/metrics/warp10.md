@@ -69,7 +69,7 @@ The Clever Cloud Warp 10 endpoint is:
 https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
 ```
 
-You can find documentation about endpoint gateway [here](https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction).
+Learn more about [endpoint gateway on warp10.io](https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction).
 
 > You can find the endpoint and an available token under the `metric` tab of your application
 

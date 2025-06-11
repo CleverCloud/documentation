@@ -22,9 +22,11 @@ jobs:
 
       - name: Build fork
         env:
-          HUGO_VERSION: '0.146.7'
-          HEXTRA_VERSION: 'v0.9.7'
-        run: ./clevercloud-deploy-script.sh
+          HUGO_VERSION: '0.147.8'
+        run: |
+          HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
+          wget -qO- ${HUGO_URL} | tar -xz -C /usr/local/bin
+          ./clevercloud-deploy-script.sh
 
       - name: Upload artifact
         id: artifact-upload-step

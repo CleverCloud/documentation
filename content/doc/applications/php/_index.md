@@ -434,6 +434,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
 
+- OpenTelemetry: set `ENABLE_OPENTELEMETRY` to `true`.
+
+    OpenTelemetry is an extension to facilitate the generation, export, collection of telemetry data such as traces, metrics, and logs.
+
 - PCS: set `ENABLE_PCS` to `true`.
 
     PCS provides a fast and easy way to mix C and PHP code in your PHP extension.

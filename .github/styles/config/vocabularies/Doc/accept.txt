@@ -1,5 +1,6 @@
 add-on
 ant
+ANSI
 APIs
 application
 app_id
@@ -11,6 +12,7 @@ boto
 Caddy
 Caddyfile
 callout
+CDN
 CDNs
 charset
 checkMe
@@ -20,13 +22,16 @@ Cloud
 config
 Coraza
 Corepack
+CORS
 CRDs
 cron
 Cyberduck
 Deno
+DNS
 Dockerfile
 downtimes
 eg
+EOL
 failover
 Filestash
 Filezilla
@@ -48,7 +53,9 @@ Keycloak
 Kubectl
 Laravel
 Let's Encrypt
+LLM
 Lume
+LTS
 Matomo
 maven
 Metabase
@@ -76,6 +83,7 @@ rackup
 rclone
 Redict
 redirections
+RSS
 runtimes
 sbt
 scalers
@@ -86,9 +94,11 @@ shortcode
 Sidekiq
 Symfony
 syslog
+TLS
 toolchain
 URIs
 VSCode
+WAF
 webroot
 Wildfly
 yjs

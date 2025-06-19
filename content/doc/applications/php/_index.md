@@ -354,7 +354,18 @@ Others PHP frameworks tested on Clever Cloud:
 
 ## Available extensions and modules
 
-You can check enabled extensions and versions by viewing our `phpinfo()` example for:
+Clever Cloud PHP with Apache applications enable the following extensions by default:
+
+`amqp`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `iconv`, `imagick`, `imap`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysql`, `mysqli`, `opcache`, `pcntl`, `pcre`, `pdo-mysql`, `pdo-odbc`, `pdo-pgsql`, `pdo-sqlite`, `pgsql`, `phar`, `posix`, `pspell`, `readline`, `redis`, `session`, `shmop`, `sockets`, `sodium`, `solr`, `ssh2`, `ssl`, `tidy`, `tokenizer`, `unixodbc`, `xml`, `xmlrpc`, `xsl`, `zip`, `zlib`.
+
+You can also enable the following extensions on demand:
+
+`apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `geos`, `gnupg`, `grpc`, `ioncube`, `imap`, `mailparse`, `maxminddb`, `mongo`, `newrelic`, `oauth`, `opentelemetry`, `pcs`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `scoutapm`, `sqlsrv`, `sqreen`, `tideways`, `uopz`, `uploadprogress`, `xdebug`, `xmlrpc`, `yaml`
+
+>[!NOTE]
+>Only some extensions support PHP 8.4 for now: `amqp`, `apcu`, `blackfire`, `event`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcache`, `memcached`, `mongodb`, `newrelic`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `solr`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`. We'll add support for more extensions as they are released.
+
+You can check extensions and versions by viewing our `phpinfo()` for:
 
 - [PHP 5.6](https://php56info.cleverapps.io)
 - [PHP 7.1](https://php71info.cleverapps.io)
@@ -367,33 +378,15 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 8.3](https://php83info.cleverapps.io)
 - [PHP 8.4](https://php84info.cleverapps.io)
 
-**Warning**: some extensions need to be [enabled explicitly](#enable-specific-extensions)
-
-Clever Cloud PHP application enables the following PHP extensions by default: `amqp`, `bcmath`, `bz2`, `ctype`, `curl`, `date`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `gRPC`, `hash`, `icon`, `imap`, `imagick`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pdo_sqlsrv`, `pnctl`, `pcre`, `PDO`, `pgsql`, `Phar`, `posix`, `protobuf`, `Pspell`, `random`, `readline`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `solr`, `SPL`, `sqlsrv`,`ssh2`, `sqlite3`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`
-
-{{< callout type="info" >}}
-Only some extensions support PHP 8.4 for now: `apcu`, `event`, `imap`,  `memcache`, `mongodb`, `pspell`, `rdkafka`, `redis`, `ssh2`, `tideways`, `uploadprogress`, `zip`. We'll add support for more extensions as they are released.
-{{< /callout >}}
-
-You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "doc/develop/env-variables.md" >}}) to disable them.
-
-If you have a request about modules, feel free to contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
-
-{{< callout type="warning" >}}
-On PHP 7, the memcache extension is not available; only **memcached** is available.
-{{< /callout >}}
+If you have a request about extensions, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 ### Enable specific extensions
 
-Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding [environment variable](#setting-up-environment-variables-on-clever-cloud):
+Some extensions need to be enabled explicitly. To do so, set the corresponding [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
 - APCu: set `ENABLE_APCU` to `true`.
 
     APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
-
-- Couchbase: set `ENABLE_COUCHBASE` and `ENABLE_PCS` to `true`
-
-    Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
 
 - Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
 
@@ -405,6 +398,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     Event is an extension to schedule I/O, time and signal based events.
 
+- Excimer: set `ENABLE_EXCIMER` to `true`.
+
+    Excimer is an extension that provides a low-overhead interrupting timer and sampling profiler.
+
 - GEOS: set `ENABLE_GEOS` to `true`.
 
     GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
@@ -413,13 +410,25 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
 
+- gRPC: set `ENABLE_GRPC` to `true`.
+
+    gRPC is an extension for the high performance, open source, general RPC framework layered over HTTP/2.
+
 - IonCube: set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.
 
+- IMAP (only for PHP 8.4+): set `ENABLE_IMAP` to `true`.
+
+    IMAP is an extension to operate with the IMAP protocol, as well as the NNTP, POP3, and local mailbox access methods.
+
 - Mailparse: set `ENABLE_MAILPARSE` to `true`.
 
     Mailparse is an extension for parsing and working with email messages. It can deal with RFC 822 and RFC 2045 (MIME) compliant messages.
+
+- MaxMind DB: set `ENABLE_MAXMINDDB` to `true`.
+
+    Extension for reading MaxMind DB files. MaxMind DB is a binary file format that stores data indexed by IP address subnets (IPv4 or IPv6).
 
 - Mongo: set `ENABLE_MONGO` to `true`.
 
@@ -442,9 +451,25 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
+- PDFlib: set `ENABLE_PDFlib` to `true`.
+
+    PDFlib is a commercial library for generating PDF files. It provides a PHP extension to create and manipulate PDF documents.
+
+- Protobuf: set `ENABLE_PROTOBUF` to `true`.
+
+    Protobuf is an extension for the language-neutral, platform-neutral extensible mechanism for serializing structured data.
+
+- Pspell: set `ENABLE_PSPELL` to `true`.
+
+    Pspell is an extension to check the spelling of words and offer suggestions.
+
 - Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
+
+- Scout APM: set `ENABLE_SCOUTAPM` to `true`.
+
+    The Scout APM extension to provide additional capabilities to application monitoring over just using the base PHP userland library.
 
 - SQL Server: set `ENABLE_SQLSRV` or `ENABLE_PDO_SQLSRV` to `true`.
 
@@ -452,15 +477,31 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
 - Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
 
+- Tideways: set `ENABLE_TIDEWAYS` to `true`.
+
+    Tideways is an extension that provides profiling and monitoring capabilities for PHP applications.
+
 - Uopz: set `ENABLE_UOPZ` to `true`.
+
     The uopz extension is focused on providing utilities to aid with unit testing PHP code.
 
 - Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
+
     The uploadprogress extension is used to track the progress of a file download.
 
 - XDebug: set `ENABLE_XDEBUG` to `true`.
 
     XDebug is a debugger and profiler tool for PHP.
+
+- XML RPC: set `ENABLE_XMLRPC` to `true`.
+
+    XML-RPC is an extension for server and client bindings
+
+- YAML: set `ENABLE_YAML` to `true`.
+
+    YAML is an extension providing a YAML-1.1 parser and emitter
+
+You can use `DISABLE_<extension_name>=true` in your [environment variables](/developers/doc/reference/reference-environment-variables/) to disable an extension.
 
 ## Configure the session storage
 
@@ -579,4 +620,3 @@ You can learn more about ProxySQL on the [dedicated documentation page]({{< ref 
 {{% content/more-config %}}
 
 {{% content/url_healthcheck %}}
-

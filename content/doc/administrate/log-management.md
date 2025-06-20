@@ -32,7 +32,7 @@ This interface is constantly improving, send us your feedback through our GitHub
 * [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
-Logs are retained for 7 days, sometimes more for specific customers/needs.
+Logs are retained for 7 days or 500Mb, sometimes more for specific customers/needs.
 {{< /callout >}}
 
 ## Get continuous logs from your application

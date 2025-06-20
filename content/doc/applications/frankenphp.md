@@ -71,7 +71,7 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 
 ## Configurable port
 
-By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#redirectionio-support) for example.
+By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) for example.
 
 ## Custom FrankenPHP run command
 
@@ -85,6 +85,7 @@ FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such work
 
 ```bash
 clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"
+clever deploy # or clever restart if there is no code change
 ```
 
 - [Learn more about Clever Tasks](/developers/doc/develop/tasks/)

@@ -108,19 +108,13 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
-### Redirection.io support
+{{% content/mise %}}
 
-[Redirection.io](https://redirection.io) can help reduce HTTP traffic issues on your website. It gives a complete control on how HTTP requests are handled, which helps make it SEO-friendly. It can perform redirections and comes with lots of features. You can link any application to a Redirection.io project easily, setting up the proxy mode with following environment variables:
+| Name | Description |
+|-----------------|--------------------------|
+|`CC_RUN_MISE_INSTALL`| Set to `true` to run `mise install` before the build phase |
 
-|  Name  |  Description  |  Default value  |
-|-----------------------|------------------------------|--------------------------------|
-| `CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | `false` |
-| `CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
-| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
-| `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
-
-The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
-
+{{% content/redirectionio %}}
 >[!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support

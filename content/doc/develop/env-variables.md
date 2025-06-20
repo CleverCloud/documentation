@@ -225,29 +225,29 @@ Here is a non-exhaustive summary:
 ## Specific languages
 
 {{< cards >}}
-  {{< card link="../../applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="../../applications/golang/#environment-injection" title="Go" icon="go" >}}
-  {{< card link="../../applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
-  {{< card link="../../applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
+  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/developers/doc/applications/golang/#environment-injection" title="Go" icon="go" >}}
+  {{< card link="/developers/doc/applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
+  {{< card link="/developers/doc/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
   {{< card link="../../../guides/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
   {{< card link="../../../guides/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
-  {{< card link="../../applications/javascript/nodejs/#environment-injection" title="Node.js" icon="node" >}}
+  {{< card link="/developers/doc/applications/javascript/nodejs/#environment-injection" title="Node.js" icon="node" >}}
   {{< card link="../../../guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
-  {{< card link="../../applications/php/#environment-injection" title="PHP" icon="php" >}}
-  {{< card link="../../applications/python/#environment-injection" title="Python" icon="python" >}}
-  {{< card link="../../applications/rust/#environment-injection" title="Rust" icon="rust" >}}
-  {{< card link="../../applications/scala/#environment-injection" title="Scala" icon="scala" >}}
-  {{< card link="../../applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
-  {{< card link="../../applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
-  {{< card link="../../applications/static/#setting-up-environment-variables-on-clever-cloud" title=".Static" icon="feather" >}}
-  
+  {{< card link="/developers/doc/applications/php/#environment-injection" title="PHP" icon="php" >}}
+  {{< card link="/developers/doc/applications/python/#environment-injection" title="Python" icon="python" >}}
+  {{< card link="/developers/doc/applications/rust/#environment-injection" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/static/#setting-up-environment-variables-on-clever-cloud" title=".Static" icon="feather" >}}
+
 {{< /cards >}}
 
 {{< callout type="info" >}}
 Variables are available at build time
 for runtimes that support build time instructions, such as
-[Java WAR](../../applications/java/java-war/#environment-injection),
+[Java WAR](/developers/doc/applications/java/java-war/#environment-injection),
 [Play! Framework 1](../../../guides/play-framework-1/#environment-injection),
 [Play! Framework 2](../../../guides/play-framework-2/#environment-injection)
-or [Scala](../../applications/scala/#environment-injection).
+or [Scala](/developers/doc/applications/scala/#environment-injection).
 {{< /callout >}}

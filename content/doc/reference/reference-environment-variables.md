@@ -195,7 +195,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Go Documentation](/developers/doc/applications/golang)
 
-| Name | Descrption |
+| Name | Description |
 | :------- | :---- |
 | `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`. Build and install your application. `goget` still exists but is deprecated. |
 | `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |

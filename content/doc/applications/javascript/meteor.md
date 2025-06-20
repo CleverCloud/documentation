@@ -52,11 +52,11 @@ To find out which version is required by your application type the following com
 Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.
 
 ```json
-  ...
+  …
   "engines": {
     "node": "14.18.3"
   },
-  ...
+  …
 ```
 
 You may change the node version value according to the application requirements.

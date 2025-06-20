@@ -1,0 +1,8 @@
+extends: substitution
+message: "Use '…' (ellipsis character) instead of '%s'"
+level: warning
+ignorecase: false
+
+# Replace three consecutive periods with proper ellipsis
+swap:
+  '\.\.\.': '…'

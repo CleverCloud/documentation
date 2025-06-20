@@ -23,7 +23,7 @@ We developed this product with its creator and core developer: [Mathieu Ancelin]
 
 On Clever Cloud, it comes batteries included, pre-configured with features such as [Coraza Web Appplication Firewall](https://maif.github.io/otoroshi/manual/how-to-s/instantiate-waf-coraza.html) or [LLM extension](https://cloud-apim.github.io/otoroshi-llm-extension/docs/overview). The latter allows you to manage AI services from many providers (Anthropic, Groq, Hugging Face, Mistral, OpenAI, OVHcloud), Ollama instances or any OpenAI API compatible endpoints.
 
-All this with a unique interface, adding token management, rate limit, context, validation, moderation, etc. Create your own agents and flows with an only URL, distributing tokens to your team or customers, for cURL requests or integrations to many services and tools... or your own applications hosted on Clever Cloud.
+All this with a unique interface, adding token management, rate limit, context, validation, moderation, etc. Create your own agents and flows with an only URL, distributing tokens to your team or customers, for cURL requests or integrations to many services and tools… or your own applications hosted on Clever Cloud.
 
 It's based on a Java application and a Redis® database. Once deployed you'll get a management URL with credentials. Want to learn more? Feel free to let us know what you think and ask your questions in [our GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/otoroshi).
 

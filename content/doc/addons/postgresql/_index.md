@@ -159,7 +159,7 @@ If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on a Pos
 Add-ons are managed services, meaning that users have **standard access** to the database (role **owner**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
 Authorized actions:
-- Manage tables (create, delete...).
+- Manage tables (create, delete…).
 - Manage schemas.
 - Manage indexes.
 - Access information from **pg_catalog** (except **pg_database** on DEV plan).

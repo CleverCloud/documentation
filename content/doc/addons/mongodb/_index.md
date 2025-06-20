@@ -38,7 +38,7 @@ DEV plan is no longer available for MongoDB.
 
 ### Important note about fair use on DEV plans
 
-Heavy usage of DEV databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, DEV plan has a limit of **15 operations/second**. Going above the limit might disconnect your database. 
+Heavy usage of DEV databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, DEV plan has a limit of **15 operations/second**. Going above the limit might disconnect your database.
 
 {{% content/db-backup %}}
 
@@ -54,7 +54,7 @@ The process consists in three steps:
 
 1. First, perform a backup and download it, either with the Clever Cloud add-on dashboard or the `mongodump` command from your workstation.
 2. Install `mongorestore` (a tool packaged with [MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
-3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page (open the "Backup" panel and click on the "Restore" link to find the complete command line to perform the database import). If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, ...).
+3. On your workstation, use the taylor-made `mongorestore` command line located in your mongodb dashboard page (open the "Backup" panel and click on the "Restore" link to find the complete command line to perform the database import). If needed, change the `nsFrom` and `nsTo` flags, depending on what you actually want to do (importing this database in another, importing another to this one, …).
 
 ## Encryption at rest
 
@@ -85,7 +85,7 @@ Note that these features are available for all our databases add-ons, in additio
 Add-ons are managed services, meaning that users have **standard access** to the database (role **owner**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
 
 Authorized actions:
-- Manage collections (create, delete...).
+- Manage collections (create, delete…).
 - Manage indexes.
 - Manage documents.
 

@@ -111,7 +111,7 @@ To use the bucket in your wordpress app, there are 2 methods :
 
 Create a new [environment variable](#setting-up-environment-variables-on-clever-cloud) called `CC_FS_BUCKET` and set `/<path-to-static-files>:<bucket-host>` as its value.
 
-If you need to have many associated buckets with your app, you need to create en new encironment variable, with a suffix : `CC_FS_BUCKET_1`, `CC_FS_BUCKET_2`...
+If you need to have many associated buckets with your app, you need to create en new encironment variable, with a suffix : `CC_FS_BUCKET_1`, `CC_FS_BUCKET_2`…
 
 #### JSON
 
@@ -163,7 +163,7 @@ Enabling [Varnish]({{< ref "doc/administrate/cache.md" >}}) for your application
 
 2. Copy [this code](https://raw.githubusercontent.com/CleverCloud/varnish-examples/master/wordpress.vcl) into the `varnish.vcl` file you just created. It'll configure Varnish to work with your WordPress.
 
-3. To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, ... we recommend you to install the [Varnish HTTP Purge](https://WordPress.org/plugins/varnish-http-purge/) plugin to your WordPress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
+3. To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, … we recommend you to install the [Varnish HTTP Purge](https://WordPress.org/plugins/varnish-http-purge/) plugin to your WordPress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
 
 If you need to manually purge the Varnish cache, the plugin provides a **Purge Varnish cache** button on the top bar of your website.
 

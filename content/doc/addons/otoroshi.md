@@ -26,7 +26,7 @@ On Clever Cloud, it comes with pre-configured with features included such as [Co
 
 ### From the Console
 
-1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create...** dropdown in the sidebar and then **an add-on**
+1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create…** dropdown in the sidebar and then **an add-on**
 2. Select the Otoroshi with LLM add-on
 3. You can skip linking the add-on to an application, it won't be needed
 4. Enter a name for your Otoroshi with LLM add-on and select the zone where you want it to be deployed

@@ -56,8 +56,9 @@ So you can alter the build&start process for your application.
 You can set some tools' version in any runtime (except Docker):
 
 | Name | Description |
-|-----------------|--------------------------|
-|`CC_NODE_VERSION`| Set Node.js version, for example `24`, `23.11` or `22.15.1` |
+|------|-------------|
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_NODE_VERSION` | Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 
 #### Control build and dependencies cache
 
@@ -369,6 +370,24 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_RUST_BIN` | The name of the binary to launch once built |  |
 |`CC_RUST_FEATURES` | The list of features to enable |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
+
+## Static
+
+[Static Documentation](/developers/doc/applications/static)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_BUILD_COMMAND` | The command to run during the build phase | |
+| `CC_OVERRIDE_BUILDCACHE` | Files and path to put in the build cache, separated by a `:` |  |
+| `CC_STATIC_CADDYFILE` | Path to the Caddyfile, as expected by `caddy run --config` command | `./Caddyfile` |
+| `CC_STATIC_FLAGS` | Command line flags to pass to the static web server | |
+| `CC_STATIC_PORT` | The port on which the static web server listens for HTTP requests | `8080` |
+| `CC_STATIC_SERVER` | The server to use to serve your static website, can be `caddy` | `static-web-server` |
+| `CC_WEBROOT` | Path to the web content to serve, relative to the root of your application, used as default build cache | `/` |
+
+>[!NOTE] Static Site Generators (SSG) Auto-build
+>If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
 
 ## Add-ons environment variables
 

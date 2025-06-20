@@ -20,7 +20,7 @@ and the client. Following rules defined by the user, Varnish will cache the data
 
 
 >[!NOTE] Supported runtimes
->Varnish is available on **FrakenPHP**, **Go**, **Linux**, **Node.js**, **PHP with Apache**, **static**, and **V (vlang)** applications.
+>Varnish is available on **FrankenPHP**, **Go**, **Linux**, **Node.js**, **PHP with Apache**, **static**, and **V (vlang)** applications.
 
 ## Enable Varnish for your application
 

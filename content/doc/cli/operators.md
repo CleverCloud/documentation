@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Clever Cloud Operators
+title: Operators
 description: Manage Keycloak, Matomo, Metabase, Otoroshi from Clever Tools
 ---
 
@@ -73,13 +73,12 @@ clever otoroshi version update otoroshi_id
 
 ## Network Groups
 
-Keycloak and Otoroshi can be easily linked to a [Network Group](ng.md). To enable/disable this feature, use:
+Keycloak and Otoroshi can be easily linked to a [Network Group](/developers/doc/cli/network-groups/). To enable/disable this feature, use:
 
 ```
 clever keycloak enable-ng myKeycloak
 clever otoroshi disable-ng otoroshi_id
 ```
 
->[!NOTE]
-> On Clever Cloud Keycloak uses Network Groups for its secure cluster feature. When you enable it, the Keycloak application is automatically scaled to 2 instances and the cluster automatically configured. When you disable the Network Group feature, the application is scaled down to 1 instance and the cluster is removed.
-```
+>[!NOTE] On Clever Cloud Keycloak uses Network Groups for its secure cluster feature
+>When you enable it, the Keycloak application is automatically scaled to 2 instances and the cluster automatically configured. When you disable the Network Group feature, the application is scaled down to 1 instance and the cluster is removed.

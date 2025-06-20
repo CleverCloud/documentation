@@ -233,6 +233,17 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`PLAY1_VERSION` | Define which play1 version to use between 1.2, 1.3, 1.4 and 1.5 |  |  |
 |`SBT_DEPLOY_GOAL` | Define which sbt goals to run during build. | stage |  |
 
+## Linux
+
+[Linux Documentation](/developers/doc/applications/linux)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_BUILD_COMMAND` | The command to run during the build phase | `` |
+| `CC_RUN_COMMAND`   | The command to run during the run phase   | `` |
+
+>[!TIP] Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
+
 ## Node.js
 
 [Node.js Documentation](/developers/doc/applications/javascript/nodejs)

@@ -389,6 +389,15 @@ When your Python application doesn't use one of the supported backends, with `CC
 >[!NOTE] Static Site Generators (SSG) Auto-build
 >If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
 
+## V (Vlang)
+
+[V (Vlang)](/developers/doc/applications/v)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_V_BINARY` | The name of the output binary file. | `${APP_HOME}/v_bin_${APP_ID}` |
+| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag | |
+
 ## Add-ons environment variables
 
 ### FS Bucket

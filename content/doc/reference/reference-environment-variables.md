@@ -78,7 +78,7 @@ You can set some tools' version in any runtime (except Docker):
 |[`CC_TROUBLESHOOT`](../../find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 {{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](../../applications/docker/#dockerized-rust-application-deployment).
+  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/developers/doc/applications/docker/#dockerized-rust-application-deployment).
 {{< /callout >}}
 
 #### Deployment hooks
@@ -138,7 +138,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Docker
 
-[Docker Documentation](../../applications/docker)
+[Docker Documentation](/developers/doc/applications/docker)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -154,7 +154,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## .NET
 
-[.NET Documentation](../../applications/dotnet)
+[.NET Documentation](/developers/doc/applications/dotnet)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -166,7 +166,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Elixir
 
-[Elixir Documentation](../../applications/elixir)
+[Elixir Documentation](/developers/doc/applications/elixir)
 
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
@@ -180,7 +180,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## FrankenPHP
 
-[FrankenPHP Documentation](../../applications/frankenphp)
+[FrankenPHP Documentation](/developers/doc/applications/frankenphp)
 
 | Name | Description | Default value |
 |---------------|-------------| ---------------|
@@ -192,7 +192,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Go
 
-[Go Documentation](../../applications/golang)
+[Go Documentation](/developers/doc/applications/golang)
 
 | Name | Descrption |
 | :------- | :---- |
@@ -202,11 +202,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Haskell
 
-[Haskell Documentation](../../applications/haskell)
+[Haskell Documentation](/developers/doc/applications/haskell)
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_HASKELL_STACK_TARGET`](../../applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
+|[`CC_HASKELL_STACK_TARGET`](/developers/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
 |`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `setup` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `install` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
@@ -214,7 +214,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Java
 
-[Java Documentation](../../applications/java/java-jar)
+[Java Documentation](/developers/doc/applications/java/java-jar)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -235,7 +235,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Node.js
 
-[Node.js Documentation](../../applications/javascript/nodejs)
+[Node.js Documentation](/developers/doc/applications/javascript/nodejs)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -249,7 +249,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## PHP
 
-[PHP Documentation](../../applications/php)
+[PHP Documentation](/developers/doc/applications/php)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -269,9 +269,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](../../applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|[`CC_PHP_ASYNC_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](/developers/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
 |`CC_PHP_VERSION` | Choose your PHP version among [those supported](/developers/doc/applications/php/#choose-your-php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
@@ -283,14 +283,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](../../applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](/developers/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | Organization token. |  |
 
 ## Python
 
-[Python Documentation](../../applications/python)
+[Python Documentation](/developers/doc/applications/python)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -312,9 +312,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`PYTHON_SETUP_PY_GOAL` | Custom setup goal to be launch after requirements.txt have been installed |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](../../applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
-|[`UWSGI_ASYNC`](../../applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
+|[`UWSGI_ASYNC`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
 |`UWSGI_ASYNC_ENGINE` | Select the asynchronous engine for uWSGI (optional) |  |
 |`UWSGI_INTERCEPT_ERRORS` |  |
 |`WSGI_BUFFER_SIZE` | Buffer size (in bytes) for uploads. | 4096 |
@@ -350,7 +350,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Rust
 
-[Rust Documentation](../../applications/rust)
+[Rust Documentation](/developers/doc/applications/rust)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|

@@ -1,18 +1,7 @@
 ---
 type: docs
 title: Static with Apache
-shortdesc: Deploy Static files with Apache HTTP server on Clever Cloud
-tags:
-- deploy
-keywords:
-- static
-str_replace_dict:
-  "@application-type@": "Static"
-type: docs
-aliases:
-- /doc/deploy/application/static
-- /doc/deploy/application/static/static
-- /doc/partials/language-specific-deploy/static
+description: Deploy Static files with Apache HTTP server on Clever Cloud
 comments: false
 ---
 
@@ -72,7 +61,7 @@ When you use a SPA framework, you are using Client side rendering.
 One of the problem with this method is a poor SEO as search engine crawlers have more difficulty reading the content of this type of application.
 To minimize this issue, prerendering can be a solution.
 
-If you want to Prerender your application on Clever Cloud, one solution is to use [Prerender.io](https://prerender.io/).  
+If you want to Prerender your application on Clever Cloud, one solution is to use [Prerender.io](https://prerender.io/).
 To use it with our static applications, you need a `.htaccess` file like this at the root of your project:
 
 ```ApacheConf
@@ -93,11 +82,11 @@ To use it with our static applications, you need a `.htaccess` file like this at
     </IfModule>
 </IfModule>
 ```
-You can find your `PRERENDER_TOKEN` on your [Prerender.io account](https://prerender.io/). 
+You can find your `PRERENDER_TOKEN` on your [Prerender.io account](https://prerender.io/).
 
 You can verify your configuration work using [this guide](https://docs.prerender.io/docs/how-to-test-your-site-after-you-have-successfully-validated-your-prerender-integration).
 ## Apache Configuration with `CC_WEBROOT`
 
 If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.
-  
+
 If you don't set the [`CC_WEBROOT`]({{< ref "/doc/reference/reference-environment-variables/#php" >}}) environment variable, the root of your project is the root of your web server.

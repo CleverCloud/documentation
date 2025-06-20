@@ -1,6 +1,7 @@
 ---
 type: docs
-title: FrankenPHP
+linkTitle: FrankenPHP
+title: FrankenPHP application runtime
 description: Deploy your applications with FrankenPHP, the modern PHP server based on Caddy, written in Go
 type: docs
 ---
@@ -11,8 +12,7 @@ type: docs
 
 It comes with many extensions and features such as early hints (HTTP 103), real-time capabilities with its built-in Mercure hub. FrankenPHP can also make your Laravel and Symfony projects faster than ever through their official integrations with the [worker mode](#worker-mode). Deploying PHP applications with FrankenPHP on Clever Cloud is straightforward and requires no complex configuration, nor Docker container.
 
-> [!NOTE]
-> FrankenPHP is a new runtime. Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp).
+> [!NOTE] FrankenPHP is a new runtime. Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp)
 
 ## Create your FrankenPHP application
 
@@ -71,7 +71,7 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 
 ## Configurable port
 
-By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#redirectionio-support) for example.
+By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) for example.
 
 ## Custom FrankenPHP run command
 
@@ -85,6 +85,7 @@ FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such work
 
 ```bash
 clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"
+clever deploy # or clever restart if there is no code change
 ```
 
 - [Learn more about Clever Tasks](/developers/doc/develop/tasks/)

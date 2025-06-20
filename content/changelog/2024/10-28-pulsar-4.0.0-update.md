@@ -14,6 +14,6 @@ aliases:
 excludeSearch: true
 ---
 
-4.0.0 release of Apache Pulsar is deployed on our platform. It brings lots of new features and fixes, including enhanced `Key_Shared` subscription implementation, which helps us to resolve some recent issues. Full changelog is [here](https://github.com/apache/pulsar/releases/tag/v4.0.0).
+4.0.0 release of Apache Pulsar is deployed on our platform. It brings lots of new features and fixes, including enhanced `Key_Shared` subscription implementation, which helps us to resolve some recent issues. [Full changelog for v4.0.0](https://github.com/apache/pulsar/releases/tag/v4.0.0).
 
 - Learn more about [Apache Pulsar](https://www.clever-cloud.com/product/pulsar/) on Clever Cloud

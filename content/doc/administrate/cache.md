@@ -56,7 +56,7 @@ rename the file to `varnish.vcl` and move it in the `/clevercloud` folder.
 If you use a monorepo, you may want to use Varnish for only some of its applications. If you have a `/clevercloud/varnish.vcl` file at the root of your monorepo, all of your applications automatically start using Varnish. To resolve this create a symlink during the deployments:
 
 1. Put your `varnish.vcl` file anywhere but at the root of your monorepo.
-2. Create a symlink inside a `CC_PRE_BUILD_HOOK` to the app that needs to use Varnish, suhc as:
+2. Create a symlink inside a `CC_PRE_BUILD_HOOK` to the app that needs to use Varnish, such as:
 
 ```bash
 CC_PRE_BUILD_HOOK="mkdir $APP_HOME/clevercloud; ln -s $APP_HOME/path/to/your/file/varnish.vcl $APP_HOME/clevercloud/varnish.vcl"

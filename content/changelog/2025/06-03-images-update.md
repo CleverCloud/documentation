@@ -27,7 +27,7 @@ We updated all our images. Deployment is in progress for all our users.
 * **Go:**
   * Update to 1.24.3
 * **Node.js:**
-  * Update to 22.16.1 (npm 10.9.2)
+  * Update to 22.16.0 (npm 10.9.2)
   * Bun 1.2.15
 * **Python:**
   * uv 0.7.9

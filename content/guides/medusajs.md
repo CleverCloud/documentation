@@ -23,7 +23,7 @@ type: docs
 ```javascript{filename="medusa-config.js"}
 module.exports = {
   projectConfig: {
-    // ...
+    // …
     database_extra: { ssl: { rejectUnauthorized: false } },
   },
 }
@@ -34,7 +34,7 @@ module.exports = {
 
 ```javascript
 const plugins = [
-  // ...
+  // …
   {
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */

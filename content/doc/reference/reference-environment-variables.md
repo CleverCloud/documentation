@@ -440,7 +440,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_ENABLE_PGPOOL` | Enables the Pgpool-II feature | false |
 |`CC_PGPOOL_SOCKET_PATH` | Contains the path to the Unix Datagram Socket to connect to Pgpool-II | true |
 |`CC_PGPOOL_PCP_SOCKET_PATH` | Contains the path to the Unix Datagram Socket to connect to PCP | true |
-|`CC_PGPOOL_EXTRA_USERS` | Add new user/password pairs to the pool_passwd file, separated by commas (user1:password,user2:password...) | ' ' |
+|`CC_PGPOOL_EXTRA_USERS` | Add new user/password pairs to the pool_passwd file, separated by commas (user1:password,user2:password…) | ' ' |
 |`CC_PGPOOL_RESERVED_CONNECTIONS` | Number of reserved connections | 0 |
 |`CC_PGPOOL_LISTEN_BACKLOG_MULTIPLIER` | Specifies the length of connection queue from frontend to Pgpool-II | 2 |
 |`CC_PGPOOL_LEADER_WEIGHT` | Weight for backend 0 (Leader) | 1 |

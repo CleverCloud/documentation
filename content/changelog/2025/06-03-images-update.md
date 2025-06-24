@@ -8,7 +8,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-description: More flexible FrankenPHP, and more under the hood...
+description: More flexible FrankenPHP, and more under the hood…
 excludeSearch: true
 ---
 

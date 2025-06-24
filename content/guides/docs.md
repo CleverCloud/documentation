@@ -1,10 +1,10 @@
 ---
 title: 'Docs'
-description: 
+description:
 tags:
 - guides
 keywords:
-- 
+-
 
 draft: false
 type: docs
@@ -20,23 +20,14 @@ type: docs
 
 ```mermaid
 flowchart TD
- subgraph s1["Python"]
-        n6["Backend"]
-  end
- subgraph s2["Node.JS"]
-        n7["Frontend"]
-  end
- subgraph s3["Node.js"]
-        n8["yjs provider"]
-  end
-    n1["PostrgreSQL"] --> s1
-    s1 --> n1 & s2 & n2["Keycloak"] & n4["Cellar"] & s3
-    n2 --> s2 & s1
-    s3 --> s1
-    n4 --> s2
-    n1@{ shape: cyl}
-    n2@{ shape: hex}
-    n4@{ shape: rect}
+    User -- HTTP --> Front("Frontend (NextJS SPA)")
+    Front -- REST API --> Back("Backend (Django)")
+    Front -- WebSocket --> Yserver("Microservice Yjs (Express)") -- WebSocket -->  CollaborationServer("Collaboration server (Hocuspocus)") -- REST API <--> Back
+    Front -- OIDC --> Back -- OIDC ---> OIDC("Keycloak")
+    Back -- REST API --> Yserver
+    Back --> DB("Database (PostgreSQL)")
+    Back <--> Celery --> DB
+    Back ----> S3("Cellar")
 ```
 
 ## Deploy Docs
@@ -46,6 +37,10 @@ Docs runs using:
 - a **Python** application for the backend (in `src/backend`)
 - a **Node.js** application for the frontend (in `src/frontend`)
 - a **Node.js** application for the y-provider (in `src/frontend/servers/y-provider`)
+- a **Configuration provider** add-on to share configuration between services
+- a **PostgreSQL** add-on to store data
+- a **Redis** add-on for celery
+- a **Keycloak** add-on for authentication
 
 This guide walks you trough a deployment from the root of [Docs repository](https://github.com/suitenumerique/docs). Clone the repository and follow the steps to deploy Docs with a minimal configuration.
 
@@ -61,16 +56,16 @@ Inject the following environment variables
 
 ```env
 APP_FOLDER="/src/backend"
-CC_PRE_BUILD_HOOK="cd src/backend && pip install pip-tools && pip-compile pyproject.toml &&
-pip-sync requirements.txt"
+CC_POST_BUILD_HOOK="cd src/backend && source .venv/bin/activate && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py compilemessages"
+CC_PRE_BUILD_HOOK="cd src/backend && uv sync"
 CC_PYTHON_MODULE="impress.wsgi:application"
 CC_PYTHON_VERSION="3"
-CC_RUN_SUCCEEDED_HOOK="cd src/backend && python manage.py migrate"
-DATA_DIR="home/bas/<app_id>/src/backend/data"
+CC_RUN_COMMAND=".venv/bin/gunicorn  -b 0.0.0.0:9000 --graceful-timeout 90 --timeout 90 --workers 3 --access-logfile - --error-logfile - --log-level info  impress.wsgi:application"
+CC_WORKER_COMMAND="cd src/backend && source .venv/bin/activate && python manage.py worker"
+DATA_DIR="${APP_HOME}/src/backend/data"
 DJANGO_CONFIGURATION="Production"
 DJANGO_SECRET_KEY="<your-key>"
 DJANGO_SETTINGS_MODULE="impress.settings"
-DJANGO_SUPERUSER_PASSWORD="<your-password>"
 ```
 
 #### Create a PosgreSQL add-on
@@ -84,6 +79,10 @@ DB_PASSWORD="<postrgresql_addon_password_value>"
 DB_PORT="<postrgresql_addon_port_value>"
 DB_USER="<postrgresql_addon_user_value>"
 ```
+
+#### Create a Redis add-on
+
+Link the Redis add-on to your python application through service dependencies.
 
 #### Set the backend domain name
 
@@ -118,7 +117,7 @@ If you push using git, add the remote as `clever-backend`, for example.
 
 #### Create a Node.js application
 
-Select at least a `M` instance for the build, and inject the following environment variables:
+Select at least a `L` instance for the build, and inject the following environment variables:
 
 ```env
 APP_FOLDER="./src/frontend"
@@ -126,14 +125,11 @@ CC_NODE_BUILD_TOOL="yarn"
 CC_PRE_BUILD_HOOK="cd ./src/frontend && yarn install --frozen-lockfile && yarn app:build"
 CC_RUN_COMMAND="cd ./src/frontend && yarn app:start"
 NEXT_PUBLIC_API_BASE_PATH="/"
+NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"
+NEXT_PUBLIC_PUBLISH_AS_MIT="false"
 NEXT_PUBLIC_SW_DEACTIVATED="true"
 NODE_OPTIONS="--max-old-space-size=4096"
 ```
-
-#### Set the frontend domain name
-
-- Select **Domain names** and set the base domain for Docs. The frontend doesn't need any route.
-- Add the domain to the environment variables: inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
 
 #### Push your code
 

@@ -50,13 +50,14 @@ You can for example get access logs in JSON stream format for the last hour with
 
 ```
 clever accesslogs --format json-stream --since 1h
+clever accesslogs -F json-stream | jq '.source.ip'
 ```
 
-or JSON with `jq` to filter the output:
+or JSON if you add a date/time end limit:
 
 ```
-clever accesslogs --app APP_NAME --since 2024-06-21T13:37:42 --until 1d -F json | jq '[.[] | {date, countryCode: .source.countryCode, ip: .source.ip, port: .source.port}]'
-clever accesslogs --app APP_NAME --since 2024-06-21T13:37:42 --until 1d -F json | jq '.[] | [.date, .source.countryCode, .source.ip, .source.port] | @sh'
+clever accesslogs --app APP_NAME --since 2025-04-21T13:37:42 --until 1d -F json | jq '[.[] | {date, countryCode: .source.countryCode, ip: .source.ip, port: .source.port}]'
+clever accesslogs --app APP_NAME --since 2025-04-21T13:37:42 --until 1d -F json | jq '.[] | [.date, .source.countryCode, .source.ip, .source.port] | @sh'
 ```
 
 > [!TIP]

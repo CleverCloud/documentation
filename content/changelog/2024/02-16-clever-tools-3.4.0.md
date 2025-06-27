@@ -39,7 +39,7 @@ Last but not least: you can deploy a specific tag from your local git repository
 clever deploy --tag v0.4.2
 ```
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install). For example with `npm`:
 
 ```
 npm update -g clever-tools

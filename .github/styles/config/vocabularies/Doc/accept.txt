@@ -8,6 +8,8 @@ Astrowind
 Azimutt
 Blackfire
 boto
+Caddy
+Caddyfile
 callout
 CDNs
 charset
@@ -17,9 +19,11 @@ CLI
 Cloud
 config
 Coraza
+Corepack
 CRDs
 cron
 Cyberduck
+Deno
 Dockerfile
 downtimes
 eg
@@ -44,6 +48,7 @@ Keycloak
 Kubectl
 Laravel
 Let's Encrypt
+Lume
 Matomo
 maven
 Metabase
@@ -59,10 +64,12 @@ npm
 Nuxt
 OAuth
 Otoroshi
+packageManager
 Payara
 Percona
 Pgpool
 pico
+pnpm
 proxyhugo
 psql
 rackup
@@ -77,6 +84,7 @@ serverless
 Servlet
 shortcode
 Sidekiq
+Symfony
 syslog
 toolchain
 URIs

@@ -13,31 +13,30 @@ This is a product matrix showing the services that are available with our Terraf
 
 | Product        | Terraform | K8S operator |
 |----------------|-----------|--------------|
-| MateriaKV      | ✅         | ✅            |
-| Cellar         | ✅         |              |
-| Keycloak       | ✅         |              |
-| Metabase       | ✅         |              |
-| MongoDB        | ✅         | ✅            |
-| PostgreSQL     | ✅         | ✅            |
-| Redis          | ✅         | ✅            |
-| MySql          |           | ✅            |
-| Pulsar         |           | ✅            |
-| ConfigProvider |           | ✅            |
-| ElasticSearch  |           | ✅            |
-| FS Bucket      |           |              |
+| Materia KV     | ✅        | ✅           |
+| Cellar         | ✅        |              |
+| Keycloak       | ✅        |              |
+| Metabase       | ✅        |              |
+| MongoDB        | ✅        | ✅           |
+| PostgreSQL     | ✅        | ✅           |
+| Redis          | ✅        | ✅           |
+| MySql          |           | ✅           |
+| Pulsar         |           | ✅           |
+| ConfigProvider |           | ✅           |
+| ElasticSearch  |           | ✅           |
+| FS Bucket      | ✅        |              |
 | Jenkins        |           |              |
 | Matomo         |           |              |
 | Otoroshi       |           |              |
-
 
 ## Runtimes available on Terraform and K8S-Operator
 
 | Product| Terraform | K8S operator |
 |--------|-----------|--------------|
-| Docker | ✅         |              |
-| Java   | ✅         |              |
-| PHP    | ✅         |              |
-| Scala  | ✅         |              |
-| Static | ✅         |              |
-| NodeJS | ✅         |              |
-| Python | ✅         |              |
+| Docker | ✅        |              |
+| Java   | ✅        |              |
+| PHP    | ✅        |              |
+| Scala  | ✅        |              |
+| Static | ✅        |              |
+| NodeJS | ✅        |              |
+| Python | ✅        |              |

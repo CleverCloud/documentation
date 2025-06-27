@@ -1,14 +1,7 @@
 ---
 type: docs
 title: Node.js
-shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
-tags:
-- deploy
-keywords:
-- nodejs
-str_replace_dict:
-  "@application-type@": "Node"
-type: docs
+description: Run JavaScript applications on Clever Cloud with Node.js and npm, or alternative tools (Bun, Deno, pnpm or Yarn)
 aliases:
 - /doc/applications/javascript/by-framework/nodejs
 - /doc/nodejs/nodejs
@@ -30,18 +23,19 @@ Be sure that:
 * the folder `/node_modules` is mentioned in your `.gitignore` file
 * you enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
 
-### Set Node.js version
-
-If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor or patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable is not set, the latest LTS version available on Clever Cloud will be used.
-
-{{< runtimes_versions node >}}
-
->[!NOTE]
-You can also set the `engines.node` field in `package.json`. For legacy reasons, this value is prioritized over the `CC_NODE_VERSION` environment variable. If both are set, the `engines.node` value will be used.
-
 ### About package.json
 
-The `package.json` file should look like the following:
+A valid `package.json` file should look like the following:
+
+```json
+{
+  "name" : "myApp",
+  "version" : "0.1.0",
+  "main" : "myApp.js",
+}
+```
+
+or
 
 ```json
 {
@@ -53,22 +47,24 @@ The `package.json` file should look like the following:
 }
 ```
 
-or
+You can use additional scripts as an alternative to [Clever Cloud hooks](/developers/doc/develop/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
 
 ```json
 {
   "name" : "myApp",
   "version" : "0.1.0",
-  "main" : "myApp.js",
+  "scripts" : {
+    "preinstall": "./download.sh",  // during build phase, before dependencies installation
+    "postinstall": "./cleanup.sh",  // during build phase, after dependencies installation
+    "prestart": "./prepare.sh",     // during run phase, before the start command
+    "start" : "node myApp.js",
+  }
 }
 ```
 
-The following table describes each of the fields formerly mentioned:
+### Custom run command
 
-| Usage        | Field         | Description                                |
-|--------------|---------------|--------------------------------------------|
-| **At least one** | `scripts.start` | This field provides a command line to run. If defined, `npm start` will be launched. Otherwise, we will use the `main` field. See below to know how and when to use the `scripts.start` field.                   |
-| **At least one** | `main`          | This field allows you to specify the file you want to run. It should be the relative path of the file starting at the project's root. It's used to launch your application if `scripts.start` is not defined. |
+If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud). For instance, to launch `scripts.start` with a yarn based application, you must have `CC_RUN_COMMAND="yarn start"`.
 
 ### Dependencies
 
@@ -86,35 +82,40 @@ If you need some modules you can easily add some with the *dependencies* field i
 }
 ```
 
-If your application has private dependencies, you can add a [Private SSH Key]({{< ref "doc/reference/common-configuration/#private-ssh-key" >}}).
+If your application has private dependencies, you can add a [private SSH key](/developers/doc/reference/common-configuration/#private-ssh-key).
 
-#### Development Dependencies
-
-Development dependencies will not be automatically installed during the deployment. You can control their installation setting `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`. This variable overrides the default behavior of `NODE_ENV`.
-
-Here are various scenarios:
-
-* `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
-* `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
-* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies will be installed.
-* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies will not be installed.
-* `NODE_ENV=production`: Package manager (NPM / Yarn) default behavior. Development dependencies will not be installed.
-* Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (NPM / Yarn) default behavior. Development dependencies will be installed.
-
-### Supported package managers
+## Supported package managers
 
 We support any package manager compatible with Node.js. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use. The default value is set to `npm`, but it can be any of these values:
 
-* `npm-install`: uses [npm install](https://docs.npmjs.com/cli/install)
+* `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
+* `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
 * `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
-* `npm`: Defaults to `npm-install`
-* `yarn`: uses [yarn@1](https://classic.yarnpkg.com/lang/en/)
-* `yarn2`: uses [yarn@2 or later versions](https://yarnpkg.com/)
-* `custom`: use another package manager (bun, pnpm, etc.) with `CC_CUSTOM_BUILD_TOOL`
+* `yarn`: uses [Yarn Classic (v1)](https://classic.yarnpkg.com/lang/en/)
+* `yarn2`: uses [Yarn Berry (v2 or later)](https://yarnpkg.com/)
+* `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
 
-If a `yarn.lock` file exists in your application's main folder, `yarn` will be set as package manager. To overwrite this behavior, either delete the `yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+You can also deploy using Deno with additional configuration. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
 
-#### Yarn 3.x and 4.x support
+>[!NOTE]
+> If a `bun.lock` or a `yarn.lock` file exists in your application's main folder, `bun`/`yarn` is used. To overwrite this behavior, either delete the `bun.lock`/`yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+
+### Set Node.js version
+
+If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor, patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable isn't set, the latest LTS version available on Clever Cloud is used.
+
+{{< runtimes_versions node >}}
+
+>[!NOTE]
+For legacy reasons, the system prioritizes to the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set.
+
+### Bun version
+
+If you use Bun, your application is deployed with the latest available version on Clever Cloud:
+
+{{< runtimes_versions bun >}}
+
+### Yarn 3.x and 4.x support
 
 With recent versions of Yarn, you need to put the global folder within your application to manage restarts from build cache. You can do it by setting `YARN_GLOBAL_FOLDER` to `$APP_HOME/.yarncache/` for example, in the [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools):
 
@@ -122,28 +123,56 @@ With recent versions of Yarn, you need to put the global folder within your appl
 clever env set YARN_GLOBAL_FOLDER '$APP_HOME/.yarncache/'
 ```
 
-#### Corepack and packageManager support
+### Corepack and packageManager support
 
-Since Node.js v14.19.0 and v16.9.0, you can use [Corepack](https://nodejs.org/api/corepack.html) as an experimental feature to set a package manager from `npm`, `pnpm` or `yarn`, and its version. It can be achieved through a simple command (e.g.: `corepack use yarn@*`) or the [`packageManager`](https://nodejs.org/api/packages.html#packagemanager) field in `package.json`. If you use `pnpm` or `yarn`, you should always set `CC_NODE_BUILD_TOOL` and `CC_CUSTOM_BUILD_TOOL` for `pnpm`.
+Since Node.js v14.19.0 and v16.9.0, you can use [Corepack](https://nodejs.org/api/corepack.html) as an experimental feature  to select a package manager—npm, pnpm, or yarn—and specify its version. You can do this with a simple command (e.g.: `corepack use yarn@*`) or the [`packageManager`](https://nodejs.org/api/packages.html#packagemanager) field in `package.json`. Always set `CC_NODE_BUILD_TOOL` when using `pnpm` or `yarn`, and make sure to set `CC_CUSTOM_BUILD_TOOL` when using `pnpm`.
 
-### Custom build phase
+#### Example: Deploy with pnpm
 
-The build phase installs the dependencies and executes the `scripts.install` you might have defined in your `package.json`. It's meant to build the whole application including dependencies and / or assets (if there are any).
+To deploy an  application with pnpm, set the following environment variables:
 
-All the build part should be written into the `scripts.install` field of the `package.json` file. You can also add a custom bash script and execute it with: `"scripts.install": "./build.sh"`. For more information, see [the npm documentation](https://docs.npmjs.com/misc/scripts)
+{{< tabs items="npm, Corepack" >}}
+  {{< tab >}}**Install with `npm`**:
+  ```bash
+  CC_NODE_BUILD_TOOL="custom"
+  CC_PRE_BUILD_HOOK="npm install -g pnpm"
+  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
+  ```
+  {{< /tab >}}
 
-### Custom run phase
+  {{< tab >}}**Enable with Corepack**:
+  ```bash
+  CC_NODE_BUILD_TOOL="custom"
+  CC_PRE_BUILD_HOOK="corepack enable pnpm"
+  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
 
-The run phase is executed from `scripts.start` if defined. It's only meant to start your application and should not
-contain any build task.
+This performs the following steps:
 
-### Custom run command
+1. `CC_NODE_BUILD_TOOL` indicates that your applications is using a custom build tool
+2. `CC_PRE_BUILD_HOOK` installs/enable `pnpm` globally
+3. `CC_CUSTOM_BUILD_TOOL` installs the dependencies and builds the app
 
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud). For instance, to launch `scripts.start` with a yarn based application, you must have `CC_RUN_COMMAND="yarn start"`.
+Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your environment variables, with the appropriate command to run your application. For example, to deploy an [Astro](https://astro.build/) application in a Node.js runtime, use `CC_RUN_COMMAND="pnpm start --port 8080 --host 0.0.0.0"`.
 
-### Alternative runtimes
+{{< callout type="info" >}}
+`CC_RUN_COMMAND` depends on your framework and your stack. The one in this example starts an Astro app, [which takes the port and the host as arguments](https://docs.astro.build/en/reference/cli-reference/#--port-number). To run your app, make sure you are using the correct command by checking the accurate framework documentation.
+{{< /callout >}}
 
-There are multiples JavaScript server runtimes out there. On Clever Cloud, you can deploy your applications with the one of your choice. You'll find guides for [Bun](https://www.clever-cloud.com/fr/blog/fonctionnalites/2023/09/19/bun-comment-heberger-vos-applications-sur-clever-cloud/) or [Deno]({{< ref "guides/lume-deno/" >}}) for example.
+#### Development Dependencies
+
+Development dependencies aren't automatically installed during the deployment. You can control their installation setting `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`. This variable overrides the default behavior of `NODE_ENV`.
+
+Here are various scenarios:
+
+* `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies are installed.
+* `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies aren't installed.
+* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies are installed.
+* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies aren't installed.
+* `NODE_ENV=production`: Package manager (npm/yarn) default behavior. Development dependencies aren't installed.
+* Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (npm/yarn) default behavior. Development dependencies are installed.
 
 ### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 
@@ -153,7 +182,7 @@ Since April 2015, `npm` allows you to have private repositories. If you want to 
 NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 ```
 
-Then, the `.npmrc` file will be created automatically for your application, with the registry URL and the token.
+Then, the `.npmrc` file is created automatically for your application, with the registry URL and the token.
 
 ```txt
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
@@ -170,54 +199,9 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 //npm.pkg.github.com/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
-{{% content/new-relic %}}
+## Deployment video
 
-{{% content/env-injection %}}
-
-To access environment variables from your code, you can use `process.env.MY_VARIABLE`.
-
-{{% content/deploy-git %}}
-
-#### Example: Deploy with pnpm
-
-To deploy an  application with pnpm, set the following environment variables:
-
-
-{{< tabs items="npm, Corepack" >}}
-
-  {{< tab >}}**Install with `npm`**:
-
-  ```bash
-  CC_NODE_BUILD_TOOL="custom"
-  CC_PRE_BUILD_HOOK="npm install -g pnpm"
-  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
-  ```
-
-  {{< /tab >}}
-
-  {{< tab >}}**Enable with Corepack**:
-
-  ```bash
-  CC_NODE_BUILD_TOOL="custom"
-  CC_PRE_BUILD_HOOK="corepack enable pnpm"
-  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
-  ```
-
-  {{< /tab >}}
-
-{{< /tabs >}}
-
-This performs the following steps:
-
-1. `CC_NODE_BUILD_TOOL` indicates that your applications is using a custom build tool
-2. `CC_PRE_BUILD_HOOK` installs/enable `pnpm` globally
-3. `CC_CUSTOM_BUILD_TOOL` installs the dependencies and builds the app
-
-Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your environment variables, with the appropriate command to run your application. For example, to deploy an [Astro](https://astro.build/) application in a Node.js runtime, use `CC_RUN_COMMAND="pnpm start --port 8080 --host 0.0.0.0"`.
-
-{{< callout type="info" >}}
-`CC_RUN_COMMAND` depends on your framework and your stack. The one in this example starts an Astro app, [which takes the port and the host as arguments](https://docs.astro.build/en/reference/cli-reference/#--port-number). To run your app, make sure you are using the correct command by checking the accurate framework documentation.
-{{< /callout >}}
+{{< youtube id="9ww_t0o-GmA" >}}
 
 ## Automatic HTTPS redirection
 
@@ -231,19 +215,21 @@ app.use(enforce.HTTPS({
 }));
 ```
 
+{{% content/new-relic %}}
+
 ## Troubleshooting your application
 
 If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
 To target this behavior, you can gracefully shut down with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment, so you can fix the problem.
 
+{{% content/env-injection %}}
+
+To access environment variables from your code, you can use `process.env.MY_VARIABLE`.
+
+{{% content/deploy-git %}}
+
 {{% content/link-addon %}}
 
 {{% content/more-config %}}
 
-{{% content/env-injection %}}
-
 {{% content/url_healthcheck %}}
-
-## Deployment video
-
-{{< youtube id="dxhSjHnrrhA" >}}

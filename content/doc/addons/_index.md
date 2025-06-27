@@ -20,7 +20,7 @@ Connect your application to an add-on:
 ## Databases
 {{< cards >}}
   {{< card link="materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
-  {{< card link="mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
   {{< card link="mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
   {{< card link="postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
   {{< card link="elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}

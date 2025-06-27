@@ -273,7 +273,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 {{< cards >}}
   {{< card link="../addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
   {{< card link="../addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
-  {{< card link="../addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="../addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
   {{< card link="../addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
   {{< card link="../addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
   {{< card link="../addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}

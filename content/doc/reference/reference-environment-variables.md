@@ -56,8 +56,9 @@ So you can alter the build&start process for your application.
 You can set some tools' version in any runtime (except Docker):
 
 | Name | Description |
-|-----------------|--------------------------|
-|`CC_NODE_VERSION`| Set Node.js version, for example `24`, `23.11` or `22.15.1` |
+|------|-------------|
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_NODE_VERSION` | Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 
 #### Control build and dependencies cache
 
@@ -78,7 +79,7 @@ You can set some tools' version in any runtime (except Docker):
 |[`CC_TROUBLESHOOT`](../../find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 {{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](../../applications/docker/#dockerized-rust-application-deployment).
+  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/developers/doc/applications/docker/#dockerized-rust-application-deployment).
 {{< /callout >}}
 
 #### Deployment hooks
@@ -108,19 +109,13 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
-### Redirection.io support
+{{% content/mise %}}
 
-[Redirection.io](https://redirection.io) can help reduce HTTP traffic issues on your website. It gives a complete control on how HTTP requests are handled, which helps make it SEO-friendly. It can perform redirections and comes with lots of features. You can link any application to a Redirection.io project easily, setting up the proxy mode with following environment variables:
+| Name | Description |
+|-----------------|--------------------------|
+|`CC_RUN_MISE_INSTALL`| Set to `true` to run `mise install` before the build phase |
 
-|  Name  |  Description  |  Default value  |
-|-----------------------|------------------------------|--------------------------------|
-| `CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | `false` |
-| `CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
-| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
-| `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
-
-The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.
-
+{{% content/redirectionio %}}
 >[!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support
@@ -144,7 +139,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Docker
 
-[Docker Documentation](../../applications/docker)
+[Docker Documentation](/developers/doc/applications/docker)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -160,7 +155,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## .NET
 
-[.NET Documentation](../../applications/dotnet)
+[.NET Documentation](/developers/doc/applications/dotnet)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -172,7 +167,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Elixir
 
-[Elixir Documentation](../../applications/elixir)
+[Elixir Documentation](/developers/doc/applications/elixir)
 
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
@@ -186,7 +181,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## FrankenPHP
 
-[FrankenPHP Documentation](../../applications/frankenphp)
+[FrankenPHP Documentation](/developers/doc/applications/frankenphp)
 
 | Name | Description | Default value |
 |---------------|-------------| ---------------|
@@ -198,9 +193,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Go
 
-[Go Documentation](../../applications/golang)
+[Go Documentation](/developers/doc/applications/golang)
 
-| Name | Descrption |
+| Name | Description |
 | :------- | :---- |
 | `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`. Build and install your application. `goget` still exists but is deprecated. |
 | `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated. |
@@ -208,11 +203,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Haskell
 
-[Haskell Documentation](../../applications/haskell)
+[Haskell Documentation](/developers/doc/applications/haskell)
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_HASKELL_STACK_TARGET`](../../applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
+|[`CC_HASKELL_STACK_TARGET`](/developers/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
 |`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `setup` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `install` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
@@ -220,7 +215,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Java
 
-[Java Documentation](../../applications/java/java-jar)
+[Java Documentation](/developers/doc/applications/java/java-jar)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -239,9 +234,20 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`PLAY1_VERSION` | Define which play1 version to use between 1.2, 1.3, 1.4 and 1.5 |  |  |
 |`SBT_DEPLOY_GOAL` | Define which sbt goals to run during build. | stage |  |
 
+## Linux
+
+[Linux Documentation](/developers/doc/applications/linux)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_BUILD_COMMAND` | The command to run during the build phase | `` |
+| `CC_RUN_COMMAND`   | The command to run during the run phase   | `` |
+
+>[!TIP] Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
+
 ## Node.js
 
-[Node.js Documentation](../../applications/javascript/nodejs)
+[Node.js Documentation](/developers/doc/applications/javascript/nodejs)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -255,7 +261,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## PHP
 
-[PHP Documentation](../../applications/php)
+[PHP Documentation](/developers/doc/applications/php)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -275,9 +281,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](../../applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](../../applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|[`CC_PHP_ASYNC_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](/developers/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
 |`CC_PHP_VERSION` | Choose your PHP version among [those supported](/developers/doc/applications/php/#choose-your-php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
@@ -289,14 +295,14 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](../../applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](/developers/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | Organization token. |  |
 
 ## Python
 
-[Python Documentation](../../applications/python)
+[Python Documentation](/developers/doc/applications/python)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -318,9 +324,9 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`PYTHON_SETUP_PY_GOAL` | Custom setup goal to be launch after requirements.txt have been installed |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](../../applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
-|[`UWSGI_ASYNC`](../../applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
+|[`UWSGI_ASYNC`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
 |`UWSGI_ASYNC_ENGINE` | Select the asynchronous engine for uWSGI (optional) |  |
 |`UWSGI_INTERCEPT_ERRORS` |  |
 |`WSGI_BUFFER_SIZE` | Buffer size (in bytes) for uploads. | 4096 |
@@ -356,7 +362,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Rust
 
-[Rust Documentation](../../applications/rust)
+[Rust Documentation](/developers/doc/applications/rust)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -364,6 +370,33 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_RUST_BIN` | The name of the binary to launch once built |  |
 |`CC_RUST_FEATURES` | The list of features to enable |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
+
+## Static
+
+[Static Documentation](/developers/doc/applications/static)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_BUILD_COMMAND` | The command to run during the build phase | |
+| `CC_OVERRIDE_BUILDCACHE` | Files and path to put in the build cache, separated by a `:` |  |
+| `CC_STATIC_CADDYFILE` | Path to the Caddyfile, as expected by `caddy run --config` command | `./Caddyfile` |
+| `CC_STATIC_FLAGS` | Command line flags to pass to the static web server | |
+| `CC_STATIC_PORT` | The port on which the static web server listens for HTTP requests | `8080` |
+| `CC_STATIC_SERVER` | The server to use to serve your static website, can be `caddy` | `static-web-server` |
+| `CC_WEBROOT` | Path to the web content to serve, relative to the root of your application, used as default build cache | `/` |
+
+>[!NOTE] Static Site Generators (SSG) Auto-build
+>If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
+
+## V (Vlang)
+
+[V (Vlang)](/developers/doc/applications/v)
+
+| Name | Description | Default value |
+|------|-------------|---------------|
+| `CC_V_BINARY` | The name of the output binary file. | `${APP_HOME}/v_bin_${APP_ID}` |
+| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag | |
 
 ## Add-ons environment variables
 

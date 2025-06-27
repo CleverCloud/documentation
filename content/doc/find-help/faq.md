@@ -106,7 +106,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-It's explained [here](../../applications/php/#using-http-authentication).
+It's explained [here](/developers/doc/applications/php/#using-http-authentication).
 
 ## How to get the user's IP address?
 

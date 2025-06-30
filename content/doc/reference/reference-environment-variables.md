@@ -44,6 +44,7 @@ So you can alter the build&start process for your application.
 |-----------------------|------------------------------|--------------------------------|
 |`APP_FOLDER` | Folder in which the application is located (inside the git repository) |  |
 |`CC_DISABLE_JVM_AGENT` | Disable JVM agent activation | |
+|`CC_GIT_FULL_CLONE` | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment | true |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
 |[`CC_HEALTH_CHECK_PATH`](../../develop/healthcheck) | Custom path to validate your application deployment |  |
@@ -105,6 +106,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_METRICS_PROMETHEUS_PORT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_FILE`](../../administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 

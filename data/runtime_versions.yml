@@ -1,11 +1,11 @@
 node:
   eol_source: "https://nodejs.org/en/about/releases/"
   default:
-  - "22.16.0 (npm 10.9.2)"
+    - "22.17.0 (npm 10.9.2)"
 bun:
   eol_source: "https://github.com/oven-sh/bun/releases"
   default:
-  - "1.2.16"
+    - "1.2.17"
 PHP:
   eol_source: "https://www.php.net/supported-versions.php"
   default:

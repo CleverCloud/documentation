@@ -87,6 +87,13 @@ Provide the following to your registrar:
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 212.129.27.239`<br>`@ 10800 IN A 212.83.186.147`<br>`@ 10800 IN A 212.83.186.216`<br>`@ 10800 IN A 212.129.27.183` |
 
+### Europe/London (LDN)
+
+| Record Type | Value |
+| ----------- | ----- |
+| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.ldn.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 77.68.78.36`<br>`@ 10800 IN A 77.68.94.247` |
+
 ### Europe/Roubaix (RBX)
 
 | Record Type | Value |

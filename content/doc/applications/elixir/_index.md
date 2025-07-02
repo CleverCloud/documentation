@@ -22,9 +22,9 @@ aliases:
 
 Clever Cloud supports Elixir based applications.
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Elixir application
 
@@ -69,8 +69,8 @@ Finally, `mix phx.server` is invoked, and as always, you can override this behav
 
 Note: If you need to specify the timezone of your application, you can do it with the variable **TZ** set to the usual timezone format, for instance `Europe/Paris`.
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
- {{% content/link-addon %}}
+ {{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}

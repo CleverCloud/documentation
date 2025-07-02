@@ -25,7 +25,7 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 
 {{< software_versions_shared_dedicated pg>}}
 
-{{% content/db-backup %}}
+{{< content "db-backup" >}}
 
 ## Migrating from an old database
 
@@ -34,7 +34,7 @@ Some applications require a non-empty database to run properly. If you want to i
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
-{{% content/dbMigration %}}
+{{< content "dbMigration" >}}
 
 ## Replication
 
@@ -71,7 +71,7 @@ This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
-{{% content/pgpool %}}
+{{< content "pgpool" >}}
 
 You can learn more about Pgpool-II on the [dedicated documentation page]({{< ref "/guides/pgpool" >}})
 

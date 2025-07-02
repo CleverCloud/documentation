@@ -23,9 +23,9 @@ aliases:
 
 Clever Cloud allows you to deploy any Go application. This page explains how to set up your project to run it on our service. You won't need to change a lot, the *requirements* will help you configure your applications with some mandatory files to add, and properties to set up.
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Go application
 
@@ -135,17 +135,17 @@ build:
   Using `clevercloud/go.json` to define Makefile and binary paths is a deprecated method and should no longer be used.
 {{< /callout >}}
 
- {{% content/env-injection %}}
+ {{< content "env-injection" >}}
 
 To access environment variables from your code, just get them from the environment with `PATH`: `os.Getenv("MY_VARIABLE")`.
 
-{{% content/deploy-git %}}
+{{< content "deploy-git" >}}
 
-{{% content/link-addon %}}
+{{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}
 
 ## See also
 

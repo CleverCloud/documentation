@@ -23,20 +23,20 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 - [An example of Ruby on Rails application on Clever Cloud](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest)
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
- {{% content/set-env-vars %}}
+ {{< content "set-env-vars" >}}
 
-{{% content/language-specific-deploy/ruby %}}
+{{< content "language-specific-deploy/ruby" >}}
 
- {{% content/new-relic %}}
+ {{< content "new-relic" >}}
 
- {{% content/env-injection %}}
+ {{< content "env-injection" >}}
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
- {{% content/link-addon %}}
+ {{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}

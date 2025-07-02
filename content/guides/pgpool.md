@@ -28,7 +28,7 @@ Pgpool-II is not available on Docker instances. If you want to use Pgpool-II, yo
 
 ## What's Pgpool-II?
 
-{{% content/pgpool %}}
+{{< content "pgpool" >}}
 
 ## Why use Pgpool-II?
 

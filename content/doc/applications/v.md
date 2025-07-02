@@ -51,5 +51,5 @@ clever deploy # or clever restart if there is no code change
 
 - [Learn more about Clever Tasks](/developers/doc/develop/tasks/)
 
-{{% content/redirectionio %}}
-{{% content/varnish %}}
+{{< content "redirectionio" >}}
+{{< content "varnish" >}}

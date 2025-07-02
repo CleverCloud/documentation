@@ -24,11 +24,11 @@ The version currently installed by the add-on are the following :
 
 {{< software_versions_shared_dedicated redis>}}
 
-{{% content/db-backup %}}
+{{< content "db-backup" >}}
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 
-{{% content/dbMigration %}}
+{{< content "dbMigration" >}}
 
 ## Leader / follower topology
 
@@ -43,7 +43,7 @@ You can use Redis URI to connect to your databases with -u option. However, the 
 
 This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/database]*
 
-{{% content/kv-explorer %}}
+{{< content "kv-explorer" >}}
 
 ## Default retention policy
 

@@ -11,21 +11,21 @@ If you only need to serve static files without executing any code on the backend
 
 This runtime is based on apache, so shares a lot with the [PHP runtime]({{< ref "doc/applications/php" >}}). This means you can use `.htaccess` files for redirection or access control.
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
-{{% content/env-injection %}}
+{{< content "env-injection" >}}
 
 Application deployment on Clever Cloud is via **Git or FTP**.
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
-{{% content/deploy-ftp %}}
+{{< content "deploy-ftp" >}}
 
- {{% content/link-addon %}}
+ {{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}
 
 ## Serving index.html for SPA (Single Page Application) routers
 

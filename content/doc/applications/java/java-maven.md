@@ -32,9 +32,9 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Releases
 * Distribution
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Java application
 
@@ -43,7 +43,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
-{{% content/java-versions %}}
+{{< content "java-versions" >}}
 
 {{< runtimes_versions java >}}
 
@@ -63,7 +63,7 @@ The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at 
   }
 ```
 
-An example of what can be found as a goal value is:  
+An example of what can be found as a goal value is:
 
 ```txt
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
@@ -125,12 +125,12 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
- {{% content/new-relic %}}
+ {{< content "new-relic" >}}
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
- {{% content/link-addon %}}
+ {{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}

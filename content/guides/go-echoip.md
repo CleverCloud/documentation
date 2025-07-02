@@ -50,7 +50,7 @@ echoip/ ~ $ git commit -m "add clevercloud files" clevercloud/
 ```
 
 
- {{% content/set-env-vars %}}
+ {{< content "set-env-vars" >}}
 
 
 
@@ -61,7 +61,7 @@ Your environment variable has been successfully saved
 ```
 
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
 
 

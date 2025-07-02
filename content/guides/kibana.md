@@ -51,8 +51,7 @@ You need to disable SSO authentication first. Then, you will be able to add a cu
 
 ### Multiple Authentification Method
 
-By default, you can only use SSO authentification to connect to Kibana.
-If you need to allow for multiple authentification method to your Kibana, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
+By default, you can only use SSO authentification to connect to Kibana. If you need to allow for multiple authentification method to your Kibana, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
 
 For example,to allow both SSO authentification and Kibana authentification in Kibana 8.10.2 :  
 `CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.10.2/sso-basic-8.10.2 | sh`

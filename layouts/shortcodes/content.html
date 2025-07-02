@@ -1,0 +1,9 @@
+{{- $file := .Get 0 -}}
+{{- if $file -}}
+  {{- $content := readFile (printf "layouts/shortcodes/content/%s.md" $file) -}}
+  {{- if $content -}}
+    {{- $content | .Page.RenderString -}}
+  {{- else -}}
+    {{- warnf "Content not found: %s" $file -}}
+  {{- end -}}
+{{- end -}}

@@ -23,9 +23,9 @@ Haskell is a purely functional language, especially suited for robust web applic
 
 There are many ways to write web applications in Haskell, from raw [WAI](https://hackage.haskell.org/package/wai) to full-stack frameworks like [Yesod](https://www.yesodweb.com/), simple libraries like [scotty](https://hackage.haskell.org/package/scotty) or type-safe solutions like [servant](https://haskell-servant.GitHub.io/).
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Haskell application
 
@@ -74,10 +74,10 @@ executable myfirstapp
 
 ### Cached dependencies
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.  
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.
 It is enabled by default only for rust and haskell applications.
 
-To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.  
+To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
 To fully remove cached dependencies, you have to rebuild your application from scratch.
 
 You can select **rebuild and restart** from the console or launch `clever restart --without-cache` with the Clever Tools CLI.
@@ -123,8 +123,8 @@ You may have several packages in your application which can be time consuming wh
 CC_HASKELL_STACK_TARGET="mypackage"
 ```
 
-{{% content/deploy-git %}}
+{{< content "deploy-git" >}}
 
-{{% content/link-addon %}}
+{{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}

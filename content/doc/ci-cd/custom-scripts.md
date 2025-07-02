@@ -17,7 +17,7 @@ You can write your own pipeline to deploy from either GitHub or GitLab. Use [Cle
 {{< tabs items="Docker image, Node image" >}}
 
   {{< tab >}}**Docker image**:
-  
+
   ```yaml
   variables:
   GIT_DEPTH: "0" # Unshallow the repository by default
@@ -26,11 +26,11 @@ image:
   name: clevercloud/clever-tools:latest
   entrypoint: [""]
   ```
-  
+
   {{< /tab >}}
-  
-  {{< tab >}}**Node image**:  
-  
+
+  {{< tab >}}**Node image**:
+
   ```yaml
   variables:
   GIT_DEPTH: 0 # Unshallow the repository by default
@@ -41,7 +41,7 @@ before_script: # Download clever-tools before any script executes
   - tar -xvf clever-tools-${CC_VERSION}_linux.tar.gz
   - PATH=${PATH}:$(pwd)/clever-tools-${CC_VERSION}_linux
   ```
-  
+
   {{< /tab >}}
 
 {{< /tabs >}}
@@ -50,7 +50,7 @@ before_script: # Download clever-tools before any script executes
   Using `before_script` in your GitLab pipeline affects your other scripts as well. Consider including it **in a separate job** if you run other test scripts unrelated to Clever Cloud deployments in your pipeline.
 {{< /callout >}}
 
-{{% content/ci-cd-configuration %}}
+{{< content "ci-cd-configuration" >}}
 
 ## 🎓 Go further
 

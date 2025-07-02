@@ -11,4 +11,4 @@ keywords:
 type: docs
 ---
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}

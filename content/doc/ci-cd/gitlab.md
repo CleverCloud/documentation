@@ -21,7 +21,7 @@ include:
   - component: $CI_SERVER_HOST/<CI_PROJECT_PATH>/<component-name>@~latest
 ```
 
-{{% content/ci-cd-configuration %}}
+{{< content "ci-cd-configuration" >}}
 
 ### GitLab pipeline example
 

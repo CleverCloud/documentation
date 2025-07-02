@@ -52,7 +52,7 @@ clever deploy # or clever restart if there is no code change
 
 ## Expand your toolbox with Mise package manager
 
-{{% content/mise %}}
+{{< content "mise" >}}
 
 ### Mise configuration examples
 
@@ -60,5 +60,5 @@ clever deploy # or clever restart if there is no code change
 - [Deploy a Swift application with Mise](https://github.com/CleverCloud/swift-hello-world-example)
 - [Deploy a Zig application with Mise](https://github.com/CleverCloud/zig-with-mise-example)
 
-{{% content/redirectionio %}}
-{{% content/varnish %}}
+{{< content "redirectionio" >}}
+{{< content "varnish" >}}

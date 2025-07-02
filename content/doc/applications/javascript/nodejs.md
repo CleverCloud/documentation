@@ -215,21 +215,21 @@ app.use(enforce.HTTPS({
 }));
 ```
 
-{{% content/new-relic %}}
+{{< content "new-relic" >}}
 
 ## Troubleshooting your application
 
 If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
 To target this behavior, you can gracefully shut down with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment, so you can fix the problem.
 
-{{% content/env-injection %}}
+{{< content "env-injection" >}}
 
 To access environment variables from your code, you can use `process.env.MY_VARIABLE`.
 
-{{% content/deploy-git %}}
+{{< content "deploy-git" >}}
 
-{{% content/link-addon %}}
+{{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}

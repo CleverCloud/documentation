@@ -26,9 +26,9 @@ Rust is a system programming language that runs blazingly fast, prevents segfaul
 
 Clever Cloud allows you to deploy Rust web applications. This page will explain you how to set up your application to run it on our service.
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Rust application
 
@@ -161,15 +161,15 @@ fn main() {
 
 This loads the environment variable in your `main` function and use `.expect` to fail early. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
 
-{{% content/deploy-git %}}
+{{< content "deploy-git" >}}
 
 ### Deployment Video
 
 {{< youtube id="mz_8jzrM13Y" >}}
 
-{{% content/link-addon %}}
+{{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}
 

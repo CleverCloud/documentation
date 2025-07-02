@@ -38,11 +38,11 @@ The supported containers are listed below:
 | Apache Tomcat 8.8 (TOMCAT8)   | Jetty 11.0.6 (JETTY11) | Payara 6.2023 (PAYARA6) | WildFly 27.0.1 (WILDFLY27) |
 | Apache Tomcat 10.0 (TOMCAT10) |                        |                         | WildFly 33.0.1 (WILDFLY33) |
 
-{{% content/create-application %}}
+{{< content "create-application" >}}
 
-{{% content/set-env-vars %}}
+{{< content "set-env-vars" >}}
 
-{{% content/java-versions %}}
+{{< content "java-versions" >}}
 
 {{< runtimes_versions java >}}
 
@@ -158,7 +158,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 | WILDFLY17  | Use Wildfly servlet container 17.x (see <https://wildfly.org/>)                              |     |
 | WILDFLY23  | Use Wildfly servlet container 23.x (see <https://wildfly.org/>)                              |     |
 
-{{% content/url_healthcheck %}}
+{{< content "url_healthcheck" >}}
 
 ## Custom run command
 
@@ -172,10 +172,10 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
- {{% content/new-relic %}}
+ {{< content "new-relic" >}}
 
- {{% content/deploy-git %}}
+ {{< content "deploy-git" >}}
 
- {{% content/link-addon %}}
+ {{< content "link-addon" >}}
 
-{{% content/more-config %}}
+{{< content "more-config" >}}

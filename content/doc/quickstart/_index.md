@@ -64,6 +64,10 @@ An application is defined on Clever Cloud by the following elements:
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
+
+> [!CAUTION]
+> The application’s VM doesn’t persist local storage and only provides a few gigabytes of space (shared between the system and your application code and build artefact). For persistent storage, use a database or a file storage service like FS Bucket or Cellar Object Storage. The application erases local data whenever it stops or restarts.
+
 ### How it Works
 
 When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.

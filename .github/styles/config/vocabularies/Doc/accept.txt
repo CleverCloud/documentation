@@ -17,6 +17,7 @@ checkMe
 Clever Cloud
 CLI
 Cloud
+config
 Coraza
 Corepack
 CRDs
@@ -86,7 +87,9 @@ Sidekiq
 Symfony
 syslog
 toolchain
+URIs
 VSCode
 webroot
 Wildfly
+yjs
 Zooper

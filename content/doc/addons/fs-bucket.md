@@ -27,7 +27,6 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 
 You will be able to retrieve generated data between two deployments.
 
-
 > [!WARNING]
 > FSBuckets **not available** for Docker applications because of security concerns.
 
@@ -43,8 +42,6 @@ FS Buckets are available for file-system backward compatibility, but there are a
 - **Performance Limitations**
   FS Buckets aren't optimized for high-performance applications, especially those relying on caching.
 {{% /details %}}
-
-
 
 ## Configuring your application
 

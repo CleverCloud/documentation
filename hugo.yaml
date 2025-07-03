@@ -120,7 +120,7 @@ menu:
       weight: 4
     - identifier: components
       name: Web Components
-      url: "https://www.clever-cloud.com/doc/clever-components/"
+      url: "https://www.clever-cloud.com/developers/clever-components"
       weight: 5
     - name: Search
       weight: 6

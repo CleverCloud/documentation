@@ -123,10 +123,7 @@ Choose the language or the framework you want to deploy.
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
-{{< callout emoji="💡" >}}
-  You can learn more about scaling & instances size [here](/developers/doc/administrate/scalability).
-  {{< /callout >}}
-
+- [Learn more about scaling & instances size](/developers/doc/administrate/scalability)
 
 #### Name your application
 
@@ -277,7 +274,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 {{< cards >}}
   {{< card link="../addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
   {{< card link="../addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL database, self hosted and managed" >}}
-  {{< card link="../addons/mongodb" title="MongDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="../addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
   {{< card link="../addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
   {{< card link="../addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
   {{< card link="../addons/cellar" title="Cellar" subtitle="Object storage" icon="cellar" >}}

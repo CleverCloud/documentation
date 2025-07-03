@@ -72,6 +72,10 @@ CMD <command to run>
 
 **command to run**: this is the command that starts your application. Your application **must** listen on port 8080. It can be easier for you to put a script in your docker image and call it with the CMD instruction.
 
+### Docker Buildx
+
+We still use `docker build` command for legacy reasons, but you can use `docker buildx` instead, setting `CC_DOCKER_BUILDX` to `true`.
+
 ### Memory usage during building
 
 If the building step of your app crashes because it uses more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}})
@@ -87,9 +91,19 @@ RUN yarn install && yarn build
 CMD yarn start
 ```
 
+### Login to registry
+
+As Docker Hub limits the number of image pulls and actions without authentication, use you own account to get higher limits. You can also use a private registry where you store your images. This feature launch `docker login` command before the build phase.
+
+* `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
+* `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
+* `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry, default is Docker Hub
+
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`. Refer to the documentation page to know how to create [TCP redirections](../../administrate/tcp-redirections).
+Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`.
+
+* [Learn more about TCP redirections](/developers/doc/administrate/tcp-redirections)
 
 ### Docker socket access
 
@@ -100,16 +114,6 @@ Giving access to the docker socket breaks all isolation provided by docker. **DO
 {{< /callout >}}
 
 You can make the docker socket available from inside the container by adding the `CC_MOUNT_DOCKER_SOCKET=true` environment variable. In that case, docker is started in the namespaced mode, and in bridge network mode.
-
-### Private registry
-
-We support pulling private images through the `docker build` command. To login to a private registry, you need to set a few environment variables:
-
-* `CC_DOCKER_LOGIN_USERNAME`: the username to use to login
-* `CC_DOCKER_LOGIN_PASSWORD`: the password of your username
-* `CC_DOCKER_LOGIN_SERVER` (optional): the server of your private registry. Defaults to Docker's public registry.
-
-This uses the `docker login` command under the hood.
 
 ### Enable IPv6 networking
 
@@ -122,7 +126,6 @@ You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) ins
 Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>` parameter during the `docker build` phase.
 
 ### Sample dockerized applications
-
 
 We provide a few examples of dockerized applications on Clever Cloud.
 

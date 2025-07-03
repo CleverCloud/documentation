@@ -106,7 +106,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-It's explained [here](../../applications/php/#using-http-authentication).
+- [Lean more about the $_SERVER variable on Clever Cloud](../../applications/php/#using-http-authentication)
 
 ## How to get the user's IP address?
 
@@ -131,7 +131,7 @@ access them via git+ssh or sFTP), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
-The ssh.json file is documented [here](../../reference/common-configuration/#private-ssh-key).
+- [Learn more about ssh.json](../../reference/common-configuration/#private-ssh-key)
 
 ## I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?
 
@@ -214,7 +214,7 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 
 Clever Cloud stores all backups on [Cellar](https://www.clever-cloud.com/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
-For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more documentation on restoring backups with the CLI [here](/developers/doc/cli/addons/#database-backups).
+For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more [documentation on restoring backups with the CLI](/developers/doc/cli/addons/#database-backups).
 
 
 ## I can't create my add-on

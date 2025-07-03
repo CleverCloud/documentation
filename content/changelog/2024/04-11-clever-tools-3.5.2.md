@@ -19,7 +19,7 @@ excludeSearch: true
 
 Clever Tools 3.5 is now available, and this branch brings lots of new important features. First, `clever curl` is now public and listed as an official command. It helps you to send curl requests with the auth context of your Clever Tools configuration. Thus, you can use Clever Cloud [API v2 or v4](/developers/api/).
 
-JSON format is supported for more commands, the `--since` option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use `clever logs --since 2h`. This command documentation is available [there](https://github.com/CleverCloud/clever-tools/blob/master/docs/applications-deployment-lifecycle.md#logs).
+JSON format is supported for more commands, the `--since` option now supports a duration value. For example if you want to get logs since 2 hours ago, you can use `clever logs --since 2h`. This command documentation is available [there](developers/doc/cli/logs-drains/#logs).
 
 Clever Tasks can now be directly created and configured from Clever Tools. They're applications which can be run on demand, not awaiting any HTTP request on the `8080` port, but needing a `CC_RUN_COMMAND` to execute. Once it's done, the application stops. You're just billed for the execution time. It can help you to make some checks, compilation, file conversions, etc.
 
@@ -54,7 +54,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 ````
 * [Learn more about Materia KV](https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
 
-To upgrade Clever Tools, [use your favorite package manager](https://github.com/CleverCloud/clever-tools/blob/master/docs/setup-systems.md#how-to-install-clever-tools). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/cli/install)
 
 ```
 npm update -g clever-tools

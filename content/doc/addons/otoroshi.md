@@ -43,14 +43,13 @@ Real ID: otoroshi_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myOtoroshi
 
 Your Otoroshi with LLM is starting:
- - Access it: https://xxxxxxxxxxxxxxxxxxxx-otoroshi.services.clever-cloud.com
+ - Access it: https://xxxxxxxxxxxx-api-otoroshi.services.clever-cloud.com
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 An initial account has been created, change the password at first login (Security -> Administrators -> Edit user):
- - Admin user name: xxxxxxxxxxxxxxxxxxxxxxxx
- - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxx
+ - Admin user name: cc-account-admin
+ - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-/!\ The otoroshi provider is in beta testing phase
 Learn more about Otoroshi with LLM on Clever Cloud: https://developers.clever-cloud.com/doc/addons/otoroshi/
 ```
 
@@ -80,7 +79,7 @@ They are dimensioned to suit a majority of needs. You can however manage and adj
 
 ## LLM extension
 
-Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever-cloud.com/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Gemini, Groq, Hugging Face, OVH and Scaleway AI Endpoints.
+Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever-cloud.com/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Eleven Labs, Gemini, Groq, Hive, Hugging Face, Leonardo AI, Luma, OVH and Scaleway AI Endpoints. It supports audio, image, moderation and text generation models.
 
 ### Smarter AI operations
 The extension enhances your LLM operations with intelligent workload distribution and automatic failover mechanisms, ensuring consistent service availability. It implements sophisticated features such as semantic caching to optimize response times and reduce costs, while providing comprehensive quota management capabilities for effective resource allocation.
@@ -112,10 +111,10 @@ Designed for production environments, the Coraza WAF plugin offers flexible conf
 
 ## Manage Otoroshi from its API
 
-Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. A Swagger UI detailing available endpoints is available [here](https://maif.github.io/otoroshi/swagger-ui/index.html).
+Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. [A Swagger UI detailing available endpoints is available](https://maif.github.io/otoroshi/swagger-ui/index.html).
 
 An OpenAPI descriptor is available from your instance:
 
 ```
-https://your-instance-subdomain-otoroshi.services.clever-cloud.com/apis/openapi.json
+https://xxxxxxxxxxxx-api-otoroshi.services/apis/openapi.json
 ```

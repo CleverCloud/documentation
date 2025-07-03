@@ -44,15 +44,21 @@ So you can alter the build&start process for your application.
 |-----------------------|------------------------------|--------------------------------|
 |`APP_FOLDER` | Folder in which the application is located (inside the git repository) |  |
 |`CC_DISABLE_JVM_AGENT` | Disable JVM agent activation | |
+|`CC_GIT_FULL_CLONE` | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment | true |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
 |[`CC_HEALTH_CHECK_PATH`](../../develop/healthcheck) | Custom path to validate your application deployment |  |
-|`CC_NODE_VERSION`| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](../../applications/javascript/nodejs/#select-node-version "Select node version") instead | |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
 |`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
 |`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
 |[`CC_WORKER_COMMAND`](../../develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
+
+You can set some tools' version in any runtime (except Docker):
+
+| Name | Description |
+|-----------------|--------------------------|
+|`CC_NODE_VERSION`| Set Node.js version, for example `24`, `23.11` or `22.15.1` |
 
 #### Control build and dependencies cache
 
@@ -100,6 +106,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_METRICS_PROMETHEUS_PORT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_FILE`](../../administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
@@ -144,6 +151,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_DOCKERFILE` | The name of the Dockerfile to build. | Dockerfile |
+|`CC_DOCKER_BUILDX` | Set to `true` to use`buildx` for building your image | false |
 |`CC_DOCKER_EXPOSED_HTTP_PORT` | Set to custom HTTP port if your Docker container runs on custom port. | 8080 |
 |`CC_DOCKER_EXPOSED_TCP_PORT` | Set to custom TCP port if your Docker container runs on custom port. | 4040 |
 |`CC_DOCKER_FIXED_CIDR_V6` | Activate the support of IPv6 with an IPv6 subnet int the docker daemon. |  |
@@ -184,6 +192,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 | Name | Description | Default value |
 |---------------|-------------| ---------------|
+| `CC_FRANKENPHP_PORT` | The port on which FrankenPHP listens for HTTP requests | `8080` |
 | `CC_FRANKENPHP_WORKER` | Path to the worker script, relative to the root of your project (e.g. `/worker/scrip.php`) | |
 | `CC_PHP_COMPOSER_FLAGS` | Flags to pass to Composer | `-n --no-dev --no-progress --no-scripts` |
 | `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build | |
@@ -238,6 +247,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
+|[`CC_NODE_VERSION`](/developers/doc/applications/javascript/nodejs/#set-nodejs-version)| Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 |`CC_NODE_DEV_DEPENDENCIES` | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |
 |`CC_RUN_COMMAND` | Define a custom command. Example for Meteor: `node .build/bundle/main.js <options>`  | |
 |`CC_NODE_BUILD_TOOL` | Choose your build tool between npm, npm-ci, yarn, yarn2 and custom | npm |
@@ -253,7 +263,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
-|[`CC_CGI_IMPLEMENTATION`](../../applications/php/#development-dependencies "Speed up or disable the session on FS Bucket") | Choose the Apache FastCGI module between fastcgi and proxy_fcgi | fastcgi |
+|[`CC_CGI_IMPLEMENTATION`](/developers/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
 |`CC_LDAP_CA_CERT` |  |  |

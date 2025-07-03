@@ -22,7 +22,7 @@ The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](
 
 Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
 
-* **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources.
+* **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: https://api-bridge.clever-cloud.com
 
 * **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
 
@@ -30,13 +30,11 @@ Choose the authentication method that best aligns with your specific integration
 
 ### API tokens
 
-{{< callout type="info" >}}
-The API tokens are in Beta testing phase, they will be available from the Console in the coming weeks.
-{{< /callout >}}
+Clever Cloud Console allows you to easily create and manage API tokens.
 
-#### From Clever Tools
+![Manage API tokens in Clever Cloud Console](/images/doc/console-api-tokens.webp)
 
-To create a token, you can use [Clever Tools](https://github.com/CleverCloud/clever-tools). This feature needs to be enabled:
+[Clever Tools](https://github.com/CleverCloud/clever-tools) provides a `clever tokens` set of commands. This feature needs to be enabled:
 
 ```bash
 clever features enable tokens
@@ -78,7 +76,7 @@ You can request the Clever Cloud API from multiple languages through our officia
 
 ### OAuth1
 
-If you have an application that needs to access Clever Cloud resources on behalf of your users, you can use OAuth1. This is the recommended way to authenticate third-party applications.
+If you have an application that needs to access Clever Cloud resources on behalf of your users, you can use OAuth1. This is the recommended way to authenticate third-party applications. To manage OAuth tokens linked to your account, use the [Clever Cloud Console](https://console.clever-cloud.com/users/me/oauth-tokens).
 
 #### Create an OAuth consumer
 

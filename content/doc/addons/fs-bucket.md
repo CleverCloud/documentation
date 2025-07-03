@@ -28,13 +28,20 @@ you have to mount **a persistent filesystem**. This is why we created File Syste
 You will be able to retrieve generated data between two deployments.
 
 > [!WARNING]
-> The public cloud offer does not include automated backups. You can still create and manage backups manually if needed.
+> FSBuckets **not available** for Docker applications because of security concerns.
 
-> [!IMPORTANT]
-> FSBuckets aren't available for Docker applications because of security concerns.
 
-> [!NOTE]
-> The Health Data Hosting (HDS) region doesn’t support FS Buckets. PHP applications include a default FS Bucket for session storage, so they can’t deploy on HDS unless you turn it off it with `CC_PHP_DISABLE_APP_BUCKET=true`. Use Redis instead to manage PHP sessions.
+{{% details title="Using FS Buckets in a Cloud Environment" %}}
+
+FS Buckets are available for file-system backward compatibility, but there are a few important considerations when using them in a cloud environment:
+
+- **Backups limited to 72 hours of rentetion**
+  The public cloud offering include automated backups every 24 hours, with only 72 hours of rentention (opposed to the 7 days for databases).
+- **Health Data Hosting Not Supported**
+  The Health Data Hosting (HDS) region doesn't support FS Buckets. PHP applications include a default FS Bucket for session storage, so they cannot be deployed on HDS unless you turn it off using [`CC_PHP_DISABLE_APP_BUCKET=true`](http://localhost:1313/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis instead to manage PHP sessions.
+- **Performance Limitations**
+  FS Buckets aren't optimized for high-performance applications, especially those relying on caching.
+{{% /details %}}
 
 ## Configuring your application
 

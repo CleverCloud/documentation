@@ -28,7 +28,7 @@ The Clever Kubernetes Operator was born from a concrete need: to allow users to 
 - Keep Kubernetes' flexibility for stateless applications
 - Delegate the management of critical databases and services to Clever Cloud
 
-While Kubernetes excels at deploying applications, databases come with operational constraints (backup, replication, restoration, updates...) that make self-management challenging. With the operator, you can maintain the comfort of a managed service while keeping control in your Kubernetes manifests.
+While Kubernetes excels at deploying applications, databases come with operational constraints (backup, replication, restoration, updates…) that make self-management challenging. With the operator, you can maintain the comfort of a managed service while keeping control in your Kubernetes manifests.
 
 ### Supported Services
 

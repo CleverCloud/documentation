@@ -42,7 +42,7 @@ We've already integrated the Clever Cloud SSO, so you can login directly into yo
 
 ### From the Console
 
-1. Create a new add-on by clicking on the **Create...** dropdown in the sidebar and then **an add-on**.
+1. Create a new add-on by clicking on the **Create…** dropdown in the sidebar and then **an add-on**.
 2. Select the Matomo add-on.
 3. You can skip linking the add-on to an application, it won't be needed.
 4. Enter the name of your Matomo add-on and select the zone where you wish to deploy it.

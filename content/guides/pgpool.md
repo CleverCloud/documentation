@@ -72,7 +72,7 @@ You can use the `CC_PGPOOL_NUM_INIT_CHILDREN` and `CC_PGPOOL_MAX_POOL` environme
 
 Let's take an example where you have 3 PostgreSQL servers, and the `CC_PGPOOL_NUM_INIT_CHILDREN` variable configured with a value of **32**.
 
-On startup, Pgpool-II will start **32** processes, one process per connection. The `CC_PGPOOL_MAX_POOL` variable is used to configure the number of cached connections per connection (process). This option is mostly used when you have different credentials for the same PostgreSQL server (database, user...). But in the case of **Streaming** mode on Clever Cloud, you have access to only one database, and the credentials are the same on all add-ons with binary replication. You should not need to change the default value of this variable (**1** by default).
+On startup, Pgpool-II will start **32** processes, one process per connection. The `CC_PGPOOL_MAX_POOL` variable is used to configure the number of cached connections per connection (process). This option is mostly used when you have different credentials for the same PostgreSQL server (database, user…). But in the case of **Streaming** mode on Clever Cloud, you have access to only one database, and the credentials are the same on all add-ons with binary replication. You should not need to change the default value of this variable (**1** by default).
 
 An example of the `SHOW POOL_POOLS;` command with `CC_PGPOOL_NUM_INIT_CHILDREN=32` and `CC_PGPOOL_MAX_POOL=1`:
 

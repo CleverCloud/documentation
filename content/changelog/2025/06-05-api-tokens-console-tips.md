@@ -1,5 +1,5 @@
 ---
-title: 'API tokens in Console... with API and Clever Tools tips'
+title: 'API tokens in Console… with API and Clever Tools tips'
 date: 2025-06-05
 tags:
   - console

@@ -2,7 +2,7 @@
 type: docs
 title: Jar
 position: 1
-shortdesc: Deploy a jar on Clever Cloud...
+shortdesc: Deploy a jar on Clever Cloud…
 keywords:
 - deploy
 tags:

@@ -82,7 +82,7 @@ TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}
 
 ```yaml{filename="config/packages/framework.yaml"}
 framework:
-    # ...
+    # …
     trusted_proxies: '%env(TRUSTED_PROXIES)%'
 ```
 

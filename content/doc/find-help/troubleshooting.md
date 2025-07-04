@@ -48,7 +48,7 @@ It may also be because you are working on another branch than master and pushed 
 remote: You tried to push to a custom branch.
 remote: This is not allowed.
 remote: error: hook declined to update refs/heads/<yourSpecificBranchName>
-...
+…
 error: failed to push some refs to '<yourSpecificBranchName>'
 ```
 
@@ -180,7 +180,7 @@ To gather detailed timing information for each step of the connection process, r
 ``` bash
 curl -o /dev/null -s -w "DNS resolution: %{time_namelookup}s\nTCP connection: %{time_connect}s\nTLS handshake: %{time_appconnect}s\nTime to first byte: %{time_starttransfer}s\nTotal time: %{time_total}s\n" https://<example.com>
 ```
-  
+
 {{% /details %}}
 
 ## Others issues

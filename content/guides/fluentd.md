@@ -23,7 +23,7 @@ Since you deploy microservices on Clever Cloud, you may need some data pipes bet
 * collect application logs to analyze them with Elasticsearch, then archive them with S3
 * collect Apache access logs to analyze them in MongoDB
 * extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
-* and many more ...
+* and many more …
 
 Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 

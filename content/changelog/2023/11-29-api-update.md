@@ -38,7 +38,7 @@ For years, you can deploy applications on Clever Cloud as a `Task` with the API 
     "lifetime": "string",  //Allowed: REGULAR ┃ MIGRATION ┃ TASK
     "instanceAndVersion": "string"
   },
-  ...
+  …
 }
 ```
 

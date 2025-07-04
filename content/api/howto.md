@@ -80,7 +80,7 @@ If you have an application that needs to access Clever Cloud resources on behalf
 
 #### Create an OAuth consumer
 
-First, you'll need to create an OAuth consumer for your application. This can be done in the [Clever Cloud console](https://console.clever-cloud.com). Go to your organization, click on **Create...**, then on **an OAuth consumer** and fill the form. You will get a consumer key and a consumer secret for your application.
+First, you'll need to create an OAuth consumer for your application. This can be done in the [Clever Cloud console](https://console.clever-cloud.com). Go to your organization, click on **Create…**, then on **an OAuth consumer** and fill the form. You will get a consumer key and a consumer secret for your application.
 
 #### Integrate your application
 

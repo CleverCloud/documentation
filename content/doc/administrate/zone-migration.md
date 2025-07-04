@@ -9,8 +9,8 @@ tags:
 type: docs
 ---
 
-In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.  
-For most of the services, you will be able to migrate them as-is. For others, you will need to create them and do a manual migration.  
+In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.
+For most of the services, you will be able to migrate them as-is. For others, you will need to create them and do a manual migration.
 Keep in mind that our support team remains available, should you have any questions regarding zone migration.
 
 ## Application migration
@@ -77,7 +77,7 @@ When domains are switched from the old application to the new one, a small downt
 First, create a new PHP application on your target zone.
 Then, you can easily copy / paste the environment variable from the old application to the new one using the `Expert mode` of our environment variables interface.
 Don't forget to link all services that were linked to your old application. Linking multiple times the same service to different application doesn't cause any issue.
-Make sure the Scalability section of your application is the same as the old one, as well as the various options you can find in the `Information pane` (HTTPS redirection, build cache, ...).
+Make sure the Scalability section of your application is the same as the old one, as well as the various options you can find in the `Information pane` (HTTPS redirection, build cache, …).
 
 Once everything is setup again, we can push the code. If you are using Git, you can find the new Git URL in the `Information` panel.
 If you are using FTP, please read the [FSBucket migration section](#fsbucket).

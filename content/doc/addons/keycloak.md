@@ -28,7 +28,7 @@ Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentica
 - Secure Identity Management
 - Single Sign-On (SSO)
 - Centralized Administration
-- Customizable Authentication (OAuth 2.0, LDAP, SAML, OpenID Connect, and more...)
+- Customizable Authentication (OAuth 2.0, LDAP, SAML, OpenID Connect, and more…)
 - Easily load plugins and themes
 - Multi Realms
 - Monitoring and Logging
@@ -71,7 +71,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 ## Create a Keycloak add-on
 
 ### From the Console
-1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create...** dropdown in the sidebar and then **an add-on**
+1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create…** dropdown in the sidebar and then **an add-on**
 2. Select the Keycloak add-on
 3. You can skip linking the add-on to an application, it won't be needed
 4. Enter a name for your Keycloak add-on and select the zone where you want it to be deployed

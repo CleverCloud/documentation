@@ -2,7 +2,7 @@
 type: docs
 title: Maven
 position: 3
-shortdesc: Maven is essentially a project management and comprehension tool...
+shortdesc: Maven is essentially a project management and comprehension tool…
 tags:
 - deploy
 keywords:
@@ -63,7 +63,7 @@ The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at 
   }
 ```
 
-An example of what can be found as a goal value is:  
+An example of what can be found as a goal value is:
 
 ```txt
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"

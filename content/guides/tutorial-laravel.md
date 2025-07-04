@@ -41,9 +41,9 @@ From the Clever Cloud Console, create a new PHP application and choose your depl
 Add the following environment variable in the Console: `CC_WEBROOT="/public"`.
 
 Or set it with the Clever Cloud CLI:
- 
+
   ```bash
-  clever env set CC_WEBROOT /public 
+  clever env set CC_WEBROOT /public
   ```
 
 ### Add your application key variable
@@ -83,9 +83,9 @@ Edit `config/database.php` to set the correct environment variable names. For ex
 For instance for MySQL:
 
 ```php{linenos=table}
-   // ...
+   // …
    'connections' => [
-     // ...
+     // …
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('MYSQL_ADDON_HOST', '127.0.0.1'),
@@ -100,9 +100,9 @@ For instance for MySQL:
             'strict' => true,
             'engine' => null,
         ],
-    // ...
+    // …
     ]
-  // ...
+  // …
 ```
 
 Create a database add-on (either MySQL or PostgresSQL) and link it to your application. If your add-on already exists, use the **Service Dependencies > Link add-ons** dropdown menu in your application options, to select the name of the add-on you want to link and use the add button to finish the process.

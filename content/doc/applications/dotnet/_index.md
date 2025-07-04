@@ -81,7 +81,7 @@ If your project file defines multiple targets, like :
   <PropertyGroup>
     <TargetFramework>net6.0;net8.0</TargetFramework>
   </PropertyGroup>
-  ...
+  …
 ```
 
 You must specify the one you want to run, with the `CC_DOTNET_TFM` environment variable.
@@ -97,7 +97,7 @@ CC_DOTNET_TFM=net6.0
 Make sure to list all your dependencies in your project file. For example:
 
 ```xml{linenos=table}
-  ...
+  …
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />

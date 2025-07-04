@@ -72,8 +72,8 @@ If you need some modules you can easily add some with the *dependencies* field i
 
 ```json  {linenos=table}
 {
-  "name" : { ... },
-  "engines": { ... },
+  "name" : { … },
+  "engines": { … },
   "dependencies": {
     "express": "5.x",
     "socket.io": "4.8.x",

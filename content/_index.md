@@ -15,14 +15,14 @@ width: normal
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-headline >}}
-  Deploy and manage your apps  
+  Deploy and manage your apps
   on Clever Cloud
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
-  Documentation and guides to deploy,  
+  Documentation and guides to deploy,
   manage, and monitor your apps.
 {{< /hextra/hero-subtitle >}}
 </div>
@@ -67,7 +67,7 @@ width: normal
     subtitle="Find detailed tutorials to deploy your favorite framework on Clever Cloud"
     link="guides"
   >}}
-  
+
   {{< hextra/feature-card
     title="Deploy an application"
     subtitle="See supported languages and how to configure your app to deploy successfully"
@@ -75,8 +75,8 @@ width: normal
   >}}
   {{< hextra/feature-card
     title="Connect your application to dependencies"
-    subtitle="See available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic..."
+    subtitle="See available add-ons such as MySQL, PostgreSQL, Redis, Mongo, Elastic…"
     link="doc/addons"
   >}}
-  
+
 {{< /hextra/feature-grid >}}

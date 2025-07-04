@@ -34,7 +34,7 @@ To create a Jenkins add-on, you can either use our web console or our CLI:
 
 ### Web console
 
-1. Create a new add-on by clicking on the **Create...** dropdown in the sidebar and then **an add-on**.
+1. Create a new add-on by clicking on the **Create…** dropdown in the sidebar and then **an add-on**.
 2. Select the Jenkins add-on.
 3. Select the plan you need.
 4. You can skip linking the add-on to an application, it won't be needed.

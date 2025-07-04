@@ -11,7 +11,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-description: And soon add-ons, access logs... and indexing
+description: And soon add-ons, access logs… and indexing
 excludeSearch: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Easier Varnish, Redirection.io, uv native support"
+title: "Images update: easier Varnish, Redirection.io, uv native support"
 date: 2025-07-01
 tags:
   - images

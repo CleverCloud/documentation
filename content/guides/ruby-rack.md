@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Rack setup
+title: Ruby Rack
 shortdesc: How to deploy a web application using Rack on Clever Cloud.
 tags:
 - deploy

@@ -22,7 +22,7 @@ New Relic's technology monitors Web and mobile applications in real-time that ru
 ## New Relic for Node.js and Ruby
 
 New Relic is very simple to install in a Node.js or Ruby application as it is a simple dependency.
-Install instructions for [Node.js](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs) and [Ruby](https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-installation) are available in [the New Relic documentation](https://docs.newrelic.com/).
+Install instructions for [Node.js](https://docs.newrelic.com/docs/apm/agents/nodejs-agent/installation-configuration/install-nodejs-agent/) and [Ruby](https://docs.newrelic.com/docs/apm/agents/ruby-agent/installation/install-new-relic-ruby-agent/) are available in [the New Relic documentation](https://docs.newrelic.com/).
 
 ## New Relic for Python
 
@@ -65,11 +65,11 @@ If you need to fine-tune agent settings, you can use the following environment v
 
 | Variable |
 |--------------------
-|[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) |  
-|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) |  
-|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) |  
+|[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) |
+|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) |
+|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) |
 |[`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) |
-|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) |  
+|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) |
 
 ### Usage
 

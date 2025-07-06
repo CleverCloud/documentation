@@ -73,7 +73,7 @@ clever config update --name "My new task name" --enable-task
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/developers/doc/cli/install/). For example with `npm`:
 
 ```
 npm update -g clever-tools

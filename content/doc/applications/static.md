@@ -100,8 +100,8 @@ Supported Static Site Generators (SSG) are:
 
 ### Nuxt.js
 
-* Build command: `npm i && npm run build -- --outDir <out-dir>`
-* Detected file: `nuxt.config.js`, `nuxt.config.ts`
+* Build command: `npm i && npm run generate && mv .output/public <out-dir>`
+* Detected file: `nuxt.config.ts`
 
 ## Vitepress
 

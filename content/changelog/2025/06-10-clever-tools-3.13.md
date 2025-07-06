@@ -60,7 +60,7 @@ clever ssh-keys remove-all
 
 ## Application configuration as Clever Task
 
-You can also use `clever config` to set an application as a [Clever Task](https://documentation-pr-660.cleverapps.io/developers/doc/develop/tasks/) after its creation of get this option configuration:
+You can also use `clever config` to set an application as a [Clever Task](/developers/doc/develop/tasks/) after its creation of get this option configuration:
 
 ```
 clever config get task

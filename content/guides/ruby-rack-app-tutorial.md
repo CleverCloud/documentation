@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Rack full tutorial
+title: Ruby Rack full tutorial
 shortdesc: How to write a hello world web application using Rack and deploy it on Clever Cloud.
 tags:
 - deploy

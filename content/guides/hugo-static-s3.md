@@ -1,6 +1,6 @@
 ---
-title: Static hosting with Cellar
-description: Build your website with Hugo, then deploy it through a S3-compatible object storage, Cellar. 
+title: Hugo + Cellar
+description: Build your website with Hugo and deploy it through Cellar, a S3-compatible object storage
 tags:
 - guides
 keywords:
@@ -119,7 +119,7 @@ Open it, then add the following (according to the programing language):
     }
   }
     ```
- 
+
 
 {{< /tab >}}
 
@@ -133,8 +133,8 @@ Open it, then add the following (according to the programing language):
     ```
 
   {{< /tab >}}
-  
-  
+
+
   {{< tab >}}**TOML**
 ```json {filename="hugo.toml"}
 [deployment]
@@ -147,7 +147,7 @@ URL: "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
 
 {{< /tabs >}}
 
-- The deployment name is arbitrary and for your own reference: “production”, “test”, anything you’d like. 
+- The deployment name is arbitrary and for your own reference: “production”, “test”, anything you’d like.
 - The cellar host address can found on your Clever Cloud console: select your Cellar and you’ll have the “Host” field. The address looks like: `cellar-c2.services.clever-cloud.com`
 
 Save your configuration file: Hugo now knows where to send file when deploying.
@@ -155,16 +155,16 @@ Save your configuration file: Hugo now knows where to send file when deploying.
 
 
 To deploy, proceed as usual: `hugo` to build the website locally, then `hugo deploy` to push files through Cellar.
-If all the steps have been correctly completed, you are now able to access your website with: 
+If all the steps have been correctly completed, you are now able to access your website with:
  `https://<BUCKET_NAME>.<CELLAR_HOST>`
 
 
-Is's possible to encounter an error where the website warns the user with a "not secure" message. 
-This happens when the SSL certificate was not properly generated. 
+Is's possible to encounter an error where the website warns the user with a "not secure" message.
+This happens when the SSL certificate was not properly generated.
 You can manually generate one certificate by creating an application, then adding the domain name from the "domain" tab.
-The certification propagation takes about 10-15mn. 
+The certification propagation takes about 10-15mn.
 
-If you still encounter an issue at this point, please contact our support team. 
+If you still encounter an issue at this point, please contact our support team.
 
 
 

@@ -15,7 +15,7 @@ description: The Clever way
 excludeSearch: true
 ---
 
-You can [install our CLI](/developers/cli/install), Clever Tools, on any system through `npm`, binaries or many package managers.  On Windows, we relied on Chocolatey with a dedicated Nexus instance for years, but we now also support the official Windows package manager, [WinGet](https://github.com/microsoft/winget-cli).
+You can [install our CLI](/developers/doc/cli/install), Clever Tools, on any system through `npm`, binaries or many package managers.  On Windows, we relied on Chocolatey with a dedicated Nexus instance for years, but we now also support the official Windows package manager, [WinGet](https://github.com/microsoft/winget-cli).
 
 To install the latest version of Clever Tools, you can now use the following command:
 

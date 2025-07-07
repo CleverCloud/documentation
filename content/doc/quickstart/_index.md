@@ -73,19 +73,23 @@ The log system retrieves all output from the application and displays it in the 
 ### Supported Platforms
 
 {{< cards >}}
-  {{< card link="../applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="../applications/golang" title="Go" icon="go" >}}
-  {{< card link="../applications/haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="../applications/java" title="Java" icon="java" >}}
-  {{< card link="../applications/javascript" title="Node.js" icon="node" >}}
-  {{< card link="../applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="../applications/php" title="PHP" icon="php" >}}
-  {{< card link="../applications/python" title="Python" icon="python" >}}
-  {{< card link="../applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="../applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="../applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="../applications/dotnet" title=".NET" icon="dotnet" >}}
-
+  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
+  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
+  {{< card link="/developers/doc/applications/javascript/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
+  {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
+  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
 ### Create an Application Step by Step

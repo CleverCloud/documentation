@@ -18,20 +18,23 @@ comments: false
 Find here specific instructions related to your application's language.
 
 {{< cards >}}
+  {{< card link="dotnet" title=".Net" icon="dotnet" >}}
   {{< card link="docker" title="Docker" icon="docker" >}}
+  {{< card link="elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="frankenphp" title="Franken PHP" icon="frankenphp" >}}
   {{< card link="golang" title="Go" icon="go" >}}
-  {{< card link="haskell" title="Haskell" icon= "haskell">}}
-  {{< card link="java" title="Java" icon="java" >}}
-  {{< card link="javascript" title="Node.js" icon="node" >}}
+  {{< card link="haskell" title="Haskell" icon="haskell">}}
+  {{< card link="java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="linux" title="Linux" icon="linux" >}}
+  {{< card link="javascript/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="php" title="PHP with Apache" icon="php" >}}
+  {{< card link="python" title="Python with uv support" icon="python" >}}
   {{< card link="ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="php" title="PHP" icon="php" >}}
-  {{< card link="python" title="Python" icon="python" >}}
   {{< card link="rust" title="Rust" icon="rust" >}}
   {{< card link="scala" title="Scala" icon="scala" >}}
-  {{< card link="elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="dotnet" title=".NET" icon="dotnet" >}}
-  {{< card link="static" title=".Static" icon="feather" >}}
-  
+  {{< card link="static" title="Static" icon="static" >}}
+  {{< card link="static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
 ## How To Deploy X if It Isn't Natively Supported

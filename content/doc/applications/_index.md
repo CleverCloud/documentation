@@ -18,23 +18,23 @@ comments: false
 Find here specific instructions related to your application's language.
 
 {{< cards >}}
-  {{< card link="dotnet" title=".Net" icon="dotnet" >}}
-  {{< card link="docker" title="Docker" icon="docker" >}}
-  {{< card link="elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="frankenphp" title="Franken PHP" icon="frankenphp" >}}
-  {{< card link="golang" title="Go" icon="go" >}}
-  {{< card link="haskell" title="Haskell" icon="haskell">}}
-  {{< card link="java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
-  {{< card link="linux" title="Linux" icon="linux" >}}
-  {{< card link="javascript/nodejs" title="Node.js & Bun" icon="node" >}}
-  {{< card link="php" title="PHP with Apache" icon="php" >}}
-  {{< card link="python" title="Python with uv support" icon="python" >}}
-  {{< card link="ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="rust" title="Rust" icon="rust" >}}
-  {{< card link="scala" title="Scala" icon="scala" >}}
-  {{< card link="static" title="Static" icon="static" >}}
-  {{< card link="static-apache" title="Static with Apache" icon="feather" >}}
-  {{< card link="v" title="V (Vlang)" icon="v" >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
+  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
+  {{< card link="/developers/doc/applications/javascript/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
+  {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
+  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
 ## How To Deploy X if It Isn't Natively Supported

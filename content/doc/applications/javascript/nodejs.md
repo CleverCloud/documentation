@@ -189,6 +189,12 @@ Then, the `.npmrc` file is created automatically for your application, with the 
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
+Or you can set `CC_NPM_BASIC_AUTH` to use basic authentication
+
+```bash
+CC_NPM_BASIC_AUTH="user:password"
+```
+
 To authenticate to another registry (like GitHub), you can use the `CC_NPM_REGISTRY` environment variable to define its host.
 
 ```bash

@@ -68,7 +68,7 @@ Caddy and SWS can be configured with a configuration file or through environment
 
 ## Static Site Generators (SSG) Auto-build
 
-If you don't set a `CC_BUILD_COMMAND`, Clever Cloud try to detect and configure the Static Site Generator (SSG) through the presence of specific files in the project root. If detected the static website is built in the `cc_static_autobuilt` folder, used as `CC_WEBROOT` and build cache content. If you defined a `CC_WEBROOT`, it will be used instead of `cc_static_autobuilt`.
+If you don't set a `CC_BUILD_COMMAND`, Clever Cloud try to detect and configure the Static Site Generator (SSG) through the presence of specific files in the project root. If detected the static website is built in the `cc_static_autobuilt` folder (or `CC_STATIC_AUTOBUILD_OUTDIR`), used as `CC_WEBROOT` and build cache content. If you defined a `CC_WEBROOT`, it will be used instead of `cc_static_autobuilt`.
 
 Supported Static Site Generators (SSG) are:
 
@@ -88,7 +88,7 @@ Supported Static Site Generators (SSG) are:
 * Detected file: `hugo.json`, `hugo.toml`, `hugo.yaml`
 
 >[!TIP] Set the Hugo version
->Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.145`, `0.146` or `0.147` (default)
+>Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.145`, `0.146`, `0.147` (default) or `0.148`
 
 ### mdBook
 

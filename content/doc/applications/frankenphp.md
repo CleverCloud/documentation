@@ -36,7 +36,7 @@ FrankenPHP runtime only requires a working web application, with an `index.php` 
 
 ### FrankenPHP version and tools
 
-FrankenPHP currently deployed version on Clever Cloud is `1.7.0` based on PHP `8.4.8` and Caddy server `2.10.0`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI.
+FrankenPHP currently deployed version on Clever Cloud is `1.8.0` based on PHP `8.4.10` and Caddy server `2.10.0`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI.
 
 - [FrankenPHP PHP info](https://frankenphpinfo.cleverapps.io/)
 
@@ -92,6 +92,6 @@ clever deploy # or clever restart if there is no code change
 
 ## Included extensions
 
-FrankenPHP on Clever Cloud comes with a set included PHP extensions: `apcu`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gmp`, `gettext`, `iconv`, `igbinary`, `imagick`, `intl`, `ldap`, `mbregex`, `mbstring`, `mysqli`, `mysqlnd`, `opcache`, `openssl`, `parallel`, `pcntl`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`, `protobuf`, `readline`, `redis`, `session`, `shmop`, `simplexml`, `soap`, `sockets`, `sodium`, `sqlite3`, `ssh2`, `sysvmsg`, `sysvsem`, `sysvshm`, `tidy`, `tokenizer`, `xlswriter`, `xml`, `xmlreader`, `xmlwriter`, `zip`, `zlib`, `yaml`, `zstd`.
+FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gmp`,`gettext`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xz`,`zip`,`zlib`,`yaml`,`zstd`
 
 {{< content "url_healthcheck" >}}

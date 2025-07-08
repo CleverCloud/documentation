@@ -259,6 +259,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_NODE_BUILD_TOOL` | Choose your build tool between npm, npm-ci, yarn, yarn2 and custom | npm |
 |`CC_CUSTOM_BUILD_TOOL`| A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`) | |
 |`CC_NPM_REGISTRY` | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |
+|`CC_NPM_BASIC_AUTH`| Private repository credentials, in the form `user:password`. You can't use this if `CC_NPM_TOKEN` is set | |
 |`NPM_TOKEN` | Private repository token |  |
 
 ## PHP
@@ -382,6 +383,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 | `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
 | `CC_BUILD_COMMAND` | The command to run during the build phase | |
 | `CC_OVERRIDE_BUILDCACHE` | Files and path to put in the build cache, separated by a `:` |  |
+| `CC_STATIC_AUTOBUILD_OUTDIR` | The output directory of the static site generator (SSG) auto-build, relative to the root of your application | `/cc_static_autobuilt` |
 | `CC_STATIC_CADDYFILE` | Path to the Caddyfile, as expected by `caddy run --config` command | `./Caddyfile` |
 | `CC_STATIC_FLAGS` | Command line flags to pass to the static web server | |
 | `CC_STATIC_PORT` | The port on which the static web server listens for HTTP requests | `8080` |

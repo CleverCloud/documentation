@@ -22,7 +22,7 @@ jobs:
 
       - name: Build fork
         env:
-          HUGO_VERSION: '0.147.8'
+          HUGO_VERSION: '0.148.0'
         run: |
           HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
           wget -qO- ${HUGO_URL} | tar -xz -C /usr/local/bin

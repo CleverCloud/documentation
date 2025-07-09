@@ -26,8 +26,7 @@ jobs:
         run: |
           HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
           wget -qO- ${HUGO_URL} | tar -xz -C /usr/local/bin
-          ./clevercloud-deploy-script.sh
-
+          hugo --minify --gc --cleanDestinationDir
       - name: Upload artifact
         id: artifact-upload-step
         uses: actions/upload-artifact@v4

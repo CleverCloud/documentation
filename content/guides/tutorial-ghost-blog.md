@@ -7,10 +7,6 @@ tags:
 keywords:
 - node.js
 - ghost
-aliases:
-- /developers/doc/node/tutorial-ghost
-- /doc/deploy/application/node/tutorials/tutorial-ghost
-- /doc/node/tutorial-ghost
 ---
 
 ## Overview

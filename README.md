@@ -168,6 +168,12 @@ Example :
 {{< figure src="/images/changelog/console-new-ip-par.png" caption="The new IP shown in the console" width="800px">}}
 ```
 
+### Adding tooltips
+
+Tooltips are useful to provide additional information on terms or acronyms that may not be familiar to all readers. They help improve the accessibility and comprehension of your documentation without cluttering the main text.
+
+To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](/data/tooltips.toml) file. Once defined, tooltip automatically displays when users hover over associated terms in the documentation.
+
 ### Adding a new partial
 
 Partials are reusable content you can include in several pages. To use this feature:

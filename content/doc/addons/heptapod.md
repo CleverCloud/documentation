@@ -44,19 +44,19 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 ## Accessing Heptapod Cloud
 
 {{< callout type="info" >}}
-  **Requirements**  
-  Using Heptapod Cloud require a Clever Cloud account and an [organization](../../account/administrate-organization).
+  **Requirements**
+  Using Heptapod Cloud require a Clever Cloud account and an [organisation](../../account/administrate-organization).
 {{< /callout >}}
 
 {{% steps %}}
 
-### Create an organization
+### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](../../account/administrate-organization/).
-Every organization you have access to will have its corresponding group on the Heptapod Cloud instance.
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](../../account/administrate-organisation/).
+Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
-In the Clever Cloud console, click **Add an Organization** and fill the form to create one.
-Organization are the way users collaborate and share applications.
+In the Clever Cloud console, click **Add an organisation** and fill the form to create one.
+organisation are the way users collaborate and share applications.
 
 ### Access to Heptapod via SSO
 
@@ -67,9 +67,9 @@ To launch Heptapod Cloud go to **<https://heptapod.host>**.
 
 Heptapod Cloud is billed on a per-usage model, explained and simulated [on our product page](https://www.clever-cloud.com/fr/product/heptapod-cloud/).
 
-You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organization.
+You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organisation.
 
-{{< figure src="../../../images/doc/heptapod-billing.png" caption="You can check your organization's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
+{{< figure src="../../../images/doc/heptapod-billing.png" caption="You can check your organisation's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
 
 Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever-cloud.com/product/clever-cloud-runners-for-heptapod/).
 
@@ -84,7 +84,7 @@ Fully integrated with Heptapod Cloud, the service can also be used from a self-m
 
 Clever Cloud Runners for Heptapod comes with the following features:
 
-* **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organization with just one click.
+* **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
 * **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
 * **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
 * **[Components Catalog](../../ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
@@ -93,7 +93,7 @@ Clever Cloud Runners for Heptapod comes with the following features:
 
 With the Clever Cloud Runner, you may run a great number of parallel jobs, paying for your actual consumption without any threshold effect.
 
-Each time it takes a job, the Clever Cloud Runner spawns a virtual machine within your Clever Cloud Organization.
+Each time it takes a job, the Clever Cloud Runner spawns a virtual machine within your Clever Cloud organisation.
 
 While the job is running, the virtual machine is visible in the Clever Cloud console, in which each job corresponds to an Application having exactly one instance attached. The instance is the virtual machine running the job.
 

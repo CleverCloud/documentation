@@ -2,7 +2,7 @@
 type: docs
 title: Unified Invoicing
 position: 1
-shortdesc: Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
+shortdesc: Each month, for each organisation, a single invoice is generated, including the whole activity (credits, add-on etc).
 tags:
 - billing
 keywords:
@@ -18,7 +18,7 @@ aliases:
 - /doc/clever-cloud-overview/unified-invoicing
 ---
 
-Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
+Each month, for each organisation, a single invoice is generated, including the whole activity (credits, add-on etc).
 
 ## Monthly invoice
 

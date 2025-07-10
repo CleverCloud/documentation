@@ -15,7 +15,7 @@ keywords:
 - cuda
 - tensorflow
 - neural
-- deep 
+- deep
 - learning
 type: docs
 draft: true
@@ -25,10 +25,10 @@ draft: true
 
 Clever Grid is the machine learning oriented platform by Clever Cloud. It provides a unified GPU ecosystem to run your scripts.
 
-### Organization, Application, Add-on
+### organisation, Application, Add-on
 
-In Clever Grid you create some **applications** under one **organization**.
-Organization is useful to manage roles and team collaboration.
+In Clever Grid you create some **applications** under one **organisation**.
+organisation is useful to manage roles and team collaboration.
 
 An application is a **stateless** virtual machine which runs your code.
 
@@ -57,9 +57,9 @@ Remember that an application is **stateless**. To save your data, you need to us
 3. Select the size of your instance(s) and the number of nodes
 4. (optional) You can choose a Template for your application
 
-{{< callout type="info" >}}Template will set up for you a compete ecosystem for a specific application. It provides add-ons and environment variables for you.  
-• Jupyter Notebook  
-• R Notebook  
+{{< callout type="info" >}}Template will set up for you a compete ecosystem for a specific application. It provides add-ons and environment variables for you.
+• Jupyter Notebook
+• R Notebook
 • …
 {{< /callout >}}
 

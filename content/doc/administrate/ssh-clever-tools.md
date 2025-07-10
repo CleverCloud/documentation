@@ -41,7 +41,7 @@ To use SSH access, you need to have a SSH key properly configured in your Clever
 ## Using Clever Tools CLI
 
 In order to access the machine via SSH using the Clever Tools CLI
-you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organization_id> <your_application_id>`
+you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organisation_id> <your_application_id>`
 
 ### Accessing your machine
 
@@ -78,7 +78,7 @@ You can connect using only your ssh client:
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com <app_id>
 ````
 
-You can omit the application ID. In that case, you will be prompted to choose an organization and an application.
+You can omit the application ID. In that case, you will be prompted to choose an organisation and an application.
 
 You can validate connection to remote server with this fingerprint :
 
@@ -114,9 +114,9 @@ Error: Failed to choose instance: 'Error while running choice script: Error: Thi
 
 First, make sure your application is running, otherwise there is no instance to connect to.
 
-If your application is up, this means you aren't allowed to access the organization or application. This might be due to permission issue.  
+If your application is up, this means you aren't allowed to access the organisation or application. This might be due to permission issue.
 If you're supposed to have access to the application, this is likely due to a key management issue. To fix it:
-* make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](../../account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud) 
+* make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](../../account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud)
 * make sure your SSH agent is using the proper private key
 
 A useful command for debugging is:
@@ -124,7 +124,7 @@ A useful command for debugging is:
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
 ```
 
-This command shows information about your SSH connection attempt, such as the key, and the organization your key is linked to.  
+This command shows information about your SSH connection attempt, such as the key, and the organisation your key is linked to.
 
-If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).  
+If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).
 If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](../../account/ssh-keys-management/#configure-your-ssh-agent)

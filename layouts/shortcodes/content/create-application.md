@@ -12,6 +12,6 @@ Refer to [Quickstart](/developers/doc/quickstart) for more details on applicatio
    1. `type` is the type of technology you rely on
    2. `app-name` the name you want for your application,
    3. `zone` deployment zone (`par` for Paris and `mtl` for Montreal)
-   4. `org` the organization ID the application will be created under.
+   4. `org` the organisation ID the application will be created under.
 
 Refer to [clever create](/developers/doc/cli/applications/) for more details on application creation with Clever Tools.

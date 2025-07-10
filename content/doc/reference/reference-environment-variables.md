@@ -301,7 +301,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |[`SESSION_TYPE`](/developers/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
-|`SQREEN_API_TOKEN` | Organization token. |  |
+|`SQREEN_API_TOKEN` | organisation token. |  |
 
 ## Python
 

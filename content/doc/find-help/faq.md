@@ -53,15 +53,15 @@ You can bind custom domain names to your applications. Please have a look at [Cu
 
 ## How can I disable one of my existing applications?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
 
 ## What type of content can I deploy?
 
 Please refer to the Acceptable Use Policy, article 2, [_Reasonable use of the Platform_](https://www.clever-cloud.com/acceptable-use-policy/).
 
-## How do I add or remove members in my organizations?
+## How do I add or remove members in my organisations?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organization's members. If your are an admin, you can revoke or grant permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organisation's members. If your are an admin, you can revoke or grant permissions.
 
 ## How do I report an application that infringes your Terms and Conditions?
 

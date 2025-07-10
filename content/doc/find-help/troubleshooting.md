@@ -185,9 +185,9 @@ curl -o /dev/null -s -w "DNS resolution: %{time_namelookup}s\nTCP connection: %{
 
 ## Others issues
 
-{{% details title="Missing GitHub organization on the application creation page" closed="true" %}}
+{{% details title="Missing GitHub organisation on the application creation page" closed="true" %}}
 
-GitHub does not give us access to organizations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
+GitHub does not give us access to organisations created or joined *after* you've linked your GitHub account to Clever Cloud (which is a good thing). So you need to let the Clever Cloud API access it. You can do that on <https://GitHub.com/settings/applications>.
 
 Feel free to reach to [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) if this page wasn't helpful enough.
 

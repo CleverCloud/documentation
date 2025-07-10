@@ -45,7 +45,7 @@ To create a Jenkins add-on, you can either use our web console or our CLI:
 
 1. Make sure you have clever-tools installed locally. Report to the [getting started](/developers/doc/cli/) guide if needed.
 2. List the available plans and options for Jenkins: `clever addon providers show jenkins`.
-3. In your terminal, you can then run `clever addon create jenkins <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organization ID the application will be created under.
+3. In your terminal, you can then run `clever addon create jenkins <app-name> --region <region> --org <org>` where `app-name` is the name you want for your add-on, `region` deployment region, and `org` the organisation ID the application will be created under.
 
 Refer to the [documentation](/developers/doc/cli/applications/) for more details on application creation with Clever Tools
 
@@ -59,7 +59,7 @@ authentication.
 ## Configure your Jenkins instance
 
 Once you accessed your Jenkins interface, we can start configuring it. A custom Clever Cloud plugin is automatically installed on your instance during the provisioning.
-This plugin will allow you to configure the runners Jenkins will start to execute your jobs. Those runners will be Docker applications provisioned directly on Clever Cloud, in your organization.
+This plugin will allow you to configure the runners Jenkins will start to execute your jobs. Those runners will be Docker applications provisioned directly on Clever Cloud, in your organisation.
 
 ### Configure your runners
 
@@ -155,7 +155,7 @@ You should also see after a few seconds a pending Job in the `Build history`, on
 
 {{< image "/developers/images/jenkins/jobs-history.png" "Jenkins jobs history" >}}
 
-At the same time, a new application should have been created in your organization, named `Jenkins agent <UUID>`. The application should be deploying and once it gets deployed, the job
+At the same time, a new application should have been created in your organisation, named `Jenkins agent <UUID>`. The application should be deploying and once it gets deployed, the job
 will start to be executed.
 
 {{< image "/developers/images/jenkins/runner-deploying.png" "Jenkins runner deploying" >}}
@@ -163,7 +163,7 @@ will start to be executed.
 At some point the application should have deployed and you should be able to click on the Job's number in the `build history` list. From there, you can open the `Console Output`
 which is basically your job logs.
 
-Once your job has ended, after the 1 minute sleep, the application provisionned in your organization will be stopped and deleted.
+Once your job has ended, after the 1 minute sleep, the application provisionned in your organisation will be stopped and deleted.
 
 You should now be able to start creating jobs that automatically build and test your projects on a Clever Cloud application.
 

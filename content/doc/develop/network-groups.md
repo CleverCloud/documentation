@@ -83,7 +83,7 @@ Network Groups operate as an overlay network, on top of the existing physical ne
 
 This approach enables the creation of flexible virtual network topologies without modifying the underlying physical infrastructure. Thanks to this overlay architecture, you can establish private and secure communications between your resources, even if they are physically dispersed across different zones of Clever Cloud's infrastructure or outside of it.
 
-Each Network Group has a unique ID (ngId), a human-readable label, and can include an optional description and tags for organization.
+Each Network Group has a unique ID (ngId), a human-readable label, and can include an optional description and tags for organisation.
 
 ### Members
 Resources connected to a Network Group can be applications or add-ons running on Clever Cloud (databases, services, etc.), or external resources outside of Clever Cloud (a third-party server, your local machine). Each member is accessible via a domain name.

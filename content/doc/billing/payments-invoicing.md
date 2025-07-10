@@ -21,7 +21,7 @@ aliases:
 
 ## Make a payment
 
-In the sidebar of the organization section, there are three alternatives to buy credit for your applications:
+In the sidebar of the organisation section, there are three alternatives to buy credit for your applications:
 
 * Credit card (powered by Stripe)
 * Paypal
@@ -30,21 +30,21 @@ In the sidebar of the organization section, there are three alternatives to buy 
 
 ## Invoices
 
-Invoices are available in the *Invoices* tab in the sidebar of the organization section. Once paid, invoices are moved to the "Paid invoice" table.
+Invoices are available in the *Invoices* tab in the sidebar of the organisation section. Once paid, invoices are moved to the "Paid invoice" table.
 
 ### Receive invoices
 
-You can change the billing email for an organization in *Information > Billing details > Billing email*.
+You can change the billing email for an organisation in *Information > Billing details > Billing email*.
 
-Also an organization member with the accountant role can receive invoices as described in the organization [roles]({{<  ref "/doc/account/organizations/#roles-and-privileges" >}}).
+Also an organisation member with the accountant role can receive invoices as described in the organisation [roles]({{<  ref "/doc/account/organizations/#roles-and-privileges" >}}).
 
 ## Change Billing Information
 
 * for personal account: available in *Profile > Informations*
 
-* for organization: available in *Information > Billing details*
+* for organisation: available in *Information > Billing details*
 
-![Clever Cloud Console: "Information menu from the organization"](/images/doc/billing-infos.png "Organization information")
+![Clever Cloud Console: "Information menu from the organisation"](/images/doc/billing-infos.png "organisation information")
 
 ## SEPA Direct Debit
 
@@ -70,5 +70,5 @@ Mandate:
 ### About invoices issuance and notifications
 
 As explained in the [Monthly Invoice documentation]({{< ref "doc/billing/unified-invoices.md#monthly-invoice" >}}), Clever Cloud issues an invoice at the beginning of every month.
-This invoice is sent to both primary and secondary email address of any Admin or Accountant within the organization.
+This invoice is sent to both primary and secondary email address of any Admin or Accountant within the organisation.
 In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.

@@ -2,7 +2,7 @@
 
 ### With the Clever Cloud console
 
-1. Go to the Clever Cloud console, and find the app you want to fine tune under it's organization.
+1. Go to the Clever Cloud console, and find the app you want to fine tune under it's organisation.
 2. Find the **Environment variables** menu and select it.
 3. In this menu, you will see a form with *VARIABLE_NAME* and *variable value* fields.
 4. Fill them with the desired values then select **Add**.

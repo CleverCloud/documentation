@@ -53,7 +53,7 @@ Install any module locally or from a remote repository by passing its URL to the
 
 If you want to limit from where a package can be imported, [place it](https://docs.google.com/document/d/1e8kOo3r51b2BWtTs_1uADIA5djfXhPT36s6eHVRIvaU/edit) in a folder named `ìnternal/`. Access to functions in `.go` files is defined depending [on their name](https://go.dev/tour/basics/3): if it starts with a capital letter it's a public function, if not it's a private function.
 
-For a complete project, a common files/folders organization can be:
+For a complete project, a common files/folders organisation can be:
 {{< filetree/container >}}
   {{< filetree/folder name="application-root/" >}}
     {{< filetree/file name="go.work" >}}

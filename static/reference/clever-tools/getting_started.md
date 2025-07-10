@@ -152,7 +152,7 @@ NOTES:
 #### Using chocolatey
 
 {{< callout type="warning" >}}
-We recently moved from Bintray to a self-hosted Nexus repository available at <ahttps://nexus.clever-cloud.com>.  
+We recently moved from Bintray to a self-hosted Nexus repository available at <ahttps://nexus.clever-cloud.com>.
 If you were using Bintray to install our `.nupkg` packages, you will need to remove the old source.
 {{< /callout >}}
 
@@ -239,7 +239,7 @@ cd /path/to/your/application
 clever link <app_id>
 
 # You can also use the application name (make sure to specify the
-# organization name if your application is in an organization.
+# organisation name if your application is in an organisation.
 clever link --org <org_name> <app_name>
 
 # Unlink an application
@@ -247,9 +247,9 @@ clever unlink <app_id>
 ```
 
 {{< callout type="info" >}}
-Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.  
-This file can be commited safely, others team members working on this repository will not have to link the application again.  
-This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.  
+Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.
+This file can be commited safely, others team members working on this repository will not have to link the application again.
+This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.
 {{< /callout >}}
 
 ## Deploying new code

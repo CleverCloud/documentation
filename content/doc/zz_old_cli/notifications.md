@@ -26,7 +26,7 @@ and decide where to send corresponding notifications.
 
 Historically and by default, deployment result e-mails (deployment succeeded or
 failed) were always sent to the owners of an application, namely the user
-themselves or the organization's members.
+themselves or the organisation's members.
 
 Using the `notify-email` command of *clever-tools*, you can choose to disable
 this or to restrict it to only some applications.

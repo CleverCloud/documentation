@@ -17,7 +17,7 @@ draft: false
 
 ## Web Console Features
 
-The Clever Cloud Console (<https://console.clever-cloud.com>) is your control center for managing applications, add-ons, and organizations. Here are features that can enhance your workflow:
+The Clever Cloud Console (<https://console.clever-cloud.com>) is your control center for managing applications, add-ons, and organisations. Here are features that can enhance your workflow:
 
 ### Advanced Menu Filtering
 
@@ -87,7 +87,7 @@ https://console.clever-cloud.com/goto/id
 
 #### Global Search
 
-Press the `/` key anywhere in the Console to search for applications, add-ons, or organizations by name or ID.
+Press the `/` key anywhere in the Console to search for applications, add-ons, or organisations by name or ID.
 
 #### Keyboard Navigation
 
@@ -182,7 +182,7 @@ View all your applications with:
 clever applications list
 ```
 
-This command groups applications by organization for easy reference.
+This command groups applications by organisation for easy reference.
 
 ### JSON Output Support
 
@@ -301,7 +301,7 @@ Each application maintains:
 Distribute your services through Clever Cloud:
 
 1. Create an add-on provider
-2. Make it available in your organizations
+2. Make it available in your organisations
 3. Optionally list it in the Clever Cloud Marketplace
 
 [Marketplace API documentation](/developers/doc/marketplace/)

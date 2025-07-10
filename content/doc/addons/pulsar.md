@@ -80,7 +80,7 @@ We maintain up-to-date Pulsar clusters based on the official Apache Pulsar relea
 - **Parallel processing and workflows**. You can efficiently distribute a large number of tasks among multiple workers (compressing text files, sending email notifications).
 - **Data streaming from IoT devices**. For example, a residential sensor can stream data to backend servers.
 - **Refreshing distributed caches**. For example, an application can publish invalidation events to update the IDs of objects that have changed.
-- **Real-time event distribution**. Events, raw or processed, may be made available to multiple applications across your team and organization for real time processing.
+- **Real-time event distribution**. Events, raw or processed, may be made available to multiple applications across your team and organisation for real time processing.
 
 ## Create a Pulsar add-on
 

@@ -17,7 +17,7 @@ aliases:
 type: docs
 ---
 
-Keycloak is an open source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
+Keycloak is an open source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
 To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
@@ -169,7 +169,7 @@ Those flows could be affected to your own clients if you need.
 Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](../../metrics/#publish-your-own-metrics) to visualize them.
 
 You can also use a Grafana dashboard ready to import, available starting with Keycloak `26.2` release:
-- Go to the `Metrics in Grafana` section of your organization or personal space in [Console](https://console.clever-cloud.com/)
+- Go to the `Metrics in Grafana` section of your organisation or personal space in [Console](https://console.clever-cloud.com/)
 - Open Grafana, click on the `+` icon in the upper right corner and select `Import` dashboard
 - Import this [JSON file](https://cc-keycloak.cellar-c2.services.clever-cloud.com/keycloak-grafana-dashboard.json)
 

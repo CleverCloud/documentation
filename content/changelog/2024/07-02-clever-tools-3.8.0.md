@@ -28,7 +28,7 @@ clever restart --app app_id
 clever restart --app my_app_name
 clever restart --app my_app_name --org my_org_name
 ```
-`clever applications list` new command can be used from any folder of your system. It prints details about applications across your organizations. You can filter the result with `--org` or `-o` option. It includes IDs, names and local aliases (if available) in a table.
+`clever applications list` new command can be used from any folder of your system. It prints details about applications across your organisations. You can filter the result with `--org` or `-o` option. It includes IDs, names and local aliases (if available) in a table.
 
 ## More (consistent) options
 

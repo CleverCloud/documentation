@@ -38,7 +38,7 @@ There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
 * Read User Repositories
 
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organization, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+  If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -100,13 +100,13 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 {{% steps %}}
 
-#### Select the organization
+#### Select the organisation
 
-Choose the organization you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
+Choose the organisation you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
 
 #### Click on "Create an application"
 
-Find it in the **Organization Manager** panel, at the top left of the left menu.
+Find it in the **organisation Manager** panel, at the top left of the left menu.
 
 This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
@@ -183,7 +183,7 @@ git push <remote-name> <branch-name>:master
 
   Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: that is, either someone has full read write access (because they're a collaborator) or they have no access.
 
-  However, if you set up an organization, create the repository under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+  However, if you set up an organisation, create the repository under the aegis of the organisation, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
   {{< /tab >}}
 
   {{< tab >}}
@@ -292,7 +292,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   Here we will assume you want to create a new add-on and link it to your application.
 
   1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-  2. Go to the organization in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
+  2. Go to the organisation in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
@@ -300,13 +300,13 @@ Clever Cloud provides multiple add-ons to work with your applications:
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 
-  The add-on will now be available in your organization, and corresponding environment variables will be available for the applications linked to the add-on you just created.
+  The add-on will now be available in your organisation, and corresponding environment variables will be available for the applications linked to the add-on you just created.
   {{< /tab >}}
 
   {{< tab >}}
   To link an already existing add-on with your application, just follow these steps:
 
-  1. Go in the organization of your application.
+  1. Go in the organisation of your application.
   2. Click on the name of the application you want to link with your add-on.
   3. Go in the **Service dependencies** section.
   4. Select the add-on you want to link under the "Link add-ons" dropdown menu.

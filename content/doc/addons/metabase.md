@@ -14,7 +14,7 @@ keywords:
 type: docs
 ---
 
-[Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organization in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
+[Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
 {{< callout type="info" >}}Share your feedback on Metabase operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase){{< /callout >}}
 
@@ -203,7 +203,7 @@ Even if you already have a self-hosted Metabase instance, you might want to migr
 
 Here is how you can do it:
 
-1. Create an instance of the Metabase add-on in your Clever Cloud organization
+1. Create an instance of the Metabase add-on in your Clever Cloud organisation
 2. In the add-on Java application, set `CC_METABASE_VERSION` to the same version as your existing self-hosted instance
 3. In the add-on Java application, set `MB_ENCRYPTION_SECRET_KEY` to the same value as it is in your existing self-hosted instance (or let it to its current random value if you did not enable credentials encryption in your existing self-hosted instance)
 4. Stop the Java application of your Clever Cloud add-on

@@ -35,4 +35,4 @@ clever open
 
 You'll get a basic React application running on Bun, deployed on Clever Cloud.
 
-* [Learn more about JavaScript on Clever Cloud](/developers/doc/applications/javascript/)
+* [Learn more about Bun & Node.js on Clever Cloud](/developers/doc/applications/nodejs)

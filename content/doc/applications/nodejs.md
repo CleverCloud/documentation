@@ -4,8 +4,15 @@ linkTitle: Node.js & Bun
 title: Node.js & Bun runtime
 description: Run JavaScript applications on Clever Cloud with Node.js and npm, or alternative tools (Bun, Deno, pnpm or Yarn)
 aliases:
+- /doc/applications/javascript
 - /doc/applications/javascript/by-framework/nodejs
+- /doc/deploy/application/node
+- /doc/getting-started/by-language/node
+- /doc/deploy/application/javascript/
+- /doc/deploy/application/javascript/by-framework/meteor
+- /doc/deploy/application/javascript/by-framework/nodejs
 - /doc/nodejs/nodejs
+- /doc/partials/language-specific-deploy/node
 ---
 
 ## Overview

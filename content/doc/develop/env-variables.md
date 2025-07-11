@@ -231,7 +231,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
   {{< card link="../../../guides/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
   {{< card link="../../../guides/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
-  {{< card link="/developers/doc/applications/javascript/nodejs/#environment-injection" title="Node.js" icon="node" >}}
+  {{< card link="/developers/doc/applications/nodejs#environment-injection" title="Node.js" icon="node" >}}
   {{< card link="../../../guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/applications/php/#environment-injection" title="PHP" icon="php" >}}
   {{< card link="/developers/doc/applications/python/#environment-injection" title="Python" icon="python" >}}

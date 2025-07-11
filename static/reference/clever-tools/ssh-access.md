@@ -37,7 +37,7 @@ In order to access the machine via SSH using the Clever Tools CLI
 
 [//]: # (ref "/doc/quickstartclever-tools-intro.md)
 
-you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organization_id> <your_application_id>`
+you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organisation_id> <your_application_id>`
 
 ### Accessing your machine
 

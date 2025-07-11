@@ -16,12 +16,12 @@ type: docs
 
 Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:
 
- - An action performed by you or by a member of your organization
+ - An action performed by you or by a member of your organisation
  - An action performed by Clever Cloud
 
  ## Re-deployment triggered by you
 
-This happens when you or a member of your organization performs an action on the application, like:
+This happens when you or a member of your organisation performs an action on the application, like:
 
 - [Restart or rebuild](../apps-management/#start-restart-and-stop) from the Console or [the CLI](../../cli/)
 - Push a new commit from Git or GitHub
@@ -33,7 +33,7 @@ This happens when you or a member of your organization performs an action on the
 Each block indicates if the deployment was successful or unsuccessful, along with the following information:
 
 - **Date**: when the activity happened and from where (`Console`, `Git`, `Github` or `Monitoring`)
-- **Author**: which member of your organization triggered the activity
+- **Author**: which member of your organisation triggered the activity
 - **Commit ID**: on which commit the activity happened
 - **Redeploy this commit**: the option to redeploy a previous commit (useful to quickly roll-back if needed)
 

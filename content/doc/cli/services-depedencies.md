@@ -4,7 +4,7 @@ title: Services Dependencies
 description: Use Clever Tools to manage services dependencies
 ---
 
-On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organization. Add-ons are preconfigured with an exposed configuration. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.
+On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organisation. Add-ons are preconfigured with an exposed configuration. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.
 
 Each can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`).
 

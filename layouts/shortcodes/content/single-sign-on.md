@@ -1,5 +1,5 @@
 
-Clever Cloud has its own SSO (Single Sign-On) authentication to authenticate to various services. All members of your organization will be able to authenticate to the services in the same organization, using their Clever Cloud account. When a service needs to authenticate you, it redirects to a login form. Enter your Clever Cloud credentials as well as your 2FA Authentication code if needed.
+Clever Cloud has its own SSO (Single Sign-On) authentication to authenticate to various services. All members of your organisation will be able to authenticate to the services in the same organisation, using their Clever Cloud account. When a service needs to authenticate you, it redirects to a login form. Enter your Clever Cloud credentials as well as your 2FA Authentication code if needed.
 
 ![SSO Needed Rights](/images/sso-needed-rights.png)
 

@@ -19,8 +19,8 @@ The release `26.2.1` of Keycloak is available on Clever Cloud. [This new branch 
 
 ## Grafana dashboard
 
-Each Clever Cloud account organization [comes with a pre-configured Grafana service](/developers/doc/metrics/#publish-your-own-metrics). With recent Keycloak enhancements on metrics and observability, we've worked on a Grafana dashboard ready to import:
-- Go to the `Metrics in Grafana` section of your organization or personal space in [Console](https://console.clever-cloud.com/)
+Each Clever Cloud account organisation [comes with a pre-configured Grafana service](/developers/doc/metrics/#publish-your-own-metrics). With recent Keycloak enhancements on metrics and observability, we've worked on a Grafana dashboard ready to import:
+- Go to the `Metrics in Grafana` section of your organisation or personal space in [Console](https://console.clever-cloud.com/)
 - Open Grafana, click on the `+` icon in the upper right corner and select `Import` dashboard
 - Import this [JSON file](https://cc-keycloak.cellar-c2.services.clever-cloud.com/keycloak-grafana-dashboard.json)
 

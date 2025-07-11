@@ -3,10 +3,10 @@
 {{- errorf "missing tooltip title" -}}
 {{- end -}}
 {{ .Scratch.Set "title" $title }}
-{{ $def := index .Site.Data.glossary (.Scratch.Get "title")   }}
+{{ $def := index .Site.Data.tooltips (.Scratch.Get "title")   }}
 
 {{- if not $def -}}
-{{- errorf "%s not in glossary" $title  -}}
+{{- errorf "%s not in tooltips" $title  -}}
 {{- end -}}
 
 
@@ -15,7 +15,7 @@
     &lbrace;&lbrace; &lt; tooltip  title="{{$title}}" &gt; &rbrace;&rbrace;{{ .Inner }}&lbrace;&lbrace; &lt; /tooltip &gt; &rbrace;&rbrace;
   <hr />
 {{ end }}
-<a href="#" data-placement="top" data-animation="false" data-toggle="tooltip" title="{{ $def }}">{{ .Inner }}</a> 
+<a href="#" data-placement="top" data-animation="false" data-toggle="tooltip" title="{{ $def }}">{{ .Inner }}</a>
 {{ if $.Site.Params.Debug }}
 </div>
 {{ end }}

@@ -96,6 +96,8 @@ Symfony
 syslog
 TLS
 toolchain
+tooltip
+tooltips
 URIs
 VSCode
 WAF

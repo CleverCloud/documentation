@@ -27,7 +27,8 @@ Find here specific instructions related to your application's language.
   {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
   {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
   {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
-  {{< card link="/developers/doc/applications/javascript/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
   {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
   {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
   {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}

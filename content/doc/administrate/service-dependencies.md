@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Service Dependencies
-position: 6
-shortdesc: Materialize the logical dependencies between your applications with service dependencies
+description: Materialize the logical dependencies between your applications with service dependencies
 tags:
 - administrate
 keywords:
@@ -10,8 +9,6 @@ keywords:
 - dependencies
 - services
 - configuration
-type: docs
-
 aliases:
 - /doc/admin-console/service-dependencies
 ---

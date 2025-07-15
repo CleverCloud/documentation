@@ -1,16 +1,13 @@
 ---
 type: docs
 title: Elixir
-shortdesc: Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine…
+description: Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine…
 tags:
 - deploy
 keywords:
 - elixir
 - phoenix
 - erlang
-str_replace_dict:
-  "@application-type@": "Elixir"
-type: docs
 aliases:
 - /doc/deploy/application/elixir
 - /doc/deploy/application/elixir/elixir

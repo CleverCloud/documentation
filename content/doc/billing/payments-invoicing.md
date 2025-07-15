@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Payments & invoicing
-position: 5
-shortdesc: Managing invoices and payment on Clever Cloud
+description: Managing invoices and payment on Clever Cloud
 tags:
 - billing
 keywords:
@@ -13,7 +12,6 @@ keywords:
 - payment
 - stripe
 - sepa
-type: docs
 aliases:
 - /doc/admin-console/invoices-payments
 ---

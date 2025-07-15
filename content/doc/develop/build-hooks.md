@@ -1,13 +1,12 @@
 ---
 type: docs
 title: Deployment Hooks
-shortdesc: Hooks allow to run custom tasks during deployment
+description: Hooks allow to run custom tasks during deployment
 tags:
 - develop
 keywords:
 - apps
 - hooks
-type: docs
 ---
 ## Deployment lifecycle
 
@@ -122,6 +121,6 @@ These hooks are perfect for:
 - clean-up
 
 {{< callout emoji="🧹" >}}
-**This hook is deprecated**  
+**This hook is deprecated**
 These hooks replace the older `postDeploy` hook, which is now deprecated.
 {{< /callout >}}

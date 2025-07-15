@@ -1,9 +1,7 @@
 ---
-title: 'Write your own CI/CD'
-description:
-date: 2024-03-28T12:28:19+01:00
-draft: false
 type: docs
+title: Write your own CI/CD
+description: Write your own CI/CD to deploy to Clever Cloud from GitHub or GitLab
 ---
 
 {{< hextra/hero-subtitle >}}

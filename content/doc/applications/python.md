@@ -1,15 +1,11 @@
 ---
 type: docs
 title: Python
-
-shortdesc: Python 2.7 and 3.12 are available on our platform. You can use git to deploy your application.
+description: Python 2.7 and 3.12 are available on our platform. You can use git to deploy your application.
 tags:
 - deploy
 keywords:
 - python
-str_replace_dict:
-  "@application-type@": "Python"
-type: docs
 aliases:
 - /doc/deploy/application/python
 - /doc/deploy/application/python/python_apps/

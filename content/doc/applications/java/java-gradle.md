@@ -1,18 +1,14 @@
 ---
 type: docs
 title: Gradle
-position: 2
-shortdesc: Gradle is a project automation tool that builds…
+description: Gradle is a project automation tool that builds…
 tags:
 - deploy
 keywords:
 - java
 - gradle
-str_replace_dict:
-  "@application-type@": "Java or Groovy + Gradle"
 aliases:
 - /doc/deploy/application/java/java-gradle
-type: docs
 ---
 
 ## Overview

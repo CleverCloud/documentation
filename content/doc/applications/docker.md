@@ -1,14 +1,11 @@
 ---
 type: docs
 title: Docker
-shortdesc: Docker is an easy, lightweight virtualized environment for portable applications.
+description: Docker is an easy, lightweight virtualized environment for portable applications
 keywords:
 - docker
 tags:
 - deploy
-str_replace_dict:
-  "@application-type@": "Docker"
-type: docs
 aliases:
 - /doc/deploy/application/docker
 - /doc/deploy/application/docker/docker

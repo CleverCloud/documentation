@@ -1,9 +1,8 @@
 ---
 type: docs
-title: Networking and IP addresses ranges
 linkTitle: Networking and IP
-position: 3
-shortdesc: What are my application's outgoing IP?
+title: Networking and IP addresses ranges
+description: What are my application's outgoing IP?
 keywords:
 - network
 - ip
@@ -12,7 +11,6 @@ keywords:
 - security
 tags:
 - administrate
-type: docs
 ---
 
 Some services external to Clever Cloud require filtering their clients' source IPs. They

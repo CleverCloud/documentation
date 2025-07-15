@@ -1,19 +1,16 @@
 ---
+type: docs
 title: Elastic
-shortdesc: Elastic guides
-weight: 1
+description: Elastic guides
 tags:
 - guides
 keywords:
 - elastic
 - kibana
 - APM
-
 aliases:
 - /doc/deploy/addon/elastic/kibana
-type: "docs"
 comments: false
-
 draft: true
 ---
 {{< cards >}}

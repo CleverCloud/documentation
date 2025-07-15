@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Application Management
-position: 7
-shortdesc: Starting, restarting, stopping your applications
+description: Starting, restarting, stopping your applications
 tags:
 - dashboard-setup
 keywords:
@@ -10,7 +9,6 @@ keywords:
 - deploy
 - restart
 - logs
-type: docs
 aliases:
 - /doc/admin-console/apps-management
 ---

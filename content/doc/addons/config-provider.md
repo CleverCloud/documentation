@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Configuration provider
-shortdesc: Share configuration between apps
+description: Share configuration between apps
 tags:
 - addons
 keywords:
@@ -10,7 +10,6 @@ keywords:
 aliases:
 - /deploy/addon/config-provider
 - /doc/deploy/addon/config-provider
-type: docs
 ---
 
 The configuration provider add-on helps you to create groups of environment variables that you can share with multiple applications.

@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Jenkins
-position: 10
-shortdesc: This add-on provides a Jenkins master instance with a list of preinstalled plugins.
+description: This add-on provides a Jenkins master instance with a list of preinstalled plugins
 tags:
 - addons
 keywords:
@@ -13,7 +12,6 @@ keywords:
 - runner
 aliases:
 - /doc/deploy/addon/jenkins
-type: docs
 ---
 
 Jenkins is an an open source automation server which enables developers to build, test, and deploy their software. It facilitates continuous integration (CI) and continuous delivery (CD).

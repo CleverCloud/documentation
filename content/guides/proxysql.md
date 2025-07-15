@@ -1,8 +1,7 @@
 ---
 type: docs
 title: ProxySQL
-
-shortdesc: How to configure and use ProxySQL for MySQL add-ons
+description: How to configure and use ProxySQL for MySQL add-ons
 tags:
 - addons
 keywords:
@@ -16,7 +15,6 @@ keywords:
 aliases:
 - /deploy/addon/mysql/proxysql
 - /doc/deploy/addon/mysql/proxysql
-type: docs
 ---
 
 ProxySQL is a tool available on applications instances to help you manage your connection pool towards your MySQL add-on.

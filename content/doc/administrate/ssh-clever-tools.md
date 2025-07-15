@@ -1,8 +1,8 @@
 ---
 type: docs
-title: SSH access to running instances
 linkTitle: SSH access
-shortdesc: How to SSH access running instances on Clever Cloud
+title: SSH access to running instances
+description: How to SSH access running instances on Clever Cloud
 tags:
 - administrate
 keywords:
@@ -10,7 +10,6 @@ keywords:
 - cli
 - clever-tools
 - putty
-type: docs
 aliases:
 - /doc/doc/admin-console/ssh-keys
 ---

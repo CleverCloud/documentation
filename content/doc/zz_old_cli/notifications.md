@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Notifications
-position: 6
-shortdesc: How to setup and configure notifications via clever-tools
+description: How to setup and configure notifications via clever-tools
 tags:
 - cli
 - reference

@@ -1,15 +1,13 @@
 ---
 type: docs
 title: Troubleshooting
-position: 4
-shortdesc: Common issues and errors you may have
+description: Common issues and errors you may have
 tags:
 - help
 keywords:
 - support
 - git issues
 - troubleshoot
-type: docs
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

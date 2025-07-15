@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Django
-shortdesc: The goal of this article is to show you how to deploy a Django application on Clever Cloud.
+description: The goal of this article is to show you how to deploy a Django application on Clever Cloud
 tags:
 - deploy
 keywords:
@@ -10,9 +10,7 @@ keywords:
 aliases:
 - /doc/deploy/application/python/tutorials/python-django-sample
 - /doc/python/python-django-sample
-type: docs
 ---
-
 
 ## Overview
 
@@ -21,7 +19,7 @@ The application is a very basic one. More information about the application in t
 
 {{< content "create-application" >}}
 
- {{< content "set-env-vars" >}}
+{{< content "set-env-vars" >}}
 
 ## Configure your Django application
 

@@ -1,15 +1,12 @@
 ---
 type: docs
 title: Ruby Rack
-shortdesc: How to deploy a web application using Rack on Clever Cloud.
+description: How to deploy a web application using Rack on Clever Cloud
 tags:
 - deploy
 keywords:
 - ruby
 - rack
-str_replace_dict:
-  "@application-type@": "Ruby"
-type: docs
 aliases:
 - /doc/deploy/application/ruby/tutorials/ruby-rack-app
 ---

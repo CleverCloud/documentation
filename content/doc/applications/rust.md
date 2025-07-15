@@ -1,15 +1,12 @@
 ---
 type: docs
 title: Rust
-shortdesc: Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety.
+description: Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety
 tags:
 - deploy
 keywords:
 - rust
 - cargo
-str_replace_dict:
-  "@application-type@": "Rust"
-type: docs
 aliases:
 - /doc/deploy/application/rust
 - /doc/deploy/application/rust/rust

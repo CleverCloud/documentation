@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Keycloak
-description: This add-on provides a one-click Keycloak single sign-on and identity and access management (IAM) solution hosted by Clever Cloud, built with *Please open-it*.
+description: This add-on provides a one-click Keycloak single sign-on and identity and access management (IAM) solution hosted by Clever Cloud, built with Please open-it
 tags:
 - addons
 keywords:
@@ -14,7 +14,6 @@ keywords:
 - OpenID
 aliases:
 - /doc/deploy/addon/Keycloak
-type: docs
 ---
 
 Keycloak is an open source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.

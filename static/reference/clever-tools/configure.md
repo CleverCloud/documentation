@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Application configuration with Clever Tools
-shortdesc: Configure an application using the Clever Cloud CLI tool
+description: Configure an application using the Clever Cloud CLI tool
 tags:
 - cli
 - reference

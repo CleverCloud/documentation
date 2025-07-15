@@ -3,7 +3,6 @@ type: docs
 linkTitle: V (Vlang)
 title: V (Vlang) application runtime
 description: Build and deploy your V (Vlang) based API and applications
-type: docs
 ---
 
 ## Overview

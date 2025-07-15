@@ -1,9 +1,7 @@
 ---
-title: 'Deploy from GitLab'
-description:
-date: 2024-03-28T12:04:11+01:00
-draft: false
 type: docs
+title: Deploy from GitLab
+description: How to set up you CI/CD from GitLab to deploy to Clever Cloud
 ---
 
 {{< hextra/hero-subtitle >}}

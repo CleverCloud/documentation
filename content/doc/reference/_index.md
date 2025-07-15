@@ -1,7 +1,7 @@
 ---
 title: Configuration List
 weight: 10
-Description: All Clever Cloud advanced features and tools
+description: All Clever Cloud advanced features and tools
 tags:
 - cli
 - add-ons
@@ -10,12 +10,9 @@ tags:
 keywords:
 - list
 - authentication
-
 aliases:
 - /docs
-type: "docs"
 comments: false
-
 ---
 
 {{< cards >}}

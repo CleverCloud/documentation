@@ -1,15 +1,12 @@
 ---
 type: docs
 title: Go
-shortdesc: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language.
+description: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language
 tags:
 - deploy
 keywords:
 - go
 - golang
-str_replace_dict:
-  "@application-type@": "Go"
-type: docs
 aliases:
 - /doc/deploy/application/golang
 - /doc/deploy/application/golang/go

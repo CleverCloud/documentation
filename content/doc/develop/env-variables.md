@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Environment variables
-position: 8
-shortdesc: How to setup and configure environment variables for apps and add-ons
+description: How to setup and configure environment variables for apps and add-ons
 tags:
 - dashboard-setup
 - apps
@@ -11,7 +10,6 @@ keywords:
 - env
 - variables
 - environment variables
-type: docs
 ---
 
 Clever Cloud allows you to define environment variables that will be

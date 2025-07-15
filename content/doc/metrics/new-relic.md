@@ -1,8 +1,7 @@
 ---
 type: docs
 title: New Relic
-position: 2
-shortdesc: Configuring Newrelic on Clever Cloud
+description: Configuring Newrelic on Clever Cloud
 tags:
 - apps
 keywords:

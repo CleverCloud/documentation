@@ -1,11 +1,9 @@
 ---
 type: docs
 title: Warp 10
-shortdesc: Warp 10. Geo Time series database. Presentations, concepts and examples
+description: Warp 10. Geo Time series database. Presentations, concepts and examples
 tags:
   - metrics
-aliases:
-- /doc/administrate/metrics/warp10/
 keywords:
   - GTS
   - warp 10
@@ -13,6 +11,8 @@ keywords:
   - visualization
   - time series
   - database
+aliases:
+- /doc/administrate/metrics/warp10/
 ---
 
 ## Main concepts

@@ -9,7 +9,6 @@ keywords:
 - community
 - gitter
 - irc
-type: docs
 draft: true
 ---
 

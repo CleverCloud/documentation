@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Kibana
-#position: 7
-shortdesc: How  to deploy a custom Kibana for specific using cases.
+description: How to deploy a custom Kibana for specific using cases
 tags:
 - addons
 keywords:
@@ -12,8 +11,6 @@ keywords:
 - kibana
 aliases:
 - /doc/deploy/addon/elastic/kibana
-type: docs
-
 ---
 
 {{< callout type="warning" >}}

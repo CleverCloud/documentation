@@ -2,8 +2,7 @@
 type: docs
 title: Pricing
 draft: true
-position: 1
-shortdesc: Pricing table of Clever Cloud's runtimes
+description: Pricing table of Clever Cloud's runtimes
 tags:
 - billing
 keywords:

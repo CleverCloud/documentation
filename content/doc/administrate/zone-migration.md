@@ -1,12 +1,12 @@
 ---
 type: docs
 title: Zone Migration
+description: Migrate your applications and add-ons from one zone to another
 tags:
 - migration
 - zone
 - application
 - addon
-type: docs
 ---
 
 In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.

@@ -11,7 +11,6 @@ keywords:
 - dashboard
 - data visualization
 - dataviz
-type: docs
 ---
 
 [Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.

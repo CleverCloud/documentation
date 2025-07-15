@@ -1,6 +1,8 @@
 ---
 weight: 5
+type: docs
 title: "Administrate"
+description: Manage your applications, add-ons, and more on Clever Cloud
 comments: false
 ---
 
@@ -21,5 +23,5 @@ comments: false
   {{< card link="tcp-redirections" title="TCP redirections with Clever Tools" icon="tcp-ip-service" >}}
   {{< card link="cache" title="Varnish as HTTP cache" icon="bubbles" >}}
   {{< card link="zone-migration" title="Zone migration" icon="map-pin" >}}
-  
+
 {{< /cards >}}

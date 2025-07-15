@@ -1,7 +1,7 @@
 ---
 type: docs
 title: MailPace
-shortdesc: MailPace is a fast & Reliable Transactional Email 
+description: MailPace is a fast & reliable transactional email
 tags:
 - addons
 keywords:
@@ -9,17 +9,15 @@ keywords:
 - mail
 - email
 - smtp
-- php mail function
 aliases:
 - /doc/deploy/addon/mailpace
-type: docs
 ---
 
-MailPace is a fast & Reliable Transactional Email.
+MailPace is a fast & reliable transactional email.
 
 ## Overview
 
-[MailPace](https://mailpace.com/) is a SMTP provider which can be used on Clever Cloud to send emails.
+[MailPace](https://mailpace.com/) is an SMTP provider which can be used on Clever Cloud to send emails.
 
 MailPace provides an HTTPS API, SMTP Server and several libraries for sending emails that completely removes the need for any email setup or active email management. Emails sent through the MailPace API can come from any address for any domain that you are able to verify ownership of through a simple DNS update.
 

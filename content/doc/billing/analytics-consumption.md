@@ -1,14 +1,12 @@
 ---
 type: docs
 title: Analytics and consumption
-position: 6
-shortdesc: How credit consumption and add-on billing works.
+description: How credit consumption and add-on billing works
 tags:
 - billing
 keywords:
 - billing
 - consumption
-type: docs
 aliases:
 - /doc/admin-console/analytics-consumption
 ---

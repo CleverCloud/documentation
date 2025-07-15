@@ -1,14 +1,12 @@
 ---
 type: docs
 title: WordPress
-shortdesc: This article shows you how to deploy a WordPress-based website on Clever Cloud.
+description: This article shows you how to deploy a WordPress-based website on Clever Cloud
 tags:
 - deploy
 keywords:
 - php
 - wordpress
-str_replace_dict:
-  "@application-type@": "PHP"
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-wordpress
 - /doc/php/tutorial-wordpress

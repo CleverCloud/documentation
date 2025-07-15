@@ -1,14 +1,13 @@
 ---
+type: docs
 title: Guides
-shortdesc: Step by step guides to deploy specific apps and frameworks on Clever Cloud
+description: Step by step guides to deploy specific apps and frameworks on Clever Cloud
 tags:
 - guides
 aliases:
 - /doc/deploy/application/docker/tutorials
-- /doc/deploy/application/python/tutorials
-type: "docs"
-comments: false
 llmsTxtOptional: true
+comments: false
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

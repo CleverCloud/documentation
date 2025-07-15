@@ -7,9 +7,6 @@ tags:
 keywords:
 - nodejs
 - mongodb
-str_replace_dict:
-  "@application-type@": "Node"
-type: docs
 aliases:
 - /doc/deploy/application/javascript/tutorials/node-js-mongo-db
 ---

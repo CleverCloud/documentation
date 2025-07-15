@@ -1,7 +1,7 @@
 ---
 weight: 4
 title: Metrics
-shortdesc: Access and manage metrics on Clever Cloud
+description: Access and manage metrics on Clever Cloud
 tags:
 - app
 - add-on
@@ -9,10 +9,8 @@ tags:
 keywords:
 - grafana
 - warp10
-
 aliases:
 - /doc/administrate/metrics/overview
-type: "docs"
 comments: false
 ---
 {{< callout type="warning" >}}

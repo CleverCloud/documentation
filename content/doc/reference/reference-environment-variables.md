@@ -11,7 +11,6 @@ keywords:
 - env variables
 type: docs
 aliases:
-- /developers/doc/get-help/reference-environment-variables
 - /doc/get-help/reference-environment-variables
 ---
 

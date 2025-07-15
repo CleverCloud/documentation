@@ -8,7 +8,6 @@ keywords:
 - quickstart
 aliases:
 - /deploy
-- /developers/doc/getting-started/quickstart
 - /doc/getting-started/quickstart
 - /getting-started/quickstart
 type: "docs"

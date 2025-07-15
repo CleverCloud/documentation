@@ -3,8 +3,7 @@ type: docs
 title: Notifications, WebHooks
 description: Configure Clever Cloud Nexus repository for you distribution
 aliases:
-- /developers/doc/cli/notifications
-- /developers/doc/reference/clever-tools/notifications
+- /doc/cli/notifications
 - /doc/administrate/clever-tools/notifications
 - /doc/reference/clever-tools/notifications
 ---

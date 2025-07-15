@@ -15,7 +15,6 @@ keywords:
 - sepa
 type: docs
 aliases:
-- /developers/doc/admin-console/invoices-payments
 - /doc/admin-console/invoices-payments
 ---
 

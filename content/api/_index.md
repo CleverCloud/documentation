@@ -7,7 +7,6 @@ draft: false
 aliases:
 - /doc/openapi
 - /doc/clever-cloud-apis/cc-api
-- /developers/doc/clever-cloud-apis/cc-api
 ---
 
 {{< hextra/hero-subtitle >}}

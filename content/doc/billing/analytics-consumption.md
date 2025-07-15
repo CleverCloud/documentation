@@ -10,7 +10,6 @@ keywords:
 - consumption
 type: docs
 aliases:
-- /developers/doc/admin-console/analytics-consumption
 - /doc/admin-console/analytics-consumption
 ---
 

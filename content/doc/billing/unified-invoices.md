@@ -14,7 +14,6 @@ keywords:
 - payments
 type: docs
 aliases:
-- /developers/doc/clever-cloud-overview/unified-invoicing
 - /doc/clever-cloud-overview/unified-invoicing
 ---
 

@@ -8,6 +8,8 @@ tags:
 keywords:
 - preferences
 - organisation
+aliases:
+- /doc/account/administrate-organization
 ---
 
 After you create an account, your account is tied to a first organisation named as 'Personal Space'. You can use the Personal Space for individual projects or personal use, but only you as a user can access it.

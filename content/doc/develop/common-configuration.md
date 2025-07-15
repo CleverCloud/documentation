@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Configuration for all instances
-position: 5
-shortdesc: Learn how to do some basic setup configuration to get started
+description: Learn how to do some basic setup configuration to get started
 tags:
 - reference
 - dashboard-setup
@@ -10,7 +9,6 @@ keywords:
 - common
 - configuration
 - hooks
-type: docs
 ---
 
 Each instance type (php,java,python,go,ruby…) has its own configuration. However, some of

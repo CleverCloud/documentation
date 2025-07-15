@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Ekg-statsd
-shortdesc: This tutorial helps you configure ekg-statsd package on your Haskell application to push custom metrics
+description: This tutorial helps you configure ekg-statsd package on your Haskell application to push custom metrics
 tags:
 - deploy
 - administrate
@@ -10,7 +10,6 @@ keywords:
 - ekg-statsd
 - logs
 - metrics
-type: docs
 aliases:
 - /doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics.md
 ---

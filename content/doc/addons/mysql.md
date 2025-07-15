@@ -1,8 +1,7 @@
 ---
 type: docs
 title: MySQL
-
-Description: MySQL is an open source relational database management system (RDBMS).
+description: MySQL is an open source relational database management system (RDBMS)
 tags:
 - addons
 keywords:
@@ -12,7 +11,6 @@ keywords:
 - RDBMS
 aliases:
 - /doc/deploy/addon/mysql/mysql
-type: docs
 ---
 ## Overview
 MySQL is an open source relational database management system (RDBMS). Clever Cloud's add-on uses the [Percona Server](https://www.percona.com/mysql/software/percona-server-for-mysql), a 100% compatible open source implementation, with performances improvements and more features.

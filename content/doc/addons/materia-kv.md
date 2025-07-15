@@ -12,7 +12,6 @@ keywords:
 - redis
 aliases:
 - /doc/addons/materia-db-kv/
-type: docs
 draft: false
 ---
 

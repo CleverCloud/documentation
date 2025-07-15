@@ -1,13 +1,12 @@
 ---
 type: docs
 title: Workers
-shortdesc: Workers allow to run background tasks running in parallel of your application
+description: Workers allow to run background tasks running in parallel of your application
 tags:
 - develop
 keywords:
 - apps
 - workers
-type: docs
 ---
 
 ## Workers

@@ -1,19 +1,16 @@
 ---
 type: docs
 title: War/Ear
-position: 4
-shortdesc: In JEE, applications modules are packaged as EAR and WAR based on their functionality.
+description: In JEE, applications modules are packaged as EAR and WAR based on their functionality
 tags:
 - deploy
 keywords:
 - java
 - war
-str_replace_dict:
-  "@application-type@": "Java + WAR"
 aliases:
 - /doc/deploy/application/java/java-war
 - /doc/java-war
-type: docs
+comments: false
 ---
 
 ## Overview

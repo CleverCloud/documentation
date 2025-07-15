@@ -1,16 +1,13 @@
 ---
 type: docs
 title: Meteor.js
-shortdesc: Meteor is an open source platform for web, mobile, and desktop
+description: Meteor is an open source platform for web, mobile, and desktop
 tags:
 - deploy
 keywords:
 - meteor
 - meteorjs
 - nodejs
-str_replace_dict:
-  "@application-type@": "Meteor.js"
-type: docs
 aliases:
 - /doc/applications/javascript/meteor
 - /doc/applications/javascript/by-framework/meteor

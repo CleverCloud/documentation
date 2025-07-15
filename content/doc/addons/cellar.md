@@ -2,7 +2,7 @@
 type: docs
 title: Cellar, S3-compatible object storage service
 linkTitle: Cellar Object Storage
-description: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud.
+description: Cellar is an Amazon S3-compatible file storage system created and hosted by Clever Cloud
 tags:
 - addons
 keywords:
@@ -15,7 +15,6 @@ keywords:
 - aws
 aliases:
 - /doc/deploy/addon/cellar
-type: docs
 ---
 {{< hextra/hero-subtitle >}}
   Cellar is a S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
@@ -564,18 +563,18 @@ A bucket can be in one of three state :
  - Versioning-enabled
  - Versioning-suspended
 
-You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time. 
+You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time.
 Once versioning is enabled, any object you add have a unique version ID. Object that were already existing before enabling versioning have a version ID of `null`.
 
 For that reason, we do recommend you to enable versioning when creating a new bucket. It will be easier to navigate through version IDs.
 
 > [!WARNING]
-> Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.  
+> Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.
 
 {{< tabs items="MinIO,  AWS CLI" >}}
 
   {{< tab >}}
-  
+
   To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
 
   ```sh
@@ -604,19 +603,19 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   #### List versioned objects
 
-  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run : 
+  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run :
 
   ```sh
   mc ls --versions --recursive <alias>/<bucket-name>
   ```
 
-  You can list all the version of a specific file with 
+  You can list all the version of a specific file with
 
   ```sh
   mc ls --versions <alias>/<bucket-name>/<object_name>
   ```
 
-  #### Get a version of an object 
+  #### Get a version of an object
 
   You can get the specific version of an object using its version ID obtained using the previous command.
 
@@ -624,7 +623,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>
   ```
 
-  #### Delete a version of an object 
+  #### Delete a version of an object
 
   You can delete the specific version of an object using its version ID.
 
@@ -648,7 +647,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   ```
 
   If you want to turn off versioning, you can use the following:
-  
+
 ```sh
   aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Suspended
 
@@ -664,7 +663,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   #### List all versioned Object
 
-  If you need to list all the objects in your bucket, including the different versions of the files stored in it, you can use : 
+  If you need to list all the objects in your bucket, including the different versions of the files stored in it, you can use :
 
   ```sh
   aws s3api list-object-versions --bucket <bucket_name>
@@ -688,7 +687,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   #### Delete the version of an object
 
-  To remove a version of an object, you can use this command : 
+  To remove a version of an object, you can use this command :
 
   ```sh
   aws s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>

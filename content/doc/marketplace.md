@@ -1,6 +1,8 @@
 ---
+type: docs
 title: Marketplace APIs & Tools
-shortdesc: How to integrate your own service as an add-on on Clever Cloud's Marketplace
+weight: 13
+description: How to integrate your own service as an add-on on Clever Cloud's Marketplace
 keywords:
 - Add-on
 - API
@@ -9,10 +11,7 @@ keywords:
 aliases:
 - /doc/extend/addon-api/
 - /doc/extend/add-ons-api/
-type: docs
 comments: false
-weight: 13
-
 ---
 
 Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/developers/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).

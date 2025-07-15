@@ -1,6 +1,6 @@
 ---
 title: Tips & Tricks
-shortdesc: Discover some useful tips and tricks to improve your experience with Clever Cloud tools
+description: Discover some useful tips and tricks to improve your experience with Clever Cloud tools
 tags:
 - reference
 - tips
@@ -9,7 +9,6 @@ keywords:
 - tips
 - tricks
 type: docs
-draft: false
 ---
 {{< hextra/hero-subtitle >}}
   Clever Cloud offers many powerful features designed to make your development work easier. This guide reveals useful capabilities you might not know about, from shortcuts to time-saving tools.

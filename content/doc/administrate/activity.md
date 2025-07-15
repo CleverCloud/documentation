@@ -11,7 +11,6 @@ keywords:
 - diskfull
 - scaling
 - maintenance
-type: docs
 ---
 
 Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:

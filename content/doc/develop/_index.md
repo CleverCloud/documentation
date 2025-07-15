@@ -1,6 +1,8 @@
 ---
+type: docs
 weight: 6
-title: "Develop"
+title: Develop
+description: Learn how to develop your applications for Clever Cloud
 comments: false
 ---
 

@@ -2,12 +2,11 @@
 type: docs
 title: Support
 weight: 7
-shortdesc: We provide basic support free-of-charge to all our users. Here's how to reach us
+description: We provide basic support free-of-charge to all our users, here's how to reach us
 tags:
 - help
 keywords:
 - support
-type: docs
 ---
 
 We provide basic support free-of-charge to all our users, even those who are not paying customers.

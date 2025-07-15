@@ -2,7 +2,7 @@
 type: docs
 title: SSH access
 weight: 5
-shortdesc: SSH access to running instances
+description: SSH access to running instances
 tags:
 - cli
 - reference

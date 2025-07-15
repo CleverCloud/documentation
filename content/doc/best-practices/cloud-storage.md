@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Cloud Storage
-position: 3
-shortdesc: This will help you understand the difference between Cellar and FS Buckets.
+description: This will help you understand the difference between Cellar and FS Buckets
 tags:
 - develop
 - best-practices
@@ -12,9 +11,9 @@ keywords:
 - Storage
 - file
 - files
-type: docs
 aliases:
 - /doc/develop/cloud-storage
+comments: false
 ---
 
 You want to store files but you can't decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.

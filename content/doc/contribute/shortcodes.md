@@ -1,15 +1,14 @@
 ---
+type: docs
 weight: 150
-chapter: true
 title: Shortcode
-shortdesc: Learn about the available shortcodes to write new documentation.
+description: Learn about the available shortcodes to write new documentation.
 tags:
 - contribute
 keywords:
 - contribution
 - shortcode
 - writing
-type: docs
 draft: true
 ---
 
@@ -24,7 +23,7 @@ Here's an example for a warning alert:
 ```go
 {{</* callout  type="warning"*/>}}
 This is the message of the warning.
-{{</* /callout */>}}. 
+{{</* /callout */>}}.
 ```
 
 This will render:

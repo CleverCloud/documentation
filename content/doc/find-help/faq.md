@@ -1,7 +1,7 @@
 ---
 type: docs
 title: FAQ
-position: 3
+description: Frequently Asked Questions about Clever Cloud
 tags:
 - help
 keywords:
@@ -15,7 +15,6 @@ keywords:
 - on premises
 - pdf
 - timezone
-type: docs
 aliases:
 - /doc/get-help/faq
 ---

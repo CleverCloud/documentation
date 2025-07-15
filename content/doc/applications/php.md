@@ -1,13 +1,10 @@
 ---
 type: docs
 title: PHP with Apache
-shortdesc: Deploy PHP applications with Apache HTTP server on Clever Cloud
+description: Deploy PHP applications with Apache HTTP server on Clever Cloud
 tags:
 - php
 - deploy
-str_replace_dict:
-  "@application-type@": "PHP"
-type: docs
 aliases:
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps

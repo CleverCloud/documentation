@@ -1,17 +1,14 @@
 ---
 type: docs
 title: Jar
-position: 1
-shortdesc: Deploy a jar on Clever Cloud…
+description: Deploy a jar on Clever Cloud…
 keywords:
 - deploy
 tags:
 - java
-str_replace_dict:
-  "@application-type@": "Java + JAR"
 aliases:
 - /doc/deploy/application/java/java-jar
-type: docs
+comments: false
 ---
 
 ## Overview

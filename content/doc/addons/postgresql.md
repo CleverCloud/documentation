@@ -1,8 +1,7 @@
 ---
 type: docs
 title: PostgreSQL
-position: 7
-shortdesc: PostgreSQL is an open source relational database management system (RDBMS).
+description: PostgreSQL is an open source relational database management system (RDBMS)
 tags:
 - addons
 keywords:
@@ -11,11 +10,8 @@ keywords:
 - pg
 - pgsql
 - mariadb
-
 aliases:
 - /doc/deploy/addon/postgresql/postgresql
-
-type: docs
 ---
 ## Overview
 

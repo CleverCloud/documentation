@@ -1,15 +1,13 @@
 ---
 type: docs
 title: Application scaling
-position: 3
-shortdesc: How does Clever Cloud give your application the resources it needs?
+description: How does Clever Cloud give your application the resources it needs?
 tags:
 - administrate
 keywords:
 - scale
 - scalability
 - autoscale
-type: docs
 ---
 
 When your application is running, you don't have the same number of users all the time. During an event for example,
@@ -31,7 +29,7 @@ With the Scalers, Clever Cloud gives you the ability to scale your application *
 exclusive methods**: horizontal and vertical scaling.
 
 {{< callout type="warning" >}}
-  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads). 
+  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads).
 {{< /callout >}}
 
 ### Enable auto-scalability

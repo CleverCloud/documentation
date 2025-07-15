@@ -1,7 +1,7 @@
 ---
 weight: 1
 title: Quickstart
-description: Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+description: Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud
 tags:
 - getting-started
 keywords:

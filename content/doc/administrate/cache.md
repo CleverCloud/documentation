@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Varnish as HTTP Cache
-position: 3
-shortdesc: Configuring Varnish on Clever Cloud
+description: Configuring Varnish on Clever Cloud
 tags:
 - administrate
 keywords:
@@ -10,7 +9,6 @@ keywords:
 - varnish-modules
 - caching
 - cache
-type: docs
 ---
 
 ## Overview

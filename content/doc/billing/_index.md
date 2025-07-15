@@ -1,20 +1,17 @@
 ---
 weight: 12
 title: Billing
-shortdesc: Learn best practices on Clever Cloud
+description: Learn best practices on Clever Cloud
 tags:
 - getting-started
 keywords:
 - quickstart
-
-aliases:
-- /doc/quickstart
-type: "docs"
-comments: false
 aliases:
 - /billing
+- /doc/quickstart
 - /doc/billing
 - /clever-cloud-overview/
+comments: false
 ---
 
 {{< cards >}}

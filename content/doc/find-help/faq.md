@@ -16,6 +16,8 @@ keywords:
 - pdf
 - timezone
 type: docs
+aliases:
+- /doc/get-help/faq
 ---
 
 ## What is a Scaler?

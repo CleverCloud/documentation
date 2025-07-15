@@ -1,7 +1,8 @@
 ---
 weight: 2
+type: "docs"
 title: Applications
-shortdesc: Deploy an application on Clever Cloud
+description: Deploy an application on Clever Cloud
 tags:
 - applications
 keywords:
@@ -9,7 +10,7 @@ keywords:
 
 aliases:
 - /doc/deploy/application
-type: "docs"
+- /doc/deploy
 comments: false
 ---
 

@@ -12,7 +12,6 @@ tags:
 - administrate
 type: docs
 aliases:
-- /developers/doc/tools/crons
 - /doc/tools/crons
 ---
 

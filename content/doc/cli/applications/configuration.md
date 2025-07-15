@@ -3,13 +3,10 @@ type: docs
 title: Configuration
 description: Configure Clever Cloud applications with Clever Tools
 aliases:
-- /developers/doc/clever-tools/tcp-redirections
-- /developers/doc/cli/applications/deployment-lifecycle/applications-config
-- /developers/doc/cli/configure
-- /doc/cli/configure/
 - /doc/administrate/clever-tools/configure
 - /doc/clever-tools/tcp-redirections
 - /doc/cli/applications/deployment-lifecycle/applications-config
+- /doc/cli/configure
 ---
 
 A Clever Cloud application can easily be configured once created, through following commands. Each can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`).

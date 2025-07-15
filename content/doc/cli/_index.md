@@ -4,8 +4,6 @@ weight: 8
 title: Clever Tools (CLI)
 description: Use Clever Cloud CLI, Clever Tools
 aliases:
-- /developers/doc/clever-tools/getting_started
-- /developers/doc/cli/getting_started
 - /doc/administrate/clever-tools/getting_started
 - /doc/clever-tools/getting_started
 - /doc/cli/getting_started

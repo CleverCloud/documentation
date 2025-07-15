@@ -11,7 +11,6 @@ str_replace_dict:
   "@application-type@": "Rust"
 type: docs
 aliases:
-- /developers/doc/rust/rust
 - /doc/deploy/application/rust
 - /doc/deploy/application/rust/rust
 - /doc/getting-started/by-language/rust

@@ -15,7 +15,7 @@ keywords:
 - flowdock
 aliases:
 - /doc/administrate/clever-tools/notifications
-- /developers/doc/cli/notifications/
+- /doc/cli/notifications/
 draft: true
 ---
 

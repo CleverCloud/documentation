@@ -24,9 +24,9 @@ The default version of Python on Clever Cloud is the latest we support from bran
 
 {{< runtimes_versions python >}}
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
-{{< content "set-env-vars" >}}
+{{% content "set-env-vars" %}}
 
 ## Configure your Python application
 
@@ -78,7 +78,7 @@ psycopg2>=2.7 --no-binary psycopg2
 
 You can define a custom `requirements.txt` file with the environnement variable `CC_PIP_REQUIREMENTS_FILE` for example: `CC_PIP_REQUIREMENTS_FILE=config/production.txt`.
 
-{{< content "cached-dependencies" >}}
+{{% content "cached-dependencies" %}}
 
 ### Use setup.py
 
@@ -88,7 +88,7 @@ The goal will be launched after the dependencies from `requirements.txt` have be
 
 To execute a goal, you can define the [environment variable](#setting-up-environment-variables-on-clever-cloud) `PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
- {{< content "env-injection" >}}
+ {{% content "env-injection" %}}
 
 To access [environment variables](#setting-up-environment-variables-on-clever-cloud) from your code, just get them from the environment with:
 
@@ -192,7 +192,7 @@ Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
 
 To do so, add the `CC_PYTHON_USE_GEVENT` [environment variable](#setting-up-environment-variables-on-clever-cloud) to your application, with the `true` value.
 
- {{< content "new-relic" >}}
+ {{% content "new-relic" %}}
 
 ## Celery apps
 
@@ -216,10 +216,10 @@ The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
 {{< /callout >}}
 
-{{< content "deploy-git" >}}
+{{% content "deploy-git" %}}
 
-{{< content "link-addon" >}}
+{{% content "link-addon" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
-{{< content "url_healthcheck" >}}
+{{% content "url_healthcheck" %}}

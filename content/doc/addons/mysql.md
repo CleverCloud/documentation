@@ -21,7 +21,7 @@ MySQL is available in regular versions and `early` for 8.4. That means it's the 
 
 {{< software_versions_shared_dedicated mysql>}}
 
-{{< content "db-backup" >}}
+{{% content "db-backup" %}}
 
 ## Migrating from an old database
 
@@ -34,7 +34,7 @@ If you want to import your **SQL** dump, you can use several methods:
 
 If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
-{{< content "dbMigration" >}}
+{{% content "dbMigration" %}}
 
 ## Direct access
 
@@ -52,7 +52,7 @@ Encryption at rest is available on MySQL. You can have more information on the [
 
 ## ProxySQL
 
-{{< content "proxysql" >}}
+{{% content "proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}})
 

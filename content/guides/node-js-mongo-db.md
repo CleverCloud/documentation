@@ -18,9 +18,9 @@ The application is a very simple todo list. You can add and delete values. More 
 
 * [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
- {{< content "set-env-vars" >}}
+ {{% content "set-env-vars" %}}
 
 ## Configure your Node.js + MongoDB application
 
@@ -28,14 +28,14 @@ The application is a very simple todo list. You can add and delete values. More 
 
 If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest).
 
- {{< content "env-injection" >}}
+ {{% content "env-injection" %}}
 
- {{< content "deploy-git" >}}
+ {{% content "deploy-git" %}}
 
- {{< content "link-addon" >}}
+ {{% content "link-addon" %}}
 
 ## Configure your database
 
 Make sure you have created a MongoDB add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on [environment variables](#setting-up-environment-variables-on-clever-cloud) from the application.
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}

@@ -106,16 +106,16 @@ You can now read [My application already exists](#my-application-already-exists)
 
 ### My application already exists
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
- {{< content "set-env-vars" >}}
+ {{% content "set-env-vars" %}}
 
- {{< content "env-injection" >}}
+ {{% content "env-injection" %}}
 
 To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
 
- {{< content "deploy-git" >}}
+ {{% content "deploy-git" %}}
 
- {{< content "link-addon" >}}
+ {{% content "link-addon" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}

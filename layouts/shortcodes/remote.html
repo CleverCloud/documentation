@@ -1,0 +1,14 @@
+{{- $url := .Get "url" -}}
+{{- $excludeSection := .Get "exclude" | default "## Clever Cloud complete documentation" -}}
+{{- $content := resources.GetRemote $url -}}
+{{- if $content -}}
+  {{- $text := $content.Content -}}
+  {{- if $excludeSection -}}
+    {{- $parts := split $text $excludeSection -}}
+    {{- $text = index $parts 0 -}}
+  {{- end -}}
+  {{- $text -}}
+{{- else -}}
+  {{- warnf "Error loading remote content from: %s" $url -}}
+  **Error:** Unable to load remote content.
+{{- end -}}

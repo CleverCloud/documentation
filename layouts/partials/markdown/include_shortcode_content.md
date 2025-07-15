@@ -1,9 +1,8 @@
 {{- $content := . -}}
-{{- $patternSearch := "\\{\\{%\\s*content/([^%}]+)\\s*%\\}\\}" -}}
-{{- $patternClean := "\\{\\{%\\s*content/(.+?)\\s*%\\}\\}" -}}
+{{- $pattern := "\\{\\{%\\s*content\\s+\"(?P<name>[^\"]+)\"\\s*%\\}\\}" -}}
 
-{{- range $shortcodeFound := findRE $patternSearch $content -}}
-    {{- $name := replaceRE $patternClean "$1" $shortcodeFound -}}
+{{- range $shortcodeFound := findRE $pattern $content -}}
+    {{- $name := replaceRE $pattern "${name}" $shortcodeFound -}}
     {{- $filepath := printf "layouts/shortcodes/content/%s.md" $name -}}
     {{- with os.ReadFile $filepath -}}
         {{- $content = replace $content $shortcodeFound . -}}

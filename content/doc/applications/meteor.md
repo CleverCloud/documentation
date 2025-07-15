@@ -12,6 +12,7 @@ str_replace_dict:
   "@application-type@": "Meteor.js"
 type: docs
 aliases:
+- /doc/applications/javascript/meteor
 - /doc/applications/javascript/by-framework/meteor
 ---
 

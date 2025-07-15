@@ -10,6 +10,8 @@ keywords:
 - newrelic
 - metrics
 - monitoring
+aliases:
+- /administrate/metrics/new-relic
 ---
 
 ## Overview

@@ -10,6 +10,8 @@ keywords:
 - shortcode
 - writing
 type: docs
+aliases:
+- /doc/contribute/writing
 ---
 
 Would you like to contribute to this documentation?

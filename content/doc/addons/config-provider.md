@@ -8,6 +8,7 @@ keywords:
 - configuration
 - environment variables
 aliases:
+- /deploy/addon/config-provider
 - /doc/deploy/addon/config-provider
 type: docs
 ---

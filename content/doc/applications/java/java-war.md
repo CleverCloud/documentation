@@ -12,6 +12,7 @@ str_replace_dict:
   "@application-type@": "Java + WAR"
 aliases:
 - /doc/deploy/application/java/java-war
+- /doc/java-war
 type: docs
 ---
 

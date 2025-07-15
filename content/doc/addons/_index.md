@@ -9,6 +9,7 @@ keywords:
 
 aliases:
 - /doc/addons/clever-cloud-addons
+- /doc/deploy/addon
 - /doc/getting-started/dbaas
 type: "docs"
 comments: false

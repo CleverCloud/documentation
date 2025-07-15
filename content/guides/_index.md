@@ -5,6 +5,7 @@ tags:
 - guides
 aliases:
 - /doc/deploy/application/docker/tutorials
+- /doc/deploy/application/python/tutorials
 type: "docs"
 comments: false
 llmsTxtOptional: true

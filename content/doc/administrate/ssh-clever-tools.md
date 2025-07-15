@@ -11,6 +11,8 @@ keywords:
 - clever-tools
 - putty
 type: docs
+aliases:
+- /doc/doc/admin-console/ssh-keys
 ---
 
 ## Overview

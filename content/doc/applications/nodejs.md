@@ -6,6 +6,7 @@ description: Run JavaScript applications on Clever Cloud with Node.js and npm, o
 aliases:
 - /doc/applications/javascript
 - /doc/applications/javascript/by-framework/nodejs
+- /doc/applications/javascript/nodejs
 - /doc/deploy/application/node
 - /doc/getting-started/by-language/node
 - /doc/deploy/application/javascript/

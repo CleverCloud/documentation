@@ -158,7 +158,7 @@ menu:
       weight: 2
     - identifier: cli
       name: "Clever Tools CLI"
-      url: "https://github.com/CleverCloud/clever-tools/tree/master/docs#readme"
+      url: "/doc/reference/cli"
       weight: 3
     - identifier: envar
       name: "Environment Variables"

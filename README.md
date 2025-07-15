@@ -5,10 +5,10 @@ This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https:/
 
 ## See deployed Documentation
 
-- [Developers Hub](https://developers.clever-cloud.com/)
-- [Developers Documentation](https://developers.clever-cloud.com/doc/)
-- [Reference Environnement Variables](https://developers.clever-cloud.com/doc/reference/reference-environment-variables/)
-- [Guides and Tutorials](https://developers.clever-cloud.com/guides/)
+- [Developers Hub](https://www.clever-cloud.com/developers/)
+- [Developers Documentation](https://www.clever-cloud.com/developers/doc/)
+- [Reference Environment Variables](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/)
+- [Guides and Tutorials](https://www.clever-cloud.com/developers/guides/)
 
 ## Features
 

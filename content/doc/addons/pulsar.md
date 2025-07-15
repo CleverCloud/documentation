@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Pulsar
-shortdesc: A distributed messaging and streaming platform on the publish/subsribe model
+description: A distributed messaging and streaming platform on the publish/subscribe model
 tags:
 - addons
 keywords:
@@ -15,14 +15,13 @@ keywords:
 - kafka
 aliases:
 - /doc/deploy/addon/pulsar
-type: docs
 ---
 
 {{< callout type="warning" >}} Pulsar is still in beta. {{< /callout >}}
 
 ## Overview
 
-[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies ranging around 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
+[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies ranging around 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It's equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
 
 ```mermaid
 %%{
@@ -50,7 +49,7 @@ flowchart RL
     classDef pulsar stroke:#188FFF
 ```
 
-They are several modes of subscription. A consumer may subscribe exclusively, or share the subscription with other consumers. There is the subscription mode types:
+There are several modes of subscription. A consumer may subscribe exclusively, or share the subscription with other consumers. Here are the four subscription types:
 
 - Exclusive (only one consumer for the subscription)
 - Failover (if a consumer fails, another one receives the message)
@@ -63,9 +62,9 @@ A topic is defined this way:
 
 `{persistent|non-persistent}://tenant/namespace/topic`
 
-Tenants and namespaces allow for grouping and subgrouping of topics.
+Tenants and namespaces allow for grouping and sub-grouping of topics.
 
-A Clever Cloud Pulsar add-on is basically an immutable `tenant/namespace` where the tenant is your user id, and the namespace is the add-on id.
+A Clever Cloud Pulsar add-on is basically an immutable `tenant/namespace` where the tenant is your organisation ID, and the namespace is the add-on ID.
 It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<CLEVERCLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
@@ -80,13 +79,11 @@ We maintain up-to-date Pulsar clusters based on the official Apache Pulsar relea
 - **Parallel processing and workflows**. You can efficiently distribute a large number of tasks among multiple workers (compressing text files, sending email notifications).
 - **Data streaming from IoT devices**. For example, a residential sensor can stream data to backend servers.
 - **Refreshing distributed caches**. For example, an application can publish invalidation events to update the IDs of objects that have changed.
-- **Real-time event distribution**. Events, raw or processed, may be made available to multiple applications across your team and organization for real time processing.
+- **Real-time event distribution**. Events, raw or processed, may be made available to multiple applications across your team and organisation for real time processing.
 
 ## Create a Pulsar add-on
 
-It is as simple and straightforward as creating any other add-on.
-In your personnal space, click on *Create* > *an add-on* > *Pulsar*.
-Choose your plan, link an app to it (or not), give it a name and a zone, and it's done.
+It is as simple and straightforward as creating any other add-on. In your personal space, click on *Create* > *an add-on* > *Pulsar*. Choose your plan, link an app to it (or not), give it a name and a zone, and it's done.
 
 ## Authorization
 
@@ -346,7 +343,7 @@ client.close()
 
 ### Operations
 
-The Biscuit token provided by the Pulsar add-on allows you to run several operations on namespace, its policies and the related topics.
+The Biscuit token provided by the Pulsar add-on allows you to run several operations on the add-on's namespace, its policies and the related topics.
 
 These operations might change in the future. Don't hesitate to write to our support to ask for new operations!
 

@@ -36,7 +36,7 @@ Invoices are available in the *Invoices* tab in the sidebar of the organisation 
 
 You can change the billing email for an organisation in *Information > Billing details > Billing email*.
 
-Also an organisation member with the accountant role can receive invoices as described in the organisation [roles]({{<  ref "/doc/account/organizations/#roles-and-privileges" >}}).
+Also an organisation member with the accountant role can receive invoices as described in the organisation [roles]({{<  ref "/doc/account/organisations/#roles-and-privileges" >}}).
 
 ## Change Billing Information
 

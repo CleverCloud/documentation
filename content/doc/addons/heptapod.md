@@ -45,7 +45,7 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 {{< callout type="info" >}}
   **Requirements**
-  Using Heptapod Cloud require a Clever Cloud account and an [organisation](../../account/administrate-organization).
+  Using Heptapod Cloud require a Clever Cloud account and an [organisation](../../account/administrate-organisation).
 {{< /callout >}}
 
 {{% steps %}}

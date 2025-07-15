@@ -12,8 +12,9 @@ aliases:
 type: "docs"
 comments: false
 aliases:
-  - /doc/billing
-  - /clever-cloud-overview/
+- /billing
+- /doc/billing
+- /clever-cloud-overview/
 ---
 
 {{< cards >}}

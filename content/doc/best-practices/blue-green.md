@@ -12,6 +12,7 @@ keywords:
 type: docs
 aliases:
 - /doc/develop/blue-green
+- /doc/develop/best-practices/blue-green/
 ---
 
 Blue/Green deployment is a technique used in automated deployment of applications, databases and services.

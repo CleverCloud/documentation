@@ -14,6 +14,7 @@ keywords:
 - limit
 - pool
 aliases:
+- /deploy/addon/mysql/proxysql
 - /doc/deploy/addon/mysql/proxysql
 type: docs
 ---

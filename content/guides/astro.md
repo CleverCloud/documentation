@@ -138,7 +138,7 @@ If you're deploying from **GitHub**, your deployment should start automatically.
 
 ## Deploy a static Astro site using the CLI
 
-{{< content "language-specific-deploy/create-static" >}}
+{{% content "language-specific-deploy/create-static" %}}
 
 ## Configure environment variables
 
@@ -155,7 +155,7 @@ clever env set CC_PRE_BUILD_HOOK "npm install && npm run astro telemetry disable
 clever env set CC_POST_BUILD_HOOK "npm run build"
 ```
 
-{{< content "git-push" >}}
+{{% content "git-push" %}}
 
 ## Deploying an Astro Project with Server-Side Rendering (SSR)
 

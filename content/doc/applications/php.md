@@ -24,9 +24,9 @@ into HTML.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
-{{< content "set-env-vars" >}}
+{{% content "set-env-vars" %}}
 
 ## Configure your PHP application
 
@@ -601,24 +601,24 @@ You can do this to fill them using the Authorization header:
 list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':' , base64_decode(substr($_SERVER['Authorization'], 6)));
 ```
 
-{{< content "new-relic" >}}
+{{% content "new-relic" %}}
 
-{{< content "blackfire" >}}
+{{% content "blackfire" %}}
 
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**.
 
-{{< content "deploy-git" >}}
+{{% content "deploy-git" %}}
 
-{{< content "deploy-ftp" >}}
+{{% content "deploy-ftp" %}}
 
 ## ProxySQL
 
-{{< content "proxysql" >}}
+{{% content "proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}} "ProxySQL")
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
-{{< content "url_healthcheck" >}}
+{{% content "url_healthcheck" %}}

@@ -110,8 +110,8 @@ clever env set --app TASK_APP_ID FILE_TO_PROCESS "https://mybucket.cellar-c2.ser
 clever restart --app TASK_APP_ID --quiet # That's if you don't care for the logs to show in here
 ```
 
-{{< content "link-addon" >}}
+{{% content "link-addon" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
-{{< content "env-injection" >}}
+{{% content "env-injection" %}}

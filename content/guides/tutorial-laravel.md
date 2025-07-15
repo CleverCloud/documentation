@@ -164,7 +164,7 @@ return [
 
 This environment variable exists in any Clever Cloud instance. This configuration specifies to trust Clever Cloud proxies, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxyhugo server.
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
 ## Go Further
 

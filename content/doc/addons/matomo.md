@@ -71,7 +71,7 @@ Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more 
 
 Once you created your add-on, open the management URL or use the `Access Matomo` link in the Matomo dashboard from the Console. To authenticate, you'll only need to use your Clever Cloud account.
 
-{{< content "single-sign-on" >}}
+{{% content "single-sign-on" %}}
 
 ## Configure your Matomo instance
 

@@ -61,7 +61,7 @@ name: Create review app
 ```
 
 
-{{< content "ci-cd-configuration" >}}
+{{% content "ci-cd-configuration" %}}
 
 Full instructions are available on the [Action project](https://github.com/CleverCloud/clever-cloud-review-app).
 

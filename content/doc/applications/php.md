@@ -507,11 +507,10 @@ You can use `DISABLE_<extension_name>=true` in your [environment variables](/dev
 
 ## Configure the session storage
 
-By default, a FS Bucket is created for each PHP applications. It is used to store session files, so that session data is available on each instance.
+By default, an [FS Bucket](/developers/doc/addons/fs-bucket/) is created for each PHP applications, so that session data is available on each instance. This FS Bucket is also used to store TMP files by default. You can change this behavior by setting the `TMPDIR` environment variable. You can set it to `/tmp` for example.
 
-This FS Bucket is also used to store TMP files by default.
-You can change this behaviour by setting the `TMPDIR` environment variable.
-You can set it to `/tmp` for example.
+>[!NOTE] FS Buckets are not available in HDS regions
+> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
 
 ### Speed up or disable the session FS Bucket
 

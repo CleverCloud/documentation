@@ -52,7 +52,7 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 ### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organizations](../../account/administrate-organisation/).
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](../../account/administrate-organisation/).
 Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
 In the Clever Cloud console, click **Add an organisation** and fill the form to create one.

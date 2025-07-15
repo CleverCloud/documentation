@@ -14,4 +14,4 @@ aliases:
 - /doc/getting-started/authentication
 ---
 
-{{< content "authentication" >}}
+{{% content "authentication" %}}

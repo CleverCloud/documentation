@@ -45,7 +45,7 @@ When you create a Docker application on Clever Cloud, the deployment process inv
    - The application starts in a Docker container and exposes the service on port 8080 by default.
    - If you need to expose your application on a different port, you can specify this using the environment variable `CC_DOCKER_EXPOSED_HTTP_PORT`.
 
- {{< content "set-env-vars" >}}
+ {{% content "set-env-vars" %}}
 
 ## Configure your Docker application
 
@@ -132,12 +132,12 @@ We provide a few examples of dockerized applications on Clever Cloud.
 You might need to use the `CC_DOCKERFILE = <name of your Dockerfile>` variable.
 
 
-{{< content "env-injection" >}}
+{{% content "env-injection" %}}
 
-{{< content "deploy-git" >}}
+{{% content "deploy-git" %}}
 
-{{< content "link-addon" >}}
+{{% content "link-addon" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
-{{< content "url_healthcheck" >}}
+{{% content "url_healthcheck" %}}

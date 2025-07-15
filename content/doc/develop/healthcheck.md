@@ -10,4 +10,4 @@ keywords:
 - healthcheck
 ---
 
-{{< content "url_healthcheck" >}}
+{{% content "url_healthcheck" %}}

@@ -26,9 +26,9 @@ You don't need to change a lot in your application, the *requirements* section e
   If you encounter an issue, please contact the support.
 {{< /callout >}}
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
-{{< content "set-env-vars" >}}
+{{% content "set-env-vars" %}}
 
 ## Configure your Dotnet application
 
@@ -145,14 +145,14 @@ Add the configuration file `nuget.config` :
 
 Set environment variables in the console according to your own information : `PACKAGE_REGISTRY_URI`, `PACKAGE_REGISTRY_USERNAME` and `PACKAGE_REGISTRY_PASSWORD`
 
-{{< content "env-injection" >}}
+{{% content "env-injection" %}}
 
 To access environment variables from your code, you can use `System.Environment.GetEnvironmentVariable("MY_VARIABLE")"`.
 
-{{< content "deploy-git" >}}
+{{% content "deploy-git" %}}
 
-{{< content "link-addon" >}}
+{{% content "link-addon" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}
 
-{{< content "url_healthcheck" >}}
+{{% content "url_healthcheck" %}}

@@ -16,21 +16,21 @@ aliases:
 
 [Drupal](https://new.drupal.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-{{< content "create-application" >}}
+{{% content "create-application" %}}
 
-{{< content "set-env-vars" >}}
+{{% content "set-env-vars" %}}
 
-{{< content "new-relic" >}}
+{{% content "new-relic" %}}
 
-{{< content "env-injection" >}}
+{{% content "env-injection" %}}
 
-{{< content "link-addon" >}}
+{{% content "link-addon" %}}
 
 ## Configure your database
 
 Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on environment variables from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
 
- {{< content "deploy-git" >}}
+ {{% content "deploy-git" %}}
 
 ### Git specific Drupal instructions
 
@@ -87,6 +87,6 @@ folder in which you create a `buckets.json` file).
 
 Do not forget the **/install.php** page otherwise installation will not happen.
 
-{{< content "deploy-ftp" >}}
+{{% content "deploy-ftp" %}}
 
-{{< content "more-config" >}}
+{{% content "more-config" %}}

@@ -108,13 +108,13 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
-{{< content "mise" >}}
+{{% content "mise" %}}
 
 | Name | Description |
 |-----------------|--------------------------|
 |`CC_RUN_MISE_INSTALL`| Set to `true` to run `mise install` before the build phase |
 
-{{< content "redirectionio" >}}
+{{% content "redirectionio" %}}
 >[!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support

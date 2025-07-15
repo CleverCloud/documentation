@@ -1,11 +1,11 @@
 ---
 type: docs
 title: Encryption at rest
+description: Learn how to enable encryption at rest for your add-ons on Clever Cloud, enhancing data security by encrypting data stored on disk
 tags:
 - encryption
 - rest
 - security
-type: docs
 ---
 
 ## Introduction

@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Pgpool-II
-position: 3
-shortdesc: How to configure and use Pgpool-II for PostgreSQL add-ons
+description: How to configure and use Pgpool-II for PostgreSQL add-ons
 tags:
 - addons
 keywords:
@@ -17,7 +16,6 @@ keywords:
 - sql
 aliases:
 - /doc/deploy/addon/postgresql/pgpool
-type: docs
 ---
 
 Pgpool-II is a tool available on application instances to help manage your connection pool and load balancing of your PostgreSQL add-ons.

@@ -1,15 +1,13 @@
 ---
 type: docs
-title: Environment Variable Reference
 linktitle: EnvVar Reference
-position: 3
-shortdesc: List of all the environment variable references
+title: Environment Variable Reference
+description: List of all the environment variable references
 tags:
 - reference
 keywords:
 - env
 - env variables
-type: docs
 aliases:
 - /doc/get-help/reference-environment-variables
 ---

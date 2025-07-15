@@ -1,7 +1,7 @@
 ---
 type: docs
 title: .NET
-shortdesc: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps.
+description: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps
 tags:
 - deploy
 keywords:
@@ -9,9 +9,6 @@ keywords:
 - csproj
 - fsproj
 - vbproj
-str_replace_dict:
-  "@application-type@": ".NET"
-type: docs
 aliases:
 - /doc/deploy/application/dotnet
 - /doc/deploy/application/dotnet/dotnet

@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Elastic Stack
-
-shortdesc: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack).
+description: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack)
 tags:
 - addons
 keywords:
@@ -11,7 +10,6 @@ keywords:
 - elastic
 - kibana
 - apm
-type: docs
 aliases:
 - /doc/deploy/addon/elastic/elastic
 - /doc/deploy/addon/elastic/

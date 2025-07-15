@@ -1,8 +1,7 @@
 ---
 type: docs
 title: File System Buckets
-position: 4
-shortdesc: This add-on allows applications to use a persistent file system, as git-based apps don't have one.
+description: This add-on allows applications to use a persistent file system, as git-based apps don't have one
 tags:
 - addons
 keywords:
@@ -14,7 +13,6 @@ keywords:
 aliases:
 - /doc/addons/fs_buckets
 - /doc/deploy/addon/fs-bucket
-type: docs
 ---
 
 When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted.

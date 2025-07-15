@@ -1,18 +1,17 @@
 ---
 type: docs
 title: Blue/Green Deployments
-shortdesc: An explanation of what is Blue/Green deployment
+description: An explanation of what is Blue/Green deployment
 tags:
 - develop
 - best-practices
 keywords:
 - blue/green
 - deployment
-
-type: docs
 aliases:
 - /doc/develop/blue-green
-- /doc/develop/best-practices/blue-green/
+- /doc/develop/best-practices/blue-green
+comments: false
 ---
 
 Blue/Green deployment is a technique used in automated deployment of applications, databases and services.

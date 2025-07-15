@@ -1,19 +1,15 @@
 ---
 type: docs
 title: Maven
-position: 3
-shortdesc: Maven is essentially a project management and comprehension tool…
+description: Maven is essentially a project management and comprehension tool…
 tags:
 - deploy
 keywords:
 - java
 - maven
-str_replace_dict:
-  "@application-type@": "Java + Maven"
 aliases:
 - /doc/deploy/application/java/java-maven
 - /doc/deploy/application/java/
-type: docs
 ---
 
 ## Overview

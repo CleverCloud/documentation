@@ -1,10 +1,7 @@
 ---
 type: docs
 title: MongoDB
-position: 5
-shortdesc: A noSQL and document-oriented database, operated by Clever Cloud.
-aliases:
-- /../addon/mongodb
+description: A noSQL and document-oriented database, operated by Clever Cloud
 tags:
 - addons
 keywords:
@@ -16,7 +13,6 @@ keywords:
 aliases:
 - /doc/deploy/addon/mongodb/mongodb
 - /doc/deploy/addon/mongodb/managing-mongodb
-type: docs
 ---
 ## Overview
 

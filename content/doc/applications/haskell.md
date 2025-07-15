@@ -1,15 +1,12 @@
 ---
 type: docs
 title: Haskell
-shortdesc: Haskell is love, haskell is life
+description: Haskell is love, haskell is life
 tags:
 - deploy
 keywords:
 - haskell
 - stack
-str_replace_dict:
-  "@application-type@": "Haskell"
-type: docs
 aliases:
 - /doc/deploy/application/haskell
 - /doc/deploy/application/haskell/haskell

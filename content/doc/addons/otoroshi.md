@@ -10,7 +10,6 @@ keywords:
 - proxy
 - llm
 - waf
-type: docs
 draft: false
 ---
 

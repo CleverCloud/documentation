@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Domain names
-position: 3
-shortdesc: How to setup and configure domains names for your apps
+description: How to setup and configure domains names for your apps
 tags:
 - dashboard-setup
 - apps
@@ -10,7 +9,6 @@ keywords:
 - DNS
 - domain
 - URL
-type: docs
 ---
 
 When creating an application, you have two (non-exclusive) choices for domain names:

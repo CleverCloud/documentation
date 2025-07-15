@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Notifications
-position: 5
-shortdesc: How to setup and configure notifications via clever-tools
+description: How to setup and configure notifications via clever-tools
 tags:
 - cli
 - reference
@@ -15,7 +14,6 @@ keywords:
 - flowdock
 aliases:
 - /doc/administrate/clever-tools/notifications
-
 ---
 
 The *Notifications* service allows you to choose the events of interest to you

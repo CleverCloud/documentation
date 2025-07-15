@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Logs management
-position: 3
-shortdesc: How to manage add-ons and applications logs and drains
+description: How to manage add-ons and applications logs and drains
 tags:
  - administrate
 keywords:
@@ -17,7 +16,6 @@ keywords:
 aliases:
 - /doc/administrate/log-management/#get-continuous-logs-from-your-application
 - /doc/clever-cloud-apis/add-ons-log-collector
-type: docs
 ---
 
 Clever Cloud new logs stack is based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse. It's not available for add-ons yet.

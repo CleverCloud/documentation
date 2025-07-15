@@ -1,8 +1,7 @@
 ---
 type: docs
 title: Load testing
-position: 3
-shortdesc: Considerations and methods to perform a load test on Clever Cloud
+description: Considerations and methods to perform a load test on Clever Cloud
 tags:
 - develop
 - best-practices
@@ -11,7 +10,6 @@ keywords:
 - stress
 - load
 - performance
-type: docs
 aliases:
 - /doc/develop/load-testing
 ---

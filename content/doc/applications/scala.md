@@ -1,14 +1,11 @@
 ---
 type: docs
 title: Scala
-shortdesc: Scala is an object-functional programming and scripting language that runs on the Java platform…
+description: Scala is an object-functional programming and scripting language that runs on the Java platform…
 tags:
 - deploy
 keywords:
 - scala
-str_replace_dict:
-  "@application-type@": "SBT + Scala"
-type: docs
 aliases:
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala

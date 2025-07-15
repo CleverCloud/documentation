@@ -1,11 +1,7 @@
 ---
 type: docs
 title: Product support on tools
-position: 5
-shortdesc: Get product support on each official tools
-tags: []
-keywords: []
-type: docs
+description: Get product support on each official tools
 ---
 This is a product matrix showing the services that are available with our Terraform provider and K8S-Operator.
 

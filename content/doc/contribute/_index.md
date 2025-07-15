@@ -1,17 +1,17 @@
 ---
+type: docs
 weight: 14
-chapter: true
 title: Contribute
-shortdesc: Learn about the available shortcodes to write new documentation.
+description: Learn about the available shortcodes to write new documentation
 tags:
 - contribute
 keywords:
 - contribution
 - shortcode
 - writing
-type: docs
 aliases:
 - /doc/contribute/writing
+comments: false
 ---
 
 Would you like to contribute to this documentation?

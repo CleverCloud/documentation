@@ -1,16 +1,13 @@
 ---
 type: docs
 title: Fluentd
-Description: How to deploy a fluentd using Docker on Clever Cloud.
+description: How to deploy a fluentd using Docker on Clever Cloud
 tags:
 - deploy
 keywords:
 - docker
 - ruby
 - fluentd
-str_replace_dict:
-  "@application-type@": "Docker"
-type: docs
 aliases:
 - /doc/deploy/application/docker/tutorials/fluentd
 ---

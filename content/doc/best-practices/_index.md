@@ -1,18 +1,16 @@
 ---
+type: docs
 weight: 9
 title: Best practices
-shortdesc: Learn best practices on Clever Cloud
+description: Learn best practices on Clever Cloud
 tags:
 - getting-started
 keywords:
 - quickstart
-
 aliases:
 - /doc/quickstart
-type: "docs"
-comments: false
-aliases:
 - /doc/develop/best-practices
+comments: false
 ---
 
 {{< cards >}}

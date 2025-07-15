@@ -1,14 +1,13 @@
 ---
 type: docs
 title: TCP redirections
-shortdesc: TCP redirections to port 4040 of your instance
+description: TCP redirections to port 4040 of your instance
 tags:
 - administrate
 keywords:
 - tcp
 - cli-setup
 - redirection
-type: docs
 ---
 {{< callout type="warning" >}}
 TCP redirections are currently available free of charge as long as the feature is in BETA stage.
@@ -41,10 +40,10 @@ A namespace is a group of reverse proxies. You may encounter:
 - `cleverapps`: the group behind all the `cleverapps.io` domains
 - dedicated name: if you are a premium customer with dedicated reverse proxies
 
-Use `default` or dedicated namespace for applications with a custom domain name.  
+Use `default` or dedicated namespace for applications with a custom domain name.
 Use `cleverapps` for applications under the `cleverapps.io` domain.
 If your application has both a custom domain name and a `cleverapps.io` one, you may activate TCP redirections on both of them.
-Note that this generates two different ports, one for each domain.  
+Note that this generates two different ports, one for each domain.
 You should use one or the other depending on the domain name you use in your request.
 
 To list the possible redirections available to your application, you can use the following:

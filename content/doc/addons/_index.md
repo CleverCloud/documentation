@@ -1,17 +1,16 @@
 ---
+type: docs
 weight: 3
 title: Add-ons
-shortdesc: Use add-ons on Clever Cloud
+description: Use add-ons on Clever Cloud
 tags:
 - applications
 keywords:
 - deploy
-
 aliases:
 - /doc/addons/clever-cloud-addons
 - /doc/deploy/addon
 - /doc/getting-started/dbaas
-type: "docs"
 comments: false
 ---
 

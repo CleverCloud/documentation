@@ -1,8 +1,7 @@
 ---
 type: docs
 title: CRON
-position: 1
-shortdesc: All you need to know about running crons on Clever Cloud
+description: All you need to know about running crons on Clever Cloud
 keywords:
 - apps
 - cron
@@ -10,7 +9,6 @@ keywords:
 - schedule
 tags:
 - administrate
-type: docs
 aliases:
 - /doc/tools/crons
 ---

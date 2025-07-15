@@ -1,8 +1,7 @@
 ---
 type: docs
 title: PostgreSQL
-weight: 2
-shortdesc: Configure and manage your PostgreSQL add-ons
+description: Configure and manage your PostgreSQL add-ons
 tags:
 - addons
 keywords:
@@ -15,7 +14,6 @@ keywords:
 - postgres
 - proxy
 - sql
-type: docs
 comments: false
 draft: true
 ---

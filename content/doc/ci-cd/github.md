@@ -1,9 +1,7 @@
 ---
-title: 'Deploy from GitHub'
-description:
-date: 2024-03-28T12:04:20+01:00
-draft: false
 type: docs
+title: Deploy from GitHub
+description: How to set up you CI/CD from GitHub to deploy to Clever Cloud
 ---
 
 {{< hextra/hero-subtitle >}}

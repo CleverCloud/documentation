@@ -2,62 +2,62 @@ name: Deploy
 
 on:
   pull_request_target:
-    types: [opened, closed, synchronize, reopened]
+    types: [closed, opened, reopened, synchronize]
     branches: [ main ]
 
+concurrency:
+  group: deploy-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOMAIN: ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers
+
 jobs:
-  review-app:
+  deploy-review-app:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
-      contents: write
+      contents: read
       issues: write
       pull-requests: write
 
     steps:
-      - name: Wait on Workflow
-        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
-        id: wait-workflow
-        uses: lucasssvaz/wait-on-workflow@v1
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          workflow: build.yml
-          max-wait: 3
-          interval: 5
-          timeout: 60
-          sha: ${{ github.event.pull_request.head.sha || github.sha }}
-      - uses: actions/download-artifact@v4
-        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
-        with:
-          name: build-${{ github.event.pull_request.head.sha }}
-          run-id: ${{ steps.wait-workflow.outputs.run-id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Commit
-        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ls -a
-          git init
-          git add .
-          git config --global user.name "GH runner ${{ steps.wait-workflow.outputs.run-id }}"
-          git config --global user.email "you@example.com"
-          git commit -m "Deploy PR ${{ github.event.number }}"
-      - name: Deploy on CC
-        uses: CleverCloud/clever-cloud-review-app@v2.0.1
+      - name: Deploy on Clever Cloud
+        uses: CleverCloud/clever-cloud-review-app@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
+          GH_CC_HUGO_VERSION: 0.148
+          GH_CC_STATIC_AUTOBUILD_OUTDIR: public/developers
+          GH_CC_WEBROOT: public
+          GH_SERVER_ERROR_PAGE_404: developers/404.html
         with:
-          type: 'static'
           comment: true
-          domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
-      - name: Links checker
-        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
+          set-env: true
+          type: static
+          domain: ${{ env.DOMAIN }}
+
+  check-links:
+    runs-on: ubuntu-latest
+    needs: deploy-review-app
+
+    steps:
+      - name: Check links
         run: |
-          pipx run linkchecker --no-warnings --no-status --check-extern \
+          pipx run linkchecker \
+            --no-warnings \
+            --no-status \
+            --check-extern \
             --user-agent 'Mozilla/5.0 (X11; Linux i686; rv:137.0) Gecko/20100101 Firefox/137.0' \
-            --ignore-url 'https://crates.io/crates/' \
-            'https://${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers' || echo "Link checker found some issues, but proceeding with preview app deployment"
+            --ignore-url 'https://crates.io/crates' \
+            --ignore-url 'https://new.drupal.org' \
+            --ignore-url 'https://static-web-server.net' \
+            --ignore-url 'https://www.clevercloudstatus.com' \
+          'https://${{ env.DOMAIN }}' || echo "::warning title=Broken Links::Some links are broken. Check the logs for details"

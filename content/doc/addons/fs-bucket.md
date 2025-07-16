@@ -12,6 +12,7 @@ keywords:
 - storage
 aliases:
 - /doc/addons/fs_buckets
+- /doc/databases-and-services/fs-buckets
 - /doc/deploy/addon/fs-bucket
 ---
 

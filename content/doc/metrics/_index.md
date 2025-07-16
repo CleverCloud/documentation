@@ -10,6 +10,7 @@ keywords:
 - grafana
 - warp10
 aliases:
+- /doc/administrate/metrics
 - /doc/administrate/metrics/overview
 comments: false
 ---

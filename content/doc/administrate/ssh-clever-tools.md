@@ -11,7 +11,9 @@ keywords:
 - clever-tools
 - putty
 aliases:
+- /doc/admin-console/ssh-keys
 - /doc/doc/admin-console/ssh-keys
+- /doc/reference/clever-tools/ssh-access
 ---
 
 ## Overview

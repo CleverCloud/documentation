@@ -10,7 +10,8 @@ keywords:
 - proxy
 - llm
 - waf
-draft: false
+aliases:
+- /doc/clever-cloud-overview/clevergrid-machine-learning
 ---
 
 Otoroshi is a lightweight API management solution built on a modern HTTP reverse proxy. It serves as a flexible and powerful API gateway for your microservices architecture and operates as a technology-agnostic platform, embracing HTTP as its universal language and providing real-time configuration capabilities. The platform follows an API-first approach, ensuring all features are accessible programmatically.

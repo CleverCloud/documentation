@@ -11,6 +11,7 @@ keywords:
 - monitoring
 aliases:
 - /administrate/metrics/new-relic
+- /doc/administrate/metrics/new-relic
 ---
 
 ## Overview

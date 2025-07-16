@@ -12,6 +12,7 @@ keywords:
 - file
 - files
 aliases:
+- /doc/develop/best-practices/cloud-storage
 - /doc/develop/cloud-storage
 comments: false
 ---

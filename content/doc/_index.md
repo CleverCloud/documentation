@@ -4,6 +4,8 @@ title: Clever Cloud Documentation
 type: docs
 comments: false
 linkTitle: Documentation
+aliases:
+- /clever-cloud-overview
 ---
 
 {{< hextra/hero-subtitle >}}

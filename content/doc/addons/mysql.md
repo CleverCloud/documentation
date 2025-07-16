@@ -10,6 +10,7 @@ keywords:
 - mariadb
 - RDBMS
 aliases:
+- /doc/add-ons/mysql
 - /doc/deploy/addon/mysql/mysql
 ---
 ## Overview

@@ -7,6 +7,8 @@ tags:
 keywords:
 - apps
 - hooks
+aliases:
+- /doc/clever-cloud-overview/hooks
 ---
 ## Deployment lifecycle
 

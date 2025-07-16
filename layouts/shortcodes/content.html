@@ -1,6 +1,6 @@
 {{- $file := .Get 0 -}}
 {{- if $file -}}
-  {{- $content := readFile (printf "layouts/shortcodes/content/%s.md" $file) -}}
+  {{- $content := readFile (printf "shared/%s.md" $file) -}}
   {{- if $content -}}
     {{- $content -}}
   {{- else -}}

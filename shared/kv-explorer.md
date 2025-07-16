@@ -18,4 +18,4 @@ KV Explorer is in Beta testing phase and we'll improve it over the coming months
 
 - [ Share your feedback on KV Explorer](https://github.com/CleverCloud/Community/discussions/categories/kv-explorer)
 
-![landscape](/images/kv-explorer.webp "The KV Explorer tool in the Console")
+![KV Explorer](/images/kv-explorer.webp "The KV Explorer tool in the Console")

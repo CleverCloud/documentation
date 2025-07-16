@@ -26,7 +26,7 @@ Add it in the application configuration: in the console, click **application nam
 
 You can set multiple custom or `cleverapps.io` domain names to an application, but only set one of them as the **primary (favourite)**. This is the one that will be used by default when you access your application with the `clever open` command of Clever Tools or through the link in the upper right corner of the Console:
 
-![Primary domain link](/images/doc/primary-domain-link.webp)
+![Primary domain link](/images/primary-domain-link.webp)
 
 To select the primary domain name:
 - Click the star icon next to the domain name in the **Domain names** section of your application in the Console

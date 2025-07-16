@@ -24,8 +24,7 @@ You can start, restart, and stop your application in the **Overview** menu of yo
 
 Stop functionality is useful during the development of the application to limit its credit consumption.
 
-{{< imgproc link="/" caption="Manage your application from the Console" image="/images/app-management.png" method="resize" options="900x q80 webp">}}
-
+![Manage your application from the Console](/images/app-management.png)
 
 {{< callout type="info" >}}
   If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](../../develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
@@ -48,7 +47,7 @@ You can also enable/disable:
 
 Do not forget to save after editing your configuration.
 
-![Edit your application](/images/doc/application-edit.png)
+![Edit your application](/images/application-edit.png)
 
 ## Archiving/Unarchiving your application
 

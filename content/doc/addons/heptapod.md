@@ -20,7 +20,7 @@ The Heptapod DevOps platform is edited by [Octobus](https://octobus.net), a team
 
 Clever Cloud users can benefit from **Heptapod Cloud** software, along with **Heptapod Runner** for CI/CD operations.
 
-{{< figure src="../../../images/doc/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
+{{< figure src="../../../images/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
 
 ## Heptapod Cloud
 
@@ -67,7 +67,7 @@ Heptapod Cloud is billed on a per-usage model, explained and simulated [on our p
 
 You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organisation.
 
-{{< figure src="../../../images/doc/heptapod-billing.png" caption="You can check your organisation's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
+{{< figure src="../../../images/heptapod-billing.png" caption="You can check your organisation's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
 
 Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever-cloud.com/product/clever-cloud-runners-for-heptapod/).
 

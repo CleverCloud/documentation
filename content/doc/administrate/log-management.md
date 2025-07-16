@@ -22,7 +22,7 @@ Clever Cloud new logs stack is based on Vector and Apache Pulsar. This Web Compo
 
 There are two text filter modes: exact match (case-sensitive) and regular expression. Settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local, to show the instances name or not.
 
-![New logs interface](/images/doc/new-logs.webp)
+![New logs interface](/images/new-logs.webp)
 
 This interface is constantly improving, send us your feedback through our GitHub Community:
 

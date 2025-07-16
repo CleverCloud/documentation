@@ -41,7 +41,7 @@ Also an organisation member with the accountant role can receive invoices as des
 
 * for organisation: available in *Information > Billing details*
 
-![Clever Cloud Console: "Information menu from the organisation"](/images/doc/billing-infos.png "organisation information")
+![Clever Cloud Console: "Information menu from the organisation"](/images/billing-infos.png "organisation information")
 
 ## SEPA Direct Debit
 

@@ -24,7 +24,7 @@ We recently introduced a new Logs interface for applications in [the Console](ht
 
 You can select one or the other using the buttons to the right of the text field. This is only a first step, as we'll later introduce a new stack with indexed logs to better handle such filters and provide new features.
 
-![New logs interface](/images/changelog/new-logs-update.webp)
+![New logs interface](/images/new-logs-update.webp)
 
 Some of you also asked for a change of the default behavior of this Logs interface. Until now, users were redirected to `Live` view during a deployment, otherwise to the `7 days` view, containing all available deployments/instances, with logs of the last deployment shown. We today introduce a new mechanism and now remember the last choice of a user, per application.
 

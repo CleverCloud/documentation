@@ -21,4 +21,4 @@ We also added a link to Clever Cloud's OAuth tokens documentation.
 
 - [Learn more about OAuth tokens](https://www.clever-cloud.com/developers/api/howto/#oauth1)
 
-![New OAuth tokens interface](/images/changelog/console-new-oauth-tokens.webp)
+![New OAuth tokens interface](/images/console-new-oauth-tokens.webp)

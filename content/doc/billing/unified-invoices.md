@@ -29,13 +29,13 @@ The invoice is made up of three distinct sections:
 
 To find your invoices, go to your organisation and click on **Invoices** to see a list of them and their payment status:
 
-![List of invoices from the console](/images/doc/invoice-list.png "The list of invoices")
+![List of invoices from the console](/images/invoice-list.png "The list of invoices")
 
 ### First section
 
 This first section shows the fee for the use of Clever Cloud over a month. Any discounts are explained here.
 
-![First section of the invoice](/images/doc/invoice-amount-to-pay.png "The first section of the invoice")
+![First section of the invoice](/images/invoice-amount-to-pay.png "The first section of the invoice")
 
 ### Second section
 
@@ -52,13 +52,13 @@ This part details line by line the evolution of your credit with:
 
 The **amount of prepaid credits to be topped up** and the **new balance of credits after settlement** are explained via calculations of the different types of credits and their use over time.
 
-![Credit balance on invoice](/images/doc/invoice-credits-balance.png "The second section of the invoice")
+![Credit balance on invoice](/images/invoice-credits-balance.png "The second section of the invoice")
 
 ### Third section
 
 This section of the invoice details the usage of each cloud service.
 
-![Runtime section on invoice](/images/doc/invoice-runtime-detail.png "The third section of the invoice")
+![Runtime section on invoice](/images/invoice-runtime-detail.png "The third section of the invoice")
 
 ## Managed Services
 

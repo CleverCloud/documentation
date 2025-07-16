@@ -54,9 +54,9 @@ reasonable level** is reached.
 
 The following scheme depicts a Scaler replication in case of a load increase:
 
-![Horizontal scaling: numbers of scalers](/images/doc/scaling_horizontal_scheme.jpg "Horizontal scaling: you can define the min and max numbers of Scalers you need.")
+![Horizontal scaling: numbers of scalers](/images/scaling_horizontal_scheme.jpg "Horizontal scaling: you can define the min and max numbers of Scalers you need.")
 
-![Numbers of scalers between 1 and 15](/images/doc/select-scalab-horizontal.png "Horizontal scaling: the amount of Scalers will evolve between 1 and 15.")
+![Numbers of scalers between 1 and 15](/images/select-scalab-horizontal.png "Horizontal scaling: the amount of Scalers will evolve between 1 and 15.")
 
 ## Vertical scaling
 
@@ -73,11 +73,11 @@ load, the larger the instance.
 
 The following scheme depicts a larger Scaler replacement in case of a load increase:
 
-![Vertical scaling](/images/doc/scaling_vertical_scheme.jpg "Vertical scaling")
+![Vertical scaling](/images/scaling_vertical_scheme.jpg "Vertical scaling")
 
 You can choose the size of Scalers you want by defining a maximum instance size manually:
 
-![Scaler size from S to XL](/images/doc/select-scalab.png "Vertical scaling: the Scaler size will go from S to XL.")
+![Scaler size from S to XL](/images/select-scalab.png "Vertical scaling: the Scaler size will go from S to XL.")
 
 ## Combination of both scalings
 

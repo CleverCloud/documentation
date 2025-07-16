@@ -158,14 +158,14 @@ description: Redis has been updated to v7.2.4 mostly to prevent security issues.
 
 Adding an image can be useful for highlighting a change of interface, for example.
 You can achieve this by using a shortcode, which is a simple snippet inside the content files, calling a built-in or custom templates.
-The shortcode we are using here is `figure`, as show below. Then move your image in the `/images/changelog/your-image.jpg` folder of this project.
+The shortcode we are using here is `figure`, as show below. Then move your image in the `/images/your-image.jpg` folder of this project.
 
 The image size can be modified and adapted using the `width` and `height` parameters.
 
 Example :
 
 ```go
-{{< figure src="/images/changelog/console-new-ip-par.png" caption="The new IP shown in the console" width="800px">}}
+{{< figure src="/images/console-new-ip-par.png" caption="The new IP shown in the console" width="800px">}}
 ```
 
 ### Adding tooltips

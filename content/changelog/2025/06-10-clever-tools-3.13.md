@@ -19,7 +19,7 @@ excludeSearch: true
 
 The `clever tokens` command is not experimental anymore, as [API tokens are now available](/developers/changelog/2025/06-05-api-tokens-console-tips/) through the Clever Cloud Console.
 
-![New clever create command](/images/changelog/clever-tools-new-create.webp)
+![New clever create command](/images/clever-tools-new-create.webp)
 
 ## Operators
 
@@ -38,7 +38,7 @@ clever otoroshi version update otoroshi_id
 
 - [Learn more about Operators commands in Clever Tools](/developers/doc/cli/operators/)
 
-![Check Metabase Version command](/images/changelog/clever-tools-metabase-version-check.webp)
+![Check Metabase Version command](/images/clever-tools-metabase-version-check.webp)
 
 ## Emails and public SSH keys
 

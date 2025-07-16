@@ -61,7 +61,7 @@ From there, you can create a TCP redirection for a specific namespace (see [name
 
 The creation is instantaneous. Find the TCP redirection port on this page.
 
-![Redirection console](/images/doc/TCP_redirection_console.png)
+![Redirection console](/images/TCP_redirection_console.png)
 
 ### With the Clever CLI
 

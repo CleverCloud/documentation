@@ -19,4 +19,4 @@ A new interface is available [in Clever Cloud Console to create](https://console
 
 - [Learn more about OAuth consumers](https://www.clever-cloud.com/developers/api/howto/#oauth1)
 
-![New OAuth consumers interface](/images/changelog/new-oauth-consumer.webp)
+![New OAuth consumers interface](/images/new-oauth-consumer.webp)

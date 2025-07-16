@@ -31,7 +31,7 @@ Choose the authentication method that best aligns with your specific integration
 
 Clever Cloud Console allows you to easily create and manage API tokens.
 
-![Manage API tokens in Clever Cloud Console](/images/doc/console-api-tokens.webp)
+![Manage API tokens in Clever Cloud Console](/images/console-api-tokens.webp)
 
 [Clever Tools](https://github.com/CleverCloud/clever-tools) provides a `clever tokens` set of commands. This feature needs to be enabled:
 

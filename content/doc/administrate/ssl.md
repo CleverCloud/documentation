@@ -60,13 +60,13 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
 #### Define a page rule
 
-![Bypass page rule on Cloudflare](/images/doc/cloudflare-page-rule-ssl.png "Create a bypass page rule")
+![Bypass page rule on Cloudflare](/images/cloudflare-page-rule-ssl.png "Create a bypass page rule")
 
  We also recommend to disable the cache level.
 
 #### Turn off HTTP to HTTPS redirection on Cloudflare
 
-![HTTPS set up on Cloudflare](/images/doc/cloudflare-https-setting.png "Turn off automatic HTTPS redirection")
+![HTTPS set up on Cloudflare](/images/cloudflare-https-setting.png "Turn off automatic HTTPS redirection")
 
  You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
 

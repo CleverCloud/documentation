@@ -12,7 +12,7 @@ description: How to set up you CI/CD from GitHub to deploy to Clever Cloud
 
 Clever Cloud provides a GitHub integration to deploy any repository hosted on GitHub to Clever Cloud. You can deploy the same repository to multiple Clever Cloud applications from different branches. Select the appropriate branch in you application menu, in **Information** > **Application edition** > **Used GitHub branch for deployment**.
 
-![GitHub branch deployment](/images/doc/github-branches.png)
+![GitHub branch deployment](/images/github-branches.png)
 
 Clever Cloud asks for permission to access your GitHub repositories. Accept the permissions to allow the deployment. You can deploy both public or private repositories.
 

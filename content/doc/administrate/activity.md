@@ -27,7 +27,7 @@ This happens when you or a member of your organisation performs an action on the
 
  Here's what you might see on the timeline:
 
-![Activity timeline](/images/doc/activity.png)
+![Activity timeline](/images/activity.png)
 
 Each block indicates if the deployment was successful or unsuccessful, along with the following information:
 
@@ -40,7 +40,7 @@ Each block indicates if the deployment was successful or unsuccessful, along wit
 
 Clever Cloud might also trigger re-deployments, either when you're being assisted by the Support, or automatically by the monitoring system. If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
 
-![Re-deployment triggered by the monitoring](/images/doc/monitoring.png)
+![Re-deployment triggered by the monitoring](/images/monitoring.png)
 
 - `Unreachable`: The monitoring servers couldn't open a TCP connection with at least one monitoring agent hosted on instances of the application.
 - `Timeout`: The monitoring servers has succeed to open TCP connections on all monitoring agents hosted on instances of the application, but at least one did not send its probes in time.

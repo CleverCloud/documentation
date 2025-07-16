@@ -180,7 +180,7 @@ git push <remote-name> <branch-name>:master
   {{< tab >}}
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
-  {{< image "/developers/images/github-deployment-branch.png" "Github deployment branch select" >}}
+  ![GitHub deployment branch select](/images/github-deployment-branch.png "Github deployment branch select")
 
   If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings/applications) and link again your GitHub account to your Clever Cloud account.
 
@@ -340,7 +340,7 @@ Once an add-on is created, at least two tabs are available in the Clever Cloud c
 
 * **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
 
-{{< image "/developers/images/addon-dashboard.png" "Example of the dashoard tab of an add-on" >}}
+!["Add-on dashboard"](/images/addon-dashboard.png "Example of an add-on dashboard")
 
 * **Information tab:** This screen sums-up the characteristics of the selected add-on.
 The system shows features and environment variables (if applicable).

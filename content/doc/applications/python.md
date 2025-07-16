@@ -8,9 +8,10 @@ keywords:
 - python
 aliases:
 - /doc/deploy/application/python
-- /doc/deploy/application/python/python_apps/
+- /doc/deploy/application/python/python_apps
 - /doc/getting-started/by-language/python
 - /doc/partials/language-specific-deploy/python
+- /doc/python/python_apps
 comments: false
 ---
 

@@ -9,6 +9,7 @@ aliases:
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps
 - /doc/doc/php
+- /doc/doc/php/php-apps
 - /doc/getting-started/by-language/php
 - /doc/partials/language-specific-deploy/php
 - /getting-started/by-language/php

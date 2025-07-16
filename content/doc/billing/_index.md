@@ -8,9 +8,10 @@ keywords:
 - quickstart
 aliases:
 - /billing
-- /doc/quickstart
+- /doc/administrate/log-management/billing
 - /doc/billing
-- /clever-cloud-overview/
+- /doc/doc/billing
+- /doc/quickstart
 comments: false
 ---
 

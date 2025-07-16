@@ -9,7 +9,7 @@ keywords:
 - maven
 aliases:
 - /doc/deploy/application/java/java-maven
-- /doc/deploy/application/java/
+- /doc/java/java-maven
 ---
 
 ## Overview

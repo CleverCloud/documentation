@@ -4,9 +4,8 @@
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-| `CC_ENABLE_REDIRECTIONIO` | Enable Redirection.io support | `false` |
 | `CC_REDIRECTIONIO_PROJECT_KEY` | The Redirection.io project key |  |
-| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application |  |
+| `CC_REDIRECTIONIO_FORWARD_PORT` | The listening port of your application (optional) |  |
 | `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional) |  |
 
 The Redirection.io agent will start as a service, listen to `8080` port and forward the traffic to your application port.

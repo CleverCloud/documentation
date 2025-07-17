@@ -1,0 +1,18 @@
+---
+title: External doc update from PR {{ env.PR_NUMBER }}
+labels: documentation
+---
+
+## External documentation update needed
+
+Update the external documentation:
+
+- Author: @{{ payload.sender.login }}
+- PR: {{ env.PR_URL }}
+- Modified files: {{ env.CHANGED_FILES }}
+
+Make a PR on one of these repositories:
+
+- [Astro](https://github.com/withastro/docs)
+
+

@@ -1,0 +1,9 @@
+{{- $file := .Get 0 -}}
+{{- if $file -}}
+  {{- $content := readFile (printf "shared/%s.md" $file) -}}
+  {{- if $content -}}
+    {{- $content -}}
+  {{- else -}}
+    {{- warnf "Content not found: %s" $file -}}
+  {{- end -}}
+{{- end -}}

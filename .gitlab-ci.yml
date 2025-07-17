@@ -1,0 +1,7 @@
+include:
+  - component: $CI_SERVER_HOST/pipelines/clever-cloud-pipeline/deploy-to-prod@~latest
+    inputs:
+      stage: deploy
+      when: always
+
+

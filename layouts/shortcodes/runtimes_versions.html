@@ -1,0 +1,50 @@
+{{ $software := or (.Get 0) }}
+{{ $version_list := .Site.Data.runtime_versions }}
+
+{{ with index $version_list $software }}
+    {{ $default := .default | default (slice) }}
+    {{ $accepted := .accepted | default (slice) }}
+    {{ $default_len := len $default }}
+    {{ $accepted_len := len $accepted }}
+    {{ $max_len := $default_len }}
+    {{ if gt $accepted_len $default_len }}
+      {{ $max_len = $accepted_len }}
+    {{ end }}
+
+    <table>
+      <thead>
+        <tr>
+          {{ if $default_len }}
+            <th>Default Version</th>
+          {{ end }}
+          {{ if $accepted_len }}
+            <th>Accepted Versions</th>
+          {{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $i := seq 0 (sub $max_len 1) }}
+        <tr>
+          {{ if $default_len }}
+            <td>
+              {{ with index $default $i }}
+                <code>{{ . }}</code>
+              {{ else }}
+              {{ end }}
+            </td>
+          {{ end }}
+          {{ if $accepted_len }}
+            <td>
+              {{ with index $accepted $i }}
+                <code>{{ . }}</code>
+              {{ else }}
+                <code></code>
+              {{ end }}
+            </td>
+          {{ end }}
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+    <p>The <a href="{{ .eol_source }}">end-of-life (EOL)</a> versions are marked as such.</p>
+{{ end }}

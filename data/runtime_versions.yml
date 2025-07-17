@@ -1,0 +1,74 @@
+node:
+  eol_source: "https://nodejs.org/en/about/releases/"
+  default:
+    - "22.17.0 (npm 10.9.2)"
+bun:
+  eol_source: "https://github.com/oven-sh/bun/releases"
+  default:
+    - "1.2.18"
+PHP:
+  eol_source: "https://www.php.net/supported-versions.php"
+  default:
+    - "8 (8.3)"
+  accepted:
+    - "5.6 (EOL)"
+    - "7 (EOL)"
+    - "7.1 (EOL)"
+    - "7.2 (EOL)"
+    - "7.3 (EOL)"
+    - "7.4 (EOL)"
+    - "8"
+    - "8.0 (EOL)"
+    - "8.1"
+    - "8.2"
+    - "8.3"
+    - "8.4"
+python:
+  eol_source: "https://devguide.python.org/versions/#python-release-cycle"
+  default:
+    - "3"
+  accepted:
+    - "2"
+    - "3"
+    - "3.8 (EOL)"
+    - "3.9"
+    - "3.10"
+    - "3.11"
+    - "3.12"
+    - "3.13"
+dotnet:
+  eol_source: "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core"
+  default:
+    - "6.0 (EOL)"
+  accepted:
+    - "8.0"
+elixir:
+  eol_source: "https://hexdocs.pm/elixir/compatibility-and-deprecations.html"
+  default:
+    - "1.18"
+  accepted:
+    - "1.8 (EOL)"
+    - "1.9 (EOL)"
+    - "1.10 (EOL)"
+    - "1.11 (EOL)"
+    - "1.12 (EOL)"
+    - "1.13 (EOL)"
+    - "1.14"
+    - "1.15"
+    - "1.16"
+    - "1.17"
+    - "1.18"
+java:
+  eol_source: "https://adoptium.net/fr/support/"
+  default:
+    - "11"
+  accepted:
+    - "24"
+    - "23 (EOL)"
+    - "22 (EOL)"
+    - "21"
+    - "17"
+    - "11"
+    - "8"
+    - "7 (EOL)"
+    - "graalvm-ce"

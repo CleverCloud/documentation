@@ -1,0 +1,41 @@
+# Example usage:
+#myDB
+#  shared:
+#    - version_1
+#    - version_2
+#  dedicated:
+#    - version_1
+#    - version_1
+#    - version_2
+pg:
+  dedicated:
+    - "v11.22 (EOL)"
+    - "v12.22 (EOL)"
+    - "v13.21"
+    - "v14.18"
+    - "v15.32"
+    - "v16.9"
+    - "v17.5"
+  dev:
+    - "v15"
+mysql:
+  dedicated:
+    - "5.7 (EOL)"
+    - "8.0"
+    - "8.4"
+  dev:
+    - "8.0"
+mongo:
+  dedicated:
+    - "v4.0.3"
+  dev:
+    - "v4.0.3"
+elasticsearch:
+  dedicated:
+    - "v7.17.10"
+    - "v8.10.2"
+redis:
+  dedicated:
+    - "v8.0.1"
+
+dev_message: "**Important**: Dev plans are free and **solely for testing purposes**. They don't provide the same guarantees or SLAs as dedicated plans."

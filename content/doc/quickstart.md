@@ -65,6 +65,9 @@ An application is defined on Clever Cloud by the following elements:
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
+> [!NOTE]
+> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/developers/doc/addons/fs-bucket/)), object storage ([Cellar](/developers/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/developers/doc/addons/).
+
 ### How it Works
 
 When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.

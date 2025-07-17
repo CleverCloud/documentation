@@ -9,6 +9,7 @@ keywords:
 - rack
 aliases:
 - /doc/deploy/application/ruby/tutorials/ruby-rack-app
+- /doc/ruby/ruby-rack
 ---
 
 ## Overview

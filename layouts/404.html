@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
+  <article
+    class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main
+      class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-flex hx-flex-col hx-items-center hx-justify-center">
+      <div class="hx-flex hx-flex-col hx-items-center hx-justify-center animate__headShake">
+        <img src="/developers/images/404.png" alt="Clever Cloud 404 Logo" id="error-heading" width="200" height="200">
+        <h1 id="error-heading"
+          class="not-prose hx-text-4xl font-bold leading-none tracking-tighter md:text-5xl py-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
+          404
+        </h1>
+        <p class="hx-mb-6">
+          The page you are looking for doesn't exist
+        </p>
+        <a href="/developers/doc"
+          class="btn-primary hero-button-primary hx-font-medium hx-cursor-pointer hx-px-6 hx-py-3 hx-text-center hx-text-white inline-block focus:hx-outline-none focus:hx-ring-4 focus:hx-ring-primary-300 dark:focus:hx-ring-primary-800 transition-all ease-in duration-200">
+          Go to the documentation home page
+        </a>
+      </div>
+      {{ partial "components/pager.html" . }}
+      {{ partial "components/comments.html" . }}
+    </main>
+  </article>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    var element = document.querySelector('#error-heading');
+    if (element) {
+      element.classList.add('animate__animated', 'animate__headShake');
+    }
+  });
+</script>
+{{ end }}

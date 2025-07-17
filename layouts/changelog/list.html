@@ -1,0 +1,84 @@
+{{ define "main" }}
+  {{- $newFeature := (T "newFeature") | default "New" -}} {{/* i18n for strings */}}
+  {{- $nextPage := (T "nextPage") | default "Next" -}}
+  {{- $previousPage := (T "previousPage") | default "Previous" -}}
+  <div class="hx-mx-auto hx-flex {{ partial `utils/page-width` . }}">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+        <br class="hx-mt-1.5 hx-text-sm" />
+        <h1 class="hx-text-center hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">
+          {{ .Title }}
+        </h1>
+        <div class="content hx-text-center">
+          {{ .Content }}
+        </div>
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "changelog") }}
+        {{ range $paginator.Pages.GroupByDate "January, 2006" }}
+        <h3 style="text-decoration: none;"
+        class="hx-block hx-font-semibold hx-flex hx-items-center hx-gap-1 hx-mt-8 hx-text-2xl hx-text-gray-500 dark:hx-text-gray-300">
+          <span
+          class="hx-inline-block hx-align-text-bottom hx-icon">
+            {{- partial "utils/icon.html" (dict "name" "clock" "attributes" "height=24") -}}
+          </span>
+          {{ .Key }}
+        </h3>
+          {{ range .Pages }}
+            <div class="hx-mb-6 hx-ml-4 hx-pl-5">
+              <h4>
+                <a
+                style="color: inherit; text-decoration: none;"
+                class="hx-block hx-font-semibold hx-mt-2 hx-text-l;"
+                href="{{ .RelPermalink }}">
+                  <span class="hx-inline-block hx-align-text-bottom hx-icon">
+                  </span>{{ .Title }}
+                    {{ if in .Params.categories "new" }} {{/* Show a label "new" if category is set to "new"*/}}
+                      <span class="hx-ml-4 hx-not-prose hx-inline-flex hx-items-center hx-gap-2 hx-px-2 hx-py-0 hx-text-xs hx-text-white" style="background: linear-gradient(90deg, #A51050 0%, #CB1C42 50.48%, #F57461 100%);border-radius:2px;">
+                        {{- $newFeature -}}
+                      </span>
+                  {{- end -}}
+                </a>
+              </h4>
+              <a
+              href="{{ .RelPermalink }}"
+              class="hx-opacity-50 hx-text-sm hx-text-gray-800 dark:hx-text-gray-300 hx-no-underline">{{/* Show date */}}
+                {{ .Date | time.Format "2006-01-02" }}
+              </a>
+              {{- if site.Params.blog.list.displayTags -}} {{/* Show tags */}}
+                {{ with .Params.tags }}
+                  <span class="hx-opacity-80 hx-text-sm hx-ml-1 ">
+                    {{- range . }}<a class="hx-inline-block hx-mr-2 hx-ml-2 hx-dark:hx-text-blue-200">#{{ . }}</a>{{ end -}}
+                  </span>
+                {{ end -}}
+              {{- end -}}
+            </div>
+          {{ end }}
+        {{ end }}
+        {{/* pagination system */}}
+        <div class="hx-mb-8 hx-mt-8 hx-flex hx-items-center hx-pt-2  print:hx-hidden {{ if gt $paginator.TotalPages 1 }} hx-border-t dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 {{ end }} "> {{/* Hides pagnination separator if no pages */}}
+          {{ if $paginator.HasPrev }}
+
+              <a
+              href="{{ $paginator.Prev.URL }}"
+              class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:hx-break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4">
+                {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180\"") -}}
+                {{- $previousPage -}}
+              </a>
+
+          {{ end }}
+          {{ if $paginator.HasNext }}
+
+              <a
+              href="{{ $paginator.Next.URL }}"
+              class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:hx-break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left">
+                {{- $nextPage -}}
+                {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"hx-inline hx-h-5 hx-shrink-0\"") -}}
+              </a>
+          {{ end }}
+        </div>
+      </main>
+    </article>
+    <div class="max-xl:hx-hidden hx-h-0 hx-w-64 hx-shrink-0"></div>
+  </div>
+{{ end }}
+

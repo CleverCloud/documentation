@@ -1,2 +1,10 @@
 .DS_Store
-.idea
+/public/developers/*
+/resources
+.clever.json
+.vale.ini
+/styles
+/.hugo_build.lock
+/hugo
+/.idea/*
+

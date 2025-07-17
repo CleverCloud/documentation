@@ -1,0 +1,10 @@
+extends: existence
+message: "Include the framework in the title!"
+nonword: true
+level: error
+scope: heading
+action:
+  name: remove
+tokens:
+  - '\[\.\.\.\]'
+

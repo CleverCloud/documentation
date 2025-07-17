@@ -1,0 +1,9 @@
+extends: existence
+message: "Write '%s' with hyphens when used as an adjective before a noun, but as separate words when it appears as a noun phrase or after a verb"
+level: suggestion
+ignorecase: true
+tokens:
+  - 'up-to-date'
+  - 'up to date'
+  - 'end-of-life'
+  - 'end of life'

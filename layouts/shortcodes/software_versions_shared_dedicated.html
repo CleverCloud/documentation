@@ -1,0 +1,38 @@
+{{ $software := or (.Get 0) }}
+{{ $version_list := .Site.Data.software_versions_shared_dedicated }}
+{{ $software_versions := index $version_list $software }}
+{{ $has_dev := false }}
+
+{{ if $software_versions.dev }}
+  {{ $has_dev = true }}
+{{ end }}
+<table>
+  <thead>
+    <tr>
+      <th>Dedicated</th>
+      {{ if $has_dev }}
+        <th>Dev</th>
+      {{ end }}
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $index, $dedicated_version := $software_versions.dedicated }}
+    <tr>
+      <td><code>{{ $dedicated_version }}</code></td>
+      {{ if $has_dev }}
+        <td>
+          {{ with index $software_versions.dev $index }}
+            <code>{{ . }}</code>
+          {{ else }}
+            <!-- If the index is outside the dev values -->
+          {{ end }}
+        </td>
+      {{ end }}
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ if $has_dev }}
+  {{ $.Page.RenderString "<!-- markdown -->{{< callout type=\"warning\">}}  <strong>Important</strong>: DEV plan is free, <u>for testing purposes only</u>. It has lower performances and no SLA. You can find more info [in the FAQ](/developers/doc/find-help/faq/)  {{< /callout >}}" | safeHTML }}
+{{ end }}
+

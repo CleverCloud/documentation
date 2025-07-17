@@ -9,6 +9,7 @@ keywords:
 - war
 aliases:
 - /doc/deploy/application/java/java-war
+- /doc/java/java-war
 - /doc/java-war
 comments: false
 ---

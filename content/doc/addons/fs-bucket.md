@@ -16,23 +16,20 @@ aliases:
 - /doc/deploy/addon/fs-bucket
 ---
 
-When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted.
-If your application generates data, for example if you let users upload pictures and you do not store it on external
-services like S3, you will lose anything stored on the disk.
+When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted. If your application generates data, for example if you let users upload pictures and you don't store it on databases or object storage, you will lose anything on the local disk after a rebuild or a restart.
 
-The Git deployment does not allow you to keep generated data files between deployments. To avoid the loss of your data,
-you have to mount **a persistent filesystem**. This is why we created File System Buckets.
+Immutable infrastructure doesn't allow you to keep generated data files between deployments. To avoid this, you need **a persistent file system**. This is why we created File System Buckets, a network-based storage solution to retrieve data from a deployment to another.
 
-You will be able to retrieve generated data between two deployments.
+## Known Limitations
 
-> [!WARNING]
-> The public cloud offer does not include automated backups. You can still create and manage backups manually if needed.
+FS Buckets are provided for application needing file-system backward compatibility, but there are not optimized for high-performance applications, especially those relying on caching. There are also some availability and features limitations:
 
-> [!IMPORTANT]
-> FSBuckets aren't available for Docker applications because of security concerns.
+- FS Buckets are not available for Docker applications
+- FS Buckets are note available in Health Data Hosting (HDS) Zone
+- Clever Cloud provides automated backups every 24 hours, with only 72 hours of retention for FS Buckets (7 days for databases)
 
-> [!NOTE]
-> The Health Data Hosting (HDS) region doesn’t support FS Buckets. PHP applications include a default FS Bucket for session storage, so they can’t deploy on HDS unless you turn it off it with `CC_PHP_DISABLE_APP_BUCKET=true`. Use Redis instead to manage PHP sessions.
+>[!NOTE] PHP applications includes a default FS Bucket for session storage
+> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
 
 ## Configuring your application
 

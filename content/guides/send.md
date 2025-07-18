@@ -1,13 +1,18 @@
 ---
 title: 'Send'
-description:
+description: "Simple, private file sharing"
 tags:
 - guides
 keywords:
--
+- wetransfer
+- nodejs
+- javascript
+- redis
+- cellar
+- s3
 
 draft: false
-type: docs
+type: send
 ---
 
 {{< hextra/hero-subtitle >}}
@@ -16,7 +21,7 @@ type: docs
 
 ## Send architecture overview
 
-[Send](https://github.com/timvisee/send) is a Node.js application that provides secure file sharing with automatic expiration. It uses Redis for metadata storage and supports multiple storage backends including local filesystem, S3-compatible services, and Google Cloud Storage.
+[Send](https://github.com/timvisee/send) is a Node.js application providing secure file sharing with automatic expiration. It uses Redis for metadata storage and supports multiple storage backends including local filesystem, S3-compatible services, and Google Cloud Storage.
 
 ```mermaid
 flowchart TD
@@ -34,7 +39,7 @@ flowchart TD
 
 Before deploying Send on Clever Cloud, make sure you have:
 
-- **Node.js 16.x** (required by Send)
+- **Node.js 16.x**
 - **Redis** for metadata storage
 - **Cellar S3** for file storage
 - **Clever Tools CLI** ([documentation](https://www.clever-cloud.com/developers/doc/cli/))
@@ -75,39 +80,6 @@ and configure a bucket for send "send-storage-bucket"
 
 Check the docs for more information https://www.clever-cloud.com/developers/doc/addons/cellar/
 
-#### Configure bucket policy for public read access
-
-Create a `policy.json` file for public read access:
-
-```json
-{
-  "Id": "Policy1587216857769",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1587216727444",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Effect": "Allow",
-      "Resource": "arn:aws:s3:::send-storage-bucket/*",
-      "Principal": "*"
-    }
-  ]
-}
-```
-
-Apply the policy using s3cmd:
-
-```bash
-# Apply the public read policy
-s3cmd setpolicy ./policy.json s3://send-storage-bucket
-
-# Verify the policy is applied
-s3cmd info s3://send-storage-bucket
-```
-
-
 ### 4. Create and configure Node.js application
 
 Create the Node.js application on Clever Cloud:
@@ -128,7 +100,6 @@ Set Node.js version and basic configuration:
 ```bash
 # Set Node.js version and environment
 clever env set CC_NODE_VERSION 16
-clever env set NODE_ENV production
 clever env set PORT 8080
 clever env set CC_POST_BUILD_HOOK "npm install && npm install -g rimraf && npm run build"
 ```

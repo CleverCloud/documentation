@@ -1,13 +1,13 @@
 ---
+type: docs
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+linkTitle:
 description:
 tags:
 - guides
 keywords:
 -
-
 draft: true
-type: docs
 ---
 
 {{< hextra/hero-subtitle >}}

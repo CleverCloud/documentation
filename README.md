@@ -192,4 +192,7 @@ This linter can be downloaded and run locally, or used via Visual Studio Code:
 
 **Ignored markdown files** are listed in the `.markdownlintignore`.
 **Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
-**Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.
+
+## Editorial checks
+
+This project uses [Vale.sh](https://vale.sh) to run editorial checks on the documentation. Install Vale on your machine or as an IDE extension if you want to run checks. This project is already configured to use it on pull requests.

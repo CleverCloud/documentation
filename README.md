@@ -117,30 +117,51 @@ yyyy-mm-dd-your-title.md
 
 Hugo uses front matter to enrich posts with metadata. Front matter allows you to keep metadata attached to an instance of a content type—i.e., embedded inside a content file. We use the following Front matter variables:
 
-- [`title`](https://gohugo.io/methods/page/title/) (required)
-  - The title that will be displayed in the main heading. The value is a `<string>`.
+- [`type`](https://gohugo.io/methods/page/type/) (optional)
+  - The type of content layout to apply. The value is a `<string>`, set it to `docs` except in changelog.
 
-- [`date`](https://gohugo.io/methods/page/description/) (recommended)
-  - The date that will be displayed in the post. The value is a string in ISO 8601 like `yyyy-mm-dd`.
+- [`weight`](https://gohugo.io/methods/page/weight/) (optional)
+  - The weight of the content, used to order the sidebar. The value is an `<integer>`, default is `0`.
+
+- [`linkTitle`](https://gohugo.io/methods/page/linktitle/) (optional)
+  - The title of the content displayed in the sidebar. The value is a `<string>`, default is the `title` value.
+
+- [`title`](https://gohugo.io/methods/page/title/) (required)
+  - The title displayed in the main heading. The value is a `<string>`.
 
 - [`description`](https://gohugo.io/methods/page/description/) (recommended)
-  - The description that will be displayed in meta-description for SEO purposes. The value is a `<string>`.
+  - The description displayed in meta-description for SEO purposes. The value is a `<string>`.
+
+- [`excludeSearch`](https://imfing.github.io/hextra/docs/guide/configuration/#search-index) (optional)
+  - Indicates whether the page should be indexed in search. Default is `false`, we recommend setting it to `true` for changelog entries.
+
+- [aliases](https://gohugo.io/methods/page/aliases) (optional)
+  - Aliases redirects the user to the right page. The value is a list of `<string>`, each string being a path to redirect from, relative to the base URL (without the `/developer`, for example: `/doc/docker`).
+
+- [comments](https://gohugo.io/content-management/comments/) (optional)
+  - Whether to show the feedback block or not. The value is a `<boolean>`, default is `true`.
+
+- [`draft`](https://gohugo.io/methods/page/draft/) (optional)
+  - Whether the page is a draft or not. The value is a `<boolean>`, default is `false`. If set to `true`, the page is not built except if you use the `--buildDrafts` flag.
 
 - [`tags`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (recommended)
   - Tags are recommended for easy product identification. They are written in lowercase and, if possible, use the same spelling throughout the posts. The value is a `<string>`.
 
+- [`authors`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (mostly used in changelog)
+  - Can be set to showcase the people behind the product. Authors are defined with a `name`, `link` for their Github or any other social network, and an `image` for the profile picture. The profile picture can be set with the GitHub avatar with a link like `https://github.com/BlackYoup.png` and the parameter `?size=40` for reducing the image size (recommended for performance). The values are all of `<string>` type.
+
 - [`category`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (optional)
   - The category is used here to add a "new" label on the changelog homepage when a specific entry is a new feature that should be highlighted visually. The value must be `new`, and nothing else.
 
-- [`authors`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (optional)
-  - Can be set to showcase the people behind the product. Authors are defined with a `name`, `link` for their Github or any other social network, and an `image` for the profile picture. The profile picture can be set with the Github avatar with a link like `https://github.com/BlackYoup.png` and a the parameter `?size=40` for reducing the image size (recommended for performance). The values are all of `<string>` type.
+- [`date`](https://gohugo.io/methods/page/date/) (mostly used in changelog)
+  - The date that will be displayed in the post. The value is a string in ISO 8601 like `yyyy-mm-dd`.
 
-- [`excludeSearch`](https://imfing.github.io/hextra/docs/guide/configuration/#search-index) (recommended)
-  - Indicates whether the changelog will be indexed in search. It can be activated for a post if deemed necessary. The values to be set are either `true` or `false`
+For example, a changelog entry front matter could look like this:
 
 ```yaml
 ---
 title: Redis updated to v7.2.4
+description: Redis has been updated to v7.2.4 mostly to prevent security issues
 date: 2024-01-11
 tags:
   - redis
@@ -149,7 +170,6 @@ authors:
     link: https://github.com/BlackYoup
     image: https://github.com/BlackYoup.png?size=40
 excludeSearch: true
-description: Redis has been updated to v7.2.4 mostly to prevent security issues.
 ---
 ```
 

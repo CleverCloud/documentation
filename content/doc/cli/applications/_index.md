@@ -68,8 +68,8 @@ Default region is our Paris datacenters (`par`), but it can be:
 - `syd` (Sydney, OVHcloud)
 - `wsw` (Warsaw, OVHcloud)
 
-> [!NOTE] To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. \
-> This begins with [an initial discussion with our team](https://www.clever-cloud.com/fr/hebergement-donnees-de-sante/contact-hds/).
+> [!NOTE] To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract
+> This begins by having [an initial discussion with Clever Cloud team](https://www.clever-cloud.com/fr/hebergement-donnees-de-sante/contact-hds/)
 
 After the application creation, you can ask for a `json` formatted report instead of an `human` sentence:
 

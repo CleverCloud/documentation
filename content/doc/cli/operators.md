@@ -26,7 +26,7 @@ clever keycloak get myKeycloak
 clever matomo get matomo_id --format json
 ```
 
->[!TIP]
+> [!TIP]
 > You can target a deployed service by its ID or name.
 ## Service management
 
@@ -80,5 +80,5 @@ clever keycloak enable-ng myKeycloak
 clever otoroshi disable-ng otoroshi_id
 ```
 
->[!NOTE] On Clever Cloud Keycloak uses Network Groups for its secure cluster feature
->When you enable it, the Keycloak application is automatically scaled to 2 instances and the cluster automatically configured. When you disable the Network Group feature, the application is scaled down to 1 instance and the cluster is removed.
+> [!NOTE] Keycloak secure cluster feature
+> When you enable the Network group on a Clever Cloud Keycloak, the cluster is automatically configured and the Java application scaled to 2 instances. When you disable the Network Group, the application is scaled down to 1 instance and the cluster is removed.

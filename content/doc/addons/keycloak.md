@@ -124,8 +124,8 @@ The number of realms significantly impacts the overall performances. **Use as fe
 
 You can also create a realm from the Keycloak administrator console. On the dropdown menu from the top left corner, click `create realm`.
 
->[!NOTE]
-Starting with `26.2` release, Keycloak add-ons on Clever Cloud come with `admin-cli` client disabled by default. If you need it for provisioning through a `direct access grant`, you must enable it first.
+> [!NOTE]
+> Starting with `26.2` release, Keycloak add-ons on Clever Cloud come with `admin-cli` client disabled by default. If you need it for provisioning through a `direct access grant`, you must enable it first.
 
 ### Exporting realms data
 

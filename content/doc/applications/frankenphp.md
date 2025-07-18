@@ -12,7 +12,8 @@ type: docs
 
 It comes with many extensions and features such as early hints (HTTP 103), real-time capabilities with its built-in Mercure hub. FrankenPHP can also make your Laravel and Symfony projects faster than ever through their official integrations with the [worker mode](#worker-mode). Deploying PHP applications with FrankenPHP on Clever Cloud is straightforward and requires no complex configuration, nor Docker container.
 
-> [!NOTE] FrankenPHP is a new runtime. Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp)
+> [!NOTE] FrankenPHP is a new runtime
+> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp)
 
 ## Create your FrankenPHP application
 
@@ -46,7 +47,8 @@ If a `composer.json` file is detected at the root of your project, it will be us
 
 To install development dependencies, set the `CC_PHP_DEV_DEPENDENCIES` environment variable to `install`.
 
-> [!TIP] To use a local Composer to install dependencies, put the `composer.phar` file at the root of your project
+> [!TIP] Use a local Composer version
+> If you put a `composer.phar` file at the root of your project, it will be used to install dependencies.
 
 ## Custom PHP configuration
 

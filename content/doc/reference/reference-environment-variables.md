@@ -115,7 +115,7 @@ Use these to define [commands to run]({{< ref "doc/develop/build-hooks.md" >}}) 
 |`CC_RUN_MISE_INSTALL`| Set to `true` to run `mise install` before the build phase |
 
 {{% content "redirectionio" %}}
->[!NOTE] Redirection.io is not available in Docker and PHP applications
+> [!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support
 
@@ -242,7 +242,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 | `CC_BUILD_COMMAND` | The command to run during the build phase | `` |
 | `CC_RUN_COMMAND`   | The command to run during the run phase   | `` |
 
->[!TIP] Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
+Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
 
 ## Node.js
 
@@ -387,8 +387,8 @@ When your Python application doesn't use one of the supported backends, with `CC
 | `CC_STATIC_SERVER` | The server to use to serve your static website, can be `caddy` | `static-web-server` |
 | `CC_WEBROOT` | Path to the web content to serve, relative to the root of your application, used as default build cache | `/` |
 
->[!NOTE] Static Site Generators (SSG) Auto-build
->If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
+> [!NOTE] Static Site Generators (SSG) Auto-build
+> If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
 
 ## V (Vlang)
 

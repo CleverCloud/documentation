@@ -46,8 +46,11 @@ Find `server` command options in the [Hugo documentation](https://gohugo.io/comm
 
 
 
+## Contributing
 
+You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls).
 
+- Read [contribution guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
 
 
 

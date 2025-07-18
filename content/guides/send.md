@@ -130,7 +130,7 @@ clever env set S3_USE_PATH_STYLE_ENDPOINT true
 
 Set Send application configuration:
 
-get the current testing domain with `clever domain`, then
+Get the current testing domain with `clever domain`, then
 
 ```bash
 # Base URL (replace with your test domain)

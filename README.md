@@ -181,7 +181,12 @@ Adding an image can be useful to highlight an interface change, for example. Use
 ![Alt text](/images/your-image.jpg "Title of the image")
 ```
 
+### Adding a new shared content
 
+You can include shared content in several pages. To use this feature:
+
+1. Create a new markdown file in `/shared`
+2. Add it to the relevant pages with: `{{% content "your-partial" %}}`
 
 ### Adding tooltips
 
@@ -189,10 +194,6 @@ Tooltips are useful to provide additional information on terms or acronyms that 
 
 To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](/data/tooltips.toml) file. Once defined, tooltip automatically displays when users hover over associated terms in the documentation.
 
-### Adding a new partial
 
-Partials are reusable content you can include in several pages. To use this feature:
 
-1. Create a new partial in `/layouts/shortcodes/content`
-2. Add it to the relevant pages like this: `{{% content "your-partial" %}}`
 

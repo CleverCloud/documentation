@@ -17,8 +17,8 @@ keywords:
 and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 7.7.1 and varnish-modules 0.26.0**.
 
 
->[!NOTE] Supported runtimes
->Varnish is available on **FrankenPHP**, **Go**, **Linux**, **Node.js**, **PHP with Apache**, **Static**, and **V (Vlang)** applications
+> [!NOTE] Supported runtimes
+> Varnish is available on **FrankenPHP**, **Go**, **Linux**, **Node.js**, **PHP with Apache**, **Static**, and **V (Vlang)** applications
 
 ## Enable Varnish for your application
 

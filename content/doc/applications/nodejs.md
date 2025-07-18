@@ -106,7 +106,7 @@ We support any package manager compatible with Node.js. The [environment variabl
 
 You can also deploy using Deno with additional configuration. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
 
->[!NOTE]
+> [!NOTE]
 > If a `bun.lock` or a `yarn.lock` file exists in your application's main folder, `bun`/`yarn` is used. To overwrite this behavior, either delete the `bun.lock`/`yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
 
 ### Set Node.js version
@@ -115,8 +115,8 @@ If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You 
 
 {{< runtimes_versions node >}}
 
->[!NOTE]
-For legacy reasons, the system prioritizes to the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set.
+> [!NOTE]
+> For legacy reasons, the system prioritizes to the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set.
 
 ### Bun version
 

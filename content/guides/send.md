@@ -76,7 +76,7 @@ Create the Cellar S3 addon for file storage:
 clever addon create cellar-addon --plan S send-storage
 ```
 
-and configure a bucket for send "send-storage-bucket"
+Configure a bucket for Send named "send-storage-bucket."
 
 Check the docs for more information https://www.clever-cloud.com/developers/doc/addons/cellar/
 

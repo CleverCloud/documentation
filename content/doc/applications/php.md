@@ -34,7 +34,7 @@ The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is ex
 
 Set the `CC_PHP_VERSION` environment variable to one of the following versions.
 
-{{< runtimes_versions PHP >}}
+{{< runtimes_versions php >}}
 
 All new PHP applications are created with a default `CC_PHP_VERSION`. You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`).
 

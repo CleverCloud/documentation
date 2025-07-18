@@ -20,54 +20,33 @@ This project is based on [Hugo](https://gohugo.io/) and uses [Hextra](https://im
 
 ## Quickstart
 
-### Clone this repo
-
-To begin your journey with the Clever Cloud Documentation, you need to clone this repo.
-
-Check your Go version, it need to be above go `1.21.1`.
-
 ### Install Hugo
 
-Either [install Hugo](https://gohugo.io/installation/) globally in your system or put its [executable](https://github.com/gohugoio/hugo/releases) in the projet's root.
+To begin your journey with the Clever Cloud Documentation, you need Hugo. You can:
+- [Install it](https://gohugo.io/installation/) globally on your system
+- Get its [binary](https://github.com/gohugoio/hugo/releases) and put it in the project's root
 
-### Start locally
+### Clone the project, preview locally
 
-To run the site locally, there is a server built in Hugo you can summon with: `hugo server`.
-A bunch of options are available:
+Once your system is set up, clone this repository:
 
 ```bash
- -b, --baseURL string         hostname and path to the root
-  -D, --buildDrafts            include content marked as draft
-      --cacheDir string        filesystem path to cache directory
-      --cleanDestinationDir    remove files from destination not found in static directories
-  -c, --contentDir string      filesystem path to content directory
-      --disableFastRender      enables full re-renders on changes
+git clone https://github.com/CleverCloud/documentation
 ```
 
-Hugo refreshes the site as you modify the files, you can keep the server running with no need to restart.
+Then:
 
-There is no need to build before submitting your Pull Request or before deploying.
+1. Go to the documentation folder: `cd documentation`
+2. Run `hugo server` to build and start the local server
 
-## Project basic configuration and architecture
+Local site is available on <http://localhost:1313>, it refreshes as you modify the files, you can keep the server running with no need to restart.
+Find `server` command options in the [Hugo documentation](https://gohugo.io/commands/hugo_server/#options).
 
-The theme used here is called [Hextra](https://imfing.github.io/hextra/).
 
-The `clevercloud-deploy-script.sh` script runs the compilation with the right options and serves the content of the public folder.
 
-This is why the Clever Cloud application running this app needs to have a webroot serving `/public/`.
 
-## Adding or modifying content
 
-Follow these instructions to contribute to the doc.
 
-### Run locally
-
-1. Clone this repo: `git clone git@github.com:CleverCloud/documentation.git`
-2. Go to the repo root: `cd documentation`
-3. Start the theme module: `hugo mod get github.com/imfing/hextra` (optional, but do it if you encounter an error on step 4, to update the theme)
-4. Run `hugo server`
-
-Local site is displayed on <http://localhost:1313>
 
 ### Linting Markdown
 

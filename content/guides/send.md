@@ -78,7 +78,7 @@ clever addon create cellar-addon --plan S send-storage
 
 Configure a bucket for Send named "send-storage-bucket."
 
-Check the docs for more information https://www.clever-cloud.com/developers/doc/addons/cellar/
+Check the [Cellar documentation](https://www.clever-cloud.com/developers/doc/addons/cellar/) for more information.
 
 ### 4. Create and configure Node.js application
 

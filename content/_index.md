@@ -6,6 +6,8 @@ layout: hextra-home
 disableSidebar: false
 type: default
 width: normal
+aliases:
+- /doc/developer
 ---
 <!-- markdownlint-disable MD033 MD034-->
 {{< hextra/hero-badge link="https://github.com/clevercloud/documentation">}}

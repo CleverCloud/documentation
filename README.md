@@ -42,9 +42,22 @@ Then:
 Local site is available on <http://localhost:1313>, it refreshes as you modify the files, you can keep the server running with no need to restart.
 Find `server` command options in the [Hugo documentation](https://gohugo.io/commands/hugo_server/#options).
 
+## Deploying on Clever Cloud
 
+As Clever Cloud [natively detects and build Hugo sites](https://www.clever-cloud.com/developers/doc/applications/static/), you just need some configuration to deploy this project:
 
+```bash
+# Declare what's the web server root, where to build the documentation
+# You must have a `/developers` at the end of your application's route
+CC_WEBROOT="public"
+CC_STATIC_AUTOBUILD_OUTDIR="public/developers"
 
+# Declare the location of the 404 custom page
+SERVER_ERROR_PAGE_404="developers/404.html"
+```
+
+> [!TIP]
+> You can set the Hugo version with `CC_HUGO_VERSION` with a value like `0.148`
 
 ## Contributing
 

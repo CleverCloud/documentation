@@ -11,6 +11,7 @@ keywords:
 - writing
 aliases:
 - /doc/contribute/writing
+- /readme
 comments: false
 ---
 

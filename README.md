@@ -1,23 +1,22 @@
-
 # Clever Cloud Documentation
 
-This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added as a module.</p>
+This project is based on [Hugo](https://gohugo.io/) and uses [Hextra](https://imfing.github.io/hextra/) theme. It provides a great design, a responsive layout, dark mode support, full-text search. It's lightweight, fast, and SEO-ready, with many built-in features:
+
+- [Complete Markdown support](https://imfing.github.io/hextra/docs/guide/markdown/)
+- [Complete shortcodes set](https://imfing.github.io/hextra/docs/guide/shortcodes/)
+- [Diagrams](https://imfing.github.io/hextra/docs/guide/diagrams/)
+- [LaTeX math formulae](https://imfing.github.io/hextra/docs/guide/latex/)
+- [Syntax highlighting](https://imfing.github.io/hextra/docs/guide/syntax-highlighting/)
 
 ## See deployed Documentation
 
-- [Developers Hub](https://www.clever-cloud.com/developers/)
-- [Developers Documentation](https://www.clever-cloud.com/developers/doc/)
-- [Reference Environment Variables](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/)
+- [Home page](https://www.clever-cloud.com/developers/)
+- [Documentation](https://www.clever-cloud.com/developers/doc/)
+- [API Documentation](https://www.clever-cloud.com/developers/api/)
 - [Guides and Tutorials](https://www.clever-cloud.com/developers/guides/)
-
-## Features
-
-- **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.
-- **Responsive Layout and Dark Mode** - It looks great on all devices, from mobile, tablet to desktop. Dark mode is also supported to accomodate various lighting conditions.
-- **Fast and Lightweight** - Powered by Hugo, a lightning-fast static-site generator housed in a single binary file, Hextra keeps its footprint minimal. No Javascript or Node.js are needed to use it.
-- **Full-text Search** - Built-in offline full-text search powered by FlexSearch, no additional configuration required.
-- **Battery-included** - Markdown, syntax highlighting, LaTeX math formulae, diagrams and Shortcodes elements to enhance your content. Table of contents, breadcumbs, pagination, sidebar navigation and more are all automatically generated.
-- **Multi-language and SEO Ready** - Multi-language sites made easy with Hugo's multilingual mode. Out-of-the-box support is included for SEO tags, Open Graph, and Twitter Cards.
+- [Reference Clever Tools CLI](https://www.clever-cloud.com/developers/doc/reference/cli/)
+- [Reference Environment Variables](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/)
+- [Clever Cloud Platform Changelog](https://www.clever-cloud.com/developers/changelog/)
 
 ## Quickstart
 

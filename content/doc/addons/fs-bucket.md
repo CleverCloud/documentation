@@ -28,7 +28,7 @@ FS Buckets are provided for application needing file-system backward compatibili
 - FS Buckets are note available in Health Data Hosting (HDS) Zone
 - Clever Cloud provides automated backups every 24 hours, with only 72 hours of retention for FS Buckets (7 days for databases)
 
->[!NOTE] PHP applications includes a default FS Bucket for session storage
+> [!NOTE] PHP applications includes a default FS Bucket for session storage
 > To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
 
 ## Configuring your application

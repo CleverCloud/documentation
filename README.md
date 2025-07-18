@@ -65,33 +65,30 @@ You can contribute by [creating an issue](https://github.com/CleverCloud/documen
 
 - Read [contribution guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
 
+## Adding a new page or guide
 
+To generates a file from a template (in `/archetypes`), run one of the following Hugo commands:
 
+```bash
+hugo new content guides/<framework>.md
+hugo new content/doc/administrate/<feature>.md
+hugo new content --kind applications doc/applications/<runtime>.md
+```
 
+In new page/guide front matter, `draft` is set to `true` to prevent it from being mistakenly published.
 
-## Adding a new Guide
+> [!TIP]
+> Use `hugo server --buildDrafts` command to preview drafts locally
 
-Run `hugo new content guides/<framework>.md`. Hugo generates a new file from a guide template (stored in `/archetypes`).
+### Adding a changelog entry (internal only)
 
-In this new guide file's metadata, set `draft: true` to publish it.
+For any significant change to the platform (updates, new features, etc.) a new entry is created in the `content/changelog` folder.
 
-## Adding changelog entries *(internal only)*
+Several entries can be made per day, it's not a problem. Each entry should provide clear, straightforward information on the essentials. If you find yourself writing an enormous amount of content, this may not be the right approach. However, you can always add a little charm to your changelog, but it's a tricky business, requiring careful, well-placed word choice.
 
-For any significant change to the platform (updates, new features, etc.) a new entry is created in the "content/changelog" folder.
+The filename format is a markdown file with a `.md` extension:
 
-Several entries can be made per day, it's not a problem.
-
-Each entry should provides clear, straightforward information on the essentials. If you find yourself writing an enormous amount of content, this may not be the right approach. However, you can always add a little charm to your changelog, but it's a tricky business, requiring careful, well-placed word choice.
-
-Whenever possible, the famous "Bugs fixes and improvements" should be avoided.
-
-### Filename convention for new entries
-
-The filename is not very important for the Hugo build and publication process, but it will serve as a slug for the URL. Ideally, it can start with the date in **ISO 8601** format and the title in Kebab case. This naming convention allow the files to be sorted easily in any editor.
-
-The format is a markdown file with a `.md` extention:
-
-```text
+```
 yyyy-mm-dd-your-title.md
 ```
 
@@ -178,11 +175,11 @@ You can include shared content in several pages. To use this feature:
 1. Create a new markdown file in `/shared`
 2. Add it to the relevant pages with: `{{% content "your-partial" %}}`
 
-### Adding tooltips
+## Tooltips
 
 Tooltips are useful to provide additional information on terms or acronyms that may not be familiar to all readers. They help improve the accessibility and comprehension of your documentation without cluttering the main text.
 
-To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](/data/tooltips.toml) file. Once defined, tooltip automatically displays when users hover over associated terms in the documentation.
+To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](https://github.com/CleverCloud/documentation/blob/davlgd-udpdate-readme/data/tooltips.toml) file. Once defined, tooltips automatically display when users hover over associated terms in the documentation.
 
 ## Markdown Linting
 

@@ -6,6 +6,8 @@ comments: false
 linkTitle: Documentation
 aliases:
 - /clever-cloud-overview
+- /doc/en
+- /documentation
 ---
 
 {{< hextra/hero-subtitle >}}

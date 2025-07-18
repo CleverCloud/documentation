@@ -9,6 +9,7 @@ keywords:
 - deploy
 
 aliases:
+- /doc/java/select-java-version
 - /doc/deploy/application
 - /doc/deploy
 comments: false

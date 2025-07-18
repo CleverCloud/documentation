@@ -1,8 +1,11 @@
 ---
 type: docs
-linkTitle: '{{ replace .File.ContentBaseName "-" " " | title }}'
-title:
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+linkTitle:
 description:
+tags:
+keywords:
+draft: true
 ---
 
 ## Overview

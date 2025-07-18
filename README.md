@@ -48,23 +48,10 @@ Find `server` command options in the [Hugo documentation](https://gohugo.io/comm
 
 
 
-### Linting Markdown
 
-Hugo uses [Goldmak](https://github.com/yuin/goldmark), a Markdown parser written in Go, compliant with CommonMark 0.30(see [the specification here](https://spec.commonmark.org/)).
 
-Therefore, for better readability and maintaining, all markdown files for this project are linted with <https://github.com/DavidAnson/markdownlint-cli2>.
-We strongly recommend that you follow the validation rules described here: <https://github.com/DavidAnson/markdownlint#rules--aliases>.
 
-This linter can be downloaded and run locally, or used via VSCode:
 
-- <https://github.com/DavidAnson/vscode-markdownlint> for VSCode
-- <https://github.com/DavidAnson/markdownlint-cli2> as a NPM package
-
-#### Linting configuration
-
-**Ignored markdown files** are listed in the `.markdownlintignore`.
-**Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
-**Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.
 
 ## Adding a new Guide
 
@@ -181,6 +168,15 @@ Tooltips are useful to provide additional information on terms or acronyms that 
 
 To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](/data/tooltips.toml) file. Once defined, tooltip automatically displays when users hover over associated terms in the documentation.
 
+## Markdown Linting
 
+Hugo uses [Goldmark](https://github.com/yuin/goldmark), a Markdown parser written in Go, compliant with [CommonMark 0.30](https://spec.commonmark.org/). Therefore, for better readability and maintainability, all markdown files for this project are linted with [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2). We strongly recommend that you follow the validation rules described [here](https://github.com/DavidAnson/markdownlint#rules--aliases).
 
+This linter can be downloaded and run locally, or used via Visual Studio Code:
 
+- <https://github.com/DavidAnson/vscode-markdownlint> for Visual Studio Code
+- <https://github.com/DavidAnson/markdownlint-cli2> as a `npm` package
+
+**Ignored markdown files** are listed in the `.markdownlintignore`.
+**Ignored specifications**, such as some HTML tag of Web Components, are configured in the `.markdownlint.jsonc`
+**Editorial checks** with [Vale.sh](https://vale.sh). Install Vale on your machine or as a VSCode extension if you want to run checks before submitting your PR. This project is already configured to use it.

@@ -1,10 +1,17 @@
+# System files
+**/.DS_Store
 .DS_Store
-/public/developers/*
-/resources
+Thumbs.db
+
+# Configuration files
 .clever.json
 .vale.ini
-/styles
-/.hugo_build.lock
-/hugo
-/.idea/*
 
+# Build/cache files/folders
+/.hugo_build.lock
+/public/
+/resources/
+
+# IDEs/Editors
+/.idea/
+.vscode/

@@ -1,48 +1,25 @@
+/* -----------------------------------------------
+         This code is overriding default theme
+            configuration and classes
+-------------------------------------------------*/
+
+/* -----------------------------------------
+            Fonts and typography
+------------------------------------------*/
 @font-face {
-  font-display: swap;
   font-family: 'Plus Jakarta Sans';
-  font-style: normal;
   font-weight: 700;
   src: url('/developers/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
        url('/developers/fonts/plus-jakarta-sans-v8-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-/* -----------------------------------------------
-         This code is overriding default theme
-            configuration and classes 
---------------------------------------------------*/
-
-/* Colors */
 :root {
-  --primary-hue: 235deg;
+  --red-color: rgb(203, 28, 66);
+  --blue-color: rgb(0, 172, 230);
+  --purple-color: rgb(58, 56, 113);
+  --dark-background-color: rgba(227, 210, 210, 0);
 }
 
-.hx-bg-gray-100 {
-  background-color: #f1f0fb;
-}
-
-.hx-bg-gray-200 {
-  background-color: rgb(214, 207, 251);
-}
-
-.hx-bg-gray-custom {
-  background-color: #f5f5f5;
-}
-.hx-bg-red-500 {
-  background-color: rgba(245, 117, 97, 0.608);
-}
-.hx-text-white {
-  color: white;
-}
-
-
-/* Colors for dark theme */
-.dark {
-  --primary-hue: -165deg;
-}
-
-
-/* Fonts */
 h1, .content h1,
 .content h2,
 .content h3,
@@ -50,100 +27,39 @@ h1, .content h1,
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.hx-text-xxs {
-  font-size: 0.65rem;
-}
-
-/* Override line color in code block */
-:is(html[class~="dark"] .chroma .ln), :is(html[class~="dark"] .chroma .lnt:not(.hl > .lnt)), :is(html[class~="dark"] .chroma .hl:not(.line)),
-.chroma .ln, .chroma .lnt:not(.hl > .lnt), .chroma .hl:not(.line) {
-color: rgb(82 82 82 / .7)
-}
-
 .highlight .chroma .err {
-  color: #a61717;
-  background-color: rgba(227, 210, 210, 0);
+  color: var(--red-color);
+  background-color: var(--dark-background-color);
 }
+
+html:not([class~="dark"]) .sidebar-active-item {
+  background-color: rgb(224, 227, 255) !important;
+  color: rgb(0, 14, 163) !important;
+}
+
 /* Override border-radius class to fit Clever's theme */
-.hx-rounded,
-.hx-rounded-xl,
-.hx-rounded-3xl,
-.hx-rounded-lg,
-.hx-rounded-md,
-.hx-rounded-sm,
-.hextra-code-block pre:not(.lntable pre),
-.hextra-code-block .filename,
+.btn-secondary,
+.btn-primary,
 .chroma .lntable,
 .content img,
-.content div.gist-file,
-.btn-secondary,
-.btn-primary  {
+.hx-rounded-xl,
+.hx-rounded-3xl {
   border-radius: 0rem;
 }
 
-/* -----------------------------------------
-            Customize shortcodes
--------------------------------------------*/
+/* -----------------------------
+            Shortcodes
+----------------------------- */
 
-/* Hero buttons */
+/* Hero buttons on home page */
 .btn-primary {
-  background-color: rgba(58, 56, 113, 1);
+  background-color: var(--purple-color);
   text-decoration: none;
 }
 
-html[class~="dark"] .btn-primary
- {
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: var(--red-color);
   color: white;
-}
-
-.btn-primary:hover {
-  background-color: rgba(203, 28, 66, 1);
-  color: white;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(245, 116, 97, 1);
-  color: white;
-}
-
-/* Cards */
-.hextra-cards,
-.hextra-feature-card,
-.hextra-card {
-  border-radius: 0.29rem;
-  position: relative;
-
-}
-.hextra-feature-card h3 {
-  font-family: inherit; /* Ensures font family is inherited */
-  font-size: 1.5rem; /* Example size */
-  color: inherit; /* Ensures color is inherited */
-}
-
-html[class~="dark"] .hextra-feature-card {
-  color: inherit;
-}
-
-
-/* If tag, position upright on the card */
-.up-right {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  z-index: 10;
-}
-
-
-/* Override styles for RTL languages */
-[dir="rtl"] .up-right {
-  right: auto; /* Reset the right property */
-  left: 0; /* Position to the left */
-}
-
-.img-grid {
-  grid-template-columns: repeat(auto-fill, minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr));
-  width: 100%;
-  height: 100%; 
 }
 
 /* Steps
@@ -159,8 +75,8 @@ Allow inserting "steps" shortcode with h4 */
   border-width: 4px;
   --tw-border-opacity: 1;
   border-radius: 9999px;
-  border-color: #5754aa;
-  background-color: #5754aa;
+  border-color: var(--purple-color);
+  background-color: var(--purple-color);
   text-align: center;
   font-size: 1rem;
   font-weight:700;
@@ -186,52 +102,41 @@ Allow inserting "steps" shortcode with h4 */
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
-
-
-/* -----------------------------------------------------
-               Links styles
-_______________________________________________________*/
-
-/* Prevent linked text to be underlined or change color.
-  Useful for beautiful cards */
-a.hx-no-underline {
-  text-decoration: none;
-}
+/* --------------
+      Links
+--------------- */
 
 /* Custom link color.
-This will be applied also to code (except in tables): 
+This will be applied also to code (except in tables):
 selectors in css can't be grained to target Markdown syntax
 (for now) */
-.content p a:not(.code),
-.content li a:not(.code),
-.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)), /* Ensure links are the same color in shortodes as well*/
-article a {
-  text-decoration-line: underline;
+html[class~="dark"] .content p a,
+html[class~="dark"] article .content p a,
+html[class~="dark"] article .content div a:not(.hextra-feature-card) ,
+html[class~="dark"] article .content li a {
+  color: var(--blue-color);
   text-decoration-style: dotted;
-  text-decoration-color: rgb(214, 207, 251);
-  color: rgb(90, 66, 212);
 }
 
-html[class~="dark"] .content p a:not(.code),
-html[class~="dark"] .content li a:not(.code),
-html[class~="dark"] article a {
-  color: rgb(0, 172, 230);
+html[class~="dark"] button[data-state="selected"],
+html[class~="dark"] .sidebar-active-item {
+  color: var(--blue-color) !important;
 }
 
-/* Allow linking in a variable environment without
-changing the style and adding an a arrow at the end of the text */
+article .content a:hover:not(.hextra-feature-card),
+article main h4 a:hover {
+  color: var(--red-color) !important;
+  text-decoration-style: dotted;
+}
+
+/* Don't change the style for an inline code within a link
+Mostly used in environment variables table */
 .content a:has(code){
   text-decoration: none;
   color: inherit;
 }
 
-/* Enforce white color in dark mode for code blocks containing a link */ 
-html[class~="dark"] .content a:has(code){
-  color: #ececfe;
-}
-
-
-/* Display an arrow at the end of the linked variable */
+/* Display an arrow at the end of the linked inline code */
 .content a:not(.code-block code) code::after {
   content: "\00a0↗";
     color: tomato;
@@ -245,22 +150,14 @@ html[class~="dark"] .content a:has(code){
     line-height: 0.35em;
 }
 
-/* Display arrow for external links in the main menu.
-  Don't display it if it's an icon */ 
-.nav-container a[href^="http://"]:not(:has(svg))::after,
-.nav-container a[href^="https://"]:not(:has(svg))::after {
-  content: "\00a0↗";
-  font-size: 1rem;
-}
-
-/*--------------------------------------------------------
-                          Table Styling
-----------------------------------------------------------*/ 
+/* ---------------
+      Tables
+--------------- */
 
 /* Table headers formatting */
 .content table:not(.code-block table) th {
   border-right-width: 0px;
-  border-left-width: 0px; 
+  border-left-width: 0px;
   border-top: none;
   text-transform: uppercase;
   color: rgba(115, 115, 142, 1);
@@ -271,7 +168,7 @@ html[class~="dark"] .content table:not(.code-block table) th {
   color: rgb(193, 193, 196);
 }
 
-/* Remove internal borders */
+/* Remove most of the borders */
 .content table:not(.code-block table) td {
   margin: 0px;
   border-width: 0px;
@@ -280,17 +177,13 @@ html[class~="dark"] .content table:not(.code-block table) th {
 
 /* Text in cells */
 .content table:not(.code-block table) tr {
-  font-size: 0.8rem;
-  text-align: left;
+  font-size: 0.9rem;
   border-width: 0px;
-  color: rgba(58, 56, 113, 1);
 }
-/* Text in cells for dark mode */
-.content :where(table):not(:where(.hextra-code-block table, [class~=not-prose],[class~=not-prose] *)) td:is(html[class~="dark"] *) {
-    color: #ececfe;
-  }
 
-/* Animation for 404 pages */
+/* ---------------------------------------
+          Animation for 404 page
+--------------------------------------- */
 .animate__headShake {
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
@@ -338,29 +231,11 @@ html[class~="dark"] .content table:not(.code-block table) th {
     }
 }
 
-/* -----------------------------------------
-            Customize paragraphs
--------------------------------------------*/
-/*Apply to content and exclude alerts <p> from this style*/
-.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)):not(:where(.hx-overflow-x-auto *, .hx-border p)) {
-  margin-top: .3rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.75rem;
-}
+/* -------------------------
+            Changelog
+------------------------- */
 
-
-/* -- Add padding to the left for changelog listing--*/
+/* Entries listing--*/
 .hx-pl-5 {
   padding-left: 1.25rem;
-}
-
-/* Override for hextra/feature-card */ 
-.hextra-feature-card h3,
-.hextra-feature-card {
-    text-decoration: none;
-    color: black;
-
-}
-html[class~="dark"] .hextra-feature-card h3 {
-  color: white;
 }

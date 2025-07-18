@@ -9,7 +9,8 @@ description: Build and deploy any application with Mise and your favorite tools
 
 Clever Cloud platform provides a multi-runtime environment, including many tools to deploy and run your applications. The Linux runtime is a versatile solution to build and deploy any kind of application. The Mise package manager helps you to install and manage any supported dependencies Clever Cloud doesn't provide by default such as Dart, Gleam, Zig for example.
 
-> [!NOTE] Linux is a new runtime. Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
+> [!NOTE] Linux is a new runtime
+> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
 
 ## Create your Linux application
 
@@ -35,7 +36,7 @@ During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided
 
 - [Learn more about Deployment hooks](/developers/doc/develop/build-hooks/)
 
->[!TIP] Use Mise package manager to define build/run commands
+> [!TIP] Use Mise package manager to define build/run commands
 > If you define `build` and `run` tasks in the `mise.toml` file [or as File Tasks](https://mise.jdx.dev/tasks/#tasks-in-mise-toml-files), Clever Cloud will automatically use them. `CC_BUILD_COMMAND` and `CC_RUN_COMMAND` have precedence over the `build` and `run` tasks defined by Mise.
 
 ## Clever Task and Multi-runtime approach

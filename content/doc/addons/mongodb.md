@@ -11,6 +11,7 @@ keywords:
 - nosql
 - database
 aliases:
+- /doc/mongodb
 - /doc/deploy/addon/mongodb
 - /doc/deploy/addon/mongodb/mongodb
 - /doc/deploy/addon/mongodb/managing-mongodb

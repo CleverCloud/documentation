@@ -13,7 +13,8 @@ aliases:
 
 Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
 
-> [!NOTE] Static is a new runtime. Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
+> [!NOTE] Static is a new runtime
+> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
 
 ## Create your Static application
 
@@ -86,7 +87,7 @@ Supported Static Site Generators (SSG) are:
 * Build command: `hugo --gc --minify --destination <out-dir>`
 * Detected file: `hugo.json`, `hugo.toml`, `hugo.yaml`
 
->[!TIP] Set the Hugo version
+> [!TIP] Set the Hugo version
 >Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.145`, `0.146`, `0.147` (default) or `0.148`
 
 ### mdBook

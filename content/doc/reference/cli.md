@@ -4,6 +4,8 @@ linkTitle: CLI reference
 title: Clever Tools - CLI commands reference
 description: Clever Tools commands reference to create and manage Clever Cloud applications, add-ons and services. Ideal to provide to LLMS and AI assisted IDEs.
 comments: false
+aliases:
+- /doc/reference/clever-tools/configure
 ---
 
 This document is automatically generated from Clever Tools `3.13.1` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.

@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/haskell
 - /doc/deploy/application/haskell/haskell
 - /doc/getting-started/by-language/haskell
+- /doc/haskell/
 - /doc/haskell/haskell
 - /doc/partials/language-specific-deploy/haskell
 ---

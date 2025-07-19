@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/ruby
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
 - /doc/deploy/application/ruby/ruby-rack
+- /doc/en/ruby-hosting
 - /doc/getting-started/by-language/ruby
 - /doc/partials/language-specific-deploy/ruby
 - /doc/ruby/ruby-on-rails

@@ -30,6 +30,7 @@ You'll find below the first commands to know to connect Clever Tools to your acc
   {{< card link="logs-drains" title="Manage logs, drains" icon="command-line" >}}
   {{< card link="network-groups" title="Network Groups" icon="tcp-ip-service" >}}
   {{< card link="notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
+  {{< card link="operators" title="Operators (Managed services)" icon="document-check" >}}
   {{< card link="services-depedencies" title="Services dependencies" icon="endpoints" >}}
 {{< /cards >}}
 

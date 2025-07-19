@@ -8,6 +8,7 @@ keywords:
 - go
 - golang
 aliases:
+- /deploy/application/golang/go
 - /doc/deploy/application/golang
 - /doc/deploy/application/golang/go
 - /doc/getting-started/by-language/go

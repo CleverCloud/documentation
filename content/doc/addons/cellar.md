@@ -14,6 +14,7 @@ keywords:
 - s3cmd
 - aws
 aliases:
+- /deploy/addon/cellar
 - /doc/deploy/addon/cellar
 ---
 {{< hextra/hero-subtitle >}}

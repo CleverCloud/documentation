@@ -8,6 +8,7 @@ keywords:
 - ruby
 - rails
 aliases:
+- /deploy/application/ruby/by-framework/ruby-on-rails
 - /doc/deploy/application/ruby/ruby-on-rails
 ---
 

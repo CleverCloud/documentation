@@ -10,6 +10,8 @@ keywords:
 - shortcode
 - writing
 aliases:
+- /administrate/guides/contribute
+- /contribute/writing
 - /doc/contribute/writing
 - /doc/get-help/community
 - /readme

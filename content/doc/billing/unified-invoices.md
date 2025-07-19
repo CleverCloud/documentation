@@ -12,6 +12,7 @@ keywords:
 - payment
 - payments
 aliases:
+- /clever-cloud-overview/unified-invoicing
 - /doc/clever-cloud-overview/unified-invoicing
 ---
 

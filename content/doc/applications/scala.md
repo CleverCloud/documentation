@@ -7,11 +7,13 @@ tags:
 keywords:
 - scala
 aliases:
+- /deploy/application/scala/scala
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala
 - /doc/deploy/application/scala/scala
 - /doc/partials/language-specific-deploy/scala
 - /doc/scala/scala
+- /scala/scala
 comments: false
 ---
 

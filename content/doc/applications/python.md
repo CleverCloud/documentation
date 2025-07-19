@@ -7,13 +7,16 @@ tags:
 keywords:
 - python
 aliases:
+- /deploy/application/python/python_apps
 - /doc/deploy/application/python
 - /doc/deploy/application/python/python_apps
 - /doc/getting-started/by-language/python
 - /doc/partials/language-specific-deploy/python
-- /python
+- /doc/python
 - /doc/python/python_apps
 - /doc/reference/python
+- /python
+- /python/python_apps
 comments: false
 ---
 

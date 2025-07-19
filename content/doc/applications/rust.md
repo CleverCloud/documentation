@@ -8,6 +8,7 @@ keywords:
 - rust
 - cargo
 aliases:
+- /deploy/application/rust/rust
 - /doc/deploy/application/rust
 - /doc/deploy/application/rust/rust
 - /doc/getting-started/by-language/rust

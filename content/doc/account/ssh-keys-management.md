@@ -14,6 +14,7 @@ keywords:
 - sshkeys
 - private ssh
 aliases:
+- /account/ssh-keys-management
 - /doc/getting-started/ssh-keys
 ---
 

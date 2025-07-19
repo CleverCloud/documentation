@@ -11,6 +11,7 @@ keywords:
 - pgsql
 - mariadb
 aliases:
+- /deploy/addon/postgresql
 - /doc/databases-and-services/postgresql
 - /doc/deploy/addon/postgresql/postgresql
 ---

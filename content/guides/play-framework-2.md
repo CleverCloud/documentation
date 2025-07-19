@@ -12,6 +12,8 @@ aliases:
 - /doc/deploy/application/java/by-framework/play-framework-2
 - /doc/java/play-framework-2
 - /doc/scala/play-framework-2
+- /java/play-framework-2
+- /scala/play-framework-2
 ---
 
 ## Overview

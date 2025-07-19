@@ -14,6 +14,7 @@ keywords:
 - datadog
 - newrelic
 aliases:
+- /clever-cloud-apis/add-ons-log-collector
 - /doc/administrate/log-management/#get-continuous-logs-from-your-application
 - /doc/clever-cloud-apis/add-ons-log-collector
 ---

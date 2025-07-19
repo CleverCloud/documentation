@@ -14,6 +14,7 @@ keywords:
 - rabbitmq
 - kafka
 aliases:
+- /deploy/addon/pulsar
 - /doc/deploy/addon/pulsar
 ---
 

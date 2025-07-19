@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/deploy/application/python/tutorials/python-django-sample
 - /doc/python/python-django-sample
+- /python/python-django-sample
 ---
 
 ## Overview

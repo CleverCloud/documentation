@@ -7,6 +7,7 @@ keywords:
 tags:
 - deploy
 aliases:
+- /developers/doc/applications/docker
 - /docker
 - /doc/deploy/application/docker
 - /doc/deploy/application/docker/docker

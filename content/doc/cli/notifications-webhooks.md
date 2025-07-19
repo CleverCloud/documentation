@@ -6,6 +6,7 @@ aliases:
 - /doc/cli/notifications
 - /doc/administrate/clever-tools/notifications
 - /doc/reference/clever-tools/notifications
+- /reference/clever-tools/notifications
 ---
 
 When events happen on Clever Cloud, during add-ons or applications lifecycle for example, you can send email notifications or trigger webhooks. For each of the following command, you can list all items and/or target a specific user/organisation through these parameters:

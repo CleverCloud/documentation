@@ -6,6 +6,8 @@ description: Clever Tools commands reference to create and manage Clever Cloud a
 comments: false
 aliases:
 - /doc/reference/clever-tools/configure
+- /reference/clever-tools
+- /reference/clever-tools/getting_started
 ---
 
 This document is automatically generated from Clever Tools `3.13.1` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.

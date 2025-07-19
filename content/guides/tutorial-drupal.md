@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-drupal
 - /doc/php/tutorial-drupal
+- /php/tutorial-drupal
 ---
 
 ## Overview

@@ -8,6 +8,7 @@ keywords:
 - quickstart
 aliases:
 - /billing
+- /doc/administrate/billing
 - /doc/administrate/log-management/billing
 - /doc/billing
 - /doc/doc/billing

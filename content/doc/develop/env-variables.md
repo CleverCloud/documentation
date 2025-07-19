@@ -10,6 +10,8 @@ keywords:
 - env
 - variables
 - environment variables
+aliases:
+- /develop/env-variables
 ---
 
 Clever Cloud allows you to define environment variables that will be

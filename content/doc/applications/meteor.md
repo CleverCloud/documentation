@@ -9,6 +9,7 @@ keywords:
 - meteorjs
 - nodejs
 aliases:
+- /deploy/application/javascript/by-framework/meteor
 - /doc/applications/javascript/meteor
 - /doc/applications/javascript/by-framework/meteor
 ---

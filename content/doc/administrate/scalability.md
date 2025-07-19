@@ -9,6 +9,7 @@ keywords:
 - scalability
 - autoscale
 aliases:
+- /administrate/scalability
 - /doc/clever-cloud-overview/scaling
 ---
 

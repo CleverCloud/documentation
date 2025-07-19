@@ -3,6 +3,7 @@ type: docs
 title: Configuration
 description: Configure Clever Cloud applications with Clever Tools
 aliases:
+- /clever-tools/tcp-redirections
 - /doc/administrate/clever-tools/configure
 - /doc/clever-tools/tcp-redirections
 - /doc/cli/applications/deployment-lifecycle/applications-config

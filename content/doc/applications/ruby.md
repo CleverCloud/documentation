@@ -14,6 +14,7 @@ aliases:
 - /doc/getting-started/by-language/ruby
 - /doc/partials/language-specific-deploy/ruby
 - /doc/ruby/ruby-on-rails
+- /getting-started/by-language/ruby
 comments: false
 ---
 

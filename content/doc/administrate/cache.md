@@ -9,6 +9,8 @@ keywords:
 - varnish-modules
 - caching
 - cache
+aliases:
+- /administrate/cache
 ---
 
 ## Overview

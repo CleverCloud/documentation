@@ -7,6 +7,7 @@ keywords:
 tags:
 - java
 aliases:
+- /deploy/application/java/java-jar
 - /doc/deploy/application/java/java-jar
 comments: false
 ---

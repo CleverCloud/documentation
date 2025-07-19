@@ -8,6 +8,7 @@ keywords:
 - java
 - war
 aliases:
+- /deploy/application/java/java-war
 - /doc/deploy/application/java/java-war
 - /doc/java/java-war
 - /doc/java-war

@@ -3,6 +3,8 @@ weight: 13
 type: docs
 title: Find Help
 description: Find help on Clever Cloud, from support to FAQ and troubleshooting guides
+aliases:
+- /doc/administrate/find-help
 comments: false
 ---
 

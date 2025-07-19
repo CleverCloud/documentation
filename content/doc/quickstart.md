@@ -11,8 +11,8 @@ aliases:
 - /deploy
 - /doc/clever-cloud-overview/add-application
 - /doc/getting-started/quickstart
+- /getting-started/authentication
 - /getting-started/quickstart
-
 ---
 {{< hextra/hero-subtitle >}}
   Clever Cloud provides an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.

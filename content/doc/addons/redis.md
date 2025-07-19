@@ -10,6 +10,7 @@ keywords:
 - key-value
 - in-memory
 aliases:
+- /addons/redis
 - /doc/deploy/addon/redis
 ---
 

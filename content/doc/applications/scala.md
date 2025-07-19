@@ -13,6 +13,7 @@ aliases:
 - /doc/deploy/application/scala/scala
 - /doc/partials/language-specific-deploy/scala
 - /doc/scala/scala
+- /doc/scala-hosting
 - /scala/scala
 comments: false
 ---

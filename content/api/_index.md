@@ -6,6 +6,7 @@ comments : false
 draft: false
 aliases:
 - /doc/openapi
+- /doc/clever-cloud-addons-api/add-ons-api
 - /doc/clever-cloud-apis/cc-api
 - /doc/extend/cc-api
 - /openapi

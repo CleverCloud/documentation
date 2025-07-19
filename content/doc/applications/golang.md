@@ -14,6 +14,7 @@ aliases:
 - /doc/go
 - /doc/go/go
 - /doc/partials/language-specific-deploy/go
+- /go/go
 ---
 
 ## Overview

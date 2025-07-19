@@ -12,6 +12,7 @@ aliases:
 - /doc/deploy/application/rust/rust
 - /doc/getting-started/by-language/rust
 - /doc/partials/language-specific-deploy/rust
+- /doc/rust
 - /doc/rust/rust
 comments: false
 ---

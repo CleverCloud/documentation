@@ -10,8 +10,10 @@ keywords:
 - mariadb
 - RDBMS
 aliases:
+- /doc/mysql
 - /doc/add-ons/mysql
 - /doc/deploy/addon/mysql/mysql
+- /doc/en/mysql-hosting
 ---
 ## Overview
 MySQL is an open source relational database management system (RDBMS). Clever Cloud's add-on uses the [Percona Server](https://www.percona.com/mysql/software/percona-server-for-mysql), a 100% compatible open source implementation, with performances improvements and more features.

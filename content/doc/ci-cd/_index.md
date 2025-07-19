@@ -5,6 +5,8 @@ date: 2024-03-15T13:14:53+01:00
 description: Deploy to Clever Cloud from GitLab or GitHub
 draft: false
 type: docs
+aliases:
+- /doc/administrate/ci-cd
 ---
 
 {{< hextra/hero-subtitle >}}

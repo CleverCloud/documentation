@@ -7,6 +7,7 @@ tags:
 keywords:
 - java
 aliases:
+- /doc/apps
 - /doc/deploy/application/java
 - /doc/deploy/application/java/java
 - /doc/getting-started/by-language/java

@@ -12,6 +12,7 @@ keywords:
 aliases:
 - /administrate/metrics/new-relic
 - /doc/administrate/metrics/new-relic
+- /doc/tools/new-relic
 ---
 
 ## Overview

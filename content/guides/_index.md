@@ -6,6 +6,8 @@ tags:
 - guides
 aliases:
 - /doc/deploy/application/docker/tutorials
+- /doc/deploy/application/python/tutorials
+- /doc/deploy/application/ruby/tutorials
 - /doc/guides
 llmsTxtOptional: true
 comments: false

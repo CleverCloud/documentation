@@ -9,6 +9,7 @@ keywords:
 - deploy
 
 aliases:
+- /doc/deploy/application/ruby/by-framework
 - /doc/java/select-java-version
 - /doc/deploy/application
 - /doc/deploy

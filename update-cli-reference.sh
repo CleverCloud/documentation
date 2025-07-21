@@ -11,6 +11,7 @@ description: Clever Tools commands reference to create and manage Clever Cloud a
 comments: false
 aliases:
 - /doc/reference/clever-tools/configure
+- /doc/reference/clever-tools/lifecycle
 ---
 """
 

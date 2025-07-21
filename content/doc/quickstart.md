@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /deploy
 - /doc/clever-cloud-overview/add-application
+- /doc/getting-started
 - /doc/getting-started/quickstart
 - /getting-started/authentication
 - /getting-started/quickstart

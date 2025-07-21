@@ -13,6 +13,7 @@ aliases:
 - /administrate/metrics/overview/
 - /doc/administrate/metrics
 - /doc/administrate/metrics/overview
+- /doc/tools/metrics
 comments: false
 ---
 {{< callout type="warning" >}}

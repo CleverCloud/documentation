@@ -8,6 +8,7 @@ aliases:
 - /doc/administrate/clever-tools/ssh-access
 - /doc/clever-tools/lifecycle
 - /doc/clever-tools/ssh-access
+- /doc/cli/commands/restart
 - /doc/cli/lifecycle
 - /doc/cli/manage
 - /doc/cli/ssh-access

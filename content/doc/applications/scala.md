@@ -12,6 +12,7 @@ aliases:
 - /doc/deploy/application/scala
 - /doc/deploy/application/scala/scala
 - /doc/partials/language-specific-deploy/scala
+- /doc/scala
 - /doc/scala/scala
 - /doc/scala-hosting
 - /scala/scala

@@ -8,8 +8,10 @@ keywords:
 - python
 aliases:
 - /deploy/application/python/python_apps
+- /doc/applications/python
 - /doc/deploy/application/python
 - /doc/deploy/application/python/python_apps
+- /doc/en/python-hosting
 - /doc/getting-started/by-language/python
 - /doc/partials/language-specific-deploy/python
 - /doc/python

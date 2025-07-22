@@ -9,6 +9,7 @@ keywords:
 - rails
 aliases:
 - /doc/deploy/application/ruby
+- /doc/deploy/application/ruby/by-framework
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
 - /doc/deploy/application/ruby/ruby-rack
 - /doc/en/ruby-hosting

@@ -11,6 +11,7 @@ aliases:
 - /docker
 - /doc/deploy/application/docker
 - /doc/deploy/application/docker/docker
+- /doc/docker/
 - /doc/docker/docker
 - /doc/getting-started/by-language/docker
 - /doc/partials/language-specific-deploy/docker

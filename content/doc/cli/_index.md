@@ -8,6 +8,7 @@ aliases:
 - /doc/administrate/clever-tools/getting_started
 - /doc/administrate/cli
 - /doc/clever-tools/getting_started
+- /doc/clever-tools/manage
 - /doc/cli/getting_started
 - /doc/getting-started/cli
 - /doc/quickstartcli

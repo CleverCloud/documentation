@@ -6,6 +6,7 @@ tags:
 - guides
 aliases:
 - /doc/deploy/application/docker/tutorials
+- /doc/deploy/application/haskell/tutorials
 - /doc/deploy/application/python/tutorials
 - /doc/deploy/application/ruby/tutorials
 - /doc/deploy/application/scala/tutorials

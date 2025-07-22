@@ -7,11 +7,13 @@ tags:
 keywords:
 - java
 aliases:
-- /doc/apps
+- /doc/sbt
 - /doc/deploy/application/java
 - /doc/deploy/application/java/java
 - /doc/deploy/application/java/by-framework
 - /doc/getting-started/by-language/java
+- /doc/java/select-java-version
+- /doc/java-hosting
 - /doc/partials/language-specific-deploy/java
 comments: false
 ---

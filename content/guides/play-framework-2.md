@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/applications/java/play-framework-2
 - /doc/deploy/application/java/by-framework/play-framework-2
+- /doc/deploy/application/scala/tutorials/play-framework-2
 - /doc/java/play-framework-2
 - /doc/scala/play-framework-2
 - /java/play-framework-2

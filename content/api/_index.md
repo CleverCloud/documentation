@@ -9,6 +9,7 @@ aliases:
 - /doc/clever-cloud-addons-api/add-ons-api
 - /doc/clever-cloud-apis/cc-api
 - /doc/extend/cc-api
+- /doc/getting-started/openapi
 - /openapi
 ---
 

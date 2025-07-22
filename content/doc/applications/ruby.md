@@ -14,6 +14,8 @@ aliases:
 - /doc/en/ruby-hosting
 - /doc/getting-started/by-language/ruby
 - /doc/partials/language-specific-deploy/ruby
+- /doc/ruby
+- /doc/ruby-hosting
 - /doc/ruby/ruby-on-rails
 - /getting-started/by-language/ruby
 comments: false

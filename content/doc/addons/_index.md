@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/addons/clever-cloud-addons
 - /doc/administrate/addons
+- /doc/clever-cloud-overview/intro-to-addons
 - /doc/deploy/addon
 - /doc/extend
 - /doc/getting-started/dbaas

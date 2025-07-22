@@ -12,7 +12,8 @@ keywords:
 - apm
 aliases:
 - /doc/deploy/addon/elastic/elastic
-- /doc/deploy/addon/elastic/
+- /doc/deploy/addon/elastic
+- /doc/elasticsearch
 comments: false
 ---
 

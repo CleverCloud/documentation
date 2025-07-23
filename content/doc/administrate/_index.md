@@ -4,6 +4,8 @@ type: docs
 title: "Administrate"
 description: Manage your applications, add-ons, and more on Clever Cloud
 comments: false
+aliases:
+- /doc/admin
 ---
 
 {{< cards >}}

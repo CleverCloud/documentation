@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /deploy/application/java/java-maven
 - /doc/deploy/application/java/java-maven
+- /doc/deploy/application/java/old_java-maven
 - /doc/java/java-maven
 ---
 

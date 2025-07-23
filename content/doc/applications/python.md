@@ -16,6 +16,7 @@ aliases:
 - /doc/partials/language-specific-deploy/python
 - /doc/python
 - /doc/python/python_apps
+- /doc/python-hosting
 - /doc/reference/python
 - /python
 - /python/python_apps

@@ -13,6 +13,7 @@ aliases:
 - /addons/redis
 - /doc/deploy/addon/redis
 - /doc/en/redis-hosting
+- /doc/redis
 ---
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.

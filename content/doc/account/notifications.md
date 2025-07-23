@@ -12,6 +12,8 @@ keywords:
 - email
 - slack
 - flowdock
+aliases:
+- /doc/admin-console/notifications
 ---
 
 The *Notifications* service allows you to choose the events of interest to you

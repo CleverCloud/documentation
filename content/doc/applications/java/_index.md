@@ -7,7 +7,6 @@ tags:
 keywords:
 - java
 aliases:
-- /doc/sbt
 - /doc/deploy/application/java
 - /doc/deploy/application/java/java
 - /doc/deploy/application/java/by-framework

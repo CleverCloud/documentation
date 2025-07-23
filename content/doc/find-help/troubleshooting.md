@@ -8,6 +8,8 @@ keywords:
 - support
 - git issues
 - troubleshoot
+aliases:
+- /doc/get-help/troubleshooting
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

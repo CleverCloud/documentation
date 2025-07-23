@@ -6,7 +6,9 @@ comments: false
 linkTitle: Documentation
 aliases:
 - /clever-cloud-overview
+- /doc/clever
 - /doc/en
+- /doc/get
 - /documentation
 ---
 

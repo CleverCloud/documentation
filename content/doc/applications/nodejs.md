@@ -225,7 +225,7 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 
 ## Automatic HTTPS redirection
 
-You can use the [X-Forwarded-Proto header]({{< ref "doc/find-help/faq.md#how-to-know-if-a-user-comes-from-a-secure-connection" >}}) to enable it.
+You can use the [X-Forwarded-Proto header](/developers/doc/find-help/faq#how-to-know-if-a-user-comes-from-a-secure-connection) to enable it.
 
 If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
 

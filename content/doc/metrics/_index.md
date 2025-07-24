@@ -42,7 +42,7 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp 10]({{< ref "doc/metrics/warp10" >}}), so you can explore data directly with the [quantum]({{< ref "doc/metrics/warp10" >}}) interface, with [WarpScript](https://www.warp10.io/doc/reference).
+All metrics are stored in [Warp 10](/developers/doc/metrics/warp10), so you can explore data directly with the [quantum](/developers/doc/metrics/warp10) interface, with [WarpScript](https://www.warp10.io/doc/reference).
 
 For instance, you can derive metrics over time, do custom aggregations or combine metrics.
 
@@ -56,7 +56,7 @@ For example, check [this tutorial on how to create Slack alerts with Grafana](ht
 
 ## Access Logs metrics
 
-All your applications access logs are pushed to [Warp 10]({{< ref "doc/metrics/warp10" >}}). You are now able to process them directly in the console in the Metrics tab of your applications.
+All your applications access logs are pushed to [Warp 10](/developers/doc/metrics/warp10). You are now able to process them directly in the console in the Metrics tab of your applications.
 
 ### Request rate
 
@@ -157,7 +157,7 @@ sDuration -> total session duration time in millis
 The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
 {{< callout type="info" >}}
-Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation]({{< ref "doc/metrics/warp10" >}}).
+Look at *fetch_accessLogs_key_v0* macro to have a convenient way to explore access log data, see [Warp 10 documentation](/developers/doc/metrics/warp10).
 {{< /callout >}}
 
 
@@ -223,7 +223,7 @@ or to get the latitude of the destination, which is a nested data:
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp 10]({{< ref "doc/metrics/warp10" >}}), a Geotimes series database.
+All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/developers/doc/metrics/warp10), a Geotimes series database.
 All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.
 
 ### Monitoring data model
@@ -330,7 +330,7 @@ Below, the list of all Warp 10 classes representing Telegraf metrics :
 
 From the `metrics` tab on the console. You can either open a Quantum console, an online WarpScript editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).
 
-More information about [Quantum and Warp 10]({{< ref "doc/metrics/warp10" >}}) in our documentation.
+More information about [Quantum and Warp 10](/developers/doc/metrics/warp10) in our documentation.
 
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
@@ -352,7 +352,7 @@ NOW 'NOW' STORE
 
 ## Consumption metric
 
-Consumption can also be inferred by our metrics. We provide some helper macros in the [Warp 10 documentation]({{< ref "doc/metrics/warp10" >}}).
+Consumption can also be inferred by our metrics. We provide some helper macros in the [Warp 10 documentation](/developers/doc/metrics/warp10).
 
 Consumption unit is in **second**.
 

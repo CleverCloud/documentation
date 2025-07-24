@@ -42,7 +42,7 @@ If you want to test easily a Django deployment on Clever Cloud, just clone the [
 
 ### Fine tuning the application
 
-You can find a lot more configuration options such as choosing python version and more on our dedicated [Python documentation]({{< ref "doc/applications/python" >}}).
+You can find a lot more configuration options such as choosing python version and more on our dedicated [Python documentation](/developers/doc/applications/python).
 
  {{% content "new-relic" %}}
 

@@ -115,7 +115,7 @@ Your bucket is mounted at the configured path, starting from your application's
 root folder.
 
 If you want to use an absolute path, you can use the `APP_HOME` environment
-variable, see [special environment variables]({{< ref "doc/develop/env-variables.md#special-environment-variables" >}})
+variable, see [special environment variables](/developers/doc/develop/env-variables#special-environment-variables)
 
 ### From the add-on dashboard
 

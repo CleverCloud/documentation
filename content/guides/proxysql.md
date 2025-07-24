@@ -171,7 +171,7 @@ connection.connect(function(err) {
 ## Metrics
 
 ProxySQL exposes some metrics using Prometheus. Some of those metrics are ingested in our metrics system. You can then explore them
-in the [Web Console]({{< ref "doc/metrics#display-metrics" >}}).
+in the [Web Console](/developers/doc/metrics#display-metrics).
 
 Here is the list of currently tracked metrics, those may evolve over time:
 

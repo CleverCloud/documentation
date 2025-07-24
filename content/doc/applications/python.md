@@ -114,7 +114,7 @@ To enable Nginx to serve your static resources, you have to set two [environment
 
 `STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`).
 
-Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets]({{< ref "doc/addons/fs-bucket" >}}) section.
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/developers/doc/addons/fs-bucket) section.
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
@@ -166,7 +166,7 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 
 ##### Basic authentication
 
-If you need basic authentication, you can enable it using [environment variables]({{< ref "doc/reference/reference-environment-variables.md#python" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+If you need basic authentication, you can enable it using [environment variables](/developers/doc/reference/reference-environment-variables#python). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 #### Nginx optional configuration with `clevercloud/http.json`
 

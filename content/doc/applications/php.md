@@ -157,7 +157,7 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
  |3XL       | 1536M        |
  |4XL+      | 2048M        |
 
-To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "doc/reference/reference-environment-variables.md#php" >}}).
+To change this limit you can define `MEMORY_LIMIT` [environment variable](/developers/doc/reference/reference-environment-variables#php).
 
 If you define a limit exceeding the application memory it will use the default one.
 
@@ -173,11 +173,11 @@ However, directives who applies to the entire application must be declared in a 
 
 ### htpasswd
 
-You can configure basic authentication using [environment variables]({{< ref "doc/reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+You can configure basic authentication using [environment variables](/developers/doc/reference/reference-environment-variables#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 ### Define a custom HTTP timeout
 
-You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable]({{< ref "doc/develop/env-variables.md" >}}).
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/developers/doc/develop/env-variables).
 
 **By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
 
@@ -256,7 +256,7 @@ You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer 
 If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.
 {{< /callout >}}
 
-You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "doc/develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
+You can perform your own `composer.phar install` by using the [Post Build hook](/developers/doc/develop/build-hooks#post-build-cc_post_build_hook).
 
 Example of a `composer.json` file:
 
@@ -527,18 +527,18 @@ You can set the following environment variables:
 
 ### Use Redis to store PHP Sessions
 
-We provide the possibility to store the PHP sessions in a [Redis database]({{< ref "doc/addons/redis" >}}) to improve reliability.
+We provide the possibility to store the PHP sessions in a [Redis database](/developers/doc/addons/redis) to improve reliability.
 
 If your application is under heavy load, redis persistence for sessions can improve latency.
 
 To enable this feature, you need to:
 
-- enable Redis support on the application (create an [environment variable]({{< ref "doc/develop/env-variables.md" >}}) named `ENABLE_REDIS` with the value `true`.)
+- enable Redis support on the application (create an [environment variable](/developers/doc/develop/env-variables) named `ENABLE_REDIS` with the value `true`.)
 - create and link a Redis add-on
 - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< callout type="warning" >}}
-You must have a [Redis]({{< ref "doc/addons/redis" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
+You must have a [Redis](/developers/doc/addons/redis) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
 {{< /callout >}}
 
 ## Sending emails
@@ -617,7 +617,7 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 {{% content "proxysql" %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/guides/proxysql" >}} "ProxySQL")
+You can learn more about ProxySQL on the [dedicated documentation page](/developers/guides/proxysql)
 
 {{% content "more-config" %}}
 

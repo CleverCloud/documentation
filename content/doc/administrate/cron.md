@@ -123,7 +123,7 @@ You might be tempted to put the following in your cron.json file:
 Do *NOT* do this. Invoking bash here will supersede the shebang and cancel the `bash -l` that
 loads the env. So just put the path to your *executable* `mycron.sh`.
 
-You can refer to [this list]({{< ref "doc/develop/env-variables.md#special-environment-variables" >}}) to see which variables are available.
+You can refer to [this list](/developers/doc/develop/env-variables#special-environment-variables) to see which variables are available.
 
 ## Deduplicating crons
 
@@ -146,7 +146,7 @@ cd ${APP_HOME} # Which has been loaded by the env.
 ```
 
 {{< callout type="warning" >}}
-  If [Zero downtime deployment]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
+  If [Zero downtime deployment](/developers/doc/administrate/apps-management#edit-application-configuration) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
   You can prevent this by deactivating it.
 {{< /callout >}}
 

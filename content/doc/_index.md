@@ -9,6 +9,7 @@ aliases:
 - /doc/clever
 - /doc/en
 - /doc/get
+- /doc/site
 - /documentation
 ---
 

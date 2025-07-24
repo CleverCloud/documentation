@@ -36,7 +36,7 @@ Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS]({{< ref "/guides" >}}))
+* PHP ([see frameworks and CMS](/developers/guides))
 * Python (Django)
 * Ruby
 * Go
@@ -72,7 +72,7 @@ We will investigate and contact the application's owner over the violation if ne
 
 ## Does Clever Cloud support TLS/SSL (HTTPS)?
 
-Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one]{{< ref "doc/administrate/ssl/#uploading-my-own-certificates" >}}).
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/developers/doc/administrate/ssl/#uploading-my-own-certificates).
 Have a look at [installing TLS certificates](/developers/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
 
 ## What are the supported ciphers ?
@@ -85,7 +85,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 ## I'd like to have two applications available on the same domain name
 
-Refer to [prefix routing]({{< ref "doc/administrate/domain-names/#prefix-routing" >}}) to learn how to have two applications share a domain name.
+Refer to [prefix routing](/developers/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
 
 ## How do I define cron jobs for my application?
 
@@ -144,7 +144,7 @@ As an example, if a Spring Boot application was compiled with Java `17` and run 
 java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 ```
 
-By default, Java apps on Clever Cloud use Java `11`, but you can change it. Please head [over here]({{< ref "doc/applications/java/java-jar/#available-java-versions" >}} "Java versions") for more information.
+By default, Java apps on Clever Cloud use Java `11`, but you can change it. Please head [over here](/developers/doc/applications/java/java-jar/#available-java-versions "Java versions") for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 

@@ -52,10 +52,10 @@ For example, if your private key file is in the `clevercloud` folder and is name
 
 You can run specific tasks during the deployment of your application.
 
-Refer to the [hooks documentation]({{< ref "doc/develop/build-hooks.md" >}}) to learn more about them.
+Refer to the [hooks documentation](/developers/doc/develop/build-hooks) to learn more about them.
 
 ## Workers
 
 You can run background tasks running in parallel of your application.
 
-Refer to the [workers documentation]({{< ref "doc/develop/workers.md" >}}) to learn more about them.
+Refer to the [workers documentation](/developers/doc/develop/workers) to learn more about them.

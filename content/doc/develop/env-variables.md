@@ -33,7 +33,7 @@ Variables are defined on a per-application basis. They are defined in four ways:
 Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.
 
-Check out our [environment variable reference]({{< ref "doc/reference/reference-environment-variables.md" >}}).
+Check out our [environment variable reference](/developers/doc/reference/reference-environment-variables).
 
 ## Special environment variables
 
@@ -63,7 +63,7 @@ They can be accessed as classic environment variables.
 
 * `INSTANCE_NUMBER`: See below
 
-[dedicated-instance]: {{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}
+[dedicated-instance]: /developers/doc/administrate/apps-management#edit-application-configuration
 
 ### What is the `INSTANCE_NUMBER` variable used for?
 

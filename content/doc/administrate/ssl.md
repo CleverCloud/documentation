@@ -70,7 +70,7 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
 ![HTTPS set up on Cloudflare](/images/cloudflare-https-setting.png "Turn off automatic HTTPS redirection")
 
- You can enable [Force HTTPS]({{< ref "doc/administrate/apps-management.md#edit-application-configuration" >}}) in the information tab of your Clever Cloud application instead.
+ You can enable [Force HTTPS](/developers/doc/administrate/apps-management#edit-application-configuration) in the information tab of your Clever Cloud application instead.
 
 {{< callout emoji="💡" >}}
 **If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below:

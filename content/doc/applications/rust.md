@@ -15,6 +15,7 @@ aliases:
 - /doc/partials/language-specific-deploy/rust
 - /doc/rust
 - /doc/rust/rust
+- /doc/rust-hosting
 comments: false
 ---
 

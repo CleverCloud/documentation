@@ -341,7 +341,7 @@ Available through:
 
 - [npm package](https://www.npmjs.com/package/@clevercloud/components)
 - [Public repository](https://github.com/CleverCloud/clever-components)
-- [Storybook documentation](https://www.clever-cloud.com/doc/clever-components)
+- [Storybook documentation](https://www.clever-cloud.com/developers/clever-components)
 
 ### Custom Solutions
 

@@ -29,19 +29,24 @@ Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elast
 
 ### Customize the Kibana configuration file
 
-The configuration is set with this deployment hook :
-`CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
+You can customize the Kibana configuration file by setting the `CC_PRE_RUN_HOOK` environment variable. This variable will be executed before the Kibana instance starts. By default, it is:
+
+```
+CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
+```
 
 To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/developers/doc/deploy/addon/cellar)).
 
-Check other available configuration file on [Github](https://github.com/CleverCloud/custom-kibana-config)
+Check other available configuration file on [GitHub](https://github.com/CleverCloud/custom-kibana-config).
+
+> [!TIP]
+> If you use a custom configuration file, host it from your own Cellar add-on or any other trusted source.
 
 ### Disable SSO authentication
 
-To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
+To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file. We provide an example configuration file for Kibana 8.3.3:
 
-For example for Kibana 8.3.3:
-`CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3 | sh`
+* https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3
 
 Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
 

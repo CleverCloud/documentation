@@ -73,6 +73,8 @@ DJANGO_SETTINGS_MODULE="impress.settings"
 DJANGO_SUPERUSER_PASSWORD="<your-password>"
 ```
 
+You can add the value you want for `DJANGO_SECRET_KEY`. You can generate it using a command like `openssl rand -base64 32`
+
 #### Create a PosgreSQL add-on
 
 Inject the DB credentials into the Python application:
@@ -160,6 +162,8 @@ COLLABORATION_SERVER_SECRET="<server-secret>"
 Y_PROVIDER_API_KEY="<generated-api-key>"
 ```
 
+You can add the value you want for `COLLABORATION_SERVER_SECRET` and `Y_PROVIDER_API_KEY`. You can generate them using a command like `openssl rand -base64 32`
+
 #### Set y-provider domain
 
 Select **Domain names** and add the following domains:
@@ -172,7 +176,7 @@ Select **Domain names** and add the following domains:
 
 #### Connect to the backend
 
-Select **Exposed configuration** and inject the following environment variables:
+Select **Exposed configuration** and inject the following environment variables into the y-provider :
 
 ```env
 COLLABORATION_API_URL="https://<docs-base-domain>/collaboration/api/"
@@ -199,7 +203,7 @@ Docs uses Keycloak as an authentication provider. Configure it by following thes
 
 #### Create a Keycloak add-on
 
-If you don't have a Keycloak instance, create one on Clever Cloud. If you already have one, skip this step. For the sake of demonstration, this guide follows [the example values provided by Docs](https://github.com/suitenumerique/docs/blob/main/docs/examples/impress.values.yaml). You can rename them as you see fit.
+If you don't have a Keycloak instance, create one on Clever Cloud. If you already have one, skip this step. For the sake of demonstration, this guide follows [the example values provided by Docs](https://github.com/suitenumerique/docs/blob/main/docs/examples/helm/impress.values.yaml). You can rename them as you see fit.
 
 #### Create a new realm
 
@@ -257,7 +261,7 @@ OIDC_RP_SIGN_ALGO="RS256"
 
 ### Redis
 
-Create a Redis add-on, but don't connect it to the application, since Docs requires an URI format that differs from the one provided by Clever Cloud. Instead, inject the variable in the **backend** application, using this format: `REDIS_URL="redis://default:<redis_password>:<redis_host>:<redis_port>"`
+Create a Redis add-on, but don't connect it to the application, since Docs requires an URI format that differs from the one provided by Clever Cloud. Instead, inject the variable in the **backend** application, using this format: `REDIS_URL="redis://default:<redis_password>@<redis_host>:<redis_port>"`
 
 ### Cellar
 

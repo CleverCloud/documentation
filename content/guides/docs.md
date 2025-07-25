@@ -73,6 +73,8 @@ DJANGO_SETTINGS_MODULE="impress.settings"
 DJANGO_SUPERUSER_PASSWORD="<your-password>"
 ```
 
+You can add the value you want for `DJANGO_SECRET_KEY`. You can generate it using a command like `openssl rand -hex 32`
+
 #### Create a PosgreSQL add-on
 
 Inject the DB credentials into the Python application:
@@ -160,6 +162,8 @@ COLLABORATION_SERVER_SECRET="<server-secret>"
 Y_PROVIDER_API_KEY="<generated-api-key>"
 ```
 
+You can add the value you want for `COLLABORATION_SERVER_SECRET` and `Y_PROVIDER_API_KEY`. You can generate them using a command like `openssl rand -hex 32`
+
 #### Set y-provider domain
 
 Select **Domain names** and add the following domains:
@@ -199,7 +203,7 @@ Docs uses Keycloak as an authentication provider. Configure it by following thes
 
 #### Create a Keycloak add-on
 
-If you don't have a Keycloak instance, create one on Clever Cloud. If you already have one, skip this step. For the sake of demonstration, this guide follows [the example values provided by Docs](https://github.com/suitenumerique/docs/blob/main/docs/examples/impress.values.yaml). You can rename them as you see fit.
+If you don't have a Keycloak instance, create one on Clever Cloud. If you already have one, skip this step. For the sake of demonstration, this guide follows [the example values provided by Docs](https://github.com/suitenumerique/docs/blob/main/docs/examples/helm/impress.values.yaml). You can rename them as you see fit.
 
 #### Create a new realm
 

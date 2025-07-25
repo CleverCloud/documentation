@@ -9,7 +9,7 @@ comments: false
 ---
 
 {{< cards >}}
-  {{< card link="support" title="Support" icon="lifebuoy" >}}
-  {{< card link="faq" title="FAQ" icon="question-mark-circle" >}}
-  {{< card link="troubleshooting" title="Troubleshooting" icon="magnifying-glass" >}}
+  {{< card link="/developers/doc/find-help/support" title="Support" icon="lifebuoy" >}}
+  {{< card link="/developers/doc/find-help/faq" title="FAQ" icon="question-mark-circle" >}}
+  {{< card link="/developers/doc/find-help/troubleshooting" title="Troubleshooting" icon="magnifying-glass" >}}
 {{< /cards >}}

@@ -172,7 +172,7 @@ Select **Domain names** and add the following domains:
 
 #### Connect to the backend
 
-Select **Exposed configuration** and inject the following environment variables:
+Select **Exposed configuration** and inject the following environment variables into the y-provider :
 
 ```env
 COLLABORATION_API_URL="https://<docs-base-domain>/collaboration/api/"
@@ -257,7 +257,7 @@ OIDC_RP_SIGN_ALGO="RS256"
 
 ### Redis
 
-Create a Redis add-on, but don't connect it to the application, since Docs requires an URI format that differs from the one provided by Clever Cloud. Instead, inject the variable in the **backend** application, using this format: `REDIS_URL="redis://default:<redis_password>:<redis_host>:<redis_port>"`
+Create a Redis add-on, but don't connect it to the application, since Docs requires an URI format that differs from the one provided by Clever Cloud. Instead, inject the variable in the **backend** application, using this format: `REDIS_URL="redis://default:<redis_password>@<redis_host>:<redis_port>"`
 
 ### Cellar
 

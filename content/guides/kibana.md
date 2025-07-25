@@ -50,6 +50,12 @@ To disable SSO authentication and use elastic users instead, you need to modify 
 
 Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
 
+### Multiple authentication methods
+
+If you need to allow for multiple authentication methods to your Kibana, you need to modify Kibana's configuration. We provide an example configuration file for Kibana 8.10.2:
+
+* https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.10.2/sso-basic-8.10.2
+
 ### Add custom domain name
 
 You need to disable SSO authentication first. Then, you will be able to add a custom domain name in "Domain name" tab of your Kibana app.

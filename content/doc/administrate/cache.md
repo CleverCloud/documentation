@@ -29,6 +29,145 @@ To enable it, create a `varnish.vcl` file in the `/clevercloud` folder. You can 
 The `vcl 4.1;` and backend section of the `varnish.vcl` configuration file are not necessary as they are already handled by Clever Cloud.
 If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bucket, make sure you redeploy the application for the changes to take effect.
 
+## Varnish to restrict access to your application
+
+### Block IP addresses
+
+```bash {filename="clevercloud/varnish.vcl"}
+sub vcl_recv {
+    # Local health check
+    if (client.ip == "127.0.0.1" && !req.http.X-Forwarded-For) {
+        return (synth(200, "OK"));
+    }
+
+    # We don't rely on client.ip which send the load balancer IP address
+    # We check if the IP to block is included in the Forwarded header instead
+    if (req.http.Forwarded ~ "X.X.X.X") {
+        return (synth(403, "Blocked"));
+    }
+
+    # Use return (hash); to use the cache
+    return (pass);
+}
+
+sub vcl_synth {
+    if (resp.status == 403) {
+        set resp.http.Content-Type = "text/plain";
+        synthetic("Access denied");
+        return (deliver);
+    }
+}
+```
+
+Replace `X.X.X.X` with the IP address you want to block.
+
+If you want to block multiple IP addresses, you can use a regular expression like this:
+
+```bash
+if (req.http.Forwarded ~ "^(X.X.X.X|Y.Y.Y.Y|Z.Z.Z.Z)$") {
+    return (synth(403, "Blocked"));
+}
+```
+
+To be able to configure with an environment variable multiple IPs to block, CIDR, exceptions, etc. use the following example:
+
+- [Varnish IP blocking with environment variable](https://github.com/CleverCloud/varnish-examples/blob/main/varnish-ip-blocking/varnish.vcl)
+
+### Ask for a login/password (Basic authentication)
+
+```bash {filename="clevercloud/varnish.vcl"}
+sub vcl_recv {
+    # Local health check
+    if (client.ip == "127.0.0.1" && !req.http.X-Forwarded-For) {
+        return (synth(200, "OK"));
+    }
+
+    if (!req.http.Authorization) {
+        return (synth(401, "Authentication Required"));
+    }
+
+    if (req.http.Authorization !~ "^Basic ") {
+        return (synth(401, "Basic Authentication Required"));
+    }
+
+    set req.http.X-Auth-Credentials = regsub(req.http.Authorization, "^Basic ", "");
+
+    if (req.http.X-Auth-Credentials != "CREDENTIALS") {
+        return (synth(401, "Valid Basic Authentication Required"));
+    }
+}
+
+sub vcl_synth {
+    if (resp.status == 200) {
+        set resp.http.Content-Type = "text/plain";
+        synthetic("OK");
+        return (deliver);
+    }
+
+    if (resp.status == 401) {
+        set resp.http.Content-Type = "text/html; charset=utf-8";
+        set resp.http.WWW-Authenticate = "Basic realm='Restricted Area'";
+        synthetic("<html><body><h1>Authentication Required</h1></body></html>");
+
+        return (deliver);
+    }
+
+    # Use return (hash); to use the cache
+    return (pass);
+}
+```
+
+The `CREDENTIALS` string should be replaced with the base64 encoded value of `username:password`. You can use the following command to generate it on UNIX-based systems:
+
+```bash
+echo -n "username:password" | base64
+```
+
+### Bearer token authentication
+
+```bash {filename="clevercloud/varnish.vcl"}
+import env;
+
+sub vcl_recv {
+    # Local health check
+    if (client.ip == "127.0.0.1" && !req.http.X-Forwarded-For) {
+        return (synth(200, "OK"));
+    }
+
+    if (!req.http.Authorization) {
+        return (synth(401, "Authentication Required"));
+    }
+
+    if (req.http.Authorization !~ "^Bearer ") {
+        return (synth(401, "Bearer token Required"));
+    }
+
+    set req.http.X-Token = regsub(req.http.Authorization, "^Bearer ", "");
+
+    if (req.http.X-Token != env.get("CC_VARNISH_BEARER_TOKEN")) {
+        return (synth(401, "Valid Bearer token Required"));
+    }
+
+    # Use return (hash); to use the cache
+    return (pass);
+}
+
+sub vcl_synth {
+    if (resp.status == 200) {
+        set resp.http.Content-Type = "text/plain";
+        synthetic("OK");
+        return (deliver);
+    }
+
+    if (resp.status == 401) {
+        set resp.http.Content-Type = "text/html; charset=utf-8";
+        synthetic("<html><body><h1>Authentication Required</h1></body></html>");
+
+        return (deliver);
+    }
+}
+```
+
 ## Listen on the right port
 
 Once varnish is enabled, your application should no longer listen on port **8080**, but on port **8081**. Because it's Varnish that will listen on port **8080**, and it will have in its configuration your application as backend.

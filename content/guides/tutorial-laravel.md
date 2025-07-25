@@ -20,9 +20,9 @@ aliases:
 
 Deploying a Laravel application on Clever Cloud requires:
 
-- [PHP application](../../doc/applications/php)
-- A database add-on: ([MySQL](../../doc/addons/mysql) or [PostgreSQL](../../doc/addons/postgresql))
-- An [FS Bucket](../../doc/addons/fs-bucket) for persistent storage.
+- [PHP application](/developers/doc/applications/php)
+- A database add-on: ([MySQL](/developers/doc/addons/mysql) or [PostgreSQL](/developers/doc/addons/postgresql))
+- An [FS Bucket](/developers/doc/addons/fs-bucket) for persistent storage.
 
 The following sections explain how to set up each instance step by step:
 
@@ -32,7 +32,7 @@ The following sections explain how to set up each instance step by step:
 
 ### Create a PHP application
 
-From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](../../doc/quickstart/#choose-how-to-deploy).
+From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/developers/doc/quickstart/#choose-how-to-deploy).
 
 ### Add `DocumentRoot` variable
 
@@ -64,7 +64,7 @@ Make sure `config/logging.php` contains the following line:
   'default' => env('LOG_CHANNEL', 'stack'),
 ```
 
-In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This allows you to read your application logs directly from the console or the [CLI](../../doc/cli) tool.
+In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This allows you to read your application logs directly from the console or the [CLI](/developers/doc/cli) tool.
 
 ### Optional: configure the front-end build
 
@@ -169,8 +169,8 @@ This environment variable exists in any Clever Cloud instance. This configuratio
 ## Go Further
 
 {{< cards >}}
-  {{< card link="../../doc/metrics/new-relic" title="Monitor your App with New Relic" subtitle="Connect your application to New Relic." icon="new-relic" >}}
-  {{< card link="../../doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="../../doc/develop/build-hooks" title="Deployment hooks" subtitle="Learn about custom commands used in this guide." icon="rocket-launch" >}}
+  {{< card link="/developers/doc/metrics/new-relic" title="Monitor your App with New Relic" subtitle="Connect your application to New Relic." icon="new-relic" >}}
+  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="/developers/doc/develop/build-hooks" title="Deployment hooks" subtitle="Learn about custom commands used in this guide." icon="rocket-launch" >}}
   {{< card link="https://laravel.com/docs/10.x/deployment" title="Laravel Documentation" subtitle="Read Laravel documentation on deployments." icon="laravel" >}}
 {{< /cards >}}

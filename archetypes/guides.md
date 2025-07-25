@@ -1,10 +1,10 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-description: 
+description:
 tags:
 - guides
 keywords:
-- 
+-
 
 draft: true
 type: docs
@@ -27,5 +27,5 @@ type: docs
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="" title="Card title" subtitle="Card subtiltle" icon="adjustments-horizontal" >}}
+  {{< card link="/developers/guides/" title="Card title" subtitle="Card subtiltle" icon="adjustments-horizontal" >}}
 {{< /cards >}}

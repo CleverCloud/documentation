@@ -50,7 +50,7 @@ As many as you want. We've not set a limited number of apps by developer.
 
 ## How to setup domain names I own?
 
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](../../administrate/domain-names).
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/developers/doc/administrate/domain-names).
 
 ## How can I disable one of my existing applications?
 
@@ -89,7 +89,7 @@ Refer to [prefix routing](/developers/doc/administrate/domain-names/#prefix-rout
 
 ## How do I define cron jobs for my application?
 
-See [Cron Configuration File](../../administrate/cron) for more information.
+See [Cron Configuration File](/developers/doc/administrate/cron) for more information.
 
 ## How to know if a user comes from a secure connection?
 
@@ -107,7 +107,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-- [Lean more about the $_SERVER variable on Clever Cloud](../../applications/php/#using-http-authentication)
+- [Lean more about the $_SERVER variable on Clever Cloud](/developers/doc/applications/php/#using-http-authentication)
 
 ## How to get the user's IP address?
 
@@ -132,7 +132,7 @@ access them via git+ssh or sFTP), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
-- [Learn more about ssh.json](../../reference/common-configuration/#private-ssh-key)
+- [Learn more about ssh.json](/developers/doc/reference/common-configuration/#private-ssh-key)
 
 ## I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?
 

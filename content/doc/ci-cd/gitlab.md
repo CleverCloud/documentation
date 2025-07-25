@@ -77,5 +77,5 @@ If you encounter troubles or bugs using the GitLab component, feel free to open 
 
 {{< cards >}}
   {{< card link="https://docs.gitlab.com/ee/ci/components" title="GitLab Components" subtitle="Learn how to use GitLab components" icon="gitlab" >}}
-  {{< card link="../../cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
+  {{< card link="/developers/doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
 {{< /cards >}}

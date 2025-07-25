@@ -93,7 +93,7 @@ clever env set CC_RUN_COMMAND "node .output/server/index.mjs"
 ## Learn more
 
 {{< cards >}}
-  {{< card link="../../doc/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application on Clever Cloud" icon="node" >}}
-  {{< card link="../../doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application on Clever Cloud" icon="feather" >}}
+  {{< card link="/developers/doc/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application on Clever Cloud" icon="node" >}}
+  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application on Clever Cloud" icon="feather" >}}
   {{< card link="https://nuxt.com/docs" title="Learn Nuxt" subtitle="Nuxt full documentation" icon="rocket-launch" >}}
 {{< /cards >}}

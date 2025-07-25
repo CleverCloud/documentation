@@ -219,8 +219,8 @@ Set your port and host in your `astro dev` script for development mode, and/or c
 ## Learn more
 
 {{< cards >}}
-  {{< card link="../../doc/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application on Clever Cloud" icon="node" >}}
-  {{< card link="../../doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application on Clever Cloud" icon="feather" >}}
+  {{< card link="/developers/doc/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application on Clever Cloud" icon="node" >}}
+  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application on Clever Cloud" icon="feather" >}}
   {{< card link="https://docs.astro.build/" title="Learn Astro" subtitle="Astro full documentation" icon="rocket-launch" >}}
 
 {{< /cards >}}

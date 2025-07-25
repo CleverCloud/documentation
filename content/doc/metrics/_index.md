@@ -64,7 +64,7 @@ We provide a request rate metric. It is an average of the access logs request co
 
 This can be reached using the Warp 10 class: `request_rate`.
 
-> There are the same labels than for others metrics ([see monitoring-metrics](../administrate/metrics/overview/#monitoring-metrics))
+> There are the same labels than for others metrics ([see monitoring-metrics](/developers/doc/administrate/metrics/overview/#monitoring-metrics))
 
 ### Access Log data model
 

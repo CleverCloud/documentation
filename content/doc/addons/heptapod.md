@@ -43,14 +43,14 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 {{< callout type="info" >}}
   **Requirements**
-  Using Heptapod Cloud require a Clever Cloud account and an [organisation](../../account/administrate-organisation).
+  Using Heptapod Cloud require a Clever Cloud account and an [organisation](/developers/doc/account/administrate-organisation).
 {{< /callout >}}
 
 {{% steps %}}
 
 ### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](../../account/administrate-organisation/).
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/developers/doc/account/administrate-organisation/).
 Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
 In the Clever Cloud console, click **Add an organisation** and fill the form to create one.
@@ -85,7 +85,7 @@ Clever Cloud Runners for Heptapod comes with the following features:
 * **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
 * **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
 * **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
-* **[Components Catalog](../../ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
+* **[Components Catalog](/developers/doc/ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
 
 #### Provisioning
 

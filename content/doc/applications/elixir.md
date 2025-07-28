@@ -14,6 +14,7 @@ aliases:
 - /doc/elixir
 - /doc/getting-started/by-language/elixir/
 - /doc/partials/language-specific-deploy/elixir
+- /elixir
 ---
 
 ## Overview

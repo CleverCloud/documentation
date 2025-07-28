@@ -14,6 +14,7 @@ keywords:
 - OpenID
 aliases:
 - /doc/deploy/addon/Keycloak
+- /doc/keycloak
 ---
 
 Keycloak is an open source identity and access management (IAM) solution that offers powerful authentication features for services and secure applications. Thanks to this add-on, you can deploy Keycloak in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.

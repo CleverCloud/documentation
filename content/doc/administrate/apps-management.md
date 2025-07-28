@@ -10,6 +10,7 @@ keywords:
 - restart
 - logs
 aliases:
+- /administrate/apps-management
 - /doc/admin-console/apps-management
 ---
 

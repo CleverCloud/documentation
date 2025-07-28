@@ -6,6 +6,7 @@ description: Deploy to Clever Cloud from GitLab or GitHub
 draft: false
 type: docs
 aliases:
+- /ci-cd
 - /doc/administrate/ci-cd
 ---
 

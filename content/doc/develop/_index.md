@@ -4,6 +4,8 @@ weight: 6
 title: Develop
 description: Learn how to develop your applications for Clever Cloud
 comments: false
+aliases:
+- /develop
 ---
 
 {{< cards >}}

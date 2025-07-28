@@ -15,6 +15,7 @@ keywords:
 - aws
 aliases:
 - /deploy/addon/cellar
+- /doc/cellar
 - /doc/deploy/addon/cellar
 ---
 {{< hextra/hero-subtitle >}}

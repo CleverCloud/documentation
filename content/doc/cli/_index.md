@@ -5,6 +5,7 @@ title: Clever Tools (CLI)
 description: Use Clever Cloud CLI, Clever Tools
 aliases:
 - /clever-tools/getting_started
+- /cli
 - /doc/administrate/clever-tools/getting_started
 - /doc/administrate/cli
 - /doc/clever-tools/getting_started

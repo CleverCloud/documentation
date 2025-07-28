@@ -11,9 +11,11 @@ keywords:
 - in-memory
 aliases:
 - /addons/redis
+- /doc/addons/redsmin
 - /doc/deploy/addon/redis
 - /doc/en/redis-hosting
 - /doc/redis
+- /doc/redis-hosting
 ---
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.

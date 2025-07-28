@@ -12,6 +12,7 @@ keywords:
 - gdpr
 aliases:
 - /doc/deploy/addon/matomo
+- /doc/matomo
 ---
 
 Matomo is an open source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org). Matomo on Clever Cloud allows your marketing team to setup a tailored web analytics solution, that adapts to your needs and workloads.

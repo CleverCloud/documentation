@@ -8,6 +8,8 @@ keywords:
 - hepatpod
 - git
 - mercurial
+aliases:
+- /doc/heptapod
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

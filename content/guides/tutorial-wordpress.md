@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/php/tutorials/tutorial-wordpress
 - /doc/php/tutorial-wordpress
 - /php/tutorial-wordpress
+- /wordpress
 ---
 
 ## Overview

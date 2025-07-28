@@ -8,6 +8,7 @@ tags:
 keywords:
 - deploy
 aliases:
+- /addons
 - /doc/addons/clever-cloud-addons
 - /doc/administrate/addons
 - /doc/clever-cloud-overview/intro-to-addons

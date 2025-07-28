@@ -10,9 +10,10 @@ keywords:
 - dynamodb
 - graphql
 - redis
+draft: false
 aliases:
 - /doc/addons/materia-db-kv/
-draft: false
+- /doc/materia-kv
 ---
 
 Materia is a new serverless databases offering by Clever Cloud. A whole range of services meeting the needs expressed by our customers in recent years, with an open and resilient approach. It includes deployment across multiple availability zones, compatibility with existing protocols, clients, and pay-as-you-go billing. It's built on the [FoundationDB](https://www.foundationdb.org/) open source transactional engine. A distributed and robust solution, notably thanks to its high simulation capacity.

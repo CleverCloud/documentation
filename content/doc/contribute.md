@@ -11,6 +11,7 @@ keywords:
 - writing
 aliases:
 - /administrate/guides/contribute
+- /contribute
 - /contribute/writing
 - /doc/contribute/shortcodes/
 - /doc/contribute/writing

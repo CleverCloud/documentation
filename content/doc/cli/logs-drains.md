@@ -2,6 +2,8 @@
 type: docs
 title: Logs, Drains
 description: Use Clever Tools to get logs, access logs and manage logs drains
+aliases:
+- /doc/logs-drains
 ---
 
 ## logs

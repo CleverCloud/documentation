@@ -15,6 +15,7 @@ aliases:
 - /doc/getting-started/by-language/php
 - /doc/partials/language-specific-deploy/php
 - /getting-started/by-language/php
+- /php
 - /php/php-apps
 ---
 

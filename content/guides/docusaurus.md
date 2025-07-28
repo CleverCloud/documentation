@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Docusaurus
 description: Build your website with the Docusaurus Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
@@ -12,9 +13,9 @@ keywords:
 - js
 - css
 - website
-type: "docs"
 comments: false
-draft: false
+aliases:
+- /docusaurus
 ---
 If you need an example source code, init a new project (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 ```bash

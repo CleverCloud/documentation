@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/php/tutorials/tutorial-symfony
 - /doc/php/tutorial-symfony
 - /php/tutorial-symfony
+- /tutorial-symfony
 ---
 
 ## Overview

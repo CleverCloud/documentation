@@ -10,11 +10,13 @@ keywords:
 - fsproj
 - vbproj
 aliases:
+- /applications/dotnet
 - /deploy/application/dotnet/dotnet
 - /doc/deploy/application/dotnet
 - /doc/deploy/application/dotnet/dotnet
 - /doc/develop/env-variables/doc/applications/dotnet
 - /doc/partials/language-specific-deploy/dotnet
+- /dotnet
 ---
 
 ## Overview

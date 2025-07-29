@@ -36,7 +36,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application. We do support **any stable version of Node.js**. Learn more about [Node.js release schedule](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
+Clever Cloud allows you to deploy any JavaScript and TypeScript application. We do support **any stable version of Node.js**. Learn more about [Node.js release schedule](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
 
 ## Configure your Node.js application
 
@@ -44,11 +44,11 @@ Clever Cloud allows you to deploy any [Node.js](https://nodejs.org) application.
 
 Be sure that:
 
-* you listen on HTTP port **0.0.0.0:8080**
-* you have a `package.json` file
-* your `package.json` either has a **scripts.start** or **main** field
-* the folder `/node_modules` is mentioned in your `.gitignore` file
-* you enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
+* You listen on HTTP port **0.0.0.0:8080**
+* You have a `package.json` file
+* Your `package.json` either has a **scripts.start** or a **main** field
+* The folder `/node_modules` is mentioned in your `.gitignore` file
+* You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
 
 ### About package.json
 
@@ -111,9 +111,12 @@ If you need some modules you can easily add some with the *dependencies* field i
 
 If your application has private dependencies, you can add a [private SSH key](/developers/doc/reference/common-configuration/#private-ssh-key).
 
+- [Use private repositories](#use-private-repositories)
+- [Manage Development Dependencies](#development-dependencies)
+
 ## Supported package managers
 
-We support any package manager compatible with Node.js. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use. The default value is set to `npm`, but it can be any of these values:
+We support any package manager compatible with Node.js ecosystem. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
 
 * `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
 * `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
@@ -122,7 +125,7 @@ We support any package manager compatible with Node.js. The [environment variabl
 * `yarn2`: uses [Yarn Berry (v2 or later)](https://yarnpkg.com/)
 * `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
 
-You can also deploy using Deno with additional configuration. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
+You can also deploy using Deno with Mise. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
 
 > [!NOTE]
 > If a `bun.lock` or a `yarn.lock` file exists in your application's main folder, `bun`/`yarn` is used. To overwrite this behavior, either delete the `bun.lock`/`yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
@@ -188,7 +191,7 @@ Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your envir
 `CC_RUN_COMMAND` depends on your framework and your stack. The one in this example starts an Astro app, [which takes the port and the host as arguments](https://docs.astro.build/en/reference/cli-reference/#--port-number). To run your app, make sure you are using the correct command by checking the accurate framework documentation.
 {{< /callout >}}
 
-#### Development Dependencies
+## Development Dependencies
 
 Development dependencies aren't automatically installed during the deployment. You can control their installation setting `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`. This variable overrides the default behavior of `NODE_ENV`.
 
@@ -201,7 +204,9 @@ Here are various scenarios:
 * `NODE_ENV=production`: Package manager (npm/yarn) default behavior. Development dependencies aren't installed.
 * Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (npm/yarn) default behavior. Development dependencies are installed.
 
-### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
+## Use private repositories
+
+### With NPM_TOKEN
 
 Since April 2015, `npm` allows you to have private repositories. If you want to use such a feature, you only need to provide the auth token. Add it to your application through the `NPM_TOKEN` environment variable:
 
@@ -215,11 +220,15 @@ Then, the `.npmrc` file is created automatically for your application, with the 
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
+### With CC_NPM_BASIC_AUTH
+
 Or you can set `CC_NPM_BASIC_AUTH` to use basic authentication
 
 ```bash
 CC_NPM_BASIC_AUTH="user:password"
 ```
+
+### Define the host
 
 To authenticate to another registry (like GitHub), you can use the `CC_NPM_REGISTRY` environment variable to define its host.
 

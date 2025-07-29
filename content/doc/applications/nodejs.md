@@ -38,9 +38,19 @@ aliases:
 
 Clever Cloud allows you to deploy any JavaScript and TypeScript application. We do support **any stable version of Node.js**. Learn more about [Node.js release schedule](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
 
-## Configure your Node.js application
+## Create your Node.js & Bun application
 
-### Mandatory configuration
+To create a new Node.js & Bun application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+
+```bash
+clever create --type node
+```
+* [Learn more about Clever Tools](/developers/doc/cli/)
+* [Learn more about Clever Cloud application deployment](/developers/doc/quickstart/#create-an-application-step-by-step)
+
+## Configure your Node.js & Bun application
+
+### Mandatory needs
 
 Be sure that:
 
@@ -49,6 +59,10 @@ Be sure that:
 * Your `package.json` either has a **scripts.start** or a **main** field
 * The folder `/node_modules` is mentioned in your `.gitignore` file
 * You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
+
+### Build phase
+
+During the build phase, Clever Cloud will install your application dependencies with the selected package manager.
 
 ### About package.json
 
@@ -89,10 +103,6 @@ You can use additional scripts as an alternative to [Clever Cloud hooks](/develo
 }
 ```
 
-### Custom run command
-
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud). For instance, to launch `scripts.start` with a yarn based application, you must have `CC_RUN_COMMAND="yarn start"`.
-
 ### Dependencies
 
 If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
@@ -116,19 +126,42 @@ If your application has private dependencies, you can add a [private SSH key](/d
 
 ## Supported package managers
 
-We support any package manager compatible with Node.js ecosystem. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
+Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
 
 * `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
 * `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
 * `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
-* `yarn`: uses [Yarn Classic (v1)](https://classic.yarnpkg.com/lang/en/)
-* `yarn2`: uses [Yarn Berry (v2 or later)](https://yarnpkg.com/)
+* `pnpm`: uses [pnpm](https://pnpm.io)
+* `yarn-berry`: uses [Yarn](https://yarnpkg.com/)
 * `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
 
-You can also deploy using Deno with Mise. See the [Lume with Deno guide](/developers/guides/lume-deno/) for example.
+> [!NOTE] Yarn 1.x and 2.x deprecation
+> `yarn` and `yarn2` are still valid values but the Yarn team no longer maintains 1.x and 2.x branches. Use `yarn-berry` instead.
 
-> [!NOTE]
-> If a `bun.lock` or a `yarn.lock` file exists in your application's main folder, `bun`/`yarn` is used. To overwrite this behavior, either delete the `bun.lock`/`yarn.lock` file or set the `CC_NODE_BUILD_TOOL` environment variable.
+### What about Deno?
+
+Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/developers/doc/reference/reference-environment-variables#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
+
+```toml {filename="mise.toml"}
+[tools]
+deno = "latest"
+```
+
+Then it will be installed during deployment. You can replace `latest` with a specific version.
+
+* [Lume with Deno guide](/developers/guides/lume-deno/)
+
+### Automatic detection
+
+If a lock file exists in your application's main folder, the corresponding package manager is set:
+
+- If a `bun.lock` file exists, `bun` is used for build/run
+- If a `pnpm-lock.yaml` file exists, `pnpm` is used for build/run
+- If a `yarn.lock` file exists, and a 3.x/4.x version is declared in `package.json`, `yarn-berry` is used for build/run
+
+To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUILD_TOOL` environment variable.
+
+## Version management
 
 ### Set Node.js version
 
@@ -145,51 +178,23 @@ If you use Bun, your application is deployed with the latest available version o
 
 {{< runtimes_versions bun >}}
 
-### Yarn 3.x and 4.x support
+### pnpm and Yarn versions
 
-With recent versions of Yarn, you need to put the global folder within your application to manage restarts from build cache. You can do it by setting `YARN_GLOBAL_FOLDER` to `$APP_HOME/.yarncache/` for example, in the [Console](https://console.clever-cloud.com) or through [Clever Tools](https://github.com/CleverCloud/clever-tools):
+To load a specific version, set the `packageManager` field in your `package.json` file. For example, to use `pnpm@10.14.0`:
 
+```json
+{
+  "packageManager": "pnpm@10.14.0"
+}
 ```
-clever env set YARN_GLOBAL_FOLDER '$APP_HOME/.yarncache/'
-```
 
-### Corepack and packageManager support
+This is the default way to manage version for pnpm and Yarn when a new project is initialized. It will define the version used for dependency installation during the build phase and in run command. Yarn `1.22.22` remains the default system version included for legacy reasons.
 
-Since Node.js v14.19.0 and v16.9.0, you can use [Corepack](https://nodejs.org/api/corepack.html) as an experimental feature  to select a package manager—npm, pnpm, or yarn—and specify its version. You can do this with a simple command (e.g.: `corepack use yarn@*`) or the [`packageManager`](https://nodejs.org/api/packages.html#packagemanager) field in `package.json`. Always set `CC_NODE_BUILD_TOOL` when using `pnpm` or `yarn`, and make sure to set `CC_CUSTOM_BUILD_TOOL` when using `pnpm`.
+* If `CC_NODE_BUILD_TOOL` is set to `yarn-berry`, the latest 4.x packaged version of Yarn becomes the system default
+* If you use Yarn 1.x or Yarn 2.x, a deprecation warning is displayed during deployment as they're not maintained anymore
 
-#### Example: Deploy with pnpm
-
-To deploy an  application with pnpm, set the following environment variables:
-
-{{< tabs items="npm, Corepack" >}}
-  {{< tab >}}**Install with `npm`**:
-  ```bash
-  CC_NODE_BUILD_TOOL="custom"
-  CC_PRE_BUILD_HOOK="npm install -g pnpm"
-  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
-  ```
-  {{< /tab >}}
-
-  {{< tab >}}**Enable with Corepack**:
-  ```bash
-  CC_NODE_BUILD_TOOL="custom"
-  CC_PRE_BUILD_HOOK="corepack enable pnpm"
-  CC_CUSTOM_BUILD_TOOL="pnpm install && pnpm build"
-  ```
-  {{< /tab >}}
-{{< /tabs >}}
-
-This performs the following steps:
-
-1. `CC_NODE_BUILD_TOOL` indicates that your applications is using a custom build tool
-2. `CC_PRE_BUILD_HOOK` installs/enable `pnpm` globally
-3. `CC_CUSTOM_BUILD_TOOL` installs the dependencies and builds the app
-
-Depending on your stack, you may also need to add `CC_RUN_COMMAND` to your environment variables, with the appropriate command to run your application. For example, to deploy an [Astro](https://astro.build/) application in a Node.js runtime, use `CC_RUN_COMMAND="pnpm start --port 8080 --host 0.0.0.0"`.
-
-{{< callout type="info" >}}
-`CC_RUN_COMMAND` depends on your framework and your stack. The one in this example starts an Astro app, [which takes the port and the host as arguments](https://docs.astro.build/en/reference/cli-reference/#--port-number). To run your app, make sure you are using the correct command by checking the accurate framework documentation.
-{{< /callout >}}
+> [!TIP]
+> If you set `CC_NODE_BUILD_TOOL` to `yarn-berry` in any Clever Cloud runtime, Yarn 4.x becomes the default system version.
 
 ## Development Dependencies
 

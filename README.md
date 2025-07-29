@@ -179,7 +179,7 @@ You can include shared content in several pages. To use this feature:
 
 Tooltips are useful to provide additional information on terms or acronyms that may not be familiar to all readers. They help improve the accessibility and comprehension of your documentation without cluttering the main text.
 
-To create a tooltip, add the term and its associated tooltip definition in the [/data/tooltips.toml](https://github.com/CleverCloud/documentation/blob/davlgd-udpdate-readme/data/tooltips.toml) file. Once defined, tooltips automatically display when users hover over associated terms in the documentation.
+To create a tooltip, add the term and its associated tooltip definition in the [`data/tooltips.toml`](https://github.com/CleverCloud/documentation/blob/main/data/tooltips.toml) file. Once defined, tooltips automatically display when users hover over associated terms in the documentation.
 
 ## Markdown Linting
 

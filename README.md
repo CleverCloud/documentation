@@ -181,6 +181,14 @@ Adding an image can be useful to highlight an interface change, for example. Use
 ![Alt text](/images/your-image.jpg "Title of the image")
 ```
 
+If needed, you can also use [the `figure` shortcode](https://gohugo.io/shortcodes/figure/) to add attributes such as a width limit:
+
+```markdown
+{{< figure src="/developers/images/your-image.jpg" alt="Alt text" title="Title of the image" width="800px">}}
+```
+
+- [Learn more about Hugo shortcodes](https://gohugo.io/shortcodes/)
+
 ### Adding a new shared content
 
 You can include shared content in several pages. To use this feature:

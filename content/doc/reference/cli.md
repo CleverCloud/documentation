@@ -11,11 +11,22 @@ aliases:
 - /reference/clever-tools/getting_started
 ---
 
-This document is automatically generated from Clever Tools `3.13.1` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.
+This document is automatically generated from Clever Tools `3.14.0` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.
 
 To use Clever Tools, you need:
 - A Clever Cloud account, create one at https://console.clever-cloud.com/
 - The Clever Tools CLI installed, see installation instructions below
+
+In CI/CD pipelines or for one-off usage, you can use it through `npx` or `npm exec`:
+
+```bash
+# Set/Export CLEVER_TOKEN and CLEVER_SECRET to login with a given account
+# --yes is used to skip the interactive prompts
+npx --yes clever-tools@latest version
+```
+
+You'll also need:
+
 - To be logged in with `clever login` command (you'll get a `$HOME/.config/clever-cloud/clever-tools.json` file)
 - git installed on your system and properly configured
 - A local git repository with at least one commit to deploy your application
@@ -174,7 +185,7 @@ If you are using Nix on NixOS or any other compatible system, the package is ava
 
 You can deploy applications on Clever Cloud with the following runtimes type: `docker`, `dotnet`, `elixir`, `frankenphp`, `go`, `gradle`, `haskell`, `jar`, `linux`, `maven`, `meteor`, `node`, `php`, `play1`, `play2`, `python`, `ruby`, `rust`, `sbt`, `static`, `static-apache`, `v`, `war`
 
-Available flavors: `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`, `pico`
+Available flavors: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`
 
 Flavor `pico` is not available for the following instances: `docker`, `frankenphp`, `php`, `static-apache`
 
@@ -1147,7 +1158,6 @@ Usage: check ADDON-ID
 **Options:**
 ```
 [--format, -F] FORMAT     Output format (human, json) (default: human)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
 ```
 
 #### keycloak version update
@@ -1160,8 +1170,7 @@ Usage: update ADDON-ID
 
 **Options:**
 ```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-[--target] VERSION        Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
+[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
 ## kv
@@ -1398,7 +1407,6 @@ Usage: check ADDON-ID
 **Options:**
 ```
 [--format, -F] FORMAT     Output format (human, json) (default: human)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
 ```
 
 #### metabase version update
@@ -1411,8 +1419,7 @@ Usage: update ADDON-ID
 
 **Options:**
 ```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-[--target] VERSION        Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
+[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
 ## ng
@@ -1720,7 +1727,6 @@ Usage: check ADDON-ID
 **Options:**
 ```
 [--format, -F] FORMAT     Output format (human, json) (default: human)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
 ```
 
 #### otoroshi version update
@@ -1733,8 +1739,7 @@ Usage: update ADDON-ID
 
 **Options:**
 ```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-[--target] VERSION        Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
+[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
 ## profile

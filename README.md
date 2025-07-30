@@ -175,6 +175,9 @@ You can include shared content in several pages. To use this feature:
 1. Create a new markdown file in `/shared`
 2. Add it to the relevant pages with: `{{% content "your-partial" %}}`
 
+> [!TIP]
+> If you need to include a shared content including shortcodes, use `{{% content-raw "your-partial" %}}` instead. Don't include headings (starting with `#`) in it as they won't be rendered in the page Table of Contents (ToC).
+
 ## Tooltips
 
 Tooltips are useful to provide additional information on terms or acronyms that may not be familiar to all readers. They help improve the accessibility and comprehension of your documentation without cluttering the main text.

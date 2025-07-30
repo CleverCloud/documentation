@@ -17,6 +17,7 @@ aliases:
 - /doc/rust
 - /doc/rust/rust
 - /doc/rust-hosting
+- /rust-hosting
 comments: false
 ---
 

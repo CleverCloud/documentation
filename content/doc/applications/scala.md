@@ -7,6 +7,7 @@ tags:
 keywords:
 - scala
 aliases:
+- /applications/scala
 - /deploy/application/scala/scala
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala

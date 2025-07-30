@@ -107,12 +107,12 @@ Supported Static Site Generators (SSG) are:
 * Build command: `npm i && npm run generate && mv .output/public <out-dir>`
 * Detected file: `nuxt.config.ts`
 
-## Vitepress
+### Vitepress
 
 * Build command: `npm i && npm run docs:build -- --outDir <out-dir>`
 * Detected file: `vitepress.config.js`, `vitepress.config.ts`, `vitepress.config.mjs`, `vitepress.config.mts`
 
-## Zola
+### Zola
 
 * Build command: `zola build --minify --output-dir <out-dir>`
 * Detected file: `config.toml`

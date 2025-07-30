@@ -7,6 +7,7 @@ aliases:
 - /doc/deploy/application/static
 - /doc/deploy/application/static/static
 - /doc/partials/language-specific-deploy/static
+- /doc/static
 - /doc/static/static
 ---
 

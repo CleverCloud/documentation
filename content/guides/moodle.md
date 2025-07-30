@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Moodle
 description: Deploy the world's open source learning platform on Clever Cloud
 tags:
@@ -9,10 +10,8 @@ keywords:
 - php
 - css
 - cms
-type: "docs"
-#date: 2024-01-09T17:27:16+01:00
-draft: false
-type: docs
+aliases:
+- /moodle
 ---
 
 [Moodle](https://moodle.org) is a learning platform designed to provide

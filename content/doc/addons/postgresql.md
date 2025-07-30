@@ -11,11 +11,13 @@ keywords:
 - pgsql
 - mariadb
 aliases:
+- /addons/postgresql
 - /deploy/addon/postgresql
 - /doc/databases-and-services/postgresql
-- /doc/postgresql
 - /doc/deploy/addon/postgresql
 - /doc/deploy/addon/postgresql/postgresql
+- /doc/postgresql
+- /doc/postgresql-hosting
 ---
 ## Overview
 

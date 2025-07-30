@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Hugo
 description: Build your website with the Hugo Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
@@ -11,9 +12,9 @@ keywords:
 - js
 - css
 - website
-type: "docs"
 comments: false
-draft: false
+aliases:
+- /hugo
 ---
 
 If you need an example source code, use [Theme mini](https://github.com/nodejh/hugo-theme-mini) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Hugo](https://gohugo.io/installation/)):

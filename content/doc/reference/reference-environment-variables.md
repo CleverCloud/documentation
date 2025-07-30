@@ -10,10 +10,10 @@ keywords:
 - env variables
 aliases:
 - /doc/admin-console/environment-variables
+- /doc/env-variables
 - /doc/get-help/reference-environment-variables
 - /get-help/reference-environment-variables
 - /reference/reference-environment-variables
-
 ---
 
 ## Commons to all applications

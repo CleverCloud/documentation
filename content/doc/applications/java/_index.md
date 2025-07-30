@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/java/java
 - /doc/deploy/application/java/by-framework
 - /doc/getting-started/by-language/java
+- /doc/java
 - /doc/java/select-java-version
 - /doc/java-hosting
 - /doc/partials/language-specific-deploy/java

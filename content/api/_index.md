@@ -1,10 +1,9 @@
 ---
-title: API
 type: docs
-comments : false
-#linkTitle: Documentation
-draft: false
+title: API
+description: Automate your workflows and connect your services to Clever Cloud using its API
 aliases:
+- /doc/api/
 - /doc/openapi
 - /doc/clever-cloud-addons-api/add-ons-api
 - /doc/clever-cloud-apis/add-ons-api
@@ -13,6 +12,7 @@ aliases:
 - /doc/getting-started/openapi
 - /docs/openapi
 - /openapi
+comments : false
 ---
 
 {{< hextra/hero-subtitle >}}

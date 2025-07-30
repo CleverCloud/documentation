@@ -4,6 +4,7 @@ weight: 1
 title: Install Clever Tools
 description: Getting started with Clever Cloud CLI
 aliases:
+- /cli/install
 - /doc/cli-setup
 - /doc/install
 ---

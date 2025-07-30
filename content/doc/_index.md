@@ -10,7 +10,9 @@ aliases:
 - /doc/en
 - /doc/get
 - /doc/site
+- /doci
 - /documentation
+- /docs
 ---
 
 {{< hextra/hero-subtitle >}}

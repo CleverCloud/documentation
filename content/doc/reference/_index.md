@@ -12,6 +12,7 @@ keywords:
 - authentication
 aliases:
 - /docs
+- /reference
 comments: false
 ---
 

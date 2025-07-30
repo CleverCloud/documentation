@@ -2,6 +2,8 @@
 type: docs
 title: Deploy from GitLab
 description: How to set up you CI/CD from GitLab to deploy to Clever Cloud
+aliases:
+- /ci-cd/gitlab
 ---
 
 {{< hextra/hero-subtitle >}}

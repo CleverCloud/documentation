@@ -12,6 +12,7 @@ keywords:
 aliases:
 - /doc/admin-console/service-dependencies
 - /doc/databases-and-services/add-service
+- /doc/services-dependencies
 ---
 
 On Clever Cloud, each application depends on one or more backing add-ons. Each

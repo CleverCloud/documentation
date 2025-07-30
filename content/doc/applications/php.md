@@ -6,6 +6,7 @@ tags:
 - php
 - deploy
 aliases:
+- /applications/php
 - /deploy/application/php/php-apps
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps

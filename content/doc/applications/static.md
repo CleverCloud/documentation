@@ -117,5 +117,8 @@ Supported Static Site Generators (SSG) are:
 * Build command: `zola build --minify --output-dir <out-dir>`
 * Detected file: `config.toml`
 
+## 🎓 Static Site Generators (SSG) guides
+{{% content-raw "static-guides" %}}
+
 {{% content "redirectionio" %}}
 {{% content "varnish" %}}

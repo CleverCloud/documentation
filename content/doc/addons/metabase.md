@@ -125,18 +125,38 @@ They are dimensioned to suit a majority of needs. You can however manage and adj
 
 The Metabase add-on is a fully managed application, so you don't have to do anything to update it: by default **it is automatically updated** to match the latest Community Edition release. Your add-on will be automatically restarted when a new Metabase release is available, but thanks to Clever Cloud this will be done without downtime. All deployed versions are reviewed and tested before being released.
 
-Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable.
-This variable can be modified to specify which version of Metabase you want. This variable must contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
+Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable, but there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
 
-- `CC_METABASE_VERSION=community-latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
-- `CC_METABASE_VERSION=0.50.3`: use the `0.50.3` version (_same as `=0.50.3`_)
-- `CC_METABASE_VERSION=0.50`: use the latest available version starting with `0.50` (_same as `^0.50.0`, `~0.50.0`_)
+```bash
+# Set a specific supported version at creation
+clever addon create metabase --addon-version <version> myMetabase
+
+# Enable Operators commands
+clever features enable operators
+
+# Check the current version
+clever metabase version check metabase_name_or_id
+clever metabase version check metabase_name_or_id --format json
+
+# Update to a specific supported version
+clever metabase version update myMetabase
+clever metabase version update myMetabase <new_version>
+```
+
+- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+
+If you use `CC_METABASE_VERSION` it can contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
+
+- `community-latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
+- `0.55.1`: use the `0.55.1` version (_same as `=0.55.1`_)
+- `0.55`: use the latest available version starting with `0.55` (_same as `^0.55.0`, `~0.55.0`_)
 
 To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/developers/doc/cli/applications/deployment-lifecycle/#restart).
+
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
 {{< callout type="warning" >}}
-**With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.50.3`) or a specific "branch" (for example, `0.50`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
+**With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.55.3`) or a specific "branch" (for example, `0.55`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
 {{< /callout >}}
 
 - [The Atom feed (XML) of latest versions and their changelog](https://cc-metabase.cellar-c2.services.clever-cloud.com/metabase_releases.xml)
@@ -146,7 +166,7 @@ The Metabase JAR is stored in the build cache so that no time is wasted re-downl
 
 Metabase provides an Enterprise Edition (EE) that offers [more features](https://www.metabase.com/docs/latest/paid-features/overview) but requires a license key that must be purchased through their website (see the [pricing page](https://www.metabase.com/pricing/)) EE versions are usually released at the same time as Community Edition (CE) versions, starting with a `1` instead of a `0`.
 
-If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VERSION` environment variable to either use a fixed version/branch that starts with `1` (for example: `CC_METABASE_VERSION=1.50`) or `CC_METABASE_VERSION=enterprise-latest`.
+If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VERSION` environment variable to either use a fixed version/branch that starts with `1` (for example: `CC_METABASE_VERSION=1.55`) or `CC_METABASE_VERSION=enterprise-latest`.
 
 You must then add your license key in Metabase's settings (see [documentation](https://www.metabase.com/docs/latest/paid-features/activating-the-enterprise-edition#how-to-activate-your-token-when-self-hosting)).
 

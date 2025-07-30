@@ -56,6 +56,28 @@ Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever-cloud.com
 
 Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
 
+## Version management
+
+To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+
+```bash
+# Set a specific supported version at creation
+clever addon create otoroshi --addon-version <version> myOtoroshi
+
+# Enable Operators commands
+clever features enable operators
+
+# Check the current version
+clever otoroshi version check otoroshi_name_or_id
+clever otoroshi version check otoroshi_name_or_id --format json
+
+# Update to a specific supported version
+clever otoroshi version update myOtoroshi
+clever otoroshi version update myOtoroshi <new_version>
+```
+
+- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+
 ## Accessing the Otoroshi with LLM interface
 
 Once you created your add-on, open the management URL or look for `CC_OTOROSHI_URL` value in the Otoroshi with LLM dashboard from the Console. The first time you connect, change the initial password (Security -> Administrators -> Edit user).

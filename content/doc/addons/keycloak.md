@@ -100,6 +100,28 @@ An initial account has been created, you'll be invited to change the password at
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
 
+## Version management
+
+To change the version of a Keycloak add-on on Clever Cloud, you can use the `CC_KEYCLOAK_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+
+```bash
+# Set a specific supported version at creation
+clever addon create keycloak --addon-version <version> myKeycloak
+
+# Enable Operators commands
+clever features enable operators
+
+# Check the current version
+clever keycloak version check keycloak_name_or_id
+clever keycloak version check keycloak_name_or_id --format json
+
+# Update to a specific supported version
+clever keycloak version update myKeycloak
+clever keycloak version update myKeycloak <new_version>
+```
+
+- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+
 ## Accessing the Keycloak interface
 
 Once you have created your add-on, go to the Console Keycloak Java runtime page and click "Open the application". You also can get the Keycloak add-on URL from the Clever Cloud console, in the information panel of your Keycloak add-on.

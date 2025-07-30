@@ -11,7 +11,6 @@ keywords:
 - list
 - authentication
 aliases:
-- /docs
 - /reference
 comments: false
 ---

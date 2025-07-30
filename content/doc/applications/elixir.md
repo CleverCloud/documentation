@@ -9,6 +9,7 @@ keywords:
 - phoenix
 - erlang
 aliases:
+- /applications/elixir
 - /doc/deploy/application/elixir
 - /doc/deploy/application/elixir/elixir
 - /doc/elixir

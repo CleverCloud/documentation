@@ -11,6 +11,7 @@ keywords:
 - kibana
 aliases:
 - /doc/deploy/addon/elastic/kibana
+- /kibana
 ---
 
 {{< callout type="warning" >}}

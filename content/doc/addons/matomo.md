@@ -11,6 +11,7 @@ keywords:
 - privacy
 - gdpr
 aliases:
+- /addons/matomo
 - /doc/deploy/addon/matomo
 - /doc/matomo
 ---

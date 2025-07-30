@@ -8,7 +8,6 @@ type: default
 width: normal
 aliases:
 - /doc/developer
-- /documentation-old
 ---
 <!-- markdownlint-disable MD033 MD034-->
 {{< hextra/hero-badge link="https://github.com/clevercloud/documentation">}}

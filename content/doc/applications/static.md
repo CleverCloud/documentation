@@ -45,7 +45,7 @@ During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided
 
 ### Optimized build cache
 
-When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only the served directory to optimize size and reduce archive time. When neither option applies, the system caches the entire application root directory instead.
+When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only some configuration files and the served directory to optimize size, reduce archive time. When neither option applies, the system caches the entire application root directory instead.
 
 To override this behavior, set the `CC_OVERRIDE_BUILD_CACHE` environment variable with a colon-separated list of directories and files, relative to the application root. For example: `CC_OVERRIDE_BUILD_CACHE=myScript.sh:/myBuildDir`.
 

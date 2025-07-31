@@ -1,5 +1,6 @@
 ---
 weight: 12
+type: docs
 title: Billing
 description: Learn best practices on Clever Cloud
 tags:

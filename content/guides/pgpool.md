@@ -17,6 +17,7 @@ keywords:
 aliases:
 - /deploy/addon/postgresql/pgpool
 - /doc/deploy/addon/postgresql/pgpool
+- /pgpool
 ---
 
 Pgpool-II is a tool available on application instances to help manage your connection pool and load balancing of your PostgreSQL add-ons.

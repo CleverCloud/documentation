@@ -7,6 +7,7 @@ tags:
 keywords:
 - python
 aliases:
+- /applications/python
 - /deploy/application/python/python_apps
 - /doc/applications/python
 - /doc/deploy/application/python

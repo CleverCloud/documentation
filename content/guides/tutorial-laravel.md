@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-laravel
 - /doc/php/tutorial-laravel
+- /tutorial-laravel
 ---
 
 {{< hextra/hero-subtitle >}}

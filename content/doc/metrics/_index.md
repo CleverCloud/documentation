@@ -1,5 +1,6 @@
 ---
 weight: 4
+type: docs
 title: Metrics
 description: Access and manage metrics on Clever Cloud
 tags:
@@ -14,6 +15,7 @@ aliases:
 - /doc/administrate/metrics
 - /doc/administrate/metrics/overview
 - /doc/tools/metrics
+- /metrics
 comments: false
 ---
 {{< callout type="warning" >}}

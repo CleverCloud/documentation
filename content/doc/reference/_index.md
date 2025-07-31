@@ -1,6 +1,7 @@
 ---
-title: Configuration List
 weight: 10
+type: docs
+title: Configuration List
 description: All Clever Cloud advanced features and tools
 tags:
 - cli

@@ -6,6 +6,8 @@ tags:
 - encryption
 - rest
 - security
+aliases:
+- /administrate/encryption-at-rest
 ---
 
 ## Introduction

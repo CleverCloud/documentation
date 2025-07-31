@@ -11,6 +11,7 @@ aliases:
 - /doc/clever-tools/getting_started
 - /doc/clever-tools/manage
 - /doc/cli
+- /doc/CLI
 - /doc/cli/getting_started
 - /doc/getting-started/cli
 - /doc/quickstartcli

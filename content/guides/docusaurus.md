@@ -22,7 +22,7 @@ If you need an example source code, init a new project (you'll need [git](https:
 npx create-docusaurus@latest myStaticApp classic
 ```
 
-{{% content "language-specific-deploy/create-static" %}}
+{{% content "create-static" %}}
 
 ## Configure environment variables
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:

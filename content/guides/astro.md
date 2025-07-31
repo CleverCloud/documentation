@@ -140,7 +140,7 @@ If you're deploying from **GitHub**, your deployment should start automatically.
 
 ## Deploy a static Astro site using the CLI
 
-{{% content "language-specific-deploy/create-static" %}}
+{{% content "create-static" %}}
 
 ## Configure environment variables
 

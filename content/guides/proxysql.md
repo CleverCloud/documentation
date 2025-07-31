@@ -15,6 +15,7 @@ keywords:
 aliases:
 - /deploy/addon/mysql/proxysql
 - /doc/deploy/addon/mysql/proxysql
+- /proxysql
 ---
 
 ProxySQL is a tool available on applications instances to help you manage your connection pool towards your MySQL add-on.

@@ -12,7 +12,7 @@ aliases:
 - /doc/deploy/application/python/tutorials
 - /doc/deploy/application/ruby/tutorials
 - /doc/deploy/application/scala/tutorials
-- /doc.
+- /doc/tutorials/
 llmsTxtOptional: true
 comments: false
 ---

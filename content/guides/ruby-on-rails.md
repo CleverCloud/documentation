@@ -25,7 +25,7 @@ You do not need to change a lot in your application, the *requirements* will hel
 
  {{% content "set-env-vars" %}}
 
-{{% content "language-specific-deploy/ruby" %}}
+{{% content "ruby" %}}
 
  {{% content "new-relic" %}}
 

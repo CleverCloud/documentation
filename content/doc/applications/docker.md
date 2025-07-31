@@ -129,9 +129,9 @@ Every environment variable defined for your application will be passed as a buil
 
 We provide a few examples of dockerized applications on Clever Cloud.
 
-* [Elixir App](https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-* [Seaside / Smalltalk App](https://GitHub.com/CleverCloud/demo-seaside)
-* [Rust App](https://GitHub.com/CleverCloud/demo-rust)
+* [Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
+* [Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
+* [Rust App](https://github.com/CleverCloud/demo-rust)
 
 You might need to use the `CC_DOCKERFILE = <name of your Dockerfile>` variable.
 

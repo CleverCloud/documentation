@@ -274,7 +274,7 @@ Example of a `composer.json` file:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
+            "url": "https://github.com/timothylhuillier/laravel-elasticsearch.git"
         }
     ],
     "autoload": {
@@ -295,7 +295,7 @@ Example of a `composer.json` file:
 }
 ```
 
-Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://GitHub.com/CleverCloud/php-composer-demo)
+Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://github.com/CleverCloud/php-composer-demo)
 
 ## Development Dependencies
 

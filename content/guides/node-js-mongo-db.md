@@ -17,7 +17,7 @@ aliases:
 The goal of this article is to show you how to deploy a Node.js + MongoDB application on Clever Cloud.
 The application is a very simple todo list. You can add and delete values. More information about the application:
 
-* [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest)
+* [GitHub repo](https://github.com/CleverCloud/demo-nodejs-mongodb-rest)
 
 {{% content "create-application" %}}
 
@@ -27,7 +27,7 @@ The application is a very simple todo list. You can add and delete values. More 
 
 ### My application does not exists already
 
-If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://GitHub.com/CleverCloud/demo-nodejs-mongodb-rest).
+If you want to test easily a Node.js deployment on Clever Cloud, just clone the [GitHub repo](https://github.com/CleverCloud/demo-nodejs-mongodb-rest).
 
  {{% content "env-injection" %}}
 

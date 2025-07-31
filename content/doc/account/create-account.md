@@ -37,7 +37,7 @@ This process asks the following permissions:
 The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
 
 If you need to give access to Clever Cloud's API to a specific GitHub organisation, you
-can [do it here](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 

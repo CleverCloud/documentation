@@ -38,7 +38,7 @@ If you want to import your **SQL** dump, you can use several methods:
 
 If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
-{{% content "dbMigration" %}}
+{{% content "db-migration" %}}
 
 ## Direct access
 

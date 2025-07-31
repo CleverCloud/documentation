@@ -36,7 +36,7 @@ git clone https://github.com/fayazara/zooper myStaticApp
 
 To deploy your Nuxt project to Clever Cloud, you need to **create a new application**.
 
-{{% content "language-specific-deploy/create-static" %}}
+{{% content "create-static" %}}
 
 ### Configure environment variables
 

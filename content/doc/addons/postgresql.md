@@ -36,7 +36,7 @@ Some applications require a non-empty database to run properly. If you want to i
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
-{{% content "dbMigration" %}}
+{{% content "db-migration" %}}
 
 ## Replication
 

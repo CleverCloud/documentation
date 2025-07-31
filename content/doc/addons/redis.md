@@ -30,7 +30,7 @@ The version currently installed by the add-on are the following :
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 
-{{% content "dbMigration" %}}
+{{% content "db-migration" %}}
 
 ## Leader / follower topology
 

@@ -13,28 +13,41 @@ keywords:
 - js
 - css
 - website
-comments: false
 aliases:
 - /docusaurus
+comments: false
 ---
+
+{{< hextra/hero-subtitle >}}
+  Docusaurus is a static site generator that helps you build optimized websites quickly. It is designed to help you create documentation, blogs, and other content-driven sites with ease.
+{{< /hextra/hero-subtitle >}}
+
+## Requirements
+
 If you need an example source code, init a new project (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
+
 ```bash
 npx create-docusaurus@latest myStaticApp classic
 ```
 
-{{% content "create-static" %}}
+{{% content "static-create" %}}
 
-## Configure environment variables
-Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+### Automatic build
+
+Docusaurus is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
+
 ```bash
-clever scale --build-flavor M
-clever scale --flavor nano
+clever scale --flavor pico
 
-clever env set CC_NODE_VERSION "20"
-clever env set CC_WEBROOT "/build"
-clever env set CC_OVERRIDE_BUILDCACHE "/build"
-clever env set CC_PRE_BUILD_HOOK "npm install"
-clever env set CC_POST_BUILD_HOOK "npx docusaurus build"
+# To select a bigger build instance, use:
+clever scale --build-flavor M
 ```
 
-{{% content "git-push" %}}
+{{% content "static-deploy" %}}
+
+## 🎓 Learn more
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="https://docusaurus.io/docs" title="Learn Docusaurus" subtitle="How to write and organize your content" icon="docusaurus" >}}
+{{< /cards >}}

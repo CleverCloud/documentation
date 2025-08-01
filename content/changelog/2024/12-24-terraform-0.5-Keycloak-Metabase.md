@@ -13,7 +13,8 @@ authors:
     image: https://github.com/miton18.png?size=40
 description: Your favorite services as code
 aliases:
-- /changelog/2024-12-24-terraform-0.5-Keycloak-Metabase.md
+- /changelog/2024-12-24-terraform-0.5-keycloak-metabase.md
+- /changelog/2024-12-24-terraform-0.5-keycloak-metabase
 excludeSearch: true
 ---
 

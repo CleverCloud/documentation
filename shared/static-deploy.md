@@ -1,4 +1,4 @@
-## Push your code
+### Push your code
 
 Once you complete these steps, commit your content to the local repository and deploy it:
 
@@ -16,6 +16,6 @@ clever domain
 clever domain add your.website.tld
 ```
 
-## 404 page location
+### 404 page location
 
 If you need to use a specific page for 404 errors, define its location with `SERVER_ERROR_PAGE_404` environment variable from Static Web Server, used as default in `static` runtime. For example : `SERVER_ERROR_PAGE_404=404.html`.

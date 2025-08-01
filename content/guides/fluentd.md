@@ -11,6 +11,7 @@ keywords:
 aliases:
 - /doc/deploy/application/docker/tutorials/fluentd
 - /doc/docker/fluentd
+- /fluentd
 ---
 
 ## Overview

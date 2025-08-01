@@ -8,6 +8,7 @@ keywords:
 - ruby
 - rails
 aliases:
+- /applications/ruby
 - /doc/deploy/application/ruby
 - /doc/deploy/application/ruby/by-framework
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
@@ -17,6 +18,7 @@ aliases:
 - /doc/partials/language-specific-deploy/ruby
 - /doc/ruby
 - /doc/ruby-hosting
+- /doc/ruby/ruby
 - /doc/ruby/ruby-on-rails
 - /getting-started/by-language/ruby
 comments: false

@@ -14,6 +14,8 @@ keywords:
 - js
 - css
 - website
+aliases:
+- /eleventy
 comments: false
 ---
 {{< hextra/hero-subtitle >}}

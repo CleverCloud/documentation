@@ -15,6 +15,7 @@ aliases:
 - /doc/getting-started/by-language/go
 - /doc/go
 - /doc/go/go
+- /doc/golang
 - /doc/partials/language-specific-deploy/go
 - /go/go
 - /go

@@ -11,6 +11,7 @@ keywords:
 - cache
 aliases:
 - /administrate/cache
+- /doc/tools/varnish
 ---
 
 ## Overview

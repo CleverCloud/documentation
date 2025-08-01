@@ -14,6 +14,7 @@ keywords:
 - s3cmd
 - aws
 aliases:
+- /addons/cellar
 - /deploy/addon/cellar
 - /doc/cellar
 - /doc/deploy/addon/cellar

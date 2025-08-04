@@ -8,6 +8,7 @@ keywords:
 - php
 - symfony
 aliases:
+- /doc/applications/php/symfony
 - /doc/deploy/application/php/tutorials/tutorial-symfony
 - /doc/php/tutorial-symfony
 - /php/tutorial-symfony

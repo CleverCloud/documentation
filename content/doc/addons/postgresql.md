@@ -18,6 +18,7 @@ aliases:
 - /doc/deploy/addon/postgresql/postgresql
 - /doc/postgresql
 - /doc/postgresql-hosting
+- /postgresql-hosting
 ---
 ## Overview
 
@@ -139,7 +140,7 @@ Extension   | Description
 ----------- | -----------
 pg_cron     | Job scheduler for PostgreSQL
 pg_ivm      | Incremental view maintenance for PostgreSQL
-pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL 
+pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL
 pgaudit     | Provides detailed session and/or object audit logging via the standard PostgreSQL logging facility
 pgsql-http  | HTTP client for PostgreSQL
 pgtap       | Unit testing for PostgreSQL

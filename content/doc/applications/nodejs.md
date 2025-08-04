@@ -11,9 +11,10 @@ aliases:
 - /doc/applications/javascript/nodejs
 - /doc/deploy/application/node
 - /doc/getting-started/by-language/node
-- /doc/deploy/application/javascript/
+- /doc/deploy/application/javascript
 - /doc/deploy/application/javascript/by-framework/meteor
 - /doc/deploy/application/javascript/by-framework/nodejs
+- /doc/deploy/application/javascript/nodejs
 - /doc/nodejs
 - /doc/nodejs/nodejs
 - /doc/nodejs-hosting

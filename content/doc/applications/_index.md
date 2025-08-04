@@ -11,10 +11,11 @@ keywords:
 aliases:
 - /applications
 - /doc/apps
-- /doc/deploy/application/ruby/by-framework
-- /doc/java/select-java-version
-- /doc/deploy/application
 - /doc/deploy
+- /doc/deploy/application
+- /doc/deploy/application/ruby/by-framework
+- /doc/getting-started/by-language
+- /doc/java/select-java-version
 comments: false
 ---
 

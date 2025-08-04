@@ -8,6 +8,7 @@ aliases:
 - /cli
 - /doc/administrate/clever-tools/getting_started
 - /doc/administrate/cli
+- /doc/clever-cloud-cli
 - /doc/clever-tools/getting_started
 - /doc/clever-tools/manage
 - /doc/cli

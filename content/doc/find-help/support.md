@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /doc/get-help/support
 - /doc/support
+- /support
 ---
 
 We provide basic support free-of-charge to all our users, even those who are not paying customers.

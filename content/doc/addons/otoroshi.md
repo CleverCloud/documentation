@@ -51,7 +51,7 @@ An initial account has been created, change the password at first login (Securit
  - Admin user name: cc-account-admin
  - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever-cloud.com/developers/doc/addons/otoroshi/
+Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
 Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.

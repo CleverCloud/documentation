@@ -10,13 +10,13 @@ This project is based on [Hugo](https://gohugo.io/) and uses [Hextra](https://im
 
 ## See deployed Documentation
 
-- [Home page](https://www.clever-cloud.com/developers/)
-- [Documentation](https://www.clever-cloud.com/developers/doc/)
-- [API Documentation](https://www.clever-cloud.com/developers/api/)
-- [Guides and Tutorials](https://www.clever-cloud.com/developers/guides/)
-- [Reference Clever Tools CLI](https://www.clever-cloud.com/developers/doc/reference/cli/)
-- [Reference Environment Variables](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/)
-- [Clever Cloud Platform Changelog](https://www.clever-cloud.com/developers/changelog/)
+- [Home page](https://www.clever.cloud/developers/)
+- [Documentation](https://www.clever.cloud/developers/doc/)
+- [API Documentation](https://www.clever.cloud/developers/api/)
+- [Guides and Tutorials](https://www.clever.cloud/developers/guides/)
+- [Reference Clever Tools CLI](https://www.clever.cloud/developers/doc/reference/cli/)
+- [Reference Environment Variables](https://www.clever.cloud/developers/doc/reference/reference-environment-variables/)
+- [Clever Cloud Platform Changelog](https://www.clever.cloud/developers/changelog/)
 
 ## Quickstart
 
@@ -44,7 +44,7 @@ Find `server` command options in the [Hugo documentation](https://gohugo.io/comm
 
 ## Deploying on Clever Cloud
 
-As Clever Cloud [natively detects and build Hugo sites](https://www.clever-cloud.com/developers/doc/applications/static/), you just need some configuration to deploy this project:
+As Clever Cloud [natively detects and build Hugo sites](https://www.clever.cloud/developers/doc/applications/static/), you just need some configuration to deploy this project:
 
 ```bash
 # Declare what's the web server root, where to build the documentation
@@ -66,7 +66,7 @@ You can contribute by [creating an issue](https://github.com/CleverCloud/documen
 - [Contributing guidelines](./CONTRIBUTING.md)
 - [AI tools and LLMs instructions](./.cursorrules)
 
-Clever Cloud documentation is also available following the [llms.txt specification](https://www.clever-cloud.com/developers/llms.txt).
+Clever Cloud documentation is also available following the [llms.txt specification](https://www.clever.cloud/developers/llms.txt).
 
 ## Adding a new page or guide
 

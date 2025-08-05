@@ -1,4 +1,4 @@
-baseURL: https://www.clever-cloud.com/developers
+baseURL: https://www.clever.cloud/developers
 title: Clever Cloud Documentation
 publishDir: public/developers
 
@@ -49,7 +49,7 @@ menu:
       weight: 4
     - identifier: components
       name: Web Components
-      url: https://www.clever-cloud.com/developers/clever-components
+      url: https://www.clever.cloud/developers/clever-components
       weight: 5
     - name: Search
       weight: 6

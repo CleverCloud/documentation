@@ -2206,5 +2206,5 @@ Usage: remove NOTIFICATION-ID
 
 ## Clever Cloud complete documentation
 
-For more comprehensive information about Clever Cloud, read the complete documentation: https://www.clever-cloud.com/developers/doc/
-Clever Cloud complete documentation is available in a LLM-optimized format: https://www.clever-cloud.com/developers/llms.txt
+For more comprehensive information about Clever Cloud, read the complete documentation: https://www.clever.cloud/developers/doc/
+Clever Cloud complete documentation is available in a LLM-optimized format: https://www.clever.cloud/developers/llms.txt

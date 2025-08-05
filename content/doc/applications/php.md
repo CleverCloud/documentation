@@ -71,7 +71,7 @@ If you put the `.user.ini` file in a subdirectory; settings will be applied recu
 
 However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](https://www.clever-cloud.com/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
 
 Assuming the script runs at the root-folder of the application:
 

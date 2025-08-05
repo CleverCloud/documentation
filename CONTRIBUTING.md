@@ -1,7 +1,10 @@
 
 # Contributing guidelines
 
-This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. 
+This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find instructions for AI tools and LLMs:
+
+- [AI tools and LLMs instructions](./.cursorrules)
+
 ## Standards
 
 Those are general standards to fulfill for every modification in this repository.

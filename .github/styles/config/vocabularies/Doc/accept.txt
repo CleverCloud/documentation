@@ -54,6 +54,7 @@ Kubectl
 Laravel
 Let's Encrypt
 LLM
+LLMs
 Lume
 LTS
 Matomo

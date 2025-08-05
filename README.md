@@ -61,9 +61,12 @@ SERVER_ERROR_PAGE_404="developers/404.html"
 
 ## Contributing
 
-You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls).
+You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls). If you use AI tools or LLMs, you'll find specific instructions for them:
 
-- Read [contribution guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
+- [Contributing guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
+- [AI tools and LLMs instructions](./.cursorrules)
+
+Clever Cloud documentation is also available following the [llms.txt specification](https://www.clever-cloud.com/developers/llms.txt).
 
 ## Adding a new page or guide
 

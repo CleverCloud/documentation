@@ -63,7 +63,7 @@ SERVER_ERROR_PAGE_404="developers/404.html"
 
 You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls). If you use AI tools or LLMs, you'll find specific instructions for them:
 
-- [Contributing guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md)
+- [Contributing guidelines](./CONTRIBUTING.md)
 - [AI tools and LLMs instructions](./.cursorrules)
 
 Clever Cloud documentation is also available following the [llms.txt specification](https://www.clever-cloud.com/developers/llms.txt).
@@ -185,7 +185,7 @@ You can include shared content in several pages. To use this feature:
 
 Tooltips are useful to provide additional information on terms or acronyms that may not be familiar to all readers. They help improve the accessibility and comprehension of your documentation without cluttering the main text.
 
-To create a tooltip, add the term and its associated tooltip definition in the [`data/tooltips.toml`](https://github.com/CleverCloud/documentation/blob/main/data/tooltips.toml) file. Once defined, tooltips automatically display when users hover over associated terms in the documentation.
+To create a tooltip, add the term and its associated tooltip definition in the [`data/tooltips.toml`](./data/tooltips.toml) file. Once defined, tooltips automatically display when users hover over associated terms in the documentation.
 
 ## Markdown Linting
 

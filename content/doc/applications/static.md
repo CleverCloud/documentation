@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
+Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
 
 > [!NOTE] Static is a new runtime
 > Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)

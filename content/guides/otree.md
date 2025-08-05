@@ -32,7 +32,7 @@ You can create an application in the [Console](https://console.clever-cloud.com)
 
 ```bash
 # Install Clever Tools if you don't have it yet
-# You can also use your package manager: https://www.clever-cloud.com/developers/doc/cli/install/
+# You can also use your package manager: https://www.clever.cloud/developers/doc/cli/install/
 npm i -g clever-tools
 clever login
 

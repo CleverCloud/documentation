@@ -29,6 +29,16 @@ The left sidebar menu includes a powerful search function. Beyond simple name se
 | `is:[addon]`   | Filters specific add-on types (Examples: `is:postgresql`, `is:redis`, `is:mysql`) |
 | `is:[runtime]` | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`) |
 
+### OpenSearch support
+
+Clever Cloud supports OpenSearch, allowing you to add [the Console](https://console.clever-cloud.com) as a search engine in your browser, such as [Chrome](https://support.google.com/chrome/answer/95426) or [Firefox](https://support.mozilla.org/kb/add-or-remove-search-engine-firefox). Then, you can quickly search for applications, add-ons or organisations directly from your address bar. For example, add:
+
+```
+name: Clever Cloud
+shortcut: cc
+search URL: https://console.clever-cloud.com/search?q=%s
+```
+
 ### Multi-line Environment Variables
 
 Environment variables support more than just single-line values. When editing variables in simple mode:
@@ -341,7 +351,7 @@ Available through:
 
 - [npm package](https://www.npmjs.com/package/@clevercloud/components)
 - [Public repository](https://github.com/CleverCloud/clever-components)
-- [Storybook documentation](https://www.clever-cloud.com/developers/clever-components)
+- [Storybook documentation](https://www.clever.cloud/developers/clever-components)
 
 ### Custom Solutions
 

@@ -11,6 +11,7 @@ keywords:
 aliases:
 - /doc/extend/addon-api/
 - /doc/extend/add-ons-api/
+- /marketplace
 comments: false
 ---
 

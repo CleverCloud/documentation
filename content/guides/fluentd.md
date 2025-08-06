@@ -11,6 +11,7 @@ keywords:
 aliases:
 - /doc/deploy/application/docker/tutorials/fluentd
 - /doc/docker/fluentd
+- /fluentd
 ---
 
 ## Overview
@@ -47,7 +48,7 @@ To follow this tutorial, you will need:
 * a Ruby versions manager
 
 {{< callout type="info" >}}
-To manage your gems and ruby versions, we recommend [rbenv](https://GitHub.com/sstephenson/rbenv).
+To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv).
 {{< /callout >}}
 
 ### My application does not exists already

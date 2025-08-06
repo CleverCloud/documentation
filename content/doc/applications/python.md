@@ -7,6 +7,7 @@ tags:
 keywords:
 - python
 aliases:
+- /applications/python
 - /deploy/application/python/python_apps
 - /doc/applications/python
 - /doc/deploy/application/python
@@ -222,7 +223,7 @@ You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a g
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 {{< callout type="warning"  >}}
-There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
+There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://github.com/celery/celery/issues/4184](https://github.com/celery/celery/issues/4184).
 {{< /callout >}}
 
 {{% content "deploy-git" %}}

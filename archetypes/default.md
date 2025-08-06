@@ -1,9 +1,11 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-description:
-date: '{{ .Date }}'
-draft: true
 type: docs
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+linkTitle:
+description:
+tags:
+keywords:
+draft: true
 ---
 
 {{< hextra/hero-subtitle >}}

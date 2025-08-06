@@ -6,15 +6,18 @@ tags:
 - php
 - deploy
 aliases:
+- /applications/php
 - /deploy/application/php/php-apps
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps
 - /doc/doc/php
+- /doc/php
 - /doc/php/php-apps
 - /doc/doc/php/php-apps
 - /doc/getting-started/by-language/php
 - /doc/partials/language-specific-deploy/php
 - /getting-started/by-language/php
+- /php
 - /php/php-apps
 ---
 
@@ -68,7 +71,7 @@ If you put the `.user.ini` file in a subdirectory; settings will be applied recu
 
 However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](https://www.clever-cloud.com/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
 
 Assuming the script runs at the root-folder of the application:
 
@@ -271,7 +274,7 @@ Example of a `composer.json` file:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
+            "url": "https://github.com/timothylhuillier/laravel-elasticsearch.git"
         }
     ],
     "autoload": {
@@ -292,7 +295,7 @@ Example of a `composer.json` file:
 }
 ```
 
-Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://GitHub.com/CleverCloud/php-composer-demo)
+Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://github.com/CleverCloud/php-composer-demo)
 
 ## Development Dependencies
 
@@ -333,11 +336,11 @@ The following is the list of tested CMS by our team.
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 {{< cards >}}
-  {{< card link="../../..../../../guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
-  {{< card link="../../..../../../guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
-  {{< card link="../../..../../../guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
-  {{< card link="../../..../../../guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
-  {{< card link="../../..../../../guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
+  {{< card link="/developers/guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
+  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
+  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
+  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
+  {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
 
 {{< /cards >}}
 

@@ -7,6 +7,8 @@ tags:
 keywords:
 - apps
 - workers
+aliases:
+- /doc/workers
 ---
 
 ## Workers

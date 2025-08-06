@@ -8,9 +8,10 @@ keywords:
 - scala
 - play
 aliases:
+- /doc/applications/java/play-framework-1
 - /doc/deploy/application/java/by-framework/play-framework-1
 - /doc/deploy/application/scala/tutorials/play-framework-1
-- /doc/applications/java/play-framework-1
+- /doc/java/play-framework-1
 - /doc/play-framework
 ---
 

@@ -12,6 +12,7 @@ keywords:
 - waf
 aliases:
 - /doc/clever-cloud-overview/clevergrid-machine-learning
+- /doc/otoroshi
 ---
 
 Otoroshi is a lightweight API management solution built on a modern HTTP reverse proxy. It serves as a flexible and powerful API gateway for your microservices architecture and operates as a technology-agnostic platform, embracing HTTP as its universal language and providing real-time configuration capabilities. The platform follows an API-first approach, ensuring all features are accessible programmatically.
@@ -50,10 +51,32 @@ An initial account has been created, change the password at first login (Securit
  - Admin user name: cc-account-admin
  - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever-cloud.com/developers/doc/addons/otoroshi/
+Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
 Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
+
+## Version management
+
+To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+
+```bash
+# Set a specific supported version at creation
+clever addon create otoroshi --addon-version <version> myOtoroshi
+
+# Enable Operators commands
+clever features enable operators
+
+# Check the current version
+clever otoroshi version check otoroshi_name_or_id
+clever otoroshi version check otoroshi_name_or_id --format json
+
+# Update to a specific supported version
+clever otoroshi version update myOtoroshi
+clever otoroshi version update myOtoroshi <new_version>
+```
+
+- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
 
 ## Accessing the Otoroshi with LLM interface
 

@@ -8,14 +8,18 @@ keywords:
 - go
 - golang
 aliases:
+- /applications/golang
 - /deploy/application/golang/go
 - /doc/deploy/application/golang
 - /doc/deploy/application/golang/go
 - /doc/getting-started/by-language/go
 - /doc/go
 - /doc/go/go
+- /doc/golang
 - /doc/partials/language-specific-deploy/go
 - /go/go
+- /go
+- /golang
 ---
 
 ## Overview
@@ -148,4 +152,4 @@ To access environment variables from your code, just get them from the environme
 
 ## See also
 
-* [Deploy EchoIP guide](../../../guides/go-echoip/)
+* [Deploy EchoIP guide](/developers/guides/go-echoip/)

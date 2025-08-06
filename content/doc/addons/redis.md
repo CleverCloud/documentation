@@ -11,9 +11,11 @@ keywords:
 - in-memory
 aliases:
 - /addons/redis
+- /doc/addons/redsmin
 - /doc/deploy/addon/redis
 - /doc/en/redis-hosting
 - /doc/redis
+- /doc/redis-hosting
 ---
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.
@@ -28,7 +30,7 @@ The version currently installed by the add-on are the following :
 
 A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You can extract this archive and run `redis-server` in the extracted folder to access data.
 
-{{% content "dbMigration" %}}
+{{% content "db-migration" %}}
 
 ## Leader / follower topology
 

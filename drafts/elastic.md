@@ -14,6 +14,6 @@ comments: false
 draft: true
 ---
 {{< cards >}}
- {{< card link="../../elastic/kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}
+ {{< card link="/developers/guides/elastic/kibana" title="Customize Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}
 
 {{< /cards >}}

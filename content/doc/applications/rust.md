@@ -8,6 +8,7 @@ keywords:
 - rust
 - cargo
 aliases:
+- /applications/rust
 - /deploy/application/rust/rust
 - /doc/deploy/application/rust
 - /doc/deploy/application/rust/rust
@@ -16,6 +17,7 @@ aliases:
 - /doc/rust
 - /doc/rust/rust
 - /doc/rust-hosting
+- /rust-hosting
 comments: false
 ---
 
@@ -99,7 +101,7 @@ To fully remove cached dependencies, you have to rebuild your application from s
 
 ### Private dependencies
 
-If you use dependencies on a private git repository inside your project, it needs a bit of configuration until [this cargo issue](https://GitHub.com/rust-lang/cargo/issues/1851) has been resolved.
+If you use dependencies on a private git repository inside your project, it needs a bit of configuration until [this cargo issue](https://github.com/rust-lang/cargo/issues/1851) has been resolved.
 
 First, you need to use the `HTTPS` url as the git url for your dependency in your `Cargo.toml`:
 

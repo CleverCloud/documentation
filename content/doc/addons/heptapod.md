@@ -8,6 +8,8 @@ keywords:
 - hepatpod
 - git
 - mercurial
+aliases:
+- /doc/heptapod
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
@@ -20,7 +22,7 @@ The Heptapod DevOps platform is edited by [Octobus](https://octobus.net), a team
 
 Clever Cloud users can benefit from **Heptapod Cloud** software, along with **Heptapod Runner** for CI/CD operations.
 
-{{< figure src="../../../images/clever-cloud-runners-basic-with-runtimes-alt.svg" caption="Heptapod and Runners" alt="A diagram on how the Heptapod Cloud and Runners interact with Clever cloud" width="900px">}}
+![A diagram on how the Heptapod Cloud and Runners interact with Clever cloud](/images/clever-cloud-runners-basic-with-runtimes-alt.svg 'Heptapod and Runners')
 
 ## Heptapod Cloud
 
@@ -43,14 +45,14 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 {{< callout type="info" >}}
   **Requirements**
-  Using Heptapod Cloud require a Clever Cloud account and an [organisation](../../account/administrate-organisation).
+  Using Heptapod Cloud require a Clever Cloud account and an [organisation](/developers/doc/account/administrate-organisation).
 {{< /callout >}}
 
 {{% steps %}}
 
 ### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](../../account/administrate-organisation/).
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/developers/doc/account/administrate-organisation/).
 Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
 In the Clever Cloud console, click **Add an organisation** and fill the form to create one.
@@ -67,7 +69,7 @@ Heptapod Cloud is billed on a per-usage model, explained and simulated [on our p
 
 You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organisation.
 
-{{< figure src="../../../images/heptapod-billing.png" caption="You can check your organisation's Heptapod usage in the Share " alt="A screen capture of the Heptapod billing section" width="600px">}}
+![A screen capture of the Heptapod billing section](/images/heptapod-billing.png "You can check your organisation's Heptapod usage in the Shared Software section")
 
 Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever-cloud.com/product/clever-cloud-runners-for-heptapod/).
 
@@ -85,7 +87,7 @@ Clever Cloud Runners for Heptapod comes with the following features:
 * **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
 * **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
 * **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
-* **[Components Catalog](../../ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
+* **[Components Catalog](/developers/doc/ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
 
 #### Provisioning
 

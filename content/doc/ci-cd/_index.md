@@ -6,6 +6,7 @@ description: Deploy to Clever Cloud from GitLab or GitHub
 draft: false
 type: docs
 aliases:
+- /ci-cd
 - /doc/administrate/ci-cd
 ---
 
@@ -14,7 +15,7 @@ aliases:
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="github" title="Deploy from GitHub" subtitle="Deploy directly from GitHub and automate review apps." icon="github" >}}
-  {{< card link="gitlab" title="Deploy from GitLab" subtitle="Deploy directly from GitLab and automate review apps." icon="gitlab" >}}
-  {{< card link="custom-scripts" title="Write your own CI/CD" subtitle="Write your own scripts to deploy to Clever Cloud and automate tasks." icon="command-line" >}}
+  {{< card link="/developers/doc/ci-cd/github" title="Deploy from GitHub" subtitle="Deploy directly from GitHub and automate review apps." icon="github" >}}
+  {{< card link="/developers/doc/ci-cd/gitlab" title="Deploy from GitLab" subtitle="Deploy directly from GitLab and automate review apps." icon="gitlab" >}}
+  {{< card link="/developers/doc/ci-cd/custom-scripts" title="Write your own CI/CD" subtitle="Write your own scripts to deploy to Clever Cloud and automate tasks." icon="command-line" >}}
 {{< /cards >}}

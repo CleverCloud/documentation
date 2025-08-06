@@ -7,12 +7,13 @@ aliases:
 - /doc/deploy/application/static
 - /doc/deploy/application/static/static
 - /doc/partials/language-specific-deploy/static
+- /doc/static
 - /doc/static/static
 ---
 
 ## Overview
 
-Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](https://www.clever-cloud.com/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
+Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
 
 > [!NOTE] Static is a new runtime
 > Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
@@ -44,7 +45,7 @@ During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided
 
 ### Optimized build cache
 
-When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only the served directory to optimize size and reduce archive time. When neither option applies, the system caches the entire application root directory instead.
+When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only some configuration files and the served directory to optimize size, reduce archive time. When neither option applies, the system caches the entire application root directory instead.
 
 To override this behavior, set the `CC_OVERRIDE_BUILD_CACHE` environment variable with a colon-separated list of directories and files, relative to the application root. For example: `CC_OVERRIDE_BUILD_CACHE=myScript.sh:/myBuildDir`.
 
@@ -106,15 +107,18 @@ Supported Static Site Generators (SSG) are:
 * Build command: `npm i && npm run generate && mv .output/public <out-dir>`
 * Detected file: `nuxt.config.ts`
 
-## Vitepress
+### Vitepress
 
 * Build command: `npm i && npm run docs:build -- --outDir <out-dir>`
 * Detected file: `vitepress.config.js`, `vitepress.config.ts`, `vitepress.config.mjs`, `vitepress.config.mts`
 
-## Zola
+### Zola
 
 * Build command: `zola build --minify --output-dir <out-dir>`
 * Detected file: `config.toml`
+
+## 🎓 Static Site Generators (SSG) guides
+{{% content-raw "static-guides" %}}
 
 {{% content "redirectionio" %}}
 {{% content "varnish" %}}

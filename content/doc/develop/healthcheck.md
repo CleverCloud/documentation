@@ -8,6 +8,8 @@ tags:
 keywords:
 - apps
 - healthcheck
+aliases:
+- /doc/healthcheck
 ---
 
 {{% content "url_healthcheck" %}}

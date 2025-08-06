@@ -12,6 +12,7 @@ aliases:
 - /doc/python/python-django-sample
 - /guides/django
 - /python/python-django-sample
+- /python-django-sample
 ---
 
 ## Overview

@@ -1,4 +1,5 @@
 ---
+type: docs
 title: Hexo
 description: Build your website with the Hexo Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
@@ -12,33 +13,48 @@ keywords:
 - js
 - css
 - website
-type: "docs"
 comments: false
-draft: false
 ---
-If you need an example source code, get [Cactus](https://github.com/probberechts/hexo-theme-cactus) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
+
+{{< hextra/hero-subtitle >}}
+  Hexo is a fast, simple and powerful blog framework that allows you to create static websites with ease.
+{{< /hextra/hero-subtitle >}}
+
+## Requirements
+
+If you need an example source code, initialize an Hexo project with [Cactus theme](https://github.com/probberechts/hexo-theme-cactus) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 ```bash
-git clone https://github.com/probberechts/hexo-theme-cactus myStaticApp
+npx hexo init myStaticApp --no-install
 ```
 
-For this project to work, don't import the theme with `git clone` but as a submodule:
+{{% content "static-create" %}}
+
+Import the theme as a submodule:
+
 ```bash
 git submodule add https://github.com/probberechts/hexo-theme-cactus.git themes/cactus
 ```
 
-{{% content "language-specific-deploy/create-static" %}}
+### Environment variables
 
-## Configure environment variables
-Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+Next, configure the application with a pico instance with dedicated build, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+
 ```bash
-clever scale --build-flavor M
-clever scale --flavor nano
+clever scale --flavor pico
 
-clever env set CC_NODE_VERSION "20"
+# To select a bigger build instance, use:
+clever scale --build-flavor M
+
 clever env set CC_WEBROOT "/public"
-clever env set CC_OVERRIDE_BUILDCACHE "/public"
-clever env set CC_PRE_BUILD_HOOK "npm i -g hexo && npm install"
-clever enc set CC_POST_BUILD_HOOK "hexo generate"
+clever env set CC_PRE_BUILD_HOOK "npm install"
+clever env set CC_BUILD_COMMAND "npm run build"
 ```
 
-{{% content "git-push" %}}
+{{% content "static-deploy" %}}
+
+## 🎓 Learn more
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="https://hexo.io/docs/" title="Learn Hexo" subtitle="How to write and organize your content" icon="hexo" >}}
+{{< /cards >}}

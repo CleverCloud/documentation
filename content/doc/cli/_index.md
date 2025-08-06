@@ -5,10 +5,14 @@ title: Clever Tools (CLI)
 description: Use Clever Cloud CLI, Clever Tools
 aliases:
 - /clever-tools/getting_started
+- /cli
 - /doc/administrate/clever-tools/getting_started
 - /doc/administrate/cli
+- /doc/clever-cloud-cli
 - /doc/clever-tools/getting_started
 - /doc/clever-tools/manage
+- /doc/cli
+- /doc/CLI
 - /doc/cli/getting_started
 - /doc/getting-started/cli
 - /doc/quickstartcli
@@ -27,15 +31,15 @@ You can contribute to it through [issue](https://github.com/CleverCloud/clever-t
 You'll find below the first commands to know to connect Clever Tools to your account, get its information and manage some options. Others are developed in dedicated pages:
 
 {{< cards >}}
-  {{< card link="install" title="Install" icon="arrow-down-tray" >}}
-  {{< card link="addons" title="Create and manage add-ons" icon= "wrench-screwdriver" >}}
-  {{< card link="applications" title="Create and manage applications" icon="code-bracket" >}}
-  {{< card link="kv-stores" title="Manage KV stores" icon="server-stack" >}}
-  {{< card link="logs-drains" title="Manage logs, drains" icon="command-line" >}}
-  {{< card link="network-groups" title="Network Groups" icon="tcp-ip-service" >}}
-  {{< card link="notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
-  {{< card link="operators" title="Operators (Managed services)" icon="document-check" >}}
-  {{< card link="services-depedencies" title="Services dependencies" icon="endpoints" >}}
+  {{< card link="/developers/doc/cli/install" title="Install" icon="arrow-down-tray" >}}
+  {{< card link="/developers/doc/cli/addons" title="Create and manage add-ons" icon= "wrench-screwdriver" >}}
+  {{< card link="/developers/doc/cli/applications" title="Create and manage applications" icon="code-bracket" >}}
+  {{< card link="/developers/doc/cli/kv-stores" title="Manage KV stores" icon="server-stack" >}}
+  {{< card link="/developers/doc/cli/logs-drains" title="Manage logs, drains" icon="command-line" >}}
+  {{< card link="/developers/doc/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
+  {{< card link="/developers/doc/cli/notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
+  {{< card link="/developers/doc/cli/operators" title="Operators (Managed services)" icon="document-check" >}}
+  {{< card link="/developers/doc/cli/services-depedencies" title="Services dependencies" icon="endpoints" >}}
 {{< /cards >}}
 
 ## basic commands

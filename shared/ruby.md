@@ -179,7 +179,7 @@ NGINX settings can be configured further in `clevercloud/http.json`. All its fie
 
 ### Puma configuration
 
-Puma reads its configuration from the `config/puma.rb` file. See [the puma documentation](https://GitHub.com/puma/puma/blob/master/README.md) for more information.
+Puma reads its configuration from the `config/puma.rb` file. See [the puma documentation](https://github.com/puma/puma/blob/master/README.md) for more information.
 
 You can override this configuration with [environment variables](#setting-up-environment-variables-on-clever-cloud).
 Each of them, when specified, will be preferred over the setting from `config/puma.rb`.

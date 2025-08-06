@@ -11,6 +11,7 @@ keywords:
 - cache
 aliases:
 - /administrate/cache
+- /doc/tools/varnish
 ---
 
 ## Overview
@@ -186,7 +187,7 @@ If you have a configuration for an older version of varnish, read [Upgrading to 
 
 ## Example files
 
-We provide some [examples of Varnish configuration files](https://GitHub.com/CleverCloud/varnish-examples) that you can
+We provide some [examples of Varnish configuration files](https://github.com/CleverCloud/varnish-examples) that you can
 use for your application. Create a `/clevercloud` folder at the root of your application if it does not exist,
 rename the file to `varnish.vcl` and move it in the `/clevercloud` folder.
 

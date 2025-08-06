@@ -8,9 +8,11 @@ keywords:
 - php
 - symfony
 aliases:
+- /doc/applications/php/symfony
 - /doc/deploy/application/php/tutorials/tutorial-symfony
 - /doc/php/tutorial-symfony
 - /php/tutorial-symfony
+- /tutorial-symfony
 ---
 
 ## Overview
@@ -30,7 +32,7 @@ Add a new [environment variable](#setting-up-environment-variables-on-clever-clo
 
 ### Configure your application secret
 
-`APP_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) is required to generate CSRF tokens. By default for [symfony/framework-bundle](https://GitHub.com/symfony/framework-bundle) generates one when it's installed via [Symfony Flex](https://GitHub.com/symfony/flex).
+`APP_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) is required to generate CSRF tokens. By default for [symfony/framework-bundle](https://github.com/symfony/framework-bundle) generates one when it's installed via [Symfony Flex](https://github.com/symfony/flex).
 If you do not use Flex, make sure to change your `APP_SECRET`. The default value is `ThisTokenIsNotSoSecretChangeIt`, **change it**.
 
 ### Configure the Symfony environment

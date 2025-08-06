@@ -1,4 +1,5 @@
 ---
+type: docs
 title: mdBook
 description: Build your website with the mdBook Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
 tags:
@@ -12,28 +13,40 @@ keywords:
 - js
 - css
 - website
-type: "docs"
 comments: false
-draft: false
 ---
+
+{{< hextra/hero-subtitle >}}
+  mdBook is a command-line tool for creating modern online books and documentation. It is designed to help you write and organize your content in a structured way.
+{{< /hextra/hero-subtitle >}}
+
+## Requirements
+
 If you need an example source code, init a new project (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Rust](https://www.rust-lang.org/tools/install)):
+
 ```bash
 cargo install mdbook
 mdbook init myStaticApp --title="my mdBook" --ignore=git
 ```
 
-{{% content "language-specific-deploy/create-static" %}}
+{{% content "static-create" %}}
 
-## Configure environment variables
-Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+### Automatic build
+
+mdBook is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
+
 ```bash
-clever scale --build-flavor M
-clever scale --flavor nano
+clever scale --flavor pico
 
-clever env set CC_WEBROOT "/book"
-clever env set CC_OVERRIDE_BUILDCACHE "/book"
-clever env set CC_PRE_BUILD_HOOK "cargo install mdbook"
-clever env set CC_POST_BUILD_HOOK "/home/bas/.cargo/bin/mdbook build"
+# To select a bigger build instance, use:
+clever scale --build-flavor M
 ```
 
-{{% content "git-push" %}}
+{{% content "static-deploy" %}}
+
+## 🎓 Learn more
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="https://rust-lang.github.io/mdBook/" title="Learn mdBook" subtitle="How to write and organize your content" icon="mdbook" >}}
+{{< /cards >}}

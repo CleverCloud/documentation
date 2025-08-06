@@ -1,10 +1,9 @@
 ---
-title: API
 type: docs
-comments : false
-#linkTitle: Documentation
-draft: false
+title: API
+description: Automate your workflows and connect your services to Clever Cloud using its API
 aliases:
+- /doc/api/
 - /doc/openapi
 - /doc/clever-cloud-addons-api/add-ons-api
 - /doc/clever-cloud-apis/add-ons-api
@@ -13,6 +12,7 @@ aliases:
 - /doc/getting-started/openapi
 - /docs/openapi
 - /openapi
+comments : false
 ---
 
 {{< hextra/hero-subtitle >}}
@@ -20,8 +20,8 @@ aliases:
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="howto" title="How to use our API" subtitle="Learn more about Clever Cloud API, endpoints, auth and how to access it from multiple tools." icon="api" >}}
-  {{< card link="v2" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
-  {{< card link="v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
+  {{< card link="/developers/api/howto" title="How to use our API" subtitle="Learn more about Clever Cloud API, endpoints, auth and how to access it from multiple tools." icon="api" >}}
+  {{< card link="/developers/api/v2" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
+  {{< card link="/developers/api/v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
 
 {{< /cards >}}

@@ -10,10 +10,10 @@ keywords:
 - env variables
 aliases:
 - /doc/admin-console/environment-variables
+- /doc/env-variables
 - /doc/get-help/reference-environment-variables
 - /get-help/reference-environment-variables
 - /reference/reference-environment-variables
-
 ---
 
 ## Commons to all applications
@@ -24,7 +24,7 @@ These are read-only variables that are generated for each scaler before they bui
 
 |  Name  | Description | Example value |
 |-----------------------|------------------------------|--------------------------------|
-|[`INSTANCE_NUMBER`](../../develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
+|[`INSTANCE_NUMBER`](/developers/doc/develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
 |`INSTANCE_TYPE` | Whether this instance is a "build" instance or a "production" instance. | build, production |
 |`INSTANCE_ID` | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
 |`CC_PRETTY_INSTANCE_NAME` | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |
@@ -48,12 +48,12 @@ So you can alter the build&start process for your application.
 |`CC_GIT_FULL_CLONE` | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment | true |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
-|[`CC_HEALTH_CHECK_PATH`](../../develop/healthcheck) | Custom path to validate your application deployment |  |
+|[`CC_HEALTH_CHECK_PATH`](/developers/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
 |`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
 |`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
-|[`CC_WORKER_COMMAND`](../../develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_WORKER_COMMAND`](/developers/doc/develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
 
 You can set some tools' version in any runtime (except Docker):
 
@@ -67,10 +67,10 @@ You can set some tools' version in any runtime (except Docker):
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_CACHE_DEPENDENCIES` | Enable caching of your build dependencies to speed up following builds. | false |
-|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
-|[`CC_IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`IGNORE_FROM_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`CC_OVERRIDE_BUILDCACHE`](../../develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
+|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
+|[`CC_IGNORE_FROM_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`IGNORE_FROM_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`CC_OVERRIDE_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
 
 #### Control the deployment's behavior
 
@@ -78,7 +78,7 @@ You can set some tools' version in any runtime (except Docker):
 |-----------------------|------------------------------|--------------------------------|
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 |`CC_TASK` | If set to true, the deployer runs `CC_RUN_COMMAND` and terminates the instance after running the task. Trigger an execution using `git push` or starting your instance  | false |
-|[`CC_TROUBLESHOOT`](../../find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
+|[`CC_TROUBLESHOOT`](/developers/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 {{< callout emoji="🐳" >}}
   `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/developers/doc/applications/docker/#dockerized-rust-application-deployment).
@@ -90,27 +90,27 @@ Use these to define [commands to run](/developers/doc/develop/build-hooks) betwe
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_PRE_BUILD_HOOK`](../../develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
-|[`CC_POST_BUILD_HOOK`](../../develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
-|[`CC_PRE_RUN_HOOK`](../../develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
-|[`CC_RUN_FAILED_HOOK`](../../develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
-|[`CC_RUN_SUCCEEDED_HOOK`](../../develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
+|[`CC_PRE_BUILD_HOOK`](/developers/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
+|[`CC_POST_BUILD_HOOK`](/developers/doc/develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
+|[`CC_PRE_RUN_HOOK`](/developers/doc/develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
+|[`CC_RUN_FAILED_HOOK`](/developers/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
+|[`CC_RUN_SUCCEEDED_HOOK`](/developers/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_CLAMAV`](../../administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
-|[`CC_CLAMAV_MAXQUEUE`](../../administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
-|[`CC_CLAMAV_MAXTHREADS`](../../administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
-|[`CC_METRICS_PROMETHEUS_PASSWORD`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
-|[`CC_METRICS_PROMETHEUS_PATH`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
-|[`CC_METRICS_PROMETHEUS_PORT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
-|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
-|[`CC_METRICS_PROMETHEUS_USER`](../../metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
-|[`CC_VARNISH_FILE`](../../administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
-|[`CC_VARNISH_STORAGE_SIZE`](../../administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
-|[`CC_WORKER_COMMAND`](../../develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_CLAMAV`](/developers/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
+|[`CC_CLAMAV_MAXQUEUE`](/developers/doc/administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
+|[`CC_CLAMAV_MAXTHREADS`](/developers/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
+|[`CC_METRICS_PROMETHEUS_PASSWORD`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
+|[`CC_METRICS_PROMETHEUS_PATH`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
+|[`CC_METRICS_PROMETHEUS_PORT`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
+|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
+|[`CC_METRICS_PROMETHEUS_USER`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_FILE`](/developers/doc/administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
+|[`CC_VARNISH_STORAGE_SIZE`](/developers/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_WORKER_COMMAND`](/developers/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 {{% content "mise" %}}
 
@@ -136,7 +136,7 @@ Note that `Reusable keys` are required to use multiple instances. You can [gener
 
 #### How it works?
 
-For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](../../develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](../../develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/developers/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/developers/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
 
 If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
 
@@ -407,7 +407,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### FS Bucket
 
-[FS Bucket Documentation](../../addons/fs-bucket)
+[FS Bucket Documentation](/developers/doc/addons/fs-bucket)
 
 |  Name  |  Description  | Read Only  |
 |-----------------------|------------------------------|--------------------------------|
@@ -416,7 +416,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MongoDB
 
-[MongoDB Documentation](../../addons/mongodb)
+[MongoDB Documentation](/developers/doc/addons/mongodb)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -430,7 +430,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MySQL
 
-[MySQL Documentation](../../addons/mysql)
+[MySQL Documentation](/developers/doc/addons/mysql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -456,7 +456,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### PostgreSQL
 
-[PostgreSQL Documentation](../../addons/postgresql)
+[PostgreSQL Documentation](/developers/doc/addons/postgresql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -531,7 +531,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Elastic Stack
 
-[Elastic Stack Documentation](../../addons/elastic)
+[Elastic Stack Documentation](/developers/doc/addons/elastic)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -591,7 +591,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Redis
 
-[Redis Documentation](../../addons/redis)
+[Redis Documentation](/developers/doc/addons/redis)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|

@@ -11,6 +11,7 @@ aliases:
 - /doc/deploy/application/java/java
 - /doc/deploy/application/java/by-framework
 - /doc/getting-started/by-language/java
+- /doc/java
 - /doc/java/select-java-version
 - /doc/java-hosting
 - /doc/partials/language-specific-deploy/java
@@ -23,12 +24,12 @@ Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="java-gradle" title="Gradle" icon="gradle" >}}
-  {{< card link="java-jar" title="Jar" icon="java" >}}
-  {{< card link="java-maven" title="Maven" icon= "maven">}}
-  {{< card link="java-war" title="War/Ear" icon="java" >}}
-  {{< card link="../../../guides/play-framework-1" title="Play 1" icon="play" >}}
-  {{< card link="../../../guides/play-framework-2" title="Play 2" icon="play" >}}
+  {{< card link="/developers/doc/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
+  {{< card link="/developers/doc/applications/java/java-jar" title="Jar" icon="java" >}}
+  {{< card link="/developers/doc/applications/java/java-maven" title="Maven" icon= "maven">}}
+  {{< card link="/developers/doc/applications/java/java-war" title="War/Ear" icon="java" >}}
+  {{< card link="/developers/guides/play-framework-1" title="Play 1" icon="play" >}}
+  {{< card link="/developers/guides/play-framework-2" title="Play 2" icon="play" >}}
 
 {{< /cards >}}
 
@@ -39,7 +40,7 @@ Looking for instructions on a specific framework deployment?
 {{< cards >}}
 {{< card
     title="Check our Guides"
-    link="../../../guides"
+    link="/developers/guides"
     icon="science"
   >}}
   {{< /cards >}}

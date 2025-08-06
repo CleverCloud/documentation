@@ -11,11 +11,14 @@ keywords:
 - pgsql
 - mariadb
 aliases:
+- /addons/postgresql
 - /deploy/addon/postgresql
 - /doc/databases-and-services/postgresql
-- /doc/postgresql
 - /doc/deploy/addon/postgresql
 - /doc/deploy/addon/postgresql/postgresql
+- /doc/postgresql
+- /doc/postgresql-hosting
+- /postgresql-hosting
 ---
 ## Overview
 
@@ -34,7 +37,7 @@ Some applications require a non-empty database to run properly. If you want to i
 2. Command line tool for PostgreSQL administration like `psql`
 3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
-{{% content "dbMigration" %}}
+{{% content "db-migration" %}}
 
 ## Replication
 
@@ -137,7 +140,11 @@ Extension   | Description
 ----------- | -----------
 pg_cron     | Job scheduler for PostgreSQL
 pg_ivm      | Incremental view maintenance for PostgreSQL
+pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL
+pgaudit     | Provides detailed session and/or object audit logging via the standard PostgreSQL logging facility
+pgsql-http  | HTTP client for PostgreSQL
 pgtap       | Unit testing for PostgreSQL
+rum         | Provides an access method to work with a RUM index
 timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)
 
 {{< callout type="warning" >}}

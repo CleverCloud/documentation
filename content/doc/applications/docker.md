@@ -7,10 +7,11 @@ keywords:
 tags:
 - deploy
 aliases:
+- /applications/docker
 - /developers/doc/applications/docker
 - /doc/deploy/application/docker
 - /doc/deploy/application/docker/docker
-- /doc/docker/
+- /doc/docker
 - /doc/docker/docker
 - /doc/getting-started/by-language/docker
 - /doc/partials/language-specific-deploy/docker
@@ -32,7 +33,7 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-[FS Buckets](../../best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
+[FS Buckets](/developers/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
 
 ### How it works
@@ -129,9 +130,9 @@ Every environment variable defined for your application will be passed as a buil
 
 We provide a few examples of dockerized applications on Clever Cloud.
 
-* [Elixir App](https://GitHub.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
-* [Seaside / Smalltalk App](https://GitHub.com/CleverCloud/demo-seaside)
-* [Rust App](https://GitHub.com/CleverCloud/demo-rust)
+* [Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
+* [Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
+* [Rust App](https://github.com/CleverCloud/demo-rust)
 
 You might need to use the `CC_DOCKERFILE = <name of your Dockerfile>` variable.
 

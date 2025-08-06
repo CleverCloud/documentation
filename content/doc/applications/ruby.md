@@ -8,6 +8,7 @@ keywords:
 - ruby
 - rails
 aliases:
+- /applications/ruby
 - /doc/deploy/application/ruby
 - /doc/deploy/application/ruby/by-framework
 - /doc/deploy/application/ruby/by-framework/ruby-on-rails
@@ -17,6 +18,7 @@ aliases:
 - /doc/partials/language-specific-deploy/ruby
 - /doc/ruby
 - /doc/ruby-hosting
+- /doc/ruby/ruby
 - /doc/ruby/ruby-on-rails
 - /getting-started/by-language/ruby
 comments: false
@@ -29,13 +31,13 @@ Ruby on Rails is an open source web application framework which runs on the Ruby
 Clever Cloud allows you to deploy any Ruby on Rails application. This page will explain you how to set up your application to run it on our service.
 You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
-- [An example of Ruby on Rails application on Clever Cloud](https://GitHub.com/CleverCloudDemos/demo-rubyonrails-pg-rest)
+- [An example of Ruby on Rails application on Clever Cloud](https://github.com/CleverCloudDemos/demo-rubyonrails-pg-rest)
 
 {{% content "create-application" %}}
 
 {{% content "set-env-vars" %}}
 
-{{% content "language-specific-deploy/ruby" %}}
+{{% content "ruby" %}}
 
 {{% content "new-relic" %}}
 

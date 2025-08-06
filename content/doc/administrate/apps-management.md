@@ -10,6 +10,7 @@ keywords:
 - restart
 - logs
 aliases:
+- /administrate/apps-management
 - /doc/admin-console/apps-management
 ---
 
@@ -27,7 +28,7 @@ Stop functionality is useful during the development of the application to limit 
 ![Manage your application from the Console](/images/app-management.png)
 
 {{< callout type="info" >}}
-  If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](../../develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
+  If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
 {{< /callout >}}
 
 ## Deploy an old commit

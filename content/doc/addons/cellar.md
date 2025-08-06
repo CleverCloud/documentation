@@ -14,7 +14,9 @@ keywords:
 - s3cmd
 - aws
 aliases:
+- /addons/cellar
 - /deploy/addon/cellar
+- /doc/cellar
 - /doc/deploy/addon/cellar
 ---
 {{< hextra/hero-subtitle >}}
@@ -637,7 +639,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   {{< tab >}}
 
-  The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](https://www.clever-cloud.com/developers/doc/addons/cellar/#with-aws-cli)
+  The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](/developers/doc/addons/cellar/#with-aws-cli)
 
   ### Activate versioning with AWS CLI
 

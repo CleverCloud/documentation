@@ -1,6 +1,7 @@
 ---
-title: Configuration List
 weight: 10
+type: docs
+title: Configuration List
 description: All Clever Cloud advanced features and tools
 tags:
 - cli
@@ -11,11 +12,11 @@ keywords:
 - list
 - authentication
 aliases:
-- /docs
+- /reference
 comments: false
 ---
 
 {{< cards >}}
-  {{< card link="common-configuration" title="Common configuration for all instances" icon="cog-6-tooth" >}}
-  {{< card link="reference-environment-variables" title="All environment variables" icon="creds" >}}
+  {{< card link="/developers/doc/reference/common-configuration" title="Common configuration for all instances" icon="cog-6-tooth" >}}
+  {{< card link="/developers/doc/reference/reference-environment-variables" title="All environment variables" icon="creds" >}}
 {{< /cards >}}

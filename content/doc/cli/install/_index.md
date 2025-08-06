@@ -4,7 +4,9 @@ weight: 1
 title: Install Clever Tools
 description: Getting started with Clever Cloud CLI
 aliases:
+- /cli/install
 - /doc/cli-setup
+- /doc/install
 ---
 
 Clever Cloud CLI is based on Node.js. We thought it to be easily available on any platform. Thus, you can download Clever Tools as [a npm package](https://www.npmjs.com/package/clever-tools), but also through package managers or as a binary on many systems:

@@ -9,7 +9,9 @@ keywords:
 - hooks
 aliases:
 - /clever-cloud-overview/hooks
+- /doc/build-hooks
 - /doc/clever-cloud-overview/hooks
+- /doc/deploy/build-hooks
 ---
 ## Deployment lifecycle
 

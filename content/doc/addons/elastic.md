@@ -10,11 +10,14 @@ keywords:
 - elastic
 - kibana
 - apm
+comments: false
 aliases:
+- /addons/elastic
 - /doc/deploy/addon/elastic/elastic
 - /doc/deploy/addon/elastic
+- /doc/elastic
 - /doc/elasticsearch
-comments: false
+- /doc/elasticsearch-hosting
 ---
 
 The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). Reliably and securely take data from any source, in any format, then search, analyze, and visualize it in real time. Find out more about it on [Elastic's website](https://www.elastic.co/products/elastic-stack).

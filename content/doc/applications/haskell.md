@@ -14,6 +14,7 @@ aliases:
 - /doc/haskell/
 - /doc/haskell/haskell
 - /doc/partials/language-specific-deploy/haskell
+- /haskell
 ---
 
 ## Overview

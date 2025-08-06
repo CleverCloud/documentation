@@ -7,6 +7,7 @@ tags:
 keywords:
 - scala
 aliases:
+- /applications/scala
 - /deploy/application/scala/scala
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala
@@ -41,7 +42,7 @@ You need to use the [sbt-native-packager](#the-sbt-native-packager) in your proj
 
 We rely on `sbt-native-packager` to run applications. This plugin provides a `stage` task which is run during deployment.
 
-If your project doesn't already use [sbt-native-packager](https://GitHub.com/sbt/sbt-native-packager), you need to add it to `project/plugins.sbt`. Please make sure you use an up-to-date version.
+If your project doesn't already use [sbt-native-packager](https://github.com/sbt/sbt-native-packager), you need to add it to `project/plugins.sbt`. Please make sure you use an up-to-date version.
 
 In `project/plugins.sbt`:
 
@@ -89,7 +90,7 @@ Our engine will execute the `sbt service1/stage` and will run `service1/target/u
 ### HOCON users
 
 If you're using
-[HOCON](https://GitHub.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation) configuration files, then you can have direct acces to environment variables from the configuration file:
+[HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation) configuration files, then you can have direct acces to environment variables from the configuration file:
 
 ```shell
 application.secret=${APPLICATION_SECRET}

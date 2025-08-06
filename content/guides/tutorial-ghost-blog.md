@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Ghost Blog
-shortdesc: This article shows you how to deploy a Ghost blog on Clever Cloud.
+description: This article shows you how to deploy a Ghost blog on Clever Cloud.
 tags:
 - deploy
 keywords:

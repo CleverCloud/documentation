@@ -66,7 +66,7 @@ cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
 
 ### Create and Configure Node Application and MySQL
 
-Use the [Clever Tools CLI](https://www.clever-cloud.com/developers/doc/cli/install):
+Use the [Clever Tools CLI](/developers/doc/cli/install):
 
 Create the Node.js app and a MySQL add-on on Clever Cloud:
 

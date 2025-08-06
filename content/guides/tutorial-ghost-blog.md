@@ -255,8 +255,8 @@ clever env set mail__options__auth__user "your-smtp-username"
 clever env set mail__options__auth__pass "your-smtp-password"
 ```
 
-> 💡 **Note**: These environment variables allow Ghost to connect to your email service automatically.  
-> For more details and supported options, see the [official Ghost SMTP configuration docs](https://ghost.org/docs/config/#mail).
+> 💡 > [!NOTE] Setup email service
+> These environment variables allow Ghost to connect to your email service automatically, see the [official Ghost SMTP configuration docs](https://ghost.org/docs/config/#mail) for more information.
 
 ## Deploy on Clever Cloud
 

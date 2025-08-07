@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Deploy from GitLab
-description: How to set up you CI/CD from GitLab to deploy to Clever Cloud
+description: How to set up CI/CD from GitLab to deploy to Clever Cloud with complete configuration and deployment automation guide
 aliases:
 - /ci-cd/gitlab
 ---

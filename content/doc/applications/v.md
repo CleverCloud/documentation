@@ -2,7 +2,7 @@
 type: docs
 linkTitle: V (Vlang)
 title: V (Vlang) application runtime
-description: Build and deploy your V (Vlang) based API and applications
+description: Build and deploy V (Vlang) applications using the simple, fast, and safe programming language with built-in web server support
 ---
 
 ## Overview

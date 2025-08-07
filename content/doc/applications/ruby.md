@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Ruby on Rails
-description: Ruby on Rails is an open source web application framework which runs on the Ruby programming language
+description: Deploy Ruby on Rails web applications with full-stack framework capabilities including database integration and template rendering
 tags:
 - deploy
 keywords:

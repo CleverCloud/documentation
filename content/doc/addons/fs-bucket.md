@@ -1,7 +1,7 @@
 ---
 type: docs
 title: File System Buckets
-description: This add-on allows applications to use a persistent file system, as git-based apps don't have one
+description: Configure FS Bucket add-on service for persistent file storage and data management across your Clever Cloud applications
 tags:
 - addons
 keywords:

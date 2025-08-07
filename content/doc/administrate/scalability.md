@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Application scaling
-description: How does Clever Cloud give your application the resources it needs?
+description: Configure automatic and manual scaling for your Clever Cloud applications to handle traffic spikes and optimize resource usage
 tags:
 - administrate
 keywords:

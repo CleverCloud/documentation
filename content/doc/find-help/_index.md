@@ -2,7 +2,7 @@
 weight: 13
 type: docs
 title: Find Help
-description: Find help on Clever Cloud, from support to FAQ and troubleshooting guides
+description: Access support resources including professional support options, FAQ, and troubleshooting guides for Clever Cloud platform issues
 aliases:
 - /doc/administrate/find-help
 comments: false

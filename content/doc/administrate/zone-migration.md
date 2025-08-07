@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Zone Migration
-description: Migrate your applications and add-ons from one zone to another
+description: Migrate applications between Clever Cloud zones for improved performance, compliance, or geographic distribution requirements
 tags:
 - migration
 - zone

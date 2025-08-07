@@ -1,7 +1,7 @@
 ---
 type: docs
 title: CRON
-description: All you need to know about running crons on Clever Cloud
+description: Schedule and manage CRON jobs on Clever Cloud for automated tasks, background processing, and periodic maintenance operations
 keywords:
 - apps
 - cron

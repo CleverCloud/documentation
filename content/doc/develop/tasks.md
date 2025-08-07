@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Clever Tasks
-description: How to setup and run single-job scalers on Clever Cloud
+description: How to set up and run single-job scalers on Clever Cloud with complete setup and configuration, configuration options, and deployment guide
 tags:
 - deploy
 - task

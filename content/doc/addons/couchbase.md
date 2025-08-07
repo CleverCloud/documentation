@@ -1,7 +1,7 @@
 ---
 type: docs
 title: CouchBase
-description: CouchBase is a database which automation is still in beta on Clever Cloud
+description: Deploy Couchbase NoSQL database add-on service on Clever Cloud with automatic scaling, backup capabilities, and enterprise support
 aliases:
 - /doc/databases-and-services/couchbase
 ---

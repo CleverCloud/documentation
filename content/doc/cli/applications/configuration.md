@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Configuration
-description: Configure Clever Cloud applications with Clever Tools
+description: Configure application settings and environment variables using Clever Tools CLI for streamlined deployment and runtime management
 aliases:
 - /clever-tools/tcp-redirections
 - /doc/administrate/clever-tools/configure

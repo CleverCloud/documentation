@@ -2,7 +2,7 @@
 type: docs
 title: Support
 weight: 7
-description: We provide basic support free-of-charge to all our users, here's how to reach us
+description: Learn how to contact Clever Cloud support through email or ticket center for technical assistance, available during business hours
 tags:
 - help
 keywords:

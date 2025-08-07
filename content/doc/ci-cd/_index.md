@@ -2,7 +2,7 @@
 weight: 9
 title: 'CI/CD'
 date: 2024-03-15T13:14:53+01:00
-description: Deploy to Clever Cloud from GitLab or GitHub
+description: Deploy to Clever Cloud from GitLab or GitHub with complete setup and configuration, configuration options, and deployment best practices
 draft: false
 type: docs
 aliases:

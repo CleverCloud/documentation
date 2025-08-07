@@ -2,7 +2,7 @@
 type: docs
 title: Marketplace APIs & Tools
 weight: 13
-description: How to integrate your own service as an add-on on Clever Cloud's Marketplace
+description: Integrate your own service as an add-on on Clever Cloud marketplace with comprehensive developer tools and partnership opportunities
 keywords:
 - Add-on
 - API

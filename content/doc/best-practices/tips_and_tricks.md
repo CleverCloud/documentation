@@ -1,6 +1,6 @@
 ---
 title: Tips & Tricks
-description: Discover some useful tips and tricks to improve your experience with Clever Cloud tools
+description: Discover useful Console features, CLI shortcuts, deployment tricks, and time-saving tools to improve your Clever Cloud experience
 tags:
 - reference
 - tips

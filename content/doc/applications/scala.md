@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Scala
-description: Scala is an object-functional programming and scripting language that runs on the Java platform…
+description: Deploy Scala applications on Clever Cloud using the object-functional programming language that runs on the Java platform runtime
 tags:
 - deploy
 keywords:

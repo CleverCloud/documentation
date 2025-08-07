@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Maven
-description: Maven is essentially a project management and comprehension tool…
+description: Deploy Java applications using Maven build system on Clever Cloud with automatic dependency management and build lifecycle
 tags:
 - deploy
 keywords:

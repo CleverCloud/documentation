@@ -2,7 +2,7 @@
 type: "docs"
 weight: 8
 title: Clever Tools (CLI)
-description: Use Clever Cloud CLI, Clever Tools
+description: Use Clever Tools CLI to manage applications, add-ons, and deployments from the command line with powerful automation and monitoring features
 aliases:
 - /clever-tools/getting_started
 - /cli

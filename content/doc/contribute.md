@@ -2,7 +2,7 @@
 type: docs
 weight: 14
 title: Contribute
-description: Learn about the available shortcodes to write new documentation
+description: Learn how to contribute to Clever Cloud documentation including available shortcodes, writing guidelines, and submission process
 tags:
 - contribute
 keywords:

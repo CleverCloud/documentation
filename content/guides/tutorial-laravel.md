@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Laravel
-description: This article shows you how to deploy a Laravel application on Clever Cloud
+description: Deploy Laravel PHP framework on Clever Cloud with step-by-step guide including database integration and configuration management
 tags:
 - deploy
 keywords:

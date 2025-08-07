@@ -2,7 +2,7 @@
 type: docs
 weight: 2
 title: Manage your account
-description: Master the account management on Clever Cloud. This section covers everything from updating personal information to modifying email,SSH keys or tokens on our PaaS platform.
+description: Manage your Clever Cloud account settings including profile information, modifying email, SSH keys or tokens on our PaaS platform.
 tags:
 - account
 keywords:

@@ -2,7 +2,7 @@
 weight: 10
 type: docs
 title: Configuration List
-description: All Clever Cloud advanced features and tools
+description: Explore technical reference documentation for Clever Cloud including environment variables, API endpoints, and configuration options
 tags:
 - cli
 - add-ons

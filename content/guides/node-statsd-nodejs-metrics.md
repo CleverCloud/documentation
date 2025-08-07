@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Node-statsd
-description: This tutorial helps you configure node-statsd package on your Node.js application to push custom metrics
+description: Configure node-statsd package on your Node.js application to push custom metrics with detailed step-by-step tutorials
 tags:
 - deploy
 keywords:

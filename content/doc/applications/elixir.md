@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Elixir
-description: Elixir is a functional, concurrent, general-purpose programming language that runs on the Erlang virtual machine…
+description: Deploy Elixir applications on Clever Cloud using the functional, concurrent programming language that runs on the Erlang virtual machine
 tags:
 - deploy
 keywords:

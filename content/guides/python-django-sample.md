@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Django
-description: The goal of this article is to show you how to deploy a Django application on Clever Cloud
+description: Deploy Django applications on Clever Cloud with detailed step-by-step tutorials and configuration examples
 tags:
 - deploy
 keywords:

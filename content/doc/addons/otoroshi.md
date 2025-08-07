@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Otoroshi with LLM
-description: Otoroshi is a lightweight proxy that helps you to connect your services to your clients
+description: Deploy Otoroshi API gateway on Clever Cloud for advanced API management, security, traffic control, and LLM models management
 tags:
 - addons
 keywords:

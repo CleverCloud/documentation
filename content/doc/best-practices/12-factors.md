@@ -1,7 +1,7 @@
 ---
 type: docs
 title: The Twelve-Factor App
-description: 12 factors are a great way to learn about cloud deployment
+description: Learn the Twelve-Factor App methodology for building cloud-ready applications with proper configuration, scalability, and deployment practices
 tags:
 - develop
 - best-practices

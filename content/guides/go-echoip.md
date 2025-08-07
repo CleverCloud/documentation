@@ -1,6 +1,6 @@
 ---
 title: Go - Echoip
-description: Deploy EchoIP on Clever Cloud
+description: Build and deploy a Go EchoIP service on Clever Cloud with step-by-step instructions, configuration examples, and optimization tips
 tags:
 - guides
 keywords:

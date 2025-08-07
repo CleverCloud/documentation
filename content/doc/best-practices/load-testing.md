@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Load testing
-description: Considerations and methods to perform a load test on Clever Cloud
+description: Learn performance testing considerations, best practices, and requirements for load testing applications on Clever Cloud infrastructure
 tags:
 - develop
 - best-practices

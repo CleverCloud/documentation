@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Kibana
-description: How to deploy a custom Kibana for specific using cases
+description: Deploy custom Kibana for specific use cases with detailed step-by-step tutorials and configuration examples
 tags:
 - addons
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: PHP with Apache
-description: Deploy PHP applications with Apache HTTP server on Clever Cloud
+description: Deploy PHP applications on Clever Cloud with support for multiple frameworks, Composer dependencies, and database integration
 tags:
 - php
 - deploy

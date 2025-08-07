@@ -1,7 +1,7 @@
 ---
 type: docs
 title: FAQ
-description: Frequently Asked Questions about Clever Cloud
+description: Find answers to frequently asked questions about scalers, supported languages, security, SSH access, and platform features on Clever Cloud
 tags:
 - help
 keywords:

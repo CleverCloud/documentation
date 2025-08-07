@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Redis
-description: Redis is an open source, in-memory data structure store, used as database, cache and message broker
+description: Deploy Redis in-memory data store add-on service for caching, session management, and message brokering on Clever Cloud platform
 tags:
 - addons
 keywords:

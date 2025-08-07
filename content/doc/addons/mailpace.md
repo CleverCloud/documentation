@@ -1,7 +1,7 @@
 ---
 type: docs
 title: MailPace
-description: MailPace is a fast & reliable transactional email
+description: Configure MailPace email delivery add-on service for reliable transactional email sending in your Clever Cloud applications
 tags:
 - addons
 keywords:

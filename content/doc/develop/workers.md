@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Workers
-description: Workers allow to run background tasks running in parallel of your application
+description: Deploy and manage background workers on Clever Cloud for asynchronous processing, job queues, and long-running task execution with scaling
 tags:
 - develop
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Haskell
-description: Haskell is love, haskell is life
+description: Deploy Haskell applications on Clever Cloud with automatic dependency management, compilation, and runtime environment configuration
 tags:
 - deploy
 keywords:

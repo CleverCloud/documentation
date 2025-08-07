@@ -2,7 +2,7 @@
 type: docs
 weight: 9
 title: Best practices
-description: Learn best practices on Clever Cloud
+description: Learn best practices for deploying and managing applications on Clever Cloud including security, performance, and scalability tips
 tags:
 - getting-started
 keywords:

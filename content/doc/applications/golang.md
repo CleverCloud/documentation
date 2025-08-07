@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Go
-description: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language
+description: Deploy Go applications on Clever Cloud using the open source, compiled, garbage-collected, concurrent system programming language
 tags:
 - deploy
 keywords:

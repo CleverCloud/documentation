@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Application Management
-description: Starting, restarting, stopping your applications
+description: Manage your applications on Clever Cloud including deployment configuration, scaling settings, and operational controls
 tags:
 - dashboard-setup
 keywords:

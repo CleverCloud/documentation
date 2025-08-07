@@ -2,7 +2,7 @@
 type: docs
 title: Notifications
 weight: 5
-description: Learn how to customize notifications for account and deployment activity on Clever Cloud, service updates, and more on our PaaS service
+description: Learn how to customize notifications for account and deployment activity on Clever Cloud, service updates, and more on the PaaS service
 tags:
 - admin-console
 keywords:

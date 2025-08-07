@@ -1,6 +1,6 @@
 ---
 title: Hugo + Cellar
-description: Build your website with Hugo and deploy it through Cellar, a S3-compatible object storage
+description: Build your website with Hugo and deploy it through Cellar S3-compatible object storage with detailed step-by-step tutorials
 tags:
 - guides
 keywords:

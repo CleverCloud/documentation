@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Product support on tools
-description: Get product support on each official tools
+description: Review product support matrix showing which services and runtimes are available through Terraform provider and Kubernetes operator
 ---
 This is a product matrix showing the services that are available with our Terraform provider and K8S-Operator.
 

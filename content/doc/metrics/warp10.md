@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Warp 10
-description: Warp 10. Geo Time series database. Presentations, concepts and examples
+description: Deploy Warp 10 Geo Time series database on Clever Cloud with presentations, concepts, and implementation examples
 tags:
   - metrics
 keywords:

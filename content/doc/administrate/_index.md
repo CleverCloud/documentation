@@ -2,7 +2,7 @@
 weight: 5
 type: docs
 title: "Administrate"
-description: Manage your applications, add-ons, and more on Clever Cloud
+description: Manage and administrate your Clever Cloud applications including scaling, monitoring, SSL configuration, and platform operations
 comments: false
 aliases:
 - /doc/admin

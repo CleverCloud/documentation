@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Static
 title: Static Site Generators (SSGs) runtime
-description: Deploy static websites. Astro, Docusaurus, Hugo, mdBook and Mkdocs autobuild
+description: Deploy static websites with automatic builds supporting Astro, Docusaurus, Hugo, mdBook, and Mkdocs generators on pico instances
 aliases:
 - /doc/deploy/application/static
 - /doc/deploy/application/static/static

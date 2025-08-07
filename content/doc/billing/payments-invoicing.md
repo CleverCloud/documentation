@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Payments & invoicing
-description: Managing invoices and payment on Clever Cloud
+description: Manage payments, invoices, and billing methods including credit cards, PayPal, bank transfers, and SEPA direct debit options
 tags:
 - billing
 keywords:

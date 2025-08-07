@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Deploy, Lifecycle
-description: Manage your application using the Clever Cloud CLI tool
+description: Manage application deployment lifecycle using Clever Cloud CLI tools including builds, deployments, rollbacks, and scaling operations
 aliases:
 - /doc/administrate/clever-tools/lifecycle
 - /doc/administrate/clever-tools/manage

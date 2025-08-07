@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Clamav
-description: Configuring Clamav on Clever Cloud
+description: Set up ClamAV antivirus scanning for your Clever Cloud applications to enhance security and protect against malware threats
 tags:
 - administrate
 keywords:

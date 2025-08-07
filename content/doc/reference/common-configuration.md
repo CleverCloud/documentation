@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Configuration on all instances
-description: Learn how to do some basic setup configuration to get started
+description: Configure common settings across all instance types including SSH keys, build hooks, and shared deployment configurations
 tags:
 - reference
 - dashboard-setup

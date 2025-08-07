@@ -1,7 +1,7 @@
 ---
 type: docs
 title: .NET
-description: .NET. Free, Cross-platform, Open source. A developer platform for building all your apps
+description: Deploy .NET applications on Clever Cloud with support for C#, F#, VB.NET projects using cross-platform runtime capabilities
 tags:
 - deploy
 keywords:

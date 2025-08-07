@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Heptapod
-description: Heptapod Cloud is a software factory based on Gitlab Community Edition, managed and hosted on Clever Cloud
+description: Deploy Heptapod source code management platform add-on service on Clever Cloud for Git and Mercurial repository hosting with integrated CI/CD
 tags:
 - addons
 keywords:

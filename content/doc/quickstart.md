@@ -2,7 +2,7 @@
 type: "docs"
 weight: 1
 title: Quickstart
-description: Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud
+description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
 tags:
 - getting-started
 keywords:

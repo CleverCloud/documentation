@@ -1,7 +1,7 @@
 ---
 type: docs
 title: MySQL
-description: MySQL is an open source relational database management system (RDBMS)
+description: Deploy MySQL relational database add-on service on Clever Cloud with automated backups, scaling for enterprise applications
 tags:
 - addons
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: War/Ear
-description: In JEE, applications modules are packaged as EAR and WAR based on their functionality
+description: Deploy WAR and EAR Java Enterprise (JEE) applications on Clever Cloud with support for various containers and servlet technologies
 tags:
 - deploy
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Python
-description: Python 2.7 and 3.12 are available on our platform. You can use git to deploy your application.
+description: Deploy Python 2 and 3 applications with uv support, Django, Flask, various frameworks, and configurable runtime settings
 tags:
 - deploy
 keywords:

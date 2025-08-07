@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Domain names
-description: How to setup and configure domains names for your apps
+description: Configure and manage custom domain names for your Clever Cloud applications including DNS setup and SSL certificate management
 tags:
 - dashboard-setup
 - apps

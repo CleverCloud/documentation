@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Guides
-description: Step by step guides to deploy specific apps and frameworks on Clever Cloud
+description: Step-by-step guides to deploy specific apps and frameworks on Clever Cloud with detailed tutorials and configuration examples
 tags:
 - guides
 aliases:

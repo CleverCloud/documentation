@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Drupal
-description: This article shows you how to deploy a Drupal-based website on Clever Cloud
+description: Deploy Drupal CMS on Clever Cloud with complete setup guide including database configuration, file management, and security setup
 tags:
 - deploy
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Lume (Deno)
-description: Build your website with Lume Static Site Generator (SSG) using Deno and host it on Clever Cloud. No dedicated runner needed.
+description: Build and deploy your website with Lume Static Site Generator (SSG) using Deno runtime on Clever Cloud platform with complete setup guide
 tags:
 - guides
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Unified Invoicing
-description: Each month, for each organisation, a single invoice is generated, including the whole activity (credits, add-on etc)
+description: Understand Clever Cloud unified invoicing system with monthly billing summaries, detailed consumption breakdown, and credit accounting
 tags:
 - billing
 keywords:

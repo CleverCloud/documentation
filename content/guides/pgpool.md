@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Pgpool-II
-description: How to configure and use Pgpool-II for PostgreSQL add-ons
+description: Configure and use Pgpool-II for PostgreSQL add-ons with detailed tutorials and best practices for deployment
 tags:
 - addons
 keywords:

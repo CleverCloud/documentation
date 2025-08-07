@@ -1,7 +1,7 @@
 ---
 type: docs
 title: mdBook
-description: Build your website with the mdBook Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
+description: Deploy mdBook Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 tags:
 - guides
 keywords:

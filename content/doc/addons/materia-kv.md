@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Materia KV
-description: Materia KV is a serverless key-value database, with high availability and open compatibility
+description: Deploy Materia key-value store distributed across 3 datacenters, storage-based, resilient and compatible with existing Redis ecosystems
 tags:
 - addons
 keywords:

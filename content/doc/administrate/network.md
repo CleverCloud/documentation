@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Networking and IP
 title: Networking and IP addresses ranges
-description: What are my application's outgoing IP?
+description: Understand Clever Cloud IP ranges for external service filtering, whitelist configuration, and unique IP services
 keywords:
 - network
 - ip

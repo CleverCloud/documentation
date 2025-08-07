@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Metabase
-description: This add-on provides a one-click Metabase (Business Intelligence, Dashboards, and Data Visualization) instance hosted by Clever Cloud
+description: Deploy Metabase business intelligence add-on service for data visualization, dashboards, and analytics reporting on Clever Cloud
 tags:
 - addons
 keywords:

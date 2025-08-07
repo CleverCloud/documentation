@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Deployment healthcheck
 title: Deployment healthcheck path
-description: Healthcheck allows to check if an url return always the 200 code
+description: Configure health checks for your Clever Cloud applications to ensure availability, automatic recovery, and seamless load balancer integration
 tags:
 - develop
 keywords:

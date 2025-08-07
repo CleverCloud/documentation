@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Jenkins
-description: This add-on provides a Jenkins master instance with a list of preinstalled plugins
+description: Set up Jenkins CI/CD automation server on Clever Cloud for continuous integration and deployment workflows with scalable infrastructure
 tags:
 - addons
 keywords:

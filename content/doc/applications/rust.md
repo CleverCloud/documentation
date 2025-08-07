@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Rust
-description: Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety
+description: Deploy Rust applications on Clever Cloud using the system programming language that runs blazingly fast and guarantees thread safety
 tags:
 - deploy
 keywords:

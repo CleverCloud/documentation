@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Elastic Stack
-description: The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack)
+description: Deploy Elasticsearch Platinum service add-on on Clever Cloud for powerful search, analytics, and data processing capabilities
 tags:
 - addons
 keywords:

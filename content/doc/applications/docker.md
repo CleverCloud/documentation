@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Docker
-description: Docker is an easy, lightweight virtualized environment for portable applications
+description: Deploy Docker containers on Clever Cloud with secure VM isolation, custom stacks, and flexible application deployment options
 keywords:
 - docker
 tags:

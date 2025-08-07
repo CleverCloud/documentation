@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Ruby Rack full tutorial
-description: How to write a hello world web application using Rack and deploy it on Clever Cloud
+description: Complete tutorial for deploying Ruby Rack applications on Clever Cloud with configuration examples and deployment best practices
 tags:
 - deploy
 keywords:

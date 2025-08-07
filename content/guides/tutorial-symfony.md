@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Symfony
-description: This article shows you how to deploy a Symfony application on Clever Cloud
+description: Deploy Symfony PHP framework on Clever Cloud with comprehensive setup guide including database configuration and asset management
 tags:
 - deploy
 keywords:

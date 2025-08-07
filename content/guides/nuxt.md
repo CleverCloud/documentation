@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Nuxt
-description: Build your website with Nuxt, either as a static site or using a NodeJs app, and host it on Clever Cloud. No dedicated runner needed.
+description: Deploy Nuxt as Static Site Generator (SSG) or with Node.js on Clever Cloud  with step-by-step tutorial and configuration guide
 tags:
 - guides
 keywords:

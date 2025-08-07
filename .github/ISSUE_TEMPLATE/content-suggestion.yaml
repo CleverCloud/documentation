@@ -1,0 +1,64 @@
+name: 📝 Content and guide suggestion
+description: Suggest new documentation content, guides
+title: "Content: "
+labels: ["documentation", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest new content for our documentation!
+        Your feedback helps us improve and expand our documentation.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: "Prerequisites check"
+      description: "Have you checked if this content already exists?"
+      options:
+        - label: I have searched existing [documentation](https://www.clever.cloud/developers/) to verify this content doesn't already exist
+        - label: I have checked for existing [issues](https://github.com/CleverCloud/documentation/issues) for this request
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: "Type of content requested"
+      description: "What type of content would you like to see?"
+      options:
+        - API
+        - Documentation
+        - Guide or tutorial
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: content-description
+    attributes:
+      label: "Content description"
+      description: "Describe clearly what content should be added"
+      placeholder: "I would like documentation about... because it would help users to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "Use case and target audience"
+      description: "Who would benefit from this content and why?"
+      placeholder: "This would help developers who are trying to... / New users need this when..."
+
+  - type: textarea
+    id: framework-details
+    attributes:
+      label: "Technical details (for framework guides)"
+      description: "If it's a framework guide: name, version, specific challenges, etc."
+      placeholder: "Framework: Laravel 10, challenges: queue configuration with Redis, special dependencies..."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional context (optional)"
+      description: "Helpful resources, official documentation, existing examples, etc."
+      placeholder: "Official docs: https://... Example projects: https://..."

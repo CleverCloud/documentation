@@ -4,6 +4,7 @@ linkTitle: Linux
 title: Linux application runtime
 description: Build and deploy any application with Mise and your favorite tools
 aliases:
+- /doc/deploy/application/other
 - /doc/deploy/not-supported
 ---
 

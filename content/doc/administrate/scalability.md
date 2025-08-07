@@ -11,6 +11,7 @@ keywords:
 aliases:
 - /administrate/scalability
 - /doc/clever-cloud-overview/scaling
+- /doc/deploy/application/scalability
 - /doc/scaling-tips
 ---
 

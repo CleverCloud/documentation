@@ -1,0 +1,256 @@
+<!-- Algolia DocSearch integration (project-level partial) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<style>
+  /* Hide theme's built-in search UI and show DocSearch in its place */
+  .search-wrapper { display: none !important; }
+  #docsearch { position: static; width: auto; height: auto; overflow: visible; display: inline-block; }
+  #docsearch .DocSearch-Button { opacity: 1; pointer-events: auto; border-radius: 8px; padding: 0.5rem 0.75rem; line-height: 1.25; }
+  /* Light/dark backgrounds similar to theme */
+  :root:not(.dark) #docsearch .DocSearch-Button { background: rgba(0,0,0,0.05); }
+  :root.dark #docsearch .DocSearch-Button { background: rgba(250,250,250,0.1); }
+  #docsearch .DocSearch-Button:focus { outline: none; }
+  #docsearch .DocSearch-Button:hover { filter: brightness(0.98); }
+  /* Ensure overlay looks fine with theme; fine-tune backdrop in dark mode if needed */
+  @media (prefers-color-scheme: dark) {
+    .DocSearch-Modal { --docsearch-modal-background: #0b0b0c; }
+  }
+  .DocSearch-Button-Placeholder { opacity: .7; }
+  /* Keep the keyboard hint visible to mimic previous UI */
+  /* Reduce modal max width a bit for narrow layouts */
+  .DocSearch-Container .DocSearch-Modal { max-width: 960px; }
+  @media (max-width: 768px) {
+    .DocSearch-Container .DocSearch-Modal { max-width: 100%; }
+  }
+  /* Respect site's border radius feel */
+  .DocSearch-Form, .DocSearch-Input, .DocSearch-Modal { border-radius: 8px; }
+  .DocSearch-Form { border: 1px solid rgba(125,125,125,.25); }
+  .DocSearch-Footer { display: none; }
+  .DocSearch-Logo svg { display: none; }
+  .DocSearch-NoResults-Prefill-List { display: none; }
+  .DocSearch-Commands { display: none; }
+  .DocSearch-Reset { opacity: .6; }
+  .DocSearch-Reset:hover { opacity: 1; }
+</style>
+
+<script>
+  (function() {
+    function ready(fn) {
+      if (document.readyState !== 'loading') { fn(); }
+      else { document.addEventListener('DOMContentLoaded', fn); }
+    }
+
+    ready(function() {
+      // Ensure DocSearch container exists and place it next to the theme search wrapper
+      var containerId = 'docsearch';
+      var container = document.getElementById(containerId);
+      if (!container) {
+        container = document.createElement('div');
+        container.id = containerId;
+        var themeWrapper = document.querySelector('.search-wrapper');
+        if (themeWrapper && themeWrapper.parentNode) {
+          themeWrapper.parentNode.insertBefore(container, themeWrapper.nextSibling);
+        } else {
+          // Fallback
+          var header = document.querySelector('header');
+          if (header) header.appendChild(container); else document.body.appendChild(container);
+        }
+      }
+
+      // Initialize DocSearch (wait if script not loaded yet)
+      var openDocSearch;
+      var initDocSearch = function() {
+        if (!window.docsearch) return false;
+        try {
+          window.docsearch({
+            appId: '{{ with .Site.Params.docsearch }}{{ .appId | safeJS }}{{ end }}',
+            apiKey: '{{ with .Site.Params.docsearch }}{{ .apiKey | safeJS }}{{ end }}',
+            indexName: '{{ with .Site.Params.docsearch }}{{ .indexName | safeJS }}{{ end }}',
+            container: '#docsearch',
+            debug: false
+          });
+          openDocSearch = function() {
+            var btn = document.querySelector('#docsearch .DocSearch-Button');
+            if (btn) { btn.click(); }
+          };
+          return true;
+        } catch (e) { return false; }
+      };
+      if (!initDocSearch()) {
+        var tries = 0;
+        (function waitForDocSearch(){
+          if (initDocSearch()) return;
+          if (tries++ < 30) setTimeout(waitForDocSearch, 100);
+        })();
+      }
+
+      // Hook the existing theme Search input/button to open DocSearch with prefill
+      var tryAttach = function() {
+        var header = document.querySelector('header');
+
+        var found = false;
+
+        // 1) Buttons or anchors acting as search triggers
+        var btns = header.querySelectorAll([
+          'button[aria-label="Search"]',
+          'button[aria-label*="search" i]',
+          'a[aria-label*="search" i]',
+          '.hx-search',
+          'button[class*="search" i]',
+          'a[class*="search" i]',
+          'a[href="#search"]',
+          '[role="search"] button',
+          '[data-testid*="search" i]',
+          '[data-track*="search" i]'
+        ].join(','));
+        btns.forEach(function(el){
+          if (el.__ccDocSearchBound) return; el.__ccDocSearchBound = true; found = true;
+          el.addEventListener('click', function(ev){ ev.preventDefault(); if (openDocSearch) openDocSearch(); });
+          el.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); if (openDocSearch) openDocSearch(); }});
+        });
+
+        // 2) The actual input/form used by the theme
+        var input = (header && header.querySelector('input[type="search"], input[placeholder*="search" i], .hx-search input, [role="search"] input'))
+                  || document.querySelector('input.search-input');
+        var form = input ? input.closest('form') : (header ? header.querySelector('form[role="search"], form.hx-search, .hx-search form') : null);
+
+        var ensureOpen = function(cb){
+          if (openDocSearch) { cb(); return; }
+          var t = 0;
+          var tick = function(){
+            if (openDocSearch) { cb(); return; }
+            if (t++ < 30) setTimeout(tick, 100);
+          };
+          tick();
+        };
+        var openWithPrefill = function(extraChar) {
+          var prefill = '';
+          if (input) prefill = (input.value || '');
+          if (extraChar && extraChar.length === 1) prefill += extraChar;
+          ensureOpen(function(){ openDocSearch(); });
+          // After modal mounts, set its input value and propagate event
+          setTimeout(function(){
+            var modalInput = document.querySelector('.DocSearch-Input');
+            if (modalInput) {
+              modalInput.value = prefill;
+              var evt = new Event('input', { bubbles: true });
+              modalInput.dispatchEvent(evt);
+              modalInput.focus();
+              // Move caret to end
+              try { modalInput.setSelectionRange(modalInput.value.length, modalInput.value.length); } catch (e) {}
+            }
+          }, 20);
+        };
+
+        if (input && !input.__ccDocSearchBound) {
+          input.__ccDocSearchBound = true; found = true;
+          // Prevent typing into the old input; route into DocSearch
+          input.addEventListener('focus', function(e){ e.preventDefault(); openWithPrefill(); input.blur(); });
+          input.addEventListener('keydown', function(e){
+            // Allow Tab to move focus
+            if (e.key === 'Tab') return;
+            e.preventDefault();
+            var ch = (e.key && e.key.length === 1) ? e.key : '';
+            if (e.key === 'Backspace') { if (openDocSearch) openWithPrefill(''); return; }
+            openWithPrefill(ch);
+          });
+        }
+
+        if (form && !form.__ccDocSearchBound) {
+          form.__ccDocSearchBound = true; found = true;
+          form.addEventListener('submit', function(e){ e.preventDefault(); openWithPrefill(); });
+        }
+
+        // Document-level delegation to ensure clicks/focus on .search-input open DocSearch
+        if (!document.__ccDocSearchDelegated) {
+          document.__ccDocSearchDelegated = true;
+          document.addEventListener('click', function(e){
+            var t = e.target;
+            if (t && t.closest && t.closest('input.search-input')) {
+              e.preventDefault();
+              openWithPrefill();
+            }
+          }, true);
+          document.addEventListener('keydown', function(e){
+            var t = e.target;
+            if (t && t.matches && t.matches('input.search-input')) {
+              if (e.key !== 'Tab') {
+                e.preventDefault();
+                var ch = (e.key && e.key.length === 1) ? e.key : '';
+                openWithPrefill(ch);
+              }
+            }
+          }, true);
+        }
+
+        // Overlay approach: add a transparent clickable layer above the input to reliably trigger DocSearch
+        var wrapper = (input && input.closest('.search-wrapper')) || document.querySelector('.search-wrapper');
+        if (wrapper && !wrapper.querySelector('.cc-docsearch-overlay')) {
+          found = true;
+          var overlay = document.createElement('button');
+          overlay.type = 'button';
+          overlay.className = 'cc-docsearch-overlay';
+          overlay.setAttribute('aria-label', 'Open search');
+          overlay.style.position = 'absolute';
+          overlay.style.inset = '0';
+          overlay.style.background = 'transparent';
+          overlay.style.cursor = 'text';
+          overlay.style.zIndex = '5';
+          overlay.style.border = '0';
+          overlay.style.padding = '0';
+          overlay.style.margin = '0';
+          // Let the kbd hint remain clickable-less
+          var kbd = wrapper.querySelector('kbd');
+          if (kbd) { kbd.style.pointerEvents = 'none'; }
+          overlay.addEventListener('click', function(e){ e.preventDefault(); openWithPrefill(); });
+          overlay.addEventListener('keydown', function(e){
+            if (e.key === 'Tab') return;
+            e.preventDefault();
+            var ch = (e.key && e.key.length === 1) ? e.key : '';
+            openWithPrefill(ch);
+          });
+          wrapper.style.position = wrapper.style.position || 'relative';
+          wrapper.appendChild(overlay);
+        }
+
+        // Delegate clicks within likely search containers (covers dynamic elements)
+        var containers = header.querySelectorAll('.hx-search, [role="search"], .search, .Search');
+        containers.forEach(function(c){
+          if (c.__ccDocSearchDelegated) return; c.__ccDocSearchDelegated = true; found = true;
+          c.addEventListener('click', function(e){
+            var t = e.target;
+            if (!t) return;
+            if (t.closest('button, a, input[type="search"], .DocSearch-Button')) {
+              e.preventDefault();
+              openWithPrefill();
+            }
+          });
+        });
+
+        return found;
+      };
+      if (!tryAttach()) {
+        // Retry shortly after to give the theme time to render header
+        setTimeout(tryAttach, 200);
+        setTimeout(tryAttach, 500);
+        // Observe header mutations to rebind when menu/header changes (e.g., responsive)
+        var header = document.querySelector('header');
+        if (header && !header.__ccDocSearchObserved) {
+          header.__ccDocSearchObserved = true;
+          var mo = new MutationObserver(function(){ tryAttach(); });
+          mo.observe(header, { childList: true, subtree: true });
+        }
+      }
+
+      // Global keyboard shortcuts to match common UX: '/' and Cmd/Ctrl+K
+      window.addEventListener('keydown', function(e){
+        var activeTag = (document.activeElement && document.activeElement.tagName) || '';
+        var typingInInput = /INPUT|TEXTAREA|SELECT/.test(activeTag);
+        if (!typingInInput && (e.key === '/' || (e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)))) {
+          e.preventDefault();
+          if (openDocSearch) openDocSearch();
+        }
+      });
+    });
+  })();
+</script>

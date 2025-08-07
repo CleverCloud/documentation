@@ -55,7 +55,7 @@ Choosing a load-testing solution will depend on several factors. If simplicity a
 
 Online services are available to perform your tests. Most offer typical user journey scenarios to allow you to simulate a user:
 
-* [K6](https://k6.io/cloud)
+* [K6](https://k6.io)
 * [Octoperf](https://octoperf.com)
 * [Loader.io](https://loader.io)
 

@@ -16,7 +16,7 @@ type: docs
 
 ## Web Console Features
 
-The Clever Cloud Console (<https://console.clever-cloud.com>) is your control center for managing applications, add-ons, and organisations. Here are features that can enhance your workflow:
+The [Clever Cloud Console](https://console.clever-cloud.com) is your control center for managing applications, add-ons, and organisations. Here are features that can enhance your workflow:
 
 ### Advanced Menu Filtering
 
@@ -49,7 +49,7 @@ Environment variables support more than just single-line values. When editing va
 
 This works across all input modes (simple, expert, and JSON) as well as through Clever Tools and the API.
 
-[Learn more about environment variables](/developers/doc/reference/reference-environment-variables)
+[Learn more about environment variables](/developers/doc/reference/reference-environment-variables/)
 
 ### Quick Variable Creation
 
@@ -264,7 +264,7 @@ Clever Tools is open source and built with Node.js. You can:
 - Submit pull requests
 - Join the development community
 
-[Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs#readme)
+[Clever Tools documentation](/developers/doc/cli/)
 
 ## Did You Know?
 
@@ -288,7 +288,7 @@ Every runtime includes useful tools:
 
 ### Path Routing Capabilities
 
-Thanks to the [open source load-balancer Sōzu](https://github.com/sozu-proxy/sozu), you can host multiple applications under one domain:
+Thanks to the [open source load-balancer Sōzu](https://github.com/sozu-proxy/sozu/), you can host multiple applications under one domain:
 
 ```bash
 mydomain.com/blog  → Blog application
@@ -337,7 +337,7 @@ Clever Cloud's entire platform runs on its public API:
 
 This ensures API reliability and continuous improvement.
 
-[API documentation](/developers/api)
+[API documentation](/developers/api/)
 
 ### Web Components
 
@@ -350,8 +350,8 @@ Build custom Clever Cloud interfaces using :
 Available through:
 
 - [npm package](https://www.npmjs.com/package/@clevercloud/components)
-- [Public repository](https://github.com/CleverCloud/clever-components)
-- [Storybook documentation](https://www.clever.cloud/developers/clever-components)
+- [Public repository](https://github.com/CleverCloud/clever-components/)
+- [Storybook documentation](https://www.clever.cloud/developers/clever-components/)
 
 ### Custom Solutions
 

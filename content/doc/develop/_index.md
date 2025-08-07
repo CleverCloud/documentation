@@ -9,7 +9,6 @@ aliases:
 ---
 
 {{< cards >}}
-  {{< card link="/developers/doc/develop/common-configuration" title="Common configuration for all instances" icon="cog-6-tooth" >}}
   {{< card link="/developers/doc/develop/build-hooks" title="Deployment hooks" icon="rocket-launch" >}}
   {{< card link="/developers/doc/reference/reference-environment-variables" title="Environment variables reference" icon="creds" >}}
   {{< card link="/developers/doc/develop/env-variables" title="How environment variables work" icon="question-mark-circle" >}}

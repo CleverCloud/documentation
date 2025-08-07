@@ -9,6 +9,8 @@ keywords:
 - common
 - configuration
 - hooks
+aliases:
+- /doc/develop/common-configuration
 ---
 
 Each instance type (php,java,python,go,ruby…) has its own configuration. However, some of

@@ -1,0 +1,59 @@
+<!-- Algolia DocSearch integration (loaded via theme component) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+<script>
+  (function() {
+    function ready(fn) {
+      if (document.readyState !== 'loading') { fn(); }
+      else { document.addEventListener('DOMContentLoaded', fn); }
+    }
+
+    ready(function() {
+      // Create container if not present
+      var containerId = 'docsearch';
+      var container = document.getElementById(containerId);
+      if (!container) {
+        container = document.createElement('div');
+        container.id = containerId;
+      }
+
+      // Try to place search box into navbar if possible
+      var placed = false;
+      var targets = [
+        'header .hx-container',
+        'header nav',
+        'header',
+      ];
+      for (var i = 0; i < targets.length; i++) {
+        var t = document.querySelector(targets[i]);
+        if (t && !document.getElementById(containerId)) {
+          // Insert at the end of the target
+          t.appendChild(container);
+          placed = true;
+          break;
+        }
+      }
+
+      if (!placed && !document.getElementById(containerId)) {
+        // Fallback: fixed box at top-right
+        container.style.position = 'fixed';
+        container.style.top = '0.75rem';
+        container.style.right = '0.75rem';
+        container.style.zIndex = '50';
+        document.body.appendChild(container);
+      }
+
+      // Initialize DocSearch
+      if (window.docsearch) {
+        window.docsearch({
+          appId: '{{ with .Site.Params.docsearch }}{{ .appId | safeJS }}{{ end }}',
+          apiKey: '{{ with .Site.Params.docsearch }}{{ .apiKey | safeJS }}{{ end }}',
+          indexName: '{{ with .Site.Params.docsearch }}{{ .indexName | safeJS }}{{ end }}',
+          container: '#docsearch',
+          debug: false
+        });
+      }
+    });
+  })();
+</script>

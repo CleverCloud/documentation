@@ -1,1 +1,11 @@
 blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Discussions
+    url: https://github.com/CleverCloud/Community/discussions
+    about: Ask questions and discuss with the Clever Cloud community
+  - name: 🆘 Technical Support
+    url: https://console.clever-cloud.com/ticket-center-choice
+    about: Get help with your Clever Cloud applications and services
+  - name: 📧 Contact Sales & Enterprise
+    url: https://www.clever-cloud.com/contact/
+    about: Contact our sales team for business inquiries and enterprise solutions

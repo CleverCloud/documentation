@@ -176,7 +176,7 @@ params:
 
   search:
     enable: true
-    type: hextra
+    type: flexsearch
 
   docsearch:
     appId: RCNP6XZZWS

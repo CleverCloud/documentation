@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Analytics and consumption
-description: How credit consumption and add-on billing works
+description: Understand Clever Cloud billing calculation, credit consumption metrics, and how application scaling affects your monthly costs
 tags:
 - billing
 keywords:

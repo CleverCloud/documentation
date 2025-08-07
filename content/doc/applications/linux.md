@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Linux
 title: Linux application runtime
-description: Build and deploy any application with Mise and your favorite tools
+description: Build and deploy any application with Mise and your favorite tools on Clever Cloud using flexible Linux runtime environment
 aliases:
 - /doc/deploy/application/other
 - /doc/deploy/not-supported

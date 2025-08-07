@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Gradle
-description: Gradle is a project automation tool that builds…
+description: Deploy Java applications using Gradle build system on Clever Cloud with automatic dependency resolution and build automation
 tags:
 - deploy
 keywords:

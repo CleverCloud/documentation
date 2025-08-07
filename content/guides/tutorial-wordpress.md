@@ -1,7 +1,7 @@
 ---
 type: docs
 title: WordPress
-description: This article shows you how to deploy a WordPress-based website on Clever Cloud
+description: Deploy WordPress website on Clever Cloud with complete database setup, file management, plugins configuration and optimization guide
 tags:
 - deploy
 keywords:

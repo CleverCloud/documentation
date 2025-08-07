@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Environment variables
-description: How to setup and configure environment variables for apps and add-ons
+description: Manage environment variables on Clever Cloud for application configuration, secrets management, and runtime behavior control
 tags:
 - dashboard-setup
 - apps

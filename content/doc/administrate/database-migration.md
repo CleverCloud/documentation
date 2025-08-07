@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Database migration
-description: How to migrate your database to improve performance or security
+description: Manage database migrations on Clever Cloud including backup procedures, migration strategies, and data transfer best practices
 keywords:
 - database
 - dbaas

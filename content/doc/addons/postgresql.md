@@ -1,7 +1,7 @@
 ---
 type: docs
 title: PostgreSQL
-description: PostgreSQL is an open source relational database management system (RDBMS)
+description: Deploy PostgreSQL database add-on service on Clever Cloud with automated backups, scaling for enterprise applications
 tags:
 - addons
 keywords:

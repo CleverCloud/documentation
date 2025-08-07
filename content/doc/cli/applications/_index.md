@@ -2,7 +2,7 @@
 type: docs
 weight: 3
 title: Applications
-description: Create and manage Clever Cloud applications with Clever Tools
+description: Create and manage Clever Cloud applications using Clever Tools CLI with deployment, scaling, and configuration management capabilities
 aliases:
 - /clever-tools/create
 - /doc/administrate/clever-tools/create

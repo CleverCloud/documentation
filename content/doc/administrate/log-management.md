@@ -1,9 +1,9 @@
 ---
 type: docs
 title: Logs management
-description: How to manage add-ons and applications logs and drains
+description: Access and manage application logs on Clever Cloud for debugging, monitoring, and troubleshooting your deployed applications
 tags:
- - administrate
+- administrate
 keywords:
 - logs
 - log

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Logs, Drains
-description: Use Clever Tools to get logs, access logs and manage logs drains
+description: Access application logs and manage log drains using Clever Tools CLI for centralized logging, monitoring, and troubleshooting capabilities
 aliases:
 - /doc/logs-drains
 ---

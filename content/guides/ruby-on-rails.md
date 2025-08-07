@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Ruby on Rails
-description: Ruby on Rails is an open source web application framework which runs on the Ruby programming language
+description: Deploy Ruby on Rails applications with comprehensive tutorial for web development framework deployment on Clever Cloud platform
 tags:
 - deploy
 keywords:

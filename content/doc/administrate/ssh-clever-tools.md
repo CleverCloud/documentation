@@ -2,7 +2,7 @@
 type: docs
 linkTitle: SSH access
 title: SSH access to running instances
-description: How to SSH access running instances on Clever Cloud
+description: Use SSH and Clever Tools CLI to manage your applications remotely including deployment, debugging, and administration tasks
 tags:
 - administrate
 keywords:

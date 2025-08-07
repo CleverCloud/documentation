@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Notifications, WebHooks
-description: Configure Clever Cloud Nexus repository for you distribution
+description: Configure notifications and webhooks for Clever Cloud applications using CLI tools for automated alerts and integrations with external services
 aliases:
 - /doc/administrate/clever-tools/notifications
 - /doc/clever-tools/notifications/

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Troubleshooting
-description: Common issues and errors you may have
+description: Troubleshoot common deployment issues including git problems, configuration errors, and application restart challenges
 tags:
 - help
 keywords:

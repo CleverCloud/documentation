@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Operators
-description: Manage Keycloak, Matomo, Metabase, Otoroshi from Clever Tools
+description: Manage Keycloak, Matomo, Metabase, and Otoroshi operators directly from Clever Tools CLI with administrative commands and configurations
 ---
 
 Operators allow you to deploy services as turnkey solutions on Clever Cloud. They provision resources, configure them and expose an API and tools to ease their management during their lifecycle. To add operators commands to Clever Tools, enable the `operators` feature:

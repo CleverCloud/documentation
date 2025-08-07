@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Meteor.js
-description: Meteor is an open source platform for web, mobile, and desktop
+description: Deploy Meteor.js applications on Clever Cloud with automatic build process, dependency management, and MongoDB integration
 tags:
 - deploy
 keywords:

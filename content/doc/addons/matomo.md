@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Matomo
-description: This add-on provides a Matomo analytics solution based on existing Clever Cloud services
+description: Deploy Matomo web analytics platform add-on service on Clever Cloud for privacy-focused website and application analytics with GDPR compliance
 tags:
 - addons
 keywords:

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Hugo
-description: Build your website with the Hugo Static Site Generator (SSG) and host it on Clever Cloud. No dedicated runner needed.
+description: Deploy Hugo Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 tags:
 - guides
 keywords:

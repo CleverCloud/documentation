@@ -1,7 +1,7 @@
 ---
 type: docs
 title: ProxySQL
-description: How to configure and use ProxySQL for MySQL add-ons
+description: Configure and use ProxySQL for MySQL add-ons with detailed step-by-step tutorials and configuration examples
 tags:
 - addons
 keywords:

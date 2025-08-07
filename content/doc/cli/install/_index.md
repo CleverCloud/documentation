@@ -2,7 +2,7 @@
 type: docs
 weight: 1
 title: Install Clever Tools
-description: Getting started with Clever Cloud CLI
+description: Install Clever Tools CLI with comprehensive commands, automation features, and management capabilities for efficient deployment
 aliases:
 - /cli/install
 - /doc/cli-setup

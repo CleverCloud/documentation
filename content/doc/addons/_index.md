@@ -2,7 +2,7 @@
 type: docs
 weight: 3
 title: Add-ons
-description: Use add-ons on Clever Cloud
+description: Discover and configure add-ons on Clever Cloud including databases, storage services, and managed tools for your applications
 tags:
 - applications
 keywords:

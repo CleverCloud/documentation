@@ -1,7 +1,7 @@
 ---
 type: docs
 title: Installing TLS Certificates
-description: How to get HTTPS on Clever Cloud
+description: Configure SSL certificates and HTTPS encryption for your Clever Cloud applications to ensure secure communications and data protection
 keywords:
 - ssl
 - tls

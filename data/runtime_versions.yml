@@ -1,14 +1,15 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.2.18
+    - 1.2.19
 
 dotnet:
   eol_source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
   default:
-    - 6.0 (EOL)
-  accepted:
     - 8.0
+  accepted:
+    - 6.0 (EOL)
+    - 9.0
 
 elixir:
   eol_source: https://hexdocs.pm/elixir/compatibility-and-deprecations.html
@@ -44,7 +45,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 22.17.0 (npm 10.9.2)
+    - 22.18.0 (npm 10.9.3)
 
 php:
   eol_source: https://www.php.net/supported-versions.php

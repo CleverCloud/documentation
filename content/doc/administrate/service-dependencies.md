@@ -2,8 +2,6 @@
 type: docs
 title: Service Dependencies
 description: Configure logical dependencies between applications and add-ons to create a structured microservices topology on Clever Cloud
-tags:
-- administrate
 keywords:
 - application
 - dependencies

@@ -2,8 +2,6 @@
 type: docs
 title: Play Framework 1.x Scala
 description: Deploy Play Framework 1.x applications with step-by-step tutorial for Scala and Java web development on Clever Cloud platform
-tags:
-- deploy
 keywords:
 - scala
 - play

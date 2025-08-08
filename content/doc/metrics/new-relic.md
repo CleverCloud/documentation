@@ -2,8 +2,6 @@
 type: docs
 title: New Relic
 description: Configuring Newrelic on Clever Cloud on Clever Cloud with Complete setup and configuration, configuration options, and deployment best practices
-tags:
-- apps
 keywords:
 - new relic
 - newrelic

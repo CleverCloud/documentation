@@ -3,10 +3,6 @@ weight: 4
 type: docs
 title: Metrics
 description: Learn to monitor application performance and resource usage on Clever Cloud with built-in metrics, dashboards, alerting, and analytics
-tags:
-- app
-- add-on
-- metrics
 keywords:
 - grafana
 - warp10

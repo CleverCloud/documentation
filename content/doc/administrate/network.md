@@ -9,8 +9,6 @@ keywords:
 - range
 - outgoing
 - security
-tags:
-- administrate
 ---
 
 Some services external to Clever Cloud require filtering their clients' source IPs. They

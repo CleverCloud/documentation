@@ -2,8 +2,6 @@
 type: docs
 title: Community
 weight: 6
-tags:
-- help
 keywords:
 - support
 - community

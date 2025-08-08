@@ -3,8 +3,6 @@ type: docs
 weight: 7
 title: Delete an account
 description: Learn how to safely delete your Clever Cloud account including data backup procedures and account closure steps
-tags:
-- account
 keywords:
 - profile
 - preferences

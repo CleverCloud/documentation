@@ -2,8 +2,6 @@
 type: docs
 title: Clamav
 description: Set up ClamAV antivirus scanning for your Clever Cloud applications to enhance security and protect against malware threats
-tags:
-- administrate
 keywords:
 - apps
 - antivirus

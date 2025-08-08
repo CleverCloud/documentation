@@ -2,8 +2,6 @@
 type: docs
 title: PostgreSQL
 description: Configure and manage your PostgreSQL add-ons
-tags:
-- addons
 keywords:
 - balancing
 - connection

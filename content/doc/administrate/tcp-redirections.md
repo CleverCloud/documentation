@@ -2,8 +2,6 @@
 type: docs
 title: TCP redirections
 description: Manage and configure set up tcp redirections and port forwarding for your clever cloud applications to enable custom networking configurations
-tags:
-- administrate
 keywords:
 - tcp
 - cli-setup

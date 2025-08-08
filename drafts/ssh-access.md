@@ -3,9 +3,6 @@ type: docs
 title: SSH access
 weight: 5
 description: SSH access to running instances
-tags:
-- cli
-- reference
 keywords:
 - ssh
 - shell

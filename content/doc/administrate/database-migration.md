@@ -6,8 +6,6 @@ keywords:
 - database
 - dbaas
 - migration
-tags:
-- administrate
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

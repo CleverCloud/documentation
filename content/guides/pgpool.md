@@ -2,8 +2,6 @@
 type: docs
 title: Pgpool-II
 description: Configure and use Pgpool-II for PostgreSQL add-ons with detailed tutorials and best practices for deployment
-tags:
-- addons
 keywords:
 - balancing
 - connection

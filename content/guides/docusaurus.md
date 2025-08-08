@@ -2,8 +2,6 @@
 type: docs
 title: Docusaurus
 description: Deploy Docusaurus Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
-tags:
-- guides
 keywords:
 - docusaurus
 - nodejs

@@ -2,8 +2,6 @@
 type: docs
 title: MkDocs
 description: Deploy MkDocs Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
-tags:
-- guides
 keywords:
 - mkdocs
 - python

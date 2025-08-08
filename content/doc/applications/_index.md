@@ -3,8 +3,6 @@ weight: 2
 type: "docs"
 title: Applications
 description: Deploy applications on Clever Cloud with support for popular languages, frameworks, and deployment configurations across modern runtimes
-tags:
-- applications
 keywords:
 - deploy
 aliases:

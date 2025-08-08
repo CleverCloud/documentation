@@ -3,11 +3,8 @@ type: docs
 title: Pricing
 draft: true
 description: Pricing table of Clever Cloud's runtimes
-tags:
-- billing
 keywords:
 - pricing
-type: docs
 aliases:
   - /clever-cloud-overview/pricing/
 ---

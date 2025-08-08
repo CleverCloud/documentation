@@ -2,8 +2,6 @@
 type: docs
 title: Hexo
 description: Deploy Hexo Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
-tags:
-- guides
 keywords:
 - hexo
 - nodejs

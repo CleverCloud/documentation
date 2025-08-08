@@ -2,8 +2,6 @@
 type: docs
 title: Rust
 description: Deploy Rust applications on Clever Cloud using the system programming language that runs blazingly fast and guarantees thread safety
-tags:
-- deploy
 keywords:
 - rust
 - cargo

@@ -7,8 +7,6 @@ keywords:
 - cron
 - cronjob
 - schedule
-tags:
-- administrate
 aliases:
 - /doc/tools/crons
 ---

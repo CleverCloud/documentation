@@ -2,9 +2,6 @@
 type: docs
 title: Configuration on all instances
 description: Configure common settings across all instance types including SSH keys, build hooks, and shared deployment configurations
-tags:
-- reference
-- dashboard-setup
 keywords:
 - common
 - configuration

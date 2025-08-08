@@ -2,8 +2,6 @@
 type: docs
 title: Activity
 description: Monitor and manage activity logs for your Clever Cloud applications including deployments, scaling events, and system activities
-tags:
-- lifecycle
 keywords:
 - activity
 - unreachable

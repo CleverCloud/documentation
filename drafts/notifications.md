@@ -2,9 +2,6 @@
 type: docs
 title: Notifications
 description: How to setup and configure notifications via clever-tools
-tags:
-- cli
-- reference
 keywords:
 - notification
 - webhook

@@ -3,8 +3,6 @@ type: "docs"
 weight: 1
 title: Quickstart
 description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
-tags:
-- getting-started
 keywords:
 - quickstart
 aliases:

@@ -2,8 +2,6 @@
 type: docs
 title: Deployment Hooks
 description: Configure build hooks to customize the deployment process on Clever Cloud with pre and post-deployment automation scripts and workflows
-tags:
-- develop
 keywords:
 - apps
 - hooks

@@ -1,8 +1,6 @@
 ---
 title: Kubernetes Operator
 description: Manage your Clever Cloud databases and add-ons seamlessly from Kubernetes with the Clever Kubernetes Operator
-tags:
-- guides
 keywords:
 - Kubernetes
 - operator

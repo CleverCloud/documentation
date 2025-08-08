@@ -3,8 +3,6 @@ type: docs
 title: Roles and organisations
 weight: 4
 description: Discover how to manage organisations within your Clever Cloud account. This guide covers creation of organisations and roles in the PaaS platform
-tags:
-- dashboard-setup
 keyworkds:
 - roles
 - users

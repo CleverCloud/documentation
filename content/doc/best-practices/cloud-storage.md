@@ -2,9 +2,6 @@
 type: docs
 title: Cloud Storage
 description: Learn to compare Cellar and FS Buckets storage solutions to choose the right file storage option for your applications and use cases
-tags:
-- develop
-- best-practices
 keywords:
 - S3
 - amazon

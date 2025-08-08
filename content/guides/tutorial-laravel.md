@@ -2,8 +2,6 @@
 type: docs
 title: Laravel
 description: Deploy Laravel PHP framework on Clever Cloud with step-by-step guide including database integration and configuration management
-tags:
-- deploy
 keywords:
 - php
 - laravel

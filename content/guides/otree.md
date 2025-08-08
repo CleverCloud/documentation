@@ -1,8 +1,6 @@
 ---
 title: oTree
 description: Deploy oTree framework for multiplayer strategy games and complex surveys with detailed step-by-step tutorials
-tags:
-- guides
 keywords:
 - otree
 - python

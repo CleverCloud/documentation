@@ -2,8 +2,6 @@
 type: docs
 title: WordPress
 description: Deploy WordPress website on Clever Cloud with complete database setup, file management, plugins configuration and optimization guide
-tags:
-- deploy
 keywords:
 - php
 - wordpress

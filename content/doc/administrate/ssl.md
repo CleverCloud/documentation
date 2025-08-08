@@ -11,8 +11,6 @@ keywords:
 - cloudflare
 - rsa
 - ECDSA
-tags:
-- administrate
 aliases:
 - /doc/tools/ssl-certificates
 ---

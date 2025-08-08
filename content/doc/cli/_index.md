@@ -1,8 +1,16 @@
 ---
-type: "docs"
+type: docs
 weight: 8
+linkTitle: Clever Tools (CLI)
 title: Clever Tools (CLI)
 description: Use Clever Tools CLI to manage applications, add-ons, and deployments from the command line with powerful automation and monitoring features
+keywords:
+- cli
+- clever-tools
+- command-line
+- automation
+- deployments
+- applications
 aliases:
 - /clever-tools/getting_started
 - /cli

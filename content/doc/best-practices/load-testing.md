@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: Load testing
 title: Load testing
 description: Learn performance testing considerations, best practices, and requirements for load testing applications on Clever Cloud infrastructure
 keywords:
-- test
+- load-testing
 - stress
-- load
 - performance
+- testing
+- applications
+- infrastructure
 aliases:
 - /doc/develop/load-testing
 ---

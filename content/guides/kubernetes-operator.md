@@ -1,12 +1,14 @@
 ---
+type: docs
+linkTitle: Kubernetes Operator
 title: Kubernetes Operator
 description: Manage your Clever Cloud databases and add-ons seamlessly from Kubernetes with the Clever Kubernetes Operator
 keywords:
-- Kubernetes
+- kubernetes
 - operator
 - databases
-- crd
-type: "docs"
+- custom resources
+- cluster management
 draft: false
 aliases:
 - /guides/clever-operator

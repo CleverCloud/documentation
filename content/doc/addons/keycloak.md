@@ -1,15 +1,16 @@
 ---
 type: docs
+linkTitle: Keycloak
 title: Keycloak
 description: Deploy Keycloak identity and access management solution add-on service on Clever Cloud with one-click installation and enterprise-grade security
 keywords:
-- Keycloak
-- IAM
-- Security
-- Authentication
-- Identity
-- OAuth
-- OpenID
+- keycloak
+- identity access management
+- authentication
+- single sign-on
+- oauth
+- openid connect
+- security
 aliases:
 - /doc/deploy/addon/Keycloak
 - /doc/keycloak

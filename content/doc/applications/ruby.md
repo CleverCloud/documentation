@@ -1,10 +1,17 @@
 ---
 type: docs
+linkTitle: Ruby on Rails
 title: Ruby on Rails
 description: Deploy Ruby on Rails web applications with full-stack framework capabilities including database integration and template rendering
 keywords:
-- ruby
+- bundler
+- gem
+- rack
 - rails
+- ruby app hosting
+- ruby cloud
+- ruby on rails
+- sinatra
 aliases:
 - /applications/ruby
 - /doc/deploy/application/ruby

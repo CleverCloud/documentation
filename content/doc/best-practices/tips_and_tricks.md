@@ -1,10 +1,15 @@
 ---
+type: docs
+linkTitle: Tips & Tricks
 title: Tips & Tricks
 description: Discover useful Console features, CLI shortcuts, deployment tricks, and time-saving tools to improve your Clever Cloud experience
 keywords:
 - tips
 - tricks
-type: docs
+- console
+- cli
+- shortcuts
+- tools
 ---
 {{< hextra/hero-subtitle >}}
   Clever Cloud offers many powerful features designed to make your development work easier. This guide reveals useful capabilities you might not know about, from shortcuts to time-saving tools.

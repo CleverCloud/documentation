@@ -1,13 +1,16 @@
 ---
 type: docs
 weight: 1
+linkTitle: Create an Account
 title: Create an Account
 description: Step-by-step guide to create your Clever Cloud account and start deploying applications on the cloud platform efficiently
 keywords:
-- profile
-- preferences
-- user
-- creation
+- account creation
+- user registration
+- github oauth
+- clever cloud signup
+- authentication
+- email verification
 aliases:
 - /doc/account-setup
 - /doc/getting-started/authentication

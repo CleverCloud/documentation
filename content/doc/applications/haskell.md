@@ -1,10 +1,18 @@
 ---
 type: docs
+linkTitle: Haskell
 title: Haskell
 description: Deploy Haskell applications on Clever Cloud with automatic dependency management, compilation, and runtime environment configuration
 keywords:
 - haskell
-- stack
+- functional programming
+- stack build tool
+- app hosting
+- cabal
+- lazy evaluation
+- web applications
+- purely functional
+- compiled language
 aliases:
 - /doc/deploy/application/haskell
 - /doc/deploy/application/haskell/haskell

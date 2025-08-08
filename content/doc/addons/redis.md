@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: Redis
 title: Redis
 description: Deploy Redis in-memory data store add-on service for caching, session management, and message brokering on Clever Cloud platform
 keywords:
-- key
-- value
-- key-value
-- in-memory
+- redis
+- in-memory database
+- key-value store
+- caching
+- redis hosting
+- session storage
 aliases:
 - /addons/redis
 - /doc/addons/redsmin

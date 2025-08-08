@@ -1,15 +1,15 @@
 ---
 type: docs
+linkTitle: Hugo
 title: Hugo
 description: Deploy Hugo Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - hugo
-- static
-- ssg
-- html
-- js
-- css
-- website
+- static site generator
+- golang
+- markdown
+- website hosting
+- fast websites
 aliases:
 - /hugo
 ---

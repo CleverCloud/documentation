@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Configuration
 title: Configuration
 description: Configure application settings and environment variables using Clever Tools CLI for streamlined deployment and runtime management
+keywords:
+- configuration
+- environment
+- settings
+- cli
+- deployment
+- management
 aliases:
 - /clever-tools/tcp-redirections
 - /doc/administrate/clever-tools/configure

@@ -1,14 +1,15 @@
 ---
 type: docs
+linkTitle: Activity
 title: Activity
 description: Monitor and manage activity logs for your Clever Cloud applications including deployments, scaling events, and system activities
 keywords:
-- activity
-- unreachable
-- timeout
-- diskfull
-- scaling
-- maintenance
+- activity monitoring
+- deployment logs
+- application lifecycle
+- scaling events
+- system activities
+- monitoring timeline
 ---
 
 Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:

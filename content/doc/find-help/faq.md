@@ -1,18 +1,15 @@
 ---
 type: docs
+linkTitle: FAQ
 title: FAQ
 description: Find answers to frequently asked questions about scalers, supported languages, security, SSH access, and platform features on Clever Cloud
 keywords:
 - faq
-- scaler
-- languages
-- kubernetes
-- firewall
-- scp
-- ssh
-- on premises
-- pdf
-- timezone
+- frequently asked questions
+- scalers
+- supported languages
+- platform features
+- clever cloud help
 aliases:
 - /doc/get-help/faq
 ---

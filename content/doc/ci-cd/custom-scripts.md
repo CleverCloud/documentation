@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Write your own CI/CD
 title: Write your own CI/CD
 description: Create custom CI/CD pipelines for GitHub and GitLab to automate deployments to Clever Cloud using Clever Tools CLI with detailed setup
+keywords:
+- ci-cd
+- custom-scripts
+- pipelines
+- clever-tools
+- automation
+- deployment
 ---
 
 {{< hextra/hero-subtitle >}}

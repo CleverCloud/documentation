@@ -1,12 +1,14 @@
 ---
 type: docs
+linkTitle: Kibana
 title: Kibana
 description: Deploy custom Kibana for specific use cases with detailed step-by-step tutorials and configuration examples
 keywords:
-- custom
-- elsaticsearch
-- elastic
 - kibana
+- elasticsearch
+- data visualization
+- custom deployment
+- elastic stack
 aliases:
 - /doc/deploy/addon/elastic/kibana
 - /kibana

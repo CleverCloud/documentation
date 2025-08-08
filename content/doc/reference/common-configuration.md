@@ -1,11 +1,15 @@
 ---
 type: docs
+linkTitle: Common configuration
 title: Configuration on all instances
 description: Configure common settings across all instance types including SSH keys, build hooks, and shared deployment configurations
 keywords:
-- common
 - configuration
-- hooks
+- instances
+- ssh-keys
+- build-hooks
+- deployment
+- settings
 aliases:
 - /doc/develop/common-configuration
 ---

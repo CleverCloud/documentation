@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Encryption at rest
 title: Encryption at rest
 description: Learn how to manage encryption at rest for your add-ons on Clever Cloud, enhancing data security by encrypting data stored on disk
+keywords:
+- encryption at rest
+- data security
+- disk encryption
+- add-on security
+- data protection
+- storage encryption
 aliases:
 - /administrate/encryption-at-rest
 ---

@@ -1,7 +1,14 @@
 ---
 type: docs
+linkTitle: API
 title: API
 description: Clever Cloud API documentation. Learn how to use our API, endpoints, authentication methods, and how to access it from multiple tools.
+keywords:
+- rest api
+- authentication
+- endpoints
+- documentation
+- integration
 aliases:
 - /doc/api/
 - /doc/openapi

@@ -1,11 +1,16 @@
 ---
 type: docs
 weight: 1
+linkTitle: Clever Cloud API Overview
 title: Clever Cloud API Overview
 description: Getting started with the Clever Cloud API
 keywords:
-- api
+- rest api
 - authentication
+- integration
+- oauth
+- tokens
+- developer guide
 ---
 
 The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](https://github.com/CleverCloud/clever-tools) allow you to manage your account and products with the same public API you can use for your own services and integrations. This article will explain how to connect to this API and use it.

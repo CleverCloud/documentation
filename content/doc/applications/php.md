@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: PHP with Apache
 title: PHP with Apache
 description: Deploy PHP applications on Clever Cloud with support for multiple frameworks, Composer dependencies, and database integration
+keywords:
+- php hosting
+- apache
+- composer
+- laravel
+- symfony
+- wordpress
 aliases:
 - /applications/php
 - /deploy/application/php/php-apps

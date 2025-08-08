@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: Workers
 title: Workers
 description: Deploy and manage background workers on Clever Cloud for asynchronous processing, job queues, and long-running task execution with scaling
 keywords:
-- apps
 - workers
+- background
+- asynchronous
+- processing
+- job-queues
+- scaling
 aliases:
 - /doc/workers
 ---

@@ -1,12 +1,16 @@
 ---
 type: docs
+linkTitle: MailPace
 title: MailPace
 description: Configure MailPace email delivery add-on service for reliable transactional email sending in your Clever Cloud applications
 keywords:
 - mailpace
-- mail
-- email
-- smtp
+- email delivery
+- transactional email
+- smtp provider
+- email service
+- mail sending
+- email api
 aliases:
 - /doc/deploy/addon/mailpace
 ---

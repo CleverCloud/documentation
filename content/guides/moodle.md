@@ -1,13 +1,14 @@
 ---
 type: docs
+linkTitle: Moodle
 title: Moodle
 description: Deploy Moodle open source learning platform on Clever Cloud with detailed tutorials and best practices
 keywords:
 - moodle
-- mysql
+- learning platform
 - php
-- css
-- cms
+- mysql
+- educational software
 aliases:
 - /moodle
 ---

@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: Go
 title: Go
 description: Deploy Go applications on Clever Cloud using the open source, compiled, garbage-collected, concurrent system programming language
 keywords:
-- go
 - golang
+- go language
+- compiled language
+- concurrent programming
+- microservices
+- rest api
 aliases:
 - /applications/golang
 - /deploy/application/golang/go

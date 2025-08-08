@@ -1,16 +1,14 @@
 ---
 type: docs
+linkTitle: mdBook
 title: mdBook
 description: Deploy mdBook Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - mdbook
 - rust
-- static
-- ssg
-- html
-- js
-- css
-- website
+- static site generator
+- documentation tool
+- website deployment
 ---
 
 {{< hextra/hero-subtitle >}}

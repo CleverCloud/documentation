@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: Varnish as HTTP Cache
 title: Varnish as HTTP Cache
 description: Configure Varnish HTTP accelerator on Clever Cloud for performance optimization, content delivery, and traffic management
 keywords:
-- varnish
-- varnish-modules
-- caching
-- cache
+- varnish cache
+- http accelerator
+- performance optimization
+- content delivery
+- reverse proxy
+- caching strategy
 aliases:
 - /administrate/cache
 - /doc/tools/varnish

@@ -1,9 +1,17 @@
 ---
 type: docs
+linkTitle: Python
 title: Python
 description: Deploy Python 2 and 3 applications with uv support, Django, Flask, various frameworks, and configurable runtime settings
 keywords:
-- python
+- django
+- fastapi
+- flask
+- pip
+- python app hosting
+- python cloud
+- uv deployment
+- uv native support
 aliases:
 - /applications/python
 - /deploy/application/python/python_apps

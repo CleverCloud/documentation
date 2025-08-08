@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Network Groups
 title: Network Groups
 description: Configure and manage Network Groups using Clever Tools CLI for secure application communication and network isolation policies
+keywords:
+- network-groups
+- security
+- cli
+- communication
+- isolation
+- wireguard
 ---
 
 [Network Groups](/developers/doc/develop/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [Wireguard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:

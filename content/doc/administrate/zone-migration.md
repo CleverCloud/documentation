@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Zone Migration
 title: Zone Migration
 description: Migrate applications between Clever Cloud zones for improved performance, compliance, or geographic distribution requirements
+keywords:
+- zone migration
+- geographic distribution
+- application migration
+- regional deployment
+- multi-zone hosting
+- dns migration
 ---
 
 In this document, we will see how you can migrate your Clever Cloud services from one zone to another zone, for example from Paris to Montreal.

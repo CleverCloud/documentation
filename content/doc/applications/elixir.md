@@ -1,11 +1,15 @@
 ---
 type: docs
+linkTitle: Elixir
 title: Elixir
 description: Deploy Elixir applications on Clever Cloud using the functional, concurrent programming language that runs on the Erlang virtual machine
 keywords:
-- elixir
-- phoenix
-- erlang
+- elixir app hosting
+- elixir cloud
+- phoenix framework
+- erlang vm
+- concurrent programming
+- otp applications
 aliases:
 - /applications/elixir
 - /doc/deploy/application/elixir

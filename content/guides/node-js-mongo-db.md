@@ -1,10 +1,14 @@
 ---
 type: docs
+linkTitle: Node.js & MongoDB
 title: Node.js & MongoDB
 description: Deploy Node.js applications with MongoDB database on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
-- nodejs
+- Node.js
 - mongodb
+- javascript
+- database tutorial
+- web application
 aliases:
 - /doc/deploy/application/javascript/tutorials/node-js-mongo-db
 - /doc/nodejs/nodejs-mongodb-sample-app

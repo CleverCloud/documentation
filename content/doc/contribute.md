@@ -1,5 +1,6 @@
 ---
 type: docs
+linkTitle: Contribute
 weight: 14
 title: Contribute
 description: Learn how to contribute to Clever Cloud documentation including available shortcodes, writing guidelines, and submission process
@@ -7,6 +8,10 @@ keywords:
 - contribution
 - shortcode
 - writing
+- documentation
+- github
+- hugo
+- markdown
 aliases:
 - /administrate/guides/contribute
 - /contribute

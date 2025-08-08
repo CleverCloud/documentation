@@ -1,11 +1,15 @@
 ---
 type: docs
-title: TCP redirections
-description: Manage and configure set up tcp redirections and port forwarding for your clever cloud applications to enable custom networking configurations
+linkTitle: TCP Redirections
+title: TCP Redirections
+description: Manage and configure TCP redirections and port forwarding for your Clever Cloud applications to enable custom networking configurations
 keywords:
-- tcp
-- cli-setup
-- redirection
+- tcp redirections
+- port forwarding
+- custom networking
+- tcp traffic
+- network configuration
+- tcp routing
 ---
 {{< callout type="warning" >}}
 TCP redirections are currently available free of charge as long as the feature is in BETA stage.

@@ -1,11 +1,14 @@
 ---
 type: docs
+linkTitle: Fluentd
 title: Fluentd
 description: Deploy Fluentd log collector using Docker on Clever Cloud with detailed step-by-step tutorials and configuration examples
 keywords:
+- fluentd
+- log collector
 - docker
 - ruby
-- fluentd
+- data processing
 aliases:
 - /doc/deploy/application/docker/tutorials/fluentd
 - /doc/docker/fluentd

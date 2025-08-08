@@ -1,13 +1,15 @@
 ---
 type: docs
+linkTitle: PostgreSQL
 title: PostgreSQL
 description: Deploy PostgreSQL database add-on service on Clever Cloud with automated backups, scaling for enterprise applications
 keywords:
-- sql
 - postgresql
-- pg
-- pgsql
-- mariadb
+- postgres database
+- sql database
+- relational database
+- postgresql hosting
+- pg database
 aliases:
 - /addons/postgresql
 - /deploy/addon/postgresql

@@ -1,16 +1,17 @@
 ---
 type: docs
+linkTitle: Nuxt
 title: Nuxt
-description: Deploy Nuxt as Static Site Generator (SSG) or with Node.js on Clever Cloud  with step-by-step tutorial and configuration guide
+description: Deploy Nuxt as Static Site Generator (SSG) or with Node.js on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - nuxt
-- nodejs
-- static
-- ssg
-- html
-- js
-- css
-- website
+- Vue.js
+- static site generator
+- Node.js
+- javascript framework
+aliases:
+- /doc/nuxt
+- /nuxt
 ---
 
 {{< hextra/hero-subtitle >}}

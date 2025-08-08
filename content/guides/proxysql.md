@@ -1,15 +1,14 @@
 ---
 type: docs
+linkTitle: ProxySQL
 title: ProxySQL
 description: Configure and use ProxySQL for MySQL add-ons with detailed step-by-step tutorials and configuration examples
 keywords:
 - proxysql
-- proxy
-- sql
 - mysql
-- connection
-- limit
-- pool
+- connection pooling
+- database proxy
+- performance optimization
 aliases:
 - /deploy/addon/mysql/proxysql
 - /doc/deploy/addon/mysql/proxysql

@@ -3,6 +3,18 @@ type: docs
 linkTitle: Node.js & Bun
 title: Node.js & Bun runtime
 description: Deploy JavaScript applications on Clever Cloud with Node.js runtime and npm, or alternative tools like Bun, Deno, pnpm or Yarn
+keywords:
+- nodejs app hosting
+- nodejs cloud
+- javascript
+- bun app hosting
+- bun cloud
+- deno app hosting
+- deno cloud
+- npm
+- pnpm
+- typescript
+- yarn
 aliases:
 - /applications/javascript/nodejs
 - /deploy/application/javascript/by-framework/nodejs

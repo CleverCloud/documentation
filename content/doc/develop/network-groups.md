@@ -1,5 +1,6 @@
 ---
 type: docs
+linkTitle: Network Groups
 title: Network Groups
 description: Link resources over a private secure network based on WireGuard on Clever Cloud with complete setup and configuration guide
 keywords:

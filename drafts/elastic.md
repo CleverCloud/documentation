@@ -10,7 +10,6 @@ keywords:
 - APM
 aliases:
 - /doc/deploy/addon/elastic/kibana
-comments: false
 draft: true
 ---
 {{< cards >}}

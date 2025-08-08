@@ -15,7 +15,6 @@ aliases:
 - /doc/deploy/application/ruby/by-framework
 - /doc/getting-started/by-language
 - /doc/java/select-java-version
-comments: false
 ---
 
 ## Choose your Stack

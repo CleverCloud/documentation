@@ -5,7 +5,6 @@ title: Find Help
 description: Access support resources including professional support options, FAQ, and troubleshooting guides for Clever Cloud platform issues
 aliases:
 - /doc/administrate/find-help
-comments: false
 ---
 
 {{< cards >}}

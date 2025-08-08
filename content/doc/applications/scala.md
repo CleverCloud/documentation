@@ -18,7 +18,6 @@ aliases:
 - /doc/scala/scala
 - /doc/scala-hosting
 - /scala/scala
-comments: false
 ---
 
 ## Overview

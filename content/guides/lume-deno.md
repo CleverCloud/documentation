@@ -13,7 +13,6 @@ keywords:
 - js
 - css
 - website
-comments: false
 ---
 
 {{< hextra/hero-subtitle >}}

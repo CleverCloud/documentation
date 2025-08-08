@@ -14,7 +14,6 @@ aliases:
 - /doc/deploy/application/scala/tutorials
 - /doc/tutorials/
 llmsTxtOptional: true
-comments: false
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

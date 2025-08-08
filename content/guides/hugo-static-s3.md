@@ -6,7 +6,6 @@ tags:
 keywords:
 
 type: "docs"
-comments: false
 draft: false
 ---
 

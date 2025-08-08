@@ -16,7 +16,6 @@ aliases:
 - /doc/administrate/metrics/overview
 - /doc/tools/metrics
 - /metrics
-comments: false
 ---
 {{< callout type="warning" >}}
 Clever Cloud Metrics is still in beta.

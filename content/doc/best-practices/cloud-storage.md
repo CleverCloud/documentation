@@ -14,7 +14,6 @@ keywords:
 aliases:
 - /doc/develop/best-practices/cloud-storage
 - /doc/develop/cloud-storage
-comments: false
 ---
 
 You want to store files but you can't decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.

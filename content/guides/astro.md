@@ -16,7 +16,6 @@ keywords:
 aliases:
 - /doc/astro
 - /astro
-comments: false
 ---
 
 {{< hextra/hero-subtitle >}}

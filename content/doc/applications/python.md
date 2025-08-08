@@ -21,7 +21,6 @@ aliases:
 - /doc/reference/python
 - /python
 - /python/python_apps
-comments: false
 ---
 
 ## Overview

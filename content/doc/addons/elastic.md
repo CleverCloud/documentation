@@ -10,7 +10,6 @@ keywords:
 - elastic
 - kibana
 - apm
-comments: false
 aliases:
 - /addons/elastic
 - /doc/deploy/addon/elastic/elastic

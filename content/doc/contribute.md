@@ -17,7 +17,6 @@ aliases:
 - /doc/contribute/writing
 - /doc/get-help/community
 - /readme
-comments: false
 ---
 
 Would you like to contribute to this documentation?

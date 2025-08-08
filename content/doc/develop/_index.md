@@ -3,7 +3,6 @@ type: docs
 weight: 6
 title: Develop
 description: Development guides and best practices for building applications on Clever Cloud including environment variables, build hooks, and deployment strategies
-comments: false
 aliases:
 - /develop
 ---

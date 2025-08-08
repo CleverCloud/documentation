@@ -12,7 +12,6 @@ keywords:
 - js
 - css
 - website
-comments: false
 aliases:
 - /hugo
 ---

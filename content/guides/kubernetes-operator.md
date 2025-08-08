@@ -9,7 +9,6 @@ keywords:
 - databases
 - crd
 type: "docs"
-comments: false
 draft: false
 aliases:
 - /guides/clever-operator

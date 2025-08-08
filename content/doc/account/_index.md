@@ -3,7 +3,6 @@ weight: 11
 type: docs
 title: User Account
 description: Learn how to manage your account on Clever Cloud. Discover detailed instructions for account creation, organisation administration in our PaaS platform.
-comments: false
 aliases:
 - /account
 ---

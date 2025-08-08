@@ -12,7 +12,6 @@ aliases:
 - /doc/getting-started/openapi
 - /docs/openapi
 - /openapi
-comments : false
 ---
 
 {{< hextra/hero-subtitle >}}

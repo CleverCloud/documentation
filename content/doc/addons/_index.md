@@ -15,7 +15,6 @@ aliases:
 - /doc/deploy/addon
 - /doc/extend
 - /doc/getting-started/dbaas
-comments: false
 ---
 
 Connect your application to an add-on:

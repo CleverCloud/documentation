@@ -13,7 +13,6 @@ keywords:
 - authentication
 aliases:
 - /reference
-comments: false
 ---
 
 {{< cards >}}

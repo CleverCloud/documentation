@@ -10,7 +10,6 @@ aliases:
 - /deploy/application/java/java-jar
 - /doc/deploy/application/java/java-jar
 - /doc/java/java-jar
-comments: false
 ---
 
 ## Overview

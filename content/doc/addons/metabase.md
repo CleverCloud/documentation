@@ -164,11 +164,11 @@ The Metabase JAR is stored in the build cache so that no time is wasted re-downl
 
 ### Using Metabase Enterprise Edition
 
-Metabase provides an Enterprise Edition (EE) that offers [more features](https://www.metabase.com/docs/latest/paid-features/overview) but requires a license key that must be purchased through their website (see the [pricing page](https://www.metabase.com/pricing/)) EE versions are usually released at the same time as Community Edition (CE) versions, starting with a `1` instead of a `0`.
+Metabase provides an Enterprise Edition (EE) that offers [more features](https://www.metabase.com/docs/latest/paid-features/) but requires a license key that must be purchased through their website (see the [pricing page](https://www.metabase.com/pricing/)) EE versions are usually released at the same time as Community Edition (CE) versions, starting with a `1` instead of a `0`.
 
 If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VERSION` environment variable to either use a fixed version/branch that starts with `1` (for example: `CC_METABASE_VERSION=1.55`) or `CC_METABASE_VERSION=enterprise-latest`.
 
-You must then add your license key in Metabase's settings (see [documentation](https://www.metabase.com/docs/latest/paid-features/activating-the-enterprise-edition#how-to-activate-your-token-when-self-hosting)).
+You must then add your license key in Metabase's settings (see [documentation](https://www.metabase.com/docs/latest/installation-and-operation/activating-the-enterprise-edition#if-youre-self-hosting-metabase)).
 
 ### Version rollbacks
 

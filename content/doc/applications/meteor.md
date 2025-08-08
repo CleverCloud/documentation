@@ -2,8 +2,6 @@
 type: docs
 title: Meteor.js
 description: Deploy Meteor.js applications on Clever Cloud with automatic build process, dependency management, and MongoDB integration
-tags:
-- deploy
 keywords:
 - meteor
 - meteorjs

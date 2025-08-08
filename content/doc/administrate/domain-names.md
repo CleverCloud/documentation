@@ -2,9 +2,6 @@
 type: docs
 title: Domain names
 description: Configure and manage custom domain names for your Clever Cloud applications including DNS setup and SSL certificate management
-tags:
-- dashboard-setup
-- apps
 keywords:
 - DNS
 - domain

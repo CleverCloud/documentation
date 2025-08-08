@@ -2,8 +2,6 @@
 type: docs
 title: MongoDB
 description: Deploy MongoDB database add-on service on Clever Cloud with automatic scaling, backups for robust NoSQL applications
-tags:
-- addons
 keywords:
 - mongo
 - mongodb

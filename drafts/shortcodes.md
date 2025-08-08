@@ -3,8 +3,6 @@ type: docs
 weight: 150
 title: Shortcode
 description: Learn about the available shortcodes to write new documentation.
-tags:
-- contribute
 keywords:
 - contribution
 - shortcode

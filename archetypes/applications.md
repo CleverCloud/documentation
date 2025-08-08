@@ -3,7 +3,6 @@ type: docs
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 linkTitle:
 description:
-tags:
 keywords:
 draft: true
 ---

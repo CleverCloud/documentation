@@ -2,8 +2,6 @@
 type: docs
 title: Application Management
 description: Manage your applications on Clever Cloud including deployment configuration, scaling settings, and operational controls
-tags:
-- dashboard-setup
 keywords:
 - stop
 - deploy

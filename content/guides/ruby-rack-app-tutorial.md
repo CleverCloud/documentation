@@ -2,8 +2,6 @@
 type: docs
 title: Ruby Rack full tutorial
 description: Complete tutorial for deploying Ruby Rack applications on Clever Cloud with configuration examples and deployment best practices
-tags:
-- deploy
 keywords:
 - ruby
 - rack

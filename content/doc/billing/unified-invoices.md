@@ -2,8 +2,6 @@
 type: docs
 title: Unified Invoicing
 description: Understand Clever Cloud unified invoicing system with monthly billing summaries, detailed consumption breakdown, and credit accounting
-tags:
-- billing
 keywords:
 - invoice
 - invoicing

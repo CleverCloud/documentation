@@ -2,8 +2,6 @@
 type: docs
 title: Blackfire
 description: Configure Blackfire application profiler on Clever Cloud with complete setup and configuration, configuration options, and deployment best practices
-tags:
-- apps
 keywords:
 - blackfire
 - metrics

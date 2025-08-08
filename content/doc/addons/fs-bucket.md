@@ -2,8 +2,6 @@
 type: docs
 title: File System Buckets
 description: Configure FS Bucket add-on service for persistent file storage and data management across your Clever Cloud applications
-tags:
-- addons
 keywords:
 - nfs
 - file system

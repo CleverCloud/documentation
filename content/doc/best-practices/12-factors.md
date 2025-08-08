@@ -2,9 +2,6 @@
 type: docs
 title: The Twelve-Factor App
 description: Learn the Twelve-Factor App methodology for building cloud-ready applications with proper configuration, scalability, and deployment practices
-tags:
-- develop
-- best-practices
 keywords:
 - twelve factors
 - cloud

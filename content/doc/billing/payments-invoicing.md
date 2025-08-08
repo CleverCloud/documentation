@@ -2,8 +2,6 @@
 type: docs
 title: Payments & invoicing
 description: Manage payments, invoices, and billing methods including credit cards, PayPal, bank transfers, and SEPA direct debit options
-tags:
-- billing
 keywords:
 - invoices
 - tax

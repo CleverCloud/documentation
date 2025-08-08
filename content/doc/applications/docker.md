@@ -4,8 +4,6 @@ title: Docker
 description: Deploy Docker containers on Clever Cloud with secure VM isolation, custom stacks, and flexible application deployment options
 keywords:
 - docker
-tags:
-- deploy
 aliases:
 - /applications/docker
 - /developers/doc/applications/docker

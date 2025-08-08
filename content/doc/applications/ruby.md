@@ -2,8 +2,6 @@
 type: docs
 title: Ruby on Rails
 description: Deploy Ruby on Rails web applications with full-stack framework capabilities including database integration and template rendering
-tags:
-- deploy
 keywords:
 - ruby
 - rails

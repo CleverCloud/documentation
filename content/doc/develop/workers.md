@@ -2,8 +2,6 @@
 type: docs
 title: Workers
 description: Deploy and manage background workers on Clever Cloud for asynchronous processing, job queues, and long-running task execution with scaling
-tags:
-- develop
 keywords:
 - apps
 - workers

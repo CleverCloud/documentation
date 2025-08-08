@@ -12,7 +12,6 @@ keywords:
 aliases:
 - /doc/develop/12-factors
 - /doc/develop/best-practices/12-factors
-comments: false
 ---
 
 The twelve-factor app is a methodology for writing software delivered as a service, which is what you are doing by pushing your code to Clever Cloud and for container deployment in general. By writing code following these principles, your application will be cloud ready by design.

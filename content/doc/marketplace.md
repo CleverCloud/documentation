@@ -12,7 +12,6 @@ aliases:
 - /doc/extend/addon-api/
 - /doc/extend/add-ons-api/
 - /marketplace
-comments: false
 ---
 
 Clever Cloud allows its Marketplace partners to provide services as add-ons with revenue sharing. Thus, they can be available to purchase and provision from the [Console](https://console.clever-cloud.com), [Clever Tools](https://github.com/CleverCloud/clever-tools), the [API](/developers/api) or other integrations such as the [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/).

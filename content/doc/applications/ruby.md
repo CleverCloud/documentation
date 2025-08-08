@@ -21,7 +21,6 @@ aliases:
 - /doc/ruby/ruby
 - /doc/ruby/ruby-on-rails
 - /getting-started/by-language/ruby
-comments: false
 ---
 
 ## Overview

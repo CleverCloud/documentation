@@ -2,7 +2,6 @@
 type: docs
 title: Static with Apache
 description: Deploy static files and SPAs using Apache HTTP server with .htaccess support, redirections, and access control capabilities
-comments: false
 ---
 
 ## Overview

@@ -10,7 +10,6 @@ keywords:
 aliases:
 - /doc/quickstart
 - /doc/develop/best-practices
-comments: false
 ---
 
 {{< cards >}}

@@ -16,7 +16,6 @@ keywords:
 - website
 aliases:
 - /eleventy
-comments: false
 ---
 {{< hextra/hero-subtitle >}}
   Eleventy (11ty) is a simple static site generator that allows you to create fast, modern websites with minimal configuration.

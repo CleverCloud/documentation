@@ -1,8 +1,16 @@
 ---
-weight: 5
 type: docs
-title: "Administrate"
+weight: 5
+linkTitle: Administrate
+title: Administrate
 description: Manage and administrate your Clever Cloud applications including scaling, monitoring, SSL configuration, and platform operations
+keywords:
+- application management
+- platform administration
+- scaling
+- monitoring
+- ssl configuration
+- operational controls
 aliases:
 - /doc/admin
 ---

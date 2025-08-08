@@ -1,13 +1,16 @@
 ---
 type: docs
+linkTitle: Matomo
 title: Matomo
 description: Deploy Matomo web analytics platform add-on service on Clever Cloud for privacy-focused website and application analytics with GDPR compliance
 keywords:
 - matomo
 - web analytics
-- google analytics
-- privacy
-- gdpr
+- privacy analytics
+- gdpr compliant
+- google analytics alternative
+- website tracking
+- open source analytics
 aliases:
 - /addons/matomo
 - /doc/deploy/addon/matomo

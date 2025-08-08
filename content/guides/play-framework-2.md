@@ -1,10 +1,14 @@
 ---
 type: docs
+linkTitle: Play Framework 2 Scala
 title: Play Framework 2 Scala
 description: Deploy Play Framework 2.x applications with complete tutorial for modern Scala and Java web development on Clever Cloud platform
 keywords:
+- play framework
 - scala
-- play
+- web framework
+- java development
+- application deployment
 aliases:
 - /doc/applications/java/play-framework-2
 - /doc/deploy/application/java/by-framework/play-framework-2

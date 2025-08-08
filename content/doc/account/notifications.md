@@ -1,12 +1,12 @@
 ---
 type: docs
-title: Notifications
 weight: 5
+linkTitle: Notifications
+title: Notifications
 description: Learn how to customize notifications for account and deployment activity on Clever Cloud, service updates, and more on the PaaS service
 keywords:
 - notification
 - webhook
-- e-mail
 - email
 - slack
 - flowdock

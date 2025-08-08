@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Deploy from GitHub
 title: Deploy from GitHub
 description: How to set up CI/CD from GitHub to deploy to Clever Cloud with complete configuration and review apps deployment guide
+keywords:
+- github
+- ci-cd
+- deployment
+- review-apps
+- integration
+- automation
 ---
 
 {{< hextra/hero-subtitle >}}

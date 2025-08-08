@@ -1,11 +1,16 @@
 ---
 type: docs
+linkTitle: Heptapod
 title: Heptapod
 description: Deploy Heptapod source code management platform add-on service on Clever Cloud for Git and Mercurial repository hosting with integrated CI/CD
 keywords:
-- hepatpod
-- git
+- heptapod
+- git hosting
 - mercurial
+- source code management
+- devops platform
+- ci/cd
+- repository hosting
 aliases:
 - /doc/heptapod
 ---

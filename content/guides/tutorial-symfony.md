@@ -1,10 +1,14 @@
 ---
 type: docs
+linkTitle: Symfony
 title: Symfony
 description: Deploy Symfony PHP framework on Clever Cloud with comprehensive setup guide including database configuration and asset management
 keywords:
-- php
 - symfony
+- php
+- web framework
+- database configuration
+- application deployment
 aliases:
 - /doc/applications/php/symfony
 - /doc/deploy/application/php/tutorials/tutorial-symfony

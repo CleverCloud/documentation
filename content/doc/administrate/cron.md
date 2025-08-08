@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: CRON
 title: CRON
 description: Schedule and manage CRON jobs on Clever Cloud for automated tasks, background processing, and periodic maintenance operations
 keywords:
-- apps
-- cron
-- cronjob
-- schedule
+- cron jobs
+- scheduled tasks
+- task automation
+- background processing
+- job scheduling
+- automated operations
 aliases:
 - /doc/tools/crons
 ---

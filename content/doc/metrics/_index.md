@@ -1,11 +1,16 @@
 ---
-weight: 4
 type: docs
+weight: 4
+linkTitle: Metrics
 title: Metrics
 description: Learn to monitor application performance and resource usage on Clever Cloud with built-in metrics, dashboards, alerting, and analytics
 keywords:
+- metrics
+- monitoring
 - grafana
 - warp10
+- performance
+- analytics
 aliases:
 - /administrate/metrics/overview/
 - /doc/administrate/metrics

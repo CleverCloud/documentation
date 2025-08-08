@@ -1,7 +1,16 @@
 ---
 type: docs
+linkTitle: Static with Apache
 title: Static with Apache
 description: Deploy static files and SPAs using Apache HTTP server with .htaccess support, redirections, and access control capabilities
+keywords:
+- apache server
+- htaccess
+- static apache hosting
+- static apache cloud
+- single page applications
+- spa deployment
+- static files
 ---
 
 ## Overview

@@ -1,10 +1,16 @@
 ---
 type: docs
-title: Support
 weight: 7
+linkTitle: Support
+title: Support
 description: Learn how to contact Clever Cloud support through email or ticket center for technical assistance, available during business hours
 keywords:
 - support
+- technical assistance
+- email support
+- ticket center
+- clever cloud help
+- customer service
 aliases:
 - /doc/get-help/support
 - /doc/support

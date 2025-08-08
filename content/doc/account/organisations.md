@@ -1,15 +1,17 @@
 ---
 type: docs
-title: Roles and organisations
 weight: 4
+linkTitle: Roles and organisations
+title: Roles and organisations
 description: Discover how to manage organisations within your Clever Cloud account. This guide covers creation of organisations and roles in the PaaS platform
-keyworkds:
+keywords:
 - roles
 - users
 - accounts
 - organisations
-- organisations
 - collaboration
+- permissions
+- team
 aliases:
 - /account/organizations
 - /doc/account/organizations

@@ -1,16 +1,16 @@
 ---
 type: docs
+linkTitle: Pulsar
 title: Pulsar
 description: Deploy Apache Pulsar messaging add-on service for real-time data streaming and pub-sub messaging with enterprise scalability features
 keywords:
-- pulsar
-- messaging
-- cold storage
-- queue
-- hot storage
-- biscuit
-- rabbitmq
-- kafka
+- apache pulsar
+- messaging system
+- pub-sub messaging
+- data streaming
+- message queue
+- real-time messaging
+- event streaming
 aliases:
 - /deploy/addon/pulsar
 - /doc/deploy/addon/pulsar

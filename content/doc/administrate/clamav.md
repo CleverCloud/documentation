@@ -1,11 +1,15 @@
 ---
 type: docs
-title: Clamav
+linkTitle: ClamAV
+title: ClamAV
 description: Set up ClamAV antivirus scanning for your Clever Cloud applications to enhance security and protect against malware threats
 keywords:
-- apps
-- antivirus
 - clamav
+- antivirus scanning
+- malware protection
+- virus detection
+- application security
+- threat protection
 ---
 
 [Clam AntiVirus](https://www.clamav.net/) is an open source (GPLv2) anti-virus toolkit, designed especially for e-mail scanning on mail gateways. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. The core of the package is an anti-virus engine available in a form of shared library.

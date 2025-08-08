@@ -1,16 +1,15 @@
 ---
 type: docs
-title: Logs management
+linkTitle: Log Management
+title: Log Management
 description: Access and manage application logs on Clever Cloud for debugging, monitoring, and troubleshooting your deployed applications
 keywords:
-- logs
-- log
-- logging
+- log management
+- application logs
+- debugging tools
+- monitoring
+- troubleshooting
 - log drains
-- drain
-- drains
-- datadog
-- newrelic
 aliases:
 - /clever-cloud-apis/add-ons-log-collector
 - /doc/administrate/log-management/#get-continuous-logs-from-your-application

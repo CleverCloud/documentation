@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: War/Ear
 title: War/Ear
 description: Deploy WAR and EAR Java Enterprise (JEE) applications on Clever Cloud with support for various containers and servlet technologies
 keywords:
 - java
 - war
+- ear
+- jee
+- containers
+- deployment
 aliases:
 - /deploy/application/java/java-war
 - /doc/deploy/application/java/java-war

@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: CouchBase
 title: CouchBase
 description: Deploy Couchbase NoSQL database add-on service on Clever Cloud with automatic scaling, backup capabilities, and enterprise support
+keywords:
+- couchbase
+- nosql
+- database
+- addon
+- beta
+- document-store
 aliases:
 - /doc/databases-and-services/couchbase
 ---

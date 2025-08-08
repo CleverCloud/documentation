@@ -1,10 +1,14 @@
 ---
+type: docs
+linkTitle: oTree
 title: oTree
 description: Deploy oTree framework for multiplayer strategy games and complex surveys with detailed step-by-step tutorials
 keywords:
 - otree
 - python
-type: "docs"
+- multiplayer games
+- survey platform
+- web framework
 draft: false
 ---
 

@@ -1,12 +1,16 @@
 ---
 type: docs
+linkTitle: .NET
 title: .NET
 description: Deploy .NET applications on Clever Cloud with support for C#, F#, VB.NET projects using cross-platform runtime capabilities
 keywords:
-- .NET
-- csproj
-- fsproj
-- vbproj
+- dotnet app hosting
+- dotnet cloud
+- csharp applications
+- fsharp deployment
+- aspnet core
+- cross-platform development
+- microsoft dotnet
 aliases:
 - /applications/dotnet
 - /deploy/application/dotnet/dotnet

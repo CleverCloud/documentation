@@ -3,6 +3,13 @@ type: docs
 linkTitle: V (Vlang)
 title: V (Vlang) application runtime
 description: Build and deploy V (Vlang) applications using the simple, fast, and safe programming language with built-in web server support
+keywords:
+- vlang
+- v app hosting
+- programming
+- language
+- web-server
+- veb
 ---
 
 ## Overview

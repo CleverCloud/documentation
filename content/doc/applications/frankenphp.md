@@ -3,7 +3,17 @@ type: docs
 linkTitle: FrankenPHP
 title: FrankenPHP application runtime
 description: Deploy PHP applications with FrankenPHP modern server based on Caddy, written in Go for enhanced performance on Clever Cloud
-type: docs
+keywords:
+- caddy
+- framework
+- frankenphp
+- frankenphp cloud
+- laravel
+- mercure
+- performance
+- php app hosting
+- symfony
+- worker mode
 ---
 
 ## Overview

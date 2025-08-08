@@ -1,7 +1,16 @@
 ---
 type: docs
+linkTitle: KV stores
 title: KV stores
 description: Manage Materia KV and Redis key-value stores directly from Clever Tools CLI with commands for data operations and configuration
+keywords:
+- kv-stores
+- materia-kv
+- redis
+- cli
+- key-value
+- database
+- serverless
 aliases:
 - /doc/kv-stores
 ---

@@ -1,11 +1,15 @@
 ---
 type: docs
+linkTitle: Troubleshooting
 title: Troubleshooting
 description: Troubleshoot common deployment issues including git problems, configuration errors, and application restart challenges
 keywords:
-- support
+- troubleshooting
 - git issues
-- troubleshoot
+- deployment problems
+- configuration errors
+- application restart
+- support
 aliases:
 - /doc/get-help/troubleshooting
 ---

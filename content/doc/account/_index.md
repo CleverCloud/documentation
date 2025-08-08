@@ -1,8 +1,17 @@
 ---
-weight: 11
 type: docs
+weight: 11
+linkTitle: User Account
 title: User Account
 description: Learn how to manage your account on Clever Cloud. Discover detailed instructions for account creation, organisation administration in our PaaS platform.
+keywords:
+- account
+- user
+- profile
+- organisation
+- management
+- ssh-keys
+- authentication
 aliases:
 - /account
 ---

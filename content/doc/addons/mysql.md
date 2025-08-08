@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: MySQL
 title: MySQL
 description: Deploy MySQL relational database add-on service on Clever Cloud with automated backups, scaling for enterprise applications
 keywords:
-- sql
 - mysql
-- mariadb
-- RDBMS
+- relational database
+- sql database
+- mysql hosting
+- percona server
+- database management
 aliases:
 - /doc/mysql
 - /doc/add-ons/mysql

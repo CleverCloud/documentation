@@ -1,11 +1,15 @@
 ---
 type: docs
-title: Database migration
+linkTitle: Database Migration
+title: Database Migration
 description: Manage database migrations on Clever Cloud including backup procedures, migration strategies, and data transfer best practices
 keywords:
-- database
-- dbaas
-- migration
+- database migration
+- mysql postgresql
+- mongodb migration
+- database backup
+- data transfer
+- migration strategies
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

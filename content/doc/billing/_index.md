@@ -1,10 +1,16 @@
 ---
-weight: 12
 type: docs
+weight: 12
+linkTitle: Billing
 title: Billing
 description: Manage billing and payment information for your Clever Cloud account including invoices, consumption tracking, and pricing details
 keywords:
-- quickstart
+- billing
+- payments
+- invoices
+- consumption
+- pricing
+- account
 aliases:
 - /billing
 - /doc/administrate/billing

@@ -1,16 +1,15 @@
 ---
-title: 'Docs'
+type: docs
+linkTitle: Docs
+title: Docs
 description: Deploy the open source collaborative document editor Docs on Clever Cloud with Python backend and Node.js frontend
 keywords:
 - docs
-- collaborative
-- editor
+- collaborative editor
 - python
-- nodejs
-- yjs
-
+- Node.js
+- document management
 draft: false
-type: docs
 ---
 
 {{< hextra/hero-subtitle >}}

@@ -1,10 +1,16 @@
 ---
 type: docs
 weight: 3
+linkTitle: Add-ons
 title: Add-ons
 description: Discover and configure add-ons on Clever Cloud including databases, storage services, and managed tools for your applications
 keywords:
-- deploy
+- addons
+- database services
+- managed storage
+- mysql postgresql
+- clever cloud addons
+- cloud databases
 aliases:
 - /addons
 - /doc/addons/clever-cloud-addons

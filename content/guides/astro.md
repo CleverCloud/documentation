@@ -1,16 +1,15 @@
 ---
 type: docs
+linkTitle: Astro
 title: Astro
 description: Deploy Astro as Static Site Generator (SSG) or with Node.js on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - astro
-- nodejs
-- static
-- ssg
-- html
-- js
-- css
-- website
+- static site generator
+- Node.js
+- web framework
+- javascript
+- deployment guide
 aliases:
 - /doc/astro
 - /astro

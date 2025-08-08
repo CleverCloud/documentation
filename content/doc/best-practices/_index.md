@@ -1,10 +1,16 @@
 ---
 type: docs
 weight: 9
+linkTitle: Best practices
 title: Best practices
 description: Learn best practices for deploying and managing applications on Clever Cloud including security, performance, and scalability tips
 keywords:
-- quickstart
+- best-practices
+- deployment
+- performance
+- security
+- scalability
+- applications
 aliases:
 - /doc/quickstart
 - /doc/develop/best-practices

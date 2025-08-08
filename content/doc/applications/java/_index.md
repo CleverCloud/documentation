@@ -1,9 +1,15 @@
 ---
 type: docs
+linkTitle: Java
 title: Java
 description: Deploy Java applications on Clever Cloud using Gradle, Maven, or JAR/WAR/EAR formats with framework-specific deployment guides
 keywords:
-- java
+- java cloud
+- java app hosting
+- spring boot
+- maven gradle
+- jar deployment
+- war deployment
 aliases:
 - /doc/deploy/application/java
 - /doc/deploy/application/java/java

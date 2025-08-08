@@ -1,11 +1,15 @@
 ---
 type: docs
+linkTitle: The Twelve-Factor App
 title: The Twelve-Factor App
 description: Learn the Twelve-Factor App methodology for building cloud-ready applications with proper configuration, scalability, and deployment practices
 keywords:
-- twelve factors
+- twelve-factor
 - cloud
-- best practices
+- best-practices
+- methodology
+- applications
+- scalability
 aliases:
 - /doc/develop/12-factors
 - /doc/develop/best-practices/12-factors

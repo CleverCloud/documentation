@@ -1,13 +1,16 @@
 ---
 type: docs
+linkTitle: Jenkins
 title: Jenkins
 description: Set up Jenkins CI/CD automation server on Clever Cloud for continuous integration and deployment workflows with scalable infrastructure
 keywords:
-- Jenkins
-- continuous integration
-- continuous deployment
+- jenkins
 - ci/cd
-- runner
+- continuous integration
+- automation server
+- build pipeline
+- devops
+- scalable infrastructure
 aliases:
 - /doc/deploy/addon/jenkins
 - /doc/jenkins

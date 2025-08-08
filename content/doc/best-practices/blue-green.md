@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: Blue/Green Deployments
 title: Blue/Green Deployments
 description: Implement Blue/Green deployment strategy to minimize downtime and deployment risks using dual production environments and traffic routing
 keywords:
-- blue/green
+- blue-green
 - deployment
+- strategy
+- downtime
+- environments
+- routing
 aliases:
 - /doc/develop/blue-green
 - /doc/develop/best-practices/blue-green

@@ -1,13 +1,16 @@
 ---
 type: docs
+linkTitle: Materia KV
 title: Materia KV
 description: Deploy Materia key-value store distributed across 3 datacenters, storage-based, resilient and compatible with existing Redis ecosystems
 keywords:
-- materia
-- kv
-- dynamodb
-- graphql
-- redis
+- materia kv
+- key-value store
+- serverless database
+- redis compatible
+- distributed storage
+- nosql database
+- high availability
 draft: false
 aliases:
 - /doc/addons/materia-db-kv/

@@ -1,10 +1,19 @@
 ---
+type: docs
 weight: 2
-type: "docs"
+linkTitle: Applications
 title: Applications
 description: Deploy applications on Clever Cloud with support for popular languages, frameworks, and deployment configurations across modern runtimes
 keywords:
-- deploy
+- deploy applications
+- app deployment
+- app hosting
+- runtime support
+- programming languages
+- cloud deployment
+- development platforms
+- app development
+- modern runtimes
 aliases:
 - /applications
 - /doc/apps

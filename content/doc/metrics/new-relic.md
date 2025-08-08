@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: New Relic
 title: New Relic
 description: Configuring Newrelic on Clever Cloud on Clever Cloud with Complete setup and configuration, configuration options, and deployment best practices
 keywords:
-- new relic
+- new-relic
 - newrelic
 - metrics
 - monitoring
+- analytics
+- performance
 aliases:
 - /administrate/metrics/new-relic
 - /doc/administrate/metrics/new-relic

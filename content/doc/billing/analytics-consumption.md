@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: Analytics and consumption
 title: Analytics and consumption
 description: Understand Clever Cloud billing calculation, credit consumption metrics, and how application scaling affects your monthly costs
 keywords:
 - billing
 - consumption
+- analytics
+- metrics
+- costs
+- grafana
 aliases:
 - /doc/admin-console/analytics-consumption
 ---

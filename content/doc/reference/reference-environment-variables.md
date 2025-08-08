@@ -1,11 +1,15 @@
 ---
 type: docs
-linktitle: EnvVar Reference
+linkTitle: Environment Variable Reference
 title: Environment Variable Reference
 description: Complete reference of environment variables available for applications, add-ons, and deployment configuration on Clever Cloud
 keywords:
-- env
-- env variables
+- environment-variables
+- reference
+- configuration
+- applications
+- add-ons
+- deployment
 aliases:
 - /doc/admin-console/environment-variables
 - /doc/env-variables

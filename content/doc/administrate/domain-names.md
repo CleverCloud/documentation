@@ -1,11 +1,15 @@
 ---
 type: docs
-title: Domain names
+linkTitle: Domain Names
+title: Domain Names
 description: Configure and manage custom domain names for your Clever Cloud applications including DNS setup and SSL certificate management
 keywords:
-- DNS
-- domain
-- URL
+- domain names
+- dns configuration
+- custom domains
+- ssl certificates
+- domain management
+- url routing
 ---
 
 When creating an application, you have two (non-exclusive) choices for domain names:

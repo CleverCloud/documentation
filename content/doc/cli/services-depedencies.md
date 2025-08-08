@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Services Dependencies
 title: Services Dependencies
 description: Configure and manage service dependencies using Clever Tools CLI including linking applications and managing environment connections
+keywords:
+- services
+- dependencies
+- linking
+- cli
+- environment
+- configuration
 ---
 
 On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organisation. Add-ons are preconfigured with an exposed configuration. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.

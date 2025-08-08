@@ -1,9 +1,16 @@
 ---
-weight: 2
-title: Clever Cloud Documentation
 type: docs
-description: Complete Clever Cloud documentation for deploying applications, managing add-ons, configuring domains, and scaling infrastructure
+weight: 2
 linkTitle: Documentation
+title: Clever Cloud Documentation
+description: Complete Clever Cloud documentation for deploying applications, managing add-ons, configuring domains, and scaling infrastructure
+keywords:
+- documentation
+- deploy
+- applications
+- add-ons
+- scaling
+- cloud
 aliases:
 - /clever-cloud-overview
 - /doc/clever

@@ -1,7 +1,16 @@
 ---
 type: docs
+linkTitle: Logs, Drains
 title: Logs, Drains
 description: Access application logs and manage log drains using Clever Tools CLI for centralized logging, monitoring, and troubleshooting capabilities
+keywords:
+- logs
+- drains
+- monitoring
+- cli
+- troubleshooting
+- centralized
+- pulsar
 aliases:
 - /doc/logs-drains
 ---

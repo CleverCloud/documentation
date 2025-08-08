@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Notifications, WebHooks
 title: Notifications, WebHooks
 description: Configure notifications and webhooks for Clever Cloud applications using CLI tools for automated alerts and integrations with external services
+keywords:
+- notifications
+- webhooks
+- alerts
+- cli
+- integrations
+- automation
 aliases:
 - /doc/administrate/clever-tools/notifications
 - /doc/clever-tools/notifications/

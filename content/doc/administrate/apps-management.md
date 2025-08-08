@@ -1,12 +1,15 @@
 ---
 type: docs
+linkTitle: Application Management
 title: Application Management
 description: Manage your applications on Clever Cloud including deployment configuration, scaling settings, and operational controls
 keywords:
-- stop
-- deploy
-- restart
-- logs
+- application management
+- deployment configuration
+- app lifecycle
+- scaling settings
+- operational controls
+- zero downtime deployment
 aliases:
 - /administrate/apps-management
 - /doc/admin-console/apps-management

@@ -1,13 +1,16 @@
 ---
 type: docs
+linkTitle: Otoroshi with LLM
 title: Otoroshi with LLM
 description: Deploy Otoroshi API gateway on Clever Cloud for advanced API management, security, traffic control, and LLM models management
 keywords:
 - otoroshi
-- reverse
-- proxy
-- llm
-- waf
+- api gateway
+- llm management
+- reverse proxy
+- web application firewall
+- api security
+- traffic management
 aliases:
 - /doc/clever-cloud-overview/clevergrid-machine-learning
 - /doc/otoroshi

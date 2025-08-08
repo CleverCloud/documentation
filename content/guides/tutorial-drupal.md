@@ -1,10 +1,14 @@
 ---
 type: docs
+linkTitle: Drupal
 title: Drupal
 description: Deploy Drupal CMS on Clever Cloud with complete setup guide including database configuration, file management, and security setup
 keywords:
-- php
 - drupal
+- php
+- content management
+- mysql integration
+- website deployment
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-drupal
 - /doc/php/tutorial-drupal

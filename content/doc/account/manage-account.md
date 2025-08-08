@@ -1,12 +1,17 @@
 ---
 type: docs
 weight: 2
+linkTitle: Manage your account
 title: Manage your account
 description: Manage your Clever Cloud account settings including profile information, modifying email, SSH keys or tokens on our PaaS platform.
 keywords:
 - profile
 - preferences
 - user
+- account
+- settings
+- ssh-keys
+- oauth
 ---
 
 In the Clever Cloud Web Console, select **Profile** in the bottom left menu.

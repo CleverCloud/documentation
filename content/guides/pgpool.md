@@ -1,17 +1,14 @@
 ---
 type: docs
+linkTitle: Pgpool-II
 title: Pgpool-II
 description: Configure and use Pgpool-II for PostgreSQL add-ons with detailed tutorials and best practices for deployment
 keywords:
-- balancing
-- connection
-- limit
-- load
 - pgpool
-- pool
-- postgres
-- proxy
-- sql
+- postgresql
+- connection pooling
+- load balancing
+- database proxy
 aliases:
 - /deploy/addon/postgresql/pgpool
 - /doc/deploy/addon/postgresql/pgpool

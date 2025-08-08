@@ -1,16 +1,15 @@
 ---
 type: docs
+linkTitle: Installing TLS Certificates
 title: Installing TLS Certificates
 description: Configure SSL certificates and HTTPS encryption for your Clever Cloud applications to ensure secure communications and data protection
 keywords:
-- ssl
-- tls
-- certificate
-- https
-- encrypt
-- cloudflare
-- rsa
-- ECDSA
+- ssl certificates
+- tls certificates
+- https encryption
+- lets encrypt
+- ssl configuration
+- certificate management
 aliases:
 - /doc/tools/ssl-certificates
 ---

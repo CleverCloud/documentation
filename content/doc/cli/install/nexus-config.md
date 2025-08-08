@@ -1,7 +1,15 @@
 ---
 type: docs
+linkTitle: Nexus repository
 title: Nexus repository
 description: Configure Clever Cloud Nexus repository for package distribution using .deb, .nupkg, and .rpm package formats
+keywords:
+- nexus
+- repository
+- packages
+- deb
+- rpm
+- distribution
 ---
 
 We use a self hosted Nexus repository to distribute `.deb`, `.nupkg` and `.rpm`. It's available at [https://nexus.clever-cloud.com/](https://nexus.clever-cloud.com/).

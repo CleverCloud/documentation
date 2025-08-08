@@ -1,9 +1,14 @@
 ---
+type: docs
+linkTitle: Hugo + Cellar
 title: Hugo + Cellar
 description: Build your website with Hugo and deploy it through Cellar S3-compatible object storage with detailed step-by-step tutorials
 keywords:
-
-type: "docs"
+- hugo
+- cellar
+- object storage
+- static hosting
+- website deployment
 draft: false
 ---
 

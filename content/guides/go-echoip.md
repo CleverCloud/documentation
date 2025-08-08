@@ -1,14 +1,15 @@
 ---
+type: docs
+linkTitle: Go - Echoip
 title: Go - Echoip
 description: Build and deploy a Go EchoIP service on Clever Cloud with step-by-step instructions, configuration examples, and optimization tips
 keywords:
 - go
 - echoip
-- EchoIP
-type: "docs"
-#date: 2024-05-06T09:11:52+01:00
+- golang
+- IP service
+- web service
 draft: false
-type: docs
 ---
 
 [EchoIP](https://github.com/mpolden/echoip) is a simple service for looking up

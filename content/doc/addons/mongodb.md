@@ -1,13 +1,15 @@
 ---
 type: docs
+linkTitle: MongoDB
 title: MongoDB
 description: Deploy MongoDB database add-on service on Clever Cloud with automatic scaling, backups for robust NoSQL applications
 keywords:
-- mongo
 - mongodb
-- document
-- nosql
-- database
+- nosql database
+- document database
+- mongodb hosting
+- database backups
+- cloud mongodb
 aliases:
 - /deploy/addon/mongodb/mongodb
 - /doc/mongodb

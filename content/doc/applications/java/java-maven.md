@@ -1,10 +1,15 @@
 ---
 type: docs
+linkTitle: Maven
 title: Maven
 description: Deploy Java applications using Maven build system on Clever Cloud with automatic dependency management and build lifecycle
 keywords:
 - java
 - maven
+- build-system
+- dependencies
+- deployment
+- lifecycle
 aliases:
 - /deploy/application/java/java-maven
 - /doc/deploy/application/java/java-maven

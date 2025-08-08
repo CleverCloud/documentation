@@ -1,8 +1,16 @@
 ---
-type: "docs"
+type: docs
 weight: 2
+linkTitle: Add-ons, Backups
 title: Add-ons, Backups
 description: Create and manage Clever Cloud add-on services using Clever Tools CLI with automated provisioning and configuration commands
+keywords:
+- addons
+- backups
+- databases
+- cli
+- management
+- provisioning
 ---
 
 Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon provider`. For each of the following commands, you can target a specific user/organisation:

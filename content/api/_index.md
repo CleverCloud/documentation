@@ -1,7 +1,7 @@
 ---
 type: docs
 title: API
-description: Automate your workflows and connect your services to Clever Cloud using its API
+description: Clever Cloud API documentation. Learn how to use our API, endpoints, authentication methods, and how to access it from multiple tools.
 aliases:
 - /doc/api/
 - /doc/openapi

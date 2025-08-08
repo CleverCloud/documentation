@@ -3,8 +3,6 @@ type: docs
 title: SSH Keys
 weight: 6
 description: Configure and manage SSH keys for secure access to your Clever Cloud applications and streamlined deployment workflows
-tags:
-- account-setup
 keywords:
 - git
 - deploy

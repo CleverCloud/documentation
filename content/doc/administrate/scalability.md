@@ -2,8 +2,6 @@
 type: docs
 title: Application scaling
 description: Configure automatic and manual scaling for your Clever Cloud applications to handle traffic spikes and optimize resource usage
-tags:
-- administrate
 keywords:
 - scale
 - scalability

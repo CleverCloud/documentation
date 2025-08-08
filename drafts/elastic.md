@@ -2,8 +2,6 @@
 type: docs
 title: Elastic
 description: Elastic guides
-tags:
-- guides
 keywords:
 - elastic
 - kibana

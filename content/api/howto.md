@@ -3,8 +3,6 @@ type: docs
 weight: 1
 title: Clever Cloud API Overview
 description: Getting started with the Clever Cloud API
-tags:
-- extend
 keywords:
 - api
 - authentication

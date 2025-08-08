@@ -2,8 +2,6 @@
 type: docs
 title: Guides
 description: Step-by-step guides to deploy specific apps and frameworks on Clever Cloud with detailed tutorials and configuration examples
-tags:
-- guides
 aliases:
 - /doc/deploy/application/docker/tutorials
 - /doc/deploy/application/haskell/tutorials

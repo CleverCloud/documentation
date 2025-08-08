@@ -2,8 +2,6 @@
 type: docs
 title: Java
 description: Deploy Java applications on Clever Cloud using Gradle, Maven, or JAR/WAR/EAR formats with framework-specific deployment guides
-tags:
-- deploy
 keywords:
 - java
 aliases:

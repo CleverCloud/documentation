@@ -2,8 +2,6 @@
 type: docs
 title: Gradle
 description: Deploy Java applications using Gradle build system on Clever Cloud with automatic dependency resolution and build automation
-tags:
-- deploy
 keywords:
 - java
 - gradle

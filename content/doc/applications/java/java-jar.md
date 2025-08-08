@@ -4,8 +4,6 @@ title: Jar
 description: Deploy Java JAR applications on Clever Cloud with automatic JVM configuration, dependency management, and runtime optimization
 keywords:
 - deploy
-tags:
-- java
 aliases:
 - /deploy/application/java/java-jar
 - /doc/deploy/application/java/java-jar

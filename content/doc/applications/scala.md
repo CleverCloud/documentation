@@ -2,8 +2,6 @@
 type: docs
 title: Scala
 description: Deploy Scala applications on Clever Cloud using the object-functional programming language that runs on the Java platform runtime
-tags:
-- deploy
 keywords:
 - scala
 aliases:

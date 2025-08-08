@@ -2,8 +2,6 @@
 type: docs
 title: Haskell
 description: Deploy Haskell applications on Clever Cloud with automatic dependency management, compilation, and runtime environment configuration
-tags:
-- deploy
 keywords:
 - haskell
 - stack

@@ -3,8 +3,6 @@ type: docs
 linkTitle: SSH access
 title: SSH access to running instances
 description: Use SSH and Clever Tools CLI to manage your applications remotely including deployment, debugging, and administration tasks
-tags:
-- administrate
 keywords:
 - ssh
 - cli

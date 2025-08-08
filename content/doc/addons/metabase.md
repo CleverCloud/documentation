@@ -2,8 +2,6 @@
 type: docs
 title: Metabase
 description: Deploy Metabase business intelligence add-on service for data visualization, dashboards, and analytics reporting on Clever Cloud
-tags:
-- addons
 keywords:
 - metabase
 - business intelligence

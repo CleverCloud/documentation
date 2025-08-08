@@ -2,8 +2,6 @@
 type: docs
 title: Python
 description: Deploy Python 2 and 3 applications with uv support, Django, Flask, various frameworks, and configurable runtime settings
-tags:
-- deploy
 keywords:
 - python
 aliases:

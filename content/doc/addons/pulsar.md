@@ -2,8 +2,6 @@
 type: docs
 title: Pulsar
 description: Deploy Apache Pulsar messaging add-on service for real-time data streaming and pub-sub messaging with enterprise scalability features
-tags:
-- addons
 keywords:
 - pulsar
 - messaging

@@ -2,8 +2,6 @@
 type: docs
 title: Kibana
 description: Deploy custom Kibana for specific use cases with detailed step-by-step tutorials and configuration examples
-tags:
-- addons
 keywords:
 - custom
 - elsaticsearch

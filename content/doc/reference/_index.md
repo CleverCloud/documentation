@@ -3,11 +3,6 @@ weight: 10
 type: docs
 title: Configuration List
 description: Explore technical reference documentation for Clever Cloud including environment variables, API endpoints, and configuration options
-tags:
-- cli
-- add-ons
-- api
-- environment variables
 keywords:
 - list
 - authentication

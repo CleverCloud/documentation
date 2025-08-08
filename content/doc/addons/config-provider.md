@@ -2,8 +2,6 @@
 type: docs
 title: Configuration provider
 description: Manage application configuration with Config Provider add-on service for centralized environment variable management and secure storage
-tags:
-- addons
 keywords:
 - configuration
 - environment variables

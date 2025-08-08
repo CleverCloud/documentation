@@ -2,8 +2,6 @@
 type: docs
 title: Elastic Stack
 description: Deploy Elasticsearch Platinum service add-on on Clever Cloud for powerful search, analytics, and data processing capabilities
-tags:
-- addons
 keywords:
 - fulltext
 - elsaticsearch

@@ -3,8 +3,6 @@ type: docs
 weight: 1
 title: Create an Account
 description: Step-by-step guide to create your Clever Cloud account and start deploying applications on the cloud platform efficiently
-tags:
-- account
 keywords:
 - profile
 - preferences

@@ -2,8 +2,6 @@
 type: docs
 title: PostgreSQL
 description: Deploy PostgreSQL database add-on service on Clever Cloud with automated backups, scaling for enterprise applications
-tags:
-- addons
 keywords:
 - sql
 - postgresql

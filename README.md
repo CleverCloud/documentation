@@ -126,14 +126,14 @@ Hugo uses front matter to enrich posts with metadata. Front matter allows you to
 - [`draft`](https://gohugo.io/methods/page/draft/) (optional)
   - Whether the page is a draft or not. The value is a `<boolean>`, default is `false`. If set to `true`, the page is not built except if you use the `--buildDrafts` flag.
 
-- [`tags`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (recommended)
-  - Tags are recommended for easy product identification. They are written in lowercase and, if possible, use the same spelling throughout the posts. The value is a `<string>`.
+- [`keywords`](https://gohugo.io/content-management/front-matter/#keywords) (optional)
+  - Keywords are used for SEO purposes. The value is a list of `<string>`, each string being a keyword.
 
-- [`authors`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (mostly used in changelog)
+- [`tags`](https://gohugo.io/content-management/front-matter/#taxonomies) (recommended)
+  - Tags are recommended only in Changelog for easy product identification. They are written in lowercase and, if possible, use the same spelling throughout the posts. The value is a list of `<string>`.
+
+- [`authors`](https://gohugo.io/content-management/front-matter/#taxonomies) (mostly used in changelog)
   - Can be set to showcase the people behind the product. Authors are defined with a `name`, `link` for their Github or any other social network, and an `image` for the profile picture. The profile picture can be set with the GitHub avatar with a link like `https://github.com/BlackYoup.png` and the parameter `?size=40` for reducing the image size (recommended for performance). The values are all of `<string>` type.
-
-- [`category`](https://gohugo.io/content-management/taxonomies/#default-taxonomies) (optional)
-  - The category is used here to add a "new" label on the changelog homepage when a specific entry is a new feature that should be highlighted visually. The value must be `new`, and nothing else.
 
 - [`date`](https://gohugo.io/methods/page/date/) (mostly used in changelog)
   - The date that will be displayed in the post. The value is a string in ISO 8601 like `yyyy-mm-dd`.

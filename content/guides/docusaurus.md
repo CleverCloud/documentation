@@ -15,7 +15,6 @@ keywords:
 - website
 aliases:
 - /docusaurus
-comments: false
 ---
 
 {{< hextra/hero-subtitle >}}

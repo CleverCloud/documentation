@@ -11,7 +11,6 @@ aliases:
 - /doc/deploy/application/java/java-gradle
 - /doc/java/java-gradle
 - /java/java-gradle
-comments: false
 ---
 
 ## Overview

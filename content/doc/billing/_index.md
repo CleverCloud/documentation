@@ -14,7 +14,6 @@ aliases:
 - /doc/billing
 - /doc/doc/billing
 - /doc/quickstart
-comments: false
 ---
 
 {{< cards >}}

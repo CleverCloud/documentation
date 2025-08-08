@@ -7,7 +7,6 @@ keywords:
 - otree
 - python
 type: "docs"
-comments: false
 draft: false
 ---
 

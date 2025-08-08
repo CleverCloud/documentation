@@ -9,6 +9,10 @@ module:
     extended: true
     min: 0.146.0
 
+disableKinds:
+  - taxonomy
+  - term
+
 enableEmoji: true
 enableGitInfo: true
 enableInlineShortcodes: true
@@ -183,9 +187,6 @@ params:
       index: content
       # full | forward | reverse | strict
       tokenize: forward
-
-  toc:
-    displayTags: true
 
   theme:
     # light | dark | system

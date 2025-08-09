@@ -44,7 +44,7 @@ Find `server` command options in the [Hugo documentation](https://gohugo.io/comm
 
 ## Deploying on Clever Cloud
 
-As Clever Cloud [natively detects and build Hugo sites](https://www.clever.cloud/developers/doc/applications/static/), you just need some configuration to deploy this project:
+The site is configured for Clever Cloud hosting with the `static` runtime and these required environment variables:
 
 ```bash
 # Declare what's the web server root, where to build the documentation
@@ -63,8 +63,9 @@ SERVER_ERROR_PAGE_404="developers/404.html"
 
 You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls). If you use AI tools or LLMs, you'll find specific instructions for them:
 
+- [AI tools and LLMs instructions](./.github/copilot-instructions.md)
+- [Claude Code guidance](./CLAUDE.md)
 - [Contributing guidelines](./CONTRIBUTING.md)
-- [AI tools and LLMs instructions](./.cursorrules)
 
 Clever Cloud documentation is also available following the [llms.txt specification](https://www.clever.cloud/developers/llms.txt).
 

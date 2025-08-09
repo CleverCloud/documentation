@@ -1,9 +1,10 @@
 
 # Contributing guidelines
 
-This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find instructions for AI tools and LLMs:
+This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find comprehensive instructions for AI tools and LLMs:
 
-- [AI tools and LLMs instructions](./.cursorrules)
+- [AI tools and LLMs instructions](./.github/copilot-instructions.md)
+- [Claude Code guidance](./CLAUDE.md)
 
 ## Standards
 
@@ -30,8 +31,9 @@ Sources for quality content are currently being updated.
 - **Don't assume the user "knows better":** if you think something is obvious, it's not. Better over-explain than under-explain.
 - **Use active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something.
 - **Use second person:** address the reader directly.
-- **Keep it simple:** avoid jargon, complex sentences, and jokes.
-- **Keep it short:** keep the sentences short. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle.
+- **Keep it simple:** avoid jargon, complex sentences, and jokes. Follow the [KISS principle](https://en.wikipedia.org/wiki/KISS_principle).
+- **Keep it short:** sentences, titles (max 60 chars), linkTitle (max 30 chars), descriptions (max 160 chars).
+- **Respect page length:** 300-2000 words optimal. At 1000+ words, consider splitting into multiple pages.
 
 #### 👎 Don't
 
@@ -42,11 +44,12 @@ Sources for quality content are currently being updated.
 
 #### 💡 Shortcodes
 
-This doc uses Hugo with [Hextra theme](https://imfing.github.io/hextra/), which provides a variety of [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) to enhance it and improve its readability.
-For example :
+Hextra provides various [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) to enhance readability:
 
-- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) are well suited for the `/guides/` section, or for any tutorial.
-- [Callouts](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) draw attention to an important information in the page. However, don't overuse them, as too many callouts can miss their point and make the page crowded. Limit callouts to one or two per page.
+- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) for tutorials and guides
+- [Callouts](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) for important information (limit to 1-2 per page)
+- [Tabs](https://imfing.github.io/hextra/docs/guide/shortcodes/tabs/) for multiple options (package managers, approaches)
+- [Cards](https://imfing.github.io/hextra/docs/guide/shortcodes/cards/) for linking to related resources
 
 ### 💅 Style guide
 

@@ -38,8 +38,9 @@ This is a Hugo-based documentation site using the Hextra theme with the followin
 All content uses Hugo front matter with specific fields:
 - `type: docs` - Content layout type
 - `weight` - Sidebar ordering (integer)
-- `linkTitle` - Short title for sidebar navigation
-- `description` - SEO meta description
+- `linkTitle` - Short title for sidebar navigation (max 30 characters)
+- `title` - Main page title (max 60 characters)
+- `description` - SEO meta description (max 160 characters)
 - `keywords` - Array of SEO keywords
 - `aliases` - Array of redirect paths (relative to base URL)
 - `draft: true` - Prevents publishing (change to `false` to publish)
@@ -77,6 +78,7 @@ For changelog entries, also include:
 - **Build verification**: Always test with `hugo` command before committing
 - **Structure**: Use 2-4 well-developed paragraphs per section, minimize bullet lists
 - **Paragraphs**: Aim for 3-6 lines for optimal readability
+- **Page length**: Target 300-2000 words; at 1000+ words, consider splitting into multiple pages
 
 ### Code and Technical Examples
 - Always provide complete, runnable code examples

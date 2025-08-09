@@ -43,18 +43,21 @@ Formal reference material for platform features, APIs, and configurations.
 - **Style**: Professional, precise, instructional
 - **Structure**: Hierarchical with clear sections
 - **Purpose**: Enable users to accomplish specific tasks
+- **File naming**: Use lowercase with hyphens: `my-feature.md`
 
 ### 2. Guides & Tutorials (`/content/guides/`)
 Step-by-step instructions for implementing specific technologies or frameworks.
 - **Style**: Educational, conversational but focused
 - **Structure**: Progressive steps with examples
 - **Purpose**: Guide users through complete implementation
+- **File naming**: Framework or tool name: `astro.md`, `ruby-on-rails.md`
 
 ### 3. Changelog Entries (`/content/changelog/`)
 Technical blog-style posts announcing platform updates and new features.
 - **Style**: Engaging, informative, personality allowed
 - **Structure**: Context → announcement → practical examples → links
 - **Purpose**: Inform users about platform evolution
+- **File naming**: `YYYY-MM-DD-descriptive-title.md`
 
 ## Writing Style Guidelines
 
@@ -86,11 +89,17 @@ Technical blog-style posts announcing platform updates and new features.
 ```yaml
 ---
 type: docs
-linkTitle: Short Title
-title: Full Page Title
-description: SEO-friendly description explaining what users will learn
+linkTitle: Short Title (max 30 characters)
+title: Full Page Title (max 60 characters)
+description: SEO-friendly description explaining what users will learn (max 160 characters)
+keywords:
+- keyword1
+- keyword2
+- keyword3
 aliases:
 - /old/url/path
+weight: 10
+draft: false
 ---
 ```
 
@@ -111,6 +120,14 @@ aliases:
   > [!TIP] Helpful suggestions
   > [!WARNING] Important considerations
   ```
+
+#### Content Length Guidelines
+- **Title**: Maximum 60 characters for optimal SEO and display
+- **LinkTitle**: Maximum 30 characters for sidebar navigation
+- **Description**: Maximum 160 characters for search engine snippets
+- **Page content**: Aim for 300-2000 words for comprehensive coverage
+- **Section paragraphs**: 3-6 lines each for optimal readability
+- **Page splitting**: At 1000+ words, evaluate if content should be split into multiple pages for better usability
 
 ### Guide-Specific Rules
 
@@ -153,16 +170,19 @@ aliases:
 #### Front Matter Format
 ```yaml
 ---
-title: Descriptive title about the update/feature
-description: Brief one-line summary
+title: Descriptive title about the update/feature (max 60 characters)
+description: Brief one-line summary (max 160 characters for SEO)
 date: YYYY-MM-DD
 tags:
   - relevant-product-tags
+  - lowercase-only
 authors:
   - name: Full Name
     link: https://github.com/username
     image: https://github.com/username.png?size=40
 excludeSearch: true
+weight: 0
+draft: false
 ---
 ```
 
@@ -213,6 +233,13 @@ clever keycloak version update yourKeycloakNameOrId
 - **Absolute paths** when referencing project structure
 - **Relative paths** when showing user actions: `./package.json`
 - **Proper syntax highlighting** for code blocks
+
+### URL and Link Patterns
+- **Internal links**: Use relative paths starting from `/doc/`, `/guides/`, `/changelog/`, `/api/`
+- **Cross-references**: Link to related documentation using full relative paths
+- **External links**: Always use HTTPS and verify links are current
+- **Application URLs**: Remember that deployed sites require `/developers` suffix
+- **Image references**: Use `/images/filename.ext` for static assets
 
 ## Content Quality Checklist
 

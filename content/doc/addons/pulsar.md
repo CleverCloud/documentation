@@ -12,6 +12,7 @@ keywords:
 - real-time messaging
 - event streaming
 aliases:
+- /addons/pulsar
 - /deploy/addon/pulsar
 - /doc/deploy/addon/pulsar
 ---

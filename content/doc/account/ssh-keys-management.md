@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /account/ssh-keys-management
 - /doc/account/ssh-keys-management
+- /doc/account/ssh-keys-managment
 - /doc/getting-started/ssh-keys
 ---
 

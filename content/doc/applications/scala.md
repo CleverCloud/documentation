@@ -17,6 +17,7 @@ aliases:
 - /doc/getting-started/by-language/scala
 - /doc/deploy/application/scala
 - /doc/deploy/application/scala/scala
+- /doc/developers/doc/scala-hosting
 - /doc/partials/language-specific-deploy/scala
 - /doc/sbt
 - /doc/scala

@@ -10,6 +10,8 @@ keywords:
 - ssl certificates
 - domain management
 - url routing
+aliases:
+- /doc/admin-console/custom-domain-names
 ---
 
 When creating an application, you have two (non-exclusive) choices for domain names:

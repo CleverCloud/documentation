@@ -14,6 +14,7 @@ keywords:
 - authentication
 aliases:
 - /account
+- /doc/admin-console/authentification
 ---
 
 {{< cards >}}

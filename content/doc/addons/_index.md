@@ -13,6 +13,7 @@ keywords:
 - cloud databases
 aliases:
 - /addons
+- /clever-cloud-overview/intro-to-addons
 - /doc/addons/clever-cloud-addons
 - /doc/administrate/addons
 - /doc/clever-cloud-overview/intro-to-addons

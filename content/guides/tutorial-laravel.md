@@ -10,6 +10,7 @@ keywords:
 - database integration
 - artisan cli
 aliases:
+- /deploy/application/php/tutorials/tutorial-laravel
 - /doc/deploy/application/php/tutorials/tutorial-laravel
 - /doc/php/tutorial-laravel
 - /tutorial-laravel

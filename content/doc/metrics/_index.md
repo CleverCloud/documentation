@@ -15,6 +15,7 @@ aliases:
 - /administrate/metrics/overview/
 - /doc/administrate/metrics
 - /doc/administrate/metrics/overview
+- /doc/developers/doc/metrics
 - /doc/tools/metrics
 - /metrics
 ---

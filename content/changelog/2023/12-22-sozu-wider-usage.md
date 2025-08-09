@@ -11,6 +11,7 @@ description: Sōzu gets better and can be used on more services on Clever Cloud
 aliases:
 - /changelog/2023-12-22-sozu-wider-usage
 - /changelog/2023-12-22-sozu-update
+- /changelog/2023-12-15-sozu-update
 excludeSearch: true
 ---
 

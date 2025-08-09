@@ -15,6 +15,7 @@ aliases:
 - /doc/deploy/application/scala/tutorials/play-framework-1
 - /doc/java/play-framework-1
 - /doc/play-framework
+- /doc/scala/play-framework-1
 ---
 
 ## Overview

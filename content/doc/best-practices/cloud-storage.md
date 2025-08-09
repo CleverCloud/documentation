@@ -11,6 +11,7 @@ keywords:
 - files
 - cellar
 aliases:
+- /addons/cellar-vs-fsbuckets
 - /doc/develop/best-practices/cloud-storage
 - /doc/develop/cloud-storage
 ---

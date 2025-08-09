@@ -22,7 +22,7 @@ This project is based on [Hugo](https://gohugo.io/) and uses [Hextra](https://im
 
 ### Install Hugo
 
-To begin your journey with the Clever Cloud Documentation, you need Hugo. You can:
+To begin your journey with the Clever Cloud Documentation, you need Hugo Extended. You can:
 - [Install it](https://gohugo.io/installation/) globally on your system
 - Get its [binary](https://github.com/gohugoio/hugo/releases) and put it in the project's root
 
@@ -39,8 +39,7 @@ Then:
 1. Go to the documentation folder: `cd documentation`
 2. Run `hugo server` to build and start the local server
 
-Local site is available on <http://localhost:1313>, it refreshes as you modify the files, you can keep the server running with no need to restart.
-Find `server` command options in the [Hugo documentation](https://gohugo.io/commands/hugo_server/#options).
+Local site is available on <http://localhost:1313>, it refreshes as you modify the files, you can keep the server running with no need to restart. Find `server` command options in the [Hugo documentation](https://gohugo.io/commands/hugo_server/#options).
 
 ## Deploying on Clever Cloud
 
@@ -55,6 +54,8 @@ CC_STATIC_AUTOBUILD_OUTDIR="public/developers"
 # Declare the location of the 404 custom page
 SERVER_ERROR_PAGE_404="developers/404.html"
 ```
+
+To get a working website, you must use [path routing](https://www.clever.cloud/developers/doc/administrate/domain-names/#path-routing) and add a `/developers` route to your domain.
 
 > [!TIP]
 > You can set the Hugo version with `CC_HUGO_VERSION` with a value like `0.148`

@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. Additional AI guidance is available in `.github/copilot-instructions.md` for comprehensive content creation rules.
 
+## Prerequisites
+
+### Hugo Requirements
+- **Hugo Extended version 0.146.0 or higher** - Required for Hextra theme compatibility
+- **Go modules support** - Hugo uses Go modules for theme management
+- Install Hugo Extended: `brew install hugo` (macOS) or download from [Hugo releases](https://github.com/gohugoio/hugo/releases)
+
+### URL Routing Constraints
+- **Mandatory `/developers` suffix** - Application URL must end with `/developers` for proper routing
+- Example: `https://yourapp.cleverapps.io/developers` (correct)
+- The `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"` handles this requirement
+
 ## Common Development Commands
 
 ### Hugo Site Development
@@ -9,6 +21,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Build for production**: `hugo` - Outputs to `public/developers/`  
 - **Preview drafts**: `hugo server --buildDrafts` - Include draft content in local preview
 - **Update CLI reference**: `./update-cli-reference.sh` - Fetches latest clever-tools documentation
+- **Check Hugo version**: `hugo version` - Verify Extended version is installed
+- **Clean cache**: `hugo mod clean` - Clear module cache if needed
 
 ### Content Generation
 - **New guide**: `hugo new content guides/<framework>.md`

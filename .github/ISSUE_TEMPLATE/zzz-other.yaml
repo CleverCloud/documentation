@@ -1,0 +1,40 @@
+name: ❓ Other request
+description: For requests that don't fit into other categories
+title: "Other: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for requests that don't fit into our other categories.
+
+        **Before using this template**, please check if your request fits better in:
+        - 📝 Content and guide suggestion (new content, framework guides)
+        - ⚠️ Report a problem (errors, bugs, UX issues, clarifications)
+
+  - type: checkboxes
+    id: other-prerequisites
+    attributes:
+      label: "Prerequisites check"
+      description: "Have you checked the appropriate resources?"
+      options:
+        - label: I have checked that this request doesn't fit into other issue templates
+        - label: I have searched for existing [issues](https://github.com/CleverCloud/documentation/issues)
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: "Describe your request"
+      description: "Please provide a clear description of what you need"
+      placeholder: "I have a request for... / I would like to... / I noticed that..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context-details
+    attributes:
+      label: "Additional context"
+      description: "Any additional information that might help us understand your request"
+      placeholder: "Related pages, external links, specific examples, etc."

@@ -1,0 +1,77 @@
+name: ⚠️ Report a problem
+description: Report an error, technical issue, UX problem, or request clarification
+title: "Issue: "
+labels: ["documentation", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the quality of our documentation!
+
+        **For technical support**, please use [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) instead.
+        **For general questions**, consider our [Community Discussions](https://github.com/CleverCloud/Community/discussions) first.
+
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: "Type of problem"
+      description: "What kind of problem are you encountering?"
+      options:
+        - Clarification request (unclear or incomplete information)
+        - Documentation error (incorrect information, broken link, etc.)
+        - Technical site issue (Hugo build, shortcodes, functionality)
+        - UX/design problem (accessibility, navigation, responsive)
+        - Other problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: page-urls
+    attributes:
+      label: "Affected page(s)"
+      description: "URLs of the documentation pages with the problem (one per line)"
+      placeholder: |
+        https://www.clever.cloud/developers/...
+        https://www.clever.cloud/developers/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: "Problem description"
+      description: "Describe clearly the problem you encountered"
+      placeholder: "When I try to... / It's difficult to... / The page doesn't... / The information says... but..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: "Current problematic content (if applicable)"
+      description: "Copy the exact text, code, or section that has the issue"
+      placeholder: "Current text that is incorrect or problematic..."
+
+  - type: textarea
+    id: expected-solution
+    attributes:
+      label: "Expected solution or corrected content"
+      description: "How should this be fixed? What should the information say?"
+      placeholder: "The correct information should be... / This could be improved by... / The layout should..."
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: "Steps to reproduce (if applicable)"
+      description: "For technical issues: how to reproduce the problem"
+      placeholder: |
+        1. Run `hugo server`
+        2. Navigate to...
+        3. See error
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional context"
+      description: "Screenshots, error messages, browser, device, etc."
+      placeholder: "Browser: Chrome on mobile, console errors, screenshots, etc."

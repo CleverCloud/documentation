@@ -22,7 +22,7 @@
 {{- $pages := sort .Pages "Title" "asc" }}
 {{- range $pages }}
 {{- if not (strings.Contains .RelPermalink "/api/v2") }}
-- [{{ .Title }}](https://www.clever-cloud.com{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}
@@ -35,7 +35,7 @@
 {{- if .Params.llmsTxtOptional }}
 {{- $pages := sort .Pages "Title" "asc" }}
 {{- range $pages }}
-- [{{ .Title }}](https://www.clever-cloud.com{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- range .Sections }}

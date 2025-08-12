@@ -19,6 +19,6 @@ After [renewing OAuth consumers management](/developers/changelog/2025/05-28-oau
 
 We also added a link to Clever Cloud's OAuth tokens documentation.
 
-- [Learn more about OAuth tokens](/api/howto/#oauth1)
+- [Learn more about OAuth tokens](/developers/api/howto/#oauth1)
 
 ![New OAuth tokens interface](/images/console-new-oauth-tokens.webp)

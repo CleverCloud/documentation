@@ -116,9 +116,10 @@ Use these to define [commands to run](/developers/doc/develop/build-hooks) betwe
 
 {{% content "mise" %}}
 
-| Name | Description |
-|-----------------|--------------------------|
-|`CC_RUN_MISE_INSTALL`| Set to `true` to run `mise install` before the build phase |
+| Name | Description | Default value |
+|-----------------|--------------------------|--------------------------------|
+|`CC_DISABLE_MISE`| Set to `true` to disable Mise | |
+|`CC_MISE_FILE_PATH`| Path to the `mise.toml` file, relative to your application root | `mise.toml` |
 
 {{% content "redirectionio" %}}
 > [!NOTE] Redirection.io is not available in Docker and PHP applications

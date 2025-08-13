@@ -292,5 +292,5 @@ AWS_RESPONSE_CHECKSUM_VALIDATION="when_required"
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="https://github.com/suitenumerique/docs/blob/main/docs/installation.md#preparation" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
+  {{< card link="https://github.com/suitenumerique/docs/blob/main/docs/installation/kubernetes.md#preparation" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
 {{< /cards >}}

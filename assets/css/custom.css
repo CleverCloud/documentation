@@ -32,7 +32,7 @@ h1, .content h1,
   background-color: var(--dark-background-color);
 }
 
-html:not([class~="dark"]) .sidebar-active-item {
+html:not([class~="dark"]) .hextra-sidebar-active-item {
   background-color: rgb(224, 227, 255) !important;
   color: rgb(0, 14, 163) !important;
 }
@@ -42,8 +42,8 @@ html:not([class~="dark"]) .sidebar-active-item {
 .btn-primary,
 .chroma .lntable,
 .content img,
-.hx-rounded-xl,
-.hx-rounded-3xl {
+.hx:rounded-xl,
+.hx:rounded-3xl {
   border-radius: 0rem;
 }
 
@@ -114,30 +114,36 @@ html[class~="dark"] .content p a,
 html[class~="dark"] article .content p a,
 html[class~="dark"] article .content div a:not(.hextra-feature-card) ,
 html[class~="dark"] article .content li a {
-  color: var(--blue-color);
-  text-decoration-style: dotted;
+  color: var(--blue-color) !important;
+  text-decoration-style: dotted !important;
+}
+
+/* Additional specificity for table links in dark mode */
+html[class~="dark"] article .content table a,
+html[class~="dark"] .content table a {
+  color: var(--blue-color) !important;
 }
 
 html[class~="dark"] button[data-state="selected"],
-html[class~="dark"] .sidebar-active-item {
+html[class~="dark"] .hextra-sidebar-active-item {
   color: var(--blue-color) !important;
 }
 
 article .content a:hover:not(.hextra-feature-card),
 article main h4 a:hover {
   color: var(--red-color) !important;
-  text-decoration-style: dotted;
+  text-decoration-style: dotted !important;
 }
 
 /* Don't change the style for an inline code within a link
 Mostly used in environment variables table */
 .content a:has(code){
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 /* Display an arrow at the end of the linked inline code */
-.content a:not(.code-block code) code::after {
+.content a:not(.hextra-code-block code) code::after {
   content: "\00a0↗";
     color: tomato;
     font-size: 1rem;
@@ -154,31 +160,43 @@ Mostly used in environment variables table */
       Tables
 --------------- */
 
-/* Table headers formatting */
-.content table:not(.code-block table) th {
-  border-right-width: 0px;
-  border-left-width: 0px;
-  border-top: none;
-  text-transform: uppercase;
-  color: rgba(115, 115, 142, 1);
+/* Table headers formatting - Higher specificity for Hextra v0.10 */
+body article .content table:not(.hextra-code-block table) th,
+body .content table:not(.hextra-code-block table) th,
+article .content table:not(.hextra-code-block table) th,
+.content table:not(.hextra-code-block table) th {
+  border-right-width: 0px !important;
+  border-left-width: 0px !important;
+  border-top: none !important;
+  text-transform: uppercase !important;
+  color: rgba(115, 115, 142, 1) !important;
 }
 
-/* Table headers formatting for dark mode */
-html[class~="dark"] .content table:not(.code-block table) th {
-  color: rgb(193, 193, 196);
+/* Table headers formatting for dark mode - Higher specificity for Hextra v0.10 */
+html[class~="dark"] body article .content table:not(.hextra-code-block table) th,
+html[class~="dark"] body .content table:not(.hextra-code-block table) th,
+html[class~="dark"] article .content table:not(.hextra-code-block table) th,
+html[class~="dark"] .content table:not(.hextra-code-block table) th {
+  color: rgb(193, 193, 196) !important;
 }
 
-/* Remove most of the borders */
-.content table:not(.code-block table) td {
-  margin: 0px;
-  border-width: 0px;
-  --tw-border-opacity: 0;
+/* Remove most of the borders - Higher specificity for Hextra v0.10 */
+body article .content table:not(.hextra-code-block table) td,
+body .content table:not(.hextra-code-block table) td,
+article .content table:not(.hextra-code-block table) td,
+.content table:not(.hextra-code-block table) td {
+  margin: 0px !important;
+  border-width: 0px !important;
+  --tw-border-opacity: 0 !important;
 }
 
-/* Text in cells */
-.content table:not(.code-block table) tr {
-  font-size: 0.9rem;
-  border-width: 0px;
+/* Text in cells - Higher specificity for Hextra v0.10 */
+body article .content table:not(.hextra-code-block table) tr,
+body .content table:not(.hextra-code-block table) tr,
+article .content table:not(.hextra-code-block table) tr,
+.content table:not(.hextra-code-block table) tr {
+  font-size: 0.9rem !important;
+  border-width: 0px !important;
 }
 
 /* ---------------------------------------
@@ -235,7 +253,38 @@ html[class~="dark"] .content table:not(.code-block table) th {
             Changelog
 ------------------------- */
 
-/* Entries listing--*/
-.hx-pl-5 {
-  padding-left: 1.25rem;
+/* Entries listing - Fixed CSS selectors for Hextra v0.10 */
+.hx\:pl-5,
+[class*="hx:pl-5"] {
+  padding-left: 1.25rem !important;
+}
+
+/* Ensure proper changelog layout - Fixed CSS selectors for Hextra v0.10 */
+.hx\:max-page-width,
+[class*="hx:max-page-width"],
+.hextra-max-page-width {
+  max-width: 80rem !important;
+}
+
+/* Changelog main content width - Fixed CSS selectors for Hextra v0.10 */
+article .hx\:max-w-6xl,
+article [class*="hx:max-w-6xl"] {
+  max-width: 72rem !important;
+}
+
+/* Changelog title and content alignment - Fixed CSS selectors for Hextra v0.10 */
+.content.hx\:text-center,
+.content[class*="hx:text-center"] {
+  text-align: center !important;
+}
+
+/* Changelog month headers - Fixed CSS selectors for Hextra v0.10 */
+h3.hx\:text-gray-500,
+h3[class*="hx:text-gray-500"] {
+  color: rgb(107 114 128) !important;
+}
+
+html[class~="dark"] h3.dark\:hx\:text-gray-300,
+html[class~="dark"] h3[class*="dark:hx:text-gray-300"] {
+  color: rgb(209 213 219) !important;
 }

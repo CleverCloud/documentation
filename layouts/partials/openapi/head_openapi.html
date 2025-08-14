@@ -21,9 +21,6 @@
   {{ template "_internal/schema.html" . -}}
   {{ template "_internal/twitter_cards.html" . -}}
 
-  {{ partialCached "head-css.html" . }}
-
-
   <!-- Google Analytics -->
   {{- if and .Site.Config.Services.GoogleAnalytics.ID (eq hugo.Environment "production") }}
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />

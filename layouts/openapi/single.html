@@ -1,8 +1,8 @@
 {{ define "main" }}
-  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+  <div class='hx:mx-auto hx:flex hx:max-page-width'>
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
-    <article class="w-full break-words flex ">
-      <main class="w-full">
+    <article class="hx:w-full hx:break-words hx:flex ">
+      <main class="hx:w-full">
         <div class="content">
           {{ .Content }}
         </div>
@@ -30,8 +30,8 @@
             });
           </script>
           <script defer>
-            /** 
-             * FIXME: 
+            /**
+             * FIXME:
              * This is a temporary solution to an issue caused by 3rd party scripts.
              * Once they fix the issue, we should remove this.
              *
@@ -42,7 +42,7 @@
               rapiDocElement.addEventListener('keydown', (event) => {
                 const formElementTagNames = ['INPUT', 'SELECT', 'TEXTAREA', 'BUTTON'];
                 const triggerElement = event.composedPath()[0];
-                
+
                 if (formElementTagNames.includes(triggerElement.tagName)) {
                   event.stopPropagation();
                 }

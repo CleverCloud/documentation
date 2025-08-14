@@ -11,59 +11,59 @@ aliases:
 ---
 <!-- markdownlint-disable MD033 MD034-->
 {{< hextra/hero-badge link="https://github.com/clevercloud/documentation">}}
-  <div class="hx-w-2 hx-h-2 hx-rounded-full hx-bg-primary-400"></div>
+  <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
   Contribute
   {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}}
 
-<div class="hx-mt-6 hx-mb-6">
+<div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
   Deploy and manage your apps
   on Clever Cloud
 {{< /hextra/hero-headline >}}
 </div>
 
-<div class="hx-mb-12">
+<div class="hx:mb-12">
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
   Documentation and guides to deploy,
   manage, and monitor your apps.
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="hx-mb-6">
-{{< hero-button-primary text="Quickstart" link="/developers/doc/quickstart" >}}
-{{< hero-button-secondary text="Explore" link="/developers/doc/" >}}
+<div class="hx:mb-6">
+<a href="/developers/doc/quickstart" class="btn-primary hx:font-medium hx:inline-flex hx:items-center hx:justify-center hx:px-6 hx:py-3 hx:text-base hx:font-semibold hx:text-white hx:border hx:border-transparent hx:rounded-md hx:shadow-sm">Quickstart</a>
+<a href="/developers/doc/" class="btn-secondary hx:font-medium hx:inline-flex hx:items-center hx:justify-center hx:px-6 hx:py-3 hx:text-base hx:font-semibold hx:border hx:border-gray-300 hx:rounded-md hx:shadow-sm hx:bg-gray-100 hx:text-gray-800">Explore</a>
 </div>
 
-<div class="hx-mt-6"></div>
+<div class="hx:mt-6"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
     title="Environment Variables"
     subtitle="Environment variables are a simple way of configuring your applications, their deployment and their behaviour."
     link="/developers/doc/reference/reference-environment-variables"
-    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     image="/images/icons.png"
-    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
+    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
+    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="API"
     subtitle="The Clever Cloud API reference."
     link="/developers/api"
-    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-lg:hx-min-h-[340px]"
     image="/images/metrics-home.png"
-    imageClass="hx-top-[40%] hx-left-[36px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
+    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
+    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="The CLI Clever Tools"
     subtitle="An official Command Line Interface for Clever Cloud."
     link="/developers/doc/cli"
-    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     image="/images/brand.png"
-    imageClass="hx-top-[40%] hx-left-[36px] hx-w-[110%] sm:hx-w-[110%] dark:hx-opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
+    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
+    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Steps by Steps Guides"

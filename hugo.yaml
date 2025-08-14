@@ -45,8 +45,16 @@ menu:
       weight: 2
     - identifier: api
       name: API
-      pageRef: /api/
       weight: 3
+    - name: "How to use"
+      parent: api
+      url: "/api/howto"
+    - name: "v2 endpoints"
+      parent: api
+      url: "/api/v2"
+    - name: "v4 endpoints"
+      parent: api
+      url: "/api/v4"
     - identifier: changelog
       name: Changelog
       pageRef: /changelog/

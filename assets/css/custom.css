@@ -18,6 +18,7 @@
   --blue-color: rgb(0, 172, 230);
   --purple-color: rgb(58, 56, 113);
   --dark-background-color: rgba(227, 210, 210, 0);
+  --hx-tracking-tighter: +0.005em;
 }
 
 h1, .content h1,

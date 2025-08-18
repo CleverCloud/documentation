@@ -44,7 +44,7 @@
     "color-theme" in localStorage ? localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme() : (defaultTheme === "dark" ? setDarkTheme() : setLightTheme(), defaultTheme === "system" && (window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme()))
 
     document.addEventListener('DOMContentLoaded', function () {;
-      const themeToggleButtons2 = document.querySelectorAll(".theme-toggle");
+      const themeToggleButtons2 = document.querySelectorAll(".hextra-theme-toggle");
       // Add click event handler to the buttons, and reload the page for the RAPIDOC documentation to update
       themeToggleButtons2.forEach((el) => {
         el.addEventListener("click", function () {

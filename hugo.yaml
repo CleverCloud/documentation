@@ -129,6 +129,7 @@ params:
       # date | lastmod | publishDate | title | weight
       sortBy: date
       sortOrder: desc # or "asc"
+      pagerSize: 20
 
     article:
       displayPagination: true
@@ -169,6 +170,8 @@ params:
   page:
     # full (100%), wide (90rem), normal (1280px)
     width: full
+    tabs:
+      sync: true
 
   search:
     enable: true

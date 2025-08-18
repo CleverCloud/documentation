@@ -42,8 +42,8 @@ html:not([class~="dark"]) .sidebar-active-item {
 .btn-primary,
 .chroma .lntable,
 .content img,
-.hx-rounded-xl,
-.hx-rounded-3xl {
+.hx\:rounded-xl,
+.hx\:rounded-3xl {
   border-radius: 0rem;
 }
 
@@ -181,6 +181,24 @@ html[class~="dark"] .content table:not(.code-block table) th {
   border-width: 0px;
 }
 
+/* Zebra striping for table rows */
+.content table:not(.code-block table) tbody tr:nth-child(even) {
+  background-color: rgb(243, 244, 246); /* Gray-100 */
+}
+
+.content table:not(.code-block table) tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+/* Dark mode zebra striping */
+html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(even) {
+  background-color: rgba(75, 85, 99, 0.2); /* Gray-600 with 20% opacity */
+}
+
+html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
 /* ---------------------------------------
           Animation for 404 page
 --------------------------------------- */
@@ -236,6 +254,6 @@ html[class~="dark"] .content table:not(.code-block table) th {
 ------------------------- */
 
 /* Entries listing--*/
-.hx-pl-5 {
+.hx\:pl-5 {
   padding-left: 1.25rem;
 }

@@ -15,4 +15,4 @@ description: New Auth solutions for your Rust applications
 excludeSearch: true
 ---
 
-[Rust SDK v0.13](https://github.com/CleverCloud/clevercloud-sdk-rust/releases/tag/v0.13.1) is available, uses Rust 1.85 and can now use [API tokens](/developers/api/howto/) or get credentials from [Clever Tools](https://github.com/CleverCloud/clever-tools/) configuration file if present in the system.
+[Rust SDK v0.13](https://github.com/CleverCloud/clevercloud-sdk-rust/releases/tag/v0.13.1) is available, uses Rust 1.85 and can now use [API tokens](/api/howto/) or get credentials from [Clever Tools](https://github.com/CleverCloud/clever-tools/) configuration file if present in the system.

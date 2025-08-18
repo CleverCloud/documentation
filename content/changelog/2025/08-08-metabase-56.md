@@ -19,7 +19,7 @@ The `x.56` branch of Metabase is now available on Clever Cloud. It brings [time 
 
 To update, set `CC_METABASE_VERSION` of the add-on's Java application to `0.56` for the community edition or `1.56` for the enterprise edition (EE). This new branch is not yet the default if you use `community-latest`, we'll move to it in the next few weeks.
 
-You can also use [the new Clever Tools commands](/developers/doc/cli/operators/), introduced in `3.13.0` release:
+You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators
@@ -30,4 +30,4 @@ clever metabase version update yourMetabaseNameOrId 0.56
 ```
 
 - [Learn more about Metabase 56](https://www.metabase.com/changelog/56)
-- [Learn more about Metabase on Clever Cloud](/developers/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)

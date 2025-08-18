@@ -17,4 +17,4 @@ excludeSearch: true
 
 The release `26.0.8` of Keycloak is available on Clever Cloud. [It fixes](https://github.com/keycloak/keycloak/releases/26.0.8) some bugs, but also security issues: [CVE-2024-11734](https://nvd.nist.gov/vuln/detail/CVE-2024-11734) and [CVE-2024-11736](https://nvd.nist.gov/vuln/detail/CVE-2024-11736). To update, just set `CC_KEYCLOAK_VERSION` of the add-on's Java application to `26.0.8` and rebuild it.
 
-- [Learn more about Keycloak on Clever Cloud](/developers/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)

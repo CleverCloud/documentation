@@ -31,8 +31,8 @@ A Network Group member domain name is composed this way: `<memberID>.m.<ngID>cc-
 When a resource is linked to a Network Group, you can reach it on any port inside this private network with its domain name. An application instance is a peer, you can reach through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
 
 - [Network Groups demo application](https://github.com/CleverCloud/network-groups-example)
-- [How to use Network Groups from Clever Tools](/developers/doc/cli/network-groups/)
-- [Keycloak and Otoroshi native support for Network Groups](/developers/api/v4/#network-groups)
+- [How to use Network Groups from Clever Tools](/doc/cli/network-groups/)
+- [Keycloak and Otoroshi native support for Network Groups](/api/v4/#network-groups)
 - [Tell us what you think of Network Groups and what features you need from it in](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
 
 ## Architecture

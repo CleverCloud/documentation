@@ -76,7 +76,7 @@ If you put the `.user.ini` file in a subdirectory; settings will be applied recu
 
 However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/developers/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/doc/develop/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
 
 Assuming the script runs at the root-folder of the application:
 
@@ -165,7 +165,7 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
  |3XL       | 1536M        |
  |4XL+      | 2048M        |
 
-To change this limit you can define `MEMORY_LIMIT` [environment variable](/developers/doc/reference/reference-environment-variables#php).
+To change this limit you can define `MEMORY_LIMIT` [environment variable](/doc/reference/reference-environment-variables#php).
 
 If you define a limit exceeding the application memory it will use the default one.
 
@@ -181,11 +181,11 @@ However, directives who applies to the entire application must be declared in a 
 
 ### htpasswd
 
-You can configure basic authentication using [environment variables](/developers/doc/reference/reference-environment-variables#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+You can configure basic authentication using [environment variables](/doc/reference/reference-environment-variables#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 ### Define a custom HTTP timeout
 
-You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/developers/doc/develop/env-variables).
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/doc/develop/env-variables).
 
 **By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
 
@@ -264,7 +264,7 @@ You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer 
 If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.
 {{< /callout >}}
 
-You can perform your own `composer.phar install` by using the [Post Build hook](/developers/doc/develop/build-hooks#post-build-cc_post_build_hook).
+You can perform your own `composer.phar install` by using the [Post Build hook](/doc/develop/build-hooks#post-build-cc_post_build_hook).
 
 Example of a `composer.json` file:
 
@@ -512,14 +512,14 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding [
 
     YAML is an extension providing a YAML-1.1 parser and emitter
 
-You can use `DISABLE_<extension_name>=true` in your [environment variables](/developers/doc/reference/reference-environment-variables/) to disable an extension.
+You can use `DISABLE_<extension_name>=true` in your [environment variables](/doc/reference/reference-environment-variables/) to disable an extension.
 
 ## Configure the session storage
 
-By default, an [FS Bucket](/developers/doc/addons/fs-bucket/) is created for each PHP applications, so that session data is available on each instance. This FS Bucket is also used to store TMP files by default. You can change this behavior by setting the `TMPDIR` environment variable. You can set it to `/tmp` for example.
+By default, an [FS Bucket](/doc/addons/fs-bucket/) is created for each PHP applications, so that session data is available on each instance. This FS Bucket is also used to store TMP files by default. You can change this behavior by setting the `TMPDIR` environment variable. You can set it to `/tmp` for example.
 
 > [!NOTE] FS Buckets are not available in HDS regions
-> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
+> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
 
 ### Speed up or disable the session FS Bucket
 
@@ -535,18 +535,18 @@ You can set the following environment variables:
 
 ### Use Redis to store PHP Sessions
 
-We provide the possibility to store the PHP sessions in a [Redis database](/developers/doc/addons/redis) to improve reliability.
+We provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis) to improve reliability.
 
 If your application is under heavy load, redis persistence for sessions can improve latency.
 
 To enable this feature, you need to:
 
-- enable Redis support on the application (create an [environment variable](/developers/doc/develop/env-variables) named `ENABLE_REDIS` with the value `true`.)
+- enable Redis support on the application (create an [environment variable](/doc/develop/env-variables) named `ENABLE_REDIS` with the value `true`.)
 - create and link a Redis add-on
 - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< callout type="warning" >}}
-You must have a [Redis](/developers/doc/addons/redis) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
+You must have a [Redis](/doc/addons/redis) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis. If no Redis add-on is linked with your application, the deployment will fail.
 {{< /callout >}}
 
 ## Sending emails
@@ -625,7 +625,7 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 
 {{% content "proxysql" %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page](/developers/guides/proxysql)
+You can learn more about ProxySQL on the [dedicated documentation page](/guides/proxysql)
 
 {{% content "more-config" %}}
 

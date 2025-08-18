@@ -45,8 +45,8 @@ To create a new Node.js & Bun application, use the [Clever Cloud Console](https:
 ```bash
 clever create --type node
 ```
-* [Learn more about Clever Tools](/developers/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/developers/doc/quickstart/#create-an-application-step-by-step)
+* [Learn more about Clever Tools](/doc/cli/)
+* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your Node.js & Bun application
 
@@ -88,7 +88,7 @@ or
 }
 ```
 
-You can use additional scripts as an alternative to [Clever Cloud hooks](/developers/doc/develop/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
+You can use additional scripts as an alternative to [Clever Cloud hooks](/doc/develop/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
 
 ```json
 {
@@ -119,7 +119,7 @@ If you need some modules you can easily add some with the *dependencies* field i
 }
 ```
 
-If your application has private dependencies, you can add a [private SSH key](/developers/doc/reference/common-configuration/#private-ssh-key).
+If your application has private dependencies, you can add a [private SSH key](/doc/reference/common-configuration/#private-ssh-key).
 
 - [Use private repositories](#use-private-repositories)
 - [Manage Development Dependencies](#development-dependencies)
@@ -140,7 +140,7 @@ Clever Cloud supports any package manager compatible with Node.js ecosystem. The
 
 ### What about Deno?
 
-Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/developers/doc/reference/reference-environment-variables#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
+Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/doc/reference/reference-environment-variables#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
 
 ```toml {filename="mise.toml"}
 [tools]
@@ -149,7 +149,7 @@ deno = "latest"
 
 Then it will be installed during deployment. You can replace `latest` with a specific version.
 
-* [Lume with Deno guide](/developers/guides/lume-deno/)
+* [Lume with Deno guide](/guides/lume-deno/)
 
 ### Automatic detection
 
@@ -252,7 +252,7 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 
 ## Automatic HTTPS redirection
 
-You can use the [X-Forwarded-Proto header](/developers/doc/find-help/faq#how-to-know-if-a-user-comes-from-a-secure-connection) to enable it.
+You can use the [X-Forwarded-Proto header](/doc/find-help/faq#how-to-know-if-a-user-comes-from-a-secure-connection) to enable it.
 
 If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
 

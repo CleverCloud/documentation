@@ -19,4 +19,4 @@ The release `26.2.2` of Keycloak is available on Clever Cloud. [It fixes](https:
 
 To update, just set `CC_KEYCLOAK_VERSION` of the add-on's Java application to `26.2.2` and rebuild it.
 
-- [Learn more about Keycloak on Clever Cloud](/developers/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)

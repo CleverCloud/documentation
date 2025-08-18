@@ -21,4 +21,4 @@ aliases:
 
 To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.1.1_1747324564` and rebuild it.
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/developers/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)

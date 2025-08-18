@@ -29,7 +29,7 @@ aliases:
 
 ## Overview
 
-Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/developers/doc/administrate/cache/).
+Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) or [Varnish](/doc/administrate/cache/).
 
 > [!NOTE] Static is a new runtime
 > Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
@@ -41,8 +41,8 @@ To create a new Static application, use the [Clever Cloud Console](https://conso
 ```bash
 clever create --type static
 ```
-* [Learn more about Clever Tools](/developers/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/developers/doc/quickstart/#create-an-application-step-by-step)
+* [Learn more about Clever Tools](/doc/cli/)
+* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your Static application
 
@@ -50,13 +50,13 @@ clever create --type static
 
 Static runtime only requires a working web application, with an `index.htm` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (for example `/public`, default is `/`).
 
-* [Learn more about environment variables on Clever Cloud](/developers/doc/reference/reference-environment-variables/)
+* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### Build phase
 
 During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided. You can use it to install dependencies, build your static website, or any other task you need to perform before running your application. If no `CC_BUILD_COMMAND` is provided, Clever Cloud will try to detect your Static Site Generator (SSG), build and deploy your website automatically.
 
-- [Learn more about Deployment hooks](/developers/doc/develop/build-hooks/)
+- [Learn more about Deployment hooks](/doc/develop/build-hooks/)
 - [Learn more about Static Site Generators (SSGs) Auto-build](#static-site-generators-ssg-auto-build)
 
 ### Optimized build cache

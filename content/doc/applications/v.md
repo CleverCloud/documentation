@@ -26,8 +26,8 @@ To create a new V (Vlang) application, use the [Clever Cloud Console](https://co
 ```bash
 clever create --type v
 ```
-* [Learn more about Clever Tools](/developers/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/developers/doc/quickstart/#create-an-application-step-by-step)
+* [Learn more about Clever Tools](/doc/cli/)
+* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your V (Vlang) application
 
@@ -35,7 +35,7 @@ clever create --type v
 
 V (Vlang) runtime only requires a working application listening on `0.0.0.0:8080`.
 
-* [Learn more about environment variables on Clever Cloud](/developers/doc/reference/reference-environment-variables/)
+* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### Build phase
 
@@ -49,14 +49,14 @@ The currently deployed version of V (Vlang) on Clever Cloud is `0.4.11`.
 
 ## V scripts (.vsh), Clever Tasks
 
-V (Vlang) can be used to execute [shell scripts (.vsh)](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v). On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/developers/doc/cli/applications/#tasks):
+V (Vlang) can be used to execute [shell scripts (.vsh)](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v). On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/cli/applications/#tasks):
 
 ```bash
 clever create --type v --task "./your-script.vsh --and arguments"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/developers/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/develop/tasks/)
 
 {{% content "redirectionio" %}}
 {{% content "varnish" %}}

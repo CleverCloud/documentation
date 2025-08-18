@@ -29,4 +29,4 @@ We updated all our images. Deployment is in progress for all our users.
 * **Rust:**
   * Update to 1.89.0
 
-In the [Bun & Node.js runtime](/developers/doc/applications/nodejs), you can now set `CC_NODE_BUILD_TOOL` to `pnpm` or `yarn-berry`.
+In the [Bun & Node.js runtime](/doc/applications/nodejs), you can now set `CC_NODE_BUILD_TOOL` to `pnpm` or `yarn-berry`.

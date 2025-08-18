@@ -20,8 +20,8 @@ aliases:
 
 Clever Cloud supports deploying both [fully static and on-demand rendered](https://nuxt.com/docs/guide/concepts/rendering) Nuxt 4 projects:
 
-- The `static` rendering mode is ideal for most content-oriented websites where you don't need per-visitor server-side customization. Consider using a [Static runtime](/developers/doc/applications/static/) when using this mode, with the automatic site generation. Learn more about [static hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#static-hosting).
-- The `server` or `hybrid` rendering modes are optimal for dynamic applications requiring server-side customization or a mix of static and server-rendered pages. For these modes, consider using a [Node.js runtime](/developers/doc/applications/nodejs). Learn more about [Node.js hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#nodejs-server).
+- The `static` rendering mode is ideal for most content-oriented websites where you don't need per-visitor server-side customization. Consider using a [Static runtime](/doc/applications/static/) when using this mode, with the automatic site generation. Learn more about [static hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#static-hosting).
+- The `server` or `hybrid` rendering modes are optimal for dynamic applications requiring server-side customization or a mix of static and server-rendered pages. For these modes, consider using a [Node.js runtime](/doc/applications/nodejs). Learn more about [Node.js hosting with Nuxt](https://nuxt.com/docs/getting-started/deployment#nodejs-server).
 
 If you need an example source code compatible with Nuxt static generation, get [Nuxt Boilerplate](https://github.com/renegadevi/nuxt-boilerplate) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 
@@ -33,7 +33,7 @@ git clone https://github.com/renegadevi/nuxt-boilerplate myStaticApp
 
 ### Automatic build
 
-Nuxt is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime. Then, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
+Nuxt is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime. Then, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
 
 ```bash
 clever scale --flavor pico

@@ -24,7 +24,7 @@ If you're using [warp](https://hackage.haskell.org/package/warp), you can use `w
 
 ### Configure logs for your Haskell application
 
-You need the following packages in your [dependencies](/developers/doc/applications/haskell#dependencies):
+You need the following packages in your [dependencies](/doc/applications/haskell#dependencies):
 
 * ekg-core
 * ekg-statsd

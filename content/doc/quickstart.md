@@ -75,7 +75,7 @@ An application is defined on Clever Cloud by the following elements:
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
 > [!NOTE]
-> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/developers/doc/addons/fs-bucket/)), object storage ([Cellar](/developers/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/developers/doc/addons/).
+> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
 
 ### How it Works
 
@@ -137,7 +137,7 @@ Choose the language or the framework you want to deploy.
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
-- [Learn more about scaling & instances size](/developers/doc/administrate/scalability)
+- [Learn more about scaling & instances size](/doc/administrate/scalability)
 
 #### Name your application
 
@@ -145,8 +145,8 @@ Enter the name and the description of your application.
 
 #### Optional steps
 
-* The wizard will offer you to [add an add-on](/developers/doc/addons) to your application
-* The wizard will offer you to [add environment variables](/developers/doc/develop/env-variables) to your application
+* The wizard will offer you to [add an add-on](/doc/addons) to your application
+* The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
 
 {{% /steps %}}
 
@@ -156,7 +156,7 @@ Enter the name and the description of your application.
   {{< tab >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/developers/doc/reference/reference-environment-variables/).
+  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
 
   Follow these steps to deploy your application:
 
@@ -205,7 +205,7 @@ git push <remote-name> <branch-name>:master
 
   To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
 
-  Deploy your application via FTP, create a [FS Bucket](/developers/doc/addons/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+  Deploy your application via FTP, create a [FS Bucket](/doc/addons/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
   [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
@@ -226,7 +226,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 **Add your SSH key to your profile here:**
 <https://console.clever-cloud.com/users/me/ssh-keys>
 
-The full tutorial about adding SSH key is here: [adding SSH keys](/developers/doc/account/ssh-keys-management/)
+The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys-management/)
 
 {{% /details %}}
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
@@ -279,7 +279,7 @@ Applications often requires one or more services in addition to the runtime itse
 
 An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
 
-Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/developers/api))
+Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/api))
 
 #### Available add-ons
 
@@ -329,7 +329,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/developers/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 
@@ -352,7 +352,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 There are two kinds of billing:
 
 * Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket](/developers/doc/addons/fs-bucket) and [Cellar](/developers/doc/addons/cellar)
+* Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
 
 {{< callout type="warning" >}}
 **Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.

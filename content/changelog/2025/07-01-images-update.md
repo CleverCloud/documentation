@@ -48,7 +48,7 @@ These runtimes are in early access, let us know what you think about it, [your s
 `uv` native support is still preliminary, let us know what you think about it, [your suggestions and feedback are welcome](https://github.com/CleverCloud/Community/discussions/67).
 
 - [Learn more about uv](https://docs.astral.sh/uv/)
-- [Learn more about Python on Clever Cloud](/developers/doc/applications/python)
+- [Learn more about Python on Clever Cloud](/doc/applications/python)
 - [A ready to deploy Python with uv application](https://github.com/CleverCloud/python-fastapi-uv-example)
 
 ## Other changes
@@ -56,5 +56,5 @@ These runtimes are in early access, let us know what you think about it, [your s
 - `CC_GIT_FULL_CLONE=false` enables shallow cloning (`--depth 1`), it will become the default in some weeks
 - `CC_VARNISH_FILE` allows to set a custom location for `varnish.vcl`, relative to your application (for example `/varnish.vcl`)
 - Port auto-configuration for `frankenphp` and `static` when a Varnish file is present or set with `CC_VARNISH_FILE`
-- Port auto-configuration for `frankenphp` and `static` when [Redirection.io is enabled](/developers/doc/reference/reference-environment-variables/#redirectionio-support)
+- Port auto-configuration for `frankenphp` and `static` when [Redirection.io is enabled](/doc/reference/reference-environment-variables/#redirectionio-support)
 - You can now disable Mise package manager by setting `CC_DISABLE_MISE` to `true`

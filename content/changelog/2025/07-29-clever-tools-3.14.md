@@ -28,7 +28,7 @@ npm exec -- clever-tools@3.14 profile --format json
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/developers/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
 ```
 npm update -g clever-tools

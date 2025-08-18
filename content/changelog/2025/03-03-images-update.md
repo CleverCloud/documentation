@@ -26,7 +26,7 @@ We deployed and updated all our images, except Docker, Go, Java, Node and Ruby, 
 * **PHP:**
   * Update to 8.4.4
   * Composer 2.8.6
-  * `CC_APACHE_HEADERS_SIZE` [environment variable](/developers/doc/reference/reference-environment-variables/)
+  * `CC_APACHE_HEADERS_SIZE` [environment variable](/doc/reference/reference-environment-variables/)
 * **Python:**
   * Update to 3.13.2
   * pip 24.3.1
@@ -34,4 +34,4 @@ We deployed and updated all our images, except Docker, Go, Java, Node and Ruby, 
 * **Rust:**
   * Update to 1.85.0
 
-All these images include [Mise and Redirection.io easy setup](/developers/changelog/2025/01-15-node-22-lts-image-update/).
+All these images include [Mise and Redirection.io easy setup](/changelog/2025/01-15-node-22-lts-image-update/).

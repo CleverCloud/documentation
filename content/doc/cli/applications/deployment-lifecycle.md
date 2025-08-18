@@ -45,7 +45,7 @@ It will `git push` your code on the remote repository of your application on Cle
 ```
 
 > [!TIP]
-> You can cancel a deployment with `clever cancel-deploy` command. You can also [configure an application](/developers/doc/cli/applications/configuration/#config) so that a new deployment cancels the current one.
+> You can cancel a deployment with `clever cancel-deploy` command. You can also [configure an application](/doc/cli/applications/configuration/#config) so that a new deployment cancels the current one.
 
 ## console | open
 

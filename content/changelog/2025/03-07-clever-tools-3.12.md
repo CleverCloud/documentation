@@ -38,7 +38,7 @@ Once created, API tokens must be used through the bridge URL:
 ```bash
 curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_TOKEN]"
 ```
-- [Clever Cloud API Documentation](/developers/api)
+- [Clever Cloud API Documentation](/api)
 - [Give your feedback about API Tokens](https://github.com/CleverCloud/Community/discussions/categories/api-tokens)
 
 ## Network Groups
@@ -93,11 +93,11 @@ curl -XDELETE -H "Authorization: Bearer [API_TOKEN]" \
 
 As this beta feature evolves, we'll add demos, documentations and videos to help you to fully take advantage of Network Groups.
 
-- [Learn more about Network Groups](/developers/doc/develop/network-groups/)
+- [Learn more about Network Groups](/doc/develop/network-groups/)
 - [Give your feedback about Network Groups](https://github.com/CleverCloud/Community/discussions/categories/network-groups)
 
 ## How to upgrade
-To upgrade Clever Tools, [use your favorite package manager](/developers/doc/cli/install). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
 
 ```
 npm update -g clever-tools

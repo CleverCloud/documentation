@@ -42,4 +42,4 @@ For years, you can deploy applications on Clever Cloud as a `Task` with the API 
 }
 ```
 
-- [Read the full APIv2 documentation](/developers/api/v2)
+- [Read the full APIv2 documentation](/api/v2)

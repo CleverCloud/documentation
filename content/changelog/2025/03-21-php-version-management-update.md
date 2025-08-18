@@ -20,5 +20,5 @@ Starting april 30th, the default minor PHP version for branch `8` will move from
 clever env set CC_PHP_VERSION 8.3 --app <your-app-id>
 ```
 
-* [Learn more about PHP on Clever Cloud](/developers/doc/applications/php/)
-* [Learn more about environment variables on Clever Cloud](/developers/doc/reference/reference-environment-variables/)
+* [Learn more about PHP on Clever Cloud](/doc/applications/php/)
+* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)

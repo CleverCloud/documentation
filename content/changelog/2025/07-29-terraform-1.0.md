@@ -15,6 +15,6 @@ authors:
 excludeSearch: true
 ---
 
-The [1.0.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.0.0) of the Clever Cloud Terraform provider is available. It fixes some bugs, supports [Rust runtime](/developers/doc/applications/rust/) and uses real ID instead of add-on ID for add-ons.
+The [1.0.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.0.0) of the Clever Cloud Terraform provider is available. It fixes some bugs, supports [Rust runtime](/doc/applications/rust/) and uses real ID instead of add-on ID for add-ons.
 
 * Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

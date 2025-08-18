@@ -36,7 +36,7 @@ Be sure that:
 
 ### Tutorial and sample app
 
-- [An hello world tutorial of a Ruby and Rack application](/developers/guides/ruby-rack-app-tutorial)
+- [An hello world tutorial of a Ruby and Rack application](/guides/ruby-rack-app-tutorial)
 
  {{% content "new-relic" %}}
 

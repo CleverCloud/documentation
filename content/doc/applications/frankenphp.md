@@ -32,8 +32,8 @@ To create a new FrankenPHP application, use the [Clever Cloud Console](https://c
 ```bash
 clever create --type frankenphp
 ```
-* [Learn more about Clever Tools](/developers/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/developers/doc/quickstart/#create-an-application-step-by-step)
+* [Learn more about Clever Tools](/doc/cli/)
+* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 > [!NOTE] FrankenPHP applications can't be deployed on a pico instance, XS is the default instance type
 
@@ -43,7 +43,7 @@ clever create --type frankenphp
 
 FrankenPHP runtime only requires a working web application, with an `index.php` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (default: `/`).
 
-* [Learn more about environment variables on Clever Cloud](/developers/doc/reference/reference-environment-variables/)
+* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### FrankenPHP version and tools
 
@@ -70,7 +70,7 @@ Materia KV is Clever Cloud's distributed serverless key-value store based on Fou
 
 To manage Materia KV data with FrankenPHP, use the included `redis` extension in your PHP code and configure it with your add-on URL, port and token as password. For now, you need to use the `tcp` mode and `6378` port.
 
-- [Learn more about Materia KV](/developers/doc/addons/materia-kv)
+- [Learn more about Materia KV](/doc/addons/materia-kv)
 - [Materia KV and FrankenPHP demo](https://github.com/CleverCloud/frankenphp-kv-json-example)
 
 ### Worker mode
@@ -83,7 +83,7 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 
 ## Configurable port
 
-By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) for example.
+By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) for example.
 
 ## Custom FrankenPHP run command
 
@@ -93,14 +93,14 @@ You can also use this to load [a custom Caddyfile](https://frankenphp.dev/docs/c
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 
-FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/developers/doc/cli/applications/#tasks):
+FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/cli/applications/#tasks):
 
 ```bash
 clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/developers/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/develop/tasks/)
 
 ## Included extensions
 

@@ -46,7 +46,7 @@ In most cases you won't need to change anything to your application, except host
 
 ### Complementary runtime
 
-If you need a runtime environment such as [Node.js](/developers/doc/applications/nodejs) or tools to build a frontend for example, some are available in our Go instances. You can use them through scripts launched by [deployments hooks](/developers/doc/develop/build-hooks) and [Environment variables](/developers/doc/reference/reference-environment-variables) sometimes allow you to configure them. So if you need a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `20` or `21.5.0`).
+If you need a runtime environment such as [Node.js](/doc/applications/nodejs) or tools to build a frontend for example, some are available in our Go instances. You can use them through scripts launched by [deployments hooks](/doc/develop/build-hooks) and [Environment variables](/doc/reference/reference-environment-variables) sometimes allow you to configure them. So if you need a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `20` or `21.5.0`).
 
 ### Modern Go project structure
 
@@ -155,4 +155,4 @@ To access environment variables from your code, just get them from the environme
 
 ## See also
 
-* [Deploy EchoIP guide](/developers/guides/go-echoip/)
+* [Deploy EchoIP guide](/guides/go-echoip/)

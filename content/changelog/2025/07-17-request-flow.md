@@ -12,7 +12,7 @@ description: Ease your reverse proxy configuration more and more
 excludeSearch: true
 ---
 
-Clever Cloud exists to ease developers' life. For many years, you can use [Varnish in front of your application](/developers/doc/administrate/cache/) just by adding a `varnish.vcl` file in your repository. For some months, you can also use [Redirection.io](/developers/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) as a reverse proxy to handle redirects, rewrites, and more. In our latest release, we've gone a step further with Request Flow, available in new runtimes first :
+Clever Cloud exists to ease developers' life. For many years, you can use [Varnish in front of your application](/doc/administrate/cache/) just by adding a `varnish.vcl` file in your repository. For some months, you can also use [Redirection.io](/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) as a reverse proxy to handle redirects, rewrites, and more. In our latest release, we've gone a step further with Request Flow, available in new runtimes first :
 
 - `frankenphp`
 - `linux`

@@ -32,4 +32,4 @@ The Redirection.io agent will start as a service, listen to `8080` port and forw
 
 These environment variables will progressively be available on all our compatible images.
 
-- [Clever Cloud Environment Variables Reference](/developers/doc/reference/reference-environment-variables/)
+- [Clever Cloud Environment Variables Reference](/doc/reference/reference-environment-variables/)

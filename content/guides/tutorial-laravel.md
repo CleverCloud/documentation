@@ -24,9 +24,9 @@ aliases:
 
 Deploying a Laravel application on Clever Cloud requires:
 
-- [PHP application](/developers/doc/applications/php)
-- A database add-on: ([MySQL](/developers/doc/addons/mysql) or [PostgreSQL](/developers/doc/addons/postgresql))
-- An [FS Bucket](/developers/doc/addons/fs-bucket) for persistent storage.
+- [PHP application](/doc/applications/php)
+- A database add-on: ([MySQL](/doc/addons/mysql) or [PostgreSQL](/doc/addons/postgresql))
+- An [FS Bucket](/doc/addons/fs-bucket) for persistent storage.
 
 The following sections explain how to set up each instance step by step:
 
@@ -36,7 +36,7 @@ The following sections explain how to set up each instance step by step:
 
 ### Create a PHP application
 
-From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/developers/doc/quickstart/#choose-how-to-deploy).
+From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/doc/quickstart/#choose-how-to-deploy).
 
 ### Add `DocumentRoot` variable
 
@@ -68,7 +68,7 @@ Make sure `config/logging.php` contains the following line:
   'default' => env('LOG_CHANNEL', 'stack'),
 ```
 
-In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This allows you to read your application logs directly from the console or the [CLI](/developers/doc/cli) tool.
+In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This allows you to read your application logs directly from the console or the [CLI](/doc/cli) tool.
 
 ### Optional: configure the front-end build
 

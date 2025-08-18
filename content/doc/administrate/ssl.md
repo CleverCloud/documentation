@@ -28,7 +28,7 @@ Clever Cloud automatically generates and renews TLS certificates for your domain
 1. Add your domain to the application:
    - Use the Console or
    - Use clever-tools
-2. [Configure your DNS records](/developers/doc/administrate/domain-names) to point to Clever Cloud's load balancers
+2. [Configure your DNS records](/doc/administrate/domain-names) to point to Clever Cloud's load balancers
 
 {{< callout type="info" >}}
   Note: Certificate generation attempts occur **only during the first 3 days** after adding a domain. To restart this window, remove and re-add the domain to your application.
@@ -67,7 +67,7 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
 ![HTTPS set up on Cloudflare](/images/cloudflare-https-setting.png "Turn off automatic HTTPS redirection")
 
- You can enable [Force HTTPS](/developers/doc/administrate/apps-management#edit-application-configuration) in the information tab of your Clever Cloud application instead.
+ You can enable [Force HTTPS](/doc/administrate/apps-management#edit-application-configuration) in the information tab of your Clever Cloud application instead.
 
 {{< callout emoji="💡" >}}
 **If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below:

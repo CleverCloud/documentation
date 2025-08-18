@@ -25,5 +25,5 @@ LLM plugin includes a better models management, compatible with OVHcloud AI endp
 
 - [Learn more about Biscuit](https://doc.biscuitsec.org/home)
 - [Learn more about Otoroshi Biscuit Studio](https://cloud-apim.github.io/otoroshi-biscuit-studio/docs/overview)
-- [Learn more about Otoroshi with LLM on Clever Cloud](/developers/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
 - [Otoroshi LLM on Clever Cloud video streams](https://www.youtube.com/@Clevercloud-platform/search?query=Otoroshi)

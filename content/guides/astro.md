@@ -22,8 +22,8 @@ aliases:
 ## Overview
 
 Clever Cloud supports deploying both [fully static and on-demand rendered](https://docs.astro.build/en/basics/rendering-modes/) Astro projects:
-- The `static` output mode is ideal for most content-oriented website, for which you have no need for per-visitor server-side customization. Consider using a [Static runtime](/developers/doc/applications/static/) when using this output mode, with the automatic site generation.
--  The `server` or `hybrid` output modes: consider using a [Node.js runtime](/developers/doc/applications/nodejs) with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
+- The `static` output mode is ideal for most content-oriented website, for which you have no need for per-visitor server-side customization. Consider using a [Static runtime](/doc/applications/static/) when using this output mode, with the automatic site generation.
+-  The `server` or `hybrid` output modes: consider using a [Node.js runtime](/doc/applications/nodejs) with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
 
 If you need an example source code, get [Astrowind](https://github.com/onwidget/astrowind) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 ```bash
@@ -60,7 +60,7 @@ If you're deploying from **GitHub**, your deployment should start automatically.
 
 ### Automatic build
 
-Astro is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
+Astro is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
 
 ```bash
 clever scale --flavor pico
@@ -103,7 +103,7 @@ Depending on your package manager, use the following environment variables:
 {{< /tabs >}}
 
 > [!TIP]
-> You can also use `package.json` scripts [to define commands to run](/developers/doc/applications/nodejs/#about-packagejson  ) during the build and start phases.
+> You can also use `package.json` scripts [to define commands to run](/doc/applications/nodejs/#about-packagejson  ) during the build and start phases.
 
 ### Port and host
 

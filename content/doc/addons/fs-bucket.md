@@ -35,7 +35,7 @@ FS Buckets are provided for application needing file-system backward compatibili
 - Clever Cloud provides automated backups every 24 hours, with only 72 hours of retention for FS Buckets (7 days for databases)
 
 > [!NOTE] PHP applications includes a default FS Bucket for session storage
-> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
+> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
 
 ## Configuring your application
 
@@ -119,7 +119,7 @@ Your bucket is mounted at the configured path, starting from your application's
 root folder.
 
 If you want to use an absolute path, you can use the `APP_HOME` environment
-variable, see [special environment variables](/developers/doc/develop/env-variables#special-environment-variables)
+variable, see [special environment variables](/doc/develop/env-variables#special-environment-variables)
 
 ### From the add-on dashboard
 

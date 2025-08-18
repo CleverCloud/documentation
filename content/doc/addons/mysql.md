@@ -54,13 +54,13 @@ This action will add new environment variables to reach the add-on without any p
 
 ## Encryption at rest
 
-Encryption at rest is available on MySQL. You can have more information on the [dedicated page](/developers/doc/administrate/encryption-at-rest).
+Encryption at rest is available on MySQL. You can have more information on the [dedicated page](/doc/administrate/encryption-at-rest).
 
 ## ProxySQL
 
 {{% content "proxysql" %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page](/developers/guides/proxysql)
+You can learn more about ProxySQL on the [dedicated documentation page](/guides/proxysql)
 
 ## Plans
 

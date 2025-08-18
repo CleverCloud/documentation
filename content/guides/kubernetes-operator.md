@@ -85,7 +85,7 @@ Before you begin, ensure that you have the following tools and resources based o
 
 - **Kubernetes Cluster:** Ensure you have access to a running Kubernetes cluster.
 - **Kubectl:** Install Kubernetes command-line tool for managing cluster resources Installation guide available at https://kubernetes.io/docs/tasks/tools/.
-- **Clever Cloud Account Credentials:** [Obtain API tokens and secrets from your Clever Cloud](/developers/api/howto) account to configure the operator.
+- **Clever Cloud Account Credentials:** [Obtain API tokens and secrets from your Clever Cloud](/api/howto) account to configure the operator.
 
 These prerequisites are essential for getting started with the Clever Kubernetes Operator, whether you're contributing to its development or deploying it in production.
 
@@ -102,7 +102,7 @@ This is the most complete authentication method, requiring all four OAuth1 param
 - _Token_
 - _Secret_
 
-To obtain these credentials, you need to connect to the Clever Cloud API, which uses OAuth1-based authentication. As explained in the [Clever Cloud API Overview](/developers/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and complete the OAuth authentication process to get the _Token_ and _Secret_.
+To obtain these credentials, you need to connect to the Clever Cloud API, which uses OAuth1-based authentication. As explained in the [Clever Cloud API Overview](/api/howto), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and complete the OAuth authentication process to get the _Token_ and _Secret_.
 
 Configuration example:
 

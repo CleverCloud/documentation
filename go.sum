@@ -1,2 +1,6 @@
+github.com/hugomods/swagger-ui v0.2.0 h1:1X2g+g5y+KN2HJQCMggxIFLJA11vrKIAozkSe2xM5cc=
+github.com/hugomods/swagger-ui v0.2.0/go.mod h1:Q6Y/tRLuBUKlaUMG0clksot1kh0/g2auVidw45AUvQQ=
 github.com/imfing/hextra v0.10.2 h1:etVtBSHH3V4xYZ2uqlh7HWZitdaZLWG+sCoGtFqyAEk=
 github.com/imfing/hextra v0.10.2/go.mod h1:cEfel3lU/bSx7lTE/+uuR4GJaphyOyiwNR3PTqFTXpI=
+github.com/swagger-api/swagger-ui v5.27.1+incompatible h1:le8x20t5unM6jhaQYNTiXd4wqi9CItDCGV4ok3DWqMc=
+github.com/swagger-api/swagger-ui v5.27.1+incompatible/go.mod h1:2BrmZAt3ELMzcg/T43oDWQI2wmltgIo6fQoIcmncb9o=

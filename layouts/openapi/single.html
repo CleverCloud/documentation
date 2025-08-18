@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
     <article class="w-full break-words flex ">
       <main class="w-full">

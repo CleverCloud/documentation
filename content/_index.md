@@ -5,7 +5,7 @@ description: Documentation and guides to deploy, manage, and monitor your servic
 layout: hextra-home
 disableSidebar: false
 type: default
-width: normal
+width: wide
 aliases:
 - /doc/developer
 ---

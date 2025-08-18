@@ -35,7 +35,9 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
+          DART_SASS_VERSION: 1.90.0
           GH_CC_HUGO_VERSION: 0.148
+          GH_CC_PRE_BUILD_HOOK: "./install-dart-sass.sh"
           GH_CC_STATIC_AUTOBUILD_OUTDIR: public/developers
           GH_CC_WEBROOT: public
           GH_SERVER_ERROR_PAGE_404: developers/404.html

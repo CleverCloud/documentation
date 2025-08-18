@@ -49,7 +49,7 @@ You can declare a `METEOR_SETTINGS` environment variable and past the content of
 
 ## Specify required Node.js version
 
-Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](/developers/doc/applications/nodejs/#requirements) documentation.
+Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](/doc/applications/nodejs/#requirements) documentation.
 To find out which version is required by your application type the following command `meteor node -v` inside root folder.
 
 Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.
@@ -66,7 +66,7 @@ You may change the node version value according to the application requirements.
 
 ### Activate the dedicated build
 
-Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature](/developers/doc/administrate/apps-management/#edit-application-configuration) and set your vertical scaling size at least to **M**.
+Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature](/doc/administrate/apps-management/#edit-application-configuration) and set your vertical scaling size at least to **M**.
 
 If your build still fails after you enabled the feature, please contact us on the support so we can set you a bigger scaler.
 

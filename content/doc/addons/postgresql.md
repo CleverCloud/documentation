@@ -64,7 +64,7 @@ Such a limitation doesn't exist when using proxy access.
 
 ## Encryption at rest
 
-Encryption at rest is available on PostgreSQL. You can find more information on the [dedicated page](/developers/doc/administrate/encryption-at-rest)
+Encryption at rest is available on PostgreSQL. You can find more information on the [dedicated page](/doc/administrate/encryption-at-rest)
 
 ## Note on shared databases
 
@@ -76,7 +76,7 @@ This referencing does not exist for dedicated databases.
 
 {{% content "pgpool" %}}
 
-You can learn more about Pgpool-II on the [dedicated documentation page](/developers/guides/pgpool)
+You can learn more about Pgpool-II on the [dedicated documentation page](/guides/pgpool)
 
 ## Default extensions
 

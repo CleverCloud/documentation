@@ -26,7 +26,7 @@ These are read-only variables that are generated for each scaler before they bui
 
 |  Name  | Description | Example value |
 |-----------------------|------------------------------|--------------------------------|
-|[`INSTANCE_NUMBER`](/developers/doc/develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
+|[`INSTANCE_NUMBER`](/doc/develop/env-variables/#what-is-the-instance_number-variable-used-for "What is the INSTANCE_NUMBER variable used for?") | Allows your application to differentiate each running node on the application level. | 0, 1… |
 |`INSTANCE_TYPE` | Whether this instance is a "build" instance or a "production" instance. | build, production |
 |`INSTANCE_ID` | The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it. | 518c8d8f-e304-4310-81e0-9c4237d55645 |
 |`CC_PRETTY_INSTANCE_NAME` | The random generated string as instance pretty name using pokemon names. | Tiny rhyhorn |
@@ -50,12 +50,12 @@ So you can alter the build&start process for your application.
 |`CC_GIT_FULL_CLONE` | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment | true |
 |`CC_DISABLE_GIT_SUBMODULES` | Disable Git submodules initialization & synchronization | |
 |`CC_PREVENT_LOGSCOLLECTION` | Disable Vector service used to collect and send logs | `false`|
-|[`CC_HEALTH_CHECK_PATH`](/developers/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
+|[`CC_HEALTH_CHECK_PATH`](/doc/develop/healthcheck) | Custom path to validate your application deployment |  |
 |`CC_SSH_PRIVATE_KEY` | A ssh private key to setup for the user running your application |  |
 |`CC_SSH_PRIVATE_KEY_FILE` | The name to use for the file containing the private ssh key | id_ed25519 |
 |`CC_WORKER_RESTART` | One of `always`, `on-failure` or `no`. Control whether workers need to be restarted when they exit. This setting controls all workers. | on-failure |
 |`CC_WORKER_RESTART_DELAY` | Define a delay in seconds to restart the worker when they exit. | 1 |
-|[`CC_WORKER_COMMAND`](/developers/doc/develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_WORKER_COMMAND`](/doc/develop/workers) | Command to run in background as a worker process. You can run multiple workers. |  |
 
 You can set some tools' version in any runtime (except Docker):
 
@@ -69,10 +69,10 @@ You can set some tools' version in any runtime (except Docker):
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`CC_CACHE_DEPENDENCIES` | Enable caching of your build dependencies to speed up following builds. | false |
-|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
-|[`CC_IGNORE_FROM_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`IGNORE_FROM_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
-|[`CC_OVERRIDE_BUILDCACHE`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
+|[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Disable creation and upload of cache archive. Restarts won't be speeded up. | `false` |
+|[`CC_IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`IGNORE_FROM_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | (Deprecated) Allows to specify paths to ignore when the build cache archive is created. |  |
+|[`CC_OVERRIDE_BUILDCACHE`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables "Settings you can define using environment variables") | Allows to specify paths that will be in the build cache. Only those files / directories will be cached |  |
 
 #### Control the deployment's behavior
 
@@ -80,39 +80,39 @@ You can set some tools' version in any runtime (except Docker):
 |-----------------------|------------------------------|--------------------------------|
 |`CC_RUN_COMMAND` | Custom command to run your application. |  |
 |`CC_TASK` | If set to true, the deployer runs `CC_RUN_COMMAND` and terminates the instance after running the task. Trigger an execution using `git push` or starting your instance  | false |
-|[`CC_TROUBLESHOOT`](/developers/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
+|[`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit. | false |
 
 {{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/developers/doc/applications/docker/#dockerized-rust-application-deployment).
+  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/applications/docker/#dockerized-rust-application-deployment).
 {{< /callout >}}
 
 #### Deployment hooks
 
-Use these to define [commands to run](/developers/doc/develop/build-hooks) between various steps of the deployment.
+Use these to define [commands to run](/doc/develop/build-hooks) between various steps of the deployment.
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_PRE_BUILD_HOOK`](/developers/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
-|[`CC_POST_BUILD_HOOK`](/developers/doc/develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
-|[`CC_PRE_RUN_HOOK`](/developers/doc/develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
-|[`CC_RUN_FAILED_HOOK`](/developers/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
-|[`CC_RUN_SUCCEEDED_HOOK`](/developers/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
+|[`CC_PRE_BUILD_HOOK`](/doc/develop/build-hooks/#pre-build "Pre build hook") | Ran before the dependencies are fetched. If it fails, the deployment fails. |
+|[`CC_POST_BUILD_HOOK`](/doc/develop/build-hooks/#post-build "Post build hook") | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails. |
+|[`CC_PRE_RUN_HOOK`](/doc/develop/build-hooks/#pre-run "Pre run hook") | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
+|[`CC_RUN_FAILED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook") | Ran once the application has failed to start. |
+|[`CC_RUN_SUCCEEDED_HOOK`](/doc/develop/build-hooks/#run-successfail "Run succeeded/failed hook" )| Ran once the application has started successfuly. |
 
 #### Configure extra software
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_CLAMAV`](/developers/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
-|[`CC_CLAMAV_MAXQUEUE`](/developers/doc/administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
-|[`CC_CLAMAV_MAXTHREADS`](/developers/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
-|[`CC_METRICS_PROMETHEUS_PASSWORD`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
-|[`CC_METRICS_PROMETHEUS_PATH`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
-|[`CC_METRICS_PROMETHEUS_PORT`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
-|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
-|[`CC_METRICS_PROMETHEUS_USER`](/developers/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
-|[`CC_VARNISH_FILE`](/developers/doc/administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
-|[`CC_VARNISH_STORAGE_SIZE`](/developers/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
-|[`CC_WORKER_COMMAND`](/developers/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
+|[`CC_CLAMAV`](/doc/administrate/clamav "Clamav") | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false |
+|[`CC_CLAMAV_MAXQUEUE`](/doc/administrate/clamav "Clamav") | Maximum number of queued items. | 100 |
+|[`CC_CLAMAV_MAXTHREADS`](/doc/administrate/clamav "Clamav") | Maximum number of threads running at the same time. | 10 |
+|[`CC_METRICS_PROMETHEUS_PASSWORD`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the password for the basic auth of the Prometheus endpoint | |
+|[`CC_METRICS_PROMETHEUS_PATH`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the path on which the Prometheus endpoint is available | /metrics |
+|[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
+|[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
+|[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
+|[`CC_VARNISH_FILE`](/doc/administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
+|[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_WORKER_COMMAND`](/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 {{% content "mise" %}}
 
@@ -139,13 +139,13 @@ Note that `Reusable keys` are required to use multiple instances. You can [gener
 
 #### How it works?
 
-For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/developers/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/developers/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/doc/develop/env-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
 
 If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
 
 ## Docker
 
-[Docker Documentation](/developers/doc/applications/docker)
+[Docker Documentation](/doc/applications/docker)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -161,7 +161,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## .NET
 
-[.NET Documentation](/developers/doc/applications/dotnet)
+[.NET Documentation](/doc/applications/dotnet)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -173,11 +173,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Elixir
 
-[Elixir Documentation](/developers/doc/applications/elixir)
+[Elixir Documentation](/doc/applications/elixir)
 
  |  Name  |  Description  |  Default value  |
  |-----------------------|------------------------------|--------------------------------|
- |`CC_ELIXIR_VERSION` | Choose the Elixir version among [those supported](/developers/doc/applications/elixir/#mandatory-configuration) | |
+ |`CC_ELIXIR_VERSION` | Choose the Elixir version among [those supported](/doc/applications/elixir/#mandatory-configuration) | |
  |`CC_MIX_BUILD_GOAL` | The mix goal to build the application (default compile) |  |
  |`CC_PHOENIX_ASSETS_DIR` | Folder in which your Phoenix assets are located. |  |
  |`CC_PHOENIX_DIGEST_GOAL` | Phoenix digest goal. | phx.digest |
@@ -187,7 +187,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## FrankenPHP
 
-[FrankenPHP Documentation](/developers/doc/applications/frankenphp)
+[FrankenPHP Documentation](/doc/applications/frankenphp)
 
 | Name | Description | Default value |
 |---------------|-------------| ---------------|
@@ -199,7 +199,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Go
 
-[Go Documentation](/developers/doc/applications/golang)
+[Go Documentation](/doc/applications/golang)
 
 | Name | Description |
 | :------- | :---- |
@@ -209,11 +209,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Haskell
 
-[Haskell Documentation](/developers/doc/applications/haskell)
+[Haskell Documentation](/doc/applications/haskell)
 
 |  Name  |  Description  |
 |-----------------------|------------------------------|
-|[`CC_HASKELL_STACK_TARGET`](/developers/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
+|[`CC_HASKELL_STACK_TARGET`](/doc/applications/haskell/#specify-stack-package-target "Specify Stack package target") | Specify Stack package target. |
 |`CC_HASKELL_STACK_SETUP_COMMAND` | Only use this variable to override the default `setup` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_COMMAND` | Only use this variable to override the default `install` Stack step command |
 |`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
@@ -221,7 +221,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Java
 
-[Java Documentation](/developers/doc/applications/java/java-jar)
+[Java Documentation](/doc/applications/java/java-jar)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -242,7 +242,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 ## Linux
 
-[Linux Documentation](/developers/doc/applications/linux)
+[Linux Documentation](/doc/applications/linux)
 
 | Name | Description | Default value |
 |------|-------------|---------------|
@@ -253,11 +253,11 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 
 ## Node.js
 
-[Node.js Documentation](/developers/doc/applications/nodejs)
+[Node.js Documentation](/doc/applications/nodejs)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_NODE_VERSION`](/developers/doc/applications/nodejs#set-nodejs-version)| Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
+|[`CC_NODE_VERSION`](/doc/applications/nodejs#set-nodejs-version)| Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 |`CC_NODE_DEV_DEPENDENCIES` | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |
 |`CC_RUN_COMMAND` | Define a custom command. Example for Meteor: `node .build/bundle/main.js <options>`  | |
 |`CC_NODE_BUILD_TOOL` | Choose your build tool between npm, npm-ci, yarn, yarn2 and custom | npm |
@@ -268,13 +268,13 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 
 ## PHP
 
-[PHP Documentation](/developers/doc/applications/php)
+[PHP Documentation](/doc/applications/php)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
-|[`CC_CGI_IMPLEMENTATION`](/developers/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
+|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
 |`CC_LDAP_CA_CERT` |  |  |
@@ -288,10 +288,10 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](/developers/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](/developers/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
-|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/developers/doc/applications/php/#choose-your-php-version) | 8.3 |
+|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#choose-your-php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |
@@ -302,14 +302,14 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](/developers/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | organisation token. |  |
 
 ## Python
 
-[Python Documentation](/developers/doc/applications/python)
+[Python Documentation](/doc/applications/python)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -321,19 +321,19 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`CC_PYTHON_CELERY_LOGFILE` | Relative path to your Celery logfile: /path/to/logdir  |  |
 |`CC_PYTHON_CELERY_MODULE` | Specify the Celery module you want to start |  |
 |`CC_PYTHON_CELERY_USE_BEAT` | Set to "true" to activate Beat support |  |
-|[`CC_PYTHON_MANAGE_TASKS`](/developers/guides/python-django-sample/#manage-py-tasks) | Comma-separated list of Django manage tasks |  |
+|[`CC_PYTHON_MANAGE_TASKS`](/guides/python-django-sample/#manage-py-tasks) | Comma-separated list of Django manage tasks |  |
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
-|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/developers/doc/applications/python/#supported-versions) | 3 |
+|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#supported-versions) | 3 |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
 |`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`PYTHON_SETUP_PY_GOAL` | Custom setup goal to be launch after requirements.txt have been installed |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`](/doc/applications/python/#configure-your-python-application "Configure your Python application") | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
-|[`UWSGI_ASYNC`](/developers/doc/applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
+|[`UWSGI_ASYNC`](/doc/applications/python/#configure-your-python-application "Configure your Python application" ) | Number of cores to use for uWSGI asynchronous/non-blocking modes |  |
 |`UWSGI_ASYNC_ENGINE` | Select the asynchronous engine for uWSGI (optional) |  |
 |`UWSGI_INTERCEPT_ERRORS` |  |
 |`WSGI_BUFFER_SIZE` | Buffer size (in bytes) for uploads. | 4096 |
@@ -345,17 +345,17 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Ruby
 
-- [Ruby Guide](/developers/guides/ruby-rack-app-tutorial)
-- [Ruby Documentation](/developers/doc/applications/ruby)
+- [Ruby Guide](/guides/ruby-rack-app-tutorial)
+- [Ruby Documentation](/doc/applications/ruby)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
-|[`CC_ENABLE_SIDEKIQ`](/developers/doc/applications/ruby/#configure-sidekiq) | Enable Sidekiq background process | false |
+|[`CC_ENABLE_SIDEKIQ`](/doc/applications/ruby/#configure-sidekiq) | Enable Sidekiq background process | false |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 |`CC_NGINX_PROXY_BUFFERS` | Sets the number and size of the buffers used for reading a response from the proxied server, for a single connection. [Nginx documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffers "Nginx documentation") |  |
 |`CC_NGINX_PROXY_BUFFER_SIZE` | Sets the size of the buffer used for reading the first part of the response received from the proxied server. [Nginx documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size "Nginx documentation") |  |
 |`CC_RACKUP_SERVER` | The server to use for serving the ruby application | puma |  |
-|[`CC_RAKEGOALS`](/developers/doc/applications/ruby/#configure-rake-goals) | A list of comma-separated rake goals to execute e.g. db:migrate, assets:precompile |  |
+|[`CC_RAKEGOALS`](/doc/applications/ruby/#configure-rake-goals) | A list of comma-separated rake goals to execute e.g. db:migrate, assets:precompile |  |
 |`CC_RUBY_VERSION` | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |`CC_SIDEKIQ_FILES` | Specify a list of Sidekiq configuration files e.g. "./config/sidekiq_1.yml,./config/sidekiq_2.yml" |  |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
@@ -364,12 +364,12 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`RACK_ENV` |  |  |
 |`RAILS_ENV` |  |  |  |
 |`STATIC_FILES_PATH` | Relative path to where your static files are stored: path/to/static |  |
-|[`STATIC_URL_PREFIX`](/developers/doc/applications/ruby/#manage-your-static-files-and-assets) | The URL path under which you want to serve static file, usually /public |  |
+|[`STATIC_URL_PREFIX`](/doc/applications/ruby/#manage-your-static-files-and-assets) | The URL path under which you want to serve static file, usually /public |  |
 |`STATIC_WEBROOT` |  |  |
 
 ## Rust
 
-[Rust Documentation](/developers/doc/applications/rust)
+[Rust Documentation](/doc/applications/rust)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -380,7 +380,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Static
 
-[Static Documentation](/developers/doc/applications/static)
+[Static Documentation](/doc/applications/static)
 
 | Name | Description | Default value |
 |------|-------------|---------------|
@@ -395,11 +395,11 @@ When your Python application doesn't use one of the supported backends, with `CC
 | `CC_WEBROOT` | Path to the web content to serve, relative to the root of your application, used as default build cache | `/` |
 
 > [!NOTE] Static Site Generators (SSG) Auto-build
-> If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/developers/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
+> If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/doc/applications/static/#static-site-generators-ssg-auto-build) for more information.
 
 ## V (Vlang)
 
-[V (Vlang)](/developers/doc/applications/v)
+[V (Vlang)](/doc/applications/v)
 
 | Name | Description | Default value |
 |------|-------------|---------------|
@@ -410,7 +410,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### FS Bucket
 
-[FS Bucket Documentation](/developers/doc/addons/fs-bucket)
+[FS Bucket Documentation](/doc/addons/fs-bucket)
 
 |  Name  |  Description  | Read Only  |
 |-----------------------|------------------------------|--------------------------------|
@@ -419,7 +419,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MongoDB
 
-[MongoDB Documentation](/developers/doc/addons/mongodb)
+[MongoDB Documentation](/doc/addons/mongodb)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -433,7 +433,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### MySQL
 
-[MySQL Documentation](/developers/doc/addons/mysql)
+[MySQL Documentation](/doc/addons/mysql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -448,7 +448,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### ProxySQL
 
-[ProxySQL Documentation](/developers/guides/proxysql)
+[ProxySQL Documentation](/guides/proxysql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -459,7 +459,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### PostgreSQL
 
-[PostgreSQL Documentation](/developers/doc/addons/postgresql)
+[PostgreSQL Documentation](/doc/addons/postgresql)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -474,7 +474,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Pgpool-II
 
-[Pgpool-II Documentation](/developers/guides/pgpool)
+[Pgpool-II Documentation](/guides/pgpool)
 
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
@@ -534,7 +534,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Elastic Stack
 
-[Elastic Stack Documentation](/developers/doc/addons/elastic)
+[Elastic Stack Documentation](/doc/addons/elastic)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
@@ -594,7 +594,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ### Redis
 
-[Redis Documentation](/developers/doc/addons/redis)
+[Redis Documentation](/doc/addons/redis)
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|

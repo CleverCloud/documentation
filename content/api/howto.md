@@ -89,14 +89,14 @@ First, you'll need to create an OAuth consumer for your application. This can be
 Your application must implement the OAuth 1 dance. It mostly consists of the following steps:
 
 * Get a "request token"
-  * [`POST /oauth/request_token`](/developers/api/v2/#post-/oauth/request_token)
+  * [`POST /oauth/request_token`](/api/v2/#post-/oauth/request_token)
   * You will get a temporary `oauth_token` and `oauth_token_secret`
 * Redirect the user to the authorization page with the `oauth_token`
-  * [`GET /oauth/authorize`](/developers/api/v2/#get-/oauth/authorize)
+  * [`GET /oauth/authorize`](/api/v2/#get-/oauth/authorize)
   * Once the user is logged in, the browser will be redirected to your application with the query params `oauth_verifier` and `oauth_token`
 * Make sure the `oauth_token` from the first step matches the one you get after the redirection
 * Get the "access token" with the `oauth_token`, `oauth_token_secret` and `oauth_verifier`
-  * [`POST /oauth/access_token`](/developers/api/v2/#post-/oauth/access_token)
+  * [`POST /oauth/access_token`](/api/v2/#post-/oauth/access_token)
   * You will get the user `oauth_token` and `oauth_token_secret`
 
 Once done, your application can make API requests on behalf of the user with an OAuth 1 compatible client and the following tokens:

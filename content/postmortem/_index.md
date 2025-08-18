@@ -6,5 +6,5 @@ draft: false
 type: docs
 ---
 
-- [2024-08-02](/developers/postmortem/2024-08-02)
-- [2025-03-03](/developers/postmortem/2025-03-03)
+- [2024-08-02](/postmortem/2024-08-02)
+- [2025-03-03](/postmortem/2025-03-03)

@@ -19,7 +19,7 @@ The release `26.2.1` of Keycloak is available on Clever Cloud. [This new branch 
 
 ## Grafana dashboard
 
-Each Clever Cloud account organisation [comes with a pre-configured Grafana service](/developers/doc/metrics/#publish-your-own-metrics). With recent Keycloak enhancements on metrics and observability, we've worked on a Grafana dashboard ready to import:
+Each Clever Cloud account organisation [comes with a pre-configured Grafana service](/doc/metrics/#publish-your-own-metrics). With recent Keycloak enhancements on metrics and observability, we've worked on a Grafana dashboard ready to import:
 - Go to the `Metrics in Grafana` section of your organisation or personal space in [Console](https://console.clever-cloud.com/)
 - Open Grafana, click on the `+` icon in the upper right corner and select `Import` dashboard
 - Import this [JSON file](https://cc-keycloak.cellar-c2.services.clever-cloud.com/keycloak-grafana-dashboard.json)
@@ -32,4 +32,4 @@ Starting with this release, Keycloak add-ons on Clever Cloud come with `admin-cl
 
 You can now set up a new client with the `admin` role for `master` realm during build using `CC_KEYCLOAK_BOOTSTRAP_ADMIN_CLIENT_ID` and `CC_KEYCLOAK_BOOTSTRAP_ADMIN_CLIENT_SECRET` environment variables. Once created, delete them from your application. Bootstrap client [should be temporary](https://www.keycloak.org/server/bootstrap-admin-recovery) and is mostly necessary for provisioning.
 
-- [Learn more about Keycloak on Clever Cloud](/developers/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)

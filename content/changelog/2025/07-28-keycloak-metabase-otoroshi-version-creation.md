@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-You can now set the version of Keycloak, Metabase and Otoroshi at creation time, from a list of supported and tested releases. It works from the [Clever Cloud Console](https://console.clever-cloud.com/), [API](/developers/api) and [Clever Tools](/developers/doc/cli). For example:
+You can now set the version of Keycloak, Metabase and Otoroshi at creation time, from a list of supported and tested releases. It works from the [Clever Cloud Console](https://console.clever-cloud.com/), [API](/api) and [Clever Tools](/doc/cli). For example:
 
 ```bash
 clever addon create keycloak --addon-version 26.2.5 myKeycloak

@@ -34,7 +34,7 @@ The available hooks are:
 ## Setting hooks up
 
 Hooks are set up through [environment
-variables](/developers/doc/develop/env-variables).
+variables](/doc/develop/env-variables).
 To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 
@@ -98,7 +98,7 @@ This hook is perfect for:
 - extra build steps that you want to cache (eg bundling your frontend assets)
 
 {{< callout type="info" >}}
-  If you set [\`CC_DISABLE_BUILD_CACHE_UPLOAD\`](/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
+  If you set [\`CC_DISABLE_BUILD_CACHE_UPLOAD\`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
 {{< /callout >}}
 
 ### Pre Run

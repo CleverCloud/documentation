@@ -82,7 +82,7 @@ clever otoroshi version update otoroshi_id
 
 ## Network Groups
 
-Keycloak and Otoroshi can be easily linked to a [Network Group](/developers/doc/cli/network-groups/). To enable/disable this feature, use:
+Keycloak and Otoroshi can be easily linked to a [Network Group](/doc/cli/network-groups/). To enable/disable this feature, use:
 
 ```
 clever keycloak enable-ng myKeycloak

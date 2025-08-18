@@ -17,7 +17,7 @@ keywords:
 
 If you only need to serve static files without executing any code on the backend, for instance for a javascript Single Page Application (SPA), you can create a static application.
 
-This runtime is based on apache, so shares a lot with the [PHP runtime](/developers/doc/applications/php). This means you can use `.htaccess` files for redirection or access control.
+This runtime is based on apache, so shares a lot with the [PHP runtime](/doc/applications/php). This means you can use `.htaccess` files for redirection or access control.
 
 {{% content "create-application" %}}
 
@@ -97,7 +97,7 @@ You can verify your configuration work using [this guide](https://docs.prerender
 
 If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.
 
-If you don't set the [`CC_WEBROOT`](/developers/doc/reference/reference-environment-variables/#php) environment variable, the root of your project is the root of your web server.
+If you don't set the [`CC_WEBROOT`](/doc/reference/reference-environment-variables/#php) environment variable, the root of your project is the root of your web server.
 
 ## 🎓 Static Site Generators (SSG) guides
 {{% content-raw "static-guides" %}}

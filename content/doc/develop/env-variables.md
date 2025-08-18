@@ -33,7 +33,7 @@ Variables are defined on a per-application basis. They are defined in four ways:
 Please note that if you define or modify environment variables, you will
 need to redeploy your application to make it use the new variables.
 
-Check out our [environment variable reference](/developers/doc/reference/reference-environment-variables).
+Check out our [environment variable reference](/doc/reference/reference-environment-variables).
 
 ## Special environment variables
 
@@ -246,8 +246,8 @@ Here is a non-exhaustive summary:
 {{< callout type="info" >}}
 Variables are available at build time
 for runtimes that support build time instructions, such as
-[Java WAR](/developers/doc/applications/java/java-war/#environment-injection),
-[Play! Framework 1](/developers/guides/play-framework-1/#environment-injection),
-[Play! Framework 2](/developers/guides/play-framework-2/#environment-injection)
-or [Scala](/developers/doc/applications/scala/#environment-injection).
+[Java WAR](/doc/applications/java/java-war/#environment-injection),
+[Play! Framework 1](/guides/play-framework-1/#environment-injection),
+[Play! Framework 2](/guides/play-framework-2/#environment-injection)
+or [Scala](/doc/applications/scala/#environment-injection).
 {{< /callout >}}

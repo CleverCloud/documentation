@@ -31,9 +31,9 @@ Clever Cloud supports Play! 2 applications natively. The following guide explain
 
 ### Mandatory configuration
 
-* Starting from **Play 2.4**, your application needs **Java 8** to run. Please read [select java version](/developers/doc/applications/java/java-war/#available-java-versions "Select Java version") for more information.
+* Starting from **Play 2.4**, your application needs **Java 8** to run. Please read [select java version](/doc/applications/java/java-war/#available-java-versions "Select Java version") for more information.
 
-Play! 2 applications use sbt. Please have a look at [deploy Scala apps](/developers/doc/applications/scala) for a complete documentation on sbt deployment options.
+Play! 2 applications use sbt. Please have a look at [deploy Scala apps](/doc/applications/scala) for a complete documentation on sbt deployment options.
 
 ### Generate application secret
 

@@ -76,7 +76,7 @@ clever addon env [--format, -F] FORMAT ADDON_ID
 
 For some add-ons, an interface URL, default credentials or other instructions can be displayed after creation.
 
-If you're testing [Materia KV](/developers/doc/addons/materia-kv/), our next generation of serverless distributed database, synchronously-replicated, compatible with Redis® protocol, you can create an add-on and immediately use it:
+If you're testing [Materia KV](/doc/addons/materia-kv/), our next generation of serverless distributed database, synchronously-replicated, compatible with Redis® protocol, you can create an add-on and immediately use it:
 
 ```
 clever addon create kv ADDON_NAME

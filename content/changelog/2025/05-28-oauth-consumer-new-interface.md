@@ -17,6 +17,6 @@ excludeSearch: true
 
 A new interface is available [in Clever Cloud Console to create](https://console.clever-cloud.com/users/me/oauth-consumers/new) and manage OAuth consumers. It's better, clearer, simpler, and uses our open source [web components](https://clever.cloud/developers/clever-components/).
 
-- [Learn more about OAuth consumers](/developers/api/howto/#oauth1)
+- [Learn more about OAuth consumers](/api/howto/#oauth1)
 
 ![New OAuth consumers interface](/images/new-oauth-consumer.webp)

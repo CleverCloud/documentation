@@ -21,6 +21,6 @@ You can now deploy your applications using the new `linux`, `static` and `v` run
 
 As they are new runtimes, help us improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes).
 
-* [Learn more about the Linux runtime](/developers/doc/applications/linux/)
-* [Learn more about the Static runtime](/developers/doc/applications/static/)
-* [Learn more about the V runtime](/developers/doc/applications/v/)
+* [Learn more about the Linux runtime](/doc/applications/linux/)
+* [Learn more about the Static runtime](/doc/applications/static/)
+* [Learn more about the V runtime](/doc/applications/v/)

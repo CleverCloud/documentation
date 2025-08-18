@@ -26,5 +26,5 @@ SQL Server extensions (`sqlsrv` and `pdo_sqlsrv`) are now available for PHP 8.1 
 
 We enhanced our Tailscale native integration. It now supports `--accept-dns` and `--accept-routes` [flags](https://tailscale.com/kb/1072/client-preferences?q=accept-route#use-tailscale-dns-settings). To disable or enable them, set `TAILSCALE_ACCEPT_DNS` and `TAILSCALE_ACCEPT_ROUTES` environment variables to `false` or `true` in your application.
 
-- [Learn more about Tailscale on Clever Cloud](/developers/doc/reference/reference-environment-variables/#tailscale-support)
-- [Learn more about PHP with Apache on Clever Cloud](/developers/doc/applications/php/)
+- [Learn more about Tailscale on Clever Cloud](/doc/reference/reference-environment-variables/#tailscale-support)
+- [Learn more about PHP with Apache on Clever Cloud](/doc/applications/php/)

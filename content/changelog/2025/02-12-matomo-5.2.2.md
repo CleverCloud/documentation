@@ -19,4 +19,4 @@ Our [Matomo](https://matomo.org/) add-on has been updated to version `v5.2.2` wh
 
 - [Learn more about Matomo 5.2](https://matomo.org/changelog/matomo-5-2-0/)
 - [Learn more about Matomo 5.2.2](https://matomo.org/changelog/matomo-5-2-2/)
-- [Learn more about Matomo on Clever Cloud](/developers/doc/addons/matomo/)
+- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo/)

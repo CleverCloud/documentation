@@ -17,7 +17,7 @@ excludeSearch: true
 
 [Clever Tools 3.13](https://github.com/CleverCloud/clever-tools/releases/tag/3.13.0) is available. It includes some bug fixes and a new interface for application management commands. Our goal here is to start making Clever Tools more user-friendly with more useful information, tips and a better look. It paves the way for next major releases. [Let us know what you think](https://github.com/CleverCloud/clever-tools/issues) about it to help us to design the future of Clever Tools.
 
-The `clever tokens` command is not experimental anymore, as [API tokens are now available](/developers/changelog/2025/06-05-api-tokens-console-tips/) through the Clever Cloud Console.
+The `clever tokens` command is not experimental anymore, as [API tokens are now available](/changelog/2025/06-05-api-tokens-console-tips/) through the Clever Cloud Console.
 
 ![New clever create command](/images/clever-tools-new-create.webp)
 
@@ -36,7 +36,7 @@ clever metabase rebuild metabase_id
 clever otoroshi version update otoroshi_id
 ```
 
-- [Learn more about Operators commands in Clever Tools](/developers/doc/cli/operators/)
+- [Learn more about Operators commands in Clever Tools](/doc/cli/operators/)
 
 ![Check Metabase Version command](/images/clever-tools-metabase-version-check.webp)
 
@@ -56,11 +56,11 @@ clever emails remove-all
 clever ssh-keys remove-all
 ```
 
-- [Learn more about emails and ssh-keys commands in Clever Tools](/developers/doc/cli/#emails)
+- [Learn more about emails and ssh-keys commands in Clever Tools](/doc/cli/#emails)
 
 ## Application configuration as Clever Task
 
-You can also use `clever config` to set an application as a [Clever Task](/developers/doc/develop/tasks/) after its creation of get this option configuration:
+You can also use `clever config` to set an application as a [Clever Task](/doc/develop/tasks/) after its creation of get this option configuration:
 
 ```
 clever config get task
@@ -69,11 +69,11 @@ clever config set task false
 clever config update --name "My new task name" --enable-task
 ```
 
-- [Learn more about config command in Clever Tools](/developers/doc/cli/applications/configuration/)
+- [Learn more about config command in Clever Tools](/doc/cli/applications/configuration/)
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/developers/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
 ```
 npm update -g clever-tools

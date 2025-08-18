@@ -35,7 +35,7 @@ On Clever Cloud, it comes with pre-configured with features included such as [Co
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
 
 ```
 $ clever addon create otoroshi myOtoroshi
@@ -55,11 +55,11 @@ An initial account has been created, change the password at first login (Securit
 Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
-Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
+Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.
 
 ## Version management
 
-To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/cli/):
 
 ```bash
 # Set a specific supported version at creation
@@ -77,7 +77,7 @@ clever otoroshi version update myOtoroshi
 clever otoroshi version update myOtoroshi <new_version>
 ```
 
-- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+- Learn more about [Operators commands in Clever Tools](/doc/cli/operators/)
 
 ## Accessing the Otoroshi with LLM interface
 
@@ -89,8 +89,8 @@ Once you created your add-on, open the management URL or look for `CC_OTOROSHI_U
 
 When you create the Otoroshi add-on, Clever Cloud automatically deploys:
 
-- A [Java](/developers/doc/applications/java/java-jar/) instance with Otoroshi with LLM pre-loaded
-- A [Redis](/developers/doc/addons/postgresql/) database (for internal Otoroshi use)
+- A [Java](/doc/applications/java/java-jar/) instance with Otoroshi with LLM pre-loaded
+- A [Redis](/doc/addons/postgresql/) database (for internal Otoroshi use)
 
 ## Plan sizing
 

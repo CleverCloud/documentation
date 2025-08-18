@@ -15,7 +15,7 @@ description: API tokens and tips everywhere!
 excludeSearch: true
 ---
 
-With [Clever Tools 3.12](/developers/changelog/2025/03-07-clever-tools-3.12/), we've introduced a new way to query Clever Cloud's API, with [the API bridge and API tokens](/developers/api/howto/#api-tokens). Starting today, you can create, edit and revoke API tokens directly [from your Clever Cloud profile page](https://console.clever-cloud.com/users/me/api-tokens).
+With [Clever Tools 3.12](/changelog/2025/03-07-clever-tools-3.12/), we've introduced a new way to query Clever Cloud's API, with [the API bridge and API tokens](/api/howto/#api-tokens). Starting today, you can create, edit and revoke API tokens directly [from your Clever Cloud profile page](https://console.clever-cloud.com/users/me/api-tokens).
 
 ## API tokens in the Clever Cloud Console
 

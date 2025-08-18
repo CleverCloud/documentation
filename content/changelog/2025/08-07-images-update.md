@@ -29,4 +29,4 @@ We updated all our images. Deployment is in progress for all our users.
 * **Python:**
   * uv 0.8.4
 
-In the [.Net runtime](/developers/doc/applications/dotnet), you can now use `CC_DOTNET_VERSION=9.0`.
+In the [.Net runtime](/doc/applications/dotnet), you can now use `CC_DOTNET_VERSION=9.0`.

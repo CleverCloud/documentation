@@ -25,5 +25,5 @@ Thus, you'll be able to link the add-on to an application and get the API URL an
 
 `ADMIN_API_CLIENT_ID` and `ADMIN_API_CLIENT_SECRET` environment variables of the Java application are replaced by `CC_OTOROSHI_API_CLIENT_ID` and `CC_OTOROSHI_API_CLIENT_SECRET` but are still supported during deployment for legacy reasons. The `CC_OTOROSHI_SSO_URL` is removed from service dependencies on new add-ons as it's not useful here.
 
-- [Learn more about service dependencies](/developers/doc/administrate/service-dependencies/)
-- [Learn more about Otoroshi on Clever Cloud](/developers/doc/addons/otoroshi/)
+- [Learn more about service dependencies](/doc/administrate/service-dependencies/)
+- [Learn more about Otoroshi on Clever Cloud](/doc/addons/otoroshi/)

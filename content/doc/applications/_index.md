@@ -76,5 +76,5 @@ You can control deployments and set your application configuration with environm
 - Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables.
 
 {{< callout type="info" >}}
-  Learn more about [immutablity and application management](/developers/doc/administrate/apps-management).
+  Learn more about [immutablity and application management](/doc/administrate/apps-management).
 {{< /callout >}}

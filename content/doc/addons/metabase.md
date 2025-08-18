@@ -29,7 +29,7 @@ Metabase on Clever Cloud is a preconfigured set of resources, benefiting from al
 - **Share** a questions/dashboard to anyone using an anonymous link
 - **Periodically send** results of a question/dashboard by email/Slack
 - Configure **data visualization** for questions results: table, line chart, pie chart, gauge, single number, etc.
-- Connect **external databases**; it works with add-ons such as [MySQL](/developers/doc/addons/mysql/), [PostgreSQL](/developers/doc/addons/postgresql/), [MongoDB](/developers/doc/addons/mongodb/) and [many other data sources](https://www.metabase.com/data-sources/)
+- Connect **external databases**; it works with add-ons such as [MySQL](/doc/addons/mysql/), [PostgreSQL](/doc/addons/postgresql/), [MongoDB](/doc/addons/mongodb/) and [many other data sources](https://www.metabase.com/data-sources/)
 - Create _questions_ either by typing in `SELECT` SQL queries or by using Metabase’s UI to build such queries **without using SQL**
 
 You can also save questions and **organize** them in _collections_. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with **groups and permissions**: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.
@@ -45,7 +45,7 @@ You can also save questions and **organize** them in _collections_. When opening
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
 
 ```
 $ clever addon create metabase myMetabase
@@ -61,7 +61,7 @@ Your Metabase is starting:
 /!\ The metabase provider is in beta testing phase
 ```
 
-Refer to the [Clever Tools documentation](/developers/doc/cli/addons/) for more details on add-on management.
+Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.
 
 ## Accessing the Metabase interface
 
@@ -109,8 +109,8 @@ Remove the `CC_PRE_RUN_HOOK` environment variable from the Java application and 
 
 When you create the Metabase add-on, Clever Cloud automatically deploys:
 
-- A [Java](/developers/doc/applications/java/java-jar/) instance with Metabase pre-loaded
-- A [PostgreSQL](/developers/doc/addons/postgresql/) database (for internal Metabase use)
+- A [Java](/doc/applications/java/java-jar/) instance with Metabase pre-loaded
+- A [PostgreSQL](/doc/addons/postgresql/) database (for internal Metabase use)
 
 ## Plan sizing
 
@@ -125,7 +125,7 @@ They are dimensioned to suit a majority of needs. You can however manage and adj
 
 The Metabase add-on is a fully managed application, so you don't have to do anything to update it: by default **it is automatically updated** to match the latest Community Edition release. Your add-on will be automatically restarted when a new Metabase release is available, but thanks to Clever Cloud this will be done without downtime. All deployed versions are reviewed and tested before being released.
 
-Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable, but there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable, but there are various ways to do it simpler with [Clever Tools](/doc/cli/):
 
 ```bash
 # Set a specific supported version at creation
@@ -143,7 +143,7 @@ clever metabase version update myMetabase
 clever metabase version update myMetabase <new_version>
 ```
 
-- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+- Learn more about [Operators commands in Clever Tools](/doc/cli/operators/)
 
 If you use `CC_METABASE_VERSION` it can contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
@@ -151,7 +151,7 @@ If you use `CC_METABASE_VERSION` it can contain a value that is either a special
 - `0.55.1`: use the `0.55.1` version (_same as `=0.55.1`_)
 - `0.55`: use the latest available version starting with `0.55` (_same as `^0.55.0`, `~0.55.0`_)
 
-To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/developers/doc/cli/applications/deployment-lifecycle/#restart).
+To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/doc/cli/applications/deployment-lifecycle/#restart).
 
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
@@ -200,14 +200,14 @@ There are two main usages:
 2. Sending questions/dashboards emails (when users created subscriptions to them)
 
 Clever Cloud does not provide a SMTP server for your Metabase add-on.
-You can use a [MailPace](/developers/doc/addons/mailpace/) add-on or any other SMTP server.
+You can use a [MailPace](/doc/addons/mailpace/) add-on or any other SMTP server.
 
 The SMTP server can be configured (and tested) in Metabase administration interface.
 See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
 
 ### Using a MailPace add-on
 
-If you have a [MailPace](/developers/doc/addons/mailpace/) add-on, you can link it to the Java application of your Metabase add-on using [Clever Cloud's console](https://console.clever-cloud.com/):
+If you have a [MailPace](/doc/addons/mailpace/) add-on, you can link it to the Java application of your Metabase add-on using [Clever Cloud's console](https://console.clever-cloud.com/):
 
 - Go to the Java application of the Metabase add-on
 - Open the "Service dependencies" page

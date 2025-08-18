@@ -30,4 +30,4 @@ Some months ago, Clever Cloud released [a new GitHub Action](https://github.com/
           type: '<type-of-app>'
 ```
 
-- [Learn more about how to deploy from GitHub to Clever Cloud](/developers/doc/ci-cd/github/)
+- [Learn more about how to deploy from GitHub to Clever Cloud](/doc/ci-cd/github/)

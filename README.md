@@ -26,6 +26,8 @@ To begin your journey with the Clever Cloud Documentation, you need Hugo. You ca
 - [Install it](https://gohugo.io/installation/) globally on your system
 - Get its [binary](https://github.com/gohugoio/hugo/releases) and put it in the project's root
 
+You'll also need Dart Sass to transpile Sass to CSS, follow [installation instructions](https://gohugo.io/functions/css/sass/#installation-overview).
+
 ### Clone the project, preview locally
 
 Once your system is set up, clone this repository:
@@ -51,6 +53,10 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 # You must have a `/developers` at the end of your application's route
 CC_WEBROOT="public"
 CC_STATIC_AUTOBUILD_OUTDIR="public/developers"
+
+# Install Dart/Sass for API Swagger
+DART_SASS_VERSION="1.90.0"
+CC_PRE_BUILD_HOOK="./install-dart-sass.sh"
 
 # Declare the location of the 404 custom page
 SERVER_ERROR_PAGE_404="developers/404.html"

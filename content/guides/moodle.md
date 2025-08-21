@@ -32,7 +32,7 @@ You can download Moodle from <https://download.moodle.org> and initialize a Git 
 Duplicate `config-dist.php` and rename it `config.php`. Update the following variables as follows:
 
 ```php {filename="config.php", linenos=table}
-?php  // Moodle configuration file
+<?php  // Moodle configuration file
 
 unset($CFG);
 global $CFG;
@@ -53,8 +53,8 @@ $CFG->dboptions = array (
 );
 
 $CFG->wwwroot   = getenv("URL");
-$CFG->dataroot  = getenv("APP_HOME") . '/moodledata';
-$CFG->admin     = getenv("ADMIN");
+$CFG->dataroot  = '/app/moodledata';
+$CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
@@ -108,21 +108,34 @@ Get the remote in your application menu > **Information** > **Deployment URL** a
 
 ## Cron for Moodle
 
-Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. For the Cron to execute as a PHP file, you will need to add a shebang at the very top of `admin/cli/cron.php`, like this: `#!/usr/bin/env php`.
+Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. As explained in the [Clever Cloud cron documentation](https://www.clever.cloud/developers/doc/administrate/cron/#access-environment-variables), to have access to environment variable, you must wrap your commands in a bash script with [login shell](https://linux.die.net/man/1/bash) (`bash -l`).
+
+Add a `cron.sh` file to the root of the application:
+
+```bash {filename="cron.sh"}
+#!/bin/bash -l
+cd ${APP_HOME}
+php admin/cli/cron.php
+```
+
+And make it executable:
+
+```bash
+chmod u+x cron.sh
+```
 
 ### Declare the cron in Clever Cloud
 
-Create a `clevercloud/cron.json` file with a string to run `admin/cli/cron.php`every minute:
+Create a `clevercloud/cron.json` file with a string to run `cron.sh`every minute:
 
 ```json {filename="clevercloud/cron.json"}
 [
-  "* * * * * $ROOT/admin/cli/cron.php"
+  "* * * * * $ROOT/cron.sh"
 ]
 ```
 
 You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, look for a dedicated tool like [rclone](https://rclone.org).
 
-**Note**: this repository is already configured to run `/admin/cli/cron.php` every minute as a [cron job](/doc/administrate/cron/).
 
 ## 🎓 Further Help
 

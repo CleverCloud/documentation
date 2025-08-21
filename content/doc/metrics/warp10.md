@@ -126,6 +126,12 @@ Quantum is a web tool used to run some WarpScript. You can access to it from you
 
 It provides the path to the Clever Cloud Warp 10 gateway and let you explore your data.
 
+## Classes Reference
+
+In Warp 10, classes organize metrics from various sources, like applications or add-ons, into specific categories (CPU usage, memory statistics, etc.). This structure makes the data easy to retrieve and analyze with WarpScript. 
+
+For a complete list of Telegraf classes and their descriptions, see [the classes list](/developers/doc/metrics/#classes).
+
 ## Macro
 
 Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redundant and often need code.

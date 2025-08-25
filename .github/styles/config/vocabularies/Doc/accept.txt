@@ -25,6 +25,7 @@ Corepack
 CORS
 CRDs
 cron
+CVE
 Cyberduck
 Deno
 DNS
@@ -47,6 +48,7 @@ healthcheck
 Heptapod
 Hextra
 hostname
+Infinispan
 jarName
 Jboss
 Keycloak
@@ -80,6 +82,7 @@ pico
 pnpm
 proxyhugo
 psql
+Quarkus
 rackup
 rclone
 Redict

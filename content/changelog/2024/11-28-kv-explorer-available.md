@@ -27,5 +27,5 @@ You can filter keys by type, with a filter (`*value_to_search*` for example), va
 
 Of course, we'll continue to improve this tool, over the coming months, thanks to your feedback and suggestions. So feel free to share them and ask your questions in our [GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/kv-explorer).
 
-- [Learn more about Materia KV](/developers/doc/addons/materia-kv/)
-- [Learn more about Redis® on Clever Cloud](/developers/doc/addons/redis/)
+- [Learn more about Materia KV](/doc/addons/materia-kv/)
+- [Learn more about Redis® on Clever Cloud](/doc/addons/redis/)

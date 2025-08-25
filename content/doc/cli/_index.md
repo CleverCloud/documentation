@@ -209,12 +209,12 @@ clever ssh-keys remove-all --yes
 
 To use our public API, you need to be authenticated for most endpoints. If you're logged in through Clever Tools, there is a simple way to make any request you want: `clever curl`. It's `curl`, but in an authenticated context for Clever Cloud API.
 
-- [Clever Cloud public APIv2 documentation](/developers/api/v2/)
-- [Clever Cloud public APIv4 documentation](/developers/api/v4/)
+- [Clever Cloud public APIv2 documentation](/api/v2/)
+- [Clever Cloud public APIv4 documentation](/api/v4/)
 
 ## tokens
 
-You can query [Clever Cloud public API](/developers/api/) with a bearer token thanks to the Auth Bridge. To create a token, use:
+You can query [Clever Cloud public API](/api/) with a bearer token thanks to the Auth Bridge. To create a token, use:
 
 ```
 clever tokens create myTokenName

@@ -41,7 +41,7 @@ Clever Cloud allows you to deploy any application running inside a Docker contai
 {{< /callout >}}
 
 {{< callout type="warning" >}}
-[FS Buckets](/developers/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
+[FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.
 {{< /callout >}}
 
 ### How it works
@@ -67,7 +67,7 @@ When you create a Docker application on Clever Cloud, the deployment process inv
 Be sure that you:
 
 * push on the **master branch**.
-* have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable](/developers/doc/reference/reference-environment-variables#docker) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
+* have and commit a file named **Dockerfile** or use the **CC_DOCKERFILE** [environment variable](/doc/reference/reference-environment-variables#docker) if your Dockerfile has a different name, [Here is what it will look like](https://docs.docker.com/develop/develop-images/dockerfile_best-practices "Dockerfile").
 * run the application with `CMD` or `ENTRYPOINT` in your Dockerfile.
 * listen on HTTP **port 8080** by default (you can set your own port using `CC_DOCKER_EXPOSED_HTTP_PORT=<port>` environment variable).
 
@@ -87,7 +87,7 @@ We still use `docker build` command for legacy reasons, but you can use `docker 
 
 ### Memory usage during building
 
-If the building step of your app crashes because it uses more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance](/developers/doc/administrate/apps-management#edit-application-configuration)
+If the building step of your app crashes because it uses more memory that it's available, you'll have to split the building and running steps and enable [Dedicated build instance](/doc/administrate/apps-management#edit-application-configuration)
 
 ```bash
 # The base image
@@ -112,7 +112,7 @@ As Docker Hub limits the number of image pulls and actions without authenticatio
 
 Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT=<port>`.
 
-* [Learn more about TCP redirections](/developers/doc/administrate/tcp-redirections)
+* [Learn more about TCP redirections](/doc/administrate/tcp-redirections)
 
 ### Docker socket access
 

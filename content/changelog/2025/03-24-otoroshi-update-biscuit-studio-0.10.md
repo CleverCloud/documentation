@@ -21,4 +21,4 @@ Biscuit Studio [0.0.10](https://github.com/cloud-apim/otoroshi-biscuit-studio/re
 
 To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v16.24.0_1742549915` and rebuild it. You can also delete `CC_OTOROSHI_APIM_VERSION`, `CC_OTOROSHI_SECRET` variables from the Java application, they are not used anymore.
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/developers/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)

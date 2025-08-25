@@ -26,7 +26,7 @@ We updated all our images. Deployment is in progress for all our users.
 * **Python:**
   * uv 0.7.2
 
-As previously announced, Python 3.8 [is not available in our images anymore](/developers/changelog/2025/03-25-python-3.8-eol/) and PHP 8.4 [is now used as default](/developers/changelog/2025/03-21-php-version-management-update/) for `CC_PHP_VERSION=8`. As Node.js 18 and Ruby 3.1 are now end-of-life, you'll get a warning if you use them.
+As previously announced, Python 3.8 [is not available in our images anymore](/changelog/2025/03-25-python-3.8-eol/) and PHP 8.4 [is now used as default](/changelog/2025/03-21-php-version-management-update/) for `CC_PHP_VERSION=8`. As Node.js 18 and Ruby 3.1 are now end-of-life, you'll get a warning if you use them.
 
 - [Learn more about Node.js release cycle](https://nodejs.org/en/about/releases/)
 - [Learn more about PHP release cycle](https://www.php.net/supported-versions.php)

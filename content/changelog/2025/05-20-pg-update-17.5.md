@@ -21,4 +21,4 @@ New PostgreSQL versions are available for new add-ons and migration:
 
 It includes [fixes and improvements](https://www.postgresql.org/about/news/postgresql-175-169-1513-1418-and-1321-released-3072/), including a security patch for [CVE-2025-4207](https://nvd.nist.gov/vuln/detail/CVE-2025-4207).
 
-* [Learn more about PostgreSQL on Clever Cloud](/developers/doc/addons/postgresql/)
+* [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)

@@ -36,7 +36,7 @@ You can customize the Kibana configuration file by setting the `CC_PRE_RUN_HOOK`
 CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
 ```
 
-To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/developers/doc/deploy/addon/cellar)).
+To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/doc/deploy/addon/cellar)).
 
 Check other available configuration file on [GitHub](https://github.com/CleverCloud/custom-kibana-config).
 

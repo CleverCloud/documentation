@@ -33,7 +33,7 @@ By clicking on you application name, a new left menu open.
 - **Overview**: Simple metrics about your applications within this organisation
 - **Information**: See and edit organisation's name, description, billing address and image. That also is where you can delete your organisation.
 - **Members**: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.
-- **Shared software**: It's a section displaying third party software, like [Heptapod](/developers/doc/addons/heptapod/)
+- **Shared software**: It's a section displaying third party software, like [Heptapod](/doc/addons/heptapod/)
 - **Payment methods**: Manage provisioning of your organisation, manage credit cards and add here potential discount codes or coupons.
 - **Invoices**: See your recent invoices.
 - **Notifications**: Manage email notifications and web hooks for team members.

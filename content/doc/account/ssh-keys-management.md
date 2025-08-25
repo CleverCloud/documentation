@@ -135,11 +135,11 @@ Add the key by entering a name and the public SSH key. The key is the entire con
 Your public SSH key must be associated with only one account.
 {{< /callout >}}
 
-If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/developers/doc/quickstart/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.
+If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/doc/quickstart/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.
 
 ### Through CC API or Clever cURL
 
-You can also add a **public SSH key** from the command line with a simple cURL request to [our API](/developers/api). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
+You can also add a **public SSH key** from the command line with a simple cURL request to [our API](/api). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
 
 ```bash
 clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yourkey.pub)\"" https://api.clever-cloud.com/v2/self/keys/newkeyname
@@ -147,7 +147,7 @@ clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yo
 
 ## Use a private SSH key in an application
 
-If you want to clone a repository from a private repository, you can add a [private SSH key](/developers/doc/reference/common-configuration#private-ssh-key) to an application by creating a folder clevercloud at the root of your application and creating the file `clevercloud/ssh.json` with the following content:
+If you want to clone a repository from a private repository, you can add a [private SSH key](/doc/reference/common-configuration#private-ssh-key) to an application by creating a folder clevercloud at the root of your application and creating the file `clevercloud/ssh.json` with the following content:
 
 ```json{filename="clevercloud/ssh.json"}
 {

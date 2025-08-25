@@ -41,9 +41,9 @@ The Clever Cloud Keycloak add-on is designed to meet the most common needs, buil
 ## How it works?
 When you create the Keycloak add-on, Clever Cloud automatically deploys:
 
-- A [Java](/developers/doc/applications/java/java-jar) instance with Keycloak pre-loaded and configured
-- A [PostgreSQL](/developers/doc/addons/postgresql) database
-- A [FS Bucket](/developers/doc/addons/fs-bucket) used for themes, plugins, and import/export storage needs
+- A [Java](/doc/applications/java/java-jar) instance with Keycloak pre-loaded and configured
+- A [PostgreSQL](/doc/addons/postgresql) database
+- A [FS Bucket](/doc/addons/fs-bucket) used for themes, plugins, and import/export storage needs
 
 ## Security and updates
 Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It's automatically upgraded and updated both for features and security.
@@ -77,7 +77,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/developers/doc/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
 
 ```
 $ clever addon create keycloak myKeycloak
@@ -101,7 +101,7 @@ Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-
 
 ## Version management
 
-To change the version of a Keycloak add-on on Clever Cloud, you can use the `CC_KEYCLOAK_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/developers/doc/cli/):
+To change the version of a Keycloak add-on on Clever Cloud, you can use the `CC_KEYCLOAK_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/cli/):
 
 ```bash
 # Set a specific supported version at creation
@@ -119,7 +119,7 @@ clever keycloak version update myKeycloak
 clever keycloak version update myKeycloak <new_version>
 ```
 
-- Learn more about [Operators commands in Clever Tools](/developers/doc/cli/operators/)
+- Learn more about [Operators commands in Clever Tools](/doc/cli/operators/)
 
 ## Accessing the Keycloak interface
 
@@ -173,7 +173,7 @@ Uploading previously exported data in `realms/import` folder in the associated F
 
 ## Custom Themes and Plugins
 
-Keycloak uses an [FSBucket](/developers/doc/addons/fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
+Keycloak uses an [FSBucket](/doc/addons/fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
 ## Add IP filtering in Keycloak for admin console
 
@@ -187,7 +187,7 @@ Those flows could be affected to your own clients if you need.
 
 ## Grafana dashboard & Metrics
 
-Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/developers/doc/metrics/#publish-your-own-metrics) to visualize them.
+Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/metrics/#publish-your-own-metrics) to visualize them.
 
 You can also use a Grafana dashboard ready to import, available starting with Keycloak `26.2` release:
 - Go to the `Metrics in Grafana` section of your organisation or personal space in [Console](https://console.clever-cloud.com/)
@@ -202,7 +202,7 @@ By default, your Keycloak instance is exposed through a Clever Cloud domain, as 
 
 ### Custom hostname
 
-You can use your own domain. [Just set it](/developers/doc/administrate/domain-names) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
+You can use your own domain. [Just set it](/doc/administrate/domain-names) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
 
 ### Admin hostname
 

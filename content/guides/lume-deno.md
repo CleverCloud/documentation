@@ -47,7 +47,7 @@ Create a `mise.toml` file, add this content:
 deno = "latest"
 ```
 
-It uses [Mise package manager](/developers/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager) to install Deno during deployment. You can replace `latest` with a specific version.
+It uses [Mise package manager](/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager) to install Deno during deployment. You can replace `latest` with a specific version.
 
 > [!TIP]
 > If you use Mise locally, run `mise trust` to trust the created `mise.toml` file

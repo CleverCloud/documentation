@@ -15,7 +15,7 @@ draft: false
 [EchoIP](https://github.com/mpolden/echoip) is a simple service for looking up
  your IP address.
 
-This doc explains how to install and configure EchoIP from source, and how to deploy it as a [Go application](/developers/doc/applications/golang "Go documentation") on Clever Cloud.
+This doc explains how to install and configure EchoIP from source, and how to deploy it as a [Go application](/doc/applications/golang "Go documentation") on Clever Cloud.
 
 ## How to Configure and Deploy EchoIP on Clever Cloud
 

@@ -258,3 +258,439 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
 .hx\:pl-5 {
   padding-left: 1.25rem;
 }
+
+/* -------------------------
+        OpenAPI / Swagger UI
+------------------------- */
+
+#swagger-ui {
+    height: calc(100vh - var(--navbar-height));
+    min-height: 600px;
+    width: 100%;
+  }
+  
+  /* Dark theme adaptations for Swagger UI */
+  html[class~="dark"] .swagger-ui {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .info .title {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .info .description,
+  html[class~="dark"] .swagger-ui .info .description p {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock .opblock-summary-description,
+  html[class~="dark"] .swagger-ui .opblock .opblock-summary-path,
+  html[class~="dark"] .swagger-ui .opblock-description-wrapper p {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock-tag {
+    color: rgb(243 244 246);
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .parameter__name {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .parameter__type {
+    color: rgb(156 163 175);
+  }
+  
+  html[class~="dark"] .swagger-ui table thead tr td,
+  html[class~="dark"] .swagger-ui table thead tr th {
+    color: rgb(243 244 246);
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-title {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .prop-type {
+    color: rgb(156 163 175);
+  }
+  
+  html[class~="dark"] .swagger-ui .prop-name {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .response-col_status {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .response-col_description {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .renderedMarkdown p {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .markdown p,
+  html[class~="dark"] .swagger-ui .markdown pre {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model .property {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model .property-row {
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui textarea {
+    background-color: rgb(31 41 55);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui input[type=text],
+  html[class~="dark"] .swagger-ui input[type=password],
+  html[class~="dark"] .swagger-ui input[type=search],
+  html[class~="dark"] .swagger-ui input[type=email],
+  html[class~="dark"] .swagger-ui input[type=url] {
+    background-color: rgb(31 41 55);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  /* Additional comprehensive dark theme styles */
+  html[class~="dark"] .swagger-ui .opblock .opblock-summary {
+    color: rgb(243 244 246);
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock .opblock-summary .opblock-summary-method {
+    background: rgb(55 65 81);
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: rgb(34 197 94);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: rgb(59 130 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock.opblock-put .opblock-summary-method {
+    background: rgb(245 158 11);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock.opblock-delete .opblock-summary-method {
+    background: rgb(239 68 68);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock.opblock-patch .opblock-summary-method {
+    background: rgb(168 85 247);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock .opblock-summary-path__deprecated {
+    color: rgb(156 163 175);
+    text-decoration: line-through;
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock-body {
+    background: rgb(17 24 39);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock-description-wrapper p,
+  html[class~="dark"] .swagger-ui .opblock-external-docs-wrapper p {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .parameters-container {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .parameter-item {
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .parameter-item .parameter-item-content {
+    background: transparent;
+  }
+  
+  html[class~="dark"] .swagger-ui .responses-wrapper {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .response-col_status,
+  html[class~="dark"] .swagger-ui .response-col_description {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .response {
+    border-bottom: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn {
+    background: rgb(55 65 81);
+    color: rgb(243 244 246);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn:hover {
+    background: rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.authorize {
+    background: rgb(59 130 246);
+    border-color: rgb(59 130 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.authorize:hover {
+    background: rgb(37 99 235);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.execute {
+    background: rgb(34 197 94);
+    border-color: rgb(34 197 94);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.execute:hover {
+    background: rgb(22 163 74);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.cancel {
+    background: rgb(239 68 68);
+    border-color: rgb(239 68 68);
+  }
+  
+  html[class~="dark"] .swagger-ui .btn.cancel:hover {
+    background: rgb(220 38 38);
+  }
+  
+  html[class~="dark"] .swagger-ui select {
+    background: rgb(31 41 55);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .curl-command {
+    background: rgb(17 24 39);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .copy-to-clipboard {
+    background: rgb(55 65 81);
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .copy-to-clipboard:hover {
+    background: rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-box {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-toggle {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-toggle:hover {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-jump-to-path {
+    color: rgb(59 130 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-jump-to-path:hover {
+    color: rgb(37 99 235);
+  }
+  
+  html[class~="dark"] .swagger-ui .auth-wrapper {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .auth-container .auth-wrapper h4 {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .auth-container .auth-wrapper .auth-btn-wrapper {
+    background: transparent;
+  }
+  
+  html[class~="dark"] .swagger-ui .scheme-container .schemes > label {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .loading-container .loading::after {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .topbar .download-url-wrapper input[type=text] {
+    background: rgb(31 41 55);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .topbar .download-url-wrapper .download-url-button {
+    background: rgb(55 65 81);
+    color: rgb(243 244 246);
+  }
+  
+  /* Servers section */
+  html[class~="dark"] .swagger-ui .servers > label {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .servers > .servers-title {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .servers .server-url {
+    background: rgb(31 41 55);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .servers .server-description {
+    color: rgb(156 163 175);
+  }
+  
+  /* Filter input */
+  html[class~="dark"] .swagger-ui .filter-container {
+    background: rgb(31 41 55);
+    border-top: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .filter .operation-filter-input {
+    background: rgb(17 24 39);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .filter .operation-filter-input:focus {
+    border-color: rgb(59 130 246);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  html[class~="dark"] .swagger-ui .filter .operation-filter-input::placeholder {
+    color: rgb(107 114 128);
+  }
+  
+  /* Additional missing elements */
+  html[class~="dark"] .swagger-ui .errors-wrapper {
+    background: rgb(127 29 29);
+    border: 1px solid rgb(185 28 28);
+    color: rgb(254 226 226);
+  }
+  
+  html[class~="dark"] .swagger-ui .errors-wrapper .error-wrapper {
+    background: transparent;
+  }
+  
+  html[class~="dark"] .swagger-ui .global-server-container {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .global-server-container .servers-title {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .info .base-url {
+    color: rgb(156 163 175);
+  }
+  
+  html[class~="dark"] .swagger-ui .scheme-container {
+    background: rgb(31 41 55);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .scheme-container .schemes-title {
+    color: rgb(243 244 246);
+  }
+  
+  html[class~="dark"] .swagger-ui .scheme-container select {
+    background: rgb(17 24 39);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  /* JSON/XML response content */
+  html[class~="dark"] .swagger-ui .highlight-code {
+    background: rgb(17 24 39);
+    color: rgb(209 213 219);
+    border: 1px solid rgb(75 85 99);
+  }
+  
+  html[class~="dark"] .swagger-ui .highlight-code .hljs {
+    background: rgb(17 24 39);
+    color: rgb(209 213 219);
+  }
+  
+  /* Arrows and expand/collapse icons */
+  html[class~="dark"] .swagger-ui .opblock-summary .opblock-summary-control {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .opblock-summary .opblock-summary-control svg {
+    fill: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .expand-operation svg,
+  html[class~="dark"] .swagger-ui .collapse-operation svg {
+    fill: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-toggle::after {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-box-control {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .model-box-control svg {
+    fill: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .prop-toggle {
+    color: rgb(209 213 219);
+  }
+  
+  html[class~="dark"] .swagger-ui .prop-toggle svg {
+    fill: rgb(209 213 219);
+  }
+  
+  /* Arrow for dropdowns - remove multiple arrows */
+  html[class~="dark"] .swagger-ui select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23D1D5DB' d='m8 10.293 3.146-3.147.708.708L8 11.707 4.146 7.854l.708-.708L8 10.293z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 14px 14px !important;
+    padding-right: 40px !important;
+  }
+  
+  /* Caret icons in various places */
+  html[class~="dark"] .swagger-ui .btn svg,
+  html[class~="dark"] .swagger-ui button svg {
+    fill: currentColor;
+  }
+  
+  /* Parameter expand/collapse arrows */
+  html[class~="dark"] .swagger-ui .parameters-container .parameter-item .parameter-item-header .parameter-item-toggle svg {
+    fill: rgb(209 213 219);
+  }
+  
+  /* Response expand/collapse arrows */
+  html[class~="dark"] .swagger-ui .responses-wrapper .response-header .response-toggle svg {
+    fill: rgb(209 213 219);
+  }
+  

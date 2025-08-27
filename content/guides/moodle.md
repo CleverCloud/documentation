@@ -110,7 +110,7 @@ Get the remote in your application menu > **Information** > **Deployment URL** a
 
 Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. As explained in the [Clever Cloud cron documentation](https://www.clever.cloud/developers/doc/administrate/cron/#access-environment-variables), to have access to environment variable, you must wrap your commands in a bash script.
 
-Add a `cron.sh` file to the root moodle folder:
+Add a `cron.sh` file to the root of the application:
 
 ```bash
 #!/bin/bash -l

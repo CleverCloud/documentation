@@ -112,7 +112,7 @@ Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that r
 
 Add a `cron.sh` file to the root of the application:
 
-```bash
+```bash {filename="cron.sh"}
 #!/bin/bash -l
 cd ${APP_HOME}
 php admin/cli/cron.php

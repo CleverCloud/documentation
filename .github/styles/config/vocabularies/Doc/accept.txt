@@ -33,6 +33,7 @@ Dockerfile
 downtimes
 eg
 EOL
+ESLint
 failover
 Filestash
 Filezilla
@@ -51,6 +52,7 @@ hostname
 Infinispan
 jarName
 Jboss
+JSDoc
 Keycloak
 Kubectl
 Laravel

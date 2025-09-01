@@ -17,7 +17,7 @@ excludeSearch: true
 
 [The release 26.3.3](https://github.com/keycloak/keycloak/releases/26.3.3) of Keycloak is available on Clever Cloud. It brings Infinispan 15.0.19.Final, Quarkus 3.20.2.1, ensures cache configuration has correct number of owners, fixes [CVE-2025-7962](https://nvd.nist.gov/vuln/detail/CVE-2025-7962) and various bug for improved stability.
 
-This release is now used as default for new created add-ons. To update an existing add-on, set `CC_KEYCLOAK_VERSION` of its Java application to `26.3.3` and rebuild it. You can also use [the new Clever Tools commands](/developers/doc/cli/operators/), introduced in `3.13.0` release:
+This release is now used as default for new created add-ons. To update an existing add-on, set `CC_KEYCLOAK_VERSION` of its Java application to `26.3.3` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators
@@ -27,4 +27,4 @@ clever keycloak version update yourKeycloakNameOrId
 clever keycloak version update yourKeycloakNameOrId 26.3.3
 ```
 
-- [Learn more about Keycloak on Clever Cloud](/developers/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)

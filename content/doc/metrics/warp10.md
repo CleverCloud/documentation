@@ -130,7 +130,7 @@ It provides the path to the Clever Cloud Warp 10 gateway and let you explore you
 
 In Warp 10, classes organize metrics from various sources, like applications or add-ons, into specific categories (CPU usage, memory statistics, etc.). This structure makes the data easy to retrieve and analyze with WarpScript. 
 
-For a complete list of Telegraf classes and their descriptions, see [the classes list](/developers/doc/metrics/#classes).
+For a complete list of Telegraf classes and their descriptions, see [the classes list](/doc/metrics/#classes).
 
 ## Macro
 

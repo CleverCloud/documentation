@@ -354,6 +354,30 @@ Available through:
 - [Public repository](https://github.com/CleverCloud/clever-components/)
 - [Storybook documentation](https://www.clever.cloud/developers/clever-components/)
 
+### Deploy private Git submodules
+
+If your application uses private Git submodules, avoid storing credentials in `.gitmodules`. Use SSH URLs and provide an SSH key at deploy time.
+
+1. Use an SSH URL for each submodule
+
+```bash
+# Add a new submodule (example)
+git submodule add git@github.com:org/repo.git path/to/subdir
+```
+
+2. Provide an SSH key for the build
+
+  - Set the `CC_SSH_PRIVATE_KEY` environment variable with a private key that has read access to your submodule(s).
+  - Optionally set `CC_SSH_PRIVATE_KEY_FILE` to control the filename used on the instance.
+  - The key is installed into `~/.ssh` before the build so Git operations (including submodules) can authenticate.
+  - Alternatively, commit `clevercloud/ssh.json` to reference a private key file in your repo (see the linked documentation for the expected format).
+
+{{< callout type="info" >}}
+Please provide a key without pass phrase. Submodules are initialized during deployment unless you disable it with `CC_DISABLE_GIT_SUBMODULES`.
+{{< /callout >}}
+
+[Learn more: Private SSH key configuration](/doc/reference/common-configuration/#private-ssh-key) · [Environment variable reference](/doc/reference/reference-environment-variables/)
+
 ### Custom Solutions
 
 Clever Cloud offers:

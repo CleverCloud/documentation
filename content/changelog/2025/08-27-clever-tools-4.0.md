@@ -30,9 +30,11 @@ These changes will pave the way for future major improvements and new features a
 
 - [Learn more about choices we made in Clever Tools 4.0](https://github.com/CleverCloud/clever-tools/pull/943)
 
-## How to use Clever Tools 4.0?
+## How to upgrade
 
-We'll make this release available through package managers in the coming days. It will let you some time to stick to branch 3.x if needed. In the meantime, you can download and test Clever Tools 4.0 preview binaries directly. 
+To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
-- [Download Clever Tools 4.0](https://github.com/CleverCloud/clever-tools/pull/959#issuecomment-3241165087)
-- [Report any problem with an issue](https://github.com/CleverCloud/clever-tools/issues)
+```
+npm update -g clever-tools
+clever version
+```

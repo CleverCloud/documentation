@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Hugo Site Development
 - **Local development**: `hugo server` - Serves site at http://localhost:1313 with live reload
-- **Build for production**: `hugo` - Outputs to `public/developers/`  
+- **Build for production**: `hugo` - Outputs to `public/developers/`
 - **Preview drafts**: `hugo server --buildDrafts` - Include draft content in local preview
 - **Update CLI reference**: `./update-cli-reference.sh` - Fetches latest clever-tools documentation
 
@@ -90,7 +90,7 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 - `CC_WEBROOT="public"`
 - `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"`
 - `SERVER_ERROR_PAGE_404="developers/404.html"`
-- Optional: `CC_HUGO_VERSION="0.148"` to specify Hugo version (example value)
+- Optional: `CC_HUGO_VERSION="0.149"` to specify Hugo version (example value)
 
 ## Data Management
 Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special LLMS output format at `/llms.txt` for AI consumption.

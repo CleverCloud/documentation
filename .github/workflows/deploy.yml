@@ -35,7 +35,7 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
-          GH_CC_HUGO_VERSION: 0.148
+          GH_CC_HUGO_VERSION: 0.149
           GH_CC_STATIC_AUTOBUILD_OUTDIR: public/developers
           GH_CC_WEBROOT: public
           GH_SERVER_ERROR_PAGE_404: developers/404.html

@@ -46,7 +46,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Bun 1.2.21: native Clever Cloud add-ons support
 
-The latest Bun 1.2 release brings native MySQL support and various improvements. It already support PostgreSQL, Redis, S3-compatible Object Storage. Thus, you can use it in your applications and scripts with many Clever Cloud add-ons.
+The latest Bun 1.2 release [brings native MySQL support](https://bun.com/blog/bun-v1.2.21) and various improvements. It already support PostgreSQL, Redis, S3-compatible Object Storage. Thus, you can use it in your applications and scripts with many Clever Cloud add-ons.
 
 We provide a GitHub repository with ready-to-use examples:
 

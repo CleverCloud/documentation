@@ -61,7 +61,7 @@ You can set some tools' version in any runtime (except Docker):
 
 | Name | Description |
 |------|-------------|
-| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.149` | |
 | `CC_NODE_VERSION` | Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 
 #### Control build and dependencies cache
@@ -273,7 +273,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |  Name  |  Description  |  Default value  |
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
-|`CC_COMPOSER_VERSION` | Choose your composer version between 1 and 2 | 2 |
+|`CC_COMPOSER_VERSION` | Choose your composer version between `2` or `lts` | 2 |
 |[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
@@ -384,7 +384,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 | Name | Description | Default value |
 |------|-------------|---------------|
-| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.147` | |
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.149` | |
 | `CC_BUILD_COMMAND` | The command to run during the build phase | |
 | `CC_OVERRIDE_BUILDCACHE` | Files and path to put in the build cache, separated by a `:` |  |
 | `CC_STATIC_AUTOBUILD_OUTDIR` | The output directory of the static site generator (SSG) auto-build, relative to the root of your application | `/cc_static_autobuilt` |

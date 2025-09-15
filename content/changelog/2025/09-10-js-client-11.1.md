@@ -17,12 +17,23 @@ excludeSearch: true
 
 [Clever Cloud JS client 11.1](https://github.com/CleverCloud/clever-client.js/blob/master/CHANGELOG.md#1110-2025-09-10) is available. It fixes some bugs but more importantly, it is the first public release including the next major release structure (v12). For this project, we completely overhauled the way we manage v2 and v4 API endpoints.
 
-We tested each of them, developed analysis scripts to ensure that we cover correctly all endpoints and methods, including legacy parts with inconsistent naming and responses. We thought it to be easier to use, more powerful with less code. It brings type checking, better DX, and a more consistent usage.
+We tested each of them, developed analysis scripts to ensure that we cover correctly all endpoints and methods, including legacy parts with inconsistent naming and responses. We thought it to be easier to use, more powerful with less code. It brings type checking, data caching, automatic ID resolving, better DX, and a more consistent usage.
 
-For example, you can now get you profile information only with this code:
+For example, you can now get your profile information only with this code:
 
 ```javascript
+import { CcApiClient } from "@clevercloud/client/cc-api-client.js";
+import { GetProfileCommand } from "@clevercloud/client/cc-api-commands/profile/get-profile-command.js";
 
+const client = new CcApiClient({
+    authMethod: {
+        type: 'api-token',
+        apiToken: process.env.CLEVER_API_TOKEN,
+    }
+});
+
+const tenant = await client.send(new GetProfileCommand());
+console.table(tenant);
 ```
 
 This JavaScript client supports the new API Bridge and API tokens for authentication, our Redis HTTP client used for KV explorer, and paves the way for multiple incoming projects based on it, including our new public API.

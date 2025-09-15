@@ -22,7 +22,7 @@ There are two text filter modes: exact match (case-sensitive) and regular expres
 
 ![New logs interface](/images/new-logs.webp)
 
-This interface is constantly improving, send us your feedback through our GitHub Community:
+This interface is constantly improving, used for logs and access logs, send us your feedback through our GitHub Community:
 
 * [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 

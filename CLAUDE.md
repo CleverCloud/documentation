@@ -90,7 +90,7 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 - `CC_WEBROOT="public"`
 - `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"`
 - `SERVER_ERROR_PAGE_404="developers/404.html"`
-- Optional: `CC_HUGO_VERSION="0.149"` to specify Hugo version (example value)
+- Optional: `CC_HUGO_VERSION="0.150"` to specify Hugo version (example value)
 
 ## Data Management
 Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special LLMS output format at `/llms.txt` for AI consumption.

@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.2.21
+    - 1.2.22
 
 dotnet:
   eol_source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core

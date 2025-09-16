@@ -223,7 +223,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Java Documentation](/doc/applications/java/java-jar)
 
-|  Name  |  Description  |  Default value  |  Read Only  |
+|  Name  |  Description  |  Default value  |  Details  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
 |`CC_DISABLE_MAX_METASPACE` | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
 |`CC_EXTRA_JAVA_ARGS` | Define extra arguments to pass to 'java' for jars. |  |  |
@@ -233,7 +233,7 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_MAVEN_PROFILES` | Define which maven profile to use during default build. |  |  |
 |`CC_RUN_COMMAND` | Custom command to run your application. Replaces the default behaviour. |  |  |
 |`CC_SBT_TARGET_BIN` | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
-|`CC_SBT_TARGET_DIR` | Define where pick the bin to run. | `.` | Then `/target/universal/stage/bin` is concatenated. |
+|`CC_SBT_TARGET_DIR` | Define the folder the `target` dir is in. | `.` | `/target/universal/stage/bin` is concatenated to the given directory. |
 |`GRADLE_DEPLOY_GOAL` | Define which gradle goals to run during build. |  |  |
 |`MAVEN_DEPLOY_GOAL` | Define which maven goals to run during build. |  |  |
 |`NUDGE_APPID` |  |  |  |

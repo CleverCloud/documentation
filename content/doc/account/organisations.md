@@ -27,8 +27,6 @@ Each organisation have its own identifier looking like `orga_xxxxxxxx-xxxx-xxxx-
 
 ## Add an organisation
 
-organisation names are unique. It means that you cannot use an already used organisation name.
-
 In order to add an organisation, just click on "Add an organisation" in the top left sidebar.
 
 ## Roles and privileges

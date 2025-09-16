@@ -57,7 +57,7 @@ SERVER_ERROR_PAGE_404="developers/404.html"
 ```
 
 > [!TIP]
-> You can set the Hugo version with `CC_HUGO_VERSION` with a value like `0.149`
+> You can set the Hugo version with `CC_HUGO_VERSION` with a value like `0.150`
 
 ## Contributing
 

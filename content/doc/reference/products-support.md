@@ -24,9 +24,9 @@ This is a product matrix showing the services that are available with our Terraf
 | MongoDB        | ✅        | ✅           |
 | PostgreSQL     | ✅        | ✅           |
 | Redis          | ✅        | ✅           |
-| MySql          | ✅        | ✅           |
+| MySQL          | ✅        | ✅           |
 | Pulsar         | ✅        | ✅           |
-| ConfigProvider |           | ✅           |
+| Config Provider |           | ✅           |
 | ElasticSearch  |           | ✅           |
 | FS Bucket      | ✅        |              |
 | Jenkins        | ✅        |              |
@@ -43,7 +43,7 @@ This is a product matrix showing the services that are available with our Terraf
 | FrankenPHP | ✅        |              |
 | Scala  | ✅        |              |
 | Static | ✅        |              |
-| NodeJS | ✅        |              |
+| Node.js/Bun | ✅        |              |
 | Python | ✅        |              |
 | Go     | ✅        |              |
 | Play2  | ✅        |              |

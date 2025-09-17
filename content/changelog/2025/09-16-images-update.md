@@ -19,13 +19,16 @@ We updated all our images. Deployment is in progress for all our users.
   * Clever Tools 4.0.2
   * Mise 2025.9.9
   * Tailscale 1.88.1
+* **Elixir:**
+  * Erlang 26.2.5.15
+  * Erlang 27.3.4.3
+  * Erlang 28.0.3
 * **Node.js & Bun:**
   * Bun 1.2.22
 * **PHP:**
+  * Apache 2.4.65
   * Imagick extension 3.8.0
   * Symfony: fix binary name (was `symfony-cli`, now `symfony`)
-* **PHP:**
-  * Apache 2.4.65
 * **Python:**
   * uv 0.8.17
 * **Static:**

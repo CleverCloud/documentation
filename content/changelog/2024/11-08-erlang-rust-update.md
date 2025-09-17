@@ -15,14 +15,14 @@ aliases:
 - /changelog/2024-11-11-08-erlang-rust-update
 ---
 
-We’ve updated Erlang and Rust images. They were deployed without any impact for our users.
+We’ve updated Elixir and Rust images. They were deployed without any impact for our users.
 
 * **Common:**
   * Linux kernel 6.11.6
   * Lighter Vector binary
   * New build/deploy message with colors
   * Users can now use multiple OpenVPN clients in a single instance
-* **Erlang:**
+* **Elixir:**
   * Elixir 1.17
   * Erlang 27.1.2
 * **Rust:**

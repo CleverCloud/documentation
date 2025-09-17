@@ -24,14 +24,14 @@ This is a product matrix showing the services that are available with our Terraf
 | MongoDB        | ✅        | ✅           |
 | PostgreSQL     | ✅        | ✅           |
 | Redis          | ✅        | ✅           |
-| MySql          |           | ✅           |
-| Pulsar         |           | ✅           |
+| MySql          | ✅        | ✅           |
+| Pulsar         | ✅        | ✅           |
 | ConfigProvider |           | ✅           |
 | ElasticSearch  |           | ✅           |
 | FS Bucket      | ✅        |              |
-| Jenkins        |           |              |
+| Jenkins        | ✅        |              |
 | Matomo         |           |              |
-| Otoroshi       |           |              |
+| Otoroshi       | ✅        |              |
 
 ## Runtimes available on Terraform and K8S-Operator
 
@@ -40,7 +40,11 @@ This is a product matrix showing the services that are available with our Terraf
 | Docker | ✅        |              |
 | Java   | ✅        |              |
 | PHP    | ✅        |              |
+| FrankenPHP | ✅        |              |
 | Scala  | ✅        |              |
 | Static | ✅        |              |
 | NodeJS | ✅        |              |
 | Python | ✅        |              |
+| Go     | ✅        |              |
+| Play2  | ✅        |              |
+| Rust   | ✅        |              |

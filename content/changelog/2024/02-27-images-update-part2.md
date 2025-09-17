@@ -14,7 +14,7 @@ aliases:
 excludeSearch: true
 ---
 
-Earlier this month, we published [a first set of updates](../02-02-images-update) for Docker, Erlang, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables [the new `healthcheck` feature](../02-26-healthcheck-for-everyone) available for all applications.
+Earlier this month, we published [a first set of updates](../02-02-images-update) for Docker, Elixir, Go, Haskell, Ruby and Rust. Some days ago, we finished this work and all images are now up-to-date. This process occurred with no impact for our users. As mentioned in a previous post, this enables [the new `healthcheck` feature](../02-26-healthcheck-for-everyone) available for all applications.
 
 New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the `CC_NODE_VERSION` [environment variable](/doc/reference/reference-environment-variables/#commons-to-all-applications). Other changes are as follows:
 

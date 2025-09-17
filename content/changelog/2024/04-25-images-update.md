@@ -22,7 +22,7 @@ We've updated all our images and deployed them without any impact for our users.
   * Node.js 20.12.2 as default version
 * **Ruby:**
   * Update to 3.0.7, 3.1.5, 3.2.4 and 3.3.1 (CVE-2024-27282, CVE-2024-27281 et CVE-2024-27280)
-* **Erlang / Elixir:**
+* **Elixir:**
   * Update to 21.16.2, 22.3.4.27, 23.3.4.20, 24.3.4.17, 25.3.2.11, 26.2.4
 * **.NET:**
   * Update to 8.0.103, 8.0.3

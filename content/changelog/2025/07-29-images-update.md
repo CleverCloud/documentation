@@ -21,7 +21,7 @@ We updated all our images, except Node.js & Bun. Deployment is in progress for a
 * **Docker:**
   * Update to 28.3.2
   * Buildx 0.26.1
-* **Erlang:**
+* **Elixir:**
   * Update to 27.3.4.2
   * Update to 28.0.2
 * **Go:**

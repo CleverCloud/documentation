@@ -31,6 +31,7 @@ Immutable infrastructure doesn't allow you to keep generated data files between 
 FS Buckets are provided for application needing file-system backward compatibility, but there are not optimized for high-performance applications, especially those relying on caching. There are also some availability and features limitations:
 
 - FS Buckets are not available for Docker applications
+- FS Buckets can't be mounted across different regions
 - FS Buckets are note available in Health Data Hosting (HDS) Zone
 - Clever Cloud provides automated backups every 24 hours, with only 72 hours of retention for FS Buckets (7 days for databases)
 
@@ -45,7 +46,7 @@ Buckets are configured using environment variables. Add the following to your ap
 CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com[:async]
 ```
 
-Don't forget to replace the path of the mounted folder and the fs-bucket host with the targeted folder path (make sure the folder does not exists) and your fs-bucket host.
+Replace the path of the mounted folder and the fs-bucket host with the targeted folder path and your fs-bucket host. The target directory shouldn't exist and is relative to the application: `/my-directory` will be mounted in `/home/bas/<app_id>/my-directory/`.
 
 Optionnally, you can add `:async` to the end of the environment variable.
 This will make Clever Cloud mount the FS Bucket with the `async` option.

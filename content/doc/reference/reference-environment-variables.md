@@ -223,22 +223,22 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Java Documentation](/doc/applications/java/java-jar)
 
-|  Name  |  Description  |  Default value  |  Details  |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|`CC_DISABLE_MAX_METASPACE` | Allows to disable the Java option -XX:MaxMetaspaceSize |  |  |
-|`CC_EXTRA_JAVA_ARGS` | Define extra arguments to pass to 'java' for jars. |  |  |
-|`CC_JAR_ARGS` | Define arguments to pass to the jar we launch. |  |  |
-|`CC_JAR_PATH` | Define the path to your jar. |  |  |
-|`CC_JAVA_VERSION` | Choose the JVM version between 7 to 17 for OpenJDK or graalvm-ce for GraalVM 21.0.0.2 (based on OpenJDK 11.0). | 21 |  |
-|`CC_MAVEN_PROFILES` | Define which maven profile to use during default build. |  |  |
-|`CC_RUN_COMMAND` | Custom command to run your application. Replaces the default behaviour. |  |  |
-|`CC_SBT_TARGET_BIN` | Define the bin to pick in the `CC_SBT_TARGET_DIR`. | The first bin found in the `CC_SBT_TARGET_DIR`. |  |
-|`CC_SBT_TARGET_DIR` | Define the folder the `target` dir is in. | `.` | `/target/universal/stage/bin` is concatenated to the given directory. |
-|`GRADLE_DEPLOY_GOAL` | Define which gradle goals to run during build. |  |  |
-|`MAVEN_DEPLOY_GOAL` | Define which maven goals to run during build. |  |  |
-|`NUDGE_APPID` |  |  |  |
-|`PLAY1_VERSION` | Define which play1 version to use between 1.2, 1.3, 1.4 and 1.5 |  |  |
-|`SBT_DEPLOY_GOAL` | Define which sbt goals to run during build. | stage |  |
+| Name | Description | Default value |
+|------|-------------|---------------|
+|`CC_DISABLE_MAX_METASPACE` | Allows to disable the Java option `-XX:MaxMetaspaceSize` |  |
+|`CC_EXTRA_JAVA_ARGS`       | Define extra arguments to pass to `java` for JAR |  |
+|`CC_JAR_ARGS`              | Define arguments to pass to the launched JAR |  |
+|`CC_JAR_PATH`              | Define the path to your JAR |  |
+|`CC_JAVA_VERSION`          | Choose the JVM version between for OpenJDK or `graalvm-ce` for GraalVM | 21 |
+|`CC_MAVEN_PROFILES`        | Define which Maven profile to use during default build |  |
+|`CC_RUN_COMMAND`           | Custom command to run your application. Replaces the default behavior |  |
+|`CC_SBT_TARGET_BIN`        | Define the bin to pick in the `CC_SBT_TARGET_DIR`. The first bin found in the `CC_SBT_TARGET_DIR` |
+|`CC_SBT_TARGET_DIR`        | Define the folder the `target` dir is in. `/target/universal/stage/bin` is concatenated to the given directory | `.` |
+|`GRADLE_DEPLOY_GOAL`       | Define which Gradle goals to run during build |  |
+|`MAVEN_DEPLOY_GOAL`        | Define which Maven goals to run during build |  |
+|`NUDGE_APPID`              |  |  |
+|`PLAY1_VERSION`            | Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5` |  |
+|`SBT_DEPLOY_GOAL`          | Define which SBT goals to run during build | stage |
 
 ## Linux
 

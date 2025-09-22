@@ -18,7 +18,7 @@ aliases:
 - /reference/reference-environment-variables
 ---
 
-## Commons to all applications
+## Common to all applications
 
 ### Set by the deployment process
 

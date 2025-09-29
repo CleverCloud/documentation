@@ -326,7 +326,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
 |`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#supported-versions) | 3 |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
-|`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
+|`GZIP_TYPES` | Set the mime types to compress. | text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`PYTHON_SETUP_PY_GOAL` | Custom setup goal to be launch after requirements.txt have been installed |  |
@@ -359,7 +359,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 |`CC_RUBY_VERSION` | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
 |`CC_SIDEKIQ_FILES` | Specify a list of Sidekiq configuration files e.g. "./config/sidekiq_1.yml,./config/sidekiq_2.yml" |  |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
-|`GZIP_TYPES` | Set the mime types to compress. | text/* application/json application/xml application/javascript image/svg+xml |
+|`GZIP_TYPES` | Set the mime types to compress. | text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml |
 |`NGINX_READ_TIMEOUT` | Read timeout in seconds | 300 |
 |`RACK_ENV` |  |  |
 |`RAILS_ENV` |  |  |  |

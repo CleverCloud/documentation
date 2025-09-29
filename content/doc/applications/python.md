@@ -168,7 +168,7 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 
 - `NGINX_READ_TIMEOUT`: a bit like `HARAKIRI`, the response timeout in seconds. (Default: 300)
 - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output.
-- `GZIP_TYPES`: the mime types to gzip. Defaults to `text/* application/json application/xml application/javascript image/svg+xml`.
+- `GZIP_TYPES`: the mime types to gzip. Defaults to `text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml`.
 
 ##### Basic authentication
 

@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.2.22
+    - 1.2.23
 
 dotnet:
   eol_source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
@@ -45,7 +45,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 22.19.0 (npm 10.9.3)
+    - 22.20.0 (npm 10.9.3)
 
 php:
   eol_source: https://www.php.net/supported-versions.php

@@ -118,10 +118,10 @@ Hugo uses front matter to enrich posts with metadata. Front matter allows you to
 - [`excludeSearch`](https://imfing.github.io/hextra/docs/guide/configuration/#search-index) (optional)
   - Indicates whether the page should be indexed in search. Default is `false`, we recommend setting it to `true` for changelog entries.
 
-- [aliases](https://gohugo.io/methods/page/aliases) (optional)
+- [`aliases`](https://gohugo.io/methods/page/aliases) (optional)
   - Aliases redirects the user to the right page. The value is a list of `<string>`, each string being a path to redirect from, relative to the base URL (without the `/developer`, for example: `/doc/docker`).
 
-- [comments](https://gohugo.io/content-management/comments/) (optional)
+- [`comments`](https://gohugo.io/content-management/comments/) (optional)
   - Whether to show the feedback block or not. The value is a `<boolean>`, default is `true`.
 
 - [`draft`](https://gohugo.io/methods/page/draft/) (optional)

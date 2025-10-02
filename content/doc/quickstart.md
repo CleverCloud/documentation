@@ -3,7 +3,7 @@ type: docs
 linkTitle: Quickstart
 weight: 1
 title: Quickstart
-description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
+description: Deploy your first app on Clever Cloud in minutes. Learn how to create an account, push your code via Git or GitHub, and add databases or services to your application.
 keywords:
 - quickstart
 - getting-started
@@ -24,33 +24,33 @@ aliases:
 - /quickstart
 ---
 {{< hextra/hero-subtitle >}}
-  Clever Cloud provides an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+  Clever Cloud is an automated hosting platform that lets you deploy apps and launch dependencies without worrying about infrastructure setup. This guide shows you how to deploy your first app while learning the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
 ## Clever Cloud applications
 
-An application is defined on Clever Cloud by the following elements:
+Every Clever Cloud application must have:
 
-* a dedicated language/framework;
-* a deployment method (FTP and/or Git);
-* resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
-* an optional configuration file you may add to your project.
+* A language or framework
+* A deployment method (Git, GitHub, or FTP)
+* Resource allocation (CPU, RAM, disk)
+* A configuration file (optional)
 
-If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
+Except for the optional configuration file, Clever Cloud can't deploy an application if any required element is missing.
 
 > [!NOTE]
-> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
+> Clever Cloud runtimes use immutable infrastructure and always start fresh with each deployment. This means local file storage is not persistent. For data that needs to persist between deployments, use [FS Bucket (file storage)](/doc/addons/fs-bucket/), [Cellar (object storage)](/doc/addons/cellar), or a [database service](/doc/addons/).
 
 ## Supported runtimes
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="FrankenPHP" icon="frankenphp" >}}
   {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
   {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
-  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/java" title="Java" icon="java" >}}
   {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
   {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
   {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
@@ -59,16 +59,16 @@ If one of these elements is missing, Clever Cloud can't deploy your application 
   {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
   {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
-  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/applications/static" title="Static sites" icon="static" >}}
+  {{< card link="/developers/doc/applications/static-apache" title="Static sites with Apache" icon="feather" >}}
   {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
 ## How Clever Cloud works
 
-When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
+When you push your code via Git or FTP, Clever Cloud checks that all required elements are present and deploys automatically if they are. Once deployment completes, your application is live.
 
-The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
+View application logs in the **Logs** tab of the Clever Cloud Console.
 
 ## Create a Clever Cloud account
 
@@ -215,59 +215,52 @@ Monitor deployment progress in the **Logs** tab of the Clever Cloud Console.
 
 ### Troubleshooting
 
-{{% details title="Git ⋅ Remote is asking for a password" closed="true" %}}
+{{% details title="Git ⋅ Prompted for a password when pushing" closed="true" %}}
+If Git asks for a password when you push, check your SSH key configuration.
 
-If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key configuration error.
-
-**Add your SSH key to your profile here:**
-<https://console.clever-cloud.com/users/me/ssh-keys>
-
-The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys-management/)
-
+Add your SSH key to Clever Cloud in the [**SSH Keys** tab](https://console.clever-cloud.com/users/me/ssh-keys) of your profile. See the [SSH keys documentation](/doc/account/ssh-keys-management/) for more information.
 {{% /details %}}
-{{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
-You are probably trying to push from another branch. Keep in mind that:
 
-* You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
-* You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
-* In order to push to **master** from a non-master local branch, use this syntax:
+{{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
+This error means that Git can't find the branch reference you're trying to push.
+
+* You can only push to the `master` branch for deployment. Pushing to another branch will trigger an error.
+* You cannot push tags to trigger deployments. Only branch pushes will deploy your code.
+
+To push to `master` from a different local branch, use this syntax:
 
 ```bash
 git push <remote-name> <branch-name>:master
 ```
-
 {{% /details %}}
 
-{{% details title= "GitHub ⋅ Does not appear to be a git repository" closed="true" %}}
-You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.
-
-If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :
+{{% details title= "GitHub ⋅ fatal: does not appear to be a git repository" closed="true" %}}
+If you try to push directly to an application created from a GitHub repository, you'll get this error:
 
 ```bash
 fatal: '/data/repositories/<app_id>.git' does not
 appear to be a git repository
 ```
 
-Indeed, no git repository is created on Clever Cloud because the application is directly cloned from GitHub.
+Applications created from GitHub repositories are cloned directly from GitHub (no Git repository is created on Clever Cloud) and deploy automatically.
 
-If you have to push directly to a repository to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.
-
+If you need to deploy by pushing directly to Clever Cloud (for example, from a CI/CD pipeline), create a non-GitHub application instead.
 {{% /details %}}
 
 ## Manage Clever Cloud applications
 
-There are many tabs available in the application's menu on Clever Console:
+The Clever Cloud application menu includes the following tabs:
 
-* **Information:** General information about your application
-* **Scalability:** Set-up scalability options
+* **Information:** General information about the application
+* **Scalability:** Set up scalability options
 * **Domain names:** Manage custom domain names
 * **Environment variables:** Manage environment variables
 * **Service dependencies:** Link add-ons and applications
 * **Exposed configuration:** Manage exposed environment variables
-* **Activity:** Track last deployments
-* **Logs:** Visualize application's logs
-* **Metrics:** Visualize application's metrics
-* **Consumption:** Visualize your application's consumption.
+* **Activity:** Track previous deployments
+* **Logs:** View application logs
+* **Metrics:** View application metrics
+* **Consumption:** View application resource consumption
 
 ## Add-ons for Clever Cloud applications
 

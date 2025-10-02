@@ -156,67 +156,59 @@ The wizard will prompt you to configure [add-ons](/doc/addons) and [environment 
 
 ### Choose a deployment method
 
-{{< tabs items="Git,GitHub, FTP" >}}
+Follow the steps for your preferred deployment method in the tabs below.
+
+Monitor deployment progress in the **Logs** tab of the Clever Cloud Console.
+
+{{< tabs items="Git, GitHub, FTP" >}}
   {{< tab >}}
-  *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
+  You'll need Git installed on your machine to deploy with it. Learn more at [git-scm.com](https://git-scm.com).
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
+  To deploy with Git:
 
-  Follow these steps to deploy your application:
-
-1. Get the git deployment URL in the application information page, which looks like: `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
-
-2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
+* Navigate to the application information page in the Clever Cloud Console and copy the Git deployment URL. It will look something like `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
+* Open your terminal and go to your application directory. Initialize Git if you haven't already:
 
   ```bash
   git init
   git add .
   git commit -m "first commit"
-```
+  ```
+* Link your local repository to Clever Cloud by providing the Git remote URL:
 
-3. Then, link your local repository to Clever Cloud by providing the Git remote URL:
+  ```bash
+  git remote add <remote-name> <your-git-deployment-url>
+  ```
+* Push your application to Clever Cloud:
 
-```bash
-git remote add <remote-name> <your-git-deployment-url>
-```
+  ```bash
+  git push <remote-name> <branch-name>:master
+  ```
 
-4. Push your application to Clever Cloud:
-
-```bash
-git push <remote-name> <branch-name>:master
-```
-
-  You can see your application **logs** in the dashboard to **monitor the deployment**.
-
+  **Note:** The `.git` folder is automatically deleted during deployment for security. To track which version is deployed, use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
   {{< /tab >}}
 
   {{< tab >}}
-  Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
+  Once you have created an application with GitHub, each push to the `master` branch triggers a deployment. If your repository uses `main` or another branch, go to the application's information panel and select the default branch to use.
 
-  ![GitHub deployment branch select](/images/github-deployment-branch.png "Github deployment branch select")
+  ![Selecting the GitHub deployment branch](/images/github-deployment-branch.png "Selecting the GitHub deployment branch")
 
-  If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings/applications) and link again your GitHub account to your Clever Cloud account.
+  If the repository doesn't appear in the list fetched from GitHub, you might need to relink your GitHub account to Clever Cloud. In GitHub, navigate to [Authorized OAuth Apps](https://github.com/settings/applications) (**Settings** > **Applications**) and revoke access for **Clever Cloud API**. Return to your [Clever Cloud profile](https://console.clever-cloud.com/users/me/information) and click **Link your GitHub account** in the **Information** tab.
 
-  **Private GitHub repositories are also supported.**
-
-  Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: that is, either someone has full read write access (because they're a collaborator) or they have no access.
-
-  However, if you set up an organisation, create the repository under the aegis of the organisation, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+  **Note:** You can use private GitHub repositories with Clever Cloud. However, personal GitHub accounts grant collaborators full access to private repositories. For granular permissions (like read-only access), use a GitHub organization.
   {{< /tab >}}
 
   {{< tab >}}
-  You can deploy via FTP with PHP applications.
+  Only PHP applications can be deployed with FTP.
 
-  To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
+  Ensure you have FTP software like [FileZilla](https://filezilla-project.org/) installed on your machine. For more information, see the [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
-  Deploy your application via FTP, create a [FS Bucket](/doc/addons/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+  To deploy your application via FTP, create an [FS Bucket](/doc/addons/fs-bucket) with the same ID as your application ID. Find the FTP credentials in the FS Bucket **Configuration** tab.
 
-  [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
-
-  {{< icon "exclamation-circle" >}} An FTP application is automatically started once the application is created, even if no code has been sent.
+  PHP applications with FTP deployment start automatically when created, even without any code.
 
   {{< callout type="warning" >}}
-  FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
+  FTP deployment is suitable for small websites. For large PHP websites, we strongly recommend using Git deployment.
   {{< /callout >}}
   {{< /tab >}}
 {{< /tabs >}}

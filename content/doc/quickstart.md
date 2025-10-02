@@ -27,7 +27,50 @@ aliases:
   Clever Cloud provides an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-## Create a Clever Cloud Account
+## Clever Cloud applications
+
+An application is defined on Clever Cloud by the following elements:
+
+* a dedicated language/framework;
+* a deployment method (FTP and/or Git);
+* resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
+* an optional configuration file you may add to your project.
+
+If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
+
+> [!NOTE]
+> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
+
+## Supported runtimes
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
+  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
+  {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
+  {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
+  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
+{{< /cards >}}
+
+## How Clever Cloud works
+
+When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
+
+The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
+
+## Create a Clever Cloud account
 
 The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
@@ -55,7 +98,7 @@ There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 
-### Two Factor Authentication (2FA)
+### Enable two-factor authentication
 
 Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
 
@@ -63,50 +106,7 @@ Please, backup your recovery codes, we won't be able to restore access to your a
 
 ## Deploy your code
 
-### What's an Application on Clever Cloud
-
-An application is defined on Clever Cloud by the following elements:
-
-* a dedicated language/framework;
-* a deployment method (FTP and/or Git);
-* resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
-* an optional configuration file you may add to your project.
-
-If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
-
-> [!NOTE]
-> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
-
-### How it Works
-
-When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
-
-The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
-
-### Supported Platforms
-
-{{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
-  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
-  {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
-  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
-  {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
-  {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
-  {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
-  {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
-  {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
-  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
-  {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
-{{< /cards >}}
-
-### Create an Application Step by Step
+### Set up a Clever Cloud application
 
 {{< youtube 9ww_t0o-GmA >}}
 
@@ -114,18 +114,18 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 {{% steps %}}
 
-#### Select the organisation
+#### Select the organization
 
 Choose the organisation you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
 
-#### Click on "Create an application"
+#### Create an application
 
 Find it in the **organisation Manager** panel, at the top left of the left menu.
 
 This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
-#### Select the language
+#### Select the application type
 
 Choose the language or the framework you want to deploy.
 
@@ -133,13 +133,13 @@ Choose the language or the framework you want to deploy.
   **Optional:** for PHP applications, you can choose between FTP and Git deployment.
   {{< /callout >}}
 
-#### Fine-tune your scaling configuration
+#### Configure scaling
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
 - [Learn more about scaling & instances size](/doc/administrate/scalability)
 
-#### Name your application
+#### Give the application a name
 
 Enter the name and the description of your application.
 
@@ -150,7 +150,7 @@ Enter the name and the description of your application.
 
 {{% /steps %}}
 
-#### Choose How to Deploy
+### Choose a deployment method
 
 {{< tabs items="Git,GitHub, FTP" >}}
   {{< tab >}}
@@ -258,7 +258,7 @@ If you have to push directly to a repository to deploy an application (eg if you
 
 {{% /details %}}
 
-## Manage your Application
+## Manage Clever Cloud applications
 
 There are many tabs available in the application's menu on Clever Console:
 
@@ -273,7 +273,7 @@ There are many tabs available in the application's menu on Clever Console:
 * **Metrics:** Visualize application's metrics
 * **Consumption:** Visualize your application's consumption.
 
-### Create your first add-on
+## Add-ons for Clever Cloud applications
 
 Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.
 
@@ -281,11 +281,9 @@ An add-on can be shared by different applications to share data between them. It
 
 Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/api))
 
-#### Available add-ons
-
 Clever Cloud provides multiple add-ons to work with your applications:
 
-##### Databases
+### Databases
 
 {{< cards >}}
   {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
@@ -297,7 +295,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
 {{< /cards >}}
 
-##### Storage & Messaging
+### Storage and messaging
 
 {{< cards >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
@@ -305,7 +303,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
 {{< /cards >}}
 
-##### Services & Tools
+### Services and tools
 
 {{< cards >}}
   {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
@@ -317,6 +315,8 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< card link="/developers/doc/addons/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
   {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
 {{< /cards >}}
+
+### Create your first add-on
 
 **If your add-on:**
 
@@ -347,7 +347,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< /tab >}}
 {{< /tabs >}}
 
-##### Add-on Billing
+### Add-on billing
 
 There are two kinds of billing:
 
@@ -362,7 +362,7 @@ There are two kinds of billing:
 **Your invoice:** per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
 {{< /callout >}}
 
-### Manage your Add-on
+### Manage add-ons
 
 Once an add-on is created, at least two tabs are available in the Clever Cloud console:
 
@@ -375,7 +375,7 @@ The system shows features and environment variables (if applicable).
 
 Other tabs may be available, depending on the add-on type.
 
-### Delete an add-on
+### Delete add-ons
 
 To delete an add-on:
 

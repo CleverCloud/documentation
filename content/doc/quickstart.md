@@ -108,6 +108,8 @@ Enable two-factor authentication (2FA) in your [**Authentication** settings](htt
 
 ## Deploy your code
 
+To deploy on Clever Cloud, you'll create an application in the console, then push your code via Git, GitHub, or FTP.
+
 ### Set up a Clever Cloud application
 
 {{< youtube 9ww_t0o-GmA >}}
@@ -118,37 +120,37 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 #### Select the organization
 
-Choose the organisation you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
+From the left menu, choose the organization to deploy in. If you only have a **Personal space**, click **Add an organization** to create one.
 
 #### Create an application
 
-Find it in the **organisation Manager** panel, at the top left of the left menu.
+In the **Organization manager** panel at the top of the left menu, click **+ Create** and select **Application** to start the creation wizard.
 
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
-If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+If your account is linked to GitHub, you can select a repository in the wizard.
+
+To deploy an application from a GitHub organization, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 #### Select the application type
 
-Choose the language or the framework you want to deploy.
+Choose your language or framework.
 
  {{< callout emoji="💡" >}}
-  **Optional:** for PHP applications, you can choose between FTP and Git deployment.
+  **Note:** PHP applications can use FTP or Git deployment.
   {{< /callout >}}
 
 #### Configure scaling
 
-Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+**Horizontal scaling** is the number of instances that can run at the same time. **Vertical scaling** sets the minimum and maximum size the instance can be.
 
-- [Learn more about scaling & instances size](/doc/administrate/scalability)
+[Learn more about scaling and instance size](/doc/administrate/scalability).
 
 #### Give the application a name
 
-Enter the name and the description of your application.
+Enter a name and description for the application.
 
 #### Optional steps
 
-* The wizard will offer you to [add an add-on](/doc/addons) to your application
-* The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
+The wizard will prompt you to configure [add-ons](/doc/addons) and [environment variables](/doc/develop/env-variables), if needed.
 
 {{% /steps %}}
 

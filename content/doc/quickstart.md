@@ -72,37 +72,39 @@ The log system retrieves all output from the application and displays it in the 
 
 ## Create a Clever Cloud account
 
-The API of Clever Cloud uses OAuth 1 to perform authentication actions.
-There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
+You can sign up for Clever Cloud using your **email** or your **GitHub account**.
 
-{{< tabs items="Email Auth, GitHub Auth" >}}
+Navigate to the [Clever Cloud Console](https://console.clever-cloud.com/), click **Create an account** at the bottom of the page, and select the sign-up method you prefer.
+
+{{< tabs items="Email auth, GitHub auth" >}}
 
   {{< tab >}}
-  This kind of auth requires a valid and non-temporary disposable email, and a password having at least 6 characters.
-  Do not forget to validate your email by clicking the link you will receive.
+  You need a valid email address (not a temporary or disposable one) to sign up using email.
+
+* Create a password with at least 6 characters.
+* Validate your email address by clicking on the link in the confirmation email from Clever Cloud.
   {{< /tab >}}
 
   {{< tab >}}
+  Use the GitHub sign up to create a Clever Cloud account or link an existing account to GitHub in one click.
+  Signing up with GitHub requires permission to read your:
 
-  The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click.
-  This process asks the following permissions:
+* Public key
+* User repositories
 
-* Read your Public Key
-* Read User Repositories
-
-  The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+  Repository permission lets you deploy GitHub apps to Clever Cloud in one step.
+  
+  Give the Clever Cloud API access to a specific GitHub organisation in your [GitHub account **Developer Settings**](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
 
 {{< /tabs >}}
 
-Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
-
 ### Enable two-factor authentication
 
-Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
+Enable two-factor authentication (2FA) in your [**Authentication** settings](https://console.clever-cloud.com/users/me/authentication).
 
-Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.
+> [!NOTE]
+> Save your recovery codes when Clever Cloud displays them. Without them, you won't be able to recover your account if you lose access to your 2FA device.
 
 ## Deploy your code
 

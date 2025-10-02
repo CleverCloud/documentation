@@ -271,21 +271,21 @@ There are many tabs available in the application's menu on Clever Console:
 
 ## Add-ons for Clever Cloud applications
 
-Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.
+Applications often need databases, storage, or other services in addition to the runtime. Clever Cloud add-ons provide these services.
 
-An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
+An add-on can be used independently, linked to an application, or shared between applications. For example, a database can be used standalone without linking it to an application, or it can be linked to multiple applications that share the data.
 
-Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/api))
+Clever Cloud hosts and manages most add-ons in the catalog. External vendors can also integrate their services with the platform ([learn how](/api)).
 
-Clever Cloud provides multiple add-ons to work with your applications:
+Available add-ons:
 
 ### Databases
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
-  {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
-  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
+  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless distributed key-value database" icon="materia" tag="Alpha" >}}
+  {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="A NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="A managed relational database" >}}
+  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="A not-only-SQL managed database" >}}
   {{< card link="/developers/doc/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
 
   {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
@@ -295,89 +295,76 @@ Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system" icon="fsbucket" >}}
+  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open-source, cloud-native messaging and streaming platform" icon="pulsar" tag="Beta" >}}
 {{< /cards >}}
 
 ### Services and tools
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
+  {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="Manage, import, and inject configurations and credentials" icon="creds" >}}
   {{< card link="/developers/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial" icon="git" >}}
-  {{< card link="/developers/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-  {{< card link="/developers/doc/addons/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="keycloak" >}}
-  {{< card link="/developers/doc/addons/mailpace" title="Mailpace" subtitle="Fast and reliable transactional email" icon="mail" >}}
-  {{< card link="/developers/doc/addons/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="matomo" >}}
+  {{< card link="/developers/doc/addons/jenkins" title="Jenkins" subtitle="The leading open-source automation server" icon="jenkins" >}}
+  {{< card link="/developers/doc/addons/keycloak" title="Keycloak" subtitle="Identity and access management with single sign-on" icon="keycloak" >}}
+  {{< card link="/developers/doc/addons/mailpace" title="MailPace" subtitle="Fast, reliable transactional email" icon="mail" >}}
+  {{< card link="/developers/doc/addons/matomo" title="Matomo" subtitle="Open-source web analytics alternative to Google Analytics" icon="matomo" >}}
   {{< card link="/developers/doc/addons/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
-  {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
+  {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconfigured plugins" icon="endpoints" >}}
 {{< /cards >}}
 
 ### Create your first add-on
 
-**If your add-on:**
+When you link an add-on to an application (either during creation or afterward), the add-on provides configuration through [environment variables](/doc/reference/reference-environment-variables/). These variables are automatically available in your application.
 
-{{< tabs items="Doesn't exist yet,Already exists" >}}
+Select a tab below depending on whether you're creating a new add-on or linking an existing one.
+
+{{< tabs items="Create new add-on, Link existing add-on" >}}
   {{< tab >}}
-  Here we will assume you want to create a new add-on and link it to your application.
-
-  1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-  2. Go to the organisation in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
-  3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
-  4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
-  5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
-  7. Choose the name of the add-on and the region where the add-on will be hosted.
-  8. Click on the **Create** button.
-
-  The add-on will now be available in your organisation, and corresponding environment variables will be available for the applications linked to the add-on you just created.
+  * In the [Clever Cloud Console](https://console.clever-cloud.com/), navigate to the organization where you want to create the add-on (for example, your [personal space](https://console.clever-cloud.com/users/me)).
+  * Click **Add an add-on**.
+  * Select the type of add-on to create.
+  * Select the pricing plan for the add-on. See the [add-on billing](#add-on-billing) section below or the [Clever Cloud pricing page](https://www.clever-cloud.com/pricing/) for more information.
+  * Select the application to link the add-on to. To use the add-on alone, don't link it to an application.
+  * Give the add-on a name and select a hosting region.
+  * Click **Create**.
   {{< /tab >}}
 
   {{< tab >}}
-  To link an already existing add-on with your application, just follow these steps:
-
-  1. Go in the organisation of your application.
-  2. Click on the name of the application you want to link with your add-on.
-  3. Go in the **Service dependencies** section.
-  4. Select the add-on you want to link under the "Link add-ons" dropdown menu.
-  5. Click on the **Link** button of the add-on you want to link to your application.
+  * In the [Clever Cloud Console](https://console.clever-cloud.com/), navigate to the organization, then select the application.
+  * Go to **Service dependencies**.
+  * Click **Link add-ons** and select the add-on from the dropdown menu.
+  * Click **Link**.
   {{< /tab >}}
 {{< /tabs >}}
 
 ### Add-on billing
 
-There are two kinds of billing:
-
-* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
-
-{{< callout type="warning" >}}
-**Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
-{{< /callout >}}
+Add-ons with fixed resources (storage, CPU, RAM) are billed monthly, and add-ons that scale with consumption (like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)) are billed based on usage.
 
 {{< callout emoji="📊" >}}
-**Your invoice:** per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
+**How you're invoiced:** Per-usage billing is deducted from daily runtime credits. Per-month billing appears as a line item on your monthly invoice.
+{{< /callout >}}
+
+{{< callout type="warning" >}}
+**Free plans:** Some add-ons offer free plans for testing purposes. Free plans run on shared resources with variable, non-guaranteed performance, and may run different versions than dedicated instances. Free plans are not suitable for production use.
 {{< /callout >}}
 
 ### Manage add-ons
 
-Once an add-on is created, at least two tabs are available in the Clever Cloud console:
+Each add-on has a management interface and sidebar menu. The sidebar menu always includes:
 
-* **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
+* **Add-on dashboard:** Connection credentials and configuration tools
 
 !["Add-on dashboard"](/images/addon-dashboard.png "Example of an add-on dashboard")
 
-* **Information tab:** This screen sums-up the characteristics of the selected add-on.
-The system shows features and environment variables (if applicable).
+* **Information:** Overview of add-on details, plan, and environment variables
 
-Other tabs may be available, depending on the add-on type.
+Other menu items may be available, depending on the add-on type.
 
 ### Delete add-ons
 
-To delete an add-on:
-
-1. Go to the **Information** tab of the add-on.
-2. Click on *Remove add-on*.
+To delete an add-on, go to the add-on's **Information** view and click **Remove add-on**.
 
 {{< callout type="warning" >}}
-The system removes all associated data after you delete the add-on.
+Deleting an add-on permanently removes all associated data.
 {{< /callout >}}

@@ -99,6 +99,10 @@ An initial account has been created, you'll be invited to change the password at
 
 Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
 
+## Secured Multi-Instances
+
+
+
 ## Version management
 
 To change the version of a Keycloak add-on on Clever Cloud, you can use the `CC_KEYCLOAK_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/cli/):

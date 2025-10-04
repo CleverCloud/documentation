@@ -26,7 +26,7 @@ excludeSearch: true
 
 The Clever Cloud Keycloak add-on now includes a plugin that allows filtering email domains when users register.
 
-This release is now used as default for new created add-ons. To update an existing add-on, set `CC_KEYCLOAK_VERSION` of its Java application to `26.3.3` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
+This release is now used as default for new created add-ons. To update an existing add-on, set `CC_KEYCLOAK_VERSION` of its Java application to `26.4.0` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators

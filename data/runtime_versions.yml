@@ -33,7 +33,8 @@ java:
   default:
     - 11
   accepted:
-    - 24
+    - 25
+    - 24 (EOL)
     - 23 (EOL)
     - 21
     - 17
@@ -72,7 +73,7 @@ python:
   accepted:
     - 2
     - 3
-    - 3.9
+    - 3.9 (EOL)
     - 3.10
     - 3.11
     - 3.12

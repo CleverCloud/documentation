@@ -57,8 +57,6 @@ Name: myMetabase
 Your Metabase is starting:
  - Access it: https://xxxxxxxxxxxxxxxxxxxx-metabase.services.clever-cloud.com
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-/!\ The metabase provider is in beta testing phase
 ```
 
 Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.

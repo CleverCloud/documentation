@@ -64,8 +64,6 @@ Name: myMatomo
 Your Matomo is starting:
  - Access it: https://xxxxxxxxxxxxxxxxxxxx-matomo.services.clever-cloud.com
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-/!\ The addon-matomo provider is in beta testing phase
 ```
 
 Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.

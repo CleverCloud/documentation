@@ -106,7 +106,7 @@ Refer to the [Clever Tools documentation](/doc/cli/addons) for more details on a
 
 Keycloak can be configured to run as a cluster of instances, bringing more resiliency and availability to your identity management solution. As communication through such a cluster uses an unencrypted Infinispan connection, Clever Cloud deployments includes Secure Multi Instances.
 
-Once enabled in the Keycloak dashboard, it adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. Instances are transparently restarted and linked through a [Network Group](/doc/develop/network-groups), used to isolate internal cluster traffic through a private, encrypted, [Wireguard](https://www.wireguard.com/) network. You can disable this feature at any time, as easily as you enabled it.
+Once enabled in the Keycloak dashboard, it adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. Instances are transparently restarted and linked through a [Network Group](/doc/develop/network-groups), used to isolate internal cluster traffic through a private, encrypted, [WireGuard](https://www.wireguard.com/) network. You can disable this feature at any time, as easily as you enabled it.
 
 If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 

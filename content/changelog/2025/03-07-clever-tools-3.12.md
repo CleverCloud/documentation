@@ -43,7 +43,7 @@ curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_
 
 ## Network Groups
 
-The second feature is `clever ng`, to manage the long awaited Network Groups. Use them to link resources over a [Wireguard-based](https://www.wireguard.com/) private and secure network. It can be applications, add-ons or external systems (a local machine, a third-party server, etc.).
+The second feature is `clever ng`, to manage the long awaited Network Groups. Use them to link resources over a [WireGuard-based](https://www.wireguard.com/) private and secure network. It can be applications, add-ons or external systems (a local machine, a third-party server, etc.).
 
 ```bash
 clever features enable ng

@@ -14,7 +14,7 @@ aliases:
 - /doc/cli/operators/ng.md
 ---
 
-[Network Groups](/doc/develop/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [Wireguard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
+[Network Groups](/doc/develop/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
 
 * Network Group: a group of resources that can communicate with each through an encrypted tunnel
 * Member: a resource that can be part of a Network Group (`application`, `addon` or `external`)

@@ -39,7 +39,7 @@ Cloud's regions and their datacenter to secure the traffic.
 
 We provide three kinds of VPN technologies:
 
-- [Wireguard](https://www.wireguard.com/): our favorite VPN technology. Has been adopted
+- [WireGuard](https://www.wireguard.com/): our favorite VPN technology. Has been adopted
   by most major "off-the-shelf" VPNs (like the ones that sponsor Youtubers 😉).
 - [IPSec](https://www.wikiwand.com/fr/IPsec): used by a lot of companies. It might be
   their only available VPN technology.

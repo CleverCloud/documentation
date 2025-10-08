@@ -89,5 +89,5 @@ clever keycloak enable-ng myKeycloak
 clever otoroshi disable-ng otoroshi_id
 ```
 
-> [!NOTE] Keycloak secure cluster feature
-> When you enable the Network group on a Clever Cloud Keycloak, the cluster is automatically configured and the Java application scaled to 2 instances. When you disable the Network Group, the application is scaled down to 1 instance and the cluster is removed.
+> [!NOTE] Keycloak Secured Multi Instances
+> When you enable the Network Group on a Clever Cloud Keycloak, it activates [Secured Multi Instances](/doc/addons/keycloak/#secured-multi-instances): a cluster is configured with 2 instances of the Java application. When you disable the Network Group, the application is scaled down to 1 instance and the cluster is removed.

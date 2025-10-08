@@ -11,6 +11,8 @@ keywords:
 - oauth
 - openid connect
 - security
+- wireguard
+- multi instances
 aliases:
 - /doc/deploy/addon/Keycloak
 - /doc/keycloak
@@ -74,6 +76,9 @@ You can however manage and adjust them directly in the Console to fit your needs
 2. Select the Keycloak add-on
 3. You can skip linking the add-on to an application, it won't be needed
 4. Enter a name for your Keycloak add-on and select the zone where you want it to be deployed
+5. You'll have access to the Keycloak dashboard, your instance will be ready in a few seconds
+
+![Keycloak Dashboard](/images/keycloak-dashboard.webp)
 
 ### Using the CLI
 
@@ -93,33 +98,27 @@ Your Keycloak is starting:
 An initial account has been created, you'll be invited to change the password at first login:
  - Admin user name: cc-account-admin
  - Temporary password: xxxxxxxxxxxxxxxx
-
-/!\ The keycloak provider is in beta testing phase
 ```
 
-Refer to the [Clever Tools documentation](https://github.com/CleverCloud/clever-tools/tree/master/docs) for more details on add-on creation.
+Refer to the [Clever Tools documentation](/doc/cli/addons) for more details on add-on creation.
+
+## Secured Multi Instances
+
+Keycloak can be configured to run as a cluster of instances, bringing more resiliency and availability to your identity management solution. As communication through such a cluster uses an unencrypted Infinispan connection, Clever Cloud deployments includes Secure Multi Instances.
+
+Once enabled in the Keycloak dashboard, it adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. Instances are transparently restarted and linked through a [Network Group](/doc/develop/network-groups), used to isolate internal cluster traffic through a private, encrypted, [Wireguard](https://www.wireguard.com/) network. You can disable this feature at any time, as easily as you enabled it.
+
+If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+
+> [!NOTE] Multiple instances solution
+> If you enable Secured Multi Instances, you'll be billed for two Java instances of your application. If you set up more than 2 instances in the application configuration, it will work but think about upgrading your PostgreSQL database to a plan with more available connections.
 
 ## Version management
 
-To change the version of a Keycloak add-on on Clever Cloud, you can use the `CC_KEYCLOAK_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/cli/):
-
-```bash
-# Set a specific supported version at creation
-clever addon create keycloak --addon-version <version> myKeycloak
-
-# Enable Operators commands
-clever features enable operators
-
-# Check the current version
-clever keycloak version check keycloak_name_or_id
-clever keycloak version check keycloak_name_or_id --format json
-
-# Update to a specific supported version
-clever keycloak version update myKeycloak
-clever keycloak version update myKeycloak <new_version>
-```
-
-- Learn more about [Operators commands in Clever Tools](/doc/cli/operators/)
+To change the version of a Keycloak add-on on Clever Cloud, you can:
+- Use the Console Dashboard
+- Use [Clever Tools](/doc/cli/operators/)
+- Update the `CC_KEYCLOAK_VERSION` environment variable of the underlying Java Application and rebuild it
 
 ## Accessing the Keycloak interface
 

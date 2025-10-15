@@ -25,7 +25,7 @@ You don't have to configure leaders, followers: high availability is included, b
 
 {{< callout type="info" >}}
 
-**Materia KV is in Alpha testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
+**Materia KV is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
 {{< /callout >}}
 
 ## Compatibility layers
@@ -42,14 +42,14 @@ Thus, you can use a Materia KV add-on with any compatible client within your app
 
 ## Create a Materia KV add-on
 
-You can create a Materia KV add-on as simply as any other Clever Cloud service in the Console, [following this link](https://console.clever-cloud.com/users/me/addons/new). Select the Alpha plan (free during testing phase), an application to link to (or none), give it a name, and you'll get access to its dashboard giving you connection details. Environment variables shared with a linked application are listed in the `Service dependencies` section.
+You can create a Materia KV add-on as simply as any other Clever Cloud service in the Console, [following this link](https://console.clever-cloud.com/users/me/addons/new). Select the plan (free during Beta testing phase), an application to link to (or none), give it a name, and you'll get access to its dashboard giving you connection details. Environment variables shared with a linked application are listed in the `Service dependencies` section.
 
 We included them with the `REDIS_` format. Thus, you can just try to replace a Redis instance by Materia KV. It's as simple as linking the new add-on, unlinking the old one and restarting your application! (Check commands you'll need first).
 
 You can also use clever tools to create a Materia KV add-on and set environment variables to test it with a `PING` command:
 
 ```bash
-clever addon create kv DATABASE_NAME
+clever addon create kv ADDON_NAME
 source <(clever addon env addon ADDON_ID -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 ```
@@ -64,7 +64,7 @@ ID: addon_4997cfe3-f104-4d05-9fe4-xxxxxxxxx
 Real ID: kv_01HV6NCSRDxxxxxxxxxxxxxxxx
 Name: testKV
 
-/!\ The Materia KV provider is in Alpha testing phase, don't store sensitive or production grade data
+/!\ The Materia KV provider is in Beta testing phase, don't store sensitive or production grade data
 You can easily use Materia KV with 'redis-cli', with such commands:
 source <(clever addon env addon_4997cfe3-f104-xxxx-xxxx-xxxxxxxxx -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls
@@ -74,7 +74,7 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 {{< callout type="info" >}}
 
-**Materia KV is in Alpha testing phase** Each add-on is limited to 128 MB of storage, requests sent to the server can't exceed 5 MB. As we fine-tune and enhance its capabilities, we advise against using the alpha release for production purposes. During alpha testing we can delete data or renew token, don't store sensitive or production grade data.
+**Materia KV is in Beta testing phase** Each add-on is limited to 128 MB of storage, requests sent to the server can't exceed 5 MB.
 
 {{< /callout >}}
 
@@ -127,11 +127,12 @@ We've prepared a few examples to help you get started with Materia KV:
 * [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
 * [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
 * [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
-*
+
 ### Supported types and commands
 
-During this alpha stage, we don't provide 100% compatibility with the Redis API. Currently supported value types are:
+Supported value types are:
 
+- Hash
 - String
 
 Find below the list of currently supported commands:
@@ -142,6 +143,7 @@ Find below the list of currently supported commands:
 | `AUTH` | Authenticate the current connection using the biscuit token as `password`. |
 | `CLIENT ID` | Returns the `ID` of the current connection. A connection ID has is never repeated and is monotonically incremental. |
 | `COMMAND` | Return an array with details about every supported command. |
+| `COMMAND COUNT` | Return the number of supported commands. |
 | `COMMAND DOCS` | Return documentary information about commands. By default, the reply includes all the server's commands. You can use the optional command-name argument to specify the names of one or more commands. The reply includes a map for each returned command. |
 | `COMMAND INFO` | Returns an array reply of details about multiple Materia KV commands. Same result format as `COMMAND` except you can specify which commands get returned. If you request details about non-existing commands, their return position will be `nil`. |
 | `COMMAND LIST` | Return an array of the server's command names. |
@@ -156,9 +158,17 @@ Find below the list of currently supported commands:
 | `GET` | Get the value of `key`. If the `key` doesn't exist the special value nil is returned. An error is returned if the value stored at `key` is not a string, because `GET` only handles string values. |
 | `GETBIT` | Returns the bit value at offset in the string value stored at `key`. |
 | `GETRANGE` | Returns the substring of the string value stored at `key`, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So `-1` means the last character, `-2` the penultimate and so forth. |
+| `HDEL` | Removes the specified fields from the hash stored at `key`. Specified fields that do not exist within this hash are ignored. If `key` does not exist, it is treated as an empty hash and this command returns `0`. |
 | `HELLO` | Switch to a different protocol, optionally authenticating and setting the connection's name, or provide a contextual client report. It always replies with a list of current server and connection properties. |
+| `HGET` | Returns the value associated with `field` in the hash stored at `key`. If `key` does not exist, or `field` is not present in the hash, `nil` is returned. |
+| `HGETALL` | Returns all fields and values of the hash stored at `key`. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash. |
+| `HLEN` | Returns the number of fields contained in the hash stored at `key`. If `key` does not exist, it is treated as an empty hash and `0` is returned. |
+| `HMGET` | Returns the values associated with the specified `fields` in the hash stored at `key`. For every field that does not exist in the hash, a `nil` value is returned. Because of this, the operation never fails. |
+| `HSCAN` | Incrementally iterate over hash fields and associated values. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
+| `HSET` | Sets the specified fields to their respective values in the hash stored at `key`. If `key` does not exist, a new key holding a hash is created. If `key` exists but does not hold a hash, an error is returned. |
 | `INCR` | Increments the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INCRBY` | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
+| `INCRBYFLOAT` | Increment the string representing a floating point number stored at `key` by the specified `increment`. If the key does not exist, it is set to `0` before performing the operation. An error is returned if the key contains a value of the wrong type or a string that can not be represented as a floating point number. |
 | `INFO` | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans. |
 | `JSON.DEL` | Deletes JSON value at path from key. Returns the number of paths deleted. Can delete array elements or object fields. |
 | `JSON.GET` | Gets JSON value at path from key. Supports both single and multiple path queries with different path notations. |

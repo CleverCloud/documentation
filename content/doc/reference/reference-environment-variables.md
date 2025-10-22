@@ -61,7 +61,7 @@ You can set some tools' version in any runtime (except Docker):
 
 | Name | Description |
 |------|-------------|
-| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.150` | |
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.151` | |
 | `CC_NODE_VERSION` | Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 
 #### Control build and dependencies cache
@@ -384,7 +384,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 | Name | Description | Default value |
 |------|-------------|---------------|
-| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.150` | |
+| `CC_HUGO_VERSION` | Set the Hugo version, for example `0.151` | |
 | `CC_BUILD_COMMAND` | The command to run during the build phase | |
 | `CC_OVERRIDE_BUILDCACHE` | Files and path to put in the build cache, separated by a `:` |  |
 | `CC_STATIC_AUTOBUILD_OUTDIR` | The output directory of the static site generator (SSG) auto-build, relative to the root of your application | `/cc_static_autobuilt` |

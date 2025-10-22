@@ -354,7 +354,6 @@ Available through:
 - [Public repository](https://github.com/CleverCloud/clever-components/)
 - [Storybook documentation](https://www.clever.cloud/developers/clever-components/)
 
-### Custom Solutions
 
 Clever Cloud offers:
 
@@ -363,5 +362,6 @@ Clever Cloud offers:
 - Edge computing solutions
 - Custom service integration
 - Dedicated support
+### You need anything? Ask us!
 
-[Contact the sales team](https://www.clever-cloud.com/contact/) to discuss your specific needs.
+Our main mission is to help our customers. We do it providing the Clever Cloud platform as a public cloud on our or partners infrastructure, on-premise or on edge devices in specific cases, all with the same Control Plane. But we also provide a lot of dedicated, off catalogue, services to help users to get the best out of Clever Cloud. You need anything special? [Ask us!](https://www.clever-cloud.com/contact/) Our sales team will be happy to help.

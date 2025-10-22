@@ -1,7 +1,7 @@
 ---
 type: docs
-linkTitle: Kubernetes Operator
-title: Kubernetes Operator
+linkTitle: Operator
+title: Clever Kubernetes Operator
 description: Manage your Clever Cloud databases and add-ons seamlessly from Kubernetes with the Clever Kubernetes Operator
 keywords:
 - kubernetes
@@ -9,12 +9,10 @@ keywords:
 - databases
 - custom resources
 - cluster management
-draft: false
 aliases:
 - /guides/clever-operator
+- /guides/kubernetes-operator
 ---
-
-## What's the Clever Kubernetes Operator
 
 The [Clever Kubernetes Operator](https://github.com/CleverCloud/clever-kubernetes-operator) is an open source project (MIT licensed) designed to seamlessly integrate [Clever Cloud](https://www.clever-cloud.com/)'s managed services into Kubernetes environments. By leveraging Kubernetes [Custom Resource Definitions (CRDs)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions)), the Operator enables developers to manage Clever Cloud resources directly from their Kubernetes clusters, aligning cloud-native practices with Clever Cloud's powerful platform.
 

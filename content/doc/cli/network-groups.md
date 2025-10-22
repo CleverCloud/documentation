@@ -116,14 +116,14 @@ After an unlink, you may need to restart the application to apply the changes.
 
 ## Get information of a Network Group, a member or a peer
 
-To get information about a network group or a resource (a `json` formatted output is available):
+To get information about a Network Group or a resource (a `json` formatted output is available):
 
 ```
 clever ng get ngIdOrLabel -F json
 clever ng get resourceIdOrName
 ```
 
-You can also search for network groups, members or peers:
+You can also search for Network Groups, members or peers:
 
 ```
 clever ng search text_to_search -F json

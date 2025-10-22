@@ -1,6 +1,6 @@
 ---
 title: New Keycloak dashboard is available with Secured Multi Instances easy to enable
-description: Better manage your Keycloak on Clever Cloud, with Secured Multi Instances based on Wireguard Network Groups
+description: Better manage your Keycloak on Clever Cloud, with Secured Multi Instances based on WireGuard Network Groups
 date: 2025-10-07
 tags:
   - addons

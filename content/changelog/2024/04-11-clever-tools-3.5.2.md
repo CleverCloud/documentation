@@ -52,7 +52,7 @@ clever addon create kv myKV
 source <(clever addon env addon_myKV_id -F shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 ````
-* [Learn more about Materia KV](https://www.clever-cloud.com/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever-cloud.com/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
+* [Learn more about Materia KV](https://www.clever.cloud/blog/company/2024/04/16/materiadb-kv-materia-functions/) ([FR](https://www.clever.cloud/fr/blog/entreprise/2024/04/16/materiadb-kv-functions/))
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install)
 

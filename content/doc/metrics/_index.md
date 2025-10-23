@@ -55,7 +55,7 @@ You can set up alerts in Grafana to be notified on your apps and add-ons consump
 
 ![Alert option](/images/grafana-alerts.png "Alert option from the general menu in Grafana")
 
-For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever-cloud.com/blog/features/2021/12/03/slack-alerts-for-grafana/).
+For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever.cloud/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
 ## Monitoring' metrics
 

@@ -68,13 +68,13 @@ To launch Heptapod Cloud go to **<https://heptapod.host>**.
 
 ### Usage and billing
 
-Heptapod Cloud is billed on a per-usage model, explained and simulated [on our product page](https://www.clever-cloud.com/fr/product/heptapod-cloud/).
+Heptapod Cloud is billed on a per-usage model, explained and simulated [on our product page](https://www.clever.cloud/fr/product/heptapod-cloud/).
 
 You can check your Heptapod Cloud usage of repositories and users in the **Shared Software** tab of your organisation.
 
 ![A screen capture of the Heptapod billing section](/images/heptapod-billing.png "You can check your organisation's Heptapod usage in the Shared Software section")
 
-Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever-cloud.com/product/clever-cloud-runners-for-heptapod/).
+Clever Cloud Runners for Heptapod enable on-demand generation of Docker containers of different sizes (Flavors). Therefore Heptapod runners are billed in the same way of runtimes. The pricing is different, and shown on a per-1000 minutes in the [Heptapod Runner product page](https://www.clever.cloud/product/clever-cloud-runners-for-heptapod/).
 
 {{% /steps %}}
 

@@ -541,7 +541,7 @@ s3cmd -c s3cfg -s delcors s3://your-bucket
 
 ## Static hosting
 
-You can use a bucket to host your static website, this [blog post](https://www.clever-cloud.com/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describes how to. Be aware that SPA applications won't work because Clever Cloud proxy serving the bucket needs to find an HTML file that match the route.
+You can use a bucket to host your static website, this [blog post](https://www.clever.cloud/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describes how to. Be aware that SPA applications won't work because Clever Cloud proxy serving the bucket needs to find an HTML file that match the route.
 
 For example if your path is `/login` you need to have a file `login.html` because the `index.html` isn't the default entrypoint to handle the path.
 

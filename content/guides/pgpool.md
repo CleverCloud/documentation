@@ -101,7 +101,7 @@ It's also possible to specify the lifetime of a Pgpool-II child process (`CC_PGP
 
 Use Pgpool-II to distribute the load and separate **WRITE** and **READ** queries between your PostgreSQL servers.
 
-When using the **Streaming** mode, it's not Pgpool-II that manages the replication of your databases. Clever Cloud engineers must manually set up the replication on the PostgreSQL side, otherwise known as **binary**, **Hot Standby** or **Streaming** replication. To schedule this procedure, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) or make a request via our [sales form](https://www.clever-cloud.com/en/contact-sales).
+When using the **Streaming** mode, it's not Pgpool-II that manages the replication of your databases. Clever Cloud engineers must manually set up the replication on the PostgreSQL side, otherwise known as **binary**, **Hot Standby** or **Streaming** replication. To schedule this procedure, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) or make a request via our [sales form](https://www.clever.cloud/en/contact-sales).
 
 Once replication is in place, you can use the `CC_PGPOOL_FOLLOWERS` environment variable to add the followers to your Pgpool-II configuration. This variable is in **JSON** format, and must contain the **host**, **port** and **weight** of each follower.
 

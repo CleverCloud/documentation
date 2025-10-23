@@ -54,7 +54,7 @@ If you don't want to use the default `conf/application.conf` configuration file,
 HTTPS is handled by Clever Cloud ahead of your application, your application retrieves the traffic in plain http.
 
 If you want to redirect HTTP traffic to HTTPS, please have a look at [How to Redirect to HTTPS With Play
-2.4](https://www.clever-cloud.com/blog/engineering/2015/12/01/redirect-to-https-in-play/).
+2.4](https://www.clever.cloud/blog/engineering/2015/12/01/redirect-to-https-in-play/).
 
 #### HTTP support with Play! 2.x < 2.4
 

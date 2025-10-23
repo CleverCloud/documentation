@@ -74,7 +74,7 @@ menu:
         icon: github
     - name: Website
       weight: 8
-      url: https://clever-cloud.com/
+      url: https://www.clever.cloud/
       params:
         icon: globe-alt
 
@@ -135,7 +135,7 @@ params:
       displayPagination: true
 
   description: Clever Cloud is a Platform-as-a-Service (PaaS) cloud provider, an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up.
-  
+
   displayUpdatedDate: true
   dateFormat: January 2, 2006
 
@@ -144,7 +144,7 @@ params:
     base: https://github.com/CleverCloud/documentation/edit/main/content/
 
   externalLinkDecoration: true
-  
+
   footer:
     enable: false
     displayCopyright: false

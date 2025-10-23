@@ -7,7 +7,7 @@ module:
   - path: github.com/imfing/hextra
   hugoVersion:
     extended: true
-    min: 0.146.0
+    min: 0.151.0
 
 disableKinds:
   - taxonomy

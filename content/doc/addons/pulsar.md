@@ -71,7 +71,7 @@ It allows you to create and use topics following this pattern:
 
 ## Version
 
-We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the [blog](https://www.clever-cloud.com/blog/).
+We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the [blog](https://www.clever.cloud/blog/).
 
 ## Common use cases
 

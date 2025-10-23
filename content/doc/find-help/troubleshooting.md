@@ -134,7 +134,7 @@ You are not allowed to create apps and add-ons, and run your current apps.
 {{% details title="Possible reasons why your app has been moderated" closed="true" %}}
 
 The main reasons why your account has been moderated are:
-- You run some forbidden apps such as those described on [this page](https://www.clever-cloud.com/acceptable-use-policy/)
+- You run some forbidden apps such as those described on [this page](https://www.clever.cloud/acceptable-use-policy/)
 - You have not paid your pending invoices older than 30 days
 -  Clever Cloud system considers the lack of personal information or missing payment information as suspicious
 - Our payment platform has spotted you as emitting fraudulent payments.
@@ -167,7 +167,7 @@ For operations that may exceed the 180-second limit, implement one of these appr
 
 1. Use long polling to send periodic status checks from the client
 2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/develop/workers/)
-3. [Purchase a custom load balancer from Clever Cloud](https://www.clever-cloud.com/fr/contact/) with different timeouts
+3. [Purchase a custom load balancer from Clever Cloud](https://www.clever.cloud/fr/contact/) with different timeouts
 
 ##### Additional considerations:
 

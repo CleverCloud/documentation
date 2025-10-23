@@ -123,4 +123,4 @@ The Matomo add-on is a fully managed application, you don't have to select a par
 
 ## Plans
 
-Matomo on Clever Cloud is the easiest way to set it up, but you can go further and adjust the flavor of your instance, database or cache independently. We provide [different plans for PHP, MySQL and Redis](https://www.clever-cloud.com/pricing/).
+Matomo on Clever Cloud is the easiest way to set it up, but you can go further and adjust the flavor of your instance, database or cache independently. We provide [different plans for PHP, MySQL and Redis](https://www.clever.cloud/pricing/).

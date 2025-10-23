@@ -17,7 +17,7 @@ aliases:
 excludeSearch: true
 ---
 
-Since we've launched [Materia KV](https://www.clever-cloud.com/materia/materia-kv/), our serverless key-value database compatible with third-party protocols such as Redis® (and soon DynamoDB or GraphQL), customers were asking about a way to explore data directly from the Clever Cloud Console. This summer, we started to work on such a project, to provide a pleasant and easy-to-use interface, not only for Materia KV, but for any key-value add-on. After some months of internal alpha testing, it's available in Beta for all our Materia KV and Redis® add-ons.
+Since we've launched [Materia KV](https://www.clever.cloud/materia/materia-kv/), our serverless key-value database compatible with third-party protocols such as Redis® (and soon DynamoDB or GraphQL), customers were asking about a way to explore data directly from the Clever Cloud Console. This summer, we started to work on such a project, to provide a pleasant and easy-to-use interface, not only for Materia KV, but for any key-value add-on. After some months of internal alpha testing, it's available in Beta for all our Materia KV and Redis® add-ons.
 
 To use it, just open the `KV Explorer` tab of any compatible add-on, it's part of the Clever Cloud experience. This first public iteration supports hash, list, set and string data types, only strings for Materia KV add-ons as other types are yet to come.
 

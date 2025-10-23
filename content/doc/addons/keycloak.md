@@ -67,7 +67,7 @@ They are dimensioned to suit a majority of needs. Even if this Keycloak add-on m
 - 90 credential grants by the second
 - 70 refresh tokens by second
 
-You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. Vertical auto-scalability is available for this service. [Different plans for Java and PostgreSQL](https://www.clever-cloud.com/pricing/) are available on Clever Cloud.
+You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. Vertical auto-scalability is available for this service. [Different plans for Java and PostgreSQL](https://www.clever.cloud/pricing/) are available on Clever Cloud.
 
 ## Create a Keycloak add-on
 

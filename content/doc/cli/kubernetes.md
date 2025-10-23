@@ -76,7 +76,7 @@ Classic response is a table:
 ├─────────┼─────────────────────────────────────────┤
 │ Name    │ 'myKubeCluster'                         │
 │ ID      │ 'kubernetes_id'                         │
-│ Version │ 1.34.1                                  │
+│ Version │ 1.34                                    │
 │ Status  │ 'ACTIVE'                                │
 └─────────┴─────────────────────────────────────────┘
 ```

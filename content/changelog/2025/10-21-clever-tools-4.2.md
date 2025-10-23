@@ -1,7 +1,7 @@
 ---
 title: Clever Tools 4.2 is available
 date: 2025-10-21
-description: Start using Network Gropups with add-ons and enjoy small improvements
+description: Start using Network Groups with add-ons and enjoy small improvements
 tags:
   - clever-tools
   - cli

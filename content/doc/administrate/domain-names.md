@@ -81,7 +81,7 @@ Provide the following to your registrar:
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.parhds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
 
-To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever-cloud.com/fr/hebergement-donnees-de-sante/contact-hds/).
+To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/Paris onto Scaleway (SCW)
 
@@ -97,7 +97,7 @@ To benefit from certified hosting for health data, you need to deploy in an HDS 
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 188.165.58.196`<br>`@ 10800 IN A 188.165.58.200` |
 
-To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever-cloud.com/fr/hebergement-donnees-de-sante/contact-hds/).
+To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/London (LDN)
 
@@ -120,7 +120,7 @@ To benefit from certified hosting for health data, you need to deploy in an HDS 
 | CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49` |
 
-To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever-cloud.com/fr/hebergement-donnees-de-sante/contact-hds/).
+To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/Warsaw (WSW)
 
@@ -217,4 +217,4 @@ example.com/api    ->     my-static-site/index.php
 
 ## Gandi CNAME configuration
 
-Here is [an article that demonstrates a simple setup for Gandi CNAMEs](https://www.clever-cloud.com/blog/features/2019/03/05/gandi-domain-on-clever-cloud/).
+Here is [an article that demonstrates a simple setup for Gandi CNAMEs](https://www.clever.cloud/blog/features/2019/03/05/gandi-domain-on-clever-cloud/).

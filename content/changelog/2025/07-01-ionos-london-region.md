@@ -17,5 +17,5 @@ You can now deploy your applications and add-ons in London, England. This region
 
 The London region was created in collaboration with a new European partner, [Ionos](https://www.ionos.co.uk/). Our teams have installed and are operating Clever Cloud within its infrastructure in order to offer you this new service.
 
-- [Learn more about our infrastructure and partners](https://clever-cloud.com/infrastructure/)
+- [Learn more about our infrastructure and partners](https://www.clever.cloud/infrastructure/)
 - [Learn more about domain configuration on Clever Cloud](/doc/administrate/domain-names/#configuring-domain-names-by-region)

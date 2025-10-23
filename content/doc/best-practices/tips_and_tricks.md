@@ -275,7 +275,7 @@ Track platform improvements through:
 
 - [Technical Changelog](/changelog/)
 - [RSS Feed](/changelog/index.xml)
-- [Blog Updates](https://www.clever-cloud.com/blog/)
+- [Blog Updates](https://www.clever.cloud/blog/)
 
 ### Built-in Runtime Tools
 
@@ -364,4 +364,4 @@ Clever Cloud offers:
 - Custom service integration
 - Dedicated support
 
-[Contact the sales team](https://www.clever-cloud.com/contact/) to discuss your specific needs.
+[Contact the sales team](https://www.clever.cloud/contact/) to discuss your specific needs.

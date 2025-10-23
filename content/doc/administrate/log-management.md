@@ -77,7 +77,7 @@ If you don't specify any options, the logs display continuously.
 To change the output, specify the `--format` flag with one of these values:
 
 - simple: `2021-06-25T10:11:35.358Z 255.255.255.255 GET /`
-- extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever-cloud.com / 200`
+- extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever.cloud / 200`
 - clf: `255.255.255.255 - - [25/Jun/2021:12:11:35 +0200] "GET / -" 200 562`
 - json:
 
@@ -107,7 +107,7 @@ To change the output, specify the `--format` flag with one of these values:
         "vb":"GET",
         "path":"/",
         "bIn":658,"bOut":562,
-        "h":"www.clever-cloud.com",
+        "h":"www.clever.cloud",
         "rTime":"31ms",
         "sTime":"75μs",
         "scheme":"HTTPS",

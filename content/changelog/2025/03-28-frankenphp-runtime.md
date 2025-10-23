@@ -12,7 +12,7 @@ authors:
 excludeSearch: true
 ---
 
-[As announced last year](https://www.clever-cloud.com/blog/company/2024/10/09/news-php-on-clever-cloud/), we worked to make FrankenPHP available on Clever Cloud as simple as we can.
+[As announced last year](https://www.clever.cloud/blog/company/2024/10/09/news-php-on-clever-cloud/), we worked to make FrankenPHP available on Clever Cloud as simple as we can.
 
 First, we started to document how to deploy it with practical examples. Then, we packaged it and included it in our images to make some tests internally and with customers. Starting today, anyone can deploy a PHP application using FrankenPHP on Clever Cloud without needing any Docker container or complex configuration.
 

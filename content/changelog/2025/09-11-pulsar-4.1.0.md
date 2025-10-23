@@ -14,4 +14,4 @@ excludeSearch: true
 
 [Apache Pulsar 4.1.0](https://github.com/apache/pulsar/releases/tag/v4.1.0) is deployed on our platform. It brings mostly enhancements and bug fixes.
 
-- Learn more about [Apache Pulsar](https://www.clever-cloud.com/product/pulsar/) on Clever Cloud
+- Learn more about [Apache Pulsar](https://www.clever.cloud/product/pulsar/) on Clever Cloud

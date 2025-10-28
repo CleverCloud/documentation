@@ -108,6 +108,7 @@ Some clients allows you to upload files, list them, delete them, etc, like:
 - [Cyberduck](https://cyberduck.io)
 - [Filestash](https://www.filestash.app/)
 - [MinIO](https://min.io/docs/minio/linux/reference/minio-mc.html)
+- [Rclone Web GUI](https://rclone.org/gui/)
 - [S3 Browser](https://s3browser.com/)
 - [WinSCP](https://winscp.net)
 

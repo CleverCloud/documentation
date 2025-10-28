@@ -3,7 +3,7 @@ type: docs
 linkTitle: Quickstart
 weight: 1
 title: Quickstart
-description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
+description: Deploy your first app on Clever Cloud in minutes. Learn how to create an account, push your code via Git or GitHub, and add databases or services to your application.
 keywords:
 - quickstart
 - getting-started
@@ -24,75 +24,33 @@ aliases:
 - /quickstart
 ---
 {{< hextra/hero-subtitle >}}
-  Clever Cloud provides an automated hosting platform for developers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
+  Clever Cloud is an automated hosting platform that lets you deploy apps and launch dependencies without worrying about infrastructure setup. This guide shows you how to deploy your first app while learning the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-## Create a Clever Cloud Account
+## Clever Cloud applications
 
-The API of Clever Cloud uses OAuth 1 to perform authentication actions.
-There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
+Every Clever Cloud application must have:
 
-{{< tabs items="Email Auth, GitHub Auth" >}}
+* A language or framework
+* A deployment method (Git, GitHub, or FTP)
+* Resource allocation (CPU, RAM, disk)
+* A configuration file (optional)
 
-  {{< tab >}}
-  This kind of auth requires a valid and non-temporary disposable email, and a password having at least 6 characters.
-  Do not forget to validate your email by clicking the link you will receive.
-  {{< /tab >}}
-
-  {{< tab >}}
-
-  The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click.
-  This process asks the following permissions:
-
-* Read your Public Key
-* Read User Repositories
-
-  The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
-{{< /tab >}}
-
-{{< /tabs >}}
-
-Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
-
-### Two Factor Authentication (2FA)
-
-Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
-
-Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.
-
-## Deploy your code
-
-### What's an Application on Clever Cloud
-
-An application is defined on Clever Cloud by the following elements:
-
-* a dedicated language/framework;
-* a deployment method (FTP and/or Git);
-* resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
-* an optional configuration file you may add to your project.
-
-If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
+Except for the optional configuration file, Clever Cloud can't deploy an application if any required element is missing.
 
 > [!NOTE]
-> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
+> Clever Cloud runtimes use immutable infrastructure and always start fresh with each deployment. This means local file storage is not persistent. For data that needs to persist between deployments, use [FS Bucket (file storage)](/doc/addons/fs-bucket/), [Cellar (object storage)](/doc/addons/cellar), or a [database service](/doc/addons/).
 
-### How it Works
-
-When you push an application's code to git or via FTP, the platform receives it and checks the resource's requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
-
-The log system retrieves all output from the application and displays it in the logs tab of your application in the Clever Cloud console.
-
-### Supported Platforms
+## Supported runtimes
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="FrankenPHP" icon="frankenphp" >}}
   {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
   {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
-  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/java" title="Java" icon="java" >}}
   {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
   {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
   {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
@@ -101,12 +59,58 @@ The log system retrieves all output from the application and displays it in the 
   {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
   {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
-  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/applications/static" title="Static sites" icon="static" >}}
+  {{< card link="/developers/doc/applications/static-apache" title="Static sites with Apache" icon="feather" >}}
   {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
-### Create an Application Step by Step
+## How Clever Cloud works
+
+When you push your code via Git or FTP, Clever Cloud checks that all required elements are present and deploys automatically if they are. Once deployment completes, your application is live.
+
+View application logs in the **Logs** tab of the Clever Cloud Console.
+
+## Create a Clever Cloud account
+
+You can sign up for Clever Cloud using your **email** or your **GitHub account**.
+
+Navigate to the [Clever Cloud Console](https://console.clever-cloud.com/), click **Create an account** at the bottom of the page, and select the sign-up method you prefer.
+
+{{< tabs items="Email auth, GitHub auth" >}}
+
+  {{< tab >}}
+  You need a valid email address (not a temporary or disposable one) to sign up using email.
+
+* Create a password with at least 6 characters.
+* Validate your email address by clicking on the link in the confirmation email from Clever Cloud.
+  {{< /tab >}}
+
+  {{< tab >}}
+  Use the GitHub sign up to create a Clever Cloud account or link an existing account to GitHub in one click.
+  Signing up with GitHub requires permission to read your:
+
+* Public key
+* User repositories
+
+  Repository permission lets you deploy GitHub apps to Clever Cloud in one step.
+  
+  Give the Clever Cloud API access to a specific GitHub organisation in your [GitHub account **Developer Settings**](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+{{< /tab >}}
+
+{{< /tabs >}}
+
+### Enable two-factor authentication
+
+Enable two-factor authentication (2FA) in your [**Authentication** settings](https://console.clever-cloud.com/users/me/authentication).
+
+> [!NOTE]
+> Save your recovery codes when Clever Cloud displays them. Without them, you won't be able to recover your account if you lose access to your 2FA device.
+
+## Deploy your code
+
+To deploy on Clever Cloud, you'll create an application in the console, then push your code via Git, GitHub, or FTP.
+
+### Set up a Clever Cloud application
 
 {{< youtube 9ww_t0o-GmA >}}
 
@@ -114,274 +118,246 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 {{% steps %}}
 
-#### Select the organisation
+#### Select the organization
 
-Choose the organisation you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
+From the left menu, choose the organization to deploy in. If you only have a **Personal space**, click **Add an organization** to create one.
 
-#### Click on "Create an application"
+#### Create an application
 
-Find it in the **organisation Manager** panel, at the top left of the left menu.
+In the **Organization manager** panel at the top of the left menu, click **+ Create** and select **Application** to start the creation wizard.
 
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
-If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+If your account is linked to GitHub, you can select a repository in the wizard.
 
-#### Select the language
+To deploy an application from a GitHub organization, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
-Choose the language or the framework you want to deploy.
+#### Select the application type
+
+Choose your language or framework.
 
  {{< callout emoji="💡" >}}
-  **Optional:** for PHP applications, you can choose between FTP and Git deployment.
+  **Note:** PHP applications can use FTP or Git deployment.
   {{< /callout >}}
 
-#### Fine-tune your scaling configuration
+#### Configure scaling
 
-Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+**Horizontal scaling** is the number of instances that can run at the same time. **Vertical scaling** sets the minimum and maximum size the instance can be.
 
-- [Learn more about scaling & instances size](/doc/administrate/scalability)
+[Learn more about scaling and instance size](/doc/administrate/scalability).
 
-#### Name your application
+#### Give the application a name
 
-Enter the name and the description of your application.
+Enter a name and description for the application.
 
 #### Optional steps
 
-* The wizard will offer you to [add an add-on](/doc/addons) to your application
-* The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
+The wizard will prompt you to configure [add-ons](/doc/addons) and [environment variables](/doc/develop/env-variables), if needed.
 
 {{% /steps %}}
 
-#### Choose How to Deploy
+### Choose a deployment method
 
-{{< tabs items="Git,GitHub, FTP" >}}
+Follow the steps for your preferred deployment method in the tabs below.
+
+Monitor deployment progress in the **Logs** tab of the Clever Cloud Console.
+
+{{< tabs items="Git, GitHub, FTP" >}}
   {{< tab >}}
-  *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
+  You'll need Git installed on your machine to deploy with it. Learn more at [git-scm.com](https://git-scm.com).
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
+  To deploy with Git:
 
-  Follow these steps to deploy your application:
-
-1. Get the git deployment URL in the application information page, which looks like: `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
-
-2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
+* Navigate to the application information page in the Clever Cloud Console and copy the Git deployment URL. It will look something like `git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git`.
+* Open your terminal and go to your application directory. Initialize Git if you haven't already:
 
   ```bash
   git init
   git add .
   git commit -m "first commit"
-```
+  ```
+* Link your local repository to Clever Cloud by providing the Git remote URL:
 
-3. Then, link your local repository to Clever Cloud by providing the Git remote URL:
+  ```bash
+  git remote add <remote-name> <your-git-deployment-url>
+  ```
+* Push your application to Clever Cloud:
 
-```bash
-git remote add <remote-name> <your-git-deployment-url>
-```
+  ```bash
+  git push <remote-name> <branch-name>:master
+  ```
 
-4. Push your application to Clever Cloud:
-
-```bash
-git push <remote-name> <branch-name>:master
-```
-
-  You can see your application **logs** in the dashboard to **monitor the deployment**.
-
+  **Note:** The `.git` folder is automatically deleted during deployment for security. To track which version is deployed, use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
   {{< /tab >}}
 
   {{< tab >}}
-  Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
+  Once you have created an application with GitHub, each push to the `master` branch triggers a deployment. If your repository uses `main` or another branch, go to the application's information panel and select the default branch to use.
 
-  ![GitHub deployment branch select](/images/github-deployment-branch.png "Github deployment branch select")
+  ![Selecting the GitHub deployment branch](/images/github-deployment-branch.png "Selecting the GitHub deployment branch")
 
-  If you don't find your repository in the list fetched from GitHub, a workaround is to unlink your account in your profile here : <https://console.clever-cloud.com/users/me/information>, remove **Clever Cloud API** from your GitHub [Authorized OAuth Apps](https://github.com/settings/applications) and link again your GitHub account to your Clever Cloud account.
+  If the repository doesn't appear in the list fetched from GitHub, you might need to relink your GitHub account to Clever Cloud. In GitHub, navigate to [Authorized OAuth Apps](https://github.com/settings/applications) (**Settings** > **Applications**) and revoke access for **Clever Cloud API**. Return to your [Clever Cloud profile](https://console.clever-cloud.com/users/me/information) and click **Link your GitHub account** in the **Information** tab.
 
-  **Private GitHub repositories are also supported.**
-
-  Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: that is, either someone has full read write access (because they're a collaborator) or they have no access.
-
-  However, if you set up an organisation, create the repository under the aegis of the organisation, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+  **Note:** You can use private GitHub repositories with Clever Cloud. However, personal GitHub accounts grant collaborators full access to private repositories. For granular permissions (like read-only access), use a GitHub organization.
   {{< /tab >}}
 
   {{< tab >}}
-  You can deploy via FTP with PHP applications.
+  Only PHP applications can be deployed with FTP.
 
-  To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
+  Ensure you have FTP software like [FileZilla](https://filezilla-project.org/) installed on your machine. For more information, see the [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
-  Deploy your application via FTP, create a [FS Bucket](/doc/addons/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+  To deploy your application via FTP, create an [FS Bucket](/doc/addons/fs-bucket) with the same ID as your application ID. Find the FTP credentials in the FS Bucket **Configuration** tab.
 
-  [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
-
-  {{< icon "exclamation-circle" >}} An FTP application is automatically started once the application is created, even if no code has been sent.
+  PHP applications with FTP deployment start automatically when created, even without any code.
 
   {{< callout type="warning" >}}
-  FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
+  FTP deployment is suitable for small websites. For large PHP websites, we strongly recommend using Git deployment.
   {{< /callout >}}
   {{< /tab >}}
 {{< /tabs >}}
 
 ### Troubleshooting
 
-{{% details title="Git ⋅ Remote is asking for a password" closed="true" %}}
+{{% details title="Git ⋅ Prompted for a password when pushing" closed="true" %}}
+If Git asks for a password when you push, check your SSH key configuration.
 
-If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key configuration error.
-
-**Add your SSH key to your profile here:**
-<https://console.clever-cloud.com/users/me/ssh-keys>
-
-The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys-management/)
-
+Add your SSH key to Clever Cloud in the [**SSH Keys** tab](https://console.clever-cloud.com/users/me/ssh-keys) of your profile. See the [SSH keys documentation](/doc/account/ssh-keys-management/) for more information.
 {{% /details %}}
-{{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
-You are probably trying to push from another branch. Keep in mind that:
 
-* You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
-* You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
-* In order to push to **master** from a non-master local branch, use this syntax:
+{{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
+This error means that Git can't find the branch reference you're trying to push.
+
+* You can only push to the `master` branch for deployment. Pushing to another branch will trigger an error.
+* You cannot push tags to trigger deployments. Only branch pushes will deploy your code.
+
+To push to `master` from a different local branch, use this syntax:
 
 ```bash
 git push <remote-name> <branch-name>:master
 ```
-
 {{% /details %}}
 
-{{% details title= "GitHub ⋅ Does not appear to be a git repository" closed="true" %}}
-You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.
-
-If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :
+{{% details title= "GitHub ⋅ fatal: does not appear to be a git repository" closed="true" %}}
+If you try to push directly to an application created from a GitHub repository, you'll get this error:
 
 ```bash
 fatal: '/data/repositories/<app_id>.git' does not
 appear to be a git repository
 ```
 
-Indeed, no git repository is created on Clever Cloud because the application is directly cloned from GitHub.
+Applications created from GitHub repositories are cloned directly from GitHub (no Git repository is created on Clever Cloud) and deploy automatically.
 
-If you have to push directly to a repository to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.
-
+If you need to deploy by pushing directly to Clever Cloud (for example, from a CI/CD pipeline), create a non-GitHub application instead.
 {{% /details %}}
 
-## Manage your Application
+## Manage Clever Cloud applications
 
-There are many tabs available in the application's menu on Clever Console:
+The Clever Cloud application menu includes the following tabs:
 
-* **Information:** General information about your application
-* **Scalability:** Set-up scalability options
+* **Information:** General information about the application
+* **Scalability:** Set up scalability options
 * **Domain names:** Manage custom domain names
 * **Environment variables:** Manage environment variables
 * **Service dependencies:** Link add-ons and applications
 * **Exposed configuration:** Manage exposed environment variables
-* **Activity:** Track last deployments
-* **Logs:** Visualize application's logs
-* **Metrics:** Visualize application's metrics
-* **Consumption:** Visualize your application's consumption.
+* **Activity:** Track previous deployments
+* **Logs:** View application logs
+* **Metrics:** View application metrics
+* **Consumption:** View application resource consumption
 
-### Create your first add-on
+## Add-ons for Clever Cloud applications
 
-Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.
+Applications often need databases, storage, or other services in addition to the runtime. Clever Cloud add-ons provide these services.
 
-An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
+An add-on can be used independently, linked to an application, or shared between applications. For example, a database can be used standalone without linking it to an application, or it can be linked to multiple applications that share the data.
 
-Most of the add-ons catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud ([See how to integrate your SaaS with Clever Cloud](/api))
+Clever Cloud hosts and manages most add-ons in the catalog. External vendors can also integrate their services with the platform ([learn how](/api)).
 
-#### Available add-ons
+Available add-ons:
 
-Clever Cloud provides multiple add-ons to work with your applications:
-
-##### Databases
+### Databases
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
-  {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
-  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
+  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless distributed key-value database" icon="materia" tag="Alpha" >}}
+  {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="A NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="A managed relational database" >}}
+  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="A not-only-SQL managed database" >}}
   {{< card link="/developers/doc/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
 
   {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
 {{< /cards >}}
 
-##### Storage & Messaging
+### Storage and messaging
 
 {{< cards >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system" icon="fsbucket" >}}
+  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open-source, cloud-native messaging and streaming platform" icon="pulsar" tag="Beta" >}}
 {{< /cards >}}
 
-##### Services & Tools
+### Services and tools
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
+  {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="Manage, import, and inject configurations and credentials" icon="creds" >}}
   {{< card link="/developers/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial" icon="git" >}}
-  {{< card link="/developers/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-  {{< card link="/developers/doc/addons/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="keycloak" >}}
-  {{< card link="/developers/doc/addons/mailpace" title="Mailpace" subtitle="Fast and reliable transactional email" icon="mail" >}}
-  {{< card link="/developers/doc/addons/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="matomo" >}}
+  {{< card link="/developers/doc/addons/jenkins" title="Jenkins" subtitle="The leading open-source automation server" icon="jenkins" >}}
+  {{< card link="/developers/doc/addons/keycloak" title="Keycloak" subtitle="Identity and access management with single sign-on" icon="keycloak" >}}
+  {{< card link="/developers/doc/addons/mailpace" title="MailPace" subtitle="Fast, reliable transactional email" icon="mail" >}}
+  {{< card link="/developers/doc/addons/matomo" title="Matomo" subtitle="Open-source web analytics alternative to Google Analytics" icon="matomo" >}}
   {{< card link="/developers/doc/addons/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
-  {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
+  {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconfigured plugins" icon="endpoints" >}}
 {{< /cards >}}
 
-**If your add-on:**
+### Create your first add-on
 
-{{< tabs items="Doesn't exist yet,Already exists" >}}
+When you link an add-on to an application (either during creation or afterward), the add-on provides configuration through [environment variables](/doc/reference/reference-environment-variables/). These variables are automatically available in your application.
+
+Select a tab below depending on whether you're creating a new add-on or linking an existing one.
+
+{{< tabs items="Create new add-on, Link existing add-on" >}}
   {{< tab >}}
-  Here we will assume you want to create a new add-on and link it to your application.
-
-  1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-  2. Go to the organisation in which you want to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
-  3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
-  4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
-  5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
-  7. Choose the name of the add-on and the region where the add-on will be hosted.
-  8. Click on the **Create** button.
-
-  The add-on will now be available in your organisation, and corresponding environment variables will be available for the applications linked to the add-on you just created.
+  * In the [Clever Cloud Console](https://console.clever-cloud.com/), navigate to the organization where you want to create the add-on (for example, your [personal space](https://console.clever-cloud.com/users/me)).
+  * Click **Add an add-on**.
+  * Select the type of add-on to create.
+  * Select the pricing plan for the add-on. See the [add-on billing](#add-on-billing) section below or the [Clever Cloud pricing page](https://www.clever-cloud.com/pricing/) for more information.
+  * Select the application to link the add-on to. To use the add-on alone, don't link it to an application.
+  * Give the add-on a name and select a hosting region.
+  * Click **Create**.
   {{< /tab >}}
 
   {{< tab >}}
-  To link an already existing add-on with your application, just follow these steps:
-
-  1. Go in the organisation of your application.
-  2. Click on the name of the application you want to link with your add-on.
-  3. Go in the **Service dependencies** section.
-  4. Select the add-on you want to link under the "Link add-ons" dropdown menu.
-  5. Click on the **Link** button of the add-on you want to link to your application.
+  * In the [Clever Cloud Console](https://console.clever-cloud.com/), navigate to the organization, then select the application.
+  * Go to **Service dependencies**.
+  * Click **Link add-ons** and select the add-on from the dropdown menu.
+  * Click **Link**.
   {{< /tab >}}
 {{< /tabs >}}
 
-##### Add-on Billing
+### Add-on billing
 
-There are two kinds of billing:
-
-* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
-
-{{< callout type="warning" >}}
-**Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
-{{< /callout >}}
+Add-ons with fixed resources (storage, CPU, RAM) are billed monthly, and add-ons that scale with consumption (like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)) are billed based on usage.
 
 {{< callout emoji="📊" >}}
-**Your invoice:** per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
+**How you're invoiced:** Per-usage billing is deducted from daily runtime credits. Per-month billing appears as a line item on your monthly invoice.
 {{< /callout >}}
 
-### Manage your Add-on
+{{< callout type="warning" >}}
+**Free plans:** Some add-ons offer free plans for testing purposes. Free plans run on shared resources with variable, non-guaranteed performance, and may run different versions than dedicated instances. Free plans are not suitable for production use.
+{{< /callout >}}
 
-Once an add-on is created, at least two tabs are available in the Clever Cloud console:
+### Manage add-ons
 
-* **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
+Each add-on has a management interface and sidebar menu. The sidebar menu always includes:
+
+* **Add-on dashboard:** Connection credentials and configuration tools
 
 !["Add-on dashboard"](/images/addon-dashboard.png "Example of an add-on dashboard")
 
-* **Information tab:** This screen sums-up the characteristics of the selected add-on.
-The system shows features and environment variables (if applicable).
+* **Information:** Overview of add-on details, plan, and environment variables
 
-Other tabs may be available, depending on the add-on type.
+Other menu items may be available, depending on the add-on type.
 
-### Delete an add-on
+### Delete add-ons
 
-To delete an add-on:
-
-1. Go to the **Information** tab of the add-on.
-2. Click on *Remove add-on*.
+To delete an add-on, go to the add-on's **Information** view and click **Remove add-on**.
 
 {{< callout type="warning" >}}
-The system removes all associated data after you delete the add-on.
+Deleting an add-on permanently removes all associated data.
 {{< /callout >}}

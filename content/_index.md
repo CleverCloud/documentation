@@ -4,7 +4,6 @@ title: Clever Cloud Documentation
 description: Documentation and guides to deploy, manage, and monitor your services on Clever Cloud
 layout: hextra-home
 disableSidebar: false
-type: default
 width: wide
 aliases:
 - /doc/developer

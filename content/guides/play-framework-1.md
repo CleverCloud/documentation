@@ -34,10 +34,12 @@ Clever Cloud supports Play! **1.2**, **1.3**, **1.4**, **1.5**. You can select t
 
 The `PLAY1_VERSION` environment variable can contain one of the following values:
 
-* `1.2` or `12` for **Play! 1.2**.
-* `1.3` or `12` for **Play! 1.3**.
-* `1.4` or `14` for **Play! 1.4**.
-* `1.5` or `15` for **Play! 1.5**.
+* `1.2` or `12` for **Play! 1.2**
+* `1.3` or `12` for **Play! 1.3**
+* `1.4` or `14` for **Play! 1.4**
+* `1.5` or `15` for **Play! 1.5**
+* `1.6` or `16` for **Play! 1.6**
+* `1.7` or `17` for **Play! 1.7**
 
 ### Play! configuration with application.conf
 

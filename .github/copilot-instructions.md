@@ -273,7 +273,7 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 - `CC_WEBROOT="public"`
 - `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"`
 - `SERVER_ERROR_PAGE_404="developers/404.html"`
-- Optional: `CC_HUGO_VERSION="0.151"` to specify Hugo version (example value)
+- Optional: `CC_HUGO_VERSION="0.152"` to specify Hugo version (example value)
 
 ## Quality Assurance Requirements
 

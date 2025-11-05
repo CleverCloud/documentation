@@ -18,7 +18,7 @@ aliases:
 ## Overview
 
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
-and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 7.7.1 and varnish-modules 0.26.0**.
+and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 8.0 and varnish-modules 0.27**.
 
 
 > [!NOTE] Supported runtimes
@@ -26,7 +26,7 @@ and the client. Following rules defined by the user, Varnish will cache the data
 
 ## Enable Varnish for your application
 
-To enable it, create a `varnish.vcl` file in the `/clevercloud` folder. You can also define `CC_VARNISH_FILE=/path/to/varnish.vcl` environment variable relative to your application root. This file describes how Varnish caches your applications and how it decides to return a cached resource or not. To know how to write your `varnish.vcl` file, have a look at the [Varnish 6 book](https://info.varnish-software.com/resources/varnish-6-by-example-book).
+To enable it, create a `varnish.vcl` file in the `/clevercloud` folder. You can also define `CC_VARNISH_FILE=/path/to/varnish.vcl` environment variable relative to your application root. This file describes how Varnish caches your applications and how it decides to return a cached resource or not. To know how to write your `varnish.vcl` file, have a look at the [Varnish documentation](https://varnish-cache.org/docs/8.0/index.html).
 
 The `vcl 4.1;` and backend section of the `varnish.vcl` configuration file are not necessary as they are already handled by Clever Cloud.
 If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bucket, make sure you redeploy the application for the changes to take effect.
@@ -43,9 +43,11 @@ Change the storage size specified in the varnish.params file with the `CC_VARNIS
 CC_VARNISH_STORAGE_SIZE=2G
 ```
 
-## Varnish 7 migration
+## Varnish migration
 
-If you have a configuration for an older version of varnish, read [Upgrading to Varnish 7.0](https://varnish-cache.org/docs/7.0/whats-new/upgrading-7.0.html) guide.
+If you have a configuration for an older version of varnish, read:
+- [Upgrading to Varnish 7.0](https://varnish-cache.org/docs/7.0/whats-new/upgrading-7.0.html) guide
+- [Upgrading to Varnish 8.0](https://varnish-cache.org/docs/8.0/whats-new/upgrading-8.0.html) guide
 
 ## Example files
 

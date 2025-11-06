@@ -18,13 +18,13 @@ This is a product matrix showing the services that are available with our Terraf
 | Product         | Terraform | K8S operator |
 |-----------------|-----------|--------------|
 | Cellar          | ✅        |              |
-| Config Provider |           | ✅           |
-| ElasticSearch   |           | ✅           |
+| Config Provider | ✅        | ✅           |
+| Elastic Stack   | ✅        | ✅           |
 | FS Bucket       | ✅        |              |
 | Jenkins         | ✅        |              |
 | Keycloak        | ✅        |              |
 | Materia KV      | ✅        | ✅           |
-| Matomo          |           |              |
+| Matomo          | ✅        |              |
 | Metabase        | ✅        |              |
 | MongoDB         | ✅        | ✅           |
 | MySQL           | ✅        | ✅           |
@@ -37,6 +37,7 @@ This is a product matrix showing the services that are available with our Terraf
 
 | Product     | Terraform | K8S operator |
 |-------------|-----------|--------------|
+| .Net        | ✅        |              |
 | Docker      | ✅        |              |
 | FrankenPHP  | ✅        |              |
 | Go          | ✅        |              |
@@ -48,3 +49,4 @@ This is a product matrix showing the services that are available with our Terraf
 | Rust        | ✅        |              |
 | Scala       | ✅        |              |
 | Static      | ✅        |              |
+| V (Vlang)   | ✅        |              |

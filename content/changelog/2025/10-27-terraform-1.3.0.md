@@ -1,6 +1,6 @@
 ---
 title: Terraform provider 1.3.0 is available
-description: Configuration Providers, Matomo, .Net and V (Vlang) runtimes are supported by the Clever Cloud Terraform provider
+description: Configuration Providers, Matomo, .NET and V (Vlang) runtimes are supported by the Clever Cloud Terraform provider
 date: 2025-10-27
 tags:
   - addons

@@ -8,7 +8,7 @@ authors:
   - name: David Legrand
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
-description: New .Net version, Java Elastic/APM agent update
+description: New .NET version, Java Elastic/APM agent update
 aliases:
 - /changelog/2024-02-27-images-update-part2
 excludeSearch: true
@@ -18,7 +18,7 @@ Earlier this month, we published [a first set of updates](../02-02-images-update
 
 New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the `CC_NODE_VERSION` [environment variable](/doc/reference/reference-environment-variables/#commons-to-all-applications). Other changes are as follows:
 
-* **.Net:**
+* **.NET:**
   * Version 8.0 support
   * `CC_DOTNET_VERSION` [environment variable](/doc/reference/reference-environment-variables/#net) can be `6.0` or `8.0`
 * **Java - Elastic / APM:**

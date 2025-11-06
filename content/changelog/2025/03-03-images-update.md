@@ -16,7 +16,7 @@ We deployed and updated all our images, except Docker, Go, Java, Node and Ruby, 
 
 * **Common:**
   * Linux kernel 6.13.5
-* **.Net:**
+* **.NET:**
   * Update to 8.0.108
 * **Elixir:**
   * Update to 1.18.2

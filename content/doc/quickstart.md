@@ -86,7 +86,7 @@ The log system retrieves all output from the application and displays it in the 
 ### Supported Platforms
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
   {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}

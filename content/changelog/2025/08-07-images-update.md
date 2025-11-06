@@ -1,5 +1,5 @@
 ---
-title: "Images update: .Net 9.0, Mise 2025.8"
+title: "Images update: .NET 9.0, Mise 2025.8"
 date: 2025-08-07
 tags:
   - images
@@ -19,7 +19,7 @@ We updated all our images. Deployment is in progress for all our users.
   * Mise 2025.8.4
   * SQLite 3.50.3
   * Tailscale 1.86.2
-* **.Net:**
+* **.NET:**
   * Update to 9.0.108
 * **Docker:**
   * Update to 28.3.3
@@ -29,4 +29,4 @@ We updated all our images. Deployment is in progress for all our users.
 * **Python:**
   * uv 0.8.4
 
-In the [.Net runtime](/doc/applications/dotnet), you can now use `CC_DOTNET_VERSION=9.0`.
+In the [.NET runtime](/doc/applications/dotnet), you can now use `CC_DOTNET_VERSION=9.0`.

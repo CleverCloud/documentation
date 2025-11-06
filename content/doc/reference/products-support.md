@@ -37,7 +37,7 @@ This is a product matrix showing the services that are available with our Terraf
 
 | Product     | Terraform | K8S operator |
 |-------------|-----------|--------------|
-| .Net        | ✅        |              |
+| .NET        | ✅        |              |
 | Docker      | ✅        |              |
 | FrankenPHP  | ✅        |              |
 | Go          | ✅        |              |

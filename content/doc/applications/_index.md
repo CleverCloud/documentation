@@ -29,7 +29,7 @@ aliases:
 Find here specific instructions related to your application's language.
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".Net" icon="dotnet" >}}
+  {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
   {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}

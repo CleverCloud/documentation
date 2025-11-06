@@ -23,7 +23,8 @@ Our approach remains the same as with our other products: our Kubernetes offer i
 
 We operate the Kubernetes control plane for you: upgrades, availability, and patching are our responsibility. You manage your own node pools — scaling them up or down manually as needed — while we ensure the control plane remains stable. Access is straightforward: we provide a kubeconfig file so you can use `kubectl` or any other Kubernetes compatible tool with the same workflow you already know.
 
-{{< callout type="info" >}}Clever Kubernetes is in private access. Ask for activation to your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice){{< /callout >}}
+> [!NOTE] Clever Kubernetes is in private access
+> Ask for activation to your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice)
 
 ## Prerequisites
 
@@ -43,6 +44,10 @@ If you get an error or if you miss anything, contact your sales representative o
 
 - [kubectl installation guide](https://kubernetes.io/docs/tasks/tools/#kubectl)
 - [Learn more about Clever Tools k8s command](/doc/cli/kubernetes/)
+
+>[!NOTE] Kubernetes clusters quotas
+> During the private access phase, each organization can deploy a limited number of Kubernetes clusters.\
+> If you need more clusters, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Create a Kubernetes cluster
 
@@ -64,9 +69,8 @@ You can list all your clusters at any time using:
 clever k8s list --org <your_org_id>
 ```
 
->[!INFO] Kubernetes clusters quotas
-> During the private access phase, each organization can deploy a limited number of Kubernetes clusters.\
-> If you need more clusters, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+> [!TIP]
+> In [Clever Cloud Console](https://console.clever-cloud.com), you can filter Kubernetes clusters in the left menu by searching for `is:k8s`, `is:kube` or `is:kubernetes`
 
 ## Supported versions
 

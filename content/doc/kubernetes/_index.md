@@ -137,7 +137,7 @@ kind: NodeGroup
 metadata:
   name: example-nodegroup
 spec:
-  flavor: m
+  flavor: M
   nodeCount: 2
 ```
 
@@ -155,7 +155,7 @@ You can list the node groups of your cluster using `kubectl`:
 kubectl get nodegroups
 
 NAME      DESIREDNODECOUNT   CURRENTNODECOUNT   FLAVOR   AGE
-default   2                  2                  m        2m
+default   2                  2                  M        2m
 ```
 
 The `DESIREDNODECOUNT` is the number of nodes that you asked for, the `CURRENTNODECOUNT` is the number of nodes currently in the node group. When creating a node group, the `CURRENTNODECOUNT` is `0` and increases until it reaches the `DESIREDNODECOUNT`.

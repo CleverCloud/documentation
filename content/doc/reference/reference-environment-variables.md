@@ -464,6 +464,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 |  Name  |  Description  |  Default value  |  Read Only  |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
+|`POSTGRESQL_ADDON_URI` | Complete URI to connect to the PostgreSQL database | Generated upon creation | ✓ |
 |`POSTGRESQL_ADDON_HOST` |  | Generated upon creation | ✓ |
 |`POSTGRESQL_ADDON_PORT` |  | Generated upon creation | ✓ |
 |`POSTGRESQL_ADDON_DIRECT_HOST` | Points directly to the VM, bypassing reverse proxies | Generated on demand via the dashboard | ✓ |

@@ -229,8 +229,8 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/applications/golang/#environment-injection" title="Go" icon="go" >}}
   {{< card link="/developers/doc/applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
   {{< card link="/developers/doc/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
-  {{< card link="/developers/guides/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
-  {{< card link="/developers/guides/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
   {{< card link="/developers/doc/applications/nodejs#environment-injection" title="Node.js" icon="node" >}}
   {{< card link="/developers/guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/applications/php/#environment-injection" title="PHP" icon="php" >}}
@@ -247,7 +247,7 @@ Here is a non-exhaustive summary:
 Variables are available at build time
 for runtimes that support build time instructions, such as
 [Java WAR](/doc/applications/java/java-war/#environment-injection),
-[Play! Framework 1](/guides/play-framework-1/#environment-injection),
-[Play! Framework 2](/guides/play-framework-2/#environment-injection)
+[Play! Framework 1](/doc/applications/scala/play-framework-1/#environment-injection),
+[Play! Framework 2](/doc/applications/scala/play-framework-2/#environment-injection)
 or [Scala](/doc/applications/scala/#environment-injection).
 {{< /callout >}}

@@ -1,7 +1,7 @@
 ---
 type: docs
-linkTitle: Play Framework 1.x Scala
-title: Play Framework 1.x Scala
+linkTitle: Play Framework 1.x
+title: Play Framework 1.x (Scala)
 description: Deploy Play Framework 1.x applications with step-by-step tutorial for Scala and Java web development on Clever Cloud platform
 keywords:
 - play framework
@@ -16,6 +16,7 @@ aliases:
 - /doc/java/play-framework-1
 - /doc/play-framework
 - /doc/scala/play-framework-1
+- /guides/play-framework-1
 ---
 
 ## Overview

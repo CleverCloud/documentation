@@ -219,9 +219,10 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 |`CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND` | Only use this variable to override the default `install --only-dependencies` Stack step command |
 |`CC_RUN_COMMAND` | Custom command to run your application. |
 
-## Java
+## Java / Scala
 
-[Java Documentation](/doc/applications/java/java-jar)
+- [Java Documentation](/doc/applications/java)
+- [Scala Documentation](/doc/applications/scala)
 
 | Name | Description | Default value |
 |------|-------------|---------------|

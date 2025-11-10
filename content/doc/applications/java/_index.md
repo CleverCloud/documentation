@@ -31,8 +31,8 @@ Find detailed instructions according to your framework
   {{< card link="/developers/doc/applications/java/java-jar" title="Jar" icon="java" >}}
   {{< card link="/developers/doc/applications/java/java-maven" title="Maven" icon= "maven">}}
   {{< card link="/developers/doc/applications/java/java-war" title="War/Ear" icon="java" >}}
-  {{< card link="/developers/guides/play-framework-1" title="Play 1" icon="play" >}}
-  {{< card link="/developers/guides/play-framework-2" title="Play 2" icon="play" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-1" title="Play 1" icon="play" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-2" title="Play 2" icon="play" >}}
 
 {{< /cards >}}
 

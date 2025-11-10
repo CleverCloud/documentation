@@ -49,8 +49,6 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/node-statsd-nodejs-metrics" title="node-statsd" subtitle= "Configure node-statsd package on your Node.js application to push custom metrics" icon="node" >}}
   {{< card link="/developers/guides/nuxt" title="Nuxt" subtitle= "Build and deploy a Nuxt application on Clever Cloud" icon="nuxt" >}}
   {{< card link="/developers/guides/pgpool" title="Pgpool-II" subtitle= "How to configure and use Pgpool-II for PostgreSQL add-ons" icon="pg" >}}
-  {{< card link="/developers/guides/play-framework-1" title="Play 1 x Scala" subtitle= "Set up your Play 1 + Scala application to run on Clever Cloud" icon="play" >}}
-  {{< card link="/developers/guides/play-framework-2" title="Play 2 x Scala" subtitle= "Set up your Play 2 + Scala application to run on Clever Cloud" icon="play" >}}
   {{< card link="/developers/guides/proxysql" title="ProxySQL" subtitle= "Configure and use ProxySQL for MySQL add-ons" icon="mysql" >}}
   {{< card link="/developers/guides/ruby-on-rails" title="Ruby On Rails" subtitle= "How to deploy Ruby on Rails framework" icon="ruby" >}}
   {{< card link="/developers/guides/ruby-rack" title="Ruby Rack" subtitle= "Set up a Ruby Rack application and deploy on Clever Cloud" icon="ruby" >}}

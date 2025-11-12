@@ -34,8 +34,6 @@ We updated all our images. Deployment is in progress for all our users.
 * **Python:**
   * pip 25.3
   * uv 0.9.7
-* **Ruby:**
-  * Update to Ruby 3.3.10
 * **Static:**
   * Hugo 0.152.1
   * Static Web Server 2.39.0

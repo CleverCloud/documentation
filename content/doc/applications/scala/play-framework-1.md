@@ -41,6 +41,9 @@ The `PLAY1_VERSION` environment variable can contain one of the following values
 * `1.5` or `15` for **Play! 1.5**
 * `1.6` or `16` for **Play! 1.6**
 * `1.7` or `17` for **Play! 1.7**
+* `1.8` or `18` for **Play! 1.8**
+* `1.9` or `19` for **Play! 1.9**
+* `1.10` or `110` for **Play! 1.10**
 
 ### Play! configuration with application.conf
 

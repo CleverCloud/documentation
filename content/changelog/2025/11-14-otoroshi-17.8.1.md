@@ -1,5 +1,5 @@
 ---
-title: Otoroshi 17.8.1 is available, with HTTP Security Headers and Time Restriction plugins
+title: "Otoroshi 17.8.1: LLM Bots Blocker, HTTP Security Headers and Time Restriction plugins"
 description: Small bump, but great new possibilities for your APIs and applications
 date: 2025-11-14
 tags:
@@ -16,6 +16,8 @@ excludeSearch: true
 ---
 
 [Otoroshi v17.8.1](https://github.com/MAIF/otoroshi/releases/tag/v17.8.1) is available with multiple improvements and bug fixes. It brings two new plugins to inject common HTTP security headers (HSTS, CSP, XFO, X-XSS-Protection, X-Content-Type-Options) on responses or restrict when a route is accessible (days range, time range): `HTTP Security Headers` and `Time Restriction`.
+
+It comes with [LLM extension 0.6.0](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.60) which includes a new `LLM Bots Blocker` plugin to block requests from known LLM bots (like ChatGPT, Bard, etc.) using a [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) (PoW) challenge mechanism.
 
 You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.8.1_1763110173` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
 

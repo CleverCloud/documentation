@@ -19,7 +19,7 @@ excludeSearch: true
 - [Groups regexp mapper](https://github.com/please-openit/keycloak-groups-regexp-mapper): map groups that only fit to a regexp (by name), it avoids mapping all user groups into a token
 - [HTTP Get request mapper](https://github.com/please-openit/keycloak-http-get-request-mapper): add a result from an external service (HTTP GET request) to user's tokens
 
-This release is now used as default for new created add-ons. To update an existing add-on, set `CC_KEYCLOAK_VERSION` of its Java application to `26.4.4` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
+You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.4.4` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
 
 ```bash
 clever features enable operators

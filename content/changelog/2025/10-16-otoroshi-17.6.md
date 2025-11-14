@@ -17,7 +17,7 @@ excludeSearch: true
 
 [Otoroshi v17.6](https://github.com/MAIF/otoroshi/releases/tag/v17.6.0) is available with multiple improvements and bug fixes. It now uses Monaco as code editor, brings many improvements to workflows and plugins to to limit request/response body size or throttle bandwidth. It comes with [LLM extension 0.0.53](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.53)  and [Biscuit Studio 1.0](https://github.com/cloud-apim/otoroshi-biscuit-studio/releases/tag/1.0.0) which includes features from previous releases, such as graphical inspector/tester, a sandbox to test datalog policies, support of Otoroshi expression language, etc.
 
-To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.6.3_1760617667` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
+You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.6.3_1760617667` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
 
 ```bash
 clever features enable operators

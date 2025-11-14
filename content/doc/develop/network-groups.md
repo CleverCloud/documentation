@@ -25,7 +25,7 @@ When you create a Network Group, a WireGuard configuration is generated with a c
 
 {{< callout type="info" >}}
 During beta testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported. \
-A Network Group member domain name is composed this way: `<memberID>.m.<ngID>cc-ng.cloud`
+A Network Group member domain name is composed this way: `<memberID>.m.<ngID>.cc-ng.cloud`
 {{< /callout >}}
 
 When a resource is linked to a Network Group, you can reach it on any port inside this private network with its domain name. An application instance is a peer, you can reach through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.

@@ -44,7 +44,7 @@ Then, use the action and define the mandatory input:
 
 ```yaml
 - name: Create review app
-        uses: CleverCloud/clever-cloud-review-app@latest
+        uses: CleverCloud/clever-cloud-review-app@v2.0.2
         env:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}

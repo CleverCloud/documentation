@@ -57,6 +57,12 @@ You can set up alerts in Grafana to be notified on your apps and add-ons consump
 
 For example, check [this tutorial on how to create Slack alerts with Grafana](https://www.clever.cloud/blog/features/2021/12/03/slack-alerts-for-grafana/).
 
+### Templated dashboards in Grafana
+
+Pre-configured dashboards are available in your `Clever Cloud` directory to help you visualize your application metrics. 
+
+To customize a template and preserve your changes, create and save a **copy** of the dashboard in a **different** directory. Original templates may be overwritten when the Clever Cloud team releases updates.
+
 ## Monitoring' metrics
 
 All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/doc/metrics/warp10), a Geotimes series database.

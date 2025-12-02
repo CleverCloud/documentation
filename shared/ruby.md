@@ -68,6 +68,8 @@ The value of this variable must be a comma-separated list of files:
 CC_SIDEKIQ_FILES="./config/sidekiq_1.yml,./config/sidekiq_2.yml,./config/sidekiq_3.yml"
 ```
 
+One Sidekiq process will be started per configuration file.
+
 **Note:** `CC_SIDEKIQ_FILES` have precedence over `CC_ENABLE_SIDEKIQ` which means that even if `CC_SIDEKIQ_FILES` is defined and `CC_ENABLE_SIDEKIQ` is set to `false`, Sidekiq will still be enabled.
 
 Each path is the path *from the root of the repository* to a sidekiq configuration file.

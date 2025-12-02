@@ -15,6 +15,6 @@ authors:
 excludeSearch: true
 ---
 
-The [1.7.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.7.0) of the Clever Cloud Terraform provider is available. It brigs bug fixes, reboot action for applications and encryption at rest for PostgreSQL databases.
+The [1.7.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.7.0) of the Clever Cloud Terraform provider is available. It brings bug fixes, reboot action for applications and encryption at rest for PostgreSQL databases.
 
 * Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

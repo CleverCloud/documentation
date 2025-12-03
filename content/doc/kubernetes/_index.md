@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 3
+weight: 4
 linkTitle: Kubernetes
 title: Clever Kubernetes Engine (CKE)
 description: Create and manage Kubernetes clusters using Clever Cloud Kubernetes Engine with Materia etcd

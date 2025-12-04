@@ -55,7 +55,20 @@ An initial account has been created, change the password at first login (Securit
 Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
+By default we use Clever Cloud's domain names for both the admin interface and the routes you'll manage through Otoroshi, but you can set custom domains at creation through the `base-domain` and `routes-domain` options that you can use independently:
+
+```bash
+clever addon create otoroshi myOtoroshiName --option base-domain=otoroshi.example.com
+clever addon create otoroshi myOtoroshiName2 --option routes-domain=routes.example.com
+clever addon create otoroshi myOtoroshiName3 --option base-domain=otoroshi.example.com --option routes-domain=routes.example.com
+```
+
+These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
+
 Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.
+
+> [!TIP] Routes management
+> When you create routes in Otoroshi, they will use the routes domain you set at creation, or `app-id.cleverapps.io`. But you can add as many custom domains as you need on the underlying Java application and use them in Otoroshi routes.
 
 ## Version management
 
@@ -63,7 +76,8 @@ To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC
 
 ```bash
 # Set a specific supported version at creation
-clever addon create otoroshi --addon-version <version> myOtoroshi
+# You can add options to set base or routes domains if needed
+clever addon create otoroshi myOtoroshi --addon-version <version>
 
 # Enable Operators commands
 clever features enable operators
@@ -81,7 +95,17 @@ clever otoroshi version update myOtoroshi <new_version>
 
 ## Accessing the Otoroshi with LLM interface
 
-Once you created your add-on, open the management URL or look for `CC_OTOROSHI_URL` value in the Otoroshi with LLM dashboard from the Console. The first time you connect, change the initial password (Security -> Administrators -> Edit user).
+Once you created your add-on, open the management URL in the Otoroshi with LLM dashboard from the Console. You can also use Clever Tools to open Java underlying application logs or the Otoroshi web UI directly:
+
+```bash
+# Enable Operators commands
+clever features enable operators
+
+clever otoroshi open logs myOtoroshi
+clever otoroshi open webui myOtoroshi
+```
+
+The first time you connect, change the initial password (Security -> Administrators -> Edit user).
 
 * [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/how-to-s/index.html)
 

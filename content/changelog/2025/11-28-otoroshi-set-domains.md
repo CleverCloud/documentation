@@ -1,7 +1,7 @@
 ---
 title: Set Otoroshi admin and routes domains at creation
 description: You can now set custom domains for Otoroshi admin interface and routes when creating the add-on on Clever Cloud
-date: 2025-12-28
+date: 2025-11-28
 tags:
   - addons
   - otoroshi

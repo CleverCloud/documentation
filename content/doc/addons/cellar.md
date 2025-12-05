@@ -516,7 +516,10 @@ This policy example grants read-only access to a bucket for another user, using 
           "s3:ListBucket"
         ],
         "Effect": "Allow",
-        "Resource": "arn:aws:s3:::<bucket-name>/*",
+        "Resource": [
+          "arn:aws:s3:::<bucket-name>",
+          "arn:aws:s3:::<bucket-name>/*"
+        ],
         "Principal": {"AWS": "arn:aws:iam::cellar_xxx"}
 
       }
@@ -710,8 +713,9 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   If you want to turn off versioning, you can use the following:
 
-```sh
+  ```sh
   aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Suspended
+  ```
 
   You can check if versioning is enabled on your bucket with :
 

@@ -161,43 +161,56 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
   {{< tab >}}
   **Node.js**
 
-  ```javascript
-  // Load the AWS SDK for Node.js
-  const AWS = require('aws-sdk');
+  Using AWS SDK for JavaScript v3 (recommended):
 
-  // Set up config
-  AWS.config.update({
-    accessKeyId: '<cellar_key_id>',
-    secretAccessKey: '<cellar_key_secret>'
+  **Required environment variables:**
+  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+  Some SDKs require a region even with a custom endpoint, so set `region` to the literal value "`default`".
+
+  ```javascript
+  import {
+    S3Client,
+    CreateBucketCommand,
+    ListBucketsCommand,
+    GetObjectCommand
+  } from "@aws-sdk/client-s3";
+  import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+
+  // Create S3 client with Cellar endpoint
+  // NOTE: If experiencing checksum validation errors with SDK v3.729.0+,
+  // uncomment the two config parameters below (compatibility with our current infrastructure)
+  const s3Client = new S3Client({
+    endpoint: process.env.CELLAR_ADDON_HOST,
+    region: 'default',
+    credentials: {
+      accessKeyId: process.env.CELLAR_ADDON_KEY_ID,
+      secretAccessKey: process.env.CELLAR_ADDON_KEY_SECRET
+    },
+    // requestChecksumCalculation: 'WHEN_REQUIRED',
+    // responseChecksumValidation: 'WHEN_REQUIRED'
   });
 
-  // Create S3 service object
-  const s3 = new AWS.S3({ endpoint: '<cellar_host>' });
-
-  // Create the parameters for calling createBucket
-  const bucketParams = {
-    Bucket : '<my-bucket-name>',
-    CreateBucketConfiguration: {
-      LocationConstraint: ''
-    }
+  const createParams = {
+    Bucket: '<my-bucket-name>'
   };
 
-  // call S3 to create the bucket
-  s3.createBucket(bucketParams, function(err, data) {
-    // handle results
-  });
+  await s3Client.send(new CreateBucketCommand(createParams));
 
-  // Call S3 to list the buckets
-  s3.listBuckets(function(err, res) {
-    // handle results
-  });
+  // List all buckets
+  const listResponse = await s3Client.send(new ListBucketsCommand({}));
+  console.log(listResponse.Buckets);
 
-  /* In order to share access to access non-public files via HTTP, you need to get a presigned url for a specific key
-   * the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
-   * you'll need to use 'putObject' instead.
-   * see doc : https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
-   */
-  s3.getSignedUrl('getObject', {Bucket: '<YouBucket>', Key: '<YourKey>'})
+  // Generate presigned URL for non-public files
+  // For uploads, use PutObjectCommand instead
+  const getCommand = new GetObjectCommand({
+    Bucket: '<your-bucket>',
+    Key: '<your-key>'
+  });
+  const presignedUrl = await getSignedUrl(s3Client, getCommand, { expiresIn: 3600 });
+  console.log(presignedUrl);
   ```
 
   {{< /tab >}}
@@ -205,23 +218,37 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
   {{< tab >}}
   **Java**
 
-  Import the AWS SDK S3 library. Maven uses the following dependency to do so :
+  Import the AWS SDK S3 library. Maven uses the following dependency:
 
   ```xml
   <dependency>
     <groupId>software.amazon.awssdk</groupId>
     <artifactId>s3</artifactId>
-    <version>2.21.35</version>
+    <version>2.40.1</version>
   </dependency>
   ```
 
   Make sure to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
 
-  Below is a sample Java class, written in Java 21, listing the objects of all buckets :
+  **Required environment variables:**
+  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+  **Optional (for SDK 2.30.0+ checksum compatibility):**
+  - `AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED`
+  - `AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED`
+
+  Some SDKs require a region even with a custom endpoint, so just provide the literal value "`default`" to satisfy that requirement.
+
+  Below is a sample Java class listing the objects of all buckets:
 
   ```java
   import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
   import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+  import software.amazon.awssdk.core.checksums.RequestChecksumCalculation;
+  import software.amazon.awssdk.core.checksums.ResponseChecksumValidation;
+  import software.amazon.awssdk.regions.Region;
   import software.amazon.awssdk.services.s3.S3Client;
   import software.amazon.awssdk.services.s3.model.Bucket;
   import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
@@ -231,33 +258,37 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
   public class CleverCloudCellarDemoApplication {
 
-      // replace those values with your own keys, load them from properties or env vars
-      private static final String CELLAR_HOST = "";
-      private static final String CELLAR_KEY_ID = "";
-      private static final String CELLAR_KEY_SECRET = "";
+      private static final String CELLAR_HOST = System.getenv("CELLAR_ADDON_HOST");
+      private static final String CELLAR_KEY_ID = System.getenv("CELLAR_ADDON_KEY_ID");
+      private static final String CELLAR_KEY_SECRET = System.getenv("CELLAR_ADDON_KEY_SECRET");
+      private static final Region DEFAULT_REGION = Region.of("default");
 
       public static void main(String[] args) {
-          // initialize credentials with Cellar Key ID and Secret
-          // you can also use `EnvironmentVariableCredentialsProvider` by setting AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env vars
-          var credentialsProvider = StaticCredentialsProvider.create(AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET));
+          // Initialize credentials with Cellar Key ID and Secret
+          var credentialsProvider = StaticCredentialsProvider.create(
+              AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET)
+          );
 
-          // create a client builder
+          // Create S3 client builder
+          // NOTE: If experiencing checksum validation errors with SDK 2.30.0+,
+          // uncomment the two lines below (compatibility with our current infrastructure)
           var s3ClientBuilder = S3Client.builder()
-                  // override the S3 endpoint with the cellar Host (starting with 'https://'
                   .endpointOverride(URI.create(CELLAR_HOST))
+                  .region(DEFAULT_REGION)
                   .credentialsProvider(credentialsProvider);
+                  // .requestChecksumCalculation(RequestChecksumCalculation.WHEN_REQUIRED)
+                  // .responseChecksumValidation(ResponseChecksumValidation.WHEN_REQUIRED);
 
-          // initialize the s3 client
+          // Initialize the s3 client
           try (S3Client s3 = s3ClientBuilder.build()) {
-              // list buckets
+              // List buckets
               List<Bucket> buckets = s3.listBuckets().buckets();
               buckets.forEach(bucket -> {
-                  // list bucket objects
+                  // List bucket objects
                   var listObjectsRequest = ListObjectsRequest.builder().bucket(bucket.name()).build();
                   var objects = s3.listObjects(listObjectsRequest).contents();
-                  // handle results
+                  // Handle results
               });
-
           }
       }
   }
@@ -269,32 +300,53 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 {{< tab >}}
   **Python**
 
-  Tested with Python 3.6.
+  This script uses boto3, the AWS SDK for Python.
 
-  This script uses boto, the old implementation of the aws-sdk in python. The host endpoint is `cellar-c2.services.clever-cloud.com` (verify the `CELLAR_ADDON_HOST` variable value in the Clever Cloud console, from the **Information** option).
+  **Required environment variables:**
+  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+  Some SDKs require a region even with a custom endpoint, so set the `region_name` to the literal value "`default`" when instantiating the client.
 
   ```python
-  from boto.s3.key import Key
-  from boto.s3.connection import S3Connection
-  from boto.s3.connection import OrdinaryCallingFormat
+  import boto3
+  import os
+  from botocore.client import Config
 
-  apikey='<key>'
-  secretkey='<secret>'
-  host='<host>'
+  # Create S3 client with Cellar endpoint
+  # NOTE: If you experience checksum validation errors during uploads,
+  # uncomment the two config parameters below (compatibility with our current infrastructure)
+  s3 = boto3.client(
+      's3',
+      region_name='default',
+      aws_access_key_id=os.environ['CELLAR_ADDON_KEY_ID'],
+      aws_secret_access_key=os.environ['CELLAR_ADDON_KEY_SECRET'],
+      endpoint_url=os.environ['CELLAR_ADDON_HOST'],
+      config=Config(
+          signature_version='s3v4'
+          # request_checksum_calculation='WHEN_REQUIRED',
+          # response_checksum_validation='WHEN_REQUIRED'
+      )
+  )
 
-  cf=OrdinaryCallingFormat()  # This mean that you _can't_ use upper case name
-  conn=S3Connection(aws_access_key_id=apikey, aws_secret_access_key=secretkey, host=host, calling_format=cf)
-
-  b = conn.get_all_buckets()
-  print(b)
+  # List all buckets
+  response = s3.list_buckets()
+  buckets = response['Buckets']
+  print(buckets)
 
   """
   In order to share access to non-public files via HTTP, you need to get a presigned url for a specific key
-  the example above present a 'getObject' presigned URL. If you want to put a object in the bucket via HTTP,
-  you'll need to use 'putObject' instead.
-  see doc : https://docs.pythonboto.org/en/latest/ref/s3.html#boto.s3.bucket.Bucket.generate_url
+  the example above present a 'getObject' presigned URL. If you want to put an object in the bucket via HTTP,
+  you'll need to use 'put_object' instead.
+  see doc : https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.generate_presigned_url
   """
-  b[0].generate_url(60)
+  presigned_url = s3.generate_presigned_url(
+      'get_object',
+      Params={'Bucket': buckets[0]['Name'], 'Key': '<your-key>'},
+      ExpiresIn=3600
+  )
+  print(presigned_url)
   ```
 
   {{< /tab >}}
@@ -304,6 +356,11 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
 
   [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
   you must configure a S3 service with a custom endpoint.
+
+  **Required environment variables:**
+  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `cellar-c2.services.clever-cloud.com`)
+  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   Use this configuration in your `config/storage.yml`:
 
@@ -316,6 +373,9 @@ You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.
     region: 'us-west-1'
     force_path_style: true
     bucket: mybucket
+    # If experiencing checksum validation errors, add:
+    # request_checksum_calculation: 'when_required'
+    # response_checksum_validation: 'when_required'
   ```
 
   Although the `region` parameter appears, it's not used by Cellar. The region value serves to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception would raise : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.

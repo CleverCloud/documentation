@@ -215,3 +215,58 @@ S1G9NpEsu94rDq7yehVOpGv0bCav2xtDIAgQW+ZRpRoipu5KSsUAzg==
 =DNbu
 -----END PGP PUBLIC KEY BLOCK-----
 ```
+
+## Managed Certificate Service
+
+If you cannot provide your own certificates or prefer not to manage the certificate lifecycle yourself, Clever Cloud can handle certificate procurement and management on your behalf. This service covers wildcard certificates and cases where automatic Let's Encrypt generation isn't suitable.
+
+### Service Overview
+
+Clever Cloud manages the entire certificate lifecycle:
+
+- Certificate generation and procurement
+- Domain validation coordination
+- Initial installation
+- Renewal management
+
+### Information Required
+
+To initiate a managed certificate request, [contact our support team](https://console.clever-cloud.com/ticket-center-choice) with:
+
+- **Validity duration**: Certificate validity period (default: 1 year)
+- **Protected domains**: Domain(s) requiring certificate coverage (one domain per certificate is recommended)
+
+### Domain Validation
+
+Certificate authorities require proof of domain ownership before issuing certificates. You must complete validation using one of two methods:
+
+#### Email Validation
+
+The certificate authority sends a validation email to one of these addresses on your domain:
+
+- `admin@yourdomain.com`
+- `administrator@yourdomain.com`
+- `webmaster@yourdomain.com`
+- `hostmaster@yourdomain.com`
+- `postmaster@yourdomain.com`
+
+At least one of these addresses must be functional. You'll receive an email containing a validation link that you must click to confirm domain ownership.
+
+#### DNS Validation
+
+If email validation isn't possible, you can validate via DNS:
+
+1. Clever Cloud provides either a TXT or CNAME record value
+2. Create the record (TXT or CNAME) in your domain's DNS zone
+3. Validation completes automatically once the record propagates
+
+### Installation and Renewal
+
+After successful validation:
+
+1. The certificate is generated and installed on your application
+2. Clever Cloud monitors certificate expiration
+3. Several weeks before expiry, the support will contact you to initiate renewal
+4. The validation and installation process repeats
+
+For pricing and to initiate a managed certificate request, [contact the support team](https://console.clever-cloud.com/ticket-center-choice).

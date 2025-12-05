@@ -8,7 +8,7 @@ keywords:
 - metrics
 - monitoring
 - grafana
-- warp10
+- warp 10
 - performance
 - analytics
 aliases:

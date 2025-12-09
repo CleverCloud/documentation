@@ -1,5 +1,5 @@
 ---
-title: Matomo v5.1.0 is available
+title: Matomo 5.1.0 is available
 date: 2024-07-01
 tags:
   - addons
@@ -11,7 +11,7 @@ authors:
   - name: Rémi Collignon-Ducret
     link: https://github.com/miton18
     image: https://github.com/miton18.png?size=40
-description: You can now deploy Matomo v5.1.0 on Clever Cloud
+description: You can now deploy Matomo 5.1.0 on Clever Cloud
 aliases:
 - /changelog/2024-07-01-matomo-5.1.0
 excludeSearch: true

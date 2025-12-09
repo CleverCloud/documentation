@@ -1,5 +1,5 @@
 ---
-title: Matomo v5.0.1 is available
+title: Matomo 5.0.1 is available
 date: 2024-01-22
 tags:
   - addons

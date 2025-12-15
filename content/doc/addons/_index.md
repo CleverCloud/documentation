@@ -27,7 +27,7 @@ Connect your application to an add-on:
 ## Databases
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
+  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Beta" >}}
   {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
   {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
   {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
@@ -41,7 +41,7 @@ Connect your application to an add-on:
 {{< cards >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
   {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" >}}
 {{< /cards >}}
 
 ## Services & Tools

@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Pulsar
-title: Pulsar
+title: Apache Pulsar
 description: Deploy Apache Pulsar messaging add-on service for real-time data streaming and pub-sub messaging with enterprise scalability features
 keywords:
 - apache pulsar
@@ -16,10 +16,6 @@ aliases:
 - /deploy/addon/pulsar
 - /doc/deploy/addon/pulsar
 ---
-
-{{< callout type="warning" >}} Pulsar is still in beta. {{< /callout >}}
-
-## Overview
 
 [Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies ranging around 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It's equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
 
@@ -71,7 +67,7 @@ It allows you to create and use topics following this pattern:
 
 ## Version
 
-We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the [blog](https://www.clever.cloud/blog/).
+We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard.
 
 ## Common use cases
 

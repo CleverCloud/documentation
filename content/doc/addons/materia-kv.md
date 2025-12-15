@@ -133,6 +133,7 @@ We've prepared a few examples to help you get started with Materia KV:
 Supported value types are:
 
 - Hash
+- Set
 - String
 
 Find below the list of currently supported commands:
@@ -180,13 +181,30 @@ Find below the list of currently supported commands:
 | `PERSIST` | Remove the existing time to live associated with the `key`. |
 | `PEXPIRE` | Set a `key` time to live in milliseconds. After the timeout has expired, the `key` will be automatically deleted.  The time to live can be updated using the `PEXPIRE` command or cleared using the `PERSIST` command. |
 | `PING` | Returns `PONG` if no argument is provided, otherwise return a copy of the argument as a bulk. |
-| `PTTL` | RReturns the remaining time to live of a `key`, in milliseconds. |
+| `PTTL` | Returns the remaining time to live of a `key`, in milliseconds. |
+| `SADD` | Add the specified members to the set stored at `key`. Specified members that are already a member of this set are ignored. If `key` doesn't exist, a new set is created before adding the specified members. |
 | `SCAN` | Incrementally iterate over a collection of elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
+| `SCARD` | Returns the set cardinality (number of elements) of the set stored at `key`. |
+| `SDIFF` | Returns the members of the set resulting from the difference between the first set and all the successive sets. |
+| `SDIFFSTORE` | This command is equal to `SDIFF`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
 | `SET` | Set `key` to hold the string `value`. If key already holds a value, it is overwritten, regardless of its type. |
 | `SETBIT` | Sets or clears the bit at offset in the string value stored at `key`. |
+| `SINTER` | Returns the members of the set resulting from the intersection of all the given sets. |
+| `SINTERCARD` | Returns the number of elements that would result from the intersection of all given sets. |
+| `SINTERSTORE` | This command is equal to `SINTER`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
+| `SISMEMBER` | Returns if `member` is a member of the set stored at `key`. |
+| `SMEMBERS` | Returns all the members of the set value stored at `key`. |
+| `SMISMEMBER` | Returns whether each member is a member of the set stored at `key`. For every member, `1` is returned if the value is a member of the set, or `0` if the element is not a member of the set or if `key` doesn't exist. |
+| `SMOVE` | Move `member` from the set at `source` to the set at `destination`. This operation is atomic. In every given moment the element will appear to be a member of `source` or `destination` for other clients. |
+| `SPOP` | Removes and returns one or more random members from the set value stored at `key`. |
+| `SRANDMEMBER` | When called with just the `key` argument, return a random element from the set value stored at `key`. |
+| `SREM` | Remove the specified members from the set stored at `key`. Specified members that are not a member of this set are ignored. If `key` doesn't exist, it is treated as an empty set and this command returns `0`. |
+| `SSCAN` | Incrementally iterate over set elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
+| `SUNION` | Returns the members of the set resulting from the union of all the given sets. |
+| `SUNIONSTORE` | This command is equal to `SUNION`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
 | `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `TTL` | Returns the remaining time to live of a `key`, in seconds. |
-| `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list` or `string`. |
+| `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list`, `set` or `string`. |
 
 ### JSON commands
 

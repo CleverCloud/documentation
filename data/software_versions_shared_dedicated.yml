@@ -2,8 +2,9 @@ dev_message: "**Important**: Dev plans are free and **solely for testing purpose
 
 elastic:
   dedicated:
-    - v7.17.10
-    - v8.17.4
+    - v7.17.29
+    - v8.19.7
+    - v9.2.1
 
 mongo:
   dedicated:

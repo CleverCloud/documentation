@@ -100,6 +100,14 @@ An initial account has been created, you'll be invited to change the password at
  - Temporary password: xxxxxxxxxxxxxxxx
 ```
 
+By default we use Clever Cloud's domain names for the web interface, but you can set custom domains at creation through the `access-domain` option:
+
+```bash
+clever addon create keycloak myKeycloakName --option access-domain=keycloak.example.com
+```
+
+These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Keycloak add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
+
 Refer to the [Clever Tools documentation](/doc/cli/addons) for more details on add-on creation.
 
 ## Secured Multi Instances

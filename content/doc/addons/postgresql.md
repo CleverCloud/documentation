@@ -161,6 +161,12 @@ Usually this threshold is set to 20%.
 
 If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on a PostgreSQL add-on, but you encounter the following error `Exception: Must be run with database superuser privileges.`, you need to add the `--rds` flag when you start it.
 
+## Dbtune Solution
+
+You can use [Dbtune](https://dbtune.com) solution on PostgreSQL add-ons for enhanced database performance optimisation and monitoring. This feature provides advanced tuning capabilities to improve query performance and overall database efficiency.
+
+To enable Dbtune solution on your PostgreSQL add-on, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+
 ## 🔑 Rights and permissions
 
 Add-ons are managed services, meaning that users have **standard access** to the database (role **owner**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.

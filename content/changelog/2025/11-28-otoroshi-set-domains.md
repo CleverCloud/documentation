@@ -15,10 +15,10 @@ authors:
 excludeSearch: true
 ---
 
-When you deploy an Otoroshi add-on on Clever Cloud, you can access its admin interface through a `<random_chars>-otoroshi.services.clever-cloud.com` domain. When you create a new route, it starts with a `app-id.cleverapps.io`. You can now set custom domains at creation through the `base-domain` and `routes-domain` options in Clever Tools:
+When you deploy an Otoroshi add-on on Clever Cloud, you can access its web interface through a `<random_chars>-otoroshi.services.clever-cloud.com` domain. When you create a new route, it starts with a `app-id.cleverapps.io`. You can now set custom domains at creation through the `access-domain` and `routes-domain` options in Clever Tools:
 
 ```bash
-clever addon create otoroshi myOtoroshiName --option base-domain=otoroshi.example.com --option routes-domain=routes.example.com
+clever addon create otoroshi myOtoroshiName --option access-domain=otoroshi.example.com --option routes-domain=routes.example.com
 ```
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.

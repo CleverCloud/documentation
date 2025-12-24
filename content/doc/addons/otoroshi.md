@@ -55,12 +55,12 @@ An initial account has been created, change the password at first login (Securit
 Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
-By default we use Clever Cloud's domain names for both the admin interface and the routes you'll manage through Otoroshi, but you can set custom domains at creation through the `base-domain` and `routes-domain` options that you can use independently:
+By default we use Clever Cloud's domain names for both the web interface and the routes you'll manage through Otoroshi, but you can set custom domains at creation through the `access-domain` and `routes-domain` options that you can use independently:
 
 ```bash
-clever addon create otoroshi myOtoroshiName --option base-domain=otoroshi.example.com
+clever addon create otoroshi myOtoroshiName --option access-domain=otoroshi.example.com
 clever addon create otoroshi myOtoroshiName2 --option routes-domain=routes.example.com
-clever addon create otoroshi myOtoroshiName3 --option base-domain=otoroshi.example.com --option routes-domain=routes.example.com
+clever addon create otoroshi myOtoroshiName3 --option access-domain=otoroshi.example.com --option routes-domain=routes.example.com
 ```
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.

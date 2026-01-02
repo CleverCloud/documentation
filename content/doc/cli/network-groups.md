@@ -52,7 +52,10 @@ Then, check it works with the following command:
 clever ng
 ```
 
-In all the following examples, you can target a specific organisation with the `--org` or `-o` option.
+
+> [!NOTE]
+> In all the following examples, you can target a specific organisation with the `--org` or `-o` option. **This is required if the Network Group was created in an organization other than your personal space.**
+
 
 ## Create a Network Group
 

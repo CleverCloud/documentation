@@ -76,12 +76,12 @@ clever k8s list --org <your_org_id>
 
 Clever Cloud follows [the official Kubernetes version support policy](https://kubernetes.io/releases/), which maintains support for the most recent three minor versions (n-2). At any given time, the Kubernetes project maintains release branches for the latest three minor releases.
 
-For example, if the latest release, used as default, is v1.34:
+For example, if the latest release, used as default, is v1.35:
 
-* v1.34 (current)
+* v1.35 (current)
+* v1.34 (supported)
 * v1.33 (supported)
-* v1.32 (supported)
-* v1.31 (unsupported)
+* v1.32 (unsupported)
 
 Each supported Kubernetes minor version typically receives patch releases for approximately 12 months after its initial release. It's a good practice to maintain your clusters on a supported version to benefit from the latest security patches, bug fixes, and features. For clusters running unsupported versions, Clever Cloud reserves the right to initiate automatic upgrades to ensure platform security and stability.
 

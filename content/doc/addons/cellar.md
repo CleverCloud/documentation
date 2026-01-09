@@ -138,6 +138,22 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
   The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
+  {{< tab name="Synchronize" >}}
+  You can upload a directory's contents and update only changed files with `sync`. First, preview the operations without changing any objects:
+
+  ```bash
+  s3cmd sync --dry-run path/to/source/ s3://bucket-name/
+  ```
+
+  Then synchronize the directory:
+
+  ```bash
+  s3cmd sync path/to/source/ s3://bucket-name/
+  ```
+
+  Add `--acl-public` to the second command to make the uploaded files publicly readable.
+  {{< /tab >}}
+
   {{< tab name="List" >}}
   You can list the files in your bucket, you should see the `image.png` file:
 

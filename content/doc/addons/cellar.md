@@ -76,6 +76,17 @@ The bucket is now be available at `https://<bucket-name>.cellar-c2.services.clev
   `ws-*` and `cf*` commands aren't available with a Cellar add-on.
 {{< /callout >}}
 
+#### Synchronize directory
+
+To copy a whole directory to a bucket use the `sync` command :
+```bash
+`s3cmd -c s3cfg.txt --host-bucket=cellar-c2-services.clever-cloud.com sync [--dry-run] ${source-dir} s3://${bucket-name}/ [--acl-public]`
+```
+Where :
+  + `--dry-run` show a preview without changing anything. 
+  + `--acl-public` allow public access on the copied files.
+
+
 ### With AWS CLI
 
 You can use the official [AWS cli](https://aws.amazon.com/cli/) with Cellar. Configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.

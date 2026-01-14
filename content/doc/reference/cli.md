@@ -19,7 +19,7 @@ aliases:
 - /reference/clever-tools/getting_started
 ---
 
-This document is automatically generated from Clever Tools `4.4.0` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.
+This document is automatically generated from Clever Tools `4.5.1` and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.
 
 To use Clever Tools, you need:
 - A Clever Cloud account, create one at https://console.clever-cloud.com/
@@ -183,2133 +183,2017 @@ If you are using Nix on NixOS or any other compatible system, the package is ava
 
 You can deploy applications on Clever Cloud with the following runtimes type: `docker`, `dotnet`, `elixir`, `frankenphp`, `go`, `gradle`, `haskell`, `jar`, `linux`, `maven`, `meteor`, `node`, `php`, `play1`, `play2`, `python`, `ruby`, `rust`, `sbt`, `static`, `static-apache`, `v`, `war`
 
-Available flavors: `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`, `pico`
+Available flavors: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`
 
-Flavor `pico` is not available for the following instances: `docker`, `frankenphp`, `php`, `static-apache`
+Flavor `pico` is not available for: `docker`, `frankenphp`, `php`, `static-apache`
 
 Applications deployment zones (region): `par`, `parhds`, `fr-north-hds`, `grahds`, `ldn`, `mtl`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
 ## Add-on providers, plans and zones (region)
 
-- `mysql-addon`:
-  - plans: `m_med`, `m_big`, `xxs_big`, `l_big`, `xl_big`, `xxl_sml`, `xxl_hug`, `l_sml`, `xs_tny`, `s_med`, `xs_sml`, `dev`, `l_med`, `xl_med`, `xxl_med`, `xxl_big`, `m_sml`, `xs_big`, `xl_sml`, `s_sml`, `xxs_sml`, `xxs_med`, `xs_med`, `s_big`
-  - zones: `par`, `parhds`, `rbx`, `rbxhds`, `scw`, `ldn`, `sgp`, `grahds`, `wsw`, `mtl`, `syd`
-
-- `mongodb-addon`:
-  - plans: `xl_big`, `xs_med`, `m_big`, `xl_sml`, `xxl_sml`, `s_sml`, `m_sml`, `xxl_med`, `dev`, `m_med`, `xs_sml`, `s_med`, `xl_med`, `l_sml`, `m_hug`, `xs_big`, `s_hug`, `xxl_big`, `l_big`, `l_med`, `s_big`
-  - zones: `par`, `rbx`, `scw`, `ldn`, `sgp`, `wsw`, `mtl`, `syd`
-
-- `config-provider`:
-  - plans: `std`
-  - zones: `par`, `parhds`
-
-- `otoroshi`:
-  - plans: `base`
-  - zones: `par`, `rbx`, `rbxhds`, `scw`, `sgp`, `fr-north-hds`, `grahds`, `wsw`, `mtl`, `syd`
-
-- `kv`:
-  - plans: `base`
-  - zones: `par`
-
 - `addon-matomo`:
   - plans: `beta`
-  - zones: `par`, `rbx`, `scw`, `sgp`, `wsw`, `mtl`, `syd`
-
-- `postgresql-addon`:
-  - plans: `xs_sml`, `xl_hug`, `xxs_sml`, `xl_sml`, `xs_big`, `xs_tny`, `3xl_cpu_tit`, `xxl_sml`, `xxs_med`, `l_big`, `m_sml`, `l_sml`, `xxxl_sml`, `m_big`, `s_hug`, `xxxl_med`, `xxxl_big`, `s_sml`, `l_gnt`, `xxl_hug`, `xxl_med`, `s_med`, `m_med`, `xxl_big`, `xxs_big`, `l_med`, `xl_med`, `s_big`, `xl_gnt`, `dev`, `xl_big`, `xs_med`
-  - zones: `par`, `parhds`, `rbx`, `rbxhds`, `scw`, `ldn`, `sgp`, `grahds`, `wsw`, `mtl`, `syd`
-
-- `azimutt`:
-  - plans: `team-3`, `solo`, `team-5`, `team-4`, `team`, `free`, `team-2`, `enterprise`
-  - zones: `par`
-
-- `mailpace`:
-  - plans: `clever_solo`, `clever_scaling_10`, `clever_scaling_70`, `clever_scaling_50`, `clever_scaling_20`, `clever_scaling_30`, `clever_scaling_100`, `clever_scaling_40`
-  - zones: `par`
-
-- `keycloak`:
-  - plans: `base`
-  - zones: `par`, `rbx`, `scw`, `sgp`, `wsw`, `mtl`, `syd`
-
-- `jenkins`:
-  - plans: `M`, `XS`, `L`, `XL`, `S`
-  - zones: `par`, `rbxhds`, `scw`, `ldn`, `grahds`
-
-- `cellar-addon`:
-  - plans: `S`
-  - zones: `par`, `parhds`, `rbxhds`, `fr-north-hds`
-
-- `fs-bucket`:
-  - plans: `s`
-  - zones: `par`, `rbx`, `scw`, `ldn`, `sgp`, `wsw`, `mtl`, `syd`
+  - zones: `par`, `mtl`, `nqz`, `rbx`, `scw`, `sgp`, `syd`, `wsw`
 
 - `addon-pulsar`:
   - plans: `beta`
   - zones: `par`, `parhds`
 
-- `metabase`:
-  - plans: `base`
-  - zones: `par`, `rbx`, `rbxhds`, `scw`, `sgp`, `fr-north-hds`, `grahds`, `wsw`, `mtl`, `syd`
+- `azimutt`:
+  - plans: `free`, `solo`, `team`, `team-2`, `team-3`, `team-4`, `team-5`, `enterprise`
+  - zones: `par`, `nqz`
+
+- `cellar-addon`:
+  - plans: `S`
+  - zones: `par`, `parhds`, `fr-north-hds`, `nqz`, `numspot`, `rbxhds`
+
+- `config-provider`:
+  - plans: `std`
+  - zones: `par`, `parhds`, `nqz`
 
 - `es-addon`:
-  - plans: `xs`, `xl`, `l`, `4xl`, `xxxl`, `xxl`, `s`, `m`, `5xl`
-  - zones: `par`, `parhds`, `rbx`, `rbxhds`, `scw`, `ldn`, `sgp`, `grahds`, `wsw`, `mtl`, `syd`
+  - plans: `xs`, `s`, `m`, `l`, `xl`, `xxl`, `xxxl`, `4xl`, `5xl`
+  - zones: `par`, `parhds`, `gov`, `grahds`, `ldn`, `lux`, `mea`, `mtl`, `nqz`, `numspot`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
+
+- `fs-bucket`:
+  - plans: `s`
+  - zones: `par`, `faumepar`, `gov`, `ldn`, `lux`, `mea`, `mtl`, `nqz`, `numspot`, `rbx`, `scw`, `sgp`, `syd`, `utocat`, `wiseband`, `wsw`
+
+- `jenkins`:
+  - plans: `XS`, `S`, `M`, `L`, `XL`
+  - zones: `par`, `gov`, `grahds`, `ldn`, `lux`, `mea`, `nqz`, `numspot`, `rbxhds`, `scw`
+
+- `keycloak`:
+  - plans: `base`
+  - zones: `par`, `mtl`, `nqz`, `rbx`, `scw`, `sgp`, `syd`, `wsw`
+
+- `kv`:
+  - plans: `base`
+  - zones: `par`
+
+- `mailpace`:
+  - plans: `clever_solo`, `clever_scaling_10`, `clever_scaling_20`, `clever_scaling_30`, `clever_scaling_40`, `clever_scaling_50`, `clever_scaling_70`, `clever_scaling_100`
+  - zones: `par`, `nqz`
+
+- `metabase`:
+  - plans: `base`
+  - zones: `par`, `fr-north-hds`, `grahds`, `mtl`, `nqz`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
+
+- `mongodb-addon`:
+  - plans: `xs_sml`, `xs_med`, `xs_big`, `s_sml`, `s_med`, `s_big`, `s_hug`, `m_sml`, `m_med`, `m_big`, `m_hug`, `l_sml`, `l_med`, `l_big`, `xl_sml`, `xl_med`, `xl_big`, `xxl_sml`, `xxl_med`, `xxl_big`
+  - zones: `par`, `gov`, `ihc`, `ldn`, `ledgy`, `lux`, `mea`, `mtl`, `nqz`, `numspot`, `rbx`, `scw`, `sgp`, `syd`, `wsw`, `yaakadev`
+
+- `mysql-addon`:
+  - plans: `dev`, `xxs_sml`, `xxs_med`, `xxs_big`, `xs_tny`, `xs_sml`, `xs_med`, `xs_big`, `s_sml`, `s_med`, `s_big`, `m_sml`, `m_med`, `m_big`, `l_sml`, `l_med`, `l_big`, `xl_sml`, `xl_med`, `xl_big`, `xxl_sml`, `xxl_med`, `xxl_big`, `xxl_hug`
+  - zones: `par`, `parhds`, `faumepar`, `gov`, `grahds`, `intuiti`, `ldn`, `lux`, `maj-digital`, `mea`, `mtl`, `nqz`, `numspot`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
+
+- `otoroshi`:
+  - plans: `base`
+  - zones: `par`, `fr-north-hds`, `grahds`, `mtl`, `nqz`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
+
+- `postgresql-addon`:
+  - plans: `dev`, `xxs_sml`, `xxs_med`, `xxs_big`, `xs_tny`, `xs_sml`, `xs_med`, `xs_big`, `s_sml`, `s_med`, `s_big`, `s_hug`, `m_sml`, `m_med`, `m_big`, `l_sml`, `l_med`, `l_big`, `xl_sml`, `l_gnt`, `xl_med`, `xl_big`, `xl_hug`, `xl_gnt`, `xxl_sml`, `xxl_med`, `xxl_big`, `xxl_hug`, `xxxl_sml`, `xxxl_med`, `xxxl_big`, `3xl_cpu_tit`
+  - zones: `par`, `parhds`, `boxraiser`, `clevercloud-postgresql-internal`, `gov`, `grahds`, `graviteesource`, `ldn`, `lux`, `mea`, `mtl`, `navalgroup`, `navalgroupblue`, `nqz`, `numspot`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
 - `redis-addon`:
-  - plans: `m_mono`, `xxxxl_mono`, `s_mono`, `l_mono`, `xxxl_mono`, `xl_mono`, `xxl_mono`
-  - zones: `par`, `parhds`, `rbx`, `rbxhds`, `scw`, `ldn`, `sgp`, `grahds`, `wsw`, `mtl`, `syd`
+  - plans: `s_mono`, `m_mono`, `l_mono`, `xl_mono`, `xxl_mono`, `xxxl_mono`, `xxxxl_mono`
+  - zones: `par`, `parhds`, `gov`, `grahds`, `ldn`, `lux`, `mea`, `mtl`, `nqz`, `numspot`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
 Default deployment zone is `par`, default plan is the lowest available.
 
-# How to use Clever Tools, CLI reference
-
-```
-Usage: clever
-```
-
-**Description:** CLI tool to manage Clever Cloud's data and products
-
-**Options:**
-```
-[--help, -?]            Display help about this program (default: false)
-[--version, -V]         Display the version of this program (default: false)
-[--color]               Choose whether to print colors or not. You can also use --no-color (default: true)
-[--update-notifier]     Choose whether to use update notifier or not. You can also use --no-update-notifier (default: true)
-[--verbose, -v]         Verbose output (default: false)
-```
-
-**Note:** The options listed above (`--help`, `--version`, `--color`, `--update-notifier`, `--verbose`) are available for all Clever Tools commands and sub-commands
 ## accesslogs
 
-```
-Usage: accesslogs
-```
+Description:** Fetch access logs
 
-**Description:** Fetch access logs
+**Usage**
+clever accesslogs [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS            Short name for the application
-[--app] ID_OR_NAME             Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT          Output format (human, json, json-stream) (default: human)
-[--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--addon] ADDON_ID             Add-on ID
-```
+**Options**
+    --addon <addon-id>            Add-on ID
+    --after, --since <after>      Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+-a, --alias <alias>               Short name for the application
+    --app <app-id|app-name>       Application to manage by its ID (or name, if unambiguous)
+    --before, --until <before>    Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+-F, --format <format>             Output format (human, json, json-stream) (default: human)
 
 ## activity
 
-```
-Usage: activity
-```
+Description:** Show last deployments of an application
 
-**Description:** Show last deployments of an application
+**Usage**
+clever activity [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--follow, -f]            Track new deployments in activity list (default: false)
-[--show-all]              Show all activity (default: false)
-[--format, -F] FORMAT     Output format (human, json, json-stream) (default: human)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-f, --follow                   Track new deployments in activity list
+-F, --format <format>          Output format (human, json, json-stream) (default: human)
+    --show-all                 Show all activity
 
 ## addon
 
-```
-Usage: addon
-```
+Description:** Manage add-ons
 
-**Description:** Manage add-ons
+**Usage**
+clever addon [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### addon create
 
-```
-Usage: create ADDON-PROVIDER ADDON-NAME
-```
+Description:** Create an add-on
 
-**Description:** Create an add-on
+**Usage**
+clever addon create <addon-provider> <addon-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--link, -l] ALIAS                  Link the created add-on to the app with the specified alias
-[--yes, -y]                         Skip confirmation even if the add-on is not free (default: false)
-[--plan, -p] PLAN                   Add-on plan, depends on the provider (default: )
-[--region, -r] REGION               Region to provision the add-on in, depends on the provider (default: par)
-[--addon-version] ADDON-VERSION     The version to use for the add-on
-[--option] OPTION                   Option to enable for the add-on. Multiple --option argument can be passed to enable multiple options
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+addon-provider                          Add-on provider
+addon-name                              Add-on name
+
+**Options**
+    --addon-version <addon-version>     The version to use for the add-on
+-F, --format <format>                   Output format (human, json) (default: human)
+-l, --link <alias>                      Link the created add-on to the app with the specified alias
+    --option <option>                   Option to enable for the add-on. Multiple --option argument can be passed to enable multiple options
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-p, --plan <plan>                       Add-on plan, depends on the provider
+-r, --region <region>                   Region to provision the add-on in, depends on the provider (default: par)
+-y, --yes                               Skip confirmation even if the add-on is not free
 
 ### addon delete
 
-```
-Usage: delete ADDON-ID
-```
+Description:** Delete an add-on
 
-**Description:** Delete an add-on
+**Usage**
+clever addon delete <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--yes, -y]                         Skip confirmation and delete the add-on directly (default: false)
-```
+**Arguments**
+addon-id|addon-name                     Add-on ID (or name, if unambiguous)
 
-### addon rename
-
-```
-Usage: rename ADDON-ID ADDON-NAME
-```
-
-**Description:** Rename an add-on
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
-
-### addon list
-
-```
-Usage: list
-```
-
-**Description:** List available add-ons
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
-
-### addon providers
-
-```
-Usage: providers
-```
-
-**Description:** List available add-on providers
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
-
-#### addon providers show
-
-```
-Usage: show ADDON-PROVIDER
-```
-
-**Description:** Show information about an add-on provider
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-y, --yes                               Skip confirmation and delete the add-on directly
 
 ### addon env
 
-```
-Usage: env ADDON
-```
+Description:** List environment variables for an add-on
 
-**Description:** List environment variables for an add-on
+**Usage**
+clever addon env <addon-id> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json, shell) (default: human)
-```
+**Arguments**
+addon-id                                Add-on ID or real ID
+
+**Options**
+-F, --format <format>                   Output format (human, json, shell) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+
+### addon list
+
+Description:** List available add-ons
+
+**Usage**
+clever addon list [options]
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+
+### addon providers
+
+Description:** List available add-on providers
+
+**Usage**
+clever addon providers [options]
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
+
+#### addon providers show
+
+Description:** Show information about an add-on provider
+
+**Usage**
+clever addon providers show <addon-provider> [options]
+
+**Arguments**
+addon-provider           Add-on provider
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
+
+### addon rename
+
+Description:** Rename an add-on
+
+**Usage**
+clever addon rename <addon-id|addon-name> <addon-name> [options]
+
+**Arguments**
+addon-id|addon-name                     Add-on ID (or name, if unambiguous)
+addon-name                              Add-on name
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## applications
 
-```
-Usage: applications
-```
+Description:** List linked applications
 
-**Description:** List linked applications
+**Usage**
+clever applications [options]
 
-**Options:**
-```
-[--only-aliases]        List only application aliases (default: false)
-[--json, -j]            Show result in JSON format (default: false)
-```
+**Options**
+-j, --json            Show result in JSON format
+    --only-aliases    List only application aliases
 
 ### applications list
 
-```
-Usage: list
-```
+Description:** List all applications
 
-**Description:** List all applications
+**Usage**
+clever applications list [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## cancel-deploy
 
-```
-Usage: cancel-deploy
-```
+Description:** Cancel an ongoing deployment
 
-**Description:** Cancel an ongoing deployment
+**Usage**
+clever cancel-deploy [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## config
 
-```
-Usage: config
-```
+Description:** Display or edit the configuration of your application
 
-**Description:** Display or edit the configuration of your application
+**Usage**
+clever config [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### config get
 
-```
-Usage: get CONFIGURATION-NAME
-```
+Description:** Display the current configuration
 
-**Description:** Display the current configuration
+**Usage**
+clever config get <configuration-name> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Arguments**
+configuration-name             Configuration to manage: name, description, zero-downtime, sticky-sessions, cancel-on-push, force-https, or task
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### config set
 
-```
-Usage: set CONFIGURATION-NAME CONFIGURATION-VALUE
-```
+Description:** Edit one configuration setting
 
-**Description:** Edit one configuration setting
+**Usage**
+clever config set <configuration-name> <configuration-value> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Arguments**
+configuration-name             Configuration to manage: name, description, zero-downtime, sticky-sessions, cancel-on-push, force-https, or task
+configuration-value            The new value of the configuration
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### config update
 
-```
-Usage: update
-```
+Description:** Edit multiple configuration settings at once
 
-**Description:** Edit multiple configuration settings at once
+**Usage**
+clever config update [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS             Short name for the application
-[--app] ID_OR_NAME              Application to manage by its ID (or name, if unambiguous)
-[--name]                        Set name
-[--description]                 Set description
-[--enable-zero-downtime]        Enable zero-downtime (default: false)
-[--disable-zero-downtime]       Disable zero-downtime (default: false)
-[--enable-sticky-sessions]      Enable sticky-sessions (default: false)
-[--disable-sticky-sessions]     Disable sticky-sessions (default: false)
-[--enable-cancel-on-push]       Enable cancel-on-push (default: false)
-[--disable-cancel-on-push]      Disable cancel-on-push (default: false)
-[--enable-force-https]          Enable force-https (default: false)
-[--disable-force-https]         Disable force-https (default: false)
-[--enable-task]                 Enable task (default: false)
-[--disable-task]                Disable task (default: false)
-```
+**Options**
+-a, --alias <alias>                Short name for the application
+    --app <app-id|app-name>        Application to manage by its ID (or name, if unambiguous)
+    --description <description>    Set application description
+    --disable-cancel-on-push       Disable cancel on push
+    --disable-force-https          Disable force HTTPS redirection
+    --disable-sticky-sessions      Disable sticky sessions
+    --disable-task                 Disable application as Clever Task
+    --disable-zero-downtime        Disable zero-downtime deployment
+    --enable-cancel-on-push        Enable cancel on push
+    --enable-force-https           Enable force HTTPS redirection
+    --enable-sticky-sessions       Enable sticky sessions
+    --enable-task                  Enable application as Clever Task
+    --enable-zero-downtime         Enable zero-downtime deployment
+    --name <name>                  Set application name
 
 ## console
 
-```
-Usage: console
-```
+Description:** Open an application in the Console
 
-**Description:** Open an application in the Console
+**Usage**
+clever console [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## create
 
-```
-Usage: create --type TYPE [APP-NAME]
-```
+Description:** Create an application
 
-**Description:** Create an application
+**Usage**
+clever create --type <instance-type> [<app-name>] [options]
 
-**Options:**
-```
---type, -t TYPE                     Instance type
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--alias, -a] ALIAS                 Short name for the application
-[--region, -r] ZONE                 Region, can be 'par', 'parhds', 'grahds', 'rbx', 'rbxhds', 'scw', 'ldn', 'mtl', 'sgp', 'syd', 'wsw' (default: par)
-[--github] OWNER/REPO               GitHub application to use for deployments
-[--task, -T] COMMAND                The application launch as a task executing the given command, then stopped
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+app-name                                Application name (current directory name is used if not specified) (optional)
+
+**Options**
+-t, --type <instance-type>              Instance type (required)
+-a, --alias <alias>                     Short name for the application
+-F, --format <format>                   Output format (human, json) (default: human)
+    --github <owner/repo>               GitHub application to use for deployments
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-r, --region <zone>                     Region, can be 'par', 'parhds', 'grahds', 'rbx', 'rbxhds', 'scw', 'ldn', 'mtl', 'sgp', 'syd', 'wsw' (default: par)
+-T, --task <command>                    The application launch as a task executing the given command, then stopped
 
 ## curl
 
-```
-Usage: clever curl
-```
+Description:** Query Clever Cloud's API using Clever Tools credentials
 
-**Description:** Query Clever Cloud's API using Clever Tools credentials. For example:
+**Usage**
+clever curl
 
 ## database
 
-```
-Usage: database
-```
+Description:** Manage databases and backups
 
-**Description:** Manage databases and backups
+**Usage**
+clever database
 
 ### database backups
 
-```
-Usage: backups DATABASE-ID
-```
+Description:** List available database backups
 
-**Description:** List available database backups
+**Usage**
+clever database backups <database-id|addon-id> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+database-id|addon-id                    Any database ID (format: addon_UUID, postgresql_UUID, mysql_UUID, ...)
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 #### database backups download
 
-```
-Usage: download DATABASE-ID BACKUP-ID
-```
+Description:** Download a database backup
 
-**Description:** Download a database backup
+**Usage**
+clever database backups download <database-id|addon-id> <backup-id> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-[--output, --out]                   Redirect the output of the command in a file
-```
+**Arguments**
+database-id|addon-id                    Any database ID (format: addon_UUID, postgresql_UUID, mysql_UUID, ...)
+backup-id                               A Database backup ID (format: UUID)
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --output, --out <file-path>         Redirect the output of the command in a file
 
 ## delete
 
-```
-Usage: delete
-```
+Description:** Delete an application
 
-**Description:** Delete an application
+**Usage**
+clever delete [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--yes, -y]             Skip confirmation and delete the application directly (default: false)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-y, --yes                      Skip confirmation and delete the application directly
 
 ## deploy
 
-```
-Usage: deploy
-```
+Description:** Deploy an application
 
-**Description:** Deploy an application
+**Usage**
+clever deploy [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                   Short name for the application
-[--branch, -b] BRANCH                 Branch to push (current branch by default) (default: )
-[--tag, -t] TAG                       Tag to push (none by default) (default: )
-[--quiet, -q]                         Don't show logs during deployment (default: false)
-[--force, -f]                         Force deploy even if it's not fast-forwardable (default: false)
-[--follow]                            Continue to follow logs after deployment has ended (default: false)
-[--same-commit-policy, -p] POLICY     What to do when local and remote commit are identical (error, ignore, restart, rebuild) (default: error)
-[--exit-on, -e] STEP                  Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
-```
+**Options**
+-a, --alias <alias>                  Short name for the application
+-b, --branch <branch>                Branch to push (current branch by default)
+-e, --exit-on <step>                 Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
+    --follow                         Continue to follow logs after deployment has ended (deprecated, use `--exit-on never` instead)
+-f, --force                          Force deploy even if it's not fast-forwardable
+-q, --quiet                          Don't show logs during deployment
+-p, --same-commit-policy <policy>    What to do when local and remote commit are identical (error, ignore, restart, rebuild) (default: error)
+-t, --tag <tag>                      Tag to push (none by default)
 
 ## diag
 
-```
-Usage: diag
-```
+Description:** Diagnose the current installation (prints various informations for support)
 
-**Description:** Diagnose the current installation (prints various informations for support)
+**Usage**
+clever diag [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ## domain
 
-```
-Usage: domain
-```
+Description:** Manage domain names for an application
 
-**Description:** Manage domain names for an application
+**Usage**
+clever domain [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
 
 ### domain add
 
-```
-Usage: add FQDN
-```
+Description:** Add a domain name to an application
 
-**Description:** Add a domain name to an application
+**Usage**
+clever domain add <fqdn> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Arguments**
+fqdn                           Domain name of the application
 
-### domain favourite
-
-```
-Usage: favourite
-```
-
-**Description:** Manage the favourite domain name for an application
-
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-#### domain favourite set
-
-```
-Usage: set FQDN
-```
-
-**Description:** Set the favourite domain for an application
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
-
-#### domain favourite unset
-
-```
-Usage: unset
-```
-
-**Description:** Unset the favourite domain for an application
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
-
-### domain rm
-
-```
-Usage: rm FQDN
-```
-
-**Description:** Remove a domain name from an application
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### domain diag
 
-```
-Usage: diag
-```
+Description:** Check if domains associated to a specific app are properly configured
 
-**Description:** Check if domains associated to a specific app are properly configured
+**Usage**
+clever domain diag [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-[--filter] TEXT           Check only domains containing the provided text (default: )
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --filter <text>            Check only domains containing the provided text
+-F, --format <format>          Output format (human, json) (default: human)
+
+### domain favourite
+
+Description:** Manage the favourite domain name for an application
+
+**Usage**
+clever domain favourite [options]
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
+
+#### domain favourite set
+
+Description:** Set the favourite domain for an application
+
+**Usage**
+clever domain favourite set <fqdn> [options]
+
+**Arguments**
+fqdn                           Domain name of the application
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+#### domain favourite unset
+
+Description:** Unset the favourite domain for an application
+
+**Usage**
+clever domain favourite unset [options]
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### domain overview
 
-```
-Usage: overview
-```
+Description:** Get an overview of all your domains (all orgas, all apps)
 
-**Description:** Get an overview of all your domains (all orgas, all apps)
+**Usage**
+clever domain overview [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-[--filter] TEXT           Get only domains containing the provided text (default: )
-```
+**Options**
+    --filter <text>      Get only domains containing the provided text
+-F, --format <format>    Output format (human, json) (default: human)
+
+### domain rm
+
+Description:** Remove a domain name from an application
+
+**Usage**
+clever domain rm <fqdn> [options]
+
+**Arguments**
+fqdn                           Domain name of the application
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## drain
 
-```
-Usage: drain
-```
+Description:** Manage drains
 
-**Description:** Manage drains
+**Usage**
+clever drain [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
 
 ### drain create
 
-```
-Usage: create DRAIN-TYPE DRAIN-URL
-```
+Description:** Create a drain
 
-**Description:** Create a drain
+**Usage**
+clever drain create <drain-type> <drain-url> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                   Short name for the application
-[--app] ID_OR_NAME                    Application to manage by its ID (or name, if unambiguous)
-[--username, -u] USERNAME             Basic auth username (for elasticsearch or raw-http)
-[--password, -p] PASSWORD             Basic auth password (for elasticsearch or raw-http)
-[--api-key, -k] API_KEY               API key (for newrelic)
-[--index-prefix, -i] INDEX_PREFIX     Optional index prefix (for elasticsearch), `logstash` value is used if not set
-[--sd-params, -s] SD_PARAMS           RFC5424 structured data parameters (for ovh-tcp), e.g.: `X-OVH-TOKEN=\"REDACTED\"`
-```
+**Arguments**
+drain-type                           No description available
+drain-url                            Drain URL
 
-### drain get
-
-```
-Usage: get DRAIN-ID
-```
-
-**Description:** Get drain info
-
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### drain remove
-
-```
-Usage: remove DRAIN-ID
-```
-
-**Description:** Remove a drain
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
-
-### drain enable
-
-```
-Usage: enable DRAIN-ID
-```
-
-**Description:** Enable a drain
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>                  Short name for the application
+-k, --api-key <api-key>              API key (for newrelic)
+    --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
+-i, --index-prefix <index-prefix>    Optional index prefix (for elasticsearch), `logstash` value is used if not set
+-p, --password <password>            Basic auth password (for elasticsearch or raw-http)
+-s, --sd-params <sd-params>          RFC5424 structured data parameters (for ovh-tcp), e.g.: `X-OVH-TOKEN=\"REDACTED\"`
+-u, --username <username>            Basic auth username (for elasticsearch or raw-http)
 
 ### drain disable
 
-```
-Usage: disable DRAIN-ID
-```
+Description:** Disable a drain
 
-**Description:** Disable a drain
+**Usage**
+clever drain disable <drain-id> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Arguments**
+drain-id                       Drain ID
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### drain enable
+
+Description:** Enable a drain
+
+**Usage**
+clever drain enable <drain-id> [options]
+
+**Arguments**
+drain-id                       Drain ID
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### drain get
+
+Description:** Get drain info
+
+**Usage**
+clever drain get <drain-id> [options]
+
+**Arguments**
+drain-id                       Drain ID
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
+
+### drain remove
+
+Description:** Remove a drain
+
+**Usage**
+clever drain remove <drain-id> [options]
+
+**Arguments**
+drain-id                       Drain ID
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## emails
 
-```
-Usage: emails
-```
+Description:** Manage email addresses of the current user
 
-**Description:** Manage email addresses of the current user
+**Usage**
+clever emails [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### emails add
 
-```
-Usage: add EMAIL
-```
+Description:** Add a new secondary email address to the current user
 
-**Description:** Add a new secondary email address to the current user
+**Usage**
+clever emails add <email>
 
-### emails primary
-
-```
-Usage: primary EMAIL
-```
-
-**Description:** Set the primary email address of the current user
-
-### emails remove
-
-```
-Usage: remove EMAIL
-```
-
-**Description:** Remove a secondary email address from the current user
-
-### emails remove-all
-
-```
-Usage: remove-all
-```
-
-**Description:** Remove all secondary email addresses from the current user
-
-**Options:**
-```
-[--yes, -y]             Skip confirmation (default: false)
-```
+**Arguments**
+email    Email address
 
 ### emails open
 
-```
-Usage: open
-```
+Description:** Open the email addresses management page in the Console
 
-**Description:** Open the email addresses management page in the Console
+**Usage**
+clever emails open
+
+### emails primary
+
+Description:** Set the primary email address of the current user
+
+**Usage**
+clever emails primary <email>
+
+**Arguments**
+email    Email address
+
+### emails remove
+
+Description:** Remove a secondary email address from the current user
+
+**Usage**
+clever emails remove <email>
+
+**Arguments**
+email    Email address
+
+### emails remove-all
+
+Description:** Remove all secondary email addresses from the current user
+
+**Usage**
+clever emails remove-all [options]
+
+**Options**
+-y, --yes    Skip confirmation
 
 ## env
 
-```
-Usage: env
-```
+Description:** Manage environment variables of an application
 
-**Description:** Manage environment variables of an application
+**Usage**
+clever env [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--add-export]            Display sourceable env variables setting (default: false)
-[--format, -F] FORMAT     Output format (human, json, shell) (default: human)
-```
-
-### env set
-
-```
-Usage: set VARIABLE-NAME VARIABLE-VALUE
-```
-
-**Description:** Add or update an environment variable named <variable-name> with the value <variable-value>
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--add-export]          Display sourceable env variables setting (default: false)
-```
-
-### env rm
-
-```
-Usage: rm VARIABLE-NAME
-```
-
-**Description:** Remove an environment variable from an application
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--add-export]          Display sourceable env variables setting (default: false)
-```
+**Options**
+    --add-export               Display sourceable env variables setting (deprecated, use `--format shell` instead)
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json, shell) (default: human)
 
 ### env import
 
-```
-Usage: import
-```
+Description:** Load environment variables from STDIN
+(WARNING: this deletes all current variables and replace them with the new list loaded from STDIN)
 
-**Description:** Load environment variables from STDIN
+**Usage**
+clever env import [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--add-export]          Display sourceable env variables setting (default: false)
-[--json]                Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects) (default: false)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --json                     Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects)
 
 ### env import-vars
 
-```
-Usage: import-vars VARIABLE-NAMES
-```
+Description:** Add or update environment variables named <variable-names> (comma-separated), taking their values from the current environment
 
-**Description:** Add or update environment variables named <variable-names> (comma-separated), taking their values from the current environment
+**Usage**
+clever env import-vars <variable-names> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--add-export]          Display sourceable env variables setting (default: false)
-```
+**Arguments**
+variable-names                 Comma separated list of names of the environment variables
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### env rm
+
+Description:** Remove an environment variable from an application
+
+**Usage**
+clever env rm <variable-name> [options]
+
+**Arguments**
+variable-name                  Name of the environment variable
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### env set
+
+Description:** Add or update an environment variable named <variable-name> with the value <variable-value>
+
+**Usage**
+clever env set <variable-name> <variable-value> [options]
+
+**Arguments**
+variable-name                  Name of the environment variable
+variable-value                 Value of the environment variable
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## features
 
-```
-Usage: features
-```
+Description:** Manage Clever Tools experimental features
 
-**Description:** Manage Clever Tools experimental features
+**Usage**
+clever features [options]
 
-### features enable
-
-```
-Usage: enable FEATURES
-```
-
-**Description:** Enable experimental features
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### features disable
 
-```
-Usage: disable FEATURES
-```
+Description:** Disable experimental features
 
-**Description:** Disable experimental features
+**Usage**
+clever features disable <features>
 
-### features list
+**Arguments**
+features    Comma-separated list of experimental features to manage
 
-```
-Usage: list
-```
+### features enable
 
-**Description:** List available experimental features
+Description:** Enable experimental features
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Usage**
+clever features enable <features>
+
+**Arguments**
+features    Comma-separated list of experimental features to manage
 
 ### features info
 
-```
-Usage: info FEATURE
-```
+Description:** Display info about an experimental feature
 
-**Description:** Display info about an experimental feature
+**Usage**
+clever features info <feature>
+
+**Arguments**
+feature    Experimental feature to manage
+
+### features list
+
+Description:** List available experimental features
+
+**Usage**
+clever features list [options]
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ## help
 
-```
-Usage: help
-```
+Description:** Display help about the Clever Cloud CLI
 
-**Description:** Display help about the Clever Cloud CLI
+**Usage**
+clever help
 
 ## k8s
 
-```
-Usage: k8s
-```
+Description:** Manage Kubernetes clusters
 
-**Description:** Manage Kubernetes clusters [BETA]
-
-### k8s list
-
-```
-Usage: list
-```
-
-**Description:** List Kubernetes clusters
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
-
-### k8s create
-
-```
-Usage: create CLUSTER-NAME
-```
-
-**Description:** Create a Kubernetes cluster
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--watch, -w]                       Watch the deployment until the cluster is deployed (default: false)
-```
+**Usage**
+clever k8s
 
 ### k8s add-persistent-storage
 
-```
-Usage: add-persistent-storage ID-OR-NAME
-```
+Description:** Activate persistent storage to a deployed Kubernetes cluster
 
-**Description:** Activate persistent storage to a deployed Kubernetes cluster
+**Usage**
+clever k8s add-persistent-storage <cluster-id|cluster-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+cluster-id|cluster-name                 Kubernetes cluster ID or name
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+
+### k8s create
+
+Description:** Create a Kubernetes cluster
+
+**Usage**
+clever k8s create <cluster-name> [options]
+
+**Arguments**
+cluster-name                            Kubernetes cluster name
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-w, --watch                             Watch the deployment until the cluster is deployed
 
 ### k8s delete
 
-```
-Usage: delete ID-OR-NAME
-```
+Description:** Delete a Kubernetes cluster
 
-**Description:** Delete a Kubernetes cluster
+**Usage**
+clever k8s delete <cluster-id|cluster-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--yes, -y]                         Skip confirmation and delete the add-on directly (default: false)
-```
+**Arguments**
+cluster-id|cluster-name                 Kubernetes cluster ID or name
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-y, --yes                               Skip confirmation and delete the add-on directly
 
 ### k8s get
 
-```
-Usage: get ID-OR-NAME
-```
+Description:** Get information about a Kubernetes cluster
 
-**Description:** Get information about a Kubernetes cluster
+**Usage**
+clever k8s get <cluster-id|cluster-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+cluster-id|cluster-name                 Kubernetes cluster ID or name
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### k8s get-kubeconfig
 
-```
-Usage: get-kubeconfig ID-OR-NAME
-```
+Description:** Get configuration of a Kubernetes cluster
 
-**Description:** Get configuration of a Kubernetes cluster
+**Usage**
+clever k8s get-kubeconfig <cluster-id|cluster-name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+cluster-id|cluster-name                 Kubernetes cluster ID or name
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+
+### k8s list
+
+Description:** List Kubernetes clusters
+
+**Usage**
+clever k8s list [options]
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## keycloak
 
-```
-Usage: keycloak
-```
+Description:** Manage Clever Cloud Keycloak services
 
-**Description:** Manage Clever Cloud Keycloak services [BETA]
+**Usage**
+clever keycloak [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### keycloak get
-
-```
-Usage: get ADDON-ID
-```
-
-**Description:** Get information about a deployed Keycloak
-
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### keycloak enable-ng
-
-```
-Usage: enable-ng ADDON-ID
-```
-
-**Description:** Link Keycloak to a Network Group, used for multi-instances secure communication
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### keycloak disable-ng
 
-```
-Usage: disable-ng ADDON-ID
-```
+Description:** Unlink Keycloak from its Network Group
 
-**Description:** Unlink Keycloak from its Network Group
+**Usage**
+clever keycloak disable-ng <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### keycloak enable-ng
+
+Description:** Link Keycloak to a Network Group, used for multi-instances secure communication
+
+**Usage**
+clever keycloak enable-ng <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### keycloak get
+
+Description:** Get information about a deployed Keycloak
+
+**Usage**
+clever keycloak get <addon-id|addon-name> [options]
+
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### keycloak open
 
-```
-Usage: open ADDON-ID
-```
+Description:** Open the Keycloak dashboard in Clever Cloud Console
 
-**Description:** Open the Keycloak dashboard in Clever Cloud Console
+**Usage**
+clever keycloak open <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### keycloak open logs
 
-```
-Usage: logs ADDON-ID
-```
+Description:** Open the Keycloak application logs in Clever Cloud Console
 
-**Description:** Open the Keycloak application logs in Clever Cloud Console
+**Usage**
+clever keycloak open logs <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### keycloak open webui
 
-```
-Usage: webui ADDON-ID
-```
+Description:** Open the Keycloak admin console in your browser
 
-**Description:** Open the Keycloak admin console in your browser
+**Usage**
+clever keycloak open webui <addon-id|addon-name>
 
-### keycloak restart
-
-```
-Usage: restart ADDON-ID
-```
-
-**Description:** Restart Keycloak
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### keycloak rebuild
 
-```
-Usage: rebuild ADDON-ID
-```
+Description:** Rebuild Keycloak
 
-**Description:** Rebuild Keycloak
+**Usage**
+clever keycloak rebuild <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### keycloak restart
+
+Description:** Restart Keycloak
+
+**Usage**
+clever keycloak restart <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### keycloak version
 
-```
-Usage: version ADDON-ID
-```
+Description:** Check Keycloak deployed version
 
-**Description:** Check Keycloak deployed version
+**Usage**
+clever keycloak version <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### keycloak version check
 
-```
-Usage: check ADDON-ID
-```
+Description:** Check Keycloak deployed version
 
-**Description:** Check Keycloak deployed version
+**Usage**
+clever keycloak version check <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### keycloak version update
 
-```
-Usage: update ADDON-ID
-```
+Description:** Update Keycloak deployed version
 
-**Description:** Update Keycloak deployed version
+**Usage**
+clever keycloak version update <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
-```
+**Arguments**
+addon-id|addon-name       Add-on ID (or name, if unambiguous)
+
+**Options**
+    --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 
 ## kv
 
-```
-Usage: kv KV-ID COMMAND
-```
+Description:** Send a raw command to a Materia KV or Redis® add-on
 
-**Description:** Send a raw command to a Materia KV or Redis® add-on [BETA]
+**Usage**
+clever kv <kv-id|addon-id|addon-name> <command> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+kv-id|addon-id|addon-name               Add-on/Real ID (or name, if unambiguous) of a Materia KV or Redis® add-on
+command                                 The raw command to send to the Materia KV or Redis® add-on
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## link
 
-```
-Usage: link APP-ID
-```
+Description:** Link this repo to an existing application
 
-**Description:** Link this repo to an existing application
+**Usage**
+clever link <app-id|app-name> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                 Short name for the application
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+app-id|app-name                         Application ID (or name, if unambiguous)
+
+**Options**
+-a, --alias <alias>                     Short name for the application
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## login
 
-```
-Usage: login
-```
+Description:** Login to Clever Cloud
 
-**Description:** Login to Clever Cloud
+**Usage**
+clever login [options]
 
-**Options:**
-```
-[--token] TOKEN         Directly give an existing token
-[--secret] SECRET       Directly give an existing secret
-```
+**Options**
+    --secret <secret>    Directly give an existing secret
+    --token <token>      Directly give an existing token
 
 ## logout
 
-```
-Usage: logout
-```
+Description:** Logout from Clever Cloud
 
-**Description:** Logout from Clever Cloud
+**Usage**
+clever logout
 
 ## logs
 
-```
-Usage: logs
-```
+Description:** Fetch application logs, continuously
 
-**Description:** Fetch application logs, continuously
+**Usage**
+clever logs [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                 Short name for the application
-[--app] ID_OR_NAME                  Application to manage by its ID (or name, if unambiguous)
-[--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--search] SEARCH                   Fetch logs matching this pattern
-[--deployment-id] DEPLOYMENT_ID     Fetch logs for a given deployment
-[--addon] ADDON_ID                  Add-on ID
-[--format, -F] FORMAT               Output format (human, json, json-stream) (default: human)
-```
+**Options**
+    --addon <addon-id>                 Add-on ID
+    --after, --since <after>           Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+-a, --alias <alias>                    Short name for the application
+    --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
+    --before, --until <before>         Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --deployment-id <deployment-id>    Fetch logs for a given deployment
+-F, --format <format>                  Output format (human, json, json-stream) (default: human)
+    --search <search>                  Fetch logs matching this pattern
 
 ## make-default
 
-```
-Usage: make-default APP-ALIAS
-```
+Description:** Make a linked application the default one
 
-**Description:** Make a linked application the default one
+**Usage**
+clever make-default <app-alias>
+
+**Arguments**
+app-alias    Application alias
 
 ## matomo
 
-```
-Usage: matomo
-```
+Description:** Manage Clever Cloud Matomo services
 
-**Description:** Manage Clever Cloud Matomo services [BETA]
+**Usage**
+clever matomo [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### matomo get
 
-```
-Usage: get ADDON-ID
-```
+Description:** Get information about a deployed Matomo
 
-**Description:** Get information about a deployed Matomo
+**Usage**
+clever matomo get <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### matomo open
 
-```
-Usage: open ADDON-ID
-```
+Description:** Open the Matomo dashboard in Clever Cloud Console
 
-**Description:** Open the Matomo dashboard in Clever Cloud Console
+**Usage**
+clever matomo open <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### matomo open logs
 
-```
-Usage: logs ADDON-ID
-```
+Description:** Open the Matomo application logs in Clever Cloud Console
 
-**Description:** Open the Matomo application logs in Clever Cloud Console
+**Usage**
+clever matomo open logs <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### matomo open webui
 
-```
-Usage: webui ADDON-ID
-```
+Description:** Open the Matomo admin console in your browser
 
-**Description:** Open the Matomo admin console in your browser
+**Usage**
+clever matomo open webui <addon-id|addon-name>
 
-### matomo restart
-
-```
-Usage: restart ADDON-ID
-```
-
-**Description:** Restart Matomo
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### matomo rebuild
 
-```
-Usage: rebuild ADDON-ID
-```
+Description:** Rebuild Matomo
 
-**Description:** Rebuild Matomo
+**Usage**
+clever matomo rebuild <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### matomo restart
+
+Description:** Restart Matomo
+
+**Usage**
+clever matomo restart <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ## metabase
 
-```
-Usage: metabase
-```
+Description:** Manage Clever Cloud Metabase services
 
-**Description:** Manage Clever Cloud Metabase services [BETA]
+**Usage**
+clever metabase [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### metabase get
 
-```
-Usage: get ADDON-ID
-```
+Description:** Get information about a deployed Metabase
 
-**Description:** Get information about a deployed Metabase
+**Usage**
+clever metabase get <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### metabase open
 
-```
-Usage: open ADDON-ID
-```
+Description:** Open the Metabase dashboard in Clever Cloud Console
 
-**Description:** Open the Metabase dashboard in Clever Cloud Console
+**Usage**
+clever metabase open <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### metabase open logs
 
-```
-Usage: logs ADDON-ID
-```
+Description:** Open the Metabase application logs in Clever Cloud Console
 
-**Description:** Open the Metabase application logs in Clever Cloud Console
+**Usage**
+clever metabase open logs <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### metabase open webui
 
-```
-Usage: webui ADDON-ID
-```
+Description:** Open the Metabase admin console in your browser
 
-**Description:** Open the Metabase admin console in your browser
+**Usage**
+clever metabase open webui <addon-id|addon-name>
 
-### metabase restart
-
-```
-Usage: restart ADDON-ID
-```
-
-**Description:** Restart Metabase
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### metabase rebuild
 
-```
-Usage: rebuild ADDON-ID
-```
+Description:** Rebuild Metabase
 
-**Description:** Rebuild Metabase
+**Usage**
+clever metabase rebuild <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### metabase restart
+
+Description:** Restart Metabase
+
+**Usage**
+clever metabase restart <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### metabase version
 
-```
-Usage: version ADDON-ID
-```
+Description:** Manage Metabase deployed version
 
-**Description:** Manage Metabase deployed version
+**Usage**
+clever metabase version <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### metabase version check
 
-```
-Usage: check ADDON-ID
-```
+Description:** Check Metabase deployed version
 
-**Description:** Check Metabase deployed version
+**Usage**
+clever metabase version check <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### metabase version update
 
-```
-Usage: update ADDON-ID
-```
+Description:** Update Metabase deployed version
 
-**Description:** Update Metabase deployed version
+**Usage**
+clever metabase version update <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
-```
+**Arguments**
+addon-id|addon-name       Add-on ID (or name, if unambiguous)
+
+**Options**
+    --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 
 ## ng
 
-```
-Usage: ng
-```
+Description:** List Network Groups
 
-**Description:** List Network Groups [BETA]
+**Usage**
+clever ng [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### ng create
 
-```
-Usage: create NG-LABEL
-```
+Description:** Create a Network Group
 
-**Description:** Create a Network Group
+**Usage**
+clever ng create <ng-label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--link] MEMBERS_IDS                Comma separated list of members IDs to link to a Network Group (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.)
-[--description] DESCRIPTION         Network Group description
-[--tags] TAGS                       List of tags, separated by a comma
-```
+**Arguments**
+ng-label                                Network Group label
+
+**Options**
+    --description <description>         Network Group description
+    --link <members-ids>                Comma separated list of members IDs to link to a Network Group (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --tags <tags>                       List of tags, separated by a comma
 
 #### ng create external
 
-```
-Usage: external EXTERNAL-PEER-LABEL NG-ID-OR-LABEL PUBLIC-KEY
-```
+Description:** Create an external peer in a Network Group
 
-**Description:** Create an external peer in a Network Group
+**Usage**
+clever ng create external <external-peer-label> <ng-id|ng-label> <public-key> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+external-peer-label                     External peer label
+ng-id|ng-label                          Network Group ID or label
+public-key                              WireGuard public key of the external peer to link to a Network Group
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### ng delete
 
-```
-Usage: delete NG-ID-OR-LABEL
-```
+Description:** Delete a Network Group
 
-**Description:** Delete a Network Group
+**Usage**
+clever ng delete <ng-id|ng-label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+ng-id|ng-label                          Network Group ID or label
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 #### ng delete external
 
-```
-Usage: external EXTERNAL-PEER-ID-OR-LABEL NG-ID-OR-LABEL
-```
+Description:** Delete an external peer from a Network Group
 
-**Description:** Delete an external peer from a Network Group
+**Usage**
+clever ng delete external <peer-id|peer-label> <ng-id|ng-label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Arguments**
+peer-id|peer-label                      External peer ID or label
+ng-id|ng-label                          Network Group ID or label
 
-### ng link
-
-```
-Usage: link ID NG-ID-OR-LABEL
-```
-
-**Description:** Link a resource by its ID (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.) to a Network Group
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
-
-### ng unlink
-
-```
-Usage: unlink ID NG-ID-OR-LABEL
-```
-
-**Description:** Unlink a resource by its ID (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.) from a Network Group
-
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-```
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### ng get
 
-```
-Usage: get ID-OR-LABEL
-```
+Description:** Get details about a Network Group, a member or a peer
 
-**Description:** Get details about a Network Group, a member or a peer
+**Usage**
+clever ng get <id|label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--type] TYPE                       Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+id|label                                ID or Label of a Network Group, a member or an (external) peer
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --type <resource-type>              Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
 
 ### ng get-config
 
-```
-Usage: get-config EXTERNAL-PEER-ID-OR-LABEL NG-ID-OR-LABEL
-```
+Description:** Get the WireGuard configuration of a peer in a Network Group
 
-**Description:** Get the WireGuard configuration of a peer in a Network Group
+**Usage**
+clever ng get-config <peer-id|peer-label> <ng-id|ng-label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+peer-id|peer-label                      External peer ID or label
+ng-id|ng-label                          Network Group ID or label
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+
+### ng link
+
+Description:** Link a resource by its ID (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.) to a Network Group
+
+**Usage**
+clever ng link <id> <ng-id|ng-label> [options]
+
+**Arguments**
+id                                      ID of a resource to (un)link to a Network Group
+ng-id|ng-label                          Network Group ID or label
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### ng search
 
-```
-Usage: search ID-OR-LABEL
-```
+Description:** Search Network Groups, members or peers and get their details
 
-**Description:** Search Network Groups, members or peers and get their details
+**Usage**
+clever ng search <id|label> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--type] TYPE                       Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Arguments**
+id|label                                ID or Label of a Network Group, a member or an (external) peer
+
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --type <resource-type>              Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
+
+### ng unlink
+
+Description:** Unlink a resource by its ID (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.) from a Network Group
+
+**Usage**
+clever ng unlink <id> <ng-id|ng-label> [options]
+
+**Arguments**
+id                                      ID of a resource to (un)link to a Network Group
+ng-id|ng-label                          Network Group ID or label
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## notify-email
 
-```
-Usage: notify-email
-```
+Description:** Manage email notifications
 
-**Description:** Manage email notifications
+**Usage**
+clever notify-email [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                        List all notifications for your user or for an organisation with the '--org' option (default: false)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+    --list-all                          List all notifications for your user or for an organisation with the '--org' option
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### notify-email add
 
-```
-Usage: add --notify <EMAIL_ADDRESS>|<USER_ID>|"ORGANISATION" NAME
-```
+Description:** Add a new email notification
 
-**Description:** Add a new email notification
+**Usage**
+clever notify-email add --notify <email-address|user-id|organisation> <name> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME                       Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                                          List all notifications for your user or for an organisation with the '--org' option (default: false)
-[--event] TYPE                                        Restrict notifications to specific event types
-[--service] SERVICE_ID                                Restrict notifications to specific applications and add-ons
---notify <EMAIL_ADDRESS>|<USER_ID>|"ORGANISATION"     Notify a user, a specific email address or the whole organisation (multiple values allowed, comma separated)
-```
+**Arguments**
+name                                                 Notification name
+
+**Options**
+    --notify <email-address|user-id|organisation>    Notify a user, a specific email address or the whole organisation (multiple values allowed, comma separated) (required)
+    --event <event-type>                             Restrict notifications to specific event types
+-o, --org, --owner <org-id|org-name>                 Organisation to target by its ID (or name, if unambiguous)
+    --service <service-id>                           Restrict notifications to specific applications and add-ons
 
 ### notify-email remove
 
-```
-Usage: remove NOTIFICATION-ID
-```
+Description:** Remove an existing email notification
 
-**Description:** Remove an existing email notification
+**Usage**
+clever notify-email remove <notification-id> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                        List all notifications for your user or for an organisation with the '--org' option (default: false)
-```
+**Arguments**
+notification-id                         Notification ID
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## open
 
-```
-Usage: open
-```
+Description:** Open an application in the Console
 
-**Description:** Open an application in the Console
+**Usage**
+clever open [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## otoroshi
 
-```
-Usage: otoroshi
-```
+Description:** Manage Clever Cloud Otoroshi services
 
-**Description:** Manage Clever Cloud Otoroshi services [BETA]
+**Usage**
+clever otoroshi [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### otoroshi get
-
-```
-Usage: get ADDON-ID
-```
-
-**Description:** Get information about a deployed Otoroshi
-
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### otoroshi get-config
-
-```
-Usage: get-config ADDON-ID
-```
-
-**Description:** Get configuration of a deployed Otoroshi in otoroshictl format
-
-### otoroshi enable-ng
-
-```
-Usage: enable-ng ADDON-ID
-```
-
-**Description:** Link Otoroshi to a Network Group
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### otoroshi disable-ng
 
-```
-Usage: disable-ng ADDON-ID
-```
+Description:** Unlink Otoroshi from its Network Group
 
-**Description:** Unlink Otoroshi from its Network Group
+**Usage**
+clever otoroshi disable-ng <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### otoroshi enable-ng
+
+Description:** Link Otoroshi to a Network Group
+
+**Usage**
+clever otoroshi enable-ng <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### otoroshi get
+
+Description:** Get information about a deployed Otoroshi
+
+**Usage**
+clever otoroshi get <addon-id|addon-name> [options]
+
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
+
+### otoroshi get-config
+
+Description:** Get configuration of a deployed Otoroshi in otoroshictl format
+
+**Usage**
+clever otoroshi get-config <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### otoroshi open
 
-```
-Usage: open ADDON-ID
-```
+Description:** Open the Otoroshi dashboard in Clever Cloud Console
 
-**Description:** Open the Otoroshi dashboard in Clever Cloud Console
+**Usage**
+clever otoroshi open <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### otoroshi open logs
 
-```
-Usage: logs ADDON-ID
-```
+Description:** Open the Otoroshi application logs in Clever Cloud Console
 
-**Description:** Open the Otoroshi application logs in Clever Cloud Console
+**Usage**
+clever otoroshi open logs <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 #### otoroshi open webui
 
-```
-Usage: webui ADDON-ID
-```
+Description:** Open the Otoroshi admin console in your browser
 
-**Description:** Open the Otoroshi admin console in your browser
+**Usage**
+clever otoroshi open webui <addon-id|addon-name>
 
-### otoroshi restart
-
-```
-Usage: restart ADDON-ID
-```
-
-**Description:** Restart Otoroshi
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### otoroshi rebuild
 
-```
-Usage: rebuild ADDON-ID
-```
+Description:** Rebuild Otoroshi
 
-**Description:** Rebuild Otoroshi
+**Usage**
+clever otoroshi rebuild <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
+
+### otoroshi restart
+
+Description:** Restart Otoroshi
+
+**Usage**
+clever otoroshi restart <addon-id|addon-name>
+
+**Arguments**
+addon-id|addon-name    Add-on ID (or name, if unambiguous)
 
 ### otoroshi version
 
-```
-Usage: version ADDON-ID
-```
+Description:** Manage Otoroshi deployed version
 
-**Description:** Manage Otoroshi deployed version
+**Usage**
+clever otoroshi version <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### otoroshi version check
 
-```
-Usage: check ADDON-ID
-```
+Description:** Check Otoroshi deployed version
 
-**Description:** Check Otoroshi deployed version
+**Usage**
+clever otoroshi version check <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Arguments**
+addon-id|addon-name      Add-on ID (or name, if unambiguous)
+
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 #### otoroshi version update
 
-```
-Usage: update ADDON-ID
-```
+Description:** Update Otoroshi deployed version
 
-**Description:** Update Otoroshi deployed version
+**Usage**
+clever otoroshi version update <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--target] VERSION      Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
-```
+**Arguments**
+addon-id|addon-name       Add-on ID (or name, if unambiguous)
+
+**Options**
+    --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 
 ## profile
 
-```
-Usage: profile
-```
+Description:** Display the profile of the current user
 
-**Description:** Display the profile of the current user
+**Usage**
+clever profile [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### profile open
 
-```
-Usage: open
-```
+Description:** Open your profile in the Console
 
-**Description:** Open your profile in the Console
-
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Usage**
+clever profile open
 
 ## published-config
 
-```
-Usage: published-config
-```
+Description:** Manage the configuration made available to other applications by this application
 
-**Description:** Manage the configuration made available to other applications by this application
+**Usage**
+clever published-config [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json, shell) (default: human)
-```
-
-### published-config set
-
-```
-Usage: set VARIABLE-NAME VARIABLE-VALUE
-```
-
-**Description:** Add or update a published configuration item named <variable-name> with the value <variable-value>
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
-
-### published-config rm
-
-```
-Usage: rm VARIABLE-NAME
-```
-
-**Description:** Remove a published configuration variable from an application
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json, shell) (default: human)
 
 ### published-config import
 
-```
-Usage: import
-```
+Description:** Load published configuration from STDIN
+(WARNING: this deletes all current variables and replace them with the new list loaded from STDIN)
 
-**Description:** Load published configuration from STDIN
+**Usage**
+clever published-config import [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--json]                Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects) (default: false)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --json                     Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects)
+
+### published-config rm
+
+Description:** Remove a published configuration variable from an application
+
+**Usage**
+clever published-config rm <variable-name> [options]
+
+**Arguments**
+variable-name                  Name of the environment variable
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### published-config set
+
+Description:** Add or update a published configuration item named <variable-name> with the value <variable-value>
+
+**Usage**
+clever published-config set <variable-name> <variable-value> [options]
+
+**Arguments**
+variable-name                  Name of the environment variable
+variable-value                 Value of the environment variable
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## restart
 
-```
-Usage: restart
-```
+Description:** Start or restart an application
 
-**Description:** Start or restart an application
+**Usage**
+clever restart [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS      Short name for the application
-[--app] ID_OR_NAME       Application to manage by its ID (or name, if unambiguous)
-[--commit] COMMIT ID     Restart the application with a specific commit ID
-[--without-cache]        Restart the application without using cache (default: false)
-[--quiet, -q]            Don't show logs during deployment (default: false)
-[--follow]               Continue to follow logs after deployment has ended (default: false)
-[--exit-on, -e] STEP     Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --commit <commit-id>       Restart the application with a specific commit ID
+-e, --exit-on <step>           Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
+    --follow                   Continue to follow logs after deployment has ended (deprecated, use `--exit-on never` instead)
+-q, --quiet                    Don't show logs during deployment
+    --without-cache            Restart the application without using cache
 
 ## scale
 
-```
-Usage: scale
-```
+Description:** Change scalability of an application
 
-**Description:** Change scalability of an application
+**Usage**
+clever scale [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                Short name for the application
-[--app] ID_OR_NAME                 Application to manage by its ID (or name, if unambiguous)
-[--flavor] FLAVOR                  The instance size of your application
-[--min-flavor] MINFLAVOR           The minimum scale size of your application
-[--max-flavor] MAXFLAVOR           The maximum instance size of your application
-[--instances] INSTANCES            The number of parallel instances
-[--min-instances] MININSTANCES     The minimum number of parallel instances
-[--max-instances] MAXINSTANCES     The maximum number of parallel instances
-[--build-flavor] BUILDFLAVOR       The size of the build instance, or 'disabled' if you want to disable dedicated build instances
-```
+**Options**
+-a, --alias <alias>             Short name for the application
+    --app <app-id|app-name>     Application to manage by its ID (or name, if unambiguous)
+    --build-flavor <flavor>     The size of the build instance, or 'disabled' if you want to disable dedicated build instances
+    --flavor <flavor>           The instance size of your application
+    --instances <instances>     The number of parallel instances
+    --max-flavor <flavor>       The maximum instance size of your application
+    --max-instances <number>    The maximum number of parallel instances
+    --min-flavor <flavor>       The minimum scale size of your application
+    --min-instances <number>    The minimum number of parallel instances
 
 ## service
 
-```
-Usage: service
-```
+Description:** Manage service dependencies
 
-**Description:** Manage service dependencies
+**Usage**
+clever service [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--only-apps]             Only show app dependencies (default: false)
-[--only-addons]           Only show add-on dependencies (default: false)
-[--show-all]              Show all available add-ons and applications (default: false)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### service link-app
-
-```
-Usage: link-app APP-ID
-```
-
-**Description:** Add an existing app as a dependency
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--only-apps]           Only show app dependencies (default: false)
-[--only-addons]         Only show add-on dependencies (default: false)
-[--show-all]            Show all available add-ons and applications (default: false)
-```
-
-### service unlink-app
-
-```
-Usage: unlink-app APP-ID
-```
-
-**Description:** Remove an app from the dependencies
-
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--only-apps]           Only show app dependencies (default: false)
-[--only-addons]         Only show add-on dependencies (default: false)
-[--show-all]            Show all available add-ons and applications (default: false)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
+    --only-addons              Only show add-on dependencies
+    --only-apps                Only show app dependencies
+    --show-all                 Show all available add-ons and applications
 
 ### service link-addon
 
-```
-Usage: link-addon ADDON-ID
-```
+Description:** Link an existing add-on to this application
 
-**Description:** Link an existing add-on to this application
+**Usage**
+clever service link-addon <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--only-apps]           Only show app dependencies (default: false)
-[--only-addons]         Only show add-on dependencies (default: false)
-[--show-all]            Show all available add-ons and applications (default: false)
-```
+**Arguments**
+addon-id|addon-name            Add-on ID (or name, if unambiguous)
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### service link-app
+
+Description:** Add an existing app as a dependency
+
+**Usage**
+clever service link-app <app-id|app-name> [options]
+
+**Arguments**
+app-id|app-name                Application ID (or name, if unambiguous)
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ### service unlink-addon
 
-```
-Usage: unlink-addon ADDON-ID
-```
+Description:** Unlink an add-on from this application
 
-**Description:** Unlink an add-on from this application
+**Usage**
+clever service unlink-addon <addon-id|addon-name> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-[--only-apps]           Only show app dependencies (default: false)
-[--only-addons]         Only show add-on dependencies (default: false)
-[--show-all]            Show all available add-ons and applications (default: false)
-```
+**Arguments**
+addon-id|addon-name            Add-on ID (or name, if unambiguous)
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### service unlink-app
+
+Description:** Remove an app from the dependencies
+
+**Usage**
+clever service unlink-app <app-id|app-name> [options]
+
+**Arguments**
+app-id|app-name                Application ID (or name, if unambiguous)
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## ssh
 
-```
-Usage: ssh
-```
+Description:** Connect to running instances through SSH
 
-**Description:** Connect to running instances through SSH
+**Usage**
+clever ssh [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS                     Short name for the application
-[--app] ID_OR_NAME                      Application to manage by its ID (or name, if unambiguous)
-[--identity-file, -i] IDENTITY-FILE     SSH identity file
-```
+**Options**
+-a, --alias <alias>                    Short name for the application
+    --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
+-i, --identity-file <identity-file>    SSH identity file
 
 ## ssh-keys
 
-```
-Usage: ssh-keys
-```
+Description:** Manage SSH keys of the current user
 
-**Description:** Manage SSH keys of the current user
+**Usage**
+clever ssh-keys [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### ssh-keys add
 
-```
-Usage: add SSH-KEY-NAME SSH-KEY-PATH
-```
+Description:** Add a new SSH key to the current user
 
-**Description:** Add a new SSH key to the current user
+**Usage**
+clever ssh-keys add <ssh-key-name> <ssh-key-path>
 
-### ssh-keys remove
-
-```
-Usage: remove SSH-KEY-NAME
-```
-
-**Description:** Remove a SSH key from the current user
-
-### ssh-keys remove-all
-
-```
-Usage: remove-all
-```
-
-**Description:** Remove all SSH keys from the current user
-
-**Options:**
-```
-[--yes, -y]             Skip confirmation and remove all SSH keys directly (default: false)
-```
+**Arguments**
+ssh-key-name    SSH key name
+ssh-key-path    SSH public key path (.pub)
 
 ### ssh-keys open
 
-```
-Usage: open
-```
+Description:** Open the SSH keys management page in the Console
 
-**Description:** Open the SSH keys management page in the Console
+**Usage**
+clever ssh-keys open
+
+### ssh-keys remove
+
+Description:** Remove a SSH key from the current user
+
+**Usage**
+clever ssh-keys remove <ssh-key-name>
+
+**Arguments**
+ssh-key-name    SSH key name
+
+### ssh-keys remove-all
+
+Description:** Remove all SSH keys from the current user
+
+**Usage**
+clever ssh-keys remove-all [options]
+
+**Options**
+-y, --yes    Skip confirmation and remove all SSH keys directly
 
 ## status
 
-```
-Usage: status
-```
+Description:** See the status of an application
 
-**Description:** See the status of an application
+**Usage**
+clever status [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
 
 ## stop
 
-```
-Usage: stop
-```
+Description:** Stop a running application
 
-**Description:** Stop a running application
+**Usage**
+clever stop [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS     Short name for the application
-[--app] ID_OR_NAME      Application to manage by its ID (or name, if unambiguous)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## tcp-redirs
 
-```
-Usage: tcp-redirs
-```
+Description:** Control the TCP redirections from reverse proxies to your application
 
-**Description:** Control the TCP redirections from reverse proxies to your application
+**Usage**
+clever tcp-redirs [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
-
-### tcp-redirs list-namespaces
-
-```
-Usage: list-namespaces
-```
-
-**Description:** List the namespaces in which you can create new TCP redirections
-
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
 
 ### tcp-redirs add
 
-```
-Usage: add --namespace NAMESPACE
-```
+Description:** Add a new TCP redirection to the application
 
-**Description:** Add a new TCP redirection to the application
+**Usage**
+clever tcp-redirs add --namespace <namespace> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
---namespace NAMESPACE     Namespace in which the TCP redirection should be
-```
+**Options**
+    --namespace <namespace>    Namespace in which the TCP redirection should be (required)
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+
+### tcp-redirs list-namespaces
+
+Description:** List the namespaces in which you can create new TCP redirections
+
+**Usage**
+clever tcp-redirs list-namespaces [options]
+
+**Options**
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
 
 ### tcp-redirs remove
 
-```
-Usage: remove --namespace NAMESPACE PORT
-```
+Description:** Remove a TCP redirection from the application
 
-**Description:** Remove a TCP redirection from the application
+**Usage**
+clever tcp-redirs remove --namespace <namespace> <port> [options]
 
-**Options:**
-```
-[--alias, -a] ALIAS       Short name for the application
-[--app] ID_OR_NAME        Application to manage by its ID (or name, if unambiguous)
---namespace NAMESPACE     Namespace in which the TCP redirection should be
-```
+**Arguments**
+port                           port identifying the TCP redirection
+
+**Options**
+    --namespace <namespace>    Namespace in which the TCP redirection should be (required)
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 
 ## tokens
 
-```
-Usage: tokens
-```
+Description:** Manage API tokens to query Clever Cloud API from https://api-bridge.clever-cloud.com
 
-**Description:** Manage API tokens to query Clever Cloud API from https://api-bridge.clever-cloud.com
+**Usage**
+clever tokens [options]
 
-**Options:**
-```
-[--format, -F] FORMAT     Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>    Output format (human, json) (default: human)
 
 ### tokens create
 
-```
-Usage: create API-TOKEN-NAME
-```
+Description:** Create an API token
 
-**Description:** Create an API token
+**Usage**
+clever tokens create <api-token-name> [options]
 
-**Options:**
-```
-[--expiration, -e] EXPIRATION     Duration until API token expiration (e.g.: 1h, 4d, 2w, 6M), default 1y
-[--format, -F] FORMAT             Output format (human, json) (default: human)
-```
+**Arguments**
+api-token-name                   API token name
+
+**Options**
+-e, --expiration <expiration>    Duration until API token expiration (e.g.: 1h, 4d, 2w, 6M) (default: 1y)
+-F, --format <format>            Output format (human, json) (default: human)
 
 ### tokens revoke
 
-```
-Usage: revoke API-TOKEN-ID
-```
+Description:** Revoke an API token
 
-**Description:** Revoke an API token
+**Usage**
+clever tokens revoke <api-token-id>
+
+**Arguments**
+api-token-id    API token ID
 
 ## unlink
 
-```
-Usage: unlink APP-ALIAS
-```
+Description:** Unlink this repo from an existing application
 
-**Description:** Unlink this repo from an existing application
+**Usage**
+clever unlink <app-alias>
+
+**Arguments**
+app-alias    Application alias
 
 ## version
 
-```
-Usage: version
-```
+Description:** Display the clever-tools version
 
-**Description:** Display the clever-tools version
+**Usage**
+clever version
 
 ## webhooks
 
-```
-Usage: webhooks
-```
+Description:** Manage webhooks
 
-**Description:** Manage webhooks
+**Usage**
+clever webhooks [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                        List all notifications for your user or for an organisation with the '--org' option (default: false)
-[--format, -F] FORMAT               Output format (human, json) (default: human)
-```
+**Options**
+-F, --format <format>                   Output format (human, json) (default: human)
+    --list-all                          List all notifications for your user or for an organisation with the '--org' option
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ### webhooks add
 
-```
-Usage: add NAME URL
-```
+Description:** Register webhook to be called when events happen
 
-**Description:** Register webhook to be called when events happen
+**Usage**
+clever webhooks add <name> <url> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                        List all notifications for your user or for an organisation with the '--org' option (default: false)
-[--format] FORMAT                   Format of the body sent to the webhook ('raw', 'slack', 'gitter', or 'flowdock') (default: raw)
-[--event] TYPE                      Restrict notifications to specific event types
-[--service] SERVICE_ID              Restrict notifications to specific applications and add-ons
-```
+**Arguments**
+name                                    Notification name
+url                                     Webhook URL
+
+**Options**
+    --event <event-type>                Restrict notifications to specific event types
+    --format <format>                   Format of the body sent to the webhook ('raw', 'slack', 'gitter', or 'flowdock') (default: raw)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --service <service-id>              Restrict notifications to specific applications and add-ons
 
 ### webhooks remove
 
-```
-Usage: remove NOTIFICATION-ID
-```
+Description:** Remove an existing webhook
 
-**Description:** Remove an existing webhook
+**Usage**
+clever webhooks remove <notification-id> [options]
 
-**Options:**
-```
-[--org, -o, --owner] ID_OR_NAME     Organisation to target by its ID (or name, if unambiguous)
-[--list-all]                        List all notifications for your user or for an organisation with the '--org' option (default: false)
-```
+**Arguments**
+notification-id                         Notification ID
+
+**Options**
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 
 ## Clever Cloud complete documentation
 

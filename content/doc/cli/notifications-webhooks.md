@@ -27,7 +27,7 @@ When events happen on Clever Cloud, during add-ons or applications lifecycle for
 
 ## notify-email
 
-You can send email notifications when an event occurs. To list them, use:
+You can send email notifications when [an event occurs](/doc/account/notifications/#available-events). To list them, use:
 
 ```
 clever notify-email
@@ -68,7 +68,7 @@ To add a webhook to an application, use:
 clever webhooks add NAME URL
 ```
 
-You can set the format, restrict to a service or event types through these parameters:
+You can set the format, restrict to a service or [event types](/doc/account/notifications/#available-events) through these parameters:
 
 ```
 [--format] FORMAT          Format of the body sent to the webhook ('raw', 'slack', 'gitter', or 'flowdock') (default: raw)

@@ -374,7 +374,7 @@ You can also enable the following extensions on demand:
 `apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `geos`, `gnupg`, `grpc`, `ioncube`, `imap`, `mailparse`, `maxminddb`, `mongo`, `newrelic`, `oauth`, `opentelemetry`, `pcs`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `scoutapm`, `sqlsrv`, `sqreen`, `tideways`, `uopz`, `uploadprogress`, `xdebug`, `xmlrpc`, `yaml`
 
 >[!NOTE]
->Only some extensions support PHP 8.4 for now: `amqp`, `apcu`, `blackfire`, `event`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcache`, `memcached`, `mongodb`, `newrelic`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `solr`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`. We'll add support for more extensions as they are released.
+>Only some extensions support PHP 8.5 for now: `amqp`, `apcu`, `blackfire`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcached`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`. We'll add support for more extensions as they are released.
 
 You can check extensions and versions by viewing our `phpinfo()` for:
 
@@ -388,6 +388,7 @@ You can check extensions and versions by viewing our `phpinfo()` for:
 - [PHP 8.2](https://php82info.cleverapps.io)
 - [PHP 8.3](https://php83info.cleverapps.io)
 - [PHP 8.4](https://php84info.cleverapps.io)
+- [PHP 8.5](https://php85info.cleverapps.io)
 
 If you have a request about extensions, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 

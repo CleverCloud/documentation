@@ -58,10 +58,11 @@ php:
     - 7.4 (EOL)
     - 8
     - 8.0 (EOL)
-    - 8.1
+    - 8.1 (EOL)
     - 8.2
     - 8.3
     - 8.4
+    - 8.5
 
 python:
   eol_source: https://devguide.python.org/versions/#python-release-cycle

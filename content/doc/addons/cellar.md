@@ -112,7 +112,7 @@ Some clients allows you to upload files, list them, delete them, etc, like:
 - [S3 Browser](https://s3browser.com/)
 - [WinSCP](https://winscp.net)
 
-This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/discussions/new?category=general).
+This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/issues/new/choose).
 
 ### Using s3cmd command line tools
 

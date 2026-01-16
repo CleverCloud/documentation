@@ -3,8 +3,8 @@ dev_message: "**Important**: Dev plans are free and **solely for testing purpose
 elastic:
   dedicated:
     - v7.17.29
-    - v8.19.7
-    - v9.2.1
+    - v8.19.9
+    - v9.2.3
 
 mongo:
   dedicated:
@@ -15,10 +15,10 @@ mongo:
 mysql:
   dedicated:
     - 5.7 (EOL)
-    - 8.0
-    - 8.4
+    - 8.0.44
+    - 8.4.7
   dev:
-    - 8.0
+    - 8.0.44
 
 pg:
   dedicated:

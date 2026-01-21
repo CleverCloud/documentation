@@ -611,6 +611,8 @@ For example if your path is `/login` you need to have a file `login.html` becaus
 
 You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
 
+SSL certificates are **not** generated automatically for static websites hosted on Cellar. To enable an HTTPS connection on your website, you must submit a request to our support team. 
+
 ## Versioning
 
 ### What is bucket versioning

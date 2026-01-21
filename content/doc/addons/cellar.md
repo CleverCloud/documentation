@@ -17,10 +17,43 @@ aliases:
 - /doc/cellar
 - /doc/deploy/addon/cellar
 ---
-{{< hextra/hero-subtitle >}}
-  Cellar is a S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
 
-{{< /hextra/hero-subtitle >}}
+
+  Cellar is a High Availability S3-compatible online file storage web service.   
+  Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
+
+
+
+
+
+Cellar provides enterprise-grade security for your object storage through multiple layers of protection, from access control to data encryption.
+
+## Security on Cellar
+
+### Access Control
+
+You can control who can access your Cellar buckets and objects using Access Control Lists (ACLs). You can grant or restrict permissions at both the bucket and object level, allowing you to:
+- Define read and write permissions for specific users or groups
+- Set public or private access policies
+
+### Pre-signed URLs
+
+You can generate temporary, secure URLs for uploading or downloading objects without exposing your credentials. Pre-signed URLs include:
+- Time-limited access that expires automatically
+- Cryptographic signatures that prevent tampering
+- Granular permissions for specific operations (upload or download)
+
+### Data Protection
+
+All data transmitted between your applications and the storage service can encrypted using the TLS protocol. 
+
+### High Availability and Durability
+
+Cellar's architecture, built on Ceph, ensures data remains available and protected against loss:
+- **Sharding**: Data is distributed across multiple storage nodes to balance load and improve performance
+- **Multi-DC replication**: Every object is replicated across our 3 geographically distinct Paris datacenters
+
+
 
 ## Creating a bucket
 
@@ -100,6 +133,11 @@ alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
 ## Managing your buckets
 
 There are several ways to manage your buckets, find in this section a list of options.
+
+{{< callout type="info">}}
+  Deleted buckets can be recovered within 24h from deletion. Please contact the support so we can recover the deleted data. Support is open on regular office hours, and ths a deletion on a weekend won't be seen until monday. You can opt for our [premium support](https://www.clever.cloud/fr/clever-cloud-premium/) for 24/7 responsiveness. 
+{{< /callout >}}
+
 
 ### Using S3 clients
 
@@ -762,6 +800,13 @@ When versioning is enabled, the newly added object is automatically provided wit
 {{< /tab >}}
 
 {{< /tabs >}}
+
+## Security / Technical
+
+### High availability
+x
+### Encryption at rest
+Cellar is a distributed system 
 
 ## Troubleshooting
 

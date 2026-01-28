@@ -32,8 +32,8 @@ To create a new FrankenPHP application, use the [Clever Cloud Console](https://c
 ```bash
 clever create --type frankenphp
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 > [!NOTE] FrankenPHP applications can't be deployed on a pico instance, XS is the default instance type
 
@@ -43,19 +43,19 @@ clever create --type frankenphp
 
 FrankenPHP runtime only requires a working web application, with an `index.php` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (default: `/`).
 
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### FrankenPHP version and tools
 
-FrankenPHP currently deployed version on Clever Cloud is `1.9.1` based on PHP `8.4.12` and Caddy server `2.10.2`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI.
+FrankenPHP currently deployed version on Clever Cloud is `{{< runtime_version frankenphp >}}` based on PHP `{{< runtime_version frankenphp php >}}` and Caddy server `{{< runtime_version frankenphp caddy >}}`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI. The `php` command available in hooks and scripts uses `frankenphp php-cli` under the hood.
 
 - [FrankenPHP PHP info](https://frankenphpinfo.cleverapps.io/)
 
 ### Composer native support
 
-If a `composer.json` file is detected at the root of your project, it will be used to install dependencies during building phase with `--no-interaction --no-progress --no-scripts --no-dev` flags. To use your own, set the `CC_PHP_COMPOSER_FLAGS`environment variable.
+If a `composer.json` file is detected at the root of your project, it will be used to install dependencies during building phase with `--no-interaction --no-progress --no-scripts --no-dev` flags. To override the base flags (`--no-interaction --no-progress --no-scripts`), set the `CC_PHP_COMPOSER_FLAGS` environment variable.
 
-To install development dependencies, set the `CC_PHP_DEV_DEPENDENCIES` environment variable to `install`.
+To install development dependencies, set the `CC_PHP_DEV_DEPENDENCIES` environment variable to `install`. This removes the `--no-dev` flag independently of `CC_PHP_COMPOSER_FLAGS`.
 
 > [!TIP] Use a local Composer version
 > If you put a `composer.phar` file at the root of your project, it will be used to install dependencies.
@@ -73,13 +73,13 @@ To manage Materia KV data with FrankenPHP, use the included `redis` extension in
 - [Learn more about Materia KV](/doc/addons/materia-kv)
 - [Materia KV and FrankenPHP demo](https://github.com/CleverCloud/frankenphp-kv-json-example)
 
-### Worker mode
+## Worker mode
 
-With FrankenPHP worker mode, a script of your project is kept in memory to handle incoming requests in a few milliseconds. Define the path to this script, relative to the root of your project, with the `CC_FRANKENPHP_WORKER` environment variable (e.g. `/worker/script.php`). It's supported by design by Laravel Octane and Symfony Runtime projects.
+With FrankenPHP worker mode, a script of your project is kept in memory to handle incoming requests in a few milliseconds. Define the path to this script, relative to the root of your project, with the `CC_FRANKENPHP_WORKER` environment variable (e.g. `/public/worker.php`). The worker script must be located within the webroot directory. It's supported by design by Laravel Octane and Symfony Runtime projects.
 
-* [Learn more about FrankenPHP worker mode](https://frankenphp.dev/docs/worker/#standalone-binary)
-* [Learn more about Laravel Octane](https://laravel.com/docs/master/octane#frankenphp)
-* [Learn more about Symfony Runtime](https://symfony.com/doc/current/components/runtime.html)
+- [Learn more about FrankenPHP worker mode](https://frankenphp.dev/docs/worker/#standalone-binary)
+- [Learn more about Laravel Octane](https://laravel.com/docs/master/octane#frankenphp)
+- [Learn more about Symfony Runtime](https://symfony.com/doc/current/components/runtime.html)
 
 ## Configurable port
 
@@ -87,9 +87,17 @@ By default, FrankenPHP listens on port `8080`. If you want to change it, set the
 
 ## Custom FrankenPHP run command
 
-Use your own command to run your FrankenPHP application to define flags such as `--debug`, `--mercure` or `--no-compress`. To do so, set the `CC_RUN_COMMAND` environment variable, starting with `frankenphp php-server --listen 0.0.0.0:8080`.
+To override the default server behavior, set the `CC_RUN_COMMAND` environment variable. When defined, it completely replaces the default `frankenphp php-server` command. Use it to define flags such as `--debug`, `--mercure` or `--no-compress`:
 
-You can also use this to load [a custom Caddyfile](https://frankenphp.dev/docs/config/#caddyfile-config), starting `CC_RUN_COMMAND` with `frankenphp run --config /path/to/Caddyfile`.
+```bash
+CC_RUN_COMMAND="frankenphp php-server --listen 0.0.0.0:8080 --debug --mercure"
+```
+
+You can also use it to load [a custom Caddyfile](https://frankenphp.dev/docs/config/#caddyfile-config):
+
+```bash
+CC_RUN_COMMAND="frankenphp run --config /path/to/Caddyfile"
+```
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 
@@ -107,3 +115,4 @@ clever deploy # or clever restart if there is no code change
 FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gmp`,`gettext`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcache`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`password-argon2`,`parallel`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pdo_sqlsrv`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xz`,`zip`,`zlib`,`yaml`,`zstd`
 
 {{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}

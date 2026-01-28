@@ -289,10 +289,10 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
-|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#choose-your-php-version) | 8.3 |
+|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/composer/#development-dependencies "Development dependencies") | Set to `install` to include dev dependencies; unset or set to `skip` to exclude them |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |

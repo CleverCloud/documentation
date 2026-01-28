@@ -104,6 +104,6 @@ clever deploy # or clever restart if there is no code change
 
 ## Included extensions
 
-FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gmp`,`gettext`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xz`,`zip`,`zlib`,`yaml`,`zstd`
+FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gmp`,`gettext`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcache`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`password-argon2`,`parallel`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pdo_sqlsrv`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xz`,`zip`,`zlib`,`yaml`,`zstd`
 
 {{% content "url_healthcheck" %}}

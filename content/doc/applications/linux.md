@@ -30,25 +30,28 @@ To create a new Linux application, use the [Clever Cloud Console](https://consol
 ```bash
 clever create --type linux
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your Linux application
 
 ### Mandatory needs
 
-Linux runtime only requires a `CC_RUN_COMMAND` to execute, with a working web application listening on `0.0.0.0:8080`.
+Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0:8080`.
 
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
-### Build phase
+### Build and run commands
 
-During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided. You can use it to install dependencies, compile your code, or any other task you need to perform before running your application.
+Build and run commands are resolved in this priority order:
+
+1. `CC_BUILD_COMMAND` and `CC_RUN_COMMAND` environment variables
+2. [Mise](https://mise.jdx.dev/tasks/) `build` and `run` tasks (from `mise.toml` or [File Tasks](https://mise.jdx.dev/tasks/#tasks-in-mise-toml-files))
+3. Makefile `build:` and `run:` targets (searches `GNUmakefile`, `Makefile`, `makefile` or the file defined in `CC_MAKEFILE`)
+
+Each level fills in only the commands not already defined by a higher priority source. For example, you can define `CC_BUILD_COMMAND` and let Mise or a Makefile provide the `run` command.
 
 - [Learn more about Deployment hooks](/doc/develop/build-hooks/)
-
-> [!TIP] Use Mise package manager to define build/run commands
-> If you define `build` and `run` tasks in the `mise.toml` file [or as File Tasks](https://mise.jdx.dev/tasks/#tasks-in-mise-toml-files), Clever Cloud will automatically use them. `CC_BUILD_COMMAND` and `CC_RUN_COMMAND` have precedence over the `build` and `run` tasks defined by Mise.
 
 ## Clever Task and Multi-runtime approach
 
@@ -71,5 +74,5 @@ clever deploy # or clever restart if there is no code change
 - [Deploy a Swift application with Mise](https://github.com/CleverCloud/swift-hello-world-example)
 - [Deploy a Zig application with Mise](https://github.com/CleverCloud/zig-with-mise-example)
 
-{{% content "redirectionio" %}}
-{{% content "varnish" %}}
+{{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}

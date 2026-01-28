@@ -26,8 +26,8 @@ To create a new V (Vlang) application, use the [Clever Cloud Console](https://co
 ```bash
 clever create --type v
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your V (Vlang) application
 
@@ -35,17 +35,26 @@ clever create --type v
 
 V (Vlang) runtime only requires a working application listening on `0.0.0.0:8080`.
 
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+
+### Dependencies
+
+If a `v.mod` file exists at the root of your project, dependencies are installed with `v install` before compilation. Modules are stored in the `VMODULES` directory (default: `/home/bas/.vmodules/`) and cached between deployments.
 
 ### Build phase
 
 During the build phase, the V (Vlang) application is built with the `v . -prod` command. To compile without the `-prod` flag, set `ENVIRONMENT=development`. You can choose a custom output binary name with the `CC_V_BINARY` environment variable, default is `${APP_HOME}/v_bin_${APP_ID}`.
 
 - [Deploy an example V application on Clever Cloud](https://github.com/CleverCloud/v-example)
+- [Learn more about Deployment hooks](/doc/develop/build-hooks/)
+
+### Custom run command
+
+By default, the compiled binary is executed directly. To override this behavior, set `CC_RUN_COMMAND`.
 
 ### V (Vlang) version and tools
 
-The currently deployed version of V (Vlang) on Clever Cloud is `0.4.11`.
+The currently deployed version of V (Vlang) on Clever Cloud is `{{< runtime_version v >}}`.
 
 ## V scripts (.vsh), Clever Tasks
 
@@ -58,5 +67,5 @@ clever deploy # or clever restart if there is no code change
 
 - [Learn more about Clever Tasks](/doc/develop/tasks/)
 
-{{% content "redirectionio" %}}
-{{% content "varnish" %}}
+{{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}

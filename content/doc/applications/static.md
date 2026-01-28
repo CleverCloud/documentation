@@ -41,8 +41,8 @@ To create a new Static application, use the [Clever Cloud Console](https://conso
 ```bash
 clever create --type static
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your Static application
 
@@ -50,7 +50,7 @@ clever create --type static
 
 Static runtime only requires a working web application, with an `index.htm` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (for example `/public`, default is `/`).
 
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### Build phase
 
@@ -63,13 +63,17 @@ During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided
 
 When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only some configuration files and the served directory to optimize size, reduce archive time. When neither option applies, the system caches the entire application root directory instead.
 
-To override this behavior, set the `CC_OVERRIDE_BUILD_CACHE` environment variable with a colon-separated list of directories and files, relative to the application root. For example: `CC_OVERRIDE_BUILD_CACHE=myScript.sh:/myBuildDir`.
+To override this behavior, set the `CC_OVERRIDE_BUILDCACHE` environment variable with a colon-separated list of directories and files, relative to the application root. For example: `CC_OVERRIDE_BUILDCACHE=myScript.sh:/myBuildDir`.
 
 ## Supported web servers
 
-By default, the Rust-based [Static Web Server (SWS)](https://static-web-server.net) serves your website. If a valid Caddyfile is present at the root of your project, it will be used with [Caddy](https://caddyserver.com) and the `caddy run` command, you can also set its location with `CC_STATIC_CADDYFILE` (Default is `./Caddyfile`).
+By default, [Static Web Server (SWS)](https://static-web-server.net) `{{< runtime_version sws >}}` serves your website. If a valid Caddyfile is present at the root of your project, it will be used with [Caddy](https://caddyserver.com) `{{< runtime_version caddy >}}` and the `caddy run` command, you can also set its location with `CC_STATIC_CADDYFILE` (Default is `./Caddyfile`).
 
-You can force the use of Caddy by setting the `CC_STATIC_SERVER` environment variable to `caddy`. It configures your application to serve the website with the `caddy file-server` command which don't rely on a Caddyfile.
+You can force the use of Caddy by setting the `CC_STATIC_SERVER` environment variable to `caddy`. It configures your application to serve the website with the `caddy file-server` command which doesn't rely on a Caddyfile.
+
+## Custom run command
+
+To override the default web server behavior, set the `CC_RUN_COMMAND` environment variable. When defined, it takes priority over the static server command. This is useful to run a custom server or a script before serving files.
 
 ## Custom configuration and port
 
@@ -86,55 +90,60 @@ Caddy and SWS can be configured with a configuration file or through environment
 
 ## Static Site Generators (SSG) Auto-build
 
-If you don't set a `CC_BUILD_COMMAND`, Clever Cloud try to detect and configure the Static Site Generator (SSG) through the presence of specific files in the project root. If detected the static website is built in the `cc_static_autobuilt` folder (or `CC_STATIC_AUTOBUILD_OUTDIR`), used as `CC_WEBROOT` and build cache content. If you defined a `CC_WEBROOT`, it will be used instead of `cc_static_autobuilt`.
+If you don't set a `CC_BUILD_COMMAND`, Clever Cloud tries to detect and configure the Static Site Generator (SSG) through the presence of specific files in the project root. If detected, the static website is built in the `cc_static_autobuilt` folder (or `CC_STATIC_AUTOBUILD_OUTDIR`), used as `CC_WEBROOT` and build cache content. If you defined a `CC_WEBROOT`, it will be used instead of `cc_static_autobuilt`.
 
 Supported Static Site Generators (SSG) are:
 
 ### Astro
 
-* Build command: `npm i && npm run astro build -- --outDir <out-dir>`
-* Detected file: `astro.config.mjs`, `astro.config.ts`, `astro.config.js`, `astro.config.cjs`
+- Build command: `npm i && npm run astro build -- --outDir <out-dir>`
+- Detected file: `astro.config.mjs`, `astro.config.ts`, `astro.config.js`, `astro.config.cjs`
 
 ### Docusaurus
 
-* Build command: `npm i && npm run docusaurus build -- --out-dir <out-dir>`
-* Detected file: `docusaurus.config.js`, `docusaurus.config.ts`
+- Build command: `npm i && npm run docusaurus build -- --out-dir <out-dir>`
+- Detected file: `docusaurus.config.js`, `docusaurus.config.ts`
 
 ### Hugo
 
-* Build command: `hugo --gc --minify --destination <out-dir>`
-* Detected file: `hugo.json`, `hugo.toml`, `hugo.yaml`
+- Build command: `hugo --gc --minify --destination <out-dir>`
+- Detected file: `hugo.toml`, `hugo.yaml`, `hugo.json`
 
 > [!TIP] Set the Hugo version
 >Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.147`, `0.148`, `0.149` (default), `0.150`, `0.151` or `0.152`
 
 ### mdBook
 
-* Build command: `mdbook build --dest-dir <out-dir>`
-* Detected file: `book.toml`
+- Build command: `mdbook build --dest-dir <out-dir>`
+- Detected file: `book.toml`
 
-### Mkdocs
+### MkDocs
 
-* Build command: `uvx mkdocs build --site-dir <out-dir>`
-* Detected file: `mkdocs.yml`
+- Build command: `uvx mkdocs build --site-dir <out-dir>`
+- Detected file: `mkdocs.yml`
 
 ### Nuxt.js
 
-* Build command: `npm i && npm run generate && mv .output/public <out-dir>`
-* Detected file: `nuxt.config.ts`
+- Build command: `npm i && npm run generate && mv .output/public <out-dir>`
+- Detected file: `nuxt.config.ts`
 
-### Vitepress
+### Storybook
 
-* Build command: `npm i && npm run docs:build -- --outDir <out-dir>`
-* Detected file: `vitepress.config.js`, `vitepress.config.ts`, `vitepress.config.mjs`, `vitepress.config.mts`
+- Build command: `npm i && npm run build-storybook -- --output-dir <out-dir>`
+- Detected file: `.storybook/main.js`, `.storybook/main.ts`
+
+### VitePress
+
+- Build command: `npm i && npm run docs:build -- --outDir <out-dir>`
+- Detected file: `.vitepress/config.js`, `.vitepress/config.ts`, `.vitepress/config.mjs`, `.vitepress/config.mts`
 
 ### Zola
 
-* Build command: `zola build --minify --output-dir <out-dir>`
-* Detected file: `config.toml`
+- Build command: `zola build --minify --output-dir <out-dir>`
+- Detected file: `config.toml`
 
 ## 🎓 Static Site Generators (SSG) guides
 {{% content-raw "static-guides" %}}
 
-{{% content "redirectionio" %}}
-{{% content "varnish" %}}
+{{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}

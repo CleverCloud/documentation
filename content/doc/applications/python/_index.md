@@ -73,7 +73,7 @@ The default version of Python on Clever Cloud is the latest supported from branc
 
 If you do not have a `requirements.txt` file to commit you can obtain it via the command `pip freeze > requirements.txt` (or `pip3 freeze > requirements.txt` if you use Python 3.x) at the root of your project folder in your terminal.
 
-For example to install *PostgreSQL* and don't want to use the `pip freeze` command above you have to create a file `requirements.txt` at the root of your application folder:
+For example, if you want to install *PostgreSQL* without using the `pip freeze` command above, create a `requirements.txt` file at the root of your application folder:
 
 ```txt
 psycopg2>=2.7 --no-binary psycopg2

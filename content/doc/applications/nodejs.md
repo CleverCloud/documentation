@@ -60,6 +60,10 @@ Be sure that:
 * The folder `/node_modules` is mentioned in your `.gitignore` file
 * You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
 
+### Memory management
+
+`NODE_OPTIONS` is automatically configured with `--max-old-space-size` set to 3/4 of the instance's available memory. If you already set `NODE_OPTIONS` with a `max-old-space-size` value, it is not overridden. If `NODE_OPTIONS` is set without `max-old-space-size`, the flag is appended to your existing value.
+
 ### Build phase
 
 During the build phase, Clever Cloud will install your application dependencies with the selected package manager.
@@ -153,11 +157,11 @@ Then it will be installed during deployment. You can replace `latest` with a spe
 
 ### Automatic detection
 
-If a lock file exists in your application's main folder, the corresponding package manager is set:
+If a lock file exists in your application's main folder, the corresponding package manager is set. Detection priority is:
 
-- If a `bun.lock` file exists, `bun` is used for build/run
-- If a `pnpm-lock.yaml` file exists, `pnpm` is used for build/run
-- If a `yarn.lock` file exists, and a 3.x/4.x version is declared in `package.json`, `yarn-berry` is used for build/run
+1. `yarn.lock` → if `packageManager` in `package.json` starts with `yarn@3` or `yarn@4`, `yarn-berry` is used; otherwise falls back to deprecated `yarn` (1.x)
+2. `pnpm-lock.yaml` → `pnpm` is used for build/run
+3. `bun.lock` → `bun` is used for build/run
 
 To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUILD_TOOL` environment variable.
 
@@ -165,18 +169,16 @@ To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUIL
 
 ### Set Node.js version
 
-If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor, patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable isn't set, the latest LTS version available on Clever Cloud is used.
+If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor, patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable isn't set and `engines.node` is not defined in `package.json`, the latest LTS version available on Clever Cloud is used.
 
 {{< runtimes_versions node >}}
 
 > [!NOTE]
-> For legacy reasons, the system prioritizes to the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set.
+> For legacy reasons, the system prioritizes the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set. Any `.nvmrc` file is ignored and deleted during deployment.
 
 ### Bun version
 
-If you use Bun, your application is deployed with the latest available version on Clever Cloud:
-
-{{< runtimes_versions bun >}}
+If you use Bun, your application is deployed with the latest available version on Clever Cloud (`{{< runtime_version bun >}}`). To customise the Bun cache directory, set `CC_BUN_INSTALL_CACHE_DIR`.
 
 ### pnpm and Yarn versions
 
@@ -198,16 +200,24 @@ This is the default way to manage version for pnpm and Yarn when a new project i
 
 ## Development Dependencies
 
-Development dependencies aren't automatically installed during the deployment. You can control their installation setting `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`. This variable overrides the default behavior of `NODE_ENV`.
+Development dependencies aren't automatically installed during the deployment. You can control their installation by setting the `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`.
 
-Here are various scenarios:
+When set to `install`, an explicit flag forces development dependencies to be included regardless of `NODE_ENV`:
 
-* `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies are installed.
-* `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies aren't installed.
-* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=install`: Development dependencies are installed.
-* `NODE_ENV=production` and `CC_NODE_DEV_DEPENDENCIES=ignore`: Development dependencies aren't installed.
-* `NODE_ENV=production`: Package manager (npm/yarn) default behavior. Development dependencies aren't installed.
-* Neither `NODE_ENV` nor `CC_NODE_DEV_DEPENDENCIES` are defined: Package manager (npm/yarn) default behavior. Development dependencies are installed.
+- npm: `--production=false`
+- npm-ci: `--include=dev`
+- pnpm: `--prod false`
+- yarn: `--production=false`
+- bun: no flag (Bun includes all dependencies by default)
+
+When not set or set to `ignore`, default package manager behavior applies:
+
+- For Bun: development dependencies are excluded (`--omit dev` is added by default)
+- For npm/yarn/pnpm: depends on `NODE_ENV`. If `NODE_ENV=production`, development dependencies are excluded. Otherwise they are included.
+
+## Custom run command
+
+To override the default start behavior (scripts.start or main field from package.json), set the `CC_RUN_COMMAND` environment variable. When defined, it takes priority over all other start methods.
 
 ## Use private repositories
 
@@ -227,7 +237,7 @@ Then, the `.npmrc` file is created automatically for your application, with the 
 
 ### With CC_NPM_BASIC_AUTH
 
-Or you can set `CC_NPM_BASIC_AUTH` to use basic authentication
+As an alternative to `NPM_TOKEN`, you can set `CC_NPM_BASIC_AUTH` to use basic authentication. The value is Base64-encoded automatically by the platform. You cannot use both `NPM_TOKEN` and `CC_NPM_BASIC_AUTH` at the same time.
 
 ```bash
 CC_NPM_BASIC_AUTH="user:password"

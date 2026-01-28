@@ -57,7 +57,7 @@ The module (without .py) must be importable, i.e. be in `PYTHONPATH`. Basically,
 
 For example with *Flask*, it's gonna be the name of your main server file, followed by your Flask object: `server:app` for instance if you have a `server.py` file at the root of your project with a Flask `app` object inside.
 
-You can also use `CC_RUN_COMMAND` to launch Python application your way. In such case, it must listen on port `9000`.
+You can also use `CC_RUN_COMMAND` to launch a Python application your way. In such case, it must listen on port `9000`.
 
 - [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 

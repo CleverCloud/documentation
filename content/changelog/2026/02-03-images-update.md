@@ -38,3 +38,7 @@ We updated all our images. Deployment is in progress for all our users.
   * xdebug extension 3.5.0
 * **Python:**
   * uv 0.9.28
+
+## Docker Buildx
+
+As previously announced, Docker Buildx is now the default build system for Docker applications. You can switch back to the legacy build system by setting the `CC_DOCKER_BUILDX` environment variable to `false`.

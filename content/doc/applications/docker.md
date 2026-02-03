@@ -76,7 +76,7 @@ CMD <command to run>
 
 ### Docker Buildx
 
-The default build uses `docker build` with BuildKit disabled. To use Docker Buildx instead, set `CC_DOCKER_BUILDX` to `true`. Buildx uses the `--load` flag to make the image available locally.
+The default build uses `docker buildx`. To use Docker legacy build instead, set `CC_DOCKER_BUILDX` to `false`.
 
 ### Memory management
 

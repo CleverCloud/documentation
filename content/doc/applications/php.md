@@ -374,7 +374,7 @@ You can also enable the following extensions on demand:
 `apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `geos`, `gnupg`, `grpc`, `ioncube`, `imap`, `mailparse`, `maxminddb`, `mongo`, `newrelic`, `oauth`, `opentelemetry`, `pcs`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `scoutapm`, `sqlsrv`, `sqreen`, `tideways`, `uopz`, `uploadprogress`, `xdebug`, `xmlrpc`, `yaml`
 
 >[!NOTE]
->Only some extensions support PHP 8.5 for now: `amqp`, `apcu`, `blackfire`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcached`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`. We'll add support for more extensions as they are released.
+>Only some extensions support PHP 8.5 for now: `amqp`, `apcu`, `blackfire`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `mcrypt`, `memcached`, `oauth`, `opentelemetry`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `solr`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `xdebug`, `yaml`, `zip`. We'll add support for more extensions as they are released.
 
 You can check extensions and versions by viewing our `phpinfo()` for:
 

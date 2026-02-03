@@ -41,4 +41,4 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Docker Buildx
 
-As previously announced, Docker Buildx is now the default build system for Docker applications. You can switch back to the legacy build system by setting the `CC_DOCKER_BUILDX` environment variable to `false`.
+[As previously announced](/changelog/2025/11-04-docker-buildx-default/), Docker Buildx is now the default build system for Docker applications. You can switch back to the legacy build system by setting the `CC_DOCKER_BUILDX` environment variable to `false`.

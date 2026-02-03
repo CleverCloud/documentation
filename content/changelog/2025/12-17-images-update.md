@@ -61,3 +61,9 @@ Starting with this release, we don't support end-of-life Elixir versions from 1.
 Static Web Server 2.40.1 includes a new feature we contributed to, allowing to serve Markdown version of a web page when it exists and the request contains the `Accept: text/markdown` header. This is useful to serve documentation to LLMs following the [llms.txt proposal](https://llmstxt.org/). It can be combined with Hugo [transform.HTMLToMarkdown](https://gohugo.io/functions/transform/htmltomarkdown/) function for example, as we do on this documentation.
 
 To enable this feature, just set `SERVER_ACCEPT_MARKDOWN` environment variable to `true` in your Static Web Server application.
+
+## Environment variable checking
+
+Starting with this release, if an invalid environment variable name or value is set in your application, deployment will fail with an error message. You can set `CC_TROUBLESHOOT=true` to get more details.
+
+- [Learn more about Environment variable sanity checking](https://www.clever.cloud/blog/engineering/2025/12/22/deployment-variables-got-more-consistent/)

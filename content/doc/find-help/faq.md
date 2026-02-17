@@ -102,7 +102,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 ## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
 
-- [Lean more about the $_SERVER variable on Clever Cloud](/doc/applications/php/#using-http-authentication)
+- [Learn more about the $_SERVER variable on Clever Cloud](/doc/applications/php/apache/#using-http-authentication)
 
 ## How to get the user's IP address?
 

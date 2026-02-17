@@ -233,8 +233,8 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
   {{< card link="/developers/doc/applications/nodejs#environment-injection" title="Node.js" icon="node" >}}
   {{< card link="/developers/guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
-  {{< card link="/developers/doc/applications/php/#environment-injection" title="PHP" icon="php" >}}
-  {{< card link="/developers/doc/applications/python/#environment-injection" title="Python" icon="python" >}}
+  {{< card link="/developers/doc/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
+  {{< card link="/developers/doc/applications/python/#configure-your-python-application" title="Python" icon="python" >}}
   {{< card link="/developers/doc/applications/rust/#environment-injection" title="Rust" icon="rust" >}}
   {{< card link="/developers/doc/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
   {{< card link="/developers/doc/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}

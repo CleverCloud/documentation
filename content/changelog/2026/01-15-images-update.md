@@ -59,7 +59,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 PHP 8.5 is now available. To use it, set `CC_PHP_VERSION=8.5` as PHP 8.4 release is still the default version. We'll move to PHP 8.5 as the default version in April 2026. PHP 8.1 is now [considered as end-of-life](https://www.php.net/supported-versions.php).
 
-[Supported extensions](/doc/applications/php/#available-extensions-and-modules) for PHP 8.5 are: `amqp`, `apcu`, `blackfire`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcached`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`.
+[Supported extensions](/doc/applications/php/extensions/#available-extensions-and-modules) for PHP 8.5 are: `amqp`, `apcu`, `blackfire`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `memcached`, `oauth`, `opentelemetry`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `yaml`, `zip`.
 
 Composer 2.9 introduces a new default behavior: it [automatically blocks updates to packages with known security advisories](https://blog.packagist.com/composer-2-9/). As mentioned by developers, "*it prevents you from accidentally updating to vulnerable package versions. You can configure this behavior via the new audit.block-insecure config settings if needed.*"
 

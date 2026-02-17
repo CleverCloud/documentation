@@ -520,7 +520,7 @@ This policy example grants read-only access to a bucket for another user, using 
           "arn:aws:s3:::<bucket-name>",
           "arn:aws:s3:::<bucket-name>/*"
         ],
-        "Principal": {"AWS": "arn:aws:iam::cellar_xxx"}
+        "Principal": {"AWS": "arn:aws:iam:::user/cellar_xxx"}
 
       }
     ]

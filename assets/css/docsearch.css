@@ -1,0 +1,548 @@
+/* Algolia DocSearch integration with Clever Cloud theme consistency */
+
+/* Hide theme's built-in search UI content and show DocSearch in its place */
+.search-wrapper input,
+.search-wrapper form,
+.search-wrapper .hextra-search,
+.search-wrapper .flexsearch-wrapper {
+  display: none !important; 
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+#docsearch { 
+  position: static; 
+  width: auto; 
+  height: auto; 
+  overflow: visible; 
+  display: inline-block; 
+}
+
+/* DocSearch button styling using Hextra theme variables */
+#docsearch .DocSearch-Button { 
+  opacity: 1; 
+  pointer-events: auto; 
+  border-radius: var(--hx-radius-md); /* Use theme's radius */
+  padding: calc(var(--hx-spacing) * 2) calc(var(--hx-spacing) * 3);
+  line-height: var(--hx-leading-tight);
+  font-family: var(--hx-default-font-family);
+  font-size: var(--hx-text-sm);
+  font-weight: var(--hx-font-weight-medium);
+  transition: all var(--hx-default-transition-duration) var(--hx-default-transition-timing-function);
+  min-width: 200px;
+  justify-content: flex-start;
+}
+
+/* Light theme styling - better contrast */
+:root:not(.dark) #docsearch .DocSearch-Button { 
+  background-color: var(--hx-color-white);
+  color: var(--hx-color-gray-700);
+  border: 1px solid var(--hx-color-gray-300);
+  box-shadow: var(--hx-shadow-sm);
+}
+
+/* Dark theme styling */
+.dark #docsearch .DocSearch-Button { 
+  background-color: var(--hx-color-neutral-800);
+  color: var(--hx-color-gray-300);
+  border: 1px solid var(--hx-color-neutral-600);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Focus states */
+#docsearch .DocSearch-Button:focus { 
+  outline: none;
+  ring: 2px solid var(--hx-color-primary-500);
+}
+
+:root:not(.dark) #docsearch .DocSearch-Button:focus { 
+  border-color: var(--hx-color-primary-500);
+  box-shadow: 0 0 0 3px var(--hx-color-primary-100);
+}
+
+.dark #docsearch .DocSearch-Button:focus { 
+  border-color: var(--hx-color-primary-400);
+  box-shadow: 0 0 0 3px var(--hx-color-primary-900);
+}
+
+/* Hover states */
+:root:not(.dark) #docsearch .DocSearch-Button:hover { 
+  background-color: var(--hx-color-gray-50);
+  border-color: var(--hx-color-gray-400);
+  box-shadow: var(--hx-shadow-md);
+}
+
+.dark #docsearch .DocSearch-Button:hover { 
+  background-color: var(--hx-color-neutral-700);
+  border-color: var(--hx-color-neutral-500);
+}
+
+/* Button placeholder text */
+.DocSearch-Button-Placeholder { 
+  opacity: .7;
+  font-family: var(--hx-default-font-family);
+  font-size: var(--hx-text-sm);
+}
+
+/* Search icon styling */
+#docsearch .DocSearch-Search-Icon {
+  width: 16px;
+  height: 16px;
+  color: var(--hx-color-gray-500);
+}
+
+.dark #docsearch .DocSearch-Search-Icon {
+  color: var(--hx-color-gray-400);
+}
+
+/* Keyboard shortcut styling */
+#docsearch .DocSearch-Button-Keys {
+  display: flex;
+  gap: 2px;
+}
+
+#docsearch .DocSearch-Button-Key {
+  background: var(--hx-color-gray-100);
+  border: 1px solid var(--hx-color-gray-300);
+  border-radius: var(--hx-radius-sm);
+  color: var(--hx-color-gray-600);
+  font-size: 11px;
+  padding: 2px 6px;
+  font-family: var(--hx-font-mono);
+}
+
+.dark #docsearch .DocSearch-Button-Key {
+  background: var(--hx-color-neutral-700);
+  border-color: var(--hx-color-neutral-600);
+  color: var(--hx-color-gray-300);
+}
+
+/* Modal styling with Hextra theme consistency - Reduced size */
+.DocSearch-Container {
+  z-index: 200; /* Ensure it appears above everything */
+}
+
+.DocSearch-Container .DocSearch-Modal { 
+  max-width: 600px; /* Reduced from 6xl to a more manageable size */
+  width: 90vw;
+  max-height: 70vh; /* Limit height to prevent taking too much space */
+  background-color: var(--hx-color-white);
+  border: 1px solid var(--hx-color-gray-200);
+  box-shadow: var(--hx-shadow-xl);
+  border-radius: var(--hx-radius-lg);
+  margin: 10vh auto; /* Center with reasonable top margin */
+}
+
+.dark .DocSearch-Container .DocSearch-Modal { 
+  background-color: var(--hx-color-neutral-900);
+  border-color: var(--hx-color-neutral-700);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .DocSearch-Container .DocSearch-Modal { 
+    max-width: 95vw;
+    max-height: 80vh;
+    margin: 5vh auto;
+  }
+}
+
+/* Form elements with Hextra styling */
+.DocSearch-Form { 
+  border: 1px solid var(--hx-color-gray-300);
+  border-radius: var(--hx-radius-md);
+  background-color: var(--hx-color-white);
+  box-shadow: none;
+}
+
+.dark .DocSearch-Form { 
+  border-color: var(--hx-color-neutral-600);
+  background-color: var(--hx-color-neutral-800);
+}
+
+.DocSearch-Input {
+  color: var(--hx-color-gray-900);
+  font-size: var(--hx-text-base);
+  font-family: var(--hx-default-font-family);
+  background: transparent;
+}
+
+.dark .DocSearch-Input {
+  color: var(--hx-color-gray-100);
+}
+
+.DocSearch-Input::placeholder {
+  color: var(--hx-color-gray-500);
+}
+
+.dark .DocSearch-Input::placeholder {
+  color: var(--hx-color-gray-400);
+}
+
+
+/* Search results container - pure white/black backgrounds by theme */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown {
+  max-height: 400px !important; /* Limit results height */
+  overflow-y: auto !important;
+  background-color: white !important;
+  border-radius: var(--hx-radius-md) !important;
+  padding: 0 !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown {
+  background-color: black !important;
+}
+
+/* Individual search result styling - pure white/black backgrounds */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit {
+  border-radius: var(--hx-radius-sm) !important;
+  margin-bottom: 1px !important;
+  background-color: white !important;
+  border: none !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit {
+  background-color: black !important;
+}
+
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit a {
+  padding: 12px 16px !important;
+  border-radius: var(--hx-radius-sm) !important;
+  color: black !important;
+  background-color: white !important;
+  display: block !important;
+  text-decoration: none !important;
+  transition: all var(--hx-default-transition-duration) var(--hx-default-transition-timing-function) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit a {
+  color: white !important;
+  background-color: black !important;
+}
+
+/* Hover state for results - Better contrast */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit a:hover {
+  background-color: var(--hx-color-gray-50) !important;
+  color: var(--hx-color-gray-900) !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit a:hover {
+  background-color: var(--hx-color-neutral-700) !important;
+  color: var(--hx-color-gray-50) !important;
+}
+
+/* Selected/highlighted result - Better contrast */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit[aria-selected="true"] a {
+  background-color: var(--hx-color-primary-50) !important;
+  color: var(--hx-color-primary-900) !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits .DocSearch-Hit[aria-selected="true"] a {
+  background-color: var(--hx-color-primary-800) !important;
+  color: var(--hx-color-primary-50) !important;
+}
+
+/* Result content wrapper - Force inheritance */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Container {
+  background-color: inherit !important;
+}
+
+/* Result titles and text - pure black/white text */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Title {
+  color: black !important;
+  font-weight: var(--hx-font-weight-medium) !important;
+  font-family: var(--hx-default-font-family) !important;
+  margin-bottom: 4px !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Title {
+  color: white !important;
+}
+
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Path {
+  color: #666666 !important;
+  font-size: var(--hx-text-sm) !important;
+  font-family: var(--hx-default-font-family) !important;
+  opacity: 1 !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Path {
+  color: #cccccc !important;
+}
+
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Text {
+  color: #333333 !important;
+  font-size: var(--hx-text-sm) !important;
+  font-family: var(--hx-default-font-family) !important;
+  line-height: 1.4 !important;
+  margin-top: 4px !important;
+  opacity: 1 !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-Text {
+  color: #dddddd !important;
+}
+
+/* Search term highlights - Force styling */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit mark {
+  background-color: var(--hx-color-yellow-100) !important;
+  color: var(--hx-color-yellow-900) !important;
+  font-weight: var(--hx-font-weight-semibold) !important;
+  padding: 1px 2px !important;
+  border-radius: 2px !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit mark {
+  background-color: var(--hx-color-yellow-700) !important;
+  color: var(--hx-color-yellow-200) !important;
+}
+
+
+/* Hit icons */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-icon {
+  color: var(--hx-color-gray-500) !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-icon {
+  color: var(--hx-color-gray-400) !important;
+}
+
+/* Hit action (tree/hierarchy indicator) */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-action {
+  color: var(--hx-color-gray-400) !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-action {
+  color: var(--hx-color-gray-500) !important;
+}
+
+/* Results list container - pure white/black backgrounds */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits {
+  background-color: white !important;
+  padding: 4px !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Dropdown .DocSearch-Hits {
+  background-color: black !important;
+}
+
+/* Section headers spacing - Better visual separation */
+.DocSearch-Container .DocSearch-Modal .DocSearch-Hit-source {
+  background-color: var(--hx-color-gray-50) !important;
+  color: var(--hx-color-gray-800) !important;
+  font-size: var(--hx-text-xs) !important;
+  font-weight: var(--hx-font-weight-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 6px 16px !important;
+  border-radius: 0 !important;
+  margin: 8px 0 4px 0 !important;
+  font-family: var(--hx-default-font-family) !important;
+  border-bottom: 1px solid var(--hx-color-gray-200) !important;
+}
+
+.dark .DocSearch-Container .DocSearch-Modal .DocSearch-Hit-source {
+  background-color: var(--hx-color-neutral-700) !important;
+  color: var(--hx-color-gray-100) !important;
+  border-bottom-color: var(--hx-color-neutral-600) !important;
+}
+
+/* Remove Algolia branding elements */
+.DocSearch-Footer,
+.DocSearch-Logo {
+  display: none;
+}
+
+/* Action buttons styling */
+.DocSearch-Commands {
+  border-top: 1px solid var(--hx-color-gray-200);
+  background-color: var(--hx-color-gray-50);
+}
+
+.dark .DocSearch-Commands {
+  border-top-color: var(--hx-color-neutral-700);
+  background-color: var(--hx-color-neutral-800);
+}
+
+/* Cancel/reset button styling */
+.DocSearch-Cancel,
+.DocSearch-Reset { 
+  color: var(--hx-color-gray-600);
+  font-family: var(--hx-default-font-family);
+  border-radius: var(--hx-radius-sm);
+  padding: 4px 8px;
+}
+
+.dark .DocSearch-Cancel,
+.dark .DocSearch-Reset { 
+  color: var(--hx-color-gray-400);
+}
+
+.DocSearch-Reset:hover,
+.DocSearch-Cancel:hover { 
+  color: var(--hx-color-gray-900);
+  background-color: var(--hx-color-gray-100);
+}
+
+.dark .DocSearch-Reset:hover,
+.dark .DocSearch-Cancel:hover { 
+  color: var(--hx-color-gray-100);
+  background-color: var(--hx-color-neutral-700);
+}
+
+/* No results state */
+.DocSearch-NoResults {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--hx-color-gray-600);
+}
+
+.dark .DocSearch-NoResults {
+  color: var(--hx-color-gray-400);
+}
+
+/* Search icon in modal */
+.DocSearch-MagnifierLabel {
+  color: var(--hx-color-gray-500);
+}
+
+.dark .DocSearch-MagnifierLabel {
+  color: var(--hx-color-gray-400);
+}
+
+/* Scrollbar styling for dropdown */
+.DocSearch-Dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.DocSearch-Dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.DocSearch-Dropdown::-webkit-scrollbar-thumb {
+  background: var(--hx-color-gray-300);
+  border-radius: 3px;
+}
+
+.dark .DocSearch-Dropdown::-webkit-scrollbar-thumb {
+  background: var(--hx-color-neutral-600);
+}
+
+/* Additional fixes for remaining transparent/default elements */
+
+/* Start screen / empty state */
+.DocSearch-StartScreen,
+.DocSearch-EmptyResults {
+  background-color: var(--hx-color-white);
+  color: var(--hx-color-gray-700);
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.dark .DocSearch-StartScreen,
+.dark .DocSearch-EmptyResults {
+  background-color: var(--hx-color-neutral-900);
+  color: var(--hx-color-gray-300);
+}
+
+/* Error states */
+.DocSearch-ErrorScreen {
+  background-color: var(--hx-color-white);
+  color: var(--hx-color-red-600);
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.dark .DocSearch-ErrorScreen {
+  background-color: var(--hx-color-neutral-900);
+  color: var(--hx-color-red-400);
+}
+
+/* Loading state */
+.DocSearch-LoadingIndicator {
+  color: var(--hx-color-primary-600) !important;
+}
+
+.dark .DocSearch-LoadingIndicator {
+  color: var(--hx-color-primary-400) !important;
+}
+
+/* Suggestion links in start screen */
+.DocSearch-Help {
+  color: var(--hx-color-gray-600) !important;
+  font-size: var(--hx-text-sm);
+  background-color: var(--hx-color-white);
+  padding: 16px;
+}
+
+.dark .DocSearch-Help {
+  color: var(--hx-color-gray-400) !important;
+  background-color: var(--hx-color-neutral-900);
+}
+
+/* Recent searches */
+.DocSearch-Title {
+  color: var(--hx-color-gray-900) !important;
+  font-weight: var(--hx-font-weight-medium);
+  font-family: var(--hx-default-font-family);
+}
+
+.dark .DocSearch-Title {
+  color: var(--hx-color-gray-100) !important;
+}
+
+/* Hit content wrapper - force inheritance */
+.DocSearch-Hit-Container,
+.DocSearch-Hit-content {
+  background-color: inherit !important;
+}
+
+/* Force all text elements to use theme colors */
+.DocSearch-Hit-Tree {
+  color: var(--hx-color-gray-500) !important;
+}
+
+.dark .DocSearch-Hit-Tree {
+  color: var(--hx-color-gray-400) !important;
+}
+
+/* Result separators */
+.DocSearch-Dropdown-Container::before {
+  background: var(--hx-color-gray-200);
+}
+
+.dark .DocSearch-Dropdown-Container::before {
+  background: var(--hx-color-neutral-700);
+}
+
+/* Override any remaining Algolia defaults that might cause transparency issues */
+.DocSearch-Container * {
+  box-sizing: border-box;
+}
+
+/* Ensure proper background for all interactive elements */
+.DocSearch-Button-Container,
+.DocSearch-Modal-Container {
+  background-color: inherit;
+}
+
+/* Footer commands - ensure proper styling */
+.DocSearch-Commands-Key {
+  background-color: var(--hx-color-gray-100) !important;
+  border: 1px solid var(--hx-color-gray-300) !important;
+  color: var(--hx-color-gray-700) !important;
+  border-radius: var(--hx-radius-sm);
+  padding: 2px 6px;
+  font-family: var(--hx-font-mono);
+  font-size: 11px;
+}
+
+.dark .DocSearch-Commands-Key {
+  background-color: var(--hx-color-neutral-700) !important;
+  border-color: var(--hx-color-neutral-600) !important;
+  color: var(--hx-color-gray-300) !important;
+}

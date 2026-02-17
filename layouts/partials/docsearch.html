@@ -1,0 +1,28 @@
+<!-- Algolia DocSearch integration (project-level partial) -->
+
+<!-- Load CSS -->
+{{ $docSearchCSS := resources.Get "css/docsearch.css" }}
+{{ if $docSearchCSS }}
+  {{ $docSearchCSS = $docSearchCSS | minify }}
+  <link rel="stylesheet" href="{{ $docSearchCSS.RelPermalink }}">
+{{ end }}
+
+<!-- Load external dependencies -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+<!-- DocSearch configuration -->
+<script>
+  window.docSearchConfig = {
+    appId: '{{ with .Site.Params.docsearch }}{{ .appId | safeJS }}{{ end }}',
+    apiKey: '{{ with .Site.Params.docsearch }}{{ .apiKey | safeJS }}{{ end }}',
+    indexName: '{{ with .Site.Params.docsearch }}{{ .indexName | safeJS }}{{ end }}'
+  };
+</script>
+
+<!-- Load JavaScript -->
+{{ $docSearchJS := resources.Get "js/docsearch.js" }}
+{{ if $docSearchJS }}
+  {{ $docSearchJS = $docSearchJS | minify }}
+  <script src="{{ $docSearchJS.RelPermalink }}"></script>
+{{ end }}

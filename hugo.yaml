@@ -180,11 +180,10 @@ params:
     enable: true
     type: flexsearch
 
-    flexsearch:
-      # index page by: content | summary | heading | title
-      index: content
-      # full | forward | reverse | strict
-      tokenize: forward
+  docsearch:
+    appId: RCNP6XZZWS
+    apiKey: 6909e93402b6d4522a90f43ad144e233
+    indexName: documentation clever
 
   theme:
     # light | dark | system

@@ -17,7 +17,7 @@ excludeSearch: true
 
 Since then, we were focused on a major overhaul of the Redis® compatibility layer, to bring more data structures support, better performance and reliability. It's now available, and Materia KV in Beta stage.
 
-It's still free to use, but now with more commands and `Hash` support. `Set` support is next to come. You can also [use Materia for your PHP sessions](/doc/applications/php/#use-materia-kv-or-redis-to-store-php-sessions) more easily, as TLS transport is now supported during application deployment. There nothing more to do than to link a Materia KV to your application.
+It's still free to use, but now with more commands and `Hash` support. `Set` support is next to come. You can also [use Materia for your PHP sessions](/doc/applications/php/sessions-emails/#use-materia-kv-or-redis-to-store-php-sessions) more easily, as TLS transport is now supported during application deployment. There nothing more to do than to link a Materia KV to your application.
 
 - [Learn more about Materia KV](/doc/addons/materia-kv/)
 - [Learn more about Materia KV supported commands](/doc/addons/materia-kv/#supported-types-and-commands)

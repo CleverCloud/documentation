@@ -275,7 +275,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between `2` or `lts` | 2 |
-|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
+|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/apache/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
 |`CC_LDAP_CA_CERT` |  |  |
@@ -303,7 +303,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](/doc/applications/php/sessions-emails/#use-materia-kv-or-redis-to-store-php-sessions "Use Materia KV or Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | organisation token. |  |
@@ -325,7 +325,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |[`CC_PYTHON_MANAGE_TASKS`](/guides/python-django-sample/#manage-py-tasks) | Comma-separated list of Django manage tasks |  |
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
-|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#supported-versions) | 3 |
+|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#python-version) | 3 |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
 |`GZIP_TYPES` | Set the mime types to compress. | text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |

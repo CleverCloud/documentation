@@ -135,3 +135,6 @@ CC_HASKELL_STACK_TARGET="mypackage"
 {{% content "link-addon" %}}
 
 {{% content "more-config" %}}
+
+{{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}

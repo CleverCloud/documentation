@@ -27,7 +27,7 @@ Request Flow is available in the following runtimes:
 - [FrankenPHP](/doc/applications/frankenphp/)
 - [Go](/doc/applications/golang/)
 - [Haskell](/doc/applications/haskell/)
-- [Java](/doc/applications/java/) (Gradle, Jar, Maven, War/Ear)
+- [Java](/doc/applications/java/)
 - [Linux](/doc/applications/linux/)
 - [Meteor](/doc/applications/meteor/)
 - [Node.js & Bun](/doc/applications/nodejs/)

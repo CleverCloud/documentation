@@ -18,7 +18,7 @@ We updated all our images. Deployment is in progress for all our users.
   * OAuth2 Proxy 7.14.2
   * Otoroshictl 0.0.15
   * Tailscale 1.94.1
-* **.Net:**
+* **.NET:**
   * Update to 6.0.136
 * **Docker:**
   * Docker Buildx 0.31.1

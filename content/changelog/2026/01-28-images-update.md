@@ -45,7 +45,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Request Flow expansion
 
-Request Flow is now available in .Net, Elixir, Haskell and Rust applications. We plan its expansion to more runtimes in the coming weeks in three releases:
+Request Flow is now available in .NET, Elixir, Haskell and Rust applications. We plan its expansion to more runtimes in the coming weeks in three releases:
 - Go and Node.js/Bun
 - Java and PHP
 - Python and Ruby

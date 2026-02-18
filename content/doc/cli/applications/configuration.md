@@ -33,7 +33,7 @@ clever config set parameter value
 To update multiple configuration parameters at a time, use:
 
 ```
-clever config update --option1 value1 --option2 value2 --option3 value3
+clever config update FLAGS
 ```
 
 Available parameters are :

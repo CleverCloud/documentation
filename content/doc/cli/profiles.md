@@ -55,7 +55,9 @@ clever login --alias staging \
   --api-host https://api.clever-cloud.com \
   --console-url https://console.clever-cloud.com \
   --auth-bridge-host https://api-bridge.clever-cloud.com \
-  --ssh-gateway ssh@sshgateway-clevercloud-customers.services.clever-cloud.com
+  --ssh-gateway ssh@sshgateway-clevercloud-customers.services.clever-cloud.com \
+  --oauth-consumer-key MY_KEY \
+  --oauth-consumer-secret MY_SECRET
 ```
 
 Resolution order for configuration values:

@@ -39,7 +39,6 @@ It will `git push` your code on the remote repository of your application on Cle
 [--tag, -t] TAG                       Tag to push (none by default) (default: )
 [--quiet, -q]                         Don't show logs during deployment (default: false)
 [--force, -f]                         Force deploy even if it's not fast-forwardable (default: false)
-[--follow]                            Continue to follow logs after deployment has ended (default: false)
 [--same-commit-policy, -p] POLICY     What to do when local and remote commit are identical (error, ignore, restart, rebuild) (default: error)
 [--exit-on, -e] STEP                  Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
 ```
@@ -79,7 +78,6 @@ By default, it will use its build cache when available. But you can override it 
 [--commit] COMMIT ID       Restart the application with a specific commit ID
 [--without-cache]          Restart the application without using cache (default: false)
 [--quiet, -q]              Don't show logs during deployment (default: false)
-[--follow]                 Continue to follow logs after deployment has ended (default: false)
 [--exit-on, -e] STEP       Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
 ```
 

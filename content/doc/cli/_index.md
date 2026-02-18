@@ -142,6 +142,7 @@ To log out, delete this file or use:
 
 ```
 clever logout
+clever logout --alias ALIAS
 ```
 
 ## profile
@@ -162,6 +163,7 @@ To list primary email and secondary emails associated with your Clever Cloud acc
 
 ```
 clever emails
+clever emails -F json
 ```
 
 To open the email management page in your browser, use:
@@ -196,6 +198,7 @@ To list public SSH keys associated with your Clever Cloud account, you can use:
 
 ```
 clever ssh-keys
+clever ssh-keys -F json
 ```
 
 To open the public SSH keys management page in your browser, use:

@@ -41,7 +41,7 @@ In all the following examples, you can target a specific organisation with the `
 To create a Kubernetes cluster, you just need a name and you can wait for it to be in `ACTIVE` state:
 ```
 clever k8s create myKubeCluster
-clever k8s delete myKubeCluster --watch
+clever k8s create myKubeCluster --watch
 ```
 
 To delete a cluster, use:

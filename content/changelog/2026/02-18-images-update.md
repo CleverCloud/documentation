@@ -19,7 +19,7 @@ We updated all our images. Deployment is in progress for all our users.
   * ClamAV 1.5.1
   * Mise 2026.2.13
   * Otoroshictl 0.0.16
-* **.Net:**
+* **.NET:**
   * Update to 8.0.123
   * Update to 9.0.113
 * **Elixir:**

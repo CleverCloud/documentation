@@ -1,5 +1,5 @@
 ---
-title: "Images update: .Net 10, Go 1.26, Mise 2026.2, Python 3.14, uv 0.10"
+title: "Images update: .NET 10, Go 1.26, Mise 2026.2, Python 3.14, uv 0.10"
 description: "Many tiny updates, and some surprises we'll detail soon"
 date: 2026-02-12
 tags:
@@ -19,7 +19,7 @@ We updated all our images. Deployment is in progress for all our users.
   * Mise 2026.2.8
   * nginx 1.28.2
   * pgpool2 4.7
-* **.Net:**
+* **.NET:**
   * Update to 10.0.102
 * **Docker:**
   * Docker 29.2.1
@@ -34,7 +34,7 @@ We updated all our images. Deployment is in progress for all our users.
   * pip 26.0.1
   * uv 0.10.2
 
-## .Net 10 support
+## .NET 10 support
 
 You can now set `CC_DOTNET_VERSION=10.0`, default version is still `8.0`. We'll move to `10.0` in the coming weeks.
 

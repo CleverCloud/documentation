@@ -71,10 +71,10 @@ clever metabase version check myMetabase --format json
 To update to a specific version, use:
 
 ```
-clever keycloak version update myKeycloak 24.0.1
+clever keycloak version update myKeycloak --target 24.0.1
 ```
 
-To see a list of available versions, don't provide a version number:
+To see a list of available versions, don't provide a target version:
 
 ```
 clever otoroshi version update otoroshi_id

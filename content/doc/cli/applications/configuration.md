@@ -77,11 +77,14 @@ clever env
 clever env > .env
 ```
 
-You can also export environment variable in a sourceable format (`export ENV_NAME="VALUE";`):
+You can also export environment variables in a sourceable format (`export ENV_NAME="VALUE";`):
 
 ```
-clever env --add-export
+clever env --format shell
 ```
+
+> [!NOTE]
+> The `--add-export` option is deprecated. Use `--format shell` instead.
 
 ## domain
 
@@ -116,7 +119,7 @@ To (un)set [the favourite domain](/doc/administrate/domain-names/#primary-favour
 
 ```
 clever domain favourite set FQDN
-clever domain favourite unset FQDN
+clever domain favourite unset
 ```
 
 To check if the domains of an application are properly configured, use:
@@ -165,11 +168,17 @@ clever tcp-redirs add --namespace NAMESPACE
 clever tcp-redirs remove --namespace NAMESPACE PORT
 ```
 
-To list enabled TCP redirection, use:
+To list enabled TCP redirections, use:
 
 ```
 clever tcp-redirs
 clever tcp-redirs --format json
+```
+
+To list available namespaces, use:
+
+```
+clever tcp-redirs list-namespaces
 ```
 
 - [Learn more about TCP redirections](/doc/administrate/tcp-redirections/)

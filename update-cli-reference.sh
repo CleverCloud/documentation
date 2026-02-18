@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILE="content/doc/reference/cli.md"
-URL="https://raw.githubusercontent.com/CleverCloud/clever-tools/refs/heads/master/docs/llms-documentation.md"
+URL="https://raw.githubusercontent.com/CleverCloud/clever-tools/refs/heads/master/skills/clever-tools/references/full-documentation.md"
 
 front_matter="""---
 type: docs

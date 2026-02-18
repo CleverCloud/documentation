@@ -89,5 +89,21 @@ clever keycloak enable-ng myKeycloak
 clever otoroshi disable-ng otoroshi_id
 ```
 
-> [!NOTE] Keycloak Secured Multi Instances
-> When you enable the Network Group on a Clever Cloud Keycloak, it activates [Secured Multi Instances](/doc/addons/keycloak/#secured-multi-instances): a cluster is configured with 2 instances of the Java application. When you disable the Network Group, the application is scaled down to 1 instance and the cluster is removed.
+> [!NOTE]
+> On Clever Cloud Keycloak uses Network Groups for its secure cluster feature. When you enable it, the Keycloak application is automatically scaled to 2 instances and the cluster automatically configured. When you disable the Network Group feature, the application is scaled down to 1 instance and the cluster is removed.
+
+## Otoroshictl
+
+Otoroshi instances can be managed using the `otoroshictl` command line tool. Clever Tools provides an easy way to use it, by providing Otoroshi instances configuration in a compliant YAML format:
+
+```bash
+# Install otoroshictl with Rust's Cargo and enable operators/otoroshi command in Clever Tools:
+cargo install otoroshictl
+clever features enable operators
+
+clever otoroshi get-config <otoroshi_id_or_name> | otoroshictl config import --current --stdin
+otoroshictl resources get routes
+```
+
+> [!TIP]
+> You can add as many Otoroshi instances as you want to your `otoroshictl` configuration by repeating this command with different instance IDs or names. Just add the `--current` flag to the one you want to use by default.

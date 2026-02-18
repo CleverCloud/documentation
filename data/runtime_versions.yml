@@ -56,7 +56,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 24.13.0 (npm 11.6.2)
+    - 24.13.1 (npm 11.8.0)
 
 php:
   eol_source: https://www.php.net/supported-versions.php

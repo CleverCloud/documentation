@@ -214,5 +214,4 @@ Then, set `APP_LOG=syslog` as Clever application environment variable.
 You can learn more about ProxySQL on the [dedicated documentation page](/guides/proxysql)
 
 {{% content "url_healthcheck" %}}
-{{% content "redirectionio" %}}
-{{% content "varnish" %}}
+{{% content "request-flow" %}}

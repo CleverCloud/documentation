@@ -25,11 +25,18 @@ Request Flow is available in the following runtimes:
 - [.NET](/doc/applications/dotnet/)
 - [Elixir](/doc/applications/elixir/)
 - [FrankenPHP](/doc/applications/frankenphp/)
+- [Go](/doc/applications/golang/)
 - [Haskell](/doc/applications/haskell/)
+- [Java](/doc/applications/java/) (Gradle, Jar, Maven, War/Ear)
 - [Linux](/doc/applications/linux/)
+- [Meteor](/doc/applications/meteor/)
+- [Node.js & Bun](/doc/applications/nodejs/)
+- [PHP with Apache](/doc/applications/php/)
 - [Python with uv](/doc/applications/python/uv/)
 - [Rust](/doc/applications/rust/)
+- [Scala](/doc/applications/scala/)
 - [Static](/doc/applications/static/)
+- [Static with Apache](/doc/applications/static-apache/)
 - [V (Vlang)](/doc/applications/v/)
 
 ## Supported services
@@ -64,7 +71,7 @@ Request Flow allocates ports in a chain from port `8080` (public) down to the ap
 Your application must listen on port `8080` when no middleware is active, or on port `9000` when at least one middleware is configured.
 
 > [!NOTE]
-> In runtimes where Clever Cloud manages the port configuration (FrankenPHP, Static), port allocation is handled transparently with no additional configuration.
+> In runtimes where Clever Cloud manages the port configuration (FrankenPHP, Java, PHP, Static), port allocation is handled transparently with no additional configuration.
 
 ## Explicit configuration with CC_REQUEST_FLOW
 

@@ -11,5 +11,5 @@ All three can be active simultaneously. To control the order, set `CC_REQUEST_FL
 When at least one middleware is active, your application must listen on port `9000` instead of `8080`.
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
-- [Learn more about Varnish on Clever Cloud](/doc/administrate/cache/)
+- [Learn more about Varnish on Clever Cloud](/doc/develop/varnish/)
 - [Learn more about Redirection.io](https://redirection.io/)

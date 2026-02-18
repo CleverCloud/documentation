@@ -30,7 +30,6 @@ aliases:
   {{< card link="/developers/doc/administrate/service-dependencies" title="Service dependencies" icon="plug" >}}
   {{< card link="/developers/doc/administrate/ssh-clever-tools" title="SSH access to running instances" icon="command-line" >}}
   {{< card link="/developers/doc/administrate/tcp-redirections" title="TCP redirections with Clever Tools" icon="tcp-ip-service" >}}
-  {{< card link="/developers/doc/administrate/cache" title="Varnish as HTTP cache" icon="bubbles" >}}
   {{< card link="/developers/doc/administrate/zone-migration" title="Zone migration" icon="map-pin" >}}
 
 {{< /cards >}}

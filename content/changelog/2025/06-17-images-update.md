@@ -37,7 +37,7 @@ We updated all our images. Deployment is in progress for all our users.
 ## Other changes
 
 - Multiple fixes for logs
-- [Varnish support](/doc/administrate/cache/) for FrankenPHP, [upcoming Linux, Static and V runtimes](https://github.com/CleverCloud/Community/discussions/66)
+- [Varnish support](/doc/develop/varnish/) for FrankenPHP, [upcoming Linux, Static and V runtimes](https://github.com/CleverCloud/Community/discussions/66)
 - Astro, Docusaurus, MkDocs autobuild support for [upcoming static runtime](https://github.com/CleverCloud/Community/discussions/66)
 - `-x -race` flags are added to `go install` if `CC_TROUBLESHOOT` is set to `true` in Go runtime
 - `proxy_fcgi` is now default in PHP with Apache if `CC_CGI_IMPLEMENTATION` environment variable is not set

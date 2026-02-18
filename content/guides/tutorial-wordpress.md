@@ -148,7 +148,7 @@ To uninstall the plugin, the procedure is the same as before except that you hav
 ## Optimise and speed-up your WordPress
 
 There are multiple ways to optimise your WordPress and speed-up its response time.
-We provide different tools and software to help you in this task as [Varnish](/doc/administrate/cache) for the HTTP cache, and [Redis](/doc/addons/redis) for the object caching.
+We provide different tools and software to help you in this task as [Varnish](/doc/develop/varnish) for the HTTP cache, and [Redis](/doc/addons/redis) for the object caching.
 
 ### Performance plugins
 
@@ -159,7 +159,7 @@ We noticed performances problems when performance plugins are enabled and we rec
 
 ### HTTP Cache with Varnish
 
-Enabling [Varnish](/doc/administrate/cache) for your application is very simple. All instances of PHP provide [Varnish](/doc/administrate/cache), you just have to configure your application to use it.
+Enabling [Varnish](/doc/develop/varnish) for your application is very simple. All instances of PHP provide [Varnish](/doc/develop/varnish), you just have to configure your application to use it.
 
 1. To use Varnish in your application, you have to create a `varnish.vcl` file in the `clevercloud` folder of your application. If this folder doesn't exist, create it in the **root** of your project.
 

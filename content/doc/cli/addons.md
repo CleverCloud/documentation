@@ -19,6 +19,16 @@ Add-ons on Clever Cloud are databases, storage services, tools or third party se
 [--org, -o, --owner]                Organisation ID (or name, if unambiguous)
 ```
 
+## list
+
+To list provisioned add-ons, use:
+
+```
+clever addon
+clever addon list
+clever addon list --format json
+```
+
 ## providers
 
 To use add-ons, you need to identify the corresponding provider. To get information about them (plans, regions, versions), use:
@@ -89,6 +99,40 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 > ```
 > clever addon env ADDON_ID --format shell | source
 > ```
+
+## config-provider
+
+Configuration Providers are add-ons that store environment variables you can share across multiple applications through [service dependencies](/doc/cli/services-depedencies/). They have their own dedicated commands:
+
+```
+clever config-provider list
+clever config-provider list --format json
+```
+
+To get, set or remove environment variables of a Configuration Provider, use:
+
+```
+clever config-provider get CONFIG_PROVIDER_ID_OR_NAME
+clever config-provider get CONFIG_PROVIDER_ID_OR_NAME --format shell
+clever config-provider set CONFIG_PROVIDER_ID_OR_NAME VARIABLE_NAME VARIABLE_VALUE
+clever config-provider rm CONFIG_PROVIDER_ID_OR_NAME VARIABLE_NAME
+```
+
+You can import environment variables from `stdin` (this replaces all existing variables):
+
+```
+clever config-provider import CONFIG_PROVIDER_ID_OR_NAME < .env
+clever config-provider import CONFIG_PROVIDER_ID_OR_NAME --format json < config.json
+```
+
+To open the Configuration Provider in Clever Cloud Console, use:
+
+```
+clever config-provider open CONFIG_PROVIDER_ID_OR_NAME
+```
+
+> [!TIP]
+> You can target a Configuration Provider by its add-on ID, real ID (`config_xxx`) or name.
 
 ## database backups
 

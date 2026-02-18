@@ -22,7 +22,7 @@ To list exposed configuration, use:
 
 ```
 clever published-config
-clever published-config --F json
+clever published-config -F json
 clever published-config --format shell
 ```
 

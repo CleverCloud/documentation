@@ -38,6 +38,6 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Request Flow extension
 
-Request Flow is now available in Go, Java/Scala, Meteor, Node.js & Bun, PHP and Static with Apache runtimes. Python (without uv) and Ruby are coming soon. If your application currently uses Varnish in Go or Node.js, you must ask support to switch to this new release. Your application will have to move from port `8081` to `9000`.
+Request Flow is now available in Go, Java/Scala, Meteor, Node.js & Bun, PHP and Static with Apache runtimes. Python (without uv) and Ruby are coming soon. If your application currently uses Varnish in Go or Node.js, you must [ask support](https://console.clever-cloud.com/ticket-center-choice) to switch to this new release. Your application will have to move from port `8081` to `9000`.
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)

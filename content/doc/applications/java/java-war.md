@@ -161,6 +161,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 | WILDFLY23  | Use Wildfly servlet container 23.x (see <https://wildfly.org/>)                              |     |
 
 {{% content "url_healthcheck" %}}
+{{% content "request-flow" %}}
 
 ## Custom run command
 

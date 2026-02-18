@@ -134,7 +134,7 @@ In this example:
 | `CC_VARNISH_FILE` | Path to a custom Varnish VCL file (default: `clevercloud/varnish.vcl`) |
 | `OTOROSHI_CHALLENGE_SECRET` | Otoroshi challenge secret. Activates Otoroshi Challenge verification in the request flow |
 
-- [Learn more about Varnish on Clever Cloud](/doc/administrate/cache/)
+- [Learn more about Varnish on Clever Cloud](/doc/develop/varnish/)
 - [Learn more about Redirection.io](https://redirection.io/)
 - [Learn more about OAuth2 Proxy](https://oauth2-proxy.github.io/oauth2-proxy/)
 - [Learn more about Otoroshi on Clever Cloud](/doc/addons/otoroshi/)

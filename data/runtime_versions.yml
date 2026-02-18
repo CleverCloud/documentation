@@ -82,6 +82,16 @@ sws:
   default:
     - "2.40.1"
 
+varnish:
+  eol_source: https://varnish-cache.org/releases/
+  default:
+    - "8.0"
+
+varnish-modules:
+  eol_source: https://github.com/varnish/varnish-modules/releases
+  default:
+    - "0.27"
+
 v:
   eol_source: https://github.com/vlang/v/releases
   default:

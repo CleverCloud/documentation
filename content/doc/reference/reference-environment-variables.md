@@ -110,8 +110,8 @@ Use these to define [commands to run](/doc/develop/build-hooks) between various 
 |[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
-|[`CC_VARNISH_FILE`](/doc/administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
-|[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_VARNISH_FILE`](/doc/develop/varnish "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
+|[`CC_VARNISH_STORAGE_SIZE`](/doc/develop/varnish "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 {{% content "mise" %}}

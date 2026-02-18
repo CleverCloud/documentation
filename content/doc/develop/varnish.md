@@ -21,7 +21,7 @@ aliases:
 [Varnish](https://www.varnish-cache.org/) is an HTTP proxy-cache that sits as a reverse proxy between your application and the client. It caches responses according to rules you define, reducing load on your application. Clever Cloud provides **Varnish {{< runtime_version varnish >}} and varnish-modules {{< runtime_version varnish-modules >}}**.
 
 > [!NOTE] Supported runtimes
-> Varnish is available on all runtimes that support [Request Flow](/doc/develop/request-flow/): **.NET**, **Elixir**, **FrankenPHP**, **Go**, **Haskell**, **Java**, **Linux**, **Node.js & Bun**, **PHP with Apache**, **Rust**, **Static**, and **V (Vlang)**
+> Varnish is available on all runtimes that support [Request Flow](/doc/develop/request-flow/).
 
 ## Enable Varnish for your application
 
@@ -56,9 +56,7 @@ Clever Cloud provides [example Varnish configuration files](https://github.com/C
 
 ## Varnish with a monorepo
 
-If you use a monorepo, you may want to use Varnish for only some of its applications. Use `CC_VARNISH_FILE` to point to a specific configuration file.
-
-A `clevercloud/varnish.vcl` file at the root of your monorepo activates Varnish for all applications. To limit Varnish to specific applications, place the file elsewhere and create a symlink during deployment only for the applications that need it:
+If you use a monorepo, you may want to use Varnish for only some of its applications. Use `CC_VARNISH_FILE` to point to a specific configuration file. A `clevercloud/varnish.vcl` file at the root of your monorepo activates Varnish for all applications. To limit Varnish to specific applications, place the file elsewhere and create a symlink during deployment only for the applications that need it:
 
 ```bash
 CC_PRE_BUILD_HOOK="mkdir $APP_HOME/clevercloud; ln -s $APP_HOME/path/to/your/file/varnish.vcl $APP_HOME/clevercloud/varnish.vcl"

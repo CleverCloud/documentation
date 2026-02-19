@@ -66,6 +66,14 @@ Your Matomo is starting:
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
+By default we use Clever Cloud's domain names for the web interface, but you can set custom domains at creation through the `access-domain` option:
+
+```bash
+clever addon create addon-matomo myMatomoName --option access-domain=matomo.example.com
+```
+
+These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Matomo add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
+
 Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on add-on management.
 
 ## Accessing the Matomo interface

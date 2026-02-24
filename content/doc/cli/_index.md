@@ -36,6 +36,15 @@ You can contribute to it through [issue](https://github.com/CleverCloud/clever-t
 - [How to install Clever Tools](install)
 - [Create a Clever Cloud account](https://console.clever-cloud.com)
 
+Use Clever Tools through `npx` or `npm exec` for one-off usage or in CI/CD pipelines for example:
+
+```bash
+# Set/Export CLEVER_TOKEN and CLEVER_SECRET to login with a given account
+# --yes is used to skip the interactive prompts
+npx --yes clever-tools@latest version
+npm exec -- clever-tools@3.14 profile --format json
+```
+
 You'll find below the first commands to know to connect Clever Tools to your account, get its information and manage some options. Others are developed in dedicated pages:
 
 {{< cards >}}
@@ -47,7 +56,9 @@ You'll find below the first commands to know to connect Clever Tools to your acc
   {{< card link="/developers/doc/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/cli/notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
   {{< card link="/developers/doc/cli/operators" title="Operators (Managed services)" icon="document-check" >}}
+  {{< card link="/developers/doc/cli/profiles" title="Profiles and overrides" icon="user" >}}
   {{< card link="/developers/doc/cli/services-depedencies" title="Services dependencies" icon="endpoints" >}}
+  {{< card link="/developers/doc/cli/kubernetes" title="Kubernetes" icon="server-stack" >}}
 {{< /cards >}}
 
 ## basic commands
@@ -116,7 +127,7 @@ To connect to your Clever Cloud account, use:
 clever login
 ```
 
-It will open your default browser and start an Open Authorization ([OAuth](https://en.wikipedia.org/wiki/OAuth)) process to get a `token` and `secret` pair added in your account if it succeeds. You can manage it from the [Console](https://console.clever-cloud.com/users/me/oauth-tokens). Clever Tools will automatically store these `token` and `secret` values in a hidden `clever-tools.json` config file in the current local user home folder.
+It will open your default browser and start an Open Authorization ([OAuth](https://en.wikipedia.org/wiki/OAuth)) process to get a `token` and `secret` pair added in your account if it succeeds. You can manage it from the [Console](https://console.clever-cloud.com/users/me/tokens). Clever Tools will automatically store these `token` and `secret` values in a hidden `clever-tools.json` config file in the current local user home folder.
 
 If you already know them, you can use:
 
@@ -131,6 +142,7 @@ To log out, delete this file or use:
 
 ```
 clever logout
+clever logout --alias ALIAS
 ```
 
 ## profile
@@ -143,12 +155,15 @@ clever profile open
 clever profile -F json
 ```
 
+To manage multiple profiles or configure per-profile overrides, see: [Profiles and overrides](/doc/cli/profiles/)
+
 ## emails
 
 To list primary email and secondary emails associated with your Clever Cloud account, you can use:
 
 ```
 clever emails
+clever emails -F json
 ```
 
 To open the email management page in your browser, use:
@@ -183,6 +198,7 @@ To list public SSH keys associated with your Clever Cloud account, you can use:
 
 ```
 clever ssh-keys
+clever ssh-keys -F json
 ```
 
 To open the public SSH keys management page in your browser, use:

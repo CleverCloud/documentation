@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.3.8
+    - 1.3.9
 
 caddy:
   eol_source: https://github.com/caddyserver/caddy/releases
@@ -15,14 +15,13 @@ dotnet:
   accepted:
     - 6.0 (EOL)
     - 9.0
+    - 10.0 (LTS)
 
 elixir:
   eol_source: https://hexdocs.pm/elixir/compatibility-and-deprecations.html
   default:
     - 1.19
   accepted:
-    - 1.12 (EOL)
-    - 1.13 (EOL)
     - 1.14 (EOL)
     - 1.15
     - 1.16
@@ -57,7 +56,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 24.13.0 (npm 11.6.2)
+    - 24.13.1 (npm 11.8.0)
 
 php:
   eol_source: https://www.php.net/supported-versions.php
@@ -83,6 +82,16 @@ sws:
   default:
     - "2.40.1"
 
+varnish:
+  eol_source: https://varnish-cache.org/releases/
+  default:
+    - "8.0"
+
+varnish-modules:
+  eol_source: https://github.com/varnish/varnish-modules/releases
+  default:
+    - "0.27"
+
 v:
   eol_source: https://github.com/vlang/v/releases
   default:
@@ -100,3 +109,4 @@ python:
     - 3.11
     - 3.12
     - 3.13
+    - 3.14

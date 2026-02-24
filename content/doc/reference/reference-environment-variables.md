@@ -110,8 +110,8 @@ Use these to define [commands to run](/doc/develop/build-hooks) between various 
 |[`CC_METRICS_PROMETHEUS_PORT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the port on which the Prometheus endpoint is available | 9100 |
 |[`CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | 3 |
 |[`CC_METRICS_PROMETHEUS_USER`](/doc/metrics/#publish-your-own-metrics "Publish your own metrics") | Define the user for the basic auth of the Prometheus endpoint | |
-|[`CC_VARNISH_FILE`](/doc/administrate/cache "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
-|[`CC_VARNISH_STORAGE_SIZE`](/doc/administrate/cache "Cache") | Configure the size of the Varnish cache. | 1G |
+|[`CC_VARNISH_FILE`](/doc/develop/varnish "Cache") | The path to the Varnish configuration file, relative to your application root | `/clevercloud/varnish.vcl` |
+|[`CC_VARNISH_STORAGE_SIZE`](/doc/develop/varnish "Cache") | Configure the size of the Varnish cache. | 1G |
 |[`CC_WORKER_COMMAND`](/doc/develop/workers "Workers") | Command to run in background as a worker process. You can run multiple workers. |  |
 
 {{% content "mise" %}}
@@ -275,7 +275,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between `2` or `lts` | 2 |
-|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
+|[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/apache/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
 |`CC_LDAP_CA_CERT` |  |  |
@@ -289,10 +289,10 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`CC_OPCACHE_MAX_ACCELERATED_FILES` | Maximum number of files handled by opcache. | Default depends on the scaler size |
 |`CC_OPCACHE_MEMORY` | Set the shared opcache memory size | Default is about 1/8 of the RAM |
 |`CC_OPCACHE_PRELOAD` | The path of the PHP preload file (PHP version 7.4 or higher). |  |
-|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
-|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/#development-dependencies "Development dependencies") | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |
-|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
-|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#choose-your-php-version) | 8.3 |
+|[`CC_PHP_ASYNC_APP_BUCKET`](/doc/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Mount the default app FS bucket asynchronously. If set, should have value `async` |  |
+|[`CC_PHP_DEV_DEPENDENCIES`](/doc/applications/php/composer/#development-dependencies "Development dependencies") | Set to `install` to include dev dependencies; unset or set to `skip` to exclude them |  |
+|[`CC_PHP_DISABLE_APP_BUCKET`](/doc/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket "Speed up or disable the session on FS Bucket") | Disable entirely the app FS Bucket. Values are either `true`, `yes` or `disable` |  |
+|`CC_PHP_VERSION` | Choose your PHP version among [those supported](/doc/applications/php/#php-version) | 8.3 |
 |`CC_REALPATH_CACHE_TTL` | The size of the realpath cache to be used by PHP | 120 |
 |`CC_WEBROOT` | Define the `DocumentRoot` of your project | `.` |
 |`ENABLE_ELASTIC_APM_AGENT` | Elastic APM Agent for PHP | `true` if `ELASTIC_APM_SERVER_URL` is defined, `false` otherwise |
@@ -303,7 +303,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
 |`MEMORY_LIMIT` | Change the default memory limit |  |
-|[`SESSION_TYPE`](/doc/applications/php/#use-redis-to-store-php-sessions "Use Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
+|[`SESSION_TYPE`](/doc/applications/php/sessions-emails/#use-materia-kv-or-redis-to-store-php-sessions "Use Materia KV or Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |
 |`SQREEN_API_TOKEN` | organisation token. |  |
@@ -325,7 +325,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |[`CC_PYTHON_MANAGE_TASKS`](/guides/python-django-sample/#manage-py-tasks) | Comma-separated list of Django manage tasks |  |
 |`CC_PYTHON_MODULE` | Select which module you want to start with the path to the folder containing the app object. For example, a module called **server.py** in a folder called **/app** would be used here as **app.server:app** |  |
 |`CC_PYTHON_USE_GEVENT` | Set to true to enable Gevent |  |
-|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#supported-versions) | 3 |
+|`CC_PYTHON_VERSION` | Choose the Python version among [those supported](/doc/applications/python/#python-version) | 3 |
 |`ENABLE_GZIP_COMPRESSION` | Set to `true` to gzip-compress through Nginx |  |
 |`GZIP_TYPES` | Set the mime types to compress. | text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml |
 |`HARAKIRI` | Timeout (in seconds) after which an unresponding process is killed | 180 |

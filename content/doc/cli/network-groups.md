@@ -31,7 +31,7 @@ Tell us what you think of Network Groups and what features you need from it in [
 
 ## How it works
 
-When you create a Network Group, a Wireguard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, add a Clever Cloud application and an associated add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
+When you create a Network Group, a WireGuard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, add a Clever Cloud application and an associated add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
 
 When an application connects to a Network Group, you can reach it on any port inside a NG through its domain name. Any instance of this application is a peer, you can reach independently through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
 
@@ -111,8 +111,22 @@ clever ng unlink redis_xxx ngIdorLabel
 After an unlink, you may need to restart the application to apply the changes.
 
 > [!TIP]
-> To link add-ons to a Network Group, use real IDs (`mysql_xxx`, `postgresql_xxx`, `redis_`, etc.). \
+> To link add-ons to a Network Group, use real IDs (`mysql_xxx`, `postgresql_xxx`, `redis_xxx`, etc.). \
 > Only add-ons deployed as of 2024 support Network Groups. If you can't access your add-on, migrate or restart it.
+
+## Manage external peers
+
+To create an external peer in a Network Group, you need to provide a label, Network Group and WireGuard public key:
+
+```
+clever ng create external myExternalPeer myNG wg_public_key
+```
+
+To delete an external peer from a Network Group:
+
+```
+clever ng delete external peerIdOrLabel myNG
+```
 
 ## Get information of a Network Group, a member or a peer
 
@@ -123,19 +137,26 @@ clever ng get ngIdOrLabel -F json
 clever ng get resourceIdOrName
 ```
 
+You can specify the type of resource to look for with the `--type` option (`NetworkGroup`, `Member`, `CleverPeer`, `ExternalPeer`):
+
+```
+clever ng get resourceIdOrName --type ExternalPeer
+```
+
 You can also search for Network Groups, members or peers:
 
 ```
 clever ng search text_to_search -F json
+clever ng search text_to_search --type Member
 ```
 
 > [!NOTE]
-> The search command is case-insensitive and will return all resources containing the search string
-> The get command look for an exact match and will return an error if multiple resources are found
+> The search command is case-insensitive and will return all resources containing the search string.
+> The get command looks for an exact match and will return an error if multiple resources are found.
 
-## Get the Wireguard configuration of a Peer
+## Get the WireGuard configuration of a Peer
 
-To get the Wireguard configuration of a peer (a `json` formatted output is available):
+To get the WireGuard configuration of a peer (a `json` formatted output is available):
 
 ```
 clever ng get-config peerIdOrLabel myNG

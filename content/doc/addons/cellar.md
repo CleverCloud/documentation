@@ -528,7 +528,7 @@ This policy example grants read-only access to a bucket for another user, using 
 
 ```
 
-Replace the `<bucket-name>` with your bucket name and `<cellar_xxx>` with the ID of the cellar to which you want to grant read-only access..
+Replace the `<bucket-name>` with your bucket name and `<cellar_xxx>` with the ID of the cellar to which you want to grant read-only access.
 
 Set the policy to your bucket using s3cmd:
 

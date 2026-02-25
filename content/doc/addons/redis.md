@@ -48,6 +48,10 @@ This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/d
 
 {{% content "kv-explorer" %}}
 
+## Performance optimisations
+
+Clever Cloud automatically applies kernel-level performance settings recommended by Redis. Transparent Huge Pages (THP) are disabled at startup to prevent latency spikes and memory fragmentation under heavy workloads, in line with [official Redis documentation](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/latency/).
+
 ## Default retention policy
 
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,

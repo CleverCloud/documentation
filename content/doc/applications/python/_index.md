@@ -134,5 +134,4 @@ The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 {{% content "new-relic" %}}
 
 {{% content "url_healthcheck" %}}
-{{% content "redirectionio" %}}
-{{% content "varnish" %}}
+{{% content "request-flow" %}}

@@ -101,3 +101,5 @@ If you don't set the [`CC_WEBROOT`](/doc/reference/reference-environment-variabl
 
 ## 🎓 Static Site Generators (SSG) guides
 {{% content-raw "static-guides" %}}
+
+{{% content "request-flow" %}}

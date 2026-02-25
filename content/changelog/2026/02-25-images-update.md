@@ -1,6 +1,6 @@
 ---
 title: "Images update: FrankenPHP 1.11.3 (PHP 8.5), Request Flow in all runtimes"
-description: Request Flow expansion is now done. You can use PHP 8.4 or 8.5 un FrankenPHP
+description: Request Flow expansion is now done. You can use PHP 8.4 or 8.5 in FrankenPHP
 date: 2026-02-25
 tags:
   - images

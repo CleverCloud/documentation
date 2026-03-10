@@ -114,8 +114,8 @@ Extension               | Description
  pgrowlocks             | Show row-level locking information
  pgstattuple            | Show tuple-level statistics
  pgvector               | Vector data type and ivfflat and hnsw access methods
- plcoffee               | PL/CoffeeScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
- plls                   | PL/LiveScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
+ plcoffee               | PL/CoffeeScript (v8) trusted procedural language (not supported on PostgreSQL 14+)
+ plls                   | PL/LiveScript (v8) trusted procedural language (not supported on PostgreSQL 14+)
  plpgsql                | PL/pgSQL procedural language
  plv8                   | PL/JavaScript (v8) trusted procedural language (not supported on PostgreSQL 16+)
  postgis                | PostGIS geometry and geography spatial types and functions

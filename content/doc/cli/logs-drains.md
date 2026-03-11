@@ -28,6 +28,8 @@ clever drain enable <DRAIN-ID>
 clever drain disable <DRAIN-ID>
 ```
 
+The `clever drain` command lists all drains for the target application and shows key metrics for each one. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
+
 Where `DRAIN-TYPE` is one of:
 
 - `datadog`: for Datadog endpoint (note that this endpoint needs your Datadog API Key)

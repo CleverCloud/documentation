@@ -61,6 +61,7 @@ LLM
 LLMs
 Lume
 LTS
+Materia
 Matomo
 maven
 Metabase

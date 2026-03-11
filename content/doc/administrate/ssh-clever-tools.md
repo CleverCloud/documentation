@@ -55,18 +55,36 @@ clever ssh
 > bas@67fbf787-3518-47bb-abd9-2c2575844edd ~ $
 ```
 
-If multiple instances are running, you will be asked which one to use:
+If multiple instances are running, you are prompted to select one interactively:
 
 ```shell
 clever ssh
-> 1) Sleepy Ponita - Instance 0 - UP (11281f38-31ff-43a7-8595-a2d82630c32b)
-> 2) Tense Caterpie - Instance 1 - UP (b10d19d9-5238-408b-b038-3e32c7a301c2)
-> Your choice: 1
+> ? Select an instance:
+> ❯ Sleepy Ponita - Instance 0 - UP (11281f38-31ff-43a7-8595-a2d82630c32b)
+>   Tense Caterpie - Instance 1 - UP (b10d19d9-5238-408b-b038-3e32c7a301c2)
 > Opening an ssh shell
 > bas@11281f38-31ff-43a7-8595-a2d82630c32b ~ $
-
-You are now connected to the machine.
 ```
+
+### Running a remote command
+
+You can execute a single command on a running instance with the `--command` (or `-c`) option. The command runs in a login shell on the remote instance and exits immediately after completion:
+
+```shell
+# List application files
+clever ssh -c 'ls -lah $APP_HOME'
+
+# List running processes
+clever ssh -c "ps aux"
+
+# Inspect application environment variables
+clever ssh -c "env | sort"
+
+# Read application logs
+clever ssh -c "journalctl -u bas-deploy.service --no-pager -n 50"
+```
+
+This is useful for quick diagnostics, scripting or automation. AI coding assistants such as Claude Code, Codex, Cursor or OpenCode can use this option to inspect the state of a running instance, analyse configuration files, check logs or troubleshoot issues on your behalf.
 
 ### Note for Windows users
 

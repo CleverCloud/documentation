@@ -153,20 +153,25 @@ Find below the list of currently supported commands:
 | `DECRBY` | Decrements the number stored at `key` by the given `decrement`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `DEL` | Removes the specified `key`. A key is ignored if it doesn't exist. |
 | `EXISTS` | Returns if `key` exists. |
-| `EXPIRE` | Set a `key` time to live in seconds. After the timeout has expired, the `key` will be automatically deleted.  The time to live can be updated using the `EXPIRE` command or cleared using the `PERSIST` command. |
+| `EXPIRE` | Set a `key` time to live in seconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `EXPIRE` command or cleared using the `PERSIST` command. |
+| `EXPIREAT` | Sets a `key` to expire at the specified Unix timestamp (in seconds). After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist. |
 | `FLUSHALL` | Delete all the keys of all the existing databases, not just the currently selected one. This command never fails. |
 | `FLUSHDB` | Delete all the keys of the currently selected DB. This command never fails. |
 | `GET` | Get the value of `key`. If the `key` doesn't exist the special value nil is returned. An error is returned if the value stored at `key` is not a string, because `GET` only handles string values. |
 | `GETBIT` | Returns the bit value at offset in the string value stored at `key`. |
+| `GETDEL` | Gets the value of `key` and deletes the key. If the `key` doesn't exist, returns `nil`. Returns an error if the value stored at `key` isn't a string. |
 | `GETRANGE` | Returns the substring of the string value stored at `key`, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So `-1` means the last character, `-2` the penultimate and so forth. |
 | `HDEL` | Removes the specified fields from the hash stored at `key`. Specified fields that do not exist within this hash are ignored. If `key` does not exist, it is treated as an empty hash and this command returns `0`. |
 | `HELLO` | Switch to a different protocol, optionally authenticating and setting the connection's name, or provide a contextual client report. It always replies with a list of current server and connection properties. |
+| `HEXISTS` | Returns `1` if `field` exists in the hash stored at `key`, `0` if `field` or `key` don't exist. Returns an error if the value stored at `key` isn't a hash. |
 | `HGET` | Returns the value associated with `field` in the hash stored at `key`. If `key` does not exist, or `field` is not present in the hash, `nil` is returned. |
 | `HGETALL` | Returns all fields and values of the hash stored at `key`. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash. |
+| `HINCRBY` | Increments the number stored at `field` in the hash stored at `key` by the given `increment`. If `key` doesn't exist, creates a new key holding a hash. If `field` doesn't exist, sets the value to `0` before performing the operation. Returns an error if the field contains a value of the wrong type or the resulting value exceeds a 64-bit signed integer. |
 | `HLEN` | Returns the number of fields contained in the hash stored at `key`. If `key` does not exist, it is treated as an empty hash and `0` is returned. |
 | `HMGET` | Returns the values associated with the specified `fields` in the hash stored at `key`. For every field that does not exist in the hash, a `nil` value is returned. Because of this, the operation never fails. |
 | `HSCAN` | Incrementally iterate over hash fields and associated values. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
 | `HSET` | Sets the specified fields to their respective values in the hash stored at `key`. If `key` does not exist, a new key holding a hash is created. If `key` exists but does not hold a hash, an error is returned. |
+| `HSETNX` | Sets `field` in the hash stored at `key` to `value`, only if `field` doesn't yet exist. If `key` doesn't exist, creates a new key holding a hash. If `field` already exists, the operation has no effect. Returns `1` if `field` is a new field in the hash and the value was set, `0` if `field` already exists. |
 | `INCR` | Increments the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INCRBY` | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
 | `INCRBYFLOAT` | Increment the string representing a floating point number stored at `key` by the specified `increment`. If the key does not exist, it is set to `0` before performing the operation. An error is returned if the key contains a value of the wrong type or a string that can not be represented as a floating point number. |
@@ -179,7 +184,8 @@ Find below the list of currently supported commands:
 | `MGET` | Returns the values of all specified keys. For every key that doesn't hold a string value or doesn't exist, the special value `nil` is returned. Because of this, the operation never fails. |
 | `MSET` | Sets the given keys to their respective values. `MSET` replaces existing values with new values, just as regular `SET`. `MSET` is atomic, so all given keys are set at once. It is not possible for clients to see that some keys were updated while others are unchanged. |
 | `PERSIST` | Remove the existing time to live associated with the `key`. |
-| `PEXPIRE` | Set a `key` time to live in milliseconds. After the timeout has expired, the `key` will be automatically deleted.  The time to live can be updated using the `PEXPIRE` command or cleared using the `PERSIST` command. |
+| `PEXPIRE` | Set a `key` time to live in milliseconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `PEXPIRE` command or cleared using the `PERSIST` command. |
+| `PEXPIREAT` | Sets a `key` to expire at the specified absolute Unix timestamp in milliseconds. After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist. |
 | `PING` | Returns `PONG` if no argument is provided, otherwise return a copy of the argument as a bulk. |
 | `PTTL` | Returns the remaining time to live of a `key`, in milliseconds. |
 | `SADD` | Add the specified members to the set stored at `key`. Specified members that are already a member of this set are ignored. If `key` doesn't exist, a new set is created before adding the specified members. |
@@ -200,9 +206,9 @@ Find below the list of currently supported commands:
 | `SRANDMEMBER` | When called with just the `key` argument, return a random element from the set value stored at `key`. |
 | `SREM` | Remove the specified members from the set stored at `key`. Specified members that are not a member of this set are ignored. If `key` doesn't exist, it is treated as an empty set and this command returns `0`. |
 | `SSCAN` | Incrementally iterate over set elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
+| `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `SUNION` | Returns the members of the set resulting from the union of all the given sets. |
 | `SUNIONSTORE` | This command is equal to `SUNION`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
-| `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
 | `TTL` | Returns the remaining time to live of a `key`, in seconds. |
 | `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list`, `set` or `string`. |
 

@@ -128,11 +128,13 @@ clever drain create [--alias <alias>] <DRAIN-TYPE> <DRAIN-URL> [--username <user
 
 Where `DRAIN-TYPE` is one of:
 
-- `TCPSyslog`: for TCP syslog endpoint;
-- `UDPSyslog`: for UDP syslog endpoint;
-- `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
-- `ElasticSearch`: for Elasticsearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
-- `DatadogHTTP`: for Datadog endpoint (note that this endpoint needs your Datadog API Key).
+- `syslog-tcp`: for TCP syslog endpoint;
+- `syslog-udp`: for UDP syslog endpoint;
+- `raw-http`: for HTTP endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
+- `elasticsearch`: for Elasticsearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
+- `datadog`: for Datadog endpoint (note that this endpoint needs your Datadog API Key);
+- `newrelic`: for NewRelic endpoint (note that this endpoint needs your NewRelic API Key);
+- `ovh-tcp`: for OVH TCP syslog endpoint (note that this endpoint has an optional sd-params parameter).
 
 You can list the currently activated drains with this command.
 
@@ -152,10 +154,10 @@ Use the logs drain to send your add-on's logs by using `--addon` flag, the value
 
 ### Elasticsearch
 
-ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your Elasticsearch endpoint.
+Elasticsearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your Elasticsearch endpoint.
 
 ```bash
-clever drain create ElasticSearch https://xxx-elasticsearch.services.clever-cloud.com/_bulk --username USERNAME --password PASSWORD
+clever drain create elasticsearch https://xxx-elasticsearch.services.clever-cloud.com/_bulk --username USERNAME --password PASSWORD
 ```
 
 Each day, we will create an index `logstash-<yyyy-MM-dd>` and push logs to it.
@@ -209,7 +211,7 @@ For more information, please refer to the [official documentation](https://www.e
 To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) drain, you just need to use:
 
 ```bash
-clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
+clever drain create datadog "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
 ```
 
 {{< callout type="warning" >}}
@@ -221,7 +223,7 @@ Datadog has two zones, **EU** and **COM**. An account on one zone is not availab
 To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, use:
 
 ```bash
-clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
+clever drain create newrelic "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
 ```
 
 {{< callout type="warning" >}}
@@ -232,7 +234,7 @@ NewRelic has two zones, **EU** and **US**. An account on one zone is not availab
 
 To export logs from an application or an add-on to [OVHcloud Logs Data Platform](https://help.ovhcloud.com/csm/en-ie-logs-data-platform-quick-start?id=kb_article_view&sysparm_article=KB0055819), use the following setup:
 
-- A **TCP** drain log with `clever drain create TCPSyslog`
+- A **TCP** drain log with `clever drain create syslog-tcp`
 - Your Logs Data Platform **host** with **port** `514` (SSL ports aren't supported for TCP drains)
 - The **write token** for your stream (provided on your Logs Data Platform console)
 
@@ -243,7 +245,7 @@ On your terminal, use the following command:
   {{< tab >}}**Exporting logs from an application**:
 
   ```shell
-  clever drain create TCPSyslog tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
+  clever drain create syslog-tcp tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
   ```
 
   Replace the following values:
@@ -257,7 +259,7 @@ On your terminal, use the following command:
   {{< tab >}}**Exporting logs from an add-on**:
 
   ```shell
-  clever drain create TCPSyslog tcp://<host>:514 -addon <addon_id> --sd-params="X-OVH-TOKEN=\"<token>\""
+  clever drain create syslog-tcp tcp://<host>:514 -addon <addon_id> --sd-params="X-OVH-TOKEN=\"<token>\""
   ```
 
   Replace the following values:

@@ -123,6 +123,8 @@ That you can do, by setting the "build" field object in the `war.json` file:
 |Required | **type**  |- The tool you want to use to build your app. <br>- Can be "maven", "gradle", "sbt" or "ant" |
 |Required | **goal**  |- The goal you want the tool to execute.<br>- Basically, for maven, you want to put "package" in here. |
 
+ {{% content "new-relic" %}}
+
 ## Available containers for war.json
 
 Here's the list of the configuration values for the "container" field in `war.json` (with **End Of Life** versions tagged as `EOL`):
@@ -140,6 +142,8 @@ Here's the list of the configuration values for the "container" field in `war.js
 | WILDFLY27  | Use Wildfly servlet container 27.x (see <https://wildfly.org/>)                              | EOL |
 | WILDFLY33  | Use Wildfly servlet container 33.x (see <https://wildfly.org/>)                              | EOL |
 
+{{% content "java-env-injection" %}}
+
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}
 
@@ -154,8 +158,6 @@ Example:
 ```bash
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
-
- {{% content "new-relic" %}}
 
  {{% content "deploy-git" %}}
 

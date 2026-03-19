@@ -77,6 +77,15 @@ configure an OAuth token in your Composer configuration file or in a separate fi
 
 You can find more documentation about Composer configuration in the [Composer schema reference](https://getcomposer.org/doc/04-schema.md).
 
+## Private repositories
+
+If your project depends on packages from private repositories (such as [Packagist.com](https://packagist.com/), Laravel Nova, or a private Git host), you need to configure authentication for Composer during deployment. Set the `COMPOSER_AUTH` environment variable in the Clever Cloud console with a JSON object containing your credentials. Composer reads this variable natively at install time, so you don't need to commit any secret to your repository.
+
+> [!WARNING]
+> Do not use an `auth.json` file committed to your repository. This approach exposes credentials in your version control history. The `COMPOSER_AUTH` environment variable is the recommended method.
+
+The JSON structure follows the [Composer authentication schema](https://getcomposer.org/doc/articles/authentication-for-private-packages.md).
+
 ## Post-build hook example
 
 You use Artisan to manage your project and you want to execute *artisan migrate* before running your app.

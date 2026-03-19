@@ -180,6 +180,10 @@ If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You 
 
 If you use Bun, your application is deployed with the latest available version on Clever Cloud (`{{< runtime_version bun >}}`). To customise the Bun cache directory, set `CC_BUN_INSTALL_CACHE_DIR`.
 
+Bun includes a [native S3 client](https://bun.sh/docs/api/s3) that works with [Cellar](/doc/addons/cellar/#using-sdks), the Clever Cloud S3-compatible object storage service, with no external dependency required.
+
+* [Learn more about Bun native Clever Cloud add-ons support with examples](https://github.com/CleverCloud/bun-addons-examples)
+
 ### pnpm and Yarn versions
 
 To load a specific version, set the `packageManager` field in your `package.json` file. For example, to use `pnpm@10.14.0`:

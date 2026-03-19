@@ -91,7 +91,7 @@ application.secret=${APPLICATION_SECRET}
 
 {{% content "env-injection" %}}
 
-To access environment variables from your code, just get them from the environment with `System.getenv("MY_VARIABLE")`. Be aware that it can return null.
+In Scala code, retrieve an environment variable with `System.getenv("MY_VARIABLE")`, it returns `null` when the variable is not defined.
 
 {{% content "deploy-git" %}}
 

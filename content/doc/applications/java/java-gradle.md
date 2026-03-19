@@ -76,6 +76,10 @@ You can use the following properties:
 | Optional | **build → goal**  | is the target you want to use to build your project                       |
 | Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |
 
+ {{% content "new-relic" %}}
+
+{{% content "java-env-injection" %}}
+
 ## Custom run command
 
 If you need to run a custom command
@@ -87,17 +91,6 @@ Example:
 ```bash
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
-
-### Environment injection
-
-Clever Cloud can inject environment variables that are defined in the
-dashboard and by add-ons linked to your application.
-
-For Java applications, the environment is injected in the `System.getProperties()` object.
-
-So, to use a variable, you just need `System.getProperties().getProperty("MY_VARIABLE")`.
-
-For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
 ## The Gradle Wrapper
 
@@ -121,8 +114,6 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
     {{< /filetree/folder >}}
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
-
- {{% content "new-relic" %}}
 
  {{% content "deploy-git" %}}
 

@@ -114,6 +114,10 @@ Or use the `CC_MAVEN_PROFILES` environment variable.
 
 Eg. `CC_MAVEN_PROFILES="prod"`.
 
+ {{% content "new-relic" %}}
+
+{{% content "java-env-injection" %}}
+
 ## Custom run command
 
 If you need to run a custom command
@@ -125,8 +129,6 @@ Example:
 ```bash
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
-
- {{% content "new-relic" %}}
 
  {{% content "deploy-git" %}}
 

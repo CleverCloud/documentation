@@ -175,6 +175,8 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
+{{% content "java-env-injection" %}}
+
  {{% content "new-relic" %}}
 
  {{% content "deploy-git" %}}

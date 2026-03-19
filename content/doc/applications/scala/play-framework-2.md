@@ -70,10 +70,9 @@ For instance, if your Sbt project contains a `shared` and `play` module and you 
 
  {{% content "new-relic" %}}
 
- {{% content "env-injection" %}}
+{{% content "java-env-injection" %}}
 
-To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`.
-You can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+To access the environment variables from your code, you can also add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`.
 
  {{% content "deploy-git" %}}
 

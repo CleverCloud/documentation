@@ -89,9 +89,7 @@ application.secret=${APPLICATION_SECRET}
 
 {{% content "new-relic" %}}
 
-{{% content "env-injection" %}}
-
-To access environment variables from your code, just get them from the environment with `System.getenv("MY_VARIABLE")`. Be aware that it can return null.
+{{% content "java-env-injection" %}}
 
 {{% content "deploy-git" %}}
 

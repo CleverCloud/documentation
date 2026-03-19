@@ -87,23 +87,11 @@ production:
 
 ### Manage your static files and assets
 
-Static files are configured with [environment variables](#setting-up-environment-variables-on-clever-cloud):
+For a Rails application using the asset pipeline, add `assets:precompile` to [`CC_RAKEGOALS`](#configure-rake-goals) so that assets are built during deployment.
 
-`STATIC_FILES_PATH`: should point to a directory where your static files are stored.
+Set `STATIC_FILES_PATH=public` to serve the generated files through NGINX consistently across Rails versions. Leave `STATIC_URL_PREFIX` unset for a standard Rails application. NGINX then serves common static file extensions from `public` and forwards other requests to Rails.
 
-`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (for example `/public/`)
-
-**Note**: the path of your folder must be absolute regarding the root of your application.
-
-**Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
-
-If you use the asset pipeline, make sure to include the `assets:precompile` task in the `CC_RAKEGOALS` environment variable value.
-
-```bash
-CC_RAKEGOALS="db:migrate, assets:precompile"
-```
-
-**Note**: if your project uses `webpacker`, make sure to enable the dedicated build instance option in the **Information** menu of your application in the Clever Cloud console because `webpacker` needs a lot a resources when starting.
+For other Rack applications, `STATIC_FILES_PATH` specifies the static files directory relative to the application root. You can optionally set `STATIC_URL_PREFIX` to expose these files under a specific URL path, such as `/assets`. Setting it to `/` makes NGINX look for every requested path in the static files directory before forwarding missing files to the application.
 
 ### Using Active Storage and Cellar S3
 

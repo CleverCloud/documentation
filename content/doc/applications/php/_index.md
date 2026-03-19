@@ -127,24 +127,24 @@ date.timezone=Europe/Paris
 
 #### Memory Limit
 
-When php-fpm spawns a worker it allocates a smaller part of the application's memory to the worker, here is the allocated memory for each flavor:
+When php-fpm spawns a worker it allocates a smaller part of the application's available memory to the worker. The available memory is the instance's total RAM minus system overhead (monitoring, logging and kernel). Here are the default values for each flavor:
 
- | Flavor   | Memory Limit |
- |----------|--------------|
- |Pico      | 64M          |
- |Nano      | 64M          |
- |XS        | 128M         |
- |S         | 256M         |
- |M         | 384M         |
- |L         | 512M         |
- |XL        | 768M         |
- |2XL       | 1024M        |
- |3XL       | 1536M        |
- |4XL+      | 2048M        |
+ | Flavor   | Default Memory Limit |
+ |----------|----------------------|
+ |Pico      | 64M                  |
+ |Nano      | 64M                  |
+ |XS        | 128M                 |
+ |S         | 256M                 |
+ |M         | 384M                 |
+ |L         | 512M                 |
+ |XL        | 768M                 |
+ |2XL       | 1024M                |
+ |3XL       | 1536M                |
+ |4XL+      | 2048M                |
 
-To change this limit you can define `MEMORY_LIMIT` [environment variable](/doc/reference/reference-environment-variables#php).
+To change this limit, define the `MEMORY_LIMIT` [environment variable](/doc/reference/reference-environment-variables#php) (in MB, as an integer).
 
-If you define a limit exceeding the application memory it will use the default one.
+The maximum allowed value is the application's available memory, which is lower than the instance's total RAM due to system overhead. For example, a Nano instance has 512 MB of total RAM, but only around 416 MB are available to your application. If you set `MEMORY_LIMIT` higher than the available memory, the default value is used instead and a warning is logged. Setting `max_children` through `CC_CONFIGURATION_PM_MAX_CHILDREN` also affects the effective memory limit, as the system adjusts it to ensure all workers can fit in the available memory.
 
 ## Frameworks and CMS
 

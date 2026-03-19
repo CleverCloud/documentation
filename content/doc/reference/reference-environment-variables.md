@@ -278,6 +278,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |-----------------------|------------------------------|--------------------------------|
 |`ALWAYS_POPULATE_RAW_POST_DATA` |  |  |
 |`CC_COMPOSER_VERSION` | Choose your composer version between `2` or `lts` | 2 |
+|[`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/applications/php/#memory-limit) | Set the number of PHP-FPM workers. On XS and larger flavors, increasing it can lower the automatically calculated memory limit. Nano always uses six workers | Depends on the scaler size |
 |[`CC_CGI_IMPLEMENTATION`](/doc/applications/php/apache/#change-the-fastcgi-module) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | proxy_fcgi |
 |`CC_HTTP_BASIC_AUTH` | Restrict HTTP access to your application. Example: `login:password`. You can define multiple credentials using additional `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) environment variables. |  |
 | `CC_APACHE_HEADERS_SIZE` | Set the maximum size of the headers in Apache, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value | 8 |
@@ -305,7 +306,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |`HTTP_TIMEOUT` | Define a custom HTTP timeout | 180 |
 |`LDAPTLS_CACERT` |  |  |
 |`MAX_INPUT_VARS` |  |  |
-|`MEMORY_LIMIT` | Change the default memory limit |  |
+|[`MEMORY_LIMIT`](/doc/applications/php/#memory-limit) | Set the maximum memory each PHP script can allocate, as a positive integer interpreted in MiB without a unit suffix | Depends on the scaler size |
 |[`SESSION_TYPE`](/doc/applications/php/sessions-emails/#use-materia-kv-or-redis-to-store-php-sessions "Use Materia KV or Redis to store PHP sessions") | Choose `redis` to use it as session store |  |
 |`SOCKSIFY_EVERYTHING` |  |  |
 |`SQREEN_API_APP_NAME` | The name of your sqreen application. |  |

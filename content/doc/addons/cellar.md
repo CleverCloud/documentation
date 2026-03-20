@@ -151,12 +151,60 @@ s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
 
 Then, create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
 
-## Using AWS SDK
+## Using SDKs
 
-To use cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk).
-You only need to specify a custom endpoint (eg `cellar-c2.services.clever-cloud.com`).
+To use Cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk) or any S3-compatible client.
+You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-cloud.com`).
 
-{{< tabs items="Node.js,Java,Python,Ruby" >}}
+{{< tabs items="Bun,Node.js,Java,Python,Ruby" >}}
+
+  {{< tab >}}
+  **Bun (native S3 client)**
+
+  [Bun](https://bun.sh) includes a [native S3 client](https://bun.sh/docs/api/s3) with no external dependency. It works with any S3-compatible service, including Cellar.
+
+  **Required environment variables:**
+  - `CELLAR_ADDON_HOST` - Cellar endpoint (e.g., `cellar-c2.services.clever-cloud.com`)
+  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+  These variables are automatically available in your application when you [link a Cellar add-on](/doc/addons/cellar/) to it on Clever Cloud, regardless of the runtime (for example in a [Node.js & Bun application](/doc/applications/nodejs/)).
+
+  ```typescript
+  import { S3Client } from "bun";
+
+  // Create Bun S3 client with Cellar endpoint
+  const cellar = new S3Client({
+    accessKeyId: process.env.CELLAR_ADDON_KEY_ID,
+    secretAccessKey: process.env.CELLAR_ADDON_KEY_SECRET,
+    endpoint: `https://${process.env.CELLAR_ADDON_HOST}`,
+    bucket: "my-bucket",
+  });
+
+  // Upload a file
+  await cellar.write("hello.txt", "Hello from Cellar!");
+
+  // Read a file
+  const file = cellar.file("hello.txt");
+  const text = await file.text();
+
+  // Generate a presigned URL (synchronous, no network request)
+  const url = cellar.presign("hello.txt", {
+    expiresIn: 3600, // 1 hour
+  });
+
+  // Delete a file
+  await cellar.delete("hello.txt");
+  ```
+
+  You can also use the `s3://` protocol with `fetch` and `Bun.file()`. Set `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` and `S3_ENDPOINT` environment variables (or their `AWS_*` equivalents) to use this approach:
+
+  ```typescript
+  const response = await fetch("s3://my-bucket/hello.txt");
+  const content = await response.text();
+  ```
+
+  {{< /tab >}}
 
   {{< tab >}}
   **Node.js**

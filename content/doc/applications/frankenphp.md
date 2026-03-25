@@ -49,7 +49,7 @@ FrankenPHP runtime only requires a working web application, with an `index.php` 
 
 FrankenPHP currently deployed version on Clever Cloud is `{{< runtime_version frankenphp >}}` based on PHP `{{< runtime_version frankenphp php >}}` and Caddy server `{{< runtime_version frankenphp caddy >}}`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI. The `php` command available in hooks and scripts uses `frankenphp php-cli` under the hood.
 
-You can use FrankenPHP 1.11.3 with PHP 8.5 and Caddy 2.11.1, by setting the `CC_PHP_VERSION` environment variable to `8.5`.
+You can use FrankenPHP 1.12.1 with PHP 8.5 and Caddy 2.11.2, by setting the `CC_PHP_VERSION` environment variable to `8.5`.
 
 - [FrankenPHP PHP 8.4 info](https://frankenphpinfo-8.4.cleverapps.io/)
 - [FrankenPHP PHP 8.5 info](https://frankenphpinfo-8.5.cleverapps.io/)

@@ -13,17 +13,13 @@ You need to provide a `gems.locked` or `Gemfile.lock` file. To do that ensure yo
 
 ### Choose ruby version
 
-If you specify a ruby version in your `gems.rb` of `Gemfile`, we'll use it, otherwise; keep reading.
+You can specify a Ruby version in your `gems.rb` or `Gemfile`, or set `CC_RUBY_VERSION=<version>`, where `<version>` can be, for example:
 
-On your Clever Cloud application create an [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_RUBY_VERSION=rubyversion` where `rubyversion` represents:
+* "4" will select the greatest "4.x.y" version available.
+* "4.0" will select the greatest "4.0.y" version available.
+* "4.0.1" will select the "4.0.1" version.
 
-* "3" will select the greatest "3.X.Y" version available.
-* "3.3" will select the greatest "3.3.Y" version available.
-* "3.3.1" will select the "3.3.1" version.
-
-Due to current landscape in ruby applications, the default version is the greatest 3.3.Y. We also provide versions 2.3.Y, 2.4.Y, 2.5.Y, 2.6.Y and 2.7.Y.
-
-If given `rubyversion` does not match any available version, your deployment will fail.
+If the given `<version>` does not match any available version, your deployment will fail. If no version is specified, the latest 4.x version available on the image is used. Versions from the 4.x, 3.x and 2.x branches are available, but we recommend using an [officially supported version](https://www.ruby-lang.org/en/downloads/branches/).
 
 ### Choose your environment
 

@@ -80,7 +80,7 @@ php:
 sws:
   eol_source: https://github.com/static-web-server/static-web-server/releases
   default:
-    - "2.40.1"
+    - "2.42.0"
 
 varnish:
   eol_source: https://varnish-cache.org/releases/
@@ -95,7 +95,7 @@ varnish-modules:
 v:
   eol_source: https://github.com/vlang/v/releases
   default:
-    - "0.5"
+    - "0.5.1"
 
 python:
   eol_source: https://devguide.python.org/versions/#python-release-cycle

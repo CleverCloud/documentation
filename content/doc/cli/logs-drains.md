@@ -28,7 +28,16 @@ clever drain enable <DRAIN-ID>
 clever drain disable <DRAIN-ID>
 ```
 
-The `clever drain` command lists all drains for the target application and shows key metrics for each one. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
+All drain subcommands also accept `--addon ADDON_ID_OR_REAL_ID` to target an add-on instead of an application. The `--addon` option is mutually exclusive with `--app` and `--alias`.
+
+```
+clever drain --addon postgresql_xxxxxxxx
+clever drain create --addon postgresql_xxxxxxxx raw-http https://logs.example.com
+clever drain get --addon postgresql_xxxxxxxx <DRAIN-ID>
+clever drain remove --addon postgresql_xxxxxxxx <DRAIN-ID>
+```
+
+The `clever drain` command lists all drains for the target application or add-on and shows key metrics for each one. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
 
 Where `DRAIN-TYPE` is one of:
 

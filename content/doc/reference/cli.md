@@ -367,7 +367,7 @@ addon-id|addon-name                     Add-on ID (or name, if unambiguous)
 **Options**
 ```
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
--y, --yes                               Skip confirmation and delete the add-on directly
+-y, --yes                               Skip confirmation and proceed with deletion directly
 ```
 
 ### addon env
@@ -389,7 +389,7 @@ addon-id                                Add-on ID or real ID
 **Options**
 ```
 -F, --format <format>                   Output format (human, json, shell) (default: human)
--o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
 ```
 
 ### addon list
@@ -816,7 +816,7 @@ database-id|addon-id                    Any database ID (format: addon_UUID, pos
 **Options**
 ```
 -F, --format <format>                   Output format (human, json) (default: human)
--o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
 ```
 
 #### database backups download
@@ -838,7 +838,7 @@ backup-id                               A Database backup ID (format: UUID)
 
 **Options**
 ```
--o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
     --output, --out <file-path>         Redirect the output of the command in a file
 ```
 
@@ -875,7 +875,7 @@ clever deploy [options]
 ```
 -a, --alias <alias>                  Short name for the application
 -b, --branch <branch>                Branch to push (current branch by default)
--e, --exit-on <step>                 Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
+-e, --exit-on <step>                 Step at which the logs streaming is ended (deploy-start, deploy-end, never) (default: deploy-end)
     --follow                         Continue to follow logs after deployment has ended (deprecated, use `--exit-on never` instead)
 -f, --force                          Force deploy even if it's not fast-forwardable
 -q, --quiet                          Don't show logs during deployment
@@ -1067,6 +1067,7 @@ clever drain [options]
 
 **Options**
 ```
+    --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -1091,6 +1092,7 @@ drain-url                            Drain URL
 
 **Options**
 ```
+    --addon <addon-id>               Add-on ID or real ID
 -a, --alias <alias>                  Short name for the application
 -k, --api-key <api-key>              API key (for newrelic)
     --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
@@ -1118,6 +1120,7 @@ drain-id                       Drain ID
 
 **Options**
 ```
+    --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1140,6 +1143,7 @@ drain-id                       Drain ID
 
 **Options**
 ```
+    --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1162,6 +1166,7 @@ drain-id                       Drain ID
 
 **Options**
 ```
+    --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -1185,6 +1190,7 @@ drain-id                       Drain ID
 
 **Options**
 ```
+    --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1549,7 +1555,7 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Options**
 ```
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
--y, --yes                               Skip confirmation and delete the add-on directly
+-y, --yes                               Skip confirmation and proceed with deletion directly
 ```
 
 ### k8s get
@@ -2394,7 +2400,6 @@ ng-id|ng-label                          Network Group ID or label
 
 **Options**
 ```
--F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2526,6 +2531,146 @@ notification-id                         Notification ID
 **Options**
 ```
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+```
+
+## oauth-consumers
+
+**Description:** Manage OAuth consumers used with a Clever Cloud login
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers
+```
+
+### oauth-consumers create
+
+**Description:** Create an OAuth consumer
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers create <name> [options]
+```
+
+**Arguments**
+```
+name                                    Consumer name
+```
+
+**Options**
+```
+    --base-url <url>                    OAuth callback base URL
+-d, --description <description>         Consumer description
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --picture <url>                     Application logo URL
+    --rights <rights>                   Comma-separated list of rights (access-organisations, access-organisations-bills, access-organisations-consumption-statistics, access-organisations-credit-count, access-personal-information, manage-organisations, manage-organisations-applications, manage-organisations-members, manage-organisations-services, manage-personal-information, manage-ssh-keys, all)
+    --url <url>                         Application home URL
+```
+
+### oauth-consumers delete
+
+**Description:** Delete an OAuth consumer
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers delete <consumer-key|consumer-name> [options]
+```
+
+**Arguments**
+```
+consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
+```
+
+**Options**
+```
+-y, --yes                     Skip confirmation and proceed with deletion directly
+```
+
+### oauth-consumers get
+
+**Description:** Get details of an OAuth consumer
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers get <consumer-key|consumer-name> [options]
+```
+
+**Arguments**
+```
+consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
+```
+
+**Options**
+```
+-F, --format <format>         Output format (human, json) (default: human)
+    --with-secret             Include the consumer secret in the output
+```
+
+### oauth-consumers list
+
+**Description:** List OAuth consumers
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers list [options]
+```
+
+**Options**
+```
+-F, --format <format>    Output format (human, json) (default: human)
+```
+
+### oauth-consumers open
+
+**Description:** Open an OAuth consumer in the Clever Cloud Console
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers open <consumer-key|consumer-name>
+```
+
+**Arguments**
+```
+consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
+```
+
+### oauth-consumers update
+
+**Description:** Update an OAuth consumer
+
+**Since:** 4.8.0
+
+**Usage**
+```
+clever oauth-consumers update <consumer-key|consumer-name> [options]
+```
+
+**Arguments**
+```
+consumer-key|consumer-name         OAuth consumer key (or name, if unambiguous)
+```
+
+**Options**
+```
+    --base-url <url>               OAuth callback base URL
+-d, --description <description>    Consumer description
+-F, --format <format>              Output format (human, json) (default: human)
+-n, --name <name>                  Consumer name
+    --picture <url>                Application logo URL
+    --rights <rights>              Comma-separated list of rights (access-organisations, access-organisations-bills, access-organisations-consumption-statistics, access-organisations-credit-count, access-personal-information, manage-organisations, manage-organisations-applications, manage-organisations-members, manage-organisations-services, manage-personal-information, manage-ssh-keys, all)
+    --url <url>                    Application home URL
 ```
 
 ## open
@@ -2930,7 +3075,7 @@ clever restart [options]
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
     --commit <commit-id>       Restart the application with a specific commit ID
--e, --exit-on <step>           Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
+-e, --exit-on <step>           Step at which the logs streaming is ended (deploy-start, deploy-end, never) (default: deploy-end)
     --follow                   Continue to follow logs after deployment has ended (deprecated, use `--exit-on never` instead)
 -q, --quiet                    Don't show logs during deployment
     --without-cache            Restart the application without using cache

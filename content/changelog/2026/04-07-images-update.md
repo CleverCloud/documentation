@@ -1,6 +1,6 @@
 ---
 title: "Images update: mdBook 0.5, Static Web Server 2.42, OAuth2Proxy 7.15.1, Tailscale 1.96.3"
-description: Many tool updates: check your mdBook configuration for the 0.5 release
+description: Many tool updates, check your mdBook configuration for the 0.5 release
 date: 2026-04-07
 tags:
   - images

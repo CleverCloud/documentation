@@ -90,6 +90,18 @@ First, you'll need to create an OAuth consumer for your application. This can be
 * A **consumer key** (public identifier for your application)
 * A **consumer secret** (private key, never expose it client-side)
 
+You can also manage OAuth consumers from the CLI with the `clever oauth-consumers` command set, which covers the full lifecycle (list, create, get, update, open and delete). Use `--with-secret` on the `get` subcommand to retrieve the consumer secret:
+
+```bash
+clever oauth-consumers create my-app \
+  --description "My application" \
+  --url https://my-app.example.com \
+  --base-url https://my-app.example.com/oauth/callback \
+  --rights access-personal-information,access-organisations
+
+clever oauth-consumers get my-app --with-secret
+```
+
 > [!NOTE]
 > The **base URL** you set when creating the consumer is important: the callback URL you use during the OAuth flow must match this base URL's domain. For local development, register a separate consumer with `http://localhost:<port>` as the base URL.
 

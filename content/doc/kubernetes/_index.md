@@ -76,8 +76,10 @@ clever k8s list --org <your_org_id>
 
 Clever Cloud follows [the official Kubernetes version support policy](https://kubernetes.io/releases/), which maintains support for the most recent three minor versions (n-2). At any given time, the Kubernetes project maintains release branches for the latest three minor releases.
 
+The most recent Kubernetes minor version is v1.36 and CKE default version is currently set to the v1.35:
+
 * v1.36 (supported)
-* v1.35 (default)
+* v1.35 (supported) #default
 * v1.34 (supported)
 * v1.33 (unsupported)
 
@@ -127,6 +129,21 @@ A node group is a collection of Kubernetes nodes that function as the compute re
 
 Once your cluster deployed and configured you can create a node group using `kubectl` from a YAML file that defines the `NodeGroup` resource.
 
+### Available flavors
+
+Each node in a node group uses a specific flavor that determines its compute resources:
+
+| Flavor | vCPU | RAM    |
+|--------|------|--------|
+| 2XS    | 4    | 4 GB   |
+| XS     | 6    | 8 GB   |
+| S      | 8    | 12 GB  |
+| M      | 10   | 16 GB  |
+| L      | 12   | 24 GB  |
+| XL     | 16   | 32 GB  |
+
+The flavor is immutable after node group creation. To change the flavor, you must create a new node group.
+
 For example, create a file named `example-nodegroup.yaml` with the following content:
 
 ```yaml{filename="example-nodegroup.yaml"}
@@ -135,7 +152,7 @@ kind: NodeGroup
 metadata:
   name: example-nodegroup
 spec:
-  flavor: M
+  flavor: L
   nodeCount: 2
 ```
 
@@ -152,8 +169,8 @@ You can list the node groups of your cluster using `kubectl`:
 ```bash
 kubectl get nodegroups
 
-NAME      DESIREDNODECOUNT   CURRENTNODECOUNT   FLAVOR   AGE
-default   2                  2                  M        2m
+NAME                DESIREDNODECOUNT   CURRENTNODECOUNT   FLAVOR   STATUS   AGE
+example-nodegroup   2                  2                  L        Synced   2m
 ```
 
 The `DESIREDNODECOUNT` is the number of nodes that you asked for, the `CURRENTNODECOUNT` is the number of nodes currently in the node group. When creating a node group, the `CURRENTNODECOUNT` is `0` and increases until it reaches the `DESIREDNODECOUNT`.
@@ -163,9 +180,9 @@ You can also list the nodes of your cluster using `kubectl`:
 ```bash
 kubectl get nodes
 
-NAME            STATUS   ROLES    AGE     VERSION
-default-node0   Ready    <none>   6d17h   v1.34.1
-default-node1   Ready    <none>   3d18h   v1.34.1
+NAME                      STATUS   ROLES    AGE     VERSION
+example-nodegroup-node0   Ready    <none>   5d22h   v1.35.4
+example-nodegroup-node1   Ready    <none>   3d18h   v1.35.4
 ```
 
 ## Scaling a node group

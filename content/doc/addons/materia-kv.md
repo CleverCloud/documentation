@@ -11,6 +11,11 @@ keywords:
 - distributed storage
 - nosql database
 - high availability
+- distributed key-value
+- transaction conflicts
+- hot-spotting
+- redis differences
+- foundationdb
 draft: false
 aliases:
 - /doc/addons/materia-db-kv/
@@ -262,3 +267,94 @@ OK
 - `JSON.SET` can't create new fields in existing documents
 - Nested path creation is not supported (e.g., `$.new.child.field`)
 - Keys in your JSON must not contains characters like `..`, `*`, `[?(`
+
+## How Materia KV differs from Redis
+
+Materia KV exposes a Redis-compatible protocol, but its engine is fundamentally different. Redis processes every command sequentially on a single thread. Materia KV runs on [FoundationDB](https://www.foundationdb.org/), a distributed transactional engine that spreads data and computation across multiple nodes and data centres. This unlocks horizontal scalability and strong durability, but introduces behaviours that don't exist in Redis.
+
+### Concurrent execution instead of a single thread
+
+FoundationDB uses a concurrency model called **optimistic concurrency control** (OCC). Every Redis command you send to Materia KV executes inside its own FoundationDB transaction. When a command runs, it starts a transaction that reads from a consistent snapshot of the database and buffers all writes locally. At commit time, the system checks whether another transaction has modified any key that the current transaction read since the snapshot. If so, the transaction aborts and retries automatically. If not, the writes apply atomically.
+
+This means multiple clients can operate on the database in parallel without locks. Most of the time, transactions commit on the first attempt and latency stays low. Contention only arises when two transactions touch overlapping keys within a short time window—and when it does, the system resolves it through retries rather than blocking.
+
+Because each command is its own transaction, two clients issuing `INCR counter` at the same time create two independent transactions that both read and write the same key—and one of them conflicts. This is the fundamental difference from Redis, where commands are queued and executed one at a time.
+
+A useful mental model: **your reads determine whether you can conflict, and your writes determine what other transactions conflict with.** A transaction that only reads never conflicts. A transaction that only writes (without reading first) never conflicts either. Conflicts arise specifically from read-then-write patterns on the same key range, which is exactly what commands like `INCR`, `HSET`, and `SADD` do internally.
+
+### Conflicts and automatic retries
+
+When two concurrent transactions read and write overlapping keys, FoundationDB detects a **conflict** at commit time. The system retries the losing transaction automatically—your Redis client receives a normal response, but the operation took longer because it ran more than once behind the scenes.
+
+Each transaction has a maximum lifetime of **5 seconds**. If a transaction can't commit within this window (due to repeated conflicts or the operation itself taking too long), it fails and returns an error to the client. Normal-priority operations retry up to **5 times** with a maximum delay of **500 ms** between attempts. If all retries are exhausted, the client receives an error.
+
+Under heavy contention, this retry mechanism causes **tail latency spikes**. Where Redis gives you predictable sub-millisecond responses (bounded by single-thread throughput), Materia KV can serve far more concurrent requests overall but individual requests may occasionally take tens of milliseconds when retries occur. Monitoring your p99 latency is a good way to detect emerging contention in your workload.
+
+### Hot-spotting: the main pitfall
+
+A **hot spot** occurs when many concurrent operations target the same key or a narrow range of keys. Because all those transactions read and write overlapping data, they serialise through repeated conflicts and retries—effectively reducing throughput to sequential execution, but with the added overhead of each failed attempt.
+
+In Redis, hot keys are a throughput bottleneck (the single thread can only process them so fast), but they never cause errors or unpredictable latency. In Materia KV, a hot key generates a cascade of retries that can degrade performance for all operations touching that key.
+
+#### Counters: `INCR` and `DECR`
+
+The `INCR` command reads the current value, adds one, and writes the result. This is a textbook read-modify-write cycle. When many clients increment the same counter concurrently, every transaction reads the same value and attempts to write a new one. Only one succeeds per commit round; the rest retry. Under high concurrency, most attempts fail on each round, and throughput drops significantly.
+
+If you need a high-throughput counter, consider **sharding** it across multiple keys. For example, maintain `counter:{0}` through `counter:{N}` and have each client pick a shard at random. To read the total, sum all shards. This trades read convenience for write scalability—a standard distributed systems technique known as **partition-local counters**.
+
+#### Concurrent writes to a Hash or Set
+
+When you call `HSET myhash field1 value1` and another client calls `HSET myhash field2 value2` at the same time, you might expect no conflict because the fields are different. However, Materia KV maintains **internal cardinality indexes** to support commands like `HLEN` and `SCARD`. Every `HSET` or `SADD` on the same key updates this shared counter, causing conflicts between concurrent writers even when they target different fields or members.
+
+This means a single Hash or Set key that receives rapid concurrent writes becomes a hot spot, even if each writer touches a distinct field. If write throughput to a collection matters more than having a single logical key, consider splitting the collection across multiple keys (for example, `users:a-m` and `users:n-z`).
+
+#### Large batch operations
+
+Commands like `MSET` with many keys or `DEL` with many keys execute within a single FoundationDB transaction. The wider the key range touched, the larger the **conflict surface**—the set of keys that can cause other concurrent transactions to fail. Additionally, `DEL` caps at **100 keys per call**, and `MSET` with thousands of keys may exceed the **10 MB transaction size limit** (which covers both read and write data within the transaction).
+
+Break large batch operations into smaller chunks when working with many keys. This reduces the conflict window and keeps each transaction well within size limits.
+
+#### Time to Live (TTL) refresh storms
+
+Web frameworks commonly call `EXPIRE` on a session key for every HTTP request to keep the session alive. When a user has multiple browser tabs open, each tab generates its own requests. The number of concurrent `EXPIRE` calls on the same session key multiplies with every open tab, and each `EXPIRE` is a write transaction. Concurrent calls conflict and retry, and under sustained load the retry budget runs out and the client receives errors.
+
+The fix is to **guard writes with reads**. Before calling `EXPIRE`, call `TTL` or `PTTL` to read the remaining TTL. Since read-only operations never conflict, this is safe at any concurrency level. Only issue the `EXPIRE` if the TTL has dropped by a meaningful threshold—for example, 60 seconds. This reduces the write rate to roughly one per minute, eliminating conflicts entirely.
+
+This pattern generalises well beyond session management. Whenever a write might be redundant, check first with a read. Reads don't cause conflicts and cost far less in a distributed transaction engine than writes that turn out to be unnecessary.
+
+#### General guidance
+
+The common thread across all these scenarios is **write concentration**. Distribute your writes across the keyspace rather than funnelling them through a single key or a narrow prefix. When multiple clients need to update related data, partition the work so that each transaction touches a different subset of keys. If a write might be redundant—refreshing a TTL that has barely changed, or setting a value identical to the current one—guard it with a read first. Reads never cause conflicts and cost far less in a distributed transaction engine than unnecessary writes that trigger retries.
+
+### Key expiration on access only
+
+Redis expires keys using two mechanisms: an active background process that periodically samples keys with a TTL and deletes expired ones, and a lazy check that removes expired keys when they're accessed. Materia KV uses **lazy deletion only**. An expired key leaves the database when a client attempts to read or write it—not before.
+
+This has a few practical consequences. Expired keys continue to consume storage until they're accessed. The `DBSIZE` command may report a count that includes expired-but-not-yet-deleted keys. If your workload creates many short-lived keys that are never read again, those keys accumulate until accessed or until the database is flushed.
+
+The TTL itself is stored as an absolute Unix timestamp in milliseconds. The server clock is authoritative—clock differences between your application and Materia KV don't affect correctness.
+
+Active background cleanup of expired keys is under active development. Future releases include a background process that reclaims storage from expired keys without waiting for client access.
+
+### Stricter size limits
+
+Materia KV enforces stricter size limits than Redis due to the constraints of the underlying distributed transaction engine.
+
+| Limit | Redis | Materia KV |
+|-------|-------|------------|
+| Max key size | 512 MB | 8 KB |
+| Max value size | 512 MB | 5 MB |
+| Max transaction size | N/A | 10 MB (reads + writes) |
+| Transaction duration | N/A | 5 seconds |
+| Max keys per `DEL` | No limit | 100 |
+| Storage per add-on | Plan-dependent | 128 MB (default, can be increased) |
+
+The system enforces the 8 KB key limit and 5 MB value limit at the application level. The 10 MB transaction limit and 5-second duration are FoundationDB constraints that apply to the sum of all data read and written within a single command's transaction.
+
+### Stronger durability by default
+
+Both Redis and Materia KV guarantee per-command atomicity, but they achieve it through different mechanisms. Redis runs every command on a single thread—no concurrency means no partial state is ever visible. Materia KV runs each command inside a **serialisable transaction** on FoundationDB, which provides the same atomicity guarantee while allowing multiple commands to execute in parallel across the cluster.
+
+Where Materia KV differs significantly is **durability**. When a write command returns a successful response, the data has been **synchronously replicated across 3 data centres** in Paris. There is no `fsync` tuning, no `appendonly` configuration, no replication lag to worry about. Data loss requires losing all three sites simultaneously. Redis, by contrast, requires explicit persistence configuration (`RDB`, `AOF`) and replication setup to approach similar durability levels, and even then replication is asynchronous by default.
+
+The trade-off is the conflict and retry mechanism described in the preceding sections. Distributed coordination under contention costs latency, which is the price for combining strong durability with horizontal scalability.

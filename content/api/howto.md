@@ -10,6 +10,7 @@ keywords:
 - integration
 - oauth
 - tokens
+- service tokens
 - developer guide
 ---
 
@@ -22,11 +23,23 @@ The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](
 
 ## Request the API
 
-Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
+Clever Cloud's REST API offers three authentication mechanisms to meet different integration needs:
 
 * **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: https://api-bridge.clever-cloud.com
 
 * **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
+
+* **Service tokens** are designed for machine-to-machine authentication scoped to an organisation. They carry a [role](/doc/account/organisations/#roles-and-privileges) and can optionally target a specific application or add-on. Based on the [Eclipse Biscuit](https://www.biscuitsec.org/) format, they can also be [attenuated locally](#inspect-and-attenuate) to derive more restricted tokens without any server-side call. Service tokens are ideal for CI/CD pipelines, automated deployments, and scenarios where actions should be performed on behalf of an organisation rather than a specific user. Use them to request the API directly: https://api.clever-cloud.com
+
+| | API tokens | OAuth 1 | Service tokens |
+|---|---|---|---|
+| **Scope** | User | User (delegated) | Organisation |
+| **Resource restriction** | No | No | Optional (apps, add-ons) |
+| **Offline attenuation** | No | No | Yes (Eclipse Biscuit) |
+| **Max lifetime** | 1 year | 3 months | 1 year (default: 90 days) |
+| **Role-based** | No | No (permission-based) | Yes (Admin, Manager, Developer, Accounting) |
+| **API endpoint** | API Bridge only | Main API (v2, v4) | Main API (v2) |
+| **Best for** | Personal scripts, CLI | Third-party apps | CI/CD, automation, M2M |
 
 Choose the authentication method that best aligns with your specific integration requirements and security considerations.
 
@@ -56,6 +69,109 @@ Once created, API tokens must be used through the bridge URL:
 ```bash
 curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_TOKEN]"
 ```
+
+### Service tokens
+
+Service tokens provide organisation-scoped authentication for automated systems, CI/CD pipelines, and service-to-service communication. Unlike API tokens, which are tied to a user account, service tokens act on behalf of an organisation with a specific [role](/doc/account/organisations/#roles-and-privileges).
+
+Each service token carries a role (Admin, Manager, Developer, or Accounting) that determines what actions it can perform. You can only create tokens with a role equal to or lower than your own. Tokens can also be scoped to a specific application or add-on within the organisation, further restricting their access. Note that the Developer role only grants access to application endpoints; accessing add-on endpoints requires at least the Manager role.
+
+Service tokens have a configurable time-to-live (TTL) from 1 second up to 1 year (default: 90 days). The token value is only displayed once at creation time and cannot be retrieved afterwards. Store it securely.
+
+#### Create and manage with Clever Tools
+
+[Clever Tools](https://github.com/CleverCloud/clever-tools) provides a `clever service-tokens` set of commands:
+
+```bash
+clever service-tokens create "CI pipeline" --org myOrg --role Developer
+clever service-tokens create "Deploy bot" --org myOrg --role Manager --resources app_xxx,addon_yyy --expiration 30d
+```
+
+If you omit `--org`, the token is created in your personal space. If you omit `--role`, the CLI prompts you to select interactively.
+
+List, get details about, or revoke service tokens:
+
+```bash
+clever service-tokens list --org myOrg
+clever service-tokens get <token-id-or-name> --org myOrg
+clever service-tokens revoke <token-id-or-name> --org myOrg
+```
+
+#### Create and manage with the API
+
+Service token endpoints are under `/v2/organisations/{id}/service-tokens`. See the [APIv2 Reference](/api/v2/) for the full specification. Here is a creation example using `clever curl`:
+
+```bash
+clever curl -X POST https://api.clever-cloud.com/v2/organisations/<ORG_ID>/service-tokens \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "CI pipeline",
+    "description": "Token for automated deployments",
+    "role": "DEVELOPER",
+    "resources": ["app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "addon_yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy"],
+    "ttl_seconds": 2592000
+  }'
+```
+
+The `name` and `role` fields are required. The `role` value must be uppercase: `ADMIN`, `MANAGER`, `DEVELOPER`, or `ACCOUNTING`. `description`, `resources`, and `ttl_seconds` are optional (TTL defaults to 90 days). The `resources` field accepts an array of application IDs, add-on IDs, or real IDs to scope the token to.
+
+The response contains a `token` field (the Biscuit token value, shown only once) and a `metadata` object with the token `id` (prefixed `token_`), `status`, `createdAt`, `expiredAt`, and other fields. Use `metadata.id` to manage the token afterwards (get details, revoke).
+
+The list endpoint (`GET /v2/organisations/{id}/service-tokens`) supports `limit` and `offset` query parameters for pagination.
+
+#### Use a service token
+
+Service tokens authenticate directly against the main API (not the API Bridge). Pass the token as a Bearer token in the `Authorization` header:
+
+```bash
+curl https://api.clever-cloud.com/v2/organisations/<ORG_ID>/applications/<APP_ID> \
+  -H "Authorization: Bearer <SERVICE_TOKEN>"
+```
+
+If your token is not scoped to specific resources, you can also access collection endpoints such as `/v2/organisations/<ORG_ID>/applications`.
+
+> [!NOTE]
+> Service tokens currently authenticate against v2 endpoints only. v4 endpoint support is not yet available.
+
+#### Inspect and attenuate
+
+Service tokens are standard [Eclipse Biscuit](https://www.biscuitsec.org/) tokens that you can inspect and attenuate locally with the [`biscuit` CLI](https://github.com/biscuit-auth/biscuit-cli/releases).
+
+To inspect a service token and see its embedded datalog facts (tenant, role, robot ID, expiration):
+
+```bash
+echo "$CC_SERVICE_TOKEN" | biscuit inspect -
+```
+
+Attenuation derives a more restricted token from an existing one. The operation is purely local and offline: it does not require any access to the Clever Cloud API or account. The attenuated token is cryptographically bound to the original and can only reduce permissions, never expand them.
+
+You can attenuate a token to **shorten its lifetime**. For example, an orchestrator holding a long-lived service token can derive a short-lived token before passing it to an external runner or a contractor who should not have access to the original credential:
+
+```bash
+export RUNNER_TOKEN=$(echo "$CC_SERVICE_TOKEN" | biscuit attenuate - --add-ttl 45m --block "")
+```
+
+The resulting token expires after 45 minutes regardless of the original token's TTL. If the attenuated token is leaked, the exposure window is limited to its short lifetime.
+
+You can also attenuate a token to **restrict it to specific resources**. Starting from an unscoped service token, you can derive a token limited to a single application or add-on:
+
+```bash
+export APP_TOKEN=$(echo "$CC_SERVICE_TOKEN" | biscuit attenuate - --block 'check if resource("app_xxx")')
+```
+
+Or to a set of resources using `or`:
+
+```bash
+export SCOPED_TOKEN=$(echo "$CC_SERVICE_TOKEN" | biscuit attenuate - --block 'check if resource("app_xxx") or resource("addon_yyy")')
+```
+
+The attenuated token only works on endpoints targeting those resources and is rejected everywhere else. Both restrictions (TTL and resource scope) can be combined in a single attenuation step:
+
+```bash
+export TEMP_TOKEN=$(echo "$CC_SERVICE_TOKEN" | biscuit attenuate - --add-ttl 45m --block 'check if resource("app_xxx")')
+```
+
+To learn more about Eclipse Biscuit tokens, visit the [official documentation](https://doc.biscuitsec.org/) or try the [interactive playground](https://biscuit-demo.cleverapps.io/).
 
 ### clever curl
 

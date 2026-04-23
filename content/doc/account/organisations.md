@@ -12,6 +12,7 @@ keywords:
 - collaboration
 - permissions
 - team
+- service tokens
 aliases:
 - /account/organizations
 - /doc/account/organizations
@@ -44,3 +45,7 @@ Edit organisation | ✓ | ✓ |  |  |
 Delete organisation | ✓ |  |  |  |
 Access Bills & Receive Invoices | ✓ |  |  | ✓ |
 Access Repositories | ✓ | ✓ | ✓ |  |
+Add / Remove service tokens | ✓ | ✓ |  |  |
+
+> [!NOTE]
+> When creating a service token, the caller can only assign a role equal to or lower than their own. For example, a Manager can create tokens with role Manager, Developer, or Accounting, but not Admin.

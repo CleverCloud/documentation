@@ -19,7 +19,7 @@ Clever Cloud is decommissioning the legacy Logs API v2 endpoints on **May 23rd, 
 
 The v4 Logs API exposes the same capabilities with an improved interface. Update your HTTP calls to target the v4 endpoints documented in the [Logs section of the v4 API reference](/api/v4#logs). Authentication and query parameters follow the same conventions as the rest of the v4 API.
 
-Once updated, your integration will fetch logs immediately without any service interruption.
+After migrating, your integration can continue fetching logs via v4.
 
 If you have any questions or need help with the migration, contact [our support team](https://console.clever-cloud.com/ticket-center-choice).
 

@@ -1,0 +1,3 @@
+{{- $key := .Get 0 -}}
+{{- $value := index .Site.Data.kubernetes_versions $key -}}
+{{- if reflect.IsSlice $value -}}{{ delimit $value ", " }}{{- else -}}{{ $value }}{{- end -}}

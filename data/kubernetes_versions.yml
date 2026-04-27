@@ -1,0 +1,12 @@
+# Clever Kubernetes Engine — supported Kubernetes versions.
+# Support policy mirrors upstream Kubernetes (n-2 from the current release).
+# Update this file when a new Kubernetes version becomes available or when the
+# platform default rolls forward.
+current: "1.36"
+default: "1.35"
+supported:
+  - "1.36"
+  - "1.35"
+  - "1.34"
+unsupported:
+  - "1.33"

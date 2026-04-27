@@ -1,5 +1,5 @@
 ---
-title: Logs API v2 endpoints decommission
+title: Decommissioning Logs API v2 endpoints
 date: 2026-04-23
 description: Decommission of the legacy Logs API v2 endpoints on May 23rd, 2026. Migrate to the v4 API to ensure uninterrupted access to your application logs.
 tags:

@@ -91,7 +91,7 @@ You choose how the control plane is distributed at creation time. The topology d
 
 |Topology|Customers|VMs you pay for|Flavors|Default node group included?|Typical use case|
 |---|---|---|---|---|---|
-|`ALL_IN_ONE`|Developers|`replicationFactor` × bundle VM (control plane + integrated worker node). Additional node groups billed separately|`S`, `M`, `L`, `XL`|No node group, but each bundle VM is also a worker node — additional node groups optional|Development, testing, small single-team clusters|
+|`ALL_IN_ONE`|Essential|`replicationFactor` × bundle VM (control plane + integrated worker node). Additional node groups billed separately|`S`, `M`, `L`, `XL`|No node group, but each bundle VM is also a worker node — additional node groups optional|Development, testing, small single-team clusters|
 |`DEDICATED_COMPUTE`|Business|`replicationFactor` × control plane VM **plus** every worker VM in your node groups|`XS`, `S`, `M`, `L`, `XL`|No — provision a node group at creation with `--nodegroup` or later|Production clusters where control plane and workloads stay isolated|
 |`DISTRIBUTED`|Enterprise|For each of 5 components: `replicationFactor` × component VM **plus** every worker VM in your node groups|`2XS`, `XS`, `S`, `M`, `L`, `XL`|No — provision a node group at creation or later|Demanding production clusters needing fine-grained HA per control plane component|
 
@@ -101,7 +101,7 @@ In `ALL_IN_ONE`, every VM in the bundle is also a worker node — the bundle cov
 
 Whenever a cluster spans multiple VMs — additional node groups on `ALL_IN_ONE`, the control plane and workers in `DEDICATED_COMPUTE`, the five components and workers in `DISTRIBUTED` — the VMs talk to each other over a [Network Group](/doc/develop/network-groups/), a private WireGuard-based mesh provisioned automatically with the cluster. Inter-component traffic stays on the private network.
 
-**Developers (`ALL_IN_ONE`)** — one VM hosts the five control plane components plus an integrated worker node, replicated `replicationFactor` times. Additional node groups (optional) can be attached to scale compute beyond the bundle and are billed at the [node group rate](#node-groups-workers).
+**Essential (`ALL_IN_ONE`)** — one VM hosts the five control plane components plus an integrated worker node, replicated `replicationFactor` times. Additional node groups (optional) can be attached to scale compute beyond the bundle and are billed at the [node group rate](#node-groups-workers).
 
 ```mermaid
 flowchart LR
@@ -460,7 +460,7 @@ In practice:
 - **`DEDICATED_COMPUTE`** — `replicationFactor` × the control plane VM price, **plus** the [node group rate](#node-groups-workers) for every worker VM in your node groups.
 - **`DISTRIBUTED`** — for each of the five components, `replicationFactor` × the component VM price (each component picks its own flavor and replication factor), **plus** the [node group rate](#node-groups-workers) for every worker VM in your node groups.
 
-### Developers (`ALL_IN_ONE`) bundle
+### Essential (`ALL_IN_ONE`) bundle
 
 The bundle hosts the five control plane components and an integrated worker node on the same VMs. The price below covers everything; additional node groups attached to an `ALL_IN_ONE` cluster are billed separately at the [node group rate](#node-groups-workers).
 

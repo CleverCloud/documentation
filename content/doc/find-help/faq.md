@@ -230,3 +230,18 @@ Some features such as extensions, simultaneous connections numbers, functions…
 
 Support is not able to provide help in case of DEV plan.
 
+## How do I change the GitHub webhook secret for my application?
+
+You can regenerate the GitHub webhook secret for an application by calling the following API endpoint:
+
+```shell
+clever curl -X POST https://api.clever-cloud.com/v2/organisations/{id}/applications/{appId}/github-webhook/secret
+```
+
+Replace {id} with your organisation ID and {appId} with your application ID.
+
+{{< callout type=“info” >}}
+Only the application owner or an organisation admin can perform this action.
+{{< /callout >}}
+
+For more details on available API endpoints, refer to the Clever Cloud API [documentation](/developers/api/v2).

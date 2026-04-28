@@ -27,6 +27,6 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.5.1_1757489873
 ```
 
-- [Learn more about Otoroshi Workflows](https://maif.github.io/otoroshi/manual/topics/workflows.html)
+- [Learn more about Otoroshi Workflows](https://maif.github.io/otoroshi/manual/docs/topics/workflows)
 - [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
 

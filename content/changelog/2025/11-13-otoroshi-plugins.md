@@ -19,5 +19,5 @@ Otoroshi on Clever Cloud comes with many included plugins to manage AI based API
 - Add URLs pointing to the plugins JAR files, separated by a space or a new line
 - Rebuild the application
 
-This works for any Otoroshi version deployed on Clever Cloud. If you want to learn more about Otoroshi plugins and how to create your own, check the [Otoroshi documentation](https://maif.github.io/otoroshi/manual/plugins/create-plugins.html).
+This works for any Otoroshi version deployed on Clever Cloud. If you want to learn more about Otoroshi plugins and how to create your own, check the [Otoroshi documentation](https://maif.github.io/otoroshi/manual/docs/plugins/create-plugins).
 - [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)

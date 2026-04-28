@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-[Otoroshi v17.14](https://github.com/MAIF/otoroshi/releases/tag/v17.14.0) is available with significant enhancements to [remote catalogs](https://maif.github.io/otoroshi/manual/topics/remote-catalogs.html). They now support organisation scanning, additional GitHub-like providers, pattern-based and YAML-formatted descriptor files, as well as Kubernetes-like manifests. This release also introduces PostgreSQL as a data exporter target and adds Redis Sentinel password support with the Lettuce driver.
+[Otoroshi v17.14](https://github.com/MAIF/otoroshi/releases/tag/v17.14.0) is available with significant enhancements to [remote catalogs](https://maif.github.io/otoroshi/manual/docs/topics/remote-catalogs). They now support organisation scanning, additional GitHub-like providers, pattern-based and YAML-formatted descriptor files, as well as Kubernetes-like manifests. This release also introduces PostgreSQL as a data exporter target and adds Redis Sentinel password support with the Lettuce driver.
 
 New mandatory flags are available on client certificate plugins and OIDC JWT verification for APIs, offering finer control over authentication requirements. The expression language has been improved with path-based read support for deep structures such as user profiles, with complex structure stringification. Several fixes address tunnel handler plugin visibility, Kafka data exporter host validation, and the "Override Location header" plugin behaviour.
 

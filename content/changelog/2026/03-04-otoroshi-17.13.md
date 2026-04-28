@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-[Otoroshi v17.13](https://github.com/MAIF/otoroshi/releases/tag/v17.13.0) is available with experimental support for the [Kubernetes Gateway API](https://maif.github.io/otoroshi/manual/topics/kubernetes-gateway-api.html), enabling standardised Kubernetes-native traffic management. This release also introduces [remote catalogs](https://maif.github.io/otoroshi/manual/topics/remote-catalogs.html), allowing to fetch and manage plugin or configuration catalogs from external sources.
+[Otoroshi v17.13](https://github.com/MAIF/otoroshi/releases/tag/v17.13.0) is available with experimental support for the [Kubernetes Gateway API](https://maif.github.io/otoroshi/manual/docs/topics/kubernetes-gateway-api), enabling standardised Kubernetes-native traffic management. This release also introduces [remote catalogs](https://maif.github.io/otoroshi/manual/docs/topics/remote-catalogs), allowing to fetch and manage plugin or configuration catalogs from external sources.
 
 A webhook validator plugin is also included, providing HMAC signature verification for incoming webhook payloads. It supports multiple algorithms (SHA256, SHA512, SHA384, SHA1) and is provider-agnostic with configurable signature headers and signing templates, compatible with services such as GitHub, Stripe, Slack or YouSign.
 

@@ -197,7 +197,7 @@ When you need a specific shape, combine topology, flavor and replication factor:
 
 ```bash
 clever k8s create myCluster \
-  --topology DEDICATED_COMPUTE --flavor S --replication-factor 3 \
+  --topology dedicated_compute --flavor S --replication-factor 3 \
   --cluster-version 1.36 \
   --description "Production cluster" \
   --tag env:prod,team:platform \
@@ -312,11 +312,10 @@ Once enabled, the autoscaler reacts to node-level resource pressure (CPU and mem
 You can use Clever Cloud block storage to attach a persistent volume to a cluster through a CSI (Container Storage Interface). Enable persistent storage at creation with `--persistent-storage`, or on an existing cluster:
 
 ```bash
-clever k8s update clusterNameOrId --persistent-storage --org <your_org_id>
 clever k8s add-persistent-storage clusterNameOrId --org <your_org_id>
 ```
 
-Both commands reach the same result. Persistent storage is currently a one-way toggle: once enabled, it cannot be removed from a running cluster. Create a new cluster without `--persistent-storage` if you no longer need it.
+Persistent storage is currently a one-way toggle: once enabled, it cannot be removed from a running cluster. Create a new cluster without `--persistent-storage` if you no longer need it.
 
 ## Get the kubeconfig file
 
@@ -332,7 +331,7 @@ You can directly save it as your local kubeconfig file:
 clever k8s get-kubeconfig clusterNameOrId --org <your_org_id> > ~/.kube/config
 ```
 
-Check everything is working by listing the nodes of your cluster (it should be empty at this point):
+Check everything is working by listing the nodes of your cluster. With `ALL_IN_ONE`, the integrated worker on each bundle VM appears immediately. With `DEDICATED_COMPUTE` or `DISTRIBUTED`, the list stays empty until you provision a node group:
 
 ```bash
 # With the default kubeconfig file:

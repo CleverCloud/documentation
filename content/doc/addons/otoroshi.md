@@ -107,7 +107,7 @@ clever otoroshi open webui myOtoroshi
 
 The first time you connect, change the initial password (Security -> Administrators -> Edit user).
 
-* [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/how-to-s/index.html)
+* [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/docs/index.html)
 
 ## Underlying resources
 
@@ -155,11 +155,11 @@ The integration provides advanced security capabilities through OWASP CRS implem
 ### Enterprise Capabilities
 Designed for production environments, the Coraza WAF plugin offers flexible configuration options, supporting both detection and prevention modes. It enables customized rule sets per domain and provides detailed security event tracking through Otoroshi's event management system. The implementation is optimized for minimal performance impact while maintaining robust security controls.
 
-- [Otoroshi Coraza WAF documentation](https://maif.github.io/otoroshi/manual/how-to-s/instantiate-waf-coraza.html)
+- [Otoroshi Coraza WAF documentation](https://maif.github.io/otoroshi/manual/docs/tutorials/instantiate-waf-coraza)
 
 ## Manage Otoroshi from its API
 
-Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. [A Swagger UI detailing available endpoints is available](https://maif.github.io/otoroshi/swagger-ui/index.html).
+Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. [A Swagger UI detailing available endpoints is available](https://maif.github.io/otoroshi/manual/api-reference).
 
 An OpenAPI descriptor is available from your instance:
 

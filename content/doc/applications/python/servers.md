@@ -41,7 +41,7 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 
 | Name | Description | Default |
 |------|-------------|---------|
-| `CC_GUNICORN_WORKER_CLASS` | Type of worker to use. [Available workers](https://docs.gunicorn.org/en/stable/settings.html#worker-class) | `sync` |
+| `CC_GUNICORN_WORKER_CLASS` | Type of worker to use. [Available workers](https://gunicorn.org/reference/settings/#worker_class) | `sync` |
 | `CC_GUNICORN_TIMEOUT` | Gunicorn timeout (in seconds) | `30` |
 | `CC_GUNICORN_LOGLEVEL` | Gunicorn log level | `info` |
 

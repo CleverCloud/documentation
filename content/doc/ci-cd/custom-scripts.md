@@ -28,8 +28,8 @@ You can write your own pipeline to deploy from either GitHub or GitLab. Use [Cle
   variables:
   GIT_DEPTH: "0" # Unshallow the repository by default
 
-image:
-  name: clevercloud/clever-tools:latest
+image: clevercloud/clever-tools:latest
+  name: clevercloud
   entrypoint: [""]
   ```
 

@@ -607,20 +607,24 @@ When your Python application doesn't use one of the supported backends, with `CC
 ### VPN
 
 The VPN add-on provides a fixed-ip outgoing node. This can be used to work
-with services protected by ip address filtering. `VPN_ADDON_*` variables will
+with services protected by ip address filtering. `CC_VPN_*` variables will
 be provided by Clever Cloud upon setup, the only configuration you have to
 provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
 to be routed through the exit node.
 
+{{< callout emoji="ℹ️" >}}
+  The previous `VPN_ADDON_*` names (and `VPN_TARGETS`) are still recognized for backward compatibility with VPN add-ons set up before this rename. New setups use the `CC_VPN_*` names listed below.
+{{< /callout >}}
+
 |  Name  |  Description |  Default value  |  Read Only  |
 | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------- |
 | `CC_VPN_DNS_OVERRIDES`  | Comma-separated list of DNS IP                                                                  |                                |                            |
-| `VPN_ADDON_CACRT` | Server CA certificate                                                                           |                                |                            |
-| `VPN_ADDON_CIPHER`| Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1              |                            |
-| `VPN_ADDON_CRT`         | Client certificate                                                                              |                                |                            |
-| `VPN_ADDON_DEVTYPE`     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
-| `VPN_ADDON_HOST`        | Server host or IP address                                                                       |                                |                            |
-| `VPN_ADDON_KEY`   | Client certificate private key                                                                  |                                |                            |
-| `VPN_ADDON_PORT`        | Server port                                                                                     |                                |                            |
-| `VPN_ADDON_TAKEY`  | Pre-shared secret                                                                               |                                |                            |
-| `VPN_TARGETS` | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |
+| `CC_VPN_CACRT` | Server CA certificate                                                                           |                                |                            |
+| `CC_VPN_CIPHER`| Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1              |                            |
+| `CC_VPN_CRT`         | Client certificate                                                                              |                                |                            |
+| `CC_VPN_DEVTYPE`     | Kernel virtual interface kind to use ("tap" or "tun")                                                            | tap                            |                          |
+| `CC_VPN_HOST`        | Server host or IP address                                                                       |                                |                            |
+| `CC_VPN_KEY`   | Client certificate private key                                                                  |                                |                            |
+| `CC_VPN_PORT`        | Server port                                                                                     |                                |                            |
+| `CC_VPN_TAKEY`  | Pre-shared secret                                                                               |                                |                            |
+| `CC_VPN_TARGETS` | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |                                |                            |

@@ -49,6 +49,10 @@ Find here specific instructions related to your application's language.
   {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
+## Adding extensions to runtimes
+
+Custom runtime extensions (such as additional PHP extensions) may be available upon request. Please contact our support team so we can assess your requirements and determine feasibility for the target operating system.
+
 ## How To Deploy X if It Isn't Natively Supported
 
 If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.

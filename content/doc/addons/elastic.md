@@ -28,6 +28,15 @@ Provisioning the Elastic Stack add-on on Clever Cloud will give you an **Elastic
 The current versions supported at add-on creation are the following:
 {{< software_versions_shared_dedicated elastic>}}
 
+## Custom Cluster Setup
+
+{{< callout type="info" >}}
+**Need a multi-node Elasticsearch cluster?** Clever Cloud offers custom Elastic cluster setups for production workloads requiring high availability, scalability, and advanced configurations. This includes multi-node clusters with dedicated master nodes, data nodes, and coordinating nodes. 
+
+To discuss your specific requirements and get a custom cluster configuration, please [contact our support team](https://console.clever-cloud.com/ticket-center-choice).
+{{< /callout >}}
+
+
 ## Elasticsearch
 
 Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.

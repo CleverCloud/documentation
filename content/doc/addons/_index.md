@@ -24,6 +24,12 @@ aliases:
 
 Connect your application to an add-on:
 
+{{< callout type="info" >}}
+**Need a custom configuration?** Some add-ons support custom setups that may not be listed in their specific documentation pages (custom parameters, specific versions, advanced tuning, cluster configurations, etc.). 
+
+To discuss your specific requirements and check what's possible, please [contact our support team](https://console.clever-cloud.com/ticket-center-choice).
+{{< /callout >}}
+
 ## Databases
 
 {{< cards >}}

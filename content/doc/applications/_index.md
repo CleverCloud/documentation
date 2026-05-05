@@ -58,6 +58,10 @@ Refer to the [Docker](docker) section of this documentation to know how to deplo
 
 If you are out of options, contact our support team and we'll come up with a solution with you.
 
+## Custom Runtime Extensions
+
+Some runtimes can be extended with additional modules (such as extra PHP extensions). To request one, contact [our support team](https://console.clever-cloud.com/ticket-center-choice) with your use case so they can assess feasibility on the target operating system.
+
 ## Environment Variables
 
 You can control deployments and set your application configuration with environment variables:

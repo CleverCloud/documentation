@@ -18,7 +18,7 @@ enableGitInfo: true
 enableInlineShortcodes: true
 hasCJKLanguage: true
 
-languageCode: en-US
+locale: en-US
 
 markup:
   highlight:

@@ -191,6 +191,9 @@ params:
           icon: perplexity
           url: "https://www.perplexity.ai/search?q=Read+this+Clever+Cloud+documentation+page+and+help+me+understand+and+apply+it+to+my+project%3A+{url}%0ARaw+Markdown+source%3A+{markdown_url}"
 
+  imageZoom:
+    enable: true
+
   search:
     enable: true
     type: flexsearch

@@ -49,14 +49,11 @@ Find here specific instructions related to your application's language.
   {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
-## How To Deploy X if It Isn't Natively Supported
+## Deploying a Non-native Runtime
 
-If your favorite runtime is not available, you can deploy it on Clever Cloud by Dockerizing it and make it run in a Docker instance.
-You will probably find a basic Docker file for your technology on the Docker hub.
+If your runtime isn't available natively, the [Linux runtime](/developers/doc/applications/linux) with [Mise](https://mise.jdx.dev/) can run many languages and tools — see examples in [our GitHub examples and demos](https://github.com/CleverCloud/examples-and-demos). Otherwise, use the [Docker runtime](/developers/doc/applications/docker) with a Dockerfile from [Docker Hub](https://hub.docker.com/) or your own.
 
-Refer to the [Docker](docker) section of this documentation to know how to deploy your Dockerized application.
-
-If you are out of options, contact our support team and we'll come up with a solution with you.
+If none of these options fit, contact [our support team](https://console.clever-cloud.com/ticket-center-choice) to find a solution together.
 
 ## Environment Variables
 

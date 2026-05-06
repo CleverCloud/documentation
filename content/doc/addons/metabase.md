@@ -120,12 +120,12 @@ When you create the Metabase add-on, Clever Cloud automatically deploys:
 
 ## Plan sizing
 
-By default, Metabase on Clever Cloud uses small-size resources, i.e:
+Metabase on Clever Cloud uses small-size resources, i.e:
 
-- XS Java
+- S Java
 - XXS Small Space PostgreSQL
 
-They are dimensioned to suit a majority of needs. You can however manage and adjust them directly [in the Console](https://console.clever-cloud.com/). For example when you have multiple users loading large dashboards concurrently or if your instance experiences crashes due to Out of Memory (OOM) issues, you should use a larger flavor for the Java application or activate auto-scalability. The PostgreSQL database is not likely to be needed a larger plan, but should this happen you can migrate it using Clever Cloud's Console.
+These defaults are dimensioned to suit a majority of needs. You can however manage and adjust them directly [in the Console](https://console.clever-cloud.com/). For example when you have multiple users loading large dashboards concurrently or if your instance experiences crashes due to Out of Memory (OOM) issues, you should use a larger flavor for the Java application or activate auto-scalability. The PostgreSQL database is not likely to be needed a larger plan, but should this happen you can migrate it using Clever Cloud's Console.
 
 ## Version management, Security and Updates
 

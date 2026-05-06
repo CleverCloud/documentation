@@ -3,7 +3,7 @@
 # Update this file when a new Kubernetes version becomes available or when the
 # platform default rolls forward.
 current: "1.36"
-default: "1.35"
+default: "1.36"
 supported:
   - "1.36"
   - "1.35"

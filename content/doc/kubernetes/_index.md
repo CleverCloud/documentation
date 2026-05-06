@@ -285,8 +285,8 @@ example-nodegroup   2                  2                  M        Synced   2m
 kubectl get nodes
 
 NAME                      STATUS   ROLES    AGE     VERSION
-example-nodegroup-node0   Ready    <none>   6d17h   v1.35.4
-example-nodegroup-node1   Ready    <none>   3d18h   v1.35.4
+example-nodegroup-node0   Ready    <none>   6d17h   v1.36.0
+example-nodegroup-node1   Ready    <none>   3d18h   v1.36.0
 ```
 
 `DESIREDNODECOUNT` is the number of nodes you asked for, `CURRENTNODECOUNT` is the number of nodes currently in the node group. When creating a node group, `CURRENTNODECOUNT` starts at `0` and increases until it reaches `DESIREDNODECOUNT`.

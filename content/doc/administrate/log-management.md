@@ -240,9 +240,9 @@ To export logs from an application or an add-on to [OVHcloud Logs Data Platform]
 
 On your terminal, use the following command:
 
-{{< tabs items="Application,Add-on" >}}
+{{< tabs >}}
 
-  {{< tab >}}**Exporting logs from an application**:
+  {{< tab name="Application" >}}**Exporting logs from an application**:
 
   ```shell
   clever drain create ovh-tcp tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
@@ -256,7 +256,7 @@ On your terminal, use the following command:
 
   {{< /tab >}}
 
-  {{< tab >}}**Exporting logs from an add-on**:
+  {{< tab name="Add-on" >}}**Exporting logs from an add-on**:
 
   ```shell
   clever drain create ovh-tcp tcp://<host>:514 -addon <addon_id> --sd-params="X-OVH-TOKEN=\"<token>\""

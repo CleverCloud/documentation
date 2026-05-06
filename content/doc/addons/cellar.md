@@ -118,9 +118,9 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
 
 `s3cmd` allows you to manage your buckets using its commands, after [configuring it on your machine](#with-s3cmd)
 
-{{< tabs items="Upload,List" >}}
+{{< tabs >}}
 
-  {{< tab >}}
+  {{< tab name="Upload" >}}
   You can upload files (`--acl-public` makes the file publicly readable) with:
 
   ```bash
@@ -130,7 +130,7 @@ This list isn't exhaustive. Feel free to [suggest other clients that you would l
   The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="List" >}}
   You can list the files in your bucket, you should see the `image.png` file:
 
   ```bash
@@ -156,9 +156,9 @@ Then, create a CNAME record on your domain pointing to `cellar-c2.services.cleve
 To use Cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk) or any S3-compatible client.
 You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-cloud.com`).
 
-{{< tabs items="Bun,Node.js,Java,Python,Ruby" >}}
+{{< tabs >}}
 
-  {{< tab >}}
+  {{< tab name="Bun" icon="bun" >}}
   **Bun (native S3 client)**
 
   [Bun](https://bun.sh) includes a [native S3 client](https://bun.sh/docs/api/s3) with no external dependency. It works with any S3-compatible service, including Cellar.
@@ -206,7 +206,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="Node.js" icon="node" >}}
   **Node.js**
 
   Using AWS SDK for JavaScript v3 (recommended):
@@ -263,7 +263,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="Java" icon="java" >}}
   **Java**
 
   Import the AWS SDK S3 library. Maven uses the following dependency:
@@ -345,7 +345,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
   {{< /tab >}}
 
-{{< tab >}}
+  {{< tab name="Python" icon="python" >}}
   **Python**
 
   This script uses boto3, the AWS SDK for Python.
@@ -399,7 +399,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="Ruby" icon="ruby" >}}
   **Active Storage (Ruby On Rails)**
 
   [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
@@ -684,9 +684,9 @@ For that reason, we do recommend you to enable versioning when creating a new bu
 > [!WARNING]
 > Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.
 
-{{< tabs items="MinIO,  AWS CLI" >}}
+{{< tabs >}}
 
-  {{< tab >}}
+  {{< tab name="MinIO" icon="minio" >}}
 
   To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
 
@@ -747,7 +747,7 @@ When versioning is enabled, the newly added object is automatically provided wit
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="AWS CLI" icon="aws" >}}
 
   The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](/doc/addons/cellar/#with-aws-cli)
 

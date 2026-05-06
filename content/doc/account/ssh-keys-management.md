@@ -101,9 +101,9 @@ You can add any key already present in your GitHub account by clicking on the im
 
 You may already have an SSH key and so do not need to generate a new one. To check if you have one, follow these steps:
 
-{{< tabs items="Linux and macOS,Windows" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="Linux and macOS" icon="linux" >}}
 
 1. Whether you use macOS or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.
@@ -115,7 +115,7 @@ If you can find them, you do not need to generate a new one, simply go to the fo
 
 {{< /tab >}}
 
-{{< tab >}}1. If you don't have it, download [Git for Windows](https://git-for-windows.GitHub.io/) and install it.
+{{< tab name="Windows" icon="windows" >}}1. If you don't have it, download [Git for Windows](https://git-for-windows.GitHub.io/) and install it.
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
 3. Run `cd ~/.ssh/` in your Terminal.
 4. If the folder exists, run `ls` and check if a pair of key exists : *id_ed25519* and *id_ed25519.pub* or *id_rsa* and *id_rsa.pub*. We would recommend using *ed25519* keys. Smaller to copy and way stronger than 2048-bit RSA keys. If you can find them, you do not need to generate a new one, simply go to the following "Add your key on Clever Cloud" part!

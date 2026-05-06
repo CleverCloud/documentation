@@ -20,9 +20,9 @@ keywords:
 
 You can write your own pipeline to deploy from either GitHub or GitLab. Use [Clever Cloud CLI](https://github.com/CleverCloud/clever-tools) with either Docker or Node image. Place the following snippets at the top of your `.gitlab-ci.yml` file:
 
-{{< tabs items="Docker image, Node image" >}}
+{{< tabs >}}
 
-  {{< tab >}}**Docker image**:
+  {{< tab name="Docker image" icon="docker" >}}**Docker image**:
 
   ```yaml
   variables:
@@ -35,7 +35,7 @@ image:
 
   {{< /tab >}}
 
-  {{< tab >}}**Node image**:
+  {{< tab name="Node image" icon="node" >}}**Node image**:
 
   ```yaml
   variables:

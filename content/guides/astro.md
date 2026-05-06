@@ -79,13 +79,13 @@ To deploy an Astro project with Server-Side Rendering (SSR), use a **Node.js** a
 
 Depending on your package manager, use the following environment variables:
 
-{{< tabs items="npm,pnpm,yarn" >}}
-  {{< tab >}}
+{{< tabs >}}
+  {{< tab name="npm" icon="npm" >}}
     ```shell
     CC_POST_BUILD_HOOK="npm run build"
     ```
   {{< /tab >}}
-  {{< tab >}}
+  {{< tab name="pnpm" icon="pnpm" >}}
     ```shell
     CC_NODE_BUILD_TOOL="custom"
     CC_PRE_BUILD_HOOK="npm install -g pnpm && pnpm install"
@@ -93,7 +93,7 @@ Depending on your package manager, use the following environment variables:
     CC_RUN_COMMAND="pnpm run preview"
     ```
   {{< /tab >}}
-  {{< tab >}}
+  {{< tab name="yarn" icon="yarn" >}}
     ```shell
     CC_NODE_BUILD_TOOL="yarn"
     CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable && yarn build"
@@ -109,8 +109,8 @@ Depending on your package manager, use the following environment variables:
 
 As you manage the server, ensure to configure your application to listen on port **8080** as required by Clever Cloud. Set your port and host in your `astro dev` script for development mode, and/or configure it directly for production:
 
-{{< tabs items="development,production" >}}
-  {{< tab >}}
+{{< tabs >}}
+  {{< tab name="development" >}}
   To quickly deploy on development mode:
 
    ```json {filename="package.json"}
@@ -123,7 +123,7 @@ As you manage the server, ensure to configure your application to listen on port
     }
     ```
   {{< /tab >}}
-  {{< tab >}}
+  {{< tab name="production" >}}
   When deploying for production:
 
    ```javascript {filename="astro.config.mjs"}

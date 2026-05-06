@@ -32,14 +32,14 @@ aliases:
 The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
 
-{{< tabs items="Email Auth, GitHub Auth" >}}
+{{< tabs >}}
 
-  {{< tab >}}
+  {{< tab name="Email Auth" icon="envelope" >}}
   This kind of auth requires a valid and non-temporary disposable email, and a password having at least 6 characters.
   Do not forget to validate your email by clicking the link you will receive.
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="GitHub Auth" icon="github" >}}
 
   The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click.
   This process asks the following permissions:
@@ -152,8 +152,8 @@ Enter the name and the description of your application.
 
 #### Choose How to Deploy
 
-{{< tabs items="Git,GitHub, FTP" >}}
-  {{< tab >}}
+{{< tabs >}}
+  {{< tab name="Git" icon="git" >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
   *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
@@ -186,7 +186,7 @@ git push <remote-name> <branch-name>:master
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="GitHub" icon="github" >}}
   Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
   ![GitHub deployment branch select](/images/github-deployment-branch.png "Github deployment branch select")
@@ -200,7 +200,7 @@ git push <remote-name> <branch-name>:master
   However, if you set up an organisation, create the repository under the aegis of the organisation, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="FTP" >}}
   You can deploy via FTP with PHP applications.
 
   To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
@@ -320,8 +320,8 @@ Clever Cloud provides multiple add-ons to work with your applications:
 
 **If your add-on:**
 
-{{< tabs items="Doesn't exist yet,Already exists" >}}
-  {{< tab >}}
+{{< tabs >}}
+  {{< tab name="Doesn't exist yet" >}}
   Here we will assume you want to create a new add-on and link it to your application.
 
   1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
@@ -336,7 +336,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   The add-on will now be available in your organisation, and corresponding environment variables will be available for the applications linked to the add-on you just created.
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="Already exists" >}}
   To link an already existing add-on with your application, just follow these steps:
 
   1. Go in the organisation of your application.

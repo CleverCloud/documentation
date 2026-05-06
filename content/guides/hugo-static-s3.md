@@ -105,9 +105,9 @@ In the folder of your website, you’ll find Hugo’s configuration file:
 
 Open it, then add the following (according to the programing language):
 
-{{< tabs items="JSON,YAML,TOML" >}}
+{{< tabs >}}
 
-  {{< tab >}}**JSON**
+  {{< tab name="JSON" icon="json" >}}**JSON**
 
 ```json {filename="hugo.json"}
   {
@@ -125,7 +125,7 @@ Open it, then add the following (according to the programing language):
 
 {{< /tab >}}
 
-  {{< tab >}}**YAML**
+  {{< tab name="YAML" icon="yaml" >}}**YAML**
 
   ```json {filename="hugo.yaml"}
   deployment:
@@ -137,7 +137,7 @@ Open it, then add the following (according to the programing language):
   {{< /tab >}}
 
 
-  {{< tab >}}**TOML**
+  {{< tab name="TOML" icon="toml" >}}**TOML**
 ```json {filename="hugo.toml"}
 [deployment]
 [[deployment.targets]]

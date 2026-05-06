@@ -175,6 +175,21 @@ params:
     width: full
     tabs:
       sync: true
+    contextMenu:
+      enable: true
+      links:
+        - name: Open in ChatGPT
+          icon: chatgpt
+          url: "https://chatgpt.com/?hints=search&q=Read+this+Clever+Cloud+documentation+page+and+help+me+understand+and+apply+it+to+my+project%3A+{url}%0ARaw+Markdown+source%3A+{markdown_url}"
+        - name: Open in Claude
+          icon: claude
+          url: "https://claude.ai/new?q=Read+this+Clever+Cloud+documentation+page+and+help+me+understand+and+apply+it+to+my+project%3A+{url}%0ARaw+Markdown+source%3A+{markdown_url}"
+        - name: Open in Le Chat
+          icon: mistral
+          url: "https://chat.mistral.ai/chat?q=Read+this+Clever+Cloud+documentation+page+and+help+me+understand+and+apply+it+to+my+project%3A+{url}%0ARaw+Markdown+source%3A+{markdown_url}"
+        - name: Open in Perplexity
+          icon: perplexity
+          url: "https://www.perplexity.ai/search?q=Read+this+Clever+Cloud+documentation+page+and+help+me+understand+and+apply+it+to+my+project%3A+{url}%0ARaw+Markdown+source%3A+{markdown_url}"
 
   search:
     enable: true

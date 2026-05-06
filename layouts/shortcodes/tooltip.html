@@ -3,7 +3,7 @@
 {{- errorf "missing tooltip title" -}}
 {{- end -}}
 {{ .Scratch.Set "title" $title }}
-{{ $def := index .Site.Data.tooltips (.Scratch.Get "title")   }}
+{{ $def := index hugo.Data.tooltips (.Scratch.Get "title")   }}
 
 {{- if not $def -}}
 {{- errorf "%s not in tooltips" $title  -}}

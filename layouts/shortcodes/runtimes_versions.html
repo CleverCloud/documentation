@@ -1,5 +1,5 @@
 {{ $software := or (.Get 0) }}
-{{ $version_list := .Site.Data.runtime_versions }}
+{{ $version_list := hugo.Data.runtime_versions }}
 
 {{ with index $version_list $software }}
     {{ $default := .default | default (slice) }}

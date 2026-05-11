@@ -30,6 +30,11 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 
 {{% content "db-backup" %}}
 
+## Point In Time Recovery
+
+The PostgreSQL add-on supports pgBackRest, enabling incremental backups and point-in-time data restoration.
+It's not installed by default on a PostgreSQL add-on, if you need it, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
+
 ## Migrating from an old database
 
 Some applications require a non-empty database to run properly. If you want to import your **SQL** dump, you can use several methods:

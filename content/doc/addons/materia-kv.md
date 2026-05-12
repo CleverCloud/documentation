@@ -392,7 +392,7 @@ JSON documents written via `JSON.SET` are stored on top of strings. The schema h
 - `strings(keys: [...])` has the same hard limit: **at most 100 keys** per call. Chunk larger batches on the client side.
 - Pattern-based queries (`hashesByPattern`, `setsByPattern`, `hashFieldsByPattern`) are not paginated: each call returns its full result set in one response. Keep patterns focused to avoid oversized payloads.
 - Glob patterns follow the Redis `KEYS`/`SCAN` syntax (`*`, `?`, `[abc]`).
-- The `expireAt` field is an absolute instant (ISO 8601), not a remaining TTL — parse with `new Date(expireAt)` and compute `new Date(expireAt) - new Date()` for a countdown.
+- The `expireAt` field is an absolute instant (ISO 8601), not a remaining TTL — parse it as an ISO 8601 timestamp in your client, then subtract the current time to compute a countdown.
 - Authentication errors return HTTP 401 with the message in the `errors` array. Every other GraphQL error (wrong-type reads, mutation requests, validation errors) returns HTTP 200 with `errors` populated.
 
 ## Demos and examples

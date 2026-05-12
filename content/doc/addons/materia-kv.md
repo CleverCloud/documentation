@@ -282,7 +282,7 @@ curl -X POST "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphq
   -d '{"query":"{ __typename }"}'
 ```
 
-Missing or invalid credentials return **HTTP 401** with the error in the GraphQL `errors` array. All other errors (wrong-type reads, unknown fields, mutation requests, validation errors) return **HTTP 200** with the details in `errors`, as the GraphQL specification requires.
+Missing or invalid credentials return **HTTP 401** with the error in the GraphQL `errors` array. This endpoint returns **HTTP 200** for all other errors (wrong-type reads, unknown fields, mutation requests, validation errors), with the details in `errors`.
 
 ### GraphiQL playground
 

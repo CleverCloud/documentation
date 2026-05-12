@@ -182,15 +182,46 @@ Uploading previously exported data in `realms/import` folder in the associated F
 
 Keycloak uses an [FSBucket](/doc/addons/fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
-## Add IP filtering in Keycloak for admin console
+## IP filtering
 
-Two specific authentication flows with an IP addresses based filter are especially created and affected as default to clients `security-admin-console` and `admin-cli`. To use them (do not forget to make the same on each realm you want to protect):
+You can restrict who can reach your Keycloak instance with two complementary mechanisms: a per-endpoint filter that blocks traffic before authentication runs, and an in-realm authentication flow that filters at sign-in time. They can be used together.
+
+### Per-realm, on admin, public and SCIM endpoints
+
+Starting with version `26.6`, the Keycloak add-on can filter incoming requests based on the client's public IP, with separate rules for each realm and for each endpoint category (admin console and admin API, public endpoints, SCIM provisioning). Filtering is configured through environment variables of the underlying Java application. Each variable accepts a comma-separated list of IP addresses and blocked requests receive an `HTTP 403` response.
+
+| Variable | Scope | Protected paths |
+|----------|-------|-----------------|
+| `CC_KEYCLOAK_ADMIN_IPS_<REALM>` | Admin endpoints of a given realm | `/admin/<realm>/*`, `/admin/realms/<realm>/*` |
+| `CC_KEYCLOAK_PUBLIC_IPS_<REALM>` | Public endpoints of a given realm (login, tokens, user authentication) | `/realms/<realm>/*` |
+| `CC_KEYCLOAK_SCIM_IPS_<REALM>` | SCIM provisioning endpoints of a given realm (requires the `scim-api` feature, see below) | `/realms/<realm>/scim/*` |
+| `CC_KEYCLOAK_ADMIN_IPS` | Global fallback for admin endpoints not covered by a per-realm rule | `/admin/*` |
+
+The realm name in the variable suffix must match the realm name as it appears in URLs (case-sensitive). Per-realm rules take precedence over the global admin filter. If none of these variables is set, Keycloak keeps its standard public behavior.
+
+For example, to allow only two office IPs to reach the `master` realm admin console, restrict the `production` realm to your application servers and reserve its SCIM endpoints for your identity sync server:
+
+```bash
+CC_KEYCLOAK_ADMIN_IPS_master="203.0.113.10,203.0.113.11"
+CC_KEYCLOAK_PUBLIC_IPS_production="198.51.100.10,198.51.100.11"
+CC_KEYCLOAK_SCIM_IPS_production="198.51.100.42"
+CC_KEYCLOAK_ADMIN_IPS="203.0.113.10"
+```
+
+Filters compare the client IP to the literal values you provide, so use individual IP addresses rather than CIDR ranges. If you configure a custom HTTP path through `KC_HTTP_RELATIVE_PATH`, the prefix is automatically prepended to the protected paths.
+
+> [!NOTE] Enabling the SCIM endpoints
+> SCIM was introduced in Keycloak `26.6` as an [experimental feature](https://www.keycloak.org/2026/04/scim-as-experimental-feature) and is disabled by default. The `CC_KEYCLOAK_SCIM_IPS_<REALM>` filter only takes effect once SCIM is enabled. Add `scim-api` (comma-separated if you already have other entries) to the `KC_FEATURES` environment variable of the Java application and rebuild it — `KC_FEATURES` is a build-time setting, so a simple restart is not enough. Once the rebuild completes, enable SCIM on each target realm from the Keycloak admin console (Realm Settings, *SCIM API Enabled* toggle) where the SCIM base URL is also displayed.
+
+### At the realm authentication flow level
+
+Two specific authentication flows with an IP-address-based filter are created by default and assigned to the `security-admin-console` and `admin-cli` clients. They run at sign-in time, inside Keycloak. To use them (do this on each realm you want to protect):
 
 - Enable "PLEASE-OPEN.IT Authenticator IP Range" to "Required"
 - Click on the crank to access parameters
 - Set IPs with authorized access
 
-Those flows could be affected to your own clients if you need.
+You can also assign these flows to your own clients if needed.
 
 ## Grafana dashboard & Metrics
 

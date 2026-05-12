@@ -369,7 +369,7 @@ query Dashboard {
 }
 ```
 
-Always pass user input through **GraphQL variables** rather than string interpolation: the server type-checks every variable and queries stay safe from injection:
+Always pass user input through **GraphQL variables** rather than string interpolation: the server type-checks every variable, which reduces injection risk and avoids query string interpolation issues:
 
 ```bash
 curl -X POST "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql" \

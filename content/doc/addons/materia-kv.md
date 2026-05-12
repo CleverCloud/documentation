@@ -32,7 +32,7 @@ You don't have to configure leaders, followers: high availability is included, b
 
 We didn’t want this Materia KV to come at the cost of complex configuration, requiring the use of special clients and ORMs. That’s why we’ve developed its compatibility layers: each one lets you talk to Materia KV through an existing protocol, with the clients, CLIs and ORMs you already use — no Clever Cloud-specific SDK required.
 
-Two layers are available today:
+Two layers are available:
 
 - [**Redis API**](#using-the-redis-api-compatible-layer) (and variants such as Redict and Valkey) — full read/write access, the primary way to interact with Materia KV.
 - [**GraphQL**](#using-the-graphql-compatibility-layer) — a typed, read-oriented view of the same keyspace, served from a standard GraphQL endpoint.

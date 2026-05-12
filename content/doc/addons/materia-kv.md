@@ -30,9 +30,14 @@ You don't have to configure leaders, followers: high availability is included, b
 
 ## Compatibility layers
 
-We didn’t want this Materia KV to come at the cost of complex configuration, requiring the use of special clients and ORMs. That’s why we’ve developed its compatibility layers. To “talk” to it, you don’t need a special API or tools specific to Clever Cloud. You'll be able to use it with existing solutions for **DynamoDB, GraphQL or Redis**. The first available layer is compatible with Redis API (and its variants as Reddict or Valkey).
+We didn’t want this Materia KV to come at the cost of complex configuration, requiring the use of special clients and ORMs. That’s why we’ve developed its compatibility layers: each one lets you talk to Materia KV through an existing protocol, with the clients, CLIs and ORMs you already use — no Clever Cloud-specific SDK required.
 
-Thus, you can use a Materia KV add-on with any compatible client within your applications, `redis-cli` or alternatives such as [iredis](https://github.com/laixintao/iredis). You can also use it with graphical interface (GUI). We tested many of them with success:
+Two layers are available today:
+
+- [**Redis API**](#using-the-redis-api-compatible-layer) (and variants such as Redict and Valkey) — full read/write access, the primary way to interact with Materia KV.
+- [**GraphQL**](#using-the-graphql-compatibility-layer) — a typed, read-oriented view of the same keyspace, served from a standard GraphQL endpoint.
+
+Both layers operate on the same underlying data, so any key written through the Redis API is immediately visible through GraphQL. For the Redis API layer specifically, you can use `redis-cli`, `valkey-cli` or alternatives such as [iredis](https://github.com/laixintao/iredis), as well as graphical clients we've tested successfully:
 
 - [Another Redis Desktop Client](https://goanother.com/)
 - [PX3 Redis UI](https://github.com/patrikx3/redis-ui)
@@ -44,7 +49,7 @@ Thus, you can use a Materia KV add-on with any compatible client within your app
 
 You can create a Materia KV add-on as simply as any other Clever Cloud service in the Console, [following this link](https://console.clever-cloud.com/users/me/addons/new). Select the plan (free during Beta testing phase), an application to link to (or none), give it a name, and you'll get access to its dashboard giving you connection details. Environment variables shared with a linked application are listed in the `Service dependencies` section.
 
-We included them with the `REDIS_` format. Thus, you can just try to replace a Redis instance by Materia KV. It's as simple as linking the new add-on, unlinking the old one and restarting your application! (Check commands you'll need first).
+We included them with the `REDIS_` format. Thus, you can just try to replace a Redis or Valkey instance by Materia KV. It's as simple as linking the new add-on, unlinking the old one and restarting your application! (Check commands you'll need first).
 
 You can also use clever tools to create a Materia KV add-on and set environment variables to test it with a `PING` command:
 
@@ -84,7 +89,7 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 ### Environment variables and CLI usage
 
-To connect to a Materia KV add-on, you need 3 parameters: the host, the port and a ([biscuit](https://biscuitsec.org) based) token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
+To connect to a Materia KV add-on, you need 3 parameters: the host, the port and a token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
 
 * `$KV_HOST` and its alias `$REDIS_HOST`
 * `$KV_PORT` and its alias `$REDIS_PORT`
@@ -119,15 +124,6 @@ We're exploring how [Clever Tools](https://github.com/CleverCloud/clever-tools/)
 
 * [Learn more about Clever KV](/doc/cli/kv-stores/)
 
-### Demos and examples
-
-We've prepared a few examples to help you get started with Materia KV:
-
-* [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
-* [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
-* [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
-* [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
-
 ### Supported types and commands
 
 Supported value types are:
@@ -141,7 +137,7 @@ Find below the list of currently supported commands:
 | <div style="width:99px">Commands</div>  | Description |
 | ------- | ----------- |
 | `APPEND` | If `key` already exists and is a string, this command appends the value at the end of the string. If `key` doesn't exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case. |
-| `AUTH` | Authenticate the current connection using the biscuit token as `password`. |
+| `AUTH` | Authenticate the current connection using the token as `password`. |
 | `CLIENT ID` | Returns the `ID` of the current connection. A connection ID has is never repeated and is monotonically incremental. |
 | `COMMAND` | Return an array with details about every supported command. |
 | `COMMAND COUNT` | Return the number of supported commands. |
@@ -262,3 +258,149 @@ OK
 - `JSON.SET` can't create new fields in existing documents
 - Nested path creation is not supported (e.g., `$.new.child.field`)
 - Keys in your JSON must not contains characters like `..`, `*`, `[?(`
+
+## Using the GraphQL compatibility layer
+
+In addition to the Redis API, Materia KV exposes a **GraphQL** endpoint. It reads from the same keyspace as the Redis API layer — every key you write through the Redis API is immediately queryable through GraphQL, with no synchronization layer in between. Both interfaces authenticate with the same token, and that token scopes each request to your add-on's data on the shared cluster.
+
+The GraphQL layer is **read-only** today — mutations aren't supported yet. Use the Redis API for writes.
+
+### Endpoint and authentication
+
+Materia KV is a distributed cluster: the GraphQL endpoint is a single URL shared by every add-on in a given region, over HTTPS on the standard port. For the Paris region, it is:
+
+```
+https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql
+```
+
+Authentication uses the same token as the Redis API (`$KV_TOKEN` / `$REDIS_PASSWORD`), passed as a bearer token:
+
+```bash
+curl -X POST "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql" \
+  -H "Authorization: Bearer $KV_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"{ __typename }"}'
+```
+
+Missing or invalid credentials return **HTTP 401** with the error in the GraphQL `errors` array. All other errors (wrong-type reads, unknown fields, mutation requests, validation errors) return **HTTP 200** with the details in `errors`, as the GraphQL specification requires.
+
+### GraphiQL playground
+
+Opening the GraphQL URL in a browser (plain `GET`) serves an embedded **GraphiQL** playground: an in-browser IDE with autocompletion, query history and a documentation explorer. Every request — including the schema introspection that powers autocomplete and the docs explorer — needs your token, otherwise GraphiQL displays `Error fetching schema`.
+
+**Initial setup, once per browser session:**
+
+1. At the **bottom of the query panel**, click the **Headers** tab (next to `Variables`).
+2. Paste your token as a JSON object:
+
+   ```json
+   {
+     "Authorization": "Bearer <your-token>"
+   }
+   ```
+
+3. Click the **Re-fetch GraphQL schema** icon at the bottom of the **left sidebar** (the circular-arrow icon, keyboard shortcut `Ctrl` + `Shift` + `R`). Introspection runs with your header, and the full schema becomes browsable.
+
+Once the header is set, the **Docs Explorer** (book icon, also in the left sidebar) shows the full type tree: every query, every argument, every return type, with the descriptions baked into the schema.
+
+### Fetching the schema
+
+Introspection is enabled, so you can pull the schema directly from the endpoint in three common ways.
+
+1. **Browse it in GraphiQL** — follow the setup above (headers + re-fetch), then click the Docs Explorer icon in the left sidebar.
+
+2. **Raw JSON introspection via `curl`** — useful for scripts and CI:
+
+   ```bash
+   curl -X POST "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql" \
+     -H "Authorization: Bearer $KV_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"query":"{ __schema { queryType { name fields { name } } types { name kind } } }"}'
+   ```
+
+3. **Download as SDL** (the classic `.graphql` schema file) using any introspection tool, such as `get-graphql-schema`:
+
+   ```bash
+   npx -y get-graphql-schema \
+     -h "Authorization=Bearer $KV_TOKEN" \
+     "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql" > schema.graphql
+   ```
+
+The resulting file plugs straight into code generators, IDE plugins, and schema-aware editors.
+
+### Queries
+
+The schema exposes a single root type, `MateriaKvQuery`, with queries for strings, hashes and sets — including single-key lookups, batched reads, pattern matching and server-side set algebra (`setIntersection`, `setDifference`, `setUnion`). Fetch the full list of queries and their signatures through introspection (see [Fetching the schema](#fetching-the-schema) above) or browse them in the GraphiQL Docs Explorer.
+
+Single-key queries (`string`, `hash`, `hashField`, `getSetMembers`) return a **nullable** object — `null` when the key doesn't exist. Pattern and batch queries return **non-null lists** (possibly empty).
+
+### Query examples
+
+Fetch a single string, including its expiration:
+
+```graphql
+query ReadSession($key: String!) {
+  string(key: $key) {
+    key
+    value
+    expireAt
+  }
+}
+```
+
+Read a structured record in one round-trip:
+
+```graphql
+query GetUser($key: String!) {
+  hash(key: $key) {
+    key
+    fields { name value }
+  }
+}
+```
+
+Combine several reads into one request using [aliases](https://graphql.org/learn/queries/#aliases):
+
+```graphql
+query Dashboard {
+  admins: getSetMembers(key: "group:admins") { members }
+  active: getSetMembers(key: "group:active") { members }
+  overlap: setIntersection(keys: ["group:admins", "group:active"])
+}
+```
+
+Always pass user input through **GraphQL variables** rather than string interpolation: the server type-checks every variable and queries stay safe from injection:
+
+```bash
+curl -X POST "https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql" \
+  -H "Authorization: Bearer $KV_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "query($k:String!){ string(key:$k){ key value } }",
+    "variables": { "k": "session:xyz" }
+  }'
+```
+
+### JSON values read through GraphQL
+
+JSON documents written via `JSON.SET` are stored on top of strings. The schema has no dedicated GraphQL type for JSON: read the document back through `string(key)` as the serialized payload and parse it client-side. Partial JSON paths (`JSON.GET key $.field`) are only available through the Redis API.
+
+### Current behaviors and limitations
+
+- Queries on a key of the wrong type (e.g. `hash(key)` on a string key) return a GraphQL error — `Database operation failed: Operation against a key holding the wrong kind of value` — rather than `null`. Make sure your query type matches the Redis type at the same key.
+- `stringsByPattern(pattern)` rejects a call where the pattern matches **more than 100 keys** with an error (`Database operation failed: Max batch size exceeded: N > 100`) — results are not silently truncated. Narrow the pattern (or walk the keyspace through several tighter prefixes) when the match count is larger.
+- `strings(keys: [...])` has the same hard limit: **at most 100 keys** per call. Chunk larger batches on the client side.
+- Pattern-based queries (`hashesByPattern`, `setsByPattern`, `hashFieldsByPattern`) are not paginated: each call returns its full result set in one response. Keep patterns focused to avoid oversized payloads.
+- Glob patterns follow the Redis `KEYS`/`SCAN` syntax (`*`, `?`, `[abc]`).
+- The `expireAt` field is an absolute instant (ISO 8601), not a remaining TTL — parse with `new Date(expireAt)` and compute `new Date(expireAt) - new Date()` for a countdown.
+- Authentication errors return HTTP 401 with the message in the `errors` array. Every other GraphQL error (wrong-type reads, mutation requests, validation errors) returns HTTP 200 with `errors` populated.
+
+## Demos and examples
+
+We've prepared a few examples to help you get started with Materia KV:
+
+* [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
+* [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
+* [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
+* [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
+* [Materia KV write via Redis API, read via GraphQL](https://github.com/CleverCloud/kv-graphql-example)

@@ -101,9 +101,17 @@ alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
 
 There are several ways to manage your buckets, find in this section a list of options.
 
+### Cellar Explorer
+
+Browse your buckets, upload, download and inspect objects directly from the [Clever Cloud Console](https://console.clever-cloud.com) with the **Cellar Explorer** tool, part of the all-included Clever Cloud experience.
+
+From the add-on dashboard, the Cellar Explorer lists every bucket of the add-on and lets you navigate objects as folders. You can upload or download an object, copy its public URL and inspect its metadata without installing a third-party S3 client. The tool relies on the new Cellar APIs and will keep gaining features over the coming months.
+
+Cellar Explorer is in Beta testing phase. Share your feedback and feature requests on our [GitHub Community](https://github.com/CleverCloud/Community/discussions/155).
+
 ### Using S3 clients
 
-Some clients allows you to upload files, list them, delete them, etc, like:
+Some clients allow you to upload files, list them, delete them, etc, like:
 
 - [Cyberduck](https://cyberduck.io)
 - [Filestash](https://www.filestash.app/)

@@ -42,6 +42,15 @@ If you need to import a very large dump, contact [Clever Cloud Support](https://
 
 {{% content "db-migration" %}}
 
+## Replication
+
+You can add up to two replicas to an existing MySQL database on Clever Cloud to enhance performance and reliability. Replication is available for MySQL 5.7 and later versions. Read-only replicas use [logical replication based on the binary log](https://dev.mysql.com/doc/refman/8.4/en/binlog-replication-configuration-overview.html) and can be deployed in a different availability zone (AZ) or region on request.
+
+If a primary server isn't available, a replica can be promoted as a standalone server and linked to applications.
+
+> [!NOTE]
+> Replica creation and promotion aren't yet available through the API or the Console. To create or configure replicas, or to promote one, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+
 ## Direct access
 
 {{< callout type="warning">}}

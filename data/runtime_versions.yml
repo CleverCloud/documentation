@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.3.12
+    - 1.3.14
 
 caddy:
   eol_source: https://github.com/caddyserver/caddy/releases

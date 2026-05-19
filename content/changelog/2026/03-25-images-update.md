@@ -22,7 +22,7 @@ We updated all our images, except PHP. Deployment is in progress for all our use
   * cURL 8.19.0
   * FFmpeg 8.1
   * Ghostscript 10.07
-  * OAuth2Proxy 7.14.3
+  * OAuth2 Proxy 7.14.3
   * Poppler 26.03
   * SQLite 3.52.0
   * Varnish 8.0.1

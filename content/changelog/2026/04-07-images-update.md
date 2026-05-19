@@ -17,7 +17,7 @@ We updated all our images, except PHP. Deployment is in progress for all our use
 * **Common:**
   * Linux kernel 6.19.11
   * nginx 1.28.3
-  * OAuth2Proxy 7.15.1
+  * OAuth2 Proxy 7.15.1
   * Tailscale 1.96.3
 * **Python:**
   * uv 0.11.2

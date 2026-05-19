@@ -97,9 +97,8 @@ This hook is perfect for:
 
 - extra build steps that you want to cache (eg bundling your frontend assets)
 
-{{< callout type="info" >}}
-  If you set [\`CC_DISABLE_BUILD_CACHE_UPLOAD\`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
-{{< /callout >}}
+> [!NOTE]
+> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
 
 ### Pre Run
 

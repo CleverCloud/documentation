@@ -59,18 +59,18 @@ please contact the support to change its policy.
 
 ## 🔑 Rights and permissions
 
-Add-ons are managed services, meaning that users have **controlled access** to the server. They are granted access to all proposed operations except changing the server configuration. Based on the plan, they are granted access to a fix amount of databases. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+Clever Cloud configures and maintains the Redis server. You have **controlled access** to its operations, except those that change the server configuration. Your plan determines the number of databases you can access. This ensures optimal performance and security.
 
 Authorized actions:
+
 - Access to one or more databases depending on your plan.
 - Access to all Redis operations except *CONFIG* and *CLUSTER*.
-- Set up replica via clever cloud console.
+- Set up a replica from the Clever Cloud Console.
 
-If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+The following actions aren't available directly:
 
-Here is the list of actions that you won't be able to perform:
 - Server configuration update.
 - Modules installation.
 - Backup frequency or retention control.
 
-Ask Clever Cloud support if you want to perform one of these actions.
+If your use case requires specific server parameters or one of these restricted operations, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss feasibility.

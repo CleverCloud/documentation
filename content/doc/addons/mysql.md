@@ -70,21 +70,21 @@ As Shared databases (DEV) are shared between multiple applications and delays co
 
 ## 🔑 Rights and permissions
 
-Add-ons are managed services, meaning that users have **standard access** to the database (**ALL privileges**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+Clever Cloud configures and maintains the MySQL server. You have **standard access** to the database with **ALL privileges**, but some administrative operations and server settings aren't available directly. This ensures optimal performance and security.
 
 Authorized actions:
+
 - Manage tables (create, delete…).
 - Manage indexes.
 
-If you think your system might require more advanced administrative access, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+The following actions aren't available directly:
 
-Here is the list of actions that you won't be able to perform:
 - Database administration (for example you won't be able to create new databases).
 - Users administration (you won't be able to create other users than the one handled with our control plane, i.e. the base owner and read-only users).
 - Server configuration update.
 - Plugins installation.
 - Replica creation.
 - Backup frequency or retention control.
-- Create Trigger or Function (Only on DEV plan)
+- Create triggers or functions (DEV plans only).
 
-Ask Clever Cloud support if you want to perform one of these actions.
+If your use case requires specific server parameters or one of these restricted operations, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss feasibility.

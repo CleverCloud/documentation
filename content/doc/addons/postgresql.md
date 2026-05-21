@@ -170,23 +170,23 @@ If you want to use [pg_activity](https://github.com/dalibo/pg_activity) on a Pos
 
 ## 🔑 Rights and permissions
 
-Add-ons are managed services, meaning that users have **standard access** to the database (role **owner**). Some operations like databases and users creation, as well as some settings modifications aren't available by default. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+Clever Cloud configures and maintains the PostgreSQL server. You have **standard access** to the database through the **owner** role, but some administrative operations and server settings aren't available directly. This ensures optimal performance and security.
 
 Authorized actions:
+
 - Manage tables (create, delete…).
 - Manage schemas.
 - Manage indexes.
 - Access information from **pg_catalog** (except **pg_database** on DEV plan).
 - Access to basic maintenance operations such as *VACUUM* and *ANALYZE*.
 
-If you think your system might require more advanced administrative access, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to explain your use case, and we will work with you to find a solution.
+The following actions aren't available directly:
 
-Here is the list of actions that you won't be able to perform:
 - Database administration (for example you won't be able to create new databases).
 - Users administration (you won't be able to create other users than the one handled with our control plane, i.e. the base owner and read-only users).
 - Server configuration update.
 - Extensions installation.
 - Replica creation.
-- Back-up frequency or retention control.
+- Backup frequency or retention control.
 
-Ask Clever Cloud support if you want to perform one of these actions.
+If your use case requires specific server parameters or one of these restricted operations, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss feasibility.

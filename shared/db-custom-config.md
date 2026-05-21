@@ -1,0 +1,1 @@
+By default, the server is configured by Clever Cloud to ensure optimal performance and security. If your use case requires specific server parameters, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss feasibility.

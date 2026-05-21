@@ -187,16 +187,16 @@ It's important here to set `number_of_replicas` to zero to avoid triggering clus
 
 ## 🔑 Rights and permissions
 
-Elastic Stack add-ons are **managed services**, with Clever Cloud in charge of configuring and maintaining native configuration files. Some operations like adding an oauth source to connect to Kibana can't be added, as well as some native settings modifications. This ensures optimal performances and security for managed services as configured by Clever Cloud.
+Elastic Stack add-ons are **managed services**. Clever Cloud configures and maintains their native configuration files. You can change most settings from Kibana or by API, but some native settings, such as adding an OAuth source to Kibana, aren't available directly. This ensures optimal performance and security.
 
-Most settings are available for modifications and update from Kibana or by API, for example:
+Settings you can change include:
 
-- Managing users permissions
-- Frequencies of back-ups
-- The lifecycle of backups indexes
-- Backups destination
+- Manage user permissions
+- Set backup frequency
+- Manage the lifecycle of backup indexes
+- Configure the backup destination
 
-If you think your system might require some customization (like some plugins activation), contact Clever Cloud support to explain your use case and we will work with you to find a solution.
+If your use case requires changing a native configuration file or another unavailable setting, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss feasibility.
 
 ## Migrations and upgrades
 

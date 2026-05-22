@@ -27,7 +27,7 @@ This service allows your queries to some external services to come from a fixed 
 
 This service does not appear in the Console at the moment.
 The best is to ask the support team that will set it up for you and provide you with the needed information.
-At the time of writing this doc, this service was billed 30€/month.
+For pricing details, please contact the support team or your sales contact.
 The price does not change with the number of applications that will use it.
 
 The IP depends on the zone, so ask the support about it.

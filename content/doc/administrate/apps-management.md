@@ -30,6 +30,8 @@ Stop functionality is useful during the development of the application to limit 
 
 {{< callout type="info" >}}
   If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/env-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded.
+
+  Nano and Pico plans always use a dedicated build, which requires the build cache. Setting this environment variable on these plans causes deployment to fail.
 {{< /callout >}}
 
 ## Deploy an old commit

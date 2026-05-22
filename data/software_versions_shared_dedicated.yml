@@ -22,13 +22,13 @@ mysql:
 
 pg:
   dedicated:
-    - v14.22
-    - v15.17
-    - v16.13
-    - v17.9
-    - v18.3
+    - v14.23
+    - v15.18
+    - v16.14
+    - v17.10
+    - v18.4
   dev:
-    - v15.17
+    - v15.18
 
 redis:
   dedicated:

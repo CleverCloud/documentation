@@ -47,6 +47,24 @@ We provide three kinds of VPN technologies:
 
 If you are interested, please ask the support / your sales contact for a quote.
 
+### Dedicated Frontends
+
+By default, incoming traffic to your applications goes through Clever Cloud's shared frontends (powered by [Sōzu](https://www.sozu.io/)). For use cases requiring stronger network isolation or higher availability guarantees, you can request **dedicated frontends**.
+
+Dedicated frontends are especially relevant if you need to:
+
+- **Isolate your traffic** from other customers (compliance, security, strict SLAs)
+- **Control your inbound IPs** — useful for client-side filtering or certifications (HDS, PCI-DSS, etc.)
+- **Handle very high traffic volumes** without sharing resources with other organizations
+- **Guarantee the availability** of your network entry point independently from other tenants
+
+Two configurations are available:
+
+- **1 Dedicated Frontend**: a single load balancer dedicated to your organization.
+- **2 Dedicated Frontends in high availability**: two dedicated load balancers providing fault tolerance at the network entry level, eliminating the frontend as a single point of failure. This configuration is recommended for critical architectures.
+
+This is a custom, quote-based option. To request one, [contact our support team](https://console.clever-cloud.com/ticket-center-choice) with your use case and target region so they can assess feasibility and provide a quote.
+
 ## The "Paris" region
 
 The Paris region is owned and handled by Clever Cloud. We own or entrust the associated AS's and

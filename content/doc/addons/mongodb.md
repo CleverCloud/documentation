@@ -99,3 +99,7 @@ Here is the list of actions that you won't be able to perform:
 - Backup frequency or retention control.
 
 Ask Clever Cloud support if you want to perform one of these actions.
+
+## Custom base configuration
+
+{{% content "db-custom-config" %}}

@@ -201,3 +201,7 @@ If you think your system might require some customization (like some plugins act
 ## Migrations and upgrades
 
 When migrating or upgrading an Elasticsearch instance — especially when it's deployed as a cluster with multiple VMs and nodes — contact [our support team](https://console.clever-cloud.com/ticket-center-choice) beforehand to confirm feasibility and coordinate the operation without disruption.
+
+## Custom base configuration
+
+{{% content "db-custom-config" %}}

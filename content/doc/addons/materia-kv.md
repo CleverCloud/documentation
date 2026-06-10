@@ -263,7 +263,7 @@ OK
 
 In addition to the Redis API, Materia KV exposes a **GraphQL** endpoint. It reads from the same keyspace as the Redis API layer — every key you write through the Redis API is immediately queryable through GraphQL, with no synchronization layer in between. Both interfaces authenticate with the same token, and that token scopes each request to your add-on's data on the shared cluster.
 
-The GraphQL layer is **read-only** today — mutations aren't supported yet. Use the Redis API for writes.
+The GraphQL layer is **read-only** today — the schema exposes no mutation type, and any mutation request is rejected with a `Schema is not configured for mutations.` error. Use the Redis API for writes.
 
 ### Endpoint and authentication
 
@@ -334,6 +334,12 @@ The schema exposes a single root type, `MateriaKvQuery`, with queries for string
 
 Single-key queries (`string`, `hash`, `hashField`, `getSetMembers`) return a **nullable** object — `null` when the key doesn't exist. Pattern and batch queries return **non-null lists** (possibly empty).
 
+### Key expiration
+
+String, hash and set results all expose the key's expiration through an `expireAt` field, typed with the schema's `DateTime` scalar: an absolute UTC instant serialized as an RFC 3339 (ISO 8601) string, such as `2026-06-10T15:40:54.134+00:00`. Keys without a time to live return `null`.
+
+The Redis API remains the place where you set, update or clear a TTL (`EXPIRE`, `PEXPIRE`, `PERSIST`, `SET ... EX`): GraphQL reflects the resulting absolute instant on the next read. To compute a countdown in your client, parse `expireAt` as a timestamp and subtract the current time.
+
 ### Query examples
 
 Fetch a single string, including its expiration:
@@ -392,7 +398,7 @@ JSON documents written via `JSON.SET` are stored on top of strings. The schema h
 - `strings(keys: [...])` has the same hard limit: **at most 100 keys** per call. Chunk larger batches on the client side.
 - Pattern-based queries (`hashesByPattern`, `setsByPattern`, `hashFieldsByPattern`) are not paginated: each call returns its full result set in one response. Keep patterns focused to avoid oversized payloads.
 - Glob patterns follow the Redis `KEYS`/`SCAN` syntax (`*`, `?`, `[abc]`).
-- The `expireAt` field is an absolute instant (ISO 8601), not a remaining TTL — parse it as an ISO 8601 timestamp in your client, then subtract the current time to compute a countdown.
+- The `expireAt` field is an absolute instant (a `DateTime` scalar in RFC 3339 / ISO 8601 format), not a remaining TTL — see [Key expiration](#key-expiration) above.
 - Authentication errors return HTTP 401 with the message in the `errors` array. Every other GraphQL error (wrong-type reads, mutation requests, validation errors) returns HTTP 200 with `errors` populated.
 
 ## Demos and examples

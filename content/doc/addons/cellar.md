@@ -819,6 +819,110 @@ When versioning is enabled, the newly added object is automatically provided wit
 
 {{< /tabs >}}
 
+## Uploading objects with presigned URLs and checksum validation
+
+Pre-signed URLs allow the client to upload files directly to S3 without ever exposing your credentials. You simply generate a temporary, time-limited URL and the client uses it to upload their file to your cellar.
+To ensure the integrity of the uploaded file, you can add a checksum as part of the URL parameters. This checksum acts as a fingerprint for the expected file.
+
+Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign your URL with an MD5 checksum as a parameter, Cellar validates the uploaded file against the expected checksum by verifying both the request headers and the file content. The upload fail if either value doesn't match the expected checksum.
+
+{{< tabs items="Python, Node.js" >}}
+
+  {{< tab >}}
+
+  ```python
+  import boto3
+  import hashlib
+  import base64
+  from botocore.config import Config
+  from botocore.exceptions import ClientError
+
+  # --- Configuration Cellar ---
+  cellar_host = "https://cellar-c2.services.clever-cloud.com"
+  access_key = "<YOUR-ACCESS-KEY>"
+  secret_key = "<YOUR-SECRET-KEY>"
+  bucket_name = "<Your-bucket>"
+  object_key = "<path_on_the_cellar>/<file_name>"
+
+  # --- Client S3 ---
+  s3 = boto3.client(
+      "s3",
+      endpoint_url=cellar_host,
+      aws_access_key_id=access_key,
+      aws_secret_access_key=secret_key,
+      config=Config(
+          signature_version="s3v4",
+          s3={"addressing_style": "path"},
+      )
+  )
+
+  # MD5 de "hello world"
+  md5 = base64.b64encode(hashlib.md5(b"hello world").digest()).decode()
+
+  url = s3.generate_presigned_url(
+      ClientMethod="put_object",
+      Params={
+          "Bucket": bucket_name,
+          "Key": object_key,
+          "ContentMD5": md5,
+      },
+      ExpiresIn=3600,
+  )
+
+  print(url)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab >}}
+
+  ```js
+    import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+    import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+    import { createHash } from "crypto";
+
+    // --- Configuration ---
+    const s3 = new S3Client({
+      endpoint: "https://cellar-c2.services.clever-cloud.com",
+      region: "us-east-1",
+      credentials: {
+        accessKeyId: "<VOTREACCESSKEY>",
+        secretAccessKey: "<VOTRESECRETKEY>",
+      },
+      forcePathStyle: true,
+    });
+
+    const bucket = "<mon-bucket>";
+    const key = "<path_on_the_cellar>/<file_name>";
+
+    // --- Calcul du checksum MD5 (base64) ---
+    const fileContent = Buffer.from("Hello World");
+    const md5Base64 = createHash("md5").update(fileContent).digest("base64");
+
+    // --- Génération de l'URL présignée ---
+    const command = new PutObjectCommand({
+      Bucket: bucket,
+      Key: key,
+      ContentMD5: md5Base64,
+    });
+
+    const presignedUrl = await getSignedUrl(s3, command, {
+      expiresIn: 3600,
+      // ← Force le header Content-MD5 à rester dans la signature (non hoistable)
+      unhoistableHeaders: new Set(["content-md5"]),
+    });
+
+    console.log("URL présignée :", presignedUrl);
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+{{< callout type="info">}}
+  If you use SHA-256 for the checksum, Cellar verifies that the SHA-256 checksum specified in the URL matches the value provided in the request headers. However, unlike MD5, it doesn't validate the file content against the checksum, meaning data integrity isn't verified during upload.
+{{< /callout >}}
+
 ## Troubleshooting
 
 {{% details title="SSL error with s3cmd" closed="true" %}}

@@ -88,3 +88,7 @@ Here is the list of actions that you won't be able to perform:
 - Create Trigger or Function (Only on DEV plan)
 
 Ask Clever Cloud support if you want to perform one of these actions.
+
+## Custom base configuration
+
+{{% content "db-custom-config" %}}

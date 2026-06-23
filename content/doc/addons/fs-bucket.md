@@ -156,6 +156,10 @@ The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https
 | RSA       | 4096     | `SHA256:yRHC/tAlBpHLlRZ5rwbZ1z+159Bj3yg0VxHf+hXINLg` |
 | RSA       | 4096     | `SHA256:yhn79aqxOGQZ+LXdN1/vIY+jwRIbBamlVT1+HdFoA6o` |
 
+> [!NOTE]
+> The SFTP access to FS Buckets uses Clever Cloud-managed credentials. You cannot add custom SSH keys or manage individual user accounts for FS Bucket access.
+> If you need fine-grained user management and custom SSH key support for SFTP, consider deploying [SFTPGo](/guides/sftpgo/) as a Docker application instead.
+
 ### From your favorite FTP client
 
 The **Add-on information** tab of your FS Bucket add-on displays the information

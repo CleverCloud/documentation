@@ -57,15 +57,7 @@ clever logs --addon <addon_xxx>
 
 ### Access logs
 
-It contains all incoming requests to your application. Here is an example:
-
-```txt
-255.255.255.255 - - [06/Feb/2020:07:59:22 +0100] "GET /aget/to/your/beautiful/website -" 200 1453
-```
-
-They are available in different formats, the most common is CLF which stands for Common Log Format.
-
-You can see access logs with the following command:
+It contains all incoming HTTP requests to your application. You can see access logs with the following command:
 
 ```bash
 clever accesslogs
@@ -74,48 +66,67 @@ clever accesslogs
 As with the `logs` command, you can specify `--before` and `--after` flags.
 If you don't specify any options, the logs display continuously.
 
-To change the output, specify the `--format` flag with one of these values:
+To change the output, specify the `--format` (`-F`) flag with one of these values:
 
-- simple: `2021-06-25T10:11:35.358Z 255.255.255.255 GET /`
-- extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever.cloud / 200`
-- clf: `255.255.255.255 - - [25/Jun/2021:12:11:35 +0200] "GET / -" 200 562`
-- json:
+- `human` (default): a human-readable, colored table
+
+  ```txt
+  2026-06-24T08:05:43.880Z   255.255.255.255   FR/Nantes   200   GET  /
+  ```
+
+- `clf`: [Common Log Format](https://en.wikipedia.org/wiki/Common_Log_Format)
+
+  ```txt
+  255.255.255.255 - - [24/Jun/2026:08:05:43 +0000] "GET /" 200 562
+  ```
+
+  The HTTP protocol version isn't part of the access log payload, so the request line is limited to `method path` (no `HTTP/x.y` token).
+
+- `json`: a JSON array of log objects (requires a bounding flag such as `--before`)
+- `json-stream`: one JSON log object per line
+
+  Both JSON formats share the same object shape:
 
   ```json
-    {
-        "t":"2021-06-25T10:11:35.358209Z",
-        "a":"app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "adc":"clevercloud-adc-nX",
-        "o":"orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "i":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "ipS":"255.255.255.255",
-        "pS":58477,
-        "s":{
-            "lt":50.624,
-            "lg":3.0511,
-            "ct":"Nantes",
-            "co":"FR"
-        },
-        "ipD":"46.252.181.17",
-        "pD":14001,
-        "d":{
-            "lt":45.7059,
-            "lg":4.7444,
-            "ct":"Chaponost",
-            "co":"FR"
-        },
-        "vb":"GET",
-        "path":"/",
-        "bIn":658,"bOut":562,
-        "h":"www.clever.cloud",
-        "rTime":"31ms",
-        "sTime":"75μs",
-        "scheme":"HTTPS",
-        "sC":200,"sT":"OK",
-        "w":"WRK-01",
-        "r":"01F91AEG8Z9RJKYB7JY7H56FNB",
-        "tlsV":"TLS1.3"
-    }
+  {
+    "id": "01F91AEG8Z9RJKYB7JY7H56FNB",
+    "date": "2026-06-24T08:05:43.880Z",
+    "applicationId": "app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "instanceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "region": "par",
+    "zone": "par",
+    "requestId": "01F91AEG8Z9RJKYB7JY7H56FNB",
+    "bytesIn": 658,
+    "bytesOut": 562,
+    "source": {
+      "ip": "255.255.255.255",
+      "port": 58477,
+      "city": "Nantes",
+      "countryCode": "FR",
+      "geoLocation": { "latitude": 50.624, "longitude": 3.0511 }
+    },
+    "destination": {
+      "ip": "46.252.181.17",
+      "port": 14001,
+      "city": "Chaponost",
+      "countryCode": "FR",
+      "geoLocation": { "latitude": 45.7059, "longitude": 4.7444 }
+    },
+    "http": {
+      "request": {
+        "method": "GET",
+        "path": "/",
+        "host": "www.clever-cloud.com",
+        "scheme": "https"
+      },
+      "response": {
+        "statusCode": 200,
+        "serviceTime": null,
+        "time": 31
+      }
+    },
+    "tls": null
+  }
   ```
 
 ## Exporting logs to an external tool

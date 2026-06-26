@@ -74,7 +74,7 @@ Next, configure the application with a medium build instance. The host instance 
 clever scale --build-flavor M
 clever scale --flavor XS
 
-clever env set CC_PRE_BUILD_HOOK "npm run build"
+clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
 clever env set CC_RUN_COMMAND "node .output/server/index.mjs"
 ```
 

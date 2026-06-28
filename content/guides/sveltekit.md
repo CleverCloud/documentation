@@ -112,7 +112,7 @@ The following steps use `myStaticApp` as an example folder name. Replace it with
 
 ### Environment variables
 
-Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to configure the output directory and build command explicitly. `CC_WEBROOT` points to the `build/` directory that the adapter generates, and `CC_PRE_BUILD_HOOK` installs dependencies and runs the build before deployment:
+Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to configure the output directory and build command explicitly. `CC_WEBROOT` points to the `build/` directory that the adapter generates. Clever Cloud installs dependencies automatically, but does not run the build — `CC_PRE_BUILD_HOOK` is what triggers `npm run build` and produces the output directory:
 
 {{< tabs >}}
   {{< tab name="npm" icon="npm" >}}
@@ -123,7 +123,7 @@ Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to con
   {{< /tab >}}
   {{< tab name="pnpm" icon="pnpm" >}}
     ```bash
-    clever env set CC_NODE_BUILD_TOOL "pnpm"
+    clever env set CC_NODE_BUILD_TOOL "pnpm"  # optional if pnpm-lock.yaml is committed
     clever env set CC_WEBROOT "build"
     clever env set CC_PRE_BUILD_HOOK "pnpm install && pnpm run build"
     ```
@@ -207,12 +207,14 @@ clever scale --flavor XS
     clever env set PORT 8080
     clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
     clever env set HOST_HEADER "Host"
-    clever env set CC_NODE_BUILD_TOOL "pnpm"
+    clever env set CC_NODE_BUILD_TOOL "pnpm"  # optional if pnpm-lock.yaml is committed
     clever env set CC_PRE_BUILD_HOOK "pnpm install && pnpm run build"
     clever env set CC_RUN_COMMAND "node build"
     ```
   {{< /tab >}}
 {{< /tabs >}}
+
+`CC_PRE_BUILD_HOOK` runs before the server starts. Clever Cloud installs production dependencies automatically; the hook is needed to run `vite build` and produce the `build/` directory that `node build` requires.
 
 `PORT` must be set to `8080`. SvelteKit's built server listens on port 3000 by default, but Clever Cloud requires all applications to be exposed on port 8080.
 

@@ -5,6 +5,7 @@ Once you complete these steps, commit your content to the local repository and d
 ```bash
 git add .
 git commit -m "First deploy"
+
 clever deploy
 clever open
 ```

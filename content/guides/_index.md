@@ -54,6 +54,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/ruby-on-rails" title="Ruby On Rails" subtitle= "How to deploy Ruby on Rails framework" icon="ruby" >}}
   {{< card link="/developers/guides/ruby-rack" title="Ruby Rack" subtitle= "Set up a Ruby Rack application and deploy on Clever Cloud" icon="ruby" >}}
   {{< card link="/developers/guides/ruby-rack-app-tutorial" title="Ruby Rack (full tutorial)" subtitle= "Write a hello world web application using Rack and deploy it on Clever Cloud" icon="ruby" >}}
+  {{< card link="/developers/guides/sveltekit" title="SvelteKit" subtitle="Deploy a SvelteKit application with static or server-side rendering" icon="svelte" >}}
   {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
   {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
 {{< /cards >}}

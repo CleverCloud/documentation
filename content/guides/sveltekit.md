@@ -30,7 +30,7 @@ SSG is the right choice for content-oriented sites where pages don't change per 
 To follow this guide with a fresh project, scaffold a new SvelteKit application using the official CLI (you'll need [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 
 ```bash
-npm create svelte@latest mySvelteApp
+npx sv create mySvelteApp
 cd mySvelteApp
 npm install
 ```

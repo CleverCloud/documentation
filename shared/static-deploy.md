@@ -5,7 +5,7 @@ Once you complete these steps, commit your content to the local repository and d
 ```bash
 git add .
 git commit -m "First deploy"
-clever deploy
+clever deploy  # or: git push clever main:master (find the git URL in your app's Information tab)
 clever open
 ```
 

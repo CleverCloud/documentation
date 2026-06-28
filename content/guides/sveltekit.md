@@ -112,7 +112,7 @@ The following steps use `myStaticApp` as an example folder name. Replace it with
 
 ### Environment variables
 
-Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to configure the output directory and build command explicitly. `CC_WEBROOT` points to the `build/` directory that the adapter generates. Clever Cloud installs dependencies automatically, but does not run the build — `CC_PRE_BUILD_HOOK` is what triggers `npm run build` and produces the output directory:
+Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to configure the output directory and build command explicitly. `CC_WEBROOT` points to the `build/` directory that the adapter generates. Clever Cloud installs dependencies automatically, but does not run the build. `CC_PRE_BUILD_HOOK` is what triggers `npm run build` and produces the output directory:
 
 {{< tabs >}}
   {{< tab name="npm" icon="npm" >}}
@@ -231,7 +231,7 @@ Once you complete these steps, commit your project and deploy it:
 ```bash
 git add .
 git commit -m "First deploy"
-clever deploy
+clever deploy  # or: git push clever main:master (find the git URL in your app's Information tab)
 clever open
 ```
 

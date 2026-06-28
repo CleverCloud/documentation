@@ -29,11 +29,22 @@ SSG is the right choice for content-oriented sites where pages don't change per 
 
 To follow this guide with a fresh project, scaffold a new SvelteKit application using the official CLI (you'll need [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
 
-```bash
-npx sv create mySvelteApp
-cd mySvelteApp
-npm install
-```
+{{< tabs >}}
+  {{< tab name="npm" icon="npm" >}}
+    ```bash
+    npx sv create mySvelteApp
+    cd mySvelteApp
+    npm install
+    ```
+  {{< /tab >}}
+  {{< tab name="pnpm" icon="pnpm" >}}
+    ```bash
+    npx sv create mySvelteApp
+    cd mySvelteApp
+    pnpm install
+    ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 ## Deploy as a static site
 
@@ -41,21 +52,25 @@ Both SSG and SPA modes use `@sveltejs/adapter-static` and deploy to the Clever C
 
 ### Static Site Generation
 
-Install the adapter, then configure it in `svelte.config.js`:
+Install the adapter, then configure it in `vite.config.ts`:
 
 ```bash
 npm i -D @sveltejs/adapter-static
 ```
 
-```javascript
-// svelte.config.js
+```typescript
+// vite.config.ts
 import adapter from '@sveltejs/adapter-static';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
-export default {
-  kit: {
-    adapter: adapter()
-  }
-};
+export default defineConfig({
+  plugins: [
+    sveltekit({
+      adapter: adapter()
+    })
+  ]
+});
 ```
 
 Enable prerendering in your root layout so SvelteKit generates static HTML for every route at build time:
@@ -74,15 +89,19 @@ For a SPA, disable server-side rendering in the root layout and configure a fall
 export const ssr = false;
 ```
 
-```javascript
-// svelte.config.js
+```typescript
+// vite.config.ts
 import adapter from '@sveltejs/adapter-static';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
-export default {
-  kit: {
-    adapter: adapter({ fallback: '200.html' })
-  }
-};
+export default defineConfig({
+  plugins: [
+    sveltekit({
+      adapter: adapter({ fallback: '200.html' })
+    })
+  ]
+});
 ```
 
 {{< callout type="tip" >}}
@@ -95,10 +114,21 @@ The following steps use `myStaticApp` as an example folder name. Replace it with
 
 Clever Cloud's static runtime does not auto-detect SvelteKit, so you need to configure the output directory and build command explicitly. `CC_WEBROOT` points to the `build/` directory that the adapter generates, and `CC_PRE_BUILD_HOOK` installs dependencies and runs the build before deployment:
 
-```bash
-clever env set CC_WEBROOT "build"
-clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
-```
+{{< tabs >}}
+  {{< tab name="npm" icon="npm" >}}
+    ```bash
+    clever env set CC_WEBROOT "build"
+    clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
+    ```
+  {{< /tab >}}
+  {{< tab name="pnpm" icon="pnpm" >}}
+    ```bash
+    clever env set CC_NODE_BUILD_TOOL "pnpm"
+    clever env set CC_WEBROOT "build"
+    clever env set CC_PRE_BUILD_HOOK "pnpm install && pnpm run build"
+    ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 ### Scale your application
 
@@ -117,21 +147,25 @@ SSR renders pages on each request using a Node.js server. Use `@sveltejs/adapter
 
 ### Configure the adapter
 
-Install the adapter and update `svelte.config.js`:
+Install the adapter and update `vite.config.ts`:
 
 ```bash
 npm i -D @sveltejs/adapter-node
 ```
 
-```javascript
-// svelte.config.js
+```typescript
+// vite.config.ts
 import adapter from '@sveltejs/adapter-node';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
-export default {
-  kit: {
-    adapter: adapter()
-  }
-};
+export default defineConfig({
+  plugins: [
+    sveltekit({
+      adapter: adapter()
+    })
+  ]
+});
 ```
 
 ### Create a Node.js application
@@ -156,13 +190,29 @@ Configure instance sizing, then set the required variables. A medium build insta
 ```bash
 clever scale --build-flavor M
 clever scale --flavor XS
-
-clever env set PORT 8080
-clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
-clever env set HOST_HEADER "Host"
-clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
-clever env set CC_RUN_COMMAND "node build"
 ```
+
+{{< tabs >}}
+  {{< tab name="npm" icon="npm" >}}
+    ```bash
+    clever env set PORT 8080
+    clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
+    clever env set HOST_HEADER "Host"
+    clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
+    clever env set CC_RUN_COMMAND "node build"
+    ```
+  {{< /tab >}}
+  {{< tab name="pnpm" icon="pnpm" >}}
+    ```bash
+    clever env set PORT 8080
+    clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
+    clever env set HOST_HEADER "Host"
+    clever env set CC_NODE_BUILD_TOOL "pnpm"
+    clever env set CC_PRE_BUILD_HOOK "pnpm install && pnpm run build"
+    clever env set CC_RUN_COMMAND "node build"
+    ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 `PORT` must be set to `8080`. SvelteKit's built server listens on port 3000 by default, but Clever Cloud requires all applications to be exposed on port 8080.
 

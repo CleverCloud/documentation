@@ -36,6 +36,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/fluentd/" title="Fluentd" subtitle= "How to deploy Fluentd using Docker on Clever Cloud" icon="fluentd" >}}
   {{< card link="/developers/guides/go-echoip" title="Echo IP" subtitle= "How to deploy EchoIP based on a Go application on Clever Cloud" icon="go" >}}
   {{< card link="/developers/guides/hexo" title="Hexo" subtitle= "Build and deploy a static Hexo based website on Clever Cloud" icon="hexo" >}}
+  {{< card link="/developers/guides/hono" title="Hono" subtitle= "Build and deploy a Hono API on Clever Cloud" icon="node" >}}
   {{< card link="/developers/guides/hugo" title="Hugo" subtitle= "Build and deploy a static Hugo based website on Clever Cloud" icon="hugo" >}}
   {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle= "Build and deploy a static Hugo based website and host it using Cellar" icon="hugo" >}}
   {{< card link="/developers/guides/kibana" title="Kibana" subtitle= "Deploy and customize a Kibana server on Clever Cloud" icon="kibana" >}}

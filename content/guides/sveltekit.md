@@ -198,7 +198,8 @@ clever scale --flavor XS
     clever env set PORT 8080
     clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
     clever env set HOST_HEADER "Host"
-    clever env set CC_PRE_BUILD_HOOK "npm install && npm run build"
+    clever env set CC_NODE_DEV_DEPENDENCIES install
+    clever env set CC_POST_BUILD_HOOK "npm run build"
     clever env set CC_RUN_COMMAND "node build"
     ```
   {{< /tab >}}
@@ -208,13 +209,14 @@ clever scale --flavor XS
     clever env set PROTOCOL_HEADER "X-Forwarded-Proto"
     clever env set HOST_HEADER "Host"
     clever env set CC_NODE_BUILD_TOOL "pnpm"  # optional if pnpm-lock.yaml is committed
-    clever env set CC_PRE_BUILD_HOOK "pnpm install && pnpm run build"
+    clever env set CC_NODE_DEV_DEPENDENCIES install
+    clever env set CC_POST_BUILD_HOOK "pnpm run build"
     clever env set CC_RUN_COMMAND "node build"
     ```
   {{< /tab >}}
 {{< /tabs >}}
 
-`CC_PRE_BUILD_HOOK` runs before the server starts. Clever Cloud installs production dependencies automatically; the hook is needed to run `vite build` and produce the `build/` directory that `node build` requires.
+By default, Clever Cloud only installs production dependencies, so `vite` and `@sveltejs/kit` would be missing when the build runs (they're dev dependencies). `CC_NODE_DEV_DEPENDENCIES` tells it to install development dependencies too, and `CC_POST_BUILD_HOOK` runs `vite build` once they're installed, producing the `build/` directory that `node build` requires.
 
 `PORT` must be set to `8080`. SvelteKit's built server listens on port 3000 by default, but Clever Cloud requires all applications to be exposed on port 8080.
 

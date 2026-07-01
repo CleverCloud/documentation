@@ -50,6 +50,7 @@ hardcoded
 healthcheck
 Heptapod
 Hextra
+Hono
 hostname
 Infinispan
 jarName

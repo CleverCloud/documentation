@@ -15,10 +15,10 @@ mongo:
 mysql:
   dedicated:
     - 5.7 (EOL)
-    - 8.0.45
-    - 8.4.8
+    - 8.0.46 (EOL)
+    - 8.4.10
   dev:
-    - 8.0.45
+    - 8.0.46 (EOL)
 
 pg:
   dedicated:

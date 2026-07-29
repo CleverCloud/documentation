@@ -1,7 +1,7 @@
 ---
-title: "Images update: Gradle 9.6, Hugo 0.163, Docker 29.6"
-description: A tools bump release, Hugo 0.163 is now the default for static applications
-date: 2026-07-01
+title: "Images update: Rust 1.97, Yarn 4.17, Hugo 0.164"
+description: All runtimes updated, PHP and Node.js included, with fresh Rust and Yarn releases. Hugo 0.164 is now available for static applications
+date: 2026-07-28
 tags:
   - images
   - update

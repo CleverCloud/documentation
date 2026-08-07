@@ -77,6 +77,9 @@ Once you created your add-on, open the management URL or look for `MB_SITE_URL` 
 
 ## Password reset
 
+> [!WARNING]
+> Requests to `/api/session/reset_password` are blocked on `x.58` and above until you update to a version patching a [critical security vulnerability](/changelog/2026/08-07-metabase-security-reset-password/). Use `CC_METABASE_BLOCK_RESET_PASSWORD=true/false` to control this behavior.
+
 To be able to reset your password, you must have [set up an active SMTP server](#configuring-a-smtp-server) in the `e-mail` section of the administrator settings. You can also do it [using a Mailpace add-on](#using-a-mailpace-add-on). Once done, the forgot password procedure will ask you the user email address and send a reset link to it.
 
 If you don't have an active SMTP server configured, there is a manual procedure to get the reset link:

@@ -16,9 +16,9 @@ aliases:
 
 ## What is a Scaler?
 
-A _scaler_ is an individual instance hosting your app. You can attribute one or more scalers to your apps. scalers come in many sizes based on each language requirements from pico to XL.
+A _scaler_ is an individual instance hosting your application. You can allocate one or more scalers to each application. Available flavors are `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL` and `3XL`, depending on the runtime.
 
-A fixed set of resources supports each scaler.
+Each scaler flavor provides a fixed set of resources.
 
 When enabling auto-scalability, you have to set a minimum and a maximum of active scalers in your apps settings. This way you can precisely control your monthly fee.
 
@@ -26,19 +26,27 @@ When enabling auto-scalability, you have to set a minimum and a maximum of activ
   Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads).
 {{< /callout >}}
 
-## What languages and frameworks are supported by Clever Cloud?
-Currently Clever Cloud supports:
+## Which application runtimes are supported by Clever Cloud?
+Currently, Clever Cloud supports:
 
-* Java (Play Framework 1 & 2, Maven, War files… )
-* Node.js
-* PHP ([see frameworks and CMS](/guides))
-* Python (Django)
-* Ruby
+* .NET
+* Docker
+* Elixir
 * Go
 * Haskell
-* Scala
+* Java (Jar, Maven, Gradle, War/Ear, Play Framework 1 & 2) and Groovy with Gradle
+* Linux
+* Meteor.js
+* Node.js & Bun
+* PHP and FrankenPHP
+* Python
+* Ruby
 * Rust
-* Docker
+* Scala (SBT, Play Framework 1 & 2)
+* Static sites (with or without Apache)
+* V (Vlang)
+
+See the full list in the [applications documentation](/doc/applications/), or browse the [guides](/guides/) for frameworks and services you can deploy on Clever Cloud.
 
 ## How many applications can I create?
 As many as you want. We've not set a limited number of apps by developer.
@@ -157,20 +165,19 @@ Clever Cloud does not give you access to a server or a VPS, it makes your applic
 
 If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/cli/applications/deployment-lifecycle/#ssh), but keep in mind that changes made on an instance are not persistent across deployments.
 
-## I want to user Clever Cloud on my own premises, is that possible?
+## I want to use Clever Cloud on my own premises, is that possible?
 
 Yes, since 2016 Clever Cloud is packaged for private data center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever.cloud/on-premises](https://www.clever.cloud/on-premises) for more info.
 
 ## Where are my applications and add-ons located?
 
-Applications and add-ons are located in either _Paris, France_ or _Montreal, Canada_. You can choose where you want it to be when you create an application
-and a Clever Cloud add-on.
+Applications and add-ons are deployed in multiple regions across Europe, North America and Asia-Pacific, including Paris, Roubaix, Gravelines, London, Warsaw, Montreal, Singapore and Sydney, plus HDS-certified zones in France for healthcare data. When creating an application or an add-on, you can choose among the deployment zones available for that product.
 
 Clever Cloud is based in Nantes, France.
 
-## I want to run Kubernetes on top of Clever CLoud, is that possible?
+## I want to run Kubernetes on top of Clever Cloud, is that possible?
 
-It's currently not possible to use Kubernetes on our platform. It is however on our Roadmap.
+Yes. [Clever Kubernetes Engine](/doc/kubernetes/) (CKE), currently in public beta, provides a managed Kubernetes control plane. See the [product page](https://www.clever.cloud/product/kubernetes/) for more information.
 
 ## How to setup a firewall on Clever Cloud?
 
@@ -229,4 +236,3 @@ DEV plan is a free-tier plan available for some databases, designed to let custo
 Some features such as extensions, simultaneous connections numbers, functions… might be reduced or unavailable.
 
 Support is not able to provide help in case of DEV plan.
-

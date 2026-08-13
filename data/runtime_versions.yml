@@ -41,7 +41,7 @@ frankenphp:
 java:
   eol_source: https://adoptium.net/fr/support/
   default:
-    - 11
+    - 21
   accepted:
     - 25
     - 24 (EOL)

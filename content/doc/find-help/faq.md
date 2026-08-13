@@ -139,7 +139,7 @@ As an example, if a Spring Boot application was compiled with Java `17` and run 
 java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 ```
 
-By default, Java apps on Clever Cloud use Java `11`, but you can change it. Please head [over here](/doc/applications/java/java-jar/#available-java-versions "Java versions") for more information.
+By default, Java apps on Clever Cloud use Java `21`, but you can change it. Please head [over here](/doc/applications/java/java-jar/#available-java-versions "Java versions") for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 

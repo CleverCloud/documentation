@@ -19,10 +19,6 @@ aliases:
 - /doc/tools/metrics
 - /metrics
 ---
-{{< callout type="warning" >}}
-Clever Cloud Metrics is still in beta.
-{{< /callout >}}
-
 In addition to logs, you can have access to metrics to know how your application behaves.
 By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
 

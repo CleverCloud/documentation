@@ -23,10 +23,10 @@ Request Flow is Clever Cloud's automatic middleware chaining mechanism. It confi
 ## Supported services
 
 | Service | Activation | Description |
-|---------|-----------|-------------|
+| ------- | ---------- | ----------- |
 | `block` | `CC_REQUEST_FLOW="block"` | Blocks public access with a `200 OK` response. Other ports remain accessible through [Network Groups](/doc/develop/network-groups/) |
-| `custom` | `CC_REQUEST_FLOW_CUSTOM` | Any custom reverse proxy |
-| `oauth2-proxy` | `CC_REQUEST_FLOW="oauth2-proxy"` | Authentication proxy using [OAuth2 Proxy](https://oauth2-proxy.github.io/oauth2-proxy/) |
+| `custom` | `CC_REQUEST_FLOW="custom"` | Any custom reverse proxy, started with `CC_REQUEST_FLOW_CUSTOM` |
+| `oauth2-proxy` | `CC_REQUEST_FLOW="oauth2-proxy"` | Authentication proxy using [OAuth2 Proxy](/doc/develop/oauth2-proxy/) |
 | `otoroshi-challenge` | `OTOROSHI_CHALLENGE_SECRET` | [Otoroshi](/doc/addons/otoroshi/) challenge verification proxy |
 | `redirectionio` | `CC_REDIRECTIONIO_PROJECT_KEY` | HTTP redirects, rewrites, SEO |
 | `varnish` | `clevercloud/varnish.vcl` file or `CC_VARNISH_FILE` | HTTP cache accelerator |
@@ -39,20 +39,26 @@ When no `CC_REQUEST_FLOW` is set, Clever Cloud detects and activates services au
 - If a `clevercloud/varnish.vcl` file exists (or `CC_VARNISH_FILE` is set), Varnish is activated
 - If `CC_REDIRECTIONIO_PROJECT_KEY` is set, Redirection.io is activated
 
-All three can be active simultaneously. Default order: Otoroshi Challenge first, then Varnish, then Redirection.io.
+When automatically detected, Otoroshi Challenge, Varnish and Redirection.io can run simultaneously, in this order: Otoroshi Challenge, Varnish, then Redirection.io.
+
+No automatic detection exists for `oauth2-proxy` and `custom`. Only `CC_REQUEST_FLOW` activates them. Setting this variable also replaces automatic detection for the whole chain, so a `CC_REQUEST_FLOW="oauth2-proxy"` on an application holding a `clevercloud/varnish.vcl` file starts OAuth2 Proxy alone. List every middleware you need: `CC_REQUEST_FLOW="oauth2-proxy,varnish"`.
 
 ## Port management
 
-Request Flow allocates ports in a chain from port `8080` (public) down to the application:
+Request Flow allocates middleware ports in a chain from port `8080` (public) down to your application. For runtimes where you configure the application HTTP server yourself:
 
 - With no middleware: your application listens directly on port `8080`
 - With one middleware: the middleware listens on `8080`, forwards to your application on port `9000`
-- With two middleware: first listens on `8080`, forwards to second on `8081`, which forwards to the application on `9000`
-
-Your application must listen on port `8080` when no middleware is active, or on port `9000` when at least one middleware is configured.
+- With two middleware services: the first listens on `8080`, forwards to the second on `8081`, which forwards to the application on `9000`
 
 > [!NOTE]
-> In runtimes where Clever Cloud manages the port configuration (FrankenPHP, Java, PHP, Static), port allocation is handled transparently with no additional configuration.
+> FrankenPHP, Java, PHP, legacy Python, Ruby and Static applications need no additional configuration, as Clever Cloud manages their web server or port transparently. Python applications using native uv support manage their own HTTP server and follow the port rule above.
+
+In every runtime where your application manages its own HTTP server, have it listen on `0.0.0.0:$PORT` and set `PORT` to `9000` when a middleware is active:
+
+```bash
+PORT="9000"
+```
 
 ## Explicit configuration with CC_REQUEST_FLOW
 
@@ -62,7 +68,7 @@ To control the order or selection of middleware, set `CC_REQUEST_FLOW` to a comm
 CC_REQUEST_FLOW="redirectionio,varnish"
 ```
 
-This inverts the default order: Redirection.io listens on `8080`, forwards to Varnish on `8081`, which forwards to the application on `9000`.
+For an application that manages its own HTTP server, this inverts the default order: Redirection.io listens on `8080`, forwards to Varnish on `8081`, which forwards to the application on `9000`.
 
 ### Disable Request Flow
 
@@ -84,12 +90,7 @@ CC_REQUEST_FLOW="block"
 
 ### Health check with block mode
 
-By default, `block` responds `200 OK` regardless of your application's actual state. If [`CC_HEALTH_CHECK_PATH` or `CC_HEALTH_CHECK_PATH_0` to `CC_HEALTH_CHECK_PATH_5`](/doc/develop/healthcheck/) are configured, the blocking service also checks these paths on your application and responds accordingly:
-
-- `200 OK` if all configured paths return a `2xx` status
-- `503 Service Unavailable` if the application is down or any path returns a non-`2xx` status
-
-This way, the platform's health check still reflects the actual state of your application even when public traffic is blocked.
+With `block` enabled, the deployment health check only verifies that the blocking service listens on port `8080` and responds `200 OK`. It doesn't send an HTTP request to your application, including when you configure [`CC_HEALTH_CHECK_PATH` or `CC_HEALTH_CHECK_PATH_0` to `CC_HEALTH_CHECK_PATH_5`](/doc/develop/healthcheck/).
 
 ## Custom middleware
 
@@ -100,7 +101,8 @@ CC_REQUEST_FLOW="redirectionio,custom,varnish"
 CC_REQUEST_FLOW_CUSTOM="./my-proxy --listen @@LISTEN_PORT@@ --forward @@FORWARD_PORT@@"
 ```
 
-In this example:
+For an application that manages its own HTTP server, this example produces the following chain:
+
 - Redirection.io listens on `8080`, forwards to custom middleware on `8081`
 - Custom middleware listens on `8081`, forwards to Varnish on `8082`
 - Varnish listens on `8082`, forwards to the application on `9000`
@@ -108,15 +110,21 @@ In this example:
 ## Environment variables reference
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | `CC_REQUEST_FLOW` | Comma-separated list of middleware to chain (e.g. `varnish,redirectionio`). Special values: `disable`, `block` |
 | `CC_REQUEST_FLOW_CUSTOM` | Command to start a custom middleware. Must contain `@@LISTEN_PORT@@` and `@@FORWARD_PORT@@` placeholders |
 | `CC_REDIRECTIONIO_PROJECT_KEY` | Redirection.io project key. Activates Redirection.io in the request flow |
 | `CC_VARNISH_FILE` | Path to a custom Varnish VCL file (default: `clevercloud/varnish.vcl`) |
 | `OTOROSHI_CHALLENGE_SECRET` | Otoroshi challenge secret. Activates Otoroshi Challenge verification in the request flow |
 
+## Troubleshooting
+
+A middleware that fails to start leaves the public port closed, and the deployment ends with `Your application is not listening on 8080`. This message names the public port of the chain, which belongs to the first middleware rather than to your application. Read the preceding deployment logs: the middleware logs its own error before exiting.
+
+The message `Some software are not listening as expected: 9000` means the opposite. Every middleware runs, and your application doesn't listen on the port the chain forwards to. Check the [port management](#port-management) section for the port your runtime expects.
+
 - [Learn more about Varnish on Clever Cloud](/doc/develop/varnish/)
 - [Learn more about Redirection.io](https://redirection.io/)
-- [Learn more about OAuth2 Proxy](https://oauth2-proxy.github.io/oauth2-proxy/)
+- [Learn more about OAuth2 Proxy on Clever Cloud](/doc/develop/oauth2-proxy/)
 - [Learn more about Otoroshi on Clever Cloud](/doc/addons/otoroshi/)
 - [Learn more about Network Groups](/doc/develop/network-groups/)

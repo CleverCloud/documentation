@@ -262,7 +262,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 |[`CC_NODE_VERSION`](/doc/applications/nodejs#set-nodejs-version)| Set Node.js version, for example `24`, `23.11` or `22.15.1` | |
 |`CC_NODE_DEV_DEPENDENCIES` | Control if development dependencies are installed or not. Values are either `install` or `ignore` | `ignore` |
 |`CC_RUN_COMMAND` | Define a custom command. Example for Meteor: `node .build/bundle/main.js <options>`  | |
-|`CC_NODE_BUILD_TOOL` | Choose your build tool between npm, npm-ci, yarn, yarn2 and custom | npm |
+|`CC_NODE_BUILD_TOOL` | Choose your build tool between bun, npm, npm-ci, pnpm, yarn, yarn2, yarn-berry and custom | npm |
 |`CC_CUSTOM_BUILD_TOOL`| A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`) | |
 |`CC_NPM_REGISTRY` | The host of your private repository, available values: `github` or the registry host. | registry.npmjs.org |
 |`CC_NPM_BASIC_AUTH`| Private repository credentials, in the form `user:password`. You can't use this if `CC_NPM_TOKEN` is set | |

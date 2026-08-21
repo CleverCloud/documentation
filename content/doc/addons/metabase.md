@@ -156,16 +156,16 @@ clever metabase version update myMetabase <new_version>
 
 If you use `CC_METABASE_VERSION` it can contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
-- `community-latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
-- `0.55.1`: use the `0.55.1` version (_same as `=0.55.1`_)
-- `0.55`: use the latest available version starting with `0.55` (_same as `^0.55.0`, `~0.55.0`_)
+- `latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
+- `0.63.14`: use the `0.63.14` version (_same as `=0.63.14`_)
+- `0.63`: use the latest available version starting with `0.63` (_same as `^0.63.0`, `~0.63.0`_)
 
 To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/doc/cli/applications/deployment-lifecycle/#restart).
 
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
 {{< callout type="warning" >}}
-**With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.55.3`) or a specific "branch" (for example, `0.55`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
+**With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.63.14`) or a specific "branch" (for example, `0.63`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
 {{< /callout >}}
 
 - [The Atom feed (XML) of latest versions and their changelog](https://cc-metabase.cellar-c2.services.clever-cloud.com/metabase_releases.xml)
@@ -175,7 +175,7 @@ The Metabase JAR is stored in the build cache so that no time is wasted re-downl
 
 Metabase provides an Enterprise Edition (EE) that offers [more features](https://www.metabase.com/docs/latest/paid-features/) but requires a license key that must be purchased through their website (see the [pricing page](https://www.metabase.com/pricing/)) EE versions are usually released at the same time as Community Edition (CE) versions, starting with a `1` instead of a `0`.
 
-If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VERSION` environment variable to either use a fixed version/branch that starts with `1` (for example: `CC_METABASE_VERSION=1.55`) or `CC_METABASE_VERSION=enterprise-latest`.
+If you wish to deploy an EE version on your Clever Cloud add-on, `CC_METABASE_VERSION` environment variable to either use a fixed version/branch that starts with `1` (for example: `CC_METABASE_VERSION=1.63`) or `CC_METABASE_VERSION=enterprise-latest`.
 
 You must then add your license key in Metabase's settings (see [documentation](https://www.metabase.com/docs/latest/installation-and-operation/activating-the-enterprise-edition#if-youre-self-hosting-metabase)).
 
@@ -243,4 +243,4 @@ Here is how you can do it:
 8. _(optional)_ Configure the Java application domain and update your DNS record accordingly; if you use a custom domain, you should also update the `MB_SITE_URL` environment variable (it defines the base URL used by links in Metabase emails, among other things)
 9. Start the Java application of your Clever Cloud add-on (without build cache)
 
-If everything seems OK, set `CC_METABASE_VERSION` to the value you wish (for example, `community-latest`) in the Java application of your Clever Cloud add-on and restart it. [Contact the Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) if you need advice or help doing that.
+If everything seems OK, set `CC_METABASE_VERSION` to the value you wish (for example, `latest`) in the Java application of your Clever Cloud add-on and restart it. [Contact the Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) if you need advice or help doing that.

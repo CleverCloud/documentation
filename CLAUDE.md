@@ -78,6 +78,30 @@ For changelog entries, also include:
 - **Structure**: Use 2-4 well-developed paragraphs per section, minimize bullet lists
 - **Paragraphs**: Aim for 3-6 lines for optimal readability
 
+### Callouts
+- Prefer GitHub-style callouts because they render in both GitHub and the documentation site:
+  ```markdown
+  > [!NOTE]
+  > This information helps readers understand the current behaviour.
+
+  > [!WARNING]
+  > Back up your application database before upgrading.
+  ```
+- Use the Hugo `{{< callout >}}` shortcode only when GitHub-style syntax can't provide the required rendering or behaviour
+- Limit callouts to one or two per page
+
+### Commit Messages
+- For content updates, use `section(page): commit message`, for example:
+  - `addons(postgresql): document pg_partman support`
+  - `applications(nodejs): clarify pnpm configuration`
+  - `changelog(metabase): announce 0.63.14 security update`
+- For documentation structure, Hugo, deployment, CI, tooling, or dependency changes, use standard Conventional Commits, for example:
+  - `feat(hugo): add a shortcode for version tables`
+  - `fix(ci): run Vale on shared content`
+  - `refactor(layouts): simplify changelog rendering`
+  - `chore(deps): update the Hextra theme`
+- Split content and structural changes into separate commits when possible
+
 ### Code and Technical Examples
 - Always provide complete, runnable code examples
 - Use exact environment variable names: `CC_WEBROOT`, `CC_NODE_BUILD_TOOL`, etc.
@@ -103,7 +127,7 @@ Runtime versions and software compatibility information is maintained in `/data/
 - `{{% steps %}}` - Create step-by-step instructions for guides
 - `{{< tabs items="npm,yarn,pnpm" >}}` - Create tabbed content sections
 - `{{< cards >}}` - Display card layouts for related resources
-- `{{< callout >}}` - Create note, tip, warning callouts
+- `{{< callout >}}` - Create a callout only when GitHub-style syntax isn't sufficient
 - `{{< hextra/hero-subtitle >}}` - Add engaging subtitles in guides
 
 ### Hugo Content Types

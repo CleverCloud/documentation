@@ -47,13 +47,6 @@ When you create the Keycloak add-on, Clever Cloud automatically deploys:
 - A [PostgreSQL](/doc/addons/postgresql) database
 - A [FS Bucket](/doc/addons/fs-bucket) used for themes, plugins, and import/export storage needs
 
-## Security and updates
-Since the Keycloak add-on is a fully managed application, you don't have to select a particular version. It's automatically upgraded and updated both for features and security.
-
-An add-on update might require a rebuild.
-
-> Required actions are notified by email
-
 ## Plan sizing
 
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:

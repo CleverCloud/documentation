@@ -134,7 +134,7 @@ clever env set CC_WEBROOT "/build"
 clever env set CC_BUILD_COMMAND "npm install && npm run build"
 ```
 
-For SPA mode, also tell the default [Static Web Server](https://static-web-server.net/features/error-pages/#fallback-page-for-use-with-client-routers) to serve the generated fallback for routes that do not match a file:
+For SPA mode, also tell the default [Static Web Server](https://static-web-server.net/v2/features/error-pages/#fallback-page-for-use-with-client-routers) to serve the generated fallback for routes that do not match a file:
 
 ```bash
 clever env set SERVER_FALLBACK_PAGE "./build/200.html"

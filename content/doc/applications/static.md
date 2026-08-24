@@ -84,9 +84,9 @@ Caddy and SWS can be configured with a configuration file or through environment
   - [Environment Variables](https://caddyserver.com/docs/caddyfile/concepts#environment-variables)
   - [Caddyfile](https://caddyserver.com/docs/caddyfile)
 - Static Web Server (SWS) configuration:
-  - [Command Line Arguments](https://static-web-server.net/configuration/command-line-arguments/)
-  - [Environment Variables](https://static-web-server.net/configuration/environment-variables/)
-  - [TOML Configuration File](https://static-web-server.net/configuration/config-file/)
+  - [Command Line Arguments](https://static-web-server.net/v2/configuration/command-line-arguments/)
+  - [Environment Variables](https://static-web-server.net/v2/configuration/environment-variables/)
+  - [TOML Configuration File](https://static-web-server.net/v2/configuration/config-file/)
 
 ## Static Site Generators (SSG) Auto-build
 

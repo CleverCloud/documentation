@@ -40,13 +40,24 @@ Sources for quality content are currently being updated.
 - Using phrases like _simply_, _It's that simple_, _It's easy_, or _quickly_ in a procedure.
 - Over-politeness with the use of _please_: go straight to the point.
 
-#### 💡 Shortcodes
+#### 💡 Shortcodes and callouts
 
 This doc uses Hugo with [Hextra theme](https://imfing.github.io/hextra/), which provides a variety of [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) to enhance it and improve its readability.
 For example :
 
 - [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) are well suited for the `/guides/` section, or for any tutorial.
-- [Callouts](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) draw attention to an important information in the page. However, don't overuse them, as too many callouts can miss their point and make the page crowded. Limit callouts to one or two per page.
+
+Use GitHub-style callouts whenever possible. They remain readable on GitHub and don't depend on Hugo-specific rendering:
+
+```markdown
+> [!NOTE]
+> This information helps readers understand the current behaviour.
+
+> [!WARNING]
+> Back up your application database before upgrading.
+```
+
+Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) only when a GitHub-style callout can't provide the required rendering or behaviour. Don't overuse callouts: limit them to one or two per page.
 
 ### 💅 Style guide
 
@@ -67,6 +78,27 @@ Priority goes to PRs that reference a problem addressed in an issue fitting the 
 
 - **Keep it small:** The quality of the review is inversely proportional to the size of the PR. Smaller PRs simplify the reviewing process and increase the chances of getting constructive feedback.
 - **Accept the feedback:** If reviewers ask you to make changes, do it. If you disagree, explain why. If you aren't sure, ask for clarification. Don't nitpick on the feedback, and don't take it personally.
+
+#### Commit messages
+
+For content updates, use `section(page): commit message`. The section and page identify the documentation area you changed:
+
+```text
+addons(postgresql): document pg_partman support
+applications(nodejs): clarify pnpm configuration
+changelog(metabase): announce 0.63.14 security update
+```
+
+For changes to the documentation structure, Hugo configuration or templates, deployment, CI, tooling, or dependencies, use the standard Conventional Commits format `type(scope): commit message`:
+
+```text
+feat(hugo): add a shortcode for version tables
+fix(ci): run Vale on shared content
+refactor(layouts): simplify changelog rendering
+chore(deps): update the Hextra theme
+```
+
+Keep content and structural changes in separate commits when possible so each commit can follow the appropriate convention.
 
 ### 🥸 When reviewing a PR
 

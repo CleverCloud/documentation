@@ -83,7 +83,7 @@ To change the output, specify the `--format` (`-F`) flag with one of these value
   The HTTP protocol version isn't part of the access log payload, so the request line is limited to `method path` (no `HTTP/x.y` token).
 
 - `json`: a JSON array of log objects (requires a bounding flag such as `--before`)
-- `json-stream`: one JSON log object per line
+- `json-stream`: a stream of JSON log objects
 
   Both JSON formats share the same object shape:
 

@@ -279,7 +279,7 @@ clever accesslogs [options]
 -a, --alias <alias>               Short name for the application
     --app <app-id|app-name>       Application to manage by its ID (or name, if unambiguous)
     --before, --until <before>    Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
--F, --format <format>             Output format (human, json, json-stream) (default: human)
+-F, --format <format>             Output format (human, json, json-stream, clf) (default: human)
 ```
 
 ## activity
@@ -1075,6 +1075,30 @@ clever drain [options]
 -F, --format <format>          Output format (human, json) (default: human)
 ```
 
+### drain check
+
+**Description:** Check that a drain's recipient is reachable and accepts deliveries
+
+**Since:** 4.11.0
+
+**Usage**
+```
+clever drain check <drain-id> [options]
+```
+
+**Arguments**
+```
+drain-id                       Drain ID
+```
+
+**Options**
+```
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-F, --format <format>          Output format (human, json) (default: human)
+```
+
 ### drain create
 
 **Description:** Create a drain
@@ -1088,7 +1112,7 @@ clever drain create <drain-type> <drain-url> [options]
 
 **Arguments**
 ```
-drain-type                           Drain type (datadog, elasticsearch, newrelic, ovh-tcp, raw-http, syslog-tcp, syslog-udp)
+drain-type                           Drain type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, syslog-tcp, syslog-udp)
 drain-url                            Drain URL
 ```
 
@@ -1101,6 +1125,7 @@ drain-url                            Drain URL
 -i, --index-prefix <index-prefix>    Optional index prefix (for elasticsearch), `logstash` value is used if not set
 -p, --password <password>            Basic auth password (for elasticsearch or raw-http)
 -s, --sd-params <sd-params>          RFC5424 structured data parameters (for ovh-tcp), e.g.: `X-OVH-TOKEN=\"REDACTED\"`
+-t, --source-token <source-token>    Source token (for betterstack)
 -u, --username <username>            Basic auth username (for elasticsearch or raw-http)
 ```
 

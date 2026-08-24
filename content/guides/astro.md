@@ -87,9 +87,8 @@ Depending on your package manager, use the following environment variables:
   {{< /tab >}}
   {{< tab name="pnpm" icon="pnpm" >}}
     ```shell
-    CC_NODE_BUILD_TOOL="custom"
-    CC_PRE_BUILD_HOOK="npm install -g pnpm && pnpm install"
-    CC_CUSTOM_BUILD_TOOL="pnpm run astro telemetry disable && pnpm build"
+    CC_NODE_BUILD_TOOL="pnpm"
+    CC_POST_BUILD_HOOK="pnpm run astro telemetry disable && pnpm build"
     CC_RUN_COMMAND="pnpm run preview"
     ```
   {{< /tab >}}

@@ -105,12 +105,19 @@ aliases:
 - Always specify **current versions** of software/tools
 - Include **environment variables** with exact names and examples
 - Provide **command-line examples** with proper syntax
-- Use **callouts for important information**:
+- Prefer **GitHub-style callouts for important information**. They render in both GitHub and the documentation site:
   ```markdown
-  > [!NOTE] Context about new features
-  > [!TIP] Helpful suggestions
-  > [!WARNING] Important considerations
+  > [!NOTE]
+  > Context about new features.
+
+  > [!TIP]
+  > Helpful suggestions.
+
+  > [!WARNING]
+  > Important considerations.
   ```
+- Use the Hugo `{{< callout >}}` shortcode only when GitHub-style syntax can't provide the required rendering or behaviour
+- Limit callouts to one or two per page
 
 ### Guide-Specific Rules
 
@@ -223,7 +230,7 @@ clever keycloak version update yourKeycloakNameOrId
 - [ ] Examples use realistic project names and values
 - [ ] No first-person pronouns (I, we, us, our)
 - [ ] Short, clear sentences under 25 words
-- [ ] Proper callouts for important information
+- [ ] GitHub-style callouts used for important information where needed
 
 ### Before Publishing Changelog
 - [ ] Clear benefit/impact stated upfront
@@ -276,6 +283,26 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 - Optional: `CC_HUGO_VERSION="0.161"` to specify Hugo version (example value)
 
 ## Quality Assurance Requirements
+
+### Commit Message Convention
+Use `section(page): commit message` for content updates. The section and page must identify the documentation area being changed:
+
+```text
+addons(postgresql): document pg_partman support
+applications(nodejs): clarify pnpm configuration
+changelog(metabase): announce 0.63.14 security update
+```
+
+Use standard Conventional Commits for documentation structure, Hugo configuration or templates, deployment, CI, tooling, and dependency changes:
+
+```text
+feat(hugo): add a shortcode for version tables
+fix(ci): run Vale on shared content
+refactor(layouts): simplify changelog rendering
+chore(deps): update the Hextra theme
+```
+
+Split content and structural changes into separate commits when possible.
 
 ### Build Verification
 Always test changes with the `hugo` command before committing to ensure the build is functional. Fix any build errors immediately as they prevent deployment. Verify that all links, references, image paths, and shortcode syntax work correctly in the generated output.

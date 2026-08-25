@@ -1,13 +1,13 @@
 
 # Contributing guidelines
 
-This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find instructions for AI tools and LLMs:
+This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find repository instructions for coding agents and LLMs:
 
-- [AI tools and LLMs instructions](./.cursorrules)
+- [Coding agent instructions](./AGENTS.md)
 
 ## Standards
 
-Those are general standards to fulfill for every modification in this repository.
+Those are general standards to fulfill for every modification in this repository
 
 ### 🏯 Structure
 
@@ -23,41 +23,52 @@ Follow the established structure in this doc. If you wish to propose changes to 
 
 Follow these guidelines while writing new content. The goal is to help you write in a **clear, precise, and unambiguous language**. They're not meant to be a burden, but to help you deliver the best content possible.
 
-Sources for quality content are currently being updated.
+Sources for quality content are currently being updated
 
 #### 👍 Do
 
-- **Don't assume the user "knows better":** if you think something is obvious, it's not. Better over-explain than under-explain.
-- **Use active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something.
-- **Use second person:** address the reader directly.
-- **Keep it simple:** avoid jargon, complex sentences, and jokes.
+- **Don't assume prior knowledge:** explain prerequisites and non-obvious behaviour without burying the main task path
+- **Use active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something
+- **Use second person:** address the reader directly
+- **Keep it simple:** avoid jargon, complex sentences, and jokes
 - **Keep it short:** keep the sentences short. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle.
 
 #### 👎 Don't
 
-- Placeholder phrases like _please note_ and _at this time_.
-- Words and phrases that make promises or project plans and strategies: See [Writing timeless documentation](https://developers.google.com/style/timeless-documentation).
-- Using phrases like _simply_, _It's that simple_, _It's easy_, or _quickly_ in a procedure.
-- Over-politeness with the use of _please_: go straight to the point.
+- Placeholder phrases like _please note_ and _at this time_
+- Words and phrases that make promises or project plans and strategies: See [Writing timeless documentation](https://developers.google.com/style/timeless-documentation)
+- Using phrases like _simply_, _It's that simple_, _It's easy_, or _quickly_ in a procedure
+- Over-politeness with the use of _please_: go straight to the point
 
 #### 💡 Shortcodes and callouts
 
 This doc uses Hugo with [Hextra theme](https://imfing.github.io/hextra/), which provides a variety of [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) to enhance it and improve its readability.
 For example :
 
-- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) are well suited for the `/guides/` section, or for any tutorial.
+- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) are well suited for the `/guides/` section, or for any tutorial
 
-Use GitHub-style callouts whenever possible. They remain readable on GitHub and don't depend on Hugo-specific rendering:
+Use GitHub-style callouts with a concise title on the marker line, as supported by the theme:
 
 ```markdown
-> [!NOTE]
-> This information helps readers understand the current behaviour.
+> [!NOTE] Current behaviour
+> This information helps readers understand the current behaviour
 
-> [!WARNING]
-> Back up your application database before upgrading.
+> [!WARNING] Back up your data
+> Back up your application database before upgrading
 ```
 
 Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) only when a GitHub-style callout can't provide the required rendering or behaviour. Don't overuse callouts: limit them to one or two per page.
+
+#### Front matter and examples
+
+- Give `title` a descriptive, SEO-oriented value without repeating "Clever Cloud", which the generated HTML title already includes. Keep `linkTitle` short, usually the product name, so it fits in the sidebar.
+- Don't add `aliases` to a new page. Use them only to preserve URLs that existed previously.
+- Remove `draft: true` when a page is ready to publish instead of keeping `draft: false`
+- Keep commands literally copyable. Don't use shell-invalid placeholders or bracketed optional arguments in executable code blocks; show optional variants separately or explain where to add the flag.
+- Add code comments only when they explain non-obvious behaviour
+- Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items.
+- Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap.
+- Sort lists and tables alphabetically unless a functional or chronological order is more useful
 
 ### 💅 Style guide
 
@@ -65,6 +76,10 @@ Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/sh
 - Comment your code if you add any custom CSS
 - When importing from an external CSS tool, import the relevant classes only rather than the whole file
 - Opt for self hosting over CDN: When used in `<head>`, it can impact site's performance. Using CDN for test purposes when submitting your PR and deploying a review app is totally fine, however.
+
+### ✅ Validation
+
+Run `hugo` before submitting a change and fix any build error. Verify links, references, image paths, and shortcode syntax in the generated output. Inspect changed tabs, code blocks, cards, anchors, and copyable commands in the rendered HTML: a successful build alone doesn't prove that they render correctly.
 
 ## 🫶 Pull requests
 
@@ -87,7 +102,10 @@ For content updates, use `section(page): commit message`. The section and page i
 addons(postgresql): document pg_partman support
 applications(nodejs): clarify pnpm configuration
 changelog(metabase): announce 0.63.14 security update
+guides: add SvelteKit
 ```
+
+Use `guides: add Product` when adding a deployment guide. Start the subject with a lowercase imperative verb.
 
 For changes to the documentation structure, Hugo configuration or templates, deployment, CI, tooling, or dependencies, use the standard Conventional Commits format `type(scope): commit message`:
 

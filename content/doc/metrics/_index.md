@@ -201,6 +201,88 @@ under an organisation.
 '<READ TOKEN>' '<ORGANISATION ID>' <START TIMESTAMP> <END TIMESTAMP> @clevercloud/app_consumption
 ```
 
+## Add-on storage metrics
+
+### FS Bucket
+
+The storage used by each of your [FS Bucket](/doc/addons/fs-bucket) add-ons is recorded as the
+`fsbucket.storage` class, with one data point per hour. The value is a size in **bytes**.
+This metric belongs to the `addon-api-fsbucket` Warp 10 application, which is not included in the
+read token shown in an application's **Metrics** tab. Generate a token that includes it with
+[`clever curl`](/doc/cli/#curl):
+
+```bash
+clever curl -X POST -H "Content-Type: application/json" \
+  -d '{"applications": ["addon-api-fsbucket"], "ttl": "P5D"}' \
+  https://api.clever-cloud.com/v4/stats/organisations/<ORGANISATION ID>/tokens/read
+```
+
+`ttl` controls how long the token remains valid, not how far back it can query. It is an
+[ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) and cannot exceed `P20D`,
+which represents a period of 20 days. The token is returned in the `token` field of the response.
+
+Save the following [WarpScript](https://www.warp10.io/doc/reference) as `fsbucket.mc2`, replacing
+the token and organisation ID with your values. It retrieves the storage used by every bucket of
+the organisation over the last 30 days:
+
+```txt
+[ '<READ TOKEN>' 'fsbucket.storage' { 'owner_id' '<ORGANISATION ID>' } NOW 30 d ] FETCH
+```
+
+Send it to the Clever Cloud Warp 10 endpoint:
+
+```bash
+curl --data-binary @fsbucket.mc2 \
+  https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
+```
+
+The API returns a Geo Time Series for each bucket, with its owner, ID, datacenter and storage
+server as labels. A simplified response follows this structure:
+
+```json
+[
+  [
+    {
+      "c": "fsbucket.storage",
+      "l": {
+        ".app": "addon-api-fsbucket",
+        "owner_id": "<ORGANISATION_ID>",
+        "app_id": "<BUCKET_ID>",
+        "datacenter": "<DATACENTER>",
+        "server_id": "<STORAGE_SERVER_ID>"
+      },
+      "a": {},
+      "v": [
+        [1787677200000000, 1048576]
+      ]
+    }
+  ]
+]
+```
+
+Each entry in `v` contains a timestamp in microseconds followed by the storage used in bytes. The
+owner ID starts with `orga_`, or `user_` for a personal organisation. Bucket IDs start with
+`bucket_`, or `app_` for buckets created before the naming change. Datacenter values are not
+case-normalised: both `PAR` and `par` exist in the data. Prefer not to filter on that label, or
+match it case-insensitively.
+
+To return the total storage used by every bucket, aggregated hourly, append these operations after
+`FETCH` in `fsbucket.mc2`:
+
+```txt
+// Group points into one-hour buckets and keep the last value in each bucket
+[ SWAP bucketizer.last NOW 1 h 0 ] BUCKETIZE
+
+// Sum all bucket series at matching timestamps
+[ SWAP [] reducer.sum ] REDUCE
+```
+
+To follow a single bucket, replace the labels in `fsbucket.mc2` with:
+
+```txt
+{ 'owner_id' '<ORGANISATION ID>' 'app_id' '<BUCKET ID>' }
+```
+
 ## Publish your own metrics
 
 We currently support two ways to push / collect your metrics: the `statsd` protocol and `prometheus`.

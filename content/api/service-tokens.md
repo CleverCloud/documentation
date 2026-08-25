@@ -13,6 +13,20 @@ keywords:
 - api
 ---
 
+<!--
+Pending before publishing:
+- The token-api backend is not reachable in production: every /service-tokens
+  endpoint answers 502 with error 21002 "Failed to communicate with token service".
+- Clever Tools has no released service-tokens command. The `clever service-tokens`
+  command set (create, get, list, revoke) lives in PR #1080, still a draft, on the
+  davlgd-service-tokens branch. Its files claim `since: 4.8.0` while master is 4.11.0,
+  so that version marker needs updating before it ships. Document the CLI commands
+  here once the PR is merged and released.
+- The request and response fields below follow that PR's implementation, not the
+  original spec, which described a single `app_id` instead of `resources`. Confirm
+  them against the API once the backend answers.
+-->
+
 Organisation service tokens are machine-to-machine credentials based on [Biscuit](https://www.biscuitsec.org/). They allow automated systems such as CI/CD pipelines, monitoring tools or deployment scripts to interact with the Clever Cloud API without tying access to a personal user account.
 
 Unlike [API tokens](/developers/api/howto/#api-tokens), which authenticate requests on behalf of a specific user, a service token belongs to an organisation and carries its own role. Access no longer disappears when a team member leaves, and each automated system gets its own revocable credential, scoped to what it actually needs.
@@ -45,8 +59,9 @@ clever curl -X POST https://api.clever-cloud.com/v2/organisations/<ORGANISATION_
   -H "Content-Type: application/json" \
   -d '{
     "name": "ci-deploy-token",
+    "description": "Deploys the checkout service from CI",
     "role": "DEVELOPER",
-    "app_id": "app_xxx",
+    "resources": ["app_xxx"],
     "ttl_seconds": 2592000
   }'
 ```
@@ -55,16 +70,32 @@ clever curl -X POST https://api.clever-cloud.com/v2/organisations/<ORGANISATION_
 | --- | --- | --- |
 | `name` | Yes | Name identifying the token in the organisation |
 | `role` | Yes | One of `ADMIN`, `MANAGER`, `DEVELOPER`, `ACCOUNTING` |
-| `app_id` | No | Restricts the token to a single application or add-on |
+| `description` | No | Free-form text describing what the token is for |
+| `resources` | No | Restricts the token to specific applications or add-ons, by ID |
 | `ttl_seconds` | No | Token lifetime, from 1 second to 1 year. Defaults to 90 days |
+
+The response carries the token itself and its metadata:
+
+```json
+{
+  "token": "<BISCUIT>",
+  "metadata": {
+    "id": "token_1a2b3c4d-5e6f-7890-abcd-ef1234567890",
+    "expiredAt": "2026-11-23T09:00:00Z"
+  }
+}
+```
+
+> [!WARNING]
+> The `token` field is only returned when you create the token. Store it in your secret manager right away: reading the token later returns its metadata, never the biscuit itself.
 
 You can only assign a role equal to or lower than your own, so only organisation admins create `ADMIN` or `ACCOUNTING` tokens. Refer to [roles and privileges](/developers/doc/account/organisations/#roles-and-privileges) to pick the role matching what your automated system needs, where the `ACCOUNTING` role appears as **Accountant**.
 
-Setting `app_id` restricts the token to a single application or add-on: the API rejects any request targeting another resource. Omit it to give the token organisation-wide access for its role.
+Setting `resources` restricts the token to the listed applications or add-ons: the API rejects any request targeting another resource. Omit it to give the token organisation-wide access for its role.
 
 ### List and revoke tokens
 
-List the tokens of an organisation, paginating with `limit` and `offset`:
+Listing an organisation's tokens returns their metadata: identifier, name, status, creation date and expiration date. Paginate with `limit` and `offset`:
 
 ```bash
 clever curl "https://api.clever-cloud.com/v2/organisations/<ORGANISATION_ID>/service-tokens?limit=20&offset=0"
@@ -115,7 +146,7 @@ GIT_ASKPASS=/tmp/askpass.sh SERVICE_TOKEN="<BISCUIT>" \
 
 ## Security boundaries
 
-Service tokens enforce the same permission model as user roles, plus additional scoping. Each token belongs to one organisation, optionally to one application or add-on, and its role determines which operations it can perform: an `ACCOUNTING` token can't read application details, for example.
+Service tokens enforce the same permission model as user roles, plus additional scoping. Each token belongs to one organisation, optionally to a restricted set of applications or add-ons, and its role determines which operations it can perform: an `ACCOUNTING` token can't read application details, for example.
 
 Tokens are also time-limited and revocable. Once their lifetime has elapsed, the API rejects them. Deleting a token revokes it immediately, so rotating a compromised credential takes a single `DELETE` request. The audit trail records every request authenticated with a biscuit, which lets you trace what each automated system did.
 

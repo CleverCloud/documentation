@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Docusaurus
-title: Docusaurus
+title: Deploy a Docusaurus website
 description: Deploy Docusaurus Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - docusaurus

@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Ekg-statsd
-title: Ekg-statsd
+title: Export Haskell metrics with ekg-statsd
 description: Configure ekg-statsd package on your Haskell application to push custom metrics with detailed step-by-step tutorials
 keywords:
 - haskell

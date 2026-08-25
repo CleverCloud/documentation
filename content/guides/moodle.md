@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Moodle
-title: Moodle
+title: Deploy a Moodle learning platform
 description: Deploy Moodle open source learning platform on Clever Cloud with detailed tutorials and best practices
 keywords:
 - moodle

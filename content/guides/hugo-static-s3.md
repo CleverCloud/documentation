@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Hugo + Cellar
-title: Hugo + Cellar
+title: Host a Hugo website with Cellar
 description: Build your website with Hugo and deploy it through Cellar S3-compatible object storage with detailed step-by-step tutorials
 keywords:
 - hugo
@@ -167,7 +167,6 @@ You can manually generate one certificate by creating an application, then addin
 The certification propagation takes about 10-15mn.
 
 If you still encounter an issue at this point, please contact our support team.
-
 
 
 

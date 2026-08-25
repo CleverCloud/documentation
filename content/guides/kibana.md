@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Kibana
-title: Kibana
+title: Deploy a custom Kibana instance
 description: Deploy custom Kibana for specific use cases with detailed step-by-step tutorials and configuration examples
 keywords:
 - kibana

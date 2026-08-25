@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: WordPress
-title: WordPress
+title: Deploy a WordPress website
 description: Deploy WordPress website on Clever Cloud with complete database setup, file management, plugins configuration and optimization guide
 keywords:
 - wordpress

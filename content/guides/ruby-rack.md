@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Ruby Rack
-title: Ruby Rack
+title: Deploy a Ruby Rack application
 description: Deploy Ruby Rack web applications on Clever Cloud with detailed step-by-step tutorials and configuration examples
 keywords:
 - ruby

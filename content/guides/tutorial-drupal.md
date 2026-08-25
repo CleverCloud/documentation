@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Drupal
-title: Drupal
+title: Deploy a Drupal website
 description: Deploy Drupal CMS on Clever Cloud with complete setup guide including database configuration, file management, and security setup
 keywords:
 - drupal

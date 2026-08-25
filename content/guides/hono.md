@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Hono
-title: Hono
+title: Deploy a Hono application
 description: Deploy a Hono application on Clever Cloud with the Node.js runtime and a step-by-step configuration guide
 keywords:
 - hono

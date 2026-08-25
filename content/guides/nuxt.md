@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Nuxt
-title: Nuxt
+title: Deploy a Nuxt application
 description: Deploy Nuxt as Static Site Generator (SSG) or with Node.js on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - nuxt

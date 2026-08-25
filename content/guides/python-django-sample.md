@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Django
-title: Django
+title: Deploy a Django application
 description: Deploy Django applications on Clever Cloud with detailed step-by-step tutorials and configuration examples
 keywords:
 - django

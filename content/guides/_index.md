@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Guides
-title: Guides
+title: Deployment guides
 description: Step-by-step guides to deploy specific apps and frameworks on Clever Cloud with detailed tutorials and configuration examples
 keywords:
 - guides

@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Laravel
-title: Laravel
+title: Deploy a Laravel application
 description: Deploy Laravel PHP framework on Clever Cloud with step-by-step guide including database integration and configuration management
 keywords:
 - laravel

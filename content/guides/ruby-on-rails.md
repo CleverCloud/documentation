@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Ruby on Rails
-title: Ruby on Rails
+title: Deploy a Ruby on Rails application
 description: Deploy Ruby on Rails applications with comprehensive tutorial for web development framework deployment on Clever Cloud platform
 keywords:
 - ruby on rails

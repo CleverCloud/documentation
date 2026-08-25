@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: oTree
-title: oTree
+title: Deploy an oTree application
 description: Deploy oTree framework for multiplayer strategy games and complex surveys with detailed step-by-step tutorials
 keywords:
 - otree
@@ -94,4 +94,3 @@ You can display your website’s URL or add a custom domain to it (you’ll need
 clever domain
 clever domain add your.website.tld
 ```
-

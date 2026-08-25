@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: ProxySQL
-title: ProxySQL
+title: Configure ProxySQL for MySQL
 description: Configure and use ProxySQL for MySQL add-ons with detailed step-by-step tutorials and configuration examples
 keywords:
 - proxysql

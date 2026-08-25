@@ -1,7 +1,7 @@
 ---
 type: docs
-linkTitle: Go - Echoip
-title: Go - Echoip
+linkTitle: EchoIP
+title: Deploy EchoIP with Go
 description: Build and deploy a Go EchoIP service on Clever Cloud with step-by-step instructions, configuration examples, and optimization tips
 keywords:
 - go
@@ -78,4 +78,3 @@ Check the deployment logs:
 ```
 echoip/ ~ $ clever logs
 ```
-

@@ -32,10 +32,10 @@ Find here specific instructions related to your application's language.
   {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/applications/frankenphp" title="FrankenPHP" icon="frankenphp" >}}
   {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
-  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell" >}}
+  {{< card link="/developers/doc/applications/java" title="Java (Gradle, JAR, Maven, WAR/EAR)" icon="java" >}}
   {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
   {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
   {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
@@ -63,12 +63,12 @@ Some runtimes can be extended with additional modules (such as extra PHP extensi
 
 You can control deployments and set your application configuration with environment variables:
 {{< cards >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables/#set-by-the-deployment-process" title="Common to all applications" subtitle="Set by the deployment process." icon="server-stack" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables/#variables-you-can-define" title="Define" subtitle="Variables you can define." icon="pencil-square" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables/#control-build-and-dependencies-cache" title="Cache" subtitle="Control the build and deployment cache." icon="arrow-up-on-square-stack" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables/#control-the-deployments-behavior" title="Run" subtitle="Control the deployment behavior." icon="play-circle" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables/#deployment-hooks" title="Hooks" subtitle="Define commands to run between various steps of the deployment." icon="eye-dropper" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables" title="How to" subtitle="How to to configure your application with environment variables." icon="book-open" >}}
+  {{< card link="/developers/doc/develop/env-variables" title="Environment variables" subtitle="Understand how variables are defined and used" icon="book-open" >}}
+  {{< card link="/developers/doc/reference/reference-environment-variables/#set-by-the-deployment-process" title="Platform variables" subtitle="Review variables set by the deployment process" icon="server-stack" >}}
+  {{< card link="/developers/doc/reference/reference-environment-variables/#variables-you-can-define" title="Configuration variables" subtitle="Review variables you can define" icon="pencil-square" >}}
+  {{< card link="/developers/doc/develop/env-variables/#settings-you-can-define-using-environment-variables" title="Build cache" subtitle="Control which files are included in the build cache" icon="arrow-up-on-square-stack" >}}
+  {{< card link="/developers/doc/reference/reference-environment-variables/#variables-you-can-define" title="Run command" subtitle="Override the command used to run your application" icon="play-circle" >}}
+  {{< card link="/developers/doc/develop/build-hooks" title="Deployment hooks" subtitle="Run commands during deployment phases" icon="rocket-launch" >}}
 {{< /cards >}}
 
 ### Common to All Applications

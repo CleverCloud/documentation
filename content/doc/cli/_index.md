@@ -49,16 +49,16 @@ You'll find below the first commands to know to connect Clever Tools to your acc
 
 {{< cards >}}
   {{< card link="/developers/doc/cli/install" title="Install" icon="arrow-down-tray" >}}
-  {{< card link="/developers/doc/cli/addons" title="Create and manage add-ons" icon= "wrench-screwdriver" >}}
+  {{< card link="/developers/doc/cli/addons" title="Create and manage add-ons" icon="wrench-screwdriver" >}}
   {{< card link="/developers/doc/cli/applications" title="Create and manage applications" icon="code-bracket" >}}
+  {{< card link="/developers/doc/cli/kubernetes" title="Kubernetes" icon="kubernetes" >}}
   {{< card link="/developers/doc/cli/kv-stores" title="Manage KV stores" icon="server-stack" >}}
-  {{< card link="/developers/doc/cli/logs-drains" title="Manage logs, drains" icon="command-line" >}}
+  {{< card link="/developers/doc/cli/logs-drains" title="Manage logs and drains" icon="command-line" >}}
   {{< card link="/developers/doc/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
-  {{< card link="/developers/doc/cli/notifications-webhooks" title="Notifications, Web hooks" icon="bell" >}}
-  {{< card link="/developers/doc/cli/operators" title="Operators (Managed services)" icon="document-check" >}}
+  {{< card link="/developers/doc/cli/notifications-webhooks" title="Notifications and webhooks" icon="bell" >}}
+  {{< card link="/developers/doc/cli/operators" title="Operators (managed services)" icon="document-check" >}}
   {{< card link="/developers/doc/cli/profiles" title="Profiles and overrides" icon="user" >}}
-  {{< card link="/developers/doc/cli/services-depedencies" title="Services dependencies" icon="endpoints" >}}
-  {{< card link="/developers/doc/cli/kubernetes" title="Kubernetes" icon="server-stack" >}}
+  {{< card link="/developers/doc/cli/services-depedencies" title="Service dependencies" icon="endpoints" >}}
 {{< /cards >}}
 
 ## basic commands

@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: mdBook
-title: mdBook
+title: Deploy an mdBook website
 description: Deploy mdBook Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - mdbook

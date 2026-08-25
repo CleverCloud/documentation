@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Hugo
-title: Hugo
+title: Deploy a Hugo website
 description: Deploy Hugo Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - hugo

@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: MkDocs
-title: MkDocs
+title: Deploy a MkDocs website
 description: Deploy MkDocs Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - mkdocs

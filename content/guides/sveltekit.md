@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: SvelteKit
-title: SvelteKit
+title: Deploy a SvelteKit application
 description: Deploy a SvelteKit application as a static site, a single-page application, or a Node.js server on Clever Cloud
 keywords:
 - sveltekit

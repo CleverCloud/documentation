@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Eleventy (11ty)
-title: Eleventy (11ty)
+title: Deploy an Eleventy website
 description: Deploy Eleventy (11ty) Static Site Generator (SSG) websites on Clever Cloud with step-by-step tutorial and configuration guide
 keywords:
 - eleventy

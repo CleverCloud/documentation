@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Node-statsd
-title: Node-statsd
+title: Export Node.js metrics with node-statsd
 description: Configure node-statsd package on your Node.js application to push custom metrics with detailed step-by-step tutorials
 keywords:
 - Node.js

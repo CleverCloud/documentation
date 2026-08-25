@@ -16,6 +16,8 @@ aliases:
 ---
 
 {{< cards >}}
-  {{< card link="/developers/doc/reference/common-configuration" title="Common configuration for all instances" icon="cog-6-tooth" >}}
-  {{< card link="/developers/doc/reference/reference-environment-variables" title="All environment variables" icon="creds" >}}
+  {{< card link="/developers/doc/reference/cli" title="CLI reference" icon="command-line" >}}
+  {{< card link="/developers/doc/reference/common-configuration" title="Common configuration" icon="cog-6-tooth" >}}
+  {{< card link="/developers/doc/reference/reference-environment-variables" title="Environment variable reference" icon="creds" >}}
+  {{< card link="/developers/doc/reference/products-support" title="Product support on tools" icon="document-check" >}}
 {{< /cards >}}

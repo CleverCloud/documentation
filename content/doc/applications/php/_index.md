@@ -152,6 +152,15 @@ If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Clou
 
 On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/reference/reference-environment-variables#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
 
+### Configuration reference
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/php/apache" title="Apache" subtitle="Configure the web server, headers and authentication" icon="feather" >}}
+  {{< card link="/developers/doc/applications/php/composer" title="Composer" subtitle="Manage PHP dependencies and private repositories" icon="php" >}}
+  {{< card link="/developers/doc/applications/php/extensions" title="Extensions" subtitle="Review and configure available PHP extensions" icon="puzzle" >}}
+  {{< card link="/developers/doc/applications/php/sessions-emails" title="Sessions and emails" subtitle="Configure session storage and email delivery" icon="mail" >}}
+{{< /cards >}}
+
 ## Frameworks and CMS
 
 The following is the list of tested CMS by our team.
@@ -159,11 +168,11 @@ The following is the list of tested CMS by our team.
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 {{< cards >}}
-  {{< card link="/developers/guides/tutorial-drupal" title="Drupal" subtitle= "Deploy a Drupal-based website on Clever Cloud" icon="drupal" >}}
-  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle= "Deploy a Laravel app on Clever Cloud" icon="laravel" >}}
-  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle= "Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
-  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle= "Deploy WordPress on Clever Cloud" icon="wordpress" >}}
-  {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Full Moodle installation and configuration guide" icon="moodle" >}}
+  {{< card link="/developers/guides/tutorial-drupal" title="Drupal" subtitle="Deploy a Drupal website on Clever Cloud" icon="drupal" >}}
+  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="laravel" >}}
+  {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform on Clever Cloud" icon="moodle" >}}
+  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
+  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="wordpress" >}}
 
 {{< /cards >}}
 

@@ -16,15 +16,18 @@ keywords:
 The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](https://github.com/CleverCloud/clever-tools) allow you to manage your account and products with the same public API you can use for your own services and integrations. This article will explain how to connect to this API and use it.
 
 {{< cards >}}
+  {{< card link="/developers/api/service-tokens/" title="Service tokens" subtitle="Machine-to-machine credentials for your CI/CD pipelines, monitoring tools and scripts." icon="creds" >}}
   {{< card link="/developers/api/v2/" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
   {{< card link="/developers/api/v4/" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
 {{< /cards >}}
 
 ## Request the API
 
-Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
+Clever Cloud's REST API offers three authentication mechanisms to meet different integration needs:
 
 * **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: https://api-bridge.clever-cloud.com
+
+* **Service tokens** are machine-to-machine credentials scoped to an organisation. They're based on [Biscuit](https://www.biscuitsec.org/) and carry their own role, so automated systems such as CI/CD pipelines, monitoring tools or scripts keep working without depending on a personal user account. Read [the service tokens documentation](/developers/api/service-tokens/) to create and use them.
 
 * **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
 

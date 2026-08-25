@@ -27,6 +27,7 @@ aliases:
 
 {{< cards >}}
   {{< card link="/developers/api/howto" title="How to use our API" subtitle="Learn more about Clever Cloud API, endpoints, auth and how to access it from multiple tools." icon="api" >}}
+  {{< card link="/developers/api/service-tokens" title="Service tokens" subtitle="Machine-to-machine credentials for your CI/CD pipelines, monitoring tools and scripts." icon="creds" >}}
   {{< card link="/developers/api/v2" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
   {{< card link="/developers/api/v4" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
 

@@ -52,6 +52,11 @@ html:not([class~="dark"]) .sidebar-active-item {
             Shortcodes
 ----------------------------- */
 
+/* Align card content to the top when cards have different heights */
+.hextra-card > .hx\:mt-auto {
+  margin-top: 0;
+}
+
 /* Hero buttons on home page */
 .btn-primary {
   background-color: var(--purple-color);
@@ -693,4 +698,3 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
   html[class~="dark"] .swagger-ui .responses-wrapper .response-header .response-toggle svg {
     fill: rgb(209 213 219);
   }
-  

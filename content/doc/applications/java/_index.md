@@ -28,11 +28,11 @@ Find detailed instructions according to your framework
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
-  {{< card link="/developers/doc/applications/java/java-jar" title="Jar" icon="java" >}}
-  {{< card link="/developers/doc/applications/java/java-maven" title="Maven" icon= "maven">}}
-  {{< card link="/developers/doc/applications/java/java-war" title="War/Ear" icon="java" >}}
-  {{< card link="/developers/doc/applications/scala/play-framework-1" title="Play 1" icon="play" >}}
-  {{< card link="/developers/doc/applications/scala/play-framework-2" title="Play 2" icon="play" >}}
+  {{< card link="/developers/doc/applications/java/java-jar" title="JAR" icon="java" >}}
+  {{< card link="/developers/doc/applications/java/java-maven" title="Maven" icon="maven" >}}
+  {{< card link="/developers/doc/applications/java/java-war" title="WAR/EAR" icon="java" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-1" title="Play Framework 1.x" icon="play" >}}
+  {{< card link="/developers/doc/applications/scala/play-framework-2" title="Play Framework 2.x" icon="play" >}}
 
 {{< /cards >}}
 
@@ -47,4 +47,3 @@ Looking for instructions on a specific framework deployment?
     icon="science"
   >}}
   {{< /cards >}}
-

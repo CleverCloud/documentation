@@ -19,6 +19,7 @@ aliases:
 {{< cards >}}
   {{< card link="/developers/doc/best-practices/blue-green" title="Blue/green deployment" icon="traffic-light" >}}
   {{< card link="/developers/doc/best-practices/cloud-storage" title="Cloud storage" icon="cloud-arrow-up" >}}
-  {{< card link="/developers/doc/best-practices/load-testing" title="Load testing" icon= "chart-bar-square">}}
-  {{< card link="/developers/doc/best-practices/12-factors" title="The Twelve-Factor app " icon="checklist" >}}
+  {{< card link="/developers/doc/best-practices/load-testing" title="Load testing" icon="chart-bar-square" >}}
+  {{< card link="/developers/doc/best-practices/12-factors" title="The Twelve-Factor App" icon="checklist" >}}
+  {{< card link="/developers/doc/best-practices/tips_and_tricks" title="Tips & Tricks" icon="adjustments-horizontal" >}}
 {{< /cards >}}

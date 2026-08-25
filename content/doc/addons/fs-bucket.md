@@ -160,3 +160,12 @@ The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https
 
 The **Add-on information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
+
+## Monitoring your storage usage
+
+The size of each bucket is recorded hourly in Warp 10 as the `fsbucket.storage` metric, in bytes,
+which lets you chart your storage consumption over time.
+The read token shown in an application's **Metrics** tab does not include this metric. You need to
+generate a dedicated token that includes the FS Bucket metrics scope.
+
+- [Generate the required token and query the FS Bucket storage metric](/doc/metrics#fs-bucket)

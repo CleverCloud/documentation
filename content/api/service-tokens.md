@@ -58,7 +58,7 @@ clever curl -X POST https://api.clever-cloud.com/v2/organisations/<ORGANISATION_
 | `app_id` | No | Restricts the token to a single application or add-on |
 | `ttl_seconds` | No | Token lifetime, from 1 second to 1 year. Defaults to 90 days |
 
-You can only assign a role equal to or lower than your own, so only organisation admins create `ADMIN` or `ACCOUNTING` tokens. Refer to [roles and privileges](/developers/doc/account/organisations/#roles-and-privileges) to pick the role matching what your automated system needs.
+You can only assign a role equal to or lower than your own, so only organisation admins create `ADMIN` or `ACCOUNTING` tokens. Refer to [roles and privileges](/developers/doc/account/organisations/#roles-and-privileges) to pick the role matching what your automated system needs, where the `ACCOUNTING` role appears as **Accountant**.
 
 Setting `app_id` restricts the token to a single application or add-on: the API rejects any request targeting another resource. Omit it to give the token organisation-wide access for its role.
 

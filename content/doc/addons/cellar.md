@@ -842,9 +842,9 @@ To ensure the integrity of the uploaded file, you can add a checksum as part of 
 
 Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign your URL with an MD5 checksum as a parameter, Cellar validates the uploaded file against the expected checksum by verifying both the request headers and the file content. The upload fail if either value doesn't match the expected checksum.
 
-{{< tabs items="Python, Node.js" >}}
+{{< tabs >}}
 
-  {{< tab >}}
+  {{< tab name="Python" icon="python" >}}
 
   ```python
   import boto3
@@ -890,7 +890,7 @@ Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign you
 
   {{< /tab >}}
 
-  {{< tab >}}
+  {{< tab name="Node.js" icon="node" >}}
 
   ```js
     import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";

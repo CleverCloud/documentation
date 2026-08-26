@@ -1,7 +1,6 @@
 name: ❓ Other request
 description: For requests that don't fit into other categories
 title: "Other: "
-labels: ["documentation"]
 body:
   - type: markdown
     attributes:
@@ -19,9 +18,9 @@ body:
       description: "Have you checked the appropriate resources?"
       options:
         - label: I have checked that this request doesn't fit into other issue templates
+          required: true
         - label: I have searched for existing [issues](https://github.com/CleverCloud/documentation/issues)
-    validations:
-      required: true
+          required: true
 
   - type: textarea
     id: issue-description

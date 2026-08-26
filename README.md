@@ -25,8 +25,9 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
 Install the following tools before building the site:
 
 - [Git](https://git-scm.com/downloads)
-- [Go](https://go.dev/doc/install) 1.26 or later, which Hugo Modules uses to retrieve Hextra
-- [Hugo Extended](https://gohugo.io/installation/) 0.154.5 or later
+- [Mise](https://mise.jdx.dev/getting-started.html)
+
+Mise installs the Go, Hugo Extended, markdownlint-cli2 and Vale versions declared in [`mise.toml`](./mise.toml).
 
 ### Preview the site
 
@@ -35,6 +36,7 @@ Clone the repository and start Hugo's development server:
 ```bash
 git clone https://github.com/CleverCloud/documentation.git
 cd documentation
+mise install
 hugo server
 ```
 
@@ -45,12 +47,13 @@ The site is available at <http://localhost:1313> and refreshes when you modify a
 The site uses the Clever Cloud `static` runtime with the following environment variables:
 
 ```bash
+CC_DISABLE_MISE="true"
 CC_WEBROOT="public"
 CC_STATIC_AUTOBUILD_OUTDIR="public/developers"
 SERVER_ERROR_PAGE_404="developers/404.html"
 ```
 
-Configure the application route so its path ends in `/developers`, which matches the site's configured base URL and output directory.
+`CC_DISABLE_MISE` prevents Clever Cloud from installing the development dependencies because the static runtime provides and manages its deployment tools. Configure the route so its path ends in `/developers`, which matches the site's configured base URL and output directory.
 
 > [!TIP]
 > Set `CC_HUGO_VERSION` to a supported version such as `0.164` to select the Hugo version used for deployment
@@ -163,15 +166,14 @@ Run a production build before submitting a change:
 hugo
 ```
 
-The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) configuration in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and exclusions in [`.markdownlintignore`](./.markdownlintignore). Run it with Node.js and `npx`:
+The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) configuration in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and exclusions in [`.markdownlintignore`](./.markdownlintignore). Run the version installed by Mise:
 
 ```bash
-npx markdownlint-cli2 "**/*.md"
+markdownlint-cli2 "**/*.md"
 ```
 
-Editorial checks use [Vale](https://vale.sh/). The pull request workflow checks changed lines, and [Mise](https://mise.jdx.dev/) can install the configured Vale version and run the same styles locally:
+Editorial checks use [Vale](https://vale.sh/). The pull request workflow checks changed lines, and Mise can run the same styles locally:
 
 ```bash
-mise install
-mise exec -- vale README.md content shared
+vale README.md content shared
 ```

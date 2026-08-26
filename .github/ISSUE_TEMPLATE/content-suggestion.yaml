@@ -1,7 +1,7 @@
 name: 📝 Content and guide suggestion
-description: Suggest new documentation content, guides
+description: Suggest new documentation content or a deployment guide
 title: "Content: "
-labels: ["documentation", "enhancement"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
@@ -16,9 +16,9 @@ body:
       description: "Have you checked if this content already exists?"
       options:
         - label: I have searched existing [documentation](https://www.clever.cloud/developers/) to verify this content doesn't already exist
+          required: true
         - label: I have checked for existing [issues](https://github.com/CleverCloud/documentation/issues) for this request
-    validations:
-      required: true
+          required: true
 
   - type: dropdown
     id: content-type
@@ -53,7 +53,7 @@ body:
     id: framework-details
     attributes:
       label: "Technical details (for framework guides)"
-      description: "If it's a framework guide: name, version, specific challenges, etc."
+      description: "For a framework guide, provide its name, version and any deployment-specific requirements"
       placeholder: "Framework: Laravel 10, challenges: queue configuration with Redis, special dependencies..."
 
   - type: textarea

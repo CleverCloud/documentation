@@ -30,7 +30,7 @@ otoroshictl resources get routes
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

@@ -39,9 +39,9 @@ Make sure you have created a MySQL database add-on in the Clever Cloud console, 
 
 We at this point assume you have downloaded the source files of drupal from [drupal.org](https://new.drupal.org/download) and already have linked your MySQL add-on.
 
-* Open `.gitignore` file and delete `sites/*/settings*.php` line
-* Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
-* Open `sites/default/settings.php` and line 213, replace
+- Open `.gitignore` file and delete `sites/*/settings*.php` line
+- Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
+- Open `sites/default/settings.php` and line 213, replace
 
 ```php{linenos=table}
 $databases = array();
@@ -67,12 +67,12 @@ by
     );
 ```
 
-* Replace the line `$settings['hash_salt'] = ''` (`$drupal_hash_salt` for Drupal 7) with `$settings['hash_salt'] = getenv('DRUPAL_SALT')`. You can generate salts with [this link](https://www.passwordtool.hu/). Add a new `DRUPAL_SALT` [environment variable](/doc/applications/php#configure-your-php-application) to the application with the salt you have generated.
-* As mentioned in this [article](/doc/addons/fs-bucket), with Git deployments, files that are uploaded by users must be
+- Replace the line `$settings['hash_salt'] = ''` (`$drupal_hash_salt` for Drupal 7) with `$settings['hash_salt'] = getenv('DRUPAL_SALT')`. You can generate salts with [this link](https://www.passwordtool.hu/). Add a new `DRUPAL_SALT` [environment variable](/doc/applications/php#configure-your-php-application) to the application with the salt you have generated.
+- As mentioned in this [article](/doc/addons/fs-bucket), with Git deployments, files that are uploaded by users must be
 persisted in a File System Bucket. In order to do so, [add a File Bucket](/doc/addons/fs-bucket) via the console.
-* At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud`
+- At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud`
 folder in which you create a `buckets.json` file).
-* Copy the `bucket.json` content from the FS bucket addon dashboard (make sure to edit the `folder` field):
+- Copy the `bucket.json` content from the FS bucket addon dashboard (make sure to edit the `folder` field):
 
 ```javascript{linenos=table}
 [
@@ -83,8 +83,8 @@ folder in which you create a `buckets.json` file).
 ]
 ```
 
-* Send these Drupal files via Git.
-* When finished, get the url that you can find in the *domains* panel in the left sidebar. Then open the following link:
+- Send these Drupal files via Git.
+- When finished, get the url that you can find in the *domains* panel in the left sidebar. Then open the following link:
 
 `https://yourapplication.cleverapps.io/install.php`
 

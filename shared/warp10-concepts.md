@@ -6,5 +6,5 @@ A GeoTime Serie (GTS) is defined by a `class` and some `labels`. They're indexed
 
 Warp 10 uses Warp Script. It's a stack based language using reverse polish notation.
 
-* [Warp 1O documentation](https://www.warp10.io/doc/reference)
-* [Warp Script documentation](https://www.warp10.io/content/03_Documentation/04_WarpScript)
+- [Warp 1O documentation](https://www.warp10.io/doc/reference)
+- [Warp Script documentation](https://www.warp10.io/content/03_Documentation/04_WarpScript)

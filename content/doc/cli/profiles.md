@@ -16,6 +16,7 @@ You can use multiple profiles with Clever Tools, all stored in the configuration
 
 > [!TIP]
 > The configuration file lives in your OS config directory:
+>
 > - Windows: `%APPDATA%\clever-cloud\clever-tools.json`
 > - Other systems: XDG config directory (typically `~/.config/clever-cloud/clever-tools.json`)
 

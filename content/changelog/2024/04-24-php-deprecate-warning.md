@@ -21,4 +21,4 @@ As we still see a lot of applications using deprecated versions, the new PHP ima
 
  There is no short term plan to cut access to supported versions such as PHP 5.6 or 7.x, but you do it at your own risks.
 
-* Learn more about [PHP releases lifecycle](https://www.php.net/supported-versions.php)
+- Learn more about [PHP releases lifecycle](https://www.php.net/supported-versions.php)

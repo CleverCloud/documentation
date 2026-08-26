@@ -19,11 +19,11 @@ aliases:
 
 Since you deploy microservices on Clever Cloud, you may need some data pipes between your services to:
 
-* collect data from your PostgreSQL to create Elasticsearch indexes for your website search engine
-* collect application logs to analyze them with Elasticsearch, then archive them with S3
-* collect Apache access logs to analyze them in MongoDB
-* extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
-* and many more …
+- collect data from your PostgreSQL to create Elasticsearch indexes for your website search engine
+- collect application logs to analyze them with Elasticsearch, then archive them with S3
+- collect Apache access logs to analyze them in MongoDB
+- extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
+- and many more …
 
 Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
 
@@ -41,12 +41,12 @@ Fluentd is an open source data collector written in Ruby, which lets you unify t
 
 To follow this tutorial, you will need:
 
-* Ruby >= 2.4.4 (w/ Rubygems)
-* Bundler
-* Docker
-* Git
-* curl
-* a Ruby versions manager
+- Ruby >= 2.4.4 (w/ Rubygems)
+- Bundler
+- Docker
+- Git
+- curl
+- a Ruby versions manager
 
 {{< callout type="info" >}}
 To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv).

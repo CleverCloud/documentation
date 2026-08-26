@@ -23,9 +23,9 @@ At the beginning of each month, a new invoice is generated for each organisation
 
 The invoice is made up of three distinct sections:
 
-* A summary of the total amount to be paid for the current month
-* An exploded view of the invoice calculation, including credits used, coupons, provision for the coming month etc.
-* and full details of the operating time of each service, of each service invoiced, of storage used etc.
+- A summary of the total amount to be paid for the current month
+- An exploded view of the invoice calculation, including credits used, coupons, provision for the coming month etc.
+- and full details of the operating time of each service, of each service invoiced, of storage used etc.
 
 To find your invoices, go to your organisation and click on **Invoices** to see a list of them and their payment status:
 
@@ -41,14 +41,14 @@ This first section shows the fee for the use of Clever Cloud over a month. Any d
 
 This part details line by line the evolution of your credit with:
 
-* The balance of free credits (a)
-* Pre-paid credits (b)
-* The use of free credits (c)
-* Expired credits (d)
-* Use of your prepaid credits (e)
-* Estimated consumption for the next period (f)
-* Invoiced credits pending payment (g)
-* Amount of prepaid credits to be topped up (h)
+- The balance of free credits (a)
+- Pre-paid credits (b)
+- The use of free credits (c)
+- Expired credits (d)
+- Use of your prepaid credits (e)
+- Estimated consumption for the next period (f)
+- Invoiced credits pending payment (g)
+- Amount of prepaid credits to be topped up (h)
 
 The **amount of prepaid credits to be topped up** and the **new balance of credits after settlement** are explained via calculations of the different types of credits and their use over time.
 
@@ -65,8 +65,8 @@ This section of the invoice details the usage of each cloud service.
 While applications are billed on a per second basis, this may be different for managed services.
 From a billing point of view there are X categories
 
-* time-based billing (per second)
-* resource consumption billing
+- time-based billing (per second)
+- resource consumption billing
 
 For example, dedicated databases are charged by the second, just like applications.
 In contrast, services such as Cellar object storage or Pulsar are charged according to the volume of data stored and the volume of outgoing traffic.
@@ -83,10 +83,10 @@ For each organisation it is possible to register one or more payment methods ([s
 
 As long as an invoice remains *pending*, we'll perform these actions on specific days:
 
-* Try to issue an automatic payment using your favorite payment method everyday from the
+- Try to issue an automatic payment using your favorite payment method everyday from the
   5th to the 15th day after issuing the invoice, then every 5 days after that.
-* Send a reminder via email every 5 days if the payment remains unsuccessful.
-* Shutdown of your services everyday starting day 31 after invoice issue.
+- Send a reminder via email every 5 days if the payment remains unsuccessful.
+- Shutdown of your services everyday starting day 31 after invoice issue.
 
 This schedule can adapt according to your company's payment delays.
 Please reach out to us via the support to ensure the best experience.

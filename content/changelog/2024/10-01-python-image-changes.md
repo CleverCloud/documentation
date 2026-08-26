@@ -22,7 +22,7 @@ We only support [pip](https://packaging.python.org/en/latest/tutorials/installin
 
 We'll enhance its native support in coming releases of our Python image.
 
-* [Learn more about uv](https://github.com/astral-sh/uv) {{< icon "github" >}}
+- [Learn more about uv](https://github.com/astral-sh/uv) {{< icon "github" >}}
 
 ## Python versions: time to clean up
 
@@ -32,7 +32,7 @@ We'll also get closer to [the official Python release cycle](https://devguide.py
 
 If you need to sideload unsupported Python versions, `uv` [can help you](https://docs.astral.sh/uv/guides/install-python/). You can also deploy your applications through [Docker](/doc/applications/docker), but you should avoid to use end of life runtime in your applications.
 
-* Learn more about [Python on Clever Cloud](/doc/applications/python/)
+- Learn more about [Python on Clever Cloud](/doc/applications/python/)
 
 ## What's next?
 

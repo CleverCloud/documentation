@@ -16,9 +16,9 @@ aliases:
 
 [Network Groups](/doc/develop/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
 
-* Network Group: a group of resources that can communicate with each through an encrypted tunnel
-* Member: a resource that can be part of a Network Group (`application`, `addon` or `external`)
-* Peer: Instance of a resource connected to a Network Group (can be `external`)
+- Network Group: a group of resources that can communicate with each through an encrypted tunnel
+- Member: a resource that can be part of a Network Group (`application`, `addon` or `external`)
+- Peer: Instance of a resource connected to a Network Group (can be `external`)
 
 A Network Group is defined by an ID (`ngId`) and a `label`. It can be completed by a `description` and `tags`.
 
@@ -42,13 +42,13 @@ When an application connects to a Network Group, you can reach it on any port in
 
 Activate `ng` feature flag to manage Network Groups:
 
-```
+```console
 clever features enable ng
 ```
 
 Then, check it works with the following command:
 
-```
+```console
 clever ng
 ```
 
@@ -58,19 +58,19 @@ In all the following examples, you can target a specific organisation with the `
 
 A Network Group is simple to create:
 
-```
+```console
 clever ng create myNG
 ```
 
 You can create it declaring its members:
 
-```
+```console
 clever ng create myNG --link app_xxx,postgresql_xxx
 ```
 
 You can add a description and tags:
 
-```
+```console
 clever ng create myNG --description "My first NG" --tags test,ng
 ```
 
@@ -78,7 +78,7 @@ clever ng create myNG --description "My first NG" --tags test,ng
 
 You can delete a Network Group through its ID or label:
 
-```
+```console
 clever ng delete ngId
 clever ng delete ngLabel
 ```
@@ -87,7 +87,7 @@ clever ng delete ngLabel
 
 Once created, you can list your Network Groups:
 
-```
+```console
 clever ng
 
 ┌─────────┬───────-┬─────────-─┬───────────────┬─────────┬───────┐
@@ -103,7 +103,7 @@ A `json` formatted output is available with the `--format/-F json` option.
 
 To (un)link an application, add-on or external peer to a Network Group:
 
-```
+```console
 clever ng link app_xxx ngIdOrLabel
 clever ng unlink redis_xxx ngIdorLabel
 ```
@@ -118,13 +118,13 @@ After an unlink, you may need to restart the application to apply the changes.
 
 To create an external peer in a Network Group, you need to provide a label, Network Group and WireGuard public key:
 
-```
+```console
 clever ng create external myExternalPeer myNG wg_public_key
 ```
 
 To delete an external peer from a Network Group:
 
-```
+```console
 clever ng delete external peerIdOrLabel myNG
 ```
 
@@ -132,20 +132,20 @@ clever ng delete external peerIdOrLabel myNG
 
 To get information about a Network Group or a resource (a `json` formatted output is available):
 
-```
+```console
 clever ng get ngIdOrLabel -F json
 clever ng get resourceIdOrName
 ```
 
 You can specify the type of resource to look for with the `--type` option (`NetworkGroup`, `Member`, `CleverPeer`, `ExternalPeer`):
 
-```
+```console
 clever ng get resourceIdOrName --type ExternalPeer
 ```
 
 You can also search for Network Groups, members or peers:
 
-```
+```console
 clever ng search text_to_search -F json
 clever ng search text_to_search --type Member
 ```
@@ -158,7 +158,7 @@ clever ng search text_to_search --type Member
 
 To get the WireGuard configuration of a peer (a `json` formatted output is available):
 
-```
+```console
 clever ng get-config peerIdOrLabel myNG
 ```
 
@@ -166,6 +166,6 @@ clever ng get-config peerIdOrLabel myNG
 
 You can find ready to deploy projects using Network Groups in the following repositories:
 
-- https://github.com/CleverCloud/network-groups-example
+- <https://github.com/CleverCloud/network-groups-example>
 
 Create your own and [let us know](https://github.com/CleverCloud/Community/discussions/categories/network-groups)!

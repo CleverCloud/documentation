@@ -89,11 +89,11 @@ A Kubernetes cluster on Clever Cloud is made of a control plane and one or more 
 
 You choose how the control plane is distributed at creation time. The topology decides the placement of the Kubernetes components, the available flavors, whether workloads share the same VMs as the control plane, and ultimately what gets billed. Three layouts are available:
 
-|Topology|Customers|VMs you pay for|Flavors|Default node group included?|Typical use case|
-|---|---|---|---|---|---|
-|`ALL_IN_ONE`|Essential|`replicationFactor` × bundle VM (control plane + integrated worker node). Additional node groups billed separately|`S`, `M`, `L`, `XL`|No node group, but each bundle VM is also a worker node — additional node groups optional|Development, testing, small single-team clusters|
-|`DEDICATED_COMPUTE`|Business|`replicationFactor` × control plane VM **plus** every worker VM in your node groups|`XS`, `S`, `M`, `L`, `XL`|No — provision a node group at creation with `--nodegroup` or later|Production clusters where control plane and workloads stay isolated|
-|`DISTRIBUTED`|Enterprise|For each of 5 components: `replicationFactor` × component VM **plus** every worker VM in your node groups|`2XS`, `XS`, `S`, `M`, `L`, `XL`|No — provision a node group at creation or later|Demanding production clusters needing fine-grained HA per control plane component|
+| Topology            | Customers  | VMs you pay for                                                                                                    | Flavors                          | Default node group included?                                                              | Typical use case                                                                  |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ | -------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `ALL_IN_ONE`        | Essential  | `replicationFactor` × bundle VM (control plane + integrated worker node). Additional node groups billed separately | `S`, `M`, `L`, `XL`              | No node group, but each bundle VM is also a worker node — additional node groups optional | Development, testing, small single-team clusters                                  |
+| `DEDICATED_COMPUTE` | Business   | `replicationFactor` × control plane VM **plus** every worker VM in your node groups                                | `XS`, `S`, `M`, `L`, `XL`        | No — provision a node group at creation with `--nodegroup` or later                       | Production clusters where control plane and workloads stay isolated               |
+| `DISTRIBUTED`       | Enterprise | For each of 5 components: `replicationFactor` × component VM **plus** every worker VM in your node groups          | `2XS`, `XS`, `S`, `M`, `L`, `XL` | No — provision a node group at creation or later                                          | Demanding production clusters needing fine-grained HA per control plane component |
 
 `ALL_IN_ONE` is the default when no topology is specified at cluster creation through Clever Tools or the Console. A replication factor (`1` to `5`) applies to the control plane VMs: the higher the factor, the more resilient the control plane and, in `DEDICATED_COMPUTE` or `DISTRIBUTED`, the more sites it is spread across (up to three Parisian datacenters). In `DISTRIBUTED`, each of the five components has its own flavor and its own replication factor, letting you scale a busy `apiserver` higher than a quieter `scheduler`.
 
@@ -260,7 +260,7 @@ clever k8s nodegroups delete myCluster workers
 
 Define a `NodeGroup` resource in a YAML file and apply it:
 
-```yaml{filename="example-nodegroup.yaml"}
+```yaml {filename="example-nodegroup.yaml"}
 apiVersion: api.clever-cloud.com/v1
 kind: NodeGroup
 metadata:
@@ -357,7 +357,7 @@ kubectl create secret docker-registry dockerhub-creds \
 
 Reference the secret from your Pod spec via `imagePullSecrets`:
 
-```yaml{filename="deployment-private.yaml"}
+```yaml {filename="deployment-private.yaml"}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -401,7 +401,7 @@ kubectl expose deployment/nginx --type=LoadBalancer --port 80
 
 Alternatively, you can create a YAML file named `deployment-demo.yaml` with the following content and apply it using `kubectl apply -f deployment-demo.yaml`:
 
-```yaml{filename="deployment-demo.yaml"}
+```yaml {filename="deployment-demo.yaml"}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -463,37 +463,37 @@ In practice:
 
 The bundle hosts the five control plane components and an integrated worker node on the same VMs. The price below covers everything; additional node groups attached to an `ALL_IN_ONE` cluster are billed separately at the [node group rate](#node-groups-workers).
 
-|Flavor|Resources|Hourly price|Monthly price|
-|---|---|---|---|
-|S|8 vCPU / 12 GB|0.0889 €|64.00 €|
-|M|10 vCPU / 16 GB|0.1167 €|84.00 €|
-|L|12 vCPU / 24 GB|0.1667 €|120.00 €|
-|XL|16 vCPU / 32 GB|0.2222 €|160.00 €|
+| Flavor | Resources       | Hourly price | Monthly price |
+| ------ | --------------- | ------------ | ------------- |
+| S      | 8 vCPU / 12 GB  | 0.0889 €     | 64.00 €       |
+| M      | 10 vCPU / 16 GB | 0.1167 €     | 84.00 €       |
+| L      | 12 vCPU / 24 GB | 0.1667 €     | 120.00 €      |
+| XL     | 16 vCPU / 32 GB | 0.2222 €     | 160.00 €      |
 
 ### Business (`DEDICATED_COMPUTE`) control plane
 
 One VM per replication factor, dedicated to the control plane.
 
-|Flavor|Resources|Hourly price|Monthly price|
-|---|---|---|---|
-|XS|6 vCPU / 8 GB|0.0917 €|66.00 €|
-|S|8 vCPU / 12 GB|0.1333 €|96.00 €|
-|M|10 vCPU / 16 GB|0.1750 €|126.00 €|
-|L|12 vCPU / 24 GB|0.2500 €|180.00 €|
-|XL|16 vCPU / 32 GB|0.3333 €|240.00 €|
+| Flavor | Resources       | Hourly price | Monthly price |
+| ------ | --------------- | ------------ | ------------- |
+| XS     | 6 vCPU / 8 GB   | 0.0917 €     | 66.00 €       |
+| S      | 8 vCPU / 12 GB  | 0.1333 €     | 96.00 €       |
+| M      | 10 vCPU / 16 GB | 0.1750 €     | 126.00 €      |
+| L      | 12 vCPU / 24 GB | 0.2500 €     | 180.00 €      |
+| XL     | 16 vCPU / 32 GB | 0.3333 €     | 240.00 €      |
 
 ### Enterprise (`DISTRIBUTED`) control plane
 
 For each of the five components (`apiserver`, `controller-manager`, `scheduler`, `cloud-controller-manager`, `node-group-operator`), pay `replicationFactor` × the per-VM price below. Each component picks its own flavor and replication factor.
 
-|Flavor|Resources|Hourly price|Monthly price per component|
-|---|---|---|---|
-|2XS|4 vCPU / 4 GB|0.0500 €|36.00 €|
-|XS|6 vCPU / 8 GB|0.0917 €|66.00 €|
-|S|8 vCPU / 12 GB|0.1333 €|96.00 €|
-|M|10 vCPU / 16 GB|0.1750 €|126.00 €|
-|L|12 vCPU / 24 GB|0.2500 €|180.00 €|
-|XL|16 vCPU / 32 GB|0.3333 €|240.00 €|
+| Flavor | Resources       | Hourly price | Monthly price per component |
+| ------ | --------------- | ------------ | --------------------------- |
+| 2XS    | 4 vCPU / 4 GB   | 0.0500 €     | 36.00 €                     |
+| XS     | 6 vCPU / 8 GB   | 0.0917 €     | 66.00 €                     |
+| S      | 8 vCPU / 12 GB  | 0.1333 €     | 96.00 €                     |
+| M      | 10 vCPU / 16 GB | 0.1750 €     | 126.00 €                    |
+| L      | 12 vCPU / 24 GB | 0.2500 €     | 180.00 €                    |
+| XL     | 16 vCPU / 32 GB | 0.3333 €     | 240.00 €                    |
 
 The price above is **per component VM** (one of the five) at `replicationFactor = 1`. A minimal Distributed cluster with all five components in 2XS at rf=1 therefore costs `5 × 36.00 € = 180.00 €/month` for the control plane alone, plus the [node group rate](#node-groups-workers) for your workers.
 
@@ -501,14 +501,14 @@ The price above is **per component VM** (one of the five) at `replicationFactor 
 
 Worker VMs in node groups attached to any cluster. An `ALL_IN_ONE` cluster ships with one worker node integrated in each bundle VM (no extra rate); any **additional** node group you attach to an `ALL_IN_ONE` cluster is billed at the rate below, like for `DEDICATED_COMPUTE` and `DISTRIBUTED`.
 
-|Flavor|Resources|Hourly price|Monthly price|
-|---|---|---|---|
-|2XS|4 vCPU / 4 GB|0.0333 €|24.00 €|
-|XS|6 vCPU / 8 GB|0.0611 €|44.00 €|
-|S|8 vCPU / 12 GB|0.0889 €|64.00 €|
-|M|10 vCPU / 16 GB|0.1167 €|84.00 €|
-|L|12 vCPU / 24 GB|0.1667 €|120.00 €|
-|XL|16 vCPU / 32 GB|0.2222 €|160.00 €|
+| Flavor | Resources       | Hourly price | Monthly price |
+| ------ | --------------- | ------------ | ------------- |
+| 2XS    | 4 vCPU / 4 GB   | 0.0333 €     | 24.00 €       |
+| XS     | 6 vCPU / 8 GB   | 0.0611 €     | 44.00 €       |
+| S      | 8 vCPU / 12 GB  | 0.0889 €     | 64.00 €       |
+| M      | 10 vCPU / 16 GB | 0.1167 €     | 84.00 €       |
+| L      | 12 vCPU / 24 GB | 0.1667 €     | 120.00 €      |
+| XL     | 16 vCPU / 32 GB | 0.2222 €     | 160.00 €      |
 
 ## Clever Kubernetes Operator
 

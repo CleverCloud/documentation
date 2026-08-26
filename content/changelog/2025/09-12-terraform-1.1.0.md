@@ -17,4 +17,4 @@ excludeSearch: true
 
 The [1.1.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.1.0) of the Clever Cloud Terraform provider is available. It brings bug fixes, update capability to `frankenphp` and multiple add-ons: `keycloak`, `kv`, `metabase`, `mongodb`, `mysql`, `otoroshi`, `postgresql`, `pulsar`, `redis`.
 
-* Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

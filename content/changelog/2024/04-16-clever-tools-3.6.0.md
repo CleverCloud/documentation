@@ -21,7 +21,7 @@ Clever Tools 3.6 is now available, with some minor fixes and a new feature: the 
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install)
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

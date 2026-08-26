@@ -23,25 +23,25 @@ But it's the `create` and `deploy` commands which are the most improved by this 
 
 To create a Node.js application once logged in, you can now just:
 
-```
+```console
 clever create -t node
 ```
 
 If you need a JSON response for a Go application deployed on Gravelines HDS:
 
-```
+```console
 clever create --type go --region grahds --format json
 ```
 
 Last but not least: you can deploy a specific tag from your local git repository adding the `--tag` or `-t` option:
 
-```
+```console
 clever deploy --tag v0.4.2
 ```
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

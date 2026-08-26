@@ -24,9 +24,9 @@ Clever Cloud allows its Marketplace partners to provide services as add-ons with
 
 You want to help us to offer more services to our users? [Contact us](https://partners.clever-cloud.com). Then, you will be able to use our dedicated tools and APIs to provide your service as an add-on, whether they're hosted on Clever Cloud or not.
 
-* [Add-on Manifest](#add-on-manifest): to provide your service as an add-on
-* [Add-on provider requests](#add-on-provider-requests): to provision, modify or delete add-ons
-* [Add-on infos API](#add-on-infos-api): to list provisioned add-ons and get detailed information about them
+- [Add-on Manifest](#add-on-manifest): to provide your service as an add-on
+- [Add-on provider requests](#add-on-provider-requests): to provision, modify or delete add-ons
+- [Add-on infos API](#add-on-infos-api): to list provisioned add-ons and get detailed information about them
 
 ## Add-on Manifest
 
@@ -55,16 +55,16 @@ First, provide a JSON manifest file that describes your add-on:
 
 ### Available fields
 
-* `id` - An ID for your add-on. All lower case, no spaces or punctuation. Underscores and dashes are allowed. This can’t be changed after the first push. It is also used for HTTP basic auth when making provisioning calls.
-* `name` (Optional) - A human-readable name for your add-on. You will be able to change it later in the dashboard, so you don't even have to provide it right now.
-* `api/config_vars` - A list of configuration variables that will be returned on provisioning calls. Each `config_var` name must start with the capitalized, add-on id with underscores, as in the example.
-* `api/password` - Password that Clever Cloud will send in HTTP basic auth when making provisioning calls. You should generate a long random string for that field.
-* `api/sso_salt` - Shared secret used in single sign-on between the Clever Cloud admin panel and your service’s admin panel. You should generate a long random string for that field.
-* `api/regions` - The list of geographical zones supported by your add-on. It cannot be empty. As for now, it *MUST* contain the element "eu". More will be supported.
-* `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision and deprovision).
-* `api/production/sso_url` - The production endpoint for single sign-on.
-* `api/test/base_url` - The test endpoint on which Clever Cloud sends actions requests. Used to test your service when you create an add-on provider. After the add-on creation,`api/production/base_url` is used.
-* `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. After that, the `api/production/sso_url` is used.
+- `id` - An ID for your add-on. All lower case, no spaces or punctuation. Underscores and dashes are allowed. This can’t be changed after the first push. It is also used for HTTP basic auth when making provisioning calls.
+- `name` (Optional) - A human-readable name for your add-on. You will be able to change it later in the dashboard, so you don't even have to provide it right now.
+- `api/config_vars` - A list of configuration variables that will be returned on provisioning calls. Each `config_var` name must start with the capitalized, add-on id with underscores, as in the example.
+- `api/password` - Password that Clever Cloud will send in HTTP basic auth when making provisioning calls. You should generate a long random string for that field.
+- `api/sso_salt` - Shared secret used in single sign-on between the Clever Cloud admin panel and your service’s admin panel. You should generate a long random string for that field.
+- `api/regions` - The list of geographical zones supported by your add-on. It cannot be empty. As for now, it *MUST* contain the element "eu". More will be supported.
+- `api/production/base_url` - The production endpoint on which Clever Cloud sends actions requests (provision and deprovision).
+- `api/production/sso_url` - The production endpoint for single sign-on.
+- `api/test/base_url` - The test endpoint on which Clever Cloud sends actions requests. Used to test your service when you create an add-on provider. After the add-on creation,`api/production/base_url` is used.
+- `api/test/sso_url` - The test endpoint for single sign-on. Used to test your service when you create an add-on provider. After that, the `api/production/sso_url` is used.
 
 ## Add-on Provider requests
 
@@ -99,22 +99,22 @@ Response Body: {
 
 The request body contains the following fields:
 
-* `addon_id` - The id we give to your add-on to identify it on our side.
-* `owner_id` - The id of the customer this add-on will belong to.
-* `owner_name` - The name of the customer. (Actually, the name of the organisation)
-* `user_id` - The id of the user that is performing the action of provisioning this
+- `addon_id` - The id we give to your add-on to identify it on our side.
+- `owner_id` - The id of the customer this add-on will belong to.
+- `owner_name` - The name of the customer. (Actually, the name of the organisation)
+- `user_id` - The id of the user that is performing the action of provisioning this
   add-on. (The user will do it for the account of `owner_id`).
-* `plan` - The slug field for the plan the user chose. You can create
+- `plan` - The slug field for the plan the user chose. You can create
 plans in the dashboard once your add-on manifest has been uploaded to
 the Clever Cloud platform. We send you the slug of the given plan,
 not its name.
-* `region` - The region to provision the add-on. As for now, only "EU" will be sent.
-* `callback_url` - The URL you can use to get details about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
-* `options` - String -> String map with options.
+- `region` - The region to provision the add-on. As for now, only "EU" will be sent.
+- `callback_url` - The URL you can use to get details about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
+- `options` - String -> String map with options.
 The response body contains the following fields:
-* `id` - The add-on id as seen from your side. It *MUST* be a String.
-* `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
-* `message` (Optional) - A creation message we will display in the dashboard.
+- `id` - The add-on id as seen from your side. It *MUST* be a String.
+- `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
+- `message` (Optional) - A creation message we will display in the dashboard.
 
 ### De-provisioning
 
@@ -128,14 +128,14 @@ Request Body: none
 Response Status: 200
 ```
 
-* `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
+- `addon_id` - This is the same as the `id` field set in the response to the provisioning call.
 
 ### Examples
 
 You can find templates for add-on providers in various languages on GitHub:
 
-* [Node.js](https://github.com/Redsmin/passport-clevercloud)
-* [Scala with Play! Framework 2](https://github.com/CleverCloud/addon-provider-template)
+- [Node.js](https://github.com/Redsmin/passport-clevercloud)
+- [Scala with Play! Framework 2](https://github.com/CleverCloud/addon-provider-template)
 
 ## Add-on Infos API
 
@@ -166,15 +166,15 @@ Response Body: [
 ]
 ```
 
-* `provider_id` - Should be the same as the "id" field of your uploaded manifest.
+- `provider_id` - Should be the same as the "id" field of your uploaded manifest.
 
-* `addon_id` - The add-on's id from Clever Cloud's POV.
+- `addon_id` - The add-on's id from Clever Cloud's POV.
 
-* `callback_url` - URL to call to get more details about this add-on.
+- `callback_url` - URL to call to get more details about this add-on.
 
-* `plan` - The current plan of this add-on.
+- `plan` - The current plan of this add-on.
 
-* `owner_id` - The id of the owner that provisioned the add-on. This should never change.
+- `owner_id` - The id of the owner that provisioned the add-on. This should never change.
 
 ### Get information about a specific add-on
 
@@ -199,23 +199,23 @@ Response Body: {
 
 This endpoint gives you more information about a provisioned add-on.
 
-* `id` - The add-on id from Clever Cloud's POV.
+- `id` - The add-on id from Clever Cloud's POV.
 
-* `name` - The name the user gave to this add-on in the Clever Cloud dashboard.
+- `name` - The name the user gave to this add-on in the Clever Cloud dashboard.
 
-* `config` - Configuration variables as you defined during the provision call.
+- `config` - Configuration variables as you defined during the provision call.
 
-* `callback_url` - The URL you just called.
+- `callback_url` - The URL you just called.
 
-* `owner_email` - One of the owner's email address.
+- `owner_email` - One of the owner's email address.
 
-* `owner_emails` - All the owner's email addresses.
+- `owner_emails` - All the owner's email addresses.
 
-* `owner_id` - The id of the owner that provisioned the add-on. This should never change.
+- `owner_id` - The id of the owner that provisioned the add-on. This should never change.
 
-* `region` - The region this add-on is located in. As for now, only "eu" is supported.
+- `region` - The region this add-on is located in. As for now, only "eu" is supported.
 
-* `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
+- `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
 
 ### Update the configuration variables for an add-on
 
@@ -339,13 +339,13 @@ Content-Type: application/x-www-form-urlencoded
 id=<id>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>&user_id=<user_id>&signature=<signature>
 ```
 
-* The hostname or `sso_url` comes from your add-on manifest
-* The `id` is the ID for the previously provisioned resource
-* The `timestamp` is a millisecond timestamp. You *SHOULD* verify that it's not older than a few minutes (like 5)
-* The `user_id` is a unique string identifying the current user on the Clever Cloud platform
-* The `email` is the current primary email of the current user on the Clever Cloud platform
-* The `nav-data` contains information like the current app name and installed add-ons for Clever Cloud's Console. At the time of writing this doc, this field is always empty
-* The `signature` is computed using the formula below
+- The hostname or `sso_url` comes from your add-on manifest
+- The `id` is the ID for the previously provisioned resource
+- The `timestamp` is a millisecond timestamp. You *SHOULD* verify that it's not older than a few minutes (like 5)
+- The `user_id` is a unique string identifying the current user on the Clever Cloud platform
+- The `email` is the current primary email of the current user on the Clever Cloud platform
+- The `nav-data` contains information like the current app name and installed add-ons for Clever Cloud's Console. At the time of writing this doc, this field is always empty
+- The `signature` is computed using the formula below
 
 ### Token
 

@@ -33,14 +33,14 @@ In order to add an organisation, just click on "Add an organisation" in the top 
 
 The table below describes rights assigned to roles:
 
-Role | Admin | Manager | Developer | Accountant |
------|-------|---------|-----------|------------|
-Add Member | ✓ | ✓ |  |  |
-Remove Member | ✓ | ✓ |  |  |
-Add Application | ✓ | ✓ | ✓ |  |
-Remove Application | ✓ | ✓ |  |  |
-Add / Remove add-on | ✓ | ✓ |  |  |
-Edit organisation | ✓ | ✓ |  |  |
-Delete organisation | ✓ |  |  |  |
-Access Bills & Receive Invoices | ✓ |  |  | ✓ |
-Access Repositories | ✓ | ✓ | ✓ |  |
+| Role                            | Admin | Manager | Developer | Accountant |
+| ------------------------------- | ----- | ------- | --------- | ---------- |
+| Add Member                      | ✓     | ✓       |           |            |
+| Remove Member                   | ✓     | ✓       |           |            |
+| Add Application                 | ✓     | ✓       | ✓         |            |
+| Remove Application              | ✓     | ✓       |           |            |
+| Add / Remove add-on             | ✓     | ✓       |           |            |
+| Edit organisation               | ✓     | ✓       |           |            |
+| Delete organisation             | ✓     |         |           |            |
+| Access Bills & Receive Invoices | ✓     |         |           | ✓          |
+| Access Repositories             | ✓     | ✓       | ✓         |            |

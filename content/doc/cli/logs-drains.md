@@ -17,7 +17,7 @@ aliases:
 
 You can use Clever Tools to control logs drains, through following commands. Each can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`):
 
-```
+```console
 clever drain
 clever drain -F json
 clever drain create <DRAIN-TYPE> <DRAIN-URL>
@@ -30,7 +30,7 @@ clever drain disable <DRAIN-ID>
 
 All drain subcommands also accept `--addon ADDON_ID_OR_REAL_ID` to target an add-on instead of an application. The `--addon` option is mutually exclusive with `--app` and `--alias`.
 
-```
+```console
 clever drain --addon postgresql_xxxxxxxx
 clever drain create --addon postgresql_xxxxxxxx raw-http https://logs.example.com
 clever drain get --addon postgresql_xxxxxxxx <DRAIN-ID>
@@ -51,7 +51,7 @@ Where `DRAIN-TYPE` is one of:
 
 Drain creation supports the following options:
 
-```
+```console
 [--username, -u] USERNAME             Basic auth username (for elasticsearch or raw-http)
 [--password, -p] PASSWORD             Basic auth password (for elasticsearch or raw-http)
 [--api-key, -k] API_KEY               API key (for newrelic)
@@ -67,7 +67,7 @@ ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `
 
 Datadog has two zones, EU and COM. An account on one zone is not available on the other, make sure to target the good EU or COM intake endpoint. To create a [Datadog](https://docs.datadoghq.com/api/?lang=python#send-logs-over-http) drain, you just need to use one of the following command depending on your zone:
 
-```
+```console
 # EU
 clever drain create datadog "https://http-intake.logs.datadoghq.eu/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&host=<HOST>"
 # US
@@ -80,6 +80,6 @@ The `host` query parameter is not mandatory: in the Datadog pipeline configurati
 
 NewRelic has two zones, EU and US. An account on one zone is not available on the other, make sure to target the good EU or US intake endpoint. To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
 
-```
+```console
 clever drain create newrelic "https://log-api.eu.newrelic.com/log/v1" --api-key <API_KEY>
 ```

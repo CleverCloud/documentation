@@ -28,8 +28,8 @@ CC_CLAMAV=true
 
 This variable is used to start these two services:
 
-* **clamav-daemon.service** (multi-threaded daemon that uses libclamav to scan files for viruses).
-* **clamav-freshclam.service** (used to update signature database sets to the latest version).
+- **clamav-daemon.service** (multi-threaded daemon that uses libclamav to scan files for viruses).
+- **clamav-freshclam.service** (used to update signature database sets to the latest version).
 
 The signature database is updated every 2 hours.
 

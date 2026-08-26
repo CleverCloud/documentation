@@ -16,6 +16,7 @@ excludeSearch: true
 ---
 
 [Clever Tools 4.1.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.1.0) is available. It fixes  some bugs and:
+
 - Return application runtime information in `clever status`
 - Return the local alias after a successful `clever link` command
 - Add JSON format with details to `clever domain` and `clever domain favourite` commands
@@ -24,7 +25,7 @@ excludeSearch: true
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

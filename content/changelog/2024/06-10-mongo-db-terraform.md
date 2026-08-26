@@ -21,4 +21,4 @@ If you can deploy on Clever Cloud through our [Console](https://console.clever-c
 
 We've recently added support for Python and [Materia KV](/doc/addons/materia-kv/). It's MongoDB's turn [to be available](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/mongodb). You can now create such an add-on, choose its plan, region and get the credentials to connect to it.
 
-* Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

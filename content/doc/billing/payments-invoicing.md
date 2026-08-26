@@ -19,10 +19,10 @@ aliases:
 
 In the sidebar of the organisation section, there are three alternatives to buy credit for your applications:
 
-* Credit card (powered by Stripe)
-* Paypal
-* Bank transfer: we accept international bank transfers. This option will generate a reference that you will have to add to your bank transfert, as a note.
-* SEPA Direct Debit: we support payment via SEPA debit. More information in the [SEPA Direct Debit section](#sepa-direct-debit)
+- Credit card (powered by Stripe)
+- Paypal
+- Bank transfer: we accept international bank transfers. This option will generate a reference that you will have to add to your bank transfert, as a note.
+- SEPA Direct Debit: we support payment via SEPA debit. More information in the [SEPA Direct Debit section](#sepa-direct-debit)
 
 ## Invoices
 
@@ -36,9 +36,9 @@ Also an organisation member with the accountant role can receive invoices as des
 
 ## Change Billing Information
 
-* for personal account: available in *Profile > Informations*
+- for personal account: available in *Profile > Informations*
 
-* for organisation: available in *Information > Billing details*
+- for organisation: available in *Information > Billing details*
 
 ![Clever Cloud Console: "Information menu from the organisation"](/images/billing-infos.png "organisation information")
 
@@ -58,9 +58,9 @@ Mandate:
 >
 > Debit instructions are issued in the following cases:
 >
-> * when you confirm an invoice payment;
-> * starting 5 days after issuing the invoice, would you set your IBAN as default payment method;
-> * would the first debit fail, new attempts will be made every day up to 15 days after invoice issuance and every 5 days after that.
+> - when you confirm an invoice payment;
+> - starting 5 days after issuing the invoice, would you set your IBAN as default payment method;
+> - would the first debit fail, new attempts will be made every day up to 15 days after invoice issuance and every 5 days after that.
 > Your rights are explained in a statement that you can obtain from your bank.
 
 ### About invoices issuance and notifications

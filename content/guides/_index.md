@@ -44,6 +44,7 @@ llmsTxtOptional: true
   {{< card link="/developers/doc/kubernetes/operator" title="Kubernetes Operator" subtitle="Manage Clever Cloud add-ons from Kubernetes" icon="kubernetes" >}}
   {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application" icon="laravel" >}}
   {{< card link="/developers/guides/lume-deno" title="Lume (Deno)" subtitle="Deploy a static Lume website with Deno" icon="deno" >}}
+  {{< card link="/developers/guides/maudit" title="Maudit" subtitle="Deploy a static Maudit website with Rust" icon="maudit" >}}
   {{< card link="/developers/guides/mdbook" title="mdBook" subtitle="Deploy a static mdBook website" icon="mdbook" >}}
   {{< card link="/developers/guides/mkdocs" title="MkDocs" subtitle="Deploy a static MkDocs website" icon="docs" >}}
   {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform" icon="moodle" >}}

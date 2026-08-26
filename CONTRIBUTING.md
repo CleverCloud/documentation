@@ -70,6 +70,12 @@ Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/sh
 - Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap.
 - Sort lists and tables alphabetically unless a functional or chronological order is more useful
 
+#### Dependencies and versions
+
+- All non-Docker runtimes provide a shared set of tools and version-management variables independently of the application's primary runtime. For example, `CC_NODE_VERSION` can select Node.js in a PHP application, while `CC_PHP_VERSION` can select PHP in a Node.js application. Other shared tools include Composer, Gradle, Hugo and Python.
+- Prefer these dedicated environment variables and the package managers already provided by the runtime when they manage a dependency or its version. If a Mise task also needs the runtime-managed tool, derive its Mise version from the dedicated environment variable instead of hard-coding the version twice.
+- For other deployment dependencies, prefer [Mise](https://mise.jdx.dev/) and a suitable backend such as [HTTP](https://mise.jdx.dev/dev-tools/backends/http.html) or [GitHub](https://mise.jdx.dev/dev-tools/backends/github.html) over custom download scripts, and pin versions when appropriate
+
 ### 💅 Style guide
 
 - Don't override global styles for font type, size, or color

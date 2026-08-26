@@ -21,25 +21,25 @@ Apache Pulsar is out of Beta on Clever Cloud. It doesn't change anything for exi
 
 Monthly prices will be as follows:
 
-| Traffic IN/OUT | Price per GB |
-|--------|--------------|
-| < 512 MB | Free |
-| 512 MB - 100 GB | €0.800 |
-| 100 GB - 500 GB | €0.500 |
-| 500 GB - 5 TB | €0.400 |
-| > 5 TB | €0.300 |
+| Traffic IN/OUT  | Price per GB |
+| --------------- | ------------ |
+| < 512 MB        | Free         |
+| 512 MB - 100 GB | €0.800       |
+| 100 GB - 500 GB | €0.500       |
+| 500 GB - 5 TB   | €0.400       |
+| > 5 TB          | €0.300       |
 
 | Hot Storage (SSD) | Price per GB |
-|--------|--------------|
-| < 256 MB | Free |
-| 256 MB - 50 GB | €0.200 |
-| 50 GB - 250 GB | €0.150 |
-| 250 GB - 1 TB | €0.120 |
-| > 1 TB | €0.100 |
+| ----------------- | ------------ |
+| < 256 MB          | Free         |
+| 256 MB - 50 GB    | €0.200       |
+| 50 GB - 250 GB    | €0.150       |
+| 250 GB - 1 TB     | €0.120       |
+| > 1 TB            | €0.100       |
 
 | Cold Storage (HDD) | Price per GB |
-|------|--------------|
-| All volumes | €0.015 |
+| ------------------ | ------------ |
+| All volumes        | €0.015       |
 
 In the coming weeks, we will update the Pulsar dashboard and product page to reflect these changes.
 

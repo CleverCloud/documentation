@@ -30,5 +30,4 @@ Some of you also asked for a change of the default behavior of this Logs interfa
 
 Depending on your feedback, we'll improve this further in the coming weeks. Here again, this is a first step as the indexed logs will open up a wide range of possibilities in this area.
 
-* Share your comments and ideas on our [GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
-
+- Share your comments and ideas on our [GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)

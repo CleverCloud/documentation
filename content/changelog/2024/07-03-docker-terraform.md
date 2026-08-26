@@ -21,4 +21,4 @@ To manage your resources as code on Clever Cloud, from applications to add-ons (
 
 You can define instances count or flavors, region, dependencies, ports, Dockerfile and application paths, registry credentials and more. Read [the full parameters list](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/docker).
 
-* Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

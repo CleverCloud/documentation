@@ -95,20 +95,20 @@ Store each entry under its publication year and name it with the `MM-DD-title.md
 
 Hugo front matter stores page metadata. This project uses the following fields:
 
-| Field | Status | Purpose |
-| --- | --- | --- |
-| `aliases` | Optional | Redirects paths that existed previously. Omit the `/developers` base path, for example `/doc/docker`, and don't add an alias to a new page |
-| `authors` | Changelog | Lists contributors with `name`, `link` and `image` fields |
-| `date` | Changelog | Sets the publication date or date-time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format |
-| `description` | Recommended | Provides the page's description for search results and search engines |
-| `draft` | Optional | Excludes unfinished content from regular builds when set to `true`. Remove the field before publication |
-| `excludeSearch` | Optional | Excludes the page from the search index when set to `true`. Set it for changelog entries |
-| `keywords` | Optional | Lists search keywords |
-| `linkTitle` | Optional | Sets a short sidebar label, usually the product name, and defaults to `title` |
-| `tags` | Changelog | Lists lowercase product tags with consistent spelling |
-| `title` | Required | Sets the page heading and search-oriented title. Avoid repeating the Clever Cloud name because the generated HTML title already includes it |
-| `type` | Optional | Selects a content layout and uses `docs` outside the changelog |
-| `weight` | Optional | Orders pages in the sidebar and defaults to `0` |
+| Field           | Status      | Purpose                                                                                                                                     |
+| --------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aliases`       | Optional    | Redirects paths that existed previously. Omit the `/developers` base path, for example `/doc/docker`, and don't add an alias to a new page  |
+| `authors`       | Changelog   | Lists contributors with `name`, `link` and `image` fields                                                                                   |
+| `date`          | Changelog   | Sets the publication date or date-time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format                                         |
+| `description`   | Recommended | Provides the page's description for search results and search engines                                                                       |
+| `draft`         | Optional    | Excludes unfinished content from regular builds when set to `true`. Remove the field before publication                                     |
+| `excludeSearch` | Optional    | Excludes the page from the search index when set to `true`. Set it for changelog entries                                                    |
+| `keywords`      | Optional    | Lists search keywords                                                                                                                       |
+| `linkTitle`     | Optional    | Sets a short sidebar label, usually the product name, and defaults to `title`                                                               |
+| `tags`          | Changelog   | Lists lowercase product tags with consistent spelling                                                                                       |
+| `title`         | Required    | Sets the page heading and search-oriented title. Avoid repeating the Clever Cloud name because the generated HTML title already includes it |
+| `type`          | Optional    | Selects a content layout and uses `docs` outside the changelog                                                                              |
+| `weight`        | Optional    | Orders pages in the sidebar and defaults to `0`                                                                                             |
 
 A changelog entry can use the following front matter:
 
@@ -166,7 +166,7 @@ Run a production build before submitting a change:
 hugo
 ```
 
-The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) configuration in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and exclusions in [`.markdownlintignore`](./.markdownlintignore). Run the version installed by Mise:
+The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) rules in [`.markdownlint.jsonc`](./.markdownlint.jsonc), CLI configuration in [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc) and editor exclusions in [`.markdownlintignore`](./.markdownlintignore). Run the version installed by Mise:
 
 ```bash
 markdownlint-cli2 "**/*.md"

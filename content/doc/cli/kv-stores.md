@@ -17,7 +17,7 @@ aliases:
 
 If you're using [Materia KV](/doc/addons/materia-kv/), our next generation of key-value databases, serverless, distributed, synchronously-replicated, compatible with the Redis® protocol (and later DynamoDB, GraphQL), you can easily create an add-on with Clever Tools:
 
-```
+```console
 clever addon create kv ADDON_NAME
 ```
 

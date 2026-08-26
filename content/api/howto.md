@@ -24,9 +24,9 @@ The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](
 
 Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
 
-* **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: https://api-bridge.clever-cloud.com
+- **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: <https://api-bridge.clever-cloud.com>
 
-* **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
+- **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
 
 Choose the authentication method that best aligns with your specific integration requirements and security considerations.
 
@@ -72,6 +72,7 @@ clever curl https://api.clever-cloud.com/v4/billing/organisations/<ORGANISATION_
 ### Official clients/SDKs
 
 You can request the Clever Cloud API from multiple languages through our official clients/SDKs:
+
 - [Go](https://github.com/CleverCloud/clevercloud-client-go)
 - [JavaScript](https://github.com/CleverCloud/clever-client.js)
 - [Rust](https://github.com/CleverCloud/clevercloud-sdk-rust)
@@ -87,8 +88,8 @@ If you have an application that needs to access Clever Cloud resources on behalf
 
 First, you'll need to create an OAuth consumer for your application. This can be done in the [Clever Cloud Console](https://console.clever-cloud.com). Go to your organisation, click on **Create…**, then on **an OAuth consumer** and fill the form. You will get:
 
-* A **consumer key** (public identifier for your application)
-* A **consumer secret** (private key, never expose it client-side)
+- A **consumer key** (public identifier for your application)
+- A **consumer secret** (private key, never expose it client-side)
 
 You can also manage OAuth consumers from the CLI with the `clever oauth-consumers` command set, which covers the full lifecycle (list, create, get, update, open and delete). Use `--with-secret` on the `get` subcommand to retrieve the consumer secret:
 
@@ -115,20 +116,20 @@ Your application must implement the [OAuth 1.0a flow](https://oauth.net/core/1.0
 
 Request a temporary token from the API. OAuth parameters can be sent as query string parameters or as a form-encoded body:
 
-* `POST https://api.clever-cloud.com/v2/oauth/request_token_query` — parameters as query string
-* `POST https://api.clever-cloud.com/v2/oauth/request_token` — parameters as `application/x-www-form-urlencoded` body
+- `POST https://api.clever-cloud.com/v2/oauth/request_token_query` — parameters as query string
+- `POST https://api.clever-cloud.com/v2/oauth/request_token` — parameters as `application/x-www-form-urlencoded` body
 
 **Required parameters:**
 
-| Parameter | Description |
-|---|---|
-| `oauth_consumer_key` | Your consumer key |
-| `oauth_signature_method` | `HMAC-SHA512`, `HMAC-SHA1`, or `PLAINTEXT` |
-| `oauth_signature` | Request signature (see [Signing requests](#signing-requests)) |
-| `oauth_timestamp` | Current Unix timestamp (seconds) |
-| `oauth_nonce` | Unique random string for this request |
-| `oauth_version` | Must be `1.0` |
-| `oauth_callback` | URL to redirect the user to after authorization |
+| Parameter                | Description                                                   |
+| ------------------------ | ------------------------------------------------------------- |
+| `oauth_consumer_key`     | Your consumer key                                             |
+| `oauth_signature_method` | `HMAC-SHA512`, `HMAC-SHA1`, or `PLAINTEXT`                    |
+| `oauth_signature`        | Request signature (see [Signing requests](#signing-requests)) |
+| `oauth_timestamp`        | Current Unix timestamp (seconds)                              |
+| `oauth_nonce`            | Unique random string for this request                         |
+| `oauth_version`          | Must be `1.0`                                                 |
+| `oauth_callback`         | URL to redirect the user to after authorization               |
 
 **Example request** (see [Signing requests](#signing-requests) for how to compute the signature):
 
@@ -154,6 +155,7 @@ const res = await fetch(`${url}?${qs}`, { method: "POST" });
 
 > [!TIP]
 > For quick testing, you can use `PLAINTEXT` with curl (percent-encode your consumer secret if it contains non-alphanumeric characters):
+>
 > ```bash
 > curl -X POST "https://api.clever-cloud.com/v2/oauth/request_token_query?\
 > oauth_consumer_key=<CONSUMER_KEY>&oauth_signature_method=PLAINTEXT&\
@@ -180,48 +182,48 @@ https://api.clever-cloud.com/v2/oauth/authorize?oauth_token=<REQUEST_TOKEN>
 
 The user logs into Clever Cloud (if not already) and is presented with a permissions form. Available permissions are:
 
-| Permission | Description |
-|---|---|
-| `access_organisations` | Access organisations |
-| `access_organisations_bills` | Access organisations' bills |
+| Permission                                    | Description                                  |
+| --------------------------------------------- | -------------------------------------------- |
+| `access_organisations`                        | Access organisations                         |
+| `access_organisations_bills`                  | Access organisations' bills                  |
 | `access_organisations_consumption_statistics` | Access organisations' consumption statistics |
-| `access_organisations_credit_count` | Access organisations' credit count |
-| `access_personal_information` | Access personal information |
-| `manage_organisations` | Manage organisations |
-| `manage_organisations_applications` | Manage organisations' applications |
-| `manage_organisations_members` | Manage organisations' members |
-| `manage_organisations_services` | Manage organisations' add-ons |
-| `manage_personal_information` | Manage personal information |
-| `manage_ssh_keys` | Manage SSH keys |
+| `access_organisations_credit_count`           | Access organisations' credit count           |
+| `access_personal_information`                 | Access personal information                  |
+| `manage_organisations`                        | Manage organisations                         |
+| `manage_organisations_applications`           | Manage organisations' applications           |
+| `manage_organisations_members`                | Manage organisations' members                |
+| `manage_organisations_services`               | Manage organisations' add-ons                |
+| `manage_personal_information`                 | Manage personal information                  |
+| `manage_ssh_keys`                             | Manage SSH keys                              |
 
 You can retrieve this list programmatically with `GET https://api.clever-cloud.com/v2/oauth/rights`.
 
 Once the user approves, the browser is redirected to your `oauth_callback` URL with the following **query string** parameters:
 
-| Parameter | Description |
-|---|---|
-| `oauth_token` | The request token (must match the one from step 1) |
-| `oauth_verifier` | Verification code to exchange for an access token |
+| Parameter        | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `oauth_token`    | The request token (must match the one from step 1) |
+| `oauth_verifier` | Verification code to exchange for an access token  |
 
 ##### Exchange for an access token
 
 Exchange the request token and verifier for an access token. As with step 1, parameters can be sent as query string or form body:
 
-* `POST https://api.clever-cloud.com/v2/oauth/access_token_query` — parameters as query string
-* `POST https://api.clever-cloud.com/v2/oauth/access_token` — parameters as `application/x-www-form-urlencoded` body
+- `POST https://api.clever-cloud.com/v2/oauth/access_token_query` — parameters as query string
+- `POST https://api.clever-cloud.com/v2/oauth/access_token` — parameters as `application/x-www-form-urlencoded` body
 
 **Required parameters:**
 
-| Parameter | Description |
-|---|---|
-| `oauth_consumer_key` | Your consumer key |
-| `oauth_signature_method` | Same method as step 1 |
-| `oauth_signature` | Request signature (signed with the request token secret from step 1) |
-| `oauth_timestamp` | Current Unix timestamp (seconds) |
-| `oauth_nonce` | Unique random string |
-| `oauth_version` | `1.0` |
-| `oauth_token` | The request token from step 1 |
-| `oauth_verifier` | The verifier from the callback redirect |
+| Parameter                | Description                                                          |
+| ------------------------ | -------------------------------------------------------------------- |
+| `oauth_consumer_key`     | Your consumer key                                                    |
+| `oauth_signature_method` | Same method as step 1                                                |
+| `oauth_signature`        | Request signature (signed with the request token secret from step 1) |
+| `oauth_timestamp`        | Current Unix timestamp (seconds)                                     |
+| `oauth_nonce`            | Unique random string                                                 |
+| `oauth_version`          | `1.0`                                                                |
+| `oauth_token`            | The request token from step 1                                        |
+| `oauth_verifier`         | The verifier from the callback redirect                              |
 
 **Response** (`application/x-www-form-urlencoded`)
 
@@ -316,9 +318,9 @@ function buildBaseString(method, url, params) {
 
 The three components are:
 
-* The HTTP method in uppercase (`GET`, `POST`, etc.)
-* The base URL (without query string), percent-encoded
-* All request parameters (OAuth parameters excluding `oauth_signature`, plus any query string or form body parameters), sorted alphabetically by key — then by value in case of duplicates — formatted as `key=value` pairs joined by `&`, then percent-encoded as a single string
+- The HTTP method in uppercase (`GET`, `POST`, etc.)
+- The base URL (without query string), percent-encoded
+- All request parameters (OAuth parameters excluding `oauth_signature`, plus any query string or form body parameters), sorted alphabetically by key — then by value in case of duplicates — formatted as `key=value` pairs joined by `&`, then percent-encoded as a single string
 
 **3.** Define `sign` — it computes an HMAC with the chosen algorithm and returns the base64-encoded result:
 

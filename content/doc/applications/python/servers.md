@@ -20,13 +20,13 @@ uWSGI, Gunicorn and Nginx settings can be configured by setting environment vari
 
 ### uWSGI
 
-| Name | Description | Default |
-|------|-------------|---------|
-| `HARAKIRI` | Timeout (in seconds) after which an unresponsive process is killed | `180` |
-| `WSGI_BUFFER_SIZE` | Maximal size (in bytes) for the headers of a request | `4096` |
-| `WSGI_POST_BUFFERING` | Buffer size (in bytes) for uploads | `4096` |
-| `WSGI_WORKERS` | Number of workers | depends on the scaler |
-| `WSGI_THREADS` | Number of threads per worker | depends on the scaler |
+| Name                  | Description                                                        | Default               |
+| --------------------- | ------------------------------------------------------------------ | --------------------- |
+| `HARAKIRI`            | Timeout (in seconds) after which an unresponsive process is killed | `180`                 |
+| `WSGI_BUFFER_SIZE`    | Maximal size (in bytes) for the headers of a request               | `4096`                |
+| `WSGI_POST_BUFFERING` | Buffer size (in bytes) for uploads                                 | `4096`                |
+| `WSGI_WORKERS`        | Number of workers                                                  | depends on the scaler |
+| `WSGI_THREADS`        | Number of threads per worker                                       | depends on the scaler |
 
 You can inject additional uWSGI configuration directives with `CC_UWSGI_EXTRA_CONFIG`. To disable the file wrapper, set `CC_UWSGI_DISABLE_FILE_WRAPPER` to `true`.
 
@@ -39,19 +39,19 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
 
 ### Gunicorn
 
-| Name | Description | Default |
-|------|-------------|---------|
-| `CC_GUNICORN_WORKER_CLASS` | Type of worker to use. [Available workers](https://gunicorn.org/reference/settings/#worker_class) | `sync` |
-| `CC_GUNICORN_TIMEOUT` | Gunicorn timeout (in seconds) | `30` |
-| `CC_GUNICORN_LOGLEVEL` | Gunicorn log level | `info` |
+| Name                       | Description                                                                                       | Default |
+| -------------------------- | ------------------------------------------------------------------------------------------------- | ------- |
+| `CC_GUNICORN_WORKER_CLASS` | Type of worker to use. [Available workers](https://gunicorn.org/reference/settings/#worker_class) | `sync`  |
+| `CC_GUNICORN_TIMEOUT`      | Gunicorn timeout (in seconds)                                                                     | `30`    |
+| `CC_GUNICORN_LOGLEVEL`     | Gunicorn log level                                                                                | `info`  |
 
 ### Nginx
 
-| Name | Description | Default |
-|------|-------------|---------|
-| `NGINX_READ_TIMEOUT` | Response timeout in seconds (similar to `HARAKIRI`) | `300` |
-| `ENABLE_GZIP_COMPRESSION` | Enable gzip compression (`on`, `yes`, or `true`) | |
-| `GZIP_TYPES` | The mime types to gzip | `text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml` |
+| Name                      | Description                                         | Default                                                                                                              |
+| ------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `NGINX_READ_TIMEOUT`      | Response timeout in seconds (similar to `HARAKIRI`) | `300`                                                                                                                |
+| `ENABLE_GZIP_COMPRESSION` | Enable gzip compression (`on`, `yes`, or `true`)    |                                                                                                                      |
+| `GZIP_TYPES`              | The mime types to gzip                              | `text/plain text/css text/xml text/javascript application/json application/xml application/javascript image/svg+xml` |
 
 #### Basic authentication
 
@@ -88,10 +88,10 @@ Nginx settings can be configured further in `clevercloud/http.json`. All its fie
 
 To enable Nginx to serve your static resources, you have to set two environment variables.
 
-| Name | Description |
-|------|-------------|
+| Name                | Description                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------- |
 | `STATIC_FILES_PATH` | Directory where your static files are stored (absolute path relative to the application root) |
-| `STATIC_URL_PREFIX` | URL path under which you want to serve static files (e.g. `/public`) |
+| `STATIC_URL_PREFIX` | URL path under which you want to serve static files (e.g. `/public`)                          |
 
 You can also use a [Filesystem Bucket](/doc/addons/fs-bucket) to store your static files.
 

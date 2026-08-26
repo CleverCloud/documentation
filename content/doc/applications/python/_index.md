@@ -40,6 +40,7 @@ To create a new Python application, use the [Clever Cloud Console](https://conso
 ```bash
 clever create --type python
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 

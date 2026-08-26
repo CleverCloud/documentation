@@ -19,10 +19,10 @@ excludeSearch: true
 
 As our network evolves, we've updated [IP list for Paris (PAR) zone](/doc/administrate/domain-names/#your-application-runs-in-the-europeparis-par-zone). If you use A records for DNS configuration, update them. 4 new IP addresses should be added (`91.208.207.220` to `91.208.207.223`). **We strongly recommend using CNAME records instead.**
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
+| Record Type                         | Value                                                                                                                                                                                                                                                                                                 |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.`                                                                                                                                                                                                                                         |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223` |
 
 We are going to remove 4 IPs that **you must stop to use between now and August 23rd**:
 

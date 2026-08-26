@@ -26,6 +26,7 @@ To create a new V (Vlang) application, use the [Clever Cloud Console](https://co
 ```bash
 clever create --type v
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 

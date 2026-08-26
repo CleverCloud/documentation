@@ -25,13 +25,13 @@ Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
 
 Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
 
-* Builds
-* Documentation
-* Reporting
-* Dependencies
-* SCMs
-* Releases
-* Distribution
+- Builds
+- Documentation
+- Reporting
+- Dependencies
+- SCMs
+- Releases
+- Distribution
 
 {{% content "create-application" %}}
 
@@ -97,7 +97,7 @@ The full configuration can look like the following:
 You can use the following properties:
 
 | Usage    | Field             | Description                                                               |
-|----------|-------------------|---------------------------------------------------------------------------|
+| -------- | ----------------- | ------------------------------------------------------------------------- |
 | Optional | **build → type**  | can be `maven`, `gradle` or `ant`                                         |
 | Optional | **build → goal**  | is the target you want to use to build your project                       |
 | Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |

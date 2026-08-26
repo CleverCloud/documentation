@@ -20,5 +20,5 @@ clever addon create postgresql-addon pgLocaleTest --plan xxs_sml --option locale
 
 This will create a PostgreSQL database with the `en_US` locale instead of the default `en_GB` locale.
 
-* [PostgreSQL versioning policy](https://www.postgresql.org/support/versioning/)
-* [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [PostgreSQL versioning policy](https://www.postgresql.org/support/versioning/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)

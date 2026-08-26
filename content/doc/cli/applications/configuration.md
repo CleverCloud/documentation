@@ -25,20 +25,20 @@ A Clever Cloud application can easily be configured once created, through follow
 
 Each application has options you can get/set: `cancel-on-push`, `description`, `force-https`, `name`, `sticky-sessions`, `task`, `zero-downtime`.
 
-```
+```console
 clever config get parameter
 clever config set parameter value
 ```
 
 To update multiple configuration parameters at a time, use:
 
-```
+```console
 clever config update FLAGS
 ```
 
 Available parameters are :
 
-```
+```console
 [--name]                        Set name
 [--description]                 Set description
 [--enable-zero-downtime]        Enable zero-downtime (default: false)
@@ -57,14 +57,14 @@ Available parameters are :
 
 Environment variables of Clever Cloud applications can easily be modified:
 
-```
+```console
 clever env set VARIABLE VALUE
 clever env rm VARIABLE
 ```
 
 You can import local environment variables (comma separated) or from a file through `stdin`. If it's a JSON file, each object should be composed of a `name` and a `value`.
 
-```
+```console
 clever env import-vars VAR_NAME1,VAR_NAME2
 clever env import < .env
 cat .env.json | clever env import --json
@@ -72,14 +72,14 @@ cat .env.json | clever env import --json
 
 To show or export environment variables of an application, use:
 
-```
+```console
 clever env
 clever env > .env
 ```
 
 You can also export environment variables in a sourceable format (`export ENV_NAME="VALUE";`):
 
-```
+```console
 clever env --format shell
 ```
 
@@ -90,13 +90,13 @@ clever env --format shell
 
 By default, a Clever Cloud application gets `app_id.cleverapps.io` as fully qualified domain name ([FQDN](https://fr.wikipedia.org/wiki/Fully_qualified_domain_name)). To see it, use:
 
-```
+```console
 clever domain
 ```
 
 To get an overview of domains linked to any of your applications and organisations, use:
 
-```
+```console
 clever domain overview
 clever domain overview --filter domain.tld
 clever domain overview --filter .tld --format json
@@ -107,7 +107,7 @@ clever domain overview --filter .tld --format json
 
 To add/remove a domain to an application, use:
 
-```
+```console
 add                        Add a domain name to a Clever Cloud application
 rm                         Remove a domain name from a Clever Cloud application
 ```
@@ -117,14 +117,14 @@ rm                         Remove a domain name from a Clever Cloud application
 
 To (un)set [the favourite domain](/doc/administrate/domain-names/#primary-favourite-domain-name), use:
 
-```
+```console
 clever domain favourite set FQDN
 clever domain favourite unset
 ```
 
 To check if the domains of an application are properly configured, use:
 
-```
+```console
 clever domain diag
 clever domain diag --format json
 clever domain diag --app APP_ID_OR_NAME
@@ -132,7 +132,7 @@ clever domain diag --app APP_ID_OR_NAME
 
 You can only diagnose some domains of the application using a text filter:
 
-```
+```console
 clever domain diag --filter .tld
 clever domain diag --filter mydomain.tld
 ```
@@ -144,7 +144,7 @@ clever domain diag --filter mydomain.tld
 
 You can easily change the number of instances and `flavor` for an application. It can have a different `flavor` used for build phase, to get it done faster. We also provide horizontal and vertical scaling: you can set a minimal/maximal `flavor` and number of instance, then we autoscale depending on incoming load. To change this, use `clever scale` with the following options:
 
-```
+```console
 [--flavor] FLAVOR                  The scale of your application
 [--min-flavor] MINFLAVOR           The minimum scale for your application
 [--max-flavor] MAXFLAVOR           The maximum scale for your application
@@ -163,21 +163,21 @@ You can easily change the number of instances and `flavor` for an application. I
 
 A Clever Cloud application activate TCP redirections in `default` or `cleverapps` namespace:
 
-```
+```console
 clever tcp-redirs add --namespace NAMESPACE
 clever tcp-redirs remove --namespace NAMESPACE PORT
 ```
 
 To list enabled TCP redirections, use:
 
-```
+```console
 clever tcp-redirs
 clever tcp-redirs --format json
 ```
 
 To list available namespaces, use:
 
-```
+```console
 clever tcp-redirs list-namespaces
 ```
 

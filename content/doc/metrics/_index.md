@@ -55,7 +55,7 @@ For example, check [this tutorial on how to create Slack alerts with Grafana](ht
 
 ### Templated dashboards in Grafana
 
-Pre-configured dashboards are available in your `Clever Cloud` directory to help you visualize your application metrics. 
+Pre-configured dashboards are available in your `Clever Cloud` directory to help you visualize your application metrics.
 
 To customize a template and preserve your changes, create and save a **copy** of the dashboard in a **different** directory. Original templates may be overwritten when the Clever Cloud team releases updates.
 
@@ -100,69 +100,69 @@ Telegraf provide lots of metrics described in their [documentation](https://gith
 
 Below, the list of all Warp 10 classes representing Telegraf metrics :
 
-| Metric                              | Metric                              |
-| ----------------------------------- | ----------------------------------- |
-| conntrack.ip_conntrack_count        | mem.swap_free                       |
-| conntrack.ip_conntrack_max          | mem.swap_total                      |
-| cpu.usage_guest                     | mem.total                           |
-| cpu.usage_guest_nice                | mem.used                            |
-| cpu.usage_idle                      | mem.used_percent                    |
-| cpu.usage_iowait                    | mem.vmalloc_chunk                   |
-| cpu.usage_irq                       | mem.vmalloc_total                   |
-| cpu.usage_nice                      | mem.vmalloc_used                    |
-| cpu.usage_softirq                   | mem.wired                           |
-| cpu.usage_steal                     | mem.write_back                      |
-| cpu.usage_system                    | mem.write_back_tmp                  |
-| cpu.usage_user                      | net.bytes_recv                      |
-| disk.free                           | net.bytes_sent                      |
-| disk.inodes_free                    | net.drop_in                         |
-| disk.inodes_total                   | net.drop_out                        |
-| disk.inodes_used                    | net.err_in                          |
-| disk.total                          | net.err_out                         |
-| disk.used                           | net.packets_recv                    |
-| disk.used_percent                   | net.packets_sent                    |
-| http_response.http_response_code     | net_response.response_time          |
-| http_response.response_time          | net_response.result_code            |
-| http_response.result_code            | net_response.result_type            |
-| http_response.result_type            | netstat.tcp_close                   |
-| kernel.boot_time                     | netstat.tcp_close_wait              |
-| kernel.context_switches              | netstat.tcp_closing                 |
-| kernel.entropy_avail                 | netstat.tcp_established             |
-| kernel.interrupts                    | netstat.tcp_fin_wait1               |
-| kernel.processes_forked              | netstat.tcp_fin_wait2               |
-| mem.active                          | netstat.tcp_last_ack                |
-| mem.available                       | netstat.tcp_listen                  |
-| mem.available_percent               | netstat.tcp_none                    |
-| mem.buffered                        | netstat.tcp_syn_recv                |
-| mem.cached                          | netstat.tcp_syn_sent                |
-| mem.commit_limit                    | netstat.tcp_time_wait               |
-| mem.committed_as                    | netstat.udp_socket                  |
-| mem.dirty                           | processes.blocked                   |
-| mem.free                            | processes.dead                      |
-| mem.high_free                       | processes.idle                      |
-| mem.high_total                      | processes.paging                    |
-| mem.huge_page_size                  | processes.running                   |
-| mem.huge_pages_free                 | processes.sleeping                  |
-| mem.huge_pages_total                | processes.stopped                   |
-| mem.inactive                        | processes.total                     |
-| mem.low_free                        | processes.total_threads             |
-| mem.low_total                       | processes.unknown                   |
-| mem.mapped                          | processes.zombies                   |
-| mem.page_tables                     | procstat_lookup.pid_count           |
-| mem.shared                          | system.load1                        |
-| mem.slab                            | system.load1_per_cpu                |
-| mem.swap_cached                     | jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value |
-| jvm.statsd-jvm-profiler_pending-finalization-count.value | jvm.statsd-jvm-profiler_nonheap_total_committed.value |
-| jvm.statsd-jvm-profiler_loaded-class-count.value | jvm.metrics_jvm_heapMemoryUsage_used.value |
-| jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value | jvm.metrics_jvm_nonHeapMemoryUsage_used.value |
-| jvm.statsd-jvm-profiler_nonheap_metaspace_init.value | jvm.statsd-jvm-profiler_nonheap_total_used.value |
-| jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value | jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value |
-| jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value | jvm.statsd-jvm-profiler_nonheap_total_max.value |
-| jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value |
-| jvm.statsd-jvm-profiler_heap_total_init.value | jvm.statsd-jvm-profiler_nonheap_code-cache_used.value |
-| jvm.statsd-jvm-profiler_nonheap_metaspace_used.value | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value |
-| jvm.statsd-jvm-profiler_nonheap_metaspace_max.value | jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value |
-| jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value |                                   |
+| Metric                                                    | Metric                                                            |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| conntrack.ip_conntrack_count                              | mem.swap_free                                                     |
+| conntrack.ip_conntrack_max                                | mem.swap_total                                                    |
+| cpu.usage_guest                                           | mem.total                                                         |
+| cpu.usage_guest_nice                                      | mem.used                                                          |
+| cpu.usage_idle                                            | mem.used_percent                                                  |
+| cpu.usage_iowait                                          | mem.vmalloc_chunk                                                 |
+| cpu.usage_irq                                             | mem.vmalloc_total                                                 |
+| cpu.usage_nice                                            | mem.vmalloc_used                                                  |
+| cpu.usage_softirq                                         | mem.wired                                                         |
+| cpu.usage_steal                                           | mem.write_back                                                    |
+| cpu.usage_system                                          | mem.write_back_tmp                                                |
+| cpu.usage_user                                            | net.bytes_recv                                                    |
+| disk.free                                                 | net.bytes_sent                                                    |
+| disk.inodes_free                                          | net.drop_in                                                       |
+| disk.inodes_total                                         | net.drop_out                                                      |
+| disk.inodes_used                                          | net.err_in                                                        |
+| disk.total                                                | net.err_out                                                       |
+| disk.used                                                 | net.packets_recv                                                  |
+| disk.used_percent                                         | net.packets_sent                                                  |
+| http_response.http_response_code                          | net_response.response_time                                        |
+| http_response.response_time                               | net_response.result_code                                          |
+| http_response.result_code                                 | net_response.result_type                                          |
+| http_response.result_type                                 | netstat.tcp_close                                                 |
+| kernel.boot_time                                          | netstat.tcp_close_wait                                            |
+| kernel.context_switches                                   | netstat.tcp_closing                                               |
+| kernel.entropy_avail                                      | netstat.tcp_established                                           |
+| kernel.interrupts                                         | netstat.tcp_fin_wait1                                             |
+| kernel.processes_forked                                   | netstat.tcp_fin_wait2                                             |
+| mem.active                                                | netstat.tcp_last_ack                                              |
+| mem.available                                             | netstat.tcp_listen                                                |
+| mem.available_percent                                     | netstat.tcp_none                                                  |
+| mem.buffered                                              | netstat.tcp_syn_recv                                              |
+| mem.cached                                                | netstat.tcp_syn_sent                                              |
+| mem.commit_limit                                          | netstat.tcp_time_wait                                             |
+| mem.committed_as                                          | netstat.udp_socket                                                |
+| mem.dirty                                                 | processes.blocked                                                 |
+| mem.free                                                  | processes.dead                                                    |
+| mem.high_free                                             | processes.idle                                                    |
+| mem.high_total                                            | processes.paging                                                  |
+| mem.huge_page_size                                        | processes.running                                                 |
+| mem.huge_pages_free                                       | processes.sleeping                                                |
+| mem.huge_pages_total                                      | processes.stopped                                                 |
+| mem.inactive                                              | processes.total                                                   |
+| mem.low_free                                              | processes.total_threads                                           |
+| mem.low_total                                             | processes.unknown                                                 |
+| mem.mapped                                                | processes.zombies                                                 |
+| mem.page_tables                                           | procstat_lookup.pid_count                                         |
+| mem.shared                                                | system.load1                                                      |
+| mem.slab                                                  | system.load1_per_cpu                                              |
+| mem.swap_cached                                           | jvm.statsd-jvm-profiler_heap_ps-old-gen_max.value                 |
+| jvm.statsd-jvm-profiler_pending-finalization-count.value  | jvm.statsd-jvm-profiler_nonheap_total_committed.value             |
+| jvm.statsd-jvm-profiler_loaded-class-count.value          | jvm.metrics_jvm_heapMemoryUsage_used.value                        |
+| jvm.statsd-jvm-profiler_gc_PS_Scavenge_count.value        | jvm.metrics_jvm_nonHeapMemoryUsage_used.value                     |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_init.value      | jvm.statsd-jvm-profiler_nonheap_total_used.value                  |
+| jvm.statsd-jvm-profiler_heap_ps-survivor-space_used.value | jvm.statsd-jvm-profiler_heap_ps-eden-space_init.value             |
+| jvm.statsd-jvm-profiler_gc_PS_MarkSweep_time.value        | jvm.statsd-jvm-profiler_nonheap_total_max.value                   |
+| jvm.statsd-jvm-profiler_heap_ps-eden-space_max.value      | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_max.value  |
+| jvm.statsd-jvm-profiler_heap_total_init.value             | jvm.statsd-jvm-profiler_nonheap_code-cache_used.value             |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_used.value      | jvm.statsd-jvm-profiler_nonheap_compressed-class-space_init.value |
+| jvm.statsd-jvm-profiler_nonheap_metaspace_max.value       | jvm.statsd-jvm-profiler_gc_PS_MarkSweep_count.value               |
+| jvm.statsd-jvm-profiler_heap_ps-eden-space_used.value     |                                                                   |
 
 ### Examples and usages
 

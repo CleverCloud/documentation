@@ -24,7 +24,7 @@ There are two text filter modes: exact match (case-sensitive) and regular expres
 
 This interface is constantly improving, used for logs and access logs, send us your feedback through our GitHub Community:
 
-* [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
+- [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
 Logs are retained for 7 days, sometimes more for specific customers/needs.
@@ -261,9 +261,9 @@ On your terminal, use the following command:
 
   Replace the following values:
 
-  - `<host>`
-  - `<application-alias>`
-  - `<token>`
+- `<host>`
+- `<application-alias>`
+- `<token>`
 
   {{< /tab >}}
 
@@ -275,9 +275,9 @@ On your terminal, use the following command:
 
   Replace the following values:
 
-  - `<host>`
-  - `<addon_id>`
-  - `<token>`
+- `<host>`
+- `<addon_id>`
+- `<token>`
 
   {{< /tab >}}
 

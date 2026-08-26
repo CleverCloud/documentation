@@ -32,7 +32,7 @@ Clever Cloud supports Play! 2 applications natively. The following guide explain
 
 ### Mandatory configuration
 
-* Starting from **Play 2.4**, your application needs **Java 8** to run. Please read [select java version](/doc/applications/java/java-war/#available-java-versions "Select Java version") for more information.
+- Starting from **Play 2.4**, your application needs **Java 8** to run. Please read [select java version](/doc/applications/java/java-war/#available-java-versions "Select Java version") for more information.
 
 Play! 2 applications use sbt. Please have a look at [deploy Scala apps](/doc/applications/scala) for a complete documentation on sbt deployment options.
 
@@ -40,9 +40,9 @@ Play! 2 applications use sbt. Please have a look at [deploy Scala apps](/doc/app
 
 To deploy a Play! application you have to set a secret in your `conf/application.conf`  the environment variable name depends on your Play2! version:
 
-* 2.6.x: `play.http.secret.key=${?APPLICATION_SECRET}`, to generate secret use `sbt playGenerateSecret`;
-* 2.4.x -> 2.5.x: `play.crypto.secret=${?APPLICATION_SECRET}` -> `sbt playGenerateSecret`;
-* 2.3.x: `application.secret=${?APPLICATION_SECRET}` -> `sbt play-generate-secret`.
+- 2.6.x: `play.http.secret.key=${?APPLICATION_SECRET}`, to generate secret use `sbt playGenerateSecret`;
+- 2.4.x -> 2.5.x: `play.crypto.secret=${?APPLICATION_SECRET}` -> `sbt playGenerateSecret`;
+- 2.3.x: `application.secret=${?APPLICATION_SECRET}` -> `sbt play-generate-secret`.
 
 Then, in your Clever Cloud application define `APPLICATION_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) with the generated value.
 
@@ -87,7 +87,7 @@ To expose an environment variable through Play configuration, add `my.option=${?
 If your project fails with the error `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found` this is because some versions of Play2 try to retrieve a nonexistent version of "sbt-plugin" which is required by the framework.
 You have two options to fix this problem:
 
-* You can set the "play.version" environment variable in the `/clevercloud/sbt.json` file. For example, for Play 2.0.4:
+- You can set the "play.version" environment variable in the `/clevercloud/sbt.json` file. For example, for Play 2.0.4:
 
 ``` javascript
 {
@@ -97,7 +97,7 @@ You have two options to fix this problem:
 }
 ```
 
-* You can modify `plugins.sbt` in the project folder of your app like the following:
+- You can modify `plugins.sbt` in the project folder of your app like the following:
 
 ``` scala
 // Comment to get more information during initialization

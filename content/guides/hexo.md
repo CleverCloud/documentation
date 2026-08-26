@@ -18,6 +18,7 @@ keywords:
 ## Requirements
 
 If you need an example source code, initialize an Hexo project with [Cactus theme](https://github.com/probberechts/hexo-theme-cactus) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
+
 ```bash
 npx hexo init myStaticApp --no-install
 ```
@@ -51,5 +52,5 @@ clever env set CC_BUILD_COMMAND "npm run build"
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="https://hexo.io/docs/" title="Learn Hexo" subtitle="How to write and organize your content" icon="hexo" >}}
+  {{< card link="<https://hexo.io/docs/>" title="Learn Hexo" subtitle="How to write and organize your content" icon="hexo" >}}
 {{< /cards >}}

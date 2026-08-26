@@ -36,8 +36,7 @@ Docker containers can encapsulate any payload, and will run consistently on and 
 
 Clever Cloud allows you to deploy any application running inside a Docker container. This page explains how to set up your application to run it on our service.
 
-> [!NOTE]
-> Clever Cloud supports many languages, but some users have specific application needs. With Docker, they can create custom stacks without relying on Clever Cloud's specific support.
+Clever Cloud supports many languages, but some users have specific application needs. With Docker, they can create custom stacks without relying on Clever Cloud's specific support.
 
 > [!WARNING]
 > [FS Buckets](/doc/best-practices/cloud-storage/#what-is-fs-bucket) access, Dockerfile validation, and Docker Compose functionalities are not supported.

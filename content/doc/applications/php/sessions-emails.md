@@ -53,12 +53,12 @@ Mailpace add-on can send emails through PHP `mail()` function. You have to turn 
 
 Services like [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) provide SMTP servers. If your application has no other way but to use the `mail` function of PHP to send emails, you have to configure a SMTP server. This can be done through environment variables:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| `CC_MTA_SERVER_HOST` | Host of the SMTP server | |
-| `CC_MTA_SERVER_PORT` | Port of the SMTP server | `465` |
-| `CC_MTA_AUTH_USER` | User to authenticate to the SMTP server | |
-| `CC_MTA_AUTH_PASSWORD` | Password to authenticate to the SMTP server | |
-| `CC_MTA_SERVER_USE_TLS` | Enable or disable TLS | `true` |
-| `CC_MTA_SERVER_STARTTLS` | Enable or disable STARTTLS | `false` |
-| `CC_MTA_SERVER_AUTH_METHOD` | Enable or disable authentication | `on` |
+| Name                        | Description                                 | Default |
+| --------------------------- | ------------------------------------------- | ------- |
+| `CC_MTA_SERVER_HOST`        | Host of the SMTP server                     |         |
+| `CC_MTA_SERVER_PORT`        | Port of the SMTP server                     | `465`   |
+| `CC_MTA_AUTH_USER`          | User to authenticate to the SMTP server     |         |
+| `CC_MTA_AUTH_PASSWORD`      | Password to authenticate to the SMTP server |         |
+| `CC_MTA_SERVER_USE_TLS`     | Enable or disable TLS                       | `true`  |
+| `CC_MTA_SERVER_STARTTLS`    | Enable or disable STARTTLS                  | `false` |
+| `CC_MTA_SERVER_AUTH_METHOD` | Enable or disable authentication            | `on`    |

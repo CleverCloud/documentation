@@ -52,7 +52,7 @@ To make your bucket publicly accessible, you have to apply a policy to the bucke
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
 
-```json{filename="policy.json"}
+```json {filename="policy.json"}
 {
   "Id": "Policy1587216857769",
   "Version": "2012-10-17",

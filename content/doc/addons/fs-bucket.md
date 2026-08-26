@@ -98,12 +98,12 @@ You can find a pre-filled json object to copy in the dashboard of your FSBucket 
 
 It's a json array containing objects with at least two fields:
 
-Usage    | Field        | Description
----------|--------------|--------------------------------------------------------------
-Required | bucket       | The bucket id you can find in the console. It begins with `bucket_`. This is for "old-style" buckets (created before the 7 December 2015)
-Required | bucket_host  | The bucket host you can find in the console. It begins with `bucket-` and ends with `services.clever-cloud.com`. This is for "new-style" buckets.
-Required | folder       | The folder you want the bucket to be mounted in. Should start with `/`. Using the example *myFolder*, you can access your bucket via the *myFolder* folder at the root of your application (which absolute path is available in the `APP_HOME` environment variable)
-Optional | apps         | Whitelist of the applications allowed to mount this bucket. It's helpful if you need to deploy a *preprod* app and a *prod* app using the exact same codebase but different buckets
+| Usage    | Field       | Description                                                                                                                                                                                                                                                          |
+| -------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required | bucket      | The bucket id you can find in the console. It begins with `bucket_`. This is for "old-style" buckets (created before the 7 December 2015)                                                                                                                            |
+| Required | bucket_host | The bucket host you can find in the console. It begins with `bucket-` and ends with `services.clever-cloud.com`. This is for "new-style" buckets.                                                                                                                    |
+| Required | folder      | The folder you want the bucket to be mounted in. Should start with `/`. Using the example *myFolder*, you can access your bucket via the *myFolder* folder at the root of your application (which absolute path is available in the `APP_HOME` environment variable) |
+| Optional | apps        | Whitelist of the applications allowed to mount this bucket. It's helpful if you need to deploy a *preprod* app and a *prod* app using the exact same codebase but different buckets                                                                                  |
 
 The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
 You can mount the same bucket in different folders, but they will share the same content, so it's not the solution. You should prefer to mount the bucket in only one folder and then manage multiple subfolders in it.
@@ -131,8 +131,8 @@ in the FS bucket.
 
 The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https://console.clever-cloud.com) displays information you need to connect using SSH File Transfer Protocol (SFTP). You can use the following SSH public keys to ensure the connection is authentic and trusted:
 
-| Algorithm | Key size | Fingerprint                                        |
-|-----------|----------|----------------------------------------------------|
+| Algorithm | Key size | Fingerprint                                          |
+| --------- | -------- | ---------------------------------------------------- |
 | ED25519   | 256      | `SHA256:+ku6hhQb1O3OVzkZa2B+htPD+P+5K/X6QQYWXym/4Zo` |
 | ED25519   | 256      | `SHA256:8tZzRvA3Fh9poG7g1bu8m0LQS819UBh7AYcEXJYiPqw` |
 | ED25519   | 256      | `SHA256:HHGCP5cf0jQbQrIRXjiC9aYJGNQ+L9ijOmJUueLp+9A` |

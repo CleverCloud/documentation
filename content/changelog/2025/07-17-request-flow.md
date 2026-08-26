@@ -23,6 +23,7 @@ Clever Cloud exists to ease developers' life. For many years, you can use [Varni
 ## Easier Redirection.io and Varnish activation
 
 First, we've removed some barriers to use Redirection.io and Varnish:
+
 - To setup Varnish add a `clevercloud/varnish.vcl` file or define it with `CC_VARNISH_FILE` environment variable
 - To setup Redirection.io, `CC_REDIRECTIONIO_PROJECT_KEY` is now the only required environment variable
 
@@ -31,6 +32,7 @@ First, we've removed some barriers to use Redirection.io and Varnish:
 In recent runtimes where Clever Cloud manage the port configuration (`frankenphp`, `static`), nothing else is needed. By default, Clever Cloud will configure the reverse proxy to listen on port `8080` and redirect to port `9000`. So in runtimes where the user controls the port configuration, the application must listen on port `9000` once Redirection.io or Varnish is activated.
 
 If both are activated:
+
 - Varnish is exposed first: listens on port `8080`, forward to Redirection.io on port `8081`
 - Redirection.io listens on port `8081`, forward to the application on port `9000`
 

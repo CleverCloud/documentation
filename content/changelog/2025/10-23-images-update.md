@@ -14,41 +14,41 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.17.4
-  * Clever Tools 4.3.0
-  * Mise 2025.10.11
-  * OpenSSH 10.2_p1
-  * Ripgrep 15.0.0
-  * Tailscale 1.88.3
-* **Docker:**
-  * Update to 28.5.1
-  * Buildx 0.29.1
-* **Elixir:**
-  * Update to 1.19.1
-  * Erlang 28.1.1
-* **Go:**
-  * Update to 1.25.3
-* **Node.js:**
-  * Update to 22.21.0
-  * Bun 1.3.1
-  * Yarn 4.10.3
-* **PHP:**
-  * Update to 8.3.27
-  * Update to 8.4.14
-  * memcached 1.6.39
-  * memcached extension 3.4.0
-* **Python:**
-  * Update to Python 3.9.24
-  * Update to Python 3.10.19
-  * Update to Python 3.11.14
-  * Update to Python 3.12.12
-  * Update to Python 3.13.9
-  * uv 0.9.4
-* **Ruby:**
-  * Update to Ruby 3.4.7
-* **Static:**
-  * Hugo 0.151.2
+- **Common:**
+  - Linux kernel 6.17.4
+  - Clever Tools 4.3.0
+  - Mise 2025.10.11
+  - OpenSSH 10.2_p1
+  - Ripgrep 15.0.0
+  - Tailscale 1.88.3
+- **Docker:**
+  - Update to 28.5.1
+  - Buildx 0.29.1
+- **Elixir:**
+  - Update to 1.19.1
+  - Erlang 28.1.1
+- **Go:**
+  - Update to 1.25.3
+- **Node.js:**
+  - Update to 22.21.0
+  - Bun 1.3.1
+  - Yarn 4.10.3
+- **PHP:**
+  - Update to 8.3.27
+  - Update to 8.4.14
+  - memcached 1.6.39
+  - memcached extension 3.4.0
+- **Python:**
+  - Update to Python 3.9.24
+  - Update to Python 3.10.19
+  - Update to Python 3.11.14
+  - Update to Python 3.12.12
+  - Update to Python 3.13.9
+  - uv 0.9.4
+- **Ruby:**
+  - Update to Ruby 3.4.7
+- **Static:**
+  - Hugo 0.151.2
 
 ## Node.js 25 support, 24 LTS as default version
 

@@ -16,5 +16,5 @@ excludeSearch: true
 
 You can simply test it with a new add-on or update an existing one through automatic and safe Clever Cloud's migration process.
 
-* [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
-* [PostgreSQL release notes](https://www.postgresql.org/docs/release/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [PostgreSQL release notes](https://www.postgresql.org/docs/release/)

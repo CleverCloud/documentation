@@ -31,18 +31,18 @@ Clever Cloud users can benefit from **Heptapod Cloud** software, along with **He
 
 Heptapod Cloud comes with the following benefits:
 
-* **Cost Reduction**: No licensing or application maintenance costs, flexible and competitive usage-based pricing per active user.
-* **Automatic Updates**: Heptapod aligns with the continuously evolving GitLab, ensuring you effortlessly benefit from the latest features and security patches.
-* **Technical and Functional Support**: Whether for technical or functional questions, support teams are ready to answer all your queries.
-* **Scalability**: As your team grows or you manage dozens or hundreds of small or large projects for testing and deployment, Heptapod Cloud is designed to handle it. Increase capacities or quantities of CI/CD runners associated with your projects, those of runtimes, storage, or databases managed by Clever Cloud, or adjust bandwidth to handle heavy loads. All these services are native and structured to meet your scaling needs with ease.
+- **Cost Reduction**: No licensing or application maintenance costs, flexible and competitive usage-based pricing per active user.
+- **Automatic Updates**: Heptapod aligns with the continuously evolving GitLab, ensuring you effortlessly benefit from the latest features and security patches.
+- **Technical and Functional Support**: Whether for technical or functional questions, support teams are ready to answer all your queries.
+- **Scalability**: As your team grows or you manage dozens or hundreds of small or large projects for testing and deployment, Heptapod Cloud is designed to handle it. Increase capacities or quantities of CI/CD runners associated with your projects, those of runtimes, storage, or databases managed by Clever Cloud, or adjust bandwidth to handle heavy loads. All these services are native and structured to meet your scaling needs with ease.
 
 Heptapod Cloud provides your team with a suite of collaborative tools for software or document production management:
 
-* **Team, Collaborators, and Access Rights:** Add and manage team members, organise roles and access rights based on projects.
-* **Git and Mercurial Repository Management:** Heptapod provides a robust and intuitive repository management system for Git and Mercurial, allowing you to effortlessly create, manage, and collaborate on your codebase or documents. With advanced version control and branch management features, you can easily track changes, merge your code, and maintain the integrity and history of your private or public projects.
-* **Project Management and Ticket Tracking:** The ticket tracking system allows you to efficiently manage tasks, incidents, and collaborate seamlessly with your team. Stay organized by setting milestones, qualifying with labels, and customising workflows for advanced control of your operations.
-* **Collaboration and Code Review:** Heptapod provides a wide range of features for effective collaboration, code or document reviews, online comments, and real-time collaboration tools. Work seamlessly with your team, track exchanges, merge requests, and improve the overall quality of your projects.
-* **Embedded Wiki and Documentation:** Knowledge sharing is crucial for high-performing teams. Easily create and maintain comprehensive documentation for your projects, centralise and share knowledge, and provide a smooth experience for new collaborators.
+- **Team, Collaborators, and Access Rights:** Add and manage team members, organise roles and access rights based on projects.
+- **Git and Mercurial Repository Management:** Heptapod provides a robust and intuitive repository management system for Git and Mercurial, allowing you to effortlessly create, manage, and collaborate on your codebase or documents. With advanced version control and branch management features, you can easily track changes, merge your code, and maintain the integrity and history of your private or public projects.
+- **Project Management and Ticket Tracking:** The ticket tracking system allows you to efficiently manage tasks, incidents, and collaborate seamlessly with your team. Stay organized by setting milestones, qualifying with labels, and customising workflows for advanced control of your operations.
+- **Collaboration and Code Review:** Heptapod provides a wide range of features for effective collaboration, code or document reviews, online comments, and real-time collaboration tools. Work seamlessly with your team, track exchanges, merge requests, and improve the overall quality of your projects.
+- **Embedded Wiki and Documentation:** Knowledge sharing is crucial for high-performing teams. Easily create and maintain comprehensive documentation for your projects, centralise and share knowledge, and provide a smooth experience for new collaborators.
 
 ## Accessing Heptapod Cloud
 
@@ -87,10 +87,10 @@ Fully integrated with Heptapod Cloud, the service can also be used from a self-m
 
 Clever Cloud Runners for Heptapod comes with the following features:
 
-* **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
-* **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
-* **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
-* **[Components Catalog](/doc/ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
+- **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
+- **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
+- **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
+- **[Components Catalog](/doc/ci-cd/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
 
 #### Provisioning
 
@@ -114,10 +114,10 @@ This is nothing but the standard GitLab mechanism. If you maintain your own Grou
 
 In order to have the Clever Cloud Runner take your jobs, simply activate the shared runners on the wished Groups and Projects:
 
-* Navigate to the Group Settings CI/CD page.
-* Expand the Runners section.
-* You will be able to activate the shared runners directly from there or allow Projects or sub-Groups to override the Group setting in case you don't want to activate on the full Group.
-* Always check the resulting configuration in the Projects Settings CI/CD pages, and correct it if needed. Changes in the Group Settings are not always immediately taken into account on enclosed Projects.
+- Navigate to the Group Settings CI/CD page.
+- Expand the Runners section.
+- You will be able to activate the shared runners directly from there or allow Projects or sub-Groups to override the Group setting in case you don't want to activate on the full Group.
+- Always check the resulting configuration in the Projects Settings CI/CD pages, and correct it if needed. Changes in the Group Settings are not always immediately taken into account on enclosed Projects.
 
 #### Running only the Clever Cloud Runner
 
@@ -178,7 +178,7 @@ tests:
 
 ##### Differences with a Heptapod Runner using the standard Docker executor
 
-**Automatic Dependency Proxy**
+###### Automatic Dependency Proxy
 
   The Dependency Proxy is a standard GitLab Free feature that provides transparent caching of Docker Hub images to minimize bandwidth and avoid rate limiting problems.
 
@@ -186,7 +186,8 @@ tests:
 
   The automatic Dependency Proxy should be mostly transparent to users, except in case of services using a namespaced Docker image and not having an explicit alias. For these, we provide a single service network name whereas the standard executor provides two (replacing forward slashes either by double underscores or dashes). We chose the dash-based RFC compliant one. In short, use octobus-heptapod to reach a service whose Docker image is octobus/heptapod:sometag, or better, set your own explicit alias.
 
-**Job cache**
+###### Job cache
+
 Currently, the job cache is discarded at the end of each job.
 This is because we don't have offloading capabilities for the cache yet, and the entire virtual machine gets decommissioned at the end of the job.
 
@@ -210,7 +211,7 @@ In other words, one size does not fit all.
 
 Jobs executed by the Clever Cloud Runner can specify the scale (flavour) of the Docker host it needs, using the `CI_CLEVER_CLOUD_FLAVOR` variable.
 
-```yaml{filename=".gitlab-ci.yml"}
+```yaml {filename=".gitlab-ci.yml"}
 small-job:
   variables:
     CI_CLEVER_CLOUD_FLAVOR: XS

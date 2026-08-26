@@ -33,8 +33,8 @@ For security reasons, you can't connect on the instance that hosts your Docker a
 
 You need to have at least one of the following installed locally:
 
-* the [Clever Tools CLI](/doc/cli/)
-* an SSH client (e.g [putty](https://putty.org/) for windows users)
+- the [Clever Tools CLI](/doc/cli/)
+- an SSH client (e.g [putty](https://putty.org/) for windows users)
 
 ### Make sure you have a properly configured SSH key
 
@@ -128,7 +128,8 @@ You can also use `journalctl` [with other options](https://www.commandlinux.com/
 ## Troubleshooting
 
 A commonly encountered issue when using `clever ssh` is:
-```
+
+```text
 Error: Failed to choose instance: 'Error while running choice script: Error: This application has no instances you can ssh to'
 ```
 
@@ -136,11 +137,13 @@ First, make sure your application is running, otherwise there is no instance to 
 
 If your application is up, this means you aren't allowed to access the organisation or application. This might be due to permission issue.
 If you're supposed to have access to the application, this is likely due to a key management issue. To fix it:
-* make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](/doc/account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud)
-* make sure your SSH agent is using the proper private key
+
+- make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](/doc/account/ssh-keys-management#add-a-public-ssh-key-on-clever-cloud)
+- make sure your SSH agent is using the proper private key
 
 A useful command for debugging is:
-```
+
+```bash
 ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
 ```
 

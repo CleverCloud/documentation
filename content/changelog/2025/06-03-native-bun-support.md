@@ -18,7 +18,7 @@ If a `bun.lock` file is detected at the root of your project, and you didn't ask
 
 Want to give it a try? Just launch these commands with Bun and [Clever Tools CLI](/doc/cli/install) installed on your system:
 
-```
+```bash
 mkdir bunDemo
 cd bunDemo
 
@@ -35,4 +35,4 @@ clever open
 
 You'll get a basic React application running on Bun, deployed on Clever Cloud.
 
-* [Learn more about Bun & Node.js on Clever Cloud](/doc/applications/nodejs)
+- [Learn more about Bun & Node.js on Clever Cloud](/doc/applications/nodejs)

@@ -75,7 +75,7 @@ clever drain remove --addon postgresql_xxxxxxxx <DRAIN-ID>
 
 To upgrade Clever Tools, [use your favourite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

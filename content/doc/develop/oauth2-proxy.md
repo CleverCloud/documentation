@@ -142,12 +142,12 @@ OAUTH2_PROXY_REDIS_CONNECTION_URL="redis://:password@host:port"
 
 OAuth2 Proxy logs its configuration errors and exits, so read the deployment logs from the bottom up. The health check reports the public port as closed, which is a consequence of the middleware being down rather than a problem with your application:
 
-| Log message | Cause |
-| ----------- | ----- |
-| `cookie_secret must be 16, 24, or 32 bytes` | The secret has the wrong length, see [Generate the cookie secret](#generate-the-cookie-secret) |
-| `missing setting for email validation` | The configuration carries neither `OAUTH2_PROXY_EMAIL_DOMAINS` nor `OAUTH2_PROXY_AUTHENTICATED_EMAILS_FILE` |
-| `Your application is not listening on 8080` | OAuth2 Proxy failed to start, the preceding message holds the reason |
-| `Some software are not listening as expected: 9000` | OAuth2 Proxy runs, your application doesn't listen on port `9000` |
+| Log message                                         | Cause                                                                                                       |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `cookie_secret must be 16, 24, or 32 bytes`         | The secret has the wrong length, see [Generate the cookie secret](#generate-the-cookie-secret)              |
+| `missing setting for email validation`              | The configuration carries neither `OAUTH2_PROXY_EMAIL_DOMAINS` nor `OAUTH2_PROXY_AUTHENTICATED_EMAILS_FILE` |
+| `Your application is not listening on 8080`         | OAuth2 Proxy failed to start, the preceding message holds the reason                                        |
+| `Some software are not listening as expected: 9000` | OAuth2 Proxy runs, your application doesn't listen on port `9000`                                           |
 
 A login that loops between your application and the identity provider points to `OAUTH2_PROXY_REDIRECT_URL` not matching the callback declared in the provider. A `403 Forbidden` after a successful login points to an email address outside your authorization rules, or to a missing `email` scope.
 

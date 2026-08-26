@@ -17,4 +17,4 @@ excludeSearch: true
 
 The [1.5.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.5.0) of the Clever Cloud Terraform provider is available. It brings bug fixes, support for [Network Groups](/doc/develop/network-groups/), GitHub applications from public or private repositories, migration of PostgreSQL databases.
 
-* Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

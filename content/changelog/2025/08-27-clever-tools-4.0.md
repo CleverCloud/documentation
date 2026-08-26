@@ -18,6 +18,7 @@ excludeSearch: true
 Clever Tools 4.0 is available. It's a new major version as there are multiple breaking changes. Not in commands nor behavior, but in runtime, code quality and tooling. This release is now based on Node.js 22 and [Clever Cloud JS client 11.0](https://www.npmjs.com/package/@clevercloud/client).
 
 Under the hood we've also :
+
 - Updated [CONTRIBUTING](https://github.com/CleverCloud/clever-tools/blob/master/CONTRIBUTING.md) and [README](https://github.com/CleverCloud/clever-tools/blob/master/README.md) files
 - Removed lots of dependencies, updated those remaining
 - Added scripts and tools to ease the development and contribution
@@ -34,7 +35,7 @@ These changes will pave the way for future major improvements and new features a
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

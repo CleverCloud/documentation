@@ -14,35 +14,35 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * FFmpeg 8.0
-  * Linux kernel 6.15.9
-  * Mise 2025.9.6
-  * Redis 8.2.1
-  * SQLite 3.50.4
-  * Varnish 7.7.3
-* **Docker:**
-  * Update to 28.4.0
-  * Buildx 0.28.0
-* **FrankenPHP:**
-  * Update to 1.9.1
-* **Go:**
-  * Update to 1.25.1
-* **Node.js & Bun:**
-  * Update to 22.19.0 (npm 10.9.3)
-  * Bun 1.2.21
-  * Yarn 4.9.4
-* **PHP:**
-  * Update to PHP 8.3.25
-  * Update to PHP 8.4.12
-  * Composer 2.2.25 (LTS)
-  * Composer 2.8.11
-* **Python:**
-  * 3.13.7
-  * uv 0.8.15
-* **Static:**
-  * Hugo 0.145 removal
-  * Hugo 0.149.1
+- **Common:**
+  - FFmpeg 8.0
+  - Linux kernel 6.15.9
+  - Mise 2025.9.6
+  - Redis 8.2.1
+  - SQLite 3.50.4
+  - Varnish 7.7.3
+- **Docker:**
+  - Update to 28.4.0
+  - Buildx 0.28.0
+- **FrankenPHP:**
+  - Update to 1.9.1
+- **Go:**
+  - Update to 1.25.1
+- **Node.js & Bun:**
+  - Update to 22.19.0 (npm 10.9.3)
+  - Bun 1.2.21
+  - Yarn 4.9.4
+- **PHP:**
+  - Update to PHP 8.3.25
+  - Update to PHP 8.4.12
+  - Composer 2.2.25 (LTS)
+  - Composer 2.8.11
+- **Python:**
+  - 3.13.7
+  - uv 0.8.15
+- **Static:**
+  - Hugo 0.145 removal
+  - Hugo 0.149.1
 
 ## Bun 1.2.21: native Clever Cloud add-ons support
 
@@ -50,7 +50,7 @@ The latest Bun 1.2 release [brings native MySQL support](https://bun.com/blog/bu
 
 We provide a GitHub repository with ready-to-use examples:
 
-* [Clever Cloud add-ons native Bun support example scripts](https://github.com/CleverCloud/bun-addons-examples)
+- [Clever Cloud add-ons native Bun support example scripts](https://github.com/CleverCloud/bun-addons-examples)
 
 ## Hugo version update
 

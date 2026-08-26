@@ -33,6 +33,6 @@ FrankenPHP on Clever Cloud comes with [lots of extensions](/doc/applications/fra
 
 As it's a new image, help us improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp).
 
-* [FrankenPHP and Materia KV example](https://github.com/CleverCloud/frankenphp-kv-json-example)
-* [Learn more about FrankenPHP on Clever Cloud](/doc/applications/frankenphp/)
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [FrankenPHP and Materia KV example](https://github.com/CleverCloud/frankenphp-kv-json-example)
+- [Learn more about FrankenPHP on Clever Cloud](/doc/applications/frankenphp/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)

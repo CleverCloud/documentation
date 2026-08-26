@@ -29,4 +29,3 @@ clever otoroshi version update yourOtoroshiNameOrId v17.6.3_1760617667
 
 - [Learn more about Biscuit Studio](https://cloud-apim.github.io/otoroshi-biscuit-studio/docs/overview)
 - [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
-

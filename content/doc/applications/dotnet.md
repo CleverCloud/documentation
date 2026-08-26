@@ -50,9 +50,9 @@ You can change the default version by setting the `CC_DOTNET_VERSION` environmen
 
 Be sure that:
 
-* You have pushed in **master** branch.
-* You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
-* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
+- You have pushed in **master** branch.
+- You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
+- You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
 Take an example with the [cc-dotnet-demo](https://github.com/CleverCloud/cc-dotnet-demo).
 

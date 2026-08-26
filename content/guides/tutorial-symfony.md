@@ -58,7 +58,7 @@ You can anyway add your environment with any of the methods mentioned in [Settin
 For your application logs to be collected and available in the console and CLI, you need to configure monolog to use its `error_log` output.
 That does not mean that it will only output error level logs, you can set it to use any level, here is an example with the info level (and above):
 
-```yaml{filename="config_prod.yml"}
+```yaml {filename="config_prod.yml"}
 monolog:
     handlers:
         filter_for_errors:
@@ -82,7 +82,7 @@ You can use the `CC_REVERSE_PROXY_IPS` [environment variable](#setting-up-enviro
 TRUSTED_PROXIES=127.0.0.1,${CC_REVERSE_PROXY_IPS}
 ```
 
-```yaml{filename="config/packages/framework.yaml"}
+```yaml {filename="config/packages/framework.yaml"}
 framework:
     # …
     trusted_proxies: '%env(TRUSTED_PROXIES)%'
@@ -113,7 +113,7 @@ To manage your connection pool towards your MySQL add-on, you can set-up a [Prox
 
 Once you have activated the ProxySQL (through the environment variable), a configuration example would be:
 
-```yaml{filename="doctrine.yaml"}
+```yaml {filename="doctrine.yaml"}
 dbal:
   unix_socket: '%env(CC_MYSQL_PROXYSQL_SOCKET_PATH)%'
   url: 'mysql://%env(MYSQL_ADDON_USER)%:%env(MYSQL_ADDON_PASSWORD)%@localhost/%env(MYSQL_ADDON_DB)%?serverVersion=%env(MYSQL_ADDON_VERSION)%'

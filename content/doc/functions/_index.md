@@ -102,6 +102,7 @@ sequenceDiagram
 ## Prerequisites
 
 To use Clever Functions you'll need :
+
 - An authorized access for your organisation
 - Clever Tools with Functions commands
 
@@ -152,6 +153,7 @@ clever functions deploy <wasm_file> <platform_code> <function_id> --org <your_or
 ```
 
 During deployment, the platform handles multiple steps to ensure your Function is live and ready to serve requests:
+
 1. Uploads your code and creates a release
 2. Triggers server-side compilation if needed
 3. Creates a deployment referencing the release
@@ -184,7 +186,7 @@ Triggers define how Functions receives structured input and returns structured o
 
 The HTTP trigger gives your Function access to the full HTTP request (body, headers, method) and lets it return a structured HTTP response. Append `?trigger=http` to the endpoint:
 
-```
+```text
 https://functions-technical-preview.services.clever-cloud.com/<function_id>?trigger=http
 ```
 

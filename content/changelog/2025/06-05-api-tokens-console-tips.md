@@ -24,7 +24,7 @@ This interface also shows the token name, description, public ID, creation and e
 To create an API token, you need to provide:
 
 - Your current password
-- Your 2FA code if active (activate it [here](https://console.clever-cloud.com/users/me/authentication))
+- Your 2FA code if active ([activate 2FA in the Console](https://console.clever-cloud.com/users/me/authentication))
 
 If you created your Clever Cloud account through the GitHub integration, you'll be asked to set a password first.
 

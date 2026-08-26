@@ -1,2 +1,5 @@
 [tools]
+go = "1.26"
+hugo-extended = "0.164"
+markdownlint-cli2 = "latest"
 vale = "latest"

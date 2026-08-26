@@ -67,13 +67,13 @@ If the `appname` or `NEW_RELIC_APP_NAME` is not specified, we use your applicati
 
 If you need to fine-tune agent settings, you can use the following environment variables:
 
-| Variable |
-|--------------------
-|[`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) |
-|[`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) |
-|[`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) |
-|[`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) |
-|[`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) |
+| Variable                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum)      |
+| [`CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) |
+| [`CC_NEWRELIC_ERROR_COLLECTOR_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled)             |
+| [`CC_NEWRELIC_TRANSACTION_TRACER_ENABLED`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable)            |
+| [`CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL`](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql)            |
 
 ### Usage
 

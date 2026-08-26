@@ -176,5 +176,5 @@ This environment variable exists in any Clever Cloud instance. This configuratio
   {{< card link="/developers/doc/metrics/new-relic" title="Monitor your App with New Relic" subtitle="Connect your application to New Relic." icon="new-relic" >}}
   {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
   {{< card link="/developers/doc/develop/build-hooks" title="Deployment hooks" subtitle="Learn about custom commands used in this guide." icon="rocket-launch" >}}
-  {{< card link="https://laravel.com/docs/10.x/deployment" title="Laravel Documentation" subtitle="Read Laravel documentation on deployments." icon="laravel" >}}
+  {{< card link="<https://laravel.com/docs/10.x/deployment>" title="Laravel Documentation" subtitle="Read Laravel documentation on deployments." icon="laravel" >}}
 {{< /cards >}}

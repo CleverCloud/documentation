@@ -30,6 +30,7 @@ To create a new Linux application, use the [Clever Cloud Console](https://consol
 ```bash
 clever create --type linux
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 

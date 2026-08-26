@@ -28,6 +28,7 @@ clever restart --app app_id
 clever restart --app my_app_name
 clever restart --app my_app_name --org my_org_name
 ```
+
 `clever applications list` new command can be used from any folder of your system. It prints details about applications across your organisations. You can filter the result with `--org` or `-o` option. It includes IDs, names and local aliases (if available) in a table.
 
 ## More (consistent) options
@@ -59,7 +60,7 @@ Multiple new features are also available in this "Big Summer Update". Access Log
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install)
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

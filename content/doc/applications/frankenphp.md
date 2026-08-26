@@ -32,6 +32,7 @@ To create a new FrankenPHP application, use the [Clever Cloud Console](https://c
 ```bash
 clever create --type frankenphp
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 

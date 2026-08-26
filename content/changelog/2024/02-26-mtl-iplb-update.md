@@ -24,14 +24,14 @@ If you configure your domains through CNAME records, this update will be transpa
 
 ## Applications
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | @ 10800 IN A 158.69.109.229<br>@ 10800 IN A 149.56.117.183 |
+| Record Type                         | Value                                                         |
+| ----------------------------------- | ------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | @ 10800 IN A 158.69.109.229<br>@ 10800 IN A 149.56.117.183    |
 
 ## Add-ons
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain-sdc.mtl.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | @ 10800 IN A 54.39.154.128<br>@ 10800 IN A 167.114.35.164 |
+| Record Type                         | Value                                                             |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain-sdc.mtl.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | @ 10800 IN A 54.39.154.128<br>@ 10800 IN A 167.114.35.164         |

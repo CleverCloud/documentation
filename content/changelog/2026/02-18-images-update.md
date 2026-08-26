@@ -14,23 +14,23 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux Kernel 6.19.2
-  * ClamAV 1.5.1
-  * Mise 2026.2.13
-  * Otoroshictl 0.0.16
-* **.NET:**
-  * Update to 8.0.123
-  * Update to 9.0.113
-* **Elixir:**
-  * Erlang 27.3.4.7
-* **Node.js & Bun:**
-  * Update to 24.13.1 (npm 11.8.0)
-* **PHP:**
-  * Update to 8.4.18
-  * Update to 8.5.3
-* **Rust:**
-  * Update to 1.93.1
+- **Common:**
+  - Linux Kernel 6.19.2
+  - ClamAV 1.5.1
+  - Mise 2026.2.13
+  - Otoroshictl 0.0.16
+- **.NET:**
+  - Update to 8.0.123
+  - Update to 9.0.113
+- **Elixir:**
+  - Erlang 27.3.4.7
+- **Node.js & Bun:**
+  - Update to 24.13.1 (npm 11.8.0)
+- **PHP:**
+  - Update to 8.4.18
+  - Update to 8.5.3
+- **Rust:**
+  - Update to 1.93.1
 
 ## Apache Basic Auth
 

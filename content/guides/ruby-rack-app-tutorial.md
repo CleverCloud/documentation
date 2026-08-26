@@ -24,10 +24,10 @@ Created in 2007, Rack has become the de-facto standard for ruby web applications
 
 To follow this tutorial, you will need:
 
-* Ruby >= 1.9.2 (w/ Rubygems)
-* Bundler (`gem install bundler` and you're good to go!)
-* Your preferred editor
-* Git (for the deploy part)
+- Ruby >= 1.9.2 (w/ Rubygems)
+- Bundler (`gem install bundler` and you're good to go!)
+- Your preferred editor
+- Git (for the deploy part)
 
 {{< callout type="info">}}
 To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv). If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.

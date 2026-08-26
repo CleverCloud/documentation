@@ -90,20 +90,20 @@ the result of the deployment in your Slack channel.
 
 Available webhooks events are organised by category:
 
-| Category | Events |
-|----------|--------|
-| **Account** | `ACCOUNT_CREATION`, `ACCOUNT_DELETION`, `ACCOUNT_EDITION` |
-| **Organisation** | `ORGANISATION_CREATION`, `ORGANISATION_DELETION`, `ORGANISATION_EDITION` |
-| **Add-on** | `ADDON_CREATION`, `ADDON_DELETION` |
-| **Application** | `APPLICATION_CREATION`, `APPLICATION_DELETION`, `APPLICATION_EDITION`, `APPLICATION_REDEPLOY`, `APPLICATION_STOP` |
-| **Deployment** | `DEPLOYMENT_ACTION_BEGIN`, `DEPLOYMENT_ACTION_END`, `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS`, `GIT_PUSH` |
-| **Other** | `CLEVER_TOOLS_REQUEST`, `CREDITS_ADDED` |
+| Category         | Events                                                                                                            |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Account**      | `ACCOUNT_CREATION`, `ACCOUNT_DELETION`, `ACCOUNT_EDITION`                                                         |
+| **Organisation** | `ORGANISATION_CREATION`, `ORGANISATION_DELETION`, `ORGANISATION_EDITION`                                          |
+| **Add-on**       | `ADDON_CREATION`, `ADDON_DELETION`                                                                                |
+| **Application**  | `APPLICATION_CREATION`, `APPLICATION_DELETION`, `APPLICATION_EDITION`, `APPLICATION_REDEPLOY`, `APPLICATION_STOP` |
+| **Deployment**   | `DEPLOYMENT_ACTION_BEGIN`, `DEPLOYMENT_ACTION_END`, `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS`, `GIT_PUSH`           |
+| **Other**        | `CLEVER_TOOLS_REQUEST`, `CREDITS_ADDED`                                                                           |
 
 Some events are grouped in meta-events for easier selection:
 
-| Meta-Event | Included Events |
-|------------|-----------------|
-| `META_CREDITS` | `CREDITS_ADDED` |
-| `META_DEPLOYMENT_RESULT` | `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS` |
-| `META_SERVICE_LIFECYCLE` | `APPLICATION_STOP`, `DEPLOYMENT_ACTION_BEGIN`, `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS` |
+| Meta-Event                | Included Events                                                                                           |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `META_CREDITS`            | `CREDITS_ADDED`                                                                                           |
+| `META_DEPLOYMENT_RESULT`  | `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS`                                                                   |
+| `META_SERVICE_LIFECYCLE`  | `APPLICATION_STOP`, `DEPLOYMENT_ACTION_BEGIN`, `DEPLOYMENT_FAIL`, `DEPLOYMENT_SUCCESS`                    |
 | `META_SERVICE_MANAGEMENT` | `ADDON_CREATION`, `ADDON_DELETION`, `APPLICATION_CREATION`, `APPLICATION_EDITION`, `APPLICATION_DELETION` |

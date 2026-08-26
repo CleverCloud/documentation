@@ -14,13 +14,13 @@ excludeSearch: true
 
 We deployed and updated all our images, with no impact for our users.
 
-* **Common:**
-  * Fix an issue with scaling feature
-  * Linux kernel 6.13.9
-  * Mise 2025.3.11
-  * Tailscale 1.82.0
-* **Go:**
-  * Update to 1.24.2
+- **Common:**
+  - Fix an issue with scaling feature
+  - Linux kernel 6.13.9
+  - Mise 2025.3.11
+  - Tailscale 1.82.0
+- **Go:**
+  - Update to 1.24.2
 
 SQL Server extensions (`sqlsrv` and `pdo_sqlsrv`) are now available for PHP 8.1 to 8.4. To enable them, add `ENABLE_SQLSRV=true` or `ENABLE_PDO_SQLSRV=true` environment variables to your application.
 

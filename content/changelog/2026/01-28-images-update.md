@@ -14,38 +14,39 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Clever Tools 4.5.3
-  * qpdf 12.3.2
-  * Mise 2026.1.8
-* **Docker:**
-  * Update to 29.2.0
-  * Docker Buildx 0.31.0
-* **Elixir:**
-  * Erlang 28.3.1
-* **Go:**
-  * Update to 1.25.6
-* **Java:**
-  * Gradle 8.14.4
-  * Gradle 9.3.0
-  * Maven 3.9.12
-* **Node.js & Bun:**
-  * Bun 1.3.7
-* **PHP:**
-  * Update to 8.3.30
-  * Update to 8.4.17
-  * Update to 8.5.2
-  * Composer 2.9.4
-* **Python:**
-  * uv 0.9.26
-* **Ruby:**
-  * Update to 3.2.10
-* **Rust:**
-  * Update to 1.93.0
+- **Common:**
+  - Clever Tools 4.5.3
+  - qpdf 12.3.2
+  - Mise 2026.1.8
+- **Docker:**
+  - Update to 29.2.0
+  - Docker Buildx 0.31.0
+- **Elixir:**
+  - Erlang 28.3.1
+- **Go:**
+  - Update to 1.25.6
+- **Java:**
+  - Gradle 8.14.4
+  - Gradle 9.3.0
+  - Maven 3.9.12
+- **Node.js & Bun:**
+  - Bun 1.3.7
+- **PHP:**
+  - Update to 8.3.30
+  - Update to 8.4.17
+  - Update to 8.5.2
+  - Composer 2.9.4
+- **Python:**
+  - uv 0.9.26
+- **Ruby:**
+  - Update to 3.2.10
+- **Rust:**
+  - Update to 1.93.0
 
 ## Request Flow expansion
 
 Request Flow is now available in .NET, Elixir, Haskell and Rust applications. We plan its expansion to more runtimes in the coming weeks in three releases:
+
 - Go and Node.js/Bun
 - Java and PHP
 - Python and Ruby

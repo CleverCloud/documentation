@@ -24,14 +24,14 @@ Request Flow is available for all runtimes except Docker, where you define and m
 
 ## Supported services
 
-| Service | Activation | Description |
-| ------- | ---------- | ----------- |
-| `block` | `CC_REQUEST_FLOW="block"` | Blocks public access with a `200 OK` response. Other ports remain accessible through [Network Groups](/doc/develop/network-groups/) |
-| `custom` | `CC_REQUEST_FLOW="custom"` | Any custom reverse proxy, started with `CC_REQUEST_FLOW_CUSTOM` |
-| `oauth2-proxy` | `CC_REQUEST_FLOW="oauth2-proxy"` | Authentication proxy using [OAuth2 Proxy](/doc/develop/oauth2-proxy/) |
-| `otoroshi-challenge` | `OTOROSHI_CHALLENGE_SECRET` | [Otoroshi](/doc/addons/otoroshi/) challenge verification proxy |
-| `redirectionio` | `CC_REDIRECTIONIO_PROJECT_KEY` | HTTP redirects, rewrites, SEO |
-| `varnish` | `clevercloud/varnish.vcl` file or `CC_VARNISH_FILE` | HTTP cache accelerator |
+| Service              | Activation                                          | Description                                                                                                                         |
+| -------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `block`              | `CC_REQUEST_FLOW="block"`                           | Blocks public access with a `200 OK` response. Other ports remain accessible through [Network Groups](/doc/develop/network-groups/) |
+| `custom`             | `CC_REQUEST_FLOW="custom"`                          | Any custom reverse proxy, started with `CC_REQUEST_FLOW_CUSTOM`                                                                     |
+| `oauth2-proxy`       | `CC_REQUEST_FLOW="oauth2-proxy"`                    | Authentication proxy using [OAuth2 Proxy](/doc/develop/oauth2-proxy/)                                                               |
+| `otoroshi-challenge` | `OTOROSHI_CHALLENGE_SECRET`                         | [Otoroshi](/doc/addons/otoroshi/) challenge verification proxy                                                                      |
+| `redirectionio`      | `CC_REDIRECTIONIO_PROJECT_KEY`                      | HTTP redirects, rewrites, SEO                                                                                                       |
+| `varnish`            | `clevercloud/varnish.vcl` file or `CC_VARNISH_FILE` | HTTP cache accelerator                                                                                                              |
 
 ## Automatic detection
 
@@ -111,13 +111,13 @@ For an application that manages its own HTTP server, this example produces the f
 
 ## Environment variables reference
 
-| Name | Description |
-| ---- | ----------- |
-| `CC_REQUEST_FLOW` | Comma-separated list of middleware to chain (e.g. `varnish,redirectionio`). Special values: `disable`, `block` |
-| `CC_REQUEST_FLOW_CUSTOM` | Command to start a custom middleware. Must contain `@@LISTEN_PORT@@` and `@@FORWARD_PORT@@` placeholders |
-| `CC_REDIRECTIONIO_PROJECT_KEY` | Redirection.io project key. Activates Redirection.io in the request flow |
-| `CC_VARNISH_FILE` | Path to a custom Varnish VCL file (default: `clevercloud/varnish.vcl`) |
-| `OTOROSHI_CHALLENGE_SECRET` | Otoroshi challenge secret. Activates Otoroshi Challenge verification in the request flow |
+| Name                           | Description                                                                                                    |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `CC_REQUEST_FLOW`              | Comma-separated list of middleware to chain (e.g. `varnish,redirectionio`). Special values: `disable`, `block` |
+| `CC_REQUEST_FLOW_CUSTOM`       | Command to start a custom middleware. Must contain `@@LISTEN_PORT@@` and `@@FORWARD_PORT@@` placeholders       |
+| `CC_REDIRECTIONIO_PROJECT_KEY` | Redirection.io project key. Activates Redirection.io in the request flow                                       |
+| `CC_VARNISH_FILE`              | Path to a custom Varnish VCL file (default: `clevercloud/varnish.vcl`)                                         |
+| `OTOROSHI_CHALLENGE_SECRET`    | Otoroshi challenge secret. Activates Otoroshi Challenge verification in the request flow                       |
 
 ## Troubleshooting
 

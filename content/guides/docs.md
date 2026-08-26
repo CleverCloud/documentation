@@ -110,7 +110,7 @@ LOGIN_REDIRECT_URL="https://<docs-base-domain>"
 LOGOUT_REDIRECT_URL="https://<docs-base-domain>/*"
 ```
 
-#### Push your code
+#### Push the backend code
 
 If you push using git, add the remote as `clever-backend`, for example.
 
@@ -120,7 +120,7 @@ If you push using git, add the remote as `clever-backend`, for example.
 
 {{% steps %}}
 
-#### Create a Node.js application
+#### Create the frontend Node.js application
 
 Select at least a `M` instance for the build, and inject the following environment variables:
 
@@ -139,7 +139,7 @@ NODE_OPTIONS="--max-old-space-size=4096"
 - Select **Domain names** and set the base domain for Docs. The frontend doesn't need any route.
 - Add the domain to the environment variables: inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
 
-#### Push your code
+#### Push the frontend code
 
 If you push using git, add the remote as `clever-frontend`, for example.
 
@@ -149,7 +149,7 @@ If you push using git, add the remote as `clever-frontend`, for example.
 
 {{% steps %}}
 
-#### Create a Node.js application
+#### Create the y-provider Node.js application
 
 Inject the following environment variables:
 
@@ -187,7 +187,7 @@ COLLABORATION_SERVER_SECRET="<server-secret>"
 
 Then select the **backend** application > **Service dependencies** > **Link applications** and choose the y-provider application.
 
-#### Push your code
+#### Push the y-provider code
 
 If you push using git, add the remote as `clever-y-provider`, for example.
 
@@ -245,7 +245,7 @@ Find it in **Clients > impress > credentials**, named **Client secret*.
 
 You can choose among different identity providers (GitHub, Google, etc, and even Clever Cloud).
 
-#### Inject the variables in the **backend** application
+#### Inject the Keycloak variables in the **backend** application
 
 ```env
 OIDC_OP_AUTHORIZATION_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/auth"
@@ -275,7 +275,7 @@ Docs uses s3 compatible storage to store uploaded files by users.
 
 #### Create a bucket
 
-#### Inject the variables in the **backend** application
+#### Inject the Cellar variables in the **backend** application
 
 ```env
 AWS_S3_ACCESS_KEY_ID="<cellar-addon_key_id_value>"
@@ -292,5 +292,5 @@ AWS_RESPONSE_CHECKSUM_VALIDATION="when_required"
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="https://github.com/suitenumerique/docs/blob/main/docs/installation/kubernetes.md#preparation" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
+  {{< card link="<https://github.com/suitenumerique/docs/blob/main/docs/installation/kubernetes.md#preparation>" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
 {{< /cards >}}

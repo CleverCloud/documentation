@@ -44,12 +44,12 @@ The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. I
 
 `CC_RUN_COMMAND` takes precedence over `CC_PYTHON_UV_RUN_COMMAND` if both are set.
 
-| Name | Description | Required | Default |
-| ---- | ----------- | -------- | ------- |
-| `CC_PYTHON_UV_RUN_COMMAND` | Command to start the application (e.g. `uv run python app.py`) | Yes | - |
-| `CC_RUN_COMMAND` | Overrides `CC_PYTHON_UV_RUN_COMMAND` if set | No | - |
-| `ENVIRONMENT` | Set to `development` to include dev dependencies during build | No | `production` |
-| `PORT` | Port used by your HTTP server | No | `8080` |
+| Name                       | Description                                                    | Required | Default      |
+| -------------------------- | -------------------------------------------------------------- | -------- | ------------ |
+| `CC_PYTHON_UV_RUN_COMMAND` | Command to start the application (e.g. `uv run python app.py`) | Yes      | -            |
+| `CC_RUN_COMMAND`           | Overrides `CC_PYTHON_UV_RUN_COMMAND` if set                    | No       | -            |
+| `ENVIRONMENT`              | Set to `development` to include dev dependencies during build  | No       | `production` |
+| `PORT`                     | Port used by your HTTP server                                  | No       | `8080`       |
 
 ## Differences with legacy Python deployment
 

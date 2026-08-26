@@ -14,23 +14,23 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.14.11
-  * Mise 2025.6.6
-  * SQLite 3.50.1
-* **Docker:**
-  * Update to 28.3
-  * Buildx 0.25.0
-* **Node.js:**
-  * Update to 22.17.0
-  * Bun 1.2.17
-* **Python:**
-  * Update to 3.13.5
-  * uv 0.7.17
-* **Rust:**
-  * Update to 1.88.0
-* **V:**
-  * Update to 0.4.11
+- **Common:**
+  - Linux kernel 6.14.11
+  - Mise 2025.6.6
+  - SQLite 3.50.1
+- **Docker:**
+  - Update to 28.3
+  - Buildx 0.25.0
+- **Node.js:**
+  - Update to 22.17.0
+  - Bun 1.2.17
+- **Python:**
+  - Update to 3.13.5
+  - uv 0.7.17
+- **Rust:**
+  - Update to 1.88.0
+- **V:**
+  - Update to 0.4.11
 
 ## Linux, Static and V runtimes
 

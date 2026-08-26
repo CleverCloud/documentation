@@ -18,7 +18,7 @@ We deployed an updated Node.js image with no impact for our users. It uses `22.1
 
 It's the first image to include the [Mise package manager](https://mise.jdx.dev/), allowing you to install and manage many developer tools, environment variables, secrets, aliases, tasks, hooks through commands or a configuration file. It's compatible with [asdf ecosystem](https://mise.jdx.dev/dev-tools/comparison-to-asdf.html).
 
-* Learn more about [Mise](https://mise.jdx.dev/)
+- Learn more about [Mise](https://mise.jdx.dev/)
 
 ## Redirection.io easy setup
 

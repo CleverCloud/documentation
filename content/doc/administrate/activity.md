@@ -14,10 +14,10 @@ keywords:
 
 Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:
 
- - An action performed by you or by a member of your organisation
- - An action performed by Clever Cloud
+- An action performed by you or by a member of your organisation
+- An action performed by Clever Cloud
 
- ## Re-deployment triggered by you
+## Re-deployment triggered by you
 
 This happens when you or a member of your organisation performs an action on the application, like:
 

@@ -14,26 +14,26 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.16.12 (we had issues with previous 6.17.4)
-  * Mise 2025.10.18
-  * Redis 8.2.3
-  * Ripgrep 15.1.0
-  * Tailscale 1.90.2
-* **Elixir:**
-  * Update to 1.19.2
-  * Erlang 27.3.4.4
-* **Java:**
-  * Update to 11.0.29_p7
-  * Update to 17.0.16_p8
-  * Update to 21.0.9_p10
-  * Update to 25.0.1_p8
-  * Gradle 9.2.0
-* **Node.js:**
-  * Update to 24.11.0 LTS (npm 11.6.1)
-* **Python:**
-  * pip 25.3
-  * uv 0.9.7
-* **Static:**
-  * Hugo 0.152.1
-  * Static Web Server 2.39.0
+- **Common:**
+  - Linux kernel 6.16.12 (we had issues with previous 6.17.4)
+  - Mise 2025.10.18
+  - Redis 8.2.3
+  - Ripgrep 15.1.0
+  - Tailscale 1.90.2
+- **Elixir:**
+  - Update to 1.19.2
+  - Erlang 27.3.4.4
+- **Java:**
+  - Update to 11.0.29_p7
+  - Update to 17.0.16_p8
+  - Update to 21.0.9_p10
+  - Update to 25.0.1_p8
+  - Gradle 9.2.0
+- **Node.js:**
+  - Update to 24.11.0 LTS (npm 11.6.1)
+- **Python:**
+  - pip 25.3
+  - uv 0.9.7
+- **Static:**
+  - Hugo 0.152.1
+  - Static Web Server 2.39.0

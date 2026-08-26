@@ -19,10 +19,13 @@ aliases:
 - /reference/clever-tools/getting_started
 ---
 
+<!-- markdownlint-disable MD036 -->
+
 This document is automatically generated from Clever Tools and Clever Cloud API. It covers all Clever Tools commands and options. Use it to better understand this CLI and its capabilities or to train/use LLMs, AI-assisted IDEs.
 
 To use Clever Tools, you need:
-- A Clever Cloud account, create one at https://console.clever-cloud.com/
+
+- A Clever Cloud account, create one at <https://console.clever-cloud.com/>
 - The Clever Tools CLI installed, see installation instructions below
 
 In CI/CD pipelines or for one-off usage, you can use it through `npx` or `npm exec`:
@@ -51,7 +54,7 @@ Clever Cloud CLI is based on Node.js. We thought it to be easily available on an
 
 If you use Arch Linux, install packages [from AUR](https://aur.archlinux.org/packages/clever-tools-bin/). If you don't know how to use this, run:
 
-```
+```console
 git clone https://aur.archlinux.org/clever-tools-bin.git clever-tools
 cd clever-tools
 makepkg -si
@@ -61,7 +64,7 @@ makepkg -si
 
 If you use a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, run:
 
-```
+```console
 curl -s https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo > /etc/yum.repos.d/cc-nexus-rpm.repo
 yum update
 yum install clever-tools
@@ -74,7 +77,7 @@ yum install clever-tools
 
 If you use a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, run:
 
-```
+```console
 curl -fsSL https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key | gpg --dearmor -o /usr/share/keyrings/cc-nexus-deb.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/cc-nexus-deb.gpg] https://nexus.clever-cloud.com/repository/deb stable main" | tee -a /etc/apt/sources.list
 apt update
@@ -89,7 +92,7 @@ apt install clever-tools
 
 If you are using Exherbo, run:
 
-```
+```console
 cave resolve repository/CleverCloud -zx1
 cave resolve clever-tools-bin -zx
 ```
@@ -98,7 +101,7 @@ cave resolve clever-tools-bin -zx
 
 If you use another GNU/Linux distribution, download the `.tar.gz` archive and extract the binary in your `PATH`:
 
-```
+```console
 curl -O https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
 tar xvzf clever-tools-latest_linux.tar.gz
 cp clever-tools-latest_linux/clever ~/.local/bin/
@@ -106,7 +109,7 @@ cp clever-tools-latest_linux/clever ~/.local/bin/
 
 > [!TIP]
 > The packages are available on Clever Cloud's Cellar bucket: [clever-tools-latest_linux.tar.gz](https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz). \
->  Retrieve any release by replacing `latest` (path and filename) with the version number you need.
+> Retrieve any release by replacing `latest` (path and filename) with the version number you need.
 
 ### macOS
 
@@ -116,7 +119,7 @@ We only provide macOS packages for Apple Silicon processors. On an Intel Mac, pr
 
 If you use macOS and you have [Homebrew](https://brew.sh) installed, run:
 
-```
+```console
 brew install CleverCloud/homebrew-tap/clever-tools
 ```
 
@@ -124,7 +127,7 @@ brew install CleverCloud/homebrew-tap/clever-tools
 
 If you use macOS, but you don't have [Homebrew](https://brew.sh) installed, download the `.tar.gz` archive and extract the binary in your `PATH`:
 
-```
+```console
 curl -O https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_macos.tar.gz
 tar xvzf clever-tools-latest_macos.tar.gz
 cp clever-tools-latest_macos/clever ~/.local/bin/
@@ -140,7 +143,7 @@ cp clever-tools-latest_macos/clever ~/.local/bin/
 
 If you use Windows run in a terminal:
 
-```
+```console
 winget install CleverTools
 ```
 
@@ -160,9 +163,9 @@ $env:PATH += ";$(Resolve-Path .\clever-tools-latest_win\)"
 
 ### Docker
 
-If you are using docker, use the image provided [here](https://hub.docker.com/r/clevercloud/clever-tools/).
+If you are using Docker, use the [Clever Tools image from Docker Hub](https://hub.docker.com/r/clevercloud/clever-tools/).
 
-```
+```console
 docker pull clevercloud/clever-tools
 docker run --rm clever-tools <command>
 ```
@@ -268,12 +271,14 @@ Default deployment zone is `par`, default plan is the lowest available.
 **Since:** 2.1.0
 
 **Usage**
-```
+
+```console
 clever accesslogs [options]
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>            Add-on ID or real ID
     --after, --since <after>      Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 -a, --alias <alias>               Short name for the application
@@ -289,12 +294,14 @@ clever accesslogs [options]
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever activity [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -f, --follow                   Track new deployments in activity list
@@ -309,12 +316,14 @@ clever activity [options]
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -326,18 +335,21 @@ clever addon [options]
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon create <addon-provider> <addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-provider                          Add-on provider
 addon-name                              Add-on name
 ```
 
 **Options**
-```
+
+```console
     --addon-version <addon-version>     The version to use for the add-on
 -F, --format <format>                   Output format (human, json) (default: human)
 -l, --link <alias>                      Link the created add-on to the app with the specified alias
@@ -355,17 +367,20 @@ addon-name                              Add-on name
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon delete <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name                     Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 -y, --yes                               Skip confirmation prompts
 ```
@@ -377,17 +392,20 @@ addon-id|addon-name                     Add-on ID (or name, if unambiguous)
 **Since:** 2.11.0
 
 **Usage**
-```
+
+```console
 clever addon env <addon-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id                                Add-on ID or real ID
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json, shell) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
 ```
@@ -399,12 +417,14 @@ addon-id                                Add-on ID or real ID
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -416,12 +436,14 @@ clever addon list [options]
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon providers [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -433,17 +455,20 @@ clever addon providers [options]
 **Since:** 0.2.3
 
 **Usage**
-```
+
+```console
 clever addon providers show <addon-provider> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-provider                          Add-on provider
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -455,18 +480,21 @@ addon-provider                          Add-on provider
 **Since:** 0.3.0
 
 **Usage**
-```
+
+```console
 clever addon rename <addon-id|addon-name> <addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name                     Add-on ID (or name, if unambiguous)
 addon-name                              Add-on name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -477,12 +505,14 @@ addon-name                              Add-on name
 **Since:** 0.3.0
 
 **Usage**
-```
+
+```console
 clever applications [options]
 ```
 
 **Options**
-```
+
+```console
 -j, --json            Show result in JSON format
     --only-aliases    List only application aliases
 ```
@@ -494,12 +524,14 @@ clever applications [options]
 **Since:** 3.8.0
 
 **Usage**
-```
+
+```console
 clever applications list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -511,12 +543,14 @@ clever applications list [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever cancel-deploy [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -528,12 +562,14 @@ clever cancel-deploy [options]
 **Since:** 2.5.0
 
 **Usage**
-```
+
+```console
 clever config [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -545,17 +581,20 @@ clever config [options]
 **Since:** 2.5.0
 
 **Usage**
-```
+
+```console
 clever config get <configuration-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 configuration-name             Configuration to manage: name, description, zero-downtime, sticky-sessions, cancel-on-push, force-https, or task
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -567,18 +606,21 @@ configuration-name             Configuration to manage: name, description, zero-
 **Since:** 2.5.0
 
 **Usage**
-```
+
+```console
 clever config set <configuration-name> <configuration-value> [options]
 ```
 
 **Arguments**
-```
+
+```console
 configuration-name             Configuration to manage: name, description, zero-downtime, sticky-sessions, cancel-on-push, force-https, or task
 configuration-value            The new value of the configuration
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -590,12 +632,14 @@ configuration-value            The new value of the configuration
 **Since:** 2.5.0
 
 **Usage**
-```
+
+```console
 clever config update [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>                Short name for the application
     --app <app-id|app-name>        Application to manage by its ID (or name, if unambiguous)
     --description <description>    Set application description
@@ -619,7 +663,8 @@ clever config update [options]
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider
 ```
 
@@ -630,17 +675,20 @@ clever config-provider
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider get <addon-id|config-provider-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or name (if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                     Output format (human, json, shell) (default: human)
 ```
 
@@ -652,17 +700,20 @@ addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or nam
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider import <addon-id|config-provider-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or name (if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                     Input format (name-equals-value, json) (default: name-equals-value)
 ```
 
@@ -673,12 +724,14 @@ addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or nam
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -689,12 +742,14 @@ clever config-provider list [options]
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider open <addon-id|config-provider-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or name (if unambiguous)
 ```
 
@@ -705,29 +760,33 @@ addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or nam
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider rm <addon-id|config-provider-id|addon-name> <variable-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or name (if unambiguous)
 variable-name                             Name of the environment variable
 ```
 
 ### config-provider set
 
-**Description:** Add or update an environment variable named <variable-name> with the value <variable-value>
+**Description:** Add or update an environment variable named `<variable-name>` with the value `<variable-value>`
 
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever config-provider set <addon-id|config-provider-id|addon-name> <variable-name> <variable-value>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|config-provider-id|addon-name    Add-on ID, real ID (config_xxx) or name (if unambiguous)
 variable-name                             Name of the environment variable
 variable-value                            Value of the environment variable
@@ -740,12 +799,14 @@ variable-value                            Value of the environment variable
 **Since:** 1.0.0
 
 **Usage**
-```
+
+```console
 clever console [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -757,17 +818,20 @@ clever console [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever create --type <instance-type> [<app-name>] [options]
 ```
 
 **Arguments**
-```
+
+```console
 app-name                                Application name (current directory name is used if not specified) (optional)
 ```
 
 **Options**
-```
+
+```console
 -t, --type <instance-type>              Instance type (required)
 -a, --alias <alias>                     Short name for the application
 -F, --format <format>                   Output format (human, json) (default: human)
@@ -784,7 +848,8 @@ app-name                                Application name (current directory name
 **Since:** 2.10.0
 
 **Usage**
-```
+
+```console
 clever curl
 ```
 
@@ -795,7 +860,8 @@ clever curl
 **Since:** 2.10.0
 
 **Usage**
-```
+
+```console
 clever database
 ```
 
@@ -806,17 +872,20 @@ clever database
 **Since:** 2.10.0
 
 **Usage**
-```
+
+```console
 clever database backups <database-id|addon-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 database-id|addon-id                    Any database ID (format: addon_UUID, postgresql_UUID, mysql_UUID, ...)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
 ```
@@ -828,18 +897,21 @@ database-id|addon-id                    Any database ID (format: addon_UUID, pos
 **Since:** 2.10.0
 
 **Usage**
-```
+
+```console
 clever database backups download <database-id|addon-id> <backup-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 database-id|addon-id                    Any database ID (format: addon_UUID, postgresql_UUID, mysql_UUID, ...)
 backup-id                               A Database backup ID (format: UUID)
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous) (deprecated, organisation is now resolved automatically)
     --output, --out <file-path>         Redirect the output of the command in a file
 ```
@@ -851,12 +923,14 @@ backup-id                               A Database backup ID (format: UUID)
 **Since:** 0.7.0
 
 **Usage**
-```
+
+```console
 clever delete [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -y, --yes                      Skip confirmation and delete the application directly
@@ -869,12 +943,14 @@ clever delete [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever deploy [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>                  Short name for the application
 -b, --branch <branch>                Branch to push (current branch by default)
 -e, --exit-on <step>                 Step at which the logs streaming is ended (deploy-start, deploy-end, never) (default: deploy-end)
@@ -892,12 +968,14 @@ clever deploy [options]
 **Since:** 1.6.0
 
 **Usage**
-```
+
+```console
 clever diag [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -908,12 +986,14 @@ clever diag [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever domain [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -926,17 +1006,20 @@ clever domain [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever domain add <fqdn> [options]
 ```
 
 **Arguments**
-```
+
+```console
 fqdn                           Domain name of the application
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -948,12 +1031,14 @@ fqdn                           Domain name of the application
 **Since:** 3.9.0
 
 **Usage**
-```
+
+```console
 clever domain diag [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
     --filter <text>            Check only domains containing the provided text
@@ -967,12 +1052,14 @@ clever domain diag [options]
 **Since:** 2.7.0
 
 **Usage**
-```
+
+```console
 clever domain favourite [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -985,17 +1072,20 @@ clever domain favourite [options]
 **Since:** 2.7.0
 
 **Usage**
-```
+
+```console
 clever domain favourite set <fqdn> [options]
 ```
 
 **Arguments**
-```
+
+```console
 fqdn                           Domain name of the application
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1007,12 +1097,14 @@ fqdn                           Domain name of the application
 **Since:** 2.7.0
 
 **Usage**
-```
+
+```console
 clever domain favourite unset [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1024,12 +1116,14 @@ clever domain favourite unset [options]
 **Since:** 3.9.0
 
 **Usage**
-```
+
+```console
 clever domain overview [options]
 ```
 
 **Options**
-```
+
+```console
     --filter <text>      Get only domains containing the provided text
 -F, --format <format>    Output format (human, json) (default: human)
 ```
@@ -1041,17 +1135,20 @@ clever domain overview [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever domain rm <fqdn> [options]
 ```
 
 **Arguments**
-```
+
+```console
 fqdn                           Domain name of the application
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1063,12 +1160,14 @@ fqdn                           Domain name of the application
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain [options]
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1082,17 +1181,20 @@ clever drain [options]
 **Since:** 4.11.0
 
 **Usage**
-```
+
+```console
 clever drain check <drain-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-id                       Drain ID
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1106,18 +1208,21 @@ drain-id                       Drain ID
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain create <drain-type> <drain-url> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-type                           Drain type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, syslog-tcp, syslog-udp)
 drain-url                            Drain URL
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>               Add-on ID or real ID
 -a, --alias <alias>                  Short name for the application
 -k, --api-key <api-key>              API key (for newrelic)
@@ -1136,17 +1241,20 @@ drain-url                            Drain URL
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain disable <drain-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-id                       Drain ID
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1159,17 +1267,20 @@ drain-id                       Drain ID
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain enable <drain-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-id                       Drain ID
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1182,17 +1293,20 @@ drain-id                       Drain ID
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain get <drain-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-id                       Drain ID
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1206,17 +1320,20 @@ drain-id                       Drain ID
 **Since:** 0.9.0
 
 **Usage**
-```
+
+```console
 clever drain remove <drain-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 drain-id                       Drain ID
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1229,12 +1346,14 @@ drain-id                       Drain ID
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -1245,12 +1364,14 @@ clever emails [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails add <email>
 ```
 
 **Arguments**
-```
+
+```console
 email    Email address
 ```
 
@@ -1261,7 +1382,8 @@ email    Email address
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails open
 ```
 
@@ -1272,12 +1394,14 @@ clever emails open
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails primary <email>
 ```
 
 **Arguments**
-```
+
+```console
 email    Email address
 ```
 
@@ -1288,12 +1412,14 @@ email    Email address
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails remove <email>
 ```
 
 **Arguments**
-```
+
+```console
 email    Email address
 ```
 
@@ -1304,12 +1430,14 @@ email    Email address
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever emails remove-all [options]
 ```
 
 **Options**
-```
+
+```console
 -y, --yes    Skip confirmation
 ```
 
@@ -1320,12 +1448,14 @@ clever emails remove-all [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever env [options]
 ```
 
 **Options**
-```
+
+```console
     --add-export               Display sourceable env variables setting (deprecated, use `--format shell` instead)
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -1340,12 +1470,14 @@ clever env [options]
 **Since:** 0.3.0
 
 **Usage**
-```
+
+```console
 clever env import [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
     --json                     Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects)
@@ -1353,22 +1485,25 @@ clever env import [options]
 
 ### env import-vars
 
-**Description:** Add or update environment variables named <variable-names> (comma-separated), taking their values from the current environment
+**Description:** Add or update environment variables named `<variable-names>` (comma-separated), taking their values from the current environment
 
 **Since:** 2.0.0
 
 **Usage**
-```
+
+```console
 clever env import-vars <variable-names> [options]
 ```
 
 **Arguments**
-```
+
+```console
 variable-names                 Comma separated list of names of the environment variables
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1380,40 +1515,46 @@ variable-names                 Comma separated list of names of the environment 
 **Since:** 0.3.0
 
 **Usage**
-```
+
+```console
 clever env rm <variable-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 variable-name                  Name of the environment variable
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
 
 ### env set
 
-**Description:** Add or update an environment variable named <variable-name> with the value <variable-value>
+**Description:** Add or update an environment variable named `<variable-name>` with the value `<variable-value>`
 
 **Since:** 0.3.0
 
 **Usage**
-```
+
+```console
 clever env set <variable-name> <variable-value> [options]
 ```
 
 **Arguments**
-```
+
+```console
 variable-name                  Name of the environment variable
 variable-value                 Value of the environment variable
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -1425,12 +1566,14 @@ variable-value                 Value of the environment variable
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever features [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -1441,12 +1584,14 @@ clever features [options]
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever features disable <features>
 ```
 
 **Arguments**
-```
+
+```console
 features    Comma-separated list of experimental features to manage
 ```
 
@@ -1457,12 +1602,14 @@ features    Comma-separated list of experimental features to manage
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever features enable <features>
 ```
 
 **Arguments**
-```
+
+```console
 features    Comma-separated list of experimental features to manage
 ```
 
@@ -1473,12 +1620,14 @@ features    Comma-separated list of experimental features to manage
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever features info <feature>
 ```
 
 **Arguments**
-```
+
+```console
 feature    Experimental feature to manage
 ```
 
@@ -1489,12 +1638,14 @@ feature    Experimental feature to manage
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever features list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -1505,7 +1656,8 @@ clever features list [options]
 **Since:** 0.1.0
 
 **Usage**
-```
+
+```console
 clever help
 ```
 
@@ -1516,7 +1668,8 @@ clever help
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s
 ```
 
@@ -1527,17 +1680,20 @@ clever k8s
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s activity <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
     --limit <limit>                     Number of events to fetch (1 to 1000) (default: 50)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
@@ -1550,17 +1706,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s add-persistent-storage <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -1571,17 +1730,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s create <cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-name                                     Kubernetes cluster name
 ```
 
 **Options**
-```
+
+```console
     --autoscaling                                Enable the cluster autoscaler
     --cluster-version <cluster-version>          Kubernetes version to deploy (e.g.: 1.36)
     --description <description>                  Free-form cluster description
@@ -1603,17 +1765,20 @@ cluster-name                                     Kubernetes cluster name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s delete <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 -y, --yes                               Skip confirmation prompts
 ```
@@ -1625,17 +1790,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s get <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1647,17 +1815,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s get-kubeconfig <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -1668,12 +1839,14 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.3.0
 
 **Usage**
-```
+
+```console
 clever k8s list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1685,7 +1858,8 @@ clever k8s list [options]
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups
 ```
 
@@ -1696,19 +1870,22 @@ clever k8s nodegroups
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups create <cluster-id|cluster-name> <nodegroup-name> <flavor:count> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 nodegroup-name                          Node group name (lowercase RFC 1123, max 63 chars)
 flavor:count                            Node group flavor and target node count (format: <flavor>:<count>, e.g.: XS:3)
 ```
 
 **Options**
-```
+
+```console
     --autoscaling                       Enable cluster autoscaler for this node group (requires --min and --max)
     --description <description>         Free-form node group description
     --max <max>                         Maximum node count when autoscaling is enabled
@@ -1724,18 +1901,21 @@ flavor:count                            Node group flavor and target node count 
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups delete <cluster-id|cluster-name> <nodegroup-id|nodegroup-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 -y, --yes                               Skip confirmation prompts
 ```
@@ -1747,18 +1927,21 @@ nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups get <cluster-id|cluster-name> <nodegroup-id|nodegroup-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1770,17 +1953,20 @@ nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups list <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1792,18 +1978,21 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s nodegroups update <cluster-id|cluster-name> <nodegroup-id|nodegroup-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 ```
 
 **Options**
-```
+
+```console
     --autoscaling                       Enable the cluster autoscaler
     --count <count>                     Target node count
     --description <description>         Free-form node group description
@@ -1821,12 +2010,14 @@ nodegroup-id|nodegroup-name             Kubernetes node group ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s quota [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1838,17 +2029,20 @@ clever k8s quota [options]
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s update <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
     --autoscaling                       Enable the cluster autoscaler
     --description <description>         Free-form cluster description
     --disable-autoscaling               Disable the cluster autoscaler
@@ -1864,17 +2058,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s version <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1886,17 +2083,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s version check <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -1908,17 +2108,20 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever k8s version update <cluster-id|cluster-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 cluster-id|cluster-name                 Kubernetes cluster ID or name
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
     --target <version>                  Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
@@ -1930,12 +2133,14 @@ cluster-id|cluster-name                 Kubernetes cluster ID or name
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -1946,12 +2151,14 @@ clever keycloak [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak disable-ng <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -1962,12 +2169,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak enable-ng <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -1978,17 +2187,20 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak get <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -1999,12 +2211,14 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak open <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2015,12 +2229,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak open logs <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2031,12 +2247,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak open webui <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2047,12 +2265,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak rebuild <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2063,12 +2283,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak restart <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2079,17 +2301,20 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak version <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2100,17 +2325,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak version check <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2121,17 +2349,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever keycloak version update <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name       Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
     --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
@@ -2142,18 +2373,21 @@ addon-id|addon-name       Add-on ID (or name, if unambiguous)
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever kv <kv-id|addon-id|addon-name> <command> [options]
 ```
 
 **Arguments**
-```
+
+```console
 kv-id|addon-id|addon-name               Add-on/Real ID (or name, if unambiguous) of a Materia KV or Redis® add-on
 command                                 The raw command to send to the Materia KV or Redis® add-on
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -2165,17 +2399,20 @@ command                                 The raw command to send to the Materia K
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever link <app-id|app-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 app-id|app-name                         Application ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>                     Short name for the application
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -2187,12 +2424,14 @@ app-id|app-name                         Application ID (or name, if unambiguous)
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever login [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>                     Profile alias (default: default)
     --api-host <url>                    API host URL override
     --auth-bridge-host <url>            Auth bridge URL override
@@ -2211,12 +2450,14 @@ clever login [options]
 **Since:** 1.0.0
 
 **Usage**
-```
+
+```console
 clever logout [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>    Alias of the profile to log out
 ```
 
@@ -2227,12 +2468,14 @@ clever logout [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever logs [options]
 ```
 
 **Options**
-```
+
+```console
     --addon <addon-id>                 Add-on ID or real ID
     --after, --since <after>           Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 -a, --alias <alias>                    Short name for the application
@@ -2250,12 +2493,14 @@ clever logs [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever make-default <app-alias>
 ```
 
 **Arguments**
-```
+
+```console
 app-alias    Application alias
 ```
 
@@ -2266,12 +2511,14 @@ app-alias    Application alias
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2282,17 +2529,20 @@ clever matomo [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo get <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2303,12 +2553,14 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo open <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2319,12 +2571,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo open logs <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2335,12 +2589,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo open webui <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2351,12 +2607,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo rebuild <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2367,12 +2625,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever matomo restart <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2383,12 +2643,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2399,17 +2661,20 @@ clever metabase [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase get <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2420,12 +2685,14 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase open <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2436,12 +2703,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase open logs <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2452,12 +2721,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase open webui <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2468,12 +2739,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase rebuild <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2484,12 +2757,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase restart <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -2500,17 +2775,20 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase version <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2521,17 +2799,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase version check <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2542,17 +2823,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever metabase version update <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name       Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
     --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
@@ -2563,12 +2847,14 @@ addon-id|addon-name       Add-on ID (or name, if unambiguous)
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
@@ -2580,17 +2866,20 @@ clever ng [options]
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng create <ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 ng-label                                Network Group label
 ```
 
 **Options**
-```
+
+```console
     --description <description>         Network Group description
     --link <members-ids>                Comma separated list of members IDs to link to a Network Group (app_xxx, external_xxx, mysql_xxx, postgresql_xxx, redis_xxx, etc.)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
@@ -2604,19 +2893,22 @@ ng-label                                Network Group label
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng create external <external-peer-label> <ng-id|ng-label> <public-key> [options]
 ```
 
 **Arguments**
-```
+
+```console
 external-peer-label                     External peer label
 ng-id|ng-label                          Network Group ID or label
 public-key                              WireGuard public key of the external peer to link to a Network Group
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2627,17 +2919,20 @@ public-key                              WireGuard public key of the external pee
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng delete <ng-id|ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 ng-id|ng-label                          Network Group ID or label
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2648,18 +2943,21 @@ ng-id|ng-label                          Network Group ID or label
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng delete external <peer-id|peer-label> <ng-id|ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 peer-id|peer-label                      External peer ID or label
 ng-id|ng-label                          Network Group ID or label
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2670,17 +2968,20 @@ ng-id|ng-label                          Network Group ID or label
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng get <id|label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 id|label                                ID or Label of a Network Group, a member or an (external) peer
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
     --type <resource-type>              Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
@@ -2693,18 +2994,21 @@ id|label                                ID or Label of a Network Group, a member
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng get-config <peer-id|peer-label> <ng-id|ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 peer-id|peer-label                      External peer ID or label
 ng-id|ng-label                          Network Group ID or label
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2715,18 +3019,21 @@ ng-id|ng-label                          Network Group ID or label
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng link <id> <ng-id|ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 id                                      ID of a resource to (un)link to a Network Group
 ng-id|ng-label                          Network Group ID or label
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2737,17 +3044,20 @@ ng-id|ng-label                          Network Group ID or label
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng search <id|label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 id|label                                ID or Label of a Network Group, a member or an (external) peer
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
     --type <resource-type>              Type of resource to look for (NetworkGroup, Member, CleverPeer, ExternalPeer)
@@ -2760,18 +3070,21 @@ id|label                                ID or Label of a Network Group, a member
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever ng unlink <id> <ng-id|ng-label> [options]
 ```
 
 **Arguments**
-```
+
+```console
 id                                      ID of a resource to (un)link to a Network Group
 ng-id|ng-label                          Network Group ID or label
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2782,12 +3095,14 @@ ng-id|ng-label                          Network Group ID or label
 **Since:** 0.6.1
 
 **Usage**
-```
+
+```console
 clever notify-email [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
     --list-all                          List all notifications for your user or for an organisation with the '--org' option
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
@@ -2800,17 +3115,20 @@ clever notify-email [options]
 **Since:** 0.6.1
 
 **Usage**
-```
+
+```console
 clever notify-email add --notify <email-address|user-id|organisation> <name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 name                                                 Notification name
 ```
 
 **Options**
-```
+
+```console
     --notify <email-address|user-id|organisation>    Notify a user, a specific email address or the whole organisation (multiple values allowed, comma separated) (required)
     --event <event-type>                             Restrict notifications to specific event types
 -o, --org, --owner <org-id|org-name>                 Organisation to target by its ID (or name, if unambiguous)
@@ -2824,17 +3142,20 @@ name                                                 Notification name
 **Since:** 0.6.1
 
 **Usage**
-```
+
+```console
 clever notify-email remove <notification-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 notification-id                         Notification ID
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
@@ -2845,7 +3166,8 @@ notification-id                         Notification ID
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers
 ```
 
@@ -2856,17 +3178,20 @@ clever oauth-consumers
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers create <name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 name                                    Consumer name
 ```
 
 **Options**
-```
+
+```console
     --base-url <url>                    OAuth callback base URL
 -d, --description <description>         Consumer description
 -F, --format <format>                   Output format (human, json) (default: human)
@@ -2883,17 +3208,20 @@ name                                    Consumer name
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers delete <consumer-key|consumer-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -y, --yes                     Skip confirmation prompts
 ```
 
@@ -2904,17 +3232,20 @@ consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers get <consumer-key|consumer-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>         Output format (human, json) (default: human)
     --with-secret             Include the consumer secret in the output
 ```
@@ -2926,12 +3257,14 @@ consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -2942,12 +3275,14 @@ clever oauth-consumers list [options]
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers open <consumer-key|consumer-name>
 ```
 
 **Arguments**
-```
+
+```console
 consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 ```
 
@@ -2958,17 +3293,20 @@ consumer-key|consumer-name    OAuth consumer key (or name, if unambiguous)
 **Since:** 4.8.0
 
 **Usage**
-```
+
+```console
 clever oauth-consumers update <consumer-key|consumer-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 consumer-key|consumer-name         OAuth consumer key (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
     --base-url <url>               OAuth callback base URL
 -d, --description <description>    Consumer description
 -F, --format <format>              Output format (human, json) (default: human)
@@ -2985,12 +3323,14 @@ consumer-key|consumer-name         OAuth consumer key (or name, if unambiguous)
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever open [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3002,12 +3342,14 @@ clever open [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3018,12 +3360,14 @@ clever otoroshi [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi disable-ng <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3034,12 +3378,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi enable-ng <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3050,17 +3396,20 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi get <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3071,12 +3420,14 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 4.4.0
 
 **Usage**
-```
+
+```console
 clever otoroshi get-config <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3087,12 +3438,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi open <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3103,12 +3456,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi open logs <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3119,12 +3474,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 4.9.0
 
 **Usage**
-```
+
+```console
 clever otoroshi open swaggerui <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3135,12 +3492,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi open webui <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3151,12 +3510,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi rebuild <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3167,12 +3528,14 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi restart <addon-id|addon-name>
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
@@ -3183,17 +3546,20 @@ addon-id|addon-name    Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi version <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3204,17 +3570,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi version check <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name      Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3225,17 +3594,20 @@ addon-id|addon-name      Add-on ID (or name, if unambiguous)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever otoroshi version update <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name       Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
     --target <version>    Target version to upgrade to (e.g.: 24, 2.4, 2.4.1)
 ```
 
@@ -3246,12 +3618,14 @@ addon-id|addon-name       Add-on ID (or name, if unambiguous)
 **Since:** 0.10.1
 
 **Usage**
-```
+
+```console
 clever profile [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3262,12 +3636,14 @@ clever profile [options]
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever profile list [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3278,7 +3654,8 @@ clever profile list [options]
 **Since:** 3.11.0
 
 **Usage**
-```
+
+```console
 clever profile open
 ```
 
@@ -3289,12 +3666,14 @@ clever profile open
 **Since:** 4.6.0
 
 **Usage**
-```
+
+```console
 clever profile switch [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>    Alias of the profile to switch to
 ```
 
@@ -3305,12 +3684,14 @@ clever profile switch [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever published-config [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json, shell) (default: human)
@@ -3324,12 +3705,14 @@ clever published-config [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever published-config import [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
     --json                     Import variables as JSON (an array of { "name": "THE_NAME", "value": "THE_VALUE" } objects)
@@ -3342,40 +3725,46 @@ clever published-config import [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever published-config rm <variable-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 variable-name                  Name of the environment variable
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
 
 ### published-config set
 
-**Description:** Add or update a published configuration item named <variable-name> with the value <variable-value>
+**Description:** Add or update a published configuration item named `<variable-name>` with the value `<variable-value>`
 
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever published-config set <variable-name> <variable-value> [options]
 ```
 
 **Arguments**
-```
+
+```console
 variable-name                  Name of the environment variable
 variable-value                 Value of the environment variable
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3387,12 +3776,14 @@ variable-value                 Value of the environment variable
 **Since:** 0.4.0
 
 **Usage**
-```
+
+```console
 clever restart [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
     --commit <commit-id>       Restart the application with a specific commit ID
@@ -3409,12 +3800,14 @@ clever restart [options]
 **Since:** 0.4.0
 
 **Usage**
-```
+
+```console
 clever scale [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>             Short name for the application
     --app <app-id|app-name>     Application to manage by its ID (or name, if unambiguous)
     --build-flavor <flavor>     The size of the build instance, or 'disabled' if you want to disable dedicated build instances
@@ -3433,12 +3826,14 @@ clever scale [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever service [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -3454,17 +3849,20 @@ clever service [options]
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever service link-addon <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name            Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3476,17 +3874,20 @@ addon-id|addon-name            Add-on ID (or name, if unambiguous)
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever service link-app <app-id|app-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 app-id|app-name                Application ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3498,17 +3899,20 @@ app-id|app-name                Application ID (or name, if unambiguous)
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever service unlink-addon <addon-id|addon-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 addon-id|addon-name            Add-on ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3520,17 +3924,20 @@ addon-id|addon-name            Add-on ID (or name, if unambiguous)
 **Since:** 0.5.0
 
 **Usage**
-```
+
+```console
 clever service unlink-app <app-id|app-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 app-id|app-name                Application ID (or name, if unambiguous)
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3542,12 +3949,14 @@ app-id|app-name                Application ID (or name, if unambiguous)
 **Since:** 0.7.0
 
 **Usage**
-```
+
+```console
 clever ssh [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>                    Short name for the application
     --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
 -c, --command <command>                Execute a command on the remote instance and exit
@@ -3561,12 +3970,14 @@ clever ssh [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever ssh-keys [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3577,12 +3988,14 @@ clever ssh-keys [options]
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever ssh-keys add <ssh-key-name> <ssh-key-path>
 ```
 
 **Arguments**
-```
+
+```console
 ssh-key-name    SSH key name
 ssh-key-path    SSH public key path (.pub)
 ```
@@ -3594,7 +4007,8 @@ ssh-key-path    SSH public key path (.pub)
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever ssh-keys open
 ```
 
@@ -3605,12 +4019,14 @@ clever ssh-keys open
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever ssh-keys remove <ssh-key-name>
 ```
 
 **Arguments**
-```
+
+```console
 ssh-key-name    SSH key name
 ```
 
@@ -3621,12 +4037,14 @@ ssh-key-name    SSH key name
 **Since:** 3.13.0
 
 **Usage**
-```
+
+```console
 clever ssh-keys remove-all [options]
 ```
 
 **Options**
-```
+
+```console
 -y, --yes    Skip confirmation and remove all SSH keys directly
 ```
 
@@ -3637,12 +4055,14 @@ clever ssh-keys remove-all [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever status [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -3655,12 +4075,14 @@ clever status [options]
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever stop [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
@@ -3672,12 +4094,14 @@ clever stop [options]
 **Since:** 2.3.0
 
 **Usage**
-```
+
+```console
 clever tcp-redirs [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -3690,12 +4114,14 @@ clever tcp-redirs [options]
 **Since:** 2.3.0
 
 **Usage**
-```
+
+```console
 clever tcp-redirs add --namespace <namespace> [options]
 ```
 
 **Options**
-```
+
+```console
     --namespace <namespace>    Namespace in which the TCP redirection should be (required)
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -3708,12 +4134,14 @@ clever tcp-redirs add --namespace <namespace> [options]
 **Since:** 2.3.0
 
 **Usage**
-```
+
+```console
 clever tcp-redirs list-namespaces [options]
 ```
 
 **Options**
-```
+
+```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
@@ -3726,17 +4154,20 @@ clever tcp-redirs list-namespaces [options]
 **Since:** 2.3.0
 
 **Usage**
-```
+
+```console
 clever tcp-redirs remove --namespace <namespace> <port> [options]
 ```
 
 **Arguments**
-```
+
+```console
 port                           port identifying the TCP redirection
 ```
 
 **Options**
-```
+
+```console
     --namespace <namespace>    Namespace in which the TCP redirection should be (required)
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
@@ -3744,17 +4175,19 @@ port                           port identifying the TCP redirection
 
 ## tokens
 
-**Description:** Manage API tokens to query Clever Cloud API from https://api-bridge.clever-cloud.com
+**Description:** Manage API tokens to query Clever Cloud API from <https://api-bridge.clever-cloud.com>
 
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever tokens [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>    Output format (human, json) (default: human)
 ```
 
@@ -3765,17 +4198,20 @@ clever tokens [options]
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever tokens create <api-token-name> [options]
 ```
 
 **Arguments**
-```
+
+```console
 api-token-name                   API token name
 ```
 
 **Options**
-```
+
+```console
 -e, --expiration <expiration>    Duration until API token expiration (e.g.: 1h, 4d, 2w, 6M) (default: 1y)
 -F, --format <format>            Output format (human, json) (default: human)
 ```
@@ -3787,12 +4223,14 @@ api-token-name                   API token name
 **Since:** 3.12.0
 
 **Usage**
-```
+
+```console
 clever tokens revoke <api-token-id>
 ```
 
 **Arguments**
-```
+
+```console
 api-token-id    API token ID
 ```
 
@@ -3803,12 +4241,14 @@ api-token-id    API token ID
 **Since:** 0.2.0
 
 **Usage**
-```
+
+```console
 clever unlink <app-alias>
 ```
 
 **Arguments**
-```
+
+```console
 app-alias    Application alias
 ```
 
@@ -3819,7 +4259,8 @@ app-alias    Application alias
 **Since:** 1.0.0
 
 **Usage**
-```
+
+```console
 clever version
 ```
 
@@ -3830,12 +4271,14 @@ clever version
 **Since:** 0.6.0
 
 **Usage**
-```
+
+```console
 clever webhooks [options]
 ```
 
 **Options**
-```
+
+```console
 -F, --format <format>                   Output format (human, json) (default: human)
     --list-all                          List all notifications for your user or for an organisation with the '--org' option
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
@@ -3848,18 +4291,21 @@ clever webhooks [options]
 **Since:** 0.6.0
 
 **Usage**
-```
+
+```console
 clever webhooks add <name> <url> [options]
 ```
 
 **Arguments**
-```
+
+```console
 name                                    Notification name
 url                                     Webhook URL
 ```
 
 **Options**
-```
+
+```console
     --event <event-type>                Restrict notifications to specific event types
     --format <format>                   Format of the body sent to the webhook ('raw', 'slack', 'gitter', or 'flowdock') (default: raw)
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
@@ -3873,21 +4319,24 @@ url                                     Webhook URL
 **Since:** 0.6.0
 
 **Usage**
-```
+
+```console
 clever webhooks remove <notification-id> [options]
 ```
 
 **Arguments**
-```
+
+```console
 notification-id                         Notification ID
 ```
 
 **Options**
-```
+
+```console
 -o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
 ```
 
 ## Clever Cloud complete documentation
 
-For more comprehensive information about Clever Cloud, read the complete documentation: https://www.clever-cloud.com/developers/doc/
-Clever Cloud complete documentation is available in a LLM-optimized format: https://www.clever-cloud.com/developers/llms.txt
+For more comprehensive information about Clever Cloud, read the complete documentation: <https://www.clever-cloud.com/developers/doc/>
+Clever Cloud complete documentation is available in a LLM-optimized format: <https://www.clever-cloud.com/developers/llms.txt>

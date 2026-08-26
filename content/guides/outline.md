@@ -205,14 +205,14 @@ clever scale --build-flavor M
 
 Outline needs at least one authentication method before users can sign in and supports the following methods:
 
-| Authentication method | Required variables | Callback URL |
-| --- | --- | --- |
-| Discord | `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET` | `$URL/auth/discord.callback` |
-| Email magic links | `SMTP_HOST` or `SMTP_SERVICE`, `SMTP_FROM_EMAIL` | — |
-| Google | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | `$URL/auth/google.callback` |
-| Microsoft Entra ID | `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET` | `$URL/auth/azure.callback` |
-| OpenID Connect | `OIDC_CLIENT_ID`, `OIDC_CLIENT_SECRET`, `OIDC_ISSUER_URL` | `$URL/auth/oidc.callback` |
-| Slack | `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET` | `$URL/auth/slack.callback` |
+| Authentication method | Required variables                                        | Callback URL                 |
+| --------------------- | --------------------------------------------------------- | ---------------------------- |
+| Discord               | `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET`              | `$URL/auth/discord.callback` |
+| Email magic links     | `SMTP_HOST` or `SMTP_SERVICE`, `SMTP_FROM_EMAIL`          | —                            |
+| Google                | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`                | `$URL/auth/google.callback`  |
+| Microsoft Entra ID    | `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`                  | `$URL/auth/azure.callback`   |
+| OpenID Connect        | `OIDC_CLIENT_ID`, `OIDC_CLIENT_SECRET`, `OIDC_ISSUER_URL` | `$URL/auth/oidc.callback`    |
+| Slack                 | `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`                  | `$URL/auth/slack.callback`   |
 
 Email magic links require a complete [SMTP configuration](https://docs.getoutline.com/s/hosting/doc/smtp-cqCJyZGMIB), including the credentials and connection settings required by your email provider. Configure the matching callback URL in your provider, then set its variables. For OpenID Connect, also allow the application URL (`$URL`) as a post-logout redirect URI if the provider exposes a logout endpoint. For example:
 
@@ -267,5 +267,5 @@ Replace the example values with the versions you selected. Outline applies pendi
   {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="pg" >}}
   {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Explore managed Redis databases" icon="redis" >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="fsbucket" >}}
-  {{< card link="https://docs.getoutline.com/s/hosting" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
+  {{< card link="<https://docs.getoutline.com/s/hosting>" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
 {{< /cards >}}

@@ -16,7 +16,7 @@ This is a product matrix showing the services that are available with our Terraf
 ## Add-ons available on Terraform and K8S-Operator
 
 | Product         | Terraform | K8S operator |
-|-----------------|-----------|--------------|
+| --------------- | --------- | ------------ |
 | Cellar          | ✅        |              |
 | Config Provider | ✅        | ✅           |
 | Elastic Stack   | ✅        | ✅           |
@@ -36,7 +36,7 @@ This is a product matrix showing the services that are available with our Terraf
 ## Runtimes available on Terraform and K8S-Operator
 
 | Product     | Terraform | K8S operator |
-|-------------|-----------|--------------|
+| ----------- | --------- | ------------ |
 | .NET        | ✅        |              |
 | Docker      | ✅        |              |
 | FrankenPHP  | ✅        |              |

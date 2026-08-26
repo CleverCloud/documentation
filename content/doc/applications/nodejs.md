@@ -45,8 +45,9 @@ To create a new Node.js & Bun application, use the [Clever Cloud Console](https:
 ```bash
 clever create --type node
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your Node.js & Bun application
 
@@ -54,11 +55,11 @@ clever create --type node
 
 Be sure that:
 
-* You listen on HTTP port **0.0.0.0:8080**
-* You have a `package.json` file
-* Your `package.json` either has a **scripts.start** or a **main** field
-* The folder `/node_modules` is mentioned in your `.gitignore` file
-* You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
+- You listen on HTTP port **0.0.0.0:8080**
+- You have a `package.json` file
+- Your `package.json` either has a **scripts.start** or a **main** field
+- The folder `/node_modules` is mentioned in your `.gitignore` file
+- You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
 
 ### Memory management
 
@@ -111,7 +112,7 @@ You can use additional scripts as an alternative to [Clever Cloud hooks](/doc/de
 
 If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
 
-```json  {linenos=table}
+```json {linenos=table}
 {
   "name" : { … },
   "engines": { … },
@@ -132,12 +133,12 @@ If your application has private dependencies, you can add a [private SSH key](/d
 
 Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
 
-* `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
-* `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
-* `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
-* `pnpm`: uses [pnpm](https://pnpm.io)
-* `yarn-berry`: uses [Yarn](https://yarnpkg.com/)
-* `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
+- `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
+- `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
+- `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
+- `pnpm`: uses [pnpm](https://pnpm.io)
+- `yarn-berry`: uses [Yarn](https://yarnpkg.com/)
+- `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
 
 > [!NOTE] Yarn 1.x and 2.x deprecation
 > `yarn` and `yarn2` are still valid values but the Yarn team no longer maintains 1.x and 2.x branches. Use `yarn-berry` instead.
@@ -153,7 +154,7 @@ deno = "latest"
 
 Then it will be installed during deployment. You can replace `latest` with a specific version.
 
-* [Lume with Deno guide](/guides/lume-deno/)
+- [Lume with Deno guide](/guides/lume-deno/)
 
 ### Automatic detection
 
@@ -182,7 +183,7 @@ If you use Bun, your application is deployed with the latest available version o
 
 Bun includes a [native S3 client](https://bun.sh/docs/api/s3) that works with [Cellar](/doc/addons/cellar/#using-sdks), the Clever Cloud S3-compatible object storage service, with no external dependency required.
 
-* [Learn more about Bun native Clever Cloud add-ons support with examples](https://github.com/CleverCloud/bun-addons-examples)
+- [Learn more about Bun native Clever Cloud add-ons support with examples](https://github.com/CleverCloud/bun-addons-examples)
 
 ### pnpm and Yarn versions
 
@@ -196,8 +197,8 @@ To load a specific version, set the `packageManager` field in your `package.json
 
 This is the default way to manage version for pnpm and Yarn when a new project is initialized. It will define the version used for dependency installation during the build phase and in run command. Yarn `1.22.22` remains the default system version included for legacy reasons.
 
-* If `CC_NODE_BUILD_TOOL` is set to `yarn-berry`, the latest 4.x packaged version of Yarn becomes the system default
-* If you use Yarn 1.x or Yarn 2.x, a deprecation warning is displayed during deployment as they're not maintained anymore
+- If `CC_NODE_BUILD_TOOL` is set to `yarn-berry`, the latest 4.x packaged version of Yarn becomes the system default
+- If you use Yarn 1.x or Yarn 2.x, a deprecation warning is displayed during deployment as they're not maintained anymore
 
 > [!TIP]
 > If you set `CC_NODE_BUILD_TOOL` to `yarn-berry` in any Clever Cloud runtime, Yarn 4.x becomes the default system version.

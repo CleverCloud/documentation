@@ -41,6 +41,7 @@ To create a new Static application, use the [Clever Cloud Console](https://conso
 ```bash
 clever create --type static
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
@@ -143,6 +144,7 @@ Supported Static Site Generators (SSG) are:
 - Detected file: `config.toml`
 
 ## 🎓 Static Site Generators (SSG) guides
+
 {{% content-raw "static-guides" %}}
 
 {{% content "url_healthcheck" %}}

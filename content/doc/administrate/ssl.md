@@ -37,12 +37,16 @@ Clever Cloud automatically generates and renews TLS certificates for your domain
 ### Alternative Options
 
 #### Immediate Certificate Coverage
+
 To avoid any period without certificate coverage (e.g., during migration from another provider):
+
 1. [Upload your existing certificate](#uploading-my-own-certificates) first
 2. Let Clever Cloud generate a new certificate automatically when your uploaded one expires
 
 #### Wildcard Certificates
+
 Clever Cloud's automatic certificate generation doesn't support wildcard certificates. For wildcard certificates, you can:
+
 - Generate your own Let's Encrypt certificate
 - Purchase a commercial certificate
 - [Contact support](https://console.clever-cloud.com/ticket-center-choice) for a quote on managed certificate services
@@ -128,12 +132,12 @@ You should note that `.pem`` files use the unix way of terminating lines with a 
 
 You `.pem` file must be correctly formatted to successfully upload your certificate. This checklist might help you troubleshoot uncesuccessful certificate submission.
 
-| Certificate Specifications |
-|------------------------|
-| ✅   The private key is included |
-| ✅   Keys lenght are RSA and either 2048 or 4096 |
-| ✅   ECDSA is not used to create your certificate |
-| ✅   The line feed (LF) characters at the end |
+| Certificate Specifications                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------ |
+| ✅   The private key is included                                                                                                     |
+| ✅   Keys lenght are RSA and either 2048 or 4096                                                                                     |
+| ✅   ECDSA is not used to create your certificate                                                                                    |
+| ✅   The line feed (LF) characters at the end                                                                                        |
 | ✅   The certificate chain include your certificate together with all the intermediary CA certificates that signed it, in that order |
 
 ## Sending Certificates Manually

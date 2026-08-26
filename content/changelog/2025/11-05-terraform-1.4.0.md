@@ -17,4 +17,4 @@ excludeSearch: true
 
 The [1.4.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.4.0) of the Clever Cloud Terraform provider is available. It now uses API when available for Keycloak, Metabase, Otoroshi, rather than [service dependencies](/changelog/2025/10-22-operators-cleanup/). It brings support for [Elastic Stack](/doc/addons/elastic/) (Elasticsearch with APM, Kibana), load balancer datasource, and replaces applications when the region is changed.
 
-* Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

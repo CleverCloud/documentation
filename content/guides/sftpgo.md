@@ -164,15 +164,15 @@ A new Cellar add-on does not contain a bucket. Create one with Cellar Explorer i
 
 Create a user in the SFTPGo web administration interface and select **S3-compatible** as its storage provider:
 
-| Setting | Value |
-| ------- | ----- |
-| Bucket | Your Cellar bucket name |
-| Home Dir | `/tmp/sftpgo` |
-| Region | `default` |
-| Access Key | The `CELLAR_ADDON_KEY_ID` value |
-| Access Secret | The `CELLAR_ADDON_KEY_SECRET` value |
-| Endpoint | `https://` followed by the `CELLAR_ADDON_HOST` value |
-| Use path-style addressing | Enabled |
+| Setting                   | Value                                                |
+| ------------------------- | ---------------------------------------------------- |
+| Bucket                    | Your Cellar bucket name                              |
+| Home Dir                  | `/tmp/sftpgo`                                        |
+| Region                    | `default`                                            |
+| Access Key                | The `CELLAR_ADDON_KEY_ID` value                      |
+| Access Secret             | The `CELLAR_ADDON_KEY_SECRET` value                  |
+| Endpoint                  | `https://` followed by the `CELLAR_ADDON_HOST` value |
+| Use path-style addressing | Enabled                                              |
 
 SFTPGo requires a local home directory for temporary files when using S3-compatible storage. The startup task creates `/tmp/sftpgo` on every application instance. The open-source edition [uses unlinked local files for transfers to and from object storage](https://github.com/drakkan/sftpgo/discussions/1968), so a transfer can temporarily consume its full size on the instance disk. Account for the largest expected files and simultaneous transfers when choosing the run instance; completed files remain stored in Cellar, but in-progress transfers can fail if local disk is exhausted.
 
@@ -271,5 +271,5 @@ Use any SFTP client with the following settings:
   {{< card link="/developers/doc/applications/linux" title="Linux applications" subtitle="Deploy any application" icon="linux" >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar object storage" subtitle="Store files with an S3 API" icon="database" >}}
   {{< card link="/developers/doc/addons/fs-bucket" title="FS Buckets" subtitle="Store files with SFTP access" icon="fsbucket" >}}
-  {{< card link="https://docs.sftpgo.com/latest/" title="SFTPGo documentation" subtitle="Configure users and storage" icon="book-open" >}}
+  {{< card link="<https://docs.sftpgo.com/latest/>" title="SFTPGo documentation" subtitle="Configure users and storage" icon="book-open" >}}
 {{< /cards >}}

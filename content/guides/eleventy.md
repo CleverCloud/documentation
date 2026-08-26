@@ -47,5 +47,5 @@ clever env set CC_BUILD_COMMAND "npx @11ty/eleventy"
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="https://www.11ty.dev/docs/" title="Learn Eleventy (11ty)" subtitle="How to write and organize your content" icon="11ty" >}}
+  {{< card link="<https://www.11ty.dev/docs/>" title="Learn Eleventy (11ty)" subtitle="How to write and organize your content" icon="11ty" >}}
 {{< /cards >}}

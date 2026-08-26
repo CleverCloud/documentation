@@ -40,17 +40,17 @@ There are many ways to write web applications in Haskell, from raw [WAI](https:/
 
 Be sure that:
 
-* you have pushed in **master branch**
-* you listen on **port 8080**
-* you have one and only one binary target in your [`.cabal` file](#dependencies)
-* your project has a `stack.yaml` file
+- you have pushed in **master branch**
+- you listen on **port 8080**
+- you have one and only one binary target in your [`.cabal` file](#dependencies)
+- your project has a `stack.yaml` file
 
 The steps ran in order are:
 
-* `stack setup`
-* `stack install --only-dependencies`
-* `stack install`
-* `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
+- `stack setup`
+- `stack install --only-dependencies`
+- `stack install`
+- `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
 
 The executable built by `stack build` (or the command you specify) must start a web server listening on `0.0.0.0:8080`.
 

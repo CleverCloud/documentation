@@ -19,9 +19,9 @@ Performing a performance test is the best way to determine how your application 
 
 In general, these tests make it possible to identify:
 
-* the maximum number of concurrent users
-* whether the current resources are sufficient to operate your application in good conditions
-* and the maximum operational capacity of your application
+- the maximum number of concurrent users
+- whether the current resources are sufficient to operate your application in good conditions
+- and the maximum operational capacity of your application
 
 ## Considerations to take into account
 
@@ -33,19 +33,19 @@ In case you have dedicated frontends, note that too much load could impact your 
 
 Performing these tests will allow you:
 
-* to have perspective on the performance and stability of your infrastructure.
-* to be able to identify bottlenecks in particular stress scenarios
-* to identify and remove any weaknesses in architectures via supervision and performance management strategies and increase scalability
+- to have perspective on the performance and stability of your infrastructure.
+- to be able to identify bottlenecks in particular stress scenarios
+- to identify and remove any weaknesses in architectures via supervision and performance management strategies and increase scalability
 
 The determining elements are:
 
-* The response time of your transactions (poorly optimized requests, etc.)
-* The performance of the application (single-threaded application, expectations of external services, generation of logs in a file, etc.)
-* The performance of managed services such as databases (lack of indexes, unnecessary iterations, etc.)
-* Software design in general
-* Hardware limitations such as CPU, RAM, network, etc.
-* bad middleware configurations (databases, server, etc.)
-* The response time between the client and the application
+- The response time of your transactions (poorly optimized requests, etc.)
+- The performance of the application (single-threaded application, expectations of external services, generation of logs in a file, etc.)
+- The performance of managed services such as databases (lack of indexes, unnecessary iterations, etc.)
+- Software design in general
+- Hardware limitations such as CPU, RAM, network, etc.
+- bad middleware configurations (databases, server, etc.)
+- The response time between the client and the application
 
 ## Online and local load tools
 
@@ -55,15 +55,15 @@ Choosing a load-testing solution will depend on several factors. If simplicity a
 
 Online services are available to perform your tests. Most offer typical user journey scenarios to allow you to simulate a user:
 
-* [K6](https://k6.io)
-* [Octoperf](https://octoperf.com)
-* [Loader.io](https://loader.io)
+- [K6](https://k6.io)
+- [Octoperf](https://octoperf.com)
+- [Loader.io](https://loader.io)
 
 ### Local, with open source alternatives
 
 Some open source services to be installed on an infrastructure (workstation or IaaS in the best case) are also available:
 
-* [Gatling](https://gatling.io)
-* [Drill](https://github.com/fcsonline/drill)
-* [Locust](https://locust.io)
-* [Jmeter](https://jmeter.apache.org)
+- [Gatling](https://gatling.io)
+- [Drill](https://github.com/fcsonline/drill)
+- [Locust](https://locust.io)
+- [Jmeter](https://jmeter.apache.org)

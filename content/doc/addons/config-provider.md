@@ -25,15 +25,15 @@ Let's take an example with 2 Node.js applications exposing some REST APIs: `ship
 
 The `shipping-api` application needs the following environment variables:
 
-* `PULSAR_TOPIC=order`
-* `USER_API_HOST=https://user.example.com/api`
-* `ENABLE_PARTNERS=true`
+- `PULSAR_TOPIC=order`
+- `USER_API_HOST=https://user.example.com/api`
+- `ENABLE_PARTNERS=true`
 
 The `payment-api` application needs the following environment variables:
 
-* `PULSAR_TOPIC=order`
-* `USER_API_HOST=https://user.example.com/api`
-* `ENABLE_SEPA=false`
+- `PULSAR_TOPIC=order`
+- `USER_API_HOST=https://user.example.com/api`
+- `ENABLE_SEPA=false`
 
 ![Two Node.js applications with their own environment variables](/images/schema-config-provider-01.svg "Two Node.js applications with their own environment variables")
 
@@ -72,10 +72,10 @@ At any point, you can link/unlink an application from the configuration provider
 
 ## Details and behaviour
 
-* As with any other add-on, you can only link a configuration provider to applications that are in the same organisation.
-* Variables defined directly in the application override the ones injected from the configuration provider.
-* When you update the variables of a configuration provider, all applications linked to it will be automatically restarted.
-* You can create multiple configuration providers in your organisation and link them to different applications.
+- As with any other add-on, you can only link a configuration provider to applications that are in the same organisation.
+- Variables defined directly in the application override the ones injected from the configuration provider.
+- When you update the variables of a configuration provider, all applications linked to it will be automatically restarted.
+- You can create multiple configuration providers in your organisation and link them to different applications.
 
 ## Pricing
 

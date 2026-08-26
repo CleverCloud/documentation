@@ -16,6 +16,6 @@ At the bottom of the page, you'll find an integrated terminal that works like a 
 
 KV Explorer is in Beta testing phase and we'll improve it over the coming months, thanks to your feedback and suggestions.
 
-- [ Share your feedback on KV Explorer](https://github.com/CleverCloud/Community/discussions/categories/kv-explorer)
+- [Share your feedback on KV Explorer](https://github.com/CleverCloud/Community/discussions/categories/kv-explorer)
 
 ![KV Explorer](/images/kv-explorer.webp "The KV Explorer tool in the Console")

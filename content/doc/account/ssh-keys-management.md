@@ -149,7 +149,7 @@ clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yo
 
 If you want to clone a repository from a private repository, you can add a [private SSH key](/doc/reference/common-configuration#private-ssh-key) to an application by creating a folder clevercloud at the root of your application and creating the file `clevercloud/ssh.json` with the following content:
 
-```json{filename="clevercloud/ssh.json"}
+```json {filename="clevercloud/ssh.json"}
 {
     "privateKeyFile": "path/to/file"
 }

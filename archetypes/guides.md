@@ -18,9 +18,9 @@ draft: true
 
 {{% steps %}}
 
-###
+### First step
 
-###
+### Second step
 
 {{% /steps %}}
 

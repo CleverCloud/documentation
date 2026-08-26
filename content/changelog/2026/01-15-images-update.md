@@ -14,46 +14,46 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.17.13
-  * cURL 8.18.0
-  * NGINX 1.28.1
-  * OAuth2 Proxy 7.13.0
-  * Otoroshictl 0.0.13
-  * Poppler 26.01.0
-  * Tailscale 1.92.4
-* **Docker:**
-  * Update to 29.1.4
-* **Elixir:**
-  * Update to 1.19.5
-  * Erlang 28.3
-* **Node.js:**
-  * Update to 24.13.0 (npm 11.6.2)
-  * Bun 1.3.6
-* **PHP:**
-  * Update to 8.1.34
-  * Update to 8.2.30
-  * Update to 8.3.29
-  * Update to 8.4.16
-  * Update to 8.5.1
-  * Composer 2.9.2
-  * Symfony CLI 5.16.1
-  * Blackfire extension 1.92.51
-  * gRPC extension 1.76.0
-  * Imagick extension 3.8.1
-  * Maxmind DB extension 1.13.0
-  * New Relic extension 12.2.0.27
-  * Protobuf extension 3.23.4, 3.25.8 and 4.33.2
-  * Redis extension 6.3.0
-  * Tideways extension 5.31.0 (Daemon 1.11.4)
-  * YAML extension 2.3.0
-* **Python:**
-  * uv 0.9.24
-* **Ruby:**
-  * Update to 3.4.8
-  * Update to 4.0.1
-* **V (Vlang):**
-  * Update to 0.5
+- **Common:**
+  - Linux kernel 6.17.13
+  - cURL 8.18.0
+  - NGINX 1.28.1
+  - OAuth2 Proxy 7.13.0
+  - Otoroshictl 0.0.13
+  - Poppler 26.01.0
+  - Tailscale 1.92.4
+- **Docker:**
+  - Update to 29.1.4
+- **Elixir:**
+  - Update to 1.19.5
+  - Erlang 28.3
+- **Node.js:**
+  - Update to 24.13.0 (npm 11.6.2)
+  - Bun 1.3.6
+- **PHP:**
+  - Update to 8.1.34
+  - Update to 8.2.30
+  - Update to 8.3.29
+  - Update to 8.4.16
+  - Update to 8.5.1
+  - Composer 2.9.2
+  - Symfony CLI 5.16.1
+  - Blackfire extension 1.92.51
+  - gRPC extension 1.76.0
+  - Imagick extension 3.8.1
+  - Maxmind DB extension 1.13.0
+  - New Relic extension 12.2.0.27
+  - Protobuf extension 3.23.4, 3.25.8 and 4.33.2
+  - Redis extension 6.3.0
+  - Tideways extension 5.31.0 (Daemon 1.11.4)
+  - YAML extension 2.3.0
+- **Python:**
+  - uv 0.9.24
+- **Ruby:**
+  - Update to 3.4.8
+  - Update to 4.0.1
+- **V (Vlang):**
+  - Update to 0.5
 
 ## PHP 8.5 and Composer 2.9
 

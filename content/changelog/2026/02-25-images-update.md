@@ -14,19 +14,19 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Clever Tools 4.6.1
-  * md4c 0.5.2
-  * Redis 8.6.1
-  * Mise 2026.2.19
-  * Otoroshictl 0.0.17
-* **FrankenPHP:**
-  * Update to 1.11.3 (with `CC_PHP_VERSION=8.5`)
-* **Python:**
-  * uv 0.10.4
-* **Static:**
-  * Caddy 2.11.1
-  * Static Web Server 2.41.0
+- **Common:**
+  - Clever Tools 4.6.1
+  - md4c 0.5.2
+  - Redis 8.6.1
+  - Mise 2026.2.19
+  - Otoroshictl 0.0.17
+- **FrankenPHP:**
+  - Update to 1.11.3 (with `CC_PHP_VERSION=8.5`)
+- **Python:**
+  - uv 0.10.4
+- **Static:**
+  - Caddy 2.11.1
+  - Static Web Server 2.41.0
 
 ## PHP Version in FrankenPHP
 

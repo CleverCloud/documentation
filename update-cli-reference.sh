@@ -23,6 +23,8 @@ aliases:
 - /reference/clever-tools
 - /reference/clever-tools/getting_started
 ---
+
+<!-- markdownlint-disable MD036 -->
 """
 
 echo "${front_matter}" > "${FILE}"

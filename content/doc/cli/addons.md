@@ -15,7 +15,7 @@ keywords:
 
 Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon provider`. For each of the following commands, you can target a specific user/organisation:
 
-```
+```console
 [--org, -o, --owner]                Organisation ID (or name, if unambiguous)
 ```
 
@@ -23,7 +23,7 @@ Add-ons on Clever Cloud are databases, storage services, tools or third party se
 
 To list provisioned add-ons, use:
 
-```
+```console
 clever addon
 clever addon list
 clever addon list --format json
@@ -33,7 +33,7 @@ clever addon list --format json
 
 To use add-ons, you need to identify the corresponding provider. To get information about them (plans, regions, versions), use:
 
-```
+```console
 clever addon providers
 clever addon providers show PROVIDER_NAME
 ```
@@ -42,13 +42,13 @@ clever addon providers show PROVIDER_NAME
 
 To create an add-on, select a provider and choose a name:
 
-```
+```console
 clever addon create PROVIDER ADDON_NAME
 ```
 
 You can set `plan`, `region`, `version`, `option` and directly `link` an add-on to an application through these parameters:
 
-```
+```console
 [--link, -l] ALIAS                  Link the created add-on to the app with the specified alias
 [--yes, -y]                         Skip confirmation even if the add-on is not free (default: false)
 [--plan, -p] PLAN                   Add-on plan, depends on the provider
@@ -63,13 +63,13 @@ You can set `plan`, `region`, `version`, `option` and directly `link` an add-on 
 
 To rename an add-on, use:
 
-```
+```console
 clever addon rename ADDON_ID_OR_NAME ADDON_NEW_NAME
 ```
 
 To delete an add-on, use:
 
-```
+```console
 clever addon delete [--yes, -y] ADDON_ID_OR_NAME
 ```
 
@@ -77,7 +77,7 @@ clever addon delete [--yes, -y] ADDON_ID_OR_NAME
 
 Each add-on comes with environment variables. To get them, use:
 
-```
+```console
 clever addon env [--format, -F] FORMAT ADDON_ID
 ```
 
@@ -88,7 +88,7 @@ For some add-ons, an interface URL, default credentials or other instructions ca
 
 If you're testing [Materia KV](/doc/addons/materia-kv/), our next generation of serverless distributed database, synchronously-replicated, compatible with Redis® protocol, you can create an add-on and immediately use it:
 
-```
+```console
 clever addon create kv ADDON_NAME
 source <(clever addon env ADDON_ID --format shell)
 redis-cli -h $KV_HOST -p $KV_PORT --tls
@@ -96,7 +96,8 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 > [!TIP]
 > If you use the Fish shell, you can use the following command to set the environment variables:
-> ```
+>
+> ```console
 > clever addon env ADDON_ID --format shell | source
 > ```
 
@@ -104,14 +105,14 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 Configuration Providers are add-ons that store environment variables you can share across multiple applications through [service dependencies](/doc/cli/services-depedencies/). They have their own dedicated commands:
 
-```
+```console
 clever config-provider list
 clever config-provider list --format json
 ```
 
 To get, set or remove environment variables of a Configuration Provider, use:
 
-```
+```console
 clever config-provider get CONFIG_PROVIDER_ID_OR_NAME
 clever config-provider get CONFIG_PROVIDER_ID_OR_NAME --format shell
 clever config-provider set CONFIG_PROVIDER_ID_OR_NAME VARIABLE_NAME VARIABLE_VALUE
@@ -120,14 +121,14 @@ clever config-provider rm CONFIG_PROVIDER_ID_OR_NAME VARIABLE_NAME
 
 You can import environment variables from `stdin` (this replaces all existing variables):
 
-```
+```console
 clever config-provider import CONFIG_PROVIDER_ID_OR_NAME < .env
 clever config-provider import CONFIG_PROVIDER_ID_OR_NAME --format json < config.json
 ```
 
 To open the Configuration Provider in Clever Cloud Console, use:
 
-```
+```console
 clever config-provider open CONFIG_PROVIDER_ID_OR_NAME
 ```
 
@@ -138,19 +139,19 @@ clever config-provider open CONFIG_PROVIDER_ID_OR_NAME
 
 Databases are backup every day, with last 7 days of backups available to download. You can list them, available formats are: `human` (default) or `json`:
 
-```
+```console
 clever database backups DATABASE-ID [--format, -F] FORMAT
 ```
 
 To download one of them, use:
 
-```
+```console
 clever database backups download [--output, --out] OUTPUT_FILE DATABASE_ID BACKUP_ID
 ```
 
 This command is still under development and will evolve over time. To get information about backups and download them, you can use our API and `clever curl`. For example:
 
-```
+```console
 clever curl -X GET https://api.clever-cloud.com/v2/backups/<USER_ORG_ID>/<DATABASE_ID>
 ```
 

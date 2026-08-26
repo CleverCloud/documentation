@@ -134,9 +134,10 @@ You are not allowed to create apps and add-ons, and run your current apps.
 {{% details title="Possible reasons why your app has been moderated" closed="true" %}}
 
 The main reasons why your account has been moderated are:
+
 - You run some forbidden apps such as those described on [this page](https://www.clever.cloud/acceptable-use-policy/)
 - You have not paid your pending invoices older than 30 days
--  Clever Cloud system considers the lack of personal information or missing payment information as suspicious
+- Clever Cloud system considers the lack of personal information or missing payment information as suspicious
 - Our payment platform has spotted you as emitting fraudulent payments.
 
 {{% /details %}}
@@ -169,16 +170,17 @@ For operations that may exceed the 180-second limit, implement one of these appr
 2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/develop/workers/)
 3. [Purchase a custom load balancer from Clever Cloud](https://www.clever.cloud/fr/contact/) with different timeouts
 
-##### Additional considerations:
+### Additional considerations
 
 - Design your application architecture to handle timeouts gracefully
 - Break up long-running operations into smaller tasks
 
 Use your embedded [Grafana](/doc/metrics/) to monitor resource usage when implementing any of these solutions.
 
-##### How can I diagnosing Network Issue with `curl`
+### Diagnose network issues with `curl`
 
 To gather detailed timing information for each step of the connection process, run the following `curl` command:
+
 ``` bash
 curl -o /dev/null -s -w "DNS resolution: %{time_namelookup}s\nTCP connection: %{time_connect}s\nTLS handshake: %{time_appconnect}s\nTime to first byte: %{time_starttransfer}s\nTotal time: %{time_total}s\n" https://<example.com>
 ```

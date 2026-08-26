@@ -18,7 +18,7 @@ excludeSearch: true
 
 As Materia KV is a distributed cluster, the GraphQL endpoint is a single URL shared by every add-on in a given region. For Paris:
 
-```
+```text
 https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql
 ```
 

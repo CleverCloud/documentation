@@ -17,4 +17,4 @@ excludeSearch: true
 
 The [1.6.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.6.0) of the Clever Cloud Terraform provider is available. It brings bug fixes and allows to disable [Network Groups](/doc/develop/network-groups/).
 
-* Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

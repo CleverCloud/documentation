@@ -51,7 +51,7 @@ define( 'DB_HOST', getenv("MYSQL_ADDON_HOST").':'.getenv("MYSQL_ADDON_PORT") );
 ```
 
 {{< callout type="warning" >}}
-**Make sure you use ** in `wp-config.php` the port the add-on dashboard provides. Use the `MYSQL_ADDON_PORT` environment variable for that. We **don't** use the default MySQL port.
+**Make sure you use** in `wp-config.php` the port the add-on dashboard provides. Use the `MYSQL_ADDON_PORT` environment variable for that. We **don't** use the default MySQL port.
 {{< /callout >}}
 
 ### SSL Configuration

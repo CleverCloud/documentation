@@ -23,7 +23,7 @@ We provide basic support free-of-charge to all our users, even those who are not
 
 Seek help by querying us by email, allowing you to quickly gain answers to your Clever Cloud specific questions and open a ticket directly with our support staff. We will respond to your email within a few hours, or two business days in the worst case.
 
-* <support@clever-cloud.com>
+- <support@clever-cloud.com>
 
 ## Ticket Center
 
@@ -39,4 +39,4 @@ Clever Cloud offers a premium support option providing 24/7 a direct line to our
 
 Get more information and contact our sales team at:
 
-* <sales@clever-cloud.com>
+- <sales@clever-cloud.com>

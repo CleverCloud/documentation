@@ -32,7 +32,7 @@ Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elast
 
 You can customize the Kibana configuration file by setting the `CC_PRE_RUN_HOOK` environment variable. This variable will be executed before the Kibana instance starts. By default, it is:
 
-```
+```text
 CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
 ```
 
@@ -47,7 +47,7 @@ Check other available configuration file on [GitHub](https://github.com/CleverCl
 
 To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file. We provide an example configuration file for Kibana 8.3.3:
 
-* https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3
+- <https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3>
 
 Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
 
@@ -55,7 +55,7 @@ Remember, you need to ask Clever Cloud Support team to grant superuser permissio
 
 If you need to allow for multiple authentication methods to your Kibana, you need to modify Kibana's configuration. We provide an example configuration file for Kibana 8.10.2:
 
-* https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.10.2/sso-basic-8.10.2
+- <https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.10.2/sso-basic-8.10.2>
 
 ### Add custom domain name
 
@@ -69,9 +69,9 @@ Follow these steps :
 
 1. Download/unzip Kibana in version which match with your Elastic Stack version
 2. Edit kibana.yml :
-   * line 43 : `elasticsearch.host: <elastic-addon-host>:443`
-   * line 49 : `elasticsearch.username: kibana`
-   * line 50 : `elasticsearch.password: <password>`
-   * Launch Kibana (`<path_to_kibana>/bin/kibana`)
+   - line 43 : `elasticsearch.host: <elastic-addon-host>:443`
+   - line 49 : `elasticsearch.username: kibana`
+   - line 50 : `elasticsearch.password: <password>`
+   - Launch Kibana (`<path_to_kibana>/bin/kibana`)
 3. Go to Kibana through the dedicated local address: `http://localhost:5601`
 4. Connect to ElasticSearch with your Elastic username and password

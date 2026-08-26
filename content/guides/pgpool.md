@@ -111,7 +111,7 @@ For the `HOST` and `PORT`, you must use the values of the `POSTGRESQL_ADDON_DIRE
 
 An example of the `CC_PGPOOL_FOLLOWERS` variable with two followers:
 
-```json{linenos=table}
+```json {linenos=table}
 [
   {
     "hostname": "<HOST>",

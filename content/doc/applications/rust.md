@@ -40,10 +40,10 @@ Clever Cloud allows you to deploy Rust web applications. This page will explain 
 
 Make sure that:
 
-* you have pushed in **master** branch
-* you listen on port **8080**
-* you have committed `Cargo.lock`
-* you have at least one binary target in `Cargo.toml`
+- you have pushed in **master** branch
+- you listen on port **8080**
+- you have committed `Cargo.lock`
+- you have at least one binary target in `Cargo.toml`
 
 The result of `cargo build --release --locked` must be an executable which starts a web server listening on `0.0.0.0:8080`.
 
@@ -112,8 +112,8 @@ First, you need to use the `HTTPS` url as the git url for your dependency in you
 
 Then, you need to create a personal access token. It allows to not use your password:
 
-* `Github`: <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
-* `GitLab`: <https://docs.gitlab.com/user/profile/personal_access_tokens/> (API rights are needed)
+- `Github`: <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
+- `GitLab`: <https://docs.gitlab.com/user/profile/personal_access_tokens/> (API rights are needed)
 
 Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
 
@@ -131,10 +131,10 @@ If you have multiple private repositories, add them accordingly.
 
 Now, go into the environment variables page of your application and create those environment variables:
 
-* `GIT_USERNAME`: your Github / gitlab / other username
-* `GIT_PASSWORD`: your Github / gitlab / other password
-* `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
-* `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
+- `GIT_USERNAME`: your Github / gitlab / other username
+- `GIT_PASSWORD`: your Github / gitlab / other password
+- `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
+- `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
 
 This adds the git configuration before the build start and it cleans it after the build has been done.
 
@@ -177,4 +177,3 @@ This loads the environment variable in your `main` function and use `.expect` to
 
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}
-

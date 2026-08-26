@@ -16,6 +16,7 @@ excludeSearch: true
 ---
 
 [The release 26.4.4](https://github.com/keycloak/keycloak/releases/26.4.4) of Keycloak is available on Clever Cloud. It brings multiple enhancements and bug fixes. Starting with this release, Keycloak is deployed with two new plugins:
+
 - [Groups regexp mapper](https://github.com/please-openit/keycloak-groups-regexp-mapper): map groups that only fit to a regexp (by name), it avoids mapping all user groups into a token
 - [HTTP Get request mapper](https://github.com/please-openit/keycloak-http-get-request-mapper): add a result from an external service (HTTP GET request) to user's tokens
 

@@ -14,31 +14,31 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Anubis 1.26.2
-  * ClamAV 1.5.4
-  * Chromium 151.0.7922.137
-  * FFmpeg 9.0
-  * Nano 9.2
-  * OpenSSH 10.5_p1
-  * Poppler 26.08.0
-  * pdfio 1.6.4 is now available
-  * qpdf is no longer included
-  * rsync 3.5.0
-* **Go:**
-  * Update to 1.26.6
-* **Node.js & Bun:**
-  * Node.js 24.19.0 (npm 11.17.0)
-* **Python:**
-  * Update to 3.10.21
-  * Update to 3.11.16
-  * Update to 3.12.14
-  * Update to 3.13.15
-  * Update to 3.14.7
-* **Ruby:**
-  * Update to 3.3.12
-  * Update to 3.4.10
-  * Update to 4.0.6
+- **Common:**
+  - Anubis 1.26.2
+  - ClamAV 1.5.4
+  - Chromium 151.0.7922.137
+  - FFmpeg 9.0
+  - Nano 9.2
+  - OpenSSH 10.5_p1
+  - Poppler 26.08.0
+  - pdfio 1.6.4 is now available
+  - qpdf is no longer included
+  - rsync 3.5.0
+- **Go:**
+  - Update to 1.26.6
+- **Node.js & Bun:**
+  - Node.js 24.19.0 (npm 11.17.0)
+- **Python:**
+  - Update to 3.10.21
+  - Update to 3.11.16
+  - Update to 3.12.14
+  - Update to 3.13.15
+  - Update to 3.14.7
+- **Ruby:**
+  - Update to 3.3.12
+  - Update to 3.4.10
+  - Update to 4.0.6
 
 ## Health Check and Request Flow improvements
 

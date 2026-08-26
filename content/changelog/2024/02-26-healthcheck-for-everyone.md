@@ -17,8 +17,7 @@ Up until now, the deployment process only checked whether the application is lis
 
 You can now define the paths that the orchestrator will call to validate a deployment for applications through one or multiple `CC_HEALTH_CHECK_PATH` environment variables. It works as follows:
 
-* If the application responds on this specified path, and the response code is between `200` and `300`, the orchestrator considers that the deployment has been validated.
-* If it responds with a code outside this interval, the application is considered to have failed its deployment.
+- If the application responds on this specified path, and the response code is between `200` and `300`, the orchestrator considers that the deployment has been validated.
+- If it responds with a code outside this interval, the application is considered to have failed its deployment.
 
 - Read the documentation about [Deployment healthcheck path](/doc/develop/healthcheck/) 📖
-

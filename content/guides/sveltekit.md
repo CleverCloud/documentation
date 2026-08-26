@@ -228,5 +228,5 @@ clever domain add your.website.tld
 {{< cards >}}
   {{< card link="/developers/doc/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
   {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
-  {{< card link="https://svelte.dev/docs/kit/adapters" title="SvelteKit adapters" subtitle="Choose and configure a SvelteKit adapter" icon="svelte" >}}
+  {{< card link="<https://svelte.dev/docs/kit/adapters>" title="SvelteKit adapters" subtitle="Choose and configure a SvelteKit adapter" icon="svelte" >}}
 {{< /cards >}}

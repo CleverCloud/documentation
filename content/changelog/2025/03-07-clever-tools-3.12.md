@@ -18,6 +18,7 @@ excludeSearch: true
 [Clever Tools 3.12](https://github.com/CleverCloud/clever-tools/releases/tag/3.12.0) is available. It includes some bug fixes and two new experimental features, available through feature flags.
 
 ## API Tokens
+
 First is `clever tokens`, which allows you to create and manage API tokens, and use them to request the Clever Cloud API:
 
 ```bash
@@ -26,6 +27,7 @@ clever features enable tokens
 clever tokens create "CI job Foobar"
 clever tokens create "Quick local test" --expiration 1h
 ```
+
 You can also list or revoke tokens:
 
 ```bash
@@ -38,6 +40,7 @@ Once created, API tokens must be used through the bridge URL:
 ```bash
 curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_TOKEN]"
 ```
+
 - [Clever Cloud API Documentation](/api)
 - [Give your feedback about API Tokens](https://github.com/CleverCloud/Community/discussions/categories/api-tokens)
 
@@ -97,9 +100,10 @@ As this beta feature evolves, we'll add demos, documentations and videos to help
 - [Give your feedback about Network Groups](https://github.com/CleverCloud/Community/discussions/categories/network-groups)
 
 ## How to upgrade
+
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

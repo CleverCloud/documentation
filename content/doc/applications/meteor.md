@@ -36,9 +36,9 @@ Be sure your `.meteor` folder is in your git repository.
 
 To run your Meteor.js application you need a few mandatory environment variables:
 
-* `MONGO_URL`: this is the mongo uri you can find in your mongodb's dashboard, it has to start with `mongodb://`
-* `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
-* `PORT`: keep the current value of 8080
+- `MONGO_URL`: this is the mongo uri you can find in your mongodb's dashboard, it has to start with `mongodb://`
+- `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
+- `PORT`: keep the current value of 8080
 
 With Meteor 2.6.n comes MongoDB 5.n and [the new npm driver](https://guide.meteor.com/2.6-migration.html). You need to append `?directConnection=true` in your `MONGO_URL` to avoid the new mongo driver Service Discovery feature.
 
@@ -94,7 +94,7 @@ Your application will then be built using `meteor build --server-only` and deplo
 
 Oplog tailing is supported on dedicated databases (starting from Hazelnut size). Contact the support to enable oplog. Once enabled, set the following environment variable:
 
-* `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
+- `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
 
 Since Meteor 2.6.n the mongo driver detect the `MONGO_OPLOG_URL` by itself and you should not add this to your environment variables.
 

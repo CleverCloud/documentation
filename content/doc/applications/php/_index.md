@@ -40,6 +40,7 @@ To create a new PHP application, use the [Clever Cloud Console](https://console.
 ```bash
 clever create --type php
 ```
+
 - [Learn more about Clever Tools](/doc/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
@@ -130,17 +131,17 @@ date.timezone=Europe/Paris
 Clever Cloud configures PHP's [`memory_limit`](https://www.php.net/manual/en/ini.core.php#ini.memory-limit) directive, which limits how much memory each PHP script can allocate. For web requests, this limit applies independently within each PHP-FPM worker; memory is not reserved when workers start. Both the default limit and the maximum value accepted through `MEMORY_LIMIT` depend on the application's available memory, which excludes memory reserved for the system:
 
 | Flavor | Default `memory_limit` | Maximum `MEMORY_LIMIT` |
-|--------|-----------------------:|-----------------------:|
-| Nano   | 91 MiB        | 358 MiB       |
-| XS     | 161 MiB       | 859 MiB       |
-| S      | 249 MiB       | 1683 MiB      |
-| M      | 406 MiB       | 3579 MiB      |
-| L      | 658 MiB       | 7523 MiB      |
-| XL     | 1051 MiB      | 15496 MiB     |
-| 2XL    | 1377 MiB      | 23503 MiB     |
-| 3XL    | 1666 MiB      | 31525 MiB     |
+| ------ | ---------------------: | ---------------------: |
+| Nano   | 91 MiB                 | 358 MiB                |
+| XS     | 161 MiB                | 859 MiB                |
+| S      | 249 MiB                | 1683 MiB               |
+| M      | 406 MiB                | 3579 MiB               |
+| L      | 658 MiB                | 7523 MiB               |
+| XL     | 1051 MiB               | 15496 MiB              |
+| 2XL    | 1377 MiB               | 23503 MiB              |
+| 3XL    | 1666 MiB               | 31525 MiB              |
 
-To change the limit, set [`MEMORY_LIMIT`](/doc/reference/reference-environment-variables#php) to a positive integer interpreted in MiB, without a unit suffix. 
+To change the limit, set [`MEMORY_LIMIT`](/doc/reference/reference-environment-variables#php) to a positive integer interpreted in MiB, without a unit suffix.
 
 For example, to allow each PHP script to allocate up to 128 MiB:
 
@@ -148,7 +149,7 @@ For example, to allow each PHP script to allocate up to 128 MiB:
 clever env set MEMORY_LIMIT 128
 ```
 
-If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Cloud keeps the automatically calculated limit and logs a warning during deployment. Clever Cloud also calculates the number of PHP-FPM workers automatically. 
+If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Cloud keeps the automatically calculated limit and logs a warning during deployment. Clever Cloud also calculates the number of PHP-FPM workers automatically.
 
 On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/reference/reference-environment-variables#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
 

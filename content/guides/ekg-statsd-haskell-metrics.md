@@ -26,10 +26,10 @@ If you're using [warp](https://hackage.haskell.org/package/warp), you can use `w
 
 You need the following packages in your [dependencies](/doc/applications/haskell#dependencies):
 
-* ekg-core
-* ekg-statsd
-* scotty
-* wai-middleware-metrics
+- ekg-core
+- ekg-statsd
+- scotty
+- wai-middleware-metrics
 
 Then add this Hello World code to your application and modify it to fit your needs:
 

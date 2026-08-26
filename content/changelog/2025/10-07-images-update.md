@@ -14,15 +14,15 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.16.10
-  * Mise 2025.10.3
-  * OpenSSL 3.5.4
-  * Redis 8.2.2
-  * Sops 3.11.0
-* **Java:**
-  * Update to Java 25 LTS
-* **PHP:**
-  * Symfony CLI 5.15.1
-* **Python:**
-  * uv 0.8.23
+- **Common:**
+  - Linux kernel 6.16.10
+  - Mise 2025.10.3
+  - OpenSSL 3.5.4
+  - Redis 8.2.2
+  - Sops 3.11.0
+- **Java:**
+  - Update to Java 25 LTS
+- **PHP:**
+  - Symfony CLI 5.15.1
+- **Python:**
+  - uv 0.8.23

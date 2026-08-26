@@ -27,28 +27,30 @@ When enabling auto-scalability, you have to set a minimum and a maximum of activ
 {{< /callout >}}
 
 ## Which application runtimes are supported by Clever Cloud?
+
 Currently, Clever Cloud supports:
 
-* .NET
-* Docker
-* Elixir
-* Go
-* Haskell
-* Java (Jar, Maven, Gradle, War/Ear, Play Framework 1 & 2) and Groovy with Gradle
-* Linux
-* Meteor.js
-* Node.js & Bun
-* PHP and FrankenPHP
-* Python
-* Ruby
-* Rust
-* Scala (SBT, Play Framework 1 & 2)
-* Static sites (with or without Apache)
-* V (Vlang)
+- .NET
+- Docker
+- Elixir
+- Go
+- Haskell
+- Java (Jar, Maven, Gradle, War/Ear, Play Framework 1 & 2) and Groovy with Gradle
+- Linux
+- Meteor.js
+- Node.js & Bun
+- PHP and FrankenPHP
+- Python
+- Ruby
+- Rust
+- Scala (SBT, Play Framework 1 & 2)
+- Static sites (with or without Apache)
+- V (Vlang)
 
 See the full list in the [applications documentation](/doc/applications/), or browse the [guides](/guides/) for frameworks and services you can deploy on Clever Cloud.
 
 ## How many applications can I create?
+
 As many as you want. We've not set a limited number of apps by developer.
 
 ## How to setup domain names I own?
@@ -218,7 +220,6 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 Clever Cloud stores all backups on [Cellar](https://www.clever.cloud/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
 For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more [documentation on restoring backups with the CLI](/doc/cli/addons/#database-backups).
-
 
 ## I can't create my add-on
 

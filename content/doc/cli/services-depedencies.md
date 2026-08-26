@@ -20,7 +20,7 @@ Each can target a specific application, adding `--app APP_ID_OR_NAME` or a local
 
 To list exposed configuration, use:
 
-```
+```console
 clever published-config
 clever published-config -F json
 clever published-config --format shell
@@ -28,13 +28,13 @@ clever published-config --format shell
 
 To configure exposed configuration, use:
 
-```
+```console
 clever published-config COMMAND
 ```
 
 Available commands are `set`, `rm` (remove) or `import`. The latter reads data from `stdin` so use it as is:
 
-```
+```console
 clever published-config import < file.config
 ```
 
@@ -42,14 +42,14 @@ clever published-config import < file.config
 
 To list services dependencies, use:
 
-```
+```console
 clever service
 clever service --format json
 ```
 
 You can filter results through these options.
 
-```
+```console
 [--only-apps]              Only show app dependencies (default: false)
 [--only-addons]            Only show add-on dependencies (default: false)
 [--show-all]               Show all available add-ons and applications (default: false)
@@ -57,14 +57,14 @@ You can filter results through these options.
 
 To create or delete services dependencies, use:
 
-```
+```console
 clever service COMMAND ADDON_OR_APP_ID
 clever service COMMAND ADDON_OR_APP_NAME
 ```
 
 Available commands are:
 
-```
+```console
 link-app                   Add an existing app as a dependency
 unlink-app                 Remove an app from the dependencies
 link-addon                 Link an existing add-on to this application

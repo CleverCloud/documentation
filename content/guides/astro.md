@@ -22,13 +22,16 @@ aliases:
 ## Overview
 
 Clever Cloud supports deploying both [fully static and on-demand rendered](https://docs.astro.build/en/basics/rendering-modes/) Astro projects:
+
 - The `static` output mode is ideal for most content-oriented website, for which you have no need for per-visitor server-side customization. Consider using a [Static runtime](/doc/applications/static/) when using this output mode, with the automatic site generation.
--  The `server` or `hybrid` output modes: consider using a [Node.js runtime](/doc/applications/nodejs) with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
+- The `server` or `hybrid` output modes: consider using a [Node.js runtime](/doc/applications/nodejs) with [Astro’s Node adapter](https://docs.astro.build/en/guides/integrations-guide/node/)
 
 If you need an example source code, get [Astrowind](https://github.com/onwidget/astrowind) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/download)):
+
 ```bash
 git clone https://github.com/onwidget/astrowind myStaticApp
 ```
+
 To deploy your Astro project to Clever Cloud, you need to **create a new application**.
 
 {{% steps %}}

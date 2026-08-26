@@ -14,25 +14,25 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.14.11
-  * Mise 2025.6.4
-* **Docker:**
-  * Update to 28.2.2
-  * Buildx 0.24.0
-* **FrankenPHP:**
-  * Update to 1.7.0 (PHP 8.4.8)
-* **Go:**
-  * Update to 1.24.4
-* **Node.js:**
-  * Bun 1.2.16
-* **Python:**
-  * Update to 3.13.4
-  * Update to 3.12.11
-  * Update to 3.11.13
-  * Update to 3.10.18
-  * Update to 3.9.23
-  * uv 0.7.13
+- **Common:**
+  - Linux kernel 6.14.11
+  - Mise 2025.6.4
+- **Docker:**
+  - Update to 28.2.2
+  - Buildx 0.24.0
+- **FrankenPHP:**
+  - Update to 1.7.0 (PHP 8.4.8)
+- **Go:**
+  - Update to 1.24.4
+- **Node.js:**
+  - Bun 1.2.16
+- **Python:**
+  - Update to 3.13.4
+  - Update to 3.12.11
+  - Update to 3.11.13
+  - Update to 3.10.18
+  - Update to 3.9.23
+  - uv 0.7.13
 
 ## Other changes
 

@@ -20,10 +20,10 @@ Clever Cloud's billing is based on several types of products: applications (Java
 
 The calculation of consumption is based on the second of running. Once your monthly bill has been generated, you can refer to it to find out by service:
 
-* the size of the instances used
-* the execution time
-* the unit price per second
-* the total monthly amount
+- the size of the instances used
+- the execution time
+- the unit price per second
+- the total monthly amount
 
 To find your consumption history, it is visible in the **Metrics in Grafana** service via a specific Grafana dashboard. This is called the **Uptime Service**.
 

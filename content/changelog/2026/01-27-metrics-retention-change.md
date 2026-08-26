@@ -16,5 +16,5 @@ Starting February 2nd, 2026, the retention period for custom application metrics
 
 **System metrics remain unaffected** by this change. All automatically collected metrics, including CPU usage, RAM consumption, disk usage, network activity, and load metrics, will continue to be available with the existing retention period.
 
-* [Learn more about metrics on Clever Cloud](/doc/metrics/)
-* [How to publish your own metrics](/doc/metrics/#publish-your-own-metrics)
+- [Learn more about metrics on Clever Cloud](/doc/metrics/)
+- [How to publish your own metrics](/doc/metrics/#publish-your-own-metrics)

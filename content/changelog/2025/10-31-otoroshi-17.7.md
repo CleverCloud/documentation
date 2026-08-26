@@ -28,4 +28,3 @@ clever otoroshi version update yourOtoroshiNameOrId v17.7.0_1762500043
 ```
 
 - [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
-

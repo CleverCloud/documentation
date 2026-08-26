@@ -25,7 +25,9 @@ To fit the most common needs, the Keycloak add-on comes with batteries included:
 {{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak){{< /callout >}}
 
 ## Key features
+
 Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentication and access management solution, that you can adjust to your needs and workloads. It offers a wide panel of services such as:
+
 - Secure Identity Management
 - Single Sign-On (SSO)
 - Centralized Administration
@@ -41,6 +43,7 @@ Keycloak on Clever Cloud allows you to effortlessly set up a tailored authentica
 The Clever Cloud Keycloak add-on is designed to meet the most common needs, built with [Please Open-it](https://please-open.it/) and hosted on our services. For the most complex and loaded systems, our partner and Keycloak experts behind this add-on, can provide assistance: [contact us](mailto:sales@clever-cloud.com).
 
 ## How it works?
+
 When you create the Keycloak add-on, Clever Cloud automatically deploys:
 
 - A [Java](/doc/applications/java/java-jar) instance with Keycloak pre-loaded and configured
@@ -56,6 +59,7 @@ By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 - Less than 100 MB in FS Bucket
 
 They are dimensioned to suit a majority of needs. Even if this Keycloak add-on might handle heavy traffic and an important number of simultaneous connections, the default configuration should handle the following load (based on [Keycloak](https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing) sizing recommendation):
+
 - 5 logins by second
 - 90 credential grants by the second
 - 70 refresh tokens by second
@@ -65,6 +69,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 ## Create a Keycloak add-on
 
 ### From the Console
+
 1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create…** dropdown in the sidebar and then **an add-on**
 2. Select the Keycloak add-on
 3. You can skip linking the add-on to an application, it won't be needed
@@ -77,7 +82,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
 
-```
+```bash
 $ clever addon create keycloak myKeycloak
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -117,6 +122,7 @@ If you also need a more resilient database, contact your sales representative or
 ## Version management
 
 To change the version of a Keycloak add-on on Clever Cloud, you can:
+
 - Use the Console Dashboard
 - Use [Clever Tools](/doc/cli/operators/)
 - Update the `CC_KEYCLOAK_VERSION` environment variable of the underlying Java Application and rebuild it
@@ -183,12 +189,12 @@ You can restrict who can reach your Keycloak instance with two complementary mec
 
 Starting with version `26.6`, the Keycloak add-on can filter incoming requests based on the client's public IP, with separate rules for each realm and for each endpoint category (admin console and admin API, public endpoints, SCIM provisioning). Filtering is configured through environment variables of the underlying Java application. Each variable accepts a comma-separated list of IP addresses and blocked requests receive an `HTTP 403` response.
 
-| Variable | Scope | Protected paths |
-|----------|-------|-----------------|
-| `CC_KEYCLOAK_ADMIN_IPS_<REALM>` | Admin endpoints of a given realm | `/admin/<realm>/*`, `/admin/realms/<realm>/*` |
-| `CC_KEYCLOAK_PUBLIC_IPS_<REALM>` | Public endpoints of a given realm (login, tokens, user authentication) | `/realms/<realm>/*` |
-| `CC_KEYCLOAK_SCIM_IPS_<REALM>` | SCIM provisioning endpoints of a given realm (requires the `scim-api` feature, see below) | `/realms/<realm>/scim/*` |
-| `CC_KEYCLOAK_ADMIN_IPS` | Global fallback for admin endpoints not covered by a per-realm rule | `/admin/*` |
+| Variable                         | Scope                                                                                     | Protected paths                               |
+| -------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `CC_KEYCLOAK_ADMIN_IPS_<REALM>`  | Admin endpoints of a given realm                                                          | `/admin/<realm>/*`, `/admin/realms/<realm>/*` |
+| `CC_KEYCLOAK_PUBLIC_IPS_<REALM>` | Public endpoints of a given realm (login, tokens, user authentication)                    | `/realms/<realm>/*`                           |
+| `CC_KEYCLOAK_SCIM_IPS_<REALM>`   | SCIM provisioning endpoints of a given realm (requires the `scim-api` feature, see below) | `/realms/<realm>/scim/*`                      |
+| `CC_KEYCLOAK_ADMIN_IPS`          | Global fallback for admin endpoints not covered by a per-realm rule                       | `/admin/*`                                    |
 
 The realm name in the variable suffix must match the realm name as it appears in URLs (case-sensitive). Per-realm rules take precedence over the global admin filter. If none of these variables is set, Keycloak keeps its standard public behavior.
 
@@ -221,6 +227,7 @@ You can also assign these flows to your own clients if needed.
 Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/metrics/#publish-your-own-metrics) to visualize them.
 
 You can also use a Grafana dashboard ready to import, available starting with Keycloak `26.2` release:
+
 - Go to the `Metrics in Grafana` section of your organisation or personal space in [Console](https://console.clever-cloud.com/)
 - Open Grafana, click on the `+` icon in the upper right corner and select `Import` dashboard
 - Import this [JSON file](https://cc-keycloak.cellar-c2.services.clever-cloud.com/keycloak-grafana-dashboard.json)

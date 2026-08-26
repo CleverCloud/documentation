@@ -5,13 +5,15 @@ This file provides repository-wide guidance to coding agents working on Clever C
 ## Common Development Commands
 
 ### Hugo Site Development
+
 - **Install development dependencies**: `mise install` - Installs the tools declared in `mise.toml`
-- **Local development**: `hugo server` - Serves site at http://localhost:1313 with live reload
+- **Local development**: `hugo server` - Serves site at <http://localhost:1313> with live reload
 - **Build for production**: `hugo` - Outputs to `public/developers/`
 - **Preview drafts**: `hugo server --buildDrafts` - Include draft content in local preview
 - **Update CLI reference**: `./update-cli-reference.sh` - Fetches latest clever-tools documentation
 
 ### Content Generation
+
 - **New guide**: `hugo new content guides/<framework>.md`
 - **New documentation**: `hugo new content/doc/administrate/<feature>.md`
 - **New application runtime**: `hugo new content --kind applications doc/applications/<runtime>.md`
@@ -19,6 +21,7 @@ This file provides repository-wide guidance to coding agents working on Clever C
 ## Project Architecture
 
 ### Content Organization
+
 This is a Hugo-based documentation site using the Hextra theme with the following structure:
 
 - **`/content/`** - All documentation content:
@@ -36,7 +39,9 @@ This is a Hugo-based documentation site using the Hextra theme with the followin
 - **`/layouts/`** - Hugo templates and shortcodes for content rendering
 
 ### Content Types and Front Matter
+
 Content uses Hugo front matter with fields such as:
+
 - `type: docs` - Content layout type
 - `weight` - Sidebar ordering (integer)
 - `linkTitle` - Short title for sidebar navigation
@@ -47,11 +52,13 @@ Content uses Hugo front matter with fields such as:
 - `excludeSearch: true` - Excludes from search index (recommended for changelog)
 
 For changelog entries, also include:
+
 - `date: YYYY-MM-DD` - Publication date
 - `tags` - Array of product tags (lowercase)
 - `authors` - Array with `name`, `link`, `image` fields
 
 ### Shared Content System
+
 - Include shared content: `{{% content "filename" %}}`
 - Include shared content with shortcodes: `{{% content-raw "filename" %}}`
 - Shared files should not contain headings (breaks ToC generation)
@@ -59,6 +66,7 @@ For changelog entries, also include:
 ## Quality Standards
 
 ### Content Quality Requirements
+
 - Use second person ("you") addressing readers directly
 - Write in active voice, avoid passive constructions
 - Use `organisation` and `organisations`, rather than `organization` and `organizations`; this isn't a general British-spelling requirement
@@ -67,12 +75,14 @@ For changelog entries, also include:
 - Explain prerequisites and non-obvious behaviour, while keeping the main task path concise
 
 ### Prohibited Elements
+
 - First-person pronouns: I, me, my, we, us, our, let's
 - Placeholder phrases: "please note", "at this time", "it should be noted"
 - Overconfident claims: "simply", "just", "easily", "quickly", "obviously"
 - Time-dependent promises: "soon", "in the future", "coming next month"
 
 ### Markdown and Editorial Standards
+
 - **Markdown linting**: Run `markdownlint-cli2 "**/*.md"` with config in `.markdownlint.jsonc`
 - **Editorial checks**: Run Vale with `vale <files>` for style and terminology
 - **Build verification**: Always test with `hugo` before committing
@@ -80,7 +90,9 @@ For changelog entries, also include:
 - **Paragraphs**: Aim for 3-6 lines for optimal readability
 
 ### Callouts
+
 - Prefer GitHub-style callouts with a concise title on the marker line, as supported by the theme:
+
   ```markdown
   > [!NOTE] Current behaviour
   > This information helps readers understand the current behaviour
@@ -88,10 +100,12 @@ For changelog entries, also include:
   > [!WARNING] Back up your data
   > Back up your application database before upgrading
   ```
+
 - Use the Hugo `{{< callout >}}` shortcode only when GitHub-style syntax can't provide the required rendering or behaviour
 - Limit callouts to one or two per page
 
 ### Commit Messages
+
 - For content updates, use `section(page): commit message`, for example:
   - `addons(postgresql): document pg_partman support`
   - `applications(nodejs): clarify pnpm configuration`
@@ -106,6 +120,7 @@ For changelog entries, also include:
 - Start the subject with a lowercase imperative verb
 
 ### Code and Technical Examples
+
 - Always provide complete, runnable code examples
 - Keep commands literally copyable: don't put shell-invalid placeholders or bracketed optional arguments in executable code blocks
 - Show optional flags in separate examples or explain where to add them
@@ -145,11 +160,13 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 `CC_DISABLE_MISE` prevents Clever Cloud from installing the local development dependencies because the platform manages the deployment tools directly.
 
 ## Data Management
+
 Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special LLMS output format at `/llms.txt` for AI consumption.
 
 ## Hugo Shortcodes and Features
 
 ### Content Shortcodes
+
 - `{{% content "filename" %}}` - Include shared content from `/shared/` directory
 - `{{% content-raw "filename" %}}` - Include shared content containing shortcodes
 - `{{% steps %}}` - Create step-by-step instructions for guides
@@ -159,12 +176,14 @@ Runtime versions and software compatibility information is maintained in `/data/
 - `{{< hextra/hero-subtitle >}}` - Add engaging subtitles in guides
 
 ### Hugo Content Types
+
 - **Documentation pages**: Use `type: docs` in front matter
 - **Guides**: Use step-by-step structure, hero subtitles, and cards when they improve the guide
 - **Changelog entries**: Include date, tags, and author information
 - **API documentation**: Structured reference content
 
 ### Hextra Theme Features
+
 - **Search**: Full-text search using FlexSearch
 - **Dark mode**: Automatic theme switching
 - **Responsive navigation**: Sidebar and mobile-friendly menus
@@ -172,4 +191,5 @@ Runtime versions and software compatibility information is maintained in `/data/
 - **Syntax highlighting**: Code block highlighting with copy functionality
 
 ## File Standards
+
 All text files must end with a newline.

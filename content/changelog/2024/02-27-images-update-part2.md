@@ -18,11 +18,11 @@ Earlier this month, we published [a first set of updates](../02-02-images-update
 
 New images include security patches, Linux kernel 6.7.1, OpenSSL 3.2.1 and Node.js 20.11.0 by default. For the latter, you can set it via the `CC_NODE_VERSION` [environment variable](/doc/reference/reference-environment-variables/#commons-to-all-applications). Other changes are as follows:
 
-* **.NET:**
-  * Version 8.0 support
-  * `CC_DOTNET_VERSION` [environment variable](/doc/reference/reference-environment-variables/#net) can be `6.0` or `8.0`
-* **Java - Elastic / APM:**
-  * The agent has been updated to 1.47.1
-  * Java 21 support
+- **.NET:**
+  - Version 8.0 support
+  - `CC_DOTNET_VERSION` [environment variable](/doc/reference/reference-environment-variables/#net) can be `6.0` or `8.0`
+- **Java - Elastic / APM:**
+  - The agent has been updated to 1.47.1
+  - Java 21 support
 
 New PHP image is next to come, with 8.3 version support, we're currently working on it. After that, we'll bring our new strategy to build images into production. We're currently testing it, and preparing enhancements for multiples runtimes. Your applications will automatically benefit from it when available. [Stay tuned](/changelog/index.xml).

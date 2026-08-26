@@ -65,14 +65,14 @@ You'll find below the first commands to know to connect Clever Tools to your acc
 
 To show Clever tools available commands, use:
 
-```
+```console
 clever
 clever help
 ```
 
 For each of them, you can add these parameters:
 
-```
+```console
 [--help, -?]            Display help about this program (default: false)
 [--version, -V]         Display the version of this program (default: false)
 [--color]               Choose whether to print colors or not. You can also use --no-color (default: true)
@@ -89,20 +89,20 @@ Some features are available as experimental, before they're completely ready for
 
 Experimental features can be (de)activated on-demand. To list them, use:
 
-```
+```console
 clever features
 ```
 
 To (de)activate an experimental feature, use:
 
-```
+```console
 clever features enable theFeature
 clever features disable theFeature
 ```
 
 To get information about how to use an experimental feature, use:
 
-```
+```console
 clever features info theFeature
 ```
 
@@ -110,7 +110,7 @@ clever features info theFeature
 
 To check the current version or get information about your setup, use:
 
-```
+```console
 clever version
 clever diag
 clever diag --format json
@@ -123,7 +123,7 @@ clever diag --format json
 
 To connect to your Clever Cloud account, use:
 
-```
+```console
 clever login
 ```
 
@@ -131,7 +131,7 @@ It will open your default browser and start an Open Authorization ([OAuth](https
 
 If you already know them, you can use:
 
-```
+```console
 clever login --secret SECRET --token TOKEN
 ```
 
@@ -140,7 +140,7 @@ clever login --secret SECRET --token TOKEN
 
 To log out, delete this file or use:
 
-```
+```console
 clever logout
 clever logout --alias ALIAS
 ```
@@ -149,7 +149,7 @@ clever logout --alias ALIAS
 
 To get information about the current logged-in user (ID, name, email, 2FA activation, etc.), use:
 
-```
+```console
 clever profile
 clever profile open
 clever profile -F json
@@ -161,32 +161,32 @@ To manage multiple profiles or configure per-profile overrides, see: [Profiles a
 
 To list primary email and secondary emails associated with your Clever Cloud account, you can use:
 
-```
+```console
 clever emails
 clever emails -F json
 ```
 
 To open the email management page in your browser, use:
 
-```
+```console
 clever emails open
 ```
 
 To add a secondary email, use:
 
-```
+```console
 clever emails add email@example.com
 ```
 
 To set a secondary email as primary, use:
 
-```
+```console
 clever emails primary email@example.com
 ```
 
 To remove one or all secondary emails, use:
 
-```
+```console
 clever emails remove email@example.com
 clever emails remove-all
 clever emails remove-all --yes
@@ -196,26 +196,26 @@ clever emails remove-all --yes
 
 To list public SSH keys associated with your Clever Cloud account, you can use:
 
-```
+```console
 clever ssh-keys
 clever ssh-keys -F json
 ```
 
 To open the public SSH keys management page in your browser, use:
 
-```
+```console
 clever ssh-keys open
 ```
 
 To add a new public SSH key, use:
 
-```
+```console
 clever ssh-keys add myPublicKey ~/.ssh/id_ecdsa.pub
 ```
 
 To remove one or all public SSH keys, use:
 
-```
+```console
 clever ssh-keys remove myPublicKey
 clever ssh-keys remove-all
 clever ssh-keys remove-all --yes
@@ -232,26 +232,26 @@ To use our public API, you need to be authenticated for most endpoints. If you'r
 
 You can query [Clever Cloud public API](/api/) with a bearer token thanks to the Auth Bridge. To create a token, use:
 
-```
+```console
 clever tokens create myTokenName
 clever tokens create myTokenName --expiration 2w --format json
 ```
 
 Once created, you can use it replacing the API endpoint with `https://api-bridge.clever-cloud.com`. For example:
 
-```
+```console
 curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer myToken"
 ```
 
 To list all your tokens, use:
 
-```
+```console
 clever tokens
 clever tokens -F json
 ```
 
 To revoke a token, use:
 
-```
+```console
 clever tokens revoke myTokenId
 ```

@@ -38,12 +38,12 @@ The add-on is immediately created and you can start using it with provided token
 Materia TS uses Warp10 time series engine and WarpsScript query language. It
 provides PromQL and Prometheus Ingestion gateway in addition to warp10 endpoints. You can also use [Time Series Language (TSL)](https://github.com/ovh/tsl/) previously written by OVHcloud Metrics team.
 
-| Endpoint | Description |
-| -------- | ----------- |
+| Endpoint                                                                | Description                          |
+| ----------------------------------------------------------------------- | ------------------------------------ |
 | `https://materiats.eu-fr-1.services.clever-cloud.com:443/api/v0/update` | Warp10 compatible Ingestion endpoint |
-| `https://materiats.eu-fr-1.services.clever-cloud.com:443/api/v0/exec` | WarpScript query language endpoint |
-| `https://catalyst-materiats.eu-fr-1.services.clever-cloud.com:443/` | Prometheus Ingestion gateway |
-| `https://prometheus-materiats.eu-fr-1.services.clever-cloud.com:433` | PromQL endpoint |
+| `https://materiats.eu-fr-1.services.clever-cloud.com:443/api/v0/exec`   | WarpScript query language endpoint   |
+| `https://catalyst-materiats.eu-fr-1.services.clever-cloud.com:443/`     | Prometheus Ingestion gateway         |
+| `https://prometheus-materiats.eu-fr-1.services.clever-cloud.com:433`    | PromQL endpoint                      |
 
 For complete technical documentation on Warp 10 and its query language,
 see our [Warp 10 documentation](/doc/metrics/warp10/).

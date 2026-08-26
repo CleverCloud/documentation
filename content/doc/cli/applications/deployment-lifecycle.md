@@ -28,13 +28,13 @@ A Clever Cloud application can easily be deployed and accessed once created, thr
 
 Once changes are committed in your local git repository, you can deploy it:
 
-```
+```console
 clever deploy
 ```
 
 It will `git push` your code on the remote repository of your application on Clever Cloud automatically. You can, of course, use option to `force push` or use specific local branch for example:
 
-```
+```console
 [--branch, -b] BRANCH                 Branch to push (current branch by default) (default: )
 [--tag, -t] TAG                       Tag to push (none by default) (default: )
 [--quiet, -q]                         Don't show logs during deployment (default: false)
@@ -50,7 +50,7 @@ It will `git push` your code on the remote repository of your application on Cle
 
 Once deployed, you can open the application on your default browser or [Clever Cloud Console](https://console.clever-cloud.com):
 
-```
+```console
 clever open
 clever console
 ```
@@ -59,7 +59,7 @@ clever console
 
 To get application state, options or running/scaling status, use:
 
-```
+```console
 clever status
 clever status --format json
 ```
@@ -68,13 +68,13 @@ clever status --format json
 
 Once deployed, an application can be restarted:
 
-```
+```console
 clever restart
 ```
 
 By default, it will use its build cache when available. But you can override it or use other available options:
 
-```
+```console
 [--commit] COMMIT ID       Restart the application with a specific commit ID
 [--without-cache]          Restart the application without using cache (default: false)
 [--quiet, -q]              Don't show logs during deployment (default: false)
@@ -85,7 +85,7 @@ By default, it will use its build cache when available. But you can override it 
 
 To stop an application or cancel any ongoing deployment, use:
 
-```
+```console
 clever stop
 clever cancel-deploy
 ```
@@ -94,13 +94,13 @@ clever cancel-deploy
 
 A Clever Cloud application is a running virtual machine you can ssh to, as a user (`bas`). By default, it will use `OpenSSH` configuration, but you can target a specific identity file:
 
-```
+```console
 clever ssh [--identity-file, -i] IDENTITY-FILE
 ```
 
 To ssh a specific application, use:
 
-```
+```console
 clever ssh --app APP_ID_OR_NAME
 ```
 
@@ -108,13 +108,13 @@ clever ssh --app APP_ID_OR_NAME
 
 When you deploy an application on Clever Cloud, we collect its logs, hosted in our internal Pulsar stack, all included. To listen to the stream, use:
 
-```
+```console
 clever logs
 ```
 
 You can also get logs from a specific timeline, deployment or add-on through options:
 
-```
+```console
 [--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--search] SEARCH                   Fetch logs matching this pattern
@@ -127,16 +127,16 @@ You can also get logs from a specific timeline, deployment or add-on through opt
 
 When you deploy an application on Clever Cloud, we collect its access logs, hosted in our internal Pulsar stack, all included. To listen to the stream, use:
 
-```
+```console
 clever accesslogs
 ```
 
 > [!TIP]
->  This now uses our v4 API, it's available as Alpha feature for now.
+> This now uses our v4 API, it's available as Alpha feature for now.
 
 You can also get access logs from a specific timeline or add-on through options, in multiple formats:
 
-```
+```console
 [--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--format, -F] FORMAT          Output format (human, json, json-stream) (default: human)
@@ -144,14 +144,14 @@ You can also get access logs from a specific timeline or add-on through options,
 
 You can for example get access logs in JSON stream format for the last hour with:
 
-```
+```console
 clever accesslogs --format json-stream --since 1h
 clever accesslogs -F json-stream | jq '.source.ip'
 ```
 
 or JSON if you add a date/time end limit:
 
-```
+```console
 clever accesslogs --app APP_NAME --since 2025-04-21T13:37:42 --until 1d -F json | jq '[.[] | {date, countryCode: .source.countryCode, ip: .source.ip, port: .source.port}]'
 clever accesslogs --app APP_NAME --since 2025-04-21T13:37:42 --until 1d -F json | jq '.[] | [.date, .source.countryCode, .source.ip, .source.port] | @sh'
 ```
@@ -163,13 +163,13 @@ clever accesslogs --app APP_NAME --since 2025-04-21T13:37:42 --until 1d -F json 
 
 To get deployment activity, use:
 
-```
+```console
 clever activity
 ```
 
 By default, it will show you last 10 deployments. You can show all or listen to a stream of incoming deployments through options:
 
-```
+```console
 [--follow, -f]             Track new deployments in activity list (default: false)
 [--show-all]               Show all activity (default: false)
 [--format, -F] FORMAT      Output format (human, json, json-stream)

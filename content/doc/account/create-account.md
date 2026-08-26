@@ -32,8 +32,8 @@ The GitHub signup allows you to create an account or link your existing one to G
 
 This process asks the following permissions:
 
-* Read your Public Key
-* Read User Repositories
+- Read your Public Key
+- Read User Repositories
 
 The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
 

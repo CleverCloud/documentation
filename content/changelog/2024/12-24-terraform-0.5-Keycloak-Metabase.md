@@ -20,4 +20,4 @@ excludeSearch: true
 
 You can now deploy [Keycloak](/doc/addons/keycloak) and [Metabase](/doc/addons/metabase) add-ons using our Terraform provider, compatible with OpenTofu.
 
-* Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
+- Learn more about [our Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

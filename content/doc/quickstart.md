@@ -44,8 +44,8 @@ There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
   The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click.
   This process asks the following permissions:
 
-* Read your Public Key
-* Read User Repositories
+- Read your Public Key
+- Read User Repositories
 
   The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
   If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
@@ -67,10 +67,10 @@ Please, backup your recovery codes, we won't be able to restore access to your a
 
 An application is defined on Clever Cloud by the following elements:
 
-* a dedicated language/framework;
-* a deployment method (FTP and/or Git);
-* resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
-* an optional configuration file you may add to your project.
+- a dedicated language/framework;
+- a deployment method (FTP and/or Git);
+- resources consumption (CPU, RAM, Disk…), depending on the language or framework used;
+- an optional configuration file you may add to your project.
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
@@ -145,8 +145,8 @@ Enter the name and the description of your application.
 
 #### Optional steps
 
-* The wizard will offer you to [add an add-on](/doc/addons) to your application
-* The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
+- The wizard will offer you to [add an add-on](/doc/addons) to your application
+- The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
 
 {{% /steps %}}
 
@@ -232,9 +232,9 @@ The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/s
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
 You are probably trying to push from another branch. Keep in mind that:
 
-* You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
-* You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
-* In order to push to **master** from a non-master local branch, use this syntax:
+- You can only push to the **master** branch for deployment. Trying to push to another branch will trigger an error.
+- You cannot push a tag (which refers to a commit) to the remote repository. If you do so, **no deployment** will be triggered.
+- In order to push to **master** from a non-master local branch, use this syntax:
 
 ```bash
 git push <remote-name> <branch-name>:master
@@ -262,16 +262,16 @@ If you have to push directly to a repository to deploy an application (eg if you
 
 There are many tabs available in the application's menu on Clever Console:
 
-* **Information:** General information about your application
-* **Scalability:** Set-up scalability options
-* **Domain names:** Manage custom domain names
-* **Environment variables:** Manage environment variables
-* **Service dependencies:** Link add-ons and applications
-* **Exposed configuration:** Manage exposed environment variables
-* **Activity:** Track last deployments
-* **Logs:** Visualize application's logs
-* **Metrics:** Visualize application's metrics
-* **Consumption:** Visualize your application's consumption.
+- **Information:** General information about your application
+- **Scalability:** Set-up scalability options
+- **Domain names:** Manage custom domain names
+- **Environment variables:** Manage environment variables
+- **Service dependencies:** Link add-ons and applications
+- **Exposed configuration:** Manage exposed environment variables
+- **Activity:** Track last deployments
+- **Logs:** Visualize application's logs
+- **Metrics:** Visualize application's metrics
+- **Consumption:** Visualize your application's consumption.
 
 ### Create your first add-on
 
@@ -351,8 +351,8 @@ Clever Cloud provides multiple add-ons to work with your applications:
 
 There are two kinds of billing:
 
-* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-* Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
+- Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
+- Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
 
 {{< callout type="warning" >}}
 **Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
@@ -366,11 +366,11 @@ There are two kinds of billing:
 
 Once an add-on is created, at least two tabs are available in the Clever Cloud console:
 
-* **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
+- **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
 
 !["Add-on dashboard"](/images/addon-dashboard.png "Example of an add-on dashboard")
 
-* **Information tab:** This screen sums-up the characteristics of the selected add-on.
+- **Information tab:** This screen sums-up the characteristics of the selected add-on.
 The system shows features and environment variables (if applicable).
 
 Other tabs may be available, depending on the add-on type.

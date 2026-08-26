@@ -16,8 +16,9 @@ To create a new XXX application, use the [Clever Cloud Console](https://console.
 ```bash
 clever create --type XXX
 ```
-* [Learn more about Clever Tools](/doc/cli/)
-* [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+
+- [Learn more about Clever Tools](/doc/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
 
 ## Configure your XXX application
 
@@ -25,7 +26,7 @@ clever create --type XXX
 
 XXX runtime only requires a working application listening on `0.0.0.0:8080`.
 
-* [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
 
 ### Build phase
 
@@ -35,10 +36,7 @@ During the build phase,
 
 ### XXX version
 
-
-
 ## Clever Tasks
-
 
 ```bash
 clever create --type XXX --task "XXX"

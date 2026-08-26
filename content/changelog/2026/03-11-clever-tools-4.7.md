@@ -58,7 +58,7 @@ The `clever drain` and `clever drain get` commands now display message rates and
 
 To upgrade Clever Tools, [use your favourite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

@@ -16,8 +16,8 @@ aliases:
 
 When creating an application, you have two (non-exclusive) choices for domain names:
 
-* Using a personal domain name
-* Using a `cleverapps.io` free domain for development and testing purposes, with built-in SSL
+- Using a personal domain name
+- Using a `cleverapps.io` free domain for development and testing purposes, with built-in SSL
 
 Add it in the application configuration: in the console, click **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a subdomain under `*.cleverapps.io`.
 
@@ -32,6 +32,7 @@ You can set multiple custom or `cleverapps.io` domain names to an application, b
 ![Primary domain link](/images/primary-domain-link.webp)
 
 To select the primary domain name:
+
 - Click the star icon next to the domain name in the **Domain names** section of your application in the Console
 - Use the `clever domain favourite set example.com` command in [Clever Tools](/doc/cli/applications/configuration/#domain)
 - Use the dedicated `/vhosts/favourite` endpoint [in the API](/api/v2/#put-/organisations/-id-/applications/-appId-/vhosts/favourite)
@@ -67,90 +68,90 @@ We also support wildcard personal domain names, to do so use the standard patter
 
 Provide the following to your registrar:
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
+| Record Type                         | Value                                                                                                                                                                                                                                                                                                 |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.par.clever-cloud.com.`                                                                                                                                                                                                                                         |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.216`<br>`@ 10800 IN A 91.208.207.217`<br>`@ 10800 IN A 91.208.207.218`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223` |
 
 ### Europe/Paris HDS (PARHDS)
 
 Provide the following to your registrar:
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.parhds.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223`  |
+| Record Type                         | Value                                                                                                                                                                                              |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.parhds.clever-cloud.com.`                                                                                                                                   |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 91.208.207.214`<br>`@ 10800 IN A 91.208.207.215`<br>`@ 10800 IN A 91.208.207.220`<br>`@ 10800 IN A 91.208.207.221`<br>`@ 10800 IN A 91.208.207.222`<br>`@ 10800 IN A 91.208.207.223` |
 
 To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/Paris onto Scaleway (SCW)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.` |
+| Record Type                         | Value                                                                                                                            |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.scw.clever-cloud.com.`                                                                    |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 212.129.27.239`<br>`@ 10800 IN A 212.83.186.147`<br>`@ 10800 IN A 212.83.186.216`<br>`@ 10800 IN A 212.129.27.183` |
 
 ### Europe/Gravelines HDS (GRAHDS)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 188.165.58.196`<br>`@ 10800 IN A 188.165.58.200` |
+| Record Type                         | Value                                                            |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.grahds.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 188.165.58.196`<br>`@ 10800 IN A 188.165.58.200`   |
 
 To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/London (LDN)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.ldn.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 77.68.78.36`<br>`@ 10800 IN A 77.68.94.247` |
+| Record Type                         | Value                                                         |
+| ----------------------------------- | ------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.ldn.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 77.68.78.36`<br>`@ 10800 IN A 77.68.94.247`     |
 
 ### Europe/Roubaix (RBX)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.` |
+| Record Type                         | Value                                                                                                                        |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.`                                                                |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.177.176`<br>`@ 10800 IN A 87.98.177.181`<br>`@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.136` |
 
 ### Europe/Roubaix HDS (RBXHDS)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49` |
+| Record Type                         | Value                                                            |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 135.125.16.47`<br>`@ 10800 IN A 135.125.16.49`     |
 
 To benefit from certified hosting for health data, you need to deploy in an HDS zone and to sign up to a specific contract. This begins with [an initial discussion with our team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).
 
 ### Europe/Warsaw (WSW)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.` |
+| Record Type                         | Value                                                          |
+| ----------------------------------- | -------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.wsw.clever-cloud.com.`  |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 145.239.17.127`<br>`@ 10800 IN A 145.239.17.192` |
 
 ### North-America/Montreal (MTL)
 
 Provide the following to your registrar:
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.` |
+| Record Type                         | Value                                                          |
+| ----------------------------------- | -------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.mtl.clever-cloud.com.`  |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 158.69.109.229`<br>`@ 10800 IN A 149.56.117.183` |
 
 ### Asia/Singapore (SGP)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.` |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 51.79.197.159`<br>`@ 10800 IN A 51.79.197.160` |
+| Record Type                         | Value                                                         |
+| ----------------------------------- | ------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.sgp.clever-cloud.com.` |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 51.79.197.159`<br>`@ 10800 IN A 51.79.197.160`  |
 
 ### Oceania/Sydney (SYD)
 
-| Record Type | Value |
-| ----------- | ----- |
-| CNAME<br>Recommended | `{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.` |
-| A<br>Only if CNAME is not available  | `@ 10800 IN A 139.99.253.215`<br>`@ 10800 IN A 139.99.253.237` |
+| Record Type                         | Value                                                          |
+| ----------------------------------- | -------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.`  |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 139.99.253.215`<br>`@ 10800 IN A 139.99.253.237` |
 
 {{< callout type="warning" >}}
 You cannot use a CNAME on a top-level domain, or on a subdomain which already has DNS records.
@@ -166,11 +167,11 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 
 ### Contextual Example
 
-| Domain Name Use Case        | CNAME config                                    | Record A config                                                | Web redirections                            |
-|-----------------------------|-------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------|
-| `www.example.com` <br> `example.com` | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                            | Redirect `example.com` to `www.example.com` |
-| `www.example.com`           | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                            | No redirect needed                          |
-| `example.com`               | No CNAME record needed                           | Point `example.com` to the two IP addresses of the selected region | No redirect needed                          |
+| Domain Name Use Case                 | CNAME config                                                  | Record A config                                                    | Web redirections                            |
+| ------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
+| `www.example.com` <br> `example.com` | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                                 | Redirect `example.com` to `www.example.com` |
+| `www.example.com`                    | Point `www.example.com` to `domain.par/mtl.clever-cloud.com.` | No A record needed                                                 | No redirect needed                          |
+| `example.com`                        | No CNAME record needed                                        | Point `example.com` to the two IP addresses of the selected region | No redirect needed                          |
 
 ## Path routing
 

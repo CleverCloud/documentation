@@ -18,6 +18,7 @@ excludeSearch: true
 ---
 
 For several months, we were preparing our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools/), for big changes. It starts to be ready for prime time with the 3.1.0 release. First, the packaging process moved to GitHub Actions with some improvements:
+
 - You can now get the [list of releases](https://github.com/CleverCloud/clever-tools/releases) with a changelog and source code archives
 - No more beta channel: you'll be able to test new features easier
 - Better process, quicker tests, more releases!
@@ -30,7 +31,7 @@ Of course, there are also some bug fixes. And be prepared: more new features are
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

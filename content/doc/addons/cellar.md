@@ -188,9 +188,10 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   [Bun](https://bun.sh) includes a [native S3 client](https://bun.sh/docs/api/s3) with no external dependency. It works with any S3-compatible service, including Cellar.
 
   **Required environment variables:**
-  - `CELLAR_ADDON_HOST` - Cellar endpoint (e.g., `cellar-c2.services.clever-cloud.com`)
-  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+- `CELLAR_ADDON_HOST` - Cellar endpoint (e.g., `cellar-c2.services.clever-cloud.com`)
+- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   These variables are automatically available in your application when you [link a Cellar add-on](/doc/addons/cellar/) to it on Clever Cloud, regardless of the runtime (for example in a [Node.js & Bun application](/doc/applications/nodejs/)).
 
@@ -236,9 +237,10 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   Using AWS SDK for JavaScript v3 (recommended):
 
   **Required environment variables:**
-  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   Some SDKs require a region even with a custom endpoint, so set `region` to the literal value "`default`".
 
@@ -303,13 +305,15 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   Make sure to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
 
   **Required environment variables:**
-  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   **Optional (for SDK 2.30.0+ checksum compatibility):**
-  - `AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED`
-  - `AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED`
+
+- `AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED`
+- `AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED`
 
   Some SDKs require a region even with a custom endpoint, so just provide the literal value "`default`" to satisfy that requirement.
 
@@ -375,9 +379,10 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   This script uses boto3, the AWS SDK for Python.
 
   **Required environment variables:**
-  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
+- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   Some SDKs require a region even with a custom endpoint, so set the `region_name` to the literal value "`default`" when instantiating the client.
 
@@ -430,25 +435,26 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   you must configure a S3 service with a custom endpoint.
 
   **Required environment variables:**
-  - `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `cellar-c2.services.clever-cloud.com`)
-  - `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-  - `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+
+- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `cellar-c2.services.clever-cloud.com`)
+- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
+- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
 
   Use this configuration in your `config/storage.yml`:
 
-  ```yaml {filename="config/storage.yml"}
-  cellar:
-    service: S3
-    access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
-    secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
-    endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
-    region: 'us-west-1'
-    force_path_style: true
-    bucket: mybucket
-    # If experiencing checksum validation errors, add:
-    # request_checksum_calculation: 'when_required'
-    # response_checksum_validation: 'when_required'
-  ```
+```yaml {filename="config/storage.yml"}
+cellar:
+  service: S3
+  access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
+  secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
+  endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
+  region: 'us-west-1'
+  force_path_style: true
+  bucket: mybucket
+  # If experiencing checksum validation errors, add:
+  # request_checksum_calculation: 'when_required'
+  # response_checksum_validation: 'when_required'
+```
 
   Although the `region` parameter appears, it's not used by Cellar. The region value serves to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception would raise : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
 
@@ -513,7 +519,6 @@ s3cmd delpolicy s3://<bucket-name>
 
 The original ACL should apply to all of your objects after that.
 
-
 ### IP restrictions
 
 If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
@@ -553,12 +558,14 @@ To do so, you can use the template below in a `policy.json` file. This example s
 ```
 
 To apply the policy, use this command:
-```
+
+```text
 s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
 
 To delete the policy, use this command:
-```
+
+```text
 s3cmd delpolicy ./policy.json s3://<bucket-name>
 ```
 
@@ -696,9 +703,9 @@ Only the latest version of a file is visible, while previous versions remain hid
 Versioning can't be enabled for a single file: it will cover the entire bucket.
 A bucket can be in one of three state :
 
- - Unversioned (The default)
- - Versioning-enabled
- - Versioning-suspended
+- Unversioned (The default)
+- Versioning-enabled
+- Versioning-suspended
 
 You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time.
 Once versioning is enabled, any object you add have a unique version ID. Object that were already existing before enabling versioning have a version ID of `null`.
@@ -718,7 +725,7 @@ For that reason, we do recommend you to enable versioning when creating a new bu
   mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>
   ```
 
-  ### Activate versioning with MinIO
+### Activate versioning with MinIO
 
   To activate versioning, you can use MinIO and the following command.
 
@@ -734,11 +741,11 @@ For that reason, we do recommend you to enable versioning when creating a new bu
   mc version info <alias>/<bucket-name> --json
   ```
 
-  ### How to use versioning
+### How to use versioning with AWS CLI
 
 When versioning is enabled, the newly added object is automatically provided with a unique identifier. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
 
-  #### List versioned objects
+#### List versioned objects
 
   If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run :
 
@@ -752,7 +759,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   mc ls --versions <alias>/<bucket-name>/<object_name>
   ```
 
-  #### Get a version of an object
+#### Get a version of an object
 
   You can get the specific version of an object using its version ID obtained using the previous command.
 
@@ -760,7 +767,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>
   ```
 
-  #### Delete a version of an object
+#### Delete a version of an object
 
   You can delete the specific version of an object using its version ID.
 
@@ -768,14 +775,13 @@ When versioning is enabled, the newly added object is automatically provided wit
   mc rm --vid <version_id> <alias>/<bucket-name>/<object_name>
   ```
 
-
   {{< /tab >}}
 
   {{< tab name="AWS CLI" icon="aws" >}}
 
   The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](/doc/addons/cellar/#with-aws-cli)
 
-  ### Activate versioning with AWS CLI
+### Activate versioning with AWS CLI
 
   To activate versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
 
@@ -795,11 +801,11 @@ When versioning is enabled, the newly added object is automatically provided wit
   aws s3api get-bucket-versioning --bucket <bucket_name>
   ```
 
-  ### How to use versioning
+### How to use versioning
 
   When versioning is enabled, the added object automatically gets a versionID. Only the latest version of an object if shown.
 
-  #### List all versioned Object
+#### List all versioned Object
 
   If you need to list all the objects in your bucket, including the different versions of the files stored in it, you can use :
 
@@ -807,7 +813,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   aws s3api list-object-versions --bucket <bucket_name>
   ```
 
-  #### List all the version of a specific Object
+#### List all the version of a specific Object
 
   If you want to check the different versions of a specific object, you can use the following command. In this example, we find the versions of test.txt :
 
@@ -815,7 +821,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   aws s3api list-object-versions --bucket <bucket_name> --prefix <file_name>
   ```
 
-  #### Get the version of an Object
+#### Get the version of an Object
 
   If you want to retrieve the previous version of an object, you need the versionID that you can get with any of the two previous command. You can use :
 
@@ -823,7 +829,7 @@ When versioning is enabled, the newly added object is automatically provided wit
   aws s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
   ```
 
-  #### Delete the version of an object
+#### Delete the version of an object
 
   To remove a version of an object, you can use this command :
 

@@ -1,16 +1,23 @@
 {
-    "MD041": false,
-    "MD013": false,
-    "MD051": false,
-    "MD029": false,
-    // MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
-    "MD033": {
+  "MD004": {
+    "style": "dash"
+  },
+  "MD013": false,
+  "MD029": false,
+  // MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
+  "MD033": {
     // Allowed elements
     "allowed_elements": [
       "br",
-      "cc-smart-container",
-      "cc-pricing-product",
       "cite"
     ]
+  },
+  "MD041": false,
+  "MD051": false,
+  "MD055": {
+    "style": "leading_and_trailing"
+  },
+  "MD060": {
+    "style": "aligned"
   }
 }

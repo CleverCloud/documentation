@@ -19,7 +19,7 @@ aliases:
 
 Clever Cloud allows you to connect to running instances via SSH.
 
-While direct SSH access to instances is not recommended in an [immutable infrastructure](https://boxfuse.com/blog/no-ssh.html) setup, it can be useful for debugging purposes.
+While direct SSH access to instances is not recommended in an [immutable infrastructure](https://glossary.cncf.io/immutable-infrastructure/) setup, it can be useful for debugging purposes.
 
 ## Purpose
 

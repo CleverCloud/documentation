@@ -841,6 +841,154 @@ When versioning is enabled, the newly added object is automatically provided wit
 
 {{< /tabs >}}
 
+## Object Lock
+
+Cellar supports [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html), which protects individual object versions from permanent deletion or modification with a [write-once-read-many (WORM)](https://en.wikipedia.org/wiki/Write_once_read_many) model. It can reduce the risk of accidental or malicious deletion and enforce data-retention policies.
+
+Using Object Lock requires two steps. First, enable the feature when you create the bucket; Cellar doesn't allow you to add it later. This automatically activates [versioning](#versioning), which you can no longer suspend. Second, choose how to protect object versions:
+
+- Set a default retention period for every new version
+- Apply a retention period or legal hold only to selected versions
+
+Until you complete this second step, Object Lock doesn't protect any objects.
+
+### Create a bucket with Object Lock
+
+The following examples create `my-locked-bucket` with Object Lock enabled. Replace the bucket name with your own value.
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  This command assumes you have [configured s3cmd](#with-s3cmd). s3cmd doesn't provide a dedicated option for Object Lock at bucket creation, but you can add a specific header to enable it:
+
+  ```bash
+  s3cmd --add-header=x-amz-bucket-object-lock-enabled:true mb s3://my-locked-bucket
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="MinIO" icon="minio" >}}
+
+  This command assumes you have [configured a MinIO alias](#activate-versioning-with-minio) named `my-cellar`:
+
+  ```bash
+  mc mb --with-lock my-cellar/my-locked-bucket
+  ```
+
+  See the MinIO documentation for [`mc mb`](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-mb.html).
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  This command assumes you have [configured your AWS CLI credentials](#with-aws-cli):
+
+  ```bash
+  aws s3api create-bucket \
+    --bucket my-locked-bucket \
+    --object-lock-enabled-for-bucket \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  ```
+
+  See the AWS CLI documentation for [`create-bucket`](https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html).
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+### Set a default retention period
+
+The following examples complete the configuration by protecting every new object version for 30 days in Governance mode. s3cmd can't configure a default retention period, so use MinIO or AWS CLI for this step.
+
+{{< tabs >}}
+
+  {{< tab name="MinIO" icon="minio" >}}
+
+  ```bash
+  mc retention set --default governance 30d my-cellar/my-locked-bucket
+  mc retention info --default my-cellar/my-locked-bucket
+  ```
+
+  See the MinIO documentation for [`mc retention`](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-retention.html).
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  aws s3api put-object-lock-configuration \
+    --bucket my-locked-bucket \
+    --object-lock-configuration '{"ObjectLockEnabled":"Enabled","Rule":{"DefaultRetention":{"Mode":"GOVERNANCE","Days":30}}}' \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+
+  aws s3api get-object-lock-configuration \
+    --bucket my-locked-bucket \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  ```
+
+  See the AWS CLI documentation for [`put-object-lock-configuration`](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object-lock-configuration.html).
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+Object Lock provides two retention modes:
+
+- **Governance** prevents deletion or retention changes unless a client with the required permission explicitly bypasses the protection. Use it when authorized operators must retain an override capability.
+- **Compliance** can't be bypassed through the S3 API and prevents deletion or retention-period reductions before expiry. Use it only after validating the policy and duration.
+
+The default rule applies to object versions uploaded after you configure it. To protect an existing version, set retention directly on that version. Overwriting an object creates another version, while deleting it without a version ID can add a delete marker. The protected version remains stored and recoverable.
+
+### Hold an object without an expiration date
+
+A legal hold protects one object version until an authorized user explicitly removes the hold. It is independent of any fixed retention period. The following examples enable and disable a legal hold on the current version of `report.pdf`.
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd setobjectlegalhold ON s3://my-locked-bucket/report.pdf
+  s3cmd setobjectlegalhold OFF s3://my-locked-bucket/report.pdf
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="MinIO" icon="minio" >}}
+
+  ```bash
+  mc legalhold set my-cellar/my-locked-bucket/report.pdf
+  mc legalhold info my-cellar/my-locked-bucket/report.pdf
+  mc legalhold clear my-cellar/my-locked-bucket/report.pdf
+  ```
+
+  Use `--version-id` to target a specific version. See the [`mc legalhold` documentation](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-legalhold.html) for recursive and version-specific operations.
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  aws s3api put-object-legal-hold \
+    --bucket my-locked-bucket \
+    --key report.pdf \
+    --legal-hold Status=ON \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+
+  aws s3api put-object-legal-hold \
+    --bucket my-locked-bucket \
+    --key report.pdf \
+    --legal-hold Status=OFF \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  ```
+
+  See the AWS CLI documentation for [`put-object-legal-hold`](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object-legal-hold.html).
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
 ## Uploading objects with presigned URLs and checksum validation
 
 Pre-signed URLs allow the client to upload files directly to S3 without ever exposing your credentials. You simply generate a temporary, time-limited URL and the client uses it to upload their file to your cellar.

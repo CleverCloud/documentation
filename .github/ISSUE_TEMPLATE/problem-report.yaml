@@ -1,7 +1,7 @@
 name: ⚠️ Report a problem
 description: Report an error, technical issue, UX problem, or request clarification
 title: "Issue: "
-labels: ["documentation", "bug"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -19,7 +19,7 @@ body:
       options:
         - Clarification request (unclear or incomplete information)
         - Documentation error (incorrect information, broken link, etc.)
-        - Technical site issue (Hugo build, shortcodes, functionality)
+        - Site or repository issue (Hugo, CI, shortcodes, rendering)
         - UX/design problem (accessibility, navigation, responsive)
         - Other problem
     validations:
@@ -28,11 +28,11 @@ body:
   - type: textarea
     id: page-urls
     attributes:
-      label: "Affected page(s)"
-      description: "URLs of the documentation pages with the problem (one per line)"
+      label: "Affected page or file"
+      description: "Provide the affected documentation URL or repository path, one per line"
       placeholder: |
         https://www.clever.cloud/developers/...
-        https://www.clever.cloud/developers/...
+        .github/workflows/...
     validations:
       required: true
 

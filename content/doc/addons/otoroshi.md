@@ -37,7 +37,7 @@ On Clever Cloud, it comes with pre-configured with features included such as [Co
 
 Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
 
-```
+```bash
 $ clever addon create otoroshi myOtoroshi
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -107,7 +107,7 @@ clever otoroshi open webui myOtoroshi
 
 The first time you connect, change the initial password (Security -> Administrators -> Edit user).
 
-* [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/docs/index.html)
+- [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/docs/index.html)
 
 ## Underlying resources
 
@@ -130,14 +130,17 @@ They are dimensioned to suit a majority of needs. You can however manage and adj
 Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever.cloud/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Eleven Labs, Gemini, Groq, Hive, Hugging Face, Leonardo AI, Luma, OVH and Scaleway AI Endpoints. It supports audio, image, moderation and text generation models.
 
 ### Smarter AI operations
+
 The extension enhances your LLM operations with intelligent workload distribution and automatic failover mechanisms, ensuring consistent service availability. It implements sophisticated features such as semantic caching to optimize response times and reduce costs, while providing comprehensive quota management capabilities for effective resource allocation.
 
 {{< youtube id="M8sA9xuE3gs">}}
 
 ### Security and Management
+
 Security is paramount with built-in features for API key management through Otoroshi's secure vault system. The extension leverages Otoroshi's advanced authorization framework to implement fine-grained access controls based on user identity, API keys, consumer metadata, and request parameters. Additionally, prompt fencing technology helps prevent sensitive information leakage and ensures response quality.
 
 ### Observability and Enhancement
+
 Every LLM interaction is thoroughly audited, capturing detailed information about consumers, providers, and usage patterns. The extension also includes robust prompt engineering capabilities, allowing you to create and maintain a library of contextually enhanced prompts and templates for improved efficiency and consistency in LLM interactions.
 
 - [Otoroshi LLM extension documentation](https://cloud-apim.github.io/otoroshi-llm-extension/docs/overview)
@@ -148,11 +151,13 @@ Every LLM interaction is thoroughly audited, capturing detailed information abou
 Otoroshi on Clever Cloud integrates Coraza, a high-performance Web Application Firewall (WAF), through a WebAssembly-based plugin. This integration provides enterprise-grade security features to protect your applications using the OWASP Core Rule Set (CRS).
 
 ### Security features
+
 The Coraza WAF plugin enables robust security policy enforcement while maintaining high performance across deployments of any scale. It seamlessly integrates with Otoroshi's existing infrastructure to provide comprehensive protection against web application threats.
 
 The integration provides advanced security capabilities through OWASP CRS implementation, allowing you to create and enforce custom security policies. The system generates detailed audit logs for security monitoring and compliance purposes, with full integration into Otoroshi's existing logging and monitoring infrastructure.
 
 ### Enterprise Capabilities
+
 Designed for production environments, the Coraza WAF plugin offers flexible configuration options, supporting both detection and prevention modes. It enables customized rule sets per domain and provides detailed security event tracking through Otoroshi's event management system. The implementation is optimized for minimal performance impact while maintaining robust security controls.
 
 - [Otoroshi Coraza WAF documentation](https://maif.github.io/otoroshi/manual/docs/tutorials/instantiate-waf-coraza)
@@ -163,6 +168,6 @@ Otoroshi exposes a comprehensive REST API that enables programmatic control over
 
 An OpenAPI descriptor is available from your instance:
 
-```
+```text
 https://xxxxxxxxxxxx-api-otoroshi.services/apis/openapi.json
 ```

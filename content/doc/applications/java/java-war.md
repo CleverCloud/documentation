@@ -23,9 +23,9 @@ Clever Cloud allows you to run WAR or EAR applications. You can deploy these pro
 
 In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packaged as EAR and WAR based on their purpose.
 
-* {{< tooltip title="WAR" >}}WAR{{< /tooltip >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
+- {{< tooltip title="WAR" >}}WAR{{< /tooltip >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
 
-* {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
+- {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
 
 Note: like other runtimes, your Java application needs to listen on `0.0.0.0:8080`.
 
@@ -94,12 +94,12 @@ Here are the mandatory fields:
 }
 ```
 
-|Usage     |Field   |Description|
-|----------|--------|------------------------------------------------------------------------|
-|Required  |**container**|Name of the container to use. Should contain one of the values inside parentheses in the containers table (uppercase).|
-|Required  |file         |Should contain the path of the war/ear file relative to your application root.|
-| Optional |context      |- Must start with a slash (/), can be "/" <br>- Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path. <br>- Not needed for an `ear` file. <br>- The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context.|
-| Optional |checkMe      |- This field is recommended. <br>- A path to GET in order to test if the application is really running. <br>- By default we will consider that the application is up if the container is up. <br>- With this option, we will try to GET `/{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.|
+| Usage    | Field         | Description                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required | **container** | Name of the container to use. Should contain one of the values inside parentheses in the containers table (uppercase).                                                                                                                                                                                                                                                                             |
+| Required | file          | Should contain the path of the war/ear file relative to your application root.                                                                                                                                                                                                                                                                                                                     |
+| Optional | context       | - Must start with a slash (/), can be "/" <br>- Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path. <br>- Not needed for an `ear` file. <br>- The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context. |
+| Optional | checkMe       | - This field is recommended. <br>- A path to GET in order to test if the application is really running. <br>- By default we will consider that the application is up if the container is up. <br>- With this option, we will try to GET `/{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.                                       |
 
 #### Let Clever Cloud build your application
 
@@ -118,10 +118,10 @@ That you can do, by setting the "build" field object in the `war.json` file:
 }
 ```
 
-| Usage                           | Field | Description                                    |
-|---------------------------------|-------|------------------------------------------------|
-|Required | **type**  |- The tool you want to use to build your app. <br>- Can be "maven", "gradle", "sbt" or "ant" |
-|Required | **goal**  |- The goal you want the tool to execute.<br>- Basically, for maven, you want to put "package" in here. |
+| Usage    | Field    | Description                                                                                            |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| Required | **type** | - The tool you want to use to build your app. <br>- Can be "maven", "gradle", "sbt" or "ant"           |
+| Required | **goal** | - The goal you want the tool to execute.<br>- Basically, for maven, you want to put "package" in here. |
 
  {{% content "new-relic" %}}
 
@@ -129,18 +129,18 @@ That you can do, by setting the "build" field object in the `war.json` file:
 
 Here's the list of the configuration values for the "container" field in `war.json` (with **End Of Life** versions tagged as `EOL`):
 
-| Value      | Description                                                                                  | EOL |
-|------------|----------------------------------------------------------------------------------------------|-----|
-| JETTY9     | Use Jetty servlet container 9.x (see <https://jetty.org/download.html#version-history>)      | EOL |
-| JETTY11    | Use Jetty servlet container 11.x (see <https://jetty.org/download.html#version-history>)     | EOL |
-| PAYARA5    | Use Payara servlet container 5.x (see <https://www.payara.fish/>)                            | EOL |
-| PAYARA6    | Use Payara servlet container 6.x (see <https://www.payara.fish/>)                            | EOL |
-| TOMCAT8    | Use Tomcat servlet container 8.x (see <https://tomcat.apache.org/>)                          | EOL |
-| TOMCAT9    | Use Tomcat servlet container 9.x (see <https://tomcat.apache.org/>)                          |     |
-| TOMCAT10   | Use Tomcat servlet container 10.x (see <https://tomcat.apache.org/>)                         |     |
-| WILDFLY9   | Use Wildfly servlet container 9.x (see <https://wildfly.org/>)                               | EOL |
-| WILDFLY27  | Use Wildfly servlet container 27.x (see <https://wildfly.org/>)                              | EOL |
-| WILDFLY33  | Use Wildfly servlet container 33.x (see <https://wildfly.org/>)                              | EOL |
+| Value     | Description                                                                              | EOL |
+| --------- | ---------------------------------------------------------------------------------------- | --- |
+| JETTY9    | Use Jetty servlet container 9.x (see <https://jetty.org/download.html#version-history>)  | EOL |
+| JETTY11   | Use Jetty servlet container 11.x (see <https://jetty.org/download.html#version-history>) | EOL |
+| PAYARA5   | Use Payara servlet container 5.x (see <https://www.payara.fish/>)                        | EOL |
+| PAYARA6   | Use Payara servlet container 6.x (see <https://www.payara.fish/>)                        | EOL |
+| TOMCAT8   | Use Tomcat servlet container 8.x (see <https://tomcat.apache.org/>)                      | EOL |
+| TOMCAT9   | Use Tomcat servlet container 9.x (see <https://tomcat.apache.org/>)                      |     |
+| TOMCAT10  | Use Tomcat servlet container 10.x (see <https://tomcat.apache.org/>)                     |     |
+| WILDFLY9  | Use Wildfly servlet container 9.x (see <https://wildfly.org/>)                           | EOL |
+| WILDFLY27 | Use Wildfly servlet container 27.x (see <https://wildfly.org/>)                          | EOL |
+| WILDFLY33 | Use Wildfly servlet container 33.x (see <https://wildfly.org/>)                          | EOL |
 
 {{% content "java-env-injection" %}}
 

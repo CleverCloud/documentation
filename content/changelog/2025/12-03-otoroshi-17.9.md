@@ -16,6 +16,7 @@ excludeSearch: true
 ---
 
 [Otoroshi v17.9](https://github.com/MAIF/otoroshi/releases/tag/v17.9.0) is available with multiple improvements and bug fixes and two new plugins we've contributed to:
+
 - LLMs.txt Accept Markdown: proxies requests with `Accept: text/markdown` header according to [llms.txt proposal](https://llmstxt.org/)
 - Swagger UI: serves a Swagger UI page from a configurable OpenAPI specification URL
 

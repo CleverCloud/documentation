@@ -93,12 +93,12 @@ Clever Cloud supports multiple ways to build and run a Go application. The build
 
 ### Environment variables
 
-| Name | Description |
-| :--- | :---------- |
+| Name               | Description                                                                                                                                     |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`, `makefile`. Determines how to build and install your application. `goget` still exists but is deprecated. |
-| `CC_GO_BINARY` | Required when using the `makefile` build tool. Path to the built binary, used to launch your application. |
-| `CC_GO_PKG` | Package path passed to `go install`. Overrides auto-detection from `go.mod`. Default is `main.go` when no `go.mod` is present. |
-| `CC_GO_RUNDIR` | Run the application from the specified path, relative to `$GOPATH/src/`. Deprecated. |
+| `CC_GO_BINARY`     | Required when using the `makefile` build tool. Path to the built binary, used to launch your application.                                       |
+| `CC_GO_PKG`        | Package path passed to `go install`. Overrides auto-detection from `go.mod`. Default is `main.go` when no `go.mod` is present.                  |
+| `CC_GO_RUNDIR`     | Run the application from the specified path, relative to `$GOPATH/src/`. Deprecated.                                                            |
 
 The default `GOPATH` is `${HOME}/go_home`. The build command is `go install <package>` for all non-Makefile methods. If a `vendor/` directory is present, it is included in the build cache.
 
@@ -122,12 +122,12 @@ An example of a `Makefile`, to use with `CC_GO_BINARY=bin/myApp`:
 BINARY=bin/myApp
 
 build:
-#	To install a specific Go version, you can add:
-#	go install golang.org/dl/gox.xx.x@latest
-#	${HOME}/go_home/bin/gox.xx.x download
-#	Then use `${HOME}/go_home/bin/gox.xx.x` instead of `go`
-	echo "Build the application as ./${BINARY}"
-	go build -o ${BINARY} main.go
+# To install a specific Go version, you can add:
+# go install golang.org/dl/gox.xx.x@latest
+# ${HOME}/go_home/bin/gox.xx.x download
+# Then use `${HOME}/go_home/bin/gox.xx.x` instead of `go`
+ echo "Build the application as ./${BINARY}"
+ go build -o ${BINARY} main.go
 ```
 
 - [A more complex project using a Go Workspace and a Makefile](https://github.com/CleverCloud/go-workspaces)

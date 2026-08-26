@@ -58,6 +58,7 @@ flowchart LR
 ## Prerequisites
 
 To use Clever KMS you'll need :
+
 - An authorized access for your organisation
 - Clever Tools with KMS commands
 - A compatible Vault CLI
@@ -245,6 +246,7 @@ The ciphertext isn't stored by Clever KMS; it must be stored by the client in it
 ### Decrypt ciphertext
 
 To get back the original payload, call the decrypt route with the ciphertext and the transit key name:
+
 ```bash
 ❯ vault write transit/decrypt/my-key ciphertext=vault:v1:75Le-Zs1fzJP-_l-vPdePoabvNXYGsBtcj0Ii4LcJ_eNHeImfNWz1aAH82uyPcGgyfExcyNk5Ds9lW-C
 Key          Value

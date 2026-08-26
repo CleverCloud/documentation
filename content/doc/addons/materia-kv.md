@@ -64,7 +64,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls PING
 
 Here is an example of what you can expect:
 
-```
+```bash
 $ clever addon create kv testKV
 
 Add-on created successfully!
@@ -88,11 +88,11 @@ You can also deploy Materia KV add-ons with [Terraform provider](https://registr
 
 To connect to a Materia KV add-on, you need 3 parameters: the host, the port and a token. You can set these parameters as environment variables by doing `source <(clever addon env addon ADDON_ID -F shell)`. The variables set are:
 
-* `$KV_HOST` and its alias `$REDIS_HOST`
-* `$KV_PORT` and its alias `$REDIS_PORT`
-* `$KV_TOKEN` and its alias `$REDIS_PASSWORD`
-* `$REDIS_CLI_URL`
-* `$REDISCLI_AUTH`
+- `$KV_HOST` and its alias `$REDIS_HOST`
+- `$KV_PORT` and its alias `$REDIS_PORT`
+- `$KV_TOKEN` and its alias `$REDIS_PASSWORD`
+- `$REDIS_CLI_URL`
+- `$REDISCLI_AUTH`
 
 You can directly use these environment variables to connect to a Materia KV add-on using `redis-cli` if `REDISCLI_AUTH` is set:
 
@@ -101,7 +101,6 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 ```
 
 Materia KV is also compatible with alternatives such as [iredis](https://github.com/laixintao/iredis).
-
 
 ### Fish shell users
 
@@ -119,7 +118,7 @@ By default, Materia KV uses TLS on the 6379 port. You can use non-TLS connection
 
 We're exploring how [Clever Tools](https://github.com/CleverCloud/clever-tools/) can natively support Materia KV and helps you to manage such add-ons without any additional software or configuration. The `clever kv` command is available since [version 3.11](https://github.com/CleverCloud/clever-tools/releases/tag/3.11.0).
 
-* [Learn more about Clever KV](/doc/cli/kv-stores/)
+- [Learn more about Clever KV](/doc/cli/kv-stores/)
 
 ### Supported types and commands
 
@@ -131,85 +130,86 @@ Supported value types are:
 
 Find below the list of currently supported commands:
 
-| <div style="width:99px">Commands</div>  | Description |
-| ------- | ----------- |
-| `APPEND` | If `key` already exists and is a string, this command appends the value at the end of the string. If `key` doesn't exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case. |
-| `AUTH` | Authenticate the current connection using the token as `password`. |
-| `CLIENT ID` | Returns the `ID` of the current connection. A connection ID has is never repeated and is monotonically incremental. |
-| `COMMAND` | Return an array with details about every supported command. |
-| `COMMAND COUNT` | Return the number of supported commands. |
-| `COMMAND DOCS` | Return documentary information about commands. By default, the reply includes all the server's commands. You can use the optional command-name argument to specify the names of one or more commands. The reply includes a map for each returned command. |
-| `COMMAND INFO` | Returns an array reply of details about multiple Materia KV commands. Same result format as `COMMAND` except you can specify which commands get returned. If you request details about non-existing commands, their return position will be `nil`. |
-| `COMMAND LIST` | Return an array of the server's command names. |
-| `DBSIZE` | Return the number of keys in the currently-selected database. |
-| `DECR` | Decrements the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
-| `DECRBY` | Decrements the number stored at `key` by the given `decrement`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
-| `DEL` | Removes the specified `key`. A key is ignored if it doesn't exist. |
-| `EXISTS` | Returns if `key` exists. |
-| `EXPIRE` | Set a `key` time to live in seconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `EXPIRE` command or cleared using the `PERSIST` command. |
-| `EXPIREAT` | Sets a `key` to expire at the specified Unix timestamp (in seconds). After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist. |
-| `FLUSHALL` | Delete all the keys of all the existing databases, not just the currently selected one. This command never fails. |
-| `FLUSHDB` | Delete all the keys of the currently selected DB. This command never fails. |
-| `GET` | Get the value of `key`. If the `key` doesn't exist the special value nil is returned. An error is returned if the value stored at `key` is not a string, because `GET` only handles string values. |
-| `GETBIT` | Returns the bit value at offset in the string value stored at `key`. |
-| `GETDEL` | Gets the value of `key` and deletes the key. If the `key` doesn't exist, returns `nil`. Returns an error if the value stored at `key` isn't a string. |
-| `GETRANGE` | Returns the substring of the string value stored at `key`, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So `-1` means the last character, `-2` the penultimate and so forth. |
-| `HDEL` | Removes the specified fields from the hash stored at `key`. Specified fields that do not exist within this hash are ignored. If `key` does not exist, it is treated as an empty hash and this command returns `0`. |
-| `HELLO` | Switch to a different protocol, optionally authenticating and setting the connection's name, or provide a contextual client report. It always replies with a list of current server and connection properties. |
-| `HEXISTS` | Returns `1` if `field` exists in the hash stored at `key`, `0` if `field` or `key` don't exist. Returns an error if the value stored at `key` isn't a hash. |
-| `HGET` | Returns the value associated with `field` in the hash stored at `key`. If `key` does not exist, or `field` is not present in the hash, `nil` is returned. |
-| `HGETALL` | Returns all fields and values of the hash stored at `key`. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash. |
-| `HINCRBY` | Increments the number stored at `field` in the hash stored at `key` by the given `increment`. If `key` doesn't exist, creates a new key holding a hash. If `field` doesn't exist, sets the value to `0` before performing the operation. Returns an error if the field contains a value of the wrong type or the resulting value exceeds a 64-bit signed integer. |
-| `HLEN` | Returns the number of fields contained in the hash stored at `key`. If `key` does not exist, it is treated as an empty hash and `0` is returned. |
-| `HMGET` | Returns the values associated with the specified `fields` in the hash stored at `key`. For every field that does not exist in the hash, a `nil` value is returned. Because of this, the operation never fails. |
-| `HSCAN` | Incrementally iterate over hash fields and associated values. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
-| `HSET` | Sets the specified fields to their respective values in the hash stored at `key`. If `key` does not exist, a new key holding a hash is created. If `key` exists but does not hold a hash, an error is returned. |
-| `HSETNX` | Sets `field` in the hash stored at `key` to `value`, only if `field` doesn't yet exist. If `key` doesn't exist, creates a new key holding a hash. If `field` already exists, the operation has no effect. Returns `1` if `field` is a new field in the hash and the value was set, `0` if `field` already exists. |
-| `INCR` | Increments the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
-| `INCRBY` | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers. |
-| `INCRBYFLOAT` | Increment the string representing a floating point number stored at `key` by the specified `increment`. If the key does not exist, it is set to `0` before performing the operation. An error is returned if the key contains a value of the wrong type or a string that can not be represented as a floating point number. |
-| `INFO` | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans. |
-| `JSON.DEL` | Deletes JSON value at path from key. Returns the number of paths deleted. Can delete array elements or object fields. |
-| `JSON.GET` | Gets JSON value at path from key. Supports both single and multiple path queries with different path notations. |
-| `JSON.SET` | Sets JSON value at root path (`$`) and updating existing paths in key. Creates new key if it doesn't exist. |
-| `KEYS` | Returns all keys matching `pattern`, can be `*` |
-| `LOLWUT` | Returns Materia KV's version and might be hiding an easter egg 👀 |
-| `MGET` | Returns the values of all specified keys. For every key that doesn't hold a string value or doesn't exist, the special value `nil` is returned. Because of this, the operation never fails. |
-| `MSET` | Sets the given keys to their respective values. `MSET` replaces existing values with new values, just as regular `SET`. `MSET` is atomic, so all given keys are set at once. It is not possible for clients to see that some keys were updated while others are unchanged. |
-| `PERSIST` | Remove the existing time to live associated with the `key`. |
-| `PEXPIRE` | Set a `key` time to live in milliseconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `PEXPIRE` command or cleared using the `PERSIST` command. |
-| `PEXPIREAT` | Sets a `key` to expire at the specified absolute Unix timestamp in milliseconds. After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist. |
-| `PING` | Returns `PONG` if no argument is provided, otherwise return a copy of the argument as a bulk. |
-| `PTTL` | Returns the remaining time to live of a `key`, in milliseconds. |
-| `SADD` | Add the specified members to the set stored at `key`. Specified members that are already a member of this set are ignored. If `key` doesn't exist, a new set is created before adding the specified members. |
-| `SCAN` | Incrementally iterate over a collection of elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
-| `SCARD` | Returns the set cardinality (number of elements) of the set stored at `key`. |
-| `SDIFF` | Returns the members of the set resulting from the difference between the first set and all the successive sets. |
-| `SDIFFSTORE` | This command is equal to `SDIFF`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
-| `SET` | Set `key` to hold the string `value`. If key already holds a value, it is overwritten, regardless of its type. |
-| `SETBIT` | Sets or clears the bit at offset in the string value stored at `key`. |
-| `SINTER` | Returns the members of the set resulting from the intersection of all the given sets. |
-| `SINTERCARD` | Returns the number of elements that would result from the intersection of all given sets. |
-| `SINTERSTORE` | This command is equal to `SINTER`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
-| `SISMEMBER` | Returns if `member` is a member of the set stored at `key`. |
-| `SMEMBERS` | Returns all the members of the set value stored at `key`. |
-| `SMISMEMBER` | Returns whether each member is a member of the set stored at `key`. For every member, `1` is returned if the value is a member of the set, or `0` if the element is not a member of the set or if `key` doesn't exist. |
-| `SMOVE` | Move `member` from the set at `source` to the set at `destination`. This operation is atomic. In every given moment the element will appear to be a member of `source` or `destination` for other clients. |
-| `SPOP` | Removes and returns one or more random members from the set value stored at `key`. |
-| `SRANDMEMBER` | When called with just the `key` argument, return a random element from the set value stored at `key`. |
-| `SREM` | Remove the specified members from the set stored at `key`. Specified members that are not a member of this set are ignored. If `key` doesn't exist, it is treated as an empty set and this command returns `0`. |
-| `SSCAN` | Incrementally iterate over set elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
-| `STRLEN` | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value. |
-| `SUNION` | Returns the members of the set resulting from the union of all the given sets. |
-| `SUNIONSTORE` | This command is equal to `SUNION`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten. |
-| `TTL` | Returns the remaining time to live of a `key`, in seconds. |
-| `TYPE` | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list`, `set` or `string`. |
+| Commands        | Description                                                                                                                                                                                                                                                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `APPEND`        | If `key` already exists and is a string, this command appends the value at the end of the string. If `key` doesn't exist it is created and set as an empty string, so `APPEND` will be similar to `SET` in this special case.                                                                                                                                        |
+| `AUTH`          | Authenticate the current connection using the token as `password`.                                                                                                                                                                                                                                                                                                   |
+| `CLIENT ID`     | Returns the `ID` of the current connection. A connection ID has is never repeated and is monotonically incremental.                                                                                                                                                                                                                                                  |
+| `COMMAND`       | Return an array with details about every supported command.                                                                                                                                                                                                                                                                                                          |
+| `COMMAND COUNT` | Return the number of supported commands.                                                                                                                                                                                                                                                                                                                             |
+| `COMMAND DOCS`  | Return documentary information about commands. By default, the reply includes all the server's commands. You can use the optional command-name argument to specify the names of one or more commands. The reply includes a map for each returned command.                                                                                                            |
+| `COMMAND INFO`  | Returns an array reply of details about multiple Materia KV commands. Same result format as `COMMAND` except you can specify which commands get returned. If you request details about non-existing commands, their return position will be `nil`.                                                                                                                   |
+| `COMMAND LIST`  | Return an array of the server's command names.                                                                                                                                                                                                                                                                                                                       |
+| `DBSIZE`        | Return the number of keys in the currently-selected database.                                                                                                                                                                                                                                                                                                        |
+| `DECR`          | Decrements the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers.                                                       |
+| `DECRBY`        | Decrements the number stored at `key` by the given `decrement`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers.                                     |
+| `DEL`           | Removes the specified `key`. A key is ignored if it doesn't exist.                                                                                                                                                                                                                                                                                                   |
+| `EXISTS`        | Returns if `key` exists.                                                                                                                                                                                                                                                                                                                                             |
+| `EXPIRE`        | Set a `key` time to live in seconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `EXPIRE` command or cleared using the `PERSIST` command.                                                                                                                                                      |
+| `EXPIREAT`      | Sets a `key` to expire at the specified Unix timestamp (in seconds). After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist.                                                                                                                                                                        |
+| `FLUSHALL`      | Delete all the keys of all the existing databases, not just the currently selected one. This command never fails.                                                                                                                                                                                                                                                    |
+| `FLUSHDB`       | Delete all the keys of the currently selected DB. This command never fails.                                                                                                                                                                                                                                                                                          |
+| `GET`           | Get the value of `key`. If the `key` doesn't exist the special value nil is returned. An error is returned if the value stored at `key` is not a string, because `GET` only handles string values.                                                                                                                                                                   |
+| `GETBIT`        | Returns the bit value at offset in the string value stored at `key`.                                                                                                                                                                                                                                                                                                 |
+| `GETDEL`        | Gets the value of `key` and deletes the key. If the `key` doesn't exist, returns `nil`. Returns an error if the value stored at `key` isn't a string.                                                                                                                                                                                                                |
+| `GETRANGE`      | Returns the substring of the string value stored at `key`, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So `-1` means the last character, `-2` the penultimate and so forth.                                                                        |
+| `HDEL`          | Removes the specified fields from the hash stored at `key`. Specified fields that do not exist within this hash are ignored. If `key` does not exist, it is treated as an empty hash and this command returns `0`.                                                                                                                                                   |
+| `HELLO`         | Switch to a different protocol, optionally authenticating and setting the connection's name, or provide a contextual client report. It always replies with a list of current server and connection properties.                                                                                                                                                       |
+| `HEXISTS`       | Returns `1` if `field` exists in the hash stored at `key`, `0` if `field` or `key` don't exist. Returns an error if the value stored at `key` isn't a hash.                                                                                                                                                                                                          |
+| `HGET`          | Returns the value associated with `field` in the hash stored at `key`. If `key` does not exist, or `field` is not present in the hash, `nil` is returned.                                                                                                                                                                                                            |
+| `HGETALL`       | Returns all fields and values of the hash stored at `key`. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash.                                                                                                                                                                               |
+| `HINCRBY`       | Increments the number stored at `field` in the hash stored at `key` by the given `increment`. If `key` doesn't exist, creates a new key holding a hash. If `field` doesn't exist, sets the value to `0` before performing the operation. Returns an error if the field contains a value of the wrong type or the resulting value exceeds a 64-bit signed integer.    |
+| `HLEN`          | Returns the number of fields contained in the hash stored at `key`. If `key` does not exist, it is treated as an empty hash and `0` is returned.                                                                                                                                                                                                                     |
+| `HMGET`         | Returns the values associated with the specified `fields` in the hash stored at `key`. For every field that does not exist in the hash, a `nil` value is returned. Because of this, the operation never fails.                                                                                                                                                       |
+| `HSCAN`         | Incrementally iterate over hash fields and associated values. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`. |
+| `HSET`          | Sets the specified fields to their respective values in the hash stored at `key`. If `key` does not exist, a new key holding a hash is created. If `key` exists but does not hold a hash, an error is returned.                                                                                                                                                      |
+| `HSETNX`        | Sets `field` in the hash stored at `key` to `value`, only if `field` doesn't yet exist. If `key` doesn't exist, creates a new key holding a hash. If `field` already exists, the operation has no effect. Returns `1` if `field` is a new field in the hash and the value was set, `0` if `field` already exists.                                                    |
+| `INCR`          | Increments the number stored at `key` by one. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers.                                                       |
+| `INCRBY`        | Increments the number stored at `key` by the given `increment`. If the `key` doesn't exist, it is set to `0` before performing the operation. An error is returned if `key` contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64-bit signed integers.                                     |
+| `INCRBYFLOAT`   | Increment the string representing a floating point number stored at `key` by the specified `increment`. If the key does not exist, it is set to `0` before performing the operation. An error is returned if the key contains a value of the wrong type or a string that can not be represented as a floating point number.                                          |
+| `INFO`          | The `INFO` command returns information and statistics about the server in a format that is simple to parse by computers and easy to read by humans.                                                                                                                                                                                                                  |
+| `JSON.DEL`      | Deletes JSON value at path from key. Returns the number of paths deleted. Can delete array elements or object fields.                                                                                                                                                                                                                                                |
+| `JSON.GET`      | Gets JSON value at path from key. Supports both single and multiple path queries with different path notations.                                                                                                                                                                                                                                                      |
+| `JSON.SET`      | Sets JSON value at root path (`$`) and updating existing paths in key. Creates new key if it doesn't exist.                                                                                                                                                                                                                                                          |
+| `KEYS`          | Returns all keys matching `pattern`, can be `*`                                                                                                                                                                                                                                                                                                                      |
+| `LOLWUT`        | Returns Materia KV's version and might be hiding an easter egg 👀                                                                                                                                                                                                                                                                                                    |
+| `MGET`          | Returns the values of all specified keys. For every key that doesn't hold a string value or doesn't exist, the special value `nil` is returned. Because of this, the operation never fails.                                                                                                                                                                          |
+| `MSET`          | Sets the given keys to their respective values. `MSET` replaces existing values with new values, just as regular `SET`. `MSET` is atomic, so all given keys are set at once. It is not possible for clients to see that some keys were updated while others are unchanged.                                                                                           |
+| `PERSIST`       | Remove the existing time to live associated with the `key`.                                                                                                                                                                                                                                                                                                          |
+| `PEXPIRE`       | Set a `key` time to live in milliseconds. After the timeout has expired, the `key` will be automatically deleted. The time to live can be updated using the `PEXPIRE` command or cleared using the `PERSIST` command.                                                                                                                                                |
+| `PEXPIREAT`     | Sets a `key` to expire at the specified absolute Unix timestamp in milliseconds. After that time, the `key` is automatically deleted. Returns `1` if the timeout was set, `0` if the `key` doesn't exist.                                                                                                                                                            |
+| `PING`          | Returns `PONG` if no argument is provided, otherwise return a copy of the argument as a bulk.                                                                                                                                                                                                                                                                        |
+| `PTTL`          | Returns the remaining time to live of a `key`, in milliseconds.                                                                                                                                                                                                                                                                                                      |
+| `SADD`          | Add the specified members to the set stored at `key`. Specified members that are already a member of this set are ignored. If `key` doesn't exist, a new set is created before adding the specified members.                                                                                                                                                         |
+| `SCAN`          | Incrementally iterate over a collection of elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`.          |
+| `SCARD`         | Returns the set cardinality (number of elements) of the set stored at `key`.                                                                                                                                                                                                                                                                                         |
+| `SDIFF`         | Returns the members of the set resulting from the difference between the first set and all the successive sets.                                                                                                                                                                                                                                                      |
+| `SDIFFSTORE`    | This command is equal to `SDIFF`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten.                                                                                                                                                                                                     |
+| `SET`           | Set `key` to hold the string `value`. If key already holds a value, it is overwritten, regardless of its type.                                                                                                                                                                                                                                                       |
+| `SETBIT`        | Sets or clears the bit at offset in the string value stored at `key`.                                                                                                                                                                                                                                                                                                |
+| `SINTER`        | Returns the members of the set resulting from the intersection of all the given sets.                                                                                                                                                                                                                                                                                |
+| `SINTERCARD`    | Returns the number of elements that would result from the intersection of all given sets.                                                                                                                                                                                                                                                                            |
+| `SINTERSTORE`   | This command is equal to `SINTER`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten.                                                                                                                                                                                                    |
+| `SISMEMBER`     | Returns if `member` is a member of the set stored at `key`.                                                                                                                                                                                                                                                                                                          |
+| `SMEMBERS`      | Returns all the members of the set value stored at `key`.                                                                                                                                                                                                                                                                                                            |
+| `SMISMEMBER`    | Returns whether each member is a member of the set stored at `key`. For every member, `1` is returned if the value is a member of the set, or `0` if the element is not a member of the set or if `key` doesn't exist.                                                                                                                                               |
+| `SMOVE`         | Move `member` from the set at `source` to the set at `destination`. This operation is atomic. In every given moment the element will appear to be a member of `source` or `destination` for other clients.                                                                                                                                                           |
+| `SPOP`          | Removes and returns one or more random members from the set value stored at `key`.                                                                                                                                                                                                                                                                                   |
+| `SRANDMEMBER`   | When called with just the `key` argument, return a random element from the set value stored at `key`.                                                                                                                                                                                                                                                                |
+| `SREM`          | Remove the specified members from the set stored at `key`. Specified members that are not a member of this set are ignored. If `key` doesn't exist, it is treated as an empty set and this command returns `0`.                                                                                                                                                      |
+| `SSCAN`         | Incrementally iterate over set elements. It is a cursor based iterator, this means that at every call of the command, the server returns an updated cursor that the user needs to use as the cursor argument in the next call. An iteration starts when the cursor is set to `0`, and terminates when the cursor returned by the server is `0`.                      |
+| `STRLEN`        | Returns the length of the string value stored at `key`. An error is returned when key holds a non-string value.                                                                                                                                                                                                                                                      |
+| `SUNION`        | Returns the members of the set resulting from the union of all the given sets.                                                                                                                                                                                                                                                                                       |
+| `SUNIONSTORE`   | This command is equal to `SUNION`, but instead of returning the resulting set, it is stored in `destination`. If `destination` already exists, it is overwritten.                                                                                                                                                                                                    |
+| `TTL`           | Returns the remaining time to live of a `key`, in seconds.                                                                                                                                                                                                                                                                                                           |
+| `TYPE`          | Returns the string representation of the type of the value stored at `key`. Can be: `hash`, `list`, `set` or `string`.                                                                                                                                                                                                                                               |
 
 ### JSON commands
 
 Materia KV provides preliminary support for JSON data type operations, compatible with Redis API JSON commands and clients. Unlike Redis JSON which uses a dedicated data type, our implementation works directly with classic string data types while maintaining API compatibility.
 
 #### Path Syntax and Behavior
+
 - `$`: Root element (required for setting values, optional for `GET`/`DEL`)
 - `$.field`: Access field in object
 - `$..field`: Recursively search for all matching fields
@@ -251,6 +251,7 @@ OK
 ```
 
 #### Current Limitations
+
 - `JSON.SET` can only create new documents at root path (`$`)
 - `JSON.SET` can't create new fields in existing documents
 - Nested path creation is not supported (e.g., `$.new.child.field`)
@@ -266,7 +267,7 @@ The GraphQL layer is **read-only** today — the schema exposes no mutation type
 
 Materia KV is a distributed cluster: the GraphQL endpoint is a single URL shared by every add-on in a given region, over HTTPS on the standard port. For the Paris region, it is:
 
-```
+```text
 https://materiakv-graphql.eu-fr-1.services.clever-cloud.com/graphql
 ```
 
@@ -402,11 +403,11 @@ JSON documents written via `JSON.SET` are stored on top of strings. The schema h
 
 We've prepared a few examples to help you get started with Materia KV:
 
-* [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
-* [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
-* [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
-* [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
-* [Materia KV write via Redis API, read via GraphQL](https://github.com/CleverCloud/kv-graphql-example)
+- [Materia KV Go client](https://github.com/CleverCloud/mkv-go-cli)
+- [Materia KV raw TCP V demo](https://github.com/CleverCloud/mkv-raw-tcp-v)
+- [Materia KV raw TCP Ruby demo](https://github.com/CleverCloud/mkv-raw-tcp-ruby)
+- [Materia KV PHP sessions with TTL demo](https://github.com/CleverCloud/php-sessions-kv-example)
+- [Materia KV write via Redis API, read via GraphQL](https://github.com/CleverCloud/kv-graphql-example)
 
 ## How Materia KV differs from Redis
 
@@ -478,14 +479,14 @@ Active background cleanup of expired keys is under active development. Future re
 
 Materia KV enforces stricter size limits than Redis due to the constraints of the underlying distributed transaction engine.
 
-| Limit | Redis | Materia KV |
-|-------|-------|------------|
-| Max key size | 512 MB | 8 KB |
-| Max value size | 512 MB | 5 MB |
-| Max transaction size | N/A | 10 MB (reads + writes) |
-| Transaction duration | N/A | 5 seconds |
-| Max keys per `DEL` | No limit | 100 |
-| Storage per add-on | Plan-dependent | 128 MB (during Beta, can be increased) |
+| Limit                | Redis          | Materia KV                             |
+| -------------------- | -------------- | -------------------------------------- |
+| Max key size         | 512 MB         | 8 KB                                   |
+| Max value size       | 512 MB         | 5 MB                                   |
+| Max transaction size | N/A            | 10 MB (reads + writes)                 |
+| Transaction duration | N/A            | 5 seconds                              |
+| Max keys per `DEL`   | No limit       | 100                                    |
+| Storage per add-on   | Plan-dependent | 128 MB (during Beta, can be increased) |
 
 The system enforces the 8 KB key limit and 5 MB value limit at the application level. The 10 MB transaction limit and 5-second duration are FoundationDB constraints that apply to the sum of all data read and written within a single command's transaction.
 

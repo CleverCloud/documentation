@@ -14,20 +14,20 @@ excludeSearch: true
 
 We updated all our images. Deployment is in progress for all our users.
 
-* **Common:**
-  * cURL 8.21.0
-  * Mise 2026.6.14
-  * NGINX 1.30.3
-* **Docker:**
-  * Update to 29.6.1
-* **Java:**
-  * Gradle 9.6.1
-* **PHP:**
-  * `mod_ssl` module is now loaded
-* **Python:**
-  * uv 0.11.25
-* **Static:**
-  * Hugo 0.163.3
+- **Common:**
+  - cURL 8.21.0
+  - Mise 2026.6.14
+  - NGINX 1.30.3
+- **Docker:**
+  - Update to 29.6.1
+- **Java:**
+  - Gradle 9.6.1
+- **PHP:**
+  - `mod_ssl` module is now loaded
+- **Python:**
+  - uv 0.11.25
+- **Static:**
+  - Hugo 0.163.3
 
 ## Hugo version update
 

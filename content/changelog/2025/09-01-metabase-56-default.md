@@ -16,6 +16,7 @@ excludeSearch: true
 ---
 
 The `x.56` branch of Metabase is available on Clever Cloud [since last month](/changelog/2025/08-08-metabase-56/). It's now the default branch deployed with the [release 0.56.3](https://github.com/metabase/metabase/releases/tag/v0.56.3). It means that:
+
 - All new add-ons will use it
 - All add-ons using default configuration (`community-latest`) will use it after a rebuild
 

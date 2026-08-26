@@ -22,7 +22,7 @@ aliases:
 
 You can create a new application on Clever Cloud, linked to your local folder. Only its `type` is required, it should be one of: `docker`, `dotnet`, `elixir`, `frankenphp`, `go`, `gradle`, `haskell`, `jar`, `linux`, `maven`, `meteor`, `node`, `php`, `play1`, `play2`, `python`, `ruby`, `rust`, `sbt`, `static`, `static-apache`, `v` or `war`. Result can be printed in `human` or `json` format.
 
-```
+```console
 clever create -t TYPE APP_NAME
 clever create -t TYPE --format json
 ```
@@ -32,9 +32,9 @@ clever create -t TYPE --format json
 
 You can also use one of the following optional parameters:
 
-#### Tasks
+### Tasks
 
-```
+```console
 [--task, -T] COMMAND
 ```
 
@@ -47,7 +47,7 @@ You can execute a Task whenever needed through a `clever restart` or modify it a
 
 #### GitHub repositories
 
-```
+```console
 --github owner/repo
 ```
 
@@ -57,7 +57,7 @@ If your Clever Cloud account is linked to a GitHub account, you can deploy any o
 
 You can ask to deploy your application in a specific organisation/user account, region, with an alias different from its name:
 
-```
+```console
 [--org, -o, --owner] ID/NAME
 [--alias, -a] ALIAS
 [--region, -r] ZONE
@@ -84,7 +84,7 @@ Default region is our Paris datacenters (`par`), but it can be:
 
 After the application creation, you can ask for a `json` formatted report instead of an `human` sentence:
 
-```
+```console
 [--format, -F] FORMAT
 ```
 
@@ -92,19 +92,19 @@ After the application creation, you can ask for a `json` formatted report instea
 
 If an application already exists in your Clever Cloud account, you can link it to any local directory to control it easily. You can even link several applications to a single folder, each one with a different name and/or alias. This is done through the `.clever.json` file.
 
-```
+```console
 clever link APP_ID_OR_NAME [--alias, -a] ALIAS [--org, -o, --owner] ORG_ID_OR_NAME
 ```
 
 If multiple applications are linked, you can define one as default with it alias:
 
-```
+```console
 clever make-default ALIAS
 ```
 
 To unlink an application:
 
-```
+```console
 clever unlink ALIAS
 ```
 
@@ -112,13 +112,13 @@ clever unlink ALIAS
 
 You can list linked applications of a folder, you'll get : ID, alias and deployment URL.
 
-```
+```console
 clever applications
 ```
 
 If you only need to get aliases or the result in the JSON format:
 
-```
+```console
 [--only-aliases]           List only application aliases (default: false)
 [--json, -j]               Show result in JSON format (default: false)
 ```
@@ -127,7 +127,7 @@ If you only need to get aliases or the result in the JSON format:
 
 To list all applications across all organisations you have access to, you can use:
 
-```
+```console
 clever applications list -F json
 clever applications list --org ORG_ID_OR_NAME
 ```
@@ -136,7 +136,7 @@ clever applications list --org ORG_ID_OR_NAME
 
 To delete an application and unlink it from the current folder you only need to:
 
-```
+```console
 clever delete
 clever delete --alias ALIAS
 clever delete --app APP_ID_OR_NAME

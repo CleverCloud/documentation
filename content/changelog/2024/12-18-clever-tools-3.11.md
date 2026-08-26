@@ -30,7 +30,7 @@ You can learn more about `clever kv` in [Clever Tools documentation](/doc/cli/kv
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

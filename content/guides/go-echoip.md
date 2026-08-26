@@ -19,14 +19,13 @@ This doc explains how to install and configure EchoIP from source, and how to de
 
 ## How to Configure and Deploy EchoIP on Clever Cloud
 
-
 ### Download EchoIP
 
 You can download EchoIP from <https://github.com/mpolden/echoip> and create a new origin.
 
-
 First clone EchoIP's repository:
-```
+
+```bash
 ~ $ git clone https://github.com/mpolden/echoip.git
 ~ $ cd echoip
 ```
@@ -34,7 +33,8 @@ First clone EchoIP's repository:
 ### Configure `clevercloud/go.json`
 
 Create the necessary files to build and run the application:
-```
+
+```text
 echoip/ ~ $ mkdir clevercloud
 echoip/ ~ $ cat << EOF > clevercloud/go.json
 {
@@ -48,33 +48,31 @@ echoip/ ~ $ git add clevercloud/
 echoip/ ~ $ git commit -m "add clevercloud files" clevercloud/
 ```
 
-
  {{% content "set-env-vars" %}}
 
-
-
 Define necessary environment variables (this is specific to EchoIP):
-```
+
+```text
 echoip/ ~ $ clever env set CC_RUN_COMMAND "~/go_home/bin/echoip -H X-Forwarded-For"
 Your environment variable has been successfully saved
 ```
 
-
  {{% content "deploy-git" %}}
 
-
-
 Add the clevercloud git remote:
-```
+
+```text
 echoip/ ~ $ git remote add clevercloud $(jq -r '.apps[0].git_ssh_url' < .clever.json)
 ```
 
 Push the app for deployment:
-```
+
+```text
 echoip/ ~ $ git push clevercloud master
 ```
 
 Check the deployment logs:
-```
+
+```text
 echoip/ ~ $ clever logs
 ```

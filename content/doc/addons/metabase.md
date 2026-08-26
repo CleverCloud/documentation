@@ -47,7 +47,7 @@ You can also save questions and **organize** them in _collections_. When opening
 
 Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
 
-```
+```bash
 $ clever addon create metabase myMetabase
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -73,7 +73,7 @@ Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on 
 
 Once you created your add-on, open the management URL or look for `MB_SITE_URL` value in the Metabase dashboard from the Console. The first time you connect, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.
 
-* [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
+- [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
 
 ## Password reset
 
@@ -94,7 +94,7 @@ Its name is the same as the add-on name, followed by the add-on ID.
 
 Add a `CC_PRE_RUN_HOOK` environment variable with this value (replace `email@example.com` with your own address):
 
-```
+```text
 MB_DB_CONNECTION_URI="$POSTGRESQL_ADDON_URI" java --add-opens java.base/java.nio=ALL-UNNAMED -jar metabase.jar reset-password email@example.com
 ```
 

@@ -44,7 +44,7 @@ clever otoroshi version update otoroshi_id
 
 Manage your Clever Cloud account's emails and public SSH keys with the new `clever emails` and `clever ssh-keys` commands:
 
-```
+```console
 clever emails
 clever ssh-keys -F json
 
@@ -62,7 +62,7 @@ clever ssh-keys remove-all
 
 You can also use `clever config` to set an application as a [Clever Task](/doc/develop/tasks/) after its creation of get this option configuration:
 
-```
+```console
 clever config get task
 clever config set task true
 clever config set task false
@@ -75,7 +75,7 @@ clever config update --name "My new task name" --enable-task
 
 To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
 
-```
+```console
 npm update -g clever-tools
 clever version
 ```

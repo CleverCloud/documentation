@@ -71,7 +71,7 @@ The full configuration can look like the following:
 You can use the following properties:
 
 | Usage    | Field             | Description                                                               |
-|----------|-------------------|---------------------------------------------------------------------------|
+| -------- | ----------------- | ------------------------------------------------------------------------- |
 | Optional | **build → type**  | can be maven, gradle or ant                                               |
 | Optional | **build → goal**  | is the target you want to use to build your project                       |
 | Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |

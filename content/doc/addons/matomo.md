@@ -53,7 +53,7 @@ We've already integrated the Clever Cloud SSO, so you can login directly into yo
 
 Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/cli/install/) if needed. In your terminal, `clever addon create addon-matomo <name> --region <region> --org <org>` (`--org` and `--region` are optional). You'll get URLs to manage your Matomo instance:
 
-```
+```bash
 $ clever addon create addon-matomo myMatomo
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx

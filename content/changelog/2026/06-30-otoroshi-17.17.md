@@ -14,21 +14,21 @@ excludeSearch: true
 
 [Otoroshi v17.17.0](https://github.com/MAIF/otoroshi/releases/tag/v17.17.0) is available on Clever Cloud. This release adds standards-based token introspection, hardens API key validation and improves Elasticsearch compatibility. It also ships LLM extension [0.0.82](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.82), which builds on [0.0.81](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.81) and [0.0.80](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.80).
 
-### RFC 7662 token introspection and admin bootstrap
+## RFC 7662 token introspection and admin bootstrap
 
 Otoroshi now implements the [RFC 7662](https://datatracker.ietf.org/doc/html/rfc7662) introspection flow, so you can validate opaque access tokens against an introspection endpoint. The `OIDCJwtVerifier` also reads the audience from an array, aligning it with providers that emit `aud` as a list.
 
 The initial admin password can now be generated and stored in a temporary file at first startup, which makes automated and reproducible bootstrap of a fresh instance easier.
 
-### Hardened API key validation
+## Hardened API key validation
 
 Several fixes tighten how API keys are accepted. Disabled API keys are no longer accepted in client-id-only mode, and a bearer signature validation bypass in that same mode has been corrected. Legacy quota declarations are now reported on the API key quotas endpoint, so quota reporting stays consistent across key formats.
 
-### Elasticsearch 8 and Expression Language
+## Elasticsearch 8 and Expression Language
 
 Writes to Elasticsearch 8 no longer include the deprecated `_type` field, and the cluster version can be auto-filled from the interface. The Expression Language handles default values more reliably and fixes the ordering of `ctx.geolocation.*` and `ctx.useragent.*` expressions. The `NgErrorRewriter` plugin also receives several improvements, and ingress fetching now targets the correct API group.
 
-### LLM extension: A2A, MCP virtual servers and gateway discovery
+## LLM extension: A2A, MCP virtual servers and gateway discovery
 
 The bundled LLM extension reaches [0.0.82](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.82) and includes the features introduced in 0.0.81 and 0.0.80. The provider and capability catalogs are now exposed through the authenticated admin API, and a new `RampartBodyRedactionBackend` terminal plugin reads the request body, redacts PII with the local Rampart model and returns the redacted body directly. The Mistral provider adopts the OpenAI content representation for chat messages, improving support for structured and multi-part content.
 

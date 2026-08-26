@@ -14,13 +14,13 @@ excludeSearch: true
 
 We updated all our images, except PHP. Deployment is in progress for all our users.
 
-* **Common:**
-  * Linux kernel 6.19.14
-  * CA certificates 20260223
-  * Git 2.54.0
-* **Node.js & Bun:**
-  * Yarn 4.14.1
-* **Ruby:**
-  * Update to 3.2.11
-  * Update to 3.4.9
-  * Update to 4.0.3
+- **Common:**
+  - Linux kernel 6.19.14
+  - CA certificates 20260223
+  - Git 2.54.0
+- **Node.js & Bun:**
+  - Yarn 4.14.1
+- **Ruby:**
+  - Update to 3.2.11
+  - Update to 3.4.9
+  - Update to 4.0.3

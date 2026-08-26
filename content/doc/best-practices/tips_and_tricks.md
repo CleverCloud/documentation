@@ -23,18 +23,18 @@ The [Clever Cloud Console](https://console.clever-cloud.com) is your control cen
 
 The left sidebar menu includes a powerful search function. Beyond simple name searches, you can use special keywords to filter your resources:
 
-| Keyword        | What it Shows |
-| -------        | ----------- |
-| `is:addon`     | Lists all your add-ons |
-| `is:app`       | Shows only applications |
+| Keyword        | What it Shows                                                                     |
+| -------------- | --------------------------------------------------------------------------------- |
+| `is:addon`     | Lists all your add-ons                                                            |
+| `is:app`       | Shows only applications                                                           |
 | `is:[addon]`   | Filters specific add-on types (Examples: `is:postgresql`, `is:redis`, `is:mysql`) |
-| `is:[runtime]` | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`) |
+| `is:[runtime]` | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`)          |
 
 ### OpenSearch support
 
 Clever Cloud supports OpenSearch, allowing you to add [the Console](https://console.clever-cloud.com) as a search engine in your browser, such as [Chrome](https://support.google.com/chrome/answer/95426) or [Firefox](https://support.mozilla.org/kb/add-or-remove-search-engine-firefox). Then, you can quickly search for applications, add-ons or organisations directly from your address bar. For example, add:
 
-```
+```yaml
 name: Clever Cloud
 shortcut: cc
 search URL: https://console.clever-cloud.com/search?q=%s
@@ -103,17 +103,17 @@ Press the `/` key anywhere in the Console to search for applications, add-ons, o
 
 Use these shortcuts when viewing applications or add-ons:
 
-| Key | Takes You To |
-| --- | ----------- |
+| Key | Takes You To            |
+| --- | ----------------------- |
 | `?` | Keyboard shortcuts help |
-| `a` | Application activity |
-| `d` | Domain settings |
-| `e` | Environment variables |
-| `i` | Resource information |
-| `l` | Logs view |
-| `m` | Application metrics |
-| `o` | Overview page |
-| `s` | Scalability settings |
+| `a` | Application activity    |
+| `d` | Domain settings         |
+| `e` | Environment variables   |
+| `i` | Resource information    |
+| `l` | Logs view               |
+| `m` | Application metrics     |
+| `o` | Overview page           |
+| `s` | Scalability settings    |
 
 ### Running One-Time Tasks
 
@@ -303,7 +303,6 @@ Each application maintains:
 - Individual environment variables
 - Automatic TLS certificate generation
 
-
 [Path routing documentation](/doc/administrate/domain-names/#path-routing)
 
 ### Create Custom Add-ons
@@ -325,7 +324,6 @@ The `cleverapps.io` domain system offers:
 - Perfect for testing and staging environments
 
 Remove these domains when moving to production with your custom domain.
-
 
 ### API-First Platform
 

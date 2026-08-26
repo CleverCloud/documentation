@@ -81,7 +81,7 @@ You can change the URL to point to your own custom configuration.
 
 Here is a configuration example for RUM activation:
 
-```bash{filename="es-apm-serverconfig.sh"}
+```bash {filename="es-apm-serverconfig.sh"}
 #!/bin/bash -l
 
 cat <<EOF >apm-server.yml
@@ -132,21 +132,21 @@ The agent will periodically scan for JVM processes and will attach to them if ne
 
 Elasticsearch managed by Clever Cloud comes with these plugins, you can activate at add-on creation:
 
-| Plugin | Description |
-| ------ | ----------- |
-| analysis-icu | Adds extended Unicode support using the ICU libraries |
-| analysis-kuromoji | Advanced analysis of Japanese using the Kuromoji analyzer |
-| analysis-nori | Morphological analysis of Korean using the Lucene Nori analyzer |
-| analysis-phonetic | Analyzes tokens into their phonetic equivalent using Soundex, Metaphone, Caverphone, and other codecs |
-| analysis-smartcn | An analyzer for Chinese or mixed Chinese-English text |
-| analysis-stempel | Provides high quality stemming for Polish |
-| analysis-ukrainian | Provides stemming for Ukrainian |
-| discovery-ec2 | Uses the AWS API to identify the addresses of seed hosts |
-| discovery-azure-classic | Uses the Azure Classic API to identify the addresses of seed hosts |
-| discovery-gce | Uses the GCE API to identify the addresses of seed hosts |
-| mapper-size | Provides the `_size` metadata field which, when enabled, indexes the size in bytes of the original `_source` field |
-| mapper-murmur3 | Allows hashes to be computed at index-time and stored in the index for later use with the cardinality aggregation |
-| mapper-annotated-text | Provides the ability to index text that is a combination of free-text and special markup |
+| Plugin                  | Description                                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| analysis-icu            | Adds extended Unicode support using the ICU libraries                                                              |
+| analysis-kuromoji       | Advanced analysis of Japanese using the Kuromoji analyzer                                                          |
+| analysis-nori           | Morphological analysis of Korean using the Lucene Nori analyzer                                                    |
+| analysis-phonetic       | Analyzes tokens into their phonetic equivalent using Soundex, Metaphone, Caverphone, and other codecs              |
+| analysis-smartcn        | An analyzer for Chinese or mixed Chinese-English text                                                              |
+| analysis-stempel        | Provides high quality stemming for Polish                                                                          |
+| analysis-ukrainian      | Provides stemming for Ukrainian                                                                                    |
+| discovery-ec2           | Uses the AWS API to identify the addresses of seed hosts                                                           |
+| discovery-azure-classic | Uses the Azure Classic API to identify the addresses of seed hosts                                                 |
+| discovery-gce           | Uses the GCE API to identify the addresses of seed hosts                                                           |
+| mapper-size             | Provides the `_size` metadata field which, when enabled, indexes the size in bytes of the original `_source` field |
+| mapper-murmur3          | Allows hashes to be computed at index-time and stored in the index for later use with the cardinality aggregation  |
+| mapper-annotated-text   | Provides the ability to index text that is a combination of free-text and special markup                           |
 
 {{< callout type="info" >}}
 Plugin activation is only available at add-on creation, through [API](/api) or the `--option` flag of [Clever Tools](/doc/cli/addons/#create--rename--delete). You must pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To modify enabled plugins on an existing add-on, contact [support team](https://console.clever-cloud.com/ticket-center-choice).

@@ -2,8 +2,8 @@
 
 The platform's time unit is in **microsecond**.
 
-* [Learn more about date functions](https://www.warp10.io/tags/date)
-* [Learn more about time functions](https://www.warp10.io/tags/time)
+- [Learn more about date functions](https://www.warp10.io/tags/date)
+- [Learn more about time functions](https://www.warp10.io/tags/time)
 
 #### Duration is set by the followings symbols
 
@@ -32,18 +32,18 @@ Builtin function:
 
 The followings limits are defined in Warp 10. The **soft** limit can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. Operations over **soft limits** may be intensive. The **hard** limit is unsurpassable.
 
-| WarpScript Operator | Warp 10 limit description | soft limit | hard limit |
-| ------------------- | ------------------------------------------------------------- | ---------- | ---------- |
-| MAXGTS | Maximum number of GTS which can be fetched | 10e5 | 5e7 |
-| LIMIT | Maximum number of datapoints which can be fetched during a script execution | 10e6 | 10e7 |
-| MAXBUCKETS | Maximum number of buckets which can be created by a call to BUCKETIZE | 10e5 | 50e5 |
-| MAXDEPTH | Maximum depth (number of levels) of the execution stack | 5e3 | 5e3 |
-| MAXLOOP | Maximum number of milliseconds which can be spent in a loop | 5e3 | 10e3 |
-| MAXOPS | Maximum number of operations which can be performed during a single WarpScript execution | 5e6 | 5e7 |
-| MAXSYMBOLS | Maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution | 64 | 256 |
-| MAXGEOCELLS | Maximum number of cells a GEOSHAPE | 10e3 | 10e4 |
-| MAXPIXELS | Maximum size (in pixels) of images which can be created by PGraphics | 10e5 | 10e5 |
-| MAXRECURSION | Maximum nesting depth of macro calls | 16 | 32 |
+| WarpScript Operator | Warp 10 limit description                                                                                     | soft limit | hard limit |
+| ------------------- | ------------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
+| MAXGTS              | Maximum number of GTS which can be fetched                                                                    | 10e5       | 5e7        |
+| LIMIT               | Maximum number of datapoints which can be fetched during a script execution                                   | 10e6       | 10e7       |
+| MAXBUCKETS          | Maximum number of buckets which can be created by a call to BUCKETIZE                                         | 10e5       | 50e5       |
+| MAXDEPTH            | Maximum depth (number of levels) of the execution stack                                                       | 5e3        | 5e3        |
+| MAXLOOP             | Maximum number of milliseconds which can be spent in a loop                                                   | 5e3        | 10e3       |
+| MAXOPS              | Maximum number of operations which can be performed during a single WarpScript execution                      | 5e6        | 5e7        |
+| MAXSYMBOLS          | Maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution | 64         | 256        |
+| MAXGEOCELLS         | Maximum number of cells a GEOSHAPE                                                                            | 10e3       | 10e4       |
+| MAXPIXELS           | Maximum size (in pixels) of images which can be created by PGraphics                                          | 10e5       | 10e5       |
+| MAXRECURSION        | Maximum nesting depth of macro calls                                                                          | 16         | 32         |
 
 ### Usage
 
@@ -74,7 +74,7 @@ For a complete list of Telegraf classes and their descriptions, see [the classes
 
 Warp 10 provide a server side macro manager. It is a way to release some ready to use WarpScript. Hence, Clever Cloud provides some macros as helpers to avoid redundant and often need code.
 
-* [Warp 10' macros documentations](https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros)
+- [Warp 10' macros documentations](https://www.warp10.io/content/03_Documentation/07_Extending_Warp_10/01_Server_side_macros)
 
 ### Consumption
 

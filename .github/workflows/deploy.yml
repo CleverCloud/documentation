@@ -11,6 +11,7 @@ concurrency:
 
 env:
   DOMAIN: ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers
+  HUGO_VERSION: "0.164"
 
 jobs:
   review-app:
@@ -35,7 +36,7 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
-          GH_CC_HUGO_VERSION: 0.163
+          GH_CC_HUGO_VERSION: ${{ env.HUGO_VERSION }}
           GH_CC_STATIC_AUTOBUILD_OUTDIR: public/developers
           GH_CC_WEBROOT: public
           GH_SERVER_ERROR_PAGE_404: developers/404.html

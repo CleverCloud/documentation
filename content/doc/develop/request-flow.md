@@ -20,6 +20,8 @@ aliases:
 
 Request Flow is Clever Cloud's automatic middleware chaining mechanism. It configures reverse proxies and services between the public port (`8080`) and your application, managing port allocation automatically. There is no need to manually configure listening ports for each service.
 
+Request Flow is available for all runtimes except Docker, where you define and manage services within the container image.
+
 ## Supported services
 
 | Service | Activation | Description |

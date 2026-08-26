@@ -65,25 +65,19 @@ Two configurations are available:
 
 This is a custom, quote-based option. To discuss your requirements and pricing, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) with your use case and target region.
 
-## The "Paris" region
+## PAR region (Paris)
 
-The Paris region is owned and handled by Clever Cloud. We own or entrust the associated AS's and
-IP addresses ranges.
+The PAR region is owned and handled by Clever Cloud. We own or entrust the associated AS's and IP addresses ranges. The current outbound IP ranges are exposed by the public [Products zones API](/developers/api/v4/#products-zones). To list them for the Paris region:
 
-Here are the current two addresses ranges your application may have an outgoing IP in:
+```bash
+curl -sS https://api.clever-cloud.com/v4/products/zones/par | jq -r '.outboundIPs[]'
+```
 
-- 91.208.207.0/24
-- 185.133.116.0/22
+Clever Cloud may change these ranges at any moment while we expand our infrastructure. If filtering source IPs is important to you, query the API regularly. If you need a fixed outbound IP address or a VPN, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 
-Clever Cloud may change these ranges at any moment while we expand our infrastructure. If
-filtering source IPs is important to you, please check this page, or opt into our Unique
-IP service or a VPN Service.
-
-Please note that allowing all ranges means you "allow" **all Clever Cloud
-applications** running in the Paris region to access that service.
-This means you should not base all that service security solely on filtering source IPs!
+> [!WARNING] Shared IP ranges
+> Allowing all ranges means allowing every Clever Cloud application running in the Paris region to access the service. Do not rely solely on source IP filtering to secure it.
 
 ## The other regions
 
-The other regions we provide are hosted by other providers (OVHCloud, Scaleway, Oracle Cloud).
-In this case, we use the IPs they provide to us and have no control over the ranges.
+The other regions we provide are hosted by other providers, such as IONOS, OVHCloud, Scaleway. We use the IPs they provide to us and have no control over the ranges.

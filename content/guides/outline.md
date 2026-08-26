@@ -41,6 +41,13 @@ version = "{{ get_env(name='OUTLINE_VERSION', default='v1.9.2') }}"
 url = "https://github.com/outline/outline/archive/refs/tags/{{ version }}.tar.gz"
 strip_components = 1
 
+[env]
+DATABASE_URL = "{{ env.POSTGRESQL_ADDON_URI }}"
+REDIS_COLLABORATION_URL = "{{ env.REDIS_URL }}"
+AWS_ACCESS_KEY_ID = "{{ env.CELLAR_ADDON_KEY_ID }}"
+AWS_SECRET_ACCESS_KEY = "{{ env.CELLAR_ADDON_KEY_SECRET }}"
+AWS_S3_UPLOAD_BUCKET_URL = "https://{{ env.CELLAR_ADDON_HOST }}"
+
 [tasks.build]
 description = "Build the selected Outline release"
 run = '''
@@ -57,28 +64,13 @@ yarn cache clean
 
 [tasks.run]
 description = "Start Outline"
-run = "bash run.sh"
+dir = "outline"
+run = "node build/server/index.js"
 ```
 
-The [HTTP backend](https://mise.jdx.dev/dev-tools/backends/http.html) downloads and extracts the source archive. The `build` and `run` names are significant: the Linux runtime automatically uses these [Mise tasks](https://mise.jdx.dev/tasks/) for its separate build and run phases.
+The [HTTP backend](https://mise.jdx.dev/dev-tools/backends/http.html) downloads and extracts the source archive. The `build` and `run` names are significant: the Linux runtime automatically uses these [Mise tasks](https://mise.jdx.dev/tasks/) for its separate build and run phases. The run task uses its [`dir` property](https://mise.jdx.dev/tasks/toml-tasks.html#task-directory) to start Outline from the extracted source directory.
 
-Create a startup script that maps the variables injected by linked Clever Cloud add-ons to the names expected by Outline:
-
-```bash {filename="run.sh"}
-#!/usr/bin/env bash
-set -euo pipefail
-
-export DATABASE_URL="${POSTGRESQL_ADDON_URI}"
-export REDIS_COLLABORATION_URL="${REDIS_URL}"
-export AWS_ACCESS_KEY_ID="${CELLAR_ADDON_KEY_ID}"
-export AWS_SECRET_ACCESS_KEY="${CELLAR_ADDON_KEY_SECRET}"
-export AWS_S3_UPLOAD_BUCKET_URL="https://${CELLAR_ADDON_HOST}"
-
-cd outline
-node build/server/index.js
-```
-
-The linked Redis add-on provides `REDIS_URL`, which the script also maps to `REDIS_COLLABORATION_URL` to synchronize collaborative editing between Outline processes and application instances. Outline automatically applies pending database migrations when it starts, so no separate migration command is needed.
+The Mise environment maps the variables injected by linked Clever Cloud add-ons to the names expected by Outline. In particular, it maps `REDIS_URL` to `REDIS_COLLABORATION_URL` to synchronize collaborative editing between Outline processes and application instances. Outline automatically applies pending database migrations when it starts, so no separate migration command is needed.
 
 ## Create the application and add-ons
 
@@ -199,7 +191,7 @@ clever env set AWS_S3_UPLOAD_BUCKET_NAME "$OUTLINE_BUCKET"
 
 Outline requires `SECRET_KEY` to contain exactly 64 hexadecimal characters, while `UTILS_SECRET` accepts the Base64 value. Clever Cloud provides the application `PORT`. The linked add-ons provide their credentials, so they do not need to be copied into the application environment.
 
-`WEB_CONCURRENCY` controls the number of Outline processes started inside each application instance. Outline recommends roughly one process per 512 MB of available memory, so this guide keeps the value at `1` for the default `XS` run instance. Increase it only on a larger instance and after monitoring the application's memory and CPU usage. The `REDIS_COLLABORATION_URL` mapping in the startup script follows Outline's [horizontal scaling documentation](https://docs.getoutline.com/s/hosting/doc/horizontal-scaling-hkfU5Stao7), so collaborative editing remains synchronized if you later run several processes or application instances.
+`WEB_CONCURRENCY` controls the number of Outline processes started inside each application instance. Outline recommends roughly one process per 512 MB of available memory, so this guide keeps the value at `1` for the default `XS` run instance. Increase it only on a larger instance and after monitoring the application's memory and CPU usage. The `REDIS_COLLABORATION_URL` mapping in `mise.toml` follows Outline's [horizontal scaling documentation](https://docs.getoutline.com/s/hosting/doc/horizontal-scaling-hkfU5Stao7), so collaborative editing remains synchronized if you later run several processes or application instances.
 
 `DEFAULT_LANGUAGE` controls the default interface language; replace `en_US` with another [Outline language code](https://translate.getoutline.com/) if needed. `FILE_STORAGE_UPLOAD_MAX_SIZE` is expressed in bytes: `262144000` sets a 250 MiB attachment limit and matches Outline's [versioned environment sample](https://github.com/outline/outline/blob/v1.9.2/.env.sample). You can configure a larger value, but Outline applies it to the [`content-length-range` condition of each presigned S3 upload](https://github.com/outline/outline/blob/v1.9.2/server/storage/files/S3Storage.ts#L44-L67), so test the intended size with your network and storage service before increasing it. Document and workspace imports can use separate limits; see Outline's [file storage documentation](https://docs.getoutline.com/s/hosting/doc/file-storage-N4M0T6Ypu7).
 
@@ -238,7 +230,7 @@ Once signed in, users can also register passkeys for subsequent authentication. 
 Commit the deployment configuration and deploy the application:
 
 ```bash
-git add mise.toml run.sh
+git add mise.toml
 git commit -m "First deploy"
 
 clever deploy

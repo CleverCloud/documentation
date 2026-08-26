@@ -85,7 +85,7 @@ Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/sh
 
 ### ✅ Validation
 
-Run `hugo` before submitting a change and fix any build error. Verify links, references, image paths, and shortcode syntax in the generated output. Inspect changed tabs, code blocks, cards, anchors, and copyable commands in the rendered HTML: a successful build alone doesn't prove that they render correctly.
+Run `mise install` to install the development dependencies declared in `mise.toml`, then run `hugo` before submitting a change and fix any build error. Verify links, references, image paths, and shortcode syntax in the generated output. Inspect changed tabs, code blocks, cards, anchors, and copyable commands in the rendered HTML: a successful build alone doesn't prove that they render correctly.
 
 ## 🫶 Pull requests
 

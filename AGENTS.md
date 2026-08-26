@@ -5,6 +5,7 @@ This file provides repository-wide guidance to coding agents working on Clever C
 ## Common Development Commands
 
 ### Hugo Site Development
+- **Install development dependencies**: `mise install` - Installs the tools declared in `mise.toml`
 - **Local development**: `hugo server` - Serves site at http://localhost:1313 with live reload
 - **Build for production**: `hugo` - Outputs to `public/developers/`
 - **Preview drafts**: `hugo server --buildDrafts` - Include draft content in local preview
@@ -72,9 +73,9 @@ For changelog entries, also include:
 - Time-dependent promises: "soon", "in the future", "coming next month"
 
 ### Markdown and Editorial Standards
-- **Markdown linting**: Uses markdownlint-cli2 with config in `.markdownlint.jsonc`
-- **Editorial checks**: Uses Vale.sh for style and terminology
-- **Build verification**: Always test with `hugo` command before committing
+- **Markdown linting**: Run `markdownlint-cli2 "**/*.md"` with config in `.markdownlint.jsonc`
+- **Editorial checks**: Run Vale with `vale <files>` for style and terminology
+- **Build verification**: Always test with `hugo` before committing
 - **Structure**: Use 2-4 well-developed paragraphs per section, minimize bullet lists
 - **Paragraphs**: Aim for 3-6 lines for optimal readability
 
@@ -132,11 +133,16 @@ For changelog entries, also include:
 - Give `title` a descriptive, SEO-oriented value without repeating "Clever Cloud"; keep `linkTitle` short, usually the product name
 
 ## Deployment Configuration
+
 The site is configured for Clever Cloud hosting with the `static` runtime and these required environment variables:
+
+- `CC_DISABLE_MISE="true"`
 - `CC_WEBROOT="public"`
 - `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"`
 - `SERVER_ERROR_PAGE_404="developers/404.html"`
-- Optional: `CC_HUGO_VERSION="0.161"` to specify Hugo version (example value)
+- Optional: `CC_HUGO_VERSION="0.164"` to specify Hugo version (example value)
+
+`CC_DISABLE_MISE` prevents Clever Cloud from installing the local development dependencies because the platform manages the deployment tools directly.
 
 ## Data Management
 Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special LLMS output format at `/llms.txt` for AI consumption.

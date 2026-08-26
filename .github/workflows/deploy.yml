@@ -36,6 +36,7 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
+          GH_CC_DISABLE_MISE: "true"
           GH_CC_HUGO_VERSION: ${{ env.HUGO_VERSION }}
           GH_CC_STATIC_AUTOBUILD_OUTDIR: public/developers
           GH_CC_WEBROOT: public

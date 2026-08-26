@@ -5,11 +5,11 @@ jobs:
   vale:
     name: Run Vale Linter
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: errata-ai/vale-action@reviewdog
+      - uses: vale-cli/vale-action@v3
         with:
-          reporter: github-pr-check # How results are reported
-          filter_mode: added # Consider only changes in the modified or added lines
-          fail_on_error: false # Fail the action if errors are found
-          token: ${{ secrets.GITHUB_TOKEN }} # Post review
+          filter_mode: added
+          fail_on_error: false

@@ -34,7 +34,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/go-echoip" title="EchoIP" subtitle="Deploy EchoIP as a Go application" icon="go" >}}
   {{< card link="/developers/guides/ekg-statsd-haskell-metrics" title="Ekg-statsd" subtitle="Export Haskell metrics with ekg-statsd" icon="haskell" >}}
   {{< card link="/developers/guides/eleventy" title="Eleventy (11ty)" subtitle="Deploy a static Eleventy website" icon="11ty" >}}
-  {{< card link="/developers/guides/fluentd" title="Fluentd" subtitle="Deploy Fluentd with Docker" icon="fluentd" >}}
+  {{< card link="/developers/guides/fluentd" title="Fluentd" subtitle="Deploy a Fluentd data collector" icon="fluentd" >}}
   {{< card link="/developers/guides/ghost" title="Ghost" subtitle="Deploy a publishing platform with MySQL and object storage" icon="ghost" >}}
   {{< card link="/developers/guides/hexo" title="Hexo" subtitle="Deploy a static Hexo website" icon="hexo" >}}
   {{< card link="/developers/guides/hono" title="Hono" subtitle="Deploy a Hono application with Node.js" icon="hono" >}}

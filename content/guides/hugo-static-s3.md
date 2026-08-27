@@ -1,172 +1,47 @@
 ---
 type: docs
 linkTitle: Hugo + Cellar
-title: Host a Hugo website with Cellar
-description: Build your website with Hugo and deploy it through Cellar S3-compatible object storage with detailed step-by-step tutorials
+title: Use Hugo with Cellar object storage
+description: Deploy a Hugo website with the Static runtime and use Cellar to publish generated assets or build artifacts
 keywords:
-- hugo
 - cellar
+- hugo
 - object storage
-- static hosting
-- website deployment
-draft: false
+- static website
 ---
 
-When creating a static website, it's possible to host it using a runtime.
-You can also use Cellar, a S3-compatible object storage. This hosting method saves time on configuration and application management, and is fast.
+[Hugo](https://gohugo.io/) generates static files that can be deployed with Clever Cloud's [Static runtime](/guides/hugo/). [Cellar](/doc/addons/cellar/) is S3-compatible object storage and is useful for publishing individual assets or keeping generated build artifacts.
 
-To do so, you need:
+> [!IMPORTANT]
+> Cellar does not implement S3 website-hosting behavior. A request to a bucket root returns an object listing instead of `index.html`, directory URLs do not resolve their index document and S3 website configuration requests are not supported. Use the Static runtime when visitors need to navigate a Hugo website.
 
-- a [Clever Cloud account](/doc/quickstart/)
-- [Hugo](https://gohugo.io/) on your machine
-- to have [created your website](https://gohugo.io/getting-started/quick-start/) files with Hugo
-- a Cellar add-on; if you have never created an add-on, you can follow [this guide](/doc/quickstart/#create-your-first-add-on)
+## Deploy the website
 
-## Bucket creation and management
+Follow the [Hugo deployment guide](/guides/hugo/) to create a Static application. The runtime builds the site, serves index documents and clean URLs, provides TLS and lets you add a custom domain.
 
-To create a bucket:
+## Publish generated files to Cellar
 
-- Follow the [bucket creation instructions](/doc/addons/cellar/#creating-a-bucket),
-- or use third party software like [s3cmd](https://s3tools.org/s3cmd).
+To expose individual generated objects through Cellar, create a [Cellar add-on and bucket](/doc/addons/cellar/#creating-a-bucket), install [s3cmd](https://s3tools.org/s3cmd) or another S3-compatible client, then download the add-on's configuration file from the Console.
 
-{{< callout type="warning" >}}
-  Your bucket name must match the domain name you want to use. If your domain name is `my-static-website.com`, your bucket name must be : `my-static-website.com`.
-{{< /callout >}}
-
-To use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
+Build the site and synchronize its generated files:
 
 ```bash
-s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
+hugo
+s3cmd -c path/to/s3cfg.txt sync --delete-removed public/ s3://BUCKET_NAME/
 ```
 
-Then, create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
+Objects are private by default. Follow the [public bucket policy instructions](/doc/addons/cellar/#public-bucket-policy) only for a bucket whose entire published content can be read publicly.
 
-## Public access policy
+A public object is available at its complete key, for example:
 
-By default, your bucket is only visible and manageable an authenticated user.
-To make your bucket publicly accessible, you have to apply a policy to the bucket
-
-{{< callout type="warning" >}}
-  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want publicly exposed.
-{{< /callout >}}
-
-To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
-
-```json {filename="policy.json"}
-{
-  "Id": "Policy1587216857769",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1587216727444",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Effect": "Allow",
-      "Resource": "arn:aws:s3:::<bucket-name>/*",
-      "Principal": "*"
-    }
-  ]
-}
+```text
+https://BUCKET_NAME.CELLAR_HOST/images/logo.svg
 ```
 
-Replace the `<bucket-name>` with your bucket name in the policy file. Don't change the `Version` field to the current date, keep it as is.
+Uploading `public/index.html` does not make the bucket root serve that file. Likewise, `public/posts/example/index.html` remains available only through its complete object key and not through `/posts/example/`. These limits make Cellar suitable for assets and archives, not as the origin for a normal Hugo website.
 
-Now, you can set the policy to your bucket using s3cmd:
+## Learn more
 
-```bash
-s3cmd setpolicy ./policy.json s3://<bucket-name>
-```
-
-If you encounter errors, you might need to specify the [configuration file path](#download-the-configuration-file):
-
-```bash
-s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>
-```
-
-All of your objects should now be publicly accessible.
-If needed, you can delete this policy by using:
-
-```bash
-s3cmd delpolicy s3://<bucket-name>
-```
-
-The original ACL should apply to all of your objects after that.
-
-## Hugo configuration for Cellar
-
-Hugo doesn’t know by default the path to your bucket in your Cellar. You have to add a few things to guide the deployment process.
-
-In the folder of your website, you’ll find Hugo’s configuration file:
-
-- `hugo.toml`
-- `hugo.yaml`
-- `hugo.json`
-
-Open it, then add the following (according to the programing language):
-
-{{< tabs >}}
-
-  {{< tab name="JSON" icon="json" >}}**JSON**
-
-```json {filename="hugo.json"}
-  {
-    "deployment": {
-      "targets": [
-        {
-          "name": "(a name for your own reference)",
-          "URL": "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
-        }
-      ]
-    }
-  }
-    ```
-
-
-{{< /tab >}}
-
-  {{< tab name="YAML" icon="yaml" >}}**YAML**
-
-  ```json {filename="hugo.yaml"}
-  deployment:
-  targets:
-    - name: "(a name for your own reference)"
-    - URL: "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
-    ```
-
-  {{< /tab >}}
-
-
-  {{< tab name="TOML" icon="toml" >}}**TOML**
-```json {filename="hugo.toml"}
-[deployment]
-[[deployment.targets]]
-name: "(a name for your own reference)"
-URL: "s3://<BUCKET_NAME>?endpoint=https://<CELLAR_HOST>&region=fr-par"
-    ```
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
-- The deployment name is arbitrary and for your own reference: “production”, “test”, anything you’d like.
-- The cellar host address can found on your Clever Cloud console: select your Cellar and you’ll have the “Host” field. The address looks like: `cellar-c2.services.clever-cloud.com`
-
-Save your configuration file: Hugo now knows where to send file when deploying.
-
-
-
-To deploy, proceed as usual: `hugo` to build the website locally, then `hugo deploy` to push files through Cellar.
-If all the steps have been correctly completed, you are now able to access your website with:
- `https://<BUCKET_NAME>.<CELLAR_HOST>`
-
-
-Is's possible to encounter an error where the website warns the user with a "not secure" message.
-This happens when the SSL certificate was not properly generated.
-You can manually generate one certificate by creating an application, then adding the domain name from the "domain" tab.
-The certification propagation takes about 10-15mn.
-
-If you still encounter an issue at this point, please contact our support team.
-
-
-
+- [Deploy Hugo](/guides/hugo/) — Build and serve a Hugo website with the Static runtime
+- [Cellar object storage](/doc/addons/cellar/) — Create buckets, configure clients and manage object access
+- [Hugo deployment](https://gohugo.io/host-and-deploy/deploy-with-hugo-deploy/) — Review Hugo's native deployment targets

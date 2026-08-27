@@ -2,13 +2,13 @@
 type: docs
 linkTitle: Laravel
 title: Deploy a Laravel application
-description: Deploy Laravel PHP framework on Clever Cloud with step-by-step guide including database integration and configuration management
+description: Deploy a Laravel PHP application on Clever Cloud with a managed database, migrations, logs, scheduled tasks, and persistent file storage
 keywords:
 - laravel
 - php
-- web framework
-- database integration
-- artisan cli
+- mysql
+- postgresql
+- artisan
 aliases:
 - /deploy/application/php/tutorials/tutorial-laravel
 - /doc/deploy/application/php/tutorials/tutorial-laravel
@@ -17,164 +17,178 @@ aliases:
 ---
 
 {{< hextra/hero-subtitle >}}
-  Laravel is a PHP web application framework with expressive, elegant syntax. This guide walks you through the minimal requirements to successfully deploy your app.
+  Deploy a Laravel application on Clever Cloud with a managed MySQL or PostgreSQL database.
 {{< /hextra/hero-subtitle >}}
 
-## Overview
+[Laravel](https://laravel.com/) applications run on Clever Cloud's [PHP runtime](/developers/doc/applications/php/), which installs Composer dependencies and serves the application's public directory through NGINX.
 
-Deploying a Laravel application on Clever Cloud requires:
+## Prepare the application
 
-- [PHP application](/doc/applications/php)
-- A database add-on: ([MySQL](/doc/addons/mysql) or [PostgreSQL](/doc/addons/postgresql))
-- An [FS Bucket](/doc/addons/fs-bucket) for persistent storage.
+This guide assumes that your Laravel application works locally and contains a `composer.json` file. Commit `composer.lock` so that Clever Cloud installs the same dependency versions you tested locally.
 
-The following sections explain how to set up each instance step by step:
+Laravel uses its standard `DB_*` variables, while linked Clever Cloud add-ons expose provider-specific variables. Configure the MySQL connection in `config/database.php` as follows:
 
-## Configure your Laravel Application
-
-{{% steps %}}
-
-### Create a PHP application
-
-From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/doc/quickstart/#choose-how-to-deploy).
-
-### Add `DocumentRoot` variable
-
-Add the following environment variable in the Console: `CC_WEBROOT="/public"`.
-
-Or set it with the Clever Cloud CLI:
-
-  ```bash
-  clever env set CC_WEBROOT /public
-  ```
-
-### Add your application key variable
-
-Make sure `config/app.php` contains the following line:
-
-```php
-  'key' => env('APP_KEY'),
+```php {filename="config/database.php"}
+'mysql' => [
+    'driver' => 'mysql',
+    'host' => env('MYSQL_ADDON_HOST', '127.0.0.1'),
+    'port' => env('MYSQL_ADDON_PORT', '3306'),
+    'database' => env('MYSQL_ADDON_DB', 'laravel'),
+    'username' => env('MYSQL_ADDON_USER', 'root'),
+    'password' => env('MYSQL_ADDON_PASSWORD', ''),
+    'unix_socket' => env('DB_SOCKET', ''),
+    'charset' => env('DB_CHARSET', 'utf8mb4'),
+    'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+    'prefix' => '',
+    'prefix_indexes' => true,
+    'strict' => true,
+    'engine' => null,
+],
 ```
 
-Locally, run `php artisan key:generate`. It should output something like `base64:tQbFzxwUfOfKKqNlbjXuduwaUFDQUy+NL8DBfgb3o3s=`.
+For PostgreSQL, map the corresponding connection values to `POSTGRESQL_ADDON_HOST`, `POSTGRESQL_ADDON_PORT`, `POSTGRESQL_ADDON_DB`, `POSTGRESQL_ADDON_USER`, and `POSTGRESQL_ADDON_PASSWORD` instead.
 
-Copy this value and add an environment variable named `APP_KEY`, with this value.
+## Create and configure the application
 
-### Configure monolog to use syslog
+Install [Clever Tools](/developers/doc/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
 
-Make sure `config/logging.php` contains the following line:
+```bash
+npm i -g clever-tools
+clever login
 
-```php
-  'default' => env('LOG_CHANNEL', 'stack'),
+git init
+clever create -t php -a myLaravelApp
 ```
 
-In your environment variables, add the `LOG_CHANNEL=syslog` environment variable. This allows you to read your application logs directly from the console or the [CLI](/doc/cli) tool.
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-### Optional: configure the front-end build
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
 
-If you need to build your frontend assets (eg. JavaScript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_PRE_RUN_HOOK` environment variable.
-
-For example: `CC_PRE_RUN_HOOK="npm install && npm run prod"`.
-
-This step is necessary if you are building your Laravel application with [Blade](https://laravel.com/docs/10.x/blade), for example.
-
-### Connect a database
-
-Edit `config/database.php` to set the correct environment variable names. For example, replace `DB_xxx` by `MYSQL_ADDON_xxx` for a MySQL database.
-
-For instance for MySQL:
-
-```php{linenos=table}
-   // …
-   'connections' => [
-     // …
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('MYSQL_ADDON_HOST', '127.0.0.1'),
-            'port' => env('MYSQL_ADDON_PORT', '3306'),
-            'database' => env('MYSQL_ADDON_DB', 'forge'),
-            'username' => env('MYSQL_ADDON_USER', 'forge'),
-            'password' => env('MYSQL_ADDON_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
-    // …
-    ]
-  // …
+```bash
+clever domain
+clever domain add your.website.tld
 ```
 
-Create a database add-on (either MySQL or PostgresSQL) and link it to your application. If your add-on already exists, use the **Service Dependencies > Link add-ons** dropdown menu in your application options, to select the name of the add-on you want to link and use the add button to finish the process.
+Create a MySQL add-on and link it to the application. You can use a [PostgreSQL add-on](/developers/doc/addons/postgresql/) instead if the application is configured for PostgreSQL:
 
-### Optional: automatically run migrations upon deployment
+```bash
+clever addon create mysql-addon myLaravelDatabase -p xs_sml --link myLaravelApp
+```
 
-If you want to have database migrations automatically run during each deployment, add this hook instruction to the application's environment variables `CC_POST_BUILD_HOOK=php artisan migrate --force`
+You can also create and link these resources from the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-### Configure storage
+Set the public directory, PHP version, application key, log destination, and database driver. Generate a different `APP_KEY` for each application environment and do not change it after encrypted data has been stored:
 
-Create a FS Bucket add-on and link it to your application. Note its host (you can see it from the add-on configuration panel, or in the environment variables exported by the add-on). It looks like `bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com`.
+```bash
+clever env set CC_WEBROOT /public
+clever env set CC_PHP_VERSION 8.4
+clever env set APP_KEY "base64:$(openssl rand -base64 32)"
+clever env set LOG_CHANNEL stderr
+clever env set DB_CONNECTION mysql
+clever env set CC_POST_BUILD_HOOK "php artisan migrate --force"
+```
 
-Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<bucket-host>` as its value.
+The post-build hook applies pending [database migrations](https://laravel.com/docs/migrations) before the new instance replaces the previous one. Review destructive migrations and use an application-specific deployment strategy when a schema change is not backward-compatible.
 
-{{% /steps %}}
+### Build frontend assets
 
-## Optional Further Configuration
+If the application uses Vite or another frontend build tool, run it during the build phase. Put multiple post-build operations in an executable script rather than setting several `CC_POST_BUILD_HOOK` values. For example:
 
-### Task scheduling
+```bash {filename="clevercloud/post_build.sh"}
+#!/bin/bash
+set -euo pipefail
 
-If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron to run the scheduling process:
+npm ci
+npm run build
+php artisan migrate --force
+```
 
-1. Create a `clevercloud/cron.json` file in your project, containing:
+```bash
+chmod +x clevercloud/post_build.sh
+clever env set CC_POST_BUILD_HOOK "./clevercloud/post_build.sh"
+```
 
-```json
+The PHP runtime can use the platform's Node.js version selectors and package managers when building frontend assets. See [environment variables](/developers/doc/reference/reference-environment-variables/) for the available controls.
+
+## Deploy Laravel
+
+Commit the application and deploy it:
+
+```bash
+git add .
+git commit -m "Deploy Laravel"
+
+clever deploy
+clever open
+```
+
+The first deployment installs Composer dependencies and runs every pending migration. Follow its progress and inspect application logs with:
+
+```bash
+clever activity --follow
+clever logs
+```
+
+## Persist uploaded files
+
+Application instances are replaced during deployments, so files written to their local filesystem are not persistent. Prefer object storage for user uploads when the application supports it. For code that requires a local filesystem, create and link an [FS Bucket](/developers/doc/addons/fs-bucket/), then mount it into a directory that does not already exist in the repository.
+
+For example, mount a bucket as `storage/persistent`:
+
+```bash
+clever addon create fs-bucket myLaravelFiles --link myLaravelApp
+
+FS_BUCKET_HOST="$(clever env -F json | jq -er 'first(.fromAddons[] | select(.addonName == "myLaravelFiles") | .env[] | select(.name == "BUCKET_HOST") | .value)')"
+clever env set CC_FS_BUCKET "/storage/persistent:${FS_BUCKET_HOST}"
+unset FS_BUCKET_HOST
+```
+
+The name lookup expects the add-on name to be unique. If several add-ons use that name, retrieve the host with `clever addon env ADDON_ID -F json` and the ID returned when the add-on was created.
+
+Declare a dedicated Laravel disk whose root matches the mounted directory:
+
+```php {filename="config/filesystems.php"}
+'persistent' => [
+    'driver' => 'local',
+    'root' => storage_path('persistent'),
+    'throw' => false,
+],
+```
+
+Use `Storage::disk('persistent')` for data that must survive deployments. Do not commit the `storage/persistent` directory, because an existing non-empty target prevents the FS Bucket from being mounted.
+
+## Run scheduled tasks
+
+If the application uses Laravel's [task scheduler](https://laravel.com/docs/scheduling), create the following cron configuration:
+
+```json {filename="clevercloud/cron.json"}
 [
-    "* * * * * $ROOT/clevercloud/cron.sh"
+  "* * * * * $ROOT/clevercloud/cron.sh"
 ]
 ```
 
-This installs a cron to run `clevercloud/cron.sh` every minute.
+Add the executable script called by the cron:
 
-2. Create a `clevercloud/cron.sh` file in your project (with execute permissions), containing:
-
-```bash
+```bash {filename="clevercloud/cron.sh"}
 #!/bin/bash -l
 set -euo pipefail
 
-pushd "$APP_HOME"
-php artisan schedule:run >> /dev/null 2>&1
+cd "$APP_HOME"
+php artisan schedule:run
 ```
 
-Note: the PHP CLI process uses a `memory_limit` configuration value that depends on the instance's size (you can verify this value by connecting to your app using SSH and running `php -i`).
-
-If one of your scheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process is going to silently crash.
-
-To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
-
-See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
-
-### Trusted Proxy
-
-To ensure Laravel correctly handles HTTP requests when using the Clever Cloud HTTP reverse proxy (Sōzu), add the following code to the `config/trustedproxy.php` file:
-
-```php{linenos=table}
-<?php
-return [
-    'proxies' => env('CC_REVERSE_PROXY_IPS'),
-];
+```bash
+chmod +x clevercloud/cron.sh
 ```
 
-This environment variable exists in any Clever Cloud instance. This configuration specifies to trust Clever Cloud proxies, allowing Laravel to seamlessly recognize HTTP requests in the presence of a proxyhugo server.
+The [PHP CLI memory limit](/developers/doc/applications/php/#memory-limit) depends on the application instance size. Monitor scheduled jobs and scale the application if they need more memory.
 
-{{% content "more-config" %}}
-
-## Go Further
+## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/metrics/new-relic" title="Monitor your App with New Relic" subtitle="Connect your application to New Relic." icon="new-relic" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/develop/build-hooks" title="Deployment hooks" subtitle="Learn about custom commands used in this guide." icon="rocket-launch" >}}
-  {{< card link="<https://laravel.com/docs/10.x/deployment>" title="Laravel Documentation" subtitle="Read Laravel documentation on deployments." icon="laravel" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://laravel.com/docs/deployment" title="Laravel deployment" subtitle="Prepare and optimize a Laravel application for production" icon="laravel" >}}
+  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/develop/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
 {{< /cards >}}

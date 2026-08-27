@@ -40,7 +40,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/hono" title="Hono" subtitle="Deploy a Hono application with Node.js" icon="hono" >}}
   {{< card link="/developers/guides/hugo" title="Hugo" subtitle="Deploy a static Hugo website" icon="hugo" >}}
   {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle="Publish Hugo assets and build artifacts to Cellar" icon="hugo" >}}
-  {{< card link="/developers/guides/kibana" title="Kibana" subtitle="Deploy and customize a Kibana server" icon="kibana" >}}
+  {{< card link="/developers/guides/kibana" title="Kibana" subtitle="Enable Kibana for an Elastic Stack add-on" icon="kibana" >}}
   {{< card link="/developers/doc/kubernetes/operator" title="Kubernetes Operator" subtitle="Manage Clever Cloud add-ons from Kubernetes" icon="kubernetes" >}}
   {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application" icon="laravel" >}}
   {{< card link="/developers/guides/lume-deno" title="Lume (Deno)" subtitle="Deploy a static Lume website with Deno" icon="deno" >}}

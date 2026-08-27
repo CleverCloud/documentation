@@ -21,7 +21,7 @@ aliases:
 
 The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as the ELK Stack). Reliably and securely take data from any source, in any format, then search, analyze, and visualize it in real time. Find out more about it on [Elastic's website](https://www.elastic.co/elastic-stack).
 
-Provisioning the Elastic Stack add-on on Clever Cloud will give you an **Elasticsearch Platinum instance**, Kibana and an APM server.
+Provisioning the Elastic Stack add-on on Clever Cloud gives you an **Elasticsearch Platinum instance**. Kibana and an APM server are optional services selected when you create the add-on.
 
 ## Versions
 
@@ -36,15 +36,13 @@ Elasticsearch is a distributed, RESTful search and analytics engine capable of a
 
 Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack so you can do anything from tracking query load to understanding the way requests flow through your apps.
 
-It is available as an opt-in option of the Elastic add-on. It will be deployed and billed as a regular application. You can upscale/downscale/delete it at any time. This application will be updated by Clever Cloud on a regular basis.
-
-The created application name follow the pattern *Kibana - addon_eb464a6d-ce5f-4780-b595-6772ebe33d06*. The provisioning of this application might take up a minute to show up in your organisation.
+It is available as an option selected when you create the Elastic Stack add-on. Clever Cloud manages its deployment and updates it within the selected Elasticsearch major version.
 
 Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/kibana/current/index.html).
 
 ### Authentication
 
-Any member of the Clever Cloud organisation containing the Elastic add-on will be able to login to Kibana through an automatically configured SSO system.
+Any member of the Clever Cloud organisation containing the Elastic add-on can log in to Kibana through the automatically configured SSO system. See [Use Kibana with an Elastic Stack add-on](/developers/guides/kibana/) for the complete setup.
 
 ## Elastic APM
 
@@ -114,11 +112,7 @@ apm-server.rum.source_mapping.index_pattern: "apm-*-sourcemap*"
 
 ### Kibana custom configuration
 
-Kibana is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
-
-`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/7 | sh"`
-
-You can change the URL to point to your own custom configuration.
+Kibana's native configuration is managed by Clever Cloud and is not exposed as an editable application file. You can manage dashboards, spaces, roles, users and most day-to-day settings through Kibana or the Elasticsearch API. For a custom authentication provider, domain name or native `kibana.yml` setting, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss your requirements.
 
 ### Java APM agent
 

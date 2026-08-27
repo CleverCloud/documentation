@@ -1,148 +1,141 @@
 ---
 type: docs
 linkTitle: Fluentd
-title: Deploy Fluentd with Docker
-description: Deploy Fluentd log collector using Docker on Clever Cloud with detailed step-by-step tutorials and configuration examples
+title: Deploy a Fluentd data collector
+description: Deploy a Fluentd data collector on Clever Cloud with the Linux runtime, Bundler and Mise
 keywords:
 - fluentd
-- log collector
-- docker
+- data collector
+- logging
+- linux
 - ruby
-- data processing
 aliases:
 - /doc/deploy/application/docker/tutorials/fluentd
 - /doc/docker/fluentd
 - /fluentd
 ---
 
-## Overview
+[Fluentd](https://www.fluentd.org/) is an open source data collector that unifies data from multiple sources and routes it to storage, analytics or monitoring services. This guide deploys a minimal HTTP collector that writes received events to the application logs. You can then adapt its [inputs, filters and outputs](https://docs.fluentd.org/configuration/config-file) to your needs.
 
-Since you deploy microservices on Clever Cloud, you may need some data pipes between your services to:
+## Prerequisites
 
-- collect data from your PostgreSQL to create Elasticsearch indexes for your website search engine
-- collect application logs to analyze them with Elasticsearch, then archive them with S3
-- collect Apache access logs to analyze them in MongoDB
-- extract data from the database of your PHP/MySQL application to transform then load them in your other node.js/PostgreSQL application
-- and many more …
+- A [Clever Cloud account](https://console.clever-cloud.com/)
+- [Clever Tools](/doc/cli/install/)
+- [Git](https://git-scm.com/)
+- Ruby 3.2 or later with [Bundler](https://bundler.io/)
 
-Fluentd is an open source data collector written in Ruby, which lets you unify the data collection and consumption for a better use and understanding of data.
+## Create the Fluentd application
 
-{{< callout type="info" >}}
-  Ruby application on Clever Cloud requires **Puma** webserver but fluentd is using **excon**.
-{{< /callout >}}
-
-{{% content "create-application" %}}
-
- {{% content "set-env-vars" %}}
-
-## Configure your Fluentd + Docker application
-
-### Mandatory configuration
-
-To follow this tutorial, you will need:
-
-- Ruby >= 2.4.4 (w/ Rubygems)
-- Bundler
-- Docker
-- Git
-- curl
-- a Ruby versions manager
-
-{{< callout type="info" >}}
-To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv).
-{{< /callout >}}
-
-### My application does not exists already
-
-#### Create a fluentd application locally
+Create a project directory, initialize Git and create a Linux application:
 
 ```bash
 mkdir myFluentd
 cd myFluentd
-touch Gemfile Dockerfile go.sh td-agent.conf
-chmod +x go.sh
+git init
+clever create -t linux -a myFluentd
 ```
 
-Inside `Gemfile` put the following:
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` to the `clever create` command.
+
+Create a `Gemfile` to install the tested Fluentd version:
 
 ```ruby
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby '2.4.4'
-
-gem 'fluentd'
-gem 'fluent-plugin-td'
+gem "fluentd", "1.19.3"
 ```
 
-Then run bundler to install dependencies and generate your `Gemfile.lock`
+Generate and commit the dependency lock file:
 
 ```bash
-bundle install
+bundle lock
 ```
 
-Clever Cloud needs that your application answers on requests made on `0.0.0.0:8080`, we'll use a PORT environment variable for local test purposes (this variable is automatically setup on each application).
-Inside `td-agent.conf` put the following:
+Create a `.gitignore` file to exclude local Bundler files:
 
-```yaml
+```gitignore
+.bundle/
+vendor/
+```
+
+## Configure Fluentd
+
+Create a `fluent.conf` file:
+
+```aconf
 <source>
-  @type monitor_agent
+  @type http
   bind 0.0.0.0
-  port "#{ENV['PORT']}"
+  port "#{ENV.fetch('PORT', 8080)}"
 </source>
+
+<match **>
+  @type stdout
+</match>
+
+<label @FLUENT_LOG>
+  <match **>
+    @type stdout
+  </match>
+</label>
 ```
 
-Inside `go.sh` put the following:
+This configuration receives JSON events over HTTP and sends them to standard output. The `@FLUENT_LOG` label handles Fluentd's own logs separately.
+
+Create a `mise.toml` file with the build and run tasks used by the Linux runtime:
+
+```toml
+[tasks.build]
+description = "Install Fluentd and its dependencies"
+run = "bundle config set --local path vendor/bundle && bundle install"
+
+[tasks.run]
+description = "Start Fluentd"
+run = "bundle exec fluentd --no-supervisor -c fluent.conf"
+```
+
+[Mise](https://mise.jdx.dev/) is available on Clever Cloud. During deployment, the Linux runtime runs the task named `build` in the build phase and the task named `run` to start the application. See [Mise tasks](https://mise.jdx.dev/tasks/) and the [Linux runtime documentation](/doc/applications/linux/) for details.
+
+## Deploy Fluentd
+
+Commit and deploy the project:
 
 ```bash
-#!/bin/sh
+git add .
+git commit -m "Deploy Fluentd"
 
-bundle exec fluentd --use-v1-config -c td-agent.conf
-
-echo "🌍 Fluentd server started"
+clever deploy
 ```
 
-#### Test locally
-
-Start you service
+Display the application URL or add a custom domain. A custom domain also requires DNS configuration:
 
 ```bash
-PORT=9292 ./go.sh
+clever domain
+clever domain add your.website.tld
 ```
 
-Verify that it responds to requests
+Send a test event to the application, replacing the example hostname with its URL:
 
 ```bash
-curl 0.0.0.0:9292
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Hello from Fluentd"}' \
+  https://your-fluentd.example.com/app.log
 ```
 
-You can now read [My application already exists](#my-application-already-exists)
+Display the application logs to confirm that Fluentd received the event:
 
-#### Fine tune you application
-
-You can [update your configuration](https://docs.fluentd.org/v1.0/articles/config-file) with all inputs, filters and outputs you need or check for a [community based plugin](https://www.fluentd.org/plugins).
-
-### My application already exists
-
-#### Prepare your application for deployment
-
-Create a `Dockerfile` at the root of your project and put inside the following (assuming your start script is in `go.sh`):
-
-```dockerfile
-FROM ruby:2.4.4
-EXPOSE 8080
-COPY Gemfile Gemfile.lock td-agent.conf go.sh ./
-
-RUN bundle config --global frozen 1
-RUN bundle install
-RUN chmod +x go.sh
-
-CMD [ "/go.sh" ]
+```bash
+clever logs
 ```
 
- {{% content "env-injection" %}}
+The minimal HTTP input in this guide is publicly reachable. Before using it in production, add access controls suitable for your clients and replace the standard-output match with the [Fluentd output plugins](https://www.fluentd.org/plugins) required by your architecture.
 
- {{% content "deploy-git" %}}
+## Learn more
 
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
+{{< cards >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://docs.fluentd.org/" title="Fluentd documentation" subtitle="Configure Fluentd inputs, filters and outputs" icon="external-link" >}}
+  {{< card link="/doc/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="linux" >}}
+  {{< card link="/doc/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
+{{< /cards >}}

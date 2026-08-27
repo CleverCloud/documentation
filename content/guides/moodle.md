@@ -2,131 +2,131 @@
 type: docs
 linkTitle: Moodle
 title: Deploy a Moodle learning platform
-description: Deploy Moodle open source learning platform on Clever Cloud with detailed tutorials and best practices
+description: Deploy Moodle with PHP, MySQL, persistent file storage and scheduled tasks
 keywords:
+- learning management system
 - moodle
-- learning platform
-- php
 - mysql
-- educational software
+- php
 aliases:
 - /moodle
 ---
 
-[Moodle](https://moodle.org) is a learning platform designed to provide
-educators, administrators and learners with a single robust, secure and
-integrated system to create personalised learning environments.
+{{< hextra/hero-subtitle >}}
+  Deploy Moodle on Clever Cloud with a managed MySQL database, persistent data files and scheduled tasks.
+{{< /hextra/hero-subtitle >}}
 
-This doc explains how to configure Moodle from source. Alternatively, an already configured repository exists as well on [Clever Cloud's GitHub page](https://github.com/CleverCloud/moodle).
+[Moodle](https://moodle.org/) is an open source learning management system for creating courses and personalised learning environments. It runs on Clever Cloud's [PHP runtime](/developers/doc/applications/php/) with a managed database and persistent storage outside the application code.
 
-## How to Configure and Deploy Moodle on Clever Cloud
+This guide was tested with Moodle 5.2.2, PHP 8.4 and MySQL 8.4. Check the [requirements for your Moodle release](https://moodledev.io/general/releases) before selecting other versions.
 
-{{% steps %}}
+## Prepare Moodle
 
-### Download Moodle
+Download the release you want to deploy, then initialise a Git repository:
 
-You can download Moodle from <https://download.moodle.org> and initialize a Git repository at root with `git init`.
+```bash
+MOODLE_VERSION=5.2.2
+mkdir myMoodle
+cd myMoodle
+curl -L "https://github.com/moodle/moodle/archive/refs/tags/v${MOODLE_VERSION}.tar.gz" | tar -xz --strip-components=1
+git init
+```
 
-### Configure `config.php`
+Create `config.php` at the project root. It reads the linked MySQL credentials and the public URL from environment variables, and keeps Moodle data outside the public directory:
 
-Duplicate `config-dist.php` and rename it `config.php`. Update the following variables as follows:
-
-```php {filename="config.php", linenos=table}
-<?php  // Moodle configuration file
+```php {filename="config.php"}
+<?php
 
 unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'mysqli';
+$CFG->dbtype = 'mysqli';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = getenv("MYSQL_ADDON_HOST");
-$CFG->dbname    = getenv("MYSQL_ADDON_DB");
-$CFG->dbuser    = getenv("MYSQL_ADDON_USER");
-$CFG->dbpass    = getenv("MYSQL_ADDON_PASSWORD");
-$CFG->prefix    = 'mdl_';
-$CFG->dboptions = array (
-  'dbpersist' => 0,
-  'dbport' => getenv("MYSQL_ADDON_PORT"),
-  'dbsocket' => '',
-  'dbcollation' => 'utf8mb4_0900_ai_ci',
-);
+$CFG->dbhost = getenv('MYSQL_ADDON_HOST');
+$CFG->dbname = getenv('MYSQL_ADDON_DB');
+$CFG->dbuser = getenv('MYSQL_ADDON_USER');
+$CFG->dbpass = getenv('MYSQL_ADDON_PASSWORD');
+$CFG->prefix = 'mdl_';
+$CFG->dboptions = [
+    'dbpersist' => false,
+    'dbport' => getenv('MYSQL_ADDON_PORT'),
+    'dbsocket' => '',
+    'dbcollation' => 'utf8mb4_unicode_ci',
+];
 
-$CFG->wwwroot   = getenv("URL");
-$CFG->dataroot  = '/app/moodledata';
-$CFG->admin     = 'admin';
-
-$CFG->directorypermissions = 0777;
-
+$CFG->wwwroot = getenv('MOODLE_URL');
+$CFG->dataroot = getenv('APP_HOME') . '/moodledata';
+$CFG->admin = 'admin';
+$CFG->directorypermissions = 02777;
 $CFG->sslproxy = true;
 
-require_once(__DIR__ . '/lib/setup.php');
-
-// There is no php closing tag in this file,
-// it is intentional because it prevents trailing whitespace problems!
+require_once(__DIR__ . '/public/lib/setup.php');
 ```
 
-Commit changes.
+Moodle ignores `config.php` by default to prevent accidental credential commits. This version contains no credentials, only environment variable references, so the deployment step adds it explicitly.
 
-### Declare the PHP Application
+## Create the application and services
 
-On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](/doc/applications/php) application with Git deployment. Add a [MySQL](/doc/addons/mysql) add-on during the process.
+Install [Clever Tools](/developers/doc/cli/), log in, then create a PHP application and a linked MySQL add-on:
 
-### Set Up Environment Variables
+```bash
+npm i -g clever-tools
+clever login
 
-Add the following [environment variables](/doc/develop/env-variables) to tour PHP application:
-
-```shell
-CC_PHP_VERSION="8"
-MAX_INPUT_VARS="5000"
-URL="<your-url"
+clever create -t php -a myMoodle
+clever addon create mysql-addon myMoodleDatabase -p xs_sml --link myMoodle
 ```
 
-If you don't have an domain for your Moodle application yet, you'll be able to add a test domain provided by Clever Cloud in step 6.
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-### Set Up `moodledata` Folder
+Display the generated application domain:
 
-In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
+```bash
+clever domain
+```
 
-Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable. It should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`.
+Set `MOODLE_URL` to that HTTPS URL. You can instead add a custom domain, which also requires [DNS configuration](/developers/doc/administrate/domain-names/):
 
-Add this variable to your **PHP application** and replace `/some/empty/folder` by `/moodledata`. Don't forget to **update changes**.
+```bash
+clever domain add your.website.tld
+```
 
-### Set Up Domain
+Configure the public directory, supported PHP version, Moodle URL and required PHP input limit:
 
-Moodle needs an URL declared in variables to work properly. You can set it up in **Domains names**, from your PHP application menu. If you don't have a domain name yet, you can use a `cleverapp.io` subdomain provided by Clever Cloud for test purposes.
+```bash
+clever env set CC_WEBROOT /public
+clever env set CC_PHP_VERSION 8.4
+clever env set MAX_INPUT_VARS 5000
+clever env set MOODLE_URL https://your-application.cleverapps.io
+```
 
-Don't forget to update `URL="<your-url"` if you haven't yet.
+Create and link an FS Bucket for `moodledata`, then mount it into the absent directory expected by `config.php`:
 
-### Deploy
+```bash
+clever addon create fs-bucket myMoodleData --link myMoodle
 
-Get the remote in your application menu > **Information** > **Deployment URL** and add it to Git with `git remote add clever <clever-remote-url>`. Then, push your code with `git push clever -u master`
+FS_BUCKET_HOST="$(clever env -F json | jq -er 'first(.fromAddons[] | select(.addonName == "myMoodleData") | .env[] | select(.name == "BUCKET_HOST") | .value)')"
+clever env set CC_FS_BUCKET "/moodledata:${FS_BUCKET_HOST}"
+unset FS_BUCKET_HOST
+```
 
-💡 If you get a reference error when pushing, try this: `git push clever main:master`.
+The name lookup expects the add-on name to be unique. If several add-ons use that name, retrieve the host with `clever addon env ADDON_ID -F json` and the ID returned when the add-on was created. Do not create or commit the mount target, because an existing non-empty directory prevents the FS Bucket from being mounted.
 
-{{% /steps %}}
+You can also create and link these resources from the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-## Cron for Moodle
+## Schedule Moodle tasks
 
-Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. As explained in the [Clever Cloud cron documentation](https://www.clever.cloud/developers/doc/administrate/cron/#access-environment-variables), to have access to environment variable, you must wrap your commands in a bash script with [login shell](https://linux.die.net/man/1/bash) (`bash -l`).
-
-Add a `cron.sh` file to the root of the application:
+Moodle recommends running its [cron task](https://docs.moodle.org/en/Cron) every minute. Create a login-shell script so the scheduled process receives the application environment:
 
 ```bash {filename="cron.sh"}
 #!/bin/bash -l
-cd ${APP_HOME}
+
+cd "$APP_HOME"
 php admin/cli/cron.php
 ```
 
-And make it executable:
-
-```bash
-chmod u+x cron.sh
-```
-
-### Declare the cron in Clever Cloud
-
-Create a `clevercloud/cron.json` file with a string to run `cron.sh`every minute:
+Declare the schedule in `clevercloud/cron.json`:
 
 ```json {filename="clevercloud/cron.json"}
 [
@@ -134,16 +134,46 @@ Create a `clevercloud/cron.json` file with a string to run `cron.sh`every minute
 ]
 ```
 
-You might encounter errors when the Cron tries to access `moodledata` in your FS Bucket. For FS Bucket backups, look for a dedicated tool like [rclone](https://rclone.org).
+Make the script executable:
 
-## 🎓 Further Help
+```bash
+chmod u+x cron.sh
+```
+
+## Deploy and install Moodle
+
+Commit and deploy the project. Use `git add -f` for the environment-backed `config.php`, which Moodle's default ignore rules exclude:
+
+```bash
+git add .
+git add -f config.php
+git commit -m "Deploy Moodle"
+
+clever deploy
+clever open
+```
+
+The browser opens Moodle's installer. Confirm the environment checks, then define the site and administrator account. Database connectivity, the public URL and `moodledata` are already configured. The scheduled task starts succeeding after installation creates the database schema.
+
+The MySQL add-on preserves courses, users and configuration while the FS Bucket preserves uploads, caches and other data files when application instances are replaced.
+
+## Update Moodle
+
+Before an update, back up MySQL and the FS Bucket, then follow Moodle's [upgrade procedure](https://docs.moodle.org/en/Upgrading). Replace the application sources with a compatible release while preserving `config.php`, `cron.sh` and `clevercloud/cron.json`, commit the changes and deploy them:
+
+```bash
+clever deploy
+```
+
+Moodle applies required database changes after deployment through its web or CLI upgrade process. Review release-specific requirements before changing the PHP or database version.
+
+## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/php" title="PHP" subtitle="Deploy a PHP application on Clever Cloud" icon="php" >}}
-  {{< card link="/developers/doc/administrate/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
-  {{< card link="<https://docs.moodle.org/en/Installation_quick_guide>" title="Moodle Documentation" subtitle="Check Moodle installation guide" icon="moodle" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://docs.moodle.org/en/Installation_quick_guide" title="Moodle installation" subtitle="Install and configure a Moodle site" icon="moodle" >}}
+  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/addons/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
+  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+  {{< card link="/developers/doc/administrate/cron/" title="Scheduled tasks" subtitle="Run recurring commands in an application" icon="clock" >}}
 {{< /cards >}}
-
-See [Moodle installation documentation](https://docs.moodle.org/en/Installation_quick_guide) for further help and development configuration.

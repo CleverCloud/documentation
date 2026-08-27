@@ -55,7 +55,7 @@ Real ID: metabase_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myMetabase
 
 Your Metabase is starting:
- - Access it: https://xxxxxxxxxxxxxxxxxxxx-metabase.services.clever-cloud.com
+ - Access it: https://your-metabase.services.clever-cloud.com
  - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
@@ -74,6 +74,41 @@ Refer to the [Clever Tools documentation](/doc/cli/addons/) for more details on 
 Once you created your add-on, open the management URL or look for `MB_SITE_URL` value in the Metabase dashboard from the Console. The first time you connect, you will be taken to a wizard to create the first user, data sources, etc. Then you can configure and use it.
 
 - [Learn how to use Metabase](https://www.metabase.com/learn/metabase-basics/getting-started/find-data)
+
+## Manage content with the Metabase CLI
+
+The official Metabase CLI (`mb`) interacts with your instance through its API to manage questions, dashboards, collections, transforms, and other content. It differs from the `clever metabase` commands, which manage the Clever Cloud add-on, its version, and lifecycle.
+
+The CLI requires Metabase 0.58 or later and Node.js 20.6 or later. Install the [official npm package](https://www.npmjs.com/package/@metabase/cli) globally:
+
+```bash
+npm i -g @metabase/cli
+```
+
+Authenticate with the URL displayed when you create the add-on or available from its [Clever Cloud Console](https://console.clever-cloud.com/) dashboard:
+
+```bash
+mb auth login --url https://your-metabase.services.clever-cloud.com
+```
+
+On Metabase 0.63 and later, select the recommended browser authentication to sign in with your password or single sign-on (SSO) and approve access. Metabase versions 0.58 to 0.62 require an [API key](https://www.metabase.com/docs/latest/people-and-groups/api-keys), as do automated environments. API keys inherit the permissions of their Metabase group, so select one with only the access required for your tasks.
+
+Once authenticated, you can check the active profile and manage your instance:
+
+```bash
+mb auth status
+mb collection list
+mb dashboard list
+```
+
+Credentials are stored in a local profile. Name profiles when you manage multiple instances:
+
+```bash
+mb auth login --profile production --url https://your-instance-metabase.services.clever-cloud.com
+mb dashboard list --profile production
+```
+
+Some command groups require a newer Metabase version or a Pro or Enterprise feature. The CLI checks these requirements before sending a request. Run `mb --help` to list available commands and refer to the [Metabase CLI documentation](https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli) for complete usage details.
 
 ## Password reset
 

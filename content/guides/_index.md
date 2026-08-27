@@ -49,7 +49,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/mkdocs" title="MkDocs" subtitle="Deploy a static MkDocs website" icon="docs" >}}
   {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform" icon="moodle" >}}
   {{< card link="/developers/guides/node-js-mongo-db" title="Node.js & MongoDB" subtitle="Deploy a Node.js application with MongoDB" icon="node" >}}
-  {{< card link="/developers/guides/node-statsd-nodejs-metrics" title="Node-statsd" subtitle="Export Node.js metrics with node-statsd" icon="node" >}}
+  {{< card link="/developers/guides/node-statsd-nodejs-metrics" title="Node.js StatsD" subtitle="Export Node.js metrics with hot-shots" icon="node" >}}
   {{< card link="/developers/guides/nuxt" title="Nuxt" subtitle="Deploy a Nuxt application as a static site or with Node.js" icon="nuxt" >}}
   {{< card link="/developers/guides/otree" title="oTree" subtitle="Deploy an oTree application" icon="django" >}}
   {{< card link="/developers/guides/outline" title="Outline" subtitle="Deploy the Outline knowledge base" icon="outline" >}}

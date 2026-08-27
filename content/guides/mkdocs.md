@@ -17,13 +17,7 @@ keywords:
 
 ## Requirements
 
-If you need an example source code, init a new project (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Python](https://wiki.python.org/moin/BeginnersGuide/Download) and [pipx](https://pipx.pypa.io/stable/)):
-
-```bash
-pipx mkdocs new myStaticApp
-```
-
-You can also use [uvx](https://docs.astral.sh/uv/guides/tools/):
+To create an example project, install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [`uv`](https://docs.astral.sh/uv/getting-started/installation/), then run MkDocs with `uvx`:
 
 ```bash
 uvx mkdocs new myStaticApp
@@ -33,14 +27,7 @@ uvx mkdocs new myStaticApp
 
 ### Automatic build
 
-MkDocs is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
-
-```bash
-clever scale --flavor pico
-
-# To select a bigger build instance, use:
-clever scale --build-flavor M
-```
+MkDocs is one of the static site generators supported by the [Static runtime automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
 
 {{% content "static-deploy" %}}
 
@@ -48,5 +35,6 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Static runtime documentation" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://www.mkdocs.org/getting-started/>" title="MkDocs documentation" subtitle="How to write and organize your content" icon="docs" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://www.mkdocs.org/getting-started/" title="MkDocs documentation" subtitle="How to write and organize your content" icon="docs" >}}
 {{< /cards >}}

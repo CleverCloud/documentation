@@ -460,7 +460,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 | `CC_ENABLE_MYSQL_PROXYSQL`          | Enable the ProxySQL  feature                                                                | false         |           |
 | `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS` | Defines the maximum number of connections the local ProxySQL will open to your MySQL add-on | 10            |           |
 | `CC_MYSQL_PROXYSQL_USE_TLS`         | Enable or disable secured connection using TLS to your MySQL add-on                         | true          |           |
-| `CC_MYSQL_PROXYSQL_SOCKET_PATH`     | Contains the path to the Unix Datagram Socket to connect to ProxySQL                        |               | ✓         |
+| `CC_MYSQL_PROXYSQL_SOCKET_PATH`     | Contains the path to the Unix domain socket used to connect to ProxySQL                     |               | ✓         |
 
 ### PostgreSQL
 

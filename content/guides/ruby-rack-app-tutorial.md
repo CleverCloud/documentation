@@ -1,123 +1,100 @@
 ---
 type: docs
-linkTitle: Ruby Rack (full tutorial)
+linkTitle: Ruby Rack tutorial
 title: Build and deploy a Ruby Rack application
-description: Complete tutorial for deploying Ruby Rack applications on Clever Cloud with configuration examples and deployment best practices
+description: Create a minimal Rack application and deploy it with Puma on the Clever Cloud Ruby runtime
 keywords:
 - ruby
 - rack
+- puma
 - web framework
-- tutorial guide
-- application deployment
+- tutorial
 aliases:
 - /doc/deploy/application/ruby/tutorials/ruby-rack-app-tutorial
 ---
 
-## Overview Introduction
+[Rack](https://github.com/rack/rack) provides a standard interface between Ruby web applications and application servers. This tutorial creates a minimal Rack 3 application served by Puma and deploys it with the Clever Cloud Ruby runtime.
 
-Currently, Clever Cloud supports Rack-based applications.
-Created in 2007, Rack has become the de-facto standard for ruby web applications and is used in many frameworks such as Ruby on Rails.
+## Create the Rack application
 
-## Configure your Rack based application
-
-### Mandatory configuration
-
-To follow this tutorial, you will need:
-
-- Ruby >= 1.9.2 (w/ Rubygems)
-- Bundler (`gem install bundler` and you're good to go!)
-- Your preferred editor
-- Git (for the deploy part)
-
-{{< callout type="info">}}
-To manage your gems and ruby versions, we recommend [rbenv](https://github.com/sstephenson/rbenv). If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands, or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
-{{< /callout >}}
-
-### My application does not exists already
-
-#### Create a Ruby + Rake application locally
-
-You can deploy a demo application by following these instructions:
+Install a currently supported [Ruby release](https://www.ruby-lang.org/en/downloads/branches/), [Bundler](https://bundler.io/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), then initialize the project:
 
 ```bash
-mkdir helloworld-rack
-cd helloworld-rack
-touch hello.rb config.ru Gemfile ## or gems.rb
+mkdir myRackApp
+cd myRackApp
+git init
 ```
 
-Inside `hello.rb` put the following:
+Create a `Gemfile` with Rack and Puma. Declaring the Ruby branch keeps local and deployed environments consistent:
 
-```ruby
+```ruby {filename="Gemfile"}
+source "https://rubygems.org"
+
+ruby "~> 3.4"
+
+gem "puma", "~> 7.0"
+gem "rack", "~> 3.2"
+```
+
+Create the Rack entry point:
+
+```ruby {filename="config.ru"}
 class HelloWorld
-  def call(env)
-   [200, {"Content-Type" => "text/plain"}, ["Hello world!"]]
+  def call(_env)
+    [200, { "content-type" => "text/plain" }, ["Hello world!"]]
   end
 end
-```
 
-Inside the `config.ru` (That is, the main Rack entry-point) put:
-
-```ruby
-require './hello'
 run HelloWorld.new
 ```
 
-The `gems.rb` or `Gemfile` file will contain our dependencies:
-
-```ruby
-source 'https://rubygems.org'
-
-gem 'rack', '~>1.5.1'
-
-
-gem "puma", "~> 6.4"
-```
-
-We don't need any more dependencies. The `gems.rb` or `Gemfile` is mandatory to deploy
-on Clever Cloud.
-
-Do not forget to init an empty git repository with `$ git init`
-
-#### Test your application locally
-
-To test your application, just fetch the dependencies using bundler:
-
-```shell
-$ bundle install
-Fetching gem metadata from https://rubygems.org/..........
-Resolving dependencies...
-Using rack (1.5.2)
-Using puma (6.4.2)
-Using bundler (1.3.5)
-Your bundle is complete!
-Use `bundle show [gemname]` to see where a bundled gem is installed.
-```
-
-And start your application:
+Install the dependencies and generate the lockfile:
 
 ```bash
-$ bundle exec rackup
-[2013-09-16 17:35:26] INFO  WEBrick 1.3.1
-[2013-09-16 17:35:26] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
-[2013-09-16 17:35:26] INFO  WEBrick::HTTPServer#start: pid=5656 port=9292
+bundle install
+bundle lock --add-platform x86_64-linux
 ```
 
-You can now test with your browser at `http://localhost:9292`.
+You can check the application locally with `bundle exec puma config.ru`, then open `http://localhost:9292`.
 
-You can now read [My application already exists](#my-application-already-exists)
+## Deploy on Clever Cloud
 
-### My application already exists
+Install [Clever Tools](/developers/doc/cli/), log in and create a Ruby application linked to the current directory:
 
-{{% content "create-application" %}}
+```bash
+npm i -g clever-tools
+clever login
 
- {{% content "set-env-vars" %}}
+clever create -t ruby -a myRackApp
+```
 
- {{% content "env-injection" %}}
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
+You can display your application's URL or add a [custom domain](/developers/doc/administrate/domain-names/). A custom domain also requires DNS configuration:
 
- {{% content "deploy-git" %}}
+```bash
+clever domain
+clever domain add your.website.tld
+```
 
- {{% content "link-addon" %}}
+Commit the files and deploy:
 
-{{% content "more-config" %}}
+```bash
+git add .
+git commit -m "First deploy"
+
+clever deploy
+clever open
+```
+
+The Ruby runtime installs the locked gems and starts `config.ru` with Puma. It manages the listening socket and NGINX connection, so this application does not need a custom port or run command. Read application configuration with `ENV["VARIABLE_NAME"]`.
+
+## Learn more
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/ruby/" title="Ruby runtime" subtitle="Configure Ruby and Puma applications" icon="ruby" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://github.com/rack/rack" title="Rack documentation" subtitle="Learn the Rack interface" icon="github" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://puma.io/" title="Puma documentation" subtitle="Configure the Ruby application server" icon="server" >}}
+{{< /cards >}}

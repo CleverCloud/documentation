@@ -27,10 +27,9 @@ git clone https://github.com/lumeland/lume.land myStaticApp
 
 ### Environment variables
 
-Next, configure the application with a pico instance with dedicated Medium build (needed for Deno), enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+The complete Lume website used in this example has a large dependency graph. Give its build phase a dedicated M instance, then configure the output directory and build command:
 
 ```bash
-clever scale --flavor pico
 clever scale --build-flavor M
 
 clever env set CC_WEBROOT "/_site"
@@ -59,5 +58,6 @@ It uses [Mise package manager](/doc/reference/reference-environment-variables/#i
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://lume.land/docs/overview/about-lume/>" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://lume.land/docs/overview/about-lume/" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
 {{< /cards >}}

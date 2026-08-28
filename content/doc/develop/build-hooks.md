@@ -77,7 +77,7 @@ If you need support for other hooks, please reach out to our support and explain
 This hook is ran before the dependencies are fetched. If it fails, the
 deployment fails.
 
-This hook is ran every time.
+This hook is not ran during deployments from cache.
 
 This hook is perfect for:
 

@@ -74,10 +74,10 @@ If you need support for other hooks, please reach out to our support and explain
 
 **By using `CC_PRE_BUILD_HOOK`**.
 
-This hook is ran before the dependencies are fetched. If it fails, the
+This hook runs before the dependencies are fetched. If it fails, the
 deployment fails.
 
-This hook is not ran during deployments from cache.
+This hook doesn't run during deployments from cache.
 
 This hook is perfect for:
 
@@ -88,10 +88,10 @@ This hook is perfect for:
 
 **By using `CC_POST_BUILD_HOOK`.**
 
-This hook is ran after the project is built, and before the cache archive is
+This hook runs after the project is built, and before the cache archive is
 generated. If it fails, the deployment fails.
 
-This hook is not ran during deployments from cache.
+This hook doesn't run during deployments from cache.
 
 This hook is perfect for:
 
@@ -104,10 +104,10 @@ This hook is perfect for:
 
 **By using `CC_PRE_RUN_HOOK`.**
 
-This hook is ran before the application is started, but after the cache archive
+This hook runs before the application is started, but after the cache archive
 has been generated. If it fails, the deployment fails.
 
-This hook is ran every time.
+This hook runs every time.
 
 This hook is perfect for:
 
@@ -117,10 +117,10 @@ This hook is perfect for:
 
 **By using `CC_RUN_SUCCEEDED_HOOK` or `CC_RUN_FAILED_HOOK`.**
 
-These hooks are ran once the application has started (or has failed starting).
+These hooks run once the application has started (or has failed starting).
 Their failure doesn't cause the deployment to fail.
 
-One of these hooks is ran every time.
+One of these hooks runs every time.
 
 These hooks are perfect for:
 

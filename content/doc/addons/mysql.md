@@ -24,7 +24,7 @@ MySQL is an open source relational database management system (RDBMS). Clever Cl
 
 ## Supported Versions
 
-Use the 8.4 long term support (LTS) branch for new add-ons. MySQL 8.0 [reached its end of life on 30 April 2026](https://www.mysql.com/support/eol-notice.html) and [Percona Server 8.0 had its final release in June 2026](https://docs.percona.com/new/2026/06/10/percona-server-for-mysql-8046-37-has-been-released/), so we recommend you migrate your existing 8.0 add-ons to 8.4.
+Two long term support (LTS) branches are available for new add-ons: 8.4, used by default, and [9.7](/changelog/2026/09-01-mysql-9.7/). MySQL 5.7 and 8.0 are end-of-life and [Percona Server 8.0 had its final release in June 2026](https://docs.percona.com/new/2026/06/10/percona-server-for-mysql-8046-37-has-been-released/), so we recommend you migrate your existing add-ons on these branches to 8.4 or 9.7.
 
 {{< software_versions_shared_dedicated mysql>}}
 

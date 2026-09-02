@@ -271,5 +271,5 @@ Use any SFTP client with the following settings:
   {{< card link="/developers/doc/applications/linux" title="Linux applications" subtitle="Deploy any application" icon="linux" >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar object storage" subtitle="Store files with an S3 API" icon="database" >}}
   {{< card link="/developers/doc/addons/fs-bucket" title="FS Buckets" subtitle="Store files with SFTP access" icon="fsbucket" >}}
-  {{< card link="<https://docs.sftpgo.com/latest/>" title="SFTPGo documentation" subtitle="Configure users and storage" icon="book-open" >}}
+  {{< card link="https://docs.sftpgo.com/latest/" title="SFTPGo documentation" subtitle="Configure users and storage" icon="book-open" >}}
 {{< /cards >}}

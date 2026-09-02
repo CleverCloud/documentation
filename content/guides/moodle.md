@@ -143,7 +143,7 @@ You might encounter errors when the Cron tries to access `moodledata` in your FS
   {{< card link="/developers/doc/administrate/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
   {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
   {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
-  {{< card link="<https://docs.moodle.org/en/Installation_quick_guide>" title="Moodle Documentation" subtitle="Check Moodle installation guide" icon="moodle" >}}
+  {{< card link="https://docs.moodle.org/en/Installation_quick_guide" title="Moodle Documentation" subtitle="Check Moodle installation guide" icon="moodle" >}}
 {{< /cards >}}
 
 See [Moodle installation documentation](https://docs.moodle.org/en/Installation_quick_guide) for further help and development configuration.

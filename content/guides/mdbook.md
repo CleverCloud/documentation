@@ -43,5 +43,5 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://rust-lang.github.io/mdBook/>" title="Learn mdBook" subtitle="How to write and organize your content" icon="mdbook" >}}
+  {{< card link="https://rust-lang.github.io/mdBook/" title="Learn mdBook" subtitle="How to write and organize your content" icon="mdbook" >}}
 {{< /cards >}}

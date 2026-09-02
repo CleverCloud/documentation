@@ -48,5 +48,5 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Static runtime documentation" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://www.mkdocs.org/getting-started/>" title="MkDocs documentation" subtitle="How to write and organize your content" icon="docs" >}}
+  {{< card link="https://www.mkdocs.org/getting-started/" title="MkDocs documentation" subtitle="How to write and organize your content" icon="docs" >}}
 {{< /cards >}}

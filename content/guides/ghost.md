@@ -273,7 +273,7 @@ The rebuild downloads the selected release and installs dependencies for the con
 ## Learn more
 
 {{< cards >}}
-  {{< card link="<https://docs.ghost.org/>" title="Ghost documentation" subtitle="Configure and manage a Ghost publication" icon="ghost" >}}
+  {{< card link="https://docs.ghost.org/" title="Ghost documentation" subtitle="Configure and manage a Ghost publication" icon="ghost" >}}
   {{< card link="/developers/doc/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
   {{< card link="/developers/doc/addons/mysql" title="MySQL" subtitle="Explore managed MySQL databases" icon="mysql" >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="cellar" >}}

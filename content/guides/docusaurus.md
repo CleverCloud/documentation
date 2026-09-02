@@ -45,5 +45,5 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://docusaurus.io/docs>" title="Learn Docusaurus" subtitle="How to write and organize your content" icon="docusaurus" >}}
+  {{< card link="https://docusaurus.io/docs" title="Learn Docusaurus" subtitle="How to write and organize your content" icon="docusaurus" >}}
 {{< /cards >}}

@@ -1,8 +1,8 @@
 ---
 type: docs
-linkTitle: Quickstart
+linkTitle: Getting started
 weight: 1
-title: Quickstart
+title: Deploy your first application and resources
 description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
 keywords:
 - quickstart
@@ -17,8 +17,8 @@ aliases:
 - /deploy
 - /doc/addons/add-an-addon
 - /doc/clever-cloud-overview/add-application
-- /doc/getting-started
 - /doc/getting-started/quickstart
+- /doc/quickstart
 - /getting-started/authentication
 - /getting-started/quickstart
 - /quickstart

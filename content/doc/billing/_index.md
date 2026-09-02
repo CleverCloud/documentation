@@ -17,7 +17,6 @@ aliases:
 - /doc/administrate/log-management/billing
 - /doc/billing
 - /doc/doc/billing
-- /doc/quickstart
 ---
 
 {{< cards >}}

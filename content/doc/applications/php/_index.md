@@ -42,7 +42,7 @@ clever create --type php
 ```
 
 - [Learn more about Clever Tools](/doc/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/quickstart/#create-an-application-step-by-step)
+- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your PHP application
 

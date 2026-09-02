@@ -698,3 +698,18 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
   html[class~="dark"] .swagger-ui .responses-wrapper .response-header .response-toggle svg {
     fill: rgb(209 213 219);
   }
+
+/* "Edit this page" link: reuse the same arrow as external links.
+   The i18n string can only carry text, so the icon is appended here.
+   A mask keeps it on currentColor, so hover and dark mode follow the link. */
+.hextra-toc a[rel="noreferrer"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: baseline;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+}

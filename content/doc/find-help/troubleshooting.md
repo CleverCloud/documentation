@@ -15,8 +15,10 @@ aliases:
 ---
 
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
-  If you're having trouble deploying applications or with with git, this section is for you. From git issues to configuration errors, problems can arise at different stages of your deployments.
+  If you're having trouble deploying applications or with git, this section is for you. From git issues to configuration errors, problems can arise at different stages of your deployments. For general questions about the platform, see the [FAQ](/doc/find-help/faq).
 {{< /hextra/hero-subtitle >}}
+
+{{% content "ask-for-help" %}}
 
 ## Git-related issues
 

@@ -166,7 +166,7 @@ Run a production build before submitting a change:
 hugo
 ```
 
-The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) rules in [`.markdownlint.jsonc`](./.markdownlint.jsonc), CLI configuration in [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc) and editor exclusions in [`.markdownlintignore`](./.markdownlintignore). Run the version installed by Mise:
+The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) rules in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and CLI configuration in [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc), which excludes the paths listed in [`.gitignore`](./.gitignore). Run the version installed by Mise:
 
 ```bash
 markdownlint-cli2 "**/*.md"

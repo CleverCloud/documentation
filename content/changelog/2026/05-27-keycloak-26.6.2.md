@@ -19,7 +19,7 @@ excludeSearch: true
 
 Together these releases address seventeen security vulnerabilities: [CVE-2026-4366](https://nvd.nist.gov/vuln/detail/CVE-2026-4366), [CVE-2026-4633](https://nvd.nist.gov/vuln/detail/CVE-2026-4633), [CVE-2026-33870](https://nvd.nist.gov/vuln/detail/CVE-2026-33870), [CVE-2026-33871](https://nvd.nist.gov/vuln/detail/CVE-2026-33871), [CVE-2026-4628](https://nvd.nist.gov/vuln/detail/CVE-2026-4628), [CVE-2026-4630](https://nvd.nist.gov/vuln/detail/CVE-2026-4630), [CVE-2026-5588](https://nvd.nist.gov/vuln/detail/CVE-2026-5588), [CVE-2026-6856](https://nvd.nist.gov/vuln/detail/CVE-2026-6856), [CVE-2026-7307](https://nvd.nist.gov/vuln/detail/CVE-2026-7307), [CVE-2026-7504](https://nvd.nist.gov/vuln/detail/CVE-2026-7504), [CVE-2026-7507](https://nvd.nist.gov/vuln/detail/CVE-2026-7507), [CVE-2026-7571](https://nvd.nist.gov/vuln/detail/CVE-2026-7571), [CVE-2026-37978](https://nvd.nist.gov/vuln/detail/CVE-2026-37978), [CVE-2026-37979](https://nvd.nist.gov/vuln/detail/CVE-2026-37979), [CVE-2026-37980](https://nvd.nist.gov/vuln/detail/CVE-2026-37980), [CVE-2026-37981](https://nvd.nist.gov/vuln/detail/CVE-2026-37981) and [CVE-2026-37982](https://nvd.nist.gov/vuln/detail/CVE-2026-37982).
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.6.2` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.6.2` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -29,4 +29,4 @@ clever keycloak version update yourKeycloakNameOrId
 clever keycloak version update yourKeycloakNameOrId 26.6.2
 ```
 
-- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/deploy/services/keycloak)

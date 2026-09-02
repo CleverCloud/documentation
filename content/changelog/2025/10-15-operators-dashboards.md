@@ -19,9 +19,9 @@ excludeSearch: true
 
 When you deploy Matomo, Metabase or Otoroshi on Clever Cloud, you now have access to a better dashboard to manage it.
 
-This dashboard provides direct access to admin web panel, useful information such as deployed version, underlying resources, initial user/password, edit name, tags, etc. You can easily rebuild/restart your instance with [Blue/Green deployment](/doc/best-practices/blue-green/), access the Grafana dashboard, transparently update to a new version or enable/disable Network Group when available:
+This dashboard provides direct access to admin web panel, useful information such as deployed version, underlying resources, initial user/password, edit name, tags, etc. You can easily rebuild/restart your instance with [Blue/Green deployment](/doc/develop/best-practices/blue-green/), access the Grafana dashboard, transparently update to a new version or enable/disable Network Group when available:
 
-- [Learn more about Network Groups](/doc/develop/network-groups/)
-- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase)
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi)
+- [Learn more about Network Groups](/doc/network/network-groups/)
+- [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi)

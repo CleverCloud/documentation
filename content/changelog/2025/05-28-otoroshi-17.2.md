@@ -19,4 +19,4 @@ excludeSearch: true
 
 To update, set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.2_` and rebuild it.
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

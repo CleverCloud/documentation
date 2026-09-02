@@ -14,7 +14,15 @@ aliases:
 - /doc/get-help/faq
 ---
 
-## What is a Scaler?
+{{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}
+  Answers to the questions asked most often about the platform, from scalers and supported runtimes to domains, security, add-ons and backups. If you're facing a specific error message, start with the [troubleshooting page](/doc/find-help/troubleshooting).
+{{< /hextra/hero-subtitle >}}
+
+{{% content "ask-for-help" %}}
+
+## Platform and plans
+
+{{% details title="What is a Scaler?" closed="true" %}}
 
 A _scaler_ is an individual instance hosting your application. You can allocate one or more scalers to each application. Available flavors are `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL` and `3XL`, depending on the runtime.
 
@@ -25,8 +33,9 @@ When enabling auto-scalability, you have to set a minimum and a maximum of activ
 {{< callout type="warning" >}}
   Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads).
 {{< /callout >}}
+{{% /details %}}
 
-## Which application runtimes are supported by Clever Cloud?
+{{% details title="Which application runtimes are supported by Clever Cloud?" closed="true" %}}
 
 Currently, Clever Cloud supports:
 
@@ -48,89 +57,55 @@ Currently, Clever Cloud supports:
 - V (Vlang)
 
 See the full list in the [applications documentation](/doc/applications/), or browse the [guides](/guides/) for frameworks and services you can deploy on Clever Cloud.
+{{% /details %}}
 
-## How many applications can I create?
+{{% details title="How many applications can I create?" closed="true" %}}
 
 As many as you want. We've not set a limited number of apps by developer.
+{{% /details %}}
 
-## How to setup domain names I own?
-
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/administrate/domain-names).
-
-## How can I disable one of my existing applications?
-
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
-
-## What type of content can I deploy?
+{{% details title="What type of content can I deploy?" closed="true" %}}
 
 Please refer to the Acceptable Use Policy, article 2, [_Reasonable use of the Platform_](https://www.clever.cloud/acceptable-use-policy/).
+{{% /details %}}
 
-## How do I add or remove members in my organisations?
+{{% details title="Where are my applications and add-ons located?" closed="true" %}}
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organisation's members. If your are an admin, you can revoke or grant permissions.
+Applications and add-ons are deployed in multiple regions across Europe, North America and Asia-Pacific, including Paris, Roubaix, Gravelines, London, Warsaw, Montreal, Singapore and Sydney, plus HDS-certified zones in France for healthcare data. When creating an application or an add-on, you can choose among the deployment zones available for that product.
 
-## How do I report an application that infringes your Terms and Conditions?
+Clever Cloud is based in Nantes, France.
+{{% /details %}}
 
-To report an application that infringes Clever Cloud's Terms and Conditions, please contact the legal team at <abuse@clever-cloud.com>.
+{{% details title="I want to run Kubernetes on top of Clever Cloud, is that possible?" closed="true" %}}
 
-We will investigate and contact the application's owner over the violation if needed.
+Yes. [Clever Kubernetes Engine](/doc/kubernetes/) (CKE), currently in public beta, provides a managed Kubernetes control plane. See the [product page](https://www.clever.cloud/product/kubernetes/) for more information.
+{{% /details %}}
 
-## Does Clever Cloud support TLS/SSL (HTTPS)?
+{{% details title="I want to use Clever Cloud on my own premises, is that possible?" closed="true" %}}
 
-Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/administrate/ssl/#uploading-my-own-certificates).
-Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
+Yes, since 2016 Clever Cloud is packaged for private data center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever.cloud/on-premises](https://www.clever.cloud/on-premises) for more info.
+{{% /details %}}
 
-## What are the supported ciphers ?
+## Applications and deployments
 
-As this information can change over time with security updates, here's the nmap command to look up SSL/TLS ciphers on a Clever Cloud configured domain:
+{{% details title="How can I disable one of my existing applications?" closed="true" %}}
 
-```shell
-nmap --script ssl-enum-ciphers -p 443 example.com
-```
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation and app in the left column. Then click on the application name and select **Overview**. Click on the **Stop** button to stop your app.
+{{% /details %}}
 
-## I'd like to have two applications available on the same domain name
-
-Refer to [prefix routing](/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
-
-## How do I define cron jobs for my application?
+{{% details title="How do I define cron jobs for my application?" closed="true" %}}
 
 See [Cron Configuration File](/doc/administrate/cron) for more information.
+{{% /details %}}
 
-## How to know if a user comes from a secure connection?
-
-Load-balancers handles all connections ahead of your applications and forward them in plain HTTP, you can't rely on the server port to know the scheme used by the user.
-
-Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '_http_' or '_https_'.
-
-{{< callout type="info" >}}
-In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.
-{{< /callout >}}
-
-{{< callout type="warning" >}}
-In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your `application.conf`.
-{{< /callout >}}
-
-## PHP: `$_SERVER` auth variables are always empty, how do I make this work?
-
-- [Learn more about the $_SERVER variable on Clever Cloud](/doc/applications/php/apache/#using-http-authentication)
-
-## How to get the user's IP address?
-
-Load-balancers ahead of your applications handle all connections and forward them in plain HTTP.
-So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
-
-To get the original client's IP address, use the `X-Forwarded-For` HTTP header. The load balancer automatically adds this header to each request.
-
-The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application.
-[Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
-
-## How do I identify different instances of my application?
+{{% details title="How do I identify different instances of my application?" closed="true" %}}
 
 If your application needs to differentiate all the running nodes internally, you can use the `INSTANCE_NUMBER` environment variable.
 
 For example, if 3 instances are running for your application, this environment variable will contain `0` on the first, `1` on the second and `2` on the third.
+{{% /details %}}
 
-## I need a private ssh key to fetch my private dependencies. How do I do that?
+{{% details title="I need a private ssh key to fetch my private dependencies. How do I do that?" closed="true" %}}
 
 If your company manages its own artifacts in a private repository (like, you can only
 access them via git+ssh or sFTP), and you need a private key to connect to the server, you
@@ -138,8 +113,9 @@ can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
 - [Learn more about ssh.json](/doc/reference/common-configuration/#private-ssh-key)
+{{% /details %}}
 
-## I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?
+{{% details title="I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?" closed="true" %}}
 
 If you get this error on a Java (or any JVM language) application, it means that your application was compiled with a newer Java version than the one used to run it.
 
@@ -161,43 +137,111 @@ For reference, the table below lists the class file version for each major Java 
 | 17           | 61.0               |
 | 21           | 65.0               |
 
-## I want SSH access to my server
+{{% /details %}}
+
+{{% details title="I want SSH access to my server" closed="true" %}}
 
 Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
 
 If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/cli/applications/deployment-lifecycle/#ssh), but keep in mind that changes made on an instance are not persistent across deployments.
+{{% /details %}}
 
-## I want to use Clever Cloud on my own premises, is that possible?
-
-Yes, since 2016 Clever Cloud is packaged for private data center. This offer called "Clever Cloud On Premises" is available upon request: you can send a mail to [sales@clever-cloud.com](mailto:sales@clever-cloud.com) or visit [https://www.clever.cloud/on-premises](https://www.clever.cloud/on-premises) for more info.
-
-## Where are my applications and add-ons located?
-
-Applications and add-ons are deployed in multiple regions across Europe, North America and Asia-Pacific, including Paris, Roubaix, Gravelines, London, Warsaw, Montreal, Singapore and Sydney, plus HDS-certified zones in France for healthcare data. When creating an application or an add-on, you can choose among the deployment zones available for that product.
-
-Clever Cloud is based in Nantes, France.
-
-## I want to run Kubernetes on top of Clever Cloud, is that possible?
-
-Yes. [Clever Kubernetes Engine](/doc/kubernetes/) (CKE), currently in public beta, provides a managed Kubernetes control plane. See the [product page](https://www.clever.cloud/product/kubernetes/) for more information.
-
-## How to setup a firewall on Clever Cloud?
-
-Specific firewall rules can be enabled on demand to the support or in case of attack.
-
-## Can I `scp` something in a VM
+{{% details title="Can I `scp` something in a VM?" closed="true" %}}
 
 You cannot `scp` something to the VM, you can however easily `scp` something from the VM to the outside.
+{{% /details %}}
 
-## I need to convert something to PDF with `wkhtmltopdf`
+{{% details title="I need to convert something to PDF with `wkhtmltopdf`" closed="true" %}}
 
 `wkhtmltopdf` is available and fully functional but we deeply recommend to use `chromium headless` instead.
+{{% /details %}}
 
-## What is the timezone used by my application/add-on?
+{{% details title="What is the timezone used by my application/add-on?" closed="true" %}}
 
 All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
+{{% /details %}}
 
-## I received an email saying "Add-on [my add-on] disk is nearly full". What do I do?
+## Domains, network and security
+
+{{% details title="How to setup domain names I own?" closed="true" %}}
+
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/administrate/domain-names).
+{{% /details %}}
+
+{{% details title="I'd like to have two applications available on the same domain name" closed="true" %}}
+
+Refer to [prefix routing](/doc/administrate/domain-names/#prefix-routing) to learn how to have two applications share a domain name.
+{{% /details %}}
+
+{{% details title="Does Clever Cloud support TLS/SSL (HTTPS)?" closed="true" %}}
+
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/administrate/ssl/#uploading-my-own-certificates).
+Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
+{{% /details %}}
+
+{{% details title="What are the supported ciphers?" closed="true" %}}
+
+As this information can change over time with security updates, here's the nmap command to look up SSL/TLS ciphers on a Clever Cloud configured domain:
+
+```shell
+nmap --script ssl-enum-ciphers -p 443 example.com
+```
+
+{{% /details %}}
+
+{{% details title="How to know if a user comes from a secure connection?" closed="true" %}}
+
+Load-balancers handles all connections ahead of your applications and forward them in plain HTTP, you can't rely on the server port to know the scheme used by the user.
+
+Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '_http_' or '_https_'.
+
+{{< callout type="info" >}}
+In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.
+{{< /callout >}}
+
+{{< callout type="warning" >}}
+In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your `application.conf`.
+{{< /callout >}}
+{{% /details %}}
+
+{{% details title="PHP: `$_SERVER` auth variables are always empty, how do I make this work?" closed="true" %}}
+
+- [Learn more about the $_SERVER variable on Clever Cloud](/doc/applications/php/apache/#using-http-authentication)
+{{% /details %}}
+
+{{% details title="How to get the user's IP address?" closed="true" %}}
+
+Load-balancers ahead of your applications handle all connections and forward them in plain HTTP.
+So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
+
+To get the original client's IP address, use the `X-Forwarded-For` HTTP header. The load balancer automatically adds this header to each request.
+
+The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application.
+[Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
+{{% /details %}}
+
+{{% details title="How to setup a firewall on Clever Cloud?" closed="true" %}}
+
+Specific firewall rules can be enabled on demand to the support or in case of attack.
+{{% /details %}}
+
+{{% details title="I get unknown regular requests, is there a problem?" closed="true" %}}
+
+The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clevercloud-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
+{{% /details %}}
+
+## Add-ons and data
+
+{{% details title="What is a DEV plan?" closed="true" %}}
+
+DEV plan is a free-tier plan available for some databases, designed to let customers explore and test these products. They operate on shared clusters, which may result in variable performance; they also have no backups nor SLA guarantees.
+
+Some features such as extensions, simultaneous connections numbers, functions… might be reduced or unavailable.
+
+Support is not able to provide help in case of DEV plan.
+{{% /details %}}
+
+{{% details title="I received an email saying 'Add-on [my add-on] disk is nearly full'. What do I do?" closed="true" %}}
 
 A full disk can cause your database to crash or become unresponsive.
 Consider upgrading your add-on plan.
@@ -214,26 +258,31 @@ Then you can remove records from your database, re-index your tables and try to 
 
 You can buy more disk space by migrating your add-on to a higher plan.
 If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regains space.
+{{% /details %}}
 
-## Where are the backups stored?
+{{% details title="Where are the backups stored?" closed="true" %}}
 
 Clever Cloud stores all backups on [Cellar](https://www.clever.cloud/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
 For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more [documentation on restoring backups with the CLI](/doc/cli/addons/#database-backups).
+{{% /details %}}
 
-## I can't create my add-on
+{{% details title="I can't create my add-on" closed="true" %}}
 
 To create add-ons, you need to complete your account information, including your city and ZIP code.
 For instance, you cannot create a Matomo add-on until you provide these details.
+{{% /details %}}
 
-## I get unknown regular requests, is there a problem ?
+## Account and organisations
 
-The platform performs routine health checks to applications every 2 minutes. You may notice these periodic HTTP requests in your logs, with `X-Clevercloud-Monitoring` header. They're part of Clever Cloud's standard monitoring process.
+{{% details title="How do I add or remove members in my organisations?" closed="true" %}}
 
-## What is a DEV plan ?
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation in the left panel. Then click on **Members** in the mid pane. You'll see a list of the organisation's members. If your are an admin, you can revoke or grant permissions.
+{{% /details %}}
 
-DEV plan is a free-tier plan available for some databases, designed to let customers explore and test these products. They operate on shared clusters, which may result in variable performance; they also have no backups nor SLA guarantees.
+{{% details title="How do I report an application that infringes your Terms and Conditions?" closed="true" %}}
 
-Some features such as extensions, simultaneous connections numbers, functions… might be reduced or unavailable.
+To report an application that infringes Clever Cloud's Terms and Conditions, please contact the legal team at <abuse@clever-cloud.com>.
 
-Support is not able to provide help in case of DEV plan.
+We will investigate and contact the application's owner over the violation if needed.
+{{% /details %}}

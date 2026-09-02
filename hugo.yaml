@@ -98,7 +98,7 @@ menu:
       weight: 4
     - identifier: common
       name: Common Configuration
-      pageRef: /doc/develop/common-configuration/
+      pageRef: /doc/reference/common-configuration/
       weight: 5
     - identifier: postmortem
       name: Postmortem

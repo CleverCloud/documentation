@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 5
+weight: 235
 linkTitle: Notifications
 title: Notifications
 description: Learn how to customize notifications for account and deployment activity on Clever Cloud, service updates, and more on the PaaS service
@@ -12,6 +12,7 @@ keywords:
 - flowdock
 aliases:
 - /doc/admin-console/notifications
+- /doc/notifications
 ---
 
 The *Notifications* service allows you to choose the events of interest to you

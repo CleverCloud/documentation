@@ -33,7 +33,7 @@ These changes will pave the way for future major improvements and new features a
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

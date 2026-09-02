@@ -15,8 +15,8 @@ authors:
 excludeSearch: true
 ---
 
-We collect and provide access logs for all your applications. You can get them [from API](/api/v4/), [Clever Tools](/doc/cli/logs-drains/) and now directly from the [Clever Cloud Console](https://console.clever-cloud.com/). It uses our new logs interface, with live view as default. If you change the time range, this choice will be saved for next time (per application).
+We collect and provide access logs for all your applications. You can get them [from API](/api/v4/), [Clever Tools](/doc/manage/cli/logs-drains/) and now directly from the [Clever Cloud Console](https://console.clever-cloud.com/). It uses our new logs interface, with live view as default. If you change the time range, this choice will be saved for next time (per application).
 
 This feature is in beta testing phase, share your feedbacks and needs [in the dedicated GitHub Community discussions](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface).
 
-- [Learn more about logs on Clever Cloud](/doc/administrate/log-management/)
+- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)

@@ -1,46 +1,47 @@
 ---
 type: docs
-weight: 4
-linkTitle: Roles and organisations
-title: Roles and organisations
-description: Discover how to manage organisations within your Clever Cloud account. This guide covers creation of organisations and roles in the PaaS platform
+weight: 236
+linkTitle: Organisations
+title: Manage an organisation
+description: Manage your organisation on Clever Cloud including user roles, permissions, billing settings, and administrative information
 keywords:
-- roles
-- users
-- accounts
-- organisations
-- collaboration
-- permissions
+- preferences
+- organisation
+- management
+- billing
 - team
+- permissions
+- collaboration
 aliases:
-- /account/organizations
-- /doc/account/organizations
-- /doc/admin-console/organizations
-- /doc/organizations
+- /doc/account/administrate-organisation
+- /doc/account/administrate-organization
+- /doc/organisations
+- /doc/organisations/manage
 ---
 
-In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organisations. Each organisation has its own billing, leaning that you can create as much as orgnanization you'd like. Most use-cases include the billing separation of private and business applications, several businesses or business units (within one company, for instance).
+After you create an account, your account is tied to a first organisation named as 'Personal Space'. You can use the Personal Space for individual projects or personal use, but only you as a user can access it.
 
-Once you create an organisation, you can add collaborators and assign them [roles](#roles-and-privileges) which gives them rights.
+To collaborate with others, manage team access, or handle separate billing for a group, you need to create an organisation.
 
-Each organisation have its own identifier looking like `orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+## Create an organisation
 
-## Add an organisation
+In the Clever Cloud Web Console, select **Add an organisation** in the left menu.
 
-In order to add an organisation, just click on "Add an organisation" in the top left sidebar.
+Give it a name, description, specify if it's a company and add billing information.
 
-## Roles and privileges
+## Administrate an organisation
 
-The table below describes rights assigned to roles:
+By clicking on you application name, a new left menu open.
 
-| Role                            | Admin | Manager | Developer | Accountant |
-| ------------------------------- | ----- | ------- | --------- | ---------- |
-| Add Member                      | ✓     | ✓       |           |            |
-| Remove Member                   | ✓     | ✓       |           |            |
-| Add Application                 | ✓     | ✓       | ✓         |            |
-| Remove Application              | ✓     | ✓       |           |            |
-| Add / Remove add-on             | ✓     | ✓       |           |            |
-| Edit organisation               | ✓     | ✓       |           |            |
-| Delete organisation             | ✓     |         |           |            |
-| Access Bills & Receive Invoices | ✓     |         |           | ✓          |
-| Access Repositories             | ✓     | ✓       | ✓         |            |
+- **Overview**: Simple metrics about your applications within this organisation
+- **Information**: See and edit organisation's name, description, billing address and image. That also is where you can delete your organisation.
+- **Members**: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.
+- **Shared software**: It's a section displaying third party software, like [Heptapod](/doc/deploy/services/heptapod/)
+- **Payment methods**: Manage provisioning of your organisation, manage credit cards and add here potential discount codes or coupons.
+- **Invoices**: See your recent invoices.
+- **Notifications**: Manage email notifications and web hooks for team members.
+- **Consumption**: See metrics about your organisation's consumptions.
+
+## Delete an organisation
+
+In the **Information** page, click the *remove this organisation* button. You're then prompted to enter the name of the organisation to confirm the organisation deletion.

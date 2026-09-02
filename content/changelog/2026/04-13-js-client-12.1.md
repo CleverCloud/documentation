@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-[Clever Cloud JS client 12.1](https://github.com/CleverCloud/clever-client.js/releases/tag/12.1.0) is available. This release extends the new client structure introduced in v12 with dedicated commands for four managed add-ons: [Keycloak](/doc/addons/keycloak/), [Matomo](/doc/addons/matomo/), [Metabase](/doc/addons/metabase/) and [Otoroshi](/doc/addons/otoroshi/).
+[Clever Cloud JS client 12.1](https://github.com/CleverCloud/clever-client.js/releases/tag/12.1.0) is available. This release extends the new client structure introduced in v12 with dedicated commands for four managed add-ons: [Keycloak](/doc/deploy/services/keycloak/), [Matomo](/doc/deploy/services/matomo/), [Metabase](/doc/deploy/services/metabase/) and [Otoroshi](/doc/deploy/services/otoroshi/).
 
 ## New add-on commands
 

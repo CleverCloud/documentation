@@ -48,7 +48,7 @@ Create a `mise.toml` file, add this content:
 deno = "latest"
 ```
 
-It uses [Mise package manager](/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager) to install Deno during deployment. You can replace `latest` with a specific version.
+It uses [Mise package manager](/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager) to install Deno during deployment. You can replace `latest` with a specific version.
 
 > [!TIP]
 > If you use Mise locally, run `mise trust` to trust the created `mise.toml` file
@@ -58,6 +58,6 @@ It uses [Mise package manager](/doc/reference/reference-environment-variables/#i
 ## 🎓 Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   {{< card link="https://lume.land/docs/overview/about-lume/" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
 {{< /cards >}}

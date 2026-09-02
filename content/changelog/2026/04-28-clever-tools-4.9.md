@@ -17,7 +17,7 @@ authors:
 excludeSearch: true
 ---
 
-[Clever Tools 4.9.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.9.0) is available. This release significantly extends the `clever k8s` command set to cover the full lifecycle of [Clever Kubernetes Engine](/doc/kubernetes/), as it's now in public Beta. It also adds Swagger UI access to Otoroshi services and ships smaller quality-of-life improvements.
+[Clever Tools 4.9.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.9.0) is available. This release significantly extends the `clever k8s` command set to cover the full lifecycle of [Clever Kubernetes Engine](/doc/deploy/kubernetes/), as it's now in public Beta. It also adds Swagger UI access to Otoroshi services and ships smaller quality-of-life improvements.
 
 ## Kubernetes lifecycle management
 
@@ -89,7 +89,7 @@ kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=LoadBalancer
 ```
 
-- [Learn more about Clever Kubernetes Engine](/doc/kubernetes/)
+- [Learn more about Clever Kubernetes Engine](/doc/deploy/kubernetes/)
 
 ## Otoroshi Swagger UI
 
@@ -105,7 +105,7 @@ clever otoroshi get my-otoroshi
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favourite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favourite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```bash
 npm update -g clever-tools

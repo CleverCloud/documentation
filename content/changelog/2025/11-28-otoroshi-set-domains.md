@@ -23,5 +23,5 @@ clever addon create otoroshi myOtoroshiName --option access-domain=otoroshi.exam
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
 
-- [Learn more about Otoroshi on Clever Cloud](/doc/addons/otoroshi/)
-- [Learn more about DNS and custom domains on Clever Cloud](/doc/administrate/domain-names/)
+- [Learn more about Otoroshi on Clever Cloud](/doc/deploy/services/otoroshi/)
+- [Learn more about DNS and custom domains on Clever Cloud](/doc/develop/common-configuration/domain-names/)

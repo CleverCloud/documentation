@@ -12,8 +12,6 @@ authors:
     link: https://github.com/davlgd
     image: https://github.com/davlgd.png?size=40
 description: And a better support of OVHcloud AI endpoints
-aliases:
-- /changelog/2024-12-04-otoroshi-available
 excludeSearch: true
 ---
 

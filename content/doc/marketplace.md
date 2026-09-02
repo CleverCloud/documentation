@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Marketplace APIs & Tools
-weight: 13
+weight: 16
 title: Marketplace APIs & Tools
 description: Integrate your own service as an add-on on Clever Cloud marketplace with comprehensive developer tools and partnership opportunities
 keywords:

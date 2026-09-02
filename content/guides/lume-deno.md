@@ -59,5 +59,5 @@ It uses [Mise package manager](/doc/reference/reference-environment-variables/#i
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://lume.land/docs/overview/about-lume/>" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
+  {{< card link="https://lume.land/docs/overview/about-lume/" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
 {{< /cards >}}

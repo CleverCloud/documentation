@@ -12,6 +12,11 @@
       "cite"
     ]
   },
+  // MD034/no-bare-urls : shortcode attributes such as {{< card link="https://..." >}}
+  // are not Markdown, but markdownlint reads them as bare URLs. Wrapping the value in
+  // <> silences the rule and makes Go reject the URL, rendering href="#ZgotmplZ".
+  // Keep URLs bare in shortcode attributes.
+  "MD034": false,
   "MD041": false,
   "MD051": false,
   "MD055": {

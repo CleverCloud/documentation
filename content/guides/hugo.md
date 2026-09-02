@@ -54,5 +54,5 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://gohugo.io/documentation/>" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo" >}}
+  {{< card link="https://gohugo.io/documentation/" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo" >}}
 {{< /cards >}}

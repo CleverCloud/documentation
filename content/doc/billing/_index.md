@@ -22,6 +22,6 @@ aliases:
 {{< cards >}}
   {{< card link="/developers/doc/billing/analytics-consumption" title="Analytics and consumption" icon="chart-bar" >}}
   {{< card link="/developers/doc/billing/payments-invoicing" title="Payments & invoicing" icon="banknotes" >}}
-  {{< card link="<https://www.clever.cloud/pricing/>" title="Pricing" icon="currency-euro" >}}
+  {{< card link="https://www.clever.cloud/pricing/" title="Pricing" icon="currency-euro" >}}
   {{< card link="/developers/doc/billing/unified-invoices" title="Unified invoicing" icon="user-group" >}}
 {{< /cards >}}

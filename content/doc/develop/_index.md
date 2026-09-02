@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 6
+weight: 9
 linkTitle: Develop
 title: Develop
 description: Development guides and best practices for building applications on Clever Cloud including environment variables, build hooks, and deployment strategies

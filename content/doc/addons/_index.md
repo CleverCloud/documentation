@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 3
+weight: 4
 linkTitle: Add-ons
 title: Add-ons
 description: Discover and configure add-ons on Clever Cloud including databases, storage services, and managed tools for your applications

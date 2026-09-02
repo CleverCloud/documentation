@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 3
+weight: 5
 linkTitle: Functions
 title: Functions (FaaS)
 description: Deploy serverless functions using any language that compiles to WebAssembly for automatic scaling and event-driven execution

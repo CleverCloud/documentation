@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 2
+weight: 3
 linkTitle: Applications
 title: Applications
 description: Deploy applications on Clever Cloud with support for popular languages, frameworks, and deployment configurations across modern runtimes

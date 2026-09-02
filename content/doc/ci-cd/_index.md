@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 9
+weight: 12
 linkTitle: CI/CD
 title: CI/CD
 description: Deploy to Clever Cloud from GitLab or GitHub with complete setup and configuration, configuration options, and deployment best practices

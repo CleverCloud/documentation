@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Contribute
-weight: 14
+weight: 17
 title: Contribute
 description: Learn how to contribute to Clever Cloud documentation including available shortcodes, writing guidelines, and submission process
 keywords:

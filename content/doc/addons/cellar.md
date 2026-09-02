@@ -1097,7 +1097,7 @@ Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign you
 
 {{% details title="SSL error with s3cmd" closed="true" %}}
 
-If you created a bucket with a [custom domain name](#using-a-custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
+If you created a bucket with a [custom domain name](#custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
 
 ```log
 [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)

@@ -113,7 +113,7 @@ rm                         Remove a domain name from a Clever Cloud application
 ```
 
 > [!TIP]
-> You can set the same domain with multiple apps thanks to [prefix routing](/doc/administrate/domain-names/#prefix-routing). For example, you can add `mydomain.com/app1` domain to an application and `mydomain.com/app2` to another.
+> You can set the same domain with multiple apps thanks to [prefix routing](/doc/administrate/domain-names/#path-routing). For example, you can add `mydomain.com/app1` domain to an application and `mydomain.com/app2` to another.
 
 To (un)set [the favourite domain](/doc/administrate/domain-names/#primary-favourite-domain-name), use:
 

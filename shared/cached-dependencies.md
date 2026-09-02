@@ -2,7 +2,7 @@
 
 #### Enabling dependencies caching
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](#setting-up-environment-variables-on-clever-cloud) in your application. It is enabled by default only for rust and haskell applications.
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](/doc/develop/env-variables/) in your application. It is enabled by default only for rust and haskell applications.
 
 #### Disabling dependencies caching
 

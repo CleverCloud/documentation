@@ -59,7 +59,7 @@ Be sure that:
 - You have a `package.json` file
 - Your `package.json` either has a **scripts.start** or a **main** field
 - The folder `/node_modules` is mentioned in your `.gitignore` file
-- You enable production mode by setting the [environment variable](#setting-up-environment-variables-on-clever-cloud) `NODE_ENV=production`
+- You enable production mode by setting the [environment variable](/doc/develop/env-variables/) `NODE_ENV=production`
 
 ### Memory management
 
@@ -131,7 +131,7 @@ If your application has private dependencies, you can add a [private SSH key](/d
 
 ## Supported package managers
 
-Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](#setting-up-environment-variables-on-clever-cloud) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
+Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](/doc/develop/env-variables/) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
 
 - `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
 - `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
@@ -267,7 +267,7 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 
 ## Automatic HTTPS redirection
 
-You can use the [X-Forwarded-Proto header](/doc/find-help/faq#how-to-know-if-a-user-comes-from-a-secure-connection) to enable it.
+You can use the [X-Forwarded-Proto header](/doc/find-help/faq) to enable it.
 
 If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
 

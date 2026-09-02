@@ -59,7 +59,7 @@ clever tcp-redirs list-namespaces
 ### With the console
 
 From your console, select your application. In the secondary menu, go to **TCP redirections**.
-From there, you can create a TCP redirection for a specific namespace (see [namespaces doc](#what-is-a-namespace?))
+From there, you can create a TCP redirection for a specific namespace (see [namespaces doc](#what-is-a-namespace))
 
 The creation is instantaneous. Find the TCP redirection port on this page.
 

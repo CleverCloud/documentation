@@ -11,6 +11,7 @@ keywords:
 - deployment
 - settings
 aliases:
+- /doc/clever-cloud-overview/common-application-configuration
 - /doc/develop/common-configuration
 ---
 

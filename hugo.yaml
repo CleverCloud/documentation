@@ -168,7 +168,7 @@ params:
       dark: images/logo-dark.svg
       link: /developers
       width: 175
-    width: wide
+    width: full
 
   page:
     # full (100%), wide (90rem), normal (1280px)

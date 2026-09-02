@@ -19,7 +19,7 @@ excludeSearch: true
 
 ## OAuth consumers management
 
-You can now create and manage [OAuth consumers](/api/howto/#create-an-oauth-consumer) directly from the CLI. The new `clever oauth-consumers` command set covers the full lifecycle: list, create, get details, update, open in the Console and delete. Consumers can be referenced by name (when unambiguous) or by their consumer key, and the `get` command supports a `--with-secret` flag when you need to retrieve the consumer secret for application configuration.
+You can now create and manage [OAuth consumers](/api/#create-an-oauth-consumer) directly from the CLI. The new `clever oauth-consumers` command set covers the full lifecycle: list, create, get details, update, open in the Console and delete. Consumers can be referenced by name (when unambiguous) or by their consumer key, and the `get` command supports a `--with-secret` flag when you need to retrieve the consumer secret for application configuration.
 
 ```bash
 # List OAuth consumers
@@ -47,7 +47,7 @@ clever oauth-consumers delete my-app --yes
 
 These commands target the current profile's organisation by default. The `create` command accepts the `--org` option to specify the consumer's organisation. For other commands, the consumer key is enough to identify the resource.
 
-- [Learn more about OAuth consumers](/api/howto/#create-an-oauth-consumer)
+- [Learn more about OAuth consumers](/api/#create-an-oauth-consumer)
 
 ## Drains on add-ons
 

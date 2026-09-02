@@ -19,7 +19,7 @@ Metabase versions `0.54.20`, `0.55.20`, `0.56.20`, `0.57.13` and `0.58.7` are no
 
 If you use `community-latest` as your `CC_METABASE_VERSION`, you have nothing to do or simply need to restart your instance to get the latest patched version. If you use a specific version, update `CC_METABASE_VERSION` of the underlying Java application to the latest patch for your branch and rebuild it.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -28,4 +28,4 @@ clever metabase version check yourMetabaseNameOrId
 clever metabase version update yourMetabaseNameOrId
 ```
 
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

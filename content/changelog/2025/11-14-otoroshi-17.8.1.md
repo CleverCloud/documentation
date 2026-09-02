@@ -19,7 +19,7 @@ excludeSearch: true
 
 It comes with [LLM extension 0.6.0](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.60) which includes a new `LLM Bots Blocker` plugin to block requests from known LLM bots (like ChatGPT, Bard, etc.) using a [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) (PoW) challenge mechanism.
 
-You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.8.1_1763110173` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.8.1_1763110173` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -29,4 +29,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.8.1_1763110173
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

@@ -70,11 +70,11 @@ Commit changes.
 
 ### Declare the PHP Application
 
-On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](/doc/applications/php) application with Git deployment. Add a [MySQL](/doc/addons/mysql) add-on during the process.
+On Clever Cloud Console, click **Create** > **An application** and choose a [PHP](/doc/deploy/applications/php) application with Git deployment. Add a [MySQL](/doc/deploy/databases/mysql) add-on during the process.
 
 ### Set Up Environment Variables
 
-Add the following [environment variables](/doc/develop/env-variables) to tour PHP application:
+Add the following [environment variables](/doc/develop/common-configuration/environment-variables) to tour PHP application:
 
 ```shell
 CC_PHP_VERSION="8"
@@ -86,7 +86,7 @@ If you don't have an domain for your Moodle application yet, you'll be able to a
 
 ### Set Up `moodledata` Folder
 
-In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/en/Site_backup). Use a [File System Bucket](/doc/addons/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
+In this step you enable storage outside of your application, which [Moodle requires to run](https://docs.moodle.org/en/Site_backup). Use a [File System Bucket](/doc/deploy/storage/fs-bucket) to store all uploaded files and appearance set ups away from the application server, as recommended by Moodle.
 
 Create an **FS Bucket add-on** and link it to your PHP application. In your FS Bucket dashboard, find the path variable. It should look like this: `CC_FS_BUCKET=/some/empty/folder:bucket-<bucket_id>`.
 
@@ -108,7 +108,7 @@ Get the remote in your application menu > **Information** > **Deployment URL** a
 
 ## Cron for Moodle
 
-Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. As explained in the [Clever Cloud cron documentation](https://www.clever.cloud/developers/doc/administrate/cron/#access-environment-variables), to have access to environment variable, you must wrap your commands in a bash script with [login shell](https://linux.die.net/man/1/bash) (`bash -l`).
+Moodle [recommends to set up a Cron job](https://docs.moodle.org/en/Cron) that runs every minute. As explained in the [Clever Cloud cron documentation](https://www.clever.cloud/developers/doc/develop/cron/#access-environment-variables), to have access to environment variable, you must wrap your commands in a bash script with [login shell](https://linux.die.net/man/1/bash) (`bash -l`).
 
 Add a `cron.sh` file to the root of the application:
 
@@ -139,10 +139,10 @@ You might encounter errors when the Cron tries to access `moodledata` in your FS
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/php" title="PHP" subtitle="Deploy a PHP application on Clever Cloud" icon="php" >}}
-  {{< card link="/developers/doc/administrate/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
+  {{< card link="/developers/doc/deploy/applications/php" title="PHP" subtitle="Deploy a PHP application on Clever Cloud" icon="php" >}}
+  {{< card link="/developers/doc/develop/cron" title="CRON" subtitle="Set up a CRON job for your app" icon="code-bracket" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="External File System for your apps" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/databases/mysql" title="MySQL" icon="mysql" subtitle="Your self-hosted managed relational database" >}}
   {{< card link="https://docs.moodle.org/en/Installation_quick_guide" title="Moodle Documentation" subtitle="Check Moodle installation guide" icon="moodle" >}}
 {{< /cards >}}
 

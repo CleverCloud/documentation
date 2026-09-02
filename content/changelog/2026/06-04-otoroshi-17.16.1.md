@@ -19,7 +19,7 @@ excludeSearch: true
 
 This release ships with LLM extension [0.0.78](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.78), which introduces OCR models as a first-class entity alongside audio, image, embedding and moderation models. You can expose them through a dedicated plugin, the unified OpenAI-compatible API or the `ocr_call` workflow function, with Mistral models support. The French provider [AlphaEdge](https://www.alphaedge-ai.com/) joins the extension for both speech transcription, with diarization and linguistic post-correction options, and optical character recognition.
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.1_1780575469` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.1_1780575469` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -29,4 +29,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.16.1_1780575469
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

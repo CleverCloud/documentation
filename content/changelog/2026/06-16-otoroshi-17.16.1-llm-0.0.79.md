@@ -23,7 +23,7 @@ The new AI router adds three routing strategies: a code-router that selects the 
 
 The extension also adds a per-provider circuit breaker, with configurable failure thresholds and cooldown windows for better fallback handling, and a plugin exposing call metadata such as model, provider, token usage, latency and cost through `x-otoroshi-llm-*` response headers. A mock-response decorator lets you short-circuit calls to test provider fallbacks without real API requests, OpenRouter now supports audio, image and video beyond chat, and the dashboard gains budget reset buttons.
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.1_1781607455` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.1_1781607455` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -33,4 +33,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.16.1_1781607455
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

@@ -39,7 +39,7 @@ git submodule add https://github.com/gurusabarish/hugo-profile.git themes/hugo-p
 
 ### Automatic build
 
-Hugo is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
+Hugo is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
 
 ```bash
 clever scale --flavor pico
@@ -53,6 +53,6 @@ clever scale --build-flavor M
 ## 🎓 Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   {{< card link="https://gohugo.io/documentation/" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo" >}}
 {{< /cards >}}

@@ -19,7 +19,7 @@ The rotation applies to the target application and its siblings sharing the same
 
 ## How to use it
 
-You can call this endpoint through any [authenticated request to the Clever Cloud API](/doc/cli/#tokens), or through the [`clever curl` command](/doc/cli/#curl) of Clever Tools, which signs the request using the active user profile:
+You can call this endpoint through any [authenticated request to the Clever Cloud API](/doc/manage/cli/#tokens), or through the [`clever curl` command](/doc/manage/cli/#curl) of Clever Tools, which signs the request using the active user profile:
 
 ```bash
 clever curl -X POST https://api.clever-cloud.com/v2/organisations/{orgId}/applications/{appId}/github-webhook/secret

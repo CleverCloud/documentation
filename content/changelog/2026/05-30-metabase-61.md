@@ -19,7 +19,7 @@ The `x.61` branch of Metabase is now available on Clever Cloud. It focuses on AI
 
 It also introduces dashboards-as-code to create dashboards from an AI terminal such as Claude Code or Cursor with git-backed validation, arithmetic expressions across metrics in the metrics explorer, custom expressions written by Metabot in the query builder, and a Security Center with targeted alerts for your instance configuration. Embedded analytics gains usage analytics, guest token auto-renewal, a themes editor, mobile-optimized SDK components and a `useMetabot` React hook. Some of these features require the enterprise edition (EE).
 
-This branch is not the default for now if you use `community-latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.61` or `1.61` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+This branch is not the default for now if you use `community-latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.61` or `1.61` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -30,6 +30,6 @@ clever metabase version update yourMetabaseNameOrId 0.61
 ```
 
 - [Learn more about Metabase 61](https://www.metabase.com/releases/metabase-61)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
 
 {{< youtube id="jU8ua9OHvTY" >}}

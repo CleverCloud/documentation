@@ -12,9 +12,9 @@ authors:
 excludeSearch: true
 ---
 
-Starting February 2nd, 2026, the retention period for custom application metrics will be 7 days. This change only affects metrics that you expose from your applications through the [statsd protocol or Prometheus endpoints](/doc/metrics/#publish-your-own-metrics).
+Starting February 2nd, 2026, the retention period for custom application metrics will be 7 days. This change only affects metrics that you expose from your applications through the [statsd protocol or Prometheus endpoints](/doc/develop/observability/metrics/#publish-your-own-metrics).
 
 **System metrics remain unaffected** by this change. All automatically collected metrics, including CPU usage, RAM consumption, disk usage, network activity, and load metrics, will continue to be available with the existing retention period.
 
-- [Learn more about metrics on Clever Cloud](/doc/metrics/)
-- [How to publish your own metrics](/doc/metrics/#publish-your-own-metrics)
+- [Learn more about metrics on Clever Cloud](/doc/develop/observability/metrics/)
+- [How to publish your own metrics](/doc/develop/observability/metrics/#publish-your-own-metrics)

@@ -16,7 +16,7 @@ excludeSearch: true
 
 If a `bun.lock` file is detected at the root of your project, and you didn't ask for another JavaScript runtime or package manager, your application will be deployed with [Bun](https://bun.sh) as a package manager and runtime. You can also ask for Bun explicitly by setting the `CC_NODE_BUILD_TOOL` environment variable to `bun`.
 
-Want to give it a try? Just launch these commands with Bun and [Clever Tools CLI](/doc/cli/install) installed on your system:
+Want to give it a try? Just launch these commands with Bun and [Clever Tools CLI](/doc/manage/cli/install) installed on your system:
 
 ```bash
 mkdir bunDemo
@@ -35,4 +35,4 @@ clever open
 
 You'll get a basic React application running on Bun, deployed on Clever Cloud.
 
-- [Learn more about Bun & Node.js on Clever Cloud](/doc/applications/nodejs)
+- [Learn more about Bun & Node.js on Clever Cloud](/doc/deploy/applications/nodejs)

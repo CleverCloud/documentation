@@ -19,7 +19,7 @@ excludeSearch: true
 
 ## Update or temporarily disable password resets
 
-Update every Keycloak add-on to version 26.7.2 as soon as possible. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.2` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+Update every Keycloak add-on to version 26.7.2 as soon as possible. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.2` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -39,4 +39,4 @@ Keycloak 26.7.2 addresses seven other vulnerabilities: [CVE-2026-45292](https://
 
 - [Read the CVE-2026-18963 advisory](https://access.redhat.com/security/cve/CVE-2026-18963)
 - [Read the Keycloak 26.7.2 release notes](https://www.keycloak.org/2026/08/keycloak-2672-released)
-- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/deploy/services/keycloak)

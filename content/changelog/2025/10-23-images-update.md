@@ -54,7 +54,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 As [Node.js 25 is now available](https://nodejs.org/fr/blog/release/v25.0.0), you can use it in your applications by setting `CC_NODE_VERSION=25` in your environment variables. As previously mentioned, Node.js 24 will soon be the latest LTS. Then we'll use it as the default Node.js version in our images. If your application doesn't support Node.js 24 yet, set `CC_NODE_VERSION=22` to keep using Node.js 22 LTS.
 
-- [Learn more about Node.js on Clever Cloud](/doc/applications/nodejs)
+- [Learn more about Node.js on Clever Cloud](/doc/deploy/applications/nodejs)
 
 ## Elixir 1.14 is end-of-life, 1.19 support
 
@@ -62,7 +62,7 @@ As [Elixir 1.19 is now available](https://elixir-lang.org/blog/2025/10/16/elixir
 
 We'll remove Elixir 1.11 and previous releases support in our next image update, as they are not used anymore. We'll progressively align with the official Elixir support policy as customers are migrating to supported versions.
 
-- [Learn more about Elixir on Clever Cloud](/doc/applications/elixir)
+- [Learn more about Elixir on Clever Cloud](/doc/deploy/applications/elixir)
 
 ## Python 3.9 is end-of life, 3.14 support
 
@@ -70,4 +70,4 @@ We'll remove Elixir 1.11 and previous releases support in our next image update,
 
 Python 3.9 is now end-of-life according to the [official Python release schedule](https://devguide.python.org/versions/#python-release-cycle) and will not receive any security update. We recommend you to upgrade to a supported version of Python (3.10 or later). We'll remove Python 3.9 from our images starting May 2026.
 
-- [Learn more about Python on Clever Cloud](/doc/applications/python)
+- [Learn more about Python on Clever Cloud](/doc/deploy/applications/python)

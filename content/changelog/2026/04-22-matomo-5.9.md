@@ -19,7 +19,7 @@ Our [Matomo](https://matomo.org/) add-on has been updated to version `5.9.0` whi
 
 This release also brings security enhancements such as multi-session sign-out, the ability to export a dashboard to scheduled reports, and various bug fixes across segment handling, visitor mapping and database optimization. No major database upgrade is required.
 
-You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/cli/). Existing customers' add-ons are already up-to-date.
+You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.9](https://matomo.org/changelog/matomo-5-9-0/)
-- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo/)
+- [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

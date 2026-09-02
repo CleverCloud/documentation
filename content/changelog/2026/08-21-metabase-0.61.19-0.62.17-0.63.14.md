@@ -24,7 +24,7 @@ All Metabase add-ons that used `community-latest` on an XS Java instance have be
 
 Back up your Metabase application database and review your API integrations and collection permissions before updating. If you use `latest` on an S instance or larger, restart your instance to get the latest version. If you use a specific branch, update `CC_METABASE_VERSION` of the underlying Java application to its latest patch and rebuild it.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -37,4 +37,4 @@ clever metabase version update yourMetabaseNameOrId 0.63
 - [Read the Metabase 61 changelog](https://www.metabase.com/changelog/61)
 - [Read the Metabase 62 changelog](https://www.metabase.com/changelog/62)
 - [Read the Metabase 63 changelog](https://www.metabase.com/changelog/63)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

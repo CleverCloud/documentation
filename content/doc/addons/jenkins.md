@@ -153,7 +153,7 @@ sleep 60
 Now that the job is configured, we can start it by clicking on the `Build now` button in the left menu. A message saying that the build has been scheduled should be printed.
 You should also see after a few seconds a pending Job in the `Build history`, on your left.
 
-!['Jenkins jobs history'](/images/jenkins/jobs-history.png 'The Jenkins' jobs history')
+!['Jenkins jobs history'](/images/jenkins/jobs-history.png 'The Jenkins jobs history')
 
 At the same time, a new application should have been created in your organisation, named `Jenkins agent <UUID>`. The application should be deploying and once it gets deployed, the job
 will start to be executed.

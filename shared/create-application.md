@@ -3,7 +3,7 @@
 
 ### With the web console
 
-Refer to [Quickstart](/doc/quickstart) for more details on application creation via the console.
+Refer to [Quickstart](/doc/getting-started) for more details on application creation via the console.
 
 ### With the Clever Tools CLI
 

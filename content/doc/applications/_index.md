@@ -19,9 +19,7 @@ aliases:
 - /doc/apps
 - /doc/deploy
 - /doc/deploy/application
-- /doc/deploy/application/ruby/by-framework
 - /doc/getting-started/by-language
-- /doc/java/select-java-version
 - /doc/reference/reference-runtimes
 ---
 

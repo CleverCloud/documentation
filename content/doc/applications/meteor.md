@@ -49,7 +49,7 @@ You can declare a `METEOR_SETTINGS` environment variable and past the content of
 
 ## Specify required Node.js version
 
-Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](/doc/applications/nodejs/#requirements) documentation.
+Since building with the latest version of Node.js might fail, you should specify in the `package.json` file of the application the version needed for your Meteor application ; as shown in [Deploying Node.js apps](/doc/applications/nodejs/#mandatory-needs) documentation.
 To find out which version is required by your application type the following command `meteor node -v` inside root folder.
 
 Currently with Meteor *2.6.1* the Node.js version is *14.18.3* so you should add the following inside the `package.json` file.

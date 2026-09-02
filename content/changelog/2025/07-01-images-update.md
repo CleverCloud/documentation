@@ -56,5 +56,5 @@ These runtimes are in early access, let us know what you think about it, [your s
 - `CC_GIT_FULL_CLONE=false` enables shallow cloning (`--depth 1`), it will become the default in some weeks
 - `CC_VARNISH_FILE` allows to set a custom location for `varnish.vcl`, relative to your application (for example `/varnish.vcl`)
 - Port auto-configuration for `frankenphp` and `static` when a Varnish file is present or set with `CC_VARNISH_FILE`
-- Port auto-configuration for `frankenphp` and `static` when [Redirection.io is enabled](/doc/reference/reference-environment-variables/#redirectionio-support)
+- Port auto-configuration for `frankenphp` and `static` when [Redirection.io is enabled](/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy)
 - You can now disable Mise package manager by setting `CC_DISABLE_MISE` to `true`

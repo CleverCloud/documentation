@@ -78,7 +78,7 @@ Now, you can set the policy to your bucket using s3cmd:
 s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
 
-If you encounter errors, you might need to specify the [configuration file path](#download-the-configuration-file):
+If you encounter errors, you might need to specify the [configuration file path](/doc/addons/cellar/#download-the-configuration-file):
 
 ```bash
 s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>

@@ -18,7 +18,7 @@ Python ecosystem is diverse, with lots of legacy versions and practices. But in 
 
 ## Package management: uv on Clever Cloud
 
-We only support [pip](https://packaging.python.org/en/latest/tutorials/installing-packages/), `requirements.txt` and `setup.py` natively. For some weeks, we've included [uv](https://docs.astral.sh/uv/getting-started/features/) in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. [It's now a part](/doc/applications/python/#use-uv-as-a-package-manager) of our "Enthusiast tools" initiative and will be updated regularly. Thus, there is no active support for it yet.
+We only support [pip](https://packaging.python.org/en/latest/tutorials/installing-packages/), `requirements.txt` and `setup.py` natively. For some weeks, we've included [uv](https://docs.astral.sh/uv/getting-started/features/) in our Python image to make some tests. Based on Rust, this package and project manager is compliant with existing ecosystem and blazing fast. [It's now a part](/doc/applications/python/uv/) of our "Enthusiast tools" initiative and will be updated regularly. Thus, there is no active support for it yet.
 
 We'll enhance its native support in coming releases of our Python image.
 

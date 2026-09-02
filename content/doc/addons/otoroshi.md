@@ -13,6 +13,9 @@ keywords:
 - traffic management
 aliases:
 - /doc/clever-cloud-overview/clevergrid-machine-learning
+- /doc/deploy/clever-grid
+- /doc/deploy/clever-grid/clevergrid
+- /doc/extend/clever-grid
 - /doc/otoroshi
 ---
 

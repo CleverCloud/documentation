@@ -21,15 +21,16 @@ aliases:
 - /doc/applications/javascript
 - /doc/applications/javascript/by-framework/nodejs
 - /doc/applications/javascript/nodejs
-- /doc/deploy/application/node
-- /doc/getting-started/by-language/node
 - /doc/deploy/application/javascript
 - /doc/deploy/application/javascript/by-framework/meteor
 - /doc/deploy/application/javascript/by-framework/nodejs
 - /doc/deploy/application/javascript/nodejs
+- /doc/deploy/application/node
+- /doc/deploy/application/nodejs
+- /doc/getting-started/by-language/node
 - /doc/nodejs
-- /doc/nodejs/nodejs
 - /doc/nodejs-hosting
+- /doc/nodejs/nodejs
 - /doc/partials/language-specific-deploy/node
 - /getting-started/by-language/node
 ---

@@ -11,6 +11,7 @@ keywords:
 - applications
 - infrastructure
 aliases:
+- /doc/develop/best-practices/load-testing
 - /doc/develop/load-testing
 ---
 ## Overview

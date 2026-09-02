@@ -12,8 +12,10 @@ keywords:
 - resource optimization
 aliases:
 - /administrate/scalability
+- /doc/administrate/instances
 - /doc/clever-cloud-overview/scaling
 - /doc/deploy/application/scalability
+- /doc/reference/reference-scaling
 - /doc/scaling-tips
 ---
 

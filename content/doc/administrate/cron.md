@@ -11,6 +11,7 @@ keywords:
 - job scheduling
 - automated operations
 aliases:
+- /doc/develop/cron
 - /doc/tools/crons
 ---
 

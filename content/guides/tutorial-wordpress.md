@@ -12,6 +12,7 @@ keywords:
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-wordpress
 - /doc/php/tutorial-wordpress
+- /guides/wordpress
 - /php/tutorial-wordpress
 - /tutorial-wordpress
 - /wordpress

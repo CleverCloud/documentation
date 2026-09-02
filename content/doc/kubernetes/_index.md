@@ -23,6 +23,8 @@ keywords:
 - load balancer
 - pricing
 - quota
+aliases:
+- /doc/addons/kubernetes
 ---
 
 Clever Kubernetes Engine (CKE) allows you to create and manage Kubernetes clusters with ease on Clever Cloud infrastructure. It uses Materia etcd, our implementation of etcd built on top of FoundationDB, as the backing store for your cluster's state. It ensures reliability at scale.

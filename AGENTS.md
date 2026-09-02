@@ -57,6 +57,15 @@ For changelog entries, also include:
 - `tags` - Array of product tags (lowercase)
 - `authors` - Array with `name`, `link`, `image` fields
 
+### Moving or Merging Content
+
+When a page moves to another URL, or when its content is merged into another page:
+
+- Always add the old URL to the destination page's `aliases`, so Hugo keeps serving a redirect
+- Carry over every alias the removed page already declared; they must keep resolving
+- Update internal links to target the new URL directly instead of relying on the redirect, especially in `shared/` blocks included by many pages
+- Check each redirect in the build output before committing
+
 ### Shared Content System
 
 - Include shared content: `{{% content "filename" %}}`

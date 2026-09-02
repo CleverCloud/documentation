@@ -267,5 +267,5 @@ Replace the example values with the versions you selected. Outline applies pendi
   {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="pg" >}}
   {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Explore managed Redis databases" icon="redis" >}}
   {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="fsbucket" >}}
-  {{< card link="<https://docs.getoutline.com/s/hosting>" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
+  {{< card link="https://docs.getoutline.com/s/hosting" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
 {{< /cards >}}

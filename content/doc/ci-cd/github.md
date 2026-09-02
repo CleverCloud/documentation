@@ -84,6 +84,6 @@ If you encounter troubles or bugs using the GitHub Action, feel free to open an 
 ## 🎓 Go further
 
 {{< cards >}}
-  {{< card link="<https://docs.github.com/en/actions>" title="GitHub Actions documentation" subtitle="Find help in GitHub Actions documentation" icon="github" >}}
+  {{< card link="https://docs.github.com/en/actions" title="GitHub Actions documentation" subtitle="Find help in GitHub Actions documentation" icon="github" >}}
   {{< card link="/developers/doc/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
 {{< /cards >}}

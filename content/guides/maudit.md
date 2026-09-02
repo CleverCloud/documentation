@@ -88,5 +88,5 @@ clever domain add your.website.tld
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
-  {{< card link="<https://maudit.org/docs/>" title="Maudit documentation" subtitle="Build static websites with Maudit and Rust" icon="maudit" >}}
+  {{< card link="https://maudit.org/docs/" title="Maudit documentation" subtitle="Build static websites with Maudit and Rust" icon="maudit" >}}
 {{< /cards >}}

@@ -95,5 +95,5 @@ clever domain add your.website.tld
 {{< cards >}}
   {{< card link="/developers/doc/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application" icon="node" >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application" icon="static" >}}
-  {{< card link="<https://nuxt.com/docs/4.x/getting-started/introduction>" title="Learn Nuxt" subtitle="How to write and organize your content" icon="nuxt" >}}
+  {{< card link="https://nuxt.com/docs/4.x/getting-started/introduction" title="Learn Nuxt" subtitle="How to write and organize your content" icon="nuxt" >}}
 {{< /cards >}}

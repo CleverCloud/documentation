@@ -52,6 +52,7 @@ Infinispan
 jarName
 JBoss
 JSDoc
+jq
 Keycloak
 kubectl
 Laravel

@@ -225,7 +225,7 @@ Here is a non-exhaustive summary:
 {{< cards >}}
   {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
   {{< card link="/developers/doc/applications/golang/#environment-injection" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/applications/haskell/#environment-injection" title="Haskell" icon= "haskell">}}
+  {{< card link="/developers/doc/applications/haskell/#setting-up-environment-variables-on-clever-cloud" title="Haskell" icon= "haskell">}}
   {{< card link="/developers/doc/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
   {{< card link="/developers/doc/applications/scala/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
   {{< card link="/developers/doc/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
@@ -233,11 +233,11 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/guides/ruby-rack-app-tutorial/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
   {{< card link="/developers/doc/applications/python/#configure-your-python-application" title="Python" icon="python" >}}
-  {{< card link="/developers/doc/applications/rust/#environment-injection" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/applications/rust/#setting-up-environment-variables-on-clever-cloud" title="Rust" icon="rust" >}}
   {{< card link="/developers/doc/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
   {{< card link="/developers/doc/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
   {{< card link="/developers/doc/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
-  {{< card link="/developers/doc/applications/static/#setting-up-environment-variables-on-clever-cloud" title=".Static" icon="feather" >}}
+  {{< card link="/developers/doc/applications/static/" title=".Static" icon="feather" >}}
 
 {{< /cards >}}
 

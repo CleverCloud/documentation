@@ -109,15 +109,20 @@ For changelog entries, also include:
 - For content updates, use `section(page): commit message`, for example:
   - `addons(postgresql): document pg_partman support`
   - `applications(nodejs): clarify pnpm configuration`
-  - `changelog(metabase): announce 0.63.14 security update`
   - `guides: add SvelteKit` for a new deployment guide
+- For changelog entries, use `changelog: what you announce`. Name the product and its version, or the change itself, instead of starting with a verb:
+  - `changelog: Keycloak 26.7.3`
+  - `changelog: MySQL 8.0.46 and 8.4.10`
+  - `changelog: PostgreSQL 18 by default`
+  - `changelog: images updates, 2026W34`
+- Commit a changelog entry with the documentation pages and data files it relies on, so an announcement never lands before the pages it links to
 - For documentation structure, Hugo, deployment, CI, tooling, or dependency changes, use standard Conventional Commits, for example:
   - `feat(hugo): add a shortcode for version tables`
   - `fix(ci): run Vale on shared content`
   - `refactor(layouts): simplify changelog rendering`
   - `chore(deps): update the Hextra theme`
 - Split content and structural changes into separate commits when possible
-- Start the subject with a lowercase imperative verb
+- Start the subject with a lowercase imperative verb, except for changelog entries
 
 ### Code and Technical Examples
 

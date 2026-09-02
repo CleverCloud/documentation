@@ -36,7 +36,7 @@ The following sections explain how to set up each instance step by step:
 
 ### Create a PHP application
 
-From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/doc/quickstart/#choose-how-to-deploy).
+From the Clever Cloud Console, create a new PHP application and choose your deployment method: [git, GitHub or FTP](/doc/getting-started/#choose-how-to-deploy).
 
 ### Add `DocumentRoot` variable
 

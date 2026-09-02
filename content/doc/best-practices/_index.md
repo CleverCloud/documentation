@@ -12,7 +12,6 @@ keywords:
 - scalability
 - applications
 aliases:
-- /doc/quickstart
 - /doc/develop/best-practices
 ---
 

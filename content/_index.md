@@ -29,7 +29,7 @@ aliases:
 </div>
 
 <div class="hx:mb-6">
-{{< hero-button-primary text="Quickstart" link="/developers/doc/quickstart" >}}
+{{< hero-button-primary text="Learn" link="/developers/doc/getting-started" >}}
 {{< hero-button-secondary text="Explore" link="/developers/doc/" >}}
 </div>
 

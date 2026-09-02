@@ -29,7 +29,7 @@ aliases:
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/developers/doc/quickstart" title="Getting started" subtitle="Deploy an application in five minutes" icon="arrow-circle-right" >}}
+  {{< card link="/developers/doc/getting-started" title="Getting started" subtitle="Deploy an application in five minutes" icon="arrow-circle-right" >}}
   {{< card link="/developers/doc/applications" title="Applications" subtitle="Deploy applications with supported runtimes" icon="rocket-launch" >}}
   {{< card link="/developers/doc/addons" title="Add-ons" subtitle="Connect managed databases, storage and services" icon="plug" >}}
   {{< card link="/developers/doc/functions" title="Functions" subtitle="Deploy serverless functions compiled to WebAssembly" icon="code-bracket" >}}

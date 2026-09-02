@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 10
+weight: 13
 linkTitle: Reference
 title: Reference
 description: Explore technical reference documentation for Clever Cloud including environment variables, API endpoints, and configuration options

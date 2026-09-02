@@ -48,7 +48,7 @@ menu:
       weight: 3
     - name: "How to use"
       parent: api
-      url: "/api/howto"
+      url: "/api/"
     - name: "v2 endpoints"
       parent: api
       url: "/api/v2"

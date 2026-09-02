@@ -13,7 +13,7 @@ authors:
 excludeSearch: true
 ---
 
-[Network Groups](/doc/develop/network-groups/) — our [WireGuard](https://www.wireguard.com/)-based private networks between Clever Cloud resources — are now first-class citizens in the [Clever Cloud Console](https://console.clever-cloud.com). Until now, creating and managing them required the [public API](/api/v4/#network-groups) or [Clever Tools](/doc/cli/network-groups/). The same operations are now available directly in the Console.
+[Network Groups](/doc/network/network-groups/) — our [WireGuard](https://www.wireguard.com/)-based private networks between Clever Cloud resources — are now first-class citizens in the [Clever Cloud Console](https://console.clever-cloud.com). Until now, creating and managing them required the [public API](/api/v4/#network-groups) or [Clever Tools](/doc/manage/cli/network-groups/). The same operations are now available directly in the Console.
 
 From the Network Groups section of your organisation, you can create a new group with its label, description and tags, browse the groups already in place, and delete the ones you don't need anymore. Opening a group shows its CIDR, the members linked to it (applications, add-ons or external resources) and the peers currently connected, with domain name and IP inside the private network.
 
@@ -21,6 +21,6 @@ Linking resources is also done from the Console: pick an application or an add-o
 
 This rounds out the Network Groups experience across all our interfaces — API, CLI, and now the Console — so you can pick the one that fits your workflow. Share your feedback and feature requests on our [GitHub Community](https://github.com/CleverCloud/Community/discussions/156).
 
-- [Learn more about Network Groups](/doc/develop/network-groups/)
-- [How to use Network Groups from Clever Tools](/doc/cli/network-groups/)
+- [Learn more about Network Groups](/doc/network/network-groups/)
+- [How to use Network Groups from Clever Tools](/doc/manage/cli/network-groups/)
 - [Share your feedback on Network Groups in the Console](https://github.com/CleverCloud/Community/discussions/156)

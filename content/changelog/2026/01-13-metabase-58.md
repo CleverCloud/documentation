@@ -19,7 +19,7 @@ The `x.58` branch of Metabase is now available on Clever Cloud. It brings multip
 
 To update, set `CC_METABASE_VERSION` of the add-on's Java application to `0.58` for the community edition or `1.58` for the enterprise edition (EE). This new branch is the default if you use `community-latest`.
 
-You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.58` or `1.58` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.58` or `1.58` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -30,6 +30,6 @@ clever metabase version update yourMetabaseNameOrId 0.58
 ```
 
 - [Learn more about Metabase 58](https://www.metabase.com/changelog/58)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
 
 {{< youtube id="Qc8Zsoam9Dc" >}}

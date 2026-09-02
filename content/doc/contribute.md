@@ -1,7 +1,9 @@
 ---
 type: docs
+sidebar:
+  exclude: true
 linkTitle: Contribute
-weight: 17
+weight: 290
 title: Contribute
 description: Learn how to contribute to Clever Cloud documentation including available shortcodes, writing guidelines, and submission process
 keywords:

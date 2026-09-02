@@ -19,7 +19,7 @@
 {{- if and (gt (len .Pages) 0) (not (strings.Contains .Title "Postmortem" )) }}
 
 ## {{ .Title }}
-{{- $pages := sort .Pages "Title" "asc" }}
+{{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
 {{- if not (strings.Contains .RelPermalink "/api/v2") }}
 - [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
@@ -33,14 +33,14 @@
 ## Optional
 {{- range $mainSections }}
 {{- if .Params.llmsTxtOptional }}
-{{- $pages := sort .Pages "Title" "asc" }}
+{{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
 - [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- range .Sections }}
 {{- if .Params.llmsTxtOptional }}
-{{- $pages := sort .Pages "Title" "asc" }}
+{{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
 - [{{ .Title }}]({{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}

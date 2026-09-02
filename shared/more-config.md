@@ -2,7 +2,7 @@
 
 Need more configuration? To run a script at the end of your deployment? To add your private SSH key to access private dependencies?
 
-Go check the [Common configuration page](/doc/reference/common-configuration).
+Go check the [Configure applications page](/doc/develop/common-configuration).
 
 You may want to have an advanced usage of your application, in which case we recommend you to read the **Administrate** documentation section.
 

@@ -713,3 +713,16 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
 }
+
+/* Show the Deploy group expanded on the documentation home page.
+   That page is the only one where no sidebar entry is active, which is what
+   `:not(:has(...))` keys on: as soon as a page is selected, the theme takes
+   over and only its own group stays open. Height and chevron rotation mirror
+   what the theme applies to `li.open`. */
+.hextra-sidebar-container ul:not(:has(.hextra-sidebar-active-item)) li:has(> .hextra-sidebar-item > a[href$="/doc/deploy/"]) > .hextra-sidebar-children {
+  height: auto;
+  padding-top: 0.25rem;
+}
+.hextra-sidebar-container ul:not(:has(.hextra-sidebar-active-item)) li:has(> .hextra-sidebar-item > a[href$="/doc/deploy/"]) > .hextra-sidebar-item > .hextra-sidebar-collapsible-button > svg > path {
+  rotate: 90deg;
+}

@@ -15,6 +15,6 @@ authors:
 excludeSearch: true
 ---
 
-The [1.3.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.3.0) of the Clever Cloud Terraform provider is available. It brings multiple bug fixes, returns full URI of [MongoDB] add-ons as sensitive fields, and [MySQL] read-only users generated from the [Console](https://console.clever-cloud.com). It supports [.NET](/doc/applications/dotnet/) and [V (Vlang)](/doc/applications/v/) runtimes, [Configuration Providers](/doc/addons/config-provider/), and [Matomo](/doc/addons/matomo/) services.
+The [1.3.0 release](https://github.com/CleverCloud/terraform-provider-clevercloud/releases/tag/v1.3.0) of the Clever Cloud Terraform provider is available. It brings multiple bug fixes, returns full URI of [MongoDB] add-ons as sensitive fields, and [MySQL] read-only users generated from the [Console](https://console.clever-cloud.com). It supports [.NET](/doc/deploy/applications/dotnet/) and [V (Vlang)](/doc/deploy/applications/v/) runtimes, [Configuration Providers](/doc/deploy/services/config-provider/), and [Matomo](/doc/deploy/services/matomo/) services.
 
 - Learn more about [Clever Cloud Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)

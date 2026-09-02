@@ -16,7 +16,7 @@ After [adding support for CC_NODE_VERSION](/changelog/2025/05-16-images-update) 
 
 ## pnpm and Yarn better support
 
-As our platform is flexible, it was already possible to use them. However, it was not as easy as it could be. With our latest image, you can set the `CC_NODE_BUILD_TOOL` environment variable in [Bun & Node.js runtime](/doc/applications/nodejs/) to:
+As our platform is flexible, it was already possible to use them. However, it was not as easy as it could be. With our latest image, you can set the `CC_NODE_BUILD_TOOL` environment variable in [Bun & Node.js runtime](/doc/deploy/applications/nodejs/) to:
 
 - `pnpm`: to use [pnpm](https://pnpm.io/) as your package manager
 - `yarn-berry`: to use [Yarn](https://yarnpkg.com/) 3.x or 4.x as your package manager
@@ -45,4 +45,4 @@ Yarn 1.x is still the default version included in our images for legacy reasons.
 
 If you use a Yarn 1.x or Yarn 2.x version, a deprecation warning is displayed during deployment as they're not maintained anymore.
 
-- [Learn more about Bun & Node.js runtime](/doc/applications/nodejs/)
+- [Learn more about Bun & Node.js runtime](/doc/deploy/applications/nodejs/)

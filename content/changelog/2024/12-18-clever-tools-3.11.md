@@ -26,9 +26,9 @@ clever kv myKV SET myKey myValue
 clever kv myKV GET myKey
 ```
 
-You can learn more about `clever kv` in [Clever Tools documentation](/doc/cli/kv-stores/) or using `clever features info kv`. Next year we'll introduce more experimental commands through features flags. Next to come is `clever ng` to manage our [WireGuard](https://www.wireguard.com/) based Network Groups.
+You can learn more about `clever kv` in [Clever Tools documentation](/doc/manage/cli/kv-stores/) or using `clever features info kv`. Next year we'll introduce more experimental commands through features flags. Next to come is `clever ng` to manage our [WireGuard](https://www.wireguard.com/) based Network Groups.
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install). For example with `npm`:
 
 ```console
 npm update -g clever-tools

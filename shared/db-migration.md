@@ -7,4 +7,4 @@ The duration may vary depending on how much data your add-on has. Your database 
 
 If you want to restart your add-on or update to the last supported version of the current branch, migrate it to the same plan, version, zone.
 
-- [More Clever Cloud Tips and Tricks](/doc/best-practices/tips_and_tricks/)
+- [More Clever Cloud Tips and Tricks](/doc/tips-and-tricks/)

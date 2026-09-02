@@ -14,7 +14,7 @@ authors:
 excludeSearch: true
 ---
 
-[Materia KV](/doc/addons/materia-kv/) gains a second compatibility layer: a **GraphQL** endpoint that reads from the same keyspace as the Redis API. Every key you write through a Redis/Valkey compatible client is immediately queryable through GraphQL, with no synchronization in between. Both interfaces authenticate with the same token (`$KV_TOKEN` / `$REDIS_PASSWORD`), passed as a bearer token.
+[Materia KV](/doc/deploy/databases/materia-kv/) gains a second compatibility layer: a **GraphQL** endpoint that reads from the same keyspace as the Redis API. Every key you write through a Redis/Valkey compatible client is immediately queryable through GraphQL, with no synchronization in between. Both interfaces authenticate with the same token (`$KV_TOKEN` / `$REDIS_PASSWORD`), passed as a bearer token.
 
 As Materia KV is a distributed cluster, the GraphQL endpoint is a single URL shared by every add-on in a given region. For Paris:
 
@@ -26,5 +26,5 @@ The schema exposes a single root type, `MateriaKvQuery`, with queries for string
 
 The GraphQL layer is **read-only** for now — mutations aren't supported yet. Use the Redis API for writes. Have a look at [this end-to-end example](https://github.com/CleverCloud/kv-graphql-example) combining both layers: writes via the Redis API, reads via GraphQL.
 
-- [Learn more about the GraphQL compatibility layer](/doc/addons/materia-kv/#using-the-graphql-compatibility-layer)
+- [Learn more about the GraphQL compatibility layer](/doc/deploy/databases/materia-kv/#using-the-graphql-compatibility-layer)
 - [Materia KV write via Redis API, read via GraphQL](https://github.com/CleverCloud/kv-graphql-example)

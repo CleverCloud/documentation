@@ -18,6 +18,6 @@ authors:
 excludeSearch: true
 ---
 
-As new dashboards are available for [Keycloak](/changelog/2025/10-07-keycloak-dashboard/), [Metabase, Matomo and Otoroshi](/changelog/2025/10-15-operators-dashboards/), you can get important information from them. Thus, we won't add URLs and initial credentials anymore as shared dependencies on newly created services starting November 1st. You can rely on [Clever Tools](/doc/cli/operators/) or [the API](/api/v4#operators) to manage operators and their underlying resources.
+As new dashboards are available for [Keycloak](/changelog/2025/10-07-keycloak-dashboard/), [Metabase, Matomo and Otoroshi](/changelog/2025/10-15-operators-dashboards/), you can get important information from them. Thus, we won't add URLs and initial credentials anymore as shared dependencies on newly created services starting November 1st. You can rely on [Clever Tools](/doc/manage/cli/operators/) or [the API](/api/v4#operators) to manage operators and their underlying resources.
 
 [Clever Tools 4.2.0](/changelog/2025/10-21-clever-tools-4.2/) or later will be required to get post-creation information about these services.

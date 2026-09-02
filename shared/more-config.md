@@ -6,4 +6,4 @@ Go check the [Common configuration page](/doc/reference/common-configuration).
 
 You may want to have an advanced usage of your application, in which case we recommend you to read the **Administrate** documentation section.
 
-If you can't find something or have a specific need like using a non supported version of a particular software, please reach out to the [support](/doc/find-help/support).
+If you can't find something or have a specific need like using a non supported version of a particular software, please reach out to the [support](/doc/find-help/).

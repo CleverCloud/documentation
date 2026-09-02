@@ -12,6 +12,7 @@ keywords:
 aliases:
 - /doc/applications/php/symfony
 - /doc/deploy/application/php/tutorials/tutorial-symfony
+- /doc/guides/symfony
 - /doc/php/tutorial-symfony
 - /php/tutorial-symfony
 - /tutorial-symfony

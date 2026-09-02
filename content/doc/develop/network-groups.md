@@ -10,6 +10,7 @@ keywords:
 - members
 - peers
 aliases:
+- /doc/administrate/network-groups
 - /doc/network-groups
 ---
 

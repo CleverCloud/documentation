@@ -13,6 +13,7 @@ keywords:
 - account
 aliases:
 - /billing
+- /doc/account/billing
 - /doc/administrate/billing
 - /doc/administrate/log-management/billing
 - /doc/billing

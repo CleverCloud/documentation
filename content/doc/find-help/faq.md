@@ -11,6 +11,7 @@ keywords:
 - platform features
 - clever cloud help
 aliases:
+- /doc/find-help/support-faq
 - /doc/get-help/faq
 ---
 

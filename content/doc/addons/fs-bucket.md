@@ -17,6 +17,7 @@ aliases:
 - /addons/fs_buckets
 - /deploy/addon/fs-bucket
 - /doc/addons/fs_buckets
+- /doc/administrate/fs-bucket
 - /doc/databases-and-services/fs-buckets
 - /doc/deploy/addon/fs-bucket
 - /doc/fs-bucket

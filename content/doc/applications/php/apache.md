@@ -9,6 +9,11 @@ keywords:
 - htpasswd
 - fastcgi
 - https redirect
+aliases:
+- /doc/deploy/php/apache
+- /doc/languages/php/apache
+- /doc/php/apache
+- /doc/runtimes/php/apache
 ---
 
 ## Configure Apache

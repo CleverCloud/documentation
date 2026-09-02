@@ -18,12 +18,13 @@ aliases:
 - /doc/applications/python
 - /doc/deploy/application/python
 - /doc/deploy/application/python/python_apps
+- /doc/deploy/application/python/tutorials/python-flask-sample-app
 - /doc/en/python-hosting
 - /doc/getting-started/by-language/python
 - /doc/partials/language-specific-deploy/python
 - /doc/python
-- /doc/python/python_apps
 - /doc/python-hosting
+- /doc/python/python_apps
 - /doc/reference/python
 - /python
 - /python/python_apps

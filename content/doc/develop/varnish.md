@@ -13,6 +13,10 @@ keywords:
 aliases:
 - /administrate/cache
 - /doc/administrate/cache
+- /doc/administrate/varnish
+- /doc/develop/request-flow/varnish-as-http-cache
+- /doc/develop/varnish-as-http-cache
+- /doc/networking/varnish
 - /doc/tools/varnish
 ---
 

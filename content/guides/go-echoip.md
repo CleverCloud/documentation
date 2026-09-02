@@ -2,77 +2,85 @@
 type: docs
 linkTitle: EchoIP
 title: Deploy EchoIP with Go
-description: Build and deploy a Go EchoIP service on Clever Cloud with step-by-step instructions, configuration examples, and optimization tips
+description: Build and deploy the EchoIP IP address lookup service with the Go runtime
 keywords:
 - go
 - echoip
 - golang
 - IP service
 - web service
-draft: false
 ---
 
-[EchoIP](https://github.com/mpolden/echoip) is a simple service for looking up
- your IP address.
+{{< hextra/hero-subtitle >}}
+  Deploy EchoIP from source with the Go runtime and expose the client IP received through Clever Cloud’s reverse proxy
+{{< /hextra/hero-subtitle >}}
 
-This doc explains how to install and configure EchoIP from source, and how to deploy it as a [Go application](/doc/applications/golang "Go documentation") on Clever Cloud.
+[EchoIP](https://github.com/mpolden/echoip) is a service that returns information about the client IP address in plain text, JSON or HTML.
 
-## How to Configure and Deploy EchoIP on Clever Cloud
+## Prerequisites
 
-### Download EchoIP
+- A [Clever Cloud account](https://console.clever-cloud.com)
+- [Git](https://git-scm.com/downloads)
+- [Clever Tools](/doc/cli), installed and connected to your account
 
-You can download EchoIP from <https://github.com/mpolden/echoip> and create a new origin.
+## Clone EchoIP
 
-First clone EchoIP's repository:
+Clone the upstream repository and move into its directory:
 
 ```bash
-~ $ git clone https://github.com/mpolden/echoip.git
-~ $ cd echoip
+git clone https://github.com/mpolden/echoip.git
+cd echoip
 ```
 
-### Configure `clevercloud/go.json`
+## Create the application
 
-Create the necessary files to build and run the application:
+Create a Go application with the `myEchoIp` alias:
 
-```text
-echoip/ ~ $ mkdir clevercloud
-echoip/ ~ $ cat << EOF > clevercloud/go.json
-{
-  "deploy": {
-    "makefile": "Makefile",
-    "main": "../go_home/bin/echoip"
-  }
-}
-EOF
-echoip/ ~ $ git add clevercloud/
-echoip/ ~ $ git commit -m "add clevercloud files" clevercloud/
+```bash
+clever create -t go -a myEchoIp
 ```
 
- {{% content "set-env-vars" %}}
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-Define necessary environment variables (this is specific to EchoIP):
+You can display your application’s URL or add a custom domain. A custom domain also requires DNS configuration:
 
-```text
-echoip/ ~ $ clever env set CC_RUN_COMMAND "~/go_home/bin/echoip -H X-Forwarded-For"
-Your environment variable has been successfully saved
+```bash
+clever domain
+clever domain add your.website.tld
 ```
 
- {{% content "deploy-git" %}}
+## Configure EchoIP
 
-Add the clevercloud git remote:
+The upstream repository contains several Go packages. Select the EchoIP command package, then start its compiled binary with `X-Forwarded-For` as a trusted header:
 
-```text
-echoip/ ~ $ git remote add clevercloud $(jq -r '.apps[0].git_ssh_url' < .clever.json)
+```bash
+clever env set CC_GO_PKG ./cmd/echoip
+clever env set CC_RUN_COMMAND "~/go_home/bin/echoip -H X-Forwarded-For"
 ```
 
-Push the app for deployment:
+Clever Cloud terminates HTTP connections at its reverse proxy and forwards the original client address in this header. Without the `-H` option, EchoIP would return the proxy address.
 
-```text
-echoip/ ~ $ git push clevercloud master
+## Deploy EchoIP
+
+Deploy the current Git commit and open the application:
+
+```bash
+clever deploy
+clever open
 ```
 
-Check the deployment logs:
+The root path returns the client IP address for command-line clients and an HTML page for browsers. Use `/json` for a JSON response:
 
-```text
-echoip/ ~ $ clever logs
+```bash
+curl https://your-echoip-domain.example/json
 ```
+
+Country, city and autonomous system information require the optional [GeoLite2 databases documented by EchoIP](https://github.com/mpolden/echoip#geoip-databases). The IP lookup works without them.
+
+## Learn more
+
+{{< cards >}}
+  {{< card link="/developers/doc/applications/golang" title="Go applications" subtitle="Configure and deploy Go applications" icon="go" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://github.com/mpolden/echoip" title="EchoIP repository" subtitle="Explore EchoIP features and configuration" icon="github" >}}
+{{< /cards >}}

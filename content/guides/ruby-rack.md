@@ -2,50 +2,27 @@
 type: docs
 linkTitle: Ruby Rack
 title: Deploy a Ruby Rack application
-description: Deploy Ruby Rack web applications on Clever Cloud with detailed step-by-step tutorials and configuration examples
+description: Prepare Rack applications for the Clever Cloud Ruby runtime and its managed Puma server
 keywords:
 - ruby
 - rack
+- puma
 - web framework
 - application server
-- deployment guide
 aliases:
 - /doc/deploy/application/ruby/tutorials/ruby-rack-app
 - /doc/ruby/ruby-rack
 ---
 
-## Overview
+Clever Cloud supports applications built on the [Rack interface](https://github.com/rack/rack) with its Ruby runtime. The runtime installs dependencies with Bundler and starts the application's `config.ru` through Puma.
 
-Currently, Clever Cloud supports Rack-based applications.
-Created in 2007, Rack has become the de-facto standard for ruby web applications and is used in many frameworks such as Ruby on Rails.
+A deployable Rack application needs:
 
-{{% content "create-application" %}}
+- A `Gemfile` that includes `rack` and `puma`
+- A committed `Gemfile.lock` with the `x86_64-linux` platform
+- A `config.ru` entry point
+- A supported Ruby version declared in the `Gemfile` or with `CC_RUBY_VERSION`
 
- {{% content "set-env-vars" %}}
+No custom run command or listening port is required: the runtime configures Puma and connects it to the managed NGINX server. Access [environment variables](/developers/doc/develop/env-variables/) with `ENV["VARIABLE_NAME"]`.
 
-## Configure your Ruby and Rake application
-
-### Mandatory configuration
-
-Be sure that:
-
-- Bundler is installed locally (`gem install bundler`)
-- you have a `config.ru` file
-- Git (for the deploy part)
-- you have a `gems.rb` or `Gemfile` containing your dependencies
-
-### Tutorial and sample app
-
-- [An hello world tutorial of a Ruby and Rack application](/guides/ruby-rack-app-tutorial)
-
- {{% content "new-relic" %}}
-
- {{% content "env-injection" %}}
-
-To access environment variables from your code, just get them from the environment with `ENV["MY_VARIABLE"]`.
-
- {{% content "deploy-git" %}}
-
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
+Follow the [complete Ruby Rack tutorial](/guides/ruby-rack-app-tutorial/) to create, test and deploy a minimal current application, or read the [Ruby runtime reference](/developers/doc/applications/ruby/) for build hooks, Rake tasks, Puma settings and static files.

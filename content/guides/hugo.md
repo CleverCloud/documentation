@@ -20,33 +20,27 @@ aliases:
 
 ## Requirements
 
-If you need an example source code, use the [Hugo Profile theme](https://github.com/gurusabarish/hugo-profile) example, you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git):
+To create an example website, install [Hugo](https://gohugo.io/installation/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), then initialize a site:
 
 ```bash
-git clone https://github.com/gurusabarish/hugo-profile/
-
-# Just keep exampleSite directory content to deploy the Hugo website
-mv hugo-profile/exampleSite myStaticApp && rm -rf hugo-profile
+hugo new site myStaticApp
 ```
 
 {{% content "static-create" %}}
 
-Import the theme as a submodule:
+Add the Ananke theme as a Git submodule and create a first page:
 
 ```bash
-git submodule add https://github.com/gurusabarish/hugo-profile.git themes/hugo-profile
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+printf "theme = 'ananke'\n" >> hugo.toml
+hugo new content content/posts/hello.md
 ```
+
+The generated page is a draft by default. Open `content/posts/hello.md`, add some content and set `draft` to `false` before deployment.
 
 ### Automatic build
 
-Hugo is one of the many Static Site Generator (SSG) that [Clever Cloud automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build) supports in the `static` runtime, you don't have anything special to manage. To use a pico instance with a dedicated build instance change it in the [Console](https://console.clever-cloud.com) or with Clever Tools:
-
-```bash
-clever scale --flavor pico
-
-# To select a bigger build instance, use:
-clever scale --build-flavor M
-```
+Hugo is one of the static site generators supported by the [Static runtime automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
 
 {{% content "static-deploy" %}}
 
@@ -54,5 +48,6 @@ clever scale --build-flavor M
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://gohugo.io/documentation/>" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://gohugo.io/documentation/" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo" >}}
 {{< /cards >}}

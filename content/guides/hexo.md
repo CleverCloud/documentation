@@ -17,7 +17,7 @@ keywords:
 
 ## Requirements
 
-If you need an example source code, initialize an Hexo project with [Cactus theme](https://github.com/probberechts/hexo-theme-cactus) (you'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)):
+If you need example source code, initialize a Hexo project with the [Cactus theme](https://github.com/probberechts/hexo-theme-cactus), [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node.js](https://nodejs.org/en/download):
 
 ```bash
 npx hexo init myStaticApp --no-install
@@ -33,14 +33,9 @@ git submodule add https://github.com/probberechts/hexo-theme-cactus.git themes/c
 
 ### Environment variables
 
-Next, configure the application with a pico instance with dedicated build, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+Configure the output directory and build commands:
 
 ```bash
-clever scale --flavor pico
-
-# To select a bigger build instance, use:
-clever scale --build-flavor M
-
 clever env set CC_WEBROOT "/public"
 clever env set CC_PRE_BUILD_HOOK "npm install"
 clever env set CC_BUILD_COMMAND "npm run build"
@@ -52,5 +47,6 @@ clever env set CC_BUILD_COMMAND "npm run build"
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://hexo.io/docs/>" title="Learn Hexo" subtitle="How to write and organize your content" icon="hexo" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://hexo.io/docs/" title="Learn Hexo" subtitle="How to write and organize your content" icon="hexo" >}}
 {{< /cards >}}

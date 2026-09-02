@@ -1,77 +1,72 @@
 ---
 type: docs
 linkTitle: Kibana
-title: Deploy a custom Kibana instance
-description: Deploy custom Kibana for specific use cases with detailed step-by-step tutorials and configuration examples
+title: Use Kibana with an Elastic Stack add-on
+description: Enable and access a managed Kibana interface for an Elastic Stack add-on on Clever Cloud
 keywords:
 - kibana
 - elasticsearch
-- data visualization
-- custom deployment
 - elastic stack
+- analytics
+- data visualization
 aliases:
 - /doc/deploy/addon/elastic/kibana
 - /kibana
 ---
 
-{{< callout type="warning" >}}
-To deploy a custom Kibana, you need to ask Clever Cloud Support team to enable superuser permissions for your user.
-{{< /callout >}}
+[Kibana](https://www.elastic.co/kibana) is the web interface for exploring, visualizing and managing data stored in Elasticsearch. Clever Cloud can provision a managed Kibana service with an [Elastic Stack add-on](/doc/addons/elastic/).
 
-## Overview
+## Prerequisites
 
-[Kibana](https://www.elastic.co/fr/kibana/) is the web interface available on the Clever Cloud's platform to manage your Elastic Stack.
+- A [Clever Cloud account](https://console.clever-cloud.com/)
+- An organisation in which you can create add-ons
 
-By default, you can enable Kibana when you create an Elastic Stack add-on.
+Install [Clever Tools](/doc/cli/install/) if you want to create the add-on from the command line.
 
-## Enable Kibana with your Elastic Stack add-on
+## Enable Kibana
 
-Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elastic Stack". Select your plan, applications which will use the Elastic Stack and name the add-on. On the "options" step, enable Kibana. Then, confirm the options and your add-on will start with a Kibana instance.
+Kibana is an option selected when you create the Elastic Stack add-on. You cannot enable it later on an existing add-on.
 
-### Customize the Kibana configuration file
+### From the Console
 
-You can customize the Kibana configuration file by setting the `CC_PRE_RUN_HOOK` environment variable. This variable will be executed before the Kibana instance starts. By default, it is:
+1. In the [Clever Cloud Console](https://console.clever-cloud.com/), select **Create**, then **an add-on**
+2. Select **Elastic Stack**
+3. Choose the plan, version and region required by your project
+4. Enable the **Kibana** option
+5. Name and create the add-on
 
-```text
-CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
+### With Clever Tools
+
+Create an Elastic Stack add-on and enable Kibana with the `kibana=true` option:
+
+```bash
+clever addon create es-addon myElasticStack \
+  -p xs \
+  --addon-version 8 \
+  --option kibana=true
 ```
 
-To modify this default configuration ([Configuration file for Kibana 8.3.3](https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/8.3.3)), you need to host your own config file (we strongly recommend [Cellar](/doc/deploy/addon/cellar)).
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` to the command. Use `clever addon providers show es-addon` to list the plans, regions and major versions currently available.
 
-Check other available configuration file on [GitHub](https://github.com/CleverCloud/custom-kibana-config).
+Provisioning Elasticsearch and Kibana takes a few minutes. Open the Elastic Stack add-on in the Console once it is ready, then use its Kibana access link.
 
-> [!TIP]
-> If you use a custom configuration file, host it from your own Cellar add-on or any other trusted source.
+## Sign in to Kibana
 
-### Disable SSO authentication
+Kibana uses Clever Cloud SSO by default. Any member of the organisation that owns the Elastic Stack add-on can sign in with their Clever Cloud account.
 
-To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file. We provide an example configuration file for Kibana 8.3.3:
+The managed configuration connects Kibana to the matching Elasticsearch version and keeps both services compatible. Clever Cloud updates the service within the selected major version.
 
-- <https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3>
+## Customize Kibana
 
-Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
+The Elastic Stack add-on is a managed service, so its native Kibana configuration is not exposed as an application environment variable or editable file. Most day-to-day settings, dashboards, spaces, roles and users can be managed from Kibana or through the Elasticsearch API.
 
-### Multiple authentication methods
+If you need a custom authentication provider, domain name or native `kibana.yml` setting, [contact Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss your requirements. Configuration scripts for older Kibana releases should not be reused with a different version.
 
-If you need to allow for multiple authentication methods to your Kibana, you need to modify Kibana's configuration. We provide an example configuration file for Kibana 8.10.2:
+## Learn more
 
-- <https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.10.2/sso-basic-8.10.2>
-
-### Add custom domain name
-
-You need to disable SSO authentication first. Then, you will be able to add a custom domain name in "Domain name" tab of your Kibana app.
-
-## Deploy Kibana on localhost
-
-The Kibana version should match with the ElasticSearch version.
-
-Follow these steps :
-
-1. Download/unzip Kibana in version which match with your Elastic Stack version
-2. Edit kibana.yml :
-   - line 43 : `elasticsearch.host: <elastic-addon-host>:443`
-   - line 49 : `elasticsearch.username: kibana`
-   - line 50 : `elasticsearch.password: <password>`
-   - Launch Kibana (`<path_to_kibana>/bin/kibana`)
-3. Go to Kibana through the dedicated local address: `http://localhost:5601`
-4. Connect to ElasticSearch with your Elastic username and password
+{{< cards >}}
+  {{< card link="/doc/addons/elastic/" title="Elastic Stack" subtitle="Configure and manage the Elastic Stack add-on" icon="elastic" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://www.elastic.co/guide/en/kibana/current/index.html" title="Kibana documentation" subtitle="Explore Kibana features and settings" icon="external-link" >}}
+  {{< card link="/doc/cli/addons/" title="Clever Tools add-ons" subtitle="Create and manage add-ons from the command line" icon="terminal" >}}
+{{< /cards >}}

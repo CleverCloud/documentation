@@ -34,13 +34,13 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/go-echoip" title="EchoIP" subtitle="Deploy EchoIP as a Go application" icon="go" >}}
   {{< card link="/developers/guides/ekg-statsd-haskell-metrics" title="Ekg-statsd" subtitle="Export Haskell metrics with ekg-statsd" icon="haskell" >}}
   {{< card link="/developers/guides/eleventy" title="Eleventy (11ty)" subtitle="Deploy a static Eleventy website" icon="11ty" >}}
-  {{< card link="/developers/guides/fluentd" title="Fluentd" subtitle="Deploy Fluentd with Docker" icon="fluentd" >}}
+  {{< card link="/developers/guides/fluentd" title="Fluentd" subtitle="Deploy a Fluentd data collector" icon="fluentd" >}}
   {{< card link="/developers/guides/ghost" title="Ghost" subtitle="Deploy a publishing platform with MySQL and object storage" icon="ghost" >}}
   {{< card link="/developers/guides/hexo" title="Hexo" subtitle="Deploy a static Hexo website" icon="hexo" >}}
   {{< card link="/developers/guides/hono" title="Hono" subtitle="Deploy a Hono application with Node.js" icon="hono" >}}
   {{< card link="/developers/guides/hugo" title="Hugo" subtitle="Deploy a static Hugo website" icon="hugo" >}}
-  {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle="Build a Hugo website and host it with Cellar" icon="hugo" >}}
-  {{< card link="/developers/guides/kibana" title="Kibana" subtitle="Deploy and customize a Kibana server" icon="kibana" >}}
+  {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle="Publish Hugo assets and build artifacts to Cellar" icon="hugo" >}}
+  {{< card link="/developers/guides/kibana" title="Kibana" subtitle="Enable Kibana for an Elastic Stack add-on" icon="kibana" >}}
   {{< card link="/developers/doc/kubernetes/operator" title="Kubernetes Operator" subtitle="Manage Clever Cloud add-ons from Kubernetes" icon="kubernetes" >}}
   {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application" icon="laravel" >}}
   {{< card link="/developers/guides/lume-deno" title="Lume (Deno)" subtitle="Deploy a static Lume website with Deno" icon="deno" >}}
@@ -49,7 +49,7 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/mkdocs" title="MkDocs" subtitle="Deploy a static MkDocs website" icon="docs" >}}
   {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform" icon="moodle" >}}
   {{< card link="/developers/guides/node-js-mongo-db" title="Node.js & MongoDB" subtitle="Deploy a Node.js application with MongoDB" icon="node" >}}
-  {{< card link="/developers/guides/node-statsd-nodejs-metrics" title="Node-statsd" subtitle="Export Node.js metrics with node-statsd" icon="node" >}}
+  {{< card link="/developers/guides/node-statsd-nodejs-metrics" title="Node.js StatsD" subtitle="Export Node.js metrics with hot-shots" icon="node" >}}
   {{< card link="/developers/guides/nuxt" title="Nuxt" subtitle="Deploy a Nuxt application as a static site or with Node.js" icon="nuxt" >}}
   {{< card link="/developers/guides/otree" title="oTree" subtitle="Deploy an oTree application" icon="django" >}}
   {{< card link="/developers/guides/outline" title="Outline" subtitle="Deploy the Outline knowledge base" icon="outline" >}}

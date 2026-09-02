@@ -1,296 +1,406 @@
 ---
 type: docs
 linkTitle: Docs
-title: Deploy the Docs collaborative editor
-description: Deploy the open source collaborative document editor Docs on Clever Cloud with Python backend and Node.js frontend
+title: Deploy Docs, a collaborative document editor
+description: Deploy Docs with a Python backend, a static frontend, collaborative editing, Keycloak authentication and private Cellar storage
 keywords:
-- docs
+- cellar
 - collaborative editor
+- docs
+- keycloak
+- node.js
+- postgresql
 - python
-- Node.js
-- document management
-draft: false
+- redis
 ---
 
 {{< hextra/hero-subtitle >}}
-  The open source document editor where your notes can become knowledge through live collaboration.
+  Deploy Docs, an open source collaborative document editor, on Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-## Docs architecture overview
+[Docs](https://github.com/suitenumerique/docs) combines a Django API, a Next.js static frontend and a Node.js collaboration server. This guide deploys these components with [PostgreSQL](/developers/doc/addons/postgresql/), [Redis](/developers/doc/addons/redis/), [Cellar S3-compatible object storage](/developers/doc/addons/cellar/) and [Keycloak](/developers/doc/addons/keycloak/).
 
-[Docs](https://github.com/suitenumerique/docs) runs on a Python backend and displays the application on a React/Next frontend. A [yjs provider](https://github.com/yjs/yjs) completes the stack to enable collaborative features.
+The deployment uses one custom domain and [path routing](/developers/doc/administrate/domain-names/#path-routing) to expose the following applications:
 
-```mermaid
-flowchart TD
- subgraph s1["Python"]
-        n6["Backend"]
-  end
- subgraph s2["Node.JS"]
-        n7["Frontend"]
-  end
- subgraph s3["Node.js"]
-        n8["yjs provider"]
-  end
-    n1["PostrgreSQL"] --> s1
-    s1 --> n1 & s2 & n2["Keycloak"] & n4["Cellar"] & s3
-    n2 --> s2 & s1
-    s3 --> s1
-    n4 --> s2
-    n1@{ shape: cyl}
-    n2@{ shape: hex}
-    n4@{ shape: rect}
+| Application   | Runtime | Route                                     | Purpose                                         |
+| ------------- | ------- | ----------------------------------------- | ----------------------------------------------- |
+| Backend       | Python  | `/api/`                                   | API, authentication and database migrations     |
+| Collaboration | Node.js | `/collaboration/` and `/api/convert/`     | Live editing and document conversion            |
+| Frontend      | Static  | `/`                                       | Browser application                             |
+| Media proxy   | Linux   | `/media/`                                 | Authenticated access to private Cellar objects  |
+
+Docs authorizes each media request before signing it for Cellar. The small [Caddy](https://caddyserver.com/) proxy configured below reproduces the authorization flow used by Docs' official ingress without making the bucket public.
+
+## Prepare Docs
+
+You need [Git](https://git-scm.com/downloads), [jq](https://jqlang.org/download/), [OpenSSL](https://openssl-library.org/), [s3cmd](https://s3tools.org/s3cmd) or another S3-compatible client, a custom domain and a [Clever Cloud account](https://console.clever-cloud.com/) to follow this guide.
+
+This guide was tested with Docs `5.5.0`. Set the version to deploy, clone its tag and create a branch for the Clever Cloud configuration:
+
+```bash
+export DOCS_VERSION=v5.5.0
+git clone --branch "$DOCS_VERSION" https://github.com/suitenumerique/docs.git myDocs
+cd myDocs
+git switch -c clever-deployment
 ```
+
+### Configure the backend commands
+
+Create the following helper at the repository root:
+
+```bash {filename="clevercloud.sh"}
+#!/usr/bin/env bash
+set -eu
+
+export DATABASE_URL="${POSTGRESQL_ADDON_URI}"
+export AWS_S3_ENDPOINT_URL="https://${CELLAR_ADDON_HOST}"
+export AWS_S3_ACCESS_KEY_ID="${CELLAR_ADDON_KEY_ID}"
+export AWS_S3_SECRET_ACCESS_KEY="${CELLAR_ADDON_KEY_SECRET}"
+
+mkdir -p "${DATA_DIR}"
+
+if [[ -d src/backend ]]; then
+  cd src/backend
+fi
+
+case "${1:-}" in
+  migrate)
+    uv run python manage.py migrate --no-input
+    ;;
+  run)
+    uv run uvicorn --host 0.0.0.0 --port "${PORT:-8080}" --timeout-graceful-shutdown 300 --limit-max-requests 20000 --lifespan off impress.asgi:application
+    ;;
+  *)
+    printf 'Usage: %s migrate|run\n' "$0" >&2
+    exit 1
+    ;;
+esac
+```
+
+Make it executable:
+
+```bash
+chmod +x clevercloud.sh
+```
+
+The build hook runs migrations after dependencies are installed. The run command starts the ASGI application with Uvicorn. The helper works from both the repository root used by build hooks and `src/backend`, where the Python runtime starts the application.
+
+### Configure the private media proxy
+
+[Mise is available on Clever Cloud](/developers/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager). Create a dedicated directory and declare Caddy through Mise's GitHub backend:
+
+```bash
+mkdir media-proxy
+```
+
+```toml {filename="media-proxy/mise.toml"}
+[tools]
+"github:caddyserver/caddy" = "2.10.2"
+
+[tasks.build]
+description = "Install and verify Caddy"
+run = "caddy version"
+
+[tasks.run]
+description = "Start the authenticated media proxy"
+run = "caddy run --config Caddyfile"
+```
+
+The `build` and `run` names are significant: the Linux runtime uses these [Mise tasks](https://mise.jdx.dev/tasks/) for its separate build and run phases. Create the proxy configuration:
+
+```caddyfile {filename="media-proxy/Caddyfile"}
+:{$PORT:8080} {
+  handle /media/* {
+    route {
+      forward_auth https://{$DOCS_BACKEND_HOST} {
+        uri /api/v1.0/documents/media-auth/
+        header_up Host {$DOCS_BACKEND_HOST}
+        header_up X-Forwarded-Proto https
+        header_up X-Original-URL {uri}
+        copy_headers Authorization X-Amz-Date X-Amz-Content-SHA256
+      }
+
+      uri strip_prefix /media
+      rewrite * /{$AWS_STORAGE_BUCKET_NAME}{uri}
+      reverse_proxy https://{$CELLAR_HOST} {
+        header_up Host {$CELLAR_HOST}
+      }
+    }
+  }
+
+  respond 404
+}
+```
+
+The [`forward_auth`](https://caddyserver.com/docs/caddyfile/directives/forward_auth) request asks Docs whether the current user can access the object. Docs returns AWS authorization headers for allowed requests, which Caddy forwards to Cellar. The [`route`](https://caddyserver.com/docs/caddyfile/directives/route) block preserves the declared directive order so the `/media` prefix is removed before the bucket name is added to the signed S3 path.
+
+## Create the applications and add-ons
+
+Install [Clever Tools](/developers/doc/cli/), log in and create the four applications with aliases:
+
+```bash
+npm i -g clever-tools
+clever login
+
+clever create -t python myDocsBackend -a myDocsBackend
+clever create -t static myDocsFrontend -a myDocsFrontend
+clever create -t node myDocsCollaboration -a myDocsCollaboration
+clever create -t linux myDocsMedia -a myDocsMedia
+```
+
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
+
+Create PostgreSQL, Redis and Cellar add-ons linked to the backend, then create a Keycloak add-on:
+
+```bash
+clever addon create postgresql-addon myDocsPostgreSQL -p xxs_sml -l myDocsBackend
+clever addon create redis-addon myDocsRedis -p s_mono -l myDocsBackend
+clever addon create cellar-addon myDocsCellar -l myDocsBackend
+clever addon create keycloak myDocsKeycloak -p base
+```
+
+You can also create and link these resources from the [Clever Cloud Console](https://console.clever-cloud.com/).
+
+## Configure Cellar
+
+Cellar bucket names are global within a cluster. Choose a unique name containing only lowercase letters, numbers, dots and hyphens:
+
+```bash
+export DOCS_BUCKET="your-unique-docs-bucket"
+```
+
+Read the Cellar configuration, create the private bucket and keep its hostname for the application configuration:
+
+```bash
+CELLAR_ENV="$(clever addon env myDocsCellar -F json)"
+export CELLAR_HOST="$(jq -er '.CELLAR_ADDON_HOST' <<<"$CELLAR_ENV")"
+CELLAR_KEY_ID="$(jq -er '.CELLAR_ADDON_KEY_ID' <<<"$CELLAR_ENV")"
+CELLAR_KEY_SECRET="$(jq -er '.CELLAR_ADDON_KEY_SECRET' <<<"$CELLAR_ENV")"
+
+s3cmd --access_key="$CELLAR_KEY_ID" \
+  --secret_key="$CELLAR_KEY_SECRET" \
+  --host="$CELLAR_HOST" \
+  --host-bucket="$CELLAR_HOST" \
+  --ssl mb "s3://$DOCS_BUCKET"
+
+unset CELLAR_ENV CELLAR_KEY_ID CELLAR_KEY_SECRET
+```
+
+Do not add a public bucket policy. The media proxy uses the current Docs session and short-lived AWS authorization headers to protect uploaded files.
+
+## Configure the shared domain
+
+Store your custom domain and its HTTPS origin, then assign the root and path routes to their applications:
+
+```bash
+export DOCS_DOMAIN="docs.your.website.tld"
+export DOCS_URL="https://$DOCS_DOMAIN"
+
+clever domain add "$DOCS_DOMAIN" -a myDocsFrontend
+clever domain add "$DOCS_DOMAIN/api/" -a myDocsBackend
+clever domain add "$DOCS_DOMAIN/collaboration/" -a myDocsCollaboration
+clever domain add "$DOCS_DOMAIN/api/convert/" -a myDocsCollaboration
+clever domain add "$DOCS_DOMAIN/media/" -a myDocsMedia
+```
+
+Configure the required [DNS record](/developers/doc/administrate/domain-names/) for the custom domain. Keep the trailing slash on each path route.
+
+## Configure Keycloak
+
+Wait for the Keycloak add-on to start, then display its URL and open its administration interface:
+
+```bash
+export KEYCLOAK_URL="$(clever keycloak get myDocsKeycloak -F json | jq -er '.accessUrl | sub("/admin$"; "")')"
+clever keycloak open myDocsKeycloak
+```
+
+Use the initial credentials displayed by Clever Cloud. Keycloak asks you to replace the temporary password on first login.
+
+In the Keycloak administration interface:
+
+1. Create a realm named `impress`
+2. Create an OpenID Connect client with `impress` as its client ID
+3. Enable client authentication and the standard flow
+4. Set the root and home URLs to the value of `DOCS_URL`
+5. Add `$DOCS_URL/api/v1.0/callback/*` to the valid redirect URIs
+6. Add `$DOCS_URL/*` to the valid post-logout redirect URIs
+7. Add the value of `DOCS_URL` to the web origins
+8. Copy the client secret from the client credentials tab
+
+Create users directly in the realm or configure one of [Keycloak's identity providers](https://www.keycloak.org/docs/latest/server_admin/#_identity_broker). Store the copied client secret in your shell before continuing:
+
+```bash
+export OIDC_CLIENT_SECRET="replace-with-the-impress-client-secret"
+```
+
+## Configure the applications
+
+Generate independent secrets for Django and the two collaboration authentication mechanisms:
+
+```bash
+export DJANGO_SECRET_KEY="$(openssl rand -base64 48)"
+export COLLABORATION_SERVER_SECRET="$(openssl rand -base64 48)"
+export Y_PROVIDER_API_KEY="$(openssl rand -base64 48)"
+```
+
+### Backend
+
+Configure the Python runtime, public URLs, linked services, collaboration server and Keycloak client:
+
+```bash
+clever env set APP_FOLDER src/backend -a myDocsBackend
+clever env set CC_PYTHON_VERSION 3.14 -a myDocsBackend
+clever env set CC_POST_BUILD_HOOK './clevercloud.sh migrate' -a myDocsBackend
+clever env set CC_PYTHON_UV_RUN_COMMAND '../../clevercloud.sh run' -a myDocsBackend
+clever env set DATA_DIR /tmp/docs -a myDocsBackend
+
+clever env set DJANGO_CONFIGURATION Production -a myDocsBackend
+clever env set DJANGO_SETTINGS_MODULE impress.settings -a myDocsBackend
+clever env set DJANGO_SECRET_KEY "$DJANGO_SECRET_KEY" -a myDocsBackend
+clever env set DJANGO_ALLOWED_HOSTS "$DOCS_DOMAIN" -a myDocsBackend
+clever env set DJANGO_CSRF_TRUSTED_ORIGINS "$DOCS_URL" -a myDocsBackend
+clever env set CORS_ALLOWED_ORIGINS "$DOCS_URL" -a myDocsBackend
+clever env set IMPRESS_BASE_URL "$DOCS_URL" -a myDocsBackend
+clever env set LOGIN_REDIRECT_URL "$DOCS_URL" -a myDocsBackend
+clever env set LOGIN_REDIRECT_URL_FAILURE "$DOCS_URL" -a myDocsBackend
+clever env set LOGOUT_REDIRECT_URL "$DOCS_URL" -a myDocsBackend
+
+clever env set AWS_STORAGE_BUCKET_NAME "$DOCS_BUCKET" -a myDocsBackend
+clever env set AWS_S3_REGION_NAME auto -a myDocsBackend
+clever env set AWS_REQUEST_CHECKSUM_CALCULATION when_required -a myDocsBackend
+clever env set AWS_RESPONSE_CHECKSUM_VALIDATION when_required -a myDocsBackend
+
+clever env set COLLABORATION_API_URL "$DOCS_URL/collaboration/api/" -a myDocsBackend
+clever env set COLLABORATION_WS_URL "wss://$DOCS_DOMAIN/collaboration/ws/" -a myDocsBackend
+clever env set COLLABORATION_SERVER_SECRET "$COLLABORATION_SERVER_SECRET" -a myDocsBackend
+clever env set Y_PROVIDER_API_BASE_URL "$DOCS_URL/" -a myDocsBackend
+clever env set Y_PROVIDER_API_KEY "$Y_PROVIDER_API_KEY" -a myDocsBackend
+
+clever env set OIDC_OP_AUTHORIZATION_ENDPOINT "$KEYCLOAK_URL/realms/impress/protocol/openid-connect/auth" -a myDocsBackend
+clever env set OIDC_OP_JWKS_ENDPOINT "$KEYCLOAK_URL/realms/impress/protocol/openid-connect/certs" -a myDocsBackend
+clever env set OIDC_OP_LOGOUT_ENDPOINT "$KEYCLOAK_URL/realms/impress/protocol/openid-connect/logout" -a myDocsBackend
+clever env set OIDC_OP_TOKEN_ENDPOINT "$KEYCLOAK_URL/realms/impress/protocol/openid-connect/token" -a myDocsBackend
+clever env set OIDC_OP_USER_ENDPOINT "$KEYCLOAK_URL/realms/impress/protocol/openid-connect/userinfo" -a myDocsBackend
+clever env set OIDC_REDIRECT_ALLOWED_HOSTS "$DOCS_DOMAIN" -a myDocsBackend
+clever env set OIDC_RP_CLIENT_ID impress -a myDocsBackend
+clever env set OIDC_RP_CLIENT_SECRET "$OIDC_CLIENT_SECRET" -a myDocsBackend
+clever env set OIDC_RP_SCOPES 'openid email profile' -a myDocsBackend
+clever env set OIDC_RP_SIGN_ALGO RS256 -a myDocsBackend
+clever env set OIDC_USERINFO_FULLNAME_FIELDS 'given_name,family_name' -a myDocsBackend
+clever env set OIDC_USERINFO_SHORTNAME_FIELD preferred_username -a myDocsBackend
+```
+
+The helper maps the linked PostgreSQL and Cellar variables to the names expected by Docs. The linked Redis add-on already provides the required `REDIS_URL`.
+
+### Frontend
+
+Docs exports its Next.js frontend as a static site. Configure the Static runtime and use an `L` build instance, which is required by the current frontend build:
+
+```bash
+clever env set APP_FOLDER src/frontend -a myDocsFrontend
+clever env set CC_NODE_VERSION 22 -a myDocsFrontend
+clever env set CC_BUILD_COMMAND '. /home/bas/.nvm/nvm.sh && nvm use "$CC_NODE_VERSION" && yarn install --frozen-lockfile && yarn app:build' -a myDocsFrontend
+clever env set CC_WEBROOT /src/frontend/apps/impress/out -a myDocsFrontend
+clever env set NEXT_PUBLIC_API_BASE_PATH / -a myDocsFrontend
+clever env set NEXT_PUBLIC_API_ORIGIN "$DOCS_URL" -a myDocsFrontend
+clever env set NEXT_PUBLIC_PUBLISH_AS_MIT true -a myDocsFrontend
+clever env set NEXT_PUBLIC_SW_DEACTIVATED true -a myDocsFrontend
+clever env set NODE_OPTIONS --max-old-space-size=4096 -a myDocsFrontend
+clever scale --build-flavor L -a myDocsFrontend
+```
+
+The explicit `nvm use` keeps the custom Static build command on Node.js 22. The frontend currently rejects the newer system Node.js version otherwise selected before the command starts.
+
+### Collaboration server
+
+Configure the Node.js application from the frontend workspace:
+
+```bash
+clever env set APP_FOLDER src/frontend -a myDocsCollaboration
+clever env set CC_NODE_VERSION 22 -a myDocsCollaboration
+clever env set CC_NODE_BUILD_TOOL yarn -a myDocsCollaboration
+clever env set CC_NODE_DEV_DEPENDENCIES true -a myDocsCollaboration
+clever env set CC_POST_BUILD_HOOK 'cd src/frontend && yarn COLLABORATION_SERVER build' -a myDocsCollaboration
+clever env set CC_RUN_COMMAND 'cd src/frontend && yarn COLLABORATION_SERVER start' -a myDocsCollaboration
+clever env set COLLABORATION_BACKEND_BASE_URL "$DOCS_URL" -a myDocsCollaboration
+clever env set COLLABORATION_LOGGING true -a myDocsCollaboration
+clever env set COLLABORATION_SERVER_ORIGIN "$DOCS_URL" -a myDocsCollaboration
+clever env set COLLABORATION_SERVER_SECRET "$COLLABORATION_SERVER_SECRET" -a myDocsCollaboration
+clever env set Y_PROVIDER_API_KEY "$Y_PROVIDER_API_KEY" -a myDocsCollaboration
+```
+
+Custom build and run hooks start from the repository root, so both commands explicitly enter `src/frontend` despite `APP_FOLDER`.
+
+### Media proxy
+
+Point the Linux runtime to the nested Mise configuration and provide only the non-secret routing values required by Caddy:
+
+```bash
+clever env set CC_MISE_FILE_PATH media-proxy/mise.toml -a myDocsMedia
+clever env set DOCS_BACKEND_HOST "$DOCS_DOMAIN" -a myDocsMedia
+clever env set CELLAR_HOST "$CELLAR_HOST" -a myDocsMedia
+clever env set AWS_STORAGE_BUCKET_NAME "$DOCS_BUCKET" -a myDocsMedia
+```
+
+The media proxy does not receive Cellar credentials. Docs signs each authorized request and Caddy only forwards the resulting headers.
 
 ## Deploy Docs
 
-Docs runs using:
+Commit the Clever Cloud configuration, then deploy the backend, collaboration server, frontend and media proxy from the same repository:
 
-- a **Python** application for the backend (in `src/backend`)
-- a **Node.js** application for the frontend (in `src/frontend`)
-- a **Node.js** application for the y-provider (in `src/frontend/servers/y-provider`)
+```bash
+git add clevercloud.sh media-proxy
+git commit -m "Configure Clever Cloud deployment"
 
-This guide walks you trough a deployment from the root of [Docs repository](https://github.com/suitenumerique/docs). Clone the repository and follow the steps to deploy Docs with a minimal configuration.
-
-### Deploy the backend
-
-{{% steps %}}
-
-#### Create a Python application
-
-Select at least an `XS` plan. Smaller instances can make the build to fail.
-
-Inject the following environment variables
-
-```env
-APP_FOLDER="/src/backend"
-CC_PRE_BUILD_HOOK="cd src/backend && pip install pip-tools && pip-compile pyproject.toml &&
-pip-sync requirements.txt"
-CC_PYTHON_MODULE="impress.wsgi:application"
-CC_PYTHON_VERSION="3"
-CC_RUN_SUCCEEDED_HOOK="cd src/backend && python manage.py migrate"
-DATA_DIR="home/bas/<app_id>/src/backend/data"
-DJANGO_CONFIGURATION="Production"
-DJANGO_SECRET_KEY="<your-key>"
-DJANGO_SETTINGS_MODULE="impress.settings"
-DJANGO_SUPERUSER_PASSWORD="<your-password>"
+clever deploy -a myDocsBackend
+clever deploy -a myDocsCollaboration
+clever deploy -a myDocsFrontend
+clever deploy -a myDocsMedia
 ```
 
-You can add the value you want for `DJANGO_SECRET_KEY`. You can generate it using a command like `openssl rand -base64 32`
+Open Docs, sign in through Keycloak, create a document and upload an image to verify the complete deployment:
 
-#### Create a PosgreSQL add-on
-
-Inject the DB credentials into the Python application:
-
-```env
-DB_HOST="<postrgresql_addon_host_value>"
-DB_NAME="<postrgresql_addon_name_value>"
-DB_PASSWORD="<postrgresql_addon_password_value>"
-DB_PORT="<postrgresql_addon_port_value>"
-DB_USER="<postrgresql_addon_user_value>"
+```bash
+clever open -a myDocsFrontend
 ```
 
-#### Set the backend domain name
+You can also check the public configuration endpoint and confirm that an anonymous media request is rejected:
 
-Select **Domain names** and add use the path routing feature on Clever Cloud to set the domain ans follows:
-
-- Domain name: `<docs-base-domain>`
-- Route: `/api/v1.0/`
-
-**⚠️ Don't skip the trailing slash at the end of the route.**
-
-You can use `.cleverapps.io` domains for tests. Make sure to set a custom domain before releasing for production.
-
-Then, inject the following environment variables:
-
-```env
-DJANGO_ALLOWED_HOSTS="<docs-base-domain>"
-DJANGO_CSRF_TRUSTED_ORIGINS="https://<docs-base-domain>"
-IMPRESS_BASE_URL="https://<docs-base-domain>"
-LOGIN_REDIRECT_URL="https://<docs-base-domain>"
-LOGOUT_REDIRECT_URL="https://<docs-base-domain>/*"
+```bash
+curl -sS "$DOCS_URL/api/v1.0/config/" | jq .
+curl -sS -o /dev/null -w '%{http_code}\n' "$DOCS_URL/media/not-authorized"
 ```
 
-#### Push the backend code
+The second command returns `403`, as expected for a private object without a Docs session.
 
-If you push using git, add the remote as `clever-backend`, for example.
+## Update Docs
 
-{{% /steps %}}
+Review the [Docs releases](https://github.com/suitenumerique/docs/releases), back up PostgreSQL and replace `vX.Y.Z` below with the selected tag before rebasing the deployment configuration onto it:
 
-### Deploy the frontend
+```bash
+export DOCS_VERSION=vX.Y.Z
+git fetch origin --tags
+git rebase "$DOCS_VERSION"
 
-{{% steps %}}
-
-#### Create the frontend Node.js application
-
-Select at least a `M` instance for the build, and inject the following environment variables:
-
-```env
-APP_FOLDER="./src/frontend"
-CC_NODE_BUILD_TOOL="yarn"
-CC_PRE_BUILD_HOOK="cd ./src/frontend && yarn install --frozen-lockfile && yarn app:build"
-CC_RUN_COMMAND="cd ./src/frontend && yarn app:start"
-NEXT_PUBLIC_API_BASE_PATH="/"
-NEXT_PUBLIC_SW_DEACTIVATED="true"
-NODE_OPTIONS="--max-old-space-size=4096"
+clever deploy -a myDocsBackend
+clever deploy -a myDocsCollaboration
+clever deploy -a myDocsFrontend
+clever deploy -a myDocsMedia
 ```
 
-#### Set the frontend domain name
+The backend build hook applies pending migrations. Keep the versions in the runtime configuration aligned with the requirements of the selected Docs release.
 
-- Select **Domain names** and set the base domain for Docs. The frontend doesn't need any route.
-- Add the domain to the environment variables: inject `NEXT_PUBLIC_API_ORIGIN="https://<docs-base-domain>"` to the list of the frontend environment variables.
-
-#### Push the frontend code
-
-If you push using git, add the remote as `clever-frontend`, for example.
-
-{{% /steps %}}
-
-### Deploy the y-provider
-
-{{% steps %}}
-
-#### Create the y-provider Node.js application
-
-Inject the following environment variables:
-
-```env
-APP_FOLDER="/src/frontend/servers/y-provider"
-CC_NODE_BUILD_TOOL="yarn"
-CC_PRE_BUILD_HOOK="cd ./src/frontend/servers/y-provider && yarn install --frozen-lockfile && yarn build"
-CC_RUN_COMMAND="cd ./src/frontend/servers/y-provider && yarn start"
-COLLABORATION_LOGGING="true"
-COLLABORATION_SERVER_ORIGIN="https://<docs-base-domain>"
-COLLABORATION_SERVER_SECRET="<server-secret>"
-Y_PROVIDER_API_KEY="<generated-api-key>"
-```
-
-You can add the value you want for `COLLABORATION_SERVER_SECRET` and `Y_PROVIDER_API_KEY`. You can generate them using a command like `openssl rand -base64 32`
-
-#### Set y-provider domain
-
-Select **Domain names** and add the following domains:
-
-- Domain: `<docs-base-domain>`
-- Route: `/collaboration/api/`
-
-- Domain: `<docs-base-domain>`
-- Route: `/ws/`
-
-#### Connect to the backend
-
-Select **Exposed configuration** and inject the following environment variables into the y-provider :
-
-```env
-COLLABORATION_API_URL="https://<docs-base-domain>/collaboration/api/"
-COLLABORATION_SERVER_SECRET="<server-secret>"
-```
-
-Then select the **backend** application > **Service dependencies** > **Link applications** and choose the y-provider application.
-
-#### Push the y-provider code
-
-If you push using git, add the remote as `clever-y-provider`, for example.
-
-{{% /steps %}}
-
-## How to configure Docs
-
-Docs depends on some services that needs configuration before it can function. Use the **Create > an add-on** function to create each dependency on Clever Cloud.
-
-### Keycloak
-
-Docs uses Keycloak as an authentication provider. Configure it by following these steps:
-
-{{% steps %}}
-
-#### Create a Keycloak add-on
-
-If you don't have a Keycloak instance, create one on Clever Cloud. If you already have one, skip this step. For the sake of demonstration, this guide follows [the example values provided by Docs](https://github.com/suitenumerique/docs/blob/main/docs/examples/helm/impress.values.yaml). You can rename them as you see fit.
-
-#### Create a new realm
-
-Name it `impress`.
-
-#### Create a new client
-
-Name it `impress` as well.
-
-#### Client settings
-
-##### General settings
-
-- Client ID: impress
-- Client name: impress
-- Always Display in UI: ON
-
-##### Access settings
-
-- Root URL: `https://<docs-base-domain>`
-- Home URL: `https://<docs-base-domain>`
-- Valid redirect URIs: `https://<docs-base-domain>/api/v1.0/callback/*`
-- Valid post logout redirect URIs: `https://<docs-base-domain>/*`
-- Web origins: `https://<docs-base-domain>`
-
-##### Capability config
-
-- Client authentication: On
-- Authorization: Off
-- Authentication flow: Standard flow
-
-##### Find the Client Secret
-
-Find it in **Clients > impress > credentials**, named **Client secret*.
-
-##### Optional : Add an identity provider
-
-You can choose among different identity providers (GitHub, Google, etc, and even Clever Cloud).
-
-#### Inject the Keycloak variables in the **backend** application
-
-```env
-OIDC_OP_AUTHORIZATION_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/auth"
-OIDC_OP_JWKS_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/certs"
-OIDC_OP_LOGOUT_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/session/end"
-OIDC_OP_TOKEN_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/token"
-OIDC_OP_USER_ENDPOINT="https://<cc_keycloak_hostname_value>/realms/impress/protocol/openid-connect/userinfo"
-OIDC_RP_CLIENT_ID="impress"
-OIDC_RP_CLIENT_SECRET="<client-secret>"
-OIDC_RP_SCOPES="openid email"
-OIDC_RP_SIGN_ALGO="RS256"
-```
-
-{{% /steps %}}
-
-### Redis
-
-Create a Redis add-on, but don't connect it to the application, since Docs requires an URI format that differs from the one provided by Clever Cloud. Instead, inject the variable in the **backend** application, using this format: `REDIS_URL="redis://default:<redis_password>@<redis_host>:<redis_port>"`
-
-### Cellar
-
-Docs uses s3 compatible storage to store uploaded files by users.
-
-{{% steps %}}
-
-#### Create a Cellar add-on
-
-#### Create a bucket
-
-#### Inject the Cellar variables in the **backend** application
-
-```env
-AWS_S3_ACCESS_KEY_ID="<cellar-addon_key_id_value>"
-AWS_S3_ENDPOINT_URL="<cellar-addon_host_value>"
-AWS_S3_REGION_NAME="auto"
-AWS_S3_SECRET_ACCESS_KEY="<cellar-addon_key_secret_value>"
-AWS_STORAGE_BUCKET_NAME="<name-of-your-bucket>"
-AWS_REQUEST_CHECKSUM_CALCULATION="when_required"
-AWS_RESPONSE_CHECKSUM_VALIDATION="when_required"
-```
-
-{{% /steps %}}
-
-## 🎓 Further Help
+## Learn more
 
 {{< cards >}}
-  {{< card link="<https://github.com/suitenumerique/docs/blob/main/docs/installation/kubernetes.md#preparation>" title="Docs documentation" subtitle="Installation instructions" icon="adjustments-horizontal" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://github.com/suitenumerique/docs" title="Docs source code" subtitle="Review releases, configuration and upstream deployment resources" icon="github" >}}
+  {{< card link="/developers/doc/applications/python/" title="Python applications" subtitle="Configure and deploy Python applications" icon="python" >}}
+  {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Build and deploy static applications" icon="static" >}}
+  {{< card link="/developers/doc/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
+  {{< card link="/developers/doc/applications/linux/" title="Linux applications" subtitle="Configure and deploy any applications" icon="linux" >}}
+  {{< card link="/developers/doc/addons/postgresql/" title="PostgreSQL" subtitle="Store persistent application data" icon="circle-stack" >}}
+  {{< card link="/developers/doc/addons/redis/" title="Redis" subtitle="Configure the managed in-memory data store" icon="redis" >}}
+  {{< card link="/developers/doc/addons/cellar/" title="Cellar" subtitle="Store files in S3-compatible object storage" icon="cellar" >}}
+  {{< card link="/developers/doc/addons/keycloak/" title="Keycloak" subtitle="Configure the managed identity and access service" icon="keycloak" >}}
 {{< /cards >}}

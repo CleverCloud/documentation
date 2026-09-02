@@ -40,13 +40,15 @@ The uv cache (`~/.cache/uv`) is included in the build cache to speed up subseque
 
 ## Run phase
 
-The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. It must start an HTTP server listening on `0.0.0.0:$PORT`. Clever Cloud sets `PORT` to `8080` by default. Set it to `9000` when you enable at least one [Request Flow middleware](/doc/develop/request-flow/#port-management).
+The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. It must start an HTTP server listening on `0.0.0.0` and the port provided through `PORT`. Clever Cloud sets `PORT` to `8080` by default. Use port `9000` when you enable at least one [Request Flow middleware](/doc/develop/request-flow/#port-management).
+
+`CC_PYTHON_UV_RUN_COMMAND` is executed directly, without shell variable expansion. If the server does not read `PORT` itself, use its numeric value in the command, for example `uv run uvicorn --host 0.0.0.0 --port 8080 myProject.asgi:application`.
 
 `CC_RUN_COMMAND` takes precedence over `CC_PYTHON_UV_RUN_COMMAND` if both are set.
 
 | Name                       | Description                                                    | Required | Default      |
 | -------------------------- | -------------------------------------------------------------- | -------- | ------------ |
-| `CC_PYTHON_UV_RUN_COMMAND` | Command to start the application (e.g. `uv run python app.py`) | Yes      | -            |
+| `CC_PYTHON_UV_RUN_COMMAND` | Command to start the application, without shell expansion      | Yes      | -            |
 | `CC_RUN_COMMAND`           | Overrides `CC_PYTHON_UV_RUN_COMMAND` if set                    | No       | -            |
 | `ENVIRONMENT`              | Set to `development` to include dev dependencies during build  | No       | `production` |
 | `PORT`                     | Port used by your HTTP server                                  | No       | `8080`       |
@@ -56,7 +58,7 @@ The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. I
 With native uv deployment:
 
 - No Nginx, uWSGI, or Gunicorn is involved
-- Your application manages its HTTP server and listens on the port defined by `PORT`
+- Your application manages its HTTP server and listens on the port provided through `PORT`
 - `CC_PYTHON_MODULE` and `CC_PYTHON_BACKEND` are ignored
 - [Redirection.io, Varnish and custom proxies](/doc/develop/request-flow/) are configured through Request Flow, not Nginx
 - [Server configuration](/doc/applications/python/servers/) settings do not apply

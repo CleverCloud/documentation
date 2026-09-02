@@ -28,14 +28,9 @@ git clone https://github.com/11ty/eleventy-base-blog myStaticApp
 
 ### Environment variables
 
-Next, configure the application with a pico instance with dedicated build, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
+Configure the output directory and build commands:
 
 ```bash
-clever scale --flavor pico
-
-# To select a bigger build instance, use:
-clever scale --build-flavor M
-
 clever env set CC_WEBROOT "/_site"
 clever env set CC_PRE_BUILD_HOOK "npm install"
 clever env set CC_BUILD_COMMAND "npx @11ty/eleventy"
@@ -47,5 +42,6 @@ clever env set CC_BUILD_COMMAND "npx @11ty/eleventy"
 
 {{< cards >}}
   {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
-  {{< card link="<https://www.11ty.dev/docs/>" title="Learn Eleventy (11ty)" subtitle="How to write and organize your content" icon="11ty" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://www.11ty.dev/docs/" title="Learn Eleventy (11ty)" subtitle="How to write and organize your content" icon="11ty" >}}
 {{< /cards >}}

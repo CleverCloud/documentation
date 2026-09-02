@@ -12,17 +12,15 @@ clever login
 clever profile
 ```
 
-Go to the folder where you want to create your application, and run the following command:
+Go to the folder where you want to create your application, initialize a Git repository and create the linked application:
 
 ```bash
 cd myStaticApp
-clever create -t static
-
-# If the folder is not a git repository, initialize it:
 git init
+clever create -t static
 ```
 
-To deploy on Clever Cloud, your local folder need to be an initialized git repository linked to an application. If you already have an application on Clever Cloud and want to link it to the current local folder:
+To deploy on Clever Cloud, your local folder needs to be an initialized Git repository linked to an application. If you already have an application on Clever Cloud and want to link it to the current local folder:
 
 ```bash
 clever link your_app_name_or_ID

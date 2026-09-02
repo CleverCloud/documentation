@@ -1,37 +1,46 @@
 ---
 type: docs
-linkTitle: Node-statsd
-title: Export Node.js metrics with node-statsd
-description: Configure node-statsd package on your Node.js application to push custom metrics with detailed step-by-step tutorials
+linkTitle: Node.js metrics
+title: Export Node.js metrics with hot-shots
+description: Send custom application metrics to Clever Cloud from a Node.js application with the hot-shots StatsD client
 keywords:
-- Node.js
-- node-statsd
-- metrics monitoring
-- application monitoring
-- custom metrics
+- node.js
+- hot-shots
+- statsd
+- metrics
+- monitoring
 aliases:
 - /doc/deploy/application/javascript/tutorials/node-statsd-nodejs-metrics
 ---
 
-## Overview
+[Clever Cloud applications expose a StatsD endpoint](/doc/metrics/#publish-your-own-metrics) that accepts custom metrics over UDP. For Node.js applications, use the maintained [`hot-shots` client](https://github.com/brightcove/hot-shots).
 
-In Node.js, you can use the `node-statsd` package to push custom metrics.
+Install it as an application dependency:
 
-### Configure metrics for your Node.js application
+```bash
+npm install hot-shots
+```
 
-You only need the `node-statsd` package in your [dependencies](/doc/applications/nodejs#npm-module-dependencies):
-
-Then add this Hello World code to your application and modify it to fit your needs:
+Create a client with its default configuration, then send the metrics your application needs:
 
 ```javascript
-// npm install node-statsd
+const StatsD = require("hot-shots")
 
-const StatsD = require('node-statsd'),
-      client = new StatsD();
+const client = new StatsD()
 
-// Increment: Increments a stat by a value (default is 1)
-client.increment('my_counter');
+// Increment a counter by one
+client.increment("my_counter")
 
-// Gauge: Gauge a stat by a specified amount
-client.gauge('my_gauge', 123.45);
+// Record the current value of a gauge
+client.gauge("my_gauge", 123.45)
 ```
+
+The default host and port used by `hot-shots` match the StatsD endpoint available to Clever Cloud applications, so no additional environment variable is required. Use a stable metric name and add only low-cardinality tags when you need to distinguish a small number of cases.
+
+## Learn more
+
+{{< cards >}}
+  {{< card link="/doc/metrics/" title="Clever Cloud metrics" subtitle="Collect and query application metrics" icon="chart-bar" >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://github.com/brightcove/hot-shots" title="hot-shots documentation" subtitle="Configure the Node.js StatsD client" icon="github" >}}
+{{< /cards >}}

@@ -2,94 +2,156 @@
 type: docs
 linkTitle: Drupal
 title: Deploy a Drupal website
-description: Deploy Drupal CMS on Clever Cloud with complete setup guide including database configuration, file management, and security setup
+description: Deploy Drupal on Clever Cloud with Composer, PHP, MySQL and persistent file storage
 keywords:
+- cms
+- composer
 - drupal
+- mysql
 - php
-- content management
-- mysql integration
-- website deployment
 aliases:
 - /doc/deploy/application/php/tutorials/tutorial-drupal
 - /doc/php/tutorial-drupal
 - /php/tutorial-drupal
 ---
 
-## Overview
+{{< hextra/hero-subtitle >}}
+  Deploy Drupal on Clever Cloud with a managed MySQL database and persistent public files.
+{{< /hextra/hero-subtitle >}}
 
-[Drupal](https://new.drupal.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
+[Drupal](https://www.drupal.org/) runs on Clever Cloud's [PHP runtime](/developers/doc/applications/php/). This guide follows Drupal's recommended Composer layout, where the public document root is the `web` directory.
 
-{{% content "create-application" %}}
+This guide was tested with Drupal 11.4.5 and PHP 8.4. Check the [Drupal system requirements](https://www.drupal.org/docs/getting-started/system-requirements) before selecting versions for a different release.
 
-{{% content "set-env-vars" %}}
+## Prepare Drupal
 
-{{% content "new-relic" %}}
+Install [Composer](https://getcomposer.org/download/) and create the project using the current supported Drupal branch:
 
-{{% content "env-injection" %}}
-
-{{% content "link-addon" %}}
-
-## Configure your database
-
-Make sure you have created a MySQL database add-on in the Clever Cloud console, and that it's linked to your application. When it's done, you will be able to access all of your add-on environment variables from the application. You can use them as `DATABASE_URL=$MYSQL_ADDON_URI`.
-
- {{% content "deploy-git" %}}
-
-### Git specific Drupal instructions
-
-We at this point assume you have downloaded the source files of drupal from [drupal.org](https://new.drupal.org/download) and already have linked your MySQL add-on.
-
-- Open `.gitignore` file and delete `sites/*/settings*.php` line
-- Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
-- Open `sites/default/settings.php` and line 213, replace
-
-```php{linenos=table}
-$databases = array();
+```bash
+composer create-project drupal/recommended-project:^11.4 myDrupal
+cd myDrupal
+git init
 ```
 
-by
+Commit `composer.lock` so deployments install the versions you tested.
 
-```php{linenos=table}
-    $databases = array (
-      'default' =>
-        array (
-          'default' =>
-          array (
-            'database' => getenv('MYSQL_ADDON_DB'),
-            'username' => getenv('MYSQL_ADDON_USER'),
-            'password' => getenv('MYSQL_ADDON_PASSWORD'),
-            'host' => getenv('MYSQL_ADDON_HOST'),
-            'port' => getenv('MYSQL_ADDON_PORT'),
-            'driver' => 'mysql',
-            'prefix' => '',
-          ),
-        ),
-    );
+Create `web/sites/default/settings.php` with the database, proxy and security configuration:
+
+```php {filename="web/sites/default/settings.php"}
+<?php
+
+$databases['default']['default'] = [
+  'database' => getenv('MYSQL_ADDON_DB'),
+  'username' => getenv('MYSQL_ADDON_USER'),
+  'password' => getenv('MYSQL_ADDON_PASSWORD'),
+  'host' => getenv('MYSQL_ADDON_HOST'),
+  'port' => getenv('MYSQL_ADDON_PORT'),
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+  'prefix' => '',
+];
+
+$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT');
+$settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy_addresses'] = array_filter(array_map('trim', explode(',', getenv('CC_REVERSE_PROXY_IPS') ?: '')));
+
+$trusted_host = getenv('DRUPAL_TRUSTED_HOST_PATTERN');
+if ($trusted_host) {
+  $settings['trusted_host_patterns'] = [$trusted_host];
+}
 ```
 
-- Replace the line `$settings['hash_salt'] = ''` (`$drupal_hash_salt` for Drupal 7) with `$settings['hash_salt'] = getenv('DRUPAL_SALT')`. You can generate salts with [this link](https://www.passwordtool.hu/). Add a new `DRUPAL_SALT` [environment variable](/doc/applications/php#configure-your-php-application) to the application with the salt you have generated.
-- As mentioned in this [article](/doc/addons/fs-bucket), with Git deployments, files that are uploaded by users must be
-persisted in a File System Bucket. In order to do so, [add a File Bucket](/doc/addons/fs-bucket) via the console.
-- At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud`
-folder in which you create a `buckets.json` file).
-- Copy the `bucket.json` content from the FS bucket addon dashboard (make sure to edit the `folder` field):
+Keep generated dependencies and persistent files out of Git. The recommended project already provides suitable ignore rules; verify that they include at least `vendor`, `web/core`, contributed extensions and `web/sites/*/files`.
 
-```javascript{linenos=table}
-[
-   {
-      "bucket_host": "<bucket-id>-fsbucket.services.clever-cloud.com",
-      "folder": "/sites/default/files"
-   }
-]
+## Create the application and services
+
+Install [Clever Tools](/developers/doc/cli/), log in, then create a PHP application and a linked MySQL add-on:
+
+```bash
+npm i -g clever-tools
+clever login
+
+clever create -t php -a myDrupal
+clever addon create mysql-addon myDrupalDatabase -p xs_sml --link myDrupal
 ```
 
-- Send these Drupal files via Git.
-- When finished, get the url that you can find in the *domains* panel in the left sidebar. Then open the following link:
+Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-`https://yourapplication.cleverapps.io/install.php`
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
 
-Do not forget the **/install.php** page otherwise installation will not happen.
+```bash
+clever domain
+clever domain add your.website.tld
+```
 
-{{% content "deploy-ftp" %}}
+Set the public directory, PHP version and a stable random salt. Drupal's Composer scaffold is implemented by Composer scripts, so override the PHP runtime's default `--no-scripts` flag:
 
-{{% content "more-config" %}}
+```bash
+clever env set CC_WEBROOT /web
+clever env set CC_PHP_VERSION 8.4
+clever env set DRUPAL_HASH_SALT "$(openssl rand -base64 48)"
+clever env set -- CC_PHP_COMPOSER_FLAGS "--no-interaction --no-progress --optimize-autoloader"
+```
+
+Do not change `DRUPAL_HASH_SALT` after the site starts using hashes and one-time links.
+
+For an exact custom domain, add a trusted host pattern. Escape dots because Drupal expects a regular expression:
+
+```bash
+clever env set DRUPAL_TRUSTED_HOST_PATTERN '^your\.website\.tld$'
+```
+
+Create and link an FS Bucket for public files, then mount it into the absent `web/sites/default/files` directory:
+
+```bash
+clever addon create fs-bucket myDrupalFiles --link myDrupal
+
+FS_BUCKET_HOST="$(clever env -F json | jq -er 'first(.fromAddons[] | select(.addonName == "myDrupalFiles") | .env[] | select(.name == "BUCKET_HOST") | .value)')"
+clever env set CC_FS_BUCKET "/web/sites/default/files:${FS_BUCKET_HOST}"
+unset FS_BUCKET_HOST
+```
+
+The name lookup expects the add-on name to be unique. If several add-ons use that name, retrieve the host with `clever addon env ADDON_ID -F json` and the ID returned when the add-on was created. Do not create or commit the mount target, because an existing non-empty directory prevents the FS Bucket from being mounted.
+
+You can also create and link these resources from the [Clever Cloud Console](https://console.clever-cloud.com/).
+
+## Deploy and install Drupal
+
+Commit and deploy the project:
+
+```bash
+git add .
+git commit -m "Deploy Drupal"
+
+clever deploy
+clever open
+```
+
+Composer installs Drupal and generates the `web` directory during the build. The browser then opens Drupal's installer. Choose a language and installation profile. The database screen reads its host, name, user and port from `settings.php`; enter `MYSQL_ADDON_PASSWORD`, available in the application's environment variables or the linked MySQL add-on, then continue with the site and administrator settings.
+
+After installation, the database contains Drupal configuration and content while the FS Bucket contains public uploads and generated CSS or JavaScript aggregates. Both remain available when an application instance is replaced.
+
+## Update Drupal
+
+Update the project locally with Composer, review the changes and commit the updated lock file:
+
+```bash
+composer update "drupal/core-*" --with-all-dependencies
+git add composer.json composer.lock
+git commit -m "Update Drupal"
+
+clever deploy
+```
+
+Follow Drupal's [update procedure](https://www.drupal.org/docs/updating-drupal) and apply pending database updates after deploying compatible code. Back up the database and persistent files before a major upgrade.
+
+## Learn more
+
+{{< cards >}}
+  <!-- markdownlint-disable-next-line MD034 -->
+  {{< card link="https://www.drupal.org/docs/getting-started/installing-drupal" title="Drupal installation" subtitle="Install and configure a Drupal website" icon="drupal" >}}
+  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/addons/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
+  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+{{< /cards >}}

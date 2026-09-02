@@ -1,3 +1,6 @@
 {
-  "gitignore": true
+  "gitignore": true,
+  // Hugo templates for the Markdown output format carry a .md suffix but are Go
+  // templates, not Markdown. See layouts/page.markdown.md and layouts/_partials/.
+  "ignores": ["layouts/**"]
 }

@@ -1,6 +1,6 @@
 ---
 type: docs
-weight: 2
+weight: 16
 linkTitle: Find Help
 title: Find Help
 description: Access support resources including professional support options, FAQ, and troubleshooting guides for Clever Cloud platform issues

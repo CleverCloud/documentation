@@ -23,4 +23,4 @@ It's based on a Java application and a PostgreSQL database. Once deployed you'll
 
 Feel free to let us know what you think and ask your questions in [our GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/metabase).
 
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

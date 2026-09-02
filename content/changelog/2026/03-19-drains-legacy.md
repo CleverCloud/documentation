@@ -26,4 +26,4 @@ To migrate to the new drain stack, just create a new drain with Clever Tools, th
 
 If you have any questions or if you need help with the migration, contact [our support team](https://console.clever-cloud.com/ticket-center-choice).
 
-- [Learn more about Clever Tools drain command](/doc/cli/logs-drains/)
+- [Learn more about Clever Tools drain command](/doc/manage/cli/logs-drains/)

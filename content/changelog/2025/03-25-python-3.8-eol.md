@@ -18,5 +18,5 @@ To upgrade to a more recent version of Python, you only need to update `CC_PYTHO
 
 If you need to keep Python 3.8 for legacy reasons, you can [use uv](https://docs.astral.sh/uv/guides/install-python/#installing-a-specific-version) or [Mise](https://mise.jdx.dev/lang/python.html) which are available in all our recently updated images.
 
-- [Learn more about Python on Clever Cloud](/doc/applications/python/)
-- [Learn more about environment variables on Clever Cloud](/doc/reference/reference-environment-variables/)
+- [Learn more about Python on Clever Cloud](/doc/deploy/applications/python/)
+- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)

@@ -23,4 +23,4 @@ clever addon create metabase yourMetabaseNameOrId --option access-domain=metabas
 
 This domain DNS configuration needs to point to Clever Cloud's servers. For example, if the Metabase add-on is deployed in the `par` (Paris) region, you need to create a CNAME record pointing to `domain.par.clever-cloud.com.`.
 
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

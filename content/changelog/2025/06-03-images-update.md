@@ -42,6 +42,6 @@ This release introduces [Bun](https://bun.sh) native support on Clever Cloud, wi
 
 ## FrankenPHP custom port
 
-You can also set `CC_FRANKENPHP_PORT` to use a different port than the default `8080`. It allows you to use services in front of your FrankenPHP application such as [Redirection.io](/doc/reference/reference-environment-variables/#use-redirectionio-as-a-proxy) for example.
+You can also set `CC_FRANKENPHP_PORT` to use a different port than the default `8080`. It allows you to use services in front of your FrankenPHP application such as [Redirection.io](/doc/develop/common-configuration/environment-variables/reference/#use-redirectionio-as-a-proxy) for example.
 
-- [Learn more about FrankenPHP on Clever Cloud](/doc/applications/frankenphp/)
+- [Learn more about FrankenPHP on Clever Cloud](/doc/deploy/applications/frankenphp/)

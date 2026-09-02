@@ -18,7 +18,7 @@ keywords:
   Deploy Ghost, an open source publishing platform, on Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-[Ghost](https://ghost.org/) is a publishing platform for websites, memberships and newsletters. This guide deploys Ghost on the [Linux runtime](/developers/doc/applications/linux/) with [Mise](https://mise.jdx.dev/), [MySQL](/developers/doc/addons/mysql/), [Cellar S3-compatible object storage](/developers/doc/addons/cellar/) and an [FS Bucket](/developers/doc/addons/fs-bucket/).
+[Ghost](https://ghost.org/) is a publishing platform for websites, memberships and newsletters. This guide deploys Ghost on the [Linux runtime](/developers/doc/deploy/applications/linux/) with [Mise](https://mise.jdx.dev/), [MySQL](/developers/doc/deploy/databases/mysql/), [Cellar S3-compatible object storage](/developers/doc/deploy/storage/cellar/) and an [FS Bucket](/developers/doc/deploy/storage/fs-bucket/).
 
 MySQL stores publications, users and settings. Cellar stores uploaded images, media and files through Ghost's built-in S3 storage adapter. The FS Bucket persists themes and routing configuration uploaded from Ghost Admin.
 
@@ -36,7 +36,7 @@ git init
 
 This guide targets Ghost `6.60.0`. To deploy another release, adapt `GHOST_VERSION` and use a Node.js version accepted by that release as described in the update section.
 
-[Mise is available on Clever Cloud](/developers/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Ghost release, install its production dependencies and define the commands used by the Linux runtime:
+[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Ghost release, install its production dependencies and define the commands used by the Linux runtime:
 
 ```toml {filename="mise.toml"}
 [tools]
@@ -101,7 +101,7 @@ The [HTTP backend](https://mise.jdx.dev/dev-tools/backends/http.html) downloads 
 
 ## Create the application and add-ons
 
-Install [Clever Tools](/developers/doc/cli/), log in and create a Linux application with an alias used to link the add-ons:
+Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Linux application with an alias used to link the add-ons:
 
 ```bash
 npm i -g clever-tools
@@ -112,7 +112,7 @@ clever create -t linux -a myGhost
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -260,7 +260,7 @@ The public publication is available from the application URL, while Admin is ava
 
 ## Update Ghost
 
-Export your content from Ghost Admin and make sure you have a recent [MySQL backup](/developers/doc/cli/addons/#database-backups) before updating. Check the [`engines.node` requirement](https://github.com/TryGhost/Ghost/blob/v6.60.0/ghost/core/package.json) of the Ghost release you want to use, then update both version variables when necessary. For example:
+Export your content from Ghost Admin and make sure you have a recent [MySQL backup](/developers/doc/manage/cli/addons/#database-backups) before updating. Check the [`engines.node` requirement](https://github.com/TryGhost/Ghost/blob/v6.60.0/ghost/core/package.json) of the Ghost release you want to use, then update both version variables when necessary. For example:
 
 ```bash
 clever env set GHOST_VERSION 6.60.0
@@ -274,8 +274,8 @@ The rebuild downloads the selected release and installs dependencies for the con
 
 {{< cards >}}
   {{< card link="https://docs.ghost.org/" title="Ghost documentation" subtitle="Configure and manage a Ghost publication" icon="ghost" >}}
-  {{< card link="/developers/doc/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" subtitle="Explore managed MySQL databases" icon="mysql" >}}
-  {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="cellar" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persist files across deployments" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/databases/mysql" title="MySQL" subtitle="Explore managed MySQL databases" icon="mysql" >}}
+  {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="cellar" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="Persist files across deployments" icon="fsbucket" >}}
 {{< /cards >}}

@@ -36,7 +36,7 @@ clever metabase rebuild metabase_id
 clever otoroshi version update otoroshi_id
 ```
 
-- [Learn more about Operators commands in Clever Tools](/doc/cli/operators/)
+- [Learn more about Operators commands in Clever Tools](/doc/manage/cli/operators/)
 
 ![Check Metabase Version command](/images/clever-tools-metabase-version-check.webp)
 
@@ -56,7 +56,7 @@ clever emails remove-all
 clever ssh-keys remove-all
 ```
 
-- [Learn more about emails and ssh-keys commands in Clever Tools](/doc/cli/#emails)
+- [Learn more about emails and ssh-keys commands in Clever Tools](/doc/manage/cli/#emails)
 
 ## Application configuration as Clever Task
 
@@ -69,11 +69,11 @@ clever config set task false
 clever config update --name "My new task name" --enable-task
 ```
 
-- [Learn more about config command in Clever Tools](/doc/cli/applications/configuration/)
+- [Learn more about config command in Clever Tools](/doc/manage/cli/applications/configuration/)
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

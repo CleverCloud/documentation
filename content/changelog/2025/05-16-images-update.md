@@ -34,4 +34,4 @@ We updated all our images. Deployment is in progress for all our users.
 
 This release introduces `CC_NODE_VERSION` support [for Node.js applications](/changelog/2025/05-16-node-versions/). When an application is restarted for image update, it won't appear as `Maintenance` anymore, but as `Maintenance/ImageUpdate`
 
-- [Learn more about Node.js on Clever Cloud](/doc/applications/nodejs)
+- [Learn more about Node.js on Clever Cloud](/doc/deploy/applications/nodejs)

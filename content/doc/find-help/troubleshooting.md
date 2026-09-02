@@ -28,7 +28,7 @@ Clever Cloud use Git to transfer your code and application's assets from your lo
 
 For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
 
-Follow the [File System buckets documentation page](/doc/addons/fs-bucket) to set up an FS Bucket for your application.
+Follow the [File System buckets documentation page](/doc/deploy/storage/fs-bucket) to set up an FS Bucket for your application.
 {{% /details %}}
 
 {{% details title="Empty repository git error" closed="true" %}}
@@ -97,7 +97,7 @@ You can find your deployment url under the Clever Cloud console in your applicat
 
 {{% details title="Fail to push to a repository" closed="true" %}}
 
-It might be because your SSH agent is not properly configured. Please check [the SSH documentation page](/doc/account/ssh-keys-management#checking-of-existing-ssh-keys).
+It might be because your SSH agent is not properly configured. Please check [the SSH documentation page](/doc/account/ssh-keys#checking-of-existing-ssh-keys).
 {{% /details %}}
 
 ## Deployments issues
@@ -169,7 +169,7 @@ Clever Cloud uses [Sōzu](https://www.sozu.io) as its load balancer and reverse 
 For operations that may exceed the 180-second limit, implement one of these approaches:
 
 1. Use long polling to send periodic status checks from the client
-2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/develop/workers/)
+2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/develop/common-configuration/workers/)
 3. [Purchase a custom load balancer from Clever Cloud](https://www.clever.cloud/fr/contact/) with different timeouts
 
 ### Additional considerations
@@ -177,7 +177,7 @@ For operations that may exceed the 180-second limit, implement one of these appr
 - Design your application architecture to handle timeouts gracefully
 - Break up long-running operations into smaller tasks
 
-Use your embedded [Grafana](/doc/metrics/) to monitor resource usage when implementing any of these solutions.
+Use your embedded [Grafana](/doc/develop/observability/metrics/) to monitor resource usage when implementing any of these solutions.
 
 ### Diagnose network issues with `curl`
 

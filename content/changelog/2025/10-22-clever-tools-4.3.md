@@ -15,11 +15,11 @@ authors:
 excludeSearch: true
 ---
 
-[Clever Tools 4.3.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.3.0) is available. It brings `k8s` command to manage [Clever Kubernetes Engine](/doc/kubernetes), currently in private access.
+[Clever Tools 4.3.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.3.0) is available. It brings `k8s` command to manage [Clever Kubernetes Engine](/doc/deploy/kubernetes), currently in private access.
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

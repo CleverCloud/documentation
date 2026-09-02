@@ -17,7 +17,7 @@ keywords:
   SvelteKit is a full-stack web framework for Svelte, with support for static site generation, single-page applications, and server-side rendering.
 {{< /hextra/hero-subtitle >}}
 
-Clever Cloud supports all three SvelteKit rendering modes. Static site generation (SSG) and single-page applications (SPA) use [@sveltejs/adapter-static](https://svelte.dev/docs/kit/adapter-static) and the [Static runtime](/developers/doc/applications/static/). Server-side rendering (SSR) uses [@sveltejs/adapter-node](https://svelte.dev/docs/kit/adapter-node) and the [Node.js runtime](/developers/doc/applications/nodejs/).
+Clever Cloud supports all three SvelteKit rendering modes. Static site generation (SSG) and single-page applications (SPA) use [@sveltejs/adapter-static](https://svelte.dev/docs/kit/adapter-static) and the [Static runtime](/developers/doc/deploy/applications/static/). Server-side rendering (SSR) uses [@sveltejs/adapter-node](https://svelte.dev/docs/kit/adapter-node) and the [Node.js runtime](/developers/doc/deploy/applications/nodejs/).
 
 SSG is well suited to content-oriented sites whose pages do not change for each visitor. SPA works well for interactive applications where search engine indexing is not a priority. Use SSR when pages depend on real-time data or user-specific state.
 
@@ -106,7 +106,7 @@ export default defineConfig({
 
 ### Create a Static application
 
-Install [Clever Tools](/developers/doc/cli/), log in, initialize the Git repository, and create a Static application:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize the Git repository, and create a Static application:
 
 ```bash
 npm i -g clever-tools
@@ -172,7 +172,7 @@ export default defineConfig({
 
 ### Create a Node.js application
 
-Install [Clever Tools](/developers/doc/cli/), log in, initialize the Git repository, and create a Node.js application:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize the Git repository, and create a Node.js application:
 
 ```bash
 npm i -g clever-tools
@@ -202,7 +202,7 @@ clever env set PROTOCOL_HEADER "x-forwarded-proto"
 clever env set HOST_HEADER "host"
 ```
 
-Clever Cloud provides the `PORT` environment variable expected by `adapter-node`. `PROTOCOL_HEADER` and `HOST_HEADER` let SvelteKit reconstruct the public URL from requests forwarded by Clever Cloud, including requests made through a [custom domain](/developers/doc/administrate/domain-names/).
+Clever Cloud provides the `PORT` environment variable expected by `adapter-node`. `PROTOCOL_HEADER` and `HOST_HEADER` let SvelteKit reconstruct the public URL from requests forwarded by Clever Cloud, including requests made through a [custom domain](/developers/doc/develop/common-configuration/domain-names/).
 
 ## Deploy the application
 
@@ -216,7 +216,7 @@ clever deploy
 clever open
 ```
 
-You can display the application's domains or add a [custom domain](/developers/doc/administrate/domain-names/):
+You can display the application's domains or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -226,7 +226,7 @@ clever domain add your.website.tld
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
-  {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
   {{< card link="https://svelte.dev/docs/kit/adapters" title="SvelteKit adapters" subtitle="Choose and configure a SvelteKit adapter" icon="svelte" >}}
 {{< /cards >}}

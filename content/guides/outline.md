@@ -17,7 +17,7 @@ keywords:
   Deploy Outline, an open source knowledge base for teams, on Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-[Outline](https://www.getoutline.com/) is a collaborative knowledge base and wiki. This guide deploys it on the [Linux runtime](/developers/doc/applications/linux/) with [Mise](https://mise.jdx.dev/), [PostgreSQL](/developers/doc/addons/postgresql/), [Redis](/developers/doc/addons/redis/), and [Cellar S3-compatible object storage](/developers/doc/addons/cellar/). Outline recommends Docker for self-hosted installations, but it also [documents installation from source](https://docs.getoutline.com/s/hosting/doc/from-source-BlBxrNzMIP).
+[Outline](https://www.getoutline.com/) is a collaborative knowledge base and wiki. This guide deploys it on the [Linux runtime](/developers/doc/deploy/applications/linux/) with [Mise](https://mise.jdx.dev/), [PostgreSQL](/developers/doc/deploy/databases/postgresql/), [Redis](/developers/doc/deploy/databases/redis/), and [Cellar S3-compatible object storage](/developers/doc/deploy/storage/cellar/). Outline recommends Docker for self-hosted installations, but it also [documents installation from source](https://docs.getoutline.com/s/hosting/doc/from-source-BlBxrNzMIP).
 
 ## Prepare the application
 
@@ -33,7 +33,7 @@ git init
 
 This guide targets Outline `v1.9.2`. To deploy another Outline release, adjust `OUTLINE_VERSION` and `CC_NODE_VERSION` as described below.
 
-[Mise is available on Clever Cloud](/developers/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Outline release during the build phase, install its dependencies, and define the commands used by the Linux runtime:
+[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Outline release during the build phase, install its dependencies, and define the commands used by the Linux runtime:
 
 ```toml {filename="mise.toml"}
 [tools."http:outline"]
@@ -74,7 +74,7 @@ The Mise environment maps the variables injected by linked Clever Cloud add-ons 
 
 ## Create the application and add-ons
 
-Install [Clever Tools](/developers/doc/cli/), log in, and create a Linux application with an alias used to link the add-ons:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, and create a Linux application with an alias used to link the add-ons:
 
 ```bash
 npm i -g clever-tools
@@ -85,7 +85,7 @@ clever create -t linux -a myOutline
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -250,7 +250,7 @@ clever open
 
 ## Update Outline
 
-Make sure you have a recent [PostgreSQL backup](/developers/doc/addons/postgresql/#database-daily-backup-and-retention) before updating. Check the `engines.node` requirements in the `package.json` of the Outline release you want to deploy, such as the [file for v1.9.2](https://github.com/outline/outline/blob/v1.9.2/package.json#L44-L46). Update both version variables when necessary, then rebuild the current commit so Mise downloads and builds the new release. For example, these commands update an older deployment to Outline v1.9.2:
+Make sure you have a recent [PostgreSQL backup](/developers/doc/deploy/databases/postgresql/#database-daily-backup-and-retention) before updating. Check the `engines.node` requirements in the `package.json` of the Outline release you want to deploy, such as the [file for v1.9.2](https://github.com/outline/outline/blob/v1.9.2/package.json#L44-L46). Update both version variables when necessary, then rebuild the current commit so Mise downloads and builds the new release. For example, these commands update an older deployment to Outline v1.9.2:
 
 ```bash
 clever env set OUTLINE_VERSION v1.9.2
@@ -263,9 +263,9 @@ Replace the example values with the versions you selected. Outline applies pendi
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
-  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="pg" >}}
-  {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Explore managed Redis databases" icon="redis" >}}
-  {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="pg" >}}
+  {{< card link="/developers/doc/deploy/databases/redis" title="Redis" subtitle="Explore managed Redis databases" icon="redis" >}}
+  {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="fsbucket" >}}
   {{< card link="https://docs.getoutline.com/s/hosting" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
 {{< /cards >}}

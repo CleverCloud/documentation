@@ -34,7 +34,7 @@ The `clever addon create` command also uses `--org` to validate the requested re
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favourite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favourite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```bash
 npm update -g clever-tools

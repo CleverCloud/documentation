@@ -19,7 +19,7 @@ excludeSearch: true
 
 Keycloak 26.7.0 fixes four additional vulnerabilities: [CVE-2026-9796](https://nvd.nist.gov/vuln/detail/CVE-2026-9796), [CVE-2026-9689](https://nvd.nist.gov/vuln/detail/CVE-2026-9689), [CVE-2026-9798](https://nvd.nist.gov/vuln/detail/CVE-2026-9798) and [CVE-2026-11986](https://nvd.nist.gov/vuln/detail/CVE-2026-11986). It also promotes the SCIM API to preview, adds a preview of simplified multi-cluster high availability without external caches and supports step-up authentication for SAML clients.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.0` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.0` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -29,4 +29,4 @@ clever keycloak version update yourKeycloakNameOrId
 clever keycloak version update yourKeycloakNameOrId 26.7.0
 ```
 
-- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/deploy/services/keycloak)

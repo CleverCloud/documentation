@@ -36,7 +36,7 @@ The extension also gains a self-describing gateway: two endpoints, `GET /provide
 
 The 0.0.80 release added bidirectional Agent-to-Agent (A2A) support, so Otoroshi agents can be published as standards-compliant services and consume remote A2A agents as tools. MCP virtual servers bundle tool functions, filtering, OAuth security, rate limiting and Zero-Trust controls into a single persisted entity that can be published to the MCP registry. Zero-Trust controls add anti-rug-pull pinning to detect tool definition changes, along with tool-poisoning and prompt-injection scanning. A local Rampart PII guardrail redacts personally identifiable information offline through an ONNX model, and OAuth hardening brings audience validation ([RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707)) and opaque token introspection ([RFC 7662](https://datatracker.ietf.org/doc/html/rfc7662)). An Exa search engine provider and real-time MCP and LLM gateway metrics round out the release.
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.17.0_1783064693` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.17.0_1783064693` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -46,4 +46,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.17.0_1783064693
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

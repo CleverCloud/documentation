@@ -1,7 +1,7 @@
 ---
 type: docs
 linkTitle: Getting started
-weight: 1
+weight: 10
 title: Deploy your first application and resources
 description: Get started with Clever Cloud by creating an account, deploying your first application, and learning essential platform concepts
 keywords:
@@ -75,7 +75,7 @@ An application is defined on Clever Cloud by the following elements:
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
 > [!NOTE]
-> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/addons/fs-bucket/)), object storage ([Cellar](/doc/addons/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/addons/).
+> Clever Cloud runtimes are immutable infrastructure and always start with a fresh, up-to-date, system. If you need persistent storage, use a file storage ([FS Bucket](/doc/deploy/storage/fs-bucket/)), object storage ([Cellar](/doc/deploy/storage/cellar)) or one of the many Clever Cloud's [database-as-a-service](/doc/deploy/addons/).
 
 ### How it Works
 
@@ -86,24 +86,24 @@ The log system retrieves all output from the application and displays it in the 
 ### Supported Platforms
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/dotnet" title=".NET" icon="dotnet" >}}
-  {{< card link="/developers/doc/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/developers/doc/applications/elixir" title="Elixir" icon="elixir" >}}
-  {{< card link="/developers/doc/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
-  {{< card link="/developers/doc/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/applications/haskell" title="Haskell" icon="haskell">}}
-  {{< card link="/developers/doc/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
-  {{< card link="/developers/doc/applications/linux" title="Linux" icon="linux" >}}
-  {{< card link="/developers/doc/applications/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/developers/doc/applications/nodejs" title="Node.js & Bun" icon="node" >}}
-  {{< card link="/developers/doc/applications/php" title="PHP with Apache" icon="php" >}}
-  {{< card link="/developers/doc/applications/python" title="Python with uv support" icon="python" >}}
-  {{< card link="/developers/doc/applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="/developers/doc/applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="/developers/doc/applications/scala" title="Scala" icon="scala" >}}
-  {{< card link="/developers/doc/applications/static" title="Static" icon="static" >}}
-  {{< card link="/developers/doc/applications/static-apache" title="Static with Apache" icon="feather" >}}
-  {{< card link="/developers/doc/applications/v" title="V (Vlang)" icon="v" >}}
+  {{< card link="/developers/doc/deploy/applications/dotnet" title=".NET" icon="dotnet" >}}
+  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="docker" >}}
+  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/deploy/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="go" >}}
+  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="haskell">}}
+  {{< card link="/developers/doc/deploy/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/applications/meteor" title="Meteor.js" icon="meteor" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/ruby" title="Ruby" icon="ruby" >}}
+  {{< card link="/developers/doc/deploy/applications/rust" title="Rust" icon="rust" >}}
+  {{< card link="/developers/doc/deploy/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Static" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static-apache" title="Static with Apache" icon="feather" >}}
+  {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="v" >}}
 {{< /cards >}}
 
 ### Create an Application Step by Step
@@ -137,7 +137,7 @@ Choose the language or the framework you want to deploy.
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
-- [Learn more about scaling & instances size](/doc/administrate/scalability)
+- [Learn more about scaling & instances size](/doc/develop/common-configuration/scaling)
 
 #### Name your application
 
@@ -145,8 +145,8 @@ Enter the name and the description of your application.
 
 #### Optional steps
 
-- The wizard will offer you to [add an add-on](/doc/addons) to your application
-- The wizard will offer you to [add environment variables](/doc/develop/env-variables) to your application
+- The wizard will offer you to [add an add-on](/doc/deploy/addons) to your application
+- The wizard will offer you to [add environment variables](/doc/develop/common-configuration/environment-variables) to your application
 
 {{% /steps %}}
 
@@ -156,7 +156,7 @@ Enter the name and the description of your application.
   {{< tab name="Git" icon="git" >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/reference/reference-environment-variables/).
+  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/develop/common-configuration/environment-variables/reference/).
 
   Follow these steps to deploy your application:
 
@@ -205,7 +205,7 @@ git push <remote-name> <branch-name>:master
 
   To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
 
-  Deploy your application via FTP, create a [FS Bucket](/doc/addons/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
+  Deploy your application via FTP, create a [FS Bucket](/doc/deploy/storage/fs-bucket) with an ID matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
   [More documentation about Filezilla](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29).
 
@@ -226,7 +226,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 **Add your SSH key to your profile here:**
 <https://console.clever-cloud.com/users/me/ssh-keys>
 
-The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys-management/)
+The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys/)
 
 {{% /details %}}
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}
@@ -288,34 +288,34 @@ Clever Cloud provides multiple add-ons to work with your applications:
 ##### Databases
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
-  {{< card link="/developers/doc/addons/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
-  {{< card link="/developers/doc/addons/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
-  {{< card link="/developers/doc/addons/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
-  {{< card link="/developers/doc/addons/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
+  {{< card link="/developers/doc/deploy/databases/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
+  {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/developers/doc/deploy/databases/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
+  {{< card link="/developers/doc/deploy/databases/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
 
-  {{< card link="/developers/doc/addons/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
+  {{< card link="/developers/doc/deploy/databases/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
 {{< /cards >}}
 
 ##### Storage & Messaging
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/addons/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
 {{< /cards >}}
 
 ##### Services & Tools
 
 {{< cards >}}
-  {{< card link="/developers/doc/addons/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
-  {{< card link="/developers/doc/addons/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial" icon="git" >}}
-  {{< card link="/developers/doc/addons/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-  {{< card link="/developers/doc/addons/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="keycloak" >}}
-  {{< card link="/developers/doc/addons/mailpace" title="Mailpace" subtitle="Fast and reliable transactional email" icon="mail" >}}
-  {{< card link="/developers/doc/addons/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="matomo" >}}
-  {{< card link="/developers/doc/addons/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
-  {{< card link="/developers/doc/addons/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
+  {{< card link="/developers/doc/deploy/services/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
+  {{< card link="/developers/doc/deploy/services/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial" icon="git" >}}
+  {{< card link="/developers/doc/deploy/services/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
+  {{< card link="/developers/doc/deploy/services/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="keycloak" >}}
+  {{< card link="/developers/doc/deploy/services/mailpace" title="Mailpace" subtitle="Fast and reliable transactional email" icon="mail" >}}
+  {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="matomo" >}}
+  {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
+  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
 {{< /cards >}}
 
 **If your add-on:**
@@ -329,7 +329,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/reference/reference-environment-variables/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/develop/common-configuration/environment-variables/reference/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 
@@ -352,7 +352,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 There are two kinds of billing:
 
 - Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
-- Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/addons/fs-bucket) and [Cellar](/doc/addons/cellar)
+- Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/deploy/storage/fs-bucket) and [Cellar](/doc/deploy/storage/cellar)
 
 {{< callout type="warning" >}}
 **Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.

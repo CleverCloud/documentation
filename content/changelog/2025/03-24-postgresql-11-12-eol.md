@@ -20,4 +20,4 @@ As [PostgreSQL 16 and 17 are now available](/changelog/2025/03-18-postgresql-16-
 But **we recommend you to migrate to an actively supported version**. You can do it easily using our included migration tool in your add-on parameters. In the coming weeks, you'll start to see warnings in [the Console](https://console.clever-cloud.com) if you are still using PostgreSQL 12 or a lower version.
 
 - [PostgreSQL versioning policy](https://www.postgresql.org/support/versioning/)
-- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/deploy/databases/postgresql/)

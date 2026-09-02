@@ -19,7 +19,7 @@ keywords:
   SFTPGo is an open-source SFTP server with multi-user management, a web interface and support for S3-compatible storage backends such as Cellar.
 {{< /hextra/hero-subtitle >}}
 
-Clever Cloud provides built-in SFTP access to [FS Buckets](/developers/doc/addons/fs-bucket/). Deploy SFTPGo when you need advanced user management or fine-grained access control, or when you want to expose files stored in [Cellar](/developers/doc/addons/cellar/) over SFTP. This guide uses the [Linux runtime](/developers/doc/applications/linux/) and [Mise](https://mise.jdx.dev/) to install SFTPGo, PostgreSQL to persist its configuration, and Cellar for object storage.
+Clever Cloud provides built-in SFTP access to [FS Buckets](/developers/doc/deploy/storage/fs-bucket/). Deploy SFTPGo when you need advanced user management or fine-grained access control, or when you want to expose files stored in [Cellar](/developers/doc/deploy/storage/cellar/) over SFTP. This guide uses the [Linux runtime](/developers/doc/deploy/applications/linux/) and [Mise](https://mise.jdx.dev/) to install SFTPGo, PostgreSQL to persist its configuration, and Cellar for object storage.
 
 This guide only covers SFTP. FTP requires a dedicated TCP port range. Contact [Clever Cloud support](https://console.clever-cloud.com/ticket/center) if you need it.
 
@@ -74,13 +74,13 @@ sftpgo serve
 
 The project-level `github_attestations` setting works around an incompatibility between the GitHub attestation currently published for SFTPGo and the version of Mise available on Clever Cloud. Mise still verifies the downloaded asset checksum.
 
-The name `run` is significant: unless you define `CC_RUN_COMMAND`, the Linux runtime [detects and executes](/developers/doc/applications/linux/#build-and-run-commands) the [Mise task](https://mise.jdx.dev/tasks/) as the application run command. It restores the persistent SFTP host key, prepares the temporary directory and starts the SFTPGo server. The environment maps the PostgreSQL add-on URI injected by Clever Cloud to SFTPGo and points to the web resources installed by Mise.
+The name `run` is significant: unless you define `CC_RUN_COMMAND`, the Linux runtime [detects and executes](/developers/doc/deploy/applications/linux/#build-and-run-commands) the [Mise task](https://mise.jdx.dev/tasks/) as the application run command. It restores the persistent SFTP host key, prepares the temporary directory and starts the SFTPGo server. The environment maps the PostgreSQL add-on URI injected by Clever Cloud to SFTPGo and points to the web resources installed by Mise.
 
 SFTPGo listens on port `8080` for its web interface by default. The configuration binds its SFTP server to port `4040`, used by Clever Cloud TCP redirections. It sends logs to the standard output with `info` level because SFTPGo's default `debug` logs can include the PostgreSQL URI.
 
 ## Create and configure the Clever Cloud resources
 
-Install [Clever Tools](/developers/doc/cli/), log in and create a Linux application with an alias:
+Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Linux application with an alias:
 
 ```bash
 npm i -g clever-tools
@@ -106,7 +106,7 @@ Finally, create the TCP redirection used for SFTP connections:
 clever tcp-redirs add --namespace cleverapps
 ```
 
-The command returns the public TCP port to use with your application's `.cleverapps.io` domain. To use a custom SFTP hostname, follow the [TCP redirection documentation](/developers/doc/administrate/tcp-redirections/) and create the redirection in the appropriate namespace.
+The command returns the public TCP port to use with your application's `.cleverapps.io` domain. To use a custom SFTP hostname, follow the [TCP redirection documentation](/developers/doc/develop/common-configuration/tcp-redirections/) and create the redirection in the appropriate namespace.
 
 ## Deploy SFTPGo
 
@@ -158,7 +158,7 @@ clever open
 
 ## Use Cellar as a storage backend
 
-A new Cellar add-on does not contain a bucket. Create one with Cellar Explorer in the [Clever Cloud Console](https://console.clever-cloud.com/), or with an [S3-compatible client](/developers/doc/addons/cellar/#managing-your-buckets).
+A new Cellar add-on does not contain a bucket. Create one with Cellar Explorer in the [Clever Cloud Console](https://console.clever-cloud.com/), or with an [S3-compatible client](/developers/doc/deploy/storage/cellar/#managing-your-buckets).
 
 ### Configure Cellar through the SFTPGo web interface
 
@@ -268,8 +268,8 @@ Use any SFTP client with the following settings:
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/linux" title="Linux applications" subtitle="Deploy any application" icon="linux" >}}
-  {{< card link="/developers/doc/addons/cellar" title="Cellar object storage" subtitle="Store files with an S3 API" icon="database" >}}
-  {{< card link="/developers/doc/addons/fs-bucket" title="FS Buckets" subtitle="Store files with SFTP access" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux applications" subtitle="Deploy any application" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar object storage" subtitle="Store files with an S3 API" icon="database" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Buckets" subtitle="Store files with SFTP access" icon="fsbucket" >}}
   {{< card link="https://docs.sftpgo.com/latest/" title="SFTPGo documentation" subtitle="Configure users and storage" icon="book-open" >}}
 {{< /cards >}}

@@ -29,7 +29,7 @@ If 3.0.x branch brought new log stack (faster, longer, order), you now get updat
 
 Of course, there are also some bug fixes. And be prepared: more new features are on the way!
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install). For example with `npm`:
 
 ```console
 npm update -g clever-tools

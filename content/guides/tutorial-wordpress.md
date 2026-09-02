@@ -22,7 +22,7 @@ aliases:
 
 [WordPress](https://WordPress.org) applications almost work out of the box on Clever Cloud, you just have a few adjustments to make.
 
-First, you could check [our global PHP documention](/doc/applications/php/).
+First, you could check [our global PHP documention](/doc/deploy/applications/php/).
 
 This tutorial is mainly concerning a Git deployment. However, you can deploy using a classic FTP PHP app. Choose "FTP" when you create a new PHP app.
 
@@ -126,7 +126,7 @@ If you want to switch from this method to the environment variables, you need to
 {{< /callout >}}
 
 At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
-Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information](/doc/addons/fs-bucket) section of the FS Bucket add-on.
+Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the [information](/doc/deploy/storage/fs-bucket) section of the FS Bucket add-on.
 
 ```javascript
     [
@@ -149,7 +149,7 @@ To uninstall the plugin, the procedure is the same as before except that you hav
 ## Optimise and speed-up your WordPress
 
 There are multiple ways to optimise your WordPress and speed-up its response time.
-We provide different tools and software to help you in this task as [Varnish](/doc/develop/varnish) for the HTTP cache, and [Redis](/doc/addons/redis) for the object caching.
+We provide different tools and software to help you in this task as [Varnish](/doc/develop/request-flow/varnish) for the HTTP cache, and [Redis](/doc/deploy/databases/redis) for the object caching.
 
 ### Performance plugins
 
@@ -160,7 +160,7 @@ We noticed performances problems when performance plugins are enabled and we rec
 
 ### HTTP Cache with Varnish
 
-Enabling [Varnish](/doc/develop/varnish) for your application is very simple. All instances of PHP provide [Varnish](/doc/develop/varnish), you just have to configure your application to use it.
+Enabling [Varnish](/doc/develop/request-flow/varnish) for your application is very simple. All instances of PHP provide [Varnish](/doc/develop/request-flow/varnish), you just have to configure your application to use it.
 
 1. To use Varnish in your application, you have to create a `varnish.vcl` file in the `clevercloud` folder of your application. If this folder doesn't exist, create it in the **root** of your project.
 
@@ -172,11 +172,11 @@ If you need to manually purge the Varnish cache, the plugin provides a **Purge V
 
 ### Object cache with Redis
 
-[Redis](/doc/addons/redis) is an [add-on](/doc/addons/) that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.
+[Redis](/doc/deploy/databases/redis) is an [add-on](/doc/deploy/addons/) that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.
 
-To enable [Redis](/doc/addons/redis) for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and performance problems.
+To enable [Redis](/doc/deploy/databases/redis) for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and performance problems.
 
-1. [Create a Redis add-on](/doc/addons/redis) for your application.
+1. [Create a Redis add-on](/doc/deploy/databases/redis) for your application.
 
 2. Add the following lines to your `wp-config.php` file. Make sure they are **before** the `require_once(ABSPATH . 'wp-settings.php');` line, otherwise the Redis connexion will not work for your application and your application will return only white pages!
 

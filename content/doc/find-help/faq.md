@@ -57,7 +57,7 @@ Currently, Clever Cloud supports:
 - Static sites (with or without Apache)
 - V (Vlang)
 
-See the full list in the [applications documentation](/doc/applications/), or browse the [guides](/guides/) for frameworks and services you can deploy on Clever Cloud.
+See the full list in the [applications documentation](/doc/deploy/applications/), or browse the [guides](/guides/) for frameworks and services you can deploy on Clever Cloud.
 {{% /details %}}
 
 {{% details title="How many applications can I create?" closed="true" %}}
@@ -79,7 +79,7 @@ Clever Cloud is based in Nantes, France.
 
 {{% details title="I want to run Kubernetes on top of Clever Cloud, is that possible?" closed="true" %}}
 
-Yes. [Clever Kubernetes Engine](/doc/kubernetes/) (CKE), currently in public beta, provides a managed Kubernetes control plane. See the [product page](https://www.clever.cloud/product/kubernetes/) for more information.
+Yes. [Clever Kubernetes Engine](/doc/deploy/kubernetes/) (CKE), currently in public beta, provides a managed Kubernetes control plane. See the [product page](https://www.clever.cloud/product/kubernetes/) for more information.
 {{% /details %}}
 
 {{% details title="I want to use Clever Cloud on my own premises, is that possible?" closed="true" %}}
@@ -96,7 +96,7 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 {{% details title="How do I define cron jobs for my application?" closed="true" %}}
 
-See [Cron Configuration File](/doc/administrate/cron) for more information.
+See [Cron Configuration File](/doc/develop/cron) for more information.
 {{% /details %}}
 
 {{% details title="How do I identify different instances of my application?" closed="true" %}}
@@ -113,7 +113,7 @@ access them via git+ssh or sFTP), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add a
 `clevercloud/ssh.json` file.
 
-- [Learn more about ssh.json](/doc/reference/common-configuration/#private-ssh-key)
+- [Learn more about ssh.json](/doc/develop/common-configuration/#private-ssh-key)
 {{% /details %}}
 
 {{% details title="I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?" closed="true" %}}
@@ -126,7 +126,7 @@ As an example, if a Spring Boot application was compiled with Java `17` and run 
 java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/JarLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 ```
 
-By default, Java apps on Clever Cloud use Java `21`, but you can change it. Please head [over here](/doc/applications/java/java-jar/#available-java-versions "Java versions") for more information.
+By default, Java apps on Clever Cloud use Java `21`, but you can change it. Please head [over here](/doc/deploy/applications/java/java-jar/#available-java-versions "Java versions") for more information.
 
 For reference, the table below lists the class file version for each major Java version ([official doc](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html)) :
 
@@ -144,7 +144,7 @@ For reference, the table below lists the class file version for each major Java 
 
 Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
 
-If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/cli/applications/deployment-lifecycle/#ssh), but keep in mind that changes made on an instance are not persistent across deployments.
+If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/manage/cli/applications/deployment-lifecycle/#ssh), but keep in mind that changes made on an instance are not persistent across deployments.
 {{% /details %}}
 
 {{% details title="Can I `scp` something in a VM?" closed="true" %}}
@@ -166,18 +166,18 @@ All instances on Clever Cloud run on the UTC timezone. We recommend to handle al
 
 {{% details title="How to setup domain names I own?" closed="true" %}}
 
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/administrate/domain-names).
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/develop/common-configuration/domain-names).
 {{% /details %}}
 
 {{% details title="I'd like to have two applications available on the same domain name" closed="true" %}}
 
-Refer to [prefix routing](/doc/administrate/domain-names/#path-routing) to learn how to have two applications share a domain name.
+Refer to [prefix routing](/doc/develop/common-configuration/domain-names/#path-routing) to learn how to have two applications share a domain name.
 {{% /details %}}
 
 {{% details title="Does Clever Cloud support TLS/SSL (HTTPS)?" closed="true" %}}
 
-Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/administrate/ssl/#uploading-my-own-certificates).
-Have a look at [installing TLS certificates](/doc/administrate/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/security/ssl/#uploading-my-own-certificates).
+Have a look at [installing TLS certificates](/doc/security/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
 {{% /details %}}
 
 {{% details title="What are the supported ciphers?" closed="true" %}}
@@ -207,7 +207,7 @@ In order to use `request.secure` instead of accessing the header, you must add `
 
 {{% details title="PHP: `$_SERVER` auth variables are always empty, how do I make this work?" closed="true" %}}
 
-- [Learn more about the $_SERVER variable on Clever Cloud](/doc/applications/php/apache/#using-http-authentication)
+- [Learn more about the $_SERVER variable on Clever Cloud](/doc/deploy/applications/php/apache/#using-http-authentication)
 {{% /details %}}
 
 {{% details title="How to get the user's IP address?" closed="true" %}}
@@ -265,7 +265,7 @@ If a VACUUM operation needs more disk that there is remaining, migrating to the 
 
 Clever Cloud stores all backups on [Cellar](https://www.clever.cloud/product/cellar-object-storage/), a replicated object storage service with three copies distributed across datacenters in the PAR region to ensure durability. Even if one datacenter fails, your backups remain safe.
 
-For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more [documentation on restoring backups with the CLI](/doc/cli/addons/#database-backups).
+For custom configurations (for example, multiple retention policies), contact Support. To locate backups not visible in the Console, use [Clever Tools](https://github.com/CleverCloud/clever-tools) with: `clever database backups DATABASE-ID [--format, -F] FORMAT`.  Find more [documentation on restoring backups with the CLI](/doc/manage/cli/addons/#database-backups).
 {{% /details %}}
 
 {{% details title="I can't create my add-on" closed="true" %}}

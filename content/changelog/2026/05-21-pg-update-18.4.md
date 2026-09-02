@@ -24,4 +24,4 @@ These versions include [over 60 bug fixes and improvements](https://www.postgres
 
 PostgreSQL 14 reaches its end of life on 12 November 2026. Plan a migration to a newer version before that date to keep receiving security updates. Also note that PostgreSQL 11 [is not available anymore](/changelog/2025/03-24-postgresql-11-12-eol/) for migrations on Clever Cloud.
 
-- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/deploy/databases/postgresql/)

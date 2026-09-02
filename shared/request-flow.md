@@ -12,6 +12,6 @@ Multiple services can run simultaneously. Setting `CC_REQUEST_FLOW` replaces aut
 If your application manages its own HTTP server, configure it to listen on port `9000` instead of `8080` when at least one middleware is active. Clever Cloud handles this automatically for runtimes with a managed web server.
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
-- [Learn more about Varnish on Clever Cloud](/doc/develop/varnish/)
-- [Learn more about OAuth2 Proxy on Clever Cloud](/doc/develop/oauth2-proxy/)
+- [Learn more about Varnish on Clever Cloud](/doc/develop/request-flow/varnish/)
+- [Learn more about OAuth2 Proxy on Clever Cloud](/doc/develop/request-flow/oauth2-proxy/)
 - [Learn more about Redirection.io](https://redirection.io/)

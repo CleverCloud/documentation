@@ -13,6 +13,7 @@ keywords:
 aliases:
 - /administrate/apps-management
 - /doc/admin-console/apps-management
+- /doc/develop/build-instances
 ---
 
 ## Start, restart and stop

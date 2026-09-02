@@ -12,7 +12,9 @@ keywords:
 - log drains
 aliases:
 - /clever-cloud-apis/add-ons-log-collector
+- /doc/administrate/log-drains
 - /doc/administrate/log-management/#get-continuous-logs-from-your-application
+- /doc/administrate/logs
 - /doc/clever-cloud-apis/add-ons-log-collector
 ---
 

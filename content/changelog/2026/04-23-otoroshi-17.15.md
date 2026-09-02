@@ -33,7 +33,7 @@ This release includes LLM extension [0.0.75](https://github.com/cloud-apim/otoro
 
 Otoroshi 17.15 requires Java 25 to load the Kreuzberg content-to-markdown and OCR backend. Starting with this release, all new Otoroshi add-ons are created with `CC_JAVA_VERSION=25`, and any update to Otoroshi 17.15 automatically switches the underlying Java application to Java 25. If you prefer to handle this manually, you can set `CC_JAVA_VERSION` to `25` on the Java application backing your Otoroshi add-on and rebuild it before updating Otoroshi itself.
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.15.1_1776891995` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.15.1_1776891995` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -43,4 +43,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.15.1_1776891995
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

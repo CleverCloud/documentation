@@ -19,7 +19,7 @@ excludeSearch: true
 
 This release comes with [LLM extension 0.0.67](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.67) which supports Cloud Temple as new provider, Nano Banana as Image model provider and Azure OpenAI as embedding model provider.
 
-You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.11.0_1767272929` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.11.0_1767272929` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -29,4 +29,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.11.0_1767272929
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

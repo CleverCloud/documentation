@@ -26,7 +26,7 @@ To do so, you need:
 
 To create a bucket:
 
-- Follow the [bucket creation instructions](/doc/addons/cellar/#creating-a-bucket),
+- Follow the [bucket creation instructions](/doc/deploy/storage/cellar/#creating-a-bucket),
 - or use third party software like [s3cmd](https://s3tools.org/s3cmd).
 
 {{< callout type="warning" >}}
@@ -78,7 +78,7 @@ Now, you can set the policy to your bucket using s3cmd:
 s3cmd setpolicy ./policy.json s3://<bucket-name>
 ```
 
-If you encounter errors, you might need to specify the [configuration file path](/doc/addons/cellar/#download-the-configuration-file):
+If you encounter errors, you might need to specify the [configuration file path](/doc/deploy/storage/cellar/#download-the-configuration-file):
 
 ```bash
 s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>

@@ -13,7 +13,7 @@ authors:
 excludeSearch: true
 ---
 
-[Materia KV](/doc/addons/materia-kv/) now supports multiple commands to create and manage sets. You don't have anything to change in your configuration to benefit from this new feature, just use the new supported commands in your applications.
+[Materia KV](/doc/deploy/databases/materia-kv/) now supports multiple commands to create and manage sets. You don't have anything to change in your configuration to benefit from this new feature, just use the new supported commands in your applications.
 
-- [Learn more about Materia KV](/doc/addons/materia-kv/)
-- [Learn more about Materia KV supported commands](/doc/addons/materia-kv/#supported-types-and-commands)
+- [Learn more about Materia KV](/doc/deploy/databases/materia-kv/)
+- [Learn more about Materia KV supported commands](/doc/deploy/databases/materia-kv/#supported-types-and-commands)

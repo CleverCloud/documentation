@@ -17,7 +17,7 @@ excludeSearch: true
 
 The [Matomo](https://matomo.org/) add-on on Clever Cloud has been updated to version `5.7.1`, which is now used by default. The `5.7` branch focuses on stability, performance, usability and security.
 
-You can deploy this release from the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/cli/). Existing customers' add-ons are already up-to-date.
+You can deploy this release from the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.7](https://matomo.org/changelog/matomo-5-7-0/)
-- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo/)
+- [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

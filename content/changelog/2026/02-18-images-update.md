@@ -34,7 +34,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Apache Basic Auth
 
-`X-Robots-Tag: noindex, nofollow` header is now added to responses [with Basic Authentication](/doc/applications/php/apache/#basic-authentication) through Apache
+`X-Robots-Tag: noindex, nofollow` header is now added to responses [with Basic Authentication](/doc/deploy/applications/php/apache/#basic-authentication) through Apache
 
 ## Request Flow extension
 

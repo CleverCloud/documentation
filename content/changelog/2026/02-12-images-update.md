@@ -52,5 +52,5 @@ Latest branch of Mise includes many changes such as Node.js version detection fr
 
 This release includes:
 
-- A fix for [Mise Tasks management in Linux Runtime](/doc/applications/linux/#build-and-run-commands)
+- A fix for [Mise Tasks management in Linux Runtime](/doc/deploy/applications/linux/#build-and-run-commands)
 - A fix for `CC_NODE_BUILD_TOOL=yarn-berry`

@@ -52,7 +52,7 @@ The extension also introduces a Meta MCP connector that aggregates and proxies m
 
 Every plugin delivered with Otoroshi on Clever Cloud has been rebuilt against 17.16.0. The WAF extension ([0.0.9](https://github.com/cloud-apim/otoroshi-waf-extension/releases/tag/0.0.9)) upgrades the OWASP Core Rule Set to v4.26.0.
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.0_1779982854` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.16.0_1779982854` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -62,4 +62,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.16.0_1779982854
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

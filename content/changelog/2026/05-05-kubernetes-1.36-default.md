@@ -23,11 +23,11 @@ You can still target v1.35 or v1.34 with `--cluster-version`, as long as they re
 clever k8s create myCluster --cluster-version 1.35
 ```
 
-Existing clusters are not migrated automatically. To move one to v1.36, use [Clever Tools](/doc/cli/kubernetes/):
+Existing clusters are not migrated automatically. To move one to v1.36, use [Clever Tools](/doc/manage/cli/kubernetes/):
 
 ```bash
 clever k8s version update myClusterNameOrId 1.36
 ```
 
 - [Learn more about Kubernetes 1.36](/changelog/2026/04-24-kubernetes-1.36/)
-- [Learn more about Kubernetes on Clever Cloud](/doc/kubernetes/)
+- [Learn more about Kubernetes on Clever Cloud](/doc/deploy/kubernetes/)

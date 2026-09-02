@@ -19,7 +19,7 @@ The `x.57` branch of Metabase is now available on Clever Cloud. It brings dark m
 
 To update, set `CC_METABASE_VERSION` of the add-on's Java application to `0.57` for the community edition or `1.57` for the enterprise edition (EE). This new branch is not yet the default if you use `community-latest`, we'll move to it in the next few weeks.
 
-You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.57` or `1.57` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.57` or `1.57` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -30,4 +30,4 @@ clever metabase version update yourMetabaseNameOrId 0.57
 ```
 
 - [Learn more about Metabase 57](https://www.metabase.com/changelog/57)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

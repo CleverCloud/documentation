@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-Our [Matomo](https://matomo.org/) add-on has been updated to version `5.4.0` which is now used by default. You can deploy this latest release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/cli/). Existing customers' add-ons are already up-to-date.
+Our [Matomo](https://matomo.org/) add-on has been updated to version `5.4.0` which is now used by default. You can deploy this latest release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.4](https://matomo.org/changelog/matomo-5-4-0/)
-- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo/)
+- [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

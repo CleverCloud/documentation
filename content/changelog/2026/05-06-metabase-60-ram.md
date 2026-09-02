@@ -19,5 +19,5 @@ Starting with its `x.60` branch, [Metabase requires at least 2 GB of RAM](https:
 
 If you want to keep an XS instance, stay on the `x.59` branch by setting `CC_METABASE_VERSION` to `0.59` (or `1.59` for the Enterprise Edition) on the underlying Java application. Keep in mind that staying on x.59 means you will not receive the new features shipped with x.60 and beyond; security patches and some fixes will still be provided as long as the 0.59 branch is maintained. We recommend moving to a S instance and the latest branch as soon as possible.
 
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
 - [Pricing of Java instances on Clever Cloud](https://www.clever-cloud.com/pricing/)

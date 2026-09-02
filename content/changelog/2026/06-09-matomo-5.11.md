@@ -19,7 +19,7 @@ Our [Matomo](https://matomo.org/) add-on has been updated to version `5.11.0` wh
 
 Scheduled reports can now be sent over a custom date range, in addition to the usual periods. Reports gain finer control over flattening and exports, CSV and TSV exports now replace carriage return characters to keep files consistent, and themes benefit from a new alternative border color variable. As usual, this version ships its batch of bug fixes.
 
-You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/cli/). Existing customers' add-ons are already up-to-date.
+You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.11](https://matomo.org/changelog/matomo-5-11-0/)
-- [Learn more about Matomo on Clever Cloud](/doc/addons/matomo/)
+- [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

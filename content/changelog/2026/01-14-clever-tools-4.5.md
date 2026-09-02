@@ -25,7 +25,7 @@ From a user perspective, this release mainly brings clearer `--help` outputs:
 
 ![Clever Tools help output example](/images/clever-tools-4.5-help.webp)
 
-It also allows us to automatically generate [reference documentation](/doc/reference/cli/) during the release process with an [LLM-ready version](/doc/reference/cli/index.html.md).
+It also allows us to automatically generate [reference documentation](/doc/cli-reference/) during the release process with an [LLM-ready version](/doc/cli-reference/index.html.md).
 
 ## Pave the way for future improvements
 
@@ -33,7 +33,7 @@ These changes were an essential building block for the next major step: redesign
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

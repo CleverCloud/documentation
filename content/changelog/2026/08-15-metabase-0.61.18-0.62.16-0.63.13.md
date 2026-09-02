@@ -16,7 +16,7 @@ Metabase versions `0.61.18`, `0.62.16` and `0.63.13` are now available on Clever
 
 If you use `latest` as your `CC_METABASE_VERSION`, restart your instance to deploy the latest patched version. If you use a specific branch, update `CC_METABASE_VERSION` of the underlying Java application to its latest patch and rebuild it.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -30,4 +30,4 @@ clever metabase version update yourMetabaseNameOrId 0.63
 - [Read the Metabase 61 changelog](https://www.metabase.com/changelog/61)
 - [Read the Metabase 62 changelog](https://www.metabase.com/changelog/62)
 - [Read the Metabase 63 changelog](https://www.metabase.com/changelog/63)
-- [Learn more about Metabase on Clever Cloud](/doc/addons/metabase/)
+- [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)

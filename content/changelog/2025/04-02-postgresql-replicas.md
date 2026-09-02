@@ -16,5 +16,5 @@ PostgreSQL dashboard in [the Clever Cloud Console](https://console.clever-cloud.
 
 To set up replicas, ask your sales representative or [contact support](https://console.clever-cloud.com/ticket-center-choice).
 
-- [Learn more about PostgreSQL replication](/doc/addons/postgresql#replication)
-- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [Learn more about PostgreSQL replication](/doc/deploy/databases/postgresql#replication)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/deploy/databases/postgresql/)

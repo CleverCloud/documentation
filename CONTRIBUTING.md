@@ -107,11 +107,21 @@ For content updates, use `section(page): commit message`. The section and page i
 ```text
 addons(postgresql): document pg_partman support
 applications(nodejs): clarify pnpm configuration
-changelog(metabase): announce 0.63.14 security update
 guides: add SvelteKit
 ```
 
 Use `guides: add Product` when adding a deployment guide. Start the subject with a lowercase imperative verb.
+
+Changelog entries are the exception. Use `changelog: what you announce`, naming the product and its version or the change itself rather than starting with a verb:
+
+```text
+changelog: Keycloak 26.7.3
+changelog: MySQL 8.0.46 and 8.4.10
+changelog: PostgreSQL 18 by default
+changelog: images updates, 2026W34
+```
+
+Commit a changelog entry together with the documentation pages and data files it relies on, so an announcement never lands before the pages it links to.
 
 For changes to the documentation structure, Hugo configuration or templates, deployment, CI, tooling, or dependencies, use the standard Conventional Commits format `type(scope): commit message`:
 

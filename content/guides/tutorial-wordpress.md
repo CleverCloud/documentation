@@ -171,7 +171,7 @@ If you need to manually purge the Varnish cache, the plugin provides a **Purge V
 
 ### Object cache with Redis
 
-[Redis](/doc/addons/redis) is an [add-on](#linking-a-database-or-any-other-add-on-to-your-application) that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.
+[Redis](/doc/addons/redis) is an [add-on](/doc/addons/) that offers you a good way to speed-up your application by caching some of the objects of your application, as the result of SQL queries of your application, improving the response time.
 
 To enable [Redis](/doc/addons/redis) for your WordPress, you need to disable other Object Cache and Data Cache of your application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and performance problems.
 

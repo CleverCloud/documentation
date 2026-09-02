@@ -21,7 +21,7 @@ Set `CC_COMPOSER_VERSION` to select the Composer version: `1`, `2` (default) or 
 > [!TIP] Use a local Composer version
 > If you put a `composer.phar` file at the root of your project, it will be used to install dependencies.
 
-You can perform your own `composer.phar install` by using the [Post Build hook](/doc/develop/build-hooks#post-build-cc_post_build_hook).
+You can perform your own `composer.phar install` by using the [Post Build hook](/doc/develop/build-hooks#post-build).
 
 Example of a `composer.json` file:
 

@@ -44,7 +44,7 @@ clever profile
 
 ## Config providers
 
-New `config-provider` commands are now available, giving you direct access to manage [config providers](/doc/addons/config-provider/) from the CLI. You can list, get, set, remove and import environment variables.
+New `config-provider` commands are now available, giving you direct access to manage [config providers](/doc/deploy/services/config-provider/) from the CLI. You can list, get, set, remove and import environment variables.
 
 ```bash
 # List all config providers
@@ -97,7 +97,7 @@ clever features disable system-git
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

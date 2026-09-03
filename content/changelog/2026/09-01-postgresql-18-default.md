@@ -26,5 +26,5 @@ PostgreSQL 18 uses the same default extensions as PostgreSQL 17. It brings async
 
 Keep in mind that PostgreSQL 14 reaches its end of life on 12 November 2026. Plan a migration to a newer version before that date to keep receiving security updates.
 
-- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/deploy/databases/postgresql/)
 - [PostgreSQL versioning policy](https://www.postgresql.org/support/versioning/)

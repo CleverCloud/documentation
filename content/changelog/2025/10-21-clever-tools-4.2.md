@@ -15,11 +15,11 @@ authors:
 excludeSearch: true
 ---
 
-[Clever Tools 4.2.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.2.0) is available. It fixes some bugs, adds initial support for add-ons in [Network Groups](/doc/develop/network-groups), enhances `json-stream` format for logs and improves Windows shell detection.
+[Clever Tools 4.2.0](https://github.com/CleverCloud/clever-tools/releases/tag/4.2.0) is available. It fixes some bugs, adds initial support for add-ons in [Network Groups](/doc/network/network-groups), enhances `json-stream` format for logs and improves Windows shell detection.
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install/). For example with `npm`:
 
 ```console
 npm update -g clever-tools

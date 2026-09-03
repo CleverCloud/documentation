@@ -30,22 +30,16 @@ aliases:
 
 {{< cards >}}
   {{< card link="/developers/doc/getting-started" title="Getting started" subtitle="Deploy an application in five minutes" icon="arrow-circle-right" >}}
-  {{< card link="/developers/doc/applications" title="Applications" subtitle="Deploy applications with supported runtimes" icon="rocket-launch" >}}
-  {{< card link="/developers/doc/addons" title="Add-ons" subtitle="Connect managed databases, storage and services" icon="plug" >}}
-  {{< card link="/developers/doc/functions" title="Functions" subtitle="Deploy serverless functions compiled to WebAssembly" icon="code-bracket" >}}
-  {{< card link="/developers/doc/kubernetes" title="Kubernetes" subtitle="Create and manage Kubernetes clusters" icon="kubernetes" >}}
-  {{< card link="/developers/doc/develop" title="Develop" subtitle="Configure application behavior, networking and deployment hooks" icon="code" >}}
-  {{< card link="/developers/doc/administrate" title="Administrate" subtitle="Manage applications, domains, scaling and security" icon="library" >}}
-  {{< card link="/developers/doc/metrics" title="Metrics" subtitle="Monitor application performance and resource usage" icon="chart-bar" >}}
-  {{< card link="/developers/doc/cli" title="Clever Tools CLI" subtitle="Manage applications and dependencies from your terminal" icon="command-line" >}}
-  {{< card link="/developers/doc/ci-cd" title="CI/CD" subtitle="Automate deployments from GitHub, GitLab or your own scripts" icon="git" >}}
-  {{< card link="/developers/doc/best-practices" title="Best practices" subtitle="Improve application security, performance and reliability" icon="checklist" >}}
-  {{< card link="/developers/doc/reference" title="Reference" subtitle="Find environment variables, common configuration and support matrices" icon="collection" >}}
-  {{< card link="/developers/doc/marketplace" title="Marketplace" subtitle="Integrate your own service with Clever Cloud" icon="puzzle" >}}
-  {{< card link="/developers/doc/account" title="User account" subtitle="Configure your account, organisations and permissions" icon="user-circle" >}}
-  {{< card link="/developers/doc/billing" title="Billing" subtitle="Find invoices, analyze consumption and understand pricing" icon="credit-card" >}}
+  {{< card link="/developers/doc/ai-llms" title="AI & LLMs" subtitle="Run AI workloads and language model services" icon="sparkles" >}}
+  {{< card link="/developers/doc/tips-and-tricks" title="Tips & Tricks" subtitle="Shortcuts and lesser-known platform behaviours" icon="light-bulb" >}}
   {{< card link="/developers/doc/find-help" title="Find help" subtitle="Get support and troubleshoot platform issues" icon="support" >}}
-  {{< card link="/developers/doc/contribute" title="Contribute" subtitle="Contribute to the Clever Cloud documentation" icon="pencil-alt" >}}
+  {{< card link="/developers/doc/deploy" title="Deploy" subtitle="Applications, databases, storage and managed services" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/develop" title="Develop" subtitle="Configure applications, request flow, observability and tooling" icon="code" >}}
+  {{< card link="/developers/doc/manage" title="Manage" subtitle="Operate your resources from the CLI and migrate them" icon="library" >}}
+  {{< card link="/developers/doc/network" title="Network" subtitle="Private networks, IP ranges and network services" icon="globe-alt" >}}
+  {{< card link="/developers/doc/security" title="Security & Compliance" subtitle="Certifications, encryption, TLS and secrets" icon="lock-closed" >}}
+  {{< card link="/developers/doc/tools" title="Tools & Integrations" subtitle="CI/CD, GitHub, GitLab and Terraform" icon="git" >}}
+  {{< card link="/developers/doc/account" title="Account & Billing" subtitle="Account, organisations, invoices and payments" icon="user-circle" >}}
 {{< /cards >}}
 
 {{< hextra/hero-subtitle style="margin:20px 0">}}

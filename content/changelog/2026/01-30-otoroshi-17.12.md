@@ -23,7 +23,7 @@ For plugin developers, this version introduces various internal improvements: Mo
 
 This release includes LLM extensions [0.0.68](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.68) and [0.0.69](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.69), bringing OpenResponses-compatible endpoints for standardized LLM response handling through the [OpenResponses framework](https://www.openresponses.org/). These versions embed rate limit and budget consumption data in `GatewayEvents` and `LLMAuditEvents` for enhanced tracking, and support exposing any model with an Anthropic API compatible format.
 
-You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.12.0_1769783775` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+You can update through add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v17.12.0_1769783775` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -33,4 +33,4 @@ clever otoroshi version update yourOtoroshiNameOrId
 clever otoroshi version update yourOtoroshiNameOrId v17.12.0_1769783775
 ```
 
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

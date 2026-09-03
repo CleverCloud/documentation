@@ -50,4 +50,4 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Hugo version update
 
-Starting with next release, we will only support Hugo 0.160 and newer. If you are using an older version, update your application or [use Mise](/doc/reference/reference-environment-variables#install-tools-with-mise-package-manager) to download it during deployment.
+Starting with next release, we will only support Hugo 0.160 and newer. If you are using an older version, update your application or [use Mise](/doc/develop/common-configuration/environment-variables/reference#install-tools-with-mise-package-manager) to download it during deployment.

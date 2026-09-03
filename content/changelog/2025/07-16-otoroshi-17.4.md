@@ -17,7 +17,7 @@ excludeSearch: true
 
 [Otoroshi v17.4](https://github.com/MAIF/otoroshi/releases/tag/v17.4.0) is available with multiple improvements and bug fixes. It brings operators, JSON/Markdown documentation generator and a data exporter to Workflows. It comes with [LLM extension 0.0.49](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.49).
 
-To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.4.0_1752074416` and rebuild it. You can also use [the new Clever Tools commands](/doc/cli/operators/), introduced in `3.13.0` release:
+To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.4.0_1752074416` and rebuild it. You can also use [the new Clever Tools commands](/doc/manage/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators
@@ -28,4 +28,4 @@ clever otoroshi version update yourOtoroshiNameOrId v17.4.0_1752074416
 ```
 
 - [Learn more about Otoroshi Workflows](https://maif.github.io/otoroshi/manual/docs/topics/workflows)
-- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/addons/otoroshi/)
+- [Learn more about Otoroshi with LLM on Clever Cloud](/doc/deploy/services/otoroshi/)

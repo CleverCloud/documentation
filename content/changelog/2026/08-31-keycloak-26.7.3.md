@@ -25,7 +25,7 @@ The other fixes address medium and low severity issues, mostly in fine-grained a
 
 The release also corrects performance issues of the 26.7 branch. Admin API requests no longer resolve every role across all realms, their cost stops growing super-linearly with the number of realms, and an upgrade no longer causes sustained high CPU usage on every node. It fixes an Admin UI regression introduced in 26.7.2, a `NullPointerException` on composite roles referencing a deleted role and offline client session errors.
 
-Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.3` and rebuild it, or use [Clever Tools](/doc/cli/operators/):
+Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.3` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators
@@ -36,4 +36,4 @@ clever keycloak version update yourKeycloakNameOrId --target 26.7.3
 ```
 
 - [Read the Keycloak 26.7.3 release notes](https://www.keycloak.org/2026/08/keycloak-2673-released)
-- [Learn more about Keycloak on Clever Cloud](/doc/addons/keycloak)
+- [Learn more about Keycloak on Clever Cloud](/doc/deploy/services/keycloak)

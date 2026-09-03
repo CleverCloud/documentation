@@ -16,7 +16,7 @@ authors:
 excludeSearch: true
 ---
 
-[Materia KV](/doc/addons/materia-kv/) adds six new commands to its Redis-compatible layer, expanding hash, string and time to live (TTL) management capabilities:
+[Materia KV](/doc/deploy/databases/materia-kv/) adds six new commands to its Redis-compatible layer, expanding hash, string and time to live (TTL) management capabilities:
 
 - `HEXISTS`: check if a field exists in a hash
 - `HSETNX`: set a hash field only if it doesn't already exist
@@ -31,5 +31,5 @@ This update also brings reliability improvements to the underlying storage layer
 
 Transactions now enforce retry limits of 5 retries with a 5-second timeout, preventing cascading retries from overwhelming the cluster under heavy contention. Previously, transactions could retry indefinitely on conflict.
 
-- [Learn more about Materia KV](/doc/addons/materia-kv/)
-- [Learn more about Materia KV supported commands](/doc/addons/materia-kv/#supported-types-and-commands)
+- [Learn more about Materia KV](/doc/deploy/databases/materia-kv/)
+- [Learn more about Materia KV supported commands](/doc/deploy/databases/materia-kv/#supported-types-and-commands)

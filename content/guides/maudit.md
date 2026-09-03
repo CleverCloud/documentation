@@ -36,7 +36,7 @@ If you already have a Maudit project, run the following commands from its root d
 
 ## Create a Static application
 
-Install [Clever Tools](/developers/doc/cli/), log in and create a Static application linked to your project folder:
+Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Static application linked to your project folder:
 
 ```bash
 npm i -g clever-tools
@@ -77,7 +77,7 @@ clever deploy
 clever open
 ```
 
-You can display your website's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your website's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -87,6 +87,6 @@ clever domain add your.website.tld
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static/" title="Static applications" subtitle="Configure and deploy static applications" icon="static" >}}
   {{< card link="https://maudit.org/docs/" title="Maudit documentation" subtitle="Build static websites with Maudit and Rust" icon="maudit" >}}
 {{< /cards >}}

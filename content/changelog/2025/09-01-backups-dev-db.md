@@ -16,5 +16,5 @@ We provide free DEV plans for MySQL and PostgreSQL managed databases and will co
 
 If you need a 7-days included backups and production-ready service, consider upgrading from a DEV to [XXS Small Space or an higher plan](https://www.clever.cloud/pricing/).
 
-- [Learn more about MySQL on Clever Cloud](/doc/addons/mysql/)
-- [Learn more about PostgreSQL on Clever Cloud](/doc/addons/postgresql/)
+- [Learn more about MySQL on Clever Cloud](/doc/deploy/databases/mysql/)
+- [Learn more about PostgreSQL on Clever Cloud](/doc/deploy/databases/postgresql/)

@@ -69,4 +69,4 @@ This image includes multiple fixes for bug we encountered for Java applications 
 
 ## Hugo version update
 
-Starting June 15th, we will only support Hugo 0.160 release and later. If you are using an older version, update your application or [use Mise](/doc/reference/reference-environment-variables#install-tools-with-mise-package-manager) to download it during deployment.
+Starting June 15th, we will only support Hugo 0.160 release and later. If you are using an older version, update your application or [use Mise](/doc/develop/common-configuration/environment-variables/reference#install-tools-with-mise-package-manager) to download it during deployment.

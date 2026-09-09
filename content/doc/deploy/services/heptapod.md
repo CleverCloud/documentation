@@ -51,14 +51,14 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 {{< callout type="info" >}}
   **Requirements**
-  Using Heptapod Cloud require a Clever Cloud account and an [organisation](/doc/account/organisations).
+  Using Heptapod Cloud require a Clever Cloud account and an [organisation](/doc/account-billing/organisations).
 {{< /callout >}}
 
 {{% steps %}}
 
 ### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/doc/account/organisations/).
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/doc/account-billing/organisations/).
 Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
 In the Clever Cloud console, click **Add an organisation** and fill the form to create one.

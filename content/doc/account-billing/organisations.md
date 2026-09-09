@@ -15,6 +15,7 @@ keywords:
 aliases:
 - /doc/account/administrate-organisation
 - /doc/account/administrate-organization
+- /doc/account/organisations
 - /doc/organisations
 - /doc/organisations/manage
 ---

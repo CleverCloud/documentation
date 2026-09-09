@@ -1,0 +1,21 @@
+{{- /* On the site home page and on the documentation index, no page of the
+       documentation tree is selected, so the theme leaves every group folded. Open
+       the Deploy group there through the same `open` class the theme toggles from
+       the chevron, so a click still folds it back. Once a page of the tree is
+       selected, the theme behaviour applies: only the group of that page opens. */ -}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.hextra-sidebar-container .hextra-sidebar-item > a[href$="/doc/deploy/"]').forEach(function (link) {
+      var group = link.closest("li");
+      var list = group.closest(".hextra-scrollbar > ul") || group.closest(".hextra-sidebar-container");
+      var active = list.querySelector(".hextra-sidebar-active-item");
+      // The mobile list nests the tree under the "Documentation" entry: that entry
+      // being the active one is the documentation index, still with nothing selected in the tree.
+      var owner = group.parentElement.closest("li");
+      if (active && !(owner && active.closest("li") === owner)) return;
+      group.classList.add("open");
+      var button = group.querySelector(":scope > .hextra-sidebar-item > .hextra-sidebar-collapsible-button");
+      if (button) button.setAttribute("aria-expanded", "true");
+    });
+  });
+</script>

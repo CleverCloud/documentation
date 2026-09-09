@@ -98,25 +98,11 @@ If you have an application that needs to access Clever Cloud resources on behalf
 
 #### Create an OAuth consumer
 
-First, you'll need to create an OAuth consumer for your application. This can be done in the [Clever Cloud Console](https://console.clever-cloud.com). Go to your organisation, click on **Create…**, then on **an OAuth consumer** and fill the form. You will get:
+Authenticating this way requires an OAuth consumer, which represents your application and gives you a **consumer key**, its public identifier, and a **consumer secret**, which signs its requests and never goes client-side. Create one from the [Console](https://console.clever-cloud.com) or with the `clever oauth-consumers` command set.
 
-- A **consumer key** (public identifier for your application)
-- A **consumer secret** (private key, never expose it client-side)
+The **base URL** registered on the consumer bounds the `oauth_callback` you pass below: the callback has to sit under that domain, otherwise the authorisation is rejected.
 
-You can also manage OAuth consumers from the CLI with the `clever oauth-consumers` command set, which covers the full lifecycle (list, create, get, update, open and delete). Use `--with-secret` on the `get` subcommand to retrieve the consumer secret:
-
-```bash
-clever oauth-consumers create my-app \
-  --description "My application" \
-  --url https://my-app.example.com \
-  --base-url https://my-app.example.com/oauth/callback \
-  --rights access-personal-information,access-organisations
-
-clever oauth-consumers get my-app --with-secret
-```
-
-> [!NOTE]
-> The **base URL** you set when creating the consumer is important: the callback URL you use during the OAuth flow must match this base URL's domain. For local development, register a separate consumer with `http://localhost:<port>` as the base URL.
+[Login with Clever Cloud](/doc/develop/login-with-clever-cloud/) covers creating consumers, choosing the rights they request, and managing them over time.
 
 #### The OAuth1 flow
 

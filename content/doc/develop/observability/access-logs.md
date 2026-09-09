@@ -11,6 +11,8 @@ keywords:
 - latency
 - monitoring
 aliases:
+- /doc/administrate/access-logs/
+- /doc/find-help/access-logs/
 - /doc/observability/access-logs
 ---
 

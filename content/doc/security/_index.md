@@ -11,6 +11,12 @@ keywords:
 - tls
 - secrets
 - access control
+aliases:
+- /doc/network/security/
+- /doc/security-compliance/
+- /doc/administrate/security-compliance/
+- /doc/network/security-compliance/
+
 ---
 
 Certifications cover what the infrastructure is audited against. Everything else is a control you hold, and most are opt-in: roles decide what each member of an organisation can do, secrets belong outside your code, and encryption at rest and antivirus scanning are enabled per resource. TLS certificates are the exception, generated and renewed for your domains without configuration.

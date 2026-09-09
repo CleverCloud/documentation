@@ -17,6 +17,8 @@ aliases:
 - /doc/account/administrate-organization
 - /doc/account/organisations
 - /doc/organisations
+- /doc/administrate/organisations/
+- /doc/manage/organisations/
 - /doc/organisations/manage
 ---
 

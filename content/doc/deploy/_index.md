@@ -11,6 +11,9 @@ keywords:
 - add-ons
 - runtimes
 - managed services
+aliases:
+- /doc/cli/deploy/
+
 ---
 
 Push your source, and the platform detects the runtime, installs your dependencies, then starts your application behind a load balancer with TLS configured. Databases, storage and services are add-ons you create alongside it. Several of them run on Materia, the serverless layer Clever Cloud built on FoundationDB: nothing to size or back up, data replicated across three data centers, and access through the protocols you already use.

@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/reference
 - /doc/tools/reference
+- /doc/administrate/tools/
 - /reference
 ---
 

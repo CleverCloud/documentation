@@ -21,6 +21,7 @@ aliases:
 - /doc/deploy/addon/postgresql/postgresql
 - /doc/postgresql
 - /doc/postgresql-hosting
+- /deploy/addon/postgresql/postgresql/
 - /postgresql-hosting
 ---
 ## Overview

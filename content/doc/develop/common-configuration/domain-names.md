@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/admin-console/custom-domain-names
 - /doc/administrate/domain-names
+- /guides/domain-names
 - /doc/common-configuration/domain-names
 ---
 

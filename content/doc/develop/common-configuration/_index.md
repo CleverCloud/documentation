@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/clever-cloud-overview/common-application-configuration
 - /doc/common-configuration
+- /doc/clever-cloud-overview/common-application-configuration/
 - /doc/reference/common-configuration
 ---
 

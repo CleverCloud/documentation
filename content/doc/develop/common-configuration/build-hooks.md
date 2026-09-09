@@ -18,6 +18,11 @@ aliases:
 - /doc/clever-cloud-overview/hooks
 - /doc/common-configuration/build-hooks
 - /doc/deploy/build-hooks
+- /develop/build-hooks/
+- /doc/develop/hooks/
+- /doc/develop/common-configuration/hooks/
+- /doc/administrate/hooks/
+- /doc/develop/common-configuration/deployment-hooks/
 - /doc/develop/build-hooks
 ---
 ## Deployment lifecycle

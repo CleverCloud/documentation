@@ -18,6 +18,7 @@ aliases:
 - /doc/deploy/addon/mysql
 - /doc/deploy/addon/mysql/mysql
 - /doc/en/mysql-hosting
+- /doc/deploy/mysql/
 - /doc/mysql
 ---
 ## Overview

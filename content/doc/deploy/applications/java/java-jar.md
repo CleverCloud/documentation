@@ -14,6 +14,7 @@ aliases:
 - /deploy/application/java/java-jar
 - /doc/applications/java/java-jar
 - /doc/deploy/application/java/java-jar
+- /applications/java/java-jar
 - /doc/java/java-jar
 ---
 

@@ -16,6 +16,7 @@ aliases:
 - /doc/admin-console/apps-management
 - /doc/administrate/apps-management
 - /doc/common-configuration/lifecycle
+- /admin-console/apps-management
 - /doc/develop/build-instances
 ---
 

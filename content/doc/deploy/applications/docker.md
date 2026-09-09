@@ -24,6 +24,8 @@ aliases:
 - /doc/getting-started/by-language/docker
 - /doc/partials/language-specific-deploy/docker
 - /docker
+- /doc/deploy/docker/
+- /doc/develop/build/apps/docker/
 - /docker-hosting
 ---
 {{< hextra/hero-subtitle style="margin:.3rem 0 2rem 0">}}

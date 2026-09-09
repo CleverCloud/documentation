@@ -57,7 +57,7 @@ It uses [Mise package manager](/doc/develop/common-configuration/environment-var
 ## 🎓 Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://lume.land/docs/overview/about-lume/" title="Learn Lume" subtitle="How to write and organize your content" icon="deno" >}}
 {{< /cards >}}

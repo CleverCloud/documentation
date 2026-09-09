@@ -27,14 +27,14 @@ uvx mkdocs new myStaticApp
 
 ### Automatic build
 
-MkDocs is one of the static site generators supported by the [Static runtime automatic build](/doc/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
+MkDocs is one of the static site generators supported by the [Static runtime automatic build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
 
 {{% content "static-deploy" %}}
 
 ## 🎓 Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/static" title="Static runtime documentation" subtitle="How to configure your website" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Static runtime documentation" subtitle="How to configure your website" icon="static" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://www.mkdocs.org/getting-started/" title="MkDocs documentation" subtitle="How to write and organize your content" icon="docs" >}}
 {{< /cards >}}

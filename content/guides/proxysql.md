@@ -13,7 +13,7 @@ aliases:
 - /proxysql
 ---
 
-[ProxySQL](https://proxysql.com/) runs between your application and a linked [MySQL add-on](/doc/addons/mysql). It keeps backend connections available for reuse while your application connects locally through a [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket). This is useful for applications that do not already maintain an efficient connection pool.
+[ProxySQL](https://proxysql.com/) runs between your application and a linked [MySQL add-on](/doc/deploy/databases/mysql). It keeps backend connections available for reuse while your application connects locally through a [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket). This is useful for applications that do not already maintain an efficient connection pool.
 
 ProxySQL is available in every runtime except Docker, where processes and services are managed by the container image.
 
@@ -27,7 +27,7 @@ clever env set CC_ENABLE_MYSQL_PROXYSQL true
 
 The platform starts one ProxySQL process on each application instance and injects `CC_MYSQL_PROXYSQL_SOCKET_PATH` with the local socket path. Your application must keep using the linked add-on credentials from `MYSQL_ADDON_USER`, `MYSQL_ADDON_PASSWORD` and `MYSQL_ADDON_DB`, but use this socket instead of `MYSQL_ADDON_HOST` and `MYSQL_ADDON_PORT`.
 
-TLS is enabled between ProxySQL and MySQL by default. You can configure the maximum number of backend connections per application instance with `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS`, which defaults to `10`. See the [environment variables reference](/doc/reference/reference-environment-variables/#proxysql) for all available options.
+TLS is enabled between ProxySQL and MySQL by default. You can configure the maximum number of backend connections per application instance with `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS`, which defaults to `10`. See the [environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#proxysql) for all available options.
 
 ## Connect your application
 
@@ -87,10 +87,10 @@ Keep this result below the MySQL plan's connection limit and reserve capacity fo
 
 ## Monitor ProxySQL
 
-ProxySQL exports connection, query and error metrics for each application instance. Use the [Metrics overview](/doc/metrics) to inspect them in the Console and create alerts for your application.
+ProxySQL exports connection, query and error metrics for each application instance. Use the [Metrics overview](/doc/develop/observability/metrics) to inspect them in the Console and create alerts for your application.
 
 ## Learn more
 
 - [ProxySQL documentation](https://proxysql.com/documentation/) — Configure and operate ProxySQL
-- [MySQL add-ons](/doc/addons/mysql) — Create, link and administer MySQL databases
-- [Environment variables reference](/doc/reference/reference-environment-variables/#proxysql) — Review all ProxySQL settings available on Clever Cloud
+- [MySQL add-ons](/doc/deploy/databases/mysql) — Create, link and administer MySQL databases
+- [Environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#proxysql) — Review all ProxySQL settings available on Clever Cloud

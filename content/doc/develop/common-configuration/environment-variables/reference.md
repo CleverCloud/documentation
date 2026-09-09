@@ -130,7 +130,6 @@ Use these to define [commands to run](/doc/develop/common-configuration/build-ho
 | `CC_MISE_FILE_PATH` | Path to the `mise.toml` file, relative to your application root | `mise.toml`   |
 
 {{% content "redirectionio" %}}
-> [!NOTE] Redirection.io is not available in Docker and PHP applications
 
 ### Tailscale support
 

@@ -14,14 +14,14 @@ aliases:
 - /kibana
 ---
 
-[Kibana](https://www.elastic.co/kibana) is the web interface for exploring, visualizing and managing data stored in Elasticsearch. Clever Cloud can provision a managed Kibana service with an [Elastic Stack add-on](/doc/addons/elastic/).
+[Kibana](https://www.elastic.co/kibana) is the web interface for exploring, visualizing and managing data stored in Elasticsearch. Clever Cloud can provision a managed Kibana service with an [Elastic Stack add-on](/doc/deploy/databases/elastic/).
 
 ## Prerequisites
 
 - A [Clever Cloud account](https://console.clever-cloud.com/)
 - An organisation in which you can create add-ons
 
-Install [Clever Tools](/doc/cli/install/) if you want to create the add-on from the command line.
+Install [Clever Tools](/doc/manage/cli/install/) if you want to create the add-on from the command line.
 
 ## Enable Kibana
 
@@ -65,7 +65,7 @@ If you need a custom authentication provider, domain name or native `kibana.yml`
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/doc/addons/elastic/" title="Elastic Stack" subtitle="Configure and manage the Elastic Stack add-on" icon="elastic" >}}
+  {{< card link="/doc/deploy/databases/elastic/" title="Elastic Stack" subtitle="Configure and manage the Elastic Stack add-on" icon="elastic" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://www.elastic.co/guide/en/kibana/current/index.html" title="Kibana documentation" subtitle="Explore Kibana features and settings" icon="external-link" >}}
   {{< card link="/doc/cli/addons/" title="Clever Tools add-ons" subtitle="Create and manage add-ons from the command line" icon="terminal" >}}

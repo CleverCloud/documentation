@@ -24,7 +24,7 @@ This guide uses a [Clever Cloud example application](https://github.com/CleverCl
 
 - A [Clever Cloud account](https://console.clever-cloud.com)
 - [Git](https://git-scm.com/downloads)
-- [Clever Tools](/doc/cli), installed and connected to your account
+- [Clever Tools](/doc/manage/cli), installed and connected to your account
 
 ## Clone the example application
 
@@ -58,7 +58,7 @@ Create a MongoDB add-on and link it to the application:
 clever addon create mongodb-addon myMongoDb -p xs_sml -l myNodeApp
 ```
 
-Linking the add-on injects its [environment variables](/doc/develop/env-variables/#how-are-variables-defined), including `MONGODB_ADDON_URI`, into the application. If you already have a MongoDB add-on, link it instead:
+Linking the add-on injects its [environment variables](/doc/develop/common-configuration/environment-variables/#how-are-variables-defined), including `MONGODB_ADDON_URI`, into the application. If you already have a MongoDB add-on, link it instead:
 
 ```bash
 clever addon link myMongoDb
@@ -82,8 +82,8 @@ Clever Cloud provides MongoDB 4.0.3, the last release under the GNU AGPL v3 lice
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/nodejs" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
-  {{< card link="/developers/doc/addons/mongodb" title="MongoDB add-on" subtitle="Manage MongoDB databases" icon="database" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
+  {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB add-on" subtitle="Manage MongoDB databases" icon="database" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://mongoosejs.com/docs/compatibility.html" title="Mongoose compatibility" subtitle="Check MongoDB server compatibility" icon="external-link" >}}
 {{< /cards >}}

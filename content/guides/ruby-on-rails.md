@@ -35,7 +35,7 @@ Run `bundle install` after changing the dependencies and commit the resulting lo
 
 ## Create the application and database
 
-Install [Clever Tools](/developers/doc/cli/), log in, then create a Ruby application from the project directory:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a Ruby application from the project directory:
 
 ```bash
 npm i -g clever-tools
@@ -47,7 +47,7 @@ clever create -t ruby -a myRailsApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a [custom domain](/developers/doc/administrate/domain-names/). A custom domain also requires DNS configuration:
+You can display your application's URL or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/). A custom domain also requires DNS configuration:
 
 ```bash
 clever domain
@@ -94,13 +94,13 @@ clever deploy
 clever open
 ```
 
-Rails reads linked add-on variables through `ENV`, as it does for any other [environment variable](/developers/doc/develop/env-variables/).
+Rails reads linked add-on variables through `ENV`, as it does for any other [environment variable](/developers/doc/develop/common-configuration/environment-variables/).
 
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/ruby/" title="Ruby runtime" subtitle="Configure Ruby, Puma and Rake tasks" icon="ruby" >}}
+  {{< card link="/developers/doc/deploy/applications/ruby/" title="Ruby runtime" subtitle="Configure Ruby, Puma and Rake tasks" icon="ruby" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://guides.rubyonrails.org/" title="Rails guides" subtitle="Build and configure Rails applications" icon="book-open" >}}
-  {{< card link="/developers/doc/addons/postgresql/" title="PostgreSQL" subtitle="Manage a PostgreSQL add-on" icon="circle-stack" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Manage a PostgreSQL add-on" icon="circle-stack" >}}
 {{< /cards >}}

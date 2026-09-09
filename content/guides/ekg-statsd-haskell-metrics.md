@@ -13,11 +13,11 @@ aliases:
 - /doc/deploy/application/haskell/tutorials/ekg-statsd-haskell-metrics.md
 ---
 
-Use [EKG](https://hackage.haskell.org/package/ekg-core) to collect runtime metrics and [`ekg-statsd`](https://hackage.haskell.org/package/ekg-statsd) to send them to the [StatsD endpoint available to Clever Cloud applications](/doc/metrics/#publish-your-own-metrics). Applications built on WAI can also use [`wai-middleware-metrics`](https://hackage.haskell.org/package/wai-middleware-metrics) to record request counts, response status codes and latency distributions.
+Use [EKG](https://hackage.haskell.org/package/ekg-core) to collect runtime metrics and [`ekg-statsd`](https://hackage.haskell.org/package/ekg-statsd) to send them to the [StatsD endpoint available to Clever Cloud applications](/doc/develop/observability/metrics/#publish-your-own-metrics). Applications built on WAI can also use [`wai-middleware-metrics`](https://hackage.haskell.org/package/wai-middleware-metrics) to record request counts, response status codes and latency distributions.
 
 ## Configure metrics
 
-Add these packages to the executable's `build-depends` in your [Cabal file](/doc/applications/haskell#dependencies):
+Add these packages to the executable's `build-depends` in your [Cabal file](/doc/deploy/applications/haskell#dependencies):
 
 - ekg-core
 - ekg-statsd

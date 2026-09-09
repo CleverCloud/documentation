@@ -30,28 +30,26 @@ While Kubernetes excels at deploying applications, databases come with operation
 
 ## Supported Services
 
-Originally designed for managed databases, the Clever Kubernetes Operator has expanded to support a wide range of Clever Cloud services as native Kubernetes Custom Resources:
+Originally designed for managed databases, the Clever Kubernetes Operator has expanded to cover fourteen Clever Cloud add-ons, each as a native Kubernetes Custom Resource under the `api.clever-cloud.com/v1` API group:
 
-- **Databases**:
-  - PostgreSQL
-  - MySQL
-  - MongoDB
-- **Key-Value Storage**:
-  - Redis
-  - Materia KV
-- **Object Storage**:
-  - Cellar (S3-compatible)
-- **Search Engines**:
-  - Elasticsearch
-- **Message Brokers**:
-  - Pulsar
-- **Analytics Platforms**:
-  - Matomo
-  - Metabase
-  - Azimutt
-- **Authentication Services**:
-  - Keycloak
-- And more services to come
+| Add-on                               | Kind             |
+| ------------------------------------ | ---------------- |
+| Azimutt                              | `Azimutt`        |
+| Cellar, S3-compatible object storage | `Cellar`         |
+| Config Provider                      | `ConfigProvider` |
+| Elasticsearch                        | `ElasticSearch`  |
+| Keycloak                             | `Keycloak`       |
+| Materia KV                           | `KV`             |
+| Matomo                               | `Matomo`         |
+| Metabase                             | `Metabase`       |
+| MongoDB                              | `MongoDb`        |
+| MySQL                                | `MySql`          |
+| Otoroshi                             | `Otoroshi`       |
+| PostgreSQL                           | `PostgreSql`     |
+| Pulsar                               | `Pulsar`         |
+| Redis                                | `Redis`          |
+
+Application runtimes are not part of the operator: it manages add-ons, and you deploy applications with [Clever Tools](/doc/manage/cli/), a `git push` or the [Terraform provider](/doc/tools/terraform/), which covers both.
 
 ## Key Features
 
@@ -530,17 +528,7 @@ The Clever Kubernetes Operator acts as a bridge between your Kubernetes cluster 
 
 ### Additional Supported Resources
 
-The Clever Kubernetes Operator supports many other Clever Cloud services, including:
-
-- Elasticsearch
-- MongoDB
-- MySQL
-- Cellar (S3-compatible object storage)
-- Pulsar (message broker)
-- Matomo (analytics)
-- Metabase (business intelligence)
-- Azimutt (database visualization)
-- Keycloak (authentication)
+The same pattern applies to every add-on listed in [Supported Services](#supported-services), only the `kind` and the plan change.
 
 For examples of how to configure these resources, refer to the `examples/kubernetes` directory in the [Clever Kubernetes Operator repository](https://github.com/CleverCloud/clever-kubernetes-operator). These examples provide YAML manifests for all supported resources with their available configuration options.
 

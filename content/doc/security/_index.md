@@ -16,6 +16,7 @@ keywords:
 Certifications cover what the infrastructure is audited against. Everything else is a control you hold, and most are opt-in: roles decide what each member of an organisation can do, secrets belong outside your code, and encryption at rest and antivirus scanning are enabled per resource. TLS certificates are the exception, generated and renewed for your domains without configuration.
 
 {{< cards >}}
+  {{< card link="/developers/doc/security/certifications" title="Certifications" subtitle="Standards the infrastructure is audited against" icon="document-check" >}}
   {{< card link="/developers/doc/security/clamav" title="ClamAV" subtitle="Antivirus scanning inside your application" icon="magnifying-glass" >}}
   {{< card link="/developers/doc/security/encryption-at-rest" title="Encryption at rest" subtitle="Encrypt add-on data stored on disk" icon="lock-closed" >}}
   {{< card link="/developers/doc/security/iam-roles" title="IAM (Roles)" subtitle="Organisations, members and their privileges" icon="user-group" >}}

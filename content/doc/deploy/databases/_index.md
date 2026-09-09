@@ -15,7 +15,7 @@ aliases:
 - /doc/databases
 ---
 
-Managed database add-ons run alongside your applications, with backups, monitoring and version upgrades handled by the platform. Create one from the Console, the CLI or the API, then link it to an application to inject its credentials as environment variables.
+Two models sit side by side. PostgreSQL, MySQL, MongoDB, Redis and Elastic run as managed instances you size, with backups, monitoring and version upgrades handled by the platform. Materia KV and Materia TS are serverless: no instance to choose, no capacity to plan, and your data replicated synchronously across three data centers. Both link to an application the same way, through environment variables.
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/databases/elastic" title="Elastic Stack" subtitle="Managed search and analytics engine" icon="elastic" >}}

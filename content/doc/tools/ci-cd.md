@@ -15,6 +15,7 @@ aliases:
 - /ci-cd
 - /doc/administrate/ci-cd
 - /doc/ci-cd
+- /doc/tools-integrations/ci-cd/
 - /doc/ci-cd/custom-scripts
 ---
 

@@ -19,6 +19,9 @@ aliases:
 - /doc/common-configuration/scaling
 - /doc/deploy/application/scalability
 - /doc/reference/reference-scaling
+- /doc/administrate/scaling/
+- /doc/develop/configure-applications/scaling/
+- /doc/reference/scaling/
 - /doc/scaling-tips
 ---
 

@@ -13,6 +13,9 @@ keywords:
 aliases:
 - /doc/account/notifications
 - /doc/admin-console/notifications
+- /doc/administrate/notifications/
+- /doc/develop/notifications/
+- /doc/develop/observability/notifications/
 - /doc/notifications
 ---
 

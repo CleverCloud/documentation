@@ -26,6 +26,7 @@ aliases:
 - /doc/ruby-hosting
 - /doc/ruby/ruby
 - /doc/ruby/ruby-on-rails
+- /doc/applications/ruby/ruby/
 - /getting-started/by-language/ruby
 ---
 

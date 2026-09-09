@@ -15,6 +15,7 @@ aliases:
 - /cli/install
 - /doc/cli-setup
 - /doc/cli/install
+- /doc/manage/install
 - /doc/install
 ---
 

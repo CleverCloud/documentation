@@ -39,7 +39,7 @@ aliases:
   {{< card link="/developers/doc/network" title="Network" subtitle="Private networks, IP ranges and network services" icon="globe-alt" >}}
   {{< card link="/developers/doc/security" title="Security & Compliance" subtitle="Certifications, encryption, TLS and secrets" icon="lock-closed" >}}
   {{< card link="/developers/doc/tools" title="Tools & Integrations" subtitle="CI/CD, GitHub, GitLab and Terraform" icon="git" >}}
-  {{< card link="/developers/doc/account" title="Account & Billing" subtitle="Account, organisations, invoices and payments" icon="user-circle" >}}
+  {{< card link="/developers/doc/account-billing" title="Account & Billing" subtitle="Account, organisations, invoices and payments" icon="user-circle" >}}
 {{< /cards >}}
 
 {{< hextra/hero-subtitle style="margin:20px 0">}}

@@ -173,7 +173,7 @@ clever ssh -a app_id_or_name -i ~/.ssh/id_ed25519  # Use specific key
 
 For extended debugging sessions, set `CC_TROUBLESHOOT=true` as an environment variable. This keeps your application running for up to 1 hour, even if errors occur.
 
-[SSH key management guide](/doc/account/ssh-keys/)
+[SSH key management guide](/doc/account-billing/ssh-keys/)
 
 ### Domain Configuration Diagnostics
 

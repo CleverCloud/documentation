@@ -97,7 +97,7 @@ You can find your deployment url under the Clever Cloud console in your applicat
 
 {{% details title="Fail to push to a repository" closed="true" %}}
 
-It might be because your SSH agent is not properly configured. Please check [the SSH documentation page](/doc/account/ssh-keys#checking-of-existing-ssh-keys).
+It might be because your SSH agent is not properly configured. Please check [the SSH documentation page](/doc/account-billing/ssh-keys#checking-of-existing-ssh-keys).
 {{% /details %}}
 
 ## Deployments issues

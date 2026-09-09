@@ -18,9 +18,9 @@ keywords:
   Deploy Docs, an open source collaborative document editor, on Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
-[Docs](https://github.com/suitenumerique/docs) combines a Django API, a Next.js static frontend and a Node.js collaboration server. This guide deploys these components with [PostgreSQL](/developers/doc/addons/postgresql/), [Redis](/developers/doc/addons/redis/), [Cellar S3-compatible object storage](/developers/doc/addons/cellar/) and [Keycloak](/developers/doc/addons/keycloak/).
+[Docs](https://github.com/suitenumerique/docs) combines a Django API, a Next.js static frontend and a Node.js collaboration server. This guide deploys these components with [PostgreSQL](/developers/doc/deploy/databases/postgresql/), [Redis](/developers/doc/deploy/databases/redis/), [Cellar S3-compatible object storage](/developers/doc/deploy/storage/cellar/) and [Keycloak](/developers/doc/deploy/services/keycloak/).
 
-The deployment uses one custom domain and [path routing](/developers/doc/administrate/domain-names/#path-routing) to expose the following applications:
+The deployment uses one custom domain and [path routing](/developers/doc/develop/common-configuration/domain-names/#path-routing) to expose the following applications:
 
 | Application   | Runtime | Route                                     | Purpose                                         |
 | ------------- | ------- | ----------------------------------------- | ----------------------------------------------- |
@@ -87,7 +87,7 @@ The build hook runs migrations after dependencies are installed. The run command
 
 ### Configure the private media proxy
 
-[Mise is available on Clever Cloud](/developers/doc/reference/reference-environment-variables/#install-tools-with-mise-package-manager). Create a dedicated directory and declare Caddy through Mise's GitHub backend:
+[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create a dedicated directory and declare Caddy through Mise's GitHub backend:
 
 ```bash
 mkdir media-proxy
@@ -136,7 +136,7 @@ The [`forward_auth`](https://caddyserver.com/docs/caddyfile/directives/forward_a
 
 ## Create the applications and add-ons
 
-Install [Clever Tools](/developers/doc/cli/), log in and create the four applications with aliases:
+Install [Clever Tools](/developers/doc/manage/cli/), log in and create the four applications with aliases:
 
 ```bash
 npm i -g clever-tools
@@ -203,7 +203,7 @@ clever domain add "$DOCS_DOMAIN/api/convert/" -a myDocsCollaboration
 clever domain add "$DOCS_DOMAIN/media/" -a myDocsMedia
 ```
 
-Configure the required [DNS record](/developers/doc/administrate/domain-names/) for the custom domain. Keep the trailing slash on each path route.
+Configure the required [DNS record](/developers/doc/develop/common-configuration/domain-names/) for the custom domain. Keep the trailing slash on each path route.
 
 ## Configure Keycloak
 
@@ -395,12 +395,12 @@ The backend build hook applies pending migrations. Keep the versions in the runt
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/suitenumerique/docs" title="Docs source code" subtitle="Review releases, configuration and upstream deployment resources" icon="github" >}}
-  {{< card link="/developers/doc/applications/python/" title="Python applications" subtitle="Configure and deploy Python applications" icon="python" >}}
-  {{< card link="/developers/doc/applications/static/" title="Static applications" subtitle="Build and deploy static applications" icon="static" >}}
-  {{< card link="/developers/doc/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
-  {{< card link="/developers/doc/applications/linux/" title="Linux applications" subtitle="Configure and deploy any applications" icon="linux" >}}
-  {{< card link="/developers/doc/addons/postgresql/" title="PostgreSQL" subtitle="Store persistent application data" icon="circle-stack" >}}
-  {{< card link="/developers/doc/addons/redis/" title="Redis" subtitle="Configure the managed in-memory data store" icon="redis" >}}
-  {{< card link="/developers/doc/addons/cellar/" title="Cellar" subtitle="Store files in S3-compatible object storage" icon="cellar" >}}
-  {{< card link="/developers/doc/addons/keycloak/" title="Keycloak" subtitle="Configure the managed identity and access service" icon="keycloak" >}}
+  {{< card link="/developers/doc/deploy/applications/python/" title="Python applications" subtitle="Configure and deploy Python applications" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/static/" title="Static applications" subtitle="Build and deploy static applications" icon="static" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any applications" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Store persistent application data" icon="circle-stack" >}}
+  {{< card link="/developers/doc/deploy/databases/redis/" title="Redis" subtitle="Configure the managed in-memory data store" icon="redis" >}}
+  {{< card link="/developers/doc/deploy/storage/cellar/" title="Cellar" subtitle="Store files in S3-compatible object storage" icon="cellar" >}}
+  {{< card link="/developers/doc/deploy/services/keycloak/" title="Keycloak" subtitle="Configure the managed identity and access service" icon="keycloak" >}}
 {{< /cards >}}

@@ -22,7 +22,7 @@ aliases:
   Deploy a Symfony application on Clever Cloud with a managed PostgreSQL database.
 {{< /hextra/hero-subtitle >}}
 
-[Symfony](https://symfony.com/) applications run on Clever Cloud's [PHP runtime](/developers/doc/applications/php/), which installs Composer dependencies and serves the application's public directory through Apache.
+[Symfony](https://symfony.com/) applications run on Clever Cloud's [PHP runtime](/developers/doc/deploy/applications/php/), which installs Composer dependencies and serves the application's public directory through Apache.
 
 ## Prepare the application
 
@@ -47,7 +47,7 @@ The explicit server version lets Doctrine select the correct PostgreSQL platform
 
 ## Create and configure the application
 
-Install [Clever Tools](/developers/doc/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
 
 ```bash
 npm i -g clever-tools
@@ -59,7 +59,7 @@ clever create -t php -a mySymfonyApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -143,7 +143,7 @@ clever logs
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://symfony.com/doc/current/deployment.html" title="Symfony deployment" subtitle="Prepare and optimize a Symfony application for production" icon="symfony" >}}
-  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/addons/postgresql/" title="PostgreSQL" subtitle="Create and operate a managed PostgreSQL database" icon="circle-stack" >}}
-  {{< card link="/developers/doc/develop/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Create and operate a managed PostgreSQL database" icon="circle-stack" >}}
+  {{< card link="/developers/doc/develop/common-configuration/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
 {{< /cards >}}

@@ -23,6 +23,6 @@ A deployable Rack application needs:
 - A `config.ru` entry point
 - A supported Ruby version declared in the `Gemfile` or with `CC_RUBY_VERSION`
 
-No custom run command or listening port is required: the runtime configures Puma and connects it to the managed NGINX server. Access [environment variables](/developers/doc/develop/env-variables/) with `ENV["VARIABLE_NAME"]`.
+No custom run command or listening port is required: the runtime configures Puma and connects it to the managed NGINX server. Access [environment variables](/developers/doc/develop/common-configuration/environment-variables/) with `ENV["VARIABLE_NAME"]`.
 
-Follow the [complete Ruby Rack tutorial](/guides/ruby-rack-app-tutorial/) to create, test and deploy a minimal current application, or read the [Ruby runtime reference](/developers/doc/applications/ruby/) for build hooks, Rake tasks, Puma settings and static files.
+Follow the [complete Ruby Rack tutorial](/guides/ruby-rack-app-tutorial/) to create, test and deploy a minimal current application, or read the [Ruby runtime reference](/developers/doc/deploy/applications/ruby/) for build hooks, Rake tasks, Puma settings and static files.

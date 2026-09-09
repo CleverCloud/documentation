@@ -21,7 +21,7 @@ keywords:
 
 - A [Clever Cloud account](https://console.clever-cloud.com)
 - [Git](https://git-scm.com/downloads)
-- [Clever Tools](/doc/cli), installed and connected to your account
+- [Clever Tools](/doc/manage/cli), installed and connected to your account
 
 ## Clone EchoIP
 
@@ -80,7 +80,7 @@ Country, city and autonomous system information require the optional [GeoLite2 d
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/golang" title="Go applications" subtitle="Configure and deploy Go applications" icon="go" >}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go applications" subtitle="Configure and deploy Go applications" icon="go" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/mpolden/echoip" title="EchoIP repository" subtitle="Explore EchoIP features and configuration" icon="github" >}}
 {{< /cards >}}

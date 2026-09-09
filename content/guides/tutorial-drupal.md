@@ -19,7 +19,7 @@ aliases:
   Deploy Drupal on Clever Cloud with a managed MySQL database and persistent public files.
 {{< /hextra/hero-subtitle >}}
 
-[Drupal](https://www.drupal.org/) runs on Clever Cloud's [PHP runtime](/developers/doc/applications/php/). This guide follows Drupal's recommended Composer layout, where the public document root is the `web` directory.
+[Drupal](https://www.drupal.org/) runs on Clever Cloud's [PHP runtime](/developers/doc/deploy/applications/php/). This guide follows Drupal's recommended Composer layout, where the public document root is the `web` directory.
 
 This guide was tested with Drupal 11.4.5 and PHP 8.4. Check the [Drupal system requirements](https://www.drupal.org/docs/getting-started/system-requirements) before selecting versions for a different release.
 
@@ -66,7 +66,7 @@ Keep generated dependencies and persistent files out of Git. The recommended pro
 
 ## Create the application and services
 
-Install [Clever Tools](/developers/doc/cli/), log in, then create a PHP application and a linked MySQL add-on:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a PHP application and a linked MySQL add-on:
 
 ```bash
 npm i -g clever-tools
@@ -78,7 +78,7 @@ clever addon create mysql-addon myDrupalDatabase -p xs_sml --link myDrupal
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -151,7 +151,7 @@ Follow Drupal's [update procedure](https://www.drupal.org/docs/updating-drupal) 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://www.drupal.org/docs/getting-started/installing-drupal" title="Drupal installation" subtitle="Install and configure a Drupal website" icon="drupal" >}}
-  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/addons/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
-  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/deploy/databases/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
 {{< /cards >}}

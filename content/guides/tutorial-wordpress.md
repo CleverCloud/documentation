@@ -21,13 +21,13 @@ aliases:
   Deploy WordPress on Clever Cloud with a managed MySQL database and persistent media storage.
 {{< /hextra/hero-subtitle >}}
 
-[WordPress](https://wordpress.org/) runs on Clever Cloud's [PHP runtime](/developers/doc/applications/php/). This guide uses Git deployment so the WordPress core, themes and plugins are versioned with the application while a [MySQL add-on](/developers/doc/addons/mysql/) stores content and an [FS Bucket](/developers/doc/addons/fs-bucket/) stores uploads.
+[WordPress](https://wordpress.org/) runs on Clever Cloud's [PHP runtime](/developers/doc/deploy/applications/php/). This guide uses Git deployment so the WordPress core, themes and plugins are versioned with the application while a [MySQL add-on](/developers/doc/deploy/databases/mysql/) stores content and an [FS Bucket](/developers/doc/deploy/storage/fs-bucket/) stores uploads.
 
 This guide was tested with WordPress 7.1 and PHP 8.4. It also applies to newer compatible WordPress releases.
 
 ## Prepare WordPress
 
-Install [Clever Tools](/developers/doc/cli/), log in, download WordPress and initialize the repository:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, download WordPress and initialize the repository:
 
 ```bash
 npm i -g clever-tools
@@ -92,7 +92,7 @@ clever addon create mysql-addon myWordPressDatabase -p xs_sml --link myWordPress
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
@@ -147,16 +147,16 @@ If you use Composer to manage WordPress and plugins as immutable dependencies, s
 
 ## Improve performance
 
-[Varnish](/developers/doc/develop/varnish/) is available on PHP applications for HTTP caching. Start from the [WordPress VCL example](https://github.com/CleverCloud/varnish-examples/blob/master/wordpress.vcl) and make cache exclusions match your site and plugins.
+[Varnish](/developers/doc/develop/request-flow/varnish/) is available on PHP applications for HTTP caching. Start from the [WordPress VCL example](https://github.com/CleverCloud/varnish-examples/blob/master/wordpress.vcl) and make cache exclusions match your site and plugins.
 
-For object caching, link a [Redis add-on](/developers/doc/addons/redis/) and use a maintained WordPress Redis plugin configured with the injected `REDIS_HOST`, `REDIS_PORT` and `REDIS_PASSWORD` variables. Use a unique cache-key salt when several WordPress sites share the same Redis database.
+For object caching, link a [Redis add-on](/developers/doc/deploy/databases/redis/) and use a maintained WordPress Redis plugin configured with the injected `REDIS_HOST`, `REDIS_PORT` and `REDIS_PASSWORD` variables. Use a unique cache-key salt when several WordPress sites share the same Redis database.
 
 ## Learn more
 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://developer.wordpress.org/advanced-administration/before-install/howto-install/" title="WordPress installation" subtitle="Install and configure WordPress" icon="wordpress" >}}
-  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/addons/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
-  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/deploy/databases/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
 {{< /cards >}}

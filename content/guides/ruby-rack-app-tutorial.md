@@ -59,7 +59,7 @@ You can check the application locally with `bundle exec puma config.ru`, then op
 
 ## Deploy on Clever Cloud
 
-Install [Clever Tools](/developers/doc/cli/), log in and create a Ruby application linked to the current directory:
+Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Ruby application linked to the current directory:
 
 ```bash
 npm i -g clever-tools
@@ -70,7 +70,7 @@ clever create -t ruby -a myRackApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a [custom domain](/developers/doc/administrate/domain-names/). A custom domain also requires DNS configuration:
+You can display your application's URL or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/). A custom domain also requires DNS configuration:
 
 ```bash
 clever domain
@@ -92,7 +92,7 @@ The Ruby runtime installs the locked gems and starts `config.ru` with Puma. It m
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/ruby/" title="Ruby runtime" subtitle="Configure Ruby and Puma applications" icon="ruby" >}}
+  {{< card link="/developers/doc/deploy/applications/ruby/" title="Ruby runtime" subtitle="Configure Ruby and Puma applications" icon="ruby" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/rack/rack" title="Rack documentation" subtitle="Learn the Rack interface" icon="github" >}}
   <!-- markdownlint-disable-next-line MD034 -->

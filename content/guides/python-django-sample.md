@@ -27,7 +27,7 @@ This guide uses the maintained [Clever Cloud Django example](https://github.com/
 
 - A [Clever Cloud account](https://console.clever-cloud.com)
 - [Git](https://git-scm.com/downloads)
-- [Clever Tools](/doc/cli), installed and connected to your account
+- [Clever Tools](/doc/manage/cli), installed and connected to your account
 
 ## Clone the example application
 
@@ -72,19 +72,19 @@ clever deploy
 clever open
 ```
 
-The example uses SQLite for demonstration purposes. Local application files are not persistent on Clever Cloud, so configure a managed database such as [PostgreSQL](/doc/addons/postgresql/) before storing production data. Django documents the required [database settings and drivers](https://docs.djangoproject.com/en/stable/ref/databases/).
+The example uses SQLite for demonstration purposes. Local application files are not persistent on Clever Cloud, so configure a managed database such as [PostgreSQL](/doc/deploy/databases/postgresql/) before storing production data. Django documents the required [database settings and drivers](https://docs.djangoproject.com/en/stable/ref/databases/).
 
 ## Deploy an existing Django project
 
-For an existing uv project, commit `pyproject.toml` and `uv.lock`, then adapt the module in `CC_PYTHON_UV_RUN_COMMAND` to your ASGI application. Configure hosts, secrets, static files and databases through [environment variables](/doc/develop/env-variables/) rather than committing production values.
+For an existing uv project, commit `pyproject.toml` and `uv.lock`, then adapt the module in `CC_PYTHON_UV_RUN_COMMAND` to your ASGI application. Configure hosts, secrets, static files and databases through [environment variables](/doc/develop/common-configuration/environment-variables/) rather than committing production values.
 
-Projects using `requirements.txt` instead of uv use the [legacy Python deployment mode](/doc/applications/python/#select-the-python-backend). Set `CC_PYTHON_MODULE` to the WSGI or ASGI module expected by the selected backend.
+Projects using `requirements.txt` instead of uv use the [legacy Python deployment mode](/doc/deploy/applications/python/#select-the-python-backend). Set `CC_PYTHON_MODULE` to the WSGI or ASGI module expected by the selected backend.
 
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/applications/python/uv/" title="Python with uv" subtitle="Configure native uv deployment" icon="python" >}}
-  {{< card link="/developers/doc/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/uv/" title="Python with uv" subtitle="Configure native uv deployment" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="python" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://docs.djangoproject.com/en/stable/" title="Django documentation" subtitle="Build and configure Django applications" icon="django" >}}
 {{< /cards >}}

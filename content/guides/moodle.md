@@ -16,7 +16,7 @@ aliases:
   Deploy Moodle on Clever Cloud with a managed MySQL database, persistent data files and scheduled tasks.
 {{< /hextra/hero-subtitle >}}
 
-[Moodle](https://moodle.org/) is an open source learning management system for creating courses and personalised learning environments. It runs on Clever Cloud's [PHP runtime](/developers/doc/applications/php/) with a managed database and persistent storage outside the application code.
+[Moodle](https://moodle.org/) is an open source learning management system for creating courses and personalised learning environments. It runs on Clever Cloud's [PHP runtime](/developers/doc/deploy/applications/php/) with a managed database and persistent storage outside the application code.
 
 This guide was tested with Moodle 5.2.2, PHP 8.4 and MySQL 8.4. Check the [requirements for your Moodle release](https://moodledev.io/general/releases) before selecting other versions.
 
@@ -68,7 +68,7 @@ Moodle ignores `config.php` by default to prevent accidental credential commits.
 
 ## Create the application and services
 
-Install [Clever Tools](/developers/doc/cli/), log in, then create a PHP application and a linked MySQL add-on:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a PHP application and a linked MySQL add-on:
 
 ```bash
 npm i -g clever-tools
@@ -86,7 +86,7 @@ Display the generated application domain:
 clever domain
 ```
 
-Set `MOODLE_URL` to that HTTPS URL. You can instead add a custom domain, which also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+Set `MOODLE_URL` to that HTTPS URL. You can instead add a custom domain, which also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain add your.website.tld
@@ -172,8 +172,8 @@ Moodle applies required database changes after deployment through its web or CLI
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://docs.moodle.org/en/Installation_quick_guide" title="Moodle installation" subtitle="Install and configure a Moodle site" icon="moodle" >}}
-  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/addons/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
-  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
-  {{< card link="/developers/doc/administrate/cron/" title="Scheduled tasks" subtitle="Run recurring commands in an application" icon="clock" >}}
+  {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/deploy/databases/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+  {{< card link="/developers/doc/develop/cron/" title="Scheduled tasks" subtitle="Run recurring commands in an application" icon="clock" >}}
 {{< /cards >}}

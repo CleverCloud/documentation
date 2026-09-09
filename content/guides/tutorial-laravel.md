@@ -20,7 +20,7 @@ aliases:
   Deploy a Laravel application on Clever Cloud with a managed MySQL or PostgreSQL database.
 {{< /hextra/hero-subtitle >}}
 
-[Laravel](https://laravel.com/) applications run on Clever Cloud's [PHP runtime](/developers/doc/applications/php/), which installs Composer dependencies and serves the application's public directory through NGINX.
+[Laravel](https://laravel.com/) applications run on Clever Cloud's [PHP runtime](/developers/doc/deploy/applications/php/), which installs Composer dependencies and serves the application's public directory through Apache.
 
 ## Prepare the application
 
@@ -50,7 +50,7 @@ For PostgreSQL, map the corresponding connection values to `POSTGRESQL_ADDON_HOS
 
 ## Create and configure the application
 
-Install [Clever Tools](/developers/doc/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
+Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
 
 ```bash
 npm i -g clever-tools
@@ -62,14 +62,14 @@ clever create -t php -a myLaravelApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/administrate/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
 
 ```bash
 clever domain
 clever domain add your.website.tld
 ```
 
-Create a MySQL add-on and link it to the application. You can use a [PostgreSQL add-on](/developers/doc/addons/postgresql/) instead if the application is configured for PostgreSQL:
+Create a MySQL add-on and link it to the application. You can use a [PostgreSQL add-on](/developers/doc/deploy/databases/postgresql/) instead if the application is configured for PostgreSQL:
 
 ```bash
 clever addon create mysql-addon myLaravelDatabase -p xs_sml --link myLaravelApp
@@ -108,7 +108,7 @@ chmod +x clevercloud/post_build.sh
 clever env set CC_POST_BUILD_HOOK "./clevercloud/post_build.sh"
 ```
 
-The PHP runtime can use the platform's Node.js version selectors and package managers when building frontend assets. See [environment variables](/developers/doc/reference/reference-environment-variables/) for the available controls.
+The PHP runtime can use the platform's Node.js version selectors and package managers when building frontend assets. See [environment variables](/developers/doc/develop/common-configuration/environment-variables/reference/) for the available controls.
 
 ## Deploy Laravel
 
@@ -131,7 +131,7 @@ clever logs
 
 ## Persist uploaded files
 
-Application instances are replaced during deployments, so files written to their local filesystem are not persistent. Prefer object storage for user uploads when the application supports it. For code that requires a local filesystem, create and link an [FS Bucket](/developers/doc/addons/fs-bucket/), then mount it into a directory that does not already exist in the repository.
+Application instances are replaced during deployments, so files written to their local filesystem are not persistent. Prefer object storage for user uploads when the application supports it. For code that requires a local filesystem, create and link an [FS Bucket](/developers/doc/deploy/storage/fs-bucket/), then mount it into a directory that does not already exist in the repository.
 
 For example, mount a bucket as `storage/persistent`:
 
@@ -181,14 +181,14 @@ php artisan schedule:run
 chmod +x clevercloud/cron.sh
 ```
 
-The [PHP CLI memory limit](/developers/doc/applications/php/#memory-limit) depends on the application instance size. Monitor scheduled jobs and scale the application if they need more memory.
+The [PHP CLI memory limit](/developers/doc/deploy/applications/php/#memory-limit) depends on the application instance size. Monitor scheduled jobs and scale the application if they need more memory.
 
 ## Learn more
 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://laravel.com/docs/deployment" title="Laravel deployment" subtitle="Prepare and optimize a Laravel application for production" icon="laravel" >}}
-  {{< card link="/developers/doc/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/develop/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
-  {{< card link="/developers/doc/addons/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
+  {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
+  {{< card link="/developers/doc/develop/common-configuration/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
 {{< /cards >}}

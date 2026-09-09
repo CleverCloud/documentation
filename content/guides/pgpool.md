@@ -13,7 +13,7 @@ aliases:
 - /pgpool
 ---
 
-[Pgpool-II](https://www.pgpool.net/) runs between your application and a linked [PostgreSQL add-on](/doc/addons/postgresql). It provides local connection pooling and can distribute read queries when Clever Cloud has configured PostgreSQL streaming replication for your organisation.
+[Pgpool-II](https://www.pgpool.net/) runs between your application and a linked [PostgreSQL add-on](/doc/deploy/databases/postgresql). It provides local connection pooling and can distribute read queries when Clever Cloud has configured PostgreSQL streaming replication for your organisation.
 
 Pgpool-II is available in every runtime except Docker, where processes and services are managed by the container image.
 
@@ -81,7 +81,7 @@ During a rolling deployment, old and new instances can run simultaneously. The m
 2 × maximum running instances × CC_PGPOOL_NUM_INIT_CHILDREN
 ```
 
-Keep this result below the PostgreSQL plan's connection limit and reserve capacity for administration or other clients. See the [environment variables reference](/doc/reference/reference-environment-variables/#pgpool-ii) for connection lifetime, logging, health check and query cache settings.
+Keep this result below the PostgreSQL plan's connection limit and reserve capacity for administration or other clients. See the [environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#pgpool-ii) for connection lifetime, logging, health check and query cache settings.
 
 ## Configure read replicas
 
@@ -103,7 +103,7 @@ The leader's weight is configured with `CC_PGPOOL_LEADER_WEIGHT`. Higher followe
 
 ## Inspect Pgpool-II
 
-Open an [SSH session](/doc/administrate/ssh-clever-tools/) to an application instance and start `psql`:
+Open an [SSH session](/doc/develop/ssh-access/) to an application instance and start `psql`:
 
 ```bash
 clever ssh
@@ -132,5 +132,5 @@ Detaching the leader or an unreplicated backend interrupts database access. Only
 ## Learn more
 
 - [Pgpool-II documentation](https://www.pgpool.net/docs/latest/en/html/) — Configure pooling, load balancing and monitoring
-- [PostgreSQL add-ons](/doc/addons/postgresql) — Create, link and administer PostgreSQL databases
-- [Environment variables reference](/doc/reference/reference-environment-variables/#pgpool-ii) — Review all Pgpool-II settings available on Clever Cloud
+- [PostgreSQL add-ons](/doc/deploy/databases/postgresql) — Create, link and administer PostgreSQL databases
+- [Environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#pgpool-ii) — Review all Pgpool-II settings available on Clever Cloud

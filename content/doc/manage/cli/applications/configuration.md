@@ -17,6 +17,7 @@ aliases:
 - /doc/clever-tools/tcp-redirections
 - /doc/cli/applications/configuration
 - /doc/cli/applications/deployment-lifecycle/applications-config
+- /doc/manage/cli/configuration/
 - /doc/cli/configure
 ---
 

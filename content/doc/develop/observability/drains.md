@@ -13,6 +13,7 @@ keywords:
 - export
 aliases:
 - /doc/administrate/log-drains
+- /doc/administrate/drains/
 - /doc/observability/drains
 ---
 

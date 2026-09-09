@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/administrate/network
 - /doc/ip-ranges
+- /doc/administrate/network/ip-ranges/
 - /doc/network/services
 ---
 

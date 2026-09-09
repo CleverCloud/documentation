@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /administrate/encryption-at-rest
 - /doc/administrate/encryption-at-rest
+- /doc/deploy/databases/postgresql/encryption-at-rest/
 - /doc/encryption-at-rest
 ---
 

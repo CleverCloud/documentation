@@ -27,6 +27,7 @@ aliases:
 - /doc/python/python_apps
 - /doc/reference/python
 - /python
+- /doc/deploy/application/python/python/
 - /python/python_apps
 ---
 
@@ -97,6 +98,19 @@ The goal will be launched after the dependencies from `requirements.txt` have be
 To execute a goal, define the environment variable `PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
 - [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+
+#### Django manage.py tasks
+
+Clever Cloud runs [manage.py](https://docs.djangoproject.com/en/stable/ref/django-admin/) tasks during the build, after pip installs the dependencies from `requirements.txt` and before the web server starts. Declare them with the `CC_PYTHON_MANAGE_TASKS` environment variable, as a comma-separated list. Each entry becomes a `python manage.py` call, so it can carry its own options:
+
+```bash
+CC_PYTHON_MANAGE_TASKS="migrate, collectstatic --noinput"
+```
+
+A task exiting with an error stops the build.
+
+> [!NOTE]
+> These tasks belong to the legacy deployment mode. [Native uv deployments](/doc/deploy/applications/python/uv/) don't run them.
 
 ### Select the Python backend
 

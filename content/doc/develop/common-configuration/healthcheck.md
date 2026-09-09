@@ -15,6 +15,7 @@ aliases:
 - /doc/best-practices/healthcheck
 - /doc/common-configuration/healthcheck
 - /doc/develop/healthcheck
+- /develop/healthcheck
 - /doc/healthcheck
 ---
 

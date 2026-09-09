@@ -11,6 +11,7 @@ keywords:
 - web application
 aliases:
 - /doc/deploy/application/javascript/tutorials/node-js-mongo-db
+- /deploy/application/javascript/tutorials/node-js-mongo-db/
 - /doc/nodejs/nodejs-mongodb-sample-app
 ---
 

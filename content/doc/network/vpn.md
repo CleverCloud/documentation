@@ -12,6 +12,7 @@ keywords:
 - tunnel
 - network
 aliases:
+- /doc/addons/vpn/
 - /doc/vpn
 ---
 

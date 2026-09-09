@@ -18,6 +18,9 @@ aliases:
 - /doc/addons/cellar
 - /doc/cellar
 - /doc/deploy/addon/cellar
+- /doc/addon/cellar/
+- /doc/deploy/addons/cellar/
+- /doc/deploy/databases/cellar/
 - /doc/storage/cellar
 ---
 {{< hextra/hero-subtitle >}}

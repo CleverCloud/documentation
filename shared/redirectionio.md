@@ -5,7 +5,6 @@
 | Name                             | Description                                                     | Default value |
 | -------------------------------- | --------------------------------------------------------------- | ------------- |
 | `CC_REDIRECTIONIO_PROJECT_KEY`   | The Redirection.io project key                                  |               |
-| `CC_REDIRECTIONIO_FORWARD_PORT`  | Override the port Redirection.io forwards traffic to (optional) |               |
 | `CC_REDIRECTIONIO_INSTANCE_NAME` | The name of your application (optional)                         |               |
 
 - [Learn more about Redirection.io](https://redirection.io/)

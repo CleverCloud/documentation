@@ -17,6 +17,7 @@ aliases:
 - /doc/account/create-account
 - /doc/account/delete-account
 - /doc/account/manage-account
+- /doc/account/user-account
 - /doc/admin-console/authentification
 - /doc/getting-started/authentication
 ---

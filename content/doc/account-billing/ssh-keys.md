@@ -13,6 +13,7 @@ keywords:
 - public key
 aliases:
 - /account/ssh-keys-management
+- /doc/account/ssh-keys
 - /doc/account/ssh-keys-management
 - /doc/account/ssh-keys-managment
 - /doc/getting-started/ssh-keys

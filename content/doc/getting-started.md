@@ -226,7 +226,7 @@ If the remote asks you for a password right after a git push attempt, this may b
 **Add your SSH key to your profile here:**
 <https://console.clever-cloud.com/users/me/ssh-keys>
 
-The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account/ssh-keys/)
+The full tutorial about adding SSH key is here: [adding SSH keys](/doc/account-billing/ssh-keys/)
 
 {{% /details %}}
 {{% details title= "Git ⋅ Unable to resolve the reference master" closed="true" %}}

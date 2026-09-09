@@ -42,7 +42,7 @@ You need to have at least one of the following installed locally:
 
 ### Make sure you have a properly configured SSH key
 
-To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation](/doc/account/ssh-keys) to know how to set up your SSH keys.
+To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation](/doc/account-billing/ssh-keys) to know how to set up your SSH keys.
 
 ## Using Clever Tools CLI
 
@@ -142,7 +142,7 @@ First, make sure your application is running, otherwise there is no instance to 
 If your application is up, this means you aren't allowed to access the organisation or application. This might be due to permission issue.
 If you're supposed to have access to the application, this is likely due to a key management issue. To fix it:
 
-- make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](/doc/account/ssh-keys#add-a-public-ssh-key-on-clever-cloud)
+- make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](/doc/account-billing/ssh-keys#add-a-public-ssh-key-on-clever-cloud)
 - make sure your SSH agent is using the proper private key
 
 A useful command for debugging is:
@@ -154,4 +154,4 @@ ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
 This command shows information about your SSH connection attempt, such as the key, and the organisation your key is linked to.
 
 If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).
-If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](/doc/account/ssh-keys/#configure-your-ssh-agent)
+If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](/doc/account-billing/ssh-keys/#configure-your-ssh-agent)

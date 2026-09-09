@@ -11,6 +11,7 @@ keywords:
 - slack
 - flowdock
 aliases:
+- /doc/account/notifications
 - /doc/admin-console/notifications
 - /doc/notifications
 ---

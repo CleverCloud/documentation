@@ -3,7 +3,7 @@ type: docs
 weight: 50
 linkTitle: Services
 title: Services
-description: Run managed services on Clever Cloud including identity management, analytics, business intelligence and automation
+description: Complete your Clever Cloud setup with identity, analytics, business intelligence, transactional email and CI/CD services
 keywords:
 - services
 - managed services
@@ -14,7 +14,7 @@ aliases:
 - /doc/services
 ---
 
-These add-ons deploy a complete service you would otherwise install and maintain yourself. The platform handles provisioning, updates and backups, and exposes the credentials your applications need.
+These add-ons extend the platform beyond applications, databases, functions and Kubernetes, and cover what your team needs around its own code: business intelligence, analytics, transactional email, identity, API management or CI/CD. Some run in your organisation, with the platform handling provisioning and updates. Others connect you to a partner product, or configure resources you already have.
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/services/config-provider" title="Config Provider" subtitle="Manage, import and inject configuration and credentials" icon="creds" >}}

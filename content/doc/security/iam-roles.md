@@ -18,6 +18,9 @@ aliases:
 - /doc/admin-console/organizations
 - /doc/iam-roles
 - /doc/organisations/roles
+- /doc/security-compliance/iam-roles/
+- /doc/security-compliance/iam/
+- /doc/security-compliance/roles/
 - /doc/organizations
 ---
 

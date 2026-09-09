@@ -20,6 +20,8 @@ aliases:
 - /doc/develop/varnish-as-http-cache
 - /doc/networking/varnish
 - /doc/request-flow/varnish
+- /doc/administrate/varnish/
+- /doc/develop/varnish-as-http-cache/
 - /doc/tools/varnish
 ---
 

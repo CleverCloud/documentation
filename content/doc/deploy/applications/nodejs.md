@@ -33,6 +33,7 @@ aliases:
 - /doc/nodejs-hosting
 - /doc/nodejs/nodejs
 - /doc/partials/language-specific-deploy/node
+- /nodejs/nodejs/
 - /getting-started/by-language/node
 ---
 

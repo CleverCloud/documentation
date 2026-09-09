@@ -13,6 +13,8 @@ keywords:
 - threat protection
 aliases:
 - /doc/administrate/clamav
+- /doc/addons/clamav/
+- /doc/security-compliance/clamav/
 - /doc/clamav
 ---
 

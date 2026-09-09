@@ -13,6 +13,8 @@ keywords:
 aliases:
 - /doc/administrate/network-groups
 - /doc/develop/network-groups
+- /doc/administrate/network-groups/
+- /doc/develop/networking/network-groups/
 - /doc/network-groups
 ---
 

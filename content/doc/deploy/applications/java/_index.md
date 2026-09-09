@@ -19,6 +19,8 @@ aliases:
 - /doc/java
 - /doc/java-hosting
 - /doc/java/select-java-version
+- /doc/develop/java/
+- /applications/java
 - /doc/partials/language-specific-deploy/java
 ---
 

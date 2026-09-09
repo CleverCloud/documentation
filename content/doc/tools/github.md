@@ -13,6 +13,7 @@ keywords:
 - automation
 aliases:
 - /doc/ci-cd/github
+- /doc/tools-integrations/github/
 - /doc/github
 ---
 

@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /ci-cd/gitlab
 - /doc/ci-cd/gitlab
+- /doc/cicd/deploy-from-gitlab
 - /doc/gitlab
 ---
 

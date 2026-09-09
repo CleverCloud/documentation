@@ -13,6 +13,7 @@ keywords:
 - routing
 aliases:
 - /doc/best-practices/blue-green
+- /doc/develop/best-practices/blue-green-deployments/
 - /doc/develop/blue-green
 ---
 

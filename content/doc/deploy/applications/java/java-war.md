@@ -15,6 +15,7 @@ aliases:
 - /doc/applications/java/java-war
 - /doc/deploy/application/java/java-war
 - /doc/java-war
+- /doc/applications/java/war/
 - /doc/java/java-war
 ---
 

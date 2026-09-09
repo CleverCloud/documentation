@@ -15,6 +15,8 @@ aliases:
 - /doc/observability
 ---
 
+Every application emits three streams you can read without instrumenting anything: logs from your process, access logs from the load balancers in front of it, and metrics collected on the instance. Logs stay available for 7 days, so drains forward them to the tool your team already queries. Metrics are stored in Warp 10 and stay open to WarpScript.
+
 {{< cards >}}
   {{< card link="/developers/doc/develop/observability/access-logs" title="Access Logs" subtitle="Read the HTTP requests reaching your applications" icon="document-search" >}}
   {{< card link="/developers/doc/develop/observability/activity" title="Activity" subtitle="Follow deployments and lifecycle events" icon="clock" >}}

@@ -20,7 +20,7 @@ aliases:
 ## Prerequisites
 
 - A [Clever Cloud account](https://console.clever-cloud.com/)
-- [Clever Tools](/doc/cli/install/)
+- [Clever Tools](/doc/manage/cli/install/)
 - [Git](https://git-scm.com/)
 - Ruby 3.2 or later with [Bundler](https://bundler.io/)
 
@@ -94,7 +94,7 @@ description = "Start Fluentd"
 run = "bundle exec fluentd --no-supervisor -c fluent.conf"
 ```
 
-[Mise](https://mise.jdx.dev/) is available on Clever Cloud. During deployment, the Linux runtime runs the task named `build` in the build phase and the task named `run` to start the application. See [Mise tasks](https://mise.jdx.dev/tasks/) and the [Linux runtime documentation](/doc/applications/linux/) for details.
+[Mise](https://mise.jdx.dev/) is available on Clever Cloud. During deployment, the Linux runtime runs the task named `build` in the build phase and the task named `run` to start the application. See [Mise tasks](https://mise.jdx.dev/tasks/) and the [Linux runtime documentation](/doc/deploy/applications/linux/) for details.
 
 ## Deploy Fluentd
 
@@ -136,6 +136,6 @@ The minimal HTTP input in this guide is publicly reachable. Before using it in p
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://docs.fluentd.org/" title="Fluentd documentation" subtitle="Configure Fluentd inputs, filters and outputs" icon="external-link" >}}
-  {{< card link="/doc/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="linux" >}}
-  {{< card link="/doc/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
+  {{< card link="/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="linux" >}}
+  {{< card link="/doc/manage/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
 {{< /cards >}}

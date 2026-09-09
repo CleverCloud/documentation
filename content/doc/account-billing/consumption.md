@@ -12,6 +12,7 @@ keywords:
 - costs
 - grafana
 aliases:
+- /doc/account/consumption
 - /doc/admin-console/analytics-consumption
 - /doc/billing/analytics-consumption
 - /doc/consumption

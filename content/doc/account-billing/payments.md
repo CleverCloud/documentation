@@ -13,6 +13,7 @@ keywords:
 - stripe
 - sepa
 aliases:
+- /doc/account/payments
 - /doc/admin-console/invoices-payments
 - /doc/billing/payments-invoicing
 - /doc/payments
@@ -58,6 +59,6 @@ Mandate:
 
 ### About invoices issuance and notifications
 
-As explained in the [Monthly Invoice documentation](/doc/account/invoices#monthly-invoice), Clever Cloud issues an invoice at the beginning of every month.
+As explained in the [Monthly Invoice documentation](/doc/account-billing/invoices#monthly-invoice), Clever Cloud issues an invoice at the beginning of every month.
 This invoice is sent to both primary and secondary email address of any Admin or Accountant within the organisation.
 In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.

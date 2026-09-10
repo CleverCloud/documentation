@@ -114,5 +114,5 @@ The offload threshold of the namespace is deactivated by default, you can activa
 pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
           --auth-params $ADDON_PULSAR_TOKEN \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
-          namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
+          namespaces set-offload-threshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```

@@ -130,6 +130,13 @@ When a page moves to another URL, or when its content is merged into another pag
   - `fix(ci): run Vale on shared content`
   - `refactor(layouts): simplify changelog rendering`
   - `chore(deps): update the Hextra theme`
+- The scope follows the files you change, not the effect readers see: a change limited to `layouts/` or `assets/` is `fix(layouts)` or `feat(layouts)`
+- For changes spanning several sections or not tied to one page, use these forms instead of inventing a section:
+  - `refactor(structure): merge the administrate and reference pages into their hubs`
+  - `fix(aliases): redirect legacy URLs still hit with 404s`
+  - `fix(links): point internal links at their new destination`
+  - `ai-llms: document driving Clever Cloud from an AI agent` for a page stored directly under `content/doc/`, which is its own section
+- Reserve `docs(scope)` for README, CONTRIBUTING and AGENTS.md; never use `doc` as a type or a section
 - Split content and structural changes into separate commits when possible
 - Start the subject with a lowercase imperative verb, except for changelog entries
 

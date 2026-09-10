@@ -132,6 +132,20 @@ refactor(layouts): simplify changelog rendering
 chore(deps): update the Hextra theme
 ```
 
+The scope follows the files you change, not the effect readers see. A change limited to `layouts/` or `assets/` is `fix(layouts)` or `feat(layouts)` even when it alters how a documentation page renders.
+
+Some changes span several sections or don't belong to one page. Use these forms instead of inventing a section:
+
+```text
+refactor(structure): merge the administrate and reference pages into their hubs
+fix(aliases): redirect legacy URLs still hit with 404s
+fix(links): point internal links at their new destination
+ai-llms: document driving Clever Cloud from an AI agent
+docs(contributing): document the commit conventions
+```
+
+A page stored directly under `content/doc/` is its own section. Reserve `docs(scope)` for README, CONTRIBUTING and AGENTS.md, which document the repository itself. Don't use `doc` as a type or a section: in a documentation repository it describes every commit and distinguishes none.
+
 Keep content and structural changes in separate commits when possible so each commit can follow the appropriate convention.
 
 ### 🥸 When reviewing a PR

@@ -47,6 +47,14 @@ It will `git push` your code on the remote repository of your application on Cle
 > [!TIP]
 > You can cancel a deployment with `clever cancel-deploy` command. You can also [configure an application](/doc/manage/cli/applications/configuration/#config) so that a new deployment cancels the current one.
 
+Since Clever Tools 5.0.0, `clever deploy` uses the `git` command installed on your system, which must be available in your `PATH`. If `git` isn't available, or if you experience an issue with this backend, fall back to the previous pure JavaScript implementation. It works without `git` installed on your system, but it only supports HTTP, slows down on repositories with rewritten history, can time out on large repositories or big files, and can't deploy from a linked Git worktree:
+
+```console
+clever features disable system-git
+```
+
+To switch back to the system Git backend, use `clever features enable system-git`.
+
 ## console | open
 
 Once deployed, you can open the application on your default browser or [Clever Cloud Console](https://console.clever-cloud.com):
@@ -93,10 +101,18 @@ clever cancel-deploy
 
 ## ssh
 
-A Clever Cloud application is a running virtual machine you can ssh to, as a user (`bas`). By default, it will use `OpenSSH` configuration, but you can target a specific identity file:
+A Clever Cloud application is a running virtual machine you can ssh to, as a user (`bas`). Clever Cloud only accepts SSH key authentication, so Clever Tools disables the password fallback: a missing or unregistered key fails immediately. By default, it uses your `OpenSSH` configuration, but you can target a specific identity file. Clever Tools then also sets `IdentitiesOnly=yes`, so SSH doesn't offer unrelated keys from your agent, while `IdentityFile` entries of your SSH configuration still apply:
 
 ```console
-clever ssh [--identity-file, -i] IDENTITY-FILE
+clever ssh --identity-file ~/.ssh/id_ed25519
+```
+
+If your application runs several instances, Clever Tools asks you which one to connect to. This selection needs an interactive terminal: without one, the command fails when several instances are running.
+
+To execute a single command on the remote instance and exit, use `--command` (`-c`). Its output streams to your terminal without the SSH gateway messages, so you can use it in scripts:
+
+```console
+clever ssh --command "ls -la"
 ```
 
 To ssh a specific application, use:
@@ -120,7 +136,7 @@ You can also get logs from a specific timeline, deployment or add-on through opt
 [--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--search] SEARCH                   Fetch logs matching this pattern
 [--deployment-id] DEPLOYMENT_ID     Fetch logs for a given deployment
-[--addon] ADDON_ID                  Add-on ID
+[--addon] ADDON_ID                  Add-on ID or real ID
 [--format, -F] FORMAT               Output format (human, json, json-stream) (default: human)
 ```
 
@@ -135,13 +151,15 @@ clever accesslogs
 > [!TIP]
 > This now uses our v4 API, it's available as Alpha feature for now.
 
-You can also get access logs from a specific timeline or add-on through options, in multiple formats:
+You can also get access logs from a specific timeline through options, in multiple formats:
 
 ```console
 [--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--format, -F] FORMAT          Output format (human, json, json-stream) (default: human)
+[--format, -F] FORMAT          Output format (human, json, json-stream, clf) (default: human)
 ```
+
+Besides HTTP requests, access logs include TCP redirections and SSH connections to your instances. In the `human` format, a column shows the transport of each line, `HTTP`, `TCP` or `SSH`, and HTTP methods and paths get their own columns so they stay aligned. The `clf` format, for Common Log Format, only outputs HTTP access logs.
 
 You can for example get access logs in JSON stream format for the last hour with:
 

@@ -110,8 +110,8 @@ clever domain overview --filter .tld --format json
 To add/remove a domain to an application, use:
 
 ```console
-add                        Add a domain name to a Clever Cloud application
-rm                         Remove a domain name from a Clever Cloud application
+clever domain add FQDN
+clever domain rm FQDN
 ```
 
 > [!TIP]

@@ -16,49 +16,52 @@ aliases:
 - /doc/kv-stores
 ---
 
-If you're using [Materia KV](/doc/deploy/databases/materia-kv/), our next generation of key-value databases, serverless, distributed, synchronously-replicated, compatible with the Redis® protocol (and later DynamoDB, GraphQL), you can easily create an add-on with Clever Tools:
-
-```console
-clever addon create kv ADDON_NAME
-```
-
-And immediately use it with `clever kv` command:
+You can use Clever Tools to send Redis protocol commands to [Materia KV](/doc/deploy/databases/materia-kv/) and Redis® add-ons. Create a Materia KV add-on, then enable the experimental `kv` command:
 
 ```bash
-clever features enable kv                # KV command is in testing stage
-clever kv ADDON_NAME_OR_ID PING          # It will answer PONG
-clever kv ADDON_NAME_OR_ID PING Hello    # It will answer Hello
+clever addon create kv session-cache
+clever features enable kv
+clever kv session-cache PING
+clever kv session-cache PING Hello
 ```
 
-It helps you to inspect and interact with your Materia KV. Each is provided with environment variables about its host, port, and [Biscuit-based](https://biscuitsec.org) tokens, in multiple forms (to ensure compatibility with tools such those made for Redis®).
+The first `PING` returns `PONG`; the second returns `Hello`. Clever Tools connects using the add-on's `REDIS_URL` environment variable. You can identify the add-on by its name, add-on ID or real ID. Use an ID when several add-ons share the same name.
 
-> [!Tip]
-> Clever KV command is also compatible with Redis® on Clever Cloud add-ons.
+To limit the lookup to an organisation, add `--org` (or `-o`):
+
+```bash
+clever kv session-cache PING --org platform-team
+```
 
 ## Commands
 
-You can use `clever kv` to send any command supported by your add-on. Here are some examples:
+You can send any Redis protocol command supported by your add-on. For example, store and retrieve a value, increment a counter, or set a key that expires after 120 seconds:
 
 ```bash
-clever kv ADDON_NAME_OR_ID INCR myCounter             # It will respond (integer) the incremented value
-clever kv ADDON_NAME_OR_ID SET myKey myValue          # It will respond OK
-clever kv ADDON_NAME_OR_ID GET myKey                  # It will respond myValue
-clever kv ADDON_NAME_OR_ID SET myKey myValue EX 120   # It will respond OK
-clever kv ADDON_NAME_OR_ID TTL myKey                  # It will respond (integer) the remaining time to live of the key in seconds
+clever kv session-cache SET session-status active
+clever kv session-cache GET session-status
+clever kv session-cache INCR session-count
+clever kv session-cache SET session-status active EX 120
+clever kv session-cache TTL session-status
 ```
 
-> [!Tip]
-> You can get a list of all supported commands with `clever kv ADDON_NAME_OR_ID COMMANDS`
-
-You can pass the result of JSON stringified values to tools like `jq` to query them, for example:
+Use `COMMAND` to inspect the commands supported by the add-on:
 
 ```bash
-clever kv ADDON_NAME_OR_ID SET myJsonFormatedKey '{"key": "value"}'
-clever kv ADDON_NAME_OR_ID GET myJsonFormatedKey | jq .key
+clever kv session-cache COMMAND
 ```
 
-You can also use the `-F/--format` option to print a result in JSON format and query it with `jq`:
+To query a stored JSON string with `jq`, pass the value directly to it:
 
 ```bash
-clever kv ADDON_NAME_OR_ID scan 0 -F json | jq '.[1][0]'
+clever kv session-cache SET session-details '{"status": "active"}'
+clever kv session-cache GET session-details | jq .status
 ```
+
+Use `--format json` (or `-F json`) to encode the command result as JSON. This is useful for responses containing arrays, such as `SCAN`:
+
+```bash
+clever kv session-cache SCAN 0 -F json | jq '.[1]'
+```
+
+`SCAN` returns a cursor and a batch of keys. Repeat it with the returned cursor until the cursor is `0` to complete the iteration.

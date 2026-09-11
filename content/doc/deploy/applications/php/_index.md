@@ -15,6 +15,7 @@ aliases:
 - /deploy/application/php/php-apps
 - /doc/applications/php
 - /doc/applications/php-with-apache
+- /doc/applications/php/php
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps
 - /doc/doc/php

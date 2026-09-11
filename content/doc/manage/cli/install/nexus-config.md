@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Nexus repository
 title: Nexus repository
-description: Configure Clever Cloud Nexus repository for package distribution using .deb, .nupkg, and .rpm package formats
+description: Configure Clever Cloud Nexus repository for package distribution using .deb and .rpm package formats
 keywords:
 - nexus
 - repository
@@ -14,27 +14,27 @@ aliases:
 - /doc/cli/install/nexus-config
 ---
 
-We use a self hosted Nexus repository to distribute `.deb` and `.rpm`. It's available at [https://nexus.clever-cloud.com/](https://nexus.clever-cloud.com/).
+You can obtain Clever Tools `.deb` and `.rpm` packages from the [Clever Cloud Nexus repository](https://nexus.clever-cloud.com/).
 
 ## Repositories
 
 ### `.deb` repository
 
-We provide a [Nexus repository for `.deb` packages](https://nexus.clever-cloud.com/#browse/browse:deb).
+You can browse the [Nexus repository for `.deb` packages](https://nexus.clever-cloud.com/#browse/browse:deb).
 
 - stable: [deb](https://nexus.clever-cloud.com/#browse/browse:deb)
 
-The repository is signed with the PGP key `Clever Cloud Nexus (deb)`. The public key is published on the Cellar at [https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key](https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key). The private key, public key and passphrase are stored in our vault.
+The repository is signed with the PGP key `Clever Cloud Nexus (deb)`. The public key is published on the Cellar at [https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key](https://clever-tools.clever-cloud.com/gpg/cc-nexus-deb.public.gpg.key). The private key, public key and passphrase are stored in the maintainer vault.
 
 ### `.rpm` repository
 
-We provide a [Nexus repository for `.rpm` packages](https://nexus.clever-cloud.com/#browse/browse:rpm).
+You can browse the [Nexus repository for `.rpm` packages](https://nexus.clever-cloud.com/#browse/browse:rpm).
 
 - Link to Nexus [yum-repositories docs](https://help.sonatype.com/en/yum-repositories.html)
 
 The repository is not signed, but the `.rpm` packages are.
 
-The repo description is maintained in this git repo at `templates/rpm/cc-nexus-rpm.repo`. It's published on the Cellar at [https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo](https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo). The public key is published on the Cellar at [https://clever-tools.clever-cloud.com/gpg/cc-nexus-rpm.public.gpg.key](https://clever-tools.clever-cloud.com/gpg/cc-nexus-rpm.public.gpg.key). The private key, public key and passphrase are stored in our vault.
+You can download the repository configuration on the Cellar at [https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo](https://clever-tools.clever-cloud.com/repos/cc-nexus-rpm.repo). The public key is published on the Cellar at [https://clever-tools.clever-cloud.com/gpg/cc-nexus-rpm.public.gpg.key](https://clever-tools.clever-cloud.com/gpg/cc-nexus-rpm.public.gpg.key). The private key, public key and passphrase are stored in the maintainer vault.
 
 ### GnuPG Keys
 
@@ -52,10 +52,10 @@ Steps to follow to generate a new pair of GnuPG keys:
 - Export the private key in a file
   - `gpg --armor --output cc-nexus-deb.private.gpg.key --export-secret-key <KEY_ID>`
 - Update the private key where it's needed
-  - The `deb` private key and passphrase need to be set in both `deb` and `deb-stable` repo in Nexus.
+  - The `deb` private key and passphrase need to be set in both `deb` and `deb-stable` repositories in Nexus.
   - The `rpm` private key and passphrase need to be set in Jenkins.
 - Combine both keys into one file
-  - `cat cc-nexus-deb.*.gpg.key cc-nexus-deb.combined.gpg.key`
+  - `cat cc-nexus-deb.public.gpg.key cc-nexus-deb.private.gpg.key > cc-nexus-deb.combined.gpg.key`
 - Add the combined key to the vault along with the random passphrase.
 
 This is an example for `deb` but the same goes for `rpm`.

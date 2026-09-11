@@ -72,7 +72,7 @@ clever help
 
 For each of them, you can add these parameters:
 
-```console
+```text
 [--help, -?]            Display help about this program (default: false)
 [--version, -V]         Display the version of this program (default: false)
 [--color]               Choose whether to print colors or not. You can also use --no-color (default: true)

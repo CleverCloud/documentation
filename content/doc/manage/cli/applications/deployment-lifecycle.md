@@ -35,7 +35,7 @@ clever deploy
 
 It will `git push` your code on the remote repository of your application on Clever Cloud automatically. You can, of course, use option to `force push` or use specific local branch for example:
 
-```console
+```text
 [--branch, -b] BRANCH                 Branch to push (current branch by default) (default: )
 [--tag, -t] TAG                       Tag to push (none by default) (default: )
 [--quiet, -q]                         Don't show logs during deployment (default: false)
@@ -83,7 +83,7 @@ clever restart
 
 By default, it will use its build cache when available. But you can override it or use other available options:
 
-```console
+```text
 [--commit] COMMIT ID       Restart the application with a specific commit ID
 [--without-cache]          Restart the application without using cache (default: false)
 [--quiet, -q]              Don't show logs during deployment (default: false)
@@ -131,7 +131,7 @@ clever logs
 
 You can also get logs from a specific timeline, deployment or add-on through options:
 
-```console
+```text
 [--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--search] SEARCH                   Fetch logs matching this pattern
@@ -153,7 +153,7 @@ clever accesslogs
 
 You can also get access logs from a specific timeline through options, in multiple formats:
 
-```console
+```text
 [--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
 [--format, -F] FORMAT          Output format (human, json, json-stream, clf) (default: human)
@@ -188,7 +188,7 @@ clever activity
 
 By default, it will show you last 10 deployments. You can show all or listen to a stream of incoming deployments through options:
 
-```console
+```text
 [--follow, -f]             Track new deployments in activity list (default: false)
 [--show-all]               Show all activity (default: false)
 [--format, -F] FORMAT      Output format (human, json, json-stream)

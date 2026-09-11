@@ -40,7 +40,7 @@ clever config update FLAGS
 
 Available parameters are :
 
-```console
+```text
 [--name]                        Set name
 [--description]                 Set description
 [--enable-zero-downtime]        Enable zero-downtime (default: false)
@@ -146,7 +146,7 @@ clever domain diag --filter mydomain.tld
 
 You can easily change the number of instances and `flavor` for an application. It can have a different `flavor` used for build phase, to get it done faster. We also provide horizontal and vertical scaling: you can set a minimal/maximal `flavor` and number of instance, then we autoscale depending on incoming load. To change this, use `clever scale` with the following options:
 
-```console
+```text
 [--flavor] FLAVOR                  The scale of your application
 [--min-flavor] MINFLAVOR           The minimum scale for your application
 [--max-flavor] MAXFLAVOR           The maximum scale for your application

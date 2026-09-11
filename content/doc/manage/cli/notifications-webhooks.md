@@ -19,66 +19,64 @@ aliases:
 - /reference/clever-tools/notifications
 ---
 
-When events happen on Clever Cloud, during add-ons or applications lifecycle for example, you can send email notifications or trigger webhooks. For each of the following command, you can list all items and/or target a specific user/organisation through these parameters:
+You can send email notifications or trigger webhooks when [events occur](/doc/account-billing/notifications/#available-events) during an application or add-on lifecycle.
 
-```console
-[--org, -o, --owner]       Organisation ID (or name, if unambiguous)
-[--list-all]               List all notifications for your user or for an organisation with the `--org` option (default: false)
+By default, listing commands target the application linked to your current directory. Use `--list-all` to list notifications for your account, or `--org` (or `-o`) to target an organisation by ID or unambiguous name:
+
+```bash
+clever notify-email --list-all
+clever webhooks --org platform-team
 ```
 
 ## notify-email
 
-You can send email notifications when [an event occurs](/doc/account-billing/notifications/#available-events). To list them, use:
+List email notifications in human or JSON format:
 
-```console
+```bash
 clever notify-email
 clever notify-email --format json
 ```
 
-To add a notification process to an application, use:
+To create a notification for your linked application, provide a name and at least one recipient:
 
-```console
-clever notify-email add --notify <EMAIL_ADDRESS>|<USER_ID>|"ORGANISATION" NAME
+```bash
+clever notify-email add deployment-alerts --notify operations@example.com
 ```
 
-Available options are:
+The required `--notify` option accepts an email address, a user ID, or `ORGANISATION` to notify the whole organisation. Separate multiple recipients with commas. Use `--org` to create the notification in an organisation:
 
-```console
-[--event] TYPE                                        Restrict notifications to specific event types
-[--service] SERVICE_ID                                Restrict notifications to specific applications and add-ons
---notify <EMAIL_ADDRESS>|<USER_ID>|"ORGANISATION"     Notify a user, a specific email address or the whole organisation (multiple values allowed, comma separated)
+```bash
+clever notify-email add deployment-alerts --org platform-team --notify ORGANISATION
 ```
 
-To delete a notification process, use:
+Use `--event` to restrict event types and `--service` to restrict applications or add-ons. Both accept comma-separated values. The `--service` option requires `--org`.
 
-```console
-clever notify-email remove NOTIFICATION-ID
+To delete a notification, replace `notification_id` with an ID from the listing. Include `--org` when the notification belongs to an organisation:
+
+```bash
+clever notify-email remove notification_id --org platform-team
 ```
 
 ## webhooks
 
-You can trigger Webhooks when an event occurs. To list them, use:
+List webhooks in JSON format:
 
-```console
+```bash
 clever webhooks -F json
 ```
 
-To add a webhook to an application, use:
+To create a webhook for your linked application, provide a name and your receiving endpoint URL. Replace the URL below with your endpoint:
 
-```console
-clever webhooks add NAME URL
+```bash
+clever webhooks add deployment-alerts https://hooks.example.com/deployments
 ```
 
-You can set the format, restrict to a service or [event types](/doc/account-billing/notifications/#available-events) through these parameters:
+For `webhooks add`, `--format` selects the request body format: `raw` (the default), `flowdock`, `gitter`, or `slack`. On the listing command, `--format` instead selects `human` or `json` output.
 
-```console
-[--format] FORMAT          Format of the body sent to the webhook ('raw', 'slack', 'gitter', or 'flowdock') (default: raw)
-[--event] TYPE             Restrict notifications to specific event types
-[--service] SERVICE_ID     Restrict notifications to specific applications and add-ons
-```
+Use `--event` to restrict event types and `--service` to restrict applications or add-ons. Both accept comma-separated values. The `--service` option requires `--org`. Without `--service`, specifying `--org` creates a webhook for the organisation without restricting it to your linked application.
 
-To delete a webhook, use:
+To delete a webhook, replace `notification_id` with an ID from the listing:
 
-```console
-clever webhooks remove NOTIFICATION-ID
+```bash
+clever webhooks remove notification_id --org platform-team
 ```

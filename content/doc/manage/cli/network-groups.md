@@ -23,10 +23,9 @@ aliases:
 
 A Network Group is defined by an ID (`ngId`) and a `label`. It can be completed by a `description` and `tags`.
 
-> [!NOTE]
-> During testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported.
+During testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported.
 
-Tell us what you think of Network Groups and what features you need from it in [the dedicated section of our GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
+Share your feedback and feature requests in [the Network Groups section of the GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
 
 - [Learn more about Network Groups](/doc/network/network-groups/)
 
@@ -36,8 +35,7 @@ When you create a Network Group, a WireGuard configuration is generated with a c
 
 When an application connects to a Network Group, you can reach it on any port inside a NG through its domain name. Any instance of this application is a peer, you can reach independently through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
 
-> [!TIP]
-> A Network Group member domain name is composed this way: `<memberID>.m.<ngID>cc-ng.cloud`
+A Network Group member domain name follows this pattern: `<memberID>.m.<ngID>.cc-ng.cloud`
 
 ## Prerequisites
 
@@ -57,7 +55,7 @@ In all the following examples, you can target a specific organisation with the `
 
 ## Create a Network Group
 
-A Network Group is simple to create:
+Create a Network Group with a label:
 
 ```console
 clever ng create myNG
@@ -111,7 +109,7 @@ clever ng unlink redis_xxx ngIdorLabel
 
 After an unlink, you may need to restart the application to apply the changes.
 
-> [!TIP]
+> [!TIP] Add-on IDs
 > To link add-ons to a Network Group, use real IDs (`mysql_xxx`, `postgresql_xxx`, `redis_xxx`, etc.). \
 > Only add-ons deployed as of 2024 support Network Groups. If you can't access your add-on, migrate or restart it.
 
@@ -151,13 +149,13 @@ clever ng search text_to_search -F json
 clever ng search text_to_search --type Member
 ```
 
-> [!NOTE]
+> [!NOTE] Search and exact matches
 > The search command is case-insensitive and will return all resources containing the search string.
 > The get command looks for an exact match and will return an error if multiple resources are found.
 
 ## Get the WireGuard configuration of a Peer
 
-To get the WireGuard configuration of a peer (a `json` formatted output is available):
+To print the WireGuard configuration of an external peer, provide its ID or label and the Network Group:
 
 ```console
 clever ng get-config peerIdOrLabel myNG
@@ -169,4 +167,4 @@ You can find ready to deploy projects using Network Groups in the following repo
 
 - <https://github.com/CleverCloud/network-groups-example>
 
-Create your own and [let us know](https://github.com/CleverCloud/Community/discussions/categories/network-groups)!
+Share your projects in [the Network Groups discussion](https://github.com/CleverCloud/Community/discussions/categories/network-groups)

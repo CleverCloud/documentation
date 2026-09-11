@@ -50,10 +50,9 @@ Clever Cloud Console allows you to easily create and manage API tokens.
 
 ![Manage API tokens in Clever Cloud Console](/images/console-api-tokens.webp)
 
-[Clever Tools](https://github.com/CleverCloud/clever-tools) provides a `clever tokens` set of commands. This feature needs to be enabled:
+[Clever Tools](https://github.com/CleverCloud/clever-tools) provides a `clever tokens` set of commands:
 
 ```bash
-clever features enable tokens
 clever tokens create "CI job Foobar"
 clever tokens create "Quick local test" --expiration 1h
 ```

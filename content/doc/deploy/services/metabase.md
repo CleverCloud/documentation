@@ -176,7 +176,7 @@ Of course, you have full control other this. The Java application of your Metaba
 
 ```bash
 # Set a specific supported version at creation
-clever addon create metabase --addon-version <version> myMetabase
+clever addon create metabase --addon-version VERSION myMetabase
 
 # Enable Operators commands
 clever features enable operators
@@ -185,9 +185,9 @@ clever features enable operators
 clever metabase version check metabase_name_or_id
 clever metabase version check metabase_name_or_id --format json
 
-# Update to a specific supported version
+# Update to a supported version, picked interactively or set with --target
 clever metabase version update myMetabase
-clever metabase version update myMetabase <new_version>
+clever metabase version update myMetabase --target VERSION
 ```
 
 - Learn more about [Operators commands in Clever Tools](/doc/manage/cli/operators/)

@@ -16,11 +16,11 @@ aliases:
 
 You can use multiple profiles with Clever Tools, all stored in the configuration file. The active profile is the first one in the list and is used for all commands. Each profile contains your authentication data and an optional set of overrides for custom Clever Cloud deployments (API host, Console URL, etc.).
 
-> [!TIP]
+> [!TIP] Configuration file
 > The configuration file lives in your OS config directory:
 >
-> - Windows: `%APPDATA%\clever-cloud\clever-tools.json`
 > - Other systems: XDG config directory (typically `~/.config/clever-cloud/clever-tools.json`)
+> - Windows: `%APPDATA%\clever-cloud\clever-tools.json`
 
 ## Create and use multiple profiles
 
@@ -35,6 +35,15 @@ List and inspect profiles (the active one is marked):
 
 ```bash
 clever profile list
+clever profile list -F json
+```
+
+Inspect the active profile or open its account page in the Console:
+
+```bash
+clever profile
+clever profile -F json
+clever profile open
 ```
 
 Switch to another profile:

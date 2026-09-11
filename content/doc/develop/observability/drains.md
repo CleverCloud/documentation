@@ -3,13 +3,15 @@ type: docs
 weight: 40
 linkTitle: Drains
 title: Log Drains
-description: Forward your application logs to Elasticsearch, Datadog, New Relic, OVHcloud or any HTTP endpoint with log drains
+description: Forward your application logs to Better Stack, Elasticsearch, Datadog, New Relic, OVHcloud, Splunk or any HTTP endpoint with log drains
 keywords:
 - log drains
 - elasticsearch
+- better stack
 - datadog
 - newrelic
 - ovhcloud
+- splunk
 - export
 aliases:
 - /doc/administrate/log-drains
@@ -19,45 +21,48 @@ aliases:
 
 You can use log drains to send your application's [logs](/doc/develop/observability/logs) to an external server with the following command.
 
-```bash
-clever drain create [--alias <alias>] <DRAIN-TYPE> <DRAIN-URL> [--username <username>] [--password <password>]
+```console
+clever drain create DRAIN_TYPE DRAIN_URL
 ```
 
 Where `DRAIN-TYPE` is one of:
 
-- `syslog-tcp`: for TCP syslog endpoint;
-- `syslog-udp`: for UDP syslog endpoint;
-- `raw-http`: for HTTP endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
-- `elasticsearch`: for Elasticsearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
-- `datadog`: for Datadog endpoint (note that this endpoint needs your Datadog API Key);
-- `newrelic`: for NewRelic endpoint (note that this endpoint needs your NewRelic API Key);
-- `ovh-tcp`: for OVH TCP syslog endpoint (note that this endpoint has an optional sd-params parameter).
+- `betterstack`: for Better Stack endpoint (note that this endpoint needs your source token)
+- `datadog`: for Datadog endpoint (note that this endpoint needs your Datadog API Key in its URL)
+- `elasticsearch`: for Elasticsearch endpoint (note that this endpoint needs an index prefix, and has optional username/password parameters as HTTP Basic Authentication)
+- `newrelic`: for New Relic endpoint (note that this endpoint needs your New Relic API Key)
+- `ovh-tcp`: for OVH TCP syslog endpoint (note that this endpoint has an optional sd-params parameter)
+- `raw-http`: for HTTP endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication)
+- `splunk`: for Splunk HTTP Event Collector endpoint (note that this endpoint needs your HEC token)
+- `syslog-tcp`: for TCP syslog endpoint
+- `syslog-udp`: for UDP syslog endpoint
 
-You can list the currently activated drains with this command.
+Each drain type has its own options, listed in the [Clever Tools logs drains documentation](/doc/manage/cli/logs-drains/). Add `--alias ALIAS` or `--app APP_ID_OR_NAME` to target a specific application. You can list the currently activated drains with this command.
 
-```bash
-clever drain [--alias <alias>]
+```console
+clever drain
 ```
 
-And remove them if needed
+Check that the recipient of a drain is reachable and accepts deliveries, and remove it if needed:
 
-```bash
-clever drain remove [--alias <alias>] <DRAIN-ID>
+```console
+clever drain check DRAIN_ID
+clever drain remove DRAIN_ID
 ```
 
 If the status of your drain appears as `DISABLED` without you disabling it, it may be because it haven't been able to send your application logs to your drain endpoint or because the requests timed out after **25 seconds**.
 
-Use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on ID starting by `addon_`.
+Use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on ID starting by `addon_`, or its real ID such as `postgresql_xxxxxxxx`.
 
 ## Elasticsearch
 
-Elasticsearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your Elasticsearch endpoint.
+Elasticsearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your Elasticsearch endpoint, and set an index prefix with `--index-prefix`. For example, with the credentials of a Clever Cloud Elasticsearch add-on:
 
 ```bash
-clever drain create elasticsearch https://xxx-elasticsearch.services.clever-cloud.com/_bulk --username USERNAME --password PASSWORD
+clever drain create elasticsearch "https://$ES_ADDON_HOST/_bulk" --index-prefix logstash --username "$ES_ADDON_USER" --password "$ES_ADDON_PASSWORD"
 ```
 
-Each day, we will create an index `logstash-<yyyy-MM-dd>` and push logs to it.
+Each day, the drain creates an index named after this prefix, `logstash-YYYY-MM-DD` in this example, and pushes logs to it.
 
 ### Index Lifecycle Management
 
@@ -105,14 +110,14 @@ For more information, please refer to the [official documentation](https://www.e
 
 ## Datadog
 
-To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) drain, you just need to use:
+To create a [Datadog](https://docs.datadoghq.com/api/latest/logs/#send-logs) drain, use your Datadog API key in the intake URL:
 
 ```bash
-clever drain create datadog "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
+clever drain create datadog "https://http-intake.logs.datadoghq.com/v1/input/$DATADOG_API_KEY?ddsource=clevercloud&service=myapp"
 ```
 
 {{< callout type="warning" >}}
-Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
+Datadog accounts belong to a [Datadog site](https://docs.datadoghq.com/getting_started/site/), such as US1 (`datadoghq.com`) or EU1 (`datadoghq.eu`). An account on one site isn't available on the others, so make sure to target the intake endpoint of your site.
 {{< /callout >}}
 
 ## NewRelic
@@ -120,12 +125,30 @@ Datadog has two zones, **EU** and **COM**. An account on one zone is not availab
 To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, use:
 
 ```bash
-clever drain create newrelic "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
+clever drain create newrelic https://log-api.eu.newrelic.com/log/v1 --api-key "$NEW_RELIC_API_KEY"
 ```
 
 {{< callout type="warning" >}}
 NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
 {{< /callout >}}
+
+## Better Stack
+
+To create a [Better Stack](https://betterstack.com/docs/logs/http-rest-api/) drain, use the ingesting host of your source, along with its source token:
+
+```bash
+clever drain create betterstack "https://$BETTERSTACK_INGESTING_HOST" --source-token "$BETTERSTACK_SOURCE_TOKEN"
+```
+
+## Splunk
+
+To send logs to a Splunk [HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/latest/Data/UsetheHTTPEventCollector) (HEC), use the full collector endpoint and the token bound to your HEC input:
+
+```bash
+clever drain create splunk https://splunk.example.com:8088/services/collector/event --hec-token "$SPLUNK_HEC_TOKEN"
+```
+
+The `--index` and `--sourcetype` options override the values configured on the HEC token. If your self-hosted Splunk instance still uses its default self-signed certificate, add `--tls-verification trustful`.
 
 ## OVHcloud Logs Data Platform
 
@@ -142,28 +165,20 @@ On your terminal, use the following command:
   {{< tab name="Application" >}}**Exporting logs from an application**:
 
   ```shell
-  clever drain create ovh-tcp tcp://<host>:514 -app <application-id-or-name> --sd-params="X-OVH-TOKEN=\"<token>\""
+  clever drain create ovh-tcp "tcp://$LDP_HOST:514" --app APP_ID_OR_NAME --sd-params "X-OVH-TOKEN=\"$LDP_WRITE_TOKEN\""
   ```
 
-  Replace the following values:
-
-- `<host>`
-- `<application-alias>`
-- `<token>`
+  Set `LDP_HOST` to your Logs Data Platform host and `LDP_WRITE_TOKEN` to the write token of your stream, then replace `APP_ID_OR_NAME` with your application ID or name.
 
   {{< /tab >}}
 
   {{< tab name="Add-on" >}}**Exporting logs from an add-on**:
 
   ```shell
-  clever drain create ovh-tcp tcp://<host>:514 -addon <addon_id> --sd-params="X-OVH-TOKEN=\"<token>\""
+  clever drain create ovh-tcp "tcp://$LDP_HOST:514" --addon ADDON_ID --sd-params "X-OVH-TOKEN=\"$LDP_WRITE_TOKEN\""
   ```
 
-  Replace the following values:
-
-- `<host>`
-- `<addon_id>`
-- `<token>`
+  Set `LDP_HOST` to your Logs Data Platform host and `LDP_WRITE_TOKEN` to the write token of your stream, then replace `ADDON_ID` with your add-on ID or real ID.
 
   {{< /tab >}}
 

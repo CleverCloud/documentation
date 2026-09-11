@@ -23,7 +23,7 @@ aliases:
 - /doc/cli/kubernetes
 ---
 
-Clever Tools 4.9+ exposes the full lifecycle of [Clever Kubernetes Engine](/doc/deploy/kubernetes/): cluster creation with detailed topology, ongoing operations, node group management, version upgrades and quota visibility. Once a cluster is `ACTIVE`, you drive it with `kubectl` like any other Kubernetes cluster.
+Clever Tools 4.9+ exposes the full lifecycle of [Clever Kubernetes Engine](/doc/deploy/kubernetes/): cluster creation with detailed topology, ongoing operations, node group management, version upgrades, and quota visibility. Once a cluster is `ACTIVE`, you drive it with `kubectl` like any other Kubernetes cluster.
 
 - [Learn more about Kubernetes on Clever Cloud](/doc/deploy/kubernetes/)
 
@@ -41,26 +41,26 @@ Check the command set is available:
 clever k8s
 ```
 
-In all examples below, target a specific organisation with the `--org` (or `-o`) option. Output format defaults to a human-readable table; pass `--format json` (or `-F json`) on read commands when you need structured output for scripts or pipelines.
+Use `--org` (or `-o`) to target an organisation by ID or unambiguous name. Replace `platform-team` in the examples with your organisation name. Output format defaults to a human-readable table; pass `--format json` (or `-F json`) on read commands when you need structured output for scripts or pipelines.
 
 ## Create a cluster
 
-The fastest way to create a cluster is to provide only a name. The platform picks `ALL_IN_ONE` as the default topology, the smallest available flavor (`S`) and a replication factor of `1`:
+To create a cluster, provide a name. Clever Tools defaults to `ALL_IN_ONE` and selects the smallest flavor and minimum replication factor available for that topology:
 
 ```bash
-clever k8s create myCluster --org <your_org_id>
+clever k8s create myCluster --org platform-team
 ```
 
 Add `--watch` to follow the deployment until the cluster reaches `ACTIVE`:
 
 ```bash
-clever k8s create myCluster --watch --org <your_org_id>
+clever k8s create myCluster --watch --org platform-team
 ```
 
-When you need a specific shape, combine topology, flavor, replication factor, version and an initial node group in a single command. Topology values (`all_in_one`, `dedicated_compute`, `distributed`) are accepted in lowercase or uppercase. The `--nodegroup <flavor>:<count>` option provisions an initial node group named `default`, ready to schedule workloads as soon as the cluster reaches `ACTIVE`. Use it on `dedicated_compute` and `distributed` clusters, which otherwise come up with no worker. `all_in_one` bundles already include an integrated worker on each bundle VM, so passing `--nodegroup` adds an *extra* pool — Clever Tools warns you and asks for confirmation in that case:
+When you need a specific shape, combine topology, flavor, replication factor, version and an initial node group in a single command. Topology values (`all_in_one`, `dedicated_compute`, `distributed`) are accepted in lowercase or uppercase. The `--nodegroup <flavor>:<count>` option provisions an initial node group named `default`, ready to schedule workloads as soon as the cluster reaches `ACTIVE`. Use it on `dedicated_compute` and `distributed` clusters, which otherwise come up with no worker. `all_in_one` bundles already include an integrated worker on each bundle VM, so passing `--nodegroup` adds an *extra* pool; Clever Tools warns you and asks for confirmation in that case:
 
 ```bash
-clever k8s create myCluster --org <your_org_id> \
+clever k8s create myCluster --org platform-team \
   --topology dedicated_compute --flavor S --replication-factor 3 \
   --cluster-version 1.36 \
   --description "Production cluster" \
@@ -70,9 +70,9 @@ clever k8s create myCluster --org <your_org_id> \
   --nodegroup M:3
 ```
 
-The `--cluster-version` value is validated against the platform-supported versions before the API call; an unsupported value (e.g. `0.99`) is rejected upfront with the list of available versions.
+The `--cluster-version` value is validated against the platform-supported versions before the API call: an unsupported value, for example `0.99`, fails with the list of available versions.
 
-## List, get and inspect
+## List, get, and inspect
 
 List the Kubernetes clusters of the active organisation:
 
@@ -131,11 +131,13 @@ Persistent storage is a one-way toggle; once enabled, it cannot be removed from 
 
 ## Get the kubeconfig file
 
-Retrieve the kubeconfig of an `ACTIVE` cluster. Wait for the cluster to reach `ACTIVE` before redirecting the output to a file — the command is a no-op on non-ready clusters:
+Retrieve the kubeconfig of an `ACTIVE` cluster. Wait for the cluster to reach `ACTIVE` before redirecting the output to a file. The command is a no-op on non-ready clusters:
 
 ```bash
 clever k8s get-kubeconfig myCluster
-clever k8s get-kubeconfig myCluster > ~/.kube/config
+mkdir -p ~/.kube
+clever k8s get-kubeconfig myCluster > ~/.kube/mycluster.yaml
+export KUBECONFIG="$HOME/.kube/mycluster.yaml"
 ```
 
 Once the kubeconfig is in place, drive the cluster with `kubectl` as usual. With `--persistent-storage` enabled, the default `StorageClass` is provisioned automatically. `kubectl get nodes` lists the integrated workers immediately on `all_in_one` clusters; on `dedicated_compute` and `distributed` clusters, the list stays empty until you add a node group:
@@ -159,11 +161,11 @@ clever k8s activity myCluster --limit 100
 clever k8s activity myCluster -F json
 ```
 
-`quota` reports the Kubernetes quota, current usage and remaining capacity for the active organisation. Each organisation starts with **40 vCPU and 40 GB of RAM** during the public Beta:
+`quota` reports the Kubernetes quota, current usage, and remaining capacity for your account. Add `--org` to inspect an organisation. Each organisation starts with **40 vCPU and 40 GB of RAM** across all its Kubernetes clusters by default, as detailed in [quotas and limits](/doc/deploy/kubernetes/#quotas-and-limits):
 
 ```bash
 clever k8s quota
-clever k8s quota -F json
+clever k8s quota --org platform-team -F json
 ```
 
 ## Cluster version
@@ -173,6 +175,12 @@ Report the installed Kubernetes version of a cluster, and offer an interactive u
 ```bash
 clever k8s version myCluster
 clever k8s version check myCluster
+```
+
+Use JSON output to inspect versions without an interactive upgrade prompt:
+
+```bash
+clever k8s version check myCluster -F json
 ```
 
 Drive the upgrade explicitly to a target version. The target is validated against the supported versions before the API call:
@@ -191,6 +199,8 @@ clever k8s nodegroups create myCluster workers XS:3 --autoscaling --min 3 --max 
 clever k8s nodegroups create myCluster workers XS:3 --description "GPU-intensive workers" --tag env:prod
 ```
 
+When creating a node group, `--autoscaling` requires both `--min` and `--max`. Supplying both bounds also enables autoscaling without `--autoscaling`.
+
 Inspect node groups attached to a cluster:
 
 ```bash
@@ -200,7 +210,7 @@ clever k8s nodegroups get myCluster workers
 clever k8s nodegroups get myCluster node_group_id
 ```
 
-Update bounds, target count, autoscaling state or metadata. Pass at least one of `--count`, `--min`, `--max`, `--autoscaling`, `--disable-autoscaling`, `--description` or `--tag`. Resizes are queued: the API rejects a second update while a previous resize is still running:
+Update bounds, target count, autoscaling state, or metadata. Pass at least one of `--count`, `--min`, `--max`, `--autoscaling`, `--disable-autoscaling`, `--description` or `--tag`. Resizes are queued: the API rejects a second update while a previous resize is still running:
 
 ```bash
 clever k8s nodegroups update myCluster workers --count 5
@@ -208,6 +218,8 @@ clever k8s nodegroups update myCluster workers --autoscaling --min 2 --max 10
 clever k8s nodegroups update myCluster workers --disable-autoscaling
 clever k8s nodegroups update myCluster workers --description "Updated description"
 ```
+
+The `--autoscaling` and `--disable-autoscaling` flags are mutually exclusive. When supplying both bounds, `--min` must not exceed `--max`.
 
 Delete a node group; nodes are drained and the underlying VMs are removed. Skip the confirmation prompt with `--yes`:
 

@@ -17,7 +17,7 @@ aliases:
 
 Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon providers`. For each of the following commands, you can target a specific user/organisation:
 
-```console
+```text
 [--org, -o, --owner]                Organisation ID (or name, if unambiguous)
 ```
 
@@ -61,7 +61,7 @@ When you set `--org`, Clever Tools checks that the requested region is available
 
 You can set `plan`, `region`, `version`, `option` and directly `link` an add-on to an application through these parameters:
 
-```console
+```text
 [--link, -l] ALIAS                  Link the created add-on to the app with the specified alias
 [--yes, -y]                         Skip confirmation even if the add-on is not free (default: false)
 [--plan, -p] PLAN                   Add-on plan, depends on the provider

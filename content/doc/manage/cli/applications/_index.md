@@ -35,7 +35,7 @@ You can also use one of the following optional parameters:
 
 ### Tasks
 
-```console
+```text
 [--task, -T] COMMAND
 ```
 
@@ -48,7 +48,7 @@ You can execute a Task whenever needed through a `clever restart` or modify it a
 
 #### GitHub repositories
 
-```console
+```text
 --github owner/repo
 ```
 
@@ -58,7 +58,7 @@ If your Clever Cloud account is linked to a GitHub account, you can deploy any o
 
 You can ask to deploy your application in a specific organisation/user account, region, with an alias different from its name:
 
-```console
+```text
 [--org, -o, --owner] ID/NAME
 [--alias, -a] ALIAS
 [--region, -r] ZONE
@@ -85,7 +85,7 @@ Default region is our Paris datacenters (`par`), but it can be:
 
 After the application creation, you can ask for a `json` formatted report instead of an `human` sentence:
 
-```console
+```text
 [--format, -F] FORMAT
 ```
 
@@ -119,7 +119,7 @@ clever applications
 
 If you only need to get aliases or the result in the JSON format:
 
-```console
+```text
 [--only-aliases]           List only application aliases (default: false)
 [--json, -j]               Show result in JSON format (default: false)
 ```

@@ -18,6 +18,7 @@ aliases:
 - /doc/administrate/find-help
 - /doc/find-help/community
 - /doc/find-help/support
+- /doc/get-help
 - /doc/get-help/support
 - /doc/support
 - /support

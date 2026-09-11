@@ -14,9 +14,11 @@ keywords:
 - developer guide
 aliases:
 - /api/howto
+- /doc/administrate/api-reference
 - /doc/api/
 - /doc/openapi
 - /doc/clever-cloud-addons-api/add-ons-api
+- /doc/clever-cloud-apis
 - /doc/clever-cloud-apis/add-ons-api
 - /doc/clever-cloud-apis/cc-api
 - /doc/extend/cc-api

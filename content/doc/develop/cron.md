@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/administrate/cron
 - /doc/cron
+- /doc/crons
 - /doc/develop/apps-configuration/cron/
 - /doc/develop/configure-applications/cron/
 - /doc/tools/crons

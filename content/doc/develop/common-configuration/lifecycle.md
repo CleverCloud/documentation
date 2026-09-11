@@ -18,6 +18,7 @@ aliases:
 - /doc/common-configuration/lifecycle
 - /admin-console/apps-management
 - /doc/develop/build-instances
+- /doc/develop/deployment-lifecycle
 ---
 
 ## Start, restart and stop

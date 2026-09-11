@@ -166,9 +166,9 @@ Then run `clever login` to get started.
 While the platform uses immutable infrastructure, sometimes you need SSH access for debugging. Use these commands:
 
 ```bash
-clever ssh                                         # Connect to default app
-clever ssh --app app_id_or_name                    # Connect to specific app
-clever ssh -a app_id_or_name -i ~/.ssh/id_ed25519  # Use specific key
+clever ssh                                            # Connect to default app
+clever ssh --app app_id_or_name                       # Connect to specific app
+clever ssh --app app_id_or_name -i ~/.ssh/id_ed25519  # Use specific key
 ```
 
 For extended debugging sessions, set `CC_TROUBLESHOOT=true` as an environment variable. This keeps your application running for up to 1 hour, even if errors occur.
@@ -201,7 +201,7 @@ This command groups applications by organisation for easy reference.
 
 ### JSON Output Support
 
-Add `--format json` or `-f json` to most commands for machine-readable output:
+Add `--format json` or `-F json` to most commands for machine-readable output:
 
 ```bash
 clever applications list --format json

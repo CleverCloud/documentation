@@ -50,18 +50,55 @@ To control an application with Clever Tools, it must be linked to a local direct
 
 ## How to install Clever Tools
 
-Clever Cloud CLI is based on Node.js. We thought it to be easily available on any platform. Thus, you can download Clever Tools as [a npm package](https://www.npmjs.com/package/clever-tools), but also through package managers or as a binary on many systems:
+Clever Tools is available as a npm package, through package managers, or as a standalone binary on many systems:
+
+### Node.js
+
+Clever Tools is available as [a npm package](https://www.npmjs.com/package/clever-tools):
+
+#### npm
+
+```console
+npm install -g clever-tools
+```
+
+#### pnpm
+
+```console
+pnpm add -g clever-tools
+```
+
+#### Bun
+
+```console
+bun add -g clever-tools
+```
+
+#### Yarn
+
+```console
+yarn global add clever-tools
+```
 
 ### GNU/Linux
 
 #### Arch Linux (AUR)
 
-If you use Arch Linux, install packages [from AUR](https://aur.archlinux.org/packages/clever-tools-bin/). If you don't know how to use this, run:
+If you use Arch Linux, install Clever Tools from AUR. Two packages are available, they provide the same `clever` command and cannot be installed side by side:
+
+- [`clever-tools`](https://aur.archlinux.org/packages/clever-tools/): the Node.js flavor, it runs on the `nodejs` package of your system
+- [`clever-tools-bin`](https://aur.archlinux.org/packages/clever-tools-bin/): a self-contained binary, with no runtime dependency
+
+If you use an AUR helper like `yay`, run:
 
 ```console
-git clone https://aur.archlinux.org/clever-tools-bin.git clever-tools
-cd clever-tools
-makepkg -si
+yay -S clever-tools
+```
+
+Or, for the self-contained binary:
+
+```console
+yay -S clever-tools-bin
 ```
 
 #### CentOS/Fedora (.rpm)
@@ -288,7 +325,7 @@ clever accesslogs [options]
 -a, --alias <alias>               Short name for the application
     --app <app-id|app-name>       Application to manage by its ID (or name, if unambiguous)
     --before, --until <before>    Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
--F, --format <format>             Output format (human, json, json-stream, clf) (default: human)
+-F, --format <format>             Output format (clf only outputs HTTP access logs) (human, json, json-stream, clf) (default: human)
 ```
 
 ## activity
@@ -1214,28 +1251,255 @@ drain-id                       Drain ID
 **Usage**
 
 ```console
-clever drain create <drain-type> <drain-url> [options]
+clever drain create
+```
+
+#### drain create betterstack
+
+**Description:** Create a Better Stack drain
+
+**Since:** 4.11.0
+
+**Usage**
+
+```console
+clever drain create betterstack --source-token <source-token> <drain-url> [options]
 ```
 
 **Arguments**
 
 ```console
-drain-type                           Drain type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, syslog-tcp, syslog-udp)
 drain-url                            Drain URL
 ```
 
 **Options**
 
 ```console
+-t, --source-token <source-token>    Source token (required)
     --addon <addon-id>               Add-on ID or real ID
 -a, --alias <alias>                  Short name for the application
--k, --api-key <api-key>              API key (for newrelic)
     --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
--i, --index-prefix <index-prefix>    Optional index prefix (for elasticsearch), `logstash` value is used if not set
--p, --password <password>            Basic auth password (for elasticsearch or raw-http)
--s, --sd-params <sd-params>          RFC5424 structured data parameters (for ovh-tcp), e.g.: `X-OVH-TOKEN=\"REDACTED\"`
--t, --source-token <source-token>    Source token (for betterstack)
--u, --username <username>            Basic auth username (for elasticsearch or raw-http)
+```
+
+#### drain create datadog
+
+**Description:** Create a Datadog drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create datadog <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+```
+
+#### drain create elasticsearch
+
+**Description:** Create an Elasticsearch drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create elasticsearch --index-prefix <index-prefix> <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                            Drain URL, must end with '/_bulk'
+```
+
+**Options**
+
+```console
+-i, --index-prefix <index-prefix>    Index prefix, indexes are created as `<index-prefix>-YYYY-MM-DD` (required)
+    --addon <addon-id>               Add-on ID or real ID
+-a, --alias <alias>                  Short name for the application
+    --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
+-p, --password <password>            Basic auth password
+-u, --username <username>            Basic auth username
+```
+
+#### drain create newrelic
+
+**Description:** Create a New Relic drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create newrelic --api-key <api-key> <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+-k, --api-key <api-key>        API key (required)
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+```
+
+#### drain create ovh-tcp
+
+**Description:** Create an OVH TCP drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create ovh-tcp <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
+```
+
+#### drain create raw-http
+
+**Description:** Create a raw HTTP drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create raw-http <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-p, --password <password>      Basic auth password
+-u, --username <username>      Basic auth username
+```
+
+#### drain create splunk
+
+**Description:** Create a Splunk HEC drain
+
+**Since:** 5.0.0
+
+**Usage**
+
+```console
+clever drain create splunk --hec-token <hec-token> <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                                    Drain URL
+```
+
+**Options**
+
+```console
+    --hec-token <hec-token>                  HTTP Event Collector token (required)
+    --addon <addon-id>                       Add-on ID or real ID
+-a, --alias <alias>                          Short name for the application
+    --app <app-id|app-name>                  Application to manage by its ID (or name, if unambiguous)
+    --index <index>                          Optional target index, the HEC token's own index is used if not set
+    --sourcetype <sourcetype>                Optional sourcetype, the HEC token's own sourcetype is used if not set
+    --tls-verification <tls-verification>    TLS verification mode, use `trustful` to accept a self-signed certificate (default, trustful)
+```
+
+#### drain create syslog-tcp
+
+**Description:** Create a Syslog TCP drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create syslog-tcp <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
+```
+
+#### drain create syslog-udp
+
+**Description:** Create a Syslog UDP drain
+
+**Since:** 0.9.0
+
+**Usage**
+
+```console
+clever drain create syslog-udp <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                      Drain URL
+```
+
+**Options**
+
+```console
+    --addon <addon-id>         Add-on ID or real ID
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+-s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
 ```
 
 ### drain disable

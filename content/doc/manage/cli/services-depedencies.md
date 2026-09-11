@@ -14,7 +14,7 @@ aliases:
 - /doc/cli/services-depedencies
 ---
 
-On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organisation. Add-ons are preconfigured with an exposed configuration. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.
+On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organisation. Add-ons expose their configuration by default. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.
 
 Each can target a specific application, adding `--app APP_ID_OR_NAME` or a local alias (`--alias`, `-a`).
 
@@ -31,13 +31,21 @@ clever published-config --format shell
 To configure exposed configuration, use:
 
 ```console
-clever published-config COMMAND
+clever published-config set SERVICE_URL https://payments-api.cleverapps.io
+clever published-config rm SERVICE_URL
 ```
 
-Available commands are `set`, `rm` (remove) or `import`. The latter reads data from `stdin` so use it as is:
+Use `set` to add or update a variable, `rm` to remove one, and `import` to replace the entire published configuration from standard input. Create a file containing `NAME=value` entries before importing it:
 
 ```console
-clever published-config import < file.config
+printf '%s\n' 'SERVICE_URL=https://payments-api.cleverapps.io' > service.config
+clever published-config import < service.config
+```
+
+For JSON input, add `--json`:
+
+```bash
+printf '%s\n' '[{"name":"SERVICE_URL","value":"https://payments-api.cleverapps.io"}]' | clever published-config import --json
 ```
 
 ## service
@@ -49,26 +57,18 @@ clever service
 clever service --format json
 ```
 
-You can filter results through these options.
+Use `--only-apps` or `--only-addons` to filter dependencies. These options are mutually exclusive. Add `--show-all` to include services available for linking:
 
-```console
-[--only-apps]              Only show app dependencies (default: false)
-[--only-addons]            Only show add-on dependencies (default: false)
-[--show-all]               Show all available add-ons and applications (default: false)
+```bash
+clever service --only-apps
+clever service --only-addons --show-all
 ```
 
-To create or delete services dependencies, use:
+To add or remove a dependency, provide its ID or unambiguous name:
 
-```console
-clever service COMMAND ADDON_OR_APP_ID
-clever service COMMAND ADDON_OR_APP_NAME
-```
-
-Available commands are:
-
-```console
-link-app                   Add an existing app as a dependency
-unlink-app                 Remove an app from the dependencies
-link-addon                 Link an existing add-on to this application
-unlink-addon               Unlink an add-on from this application
+```bash
+clever service link-app payments-api
+clever service unlink-app payments-api
+clever service link-addon session-cache
+clever service unlink-addon session-cache
 ```

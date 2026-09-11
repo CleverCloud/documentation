@@ -15,11 +15,13 @@ aliases:
 - /doc/cli/addons
 ---
 
-Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon provider`. For each of the following commands, you can target a specific user/organisation:
+Add-ons on Clever Cloud are databases, storage services, tools or third party services you can enable through `clever addon providers`. For each of the following commands, you can target a specific user/organisation:
 
 ```console
 [--org, -o, --owner]                Organisation ID (or name, if unambiguous)
 ```
+
+`clever addon env` and `clever database backups` resolve the organisation of the add-on automatically, their `--org` option is deprecated.
 
 ## list
 
@@ -40,6 +42,13 @@ clever addon providers
 clever addon providers show PROVIDER_NAME
 ```
 
+Providers, regions and plans can depend on the organisation. Add `--org` to only list what a given organisation can use:
+
+```console
+clever addon providers --org ORG_ID_OR_NAME
+clever addon providers show PROVIDER_NAME --org ORG_ID_OR_NAME
+```
+
 ## create | rename | delete
 
 To create an add-on, select a provider and choose a name:
@@ -47,6 +56,8 @@ To create an add-on, select a provider and choose a name:
 ```console
 clever addon create PROVIDER ADDON_NAME
 ```
+
+When you set `--org`, Clever Tools checks that the requested region is available for this organisation before creating the add-on.
 
 You can set `plan`, `region`, `version`, `option` and directly `link` an add-on to an application through these parameters:
 
@@ -72,7 +83,8 @@ clever addon rename ADDON_ID_OR_NAME ADDON_NEW_NAME
 To delete an add-on, use:
 
 ```console
-clever addon delete [--yes, -y] ADDON_ID_OR_NAME
+clever addon delete ADDON_ID_OR_NAME
+clever addon delete ADDON_ID_OR_NAME --yes
 ```
 
 ## env
@@ -80,7 +92,8 @@ clever addon delete [--yes, -y] ADDON_ID_OR_NAME
 Each add-on comes with environment variables. To get them, use:
 
 ```console
-clever addon env [--format, -F] FORMAT ADDON_ID
+clever addon env ADDON_ID
+clever addon env ADDON_ID --format json
 ```
 
 > [!NOTE]
@@ -142,13 +155,15 @@ clever config-provider open CONFIG_PROVIDER_ID_OR_NAME
 Databases are backup every day, with last 7 days of backups available to download. You can list them, available formats are: `human` (default) or `json`:
 
 ```console
-clever database backups DATABASE-ID [--format, -F] FORMAT
+clever database backups DATABASE_ID
+clever database backups DATABASE_ID --format json
 ```
 
 To download one of them, use:
 
 ```console
-clever database backups download [--output, --out] OUTPUT_FILE DATABASE_ID BACKUP_ID
+clever database backups download DATABASE_ID BACKUP_ID
+clever database backups download DATABASE_ID BACKUP_ID --output OUTPUT_FILE
 ```
 
 This command is still under development and will evolve over time. To get information about backups and download them, you can use our API and `clever curl`. For example:

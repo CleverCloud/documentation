@@ -42,17 +42,17 @@ Log management is also available through [Clever Tools](https://github.com/Cleve
 clever logs
 ```
 
-You can add `--since`, followed by a duration or a date (ISO8601 format). The `--until` flag should be followed by a date (ISO8601 format).
+You can add `--since` or `--until`, followed by a duration, a number of seconds or a date (ISO8601 format).
 
 ```bash
 clever logs --since 2h
 clever logs --until 2024-04-15T13:37:42Z
 ```
 
-You can also get your add-on's logs by using `--addon` flag, the value must be the add-on ID starting by `addon_`.
+You can also get your add-on's logs by using `--addon` flag, the value is the add-on ID starting by `addon_`, or its real ID:
 
 ```bash
-clever logs --addon <addon_xxx>
+clever logs --addon postgresql_xxxxxxxx
 ```
 
 {{< callout type="warning" >}}

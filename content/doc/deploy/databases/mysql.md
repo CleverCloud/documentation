@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/add-ons/mysql
 - /doc/addons/mysql
+- /doc/applications/databases/mysql
 - /doc/databases/mysql
 - /doc/deploy/addon/mysql
 - /doc/deploy/addon/mysql/mysql

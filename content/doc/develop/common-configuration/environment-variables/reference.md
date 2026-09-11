@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /doc/admin-console/environment-variables
 - /doc/common-configuration/environment-variables/reference
+- /doc/deploy/reference/reference-environment-variables
 - /doc/env-variables
 - /doc/environment-variables-reference
 - /doc/get-help/reference-environment-variables

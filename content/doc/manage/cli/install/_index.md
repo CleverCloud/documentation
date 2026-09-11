@@ -19,8 +19,13 @@ aliases:
 - /doc/install
 ---
 
-Clever Cloud CLI is based on Node.js. We thought it to be easily available on any platform. Thus, you can download Clever Tools as [a npm package](https://www.npmjs.com/package/clever-tools), but also through package managers or as a binary on many systems:
+Clever Tools is available as a npm package, through package managers, or as a standalone binary on many systems:
 
+- [Node.js](#nodejs)
+  - [npm](#npm)
+  - [pnpm](#pnpm)
+  - [Bun](#bun)
+  - [Yarn](#yarn)
 - [GNU/Linux](#gnulinux)
   - [Arch Linux (AUR)](#arch-linux-aur)
   - [CentOS/Fedora (.rpm)](#centosfedora-rpm)
@@ -38,16 +43,55 @@ Clever Cloud CLI is based on Node.js. We thought it to be easily available on an
 - [Nix package manager](#nix-package-manager)
 - [Enabling autocompletion](#enabling-autocompletion)
 
+To upgrade an existing installation, follow the [update guide](/doc/manage/cli/install/update/).
+
+## Node.js
+
+Clever Tools is available as [a npm package](https://www.npmjs.com/package/clever-tools), which requires Node.js 24 or later. Install it globally with the package manager you use.
+
+### npm
+
+```bash
+npm install -g clever-tools
+```
+
+### pnpm
+
+```bash
+pnpm add -g clever-tools
+```
+
+### Bun
+
+```bash
+bun add -g clever-tools
+```
+
+### Yarn
+
+```bash
+yarn global add clever-tools
+```
+
 ## GNU/Linux
 
 ### Arch Linux (AUR)
 
-If you use Arch Linux, install packages [from AUR](https://aur.archlinux.org/packages/clever-tools-bin/). If you don't know how to use this, run:
+If you use Arch Linux, install Clever Tools from AUR. Two packages are available. They provide the same `clever` command, so you can't install both side by side:
 
-```console
-git clone https://aur.archlinux.org/clever-tools-bin.git clever-tools
-cd clever-tools
-makepkg -si
+- [`clever-tools`](https://aur.archlinux.org/packages/clever-tools/): the Node.js flavor, it runs on the `nodejs` package of your system
+- [`clever-tools-bin`](https://aur.archlinux.org/packages/clever-tools-bin/): a self-contained binary, with no runtime dependency
+
+If you use an AUR helper like `yay`, run:
+
+```bash
+yay -S clever-tools
+```
+
+Or, for the self-contained binary:
+
+```bash
+yay -S clever-tools-bin
 ```
 
 ### CentOS/Fedora (.rpm)
@@ -103,7 +147,7 @@ cp clever-tools-latest_linux/clever ~/.local/bin/
 
 ## macOS
 
-We only provide macOS packages for Apple Silicon processors. On an Intel Mac, prefer using `npm` release.
+Clever Tools only provides macOS binaries for Apple Silicon processors. On an Intel Mac, use the [npm package](#nodejs).
 
 ### Homebrew
 
@@ -157,7 +201,7 @@ If you are using Docker, use the [Clever Tools image from Docker Hub](https://hu
 
 ```console
 docker pull clevercloud/clever-tools
-docker run --rm clever-tools <command>
+docker run --rm clevercloud/clever-tools version
 ```
 
 ### Dockerfile

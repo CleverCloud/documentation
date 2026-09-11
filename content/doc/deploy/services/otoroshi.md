@@ -83,7 +83,7 @@ To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC
 ```bash
 # Set a specific supported version at creation
 # You can add options to set base or routes domains if needed
-clever addon create otoroshi myOtoroshi --addon-version <version>
+clever addon create otoroshi myOtoroshi --addon-version VERSION
 
 # Enable Operators commands
 clever features enable operators
@@ -92,9 +92,9 @@ clever features enable operators
 clever otoroshi version check otoroshi_name_or_id
 clever otoroshi version check otoroshi_name_or_id --format json
 
-# Update to a specific supported version
+# Update to a supported version, picked interactively or set with --target
 clever otoroshi version update myOtoroshi
-clever otoroshi version update myOtoroshi <new_version>
+clever otoroshi version update myOtoroshi --target VERSION
 ```
 
 - Learn more about [Operators commands in Clever Tools](/doc/manage/cli/operators/)

@@ -83,6 +83,92 @@ For each of them, you can add these parameters:
 > [!TIP]
 > For commands returning a list of items, you can use `--format json` or `-F json` to get a JSON output.
 
+## TLS certificates (corporate proxy / custom CA)
+
+Clever Tools verifies the TLS certificate of every HTTPS connection it makes, both for API calls and for Git-based deployments. Behind a corporate proxy that intercepts HTTPS, or when your endpoint relies on a private or self-signed Certificate Authority (CA), this verification can fail with an error such as:
+
+```text
+Error: self signed certificate in certificate chain
+```
+
+The right fix is to make Clever Tools trust your CA, not to disable verification. There are two ways to do it, depending on whether your CA is installed system-wide or only available as a file.
+
+### Trust your operating system's certificate store
+
+If your corporate or proxy root CA is installed at the OS level (Windows Certificate Store, macOS Keychain, Linux `/etc/ssl/certs`), Clever Tools can rely on it. The binary already trusts the OS certificate store, there is nothing to do. The npm package runs on your own Node.js, so enable it explicitly:
+
+```bash
+NODE_OPTIONS=--use-system-ca clever profile
+```
+
+If the CA isn't in the OS store yet, ask your IT team to install it there: other tools relying on the OS certificate store then trust it too, not only Clever Tools.
+
+### Trust a specific certificate
+
+When the CA is only available as a file, set the `NODE_EXTRA_CA_CERTS` environment variable to its path. This works the same way for both the binary and npm installs. The file must be PEM-encoded and may contain several certificates:
+
+{{< tabs >}}
+  {{< tab name="Linux / macOS" >}}
+
+  ```bash
+  export NODE_EXTRA_CA_CERTS=/path/to/corporate-ca.pem
+  clever profile
+  ```
+
+  {{< /tab >}}
+  {{< tab name="Windows (PowerShell)" >}}
+
+  ```powershell
+  $env:NODE_EXTRA_CA_CERTS = "C:\path\to\corporate-ca.pem"
+  clever profile
+  ```
+
+  {{< /tab >}}
+{{< /tabs >}}
+
+Node.js reads `NODE_EXTRA_CA_CERTS` and `NODE_OPTIONS` at startup: set them in your shell, or inline before the command, not in a `.env` file.
+
+### Git-based deployments
+
+`clever deploy` pushes over HTTPS and verifies certificates too. By default, it delegates to your system `git` binary, which ignores `NODE_EXTRA_CA_CERTS` and follows its own TLS configuration: the OS certificate store (recommended), or an explicit CA file set with `git config --global http.sslCAInfo /path/to/corporate-ca.pem`, equivalent to the `GIT_SSL_CAINFO` environment variable.
+
+If you fall back to the previous JavaScript Git implementation (`clever features disable system-git`), Clever Tools handles Git operations on Node.js instead. It then trusts the OS certificate store and `NODE_EXTRA_CA_CERTS` exactly like API calls.
+
+Keep TLS verification enabled, and install your CA in the trust store each client uses: the OS certificate store for the binary, the same store with `NODE_OPTIONS=--use-system-ca` for npm installs, and the store or CA file configured for your system Git, depending on its TLS backend. Disabling TLS verification entirely, for example with `NODE_TLS_REJECT_UNAUTHORIZED=0`, exposes you to man-in-the-middle attacks, including the theft of your Clever Cloud credentials.
+
+## HTTP proxy
+
+On a network where outgoing traffic must go through an HTTP proxy, Clever Tools follows the `http_proxy` and `https_proxy` environment variables. Set them in your shell, and Clever Tools routes its API calls and update checks through the proxy:
+
+{{< tabs >}}
+  {{< tab name="Linux / macOS" >}}
+
+  ```bash
+  export http_proxy=http://proxy.example.com:3128
+  export https_proxy=http://proxy.example.com:3128
+  clever profile
+  ```
+
+  {{< /tab >}}
+  {{< tab name="Windows (PowerShell)" >}}
+
+  ```powershell
+  $env:http_proxy = "http://proxy.example.com:3128"
+  $env:https_proxy = "http://proxy.example.com:3128"
+  clever profile
+  ```
+
+  {{< /tab >}}
+{{< /tabs >}}
+
+Clever Tools also recognizes the uppercase variants, `HTTP_PROXY` and `HTTPS_PROXY`. For a proxy that requires authentication, set credentials in the URL, such as `http://user:password@proxy.example.com:3128`. To bypass the proxy for some hosts, list them in the `no_proxy` (or `NO_PROXY`) variable:
+
+```bash
+export no_proxy=localhost,127.0.0.1,.internal.example.com
+```
+
+Like the TLS variables, Clever Tools reads proxy variables at startup: set them in your shell or inline before the command, not in a `.env` file. By default, `clever deploy` delegates to your system `git`, which follows its own proxy configuration: `git config --global http.proxy`, or the same `http_proxy` and `https_proxy` variables. The previous JavaScript Git implementation, used when you disable `system-git`, doesn't go through this proxy.
+
 ## features
 
 Some features are available as experimental, before they're completely ready for prime time. They usually work well, but this testing phase allows us to get feedbacks, refine some details, documentation, and break things between two releases.
@@ -106,6 +192,12 @@ To get information about how to use an experimental feature, use:
 clever features info theFeature
 ```
 
+A feature can also graduate to stable and become enabled by default, while you can still disable it. Since Clever Tools 5.0.0, it's the case of `system-git`, which makes Git operations use the `git` installed on your system instead of a pure JavaScript implementation. Disable it if `git` isn't available in your `PATH`:
+
+```console
+clever features disable system-git
+```
+
 ## diag | version
 
 To check the current version or get information about your setup, use:
@@ -127,7 +219,7 @@ To connect to your Clever Cloud account, use:
 clever login
 ```
 
-It will open your default browser and start an Open Authorization ([OAuth](https://en.wikipedia.org/wiki/OAuth)) process to get a `token` and `secret` pair added in your account if it succeeds. You can manage it from the [Console](https://console.clever-cloud.com/users/me/tokens). Clever Tools will automatically store these `token` and `secret` values in a hidden `clever-tools.json` config file in the current local user home folder.
+It opens your default browser and starts an Open Authorization ([OAuth](https://en.wikipedia.org/wiki/OAuth)) process to get a `token` and `secret` pair added in your account if it succeeds. You can manage it from the [Console](https://console.clever-cloud.com/users/me/tokens). Clever Tools automatically stores these `token` and `secret` values in a hidden `clever-tools.json` config file in the current local user home folder. If Clever Tools can't open a browser, for example on a headless system, it prints a warning with the URL to open and keeps waiting for you to complete the login.
 
 If you already know them, you can use:
 

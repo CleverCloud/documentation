@@ -15,8 +15,10 @@ aliases:
 - /administrate/metrics/overview/
 - /doc/administrate/metrics
 - /doc/administrate/metrics/overview
+- /doc/develop/observability/grafana
 - /doc/developers/doc/metrics
 - /doc/metrics
+- /doc/metrics/custom-metrics
 - /doc/observability/metrics
 - /doc/tools/metrics
 - /metrics

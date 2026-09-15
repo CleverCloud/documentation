@@ -15,6 +15,7 @@ aliases:
 - /addons/postgresql
 - /deploy/addon/postgresql
 - /doc/addons/postgresql
+- /doc/administrate/postgresql
 - /doc/databases-and-services/postgresql
 - /doc/databases/postgresql
 - /doc/deploy/addon/postgresql

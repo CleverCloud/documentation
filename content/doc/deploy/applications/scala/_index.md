@@ -20,6 +20,7 @@ aliases:
 - /doc/developers/doc/scala-hosting
 - /doc/getting-started/by-language/scala
 - /doc/partials/language-specific-deploy/scala
+- /doc/play-framwork
 - /doc/sbt
 - /doc/scala
 - /doc/scala-hosting

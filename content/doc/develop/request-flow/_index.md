@@ -14,6 +14,7 @@ keywords:
 - middleware
 - port configuration
 aliases:
+- /doc/develop/observability/request-flow
 - /doc/request-flow
 ---
 

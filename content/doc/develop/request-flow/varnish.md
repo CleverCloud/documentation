@@ -19,6 +19,7 @@ aliases:
 - /doc/develop/varnish
 - /doc/develop/varnish-as-http-cache
 - /doc/networking/varnish
+- /doc/observability/varnish-as-http-cache
 - /doc/request-flow/varnish
 - /doc/administrate/varnish/
 - /doc/develop/varnish-as-http-cache/

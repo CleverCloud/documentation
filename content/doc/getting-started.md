@@ -17,6 +17,7 @@ aliases:
 - /deploy
 - /doc/addons/add-an-addon
 - /doc/clever-cloud-overview/add-application
+- /doc/deploy/git-deployment
 - /doc/getting-started/quickstart
 - /doc/quickstart
 - /getting-started/authentication

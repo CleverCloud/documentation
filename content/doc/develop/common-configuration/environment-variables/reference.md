@@ -19,6 +19,7 @@ aliases:
 - /doc/environment-variables-reference
 - /doc/get-help/reference-environment-variables
 - /doc/reference/environment-variable-reference
+- /doc/reference/environment-variables
 - /doc/reference/reference-environment-variables
 - /get-help/reference-environment-variables
 - /admin-console/environment-variables

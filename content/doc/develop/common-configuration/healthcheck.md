@@ -12,8 +12,10 @@ keywords:
 - load-balancer
 - deployment
 aliases:
+- /doc/administrate/monitoring/deployment-health-check
 - /doc/best-practices/healthcheck
 - /doc/common-configuration/healthcheck
+- /doc/develop/common-configuration/health-check
 - /doc/develop/healthcheck
 - /develop/healthcheck
 - /doc/healthcheck

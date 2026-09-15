@@ -10,6 +10,7 @@ keywords:
 aliases:
 - /deploy/addon/postgresql/pgpool
 - /doc/deploy/addon/postgresql/pgpool
+- /doc/guides/pgpool
 - /pgpool
 ---
 

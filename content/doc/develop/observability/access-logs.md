@@ -12,6 +12,7 @@ keywords:
 - monitoring
 aliases:
 - /doc/administrate/access-logs/
+- /doc/develop/observability/accesslogs
 - /doc/find-help/access-logs/
 - /doc/observability/access-logs
 ---

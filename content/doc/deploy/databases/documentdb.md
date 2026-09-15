@@ -136,7 +136,7 @@ A DocumentDB endpoint runs on a single dedicated PostgreSQL server. The gateway 
 
 Resilience comes from the PostgreSQL add-on itself. Data is written to a durable PostgreSQL database with daily backups and, on request, [point in time recovery](/doc/deploy/databases/postgresql#point-in-time-recovery). To scale, migrate the add-on to a bigger plan from the Console: the endpoint hostname, port and connection string stay the same after the migration.
 
-[PostgreSQL replicas](/doc/deploy/databases/postgresql#replication) provide read-only standby servers for the SQL endpoint. If your workload needs read scaling or a failover target for the MongoDB-compatible endpoint, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss the setup.
+Read replicas aren't available for the MongoDB-compatible endpoint. [PostgreSQL replicas](/doc/deploy/databases/postgresql#replication) only serve the SQL endpoint, and the gateway offers no read preference or secondary routing to drivers. If your workload needs read scaling or a failover target on the MongoDB side, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) to discuss your needs.
 
 ## Query your documents from SQL
 

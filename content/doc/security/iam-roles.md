@@ -22,6 +22,7 @@ aliases:
 - /doc/security-compliance/iam/
 - /doc/security-compliance/roles/
 - /doc/organizations
+- /doc/security/iam
 ---
 
 In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organisations. Each organisation has its own billing, leaning that you can create as much as orgnanization you'd like. Most use-cases include the billing separation of private and business applications, several businesses or business units (within one company, for instance).

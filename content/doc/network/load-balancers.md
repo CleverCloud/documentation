@@ -11,7 +11,9 @@ keywords:
 - redundancy
 - high availability
 aliases:
+- /doc/administrate/load-balancers
 - /doc/load-balancers
+- /doc/network/dedicated-load-balancers
 ---
 
 By default, incoming traffic to your applications goes through Clever Cloud's shared load balancers, powered by [Sōzu](https://www.sozu.io/). For workloads that need isolated capacity, fixed inbound IP addresses or additional redundancy, you can request **dedicated load balancers**.

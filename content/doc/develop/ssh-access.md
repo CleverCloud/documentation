@@ -13,7 +13,9 @@ aliases:
 - /doc/admin-console/ssh-keys
 - /doc/administrate/ssh-clever-tools
 - /doc/common-configuration/ssh-access
+- /doc/develop/ssh
 - /doc/doc/admin-console/ssh-keys
+- /doc/find-help/ssh-access
 - /doc/reference/clever-tools/ssh-access
 - /doc/ssh-access
 - /doc/tutorials/ssh_keys

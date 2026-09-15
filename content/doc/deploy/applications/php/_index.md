@@ -18,6 +18,8 @@ aliases:
 - /doc/applications/php/php
 - /doc/deploy/application/php
 - /doc/deploy/application/php/php-apps
+- /doc/deploy/php-with-apache
+- /doc/develop/php-with-apache
 - /doc/doc/php
 - /doc/doc/php/php-apps
 - /doc/getting-started/by-language/php

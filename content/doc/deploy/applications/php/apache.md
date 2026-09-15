@@ -14,7 +14,6 @@ aliases:
 - /doc/deploy/php/apache
 - /doc/languages/php/apache
 - /doc/php/apache
-- /doc/applications/php-with-apache/
 - /doc/runtimes/php/apache
 ---
 

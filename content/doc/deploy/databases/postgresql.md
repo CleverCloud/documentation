@@ -84,6 +84,12 @@ If you try to list the databases on the shared cluster, you will see the names o
 
 This referencing does not exist for dedicated databases.
 
+## DocumentDB, a MongoDB-compatible API
+
+Dedicated PostgreSQL add-ons from version 17 can expose a MongoDB-compatible endpoint next to the SQL one, powered by the [DocumentDB](https://documentdb.io) extension and gateway. Enable it at creation with `--option documentdb=true`, then connect your MongoDB drivers or `mongosh` to `DOCUMENTDB_ADDON_URI`. Collections live in your PostgreSQL database, so backups and migrations cover them.
+
+The [DocumentDB documentation page](/doc/deploy/databases/documentdb) details the compatibility level with MongoDB, the connection settings, clustering and backup specifics.
+
 ## Pgpool-II
 
 {{% content "pgpool" %}}

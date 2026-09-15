@@ -35,6 +35,8 @@ In order to comply with [MongoDB Server Side Public License](https://www.mongodb
 
 If you purchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, [contact us](https://www.clever.cloud/contact/).
 
+If your application needs a more recent MongoDB API without a commercial licence, the [DocumentDB option](/doc/deploy/databases/documentdb) of the PostgreSQL add-on exposes a MongoDB 7.0 compatible endpoint, backed by PostgreSQL and open source.
+
 {{< callout type="warning" >}}
 DEV plan is no longer available for MongoDB.
 {{< /callout >}}

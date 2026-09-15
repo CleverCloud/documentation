@@ -62,7 +62,7 @@ clever addon create mongodb-addon myMongoDb -p xs_sml -l myNodeApp
 Linking the add-on injects its [environment variables](/doc/develop/common-configuration/environment-variables/#how-are-variables-defined), including `MONGODB_ADDON_URI`, into the application. If you already have a MongoDB add-on, link it instead:
 
 ```bash
-clever addon link myMongoDb
+clever service link-addon myMongoDb
 ```
 
 ## Deploy the application

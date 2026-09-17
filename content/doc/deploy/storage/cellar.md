@@ -17,6 +17,7 @@ aliases:
 - /deploy/addon/cellar
 - /doc/addons/cellar
 - /doc/cellar
+- /doc/cellar/faq
 - /doc/deploy/addon/cellar
 - /doc/addon/cellar/
 - /doc/deploy/addons/cellar/

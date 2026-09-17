@@ -13,6 +13,7 @@ keywords:
 - security
 aliases:
 - /doc/administrate/network
+- /doc/administrate/network/ip-addresses
 - /doc/ip-ranges
 - /doc/administrate/network/ip-ranges/
 - /doc/network/services

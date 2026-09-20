@@ -15,9 +15,12 @@ aliases:
 - /clever-tools/getting_started
 - /cli
 - /doc/CLI
+- /doc/admin-console/cli
+- /doc/administrate/cc-command-line
 - /doc/administrate/clever-tools/getting_started
 - /doc/administrate/cli
 - /doc/clever-cloud-cli
+- /doc/clever-tools
 - /doc/clever-tools/getting_started
 - /doc/clever-tools/manage
 - /doc/cli

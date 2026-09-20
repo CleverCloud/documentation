@@ -12,6 +12,7 @@ keywords:
 - activity
 - grafana
 aliases:
+- /doc/administrate/monitoring
 - /doc/observability
 ---
 

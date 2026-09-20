@@ -13,6 +13,7 @@ keywords:
 - scaling
 aliases:
 - /doc/common-configuration/workers
+- /doc/develop/configuration/workers
 - /doc/develop/workers
 - /doc/develop/configure-applications/workers/
 - /doc/workers

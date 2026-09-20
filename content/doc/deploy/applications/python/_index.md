@@ -17,6 +17,7 @@ aliases:
 - /deploy/application/python/python_apps
 - /doc/applications/python
 - /doc/deploy/application/python
+- /doc/deploy/application/python/python-apps
 - /doc/deploy/application/python/python_apps
 - /doc/deploy/application/python/tutorials/python-flask-sample-app
 - /doc/en/python-hosting

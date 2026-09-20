@@ -12,10 +12,12 @@ keywords:
 - secrets
 - access control
 aliases:
+- /doc/administrate/security
 - /doc/network/security/
 - /doc/security-compliance/
 - /doc/administrate/security-compliance/
 - /doc/network/security-compliance/
+- /doc/security-policy
 
 ---
 

@@ -17,7 +17,9 @@ aliases:
 - /deploy/addon/config-provider
 - /doc/addons/config-provider
 - /doc/deploy/addon/config-provider
+- /doc/deploy/services/configuration-provider
 - /doc/services/config-provider
+- /doc/services/configuration-provider
 ---
 
 The configuration provider add-on helps you to create groups of environment variables that you can share with multiple applications.

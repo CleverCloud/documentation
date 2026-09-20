@@ -12,6 +12,7 @@ keywords:
 - automation
 - deployment
 aliases:
+- /doc/develop/clever-tasks
 - /doc/tasks
 ---
 

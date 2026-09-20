@@ -21,6 +21,7 @@ aliases:
 - /doc/en/mysql-hosting
 - /doc/deploy/mysql/
 - /doc/mysql
+- /doc/mysql-hosting
 ---
 ## Overview
 

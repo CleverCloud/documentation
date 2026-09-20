@@ -22,12 +22,14 @@ aliases:
 - /doc/applications/javascript/by-framework/nodejs
 - /doc/applications/javascript/nodejs
 - /doc/applications/nodejs
+- /doc/applications/nodejs/custom-run-command
 - /doc/deploy/application/javascript
 - /doc/deploy/application/javascript/by-framework/meteor
 - /doc/deploy/application/javascript/by-framework/nodejs
 - /doc/deploy/application/javascript/nodejs
 - /doc/deploy/application/node
 - /doc/deploy/application/nodejs
+- /doc/deploy/application/nodejs/nodejs
 - /doc/getting-started/by-language/node
 - /doc/nodejs
 - /doc/nodejs-hosting

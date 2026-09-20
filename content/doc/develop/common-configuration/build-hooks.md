@@ -13,6 +13,7 @@ keywords:
 - workflows
 aliases:
 - /clever-cloud-overview/hooks
+- /doc/administrate/apps-management/build-hooks
 - /doc/best-practices/build-hooks
 - /doc/build-hooks
 - /doc/clever-cloud-overview/hooks

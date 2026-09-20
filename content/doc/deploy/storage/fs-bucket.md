@@ -24,6 +24,7 @@ aliases:
 - /doc/deploy/addon/fs-bucket
 - /doc/fs-bucket
 - /doc/storage/fs-bucket
+- /doc/storage/fsbucket
 ---
 
 When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted. If your application generates data, for example if you let users upload pictures and you don't store it on databases or object storage, you will lose anything on the local disk after a rebuild or a restart.

@@ -16,6 +16,7 @@ aliases:
 - /doc/cron
 - /doc/crons
 - /doc/develop/apps-configuration/cron/
+- /doc/develop/common-configuration/cron
 - /doc/develop/configure-applications/cron/
 - /doc/tools/crons
 ---

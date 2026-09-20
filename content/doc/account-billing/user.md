@@ -13,6 +13,7 @@ keywords:
 - 2fa
 aliases:
 - /account
+- /doc/account-billing/account
 - /doc/account-setup
 - /doc/account/create-account
 - /doc/account/delete-account

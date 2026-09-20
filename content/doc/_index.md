@@ -14,6 +14,7 @@ keywords:
 aliases:
 - /clever-cloud-overview
 - /doc/clever
+- /doc/clever-cloud-overview
 - /doc/en
 - /doc/get
 - /doc/site

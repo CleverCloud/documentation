@@ -32,12 +32,12 @@ Clever Cloud supports Play 1.x applications natively. The present guide explains
 
 ### Select Play! 1.x version
 
-Clever Cloud supports Play! **1.2** to **1.11**. You can select the Play! version for your application by setting the `PLAY1_VERSION` [environment variable](#setting-up-environment-variables-on-clever-cloud) (or by putting it in a file named `clevercloud/play1_version`).
+Clever Cloud supports Play! **1.2** to **1.11**, and uses Play! **1.7** by default. You can select the Play! version for your application by setting the `CC_PLAY1_VERSION` [environment variable](#setting-up-environment-variables-on-clever-cloud). The former `PLAY1_VERSION` name remains supported as an alias. A `clevercloud/play1_version` file containing the version also works, but it's deprecated and ignored when `CC_PLAY1_VERSION` is set.
 
-The `PLAY1_VERSION` environment variable can contain one of the following values:
+The `CC_PLAY1_VERSION` environment variable can contain one of the following values:
 
 - `1.2` or `12` for **Play! 1.2**
-- `1.3` or `12` for **Play! 1.3**
+- `1.3` or `13` for **Play! 1.3**
 - `1.4` or `14` for **Play! 1.4**
 - `1.5` or `15` for **Play! 1.5**
 - `1.6` or `16` for **Play! 1.6**

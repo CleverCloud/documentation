@@ -238,18 +238,21 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 | -------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------- |
 | `CC_DISABLE_MAX_METASPACE` | Allows to disable the Java option `-XX:MaxMetaspaceSize`                                                       |               |
 | `CC_EXTRA_JAVA_ARGS`       | Define extra arguments to pass to `java` for JAR                                                               |               |
+| `CC_GRADLE_BUILD_GOAL`     | Define which Gradle tasks to run during build. Alias: `GRADLE_BUILD_GOAL`                                      | `assemble`    |
+| `CC_GRADLE_DEPLOY_GOAL`    | Define which Gradle tasks run your application. Alias: `GRADLE_DEPLOY_GOAL`                                    |               |
 | `CC_JAR_ARGS`              | Define arguments to pass to the launched JAR                                                                   |               |
 | `CC_JAR_PATH`              | Define the path to your JAR                                                                                    |               |
 | `CC_JAVA_VERSION`          | Choose the JVM version between for OpenJDK or `graalvm-ce` for GraalVM                                         | 21            |
+| `CC_MAVEN_BUILD_GOAL`      | Define which Maven goals to run during build                                                                   | `package`     |
+| `CC_MAVEN_DEPLOY_GOAL`     | Define which Maven goals run your application. Alias: `MAVEN_DEPLOY_GOAL`                                      |               |
 | `CC_MAVEN_PROFILES`        | Define which Maven profile to use during default build                                                         |               |
+| `CC_PLAY1_VERSION`         | Define which Play! 1 version to use, from `1.2` to `1.11`. Alias: `PLAY1_VERSION`                              | `1.7`         |
 | `CC_RUN_COMMAND`           | Custom command to run your application. Replaces the default behavior                                          |               |
-| `CC_SBT_TARGET_BIN`        | Define the bin to pick in the `CC_SBT_TARGET_DIR`. The first bin found in the `CC_SBT_TARGET_DIR`              |               |
+| `CC_SBT_BUILD_GOAL`        | Define which sbt goals to run during build                                                                     | `stage`       |
+| `CC_SBT_DEPLOY_ARGS`       | Define arguments to pass to the sbt-native-packager binary at startup. Alias: `SBT_DEPLOY_GOAL`                |               |
+| `CC_SBT_TARGET_BIN`        | Define the script to run from the `CC_SBT_TARGET_DIR`. Set it when several scripts exist                       |               |
 | `CC_SBT_TARGET_DIR`        | Define the folder the `target` dir is in. `/target/universal/stage/bin` is concatenated to the given directory | `.`           |
-| `GRADLE_DEPLOY_GOAL`       | Define which Gradle goals to run during build                                                                  |               |
-| `MAVEN_DEPLOY_GOAL`        | Define which Maven goals to run during build                                                                   |               |
 | `NUDGE_APPID`              |                                                                                                                |               |
-| `PLAY1_VERSION`            | Define which play1 version to use between `1.2`, `1.3`, `1.4` and `1.5`                                        |               |
-| `SBT_DEPLOY_GOAL`          | Define which SBT goals to run during build                                                                     | stage         |
 
 ## Linux
 

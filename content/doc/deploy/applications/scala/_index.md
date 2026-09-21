@@ -63,22 +63,23 @@ For more information, please have a look at the [sbt-native-packager documentati
 
 #### sbt custom goal
 
-By default, the deployment system executes `sbt stage` and runs the first binary found into `/target/universal/stage/bin`. If you want to run another goal, you can specify it with the `SBT_DEPLOY_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+By default, the deployment system executes `sbt stage` and runs a binary from `target/universal/stage/bin`. When this folder holds several scripts, the choice isn't guaranteed: set `CC_SBT_TARGET_BIN` to the one you want to run. To build with another goal, set the `CC_SBT_BUILD_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud), for example `CC_SBT_BUILD_GOAL="clean stage"`. It takes precedence over the `build.goal` field of a `clevercloud/sbt.json` file.
+
+To pass arguments to the binary when it starts, set `CC_SBT_DEPLOY_ARGS`, for example `CC_SBT_DEPLOY_ARGS="-Dconfig.resource=clevercloud.conf"`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias of `CC_SBT_DEPLOY_ARGS`, but it no longer adds goals to the build command: if you used it to build a specific module, move that goal to `CC_SBT_BUILD_GOAL`.
 
 #### Multi-module build
 
-If you have a single repository with multiple modules or if you want to build a specific module in a monorepo (with no top-level `stage` task), you must set `SBT_DEPLOY_GOAL`, `CC_SBT_TARGET_DIR`, and `CC_SBT_TARGET_BIN`. For instance, if you want to deploy a module named `service1` that produces a binary named "my-binary", configuration should be:
+If you have a single repository with multiple modules or if you want to build a specific module in a monorepo (with no top-level `stage` task), you must set `CC_SBT_BUILD_GOAL`, `CC_SBT_TARGET_DIR`, and `CC_SBT_TARGET_BIN`. For instance, if you want to deploy a module named `service1` that produces a binary named `my-binary`, configuration should be:
 
 ```shell
-SBT_DEPLOY_GOAL=service1/stage
+CC_SBT_BUILD_GOAL=service1/stage
 CC_SBT_TARGET_DIR=service1
 CC_SBT_TARGET_BIN=my-binary
 ```
 
 The build command is `sbt service1/stage` and the application is started with `service1/target/universal/stage/bin/my-binary`.
 
-> [!NOTE]
-> Even when `CC_RUN_COMMAND` is configured, `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` should be set to the correct values.
+When you set `CC_RUN_COMMAND`, Clever Cloud runs it as is and ignores `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` to start your application.
 
 ### HOCON users
 

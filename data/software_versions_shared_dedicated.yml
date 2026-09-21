@@ -33,4 +33,4 @@ pg:
 
 redis:
   dedicated:
-    - v8.10.1
+    - v8.10.2

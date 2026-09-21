@@ -267,3 +267,5 @@ All plugins will be downloaded. You can enable the option `Restart Jenkins when 
 ## Backup
 
 By default, Clever Cloud performs a backup every day, with a retention of seven days. Retention and frequency can be customized for Premium customers. Backups can be found in the Clever Cloud Console in the `backups` menu of your add-on.
+
+A backup contains the Jenkins configuration, secrets, users, plugins, and for each job its configuration and build history. Workspaces aren't included, as Jenkins recreates them during the next build.

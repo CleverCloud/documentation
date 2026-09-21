@@ -17,7 +17,7 @@ aliases:
 - /doc/tools/products-support
 ---
 
-The [`CleverCloud/clevercloud`](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest) provider declares Clever Cloud resources as code. It covers 45 resource types, from every application runtime to databases, storage, log drains, Network Groups, Kubernetes clusters and OAuth consumers, and works with both Terraform and OpenTofu.
+The [`CleverCloud/clevercloud`](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest) provider declares Clever Cloud resources as code. It covers 47 resource types, from every application runtime to databases, storage, log drains, Network Groups, Kubernetes clusters and OAuth consumers, and works with both Terraform and OpenTofu.
 
 ## What it unlocks
 
@@ -36,22 +36,20 @@ Plan: 0 to add, 1 to change, 0 to destroy.
 
 ## Configure the provider
 
-Authentication reuses the OAuth token pair Clever Tools stores after `clever login`, and the organisation you target:
+After `clever login`, the provider reads the credentials of the active Clever Tools profile. It only needs the organisation you target:
 
-```bash
-export CC_OAUTH_TOKEN="…"
-export CC_OAUTH_SECRET="…"
+```shell
 export CC_ORGANISATION="orga_xxx"
 ```
 
-`CC_ORGANISATION` accepts a `user_xxx` identifier to target a personal space. The provider block then stays empty:
+`CC_ORGANISATION` accepts a `user_xxx` identifier to target a personal space. Wherever Clever Tools isn't logged in, set `CC_OAUTH_TOKEN` and `CC_OAUTH_SECRET` as well: they take precedence over the profile. The provider block then stays empty:
 
 ```hcl {filename="main.tf"}
 terraform {
   required_providers {
     clevercloud = {
       source  = "CleverCloud/clevercloud"
-      version = "~> 2.1"
+      version = "~> 2.2"
     }
   }
 }
@@ -59,7 +57,7 @@ terraform {
 provider "clevercloud" {}
 ```
 
-For a pipeline, prefer a dedicated [OAuth consumer](/doc/develop/login-with-clever-cloud/) over a personal token, and pass its `consumer_key` and `consumer_secret` to the provider. It needs five rights: access to personal information, access to organisations, and management of organisations, their applications and their add-ons.
+For a pipeline, prefer a dedicated [OAuth consumer](/doc/develop/login-with-clever-cloud/) over a personal token, and pass its `consumer_key` and `consumer_secret` to the provider, along with the `token` and `secret` of the user it acts for. It needs five rights: access to personal information, access to organisations, and management of organisations, their applications and their add-ons.
 
 ## Declare resources
 
@@ -106,13 +104,13 @@ output "dns_target" {
 
 An application resource creates the application. Whether Terraform also deploys the code depends on the `deployment` block, and the distinction matters more than it looks:
 
-| Configuration                | Behaviour                                                                                                |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------- |
-| No `deployment` block        | Terraform never deploys and never shows a deployment diff, you push with the CLI, the Console or your CI |
-| Block without `commit`       | The repository HEAD is deployed on create and update, and the running hash is recorded                   |
-| `commit = "<hash>"`          | The commit is pinned, an outside deployment shows as a diff, and the next apply restores the pinned hash |
-| `commit = "refs/heads/main"` | The reference is resolved and deployed, and kept as-is in the state                                      |
-| `commit = "github_hook"`     | Deployments are delegated to GitHub, the provider never pushes                                           |
+| Configuration                | Behaviour                                                                                                                                                                                |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No `deployment` block        | Terraform doesn't push code or track the running commit: you deploy with the CLI, the Console or your CI. An environment change restarts the application if it has already been deployed |
+| Block without `commit`       | On create and update, Terraform pushes the repository HEAD if it differs from the running commit, and records the running hash                                                           |
+| `commit = "<hash>"`          | The commit is pinned, an outside deployment shows as a diff, and the next apply restores the pinned hash                                                                                 |
+| `commit = "refs/heads/main"` | The reference is resolved and deployed, and kept as-is in the state                                                                                                                      |
+| `commit = "github_hook"`     | GitHub handles deployments. The provider never pushes code and keeps `github_hook` in the state instead of tracking the running commit                                                   |
 
 Leaving the block out is the right default when your pipeline already deploys. Pinning a hash is the opposite stance: the infrastructure code owns what runs, and any manual deployment is treated as drift.
 
@@ -135,6 +133,12 @@ action "clevercloud_application_reboot" "restart" {
     application_id = clevercloud_nodejs.app.id
   }
 }
+```
+
+An action runs only when you invoke it:
+
+```shell
+terraform apply -invoke action.clevercloud_application_reboot.restart
 ```
 
 `clevercloud_application_reboot` restarts an application and waits until the new instances answer. `clevercloud_database_query` runs SQL on a PostgreSQL add-on and can export the result to a JSON file, which turns a schema bootstrap into part of the apply. `clevercloud_fsbucket_upload` pushes local files, whole directories or the content of an HTTP URL into an FS Bucket over FTP, seeding a volume without a separate step.
@@ -166,7 +170,7 @@ terraform {
 
 Credentials come from the add-on, through the variables the AWS SDK expects:
 
-```bash
+```shell
 export AWS_ACCESS_KEY_ID="$CELLAR_ADDON_KEY_ID"
 export AWS_SECRET_ACCESS_KEY="$CELLAR_ADDON_KEY_SECRET"
 export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
@@ -177,9 +181,11 @@ export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
 
 ## Know the limits
 
-`terraform import` brings an existing application into the state but never fills the `deployment` block, because the provider cannot guess whether you want it to manage deployments. Adding the block afterwards starts tracking the running commit, and the first apply then triggers a deployment.
+`terraform import` brings an existing application into the state but never fills the `deployment` block, because the provider cannot guess whether you want it to manage deployments. Adding the block afterwards enables the deployment behavior described above. With `commit` unset or pinned to a hash, the provider tracks the running commit. The next apply pushes the resolved target if it differs from the running commit, unless `commit = "github_hook"`. In that mode, the provider neither pushes code nor tracks the running commit.
 
-When `commit` holds a Git reference rather than a hash, the provider does not report the running commit and cannot detect a deployment made elsewhere: comparing a reference to a hash would mean cloning the repository. For the same reason, a new commit pushed to your branch is not a diff by itself, and gets deployed on the next apply that carries another change.
+When `commit` holds a Git reference rather than a hash, the provider does not report the running commit and cannot detect a deployment made elsewhere: comparing a reference to a hash would mean cloning the repository. For the same reason, a new commit pushed to your branch is not a diff by itself, and gets deployed on the next apply that carries another change. Removing a reference from `commit` keeps it in the state: set a hash once, or recreate the resource, to switch back to the running commit.
+
+When an update deploys a new HEAD while `commit` is unset, the state reports the new hash only after the next refresh.
 
 - [Provider documentation on the Terraform Registry](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
 - [Provider source and examples](https://github.com/CleverCloud/terraform-provider-clevercloud)

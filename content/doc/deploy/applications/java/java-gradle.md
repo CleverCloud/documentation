@@ -39,9 +39,7 @@ Accepted values are the following:
 
 ## Configure your Java application
 
-You *must* provide a `clevercloud/gradle.json` file (gradle.json file in
-clevercloud folder which is at the root of your repository) that
-contains at least the following:
+Unless you set `CC_RUN_COMMAND`, you *must* tell Clever Cloud how to run your application, either with the `CC_GRADLE_DEPLOY_GOAL` environment variable [described below](#configure-goals-with-environment-variables), or with a `clevercloud/gradle.json` file (gradle.json file in clevercloud folder which is at the root of your repository) that contains at least the following:
 
 ```json
 {
@@ -71,11 +69,25 @@ The full configuration can look like the following:
 
 You can use the following properties:
 
-| Usage    | Field             | Description                                                               |
-| -------- | ----------------- | ------------------------------------------------------------------------- |
-| Optional | **build → type**  | can be maven, gradle or ant                                               |
-| Optional | **build → goal**  | is the target you want to use to build your project                       |
-| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |
+| Usage    | Field             | Description                                                                                                                          |
+| -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Optional | **build → type**  | can be maven, gradle or ant                                                                                                          |
+| Optional | **build → goal**  | is the target you want to use to build your project                                                                                  |
+| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project, unless `CC_GRADLE_DEPLOY_GOAL` or `CC_RUN_COMMAND` is set |
+
+### Configure goals with environment variables
+
+You can set the goals with environment variables instead of the `clevercloud/gradle.json` file. They take precedence over its fields:
+
+- `CC_GRADLE_BUILD_GOAL`: the task that builds your project, `assemble` by default
+- `CC_GRADLE_DEPLOY_GOAL`: the task and options that run your project, such as `bootRun`
+
+```bash
+CC_GRADLE_BUILD_GOAL="clean assemble"
+CC_GRADLE_DEPLOY_GOAL="bootRun"
+```
+
+The former `GRADLE_BUILD_GOAL` and `GRADLE_DEPLOY_GOAL` names remain supported as aliases.
 
  {{% content "new-relic" %}}
 

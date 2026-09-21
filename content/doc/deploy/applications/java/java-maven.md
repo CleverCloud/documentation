@@ -75,9 +75,11 @@ An example of what can be found as a goal value is:
 
 If you don't want to add a file to your repository, or if you're using a monorepo with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
 
-Simply define `MAVEN_DEPLOY_GOAL="yourgoal"` and it's OK
+Define the goal in the `CC_MAVEN_DEPLOY_GOAL` environment variable, for example `CC_MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with `spring-boot-maven-plugin`. The former `MAVEN_DEPLOY_GOAL` name remains supported as an alias.
 
-Eg. `MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with spring-boot-maven-plugin
+### Build goal
+
+By default, Clever Cloud builds your application with `mvn package`. To use another goal, set `CC_MAVEN_BUILD_GOAL`, for example `CC_MAVEN_BUILD_GOAL="clean install -DskipTests"`. It takes precedence over the `build.goal` field of the `clevercloud/maven.json` file.
 
 ### Optional configuration
 
@@ -97,11 +99,17 @@ The full configuration can look like the following:
 
 You can use the following properties:
 
-| Usage    | Field             | Description                                                               |
-| -------- | ----------------- | ------------------------------------------------------------------------- |
-| Optional | **build → type**  | can be `maven`, `gradle` or `ant`                                         |
-| Optional | **build → goal**  | is the target you want to use to build your project                       |
-| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project |
+| Usage    | Field             | Description                                                                                                                         |
+| -------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Optional | **build → type**  | can be `maven`, `gradle` or `ant`                                                                                                   |
+| Optional | **build → goal**  | is the target you want to use to build your project                                                                                 |
+| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project, unless `CC_MAVEN_DEPLOY_GOAL` or `CC_RUN_COMMAND` is set |
+
+When `build.type` is `maven`, `gradle` or `sbt`, Clever Cloud uses the same build setup as for an automatically detected project, including your Maven `settings.xml`. Any other value runs a generic build.
+
+### Custom Maven settings
+
+To use your own Maven configuration, such as credentials for a private repository or a mirror, commit a `clevercloud/settings.xml` file. Clever Cloud copies it to `~/.m2/settings.xml` before the build. This applies to every Java build, whatever the build system, so dependencies Maven resolves on behalf of another tool use it too.
 
 ### Specifying a profile
 

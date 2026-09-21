@@ -49,7 +49,7 @@ Then, in your Clever Cloud application define `APPLICATION_SECRET` [environment 
 
 ### Custom config file
 
-If you don't want to use the default `conf/application.conf` configuration file, you can use the `SBT_DEPLOY_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud) `SBT_DEPLOY_GOAL=-Dconfig.resource=clevercloud.conf`
+If you don't want to use the default `conf/application.conf` configuration file, pass another one to your application at startup with the `CC_SBT_DEPLOY_ARGS` [environment variable](#setting-up-environment-variables-on-clever-cloud): `CC_SBT_DEPLOY_ARGS=-Dconfig.resource=clevercloud.conf`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias.
 
 ### HTTPS support
 

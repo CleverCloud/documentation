@@ -216,14 +216,17 @@ When set to `install`, an explicit flag forces development dependencies to be in
 
 - npm: `--production=false`
 - npm-ci: `--include=dev`
-- pnpm: `--prod false`
+- pnpm: `--no-prod`
 - yarn: `--production=false`
 - bun: no flag (Bun includes all dependencies by default)
+
+`CC_NODE_DEV_DEPENDENCIES` has no effect when `CC_NODE_BUILD_TOOL` is set to `yarn2` or `yarn-berry`: Clever Cloud runs `yarn install` with no flag and Yarn applies its own default.
 
 When not set or set to `ignore`, default package manager behavior applies:
 
 - For Bun: development dependencies are excluded (`--omit dev` is added by default)
-- For npm/yarn/pnpm: depends on `NODE_ENV`. If `NODE_ENV=production`, development dependencies are excluded. Otherwise they are included.
+- For pnpm: development dependencies are excluded (`--prod` is added by default)
+- For npm and Yarn Classic: depends on `NODE_ENV`. If `NODE_ENV=production`, development dependencies are excluded. Otherwise they are included.
 
 ## Custom run command
 

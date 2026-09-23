@@ -20,7 +20,7 @@ Putting an [Otoroshi](/doc/deploy/services/otoroshi/) gateway in front of an app
 
 That model only holds if those applications cannot be reached any other way. An application deployed on Clever Cloud keeps its own public URL, and anyone who finds it bypasses the gateway along with everything it enforces.
 
-The Otoroshi challenge closes that gap without a private network. [Request Flow](/doc/develop/request-flow/) runs a middleware in front of your application that answers `401 Unauthorized` to every request unable to prove it came through your gateway, and forwards the rest untouched. Your code changes in no way, and your application never sees the challenge headers.
+The Otoroshi challenge closes that gap without a private network. [Request Flow](/doc/develop/request-flow/) runs a middleware in front of your application that answers `401 Unauthorized` to every request unable to prove it came through your gateway, apart from the paths you exclude from the challenge, and forwards the rest untouched. Your code changes in no way, and your application never sees the challenge headers.
 
 A [Network Group](/doc/network/network-groups/) reaches the same result differently, by placing your Otoroshi add-on and your applications on a private WireGuard network and keeping those applications off the public internet. The challenge suits applications that stay on a public URL, or that you want to protect without changing their network topology. Nothing prevents combining both.
 
@@ -81,15 +81,21 @@ Error: listen EADDRINUSE: address already in use 0.0.0.0:8080
 
 ## Keep the health check working
 
-The platform health check requests your application through the public port, where the middleware now answers `401` to a request carrying no challenge. The default check accepts any status from `200` to `500`, so it keeps passing.
+The platform health check requests your application through the public port, where the middleware now answers `401` to a request carrying no challenge. The default check accepts any status from `200` to `499`, so it keeps passing.
 
-Setting [`CC_HEALTH_CHECK_PATH`](/doc/develop/common-configuration/healthcheck/) narrows that range to `200` to `300`, and the check then fails on every attempt until the deployment is cancelled:
+Setting [`CC_HEALTH_CHECK_PATH`](/doc/develop/common-configuration/healthcheck/) narrows that range to `200` to `299`. The middleware reads it, along with `CC_HEALTH_CHECK_PATH_0`, `CC_HEALTH_CHECK_PATH_1` and the following ones up to the first missing index, and lets `GET` and `HEAD` requests on these paths reach your application with no challenge:
 
-```text
-[ERROR] Response from GET {:url=>"/health", :expected_response=>200...300} is 401
+```bash
+CC_HEALTH_CHECK_PATH="/health"
 ```
 
-The challenge applies to every request, and no setting excludes a path from it. Leave `CC_HEALTH_CHECK_PATH` unset on an application protected this way, and rely on the default check.
+Exclude another path the same way with `OTOROSHI_CHALLENGE_EXCLUDE_PATHS`, a comma-separated list merged with the health check paths:
+
+```bash
+OTOROSHI_CHALLENGE_EXCLUDE_PATHS="/health,/ready"
+```
+
+Paths are compared exactly and case-sensitively, ignoring the query string and any trailing slashes. `/health` therefore covers `/health/` and `/health?verbose=true`, but neither `/Health` nor `/health/database`. A request carrying an `Otoroshi-State` header goes through the usual verification even on an excluded path, so your gateway keeps calling these endpoints as it does the rest of your application. An excluded path answers every other `GET` and `HEAD` request from the public internet without any verification, so keep the list to endpoints returning a status and nothing else.
 
 ## Troubleshooting
 

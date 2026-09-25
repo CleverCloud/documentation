@@ -69,6 +69,14 @@ They are dimensioned to suit a majority of needs. Even if this Keycloak add-on m
 
 You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. Vertical auto-scalability is available for this service. To run several instances, use [Secured Multi Instances](#secured-multi-instances). [Different plans for Java and PostgreSQL](https://www.clever.cloud/pricing/) are available on Clever Cloud.
 
+## Pricing model
+
+<!-- TODO(pricing): define an active user (unique user authenticated during the billing period? all realms combined or per realm?) -->
+<!-- TODO(pricing): list what the add-on billing covers (Java instance size, PostgreSQL plan, FS Bucket) and what stays billed separately -->
+<!-- TODO(pricing): explain how existing add-ons move to this model -->
+
+A Keycloak add-on is billed on the number of active users. The number of Java instances doesn't affect billing: enabling [Secured Multi Instances](#secured-multi-instances) or running more instances doesn't change it. Refer to the [Keycloak product page](https://www.clever.cloud/product/managed-keycloak-as-a-service/) for details.
+
 ## Create a Keycloak add-on
 
 ### From the Console
@@ -134,7 +142,7 @@ Disabling the feature removes the Network Group, sets the Java application back 
 clever keycloak disable-ng myKeycloak
 ```
 
-With Secured Multi Instances enabled, you're billed for two Java instances of your application. If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+Secured Multi Instances doesn't affect billing, see [Pricing model](#pricing-model). If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 
 ### Check the cluster
 

@@ -67,7 +67,7 @@ They are dimensioned to suit a majority of needs. Even if this Keycloak add-on m
 - 90 credential grants by the second
 - 70 refresh tokens by second
 
-You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. Vertical auto-scalability is available for this service. [Different plans for Java and PostgreSQL](https://www.clever.cloud/pricing/) are available on Clever Cloud.
+You can however manage and adjust them directly in the Console to fit your needs. You can for example change their settings, migrate to a larger storage database, etc. Vertical auto-scalability is available for this service. To run several instances, use [Secured Multi Instances](#secured-multi-instances). [Different plans for Java and PostgreSQL](https://www.clever.cloud/pricing/) are available on Clever Cloud.
 
 ## Create a Keycloak add-on
 
@@ -113,14 +113,44 @@ Refer to the [Clever Tools documentation](/doc/manage/cli/addons) for more detai
 
 ## Secured Multi Instances
 
-Keycloak can be configured to run as a cluster of instances, bringing more resiliency and availability to your identity management solution. As communication through such a cluster uses an unencrypted Infinispan connection, Clever Cloud deployments includes Secure Multi Instances.
+Keycloak instances share sessions, authorization codes and caches through an Infinispan cluster. As this cluster traffic is unencrypted, Clever Cloud links instances through a [Network Group](/doc/network/network-groups), a private network encrypted with [WireGuard](https://www.wireguard.com/). This feature is called Secured Multi Instances.
 
-Once enabled in the Keycloak dashboard, it adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. Instances are transparently restarted and linked through a [Network Group](/doc/network/network-groups), used to isolate internal cluster traffic through a private, encrypted, [WireGuard](https://www.wireguard.com/) network. You can disable this feature at any time, as easily as you enabled it.
+> [!WARNING] Scale through Secured Multi Instances only
+> Don't raise the instance count of the Java application without enabling Secured Multi Instances. Instances then run as isolated singletons: an authorization code issued by one instance fails on the other with `CODE_TO_TOKEN_ERROR` or `invalid_code`, and users lose their sessions.
 
-If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+When you enable Secured Multi Instances from the Keycloak dashboard or with [Clever Tools](/doc/manage/cli/operators/#network-groups), Clever Cloud:
 
-> [!NOTE] Multiple instances solution
-> If you enable Secured Multi Instances, you'll be billed for two Java instances of your application. If you set up more than 2 instances in the application configuration, it will work but think about upgrading your PostgreSQL database to a plan with more available connections.
+- Creates a Network Group and adds the Java application to it
+- Sets the Java application scaling to exactly 2 instances, as both minimum and maximum, replacing any existing horizontal scaling configuration
+- Restarts the application so instances join the cluster
+
+```bash
+clever keycloak enable-ng myKeycloak
+```
+
+Disabling the feature removes the Network Group, sets the Java application back to 1 instance and restarts it:
+
+```bash
+clever keycloak disable-ng myKeycloak
+```
+
+With Secured Multi Instances enabled, you're billed for two Java instances of your application. If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
+
+### Check the cluster
+
+`clever keycloak get myKeycloak` shows whether the Network Group is enabled. Once the application has restarted, the logs of each instance report a two-member cluster view and physical addresses on the Network Group private network:
+
+```text
+Received new cluster view for channel ISPN: [...] (2) [...]
+```
+
+If the logs show `too many JOIN attempts (10): becoming singleton`, or physical addresses on `127.0.0.1:7800`, instances aren't clustered. Check that Secured Multi Instances is enabled, then restart the application.
+
+### Run more than 2 instances
+
+You can raise the instance count of the Java application after enabling Secured Multi Instances. Disabling and enabling the feature again resets the scaling to 2 instances.
+
+Each instance opens up to `CC_KEYCLOAK_DB_POOL_MAX_SIZE` connections to PostgreSQL, 25 by default, so the total grows with the instance count. Make sure your PostgreSQL plan accepts this total, or upgrade it to a plan with more available connections. `CC_KEYCLOAK_DB_POOL_INITIAL_SIZE` sets the number of connections each instance opens at startup, 1 by default.
 
 ## Version management
 

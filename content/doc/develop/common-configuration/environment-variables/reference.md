@@ -634,7 +634,7 @@ to be routed through the exit node.
 | `CC_VPN_CACRT`         | Server CA certificate                                                                           |                   |           |
 | `CC_VPN_CIPHER`        | Cipher to use CIPHER, can be either {cipher_suite}:{hmac_alg} or only {cipher_suite}            | DES-EDE3-CBC:SHA1 |           |
 | `CC_VPN_CRT`           | Client certificate                                                                              |                   |           |
-| `CC_VPN_DEVTYPE`       | Kernel virtual interface kind to use ("tap" or "tun")                                           | tap               |           |
+| `CC_VPN_DEVTYPE`       | Kernel virtual interface kind to use ("tap" or "tun")                                           | tun               |           |
 | `CC_VPN_HOST`          | Server host or IP address                                                                       |                   |           |
 | `CC_VPN_KEY`           | Client certificate private key                                                                  |                   |           |
 | `CC_VPN_PORT`          | Server port                                                                                     |                   |           |

@@ -38,8 +38,8 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/ghost" title="Ghost" subtitle="Deploy a publishing platform with MySQL and object storage" icon="ghost" >}}
   {{< card link="/developers/guides/hexo" title="Hexo" subtitle="Deploy a static Hexo website" icon="hexo" >}}
   {{< card link="/developers/guides/hono" title="Hono" subtitle="Deploy a Hono application with Node.js" icon="hono" >}}
-  {{< card link="/developers/guides/hugo" title="Hugo" subtitle="Deploy a static Hugo website" icon="hugo" >}}
-  {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle="Publish Hugo assets and build artifacts to Cellar" icon="hugo" >}}
+  {{< card link="/developers/guides/hugo" title="Hugo" subtitle="Deploy a static Hugo website" icon="hugo-mono" >}}
+  {{< card link="/developers/guides/hugo-static-s3" title="Hugo + Cellar" subtitle="Publish Hugo assets and build artifacts to Cellar" icon="hugo-mono" >}}
   {{< card link="/developers/guides/kibana" title="Kibana" subtitle="Enable Kibana for an Elastic Stack add-on" icon="kibana" >}}
   {{< card link="/developers/doc/deploy/kubernetes/operator" title="Kubernetes Operator" subtitle="Manage Clever Cloud add-ons from Kubernetes" icon="kubernetes" >}}
   {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application" icon="laravel" >}}

@@ -142,7 +142,7 @@ clever logs
 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://symfony.com/doc/current/deployment.html" title="Symfony deployment" subtitle="Prepare and optimize a Symfony application for production" icon="symfony" >}}
+  {{< card link="https://symfony.com/doc/current/deployment.html" title="Symfony deployment" subtitle="Prepare and optimize a Symfony application for production" icon="simple:symfony" >}}
   {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
   {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Create and operate a managed PostgreSQL database" icon="circle-stack" >}}
   {{< card link="/developers/doc/develop/common-configuration/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}

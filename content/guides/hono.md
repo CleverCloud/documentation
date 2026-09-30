@@ -124,6 +124,6 @@ clever domain add your.website.tld
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application" icon="node" >}}
-  {{< card link="https://hono.dev/docs" title="Hono documentation" subtitle="Learn more about the Hono framework" icon="hono" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application" icon="simple:nodedotjs" >}}
+  {{< card link="https://hono.dev/docs" title="Hono documentation" subtitle="Learn more about the Hono framework" icon="simple:hono" >}}
 {{< /cards >}}

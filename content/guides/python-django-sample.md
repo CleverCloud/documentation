@@ -83,8 +83,8 @@ Projects using `requirements.txt` instead of uv use the [legacy Python deploymen
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/python/uv/" title="Python with uv" subtitle="Configure native uv deployment" icon="python" >}}
-  {{< card link="/developers/doc/deploy/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/uv/" title="Python with uv" subtitle="Configure native uv deployment" icon="simple:python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="simple:python" >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://docs.djangoproject.com/en/stable/" title="Django documentation" subtitle="Build and configure Django applications" icon="django" >}}
+  {{< card link="https://docs.djangoproject.com/en/stable/" title="Django documentation" subtitle="Build and configure Django applications" icon="simple:django" >}}
 {{< /cards >}}

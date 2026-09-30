@@ -263,9 +263,9 @@ Replace the example values with the versions you selected. Outline applies pendi
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="linux" >}}
-  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="pg" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux application runtime" subtitle="Configure and deploy any application" icon="simple:linux" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" subtitle="Explore managed PostgreSQL databases" icon="simple:postgresql" >}}
   {{< card link="/developers/doc/deploy/databases/redis" title="Redis" subtitle="Explore managed Redis databases" icon="redis" >}}
   {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Explore S3-compatible object storage" icon="fsbucket" >}}
-  {{< card link="https://docs.getoutline.com/s/hosting" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="outline" >}}
+  {{< card link="https://docs.getoutline.com/s/hosting" title="Outline hosting documentation" subtitle="Learn more about self-hosting Outline" icon="simple:outline" >}}
 {{< /cards >}}

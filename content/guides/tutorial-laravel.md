@@ -187,7 +187,7 @@ The [PHP CLI memory limit](/developers/doc/deploy/applications/php/#memory-limit
 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://laravel.com/docs/deployment" title="Laravel deployment" subtitle="Prepare and optimize a Laravel application for production" icon="laravel" >}}
+  {{< card link="https://laravel.com/docs/deployment" title="Laravel deployment" subtitle="Prepare and optimize a Laravel application for production" icon="simple:laravel" >}}
   {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
   {{< card link="/developers/doc/develop/common-configuration/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}

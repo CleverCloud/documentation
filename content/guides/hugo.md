@@ -49,5 +49,5 @@ Hugo is one of the static site generators supported by the [Static runtime autom
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://gohugo.io/documentation/" title="Learn Hugo" subtitle="How to write and organize your content" icon="hugo-mono" >}}
+  {{< card link="https://gohugo.io/documentation/" title="Learn Hugo" subtitle="How to write and organize your content" icon="simple:hugo" >}}
 {{< /cards >}}

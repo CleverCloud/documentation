@@ -96,8 +96,8 @@ The oTree home page redirects to the public demo list when you included sample g
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/" title="Python runtime" subtitle="Configure Python applications" icon="simple:python" >}}
   {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Manage a PostgreSQL add-on" icon="circle-stack" >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://otree.readthedocs.io/en/latest/" title="oTree documentation" subtitle="Build experiments, games and surveys" icon="django" >}}
+  {{< card link="https://otree.readthedocs.io/en/latest/" title="oTree documentation" subtitle="Build experiments, games and surveys" icon="simple:django" >}}
 {{< /cards >}}

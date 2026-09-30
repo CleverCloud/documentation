@@ -155,7 +155,7 @@ For object caching, link a [Redis add-on](/developers/doc/deploy/databases/redis
 
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://developer.wordpress.org/advanced-administration/before-install/howto-install/" title="WordPress installation" subtitle="Install and configure WordPress" icon="wordpress" >}}
+  {{< card link="https://developer.wordpress.org/advanced-administration/before-install/howto-install/" title="WordPress installation" subtitle="Install and configure WordPress" icon="simple:wordpress" >}}
   {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
   {{< card link="/developers/doc/deploy/databases/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}

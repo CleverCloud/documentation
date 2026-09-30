@@ -230,19 +230,19 @@ Here is a non-exhaustive summary:
 ## Specific languages
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/deploy/applications/haskell/#setting-up-environment-variables-on-clever-cloud" title="Haskell" icon= "haskell">}}
+  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
+  {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="simple:go" >}}
+  {{< card link="/developers/doc/deploy/applications/haskell/#setting-up-environment-variables-on-clever-cloud" title="Haskell" icon="simple:haskell">}}
   {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#environment-injection" title="Play-1" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="playframework" >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs#environment-injection" title="Node.js" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/ruby/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
-  {{< card link="/developers/doc/deploy/applications/python/#configure-your-python-application" title="Python" icon="python" >}}
-  {{< card link="/developers/doc/deploy/applications/rust/#setting-up-environment-variables-on-clever-cloud" title="Rust" icon="rust" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/#environment-injection" title="Scala" icon="scala" >}}
-  {{< card link="/developers/doc/deploy/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/deploy/applications/python/#configure-your-python-application" title="Python" icon="simple:python" >}}
+  {{< card link="/developers/doc/deploy/applications/rust/#setting-up-environment-variables-on-clever-cloud" title="Rust" icon="simple:rust" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/#environment-injection" title="Scala" icon="simple:scala" >}}
+  {{< card link="/developers/doc/deploy/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/deploy/applications/static/" title=".Static" icon="feather" >}}
 

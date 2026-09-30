@@ -105,7 +105,7 @@ You may already have an SSH key and so do not need to generate a new one. To che
 
 {{< tabs >}}
 
-{{< tab name="Linux and macOS" icon="linux" >}}
+{{< tab name="Linux and macOS" icon="simple:linux" >}}
 
 1. Whether you use macOS or Linux, open your Terminal application.
 2. Run `cd ~/.ssh/` in your Terminal.

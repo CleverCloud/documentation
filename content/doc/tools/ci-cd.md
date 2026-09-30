@@ -31,7 +31,7 @@ You can write your own pipeline to deploy from either GitHub or GitLab. Use [Cle
 
 {{< tabs >}}
 
-  {{< tab name="Docker image" icon="docker" >}}**Docker image**:
+  {{< tab name="Docker image" icon="simple:docker" >}}**Docker image**:
 
   ```yaml
   variables:
@@ -44,7 +44,7 @@ image:
 
   {{< /tab >}}
 
-  {{< tab name="Node image" icon="node" >}}**Node image**:
+  {{< tab name="Node image" icon="simple:nodedotjs" >}}**Node image**:
 
   ```yaml
   variables:

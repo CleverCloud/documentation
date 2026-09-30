@@ -80,7 +80,7 @@ Country, city and autonomous system information require the optional [GeoLite2 d
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/golang" title="Go applications" subtitle="Configure and deploy Go applications" icon="go" >}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go applications" subtitle="Configure and deploy Go applications" icon="simple:go" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/mpolden/echoip" title="EchoIP repository" subtitle="Explore EchoIP features and configuration" icon="github" >}}
 {{< /cards >}}

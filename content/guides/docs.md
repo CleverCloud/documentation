@@ -395,12 +395,12 @@ The backend build hook applies pending migrations. Keep the versions in the runt
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/suitenumerique/docs" title="Docs source code" subtitle="Review releases, configuration and upstream deployment resources" icon="github" >}}
-  {{< card link="/developers/doc/deploy/applications/python/" title="Python applications" subtitle="Configure and deploy Python applications" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/" title="Python applications" subtitle="Configure and deploy Python applications" icon="simple:python" >}}
   {{< card link="/developers/doc/deploy/applications/static/" title="Static applications" subtitle="Build and deploy static applications" icon="static" >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
-  {{< card link="/developers/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any applications" icon="linux" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs/" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="simple:nodedotjs" >}}
+  {{< card link="/developers/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any applications" icon="simple:linux" >}}
   {{< card link="/developers/doc/deploy/databases/postgresql/" title="PostgreSQL" subtitle="Store persistent application data" icon="circle-stack" >}}
   {{< card link="/developers/doc/deploy/databases/redis/" title="Redis" subtitle="Configure the managed in-memory data store" icon="redis" >}}
   {{< card link="/developers/doc/deploy/storage/cellar/" title="Cellar" subtitle="Store files in S3-compatible object storage" icon="cellar" >}}
-  {{< card link="/developers/doc/deploy/services/keycloak/" title="Keycloak" subtitle="Configure the managed identity and access service" icon="keycloak" >}}
+  {{< card link="/developers/doc/deploy/services/keycloak/" title="Keycloak" subtitle="Configure the managed identity and access service" icon="simple:keycloak" >}}
 {{< /cards >}}

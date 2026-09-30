@@ -29,23 +29,23 @@ Find here specific instructions related to your application's language.
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/dotnet" title=".NET" icon="dotnet" >}}
-  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
+  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/frankenphp" title="FrankenPHP" icon="frankenphp" >}}
-  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="haskell" >}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="simple:go" >}}
+  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell" >}}
   {{< card link="/developers/doc/deploy/applications/java" title="Java (Gradle, JAR, Maven, WAR/EAR)" icon="java" >}}
-  {{< card link="/developers/doc/deploy/applications/linux" title="Linux" icon="linux" >}}
-  {{< card link="/developers/doc/deploy/applications/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux" icon="simple:linux" >}}
+  {{< card link="/developers/doc/deploy/applications/meteor" title="Meteor.js" icon="simple:meteor" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js & Bun" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" icon="php" >}}
-  {{< card link="/developers/doc/deploy/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python" title="Python with uv support" icon="simple:python" >}}
   {{< card link="/developers/doc/deploy/applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="/developers/doc/deploy/applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="/developers/doc/deploy/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/deploy/applications/rust" title="Rust" icon="simple:rust" >}}
+  {{< card link="/developers/doc/deploy/applications/scala" title="Scala" icon="simple:scala" >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Static" icon="static" >}}
   {{< card link="/developers/doc/deploy/applications/static-apache" title="Static with Apache" icon="feather" >}}
-  {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="v" >}}
+  {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="simple:v" >}}
 {{< /cards >}}
 
 ## Deploying a Non-native Runtime

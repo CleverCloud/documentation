@@ -2,8 +2,9 @@
   <div class="hx:mx-auto hx:flex hextra-max-page-width">
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
     {{ partial "toc.html" . }}
-    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
       <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
+        {{ partial "custom/page-begin.html" . }}
         {{ partial "breadcrumb.html" (dict "page" . "enable" true) }}
         {{ if .Title }}
         <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mt-2">
@@ -41,7 +42,9 @@
           {{- end -}}
         </div>
         <div class="content">
+          {{ partial "custom/content-begin.html" . }}
           {{ .Content }}
+          {{ partial "custom/content-end.html" . }}
         </div>
         {{- partial "components/last-updated.html" . -}}
         {{- if (site.Params.blog.article.displayPagination | default true) -}}
@@ -49,6 +52,7 @@
           {{- partial "components/pager.html" . -}}
         {{ end }}
         {{- partial "components/comments.html" . -}}
+        {{ partial "custom/page-end.html" . }}
       </main>
     </article>
   </div>

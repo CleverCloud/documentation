@@ -234,8 +234,8 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="go" >}}
   {{< card link="/developers/doc/deploy/applications/haskell/#setting-up-environment-variables-on-clever-cloud" title="Haskell" icon= "haskell">}}
   {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java-war" icon="java" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#environment-injection" title="Play-1" icon="play" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="play" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#environment-injection" title="Play-1" icon="playframework" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#environment-injection" title="Play-2" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/nodejs#environment-injection" title="Node.js" icon="node" >}}
   {{< card link="/developers/doc/deploy/applications/ruby/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}

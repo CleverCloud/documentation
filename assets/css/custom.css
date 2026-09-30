@@ -269,7 +269,7 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
 ------------------------- */
 
 #swagger-ui {
-    height: calc(100vh - var(--navbar-height));
+    height: calc(100vh - var(--hextra-navbar-height));
     min-height: 600px;
     width: 100%;
   }

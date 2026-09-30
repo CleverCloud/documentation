@@ -39,5 +39,5 @@ Docusaurus is one of the static site generators supported by the [Static runtime
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://docusaurus.io/docs" title="Learn Docusaurus" subtitle="How to write and organize your content" icon="docusaurus" >}}
+  {{< card link="https://docusaurus.io/docs" title="Learn Docusaurus" subtitle="How to write and organize your content" icon="simple:docusaurus" >}}
 {{< /cards >}}

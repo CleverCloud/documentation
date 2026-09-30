@@ -37,5 +37,5 @@ mdBook is one of the static site generators supported by the [Static runtime aut
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="How to configure your website" icon="static" >}}
   <!-- markdownlint-disable-next-line MD034 -->
-  {{< card link="https://rust-lang.github.io/mdBook/" title="Learn mdBook" subtitle="How to write and organize your content" icon="mdbook" >}}
+  {{< card link="https://rust-lang.github.io/mdBook/" title="Learn mdBook" subtitle="How to write and organize your content" icon="simple:mdbook" >}}
 {{< /cards >}}

@@ -83,7 +83,7 @@ Clever Cloud provides MongoDB 4.0.3, the last release under the GNU AGPL v3 lice
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js applications" subtitle="Configure and deploy Node.js applications" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB add-on" subtitle="Manage MongoDB databases" icon="database" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://mongoosejs.com/docs/compatibility.html" title="Mongoose compatibility" subtitle="Check MongoDB server compatibility" icon="external-link" >}}

@@ -136,6 +136,6 @@ The minimal HTTP input in this guide is publicly reachable. Before using it in p
 {{< cards >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://docs.fluentd.org/" title="Fluentd documentation" subtitle="Configure Fluentd inputs, filters and outputs" icon="external-link" >}}
-  {{< card link="/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="linux" >}}
+  {{< card link="/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="simple:linux" >}}
   {{< card link="/doc/manage/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
 {{< /cards >}}

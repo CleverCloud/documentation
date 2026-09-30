@@ -83,19 +83,19 @@ To deploy an Astro project with Server-Side Rendering (SSR), use a **Node.js** a
 Depending on your package manager, use the following environment variables:
 
 {{< tabs >}}
-  {{< tab name="npm" icon="npm" >}}
+  {{< tab name="npm" icon="simple:npm" >}}
     ```shell
     CC_POST_BUILD_HOOK="npm run build"
     ```
   {{< /tab >}}
-  {{< tab name="pnpm" icon="pnpm" >}}
+  {{< tab name="pnpm" icon="simple:pnpm" >}}
     ```shell
     CC_NODE_BUILD_TOOL="pnpm"
     CC_POST_BUILD_HOOK="pnpm run astro telemetry disable && pnpm build"
     CC_RUN_COMMAND="pnpm run preview"
     ```
   {{< /tab >}}
-  {{< tab name="yarn" icon="yarn" >}}
+  {{< tab name="yarn" icon="simple:yarn" >}}
     ```shell
     CC_NODE_BUILD_TOOL="yarn"
     CC_PRE_BUILD_HOOK="yarn && yarn run astro telemetry disable && yarn build"
@@ -153,7 +153,7 @@ As you manage the server, ensure to configure your application to listen on port
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Deploy a Node.js application" subtitle="Learn more on deploying a Node.js application" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Deploy a Static application" subtitle="Learn more on deploying a Static application" icon="static" >}}
-  {{< card link="https://docs.astro.build/" title="Learn Astro" subtitle="How to write and organize your content" icon="astro" >}}
+  {{< card link="https://docs.astro.build/" title="Learn Astro" subtitle="How to write and organize your content" icon="simple:astro" >}}
 {{< /cards >}}

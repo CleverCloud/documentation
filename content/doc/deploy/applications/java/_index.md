@@ -30,9 +30,9 @@ Find detailed instructions according to your framework
 {{< /hextra/hero-subtitle >}}
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/java/java-gradle" title="Gradle" icon="gradle" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-gradle" title="Gradle" icon="simple:gradle" >}}
   {{< card link="/developers/doc/deploy/applications/java/java-jar" title="JAR" icon="java" >}}
-  {{< card link="/developers/doc/deploy/applications/java/java-maven" title="Maven" icon="maven" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-maven" title="Maven" icon="simple:apachemaven" >}}
   {{< card link="/developers/doc/deploy/applications/java/java-war" title="WAR/EAR" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-1" title="Play Framework 1.x" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-2" title="Play Framework 2.x" icon="playframework" >}}

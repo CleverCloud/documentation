@@ -189,7 +189,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
 
 {{< tabs >}}
 
-  {{< tab name="Bun" icon="bun" >}}
+  {{< tab name="Bun" icon="simple:bun" >}}
   **Bun (native S3 client)**
 
   [Bun](https://bun.sh) includes a [native S3 client](https://bun.sh/docs/api/s3) with no external dependency. It works with any S3-compatible service, including Cellar.
@@ -238,7 +238,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
 
   {{< /tab >}}
 
-  {{< tab name="Node.js" icon="node" >}}
+  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
   **Node.js**
 
   Using AWS SDK for JavaScript v3 (recommended):
@@ -380,7 +380,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
   {{< /tab >}}
 
-  {{< tab name="Python" icon="python" >}}
+  {{< tab name="Python" icon="simple:python" >}}
   **Python**
 
   This script uses boto3, the AWS SDK for Python.
@@ -724,7 +724,7 @@ For that reason, we do recommend you to enable versioning when creating a new bu
 
 {{< tabs >}}
 
-  {{< tab name="MinIO" icon="minio" >}}
+  {{< tab name="MinIO" icon="simple:minio" >}}
 
   To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
 
@@ -875,7 +875,7 @@ The following examples create `my-locked-bucket` with Object Lock enabled. Repla
 
   {{< /tab >}}
 
-  {{< tab name="MinIO" icon="minio" >}}
+  {{< tab name="MinIO" icon="simple:minio" >}}
 
   This command assumes you have [configured a MinIO alias](#activate-versioning-with-minio) named `my-cellar`:
 
@@ -910,7 +910,7 @@ The following examples complete the configuration by protecting every new object
 
 {{< tabs >}}
 
-  {{< tab name="MinIO" icon="minio" >}}
+  {{< tab name="MinIO" icon="simple:minio" >}}
 
   ```bash
   mc retention set --default governance 30d my-cellar/my-locked-bucket
@@ -962,7 +962,7 @@ A legal hold protects one object version until an authorized user explicitly rem
 
   {{< /tab >}}
 
-  {{< tab name="MinIO" icon="minio" >}}
+  {{< tab name="MinIO" icon="simple:minio" >}}
 
   ```bash
   mc legalhold set my-cellar/my-locked-bucket/report.pdf
@@ -1005,7 +1005,7 @@ Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign you
 
 {{< tabs >}}
 
-  {{< tab name="Python" icon="python" >}}
+  {{< tab name="Python" icon="simple:python" >}}
 
   ```python
   import boto3
@@ -1051,7 +1051,7 @@ Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign you
 
   {{< /tab >}}
 
-  {{< tab name="Node.js" icon="node" >}}
+  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
 
   ```js
     import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";

@@ -177,10 +177,10 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 
 {{< cards >}}
   {{< card link="/developers/guides/tutorial-drupal" title="Drupal" subtitle="Deploy a Drupal website on Clever Cloud" icon="drupal" >}}
-  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="laravel" >}}
+  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="simple:laravel" >}}
   {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform on Clever Cloud" icon="moodle" >}}
-  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="symfony" >}}
-  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="wordpress" >}}
+  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="simple:symfony" >}}
+  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="simple:wordpress" >}}
 
 {{< /cards >}}
 

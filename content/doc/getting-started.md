@@ -88,23 +88,23 @@ The log system retrieves all output from the application and displays it in the 
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/dotnet" title=".NET" icon="dotnet" >}}
-  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="docker" >}}
-  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="elixir" >}}
+  {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
+  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/frankenphp" title="Franken PHP" icon="frankenphp" >}}
-  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="go" >}}
-  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="haskell">}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="simple:go" >}}
+  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell">}}
   {{< card link="/developers/doc/deploy/applications/java" title="Java (Gradle, Jar, Maven, War/Ear)" icon="java" >}}
-  {{< card link="/developers/doc/deploy/applications/linux" title="Linux" icon="linux" >}}
-  {{< card link="/developers/doc/deploy/applications/meteor" title="Meteor.js" icon="meteor" >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js & Bun" icon="node" >}}
+  {{< card link="/developers/doc/deploy/applications/linux" title="Linux" icon="simple:linux" >}}
+  {{< card link="/developers/doc/deploy/applications/meteor" title="Meteor.js" icon="simple:meteor" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs" title="Node.js & Bun" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" icon="php" >}}
-  {{< card link="/developers/doc/deploy/applications/python" title="Python with uv support" icon="python" >}}
+  {{< card link="/developers/doc/deploy/applications/python" title="Python with uv support" icon="simple:python" >}}
   {{< card link="/developers/doc/deploy/applications/ruby" title="Ruby" icon="ruby" >}}
-  {{< card link="/developers/doc/deploy/applications/rust" title="Rust" icon="rust" >}}
-  {{< card link="/developers/doc/deploy/applications/scala" title="Scala" icon="scala" >}}
+  {{< card link="/developers/doc/deploy/applications/rust" title="Rust" icon="simple:rust" >}}
+  {{< card link="/developers/doc/deploy/applications/scala" title="Scala" icon="simple:scala" >}}
   {{< card link="/developers/doc/deploy/applications/static" title="Static" icon="static" >}}
   {{< card link="/developers/doc/deploy/applications/static-apache" title="Static with Apache" icon="feather" >}}
-  {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="v" >}}
+  {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="simple:v" >}}
 {{< /cards >}}
 
 ### Create an Application Step by Step
@@ -290,9 +290,9 @@ Clever Cloud provides multiple add-ons to work with your applications:
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/databases/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
-  {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon= "mongo">}}
+  {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon="simple:mongodb">}}
   {{< card link="/developers/doc/deploy/databases/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
-  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" icon="pg" subtitle="The not-only-SQL managed database" >}}
+  {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" icon="simple:postgresql" subtitle="The not-only-SQL managed database" >}}
   {{< card link="/developers/doc/deploy/databases/elastic" title="Elastic Stack" subtitle="Deploy your Elastic Stack in one click" icon="elastic" >}}
 
   {{< card link="/developers/doc/deploy/databases/redis" title="Redis" subtitle="Managed key-value database" icon="redis" >}}
@@ -303,7 +303,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 {{< cards >}}
   {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/deploy/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="pulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/deploy/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="simple:apachepulsar" tag="Beta" >}}
 {{< /cards >}}
 
 ##### Services & Tools
@@ -311,11 +311,11 @@ Clever Cloud provides multiple add-ons to work with your applications:
 {{< cards >}}
   {{< card link="/developers/doc/deploy/services/config-provider" title="Config Provider" subtitle="More freedom to manage, import and inject your configurations and credentials" icon="creds" >}}
   {{< card link="/developers/doc/deploy/services/heptapod" title="Heptapod" subtitle="The friendly fork of GitLab Community Edition that adds support for Mercurial" icon="git" >}}
-  {{< card link="/developers/doc/deploy/services/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="jenkins" >}}
-  {{< card link="/developers/doc/deploy/services/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="keycloak" >}}
+  {{< card link="/developers/doc/deploy/services/jenkins" title="Jenkins" subtitle="The leading open source automation server" icon="simple:jenkins" >}}
+  {{< card link="/developers/doc/deploy/services/keycloak" title="Keycloak" subtitle="Single sign-on with Identity and Access Management solution" icon="simple:keycloak" >}}
   {{< card link="/developers/doc/deploy/services/mailpace" title="Mailpace" subtitle="Fast and reliable transactional email" icon="mail" >}}
-  {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="matomo" >}}
-  {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="metabase" >}}
+  {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="simple:matomo" >}}
+  {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="simple:metabase" >}}
   {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
 {{< /cards >}}
 

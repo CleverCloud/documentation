@@ -58,7 +58,10 @@
   {{- end }}
 
   <!-- Swagger UI CSS principal -->
-  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.27.1/swagger-ui.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui.css" />
+  {{- /* Layout and dark theme overrides, loaded after swagger-ui.css */ -}}
+  {{- $swaggerCss := resources.Get "css/swagger.css" | minify | fingerprint }}
+  <link href="{{ $swaggerCss.RelPermalink }}" rel="stylesheet" integrity="{{ $swaggerCss.Data.Integrity }}" />
   <!-- CSS custom Swagger UI (si défini) -->
   {{ $cssUrl := .Params.swagger.cssUrl }}
   {{ if $cssUrl }}
@@ -82,6 +85,11 @@
     }
 
     setTheme("color-theme" in localStorage ? localStorage.getItem("color-theme") : '{{ site.Params.theme.default | default `system`}}')
+
+    // Swagger UI ships a dark theme enabled by the dark-mode class: keep it in step with the Hextra theme, including later toggles.
+    const syncSwaggerTheme = () => document.documentElement.classList.toggle("dark-mode", document.documentElement.classList.contains("dark"));
+    syncSwaggerTheme();
+    new MutationObserver(syncSwaggerTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
   </script>
 

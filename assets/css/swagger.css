@@ -1,0 +1,39 @@
+/* OpenAPI pages: Swagger UI adjustments.
+   layouts/openapi/baseof.html loads this file after swagger-ui.css and turns
+   on the Swagger UI dark theme (the dark-mode class) along with the Hextra
+   one, so only the layout and a few fixes live here. */
+
+#swagger-ui {
+  height: calc(100vh - var(--hextra-navbar-height));
+  min-height: 600px;
+  width: 100%;
+}
+
+/* Keyboard focus: Swagger UI removes the outline of selects, and its dark
+   theme also removes it from operation and schema toggles, with rules up to
+   six classes deep, hence !important */
+.swagger-ui select:focus-visible,
+.swagger-ui .opblock-summary-control:focus-visible,
+.swagger-ui .model-box-control:focus-visible,
+.swagger-ui .models-control:focus-visible {
+  outline: 2px solid rgb(59 130 246) !important;
+  outline-offset: 2px;
+}
+
+/* Swagger UI paints its dark theme on a blue-gray background, including the
+   root element: use the Hextra page background instead */
+html.dark-mode,
+html.dark-mode .swagger-ui {
+  background: transparent;
+}
+
+/* Contrast fixes in the Swagger UI dark theme: the PUT section header is far
+   lighter than the other methods, and deprecated operations are dimmed to
+   60 % opacity, which leaves their badge text at about 2:1 */
+html.dark-mode .swagger-ui .opblock.opblock-put .opblock-section-header {
+  background: #3b2a1d;
+}
+
+html.dark-mode .swagger-ui .opblock.opblock-deprecated .opblock-summary-method {
+  background: rgb(212 212 212);
+}

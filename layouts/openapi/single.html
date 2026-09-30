@@ -3,9 +3,11 @@
   <div id="swagger-ui"></div>
 </div>
 
-<!-- Swagger UI JavaScript -->
-<script src="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui-bundle.js" crossorigin></script>
-<script src="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui-standalone-preset.js" crossorigin></script>
+{{- /* Swagger UI 5.33.0, vendored from the swagger-ui-dist package in assets/vendor/swagger-ui */ -}}
+{{- $swaggerUiBundle := resources.Get "vendor/swagger-ui/swagger-ui-bundle.js" | fingerprint }}
+{{- $swaggerUiPreset := resources.Get "vendor/swagger-ui/swagger-ui-standalone-preset.js" | fingerprint }}
+<script src="{{ $swaggerUiBundle.RelPermalink }}" integrity="{{ $swaggerUiBundle.Data.Integrity }}"></script>
+<script src="{{ $swaggerUiPreset.RelPermalink }}" integrity="{{ $swaggerUiPreset.Data.Integrity }}"></script>
 <script>
     window.onload = () => {
       const config = {

@@ -57,8 +57,9 @@
   <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
   {{- end }}
 
-  <!-- Swagger UI CSS principal -->
-  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui.css" />
+  {{- /* Swagger UI 5.33.0, vendored from the swagger-ui-dist package in assets/vendor/swagger-ui */ -}}
+  {{- $swaggerUiCss := resources.Get "vendor/swagger-ui/swagger-ui.css" | fingerprint }}
+  <link href="{{ $swaggerUiCss.RelPermalink }}" rel="stylesheet" integrity="{{ $swaggerUiCss.Data.Integrity }}" />
   {{- /* Layout and dark theme overrides, loaded after swagger-ui.css */ -}}
   {{- $swaggerCss := resources.Get "css/swagger.css" | minify | fingerprint }}
   <link href="{{ $swaggerCss.RelPermalink }}" rel="stylesheet" integrity="{{ $swaggerCss.Data.Integrity }}" />

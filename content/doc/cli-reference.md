@@ -296,7 +296,7 @@ Applications deployment zones (region): `par`, `parhds`, `fr-north-hds`, `grahds
   - zones: `par`, `fr-north-hds`, `grahds`, `mtl`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
 - `postgresql-addon`:
-  - plans: `dev`, `xxs_sml`, `xxs_med`, `xxs_big`, `xs_tny`, `xs_sml`, `xs_med`, `xs_big`, `s_sml`, `s_med`, `s_big`, `s_hug`, `m_sml`, `m_med`, `m_big`, `l_sml`, `l_med`, `l_big`, `xl_sml`, `l_gnt`, `xl_med`, `xl_big`, `xl_hug`, `xl_gnt`, `xxl_sml`, `xxl_med`, `xxl_big`, `xxl_hug`, `xxxl_sml`, `xxxl_med`, `xxxl_big`, `3xl_cpu_tit`
+  - plans: `dev`, `xxs_tny`, `xxs_sml`, `xxs_hug`, `xxs_med`, `xxs_gnt`, `xxs_big`, `xs_tny`, `xxs_tit`, `xs_sml`, `xs_med`, `xs_big`, `xs_hug`, `xs_gnt`, `s_tny`, `s_sml`, `s_med`, `s_big`, `xs_tit`, `s_hug`, `s_gnt`, `m_sml`, `m_med`, `m_big`, `s_tit`, `m_hug`, `m_gnt`, `l_sml`, `l_med`, `l_big`, `m_tit`, `l_hug`, `xl_sml`, `l_gnt`, `xl_med`, `xl_big`, `l_tit`, `xl_hug`, `xl_gnt`, `xxl_sml`, `xxl_med`, `xxl_big`, `xl_tit`, `xxl_hug`, `xxl_gnt`, `xxxl_sml`, `xxxl_med`, `xxxl_big`, `xxl_tit`, `4xl_sml`, `xxxl_hug`, `4xl_med`, `5xl_sml`, `xxxl_gnt`, `4xl_big`, `5xl_med`, `4xl_hug`, `6xl_sml`, `5xl_big`, `6xl_med`, `4xl_gnt`, `xxxl_tit`, `5xl_hug`, `6xl_big`, `6xl_hug`, `5xl_gnt`, `4xl_tit`, `6xl_gnt`, `5xl_tit`
   - zones: `par`, `parhds`, `grahds`, `ldn`, `mtl`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
 - `redis-addon`:
@@ -1279,6 +1279,7 @@ drain-url                            Drain URL
     --addon <addon-id>               Add-on ID or real ID
 -a, --alias <alias>                  Short name for the application
     --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>                    Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 ```
 
 #### drain create datadog
@@ -1305,6 +1306,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 ```
 
 #### drain create elasticsearch
@@ -1332,6 +1334,7 @@ drain-url                            Drain URL, must end with '/_bulk'
     --addon <addon-id>               Add-on ID or real ID
 -a, --alias <alias>                  Short name for the application
     --app <app-id|app-name>          Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>                    Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 -p, --password <password>            Basic auth password
 -u, --username <username>            Basic auth username
 ```
@@ -1361,6 +1364,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 ```
 
 #### drain create ovh-tcp
@@ -1387,6 +1391,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 -s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
 ```
 
@@ -1414,6 +1419,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 -p, --password <password>      Basic auth password
 -u, --username <username>      Basic auth username
 ```
@@ -1444,6 +1450,7 @@ drain-url                                    Drain URL
 -a, --alias <alias>                          Short name for the application
     --app <app-id|app-name>                  Application to manage by its ID (or name, if unambiguous)
     --index <index>                          Optional target index, the HEC token's own index is used if not set
+    --kind <kind>                            Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
     --sourcetype <sourcetype>                Optional sourcetype, the HEC token's own sourcetype is used if not set
     --tls-verification <tls-verification>    TLS verification mode, use `trustful` to accept a self-signed certificate (default, trustful)
 ```
@@ -1472,6 +1479,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 -s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
 ```
 
@@ -1499,6 +1507,7 @@ drain-url                      Drain URL
     --addon <addon-id>         Add-on ID or real ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>              Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
 -s, --sd-params <sd-params>    RFC5424 structured data parameters, e.g.: `token=\"REDACTED\"`
 ```
 
@@ -1927,6 +1936,31 @@ clever features list [options]
 
 ```console
 clever help
+```
+
+## instances
+
+**Description:** List instances of an application
+
+**Since:** 5.1.0
+
+**Usage**
+
+```console
+clever instances [options]
+```
+
+**Options**
+
+```console
+    --after, --since <after>           List instances that existed after this date/time, in any state (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+-a, --alias <alias>                    Short name for the application
+    --all                              List instances in any state, including deleted ones (default: only running instances)
+    --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
+    --before, --until <before>         List instances that existed before this date/time, in any state (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --deployment-id <deployment-id>    List instances created by this deployment, in any state
+-F, --format <format>                  Output format (human, json) (default: human)
+    --limit <limit>                    Maximum number of instances to list, keeping the most recent ones (1 to 1000) (default: 100)
 ```
 
 ## k8s
@@ -4225,10 +4259,11 @@ clever ssh [options]
 **Options**
 
 ```console
--a, --alias <alias>                    Short name for the application
-    --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
--c, --command <command>                Execute a command on the remote instance and exit
--i, --identity-file <identity-file>    SSH identity file
+-a, --alias <alias>                        Short name for the application
+    --app <app-id|app-name>                Application to manage by its ID (or name, if unambiguous)
+-c, --command <command>                    Execute a command on the remote instance and exit
+-i, --identity-file <identity-file>        SSH identity file
+    --instance <instance-id|number|any>    Instance to connect to, by ID or number, or `any` (skips interactive selection). Build VMs are only picked by ID, or by `any` when no other instance is running
 ```
 
 ## ssh-keys

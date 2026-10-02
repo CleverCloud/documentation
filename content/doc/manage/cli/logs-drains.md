@@ -47,7 +47,7 @@ Once a drain exists, `clever drain check DRAIN_ID` verifies that its recipient i
 
 There is one `clever drain create` subcommand per drain type. Each one only accepts the options its drain type supports, and checks the required ones before any API call:
 
-| Drain type      | Required option            | Optional options                                   |
+| Drain type      | Required option            | Type-specific optional options                     |
 |-----------------|----------------------------|----------------------------------------------------|
 | `betterstack`   | `--source-token`, `-t`     | None                                               |
 | `datadog`       | None                       | None                                               |
@@ -60,6 +60,14 @@ There is one `clever drain create` subcommand per drain type. Each one only acce
 | `syslog-udp`    | None                       | `--sd-params`, `-s`                                |
 
 Run `clever drain create DRAIN_TYPE --help` to list the options of a drain type, or read the [CLI reference](/doc/cli-reference/#drain-create).
+
+## Access logs drains
+
+A drain forwards the output of your application or add-on by default. For an application, all drain types also accept `--kind ACCESSLOG` to forward its [access logs](/doc/develop/observability/access-logs/) instead. Create one drain of each kind to forward both. `clever drain` and `clever drain get` show the kind of each drain:
+
+```console
+clever drain create raw-http https://logs.example.com/clever-cloud --kind ACCESSLOG
+```
 
 ## Better Stack logs drains
 

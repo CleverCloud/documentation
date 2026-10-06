@@ -42,6 +42,7 @@ Clever Tools is available as a npm package, through package managers, or as a st
   - [Dockerfile](#dockerfile)
 - [Nix package manager](#nix-package-manager)
 - [Enabling autocompletion](#enabling-autocompletion)
+- [Use Clever Tools from an AI assistant](#use-clever-tools-from-an-ai-assistant)
 
 To upgrade an existing installation, follow the [update guide](/doc/manage/cli/install/update/).
 
@@ -229,3 +230,13 @@ or that for zsh:
 ```bash
 clever --zsh-autocomplete-script $(which clever) | sudo tee /usr/share/zsh/site-functions
 ```
+
+## Use Clever Tools from an AI assistant
+
+Clever Tools ships a skill that teaches AI coding assistants such as Claude Code, Cursor, Codex or GitHub Copilot its commands and options. Each action runs on your machine, so connect your account with `clever login` before adding the skill:
+
+```bash
+npx skills add CleverCloud/clever-tools
+```
+
+For the project or global choice, updates and other ways an agent can drive the platform, see [Drive Clever Cloud from an AI agent](/doc/ai-llms/#teach-your-assistant-clever-tools).

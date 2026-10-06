@@ -37,6 +37,7 @@ Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it
 You can contribute to it through [issue](https://github.com/CleverCloud/clever-tools/issues) or [pull requests](https://github.com/CleverCloud/clever-tools/pulls). Ask for new features, enhancements or help us to provide them to our community.
 
 - [How to install Clever Tools](install)
+- [Use Clever Tools from an AI assistant](install#use-clever-tools-from-an-ai-assistant)
 - [Create a Clever Cloud account](https://console.clever-cloud.com)
 
 Use Clever Tools through `npx` or `npm exec` for one-off usage or in CI/CD pipelines for example:

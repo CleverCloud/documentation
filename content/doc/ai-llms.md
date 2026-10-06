@@ -111,7 +111,7 @@ A throwaway environment and a production one differ by their plan, not by their 
 An agent reads all of it through the same CLI it used to deploy:
 
 ```bash
-clever logs --since 10m
+clever logs --since 10m --until now
 clever activity
 clever status
 ```

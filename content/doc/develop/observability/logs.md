@@ -49,6 +49,12 @@ clever logs --since 2h
 clever logs --until 2024-04-15T13:37:42Z
 ```
 
+Without `--until`, `clever logs` keeps following new lines after printing the past ones, even with `--since`. To read a bounded window and get the prompt back, as a script or an AI agent needs, set both. Use `--until 0s` to read up to the current time:
+
+```bash
+clever logs --since 15m --until 0s
+```
+
 You can also get your add-on's logs by using `--addon` flag, the value is the add-on ID starting by `addon_`, or its real ID:
 
 ```bash

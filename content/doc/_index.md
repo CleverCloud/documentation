@@ -31,7 +31,7 @@ aliases:
 
 {{< cards >}}
   {{< card link="/developers/doc/getting-started" title="Getting started" subtitle="Deploy an application in five minutes" icon="arrow-circle-right" >}}
-  {{< card link="/developers/doc/ai-llms" title="AI & LLMs" subtitle="Run AI workloads and language model services" icon="sparkles" >}}
+  {{< card link="/developers/doc/ai-llms" title="AI & LLMs" subtitle="Drive the platform from your AI coding assistant" icon="sparkles" >}}
   {{< card link="/developers/doc/tips-and-tricks" title="Tips & Tricks" subtitle="Shortcuts and lesser-known platform behaviours" icon="light-bulb" >}}
   {{< card link="/developers/doc/find-help" title="Find help" subtitle="Get support and troubleshoot platform issues" icon="support" >}}
   {{< card link="/developers/doc/deploy" title="Deploy" subtitle="Applications, databases, storage and managed services" icon="rocket-launch" >}}

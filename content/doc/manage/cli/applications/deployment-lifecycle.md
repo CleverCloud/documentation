@@ -159,6 +159,12 @@ You can also get logs from a specific timeline, deployment or add-on through opt
 [--format, -F] FORMAT               Output format (human, json, json-stream) (default: human)
 ```
 
+By default, logs keep streaming. Use `--until` to set an end time. To read the last 15 minutes and exit, use:
+
+```console
+clever logs --since 15m --until now
+```
+
 ## access logs
 
 When you deploy an application on Clever Cloud, we collect its access logs, hosted in our internal Pulsar stack, all included. To listen to the stream, use:
@@ -180,7 +186,7 @@ You can also get access logs from a specific timeline through options, in multip
 
 Besides HTTP requests, access logs include TCP redirections and SSH connections to your instances. In the `human` format, a column shows the transport of each line, `HTTP`, `TCP` or `SSH`, and HTTP methods and paths get their own columns so they stay aligned. The `clf` format, for Common Log Format, only outputs HTTP access logs.
 
-You can for example get access logs in JSON stream format for the last hour with:
+You can for example follow access logs in JSON stream format, starting from the last hour, with:
 
 ```console
 clever accesslogs --format json-stream --since 1h

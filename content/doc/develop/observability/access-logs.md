@@ -25,8 +25,11 @@ You can see access logs with the following command:
 clever accesslogs
 ```
 
-As with the `logs` command, you can specify `--before` and `--after` flags.
-If you don't specify any options, the logs display continuously.
+As with the `logs` command, you can specify `--since` and `--until`. Without `--until`, the command keeps following new requests, even with `--since`. Set `--until` to stop at a given end time and get the prompt back, and add `--since` to choose where to start. Use `--until now` to read up to the current time:
+
+```bash
+clever accesslogs --since 15m --until now
+```
 
 To change the output, specify the `--format` (`-F`) flag with one of these values:
 
@@ -44,7 +47,7 @@ To change the output, specify the `--format` (`-F`) flag with one of these value
 
   The HTTP protocol version isn't part of the access log payload, so the request line is limited to `method path` (no `HTTP/x.y` token).
 
-- `json`: a JSON array of log objects (requires a bounding flag such as `--before`)
+- `json`: a JSON array of log objects (requires a bounding flag such as `--until`)
 - `json-stream`: a stream of JSON log objects
 
   Both JSON formats share the same object shape:

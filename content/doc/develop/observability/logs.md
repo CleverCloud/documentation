@@ -49,6 +49,13 @@ clever logs --since 2h
 clever logs --until 2024-04-15T13:37:42Z
 ```
 
+Without `--until`, `clever logs` keeps following new lines after printing the past ones, even with `--since`. Set `--until` to stop at a given end time and get the prompt back, as a script or an AI agent needs, and add `--since` to choose where to start. Use `--until now` to read up to the current time. The `json` output format requires `--until`:
+
+```bash
+clever logs --since 15m --until now
+clever logs --since 15m --until now --format json
+```
+
 You can also get your add-on's logs by using `--addon` flag, the value is the add-on ID starting by `addon_`, or its real ID:
 
 ```bash

@@ -63,7 +63,7 @@ The [skill](#teach-your-assistant-clever-tools) is where to start: one command, 
 
 The MCP server suits operations the CLI doesn't expose. It takes a different route: instead of exposing hundreds of tools, one per endpoint, it offers three: `search` to discover commands, `execute` to run pre-authenticated JavaScript against the API, and `doc` to read the documentation. The agent composes a call rather than picking from a menu, which keeps its context small.
 
-Both are built on `@clevercloud/client`, the typed client the Console itself uses, with a command per API operation across 46 families of resources.
+Clever Tools and the MCP server are both built on `@clevercloud/client`, the typed client the Console itself uses, with a command per API operation across 46 families of resources.
 
 ## Disposable infrastructure
 

@@ -25,8 +25,11 @@ You can see access logs with the following command:
 clever accesslogs
 ```
 
-As with the `logs` command, you can specify `--before` and `--after` flags.
-If you don't specify any options, the logs display continuously.
+As with the `logs` command, you can specify `--before` (or `--until`) and `--after` (or `--since`) flags. Without `--before`, the command keeps following new requests, even with `--after`. Set both to read a bounded window and get the prompt back:
+
+```bash
+clever accesslogs --since 15m --until 0s
+```
 
 To change the output, specify the `--format` (`-F`) flag with one of these values:
 

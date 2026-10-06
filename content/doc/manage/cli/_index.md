@@ -38,6 +38,7 @@ You can contribute to it through [issue](https://github.com/CleverCloud/clever-t
 
 - [How to install Clever Tools](install)
 - [Create a Clever Cloud account](https://console.clever-cloud.com)
+- [Use Clever Tools from an AI assistant](/doc/ai-llms/#teach-your-assistant-clever-tools)
 
 Use Clever Tools through `npx` or `npm exec` for one-off usage or in CI/CD pipelines for example:
 

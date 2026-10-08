@@ -128,7 +128,7 @@ clever instances --all
 clever instances --after 1d --format json
 ```
 
-To execute a single command on the remote instance and exit, use `--command` (`-c`). Its output streams to your terminal without the SSH gateway messages, so you can use it in scripts:
+To execute a single command on the remote instance and exit, use `--command` (`-c`). Clever Tools runs it in `bash` when the instance provides it, in `/bin/sh` otherwise. Its output streams to your terminal without the SSH gateway messages, so you can use it in scripts:
 
 ```console
 clever ssh --command "ls -la"

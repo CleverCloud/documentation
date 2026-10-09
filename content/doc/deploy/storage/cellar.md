@@ -12,6 +12,8 @@ keywords:
 - files
 - s3cmd
 - aws
+- encryption
+- SSE-C
 aliases:
 - /addons/cellar
 - /deploy/addon/cellar
@@ -991,6 +993,141 @@ A legal hold protects one object version until an authorized user explicitly rem
   ```
 
   See the AWS CLI documentation for [`put-object-legal-hold`](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object-legal-hold.html).
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+## Server-side encryption with customer keys (SSE-C)
+
+Cellar supports [server-side encryption with customer-provided keys (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). You send a 256-bit AES key with each request. Cellar uses it to encrypt the object before storing it and to decrypt it when you read it back, but doesn't keep the key. Without it, nobody can read the object through the S3 API, even with the add-on credentials.
+
+Encryption applies per object, so a bucket can mix objects encrypted with SSE-C and objects stored without it. Every request on an encrypted object, including metadata requests, must carry the same key, otherwise Cellar answers with a `400` error. For the same reason, a presigned URL alone isn't enough to download an encrypted object.
+
+Cellar only accepts SSE-C requests over HTTPS. It doesn't support re-encrypting an object in place with a copy request: to change the key of an object, download it and upload it again with the new key.
+
+> [!WARNING] Keep your key safe
+> Cellar can't decrypt an object without its key. If you lose the key, you lose access to every object encrypted with it.
+
+Generate a random 32-byte key, encoded in base64:
+
+```bash
+openssl rand -base64 32
+```
+
+Store it with your application secrets. The following examples read it from an environment variable named `SSE_C_KEY`, which you define yourself. s3cmd doesn't support SSE-C: its `--server-side-encryption` option doesn't take a customer key, and `--encrypt` encrypts files with GPG on your machine before upload.
+
+{{< tabs >}}
+
+  {{< tab name="Python" icon="simple:python" >}}
+
+  This script uses boto3 to upload a file encrypted with your key, then download and decrypt it. `upload_file` and `download_file` switch to multipart transfers for large files and send the key with each part.
+
+  ```python
+  import base64
+  import os
+
+  import boto3
+  from botocore.config import Config
+
+  s3 = boto3.client(
+      "s3",
+      region_name="default",
+      endpoint_url=f"https://{os.environ['CELLAR_ADDON_HOST']}",
+      aws_access_key_id=os.environ["CELLAR_ADDON_KEY_ID"],
+      aws_secret_access_key=os.environ["CELLAR_ADDON_KEY_SECRET"],
+      config=Config(
+          signature_version="s3v4",
+          request_checksum_calculation="when_required",
+          response_checksum_validation="when_required",
+      ),
+  )
+
+  encryption = {
+      "SSECustomerAlgorithm": "AES256",
+      "SSECustomerKey": base64.b64decode(os.environ["SSE_C_KEY"]),
+  }
+
+  s3.upload_file("report.pdf", "my-bucket", "reports/report.pdf", ExtraArgs=encryption)
+  s3.download_file("my-bucket", "reports/report.pdf", "report-downloaded.pdf", ExtraArgs=encryption)
+  ```
+
+  Pass the same `encryption` arguments to `put_object`, `get_object` and `head_object`. boto3 computes the key's MD5 digest and encodes the key for you. Without the `when_required` checksum options, recent boto3 versions fail to upload to Cellar with a `MissingContentLength` error.
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  These commands assume you have [configured your AWS CLI credentials](#with-aws-cli). Recent AWS CLI versions add checksums that Cellar rejects. Without the following variables, uploads fail with an unclear error, `argument of type 'NoneType' is not a container or iterable`:
+
+  ```bash
+  export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
+  export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
+  ```
+
+  The AWS CLI reads the raw key from a file. Decode your base64 key into `sse-c.key`, and keep this file out of your repository:
+
+  ```bash
+  echo "$SSE_C_KEY" | base64 -d > sse-c.key
+  ```
+
+  Pass the key with `--sse-c` and `--sse-c-key` to every `aws s3` command that writes or reads an encrypted object, including multipart transfers:
+
+  ```bash
+  aws s3 cp report.pdf s3://my-bucket/reports/report.pdf \
+    --sse-c AES256 \
+    --sse-c-key fileb://sse-c.key \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+
+  aws s3 cp s3://my-bucket/reports/report.pdf report-downloaded.pdf \
+    --sse-c AES256 \
+    --sse-c-key fileb://sse-c.key \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+
+  aws s3 sync ./reports s3://my-bucket/reports \
+    --sse-c AES256 \
+    --sse-c-key fileb://sse-c.key \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  ```
+
+  `aws s3api` commands name these options differently. For example, read the metadata of an encrypted object with:
+
+  ```bash
+  aws s3api head-object \
+    --bucket my-bucket \
+    --key reports/report.pdf \
+    --sse-customer-algorithm AES256 \
+    --sse-customer-key fileb://sse-c.key \
+    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  ```
+
+  See the AWS CLI documentation for [`aws s3 cp`](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) and [`aws s3api head-object`](https://docs.aws.amazon.com/cli/latest/reference/s3api/head-object.html).
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  rclone applies SSE-C to a whole remote. Create a remote that sends your key with every request:
+
+  ```bash
+  rclone config create cellar-encrypted s3 \
+    provider=Ceph \
+    access_key_id="$CELLAR_ADDON_KEY_ID" \
+    secret_access_key="$CELLAR_ADDON_KEY_SECRET" \
+    endpoint="https://$CELLAR_ADDON_HOST" \
+    sse_customer_algorithm=AES256 \
+    sse_customer_key_base64="$SSE_C_KEY"
+  ```
+
+  Every command through this remote encrypts uploads and decrypts downloads, including multipart transfers:
+
+  ```bash
+  rclone copy ./reports cellar-encrypted:my-bucket/reports
+  rclone sync ./reports cellar-encrypted:my-bucket/reports
+  rclone copy cellar-encrypted:my-bucket/reports ./reports-restored
+  ```
+
+  A remote configured without the key can still list encrypted objects, but fails to read them with a `400` error. See the rclone documentation for the [`sse_customer_key_base64` option](https://rclone.org/s3/#s3-sse-customer-key-base64).
 
   {{< /tab >}}
 

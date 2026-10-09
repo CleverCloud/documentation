@@ -6,7 +6,7 @@ bun:
 caddy:
   eol_source: https://github.com/caddyserver/caddy/releases
   default:
-    - "2.11.4"
+    - "2.11.7"
 
 dotnet:
   eol_source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
@@ -28,6 +28,7 @@ elixir:
     - 1.17
     - 1.18
     - 1.19
+    - 1.20
 
 frankenphp:
   eol_source: https://github.com/dunglas/frankenphp/releases

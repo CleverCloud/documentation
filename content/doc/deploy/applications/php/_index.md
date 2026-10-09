@@ -55,7 +55,7 @@ clever create --type php
 
 ### Mandatory needs
 
-PHP runtime requires a working web application. The HTTP server is Apache 2 with PHP-FPM. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable (e.g. `/public`).
+PHP runtime requires a working web application. The HTTP server is Apache 2 with PHP-FPM. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable to its absolute path from the root of your project (e.g. `/public`). The deployment fails if this path is relative or contains `..`.
 
 ```shell
 clever env set CC_WEBROOT /public

@@ -29,6 +29,22 @@ or by appending `index.html.md` to any page URL. Both return the Markdown source
 
 An [`llms.txt`](https://www.clever.cloud/developers/llms.txt) index lists the documentation with a one-line description per page, so an agent picks what it needs instead of crawling. The [Clever Tools reference](/doc/cli-reference/) documents every command, option and accepted value in a single page, which is enough for an agent to compose a correct command without trial and error. The whole documentation is [open source](https://github.com/CleverCloud/documentation).
 
+## Teach your assistant Clever Tools
+
+Clever Tools ships a [skill](https://github.com/CleverCloud/clever-tools/tree/master/skills/clever-tools), a package of instructions in the open [Agent Skills](https://agentskills.io) format. Claude Code, Cursor, Codex, GitHub Copilot, and other assistants support it. It holds a cheat sheet of the essential commands and a reference of every command, option, runtime, add-on and zone. The assistant reads only its name and description at startup, and loads the rest when a task involves Clever Cloud.
+
+With Node.js and [Clever Tools](/doc/manage/cli/install/) installed, and your account connected with `clever login`, install the skill:
+
+```bash
+npx skills add CleverCloud/clever-tools
+```
+
+The installer asks which assistants to install it for, and whether to install it in the current project or globally. A global install suits you when you deploy from several projects. A project install, committed with the code, gives the whole team the same skill.
+
+The skill lives in the Clever Tools repository and follows its releases. List what's installed with `npx skills list`, and refresh it after a CLI update with `npx skills update`. If your assistant stumbles on a command, open an issue or a pull request on [`SKILL.md`](https://github.com/CleverCloud/clever-tools/blob/master/skills/clever-tools/SKILL.md).
+
+The skill and this documentation work together. The skill gives the assistant the right command and options, and the Markdown pages give it the details of each service, such as the Redis commands [Materia KV](/doc/deploy/databases/materia-kv/) supports.
+
 ## Ways to drive the platform
 
 Pick the interface that fits the agent, they all reach the same API:
@@ -36,15 +52,18 @@ Pick the interface that fits the agent, they all reach the same API:
 | Interface                                                                | Best for                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------ |
 | [Clever Tools](/doc/manage/cli/)                                         | Any agent that can run a shell command     |
+| [Clever Tools skill](#teach-your-assistant-clever-tools)                 | Assistants that load Agent Skills          |
 | [`mcp-simple-server`](https://github.com/CleverCloud/mcp-simple-server)  | Agents speaking the Model Context Protocol |
 | [`@clevercloud/client`](https://github.com/CleverCloud/clever-client.js) | Generating code that talks to the API      |
 | [The REST API](/api/)                                                    | Anything else, including raw HTTP calls    |
 | [Terraform and OpenTofu](/doc/tools/terraform/)                          | Declaring infrastructure as code           |
 | [Kubernetes operator](/doc/deploy/kubernetes/operator/)                  | Managing add-ons from an existing cluster  |
 
-Clever Tools ships a [skill](https://github.com/CleverCloud/clever-tools/blob/master/skills/clever-tools/SKILL.md) in its own repository, so an assistant that reads skills learns the CLI from the source rather than from a guess. The MCP server takes a different route: instead of exposing hundreds of tools, one per endpoint, it offers three: `search` to discover commands, `execute` to run pre-authenticated JavaScript against the API, and `doc` to read the documentation. The agent composes a call rather than picking from a menu, which keeps its context small.
+The [skill](#teach-your-assistant-clever-tools) is where to start: one command, and the assistant drives the CLI your team already uses, learned from the source rather than from a guess.
 
-Both are built on `@clevercloud/client`, the typed client the Console itself uses, with a command per API operation across 46 families of resources.
+The MCP server suits operations the CLI doesn't expose. It takes a different route: instead of exposing hundreds of tools, one per endpoint, it offers three: `search` to discover commands, `execute` to run pre-authenticated JavaScript against the API, and `doc` to read the documentation. The agent composes a call rather than picking from a menu, which keeps its context small.
+
+Clever Tools and the MCP server are both built on `@clevercloud/client`, the typed client the Console itself uses, with a command per API operation across 46 families of resources.
 
 ## Disposable infrastructure
 

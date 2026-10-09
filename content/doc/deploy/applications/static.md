@@ -112,7 +112,7 @@ Supported Static Site Generators (SSG) are:
 - Detected file: `hugo.toml`, `hugo.yaml`, `hugo.json`
 
 > [!TIP] Set the Hugo version
->Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.160`, `0.161`, `0.162`, `0.163` (default) or `0.164`.
+>Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.160`, `0.161`, `0.162`, `0.163` (default), `0.164`, `0.165`, `0.166` or `0.167`.
 
 ### mdBook
 

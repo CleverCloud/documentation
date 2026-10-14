@@ -88,7 +88,7 @@ When a page moves to another URL, or when its content is merged into another pag
 - First-person pronouns: I, me, my, we, us, our, let's
 - Placeholder phrases: "please note", "at this time", "it should be noted"
 - Overconfident claims: "simply", "just", "easily", "quickly", "obviously"
-- Time-dependent promises: "soon", "in the future", "coming next month"
+- Time-dependent promises: "soon", "in the future", "coming next month"; this doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
 
 ### Markdown and Editorial Standards
 

@@ -92,57 +92,55 @@ You can learn more about Pgpool-II on the [dedicated documentation page](/guides
 
 ## Default extensions
 
-PostgreSQL databases managed by Clever Cloud comes with these extensions:
+PostgreSQL databases managed by Clever Cloud come with these extensions:
 
-| Extension              | Description                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------- |
-| adminpack              | Administrative functions for PostgreSQL (not supported on PostgreSQL 17+)          |
-| autoinc                | Functions for autoincrementing fields                                              |
-| btree_gin              | Support for indexing common datatypes in GIN                                       |
-| btree_gist             | Support for indexing common datatypes in GiST                                      |
-| citext                 | Data type for case-insensitive character strings                                   |
-| cube                   | Data type for multidimensional cubes                                               |
-| dblink                 | Connect to other PostgreSQL databases from within a database                       |
-| dict_int               | Text search dictionary template for integers                                       |
-| dict_xsyn              | Text search dictionary template for extended synonym processing                    |
-| earthdistance          | Calculate great-circle distances on the surface of the Earth                       |
-| file_fdw               | Foreign-data wrapper for flat file access                                          |
-| fuzzystrmatch          | Determine similarities and distance between strings                                |
-| hstore                 | Data type for storing sets of (key, value) pairs                                   |
-| hypopg                 | Hypothetical indexes for PostgreSQL                                                |
-| insert_username        | Functions for tracking who changed a table                                         |
-| intagg                 | Integer aggregator and enumerator (obsolete)                                       |
-| intarray               | Functions, operators, and index support for 1-D arrays of integers                 |
-| isn                    | Data types for international product numbering standards                           |
-| lo                     | Large Object maintenance                                                           |
-| ltree                  | Data type for hierarchical tree-like structures                                    |
-| moddatetime            | Functions for tracking last modification time                                      |
-| pageinspect            | Inspect the contents of database pages at a low level                              |
-| pg_buffercache         | Examine the shared buffer cache                                                    |
-| pg_freespacemap        | Examine the free space map (FSM)                                                   |
-| pg_stat_statements     | Track planning and execution statistics of all SQL statements executed             |
-| pg_trgm                | Text similarity measurement and index searching based on trigrams                  |
-| pgcrypto               | Cryptographic functions                                                            |
-| pgrowlocks             | Show row-level locking information                                                 |
-| pgstattuple            | Show tuple-level statistics                                                        |
-| pgvector               | Vector data type and ivfflat and hnsw access methods                               |
-| plcoffee               | PL/CoffeeScript (v8) trusted procedural language (not supported on PostgreSQL 14+) |
-| plls                   | PL/LiveScript (v8) trusted procedural language (not supported on PostgreSQL 14+)   |
-| plpgsql                | PL/pgSQL procedural language                                                       |
-| plv8                   | PL/JavaScript (v8) trusted procedural language (not supported on PostgreSQL 16+)   |
-| postgis                | PostGIS geometry and geography spatial types and functions                         |
-| postgis_raster         | PostGIS raster types and functions                                                 |
-| postgis_tiger_geocoder | PostGIS tiger geocoder and reverse geocoder                                        |
-| postgis_topology       | PostGIS topology spatial types and functions                                       |
-| postgres_fdw           | Foreign-data wrapper for remote PostgreSQL servers                                 |
-| refint                 | Functions for implementing referential integrity (obsolete)                        |
-| seg                    | Data type for representing line segments or floating-point intervals               |
-| sslinfo                | Information about SSL certificates                                                 |
-| tablefunc              | Functions that manipulate whole tables, including crosstab                         |
-| tcn                    | Triggered change notifications                                                     |
-| unaccent               | Text search dictionary that removes accents                                        |
-| uuid-ossp              | Generate universally unique identifiers (UUIDs)                                    |
-| xml2                   | XPath querying and XSLT                                                            |
+| Extension              | Description                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| adminpack              | Administrative functions for PostgreSQL (not supported on PostgreSQL 17+)        |
+| autoinc                | Functions for autoincrementing fields                                            |
+| btree_gin              | Support for indexing common datatypes in GIN                                     |
+| btree_gist             | Support for indexing common datatypes in GiST                                    |
+| citext                 | Data type for case-insensitive character strings                                 |
+| cube                   | Data type for multidimensional cubes                                             |
+| dblink                 | Connect to other PostgreSQL databases from within a database                     |
+| dict_int               | Text search dictionary template for integers                                     |
+| dict_xsyn              | Text search dictionary template for extended synonym processing                  |
+| earthdistance          | Calculate great-circle distances on the surface of the Earth                     |
+| file_fdw               | Foreign-data wrapper for flat file access                                        |
+| fuzzystrmatch          | Determine similarities and distance between strings                              |
+| hstore                 | Data type for storing sets of (key, value) pairs                                 |
+| hypopg                 | Hypothetical indexes for PostgreSQL                                              |
+| insert_username        | Functions for tracking who changed a table                                       |
+| intagg                 | Integer aggregator and enumerator (obsolete)                                     |
+| intarray               | Functions, operators, and index support for 1-D arrays of integers               |
+| isn                    | Data types for international product numbering standards                         |
+| lo                     | Large Object maintenance                                                         |
+| ltree                  | Data type for hierarchical tree-like structures                                  |
+| moddatetime            | Functions for tracking last modification time                                    |
+| pageinspect            | Inspect the contents of database pages at a low level                            |
+| pg_buffercache         | Examine the shared buffer cache                                                  |
+| pg_freespacemap        | Examine the free space map (FSM)                                                 |
+| pg_stat_statements     | Track planning and execution statistics of all SQL statements executed           |
+| pg_trgm                | Text similarity measurement and index searching based on trigrams                |
+| pgcrypto               | Cryptographic functions                                                          |
+| pgrowlocks             | Show row-level locking information                                               |
+| pgstattuple            | Show tuple-level statistics                                                      |
+| plpgsql                | PL/pgSQL procedural language                                                     |
+| plv8                   | PL/JavaScript (v8) trusted procedural language (not supported on PostgreSQL 16+) |
+| postgis                | PostGIS geometry and geography spatial types and functions                       |
+| postgis_raster         | PostGIS raster types and functions                                               |
+| postgis_tiger_geocoder | PostGIS tiger geocoder and reverse geocoder                                      |
+| postgis_topology       | PostGIS topology spatial types and functions                                     |
+| postgres_fdw           | Foreign-data wrapper for remote PostgreSQL servers                               |
+| refint                 | Functions for implementing referential integrity (obsolete)                      |
+| seg                    | Data type for representing line segments or floating-point intervals             |
+| sslinfo                | Information about SSL certificates                                               |
+| tablefunc              | Functions that manipulate whole tables, including crosstab                       |
+| tcn                    | Triggered change notifications                                                   |
+| unaccent               | Text search dictionary that removes accents                                      |
+| uuid-ossp              | Generate universally unique identifiers (UUIDs)                                  |
+| vector                 | Vector data type and ivfflat and hnsw access methods (pgvector)                  |
+| xml2                   | XPath querying and XSLT                                                          |
 
 ## On-demand extensions
 
@@ -150,13 +148,13 @@ In the [Console's Ticket Center](https://console.clever-cloud.com/ticket-center-
 
 | Extension   | Description                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------- |
+| http        | HTTP client for PostgreSQL (pgsql-http)                                                            |
 | pg_cron     | Job scheduler for PostgreSQL                                                                       |
 | pg_ivm      | Incremental view maintenance for PostgreSQL                                                        |
 | pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL                                   |
 | pg_partman  | Extension to manage partitioned tables by time or ID                                               |
 | pg_repack   | Reorganize tables in PostgreSQL databases with minimal locks                                       |
 | pgaudit     | Provides detailed session and/or object audit logging via the standard PostgreSQL logging facility |
-| pgsql-http  | HTTP client for PostgreSQL                                                                         |
 | pgtap       | Unit testing for PostgreSQL                                                                        |
 | rum         | Provides an access method to work with a RUM index                                                 |
 | timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)               |

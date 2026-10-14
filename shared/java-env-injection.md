@@ -10,7 +10,7 @@ String value = System.getenv("MY_VARIABLE");
 
 By default, Clever Cloud also passes variables to the generated launch command as Java system properties using `-D` options. When this command runs your application in the same JVM, retrieve a property with `System.getProperty("MY_VARIABLE")`.
 
-Variable names containing a dot (`.`) are not exported to the process environment. The generated launch command only receives them as Java system properties. For example, if you define `my.app.config=production` for your application, Clever Cloud adds `-Dmy.app.config=production` to the generated launch command.
+Variable names containing a dot (`.`) or a dash (`-`) are not exported to the process environment. The generated launch command only receives them as Java system properties. For example, if you define `my.app.config=production` for your application, Clever Cloud adds `-Dmy.app.config=production` to the generated launch command.
 
 A Maven or Gradle deployment goal can start the application in another JVM. In this case, forwarding system properties depends on the plugin or task configuration. When the property reaches the application JVM, retrieve its value with:
 

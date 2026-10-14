@@ -121,6 +121,8 @@ In case of a Java application you can also use:
 - Dots
   - Valid: `spring.boot`, `spring.datasource.url`, `.spring.url`
 
+Deploying any other type of application with such a variable fails, with an error listing the variables to remove.
+
 ### Format
 
 Here are some formats that you can use when editing your variables

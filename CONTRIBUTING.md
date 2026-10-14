@@ -36,7 +36,7 @@ Sources for quality content are currently being updated
 #### 👎 Don't
 
 - Placeholder phrases like _please note_ and _at this time_
-- Words and phrases that make promises or project plans and strategies: See [Writing timeless documentation](https://developers.google.com/style/timeless-documentation)
+- Words and phrases that make promises or project plans and strategies: See [Writing timeless documentation](https://developers.google.com/style/timeless-documentation). This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available.
 - Using phrases like _simply_, _It's that simple_, _It's easy_, or _quickly_ in a procedure
 - Over-politeness with the use of _please_: go straight to the point
 

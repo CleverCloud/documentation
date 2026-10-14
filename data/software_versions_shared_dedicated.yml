@@ -29,7 +29,7 @@ pg:
     - v17.11
     - v18.6
   dev:
-    - v15.18
+    - v18.6
 
 redis:
   dedicated:

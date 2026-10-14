@@ -16,16 +16,15 @@ aliases:
 
 ## Available extensions and modules
 
-Clever Cloud PHP with Apache applications enables the following extensions by default:
+With PHP 8.2 to 8.5, Clever Cloud PHP with Apache applications enable the following extensions by default:
 
-`amqp`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `iconv`, `imagick`, `imap`, `intl`, `json`, `ldap`, `libsodium`, `mbstring`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `mysql`, `mysqli`, `opcache`, `pcntl`, `pcre`, `pdo-mysql`, `pdo-odbc`, `pdo-pgsql`, `pdo-sqlite`, `pgsql`, `phar`, `posix`, `pspell`, `readline`, `redis`, `session`, `shmop`, `sockets`, `sodium`, `solr`, `ssh2`, `ssl`, `tidy`, `tokenizer`, `unixodbc`, `xml`, `xmlrpc`, `xsl`, `zip`, `zlib`.
+`amqp`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `iconv`, `imagick`, `intl`, `ldap`, `mbstring`, `mcrypt`, `memcache`, `memcached`, `mongodb`, `mysqli`, `odbc`, `opcache`, `openssl`, `pcntl`, `pdo_mysql`, `pdo_odbc`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`, `readline`, `redis`, `session`, `shmop`, `soap`, `sockets`, `sodium`, `solr`, `sqlite3`, `ssh2`, `sysvmsg`, `sysvsem`, `sysvshm`, `tidy`, `tokenizer`, `xml`, `xsl`, `zip`, `zlib`.
 
 You can also enable the following extensions on demand:
 
-`apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `geos`, `gnupg`, `grpc`, `ioncube`, `imap`, `mailparse`, `maxminddb`, `mongo`, `newrelic`, `oauth`, `opentelemetry`, `pcs`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `scoutapm`, `sqlsrv`, `sqreen`, `tideways`, `uopz`, `uploadprogress`, `xdebug`, `xmlrpc`, `yaml`
+`apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `gnupg`, `grpc`, `imap`, `mailparse`, `maxminddb`, `newrelic`, `oauth`, `opentelemetry`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `sqlsrv`, `tideways`, `uploadprogress`, `xdebug`, `yaml`
 
-> [!NOTE]
-> Only some extensions support PHP 8.5 for now: `amqp`, `apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `gnupg`, `grpc`, `imagick`, `imap`, `mailparse`, `maxminddb`, `mcrypt`, `memcached`, `oauth`, `opentelemetry`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `redis`, `solr`, `sqlsrv`, `ssh2`, `tideways`, `uploadprogress`, `xdebug`, `yaml`, `zip`. More extensions will be added as they are released.
+Other extensions are only available with older PHP versions: `geos`, `ioncube` and `pcs` (up to PHP 7.4), `scoutapm` and `uopz` (up to PHP 8.3), `sqreen` (up to PHP 8.0) and `xmlrpc` (PHP 8.0 and 8.1).
 
 You can check extensions and versions by viewing the `phpinfo()` for:
 
@@ -65,7 +64,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     Excimer is an extension that provides a low-overhead interrupting timer and sampling profiler.
 
-- GEOS: set `ENABLE_GEOS` to `true`.
+- GEOS (up to PHP 7.4): set `ENABLE_GEOS` to `true`.
 
     GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
 
@@ -77,11 +76,11 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     gRPC is an extension for the high performance, open source, general RPC framework layered over HTTP/2.
 
-- IonCube: set `ENABLE_IONCUBE` to `true`.
+- IonCube (up to PHP 7.4): set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.
 
-- IMAP (only for PHP 8.4+): set `ENABLE_IMAP` to `true`.
+- IMAP (starting with PHP 8.4, enabled by default with older versions): set `ENABLE_IMAP` to `true`.
 
     IMAP is an extension to operate with the IMAP protocol, as well as the NNTP, POP3, and local mailbox access methods.
 
@@ -110,7 +109,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     OpenTelemetry is an extension to facilitate the generation, export, collection of telemetry data such as traces, metrics, and logs.
 
-- PCS: set `ENABLE_PCS` to `true`.
+- PCS (up to PHP 7.4): set `ENABLE_PCS` to `true`.
 
     PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
@@ -122,7 +121,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     Protobuf is an extension for the language-neutral, platform-neutral extensible mechanism for serializing structured data.
 
-- Pspell: set `ENABLE_PSPELL` to `true`.
+- Pspell (starting with PHP 8.4, enabled by default with older versions): set `ENABLE_PSPELL` to `true`.
 
     Pspell is an extension to check the spelling of words and offer suggestions.
 
@@ -130,7 +129,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
-- Scout APM: set `ENABLE_SCOUTAPM` to `true`.
+- Scout APM (up to PHP 8.3): set `ENABLE_SCOUTAPM` to `true`.
 
     The Scout APM extension to provide additional capabilities to application monitoring over just using the base PHP userland library.
 
@@ -138,13 +137,13 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     These extensions enable drivers that rely on the Microsoft ODBC Driver to handle the low-level communication with SQL Server. The `SQLSRV` extension provides a procedural interface while the `PDO_SQLSRV` extension implements PDO for accessing data in all editions of SQL Server 2012 and later (including Azure SQL DB).
 
-- Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
+- Sqreen (up to PHP 8.0): the Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
 
 - Tideways: set `ENABLE_TIDEWAYS` to `true`.
 
     Tideways is an extension that provides profiling and monitoring capabilities for PHP applications.
 
-- Uopz: set `ENABLE_UOPZ` to `true`.
+- Uopz (up to PHP 8.3): set `ENABLE_UOPZ` to `true`.
 
     The uopz extension is focused on providing utilities to aid with unit testing PHP code.
 
@@ -156,7 +155,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
     XDebug is a debugger and profiler tool for PHP.
 
-- XML RPC: set `ENABLE_XMLRPC` to `true`.
+- XML RPC (PHP 8.0 and 8.1): set `ENABLE_XMLRPC` to `true`.
 
     XML-RPC is an extension for server and client bindings
 

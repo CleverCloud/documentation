@@ -142,8 +142,9 @@ Mostly used in environment variables table */
   color: inherit;
 }
 
-/* Display an arrow at the end of the linked inline code */
-.content a:not(.code-block code) code::after {
+/* Display an arrow at the end of the linked inline code
+External links already get the theme's arrow (externalLinkDecoration) */
+.content a:not([target="_blank"]):not(.code-block code) code::after {
   content: "\00a0↗";
     color: tomato;
     font-size: 1rem;

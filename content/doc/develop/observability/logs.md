@@ -42,7 +42,7 @@ Log management is also available through [Clever Tools](https://github.com/Cleve
 clever logs
 ```
 
-You can add `--since` or `--until`, followed by a duration, a number of seconds or a date (ISO8601 format).
+You can add `--since` or `--until`, followed by a duration, a number of seconds, a date (ISO8601 format) or `now`.
 
 ```bash
 clever logs --since 2h

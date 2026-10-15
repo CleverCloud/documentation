@@ -121,11 +121,11 @@ clever instances
 clever ssh --instance INSTANCE_ID
 ```
 
-`clever instances` lists the running instances of your application by default. Add `--all` to list instances in any state, including deleted ones. Filter them by period with `--after` and `--before`, which select the instances that existed during that period, or by deployment with `--deployment-id`: these filters also include past instances. The command lists the 100 most recent matching instances by default, use `--limit` to get up to 1,000:
+`clever instances` lists the running instances of your application by default. Add `--all` to list instances in any state, including deleted ones. Filter them by period with `--since` and `--until`, which select the instances that existed during that period, or by deployment with `--deployment-id`: these filters also include past instances. The command lists the 100 most recent matching instances by default, use `--limit` to get up to 1,000:
 
 ```console
 clever instances --all
-clever instances --after 1d --format json
+clever instances --since 1d --format json
 ```
 
 To execute a single command on the remote instance and exit, use `--command` (`-c`). Clever Tools runs it in `bash` when the instance provides it, in `/bin/sh` otherwise. Its output streams to your terminal without the SSH gateway messages, so you can use it in scripts:
@@ -172,9 +172,6 @@ When you deploy an application on Clever Cloud, we collect its access logs, host
 ```console
 clever accesslogs
 ```
-
-> [!TIP]
-> This now uses our v4 API, it's available as Alpha feature for now.
 
 You can also get access logs from a specific timeline through options, in multiple formats:
 

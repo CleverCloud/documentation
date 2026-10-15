@@ -321,10 +321,10 @@ clever accesslogs [options]
 
 ```console
     --addon <addon-id>            Add-on ID or real ID
-    --after, --since <after>      Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --after, --since <after>      Fetch logs after this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 -a, --alias <alias>               Short name for the application
     --app <app-id|app-name>       Application to manage by its ID (or name, if unambiguous)
-    --before, --until <before>    Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --before, --until <before>    Fetch logs before this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 -F, --format <format>             Output format (clf only outputs HTTP access logs) (human, json, json-stream, clf) (default: human)
 ```
 
@@ -1213,6 +1213,7 @@ clever drain [options]
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
+    --type <drain-type>        Only list drains of this type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, splunk, syslog-tcp, syslog-udp)
 ```
 
 ### drain check
@@ -1953,11 +1954,11 @@ clever instances [options]
 **Options**
 
 ```console
-    --after, --since <after>           List instances that existed after this date/time, in any state (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --after, --since <after>           List instances that existed after this date/time, in any state (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 -a, --alias <alias>                    Short name for the application
     --all                              List instances in any state, including deleted ones (default: only running instances)
     --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
-    --before, --until <before>         List instances that existed before this date/time, in any state (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --before, --until <before>         List instances that existed before this date/time, in any state (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
     --deployment-id <deployment-id>    List instances created by this deployment, in any state
 -F, --format <format>                  Output format (human, json) (default: human)
     --limit <limit>                    Maximum number of instances to list, keeping the most recent ones (1 to 1000) (default: 100)
@@ -2684,7 +2685,7 @@ clever kv <kv-id|addon-id|addon-name> <command> [options]
 
 ```console
 kv-id|addon-id|addon-name               Add-on/Real ID (or name, if unambiguous) of a Materia KV or Redis® add-on
-command                                 The raw command to send to the Materia KV or Redis® add-on
+command                                 The raw command to send, followed by its own arguments
 ```
 
 **Options**
@@ -2779,10 +2780,10 @@ clever logs [options]
 
 ```console
     --addon <addon-id>                 Add-on ID or real ID
-    --after, --since <after>           Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --after, --since <after>           Fetch logs after this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 -a, --alias <alias>                    Short name for the application
     --app <app-id|app-name>            Application to manage by its ID (or name, if unambiguous)
-    --before, --until <before>         Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+    --before, --until <before>         Fetch logs before this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
     --deployment-id <deployment-id>    Fetch logs for a given deployment
 -F, --format <format>                  Output format (human, json, json-stream) (default: human)
     --search <search>                  Fetch logs matching this pattern

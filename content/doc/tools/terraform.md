@@ -17,7 +17,7 @@ aliases:
 - /doc/tools/products-support
 ---
 
-The [`CleverCloud/clevercloud`](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest) provider declares Clever Cloud resources as code. It covers 47 resource types, from every application runtime to databases, storage, log drains, Network Groups, Kubernetes clusters and OAuth consumers, and works with both Terraform and OpenTofu.
+The [`CleverCloud/clevercloud`](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest) provider declares Clever Cloud resources as code. It covers 48 resource types, from every application runtime to databases, storage, log drains, Network Groups, Kubernetes clusters and OAuth consumers, and works with both Terraform and OpenTofu.
 
 ## What it unlocks
 
@@ -49,7 +49,7 @@ terraform {
   required_providers {
     clevercloud = {
       source  = "CleverCloud/clevercloud"
-      version = "~> 2.2"
+      version = "~> 3.0"
     }
   }
 }
@@ -57,7 +57,14 @@ terraform {
 provider "clevercloud" {}
 ```
 
-For a pipeline, prefer a dedicated [OAuth consumer](/doc/develop/login-with-clever-cloud/) over a personal token, and pass its `consumer_key` and `consumer_secret` to the provider, along with the `token` and `secret` of the user it acts for. It needs five rights: access to personal information, access to organisations, and management of organisations, their applications and their add-ons.
+For a pipeline, the provider also accepts an [API token](/doc/manage/cli/#tokens), created with `clever tokens create`. Set it in `CLEVER_API_TOKEN`, or pass it as `api_token`, and the provider sends it as a Bearer token to the API bridge. Choose one authentication method: in the provider block, `api_token` excludes the OAuth parameters. Explicit parameters take precedence over environment variables. Without explicit parameters, setting both `CLEVER_API_TOKEN` and `CC_OAUTH_TOKEN` with `CC_OAUTH_SECRET` causes an error:
+
+```shell
+clever tokens create terraform-ci --expiration 4w
+export CLEVER_API_TOKEN="API_TOKEN"
+```
+
+An API token can't authenticate a Git push, so application resources that push code through a `deployment` block still need OAuth credentials. In that case, prefer a dedicated [OAuth consumer](/doc/develop/login-with-clever-cloud/) over a personal token, and pass its `consumer_key` and `consumer_secret` to the provider, along with the `token` and `secret` of the user it acts for. It needs five rights: access to personal information, access to organisations, and management of organisations, their applications and their add-ons.
 
 ## Declare resources
 
@@ -83,8 +90,14 @@ resource "clevercloud_nodejs" "app" {
   environment = {
     NODE_ENV = "production"
   }
+
+  tags = ["env:production", "team:platform"]
 }
 ```
+
+Every application and add-on resource accepts `tags`, either plain (`production`) or key/value (`env:production`). When the attribute is unset, Terraform leaves the tags set elsewhere untouched and never reports them. Removing it from the configuration keeps the current tags: set `tags = []` to remove them all.
+
+On a `clevercloud_kubernetes` cluster, `node_autoprovisioning = true` enables node auto-provisioning, which creates and deletes nodes on demand instead of resizing node groups. It provisions nothing until you deploy `NodePool` and `CleverNodeClass` resources in the cluster, requires Kubernetes 1.34 or later, and excludes the cluster-wide autoscaler.
 
 Two data sources read what you did not declare. `clevercloud_default_loadbalancer` returns the CNAME and IP addresses to point a domain at, which lets the same configuration also manage your DNS:
 
@@ -107,12 +120,14 @@ An application resource creates the application. Whether Terraform also deploys 
 | Configuration                | Behaviour                                                                                                                                                                                |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | No `deployment` block        | Terraform doesn't push code or track the running commit: you deploy with the CLI, the Console or your CI. An environment change restarts the application if it has already been deployed |
-| Block without `commit`       | On create and update, Terraform pushes the repository HEAD if it differs from the running commit, and records the running hash                                                           |
+| Block without `commit`       | Terraform deploys the repository HEAD on creation. Then each plan reads the HEAD, and the next apply deploys a new commit shown as a diff                                                |
 | `commit = "<hash>"`          | The commit is pinned, an outside deployment shows as a diff, and the next apply restores the pinned hash                                                                                 |
 | `commit = "refs/heads/main"` | The reference is resolved and deployed, and kept as-is in the state                                                                                                                      |
 | `commit = "github_hook"`     | GitHub handles deployments. The provider never pushes code and keeps `github_hook` in the state instead of tracking the running commit                                                   |
 
 Leaving the block out is the right default when your pipeline already deploys. Pinning a hash is the opposite stance: the infrastructure code owns what runs, and any manual deployment is treated as drift.
+
+`repository` takes an `https://`, `http://` or `file://` URL. Without `commit`, when the provider can't reach the repository during a plan, it emits a warning and can't detect a new HEAD in that plan.
 
 Deploying from a private repository takes a GitHub fine-grained token with read access to repository contents:
 
@@ -183,9 +198,13 @@ export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
 
 `terraform import` brings an existing application into the state but never fills the `deployment` block, because the provider cannot guess whether you want it to manage deployments. Adding the block afterwards enables the deployment behavior described above. With `commit` unset or pinned to a hash, the provider tracks the running commit. The next apply pushes the resolved target if it differs from the running commit, unless `commit = "github_hook"`. In that mode, the provider neither pushes code nor tracks the running commit.
 
-When `commit` holds a Git reference rather than a hash, the provider does not report the running commit and cannot detect a deployment made elsewhere: comparing a reference to a hash would mean cloning the repository. For the same reason, a new commit pushed to your branch is not a diff by itself, and gets deployed on the next apply that carries another change. Removing a reference from `commit` keeps it in the state: set a hash once, or recreate the resource, to switch back to the running commit.
+When `commit` holds a Git reference rather than a hash, the provider doesn't report the running commit and doesn't detect a deployment made elsewhere. A new commit pushed to your branch isn't a diff by itself either, and gets deployed on the next apply that carries another change. Remove `commit` from the configuration to track the repository HEAD again on the next plans.
 
-When an update deploys a new HEAD while `commit` is unset, the state reports the new hash only after the next refresh.
+To adopt existing resources, prefer `import` blocks with `terraform plan -generate-config-out=generated.tf`, as described in the [provider documentation](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs). Add-ons are imported by their real ID, except `clevercloud_addon`, which takes the add-on ID, and a `clevercloud_cellar_bucket` by its Cellar ID and name, such as `cellar_xxx/my-bucket`. Terraform never writes sensitive values, such as the environment of an application, into a generated configuration. Set `BYPASS_SENSITIVE_IMPORTS=true` for the generating command only: while it's set, plans and the generated configuration expose sensitive resource attributes, including environment variables. The credentials of the provider stay redacted:
+
+```shell
+BYPASS_SENSITIVE_IMPORTS=true terraform plan -generate-config-out=generated.tf
+```
 
 - [Provider documentation on the Terraform Registry](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
 - [Provider source and examples](https://github.com/CleverCloud/terraform-provider-clevercloud)

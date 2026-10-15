@@ -24,7 +24,7 @@ Metabot environment variables such as `MB_METABOT_CHAT_SYSTEM_PROMPT`, `MB_METAB
 
 ## How to update
 
-This branch isn't used by default yet if you use `community-latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.64` or `1.64` for the enterprise edition (EE) and rebuild it without the build cache, or use [Clever Tools](/doc/manage/cli/operators/):
+This branch isn't used by default yet if you use `latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.64` or `1.64` for the enterprise edition (EE) and rebuild it without the build cache, or use [Clever Tools](/doc/manage/cli/operators/):
 
 ```bash
 clever features enable operators

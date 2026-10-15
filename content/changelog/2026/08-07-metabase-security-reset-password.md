@@ -55,7 +55,7 @@ Metabase recommends the following actions once your instance runs a patched vers
 
 ## Users on an XS Java instance
 
-If your add-on uses `community-latest` as its `CC_METABASE_VERSION` and still runs on an XS Java instance, you must move to a S instance to update. Metabase requires at least 2 GB of RAM starting for releases after x.59.9, as detailed in [a previous changelog entry](/changelog/2026/05-06-metabase-60-ram/): 1 GB provided by the XS instance is no longer enough for recent versions. Update your add-on to a patched version x.60 or above, it will automatically move to a S instance.
+If your add-on uses `latest` as its `CC_METABASE_VERSION` and still runs on an XS Java instance, you must move to a S instance to update. Metabase requires at least 2 GB of RAM starting for releases after x.59.9, as detailed in [a previous changelog entry](/changelog/2026/05-06-metabase-60-ram/): 1 GB provided by the XS instance is no longer enough for recent versions. Update your add-on to a patched version x.60 or above, it will automatically move to a S instance.
 
 If you need help with these database actions, contact the [Clever Cloud support team](https://console.clever-cloud.com/ticket-center-choice).
 

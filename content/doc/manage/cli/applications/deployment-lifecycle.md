@@ -151,8 +151,8 @@ clever logs
 You can also get logs from a specific timeline, deployment or add-on through options:
 
 ```text
-[--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+[--before, --until] BEFORE          Fetch logs before this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
+[--after, --since] AFTER            Fetch logs after this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 [--search] SEARCH                   Fetch logs matching this pattern
 [--deployment-id] DEPLOYMENT_ID     Fetch logs for a given deployment
 [--addon] ADDON_ID                  Add-on ID or real ID
@@ -173,8 +173,8 @@ clever accesslogs
 You can also get access logs from a specific timeline through options, in multiple formats:
 
 ```text
-[--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
-[--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds or duration, e.g.: 1h)
+[--before, --until] BEFORE     Fetch logs before this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
+[--after, --since] AFTER       Fetch logs after this date/time (ISO8601 date, positive number in seconds, duration, e.g.: 1h, or now)
 [--format, -F] FORMAT          Output format (human, json, json-stream, clf) (default: human)
 ```
 

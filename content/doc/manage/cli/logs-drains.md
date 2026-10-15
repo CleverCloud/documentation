@@ -39,7 +39,7 @@ clever drain get DRAIN_ID --addon postgresql_xxxxxxxx
 clever drain remove DRAIN_ID --addon postgresql_xxxxxxxx
 ```
 
-The `clever drain` command lists all drains for the target application or add-on and shows key metrics for each one. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
+The `clever drain` command lists all drains for the target application or add-on, with their type, and shows key metrics for each one. Add `--type DRAIN_TYPE` to only list the drains of a given [type](#drain-types), for example `clever drain --type datadog`. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
 
 Once a drain exists, `clever drain check DRAIN_ID` verifies that its recipient is reachable and accepts deliveries. Add `--format json` to get the result in a machine-readable format.
 

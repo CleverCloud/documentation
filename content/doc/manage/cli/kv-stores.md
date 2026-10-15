@@ -16,11 +16,10 @@ aliases:
 - /doc/kv-stores
 ---
 
-You can use Clever Tools to send Redis protocol commands to [Materia KV](/doc/deploy/databases/materia-kv/) and Redis® add-ons. Create a Materia KV add-on, then enable the experimental `kv` command:
+You can use Clever Tools to send Redis protocol commands to [Materia KV](/doc/deploy/databases/materia-kv/) and Redis® add-ons. Create a Materia KV add-on, then send it commands with `clever kv`:
 
 ```bash
 clever addon create kv session-cache
-clever features enable kv
 clever kv session-cache PING
 clever kv session-cache PING Hello
 ```
@@ -45,6 +44,8 @@ clever kv session-cache SET session-status active EX 120
 clever kv session-cache TTL session-status
 ```
 
+Each `clever kv` call opens a single connection, sends one command, and closes it. Clever Tools refuses the commands that would wait forever on such a connection, such as `SUBSCRIBE` or `CLIENT REPLY OFF`, before connecting. A write is never sent twice: if the connection drops, the command fails, so check whether it landed before you retry.
+
 Use `COMMAND` to inspect the commands supported by the add-on:
 
 ```bash
@@ -65,3 +66,5 @@ clever kv session-cache SCAN 0 -F json | jq '.[1]'
 ```
 
 `SCAN` returns a cursor and a batch of keys. Repeat it with the returned cursor until the cursor is `0` to complete the iteration.
+
+Integer replies outside the safe integer range of JavaScript, beyond ±9,007,199,254,740,991, may lose precision. Clever Tools prints a warning on the standard error output for an integer reply, but doesn't check integers nested in a list. To see such a value exactly, read it back with a command that returns text, such as `GET` for a string key or `HGET` for a hash field.

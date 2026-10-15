@@ -119,7 +119,12 @@ By default, Materia KV uses TLS on the 6379 port. You can use non-TLS connection
 
 ### Clever KV
 
-We're exploring how [Clever Tools](https://github.com/CleverCloud/clever-tools/) can natively support Materia KV and helps you to manage such add-ons without any additional software or configuration. The `clever kv` command is available since [version 3.11](https://github.com/CleverCloud/clever-tools/releases/tag/3.11.0).
+[Clever Tools](https://github.com/CleverCloud/clever-tools/) sends commands to your Materia KV add-ons without any additional software or configuration:
+
+```bash
+clever kv session-cache SET session-status active
+clever kv session-cache GET session-status
+```
 
 - [Learn more about Clever KV](/doc/manage/cli/kv-stores/)
 

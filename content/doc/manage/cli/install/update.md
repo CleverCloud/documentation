@@ -3,7 +3,7 @@ type: docs
 weight: 1
 linkTitle: Update Clever Tools
 title: Update Clever Tools
-description: Update Clever Tools CLI to its latest version with npm, pnpm, Bun, Yarn, AUR, rpm, deb, Homebrew, WinGet, Docker, Nix or standalone binaries
+description: Update Clever Tools CLI to its latest version with npm, pnpm, Bun, Yarn, AUR, rpm, deb, Homebrew, WinGet, Docker, Mise, Nix or standalone binaries
 keywords:
 - update
 - upgrade
@@ -134,6 +134,22 @@ Pull the image again to get the latest tag:
 ```bash
 docker pull clevercloud/clever-tools
 ```
+
+## Mise package manager
+
+If your configuration tracks `latest`, which `mise use` sets by default, install the newest release:
+
+```bash
+mise upgrade github:CleverCloud/clever-tools
+```
+
+If you pinned a version, bump it in your configuration file to the latest release:
+
+```bash
+mise upgrade --bump github:CleverCloud/clever-tools
+```
+
+Run these commands from the project directory to update its configuration, or add `--global` to update only the global configuration.
 
 ## Nix package manager
 

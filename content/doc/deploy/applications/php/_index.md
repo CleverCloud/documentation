@@ -160,6 +160,10 @@ If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Clou
 
 On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/develop/common-configuration/environment-variables/reference#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
 
+#### Session upload progress
+
+Clever Cloud sets [`session.upload_progress.enabled`](https://www.php.net/manual/en/session.configuration.php#ini.session.upload-progress.enabled) to `Off` when it deploys your application, following the [PHP security team recommendations](https://www.php.net/archive/2026.php#2026-10-21-5). This setting only disables upload progress tracking in sessions: file uploads and `multipart/form-data` requests keep working.
+
 ### Configuration reference
 
 {{< cards >}}

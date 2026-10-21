@@ -52,9 +52,8 @@ FrankenPHP runtime only requires a working web application, with an `index.php` 
 
 FrankenPHP currently deployed version on Clever Cloud is `{{< runtime_version frankenphp >}}` based on PHP `{{< runtime_version frankenphp php >}}` and Caddy server `{{< runtime_version frankenphp caddy >}}`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI. The `php` command available in hooks and scripts uses `frankenphp php-cli` under the hood.
 
-You can use FrankenPHP 1.9.1 with PHP 8.4.13 and Caddy 2.10.2, by setting the `CC_PHP_VERSION` environment variable to `8.4`.
+FrankenPHP uses this version whatever the value of `CC_PHP_VERSION`.
 
-- [FrankenPHP PHP 8.4 info](https://frankenphpinfo84.cleverapps.io/)
 - [FrankenPHP PHP 8.5 info](https://frankenphpinfo85.cleverapps.io/)
 
 ### Composer native support
@@ -120,9 +119,7 @@ clever deploy # or clever restart if there is no code change
 
 ## Included extensions
 
-FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gettext`,`gmp`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`password-argon2`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xsl`,`xz`,`yaml`,`zip`,`zlib`,`zstd`
-
-> [!NOTE] With `CC_PHP_VERSION=8.4`, `memcache`, `pdo_sqlsrv` and `sqlsrv` are also available, but `xsl` isn't
+FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`deepclone`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gettext`,`gmp`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`password-argon2`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xsl`,`xz`,`yaml`,`zip`,`zlib`,`zstd`
 
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}

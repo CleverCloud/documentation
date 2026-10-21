@@ -39,6 +39,7 @@ We updated all our images. Deployment is in progress for all our users.
 - **Java:**
   - Gradle 9.8.2
 - **PHP:**
+  - FrankenPHP 1.13.1 (released today)
   - Update to 8.2.35
   - Update to 8.3.36
   - Update to 8.4.27

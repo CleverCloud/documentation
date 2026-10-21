@@ -32,7 +32,7 @@ PHP 8.1 and earlier [reached end of life](https://www.php.net/supported-versions
 
 FrankenPHP 1.13 is now the only version supported on Clever Cloud, whatever the value of `CC_PHP_VERSION`. Major vulnerabilities affect all earlier versions, and FrankenPHP maintainers [consider the 1.12 branch as end of life](https://github.com/php/frankenphp/issues/2732#issuecomment-6316479790).
 
-The available release, [FrankenPHP 1.13.1](https://github.com/php/frankenphp/releases/tag/v1.13.1), doesn't include the fixes yet. We will deploy the next FrankenPHP release once it's published. Until then, follow the [official PHP recommendations](https://www.php.net/archive/2026.php#2026-10-21-5) with a [custom `php.ini` file](/doc/deploy/applications/frankenphp/#custom-php-configuration), or stop your application, from the Console or with `clever stop`.
+The available release, [FrankenPHP 1.13.1](https://github.com/php/frankenphp/releases/tag/v1.13.1), includes the fixes.
 
 ## Managed Matomo add-ons
 

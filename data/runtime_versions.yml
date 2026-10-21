@@ -37,7 +37,7 @@ frankenphp:
   caddy:
     - "2.11.7"
   php:
-    - "8.5.11"
+    - "8.5.12"
 
 java:
   eol_source: https://adoptium.net/fr/support/

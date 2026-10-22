@@ -55,7 +55,9 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## PHP security releases
 
-PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 fix two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619. FrankenPHP 1.13 is now the only version available, whatever the value of `CC_PHP_VERSION`, as earlier versions won't receive the fixes.
+PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 fix two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619. We now set `session.upload_progress.enabled` to `Off` on all our PHP with Apache instances, following the [PHP security team recommendations](https://www.php.net/archive/2026.php#2026-10-21-5).
+
+Starting with this release, FrankenPHP 1.13 is the only version available, whatever the value of `CC_PHP_VERSION`, as earlier versions won't receive the fixes.
 
 The [dedicated changelog entry](/changelog/2026/10-21-php-security-vulnerabilities/) details the mitigations we applied, the situation of FrankenPHP and of PHP 8.1 and earlier, and the actions you might need to take.
 

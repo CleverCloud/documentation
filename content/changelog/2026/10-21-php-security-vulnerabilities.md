@@ -3,10 +3,8 @@ title: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 are available (Security update)
 description: New PHP versions fix the critical vulnerabilities CVE-2026-109618 and CVE-2026-109619, Clever Cloud applies mitigations and limits FrankenPHP to version 1.13
 date: 2026-10-21
 tags:
-  - frankenphp
   - images
-  - php
-  - security
+  - update
 authors:
   - name: David Legrand
     link: https://github.com/davlgd

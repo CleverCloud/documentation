@@ -4,8 +4,7 @@ description: Clever Cloud applies the fixes for the critical PHP vulnerabilities
 date: 2026-10-21
 tags:
   - images
-  - php
-  - security
+  - update
 authors:
   - name: David Legrand
     link: https://github.com/davlgd

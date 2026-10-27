@@ -29,6 +29,9 @@ We updated all our images. Deployment is in progress for all our users.
   - Update to 8.0.132
   - Update to 9.0.122
   - Update to 10.0.113
+- **Docker:**
+  - Update to 29.9.2
+  - Buildx 0.38.1
 - **Erlang/Elixir:**
   - Erlang 27.3.4.19
   - Erlang 28.5.0.8
@@ -97,6 +100,7 @@ This release updates several trust stores of our images to distrust the affected
 - The system trust store from `ca-certificates` drops the emSign Root CA - C1, emSign ECC Root CA - C3 and emSign ECC Root CA - G3 roots
 - NSS 3.131.1 drops the same roots from its built-in trust store
 - certifi 2026.10.19, used by the system Python, drops the emSign ECC Root CA - G3 root
+- Docker 29.9.2 and Buildx 0.38.1 are built with Go versions that reject certificate chains containing the affected intermediates
 - Go 1.27.3 rejects certificate chains containing the affected intermediates
 - Node.js 22.23.4, 24.22.1 and 26.12.1 update their bundled certificate store
 - Otoroshictl 0.0.19 moves to rustls 0.23, which distrusts the affected intermediates
@@ -121,6 +125,8 @@ clever env set CC_RUBY_VERSION 4.0.7
 When [ClamAV](/doc/security/clamav/) stops, for example under memory pressure, it now restarts automatically, instead of leaving your instance without scanning until the next restart of your application.
 
 Following the [clearer configuration errors](/changelog/2026/10-09-images-update/#clearer-configuration-errors) of a previous release, a failing build step now stops the deployment in every runtime with an error naming it, such as dependency installation or the Meteor build. Configuration errors detected at startup now also show up on the build instance, before your application reaches the run instances. A static application whose `CC_WEBROOT` doesn't exist after the build now caches its whole folder instead of failing to build its cache.
+
+Docker 29.9.1 and later rely on containerd 2.4.2, which fixes three vulnerabilities: pulling a crafted image or using a malicious registry could crash containerd or fill the host disk.
 
 ## Linux Kernel
 

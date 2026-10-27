@@ -63,8 +63,11 @@ jobs:
             --no-status \
             --check-extern \
             --user-agent 'Mozilla/5.0 (X11; Linux i686; rv:137.0) Gecko/20100101 Firefox/137.0' \
+            --ignore-url 'https://chatgpt.com/' \
+            --ignore-url 'https://claude.ai/new' \
             --ignore-url 'https://crates.io/crates' \
             --ignore-url 'https://new.drupal.org' \
             --ignore-url 'https://static-web-server.net' \
             --ignore-url 'https://www.clevercloudstatus.com' \
+            --ignore-url 'https://www.perplexity.ai/search' \
           'https://${{ env.DOMAIN }}' || echo "::warning title=Broken Links::Some links are broken. Check the logs for details"

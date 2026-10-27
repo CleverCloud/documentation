@@ -68,8 +68,11 @@ fn main() {
 
 ### Multiple binary targets
 
-If your `Cargo.toml` defines multiple targets, you must specify the one you want to run, with the `CC_RUST_BIN` environment variable.
-If `CC_RUST_BIN` is specified, then the executable produced by this target is used to start the application.
+If your project builds several binaries, select the one to start with the `default-run` field of the `[package]` section in `Cargo.toml`, or with the `CC_RUST_BIN` environment variable. `CC_RUST_BIN` takes precedence over `default-run`. In a workspace, Clever Cloud only looks for binaries in the default members, the ones `cargo build` builds.
+
+### Build with cargo install
+
+Set `CC_RUST_INSTALL=true` to build your application with `cargo install` instead of `cargo build`. Clever Cloud installs the binaries of the package containing the selected one in `/home/bas/.local/bin`, starts the selected binary and removes the build artifacts afterwards, which keeps your build cache smaller.
 
 ### Custom run command
 
@@ -95,7 +98,7 @@ iron = "0.4.0"
 
 #### Enabling dependencies caching
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](#setting-up-environment-variables-on-clever-cloud) in your application.
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](#setting-up-environment-variables-on-clever-cloud) in your application. Clever Cloud vendors your dependencies with `cargo vendor` during the build and caches their sources. When the vendor folder isn't available, it caches the `target/release` folder instead.
 
 #### Disabling dependencies caching
 

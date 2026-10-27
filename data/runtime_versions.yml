@@ -57,7 +57,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 24.19.0 (npm 11.17.0)
+    - 24.22.1 (npm 11.19.1)
 
 php:
   eol_source: https://www.php.net/supported-versions.php
@@ -91,7 +91,7 @@ varnish:
 varnish-modules:
   eol_source: https://github.com/varnish/varnish-modules/releases
   default:
-    - "0.28"
+    - "0.27"
 
 v:
   eol_source: https://github.com/vlang/v/releases

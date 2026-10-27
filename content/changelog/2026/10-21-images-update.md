@@ -1,6 +1,6 @@
 ---
-title: "Images update: eMudhra certificates distrust, PHP and Node.js security releases, Chromium 155, Clever Tools 5.2"
-description: PHP and Node.js security releases, eMudhra certificate authorities distrust, PHP 8.5 by default, FrankenPHP 1.13, Ruby 2.5 and 3.0 removal, Clever Tools 5.2, Chromium 155 and uv 0.13
+title: "Images update: eMudhra certificates distrust, PHP and Node.js security releases, Chromium 156, Clever Tools 5.2"
+description: PHP and Node.js security releases, eMudhra certificate authorities distrust, PHP 8.5 by default, FrankenPHP 1.13, Ruby 2.5 and 3.0 removal, Clever Tools 5.2, Chromium 156 and uv 0.13
 date: 2026-10-21
 tags:
   - images
@@ -16,12 +16,14 @@ We updated all our images. Deployment is in progress for all our users.
 
 - **Common:**
   - Anubis 1.28.1
-  - Chromium 155.0.8059.79
+  - Brotli 1.2.1
+  - Chromium 156.0.8078.47
   - Clever Tools 5.2.0
   - curl 8.23.0
-  - Mise 2026.10.15
+  - Mise 2026.10.17
   - NGINX 1.30.6
   - Otoroshictl 0.0.19
+  - PgBouncer 1.26.1
   - Tailscale 1.104.2
 - **.NET:**
   - Update to 8.0.132
@@ -33,18 +35,20 @@ We updated all our images. Deployment is in progress for all our users.
   - Erlang 29.1.2
   - rebar3 3.27.3
 - **FrankenPHP:**
-  - Update to 1.13.1
+  - Update to 1.13.2 (PHP 8.5.12, Caddy 2.11.7)
 - **Go:**
   - Update to 1.27.3
 - **Java:**
   - Gradle 9.8.2
 - **PHP:**
-  - FrankenPHP 1.13.1 (released today)
+  - Security fixes for 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0 and 8.1
   - Update to 8.2.35
   - Update to 8.3.36
   - Update to 8.4.27
   - Update to 8.5.12
-  - Symfony CLI 5.22.1
+  - Elastic APM agent 1.17.1
+  - Excimer extension 1.2.7
+  - Symfony CLI 5.22.2
 - **Python:**
   - uv 0.13.4
 - **Ruby:**
@@ -59,11 +63,13 @@ PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 fix two critical vulnerabilities, CVE-2026
 
 Starting with this release, FrankenPHP 1.13 is the only version available, whatever the value of `CC_PHP_VERSION`, as earlier versions won't receive the fixes.
 
+We also applied the fixes to PHP 5.6 to 8.1, which reached end of life, as detailed in the [changelog entry about these patched builds](/changelog/2026/10-21-php-eol-security-backport/). Elastic APM agent 1.17.1 fixes a crash at the end of requests when the agent runs with PHP versions containing these security fixes.
+
 The [dedicated changelog entry](/changelog/2026/10-21-php-security-vulnerabilities/) details the mitigations we applied, the situation of FrankenPHP and of PHP 8.1 and earlier, and the actions you might need to take.
 
 ## PHP 8.5 by default
 
-[As announced](/changelog/2026/09-01-php-8.5-default/), PHP and FrankenPHP applications deployed without `CC_PHP_VERSION` now run PHP 8.5, as those with `CC_PHP_VERSION=8` already did since the [previous release](/changelog/2026/10-14-images-update/). If you want to stay on PHP 8.4, set it explicitly:
+[As announced](/changelog/2026/09-01-php-8.5-default/), PHP and FrankenPHP applications deployed without `CC_PHP_VERSION` now run PHP 8.5, as those with `CC_PHP_VERSION=8` already did since the [previous release](/changelog/2026/10-14-images-update/). FrankenPHP applications run PHP 8.5 whatever this value, as FrankenPHP 1.13 is the only version available. If you want a PHP application to stay on PHP 8.4, set it explicitly:
 
 ```bash
 clever env set CC_PHP_VERSION 8.4
@@ -74,7 +80,9 @@ clever env set CC_PHP_VERSION 8.4
 
 ## Node.js security releases
 
-The Node.js project published [security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) fixing 10 vulnerabilities, four of them rated high, for all its supported branches. Our images now ship Node.js 24.22.1, the latest LTS, used when your application doesn't request a specific version.
+The Node.js project published [security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) fixing 10 vulnerabilities, four of them rated high, for all its supported branches. Among them, [CVE-2026-111497](https://www.cve.org/CVERecord?id=CVE-2026-111497), also known as Node2Shell, is an out-of-bounds write in the Brotli decoder bundled with Node.js.
+
+Our images now ship Node.js 24.22.1, the latest LTS, with npm 11.19.1. Your application uses it when it doesn't request a specific version. They also ship the system Brotli library 1.2.1, which fixes CVE-2026-111497 for the other software using it.
 
 Node.js 22.23.4 and 26.12.1 are available through nvm alongside this system version. If you set `CC_NODE_VERSION` or `engines.node` in your `package.json` to `22` or `26`, your application gets the patched release at its next deployment. A version pinned to its patch level, such as `22.23.3`, stays on it until you update it.
 
@@ -84,11 +92,11 @@ Node.js 22.23.4 and 26.12.1 are available through nvm alongside this system vers
 
 On 17 October 2026, a researcher reported the compromise of eight intermediate certificate authority keys from eMudhra ([CVE-2026-111943](https://www.cve.org/CVERecord?id=CVE-2026-111943)). Anyone holding these keys can issue certificates that TLS clients trusting the emSign roots accept. Browsers quickly distrusted them, but other clients, such as the ones your applications use, rely on a trust store that needs an update.
 
-Our images no longer trust the affected certificate authorities, through several updates:
+This release updates several trust stores of our images to distrust the affected certificate authorities:
 
 - The system trust store from `ca-certificates` drops the emSign Root CA - C1, emSign ECC Root CA - C3 and emSign ECC Root CA - G3 roots
 - NSS 3.131.1 drops the same roots from its built-in trust store
-- certifi 2026.10.19, used by the system Python, no longer includes them
+- certifi 2026.10.19, used by the system Python, drops the emSign ECC Root CA - G3 root
 - Go 1.27.3 rejects certificate chains containing the affected intermediates
 - Node.js 22.23.4, 24.22.1 and 26.12.1 update their bundled certificate store
 - Otoroshictl 0.0.19 moves to rustls 0.23, which distrusts the affected intermediates

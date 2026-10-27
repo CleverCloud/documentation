@@ -1,6 +1,6 @@
 ---
-title: PHP 7.4.33, 8.0.30 and 8.1.34 patched for CVE-2026-109618 and CVE-2026-109619 (Security update)
-description: Clever Cloud applies the fixes for the critical PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619 to the end-of-life PHP 7.4, 8.0 and 8.1 branches
+title: PHP 5.6.40, 7.0.33, 7.1.33, 7.2.34, 7.3.33, 7.4.33, 8.0.30 and 8.1.34 patched for CVE-2026-109618 and CVE-2026-109619 (Security update)
+description: Clever Cloud applies the fixes for the critical PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619 to the end-of-life PHP 5.6 to 8.1 branches
 date: 2026-10-21
 tags:
   - images
@@ -12,9 +12,9 @@ authors:
 excludeSearch: true
 ---
 
-Following the [release of PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12](/changelog/2026/10-21-php-security-vulnerabilities/), we applied the fixes for the critical vulnerabilities [CVE-2026-109618](https://www.cve.org/CVERecord?id=CVE-2026-109618) and [CVE-2026-109619](https://www.cve.org/CVERecord?id=CVE-2026-109619) to the PHP 7.4, 8.0 and 8.1 branches, which [reached end of life](https://www.php.net/supported-versions.php).
+Following the [release of PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12](/changelog/2026/10-21-php-security-vulnerabilities/), we applied the fixes for the critical vulnerabilities [CVE-2026-109618](https://www.cve.org/CVERecord?id=CVE-2026-109618) and [CVE-2026-109619](https://www.cve.org/CVERecord?id=CVE-2026-109619) to the PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0 and 8.1 branches, which [reached end of life](https://www.php.net/supported-versions.php). For PHP 5.6 to 7.3, we backported the upstream fix written for the PHP 7.4 branch.
 
-Patched builds of PHP 7.4.33, 8.0.30 and 8.1.34 are now available on Clever Cloud, and we're redeploying your PHP applications so they use them automatically. If your application uses one of these branches, you have nothing to do.
+Patched builds of PHP 5.6.40, 7.0.33, 7.1.33, 7.2.34, 7.3.33, 7.4.33, 8.0.30 and 8.1.34 are now available on Clever Cloud, and we're redeploying your PHP applications so they use them automatically. If your application uses one of these branches, you have nothing to do.
 
 These builds only fix CVE-2026-109618 and CVE-2026-109619. PHP 8.1 and earlier remain affected by many other vulnerabilities, so we recommend that you migrate without delay to a [supported version](https://www.php.net/supported-versions.php) such as PHP 8.3, 8.4 or 8.5 (PHP 8.2 reaches its end of life on December 31, 2026). To change the PHP version of your application, set the `CC_PHP_VERSION` environment variable and redeploy it:
 

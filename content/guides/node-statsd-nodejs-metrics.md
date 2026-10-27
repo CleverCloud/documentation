@@ -40,7 +40,7 @@ The default host and port used by `hot-shots` match the StatsD endpoint availabl
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/doc/develop/observability/metrics/" title="Clever Cloud metrics" subtitle="Collect and query application metrics" icon="chart-bar" >}}
+  {{< card link="/developers/doc/develop/observability/metrics/" title="Clever Cloud metrics" subtitle="Collect and query application metrics" icon="chart-bar" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://github.com/brightcove/hot-shots" title="hot-shots documentation" subtitle="Configure the Node.js StatsD client" icon="github" >}}
 {{< /cards >}}

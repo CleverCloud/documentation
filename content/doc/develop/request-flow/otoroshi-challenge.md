@@ -24,7 +24,7 @@ The Otoroshi challenge closes that gap without a private network. [Request Flow]
 
 A [Network Group](/doc/network/network-groups/) reaches the same result differently, by placing your Otoroshi add-on and your applications on a private WireGuard network and keeping those applications off the public internet. The challenge suits applications that stay on a public URL, or that you want to protect without changing their network topology. Nothing prevents combining both.
 
-The mechanism is version 2 of the [Otoroshi communication protocol](https://www.otoroshi.io/manual/topics/otoroshi-protocol.html), a signed token exchange based on a secret shared between the gateway and the middleware.
+The mechanism is version 2 of the [Otoroshi communication protocol](https://www.otoroshi.io/docs/topics/otoroshi-protocol/), a signed token exchange based on a secret shared between the gateway and the middleware.
 
 ## Enable the Otoroshi challenge
 
@@ -122,4 +122,4 @@ A `401` answer means only your gateway can reach the application. A `200` means 
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
 - [Deploy an Otoroshi add-on](/doc/deploy/services/otoroshi/)
-- [Learn more about the Otoroshi communication protocol](https://www.otoroshi.io/manual/topics/otoroshi-protocol.html)
+- [Learn more about the Otoroshi communication protocol](https://www.otoroshi.io/docs/topics/otoroshi-protocol/)

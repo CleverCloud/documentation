@@ -21,7 +21,7 @@ The twelve-factor app is a methodology for writing software delivered as a servi
 As a lot has already been written on the subject, we strongly recommend that you read some of the following links to begin with this methodology:
 
 - [https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
-- [https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/](https://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/)
+- [12 Factor Apps in Plain English (archived)](https://web.archive.org/web/20240709151232/https://will.koffel.org/post/2014/12-factor-apps-in-plain-english/)
 - [https://12factor.net/](https://12factor.net/)
 
 Happy learning !

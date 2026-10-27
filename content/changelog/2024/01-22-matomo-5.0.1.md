@@ -22,4 +22,4 @@ excludeSearch: true
 Existing customers add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.0](https://matomo.org/changelog/matomo-5-0-0/)
-- [Learn more about Matomo 5.0.1](https://matomo.org/changelog/matomo-5-0-1/)
+- [Learn more about Matomo 5.0.1](https://github.com/matomo-org/matomo/releases/tag/5.0.1)

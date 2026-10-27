@@ -65,8 +65,8 @@ If you need a custom authentication provider, domain name or native `kibana.yml`
 ## Learn more
 
 {{< cards >}}
-  {{< card link="/doc/deploy/databases/elastic/" title="Elastic Stack" subtitle="Configure and manage the Elastic Stack add-on" icon="elastic" >}}
+  {{< card link="/developers/doc/deploy/databases/elastic/" title="Elastic Stack" subtitle="Configure and manage the Elastic Stack add-on" icon="elastic" >}}
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://www.elastic.co/guide/en/kibana/current/index.html" title="Kibana documentation" subtitle="Explore Kibana features and settings" icon="external-link" >}}
-  {{< card link="/doc/manage/cli/addons/" title="Clever Tools add-ons" subtitle="Create and manage add-ons from the command line" icon="terminal" >}}
+  {{< card link="/developers/doc/manage/cli/addons/" title="Clever Tools add-ons" subtitle="Create and manage add-ons from the command line" icon="terminal" >}}
 {{< /cards >}}

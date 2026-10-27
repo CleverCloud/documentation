@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.4.3
+    - 1.4.4
 
 caddy:
   eol_source: https://github.com/caddyserver/caddy/releases
@@ -33,7 +33,7 @@ elixir:
 frankenphp:
   eol_source: https://github.com/php/frankenphp/releases
   default:
-    - "1.13.1"
+    - "1.13.4"
   caddy:
     - "2.11.7"
   php:

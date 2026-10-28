@@ -56,6 +56,18 @@ clever logs --since 15m --until now
 clever logs --since 15m --until now --format json
 ```
 
+Clever Tools disables colors when its output isn't a terminal, for example when you pipe it to another command. Add `--color true` to keep them, for example in a pager:
+
+```bash
+clever logs --since 15m --until now --color true | less -R
+```
+
+Log messages can contain ANSI codes, which set colors, move the cursor or clear a line. In the `human` format, Clever Tools removes them when colors are disabled, with `--no-color`, a non-empty `NO_COLOR` or an output that isn't a terminal. The `json` and `json-stream` formats keep messages as your application wrote them, unless you add `--strip-ansi`, which removes these codes in any format:
+
+```bash
+clever logs --since 1h --until now --format json --strip-ansi > logs.json
+```
+
 You can also get your add-on's logs by using `--addon` flag, the value is the add-on ID starting by `addon_`, or its real ID:
 
 ```bash

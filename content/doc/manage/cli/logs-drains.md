@@ -30,7 +30,7 @@ clever drain enable DRAIN_ID
 clever drain disable DRAIN_ID
 ```
 
-All drain subcommands also accept `--addon ADDON_ID_OR_REAL_ID` to target an add-on instead of an application. The `--addon` option is mutually exclusive with `--app` and `--alias`.
+All drain subcommands except `clever drain list` also accept `--addon ADDON_ID_OR_REAL_ID` to target an add-on instead of an application. The `--addon` option is mutually exclusive with `--app` and `--alias`.
 
 ```console
 clever drain --addon postgresql_xxxxxxxx
@@ -39,9 +39,21 @@ clever drain get DRAIN_ID --addon postgresql_xxxxxxxx
 clever drain remove DRAIN_ID --addon postgresql_xxxxxxxx
 ```
 
-The `clever drain` command lists all drains for the target application or add-on, with their type, and shows key metrics for each one. Add `--type DRAIN_TYPE` to only list the drains of a given [type](#drain-types), for example `clever drain --type datadog`. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
+The `clever drain` command lists all drains for the target application or add-on in a table, with their ID, kind, type, status and target URL. The `STATUS` column combines the status of the drain and the status of its execution. Add `--type DRAIN_TYPE` to only list the drains of a given [type](#drain-types), for example `clever drain --type datadog`. The `clever drain get` command displays detailed metrics for a single drain, including message output rate, throughput (with dynamic units), backlog size, retry attempts, and last error. These metrics help you monitor drain health and troubleshoot delivery issues.
 
 Once a drain exists, `clever drain check DRAIN_ID` verifies that its recipient is reachable and accepts deliveries. Add `--format json` to get the result in a machine-readable format.
+
+## List the drains of all your resources
+
+`clever drain list` lists the drains of every application and add-on of the organisations you belong to, grouped by organisation, with a `RESOURCE` column naming the application or add-on of each drain. Use `--org` (`-o`, `--owner`) to target a single organisation, and `--type` to only list the drains of a given type:
+
+```bash
+clever drain list
+clever drain list --org my-organisation --type datadog
+clever drain list --format json
+```
+
+The JSON output is a flat list of drains, each one carrying the `ownerId` and `ownerName` of its organisation. If Clever Tools can't list the drains of an organisation, it prints a warning and lists the others. If it can't list the drains of any targeted organisation, the command fails with an error.
 
 ## Drain types
 
@@ -55,6 +67,7 @@ There is one `clever drain create` subcommand per drain type. Each one only acce
 | `newrelic`      | `--api-key`, `-k`          | None                                               |
 | `ovh-tcp`       | None                       | `--sd-params`, `-s`                                |
 | `raw-http`      | None                       | `--password`, `-p`, `--username`, `-u`             |
+| `sekoia`        | `--intake-key`             | `--tls-verification`                               |
 | `splunk`        | `--hec-token`              | `--index`, `--sourcetype`, `--tls-verification`    |
 | `syslog-tcp`    | None                       | `--sd-params`, `-s`                                |
 | `syslog-udp`    | None                       | `--sd-params`, `-s`                                |
@@ -124,6 +137,18 @@ Raw HTTP drains send log batches as JSON `POST` requests to any HTTP endpoint. B
 clever drain create raw-http https://logs.example.com/clever-cloud
 clever drain create raw-http https://logs.example.com/clever-cloud --username "$DRAIN_USERNAME" --password "$DRAIN_PASSWORD"
 ```
+
+## Sekoia.io logs drains
+
+[Sekoia.io](https://docs.sekoia.com/integration/ingestion_methods/https/overview/) drains post logs to the `/jsons` endpoint of an HTTPS intake, which reads each log as an event. The intake host depends on the region of your Sekoia.io workspace, FRA1 being the default:
+
+```bash
+clever drain create sekoia https://intake.sekoia.io/jsons --intake-key "$SEKOIA_INTAKE_KEY"
+```
+
+On other regions, use `https://intake.REGION.sekoia.io/api/v1/intake-http/jsons`. The drain sends the intake key in a header, so don't add it to the URL as `?intake_key=`: the API refuses such a URL, as it refuses a URL that doesn't use `https` or doesn't end with `/jsons`. For a self-hosted intake behind a private certificate authority, add `--tls-verification trustful`, which skips certificate and hostname verification.
+
+Sekoia.io has no built-in intake format for Clever Cloud logs: create the intake with a custom format that parses the fields of the forwarded logs.
 
 ## Splunk logs drains
 

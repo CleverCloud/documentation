@@ -3,7 +3,7 @@ type: docs
 weight: 40
 linkTitle: Drains
 title: Log Drains
-description: Forward your application logs to Better Stack, Elasticsearch, Datadog, New Relic, OVHcloud, Splunk or any HTTP endpoint with log drains
+description: Forward your application logs to Better Stack, Elasticsearch, Datadog, New Relic, OVHcloud, Sekoia.io, Splunk or any HTTP endpoint with log drains
 keywords:
 - log drains
 - elasticsearch
@@ -11,6 +11,7 @@ keywords:
 - datadog
 - newrelic
 - ovhcloud
+- sekoia
 - splunk
 - export
 aliases:
@@ -33,15 +34,17 @@ Where `DRAIN-TYPE` is one of:
 - `newrelic`: for New Relic endpoint (note that this endpoint needs your New Relic API Key)
 - `ovh-tcp`: for OVH TCP syslog endpoint (note that this endpoint has an optional sd-params parameter)
 - `raw-http`: for HTTP endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication)
+- `sekoia`: for Sekoia.io HTTPS intake endpoint (note that this endpoint needs your intake key)
 - `splunk`: for Splunk HTTP Event Collector endpoint (note that this endpoint needs your HEC token)
 - `syslog-tcp`: for TCP syslog endpoint
 - `syslog-udp`: for UDP syslog endpoint
 
-Each drain type has its own options, listed in the [Clever Tools logs drains documentation](/doc/manage/cli/logs-drains/). Add `--alias ALIAS` or `--app APP_ID_OR_NAME` to target a specific application. You can list the currently activated drains with this command, and add `--type` to only list the drains of a given type:
+Each drain type has its own options, listed in the [Clever Tools logs drains documentation](/doc/manage/cli/logs-drains/). Add `--alias ALIAS` or `--app APP_ID_OR_NAME` to target a specific application. You can list the currently activated drains with this command, and add `--type` to only list the drains of a given type. To list the drains of every application and add-on of your organisations at once, use `clever drain list`:
 
 ```console
 clever drain
 clever drain --type datadog
+clever drain list
 ```
 
 Check that the recipient of a drain is reachable and accepts deliveries, and remove it if needed:
@@ -140,6 +143,16 @@ To create a [Better Stack](https://betterstack.com/docs/logs/http-rest-api/) dra
 ```bash
 clever drain create betterstack "https://$BETTERSTACK_INGESTING_HOST" --source-token "$BETTERSTACK_SOURCE_TOKEN"
 ```
+
+## Sekoia.io
+
+To send logs to [Sekoia.io](https://docs.sekoia.com/integration/ingestion_methods/https/overview/), use the `/jsons` endpoint of the HTTPS intake matching the region of your workspace, along with the intake key. On regions other than FRA1, the URL is `https://intake.REGION.sekoia.io/api/v1/intake-http/jsons`:
+
+```bash
+clever drain create sekoia https://intake.sekoia.io/jsons --intake-key "$SEKOIA_INTAKE_KEY"
+```
+
+Sekoia.io has no built-in intake format for Clever Cloud logs: create the intake with a custom format that parses the fields of the forwarded logs.
 
 ## Splunk
 

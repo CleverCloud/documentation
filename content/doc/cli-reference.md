@@ -219,6 +219,29 @@ In your `Dockerfile` copy `clever-tools` from the image itself with a simple one
 COPY --from=clevercloud/clever-tools /bin/clever /usr/local/bin/clever
 ```
 
+### Mise package manager
+
+If you use [Mise](https://mise.jdx.dev), install Clever Tools globally from its GitHub releases through the [GitHub backend](https://mise.jdx.dev/dev-tools/backends/github.html):
+
+```console
+mise use -g github:CleverCloud/clever-tools
+```
+
+To install a specific version globally, add it after `@`:
+
+```console
+mise use -g github:CleverCloud/clever-tools@5.2.0
+```
+
+Mise selects the release archive for your operating system. These binaries target x64 on Linux and Windows, and Apple Silicon on macOS; for other architectures, use the npm package.
+
+To pin a version for a project, add it to its `mise.toml`:
+
+```toml
+[tools]
+"github:CleverCloud/clever-tools" = "5.2.0"
+```
+
 ### Nix package manager
 
 If you are using Nix on NixOS or any other compatible system, the package is available in both `stable` and `unstable` channels. Follow [these instructions](https://search.nixos.org/packages?channel=unstable&show=clever-tools&from=0&size=50&sort=relevance&type=packages&query=clever-tools).
@@ -1213,7 +1236,7 @@ clever drain [options]
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
-    --type <drain-type>        Only list drains of this type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, splunk, syslog-tcp, syslog-udp)
+    --type <drain-type>        Only list drains of this type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, sekoia, splunk, syslog-tcp, syslog-udp)
 ```
 
 ### drain check
@@ -1425,6 +1448,35 @@ drain-url                      Drain URL
 -u, --username <username>      Basic auth username
 ```
 
+#### drain create sekoia
+
+**Description:** Create a Sekoia.io drain
+
+**Since:** 5.3.0
+
+**Usage**
+
+```console
+clever drain create sekoia --intake-key <intake-key> <drain-url> [options]
+```
+
+**Arguments**
+
+```console
+drain-url                                    Drain URL
+```
+
+**Options**
+
+```console
+    --intake-key <intake-key>                Intake key (required)
+    --addon <addon-id>                       Add-on ID or real ID
+-a, --alias <alias>                          Short name for the application
+    --app <app-id|app-name>                  Application to manage by its ID (or name, if unambiguous)
+    --kind <kind>                            Kind of logs sent to the drain (LOG, ACCESSLOG) (default: LOG)
+    --tls-verification <tls-verification>    TLS verification mode, use `trustful` for a self-hosted intake behind a private CA (default, trustful)
+```
+
 #### drain create splunk
 
 **Description:** Create a Splunk HEC drain
@@ -1589,6 +1641,26 @@ drain-id                       Drain ID
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 -F, --format <format>          Output format (human, json) (default: human)
+```
+
+### drain list
+
+**Description:** List the drains of all applications and add-ons
+
+**Since:** 5.3.0
+
+**Usage**
+
+```console
+clever drain list [options]
+```
+
+**Options**
+
+```console
+-F, --format <format>                   Output format (human, json) (default: human)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+    --type <drain-type>                 Only list drains of this type (betterstack, datadog, elasticsearch, newrelic, ovh-tcp, raw-http, sekoia, splunk, syslog-tcp, syslog-udp)
 ```
 
 ### drain remove
@@ -2787,6 +2859,7 @@ clever logs [options]
     --deployment-id <deployment-id>    Fetch logs for a given deployment
 -F, --format <format>                  Output format (human, json, json-stream) (default: human)
     --search <search>                  Fetch logs matching this pattern
+    --strip-ansi                       Remove the ANSI codes contained in log messages
 ```
 
 ## make-default
@@ -4475,6 +4548,38 @@ port                           port identifying the TCP redirection
     --namespace <namespace>    Namespace in which the TCP redirection should be (required)
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+```
+
+## terraform
+
+**Description:** Terraform commands
+
+**Since:** 5.3.0
+
+**Usage**
+
+```console
+clever terraform
+```
+
+### terraform generate
+
+**Description:** Generate terraform import file
+
+**Since:** 5.3.0
+
+**Usage**
+
+```console
+clever terraform generate [options]
+```
+
+**Options**
+
+```console
+    --app <app-id|app-name>             Application to manage by its ID (or name, if unambiguous)
+-o, --org, --owner <org-id|org-name>    Organisation to target by its ID (or name, if unambiguous)
+-t, --tag <tag>                         Filter resources by tag
 ```
 
 ## tokens

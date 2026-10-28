@@ -206,5 +206,15 @@ To adopt existing resources, prefer `import` blocks with `terraform plan -genera
 BYPASS_SENSITIVE_IMPORTS=true terraform plan -generate-config-out=generated.tf
 ```
 
+Clever Tools writes these `import` blocks for you, with the ID each resource expects. `clever terraform generate` is an experimental feature: enable it, then save its output in a file of your configuration before generating the configuration:
+
+```shell
+clever features enable terraform
+clever terraform generate --org my-organisation > imports.tf
+terraform plan -generate-config-out=generated.tf
+```
+
+Without `--org`, the command targets your personal space. Add `--app` to only import one application of the targeted space or organisation, or `--tag` to only import the applications and add-ons with a given tag. Add-ons without a dedicated resource use `clevercloud_addon`. The command skips unsupported runtimes, as well as the applications and add-ons another add-on manages, such as the Kibana application of an Elasticsearch add-on or the resources of a Keycloak, Matomo, Metabase or Otoroshi add-on. It reports these choices on the standard error output, so they don't end up in the file. If it can't ask an add-on which resources it manages, the command prints a warning and the output may include them: review these warnings and the generated blocks before you import them.
+
 - [Provider documentation on the Terraform Registry](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs)
 - [Provider source and examples](https://github.com/CleverCloud/terraform-provider-clevercloud)

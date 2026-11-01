@@ -58,7 +58,7 @@ When you create the Keycloak add-on, Clever Cloud automatically deploys:
 By default, Keycloak on Clever Cloud uses small-size resources, i.e:
 
 - S Java
-- XXS Small Space PostgreSQL
+- XS Tiny Space PostgreSQL
 - Less than 100 MB in FS Bucket
 
 They are dimensioned to suit a majority of needs. Even if this Keycloak add-on might handle heavy traffic and an important number of simultaneous connections, the default configuration should handle the following load (based on [Keycloak](https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing) sizing recommendation):

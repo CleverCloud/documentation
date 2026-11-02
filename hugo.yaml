@@ -49,12 +49,12 @@ menu:
     - name: "How to use"
       parent: api
       url: "/api/"
-    - name: "v2 endpoints"
+    - name: "Swagger"
       parent: api
-      url: "/api/v2"
-    - name: "v4 endpoints"
+      url: "/api/swagger"
+    - name: "JSON Reference"
       parent: api
-      url: "/api/v4"
+      url: "https://api.clever-cloud.com/openapi.json"
     - identifier: cli
       name: CLI
       pageRef: /doc/manage/cli/

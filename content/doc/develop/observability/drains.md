@@ -198,6 +198,57 @@ On your terminal, use the following command:
 
 {{< /tabs >}}
 
+## Manage drains through the API
+
+Clever Tools relies on the `/v4/drains` endpoints of the [Clever Cloud API](/api/), which you can call directly from your own tools. Drains belong to a resource: an application ID, or the real ID of an add-on such as `postgresql_xxxxxxxx`. To create one, send a `POST` request to `/v4/drains/organisations/{ownerId}/resources/{resourceId}/drains`:
+
+```json
+{
+  "kind": "LOG",
+  "recipient": {
+    "type": "RAW_HTTP",
+    "url": "https://logs.example.com/ingest",
+    "username": "drain-user",
+    "password": "drain-password"
+  }
+}
+```
+
+Set `kind` to `LOG` for application logs or `ACCESSLOG` for access logs. The `recipient.type` value sets which fields the recipient accepts, besides `type` and `url`:
+
+| `type`          | Required      | Optional                                                      |
+| :-------------- | :------------ | :------------------------------------------------------------ |
+| `BETTERSTACK`   | `sourceToken` | —                                                             |
+| `DATADOG`       | —             | —                                                             |
+| `ELASTICSEARCH` | `index`       | `username`, `password`, `tlsVerification`                     |
+| `NEWRELIC`      | `apiKey`      | —                                                             |
+| `OVH_TCP`       | —             | `token`, `rfc5424StructuredDataParameters`, `tlsVerification` |
+| `RAW_HTTP`      | —             | `username`, `password`                                        |
+| `SEKOIA`        | `intakeKey`   | `tlsVerification`                                             |
+| `SPLUNK`        | `token`       | `index`, `sourcetype`, `tlsVerification`                      |
+| `SYSLOG_TCP`    | —             | `rfc5424StructuredDataParameters`, `tlsVerification`          |
+| `SYSLOG_UDP`    | —             | `rfc5424StructuredDataParameters`                             |
+
+`tlsVerification` is either `DEFAULT`, which verifies the certificate against the default trust store, or `TRUSTFUL`, which skips certificate and hostname verification. Use a `tcps://` URL to enable TLS for `OVH_TCP` and `SYSLOG_TCP` recipients: a `tcp://` URL stays unencrypted, and the API refuses `TRUSTFUL` on it. `rfc5424StructuredDataParameters` holds RFC 5424 structured data, such as `X-OVH-TOKEN="…"`.
+
+The API probes the recipient before it saves the drain: an unreachable recipient fails the creation with a `412` status. Add `?skipCheck=true` to the request to create the drain without this probe.
+
+The other endpoints act on existing drains, under the same `/v4/drains/organisations/{ownerId}` prefix:
+
+| Method   | Path                                                    | Action                                            |
+| :------- | :------------------------------------------------------ | :------------------------------------------------ |
+| `DELETE` | `/resources/{resourceId}/drains/{drainId}`              | Remove a drain                                    |
+| `GET`    | `/drains`                                               | List the drains of every resource of the owner    |
+| `GET`    | `/resources/{resourceId}/drains`                        | List the drains of a resource                     |
+| `GET`    | `/resources/{resourceId}/drains/{drainId}`              | Get a drain                                       |
+| `GET`    | `/resources/{resourceId}/drains/{drainId}/test-command` | Get a shell command to test the recipient         |
+| `PATCH`  | `/resources/{resourceId}/drains/{drainId}/reset-cursor` | Restart log forwarding from the latest position   |
+| `POST`   | `/resources/{resourceId}/drains/{drainId}/check`        | Probe the recipient and return diagnostic results |
+| `PUT`    | `/resources/{resourceId}/drains/{drainId}/disable`      | Disable a drain                                   |
+| `PUT`    | `/resources/{resourceId}/drains/{drainId}/enable`       | Enable a drain                                    |
+
+Both list endpoints accept the optional `status`, `executionStatus` and `executionStatusNotIn` query parameters to filter the results. The check result uses a `200` status even when the probe fails: read its `ok` field, then its `code` and `message` fields to diagnose a failure. A `SYSLOG_UDP` recipient sends no acknowledgement, so its check returns `ok` with the `skipped` code.
+
 ## Community software
 
 {{< callout type="info">}}

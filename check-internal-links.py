@@ -84,7 +84,7 @@ from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 # Paths served under the baseURL prefix by something other than this build.
 DEFAULT_EXTERNAL = ("/developers/clever-components",)
 # Pages whose anchors are generated client-side, absent from static HTML.
-DEFAULT_SKIP_ANCHORS = ("api/v2",)
+DEFAULT_SKIP_ANCHORS = ("api/swagger",)
 DEFAULT_SOURCES = ("content", "shared")
 DEFAULT_CONFIGS = ("hugo.yaml",)
 

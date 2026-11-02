@@ -23,7 +23,7 @@ External services that filter their clients' source IPs need the ranges your app
 
 ## PAR region (Paris)
 
-The PAR region is owned and handled by Clever Cloud. We own or entrust the associated AS's and IP addresses ranges. The current outbound IP ranges are exposed by the public [Products zones API](/developers/api/v4/#products-zones). To list them for the Paris region:
+The PAR region is owned and handled by Clever Cloud. We own or entrust the associated AS's and IP addresses ranges. The current outbound IP ranges are exposed by the public [Products zones API](/api/swagger/#/Zones/listRegions). To list them for the Paris region:
 
 ```bash
 curl -sS https://api.clever-cloud.com/v4/products/zones/par | jq -r '.outboundIPs[]'

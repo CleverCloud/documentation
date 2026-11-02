@@ -39,7 +39,7 @@ To select the primary domain name:
 
 - Click the star icon next to the domain name in the **Domain names** section of your application in the Console
 - Use the `clever domain favourite set example.com` command in [Clever Tools](/doc/manage/cli/applications/configuration/#domain)
-- Use the dedicated `/vhosts/favourite` endpoint [in the API](/api/v2/#put-/organisations/-id-/applications/-appId-/vhosts/favourite)
+- Use the dedicated `/vhosts/favourite` endpoint [in the API](/api/swagger/#/Applications/updateOrganisationApplicationFavouriteVirtualHost)
 
 ## Testing with `cleverapps.io` Domain
 

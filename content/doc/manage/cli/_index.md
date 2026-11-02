@@ -32,7 +32,7 @@ aliases:
 - /getting-started/cli
 ---
 
-Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it to create and manage multiple services of the platform as applications, databases or storage add-ons. It also provides easy authenticated access to Clever Cloud public APIv2 and APIv4 through the [`clever curl` command](#curl). It's an [easy to set up](install) multiplatform and open source tool, based on Node.js.
+Clever Tools is the command line interface (CLI) of Clever Cloud. You can use it to create and manage multiple services of the platform as applications, databases or storage add-ons. It also provides easy authenticated access to the Clever Cloud public API through the [`clever curl` command](#curl). It's an [easy to set up](install) multiplatform and open source tool, based on Node.js.
 
 You can contribute to it through [issue](https://github.com/CleverCloud/clever-tools/issues) or [pull requests](https://github.com/CleverCloud/clever-tools/pulls). Ask for new features, enhancements or help us to provide them to our community.
 
@@ -327,8 +327,8 @@ clever ssh-keys remove-all --yes
 
 To use our public API, you need to be authenticated for most endpoints. If you're logged in through Clever Tools, there is a simple way to make any request you want: `clever curl`. It's `curl`, but in an authenticated context for Clever Cloud API.
 
-- [Clever Cloud public APIv2 documentation](/api/v2/)
-- [Clever Cloud public APIv4 documentation](/api/v4/)
+- [How to use the Clever Cloud API](/api/)
+- [Clever Cloud API Reference](/api/swagger/)
 
 ## tokens
 

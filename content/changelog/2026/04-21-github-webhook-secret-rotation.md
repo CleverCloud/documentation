@@ -27,4 +27,4 @@ clever curl -X POST https://api.clever-cloud.com/v2/organisations/{orgId}/applic
 
 The response confirms the rotation. Any existing GitHub push event already in flight keeps working with the previous secret until GitHub picks up the new configuration; subsequent deliveries use the rotated secret automatically.
 
-Refer to the [v2 API reference](/api/v2) for the full request and response schema.
+Refer to the [v2 API reference](/api/swagger/#/Applications/rotate_org_application_github_webhook_secret) for the full request and response schema.

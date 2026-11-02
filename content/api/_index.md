@@ -32,9 +32,11 @@ aliases:
 
 The [Clever Cloud Console](https://console.clever-cloud.com) and [Clever Tools](https://github.com/CleverCloud/clever-tools) allow you to manage your account and products with the same public API you can use for your own services and integrations. This article will explain how to connect to this API and use it.
 
+The [API Reference](/api/swagger/) lists the endpoints with their parameters, request bodies, and response schemas. It's generated from the [OpenAPI specification](https://api.clever-cloud.com/openapi.json) of the API, which you can also use to generate a client or import the endpoints into your own tools.
+
 {{< cards >}}
-  {{< card link="/developers/api/v2/" title="Base v2 Endpoints" subtitle="Our base API endpoints with users, organisations, applications, add-ons, etc." icon="endpoints" >}}
-  {{< card link="/developers/api/v4/" title="New v4 Endpoints" subtitle="More recent API endpoints with billing, deployments, load balancers, logs, etc." icon="new" >}}
+  {{< card link="/developers/api/swagger/" title="Swagger" subtitle="Browse and try the API endpoints" icon="endpoints" >}}
+  {{< card link="https://api.clever-cloud.com/openapi.json" title="JSON Reference" subtitle="Download the OpenAPI specification" icon="code-bracket" >}}
 {{< /cards >}}
 
 ## Request the API
@@ -46,6 +48,8 @@ Clever Cloud's REST API offers two authentication mechanisms to meet different i
 - **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
 
 Choose the authentication method that best aligns with your specific integration requirements and security considerations.
+
+Each response carries a `Sozu-Id` header. If you contact the support team about a request, include its value to help them trace it.
 
 ### API tokens
 
@@ -81,8 +85,15 @@ curl https://api-bridge.clever-cloud.com/v2/self -H "Authorization: Bearer [API_
 clever curl https://api.clever-cloud.com/v2/self
 clever curl https://api.clever-cloud.com/v2/summary
 clever curl https://api.clever-cloud.com/v4/products/zones
-clever curl https://api.clever-cloud.com/v2/organisations/<ORGANISATION_ID>/applications | jq '.[].id'
-clever curl https://api.clever-cloud.com/v4/billing/organisations/<ORGANISATION_ID>/<INVOICE_NUMBER>.pdf > invoice.pdf
+```
+
+To target an organisation or an invoice, set their identifiers first:
+
+```bash
+ORGANISATION_ID="orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+INVOICE_NUMBER="your-invoice-number"
+clever curl "https://api.clever-cloud.com/v2/organisations/${ORGANISATION_ID}/applications" | jq '.[].id'
+clever curl "https://api.clever-cloud.com/v4/billing/organisations/${ORGANISATION_ID}/invoices/${INVOICE_NUMBER}.pdf" > invoice.pdf
 ```
 
 ### Official clients/SDKs

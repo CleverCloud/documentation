@@ -21,7 +21,10 @@
 ## {{ .Title }}
 {{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
-{{- if not (strings.Contains .RelPermalink "/api/v2") }}
+{{- if eq .Type "openapi" }}
+{{- /* Swagger UI pages have no Markdown body: point to the OpenAPI specification instead */}}
+- [{{ .Title }}]({{ .Params.swagger.url }}){{ with .Description }}: {{ . }}{{ end }}
+{{- else }}
 - [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}

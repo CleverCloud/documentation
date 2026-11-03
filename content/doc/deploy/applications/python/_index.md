@@ -96,7 +96,7 @@ Execution of a single `setup.py` goal is supported. Usually, this would be to ex
 
 The goal will be launched after the dependencies from `requirements.txt` have been installed.
 
-To execute a goal, define the environment variable `PYTHON_SETUP_PY_GOAL="<your goal>"`.
+To execute a goal, define the environment variable `CC_PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
 - [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
 

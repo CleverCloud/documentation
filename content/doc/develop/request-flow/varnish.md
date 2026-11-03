@@ -28,7 +28,7 @@ aliases:
 
 ## Overview
 
-[Varnish](https://www.varnish-cache.org/) is an HTTP proxy-cache that sits as a reverse proxy between your application and the client. It caches responses according to rules you define, reducing load on your application. Clever Cloud provides **Varnish {{< runtime_version varnish >}} and varnish-modules {{< runtime_version varnish-modules >}}**.
+[Varnish](https://www.varnish.org/) is an HTTP proxy-cache that sits as a reverse proxy between your application and the client. It caches responses according to rules you define, reducing load on your application. Clever Cloud provides **Varnish {{< runtime_version varnish >}} and varnish-modules {{< runtime_version varnish-modules >}}**.
 
 > [!NOTE] Supported runtimes
 > Varnish is available on all runtimes that support [Request Flow](/doc/develop/request-flow/).
@@ -37,7 +37,7 @@ aliases:
 
 Create a `varnish.vcl` file in the `clevercloud/` folder at the root of your application. You can also set the `CC_VARNISH_FILE` environment variable to a custom path within your application root, written as an absolute path starting at `/` (for example `CC_VARNISH_FILE=/config/varnish.vcl`). If the file does not exist, deployment fails.
 
-This file describes how Varnish caches your application's responses and when it returns a cached resource. To learn how to write your `varnish.vcl` file, refer to the [Varnish documentation](https://varnish-cache.org/docs/8.0/index.html).
+This file describes how Varnish caches your application's responses and when it returns a cached resource. To learn how to write your `varnish.vcl` file, refer to the [Varnish documentation](https://www.varnish.org/docs/).
 
 The `vcl 4.1;` declaration and backend section are not necessary as they are already handled by Clever Cloud. If your `varnish.vcl` file is stored on an FS Bucket, redeploy the application for changes to take effect.
 
@@ -57,8 +57,9 @@ CC_VARNISH_STORAGE_SIZE=2G
 
 If you have a configuration for an older version of Varnish, read:
 
-- [Upgrading to Varnish 7.0](https://varnish-cache.org/docs/7.0/whats-new/upgrading-7.0.html) guide
-- [Upgrading to Varnish 8.0](https://varnish-cache.org/docs/8.0/whats-new/upgrading-8.0.html) guide
+- [Upgrading to Varnish 7.0](https://www.varnish.org/docs/whats-new/upgrading-7.0/) guide
+- [Upgrading to Varnish 8.0](https://www.varnish.org/docs/whats-new/upgrading-8.0/) guide
+- [Upgrading to Varnish 9.0](https://www.varnish.org/docs/whats-new/upgrading-9.0/) guide
 
 ## Example files
 

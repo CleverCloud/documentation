@@ -84,14 +84,14 @@ sws:
     - "2.44.1"
 
 varnish:
-  eol_source: https://varnish-cache.org/releases/
+  eol_source: https://www.varnish.org/releases/
   default:
-    - "8.0"
+    - "9.0.3"
 
 varnish-modules:
   eol_source: https://github.com/varnish/varnish-modules/releases
   default:
-    - "0.27"
+    - "0.28.0"
 
 v:
   eol_source: https://github.com/vlang/v/releases

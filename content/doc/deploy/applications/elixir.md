@@ -47,7 +47,7 @@ Get your Elixir version in your console with `$ elixir -v` and set the environme
 - Edit the file `config/prod.secret.exs` to replace `System.get_env("DATABASE_URL")` with `System.get_env("POSTGRESQL_ADDON_URI")`.
 - Generate a secret token with `$ mix phx.gen.secret`.
 - set environment variable **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
-- set environment variable **CC_PHOENIX_RUN_ECTO_MIGRATE** to `true` if you need to trigger the command `$ mix ecto.migrate`
+- Clever Cloud runs `$ mix ecto.migrate` before starting your application: set environment variable **CC_PHOENIX_RUN_ECTO_MIGRATE** to `false` to skip it
 
 ## Build, deployment phases and custom configuration
 

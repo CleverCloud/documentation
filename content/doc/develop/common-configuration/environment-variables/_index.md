@@ -87,7 +87,7 @@ We use environment variables for some settings:
 - `CC_DISABLE_BUILD_CACHE_UPLOAD`: allows you to ask that the cache archive is neither
   created nor uploaded after the build process. Thus, restarts won't be speeded up,
   as the build process will be launched each time.
-- `IGNORE_FROM_BUILDCACHE`: allows you to specify paths to ignore when the build
+- `CC_IGNORE_FROM_BUILDCACHE`: allows you to specify paths to ignore when the build
   cache archive is created. Must be relative to your application root.
   (e.g. `foo/bar:foo/baz` where `bar` or `baz` can be either a directory or a file)
 

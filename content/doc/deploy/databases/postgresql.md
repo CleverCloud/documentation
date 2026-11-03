@@ -44,9 +44,8 @@ It's not installed by default on a PostgreSQL add-on, if you need it, you can co
 
 Some applications require a non-empty database to run properly. If you want to import your **SQL** dump, you can use several methods:
 
-1. [WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/)
-2. Command line tool for PostgreSQL administration like `psql`
-3. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
+1. Command line tool for PostgreSQL administration like `psql`
+2. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
 {{% content "db-migration" %}}
 

@@ -66,6 +66,7 @@ IPSec
 jarName
 JBoss
 JSDoc
+jq
 Kestra
 Keycloak
 kubectl

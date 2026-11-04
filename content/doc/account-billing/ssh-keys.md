@@ -23,12 +23,8 @@ aliases:
 You need to add a SSH key to your Clever Cloud's account to deploy via Git.
 SSH keys are used to establish a secure connection between your computer and Clever Cloud. A user can have multiple SSH keys.
 
-{{< callout type="warning">}}
-
-  Accounts cannot share the same SSH key. A SSH key is used to identify the actions made by a user and must be
-  associated with only one account. **If a key is used by more than one account, a warning will be displayed in the console**.
-
-{{< /callout >}}
+> [!NOTE] One account per key
+> Clever Cloud identifies your account from your SSH key when you deploy with Git or connect to an instance. A key can then belong to only one account. If several accounts use the same key, the Console displays a warning.
 
 ## How to add your SSH key on Clever Cloud?
 
@@ -88,9 +84,8 @@ brew install openssh
 ssh-keygen -t ecdsa-sk -C "your_email@youremail.com"
 ```
 
-{{< callout type="info" >}}
-  You can use options related to security devices adding them with the `-O` argument (for example `-O resident`). They're detailed in [ssh-keygen's man page](https://man.openbsd.org/ssh-keygen#FIDO_AUTHENTICATOR).
-{{< /callout >}}
+> [!TIP] Security device options
+> Add options for your security device with `-O`, such as `-O resident`. The [ssh-keygen manual](https://man.openbsd.org/ssh-keygen#FIDO_AUTHENTICATOR) lists them.
 
 ## Checking of existing SSH keys
 
@@ -133,31 +128,21 @@ To declare your **public SSH Key** on Clever Cloud, in the [Console](https://con
 
 Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_[ed25519/rsa].pub** file including the `id_ed25519/ssh-rsa` part and your email.
 
-{{< callout type="warning">}}
-Your public SSH key must be associated with only one account.
-{{< /callout >}}
+If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/doc/getting-started/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Check that your SSH key is present and valid in your profile.
 
-If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/doc/getting-started/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Please check that you SSH key is present and valid in your profile.
+### From Clever Tools {#through-cc-api-or-clever-curl}
 
-### Through CC API or Clever cURL
-
-You can also add a **public SSH key** from the command line with a simple cURL request to [our API](/api). The simpler way to do that is to use our CLI, [Clever Tools](https://github.com/CleverCloud/clever-tools), and its `clever curl` command once logged in:
+With [Clever Tools](/doc/manage/cli/) installed and authenticated, add your public key to your account:
 
 ```bash
-clever curl -X PUT -H "Content-Type: application/json" --data "\"$(cat ~/.ssh/yourkey.pub)\"" https://api.clever-cloud.com/v2/self/keys/newkeyname
+clever ssh-keys add workstation ~/.ssh/id_ed25519.pub
 ```
+
+Use the `.pub` file. The command registers its contents under the name `workstation`. Run `clever ssh-keys` to list the keys registered to your account.
 
 ## Use a private SSH key in an application
 
-If you want to clone a repository from a private repository, you can add a [private SSH key](/doc/develop/common-configuration#private-ssh-key) to an application by creating a folder clevercloud at the root of your application and creating the file `clevercloud/ssh.json` with the following content:
-
-```json {filename="clevercloud/ssh.json"}
-{
-    "privateKeyFile": "path/to/file"
-}
-```
-
-Of course you need to provide a valid path to a file that contains a valid key and that you will push on the Clever Cloud git remote.
+To let an application fetch private dependencies over SSH, configure its [private SSH key](/doc/develop/common-configuration/#private-ssh-key). This key authenticates outgoing connections from the application; it doesn't grant access to your Clever Cloud account.
 
 ## Check your SSH configuration
 
@@ -185,16 +170,20 @@ To fix this you will need to configure your SSH agent.
 
 ## Configure your SSH agent
 
-You can add those lines into your `~/.ssh/config` file. It tells your SSH agent which key to pick for a given hostname. Update your Clever Cloud SSH key path accordingly.
+Add these entries to `~/.ssh/config` to select a key for Git deployments and for [SSH access to instances](/doc/develop/ssh-access/). Replace the identity file path with the private key that matches a public key registered to your account:
 
-```bash {filename= "~/.ssh/config"}
+```sshconfig {filename="~/.ssh/config"}
 Host push-*.services.clever-cloud.com
   User git
   IdentityFile ~/.ssh/id_ed25519_clevercloud
   IdentitiesOnly yes
+
+Host sshgateway-clevercloud-customers.services.clever-cloud.com
+  User ssh
+  IdentityFile ~/.ssh/id_ed25519_clevercloud
+  IdentitiesOnly yes
 ```
 
-{{< callout type="info" >}}
-Need help about SSH keys?
-Contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) or you can read more about SSH Keys [on the official Git Documentation ↗](https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
-{{< /callout >}}
+These entries configure the SSH client. They select the identities offered for each host; they don't add a key to your SSH agent.
+
+To learn more about SSH keys, read the [Git documentation](https://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key). For help with your account, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).

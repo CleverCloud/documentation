@@ -21,6 +21,7 @@ charset
 ciphertext
 Clever Cloud
 CLI
+commitlint
 Coraza
 CRDs
 cron

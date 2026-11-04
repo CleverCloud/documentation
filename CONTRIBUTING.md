@@ -132,7 +132,7 @@ The [README](./README.md#configure-front-matter) lists the front matter fields t
 
 ### ✅ Validation
 
-Run the [checks described in the README](./README.md#validate-changes) before submitting a change: a `hugo` build without errors, `markdownlint-cli2`, and `vale` on the files you change.
+Run the [checks described in the README](./README.md#validate-changes) before submitting a change: a `hugo` build without errors, `markdownlint-cli2`, and `vale` on the files you change. Then check the commits of your branch with `commitlint`.
 
 Fix every markdownlint issue, and every Vale error and warning on the lines you change, then review each Vale suggestion. A passive that describes a state or a word quoted as an example can stay. Vale doesn't check everything: review structure, list order, and the accuracy of commands yourself. It doesn't lint the GitHub issue forms in `.github/ISSUE_TEMPLATE/` either, so review their text too.
 
@@ -195,9 +195,11 @@ ai-llms: document driving Clever Cloud from an AI agent
 docs(contributing): document the commit conventions
 ```
 
-A page stored directly under `content/doc/` is its own section. Reserve `docs(scope)` for README, CONTRIBUTING, and AGENTS.md, which document the repository itself. Don't use `doc` as a type or a section: in a documentation repository it describes every commit and distinguishes none.
+A page stored directly under `content/doc/` is its own section. Reserve `docs(scope)` for README, CONTRIBUTING, and AGENTS.md, which document the repository itself. Don't use `doc` as a type, a section, or a scope: in a documentation repository it describes every commit and distinguishes none.
 
 Keep content and structural changes in separate commits when possible so each commit can follow the appropriate convention.
+
+Keep the subject line, prefix included, to 100 characters at most. Put any further detail in the commit body.
 
 ### 🥸 When reviewing a PR
 

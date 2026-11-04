@@ -2,4 +2,6 @@
 go = "1.27"
 hugo-extended = "0.167"
 markdownlint-cli2 = "latest"
+node = "lts"
+"npm:@commitlint/cli" = "latest"
 vale = "latest"

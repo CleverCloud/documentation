@@ -42,7 +42,7 @@ Install the following tools before building the site:
 - [Git](https://git-scm.com/downloads)
 - [Mise](https://mise.jdx.dev/getting-started.html)
 
-Mise installs the Go, Hugo Extended, markdownlint-cli2 and Vale versions declared in [`mise.toml`](./mise.toml).
+Mise installs the commitlint, Go, Hugo Extended, markdownlint-cli2, Node.js and Vale versions declared in [`mise.toml`](./mise.toml).
 
 ### Preview the site
 
@@ -215,3 +215,11 @@ vale README.md AGENTS.md CONTRIBUTING.md archetypes content shared
 ```
 
 The pull request workflow reports Vale alerts on changed lines without failing, so a green check doesn't prove that a change has none. [CONTRIBUTING.md](./CONTRIBUTING.md#-validation) lists which alerts to fix and what to review by hand.
+
+Commit subjects follow the [commit conventions](./CONTRIBUTING.md#commit-messages). [commitlint](https://commitlint.js.org/) checks them with the rules in [`commitlint.config.mjs`](./commitlint.config.mjs). Run the version installed by Mise on the commits of your branch before you push:
+
+```bash
+commitlint --from origin/main
+```
+
+Every pull request runs commitlint on its commits once markdownlint passes, and fails if a subject breaks a rule.

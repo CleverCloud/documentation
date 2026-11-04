@@ -73,8 +73,8 @@ Use the archetypes in [`archetypes/`](./archetypes/) to create new content. Thes
 
 ```bash
 hugo new content --kind guides guides/my-framework.md
-hugo new content doc/administrate/my-feature.md
-hugo new content --kind applications doc/applications/my-runtime.md
+hugo new content doc/develop/my-feature.md
+hugo new content --kind applications doc/deploy/applications/my-runtime.md
 ```
 
 Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
@@ -172,8 +172,12 @@ The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdo
 markdownlint-cli2 "**/*.md"
 ```
 
-Editorial checks use [Vale](https://vale.sh/). The pull request workflow checks changed lines, and Mise can run the same styles locally:
+Editorial checks use [Vale](https://vale.sh/) with the project's own `Clever` style, in [`.github/styles/Clever/`](./.github/styles/Clever/), which implements the rules of [CONTRIBUTING.md](./CONTRIBUTING.md) and [AGENTS.md](./AGENTS.md).
+
+Mise can run the same styles locally, on the files you change or on the whole repository:
 
 ```bash
-vale README.md content shared
+vale README.md AGENTS.md CONTRIBUTING.md archetypes content shared
 ```
+
+Before you consider a change ready, fix every Vale error and warning on the lines you change, and review each suggestion. A passive that describes a state or a word quoted as an example can stay. The pull request workflow reports alerts on changed lines without failing, so a green check doesn't prove that a change has none.

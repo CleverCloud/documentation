@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file provides repository-wide guidance to coding agents working on Clever Cloud documentation. Task-specific deployment-guide workflows live in `.agents/skills/`.
+This file provides repository-wide guidance to coding agents working on Clever Cloud documentation.
 
 ## Common Development Commands
 
@@ -15,8 +15,8 @@ This file provides repository-wide guidance to coding agents working on Clever C
 ### Content Generation
 
 - **New guide**: `hugo new content guides/<framework>.md`
-- **New documentation**: `hugo new content/doc/administrate/<feature>.md`
-- **New application runtime**: `hugo new content --kind applications doc/applications/<runtime>.md`
+- **New documentation**: `hugo new content doc/develop/<feature>.md`
+- **New application runtime**: `hugo new content --kind applications doc/deploy/applications/<runtime>.md`
 
 ## Project Architecture
 
@@ -35,7 +35,7 @@ This is a Hugo-based documentation site using the Hextra theme with the followin
   - `runtime_versions.yml` - Supported runtime versions and EOL status
   - `tooltips.toml` - Tooltip definitions that auto-display on hover
   - `icons.yaml`, `software_versions_shared_dedicated.yml` - Additional data
-- **`/static/`** - Static assets (images, fonts, favicon, etc.)
+- **`/static/`** - Static assets, such as images, fonts, and the favicon
 - **`/layouts/`** - Hugo templates and shortcodes for content rendering
 
 ### Content Types and Front Matter
@@ -45,7 +45,7 @@ Content uses Hugo front matter with fields such as:
 - `type: docs` - Content layout type
 - `weight` - Sidebar ordering (integer)
 - `linkTitle` - Short title for sidebar navigation
-- `description` - SEO meta description
+- `description` - Search engine optimization (SEO) meta description
 - `keywords` - Array of SEO keywords
 - `aliases` - Redirect paths for pages that previously existed at another URL; don't add aliases to a new page
 - `draft: true` - Prevents publishing; remove this field when the page is ready instead of keeping `draft: false`
@@ -70,48 +70,58 @@ When a page moves to another URL, or when its content is merged into another pag
 
 - Include shared content: `{{% content "filename" %}}`
 - Include shared content with shortcodes: `{{% content-raw "filename" %}}`
-- Shared files should not contain headings (breaks ToC generation)
+- Shared files shouldn't contain headings, which break the table of contents
 
 ## Quality Standards
 
 ### Content Quality Requirements
 
 - Use second person ("you") addressing readers directly
-- Prefer active voice when it tells who acts (you, Clever Cloud, the CLI); keep a passive to describe a state, such as `is enabled`, or when the actor doesn't matter
-- Use `organisation` and `organisations`, rather than `organization` and `organizations`; this isn't a general British-spelling requirement
-- Spell out an acronym at its first use on a page, followed by the acronym in parentheses, such as `multi-factor authentication (MFA)`, then use the acronym alone; skip this for acronyms most readers already know, such as API, CLI, DNS or HTTP
-- Keep sentences under 25 words when possible
+- Prefer active voice when it tells who acts: you, Clever Cloud, the CLI. Keep a passive to describe a state, such as `is enabled`, or when the actor doesn't matter
+- Use `organisation` and `organisations`, rather than `organization` and `organizations`; this isn't a general British-spelling requirement: use US spelling everywhere else, such as `behavior` and `license`
+- Spell out an acronym at its first use on a page, followed by the acronym in parentheses, such as `multi-factor authentication (MFA)`, then use the acronym alone. Skip this for acronyms most readers already know, such as API, CLI, DNS, or HTTP
+- Use the serial comma before the last item of a list, such as `Go, Node.js, and Python`
+- Write dates as `November 12, 2026`, and spell out ordinals in text, such as `first` instead of `1st`; ISO dates such as `2026-11-12` remain fine in logs, timelines, and front matter
+- Don't put spaces around an em dash or an en dash, such as `the default—Node.js 24—applies`
+- Use the present tense to describe how the platform behaves, such as `the build cache applies` instead of `will apply`, `won't apply`, or `is going to apply`; changelogs and postmortems can use `will` to announce a change
+- Prefer contractions, such as `don't` and `isn't`
+- Write `for example`, `that is`, `and so on`, `see`, `namely`, `note`, and `versus` instead of `e.g.`, `i.e.`, `etc.`, `cf.`, `viz.`, `N.B.`, and `vs.`, and don't use exclamation points
+- Write `click`, `to`, `if`, `because`, `can`, `use`, `before`, and `Kubernetes` instead of `click on`, `in order to`, `in the event that`, `due to the fact that`, `is able to`, `leverage` or `utilize`, `prior to`, and `k8s`. Write `lets you deploy`, not `allows to deploy`, and use `set up`, `log in`, and `back up` as verbs, `setup`, `login`, and `backup` as nouns
+- Don't hyphenate an adverb ending in `-ly`, such as `highly available`. Hyphenate a compound adjective before a noun, such as `long-term support` or `open-source project`; leave `up to date`, `open source`, `end of life`, and `step by step` open when they end the clause after a verb, such as `the image is up to date`
+- Use the ellipsis character `…`, and one space between sentences
+- Keep it short: keep a sentence under 25 words when possible; Vale suggests splitting longer ones
 - Provide concrete examples with real commands and configurations
-- Explain prerequisites and non-obvious behaviour, while keeping the main task path concise
+- Explain prerequisites and non-obvious behavior, while keeping the main task path concise
 
 ### Prohibited Elements
 
-- First-person pronouns: I, me, my, we, us, our, let's
-- Placeholder phrases: `please note`, `at this time`, `it should be noted`
-- Overconfident claims: `simply`, `just`, `easily`, `quickly`, `obviously`
-- Time-dependent promises: `soon`, `in the future`, `coming next month`; this doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
+- First-person pronouns: I, me, my, we, us, our, let's; changelog entries are the only exception and can use `we`, `us`, and `our` to speak for Clever Cloud, never `I`, `me`, or `my`
+- Placeholder phrases: `please`, `note that`, `at this time`, `it should be noted`, `keep in mind`, `be aware that`, `feel free to`, `don't hesitate to`, `as mentioned`, `it's important to note`, `it's worth noting`, `basically`, `actually`
+- Overconfident claims: `simply`, `just`, `easy`, `easily`, `quickly`, `obviously`, `of course`, `as simple as`, `it's that simple`, `straightforward`, `seamless`, `effortless`, `trivial`, `with ease`
+- Time-dependent promises: `soon`, `currently`, `for now`, `not yet`, `today`, `recently`, `upcoming`, `in the future`, `coming next month`; this doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
 
 ### Markdown and Editorial Standards
 
-- **Markdown linting**: Run `markdownlint-cli2 "**/*.md"` with config in `.markdownlint.jsonc`
-- **Editorial checks**: Run Vale with `vale <files>` for style and terminology
+- **Markdown linting**: Run `markdownlint-cli2 "**/*.md"` with the configuration in `.markdownlint.jsonc`
+- **Editorial checks**: Run Vale with `vale <files>` for style and terminology. Before considering the work done, fix every error and warning on the lines you change and review each suggestion. A passive that describes a state or a word quoted as an example can stay. Vale doesn't check structure, list order, command accuracy, or the GitHub issue forms in `.github/ISSUE_TEMPLATE/`: review them yourself
+- **Terminology**: Write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. `.github/styles/config/vocabularies/Doc/reject.txt` lists the rejected forms, matched case-sensitively. `accept.txt` lists the product names and terms that the spell check accepts; it ignores their case, so check capitalization yourself
 - **Build verification**: Always test with `hugo` before committing
 - **Structure**: Use 2-4 well-developed paragraphs per section, minimize bullet lists
-- **Paragraphs**: Aim for 3-6 lines for optimal readability
+- **Paragraphs**: Keep a paragraph to four or five lines, about 80 words, unless the content strictly needs more; Vale suggests splitting paragraphs over 100 words
 
 ### Callouts
 
 - Prefer GitHub-style callouts with a concise title on the marker line, as supported by the theme:
 
   ```markdown
-  > [!NOTE] Current behaviour
-  > This information helps readers understand the current behaviour
+  > [!NOTE] Current behavior
+  > This information helps readers understand the current behavior
 
   > [!WARNING] Back up your data
   > Back up your application database before upgrading
   ```
 
-- Use the Hugo `{{< callout >}}` shortcode only when GitHub-style syntax can't provide the required rendering or behaviour
+- Use the Hugo `{{< callout >}}` shortcode only when GitHub-style syntax can't provide the required rendering or behavior
 - Limit callouts to one or two per page
 
 ### Commit Messages
@@ -137,7 +147,7 @@ When a page moves to another URL, or when its content is merged into another pag
   - `fix(aliases): redirect legacy URLs still hit with 404s`
   - `fix(links): point internal links at their new destination`
   - `ai-llms: document driving Clever Cloud from an AI agent` for a page stored directly under `content/doc/`, which is its own section
-- Reserve `docs(scope)` for README, CONTRIBUTING and AGENTS.md; never use `doc` as a type or a section
+- Reserve `docs(scope)` for README, CONTRIBUTING, and AGENTS.md; never use `doc` as a type or a section
 - Split content and structural changes into separate commits when possible
 - Start the subject with a lowercase imperative verb, except for changelog entries
 
@@ -146,11 +156,11 @@ When a page moves to another URL, or when its content is merged into another pag
 - Always provide complete, runnable code examples
 - Keep commands literally copyable: don't put shell-invalid placeholders or bracketed optional arguments in executable code blocks
 - Show optional flags in separate examples or explain where to add them
-- Use exact environment variable names: `CC_WEBROOT`, `CC_NODE_BUILD_TOOL`, etc.
+- Use exact environment variable names, such as `CC_WEBROOT` and `CC_NODE_BUILD_TOOL`
 - Include setup context and expected output when helpful
 - Use realistic names instead of `foo`, `bar`, `example`
 - Show complete command sequences in changelog entries
-- Add code comments only when they explain non-obvious behaviour
+- Add code comments only when they explain non-obvious behavior
 - Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items.
 - Don't hard-wrap prose with formatting-only line breaks that don't affect rendering; keep each paragraph on one logical line and rely on editor word wrap.
 - Sort lists and tables alphabetically unless a functional or chronological order is more useful
@@ -158,7 +168,7 @@ When a page moves to another URL, or when its content is merged into another pag
 ### Deployment Guides
 
 - Prefer one clear path that uses platform defaults and native features
-- Follow every documented command from a fresh project and test every behaviour the guide promises
+- Follow every documented command from a fresh project and test every behavior the guide promises
 - Verify the default build and run configuration before documenting any scaling override
 - Omit `-a` when the current directory is linked to only one application; use an application alias to disambiguate or link resources
 - Follow the option style used by recent guides, including short Clever Tools options where established
@@ -183,7 +193,7 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 
 ## Data Management
 
-Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special LLMS output format at `/llms.txt` for AI consumption.
+Runtime versions and software compatibility information is maintained in `/data/runtime_versions.yml` and should be kept current with platform capabilities. The site generates various output formats including standard HTML and a special output format for large language models at `/llms.txt` for AI consumption.
 
 ## Hugo Shortcodes and Features
 

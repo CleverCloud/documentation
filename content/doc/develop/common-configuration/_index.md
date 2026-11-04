@@ -23,37 +23,27 @@ these configuration items can be applied to any instance.
 
 ## Private SSH Key
 
-If your company manages its own artifacts in a private repository (like, you
-can only access them via git+ssh or sftp), and you need a private key to
-connect to the server, you can either set it in an environment variable or
-commit it in your application's Clever Cloud repository.
+To fetch private dependencies over SSH, provide a private key for your application.
+Clever Cloud installs it in `~/.ssh/` before the build. Register its public key
+with the service that hosts the dependencies. This key is separate from the
+[public keys on your Clever Cloud account](/doc/account-billing/ssh-keys/),
+which authenticate your Git deployments and access to instances.
 
-That key will be installed in `~/.ssh/` before the start of the build. So the
-dependency manager will use it to fetch libs only accessible by ssh.
+Use a key without a passphrase: the deployment can't unlock it interactively.
 
-{{< callout type="info" >}}
-  Please provide a key without pass phrase, or the system will be unable to unlock it
-{{< /callout >}}
+Set `CC_SSH_PRIVATE_KEY` to the complete private key, including its header,
+footer, and line breaks, in your application's environment variables. This
+keeps the key out of version control. With Clever Tools, write `--` before
+the key, otherwise Clever Tools reads its `-----BEGIN` line as an option:
 
-### Environment variable
-
-Set your key as the value of the `CC_SSH_PRIVATE_KEY` variable. If you want it
-to be saved to a specific file, you can set the `CC_SSH_PRIVATE_KEY_FILE`
-variable.
-
-### Committed file
-
-First, you need to add the file `clevercloud/ssh.json`, its content is pretty straight-forward:
-
-```json
-{
-    "privateKeyFile": "path/to/file"
-}
+```bash
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519_dependencies
+clever env set CC_SSH_PRIVATE_KEY -- "$(cat ~/.ssh/id_ed25519_dependencies)"
 ```
 
-The `privateKeyFile` field must be a path to an SSH private key. The path must be relative to the root of your repository.
-
-For example, if your private key file is in the `clevercloud` folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/my_key"`.
+Clever Cloud saves the key as `~/.ssh/id_ed25519` by default. To change its
+name, set `CC_SSH_PRIVATE_KEY_FILE` to a file name, such as `dependencies_key`.
+This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 
 ## Hooks
 

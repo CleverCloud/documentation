@@ -175,12 +175,22 @@ To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUIL
 
 ### Set Node.js version
 
-If you need a specific version or branch of Node.js, set `CC_NODE_VERSION`. You can use major, minor, patch version, such as `24`, `23.11` or `22.15.1` for example. If this environment variable isn't set and `engines.node` is not defined in `package.json`, the latest LTS version available on Clever Cloud is used.
+Each image includes a single Node.js version: the latest long-term support (LTS) release when Clever Cloud built the image. Your application uses it when it doesn't request another version.
 
 {{< runtimes_versions node >}}
 
-> [!NOTE]
-> For legacy reasons, the system prioritizes the `engines.node` value in `package.json` over the `CC_NODE_VERSION` environment variable when both are set. Any `.nvmrc` file is ignored and deleted during deployment.
+To request a version, set the `CC_NODE_VERSION` environment variable or the `engines.node` field in your `package.json`. Both accept a version or a [semantic versioning range](https://github.com/npm/node-semver#ranges), such as `24`, `22.23`, `22.23.4`, or `>=22`. A partial version is a range: `24` matches any 24.x release, `22.23` any 22.23.x release. Clever Cloud ignores and deletes any `.nvmrc` file during deployment.
+
+During the build phase, Clever Cloud resolves the requested version in this order:
+
+1. If the version included in the image matches the request, your application uses it
+2. Otherwise, Clever Cloud installs with `nvm` the latest Node.js release that matches the request
+3. If no release matches, the deployment fails
+
+For example, with Node.js 24.22.1 in the image, `24` and `>=22` both resolve to 24.22.1, while `22` installs the latest 22.x release. An open range such as `>=22` doesn't select the latest release: it keeps the included version as long as this version matches. The included version changes with image updates, from one patch release to the next and from one LTS branch to the next. Set a major version, such as `24`, to stay on the same branch across image updates. `engines.node` follows the same rules, so a broad compatibility range in `package.json` also selects the version.
+
+> [!NOTE] `CC_NODE_VERSION` takes precedence from December 1, 2026
+> When you set both, `engines.node` in `package.json` takes precedence over `CC_NODE_VERSION`, for legacy reasons. From December 1, 2026, `CC_NODE_VERSION` takes precedence, and `engines.node` only applies when this variable isn't set. If your application sets both to different values, align them or remove `CC_NODE_VERSION` to keep the version `engines.node` selects.
 
 ### Bun version
 

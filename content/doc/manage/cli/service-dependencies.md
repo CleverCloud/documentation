@@ -12,6 +12,7 @@ keywords:
 - configuration
 aliases:
 - /doc/cli/services-depedencies
+- /doc/manage/cli/services-depedencies
 ---
 
 On Clever Cloud, applications can expose configuration to share environment variables with other services within the same account/organisation. Add-ons expose their configuration by default. Thus, when they're linked to an application, they automatically share credentials or important variables needed to configure and use them. Following commands help you with that.

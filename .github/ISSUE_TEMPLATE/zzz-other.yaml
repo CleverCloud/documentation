@@ -5,9 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for requests that don't fit into our other categories.
+        Use this template for requests that don't fit into the other categories.
 
-        **Before using this template**, please check if your request fits better in:
+        **Before using this template**, check whether your request fits better in:
         - 📝 Content and guide suggestion (new content, framework guides)
         - ⚠️ Report a problem (errors, bugs, UX issues, clarifications)
 
@@ -17,17 +17,17 @@ body:
       label: "Prerequisites check"
       description: "Have you checked the appropriate resources?"
       options:
-        - label: I have checked that this request doesn't fit into other issue templates
+        - label: This request doesn't fit into the other issue templates
           required: true
-        - label: I have searched for existing [issues](https://github.com/CleverCloud/documentation/issues)
+        - label: Searched the existing [issues](https://github.com/CleverCloud/documentation/issues) for related requests
           required: true
 
   - type: textarea
     id: issue-description
     attributes:
       label: "Describe your request"
-      description: "Please provide a clear description of what you need"
-      placeholder: "I have a request for... / I would like to... / I noticed that..."
+      description: "Describe what you need"
+      placeholder: "A request for... / A missing... / A problem noticed in..."
     validations:
       required: true
 
@@ -35,5 +35,5 @@ body:
     id: context-details
     attributes:
       label: "Additional context"
-      description: "Any additional information that might help us understand your request"
+      description: "Any additional information that helps understand your request"
       placeholder: "Related pages, external links, specific examples, etc."

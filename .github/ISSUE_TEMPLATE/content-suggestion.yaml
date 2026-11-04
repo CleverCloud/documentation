@@ -6,8 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to suggest new content for our documentation!
-        Your feedback helps us improve and expand our documentation.
+        Thanks for taking the time to suggest new content for the Clever Cloud documentation.
+        Your feedback helps improve and expand it.
 
   - type: checkboxes
     id: prerequisites
@@ -15,9 +15,9 @@ body:
       label: "Prerequisites check"
       description: "Have you checked if this content already exists?"
       options:
-        - label: I have searched existing [documentation](https://www.clever.cloud/developers/) to verify this content doesn't already exist
+        - label: Searched the existing [documentation](https://www.clever.cloud/developers/) for related content
           required: true
-        - label: I have checked for existing [issues](https://github.com/CleverCloud/documentation/issues) for this request
+        - label: Searched the existing [issues](https://github.com/CleverCloud/documentation/issues) for related requests
           required: true
 
   - type: dropdown
@@ -38,7 +38,7 @@ body:
     attributes:
       label: "Content description"
       description: "Describe clearly what content should be added"
-      placeholder: "I would like documentation about... because it would help users to..."
+      placeholder: "Documentation about... would help users to..."
     validations:
       required: true
 

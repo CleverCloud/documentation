@@ -6,10 +6,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping us improve the quality of our documentation!
+        Thanks for helping improve the quality of the Clever Cloud documentation.
 
-        **For technical support**, please use [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) instead.
-        **For general questions**, consider our [Community Discussions](https://github.com/CleverCloud/Community/discussions) first.
+        **For technical support**, use [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice) instead.
+        **For general questions**, start with the [Community Discussions](https://github.com/CleverCloud/Community/discussions) first.
 
   - type: dropdown
     id: problem-type
@@ -41,7 +41,7 @@ body:
     attributes:
       label: "Problem description"
       description: "Describe clearly the problem you encountered"
-      placeholder: "When I try to... / It's difficult to... / The page doesn't... / The information says... but..."
+      placeholder: "Following the steps to... fails / It's difficult to... / The page doesn't... / The information says... but..."
     validations:
       required: true
 

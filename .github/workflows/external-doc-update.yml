@@ -39,7 +39,7 @@ jobs:
           CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         uses: JasonEtco/create-an-issue@v2
         with:
-          filename: .github/external-doc-issue.yml
+          filename: .github/external-doc-issue.md
           assignees: ${{ github.event.pull_request.user.login }}
           update_existing: true
           search_existing: all

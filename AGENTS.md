@@ -20,12 +20,12 @@ This file provides repository-wide guidance to coding agents working on Clever C
 
 ## Project Architecture
 
-### Content Organization
+### Content Structure
 
 This is a Hugo-based documentation site using the Hextra theme with the following structure:
 
 - **`/content/`** - All documentation content:
-  - `doc/` - Main technical documentation (applications, addons, CLI, administration)
+  - `doc/` - Main technical documentation (applications, add-ons, CLI, administration)
   - `guides/` - Framework-specific tutorials and step-by-step guides
   - `changelog/` - Platform updates and feature announcements
   - `api/` - API reference documentation
@@ -79,7 +79,7 @@ When a page moves to another URL, or when its content is merged into another pag
 - Use second person ("you") addressing readers directly
 - Write in active voice, avoid passive constructions
 - Use `organisation` and `organisations`, rather than `organization` and `organizations`; this isn't a general British-spelling requirement
-- Spell out an acronym at its first use on a page, followed by the acronym in parentheses, such as "multi-factor authentication (MFA)", then use the acronym alone; skip this for acronyms most readers already know, such as API, CLI, DNS or HTTP
+- Spell out an acronym at its first use on a page, followed by the acronym in parentheses, such as `multi-factor authentication (MFA)`, then use the acronym alone; skip this for acronyms most readers already know, such as API, CLI, DNS or HTTP
 - Keep sentences under 25 words when possible
 - Provide concrete examples with real commands and configurations
 - Explain prerequisites and non-obvious behaviour, while keeping the main task path concise
@@ -87,9 +87,9 @@ When a page moves to another URL, or when its content is merged into another pag
 ### Prohibited Elements
 
 - First-person pronouns: I, me, my, we, us, our, let's
-- Placeholder phrases: "please note", "at this time", "it should be noted"
-- Overconfident claims: "simply", "just", "easily", "quickly", "obviously"
-- Time-dependent promises: "soon", "in the future", "coming next month"; this doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
+- Placeholder phrases: `please note`, `at this time`, `it should be noted`
+- Overconfident claims: `simply`, `just`, `easily`, `quickly`, `obviously`
+- Time-dependent promises: `soon`, `in the future`, `coming next month`; this doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
 
 ### Markdown and Editorial Standards
 
@@ -148,7 +148,7 @@ When a page moves to another URL, or when its content is merged into another pag
 - Show optional flags in separate examples or explain where to add them
 - Use exact environment variable names: `CC_WEBROOT`, `CC_NODE_BUILD_TOOL`, etc.
 - Include setup context and expected output when helpful
-- Use realistic names instead of "foo", "bar", "example"
+- Use realistic names instead of `foo`, `bar`, `example`
 - Show complete command sequences in changelog entries
 - Add code comments only when they explain non-obvious behaviour
 - Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items.

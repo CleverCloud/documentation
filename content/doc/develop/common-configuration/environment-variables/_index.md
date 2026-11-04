@@ -74,11 +74,13 @@ They can be accessed as classic environment variables.
 
 This variable allows your application to differentiate each running node on the application level.
 
-It will contain a different number for each instance of your application.
+It will contain a different number for each instance of the same deployment.
 
 For example, if three instances are running, it will contain `0` for the first,
 `1` for the second and `2` for the third.
-It's handy if you want to only run crons on 1 instance (e.g. only on instance 0).
+Check it to run a [CRON job](/doc/develop/cron/) on the first instance only.
+During a deployment, the old and new instances both number from `0`, so a job
+can still run twice: see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
 
 ## Settings you can define using environment variables
 

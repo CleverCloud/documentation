@@ -60,15 +60,18 @@ Please, backup your recovery codes, we won't be able to restore access to your a
 
 ## Manage your account
 
-In the Clever Cloud Web Console, select **Profile** in the bottom left menu.
+In the Clever Cloud Web Console, open the profile menu at the top right of the header, then select **Profile**.
 
-You see several menu entries.
+Tabs give access to the pages of your account:
 
-- **Information**: on that page you can edit your name, address, phone number, profile picture, manage the link between your Clever Cloud and GitHub account and select the language of your Clever Cloud web console.
+- **Profile**: edit your name, address, phone number, and profile picture. You can also manage the link between your Clever Cloud and GitHub accounts, and select the language of the Console.
 - **Emails**: manage your linked email addresses.
+- **SSH Keys**: add or remove your SSH keys, manage your GitHub SSH keys if you have linked your GitHub account.
 - **Authentication**: Change your password, enable or turn off Two Factor Authentication.
-- **SSH keys**: add or remove your SSH keys, manage your GitHub SSH keys if you have linked your GitHub account.
-- **Oauth tokens**: See and revoke your access tokens
+- **API tokens**: create, edit, and revoke your API tokens.
+- **Console sessions**: see and revoke your active Console sessions.
+- **OAuth tokens**: See and revoke your access tokens
+- **Labs**: enable features in beta, such as Clever Kubernetes Engine, and pick a color theme for the Console.
 - **Delete my account**: Delete your Clever Cloud account
 
 ## Delete your account
@@ -76,8 +79,10 @@ You see several menu entries.
 To delete your account:
 
 1. Open the Clever Cloud Web Console.
-2. Select **Profile** in the bottom left menu.
-3. Select **Delete my account** in the top menu of the freshly opened page.
-4. Click the red **Send me a confirmation email** button.
+2. Open the profile menu at the top right of the header, then select **Profile**.
+3. Select the **Delete my account** tab.
+4. Click the **Confirm the account deletion request** button.
 
-You will get an email with a link you must click to confirm your account deletion.
+You get an email with a link you must click to confirm your account deletion.
+
+If you're the last admin of an organisation that has other members, appoint a new admin first. Until then, the Console lists these organisations and doesn't let you delete your account.

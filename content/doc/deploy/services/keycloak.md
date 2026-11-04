@@ -73,7 +73,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### From the Console
 
-1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking the **Create…** dropdown in the sidebar and then **an add-on**
+1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking **Create** in the sidebar, then **Add-on**
 2. Select the Keycloak add-on
 3. You can skip linking the add-on to an application, it won't be needed
 4. Enter a name for your Keycloak add-on and select the zone where you want it to be deployed

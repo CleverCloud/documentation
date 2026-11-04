@@ -33,7 +33,7 @@ Each organisation have its own identifier looking like `orga_xxxxxxxx-xxxx-xxxx-
 
 ## Add an organisation
 
-In order to add an organisation, just click on "Add an organisation" in the top left sidebar.
+To add an organisation, open the organisation switcher at the top of the sidebar, then select **Add new organisation**.
 
 ## Roles and privileges
 

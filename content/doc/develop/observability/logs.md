@@ -20,15 +20,17 @@ aliases:
 - /doc/observability/logs
 ---
 
-Clever Cloud new logs stack is based on Vector and Apache Pulsar. This Web Component allow you to check for live or past logs. You can target a specific time window, select logs lines and copy them in clipboard through keyboard and/or mouse. It's not available for add-ons yet.
+The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](/doc/develop/observability/access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
-There are two text filter modes: exact match (case-sensitive) and regular expression. Settings panel offers lots of parameters such as dark/light themes, line wrapping, ANSI codes escaping, etc. You can also choose the date/time format, UTC or local, to show the instances name or not.
+By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
+
+To see a filtered line in context, select it and click `Inspect`. The interface clears the filter, pauses the stream, and centers the view on this line among the logs around it. `Clear logs` empties the view, to focus on the lines that come next. When the connection to the logs stream drops, the interface shows its reconnection attempts.
+
+The settings panel lets you choose a color theme, wrap lines, and strip ANSI escape codes. You can also choose the date and time format, UTC or local time, and whether to show the instance names.
 
 ![New logs interface](/images/new-logs.webp)
 
-This interface is constantly improving, used for logs and access logs, send us your feedback through our GitHub Community:
-
-- [Give your feedback about new Logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
+- [Share your feedback on the logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
 {{< callout type="info">}}
 Logs are retained for 7 days, sometimes more for specific customers/needs.

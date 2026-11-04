@@ -28,22 +28,23 @@ To collaborate with others, manage team access, or handle separate billing for a
 
 ## Create an organisation
 
-In the Clever Cloud Web Console, select **Add an organisation** in the left menu.
+In the Clever Cloud Web Console, open the organisation switcher at the top of the sidebar, then select **Add new organisation**.
 
 Give it a name, description, specify if it's a company and add billing information.
 
 ## Administrate an organisation
 
-By clicking on you application name, a new left menu open.
+Select an organisation from the organisation switcher, at the top of the sidebar. Tabs give access to its pages, depending on your [role](/doc/security/iam-roles/#roles-and-privileges) and the services enabled for your organisation. Only the Admin and Accountant roles get the billing tabs: Payment methods, Invoices, and Coupons & credits.
 
 - **Overview**: Simple metrics about your applications within this organisation
 - **Information**: See and edit organisation's name, description, billing address and image. That also is where you can delete your organisation.
-- **Members**: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.
-- **Shared software**: It's a section displaying third party software, like [Heptapod](/doc/deploy/services/heptapod/)
-- **Payment methods**: Manage provisioning of your organisation, manage credit cards and add here potential discount codes or coupons.
+- **Payment methods**: Manage provisioning of your organisation and manage credit cards.
 - **Invoices**: See your recent invoices.
+- **Coupons & credits**: Activate a coupon and see your free credits.
+- **Members**: Manage team members. Team members must have a Clever Cloud account. On this page you can add and remove team members. You can also edit their roles to manage their permissions.
+- **Metrics in Grafana**: Open the Grafana dashboards of your organisation.
 - **Notifications**: Manage email notifications and web hooks for team members.
-- **Consumption**: See metrics about your organisation's consumptions.
+- **Shared software**: It's a section displaying third-party software, like [Heptapod](/doc/deploy/services/heptapod/)
 
 ## Delete an organisation
 

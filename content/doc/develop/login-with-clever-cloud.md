@@ -25,7 +25,7 @@ This page covers creating and managing consumers. The [API documentation](/api/#
 
 A consumer represents your application. Creating one gives you a **consumer key**, the public identifier your application sends, and a **consumer secret**, which signs its requests and never leaves your server.
 
-From the [Console](https://console.clever-cloud.com), open your organisation, click **Create…**, then **an OAuth consumer**, and fill the form.
+From the [Console](https://console.clever-cloud.com), open your organisation, click **Create** in the sidebar, then **OAuth Consumer**, and fill the form.
 
 From Clever Tools, the `oauth-consumers` command set covers the whole lifecycle:
 

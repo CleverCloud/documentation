@@ -26,14 +26,22 @@ The [Clever Cloud Console](https://console.clever-cloud.com) is your control cen
 
 ### Advanced Menu Filtering
 
-The left sidebar menu includes a powerful search function. Beyond simple name searches, you can use special keywords to filter your resources:
+The filter at the top of the sidebar matches the names and IDs of your resources. Keywords narrow the list further, and you can combine them, such as `is:app is:running`:
 
-| Keyword        | What it Shows                                                                     |
-| -------------- | --------------------------------------------------------------------------------- |
-| `is:addon`     | Lists all your add-ons                                                            |
-| `is:app`       | Shows only applications                                                           |
-| `is:[addon]`   | Filters specific add-on types (Examples: `is:postgresql`, `is:redis`, `is:mysql`) |
-| `is:[runtime]` | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`)          |
+| Keyword          | What it Shows                                                                     |
+| ---------------- | --------------------------------------------------------------------------------- |
+| `is:addon`       | Lists all your add-ons                                                            |
+| `is:app`         | Shows only applications                                                           |
+| `is:cke`         | Shows only Kubernetes clusters                                                    |
+| `is:ng`          | Shows only Network Groups                                                         |
+| `is:[addon]`     | Filters specific add-on types (Examples: `is:postgresql`, `is:redis`, `is:mysql`) |
+| `is:[runtime]`   | Shows applications by runtime (Examples: `is:node`, `is:php`, `is:java`)          |
+| `is:[status]`    | Shows resources by status (Examples: `is:running`, `is:stopped`)                  |
+| `project:[name]` | Shows the resources of a project (Example: `project:billing`)                     |
+
+### Group Resources by Project
+
+Add a `project:` tag to your applications and add-ons, such as `project:billing`, to group them in a sidebar section named after the project. Edit the tags of an application from its information page, and those of an add-on from its settings. Hover a project section and click its star to pin it to the top of the sidebar. The Console saves the filter, the collapsed sections, and the starred projects in your account settings, so you find them on any device.
 
 ### OpenSearch support
 
@@ -42,7 +50,7 @@ Clever Cloud supports OpenSearch, allowing you to add [the Console](https://cons
 ```yaml
 name: Clever Cloud
 shortcut: cc
-search URL: https://console.clever-cloud.com/search?q=%s
+search URL: https://console.clever-cloud.com/?search=%s
 ```
 
 ### Multi-line Environment Variables
@@ -82,7 +90,8 @@ The Console includes a sophisticated logging interface with features for debuggi
   - ANSI code stripping
   - Line wrapping
   - Configurable date formats and time zones
-- Share logs easily by selecting and copying lines
+- Share logs by selecting and copying lines, or by sharing the URL of a filtered view
+- Select a filtered line and click `Inspect` to see it among the logs around it
 
 Clever Cloud retains your logs for 7 days as part of the standard service.
 
@@ -102,23 +111,30 @@ https://console.clever-cloud.com/goto/id
 
 #### Global Search
 
-Press the `/` key anywhere in the Console to search for applications, add-ons, or organisations by name or ID.
+Press the `/` key, outside of a text field, to search for applications, add-ons, organisations, and Console pages by name or ID. The search bar understands the same `is:` keywords as the sidebar filter.
 
 #### Keyboard Navigation
 
 Use these shortcuts when viewing applications or add-ons:
 
-| Key | Takes You To            |
-| --- | ----------------------- |
-| `?` | Keyboard shortcuts help |
-| `a` | Application activity    |
-| `d` | Domain settings         |
-| `e` | Environment variables   |
-| `i` | Resource information    |
-| `l` | Logs view               |
-| `m` | Application metrics     |
-| `o` | Overview page           |
-| `s` | Scalability settings    |
+| Key | Takes You To             |
+| --- | ------------------------ |
+| `?` | Keyboard shortcuts help  |
+| `a` | Application activity     |
+| `d` | Domain settings          |
+| `e` | Environment variables    |
+| `i` | Resource information     |
+| `l` | Logs view                |
+| `m` | Application metrics      |
+| `o` | Overview page            |
+| `O` | Application in a new tab |
+| `s` | Scalability settings     |
+
+Press `<` or `>` to collapse or expand the sidebar.
+
+#### Color Themes
+
+Pick a color theme for the Console from the [Labs](https://console.clever-cloud.com/users/me/feature-list) page of your profile menu, or press `Alt+T` to cycle through them, `Alt+Shift+T` to go backwards. On macOS, use `Option+T` and `Option+Shift+T`.
 
 ### Running One-Time Tasks
 

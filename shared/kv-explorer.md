@@ -4,7 +4,7 @@ Access and edit your Key-Value databases with the **KV Explorer** tool, it's par
 
 ### Supported data types
 
-Hash, list, set and string types are supported. For Materia KV, only string type is currently available, with other types coming soon.
+The KV Explorer supports the hash, list, set, and string types. For Materia KV, its editor handles string values only: keys of other types stay listed, but selecting one shows an unsupported type message. Use the terminal to work with them.
 
 ### An intuitive, useful interface
 
@@ -13,8 +13,6 @@ The interface lets you filter keys by type and perform wildcard searches (for ex
 ### KV Explorer Terminal
 
 At the bottom of the page, you'll find an integrated terminal that works like a traditional CLI client. Type your commands and press Enter to execute them. All commands are supported, including `FLUSHDB` and `FLUSHALL`. Be careful with these as they erase data!
-
-KV Explorer is in Beta testing phase and we'll improve it over the coming months, thanks to your feedback and suggestions.
 
 - [Share your feedback on KV Explorer](https://github.com/CleverCloud/Community/discussions/categories/kv-explorer)
 

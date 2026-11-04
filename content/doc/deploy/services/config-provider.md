@@ -62,7 +62,7 @@ If a variable is defined in a configuration provider **and** also in the applica
 
 In the console, go to the organisation where you have your applications.
 
-1. Click on **Create** and then on **an add-on**
+1. Click **Create** in the sidebar, then **Add-on**
 2. You will see a list of add-ons, select **Configuration provider**
 3. Select the first plan and click on **Next**
 4. Toggle the **Link** for each application you need and then on **Next**

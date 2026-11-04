@@ -22,4 +22,4 @@ On narrow screens, the header keeps the menu button, the name of the Console, su
 
 The projects you use the most no longer get lost in the middle of the list. Hover a `project:` section and click its star to pin it to the top of the sidebar. A button next to the filter collapses or expands all sections at once, and add-ons show the logo of their provider.
 
-The Console saves the filter, the collapsed sections, and the starred projects of each organisation in your account settings, rather than in your browser. You find your sidebar as you left it on any device. The Floating theme joins the others in the [Labs](https://console.clever-cloud.com/users/me/feature-list) page.
+The Console saves the filter, the collapsed sections, and the starred projects of each organisation in your account settings, rather than in your browser. You find your sidebar as you left it on any device. The Floating theme joins the others in the [Labs](https://console.clever-cloud.com/users/me/feature-list) page, and on macOS, `Option+T` and `Option+Shift+T` cycle through them.

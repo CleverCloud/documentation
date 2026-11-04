@@ -117,11 +117,11 @@ In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
 #### Select the organisation
 
-Choose the organisation you want to deploy in from the left menu. At this point you must only have the Personal Space but you can create one.
+Choose the organisation you want to deploy in from the organisation switcher, at the top of the sidebar. At this point you must only have the Personal Space but you can create one.
 
-#### Click on "Create an application"
+#### Click "Create", then "Application"
 
-Find it in the **organisation Manager** panel, at the top left of the left menu.
+Find the **Create** button at the top of the sidebar, below the organisation switcher.
 
 This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
 If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
@@ -365,23 +365,22 @@ There are two kinds of billing:
 
 ### Manage your Add-on
 
-Once an add-on is created, at least two tabs are available in the Clever Cloud console:
-
-- **Add-on dashboard:** This screen provides and overview of your add-on and its options, depending on the type of add-on it is.
+Once you create an add-on, its **Dashboard** tab provides an overview of your add-on and its options, depending on its type.
 
 !["Add-on dashboard"](/images/addon-dashboard.png "Example of an add-on dashboard")
 
-- **Information tab:** This screen sums-up the characteristics of the selected add-on.
-The system shows features and environment variables (if applicable).
+Other tabs are available, depending on the add-on type:
 
-Other tabs may be available, depending on the add-on type.
+- **Information:** This screen sums-up the characteristics of the selected add-on. The system shows features and environment variables (if applicable).
+- **Service dependencies:** This screen lets you link the add-on to your applications.
+- **Backups**, **Logs**, **Metrics**, or **Migrate / Upgrade**, when the add-on provides them.
 
 ### Delete an add-on
 
 To delete an add-on:
 
-1. Go to the **Information** tab of the add-on.
-2. Click on *Remove add-on*.
+1. Go to the **Dashboard** tab of the add-on, or to its **Information** tab if it has one.
+2. Click **Delete the add-on** in the danger zone of the dashboard, or on **Remove add-on** in the information tab.
 
 {{< callout type="warning" >}}
 The system removes all associated data after you delete the add-on.

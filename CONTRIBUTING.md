@@ -28,6 +28,7 @@ Sources for quality content are currently being updated
 #### 👍 Do
 
 - **Don't assume prior knowledge:** explain prerequisites and non-obvious behaviour without burying the main task path
+- **Spell out acronyms:** at their first use on a page, write the full term followed by the acronym in parentheses, such as _multi-factor authentication (MFA)_, then use the acronym alone. Skip this for acronyms most readers already know, such as API, CLI, DNS or HTTP
 - **Prefer active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something. A passive is fine to describe a state, such as _is enabled_, or when the actor doesn't matter
 - **Use second person:** address the reader directly
 - **Keep it simple:** avoid jargon, complex sentences, and jokes
@@ -61,7 +62,7 @@ Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/sh
 
 #### Front matter and examples
 
-- Give `title` a descriptive, SEO-oriented value without repeating "Clever Cloud", which the generated HTML title already includes. Keep `linkTitle` short, usually the product name, so it fits in the sidebar.
+- Give `title` a descriptive, SEO-oriented value without repeating `Clever Cloud`, which the generated HTML title already includes. Keep `linkTitle` short, usually the product name, so it fits in the sidebar.
 - Don't add `aliases` to a new page. Use them only to preserve URLs that existed previously.
 - Remove `draft: true` when a page is ready to publish instead of keeping `draft: false`
 - Keep commands literally copyable. Don't use shell-invalid placeholders or bracketed optional arguments in executable code blocks; show optional variants separately or explain where to add the flag.

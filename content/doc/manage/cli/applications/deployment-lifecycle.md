@@ -101,44 +101,23 @@ clever cancel-deploy
 
 ## ssh
 
-A Clever Cloud application is a running virtual machine you can ssh to, as a user (`bas`). Clever Cloud only accepts SSH key authentication, so Clever Tools disables the password fallback: a missing or unregistered key fails immediately. By default, it uses your `OpenSSH` configuration, but you can target a specific identity file. Clever Tools then also sets `IdentitiesOnly=yes`, so SSH doesn't offer unrelated keys from your agent, while `IdentityFile` entries of your SSH configuration still apply:
+Use SSH to inspect a running instance or execute a command:
 
 ```console
-clever ssh --identity-file ~/.ssh/id_ed25519
+clever ssh
+clever ssh --app my-api --instance any -c hostname
 ```
 
-If your application runs several instances, Clever Tools asks you which one to connect to. To skip this selection, for example in a script, use `--instance` with an instance ID, an instance number or `any`. Without an interactive terminal, the command fails when several instances are running and you don't set `--instance`:
+The [SSH access guide](/doc/develop/ssh-access/) covers prerequisites, identity files, instance selection, remote commands, and troubleshooting.
 
-```console
-clever ssh --instance 0 --command hostname
-clever ssh --instance any --command hostname
-```
-
-While a deployment rolls out, the instance going away and the one replacing it share the same number: Clever Tools then prefers an `UP` instance, the most recent first. An instance number never selects a build instance, and `any` only connects to a build instance when no other instance is running. To connect to a build instance during a deployment, list the instances to get its ID, shown as `build` in the `#` column:
-
-```console
-clever instances
-clever ssh --instance INSTANCE_ID
-```
-
-`clever instances` lists the running instances of your application by default. Add `--all` to list instances in any state, including deleted ones. Filter them by period with `--since` and `--until`, which select the instances that existed during that period, or by deployment with `--deployment-id`: these filters also include past instances. The command lists the 100 most recent matching instances by default, use `--limit` to get up to 1,000:
+`clever instances` lists the running instances of your application, including build instances. Add `--all` to include instances in any state. The `--since`, `--until`, and `--deployment-id` filters also include past instances:
 
 ```console
 clever instances --all
 clever instances --since 1d --format json
 ```
 
-To execute a single command on the remote instance and exit, use `--command` (`-c`). Clever Tools runs it in `bash` when the instance provides it, in `/bin/sh` otherwise. Its output streams to your terminal without the SSH gateway messages, so you can use it in scripts:
-
-```console
-clever ssh --command "ls -la"
-```
-
-To ssh a specific application, use:
-
-```console
-clever ssh --app APP_ID_OR_NAME
-```
+The command returns the 100 most recent matches by default. Use `--limit` to request up to 1,000.
 
 ## logs
 

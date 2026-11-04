@@ -1,4 +1,6 @@
+// markdownlint-cli2 options: which files to lint. The rules are in .markdownlint.jsonc.
 {
+  // Skip the files .gitignore excludes, such as the public/ build output
   "gitignore": true,
   // Hugo templates for the Markdown output format carry a .md suffix but are Go
   // templates, not Markdown. See layouts/page.markdown.md and layouts/_partials/.

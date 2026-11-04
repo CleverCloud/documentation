@@ -89,7 +89,7 @@ You can set some tools' version in any runtime (except Docker):
 | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `CC_RUN_COMMAND`                                                      | Custom command to run your application.                                                                                                                                |               |
 | `CC_TASK`                                                             | If set to true, the deployer runs `CC_RUN_COMMAND` and terminates the instance after running the task. Trigger an execution using `git push` or starting your instance | false         |
-| [`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.    | false         |
+| [`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Keep the instance available for up to one hour after a deployment failure, unless it fails too early. Some runtimes also add build diagnostics.                        | false         |
 
 {{< callout emoji="🐳" >}}
   `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/deploy/applications/docker/#dockerfile-contents).

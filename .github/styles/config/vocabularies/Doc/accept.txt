@@ -25,6 +25,7 @@ commitlint
 Coraza
 CRDs
 cron
+crontab
 CVE
 CVEs
 Cyberduck

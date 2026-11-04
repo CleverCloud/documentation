@@ -79,6 +79,7 @@ When a page moves to another URL, or when its content is merged into another pag
 - Use second person ("you") addressing readers directly
 - Write in active voice, avoid passive constructions
 - Use `organisation` and `organisations`, rather than `organization` and `organizations`; this isn't a general British-spelling requirement
+- Spell out an acronym at its first use on a page, followed by the acronym in parentheses, such as "multi-factor authentication (MFA)", then use the acronym alone; skip this for acronyms most readers already know, such as API, CLI, DNS or HTTP
 - Keep sentences under 25 words when possible
 - Provide concrete examples with real commands and configurations
 - Explain prerequisites and non-obvious behaviour, while keeping the main task path concise

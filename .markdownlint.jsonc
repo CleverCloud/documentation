@@ -1,27 +1,44 @@
+// markdownlint rules for the documentation. Rules not listed here keep their
+// default settings: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 {
+  // MD004/ul-style: unordered lists use "-" markers, never "*" or "+"
   "MD004": {
     "style": "dash"
   },
+  // MD013/line-length: off, a paragraph stays on one line and editors wrap it,
+  // as AGENTS.md and CONTRIBUTING.md ask
   "MD013": false,
+  // MD029/ol-prefix: off, a list interrupted by a code block or a shortcode
+  // keeps its visible numbering, such as 3. and 4. after the block
   "MD029": false,
-  // MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
+  // MD033/no-inline-html: inline HTML is forbidden, except the elements below
   "MD033": {
-    // Allowed elements
+    // <br> breaks lines in table cells
     "allowed_elements": [
-      "br",
-      "cite"
+      "br"
     ]
   },
-  // MD034/no-bare-urls : shortcode attributes such as {{< card link="https://..." >}}
+  // MD034/no-bare-urls: shortcode attributes such as {{< card link="https://..." >}}
   // are not Markdown, but markdownlint reads them as bare URLs. Wrapping the value in
   // <> silences the rule and makes Go reject the URL, rendering href="#ZgotmplZ".
   // Keep URLs bare in shortcode attributes.
   "MD034": false,
+  // MD041/first-line-heading: off, pages take their title from the front matter
+  // and shared/ blocks are fragments included in other pages
   "MD041": false,
+  // MD049/emphasis-style: italics use *text*, like bold uses **text**
+  "MD049": {
+    "style": "asterisk"
+  },
+  // MD051/link-fragments: off, it can't see the headings that pages include
+  // from shared/ or generate through shortcodes, so it reports valid anchors.
+  // Check anchors in the Hugo build output instead.
   "MD051": false,
+  // MD055/table-pipe-style: table rows start and end with a pipe
   "MD055": {
     "style": "leading_and_trailing"
   },
+  // MD060/table-column-style: pipes are aligned across the rows of a table
   "MD060": {
     "style": "aligned"
   }

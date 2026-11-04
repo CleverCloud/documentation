@@ -106,14 +106,17 @@ If your application needs to differentiate all the running nodes internally, you
 For example, if 3 instances are running for your application, this environment variable will contain `0` on the first, `1` on the second and `2` on the third.
 {{% /details %}}
 
-{{% details title="I need a private ssh key to fetch my private dependencies. How do I do that?" closed="true" %}}
+{{% details title="How do I fetch private dependencies over SSH?" closed="true" %}}
 
-If your company manages its own artifacts in a private repository (like, you can only
-access them via git+ssh or sFTP), and you need a private key to connect to the server, you
-can commit them in your application's Clever Cloud repository and then add a
-`clevercloud/ssh.json` file.
+If your build fetches dependencies over SSH, such as private Git repositories, give your application a private key in the `CC_SSH_PRIVATE_KEY` environment variable. Clever Cloud installs it in `~/.ssh/` before the build, and your dependency manager uses it to connect. The service that hosts your dependencies must accept its public key, as a deploy key of the repository for example. Use a key without a passphrase:
 
-- [Learn more about ssh.json](/doc/develop/common-configuration/#private-ssh-key)
+```bash
+clever env set CC_SSH_PRIVATE_KEY -- "$(cat ~/.ssh/id_ed25519_dependencies)"
+```
+
+Write `--` before the key, otherwise Clever Tools reads its `-----BEGIN` line as an option.
+
+- [Learn more about the private SSH key](/doc/develop/common-configuration/#private-ssh-key)
 {{% /details %}}
 
 {{% details title="I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?" closed="true" %}}
@@ -142,9 +145,9 @@ For reference, the table below lists the class file version for each major Java 
 
 {{% details title="I want SSH access to my server" closed="true" %}}
 
-Clever Cloud does not give you access to a server or a VPS, it makes your application run. Each instance is started and configured automatically, and can be stopped at any moment.
+Clever Cloud doesn't give you a server or a virtual private server (VPS) to administer: it runs your application. The platform starts and configures each instance automatically, and can replace or stop it at any time. A deployment replaces your instances, and so can a scaling operation. What you change on an instance doesn't persist: put it in your code or your environment variables, then redeploy.
 
-If however, you still need SSH access for debugging purposes, please have a look at [SSH access](/doc/manage/cli/applications/deployment-lifecycle/#ssh), but keep in mind that changes made on an instance are not persistent across deployments.
+To debug your application, you can still open a shell on a running instance, or run a command on it. The [SSH access page](/doc/develop/ssh-access/) explains how.
 {{% /details %}}
 
 {{% details title="Can I `scp` something in a VM?" closed="true" %}}

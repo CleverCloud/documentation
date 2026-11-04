@@ -5,7 +5,7 @@ sidebar:
 linkTitle: Contribute
 weight: 290
 title: Contribute
-description: Learn how to contribute to Clever Cloud documentation including available shortcodes, writing guidelines, and submission process
+description: Learn how to contribute to Clever Cloud documentation, from the issue that describes your idea to the checks to run before a pull request
 keywords:
 - contribution
 - shortcode
@@ -24,20 +24,14 @@ aliases:
 - /readme
 ---
 
-Would you like to contribute to this documentation?
+You can contribute to this documentation on [GitHub](https://github.com/CleverCloud/documentation), with an issue or a pull request.
 
-## Before writing something new
+## Before you write
 
-Before you start writing something new please create a [Github issue](https://github.com/CleverCloud/documentation/issues) so we can talk about it. Moslty to make sure someone is not already working on the same thing.
+Before you start new content, open a [GitHub issue](https://github.com/CleverCloud/documentation/issues) to describe it. This lets the team discuss the topic with you and check that nobody already works on it.
 
-## Writing new content
+## Write and check your content
 
-There are a number of things you need to be aware of when writing new content. We use Markdown files and [Hugo](https://gohugo.io/) to generate this documentation.
+The documentation uses Markdown files and [Hugo](https://gohugo.io/) with the [Hextra](https://imfing.github.io/hextra/) theme. The [contributing guidelines](https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md) describe the writing standards, and the [README](https://github.com/CleverCloud/documentation/blob/main/README.md) explains how to install the tools, preview the site, and run the checks.
 
-### Debug Mode
-
-If you add `debug=true` as params of your Hugo site, you should see every shortcode outlined on your website like so:
-
-```html
-<div class="shortcode-debug"><strong>myshortcode </strong><p>This is a shortcode being used</div>
-```
+Before you open a pull request, build the site with `hugo` and run markdownlint and Vale on the files you change. Fix every error and warning on the lines you change, and review each Vale suggestion.

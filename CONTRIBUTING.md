@@ -28,7 +28,7 @@ Sources for quality content are currently being updated
 #### 👍 Do
 
 - **Don't assume prior knowledge:** explain prerequisites and non-obvious behaviour without burying the main task path
-- **Use active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something
+- **Prefer active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something. A passive is fine to describe a state, such as _is enabled_, or when the actor doesn't matter
 - **Use second person:** address the reader directly
 - **Keep it simple:** avoid jargon, complex sentences, and jokes
 - **Keep it short:** keep the sentences short. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle.

@@ -232,7 +232,11 @@ Then, set `APP_LOG=syslog` as Clever application environment variable.
 
 {{% content "new-relic" %}}
 
-{{% content "blackfire" %}}
+### Monitor your application with Blackfire
+
+You can use [Blackfire](https://www.blackfire.io/) to monitor your application on Clever Cloud.
+
+Please refer to our [Blackfire documentation](/doc/develop/observability/blackfire) to configure it for your application.
 
 ## ProxySQL
 

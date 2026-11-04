@@ -85,7 +85,9 @@ This referencing does not exist for dedicated databases.
 
 ## Pgpool-II
 
-{{% content "pgpool" %}}
+Pgpool-II is a proxy software that sits between PostgreSQL servers and a PostgreSQL database client.
+
+You can read the [official project page](https://www.pgpool.net/docs/latest/en/html/intro-whatis.html) for more information.
 
 You can learn more about Pgpool-II on the [dedicated documentation page](/guides/pgpool)
 

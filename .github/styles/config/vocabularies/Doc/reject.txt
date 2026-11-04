@@ -2,5 +2,8 @@ addon
 addons
 e-mail
 e-mails
+feedbacks
 plug-in
 plug-ins
+url
+websocket

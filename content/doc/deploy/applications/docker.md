@@ -140,6 +140,10 @@ Every environment variable defined for your application is passed as a build env
 
 Docker applications support all [deployment hooks](/doc/develop/common-configuration/build-hooks/). The `CC_PRE_BUILD_HOOK`, `CC_POST_BUILD_HOOK`, and `CC_PRE_RUN_HOOK` run on the host. The `CC_RUN_SUCCEEDED_HOOK` runs inside the container after successful start.
 
+### Scheduled jobs
+
+Docker applications don't run the [CRON jobs](/doc/develop/cron/) of a `clevercloud/cron.json` file. Run a scheduler inside your container, or deploy your scheduled work as a Clever Task. A CRON job of another application can then [restart it](/doc/develop/tasks/#running-from-a-cron).
+
 ### Docker applications as Clever Tasks
 
 Docker containers can run as on-demand workloads on Clever Cloud. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks). The container runs, executes its command, and stops.

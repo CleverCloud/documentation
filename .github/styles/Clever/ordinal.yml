@@ -1,0 +1,6 @@
+extends: existence
+message: "Spell out the ordinal '%s', and write dates without ordinals, such as 'November 12, 2026'"
+level: warning
+nonword: true
+tokens:
+  - \b\d+(?:st|nd|rd|th)\b

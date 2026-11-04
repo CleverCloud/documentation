@@ -1,8 +1,8 @@
 extends: substitution
-message: "Use '…' (ellipsis character) instead of '%s'"
+message: "Use the ellipsis character '%s' instead of '%s'"
 level: warning
 ignorecase: false
-
-# Replace three consecutive periods with proper ellipsis
+# Without 'nonword', the match would need word boundaries around the periods
+nonword: true
 swap:
   '\.\.\.': '…'

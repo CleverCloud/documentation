@@ -1,0 +1,8 @@
+extends: existence
+message: "'%s' should have one space"
+level: warning
+nonword: true
+# No automatic fix: the match includes the letters around the space
+tokens:
+  - '[a-z][.?!] {2,}[A-Z]'
+  - '[a-z][.?!][A-Z]'

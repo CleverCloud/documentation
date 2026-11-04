@@ -1,0 +1,12 @@
+extends: existence
+message: "Address the reader as 'you' instead of using '%s'"
+level: warning
+ignorecase: false
+# Applies everywhere, changelogs included; 'we', 'us', 'our' and 'let's' are in
+# first-person-plural.yml. 'I/O' isn't a pronoun.
+tokens:
+  - \bI\b(?!/O)
+  - \b[Mm]e\b
+  - \b[Mm]y\b
+  - \b[Mm]ine\b
+  - \b[Mm]yself\b

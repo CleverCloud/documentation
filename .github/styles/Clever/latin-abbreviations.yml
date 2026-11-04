@@ -1,0 +1,17 @@
+extends: substitution
+message: "Use '%s' instead of '%s'"
+level: warning
+ignorecase: true
+nonword: true
+# Plain English reads better than Latin abbreviations, which many readers confuse,
+# such as 'e.g.' and 'i.e.'. The lookahead keeps the space or punctuation that follows.
+# 'etc.' is in etcetera.yml, without an automatic fix that would drop its period.
+action:
+  name: replace
+swap:
+  '\b(?:eg|e\.g\.)(?=[\s,;:)]|$)': for example
+  '\b(?:ie|i\.e\.)(?=[\s,;:)]|$)': that is
+  '\bcf\.(?=[\s,;:)]|$)': see
+  '\bviz\.(?=[\s,;:)]|$)': namely
+  '\bvs\.(?=[\s,;:)]|$)': versus
+  '\bN\.B\.(?=[\s,;:)]|$)': note

@@ -1,12 +1,13 @@
 extends: conditional
-message: "Spell out '%s', if it's unfamiliar to the audience."
-link: 'https://developers.google.com/style/abbreviations'
+message: "Spell out '%s' at its first use on the page, followed by the acronym in parentheses"
 level: suggestion
 ignorecase: false
-# Ensures that the existence of 'first' implies the existence of 'second'.
+# Each acronym matched by 'first' must be defined on the page by 'second': words
+# followed by the acronym in parentheses, such as 'multi-factor authentication (MFA)'
 first: '\b([A-Z]{3,5})\b'
-second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
-# ... with the exception of these:
+second: '(?:\b[\w-]+ )+\(([A-Z]{3,5})\)'
+# Acronyms most readers already know, short callout markers, HTTP methods, time zones,
+# Clever Cloud region codes, and plan names
 exceptions:
   - ANSI
   - API

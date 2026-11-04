@@ -1,0 +1,24 @@
+extends: existence
+message: "Avoid the time-dependent '%s': describe the current state of the platform"
+level: warning
+ignorecase: true
+# Changelog entries can announce commitments: see .vale.ini. 'latest' stays out, as it
+# names a moving default such as 'the latest version'; 'now', 'new', 'still', and 'yet'
+# have common senses that aren't tied to a moment, such as 'create a new application'.
+# 'to date' would match inside 'up to date'.
+tokens:
+  - as of (?:now|today)
+  - at the moment
+  - at the time of writing
+  - coming soon
+  - 'coming (?:next|this) (?:week|month|quarter|year)'
+  - currently
+  - for now
+  - for the (?:moment|time being)
+  - in the (?:near )?future
+  - not yet
+  - nowadays
+  - recently
+  - soon
+  - today
+  - upcoming

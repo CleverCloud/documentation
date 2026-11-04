@@ -1,0 +1,12 @@
+extends: existence
+message: "Address the reader as 'you' instead of using '%s'"
+level: warning
+ignorecase: false
+# Changelogs speak for Clever Cloud and can use 'we': see .vale.ini. 'US' isn't 'us'.
+tokens:
+  - \b[Ww]e\b
+  - "\\b[Ww]e['’](?:d|ll|re|ve)\\b"
+  - \b[Oo]urs?\b
+  - \b[Oo]urselves\b
+  - \b[Uu]s\b
+  - "\\b[Ll]et['’]s\\b"

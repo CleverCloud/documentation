@@ -1,0 +1,12 @@
+extends: existence
+message: "Don't put spaces around an em dash or an en dash"
+level: warning
+nonword: true
+action:
+  name: edit
+  params:
+    - trim
+    - " "
+# A space on either side is flagged: 'cache— which', 'cache —which'
+tokens:
+  - '\s+[—–]\s*|[—–]\s+'

@@ -1,0 +1,8 @@
+extends: existence
+message: "Replace '%s' with 'and so on', or introduce the items with 'such as'"
+level: warning
+ignorecase: true
+nonword: true
+# No automatic fix: at the end of a sentence, the period of 'etc.' also ends the sentence
+tokens:
+  - '\betc\b\.?'

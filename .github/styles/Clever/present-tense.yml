@@ -1,0 +1,10 @@
+extends: existence
+message: "Use the present tense to describe how the platform behaves, instead of '%s'"
+level: suggestion
+ignorecase: true
+# Changelogs and postmortems can announce what's coming: see .vale.ini
+tokens:
+  - will
+  - "won['’]t"
+  - "(?:is|are|['’]s|['’]re) going to"
+  - shall

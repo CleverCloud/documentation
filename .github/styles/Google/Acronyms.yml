@@ -10,55 +10,78 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 exceptions:
   - API
   - ASP
+  - CEST
+  - CET
   - CLI
+  - CNAME
   - CPU
   - CSS
   - CSV
   - DEBUG
+  - DEV
+  - DNS
   - DOM
-  - DPI
+  - EAR
   - FAQ
-  - GCC
-  - GDB
+  - FTP
   - GET
+  - GNU
   - GPU
-  - GTK
   - GUI
+  - HEAD
   - HTML
   - HTTP
   - HTTPS
   - IDE
+  - ISO
   - JAR
   - JSON
   - JSX
+  - JVM
+  - JWT
+  - LDN
   - LESS
-  - LLDB
+  - MTL
   - NET
+  - NGINX
   - NOTE
-  - NVDA
-  - OSS
+  - PAR
+  - PATCH
   - PATH
   - PDF
   - PHP
   - POST
+  - PUT
   - RAM
+  - RBX
   - REPL
+  - REST
+  - RFC
   - RSA
-  - SCM
   - SCSS
+  - SCW
   - SDK
+  - SFTP
+  - SGP
+  - SMTP
   - SQL
   - SSH
   - SSL
+  - STDIN
   - SVG
-  - TBD
+  - SYD
   - TCP
-  - TODO
+  - TIP
+  - TLS
+  - UDP
   - URI
   - URL
-  - USB
+  - UTC
   - UTF
+  - VPN
+  - WAR
+  - WSW
   - XML
-  - XSS
+  - XXS
   - YAML
   - ZIP

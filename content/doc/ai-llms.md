@@ -119,7 +119,7 @@ clever status
 When something needs to be checked inside a running instance rather than from the outside, one command runs it and returns:
 
 ```bash
-clever ssh -c "node --version"
+clever ssh --instance any -c "node --version"
 ```
 
 That closes the loop: the agent deploys, observes, inspects the instance, and corrects, without a human relaying the state between steps.

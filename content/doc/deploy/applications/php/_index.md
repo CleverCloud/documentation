@@ -125,13 +125,15 @@ This loads every `.ini` files in the `php-configuration/` directory.
 
 #### Timezone configuration
 
-All instances on Clever Cloud run on the UTC timezone. We recommend to handle all your dates in UTC internally, and only handle timezones when reading or displaying dates.
+All instances on Clever Cloud run in the UTC time zone. Handle your dates in UTC internally, and convert them to a time zone only when you read or display them.
 
 Additionally, you can set PHP's time zone setting with `.user.ini`. For instance, to use the french time zone, edit `.user.ini` to add this line:
 
 ```ini
 date.timezone=Europe/Paris
 ```
+
+This setting doesn't change when [CRON jobs](/doc/develop/cron/) run: to schedule them in a local time zone, add a [`CRON_TZ` line](/doc/develop/cron/#choose-the-time-zone) to `clevercloud/cron.json`.
 
 #### Memory limit
 

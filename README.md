@@ -172,7 +172,7 @@ The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdo
 markdownlint-cli2 "**/*.md"
 ```
 
-The pull request workflow runs markdownlint first, on every Markdown file of the repository. If it reports an issue, the workflow stops there: Vale, the review application, and the link check don't run until you fix it.
+Every pull request runs markdownlint on all the Markdown files of the repository, and fails if it reports an issue.
 
 Editorial checks use [Vale](https://vale.sh/) with the project's own `Clever` style, in [`.github/styles/Clever/`](./.github/styles/Clever/), which implements the rules of [CONTRIBUTING.md](./CONTRIBUTING.md) and [AGENTS.md](./AGENTS.md).
 

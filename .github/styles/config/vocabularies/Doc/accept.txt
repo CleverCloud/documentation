@@ -16,6 +16,7 @@ Bpifrance
 Caddy
 Caddyfile
 callout
+callouts
 CDN
 CDNs
 charset
@@ -42,6 +43,7 @@ Entra
 EOL
 ESLint
 failover
+favicon
 Filestash
 FileZilla
 Fluentd
@@ -122,6 +124,7 @@ serverless
 Servlet
 SFTPGo
 shortcode
+shortcodes
 Sidekiq
 subcommand
 subcommands

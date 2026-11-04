@@ -177,7 +177,7 @@ The site is configured for Clever Cloud hosting with the `static` runtime and th
 - `CC_WEBROOT="public"`
 - `CC_STATIC_AUTOBUILD_OUTDIR="public/developers"`
 - `SERVER_ERROR_PAGE_404="developers/404.html"`
-- Optional: `CC_HUGO_VERSION="0.164"` to specify Hugo version (example value)
+- Optional: `CC_HUGO_VERSION="0.167"` to specify Hugo version (example value)
 
 `CC_DISABLE_MISE` prevents Clever Cloud from installing the local development dependencies because the platform manages the deployment tools directly.
 

@@ -56,7 +56,7 @@ SERVER_ERROR_PAGE_404="developers/404.html"
 `CC_DISABLE_MISE` prevents Clever Cloud from installing the development dependencies because the static runtime provides and manages its deployment tools. Configure the route so its path ends in `/developers`, which matches the site's configured base URL and output directory.
 
 > [!TIP]
-> Set `CC_HUGO_VERSION` to a supported version such as `0.164` to select the Hugo version used for deployment
+> Set `CC_HUGO_VERSION` to a supported version such as `0.167` to select the Hugo version used for deployment
 
 ## Contribute
 

@@ -11,7 +11,7 @@ concurrency:
 
 env:
   DOMAIN: ${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers
-  HUGO_VERSION: "0.164"
+  HUGO_VERSION: "0.167"
 
 jobs:
   review-app:

@@ -71,25 +71,32 @@ At the time of publishing this documentation, here are some limitations around t
 
 - You cannot deploy the same app multiple times in parallel, executing different tasks. We will start the latter one after the former one ends.
 - Due to this limitation, running a task deployment on an existing app will block "normal" deployments for the duration of the command. Event the ones from the monitoring.
-- There is no out-of-the-box CRON trigger at the moment. You'll have set it up on your own.
+- Tasks don't run on a schedule by themselves: [restart them from a CRON job](#running-from-a-cron) of another application.
 
 ### Tips and examples
 
 #### Running from a CRON
 
-`Clever Tools` is available on all our VMs. You can trigger the deployment of a task by running a few `clever` commands. For example, setup a CRON on a web application that run such a script/command:
+Clever Tools is available on the instances of your applications. To run a task on a schedule, restart it from a [CRON job](/doc/develop/cron/) of another application, which can't be a Docker application or a task. In the environment variables of this application, set `CLEVER_TOKEN` and `CLEVER_SECRET` so Clever Tools can log in, and `TASK_APP_ID` to the ID of the task. Then add a script that restarts the task, which runs its `CC_RUN_COMMAND` again:
 
-```bash
-#!/bin/bash
+```bash {filename="crons/run-task.sh"}
+#!/bin/bash -l
+if [[ "${INSTANCE_NUMBER}" != "0" ]]; then
+  exit 0
+fi
 
-# Make sure to setup CLEVER_TOKEN and CLEVER_SECRET
-# These environment variables are required to authenticate with Clever Tools
-# We restart the task app, it will start it and execute the CC_RUN_COMMAND
-# Use the --quiet flag if you don't care for the logs to show in here
-clever restart --app TASK_APP_ID --quiet
+clever restart --app "${TASK_APP_ID}" --quiet
 ```
 
-- [Learn more about CRON on Clever Cloud](/doc/develop/cron/)
+The `-l` option of the shebang loads your environment variables and the `PATH` that holds Clever Tools. Make the script executable with `chmod +x crons/run-task.sh`, commit it, and schedule it in `clevercloud/cron.json`:
+
+```json {filename="clevercloud/cron.json"}
+[
+  "0 2 * * * $ROOT/crons/run-task.sh"
+]
+```
+
+Each instance of the application runs the job, and the `INSTANCE_NUMBER` check keeps only the first one. During a deployment, the job can still run twice, as the [CRON page explains](/doc/develop/cron/#avoid-duplicate-runs).
 
 #### Running a script with different parameters
 

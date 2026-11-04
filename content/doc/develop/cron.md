@@ -2,15 +2,15 @@
 type: docs
 weight: 64
 linkTitle: CRON
-title: CRON
-description: Schedule and manage CRON jobs on Clever Cloud for automated tasks, background processing, and periodic maintenance operations
+title: Schedule jobs with CRON
+description: Run commands on a schedule on your Clever Cloud applications with a cron.json file, in UTC or in your local time zone, with your environment variables loaded
 keywords:
 - cron jobs
+- crontab
 - scheduled tasks
-- task automation
+- time zone
+- daylight saving time
 - background processing
-- job scheduling
-- automated operations
 aliases:
 - /doc/administrate/cron
 - /doc/cron
@@ -21,143 +21,166 @@ aliases:
 - /doc/tools/crons
 ---
 
-The configuration file used for crontab is `<PROJECT ROOT>/clevercloud/cron.json`.
+To run a command at regular intervals, such as cleaning a cache every night or sending a report every Monday, add a `clevercloud/cron.json` file to your project. At each deployment, Clever Cloud installs its jobs on every instance of your application.
 
-{{< callout type="warning" >}}
-  Crons are not available in the Docker environment as it would require to set them up inside the Docker container.
-{{< /callout >}}
+> [!NOTE] Not available on Docker and task applications
+> Docker applications and [Clever Tasks](/doc/develop/tasks/) don't run the jobs of `clevercloud/cron.json`. In a Docker application, run a scheduler inside your container. To run a task on a schedule, [restart it from a job of another application](/doc/develop/tasks/#running-from-a-cron).
 
-## Syntax
+## Add a job
 
-Here is the general syntax:
+Create a `clevercloud/cron.json` file in your project. It holds a JSON array of strings, and each string is a line of the crontab: a schedule followed by the command to run. This file runs a PHP script every day at 03:00 UTC:
 
-```json
+```json {filename="clevercloud/cron.json"}
 [
-  "<string>",
-  "<string>"
+  "0 3 * * * /usr/bin/php $ROOT/scripts/clean-cache.php"
 ]
 ```
 
-The string `<string>` must use the cron format:
+`$ROOT` stands for the folder of your application on the instance, `/home/bas/<app_id>`, which your environment also exposes as `APP_HOME`. Clever Cloud replaces this token in the text of each line before it installs the crontab. Write `$ROOT` as is: `${ROOT}` isn't replaced.
 
-```javascript
-M H d m Y command
-```
+Commit the file and deploy your application. Once it starts and responds, the deployment logs show `Starting crons setup` and `Importing cronjobs`. Each deployment starts new instances from the file of the deployed commit. Edit the file and redeploy to change or remove a job.
 
-- M: Minute [0,59]
-- H: Hour [0,23]
-- d: Day of the month [1,31]
-- m: Month of the year [1,12]
-- Y: Day of the week [0,6] (0 is Sunday)
+If the file isn't valid JSON, or doesn't hold an array, the deployment fails. Clever Cloud ignores array entries that aren't strings. The cron daemon then checks every line, and refuses the whole file if a single one is invalid, such as a minute set to `61`. The deployment still succeeds, but no job runs, and its logs show the error followed by `Invalid crontab file, can't install.`
 
-{{< callout type="warning" >}}
-  All the servers are configured to use Coordinated Universal Time (UTC), please keep it in mind when configuring cron tasks to run at a specific hour.
-{{< /callout >}}
+## Write the schedule
 
-For more information about the syntax, you can check [the Wikipedia page of cron](https://en.wikipedia.org/wiki/Cron).
+A schedule has five fields, separated by spaces:
 
-## Restrictions
+| Field            | Allowed values                                              |
+| ---------------- | ----------------------------------------------------------- |
+| Minute           | `0` to `59`                                                 |
+| Hour             | `0` to `23`                                                 |
+| Day of the month | `1` to `31`                                                 |
+| Month            | `1` to `12`, or `jan` to `dec`                              |
+| Day of the week  | `0` to `7`, where `0` and `7` are Sunday, or `sun` to `sat` |
 
-There are two restrictions about the usage of crontab on our platform:
+In each field, `*` matches every value, `1,15` lists values, `1-5` sets a range, and `*/10` takes every tenth value. `0~59` draws a random value in a range each time the crontab loads. It spreads the jobs of several applications instead of starting them all at the same minute. You can also replace the five fields with `@hourly`, `@daily`, `@weekly`, `@monthly`, or `@yearly`.
 
-- The special date `@reboot` is not available since the crontab is added after the startup of the instance
-- You must use the absolute path of commands
+| Schedule       | Runs                                                        |
+| -------------- | ----------------------------------------------------------- |
+| `*/15 * * * *` | Every 15 minutes                                            |
+| `0 * * * *`    | Every hour, at minute 0, like `@hourly`                     |
+| `30 2 * * *`   | Every day at 02:30                                          |
+| `0 8 * * 1-5`  | At 08:00, from Monday to Friday                             |
+| `0 6 * * mon`  | Every Monday at 06:00                                       |
+| `0 0 1 * *`    | At midnight on the first day of each month, like `@monthly` |
+| `0~59 4 * * *` | Once a day between 04:00 and 04:59                          |
 
-{{< callout type="warning" >}}
-  We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.
-{{< /callout >}}
+When you restrict both the day of the month and the day of the week, instead of using `*`, a job runs when either one matches. `0 9 1 * mon` runs at 09:00 on the first day of each month, and also every Monday.
 
-## $ROOT
+`@reboot` never runs: Clever Cloud installs the crontab after the cron daemon starts.
 
-You can use the special token `$ROOT` to refer to the root folder of your application.
+## Choose the time zone
 
-Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
+Instances run in Coordinated Universal Time (UTC), and so do schedules. `0 9 * * *` runs at 09:00 UTC, that is 10:00 in Paris in winter and 11:00 in summer. To run a job at the same local time all year round, add a `CRON_TZ` line with the [name of a time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), such as `Europe/Paris`. The cron daemon then reads the schedules of the following lines in this time zone and follows its daylight saving time changes:
 
-```json
+```json {filename="clevercloud/cron.json"}
 [
-  "*/5 * * * * /usr/bin/php $ROOT/cron.php"
+  "CRON_TZ=Europe/Paris",
+  "0 9 * * 1-5 /usr/bin/php $ROOT/scripts/send-daily-report.php"
 ]
 ```
 
-Note: `$ROOT` is only a token (not an actual variable) which is replaced when setting up the crons by the equivalent of the `APP_HOME` variable (`/home/bas/<app_id>`). Do not write `${ROOT}`, only `$ROOT` will work.
+A `CRON_TZ` line applies to the lines below it, up to the next `CRON_TZ` line. You can keep some jobs in UTC and schedule others in one or several local time zones. In this file, the synchronization stays in UTC, and each report leaves at 09:00 in its own time zone:
 
-## Access environment variables
+```json {filename="clevercloud/cron.json"}
+[
+  "*/10 * * * * /usr/bin/php $ROOT/scripts/sync-orders.php",
+  "CRON_TZ=Europe/Paris",
+  "0 9 * * 1-5 /usr/bin/php $ROOT/scripts/send-report.php --region=eu",
+  "CRON_TZ=America/New_York",
+  "0 9 * * 1-5 /usr/bin/php $ROOT/scripts/send-report.php --region=us"
+]
+```
 
-To have access to environment variable, you must wrap your commands in a bash script. Let's say
-your command is `bundle exec rake myapp:dosomething`.
+`CRON_TZ` only sets when a job starts: the command itself still runs in UTC. Some commands rely on the local time, to name a file after the current date for example. For them, also add a `TZ` line, such as `"TZ=Europe/Paris"`, which sets the time zone of the commands below it.
 
-You need to put it in a bash script, starting with `#!/bin/bash -l`. The *`-l`* is very
-important:
+When daylight saving time starts or ends, clocks skip an hour or go through it twice. In Paris, they jump from 02:00 to 03:00 on the last Sunday of March. They go back from 03:00 to 02:00 on the last Sunday of October. A job scheduled between 02:00 and 03:00 Paris time can then miss a run or run twice. Schedule it at another hour, or keep it in UTC.
+
+## Write the commands
+
+Jobs run as the `bas` user, from the `/home/bas` folder, through `/bin/sh`. Their environment is minimal: it holds none of your environment variables, and its `PATH` doesn't include the tools of your runtime, such as `node` or the tools you install with Mise. Write the absolute path of commands, such as `/usr/bin/php`, or load your environment as the next section shows.
+
+The cron daemon turns any `%` character of a command into a line break, which cuts the command short. Escape it as `\%`, written `\\%` in JSON. For example, to archive the `uploads` folder every night in a file named after the current date, which `date +%F` returns as `YYYY-MM-DD`:
+
+```json {filename="clevercloud/cron.json"}
+[
+  "0 1 * * * /usr/bin/tar -czf /tmp/uploads-$(/bin/date +\\%F).tar.gz -C $ROOT uploads"
+]
+```
+
+### Load your environment variables
+
+To give a job your environment variables and the tools of your runtime, run it through `bash -l`, which loads them before the command. For a single command, pass it to `bash -l -c` between single quotes:
+
+```json {filename="clevercloud/cron.json"}
+[
+  "*/5 * * * * /bin/bash -l -c 'cd $ROOT && npm run sync-orders'"
+]
+```
+
+For longer commands, write a script with a `#!/bin/bash -l` shebang:
+
+```bash {filename="crons/sync-orders.sh"}
+#!/bin/bash -l
+cd "${APP_HOME}" || exit 1
+bundle exec rake orders:sync
+```
+
+Make the script executable, and commit this permission with it:
 
 ```bash
-#! /bin/bash -l
-
-cd ${APP_HOME} # Which has been loaded by the env.
-bundle exec rake myapp:dosomething
+chmod +x crons/sync-orders.sh
+git add crons/sync-orders.sh
+git commit -m "Add the orders synchronization job"
 ```
 
-Then you need to commit an executable file:
+If you commit from a Windows computer, where Git doesn't record the permissions of files, run `git update-index --chmod=+x crons/sync-orders.sh` before you commit. Then call the script by its path:
 
-```bash
-chmod +x crons/mycron.sh
-git add crons/mycron.sh
-
-git diff --cached
-$ diff --git a/crons/mycron.sh b/crons/mycron.sh
-$ old mode 100644
-$ new mode 100755
-
-git commit -m "Make cron file executable"
-```
-
-Then, in `clevercloud/cron.json`:
-
-```json
+```json {filename="clevercloud/cron.json"}
 [
-  "*/5 * * * * $ROOT/crons/mycron.sh"
+  "*/5 * * * * $ROOT/crons/sync-orders.sh"
 ]
 ```
 
-### Avoiding double bash
+Don't write `/bin/bash $ROOT/crons/sync-orders.sh`: this command starts a shell that ignores the shebang and its `-l` option, so the script runs without your environment variables. The [environment variables page](/doc/develop/common-configuration/environment-variables/#special-environment-variables) lists the variables Clever Cloud adds to yours.
 
-You might be tempted to put the following in your cron.json file:
+### Read the output
 
-```json
-[
-  "*/5 * * * * /bin/bash $ROOT/crons/mycron.sh"
-]
+The standard output and error of your jobs go to the logs of your application. You find them in the Console, in `clever logs`, and in your [log drains](/doc/develop/observability/drains/). The cron daemon adds a line when each job starts and ends, and prefixes each line of output with `CMDOUT`:
+
+```text
+(bas) CMD (/home/bas/app_7d3f0c2e-5b1a-4c8e-9f2d-6a4b8e1c3f90/crons/sync-orders.sh)
+(bas) CMDOUT (Synchronized 42 orders)
+(bas) CMDEND (/home/bas/app_7d3f0c2e-5b1a-4c8e-9f2d-6a4b8e1c3f90/crons/sync-orders.sh)
 ```
 
-Do *NOT* do this. Invoking bash here will supersede the shebang and cancel the `bash -l` that
-loads the env. So just put the path to your *executable* `mycron.sh`.
+To keep your logs readable, add `> /dev/null` to a command to drop its output, or `> /dev/null 2>&1` to drop its errors too.
 
-You can refer to [this list](/doc/develop/common-configuration/environment-variables#special-environment-variables) to see which variables are available.
+## Avoid duplicate runs
 
-## Deduplicating crons
+Every instance of your application runs all the jobs of its crontab: with three instances, each job runs three times. For a job that must run on a single instance, such as sending a newsletter, check the `INSTANCE_NUMBER` variable at the start of your script. Its value is `0` on the first instance:
 
-Crons are installed and executed on every scaler of an application. This means the same cron may be executed more than once.
-
-You can use your own techniques to avoid that, like a shared task queue or some other locking system.
-
-If you do want to stay stateless and simple, just your bash wrapper script by:
-
-```bash
-#! /bin/bash -l
-
-if [[ "$INSTANCE_NUMBER" != "0" ]]; then
-  echo "Instance number is ${INSTANCE_NUMBER}. Stop here."
+```bash {filename="crons/send-newsletter.sh"}
+#!/bin/bash -l
+if [[ "${INSTANCE_NUMBER}" != "0" ]]; then
   exit 0
 fi
 
-cd ${APP_HOME} # Which has been loaded by the env.
-# Your part here
+cd "${APP_HOME}" || exit 1
+bundle exec rake newsletter:send
 ```
 
-{{< callout type="warning" >}}
-  If [Zero downtime deployment](/doc/develop/common-configuration/lifecycle#edit-application-configuration) is activated, Crons might overlap for a couple of minutes until the old instance are deleted as two instances would have the same instance number
-  You can prevent this by deactivating it.
-{{< /callout >}}
+During a deployment, the instances of the previous deployment keep running until the new ones are ready, and both sets of instances number from `0`. For a few minutes, a job can then run twice: once on an old instance, once on a new one.
 
-## Logs collection
+A lock shared by all instances, in your database for example, prevents two simultaneous runs. It doesn't prevent a second run once the first one ends. A job that must run only once per occurrence, such as a newsletter, can record each occurrence it handles to skip the ones already done. Record them atomically, in storage that all instances share. You can also make the job safe to run again.
 
-Everything coming from stdout & stderr is forwarded to our logs collection system and is available in the web console / CLI logs.
+A job can also last longer than its interval, and start again while the previous run goes on. The `flock` command skips a run when the previous one still holds its lock file. This lock file lives on the instance, so it only prevents overlapping runs on the same instance:
+
+```json {filename="clevercloud/cron.json"}
+[
+  "*/5 * * * * /usr/bin/flock -n /tmp/sync-orders.lock $ROOT/crons/sync-orders.sh"
+]
+```
+
+A job stops with its instance, at the end of a deployment or when the application scales down. The cron daemon doesn't catch up on occurrences it misses: if your application is stopped at the scheduled time, the job waits for its next occurrence. For long or heavy work, such as a large import, run a [Clever Task](/doc/develop/tasks/) from a short job instead. The task then doesn't share the resources of the instances that serve your application.

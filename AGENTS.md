@@ -2,8 +2,8 @@
 
 This file points coding agents working on the Clever Cloud documentation to the project instructions. Read both files before you change anything; every rule in them applies to agents:
 
-- [README.md](./README.md): repository structure, local development, how to add pages, changelog entries, images, shared content, and tooltips, the front matter fields, and the validation commands
 - [CONTRIBUTING.md](./CONTRIBUTING.md): writing standards, front matter and example rules, moving or merging pages, deployment guides, validation requirements, and commit messages
+- [README.md](./README.md): repository structure, local development, how to add pages, changelog entries, images, shared content, and tooltips, the front matter fields, and the validation commands
 
 ## Before you report a change as done
 

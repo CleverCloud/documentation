@@ -13,4 +13,4 @@ This file points coding agents working on the Clever Cloud documentation to the 
 
 ## Generated content
 
-Don't edit the body of `content/doc/cli-reference.md` by hand. `./update-cli-reference.sh` regenerates it from the documentation of a Clever Tools release and keeps its front matter, which is the only part maintained in this repository.
+Don't edit the body of `content/doc/cli-reference.md` by hand. `scripts/update-cli-reference.sh` regenerates it from the documentation of a Clever Tools release and keeps its front matter, which is the only part maintained in this repository.

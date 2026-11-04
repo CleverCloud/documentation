@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Regenerate the CLI reference page from the documentation of a Clever Tools release
-# Usage: ./update-cli-reference.sh [VERSION], defaults to the latest release
+# Usage: scripts/update-cli-reference.sh [VERSION], defaults to the latest release
 set -euo pipefail
 
 FILE="content/doc/cli-reference.md"
 REPO="CleverCloud/clever-tools"
 
-cd "$(dirname "$0")"
+# Paths are relative to the repository root, one level above scripts/
+cd "$(dirname "$0")/.."
 
 if [ ! -f "${FILE}" ]; then
   echo "${FILE} not found, its front matter is kept from one regeneration to the next" >&2

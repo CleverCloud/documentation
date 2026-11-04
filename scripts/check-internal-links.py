@@ -49,10 +49,14 @@ supporting it would need its own same-origin and ownership checks.
 
 Usage:
   hugo                                       # writes to publishDir
-  ./check-internal-links.py                  # defaults to public/developers
-  uv run check-internal-links.py -d          # also list the non-blocking notes
-  uv run check-internal-links.py --format json   # machine-readable, stdout only
-  uv run check-internal-links.py --root some/dir --prefix /developers
+  scripts/check-internal-links.py                # defaults to public/developers
+  uv run scripts/check-internal-links.py -d      # also list the non-blocking notes
+  uv run scripts/check-internal-links.py --format json   # machine-readable, stdout only
+  uv run scripts/check-internal-links.py --root some/dir --prefix /developers
+
+The default build, sources, and config resolve against the repository root,
+so the script runs from any directory. Paths passed as arguments stay
+relative to the current directory.
 
 Exit codes: 0 clean, 1 problems found, 2 bad invocation or missing build.
 """
@@ -85,8 +89,11 @@ from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 DEFAULT_EXTERNAL = ("/developers/clever-components",)
 # Pages whose anchors are generated client-side, absent from static HTML.
 DEFAULT_SKIP_ANCHORS = ("api/swagger",)
-DEFAULT_SOURCES = ("content", "shared")
-DEFAULT_CONFIGS = ("hugo.yaml",)
+# The script lives in scripts/, one level below the repository root.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_ROOT = REPO_ROOT / "public" / "developers"
+DEFAULT_SOURCES = (REPO_ROOT / "content", REPO_ROOT / "shared")
+DEFAULT_CONFIGS = (REPO_ROOT / "hugo.yaml",)
 
 SKIPPED_SCHEMES = ("mailto:", "tel:", "javascript:", "data:")
 DEFAULT_PORTS = {"http": "80", "https": "443"}
@@ -210,14 +217,18 @@ def under(path: str, prefix: str) -> bool:
 
 
 def display_path(path: str) -> str:
-    """Path relative to the invocation directory, in POSIX form.
+    """Path relative to the repository root, or to the invocation directory
+    for a path outside the repository, in POSIX form.
 
     Always relative when it can be computed: an absolute path would leak
     the local layout into a published JSON artifact and make the report
-    differ between runners.
+    differ between runners. Anchoring repository paths to its root keeps
+    `content/...` locations the same whatever directory the script runs from.
     """
+    resolved = Path(path).resolve()
+    base = REPO_ROOT if resolved.is_relative_to(REPO_ROOT) else Path.cwd()
     try:
-        return os.path.relpath(path, Path.cwd()).replace(os.sep, "/")
+        return os.path.relpath(resolved, base).replace(os.sep, "/")
     except ValueError:  # different volume on Windows
         return path.replace(os.sep, "/")
 
@@ -998,7 +1009,7 @@ def build_parser() -> Parser:
 
     parser = Parser(description=__doc__, formatter_class=formatter)
     parser.add_argument(
-        "--root", default="public/developers", help="built site directory"
+        "--root", default=str(DEFAULT_ROOT), help="built site directory"
     )
     parser.add_argument("--prefix", default="/developers", help="baseURL path prefix")
     parser.add_argument(

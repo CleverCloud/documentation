@@ -29,9 +29,9 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
   - `postmortem/`: incident reports
 - [`data/`](./data/): structured data, such as the supported runtime versions in `runtime_versions.yml`, the Kubernetes versions, and the tooltip definitions in `tooltips.toml`
 - [`layouts/`](./layouts/): Hugo templates and project shortcodes, including the Markdown output of each page and the `llms.txt` home page for large language models (LLMs)
+- [`scripts/`](./scripts/): maintenance scripts, such as the CLI reference generator and the offline internal link checker
 - [`shared/`](./shared/): Markdown blocks that several pages include
 - [`static/`](./static/): images, fonts, and the favicon
-- [`update-cli-reference.sh`](./update-cli-reference.sh): regenerates the CLI reference page
 
 ## Local development
 
@@ -105,8 +105,8 @@ Remove the `draft` field when the page is ready to publish.
 The body of [`content/doc/cli-reference.md`](./content/doc/cli-reference.md) comes from the documentation of a Clever Tools release. Regenerate it from the latest release, or from the version you pass as argument, with:
 
 ```bash
-./update-cli-reference.sh
-./update-cli-reference.sh 5.3.0
+scripts/update-cli-reference.sh
+scripts/update-cli-reference.sh 5.3.0
 ```
 
 The script keeps the page's front matter, which this repository maintains.
@@ -190,6 +190,12 @@ Run a production build before submitting a change:
 
 ```bash
 hugo
+```
+
+Then check the internal links and anchors of the build in `public/developers/`, offline. The script reports broken links, aliases that lead nowhere, and anchors a page doesn't define:
+
+```bash
+scripts/check-internal-links.py
 ```
 
 The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) rules in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and CLI configuration in [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc), which excludes the paths listed in [`.gitignore`](./.gitignore). Run the version installed by Mise:

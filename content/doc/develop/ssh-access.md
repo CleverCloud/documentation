@@ -3,12 +3,13 @@ type: docs
 weight: 70
 linkTitle: SSH access
 title: SSH access to running instances
-description: Use SSH and Clever Tools CLI to manage your applications remotely including deployment, debugging, and administration tasks
+description: Open a shell or run a command on the running instances of your Clever Cloud applications with Clever Tools or an SSH client, and debug failed deployments
 keywords:
 - ssh
-- cli
-- clever-tools
-- putty
+- clever ssh
+- ssh gateway
+- debugging
+- remote command
 aliases:
 - /doc/admin-console/ssh-keys
 - /doc/administrate/ssh-clever-tools
@@ -21,139 +22,146 @@ aliases:
 - /doc/tutorials/ssh_keys
 ---
 
-## Overview
+To debug an application, open a shell on one of its running instances, or run a single command there, through the Clever Cloud SSH gateway. Instances are immutable: what you change on the disk of an instance disappears when a deployment or a scaling operation replaces it. Fix your code or your environment variables, then redeploy. Data you write to a database or an FS Bucket persists as usual.
 
-Clever Cloud allows you to connect to running instances via SSH.
+## Before you start
 
-While direct SSH access to instances is not recommended in an [immutable infrastructure](https://glossary.cncf.io/immutable-infrastructure/) setup, it can be useful for debugging purposes.
+You need:
 
-## Purpose
+- An OpenSSH client, with the `ssh` command in your `PATH`. macOS and most Linux distributions include one, and Windows provides it as the [OpenSSH Client](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) feature. `clever ssh` runs this command too.
+- A public SSH key [registered on your Clever Cloud account](/doc/account-billing/ssh-keys/). The gateway identifies your account from this key, and gives you access to the applications this account can reach.
+- [Clever Tools](/doc/manage/cli/), logged in, to use `clever ssh`
 
-Clever Cloud instances are to be seen as *read-only* resources. Any change made on an instance **will not be persisted**. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
+## Connect with Clever Tools
 
-{{< callout type="warning">}}
-For security reasons, you can't connect on the instance that hosts your Docker application. Instead, if `bash` is installed in your Docker application, you will be able to connect directly inside your container. Contact the support if you need help to debug your Docker applications.
-{{< /callout >}}
+From a folder linked to your application, `clever ssh` opens a shell on its instance. From anywhere else, set the application with `--app`, followed by its ID, or by its name if no other application shares it:
 
-## Requirements
-
-You need to have at least one of the following installed locally:
-
-- the [Clever Tools CLI](/doc/manage/cli/)
-- an SSH client (e.g [putty](https://putty.org/) for windows users)
-
-### Make sure you have a properly configured SSH key
-
-To use SSH access, you need to have a SSH key properly configured in your Clever Cloud account. Please refer to [the SSH keys section of the documentation](/doc/account-billing/ssh-keys) to know how to set up your SSH keys.
-
-## Using Clever Tools CLI
-
-In order to access the machine via SSH using the Clever Tools CLI
-you need to have an application running on Clever Cloud and have linked it with your local repository using the Clever Tools CLI with `clever link --org <your_application's_organisation_id> <your_application_id>`
-
-### Accessing your machine
-
-You can access running instances of a linked application with `$ clever ssh` in the linked application's repository locally.
-
-```shell
+```bash
 clever ssh
-> Opening an ssh shell
-> bas@67fbf787-3518-47bb-abd9-2c2575844edd ~ $
+clever ssh --app my-api
 ```
 
-If multiple instances are running, you are prompted to select one interactively:
+The session opens as the `bas` user, in `/home/bas`, with your environment variables loaded. The files of your application are in `$APP_HOME`, that is `/home/bas/<app_id>`. [Docker applications](#docker-applications) work differently.
 
-```shell
-clever ssh
-> ? Select an instance:
-> ❯ Sleepy Ponita - Instance 0 - UP (11281f38-31ff-43a7-8595-a2d82630c32b)
->   Tense Caterpie - Instance 1 - UP (b10d19d9-5238-408b-b038-3e32c7a301c2)
-> Opening an ssh shell
-> bas@11281f38-31ff-43a7-8595-a2d82630c32b ~ $
+When several instances run, Clever Tools asks which one to connect to. In a script, without an interactive terminal, it lists them and fails instead. To choose upfront, set `--instance` to an instance number, an instance ID, or `any`:
+
+```bash
+clever ssh --instance 1
+clever ssh --instance any
 ```
 
-### Running a remote command
+During a deployment, the instance going away and the one replacing it share the same number: Clever Tools then prefers an `UP` instance, the most recent first. A number never selects a build instance, and `any` only selects one when no other instance runs. To reach a specific instance, such as a build instance during a deployment, use its ID. `clever instances` lists them, with `build` in the `#` column of build instances:
 
-You can execute a single command on a running instance with the `--command` (or `-c`) option. The command runs in a login shell on the remote instance and exits immediately after completion:
-
-```shell
-# List application files
-clever ssh -c 'ls -lah $APP_HOME'
-
-# List running processes
-clever ssh -c "ps aux"
-
-# Inspect application environment variables
-clever ssh -c "env | sort"
-
-# Read application logs
-clever ssh -c "journalctl -u bas-deploy.service --no-pager -n 50"
+```bash
+clever instances
+clever ssh --instance 9274818a-6247-46fb-adec-d9c0f190dcdd
 ```
 
-This is useful for quick diagnostics, scripting or automation. AI coding assistants such as Claude Code, Codex, Cursor or OpenCode can use this option to inspect the state of a running instance, analyse configuration files, check logs or troubleshoot issues on your behalf.
+Clever Tools uses your OpenSSH configuration and agent to choose the key. If they offer the key of another account, set the private key that matches a key of your account with `--identity-file`, or `-i`. Clever Tools then ignores the other keys of your agent, while the `IdentityFile` entries of your SSH configuration still apply:
 
-### Note for Windows users
-
-`$ clever ssh` command will fail on PowerShell or cmd.exe if there is no `ssh.exe` in your path. The most straightforward solution is to start `$ clever ssh` from `git-bash` but you can also add `ssh.exe` in your path..
-
-## Using an SSH client
-
-You can connect using only your ssh client:
-
-```shell
-ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com <app_id>
-````
-
-You can omit the application ID. In that case, you will be prompted to choose an organisation and an application.
-
-You can validate connection to remote server with this fingerprint :
-
-```shell
-ED25519 key fingerprint is SHA256:lys1oC3plDGyAsWD7Yd5fJVKQUV/Pbn/M5KI5GyAj5s.
-RSA     key fingerprint is SHA256:0odQb8NQPKYNCme2Nf3Xrz3Bc9kmrDK6eSJGIzj9aEA.
+```bash
+clever ssh --identity-file ~/.ssh/id_ed25519_clevercloud
 ```
 
-{{< callout type="warning" >}}
-The `-t` flag is mandatory for the ssh connection to work properly. If your terminal hangs and you see `pseudo-terminal will not be allocated because stdin is not a terminal`, it's likely you've forgotten the `-t` flag.
-{{< /callout >}}
+## Run a command
 
-## Access your application's folder
+`--command`, or `-c`, runs one command on the instance and exits. Its output goes to your terminal, and `clever ssh` exits with the exit code of the command. You can then use it in scripts, or let an [AI agent](/doc/ai-llms/) inspect an instance. The command runs in a `bash` login shell, or `/bin/sh` if the instance has no `bash`, from `/home/bas` with your environment variables loaded:
 
-No matter which way you've decided to use to SSH to the machine, your application's folder is located at: `/home/bas/<app_id>`.
+```bash
+clever ssh --instance any -c 'ls -la $APP_HOME'
+clever ssh --instance any -c 'node --version'
+```
 
-## Show your application's logs
+Write the command between single quotes, so `$APP_HOME` and other variables expand on the instance and not on your computer. `clever ssh` doesn't forward your local standard input to the command, so you can't pipe a local file to it.
 
-If you want to show your application's logs while you debug:
+## Inspect an instance
 
-```shell
+The output of your application on an instance is in its journal. To read its last lines from your computer:
+
+```bash
+clever ssh --instance any -c 'journalctl -u bas-deploy.service --no-pager -n 50'
+```
+
+To follow it from an interactive session on the instance:
+
+```bash
 journalctl -efa -u bas-deploy.service
 ```
 
-You can also use `journalctl` [with other options](https://www.commandlinux.com/man-page/man1/journalctl.1.html) if you need to.
+This journal only holds what this instance wrote since it started. To read the logs of all instances, including the ones a deployment removed, use [the logs of your application](/doc/develop/observability/logs/).
+
+### Debug a failed deployment
+
+When a deployment fails, Clever Cloud removes its instance. To keep it for up to one hour, set `CC_TROUBLESHOOT` to `true`, then redeploy:
+
+```bash
+clever env set CC_TROUBLESHOOT true
+clever restart
+```
+
+When the deployment fails, its logs show `Deploy failed in troubleshoot mode, keeping the instance up for closer inspection`. The deployment then stays in progress, and `clever deploy` or `clever restart` keeps waiting: run the next commands from another terminal.
+
+The kept instance shows as `DEPLOYING` in `clever instances`. Connect to it by its ID: if a previous deployment still runs, its `UP` instances share its number, and `--instance any` prefers them:
+
+```bash
+clever instances
+clever ssh --instance 3df3355e-6555-4d68-aa6f-a8f04c2734ac
+```
+
+A failure in the first steps of the deployment doesn't keep the instance. Once you're done, end the deployment with `clever cancel-deploy`, or push a fix. With the **Cancel ongoing deployment on new push** option, the new deployment cancels it. Then remove the variable with `clever env rm CC_TROUBLESHOOT`.
+
+## Connect with an SSH client
+
+Without Clever Tools, connect to the gateway with `ssh`. It lists the organisations your account can reach, then their applications, and asks you to choose one by its number:
+
+```bash
+ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com
+```
+
+An application ID or an instance ID after the address skips these questions. With an application ID, the gateway still asks which instance to connect to if several run:
+
+```bash
+ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com app_7d3f0c2e-5b1a-4c8e-9f2d-6a4b8e1c3f90
+```
+
+`-t` opens an interactive terminal. To run commands from a script, prefer `clever ssh --command`.
+
+On your first connection, check that the gateway presents one of these fingerprints:
+
+```text
+ED25519 key fingerprint is SHA256:lys1oC3plDGyAsWD7Yd5fJVKQUV/Pbn/M5KI5GyAj5s.
+RSA key fingerprint is SHA256:0odQb8NQPKYNCme2Nf3Xrz3Bc9kmrDK6eSJGIzj9aEA.
+```
+
+To choose the key `ssh` offers to the gateway, add a `Host` entry to your SSH configuration, as the [SSH keys page shows](/doc/account-billing/ssh-keys/#configure-your-ssh-agent). The gateway doesn't allow port forwarding: a tunnel opened with `-L` fails with `administratively prohibited`.
+
+## Docker applications
+
+In a Docker application, the SSH session opens a `bash` shell inside the container, in the working directory of the image, with your environment variables set. The image must include `bash`: otherwise the connection fails with `exec: "bash": executable file not found in $PATH`.
+
+`clever ssh --command` doesn't work with Docker applications: it fails with `cannot attach stdin to a TTY-enabled container`. Open an interactive session instead. The `bas-deploy.service` journal and the `/home/bas` folder of other runtimes don't apply inside a container.
 
 ## Troubleshooting
 
-A commonly encountered issue when using `clever ssh` is:
+Start from the message you get:
 
-```text
-Error: Failed to choose instance: 'Error while running choice script: Error: This application has no instances you can ssh to'
-```
+| Message                                                                  | Possible causes and fixes                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Multiple instances are running, pick one with --instance`               | Several instances run and the terminal isn't interactive. Set `--instance`                                                                                                                                                  |
+| `No running instances found for this application`                        | The application doesn't run. Check its state with `clever status`, then start or deploy it                                                                                                                                  |
+| `Permission denied (publickey…)`                                         | `ssh` offered no key registered on a Clever Cloud account: the key file is missing, isn't loaded in your agent, or [isn't on your account](/doc/account-billing/ssh-keys/)                                                  |
+| `The specified instance does not exist` or `no instances you can ssh to` | The ID is wrong or no longer exists, after a redeployment for example, or the key `ssh` offered belongs to an account that can't reach this application. Check the ID with `clever instances`, then the account of your key |
 
-First, make sure your application is running, otherwise there is no instance to connect to.
-
-If your application is up, this means you aren't allowed to access the organisation or application. This might be due to permission issue.
-If you're supposed to have access to the application, this is likely due to a key management issue. To fix it:
-
-- make sure you've added your public key on your Clever Cloud profile. You can refer to our documentation to [add your SSH key on Clever Cloud](/doc/account-billing/ssh-keys#add-a-public-ssh-key-on-clever-cloud)
-- make sure your SSH agent is using the proper private key
-
-A useful command for debugging is:
+To check which account your key identifies, connect to the gateway without any ID:
 
 ```bash
-ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com -v
+ssh -t ssh@sshgateway-clevercloud-customers.services.clever-cloud.com
 ```
 
-This command shows information about your SSH connection attempt, such as the key, and the organisation your key is linked to.
+It lists the organisations of the account your key belongs to. If they aren't the expected ones, your agent offered the key of another account. Select the right one with `--identity-file` for `clever ssh`, or with a `Host` entry in your SSH configuration. If they're the expected ones but the application doesn't appear, ask an administrator of its organisation for access.
 
-If you don't see your SSH key listed, you must [add it to your SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).
-If your key is present but not resolved as the first one in the list, you can [force the use of a specific key](/doc/account-billing/ssh-keys/#configure-your-ssh-agent)
+To check another key with `ssh`, add `-i` with `-o IdentitiesOnly=yes`, otherwise `ssh` still offers the keys of your agent first:
+
+```bash
+ssh -t -i ~/.ssh/id_ed25519_clevercloud -o IdentitiesOnly=yes ssh@sshgateway-clevercloud-customers.services.clever-cloud.com
+```

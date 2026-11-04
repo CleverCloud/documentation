@@ -14,7 +14,7 @@ draft: true
   Framework short description.
 {{< /hextra/hero-subtitle >}}
 
-## How to Configure and Deploy [...] on Clever Cloud
+## How to Configure and Deploy {{ replace .File.ContentBaseName "-" " " | title }} on Clever Cloud
 
 {{% steps %}}
 
@@ -27,5 +27,5 @@ draft: true
 ## 🎓 Further Help
 
 {{< cards >}}
-  {{< card link="/developers/guides/" title="Card title" subtitle="Card subtiltle" icon="adjustments-horizontal" >}}
+  {{< card link="/developers/guides/" title="Card title" subtitle="Card subtitle" icon="adjustments-horizontal" >}}
 {{< /cards >}}

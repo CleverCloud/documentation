@@ -126,7 +126,7 @@ cd "$APP_HOME"
 php admin/cli/cron.php
 ```
 
-Declare the schedule in `clevercloud/cron.json`:
+Declare the schedule in `clevercloud/cron.json`, as the [CRON page](/developers/doc/develop/cron/) describes:
 
 ```json {filename="clevercloud/cron.json"}
 [

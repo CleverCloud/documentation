@@ -96,7 +96,7 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 {{% details title="How do I define cron jobs for my application?" closed="true" %}}
 
-See [Cron Configuration File](/doc/develop/cron) for more information.
+See [Schedule jobs with CRON](/doc/develop/cron/).
 {{% /details %}}
 
 {{% details title="How do I identify different instances of my application?" closed="true" %}}

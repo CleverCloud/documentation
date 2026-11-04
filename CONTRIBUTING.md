@@ -79,6 +79,8 @@ Use GitHub-style callouts with a concise title on the marker line, as supported 
 > Back up your application database before upgrading
 ```
 
+Choose the type from what readers risk if they skip the callout, not from how important its content feels. Keep `[!WARNING]` for an action that can go wrong, such as data loss, downtime, a security exposure, or a breaking or irreversible change. Use `[!NOTE]` for a limit of scope or availability, such as a feature Docker applications don't support, a default value, or a behavior to know. Use `[!TIP]` for a recommendation. When you rewrite a page, check the type of each callout it already has instead of carrying it over.
+
 Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) only when a GitHub-style callout can't provide the required rendering or behavior. Don't overuse callouts: limit them to one or two per page.
 
 #### Front matter

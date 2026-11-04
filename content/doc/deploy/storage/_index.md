@@ -39,7 +39,7 @@ If you are coding a new project and need to store files, use Cellar. It will be 
 
 ## What is FS Bucket?
 
-Configuring FS Buckets in your application will give you a folder _in your filesystem_. This folder is shared between instances/applications. It's mounted over the network. As for any network filesystem there are upsides and downsides.
+Configuring FS Buckets in your application will give you a folder *in your filesystem*. This folder is shared between instances/applications. It's mounted over the network. As for any network filesystem there are upsides and downsides.
 
 ### Upsides of FS Bucket
 

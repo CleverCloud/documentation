@@ -72,7 +72,7 @@ Once you have your configuration provider, you can set the variables in the form
 You can find out more about rules and format in [this page](/doc/develop/common-configuration/environment-variables#environment-variables-rules-and-formats).
 
 {{< callout type="info" >}}
-At any point, you can link/unlink an application from the configuration provider by going to the app's _"Service dependencies"_ page.
+At any point, you can link/unlink an application from the configuration provider by going to the app's *"Service dependencies"* page.
 {{< /callout >}}
 
 ## Details and behaviour

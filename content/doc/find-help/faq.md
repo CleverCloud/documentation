@@ -25,7 +25,7 @@ aliases:
 
 {{% details title="What is a Scaler?" closed="true" %}}
 
-A _scaler_ is an individual instance hosting your application. You can allocate one or more scalers to each application. Available flavors are `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL` and `3XL`, depending on the runtime.
+A *scaler* is an individual instance hosting your application. You can allocate one or more scalers to each application. Available flavors are `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL` and `3XL`, depending on the runtime.
 
 Each scaler flavor provides a fixed set of resources.
 
@@ -67,7 +67,7 @@ As many as you want. We've not set a limited number of apps by developer.
 
 {{% details title="What type of content can I deploy?" closed="true" %}}
 
-Please refer to the Acceptable Use Policy, article 2, [_Reasonable use of the Platform_](https://www.clever.cloud/acceptable-use-policy/).
+Please refer to the Acceptable Use Policy, article 2, [*Reasonable use of the Platform*](https://www.clever.cloud/acceptable-use-policy/).
 {{% /details %}}
 
 {{% details title="Where are my applications and add-ons located?" closed="true" %}}
@@ -194,7 +194,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 Load-balancers handles all connections ahead of your applications and forward them in plain HTTP, you can't rely on the server port to know the scheme used by the user.
 
-Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '_http_' or '_https_'.
+Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '*http*' or '*https*'.
 
 {{< callout type="info" >}}
 In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.

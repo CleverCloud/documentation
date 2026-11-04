@@ -33,9 +33,9 @@ Metabase on Clever Cloud is a preconfigured set of resources, benefiting from al
 - **Periodically send** results of a question/dashboard by email/Slack
 - Configure **data visualization** for questions results: table, line chart, pie chart, gauge, single number, etc.
 - Connect **external databases**; it works with add-ons such as [MySQL](/doc/deploy/databases/mysql/), [PostgreSQL](/doc/deploy/databases/postgresql/), [MongoDB](/doc/deploy/databases/mongodb/) and [many other data sources](https://www.metabase.com/data-sources/)
-- Create _questions_ either by typing in `SELECT` SQL queries or by using Metabase’s UI to build such queries **without using SQL**
+- Create *questions* either by typing in `SELECT` SQL queries or by using Metabase’s UI to build such queries **without using SQL**
 
-You can also save questions and **organize** them in _collections_. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with **groups and permissions**: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.
+You can also save questions and **organize** them in *collections*. When opening a saved question, fresh data is extracted from the source DB, so that questions always show fresh results. You get user management with **groups and permissions**: users can access to whole data sources so that they can explore and create questions, or they can have access only to collections containing already existing questions/dashboard.
 
 ## Create a Metabase add-on
 
@@ -194,9 +194,9 @@ clever metabase version update myMetabase --target VERSION
 
 If you use `CC_METABASE_VERSION` it can contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
-- `latest` (_default_): use the latest version of the Community Edition (_same as `0`, `0.*`, `^0` or empty_)
-- `0.63.14`: use the `0.63.14` version (_same as `=0.63.14`_)
-- `0.63`: use the latest available version starting with `0.63` (_same as `^0.63.0`, `~0.63.0`_)
+- `latest` (*default*): use the latest version of the Community Edition (*same as `0`, `0.*`, `^0` or empty*)
+- `0.63.14`: use the `0.63.14` version (*same as `=0.63.14`*)
+- `0.63`: use the latest available version starting with `0.63` (*same as `^0.63.0`, `~0.63.0`*)
 
 To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/doc/manage/cli/applications/deployment-lifecycle/#restart).
 
@@ -278,7 +278,7 @@ Here is how you can do it:
 5. Stop your self-hosted instance (but let its database up!)
 6. Use `pg_dump` to export the whole internal database of your self-hosted instance: `pg_dump -d postgresql://[your-self-hosted-instance-connection-URI] --format c --compress 7 --schema public --verbose > metabase.backup`
 7. Use `pg_restore` to restore the dump to the PostgreSQL database of your Clever Cloud add-on: `pg_restore -d postgresql://[your-addon-database-connection-URI] --no-owner --clean --if-exists --schema public --verbose metabase.backup`
-8. _(optional)_ Configure the Java application domain and update your DNS record accordingly; if you use a custom domain, you should also update the `MB_SITE_URL` environment variable (it defines the base URL used by links in Metabase emails, among other things)
+8. *(optional)* Configure the Java application domain and update your DNS record accordingly; if you use a custom domain, you should also update the `MB_SITE_URL` environment variable (it defines the base URL used by links in Metabase emails, among other things)
 9. Start the Java application of your Clever Cloud add-on (without build cache)
 
 If everything seems OK, set `CC_METABASE_VERSION` to the value you wish (for example, `latest`) in the Java application of your Clever Cloud add-on and restart it. [Contact the Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice) if you need advice or help doing that.

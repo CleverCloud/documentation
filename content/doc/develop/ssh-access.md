@@ -29,7 +29,7 @@ While direct SSH access to instances is not recommended in an [immutable infrast
 
 ## Purpose
 
-Clever Cloud instances are to be seen as _read-only_ resources. Any change made on an instance **will not be persisted**. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
+Clever Cloud instances are to be seen as *read-only* resources. Any change made on an instance **will not be persisted**. You can use SSH access for quick tests, but if you want to persist changes, you need to commit them in your repository. Changes made on instances are not kept across deployments.
 
 {{< callout type="warning">}}
 For security reasons, you can't connect on the instance that hosts your Docker application. Instead, if `bash` is installed in your Docker application, you will be able to connect directly inside your container. Contact the support if you need help to debug your Docker applications.

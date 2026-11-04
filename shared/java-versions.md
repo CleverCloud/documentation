@@ -6,4 +6,4 @@ We follow the official Java [roadmap](https://www.oracle.com/java/technologies/j
 
 We are using OpenJDK distribution for mentioned Java versions.
 
-Every non-LTS versions where _Premier support_ ends will be removed without warning as you should be able to switch to the next available non-LTS version without any trouble.
+Every non-LTS versions where *Premier support* ends will be removed without warning as you should be able to switch to the next available non-LTS version without any trouble.

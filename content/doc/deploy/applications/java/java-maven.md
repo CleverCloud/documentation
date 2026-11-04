@@ -55,7 +55,7 @@ Your application must be set to listen on the port 8080.
 
 #### Option 1: JSON file in repository
 
-The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of your repository) file must contain the _goal_ field to indicate how to start your application:
+The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of your repository) file must contain the *goal* field to indicate how to start your application:
 
 ```json
   {

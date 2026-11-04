@@ -93,12 +93,12 @@ The Clever Kubernetes Operator requires configuration to connect to Clever Cloud
 
 This is the most complete authentication method, requiring all four OAuth1 parameters:
 
-- _Consumer key_
-- _Consumer Secret_
-- _Token_
-- _Secret_
+- *Consumer key*
+- *Consumer Secret*
+- *Token*
+- *Secret*
 
-To obtain these credentials, you need to connect to the Clever Cloud API, which uses OAuth1-based authentication. As explained in the [Clever Cloud API Overview](/api/), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the _Consumer key_ and the _Consumer Secret_, and complete the OAuth authentication process to get the _Token_ and _Secret_.
+To obtain these credentials, you need to connect to the Clever Cloud API, which uses OAuth1-based authentication. As explained in the [Clever Cloud API Overview](/api/), you need to create an OAuth consumer token in the Clever Cloud console, use it to obtain the *Consumer key* and the *Consumer Secret*, and complete the OAuth authentication process to get the *Token* and *Secret*.
 
 Configuration example:
 

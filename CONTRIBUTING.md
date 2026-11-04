@@ -26,7 +26,7 @@ Follow these guidelines while writing new content. The goal is to help you write
 #### 👍 Do
 
 - **Don't assume prior knowledge:** explain prerequisites and non-obvious behavior without burying the main task path
-- **Spell out acronyms:** at their first use on a page, write the full term followed by the acronym in parentheses, such as _multi-factor authentication (MFA)_. Then use the acronym alone. Skip this for acronyms most readers already know, such as API, CLI, DNS, or HTTP
+- **Spell out acronyms:** at their first use on a page, write the full term followed by the acronym in parentheses, such as *multi-factor authentication (MFA)*. Then use the acronym alone. Skip this for acronyms most readers already know, such as API, CLI, DNS, or HTTP
 - **Use the serial comma:** add a comma before the last item of a list, such as `Go, Node.js, and Python`
 - **Write dates in the US format:** `November 12, 2026`, and spell out ordinals in text, such as `first` instead of `1st`. ISO dates such as `2026-11-12` remain fine in logs, timelines, and front matter
 - **Don't space dashes:** write `the default—Node.js 24—applies`, for an em dash as for an en dash
@@ -38,18 +38,18 @@ Follow these guidelines while writing new content. The goal is to help you write
 - **Use the project terminology:** write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. The Vale vocabulary in `.github/styles/config/vocabularies/Doc/` lists the accepted and rejected terms
 - **Hyphenate with care:** don't hyphenate an adverb ending in `-ly`, such as `highly available`. Hyphenate a compound adjective before a noun, such as `long-term support`, and leave `up to date`, `open source`, `end of life`, and `step by step` open when they end the clause after a verb, such as `the image is up to date`
 - **Mind the typography:** use the ellipsis character `…`, and one space between sentences
-- **Prefer active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something. A passive is fine to describe a state, such as _is enabled_, or when the actor doesn't matter
+- **Prefer active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something. A passive is fine to describe a state, such as *is enabled*, or when the actor doesn't matter
 - **Use second person:** address the reader directly
 - **Keep it simple:** avoid jargon, complex sentences, and jokes
 - **Keep it short:** keep a sentence under 25 words when possible. Keep a paragraph to four or five lines, about 80 words, unless the content strictly needs more. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle.
 
 #### 👎 Don't
 
-- First-person pronouns such as _I_, _my_, _we_, _our_, or _let's_. Changelog entries are the only exception: they can use _we_, _us_, and _our_ to speak for Clever Cloud, never _I_, _me_, or _my_
-- Placeholder phrases like _please note_, _note that_, _at this time_, _it should be noted_, _keep in mind_, _be aware that_, _feel free to_, _don't hesitate to_, _as mentioned_, _it's important to note_, _it's worth noting_, _basically_, or _actually_
-- Words and phrases that make promises or tie the content to a moment, such as _soon_, _currently_, _for now_, _not yet_, _today_, or _in the future_: describe the current state of the platform instead. This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available.
-- Using phrases like _simply_, _just_, _easy_, _easily_, _obviously_, _of course_, _as simple as_, _straightforward_, _seamless_, _effortless_, _trivial_, _with ease_, _It's that simple_, _It's easy_, or _quickly_ in a procedure
-- Over-politeness with the use of _please_: go straight to the point
+- First-person pronouns such as *I*, *my*, *we*, *our*, or *let's*. Changelog entries are the only exception: they can use *we*, *us*, and *our* to speak for Clever Cloud, never *I*, *me*, or *my*
+- Placeholder phrases like *please note*, *note that*, *at this time*, *it should be noted*, *keep in mind*, *be aware that*, *feel free to*, *don't hesitate to*, *as mentioned*, *it's important to note*, *it's worth noting*, *basically*, or *actually*
+- Words and phrases that make promises or tie the content to a moment, such as *soon*, *currently*, *for now*, *not yet*, *today*, or *in the future*: describe the current state of the platform instead. This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available.
+- Using phrases like *simply*, *just*, *easy*, *easily*, *obviously*, *of course*, *as simple as*, *straightforward*, *seamless*, *effortless*, *trivial*, *with ease*, *It's that simple*, *It's easy*, or *quickly* in a procedure
+- Over-politeness with the use of *please*: go straight to the point
 
 #### 💡 Shortcodes and callouts
 

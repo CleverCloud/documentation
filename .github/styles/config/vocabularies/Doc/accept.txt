@@ -115,6 +115,7 @@ rclone
 reconnections
 Redict
 redirections
+ripgrep
 rollout
 runtime's
 runtimes
@@ -137,6 +138,7 @@ Symfony
 syslog
 Tailscale
 Telegraf
+Tesseract
 tolerations
 toolchain
 tooltip
@@ -148,3 +150,4 @@ VMs
 webroot
 WildFly
 Zabbix
+Zellij

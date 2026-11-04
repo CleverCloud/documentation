@@ -175,11 +175,11 @@ To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUIL
 
 ### Set Node.js version
 
-Each image includes a single Node.js version: the latest long-term support (LTS) release when Clever Cloud built the image. Your application uses it when it doesn't request another version.
+Each image includes a Node.js version installed with `nvm`: the latest long-term support (LTS) release when Clever Cloud built the image. Your application uses it when it doesn't request another version.
 
 {{< runtimes_versions node >}}
 
-To request a version, set the `CC_NODE_VERSION` environment variable or the `engines.node` field in your `package.json`. Both accept a version or a [semantic versioning range](https://github.com/npm/node-semver#ranges), such as `24`, `22.23`, `22.23.4`, or `>=22`. A partial version is a range: `24` matches any 24.x release, `22.23` any 22.23.x release. Clever Cloud ignores and deletes any `.nvmrc` file during deployment.
+To request a version, set the `CC_NODE_VERSION` environment variable or the `engines.node` field in your `package.json`. Both accept a version or a [semantic versioning range](https://github.com/npm/node-semver#ranges), such as `26`, `24.22`, `24.22.2`, or `>=24`. A partial version is a range: `26` matches any 26.x release, `24.22` any 24.22.x release. Clever Cloud ignores and deletes any `.nvmrc` file during deployment.
 
 During the build phase, Clever Cloud resolves the requested version in this order:
 
@@ -187,7 +187,7 @@ During the build phase, Clever Cloud resolves the requested version in this orde
 2. Otherwise, Clever Cloud installs with `nvm` the latest Node.js release that matches the request
 3. If no release matches, the deployment fails
 
-For example, with Node.js 24.22.1 in the image, `24` and `>=22` both resolve to 24.22.1, while `22` installs the latest 22.x release. An open range such as `>=22` doesn't select the latest release: it keeps the included version as long as this version matches. The included version changes with image updates, from one patch release to the next and from one LTS branch to the next. Set a major version, such as `24`, to stay on the same branch across image updates. `engines.node` follows the same rules, so a broad compatibility range in `package.json` also selects the version.
+For example, with Node.js 26.13.0 in the image, `26` and `>=24` both resolve to 26.13.0, while `24` installs the latest 24.x release. An open range such as `>=24` doesn't select the latest release: it keeps the included version as long as this version matches. The included version changes with image updates, from one patch release to the next and from one LTS branch to the next. Set a major version, such as `26`, to stay on the same branch across image updates. `engines.node` follows the same rules, so a broad compatibility range in `package.json` also selects the version.
 
 > [!NOTE] `CC_NODE_VERSION` takes precedence from December 1, 2026
 > When you set both, `engines.node` in `package.json` takes precedence over `CC_NODE_VERSION`, for legacy reasons. From December 1, 2026, `CC_NODE_VERSION` takes precedence, and `engines.node` only applies when this variable isn't set. If your application sets both to different values, align them or remove `CC_NODE_VERSION` to keep the version `engines.node` selects.

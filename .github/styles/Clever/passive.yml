@@ -1,6 +1,6 @@
+# A passive is fine to describe a state, such as 'is enabled', or when the actor doesn't matter
 extends: existence
-link: 'https://developers.google.com/style/voice'
-message: "In general, use active voice instead of passive voice ('%s')."
+message: "Prefer active voice when it tells who acts ('%s')"
 ignorecase: true
 level: suggestion
 raw:

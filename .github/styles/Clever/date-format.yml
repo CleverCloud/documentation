@@ -1,0 +1,13 @@
+extends: existence
+message: "Use the 'November 12, 2026' format, not '%s'"
+level: warning
+ignorecase: false
+nonword: true
+# The lookarounds and the year range skip most version numbers, such as '51.0.7922'
+# or '9.2.0096', but not '1.2.2026'. Month names are case-sensitive, so '3 may run'
+# doesn't match, and the year is optional to catch '1 October'. ISO dates such as
+# '2026-11-12' stay allowed for logs and timelines.
+tokens:
+  - '(?<![\d.])\d{1,2}[./]\d{1,2}[./](?:19|20)\d{2}(?![\d.])'
+  - '\b\d{1,2} (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\b(?: \d{4}\b)?'
+  - '\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.? \d{1,2} \d{4}\b'

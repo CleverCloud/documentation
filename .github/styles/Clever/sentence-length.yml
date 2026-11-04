@@ -1,0 +1,7 @@
+extends: occurrence
+message: "Keep it short: split or simplify this sentence, which has more than 25 words"
+level: suggestion
+scope: sentence
+# A contraction or a hyphenated word counts as one word
+max: 25
+token: '\b\w+(?:[''’-]\w+)*\b'

@@ -1,0 +1,39 @@
+extends: substitution
+message: "Use '%s' instead of '%s'"
+level: warning
+ignorecase: true
+# 'set up', 'log in', and 'back up' are verbs; 'setup', 'login', and 'backup' are nouns.
+# A noun use, such as 'a leverage' or 'the setup the team uses', can trip a swap: judge each alert.
+action:
+  name: replace
+swap:
+  allow to: let you
+  allows to: lets you
+  are able to: can
+  backup your: back up your
+  click on: click
+  due to the fact that: because
+  enable to: let you
+  enables to: lets you
+  in order to: to
+  in the event that: if
+  is able to: can
+  k8s: Kubernetes
+  leverage: use
+  leveraged: used
+  leverages: uses
+  leveraging: using
+  log into: log in to
+  login to: log in to
+  make use of: use
+  permits to: lets you
+  prior to: before
+  setup a: set up a
+  setup the: set up the
+  setup your: set up your
+  to backup: to back up
+  to setup: to set up
+  utilize: use
+  utilized: used
+  utilizes: uses
+  utilizing: using

@@ -1,0 +1,9 @@
+extends: occurrence
+message: "Split this paragraph: it has more than 100 words, and four or five lines are enough unless the content strictly needs more"
+level: suggestion
+scope: paragraph
+# Paragraphs stay on one source line, so the limit counts words. The written target
+# is four or five lines, about 80 words; the limit starts at 100 words to flag the
+# longest paragraphs first. A contraction or a hyphenated word counts as one word.
+max: 100
+token: '\b\w+(?:[''’-]\w+)*\b'

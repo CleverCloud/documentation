@@ -1,0 +1,20 @@
+extends: existence
+message: "Remove '%s' and go straight to the point"
+level: warning
+ignorecase: true
+# Apostrophes can be straight or curly
+tokens:
+  - actually
+  - as mentioned
+  - at this time
+  - basically
+  - be aware that
+  - "don['’]t hesitate to"
+  - do not hesitate to
+  - feel free to
+  - "it(?: is|['’]s) important to note"
+  - "it(?: is|['’]s) worth noting"
+  - it should be noted
+  - keep in mind
+  - note that
+  - please

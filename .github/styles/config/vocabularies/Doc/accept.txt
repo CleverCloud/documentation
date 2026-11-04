@@ -74,6 +74,7 @@ LLMs
 Lume
 Mailparse
 Makefile
+markdownlint
 Materia
 Matomo
 Maudit

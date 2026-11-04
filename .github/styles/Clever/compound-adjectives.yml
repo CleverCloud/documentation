@@ -1,0 +1,11 @@
+extends: existence
+message: "'%s': hyphenate a compound adjective before a noun, such as 'long-term support'; leave 'up to date', 'open source', 'end of life', and 'step by step' open after a verb"
+level: suggestion
+ignorecase: true
+tokens:
+  # Hyphenated after a verb. Permanent compounds such as 'read-only', 'long-term',
+  # 'real-time', and 'third-party' keep their hyphen everywhere, so they stay out.
+  # The compound must end the clause: in 'is open-source software', a noun follows
+  - '\b(?:is|are|be|been|being|stays?|keeps?|kept|remains?|gets?) (?:end-of-life|open-source|step-by-step|up-to-date)(?=\s*(?:[.,;:!?)]|$))'
+  # Open before a noun
+  - '\b(?:end of life|full text|high availability|long term|open source|read only|real time|third party|up to date) (?:access|alternative|applications?|components?|data|databases?|dates?|dependencies|images?|integrations?|keys?|librar(?:y|ies)|logs|metrics|mode|monitoring|packages?|policy|projects?|releases?|search|services?|software|solutions?|storage|support|tokens?|tools?|users?|versions?)\b'

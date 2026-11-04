@@ -1,8 +1,8 @@
 extends: substitution
-message: "Use '%s' instead of '%s'."
-link: 'https://developers.google.com/style/contractions'
+message: "Use '%s' instead of '%s'"
 level: suggestion
 ignorecase: true
+# 'that is' stays out: latin-abbreviations.yml recommends it instead of 'i.e.'
 action:
   name: replace
 swap:
@@ -14,17 +14,10 @@ swap:
   does not: doesn't
   has not: hasn't
   have not: haven't
-  how is: how's
   is not: isn't
   it is: it's
   should not: shouldn't
-  that is: that's
   they are: they're
   was not: wasn't
-  we are: we're
-  we have: we've
   were not: weren't
-  what is: what's
-  when is: when's
-  where is: where's
   will not: won't

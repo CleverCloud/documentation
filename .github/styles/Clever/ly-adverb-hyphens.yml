@@ -1,0 +1,15 @@
+extends: existence
+message: "'%s' doesn't need a hyphen"
+level: warning
+ignorecase: false
+nonword: true
+action:
+  name: edit
+  params:
+    - regex
+    - "-"
+    - " "
+# Words ending in 'ly' that aren't adverbs keep their hyphen: 'early-access',
+# 'daily-rotated', 'supply-chain', 'WebAssembly-based', 'friendly-looking'
+tokens:
+  - '\b(?!(?:(?i:app|cost|dai|ear|fami|ho|hour|ju|month|night|on|rep|supp|ug|week|year)|\w*(?i:assemb|friend))ly-)[^\s-]+ly-\w+\b'

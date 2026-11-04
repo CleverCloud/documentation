@@ -1,0 +1,23 @@
+extends: existence
+message: "Avoid '%s': what looks easy to the author may not be easy to the reader"
+level: warning
+ignorecase: true
+# 'simple', 'easier', 'instantly', 'in seconds' and 'out of the box' stay out:
+# they often describe a fact, such as 'a simple example' or 'a timeout in seconds'.
+# 'non-trivial' isn't a promise. Apostrophes can be straight or curly.
+tokens:
+  - as simple as
+  - easily
+  - easy
+  - effortless(?:ly)?
+  - "it['’]s easy"
+  - "it['’]s that simple"
+  - '\bjust\b(?!-in-time)'
+  - obviously
+  - of course
+  - quickly
+  - seamless(?:ly)?
+  - simply
+  - straightforward
+  - '(?<!non-)trivial(?:ly)?'
+  - with ease

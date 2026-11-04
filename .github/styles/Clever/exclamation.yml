@@ -1,0 +1,7 @@
+extends: existence
+message: "Don't use exclamation points in text"
+level: warning
+nonword: true
+# 'Play!' is the name of the Play Framework
+tokens:
+  - '\w+(?<!\bPlay)!(?:\s|$)'

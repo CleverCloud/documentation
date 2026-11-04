@@ -102,7 +102,7 @@ The [README](./README.md#configure-front-matter) lists the front matter fields t
 
 - Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items
 - Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap
-- Sort lists and tables alphabetically unless a functional or chronological order is more useful
+- Sort list items alphabetically, or by increasing or decreasing line length, and table rows alphabetically. An editorial logic, such as a functional, chronological, or step-by-step order, takes priority over both
 - End every text file with a newline
 
 #### Dependencies and versions

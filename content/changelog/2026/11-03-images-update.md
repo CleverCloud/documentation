@@ -1,6 +1,6 @@
 ---
-title: "Images update: Varnish 9.0, Composer 2.11, Clever Tools 5.3, Python variables renaming"
-description: Varnish 9.0, Composer 2.11 and 2.2.31 security fixes, Clever Tools 5.3, CC_ prefixed names for Python variables, stricter value checks for environment variables, and a fix for Java tasks
+title: "Images update: Node.js 26.13, Varnish 9.0, Composer 2.11, Clever Tools 5.3, Python variables renaming"
+description: Node.js 26.13 as the default LTS version, Varnish 9.0, Composer 2.11 and 2.2.31 security fixes, Clever Tools 5.3, CC_ prefixed names for Python variables, stricter value checks for environment variables, and a fix for Java tasks
 date: 2026-11-03
 tags:
   - images
@@ -33,6 +33,8 @@ We updated all our images. Deployment is in progress for all our users.
   - Elixir 1.18.6
   - Elixir 1.19.7
   - Elixir 1.20.5
+- **Node.js:**
+  - Update to 26.13.0 (npm 11.20.0)
 - **PHP:**
   - Composer 2.2.31
   - Composer 2.11.1
@@ -59,6 +61,20 @@ In the coming weeks, we will start a migration to the open source [Vinyl Cache](
 Composer 2.11 removes the `source-fallback` option introduced in 2.10: when a package archive fails to download, Composer no longer falls back to a source install. It also adds a `cooldown` policy, which withholds newly released package versions for a configurable period to reduce exposure to compromised releases.
 
 - [Read the Composer 2.11 release announcement](https://blog.packagist.com/composer-2-11-release/)
+
+## Node.js 26 LTS by default
+
+Node.js 26 is now the latest long-term support (LTS) branch, so our images include Node.js 26.13.0 instead of a 24.x release. Your application uses it when it doesn't request a version through `CC_NODE_VERSION` or `engines.node` in `package.json`. Applications that request a version keep the same behavior.
+
+If your application isn't compatible with Node.js 26 yet, set `CC_NODE_VERSION` to `24` to stay on the Node.js 24 LTS branch, then redeploy:
+
+```bash
+clever env set CC_NODE_VERSION 24
+clever restart --without-cache
+```
+
+- [Learn more about the Node.js release schedule](https://nodejs.org/en/about/previous-releases)
+- [Learn more about Node.js versions on Clever Cloud](/doc/deploy/applications/nodejs/#set-nodejs-version)
 
 ## Python environment variables renaming
 

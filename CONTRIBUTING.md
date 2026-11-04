@@ -1,23 +1,29 @@
-
 # Contributing guidelines
 
-This document provides explicit standards expected in Clever Cloud documentation. Inspiration and research for this document comes from the incredible [Awesome Code Review](https://github.com/joho/awesome-code-review) project. You'll find repository instructions for coding agents and LLMs:
-
-- [Coding agent instructions](./AGENTS.md)
+This document sets the standards that human contributors and coding agents follow in the Clever Cloud documentation. Inspiration and research for this document come from the [Awesome Code Review](https://github.com/joho/awesome-code-review) project. The [README](./README.md) explains how to set up the project, add content, and run the checks; [AGENTS.md](./AGENTS.md) points coding agents to both files.
 
 ## Standards
 
-Those are general standards to fulfill for every modification in this repository
+These general standards apply to every change in this repository.
 
 ### 🏯 Structure
 
-The structure of this docs aims to be as clear as possible for Clever Cloud users. Submitted changes can be merged as long as they respect these standards:
+The structure of this documentation aims to be as clear as possible for Clever Cloud users. Submitted changes can be merged as long as they respect these standards:
 
-- Readers know where to go or where to click to find an information
+- Readers know where to go or where to click to find information
 - Readers know why they're on a specific page
 - The site keeps a coherent and [intuitive design](https://www.figma.com/fr/resource-library/ui-design-principles/)
 
-Follow the established structure in this doc. If you wish to propose changes to the structure, open an issue first to discuss it, or post it in the forum.
+Follow the established structure. To propose changes to the structure, open an issue first to discuss it, or post it in the forum.
+
+#### Move, merge, or remove a page
+
+When a page moves to another URL, or when you merge its content into another page:
+
+- Add the old URL to the destination page's `aliases`, so Hugo keeps serving a redirect
+- Carry over every alias the removed page already declared; they must keep resolving
+- Update internal links to target the new URL directly instead of relying on the redirect, especially in `shared/` blocks included by many pages
+- Check each redirect in the build output before committing
 
 ### ✒️ Content
 
@@ -35,28 +41,33 @@ Follow these guidelines while writing new content. The goal is to help you write
 - **Prefer contractions:** write `don't` and `isn't`
 - **Avoid Latin abbreviations and exclamation points:** write `for example`, `that is`, `and so on`, `see`, `namely`, `note`, and `versus` instead of `e.g.`, `i.e.`, `etc.`, `cf.`, `viz.`, `N.B.`, and `vs.`
 - **Prefer plain words:** write `click`, `to`, `if`, `because`, `can`, `use`, `before`, and `Kubernetes` instead of `click on`, `in order to`, `in the event that`, `due to the fact that`, `is able to`, `leverage` or `utilize`, `prior to`, and `k8s`. Write `lets you deploy`, not `allows to deploy`. Use `set up`, `log in`, and `back up` as verbs, `setup`, `login`, and `backup` as nouns
-- **Use the project terminology:** write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. The Vale vocabulary in `.github/styles/config/vocabularies/Doc/` lists the accepted and rejected terms
-- **Hyphenate with care:** don't hyphenate an adverb ending in `-ly`, such as `highly available`. Hyphenate a compound adjective before a noun, such as `long-term support`, and leave `up to date`, `open source`, `end of life`, and `step by step` open when they end the clause after a verb, such as `the image is up to date`
+- **Use the project terminology:** write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. The Vale vocabulary in `.github/styles/config/vocabularies/Doc/` lists the rejected forms in `reject.txt`, matched case-sensitively, and the product names and terms the spell check accepts in `accept.txt`. The spell check ignores their case, so check capitalization yourself
+- **Hyphenate with care:** don't hyphenate an adverb ending in `-ly`, such as `highly available`. Hyphenate a compound adjective before a noun, such as `long-term support` or `open-source project`, and leave `up to date`, `open source`, `end of life`, and `step by step` open when they end the clause after a verb, such as `the image is up to date`
 - **Mind the typography:** use the ellipsis character `…`, and one space between sentences
-- **Prefer active voice:** passive voice can make it harder for the readers to figure out who's supposed to do something. A passive is fine to describe a state, such as *is enabled*, or when the actor doesn't matter
+- **Prefer active voice when it tells who acts:** you, Clever Cloud, the CLI. Passive voice can make it harder for readers to figure out who's supposed to do something. A passive is fine to describe a state, such as *is enabled*, or when the actor doesn't matter
 - **Use second person:** address the reader directly
 - **Keep it simple:** avoid jargon, complex sentences, and jokes
-- **Keep it short:** keep a sentence under 25 words when possible. Keep a paragraph to four or five lines, about 80 words, unless the content strictly needs more. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle.
+- **Keep it short:** keep a sentence under 25 words when possible. Keep a paragraph to four or five lines, about 80 words, unless the content strictly needs more. Vale suggests splitting longer sentences and paragraphs over 100 words. Titles should be short and to the point. Keep longer content for the description metadata or the card subtitle
+- **Prefer prose to lists:** write two to four well-developed paragraphs per section, and keep bullet lists for items readers scan or compare
 
 #### 👎 Don't
 
-- First-person pronouns such as *I*, *my*, *we*, *our*, or *let's*. Changelog entries are the only exception: they can use *we*, *us*, and *our* to speak for Clever Cloud, never *I*, *me*, or *my*
+- First-person pronouns such as *I*, *me*, *my*, *we*, *us*, *our*, or *let's*. Changelog entries are the only exception: they can use *we*, *us*, and *our* to speak for Clever Cloud, never *I*, *me*, or *my*
 - Placeholder phrases like *please note*, *note that*, *at this time*, *it should be noted*, *keep in mind*, *be aware that*, *feel free to*, *don't hesitate to*, *as mentioned*, *it's important to note*, *it's worth noting*, *basically*, or *actually*
-- Words and phrases that make promises or tie the content to a moment, such as *soon*, *currently*, *for now*, *not yet*, *today*, or *in the future*: describe the current state of the platform instead. This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available.
+- Words and phrases that make promises or tie the content to a moment, such as *soon*, *currently*, *for now*, *not yet*, *today*, *recently*, *upcoming*, *coming next month*, or *in the future*: describe the current state of the platform instead. This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
 - Using phrases like *simply*, *just*, *easy*, *easily*, *obviously*, *of course*, *as simple as*, *straightforward*, *seamless*, *effortless*, *trivial*, *with ease*, *It's that simple*, *It's easy*, or *quickly* in a procedure
 - Over-politeness with the use of *please*: go straight to the point
 
 #### 💡 Shortcodes and callouts
 
-This doc uses Hugo with [Hextra theme](https://imfing.github.io/hextra/), which provides a variety of [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) to enhance it and improve its readability.
-For example :
+This documentation uses Hugo with the [Hextra theme](https://imfing.github.io/hextra/), which provides [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) that improve readability:
 
-- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) are well suited for the `/guides/` section, or for any tutorial
+- [Cards](https://imfing.github.io/hextra/docs/guide/shortcodes/cards/) with `{{< cards >}}` link to related resources
+- Hero subtitles with `{{< hextra/hero-subtitle >}}` introduce a guide
+- [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/) with `{{% steps %}}` suit the `/guides/` section, or any tutorial
+- [Tabs](https://imfing.github.io/hextra/docs/guide/shortcodes/tabs/) with `{{< tabs >}}` and named `{{< tab name="npm" >}}` children show alternatives side by side
+
+The project adds its own shortcodes in `layouts/shortcodes/`, such as `content` and `content-raw` for [shared content](./README.md#add-shared-content).
 
 Use GitHub-style callouts with a concise title on the marker line, as supported by the theme:
 
@@ -70,22 +81,47 @@ Use GitHub-style callouts with a concise title on the marker line, as supported 
 
 Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) only when a GitHub-style callout can't provide the required rendering or behavior. Don't overuse callouts: limit them to one or two per page.
 
-#### Front matter and examples
+#### Front matter
 
-- Give `title` a descriptive value, written for search engine optimization (SEO), without repeating `Clever Cloud`, which the generated HTML title already includes. Keep `linkTitle` short, usually the product name, so it fits in the sidebar.
-- Don't add `aliases` to a new page. Use them only to preserve URLs that existed previously.
+The [README](./README.md#configure-front-matter) lists the front matter fields this project uses. When you set them:
+
+- Give `title` a descriptive value, written for search engine optimization (SEO), without repeating `Clever Cloud`, which the generated HTML title already includes. Keep `linkTitle` short, usually the product name, so it fits in the sidebar
+- Don't add `aliases` to a new page. Use them only to preserve URLs that existed previously
 - Remove `draft: true` when a page is ready to publish instead of keeping `draft: false`
-- Keep commands literally copyable. Don't use shell-invalid placeholders or bracketed optional arguments in executable code blocks; show optional variants separately or explain where to add the flag.
+
+#### Code and command examples
+
+- Provide complete, runnable examples with real commands and configurations, and include setup context and expected output when helpful
+- Keep commands literally copyable. Don't use shell-invalid placeholders or bracketed optional arguments in executable code blocks; show optional variants separately or explain where to add the flag
+- Use exact environment variable names, such as `CC_WEBROOT` and `CC_NODE_BUILD_TOOL`
+- Use realistic names instead of `foo`, `bar`, or `example`
+- Show complete command sequences in changelog entries
 - Add code comments only when they explain non-obvious behavior
-- Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items.
-- Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap.
+
+#### Formatting
+
+- Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items
+- Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap
 - Sort lists and tables alphabetically unless a functional or chronological order is more useful
+- End every text file with a newline
 
 #### Dependencies and versions
 
 - All non-Docker runtimes provide a shared set of tools and version-management variables independently of the application's primary runtime. For example, `CC_NODE_VERSION` can select Node.js in a PHP application, while `CC_PHP_VERSION` can select PHP in a Node.js application. Other shared tools include Composer, Gradle, Hugo, and Python.
 - Prefer these dedicated environment variables and the package managers already provided by the runtime when they manage a dependency or its version. If a Mise task also needs the runtime-managed tool, derive its Mise version from the dedicated environment variable instead of hard-coding the version twice.
 - For other deployment dependencies, prefer [Mise](https://mise.jdx.dev/) and a suitable backend such as [HTTP](https://mise.jdx.dev/dev-tools/backends/http.html) or [GitHub](https://mise.jdx.dev/dev-tools/backends/github.html) over custom download scripts, and pin versions when appropriate
+
+#### Deployment guides
+
+- Prefer one clear path that uses platform defaults and native features
+- Follow every documented command from a fresh project and test every behavior the guide promises
+- Verify the default build and run configuration before documenting any scaling override
+- Omit `-a` when the current directory is linked to only one application; use an application alias to disambiguate or link resources
+- Follow the option style used by recent guides, including short Clever Tools options where established
+- Place the standard `clever domain` and custom-domain example immediately after application creation
+- Use `openssl rand -base64 32` when a guide needs a portable password-generation example and OpenSSL is already a prerequisite
+- Make sure captured command output doesn't expose credentials, tokens, add-on environment values, or unrelated account data
+- Validate public-storage claims with an unauthenticated request and persistence claims after a restart or rebuild
 
 ### 💅 Style guide
 
@@ -96,13 +132,15 @@ Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/sh
 
 ### ✅ Validation
 
-Run `mise install` to install the development dependencies declared in `mise.toml`, then run `hugo` before submitting a change and fix any build error. Verify links, references, image paths, and shortcode syntax in the generated output. Inspect changed tabs, code blocks, cards, anchors, and copyable commands in the rendered HTML: a successful build alone doesn't prove that they render correctly.
+Run the [checks described in the README](./README.md#validate-changes) before submitting a change: a `hugo` build without errors, `markdownlint-cli2`, and `vale` on the files you change.
 
-Run `markdownlint-cli2` and `vale` on the files you change: fix every error and warning on the lines you change, and review each suggestion. A passive that describes a state or a word quoted as an example can stay. Vale doesn't check everything: review structure, list order, and the accuracy of commands yourself. It doesn't lint the GitHub issue forms either, so review their text too.
+Fix every markdownlint issue, and every Vale error and warning on the lines you change, then review each Vale suggestion. A passive that describes a state or a word quoted as an example can stay. Vale doesn't check everything: review structure, list order, and the accuracy of commands yourself. It doesn't lint the GitHub issue forms in `.github/ISSUE_TEMPLATE/` either, so review their text too.
+
+Verify links, references, image paths, and shortcode syntax in the generated output. Inspect changed tabs, code blocks, cards, anchors, and copyable commands in the rendered HTML: a successful build alone doesn't prove that they render correctly.
 
 ## 🫶 Pull requests
 
-These are the guidelines when submitting or reviewing a PR in this repository. The better you follow them, the faster the is the review process.
+These are the guidelines when submitting or reviewing a PR in this repository. The better you follow them, the faster the review process is.
 
 ### 🚨 Priority
 

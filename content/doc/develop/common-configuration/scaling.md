@@ -68,6 +68,9 @@ The maximum number of Scalers you can set for an application is 40.
 This process is exactly the opposite when the **load decreases**. A Scaler is removed and so on till a **minimum
 reasonable level** is reached.
 
+Each Scaler runs the [CRON jobs](/doc/develop/cron/) of your application, including the ones horizontal scaling adds.
+To keep a job from running on every Scaler, see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
+
 The following scheme depicts a Scaler replication in case of a load increase:
 
 ![Horizontal scaling: numbers of scalers](/images/scaling_horizontal_scheme.jpg "Horizontal scaling: you can define the min and max numbers of Scalers you need.")

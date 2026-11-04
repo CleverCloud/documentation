@@ -380,7 +380,7 @@ Once configured in your repository, the Clever Cloud review app GitHub Action de
 
 ### Schedule recurring scripts
 
-Need to clean a cache every night or send a weekly report? On applications other than Docker and tasks, add a `clevercloud/cron.json` file to your project. Times are in UTC, commands use absolute paths, and `$ROOT` stands for the root of your application:
+Need to clean a cache every night or send a weekly report? On applications other than Docker and tasks, add a `clevercloud/cron.json` file to your project. Times are in UTC by default, commands use absolute paths, and `$ROOT` stands for the root of your application:
 
 For example, to run a PHP script at `scripts/clean-cache.php` every night:
 

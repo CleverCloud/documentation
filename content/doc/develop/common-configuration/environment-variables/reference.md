@@ -355,7 +355,7 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 ## Ruby
 
-- [Ruby Guide](/guides/ruby-rack-app-tutorial)
+- [Ruby Guide](/guides/ruby-rack)
 - [Ruby Documentation](/doc/deploy/applications/ruby)
 
 | Name                                                                                      | Description                                                                                                                                                                                                                                | Default value                                                                                                      |

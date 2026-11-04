@@ -57,7 +57,6 @@ llmsTxtOptional: true
   {{< card link="/developers/guides/proxysql" title="ProxySQL" subtitle="Configure ProxySQL for MySQL add-ons" icon="mysql" >}}
   {{< card link="/developers/guides/ruby-on-rails" title="Ruby on Rails" subtitle="Deploy a Ruby on Rails application" icon="ruby" >}}
   {{< card link="/developers/guides/ruby-rack" title="Ruby Rack" subtitle="Deploy a Ruby Rack application" icon="ruby" >}}
-  {{< card link="/developers/guides/ruby-rack-app-tutorial" title="Ruby Rack (full tutorial)" subtitle="Build and deploy a Ruby Rack application" icon="ruby" >}}
   {{< card link="/developers/guides/sftpgo" title="SFTPGo" subtitle="Deploy an SFTP server with PostgreSQL and Cellar object storage" icon="server-stack" >}}
   {{< card link="/developers/guides/sveltekit" title="SvelteKit" subtitle="Deploy a SvelteKit application with static or server-side rendering" icon="simple:svelte" >}}
   {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle="Deploy a Symfony application" icon="simple:symfony" >}}

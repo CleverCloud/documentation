@@ -11,7 +11,9 @@ keywords:
 - application server
 aliases:
 - /doc/deploy/application/ruby/tutorials/ruby-rack-app
+- /doc/deploy/application/ruby/tutorials/ruby-rack-app-tutorial
 - /doc/ruby/ruby-rack
+- /guides/ruby-rack-app-tutorial
 ---
 
 Clever Cloud supports applications built on the [Rack interface](https://github.com/rack/rack) with its Ruby runtime. The runtime installs dependencies with Bundler and starts the application's `config.ru` through Puma.
@@ -25,4 +27,4 @@ A deployable Rack application needs:
 
 No custom run command or listening port is required: the runtime configures Puma and connects it to the managed NGINX server. Access [environment variables](/developers/doc/develop/common-configuration/environment-variables/) with `ENV["VARIABLE_NAME"]`.
 
-Follow the [complete Ruby Rack tutorial](/guides/ruby-rack-app-tutorial/) to create, test and deploy a minimal current application, or read the [Ruby runtime reference](/developers/doc/deploy/applications/ruby/) for build hooks, Rake tasks, Puma settings and static files.
+Read the [Ruby runtime reference](/developers/doc/deploy/applications/ruby/) for build hooks, Rake tasks, Puma settings and static files.

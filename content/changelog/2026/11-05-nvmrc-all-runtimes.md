@@ -1,5 +1,5 @@
 ---
-title: ".nvmrc files ignored on every runtime except Docker"
+title: ".nvmrc files ignored on every runtime"
 description: From the next images update, Clever Cloud ignores and deletes the .nvmrc file of applications on every runtime except Docker, not only Node.js; set the Node.js version with CC_NODE_VERSION, or with mise for a file in your repository
 date: 2026-11-05
 tags:

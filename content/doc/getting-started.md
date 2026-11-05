@@ -58,9 +58,7 @@ Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select t
 
 ### Two Factor Authentication (2FA)
 
-Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
-
-Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.
+Enable two-factor authentication from the [Authentication](https://console.clever-cloud.com/users/me/authentication) page of your profile. The Console shows your recovery codes only once, when you enable it, so save them. Clever Cloud can't restore access to your account if you lose both your authenticator app and these codes. [Learn more about two-factor authentication](/doc/account-billing/user/#two-factor-authentication-2fa).
 
 ## Deploy your code
 

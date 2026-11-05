@@ -93,7 +93,7 @@ Clever Cloud Runners for Heptapod comes with the following features:
 - **Quick activation:** Activate Clever Cloud Runners for Heptapod for your organisation with just one click.
 - **Easy customization:** Easily define your pipelines using templates for the most popular languages. Edit and validate definitions from the interface or directly from the project file.
 - **Integrated tracking:** Monitor the execution of your tasks in real time, receive notifications of pipeline success or failure, and view activity reports online.
-- **[Components Catalog](/doc/tools/gitlab/#deploy-directly-from-heptapod):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
+- **[Components Catalog](/doc/tools/gitlab/#use-heptapod-cloud-or-a-self-managed-instance):** Connect your repository to Clever Cloud and deploy on production, create review apps, and automate tasks.
 
 #### Provisioning
 

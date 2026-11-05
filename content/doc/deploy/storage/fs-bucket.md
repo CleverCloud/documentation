@@ -3,17 +3,17 @@ type: docs
 weight: 20
 linkTitle: File System Buckets
 title: File System Buckets
-description: Configure FS Bucket add-on service for persistent file storage and data management across your Clever Cloud applications
+description: Mount a persistent network file system in your Clever Cloud applications, shared by their instances and reachable over FTP and SFTP
 keywords:
 - file system buckets
 - persistent storage
 - NFS
 - file storage
-- data management
 - filesystem
 - buckets
 - network storage
 - file sharing
+- sftp
 aliases:
 - /addons/fs_buckets
 - /deploy/addon/fs-bucket
@@ -27,114 +27,55 @@ aliases:
 - /doc/storage/fsbucket
 ---
 
-When you deploy an application on Clever Cloud, like most PaaS, a new virtual machine is created, the previous one is deleted. If your application generates data, for example if you let users upload pictures and you don't store it on databases or object storage, you will lose anything on the local disk after a rebuild or a restart.
+Each deployment on Clever Cloud starts new instances and deletes the previous ones. The files your application writes on their local disk, such as user uploads, disappear with them. A File System Bucket (FS Bucket) is a network file system that keeps these files. You mount it in a folder of your application, and all its instances share the same content, from one deployment to the next.
 
-Immutable infrastructure doesn't allow you to keep generated data files between deployments. To avoid this, you need **a persistent file system**. This is why we created File System Buckets, a network-based storage solution to retrieve data from a deployment to another.
+FS Buckets suit applications that expect a file system, such as a content management system storing its media. For a new project, prefer [Cellar](/doc/deploy/storage/cellar/), the S3-compatible object storage of Clever Cloud.
 
-## Known Limitations
+## Create an FS Bucket
 
-FS Buckets are provided for application needing file-system backward compatibility, but there are not optimized for high-performance applications, especially those relying on caching. There are also some availability and features limitations:
+Create the add-on from the [Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/), in the region of your application:
 
-- FS Buckets are not available for Docker applications
-- FS Buckets can't be mounted across different regions
-- FS Buckets are note available in Health Data Hosting (HDS) Zone
-- Clever Cloud provides automated backups every 24 hours, with only 72 hours of retention for FS Buckets (7 days for databases)
-
-> [!NOTE] PHP applications include a default FS Bucket for session storage
-> To deploy a PHP application on an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket). Consider using Redis to manage PHP sessions.
-
-## Configuring your application
-
-Buckets are configured using environment variables. Add the following to your application :
-
-```text
-CC_FS_BUCKET=/some/empty/folder:bucket-xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-fsbucket.services.clever-cloud.com[:async]
+```bash
+clever addon create fs-bucket my-bucket --region par --link my-app
 ```
 
-Replace the path of the mounted folder and the fs-bucket host with the targeted folder path and your fs-bucket host. The target directory shouldn't exist and is relative to the application: `/my-directory` will be mounted in `/home/bas/<app_id>/my-directory/`.
+Linking the add-on to an application adds these environment variables to it:
 
-Optionnally, you can add `:async` to the end of the environment variable.
-This will make Clever Cloud mount the FS Bucket with the `async` option.
-It will make the FS Bucket faster (sometimes up to 3 times faster), but in case of a network issue it may cause file
-corruption.
+- `BUCKET_HOST`: the host of the bucket, such as `bucket-<uuid>-fsbucket.services.clever-cloud.com`
+- `BUCKET_FTP_USERNAME` and `BUCKET_FTP_PASSWORD`: the credentials to [access the files](#access-your-files) over FTP or SFTP
 
-You can setup multiple buckets by appending a number at the end of the environment variable's name.
+Linking doesn't mount the bucket: set `CC_FS_BUCKET` for that.
 
-```text
-CC_FS_BUCKET=/some/empty/folder:fs_bucket_host
-CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host:async
+## Mount the bucket in your application
+
+Set `CC_FS_BUCKET` to the folder to mount, followed by the host of the bucket: replace `bucket-<uuid>-fsbucket.services.clever-cloud.com` with the value of `BUCKET_HOST`. Then restart the application, so that its new instances mount the bucket:
+
+```bash
+clever env set CC_FS_BUCKET "/uploads:bucket-<uuid>-fsbucket.services.clever-cloud.com"
+clever restart
 ```
 
-Note that the `async` parameter can be set per bucket.
+The path is relative to the root of your application: `/uploads` stands for `/home/bas/<app_id>/uploads`. If this folder exists in your repository, it must be empty, otherwise the deployment fails. The mount happens before the build, so [build hooks](/doc/develop/common-configuration/build-hooks/) can read and write the files of the bucket.
 
-## Configuring your application with buckets.json (@deprecated)
+To mount several buckets, add a number to the name of the variable. Each folder can only hold one bucket:
 
-{{< callout emoji="🧹" >}}
-**This method is deprecated**
-This method is deprecated, we strongly recommend that you use environment variables.
-If you want to switch from this method to the environment variables, you need to remove the `buckets.json` file. Otherwise, the environment variables will be ignored.
-Also, this method does not support the `async` parameter.
-{{< /callout >}}
-
-To configure your application to use buckets, use the
-`clevercloud/buckets.json` file.
-The `clevercloud` folder must be located at the root of your application.
-The `buckets.json` file must contain the following structure:
-
-```javascript
-[
-  {
-    "bucket" : "bucketId",
-    "folder" : "/myFolder",
-    "apps"   : ["app_id"]
-
-  },
-  {
-    "bucket_host" : "bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com",
-    "folder" : "/myotherFolder",
-    "apps"   : ["app_id_2"]
-  }
-]
+```bash
+clever env set CC_FS_BUCKET "/uploads:bucket-<uuid>-fsbucket.services.clever-cloud.com"
+clever env set CC_FS_BUCKET_1 "/exports:bucket-<other-uuid>-fsbucket.services.clever-cloud.com:async"
 ```
 
-{{< callout type="info" >}}
-You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
-{{< /callout >}}
+By default, each write waits for the bucket server to receive it. Add `:async` at the end of the value to mount a bucket in asynchronous mode. Writes can be faster, but a network issue can then lose or corrupt the files your application is writing.
 
-It's a json array containing objects with at least two fields:
+## Access your files
 
-| Usage    | Field       | Description                                                                                                                                                                                                                                                          |
-| -------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Required | bucket      | The bucket id you can find in the console. It begins with `bucket_`. This is for "old-style" buckets (created before the 7 December 2015)                                                                                                                            |
-| Required | bucket_host | The bucket host you can find in the console. It begins with `bucket-` and ends with `services.clever-cloud.com`. This is for "new-style" buckets.                                                                                                                    |
-| Required | folder      | The folder you want the bucket to be mounted in. Should start with `/`. Using the example *myFolder*, you can access your bucket via the *myFolder* folder at the root of your application (which absolute path is available in the `APP_HOME` environment variable) |
-| Optional | apps        | Whitelist of the applications allowed to mount this bucket. It's helpful if you need to deploy a *preprod* app and a *prod* app using the exact same codebase but different buckets                                                                                  |
+Your application reads and writes the files in the mounted folder. For an absolute path, start from the `APP_HOME` [environment variable](/doc/develop/common-configuration/environment-variables/).
 
-The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
-You can mount the same bucket in different folders, but they will share the same content, so it's not the solution. You should prefer to mount the bucket in only one folder and then manage multiple subfolders in it.
+The **Dashboard** of the add-on in the [Console](https://console.clever-cloud.com) shows the files of the bucket. From your computer, connect with an FTP or SFTP client to the host in `BUCKET_HOST`, with `BUCKET_FTP_USERNAME` and `BUCKET_FTP_PASSWORD`:
 
-{{< callout type="warning" >}}
-You cannot mount two buckets in the same folder for the same app. If you put the same "folder" value for two entries in your environment variables or the *buckets.json* array, **make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
-{{< /callout >}}
+- SFTP on port `22`
+- FTP on port `21`, or FTP over TLS (FTPS) through `AUTH TLS` if your client supports it
 
-## Accessing your data inside the FS Bucket
-
-### From your application
-
-Your bucket is mounted at the configured path, starting from your application's
-root folder.
-
-If you want to use an absolute path, you can use the `APP_HOME` environment
-variable, see [special environment variables](/doc/develop/common-configuration/environment-variables#special-environment-variables)
-
-### From the add-on dashboard
-
-The **File explorer** tab of the **add-on dashboard** gives you access to your files
-in the FS bucket.
-
-### From your favorite SFTP client
-
-The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https://console.clever-cloud.com) displays information you need to connect using SSH File Transfer Protocol (SFTP). You can use the following SSH public keys to ensure the connection is authentic and trusted:
+The SFTP server presents one of these host keys:
 
 | Algorithm | Key size | Fingerprint                                          |
 | --------- | -------- | ---------------------------------------------------- |
@@ -161,18 +102,25 @@ The **Add-on information** tab of your FS Bucket in [Clever Cloud Console](https
 | RSA       | 4096     | `SHA256:yRHC/tAlBpHLlRZ5rwbZ1z+159Bj3yg0VxHf+hXINLg` |
 | RSA       | 4096     | `SHA256:yhn79aqxOGQZ+LXdN1/vIY+jwRIbBamlVT1+HdFoA6o` |
 
-FS Buckets use Clever Cloud-managed SFTP credentials and do not support custom SSH keys or separate user accounts; for these features, deploy [SFTPGo](/guides/sftpgo/) instead.
+Each bucket has a single account, managed by Clever Cloud, without custom SSH keys. For several users or SSH keys, deploy [SFTPGo](/guides/sftpgo/) instead.
 
-### From your favorite FTP client
+With [Terraform](/doc/tools/terraform/), the `clevercloud_fsbucket_upload` action pushes local files or the content of a URL to a bucket.
 
-The **Add-on information** tab of your FS Bucket add-on displays the information
-you need to connect to your bucket using FTP.
+## Limits
 
-## Monitoring your storage usage
+FS Buckets favor compatibility over performance. They don't suit applications with intensive disk access, such as a cache. Other limits apply:
 
-The size of each bucket is recorded hourly in Warp 10 as the `fsbucket.storage` metric, in bytes,
-which lets you chart your storage consumption over time.
-The read token shown in an application's **Metrics** tab does not include this metric. You need to
-generate a dedicated token that includes the FS Bucket metrics scope.
+- Docker applications can't mount FS Buckets
+- An application can only mount the buckets of its region
+- FS Buckets aren't available in the Health Data Hosting (HDS) regions
+- File locks only apply within an instance. Don't store a SQLite database, or other files that rely on locks, in a bucket several instances use
+- Clever Cloud backs up FS Buckets every 24 hours, and keeps these backups for 72 hours
 
-- [Generate the required token and query the FS Bucket storage metric](/doc/develop/observability/metrics#fs-bucket)
+> [!NOTE] PHP applications include a default FS Bucket for sessions
+> To deploy a PHP application in an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket). Store the sessions in Redis instead.
+
+## Monitor your storage usage
+
+Clever Cloud records the size of each bucket every hour in Warp 10, as the `fsbucket.storage` metric, in bytes. The read token of the **Metrics** tab of an application doesn't include this metric: generate a token with the FS Bucket scope.
+
+- [Generate the token and query the FS Bucket storage metric](/doc/develop/observability/metrics#fs-bucket)

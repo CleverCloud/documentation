@@ -2,16 +2,15 @@
 type: docs
 weight: 10
 linkTitle: Configuration provider
-title: Configuration provider
-description: Manage application configuration with Config Provider add-on service for centralized environment variable management and secure storage
+title: Share environment variables between applications
+description: Store environment variables once in a configuration provider add-on, link it to several applications of your organisation, and update them all from one place
 keywords:
+- configuration provider
+- config provider
+- shared environment variables
 - configuration
-- environment variables
-- config
 - addon
-- secrets
-- credentials
-- management
+- microservices
 aliases:
 - /addons/config-provider
 - /deploy/addon/config-provider
@@ -22,67 +21,58 @@ aliases:
 - /doc/services/configuration-provider
 ---
 
-The configuration provider add-on helps you to create groups of environment variables that you can share with multiple applications.
+A configuration provider is an add-on that holds environment variables for several applications. Instead of setting the same variables in each application, you set them once in the configuration provider, then [link it](/doc/manage/service-dependencies/) to the applications that need them. When you update a variable, the linked applications receive the new value. This add-on is free.
 
-## Example
+For example, a `shipping-api` and a `payment-api` application both need `PULSAR_TOPIC=order` and `USER_API_HOST=https://user.example.com/api`. A configuration provider holds these two variables, and each application keeps its own variables, such as `ENABLE_PARTNERS` or `ENABLE_SEPA`.
 
-Let's take an example with 2 Node.js applications exposing some REST APIs: `shipping-api` and `payment-api`.
+A configuration provider holds variables that don't belong to a single application. To share the URL or the credentials of an application with the applications that call it, use its [exposed configuration](/doc/manage/service-dependencies/#exposed-configuration) instead.
 
-The `shipping-api` application needs the following environment variables:
+## Create a configuration provider
 
-- `PULSAR_TOPIC=order`
-- `USER_API_HOST=https://user.example.com/api`
-- `ENABLE_PARTNERS=true`
+In the [Console](https://console.clever-cloud.com), open the organisation of your applications, then:
 
-The `payment-api` application needs the following environment variables:
+1. Click **Create**, then **Add-on**, and select **Configuration provider**
+2. Select the plan, then click **Next**
+3. If the organisation has applications, toggle **Link** for each one that needs the variables, then click **Next**
+4. Enter a name, select a region, then click **Next**
 
-- `PULSAR_TOPIC=order`
-- `USER_API_HOST=https://user.example.com/api`
-- `ENABLE_SEPA=false`
+The Console then opens the **Dashboard** of the add-on. Set the variables in its **Variables** form, then click **Update changes**. The variables follow the same [rules and formats](/doc/develop/common-configuration/environment-variables/#environment-variables-rules-and-formats) as the ones of an application.
 
-![Two Node.js applications with their own environment variables](/images/schema-config-provider-01.svg "Two Node.js applications with their own environment variables")
+With [Clever Tools](/doc/manage/cli/addons/#config-provider), create it in the organisation of your applications, replacing `my-team` with its name or ID, then set its variables:
 
-As you can see, we had to define `PULSAR_TOPIC` and `USER_API_HOST` in both applications with the same value.
-If we ever need to change these values, we'll have to apply the updates in both apps and restart them.
+```bash
+clever addon create config-provider shared-config --org my-team
+clever config-provider set shared-config PULSAR_TOPIC order
+clever config-provider set shared-config USER_API_HOST https://user.example.com/api
+```
 
-NOTE: This is a simple example, but we could have more than just 2 microservices and more than just 2 common variables.
+Then, from a folder linked to each application, link it and restart the application:
 
-To simplify this process, we will create a configuration provider add-on.
-It will allow us to define those common variables in one place and inject them in our 2 applications.
+```bash
+clever service link-addon shared-config
+clever restart
+```
 
-![Two Node.js applications with their own environment variables](/images/schema-config-provider-02.svg "Two Node.js applications with their own environment variables")
+An application receives the variables of a configuration provider on its next deployment. Adding or removing the link doesn't redeploy the application: restart it to apply the change. To link or unlink a configuration provider later, open the **Service dependencies** tab of the application.
 
-Think of a configuration provider as a way to group a set of environment variables and share them with any application.
+## Update the variables
 
-![One application overriding the environment variable value for PULSAR_TOPIC](/images/schema-config-provider-03.svg "One application overriding the environment variable value for PULSAR_TOPIC")
+Each time you save the variables of a configuration provider, Clever Cloud redeploys the applications linked to it, except the ones you stopped. Stopped applications receive the new values when they start.
 
-If a variable is defined in a configuration provider **and** also in the application, the value defined in the application wins.
+Each `clever config-provider set`, `rm`, or `import` command saves the variables, even when their values don't change, and redeploys these applications. To change several variables with one redeployment, save them at once in the Console, or with `clever config-provider import`. It replaces all the variables of the configuration provider, so write the complete list, one `NAME=value` entry per line:
 
-## How to create a config provider
+```bash
+cat > shared.env <<'EOF'
+PULSAR_TOPIC=order
+USER_API_HOST=https://user.example.com/api
+EOF
+clever config-provider import shared-config < shared.env
+```
 
-In the console, go to the organisation where you have your applications.
+## Override a shared value
 
-1. Click **Create** in the sidebar, then **Add-on**
-2. You will see a list of add-ons, select **Configuration provider**
-3. Select the first plan and click on **Next**
-4. Toggle the **Link** for each application you need and then on **Next**
-5. Define a name and click on **Next**
+A variable set in the application itself takes precedence over the same variable in a configuration provider. For example, set `PULSAR_TOPIC=payment` in `payment-api` to override `order` for this application only. The [order of precedence](/doc/manage/service-dependencies/#conflicting-variable-names) lists all the sources of variables.
 
-Once you have your configuration provider, you can set the variables in the form.
-You can find out more about rules and format in [this page](/doc/develop/common-configuration/environment-variables#environment-variables-rules-and-formats).
+When you move variables from your applications to a configuration provider, remove the copies you want to share from each application, or they keep overriding the shared values. Then redeploy each application, as for any change to its own variables.
 
-{{< callout type="info" >}}
-At any point, you can link/unlink an application from the configuration provider by going to the app's *"Service dependencies"* page.
-{{< /callout >}}
-
-## Details and behaviour
-
-- As with any other add-on, you can only link a configuration provider to applications that are in the same organisation.
-- Variables defined directly in the application override the ones injected from the configuration provider.
-- When you update the variables of a configuration provider, all applications linked to it will be automatically restarted.
-- You can create multiple configuration providers in your organisation and link them to different applications.
-
-## Pricing
-
-This add-on is completely free.
-No fee will be invoiced to you while using this kind of add-on.
+You can create several configuration providers, for example one per environment or per team, and link an application to more than one. Don't define the same variable in two configuration providers linked to the same application: the value it receives isn't defined.

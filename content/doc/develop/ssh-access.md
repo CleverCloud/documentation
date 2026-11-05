@@ -74,6 +74,12 @@ clever ssh --instance any -c 'node --version'
 
 Write the command between single quotes, so `$APP_HOME` and other variables expand on the instance and not on your computer. `clever ssh` doesn't forward your local standard input to the command, so you can't pipe a local file to it.
 
+Add `--app-home` to run the command from the folder of your application, `$APP_HOME`, instead of `/home/bas`. If `$APP_HOME` isn't set or the instance can't enter it, the command doesn't run and `clever ssh` fails. `--app-home` isn't available for [Docker applications](#docker-applications):
+
+```bash
+clever ssh --instance any --app-home -c 'ls -la'
+```
+
 ## Inspect an instance
 
 The output of your application on an instance is in its journal. To read its last lines from your computer:

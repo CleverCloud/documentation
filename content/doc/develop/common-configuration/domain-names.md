@@ -113,10 +113,10 @@ To benefit from certified hosting for health data, you need to deploy in an HDS 
 
 ### Europe/Roubaix (RBX)
 
-| Record Type                         | Value                                                                                                                        |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.`                                                                |
-| A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.177.176`<br>`@ 10800 IN A 87.98.177.181`<br>`@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.136` |
+| Record Type                         | Value                                                                                        |
+| ----------------------------------- | -------------------------------------------------------------------------------------------- |
+| CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.rbx.clever-cloud.com.`                                |
+| A<br>Only if CNAME is not available | `@ 10800 IN A 87.98.177.181`<br>`@ 10800 IN A 87.98.180.173`<br>`@ 10800 IN A 87.98.182.136` |
 
 ### Europe/Roubaix HDS (RBXHDS)
 

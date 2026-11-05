@@ -194,6 +194,16 @@ It's a total export, including the client's secrets and hashed password. Exporte
 
 Uploading previously exported data in `realms/import` folder in the associated FS Bucket enables importing realms data. The import process starts after rebuilding the Java application.
 
+## Send emails
+
+Keycloak sends emails to verify the address of a user, reset a password, or ask for another required action. Configure an SMTP server for each realm, such as a [MailPace](/doc/deploy/services/mailpace/) add-on. Get its API key with `clever addon env <addon-id>`, in `MAILPACE_API_KEY`. Then, in the Keycloak administration console, select the realm, open **Realm settings** > **Email**, and set:
+
+- **From**: an address on the domain you [verified in MailPace](/doc/deploy/services/mailpace/#verify-your-domain)
+- **Host**: `smtp.mailpace.com`, with **Port** `465`, **Enable SSL** on, and **Enable StartTLS** off
+- **Authentication** enabled, with the API key as **Username** and **Password**
+
+Then click **Save**.
+
 ## Custom Themes and Plugins
 
 Keycloak uses an [FSBucket](/doc/deploy/storage/fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.

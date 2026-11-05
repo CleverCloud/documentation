@@ -31,14 +31,13 @@ Variables are defined on a per-application basis. They are defined in four ways:
 - By provisioned add-ons linked to applications. The variables names
   are listed in the add-on's information panel.
 
-- By linked applications with exposed configuration.
+- By linked applications with [exposed configuration](/doc/manage/service-dependencies/#exposed-configuration).
 
 - By adding variables yourself in the "Environment variables" panel of your application.
 
 - Some environment variables are added automatically for each application.
 
-Please note that if you define or modify environment variables, you will
-need to redeploy your application to make it use the new variables.
+After you change the environment variables of your application, redeploy it to use the new values. When you save the exposed configuration of a linked application, or the variables of a linked [configuration provider](/doc/deploy/services/config-provider/), Clever Cloud redeploys your application, unless you stopped it.
 
 Check out our [environment variable reference](/doc/develop/common-configuration/environment-variables/reference).
 

@@ -2,112 +2,84 @@
 type: docs
 weight: 80
 linkTitle: TCP Redirections
-title: TCP Redirections
-description: Manage and configure TCP redirections and port forwarding for your Clever Cloud applications to enable custom networking configurations
+title: TCP redirections
+description: Expose a raw TCP port of your Clever Cloud application through the load balancers, for protocols other than HTTP, from the Console, Clever Tools or Terraform
 keywords:
 - tcp redirections
+- tcp port
 - port forwarding
-- custom networking
-- tcp traffic
-- network configuration
-- tcp routing
+- namespace
+- raw tcp
+- non-http protocol
 aliases:
 - /doc/administrate/tcp-redirections
 - /doc/common-configuration/tcp-redirections
 ---
-{{< callout type="warning" >}}
-TCP redirections are currently available free of charge as long as the feature is in BETA stage.
-Once the feature leaves the BETA stage, it won't be free anymore.
-{{< /callout >}}
 
-## What is a TCP redirection?
+A TCP redirection opens a public port on the Clever Cloud load balancers and forwards its raw TCP traffic to port `4040` of your application. Use it for protocols other than HTTP, such as SFTP, MQTT, or a game server. TCP redirections are free.
 
-Every application hosted Clever Cloud must listen on port 8080 and answer to HTTP traffic.
-This is useful for both routing requests and monitoring purposes.
+## How it works
 
-However, some applications might additionally require binary protocol, with raw TCP interactions.
-In that case, you can use a TCP redirection to route TCP traffic, through Clever Cloud reverse proxies, to your application.
+- Your application listens on port `4040`. A [Docker container](/doc/deploy/applications/docker/#tcp-support) can use another port through `CC_DOCKER_EXPOSED_TCP_PORT`
+- Clever Cloud chooses the public port. It stays the same while the redirection exists, even when the application redeploys
+- Deployments still wait for the HTTP [health check](/doc/develop/common-configuration/healthcheck/) of your application on port `8080`: a TCP redirection doesn't replace it
+- The load balancers forward the bytes unchanged: your application handles TLS itself, with its own certificate
+- Your application sees the address of the load balancer, not the one of the client
+- With several instances, the load balancers spread new connections across them
 
-Every application can be configured to receive TCP traffic on the port 4040.
-Clever Cloud then assigns a specific port to your application to expose it to TCP traffic. This port is chosen at random above 5000.
+## Choose a namespace
 
-Use this specific port to send and receive TCP traffic.
+A namespace is a group of load balancers. Each application can have one TCP redirection per namespace:
 
-{{< callout type="warning" >}}
-The application must still be listening to the 8080 port, regardless of TCP configuration.
-{{< /callout >}}
+- `default`: the load balancers of your custom domains
+- `cleverapps`: the load balancers of the `cleverapps.io` domains
+- A private namespace, for organisations with dedicated load balancers
 
-## What is a namespace?
-
-Clever cloud manages a fleet of reverse proxies that fulfill different purposes, depending on their type and region.
-A namespace is a group of reverse proxies. You may encounter:
-
-- `default`: the stable public group of your region
-- `cleverapps`: the group behind all the `cleverapps.io` domains
-- dedicated name: if you are a premium customer with dedicated reverse proxies
-
-Use `default` or dedicated namespace for applications with a custom domain name.
-Use `cleverapps` for applications under the `cleverapps.io` domain.
-If your application has both a custom domain name and a `cleverapps.io` one, you may activate TCP redirections on both of them.
-Note that this generates two different ports, one for each domain.
-You should use one or the other depending on the domain name you use in your request.
-
-To list the possible redirections available to your application, you can use the following:
+Use the namespace of the domain your clients connect to. List the namespaces available with [Clever Tools](/doc/manage/cli/):
 
 ```bash
 clever tcp-redirs list-namespaces
 ```
 
-## Creating a new TCP redirection
+## Create a TCP redirection
 
-### With the console
+In the [Console](https://console.clever-cloud.com), open the **TCP redirections** page of your application, then click **Create** next to the namespace.
 
-From your console, select your application. In the secondary menu, go to **TCP redirections**.
-From there, you can create a TCP redirection for a specific namespace (see [namespaces doc](#what-is-a-namespace))
-
-The creation is instantaneous. Find the TCP redirection port on this page.
-
-![Redirection console](/images/TCP_redirection_console.png)
-
-### With the Clever CLI
-
-You can use the following command to create a TCP redirection from the CLI:
+With Clever Tools, set the namespace with `--namespace`:
 
 ```bash
-clever tcp-redirs add --namespace default
+clever tcp-redirs add --namespace cleverapps
 ```
 
-Depending on your situation, you should replace `default` with the appropriate namespace.
+The command displays the public port, such as `Successfully added tcp redirection on port: 24950`. Clients then connect to this port on a domain of your application, here its `cleverapps.io` domain:
 
-The port assigned to your application displays right after the TCP redirection creation.
-You can then contact your application over TCP using `tcp://your-domain-name:the-port/`.
+```bash
+nc my-app.cleverapps.io 24950
+```
 
-## Managing redirections
+Replace the domain and the port with those of your application.
 
-### Listing active redirections
+With [Terraform](/doc/tools/terraform/), set `namespace` in the `redirection` attribute of the application: its read-only `port` holds the public port.
 
-To visualize your application's redirections:
+## List and remove TCP redirections
 
-- from your console, an active redirection has a green tick next to it
-- from the Clever CLI, you can use:
+The **TCP redirections** page of the Console shows each redirection and its port. With Clever Tools, list them in human or JSON format:
 
 ```bash
 clever tcp-redirs
+clever tcp-redirs --format json
 ```
 
-### Deleting redirections
-
-To delete a redirection on an application:
-
-- from your console, use the `delete` button next to the redirection
-- from the Clever CLI, use:
+To remove a redirection, click **Delete** next to it in the Console. With Clever Tools, set its port and its namespace:
 
 ```bash
-clever tcp-redirs remove (port) --namespace (namespace)
+clever tcp-redirs remove 24950 --namespace cleverapps
 ```
 
-Example: if your redirection is on port **5500** and the **default** namespace, the command would be
+Removing the redirection stops new connections through its port. A new redirection in this namespace can get a different port.
 
-```bash
-clever tcp-redirs remove 5500 --namespace default
-```
+## Examples
+
+- [Mosquitto](https://github.com/CleverCloud/mosquitto-example): an MQTT broker built on the Linux runtime
+- [Node.js TCP chat](https://github.com/CleverCloud/nodejs-tcp-chat-example): a chat room to join with `nc`
+- [SFTPGo](/guides/sftpgo/): an SFTP server exposed through a TCP redirection, with a web interface

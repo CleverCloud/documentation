@@ -163,7 +163,7 @@ You can easily change the number of instances and `flavor` for an application. I
 
 ## tcp-redirs
 
-A Clever Cloud application activate TCP redirections in `default` or `cleverapps` namespace:
+An application can have one [TCP redirection](/doc/develop/common-configuration/tcp-redirections/) in each namespace, such as `default` or `cleverapps`. Set the namespace to add or remove one:
 
 ```console
 clever tcp-redirs add --namespace NAMESPACE

@@ -12,9 +12,7 @@ authors:
 excludeSearch: true
 ---
 
-Clever Cloud already ignores and deletes the `.nvmrc` file of Node.js applications during deployment. From the next images update, it will do the same on every runtime. In a PHP, Python or Ruby application, for example, the deployment will delete the `.nvmrc` file, which won't select a Node.js version.
-
-To set the Node.js version of your application, use the `CC_NODE_VERSION` environment variable, such as `24`:
+Clever Cloud already ignores and deletes the `.nvmrc` file of Node.js applications during deployment. From the next images update, it will do the same on every runtime. In a PHP, Python or Ruby application, for example, the deployment will delete the `.nvmrc` file, which won't select a Node.js version. To set the Node.js version of your application, use the `CC_NODE_VERSION` environment variable, such as `24`:
 
 ```bash
 clever env set CC_NODE_VERSION 24

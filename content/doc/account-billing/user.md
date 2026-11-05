@@ -52,11 +52,15 @@ can [do it here](https://github.com/settings/connections/applications/d96bd8fd99
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 
-### 🔐 Two Factor Authentication (2FA)
+### Two-factor authentication (2FA)
 
-Clever Cloud supports 2FA. You can enable it here: <https://console.clever-cloud.com/users/me/authentication>
+Two-factor authentication asks for a code from an authenticator app when you sign in, in addition to your password. To enable it, open the [Authentication](https://console.clever-cloud.com/users/me/authentication) page of your profile, select `Enable 2FA`, and enter your password. Scan the QR code with your authenticator app, or enter the key the dialog gives instead. Then type the 6-digit code the app generates. By default, enabling 2FA revokes your other tokens and sessions, such as those of Clever Tools, but not your current Console session. Clear the checkbox in the dialog to keep them.
 
-Please, backup your recovery codes, we won't be able to restore access to your account if you lose access to your regular codes.
+2FA requires a verified email address and a password. An account created with GitHub may have no password: the Authentication page then offers to email you a link to create one.
+
+Once 2FA is on, the Console shows your recovery codes. Each code lets you sign in once if you lose access to your authenticator app. They're shown only this once: copy or download them and store them somewhere safe, such as a password manager. Clever Cloud can't restore access to your account if you lose both your authenticator app and your recovery codes.
+
+The Authentication page then tells how many recovery codes you have left. Select `Regenerate recovery codes` to get a new set, shown once the same way: the previous codes stop working. Regenerate them before you run out. To turn 2FA off, select `Disable 2FA`. Both actions ask for your password.
 
 ## Manage your account
 
@@ -67,7 +71,7 @@ Tabs give access to the pages of your account:
 - **Profile**: edit your name, address, phone number, and profile picture. You can also manage the link between your Clever Cloud and GitHub accounts, and select the language of the Console.
 - **Emails**: manage your linked email addresses.
 - **SSH Keys**: add or remove your SSH keys, manage your GitHub SSH keys if you have linked your GitHub account.
-- **Authentication**: Change your password, enable or turn off Two Factor Authentication.
+- **Authentication**: change your password, or create one if your account has none, and manage two-factor authentication and its recovery codes.
 - **API tokens**: create, edit, and revoke your API tokens.
 - **Console sessions**: see and revoke your active Console sessions.
 - **OAuth tokens**: See and revoke your access tokens

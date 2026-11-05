@@ -1,16 +1,16 @@
 ---
 type: docs
 linkTitle: Rust
-title: Rust
-description: Deploy Rust applications on Clever Cloud using the system programming language that runs blazingly fast and guarantees thread safety
+title: Rust application runtime
+description: Build and deploy Rust applications on Clever Cloud with Cargo, from a single binary to a workspace, with the toolchain of your choice
 keywords:
+- axum
+- actix web
 - cargo
-- compiled language
-- memory safety
+- rocket
 - rust app hosting
 - rust cloud
-- system programming
-- zero-cost abstractions
+- rustup
 aliases:
 - /applications/rust
 - /deploy/application/rust/rust
@@ -27,157 +27,169 @@ aliases:
 
 ## Overview
 
-Rust is a system programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. You can build Rust web services with frameworks like [Actix](https://actix.rs/) or [Iron](https://github.com/iron/iron).
+[Rust](https://www.rust-lang.org) is a compiled language focused on performance and memory safety. Clever Cloud builds your [Cargo](https://doc.rust-lang.org/cargo/) project in release mode and starts the binary it produces. It works with web frameworks such as [Axum](https://github.com/tokio-rs/axum), [Actix Web](https://actix.rs), or [Rocket](https://rocket.rs).
 
-Clever Cloud allows you to deploy Rust web applications. This page will explain you how to set up your application to run it on our service.
+## Create your Rust application
 
-{{% content "create-application" %}}
+To create a new Rust application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
 
-{{% content "set-env-vars" %}}
+```bash
+clever create --type rust
+```
+
+- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Rust application
 
-### Mandatory configuration
+### Mandatory needs
 
-Make sure that:
+A Rust application needs:
 
-- you have pushed in **master** branch
-- you listen on port **8080**
-- you have committed `Cargo.lock`
-- you have at least one binary target in `Cargo.toml`
+- A `Cargo.toml` file with at least one binary target, at the root of the project or of the folder set in `APP_FOLDER`
+- A committed `Cargo.lock` file: the build runs with `--locked`, so it fails if `Cargo.lock` is missing or out of date
+- A web server listening on `0.0.0.0:8080`, the port also available in the `PORT` environment variable, unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
 
-The result of `cargo build --release --locked` must be an executable which starts a web server listening on `0.0.0.0:8080`.
+For instance, a minimal [Axum](https://github.com/tokio-rs/axum) application:
 
-For instance, a minimal [iron](https://github.com/iron/iron) application can look like this:
-
-```rust
-extern crate iron;
-
-use iron::prelude::*;
-use iron::status;
-
-fn main() {
-    fn hello_world(_: &mut Request) -> IronResult<Response> {
-        Ok(Response::with((status::Ok, "Hello World!")))
-    }
-
-    let _server = Iron::new(hello_world).http("0.0.0.0:8080").unwrap();
-    println!("On 8080");
-}
-```
-
-### Multiple binary targets
-
-If your project builds several binaries, select the one to start with the `default-run` field of the `[package]` section in `Cargo.toml`, or with the `CC_RUST_BIN` environment variable. `CC_RUST_BIN` takes precedence over `default-run`. In a workspace, Clever Cloud only looks for binaries in the default members, the ones `cargo build` builds.
-
-### Build with cargo install
-
-Set `CC_RUST_INSTALL=true` to build your application with `cargo install` instead of `cargo build`. Clever Cloud installs the binaries of the package containing the selected one in `/home/bas/.local/bin`, starts the selected binary and removes the build artifacts afterwards, which keeps your build cache smaller.
-
-### Custom run command
-
-If you need to run a custom command (or just pass options to the program), you can specify it through the `CC_RUN_COMMAND` [environment variable](#setting-up-environment-variables-on-clever-cloud).
-
-For instance, you can have `CC_RUN_COMMAND=./target/release/myapp <options>`.
-
-### Dependencies
-
-Make sure to list all your dependencies in `Cargo.toml`. For the example above, you need:
-
-```toml
+```toml {filename="Cargo.toml"}
 [package]
 name = "my-app"
 version = "0.1.0"
-authors = []
+edition = "2024"
 
 [dependencies]
-iron = "0.4.0"
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 ```
 
-### Cached dependencies
+```rust {filename="src/main.rs"}
+use axum::{Router, routing::get};
 
-#### Enabling dependencies caching
+#[tokio::main]
+async fn main() {
+    let port = std::env::var("PORT").unwrap_or_else(|_| "8080".to_string());
+    let app = Router::new().route("/", get(|| async { "Hello from Rust on Clever Cloud" }));
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](#setting-up-environment-variables-on-clever-cloud) in your application. Clever Cloud vendors your dependencies with `cargo vendor` during the build and caches their sources. When the vendor folder isn't available, it caches the `target/release` folder instead.
-
-#### Disabling dependencies caching
-
-You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable from the Clever Cloud console, in the **Environment variables** menu of your application. Or by setting it to `CC_CACHE_DEPENDENCIES=false`.
-
-To fully remove cached dependencies, you have to rebuild your application from scratch. You can select "rebuild and restart" from the Clever Cloud console or launch `clever restart --without-cache` with the Clever Tools CLI.
-
-### Private dependencies
-
-If you use dependencies on a private git repository inside your project, it needs a bit of configuration until [this cargo issue](https://github.com/rust-lang/cargo/issues/1851) has been resolved.
-
-First, you need to use the `HTTPS` url as the git url for your dependency in your `Cargo.toml`:
-
-`private-dep = { git = "https://github.com/user/my-private-dep.git" }`
-
-Then, you need to create a personal access token. It allows to not use your password:
-
-- `Github`: <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
-- `GitLab`: <https://docs.gitlab.com/user/profile/personal_access_tokens/> (API rights are needed)
-
-Once you have the token, we need to tell Git to use a credential store. For that, we are going to create it.
-
-Create a `clevercloud/pre-build.sh` file at the root of your application and paste:
-
-```bash
-#! /usr/bin/env bash
-
-git config --global credential.helper store
-echo "https://${GIT_USERNAME}:${GIT_PASSWORD}@gitlab.com" > ~/.git-credentials
-chmod 600 ~/.git-credentials
-```
-
-If you have multiple private repositories, add them accordingly.
-
-Now, go into the environment variables page of your application and create those environment variables:
-
-- `GIT_USERNAME`: your Github / gitlab / other username
-- `GIT_PASSWORD`: your Github / gitlab / other password
-- `CC_PRE_BUILD_HOOK`: clevercloud/pre-build.sh
-- `CC_POST_BUILD_HOOK`: rm /home/bas/.git-credentials
-
-This adds the git configuration before the build start and it cleans it after the build has been done.
-
-### Rust channels
-
-By default, your application is built with the latest stable rust version. If you require beta, nightly or a specific Rust version, you can set `CC_RUSTUP_CHANNEL` [environment variable](#setting-up-environment-variables-on-clever-cloud) value to `beta`, `nightly` or a specific version (eg. `1.36.0`).
-
-The build uses `rustup` to select the Rust version you need.
-
-### Cargo features
-
-You can enable specific features for your crate by settings the `CC_RUST_FEATURES`
-environment variable to the list of features to enable.
-
-To access environment variables from your code, just get them from the environment with `std::env::var(<KEY_NAME>)`.
-
-If some environment variables are critical to your application, here is an approach you can use:
-
-```rust
-use std::env;
-
-fn main() {
-    let my_config_value = env::var("MY_VAR").expect("Missing env var `MY_VAR`");
-
-    something_that_runs_a_web_server(my_config_value);
+    let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{port}")).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
 ```
 
-This loads the environment variable in your `main` function and use `.expect` to fail early. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
+Run `cargo generate-lockfile` or `cargo build` to create `Cargo.lock`, then commit it with your code. Your application reads its [environment variables](/doc/develop/common-configuration/environment-variables/) with `std::env::var`, such as the credentials of the add-ons you link to it.
 
-{{% content "deploy-git" %}}
+### Build phase
 
-### Deployment Video
+On a new build, Clever Cloud selects the [Rust toolchain](#rust-version-and-tools) and runs the pre-build [hook](/doc/develop/common-configuration/build-hooks/). It then copies the sources of your dependencies with `cargo vendor --locked`, and builds your project:
 
-{{< youtube id="mz_8jzrM13Y" >}}
+```bash
+cargo build --release --locked
+```
 
-{{% content "link-addon" %}}
+Cargo reads its usual environment variables during the build. Set `RUSTFLAGS` or a [Cargo variable](https://doc.rust-lang.org/cargo/reference/environment-variables.html#configuration-environment-variables) such as `CARGO_PROFILE_RELEASE_LTO` in the environment of your application to change how it compiles. With `CC_TROUBLESHOOT=true`, Cargo also runs with `--verbose`.
 
-{{% content "more-config" %}}
+Compiling Rust needs memory and CPU time. If your builds fail for lack of memory or take too long, enable a [dedicated build instance](/doc/develop/common-configuration/lifecycle/#edit-application-configuration) larger than your application instances. Most Rust projects need at least an `S` build instance:
+
+```bash
+clever scale --build-flavor S
+```
+
+### Select the binary to start
+
+Clever Cloud looks for binary targets in the packages `cargo build` builds: your package, or the default members of your workspace. It starts:
+
+1. The binary set in `CC_RUST_BIN`
+2. Otherwise, the `default-run` binary of the `[package]` section
+3. Otherwise, the only binary target of the project
+
+If none of these rules finds a single binary, the deployment fails and asks you to set `default-run` or `CC_RUST_BIN`. For a project with `src/bin/web.rs` and `src/bin/worker.rs`, start the `web` binary with:
+
+```toml {filename="Cargo.toml"}
+[package]
+name = "my-app"
+version = "0.1.0"
+edition = "2024"
+default-run = "web"
+```
+
+The selection doesn't limit the build: `cargo build` compiles every binary of these packages. Cargo skips a binary with `required-features` until you enable these features: set them with `CC_RUST_FEATURES`, otherwise the binary doesn't exist and the application fails to start.
+
+### Enable Cargo features
+
+Set the features to enable in `CC_RUST_FEATURES`, with a comma or a space between them. Clever Cloud passes them to `--features`, and the default features stay enabled. For features `json` and `tls` declared in the `[features]` section of `Cargo.toml`:
+
+```bash
+clever env set CC_RUST_FEATURES "json,tls"
+```
+
+In a workspace, prefix a feature with its package name, such as `my-app/json`.
+
+### Rust version and tools
+
+The build uses the `stable` channel by default. The image includes the `stable`, `beta`, and `nightly` toolchains, and rustup downloads any other version during the build. To use another one, set `CC_RUSTUP_CHANNEL` to a channel, a version, or a dated nightly:
+
+```bash
+clever env set CC_RUSTUP_CHANNEL 1.88.0
+```
+
+A [`rust-toolchain.toml`](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) file at the root of the project takes precedence over `CC_RUSTUP_CHANNEL`: rustup installs the toolchain it names during the build. Clever Cloud deletes the legacy `rust-toolchain` file, without extension, before the build.
+
+The image also includes `clang`, `lld`, `pkg-config`, and OpenSSL, for crates that build C code or link system libraries. To install other tools, such as a CLI your build needs, use [Mise](/doc/develop/mise/).
+
+### Build with cargo install
+
+Set `CC_RUST_INSTALL=true` to build with `cargo install` instead of `cargo build`. Clever Cloud installs the binaries of the package holding the selected one in `/home/bas/.local/bin`, which is in the `PATH`. It then removes the release build artifacts with `cargo clean --release`, which keeps the build cache smaller.
+
+### Custom run command
+
+By default, Clever Cloud starts the selected binary without arguments. To pass arguments, or start something else, set `CC_RUN_COMMAND`. It runs from the folder of your project, the one set in `APP_FOLDER` if any. For a `web` binary that accepts a `--workers` option:
+
+```bash
+clever env set CC_RUN_COMMAND "./target/release/web --workers 4"
+```
+
+With `CC_RUST_INSTALL=true`, call the binary by its name, such as `web --workers 4`.
+
+### Caches
+
+After a successful build of an application, Clever Cloud keeps a build cache of the commit. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
+
+```bash
+clever restart --without-cache
+```
+
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the Cargo home folder and the sources `cargo vendor` copied between commits. The next builds download fewer crates, but still compile them.
+
+### Private dependencies
+
+To use a crate from a private Git repository, declare it with its HTTPS URL:
+
+```toml {filename="Cargo.toml"}
+[dependencies]
+private-dep = { git = "https://github.com/my-org/private-dep.git" }
+```
+
+Cargo needs a token to [fetch this repository](https://doc.rust-lang.org/cargo/appendix/git-authentication.html). Create a read-only one. On GitHub, use a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with read access to the contents of the repository. On GitLab, use a [personal access token](https://docs.gitlab.com/user/profile/personal_access_tokens/) with the `read_repository` scope. Then give this token to Git with a pre-build hook, which runs before Cargo fetches the dependencies. Make the script executable with `chmod +x clevercloud/pre-build.sh`:
+
+```bash {filename="clevercloud/pre-build.sh"}
+#!/bin/bash
+git config --global credential.helper store
+echo "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com" >> ~/.git-credentials
+chmod 600 ~/.git-credentials
+```
+
+For a GitLab repository, replace `github.com` with `gitlab.com`. Then set `GIT_USERNAME`, `GIT_TOKEN`, and `CC_PRE_BUILD_HOOK=clevercloud/pre-build.sh` in the environment of your application.
+
+To remove the credentials after a successful build, set `CC_POST_BUILD_HOOK="rm ~/.git-credentials"`.
+
+## Rust binaries as Clever Tasks
+
+A Rust binary can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the project, then runs `CC_RUN_COMMAND` instead of starting a web server. A task needs `CC_RUN_COMMAND`, even with a single binary or a `default-run`. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks), here for a `worker` binary that runs once with `--once`:
+
+```bash
+clever create --type rust --task "./target/release/worker --once"
+clever deploy # or clever restart if there is no code change
+```
 
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}

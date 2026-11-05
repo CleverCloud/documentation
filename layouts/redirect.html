@@ -1,0 +1,18 @@
+{{- /* Redirects a page to the external URL set in its `redirect` front matter parameter */ -}}
+{{- with .Params.redirect -}}
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>{{ $.Title }}</title>
+    <link rel="canonical" href="{{ . }}">
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ . }}">
+  </head>
+  <body>
+    <p>This page moved to <a href="{{ . }}">{{ . }}</a>.</p>
+  </body>
+</html>
+{{- else -}}
+{{- errorf "%s uses the redirect layout without a redirect parameter" $.File.Path -}}
+{{- end -}}

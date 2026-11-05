@@ -88,7 +88,7 @@ menu:
         type: separator
       weight: 1
     - name: Contribute
-      pageRef: /doc/contribute/
+      url: https://github.com/CleverCloud/documentation/blob/main/CONTRIBUTING.md
       weight: 2
     - name: Clever Tools (CLI)
       pageRef: /doc/cli-reference/

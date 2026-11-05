@@ -7,6 +7,7 @@ autoscaler
 autoscaling
 Azimutt
 Blackfire
+Bpifrance
 Brotli
 Buildx
 Bundler
@@ -29,6 +30,7 @@ crontab
 CVE
 CVEs
 Cyberduck
+cybersecurity
 Datadog
 Deno
 Dockerfile
@@ -148,6 +150,7 @@ tooltips
 unencrypted
 URIs
 uv
+Veritas
 VMs
 webroot
 WildFly

@@ -390,13 +390,13 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 [Rust Documentation](/doc/deploy/applications/rust)
 
-| Name                | Description                                                                                                          | Default value |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `CC_RUSTUP_CHANNEL` | The rust channel to use. Use a specific channel version with stable, beta, nightly or a specific version like 1.13.0 | stable        |
-| `CC_RUST_BIN`       | The name of the binary to launch once built, takes precedence over `default-run` in `Cargo.toml`                     |               |
-| `CC_RUST_FEATURES`  | The list of features to enable                                                                                       |               |
-| `CC_RUST_INSTALL`   | Build and install your binary with `cargo install` instead of `cargo build`                                          | `false`       |
-| `CC_RUN_COMMAND`    | Custom command to run your application.                                                                              |               |
+| Name                | Description                                                                                                                                       | Default value |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `CC_RUSTUP_CHANNEL` | Rust toolchain to use: `stable`, `beta`, `nightly`, a version such as `1.88.0`, or a dated nightly. A `rust-toolchain.toml` file takes precedence | `stable`      |
+| `CC_RUST_BIN`       | Name of the binary to start, takes precedence over `default-run` in `Cargo.toml`                                                                  |               |
+| `CC_RUST_FEATURES`  | Cargo features to enable, with a comma or a space between them                                                                                    |               |
+| `CC_RUST_INSTALL`   | Build and install your binary with `cargo install` instead of `cargo build`                                                                       | `false`       |
+| `CC_RUN_COMMAND`    | Custom command to run your application                                                                                                            |               |
 
 ## Static
 

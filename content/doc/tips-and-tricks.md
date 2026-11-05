@@ -376,7 +376,7 @@ The services take over the public port `8080` and forward the requests to your a
 
 Once configured in your repository, the Clever Cloud review app GitHub Action deploys each pull request to its own application, with its own URL. It removes the application when the pull request closes. Your colleagues test the change without installing anything.
 
-- [Learn more about review apps](/doc/tools/github/#deploy-review-apps-from-a-pr-on-github)
+- [Learn more about review apps](/doc/tools/github/#deploy-a-review-app-for-each-pull-request)
 
 ### Schedule recurring scripts
 

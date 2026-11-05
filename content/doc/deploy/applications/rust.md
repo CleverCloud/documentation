@@ -158,7 +158,7 @@ After a successful build of an application, Clever Cloud keeps a build cache of 
 clever restart --without-cache
 ```
 
-With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the Cargo home folder and the sources `cargo vendor` copied between commits. The next builds download fewer crates, but still compile them.
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the Cargo home folder and the sources `cargo vendor` copied between commits. The next builds download fewer crates, but still compile them. If `cargo vendor` fails, the cache keeps the `target/release` folder instead, with the compiled dependencies.
 
 ### Private dependencies
 

@@ -2,92 +2,80 @@
 type: docs
 linkTitle: GitHub
 title: Deploy from GitHub
-description: How to set up CI/CD from GitHub to deploy to Clever Cloud with complete configuration and review apps deployment guide
+description: Deploy each push to a branch of a GitHub repository with the Clever Cloud GitHub integration, and create a review app for each pull request with a GitHub Action
 keywords:
 - github
-- ci-cd
+- github integration
+- review apps
+- pull requests
+- github actions
 - deployment
-- review-apps
-- integration
-- automation
 aliases:
 - /doc/ci-cd/github
 - /doc/tools-integrations/github/
 - /doc/github
 ---
 
-{{< hextra/hero-subtitle >}}
-  How to set up you CI/CD from GitHub directly from Clever Cloud, and how to deploy review apps.
-{{< /hextra/hero-subtitle >}}
+The Clever Cloud GitHub integration deploys each push to a branch of your repository, without any pipeline. To deploy only after your tests pass, use a [GitHub Actions workflow](/doc/tools/ci-cd/#github-actions) instead, and to deploy a review app for each pull request, use the [review app Action](#deploy-a-review-app-for-each-pull-request).
 
-## Use the GitHub integration
+## Create an application from a GitHub repository
 
-Clever Cloud provides a GitHub integration to deploy any repository hosted on GitHub to Clever Cloud. You can deploy the same repository to multiple Clever Cloud applications from different branches. Select the appropriate branch in you application menu, in **Information** > **Application edition** > **Used GitHub branch for deployment**.
+In the [Console](https://console.clever-cloud.com), create an application. In the **Create an application from a GitHub repository** section, click **Link your GitHub account**, then authorize Clever Cloud on GitHub. Once your account is linked, select your repository in **Select your GitHub repository**: the Console lists the public and private repositories your GitHub account can access. Then choose the runtime and the other settings of your application.
 
-![GitHub branch deployment](/images/github-branches.png)
+With [Clever Tools](/doc/manage/cli/), set the repository with `--github`, once your GitHub account is linked:
 
-Clever Cloud asks for permission to access your GitHub repositories. Accept the permissions to allow the deployment. You can deploy both public or private repositories.
+```bash
+clever create --type node my-app --github my-org/my-repository
+```
 
-### Deploy review apps from a PR on GitHub
+Clever Cloud then adds a webhook to the repository, which requires administration rights on it. Each push to the branch the application follows, the default one at first, deploys it right away, without waiting for the checks of the commit.
 
-You can automate deployments for review apps when a Pull Request opens on your GitHub repository by using Clever Cloud [GitHub Action](https://github.com/marketplace/actions/clever-cloud-review-app-on-prs). This action uses [Clever Tools](/doc/manage/cli) to deploy a new app from the branch the Pull Request is based on and post a comment with the URL of the review app. The action redeploys the app on every new commit and deletes it when the Pull Request is closed (merged or not).
+## Choose the deployed branch
 
-#### How to use the Review App GitHub Action
+To deploy another branch, open your application in the [Console](https://console.clever-cloud.com), then its **Information** tab. Select the branch in **Application edition** > **Used GitHub branch for deployment**, then click **Save**. The application deploys it on the next push to this branch, or on a restart.
 
-Two things are necessary to use the action:
+Several applications can deploy the same repository, each from its own branch, such as a `staging` application that follows `staging` and a production one that follows `main`. A push to a branch then only deploys the applications that follow it.
 
-1. **A workflow file to run the action**. For example, `.github/workflow/review-app.yml`. At the top of this file, define the event trigger for running the action:
+## Deploy a review app for each pull request
 
-```yaml
+The [Clever Cloud review app Action](https://github.com/marketplace/actions/clever-cloud-review-app-on-prs) creates an application for each pull request, and keeps it up to date:
+
+- When the pull request opens or reopens, it creates an application named `<repository>-PR-<number>`, adds the `<repository>-pr-<number>.cleverapps.io` domain, deploys the branch, and comments the pull request with its URL
+- On each new push to the branch, it deploys the new commit
+- When the pull request closes, merged or not, it deletes the application
+
+Set `CLEVER_TOKEN` and `CLEVER_SECRET` as repository secrets, as the [CI/CD page explains](/doc/tools/ci-cd/#prepare-the-credentials). Set the ID of the organisation where the action creates the applications, such as `orga_…`, as a repository variable named `ORGA_ID`. Then add this workflow:
+
+```yaml {filename=".github/workflows/review-app.yml"}
+name: Review app
+
 on:
-  pull_request_target:
-    types: [opened, closed, synchronize, reopened]
-    branches: [ main ]
-```
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+    branches: [main]
 
-Then, use the action and define the mandatory input:
+permissions:
+  contents: read
+  pull-requests: write
 
-```yaml
-- name: Create review app
-        uses: CleverCloud/clever-cloud-review-app@v2.0.2
-        env:
-          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
-          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-          ORGA_ID: ${{ secrets.ORGA_ID }}
+jobs:
+  review-app:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
         with:
-          type: '<type-of-app>'
-```
-
-2. **Inject the environment variables from your repository:** From your GitHub repository go to **Settings** > **Secrets and variables**. Inject them both in "Environment secrets" and "Repository secrets" to allow deployments from forked repositories. Then add them with an `GH_` prefix in your workflow file (this will prevent the injection of the GitHub runner variables in your app). Finally, enable the injection with `set-env: true`:
-
-```yaml
-name: Create review app
-        uses: CleverCloud/clever-cloud-review-app@latest
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: CleverCloud/clever-cloud-review-app@v2
         env:
-          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-          ORGA_ID: ${{ secrets.ORGA_ID }}
-          GH_CC_RUN_SUCCEEDED_HOOK: ${{ secrets.CC_RUN_SUCCEEDED_HOOK }} # This environment variable will be set on Clever Cloud
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          ORGA_ID: ${{ vars.ORGA_ID }}
         with:
-          type: '<type-of-app>'
-          set-env: true # Enables the command to set en vars on Clever Cloud
+          type: static
 ```
 
-{{% content "ci-cd-configuration" %}}
+Set `type` to the runtime of your application, such as `node` or `php`. The action doesn't check out your code: the `actions/checkout` step checks out the latest commit of the pull request, with the complete history `clever deploy` needs. The `pull-requests: write` permission lets the action comment the pull request. The domain of a new review app can take a minute to answer.
 
-Full instructions are available on the [Action project](https://github.com/CleverCloud/clever-cloud-review-app).
-
-#### Review App workflow example
-
-To see a Review App workflow already in use, see [this workflow on GitHub](https://github.com/CleverCloud/clever-cloud-review-app/blob/main/.github/workflows/main.yml).
-
-## Troubleshooting
-
-If you encounter troubles or bugs using the GitHub Action, feel free to open an issue [on the repository](https://github.com/CleverCloud/clever-cloud-review-app/issues/new).
-
-## 🎓 Go further
-
-{{< cards >}}
-  {{< card link="https://docs.github.com/en/actions" title="GitHub Actions documentation" subtitle="Find help in GitHub Actions documentation" icon="github" >}}
-  {{< card link="/developers/doc/manage/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
-{{< /cards >}}
+GitHub doesn't pass secrets to the workflows of pull requests from forks: the `if` condition skips them, so this workflow creates review apps for branches of your repository only. The [Action repository](https://github.com/CleverCloud/clever-cloud-review-app) lists its other inputs, such as the region or the flavor, and is where to report an issue.

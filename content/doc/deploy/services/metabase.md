@@ -118,7 +118,7 @@ Some command groups require a newer Metabase version or a Pro or Enterprise feat
 > [!WARNING]
 > Requests to `/api/session/reset_password` are blocked on `x.58` and above until you update to a version patching a [critical security vulnerability](/changelog/2026/08-07-metabase-security-reset-password/). Use `CC_METABASE_BLOCK_RESET_PASSWORD=true/false` to control this behavior.
 
-To be able to reset your password, you must have [set up an active SMTP server](#configuring-a-smtp-server) in the `e-mail` section of the administrator settings. You can also do it [using a Mailpace add-on](#using-a-mailpace-add-on). Once done, the forgot password procedure will ask you the user email address and send a reset link to it.
+To be able to reset your password, you must have [set up an active SMTP server](#configuring-a-smtp-server) in the `e-mail` section of the administrator settings. You can also do it [using a MailPace add-on](#using-a-mailpace-add-on). Once done, the forgot password procedure will ask you the user email address and send a reset link to it.
 
 If you don't have an active SMTP server configured, there is a manual procedure to get the reset link:
 
@@ -246,8 +246,7 @@ There are two main usages:
 1. Sending user management/security emails (new user connections, account recoveries, invitations, …)
 2. Sending questions/dashboards emails (when users created subscriptions to them)
 
-Clever Cloud does not provide a SMTP server for your Metabase add-on.
-You can use a [MailPace](/doc/deploy/services/mailpace/) add-on or any other SMTP server.
+Use a [MailPace](/doc/deploy/services/mailpace/) add-on or any other SMTP server.
 
 The SMTP server can be configured (and tested) in Metabase administration interface.
 See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
@@ -261,9 +260,9 @@ If you have a [MailPace](/doc/deploy/services/mailpace/) add-on, you can link it
 - In the "Linked add-ons" section, select your MailPace add-on and click "Add"
 - Restart the Java application of your Metabase add-on
 
-When a MailPace add-on is linked, Metabase will automatically get the SMTP server and credentials using (hidden) environment variables. In this case, SMTP settings will **not** be editable from Metabase interface; just unlink the MailPace add-on if you prefer to edit them manually.
+After the restart, Metabase sends its emails through MailPace, with the SMTP server and its credentials already set. These settings **aren't** editable in the Metabase interface: to configure SMTP manually, unlink the MailPace add-on and restart the Java application.
 
-You still need to specify the email address which Metabase must use as sender (use Metabase administration interface or set the `MB_EMAIL_FROM_ADDRESS` environment variable). Make sure you MailPace account is able to send email from this address/domain.
+Set the sender address of Metabase in its administration interface or with the `MB_EMAIL_FROM_ADDRESS` environment variable. This address must use the domain you [verified in MailPace](/doc/deploy/services/mailpace/#verify-your-domain).
 
 ## Migrating from a self-hosted instance
 

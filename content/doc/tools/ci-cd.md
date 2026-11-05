@@ -1,14 +1,14 @@
 ---
 type: docs
 linkTitle: CI/CD
-title: Write your own CI/CD
-description: Create custom CI/CD pipelines for GitHub and GitLab to automate deployments to Clever Cloud using Clever Tools CLI with detailed setup
+title: Deploy from your own CI/CD pipeline
+description: Run Clever Tools in a GitHub Actions workflow, a GitLab CI/CD job, or any other pipeline to deploy your application to Clever Cloud after your own steps
 keywords:
 - ci-cd
-- custom-scripts
 - pipelines
+- github actions
+- gitlab ci
 - clever-tools
-- automation
 - deployment
 aliases:
 - /ci-cd
@@ -18,58 +18,92 @@ aliases:
 - /doc/ci-cd/custom-scripts
 ---
 
-{{< hextra/hero-subtitle >}}
-  There are several ways to automate your workflow when deploying your application to Clever Cloud from either GitHub or GitLab. This page explains how to write your custom CI/CD from both platforms.
-{{< /hextra/hero-subtitle >}}
+To deploy from a pipeline you control, for example once your tests pass, run [Clever Tools](/doc/manage/cli/) in a job. To avoid writing this job yourself, the [GitHub integration](/doc/tools/github/) deploys each push to a branch without any pipeline, and the [GitLab components](/doc/tools/gitlab/) add a ready-made deployment job to your pipeline.
 
-For an integration that needs no pipeline of your own, deploy directly from [GitHub](/doc/tools/github) or [GitLab](/doc/tools/gitlab).
+## Prepare the credentials
 
-## Use Clever Tools
+When `CLEVER_TOKEN` and `CLEVER_SECRET` are set, Clever Tools uses them instead of a login. To get them, log in with Clever Tools on your computer, then read the active profile from its configuration file. On Linux and macOS, with [`jq`](https://jqlang.org/) installed:
 
-You can write your own pipeline to deploy from either GitHub or GitLab. Use [Clever Cloud CLI](https://github.com/CleverCloud/clever-tools) with either Docker or Node image. Place the following snippets at the top of your `.gitlab-ci.yml` file:
+```bash
+clever login
+jq -r '.profiles[0] | "CLEVER_TOKEN=\(.token)\nCLEVER_SECRET=\(.secret)"' ~/.config/clever-cloud/clever-tools.json
+```
 
-{{< tabs >}}
+Store both values as masked secrets of your pipeline, and the ID of your application, such as `app_…`, as a variable named `APP_ID`. These credentials expire: `clever profile` shows their expiration date, log in again before it to replace them.
 
-  {{< tab name="Docker image" icon="simple:docker" >}}**Docker image**:
+## Write the deployment job
 
-  ```yaml
+A deployment job runs two commands from the repository of your application:
+
+```bash
+# Not needed if a committed .clever.json already links the application
+clever link "$APP_ID"
+clever deploy --same-commit-policy rebuild
+```
+
+`clever deploy` pushes the commit the job checked out to Clever Cloud, then follows the deployment until it ends, and fails if the deployment fails. It doesn't accept `--app`: `clever link` selects the application first. It needs the complete history of the repository, while most CI systems clone only the last commit. From a shallow clone, it fails with `your repository is shallow and therefore cannot be pushed`.
+
+Two options of `clever deploy` handle the cases a pipeline meets:
+
+- `--same-commit-policy` sets what happens when this commit has already been pushed to Clever Cloud, for example when you rerun a job: `rebuild`, `restart`, `ignore`, or `error`, the default, which fails the job
+- `--force` deploys a commit whose history differs from the one of the application, after you rewrite it for example. Without it, `clever deploy` refuses with `Push rejected because it was not a simple fast-forward`
+
+## GitHub Actions
+
+This workflow deploys each push to `main`. Set `CLEVER_TOKEN` and `CLEVER_SECRET` as repository secrets, and `APP_ID` as a repository variable:
+
+```yaml {filename=".github/workflows/deploy.yml"}
+name: Deploy to Clever Cloud
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Deploy
+        env:
+          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          APP_ID: ${{ vars.APP_ID }}
+        run: |
+          # Not needed if a committed .clever.json already links the application
+          npx --yes clever-tools@latest link "$APP_ID"
+          npx --yes clever-tools@latest deploy --same-commit-policy rebuild
+```
+
+`fetch-depth: 0` clones the complete history, and `setup-node` installs Node.js 24, which Clever Tools uses. Add your test jobs before this one, and make it depend on them with `needs`.
+
+## GitLab CI/CD
+
+This job deploys each commit of the default branch, with the [clevercloud/clever-tools](https://hub.docker.com/r/clevercloud/clever-tools) Docker image. Set `CLEVER_TOKEN`, `CLEVER_SECRET`, and `APP_ID` as masked CI/CD variables of the project:
+
+```yaml {filename=".gitlab-ci.yml"}
+deploy:
+  stage: deploy
+  image:
+    name: clevercloud/clever-tools:latest
+    entrypoint: [""]
   variables:
-  GIT_DEPTH: "0" # Unshallow the repository by default
+    GIT_DEPTH: 0
+  script:
+    # Not needed if a committed .clever.json already links the application
+    - clever link "$APP_ID"
+    - clever deploy --same-commit-policy rebuild
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
 
-image:
-  name: clevercloud/clever-tools:latest
-  entrypoint: [""]
-  ```
+`GIT_DEPTH: 0` clones the complete history, and `entrypoint: [""]` replaces the `clever` entrypoint, so GitLab can run the script in a shell.
 
-  {{< /tab >}}
+## Other pipelines
 
-  {{< tab name="Node image" icon="simple:nodedotjs" >}}**Node image**:
-
-  ```yaml
-  variables:
-  GIT_DEPTH: 0 # Unshallow the repository by default
-
-before_script: # Download clever-tools before any script executes
-  - CC_VERSION=latest
-  - curl -s -O https://clever-tools.clever-cloud.com/releases/${CC_VERSION}/clever-tools-${CC_VERSION}_linux.tar.gz
-  - tar -xvf clever-tools-${CC_VERSION}_linux.tar.gz
-  - PATH=${PATH}:$(pwd)/clever-tools-${CC_VERSION}_linux
-  ```
-
-  {{< /tab >}}
-
-{{< /tabs >}}
-
-{{< callout type="warning" >}}
-  Using `before_script` in your GitLab pipeline affects your other scripts as well. Consider including it **in a separate job** if you run other test scripts unrelated to Clever Cloud deployments in your pipeline.
-{{< /callout >}}
-
-{{% content "ci-cd-configuration" %}}
-
-## 🎓 Go further
-
-{{< cards >}}
-  {{< card link="https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables" title="GitHub variables" subtitle="List of GitHub default CI/CD variables" icon="github" >}}
-  {{< card link="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html" title="GitLab variables" subtitle="List of GitLab predefined variables" icon="gitlab" >}}
-  {{< card link="/developers/doc/manage/cli" title="Clever Tools CLI" subtitle="Deploy and manage your applications and dependencies from your terminal." icon="command-line" >}}
-{{< /cards >}}
+Any pipeline that can run a container or Node.js 24 works the same way: clone the complete history, set the three variables, then run `clever link` and `clever deploy`. The [clevercloud/clever-tools](https://hub.docker.com/r/clevercloud/clever-tools) Docker image also includes `git`, which `clever deploy` needs. To pin a version of Clever Tools, use a tag such as `clevercloud/clever-tools:5.3.0`, or `npx --yes clever-tools@5.3.0`.

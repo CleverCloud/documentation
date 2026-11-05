@@ -209,8 +209,8 @@ Check the status of the services on [clevercloudstatus.com](https://www.clevercl
 If you tried to scan your domain, you may not only have scanned your app, but also several public load balancers.
 Here is an explanation of the different port you may see.
 
+- TCP redirection ports: the public load balancers are shared, so a scan also shows the ports of the [TCP redirections](/doc/develop/common-configuration/tcp-redirections/) of other applications. Each port in a namespace only leads to the application that owns its redirection. List the ports of your application with `clever tcp-redirs`.
 - Port 9999 : [Zabbix](https://www.zabbix.com) uses this port to monitor the hypervisor.
-- Ports 5000 to 6000 : The TCP redirection feature uses these ports to work. If you notice a port within this range open but haven't enabled the feature, it indicates that another app on the same hypervisor is using it. The load balancer assigns a unique port to each app, ensuring that your app is securely isolated. You can be assured that other users can't access your app through this port.
 - Port 3000 : Juggernaut, the daemon torrent for the VM images use this port.
 - Ports 1080 and 1081 : Those are necessary for the reverse-proxy Sōzu to be able to redirect traffic to your application. Port 1080 is for HTTP and 1081 for HTTPS
 - Port 80 and 443 : Your app use these ports to receive HTTP and HTTPS traffic

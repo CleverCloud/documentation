@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 190
 linkTitle: Terraform
 title: Terraform & OpenTofu provider
 description: Declare Clever Cloud applications, add-ons and networking as code with the official Terraform and OpenTofu provider

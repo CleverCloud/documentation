@@ -243,7 +243,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/ruby/#environment-injection" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
   {{< card link="/developers/doc/deploy/applications/python/#configure-your-python-application" title="Python" icon="simple:python" >}}
-  {{< card link="/developers/doc/deploy/applications/rust/#setting-up-environment-variables-on-clever-cloud" title="Rust" icon="simple:rust" >}}
+  {{< card link="/developers/doc/deploy/applications/rust/#mandatory-needs" title="Rust" icon="simple:rust" >}}
   {{< card link="/developers/doc/deploy/applications/scala/#environment-injection" title="Scala" icon="simple:scala" >}}
   {{< card link="/developers/doc/deploy/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}

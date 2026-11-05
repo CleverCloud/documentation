@@ -1,6 +1,6 @@
 ---
 title: ".nvmrc files ignored on every runtime"
-description: From the next images update, Clever Cloud ignores and deletes the .nvmrc file of applications on every runtime except Docker, not only Node.js; set the Node.js version with CC_NODE_VERSION, or with mise for a file in your repository
+description: From the next images update, Clever Cloud ignores and deletes the .nvmrc file of applications on every runtime, not only Node.js; set the Node.js version with CC_NODE_VERSION, or with mise for a file in your repository
 date: 2026-11-05
 tags:
   - runtimes
@@ -12,7 +12,7 @@ authors:
 excludeSearch: true
 ---
 
-Clever Cloud already ignores and deletes the `.nvmrc` file of Node.js applications during deployment. From the next images update, it will do the same on every runtime except Docker. In a PHP, Python or Ruby application, for example, the deployment will delete the `.nvmrc` file, which won't select a Node.js version.
+Clever Cloud already ignores and deletes the `.nvmrc` file of Node.js applications during deployment. From the next images update, it will do the same on every runtime. In a PHP, Python or Ruby application, for example, the deployment will delete the `.nvmrc` file, which won't select a Node.js version.
 
 To set the Node.js version of your application, use the `CC_NODE_VERSION` environment variable, such as `24`:
 

@@ -1,3 +1,4 @@
+Actix
 allowlist
 allowlists
 APIs
@@ -121,6 +122,7 @@ ripgrep
 rollout
 runtime's
 runtimes
+rustup
 sbt
 scalers
 Scaleway
@@ -143,6 +145,7 @@ Telegraf
 Tesseract
 tolerations
 toolchain
+toolchains
 tooltip
 tooltips
 unencrypted

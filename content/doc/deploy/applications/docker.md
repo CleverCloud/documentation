@@ -113,9 +113,7 @@ When using default ports (`CC_DOCKER_EXPOSED_HTTP_PORT=8080` and `CC_DOCKER_EXPO
 
 ### TCP support
 
-Clever Cloud enables you to use TCP over Docker applications using the environment variable `CC_DOCKER_EXPOSED_TCP_PORT` (default: `4040`).
-
-- [Learn more about TCP redirections](/doc/develop/common-configuration/tcp-redirections)
+A [TCP redirection](/doc/develop/common-configuration/tcp-redirections/) forwards its traffic to port `4040` of the instance. If your container listens for TCP on another port, set it in `CC_DOCKER_EXPOSED_TCP_PORT`: Clever Cloud then maps port `4040` to it.
 
 ### Docker socket access
 

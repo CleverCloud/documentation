@@ -432,10 +432,12 @@ When your Python application doesn't use one of the supported backends, with `CC
 
 [FS Bucket Documentation](/doc/deploy/storage/fs-bucket)
 
-| Name           | Description                                 | Read Only |
-| -------------- | ------------------------------------------- | --------- |
-| `BUCKET_HOST`  | Hostname of the bucket                      | ✓         |
-| `CC_FS_BUCKET` | Defines which bucket to mount on which path |           |
+| Name                                                                                  | Description                                                                                                                            | Read Only |
+| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `BUCKET_HOST`                                                                         | Host of the bucket, added when you link the add-on                                                                                     | ✓         |
+| `BUCKET_FTP_USERNAME`                                                                 | FTP and SFTP username of the bucket                                                                                                    | ✓         |
+| `BUCKET_FTP_PASSWORD`                                                                 | FTP and SFTP password of the bucket                                                                                                    | ✓         |
+| [`CC_FS_BUCKET`](/doc/deploy/storage/fs-bucket/#mount-the-bucket-in-your-application) | Bucket to mount, as `<folder>:<bucket_host>`, optionally followed by `:async`. Add a number for more buckets, such as `CC_FS_BUCKET_1` |           |
 
 ### MongoDB
 

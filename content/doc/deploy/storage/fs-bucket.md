@@ -33,7 +33,7 @@ FS Buckets suit applications that expect a file system, such as a content manage
 
 ## Create an FS Bucket
 
-Create the add-on from the [Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/), in the region of your application:
+In the [Console](https://console.clever-cloud.com), create the add-on in the region of your application, then link it to the application. With [Clever Tools](/doc/manage/cli/), from a folder linked to your application, set its alias with `--link`:
 
 ```bash
 clever addon create fs-bucket my-bucket --region par --link my-app

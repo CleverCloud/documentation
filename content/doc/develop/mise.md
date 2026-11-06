@@ -134,7 +134,7 @@ description = "Compile the application"
 run = "gleam deps download && gleam build"
 
 [tasks.run]
-description = "Start the web server on 0.0.0.0:8080"
+description = "Start the web server on 0.0.0.0:$PORT"
 run = "gleam run"
 ```
 

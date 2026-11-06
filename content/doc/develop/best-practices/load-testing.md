@@ -2,69 +2,50 @@
 type: docs
 linkTitle: Load testing
 title: Load testing
-description: Learn performance testing considerations, best practices, and requirements for load testing applications on Clever Cloud infrastructure
+description: Prepare and run a load test of your Clever Cloud application, watch its metrics and autoscaling, and pick a load testing tool
 keywords:
-- load-testing
-- stress
+- load testing
+- stress testing
 - performance
-- testing
-- applications
-- infrastructure
+- autoscaling
+- metrics
+- k6
 aliases:
 - /doc/best-practices/load-testing
 - /doc/develop/load-testing
 ---
-## Overview
 
-Performing a performance test is the best way to determine how your application will perform under heavy load.
+A load test sends many requests to your application to measure how it behaves under heavy traffic: how many requests it serves, with which response time, and where it breaks. Run one before a launch or an expected peak, to size your instances and your add-ons.
 
-In general, these tests make it possible to identify:
+## Prepare the test
 
-- the maximum number of concurrent users
-- whether the current resources are sufficient to operate your application in good conditions
-- and the maximum operational capacity of your application
+Test a staging application rather than production, with the same runtime and [scaling](/doc/develop/common-configuration/scaling/). Give it its own add-ons, with the same plans and representative data: a test on the production add-ons loads and modifies them.
 
-## Considerations to take into account
+The public load balancers are shared between customers: a heavy load from a few addresses looks like an attack, and the network protection can block it. [Contact the Support](https://console.clever-cloud.com/ticket-center-choice) before the test, with its date, its duration, the expected request rate, and the target domain.
 
-In the event that you use public front-ends, it is necessary to notify the support. Indeed, depending on the nature of the load, it is possible that a form of network blocking is performed by our teams if they are not notified.
+With a [dedicated load balancer](/doc/network/load-balancers/), the load stays on it, but it also affects the other applications behind this load balancer.
 
-In case you have dedicated frontends, note that too much load could impact your other applications behind this frontend. Because in general, the amount of private front-ends is lower than the number of public front-ends (new public front-ends are added on a regular basis).
+## Define the test
 
-## Why carry out these tests
+Choose the requests that matter, such as the journey of a user who browses, searches, then orders, and a load close to the one you expect. Set success criteria before the test: the response time most users must get, the error rate you accept, and the request rate to reach. The test then tells you whether your application meets them, rather than only where it breaks.
 
-Performing these tests will allow you:
+## Watch the application
 
-- to have perspective on the performance and stability of your infrastructure.
-- to be able to identify bottlenecks in particular stress scenarios
-- to identify and remove any weaknesses in architectures via supervision and performance management strategies and increase scalability
+Follow the test from the [metrics](/doc/develop/observability/metrics/) and the [access logs](/doc/develop/observability/access-logs/) of your application: CPU and memory of the instances, response times, and status codes.
 
-The determining elements are:
+- Autoscaling reacts after a few minutes of sustained load: increase the load gradually, and watch `UPSCALE` in the [activity](/doc/develop/observability/activity/)
+- Code on a single thread uses one vCPU per process: see [both ranges](/doc/develop/common-configuration/scaling/#both-ranges) to use all of them
+- Each instance opens its own connections to your add-ons: check that the connection limit of their plan covers all your instances
+- The load balancer applies a [180-second timeout](/doc/find-help/troubleshooting/) to the operations of your application
 
-- The response time of your transactions (poorly optimized requests, etc.)
-- The performance of the application (single-threaded application, expectations of external services, generation of logs in a file, etc.)
-- The performance of managed services such as databases (lack of indexes, unnecessary iterations, etc.)
-- Software design in general
-- Hardware limitations such as CPU, RAM, network, etc.
-- bad middleware configurations (databases, server, etc.)
-- The response time between the client and the application
+## Act on the results
 
-## Online and local load tools
+Find what limits your application first: its code, such as a slow query, the size or the number of its instances, or the plan of an add-on. Change one thing, then run the same test again to compare the results.
 
-Choosing a load-testing solution will depend on several factors. If simplicity and speed are the most important factors, online tools are the most appropriate. On the other hand, if you have to test particular protocols, and have fine configuration options via a little programming / scripting and for a lower cost, you may want to use dedicated, local solutions.
+## Load testing tools
 
-### Online
+To send many requests to a single URL, a command-line tool such as [hey](https://github.com/rakyll/hey) or [oha](https://github.com/hatoo/oha) is enough.
 
-Online services are available to perform your tests. Most offer typical user journey scenarios to allow you to simulate a user:
+To script user journeys, use [k6](https://github.com/grafana/k6), [Gatling](https://gatling.io), [Locust](https://locust.io), [JMeter](https://jmeter.apache.org), or [Drill](https://github.com/fcsonline/drill), which run on your workstation or your own servers.
 
-- [K6](https://k6.io)
-- [Octoperf](https://octoperf.com)
-- [Loader.io](https://loader.io)
-
-### Local, with open source alternatives
-
-Some open source services to be installed on an infrastructure (workstation or IaaS in the best case) are also available:
-
-- [Gatling](https://gatling.io)
-- [Drill](https://github.com/fcsonline/drill)
-- [Locust](https://locust.io)
-- [Jmeter](https://jmeter.apache.org)
+Online services run the test for you, from their own servers: [Grafana Cloud k6](https://grafana.com/docs/k6/latest/), [Loader.io](https://loader.io), or [OctoPerf](https://octoperf.com).

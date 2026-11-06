@@ -2,50 +2,75 @@
 type: docs
 linkTitle: Blue/Green Deployments
 title: Blue/Green Deployments
-description: Implement Blue/Green deployment strategy to minimize downtime and deployment risks using dual production environments and traffic routing
+description: How each Clever Cloud deployment switches traffic to new instances, and how to run a new version in a second application before moving your domain to it
 keywords:
 - blue-green
 - deployment
-- strategy
-- downtime
+- zero downtime
+- rollback
+- domain switch
 - environments
-- routing
 aliases:
 - /doc/best-practices/blue-green
 - /doc/develop/best-practices/blue-green-deployments/
 - /doc/develop/blue-green
 ---
 
-Blue/Green deployment is a technique used in automated deployment of applications, databases and services.
-Its main goal is to minimize the downtime and risks of an application by running two identical environment instances, one called *Blue* and the other one called *Green*.
+A Blue/Green deployment runs two versions of an application side by side: the current one, *blue*, keeps the traffic while the new one, *green*, starts. Traffic moves to *green* once it works, and *blue* remains available to roll back.
 
-## Contextual example
+## Each deployment on Clever Cloud
 
-Let's say you have a production environment called *Blue*, running for instance an e-commerce application. Your customers are routed to this *Blue* instance. In parallel, you will have a "sleeping clone" of *Blue*, named *Green*.
-Now let's say you have achieved a new feature and want your customers to benefit of it. Using the "Blue/Green" technique, the new code will be used in *Green*. Once *Green* is ready, you will redirect your customers to *Green*, and we will put *Blue* in "sleeping mode". When you will add new modification you will do it on *Blue* this time, then on *Green* again, and so on.
+With [zero downtime deployment](/doc/develop/common-configuration/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/best-practices/immutable-infrastructure/):
 
-There are many benefits to this approach:
+1. Clever Cloud builds your code and starts new instances, next to the running ones
+2. The new instances must pass the [health check](/doc/develop/common-configuration/healthcheck/)
+3. The load balancer sends the traffic to the new instances, then the old ones stop
 
-- if *Green* fails to deploy there will be no downtime for your customers or users as you will not use the broken *Green* and stay on "Blue" until you fix your code so it can start
-- if you are not happy with the changes you added in *Green*, you can "awake" *Blue* and get back to the previous version easily by routing the traffic to it
+If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default. To roll back after a successful deployment, redeploy a previous commit from the [activity](/doc/develop/observability/activity/) of your application, or with Clever Tools:
 
-## In the Clever Cloud context
+```bash
+clever restart --commit COMMIT_ID
+```
 
-When you push your source code to the Clever Cloud git remote, Clever Cloud will automatically use the "Blue/Green" pattern to apply your changes to your production.
+Replace `COMMIT_ID` with the commit of a successful deployment. This restores your code, not your variables nor your databases.
 
-A new VM, let's call it *Blue* is created. The deployment is successful when there's no error in the build phase and the [deployment healthcheck](/doc/develop/common-configuration/healthcheck) is successful. And that's it, you will use the new version on production within seconds.
+- [Learn more about deployment notifications](/doc/account-billing/notifications/)
 
-If you push new changes, a *Green* VM will be created.
+## Blue/Green with two applications
 
-### Deployment succeeds
+A second application lets you test the new version before production traffic reaches it, and keeps the old one running to roll back without rebuilding. Here, `myapp-blue` is a Node.js application in `par`, and you run the commands from its Git repository.
 
-If the deployment succeeds, *Green* will be the version in production and *Blue* will be turned off minutes later.
-This way, if you are not happy with the changes you made, just go the Clever Cloud web console, select your application and in the **Overview** menu, click the "Start last pushed commit" button, this will "awake" *Blue* and reverse your changes in production within a few minutes.
+Create the second application in the same region, to keep your DNS records valid. Clever Tools links it to the repository as `green`:
 
-#### Deployment fails
+```bash
+clever create --type node myapp-green --region par --alias green
+```
 
-If there is an error during the build phase or if the *Green* servers answers an error code on :8080/, we will alert you by email and *Blue* will remain the production server.
+With `jq`, copy the environment variables you set on the first application, without those of its add-ons, then link the same add-ons:
 
-Next time you push code a new *Green* VM will be created, then a *Blue* one, and so on.
+```bash
+clever env --app myapp-blue --format json | jq '.env' | clever env import --json --app myapp-green
+clever service link-addon my-database --app myapp-green
+```
 
-You also may see some deployments that you haven't triggered in your logs. It's because Clever Cloud uses "Blue/Green" pattern to update VMs, either security patches or versions updates.
+They don't copy the other settings, such as [scaling](/doc/develop/common-configuration/scaling/), [application settings](/doc/develop/common-configuration/#application-settings), or links to other applications: set them too.
+
+Once it starts, the second application runs its own [CRON jobs](/doc/develop/cron/) and [workers](/doc/develop/common-configuration/workers/), on the same add-ons as the first one. Keep your database schema compatible with both versions, and make sure that tasks which mustn't run twice don't run on both applications.
+
+Deploy the new version to the second application, and test it on its `cleverapps.io` domain:
+
+```bash
+clever deploy --alias green
+```
+
+Then move your domain. Between the two commands, the domain has no route, so run them one after the other:
+
+```bash
+clever domain rm example.com --app myapp-blue
+clever domain add example.com --app myapp-green
+```
+
+The same domain and path can only point to one application at a time. To roll back, move the domain back to the first application. Once you no longer need it, stop it with `clever stop --app myapp-blue`.
+
+- [Learn more about domain names](/doc/develop/common-configuration/domain-names/)
+- [Learn more about service dependencies](/doc/manage/service-dependencies/)

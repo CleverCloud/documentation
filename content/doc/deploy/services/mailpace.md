@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 60
 linkTitle: MailPace
 title: Send transactional emails with MailPace
 description: Send your application's transactional emails from your own domain with the MailPace add-on, over its HTTP API or SMTP

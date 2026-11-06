@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 68
 linkTitle: Observability
 title: Observability
 description: Monitor applications on Clever Cloud with metrics, logs, activity history and third-party observability integrations

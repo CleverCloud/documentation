@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 65
 linkTitle: Mise Package Manager
 title: Mise Package Manager
 description: Pin and install the tool versions your application needs at build time with mise on Clever Cloud

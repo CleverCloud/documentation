@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 238
 linkTitle: SSH Keys
 title: SSH Keys
 description: Configure and manage SSH keys for secure access to your Clever Cloud applications and streamlined deployment workflows

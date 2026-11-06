@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 30
 linkTitle: Jenkins
 title: Jenkins
 description: Set up Jenkins CI/CD automation server on Clever Cloud for continuous integration and deployment workflows with scalable infrastructure

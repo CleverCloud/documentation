@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 70
 linkTitle: The Twelve-Factor App
 title: The Twelve-Factor App
 description: Learn the Twelve-Factor App methodology for building cloud-ready applications with proper configuration, scalability, and deployment practices

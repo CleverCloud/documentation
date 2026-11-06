@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 70
 linkTitle: Login with Clever Cloud
 title: Login with Clever Cloud
 description: Let your users authenticate with their Clever Cloud account through OAuth

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 20
 linkTitle: Token Attenuation
 title: Pulsar Token Attenuation
 description: Restrict a Pulsar add-on Biscuit token to specific topics or operations before handing it to a client

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 70
 linkTitle: New Relic
 title: New Relic
 description: Configuring Newrelic on Clever Cloud on Clever Cloud with Complete setup and configuration, configuration options, and deployment best practices

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 60
 linkTitle: Metrics
 title: Metrics
 description: Learn to monitor application performance and resource usage on Clever Cloud with built-in metrics, dashboards, alerting, and analytics

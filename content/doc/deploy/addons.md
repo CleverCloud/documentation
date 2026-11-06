@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 40
 sidebar:
   exclude: true
 linkTitle: Add-ons

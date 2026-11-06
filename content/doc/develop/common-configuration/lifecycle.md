@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 50
 linkTitle: Lifecycle
 title: Application lifecycle
 description: Manage your applications on Clever Cloud including deployment configuration, scaling settings, and operational controls

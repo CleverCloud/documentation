@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 233
 linkTitle: Consumption
 title: Consumption
 description: Understand Clever Cloud billing calculation, credit consumption metrics, and how application scaling affects your monthly costs

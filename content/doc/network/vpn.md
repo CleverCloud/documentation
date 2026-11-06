@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 145
 linkTitle: VPN
 title: VPN service
 description: Set up an encrypted tunnel between Clever Cloud regions and your datacenter with WireGuard, IPSec or OpenVPN

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 155
 linkTitle: Secrets & Transit
 title: Secrets & Transit (KMS)
 description: Store secrets distributed across 3 data centers, compatible with existing HashiCorp Vault/Bao ecosystems

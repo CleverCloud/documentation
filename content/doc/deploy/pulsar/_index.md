@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 48
 linkTitle: Pulsar
 title: Apache Pulsar
 description: Deploy Apache Pulsar messaging add-on service for real-time data streaming and pub-sub messaging with enterprise scalability features

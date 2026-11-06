@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 80
 linkTitle: Warp 10
 title: Warp 10
 description: Use Warp 10 Geo Time series database on Clever Cloud with presentations, concepts, and implementation examples

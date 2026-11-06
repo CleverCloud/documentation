@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 10
 linkTitle: Examples
 title: Pulsar Examples
 description: Produce and consume messages on a Pulsar add-on from Rust, Java and Python, and manage namespaces, topics and their policies

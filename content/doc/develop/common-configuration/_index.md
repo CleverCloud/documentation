@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 63
 linkTitle: Configure applications
 title: Configure applications
 description: Settings common to all Clever Cloud applications, whatever their runtime, from the port your application listens on to its region, zero downtime deployment, and sticky sessions

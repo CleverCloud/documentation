@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 1
 linkTitle: Update Clever Tools
 title: Update Clever Tools
 description: Update Clever Tools CLI to its latest version with npm, pnpm, Bun, Yarn, AUR, rpm, deb, Homebrew, WinGet, Docker, Mise, Nix or standalone binaries

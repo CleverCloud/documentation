@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 40
 linkTitle: Drains
 title: Log Drains
 description: Forward your application logs to Better Stack, Elasticsearch, Datadog, New Relic, OVHcloud, Sekoia.io, Splunk or any HTTP endpoint with log drains

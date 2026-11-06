@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 234
 linkTitle: Invoices
 title: Invoices
 description: Understand Clever Cloud unified invoicing system with monthly billing summaries, detailed consumption breakdown, and credit accounting

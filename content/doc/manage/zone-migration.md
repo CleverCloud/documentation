@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 120
 linkTitle: Zone Migration
 title: Zone Migration
 description: Migrate applications between Clever Cloud zones for improved performance, compliance, or geographic distribution requirements

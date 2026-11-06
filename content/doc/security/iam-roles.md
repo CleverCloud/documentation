@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 154
 linkTitle: IAM (Roles)
 title: Roles and organisations
 description: Discover how to manage organisations within your Clever Cloud account. This guide covers creation of organisations and roles in the PaaS platform

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 105
 linkTitle: Database Migration
 title: Database Migration
 description: Manage database migrations on Clever Cloud including backup procedures, migration strategies, and data transfer best practices

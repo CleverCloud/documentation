@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 80
 linkTitle: Metabase
 title: Metabase
 description: Deploy Metabase business intelligence add-on service for data visualization, dashboards, and analytics reporting on Clever Cloud

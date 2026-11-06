@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 10
 linkTitle: Configuration provider
 title: Share environment variables between applications
 description: Store environment variables once in a configuration provider add-on, link it to several applications of your organisation, and update them all from one place

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 70
 linkTitle: Redis
 title: Redis
 description: Deploy Redis in-memory data store add-on service for caching, session management, and message brokering on Clever Cloud platform

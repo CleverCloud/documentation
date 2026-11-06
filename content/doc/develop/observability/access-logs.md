@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 10
 linkTitle: Access Logs
 title: Access Logs
 description: Read the HTTP requests, TCP redirections and SSH connections reaching your applications on Clever Cloud, with their status, latency and origin

@@ -11,10 +11,10 @@ keywords:
 - analytics
 - performance
 aliases:
+- /doc/develop/observability/new-relic
 - /administrate/metrics/new-relic
 - /doc/administrate/metrics/new-relic
 - /doc/metrics/new-relic
-- /doc/observability/new-relic
 - /doc/tools/new-relic
 ---
 

@@ -11,9 +11,9 @@ keywords:
 - php
 - performance
 aliases:
+- /doc/develop/observability/blackfire
 - /doc/administrate/metrics/blackfire/
 - /doc/metrics/blackfire
-- /doc/observability/blackfire
 ---
 
 ## Overview

@@ -10,13 +10,13 @@ keywords:
 - latency
 - monitoring
 aliases:
+- /doc/develop/observability/access-logs
 - /doc/administrate/access-logs/
 - /doc/develop/observability/accesslogs
 - /doc/find-help/access-logs/
-- /doc/observability/access-logs
 ---
 
-Access logs contain all incoming HTTP requests to your application, along with TCP redirections and SSH connections to its instances. For the output of the application itself, see [Logs](/doc/develop/observability/logs).
+Access logs contain all incoming HTTP requests to your application, along with TCP redirections and SSH connections to its instances. For the output of the application itself, see [Logs](/doc/observability/logs).
 
 You can see access logs with the following command:
 

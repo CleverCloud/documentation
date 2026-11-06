@@ -16,4 +16,4 @@ When you look for an issue in your logs, the text filter of the [Clever Cloud Co
 
 While a filter is active, select a log line, then click `Inspect`. The interface clears the filter, pauses the stream, and centers the view on this line among the logs around it. It works for application logs, [access logs](/changelog/2025/09-11-access-logs-console/), and the [add-on logs](/changelog/2025/09-12-console-addon-logs-beta/) in beta.
 
-- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)
+- [Learn more about logs on Clever Cloud](/doc/observability/logs/)

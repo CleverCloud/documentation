@@ -106,7 +106,7 @@ The logs interface of the Console follows your application live, or shows a time
 
 Found the line you were looking for? Select it and click `Inspect`: the filter goes away, and the view centers on this line among the logs around it. To share what you see, copy the selected lines, or send the URL of the page, which keeps your filter. The platform keeps your logs for 7 days.
 
-- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)
+- [Learn more about logs on Clever Cloud](/doc/observability/logs/)
 
 ### Explore your data without a client
 
@@ -249,7 +249,7 @@ clever drain create datadog "https://http-intake.logs.datadoghq.eu/v1/input/$DAT
 clever drain list
 ```
 
-- [Learn more about drains](/doc/develop/observability/drains/)
+- [Learn more about drains](/doc/observability/drains/)
 
 ### Open the Console or your application from the terminal
 

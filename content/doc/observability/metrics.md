@@ -11,6 +11,7 @@ keywords:
 - performance
 - analytics
 aliases:
+- /doc/develop/observability/metrics
 - /administrate/metrics/overview/
 - /doc/administrate/metrics
 - /doc/administrate/metrics/overview
@@ -18,7 +19,6 @@ aliases:
 - /doc/developers/doc/metrics
 - /doc/metrics
 - /doc/metrics/custom-metrics
-- /doc/observability/metrics
 - /doc/tools/metrics
 - /metrics
 ---
@@ -44,7 +44,7 @@ on a specified time range.
 
 ### Custom queries
 
-All metrics are stored in [Warp 10](/doc/develop/observability/warp10), so you can explore data directly with the [quantum](/doc/develop/observability/warp10) interface, with [WarpScript](https://www.warp10.io/doc/tools/reference).
+All metrics are stored in [Warp 10](/doc/observability/warp10), so you can explore data directly with the [quantum](/doc/observability/warp10) interface, with [WarpScript](https://www.warp10.io/doc/tools/reference).
 
 For instance, you can derive metrics over time, do custom aggregations or combine metrics.
 
@@ -64,7 +64,7 @@ To customize a template and preserve your changes, create and save a **copy** of
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/doc/develop/observability/warp10), a Geotimes series database.
+All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/doc/observability/warp10), a Geotimes series database.
 All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.
 
 ### Monitoring data model
@@ -171,7 +171,7 @@ Below, the list of all Warp 10 classes representing Telegraf metrics :
 
 From the `metrics` tab on the console. You can either open a Quantum console, an online WarpScript editor, or either send your WarpScript by your own way on the Warp 10 endpoint (provided by Quantum).
 
-More information about [Quantum and Warp 10](/doc/develop/observability/warp10) in our documentation.
+More information about [Quantum and Warp 10](/doc/observability/warp10) in our documentation.
 
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
@@ -193,7 +193,7 @@ NOW 'NOW' STORE
 
 ## Consumption metric
 
-Consumption can also be inferred by our metrics. We provide some helper macros in the [Warp 10 documentation](/doc/develop/observability/warp10).
+Consumption can also be inferred by our metrics. We provide some helper macros in the [Warp 10 documentation](/doc/observability/warp10).
 
 Consumption unit is in **second**.
 

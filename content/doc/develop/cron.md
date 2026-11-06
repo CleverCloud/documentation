@@ -146,7 +146,7 @@ Don't write `/bin/bash $ROOT/crons/sync-orders.sh`: this command starts a shell 
 
 ### Read the output
 
-The standard output and error of your jobs go to the logs of your application. You find them in the Console, in `clever logs`, and in your [log drains](/doc/develop/observability/drains/). The cron daemon adds a line when each job starts and ends, and prefixes each line of output with `CMDOUT`:
+The standard output and error of your jobs go to the logs of your application. You find them in the Console, in `clever logs`, and in your [log drains](/doc/observability/drains/). The cron daemon adds a line when each job starts and ends, and prefixes each line of output with `CMDOUT`:
 
 ```text
 (bas) CMD (/home/bas/app_7d3f0c2e-5b1a-4c8e-9f2d-6a4b8e1c3f90/crons/sync-orders.sh)

@@ -122,4 +122,4 @@ FS Buckets favor compatibility over performance. They don't suit applications wi
 
 Clever Cloud records the size of each bucket every hour in Warp 10, as the `fsbucket.storage` metric, in bytes. The read token of the **Metrics** tab of an application doesn't include this metric: generate a token with the FS Bucket scope.
 
-- [Generate the token and query the FS Bucket storage metric](/doc/develop/observability/metrics#fs-bucket)
+- [Generate the token and query the FS Bucket storage metric](/doc/observability/metrics#fs-bucket)

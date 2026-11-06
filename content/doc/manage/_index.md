@@ -163,6 +163,7 @@ This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 ## Other settings
 
 {{< cards >}}
+  {{< card link="/developers/doc/manage/activity" title="Activity" subtitle="Follow the deployments of your application, and what triggered them" icon="clock" >}}
   {{< card link="/developers/doc/manage/build-hooks" title="Deployment hooks" subtitle="Run your own commands before and after the build, and at startup" icon="rocket-launch" >}}
   {{< card link="/developers/doc/manage/domain-names" title="Domain names" subtitle="Serve your application on your own domains, or on a shared path" icon="globe-alt" >}}
   {{< card link="/developers/doc/manage/environment-variables" title="Environment variables" subtitle="Configure your application and get the credentials of its add-ons" icon="pencil-square" >}}

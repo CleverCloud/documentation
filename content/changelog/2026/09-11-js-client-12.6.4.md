@@ -22,7 +22,7 @@ Since 12.6.1, the client codebase uses TypeScript and its published type declara
 
 Release 12.6.3 adds commands to manage [Cellar](/doc/deploy/storage/cellar/) buckets, objects and credentials, with `UploadCellarObjectCommand` storing an object in a single call. It covers [Kubernetes](/doc/deploy/kubernetes/) clusters and node groups: creation, update, version check and upgrade, `kubeconfig`, persistent storage, quotas, usage and events. It also adds `ListAddonInstanceCommand` to list the instances of an add-on, `GetCurrentOauthTokenInfoCommand` and `RequestAuthPasswordResetCommand`.
 
-[Log drain](/doc/develop/observability/drains/) commands accept an add-on as source again, and `ListLogDrainCommand` can list every drain of an organisation. They support the `BETTERSTACK`, `OVH_TCP` and `SPLUNK` (HTTP Event Collector) targets. `CheckLogDrainCommand` checks whether the target of a drain can be reached, `ResetLogDrainCursorCommand` drops its backlog to ship only new logs, and `skipCheck` creates a drain before its target is reachable.
+[Log drain](/doc/observability/drains/) commands accept an add-on as source again, and `ListLogDrainCommand` can list every drain of an organisation. They support the `BETTERSTACK`, `OVH_TCP` and `SPLUNK` (HTTP Event Collector) targets. `CheckLogDrainCommand` checks whether the target of a drain can be reached, `ResetLogDrainCursorCommand` drops its backlog to ship only new logs, and `skipCheck` creates a drain before its target is reachable.
 
 ## Naming and errors
 

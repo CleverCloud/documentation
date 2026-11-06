@@ -16,4 +16,4 @@ The logs page of add-ons in the [Clever Cloud Console](https://console.clever-cl
 
 An `Inspect` button also [shows a filtered line in context](/changelog/2025/11-28-console-logs-inspect/).
 
-- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)
+- [Learn more about logs on Clever Cloud](/doc/observability/logs/)

@@ -14,12 +14,12 @@ keywords:
 - splunk
 - export
 aliases:
+- /doc/develop/observability/drains
 - /doc/administrate/log-drains
 - /doc/administrate/drains/
-- /doc/observability/drains
 ---
 
-You can use log drains to send your application's [logs](/doc/develop/observability/logs) to an external server with the following command.
+You can use log drains to send your application's [logs](/doc/observability/logs) to an external server with the following command.
 
 ```console
 clever drain create DRAIN_TYPE DRAIN_URL

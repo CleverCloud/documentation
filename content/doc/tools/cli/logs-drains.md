@@ -77,7 +77,7 @@ Run `clever drain create DRAIN_TYPE --help` to list the options of a drain type,
 
 ## Access logs drains
 
-A drain forwards the output of your application or add-on by default. For an application, all drain types also accept `--kind ACCESSLOG` to forward its [access logs](/doc/develop/observability/access-logs/) instead. Create one drain of each kind to forward both. `clever drain` and `clever drain get` show the kind of each drain:
+A drain forwards the output of your application or add-on by default. For an application, all drain types also accept `--kind ACCESSLOG` to forward its [access logs](/doc/observability/access-logs/) instead. Create one drain of each kind to forward both. `clever drain` and `clever drain get` show the kind of each drain:
 
 ```console
 clever drain create raw-http https://logs.example.com/clever-cloud --kind ACCESSLOG
@@ -124,7 +124,7 @@ clever drain create newrelic https://log-api.eu.newrelic.com/log/v1 --api-key "$
 
 ## OVH TCP logs drains
 
-OVH TCP drains are syslog drains sent over TCP to an [OVHcloud Logs Data Platform](/doc/develop/observability/drains/#ovhcloud-logs-data-platform) endpoint. Pass the write token of your stream as an RFC5424 structured data parameter:
+OVH TCP drains are syslog drains sent over TCP to an [OVHcloud Logs Data Platform](/doc/observability/drains/#ovhcloud-logs-data-platform) endpoint. Pass the write token of your stream as an RFC5424 structured data parameter:
 
 ```bash
 clever drain create ovh-tcp "tcp://$LDP_HOST:514" --sd-params "X-OVH-TOKEN=\"$LDP_WRITE_TOKEN\""

@@ -87,7 +87,7 @@ Keep this result below the MySQL plan's connection limit and reserve capacity fo
 
 ## Monitor ProxySQL
 
-ProxySQL exports connection, query and error metrics for each application instance. Use the [Metrics overview](/doc/develop/observability/metrics) to inspect them in the Console and create alerts for your application.
+ProxySQL exports connection, query and error metrics for each application instance. Use the [Metrics overview](/doc/observability/metrics) to inspect them in the Console and create alerts for your application.
 
 ## Learn more
 

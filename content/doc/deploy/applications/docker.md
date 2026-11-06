@@ -91,7 +91,7 @@ Clever Cloud starts the container with:
 - A memory limit based on the memory available on the instance, without swap
 - A limit of `1024` open files, which processes can raise up to `524288`
 
-The container writes its logs to its standard output and error: Clever Cloud collects them as the [logs of your application](/doc/develop/observability/logs/).
+The container writes its logs to its standard output and error: Clever Cloud collects them as the [logs of your application](/doc/observability/logs/).
 
 ### Build phase
 

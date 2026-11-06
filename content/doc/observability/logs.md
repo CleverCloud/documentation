@@ -10,16 +10,16 @@ keywords:
 - monitoring
 - troubleshooting
 aliases:
+- /doc/develop/observability/logs
 - /clever-cloud-apis/add-ons-log-collector
 - /doc/administrate/log-management
 - /doc/administrate/log-management/#get-continuous-logs-from-your-application
 - /doc/administrate/logs
 - /doc/clever-cloud-apis/add-ons-log-collector
 - /doc/observability/log-management
-- /doc/observability/logs
 ---
 
-The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](/doc/develop/observability/access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
+The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](/doc/observability/access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
 By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
 
@@ -81,4 +81,4 @@ clever logs --addon postgresql_xxxxxxxx
 
 The output of your [CRON jobs](/doc/develop/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
-See [Access Logs](/doc/develop/observability/access-logs) for incoming HTTP requests, and [Drains](/doc/develop/observability/drains) to forward everything to an external tool.
+See [Access Logs](/doc/observability/access-logs) for incoming HTTP requests, and [Drains](/doc/observability/drains) to forward everything to an external tool.

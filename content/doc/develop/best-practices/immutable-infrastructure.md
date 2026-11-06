@@ -21,7 +21,7 @@ On Clever Cloud, you don't administer servers: the platform runs your applicatio
 - **A maintenance or an image update**, when Clever Cloud moves your application to a new runtime image, with updated packages
 - **The monitoring**, when an instance stops answering
 
-The [activity](/doc/develop/observability/activity/) of your application lists each of these deployments.
+The [activity](/doc/manage/activity/) of your application lists each of these deployments.
 
 ## What persists
 

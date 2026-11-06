@@ -49,7 +49,7 @@ provides PromQL and Prometheus Ingestion gateway in addition to warp10 endpoints
 | `https://prometheus-materiats.eu-fr-1.services.clever-cloud.com:433`    | PromQL endpoint                      |
 
 For complete technical documentation on Warp 10 and its query language,
-see our [Warp 10 documentation](/doc/develop/observability/warp10/).
+see our [Warp 10 documentation](/doc/observability/warp10/).
 
 > [!TIP] HTTP headers to pass tokens
 > Warp 10 related endpoints expects a `X-warp10-token` HTTP header containing

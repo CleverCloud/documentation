@@ -20,7 +20,7 @@ excludeSearch: true
 
 ## Log drains on API v4
 
-Since 11.4.1, the [log drain](/doc/develop/observability/drains/) commands call the API v4 endpoints. `EnableLogDrainCommand` and `DisableLogDrainCommand` replace `UpdateLogDrainCommand` and its `state` field. A drain now exposes its `status`, the `execution` status of its forwarding with the last error met, and its `backlog`. `ListLogDrainCommand` filters drains on these statuses, and these commands accept an application ID only.
+Since 11.4.1, the [log drain](/doc/observability/drains/) commands call the API v4 endpoints. `EnableLogDrainCommand` and `DisableLogDrainCommand` replace `UpdateLogDrainCommand` and its `state` field. A drain now exposes its `status`, the `execution` status of its forwarding with the last error met, and its `backlog`. `ListLogDrainCommand` filters drains on these statuses, and these commands accept an application ID only.
 
 ## Regions
 

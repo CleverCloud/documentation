@@ -175,7 +175,7 @@ For operations that may exceed the 180-second limit, implement one of these appr
 - Design your application architecture to handle timeouts gracefully
 - Break up long-running operations into smaller tasks
 
-Use your embedded [Grafana](/doc/develop/observability/metrics/) to monitor resource usage when implementing any of these solutions.
+Use your embedded [Grafana](/doc/observability/metrics/) to monitor resource usage when implementing any of these solutions.
 
 ### Diagnose network issues with `curl`
 

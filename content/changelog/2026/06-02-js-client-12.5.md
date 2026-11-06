@@ -12,7 +12,7 @@ authors:
 excludeSearch: true
 ---
 
-[Clever Cloud JS client 12.5](https://github.com/CleverCloud/clever-client.js/releases/tag/v12.5.0) is available. It adds commands to read the HTTP traffic of your applications from the [metrics](/doc/develop/observability/metrics/) API, and wraps up the changes shipped since 12.1 for Network Groups and request handling.
+[Clever Cloud JS client 12.5](https://github.com/CleverCloud/clever-client.js/releases/tag/v12.5.0) is available. It adds commands to read the HTTP traffic of your applications from the [metrics](/doc/observability/metrics/) API, and wraps up the changes shipped since 12.1 for Network Groups and request handling.
 
 ## Request metrics
 

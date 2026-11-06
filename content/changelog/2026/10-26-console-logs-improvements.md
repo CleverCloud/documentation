@@ -16,4 +16,4 @@ The logs interface of the [Clever Cloud Console](https://console.clever-cloud.co
 
 The message filter also lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, each browser tab keeps its own, and you can share a link to a filtered view with your team. A `Clear logs` button empties the view, to focus on the lines that come next during a long session.
 
-- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)
+- [Learn more about logs on Clever Cloud](/doc/observability/logs/)

@@ -28,7 +28,7 @@ With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled 
 
 Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions.
 
-If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default. To roll back after a successful deployment, redeploy a previous commit from the [activity](/doc/develop/observability/activity/) of your application, or with Clever Tools:
+If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default. To roll back after a successful deployment, redeploy a previous commit from the [activity](/doc/manage/activity/) of your application, or with Clever Tools:
 
 ```bash
 clever restart --commit COMMIT_ID

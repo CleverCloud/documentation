@@ -93,7 +93,7 @@ To follow it from an interactive session on the instance:
 journalctl -efa -u bas-deploy.service
 ```
 
-This journal only holds what this instance wrote since it started. To read the logs of all instances, including the ones a deployment removed, use [the logs of your application](/doc/develop/observability/logs/).
+This journal only holds what this instance wrote since it started. To read the logs of all instances, including the ones a deployment removed, use [the logs of your application](/doc/observability/logs/).
 
 ### Debug a failed deployment
 

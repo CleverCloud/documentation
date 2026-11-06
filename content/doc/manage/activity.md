@@ -11,6 +11,7 @@ keywords:
 - monitoring
 - redeploy a commit
 aliases:
+- /doc/develop/observability/activity
 - /doc/administrate/activity
 - /doc/observability/activity
 ---
@@ -34,7 +35,7 @@ An entry shows:
 - **Date and cause**: when it started, and where it came from, such as `Git`, `GitHub`, `Console`, or `Clever Tools`
 - **Author**: the member of your organisation who triggered it, when available
 - **Commit ID**: the commit it deployed, for applications deployed with Git
-- **Logs**: the [logs](/doc/develop/observability/logs/) of this deployment, while they're within their retention period
+- **Logs**: the [logs](/doc/observability/logs/) of this deployment, while they're within their retention period
 
 From the Console, **Redeploy this commit** deploys the commit of an entry again, to roll back to a previous version. You can cancel a `DEPLOY` in progress from the Console, or with `clever cancel-deploy`.
 
@@ -66,4 +67,4 @@ The cause of a monitoring deployment starts with `Monitoring/`:
 | `Monitoring/Unreachable` | The monitoring can't reach the agent of an instance, and redeploys your application       |
 
 - [Learn more about scaling](/doc/manage/scaling/)
-- [Learn more about logs](/doc/develop/observability/logs/)
+- [Learn more about logs](/doc/observability/logs/)

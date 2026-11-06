@@ -59,7 +59,7 @@ Development, staging, and production stay as similar as possible. Use the same r
 
 ## Logs
 
-An application writes its logs as a stream of events on its standard output, and lets the platform collect them. Clever Cloud gathers the output of your application: read it in the [logs](/doc/develop/observability/logs/), or send it to another tool with [drains](/doc/develop/observability/drains/). Don't write log files on the disk of an instance.
+An application writes its logs as a stream of events on its standard output, and lets the platform collect them. Clever Cloud gathers the output of your application: read it in the [logs](/doc/observability/logs/), or send it to another tool with [drains](/doc/observability/drains/). Don't write log files on the disk of an instance.
 
 ## Admin processes
 

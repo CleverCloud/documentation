@@ -18,5 +18,5 @@ It applies to [Elasticsearch](/doc/deploy/databases/elastic/), [Jenkins](/doc/de
 
 This interface is in beta.
 
-- [Learn more about logs on Clever Cloud](/doc/develop/observability/logs/)
+- [Learn more about logs on Clever Cloud](/doc/observability/logs/)
 - [Share your feedback on the new logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)

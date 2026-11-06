@@ -51,7 +51,7 @@ These commands target the current profile's organisation by default. The `create
 
 ## Drains on add-ons
 
-The `clever drain` commands now accept an `--addon` option to manage [log drains](/doc/develop/observability/logs/) on add-ons, in addition to applications. All drain subcommands (`create`, `enable`, `disable`, `get`, `remove` and the top-level listing) accept this new option, which resolves either an add-on ID or its real ID. The `--addon` option is mutually exclusive with `--app` and `--alias`.
+The `clever drain` commands now accept an `--addon` option to manage [log drains](/doc/observability/logs/) on add-ons, in addition to applications. All drain subcommands (`create`, `enable`, `disable`, `get`, `remove` and the top-level listing) accept this new option, which resolves either an add-on ID or its real ID. The `--addon` option is mutually exclusive with `--app` and `--alias`.
 
 ```bash
 # List drains on an add-on

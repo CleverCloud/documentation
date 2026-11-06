@@ -250,7 +250,7 @@ You can also assign these flows to your own clients if needed.
 
 ## Grafana dashboard & Metrics
 
-Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/develop/observability/metrics/#publish-your-own-metrics) to visualize them.
+Since version `25.06`, Keycloak add-on exposes [Prometheus](https://prometheus.io/) metrics on port `9000`. Use Clever Cloud's [Grafana integration](/doc/observability/metrics/#publish-your-own-metrics) to visualize them.
 
 You can also use a Grafana dashboard ready to import, available starting with Keycloak `26.2` release:
 

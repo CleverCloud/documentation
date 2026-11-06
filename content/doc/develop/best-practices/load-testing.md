@@ -31,9 +31,9 @@ Choose the requests that matter, such as the journey of a user who browses, sear
 
 ## Watch the application
 
-Follow the test from the [metrics](/doc/develop/observability/metrics/) and the [access logs](/doc/develop/observability/access-logs/) of your application: CPU and memory of the instances, response times, and status codes.
+Follow the test from the [metrics](/doc/observability/metrics/) and the [access logs](/doc/observability/access-logs/) of your application: CPU and memory of the instances, response times, and status codes.
 
-- Autoscaling reacts after a few minutes of sustained load: increase the load gradually, and watch `UPSCALE` in the [activity](/doc/develop/observability/activity/)
+- Autoscaling reacts after a few minutes of sustained load: increase the load gradually, and watch `UPSCALE` in the [activity](/doc/manage/activity/)
 - Code on a single thread uses one vCPU per process: see [both ranges](/doc/manage/scaling/#both-ranges) to use all of them
 - Each instance opens its own connections to your add-ons: check that the connection limit of their plan covers all your instances
 - The load balancer applies a [180-second timeout](/doc/find-help/troubleshooting/) to the operations of your application

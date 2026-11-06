@@ -53,7 +53,7 @@ A change of the size or of the number of instances starts a deployment right awa
 
 Clever Cloud monitors the CPU and memory usage of your instances. When it stays high for a few minutes, it scales your application up within the ranges you set, and scales it down when the load drops. Autoscaling absorbs lasting load increases, not short peaks.
 
-Each change is a deployment. With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, new instances start before the old ones stop. The [activity](/doc/develop/observability/activity/) of your application lists them as `UPSCALE` or `DOWNSCALE`, triggered by `Monitoring/Scaling`.
+Each change is a deployment. With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, new instances start before the old ones stop. The [activity](/doc/manage/activity/) of your application lists them as `UPSCALE` or `DOWNSCALE`, triggered by `Monitoring/Scaling`.
 
 ### Vertical scaling
 

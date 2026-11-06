@@ -14,7 +14,7 @@ excludeSearch: true
 
 [Clever Cloud JS client 11.3](https://github.com/CleverCloud/clever-client.js/releases/tag/v11.3.0) is available. The new client structure introduced in 11.1 now supports Server-Sent Events (SSE): `client.stream()` opens a real-time stream from a stream command, reconnects automatically when the connection drops and resumes from the last event received.
 
-This release uses it to stream [logs](/doc/develop/observability/logs/). `StreamApplicationRuntimeLogCommand` and `StreamAddonRuntimeLogCommand` deliver the runtime logs of an application or an add-on, `StreamApplicationAccessLogCommand` the [access logs](/doc/develop/observability/access-logs/) of an application. They accept a time range (`since`, `until`), a `limit`, and for runtime logs a deployment, instances or a text `filter` to narrow the output:
+This release uses it to stream [logs](/doc/observability/logs/). `StreamApplicationRuntimeLogCommand` and `StreamAddonRuntimeLogCommand` deliver the runtime logs of an application or an add-on, `StreamApplicationAccessLogCommand` the [access logs](/doc/observability/access-logs/) of an application. They accept a time range (`since`, `until`), a `limit`, and for runtime logs a deployment, instances or a text `filter` to narrow the output:
 
 ```javascript
 import { CcApiClient } from '@clevercloud/client/cc-api-client.js';

@@ -11,9 +11,9 @@ keywords:
   - time series
   - database
 aliases:
+- /doc/develop/observability/warp10
 - /doc/administrate/metrics/warp10/
 - /doc/metrics/warp10
-- /doc/observability/warp10
 ---
 
 {{% content "warp10-concepts" %}}

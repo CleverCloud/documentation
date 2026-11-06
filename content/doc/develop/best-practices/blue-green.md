@@ -2,13 +2,13 @@
 type: docs
 linkTitle: Blue/Green Deployments
 title: Blue/Green Deployments
-description: How each Clever Cloud deployment switches traffic to new instances, and how to run a new version in a second application before moving your domain to it
+description: How each Clever Cloud deployment switches traffic to new instances, how to roll back, and how to validate a version before production
 keywords:
 - blue-green
 - deployment
 - zero downtime
 - rollback
-- domain switch
+- staging
 - environments
 aliases:
 - /doc/best-practices/blue-green
@@ -16,7 +16,7 @@ aliases:
 - /doc/develop/blue-green
 ---
 
-A Blue/Green deployment runs two versions of an application side by side: the current one, *blue*, keeps the traffic while the new one, *green*, starts. Traffic moves to *green* once it works, and *blue* remains available to roll back.
+A Blue/Green deployment starts the new version, *green*, next to the current one, *blue*, then moves the traffic to *green* once it works.
 
 ## Each deployment on Clever Cloud
 
@@ -25,6 +25,8 @@ With [zero downtime deployment](/doc/develop/common-configuration/#zero-downtime
 1. Clever Cloud builds your code and starts new instances, next to the running ones
 2. The new instances must pass the [health check](/doc/develop/common-configuration/healthcheck/)
 3. The load balancer sends the traffic to the new instances, then the old ones stop
+
+Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions.
 
 If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default. To roll back after a successful deployment, redeploy a previous commit from the [activity](/doc/develop/observability/activity/) of your application, or with Clever Tools:
 
@@ -36,41 +38,12 @@ Replace `COMMIT_ID` with the commit of a successful deployment. This restores yo
 
 - [Learn more about deployment notifications](/doc/account-billing/notifications/)
 
-## Blue/Green with two applications
+## Validate a version before production
 
-A second application lets you test the new version before production traffic reaches it, and keeps the old one running to roll back without rebuilding. Here, `myapp-blue` is a Node.js application of `my-org` in `par`, and the commands run from its repository.
-
-Create the second application in the same organisation and region: it can then use the same add-ons, and your DNS records stay valid:
+Passing the health check doesn't prove that every user journey works. Test a new version first on a staging application with its own add-ons. Once it's linked to your repository as `staging`, deploy your `develop` branch to it:
 
 ```bash
-clever create --type node myapp-green --org my-org --region par --alias green
+clever deploy --alias staging --branch develop
 ```
 
-With `jq`, copy the environment variables you set on the first application, without those of its add-ons, then link the same add-ons:
-
-```bash
-clever env --app myapp-blue --format json | jq '.env' | clever env import --json --alias green
-clever service link-addon my-database --alias green
-```
-
-They don't copy the other settings, such as [scaling](/doc/develop/common-configuration/scaling/), [application settings](/doc/develop/common-configuration/#application-settings), or links to other applications: set them too.
-
-Once it starts, the second application runs its own [CRON jobs](/doc/develop/cron/) and [workers](/doc/develop/common-configuration/workers/), on the same add-ons as the first one. Keep your database schema compatible with both versions, and make sure that tasks which mustn't run twice don't run on both applications.
-
-Deploy the new version to the second application, and test it on its `cleverapps.io` domain:
-
-```bash
-clever deploy --alias green
-```
-
-Then move your domain. Between the two commands, the domain has no route, so run them one after the other:
-
-```bash
-clever domain rm example.com --app myapp-blue
-clever domain add example.com --alias green
-```
-
-The same domain and path can only point to one application at a time. To roll back, move the domain back to the first application. Once you no longer need it, stop it with `clever stop --app myapp-blue`.
-
-- [Learn more about domain names](/doc/develop/common-configuration/domain-names/)
-- [Learn more about service dependencies](/doc/manage/service-dependencies/)
+Review apps create a test application for each pull request, with [GitHub](/doc/tools/github/) or [GitLab](/doc/tools/gitlab/).

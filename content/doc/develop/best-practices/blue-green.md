@@ -38,19 +38,19 @@ Replace `COMMIT_ID` with the commit of a successful deployment. This restores yo
 
 ## Blue/Green with two applications
 
-A second application lets you test the new version before production traffic reaches it, and keeps the old one running to roll back without rebuilding. Here, `myapp-blue` is a Node.js application in `par`, and you run the commands from its Git repository.
+A second application lets you test the new version before production traffic reaches it, and keeps the old one running to roll back without rebuilding. Here, `myapp-blue` is a Node.js application of `my-org` in `par`, and the commands run from its repository.
 
-Create the second application in the same region, to keep your DNS records valid. Clever Tools links it to the repository as `green`:
+Create the second application in the same organisation and region: it can then use the same add-ons, and your DNS records stay valid:
 
 ```bash
-clever create --type node myapp-green --region par --alias green
+clever create --type node myapp-green --org my-org --region par --alias green
 ```
 
 With `jq`, copy the environment variables you set on the first application, without those of its add-ons, then link the same add-ons:
 
 ```bash
-clever env --app myapp-blue --format json | jq '.env' | clever env import --json --app myapp-green
-clever service link-addon my-database --app myapp-green
+clever env --app myapp-blue --format json | jq '.env' | clever env import --json --alias green
+clever service link-addon my-database --alias green
 ```
 
 They don't copy the other settings, such as [scaling](/doc/develop/common-configuration/scaling/), [application settings](/doc/develop/common-configuration/#application-settings), or links to other applications: set them too.
@@ -67,7 +67,7 @@ Then move your domain. Between the two commands, the domain has no route, so run
 
 ```bash
 clever domain rm example.com --app myapp-blue
-clever domain add example.com --app myapp-green
+clever domain add example.com --alias green
 ```
 
 The same domain and path can only point to one application at a time. To roll back, move the domain back to the first application. Once you no longer need it, stop it with `clever stop --app myapp-blue`.

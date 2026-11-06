@@ -17,27 +17,25 @@ aliases:
 - /doc/develop/blue-green
 ---
 
-A Blue/Green deployment starts the new version, *green*, next to the current one, *blue*, then moves the traffic to *green* once it works.
+Each deployment starts new [immutable instances](/doc/develop/immutable-infrastructure/). With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), it follows a Blue/Green pattern:
 
-## Each deployment on Clever Cloud
-
-With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/immutable-infrastructure/):
-
-1. Clever Cloud builds your code and starts new instances, next to the running ones
+1. Clever Cloud builds your code or reuses its build cache, then starts new instances next to the running ones
 2. The new instances must pass the [health check](/doc/manage/healthcheck/)
 3. The load balancer sends the traffic to the new instances, then the old ones stop
 
-Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions.
+Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions. If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default.
 
-If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default. To roll back after a successful deployment, redeploy a previous commit from the [activity](/doc/manage/activity/) of your application, or with Clever Tools:
+- [Learn more about deployment notifications](/doc/account-billing/notifications/)
+
+## Roll back
+
+To roll back, click **Redeploy this commit** next to a previous deployment in the [activity](/doc/manage/activity/) of your application, or use Clever Tools:
 
 ```bash
 clever restart --commit COMMIT_ID
 ```
 
 Replace `COMMIT_ID` with the commit of a successful deployment. This restores your code, not your variables nor your databases.
-
-- [Learn more about deployment notifications](/doc/account-billing/notifications/)
 
 ## Validate a version before production
 

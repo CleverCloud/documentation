@@ -21,39 +21,27 @@ aliases:
 - /doc/develop/deployment-lifecycle
 ---
 
-## Start, restart and stop
+## Start, restart, and stop
 
-You can start, restart, and stop your application in the **Overview** menu of your application in the Clever Cloud console.
+The **Overview** menu of your application in the [Console](https://console.clever-cloud.com) holds its lifecycle actions:
 
-- **Start**: will restart a stopped application. This will not trigger a rebuild phase as it will use the build cache.
-- **Re-build and restart**: Same as start but with a build phase and without using using the build cache.
-- **Restart last pushed commit**: will start last commit on the tree even if you reverted deployments to a previous commit.
-- **Stop**: will stop currently running instances of your application.
+- **Restart**: deploys the current commit of your application again, with its build cache when available
+- **Restart last pushed commit**: deploys the last commit you pushed, rather than one you redeployed to roll back
+- **Re-build and restart**: deploys the current commit again, without the build cache
+- **Stop app**: stops the instances of your application, and their billing
 
-Stop functionality is useful during the development of the application to limit its credit consumption.
+Once your application is stopped, **Start**, **Start last pushed commit**, and **Re-build and start** do the same. With Clever Tools:
 
-![Manage your application from the Console](/images/app-management.png)
+```bash
+clever restart
+clever restart --without-cache
+clever stop
+```
 
-> [!NOTE]
-> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/manage/environment-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
+[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/manage/environment-variables/reference/) set to `true` skips creating the build cache. To force a build, use **Re-build and restart**.
 
-## Deploy an old commit
+## Archive and delete
 
-If you want to revert to a previous version of your code, you can go to the **Activity** menu of your application in the Clever Cloud console. You will find here all your previous commits. Just select **redeploy this commit** on the desired one. This will trigger a redeploy of your application at this version.
+In the **Information** menu, **Archive** hides your application from your list: it keeps running, and stays deployable. **Un-archive** brings it back.
 
-## Edit application configuration
-
-In the **Information** menu of your application in the Clever Cloud console, rename it, and change its description, its region, and its other settings. Don't forget to save your changes.
-
-![Edit your application](/images/application-edit.png)
-
-- [Learn more about application settings](/doc/manage/#application-settings)
-
-## Archiving/Unarchiving your application
-
-You can perform this operation in the **Overview** menu of your application in the Clever Cloud console. You will find an **archive** button. This will remove it from your application's list, but you will stil be able to access your application and push to its git remote.
-If you want to unarchieve your application simply click the **un-archive** button where the **archive** button was.
-
-## Deleting your application
-
-You can perform this operation in the **Information** menu of your application in the Clever Cloud console. You will find a red **remove this application** button at the bottom. This will open a modal where you should type the name of your application. Click **remove** to finish the process. Your application will be deleted and no longer accessible.
+**Remove this application**, at the bottom of this menu, deletes it once you type its name. With Clever Tools, run `clever delete`.

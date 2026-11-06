@@ -50,7 +50,7 @@ For PostgreSQL, map the corresponding connection values to `POSTGRESQL_ADDON_HOS
 
 ## Create and configure the application
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, initialize Git if needed, then create a PHP application with an alias:
 
 ```bash
 npm i -g clever-tools

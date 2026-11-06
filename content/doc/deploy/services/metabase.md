@@ -47,7 +47,7 @@ You can also save questions and **organize** them in *collections*. When opening
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/manage/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, run `clever addon create metabase <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Metabase instance and the temporary credentials:
 
 ```bash
 $ clever addon create metabase myMetabase
@@ -69,7 +69,7 @@ clever addon create metabase myMetabaseName --option access-domain=metabase.exam
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Metabase add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
 
-Refer to the [Clever Tools documentation](/doc/manage/cli/addons/) for more details on add-on management.
+Refer to the [Clever Tools documentation](/doc/tools/cli/addons/) for more details on add-on management.
 
 ## Accessing the Metabase interface
 
@@ -171,7 +171,7 @@ These defaults are dimensioned to suit a majority of needs. You can however mana
 
 The Metabase add-on is a fully managed application, so you don't have to do anything to update it: by default **it is automatically updated** to match the latest Community Edition release. Your add-on will be automatically restarted when a new Metabase release is available, but thanks to Clever Cloud this will be done without downtime. All deployed versions are reviewed and tested before being released.
 
-Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable, but there are various ways to do it simpler with [Clever Tools](/doc/manage/cli/):
+Of course, you have full control other this. The Java application of your Metabase add-on contains a `CC_METABASE_VERSION` environment variable, but there are various ways to do it simpler with [Clever Tools](/doc/tools/cli/):
 
 ```bash
 # Set a specific supported version at creation
@@ -189,7 +189,7 @@ clever metabase version update myMetabase
 clever metabase version update myMetabase --target VERSION
 ```
 
-- Learn more about [Operators commands in Clever Tools](/doc/manage/cli/operators/)
+- Learn more about [Operators commands in Clever Tools](/doc/tools/cli/operators/)
 
 If you use `CC_METABASE_VERSION` it can contain a value that is either a special keyword or a [SemVer](https://semver.org/) version requirement (the only difference with SemVer is that `x.y.z` is interpreted as `=x.y.z` instead of `^x.y.z`.):
 
@@ -197,7 +197,7 @@ If you use `CC_METABASE_VERSION` it can contain a value that is either a special
 - `0.63.14`: use the `0.63.14` version (*same as `=0.63.14`*)
 - `0.63`: use the latest available version starting with `0.63` (*same as `^0.63.0`, `~0.63.0`*)
 
-To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/doc/manage/cli/applications/deployment-lifecycle/#restart).
+To update Metabase manually, you **should** restart the Java application without the build cache, using the `re-build and restart` button in the [Console](https://console.clever-cloud.com/) or the `clever restart --without-cache` command of [Clever Tools](/doc/tools/cli/applications/deployment-lifecycle/#restart).
 
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 

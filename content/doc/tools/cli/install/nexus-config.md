@@ -11,6 +11,7 @@ keywords:
 - rpm
 - distribution
 aliases:
+- /doc/manage/cli/install/nexus-config
 - /doc/cli/install/nexus-config
 ---
 

@@ -11,6 +11,7 @@ keywords:
 - isolation
 - wireguard
 aliases:
+- /doc/manage/cli/network-groups
 - /doc/cli/network-groups
 - /doc/cli/operators/ng.md
 ---

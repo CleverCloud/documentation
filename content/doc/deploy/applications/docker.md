@@ -58,7 +58,7 @@ To create a new Docker application, use the [Clever Cloud Console](https://conso
 clever create --type docker
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Docker application
@@ -194,7 +194,7 @@ Some containers need the Docker socket, to start sibling containers for instance
 
 ## Docker applications as Clever Tasks
 
-A Docker container can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the image, runs the container, and stops the task when the container exits. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks).
+A Docker container can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the image, runs the container, and stops the task when the container exits. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks).
 
 A Docker task runs the `CMD` or `ENTRYPOINT` of the image, not `CC_RUN_COMMAND`, nor the command you give to `clever create --task`. Build an image whose command exits once it finishes its work, or the task keeps running.
 

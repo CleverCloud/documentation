@@ -56,7 +56,7 @@ terraform {
 provider "clevercloud" {}
 ```
 
-For a pipeline, the provider also accepts an [API token](/doc/manage/cli/#tokens), created with `clever tokens create`. Set it in `CLEVER_API_TOKEN`, or pass it as `api_token`, and the provider sends it as a Bearer token to the API bridge. Choose one authentication method: in the provider block, `api_token` excludes the OAuth parameters. Explicit parameters take precedence over environment variables. Without explicit parameters, setting both `CLEVER_API_TOKEN` and `CC_OAUTH_TOKEN` with `CC_OAUTH_SECRET` causes an error:
+For a pipeline, the provider also accepts an [API token](/doc/tools/cli/#tokens), created with `clever tokens create`. Set it in `CLEVER_API_TOKEN`, or pass it as `api_token`, and the provider sends it as a Bearer token to the API bridge. Choose one authentication method: in the provider block, `api_token` excludes the OAuth parameters. Explicit parameters take precedence over environment variables. Without explicit parameters, setting both `CLEVER_API_TOKEN` and `CC_OAUTH_TOKEN` with `CC_OAUTH_SECRET` causes an error:
 
 ```shell
 clever tokens create terraform-ci --expiration 4w

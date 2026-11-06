@@ -20,7 +20,7 @@ aliases:
 ## Prerequisites
 
 - A [Clever Cloud account](https://console.clever-cloud.com/)
-- [Clever Tools](/doc/manage/cli/install/)
+- [Clever Tools](/doc/tools/cli/install/)
 - [Git](https://git-scm.com/)
 - Ruby 3.2 or later with [Bundler](https://bundler.io/)
 
@@ -137,5 +137,5 @@ The minimal HTTP input in this guide is publicly reachable. Before using it in p
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://docs.fluentd.org/" title="Fluentd documentation" subtitle="Configure Fluentd inputs, filters and outputs" icon="external-link" >}}
   {{< card link="/developers/doc/deploy/applications/linux/" title="Linux applications" subtitle="Configure and deploy any application" icon="simple:linux" >}}
-  {{< card link="/developers/doc/manage/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
+  {{< card link="/developers/doc/tools/cli/" title="Clever Tools" subtitle="Manage Clever Cloud resources from the command line" icon="terminal" >}}
 {{< /cards >}}

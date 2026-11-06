@@ -18,7 +18,7 @@ User management also gets stricter: granting the admin role now requires a passw
 
 This version hardens the Page Overlay API, adds an opt-in SSRF-safe fetch for user-configured URLs, caps e-commerce money values to handle extreme amounts and fixes archive aggregation across multiple sites for the same period. As usual, it ships its batch of bug fixes, mostly for sparklines and Dark Mode.
 
-You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
+You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.13](https://matomo.org/changelog/matomo-5-13-0/)
 - [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

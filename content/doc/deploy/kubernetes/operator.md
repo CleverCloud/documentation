@@ -49,7 +49,7 @@ Originally designed for managed databases, the Clever Kubernetes Operator has ex
 | Pulsar                               | `Pulsar`         |
 | Redis                                | `Redis`          |
 
-Application runtimes are not part of the operator: it manages add-ons, and you deploy applications with [Clever Tools](/doc/manage/cli/), a `git push` or the [Terraform provider](/doc/tools/terraform/), which covers both.
+Application runtimes are not part of the operator: it manages add-ons, and you deploy applications with [Clever Tools](/doc/tools/cli/), a `git push` or the [Terraform provider](/doc/tools/terraform/), which covers both.
 
 ## Key Features
 

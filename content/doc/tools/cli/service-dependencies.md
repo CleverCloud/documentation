@@ -11,6 +11,7 @@ keywords:
 - environment
 - configuration
 aliases:
+- /doc/manage/cli/service-dependencies
 - /doc/cli/services-depedencies
 - /doc/manage/cli/services-depedencies
 ---

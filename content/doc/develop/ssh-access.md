@@ -29,7 +29,7 @@ You need:
 
 - An OpenSSH client, with the `ssh` command in your `PATH`. macOS and most Linux distributions include one, and Windows provides it as the [OpenSSH Client](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) feature. `clever ssh` runs this command too.
 - A public SSH key [registered on your Clever Cloud account](/doc/account-billing/ssh-keys/). The gateway identifies your account from this key, and gives you access to the applications this account can reach.
-- [Clever Tools](/doc/manage/cli/), logged in, to use `clever ssh`
+- [Clever Tools](/doc/tools/cli/), logged in, to use `clever ssh`
 
 ## Connect with Clever Tools
 

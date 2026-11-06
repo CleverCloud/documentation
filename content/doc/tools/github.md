@@ -22,7 +22,7 @@ The Clever Cloud GitHub integration deploys each push to a branch of your reposi
 
 In the [Console](https://console.clever-cloud.com), create an application. In the **Create an application from a GitHub repository** section, click **Link your GitHub account**, then authorize Clever Cloud on GitHub. Once your account is linked, select your repository in **Select your GitHub repository**: the Console lists the public and private repositories your GitHub account can access. Then choose the runtime and the other settings of your application.
 
-With [Clever Tools](/doc/manage/cli/), set the repository with `--github`, once your GitHub account is linked:
+With [Clever Tools](/doc/tools/cli/), set the repository with `--github`, once your GitHub account is linked:
 
 ```bash
 clever create --type node my-app --github my-org/my-repository

@@ -11,6 +11,7 @@ keywords:
 - deployment
 - management
 aliases:
+- /doc/manage/cli/applications/configuration
 - /clever-tools/tcp-redirections
 - /doc/administrate/clever-tools/configure
 - /doc/clever-tools/configure

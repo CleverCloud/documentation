@@ -136,7 +136,7 @@ The [`forward_auth`](https://caddyserver.com/docs/caddyfile/directives/forward_a
 
 ## Create the applications and add-ons
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in and create the four applications with aliases:
+Install [Clever Tools](/developers/doc/tools/cli/), log in and create the four applications with aliases:
 
 ```bash
 npm i -g clever-tools

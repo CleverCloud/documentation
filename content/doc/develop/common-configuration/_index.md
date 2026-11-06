@@ -76,7 +76,7 @@ The public traffic only reaches port `8080`. The other ports of an instance are 
 
 ## Application settings
 
-Each application has settings you change in the **Information** menu of the [Console](https://console.clever-cloud.com). With [Clever Tools](/doc/manage/cli/applications/configuration/#config), use `clever config` for most of them:
+Each application has settings you change in the **Information** menu of the [Console](https://console.clever-cloud.com). With [Clever Tools](/doc/tools/cli/applications/configuration/#config), use `clever config` for most of them:
 
 ```bash
 clever config get zero-downtime

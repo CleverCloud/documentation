@@ -26,7 +26,7 @@ Only administrators can create actions, and users subject to row or column-level
 
 ## How to update
 
-This branch isn't used by default if you use `latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.65`, or `1.65` for the enterprise edition (EE), then rebuild it without the build cache. With [Clever Tools](/doc/manage/cli/operators/), run:
+This branch isn't used by default if you use `latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.65`, or `1.65` for the enterprise edition (EE), then rebuild it without the build cache. With [Clever Tools](/doc/tools/cli/operators/), run:
 
 ```bash
 clever features enable operators

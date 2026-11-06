@@ -29,7 +29,7 @@ To create a new V (Vlang) application, use the [Clever Cloud Console](https://co
 clever create --type v
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your V (Vlang) application
@@ -61,7 +61,7 @@ The currently deployed version of V (Vlang) on Clever Cloud is `{{< runtime_vers
 
 ## V scripts (.vsh), Clever Tasks
 
-V (Vlang) can be used to execute [shell scripts (.vsh)](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v). On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks):
+V (Vlang) can be used to execute [shell scripts (.vsh)](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v). On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
 
 ```bash
 clever create --type v --task "./your-script.vsh --and arguments"

@@ -19,7 +19,7 @@ The `x.60` branch of Metabase is now available on Clever Cloud. It brings Metabo
 
 It also introduces a metrics explorer to compare multiple metrics side-by-side and surface trends across dimensions, split panel charts to display multiple series as faceted panels, frozen columns and rows in tables, a transform inspector to compare data before and after a transform runs, model-to-transform migration in a few clicks, OpenID Connect (OIDC) authentication, remote sync with GitLab and Bitbucket in addition to GitHub, and multiple enhancements and bug fixes.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.60` or `1.60` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.60` or `1.60` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

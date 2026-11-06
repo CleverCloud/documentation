@@ -9,9 +9,11 @@ keywords:
 - clever-tools
 - cli
 - version
+aliases:
+- /doc/manage/cli/install/update
 ---
 
-Clever Tools notifies you when a new version is available. The command to update it depends on how you installed it. If you're not sure, see [how to install Clever Tools](/doc/manage/cli/install/). Once updated, check the installed version:
+Clever Tools notifies you when a new version is available. The command to update it depends on how you installed it. If you're not sure, see [how to install Clever Tools](/doc/tools/cli/install/). Once updated, check the installed version:
 
 ```bash
 clever version

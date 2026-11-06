@@ -65,12 +65,12 @@ The standalone binaries now embed Node.js 24.22.1, a security release, and Cleve
 
 ## How to upgrade
 
-To upgrade Clever Tools, follow the [update guide](/doc/manage/cli/install/update/) for the installation method you use. For example with `npm`:
+To upgrade Clever Tools, follow the [update guide](/doc/tools/cli/install/update/) for the installation method you use. For example with `npm`:
 
 ```bash
 npm install -g clever-tools
 clever version
 ```
 
-- [Learn more about logs drains](/doc/manage/cli/logs-drains/)
+- [Learn more about logs drains](/doc/tools/cli/logs-drains/)
 - [Learn more about the Terraform provider](/doc/tools/terraform/)

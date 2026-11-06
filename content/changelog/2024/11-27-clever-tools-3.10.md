@@ -23,7 +23,7 @@ excludeSearch: true
 clever addon create es-addon --option plugins=analysis-icu,mapper-murmur3
 ```
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/tools/cli/install). For example with `npm`:
 
 ```console
 npm update -g clever-tools

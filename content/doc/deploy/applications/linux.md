@@ -32,7 +32,7 @@ To create a new Linux application, use the [Clever Cloud Console](https://consol
 clever create --type linux
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Linux application
@@ -57,7 +57,7 @@ Each level fills in only the commands not already defined by a higher priority s
 
 ## Clever Task and Multi-runtime approach
 
-Linux runtime is perfect fit to run on-demand workloads on Clever Cloud: configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks):
+Linux runtime is perfect fit to run on-demand workloads on Clever Cloud: configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
 
 ```bash
 clever create --type linux --task "your-task-command --and arguments"

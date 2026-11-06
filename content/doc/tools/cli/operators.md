@@ -12,6 +12,7 @@ keywords:
 - management
 - matomo
 aliases:
+- /doc/manage/cli/operators
 - /doc/cli/operators
 ---
 
@@ -92,7 +93,7 @@ clever otoroshi version update otoroshi_id
 
 ## Network Groups
 
-Keycloak and Otoroshi can be linked to a [Network Group](/doc/manage/cli/network-groups/). To enable/disable this feature, use:
+Keycloak and Otoroshi can be linked to a [Network Group](/doc/tools/cli/network-groups/). To enable/disable this feature, use:
 
 ```console
 clever keycloak enable-ng myKeycloak

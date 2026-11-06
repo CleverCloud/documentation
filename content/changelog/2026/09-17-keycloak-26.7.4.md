@@ -23,7 +23,7 @@ The other fixes address [CVE-2026-18212](https://nvd.nist.gov/vuln/detail/CVE-20
 
 Authorization Services now normalize resource URIs before matching them. They strip matrix parameters, resolve dot segments, decode `%2F`, and drop the trailing slash, query string and fragment. If your resources rely on these elements to differ, review their URIs before you update. The release also upgrades Quarkus to 3.33.3.2 and fixes performance issues introduced in 26.6.2, an Admin Console error when you select a subgroup and a startup crash with the Oracle OCI driver.
 
-Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.4` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.7.4` and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

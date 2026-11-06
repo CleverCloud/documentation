@@ -80,7 +80,7 @@ SFTPGo listens on port `8080` for its web interface by default. The configuratio
 
 ## Create and configure the Clever Cloud resources
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Linux application with an alias:
+Install [Clever Tools](/developers/doc/tools/cli/), log in and create a Linux application with an alias:
 
 ```bash
 npm i -g clever-tools

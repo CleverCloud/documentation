@@ -21,7 +21,7 @@ When you deploy Keycloak on Clever Cloud, you now have access to a better dashbo
 
 ## Secured Multi Instances
 
-The Keycloak dashboard also makes Secured Multi Instances directly available from the Console, and not only through [API](/api) or [Clever Tools](/doc/manage/cli). It adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. As communication through such cluster use an unencrypted Infinispan connection, a Network Group is automatically created and used to isolate this traffic through a private, encrypted, [WireGuard](https://www.wireguard.com/) network.
+The Keycloak dashboard also makes Secured Multi Instances directly available from the Console, and not only through [API](/api) or [Clever Tools](/doc/tools/cli). It adds a second Java application instance to your Keycloak which brings more resiliency and availability to your identity management solution. As communication through such cluster use an unencrypted Infinispan connection, a Network Group is automatically created and used to isolate this traffic through a private, encrypted, [WireGuard](https://www.wireguard.com/) network.
 
 If you also need a more resilient database, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 

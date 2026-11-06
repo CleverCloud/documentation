@@ -11,6 +11,7 @@ keywords:
 - management
 - provisioning
 aliases:
+- /doc/manage/cli/addons
 - /doc/cli/addons
 ---
 
@@ -117,7 +118,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 ## config-provider
 
-Configuration Providers are add-ons that store environment variables you can share across multiple applications through [service dependencies](/doc/manage/cli/service-dependencies/). They have their own dedicated commands:
+Configuration Providers are add-ons that store environment variables you can share across multiple applications through [service dependencies](/doc/tools/cli/service-dependencies/). They have their own dedicated commands:
 
 ```console
 clever config-provider list

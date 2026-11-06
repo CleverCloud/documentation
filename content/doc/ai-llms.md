@@ -33,7 +33,7 @@ An [`llms.txt`](https://www.clever.cloud/developers/llms.txt) index lists the do
 
 Clever Tools ships a [skill](https://github.com/CleverCloud/clever-tools/tree/master/skills/clever-tools), a package of instructions in the open [Agent Skills](https://agentskills.io) format. Claude Code, Cursor, Codex, GitHub Copilot, and other assistants support it. It holds a cheat sheet of the essentials and a reference of every command, option, runtime, add-on and region. The assistant reads only its name and description at startup, and loads the rest when a task involves Clever Cloud.
 
-Your local [Clever Tools](/doc/manage/cli/install/) carries out every action, so set it up and connect your account with `clever login` first. Then add the skill:
+Your local [Clever Tools](/doc/tools/cli/install/) carries out every action, so set it up and connect your account with `clever login` first. Then add the skill:
 
 ```bash
 npx skills add CleverCloud/clever-tools
@@ -41,7 +41,7 @@ npx skills add CleverCloud/clever-tools
 
 The command asks which assistants get the skill, and whether it goes in the current project or globally. Go global when you deploy from several projects. Keep it in the project, committed with the code, to give the whole team the same skill.
 
-The skill lives in the Clever Tools repository and follows its main branch, so it can describe options your version of the CLI doesn't support yet. Keep both current: list your skills with `npx skills list`, refresh this one with `npx skills update`, and [update Clever Tools](/doc/manage/cli/install/update/). If your assistant stumbles on a command, open an issue or a pull request on [`SKILL.md`](https://github.com/CleverCloud/clever-tools/blob/master/skills/clever-tools/SKILL.md).
+The skill lives in the Clever Tools repository and follows its main branch, so it can describe options your version of the CLI doesn't support yet. Keep both current: list your skills with `npx skills list`, refresh this one with `npx skills update`, and [update Clever Tools](/doc/tools/cli/install/update/). If your assistant stumbles on a command, open an issue or a pull request on [`SKILL.md`](https://github.com/CleverCloud/clever-tools/blob/master/skills/clever-tools/SKILL.md).
 
 The skill and this documentation work together. The skill gives the assistant the right command and options, and the Markdown pages give it what the CLI doesn't describe, such as the [environment variables](/doc/develop/common-configuration/environment-variables/reference/) each runtime reads.
 
@@ -51,7 +51,7 @@ Pick the interface that fits the agent, they all reach the same API:
 
 | Interface                                                                | Best for                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------ |
-| [Clever Tools](/doc/manage/cli/)                                         | Any agent that can run a shell command     |
+| [Clever Tools](/doc/tools/cli/)                                          | Any agent that can run a shell command     |
 | [Clever Tools skill](#teach-your-assistant-clever-tools)                 | Assistants that load Agent Skills          |
 | [`mcp-simple-server`](https://github.com/CleverCloud/mcp-simple-server)  | Agents speaking the Model Context Protocol |
 | [`@clevercloud/client`](https://github.com/CleverCloud/clever-client.js) | Generating code that talks to the API      |

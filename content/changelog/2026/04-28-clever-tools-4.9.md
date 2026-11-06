@@ -105,7 +105,7 @@ clever otoroshi get my-otoroshi
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favourite package manager](/doc/manage/cli/install/). For example with `npm`:
+To upgrade Clever Tools, [use your favourite package manager](/doc/tools/cli/install/). For example with `npm`:
 
 ```bash
 npm update -g clever-tools

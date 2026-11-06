@@ -73,7 +73,7 @@ The generated `package.json` defines three scripts: `dev` runs the server with l
 
 ### Create a Node.js application
 
-Install [Clever Tools](/developers/doc/manage/cli/) and create a Node.js application linked to your project folder:
+Install [Clever Tools](/developers/doc/tools/cli/) and create a Node.js application linked to your project folder:
 
 ```bash
 npm i -g clever-tools

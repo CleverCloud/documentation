@@ -37,7 +37,7 @@ You can set multiple custom or `cleverapps.io` domain names to an application, b
 To select the primary domain name:
 
 - Click the star icon next to the domain name in the **Domain names** section of your application in the Console
-- Use the `clever domain favourite set example.com` command in [Clever Tools](/doc/manage/cli/applications/configuration/#domain)
+- Use the `clever domain favourite set example.com` command in [Clever Tools](/doc/tools/cli/applications/configuration/#domain)
 - Use the dedicated `/vhosts/favourite` endpoint [in the API](/api/swagger/#/Applications/updateOrganisationApplicationFavouriteVirtualHost)
 
 ## Testing with `cleverapps.io` Domain
@@ -183,7 +183,7 @@ Requests are routed to applications based on the domain name, but you can also r
 For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
 All the HTTP requests on `example.com` where the path starts with `/api` are routed to
 the second app. The other requests are routed to the first app.
-You can add a path after every domain name you bind in the console (or with [clever tools](/doc/manage/cli "Clever Tools")).
+You can add a path after every domain name you bind in the console (or with [clever tools](/doc/tools/cli "Clever Tools")).
 
 Note that your path-routed application **needs** to have a `/whatever` route.
 

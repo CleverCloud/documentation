@@ -19,7 +19,7 @@ The [3.0.0 release](https://github.com/CleverCloud/terraform-provider-cleverclou
 
 The provider opens a local `file://` repository and only lists the references of a remote one, without cloning it. If the repository is unreachable, the plan goes on with a warning. `deployment.repository` now requires an `https://`, `http://` or `file://` scheme.
 
-The provider also authenticates with an [API token](/doc/manage/cli/#tokens), set in `CLEVER_API_TOKEN` or in the `api_token` parameter, as an alternative to OAuth credentials. An API token can't push code over Git, so applications that push code through a `deployment` block still need OAuth credentials. Every application and add-on resource now accepts `tags`, and a `clevercloud_java_maven` resource joins the [Java](/doc/deploy/applications/java/java-maven/) WAR and JAR ones:
+The provider also authenticates with an [API token](/doc/tools/cli/#tokens), set in `CLEVER_API_TOKEN` or in the `api_token` parameter, as an alternative to OAuth credentials. An API token can't push code over Git, so applications that push code through a `deployment` block still need OAuth credentials. Every application and add-on resource now accepts `tags`, and a `clevercloud_java_maven` resource joins the [Java](/doc/deploy/applications/java/java-maven/) WAR and JAR ones:
 
 ```hcl {filename="main.tf"}
 resource "clevercloud_java_maven" "inventory_api" {

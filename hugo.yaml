@@ -57,7 +57,7 @@ menu:
       url: "https://api.clever-cloud.com/openapi.json"
     - identifier: cli
       name: CLI
-      pageRef: /doc/manage/cli/
+      pageRef: /doc/tools/cli/
       weight: 4
     - identifier: changelog
       name: Changelog

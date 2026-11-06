@@ -164,8 +164,8 @@ clever login
 
 Prefer another way? Many package managers also provide Clever Tools, such as pnpm, Bun, Homebrew, or WinGet. You can also download it as a standalone binary for Linux, macOS, or Windows.
 
-- [Learn more about installing Clever Tools](/doc/manage/cli/install/)
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about installing Clever Tools](/doc/tools/cli/install/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 
 ### SSH into any application
 
@@ -217,7 +217,7 @@ clever restart --without-cache
 clever deploy --same-commit-policy rebuild
 ```
 
-- [Learn more about the deployment lifecycle](/doc/manage/cli/applications/deployment-lifecycle/)
+- [Learn more about the deployment lifecycle](/doc/tools/cli/applications/deployment-lifecycle/)
 
 ### Get everything in JSON
 
@@ -271,7 +271,7 @@ clever keycloak open webui my-keycloak
 clever otoroshi open swaggerui my-otoroshi
 ```
 
-- [Learn more about operators in Clever Tools](/doc/manage/cli/operators/)
+- [Learn more about operators in Clever Tools](/doc/tools/cli/operators/)
 
 ### Pass your credentials to Clever Tools
 
@@ -306,13 +306,13 @@ clever profile switch --alias work
 
 With two profiles, `clever profile switch` alone toggles to the other one. Before running anything that creates resources, `clever profile` tells you which account is active.
 
-- [Learn more about Clever Tools profiles](/doc/manage/cli/profiles/)
+- [Learn more about Clever Tools profiles](/doc/tools/cli/profiles/)
 
 ### Ask for something, or contribute
 
 Clever Tools is an [open-source project](https://github.com/CleverCloud/clever-tools), built with Node.js, and developed in the open. Ideas, issues, and pull requests [are welcome](https://github.com/CleverCloud/clever-tools/blob/master/CONTRIBUTING.md).
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 
 ## Did you know?
 

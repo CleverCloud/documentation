@@ -35,7 +35,7 @@ Run `bundle install` after changing the dependencies and commit the resulting lo
 
 ## Create the application and database
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a Ruby application from the project directory:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, then create a Ruby application from the project directory:
 
 ```bash
 npm i -g clever-tools

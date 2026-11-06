@@ -65,7 +65,7 @@ Clever Tools now notifies you when a new version is available, even in standalon
 
 ## How to upgrade
 
-To upgrade Clever Tools, follow the [new update guide](/doc/manage/cli/install/update/) for the installation method you use. For example with `npm`, once Node.js 24 is installed:
+To upgrade Clever Tools, follow the [new update guide](/doc/tools/cli/install/update/) for the installation method you use. For example with `npm`, once Node.js 24 is installed:
 
 ```bash
 npm install -g clever-tools

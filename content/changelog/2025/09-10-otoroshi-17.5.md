@@ -17,7 +17,7 @@ excludeSearch: true
 
 [Otoroshi v17.5](https://github.com/MAIF/otoroshi/releases/tag/v17.5.0) is available with multiple improvements and bug fixes. It brings resumable workflows, a WYSIWYG designer for workflows, plugins to rewrite HTTP request/response bodies based on regex, a fail2ban plugin and a Splunk data exporter.
 
-To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.5.1_1757489873` and rebuild it. You can also use [the new Clever Tools commands](/doc/manage/cli/operators/), introduced in `3.13.0` release:
+To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.5.1_1757489873` and rebuild it. You can also use [the new Clever Tools commands](/doc/tools/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators

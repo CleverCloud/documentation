@@ -17,7 +17,7 @@ excludeSearch: true
 
 [The release 26.3.2](https://github.com/keycloak/keycloak/releases/26.3.2) of Keycloak is available on Clever Cloud. The `26.3` branch [brings](https://github.com/keycloak/keycloak/releases/26.3.0) lots of new features, enhancements and bug fixes. We fine tuned it, adding a conditional IP range-based authentication and dynamic cache sizing that automatically scales based on instance size and user count in database.
 
-To update, just set `CC_KEYCLOAK_VERSION` of the add-on's Java application to `26.3.2` and rebuild it. You can also use [the new Clever Tools commands](/doc/manage/cli/operators/), introduced in `3.13.0` release:
+To update, just set `CC_KEYCLOAK_VERSION` of the add-on's Java application to `26.3.2` and rebuild it. You can also use [the new Clever Tools commands](/doc/tools/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators

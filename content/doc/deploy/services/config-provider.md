@@ -37,7 +37,7 @@ In the [Console](https://console.clever-cloud.com), open the organisation of you
 
 The Console then opens the **Dashboard** of the add-on. Set the variables in its **Variables** form, then click **Update changes**. The variables follow the same [rules and formats](/doc/develop/common-configuration/environment-variables/#environment-variables-rules-and-formats) as the ones of an application.
 
-With [Clever Tools](/doc/manage/cli/addons/#config-provider), create it in the organisation of your applications, replacing `my-team` with its name or ID, then set its variables:
+With [Clever Tools](/doc/tools/cli/addons/#config-provider), create it in the organisation of your applications, replacing `my-team` with its name or ID, then set its variables:
 
 ```bash
 clever addon create config-provider shared-config --org my-team

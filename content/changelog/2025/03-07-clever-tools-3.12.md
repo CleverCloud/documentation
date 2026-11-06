@@ -101,7 +101,7 @@ As this beta feature evolves, we'll add demos, documentations and videos to help
 
 ## How to upgrade
 
-To upgrade Clever Tools, [use your favorite package manager](/doc/manage/cli/install). For example with `npm`:
+To upgrade Clever Tools, [use your favorite package manager](/doc/tools/cli/install). For example with `npm`:
 
 ```console
 npm update -g clever-tools

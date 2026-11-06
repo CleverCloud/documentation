@@ -11,6 +11,7 @@ keywords:
 - integrations
 - automation
 aliases:
+- /doc/manage/cli/notifications-webhooks
 - /doc/administrate/clever-tools/notifications
 - /doc/clever-tools/notifications/
 - /doc/cli/notifications

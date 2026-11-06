@@ -25,11 +25,11 @@ clever ssh --instance any --command "uname -a" | tee instance.txt
 
 `clever drain` and `clever drain get` no longer crash when the API can't provide the backlog statistics of a drain, for example for a disabled one. `clever ssh-keys add` reports an error instead of a success when the API rejects the key, and `clever tokens create` shows the invalid credentials hints instead of a misleading login error. Finally, `--no-color` and non-interactive outputs now disable colors even when `FORCE_COLOR` is set in your environment.
 
-To upgrade Clever Tools, follow the [update guide](/doc/manage/cli/install/update/) for the installation method you use. For example with `npm`:
+To upgrade Clever Tools, follow the [update guide](/doc/tools/cli/install/update/) for the installation method you use. For example with `npm`:
 
 ```bash
 npm install -g clever-tools
 clever version
 ```
 
-- [Learn more about SSH access with Clever Tools](/doc/manage/cli/applications/deployment-lifecycle/#ssh)
+- [Learn more about SSH access with Clever Tools](/doc/tools/cli/applications/deployment-lifecycle/#ssh)

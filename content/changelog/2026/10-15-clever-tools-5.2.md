@@ -51,12 +51,12 @@ The `--after` and `--before` options of `clever logs`, `clever accesslogs` and `
 
 ## How to upgrade
 
-To upgrade Clever Tools, follow the [update guide](/doc/manage/cli/install/update/) for the installation method you use. For example with `npm`:
+To upgrade Clever Tools, follow the [update guide](/doc/tools/cli/install/update/) for the installation method you use. For example with `npm`:
 
 ```bash
 npm install -g clever-tools
 clever version
 ```
 
-- [Learn more about KV stores with Clever Tools](/doc/manage/cli/kv-stores/)
-- [Learn more about logs drains](/doc/manage/cli/logs-drains/)
+- [Learn more about KV stores with Clever Tools](/doc/tools/cli/kv-stores/)
+- [Learn more about logs drains](/doc/tools/cli/logs-drains/)

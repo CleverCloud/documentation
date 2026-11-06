@@ -12,7 +12,7 @@ description: Choose the locale of your PostgreSQL database at creation
 excludeSearch: true
 ---
 
-You can now define the locale of your PostgreSQL database when creating a new add-on with [Clever Tools](/doc/manage/cli):
+You can now define the locale of your PostgreSQL database when creating a new add-on with [Clever Tools](/doc/tools/cli):
 
 ```bash
 clever addon create postgresql-addon pgLocaleTest --plan xxs_sml --option locale=en_US

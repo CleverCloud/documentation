@@ -31,7 +31,7 @@ clever restart --app yourMetabaseJavaApp
 
 ## How to update a pinned add-on
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `latest`, `0.64` or `1.64` for the enterprise edition (EE) and rebuild it without the build cache, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `latest`, `0.64` or `1.64` for the enterprise edition (EE) and rebuild it without the build cache, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

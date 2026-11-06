@@ -13,7 +13,7 @@ description: A new European partner, more choices for our customers
 excludeSearch: true
 ---
 
-You can now deploy your applications and add-ons in London, England. This region uses `ldn` code within our [API](/api), [Clever Tools](/doc/manage/cli) and various integrations. You can choose it for new or existing services from the [Console](https://console.clever-cloud.com), just adapt your domain configuration.
+You can now deploy your applications and add-ons in London, England. This region uses `ldn` code within our [API](/api), [Clever Tools](/doc/tools/cli) and various integrations. You can choose it for new or existing services from the [Console](https://console.clever-cloud.com), just adapt your domain configuration.
 
 The London region was created in collaboration with a new European partner, [Ionos](https://www.ionos.co.uk/). Our teams have installed and are operating Clever Cloud within its infrastructure in order to offer you this new service.
 

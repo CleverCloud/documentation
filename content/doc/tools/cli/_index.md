@@ -11,6 +11,7 @@ keywords:
 - deployments
 - applications
 aliases:
+- /doc/manage/cli
 - /clever-tools/getting_started
 - /cli
 - /doc/CLI
@@ -51,18 +52,18 @@ npm exec -- clever-tools@3.14 profile --format json
 You'll find below the first commands to know to connect Clever Tools to your account, get its information and manage some options. Others are developed in dedicated pages:
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/cli/install" title="Install" icon="arrow-down-tray" >}}
+  {{< card link="/developers/doc/tools/cli/install" title="Install" icon="arrow-down-tray" >}}
   {{< card link="/developers/doc/cli-reference" title="Commands reference" icon="book-open" >}}
-  {{< card link="/developers/doc/manage/cli/addons" title="Create and manage add-ons" icon="wrench-screwdriver" >}}
-  {{< card link="/developers/doc/manage/cli/applications" title="Create and manage applications" icon="code-bracket" >}}
-  {{< card link="/developers/doc/manage/cli/kubernetes" title="Kubernetes" icon="simple:kubernetes" >}}
-  {{< card link="/developers/doc/manage/cli/kv-stores" title="Manage KV stores" icon="server-stack" >}}
-  {{< card link="/developers/doc/manage/cli/logs-drains" title="Manage logs and drains" icon="command-line" >}}
-  {{< card link="/developers/doc/manage/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
-  {{< card link="/developers/doc/manage/cli/notifications-webhooks" title="Notifications and webhooks" icon="bell" >}}
-  {{< card link="/developers/doc/manage/cli/operators" title="Operators (managed services)" icon="document-check" >}}
-  {{< card link="/developers/doc/manage/cli/profiles" title="Profiles and overrides" icon="user" >}}
-  {{< card link="/developers/doc/manage/cli/service-dependencies" title="Service dependencies" icon="endpoints" >}}
+  {{< card link="/developers/doc/tools/cli/addons" title="Create and manage add-ons" icon="wrench-screwdriver" >}}
+  {{< card link="/developers/doc/tools/cli/applications" title="Create and manage applications" icon="code-bracket" >}}
+  {{< card link="/developers/doc/tools/cli/kubernetes" title="Kubernetes" icon="simple:kubernetes" >}}
+  {{< card link="/developers/doc/tools/cli/kv-stores" title="Manage KV stores" icon="server-stack" >}}
+  {{< card link="/developers/doc/tools/cli/logs-drains" title="Manage logs and drains" icon="command-line" >}}
+  {{< card link="/developers/doc/tools/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
+  {{< card link="/developers/doc/tools/cli/notifications-webhooks" title="Notifications and webhooks" icon="bell" >}}
+  {{< card link="/developers/doc/tools/cli/operators" title="Operators (managed services)" icon="document-check" >}}
+  {{< card link="/developers/doc/tools/cli/profiles" title="Profiles and overrides" icon="user" >}}
+  {{< card link="/developers/doc/tools/cli/service-dependencies" title="Service dependencies" icon="endpoints" >}}
 {{< /cards >}}
 
 ## basic commands
@@ -257,7 +258,7 @@ clever profile open
 clever profile -F json
 ```
 
-To manage multiple profiles or configure per-profile overrides, see: [Profiles and overrides](/doc/manage/cli/profiles/)
+To manage multiple profiles or configure per-profile overrides, see: [Profiles and overrides](/doc/tools/cli/profiles/)
 
 ## emails
 

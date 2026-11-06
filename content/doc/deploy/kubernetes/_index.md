@@ -77,7 +77,7 @@ The cluster state store is Materia etcd, our **serverless** implementation of th
 
 ### Simple deployment and version management
 
-Create a cluster in one command, follow its rollout with `--watch`, upgrade Kubernetes with `clever k8s version update`, audit deployment events with `clever k8s activity`. The full cluster and node group lifecycle is exposed in the API and in [Clever Tools 4.9+](/doc/manage/cli/kubernetes/) (Console support coming soon). Persistent storage is available as an opt-in through a CSI driver backed by Ceph; pods consume it via standard `PersistentVolumeClaim` resources.
+Create a cluster in one command, follow its rollout with `--watch`, upgrade Kubernetes with `clever k8s version update`, audit deployment events with `clever k8s activity`. The full cluster and node group lifecycle is exposed in the API and in [Clever Tools 4.9+](/doc/tools/cli/kubernetes/) (Console support coming soon). Persistent storage is available as an opt-in through a CSI driver backed by Ceph; pods consume it via standard `PersistentVolumeClaim` resources.
 
 A control plane replication factor greater than `1` smooths upgrades and incident windows: VMs are rotated one at a time, so the apiserver stays reachable while the platform replaces the others. The same applies to multi-node node groups during rolling upgrades — your workloads keep running on the remaining nodes while one is being replaced.
 
@@ -170,7 +170,7 @@ clever features enable k8s
 
 You also need:
 
-- [Clever Tools](/doc/manage/cli/) 4.9 or later installed (recommended for the full Kubernetes command set)
+- [Clever Tools](/doc/tools/cli/) 4.9 or later installed (recommended for the full Kubernetes command set)
 - `kubectl` installed ([installation guide](https://kubernetes.io/docs/tasks/tools/#kubectl))
 
 Verify your setup by listing the clusters of your organisation:
@@ -179,7 +179,7 @@ Verify your setup by listing the clusters of your organisation:
 clever k8s list --org <your_org_id>
 ```
 
-- [Learn more about Clever Tools k8s command](/doc/manage/cli/kubernetes/)
+- [Learn more about Clever Tools k8s command](/doc/tools/cli/kubernetes/)
 
 ## Create a Kubernetes cluster
 

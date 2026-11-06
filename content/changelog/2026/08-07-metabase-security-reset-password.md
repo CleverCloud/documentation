@@ -14,7 +14,7 @@ excludeSearch: true
 
 Metabase [published a security advisory](https://www.metabase.com/blog/security-update) about a critical vulnerability affecting the `x.58` branch and above. It could be exploited through the unauthenticated `POST /api/session/reset_password` endpoint, which allows an attacker to get an authenticated session on a vulnerable instance. Branches below `x.58` are not affected. Technical details are available in the [GHSA-vwf4-m7j8-wcjf advisory](https://github.com/metabase/metabase/security/advisories/GHSA-vwf4-m7j8-wcjf).
 
-Metabase versions `0.58.24`, `0.59.21`, `0.60.17`, `0.61.11`, `0.62.9` and `0.63.5` fix this vulnerability. They're available on Clever Cloud (versions starting with `1` for the enterprise edition). Update your add-on as soon as possible, through its dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), by setting `CC_METABASE_VERSION` of the underlying Java application to the latest patch of your branch and rebuilding it, or with [Clever Tools](/doc/manage/cli/operators/):
+Metabase versions `0.58.24`, `0.59.21`, `0.60.17`, `0.61.11`, `0.62.9` and `0.63.5` fix this vulnerability. They're available on Clever Cloud (versions starting with `1` for the enterprise edition). Update your add-on as soon as possible, through its dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), by setting `CC_METABASE_VERSION` of the underlying Java application to the latest patch of your branch and rebuilding it, or with [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

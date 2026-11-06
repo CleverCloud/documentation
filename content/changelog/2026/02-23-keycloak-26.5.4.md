@@ -17,7 +17,7 @@ excludeSearch: true
 
 [The release 26.5.4](https://github.com/keycloak/keycloak/releases/tag/26.5.4) of Keycloak is available on Clever Cloud. It fixes bugs, improves performance and addresses five security vulnerabilities: [CVE-2026-1190](https://nvd.nist.gov/vuln/detail/CVE-2026-1190), [CVE-2026-0707](https://nvd.nist.gov/vuln/detail/CVE-2026-0707), [CVE-2025-5416](https://nvd.nist.gov/vuln/detail/CVE-2025-5416), [CVE-2026-2575](https://github.com/keycloak/keycloak/issues/46372) and [CVE-2026-2733](https://nvd.nist.gov/vuln/detail/CVE-2026-2733).
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.5.4` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.5.4` and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

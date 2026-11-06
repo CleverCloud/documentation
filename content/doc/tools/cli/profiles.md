@@ -11,6 +11,7 @@ keywords:
 - multi-account
 - authentication
 aliases:
+- /doc/manage/cli/profiles
 - /doc/cli/profiles
 ---
 

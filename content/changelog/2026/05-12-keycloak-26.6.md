@@ -57,7 +57,7 @@ CC_KEYCLOAK_SCIM_IPS_production="198.51.100.42"
 
 ## Updating
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.6.1` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.6.1` and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

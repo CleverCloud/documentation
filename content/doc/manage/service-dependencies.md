@@ -33,7 +33,7 @@ You link a service from the application that uses it, and the service must belon
 
 In the [Console](https://console.clever-cloud.com), open the application that uses the service, then its **Service dependencies** tab. Select an add-on in **Link add-ons**, or an application in **Link applications**, then click **Add**. To remove a link, click the remove button next to the linked service: the service itself stays.
 
-With [Clever Tools](/doc/manage/cli/service-dependencies/), from a folder linked to the application:
+With [Clever Tools](/doc/tools/cli/service-dependencies/), from a folder linked to the application:
 
 ```bash
 clever service link-addon orders-db

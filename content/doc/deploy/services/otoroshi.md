@@ -40,7 +40,7 @@ On Clever Cloud, it comes with pre-configured with features included such as [Co
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/manage/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
 
 ```bash
 $ clever addon create otoroshi myOtoroshi
@@ -70,14 +70,14 @@ clever addon create otoroshi myOtoroshiName3 --option access-domain=otoroshi.exa
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
 
-Refer to the [Clever Tools documentation](/doc/manage/cli/addons/) for more details on add-on management.
+Refer to the [Clever Tools documentation](/doc/tools/cli/addons/) for more details on add-on management.
 
 > [!TIP] Routes management
 > When you create routes in Otoroshi, they will use the routes domain you set at creation, or `app-id.cleverapps.io`. But you can add as many custom domains as you need on the underlying Java application and use them in Otoroshi routes.
 
 ## Version management
 
-To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/manage/cli/):
+To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/tools/cli/):
 
 ```bash
 # Set a specific supported version at creation
@@ -96,7 +96,7 @@ clever otoroshi version update myOtoroshi
 clever otoroshi version update myOtoroshi --target VERSION
 ```
 
-- Learn more about [Operators commands in Clever Tools](/doc/manage/cli/operators/)
+- Learn more about [Operators commands in Clever Tools](/doc/tools/cli/operators/)
 
 ## Accessing the Otoroshi with LLM interface
 

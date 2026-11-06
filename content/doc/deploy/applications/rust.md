@@ -37,7 +37,7 @@ To create a new Rust application, use the [Clever Cloud Console](https://console
 clever create --type rust
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Rust application
@@ -184,7 +184,7 @@ To remove the credentials after a successful build, set `CC_POST_BUILD_HOOK="rm 
 
 ## Rust binaries as Clever Tasks
 
-A Rust binary can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the project, then runs `CC_RUN_COMMAND` instead of starting a web server. A task needs `CC_RUN_COMMAND`, even with a single binary or a `default-run`. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks), here for a `worker` binary that runs once with `--once`:
+A Rust binary can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the project, then runs `CC_RUN_COMMAND` instead of starting a web server. A task needs `CC_RUN_COMMAND`, even with a single binary or a `default-run`. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `worker` binary that runs once with `--once`:
 
 ```bash
 clever create --type rust --task "./target/release/worker --once"

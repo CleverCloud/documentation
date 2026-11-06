@@ -20,7 +20,7 @@ The `x.57` branch of Metabase is available on Clever Cloud [since last month](/c
 - All new add-ons will use it
 - All add-ons using default configuration (`community-latest`) will use it after a rebuild
 
-You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.57` or `1.57` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through add-on’s dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.57` or `1.57` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

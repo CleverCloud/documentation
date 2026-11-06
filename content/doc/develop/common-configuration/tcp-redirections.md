@@ -34,7 +34,7 @@ A namespace is a group of load balancers. Each application can have one TCP redi
 - `cleverapps`: the load balancers of the `cleverapps.io` domains
 - A private namespace, for organisations with dedicated load balancers
 
-Use the namespace of the domain your clients connect to. List the namespaces available with [Clever Tools](/doc/manage/cli/):
+Use the namespace of the domain your clients connect to. List the namespaces available with [Clever Tools](/doc/tools/cli/):
 
 ```bash
 clever tcp-redirs list-namespaces

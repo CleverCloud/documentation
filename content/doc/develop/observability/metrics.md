@@ -212,7 +212,7 @@ The storage used by each of your [FS Bucket](/doc/deploy/storage/fs-bucket) add-
 `fsbucket.storage` class, with one data point per hour. The value is a size in **bytes**.
 This metric belongs to the `addon-api-fsbucket` Warp 10 application, which is not included in the
 read token shown in an application's **Metrics** tab. Generate a token that includes it with
-[`clever curl`](/doc/manage/cli/#curl):
+[`clever curl`](/doc/tools/cli/#curl):
 
 ```bash
 clever curl -X POST -H "Content-Type: application/json" \

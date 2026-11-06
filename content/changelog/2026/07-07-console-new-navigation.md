@@ -34,6 +34,6 @@ The Console comes with several color themes. Aurora is the default, and you can 
 
 ## A new homepage
 
-The homepage adapts to your account. Cards guide new users through their first steps: deploy a resource, install [Clever Tools](/doc/manage/cli/), add a payment method or an SSH key, enable two-factor authentication. It also offers ready-to-deploy templates, a short video, and the latest news, and links to the documentation of each runtime.
+The homepage adapts to your account. Cards guide new users through their first steps: deploy a resource, install [Clever Tools](/doc/tools/cli/), add a payment method or an SSH key, enable two-factor authentication. It also offers ready-to-deploy templates, a short video, and the latest news, and links to the documentation of each runtime.
 
 - [Share your feedback on the Console](https://github.com/CleverCloud/Community/discussions/categories/console)

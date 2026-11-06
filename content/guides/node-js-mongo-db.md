@@ -25,7 +25,7 @@ This guide uses a [Clever Cloud example application](https://github.com/CleverCl
 
 - A [Clever Cloud account](https://console.clever-cloud.com)
 - [Git](https://git-scm.com/downloads)
-- [Clever Tools](/doc/manage/cli), installed and connected to your account
+- [Clever Tools](/doc/tools/cli), installed and connected to your account
 
 ## Clone the example application
 

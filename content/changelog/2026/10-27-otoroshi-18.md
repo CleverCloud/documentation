@@ -41,7 +41,7 @@ This version inspects traffic that 0.0.10 let through, such as compressed or `+j
 
 ## How to update
 
-You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v18.0.1_1793044909` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through your add-on dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_OTOROSHI_VERSION` of the underlying Java application to `v18.0.1_1793044909` and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

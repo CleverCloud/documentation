@@ -41,7 +41,7 @@ This release also deprecates several features, including the `multi-site` featur
 
 ## How to update
 
-Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.8.0` or `26.7.5` and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/). Each `version update` command rebuilds the add-on, so run only one of them. Check the current version, then update to 26.8.0:
+Update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_KEYCLOAK_VERSION` of the underlying Java application to `26.8.0` or `26.7.5` and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/). Each `version update` command rebuilds the add-on, so run only one of them. Check the current version, then update to 26.8.0:
 
 ```bash
 clever features enable operators

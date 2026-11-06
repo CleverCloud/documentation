@@ -20,6 +20,7 @@ keywords:
 - quota
 - version
 aliases:
+- /doc/manage/cli/kubernetes
 - /doc/cli/kubernetes
 ---
 

@@ -125,7 +125,7 @@ clever kv session-cache SET session-status active
 clever kv session-cache GET session-status
 ```
 
-- [Learn more about Clever KV](/doc/manage/cli/kv-stores/)
+- [Learn more about Clever KV](/doc/tools/cli/kv-stores/)
 
 ### Supported types and commands
 

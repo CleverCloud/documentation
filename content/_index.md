@@ -48,7 +48,7 @@ aliases:
   {{< hextra/feature-card
     title="Clever Tools CLI"
     subtitle="Create, deploy, and manage your applications and add-ons from your terminal or your CI/CD pipelines"
-    link="/developers/doc/manage/cli"
+    link="/developers/doc/tools/cli"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
     image="/images/metrics-home.png"
     imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"

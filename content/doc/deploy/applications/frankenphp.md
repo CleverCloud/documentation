@@ -35,7 +35,7 @@ To create a new FrankenPHP application, use the [Clever Cloud Console](https://c
 clever create --type frankenphp
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 > [!NOTE] FrankenPHP applications can't be deployed on a pico instance, XS is the default instance type
@@ -108,7 +108,7 @@ CC_RUN_COMMAND="frankenphp run --config /path/to/Caddyfile"
 
 ## Use FrankenPHP to execute PHP scripts as Clever Tasks
 
-FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli/applications/#tasks):
+FrankenPHP can be used to execute PHP scripts. On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
 
 ```bash
 clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"

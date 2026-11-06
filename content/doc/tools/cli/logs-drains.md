@@ -12,6 +12,7 @@ keywords:
 - centralized
 - pulsar
 aliases:
+- /doc/manage/cli/logs-drains
 - /doc/cli/logs-drains
 - /doc/logs-drains
 ---

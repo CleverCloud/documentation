@@ -68,7 +68,7 @@ Moodle ignores `config.php` by default to prevent accidental credential commits.
 
 ## Create the application and services
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a PHP application and a linked MySQL add-on:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, then create a PHP application and a linked MySQL add-on:
 
 ```bash
 npm i -g clever-tools

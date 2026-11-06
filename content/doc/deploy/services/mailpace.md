@@ -20,7 +20,7 @@ aliases:
 
 ## Create the add-on
 
-In the [Console](https://console.clever-cloud.com), create a MailPace add-on, choose its plan, then link it to your applications. Plans set the number of emails per month, from 1,000 with the Solo plan. With [Clever Tools](/doc/manage/cli/), from a folder linked to your application, set its alias with `--link`:
+In the [Console](https://console.clever-cloud.com), create a MailPace add-on, choose its plan, then link it to your applications. Plans set the number of emails per month, from 1,000 with the Solo plan. With [Clever Tools](/doc/tools/cli/), from a folder linked to your application, set its alias with `--link`:
 
 ```bash
 clever addon create mailpace my-mail --plan clever_solo --link my-app

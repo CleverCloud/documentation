@@ -38,7 +38,7 @@ Where `DRAIN-TYPE` is one of:
 - `syslog-tcp`: for TCP syslog endpoint
 - `syslog-udp`: for UDP syslog endpoint
 
-Each drain type has its own options, listed in the [Clever Tools logs drains documentation](/doc/manage/cli/logs-drains/). Add `--alias ALIAS` or `--app APP_ID_OR_NAME` to target a specific application. You can list the currently activated drains with this command, and add `--type` to only list the drains of a given type. To list the drains of every application and add-on of your organisations at once, use `clever drain list`:
+Each drain type has its own options, listed in the [Clever Tools logs drains documentation](/doc/tools/cli/logs-drains/). Add `--alias ALIAS` or `--app APP_ID_OR_NAME` to target a specific application. You can list the currently activated drains with this command, and add `--type` to only list the drains of a given type. To list the drains of every application and add-on of your organisations at once, use `clever drain list`:
 
 ```console
 clever drain

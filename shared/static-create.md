@@ -1,7 +1,7 @@
 
 ## Deploy a static application
 
-You can create an application in our [Console](https://console.clever-cloud.com) or through [Clever Tools](/doc/manage/cli). Install them with `npm` or [any supported package manager](/doc/manage/cli/install/):
+You can create an application in our [Console](https://console.clever-cloud.com) or through [Clever Tools](/doc/tools/cli). Install them with `npm` or [any supported package manager](/doc/tools/cli/install/):
 
 ```bash
 # Install with npm or any supported method

@@ -21,7 +21,7 @@ On nodes with SELinux enabled, volumes from CSI drivers that support it now get 
 
 The `ipvs` mode of kube-proxy is deprecated in favor of the `nftables` and `iptables` modes, kube-dns in favor of CoreDNS. The `--filename` option of `kubectl run` is also deprecated.
 
-Select Kubernetes 1.37 when you create a cluster, or update an existing one, with [Clever Tools](/doc/manage/cli/kubernetes/):
+Select Kubernetes 1.37 when you create a cluster, or update an existing one, with [Clever Tools](/doc/tools/cli/kubernetes/):
 
 ```bash
 clever k8s create myCluster --cluster-version 1.37

@@ -12,6 +12,7 @@ keywords:
 - database
 - serverless
 aliases:
+- /doc/manage/cli/kv-stores
 - /doc/cli/kv-stores
 - /doc/kv-stores
 ---

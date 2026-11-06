@@ -27,7 +27,7 @@ This guide was tested with WordPress 7.1 and PHP 8.4. It also applies to newer c
 
 ## Prepare WordPress
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, download WordPress and initialize the repository:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, download WordPress and initialize the repository:
 
 ```bash
 npm i -g clever-tools

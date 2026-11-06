@@ -11,6 +11,7 @@ keywords:
 - deployment
 - scaling
 aliases:
+- /doc/manage/cli/applications
 - /clever-tools/create
 - /doc/administrate/clever-tools/create
 - /doc/clever-tools/create
@@ -18,7 +19,7 @@ aliases:
 - /doc/cli/create
 ---
 
-This page covers how to create, link, list, and delete applications with Clever Tools. To change their settings, environment variables, domains, and scaling, see [Configuration](/doc/manage/cli/applications/configuration/). To deploy them, restart them, or follow their status and logs, see [Deploy, Lifecycle](/doc/manage/cli/applications/deployment-lifecycle/).
+This page covers how to create, link, list, and delete applications with Clever Tools. To change their settings, environment variables, domains, and scaling, see [Configuration](/doc/tools/cli/applications/configuration/). To deploy them, restart them, or follow their status and logs, see [Deploy, Lifecycle](/doc/tools/cli/applications/deployment-lifecycle/).
 
 ## create
 

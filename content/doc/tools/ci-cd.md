@@ -18,7 +18,7 @@ aliases:
 - /doc/ci-cd/custom-scripts
 ---
 
-To deploy from a pipeline you control, for example once your tests pass, run [Clever Tools](/doc/manage/cli/) in a job. To avoid writing this job yourself, the [GitHub integration](/doc/tools/github/) deploys each push to a branch without any pipeline, and the [GitLab components](/doc/tools/gitlab/) add a ready-made deployment job to your pipeline.
+To deploy from a pipeline you control, for example once your tests pass, run [Clever Tools](/doc/tools/cli/) in a job. To avoid writing this job yourself, the [GitHub integration](/doc/tools/github/) deploys each push to a branch without any pipeline, and the [GitLab components](/doc/tools/gitlab/) add a ready-made deployment job to your pipeline.
 
 ## Prepare the credentials
 

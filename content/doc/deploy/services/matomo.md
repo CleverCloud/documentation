@@ -53,7 +53,7 @@ We've already integrated the Clever Cloud SSO, so you can login directly into yo
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/manage/cli/install/) if needed. In your terminal, `clever addon create addon-matomo <name> --region <region> --org <org>` (`--org` and `--region` are optional). You'll get URLs to manage your Matomo instance:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, `clever addon create addon-matomo <name> --region <region> --org <org>` (`--org` and `--region` are optional). You'll get URLs to manage your Matomo instance:
 
 ```bash
 $ clever addon create addon-matomo myMatomo
@@ -76,7 +76,7 @@ clever addon create addon-matomo myMatomoName --option access-domain=matomo.exam
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Matomo add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
 
-Refer to the [Clever Tools documentation](/doc/manage/cli/addons/) for more details on add-on management.
+Refer to the [Clever Tools documentation](/doc/tools/cli/addons/) for more details on add-on management.
 
 ## Accessing the Matomo interface
 

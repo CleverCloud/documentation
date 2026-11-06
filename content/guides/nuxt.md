@@ -45,7 +45,7 @@ Use a Node.js application for Nuxt server-side rendering and hybrid rendering.
 
 ### Create a Node.js application
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Node.js application linked to the cloned repository:
+Install [Clever Tools](/developers/doc/tools/cli/), log in and create a Node.js application linked to the cloned repository:
 
 ```bash
 npm i -g clever-tools

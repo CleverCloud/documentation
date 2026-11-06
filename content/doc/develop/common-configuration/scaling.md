@@ -27,7 +27,7 @@ aliases:
 - /doc/scaling-tips
 ---
 
-Your application runs on one or more instances of the same size, behind the load balancer. Choose their size and number in the **Scalability** menu of the [Console](https://console.clever-cloud.com), or with [`clever scale`](/doc/manage/cli/applications/configuration/#scale-and-dedicated-build). A single value keeps them fixed, a range lets Clever Cloud adapt them to the load: this is autoscaling.
+Your application runs on one or more instances of the same size, behind the load balancer. Choose their size and number in the **Scalability** menu of the [Console](https://console.clever-cloud.com), or with [`clever scale`](/doc/tools/cli/applications/configuration/#scale-and-dedicated-build). A single value keeps them fixed, a range lets Clever Cloud adapt them to the load: this is autoscaling.
 
 ## Instance sizes
 

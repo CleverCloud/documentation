@@ -19,7 +19,7 @@ The `x.62` branch of Metabase is now available on Clever Cloud. It brings custom
 
 On the AI side, this release adds official connectors for the OpenAI Codex and Claude marketplaces, new MCP server tools to read entities, create collections and execute SQL, and interactive Metabase charts rendered directly in AI clients. The official Claude connector only works with Metabase Cloud instances: for a Metabase running on Clever Cloud, add a custom Claude connector pointing to your instance's MCP server URL. Embedding security improves with JWT tokens passed via POST instead of GET, programmatic filter control through a new `parameters` prop, and a streamlined embedding wizard. This release also includes multiple enhancements and bug fixes.
 
-This branch is not the default for now if you use `community-latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.62` or `1.62` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/manage/cli/operators/):
+This branch is not the default for now if you use `community-latest`. You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com). You can also set `CC_METABASE_VERSION` of the underlying Java application to `0.62` or `1.62` for the enterprise edition (EE) and rebuild it, or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

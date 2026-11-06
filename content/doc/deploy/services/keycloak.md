@@ -82,7 +82,7 @@ You can however manage and adjust them directly in the Console to fit your needs
 
 ### Using the CLI
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/manage/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
+Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, run `clever addon create keycloak <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Keycloak instance and the temporary credentials:
 
 ```bash
 $ clever addon create keycloak myKeycloak
@@ -108,13 +108,13 @@ clever addon create keycloak myKeycloakName --option access-domain=keycloak.exam
 
 These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Keycloak add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
 
-Refer to the [Clever Tools documentation](/doc/manage/cli/addons) for more details on add-on creation.
+Refer to the [Clever Tools documentation](/doc/tools/cli/addons) for more details on add-on creation.
 
 ## Secured Multi Instances
 
 Keycloak instances share sessions, authorization codes and caches through an Infinispan cluster. As this cluster traffic is unencrypted, Clever Cloud links instances through a [Network Group](/doc/network/network-groups), a private network encrypted with [WireGuard](https://www.wireguard.com/). This feature is called Secured Multi Instances.
 
-When you enable Secured Multi Instances from the Keycloak dashboard or with [Clever Tools](/doc/manage/cli/operators/#network-groups), Clever Cloud:
+When you enable Secured Multi Instances from the Keycloak dashboard or with [Clever Tools](/doc/tools/cli/operators/#network-groups), Clever Cloud:
 
 - Creates a Network Group and adds the Java application to it
 - Sets the Java application scaling to exactly 2 instances, as both minimum and maximum, replacing any existing horizontal scaling configuration
@@ -140,7 +140,7 @@ You can raise the instance count of the Java application after enabling Secured 
 To change the version of a Keycloak add-on on Clever Cloud, you can:
 
 - Use the Console Dashboard
-- Use [Clever Tools](/doc/manage/cli/operators/)
+- Use [Clever Tools](/doc/tools/cli/operators/)
 - Update the `CC_KEYCLOAK_VERSION` environment variable of the underlying Java Application and rebuild it
 
 ## Accessing the Keycloak interface

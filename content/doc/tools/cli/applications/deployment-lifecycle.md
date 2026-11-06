@@ -11,6 +11,7 @@ keywords:
 - rollbacks
 - scaling
 aliases:
+- /doc/manage/cli/applications/deployment-lifecycle
 - /doc/administrate/clever-tools/lifecycle
 - /doc/administrate/clever-tools/manage
 - /doc/administrate/clever-tools/ssh-access
@@ -45,7 +46,7 @@ It will `git push` your code on the remote repository of your application on Cle
 ```
 
 > [!TIP]
-> You can cancel a deployment with `clever cancel-deploy` command. You can also [configure an application](/doc/manage/cli/applications/configuration/#config) so that a new deployment cancels the current one.
+> You can cancel a deployment with `clever cancel-deploy` command. You can also [configure an application](/doc/tools/cli/applications/configuration/#config) so that a new deployment cancels the current one.
 
 Since Clever Tools 5.0.0, `clever deploy` uses the `git` command installed on your system, which must be available in your `PATH`. If `git` isn't available, or if you experience an issue with this backend, fall back to the previous pure JavaScript implementation. It works without `git` installed on your system, but it only supports HTTP, slows down on repositories with rewritten history, can time out on large repositories or big files, and can't deploy from a linked Git worktree:
 

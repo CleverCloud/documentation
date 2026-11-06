@@ -51,7 +51,7 @@ To create a new Node.js & Bun application, use the [Clever Cloud Console](https:
 clever create --type node
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Node.js & Bun application

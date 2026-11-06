@@ -18,7 +18,7 @@ Reports also get richer: bar, pie and evolution charts can show the conversions 
 
 This release includes the fixes of Matomo `5.14.1`, which solves a race condition in nonce validation, redesigns the Marketplace with a dedicated page for each plugin, and refreshes its lists in the background instead of hourly. As usual, it ships its batch of bug fixes, mostly for sparkline cards and Dark Mode.
 
-You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up-to-date.
+You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/). Existing customers' add-ons are already up-to-date.
 
 - [Learn more about Matomo 5.14](https://matomo.org/changelog/matomo-5-14-0/)
 - [Learn more about Matomo 5.14.1](https://matomo.org/changelog/matomo-5-14-1/)

@@ -74,7 +74,7 @@ The Mise environment maps the variables injected by linked Clever Cloud add-ons 
 
 ## Create the application and add-ons
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, and create a Linux application with an alias used to link the add-ons:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, and create a Linux application with an alias used to link the add-ons:
 
 ```bash
 npm i -g clever-tools

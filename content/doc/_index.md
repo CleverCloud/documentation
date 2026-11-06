@@ -36,10 +36,10 @@ aliases:
   {{< card link="/developers/doc/find-help" title="Find help" subtitle="Get support and troubleshoot platform issues" icon="support" >}}
   {{< card link="/developers/doc/deploy" title="Deploy" subtitle="Applications, databases, storage and managed services" icon="rocket-launch" >}}
   {{< card link="/developers/doc/develop" title="Develop" subtitle="Configure applications, request flow, observability and tooling" icon="code" >}}
-  {{< card link="/developers/doc/manage" title="Manage" subtitle="Operate your resources from the CLI and migrate them" icon="library" >}}
+  {{< card link="/developers/doc/manage" title="Manage" subtitle="Link services, migrate databases, and move resources between regions" icon="library" >}}
   {{< card link="/developers/doc/network" title="Network" subtitle="Private networks, IP ranges and network services" icon="globe-alt" >}}
   {{< card link="/developers/doc/security" title="Security & Compliance" subtitle="Certifications, encryption, TLS and secrets" icon="lock-closed" >}}
-  {{< card link="/developers/doc/tools" title="Tools & Integrations" subtitle="CI/CD, GitHub, GitLab and Terraform" icon="git" >}}
+  {{< card link="/developers/doc/tools" title="Tools & Integrations" subtitle="Clever Tools, CI/CD, GitHub, GitLab and Terraform" icon="git" >}}
   {{< card link="/developers/doc/account-billing" title="Account & Billing" subtitle="Account, organisations, invoices and payments" icon="user-circle" >}}
 {{< /cards >}}
 

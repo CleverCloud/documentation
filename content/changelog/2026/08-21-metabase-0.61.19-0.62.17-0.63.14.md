@@ -24,7 +24,7 @@ All Metabase add-ons that used `latest` on an XS Java instance have been pinned 
 
 Back up your Metabase application database and review your API integrations and collection permissions before updating. If you use `latest` on an S instance or larger, restart your instance to get the latest version. If you use a specific branch, update `CC_METABASE_VERSION` of the underlying Java application to its latest patch and rebuild it.
 
-You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/manage/cli/operators/):
+You can update through the add-on's dashboard in the [Clever Cloud Console](https://console.clever-cloud.com), or use [Clever Tools](/doc/tools/cli/operators/):
 
 ```bash
 clever features enable operators

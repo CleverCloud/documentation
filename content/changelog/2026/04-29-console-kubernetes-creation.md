@@ -21,5 +21,5 @@ The form asks for a name, optional tags, and the Kubernetes version. Then pick t
 Once created, the cluster starts its deployment and appears in the menu of your organisation.
 
 - [Learn more about Clever Kubernetes Engine](/doc/deploy/kubernetes/)
-- [Manage your clusters from Clever Tools](/doc/manage/cli/kubernetes/)
+- [Manage your clusters from Clever Tools](/doc/tools/cli/kubernetes/)
 - [Share your feedback on the Console](https://github.com/CleverCloud/Community/discussions/categories/console)

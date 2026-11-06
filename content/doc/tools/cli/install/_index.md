@@ -11,6 +11,7 @@ keywords:
 - deployment
 - management
 aliases:
+- /doc/manage/cli/install
 - /cli/install
 - /doc/cli-setup
 - /doc/cli/install
@@ -44,7 +45,7 @@ Clever Tools is available as a npm package, through package managers, or as a st
 - [Enabling autocompletion](#enabling-autocompletion)
 - [Use Clever Tools from an AI assistant](#use-clever-tools-from-an-ai-assistant)
 
-To upgrade an existing installation, follow the [update guide](/doc/manage/cli/install/update/).
+To upgrade an existing installation, follow the [update guide](/doc/tools/cli/install/update/).
 
 ## Node.js
 
@@ -106,7 +107,7 @@ yum install clever-tools
 ```
 
 > [!TIP]
-> Clever Cloud hosts the `.rpm` packages on its [public Nexus instance](/doc/manage/cli/install/nexus-config/)
+> Clever Cloud hosts the `.rpm` packages on its [public Nexus instance](/doc/tools/cli/install/nexus-config/)
 
 ### Debian/Ubuntu (.deb)
 
@@ -120,7 +121,7 @@ apt install clever-tools
 ```
 
 > [!TIP]
-> Clever Cloud hosts the `.deb` packages on its [public Nexus instance](/doc/manage/cli/install/nexus-config/). \
+> Clever Cloud hosts the `.deb` packages on its [public Nexus instance](/doc/tools/cli/install/nexus-config/). \
 > Our PGP key is required to trust the repository
 
 ### Exherbo

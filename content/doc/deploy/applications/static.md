@@ -43,7 +43,7 @@ To create a new Static application, use the [Clever Cloud Console](https://conso
 clever create --type static
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Static application

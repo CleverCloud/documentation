@@ -48,7 +48,7 @@ To create a new PHP application, use the [Clever Cloud Console](https://console.
 clever create --type php
 ```
 
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)
 - [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your PHP application

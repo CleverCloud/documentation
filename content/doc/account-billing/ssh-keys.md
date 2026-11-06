@@ -131,7 +131,7 @@ If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/d
 
 ### From Clever Tools {#through-cc-api-or-clever-curl}
 
-With [Clever Tools](/doc/manage/cli/) installed and authenticated, add your public key to your account:
+With [Clever Tools](/doc/tools/cli/) installed and authenticated, add your public key to your account:
 
 ```bash
 clever ssh-keys add workstation ~/.ssh/id_ed25519.pub

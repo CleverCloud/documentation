@@ -66,7 +66,7 @@ Keep generated dependencies and persistent files out of Git. The recommended pro
 
 ## Create the application and services
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, then create a PHP application and a linked MySQL add-on:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, then create a PHP application and a linked MySQL add-on:
 
 ```bash
 npm i -g clever-tools

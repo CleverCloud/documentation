@@ -19,7 +19,7 @@ excludeSearch: true
 
 This release is shipped with [LLM extension 0.0.47](https://github.com/cloud-apim/otoroshi-llm-extension/releases/tag/0.0.47) with enhancements in responses, streaming for tool calls for Ollama, multiple access token per provider. It also introduces AI oriented set of functions for Otoroshi Workflows. [Biscuit Studio 0.0.15](https://github.com/cloud-apim/otoroshi-biscuit-studio/releases/tag/0.0.15) provides attenuation, forge and verify functions to workflows.
 
-To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.3.1_1749049547` and rebuild it. You can also use [the new Clever Tools commands](/doc/manage/cli/operators/), introduced in `3.13.0` release:
+To update just set `CC_OTOROSHI_VERSION` of the add-on's Java application to `v17.3.1_1749049547` and rebuild it. You can also use [the new Clever Tools commands](/doc/tools/cli/operators/), introduced in `3.13.0` release:
 
 ```bash
 clever features enable operators

@@ -106,7 +106,7 @@ export default defineConfig({
 
 ### Create a Static application
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize the Git repository, and create a Static application:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, initialize the Git repository, and create a Static application:
 
 ```bash
 npm i -g clever-tools
@@ -172,7 +172,7 @@ export default defineConfig({
 
 ### Create a Node.js application
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in, initialize the Git repository, and create a Node.js application:
+Install [Clever Tools](/developers/doc/tools/cli/), log in, initialize the Git repository, and create a Node.js application:
 
 ```bash
 npm i -g clever-tools

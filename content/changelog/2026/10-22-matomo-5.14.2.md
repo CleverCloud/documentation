@@ -16,7 +16,7 @@ Our [Matomo](https://matomo.org/) add-on has been updated to version `5.14.2` wh
 
 Updating Matomo alone doesn't fix these PHP vulnerabilities. On Clever Cloud, we already moved every managed Matomo add-on that ran PHP 8.1 or 8.2 to PHP 8.3, as described in our [PHP security update](/changelog/2026/10-21-php-security-vulnerabilities/).
 
-You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/manage/cli/). Existing customers' add-ons are already up to date.
+You can deploy this release from our [Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/). Existing customers' add-ons are already up to date.
 
 - [Learn more about Matomo 5.14.2](https://matomo.org/changelog/matomo-5-14-2/)
 - [Learn more about Matomo on Clever Cloud](/doc/deploy/services/matomo/)

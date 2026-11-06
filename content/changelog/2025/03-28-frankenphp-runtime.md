@@ -16,7 +16,7 @@ excludeSearch: true
 
 First, we started to document how to deploy it with practical examples. Then, we packaged it and included it in our images to make some tests internally and with customers. Starting today, anyone can deploy a PHP application using FrankenPHP on Clever Cloud without needing any Docker container or complex configuration.
 
-Just create a FrankenPHP application [from API](/api), [Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/manage/cli) and deploy it:
+Just create a FrankenPHP application [from API](/api), [Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli) and deploy it:
 
 ```bash
 echo '<?php echo phpinfo();' > index.php

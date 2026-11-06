@@ -101,7 +101,7 @@ The [HTTP backend](https://mise.jdx.dev/dev-tools/backends/http.html) downloads 
 
 ## Create the application and add-ons
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Linux application with an alias used to link the add-ons:
+Install [Clever Tools](/developers/doc/tools/cli/), log in and create a Linux application with an alias used to link the add-ons:
 
 ```bash
 npm i -g clever-tools
@@ -260,7 +260,7 @@ The public publication is available from the application URL, while Admin is ava
 
 ## Update Ghost
 
-Export your content from Ghost Admin and make sure you have a recent [MySQL backup](/developers/doc/manage/cli/addons/#database-backups) before updating. Check the [`engines.node` requirement](https://github.com/TryGhost/Ghost/blob/v6.60.0/ghost/core/package.json) of the Ghost release you want to use, then update both version variables when necessary. For example:
+Export your content from Ghost Admin and make sure you have a recent [MySQL backup](/developers/doc/tools/cli/addons/#database-backups) before updating. Check the [`engines.node` requirement](https://github.com/TryGhost/Ghost/blob/v6.60.0/ghost/core/package.json) of the Ghost release you want to use, then update both version variables when necessary. For example:
 
 ```bash
 clever env set GHOST_VERSION 6.60.0

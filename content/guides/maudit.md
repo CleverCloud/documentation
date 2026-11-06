@@ -36,7 +36,7 @@ If you already have a Maudit project, run the following commands from its root d
 
 ## Create a Static application
 
-Install [Clever Tools](/developers/doc/manage/cli/), log in and create a Static application linked to your project folder:
+Install [Clever Tools](/developers/doc/tools/cli/), log in and create a Static application linked to your project folder:
 
 ```bash
 npm i -g clever-tools

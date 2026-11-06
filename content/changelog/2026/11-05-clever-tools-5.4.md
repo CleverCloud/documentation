@@ -42,7 +42,7 @@ The update notifier still honors `--no-update-notifier`, `NO_UPDATE_NOTIFIER` an
 
 ## How to upgrade
 
-To upgrade Clever Tools, follow the [update guide](/doc/manage/cli/install/update/) for the installation method you use. For example with `npm`:
+To upgrade Clever Tools, follow the [update guide](/doc/tools/cli/install/update/) for the installation method you use. For example with `npm`:
 
 ```bash
 npm install -g clever-tools
@@ -50,4 +50,4 @@ clever version
 ```
 
 - [Learn more about SSH access](/doc/develop/ssh-access/)
-- [Learn more about Clever Tools](/doc/manage/cli/)
+- [Learn more about Clever Tools](/doc/tools/cli/)

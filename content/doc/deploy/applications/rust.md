@@ -48,7 +48,7 @@ A Rust application needs:
 
 - A `Cargo.toml` file with at least one binary target, at the root of the project or of the folder set in `APP_FOLDER`
 - A committed `Cargo.lock` file: the build runs with `--locked`, so it fails if `Cargo.lock` is missing or out of date
-- A web server listening on `0.0.0.0:8080`, the port also available in the `PORT` environment variable, unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port), unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
 
 For instance, a minimal [Axum](https://github.com/tokio-rs/axum) application:
 
@@ -88,7 +88,7 @@ cargo build --release --locked
 
 Cargo reads its usual environment variables during the build. Set `RUSTFLAGS` or a [Cargo variable](https://doc.rust-lang.org/cargo/reference/environment-variables.html#configuration-environment-variables) such as `CARGO_PROFILE_RELEASE_LTO` in the environment of your application to change how it compiles. With `CC_TROUBLESHOOT=true`, Cargo also runs with `--verbose`.
 
-Compiling Rust needs memory and CPU time. If your builds fail for lack of memory or take too long, enable a [dedicated build instance](/doc/develop/common-configuration/lifecycle/#edit-application-configuration) larger than your application instances. Most Rust projects need at least an `S` build instance:
+Compiling Rust needs memory and CPU time. If your builds fail for lack of memory or take too long, enable a [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) larger than your application instances. Most Rust projects need at least an `S` build instance:
 
 ```bash
 clever scale --build-flavor S

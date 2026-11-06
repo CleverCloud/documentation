@@ -53,7 +53,7 @@ You can change the default version by setting the `CC_DOTNET_VERSION` environmen
 Be sure that:
 
 - You have pushed in **master** branch.
-- You listen on port **8080**, by default each .NET application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
+- You listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port). ASP.NET Core doesn't read `PORT` and listens on `localhost:5000` by default: set `ASPNETCORE_URLS="http://0.0.0.0:8080"`, or `http://0.0.0.0:9000` with [Request Flow](/doc/develop/request-flow/).
 - You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`).
 
 Take an example with the [cc-dotnet-demo](https://github.com/CleverCloud/cc-dotnet-demo).

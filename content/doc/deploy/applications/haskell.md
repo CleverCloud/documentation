@@ -42,7 +42,7 @@ There are many ways to write web applications in Haskell, from raw [WAI](https:/
 Be sure that:
 
 - you have pushed in **master branch**
-- you listen on **port 8080**
+- you listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port)
 - you have one and only one binary target in your [`.cabal` file](#dependencies)
 - your project has a `stack.yaml` file
 
@@ -53,18 +53,21 @@ The steps ran in order are:
 - `stack install`
 - `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
 
-The executable built by `stack build` (or the command you specify) must start a web server listening on `0.0.0.0:8080`.
+The executable built by `stack build` (or the command you specify) must start a web server listening on `0.0.0.0`, on the port in `PORT`.
 
 For instance, a minimal [scotty](https://hackage.haskell.org/package/scotty) application can look like this:
 
 ```haskell {linenos=table}
 {-# LANGUAGE OverloadedStrings #-}
 
+import System.Environment (getEnv)
 import Web.Scotty
 
-main = scotty 8080 $ do
-  get "/" $ do
-    html $ "Hello world"
+main = do
+  port <- read <$> getEnv "PORT"
+  scotty port $ do
+    get "/" $ do
+      html $ "Hello world"
 ```
 
 ### Dependencies
@@ -97,7 +100,7 @@ If you need to run a custom command (or just pass options to the binary built by
 For instance, for a [hakyll](https://jaspervdj.be/hakyll/) website, you can define:
 
 ```bash
-CC_RUN_COMMAND="~./local/bin/site server --host 0.0.0.0 --port 8080"
+CC_RUN_COMMAND='~/.local/bin/site server --host 0.0.0.0 --port $PORT'
 ```
 
 To access environment variables from your code, just get them from the environment with `getEnv :: String -> IO String` in `System.Environment`.
@@ -116,7 +119,8 @@ envVar = getEnv "MY_VAR"
 
 main = do
   myVar <- envVar
-  scotty 8080 $ do
+  port <- read <$> getEnv "PORT"
+  scotty port $ do
     get "/" $ do
       html . pack $ "Hello world " ++ myVar
 ```

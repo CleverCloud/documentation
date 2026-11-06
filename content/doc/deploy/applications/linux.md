@@ -39,7 +39,7 @@ clever create --type linux
 
 ### Mandatory needs
 
-Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0:8080`.
+Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
 
 - [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
 

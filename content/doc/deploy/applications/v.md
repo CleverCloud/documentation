@@ -36,7 +36,7 @@ clever create --type v
 
 ### Mandatory needs
 
-V (Vlang) runtime only requires a working application listening on `0.0.0.0:8080`.
+V (Vlang) runtime only requires a working application listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
 
 - [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
 

@@ -79,7 +79,7 @@ To override the default web server behavior, set the `CC_RUN_COMMAND` environmen
 
 ## Custom configuration and port
 
-Caddy and SWS can be configured with a configuration file or through environment variables. You can also pass your own command line flags with `CC_STATIC_FLAGS`. To define a custom listen port, use `CC_STATIC_PORT` (default is `8080`).
+Caddy and SWS can be configured with a configuration file or through environment variables. You can also pass your own command line flags with `CC_STATIC_FLAGS`. To define a custom listen port, use `CC_STATIC_PORT` (default is `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/)). A custom Caddyfile sets its own address: listen on `:{$PORT}`, and [set `PORT=9000`](/doc/develop/common-configuration/#listen-on-the-right-port) with Request Flow.
 
 - Caddy configuration:
   - [Command Line Arguments](https://caddyserver.com/docs/command-line)

@@ -72,7 +72,7 @@ You can control deployments and set your application configuration with environm
 
 ### Common to All Applications
 
-- Applications on Clever Cloud listen on **port 8080**. Be sure you application is able to listen on port 8080 before deploying.
+- Applications on Clever Cloud listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port): `8080` by default, or `9000` with Request Flow.
 - Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables.
 
 {{< callout type="info" >}}

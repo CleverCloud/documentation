@@ -43,18 +43,11 @@ If you want to revert to a previous version of your code, you can go to the **Ac
 
 ## Edit application configuration
 
-You can edit your application in the **Information** menu of your application in the Clever Cloud console. You can rename it, change description and deployment zone.
-You can also enable/disable:
-
-- **Zero downtime deployment**: During a deployment, old scalers are kept up until the new instances work. Updates are thus transparent to the user. Your application has to work correctly with several scalers in parallel (e.g. for connections to databases). *`pico` and `nano` scalers are using this feature by default.*
-- **Sticky sessions**: When horizontal scalability is enabled, a user is always served by the same scaler. Some frameworks or technologies require this option.
-- **Dedicated build instance**: Your application will build on a dedicated machine allowing you to use a small scaler to run your application. But, using this option will make your deployment slower (by ~10 seconds)
-- **Cancel ongoing deployment on new push**: A "git push" will cancel any ongoing deployment and start a new one with the last available commit.
-- **Force HTTPS**: Any non secured HTTP request to this application will be redirected to HTTPS with a 301 Moved Permanently status code.
-
-Do not forget to save after editing your configuration.
+In the **Information** menu of your application in the Clever Cloud console, rename it, and change its description, its region, and its other settings. Don't forget to save your changes.
 
 ![Edit your application](/images/application-edit.png)
+
+- [Learn more about application settings](/doc/develop/common-configuration/#application-settings)
 
 ## Archiving/Unarchiving your application
 

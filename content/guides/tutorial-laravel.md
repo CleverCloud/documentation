@@ -62,7 +62,7 @@ clever create -t php -a myLaravelApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain
@@ -108,7 +108,7 @@ chmod +x clevercloud/post_build.sh
 clever env set CC_POST_BUILD_HOOK "./clevercloud/post_build.sh"
 ```
 
-The PHP runtime can use the platform's Node.js version selectors and package managers when building frontend assets. See [environment variables](/developers/doc/develop/common-configuration/environment-variables/reference/) for the available controls.
+The PHP runtime can use the platform's Node.js version selectors and package managers when building frontend assets. See [environment variables](/developers/doc/manage/environment-variables/reference/) for the available controls.
 
 ## Deploy Laravel
 
@@ -191,6 +191,6 @@ The [PHP CLI memory limit](/developers/doc/deploy/applications/php/#memory-limit
   <!-- markdownlint-disable-next-line MD034 -->
   {{< card link="https://laravel.com/docs/deployment" title="Laravel deployment" subtitle="Prepare and optimize a Laravel application for production" icon="simple:laravel" >}}
   {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
-  {{< card link="/developers/doc/develop/common-configuration/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/manage/build-hooks/" title="Deployment hooks" subtitle="Run commands during build and deployment phases" icon="rocket-launch" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
 {{< /cards >}}

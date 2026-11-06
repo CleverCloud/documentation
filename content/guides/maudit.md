@@ -77,7 +77,7 @@ clever deploy
 clever open
 ```
 
-You can display your website's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your website's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

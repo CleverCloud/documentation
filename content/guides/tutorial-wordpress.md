@@ -92,7 +92,7 @@ clever addon create mysql-addon myWordPressDatabase -p xs_sml --link myWordPress
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link a resource.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

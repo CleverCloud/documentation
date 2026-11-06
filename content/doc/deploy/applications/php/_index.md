@@ -61,14 +61,14 @@ PHP runtime requires a working web application. The HTTP server is Apache 2 with
 clever env set CC_WEBROOT /public
 ```
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### Build phase
 
 Composer build is supported out of the box. If a `composer.json` file is present at the root of your repository, dependencies are installed automatically during the build phase.
 
 - [Learn more about Composer on Clever Cloud](/doc/deploy/applications/php/composer/)
-- [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
 
 ### PHP version
 
@@ -96,7 +96,7 @@ You can review the [available directives](https://www.php.net/manual/en/ini.list
 
 However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
 
-To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/doc/develop/common-configuration/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
+To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/doc/manage/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
 
 Assuming the script runs at the root-folder of the application:
 
@@ -150,7 +150,7 @@ Clever Cloud configures PHP's [`memory_limit`](https://www.php.net/manual/en/ini
 | 2XL    | 1377 MiB               | 23503 MiB              |
 | 3XL    | 1666 MiB               | 31525 MiB              |
 
-To change the limit, set [`MEMORY_LIMIT`](/doc/develop/common-configuration/environment-variables/reference#php) to a positive integer interpreted in MiB, without a unit suffix.
+To change the limit, set [`MEMORY_LIMIT`](/doc/manage/environment-variables/reference#php) to a positive integer interpreted in MiB, without a unit suffix.
 
 For example, to allow each PHP script to allocate up to 128 MiB:
 
@@ -160,7 +160,7 @@ clever env set MEMORY_LIMIT 128
 
 If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Cloud keeps the automatically calculated limit and logs a warning during deployment. Clever Cloud also calculates the number of PHP-FPM workers automatically.
 
-On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/develop/common-configuration/environment-variables/reference#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
+On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/manage/environment-variables/reference#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
 
 #### Session upload progress
 

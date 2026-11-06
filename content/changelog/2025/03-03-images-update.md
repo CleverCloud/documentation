@@ -26,7 +26,7 @@ We deployed and updated all our images, except Docker, Go, Java, Node and Ruby, 
 - **PHP:**
   - Update to 8.4.4
   - Composer 2.8.6
-  - `CC_APACHE_HEADERS_SIZE` [environment variable](/doc/develop/common-configuration/environment-variables/reference/)
+  - `CC_APACHE_HEADERS_SIZE` [environment variable](/doc/manage/environment-variables/reference/)
 - **Python:**
   - Update to 3.13.2
   - pip 24.3.1

@@ -86,7 +86,7 @@ Display the generated application domain:
 clever domain
 ```
 
-Set `MOODLE_URL` to that HTTPS URL. You can instead add a custom domain, which also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+Set `MOODLE_URL` to that HTTPS URL. You can instead add a custom domain, which also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain add your.website.tld

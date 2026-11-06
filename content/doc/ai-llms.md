@@ -43,7 +43,7 @@ The command asks which assistants get the skill, and whether it goes in the curr
 
 The skill lives in the Clever Tools repository and follows its main branch, so it can describe options your version of the CLI doesn't support yet. Keep both current: list your skills with `npx skills list`, refresh this one with `npx skills update`, and [update Clever Tools](/doc/tools/cli/install/update/). If your assistant stumbles on a command, open an issue or a pull request on [`SKILL.md`](https://github.com/CleverCloud/clever-tools/blob/master/skills/clever-tools/SKILL.md).
 
-The skill and this documentation work together. The skill gives the assistant the right command and options, and the Markdown pages give it what the CLI doesn't describe, such as the [environment variables](/doc/develop/common-configuration/environment-variables/reference/) each runtime reads.
+The skill and this documentation work together. The skill gives the assistant the right command and options, and the Markdown pages give it what the CLI doesn't describe, such as the [environment variables](/doc/manage/environment-variables/reference/) each runtime reads.
 
 ## Ways to drive the platform
 

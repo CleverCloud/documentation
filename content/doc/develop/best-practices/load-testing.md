@@ -19,7 +19,7 @@ A load test sends many requests to your application to measure how it behaves un
 
 ## Prepare the test
 
-Test a staging application rather than production, with the same runtime and [scaling](/doc/develop/common-configuration/scaling/). Give it its own add-ons, with the same plans and representative data: a test on the production add-ons loads and modifies them.
+Test a staging application rather than production, with the same runtime and [scaling](/doc/manage/scaling/). Give it its own add-ons, with the same plans and representative data: a test on the production add-ons loads and modifies them.
 
 The public load balancers are shared between customers: a heavy load from a few addresses looks like an attack, and the network protection can block it. [Contact the Support](https://console.clever-cloud.com/ticket-center-choice) before the test, with its date, its duration, the expected request rate, and the target domain.
 
@@ -34,7 +34,7 @@ Choose the requests that matter, such as the journey of a user who browses, sear
 Follow the test from the [metrics](/doc/develop/observability/metrics/) and the [access logs](/doc/develop/observability/access-logs/) of your application: CPU and memory of the instances, response times, and status codes.
 
 - Autoscaling reacts after a few minutes of sustained load: increase the load gradually, and watch `UPSCALE` in the [activity](/doc/develop/observability/activity/)
-- Code on a single thread uses one vCPU per process: see [both ranges](/doc/develop/common-configuration/scaling/#both-ranges) to use all of them
+- Code on a single thread uses one vCPU per process: see [both ranges](/doc/manage/scaling/#both-ranges) to use all of them
 - Each instance opens its own connections to your add-ons: check that the connection limit of their plan covers all your instances
 - The load balancer applies a [180-second timeout](/doc/find-help/troubleshooting/) to the operations of your application
 

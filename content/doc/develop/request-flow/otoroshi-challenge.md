@@ -82,7 +82,7 @@ Error: listen EADDRINUSE: address already in use 0.0.0.0:8080
 
 The platform health check requests your application through the public port, where the middleware now answers `401` to a request carrying no challenge. The default check accepts any status from `200` to `499`, so it keeps passing.
 
-Setting [`CC_HEALTH_CHECK_PATH`](/doc/develop/common-configuration/healthcheck/) narrows that range to `200` to `299`. The middleware reads it, along with `CC_HEALTH_CHECK_PATH_0`, `CC_HEALTH_CHECK_PATH_1` and the following ones up to the first missing index, and lets `GET` and `HEAD` requests on these paths reach your application with no challenge:
+Setting [`CC_HEALTH_CHECK_PATH`](/doc/manage/healthcheck/) narrows that range to `200` to `299`. The middleware reads it, along with `CC_HEALTH_CHECK_PATH_0`, `CC_HEALTH_CHECK_PATH_1` and the following ones up to the first missing index, and lets `GET` and `HEAD` requests on these paths reach your application with no challenge:
 
 ```bash
 CC_HEALTH_CHECK_PATH="/health"

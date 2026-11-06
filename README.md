@@ -13,7 +13,7 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
 - [Clever Cloud documentation](https://www.clever.cloud/developers/)
 - [API reference](https://www.clever.cloud/developers/api/)
 - [Clever Tools CLI reference](https://www.clever.cloud/developers/doc/cli-reference/)
-- [Environment variables reference](https://www.clever.cloud/developers/doc/develop/common-configuration/environment-variables/reference/)
+- [Environment variables reference](https://www.clever.cloud/developers/doc/manage/environment-variables/reference/)
 - [Guides and tutorials](https://www.clever.cloud/developers/guides/)
 - [Platform changelog](https://www.clever.cloud/developers/changelog/)
 - [Technical documentation](https://www.clever.cloud/developers/doc/)

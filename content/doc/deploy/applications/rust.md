@@ -48,7 +48,7 @@ A Rust application needs:
 
 - A `Cargo.toml` file with at least one binary target, at the root of the project or of the folder set in `APP_FOLDER`
 - A committed `Cargo.lock` file: the build runs with `--locked`, so it fails if `Cargo.lock` is missing or out of date
-- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port), unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port), unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
 
 For instance, a minimal [Axum](https://github.com/tokio-rs/axum) application:
 
@@ -76,11 +76,11 @@ async fn main() {
 }
 ```
 
-Run `cargo generate-lockfile` or `cargo build` to create `Cargo.lock`, then commit it with your code. Your application reads its [environment variables](/doc/develop/common-configuration/environment-variables/) with `std::env::var`, such as the credentials of the add-ons you link to it.
+Run `cargo generate-lockfile` or `cargo build` to create `Cargo.lock`, then commit it with your code. Your application reads its [environment variables](/doc/manage/environment-variables/) with `std::env::var`, such as the credentials of the add-ons you link to it.
 
 ### Build phase
 
-On a new build, Clever Cloud selects the [Rust toolchain](#rust-version-and-tools) and runs the pre-build [hook](/doc/develop/common-configuration/build-hooks/). It then copies the sources of your dependencies with `cargo vendor --locked`, and builds your project:
+On a new build, Clever Cloud selects the [Rust toolchain](#rust-version-and-tools) and runs the pre-build [hook](/doc/manage/build-hooks/). It then copies the sources of your dependencies with `cargo vendor --locked`, and builds your project:
 
 ```bash
 cargo build --release --locked
@@ -88,7 +88,7 @@ cargo build --release --locked
 
 Cargo reads its usual environment variables during the build. Set `RUSTFLAGS` or a [Cargo variable](https://doc.rust-lang.org/cargo/reference/environment-variables.html#configuration-environment-variables) such as `CARGO_PROFILE_RELEASE_LTO` in the environment of your application to change how it compiles. With `CC_TROUBLESHOOT=true`, Cargo also runs with `--verbose`.
 
-Compiling Rust needs memory and CPU time. If your builds fail for lack of memory or take too long, enable a [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) larger than your application instances. Most Rust projects need at least an `S` build instance:
+Compiling Rust needs memory and CPU time. If your builds fail for lack of memory or take too long, enable a [dedicated build instance](/doc/manage/#dedicated-build-instance) larger than your application instances. Most Rust projects need at least an `S` build instance:
 
 ```bash
 clever scale --build-flavor S
@@ -184,7 +184,7 @@ To remove the credentials after a successful build, set `CC_POST_BUILD_HOOK="rm 
 
 ## Rust binaries as Clever Tasks
 
-A Rust binary can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the project, then runs `CC_RUN_COMMAND` instead of starting a web server. A task needs `CC_RUN_COMMAND`, even with a single binary or a `default-run`. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `worker` binary that runs once with `--once`:
+A Rust binary can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration. Clever Cloud builds the project, then runs `CC_RUN_COMMAND` instead of starting a web server. A task needs `CC_RUN_COMMAND`, even with a single binary or a `default-run`. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `worker` binary that runs once with `--once`:
 
 ```bash
 clever create --type rust --task "./target/release/worker --once"

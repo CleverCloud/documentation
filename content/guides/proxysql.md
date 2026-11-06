@@ -27,7 +27,7 @@ clever env set CC_ENABLE_MYSQL_PROXYSQL true
 
 The platform starts one ProxySQL process on each application instance and injects `CC_MYSQL_PROXYSQL_SOCKET_PATH` with the local socket path. Your application must keep using the linked add-on credentials from `MYSQL_ADDON_USER`, `MYSQL_ADDON_PASSWORD` and `MYSQL_ADDON_DB`, but use this socket instead of `MYSQL_ADDON_HOST` and `MYSQL_ADDON_PORT`.
 
-TLS is enabled between ProxySQL and MySQL by default. You can configure the maximum number of backend connections per application instance with `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS`, which defaults to `10`. See the [environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#proxysql) for all available options.
+TLS is enabled between ProxySQL and MySQL by default. You can configure the maximum number of backend connections per application instance with `CC_MYSQL_PROXYSQL_MAX_CONNECTIONS`, which defaults to `10`. See the [environment variables reference](/doc/manage/environment-variables/reference/#proxysql) for all available options.
 
 ## Connect your application
 
@@ -93,4 +93,4 @@ ProxySQL exports connection, query and error metrics for each application instan
 
 - [ProxySQL documentation](https://proxysql.com/documentation/) — Configure and operate ProxySQL
 - [MySQL add-ons](/doc/deploy/databases/mysql) — Create, link and administer MySQL databases
-- [Environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#proxysql) — Review all ProxySQL settings available on Clever Cloud
+- [Environment variables reference](/doc/manage/environment-variables/reference/#proxysql) — Review all ProxySQL settings available on Clever Cloud

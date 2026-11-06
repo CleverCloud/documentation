@@ -11,6 +11,7 @@ keywords:
 - applications
 - management
 aliases:
+- /doc/develop/common-configuration/environment-variables
 - /develop/env-variables
 - /doc/best-practices/environment-variables
 - /doc/common-configuration/environment-variables
@@ -38,7 +39,7 @@ Variables are defined on a per-application basis. They are defined in four ways:
 
 After you change the environment variables of your application, redeploy it to use the new values. When you save the exposed configuration of a linked application, or the variables of a linked [configuration provider](/doc/deploy/services/config-provider/), Clever Cloud redeploys your application, unless you stopped it.
 
-Check out our [environment variable reference](/doc/develop/common-configuration/environment-variables/reference).
+Check out our [environment variable reference](/doc/manage/environment-variables/reference).
 
 ## Special environment variables
 

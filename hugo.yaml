@@ -94,7 +94,7 @@ menu:
       pageRef: /doc/cli-reference/
       weight: 3
     - name: Environment variables
-      pageRef: /doc/develop/common-configuration/environment-variables/reference/
+      pageRef: /doc/manage/environment-variables/reference/
       weight: 4
     - name: Postmortems
       pageRef: /postmortem/

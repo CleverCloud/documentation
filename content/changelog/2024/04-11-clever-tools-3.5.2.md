@@ -44,7 +44,7 @@ clever env set CC_RUN_COMMAND "bash a_bash_script.sh"
 
 Clever Tasks will evolve with enhancements planed over the coming months. Feel free to tell us about your needs or ideas on this!
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
 Last but not least, we're introducing the access to Materia KV. Those granted with alpha access can now create a serverless, synchronously-replicated (over our 3 data centers in Paris) key-value add-on. You'll be able to use it with multiples kind of clients. First to be supported is Redis API. Thus, you can run:
 

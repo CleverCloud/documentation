@@ -38,7 +38,7 @@ To install development dependencies, set `ENVIRONMENT=development`. The `--no-de
 
 The uv cache (`~/.cache/uv`) is included in the build cache to speed up subsequent deployments.
 
-- [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
 
 ## Run phase
 

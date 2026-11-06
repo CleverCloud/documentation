@@ -93,7 +93,7 @@ CC_REQUEST_FLOW="block"
 
 ### Health check with block mode
 
-With `block` enabled, the deployment health check only verifies that the blocking service listens on port `8080` and responds `200 OK`. It doesn't send an HTTP request to your application, including when you configure [`CC_HEALTH_CHECK_PATH` or `CC_HEALTH_CHECK_PATH_0` to `CC_HEALTH_CHECK_PATH_5`](/doc/develop/common-configuration/healthcheck/).
+With `block` enabled, the deployment health check only verifies that the blocking service listens on port `8080` and responds `200 OK`. It doesn't send an HTTP request to your application, including when you configure [`CC_HEALTH_CHECK_PATH` or `CC_HEALTH_CHECK_PATH_0` to `CC_HEALTH_CHECK_PATH_5`](/doc/manage/healthcheck/).
 
 ## Custom middleware
 

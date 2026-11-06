@@ -60,11 +60,11 @@ clever create --type node
 
 Be sure that:
 
-- You listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port)
+- You listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 - You have a `package.json` file
 - Your `package.json` either has a **scripts.start** or a **main** field
 - The folder `/node_modules` is mentioned in your `.gitignore` file
-- You enable production mode by setting the [environment variable](/doc/develop/common-configuration/environment-variables/) `NODE_ENV=production`
+- You enable production mode by setting the [environment variable](/doc/manage/environment-variables/) `NODE_ENV=production`
 
 ### Memory management
 
@@ -98,7 +98,7 @@ or
 }
 ```
 
-You can use additional scripts as an alternative to [Clever Cloud hooks](/doc/develop/common-configuration/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
+You can use additional scripts as an alternative to [Clever Cloud hooks](/doc/manage/build-hooks/#hooks-types); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
 
 ```json
 {
@@ -129,14 +129,14 @@ If you need some modules you can easily add some with the *dependencies* field i
 }
 ```
 
-If your application has private dependencies, you can add a [private SSH key](/doc/develop/common-configuration/#private-ssh-key).
+If your application has private dependencies, you can add a [private SSH key](/doc/manage/#private-ssh-key).
 
 - [Use private repositories](#use-private-repositories)
 - [Manage Development Dependencies](#development-dependencies)
 
 ## Supported package managers
 
-Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](/doc/develop/common-configuration/environment-variables/) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
+Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](/doc/manage/environment-variables/) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
 
 - `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
 - `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
@@ -150,7 +150,7 @@ Clever Cloud supports any package manager compatible with Node.js ecosystem. The
 
 ### What about Deno?
 
-Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/doc/develop/common-configuration/environment-variables/reference#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
+Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/doc/manage/environment-variables/reference#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
 
 ```toml {filename="mise.toml"}
 [tools]

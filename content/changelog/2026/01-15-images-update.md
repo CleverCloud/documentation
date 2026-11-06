@@ -69,5 +69,5 @@ Composer 2.9 introduces a new default behavior: it [automatically blocks updates
 
 In next release, we will update the default Hugo version to `0.152` and only keep `0.150`and superior as available versions. If you need an older version, use Mise to set `hugo` or `hugo-extended` version in `mise.toml` file.
 
-- [Learn more about Mise on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager)
+- [Learn more about Mise on Clever Cloud](/doc/manage/environment-variables/reference/#install-tools-with-mise-package-manager)
 - [Learn more about Hugo on Clever Cloud](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build)

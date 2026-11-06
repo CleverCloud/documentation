@@ -11,6 +11,7 @@ keywords:
 - raw tcp
 - non-http protocol
 aliases:
+- /doc/develop/common-configuration/tcp-redirections
 - /doc/administrate/tcp-redirections
 - /doc/common-configuration/tcp-redirections
 ---
@@ -21,7 +22,7 @@ A TCP redirection opens a public port on the Clever Cloud load balancers and for
 
 - Your application listens on port `4040`. A [Docker container](/doc/deploy/applications/docker/#ports-mapping-and-network-groups) can use another port through `CC_DOCKER_EXPOSED_TCP_PORT`
 - Clever Cloud chooses the public port. It stays the same while the redirection exists, even when the application redeploys
-- Deployments still wait for the HTTP [health check](/doc/develop/common-configuration/healthcheck/) of your application on port `8080`: a TCP redirection doesn't replace it
+- Deployments still wait for the HTTP [health check](/doc/manage/healthcheck/) of your application on port `8080`: a TCP redirection doesn't replace it
 - The load balancers forward the bytes unchanged: your application handles TLS itself, with its own certificate
 - Your application sees the address of the load balancer, not the one of the client
 - With several instances, the load balancers spread new connections across them

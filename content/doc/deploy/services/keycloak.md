@@ -266,7 +266,7 @@ By default, your Keycloak instance is exposed through a Clever Cloud domain, as 
 
 ### Custom hostname
 
-You can use your own domain. [Just set it](/doc/develop/common-configuration/domain-names) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
+You can use your own domain. [Just set it](/doc/manage/domain-names) in the `Domains` section of the Java application of the Keycloak add-on. Then, edit the `CC_KEYCLOAK_HOSTNAME` environment variable, apply this change and restart the application.
 
 ### Admin hostname
 

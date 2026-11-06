@@ -20,6 +20,7 @@ Push your source, and the platform detects the runtime, installs your dependenci
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications" title="Applications" subtitle="Language runtimes for your code, from Node.js to Rust" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/deploy/tasks" title="Clever Tasks" subtitle="Run one-off jobs with single-job scalers" icon="play-circle" >}}
   {{< card link="/developers/doc/deploy/databases" title="Databases" subtitle="Managed SQL and NoSQL instances, or serverless Materia stores" icon="circle-stack" >}}
   {{< card link="/developers/doc/deploy/functions" title="Functions" subtitle="Serverless execution for anything that compiles to WebAssembly" icon="code-bracket" tag="Private access" >}}
   {{< card link="/developers/doc/deploy/kubernetes" title="Kubernetes" subtitle="Managed control plane on Materia etcd, vanilla Kubernetes" icon="simple:kubernetes" tag="Beta" >}}

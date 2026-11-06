@@ -35,7 +35,7 @@ In the [Console](https://console.clever-cloud.com), open the organisation of you
 3. If the organisation has applications, toggle **Link** for each one that needs the variables, then click **Next**
 4. Enter a name, select a region, then click **Next**
 
-The Console then opens the **Dashboard** of the add-on. Set the variables in its **Variables** form, then click **Update changes**. The variables follow the same [rules and formats](/doc/develop/common-configuration/environment-variables/#environment-variables-rules-and-formats) as the ones of an application.
+The Console then opens the **Dashboard** of the add-on. Set the variables in its **Variables** form, then click **Update changes**. The variables follow the same [rules and formats](/doc/manage/environment-variables/#environment-variables-rules-and-formats) as the ones of an application.
 
 With [Clever Tools](/doc/tools/cli/addons/#config-provider), create it in the organisation of your applications, replacing `my-team` with its name or ID, then set its variables:
 

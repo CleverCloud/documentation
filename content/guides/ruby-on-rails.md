@@ -47,7 +47,7 @@ clever create -t ruby -a myRailsApp
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/). A custom domain also requires DNS configuration:
+You can display your application's URL or add a [custom domain](/developers/doc/manage/domain-names/). A custom domain also requires DNS configuration:
 
 ```bash
 clever domain
@@ -94,7 +94,7 @@ clever deploy
 clever open
 ```
 
-Rails reads linked add-on variables through `ENV`, as it does for any other [environment variable](/developers/doc/develop/common-configuration/environment-variables/).
+Rails reads linked add-on variables through `ENV`, as it does for any other [environment variable](/developers/doc/manage/environment-variables/).
 
 ## Learn more
 

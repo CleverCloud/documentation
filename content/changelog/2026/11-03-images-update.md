@@ -99,7 +99,7 @@ Following the [stricter environment variable names](/changelog/2026/10-14-images
 
 ## Java tasks fix
 
-Since the [21 October release](/changelog/2026/10-21-images-update/), the deployment of a Java [Clever Task](/doc/develop/tasks/) failed without running its `CC_RUN_COMMAND`. Java tasks now run their command again.
+Since the [21 October release](/changelog/2026/10-21-images-update/), the deployment of a Java [Clever Task](/doc/deploy/tasks/) failed without running its `CC_RUN_COMMAND`. Java tasks now run their command again.
 
 ## Linux Kernel
 

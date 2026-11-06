@@ -98,7 +98,7 @@ When you edit an environment variable in simple mode, its value looks like a sin
 
 To add a new variable without reaching for the mouse, press `Ctrl+Enter`, or `Cmd+Enter` on macOS, in its value field. Then click `Update changes` before you leave the page, or your edits stay unsaved.
 
-- [Learn more about environment variables](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables](/doc/manage/environment-variables/reference/)
 
 ### Logs come supercharged
 
@@ -134,7 +134,7 @@ clever deploy
 
 The application follows the usual deployment process, then runs your command and stops when it finishes.
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
 ### Patch or redeploy a database
 
@@ -150,7 +150,7 @@ DATABASE_URL = "{{ env.POSTGRESQL_ADDON_URI }}"
 run = "node server.js"
 ```
 
-- [Learn more about database migrations](/doc/manage/database-migration/)
+- [Learn more about database migrations](/doc/develop/database-migration/)
 - [Learn more about shaping the environment with Mise](/doc/develop/mise/#shape-the-environment)
 
 ## Clever Tools
@@ -346,7 +346,7 @@ All non-Docker applications share the same image. It holds every language of the
 To pick a version, whatever the runtime of your application, set the matching variable, such as `CC_NODE_VERSION`, `CC_PHP_VERSION`, `CC_PYTHON_VERSION`, `CC_COMPOSER_VERSION`, or `CC_HUGO_VERSION`. For anything else, [Mise](/doc/develop/mise/) installs the tools your project declares in a `mise.toml` file. In a Docker application, the tools come from your image.
 
 - [Follow the tools updates in the changelog](/changelog/)
-- [List all the environment variables](/doc/develop/common-configuration/environment-variables/reference/)
+- [List all the environment variables](/doc/manage/environment-variables/reference/)
 
 ### Share variables across applications
 
@@ -362,7 +362,7 @@ By default, a deployment succeeds once your application answers on `/`, even wit
 clever env set CC_HEALTH_CHECK_PATH /health
 ```
 
-- [Learn more about health checks](/doc/develop/common-configuration/healthcheck/)
+- [Learn more about health checks](/doc/manage/healthcheck/)
 
 ### Put services in front of your application
 
@@ -404,13 +404,13 @@ Your project doesn't fit a language ecosystem, or mixes several? The Linux runti
 
 Linking a domain to an application takes a few clicks, and Clever Cloud generates its TLS certificate for you. [Sōzu](https://github.com/sozu-proxy/sozu/), the open-source load balancer of Clever Cloud, does the routing. But a domain can also serve several applications, one per path: your blog on `example.com/blog`, your API on `example.com/api`. Each one keeps its own scaling, logs, and environment variables.
 
-- [Learn more about path routing](/doc/develop/common-configuration/domain-names/#path-routing)
+- [Learn more about path routing](/doc/manage/domain-names/#path-routing)
 
 ### Pick the `cleverapps.io` subdomain you want
 
 Each new application gets an `app_id.cleverapps.io` domain, but you can pick any free subdomain instead, such as `my-demo.cleverapps.io`. It's handy for demos and testing. `cleverapps.io` is a shared domain, though, not made for production. Link your own domain when you go live, and remove the `cleverapps.io` one if you don't need it anymore.
 
-- [Learn more about domain names](/doc/develop/common-configuration/domain-names/)
+- [Learn more about domain names](/doc/manage/domain-names/)
 
 ### Distribute your own add-ons
 

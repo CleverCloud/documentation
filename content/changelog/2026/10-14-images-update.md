@@ -61,7 +61,7 @@ clever env set CC_PHP_VERSION 8.4
 
 ## Stricter environment variable names
 
-Variable names with dots (`.`) or dashes (`-`) are Java properties, only allowed in Java applications. Deploying any other application with such a variable now fails, with an error listing the variables to remove. Previous releases silently left variables with dots out of the environment. Names that don't follow the [environment variable rules](/doc/develop/common-configuration/environment-variables/#rules) are also rejected.
+Variable names with dots (`.`) or dashes (`-`) are Java properties, only allowed in Java applications. Deploying any other application with such a variable now fails, with an error listing the variables to remove. Previous releases silently left variables with dots out of the environment. Names that don't follow the [environment variable rules](/doc/manage/environment-variables/#rules) are also rejected.
 
 In Java applications, variables with dashes are now passed as Java system properties, as variables with dots already were.
 

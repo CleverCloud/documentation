@@ -36,7 +36,7 @@ git init
 
 This guide targets Ghost `6.60.0`. To deploy another release, adapt `GHOST_VERSION` and use a Node.js version accepted by that release as described in the update section.
 
-[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Ghost release, install its production dependencies and define the commands used by the Linux runtime:
+[Mise is available on Clever Cloud](/developers/doc/manage/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Ghost release, install its production dependencies and define the commands used by the Linux runtime:
 
 ```toml {filename="mise.toml"}
 [tools]
@@ -112,7 +112,7 @@ clever create -t linux -a myGhost
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

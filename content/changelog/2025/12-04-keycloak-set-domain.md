@@ -24,4 +24,4 @@ clever addon create keycloak yourKeycloakNameOrId --option access-domain=keycloa
 This domain DNS configuration needs to point to Clever Cloud's servers. For example, if the Keycloak add-on is deployed in the `par` (Paris) region, you need to create a CNAME record pointing to `domain.par.clever-cloud.com.`.
 
 - [Learn more about Keycloak on Clever Cloud](/doc/deploy/services/keycloak/)
-- [Learn more about DNS and custom domains on Clever Cloud](/doc/develop/common-configuration/domain-names/)
+- [Learn more about DNS and custom domains on Clever Cloud](/doc/manage/domain-names/)

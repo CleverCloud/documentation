@@ -27,7 +27,7 @@ An application declares all its dependencies, and doesn't rely on what the syste
 
 ## Configuration
 
-What changes between two deployments of the same code, such as credentials or the URL of a service, belongs to the environment, not to the code. Set it in the [environment variables](/doc/develop/common-configuration/environment-variables/) of each application: the same code then runs in staging and production with different values, and your secrets stay out of your repository. After a change, redeploy your application to use the new values.
+What changes between two deployments of the same code, such as credentials or the URL of a service, belongs to the environment, not to the code. Set it in the [environment variables](/doc/manage/environment-variables/) of each application: the same code then runs in staging and production with different values, and your secrets stay out of your repository. After a change, redeploy your application to use the new values.
 
 ## Backing services
 
@@ -35,7 +35,7 @@ A database, a cache, or a message broker is an attached resource, reached throug
 
 ## Build, release, run
 
-Building the code, combining it with its configuration, and running it are separate stages. On Clever Cloud, the build installs your dependencies and compiles your code, then each deployment starts new instances with this build and the current configuration. [Deployment hooks](/doc/develop/common-configuration/build-hooks/) let you add commands to each stage, and the build cache speeds up the next deployments.
+Building the code, combining it with its configuration, and running it are separate stages. On Clever Cloud, the build installs your dependencies and compiles your code, then each deployment starts new instances with this build and the current configuration. [Deployment hooks](/doc/manage/build-hooks/) let you add commands to each stage, and the build cache speeds up the next deployments.
 
 ## Processes
 
@@ -43,15 +43,15 @@ The processes of an application are stateless, and share nothing. Clever Cloud c
 
 ## Port binding
 
-An application serves HTTP by listening on a port, where the load balancer sends the traffic of your domains. If your application starts its own HTTP server, make it listen on [`0.0.0.0:$PORT`](/doc/develop/common-configuration/#listen-on-the-right-port). Clever Cloud configures managed web servers, such as the one of PHP.
+An application serves HTTP by listening on a port, where the load balancer sends the traffic of your domains. If your application starts its own HTTP server, make it listen on [`0.0.0.0:$PORT`](/doc/manage/#listen-on-the-right-port). Clever Cloud configures managed web servers, such as the one of PHP.
 
 ## Concurrency
 
-An application scales out by running more processes. Separate the processes that serve requests from those that run background jobs: on Clever Cloud, [workers](/doc/develop/common-configuration/workers/) run the latter next to your application, and [horizontal scaling](/doc/develop/common-configuration/scaling/#horizontal-scaling) adds instances that run both. A runtime that handles requests on a single thread, such as Node.js, needs several processes to use all the vCPU of an instance.
+An application scales out by running more processes. Separate the processes that serve requests from those that run background jobs: on Clever Cloud, [workers](/doc/manage/workers/) run the latter next to your application, and [horizontal scaling](/doc/manage/scaling/#horizontal-scaling) adds instances that run both. A runtime that handles requests on a single thread, such as Node.js, needs several processes to use all the vCPU of an instance.
 
 ## Disposability
 
-Processes start fast and stop cleanly. Clever Cloud replaces instances during deployments, scaling, and maintenance: a fast start shortens each replacement, and [zero downtime deployment](/doc/develop/common-configuration/#zero-downtime-deployment) waits for the [health check](/doc/develop/common-configuration/healthcheck/). When an instance stops, its processes receive `SIGTERM`, and it shuts down shortly after, without waiting for your jobs: stop taking new work, keep requests short, and make interrupted [jobs](/doc/develop/common-configuration/workers/) safe to run again.
+Processes start fast and stop cleanly. Clever Cloud replaces instances during deployments, scaling, and maintenance: a fast start shortens each replacement, and [zero downtime deployment](/doc/manage/#zero-downtime-deployment) waits for the [health check](/doc/manage/healthcheck/). When an instance stops, its processes receive `SIGTERM`, and it shuts down shortly after, without waiting for your jobs: stop taking new work, keep requests short, and make interrupted [jobs](/doc/manage/workers/) safe to run again.
 
 ## Dev/prod parity
 
@@ -63,6 +63,6 @@ An application writes its logs as a stream of events on its standard output, and
 
 ## Admin processes
 
-One-off administration commands run in the same environment as the application. On Clever Cloud, run a database migration or a data import as a [Clever Task](/doc/develop/tasks/): an application that runs one command, then stops. Deploy it from the same commit as your application, and give it the same variables and add-ons, so that it runs the same code against the same services. To inspect a running instance, connect to it through [SSH](/doc/develop/ssh-access/).
+One-off administration commands run in the same environment as the application. On Clever Cloud, run a database migration or a data import as a [Clever Task](/doc/deploy/tasks/): an application that runs one command, then stops. Deploy it from the same commit as your application, and give it the same variables and add-ons, so that it runs the same code against the same services. To inspect a running instance, connect to it through [SSH](/doc/develop/ssh-access/).
 
 - [Read The Twelve-Factor App](https://12factor.net/)

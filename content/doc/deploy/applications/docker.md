@@ -43,10 +43,10 @@ Other runtimes run your application in an environment Clever Cloud prepares and 
 
 Thus, features that rely on the application environment of other runtimes don't apply to Docker applications:
 
-- [Workers](/doc/develop/common-configuration/workers/): start your background processes from your image
+- [Workers](/doc/manage/workers/): start your background processes from your image
 - [CRON jobs](/doc/develop/cron/) of a `clevercloud/cron.json` file: run a scheduler within your container
 - [Request Flow](/doc/develop/request-flow/) middleware, such as Varnish or Redirection.io: run them in your container
-- [Deployment hooks](/doc/develop/common-configuration/build-hooks/), except `CC_RUN_SUCCEEDED_HOOK`, which runs inside the container: put the build steps in your Dockerfile
+- [Deployment hooks](/doc/manage/build-hooks/), except `CC_RUN_SUCCEEDED_HOOK`, which runs inside the container: put the build steps in your Dockerfile
 
 Docker applications don't support [FS Buckets](/doc/deploy/storage/fs-bucket/) and [Docker Compose](https://docs.docker.com/compose/): each instance runs one application container. For several containers working together or persistent volumes, use [Clever Kubernetes Engine](/doc/deploy/kubernetes/), and manage your add-ons with the [Clever Kubernetes Operator](/doc/deploy/kubernetes/operator/).
 
@@ -97,7 +97,7 @@ The container writes its logs to its standard output and error: Clever Cloud col
 
 On a new build, Clever Cloud builds the image with [Buildx](https://docs.docker.com/build/). The build context is the root of your project, or the folder set in `APP_FOLDER`. Set `CC_DOCKER_BUILDX=false` to use the legacy builder instead (deprecated, and to be removed).
 
-Clever Cloud passes each [environment variable](/doc/develop/common-configuration/environment-variables/) of your application with `--build-arg`. Declare the ones a build step needs with an [`ARG`](https://docs.docker.com/reference/dockerfile/#arg) instruction. For instance, a [Vite](https://vite.dev/) application embeds its `VITE_*` variables in its files at build time. With a `VITE_API_URL` environment variable, this Dockerfile builds the application, then serves it with Nginx. Declare `ARG` in the stage that uses it:
+Clever Cloud passes each [environment variable](/doc/manage/environment-variables/) of your application with `--build-arg`. Declare the ones a build step needs with an [`ARG`](https://docs.docker.com/reference/dockerfile/#arg) instruction. For instance, a [Vite](https://vite.dev/) application embeds its `VITE_*` variables in its files at build time. With a `VITE_API_URL` environment variable, this Dockerfile builds the application, then serves it with Nginx. Declare `ARG` in the stage that uses it:
 
 ```dockerfile {filename="Dockerfile"}
 FROM node:26-alpine AS build
@@ -120,7 +120,7 @@ To build again from scratch, restart without the cache (rebuild):
 clever restart --without-cache
 ```
 
-If a build fails for lack of memory, enable a [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) larger than your application instances.
+If a build fails for lack of memory, enable a [dedicated build instance](/doc/manage/#dedicated-build-instance) larger than your application instances.
 
 ### Optimize your image
 
@@ -175,7 +175,7 @@ If one of the credentials is missing or the login fails, Clever Cloud builds the
 
 ### Ports, Mapping, and Network Groups
 
-The container receives HTTP traffic on port `8080`, and the traffic of [TCP redirections](/doc/develop/common-configuration/tcp-redirections/) on port `4040`. Its network depends on the ports it listens on. With the default ports, the container shares the network of the instance (`--net host`). If it's part of a [Network Group](/doc/network/network-groups/), the other members can reach every port your application listens on, such as an internal API on port `9000`. It works as with any other runtime.
+The container receives HTTP traffic on port `8080`, and the traffic of [TCP redirections](/doc/manage/tcp-redirections/) on port `4040`. Its network depends on the ports it listens on. With the default ports, the container shares the network of the instance (`--net host`). If it's part of a [Network Group](/doc/network/network-groups/), the other members can reach every port your application listens on, such as an internal API on port `9000`. It works as with any other runtime.
 
 If your container needs to map ports `8080` and `4040` of the instance to other ports, set them in `CC_DOCKER_EXPOSED_HTTP_PORT` and `CC_DOCKER_EXPOSED_TCP_PORT`. Docker then uses `-p 8080:<http_port>` and `-p 4040:<tcp_port>`, and the container doesn't share the network of the instance anymore. In such a configuration, the other ports of the container are unreachable, even from a Network Group.
 
@@ -194,7 +194,7 @@ Some containers need the Docker socket, to start sibling containers for instance
 
 ## Docker applications as Clever Tasks
 
-A Docker container can run as a [Clever Task](/doc/develop/tasks/), such as a job or a migration. Clever Cloud builds the image, runs the container, and stops the task when the container exits. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks).
+A Docker container can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration. Clever Cloud builds the image, runs the container, and stops the task when the container exits. Configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks).
 
 A Docker task runs the `CMD` or `ENTRYPOINT` of the image, not `CC_RUN_COMMAND`, nor the command you give to `clever create --task`. Build an image whose command exits once it finishes its work, or the task keeps running.
 

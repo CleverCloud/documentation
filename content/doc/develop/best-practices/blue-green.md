@@ -20,10 +20,10 @@ A Blue/Green deployment starts the new version, *green*, next to the current one
 
 ## Each deployment on Clever Cloud
 
-With [zero downtime deployment](/doc/develop/common-configuration/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/best-practices/immutable-infrastructure/):
+With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/best-practices/immutable-infrastructure/):
 
 1. Clever Cloud builds your code and starts new instances, next to the running ones
-2. The new instances must pass the [health check](/doc/develop/common-configuration/healthcheck/)
+2. The new instances must pass the [health check](/doc/manage/healthcheck/)
 3. The load balancer sends the traffic to the new instances, then the old ones stop
 
 Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions.

@@ -54,7 +54,7 @@ clever env set CC_FS_BUCKET "/uploads:bucket-<uuid>-fsbucket.services.clever-clo
 clever restart
 ```
 
-The path is relative to the root of your application: `/uploads` stands for `/home/bas/<app_id>/uploads`. If this folder exists in your repository, it must be empty, otherwise the deployment fails. The mount happens before the build, so [build hooks](/doc/develop/common-configuration/build-hooks/) can read and write the files of the bucket.
+The path is relative to the root of your application: `/uploads` stands for `/home/bas/<app_id>/uploads`. If this folder exists in your repository, it must be empty, otherwise the deployment fails. The mount happens before the build, so [build hooks](/doc/manage/build-hooks/) can read and write the files of the bucket.
 
 To mount several buckets, add a number to the name of the variable. Each folder can only hold one bucket:
 
@@ -67,7 +67,7 @@ By default, each write waits for the bucket server to receive it. Add `:async` a
 
 ## Access your files
 
-Your application reads and writes the files in the mounted folder. For an absolute path, start from the `APP_HOME` [environment variable](/doc/develop/common-configuration/environment-variables/).
+Your application reads and writes the files in the mounted folder. For an absolute path, start from the `APP_HOME` [environment variable](/doc/manage/environment-variables/).
 
 The **Dashboard** of the add-on in the [Console](https://console.clever-cloud.com) shows the files of the bucket. From your computer, connect with an FTP or SFTP client to the host in `BUCKET_HOST`, with `BUCKET_FTP_USERNAME` and `BUCKET_FTP_PASSWORD`:
 

@@ -141,7 +141,7 @@ Use the `.pub` file. The command registers its contents under the name `workstat
 
 ## Use a private SSH key in an application
 
-To let an application fetch private dependencies over SSH, configure its [private SSH key](/doc/develop/common-configuration/#private-ssh-key). This key authenticates outgoing connections from the application; it doesn't grant access to your Clever Cloud account.
+To let an application fetch private dependencies over SSH, configure its [private SSH key](/doc/manage/#private-ssh-key). This key authenticates outgoing connections from the application; it doesn't grant access to your Clever Cloud account.
 
 ## Check your SSH configuration
 

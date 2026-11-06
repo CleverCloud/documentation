@@ -26,13 +26,13 @@ clever create --type {{ .File.ContentBaseName }}
 
 The {{ replace .File.ContentBaseName "-" " " | title }} runtime only requires a working application listening on `0.0.0.0:8080`.
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### Build phase
 
 During the build phase,
 
-- [Learn more about deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about deployment hooks](/doc/manage/build-hooks/)
 
 ### {{ replace .File.ContentBaseName "-" " " | title }} version
 
@@ -43,4 +43,4 @@ clever create --type {{ .File.ContentBaseName }} --task "./run-task.sh"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)

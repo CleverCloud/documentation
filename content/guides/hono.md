@@ -94,7 +94,7 @@ clever env set CC_NODE_DEV_DEPENDENCIES install
 clever env set CC_POST_BUILD_HOOK "npm run build"
 ```
 
-By default, Clever Cloud only installs production dependencies, so `typescript` would be missing when `tsc` runs. `CC_NODE_DEV_DEPENDENCIES` includes development dependencies, and `CC_POST_BUILD_HOOK` builds `dist/` before the generated `start` script runs. No `PORT` variable needs to be set for this deployment because Clever Cloud injects it automatically. If your project grows, you can [increase the build or runtime instance size](/developers/doc/develop/common-configuration/scaling/).
+By default, Clever Cloud only installs production dependencies, so `typescript` would be missing when `tsc` runs. `CC_NODE_DEV_DEPENDENCIES` includes development dependencies, and `CC_POST_BUILD_HOOK` builds `dist/` before the generated `start` script runs. No `PORT` variable needs to be set for this deployment because Clever Cloud injects it automatically. If your project grows, you can [increase the build or runtime instance size](/developers/doc/manage/scaling/).
 
 ### Deploy your code
 
@@ -114,7 +114,7 @@ clever deploy
 clever open
 ```
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

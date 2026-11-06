@@ -38,7 +38,7 @@ Get your Elixir version in your console with `$ elixir -v` and set the environme
 
 {{< runtimes_versions elixir >}}
 
-Your application listens on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
+Your application listens on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
 
 #### Compatibility between Elixir and Erlang/OTP
 

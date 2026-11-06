@@ -82,7 +82,7 @@ During a rolling deployment, old and new instances can run simultaneously. The m
 2 × maximum running instances × CC_PGPOOL_NUM_INIT_CHILDREN
 ```
 
-Keep this result below the PostgreSQL plan's connection limit and reserve capacity for administration or other clients. See the [environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#pgpool-ii) for connection lifetime, logging, health check and query cache settings.
+Keep this result below the PostgreSQL plan's connection limit and reserve capacity for administration or other clients. See the [environment variables reference](/doc/manage/environment-variables/reference/#pgpool-ii) for connection lifetime, logging, health check and query cache settings.
 
 ## Configure read replicas
 
@@ -134,4 +134,4 @@ Detaching the leader or an unreplicated backend interrupts database access. Only
 
 - [Pgpool-II documentation](https://www.pgpool.net/docs/latest/en/html/) — Configure pooling, load balancing and monitoring
 - [PostgreSQL add-ons](/doc/deploy/databases/postgresql) — Create, link and administer PostgreSQL databases
-- [Environment variables reference](/doc/develop/common-configuration/environment-variables/reference/#pgpool-ii) — Review all Pgpool-II settings available on Clever Cloud
+- [Environment variables reference](/doc/manage/environment-variables/reference/#pgpool-ii) — Review all Pgpool-II settings available on Clever Cloud

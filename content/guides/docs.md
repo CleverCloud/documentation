@@ -20,7 +20,7 @@ keywords:
 
 [Docs](https://github.com/suitenumerique/docs) combines a Django API, a Next.js static frontend and a Node.js collaboration server. This guide deploys these components with [PostgreSQL](/developers/doc/deploy/databases/postgresql/), [Redis](/developers/doc/deploy/databases/redis/), [Cellar S3-compatible object storage](/developers/doc/deploy/storage/cellar/) and [Keycloak](/developers/doc/deploy/services/keycloak/).
 
-The deployment uses one custom domain and [path routing](/developers/doc/develop/common-configuration/domain-names/#path-routing) to expose the following applications:
+The deployment uses one custom domain and [path routing](/developers/doc/manage/domain-names/#path-routing) to expose the following applications:
 
 | Application   | Runtime | Route                                     | Purpose                                         |
 | ------------- | ------- | ----------------------------------------- | ----------------------------------------------- |
@@ -87,7 +87,7 @@ The build hook runs migrations after dependencies are installed. The run command
 
 ### Configure the private media proxy
 
-[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create a dedicated directory and declare Caddy through Mise's GitHub backend:
+[Mise is available on Clever Cloud](/developers/doc/manage/environment-variables/reference/#install-tools-with-mise-package-manager). Create a dedicated directory and declare Caddy through Mise's GitHub backend:
 
 ```bash
 mkdir media-proxy
@@ -203,7 +203,7 @@ clever domain add "$DOCS_DOMAIN/api/convert/" -a myDocsCollaboration
 clever domain add "$DOCS_DOMAIN/media/" -a myDocsMedia
 ```
 
-Configure the required [DNS record](/developers/doc/develop/common-configuration/domain-names/) for the custom domain. Keep the trailing slash on each path route.
+Configure the required [DNS record](/developers/doc/manage/domain-names/) for the custom domain. Keep the trailing slash on each path route.
 
 ## Configure Keycloak
 

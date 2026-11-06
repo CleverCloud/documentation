@@ -11,6 +11,7 @@ keywords:
 - operational controls
 - zero downtime deployment
 aliases:
+- /doc/develop/common-configuration/lifecycle
 - /administrate/apps-management
 - /doc/admin-console/apps-management
 - /doc/administrate/apps-management
@@ -34,7 +35,7 @@ Stop functionality is useful during the development of the application to limit 
 ![Manage your application from the Console](/images/app-management.png)
 
 > [!NOTE]
-> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/common-configuration/environment-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
+> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/manage/environment-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
 
 ## Deploy an old commit
 
@@ -46,7 +47,7 @@ In the **Information** menu of your application in the Clever Cloud console, ren
 
 ![Edit your application](/images/application-edit.png)
 
-- [Learn more about application settings](/doc/develop/common-configuration/#application-settings)
+- [Learn more about application settings](/doc/manage/#application-settings)
 
 ## Archiving/Unarchiving your application
 

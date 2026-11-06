@@ -121,7 +121,7 @@ PORT="9000"
 
 The platform health check requests your application through the public port, which OAuth2 Proxy now answers. A redirect to the login page still counts as a healthy answer, so the default health check keeps working.
 
-This changes as soon as you configure [`CC_HEALTH_CHECK_PATH`](/doc/develop/common-configuration/healthcheck/), which expects a `2xx` status. An authenticated path never returns one to the health check, so exclude it from authentication:
+This changes as soon as you configure [`CC_HEALTH_CHECK_PATH`](/doc/manage/healthcheck/), which expects a `2xx` status. An authenticated path never returns one to the health check, so exclude it from authentication:
 
 ```bash
 CC_HEALTH_CHECK_PATH="/health"
@@ -156,4 +156,4 @@ A login that loops between your application and the identity provider points to 
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
 - [Learn more about OAuth2 Proxy configuration](https://oauth2-proxy.github.io/oauth2-proxy/)
-- [Configure your health check](/doc/develop/common-configuration/healthcheck/)
+- [Configure your health check](/doc/manage/healthcheck/)

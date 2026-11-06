@@ -202,7 +202,7 @@ clever env set PROTOCOL_HEADER "x-forwarded-proto"
 clever env set HOST_HEADER "host"
 ```
 
-Clever Cloud provides the `PORT` environment variable expected by `adapter-node`. `PROTOCOL_HEADER` and `HOST_HEADER` let SvelteKit reconstruct the public URL from requests forwarded by Clever Cloud, including requests made through a [custom domain](/developers/doc/develop/common-configuration/domain-names/).
+Clever Cloud provides the `PORT` environment variable expected by `adapter-node`. `PROTOCOL_HEADER` and `HOST_HEADER` let SvelteKit reconstruct the public URL from requests forwarded by Clever Cloud, including requests made through a [custom domain](/developers/doc/manage/domain-names/).
 
 ## Deploy the application
 
@@ -216,7 +216,7 @@ clever deploy
 clever open
 ```
 
-You can display the application's domains or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/):
+You can display the application's domains or add a [custom domain](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

@@ -116,7 +116,7 @@ clever env set CC_SSH_PRIVATE_KEY -- "$(cat ~/.ssh/id_ed25519_dependencies)"
 
 Write `--` before the key, otherwise Clever Tools reads its `-----BEGIN` line as an option.
 
-- [Learn more about the private SSH key](/doc/develop/common-configuration/#private-ssh-key)
+- [Learn more about the private SSH key](/doc/manage/#private-ssh-key)
 {{% /details %}}
 
 {{% details title="I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?" closed="true" %}}
@@ -169,12 +169,12 @@ All instances on Clever Cloud run on the UTC timezone. We recommend to handle al
 
 {{% details title="How to setup domain names I own?" closed="true" %}}
 
-You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/develop/common-configuration/domain-names).
+You can bind custom domain names to your applications. Please have a look at [Custom Domain Names](/doc/manage/domain-names).
 {{% /details %}}
 
 {{% details title="I'd like to have two applications available on the same domain name" closed="true" %}}
 
-Refer to [prefix routing](/doc/develop/common-configuration/domain-names/#path-routing) to learn how to have two applications share a domain name.
+Refer to [prefix routing](/doc/manage/domain-names/#path-routing) to learn how to have two applications share a domain name.
 {{% /details %}}
 
 {{% details title="Does Clever Cloud support TLS/SSL (HTTPS)?" closed="true" %}}

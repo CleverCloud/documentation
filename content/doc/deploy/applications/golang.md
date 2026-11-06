@@ -42,12 +42,12 @@ Clever Cloud allows you to deploy any Go application. This page explains how to 
 Be sure that your application:
 
 - Listens on `0.0.0.0`, not only `localhost` or `127.0.0.1`
-- Listens on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port)
+- Listens on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 - Contains a valid build configuration (see below)
 
 ### Complementary runtime
 
-Go instances include additional runtime environments such as [Node.js](/doc/deploy/applications/nodejs) that you can use through scripts launched by [deployment hooks](/doc/develop/common-configuration/build-hooks). Some of these runtimes can be configured through environment variables. For example, to use a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `24` or `24.13.0`).
+Go instances include additional runtime environments such as [Node.js](/doc/deploy/applications/nodejs) that you can use through scripts launched by [deployment hooks](/doc/manage/build-hooks). Some of these runtimes can be configured through environment variables. For example, to use a specific version of Node.js, set `CC_NODE_VERSION` (it could be `node` (latest), `lts/*`, `24` or `24.13.0`).
 
 ### Modern Go project structure
 

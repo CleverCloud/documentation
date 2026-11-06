@@ -33,7 +33,7 @@ git init
 
 This guide targets Outline `v1.9.2`. To deploy another Outline release, adjust `OUTLINE_VERSION` and `CC_NODE_VERSION` as described below.
 
-[Mise is available on Clever Cloud](/developers/doc/develop/common-configuration/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Outline release during the build phase, install its dependencies, and define the commands used by the Linux runtime:
+[Mise is available on Clever Cloud](/developers/doc/manage/environment-variables/reference/#install-tools-with-mise-package-manager). Create the following `mise.toml` file to download the selected Outline release during the build phase, install its dependencies, and define the commands used by the Linux runtime:
 
 ```toml {filename="mise.toml"}
 [tools."http:outline"]
@@ -85,7 +85,7 @@ clever create -t linux -a myOutline
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
-You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's URL or add a custom domain. A custom domain also requires [DNS configuration](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

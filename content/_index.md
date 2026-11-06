@@ -66,7 +66,7 @@ aliases:
   {{< hextra/feature-card
     title="Environment Variables"
     subtitle="Configure your applications, their deployment, and their behavior, and get the credentials of their add-ons"
-    link="/developers/doc/develop/common-configuration/environment-variables/reference"
+    link="/developers/doc/manage/environment-variables/reference"
   >}}
 
   {{< hextra/feature-card

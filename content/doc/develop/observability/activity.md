@@ -49,7 +49,7 @@ From the Console, **Redeploy this commit** deploys the commit of an entry again,
 | `DOWNSCALE` | Removes instances, or reduces their size                   |
 | `REPLACE`   | Replaces instances of your application                     |
 
-Scaling actions follow a change of [scaling](/doc/develop/common-configuration/scaling/) you make, or autoscaling. A change you make can appear as `UPSCALE` even when it reduces the size: the logs of the deployment show the resulting instances.
+Scaling actions follow a change of [scaling](/doc/manage/scaling/) you make, or autoscaling. A change you make can appear as `UPSCALE` even when it reduces the size: the logs of the deployment show the resulting instances.
 
 ## Deployments triggered by Clever Cloud
 
@@ -65,5 +65,5 @@ The cause of a monitoring deployment starts with `Monitoring/`:
 | `Monitoring/Timeout`     | The monitoring agent of an instance didn't send its probes in time                        |
 | `Monitoring/Unreachable` | The monitoring can't reach the agent of an instance, and redeploys your application       |
 
-- [Learn more about scaling](/doc/develop/common-configuration/scaling/)
+- [Learn more about scaling](/doc/manage/scaling/)
 - [Learn more about logs](/doc/develop/observability/logs/)

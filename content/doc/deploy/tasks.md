@@ -11,6 +11,7 @@ keywords:
 - automation
 - deployment
 aliases:
+- /doc/develop/tasks
 - /doc/develop/clever-tasks
 - /doc/tasks
 ---
@@ -29,7 +30,7 @@ Make sure you have [Clever Tools installed](/doc/tools/cli/) and in your project
    2. `zone` deployment zone (`par` for Paris or `mtl` for Montreal for example)
    3. `org` the organisation ID the application will be created under
 
-You can create an application as a task without command to execute and define it later with the `CC_RUN_COMMAND` [environment variable](/doc/develop/common-configuration/environment-variables/reference/).
+You can create an application as a task without command to execute and define it later with the `CC_RUN_COMMAND` [environment variable](/doc/manage/environment-variables/reference/).
 
 ### With the console
 

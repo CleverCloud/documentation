@@ -21,4 +21,4 @@ clever env set CC_PHP_VERSION 8.3 --app <your-app-id>
 ```
 
 - [Learn more about PHP on Clever Cloud](/doc/deploy/applications/php/)
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)

@@ -63,7 +63,7 @@ For example, with *Flask*, this is the name of your main server file, followed b
 
 You can also use `CC_RUN_COMMAND` to launch a Python application with a custom command. Nginx then stays in front of your command, so it must listen on port `9000`, even without [Request Flow](/doc/develop/request-flow/). If your command reads `PORT`, set `PORT=9000`.
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### Python version
 
@@ -92,7 +92,7 @@ You can define a custom `requirements.txt` file with the environment variable `C
 
 #### Enabling dependencies caching
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](/doc/develop/common-configuration/environment-variables/) in your application. It is enabled by default only for rust and haskell applications.
+You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](/doc/manage/environment-variables/) in your application. It is enabled by default only for rust and haskell applications.
 
 #### Disabling dependencies caching
 
@@ -112,7 +112,7 @@ The goal will be launched after the dependencies from `requirements.txt` have be
 
 To execute a goal, define the environment variable `CC_PYTHON_SETUP_PY_GOAL="<your goal>"`.
 
-- [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
 
 #### Django manage.py tasks
 

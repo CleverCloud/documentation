@@ -13,6 +13,7 @@ keywords:
 - flavor
 - instances
 aliases:
+- /doc/develop/common-configuration/scaling
 - /administrate/scalability
 - /doc/administrate/instances
 - /doc/administrate/scalability
@@ -36,7 +37,7 @@ Your application runs on one or more instances of the same size, behind the load
 | vCPU   | 1*      | 1*      | 1     | 2     | 4     | 6     | 8      | 12     | 16     |
 | Memory | 256 MiB | 512 MiB | 1 GiB | 2 GiB | 4 GiB | 8 GiB | 16 GiB | 24 GiB | 32 GiB |
 
-\* `pico` and `nano` instances share their vCPU with a lower priority, and always build on a [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance). `XS` is the default size for new applications. The smallest size is `pico`, or `nano` for PHP, FrankenPHP, Static with Apache, and Docker applications.
+\* `pico` and `nano` instances share their vCPU with a lower priority, and always build on a [dedicated build instance](/doc/manage/#dedicated-build-instance). `XS` is the default size for new applications. The smallest size is `pico`, or `nano` for PHP, FrankenPHP, Static with Apache, and Docker applications.
 
 ## Fixed size and number
 
@@ -52,7 +53,7 @@ A change of the size or of the number of instances starts a deployment right awa
 
 Clever Cloud monitors the CPU and memory usage of your instances. When it stays high for a few minutes, it scales your application up within the ranges you set, and scales it down when the load drops. Autoscaling absorbs lasting load increases, not short peaks.
 
-Each change is a deployment. With [zero downtime deployment](/doc/develop/common-configuration/#zero-downtime-deployment), enabled by default, new instances start before the old ones stop. The [activity](/doc/develop/observability/activity/) of your application lists them as `UPSCALE` or `DOWNSCALE`, triggered by `Monitoring/Scaling`.
+Each change is a deployment. With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, new instances start before the old ones stop. The [activity](/doc/develop/observability/activity/) of your application lists them as `UPSCALE` or `DOWNSCALE`, triggered by `Monitoring/Scaling`.
 
 ### Vertical scaling
 
@@ -82,9 +83,9 @@ With zero downtime deployment, a new deployment keeps the size and the number of
 
 Each instance runs its own copy of your application, which changes a few things:
 
-- Each instance runs your [CRON jobs](/doc/develop/cron/) and your [workers](/doc/develop/common-configuration/workers/). To keep a job from running on every instance, see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
+- Each instance runs your [CRON jobs](/doc/develop/cron/) and your [workers](/doc/manage/workers/). To keep a job from running on every instance, see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
 - Local files aren't shared, and disappear with their instance: use an [FS Bucket](/doc/deploy/storage/fs-bucket/) or [Cellar Object Storage](/doc/deploy/storage/cellar/).
-- Sessions kept in memory only exist on one instance. Store them in a [Materia KV](/doc/deploy/databases/materia-kv/) or [Redis®](/doc/deploy/databases/redis/) add-on, or enable [sticky sessions](/doc/develop/common-configuration/#sticky-sessions).
+- Sessions kept in memory only exist on one instance. Store them in a [Materia KV](/doc/deploy/databases/materia-kv/) or [Redis®](/doc/deploy/databases/redis/) add-on, or enable [sticky sessions](/doc/manage/#sticky-sessions).
 - The `INSTANCE_NUMBER` environment variable, `0`, `1`, and so on, tells your application which instance it runs on.
 
 Clever Cloud bills each instance for the seconds it runs, within the ranges you set.

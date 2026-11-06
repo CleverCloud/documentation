@@ -11,6 +11,7 @@ keywords:
 - domain management
 - url routing
 aliases:
+- /doc/develop/common-configuration/domain-names
 - /doc/admin-console/custom-domain-names
 - /doc/administrate/domain-names
 - /guides/domain-names

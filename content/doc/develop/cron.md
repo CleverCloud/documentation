@@ -23,7 +23,7 @@ aliases:
 To run a command at regular intervals, such as cleaning a cache every night or sending a report every Monday, add a `clevercloud/cron.json` file to your project. At each deployment, Clever Cloud installs its jobs on every instance of your application.
 
 > [!NOTE] Not available on Docker and task applications
-> Docker applications and [Clever Tasks](/doc/develop/tasks/) don't run the jobs of `clevercloud/cron.json`. In a Docker application, run a scheduler inside your container. To run a task on a schedule, [restart it from a job of another application](/doc/develop/tasks/#running-from-a-cron).
+> Docker applications and [Clever Tasks](/doc/deploy/tasks/) don't run the jobs of `clevercloud/cron.json`. In a Docker application, run a scheduler inside your container. To run a task on a schedule, [restart it from a job of another application](/doc/deploy/tasks/#running-from-a-cron).
 
 ## Add a job
 
@@ -142,7 +142,7 @@ If you commit from a Windows computer, where Git doesn't record the permissions 
 ]
 ```
 
-Don't write `/bin/bash $ROOT/crons/sync-orders.sh`: this command starts a shell that ignores the shebang and its `-l` option, so the script runs without your environment variables. The [environment variables page](/doc/develop/common-configuration/environment-variables/#special-environment-variables) lists the variables Clever Cloud adds to yours.
+Don't write `/bin/bash $ROOT/crons/sync-orders.sh`: this command starts a shell that ignores the shebang and its `-l` option, so the script runs without your environment variables. The [environment variables page](/doc/manage/environment-variables/#special-environment-variables) lists the variables Clever Cloud adds to yours.
 
 ### Read the output
 
@@ -182,4 +182,4 @@ A job can also last longer than its interval, and start again while the previous
 ]
 ```
 
-A job stops with its instance, at the end of a deployment or when the application scales down. The cron daemon doesn't catch up on occurrences it misses: if your application is stopped at the scheduled time, the job waits for its next occurrence. For long or heavy work, such as a large import, run a [Clever Task](/doc/develop/tasks/) from a short job instead. The task then doesn't share the resources of the instances that serve your application.
+A job stops with its instance, at the end of a deployment or when the application scales down. The cron daemon doesn't catch up on occurrences it misses: if your application is stopped at the scheduled time, the job waits for its next occurrence. For long or heavy work, such as a large import, run a [Clever Task](/doc/deploy/tasks/) from a short job instead. The task then doesn't share the resources of the instances that serve your application.

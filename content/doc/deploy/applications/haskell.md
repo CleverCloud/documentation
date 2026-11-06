@@ -42,7 +42,7 @@ There are many ways to write web applications in Haskell, from raw [WAI](https:/
 Be sure that:
 
 - you have pushed in **master branch**
-- you listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port)
+- you listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 - you have one and only one binary target in your [`.cabal` file](#dependencies)
 - your project has a `stack.yaml` file
 

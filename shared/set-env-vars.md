@@ -13,6 +13,6 @@
 1. Make sure you have clever-tools installed locally. Refer to our [CLI getting started](/doc/tools/cli/).
 2. In your code folder, do `clever env set <variable-name> <variable-value>`
 
-Refer to [environment variables reference](/doc/develop/common-configuration/environment-variables/reference) for more details on available environment variables on Clever Cloud.
+Refer to [environment variables reference](/doc/manage/environment-variables/reference) for more details on available environment variables on Clever Cloud.
 
 You can of course create custom ones with the interface we just demonstrated, they will be available for your application.

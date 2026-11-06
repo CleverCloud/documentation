@@ -11,6 +11,7 @@ keywords:
 - data transfer
 - migration strategies
 aliases:
+- /doc/manage/database-migration
 - /doc/administrate/database-migration
 - /doc/database-migration
 ---

@@ -83,7 +83,7 @@ clever deploy
 clever open
 ```
 
-You can display your application's domains or add a [custom domain](/developers/doc/develop/common-configuration/domain-names/):
+You can display your application's domains or add a [custom domain](/developers/doc/manage/domain-names/):
 
 ```bash
 clever domain

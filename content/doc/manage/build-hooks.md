@@ -11,6 +11,7 @@ keywords:
 - scripts
 - workflows
 aliases:
+- /doc/develop/common-configuration/build-hooks
 - /clever-cloud-overview/hooks
 - /doc/administrate/apps-management/build-hooks
 - /doc/best-practices/build-hooks
@@ -44,7 +45,7 @@ The available hooks are:
 ## Setting hooks up
 
 Hooks are set up through [environment
-variables](/doc/develop/common-configuration/environment-variables).
+variables](/doc/manage/environment-variables).
 To set up a Post Build hook, you need to define a `CC_POST_BUILD_HOOK`
 variable:
 
@@ -108,7 +109,7 @@ This hook is perfect for:
 - extra build steps that you want to cache (eg bundling your frontend assets)
 
 > [!NOTE]
-> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/develop/common-configuration/environment-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
+> If you set [`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/manage/environment-variables/#settings-you-can-define-using-environment-variables) environment variable to `true`, the cache archive won't be created nor uploaded. Don't use it with `nano` and `pico` plans which always use a build instance to create the build cache.
 
 ### Pre Run
 

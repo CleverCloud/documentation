@@ -29,7 +29,7 @@ In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packag
 
 - {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
 
-Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/develop/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/develop/common-configuration/#listen-on-the-right-port).
+Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/develop/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
 {{% content "create-application" %}}
 

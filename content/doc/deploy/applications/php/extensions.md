@@ -165,4 +165,4 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
 ## Disable extensions
 
-You can use `DISABLE_<extension_name>=true` in your [environment variables](/doc/develop/common-configuration/environment-variables/reference/) to disable an extension.
+You can use `DISABLE_<extension_name>=true` in your [environment variables](/doc/manage/environment-variables/reference/) to disable an extension.

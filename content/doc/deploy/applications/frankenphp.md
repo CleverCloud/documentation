@@ -46,7 +46,7 @@ clever create --type frankenphp
 
 FrankenPHP runtime only requires a working web application, with an `index.php` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (default: `/`).
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### FrankenPHP version and tools
 
@@ -115,7 +115,7 @@ clever create --type frankenphp --task "frankenphp php-cli path/to/task.php"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
 ## Included extensions
 

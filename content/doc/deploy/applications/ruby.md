@@ -179,7 +179,7 @@ NGINX settings can be configured with [environment variables](#setting-up-enviro
 
 #### Basic authentication
 
-If you need basic authentication, you can enable it using [environment variables](/doc/develop/common-configuration/environment-variables/reference/#ruby). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+If you need basic authentication, you can enable it using [environment variables](/doc/manage/environment-variables/reference/#ruby). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 #### NGINX optional configuration with `clevercloud/http.json`
 

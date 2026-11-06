@@ -136,7 +136,7 @@ Choose the language or the framework you want to deploy.
 
 Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
-- [Learn more about scaling & instances size](/doc/develop/common-configuration/scaling)
+- [Learn more about scaling & instances size](/doc/manage/scaling)
 
 #### Name your application
 
@@ -145,7 +145,7 @@ Enter the name and the description of your application.
 #### Optional steps
 
 - The wizard will offer you to [add an add-on](/doc/deploy/addons) to your application
-- The wizard will offer you to [add environment variables](/doc/develop/common-configuration/environment-variables) to your application
+- The wizard will offer you to [add environment variables](/doc/manage/environment-variables) to your application
 
 {{% /steps %}}
 
@@ -155,7 +155,7 @@ Enter the name and the description of your application.
   {{< tab name="Git" icon="git" >}}
   *To deploy via Git, you need it installed on your machine. You can find more information on Git website: [git-scm.com](https://git-scm.com)*
 
-  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/develop/common-configuration/environment-variables/reference/).
+  *Note:* during the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/manage/environment-variables/reference/).
 
   Follow these steps to deploy your application:
 
@@ -328,7 +328,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
   4. Choose which *type* of add-on you want to create. See preceding the list of available add-ons and their corresponding documentation pages for further information on how they work.
   5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on and other specifications on this page or in the corresponding documentation page.
-  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/develop/common-configuration/environment-variables/reference/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
+  6. Choose with which application you want to link you add-on. Linking an add-on to an application will provide configuration to the application through [environment variables](/doc/manage/environment-variables/reference/). The environment variables provided by the add-on are available for use in the linked application. If you want to use your add-on alone, just don't link it to any application.
   7. Choose the name of the add-on and the region where the add-on will be hosted.
   8. Click on the **Create** button.
 

@@ -39,9 +39,9 @@ clever create --type linux
 
 ### Mandatory needs
 
-Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
+Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### Build and run commands
 
@@ -53,7 +53,7 @@ Build and run commands are resolved in this priority order:
 
 Each level fills in only the commands not already defined by a higher priority source. For example, you can define `CC_BUILD_COMMAND` and let Mise or a Makefile provide the `run` command.
 
-- [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
 
 ## Clever Task and Multi-runtime approach
 
@@ -64,7 +64,7 @@ clever create --type linux --task "your-task-command --and arguments"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
 ## Expand your toolbox with Mise package manager
 

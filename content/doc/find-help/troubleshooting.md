@@ -113,7 +113,7 @@ To enable this mode, simply add `CC_TROUBLESHOOT=true` to your environment varia
 
 {{% details title="Node application failed to deploy silently" closed="true" %}}
 
-This kind of silent error may be due to the port your application listens on. Make sure it listens on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port). In your main JavaScript file:
+This kind of silent error may be due to the port your application listens on. Make sure it listens on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port). In your main JavaScript file:
 
 ```javascript
 server.listen(process.env.PORT, "0.0.0.0");
@@ -167,7 +167,7 @@ Clever Cloud uses [Sōzu](https://www.sozu.io) as its load balancer and reverse 
 For operations that may exceed the 180-second limit, implement one of these approaches:
 
 1. Use long polling to send periodic status checks from the client
-2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/develop/common-configuration/workers/)
+2. Create an asynchronous worker system: move long-running tasks to a background [worker](/doc/manage/workers/)
 3. [Purchase a custom load balancer from Clever Cloud](https://www.clever.cloud/fr/contact/) with different timeouts
 
 ### Additional considerations
@@ -207,7 +207,7 @@ Check the status of the services on [clevercloudstatus.com](https://www.clevercl
 If you tried to scan your domain, you may not only have scanned your app, but also several public load balancers.
 Here is an explanation of the different port you may see.
 
-- TCP redirection ports: the public load balancers are shared, so a scan also shows the ports of the [TCP redirections](/doc/develop/common-configuration/tcp-redirections/) of other applications. Each port in a namespace only leads to the application that owns its redirection. List the ports of your application with `clever tcp-redirs`.
+- TCP redirection ports: the public load balancers are shared, so a scan also shows the ports of the [TCP redirections](/doc/manage/tcp-redirections/) of other applications. Each port in a namespace only leads to the application that owns its redirection. List the ports of your application with `clever tcp-redirs`.
 - Port 9999 : [Zabbix](https://www.zabbix.com) uses this port to monitor the hypervisor.
 - Port 3000 : Juggernaut, the daemon torrent for the VM images use this port.
 - Ports 1080 and 1081 : Those are necessary for the reverse-proxy Sōzu to be able to redirect traffic to your application. Port 1080 is for HTTP and 1081 for HTTPS

@@ -39,7 +39,7 @@ Clever Cloud allows you to store PHP sessions easily in a [Materia KV](/doc/depl
 
 The `redis` extension is enabled by default. To enable this feature, you need to:
 
-- Set `SESSION_TYPE=redis` as [environment variable](/doc/develop/common-configuration/environment-variables) in the PHP application
+- Set `SESSION_TYPE=redis` as [environment variable](/doc/manage/environment-variables) in the PHP application
 - Create and link a Materia KV or Redis add-on to the PHP application
 
 ## Sending emails

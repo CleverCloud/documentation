@@ -29,11 +29,11 @@ However, directives that apply to the entire application must be declared in a `
 
 ### Basic authentication
 
-You can configure basic authentication using [environment variables](/doc/develop/common-configuration/environment-variables/reference#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+You can configure basic authentication using [environment variables](/doc/manage/environment-variables/reference#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
 
 ### HTTP timeout
 
-You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/doc/develop/common-configuration/environment-variables).
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/doc/manage/environment-variables).
 
 **By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
 

@@ -106,7 +106,7 @@ Finally, create the TCP redirection used for SFTP connections:
 clever tcp-redirs add --namespace cleverapps
 ```
 
-The command returns the public TCP port to use with your application's `.cleverapps.io` domain. To use a custom SFTP hostname, follow the [TCP redirection documentation](/doc/develop/common-configuration/tcp-redirections/) and create the redirection in the appropriate namespace.
+The command returns the public TCP port to use with your application's `.cleverapps.io` domain. To use a custom SFTP hostname, follow the [TCP redirection documentation](/doc/manage/tcp-redirections/) and create the redirection in the appropriate namespace.
 
 ## Deploy SFTPGo
 

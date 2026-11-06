@@ -40,7 +40,7 @@ Clever Cloud deploys Scala and Java applications built with sbt. This page expla
 
 ### Mandatory configuration
 
-Your application listens on `0.0.0.0`, on the port of the `http.port` system property. Clever Cloud sets it to `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/): Play applications read it, so you have nothing to do. [Learn more about the port of your application](/doc/develop/common-configuration/#listen-on-the-right-port).
+Your application listens on `0.0.0.0`, on the port of the `http.port` system property. Clever Cloud sets it to `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/): Play applications read it, so you have nothing to do. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
 ### sbt Native Packager
 

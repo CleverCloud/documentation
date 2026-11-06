@@ -18,4 +18,4 @@ The notice appears on the overview and environment variables pages of the applic
 
 The Console reads the version these variables set explicitly, such as `8.1` or `3.9.21`. It doesn't resolve version ranges, nor versions an application selects otherwise, such as through `engines.node` in a `package.json` file.
 
-- [Learn more about environment variables](/doc/develop/common-configuration/environment-variables/)
+- [Learn more about environment variables](/doc/manage/environment-variables/)

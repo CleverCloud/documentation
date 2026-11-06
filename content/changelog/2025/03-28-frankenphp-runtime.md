@@ -35,4 +35,4 @@ As it's a new image, help us improve it by reporting any issue or suggestion on 
 
 - [FrankenPHP and Materia KV example](https://github.com/CleverCloud/frankenphp-kv-json-example)
 - [Learn more about FrankenPHP on Clever Cloud](/doc/deploy/applications/frankenphp/)
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)

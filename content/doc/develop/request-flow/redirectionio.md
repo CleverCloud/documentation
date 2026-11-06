@@ -83,7 +83,7 @@ A `301` and the target URL confirm the whole chain works, from your project down
 
 The platform health check requests your application through the public port, where the agent answers first. The default check accepts any status from `200` to `500`, so a redirect on the checked path still counts as healthy.
 
-Setting [`CC_HEALTH_CHECK_PATH`](/doc/develop/common-configuration/healthcheck/) narrows that range to `200` to `300`. A rule that redirects the health check path then fails the check on every attempt, until the deployment is cancelled:
+Setting [`CC_HEALTH_CHECK_PATH`](/doc/manage/healthcheck/) narrows that range to `200` to `300`. A rule that redirects the health check path then fails the check on every attempt, until the deployment is cancelled:
 
 ```text
 [ERROR] Response from GET {:url=>"/health", :expected_response=>200...300} is 301
@@ -105,4 +105,4 @@ A redirect served by the agent leaves no trace in your application logs, since t
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
 - [Learn more about Redirection.io](https://redirection.io/documentation)
-- [Configure your health check](/doc/develop/common-configuration/healthcheck/)
+- [Configure your health check](/doc/manage/healthcheck/)

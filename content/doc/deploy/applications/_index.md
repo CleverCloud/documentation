@@ -61,19 +61,19 @@ Some runtimes can be extended with additional modules (such as extra PHP extensi
 
 You can control deployments and set your application configuration with environment variables:
 {{< cards >}}
-  {{< card link="/developers/doc/develop/common-configuration/environment-variables" title="Environment variables" subtitle="Understand how variables are defined and used" icon="book-open" >}}
-  {{< card link="/developers/doc/develop/common-configuration/environment-variables/reference/#set-by-the-deployment-process" title="Platform variables" subtitle="Review variables set by the deployment process" icon="server-stack" >}}
-  {{< card link="/developers/doc/develop/common-configuration/environment-variables/reference/#variables-you-can-define" title="Configuration variables" subtitle="Review variables you can define" icon="pencil-square" >}}
-  {{< card link="/developers/doc/develop/common-configuration/environment-variables/#settings-you-can-define-using-environment-variables" title="Build cache" subtitle="Control which files are included in the build cache" icon="arrow-up-on-square-stack" >}}
-  {{< card link="/developers/doc/develop/common-configuration/environment-variables/reference/#variables-you-can-define" title="Run command" subtitle="Override the command used to run your application" icon="play-circle" >}}
-  {{< card link="/developers/doc/develop/common-configuration/build-hooks" title="Deployment hooks" subtitle="Run commands during deployment phases" icon="rocket-launch" >}}
+  {{< card link="/developers/doc/manage/environment-variables" title="Environment variables" subtitle="Understand how variables are defined and used" icon="book-open" >}}
+  {{< card link="/developers/doc/manage/environment-variables/reference/#set-by-the-deployment-process" title="Platform variables" subtitle="Review variables set by the deployment process" icon="server-stack" >}}
+  {{< card link="/developers/doc/manage/environment-variables/reference/#variables-you-can-define" title="Configuration variables" subtitle="Review variables you can define" icon="pencil-square" >}}
+  {{< card link="/developers/doc/manage/environment-variables/#settings-you-can-define-using-environment-variables" title="Build cache" subtitle="Control which files are included in the build cache" icon="arrow-up-on-square-stack" >}}
+  {{< card link="/developers/doc/manage/environment-variables/reference/#variables-you-can-define" title="Run command" subtitle="Override the command used to run your application" icon="play-circle" >}}
+  {{< card link="/developers/doc/manage/build-hooks" title="Deployment hooks" subtitle="Run commands during deployment phases" icon="rocket-launch" >}}
 {{< /cards >}}
 
 ### Common to All Applications
 
-- Applications on Clever Cloud listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port): `8080` by default, or `9000` with Request Flow.
+- Applications on Clever Cloud listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port): `8080` by default, or `9000` with Request Flow.
 - Deployments on Clever Cloud are immutable: if your app restarts, last pushed commit will be deployed with your current environment variables.
 
 {{< callout type="info" >}}
-  Learn more about [immutablity and application management](/doc/develop/common-configuration/lifecycle).
+  Learn more about [immutablity and application management](/doc/manage/lifecycle).
 {{< /callout >}}

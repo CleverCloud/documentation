@@ -116,9 +116,9 @@ clever domain rm FQDN
 ```
 
 > [!TIP]
-> You can set the same domain with multiple apps thanks to [prefix routing](/doc/develop/common-configuration/domain-names/#path-routing). For example, you can add `mydomain.com/app1` domain to an application and `mydomain.com/app2` to another.
+> You can set the same domain with multiple apps thanks to [prefix routing](/doc/manage/domain-names/#path-routing). For example, you can add `mydomain.com/app1` domain to an application and `mydomain.com/app2` to another.
 
-To (un)set [the favourite domain](/doc/develop/common-configuration/domain-names/#primary-favourite-domain-name), use:
+To (un)set [the favourite domain](/doc/manage/domain-names/#primary-favourite-domain-name), use:
 
 ```console
 clever domain favourite set FQDN
@@ -158,11 +158,11 @@ You can easily change the number of instances and `flavor` for an application. I
 ```
 
 > [!NOTE]
-> Available instances flavors are: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`. [Learn more about instance sizes](/doc/develop/common-configuration/scaling/#instance-sizes), and about the [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) of `pico` and `nano` instances.
+> Available instances flavors are: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`. [Learn more about instance sizes](/doc/manage/scaling/#instance-sizes), and about the [dedicated build instance](/doc/manage/#dedicated-build-instance) of `pico` and `nano` instances.
 
 ## tcp-redirs
 
-An application can have one [TCP redirection](/doc/develop/common-configuration/tcp-redirections/) in each namespace, such as `default` or `cleverapps`. Set the namespace to add or remove one:
+An application can have one [TCP redirection](/doc/manage/tcp-redirections/) in each namespace, such as `default` or `cleverapps`. Set the namespace to add or remove one:
 
 ```console
 clever tcp-redirs add --namespace NAMESPACE
@@ -182,4 +182,4 @@ To list available namespaces, use:
 clever tcp-redirs list-namespaces
 ```
 
-- [Learn more about TCP redirections](/doc/develop/common-configuration/tcp-redirections/)
+- [Learn more about TCP redirections](/doc/manage/tcp-redirections/)

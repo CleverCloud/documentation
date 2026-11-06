@@ -36,9 +36,9 @@ clever create --type v
 
 ### Mandatory needs
 
-V (Vlang) runtime only requires a working application listening on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
+V (Vlang) runtime only requires a working application listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
 
-- [Learn more about environment variables on Clever Cloud](/doc/develop/common-configuration/environment-variables/reference/)
+- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 
 ### Dependencies
 
@@ -49,7 +49,7 @@ If a `v.mod` file exists at the root of your project, dependencies are installed
 During the build phase, the V (Vlang) application is built with the `v . -prod` command. To compile without the `-prod` flag, set `ENVIRONMENT=development`. You can choose a custom output binary name with the `CC_V_BINARY` environment variable, default is `${APP_HOME}/v_bin_${APP_ID}`.
 
 - [Deploy an example V application on Clever Cloud](https://github.com/CleverCloud/v-example)
-- [Learn more about Deployment hooks](/doc/develop/common-configuration/build-hooks/)
+- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
 
 ### Custom run command
 
@@ -68,7 +68,7 @@ clever create --type v --task "./your-script.vsh --and arguments"
 clever deploy # or clever restart if there is no code change
 ```
 
-- [Learn more about Clever Tasks](/doc/develop/tasks/)
+- [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}

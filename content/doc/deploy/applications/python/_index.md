@@ -135,6 +135,8 @@ To select one, set the `CC_PYTHON_BACKEND` environment variable with either `dap
 
 Contact the support if you need another backend.
 
+- [Learn more about the configuration of Python servers](/doc/deploy/applications/python/servers/)
+
 > [!NOTE]
 > Backend selection only applies to the legacy deployment mode (without `uv.lock`). [Native uv deployments](/doc/deploy/applications/python/uv/) manage their own HTTP server.
 

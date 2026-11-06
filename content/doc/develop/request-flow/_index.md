@@ -128,7 +128,8 @@ A middleware that fails to start leaves the public port closed, and the deployme
 The message `Some software are not listening as expected: 9000` means the opposite. Every middleware runs, and your application doesn't listen on the port the chain forwards to. Check the [port management](#port-management) section for the port your runtime expects.
 
 - [Learn more about Varnish on Clever Cloud](/doc/develop/request-flow/varnish/)
-- [Learn more about Redirection.io](https://redirection.io/)
+- [Learn more about Redirection.io on Clever Cloud](/doc/develop/request-flow/redirectionio/)
 - [Learn more about OAuth2 Proxy on Clever Cloud](/doc/develop/request-flow/oauth2-proxy/)
+- [Learn more about the Otoroshi Challenge middleware](/doc/develop/request-flow/otoroshi-challenge/)
 - [Learn more about Otoroshi on Clever Cloud](/doc/deploy/services/otoroshi/)
 - [Learn more about Network Groups](/doc/network/network-groups/)

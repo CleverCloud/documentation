@@ -107,7 +107,7 @@ yum install clever-tools
 ```
 
 > [!TIP]
-> The `.rpm` packages are hosted on Clever Cloud's public Nexus instance available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com)
+> Clever Cloud hosts the `.rpm` packages on its [public Nexus instance](/doc/manage/cli/install/nexus-config/)
 
 ### Debian/Ubuntu (.deb)
 
@@ -121,7 +121,7 @@ apt install clever-tools
 ```
 
 > [!TIP]
-> The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com). \
+> Clever Cloud hosts the `.deb` packages on its [public Nexus instance](/doc/manage/cli/install/nexus-config/). \
 > Our PGP key is required to trust the repository
 
 ### Exherbo

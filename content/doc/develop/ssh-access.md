@@ -21,7 +21,7 @@ aliases:
 - /doc/tutorials/ssh_keys
 ---
 
-To debug an application, open a shell on one of its running instances, or run a single command there, through the Clever Cloud SSH gateway. Instances are immutable: what you change on the disk of an instance disappears when a deployment or a scaling operation replaces it. Fix your code or your environment variables, then redeploy. Data you write to a database or an FS Bucket persists as usual.
+To debug an application, open a shell on one of its running instances, or run a single command there, through the Clever Cloud SSH gateway. [Instances are immutable](/doc/develop/best-practices/immutable-infrastructure/): what you change on the disk of an instance disappears when a deployment or a scaling operation replaces it. Fix your code or your environment variables, then redeploy. Data you write to a database or an FS Bucket persists as usual.
 
 ## Before you start
 

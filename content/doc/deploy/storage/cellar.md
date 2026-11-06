@@ -115,7 +115,7 @@ Browse your buckets, upload, download and inspect objects directly from the [Cle
 
 From the add-on dashboard, the Cellar Explorer lists every bucket of the add-on and lets you navigate objects as folders. You can upload or download an object, copy its public URL and inspect its metadata without installing a third-party S3 client. The tool relies on the new Cellar APIs and will keep gaining features over the coming months.
 
-Cellar Explorer is in Beta testing phase. Share your feedback and feature requests on our [GitHub Community](https://github.com/CleverCloud/Community/discussions/155).
+Share your feedback and feature requests on the [GitHub Community](https://github.com/CleverCloud/Community/discussions/155).
 
 ### Using S3 clients
 

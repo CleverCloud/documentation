@@ -287,7 +287,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 ##### Databases
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/databases/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Alpha" >}}
+  {{< card link="/developers/doc/deploy/databases/materia-kv" title="Materia KV" subtitle="Serverless & distributed key-value database" icon="materia" tag="Beta" >}}
   {{< card link="/developers/doc/deploy/databases/mongodb" title="MongoDB" subtitle="The NoSQL document-oriented database" icon="simple:mongodb">}}
   {{< card link="/developers/doc/deploy/databases/mysql" title="MySQL" icon="mysql" subtitle="Your managed relational database" >}}
   {{< card link="/developers/doc/deploy/databases/postgresql" title="PostgreSQL" icon="simple:postgresql" subtitle="The not-only-SQL managed database" >}}
@@ -301,7 +301,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
 {{< cards >}}
   {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="Object storage, compatible with S3 API" icon="cellar" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="Persistent external file system for your apps" icon="fsbucket" >}}
-  {{< card link="/developers/doc/deploy/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="simple:apachepulsar" tag="Beta" >}}
+  {{< card link="/developers/doc/deploy/pulsar" title="Pulsar" subtitle="Open source, distributed messaging and streaming platform built for the cloud" icon="simple:apachepulsar" >}}
 {{< /cards >}}
 
 ##### Services & Tools

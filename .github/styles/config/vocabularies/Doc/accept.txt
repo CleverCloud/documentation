@@ -64,6 +64,7 @@ hostname
 Infinispan
 IPs
 IPsec
+JMeter
 JSDoc
 Keycloak
 keyspace
@@ -98,6 +99,7 @@ Nmap
 npm
 Nuxt
 OAuth
+oha
 Okta
 Ollama
 Otoroshi

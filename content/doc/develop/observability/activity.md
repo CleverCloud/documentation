@@ -2,50 +2,68 @@
 type: docs
 linkTitle: Activity
 title: Activity
-description: Monitor and manage activity logs for your Clever Cloud applications including deployments, scaling events, and system activities
+description: Follow the deployments of your Clever Cloud application, what triggered them and their result, from the Console or Clever Tools
 keywords:
-- activity monitoring
-- deployment logs
-- application lifecycle
+- activity
+- deployments
+- deployment history
 - scaling events
-- system activities
-- monitoring timeline
+- monitoring
+- redeploy a commit
 aliases:
 - /doc/administrate/activity
 - /doc/observability/activity
 ---
 
-Follow your application activities and lifecycle from the **Activity** option in the application menu. Every time your application redeploys, a new block appears on the timeline. Re-deployment triggers can be either:
+The activity of an application lists the deployments that you or Clever Cloud triggered: pushes, restarts, changes of scaling, and stops. Open it from the **Activity** menu of your application in the [Console](https://console.clever-cloud.com), or with Clever Tools:
 
-- An action performed by you or by a member of your organisation
-- An action performed by Clever Cloud
+```bash
+clever activity
+clever activity --follow --format json-stream
+```
 
-## Re-deployment triggered by you
+The Console shows the latest deployment first. `clever activity` shows up to the last 10 deployments, from the oldest, and `--show-all` removes this limit. With `--follow`, it adds new deployments and updates their result. `--format json` returns the deployments as JSON, and `--format json-stream` streams them with `--follow`.
 
-This happens when you or a member of your organisation performs an action on the application, like:
-
-- [Restart or rebuild](/doc/develop/common-configuration/lifecycle/#start-restart-and-stop) from the Console or [the CLI](/doc/manage/cli/)
-- Push a new commit from Git or GitHub
-
- Here's what you might see on the timeline:
+## Read an entry
 
 ![Activity timeline](/images/activity.png)
 
-Each block indicates if the deployment was successful or unsuccessful, along with the following information:
+An entry shows:
 
-- **Date**: when the activity happened and from where (`Console`, `Git`, `Github` or `Monitoring`)
-- **Author**: which member of your organisation triggered the activity
-- **Commit ID**: on which commit the activity happened
-- **Redeploy this commit**: the option to redeploy a previous commit (useful to quickly roll-back if needed)
+- **Action and state**: what the deployment did, such as `DEPLOY`, and its result: in progress, `OK`, `FAIL`, or `CANCELLED`
+- **Date and cause**: when it started, and where it came from, such as `Git`, `GitHub`, `Console`, or `Clever Tools`
+- **Author**: the member of your organisation who triggered it, when available
+- **Commit ID**: the commit it deployed, for applications deployed with Git
+- **Logs**: the [logs](/doc/develop/observability/logs/) of this deployment, while they're within their retention period
 
-## Re-deployments triggered by Clever Cloud
+From the Console, **Redeploy this commit** deploys the commit of an entry again, to roll back to a previous version. You can cancel a `DEPLOY` in progress from the Console, or with `clever cancel-deploy`.
 
-Clever Cloud might also trigger re-deployments, either when you're being assisted by the Support, or automatically by the monitoring system. If the monitoring triggers a re-deployment, you'll see no author and the message explaining the reason, like `Monitoring/Unreachable`. The messages you might get are the following:
+## Actions
 
-![Re-deployment triggered by the monitoring](/images/monitoring.png)
+| Action      | Meaning                                                    |
+|-------------|------------------------------------------------------------|
+| `CANCEL`    | Cancels a deployment in progress                           |
+| `DEPLOY`    | Deploys or restarts your application                       |
+| `UNDEPLOY`  | Stops your application                                     |
+| `UPSCALE`   | Adds instances, or increases their size                    |
+| `DOWNSCALE` | Removes instances, or reduces their size                   |
+| `REPLACE`   | Replaces instances of your application                     |
 
-- `Unreachable`: The monitoring servers couldn't open a TCP connection with at least one monitoring agent hosted on instances of the application.
-- `Timeout`: The monitoring servers has succeed to open TCP connections on all monitoring agents hosted on instances of the application, but at least one did not send its probes in time.
-- `Scaling`: Clever Cloud triggers a new deployment with more instances (virtual machines) or more resources of the application as the platform detects that the consumption is greater that the determined threshold on memory or CPU usage. For further details, see [Scalability](/doc/develop/common-configuration/scaling)
-- `Maintenance`: Clever Cloud performed a maintenance deployment of the application to integrate new configurations, security patches, operating system updates, runtime updates and so on…
-- `DiskFull`: Rarely appears, but you could see this message if you haven't enabled the auto-scalability, after the app crashed and the monitoring restarted it.
+Scaling actions follow a change of [scaling](/doc/develop/common-configuration/scaling/) you make, or autoscaling. A change you make can appear as `UPSCALE` even when it reduces the size: the logs of the deployment show the resulting instances.
+
+## Deployments triggered by Clever Cloud
+
+Clever Cloud also deploys your application without any action from you: for a maintenance, when the Support assists you, or when the monitoring detects a problem. These entries usually have no author.
+
+A maintenance deployment has `Maintenance` as its cause. When Clever Cloud moves your application to a new image of its runtime, with updated packages and security fixes, the cause gives both image versions, such as `Maintenance/ImageUpdate/20261027/20261103`.
+
+The cause of a monitoring deployment starts with `Monitoring/`:
+
+| Cause                    | Meaning                                                                                   |
+|--------------------------|-------------------------------------------------------------------------------------------|
+| `Monitoring/Scaling`     | Autoscaling changes the size or the number of instances, within the ranges you set        |
+| `Monitoring/Timeout`     | The monitoring agent of an instance didn't send its probes in time                        |
+| `Monitoring/Unreachable` | The monitoring can't reach the agent of an instance, and redeploys your application       |
+
+- [Learn more about scaling](/doc/develop/common-configuration/scaling/)
+- [Learn more about logs](/doc/develop/observability/logs/)

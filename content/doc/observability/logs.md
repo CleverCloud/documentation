@@ -26,11 +26,13 @@ aliases:
 - /doc/observability/log-management
 ---
 
-Clever Cloud collects the logs of your applications and add-ons, and their access logs, which record the requests reaching them. Read them with Clever Tools or through the API. The Console shows all of them, except the access logs of add-ons.
+Applications and add-ons emit logs, made of what they write to their output. Applications also have access logs, which record the HTTP requests, the TCP redirections, and the SSH connections reaching them, with their origin.
 
-Logs are kept for 7 days: [contact the sales team](https://www.clever.cloud/contact/) or the [Support](https://console.clever-cloud.com/ticket-center-choice) to keep them longer.
+Logs are kept for 7 days: [contact the sales team](https://www.clever.cloud/contact/) or the [Support](https://console.clever-cloud.com/ticket-center-choice) to keep them longer. Clever Cloud collects the logs of an application with the Vector service of its instances: to disable it, set `CC_PREVENT_LOGSCOLLECTION` to `true`.
 
-The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](#application-access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
+## Console
+
+In the [Console](https://console.clever-cloud.com), the **Logs** menu of an application or an add-on shows its logs, and the **Access Logs** menu of an application its access logs. Both follow live logs by default, or show past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
 By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
 
@@ -42,9 +44,11 @@ The settings panel lets you choose a color theme, wrap lines, and strip ANSI esc
 
 - [Share your feedback on the logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
 
-## Application Logs
+## Clever Tools
 
-Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and the [Clever Cloud API](/api/swagger/#/Logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`.
+[Clever Tools](/doc/tools/cli/) gives access to the logs and the access logs of your applications.
+
+### Application Logs
 
 You can see logs with the command down below:
 
@@ -66,7 +70,7 @@ clever logs --since 15m --until now
 clever logs --since 15m --until now --format json
 ```
 
-Clever Tools disables colors when its output isn't a terminal, for example when you pipe it to another command. Add `--color true` to keep them, for example in a pager:
+Clever Tools disables colors when its output isn't a terminal, as in a pipe. Add `--color true` to keep them, for instance in a pager:
 
 ```bash
 clever logs --since 15m --until now --color true | less -R
@@ -80,9 +84,7 @@ clever logs --since 1h --until now --format json --strip-ansi > logs.json
 
 The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
-## Application Access Logs
-
-Access logs list the HTTP requests reaching your application. They also record the TCP redirections and SSH connections to its instances.
+### Application Access Logs
 
 You can see access logs with the following command:
 
@@ -160,5 +162,9 @@ To change the output, specify the `--format` (`-F`) flag with one of these value
   ```
 
   TCP redirections and SSH connections use the same shape, without the `http` section.
+
+## API
+
+The [Clever Cloud API](/api/swagger/#/Logs) streams the logs and the access logs of your applications as Server-Sent Events.
 
 - [Forward your logs and access logs to an external tool with drains](/doc/observability/drains/)

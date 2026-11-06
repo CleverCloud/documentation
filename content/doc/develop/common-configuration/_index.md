@@ -113,7 +113,7 @@ To disable it:
 clever scale --build-flavor disabled
 ```
 
-Applications running on `pico` or `nano` instances always build on a dedicated `S` instance: their memory is too low for most builds.
+Applications running on `pico` or `nano` instances always build on a dedicated instance: their memory is too low for most builds. It uses the build size of your application, which defaults to `S` for Node.js or `M` for Rust.
 
 ### Cancel deployment on push
 

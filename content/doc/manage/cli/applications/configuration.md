@@ -157,9 +157,7 @@ You can easily change the number of instances and `flavor` for an application. I
 ```
 
 > [!NOTE]
-> Available instances flavors are: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`
->
-> Due to its low memory (256 MiB) `pico` is not always available. When selected, a dedicated `S` instance is used for build by default.
+> Available instances flavors are: `pico`, `nano`, `XS`, `S`, `M`, `L`, `XL`, `2XL`, `3XL`. [Learn more about instance sizes](/doc/develop/common-configuration/scaling/#instance-sizes), and about the [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) of `pico` and `nano` instances.
 
 ## tcp-redirs
 

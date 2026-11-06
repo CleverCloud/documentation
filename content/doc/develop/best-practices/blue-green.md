@@ -1,7 +1,7 @@
 ---
 type: docs
-linkTitle: Blue/Green Deployments
-title: Blue/Green Deployments
+linkTitle: Blue/Green Deployment
+title: Blue/Green Deployment
 description: How each Clever Cloud deployment switches traffic to new instances, how to roll back, and how to validate a version before production
 keywords:
 - blue-green

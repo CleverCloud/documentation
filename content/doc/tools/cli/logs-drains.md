@@ -77,7 +77,7 @@ Run `clever drain create DRAIN_TYPE --help` to list the options of a drain type,
 
 ## Access logs drains
 
-A drain forwards the output of your application or add-on by default. For an application, all drain types also accept `--kind ACCESSLOG` to forward its [access logs](/doc/observability/logs/#access-logs) instead. Create one drain of each kind to forward both. `clever drain` and `clever drain get` show the kind of each drain:
+A drain forwards the output of your application or add-on by default. For an application, all drain types also accept `--kind ACCESSLOG` to forward its [access logs](/doc/observability/logs/#application-access-logs) instead. Create one drain of each kind to forward both. `clever drain` and `clever drain get` show the kind of each drain:
 
 ```console
 clever drain create raw-http https://logs.example.com/clever-cloud --kind ACCESSLOG

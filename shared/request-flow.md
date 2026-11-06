@@ -9,7 +9,7 @@ Request Flow automatically chains reverse proxies between port `8080` (public) a
 
 Multiple services can run simultaneously. Setting `CC_REQUEST_FLOW` replaces automatic detection, so list every service you need in order (e.g. `oauth2-proxy,varnish`). To add a custom middleware, include `custom` in the chain and define `CC_REQUEST_FLOW_CUSTOM` with `@@LISTEN_PORT@@` and `@@FORWARD_PORT@@` placeholders. To block public access, set `CC_REQUEST_FLOW=block`.
 
-If your application manages its own HTTP server, configure it to listen on port `9000` instead of `8080` when at least one middleware is active. Clever Cloud handles this automatically for runtimes with a managed web server.
+If your application manages its own HTTP server, set `PORT=9000` when at least one middleware is active, so that it listens on port `9000` instead of `8080`. Clever Cloud handles this automatically for runtimes with a managed web server.
 
 - [Learn more about Request Flow](/doc/develop/request-flow/)
 - [Learn more about Varnish on Clever Cloud](/doc/develop/request-flow/varnish/)

@@ -43,7 +43,7 @@ The `vcl 4.1;` declaration and backend section are not necessary as they are alr
 
 ## Listen on the right port
 
-Varnish is managed through [Request Flow](/doc/develop/request-flow/). Once Varnish is enabled, your application must listen on port **9000** instead of **8080**. Request Flow places Varnish (and any other configured middleware) between the public port (`8080`) and your application. In runtimes where Clever Cloud manages the port configuration (FrankenPHP, Java, PHP, Static), this is handled transparently.
+Varnish is managed through [Request Flow](/doc/develop/request-flow/), which places it, and any other configured middleware, between the public port (`8080`) and your application. Once Varnish is enabled, an application running its own HTTP server must listen on port `9000`: set `PORT=9000`. In runtimes where Clever Cloud manages the web server (FrankenPHP, Java, PHP, Python with its supported backends, Ruby, Static), this is handled transparently. [Learn more about the port of your application](/doc/develop/common-configuration/#listen-on-the-right-port).
 
 ## Configure the cache size
 

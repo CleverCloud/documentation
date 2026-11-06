@@ -93,6 +93,7 @@ Mosquitto
 namespace
 namespaces
 nano
+Nginx
 Nmap
 npm
 Nuxt
@@ -151,6 +152,7 @@ tooltips
 unencrypted
 URIs
 uv
+Vite
 VMs
 webroot
 WildFly

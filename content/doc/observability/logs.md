@@ -26,6 +26,10 @@ aliases:
 - /doc/observability/log-management
 ---
 
+Clever Cloud collects the logs of your applications and add-ons, and their access logs, which record the requests reaching them. Read them with Clever Tools or through the API. The Console shows all of them, except the access logs of add-ons.
+
+Logs are kept for 7 days: [contact the sales team](https://www.clever.cloud/contact/) or the [Support](https://console.clever-cloud.com/ticket-center-choice) to keep them longer.
+
 The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](#application-access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
 By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
@@ -37,10 +41,6 @@ The settings panel lets you choose a color theme, wrap lines, and strip ANSI esc
 ![New logs interface](/images/new-logs.webp)
 
 - [Share your feedback on the logs interface](https://github.com/CleverCloud/Community/discussions/categories/new-logs-interface)
-
-{{< callout type="info">}}
-Logs are retained for 7 days, sometimes more for specific customers/needs.
-{{< /callout >}}
 
 ## Application Logs
 

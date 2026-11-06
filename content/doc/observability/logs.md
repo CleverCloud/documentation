@@ -78,16 +78,6 @@ Log messages can contain ANSI codes, which set colors, move the cursor or clear 
 clever logs --since 1h --until now --format json --strip-ansi > logs.json
 ```
 
-You can also get your add-on's logs by using `--addon` flag, the value is the add-on ID starting by `addon_`, or its real ID:
-
-```bash
-clever logs --addon postgresql_xxxxxxxx
-```
-
-{{< callout type="warning" >}}
-   With add-ons, only the last 1000 lines of logs are got by `clever logs`.
-{{< /callout >}}
-
 The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
 ## Application Access Logs

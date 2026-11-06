@@ -20,7 +20,7 @@ A TCP redirection opens a public port on the Clever Cloud load balancers and for
 
 ## How it works
 
-- Your application listens on port `4040`. A [Docker container](/doc/deploy/applications/docker/#tcp-support) can use another port through `CC_DOCKER_EXPOSED_TCP_PORT`
+- Your application listens on port `4040`. A [Docker container](/doc/deploy/applications/docker/#ports-mapping-and-network-groups) can use another port through `CC_DOCKER_EXPOSED_TCP_PORT`
 - Clever Cloud chooses the public port. It stays the same while the redirection exists, even when the application redeploys
 - Deployments still wait for the HTTP [health check](/doc/develop/common-configuration/healthcheck/) of your application on port `8080`: a TCP redirection doesn't replace it
 - The load balancers forward the bytes unchanged: your application handles TLS itself, with its own certificate

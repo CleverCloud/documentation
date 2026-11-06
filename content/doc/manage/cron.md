@@ -11,6 +11,7 @@ keywords:
 - daylight saving time
 - background processing
 aliases:
+- /doc/develop/cron
 - /doc/administrate/cron
 - /doc/cron
 - /doc/crons

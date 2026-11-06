@@ -22,7 +22,7 @@ aliases:
 
 Clever Cloud offers you to run any Java ARchive file. You do not need to change your code, but running it on Clever Cloud needs some configuration files or environment variable to specify the JAR path.
 
-Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
+Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
 {{% content "create-application" %}}
 

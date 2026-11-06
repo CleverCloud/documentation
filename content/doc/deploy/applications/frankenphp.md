@@ -90,7 +90,7 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 
 ## Configurable port
 
-FrankenPHP listens on port `8080`, or on port `9000` when a [Request Flow](/doc/develop/request-flow/) middleware runs in front of it: Clever Cloud sets it for you. To force another port, for a setup of your own, set the `CC_FRANKENPHP_PORT` environment variable.
+FrankenPHP listens on port `8080`, or on port `9000` when a [Request Flow](/doc/manage/request-flow/) middleware runs in front of it: Clever Cloud sets it for you. To force another port, for a setup of your own, set the `CC_FRANKENPHP_PORT` environment variable.
 
 ## Custom FrankenPHP run command
 

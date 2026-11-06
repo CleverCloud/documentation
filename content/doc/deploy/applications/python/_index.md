@@ -61,7 +61,7 @@ The module (without .py) must be importable, that is, be in `PYTHONPATH`. You sh
 
 For example, with *Flask*, this is the name of your main server file, followed by your Flask object: `server:app`, if you have a `server.py` file at the root of your project with a Flask `app` object inside.
 
-You can also use `CC_RUN_COMMAND` to launch a Python application with a custom command. Nginx then stays in front of your command, so it must listen on port `9000`, even without [Request Flow](/doc/develop/request-flow/). If your command reads `PORT`, set `PORT=9000`.
+You can also use `CC_RUN_COMMAND` to launch a Python application with a custom command. Nginx then stays in front of your command, so it must listen on port `9000`, even without [Request Flow](/doc/manage/request-flow/). If your command reads `PORT`, set `PORT=9000`.
 
 - [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
 

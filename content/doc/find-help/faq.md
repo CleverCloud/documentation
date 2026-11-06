@@ -96,7 +96,7 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 {{% details title="How do I define cron jobs for my application?" closed="true" %}}
 
-See [Schedule jobs with CRON](/doc/develop/cron/).
+See [Schedule jobs with CRON](/doc/manage/cron/).
 {{% /details %}}
 
 {{% details title="How do I identify different instances of my application?" closed="true" %}}
@@ -147,7 +147,7 @@ For reference, the table below lists the class file version for each major Java 
 
 Clever Cloud doesn't give you a server or a virtual private server (VPS) to administer: it runs your application. The platform starts and configures each instance automatically, and can replace or stop it at any time. A deployment replaces your instances, and so can a scaling operation. What you change on an instance doesn't persist: put it in your code or your environment variables, then redeploy. [Learn more about immutable infrastructure](/doc/develop/best-practices/immutable-infrastructure/).
 
-To debug your application, you can still open a shell on a running instance, or run a command on it. The [SSH access page](/doc/develop/ssh-access/) explains how.
+To debug your application, you can still open a shell on a running instance, or run a command on it. The [SSH access page](/doc/manage/ssh-access/) explains how.
 {{% /details %}}
 
 {{% details title="Can I `scp` something in a VM?" closed="true" %}}

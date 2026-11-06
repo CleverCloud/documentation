@@ -11,6 +11,7 @@ keywords:
 - reverse proxy
 - http
 aliases:
+- /doc/develop/request-flow/redirectionio
 - /doc/develop/redirectionio
 - /doc/request-flow/redirectionio
 ---
@@ -19,7 +20,7 @@ aliases:
 
 The point is who gets to act. Changing a redirect, fixing a broken link or adjusting a meta tag stops being a deployment and becomes an edit in a web interface, which puts SEO and marketing teams in control of the URLs they own without a developer in the loop. Rules are tested before they go live, and traffic keeps flowing during a site migration where hundreds of old URLs must keep resolving.
 
-[Request Flow](/doc/develop/request-flow/) runs that agent in front of your application, with a single environment variable and no change to your code. A request matching a rule never reaches your application: the agent answers it directly, so a redirect costs nothing to your instances. Everything else passes through untouched.
+[Request Flow](/doc/manage/request-flow/) runs that agent in front of your application, with a single environment variable and no change to your code. A request matching a rule never reaches your application: the agent answers it directly, so a redirect costs nothing to your instances. Everything else passes through untouched.
 
 ## Redirection.io features
 
@@ -103,6 +104,6 @@ Point `CC_HEALTH_CHECK_PATH` at a path no rule rewrites, and keep it out of the 
 
 A redirect served by the agent leaves no trace in your application logs, since the request stops before it. Read the traffic in your Redirection.io project to follow what the rules matched.
 
-- [Learn more about Request Flow](/doc/develop/request-flow/)
+- [Learn more about Request Flow](/doc/manage/request-flow/)
 - [Learn more about Redirection.io](https://redirection.io/documentation)
 - [Configure your health check](/doc/manage/healthcheck/)

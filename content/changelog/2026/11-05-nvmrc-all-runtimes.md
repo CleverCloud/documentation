@@ -21,7 +21,7 @@ clever restart --without-cache
 
 In Node.js applications, the `engines.node` field of `package.json` still takes precedence over this variable [until December 1, 2026](/changelog/2026/11-04-node-version-precedence/).
 
-If you prefer to declare the version in a file of your repository, use [mise](/doc/develop/mise/):
+If you prefer to declare the version in a file of your repository, use [mise](/doc/manage/mise/):
 
 ```toml {filename="mise.toml"}
 [tools]
@@ -29,4 +29,4 @@ node = "24"
 ```
 
 - [Learn more about Node.js versions on Clever Cloud](/doc/deploy/applications/nodejs/#set-nodejs-version)
-- [Learn more about mise on Clever Cloud](/doc/develop/mise/)
+- [Learn more about mise on Clever Cloud](/doc/manage/mise/)

@@ -133,7 +133,7 @@ Additionally, you can set PHP's time zone setting with `.user.ini`. For instance
 date.timezone=Europe/Paris
 ```
 
-This setting doesn't change when [CRON jobs](/doc/develop/cron/) run: to schedule them in a local time zone, add a [`CRON_TZ` line](/doc/develop/cron/#choose-the-time-zone) to `clevercloud/cron.json`.
+This setting doesn't change when [CRON jobs](/doc/manage/cron/) run: to schedule them in a local time zone, add a [`CRON_TZ` line](/doc/manage/cron/#choose-the-time-zone) to `clevercloud/cron.json`.
 
 #### Memory limit
 

@@ -10,6 +10,7 @@ keywords:
 - debugging
 - remote command
 aliases:
+- /doc/develop/ssh-access
 - /doc/admin-console/ssh-keys
 - /doc/administrate/ssh-clever-tools
 - /doc/common-configuration/ssh-access

@@ -10,6 +10,8 @@ keywords:
 - versions
 - tasks
 - declarative
+aliases:
+- /doc/develop/mise
 ---
 
 [Mise](https://mise.jdx.dev) is a tool version manager, an environment manager and a task runner in one file. Clever Cloud ships it on every runtime and runs it before your build.

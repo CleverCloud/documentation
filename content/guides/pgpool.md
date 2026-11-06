@@ -104,7 +104,7 @@ The leader's weight is configured with `CC_PGPOOL_LEADER_WEIGHT`. Higher followe
 
 ## Inspect Pgpool-II
 
-Open an [SSH session](/doc/develop/ssh-access/) to an application instance and start `psql`:
+Open an [SSH session](/doc/manage/ssh-access/) to an application instance and start `psql`:
 
 ```bash
 clever ssh

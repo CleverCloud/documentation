@@ -120,7 +120,7 @@ clever env set CC_RUBY_VERSION 4.0.7
 
 ## Other changes
 
-[Request Flow](/doc/develop/request-flow/) now starts the custom middleware set in `CC_REQUEST_FLOW_CUSTOM` from your application folder, as hooks already were. Relative commands such as `./my-proxy` now resolve against it.
+[Request Flow](/doc/manage/request-flow/) now starts the custom middleware set in `CC_REQUEST_FLOW_CUSTOM` from your application folder, as hooks already were. Relative commands such as `./my-proxy` now resolve against it.
 
 When [ClamAV](/doc/security/clamav/) stops, for example under memory pressure, it now restarts automatically, instead of leaving your instance without scanning until the next restart of your application.
 

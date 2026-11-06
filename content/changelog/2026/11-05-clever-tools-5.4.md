@@ -49,5 +49,5 @@ npm install -g clever-tools
 clever version
 ```
 
-- [Learn more about SSH access](/doc/develop/ssh-access/)
+- [Learn more about SSH access](/doc/manage/ssh-access/)
 - [Learn more about Clever Tools](/doc/tools/cli/)

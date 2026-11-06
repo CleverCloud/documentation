@@ -13,6 +13,7 @@ keywords:
 - middleware
 - port configuration
 aliases:
+- /doc/develop/request-flow
 - /doc/develop/observability/request-flow
 - /doc/request-flow
 ---
@@ -29,7 +30,7 @@ Request Flow is available for all runtimes except Docker, where you define and m
 |----------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | `block`              | `CC_REQUEST_FLOW="block"`                           | Blocks public access with a `200 OK` response. Other ports remain accessible through [Network Groups](/doc/network/network-groups/) |
 | `custom`             | `CC_REQUEST_FLOW="custom"`                          | Any custom reverse proxy, started with `CC_REQUEST_FLOW_CUSTOM`                                                                     |
-| `oauth2-proxy`       | `CC_REQUEST_FLOW="oauth2-proxy"`                    | Authentication proxy using [OAuth2 Proxy](/doc/develop/request-flow/oauth2-proxy/)                                                  |
+| `oauth2-proxy`       | `CC_REQUEST_FLOW="oauth2-proxy"`                    | Authentication proxy using [OAuth2 Proxy](/doc/manage/request-flow/oauth2-proxy/)                                                   |
 | `otoroshi-challenge` | `OTOROSHI_CHALLENGE_SECRET`                         | [Otoroshi](/doc/deploy/services/otoroshi/) challenge verification proxy                                                             |
 | `redirectionio`      | `CC_REDIRECTIONIO_PROJECT_KEY`                      | HTTP redirects, rewrites, SEO                                                                                                       |
 | `varnish`            | `clevercloud/varnish.vcl` file or `CC_VARNISH_FILE` | HTTP cache accelerator                                                                                                              |
@@ -126,9 +127,9 @@ A middleware that fails to start leaves the public port closed, and the deployme
 
 The message `Some software are not listening as expected: 9000` means the opposite. Every middleware runs, and your application doesn't listen on the port the chain forwards to. Check the [port management](#port-management) section for the port your runtime expects.
 
-- [Learn more about Varnish on Clever Cloud](/doc/develop/request-flow/varnish/)
-- [Learn more about Redirection.io on Clever Cloud](/doc/develop/request-flow/redirectionio/)
-- [Learn more about OAuth2 Proxy on Clever Cloud](/doc/develop/request-flow/oauth2-proxy/)
-- [Learn more about the Otoroshi Challenge middleware](/doc/develop/request-flow/otoroshi-challenge/)
+- [Learn more about Varnish on Clever Cloud](/doc/manage/request-flow/varnish/)
+- [Learn more about Redirection.io on Clever Cloud](/doc/manage/request-flow/redirectionio/)
+- [Learn more about OAuth2 Proxy on Clever Cloud](/doc/manage/request-flow/oauth2-proxy/)
+- [Learn more about the Otoroshi Challenge middleware](/doc/manage/request-flow/otoroshi-challenge/)
 - [Learn more about Otoroshi on Clever Cloud](/doc/deploy/services/otoroshi/)
 - [Learn more about Network Groups](/doc/network/network-groups/)

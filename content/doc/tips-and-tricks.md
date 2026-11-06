@@ -151,7 +151,7 @@ run = "node server.js"
 ```
 
 - [Learn more about database migrations](/doc/develop/database-migration/)
-- [Learn more about shaping the environment with Mise](/doc/develop/mise/#shape-the-environment)
+- [Learn more about shaping the environment with Mise](/doc/manage/mise/#shape-the-environment)
 
 ## Clever Tools
 
@@ -192,7 +192,7 @@ clever activity --app my-api --follow
 
 If a deployment fails and you want to understand why, set the `CC_TROUBLESHOOT` environment variable to `true`. The instance can then stay available for up to one hour after the failure, and some runtimes add extra build diagnostics.
 
-- [Learn more about SSH access](/doc/develop/ssh-access/)
+- [Learn more about SSH access](/doc/manage/ssh-access/)
 
 ### Diagnose the DNS of your domains
 
@@ -343,7 +343,7 @@ A few examples:
 
 All non-Docker applications share the same image. It holds every language of the platform: .NET, Elixir, Go, Java, Node.js and Bun, PHP, Python, Ruby, Rust, and more. A PHP application can run a Node.js build step without any setup.
 
-To pick a version, whatever the runtime of your application, set the matching variable, such as `CC_NODE_VERSION`, `CC_PHP_VERSION`, `CC_PYTHON_VERSION`, `CC_COMPOSER_VERSION`, or `CC_HUGO_VERSION`. For anything else, [Mise](/doc/develop/mise/) installs the tools your project declares in a `mise.toml` file. In a Docker application, the tools come from your image.
+To pick a version, whatever the runtime of your application, set the matching variable, such as `CC_NODE_VERSION`, `CC_PHP_VERSION`, `CC_PYTHON_VERSION`, `CC_COMPOSER_VERSION`, or `CC_HUGO_VERSION`. For anything else, [Mise](/doc/manage/mise/) installs the tools your project declares in a `mise.toml` file. In a Docker application, the tools come from your image.
 
 - [Follow the tools updates in the changelog](/changelog/)
 - [List all the environment variables](/doc/manage/environment-variables/reference/)
@@ -370,7 +370,7 @@ On runtimes other than Docker, Request Flow chains services between the public p
 
 The services take over the public port `8080` and forward the requests to your application on `9000`, except `block`, which answers on its own. If your application runs its own HTTP server, set `PORT` to `9000`.
 
-- [Learn more about Request Flow](/doc/develop/request-flow/)
+- [Learn more about Request Flow](/doc/manage/request-flow/)
 
 ### A preview for each pull request
 
@@ -392,11 +392,11 @@ For example, to run a PHP script at `scripts/clean-cache.php` every night:
 
 Each running instance of your application runs these scheduled commands, so handle concurrency yourself if your application has several instances.
 
-- [Learn more about scheduled tasks](/doc/develop/cron/)
+- [Learn more about scheduled tasks](/doc/manage/cron/)
 
 ### Start from a blank Linux runtime
 
-Your project doesn't fit a language ecosystem, or mixes several? The Linux runtime expects nothing but a command to start your application. Install what you need with Mise, a script, or your build step, without the conventions of a specific ecosystem. Unless it's a task, your application listens on `0.0.0.0:$PORT`. `PORT` defaults to `8080`: set it to `9000` when you put [Request Flow](/doc/develop/request-flow/) services in front of it. Set the start command with `CC_RUN_COMMAND`, or declare `build` and `run` targets in a Makefile, or Mise tasks, in a `mise.toml` file or as task files.
+Your project doesn't fit a language ecosystem, or mixes several? The Linux runtime expects nothing but a command to start your application. Install what you need with Mise, a script, or your build step, without the conventions of a specific ecosystem. Unless it's a task, your application listens on `0.0.0.0:$PORT`. `PORT` defaults to `8080`: set it to `9000` when you put [Request Flow](/doc/manage/request-flow/) services in front of it. Set the start command with `CC_RUN_COMMAND`, or declare `build` and `run` targets in a Makefile, or Mise tasks, in a `mise.toml` file or as task files.
 
 - [Learn more about the Linux runtime](/doc/deploy/applications/linux/)
 

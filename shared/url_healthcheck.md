@@ -21,7 +21,7 @@ When no health check path is configured, Clever Cloud requests the root path `/`
 
 Before any HTTP request, Clever Cloud checks that a service listens on the public port, `8080`, on a public interface. Depending on your configuration, it's your application, the port Docker maps from `CC_DOCKER_EXPOSED_HTTP_PORT`, or the first Request Flow middleware. A service on this port bound only to `localhost` or `127.0.0.1` makes the deployment fail with `Your application is listening on localhost instead of publicly`: listen on `0.0.0.0` instead.
 
-On runtimes supporting [Request Flow](/doc/develop/request-flow/), when middleware runs in front of your application, Clever Cloud also checks that each middleware port and your application port are listening. With `CC_REQUEST_FLOW="block"`, Clever Cloud only checks the service answering on the public port, not your application.
+On runtimes supporting [Request Flow](/doc/manage/request-flow/), when middleware runs in front of your application, Clever Cloud also checks that each middleware port and your application port are listening. With `CC_REQUEST_FLOW="block"`, Clever Cloud only checks the service answering on the public port, not your application.
 
 ### Example
 

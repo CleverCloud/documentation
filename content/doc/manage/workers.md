@@ -19,7 +19,7 @@ aliases:
 - /doc/workers
 ---
 
-A worker is a command that runs in the background next to your application, such as a queue consumer that processes jobs your application publishes. Clever Cloud starts it on each instance once your application runs, and restarts it when it fails. To run a command on a schedule, use [CRON](/doc/develop/cron/) instead, and to run a command once, use a [Clever Task](/doc/deploy/tasks/).
+A worker is a command that runs in the background next to your application, such as a queue consumer that processes jobs your application publishes. Clever Cloud starts it on each instance once your application runs, and restarts it when it fails. To run a command on a schedule, use [CRON](/doc/manage/cron/) instead, and to run a command once, use a [Clever Task](/doc/deploy/tasks/).
 
 > [!NOTE] Not available for Docker applications
 > Clever Cloud doesn't start workers in Docker applications. Start your background processes from your image instead.

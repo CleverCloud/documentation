@@ -30,7 +30,7 @@ aliases:
 
 ## Overview
 
-Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/doc/manage/environment-variables/reference/#use-redirectionio-as-a-proxy) or [Varnish](/doc/develop/request-flow/varnish/).
+Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/doc/manage/environment-variables/reference/#use-redirectionio-as-a-proxy) or [Varnish](/doc/manage/request-flow/varnish/).
 
 > [!NOTE] Static is a new runtime
 > Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
@@ -79,7 +79,7 @@ To override the default web server behavior, set the `CC_RUN_COMMAND` environmen
 
 ## Custom configuration and port
 
-Caddy and SWS can be configured with a configuration file or through environment variables. You can also pass your own command line flags with `CC_STATIC_FLAGS`. To define a custom listen port, use `CC_STATIC_PORT` (default is `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/)). A custom Caddyfile sets its own address: listen on `:{$PORT}`, and [set `PORT=9000`](/doc/manage/#listen-on-the-right-port) with Request Flow.
+Caddy and SWS can be configured with a configuration file or through environment variables. You can also pass your own command line flags with `CC_STATIC_FLAGS`. To define a custom listen port, use `CC_STATIC_PORT` (default is `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/)). A custom Caddyfile sets its own address: listen on `:{$PORT}`, and [set `PORT=9000`](/doc/manage/#listen-on-the-right-port) with Request Flow.
 
 - Caddy configuration:
   - [Command Line Arguments](https://caddyserver.com/docs/command-line)

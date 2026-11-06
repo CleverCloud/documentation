@@ -35,7 +35,7 @@ aliases:
   {{< card link="/developers/doc/tips-and-tricks" title="Tips & Tricks" subtitle="Shortcuts and lesser-known platform behaviours" icon="light-bulb" >}}
   {{< card link="/developers/doc/find-help" title="Find help" subtitle="Get support and troubleshoot platform issues" icon="support" >}}
   {{< card link="/developers/doc/deploy" title="Deploy" subtitle="Applications, databases, storage and managed services" icon="rocket-launch" >}}
-  {{< card link="/developers/doc/develop" title="Develop" subtitle="Request flow, CRON jobs, and development tools" icon="code" >}}
+  {{< card link="/developers/doc/develop" title="Develop" subtitle="Best practices, Clever Cloud login, Marketplace, and database migration" icon="code" >}}
   {{< card link="/developers/doc/manage" title="Manage applications" subtitle="Settings, environment variables, domains, scaling, and lifecycle" icon="cog-6-tooth" >}}
   {{< card link="/developers/doc/observability" title="Observability" subtitle="Logs, metrics, access logs, drains, and monitoring tools" icon="chart-bar" >}}
   {{< card link="/developers/doc/network" title="Network" subtitle="Private networks, IP ranges and network services" icon="globe-alt" >}}

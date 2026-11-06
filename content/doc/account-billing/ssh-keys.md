@@ -169,7 +169,7 @@ To fix this you will need to configure your SSH agent.
 
 ## Configure your SSH agent
 
-Add these entries to `~/.ssh/config` to select a key for Git deployments and for [SSH access to instances](/doc/develop/ssh-access/). Replace the identity file path with the private key that matches a public key registered to your account:
+Add these entries to `~/.ssh/config` to select a key for Git deployments and for [SSH access to instances](/doc/manage/ssh-access/). Replace the identity file path with the private key that matches a public key registered to your account:
 
 ```sshconfig {filename="~/.ssh/config"}
 Host push-*.services.clever-cloud.com

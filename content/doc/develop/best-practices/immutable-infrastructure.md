@@ -27,11 +27,11 @@ The [activity](/doc/manage/activity/) of your application lists each of these de
 
 Your code, your [environment variables](/doc/manage/environment-variables/), the data of your add-ons, and files in an [FS Bucket](/doc/deploy/storage/fs-bucket/) or [Cellar Object Storage](/doc/deploy/storage/cellar/) persist.
 
-What only exists on an instance disappears with it: files written on its disk, packages installed by hand, changes made through [SSH](/doc/develop/ssh-access/), and data in memory. Sessions kept in memory, for instance, log your users out when their instance is replaced.
+What only exists on an instance disappears with it: files written on its disk, packages installed by hand, changes made through [SSH](/doc/manage/ssh-access/), and data in memory. Sessions kept in memory, for instance, log your users out when their instance is replaced.
 
 ## Build for this model
 
-- Keep your configuration in environment variables, and install your tools during the build, with [deployment hooks](/doc/manage/build-hooks/) or [Mise](/doc/develop/mise/)
+- Keep your configuration in environment variables, and install your tools during the build, with [deployment hooks](/doc/manage/build-hooks/) or [Mise](/doc/manage/mise/)
 - Store your data and your sessions outside the instance, in add-ons, an FS Bucket, or Cellar Object Storage
 - Start fast to shorten each replacement: with zero downtime deployment, old instances serve until the new ones are healthy
 - Debug an instance through SSH if you need to, then bring the fix to your code and redeploy

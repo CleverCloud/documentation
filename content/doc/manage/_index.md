@@ -48,9 +48,9 @@ A server receiving the public traffic and listening only on `localhost` or `127.
 
 ### With Request Flow
 
-When a [Request Flow](/doc/develop/request-flow/) middleware is active, such as Varnish or Redirection.io, it listens on port `8080` and forwards the requests to port `9000`. Clever Cloud doesn't change `PORT` for you: set `PORT=9000` in the environment variables of your application.
+When a [Request Flow](/doc/manage/request-flow/) middleware is active, such as Varnish or Redirection.io, it listens on port `8080` and forwards the requests to port `9000`. Clever Cloud doesn't change `PORT` for you: set `PORT=9000` in the environment variables of your application.
 
-With [`CC_REQUEST_FLOW=block`](/doc/develop/request-flow/#block-public-access), no request reaches your application: it doesn't need to listen on port `9000`.
+With [`CC_REQUEST_FLOW=block`](/doc/manage/request-flow/#block-public-access), no request reaches your application: it doesn't need to listen on port `9000`.
 
 ```bash
 clever env set PORT 9000
@@ -164,13 +164,17 @@ This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/activity" title="Activity" subtitle="Follow the deployments of your application, and what triggered them" icon="clock" >}}
+  {{< card link="/developers/doc/manage/cron" title="CRON" subtitle="Schedule recurring jobs on your instances" icon="code-bracket" >}}
   {{< card link="/developers/doc/manage/build-hooks" title="Deployment hooks" subtitle="Run your own commands before and after the build, and at startup" icon="rocket-launch" >}}
   {{< card link="/developers/doc/manage/domain-names" title="Domain names" subtitle="Serve your application on your own domains, or on a shared path" icon="globe-alt" >}}
   {{< card link="/developers/doc/manage/environment-variables" title="Environment variables" subtitle="Configure your application and get the credentials of its add-ons" icon="pencil-square" >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
   {{< card link="/developers/doc/manage/lifecycle" title="Lifecycle" subtitle="Restart, stop, or delete your application, and redeploy a commit" icon="arrow-path" >}}
+  {{< card link="/developers/doc/manage/mise" title="Mise Package Manager" subtitle="Pin the tool versions your build needs" icon="cube" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
   {{< card link="/developers/doc/manage/scaling" title="Scaling" subtitle="Set the size and number of instances, or let them follow the load" icon="server-stack" >}}
   {{< card link="/developers/doc/manage/service-dependencies" title="Service dependencies" subtitle="Link applications and add-ons to receive their credentials" icon="plug" >}}
+  {{< card link="/developers/doc/manage/ssh-access" title="SSH access" subtitle="Connect to a running instance to debug it" icon="command-line" >}}
   {{< card link="/developers/doc/manage/tcp-redirections" title="TCP redirections" subtitle="Expose a public TCP port of your application for non-HTTP protocols" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/manage/workers" title="Workers" subtitle="Keep background processes running next to your application" icon="cog-6-tooth" >}}
   {{< card link="/developers/doc/manage/zone-migration" title="Zone migration" subtitle="Move your applications and add-ons to another region" icon="map-pin" >}}

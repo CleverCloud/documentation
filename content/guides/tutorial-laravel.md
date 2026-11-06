@@ -181,7 +181,7 @@ php artisan schedule:run
 chmod +x clevercloud/cron.sh
 ```
 
-Each instance of the application runs `schedule:run`. For a task that must run on a single instance, chain [`onOneServer()`](https://laravel.com/docs/scheduling#running-tasks-on-one-server) to it in your schedule. Like [`withoutOverlapping()`](https://laravel.com/docs/scheduling#preventing-task-overlaps), which keeps a task from starting while its previous run goes on, it takes a lock in the cache store of the scheduler. Configure the scheduler to use a cache store that all instances share, such as your database or a Redis-compatible add-on. The [CRON page](/developers/doc/develop/cron/) explains how jobs run on Clever Cloud.
+Each instance of the application runs `schedule:run`. For a task that must run on a single instance, chain [`onOneServer()`](https://laravel.com/docs/scheduling#running-tasks-on-one-server) to it in your schedule. Like [`withoutOverlapping()`](https://laravel.com/docs/scheduling#preventing-task-overlaps), which keeps a task from starting while its previous run goes on, it takes a lock in the cache store of the scheduler. Configure the scheduler to use a cache store that all instances share, such as your database or a Redis-compatible add-on. The [CRON page](/developers/doc/manage/cron/) explains how jobs run on Clever Cloud.
 
 The [PHP CLI memory limit](/developers/doc/deploy/applications/php/#memory-limit) depends on the application instance size. Monitor scheduled jobs and scale the application if they need more memory.
 

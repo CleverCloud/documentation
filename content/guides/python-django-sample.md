@@ -61,7 +61,7 @@ Configure the command used to start Uvicorn on the port expected by Clever Cloud
 clever env set CC_PYTHON_UV_RUN_COMMAND "uv run uvicorn --host 0.0.0.0 --port 8080 myDjango.asgi:application"
 ```
 
-Native uv deployment is enabled by the combination of `uv.lock` and `CC_PYTHON_UV_RUN_COMMAND`. If you later add a [Request Flow middleware](/doc/develop/request-flow/#port-management), change the command to listen on port `9000`.
+Native uv deployment is enabled by the combination of `uv.lock` and `CC_PYTHON_UV_RUN_COMMAND`. If you later add a [Request Flow middleware](/doc/manage/request-flow/#port-management), change the command to listen on port `9000`.
 
 ## Deploy the application
 

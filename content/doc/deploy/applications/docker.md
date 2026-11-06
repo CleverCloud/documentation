@@ -44,8 +44,8 @@ Other runtimes run your application in an environment Clever Cloud prepares and 
 Thus, features that rely on the application environment of other runtimes don't apply to Docker applications:
 
 - [Workers](/doc/manage/workers/): start your background processes from your image
-- [CRON jobs](/doc/develop/cron/) of a `clevercloud/cron.json` file: run a scheduler within your container
-- [Request Flow](/doc/develop/request-flow/) middleware, such as Varnish or Redirection.io: run them in your container
+- [CRON jobs](/doc/manage/cron/) of a `clevercloud/cron.json` file: run a scheduler within your container
+- [Request Flow](/doc/manage/request-flow/) middleware, such as Varnish or Redirection.io: run them in your container
 - [Deployment hooks](/doc/manage/build-hooks/), except `CC_RUN_SUCCEEDED_HOOK`, which runs inside the container: put the build steps in your Dockerfile
 
 Docker applications don't support [FS Buckets](/doc/deploy/storage/fs-bucket/) and [Docker Compose](https://docs.docker.com/compose/): each instance runs one application container. For several containers working together or persistent volumes, use [Clever Kubernetes Engine](/doc/deploy/kubernetes/), and manage your add-ons with the [Clever Kubernetes Operator](/doc/deploy/kubernetes/operator/).
@@ -149,7 +149,7 @@ COPY --from=build /server /server
 CMD ["/server"]
 ```
 
-Such an image only holds what you copy into it, without the certificate authorities other images include. Most apps read them from the system to check HTTPS servers: without the `COPY` of the certificates, HTTPS requests fail with `x509: certificate signed by unknown authority`. It has no shell either: [SSH access](/doc/develop/ssh-access/#docker-applications) doesn't work, and `CC_RUN_SUCCEEDED_HOOK` can only run the programs you copy into the image.
+Such an image only holds what you copy into it, without the certificate authorities other images include. Most apps read them from the system to check HTTPS servers: without the `COPY` of the certificates, HTTPS requests fail with `x509: certificate signed by unknown authority`. It has no shell either: [SSH access](/doc/manage/ssh-access/#docker-applications) doesn't work, and `CC_RUN_SUCCEEDED_HOOK` can only run the programs you copy into the image.
 
 ### Deploy a pre-built image
 

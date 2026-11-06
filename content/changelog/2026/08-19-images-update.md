@@ -42,7 +42,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Health Check and Request Flow improvements
 
-This release also improves the management of Health Checks and Request Flow across our application images. See the [Request Flow documentation](/doc/develop/request-flow/) to learn how to configure middleware chaining and automatic port allocation.
+This release also improves the management of Health Checks and Request Flow across our application images. See the [Request Flow documentation](/doc/manage/request-flow/) to learn how to configure middleware chaining and automatic port allocation.
 
 ## Linux Kernel
 

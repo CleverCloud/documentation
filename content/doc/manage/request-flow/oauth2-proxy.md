@@ -11,13 +11,14 @@ keywords:
 - request flow
 - reverse proxy
 aliases:
+- /doc/develop/request-flow/oauth2-proxy
 - /doc/develop/oauth2-proxy
 - /doc/request-flow/oauth2-proxy
 ---
 
 ## Overview
 
-[Request Flow](/doc/develop/request-flow/) puts authentication in front of any application through [OAuth2 Proxy](https://oauth2-proxy.github.io/oauth2-proxy/), with no change to your code: a few environment variables are enough. Clever Cloud starts the middleware, allocates its port, points it at your application, and keeps it in the chain alongside Varnish, Redirection.io or a proxy of your own with the same flexibility. It's available on every runtime that supports Request Flow.
+[Request Flow](/doc/manage/request-flow/) puts authentication in front of any application through [OAuth2 Proxy](https://oauth2-proxy.github.io/oauth2-proxy/), with no change to your code: a few environment variables are enough. Clever Cloud starts the middleware, allocates its port, points it at your application, and keeps it in the chain alongside Varnish, Redirection.io or a proxy of your own with the same flexibility. It's available on every runtime that supports Request Flow.
 
 OAuth2 Proxy redirects unauthenticated visitors to the identity provider you configure, and only authenticated requests reach your application. This suits a staging environment, an internal dashboard or an administration interface.
 
@@ -31,7 +32,7 @@ Add `oauth2-proxy` to the `CC_REQUEST_FLOW` environment variable:
 CC_REQUEST_FLOW="oauth2-proxy"
 ```
 
-Request Flow allows you to use OAuth2 Proxy with other middleware such as [Varnish](/doc/develop/request-flow/varnish/) or [Redirection.io](https://redirection.io/) for example. List every middleware in the order you want, from the public port to your application:
+Request Flow allows you to use OAuth2 Proxy with other middleware such as [Varnish](/doc/manage/request-flow/varnish/) or [Redirection.io](https://redirection.io/) for example. List every middleware in the order you want, from the public port to your application:
 
 ```bash
 CC_REQUEST_FLOW="oauth2-proxy,varnish"
@@ -115,7 +116,7 @@ PORT="9000"
 ```
 
 > [!NOTE]
-> This works as long as your application listens on `0.0.0.0:$PORT` rather than on a hardcoded port. Read the [Request Flow port management](/doc/develop/request-flow/#port-management) section for the details of the whole chain.
+> This works as long as your application listens on `0.0.0.0:$PORT` rather than on a hardcoded port. Read the [Request Flow port management](/doc/manage/request-flow/#port-management) section for the details of the whole chain.
 
 ## Keep the health check working
 
@@ -154,6 +155,6 @@ OAuth2 Proxy logs its configuration errors and exits, so read the deployment log
 
 A login that loops between your application and the identity provider points to `OAUTH2_PROXY_REDIRECT_URL` not matching the callback declared in the provider. A `403 Forbidden` after a successful login points to an email address outside your authorization rules, or to a missing `email` scope.
 
-- [Learn more about Request Flow](/doc/develop/request-flow/)
+- [Learn more about Request Flow](/doc/manage/request-flow/)
 - [Learn more about OAuth2 Proxy configuration](https://oauth2-proxy.github.io/oauth2-proxy/)
 - [Configure your health check](/doc/manage/healthcheck/)

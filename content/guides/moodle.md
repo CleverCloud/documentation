@@ -126,7 +126,7 @@ cd "$APP_HOME"
 php admin/cli/cron.php
 ```
 
-Declare the schedule in `clevercloud/cron.json`, as the [CRON page](/developers/doc/develop/cron/) describes:
+Declare the schedule in `clevercloud/cron.json`, as the [CRON page](/developers/doc/manage/cron/) describes:
 
 ```json {filename="clevercloud/cron.json"}
 [
@@ -175,5 +175,5 @@ Moodle applies required database changes after deployment through its web or CLI
   {{< card link="/developers/doc/deploy/applications/php/" title="PHP applications" subtitle="Configure and deploy PHP applications" icon="php" >}}
   {{< card link="/developers/doc/deploy/databases/mysql/" title="MySQL" subtitle="Create and administer a managed database" icon="mysql" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket/" title="FS Buckets" subtitle="Mount persistent file storage in an application" icon="fsbucket" >}}
-  {{< card link="/developers/doc/develop/cron/" title="Scheduled tasks" subtitle="Run recurring commands in an application" icon="clock" >}}
+  {{< card link="/developers/doc/manage/cron/" title="Scheduled tasks" subtitle="Run recurring commands in an application" icon="clock" >}}
 {{< /cards >}}

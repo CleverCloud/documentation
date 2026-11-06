@@ -61,9 +61,9 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Health check paths and the Otoroshi challenge
 
-Otoroshictl 0.0.18 excludes health check paths from the [Otoroshi challenge](/doc/develop/request-flow/otoroshi-challenge/). The middleware reads `CC_HEALTH_CHECK_PATH` and its numbered variants, then forwards `GET` and `HEAD` requests on these paths to your application without asking for a challenge. Setting a health check path on a protected application no longer fails the deployment because of a missing challenge, as long as your application answers `2xx` on that path, and `OTOROSHI_CHALLENGE_EXCLUDE_PATHS` excludes any other path.
+Otoroshictl 0.0.18 excludes health check paths from the [Otoroshi challenge](/doc/manage/request-flow/otoroshi-challenge/). The middleware reads `CC_HEALTH_CHECK_PATH` and its numbered variants, then forwards `GET` and `HEAD` requests on these paths to your application without asking for a challenge. Setting a health check path on a protected application no longer fails the deployment because of a missing challenge, as long as your application answers `2xx` on that path, and `OTOROSHI_CHALLENGE_EXCLUDE_PATHS` excludes any other path.
 
-- [Learn more about the Otoroshi challenge](/doc/develop/request-flow/otoroshi-challenge/)
+- [Learn more about the Otoroshi challenge](/doc/manage/request-flow/otoroshi-challenge/)
 
 ## Development dependencies with pnpm
 

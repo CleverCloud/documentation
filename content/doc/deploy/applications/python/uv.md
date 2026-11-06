@@ -42,7 +42,7 @@ The uv cache (`~/.cache/uv`) is included in the build cache to speed up subseque
 
 ## Run phase
 
-The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. It must start an HTTP server listening on `0.0.0.0` and the port provided through `PORT`. Clever Cloud sets `PORT` to `8080` by default. Set `PORT=9000` when you enable at least one [Request Flow middleware](/doc/develop/request-flow/#port-management).
+The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. It must start an HTTP server listening on `0.0.0.0` and the port provided through `PORT`. Clever Cloud sets `PORT` to `8080` by default. Set `PORT=9000` when you enable at least one [Request Flow middleware](/doc/manage/request-flow/#port-management).
 
 `CC_PYTHON_UV_RUN_COMMAND` is executed directly, without shell variable expansion. If the server doesn't read `PORT` itself, write its value in the command, `8080` or `9000` with Request Flow, for example `uv run uvicorn --host 0.0.0.0 --port 8080 myProject.asgi:application`.
 
@@ -62,7 +62,7 @@ With native uv deployment:
 - No Nginx, uWSGI, or Gunicorn is involved
 - Your application manages its HTTP server and listens on the port provided through `PORT`
 - `CC_PYTHON_MODULE` and `CC_PYTHON_BACKEND` are ignored
-- [Redirection.io, Varnish and custom proxies](/doc/develop/request-flow/) are configured through Request Flow, not Nginx
+- [Redirection.io, Varnish and custom proxies](/doc/manage/request-flow/) are configured through Request Flow, not Nginx
 - [Server configuration](/doc/deploy/applications/python/servers/) settings do not apply
 
 - [Learn more about uv](https://docs.astral.sh/uv/)

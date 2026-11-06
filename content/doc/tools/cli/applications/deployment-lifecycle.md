@@ -109,7 +109,7 @@ clever ssh
 clever ssh --app my-api --instance any -c hostname
 ```
 
-The [SSH access guide](/doc/develop/ssh-access/) covers prerequisites, identity files, instance selection, remote commands, and troubleshooting.
+The [SSH access guide](/doc/manage/ssh-access/) covers prerequisites, identity files, instance selection, remote commands, and troubleshooting.
 
 `clever instances` lists the running instances of your application, including build instances. Add `--all` to include instances in any state. The `--since`, `--until`, and `--deployment-id` filters also include past instances:
 

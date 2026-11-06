@@ -34,7 +34,7 @@ To deploy your Hono project to Clever Cloud, adapt its entry point, then create 
 
 The `nodejs` template's `src/index.ts` starts a server on port 3000 and has no shutdown handling. Adapt both behaviours before deploying.
 
-Clever Cloud sets `PORT` environment variable to `8080` by default and expects the application to listen on every network interface. Read it rather than hardcoding this value to remain compatible with [Request Flow port allocation](/developers/doc/develop/request-flow/#port-management), keep port 3000 as a local fallback, and set the hostname to `0.0.0.0`. Also close the server on `SIGINT` and `SIGTERM` so in-flight requests can finish during a restart or zero-downtime deployment:
+Clever Cloud sets `PORT` environment variable to `8080` by default and expects the application to listen on every network interface. Read it rather than hardcoding this value to remain compatible with [Request Flow port allocation](/developers/doc/manage/request-flow/#port-management), keep port 3000 as a local fallback, and set the hostname to `0.0.0.0`. Also close the server on `SIGINT` and `SIGTERM` so in-flight requests can finish during a restart or zero-downtime deployment:
 
 ```typescript
 // src/index.ts

@@ -79,6 +79,6 @@ clever logs --addon postgresql_xxxxxxxx
    With add-ons, only the last 1000 lines of logs are got by `clever logs`.
 {{< /callout >}}
 
-The output of your [CRON jobs](/doc/develop/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
+The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
 See [Access Logs](/doc/observability/access-logs) for incoming HTTP requests, and [Drains](/doc/observability/drains) to forward everything to an external tool.

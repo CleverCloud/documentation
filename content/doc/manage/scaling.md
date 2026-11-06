@@ -83,7 +83,7 @@ With zero downtime deployment, a new deployment keeps the size and the number of
 
 Each instance runs its own copy of your application, which changes a few things:
 
-- Each instance runs your [CRON jobs](/doc/develop/cron/) and your [workers](/doc/manage/workers/). To keep a job from running on every instance, see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
+- Each instance runs your [CRON jobs](/doc/manage/cron/) and your [workers](/doc/manage/workers/). To keep a job from running on every instance, see [Avoid duplicate runs](/doc/manage/cron/#avoid-duplicate-runs).
 - Local files aren't shared, and disappear with their instance: use an [FS Bucket](/doc/deploy/storage/fs-bucket/) or [Cellar Object Storage](/doc/deploy/storage/cellar/).
 - Sessions kept in memory only exist on one instance. Store them in a [Materia KV](/doc/deploy/databases/materia-kv/) or [Redis®](/doc/deploy/databases/redis/) add-on, or enable [sticky sessions](/doc/manage/#sticky-sessions).
 - The `INSTANCE_NUMBER` environment variable, `0`, `1`, and so on, tells your application which instance it runs on.

@@ -77,7 +77,7 @@ At the time of publishing this documentation, here are some limitations around t
 
 #### Running from a CRON
 
-Clever Tools is available on the instances of your applications. To run a task on a schedule, restart it from a [CRON job](/doc/develop/cron/) of another application, which can't be a Docker application or a task. In the environment variables of this application, set `CLEVER_TOKEN` and `CLEVER_SECRET` so Clever Tools can log in, and `TASK_APP_ID` to the ID of the task. Then add a script that restarts the task, which runs its `CC_RUN_COMMAND` again:
+Clever Tools is available on the instances of your applications. To run a task on a schedule, restart it from a [CRON job](/doc/manage/cron/) of another application, which can't be a Docker application or a task. In the environment variables of this application, set `CLEVER_TOKEN` and `CLEVER_SECRET` so Clever Tools can log in, and `TASK_APP_ID` to the ID of the task. Then add a script that restarts the task, which runs its `CC_RUN_COMMAND` again:
 
 ```bash {filename="crons/run-task.sh"}
 #!/bin/bash -l
@@ -96,7 +96,7 @@ The `-l` option of the shebang loads your environment variables and the `PATH` t
 ]
 ```
 
-Each instance of the application runs the job, and the `INSTANCE_NUMBER` check keeps only the first one. During a deployment, the job can still run twice, as the [CRON page explains](/doc/develop/cron/#avoid-duplicate-runs).
+Each instance of the application runs the job, and the `INSTANCE_NUMBER` check keeps only the first one. During a deployment, the job can still run twice, as the [CRON page explains](/doc/manage/cron/#avoid-duplicate-runs).
 
 #### Running a script with different parameters
 

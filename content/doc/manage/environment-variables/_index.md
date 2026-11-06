@@ -77,9 +77,9 @@ It will contain a different number for each instance of the same deployment.
 
 For example, if three instances are running, it will contain `0` for the first,
 `1` for the second and `2` for the third.
-Check it to run a [CRON job](/doc/develop/cron/) on the first instance only.
+Check it to run a [CRON job](/doc/manage/cron/) on the first instance only.
 During a deployment, the old and new instances both number from `0`, so a job
-can still run twice: see [Avoid duplicate runs](/doc/develop/cron/#avoid-duplicate-runs).
+can still run twice: see [Avoid duplicate runs](/doc/manage/cron/#avoid-duplicate-runs).
 
 ## Settings you can define using environment variables
 

@@ -147,7 +147,7 @@ If you use Composer to manage WordPress and plugins as immutable dependencies, s
 
 ## Improve performance
 
-[Varnish](/developers/doc/develop/request-flow/varnish/) is available on PHP applications for HTTP caching. Start from the [WordPress VCL example](https://github.com/CleverCloud/varnish-examples/blob/master/wordpress.vcl) and make cache exclusions match your site and plugins.
+[Varnish](/developers/doc/manage/request-flow/varnish/) is available on PHP applications for HTTP caching. Start from the [WordPress VCL example](https://github.com/CleverCloud/varnish-examples/blob/master/wordpress.vcl) and make cache exclusions match your site and plugins.
 
 For object caching, link a [Redis add-on](/developers/doc/deploy/databases/redis/) and use a maintained WordPress Redis plugin configured with the injected `REDIS_HOST`, `REDIS_PORT` and `REDIS_PASSWORD` variables. Use a unique cache-key salt when several WordPress sites share the same Redis database.
 

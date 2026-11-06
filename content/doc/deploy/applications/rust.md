@@ -134,7 +134,7 @@ clever env set CC_RUSTUP_CHANNEL 1.88.0
 
 A [`rust-toolchain.toml`](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) file at the root of the project takes precedence over `CC_RUSTUP_CHANNEL`: rustup installs the toolchain it names during the build. Clever Cloud deletes the legacy `rust-toolchain` file, without extension, before the build.
 
-The image also includes `clang`, `lld`, `pkg-config`, and OpenSSL, for crates that build C code or link system libraries. To install other tools, such as a CLI your build needs, use [Mise](/doc/develop/mise/).
+The image also includes `clang`, `lld`, `pkg-config`, and OpenSSL, for crates that build C code or link system libraries. To install other tools, such as a CLI your build needs, use [Mise](/doc/manage/mise/).
 
 ### Build with cargo install
 

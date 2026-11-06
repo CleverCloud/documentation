@@ -46,7 +46,7 @@ bun = "1.3"
 Mise installs this version before the build phase, and Clever Cloud uses it for both `bun install` and your application.
 
 - [Learn more about Bun on Clever Cloud](/doc/deploy/applications/nodejs/#bun-version)
-- [Learn more about Mise on Clever Cloud](/doc/develop/mise/)
+- [Learn more about Mise on Clever Cloud](/doc/manage/mise/)
 
 ## PHP 8.5 with `CC_PHP_VERSION=8`
 

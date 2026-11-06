@@ -38,7 +38,7 @@ We'll only support non end-of-life (EOL) versions of PHP in FrankenPHP, so regul
 
 Request Flow is now available in all our runtimes, including Python without uv and Ruby.
 
-- [Learn more about Request Flow](/doc/develop/request-flow/)
+- [Learn more about Request Flow](/doc/manage/request-flow/)
 
 ## Fixes
 

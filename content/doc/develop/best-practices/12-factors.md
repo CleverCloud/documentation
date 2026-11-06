@@ -23,7 +23,7 @@ An application has one codebase, tracked in version control, and deployed severa
 
 ## Dependencies
 
-An application declares all its dependencies, and doesn't rely on what the system provides. Clever Cloud installs them during the build, from the manifests and lock files of your runtime, such as `package.json` and its lock file, `uv.lock`, or `Cargo.lock`. Declare the tools your build needs with [Mise](/doc/develop/mise/) rather than installing them by hand on an instance: they wouldn't survive its replacement.
+An application declares all its dependencies, and doesn't rely on what the system provides. Clever Cloud installs them during the build, from the manifests and lock files of your runtime, such as `package.json` and its lock file, `uv.lock`, or `Cargo.lock`. Declare the tools your build needs with [Mise](/doc/manage/mise/) rather than installing them by hand on an instance: they wouldn't survive its replacement.
 
 ## Configuration
 
@@ -63,6 +63,6 @@ An application writes its logs as a stream of events on its standard output, and
 
 ## Admin processes
 
-One-off administration commands run in the same environment as the application. On Clever Cloud, run a database migration or a data import as a [Clever Task](/doc/deploy/tasks/): an application that runs one command, then stops. Deploy it from the same commit as your application, and give it the same variables and add-ons, so that it runs the same code against the same services. To inspect a running instance, connect to it through [SSH](/doc/develop/ssh-access/).
+One-off administration commands run in the same environment as the application. On Clever Cloud, run a database migration or a data import as a [Clever Task](/doc/deploy/tasks/): an application that runs one command, then stops. Deploy it from the same commit as your application, and give it the same variables and add-ons, so that it runs the same code against the same services. To inspect a running instance, connect to it through [SSH](/doc/manage/ssh-access/).
 
 - [Read The Twelve-Factor App](https://12factor.net/)

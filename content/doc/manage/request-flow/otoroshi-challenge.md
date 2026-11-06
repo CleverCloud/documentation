@@ -11,6 +11,7 @@ keywords:
 - jwt
 - reverse proxy
 aliases:
+- /doc/develop/request-flow/otoroshi-challenge
 - /doc/develop/otoroshi-challenge
 - /doc/request-flow/otoroshi-challenge
 ---
@@ -19,7 +20,7 @@ Putting an [Otoroshi](/doc/deploy/services/otoroshi/) gateway in front of an app
 
 That model only holds if those applications cannot be reached any other way. An application deployed on Clever Cloud keeps its own public URL, and anyone who finds it bypasses the gateway along with everything it enforces.
 
-The Otoroshi challenge closes that gap without a private network. [Request Flow](/doc/develop/request-flow/) runs a middleware in front of your application that answers `401 Unauthorized` to every request unable to prove it came through your gateway, apart from the paths you exclude from the challenge, and forwards the rest untouched. Your code changes in no way, and your application never sees the challenge headers.
+The Otoroshi challenge closes that gap without a private network. [Request Flow](/doc/manage/request-flow/) runs a middleware in front of your application that answers `401 Unauthorized` to every request unable to prove it came through your gateway, apart from the paths you exclude from the challenge, and forwards the rest untouched. Your code changes in no way, and your application never sees the challenge headers.
 
 A [Network Group](/doc/network/network-groups/) reaches the same result differently, by placing your Otoroshi add-on and your applications on a private WireGuard network and keeping those applications off the public internet. The challenge suits applications that stay on a public URL, or that you want to protect without changing their network topology. Nothing prevents combining both.
 
@@ -76,7 +77,7 @@ Error: listen EADDRINUSE: address already in use 0.0.0.0:8080
 ```
 
 > [!NOTE] Bind on the address the platform provides
-> This works as long as your application listens on `0.0.0.0:$PORT` rather than on a hardcoded port. Read the [Request Flow port management](/doc/develop/request-flow/#port-management) section for the details of the whole chain.
+> This works as long as your application listens on `0.0.0.0:$PORT` rather than on a hardcoded port. Read the [Request Flow port management](/doc/manage/request-flow/#port-management) section for the details of the whole chain.
 
 ## Keep the health check working
 
@@ -119,6 +120,6 @@ curl -s -o /dev/null -w "%{http_code}\n" https://your-application.cleverapps.io/
 
 A `401` answer means only your gateway can reach the application. A `200` means the middleware is not running, so check that `OTOROSHI_CHALLENGE_SECRET` is set and that your runtime supports Request Flow.
 
-- [Learn more about Request Flow](/doc/develop/request-flow/)
+- [Learn more about Request Flow](/doc/manage/request-flow/)
 - [Deploy an Otoroshi add-on](/doc/deploy/services/otoroshi/)
 - [Learn more about the Otoroshi communication protocol](https://www.otoroshi.io/docs/topics/otoroshi-protocol/)

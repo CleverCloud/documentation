@@ -46,7 +46,7 @@ We updated all our images. Deployment is in progress for all our users.
 
 ## Varnish 9.0
 
-[Varnish](/doc/develop/request-flow/varnish/) now runs version 9.0, with varnish-modules 0.28. This major release changes how Varnish handles requests to an absolute URI, such as `GET http://example.com HTTP/1.1`: it now requires a host and moves it to the `Host` header, leaving the path in `req.url`. The built-in VCL also requires URLs to start with `/`, accepts `*` for `OPTIONS` requests and doesn't check `CONNECT` requests, which remain denied by default. This fixes the [VSV00018](https://vinyl-cache.org/security/VSV00018.html) vulnerability.
+[Varnish](/doc/manage/request-flow/varnish/) now runs version 9.0, with varnish-modules 0.28. This major release changes how Varnish handles requests to an absolute URI, such as `GET http://example.com HTTP/1.1`: it now requires a host and moves it to the `Host` header, leaving the path in `req.url`. The built-in VCL also requires URLs to start with `/`, accepts `*` for `OPTIONS` requests and doesn't check `CONNECT` requests, which remain denied by default. This fixes the [VSV00018](https://vinyl-cache.org/security/VSV00018.html) vulnerability.
 
 It also removes the `beresp.storage_hint` VCL variable, so a `varnish.vcl` file that still uses it no longer compiles: remove it before your next deployment. `req.ttl` becomes `req.max_age`, the previous name still works but is deprecated. For requests without a body, Varnish now sends a `Content-Length: 0` header to your application, except for `GET`, `HEAD`, `DELETE`, `OPTIONS` and `TRACE` methods.
 

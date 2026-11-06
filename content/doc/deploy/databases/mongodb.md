@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 40
 linkTitle: MongoDB
 title: MongoDB
 description: Deploy MongoDB database add-on service on Clever Cloud with automatic scaling, backups for robust NoSQL applications

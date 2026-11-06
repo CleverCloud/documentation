@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 20
 linkTitle: File System Buckets
 title: File System Buckets
 description: Mount a persistent network file system in your Clever Cloud applications, shared by their instances and reachable over FTP and SFTP

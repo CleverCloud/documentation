@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 20
 linkTitle: Activity
 title: Activity
 description: Monitor and manage activity logs for your Clever Cloud applications including deployments, scaling events, and system activities

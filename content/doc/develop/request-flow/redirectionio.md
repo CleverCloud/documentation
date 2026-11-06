@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 30
 linkTitle: Redirection.io
 title: Redirection.io
 description: Manage redirections and HTTP traffic rules in front of your application with the Redirection.io middleware

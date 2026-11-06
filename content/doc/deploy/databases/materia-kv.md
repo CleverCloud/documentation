@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 20
 linkTitle: Materia KV
 title: Materia KV
 description: Deploy Materia key-value store distributed across 3 datacenters, storage-based, resilient and compatible with existing Redis ecosystems

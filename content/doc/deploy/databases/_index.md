@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 35
 linkTitle: Databases
 title: Databases
 description: Deploy managed databases on Clever Cloud with automated backups, monitoring and scaling

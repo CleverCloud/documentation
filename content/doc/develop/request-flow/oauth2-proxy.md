@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 10
 linkTitle: OAuth2 Proxy
 title: OAuth2 Proxy
 description: Add OAuth2 Proxy authentication to applications through Request Flow on Clever Cloud without changing application code

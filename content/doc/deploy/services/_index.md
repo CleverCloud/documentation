@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 50
 linkTitle: Services
 title: Services
 description: Complete your Clever Cloud setup with identity, analytics, business intelligence, transactional email and CI/CD services

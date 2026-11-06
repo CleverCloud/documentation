@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 69
 linkTitle: Request Flow
 title: Request Flow
 description: Automatically chain reverse proxies and middleware (Varnish, Redirection.io, OAuth2 Proxy, custom) in front of your application with Request Flow on Clever Cloud

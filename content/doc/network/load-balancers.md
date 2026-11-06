@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 141
 linkTitle: Dedicated load balancers
 title: Dedicated load balancers
 description: Request load balancers dedicated to your organisation for isolated capacity, fixed inbound IP addresses and redundancy

@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 20
 linkTitle: Environment variables
 title: Environment variables
 description: Manage environment variables on Clever Cloud for application configuration, secrets management, and runtime behavior control

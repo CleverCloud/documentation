@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 10
 title: Cellar, S3-compatible object storage service
 linkTitle: Cellar Object Storage
 description: Deploy Cellar S3-compatible object storage add-on service on Clever Cloud for scalable file storage and content delivery in your applications

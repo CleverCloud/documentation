@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 115
 linkTitle: Service Dependencies
 title: Link applications to add-ons and other applications
 description: Link an application to add-ons and to other applications of its organisation to receive their environment variables, and publish the configuration of an application for the applications that depend on it

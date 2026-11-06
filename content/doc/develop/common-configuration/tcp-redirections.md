@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 80
 linkTitle: TCP Redirections
 title: TCP redirections
 description: Expose a raw TCP port of your Clever Cloud application through the load balancers, for protocols other than HTTP, from the Console, Clever Tools or Terraform

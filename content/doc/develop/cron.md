@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 64
 linkTitle: CRON
 title: Schedule jobs with CRON
 description: Run commands on a schedule on your Clever Cloud applications with a cron.json file, in UTC or in your local time zone, with your environment variables loaded

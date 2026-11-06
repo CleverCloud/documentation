@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 156
 linkTitle: TLS Certificates
 title: Installing TLS Certificates
 description: Configure SSL certificates and HTTPS encryption for your Clever Cloud applications to ensure secure communications and data protection

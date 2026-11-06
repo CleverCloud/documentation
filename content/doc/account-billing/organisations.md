@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 236
 linkTitle: Organisations
 title: Manage an organisation
 description: Manage your organisation on Clever Cloud including user roles, permissions, billing settings, and administrative information

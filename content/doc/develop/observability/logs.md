@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 50
 linkTitle: Logs
 title: Logs
 description: Access and filter your application logs on Clever Cloud from the Console, Clever Tools or the API

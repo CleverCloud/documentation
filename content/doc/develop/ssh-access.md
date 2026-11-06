@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 70
 linkTitle: SSH access
 title: SSH access to running instances
 description: Open a shell or run a command on the running instances of your Clever Cloud applications with Clever Tools or an SSH client, and debug failed deployments

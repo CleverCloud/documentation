@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 90
 linkTitle: Workers
 title: Run background workers alongside your application
 description: Run queue consumers and other long-running background processes next to your application on each instance, and choose how Clever Cloud restarts them

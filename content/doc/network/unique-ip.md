@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 144
 linkTitle: Unique IP
 title: Unique IP service
 description: Give your applications a fixed and unique outbound IP address so external services can allowlist them

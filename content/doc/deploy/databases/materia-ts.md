@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 30
 linkTitle: Materia TS
 title: Materia TS
 description: Deploy Materia Time Series store distributed across 3 datacenters, storage-based, resilient and compatible with Warp 10 ecosystem

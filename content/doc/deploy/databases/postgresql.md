@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 60
 linkTitle: PostgreSQL
 title: PostgreSQL
 description: Deploy PostgreSQL database add-on service on Clever Cloud with automated backups, scaling for enterprise applications

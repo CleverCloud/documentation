@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 142
 linkTitle: IP ranges
 title: IP address ranges
 description: Find the outbound IP address ranges used by Clever Cloud regions to configure allowlists on external services

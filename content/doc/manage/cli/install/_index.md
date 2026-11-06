@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 1
 linkTitle: Install Clever Tools
 title: Install Clever Tools
 description: Install Clever Tools CLI with comprehensive commands, automation features, and management capabilities for efficient deployment

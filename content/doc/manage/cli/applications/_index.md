@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 3
 linkTitle: Applications
 title: Applications
 description: Create and manage Clever Cloud applications using Clever Tools CLI with deployment, scaling, and configuration management capabilities

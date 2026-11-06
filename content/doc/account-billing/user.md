@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 231
 linkTitle: Account
 title: Account
 description: Create, configure and delete your Clever Cloud account, from sign-up methods to two-factor authentication and account removal

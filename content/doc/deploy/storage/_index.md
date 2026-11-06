@@ -1,6 +1,5 @@
 ---
 type: docs
-weight: 55
 linkTitle: Storage
 title: Storage
 description: Store files and objects on Clever Cloud with S3-compatible object storage, persistent file systems and managed messaging

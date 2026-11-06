@@ -120,7 +120,7 @@ To build again from scratch, restart without the cache (rebuild):
 clever restart --without-cache
 ```
 
-If a build fails for lack of memory, enable a [dedicated build instance](/doc/develop/common-configuration/lifecycle/#edit-application-configuration) larger than your application instances.
+If a build fails for lack of memory, enable a [dedicated build instance](/doc/develop/common-configuration/#dedicated-build-instance) larger than your application instances.
 
 ### Optimize your image
 

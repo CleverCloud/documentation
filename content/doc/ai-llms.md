@@ -106,7 +106,7 @@ Each of them is driven by API, so an agent assembles a full stack rather than a 
 
 ## Production is the same platform
 
-A throwaway environment and a production one differ by their plan, not by their nature. The same application gets [logs](/doc/observability/logs/) and [access logs](/doc/observability/logs/#access-logs), [metrics](/doc/observability/metrics/) stored in Warp 10, [automated backups](/doc/deploy/databases/) on its databases, [horizontal and vertical auto-scaling](/doc/manage/scaling/), and [Kubernetes](/doc/deploy/kubernetes/) when a cluster is the right shape.
+A throwaway environment and a production one differ by their plan, not by their nature. The same application gets [logs](/doc/observability/logs/) and [access logs](/doc/observability/logs/#application-access-logs), [metrics](/doc/observability/metrics/) stored in Warp 10, [automated backups](/doc/deploy/databases/) on its databases, [horizontal and vertical auto-scaling](/doc/manage/scaling/), and [Kubernetes](/doc/deploy/kubernetes/) when a cluster is the right shape.
 
 An agent reads all of it through the same CLI it used to deploy:
 

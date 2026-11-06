@@ -20,7 +20,7 @@ Every application emits three streams you can read without instrumenting anythin
 {{< cards >}}
   {{< card link="/developers/doc/observability/blackfire" title="Blackfire" subtitle="Profile PHP applications" icon="fire" >}}
   {{< card link="/developers/doc/observability/drains" title="Logs Drains" subtitle="Forward your logs to an external tool" icon="external-link" >}}
-  {{< card link="/developers/doc/observability/logs" title="Logs" subtitle="Read and filter the logs and access logs of your applications" icon="document-text" >}}
+  {{< card link="/developers/doc/observability/logs" title="Logs & Access Logs" subtitle="Read and filter the logs and access logs of your applications" icon="document-text" >}}
   {{< card link="/developers/doc/observability/metrics" title="Metrics" subtitle="Monitor performance and resource usage" icon="chart-bar" >}}
   {{< card link="/developers/doc/observability/new-relic" title="New Relic" subtitle="Send metrics to New Relic" icon="chart-pie" >}}
   {{< card link="/developers/doc/observability/warp10" title="Warp 10" subtitle="Query raw metrics with WarpScript" icon="beaker" >}}

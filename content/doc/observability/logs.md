@@ -1,7 +1,7 @@
 ---
 type: docs
-linkTitle: Logs
-title: Logs
+linkTitle: Logs & Access Logs
+title: Logs & Access Logs
 description: Read the logs of your applications and add-ons, and the access logs of your applications, on Clever Cloud from the Console, Clever Tools or the API
 keywords:
 - logs
@@ -26,7 +26,7 @@ aliases:
 - /doc/observability/log-management
 ---
 
-The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](#access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
+The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](#application-access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
 By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
 
@@ -42,9 +42,11 @@ The settings panel lets you choose a color theme, wrap lines, and strip ANSI esc
 Logs are retained for 7 days, sometimes more for specific customers/needs.
 {{< /callout >}}
 
-## Get continuous logs from your application
+## Application Logs
 
-Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and the [Clever Cloud API](/api/swagger/#/Logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`. You can see logs with the command down below.
+Log management is also available through [Clever Tools](https://github.com/CleverCloud/clever-tools) and the [Clever Cloud API](/api/swagger/#/Logs). They're collected and sent through the Vector service enabled in every application deployed on Clever Cloud. To disable it, set the `CC_PREVENT_LOGSCOLLECTION` environment variable to `true`.
+
+You can see logs with the command down below:
 
 ```bash
 clever logs
@@ -88,7 +90,7 @@ clever logs --addon postgresql_xxxxxxxx
 
 The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
-## Access logs
+## Application Access Logs
 
 Access logs list the HTTP requests reaching your application. They also record the TCP redirections and SSH connections to its instances.
 

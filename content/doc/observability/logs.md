@@ -2,14 +2,21 @@
 type: docs
 linkTitle: Logs
 title: Logs
-description: Access and filter your application logs on Clever Cloud from the Console, Clever Tools or the API
+description: Read the logs of your applications and add-ons, and the access logs of your applications, on Clever Cloud from the Console, Clever Tools or the API
 keywords:
 - logs
+- access logs
+- http requests
 - application logs
 - debugging
 - monitoring
 - troubleshooting
 aliases:
+- /doc/observability/access-logs
+- /doc/develop/observability/access-logs
+- /doc/administrate/access-logs/
+- /doc/develop/observability/accesslogs
+- /doc/find-help/access-logs/
 - /doc/develop/observability/logs
 - /clever-cloud-apis/add-ons-log-collector
 - /doc/administrate/log-management
@@ -19,7 +26,7 @@ aliases:
 - /doc/observability/log-management
 ---
 
-The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](/doc/observability/access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
+The [Console](https://console.clever-cloud.com) shows the logs of your applications and add-ons, and the [access logs](#access-logs) of your applications, in the same interface. It follows live logs by default, or shows past logs over the time window you pick. You can select log lines and copy them with the keyboard or the mouse. Log availability for add-ons depends on the add-on and its plan.
 
 By default, the text filter keeps the lines containing every word you type, whatever their case. You can switch it to an exact, case-sensitive string, or to a regular expression. The filter lives in the URL of the page, in the `filter` and `filterMode` parameters. It survives a page reload, and you can share a link to a filtered view.
 
@@ -81,4 +88,85 @@ clever logs --addon postgresql_xxxxxxxx
 
 The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
-See [Access Logs](/doc/observability/access-logs) for incoming HTTP requests, and [Drains](/doc/observability/drains) to forward everything to an external tool.
+## Access logs
+
+Access logs list the HTTP requests reaching your application. They also record the TCP redirections and SSH connections to its instances.
+
+You can see access logs with the following command:
+
+```bash
+clever accesslogs
+```
+
+As with the `logs` command, you can specify `--since` and `--until`. Without `--until`, the command keeps following new requests, even with `--since`. Set `--until` to stop at a given end time and get the prompt back, and add `--since` to choose where to start. Use `--until now` to read up to the current time:
+
+```bash
+clever accesslogs --since 15m --until now
+```
+
+To change the output, specify the `--format` (`-F`) flag with one of these values:
+
+- `human` (default): a human-readable, colored table. The second column shows the transport of each line, `HTTP`, `TCP` or `SSH`. Status, method and path columns only appear for HTTP requests.
+
+  ```txt
+  2026-06-24T08:05:43.880Z   HTTP   255.255.255.255   FR/Nantes   200   GET       /
+  ```
+
+- `clf`: [Common Log Format](https://en.wikipedia.org/wiki/Common_Log_Format), which only outputs HTTP access logs
+
+  ```txt
+  255.255.255.255 - - [24/Jun/2026:08:05:43 +0000] "GET /" 200 562
+  ```
+
+  The HTTP protocol version isn't part of the access log payload, so the request line is limited to `method path` (no `HTTP/x.y` token).
+
+- `json`: a JSON array of log objects (requires a bounding flag such as `--until`)
+- `json-stream`: a stream of JSON log objects
+
+  Both JSON formats share the same object shape:
+
+  ```json
+  {
+    "id": "01F91AEG8Z9RJKYB7JY7H56FNB",
+    "date": "2026-06-24T08:05:43.880Z",
+    "applicationId": "app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "instanceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "region": "par",
+    "zone": "par",
+    "requestId": "01F91AEG8Z9RJKYB7JY7H56FNB",
+    "bytesIn": 658,
+    "bytesOut": 562,
+    "source": {
+      "ip": "255.255.255.255",
+      "port": 58477,
+      "city": "Nantes",
+      "countryCode": "FR",
+      "geoLocation": { "latitude": 50.624, "longitude": 3.0511 }
+    },
+    "destination": {
+      "ip": "46.252.181.17",
+      "port": 14001,
+      "city": "Chaponost",
+      "countryCode": "FR",
+      "geoLocation": { "latitude": 45.7059, "longitude": 4.7444 }
+    },
+    "http": {
+      "request": {
+        "method": "GET",
+        "path": "/",
+        "host": "www.clever-cloud.com",
+        "scheme": "https"
+      },
+      "response": {
+        "statusCode": 200,
+        "serviceTime": null,
+        "time": 31
+      }
+    },
+    "tls": null
+  }
+  ```
+
+  TCP redirections and SSH connections use the same shape, without the `http` section.
+
+- [Forward your logs and access logs to an external tool with drains](/doc/observability/drains/)

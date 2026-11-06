@@ -23,7 +23,7 @@ Clever Cloud offers you to run your Gradle projects. You can deploy this kind of
 
 Gradle is a project automation tool that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the more traditional XML form of declaring the project configuration.
 
-Note : like other runtimes, Java application need listen on `0.0.0.0:8080`
+Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/develop/common-configuration/#listen-on-the-right-port).
 
 {{% content "create-application" %}}
 

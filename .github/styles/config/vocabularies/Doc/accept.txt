@@ -153,6 +153,7 @@ unencrypted
 URIs
 uv
 Vite
+Vlang
 VMs
 webroot
 WildFly

@@ -60,7 +60,7 @@ clever create --type node
 
 Be sure that:
 
-- You listen on HTTP port **0.0.0.0:8080**
+- You listen on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port)
 - You have a `package.json` file
 - Your `package.json` either has a **scripts.start** or a **main** field
 - The folder `/node_modules` is mentioned in your `.gitignore` file

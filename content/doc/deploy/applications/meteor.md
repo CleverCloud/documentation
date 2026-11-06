@@ -35,11 +35,10 @@ Be sure your `.meteor` folder is in your git repository.
 
 #### Set up environment variables
 
-To run your Meteor.js application you need a few mandatory environment variables:
+To run your Meteor.js application you need a few mandatory environment variables. Meteor listens on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port), which Clever Cloud sets for you:
 
 - `MONGO_URL`: this is the mongo uri you can find in your mongodb's dashboard, it has to start with `mongodb://`
 - `ROOT_URL`: this is your application's root url. It has to start with `http://` or `https://`
-- `PORT`: keep the current value of 8080
 
 With Meteor 2.6.n comes MongoDB 5.n and [the new npm driver](https://guide.meteor.com/2.6-migration.html). You need to append `?directConnection=true` in your `MONGO_URL` to avoid the new mongo driver Service Discovery feature.
 
@@ -67,7 +66,7 @@ You may change the node version value according to the application requirements.
 
 ### Activate the dedicated build
 
-Meteor.js uses a lot of memory during the build. You most likely will need to activate the [dedicated build feature](/doc/develop/common-configuration/lifecycle/#edit-application-configuration) and set your vertical scaling size at least to **M**.
+Meteor.js uses a lot of memory during the build. You most likely need to activate the [dedicated build feature](/doc/develop/common-configuration/#dedicated-build-instance) and set your vertical scaling size at least to **M**.
 
 If your build still fails after you enabled the feature, please contact us on the support so we can set you a bigger scaler.
 

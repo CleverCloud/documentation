@@ -90,14 +90,14 @@ With FrankenPHP worker mode, a script of your project is kept in memory to handl
 
 ## Configurable port
 
-By default, FrankenPHP listens on port `8080`. If you want to change it, set the `CC_FRANKENPHP_PORT` environment variable to your desired port. This is useful if you want to run a service in front of FrankenPHP, such as [Redirection.io](/doc/develop/common-configuration/environment-variables/reference/#use-redirectionio-as-a-proxy) for example.
+FrankenPHP listens on port `8080`, or on port `9000` when a [Request Flow](/doc/develop/request-flow/) middleware runs in front of it: Clever Cloud sets it for you. To force another port, for a setup of your own, set the `CC_FRANKENPHP_PORT` environment variable.
 
 ## Custom FrankenPHP run command
 
 To override the default server behavior, set the `CC_RUN_COMMAND` environment variable. When defined, it completely replaces the default `frankenphp php-server` command. Use it to define flags such as `--debug`, `--mercure` or `--no-compress`:
 
 ```bash
-CC_RUN_COMMAND="frankenphp php-server --listen 0.0.0.0:8080 --debug --mercure"
+CC_RUN_COMMAND='frankenphp php-server --listen 0.0.0.0:$PORT --debug --mercure'
 ```
 
 You can also use it to load [a custom Caddyfile](https://frankenphp.dev/docs/config/#caddyfile-config):

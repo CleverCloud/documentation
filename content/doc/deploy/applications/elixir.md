@@ -38,6 +38,8 @@ Get your Elixir version in your console with `$ elixir -v` and set the environme
 
 {{< runtimes_versions elixir >}}
 
+Your application listens on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port).
+
 #### Compatibility between Elixir and Erlang/OTP
 
 - Each version of Elixir uses the most recent compatible version of Erlang, based on the compatibility table provided in the [official Elixir documentation](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#between-elixir-and-erlang-otp).
@@ -47,6 +49,7 @@ Get your Elixir version in your console with `$ elixir -v` and set the environme
 - Edit the file `config/prod.secret.exs` to replace `System.get_env("DATABASE_URL")` with `System.get_env("POSTGRESQL_ADDON_URI")`.
 - Generate a secret token with `$ mix phx.gen.secret`.
 - set environment variable **SECRET_KEY_BASE** to the value obtained with `$ mix phx.gen.secret` previously
+- Keep the `PORT` setting of `config/runtime.exs`, which Phoenix generates: the endpoint then listens on the port Clever Cloud sets
 - Clever Cloud runs `$ mix ecto.migrate` before starting your application: set environment variable **CC_PHOENIX_RUN_ECTO_MIGRATE** to `false` to skip it
 
 ## Build, deployment phases and custom configuration

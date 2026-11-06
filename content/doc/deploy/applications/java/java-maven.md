@@ -22,7 +22,7 @@ aliases:
 
 Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs specific environment variables or configuration files, to add parameters like your targeted container for instance.
 
-Note : like other runtimes, Java application needs to listen on `0.0.0.0:8080`
+Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/develop/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/develop/common-configuration/#listen-on-the-right-port).
 
 Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
 
@@ -43,7 +43,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 ### About Cargo
 
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
-Your application must be set to listen on the port 8080.
+Your application must listen on the port of the `http.port` system property.
 
 {{% content "java-versions" %}}
 

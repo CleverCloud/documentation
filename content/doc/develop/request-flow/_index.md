@@ -56,7 +56,7 @@ Request Flow allocates middleware ports in a chain from port `8080` (public) dow
 - With two middleware services: the first listens on `8080`, forwards to the second on `8081`, which forwards to the application on `9000`
 
 > [!NOTE]
-> FrankenPHP, Java, PHP, legacy Python, Ruby and Static applications need no additional configuration, as Clever Cloud manages their web server or port transparently. Python applications using native uv support manage their own HTTP server and follow the port rule above.
+> FrankenPHP, Java, PHP, Python with its supported backends, Ruby, and Static applications need no additional configuration, as Clever Cloud manages their web server or port transparently. Python applications using native uv support manage their own HTTP server and follow the port rule above. If `CC_RUN_COMMAND` replaces the managed server, your command follows this rule too.
 
 In every runtime where your application manages its own HTTP server, have it listen on `0.0.0.0:$PORT` and set `PORT` to `9000` when a middleware is active:
 
@@ -76,7 +76,7 @@ For an application that manages its own HTTP server, this inverts the default or
 
 ### Disable Request Flow
 
-To disable Request Flow entirely and have your application listen directly on port `8080`:
+To disable the optional Request Flow services:
 
 ```bash
 CC_REQUEST_FLOW="disable"

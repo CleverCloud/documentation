@@ -92,7 +92,7 @@ You can set some tools' version in any runtime (except Docker):
 | [`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Keep the instance available for up to one hour after a deployment failure, unless it fails too early. Some runtimes also add build diagnostics.                        | false         |
 
 {{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/deploy/applications/docker/#dockerfile-contents).
+  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/deploy/applications/docker/#mandatory-needs).
 {{< /callout >}}
 
 #### Deployment hooks
@@ -166,17 +166,17 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Docker Documentation](/doc/deploy/applications/docker)
 
-| Name                          | Description                                                              | Default value            |
-| ----------------------------- | ------------------------------------------------------------------------ | ------------------------ |
-| `CC_DOCKERFILE`               | The name of the Dockerfile to build.                                     | Dockerfile               |
-| `CC_DOCKER_BUILDX`            | Set to `false` to use Docker legacy build                                | true                     |
-| `CC_DOCKER_EXPOSED_HTTP_PORT` | Set to custom HTTP port if your Docker container runs on custom port.    | 8080                     |
-| `CC_DOCKER_EXPOSED_TCP_PORT`  | TCP port of the container that receives the TCP redirection traffic      | 4040                     |
-| `CC_DOCKER_FIXED_CIDR_V6`     | Activate the support of IPv6 with an IPv6 subnet int the docker daemon.  |                          |
-| `CC_DOCKER_LOGIN_PASSWORD`    | The password of your username.                                           |                          |
-| `CC_DOCKER_LOGIN_SERVER`      | The server of your private registry (optional).                          | Docker’s public registry |
-| `CC_DOCKER_LOGIN_USERNAME`    | The username to login to a private registry.                             |                          |
-| `CC_MOUNT_DOCKER_SOCKET`      | Set to true to access the host Docker socket from inside your container. | false                    |
+| Name                          | Description                                                                           | Default value |
+| ----------------------------- | ------------------------------------------------------------------------------------- | ------------- |
+| `CC_DOCKERFILE`               | Path of the Dockerfile to build, relative to the root of the project or `APP_FOLDER`  | `Dockerfile`  |
+| `CC_DOCKER_BUILDX`            | Set to `false` to build with the legacy builder instead of Buildx                     | `true`        |
+| `CC_DOCKER_EXPOSED_HTTP_PORT` | HTTP port of the container that receives the traffic of port `8080`                   | `8080`        |
+| `CC_DOCKER_EXPOSED_TCP_PORT`  | TCP port of the container that receives the TCP redirection traffic                   | `4040`        |
+| `CC_DOCKER_FIXED_CIDR_V6`     | IPv6 range of the Docker daemon in CIDR notation, such as `fd00::/80`, to enable IPv6 |               |
+| `CC_DOCKER_LOGIN_PASSWORD`    | Password or access token to log in to the registry before the build                   |               |
+| `CC_DOCKER_LOGIN_SERVER`      | Registry to log in to before the build                                                | Docker Hub    |
+| `CC_DOCKER_LOGIN_USERNAME`    | Username to log in to the registry before the build                                   |               |
+| `CC_MOUNT_DOCKER_SOCKET`      | Set to `true` to mount the Docker socket of the instance in the container             | `false`       |
 
 ## .NET
 

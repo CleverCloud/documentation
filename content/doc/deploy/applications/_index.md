@@ -75,5 +75,5 @@ You can control deployments and set your application configuration with environm
 - Deployments on Clever Cloud are immutable: each restart starts new instances, with your current environment variables.
 
 {{< callout type="info" >}}
-  Learn more about [immutable infrastructure](/doc/develop/immutable-infrastructure/) and [the lifecycle of an application](/doc/manage/lifecycle/#start-restart-and-stop).
+  Learn more about [immutable infrastructure](/doc/develop/immutable-infrastructure/) and [the lifecycle of an application](/doc/manage/#start-restart-and-stop).
 {{< /callout >}}

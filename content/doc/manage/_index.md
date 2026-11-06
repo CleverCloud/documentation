@@ -20,6 +20,18 @@ keywords:
 - deployment
 - settings
 aliases:
+- /doc/develop/common-configuration/lifecycle
+- /administrate/apps-management
+- /doc/admin-console/apps-management
+- /doc/administrate/apps-management
+- /doc/common-configuration/lifecycle
+- /admin-console/apps-management
+- /doc/develop/build-instances
+- /doc/develop/deployment-lifecycle
+- /doc/develop/best-practices/blue-green
+- /doc/best-practices/blue-green
+- /doc/develop/best-practices/blue-green-deployments/
+- /doc/develop/blue-green
 - /doc/admin
 - /doc/administrate
 - /doc/manage/administrate
@@ -31,6 +43,57 @@ aliases:
 ---
 
 Each runtime has its own options, described on its page. The settings of this page apply to all applications, whatever their runtime.
+
+## Start, restart, and stop
+
+The **Overview** menu of your application in the [Console](https://console.clever-cloud.com) holds its lifecycle actions:
+
+- **Restart**: deploys the current commit of your application again, with its build cache when available
+- **Restart last pushed commit**: deploys the last commit you pushed, rather than one you redeployed to roll back
+- **Re-build and restart**: deploys the current commit again, without the build cache
+- **Stop app**: stops the instances of your application, and their billing
+
+Once your application is stopped, **Start**, **Start last pushed commit**, and **Re-build and start** do the same. With Clever Tools:
+
+```bash
+clever restart
+clever restart --without-cache
+clever stop
+```
+
+[`CC_DISABLE_BUILD_CACHE_UPLOAD`](/doc/manage/environment-variables/reference/) set to `true` skips creating the build cache. To force a build, use **Re-build and restart**.
+
+## Blue/Green Deployment
+
+Each deployment starts new [immutable instances](/doc/develop/immutable-infrastructure/). With [zero downtime deployment](#zero-downtime-deployment), it follows a Blue/Green pattern:
+
+1. Clever Cloud builds your code or reuses its build cache, then starts new instances next to the running ones
+2. The new instances must pass the [health check](/doc/manage/healthcheck/)
+3. The load balancer sends the traffic to the new instances, then the old ones stop
+
+Old and new instances share the same add-ons during the switch: make your database schema changes work with both versions. If the build or the health check fails, the old instances keep the traffic, and the owners of the application get an email by default.
+
+- [Learn more about deployment notifications](/doc/account-billing/notifications/)
+
+### Roll back
+
+To roll back, click **Redeploy this commit** next to a previous deployment in the [activity](/doc/manage/activity/) of your application, or use Clever Tools:
+
+```bash
+clever restart --commit COMMIT_ID
+```
+
+Replace `COMMIT_ID` with the commit of a successful deployment. This restores your code, not your variables nor your databases.
+
+### Validate a version before production
+
+Passing the health check doesn't prove that every user journey works. Test a new version first on a staging application with its own add-ons. Once it's linked to your repository as `staging`, deploy your `develop` branch to it:
+
+```bash
+clever deploy --alias staging --branch develop
+```
+
+Review apps create a test application for each pull request, with [GitHub](/doc/tools/github/) or [GitLab](/doc/tools/gitlab/).
 
 ## Listen on the right port
 
@@ -134,6 +197,12 @@ Disabled by default. At each deployment, your application runs its command, then
 
 - [Learn more about Clever Tasks](/doc/deploy/tasks/)
 
+## Archive and delete
+
+In the **Information** menu, **Archive** hides your application from your list: it keeps running, and stays deployable. **Un-archive** brings it back.
+
+**Remove this application**, at the bottom of this menu, deletes it once you type its name. With Clever Tools, run `clever delete`.
+
 ## Private SSH key
 
 To fetch private dependencies over SSH, provide a private key for your application.
@@ -164,13 +233,11 @@ This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/activity" title="Activity" subtitle="Follow the deployments of your application, and what triggered them" icon="clock" >}}
-{{< card link="/developers/doc/manage/blue-green" title="Blue/Green Deployment" subtitle="How each deployment switches traffic, and how to roll back" icon="traffic-light" >}}
   {{< card link="/developers/doc/manage/cron" title="CRON" subtitle="Schedule recurring jobs on your instances" icon="code-bracket" >}}
   {{< card link="/developers/doc/manage/build-hooks" title="Deployment hooks" subtitle="Run your own commands before and after the build, and at startup" icon="rocket-launch" >}}
   {{< card link="/developers/doc/manage/domain-names" title="Domain names" subtitle="Serve your application on your own domains, or on a shared path" icon="globe-alt" >}}
   {{< card link="/developers/doc/manage/environment-variables" title="Environment variables" subtitle="Configure your application and get the credentials of its add-ons" icon="pencil-square" >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/lifecycle" title="Lifecycle" subtitle="Restart, stop, or delete your application, and redeploy a commit" icon="arrow-path" >}}
   {{< card link="/developers/doc/manage/mise" title="Mise Package Manager" subtitle="Pin the tool versions your build needs" icon="cube" >}}
   {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
   {{< card link="/developers/doc/manage/scaling" title="Scaling" subtitle="Set the size and number of instances, or let them follow the load" icon="server-stack" >}}

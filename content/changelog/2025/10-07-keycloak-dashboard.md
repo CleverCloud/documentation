@@ -15,7 +15,7 @@ authors:
 excludeSearch: true
 ---
 
-When you deploy Keycloak on Clever Cloud, you now have access to a better dashboard to manage it. This dashboard provides direct access to Keycloak admin panel, useful information such as deployed version, underlying resources, initial user/password, edit name, tags, etc. You can easily rebuild/restart your Keycloak instance with [Blue/Green deployment](/doc/develop/best-practices/blue-green/), access the Grafana dashboard, transparently update Keycloak to a new version when available:
+When you deploy Keycloak on Clever Cloud, you now have access to a better dashboard to manage it. This dashboard provides direct access to Keycloak admin panel, useful information such as deployed version, underlying resources, initial user/password, edit name, tags, etc. You can easily rebuild/restart your Keycloak instance with [Blue/Green deployment](/doc/manage/blue-green/), access the Grafana dashboard, transparently update Keycloak to a new version when available:
 
 ![Keycloak Dashboard](/images/keycloak-dashboard.webp)
 

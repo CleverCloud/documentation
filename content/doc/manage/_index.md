@@ -164,6 +164,7 @@ This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/activity" title="Activity" subtitle="Follow the deployments of your application, and what triggered them" icon="clock" >}}
+{{< card link="/developers/doc/manage/blue-green" title="Blue/Green Deployment" subtitle="How each deployment switches traffic, and how to roll back" icon="traffic-light" >}}
   {{< card link="/developers/doc/manage/cron" title="CRON" subtitle="Schedule recurring jobs on your instances" icon="code-bracket" >}}
   {{< card link="/developers/doc/manage/build-hooks" title="Deployment hooks" subtitle="Run your own commands before and after the build, and at startup" icon="rocket-launch" >}}
   {{< card link="/developers/doc/manage/domain-names" title="Domain names" subtitle="Serve your application on your own domains, or on a shared path" icon="globe-alt" >}}

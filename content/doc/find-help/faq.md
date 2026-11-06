@@ -145,7 +145,7 @@ For reference, the table below lists the class file version for each major Java 
 
 {{% details title="I want SSH access to my server" closed="true" %}}
 
-Clever Cloud doesn't give you a server or a virtual private server (VPS) to administer: it runs your application. The platform starts and configures each instance automatically, and can replace or stop it at any time. A deployment replaces your instances, and so can a scaling operation. What you change on an instance doesn't persist: put it in your code or your environment variables, then redeploy. [Learn more about immutable infrastructure](/doc/develop/best-practices/immutable-infrastructure/).
+Clever Cloud doesn't give you a server or a virtual private server (VPS) to administer: it runs your application. The platform starts and configures each instance automatically, and can replace or stop it at any time. A deployment replaces your instances, and so can a scaling operation. What you change on an instance doesn't persist: put it in your code or your environment variables, then redeploy. [Learn more about immutable infrastructure](/doc/develop/immutable-infrastructure/).
 
 To debug your application, you can still open a shell on a running instance, or run a command on it. The [SSH access page](/doc/manage/ssh-access/) explains how.
 {{% /details %}}

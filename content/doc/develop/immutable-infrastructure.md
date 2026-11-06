@@ -10,6 +10,8 @@ keywords:
 - persistence
 - rollback
 - paas
+aliases:
+- /doc/develop/best-practices/immutable-infrastructure
 ---
 
 On Clever Cloud, you don't administer servers: the platform runs your application on instances it creates and replaces. It never updates a running instance: it starts new ones from your runtime image and your code, then stops the old ones. This is immutable infrastructure.

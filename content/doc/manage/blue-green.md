@@ -11,6 +11,7 @@ keywords:
 - staging
 - environments
 aliases:
+- /doc/develop/best-practices/blue-green
 - /doc/best-practices/blue-green
 - /doc/develop/best-practices/blue-green-deployments/
 - /doc/develop/blue-green
@@ -20,7 +21,7 @@ A Blue/Green deployment starts the new version, *green*, next to the current one
 
 ## Each deployment on Clever Cloud
 
-With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/best-practices/immutable-infrastructure/):
+With [zero downtime deployment](/doc/manage/#zero-downtime-deployment), enabled by default, each deployment follows this pattern on new [immutable instances](/doc/develop/immutable-infrastructure/):
 
 1. Clever Cloud builds your code and starts new instances, next to the running ones
 2. The new instances must pass the [health check](/doc/manage/healthcheck/)

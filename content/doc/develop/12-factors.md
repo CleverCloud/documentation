@@ -11,11 +11,11 @@ keywords:
 - methodology
 - scalability
 aliases:
+- /doc/develop/best-practices/12-factors
 - /doc/best-practices/12-factors
-- /doc/develop/12-factors
 ---
 
-[The Twelve-Factor App](https://12factor.net/) is a methodology for applications delivered as a service. Its twelve principles make an application portable, simple to deploy, and ready to scale. They match how Clever Cloud runs applications on [immutable instances](/doc/develop/best-practices/immutable-infrastructure/).
+[The Twelve-Factor App](https://12factor.net/) is a methodology for applications delivered as a service. Its twelve principles make an application portable, simple to deploy, and ready to scale. They match how Clever Cloud runs applications on [immutable instances](/doc/develop/immutable-infrastructure/).
 
 ## Codebase
 

@@ -11,8 +11,8 @@ keywords:
 - metrics
 - k6
 aliases:
+- /doc/develop/best-practices/load-testing
 - /doc/best-practices/load-testing
-- /doc/develop/load-testing
 ---
 
 A load test sends many requests to your application to measure how it behaves under heavy traffic: how many requests it serves, with which response time, and where it breaks. Run one before a launch or an expected peak, to size your instances and your add-ons.

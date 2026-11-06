@@ -30,7 +30,7 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy Scala (and Java) applications built with SBT. This document will explain you how to set up your app to run it on our service. If you're looking to deploy a [Play Framework](https://www.playframework.com) application, you can have a look at our dedicated [documentation page](/doc/deploy/applications/scala/play-framework-2).
+Clever Cloud deploys Scala and Java applications built with sbt. This page explains how to set up your application. To deploy a [Play Framework](https://www.playframework.com) application, see the dedicated pages for [Play Framework 1.x](/doc/deploy/applications/scala/play-framework-1/) and [Play Framework 2.x](/doc/deploy/applications/scala/play-framework-2/).
 
 {{% content "create-application" %}}
 

@@ -53,6 +53,7 @@ You'll find below the first commands to know to connect Clever Tools to your acc
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/cli/install" title="Install" icon="arrow-down-tray" >}}
+  {{< card link="/developers/doc/cli-reference" title="Commands reference" icon="book-open" >}}
   {{< card link="/developers/doc/manage/cli/addons" title="Create and manage add-ons" icon="wrench-screwdriver" >}}
   {{< card link="/developers/doc/manage/cli/applications" title="Create and manage applications" icon="code-bracket" >}}
   {{< card link="/developers/doc/manage/cli/kubernetes" title="Kubernetes" icon="simple:kubernetes" >}}

@@ -19,6 +19,8 @@ aliases:
 - /doc/cli/create
 ---
 
+This page covers how to create, link, list, and delete applications with Clever Tools. To change their settings, environment variables, domains, and scaling, see [Configuration](/doc/manage/cli/applications/configuration/). To deploy them, restart them, or follow their status and logs, see [Deploy, Lifecycle](/doc/manage/cli/applications/deployment-lifecycle/).
+
 ## create
 
 You can create a new application on Clever Cloud, linked to your local folder. Only its `type` is required, it should be one of: `docker`, `dotnet`, `elixir`, `frankenphp`, `go`, `gradle`, `haskell`, `jar`, `linux`, `maven`, `meteor`, `node`, `php`, `play1`, `play2`, `python`, `ruby`, `rust`, `sbt`, `static`, `static-apache`, `v` or `war`. Result can be printed in `human` or `json` format.

@@ -28,7 +28,9 @@ aliases:
 
 Applications and add-ons emit logs, made of what they write to their output. Applications also have access logs, which record the HTTP requests, the TCP redirections, and the SSH connections reaching them, with their origin.
 
-Logs are kept for 7 days: [contact the sales team](https://www.clever.cloud/contact/) or the [Support](https://console.clever-cloud.com/ticket-center-choice) to keep them longer. Clever Cloud collects the logs of an application with the Vector service of its instances: to disable it, set `CC_PREVENT_LOGSCOLLECTION` to `true`.
+Logs are kept for 7 days: [contact the sales team](https://www.clever.cloud/contact/) or the [Support](https://console.clever-cloud.com/ticket-center-choice) to keep them longer. To stop Clever Cloud from collecting the logs of an application, set `CC_PREVENT_LOGSCOLLECTION` to `true`.
+
+- [Forward your logs and access logs to an external tool with drains](/doc/observability/drains/)
 
 ## Console
 
@@ -46,125 +48,22 @@ The settings panel lets you choose a color theme, wrap lines, and strip ANSI esc
 
 ## Clever Tools
 
-[Clever Tools](/doc/tools/cli/) gives access to the logs and the access logs of your applications.
-
-### Application Logs
-
-You can see logs with the command down below:
+[Clever Tools](/doc/tools/cli/) shows the logs and the access logs of your applications. Without `--until`, they follow the new lines. To follow the logs of an application:
 
 ```bash
-clever logs
+clever logs --since 1h
 ```
 
-You can add `--since` or `--until`, followed by a duration, a number of seconds, a date (ISO8601 format) or `now`.
-
-```bash
-clever logs --since 2h
-clever logs --until 2024-04-15T13:37:42Z
-```
-
-Without `--until`, `clever logs` keeps following new lines after printing the past ones, even with `--since`. Set `--until` to stop at a given end time and get the prompt back, as a script or an AI agent needs, and add `--since` to choose where to start. Use `--until now` to read up to the current time. The `json` output format requires `--until`:
-
-```bash
-clever logs --since 15m --until now
-clever logs --since 15m --until now --format json
-```
-
-Clever Tools disables colors when its output isn't a terminal, as in a pipe. Add `--color true` to keep them, for instance in a pager:
-
-```bash
-clever logs --since 15m --until now --color true | less -R
-```
-
-Log messages can contain ANSI codes, which set colors, move the cursor or clear a line. In the `human` format, Clever Tools removes them when colors are disabled, with `--no-color`, a non-empty `NO_COLOR` or an output that isn't a terminal. The `json` and `json-stream` formats keep messages as your application wrote them, unless you add `--strip-ansi`, which removes these codes in any format:
-
-```bash
-clever logs --since 1h --until now --format json --strip-ansi > logs.json
-```
-
-The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
-
-### Application Access Logs
-
-You can see access logs with the following command:
-
-```bash
-clever accesslogs
-```
-
-As with the `logs` command, you can specify `--since` and `--until`. Without `--until`, the command keeps following new requests, even with `--since`. Set `--until` to stop at a given end time and get the prompt back, and add `--since` to choose where to start. Use `--until now` to read up to the current time:
+To read its access logs of the last 15 minutes:
 
 ```bash
 clever accesslogs --since 15m --until now
 ```
 
-To change the output, specify the `--format` (`-F`) flag with one of these values:
+The output of your [CRON jobs](/doc/manage/cron/) appears in these logs too, between the `CMD` and `CMDEND` lines the cron daemon writes when a job starts and ends. `CMDEND` doesn't hold the exit code of the command: make your job write a message when it fails.
 
-- `human` (default): a human-readable, colored table. The second column shows the transport of each line, `HTTP`, `TCP` or `SSH`. Status, method and path columns only appear for HTTP requests.
-
-  ```txt
-  2026-06-24T08:05:43.880Z   HTTP   255.255.255.255   FR/Nantes   200   GET       /
-  ```
-
-- `clf`: [Common Log Format](https://en.wikipedia.org/wiki/Common_Log_Format), which only outputs HTTP access logs
-
-  ```txt
-  255.255.255.255 - - [24/Jun/2026:08:05:43 +0000] "GET /" 200 562
-  ```
-
-  The HTTP protocol version isn't part of the access log payload, so the request line is limited to `method path` (no `HTTP/x.y` token).
-
-- `json`: a JSON array of log objects (requires a bounding flag such as `--until`)
-- `json-stream`: a stream of JSON log objects
-
-  Both JSON formats share the same object shape:
-
-  ```json
-  {
-    "id": "01F91AEG8Z9RJKYB7JY7H56FNB",
-    "date": "2026-06-24T08:05:43.880Z",
-    "applicationId": "app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "instanceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "region": "par",
-    "zone": "par",
-    "requestId": "01F91AEG8Z9RJKYB7JY7H56FNB",
-    "bytesIn": 658,
-    "bytesOut": 562,
-    "source": {
-      "ip": "255.255.255.255",
-      "port": 58477,
-      "city": "Nantes",
-      "countryCode": "FR",
-      "geoLocation": { "latitude": 50.624, "longitude": 3.0511 }
-    },
-    "destination": {
-      "ip": "46.252.181.17",
-      "port": 14001,
-      "city": "Chaponost",
-      "countryCode": "FR",
-      "geoLocation": { "latitude": 45.7059, "longitude": 4.7444 }
-    },
-    "http": {
-      "request": {
-        "method": "GET",
-        "path": "/",
-        "host": "www.clever-cloud.com",
-        "scheme": "https"
-      },
-      "response": {
-        "statusCode": 200,
-        "serviceTime": null,
-        "time": 31
-      }
-    },
-    "tls": null
-  }
-  ```
-
-  TCP redirections and SSH connections use the same shape, without the `http` section.
+- [Learn more about logs and access logs in Clever Tools](/doc/tools/cli/logs-drains/)
 
 ## API
 
-The [Clever Cloud API](/api/swagger/#/Logs) streams the logs and the access logs of your applications as Server-Sent Events.
-
-- [Forward your logs and access logs to an external tool with drains](/doc/observability/drains/)
+The [Clever Cloud API](/api/swagger/#/Logs) streams the logs and the access logs of your applications and add-ons as Server-Sent Events. It also exports them: for an organisation, it builds an archive of the logs and access logs of the resources you choose over a time window. Once the export is ready, you can download the archive for 7 days.

@@ -367,6 +367,7 @@ with `"-with-rtsopts=-T -N"` to enable profiling.
 import           Control.Monad                   (when)
 import           Network.Wai.Metrics             (WaiMetrics, metrics,
                                                   registerWaiMetrics)
+import           System.Environment              (getEnv, lookupEnv)
 import           System.Metrics                  (newStore, registerGcMetrics)
 import           System.Remote.Monitoring.Statsd (defaultStatsdOptions,
                                                   forkStatsd)
@@ -386,7 +387,8 @@ handleMetrics = do
 
 main = do
   waiMetrics <- handleMetrics
-  scotty 8080 $ do
+  port <- read <$> getEnv "PORT"
+  scotty port $ do
      middleware $ metrics waiMetrics
      get "/" $
        html $ "Hello world"

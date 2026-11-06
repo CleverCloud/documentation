@@ -87,7 +87,7 @@ Here is a configuration example for RUM activation:
 
 cat <<EOF >apm-server.yml
 apm-server:
-    host: "0.0.0.0:8080"
+    host: "0.0.0.0:${PORT}"
     secret_token: "${ES_ADDON_APM_AUTH_TOKEN}"
 
 output.elasticsearch:

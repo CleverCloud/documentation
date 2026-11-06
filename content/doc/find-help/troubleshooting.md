@@ -113,12 +113,10 @@ To enable this mode, simply add `CC_TROUBLESHOOT=true` to your environment varia
 
 {{% details title="Node application failed to deploy silently" closed="true" %}}
 
-This kind of silent error may be due to the server port your have setup in your application. Make sure your application is listening on port 8080.
-Most of the time, this simple line could do the trick in your main JS file:
+This kind of silent error may be due to the port your application listens on. Make sure it listens on `0.0.0.0`, on [the port in `PORT`](/doc/develop/common-configuration/#listen-on-the-right-port). In your main JavaScript file:
 
 ```javascript
-// Listen on port 8080
-server.listen(8080);
+server.listen(process.env.PORT, "0.0.0.0");
 ```
 
 {{% /details %}}

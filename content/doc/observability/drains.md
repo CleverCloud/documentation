@@ -121,7 +121,7 @@ On your terminal, use the following command:
   clever drain create ovh-tcp "tcp://$LDP_HOST:514" --app APP_ID_OR_NAME --sd-params "X-OVH-TOKEN=\"$LDP_WRITE_TOKEN\""
   ```
 
-  Set `LDP_HOST` to your Logs Data Platform host and `LDP_WRITE_TOKEN` to the write token of your stream, then replace `APP_ID_OR_NAME` with your application ID or name.
+  Set `LDP_HOST` to your Logs Data Platform host, `LDP_WRITE_TOKEN` to your stream write token, and `APP_ID_OR_NAME` to your application ID or name.
 
   {{< /tab >}}
 
@@ -131,7 +131,7 @@ On your terminal, use the following command:
   clever drain create ovh-tcp "tcp://$LDP_HOST:514" --addon ADDON_ID --sd-params "X-OVH-TOKEN=\"$LDP_WRITE_TOKEN\""
   ```
 
-  Set `LDP_HOST` to your Logs Data Platform host and `LDP_WRITE_TOKEN` to the write token of your stream, then replace `ADDON_ID` with your add-on ID or real ID.
+  Set `LDP_HOST` to your Logs Data Platform host, `LDP_WRITE_TOKEN` to your stream write token, and `ADDON_ID` to your add-on ID.
 
   {{< /tab >}}
 

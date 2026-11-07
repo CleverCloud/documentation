@@ -37,47 +37,47 @@ aliases:
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="API"
-    subtitle="Manage your applications, add-ons, and organisations through the REST API and its OpenAPI specification"
-    link="/developers/api"
+    title="Deploy an application"
+    subtitle="Find the supported languages, and how to configure your application to build and run it on Clever Cloud"
+    link="/developers/doc/deploy/applications"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
     image="/images/icons.png"
     imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Clever Tools CLI"
-    subtitle="Create, deploy, and manage your applications and add-ons from your terminal or your CI/CD pipelines"
-    link="/developers/doc/tools/cli"
+    title="Add databases and services"
+    subtitle="Link MySQL, PostgreSQL, Redis, MongoDB, Elastic, or other managed add-ons to your applications"
+    link="/developers/doc/deploy/addons"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
     image="/images/metrics-home.png"
     imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Step-by-step guides"
-    subtitle="Follow detailed tutorials to deploy your favorite frameworks and tools, from Laravel to WordPress, on Clever Cloud"
-    link="/developers/guides"
+    title="Clever Tools CLI"
+    subtitle="Create, deploy, and manage your applications and add-ons from your terminal or your CI/CD pipelines"
+    link="/developers/doc/tools/cli"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
     image="/images/brand.png"
     imageClass="hx:top-[40%] hx:left-[36px] hx:w-[110%] hx:sm:w-[110%] hx:dark:opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(245, 116, 97, 0.1),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
+    title="API"
+    subtitle="Manage your applications, add-ons, and organisations through the REST API and its OpenAPI specification"
+    link="/developers/api"
+  >}}
+
+  {{< hextra/feature-card
     title="Environment Variables"
     subtitle="Configure your applications, their deployment, and their behavior, and get the credentials of their add-ons"
     link="/developers/doc/manage/environment-variables/reference"
   >}}
-
   {{< hextra/feature-card
-    title="Deploy an application"
-    subtitle="Find the supported languages, and how to configure your application to build and run it on Clever Cloud"
-    link="/developers/doc/deploy/applications"
-  >}}
-  {{< hextra/feature-card
-    title="Add databases and services"
-    subtitle="Link MySQL, PostgreSQL, Redis, MongoDB, Elastic, or other managed add-ons to your applications"
-    link="/developers/doc/deploy/addons"
+    title="Step-by-step guides"
+    subtitle="Follow detailed tutorials to deploy your favorite frameworks and tools, from Laravel to WordPress, on Clever Cloud"
+    link="/developers/guides"
   >}}
 
 {{< /hextra/feature-grid >}}

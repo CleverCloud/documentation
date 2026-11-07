@@ -63,10 +63,21 @@ menu:
       name: Changelog
       pageRef: /changelog/
       weight: 5
-    - identifier: components
-      name: Web Components
-      url: https://www.clever.cloud/developers/clever-components/
+    - identifier: more
+      name: More
       weight: 6
+    - name: Community
+      parent: more
+      url: https://github.com/CleverCloud/Community/discussions
+      weight: 1
+    - name: Roadmap
+      parent: more
+      url: https://github.com/orgs/CleverCloud/projects/9
+      weight: 2
+    - name: Web Components
+      parent: more
+      url: https://www.clever.cloud/developers/clever-components/
+      weight: 3
     - name: Search
       weight: 7
       params:

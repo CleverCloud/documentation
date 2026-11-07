@@ -8,8 +8,10 @@ This file points coding agents working on the Clever Cloud documentation to the 
 ## Before you report a change as done
 
 - Run the [validation](./CONTRIBUTING.md#-validation) on the files you change, and inspect the rendered HTML of the pages they affect
+- Measure the line breaks of the rendered pages you change in a browser, at a desktop width of about 1,050 pixels of content: a list item shouldn't wrap, and the last line of a paragraph shouldn't hold only a few words. Narrower screens wrap lines differently
 - Check that each redirect you add resolves in the build output, as [CONTRIBUTING.md](./CONTRIBUTING.md#move-merge-or-remove-a-page) requires when a page moves
 - Write the commit subject with the [commit conventions](./CONTRIBUTING.md#commit-messages), and keep content and structural changes in separate commits
+- Describe a pull request or an issue as [CONTRIBUTING.md](./CONTRIBUTING.md#-when-submitting-a-pr) asks: its main lines and what reviewers need, not a list of every change
 
 ## Generated content
 

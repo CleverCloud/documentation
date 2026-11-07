@@ -104,12 +104,15 @@ With `dns`, the machines name each other in the `tailnet.internal` domain, and k
 
 ## Create the application and its database
 
-Create a Linux application, which runs on a single instance by default, as Headscale needs, then show its domain:
+Create a Linux application, which runs on a single instance by default, then show its domain:
 
 ```bash
 clever create --type linux my-headscale
+clever config set zero-downtime false
 clever domain
 ```
+
+Headscale keeps the state of your network in memory, so only one server must run at a time. Disabling [zero downtime deployment](/doc/manage/#zero-downtime-deployment) stops the previous instance before the new one starts: the server doesn't answer during a deployment, then your machines reconnect to it.
 
 Your machines keep the URL of the server. To use your own domain, add it now, and [configure its DNS](/doc/manage/domain-names/):
 
@@ -125,7 +128,7 @@ clever env set HEADSCALE_SERVER_URL "$HEADSCALE_URL"
 clever env set HS_NOISE_PRIVATE_KEY "privkey:$(openssl rand -hex 32)"
 ```
 
-Headscale recommends SQLite, and keeps PostgreSQL in maintenance mode. This guide uses PostgreSQL: the disk of an instance doesn't persist across deployments, and an [FS Bucket](/doc/deploy/storage/fs-bucket/#limits) doesn't suit SQLite, as two instances can run during a [blue/green deployment](/doc/manage/#bluegreen-deployment). Create the add-on, linked to the application. The `dev` plan suits a test: choose a larger [plan](/doc/deploy/databases/postgresql/) for production.
+Headscale recommends SQLite, and keeps PostgreSQL in maintenance mode. This guide uses PostgreSQL: the disk of an instance doesn't persist across deployments, and SQLite [advises against](https://www.sqlite.org/useovernet.html) network file systems, such as an [FS Bucket](/doc/deploy/storage/fs-bucket/). Create the add-on, linked to the application. The `dev` plan suits a test: choose a larger [plan](/doc/deploy/databases/postgresql/) for production.
 
 ```bash
 clever addon create postgresql-addon my-headscale-pg --plan dev --link my-headscale

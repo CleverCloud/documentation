@@ -20,15 +20,23 @@ dotnet:
 elixir:
   eol_source: https://hexdocs.pm/elixir/compatibility-and-deprecations.html
   default:
-    - 1.19
+    - "1.19"
   accepted:
-    - 1.14 (EOL)
-    - 1.15
-    - 1.16
-    - 1.17
-    - 1.18
-    - 1.19
-    - 1.20
+    - "1.14 (EOL)"
+    - "1.15"
+    - "1.16"
+    - "1.17"
+    - "1.18"
+    - "1.19"
+    - "1.20"
+  erlang:
+    "1.14": "25"
+    "1.15": "26"
+    "1.16": "26"
+    "1.17": "27"
+    "1.18": "27"
+    "1.19": "28"
+    "1.20": "29"
 
 frankenphp:
   eol_source: https://github.com/php/frankenphp/releases

@@ -45,27 +45,26 @@ aliases:
 {{< /cards >}}
 
 {{< hextra/hero-subtitle style="margin:20px 0">}}
-  See our step by step tutorials
+  Follow a step-by-step guide
 {{< /hextra/hero-subtitle >}}
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Find your framework"
-    subtitle="Deploy your favorite framework with our step by step guides."
-    link="/developers/guides"
+    title="Starter tutorials"
+    subtitle="Create a starter project and deploy it on Clever Cloud."
+    link="/developers/guides/"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(203, 28, 66, 0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Starter tutorials"
-    subtitle="Make a starter app and deploy it on Clever Cloud."
-    link="/developers/guides/"
+    title="Frameworks"
+    subtitle="Deploy an application built with Astro, Django, Laravel, Nuxt, Rails, or Symfony."
+    link="/developers/guides/frameworks/"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(58, 56, 113, 0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Add-ons guides"
-    subtitle="Take your dependencies management to the next level."
-    link="/developers/guides/"
+    title="Self-Hosted Software"
+    subtitle="Deploy Ghost, Moodle, Outline, or WordPress with the add-ons it needs."
+    link="/developers/guides/self-hosted/"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(165, 16, 80, 0.15),hsla(0,0%,100%,0));"
   >}}
-
 {{< /hextra/feature-grid >}}

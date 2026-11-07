@@ -2,6 +2,29 @@
 {{ $version_list := hugo.Data.runtime_versions }}
 
 {{ with index $version_list $software }}
+  {{ if .erlang }}
+    {{ $erlang := .erlang }}
+    {{ $default := .default | default (slice) }}
+    <table>
+      <thead>
+        <tr>
+          <th>Elixir</th>
+          <th>Erlang/OTP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .accepted }}
+          {{ $label := string . }}
+          {{ $version := replaceRE ` \(.*\)$` "" $label }}
+          <tr>
+            <td><code>{{ $label }}</code>{{ range $default }}{{ if eq (string .) $version }} (default){{ end }}{{ end }}</td>
+            <td><code>{{ index $erlang $version }}</code></td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+    <p>The <a href="{{ .eol_source }}">end-of-life (EOL)</a> versions are marked as such.</p>
+  {{ else }}
     {{ $default := .default | default (slice) }}
     {{ $accepted := .accepted | default (slice) }}
     {{ $default_len := len $default }}
@@ -47,4 +70,5 @@
       </tbody>
     </table>
     <p>The <a href="{{ .eol_source }}">end-of-life (EOL)</a> versions are marked as such.</p>
+  {{ end }}
 {{ end }}

@@ -35,6 +35,7 @@ Deno
 Dockerfile
 Docusaurus
 dotenv
+Ecto
 emSign
 eMudhra
 Entra
@@ -118,6 +119,7 @@ psql
 Quarkus
 rackup
 rclone
+Rebar
 reconnections
 Redict
 redirections

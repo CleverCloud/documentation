@@ -194,15 +194,15 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Elixir Documentation](/doc/deploy/applications/elixir)
 
-| Name                          | Description                                                                                                 | Default value |
-|-------------------------------|-------------------------------------------------------------------------------------------------------------|---------------|
-| `CC_ELIXIR_VERSION`           | Choose the Elixir version among [those supported](/doc/deploy/applications/elixir/#mandatory-configuration) |               |
-| `CC_MIX_BUILD_GOAL`           | The mix goal to build the application (default compile)                                                     |               |
-| `CC_PHOENIX_ASSETS_DIR`       | Folder in which your Phoenix assets are located.                                                            |               |
-| `CC_PHOENIX_DIGEST_GOAL`      | Phoenix digest goal.                                                                                        | phx.digest    |
-| `CC_PHOENIX_RUN_ECTO_MIGRATE` | Whether to run 'mix ecto.migrate' or not.                                                                   | true          |
-| `CC_PHOENIX_SERVER_GOAL`      | Phoenix server goal.                                                                                        | phx.server    |
-| `CC_RUN_COMMAND`              | Custom command to run your application. Replaces the default behaviour.                                     |               |
+| Name                          | Description                                                                                                       | Default value |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------|---------------|
+| `CC_ELIXIR_VERSION`           | Choose the Elixir version among [those supported](/doc/deploy/applications/elixir/#elixir-and-erlangotp-versions) |               |
+| `CC_MIX_BUILD_GOAL`           | The mix goal to build the application (default compile)                                                           |               |
+| `CC_PHOENIX_ASSETS_DIR`       | Folder in which your Phoenix assets are located.                                                                  |               |
+| `CC_PHOENIX_DIGEST_GOAL`      | Phoenix digest goal.                                                                                              | phx.digest    |
+| `CC_PHOENIX_RUN_ECTO_MIGRATE` | Whether to run 'mix ecto.migrate' or not.                                                                         | true          |
+| `CC_PHOENIX_SERVER_GOAL`      | Phoenix server goal.                                                                                              | phx.server    |
+| `CC_RUN_COMMAND`              | Custom command to run your application. Replaces the default behavior.                                            |               |
 
 ## FrankenPHP
 

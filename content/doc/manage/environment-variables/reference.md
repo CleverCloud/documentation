@@ -267,10 +267,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Linux Documentation](/doc/deploy/applications/linux)
 
-| Name               | Description                               | Default value |
-| ------------------ | ----------------------------------------- | ------------- |
-| `CC_BUILD_COMMAND` | The command to run during the build phase | ``            |
-| `CC_RUN_COMMAND`   | The command to run during the run phase   | ``            |
+| Name               | Description                                                                                                  | Default value |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ | ------------- |
+| `CC_BUILD_COMMAND` | The command to run during the build phase                                                                    |               |
+| `CC_MAKEFILE`      | Makefile to use for the `build` and `run` targets, looked up before `GNUmakefile`, `Makefile` and `makefile` |               |
+| `CC_RUN_COMMAND`   | The command that starts the application                                                                      |               |
 
 Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
 

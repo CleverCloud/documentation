@@ -1,0 +1,37 @@
+{{- /*
+  Inline list of the versions of a software in data/runtime_versions.yml, its default and accepted
+  versions sorted by the numbers of their segments, the default one marked as such. Annotations such
+  as (EOL) stay in the label, but not in the comparison: a non-numeric version sorts first. Call it with {{% %}} so that
+  the Markdown it returns renders in the page and in its Markdown output:
+  Set `CC_HUGO_VERSION` to {{% runtime_versions_list hugo %}} to select the Hugo version.
+  Follow it with a space: Vale only ignores an inline shortcode followed by a space.
+*/ -}}
+{{- $software := .Get 0 -}}
+{{- with index hugo.Data.runtime_versions $software -}}
+  {{- $default := slice -}}
+  {{- $defaultVersions := slice -}}
+  {{- range .default | default slice -}}
+    {{- $default = $default | append (string .) -}}
+    {{- $defaultVersions = $defaultVersions | append (replaceRE ` \(.*\)$` "" (string .)) -}}
+  {{- end -}}
+  {{- $items := slice -}}
+  {{- $seen := slice -}}
+  {{- range $default | append (.accepted | default slice) -}}
+    {{- $label := string . -}}
+    {{- $version := replaceRE ` \(.*\)$` "" $label -}}
+    {{- if in $seen $version }}{{ continue }}{{ end -}}
+    {{- $seen = $seen | append $version -}}
+    {{- $key := "" -}}
+    {{- range split $version "." }}{{ $key = printf "%s%06d" $key (int (strings.TrimLeft "0" (replaceRE `\D.*$` "" .) | default "0")) }}{{ end -}}
+    {{- $text := printf "`%s`" $label -}}
+    {{- if in $defaultVersions $version }}{{ $text = printf "%s (default)" $text }}{{ end -}}
+    {{- $items = $items | append (dict "key" $key "text" $text) -}}
+  {{- end -}}
+  {{- $items = sort $items "key" -}}
+  {{- $count := len $items -}}
+  {{- range $i, $item := $items -}}
+    {{- if and (gt $i 0) (gt $count 2) }}, {{ end -}}
+    {{- if and (eq $i (sub $count 1)) (gt $count 1) }}{{ if eq $count 2 }} {{ end }}or {{ end -}}
+    {{- $item.text -}}
+  {{- end -}}
+{{- end -}}

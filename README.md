@@ -92,7 +92,7 @@ hugo new content doc/develop/my-feature.md
 hugo new content --kind applications doc/deploy/applications/my-runtime.md
 ```
 
-Store a guide in the section that matches its subject, and add it to the section index. Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
+Store a guide in the section that matches its subject, and add it to the section index. For a guide in `guides/static-sites/`, add its card to [`shared/static-guides.md`](./shared/static-guides.md), which the section index and the Static runtime pages include. Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
 
 ```bash
 hugo server --buildDrafts

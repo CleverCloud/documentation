@@ -112,7 +112,7 @@ Add its major version to your `package.json` file, in an `engines` section, here
 }
 ```
 
-Clever Cloud installs the most recent Node.js version that matches it. Without `engines.node`, it uses `CC_NODE_VERSION`, or the default version of the [Node.js runtime](/doc/deploy/applications/nodejs/), which may not suit your Meteor release.
+Clever Cloud uses the Node.js version of the image if it matches, otherwise it installs the most recent one that matches, as on the [Node.js runtime](/doc/deploy/applications/nodejs/#set-nodejs-version). Without `engines.node`, it uses `CC_NODE_VERSION`, or the version of the image, which may not suit your Meteor release.
 
 ### Meteor settings
 

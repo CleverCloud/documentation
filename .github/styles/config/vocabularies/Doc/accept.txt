@@ -85,6 +85,7 @@ Materia
 Matomo
 Maudit
 mdBook
+Mercure
 Metabase
 Metabot
 middleware

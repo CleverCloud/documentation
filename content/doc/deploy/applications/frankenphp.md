@@ -121,5 +121,9 @@ clever deploy # or clever restart if there is no code change
 
 FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`deepclone`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gettext`,`gmp`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`password-argon2`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xsl`,`xz`,`yaml`,`zip`,`zlib`,`zstd`
 
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

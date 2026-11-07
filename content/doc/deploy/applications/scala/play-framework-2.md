@@ -25,10 +25,6 @@ aliases:
 
 Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run on Clever Cloud.
 
-{{% content "create-application" %}}
-
- {{% content "set-env-vars" %}}
-
 ## Configure your Scala + Play! 2 application
 
 ### Mandatory configuration
@@ -45,11 +41,11 @@ To deploy a Play! application you have to set a secret in your `conf/application
 - 2.4.x -> 2.5.x: `play.crypto.secret=${?APPLICATION_SECRET}` -> `sbt playGenerateSecret`;
 - 2.3.x: `application.secret=${?APPLICATION_SECRET}` -> `sbt play-generate-secret`.
 
-Then, in your Clever Cloud application define `APPLICATION_SECRET` [environment variable](#setting-up-environment-variables-on-clever-cloud) with the generated value.
+Then, in your Clever Cloud application define `APPLICATION_SECRET` [environment variable](/doc/manage/environment-variables/) with the generated value.
 
 ### Custom config file
 
-If you don't want to use the default `conf/application.conf` configuration file, pass another one to your application at startup with the `CC_SBT_DEPLOY_ARGS` [environment variable](#setting-up-environment-variables-on-clever-cloud): `CC_SBT_DEPLOY_ARGS=-Dconfig.resource=clevercloud.conf`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias.
+If you don't want to use the default `conf/application.conf` configuration file, pass another one to your application at startup with the `CC_SBT_DEPLOY_ARGS` [environment variable](/doc/manage/environment-variables/): `CC_SBT_DEPLOY_ARGS=-Dconfig.resource=clevercloud.conf`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias.
 
 ### HTTPS support
 
@@ -64,7 +60,7 @@ To be able to use `request.secure`, you have to add `trustxforwarded=true` in `a
 
 ### Multi-module project
 
-If you have a single repository with multiple modules, then you can specify which module to run with `CC_SBT_TARGET_DIR` [environment variable](#setting-up-environment-variables-on-clever-cloud).
+If you have a single repository with multiple modules, then you can specify which module to run with `CC_SBT_TARGET_DIR` [environment variable](/doc/manage/environment-variables/).
 
 For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add
 `CC_SBT_TARGET_DIR=play` environment variable.
@@ -76,10 +72,6 @@ For instance, if your Sbt project contains a `shared` and `play` module and you 
 ### Access environment variables from application.conf
 
 To expose an environment variable through Play configuration, add `my.option=${?MY_VARIABLE}` to `application.conf`, then read the `my.option` configuration key from your application. You can also access it directly with `System.getenv("MY_VARIABLE")`, which returns `null` when the variable is not defined.
-
- {{% content "deploy-git" %}}
-
- {{% content "link-addon" %}}
 
 ## Known problems with Play! 2
 
@@ -139,6 +131,8 @@ db.default.maxConnectionsPerPartition=5
 db.default.minConnectionsPerPartition=5
 ```
 
-{{% content "more-config" %}}
+## Go Further
 
-{{% content "url_healthcheck" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+{{< /cards >}}

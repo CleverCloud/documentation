@@ -31,10 +31,6 @@ aliases:
 
 Clever Cloud allows you to deploy any Go application. This page explains how to set up your project to run it on our service.
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 ## Configure your Go application
 
 ### Mandatory configuration
@@ -149,15 +145,10 @@ Set `CC_TROUBLESHOOT=true` to enable verbose build output (`-x` flag) and the ra
 
 To access environment variables from your code, use `os.Getenv("MY_VARIABLE")`.
 
-{{% content "deploy-git" %}}
+## Go Further
 
-{{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
-
-## See also
-
-- [Deploy EchoIP guide](/guides/self-hosted/echoip/)
+{{< cards >}}
+  {{< card link="/developers/guides/self-hosted/echoip" title="EchoIP" subtitle="Deploy EchoIP as a Go application" icon="simple:go" >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

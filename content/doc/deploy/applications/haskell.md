@@ -31,10 +31,6 @@ Haskell is a purely functional language, especially suited for robust web applic
 
 There are many ways to write web applications in Haskell, from raw [WAI](https://hackage.haskell.org/package/wai) to full-stack frameworks like [Yesod](https://www.yesodweb.com/), simple libraries like [scotty](https://hackage.haskell.org/package/scotty) or type-safe solutions like [servant](https://haskell-servant.GitHub.io/).
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 ## Configure your Haskell application
 
 ### Mandatory configuration
@@ -129,17 +125,15 @@ This loads the environment variable in your `main` function and tests it. This w
 
 ### Specify Stack package target
 
-You may have several packages in your application which can be time consuming when building them, if you don't want to build every packages you can target a package by using the `CC_HASKELL_STACK_TARGET` [environnement variable](#setting-up-environment-variables-on-clever-cloud).
+You may have several packages in your application which can be time consuming when building them, if you don't want to build every packages you can target a package by using the `CC_HASKELL_STACK_TARGET` [environment variable](/doc/manage/environment-variables/).
 
 ```bash
 CC_HASKELL_STACK_TARGET="mypackage"
 ```
 
-{{% content "deploy-git" %}}
+## Go Further
 
-{{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

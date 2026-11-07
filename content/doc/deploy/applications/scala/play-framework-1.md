@@ -24,15 +24,11 @@ aliases:
 
 Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on Clever Cloud.
 
-{{% content "create-application" %}}
-
- {{% content "set-env-vars" %}}
-
 ## Configure your Scala + Play! 1 application
 
 ### Select Play! 1.x version
 
-Clever Cloud supports Play! **1.2** to **1.11**, and uses Play! **1.7** by default. You can select the Play! version for your application by setting the `CC_PLAY1_VERSION` [environment variable](#setting-up-environment-variables-on-clever-cloud). The former `PLAY1_VERSION` name remains supported as an alias. A `clevercloud/play1_version` file containing the version also works, but it's deprecated and ignored when `CC_PLAY1_VERSION` is set.
+Clever Cloud supports Play! **1.2** to **1.11**, and uses Play! **1.7** by default. You can select the Play! version for your application by setting the `CC_PLAY1_VERSION` [environment variable](/doc/manage/environment-variables/). The former `PLAY1_VERSION` name remains supported as an alias. A `clevercloud/play1_version` file containing the version also works, but it's deprecated and ignored when `CC_PLAY1_VERSION` is set.
 
 The `CC_PLAY1_VERSION` environment variable can contain one of the following values:
 
@@ -81,10 +77,8 @@ HTTPS is handled by Clever Cloud ahead of your application, your application ret
 
 To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`
 
- {{% content "deploy-git" %}}
+## Go Further
 
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+{{< /cards >}}

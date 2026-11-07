@@ -1,6 +1,6 @@
 ## Environment injection
 
-Clever Cloud injects environment variables from your application settings as mentioned in [setting up environment variables](/doc/manage/environment-variables/) and is also injecting in your application production environment, those from your [linked add-ons](#linking-a-database-or-any-other-add-on-to-your-application).
+Clever Cloud injects the [environment variables](/doc/manage/environment-variables/) of your application into its environment, along with those of its [linked add-ons](/doc/manage/service-dependencies/).
 
 ### Custom build configurations
 

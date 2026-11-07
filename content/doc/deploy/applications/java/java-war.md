@@ -31,10 +31,6 @@ In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packag
 
 Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/manage/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 {{% content "java-versions" %}}
 
 {{< runtimes_versions java >}}
@@ -146,9 +142,6 @@ Here's the list of the configuration values for the "container" field in `war.js
 
 {{% content "java-env-injection" %}}
 
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
-
 ## Custom run command
 
 If you need to run a custom command
@@ -161,8 +154,9 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
- {{% content "deploy-git" %}}
+## Go Further
 
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

@@ -32,10 +32,6 @@ aliases:
 
 Clever Cloud deploys Scala and Java applications built with sbt. This page explains how to set up your application. To deploy a [Play Framework](https://www.playframework.com) application, see the dedicated pages for [Play Framework 1.x](/doc/deploy/applications/scala/play-framework-1/) and [Play Framework 2.x](/doc/deploy/applications/scala/play-framework-2/).
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 ## Configure your Scala application
 
 ### Mandatory configuration
@@ -63,7 +59,7 @@ For more information, please have a look at the [sbt-native-packager documentati
 
 #### sbt custom goal
 
-By default, the deployment system executes `sbt stage` and runs a binary from `target/universal/stage/bin`. When this folder holds several scripts, the choice isn't guaranteed: set `CC_SBT_TARGET_BIN` to the one you want to run. To build with another goal, set the `CC_SBT_BUILD_GOAL` [environment variable](#setting-up-environment-variables-on-clever-cloud), for example `CC_SBT_BUILD_GOAL="clean stage"`. It takes precedence over the `build.goal` field of a `clevercloud/sbt.json` file.
+By default, the deployment system executes `sbt stage` and runs a binary from `target/universal/stage/bin`. When this folder holds several scripts, the choice isn't guaranteed: set `CC_SBT_TARGET_BIN` to the one you want to run. To build with another goal, set the `CC_SBT_BUILD_GOAL` [environment variable](/doc/manage/environment-variables/), for example `CC_SBT_BUILD_GOAL="clean stage"`. It takes precedence over the `build.goal` field of a `clevercloud/sbt.json` file.
 
 To pass arguments to the binary when it starts, set `CC_SBT_DEPLOY_ARGS`, for example `CC_SBT_DEPLOY_ARGS="-Dconfig.resource=clevercloud.conf"`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias of `CC_SBT_DEPLOY_ARGS`, but it no longer adds goals to the build command: if you used it to build a specific module, move that goal to `CC_SBT_BUILD_GOAL`.
 
@@ -96,10 +92,8 @@ application.secret=${APPLICATION_SECRET}
 
 In Scala code, retrieve an environment variable with `System.getenv("MY_VARIABLE")`, it returns `null` when the variable is not defined.
 
-{{% content "deploy-git" %}}
+## Go Further
 
-{{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+{{< /cards >}}

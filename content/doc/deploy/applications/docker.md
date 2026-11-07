@@ -203,5 +203,3 @@ A Docker task runs the `CMD` or `ENTRYPOINT` of the image, not `CC_RUN_COMMAND`,
 - [Phoenix (Elixir)](https://github.com/CleverCloud/phoenix-docker-example)
 - [Rust](https://github.com/CleverCloud/rust-docker-example)
 - [Seaside (Smalltalk)](https://github.com/CleverCloud/demo-seaside)
-
-{{% content "url_healthcheck" %}}

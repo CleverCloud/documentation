@@ -1,6 +1,6 @@
 ## Environment injection
 
-Clever Cloud exposes [environment variables defined for your application](#setting-up-environment-variables-on-clever-cloud) alongside those provided by linked add-ons. Read a standard variable such as `MY_VARIABLE` from the process environment with:
+Clever Cloud exposes [environment variables defined for your application](/doc/manage/environment-variables/) alongside those provided by linked add-ons. Read a standard variable such as `MY_VARIABLE` from the process environment with:
 
 ```java
 String value = System.getenv("MY_VARIABLE");

@@ -76,5 +76,9 @@ clever deploy # or clever restart if there is no code change
 - [Deploy a Swift application with Mise](https://github.com/CleverCloud/swift-hello-world-example)
 - [Deploy a Zig application with Mise](https://github.com/CleverCloud/zig-with-mise-example)
 
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

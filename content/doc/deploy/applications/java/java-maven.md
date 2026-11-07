@@ -34,10 +34,6 @@ Maven is essentially a project management and comprehension tool and as such pro
 - Releases
 - Distribution
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 ## Configure your Java application
 
 ### About Cargo
@@ -139,11 +135,9 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
- {{% content "deploy-git" %}}
+## Go Further
 
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

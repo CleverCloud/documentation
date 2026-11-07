@@ -34,10 +34,6 @@ You don't need to change a lot in your application, the *requirements* section e
   If you encounter an issue, please contact the support.
 {{< /callout >}}
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 ## Configure your Dotnet application
 
 ### .NET version
@@ -157,11 +153,9 @@ Set environment variables in the console according to your own information : `PA
 
 To access environment variables from your code, you can use `System.Environment.GetEnvironmentVariable("MY_VARIABLE")"`.
 
-{{% content "deploy-git" %}}
+## Go Further
 
-{{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

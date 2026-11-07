@@ -37,6 +37,8 @@ Variables are defined on a per-application basis. They are defined in four ways:
 
 - Some environment variables are added automatically for each application.
 
+In the Console, open the **Environment variables** menu of your application, add each variable with **Add**, then select **Update changes** to save them. With Clever Tools, use [`clever env set`](/doc/tools/cli/applications/configuration/#env).
+
 After you change the environment variables of your application, redeploy it to use the new values. When you save the exposed configuration of a linked application, or the variables of a linked [configuration provider](/doc/deploy/services/config-provider/), Clever Cloud redeploys your application, unless you stopped it.
 
 Check out our [environment variable reference](/doc/manage/environment-variables/reference).
@@ -235,9 +237,9 @@ Here is a non-exhaustive summary:
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
-  {{< card link="/developers/doc/deploy/applications/elixir/#setting-up-environment-variables-on-clever-cloud" title="Elixir" icon="simple:elixir" >}}
+  {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="simple:go" >}}
-  {{< card link="/developers/doc/deploy/applications/haskell/#setting-up-environment-variables-on-clever-cloud" title="Haskell" icon="simple:haskell" >}}
+  {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell" >}}
   {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java WAR/EAR" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/nodejs/#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}

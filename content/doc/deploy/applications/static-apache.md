@@ -21,15 +21,9 @@ If you only need to serve static files without executing any code on the backend
 
 This runtime is based on apache, so shares a lot with the [PHP runtime](/doc/deploy/applications/php). This means you can use `.htaccess` files for redirection or access control.
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 {{% content "env-injection" %}}
 
 Application deployment on Clever Cloud is via **Git or FTP**.
-
- {{% content "deploy-git" %}}
 
 ## FTP Deployment
 
@@ -44,10 +38,6 @@ Just follow the instructions of your FTP Software to send code to Clever Cloud.
 ⚠️ **An FTP application automatically starts once you create the application, even if you don't send any code yet.**
 
 Refer to  [Quick Start - FTP deployment](/doc/getting-started#choose-how-to-deploy) for more details.
-
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
 
 ## Serving index.html for SPA (Single Page Application) routers
 
@@ -119,4 +109,8 @@ If you don't set the [`CC_WEBROOT`](/doc/manage/environment-variables/reference/
 
 {{% content-raw "static-guides" %}}
 
-{{% content "request-flow" %}}
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

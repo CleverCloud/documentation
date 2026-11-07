@@ -25,10 +25,6 @@ Gradle is a project automation tool that builds upon the concepts of Apache Ant 
 
 Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 {{% content "java-versions" %}}
 
 Accepted values are the following:
@@ -128,9 +124,9 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
 
- {{% content "deploy-git" %}}
+## Go Further
 
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

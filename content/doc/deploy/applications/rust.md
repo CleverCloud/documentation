@@ -191,5 +191,9 @@ clever create --type rust --task "./target/release/worker --once"
 clever deploy # or clever restart if there is no code change
 ```
 
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

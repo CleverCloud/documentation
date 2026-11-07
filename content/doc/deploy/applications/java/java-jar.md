@@ -24,10 +24,6 @@ Clever Cloud offers you to run any Java ARchive file. You do not need to change 
 
 Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "create-application" %}}
-
-{{% content "set-env-vars" %}}
-
 {{% content "java-versions" %}}
 
 {{< runtimes_versions java >}}
@@ -128,11 +124,9 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
- {{% content "deploy-git" %}}
+## Go Further
 
- {{% content "link-addon" %}}
-
-{{% content "more-config" %}}
-
-{{% content "url_healthcheck" %}}
-{{% content "request-flow" %}}
+{{< cards >}}
+  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+{{< /cards >}}

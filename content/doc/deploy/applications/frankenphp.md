@@ -24,9 +24,6 @@ aliases:
 
 It comes with many extensions and features such as early hints (HTTP 103), real-time capabilities with its built-in Mercure hub. FrankenPHP can also make your Laravel and Symfony projects faster than ever through their official integrations with the [worker mode](#worker-mode). Deploying PHP applications with FrankenPHP on Clever Cloud is straightforward and requires no complex configuration, nor Docker container.
 
-> [!NOTE] FrankenPHP is a new runtime
-> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/frankenphp)
-
 ## Create your FrankenPHP application
 
 To create a new FrankenPHP application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):

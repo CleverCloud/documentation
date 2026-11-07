@@ -21,9 +21,6 @@ aliases:
 
 Clever Cloud platform provides a multi-runtime environment, including many tools to deploy and run your applications. The Linux runtime is a versatile solution to build and deploy any kind of application. The Mise package manager helps you to install and manage any supported dependencies Clever Cloud doesn't provide by default such as Dart, Gleam, Zig for example.
 
-> [!NOTE] Linux is a new runtime
-> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
-
 ## Create your Linux application
 
 To create a new Linux application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):

@@ -18,9 +18,6 @@ aliases:
 
 [V](https://vlang.io) is a very simple modern language, similar to Go. It's a statically typed compiled programming language designed for building maintainable software. Its design has also been influenced by Oberon, Rust, Swift, Kotlin, and Python. One of its forces is it comes with [a strong standard library](https://modules.vlang.io/), built-in modules and a package manager. Thus, it includes a web server easy to use in V applications : [Veb](https://modules.vlang.io/veb.html).
 
-> [!NOTE] V (Vlang) is a new runtime
-> Help us to improve it by reporting any issue or suggestion on the [Clever Cloud Community](https://github.com/CleverCloud/Community/discussions/categories/paas-runtimes)
-
 ## Create your V (Vlang) application
 
 To create a new V (Vlang) application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):

@@ -215,7 +215,7 @@ clever env set CC_RAKEGOALS "db:prepare, assets:precompile"
 clever env set STATIC_FILES_PATH public
 ```
 
-Clever Cloud collects what your application writes to its standard output, where applications created with Rails 7.1 or later log by default. To store files with Active Storage, use [Cellar](/doc/deploy/storage/cellar/), the S3-compatible object storage of Clever Cloud.
+Clever Cloud collects what your application writes to its standard output, and to the log file of its environment, such as `log/production.log`: Rails logs there by default. To store files with Active Storage, use [Cellar](/doc/deploy/storage/cellar/), the S3-compatible object storage of Clever Cloud.
 
 The [Ruby on Rails guide](/guides/frameworks/ruby-on-rails/) deploys a complete application, from the database to the assets.
 

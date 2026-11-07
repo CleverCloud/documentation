@@ -1,18 +1,17 @@
 ---
 type: docs
 linkTitle: Haskell
-title: Haskell
-description: Deploy Haskell applications on Clever Cloud with automatic dependency management, compilation, and runtime environment configuration
+title: Haskell application runtime
+description: Build and deploy Haskell applications on Clever Cloud with Stack, from a single executable to a project with several packages
 keywords:
-- haskell
-- functional programming
-- stack build tool
-- app hosting
 - cabal
-- lazy evaluation
-- web applications
-- purely functional
-- compiled language
+- ghc
+- haskell
+- haskell app hosting
+- scotty
+- servant
+- stack
+- yesod
 aliases:
 - /doc/applications/haskell
 - /doc/deploy/application/haskell
@@ -27,108 +26,121 @@ aliases:
 
 ## Overview
 
-Haskell is a purely functional language, especially suited for robust web applications.
+[Haskell](https://www.haskell.org) is a purely functional, statically typed language. Clever Cloud builds your [Stack](https://docs.haskellstack.org) project and starts the executable it installs. It works with web frameworks such as [Scotty](https://hackage.haskell.org/package/scotty), [Servant](https://haskell-servant.github.io), or [Yesod](https://www.yesodweb.com).
 
-There are many ways to write web applications in Haskell, from raw [WAI](https://hackage.haskell.org/package/wai) to full-stack frameworks like [Yesod](https://www.yesodweb.com/), simple libraries like [scotty](https://hackage.haskell.org/package/scotty) or type-safe solutions like [servant](https://haskell-servant.GitHub.io/).
+## Create your Haskell application
+
+To create a new Haskell application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+
+```bash
+clever create --type haskell
+```
+
+- [Learn more about Clever Tools](/doc/tools/cli/)
+- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
 
 ## Configure your Haskell application
 
-### Mandatory configuration
+### Mandatory needs
 
-Be sure that:
+A Haskell application needs:
 
-- you have pushed in **master branch**
-- you listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
-- you have one and only one binary target in your [`.cabal` file](#dependencies)
-- your project has a `stack.yaml` file
+- A `stack.yaml` file, at the root of the project or of the folder set in `APP_FOLDER`
+- A package described in a `.cabal` or a `package.yaml` file, with one executable
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
-The steps ran in order are:
+[Stack](https://docs.haskellstack.org) is a Haskell build tool. In `stack.yaml`, the [snapshot](https://docs.haskellstack.org/en/stable/configure/yaml/project/#snapshot) sets the version of GHC, the compiler, and a set of libraries that build together. `packages` lists the folders of your packages, `.` for the current one.
 
-- `stack setup`
-- `stack install --only-dependencies`
-- `stack install`
-- `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
+Each package has a `.cabal` file, which lists its executables and their dependencies. A [Clever Task](#haskell-applications-as-clever-tasks) doesn't need a web server.
 
-The executable built by `stack build` (or the command you specify) must start a web server listening on `0.0.0.0`, on the port in `PORT`.
+For instance, a minimal [Scotty](https://hackage.haskell.org/package/scotty) application:
 
-For instance, a minimal [scotty](https://hackage.haskell.org/package/scotty) application can look like this:
+```yaml {filename="stack.yaml"}
+snapshot: lts-22.34
+packages:
+- .
+```
 
-```haskell {linenos=table}
+```text {filename="hello.cabal"}
+cabal-version: 2.4
+name:          hello
+version:       0.1.0
+
+executable hello
+    main-is:          Main.hs
+    build-depends:    base, scotty
+    default-language: Haskell2010
+```
+
+```haskell {filename="Main.hs"}
 {-# LANGUAGE OverloadedStrings #-}
 
-import System.Environment (getEnv)
+import System.Environment (lookupEnv)
 import Web.Scotty
 
+main :: IO ()
 main = do
-  port <- read <$> getEnv "PORT"
-  scotty port $ do
-    get "/" $ do
-      html $ "Hello world"
+  port <- maybe 8080 read <$> lookupEnv "PORT"
+  scotty port $ get "/" $ text "Hello from Haskell on Clever Cloud"
 ```
 
-### Dependencies
+Scotty listens on every interface. Your application reads its [environment variables](/doc/manage/environment-variables/) with `lookupEnv` or `getEnv`, from `System.Environment`, such as the credentials of the add-ons you link to it.
 
-Make sure to list all your dependencies in your `.cabal` file.
+### Build phase
 
-For the example above, you need:
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/). Stack then installs GHC, and builds your dependencies and your project:
 
-```haskell  {linenos=table}
-executable myfirstapp
-    main-is: Main.hs
-    build-depends: base
-                 , scotty
+```bash
+stack setup
+stack install --only-dependencies
+stack install
 ```
 
-### Cached dependencies
+`stack install` copies the executables of your project to `~/.local/bin`, which is in the `PATH`. To replace one of these commands, set `CC_HASKELL_STACK_SETUP_COMMAND`, `CC_HASKELL_STACK_INSTALL_DEPENDENCIES_COMMAND`, or `CC_HASKELL_STACK_INSTALL_COMMAND`. Clever Cloud splits their value on spaces and runs it without a shell.
 
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true`.
-It is enabled by default only for rust and haskell applications.
+The first build compiles every dependency from source: around twenty minutes for a small Scotty application. Enable the [dependencies cache](#caches) to keep them between commits, so that the next builds take a few minutes.
 
-To disable dependencies caching completely, you can remove the `CC_CACHE_DEPENDENCIES` environment variable or by setting it to `false`.
-To fully remove cached dependencies, you have to rebuild your application from scratch.
+If a build fails for lack of memory, enable a [dedicated build instance](/doc/manage/#dedicated-build-instance), larger than your application instances:
 
-You can select **rebuild and restart** from the console or launch `clever restart --without-cache` with the Clever Tools CLI.
+```bash
+clever scale --build-flavor M
+```
+
+### Build a single package
+
+In a project with several packages, `stack install` builds all of them. To build only one, and the packages it depends on, set its name, from its `.cabal` file, in `CC_HASKELL_STACK_TARGET`. Clever Cloud adds it to the default `stack install` commands, not to the ones you replace:
+
+```bash
+clever env set CC_HASKELL_STACK_TARGET hello
+```
 
 ### Custom run command
 
-If you need to run a custom command (or just pass options to the binary built by stack), you can specify it through the `CC_RUN_COMMAND` environment variable.
-
-For instance, for a [hakyll](https://jaspervdj.be/hakyll/) website, you can define:
+By default, Clever Cloud starts the executable Stack built, which it looks for in the `.stack-work/install` folder at the root of the repository. If your project is in an `APP_FOLDER`, has several executables, or needs arguments, set `CC_RUN_COMMAND`. It runs from the root of the repository: call the executable by its name, as `stack install` copies it to `~/.local/bin`. For instance, for the `site` executable of a [Hakyll](https://jaspervdj.be/hakyll/) website:
 
 ```bash
-CC_RUN_COMMAND='~/.local/bin/site server --host 0.0.0.0 --port $PORT'
+clever env set CC_RUN_COMMAND 'site server --host 0.0.0.0 --port $PORT'
 ```
 
-To access environment variables from your code, just get them from the environment with `getEnv :: String -> IO String` in `System.Environment`.
+### Caches
 
-If some environment variables are critical to your application, here is an approach you can use:
-
-```haskell {linenos=table}
-{-# LANGUAGE OverloadedStrings #-}
-module Main where
-
-import Data.Text.Lazy (pack)
-import System.Environment (getEnv)
-import Web.Scotty (get, html, scotty)
-
-envVar = getEnv "MY_VAR"
-
-main = do
-  myVar <- envVar
-  port <- read <$> getEnv "PORT"
-  scotty port $ do
-    get "/" $ do
-      html . pack $ "Hello world " ++ myVar
-```
-
-This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
-
-### Specify Stack package target
-
-You may have several packages in your application which can be time consuming when building them, if you don't want to build every packages you can target a package by using the `CC_HASKELL_STACK_TARGET` [environment variable](/doc/manage/environment-variables/).
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with the installed executables. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
 ```bash
-CC_HASKELL_STACK_TARGET="mypackage"
+clever restart --without-cache
+```
+
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the compiled dependencies between commits, in the Stack snapshots and the `.stack-work` folder at the repository root. Stack still installs GHC on each build, which takes a few minutes.
+
+## Haskell applications as Clever Tasks
+
+A Haskell application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration: Clever Cloud builds it, then runs `CC_RUN_COMMAND`.
+
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `worker` executable:
+
+```bash
+clever create --type haskell --task "worker --once"
+clever deploy # or clever restart if there is no code change
 ```
 
 ## Go Further

@@ -54,6 +54,7 @@ Gradle
 Grafana
 Gravelines
 Gunicorn
+Hakyll
 HAProxy
 hardcoded
 hardcoding
@@ -130,6 +131,7 @@ sbt
 scalers
 Scaleway
 SCMs
+Scotty
 SELinux
 serverless
 Servlet
@@ -159,5 +161,6 @@ Vlang
 VMs
 webroot
 WildFly
+Yesod
 Zabbix
 Zellij

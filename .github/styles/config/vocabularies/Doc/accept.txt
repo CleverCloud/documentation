@@ -60,6 +60,7 @@ Hakyll
 HAProxy
 hardcoded
 hardcoding
+Headscale
 Heptapod
 Hextra
 Hono
@@ -147,8 +148,10 @@ Splunk
 StatsD
 subcommand
 subcommands
+subnet
 Symfony
 syslog
+tailnet
 Tailscale
 Telegraf
 Tesseract

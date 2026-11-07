@@ -105,6 +105,8 @@ Network Groups offer secure communication with all traffic between resources enc
 
 Network Groups excel in microservices architecture by connecting multiple services securely without exposing them to the public internet. They simplify database access by allowing applications to access database add-ons through a secure channel. For legacy integration, they help connect external systems securely to your cloud applications. They also provide isolated environments for development and testing.
 
+If your team uses Tailscale, you can also [connect the instances of an application to your tailnet](/doc/manage/tailscale/), through your Tailscale account.
+
 ## Technical Implementation
 
 Network Groups leverage WireGuard, a modern VPN protocol known for its simplicity, speed, and security. When you create a Network Group, a dedicated CIDR range is allocated for your Network Group and WireGuard configurations are generated. When members join, they're assigned DNS names and IPs from the CIDR range, encrypted tunnels are established between peers, and traffic between resources flows through these secure tunnels.

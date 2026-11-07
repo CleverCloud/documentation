@@ -85,7 +85,6 @@ Materia
 Matomo
 Maudit
 mdBook
-Mercure
 Metabase
 Metabot
 middleware
@@ -159,7 +158,6 @@ tooltips
 unencrypted
 URIs
 uv
-Veb
 Vite
 Vlang
 VMs

@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Linux
 title: Linux application runtime
-description: Build and deploy any application with Mise and your favorite tools on Clever Cloud using flexible Linux runtime environment
+description: Build and deploy any application on Clever Cloud with the Linux runtime, the tools Mise installs, and your own build and start commands
 keywords:
 - linux app hosting
 - linux cloud
@@ -19,7 +19,9 @@ aliases:
 
 ## Overview
 
-Clever Cloud platform provides a multi-runtime environment, including many tools to deploy and run your applications. The Linux runtime is a versatile solution to build and deploy any kind of application. The Mise package manager helps you to install and manage any supported dependencies Clever Cloud doesn't provide by default such as Dart, Gleam, Zig for example.
+The Linux runtime deploys any application: you choose the tools it needs, and the commands that build and start it. [Mise](/doc/manage/mise/) installs these tools, such as Crystal, Dart, Gleam, Nim, Zig, or Deno, then Clever Cloud runs your commands.
+
+Use it for a language without a dedicated runtime, for a self-hosted software, or to control each step of your deployment.
 
 ## Create your Linux application
 
@@ -36,46 +38,99 @@ clever create --type linux
 
 ### Mandatory needs
 
-Linux runtime requires a run command (through `CC_RUN_COMMAND`, a Mise `run` task, or a Makefile `run:` target) and a working web application listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
+A Linux application needs:
 
-- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
+- A start command, set in `CC_RUN_COMMAND`, in a `run` task of Mise, or in a `run` target of a Makefile
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
-### Build and run commands
+A build command is optional, and a [Clever Task](#linux-applications-as-clever-tasks) doesn't need a web server.
 
-Build and run commands are resolved in this priority order:
+[Mise](https://mise.jdx.dev) reads a `mise.toml` file at the root of your project. Its `[tools]` section lists the tools to install and their versions, and its `[tasks]` section names the commands of your project. For instance, a [Crystal](https://crystal-lang.org) web server, compiled into a `server` executable:
 
-1. `CC_BUILD_COMMAND` and `CC_RUN_COMMAND` environment variables
-2. [Mise](https://mise.jdx.dev/tasks/) `build` and `run` tasks (from `mise.toml` or [File Tasks](https://mise.jdx.dev/tasks/#tasks-in-mise-toml-files))
-3. Makefile `build:` and `run:` targets (searches `GNUmakefile`, `Makefile`, `makefile` or the file defined in `CC_MAKEFILE`)
+```toml {filename="mise.toml"}
+[tools]
+crystal = "1.22"
 
-Each level fills in only the commands not already defined by a higher priority source. For example, you can define `CC_BUILD_COMMAND` and let Mise or a Makefile provide the `run` command.
+[tasks.build]
+run = "crystal build --release main.cr -o server"
 
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
-
-## Clever Task and Multi-runtime approach
-
-Linux runtime is perfect fit to run on-demand workloads on Clever Cloud: configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
-
-```bash
-clever create --type linux --task "your-task-command --and arguments"
-clever deploy # or clever restart if there is no code change
+[tasks.run]
+run = "./server"
 ```
 
-- [Learn more about Clever Tasks](/doc/deploy/tasks/)
+```crystal {filename="main.cr"}
+require "http/server"
 
-## Expand your toolbox with Mise package manager
+port = ENV.fetch("PORT", "8080").to_i
 
-{{% content "mise" %}}
+server = HTTP::Server.new do |context|
+  context.response.print "Hello from Linux on Clever Cloud"
+end
 
-### Mise configuration examples
+server.bind_tcp("0.0.0.0", port)
+server.listen
+```
+
+To try it locally, run `mise trust` and `mise install`, then `mise run build` and `mise run run`, and open `http://localhost:8080`.
 
 - [Deploy a Dart application with Mise](https://github.com/CleverCloud/dart-with-mise-example)
 - [Deploy a Swift application with Mise](https://github.com/CleverCloud/swift-hello-world-example)
 - [Deploy a Zig application with Mise](https://github.com/CleverCloud/zig-with-mise-example)
 
+### Build and run commands
+
+Clever Cloud looks for the build command and the start command separately, in this order:
+
+1. `CC_BUILD_COMMAND` and `CC_RUN_COMMAND`
+2. The `build` and `run` [tasks of Mise](https://mise.jdx.dev/tasks/), in `mise.toml` or in [file tasks](https://mise.jdx.dev/tasks/file-tasks.html)
+3. The `build:` and `run:` targets of a Makefile
+
+Each source only fills in the commands that a previous one doesn't define. For instance, you can set `CC_BUILD_COMMAND` only, and let a `run` task of Mise or a `run` target of a Makefile provide the start command.
+
+Clever Cloud looks for these files at the root of your repository, even with `APP_FOLDER`, before the pre-build [hook](/doc/manage/build-hooks/): a hook can't create them. It runs the Mise tasks from the folder of `mise.toml`, which `CC_MISE_FILE_PATH` can move. For the Makefile, it uses the first file it finds among:
+
+- The file set in `CC_MAKEFILE`
+- `GNUmakefile`, `Makefile`, then `makefile`
+
+It checks each target with `make --dry-run`, and ignores the ones that fail. Without a start command, the deployment fails with `You must define a CC_RUN_COMMAND or a 'run' task with Makefile or Mise`.
+
+### Build phase
+
+Before an instance starts, Mise installs the tools of `mise.toml`. On a new build, Clever Cloud then runs the pre-build hook, the build command, and the post-build hook. `CC_BUILD_COMMAND` and the Makefile targets run from the root of your project, or from the folder set in `APP_FOLDER`.
+
+### Start command
+
+A `run` target of a Makefile runs from the root of your project, or from the folder set in `APP_FOLDER`. A Mise task runs from the folder of `mise.toml`. `CC_RUN_COMMAND` runs from the root of the repository, through a shell: it reads variables such as `$PORT`.
+
+### Caches
+
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with your whole repository. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
+
+```bash
+clever restart --without-cache
+```
+
+Mise installs the tools again on each restart, even from the cache. With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the files Mise downloads between commits, in the `~/.cache/mise` folder.
+
+## Linux applications as Clever Tasks
+
+A Linux application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration: Clever Cloud builds it, then runs `CC_RUN_COMMAND`.
+
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `report` task you define in `mise.toml`:
+
+```bash
+clever create --type linux --task "mise run report"
+clever deploy # or clever restart if there is no code change
+```
+
+## Expand your toolbox with Mise package manager
+
+{{% content "mise" %}}
+
 ## Go Further
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
+  {{< card link="/developers/doc/manage/mise" title="Mise Package Manager" subtitle="Install tools, map add-on credentials, and define tasks in one file" icon="cube" >}}
   {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
 {{< /cards >}}

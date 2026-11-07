@@ -208,13 +208,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [FrankenPHP Documentation](/doc/deploy/applications/frankenphp)
 
-| Name                      | Description                                                                                                          | Default value                                 |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `CC_FRANKENPHP_PORT`      | The port on which FrankenPHP listens for HTTP requests                                                               | `8080`, or `9000` with Request Flow           |
-| `CC_FRANKENPHP_WORKER`    | Path to the worker script, from the build folder (`APP_FOLDER`, or the root of the repository), in the served folder |                                               |
-| `CC_PHP_COMPOSER_FLAGS`   | Replaces the base flags of `composer install`                                                                        | `--no-interaction --no-progress --no-scripts` |
-| `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build                                                |                                               |
-| `CC_WEBROOT`              | Path to the folder to serve, relative to the root of your repository                                                 | `/`                                           |
+| Name                      | Description                                                                                 | Default value                            |
+| ------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `CC_FRANKENPHP_PORT`      | The port on which FrankenPHP listens for HTTP requests                                      | `8080`                                   |
+| `CC_FRANKENPHP_WORKER`    | Path to the worker script, relative to the root of your project (e.g. `/worker/script.php`) |                                          |
+| `CC_PHP_COMPOSER_FLAGS`   | Flags to pass to Composer                                                                   | `-n --no-dev --no-progress --no-scripts` |
+| `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build                       |                                          |
+| `CC_WEBROOT`              | Path to the web content to serve, relative to the root of your application                  | `/`                                      |
 
 ## Go
 
@@ -267,10 +267,11 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [Linux Documentation](/doc/deploy/applications/linux)
 
-| Name               | Description                               | Default value |
-| ------------------ | ----------------------------------------- | ------------- |
-| `CC_BUILD_COMMAND` | The command to run during the build phase | ``            |
-| `CC_RUN_COMMAND`   | The command to run during the run phase   | ``            |
+| Name               | Description                                                                                                  | Default value |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ | ------------- |
+| `CC_BUILD_COMMAND` | The command to run during the build phase                                                                    |               |
+| `CC_MAKEFILE`      | Makefile to use for the `build` and `run` targets, looked up before `GNUmakefile`, `Makefile` and `makefile` |               |
+| `CC_RUN_COMMAND`   | The command that starts the application                                                                      |               |
 
 Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-manager) to install your dependencies easily
 
@@ -421,11 +422,10 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 [V (Vlang)](/doc/deploy/applications/v)
 
-| Name          | Description                                                 | Default value                 |
-| ------------- | ----------------------------------------------------------- | ----------------------------- |
-| `CC_V_BINARY` | Output path of the compiled V executable                    | `${APP_HOME}/v_bin_${APP_ID}` |
-| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag    | `production`                  |
-| `VMODULES`    | Folder where `v install` puts the modules listed in `v.mod` | `/home/bas/.vmodules/`        |
+| Name          | Description                                              | Default value                 |
+| ------------- | -------------------------------------------------------- | ----------------------------- |
+| `CC_V_BINARY` | The name of the output binary file.                      | `${APP_HOME}/v_bin_${APP_ID}` |
+| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag |                               |
 
 ## Add-ons environment variables
 

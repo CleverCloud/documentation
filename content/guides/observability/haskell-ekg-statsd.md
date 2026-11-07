@@ -18,7 +18,7 @@ Use [EKG](https://hackage.haskell.org/package/ekg-core) to collect runtime metri
 
 ## Configure metrics
 
-Add these packages to the executable's `build-depends` in your [Cabal file](/doc/deploy/applications/haskell#dependencies):
+Add these packages to the `build-depends` of the executable in your [Cabal file](/doc/deploy/applications/haskell/#mandatory-needs):
 
 - ekg-core
 - ekg-statsd

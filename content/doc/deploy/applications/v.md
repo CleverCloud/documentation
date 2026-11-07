@@ -2,7 +2,7 @@
 type: docs
 linkTitle: V (Vlang)
 title: V (Vlang) application runtime
-description: Build and deploy V (Vlang) applications using the simple, fast, and safe programming language with built-in web server support
+description: Build and deploy V (Vlang) applications on Clever Cloud, from a Veb web server to V scripts run as Tasks
 keywords:
 - vlang
 - v app hosting
@@ -16,7 +16,7 @@ aliases:
 
 ## Overview
 
-[V](https://vlang.io) is a very simple modern language, similar to Go. It's a statically typed compiled programming language designed for building maintainable software. Its design has also been influenced by Oberon, Rust, Swift, Kotlin, and Python. One of its forces is it comes with [a strong standard library](https://modules.vlang.io/), built-in modules and a package manager. Thus, it includes a web server easy to use in V applications : [Veb](https://modules.vlang.io/veb.html).
+[V](https://vlang.io) is a statically typed, compiled language, with a syntax close to Go. Its [standard library](https://modules.vlang.io/) includes a web framework, [Veb](https://modules.vlang.io/veb.html), and its package manager installs other modules. Clever Cloud installs the dependencies of your project, compiles it, then starts the executable it builds.
 
 ## Create your V (Vlang) application
 
@@ -33,39 +33,90 @@ clever create --type v
 
 ### Mandatory needs
 
-V (Vlang) runtime only requires a working application listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
+A V application needs:
 
-- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
+- A program with a `main` function, at the root of the project or of the folder set in `APP_FOLDER`
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port), except for a [Clever Task](#v-vlang-applications-as-clever-tasks)
+
+Clever Cloud compiles the `.v` files of this folder into one program. For instance, a minimal [Veb](https://modules.vlang.io/veb.html) application:
+
+```v {filename="main.v"}
+module main
+
+import os
+import veb
+
+pub struct Context {
+    veb.Context
+}
+
+pub struct App {}
+
+pub fn (app &App) index(mut ctx Context) veb.Result {
+    return ctx.text('Hello from V on Clever Cloud')
+}
+
+fn main() {
+    port := os.getenv_opt('PORT') or { '8080' }.int()
+    mut app := &App{}
+    veb.run_at[App, Context](mut app, host: '0.0.0.0', port: port, family: .ip) or { panic(err) }
+}
+```
+
+To try it locally, run `v run .`, then open `http://localhost:8080`.
+
+- [Deploy an example V application on Clever Cloud](https://github.com/CleverCloud/v-example)
 
 ### Dependencies
 
-If a `v.mod` file exists at the root of your project, dependencies are installed with `v install` before compilation. Modules are stored in the `VMODULES` directory (default: `/home/bas/.vmodules/`) and cached between deployments.
+A `v.mod` file describes your project as a module. Its `dependencies` list the modules to install, here [`markdown`](https://github.com/vlang/markdown):
+
+```v {filename="v.mod"}
+Module {
+    name: 'hello'
+    description: 'A V web server on Clever Cloud'
+    version: '0.1.0'
+    license: 'MIT'
+    dependencies: ['markdown']
+}
+```
+
+If your project has a `v.mod` file, Clever Cloud installs these modules with `v install`, in the folder set in `VMODULES`, `~/.vmodules` by default. A project that only uses the standard library doesn't need this file.
 
 ### Build phase
 
-During the build phase, the V (Vlang) application is built with the `v . -prod` command. To compile without the `-prod` flag, set `ENVIRONMENT=development`. You can choose a custom output binary name with the `CC_V_BINARY` environment variable, default is `${APP_HOME}/v_bin_${APP_ID}`.
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), installs the dependencies, then compiles your project in production mode, with `v . -prod`, and the path of the executable in its `-output` option.
 
-- [Deploy an example V application on Clever Cloud](https://github.com/CleverCloud/v-example)
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
+`-prod` optimizes the executable, which takes longer to compile. With `ENVIRONMENT=development`, Clever Cloud compiles without it, faster. The executable is `v_bin_<application ID>`, at the root of the repository: set another path in `CC_V_BINARY`.
 
-### Custom run command
+### V (Vlang) version
 
-By default, the compiled binary is executed directly. To override this behavior, set `CC_RUN_COMMAND`.
+Clever Cloud deploys V `{{< runtime_version v >}}`.
 
-### V (Vlang) version and tools
+### Start command
 
-The currently deployed version of V (Vlang) on Clever Cloud is `{{< runtime_version v >}}`.
+Clever Cloud starts the executable from the root of your project, or from the folder set in `APP_FOLDER`. With `CC_RUN_COMMAND`, it runs your own command instead, through a shell, from the root of the repository.
 
-## V scripts (.vsh), Clever Tasks
+### Caches
 
-V (Vlang) can be used to execute [shell scripts (.vsh)](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v). On Clever Cloud, to run such workloads as Clever Tasks, configure an application as Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with the executable. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
 ```bash
-clever create --type v --task "./your-script.vsh --and arguments"
-clever deploy # or clever restart if there is no code change
+clever restart --without-cache
 ```
 
-- [Learn more about Clever Tasks](/doc/deploy/tasks/)
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the modules of the `VMODULES` folder between commits.
+
+## V (Vlang) applications as Clever Tasks
+
+A V application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration: Clever Cloud compiles your project, then runs `CC_RUN_COMMAND`, from the root of the repository. The project must compile, even if the Task runs another command.
+
+A Task can run a [V script](https://docs.vlang.io/other-v-features.html#cross-platform-shell-scripts-in-v), a `.vsh` file that V compiles and runs in one step. Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `scripts/report.vsh` script:
+
+```bash
+clever create --type v --task "v run scripts/report.vsh"
+clever deploy # or clever restart if there is no code change
+```
 
 ## Go Further
 

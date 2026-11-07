@@ -158,6 +158,7 @@ tooltips
 unencrypted
 URIs
 uv
+Veb
 Vite
 Vlang
 VMs

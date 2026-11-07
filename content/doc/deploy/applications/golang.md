@@ -160,4 +160,4 @@ To access environment variables from your code, use `os.Getenv("MY_VARIABLE")`.
 
 ## See also
 
-- [Deploy EchoIP guide](/guides/go-echoip/)
+- [Deploy EchoIP guide](/guides/self-hosted/echoip/)

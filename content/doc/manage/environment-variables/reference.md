@@ -365,7 +365,7 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 ## Ruby
 
-- [Ruby Guide](/guides/ruby-rack)
+- [Ruby Guide](/guides/frameworks/ruby-rack)
 - [Ruby Documentation](/doc/deploy/applications/ruby)
 
 | Name                                                                                      | Description                                                                                                                                                                                                                                | Default value                                                                                                      |
@@ -470,7 +470,7 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 ### ProxySQL
 
-[ProxySQL Documentation](/guides/proxysql)
+[ProxySQL Documentation](/guides/databases/proxysql)
 
 | Name                                | Description                                                                                 | Default value | Read Only |
 | ----------------------------------- | ------------------------------------------------------------------------------------------- | ------------- | --------- |
@@ -497,7 +497,7 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 ### Pgpool-II
 
-[Pgpool-II Documentation](/guides/pgpool)
+[Pgpool-II Documentation](/guides/databases/pgpool)
 
 | Name                                              | Description                                                                                                                                                                                       | Default value        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |

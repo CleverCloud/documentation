@@ -44,7 +44,7 @@ Learn more on [Kibana official documentation](https://www.elastic.co/guide/en/ki
 
 ### Authentication
 
-Any member of the Clever Cloud organisation containing the Elastic add-on can log in to Kibana through the automatically configured SSO system. See [Use Kibana with an Elastic Stack add-on](/developers/guides/kibana/) for the complete setup.
+Any member of the Clever Cloud organisation containing the Elastic add-on can log in to Kibana through the automatically configured SSO system. See [Use Kibana with an Elastic Stack add-on](/developers/guides/observability/kibana/) for the complete setup.
 
 ## Elastic APM
 

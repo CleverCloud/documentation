@@ -159,7 +159,7 @@ deno = "latest"
 
 Then it will be installed during deployment. You can replace `latest` with a specific version.
 
-- [Lume with Deno guide](/guides/lume-deno/)
+- [Lume with Deno guide](/guides/static-sites/lume/)
 
 ### Automatic detection
 

@@ -26,8 +26,8 @@ jobs:
         uses: tj-actions/changed-files@v47
         with:
           files: |
-            content/guides/astro.md
-            content/guides/nuxt.md
+            content/guides/frameworks/astro.md
+            content/guides/frameworks/nuxt.md
       
       - name: Create or update tracking issue
         id: create-issue

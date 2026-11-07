@@ -182,11 +182,11 @@ The following is the list of tested CMS by our team.
 It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 {{< cards >}}
-  {{< card link="/developers/guides/tutorial-drupal" title="Drupal" subtitle="Deploy a Drupal website on Clever Cloud" icon="drupal" >}}
-  {{< card link="/developers/guides/tutorial-laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="simple:laravel" >}}
-  {{< card link="/developers/guides/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform on Clever Cloud" icon="moodle" >}}
-  {{< card link="/developers/guides/tutorial-symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="simple:symfony" >}}
-  {{< card link="/developers/guides/tutorial-wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="simple:wordpress" >}}
+  {{< card link="/developers/guides/self-hosted/drupal" title="Drupal" subtitle="Deploy a Drupal website on Clever Cloud" icon="drupal" >}}
+  {{< card link="/developers/guides/frameworks/laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="simple:laravel" >}}
+  {{< card link="/developers/guides/self-hosted/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform on Clever Cloud" icon="moodle" >}}
+  {{< card link="/developers/guides/frameworks/symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="simple:symfony" >}}
+  {{< card link="/developers/guides/self-hosted/wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="simple:wordpress" >}}
 
 {{< /cards >}}
 
@@ -244,7 +244,7 @@ Please refer to our [Blackfire documentation](/doc/observability/blackfire) to c
 
 {{% content "proxysql" %}}
 
-You can learn more about ProxySQL on the [dedicated documentation page](/guides/proxysql)
+You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)
 
 {{% content "url_healthcheck" %}}
 {{% content "request-flow" %}}

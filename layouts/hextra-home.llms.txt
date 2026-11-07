@@ -36,7 +36,7 @@
 ## Optional
 {{- range $mainSections }}
 {{- if .Params.llmsTxtOptional }}
-{{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
+{{- $pages := sort (where .RegularPagesRecursive "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
 - [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}

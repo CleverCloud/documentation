@@ -113,7 +113,7 @@ The script keeps the page's front matter, which this repository maintains.
 
 ### Add a changelog entry
 
-Clever Cloud team members add an entry to `content/changelog/` for each significant platform update. Keep entries concise and focused on information users need to understand or act on.
+Only Clever Cloud team members add entries to `content/changelog/`, one for each significant platform update. To report an error in an entry, [open an issue](https://github.com/CleverCloud/documentation/issues). Keep entries concise and focused on information users need to understand or act on.
 
 Store each entry under its publication year and name it with the `MM-DD-title.md` format, for example `content/changelog/2026/08-26-product-update.md`. Multiple entries can share the same date.
 

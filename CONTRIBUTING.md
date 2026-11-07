@@ -31,7 +31,8 @@ Follow these guidelines while writing new content. The goal is to help you write
 
 #### 👍 Do
 
-- **Don't assume prior knowledge:** explain prerequisites and non-obvious behavior without burying the main task path
+- **Don't assume prior knowledge:** explain prerequisites and non-obvious behavior without burying the main task path. At its first use, explain in a few words each tool, file, or concept of an ecosystem, such as a build tool, a lock file, or a framework, and introduce a framework before an example uses it. Skip language features unrelated to the task
+- **Show how products work together:** highlight the Clever Cloud products that complement each other, or that enable or simplify a feature, such as Cellar to store the files of an application. When a product has a limit, link to the product or feature that covers the need
 - **Spell out acronyms:** at their first use on a page, write the full term followed by the acronym in parentheses, such as *multi-factor authentication (MFA)*. Then use the acronym alone. Skip this for acronyms most readers already know, such as API, CLI, DNS, or HTTP
 - **Use the serial comma:** add a comma before the last item of a list, such as `Go, Node.js, and Python`
 - **Write dates in the US format:** `November 12, 2026`, and spell out ordinals in text, such as `first` instead of `1st`. ISO dates such as `2026-11-12` remain fine in logs, timelines, and front matter
@@ -41,7 +42,7 @@ Follow these guidelines while writing new content. The goal is to help you write
 - **Prefer contractions:** write `don't` and `isn't`
 - **Avoid Latin abbreviations and exclamation points:** write `for example`, `that is`, `and so on`, `see`, `namely`, `note`, and `versus` instead of `e.g.`, `i.e.`, `etc.`, `cf.`, `viz.`, `N.B.`, and `vs.`
 - **Prefer plain words:** write `click`, `to`, `if`, `because`, `can`, `use`, `before`, and `Kubernetes` instead of `click on`, `in order to`, `in the event that`, `due to the fact that`, `is able to`, `leverage` or `utilize`, `prior to`, and `k8s`. Write `lets you deploy`, not `allows to deploy`. Use `set up`, `log in`, and `back up` as verbs, `setup`, `login`, and `backup` as nouns
-- **Use the project terminology:** write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. The Vale vocabulary in `.github/styles/config/vocabularies/Doc/` lists the rejected forms in `reject.txt`, matched case-sensitively, and the product names and terms the spell check accepts in `accept.txt`. The spell check ignores their case, so check capitalization yourself
+- **Use the project terminology:** write `add-on`, `email`, `feedback`, `plugin`, `URL`, and `WebSocket`. Write `region`, not `zone`, for the location of an application or an add-on, as the `--region` option of Clever Tools does. The Vale vocabulary in `.github/styles/config/vocabularies/Doc/` lists the rejected forms in `reject.txt`, matched case-sensitively, and the product names and terms the spell check accepts in `accept.txt`. The spell check ignores their case, so check capitalization yourself
 - **Hyphenate with care:** don't hyphenate an adverb ending in `-ly`, such as `highly available`. Hyphenate a compound adjective before a noun, such as `long-term support` or `open-source project`, and leave `up to date`, `open source`, `end of life`, and `step by step` open when they end the clause after a verb, such as `the image is up to date`
 - **Mind the typography:** use the ellipsis character `…`, and one space between sentences
 - **Prefer active voice when it tells who acts:** you, Clever Cloud, the CLI. Passive voice can make it harder for readers to figure out who's supposed to do something. A passive is fine to describe a state, such as *is enabled*, or when the actor doesn't matter
@@ -57,6 +58,8 @@ Follow these guidelines while writing new content. The goal is to help you write
 - Words and phrases that make promises or tie the content to a moment, such as *soon*, *currently*, *for now*, *not yet*, *today*, *recently*, *upcoming*, *coming next month*, or *in the future*: describe the current state of the platform instead. This doesn't apply to changelog entries, which can announce commitments such as how long a version stays available
 - Using phrases like *simply*, *just*, *easy*, *easily*, *obviously*, *of course*, *as simple as*, *straightforward*, *seamless*, *effortless*, *trivial*, *with ease*, *It's that simple*, *It's easy*, or *quickly* in a procedure
 - Over-politeness with the use of *please*: go straight to the point
+- Prices in documentation pages: they change, and belong in changelog entries. The Kubernetes page is the only exception. Writing that a feature is free or not billed is fine
+- Version history in documentation pages, such as *available since version 2.3*: describe the current state, and announce changes in a changelog entry
 
 #### 💡 Shortcodes and callouts
 
@@ -104,6 +107,8 @@ The [README](./README.md#configure-front-matter) lists the front matter fields t
 
 - Don't add a full stop to a short standalone line made of one simple sentence, especially a single-line code comment, label, or concise list item. Use normal terminal punctuation for developed or multi-sentence prose, including list items
 - Don't hard-wrap prose with formatting-only line breaks that don't affect rendering. Keep each paragraph on one logical line and rely on editor word wrap
+- Keep each list item to one line when readers scan the list. Move explanations and exceptions, such as an *unless* clause, to a paragraph after the list
+- Group related sentences in a paragraph. Avoid a paragraph whose last line holds a few words, and a series of one-sentence paragraphs: check both in the rendered page
 - Sort list items alphabetically, or by increasing or decreasing line length, and table rows alphabetically. An editorial logic, such as a functional, chronological, or step-by-step order, takes priority over both
 - End every text file with a newline
 
@@ -124,6 +129,18 @@ The [README](./README.md#configure-front-matter) lists the front matter fields t
 - Use `openssl rand -base64 32` when a guide needs a portable password-generation example and OpenSSL is already a prerequisite
 - Make sure captured command output doesn't expose credentials, tokens, add-on environment values, or unrelated account data
 - Validate public-storage claims with an unauthenticated request and persistence claims after a restart or rebuild
+
+#### Runtime pages
+
+The pages of `content/doc/deploy/applications/` describe how Clever Cloud builds and starts each runtime:
+
+- Start from the `applications` [archetype](./README.md#add-a-page-or-guide), which sets their structure: overview, mandatory needs with a minimal application, build phase, version, caches, Clever Tasks, and Go Further cards
+- Give a minimal application, with the command to try it locally when the ecosystem has one. When the application starts its own web server, it listens on `0.0.0.0` and on the port in `PORT`. When Clever Cloud starts the server, such as Puma for Ruby, explain it instead
+- Show the commands the build runs, in their order, and the variables that change them
+- Deploy every example, and test every behavior the page describes, including the failures it warns about. Remove what you can't verify
+- When Clever Cloud provides a list of versions, add it to `data/runtime_versions.yml`, and generate the table with the `runtimes_versions` shortcode, not by hand. Quote the versions in this file, so that YAML doesn't read `3.10` as `3.1`. When the project sets its version, such as a Stack snapshot, explain how instead
+- Keep the headings that deployment logs link to, such as *Manage your static files and assets* on the Ruby page: the link checker doesn't see these links
+- Link related pages with cards in a *Go Further* section rather than with shared content blocks
 
 ### 💅 Style guide
 
@@ -151,6 +168,7 @@ Priority goes to PRs that reference a problem addressed in an issue fitting the 
 ### 🫡 When submitting a PR
 
 - **Keep it small:** The quality of the review is inversely proportional to the size of the PR. Smaller PRs simplify the reviewing process and increase the chances of getting constructive feedback.
+- **Describe it briefly:** in a pull request or an issue, give the main lines of the change. Add what reviewers need to understand and check it, such as its reason and how you verified it. Don't repeat the content of the changes, which speaks for itself. Stay concise and factual, and verify each claim you make
 - **Accept the feedback:** If reviewers ask you to make changes, do it. If you disagree, explain why. If you aren't sure, ask for clarification. Don't nitpick on the feedback, and don't take it personally.
 
 #### Commit messages
@@ -208,11 +226,5 @@ Keep the subject line, prefix included, to 100 characters at most. Put any furth
 - **Latency:** Long PR review latency can be disappointing for the authors, and make merge conflicts arise in their branch. Long latency kills productivity and morale, so make sure to review PRs in a timely manner.
 - **Don't nitpick:** If the PR respects the preceding standards and provide updated content, don't ask for changes for the sake of it. If you think something isn't perfect, but it's not a big deal, don't ask for changes.
 - **Provide alternatives:** If you think the author needs to change something, provide an example to illustrate your point. Use the `suggestion` feature on GitHub so the author can commit it directly if they agree with it.
+- **Judge the work, not the author:** the same review criteria apply to every contribution
 - **It's OK to make mistakes:** Explain what's wrong, why, and how to improve. If someone is violating a standard, refer to this doc to explain.
-
-## 💡☁️ Contributing as a Clever Cloud employee
-
-If you are a member of Clever Cloud, act like you were submitting a PR and receiving feedback in any other open-source project. This means:
-
-- **Don't bring internal company debates into the PR Discussion:** If conflict arises, take it to a private channel or in-person discussion. Pair-programming is a great way to solve conflicts together, consider it.
-- **Don't use authority or seniority to push your PRs:** If you are a senior, your PRs aren't more important than others. If you are a junior, your PRs aren't less important than others. What matters is the work you've done on this PR, not who you are. Your contribution to this doc is already highly appreciated.

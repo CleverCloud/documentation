@@ -25,7 +25,7 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
   - `api/`: API reference
   - `changelog/`: platform updates, one folder per year
   - `doc/`: technical documentation
-  - `guides/`: framework and software deployment guides
+  - `guides/`: deployment guides, grouped by section: databases, frameworks, observability, self-hosted software, and static site generators
   - `postmortem/`: incident reports
 - [`data/`](./data/): structured data, such as the supported runtime versions in `runtime_versions.yml`, the Kubernetes versions, and the tooltip definitions in `tooltips.toml`
 - [`layouts/`](./layouts/): Hugo templates and project shortcodes, including the Markdown output of each page and the `llms.txt` home page for large language models (LLMs)
@@ -87,12 +87,12 @@ The documentation is also available in the [llms.txt format](https://www.clever.
 Use the archetypes in [`archetypes/`](./archetypes/) to create new content. These examples create a guide, a documentation page and an application runtime page:
 
 ```bash
-hugo new content --kind guides guides/my-framework.md
+hugo new content --kind guides guides/frameworks/my-framework.md
 hugo new content doc/develop/my-feature.md
 hugo new content --kind applications doc/deploy/applications/my-runtime.md
 ```
 
-Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
+Store a guide in the section that matches its subject, and add it to the section index. Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
 
 ```bash
 hugo server --buildDrafts

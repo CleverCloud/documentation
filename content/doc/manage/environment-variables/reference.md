@@ -241,6 +241,7 @@ Use these to define [commands to run](/doc/manage/build-hooks) between various s
 | `CC_EXTRA_JAVA_ARGS`       | Define extra arguments to pass to `java` for JAR                                                               |               |
 | `CC_GRADLE_BUILD_GOAL`     | Define which Gradle tasks to run during build. Alias: `GRADLE_BUILD_GOAL`                                      | `assemble`    |
 | `CC_GRADLE_DEPLOY_GOAL`    | Define which Gradle tasks run your application. Alias: `GRADLE_DEPLOY_GOAL`                                    |               |
+| `CC_GRADLE_VERSION`        | Choose the major version of Gradle, `8` or `9`, for a project without the Gradle Wrapper                       |               |
 | `CC_JAR_ARGS`              | Define arguments to pass to the launched JAR                                                                   |               |
 | `CC_JAR_PATH`              | Define the path to your JAR                                                                                    |               |
 | `CC_JAVA_VERSION`          | Choose the JVM version between for OpenJDK or `graalvm-ce` for GraalVM                                         | 21            |

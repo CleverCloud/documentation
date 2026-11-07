@@ -101,6 +101,14 @@ Example:
 CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
+## Gradle version
+
+Without the [Gradle Wrapper](#the-gradle-wrapper), set the major version of Gradle in `CC_GRADLE_VERSION`, `8` or `9`:
+
+```bash
+clever env set CC_GRADLE_VERSION 9
+```
+
 ## The Gradle Wrapper
 
 Since Gradle can come in many versions, Clever Cloud automatically support the [Gradle Wrapper ↗](https://www.gradle.org/docs/current/userguide/gradle_wrapper.html).
@@ -113,7 +121,7 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
       {{< filetree/file name="gradle.json" >}}
     {{< /filetree/folder >}}
     {{< filetree/file name="gradlew" >}}
-    {{< filetree/folder name="graddle" >}}
+    {{< filetree/folder name="gradle" >}}
       {{< filetree/folder name="wrapper" >}}
         {{< filetree/file name="gradle-wrapper.jar" >}}
         {{< filetree/file name="gradle-wrapper.properties" >}}

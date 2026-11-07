@@ -58,7 +58,7 @@ A deployment starts new instances while the previous ones still run, so a new in
 
 ## Use your own control server
 
-[Headscale](https://headscale.net) is an open source implementation of the Tailscale control server. To connect your application to it, set its URL in `TAILSCALE_LOGIN_SERVER`, and a reusable pre-authentication key it generates in `TAILSCALE_AUTH_KEY`:
+[Headscale](https://headscale.net) is an open source implementation of the Tailscale control server, which you can [deploy on Clever Cloud](/guides/self-hosted/headscale/). To connect your application to it, set its URL in `TAILSCALE_LOGIN_SERVER`, and a reusable pre-authentication key it generates in `TAILSCALE_AUTH_KEY`:
 
 ```bash
 clever env set TAILSCALE_LOGIN_SERVER "https://headscale.example.com"

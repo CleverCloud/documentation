@@ -421,10 +421,11 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 [V (Vlang)](/doc/deploy/applications/v)
 
-| Name          | Description                                              | Default value                 |
-| ------------- | -------------------------------------------------------- | ----------------------------- |
-| `CC_V_BINARY` | The name of the output binary file.                      | `${APP_HOME}/v_bin_${APP_ID}` |
-| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag |                               |
+| Name          | Description                                                 | Default value                 |
+| ------------- | ----------------------------------------------------------- | ----------------------------- |
+| `CC_V_BINARY` | Output path of the compiled V executable                    | `${APP_HOME}/v_bin_${APP_ID}` |
+| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag    | `production`                  |
+| `VMODULES`    | Folder where `v install` puts the modules listed in `v.mod` | `/home/bas/.vmodules/`        |
 
 ## Add-ons environment variables
 

@@ -82,4 +82,4 @@ Removing the redirection stops new connections through its port. A new redirecti
 
 - [Mosquitto](https://github.com/CleverCloud/mosquitto-example): an MQTT broker built on the Linux runtime
 - [Node.js TCP chat](https://github.com/CleverCloud/nodejs-tcp-chat-example): a chat room to join with `nc`
-- [SFTPGo](/guides/sftpgo/): an SFTP server exposed through a TCP redirection, with a web interface
+- [SFTPGo](/guides/self-hosted/sftpgo/): an SFTP server exposed through a TCP redirection, with a web interface

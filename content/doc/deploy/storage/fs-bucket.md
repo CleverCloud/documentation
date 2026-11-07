@@ -101,7 +101,7 @@ The SFTP server presents one of these host keys:
 | RSA       | 4096     | `SHA256:yRHC/tAlBpHLlRZ5rwbZ1z+159Bj3yg0VxHf+hXINLg` |
 | RSA       | 4096     | `SHA256:yhn79aqxOGQZ+LXdN1/vIY+jwRIbBamlVT1+HdFoA6o` |
 
-Each bucket has a single account, managed by Clever Cloud, without custom SSH keys. For several users or SSH keys, deploy [SFTPGo](/guides/sftpgo/) instead.
+Each bucket has a single account, managed by Clever Cloud, without custom SSH keys. For several users or SSH keys, deploy [SFTPGo](/guides/self-hosted/sftpgo/) instead.
 
 With [Terraform](/doc/tools/terraform/), the `clevercloud_fsbucket_upload` action pushes local files or the content of a URL to a bucket.
 

@@ -246,7 +246,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#environment-injection" title="Play Framework 1.x" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#environment-injection" title="Play Framework 2.x" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/python/#configure-your-python-application" title="Python" icon="simple:python" >}}
-  {{< card link="/developers/doc/deploy/applications/ruby/#environment-injection" title="Ruby" icon="ruby" >}}
+  {{< card link="/developers/doc/deploy/applications/ruby" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/deploy/applications/rust/#mandatory-needs" title="Rust" icon="simple:rust" >}}
   {{< card link="/developers/doc/deploy/applications/scala/#environment-injection" title="Scala" icon="simple:scala" >}}
   {{< card link="/developers/doc/deploy/applications/static/" title="Static" icon="static" >}}

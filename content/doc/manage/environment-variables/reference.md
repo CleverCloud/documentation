@@ -208,13 +208,13 @@ If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach a
 
 [FrankenPHP Documentation](/doc/deploy/applications/frankenphp)
 
-| Name                      | Description                                                                                                          | Default value                                 |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `CC_FRANKENPHP_PORT`      | The port on which FrankenPHP listens for HTTP requests                                                               | `8080`, or `9000` with Request Flow           |
-| `CC_FRANKENPHP_WORKER`    | Path to the worker script, from the build folder (`APP_FOLDER`, or the root of the repository), in the served folder |                                               |
-| `CC_PHP_COMPOSER_FLAGS`   | Replaces the base flags of `composer install`                                                                        | `--no-interaction --no-progress --no-scripts` |
-| `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build                                                |                                               |
-| `CC_WEBROOT`              | Path to the folder to serve, relative to the root of your repository                                                 | `/`                                           |
+| Name                      | Description                                                                                 | Default value                            |
+| ------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `CC_FRANKENPHP_PORT`      | The port on which FrankenPHP listens for HTTP requests                                      | `8080`                                   |
+| `CC_FRANKENPHP_WORKER`    | Path to the worker script, relative to the root of your project (e.g. `/worker/script.php`) |                                          |
+| `CC_PHP_COMPOSER_FLAGS`   | Flags to pass to Composer                                                                   | `-n --no-dev --no-progress --no-scripts` |
+| `CC_PHP_DEV_DEPENDENCIES` | Set to `install` to install PHP development dependencies during build                       |                                          |
+| `CC_WEBROOT`              | Path to the web content to serve, relative to the root of your application                  | `/`                                      |
 
 ## Go
 
@@ -402,30 +402,29 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 [Static Documentation](/doc/deploy/applications/static)
 
-| Name                         | Description                                                                                                  | Default value          |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| `CC_HUGO_VERSION`            | Set the Hugo version, for example `0.161`                                                                    |                        |
-| `CC_BUILD_COMMAND`           | The command to run during the build phase                                                                    |                        |
-| `CC_OVERRIDE_BUILDCACHE`     | Files and path to put in the build cache, separated by a `:`                                                 |                        |
-| `CC_STATIC_AUTOBUILD_OUTDIR` | The output directory of the static site generator (SSG) auto-build, relative to the root of your application | `/cc_static_autobuilt` |
-| `CC_STATIC_CADDYFILE`        | Path to the Caddyfile, as expected by `caddy run --config` command                                           | `./Caddyfile`          |
-| `CC_STATIC_FLAGS`            | Command line flags to pass to the static web server                                                          |                        |
-| `CC_STATIC_PORT`             | The port on which the static web server listens for HTTP requests                                            | `8080`                 |
-| `CC_STATIC_SERVER`           | The server to use to serve your static website, can be `caddy`                                               | `static-web-server`    |
-| `CC_WEBROOT`                 | Path to the web content to serve, relative to the root of your application, used as default build cache      | `/`                    |
+| Name                         | Description                                                                                                                                                               | Default value                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| `CC_HUGO_VERSION`            | Set the Hugo version, for example `0.161`                                                                                                                                 |                                     |
+| `CC_BUILD_COMMAND`           | The command to run during the build phase                                                                                                                                 |                                     |
+| `CC_OVERRIDE_BUILDCACHE`     | Files and path to put in the build cache, separated by a `:`                                                                                                              |                                     |
+| `CC_STATIC_AUTOBUILD_OUTDIR` | The output folder of the static site generator (SSG) auto-build, from the build folder (`APP_FOLDER`, or the root of the repository). It doesn't change the served folder | `/cc_static_autobuilt`              |
+| `CC_STATIC_CADDYFILE`        | Path to the Caddyfile, from the build folder (`APP_FOLDER`, or the root of the repository)                                                                                | `./Caddyfile`                       |
+| `CC_STATIC_FLAGS`            | Command line flags to pass to the static web server                                                                                                                       |                                     |
+| `CC_STATIC_PORT`             | The port on which the static web server listens for HTTP requests                                                                                                         | `8080`, or `9000` with Request Flow |
+| `CC_STATIC_SERVER`           | The server of your static website: `static-web-server`, or `caddy` for `caddy file-server`. Without it, a valid Caddyfile selects `caddy run`                             | `static-web-server`                 |
+| `CC_WEBROOT`                 | Path to the folder to serve, relative to the root of your repository                                                                                                      | `/`                                 |
 
 > [!NOTE] Static Site Generators (SSG) Auto-build
-> If no `CC_BUILD_COMMAND` is provided, Clever Cloud tries to detect and configure Static Site Generator (SSG), any provided `CC_WEBROOT` is ignored. See [Static Site Generators (SSG) Auto-build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build) for more information.
+> Without `CC_BUILD_COMMAND`, Clever Cloud detects and builds a supported static site generator (SSG). `CC_STATIC_AUTOBUILD_OUTDIR` doesn't change the served folder: set `CC_WEBROOT` too. See [Static Site Generators (SSG) Auto-build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build).
 
 ## V (Vlang)
 
 [V (Vlang)](/doc/deploy/applications/v)
 
-| Name          | Description                                                 | Default value                 |
-| ------------- | ----------------------------------------------------------- | ----------------------------- |
-| `CC_V_BINARY` | Output path of the compiled V executable                    | `${APP_HOME}/v_bin_${APP_ID}` |
-| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag    | `production`                  |
-| `VMODULES`    | Folder where `v install` puts the modules listed in `v.mod` | `/home/bas/.vmodules/`        |
+| Name          | Description                                              | Default value                 |
+| ------------- | -------------------------------------------------------- | ----------------------------- |
+| `CC_V_BINARY` | The name of the output binary file.                      | `${APP_HOME}/v_bin_${APP_ID}` |
+| `ENVIRONMENT` | Set to `development` to compile without the `-prod` flag |                               |
 
 ## Add-ons environment variables
 

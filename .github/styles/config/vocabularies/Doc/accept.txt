@@ -7,6 +7,7 @@ AstroWind
 autoscaler
 autoscaling
 Azimutt
+bcrypt
 Blackfire
 Brotli
 Buildx
@@ -85,7 +86,6 @@ Materia
 Matomo
 Maudit
 mdBook
-Mercure
 Metabase
 Metabot
 middleware
@@ -110,6 +110,7 @@ Otoroshictl
 oTree
 Outline
 OVHcloud
+Pagefind
 Payara
 PDFlib
 Percona
@@ -159,7 +160,6 @@ tooltips
 unencrypted
 URIs
 uv
-Veb
 Vite
 Vlang
 VMs

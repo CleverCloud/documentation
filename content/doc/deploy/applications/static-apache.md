@@ -105,7 +105,7 @@ If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you 
 
 If you don't set the [`CC_WEBROOT`](/doc/manage/environment-variables/reference/#php) environment variable, the root of your project is the root of your web server.
 
-## 🎓 Static Site Generators (SSG) guides
+## Static Site Generators (SSG) guides {#-static-site-generators-ssg-guides}
 
 {{% content-raw "static-guides" %}}
 

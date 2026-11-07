@@ -47,6 +47,19 @@ frankenphp:
   php:
     - "8.5.12"
 
+hugo:
+  eol_source: https://github.com/gohugoio/hugo/releases
+  default:
+    - "0.163"
+  accepted:
+    - "0.160"
+    - "0.161"
+    - "0.162"
+    - "0.164"
+    - "0.165"
+    - "0.166"
+    - "0.167"
+
 java:
   eol_source: https://adoptium.net/fr/support/
   default:

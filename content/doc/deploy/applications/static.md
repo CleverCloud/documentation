@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Static
 title: Static Site Generators (SSGs) runtime
-description: Deploy static websites with automatic builds supporting Astro, Docusaurus, Hugo, mdBook, and Mkdocs generators on pico instances
+description: Deploy static websites on Clever Cloud, built from their sources with Astro, Docusaurus, Hugo, mdBook, MkDocs and more, served by Static Web Server or Caddy
 keywords:
 - astro
 - caddy
@@ -30,7 +30,9 @@ aliases:
 
 ## Overview
 
-Static is a flexible, light and simple runtime dedicated to static sites generators (SSG), designed for minimum configuration effort with Auto-build feature. Pico instances are available, it allows users to put services in front of it, such as [Redirection.io](/doc/manage/environment-variables/reference/#use-redirectionio-as-a-proxy) or [Varnish](/doc/manage/request-flow/varnish/).
+A static website is a set of files that a web server sends as they are: HTML pages, style sheets, scripts, and images. Clever Cloud can build them from your sources with a static site generator (SSG), such as Hugo or Astro, then serves them with [Static Web Server](https://static-web-server.net) or [Caddy](https://caddyserver.com).
+
+A Static application needs no application server, and runs on the smallest instance size, `pico`. To use [`.htaccess` files](https://httpd.apache.org/docs/current/howto/htaccess.html) or to run PHP code, use the [Static with Apache](/doc/deploy/applications/static-apache/) runtime or the [PHP](/doc/deploy/applications/php/) runtime instead.
 
 ## Create your Static application
 
@@ -47,101 +49,198 @@ clever create --type static
 
 ### Mandatory needs
 
-Static runtime only requires a working web application, with an `index.htm` or `index.html` file. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable, relative to the root of your project (for example `/public`, default is `/`).
+A Static application needs an `index.html` file, the home page of your website, at the root of the folder Clever Cloud serves. Its other pages, styles, and images sit next to it. For instance, the smallest website:
 
-- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
+```html {filename="index.html"}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello from Clever Cloud</h1>
+  </body>
+</html>
+```
+
+With a static site generator, Clever Cloud can [build your website](#static-site-generators-ssg-auto-build) for you. Otherwise, push the files to serve.
+
+### Served folder
+
+By default, Clever Cloud serves the root of your repository. To serve one of its folders instead, set its path in `CC_WEBROOT`:
+
+```bash
+clever env set CC_WEBROOT /public
+```
+
+Every file in the served folder is public: keep notes, scripts, configuration files, and secrets out of it.
+
+The build, the generators, and the servers run from the root of your project: the folder set in `APP_FOLDER`, or the root of the repository. They read their configuration files, such as a Caddyfile or the file set in `SERVER_CONFIG_FILE`, from there.
 
 ### Build phase
 
-During the build phase, Clever Cloud will run the `CC_BUILD_COMMAND` if provided. You can use it to install dependencies, build your static website, or any other task you need to perform before running your application. If no `CC_BUILD_COMMAND` is provided, Clever Cloud will try to detect your Static Site Generator (SSG), build and deploy your website automatically.
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), then one of these, in order:
 
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
-- [Learn more about Static Site Generators (SSGs) Auto-build](#static-site-generators-ssg-auto-build)
+- The command set in `CC_BUILD_COMMAND`
+- Otherwise, the build command of a [static site generator](#static-site-generators-ssg-auto-build) it detects
+- Otherwise, nothing: it serves your files as they are
 
-### Optimized build cache
+The build runs from the root of your project, or from the folder set in `APP_FOLDER`. The image includes the tools of the supported generators, and [`CC_HUGO_VERSION`](#hugo) sets the version of Hugo. To use a tool Clever Cloud doesn't provide, or a version the image doesn't include, declare it in a [`mise.toml` file](/doc/manage/mise/). For instance, [Pagefind](https://pagefind.app), which indexes your website for its search:
 
-When [auto-build](#static-site-generators-ssg-auto-build) activates, or if you define `CC_WEBROOT`, the build cache contains only some configuration files and the served directory to optimize size, reduce archive time. When neither option applies, the system caches the entire application root directory instead.
+```toml {filename="mise.toml"}
+[tools]
+"github:Pagefind/pagefind" = "1.6.0"
+```
 
-To override this behavior, set the `CC_OVERRIDE_BUILDCACHE` environment variable with a colon-separated list of directories and files, relative to the application root. For example: `CC_OVERRIDE_BUILDCACHE=myScript.sh:/myBuildDir`.
+Clever Cloud doesn't know where a command set in `CC_BUILD_COMMAND` writes the website: set `CC_WEBROOT` to this folder. For instance, to build a Hugo website, then index its pages for search with Pagefind:
 
-## Supported web servers
+```bash
+clever env set CC_BUILD_COMMAND "hugo --minify --destination public && pagefind --site public"
+clever env set CC_WEBROOT /public
+```
 
-By default, [Static Web Server (SWS)](https://static-web-server.net) `{{< runtime_version sws >}}` serves your website. If a valid Caddyfile is present at the root of your project, it will be used with [Caddy](https://caddyserver.com) `{{< runtime_version caddy >}}` and the `caddy run` command, you can also set its location with `CC_STATIC_CADDYFILE` (Default is `./Caddyfile`).
+### Start command
 
-You can force the use of Caddy by setting the `CC_STATIC_SERVER` environment variable to `caddy`. It configures your application to serve the website with the `caddy file-server` command which doesn't rely on a Caddyfile.
+Clever Cloud serves the folder with [Static Web Server](https://static-web-server.net) (SWS) `{{< runtime_version sws >}}`, on port `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). It runs `static-web-server --host 0.0.0.0 --port 8080`, with the served folder in `--root`.
 
-## Custom run command
+`CC_STATIC_FLAGS` adds options to this command, and `CC_STATIC_PORT` sets another port. With `CC_RUN_COMMAND`, Clever Cloud runs your own command instead, from the root of the repository. It must listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port).
 
-To override the default web server behavior, set the `CC_RUN_COMMAND` environment variable. When defined, it takes priority over the static server command. This is useful to run a custom server or a script before serving files.
+### Configure Static Web Server
 
-## Custom configuration and port
+Static Web Server reads its settings from [its command options](https://static-web-server.net/v2/configuration/command-line-arguments/), from [environment variables](https://static-web-server.net/v2/configuration/environment-variables/), or from a [TOML configuration file](https://static-web-server.net/v2/configuration/config-file/). For instance, this file adds a header to the HTML pages, and sets the page of the 404 errors, from the served folder:
 
-Caddy and SWS can be configured with a configuration file or through environment variables. You can also pass your own command line flags with `CC_STATIC_FLAGS`. To define a custom listen port, use `CC_STATIC_PORT` (default is `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/)). A custom Caddyfile sets its own address: listen on `:{$PORT}`, and [set `PORT=9000`](/doc/manage/#listen-on-the-right-port) with Request Flow.
+```toml {filename="sws.toml"}
+[general]
+page404 = "404.html"
 
-- Caddy configuration:
-  - [Command Line Arguments](https://caddyserver.com/docs/command-line)
-  - [Environment Variables](https://caddyserver.com/docs/caddyfile/concepts#environment-variables)
-  - [Caddyfile](https://caddyserver.com/docs/caddyfile)
-- Static Web Server (SWS) configuration:
-  - [Command Line Arguments](https://static-web-server.net/v2/configuration/command-line-arguments/)
-  - [Environment Variables](https://static-web-server.net/v2/configuration/environment-variables/)
-  - [TOML Configuration File](https://static-web-server.net/v2/configuration/config-file/)
+[advanced]
 
-## Static Site Generators (SSG) Auto-build
+[[advanced.headers]]
+source = "**/*.html"
+[advanced.headers.headers]
+Cache-Control = "public, max-age=3600"
+```
 
-If you don't set a `CC_BUILD_COMMAND`, Clever Cloud tries to detect and configure the Static Site Generator (SSG) through the presence of specific files in the project root. If detected, the static website is built in the `cc_static_autobuilt` folder (or `CC_STATIC_AUTOBUILD_OUTDIR`), used as `CC_WEBROOT` and build cache content. If you defined a `CC_WEBROOT`, it will be used instead of `cc_static_autobuilt`.
+To load it, set its path in `SERVER_CONFIG_FILE`:
 
-Supported Static Site Generators (SSG) are:
+```bash
+clever env set SERVER_CONFIG_FILE sws.toml
+```
 
-### Astro
+### Use Caddy
 
-- Build command: `npm i && npm run astro build -- --outDir <out-dir>`
-- Detected file: `astro.config.mjs`, `astro.config.ts`, `astro.config.js`, `astro.config.cjs`
+If your project has a valid [Caddyfile](https://caddyserver.com/docs/caddyfile), the configuration file of Caddy, at its root, Clever Cloud serves your website with [Caddy](https://caddyserver.com) `{{< runtime_version caddy >}}` and `caddy run`. Set another path in `CC_STATIC_CADDYFILE`. Your Caddyfile sets the port and the served folder itself:
 
-### Docusaurus
+```text {filename="Caddyfile"}
+:{$PORT} {
+    root * public
+    file_server
+}
+```
 
-- Build command: `npm i && npm run docusaurus build -- --out-dir <out-dir>`
-- Detected file: `docusaurus.config.js`, `docusaurus.config.ts`
+With Request Flow, set `PORT=9000`, as [Clever Cloud doesn't change it](/doc/manage/#with-request-flow). `CC_STATIC_PORT` doesn't change the address of a Caddyfile.
 
-### Hugo
+Clever Cloud checks the file with `caddy validate`. If it's invalid, the deployment log shows `Provided Caddyfile is invalid`, and Clever Cloud serves your website with Static Web Server instead.
 
-- Build command: `hugo --gc --minify --destination <out-dir>`
-- Detected file: `hugo.toml`, `hugo.yaml`, `hugo.json`
+Set `CC_STATIC_SERVER` to choose the server whatever the files of your project:
 
-> [!TIP] Set the Hugo version
->Use a specific Hugo version by setting the `CC_HUGO_VERSION` environment variable to `0.160`, `0.161`, `0.162`, `0.163` (default), `0.164`, `0.165`, `0.166` or `0.167`.
+- `caddy` serves the folder with `caddy file-server`, without a Caddyfile
+- `static-web-server` uses Static Web Server, even if a Caddyfile exists
 
-### mdBook
+### Protect your website with a password
 
-- Build command: `mdbook build --dest-dir <out-dir>`
-- Detected file: `book.toml`
+Static Web Server and Caddy can ask visitors for a login and a password, with HTTP basic authentication. Both read a password hashed with bcrypt, which [`htpasswd`](https://httpd.apache.org/docs/current/programs/htpasswd.html) generates: it comes with macOS, and with the `apache2-utils` package on Debian or Ubuntu.
 
-### MkDocs
+With Static Web Server, set the user and the hash of its password in `SERVER_BASIC_AUTH`, here for an `admin` user:
 
-- Build command: `uvx mkdocs build --site-dir <out-dir>`
-- Detected file: `mkdocs.yml`
+```bash
+clever env set SERVER_BASIC_AUTH "$(htpasswd -nbBC 10 admin 'your-password')"
+```
 
-### Nuxt.js
+With Caddy, add a `basic_auth` block to your Caddyfile, which reads the user and the hash from environment variables:
 
-- Build command: `npm i && npm run generate && mv .output/public <out-dir>`
-- Detected file: `nuxt.config.ts`
+```text {filename="Caddyfile"}
+:{$PORT} {
+    root * public
+    basic_auth {
+        {$BASIC_AUTH_USER} {$BASIC_AUTH_HASH}
+    }
+    file_server
+}
+```
 
-### Storybook
+```bash
+clever env set BASIC_AUTH_USER admin
+clever env set BASIC_AUTH_HASH "$(htpasswd -nbBC 10 admin 'your-password' | cut -d: -f2)"
+```
 
-- Build command: `npm i && npm run build-storybook -- --output-dir <out-dir>`
-- Detected file: `.storybook/main.js`, `.storybook/main.ts`
+To sign visitors in with an identity provider, through OAuth2 or OpenID Connect, put [OAuth2 Proxy](/doc/manage/request-flow/oauth2-proxy/) in front of your website with [Request Flow](/doc/manage/request-flow/). An [Otoroshi](/doc/deploy/services/otoroshi/) gateway also manages access rules, quotas, and tokens, and the [Otoroshi challenge](/doc/manage/request-flow/otoroshi-challenge/) makes sure that requests come through it.
 
-### VitePress
+### Caches
 
-- Build command: `npm i && npm run docs:build -- --outDir <out-dir>`
-- Detected file: `.vitepress/config.js`, `.vitepress/config.ts`, `.vitepress/config.mjs`, `.vitepress/config.mts`
+After a successful build of an application, Clever Cloud keeps a build cache of the commit. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
-### Zola
+```bash
+clever restart --without-cache
+```
 
-- Build command: `zola build --minify --output-dir <out-dir>`
-- Detected file: `config.toml`
+If Clever Cloud serves a folder of your repository, from `CC_WEBROOT` or `cc_static_autobuilt`, the cache keeps only this folder and these files:
 
-## 🎓 Static Site Generators (SSG) guides
+- The `clevercloud/` folder, a `Caddyfile` and an `sws.toml` file, at the root of the repository
+- The files set in `CC_STATIC_CADDYFILE`, `CC_VARNISH_FILE`, and `SERVER_CONFIG_FILE`
+
+On a restart from the cache, the other files are missing, such as a script your `CC_RUN_COMMAND` or a hook runs. To keep them, list in `CC_OVERRIDE_BUILDCACHE` every path the cache needs, from the root of the repository and separated by `:`. It replaces the default content:
+
+```bash
+clever env set CC_OVERRIDE_BUILDCACHE "public:scripts"
+```
+
+## Static site generators (SSG) auto-build
+
+If you don't set `CC_BUILD_COMMAND`, Clever Cloud looks for the configuration file of a static site generator, at the root of your project, in the order of this table. It runs the build command of the first one it finds:
+
+| Generator  | Configuration file                               | Build command                                                   |
+| ---------- | ------------------------------------------------ | --------------------------------------------------------------- |
+| Astro      | `astro.config.mjs`, `.ts`, `.js`, or `.cjs`      | `npm i && npm run astro build -- --outDir <out-dir>`            |
+| Docusaurus | `docusaurus.config.js` or `.ts`                  | `npm i && npm run docusaurus build -- --out-dir <out-dir>`      |
+| Hugo       | `hugo.toml`, `hugo.yaml`, or `hugo.json`         | `hugo --gc --minify --destination <out-dir>`                    |
+| mdBook     | `book.toml`                                      | `mdbook build --dest-dir <out-dir>`                             |
+| MkDocs     | `mkdocs.yml`                                     | `uvx mkdocs build --site-dir <out-dir>`                         |
+| Nuxt       | `nuxt.config.ts`                                 | `npm i && npm run generate && mv .output/public <out-dir>`      |
+| Storybook  | `.storybook/main.js` or `.ts`                    | `npm i && npm run build-storybook -- --output-dir <out-dir>`    |
+| VitePress  | `.vitepress/config.js`, `.ts`, `.mjs`, or `.mts` | `npm i && npm run docs:build -- --outDir <out-dir>`             |
+| Zola       | `zola.toml`                                      | `zola build --minify --output-dir <out-dir>`                    |
+
+By default, the generator writes the website in the `cc_static_autobuilt` folder, which Clever Cloud then serves. If you set `CC_WEBROOT`, it writes the website there instead, and Clever Cloud serves this folder.
+
+`CC_STATIC_AUTOBUILD_OUTDIR` sets another output folder, without changing the served folder. Set `CC_WEBROOT` to the same folder, or to a parent folder to serve the website under a path. For instance, to serve it under `/blog`:
+
+```bash
+clever env set CC_STATIC_AUTOBUILD_OUTDIR public/blog
+clever env set CC_WEBROOT /public
+```
+
+Set this path in the configuration of the generator too, such as `baseURL = "/blog/"` for Hugo, so that the links of the website include it.
+
+With `APP_FOLDER`, the generator runs from this folder, but `CC_WEBROOT` starts from the root of the repository. For a website in `site`:
+
+```bash
+clever env set APP_FOLDER site
+clever env set CC_STATIC_AUTOBUILD_OUTDIR public
+clever env set CC_WEBROOT /site/public
+```
+
+### Hugo version {#hugo}
+
+Clever Cloud provides [Hugo Extended](https://gohugo.io/installation/linux/#editions), the edition that compiles Sass with its embedded LibSass. Set `CC_HUGO_VERSION` to {{% runtime_versions_list hugo %}} to select its version. Clever Cloud only provides a few recent versions of Hugo. To use an older one, declare it in a [`mise.toml` file](/doc/manage/mise/), with the same edition:
+
+```toml {filename="mise.toml"}
+[tools]
+hugo-extended = "0.150.1"
+```
+
+## Static Site Generators (SSG) guides {#-static-site-generators-ssg-guides}
 
 {{% content-raw "static-guides" %}}
 
@@ -149,5 +248,5 @@ Supported Static Site Generators (SSG) are:
 
 {{< cards >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Put Varnish or Redirection.io in front of your website" icon="traffic-light" >}}
 {{< /cards >}}

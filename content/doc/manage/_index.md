@@ -243,6 +243,7 @@ This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
   {{< card link="/developers/doc/manage/scaling" title="Scaling" subtitle="Set the size and number of instances, or let them follow the load" icon="server-stack" >}}
   {{< card link="/developers/doc/manage/service-dependencies" title="Service dependencies" subtitle="Link applications and add-ons to receive their credentials" icon="plug" >}}
   {{< card link="/developers/doc/manage/ssh-access" title="SSH access" subtitle="Connect to a running instance to debug it" icon="command-line" >}}
+  {{< card link="/developers/doc/manage/tailscale" title="Tailscale" subtitle="Connect the instances of your application to your tailnet" icon="lock-closed" >}}
   {{< card link="/developers/doc/manage/tcp-redirections" title="TCP redirections" subtitle="Expose a public TCP port of your application for non-HTTP protocols" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/manage/workers" title="Workers" subtitle="Keep background processes running next to your application" icon="cog-6-tooth" >}}
   {{< card link="/developers/doc/manage/zone-migration" title="Zone migration" subtitle="Move your applications and add-ons to another region" icon="map-pin" >}}

@@ -143,24 +143,16 @@ Use these to define [commands to run](/doc/manage/build-hooks) between various s
 
 - [Learn more about Redirection.io](https://redirection.io/)
 
-### Tailscale support
+## Headscale/Tailscale support {#tailscale-support}
 
-[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances.
+[Tailscale](/doc/manage/tailscale/) connects the instances of your application to your tailnet, or to a compatible control server such as Headscale.
 
-Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys "Generate tailscale key").
-
-| Name                                                                                                  | Description                            | Default value |
-| ----------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------- |
-| [`TAILSCALE_ACCEPT_DNS`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-dns-settings) | Tailscale use its default DNS settings | `true`        |
-| [`TAILSCALE_ACCEPT_ROUTES`](https://tailscale.com/kb/1072/client-preferences#use-tailscale-subnets)   | Tailscale uses its subnets settings    | `false`       |
-| [`TAILSCALE_AUTH_KEY`](https://tailscale.com/ "tailscale.com")                                        | Contains your Tailscale Auth key       |               |
-| `TAILSCALE_LOGIN_SERVER`                                                                              | Contains the login server              |               |
-
-#### How it works?
-
-For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER](/doc/manage/environment-variables "Environment variables") : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER](/doc/manage/environment-variables "Environment variables")), you can match the instance from your deployment to reach it over VPN.
-
-If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
+| Name                      | Description                                                                         | Default value |
+| ------------------------- | ----------------------------------------------------------------------------------- | ------------- |
+| `TAILSCALE_ACCEPT_DNS`    | Set to `false` to keep the DNS settings of the instance, without MagicDNS           | `true`        |
+| `TAILSCALE_ACCEPT_ROUTES` | Set to `true` to use the subnet routes other machines of the tailnet advertise      | `false`       |
+| `TAILSCALE_AUTH_KEY`      | Reusable auth key that connects the instances to your tailnet                       |               |
+| `TAILSCALE_LOGIN_SERVER`  | URL of another control server, such as Headscale                                    |               |
 
 ## Docker
 

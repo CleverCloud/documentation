@@ -235,7 +235,7 @@ Here is a non-exhaustive summary:
 ## Specific languages
 
 {{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/dotnet/#environment-injection" title=".NET" icon="dotnet" >}}
+  {{< card link="/developers/doc/deploy/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
   {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="simple:go" >}}

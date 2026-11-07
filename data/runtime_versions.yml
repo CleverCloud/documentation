@@ -11,10 +11,10 @@ caddy:
 dotnet:
   eol_source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
   default:
-    - 8.0
+    - "8.0"
   accepted:
     - 6.0 (EOL)
-    - 9.0
+    - "9.0"
     - 10.0 (LTS)
 
 elixir:
@@ -106,7 +106,7 @@ python:
     - 2
     - 3
     - 3.9 (EOL)
-    - 3.10
+    - "3.10"
     - 3.11
     - 3.12
     - 3.13

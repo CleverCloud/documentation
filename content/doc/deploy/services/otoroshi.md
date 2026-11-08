@@ -1,13 +1,14 @@
 ---
 type: docs
-linkTitle: Otoroshi with LLM
-title: Otoroshi with LLM
-description: Deploy Otoroshi API gateway on Clever Cloud for advanced API management, security, traffic control, and LLM models management
+linkTitle: Otoroshi Gateway
+title: Otoroshi Gateway
+description: Deploy the Otoroshi API gateway on Clever Cloud, with extensions to secure, route, and observe the traffic of your APIs and language models
 keywords:
 - otoroshi
 - api gateway
-- llm management
 - reverse proxy
+- api keys
+- llm gateway
 - web application firewall
 - api security
 - traffic management
@@ -21,119 +22,130 @@ aliases:
 - /doc/services/otoroshi
 ---
 
-Otoroshi is a lightweight API management solution built on a modern HTTP reverse proxy. It serves as a flexible and powerful API gateway for your microservices architecture and operates as a technology-agnostic platform, embracing HTTP as its universal language and providing real-time configuration capabilities. The platform follows an API-first approach, ensuring all features are accessible programmatically.
+[Otoroshi](https://www.otoroshi.io/) is an open source API gateway, built by MAIF on a modern HTTP reverse proxy. It routes requests to your services, authenticates their callers with API keys, JWT tokens, OpenID Connect, or Biscuit tokens, enforces quotas, and transforms requests and responses. Its configuration changes at runtime, from its web interface or its API, without a restart.
 
-The solution excels at dynamic service management, offering essential API gateway functionalities including request routing, security enforcement, traffic management, and comprehensive monitoring. Its event-driven architecture and flexible deployment model make it particularly effective in cloud-native and PaaS environments.
+Otoroshi Gateway is Otoroshi managed by Clever Cloud. Its distribution, built with [Cloud APIM](https://www.cloud-apim.com/), adds [extensions](#bundled-extensions) to the open source gateway, such as an LLM gateway, a threat protection suite, and Biscuit tokens.
 
-On Clever Cloud, it comes with pre-configured with features included such as [Coraza Web Appplication Firewall](#coraza-waf-web-application-firewall) or the [LLM extension](#llm-extension).
-
-> [!NOTE] Feedback
-> Share your feedback on the Otoroshi operator on [the community page](https://github.com/CleverCloud/Community/discussions/categories/otoroshi).
-
-## Create an Otoroshi with LLM add-on
+## Create an Otoroshi Gateway add-on
 
 ### From the Console
 
 1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking **Create** in the sidebar, then **Add-on**
-2. Select the Otoroshi with LLM add-on
-3. You can skip linking the add-on to an application, it won't be needed
-4. Enter a name for your Otoroshi with LLM add-on and select the zone where you want it to be deployed
+2. Select the Otoroshi add-on
+3. Skip the link to an application, Otoroshi doesn't need it
+4. Enter a name for the add-on, and select its region
 
-### Using the CLI
+### With Clever Tools
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, run `clever addon create otoroshi <name> --org <org>` (`--org` is optional). You'll get URLs to manage your Otoroshi with LLM instance and the temporary credentials:
+Install [Clever Tools](/doc/tools/cli/install/), then create the add-on. Add `--org` to create it in an organisation, and `--region` to choose its region, `par` by default:
 
 ```bash
-$ clever addon create otoroshi myOtoroshi
+clever addon create otoroshi myOtoroshi
+```
+
+The command shows the URL of the web interface, and the credentials of its first administrator:
+
+```text
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Real ID: otoroshi_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myOtoroshi
 
 Your Otoroshi with LLM is starting:
- - Access it: https://xxxxxxxxxxxx-api-otoroshi.services.clever-cloud.com
- - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ - Access it: https://xxxxxxxxxxxx-ui-otoroshi.services.clever-cloud.com
+ - Manage it: https://console.clever-cloud.com/goto/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 An initial account has been created, change the password at first login (Security -> Administrators -> Edit user):
  - Admin user name: cc-account-admin
- - Temporary password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ - Password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/deploy/services/otoroshi/
+Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/developers/doc/addons/otoroshi/
 ```
 
-By default we use Clever Cloud's domain names for both the web interface and the routes you'll manage through Otoroshi, but you can set custom domains at creation through the `access-domain` and `routes-domain` options that you can use independently:
+### Creation options
+
+Set options at creation with `--option name=value`, once per option. An unknown option fails the creation, and lists the available ones:
+
+| Option          | Value                               | Effect                                                                                                                            |
+| --------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `access-domain` | A domain, such as `example.com`     | Serves the web interface and the API under this domain instead of `services.clever-cloud.com`                                     |
+| `routes-domain` | A domain, such as `api.example.com` | Serves the routes on this domain instead of the `cleverapps.io` domain of the Java application                                    |
+| `networkgroup`  | `true`                              | Adds Otoroshi to a [Network Group](#use-otoroshi-in-a-network-group) at creation                                                  |
+| `cellar`        | `true`                              | Creates a [Cellar](/doc/deploy/storage/cellar/) add-on, linked to the Java application                                            |
+| `exporter`      | `pulsar` or `elastic`               | Creates a [Pulsar](/doc/deploy/pulsar/) or [Elastic Stack](/doc/deploy/databases/elastic/) add-on, linked to the Java application |
+
+For instance, to serve Otoroshi and its routes on your own domains:
 
 ```bash
-clever addon create otoroshi myOtoroshiName --option access-domain=otoroshi.example.com
-clever addon create otoroshi myOtoroshiName2 --option routes-domain=routes.example.com
-clever addon create otoroshi myOtoroshiName3 --option access-domain=otoroshi.example.com --option routes-domain=routes.example.com
+clever addon create otoroshi myOtoroshi --option access-domain=example.com --option routes-domain=api.example.com
 ```
 
-These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Otoroshi add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
+With `access-domain`, Otoroshi gets four domains under this one: `<id>-ui-otoroshi.example.com` for the web interface, `<id>-api-otoroshi.example.com` for the API, and `<id>-sso-otoroshi.example.com` and `<id>-otoroshi.example.com` for its internal use.
 
-Refer to the [Clever Tools documentation](/doc/tools/cli/addons/) for more details on add-on management.
+The `<id>` is only known at creation, so point a wildcard record such as `*.example.com` to Clever Cloud. With `routes-domain`, point this exact domain the same way. In the `par` region, use a CNAME record to `domain.par.clever-cloud.com.`, as [Domain names](/doc/manage/domain-names/) details per region.
 
-> [!TIP] Routes management
-> When you create routes in Otoroshi, they will use the routes domain you set at creation, or `app-id.cleverapps.io`. But you can add as many custom domains as you need on the underlying Java application and use them in Otoroshi routes.
+The `cellar` and `exporter` options create and link an add-on: the Java application gets its credentials in environment variables, such as `CELLAR_ADDON_HOST` or `ADDON_PULSAR_BINARY_URL`. They configure nothing in Otoroshi: use them in your routes, plugins, or [data exporters](https://maif.github.io/otoroshi/manual/docs/entities/data-exporters).
+
+## Underlying resources
+
+An Otoroshi Gateway add-on runs on resources of your organisation, which you see and manage [in the Console](https://console.clever-cloud.com/):
+
+- A [Java](/doc/deploy/applications/java/java-jar/) application that runs Otoroshi, of size `S` with a single instance at creation
+- A [Redis](/doc/deploy/databases/redis/) add-on of size `S`, which stores the configuration and the state of Otoroshi
+- The add-ons of the `cellar` and `exporter` options, if you set them: Cellar `S`, Pulsar, or Elastic Stack `XS`
+
+You can change these sizes afterwards, as for any application or add-on.
+
+When you create routes in Otoroshi, they use the routes domain, set at creation or the `cleverapps.io` domain of the Java application. You can add other domains to the Java application, then use them in your routes.
+
+## Access the web interface
+
+Open the web interface from the dashboard of the add-on in the Console, or with Clever Tools. The first time you log in, with the `cc-account-admin` user and the password shown at creation, change this password in **Security** > **Administrators**:
+
+```bash
+clever features enable operators
+clever otoroshi open webui myOtoroshi
+clever otoroshi open logs myOtoroshi
+```
+
+`clever otoroshi get myOtoroshi` shows the URLs of the web interface and of the API, and the ID of its Network Group. Learn more about the [operators commands of Clever Tools](/doc/tools/cli/operators/), and about [how to use Otoroshi](https://maif.github.io/otoroshi/manual/docs/index.html).
 
 ## Version management
 
-To change the version of an Otoroshi add-on on Clever Cloud, you can use the `CC_OTOROSHI_VERSION` environment variable of its Java Application and rebuild it. But there are various ways to do it simpler with [Clever Tools](/doc/tools/cli/):
+Check and update the version from the dashboard of the add-on in the Console, or with the operators commands of Clever Tools. With Clever Tools, set a supported version at creation with `--addon-version`:
 
 ```bash
-# Set a specific supported version at creation
-# You can add options to set base or routes domains if needed
 clever addon create otoroshi myOtoroshi --addon-version VERSION
 
-# Enable Operators commands
-clever features enable operators
-
-# Check the current version
-clever otoroshi version check otoroshi_name_or_id
-clever otoroshi version check otoroshi_name_or_id --format json
+clever otoroshi version check myOtoroshi
+clever otoroshi version check myOtoroshi --format json
 
 # Update to a supported version, picked interactively or set with --target
 clever otoroshi version update myOtoroshi
 clever otoroshi version update myOtoroshi --target VERSION
 ```
 
-- Learn more about [Operators commands in Clever Tools](/doc/tools/cli/operators/)
+The version is the `CC_OTOROSHI_VERSION` environment variable of the Java application, which you can also set before rebuilding the application.
 
-## Accessing the Otoroshi with LLM interface
+## Configuration
 
-Once you created your add-on, open the management URL in the Otoroshi with LLM dashboard from the Console. You can also use Clever Tools to open Java underlying application logs or the Otoroshi web UI directly:
+Set these environment variables on the Java application of Otoroshi, in the Console or with `clever env set --app`, then rebuild Otoroshi:
+
+| Name                                  | Description                                                                                            |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `CC_OTOROSHI_VERSION`                 | Version of Otoroshi to deploy                                                                          |
+| `CC_OTOROSHI_PLUGINS_URLS`            | URLs of JAR files of plugins to load, separated by spaces                                              |
+| `CLOUD_APIM_EXTENSIONS_WAF_FAIL_OPEN` | Set to `true` to let requests through when the WAF of the Threat Protection Suite can't run on a route |
 
 ```bash
-# Enable Operators commands
-clever features enable operators
-
-clever otoroshi open logs myOtoroshi
-clever otoroshi open webui myOtoroshi
+clever otoroshi rebuild myOtoroshi
 ```
 
-The first time you connect, change the initial password (Security -> Administrators -> Edit user).
-
-- [Learn how to use Otoroshi](https://maif.github.io/otoroshi/manual/docs/index.html)
-
-## Underlying resources
-
-When you create the Otoroshi add-on, Clever Cloud automatically deploys:
-
-- A [Java](/doc/deploy/applications/java/java-jar/) instance with Otoroshi with LLM pre-loaded
-- A [Redis](/doc/deploy/databases/postgresql/) database (for internal Otoroshi use)
-
-## Plan sizing
-
-By default, Otoroshi with LLM on Clever Cloud uses small-size resources, i.e:
-
-- S Java
-- S Redis®
-
-They are dimensioned to suit a majority of needs. You can however manage and adjust them directly [in the Console](https://console.clever-cloud.com/).
+Before each build, Otoroshi downloads the JAR files of `CC_OTOROSHI_PLUGINS_URLS` and loads them at startup. The build fails if one of them can't be downloaded. Use plugins compatible with the Otoroshi and Scala versions of the instance.
 
 ## Use Otoroshi in a Network Group
 
-With a [Network Group](/doc/network/network-groups/), Otoroshi reaches your applications through a private network, on ports they don't expose publicly. Your applications can then stay private, while Otoroshi exposes them with its protections, such as API keys, quotas, or its [web application firewall](#coraza-waf-web-application-firewall). Enable it from the Otoroshi dashboard in the Console, or with Clever Tools:
+With a [Network Group](/doc/network/network-groups/), Otoroshi reaches your applications through a private network, on ports they don't expose publicly. Your applications can then stay private, while Otoroshi exposes them with its protections, such as API keys, quotas, or its [web application firewall](#web-application-firewall). Enable it from the Otoroshi dashboard in the Console, or with Clever Tools:
 
 ```bash
 clever features enable operators
@@ -153,49 +165,46 @@ In an Otoroshi route, set the backend to the domain name of a member of the grou
 
 To keep an application private and expose it only through Otoroshi, follow the [Protect a private API with Otoroshi](/guides/security/otoroshi-private-api/) guide.
 
-## LLM extension
+## Bundled extensions
 
-Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever.cloud/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Eleven Labs, Gemini, Groq, Hive, Hugging Face, Leonardo AI, Luma, OVH and Scaleway AI Endpoints. It supports audio, image, moderation and text generation models.
+Otoroshi Gateway comes with extensions of Cloud APIM, which add plugins and pages to the web interface:
 
-### Smarter AI operations
+- [LLM extension](#llm-extension), an OpenAI-compatible gateway in front of language model providers
+- [Threat Protection Suite](#web-application-firewall), the web application firewall of Otoroshi Gateway, with its threat detectors
+- [Biscuit Studio](https://cloud-apim.github.io/otoroshi-biscuit-studio/docs/overview), to issue, attenuate, and verify Biscuit tokens
+- [API portal](https://cloud-apim.github.io/otoroshi-api-portal/), a developer portal with the documentation and the API keys of your APIs
+- [Event brokers](https://cloud-apim.github.io/otoroshi-event-brokers-extension/), to publish and consume events of a broker through your routes
+- [Mailer](https://github.com/cloud-apim/otoroshi-plugin-mailer), which turns an SMTP provider into a REST API to send emails
 
-The extension enhances your LLM operations with intelligent workload distribution and automatic failover mechanisms, ensuring consistent service availability. It implements sophisticated features such as semantic caching to optimize response times and reduce costs, while providing comprehensive quota management capabilities for effective resource allocation.
+### LLM extension
 
-{{< youtube id="M8sA9xuE3gs">}}
+The LLM extension exposes language models of many providers, such as Mistral AI, OpenAI, Anthropic, or Ollama instances, behind one OpenAI-compatible API. It adds failover and load balancing between providers, semantic caching, guardrails, budgets, and cost tracking, and it serves MCP servers. Its AI Studio, experimental, gives each team a workspace with its endpoint, providers, and keys.
 
-### Security and Management
+- [LLM extension documentation](https://cloud-apim.github.io/otoroshi-llm-extension/docs/overview)
 
-Security is paramount with built-in features for API key management through Otoroshi's secure vault system. The extension leverages Otoroshi's advanced authorization framework to implement fine-grained access controls based on user identity, API keys, consumer metadata, and request parameters. Additionally, prompt fencing technology helps prevent sensitive information leakage and ensures response quality.
+## Web application firewall
 
-### Observability and Enhancement
+The firewall of Otoroshi Gateway is the Threat Protection Suite of Cloud APIM, a SecLang engine running the OWASP Core Rule Set (CRS).
 
-Every LLM interaction is thoroughly audited, capturing detailed information about consumers, providers, and usage patterns. The extension also includes robust prompt engineering capabilities, allowing you to create and maintain a library of contextually enhanced prompts and templates for improved efficiency and consistency in LLM interactions.
+Around it, detectors handle IP reputation, bots with a proof-of-work challenge, login and traffic abuse, API contracts from an OpenAPI document, and responses that leak data. They all feed one threat score, and Threat Studio, in the web interface, manages the whole suite.
 
-- [Otoroshi LLM extension documentation](https://cloud-apim.github.io/otoroshi-llm-extension/docs/overview)
-- [Otoroshi LLM extension video tutorials](https://www.youtube.com/watch?v=M8PbydxPw4A&list=PLNHaf5rXAx3FWk7dn2fKGwQXxeLCPhZCh)
+When the WAF of a route has no configuration, or can't compile its rules in blocking mode, it refuses requests with a `503`, unless [`CLOUD_APIM_EXTENSIONS_WAF_FAIL_OPEN`](#configuration) is `true`. In monitoring mode, rules that fail to compile don't block requests.
 
-## Coraza WAF (Web Application Firewall)
-
-Otoroshi on Clever Cloud integrates Coraza, a high-performance Web Application Firewall (WAF), through a WebAssembly-based plugin. This integration provides enterprise-grade security features to protect your applications using the OWASP Core Rule Set (CRS).
-
-### Security features
-
-The Coraza WAF plugin enables robust security policy enforcement while maintaining high performance across deployments of any scale. It seamlessly integrates with Otoroshi's existing infrastructure to provide comprehensive protection against web application threats.
-
-The integration provides advanced security capabilities through OWASP CRS implementation, allowing you to create and enforce custom security policies. The system generates detailed audit logs for security monitoring and compliance purposes, with full integration into Otoroshi's existing logging and monitoring infrastructure.
-
-### Enterprise Capabilities
-
-Designed for production environments, the Coraza WAF plugin offers flexible configuration options, supporting both detection and prevention modes. It enables customized rule sets per domain and provides detailed security event tracking through Otoroshi's event management system. The implementation is optimized for minimal performance impact while maintaining robust security controls.
-
-- [Otoroshi Coraza WAF documentation](https://maif.github.io/otoroshi/manual/docs/tutorials/instantiate-waf-coraza)
+- [Threat Protection Suite documentation](https://cloud-apim.github.io/otoroshi-waf-extension/)
 
 ## Manage Otoroshi from its API
 
-Otoroshi exposes a comprehensive REST API that enables programmatic control over all operations available through the Otoroshi dashboard. The dashboard itself operates as a client of this API. It gives you full control over your Otoroshi instances, enabling you to build custom integrations and extensions tailored to your infrastructure needs. [A Swagger UI detailing available endpoints is available](https://maif.github.io/otoroshi/manual/api-reference).
+Otoroshi exposes a REST API for everything its web interface does, which is itself a client of this API. The dashboard of the add-on in the Console shows its URL, its credentials, and the URL of its Swagger UI.
 
-An OpenAPI descriptor is available from your instance:
+With Clever Tools, `clever otoroshi get myOtoroshi -F json` gives them in `api.url`, `api.user`, and `api.secret`:
 
-```text
-https://xxxxxxxxxxxx-api-otoroshi.services/apis/openapi.json
+```bash
+OTOROSHI=$(clever otoroshi get myOtoroshi -F json)
+API_URL=$(echo "$OTOROSHI" | jq -r .api.url)
+API_AUTH=$(echo "$OTOROSHI" | jq -r '"\(.api.user):\(.api.secret)"')
+curl -u "$API_AUTH" "$API_URL/api/routes"
 ```
+
+The OpenAPI document of the API is at `/apis/openapi.json` on the domain of the web interface, and a Swagger UI at `/api/openapi/ui`, as `api.openapi` and `api.swaggerUrl` give. To manage Otoroshi from the command line, use [otoroshictl](/doc/tools/cli/operators/#otoroshictl), configured by Clever Tools.
+
+To make sure that requests reach an application only through Otoroshi, use the [Otoroshi challenge](/doc/manage/request-flow/otoroshi-challenge/) of Request Flow.

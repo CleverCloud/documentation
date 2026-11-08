@@ -84,10 +84,19 @@ Use GitHub-style callouts, as the Hextra theme supports them, with a concise tit
 
 Choose the type from what readers risk if they skip the callout, not from how important its content feels:
 
-- `[!WARNING]` for a risky action: data loss, downtime, security exposure, or a breaking or irreversible change
 - `[!NOTE]` for a limit of scope or availability, a default value, or a behavior to know
 - `[!TIP]` for a recommendation
+- `[!WARNING]` for a risky action: data loss, downtime, security exposure, or a breaking or irreversible change
+- `[!IMPORTANT]` for a critical prerequisite, without which the task fails
+- `[!CAUTION]` for a severe and irreversible consequence, such as the permanent deletion of data
 
-A feature Docker applications don't support is a limit, so it goes in a `[!NOTE]`. When you rewrite a page, check the type of each callout it already has instead of carrying it over.
+Keep `[!IMPORTANT]` and `[!CAUTION]` exceptional: most prerequisites belong in the text, and most risky actions in a `[!WARNING]`. A feature Docker applications don't support is a limit, so it goes in a `[!NOTE]`. When you rewrite a page, check the type of each callout it already has instead of carrying it over unchanged.
+
+To fold a callout, add `-` after its type, or `+` to show it unfolded with a control to fold it. Fold the content only some readers need, such as a long list or a detailed explanation. The Markdown output of the page always shows it:
+
+```markdown
+> [!NOTE]- Supported versions
+> This content appears when readers unfold the callout
+```
 
 Don't overuse callouts: limit them to one or two per page. Use the [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/) only when a GitHub-style callout can't provide the required rendering or behavior.

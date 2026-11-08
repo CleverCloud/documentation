@@ -46,9 +46,8 @@ Click on your Cellar add-on in your deployed services list to see its menu.
 
 From **Add-on Dashboard**, insert the name of your bucket.
 
-{{< callout type="info">}}
-  Buckets' names are global for every region. **You can't give the same name to two different buckets in the same region**, because the URL already exists in the Cellar cluster on this region. bucket names can't use underscores `(_)`.
-{{< /callout >}}
+> [!NOTE] Bucket names
+> Bucket names are global to a region: **two buckets of the same region can't have the same name**. Their URL already exists in the Cellar cluster of this region. Bucket names can't contain underscores (`_`).
 
 #### Create bucket
 
@@ -80,9 +79,8 @@ The bucket is now be available at `https://<bucket-name>.cellar-c2.services.clev
 
 {{% /steps %}}
 
-{{< callout type="warning">}}
-  `ws-*` and `cf*` commands aren't available with a Cellar add-on.
-{{< /callout >}}
+> [!NOTE] Unavailable commands
+> The `ws-*` and `cf*` commands aren't available with a Cellar add-on.
 
 ### With AWS CLI
 
@@ -479,9 +477,8 @@ Cellar allows you to create policies to control the actions on your buckets. Fin
 
 You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
 
-{{< callout type="warning" >}}
-  This makes all of your bucket's objects publicly readable. Be careful that there aren't objects you don't want publicly exposed.
-{{< /callout >}}
+> [!WARNING] Public objects
+> This makes all the objects of your bucket publicly readable. Make sure that it holds no object you don't want to expose.
 
 To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
 
@@ -658,11 +655,8 @@ Here this configuration has two `CORS` rules:
 - The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. Allowed cross-origin request methods are `PUT`, `POST` and `DELETE`. Using `AllowedHeaders *` allows all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
 - The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
 
-{{< callout type="info" >}}
-
-**Updating the CORS configuration replaces the old one:** if you update your CORS configuration, the new configuration replaces the old one. Be sure to save it before you update it if you ever need to roll back.
-
-{{< /callout >}}
+> [!WARNING] CORS updates replace the configuration
+> The new CORS configuration replaces the old one. Save the old one before you update it, if you may need to roll back.
 
 {{% steps %}}
 
@@ -1240,9 +1234,8 @@ Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign you
 
 {{< /tabs >}}
 
-{{< callout type="info">}}
-  If you use SHA-256 for the checksum, Cellar verifies that the SHA-256 checksum specified in the URL matches the value provided in the request headers. However, unlike MD5, it doesn't validate the file content against the checksum, meaning data integrity isn't verified during upload.
-{{< /callout >}}
+> [!WARNING] SHA-256 checksums
+> With a SHA-256 checksum, Cellar checks that the checksum in the URL matches the one in the request headers. Unlike MD5, it doesn't check the content of the file against the checksum, so it doesn't verify the integrity of the data during the upload.
 
 ## Troubleshooting
 

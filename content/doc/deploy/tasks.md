@@ -42,9 +42,8 @@ To declare an application as a Task, check the corresponding box in the `Informa
 
 To run your task, you **have to** define a `CC_RUN_COMMAND` variable with the command that will be executed.
 
-{{%callout type="warning" %}}
-If `CC_RUN_COMMAND` is not set during creation or later, the task deployment **will not** go through.
-{{% /callout %}}
+> [!IMPORTANT] CC_RUN_COMMAND is mandatory
+> If `CC_RUN_COMMAND` isn't set at creation or later, the task deployment fails.
 
 ### Examples
 

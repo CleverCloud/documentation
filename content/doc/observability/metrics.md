@@ -93,9 +93,8 @@ In metrics' data, mains labels would be :
 - `vm_type` : `volatile` or `persistent`. Is it a stateless application or a stateful add-on
 - `deployment_id` : ID of the deployment
 
-{{< callout type="warning" >}}
-For some specific metrics. Some labels could miss.
-{{< /callout >}}
+> [!NOTE] Missing labels
+> Some labels can be missing from specific metrics.
 
 ##### Classes
 
@@ -176,9 +175,8 @@ More information about [Quantum and Warp 10](/doc/observability/warp10) in our d
 For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
 minute.
 
-{{< callout type="warning" >}}
-Computation can be time intensive.
-{{< /callout >}}
+> [!NOTE] Slow queries
+> The computation can take time.
 
 ```txt
 // Fix the NOW timestamp to have the same on over the script

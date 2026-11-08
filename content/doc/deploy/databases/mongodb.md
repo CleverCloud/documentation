@@ -34,9 +34,8 @@ In order to comply with [MongoDB Server Side Public License](https://www.mongodb
 
 If you purchased a higher version from MongoDB and you want to deploy your database on Clever Cloud, [contact us](https://www.clever.cloud/contact/).
 
-{{< callout type="warning" >}}
-DEV plan is no longer available for MongoDB.
-{{< /callout >}}
+> [!NOTE] No DEV plan
+> The DEV plan isn't available for MongoDB.
 
 ### Important note about fair use on DEV plans
 

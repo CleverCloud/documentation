@@ -48,10 +48,8 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 ## Accessing Heptapod Cloud
 
-{{< callout type="info" >}}
-  **Requirements**
-  Using Heptapod Cloud require a Clever Cloud account and an [organisation](/doc/account-billing/organisations).
-{{< /callout >}}
+> [!NOTE] Requirements
+> Heptapod Cloud requires a Clever Cloud account and an [organisation](/doc/account-billing/organisations).
 
 {{% steps %}}
 
@@ -145,9 +143,8 @@ tests:
 
 Except for provisioning, everything happens as if the job was launched by a standard Docker executor, with only a handful of differences (see the dedicated subsection).
 
-{{< callout type="warning" >}}
-  For Git projects, there is no difference between Heptapod Runner and GitLab Runner
-{{< /callout >}}
+> [!NOTE] Git projects
+> For Git projects, Heptapod Runner and GitLab Runner work the same way.
 
 To simplify, you can create a Docker image containing the required dependencies. You might store it on registry.heptapod.host and then use it as the starting point for your job.
 

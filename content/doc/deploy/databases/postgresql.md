@@ -66,11 +66,10 @@ A proxy serves all dedicated PostgreSQL databases. In some cases, this can add s
 
 Generating direct access adds new variables to the add-on's environment, allowing connections without going through the proxy.
 
-{{< callout type="info" >}}
-Direct access doesn't persist after migrating a database. Manually re-generate direct host name and port after a migration to allow applications linked through direct access to connect to the database.
-
-Such a limitation doesn't exist when using proxy access.
-{{< /callout >}}
+> [!WARNING] Direct access after a migration
+> Direct access doesn't persist after a database migration. Generate the direct hostname and port again after a migration, so that the applications linked through direct access can connect to the database.
+>
+> Proxy access doesn't have this limitation.
 
 ## Encryption at rest
 
@@ -159,9 +158,8 @@ In the [Console's Ticket Center](https://console.clever-cloud.com/ticket-center-
 | rum         | Provides an access method to work with a RUM index                                                 |
 | timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)               |
 
-{{< callout type="warning" >}}
-On-demand extensions aren't available for DEV plans.
-{{< /callout >}}
+> [!NOTE] DEV plans
+> On-demand extensions aren't available for DEV plans.
 
 ## Automatic vacuuming
 

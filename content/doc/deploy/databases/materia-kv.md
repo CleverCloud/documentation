@@ -28,10 +28,8 @@ Materia KV is the first publicly available product of this family. It's a key-va
 
 You don't have to configure leaders, followers: high availability is included, by design.
 
-{{< callout type="info" >}}
-
-**Materia KV is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform. To share your feedback, please visit us at [our community page](https://github.com/CleverCloud/Community/discussions/categories/materia). Thank you for being a part of our journey towards innovation and improvement!
-{{< /callout >}}
+> [!NOTE] Materia KV is in beta
+> Don't store sensitive or production data in Materia KV, as Clever Tools reminds you when you create the add-on. Your insights and suggestions shape the future of this platform: share your feedback on [the community page](https://github.com/CleverCloud/Community/discussions/categories/materia).
 
 ## Compatibility layers
 
@@ -112,9 +110,8 @@ If you use the Fish shell, you can use the following command to set the environm
 clever addon env ADDON_ID -F shell | source
 ```
 
-{{< callout type="info" >}}
-By default, Materia KV uses TLS on the 6379 port. You can use non-TLS connections on the 6378 port for testing purposes.
-{{< /callout >}}
+> [!NOTE] TLS port
+> By default, Materia KV uses TLS on the 6379 port. For testing purposes, you can use non-TLS connections on the 6378 port.
 
 ### Clever KV
 

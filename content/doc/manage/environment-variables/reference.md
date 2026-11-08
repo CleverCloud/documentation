@@ -91,9 +91,8 @@ You can set some tools' version in any runtime (except Docker):
 | `CC_TASK`                                                             | If set to true, the deployer runs `CC_RUN_COMMAND` and terminates the instance after running the task. Trigger an execution using `git push` or starting your instance | false         |
 | [`CC_TROUBLESHOOT`](/doc/find-help/troubleshooting "Troubleshooting") | Keep the instance available for up to one hour after a deployment failure, unless it fails too early. Some runtimes also add build diagnostics.                        | false         |
 
-{{< callout emoji="🐳" >}}
-  `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/deploy/applications/docker/#mandatory-needs).
-{{< /callout >}}
+> [!NOTE] Docker
+> `CC_RUN_COMMAND` has no effect on Docker. To run Docker, use `CMD` in your [Dockerfile](/doc/deploy/applications/docker/#mandatory-needs).
 
 #### Deployment hooks
 

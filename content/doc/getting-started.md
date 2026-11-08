@@ -128,9 +128,8 @@ If you want to deploy an application within a GitHub organisation, first [grant 
 
 Choose the language or the framework you want to deploy.
 
- {{< callout emoji="💡" >}}
-  **Optional:** for PHP applications, you can choose between FTP and Git deployment.
-  {{< /callout >}}
+> [!NOTE] PHP deployment
+> For PHP applications, you can choose between FTP and Git deployment.
 
 #### Fine-tune your scaling configuration
 
@@ -210,9 +209,9 @@ git push <remote-name> <branch-name>:master
 
   {{< icon "exclamation-circle" >}} An FTP application is automatically started once the application is created, even if no code has been sent.
 
-  {{< callout type="warning" >}}
-  FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use **Git** deployment for **large PHP websites**.
-  {{< /callout >}}
+  > [!TIP] Use Git for large websites
+  > FTP deployment suits small websites. For **large PHP websites**, use **Git** deployment.
+
   {{< /tab >}}
 {{< /tabs >}}
 
@@ -353,13 +352,10 @@ There are two kinds of billing:
 - Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
 - Per-usage billing: Add-ons based on consumption, like [FS Bucket](/doc/deploy/storage/fs-bucket) and [Cellar](/doc/deploy/storage/cellar)
 
-{{< callout type="warning" >}}
-**Free Plan:** add-ons having a free plan are meant for testing purposes, not production usage. These add-ons usually rely on shared resources, resulting in variable, non-guaranteed performances and stability. Shared clusters may not be running the same version as dedicated instances.
-{{< /callout >}}
+Clever Cloud takes per-usage billing from your runtime credits each day, while per-month add-ons create a new line in the monthly invoice.
 
-{{< callout emoji="📊" >}}
-**Your invoice:** per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
-{{< /callout >}}
+> [!NOTE] Free plans
+> Add-ons with a free plan are for testing purposes, not for production. They usually rely on shared resources, with variable performance and stability, and shared clusters may not run the same version as dedicated instances.
 
 ### Manage your Add-on
 
@@ -380,6 +376,5 @@ To delete an add-on:
 1. Go to the **Dashboard** tab of the add-on, or to its **Information** tab if it has one.
 2. Click **Delete the add-on** in the danger zone of the dashboard, or on **Remove add-on** in the information tab.
 
-{{< callout type="warning" >}}
-The system removes all associated data after you delete the add-on.
-{{< /callout >}}
+> [!CAUTION] Deleting an add-on deletes its data
+> Clever Cloud removes all the data of an add-on when you delete it.

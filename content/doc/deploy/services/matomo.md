@@ -21,11 +21,8 @@ aliases:
 
 Matomo is an open source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org). Matomo on Clever Cloud allows your marketing team to setup a tailored web analytics solution, that adapts to your needs and workloads.
 
-{{< callout type="info" >}}
-**Matomo is in Beta testing phase:** your insights and suggestions are crucial in shaping the future of this platform.
-To share your feedback, visit [our community forum](https://github.com/CleverCloud/Community/discussions/categories/matomo).
-Thank you for being a part of our journey towards innovation and improvement!
-{{< /callout >}}
+> [!NOTE] Matomo is in beta
+> Your insights and suggestions shape the future of this platform: share your feedback on [the community forum](https://github.com/CleverCloud/Community/discussions/categories/matomo).
 
 ## How it works?
 
@@ -112,9 +109,8 @@ If you activate the plugin while enabling auto-scalability, your PHP instance wi
 
 Plugins can be browsed from [Matomo own plugin repository](https://plugins.matomo.org/).
 
-{{< callout type="warning" >}}
-Plugin files are removed every time your instance reboots. **This means you have to reinstall them all again after every reboot.** This is temporary, and it is something we plan on improving as soon as we can.
-{{< /callout >}}
+> [!WARNING] Reboots remove plugins
+> Your instance removes its plugin files every time it reboots: **reinstall all your plugins after every reboot.**
 
 ### QueudTracking
 

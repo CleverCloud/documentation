@@ -32,9 +32,8 @@ Clever Cloud automatically generates and renews TLS certificates for your domain
    - Use clever-tools
 2. [Configure your DNS records](/doc/manage/domain-names) to point to Clever Cloud's load balancers
 
-{{< callout type="info" >}}
-  Note: Certificate generation attempts occur **only during the first 3 days** after adding a domain. To restart this window, remove and re-add the domain to your application.
-{{< /callout >}}
+> [!NOTE] Generation window
+> Clever Cloud tries to generate the certificate **only during the first 3 days** after you add a domain. To restart this window, remove the domain from your application, then add it again.
 
 ### Alternative Options
 
@@ -75,9 +74,8 @@ To prevent this from happening you can create a page rule to bypass this policy 
 
  You can enable [Force HTTPS](/doc/manage/#force-https) in the information tab of your Clever Cloud application instead.
 
-{{< callout emoji="💡" >}}
-**If Let’s Encrypt fails to generate the certificate**, you can test that the acme-challenge url works by running the command below:
-{{< /callout >}}
+> [!TIP] Test the challenge URL
+> If Let's Encrypt fails to generate the certificate, test that its challenge URL works with this command:
 
 ```Bash
 $ curl http://<your-domain>/.well-known/acme-challenge/test
@@ -100,10 +98,8 @@ You need to paste a PEM bundle containing (in this order):
 - the certificate itself
 - intermediate certificates (optional)
 
-{{< callout type="warning" >}}
-  Only certificates with RSA 2048 and RSA 4096 keys are supported.
-  **ECDSA certificates are not currently handled**.
-{{< /callout >}}
+> [!NOTE] Key types
+> Only certificates with RSA 2048 and RSA 4096 keys are supported: **ECDSA certificates aren't**.
 
 You should create a `file.pem` containing:
 
@@ -144,11 +140,8 @@ You `.pem` file must be correctly formatted to successfully upload your certific
 
 ## Sending Certificates Manually
 
-{{< callout emoji="👎" >}}
-You should be aware that sending certificates manually is **NOT RECOMMENDED**.
-Prefer another method, such as the certificate generation integrated into *Let's Encrypt*, or using our certificate [upload tool ↗](https://api.clever-cloud.com/v2/certificates/new).
-If you have no other choice, then do not send these files by a means that is not secure. The integrity of your certificate will no longer be guaranteed.
-{{< /callout >}}
+> [!WARNING] Don't send certificates manually
+> Sending certificates manually is **not recommended**. Prefer another method, such as the certificate generation integrated with *Let's Encrypt*, or the certificate [upload tool ↗](https://api.clever-cloud.com/v2/certificates/new). If you have no other choice, send these files through a secure channel only: otherwise, the integrity of your certificate is no longer guaranteed.
 
 In the event that you request the installation of a certificate by the support team, this operation will be charged on a one-off basis for each request. Please contact us for installation rates.
 

@@ -58,9 +58,8 @@ If a primary server isn't available, a replica can be promoted as a standalone s
 
 ## Direct access
 
-{{< callout type="warning">}}
-Using direct access is a trade-off: if you migrate your add-on, you will need to generate the hostname and port again, so your application will need to update that environment, while using a proxy does not change anything.
-{{< /callout>}}
+> [!WARNING] Direct access after a migration
+> Direct access is a trade-off. If you migrate your add-on, generate its hostname and port again, then update the environment of your application. A proxy access doesn't change after a migration.
 
 All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the add-on. You can do it by clicking the "Generate direct hostname and port" on the add-on dashboard.
 
@@ -76,9 +75,8 @@ You can learn more about ProxySQL on the [dedicated documentation page](/guides/
 
 ## Plans
 
-{{< callout type="warning" >}}
-As Shared databases (DEV) are shared between multiple applications and delays could appear in case of an high demand. If this delays create problems in your application or are problematic, we recommend you to use a dedicated database (XS plans and above).
-{{< /callout >}}
+> [!NOTE] Shared databases
+> Shared databases (DEV) serve several applications, so delays can appear during high demand. If these delays affect your application, use a dedicated database, from the XS plans.
 
 ## 🔑 Rights and permissions
 

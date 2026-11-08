@@ -42,9 +42,8 @@ On your registrar's interface, find your application's domain. Usually, the DNS 
 Edit that TTL to 60 seconds instead of the existing value, and wait for this change to propagate (wait as much time as the old TTL value). This change will allow a faster DNS propagation when
 you have to update the `CNAME` record value to `domain.<target-zone>.clever-cloud.com`, lowering the amount of time your users will experience an increased latency.
 
-{{< callout type="info" >}}
-After the migration, you can set back your old TTL value.
-{{< /callout >}}
+> [!TIP] Restore your TTL
+> After the migration, you can set your old TTL value back.
 
 #### Increased latency
 
@@ -120,6 +119,5 @@ FSBuckets can not be migrated across zones either. You will have to create a new
 
 To do so, you can use the [LFTP](https://lftp.yar.ru/) or [Rclone](https://rclone.org/) tools. Or you can ask our support team and we will be able to do it for you.
 
-{{< callout type="warning" >}}
-In case of a FSBucket add-on (and not a PHP+FTP add-on), remember to link it to your application once it has been migrated to the new zone.
-{{< /callout >}}
+> [!WARNING] Link the FS Bucket again
+> Once an FS Bucket add-on is in the new region, link it to your application again. This doesn't apply to a PHP and FTP add-on.

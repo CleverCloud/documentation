@@ -232,9 +232,8 @@ Response Status: 200 OK
 The object should only contain the `config` object your API returned
 during the provisioning.
 
-{{< callout type="info" >}}
-This endpoint is **not** available during the provisioning call. You need to reply to the provisioning call, **then** you can call this endpoint.
-{{< /callout >}}
+> [!NOTE] Provisioning call
+> This endpoint isn't available during the provisioning call: reply to the provisioning call **first**, then call this endpoint.
 
 ### Sample code
 

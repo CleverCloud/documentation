@@ -19,7 +19,8 @@ aliases:
 
 [Metabase](https://www.metabase.com/) is an open source Business Intelligence server that connects to MySQL, PostgreSQL, MongoDB, and more! Anyone can use it to build charts, dashboards, nightly emails or Slack reports. Thanks to this add-on, you can deploy Metabase in your organisation in just one click. It leverages all Clever Cloud features such as monitoring, scalability, high availability SLA, etc.
 
-{{< callout type="info" >}}Share your feedback on Metabase operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/metabase){{< /callout >}}
+> [!NOTE] Feedback
+> Share your feedback on the Metabase operator on [the community page](https://github.com/CleverCloud/Community/discussions/categories/metabase).
 
 ## Key features
 
@@ -201,9 +202,8 @@ To update Metabase manually, you **should** restart the Java application without
 
 The Metabase JAR is stored in the build cache so that no time is wasted re-downloading it every time you restart the application (or it is restarting as part of a scaling event). This also makes the service more resilient: should the download be temporarily failing for any reason, this would not prevent restarting/scaling your add-on.
 
-{{< callout type="warning" >}}
-**With great power comes great responsibility.** If you choose to fix your add-on to a specific version (for example, `0.63.14`) or a specific "branch" (for example, `0.63`), you must make sure that this version/branch does not become obsolete (new Metabase versions that patch critical security issues may be released but not used in your add-on because you specified otherwise).
-{{< /callout >}}
+> [!WARNING] Pinned versions
+> You can pin your add-on to a specific version, such as `0.63.14`, or to a specific branch, such as `0.63`. Then make sure that this version or branch doesn't become obsolete: security fixes released outside that version or branch don't reach your add-on.
 
 - [The Atom feed (XML) of latest versions and their changelog](https://cc-metabase.cellar-c2.services.clever-cloud.com/metabase_releases.xml)
 - [The TOML list of all available versions and their changelog](https://cc-metabase.cellar-c2.services.clever-cloud.com/metabase_releases.toml)
@@ -225,10 +225,8 @@ There are two cases:
 1. A version does not add migrations: rolling-back to the previous version can be done without complications
 2. A version adds migrations: rolling-back may or may not work. An older Metabase software is not guaranteed to work with a new database structure, so this could break the whole instance, some features or cause data loss.
 
-{{< callout type="info" >}}
-**Rollbacks are not officially supported.**
-If you need to rollback to an older version (for example, because a new version introduced a blocking regression), it is your responsibility to check if this can be done safely.
-{{< /callout >}}
+> [!WARNING] No official rollbacks
+> Rollbacks aren't officially supported. If you need to roll back to an older version, for example because a new version introduced a blocking regression, check yourself that it's safe.
 
 ## Credentials at-rest encryption
 

@@ -80,9 +80,8 @@ curl -XDELETE -H "Authorization: Bearer [API_TOKEN]" \
   https://api-bridge.clever-cloud.com/v4/addon-providers/addon-keycloak/addons/keycloak_id/networkgroup
 ```
 
-{{< callout type="info" >}}
-If you activate multi-instances Keycloak feature, you'll be billed for two Java instances. Network Groups are free of charge.
-{{< /callout >}}
+> [!NOTE] Billing
+> If you activate the multi-instance Keycloak feature, you're billed for two Java instances. Network Groups are free of charge.
 
 With Otoroshi, activating a Network Group links the underlying Java application to it. Thus, you can easily add other applications to the same Network Group and use Otoroshi as a gateway to protect the access to your applications through API keys, Biscuits, WAF, etc.
 

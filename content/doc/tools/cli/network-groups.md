@@ -16,27 +16,11 @@ aliases:
 - /doc/cli/operators/ng.md
 ---
 
-[Network Groups](/doc/network/network-groups/) (NG) are a way to create a private secure network between resources inside Clever Cloud infrastructure, using [WireGuard](https://www.wireguard.com/). It's also possible to connect external resources to a Network Group. There are three components to this feature:
+[Network Groups](/doc/network/network-groups/) (NG) link applications, dedicated add-ons, and external machines of an organisation in a private network, built with [WireGuard](https://www.wireguard.com/). This page lists the commands of Clever Tools to manage them. To learn how members reach each other, which add-ons join a group, and how to set up an external machine, see the [Network Groups](/doc/network/network-groups/) page.
 
-- Network Group: a group of resources that can communicate with each through an encrypted tunnel
-- Member: a resource that can be part of a Network Group (`application`, `addon` or `external`)
-- Peer: Instance of a resource connected to a Network Group (can be `external`)
-
-A Network Group is defined by an ID (`ngId`) and a `label`. It can be completed by a `description` and `tags`.
-
-During testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported.
+A Network Group has an ID (`ngId`), a label, and optionally a description and tags. Its members are applications, add-ons, or external peers. Each running instance of a member is a peer, with a private IP address from the range of the group. An application or add-on member has a domain name of the form `<memberID>.m.<ngID>.cc-ng.cloud`, which resolves inside Clever Cloud instances.
 
 Share your feedback and feature requests in [the Network Groups section of the GitHub Community](https://github.com/CleverCloud/Community/discussions/categories/network-groups).
-
-- [Learn more about Network Groups](/doc/network/network-groups/)
-
-## How it works
-
-When you create a Network Group, a WireGuard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, add a Clever Cloud application and an associated add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
-
-When an application connects to a Network Group, you can reach it on any port inside a NG through its domain name. Any instance of this application is a peer, you can reach independently through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
-
-A Network Group member domain name follows this pattern: `<memberID>.m.<ngID>.cc-ng.cloud`
 
 ## Prerequisites
 
@@ -52,7 +36,7 @@ Then, check it works with the following command:
 clever ng
 ```
 
-In all the following examples, you can target a specific organisation with the `--org` or `-o` option.
+In the following examples, target an organisation with `--org` or `-o`. A Network Group and its members belong to the same organisation.
 
 ## Create a Network Group
 
@@ -76,7 +60,7 @@ clever ng create myNG --description "My first NG" --tags test,ng
 
 ## Delete Network Groups
 
-You can delete a Network Group through its ID or label:
+You can delete a Network Group through its ID or label, even if it still has members. Their instances leave the group and keep running:
 
 ```console
 clever ng delete ngId
@@ -93,7 +77,7 @@ clever ng
 ┌─────────┬───────-┬─────────-─┬───────────────┬─────────┬───────┐
 | (index) │ ID     │ Label     │ Network CIDR  │ Members │ Peers │
 ├─────────┼────────┼───────────┼───────────────┼─────────┼───────┤
-│ 0       │ 'ngId' │ 'ngLabel' │ '10.x.y.z/16' │ X       │ Y     │
+│ 0       │ 'ngId' │ 'ngLabel' │ '10.x.0.0/16' │ X       │ Y     │
 └─────────┴────────┴──────────-┴───────────────┴─────────┴───────┘
 ```
 
@@ -101,22 +85,21 @@ A `json` formatted output is available with the `--format/-F json` option.
 
 ## (Un)Link a resource to a Network Group
 
-To (un)link an application, add-on or external peer to a Network Group:
+To (un)link an application or an add-on to a Network Group:
 
 ```console
 clever ng link app_xxx ngIdOrLabel
 clever ng unlink redis_xxx ngIdorLabel
 ```
 
-After an unlink, you may need to restart the application to apply the changes.
+Both commands take effect on running instances within seconds, without a restart.
 
 > [!TIP] Add-on IDs
-> To link add-ons to a Network Group, use real IDs (`mysql_xxx`, `postgresql_xxx`, `redis_xxx`, etc.). \
-> Only add-ons deployed as of 2024 support Network Groups. If you can't access your add-on, migrate or restart it.
+> To link add-ons to a Network Group, use their real IDs, such as `mysql_xxx`, `postgresql_xxx`, or `redis_xxx`. Only dedicated plans of the Elasticsearch, MongoDB, MySQL, PostgreSQL, and Redis add-ons are reachable through a group, on port `8080`. See [Link add-ons](/doc/network/network-groups/#link-add-ons).
 
 ## Manage external peers
 
-To create an external peer in a Network Group, you need to provide a label, Network Group and WireGuard public key:
+To create an external peer in a Network Group, provide a label, the Network Group, and the WireGuard public key of the machine:
 
 ```console
 clever ng create external myExternalPeer myNG wg_public_key
@@ -160,6 +143,8 @@ To print the WireGuard configuration of an external peer, provide its ID or labe
 ```console
 clever ng get-config peerIdOrLabel myNG
 ```
+
+Replace `<%PrivateKey%>` with the private key of the machine. The configuration lists the current instances of the group: get it again after a restart, a deployment, or a change of scaling, and insert the private key again. To follow these changes, see [Follow configuration changes](/doc/network/network-groups/#follow-configuration-changes).
 
 ## Demos & examples
 

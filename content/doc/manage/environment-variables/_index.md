@@ -252,11 +252,5 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/static/" title="Static" icon="static" >}}
 {{< /cards >}}
 
-{{< callout type="info" >}}
-Variables are available at build time
-for runtimes that support build time instructions, such as
-[Java WAR](/doc/deploy/applications/java/java-war/#environment-injection),
-[Play! Framework 1](/doc/deploy/applications/scala/play-framework-1/#environment-injection),
-[Play! Framework 2](/doc/deploy/applications/scala/play-framework-2/#environment-injection)
-or [Scala](/doc/deploy/applications/scala/#environment-injection).
-{{< /callout >}}
+> [!NOTE] Build time
+> Variables are available at build time for runtimes that support build time instructions, such as [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play! Framework 1](/doc/deploy/applications/scala/play-framework-1/#environment-injection), [Play! Framework 2](/doc/deploy/applications/scala/play-framework-2/#environment-injection), or [Scala](/doc/deploy/applications/scala/#environment-injection).

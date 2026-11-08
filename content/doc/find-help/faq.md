@@ -31,9 +31,9 @@ Each scaler flavor provides a fixed set of resources.
 
 When enabling auto-scalability, you have to set a minimum and a maximum of active scalers in your apps settings. This way you can precisely control your monthly fee.
 
-{{< callout type="warning" >}}
-  Nano and pico instances operate with **reduced CPU priority** on the host system. As a result, during periods of high load on the hypervisor, these instances may experience performance degradation (since they yield processing power to higher-priority workloads).
-{{< /callout >}}
+> [!NOTE] Reduced CPU priority
+> Nano and pico instances run with **reduced CPU priority** on the host. During periods of high load on the hypervisor, their performance can drop, as they yield processing power to higher-priority workloads.
+
 {{% /details %}}
 
 {{% details title="Which application runtimes are supported by Clever Cloud?" closed="true" %}}
@@ -199,13 +199,9 @@ Load-balancers handles all connections ahead of your applications and forward th
 
 Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '*http*' or '*https*'.
 
-{{< callout type="info" >}}
-In order to use `request.secure` instead of using the header, you must add `XForwardedSupport=all` in your `application.conf`.
-{{< /callout >}}
+> [!NOTE] Play Framework
+> To use `request.secure` instead of the header, configure your `application.conf`. Add `XForwardedSupport=all` with Play Framework 1, or `trustxforwarded=true` with Play Framework 2 before 2.4. For later versions, see the [Play Framework 2 page](/doc/deploy/applications/scala/play-framework-2/).
 
-{{< callout type="warning" >}}
-In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your `application.conf`.
-{{< /callout >}}
 {{% /details %}}
 
 {{% details title="PHP: `$_SERVER` auth variables are always empty, how do I make this work?" closed="true" %}}

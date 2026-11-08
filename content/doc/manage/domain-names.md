@@ -25,9 +25,8 @@ When creating an application, you have two (non-exclusive) choices for domain na
 
 Add it in the application configuration: in the console, click **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a subdomain under `*.cleverapps.io`.
 
-{{< callout type="info" >}}
-  You can link one or more domain names to the same application. On the other hand, you can add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications at the same time through [path routing](#path-routing).
-{{< /callout >}}
+> [!NOTE] Several domains
+> You can link one or more domain names to the same application. You can also add `mydomain.com/app1` and `mydomain.com/app2` to different Clever Cloud applications through [path routing](#path-routing).
 
 ## Primary (favourite) domain name
 
@@ -43,25 +42,22 @@ To select the primary domain name:
 
 ## Testing with `cleverapps.io` Domain
 
-{{< callout type="warning" >}}
-  Clever Cloud provides `*.cleverapps.io` domains for development and testing purposes. They point to specific reverse proxies and have the following drawbacks: the `.io` TLD isn't made for production, and since we offer the domain, the likelihood of people abusing it can be very high. **It's therefore not possible to guarantee a high level of quality on cleverapps domains**.
-{{< /callout >}}
+> [!NOTE] Testing domains
+> Clever Cloud provides `*.cleverapps.io` domains for development and testing. They point to specific reverse proxies, the `.io` top-level domain isn't made for production, and abuse of a domain open to everyone is likely. **Clever Cloud can't guarantee a high level of quality on `cleverapps.io` domains**.
 
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: `yourAppID.cleverapps.io`, which can be removed.
 
 In your application's domain section, just enter `example.cleverapps.io`. You have to choose a unique one. Trusted SSL is available on every subdomain.
 
-{{< callout emoji="🌐" >}}
-`*.cleverapps.io` certificate is only valid for the first subdomain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
-{{< /callout >}}
+> [!NOTE] Certificate scope
+> The `*.cleverapps.io` certificate is only valid for the first subdomain level: it doesn't cover a domain like `blog.mycompany.cleverapps.io`.
 
 ## Configuring Domain Names by Region
 
 It's possible to point your personalized domain name to Clever Cloud with either a type `A` or `CNAME` record through your registrar.
 
-{{< callout type="warning" >}}
-  The use of a CNAME record is **highly** recommended.
-{{< /callout >}}
+> [!TIP] Use a CNAME record
+> Use a CNAME record whenever you can.
 
 With a `CNAME` record, your DNS configuration is always up-to-date.
 Using `A` records requires you to keep the DNS configuration up-to-date manually.
@@ -157,17 +153,15 @@ Provide the following to your registrar:
 | CNAME<br>Recommended                | `{yoursubdomain} 10800 IN CNAME domain.syd.clever-cloud.com.`  |
 | A<br>Only if CNAME is not available | `@ 10800 IN A 139.99.253.215`<br>`@ 10800 IN A 139.99.253.237` |
 
-{{< callout type="warning" >}}
-You cannot use a CNAME on a top-level domain, or on a subdomain which already has DNS records.
-{{< /callout >}}
+> [!NOTE] CNAME limits
+> You can't use a CNAME on a top-level domain, or on a subdomain that already has DNS records.
 
 If you want to make your application available from a domain name which doesn't support CNAME records (eg `example.com` in addition to `www.example.com`), check if your registrar provides a web redirection service. This way, you only have to make `www.example.com` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
-{{< callout type="info" >}}
-`*.example.com` match for instance `blog.example.com` or `www.example.com`. But for the raw domain `example.com`, you have to add both `*.example.com` and `example.com` to your application.
-{{< /callout >}}
+> [!NOTE] Wildcard and raw domain
+> `*.example.com` matches `blog.example.com` or `www.example.com`, but not the raw domain `example.com`: add both `*.example.com` and `example.com` to your application.
 
 ### Contextual Example
 

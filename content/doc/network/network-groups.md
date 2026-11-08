@@ -27,10 +27,8 @@ A Network Group is defined by an ID (`ngId`) and a `label`. It can be completed 
 
 When you create a Network Group, a WireGuard configuration is generated with a corresponding [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Then, you can, for example, link an application and an add-on to the same Network Group. These are members, defined by an `id`, a `label`, a `kind` and a `domain name`.
 
-{{< callout type="info" >}}
-During beta testing phase, you can add add-ons and external peers to a Network Group, but these features are not yet fully supported. \
-A Network Group member domain name is composed this way: `<memberID>.m.<ngID>.cc-ng.cloud`
-{{< /callout >}}
+> [!NOTE] Add-ons and external peers
+> Adding add-ons and external peers to a Network Group is in beta: these features aren't fully supported. The domain name of a Network Group member follows this pattern: `<memberID>.m.<ngID>.cc-ng.cloud`
 
 When a resource is linked to a Network Group, you can reach it on any port inside this private network with its domain name. An application instance is a peer, you can reach through an IP (from the attributed CIDR). It works the same way for add-ons and external resources.
 

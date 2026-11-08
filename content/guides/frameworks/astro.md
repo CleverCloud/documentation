@@ -56,9 +56,8 @@ To deploy your Astro project to Clever Cloud, you need to **create a new applica
 
 If you're deploying from **GitHub**, your deployment should start automatically. If you're using **Git**, copy the remote and push on the **master** branch.
 
-{{< callout emoji="💡" >}}
-  To deploy from branches other than `master`, use `git push clever <branch>:master`. For example, if you want to deploy your local `main` branch without renaming it, use `git push clever main:master`.
-{{< /callout >}}
+> [!TIP] Deploy another branch
+> To deploy a branch other than `master`, use `git push clever <branch>:master`. For example, to deploy your local `main` branch without renaming it, use `git push clever main:master`.
 
 {{% include "shared/static-create" %}}
 

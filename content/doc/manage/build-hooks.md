@@ -138,7 +138,5 @@ These hooks are perfect for:
 - notifications
 - clean-up
 
-{{< callout emoji="🧹" >}}
-**This hook is deprecated**
-These hooks replace the older `postDeploy` hook, which is now deprecated.
-{{< /callout >}}
+> [!NOTE] Deprecated hook
+> These hooks replace the older `postDeploy` hook, which is deprecated.

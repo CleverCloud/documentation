@@ -24,7 +24,8 @@ Keycloak is an open source identity and access management (IAM) solution that of
 
 To fit the most common needs, the Keycloak add-on comes with batteries included: sensible defaults, easy migration with realms import/export, Keycloak Metrics, default theme, etc.
 
-{{< callout type="info" >}}Share your feedback on Keycloak operator through [our community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak){{< /callout >}}
+> [!NOTE] Feedback
+> Share your feedback on the Keycloak operator on [the community page](https://github.com/CleverCloud/Community/discussions/categories/keycloak).
 
 ## Key features
 

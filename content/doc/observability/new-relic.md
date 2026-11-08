@@ -38,11 +38,8 @@ To use New Relic in Python, you have to add the [newrelic](https://pypi.python.o
 
 To use New Relic in Java, Scala or PHP instances, you need to configure it as it is provided directly inside the instances.
 
-{{< callout type="info" >}}
-New Relic trigger auto-insertion of JavaScript fragments  on PHP applications, for browser monitoring. You can disable it with `newrelic.browser_monitoring.auto_instrument` in `.user.ini`.
-[Learn more on New Relic's documentation](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum).
-
-{{< /callout >}}
+> [!NOTE] Browser monitoring
+> New Relic inserts JavaScript fragments automatically in PHP applications, for browser monitoring. Disable it with `newrelic.browser_monitoring.auto_instrument` in `.user.ini`, as [the New Relic documentation](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) explains.
 
 ## New Relic configuration
 

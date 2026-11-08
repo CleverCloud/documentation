@@ -144,9 +144,8 @@ Elasticsearch managed by Clever Cloud comes with these plugins, you can activate
 | mapper-murmur3          | Allows hashes to be computed at index-time and stored in the index for later use with the cardinality aggregation  |
 | mapper-annotated-text   | Provides the ability to index text that is a combination of free-text and special markup                           |
 
-{{< callout type="info" >}}
-Plugin activation is only available at add-on creation, through [API](/api) or the `--option` flag of [Clever Tools](/doc/tools/cli/addons/#create--rename--delete). You must pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To modify enabled plugins on an existing add-on, contact [support team](https://console.clever-cloud.com/ticket-center-choice).
-{{< /callout >}}
+> [!NOTE] Plugins at creation only
+> You can activate plugins only when you create the add-on, through the [API](/api) or the `--option` flag of [Clever Tools](/doc/tools/cli/addons/#create--rename--delete). Pass the option as a comma-separated list: `plugins=plugin1,plugin2`. To change the plugins of an existing add-on, contact the [support team](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Backups
 
@@ -154,9 +153,8 @@ Your Elastic add-on backups are managed by Clever Cloud. When you provision the 
 
 Backups can be managed under the *Backup* tab of the elastic add-on. You can restore, delete or open it directly under Kibana if you opted-in.
 
-{{< callout type="warning" >}}
-If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.
-{{< /callout >}}
+> [!NOTE] Elasticsearch 6 backups
+> Elasticsearch 6 doesn't delete backups automatically: clean them up from time to time.
 
 ## Create an index on Elasticsearch
 

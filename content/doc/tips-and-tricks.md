@@ -204,9 +204,8 @@ clever domain diag --app my-api
 clever domain diag --app my-api --filter example.com
 ```
 
-{{< callout type="info" >}}
-  This tool can't see through a CDN or a private load balancer in front of your application
-{{< /callout >}}
+> [!NOTE] CDN and load balancers
+> This tool can't see through a CDN or a private load balancer in front of your application.
 
 ### Redeploy without a new commit
 

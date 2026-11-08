@@ -28,9 +28,8 @@ Unless you want to upgrade your database to a new major version or to give it mo
 
 These updates are not related to your add-on (PostgreSQL, MySQL…) major version. Only patches or minor versions of the add-on software along with system upgrades (security patches and new kernel features) are performed. For example, you can keep *PostgreSQL 11* if you want to.
 
-{{< callout type="warning" >}}
-We **do not** support the migration of read only users except for PostgreSQL add-ons. If you have any, you will have to create new ones at the end of the migration.
-{{< /callout >}}
+> [!WARNING] Read-only users
+> The migration doesn't keep read-only users, except for PostgreSQL add-ons. If you have any, create them again after the migration.
 
 ## Migration (updating) step-by-step
 

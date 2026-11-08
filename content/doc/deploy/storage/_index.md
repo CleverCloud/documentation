@@ -32,9 +32,8 @@ If you want to avoid that, you have to store your important files outside of you
 
 Cellar and FS Buckets both allow you to store files outside of your instances for later use. But there are some differences between them.
 
-{{< callout type="info" >}}
-If you are coding a new project and need to store files, use Cellar. It will be cheaper and give you way more flexibility. If your want to run a WordPress site or some OSS PHP application and are in a hurry, you may not get to choose: use FS Buckets.
-{{< /callout >}}
+> [!TIP] Cellar or FS Bucket
+> To store the files of a new project, use Cellar: it costs less and gives you more flexibility. To run a WordPress website or an open source PHP application, you may have to use an FS Bucket.
 
 ## What is FS Bucket?
 

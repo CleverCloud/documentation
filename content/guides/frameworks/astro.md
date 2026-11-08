@@ -60,7 +60,7 @@ If you're deploying from **GitHub**, your deployment should start automatically.
   To deploy from branches other than `master`, use `git push clever <branch>:master`. For example, if you want to deploy your local `main` branch without renaming it, use `git push clever main:master`.
 {{< /callout >}}
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 ### Automatic build
 
@@ -73,7 +73,7 @@ clever scale --flavor pico
 clever scale --build-flavor M
 ```
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## Deploying a Node.js application with Server-Side Rendering
 

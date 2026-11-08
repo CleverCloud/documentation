@@ -86,9 +86,9 @@ If you're using
 application.secret=${APPLICATION_SECRET}
 ```
 
-{{% content "new-relic" %}}
+{{% include "shared/new-relic" %}}
 
-{{% content "env-injection" %}}
+{{% include "shared/env-injection" %}}
 
 In Scala code, retrieve an environment variable with `System.getenv("MY_VARIABLE")`, it returns `null` when the variable is not defined.
 

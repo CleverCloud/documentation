@@ -79,7 +79,7 @@ configure an OAuth token in your Composer configuration file or in a separate fi
 
 You can find more documentation about Composer configuration in the [Composer schema reference](https://getcomposer.org/doc/04-schema.md).
 
-{{% content "private-composer-repositories" %}}
+{{% include "shared/private-composer-repositories" %}}
 
 ## Post-build hook example
 

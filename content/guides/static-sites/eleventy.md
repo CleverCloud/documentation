@@ -25,7 +25,7 @@ If you need an example source code, get [11ty base blog](https://github.com/11ty
 git clone https://github.com/11ty/eleventy-base-blog myStaticApp
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 ### Environment variables
 
@@ -37,7 +37,7 @@ clever env set CC_PRE_BUILD_HOOK "npm install"
 clever env set CC_BUILD_COMMAND "npx @11ty/eleventy"
 ```
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## 🎓 Learn more
 

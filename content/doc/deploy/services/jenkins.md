@@ -56,7 +56,7 @@ Refer to the [documentation](/doc/tools/cli/applications/) for more details on a
 Once you created your add-on, you should get to the dashboard. You should see a link named `Access Jenkins`. Opening that link will redirect you to our SSO
 authentication.
 
-{{% content "single-sign-on" %}}
+{{% include "shared/single-sign-on" %}}
 
 ## Configure your Jenkins instance
 

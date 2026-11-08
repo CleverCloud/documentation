@@ -138,7 +138,7 @@ By default, the built binary is executed directly. Set `CC_RUN_COMMAND` to overr
 
 Set `CC_TROUBLESHOOT=true` to enable verbose build output (`-x` flag) and the race detector (`-race` flag) during compilation. This applies to `gomod` and `gobuild` methods.
 
-{{% content "env-injection" %}}
+{{% include "shared/env-injection" %}}
 
 To access environment variables from your code, use `os.Getenv("MY_VARIABLE")`.
 

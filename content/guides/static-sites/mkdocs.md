@@ -25,13 +25,13 @@ To create an example project, install [Git](https://git-scm.com/book/en/v2/Getti
 uvx mkdocs new myStaticApp
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 ### Automatic build
 
 MkDocs is one of the static site generators supported by the [Static runtime automatic build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## 🎓 Learn more
 

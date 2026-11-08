@@ -7,7 +7,7 @@ keywords:
 draft: true
 ---
 
-<!-- Prefer one clear path that uses platform defaults and native features. Follow every command from a fresh project, and test every behavior the guide promises. Add the guide to the index of its section, or, for a guide in guides/static-sites/, to shared/static-guides.md. Remove these comments before publication. -->
+<!-- Prefer one clear path that uses platform defaults and native features. Follow every command from a fresh project, and test every behavior the guide promises. Add the guide to the index of its section, or, for a guide in guides/static-sites/, to content/shared/static-guides.md. Remove these comments before publication. -->
 
 {{< hextra/hero-subtitle >}}
   Deploy {{ replace .File.ContentBaseName "-" " " | title }} on Clever Cloud.

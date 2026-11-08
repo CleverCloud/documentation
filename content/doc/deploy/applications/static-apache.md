@@ -21,7 +21,7 @@ If you only need to serve static files without executing any code on the backend
 
 This runtime is based on apache, so shares a lot with the [PHP runtime](/doc/deploy/applications/php). This means you can use `.htaccess` files for redirection or access control.
 
-{{% content "env-injection" %}}
+{{% include "shared/env-injection" %}}
 
 Application deployment on Clever Cloud is via **Git or FTP**.
 
@@ -107,7 +107,7 @@ If you don't set the [`CC_WEBROOT`](/doc/manage/environment-variables/reference/
 
 ## Static Site Generators (SSG) guides {#-static-site-generators-ssg-guides}
 
-{{% content-raw "static-guides" %}}
+{{% include "shared/static-guides" %}}
 
 ## Go Further
 

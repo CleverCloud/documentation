@@ -1,3 +1,6 @@
+---
+---
+
 {{< cards >}}
   {{< card link="/developers/guides/static-sites/docusaurus" title="Docusaurus" subtitle="Deploy a static Docusaurus website" icon="simple:docusaurus" >}}
   {{< card link="/developers/guides/static-sites/eleventy" title="Eleventy (11ty)" subtitle="Deploy a static Eleventy website" icon="simple:eleventy" >}}

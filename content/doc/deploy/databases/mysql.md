@@ -32,7 +32,7 @@ Two long term support (LTS) branches are available for new add-ons: 8.4, used by
 
 {{< software_versions_shared_dedicated mysql>}}
 
-{{% content "db-backup" %}}
+{{% include "shared/db-backup" %}}
 
 ## Migrating from an old database
 
@@ -45,7 +45,7 @@ If you want to import your **SQL** dump, you can use several methods:
 
 If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
-{{% content "db-migration" %}}
+{{% include "shared/db-migration" %}}
 
 ## Replication
 
@@ -72,7 +72,7 @@ Encryption at rest is available on MySQL. You can have more information on the [
 
 ## ProxySQL
 
-{{% content "proxysql" %}}
+{{% include "shared/proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)
 

@@ -19,7 +19,7 @@ aliases:
   Answers to the questions asked most often about the platform, from scalers and supported runtimes to domains, security, add-ons and backups. If you're facing a specific error message, start with the [troubleshooting page](/doc/find-help/troubleshooting).
 {{< /hextra/hero-subtitle >}}
 
-{{% content "ask-for-help" %}}
+{{% include "shared/ask-for-help" %}}
 
 ## Platform and plans
 

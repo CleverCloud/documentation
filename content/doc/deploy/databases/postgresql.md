@@ -32,7 +32,7 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 
 {{< software_versions_shared_dedicated pg>}}
 
-{{% content "db-backup" %}}
+{{% include "shared/db-backup" %}}
 
 ## Point In Time Recovery
 
@@ -46,7 +46,7 @@ Some applications require a non-empty database to run properly. If you want to i
 1. Command line tool for PostgreSQL administration like `psql`
 2. Any PostgreSQL client such as [pgAdmin](https://www.pgadmin.org/)
 
-{{% content "db-migration" %}}
+{{% include "shared/db-migration" %}}
 
 ## Replication
 

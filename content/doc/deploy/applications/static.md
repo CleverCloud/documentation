@@ -242,7 +242,7 @@ hugo-extended = "0.150.1"
 
 ## Static Site Generators (SSG) guides {#-static-site-generators-ssg-guides}
 
-{{% content-raw "static-guides" %}}
+{{% include "shared/static-guides" %}}
 
 ## Go Further
 

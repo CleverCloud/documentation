@@ -24,7 +24,7 @@ You don't have to configure leaders, followers: high availability is included, b
 > [!NOTE] Materia TS is in private access
 > Ask for activation to your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice)
 
-{{% content "warp10-concepts" %}}
+{{% include "shared/warp10-concepts" %}}
 
 ## Create a Materia TS add‑on
 
@@ -56,4 +56,4 @@ see our [Warp 10 documentation](/doc/observability/warp10/).
 the read or write token of your add-on. Prometheus related endpoints expects
 your tokens inside the `Authorization` HTTP header.
 
-{{% content "warp10-content" %}}
+{{% include "shared/warp10-content" %}}

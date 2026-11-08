@@ -25,7 +25,7 @@ If you need an example source code, use the [Lume website](https://github.com/lu
 git clone https://github.com/lumeland/lume.land myStaticApp
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 ### Environment variables
 
@@ -54,7 +54,7 @@ It uses [Mise package manager](/doc/manage/environment-variables/reference/#inst
 > [!TIP]
 > If you use Mise locally, run `mise trust` to trust the created `mise.toml` file
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## 🎓 Learn more
 

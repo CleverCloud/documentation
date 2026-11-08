@@ -31,7 +31,7 @@ In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packag
 
 Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/manage/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "java-versions" %}}
+{{% include "shared/java-versions" %}}
 
 {{< runtimes_versions java >}}
 
@@ -121,7 +121,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
 | Required | **type** | - The tool you want to use to build your app. <br>- Can be "maven", "gradle", "sbt" or "ant"           |
 | Required | **goal** | - The goal you want the tool to execute.<br>- Basically, for maven, you want to put "package" in here. |
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
 ## Available containers for war.json
 
@@ -140,7 +140,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 | WILDFLY27 | Use Wildfly servlet container 27.x (see <https://wildfly.org/>)                          | EOL |
 | WILDFLY33 | Use Wildfly servlet container 33.x (see <https://wildfly.org/>)                          | EOL |
 
-{{% content "java-env-injection" %}}
+{{% include "shared/java-env-injection" %}}
 
 ## Custom run command
 

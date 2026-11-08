@@ -7,22 +7,21 @@ keywords:
 draft: true
 ---
 
-<!-- Write for a reader new to this language: explain each tool, file, or concept of its ecosystem in a few words at its first use. Deploy every example and test every behavior the page describes. The file name sets the type in clever create, the anchors, and the key of the version table: adjust them if they differ. Remove these comments before publication. -->
+<!-- Write for a reader new to this language or runtime: explain each tool, file, or concept of its ecosystem in a few words at its first use. Deploy every example and test every behavior the page describes. The file name sets the type in clever create, the anchors, and the key of the version table: adjust them if they differ. Remove these comments before publication. -->
 
 ## Overview
 
-<!-- One sentence on the language, one on what Clever Cloud builds and starts, then the main frameworks it works with. -->
+<!-- One sentence on the language, or on what the runtime runs, one on what Clever Cloud builds and starts, then the main frameworks it works with. -->
 
 ## Create your {{ replace .File.ContentBaseName "-" " " | title }} application
 
-To create a new {{ replace .File.ContentBaseName "-" " " | title }} application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+To create a new {{ replace .File.ContentBaseName "-" " " | title }} application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
 clever create --type {{ .File.ContentBaseName }}
 ```
 
-- [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
+The [getting started guide](/doc/getting-started/#create-an-application-step-by-step) describes each step of the creation of an application.
 
 ## Configure your {{ replace .File.ContentBaseName "-" " " | title }} application
 
@@ -33,7 +32,7 @@ A {{ replace .File.ContentBaseName "-" " " | title }} application needs:
 - A project file, at the root of the project or of the folder set in `APP_FOLDER`
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
-<!-- Explain what the project file and its lock file are for. Then show a minimal application that reads PORT, with the command to try it locally. If Clever Cloud starts a managed web server, such as Puma for Ruby, replace the web server item and explain this server instead. -->
+<!-- If the runtime doesn't need a project file, replace or remove its item. Explain what the project file and its lock file, if the ecosystem has one, are for. Then show a minimal application that reads PORT, with the command to try it locally. If Clever Cloud starts a managed web server, such as Puma for Ruby, replace the web server item and explain this server instead. -->
 
 A [Clever Task](#{{ .File.ContentBaseName }}-applications-as-clever-tasks) doesn't need a web server.
 
@@ -49,7 +48,7 @@ On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/)
 
 ### {{ replace .File.ContentBaseName "-" " " | title }} version
 
-<!-- If Clever Cloud provides a list of versions, add it to data/runtime_versions.yml first: the shortcode renders nothing without it. If the project sets its version, explain how instead, and remove the shortcode. -->
+<!-- If Clever Cloud provides a list of versions, add it to data/runtime_versions.yml first: the shortcode renders nothing without it. If Clever Cloud installs a single version, add it to this file too, and replace runtimes_versions with the runtime_version shortcode. If the project sets its version, explain how instead, and remove the shortcode. If the runtime has no version of its own, remove this section. -->
 
 {{< runtimes_versions {{ .File.ContentBaseName }} >}}
 
@@ -71,10 +70,12 @@ clever restart --without-cache
 
 A {{ replace .File.ContentBaseName "-" " " | title }} application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration: Clever Cloud builds it, then runs `CC_RUN_COMMAND`.
 
-Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a `worker` command:
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
+
+<!-- Replace <command> with a command of this runtime that runs a job, such as a migration script. -->
 
 ```bash
-clever create --type {{ .File.ContentBaseName }} --task "./worker --once"
+clever create --type {{ .File.ContentBaseName }} --task "<command>"
 clever deploy # or clever restart if there is no code change
 ```
 

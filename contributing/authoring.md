@@ -72,7 +72,7 @@ By default, tab blocks with the same names, in the same order, share their selec
 
 Hugo adds the `/developers` base path to Markdown links and images. A card's `link` and a figure's `src` keep their local paths as written: include the base path, such as `/developers/doc/deploy/applications/` in a card link.
 
-The project adds its own shortcodes in [`layouts/shortcodes/`](../layouts/shortcodes/), such as `runtimes_versions` for the tables of versions. The [style guide](./style-guide.md#callouts) explains how to choose and write callouts.
+The project adds its own shortcodes in [`layouts/shortcodes/`](../layouts/shortcodes/), such as `runtimes_versions` for the tables of versions. It also adds a `list` parameter to the `youtube` shortcode of Hugo, to embed a playlist, such as `{{< youtube list="PLTC-ts2h37r4" >}}`. The [style guide](./style-guide.md#callouts) explains how to choose and write callouts.
 
 ### Diagrams
 

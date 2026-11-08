@@ -152,7 +152,7 @@ Explain in the callout what the status implies, such as the data not to store or
 
 ### Source formatting
 
-Keep each paragraph on one logical line, and rely on editor word wrap: don't hard-wrap prose with line breaks that don't affect rendering. End every text file with a newline character.
+Keep each paragraph on one line. A single line break inside a paragraph renders as a space: the paragraph only looks shorter in the source. To read shorter lines, enable word wrap in the display settings of your editor instead. When a line must break in the rendered page, end it with a backslash. End every text file with a newline character.
 
 ## Write commands and examples
 

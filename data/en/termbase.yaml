@@ -1,0 +1,18 @@
+# Glossary of the term shortcode of Hextra, such as {{< term "WAR" >}}: the site
+# shows the definition when readers hover over the term.
+
+- term: enterprise archive
+  abbr: EAR
+  definition: "Enterprise Archive"
+- term: infrastructure as a service
+  abbr: IaaS
+  definition: "Infrastructure-as-a-Service"
+- term: java enterprise edition
+  abbr: JEE
+  definition: "Java Enterprise Edition"
+- term: platform as a service
+  abbr: PaaS
+  definition: "Platform-as-a-Service"
+- term: web archive
+  abbr: WAR
+  definition: "Web Archive"

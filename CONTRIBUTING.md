@@ -53,7 +53,7 @@ Every pull request runs markdownlint on all the Markdown files of the repository
 [Vale](https://vale.sh/) implements the rules of the [style guide](./contributing/style-guide.md) with the project's own `Clever` style, in [`.github/styles/Clever/`](./.github/styles/Clever/). Run it on the files you change, or on the whole repository:
 
 ```bash
-vale README.md AGENTS.md CONTRIBUTING.md contributing archetypes content shared
+vale README.md AGENTS.md CONTRIBUTING.md contributing archetypes content
 ```
 
 Fix every Vale error and warning on your changed lines, then review each suggestion. A passive describing a state, or a word quoted as an example, can stay. The pull request workflow reports alerts on changed lines without failing, so a green check doesn't prove there are none.

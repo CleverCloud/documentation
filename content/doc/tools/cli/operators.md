@@ -93,7 +93,7 @@ clever otoroshi version update otoroshi_id
 
 ## Network Groups
 
-Keycloak and Otoroshi can be linked to a [Network Group](/doc/tools/cli/network-groups/). To enable/disable this feature, use:
+Keycloak and Otoroshi can be linked to a [Network Group](/doc/network/network-groups/#keycloak-and-otoroshi). To enable/disable this feature, use:
 
 ```console
 clever keycloak enable-ng myKeycloak
@@ -102,6 +102,8 @@ clever otoroshi disable-ng otoroshi_id
 
 > [!NOTE] Keycloak clustering
 > On Clever Cloud, Keycloak uses Network Groups for its [Secured Multi Instances](/doc/deploy/services/keycloak/#secured-multi-instances) feature. When you enable it, the Keycloak application is automatically scaled to 2 instances and the cluster automatically configured. When you disable the Network Group feature, the application is scaled down to 1 instance and the cluster is removed.
+
+With its Network Group, Otoroshi reaches the applications you link to this group on their private ports. See [Use Otoroshi in a Network Group](/doc/deploy/services/otoroshi/#use-otoroshi-in-a-network-group).
 
 ## Otoroshictl
 

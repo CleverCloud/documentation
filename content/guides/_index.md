@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Guides
 title: Guides
-description: Step-by-step guides to deploy frameworks, static sites, and self-hosted software on Clever Cloud, and to set up database and observability tools
+description: Step-by-step guides to deploy frameworks, static sites, and self-hosted software on Clever Cloud, to set up database and observability tools, and to protect applications
 keywords:
 - guides
 - tutorials
@@ -26,7 +26,7 @@ llmsTxtOptional: true
   Step-by-step guides to deploy and use your favorite stack on Clever Cloud
 {{< /hextra/hero-subtitle >}}
 
-Guides deploy a framework, a static site, or ready-to-use software, and set up tools around your add-ons and your observability. To manage Clever Cloud add-ons from a Kubernetes cluster, see the [Kubernetes Operator](/doc/deploy/kubernetes/operator/).
+Guides deploy a framework, a static site, or ready-to-use software, set up tools around your add-ons and your observability, and protect your applications. To manage Clever Cloud add-ons from a Kubernetes cluster, see the [Kubernetes Operator](/doc/deploy/kubernetes/operator/).
 
 ## Database Tools
 
@@ -49,6 +49,12 @@ Guides deploy a framework, a static site, or ready-to-use software, and set up t
   {{< card link="/developers/guides/frameworks/ruby-rack" title="Ruby Rack" subtitle="Deploy a Ruby Rack application" icon="ruby" >}}
   {{< card link="/developers/guides/frameworks/sveltekit" title="SvelteKit" subtitle="Deploy a SvelteKit application with static or server-side rendering" icon="simple:svelte" >}}
   {{< card link="/developers/guides/frameworks/symfony" title="Symfony" subtitle="Deploy a Symfony application" icon="simple:symfony" >}}
+{{< /cards >}}
+
+## Networking and Security
+
+{{< cards >}}
+  {{< card link="/developers/guides/security/otoroshi-private-api" title="Private API with Otoroshi" subtitle="Keep an API private behind an API key, a quota, and a ban of abusive clients" icon="shield-check" >}}
 {{< /cards >}}
 
 ## Observability

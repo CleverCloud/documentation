@@ -131,6 +131,28 @@ By default, Otoroshi with LLM on Clever Cloud uses small-size resources, i.e:
 
 They are dimensioned to suit a majority of needs. You can however manage and adjust them directly [in the Console](https://console.clever-cloud.com/).
 
+## Use Otoroshi in a Network Group
+
+With a [Network Group](/doc/network/network-groups/), Otoroshi reaches your applications through a private network, on ports they don't expose publicly. Your applications can then stay private, while Otoroshi exposes them with its protections, such as API keys, quotas, or its [web application firewall](#coraza-waf-web-application-firewall). Enable it from the Otoroshi dashboard in the Console, or with Clever Tools:
+
+```bash
+clever features enable operators
+clever otoroshi enable-ng myOtoroshi
+```
+
+Clever Cloud creates a Network Group labeled with the ID of the add-on, adds the Java application of Otoroshi to it, and restarts this application. Link your applications to this group from the Console, or with its ID, shown by `clever otoroshi get myOtoroshi`:
+
+```bash
+clever features enable ng
+clever ng link app_xxx ng_xxx
+```
+
+In an Otoroshi route, set the backend to the domain name of a member of the group, such as `app_xxx.m.ng_xxx.cc-ng.cloud`, and to the port of its service. Disable TLS for a plain HTTP service, as WireGuard already encrypts the traffic between peers. The service must listen on `0.0.0.0` or on the address of the group, not only on `localhost`.
+
+`clever otoroshi disable-ng myOtoroshi` deletes the group and the links to your applications, then restarts Otoroshi.
+
+To keep an application private and expose it only through Otoroshi, follow the [Protect a private API with Otoroshi](/guides/security/otoroshi-private-api/) guide.
+
 ## LLM extension
 
 Otoroshi on Clever Cloud comes with LLM Extension. It provides a unified gateway for managing and interacting with Large Language Models through an OpenAI-compatible API interface, with [MCP support](https://www.clever.cloud/blog/company/2025/01/21/create-your-own-mcp-client-server-as-easy-as-1-2-3-with-otoroshi/). This extension streamlines the integration and management of multiple LLM providers including Ollama instances, OpenAI, Mistral, Anthropic, DeepSeek, Eleven Labs, Gemini, Groq, Hive, Hugging Face, Leonardo AI, Luma, OVH and Scaleway AI Endpoints. It supports audio, image, moderation and text generation models.

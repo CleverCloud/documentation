@@ -23,5 +23,5 @@ These add-ons extend the platform beyond applications, databases, functions and 
   {{< card link="/developers/doc/deploy/services/mailpace" title="MailPace" subtitle="Fast and reliable transactional email" icon="mail" >}}
   {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="Privacy-focused web analytics platform" icon="simple:matomo" >}}
   {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="Business intelligence and data visualization platform" icon="simple:metabase" >}}
-  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi with LLM" subtitle="API gateway with preconfigured plugins, including LLM management" icon="endpoints" >}}
+  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi Gateway" subtitle="API gateway with preconfigured plugins, including an LLM gateway" icon="endpoints" >}}
 {{< /cards >}}

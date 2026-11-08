@@ -59,5 +59,5 @@ Add-ons are managed services you create alongside your applications. Browse the 
   {{< card link="/developers/doc/deploy/services/mailpace" title="MailPace" subtitle="Fast and reliable transactional email" icon="mail" >}}
   {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="Privacy-focused web analytics platform" icon="simple:matomo" >}}
   {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="Business intelligence and data visualization platform" icon="simple:metabase" >}}
-  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi with LLM" subtitle="API management based on a modern reverse proxy with preconfigured plugins" icon="endpoints" >}}
+  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi Gateway" subtitle="API gateway based on a modern reverse proxy, with preconfigured plugins" icon="endpoints" >}}
 {{< /cards >}}

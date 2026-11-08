@@ -16,7 +16,7 @@ aliases:
 - /doc/request-flow/otoroshi-challenge
 ---
 
-Putting an [Otoroshi](/doc/deploy/services/otoroshi/) gateway in front of an application moves a whole class of concerns out of your code. Authentication through OAuth2, OpenID Connect, JWT verification or API keys, rate limiting and quotas, request and response transformation, canary releases, and a [Coraza web application firewall](/doc/deploy/services/otoroshi/#coraza-waf-web-application-firewall) all become route configuration, applied the same way to a website or to an API. Your teams change these behaviours from the gateway, without a deployment and without touching the applications behind it.
+Putting an [Otoroshi](/doc/deploy/services/otoroshi/) gateway in front of an application moves a whole class of concerns out of your code. Authentication through OAuth2, OpenID Connect, JWT verification or API keys, rate limiting and quotas, request and response transformation, canary releases, and a [web application firewall](/doc/deploy/services/otoroshi/#web-application-firewall) all become route configuration, applied the same way to a website or to an API. Your teams change these behaviours from the gateway, without a deployment and without touching the applications behind it.
 
 That model only holds if those applications cannot be reached any other way. An application deployed on Clever Cloud keeps its own public URL, and anyone who finds it bypasses the gateway along with everything it enforces.
 

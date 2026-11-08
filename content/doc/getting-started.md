@@ -308,7 +308,7 @@ Clever Cloud provides multiple add-ons to work with your applications:
   {{< card link="/developers/doc/deploy/services/mailpace" title="MailPace" subtitle="Fast and reliable transactional email" icon="mail" >}}
   {{< card link="/developers/doc/deploy/services/matomo" title="Matomo" subtitle="A web analytics application as a service, the best Google Analytics alternative" icon="simple:matomo" >}}
   {{< card link="/developers/doc/deploy/services/metabase" title="Metabase" subtitle="An easy business intelligence tool to query and visualize data" icon="simple:metabase" >}}
-  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi with LLM" subtitle="Simple API management based on a modern reverse proxy with preconigured plugins" icon="endpoints" >}}
+  {{< card link="/developers/doc/deploy/services/otoroshi" title="Otoroshi Gateway" subtitle="API gateway based on a modern reverse proxy, with preconfigured plugins" icon="endpoints" >}}
 {{< /cards >}}
 
 **If your add-on:**

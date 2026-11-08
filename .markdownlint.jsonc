@@ -6,7 +6,7 @@
     "style": "dash"
   },
   // MD013/line-length: off, a paragraph stays on one line and editors wrap it,
-  // as AGENTS.md and CONTRIBUTING.md ask
+  // as contributing/authoring.md asks
   "MD013": false,
   // MD029/ol-prefix: off, a list interrupted by a code block or a shortcode
   // keeps its visible numbering, such as 3. and 4. after the block

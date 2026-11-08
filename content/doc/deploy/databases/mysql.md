@@ -70,8 +70,6 @@ This action will add new environment variables to reach the add-on without any p
 
 Encryption at rest is available on MySQL. You can have more information on the [dedicated page](/doc/security/encryption-at-rest).
 
-## ProxySQL
-
 {{% include "shared/proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)

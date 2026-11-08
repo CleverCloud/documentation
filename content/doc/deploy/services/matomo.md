@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Matomo
 title: Matomo
-description: Deploy Matomo web analytics platform add-on service on Clever Cloud for privacy-focused website and application analytics with GDPR compliance
+description: Deploy Matomo on Clever Cloud, an open source web analytics platform that keeps your data under your control, with sign-in through your Clever Cloud account
 keywords:
 - matomo
 - web analytics
@@ -19,113 +19,106 @@ aliases:
 - /doc/services/matomo
 ---
 
-Matomo is an open source web analytics solution which gives you full ownership of your data. It's a [GDPR compliant](https://matomo.org/gdpr-analytics) alternative to Google Analytics. You can learn more about Matomo on [their website](https://matomo.org). Matomo on Clever Cloud allows your marketing team to setup a tailored web analytics solution, that adapts to your needs and workloads.
+[Matomo](https://matomo.org) is an open source web analytics platform, and an alternative to Google Analytics that gives you full ownership of your data. Its privacy controls, which anonymize or delete data, help you to [comply with the GDPR](https://matomo.org/gdpr-analytics).
 
-> [!NOTE] Matomo is in beta
-> Your insights and suggestions shape the future of this platform: share your feedback on [the community forum](https://github.com/CleverCloud/Community/discussions/categories/matomo).
+Matomo on Clever Cloud uses the services of the platform, and Clever Cloud manages its version. You sign in with your Clever Cloud account.
 
-## How it works?
-
-When you subscribe the Matomo add-on, we automatically setup a PHP instance based on the latest Matomo release. It comes with the required MySQL database and an optional Redis cache.
-
-We have chosen to let you see and manage these companion add-ons in the Console so that you could adjust them to your needs. You can change their settings and use the Clever Cloud ability to migrate from an S flavored database or cache to an L or XL if required. You can also activate auto-scalability (horizontal and/or vertical scaling).
-
-By default, Matomo on Clever Cloud comes with small sized resources:
-
-- PHP Nano
-- MySQL XXS BigStorage
-- Redis S
-
-We've already integrated the Clever Cloud SSO, so you can login directly into your Matomo instance from the Console, start to integrate your website, create different users.
-
-## Create Matomo add-on
+## Create a Matomo add-on
 
 ### From the Console
 
-1. Create a new add-on by clicking **Create** in the sidebar, then **Add-on**.
-2. Select the Matomo add-on.
-3. You can skip linking the add-on to an application, it won't be needed.
-4. Enter the name of your Matomo add-on and select the zone where you wish to deploy it.
-5. It's done!
+1. [Create a new add-on](https://console.clever-cloud.com/users/me/addons/new) by clicking **Create** in the sidebar, then **Add-on**
+2. Select the Matomo add-on
+3. Skip the link to an application, Matomo doesn't need it
+4. Enter a name for the add-on, and select its region
 
-### Using the CLI
+### With Clever Tools
 
-Make sure you have `clever-tools` installed locally. Please refer to the [setup guide](/doc/tools/cli/install/) if needed. In your terminal, `clever addon create addon-matomo <name> --region <region> --org <org>` (`--org` and `--region` are optional). You'll get URLs to manage your Matomo instance:
+Install [Clever Tools](/doc/tools/cli/install/), then create the add-on. Add `--org` to create it in an organisation, and `--region` to choose its region, `par` by default:
 
 ```bash
-$ clever addon create addon-matomo myMatomo
+clever addon create addon-matomo myMatomo
+```
+
+The command shows the URL of Matomo:
+
+```text
 Add-on created successfully!
 ID: addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
 Real ID: matomo_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Name: myMatomo
 
 Your Matomo is starting:
  - Access it: https://xxxxxxxxxxxxxxxxxxxx-matomo.services.clever-cloud.com
- - Manage it: https://console.clever-cloud.com/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ - Manage it: https://console.clever-cloud.com/goto/addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+Learn more about Matomo on Clever Cloud: https://www.clever.cloud/developers/doc/addons/matomo/
 ```
 
-By default we use Clever Cloud's domain names for the web interface, but you can set custom domains at creation through the `access-domain` option:
+To serve Matomo on your own domain instead of a `services.clever-cloud.com` one, set it at creation with the `access-domain` option:
 
 ```bash
-clever addon create addon-matomo myMatomoName --option access-domain=matomo.example.com
+clever addon create addon-matomo myMatomo --option access-domain=matomo.example.com
 ```
 
-These domains' DNS configuration needs to point to Clever Cloud's servers. For example, if the Matomo add-on is deployed in the `par` (Paris) region, you need to create CNAME records pointing to `domain.par.clever-cloud.com.`.
+Point it to Clever Cloud: in the `par` region, use a CNAME record to `domain.par.clever-cloud.com.`, as [Domain names](/doc/manage/domain-names/) details per region.
 
-Refer to the [Clever Tools documentation](/doc/tools/cli/addons/) for more details on add-on management.
+## Underlying resources
 
-## Accessing the Matomo interface
+A Matomo add-on runs on resources of your organisation, which you see and manage [in the Console](https://console.clever-cloud.com/):
 
-Once you created your add-on, open the management URL or use the `Access Matomo` link in the Matomo dashboard from the Console. To authenticate, you'll only need to use your Clever Cloud account.
+- A [PHP](/doc/deploy/applications/php/) application that runs Matomo, of size `XS` with a single instance at creation
+- A [MySQL](/doc/deploy/databases/mysql/) add-on of size `XXS Big Space`, which stores the visits and the reports
+- A [Redis](/doc/deploy/databases/redis/) add-on of size `S`, which holds the cache and the queue of tracking requests
+
+You can change these sizes afterwards, as for any application or add-on. A website with a lot of traffic, or long reports, may need a larger PHP application, or a larger MySQL add-on to keep its history.
+
+## Access Matomo
+
+Open Matomo from the dashboard of the add-on in the Console, or with its URL. Sign in with the **Clever Cloud** button: Matomo uses your Clever Cloud account, so you don't manage another password.
 
 {{% include "shared/single-sign-on" %}}
 
-## Configure your Matomo instance
+Then, add your websites and their tracking code, and invite the members of your team. If you're new to Matomo, start with [its guides](https://matomo.org/guides/).
 
-Once you accessed your Matomo interface, we can start configuring it. A custom Clever Cloud configuration is automatically installed on your instance during the provisioning.
+With Clever Tools, the operators commands show the information of the add-on, open it, and restart or rebuild its application:
 
-This configuration helps you to benefit from optimizations by using a Redis cache by default.
+```bash
+clever features enable operators
+clever matomo get myMatomo
 
-### Using your Matomo
+clever matomo open webui myMatomo
+clever matomo open logs myMatomo
 
-If you're new with Matomo, you would probably want to read the Matomo's guides on [the official documentation](https://matomo.org/guides/).
+clever matomo restart myMatomo
+clever matomo rebuild myMatomo
+```
 
-## Matomo plugins
+## Configuration by Clever Cloud
 
-Your Matomo instance comes with a list of pre-installed plugins. As a managed instance, our Matomo add-on won't let you bypass the installation process. Installed plugins already allows a quite advanced use of Matomo, but if you wish to install a specific plugin that's not in your instance, feel free to contact our support team.
+Clever Cloud configures Matomo when it starts, so it works without any setup:
 
-### When activating a deactivated plugin
+- Sign-in with your Clever Cloud account, through the `LoginOIDC` plugin
+- A Redis cache, and the `QueuedTracking` plugin, which queues the tracking requests in Redis and processes them in batches of 25
+- Report archiving every hour by a scheduled task, instead of when someone opens a report
+- Geolocation of visitors with the free DB-IP City Lite database, downloaded at each start
+- Migrations of the database schema at each start, which follow the version of Matomo
 
-Keep in mind that some plugins might consume more resources than you have by default on your PHP instance, since some PHP processes can take a long time, depending on what you are doing.
+To change the batch size, edit **Number of requests that are processed in one batch** in **Administration** > **System** > **General settings**.
 
-If you activate a deactivated by default plugin (like [GoogleAnalyticsImporter](https://matomo.org/guide/installation-maintenance/import-google-analytics/)):
+## Plugins
 
-- Scale your PHP app
-- Disable auto-scalability for the PHP app
-- Scale your Matomo MySQL add-on
+Matomo on Clever Cloud comes with the core plugins of Matomo, and the plugin files are those of the add-on. A plugin that you install, enable, or disable in Matomo doesn't persist: each new instance starts with the plugins of the add-on, after a restart, a deployment, or a change of scaling. To use a plugin of [the Matomo marketplace](https://plugins.matomo.org/) for good, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).
 
-If you activate the plugin while enabling auto-scalability, your PHP instance will restart with default settings when scaling, therefore disabling the plugin and killing the process.
+> [!WARNING] Plugin changes don't survive a restart
+> Install or enable your plugins again after each restart, deployment, or change of scaling of the PHP application.
 
-Plugins can be browsed from [Matomo own plugin repository](https://plugins.matomo.org/).
+Some plugins need more resources, such as [GoogleAnalyticsImporter](https://matomo.org/guide/installation-maintenance/import-google-analytics/), which imports your Google Analytics history into Matomo. Before you run them, increase the size of the PHP application and of the MySQL add-on. If you enabled autoscaling on the PHP application, disable it: a new instance would stop the import, and disable the plugin.
 
-> [!WARNING] Reboots remove plugins
-> Your instance removes its plugin files every time it reboots: **reinstall all your plugins after every reboot.**
+## Delete old data
 
-### QueudTracking
+Matomo keeps all its data by default, so the MySQL add-on grows with your traffic until it's full. To delete old data on a regular basis, open **Administration** > **Privacy** > **Anonymize data**, then enable **Regularly delete old raw data**, **Delete old aggregated report data**, or both, and set the age of the data to delete. Then, choose how often Matomo deletes it in **Schedule old data deletion**.
 
-By default, the `QueudTracking` plugin is enabled on Matomo instances, with a queue size of `25`. This means that the plugin stores 25 visits in a queue before they appear in Matomo. This helps to prevent the server from receiving too many request at once. You can change this setting by modifying the **Number of requests that are processed in one batch** parameter in **Administration->System->General settings**.
+## Updates
 
-## Delete old archive
-
-By default, Matomo isn't configured to delete the data that it receive. This can cause the databases to accumulate a lot of old data that may not be useful anymore and completely fill the databases. To resolve this issue, you can setup and automatic deletion of old achives in Matomo settings.
-
-To do this, you must go to the **Anonymize data** menu in **Administration->Privacy->Anoymize data**. You have two option you can activate to delete old achives, `Regularly delete old raw data` and `Delete old aggregated report data`. When you activate one of those options, you can select how old the date needs to be for it to get deleted. When one of the two options is activated, you can schedule the frequency (every day, month, year) at which you wish to delete the data in **Schedule old data deletion**.
-
-## Security and updates
-
-The Matomo add-on is a fully managed application, you don't have to select a particular version. Clever Cloud updates it for both features and security, and manages it continuously to apply regular version upgrades. After being updated, you Matomo add-on could need to be restarted.
-
-## Plans
-
-Matomo on Clever Cloud is the easiest way to set it up, but you can go further and adjust the flavor of your instance, database or cache independently. We provide [different plans for PHP, MySQL and Redis](https://www.clever.cloud/pricing/).
+Clever Cloud manages the version of Matomo, and Matomo applies the migrations of its database schema when it starts. The dashboard of the add-on in the Console shows its version, and `clever matomo get myMatomo` shows it with the version of PHP.

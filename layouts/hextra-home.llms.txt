@@ -25,7 +25,7 @@
 {{- /* Swagger UI pages have no Markdown body: point to the OpenAPI specification instead */}}
 - [{{ .Title }}]({{ .Params.swagger.url }}){{ with .Description }}: {{ . }}{{ end }}
 {{- else }}
-- [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}
@@ -38,14 +38,14 @@
 {{- if .Params.llmsTxtOptional }}
 {{- $pages := sort (where .RegularPagesRecursive "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
-- [{{ .Title }}](https://www.clever.cloud{{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- range .Sections }}
 {{- if .Params.llmsTxtOptional }}
 {{- $pages := sort (where .Pages "Params.sidebar.separator" "!=" true) "Title" "asc" }}
 {{- range $pages }}
-- [{{ .Title }}]({{ .RelPermalink }}index.html.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}

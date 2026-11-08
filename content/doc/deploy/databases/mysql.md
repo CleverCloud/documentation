@@ -57,12 +57,12 @@ If a primary server isn't available, a replica can be promoted as a standalone s
 
 ## Direct access
 
-> [!WARNING] Direct access after a migration
-> Direct access is a trade-off. If you migrate your add-on, generate its hostname and port again, then update the environment of your application. A proxy access doesn't change after a migration.
+A proxy serves all dedicated MySQL databases. To reduce the latency, you can bypass this proxy with a direct hostname and port for the add-on: click "Generate direct hostname and port" on the add-on dashboard.
 
-All our dedicated MySQL databases are served via a proxy. To reduce the latency you can bypass this proxy by generating direct hostname and port for the add-on. You can do it by clicking the "Generate direct hostname and port" on the add-on dashboard.
+This action adds new environment variables to reach the add-on without any proxy.
 
-This action will add new environment variables to reach the add-on without any proxy.
+> [!NOTE] Direct access after a migration
+> A [migration](/doc/develop/database-migration/) moves the database to a new server, with a new direct hostname and port. Clever Cloud updates the variables of the add-on, and redeploys its running linked applications. Update the direct hostname and port wherever you copied them.
 
 ## Encryption at rest
 

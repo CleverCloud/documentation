@@ -71,6 +71,7 @@ Infinispan
 IPs
 IPsec
 JMeter
+jq
 JSDoc
 Keycloak
 keyspace

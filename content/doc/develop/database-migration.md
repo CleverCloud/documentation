@@ -55,6 +55,8 @@ How each add-on copies its data:
 | Redis         | Replication to the new server, then a switch; always to the version Clever Cloud provides  |
 | Elasticsearch | Snapshot and restore of the indexes; a migration can't change the major version            |
 
+Before you migrate an Elasticsearch add-on, contact [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice): they check the migration with you and help you to plan it, especially for a cluster of several nodes or a change of its region.
+
 ### Users and extensions
 
 When the target plan is dedicated, the migration creates the read-only users of PostgreSQL, MySQL, and MongoDB again on the new server. For PostgreSQL, it also brings the users managed from the Console, with their privileges.

@@ -29,11 +29,11 @@ The documentation is also available in the [llms.txt format](https://www.clever.
   - `doc/`: technical documentation
   - `guides/`: deployment guides, one folder per section, such as `frameworks/` or `self-hosted/`
   - `postmortem/`: incident reports
+  - `shared/`: blocks that several pages include, never published on their own
 - [`contributing/`](./contributing/): the style guide and the authoring guide, which [CONTRIBUTING.md](./CONTRIBUTING.md) introduces
 - [`data/`](./data/): structured data, such as runtime versions, Kubernetes versions, and tooltips
 - [`layouts/`](./layouts/): Hugo templates and shortcodes, including the Markdown and `llms.txt` outputs
 - [`scripts/`](./scripts/): maintenance scripts, such as the CLI reference generator and the offline internal link checker
-- [`shared/`](./shared/): Markdown blocks that several pages include
 - [`static/`](./static/): images, fonts, and the favicon
 
 ## Local development

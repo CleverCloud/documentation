@@ -14,7 +14,7 @@ hugo new content doc/develop/my-feature.md
 hugo new content --kind applications doc/deploy/applications/my-runtime.md
 ```
 
-Store a guide in the section that matches its subject, and add it to the section index. Add the card of a guide in `guides/static-sites/` to [`shared/static-guides.md`](../shared/static-guides.md), which this index and the Static runtime pages include.
+Store a guide in the section that matches its subject, and add it to the section index. Add the card of a guide in `guides/static-sites/` to [`content/shared/static-guides.md`](../content/shared/static-guides.md), which this index and the Static runtime pages include.
 
 Archetypes set `draft: true`, so regular builds exclude unfinished pages. Preview drafts locally with `hugo server --buildDrafts`. When the page is ready to publish, remove the `draft` field instead of setting it to `false`.
 
@@ -50,7 +50,7 @@ When a page moves to another URL, or when you merge its content into another pag
 - Update internal links to target the new URL directly instead of relying on the redirect
 - Check each redirect in the build output before committing
 
-Updating the links matters most in the `shared/` blocks, which many pages include.
+Updating the links matters most in the shared blocks of `content/shared/`, which many pages include.
 
 ## Use shortcodes and shared content
 
@@ -71,7 +71,7 @@ By default, tab blocks with the same names, in the same order, share their selec
 
 Hugo adds the `/developers` base path to Markdown links and images. A card's `link` and a figure's `src` keep their local paths as written: include the base path, such as `/developers/doc/deploy/applications/` in a card link.
 
-The project adds its own shortcodes in [`layouts/shortcodes/`](../layouts/shortcodes/), such as `content` and `content-raw` for shared content. The [style guide](./style-guide.md#callouts) explains how to choose and write callouts.
+The project adds its own shortcodes in [`layouts/shortcodes/`](../layouts/shortcodes/), such as `runtimes_versions` for the tables of versions. The [style guide](./style-guide.md#callouts) explains how to choose and write callouts.
 
 ### Diagrams
 
@@ -113,13 +113,13 @@ The Markdown output of a page drops its icons: don't let an icon carry informati
 
 ### Shared content
 
-When several pages need the same content, write it once in [`shared/`](../shared/), and include it in each of them:
+When several pages need the same content, write it once in a page of [`content/shared/`](../content/shared/). Include it in each of them with the `include` shortcode of the theme, here for `content/shared/env-injection.md`:
 
 ```markdown
-{{% content "your-partial" %}}
+{{% include "shared/env-injection" %}}
 ```
 
-Use `{{% content-raw "your-partial" %}}` when the shared file contains shortcode markup. Don't add headings to shared files: they don't appear in the table of contents of the page.
+Hugo never publishes this section: its pages only serve the pages that include them. A block that starts with a shortcode needs a front matter, even an empty one: otherwise, Hugo reads its `{{` as a JSON front matter. The headings of a shared block appear in the table of contents of these pages, and `hugo server` reloads them when the block changes.
 
 ### Images
 

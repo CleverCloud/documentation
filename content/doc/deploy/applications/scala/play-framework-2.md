@@ -78,19 +78,7 @@ To expose an environment variable through Play configuration, add `my.option=${?
 ### sbt-plugin unresolved dependency error
 
 If your project fails with the error `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found` this is because some versions of Play2 try to retrieve a nonexistent version of "sbt-plugin" which is required by the framework.
-You have two options to fix this problem:
-
-- You can set the "play.version" environment variable in the `/clevercloud/sbt.json` file. For example, for Play 2.0.4:
-
-``` javascript
-{
-  "deploy": {
-    "goal": "-Dplay.version=2.0.4"
-  }
-}
-```
-
-- You can modify `plugins.sbt` in the project folder of your app like the following:
+To fix it, modify `plugins.sbt` in the project folder of your app like the following:
 
 ``` scala
 // Comment to get more information during initialization

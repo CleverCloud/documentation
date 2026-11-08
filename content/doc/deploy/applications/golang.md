@@ -130,9 +130,6 @@ build:
 
 - [A more complex project using a Go Workspace and a Makefile](https://github.com/CleverCloud/go-workspaces)
 
-> [!WARNING]
-> Using `clevercloud/go.json` to define Makefile and binary paths is a deprecated method and should no longer be used.
-
 ### Custom run command
 
 By default, the built binary is executed directly. Set `CC_RUN_COMMAND` to override this behavior and run a custom command instead of the binary. When defined, the binary is still built but `CC_RUN_COMMAND` is executed at start.

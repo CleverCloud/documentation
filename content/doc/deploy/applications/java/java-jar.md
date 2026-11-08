@@ -32,81 +32,28 @@ Note: Clever Cloud passes the port of your application as the `http.port` system
 
 ## Configure your Java application
 
-You *must* either have the `CC_JAR_PATH` environment variable containing the
-path to your jar or provide a `clevercloud/jar.json` file (jar.json file in
-clevercloud folder which is at the root of your repository) that
-contains at least the following:
+Set the path of your JAR, from the root of your repository and without a leading `/`, in `CC_JAR_PATH`:
 
-```json
-{
-  "deploy": {
-    "jarName": "path/to/jar"
-  }
-}
+```bash
+clever env set CC_JAR_PATH target/myproject-1.0.jar
 ```
-
-That is the least you need to do. Note that `path/to/jar` *must not* start with a `/` and that the path should be relative to your repository's root.
 
 ### Build options
 
-You do not need to build and commit a JAR. Instead you can push your
-sources and build them with either gradle, ant or maven. Here is the
-configuration you need to provide in the `clevercloud/jar.json` file:
+You don't need to commit a JAR. Push your sources: Clever Cloud builds them with Gradle for a `build.gradle` file, otherwise with Maven for a `pom.xml`. For another build command, set `CC_GRADLE_BUILD_GOAL` or `CC_MAVEN_BUILD_GOAL`, and `CC_JAR_PATH` to the JAR it produces.
 
-```json
+To select Ant, or Maven when your project also has a `build.gradle` file, set the build system in a `clevercloud/jar.json` file: `ant` or `maven` in `build.type`, and its target, such as `jar`, in `build.goal`:
+
+```json {filename="clevercloud/jar.json"}
 {
   "build": {
-    "type": "maven"|"gradle"|"ant",
-    "goal": "package"
+    "type": "ant",
+    "goal": "jar"
   }
 }
 ```
 
-The `goal` field is what will be asked to the build command, like `mvn package` for a `maven` build with the `package` goal.
-
-An configuration example with a maven build that generates a JAR with
-embedded dependencies is:
-
-```json
-{
-  "build": {
-    "type": "maven",
-    "goal": "package"
-  },
-  "deploy": {
-    "jarName": "target/myproject-1.0-jar-with-dependencies.jar"
-  }
-}
-```
-
-### An example of full configuration
-
-You can pass extra arguments to the `java` command by using the environment
-variable `CC_EXTRA_JAVA_ARGS` and to your JAR by using `CC_JAR_ARGS`
-
-The full configuration can look like the following:
-
-```json
-{
-  "build": {
-    "type": "<string>",
-    "goal": "<string>"
-  },
-  "deploy": {
-    "goal": "<string>",
-    "jarName": "<string>"
-  }
-}
-```
-
-You can use the following properties:
-
-| Usage    | Field               | Description                                                               |
-| -------- | ------------------- | ------------------------------------------------------------------------- |
-| Optional | **build → type**    | can be `maven`, `gradle` or `ant`                                         |
-| Optional | **build → goal**    | is the target you want to use to build your project                       |
-| Optional | **deploy → goal**   | the goal/target and options you want to execute to deploy/run you project |
-| Required | **build → jarName** | jar file name of your application                                         |
+Pass extra arguments to the `java` command with `CC_EXTRA_JAVA_ARGS`, and to your JAR with `CC_JAR_ARGS`.
 
  {{% content "new-relic" %}}
 

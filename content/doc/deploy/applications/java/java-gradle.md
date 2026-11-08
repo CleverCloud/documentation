@@ -35,45 +35,11 @@ Accepted values are the following:
 
 ## Configure your Java application
 
-Unless you set `CC_RUN_COMMAND`, you *must* tell Clever Cloud how to run your application, either with the `CC_GRADLE_DEPLOY_GOAL` environment variable [described below](#configure-goals-with-environment-variables), or with a `clevercloud/gradle.json` file (gradle.json file in clevercloud folder which is at the root of your repository) that contains at least the following:
-
-```json
-{
-  "deploy": {
-    "goal": "grails:run"
-  }
-}
-```
-
-That is the only option you really need to supply.
-
-### Optional configuration
-
-The full configuration can look like the following:
-
-```json
-{
-  "build": {
-    "type": "<string>",
-    "goal": "<string>"
-  },
-  "deploy": {
-    "goal": "<string>"
-  }
-}
-```
-
-You can use the following properties:
-
-| Usage    | Field             | Description                                                                                                                          |
-| -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Optional | **build → type**  | can be maven, gradle or ant                                                                                                          |
-| Optional | **build → goal**  | is the target you want to use to build your project                                                                                  |
-| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project, unless `CC_GRADLE_DEPLOY_GOAL` or `CC_RUN_COMMAND` is set |
+Unless you set `CC_RUN_COMMAND`, you *must* tell Clever Cloud how to run your application, with the `CC_GRADLE_DEPLOY_GOAL` environment variable [described below](#configure-goals-with-environment-variables).
 
 ### Configure goals with environment variables
 
-You can set the goals with environment variables instead of the `clevercloud/gradle.json` file. They take precedence over its fields:
+Set the goals with these environment variables:
 
 - `CC_GRADLE_BUILD_GOAL`: the task that builds your project, `assemble` by default
 - `CC_GRADLE_DEPLOY_GOAL`: the task and options that run your project, such as `bootRun`
@@ -84,6 +50,8 @@ CC_GRADLE_DEPLOY_GOAL="bootRun"
 ```
 
 The former `GRADLE_BUILD_GOAL` and `GRADLE_DEPLOY_GOAL` names remain supported as aliases.
+
+To build with Ant, a `clevercloud/gradle.json` file is the only way: set `ant` in `build.type`, and the target in `build.goal`.
 
  {{% content "new-relic" %}}
 
@@ -117,9 +85,6 @@ Just create and commit the `gradlew` file and the wrapper `jar` and `properties`
 
 {{< filetree/container >}}
   {{< filetree/folder name="." >}}
-    {{< filetree/folder name="clevercloud" >}}
-      {{< filetree/file name="gradle.json" >}}
-    {{< /filetree/folder >}}
     {{< filetree/file name="gradlew" >}}
     {{< filetree/folder name="gradle" >}}
       {{< filetree/folder name="wrapper" >}}

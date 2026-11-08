@@ -59,7 +59,7 @@ For more information, please have a look at the [sbt-native-packager documentati
 
 #### sbt custom goal
 
-By default, the deployment system executes `sbt stage` and runs a binary from `target/universal/stage/bin`. When this folder holds several scripts, the choice isn't guaranteed: set `CC_SBT_TARGET_BIN` to the one you want to run. To build with another goal, set the `CC_SBT_BUILD_GOAL` [environment variable](/doc/manage/environment-variables/), for example `CC_SBT_BUILD_GOAL="clean stage"`. It takes precedence over the `build.goal` field of a `clevercloud/sbt.json` file.
+By default, the deployment system executes `sbt stage` and runs a binary from `target/universal/stage/bin`. When this folder holds several scripts, the choice isn't guaranteed: set `CC_SBT_TARGET_BIN` to the one you want to run. To build with another goal, set the `CC_SBT_BUILD_GOAL` [environment variable](/doc/manage/environment-variables/), for example `CC_SBT_BUILD_GOAL="clean stage"`.
 
 To pass arguments to the binary when it starts, set `CC_SBT_DEPLOY_ARGS`, for example `CC_SBT_DEPLOY_ARGS="-Dconfig.resource=clevercloud.conf"`. The former `SBT_DEPLOY_GOAL` name remains supported as an alias of `CC_SBT_DEPLOY_ARGS`, but it no longer adds goals to the build command: if you used it to build a specific module, move that goal to `CC_SBT_BUILD_GOAL`.
 

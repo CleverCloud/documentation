@@ -49,59 +49,13 @@ Your application must listen on the port of the `http.port` system property.
 
 ### Mandatory configuration
 
-#### Option 1: JSON file in repository
-
-The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of your repository) file must contain the *goal* field to indicate how to start your application:
-
-```json
-  {
-    "deploy": {
-      "goal": "yourgoal"
-    }
-  }
-```
-
-An example of what can be found as a goal value is:
-
-```txt
-"-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
-```
-
-#### Option 2: Environment variable
-
-If you don't want to add a file to your repository, or if you're using a monorepo with multiple applications in directories configured with the `APP_FOLDER` environment variable, you'll probably prefer to use an environment variable for deployment configuration.
-
-Define the goal in the `CC_MAVEN_DEPLOY_GOAL` environment variable, for example `CC_MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with `spring-boot-maven-plugin`. The former `MAVEN_DEPLOY_GOAL` name remains supported as an alias.
+Unless you set `CC_RUN_COMMAND`, define the goal that starts your application in `CC_MAVEN_DEPLOY_GOAL`, for example `CC_MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with `spring-boot-maven-plugin`. The former `MAVEN_DEPLOY_GOAL` name remains supported as an alias.
 
 ### Build goal
 
-By default, Clever Cloud builds your application with `mvn package`. To use another goal, set `CC_MAVEN_BUILD_GOAL`, for example `CC_MAVEN_BUILD_GOAL="clean install -DskipTests"`. It takes precedence over the `build.goal` field of the `clevercloud/maven.json` file.
+By default, Clever Cloud builds your application with `mvn package`. To use another goal, set `CC_MAVEN_BUILD_GOAL`, for example `CC_MAVEN_BUILD_GOAL="clean install -DskipTests"`.
 
-### Optional configuration
-
-The full configuration can look like the following:
-
-```json
-{
-  "build": {
-    "type": "<string>",
-    "goal": "<string>"
-  },
-  "deploy": {
-    "goal": "<string>"
-  }
-}
-```
-
-You can use the following properties:
-
-| Usage    | Field             | Description                                                                                                                         |
-| -------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Optional | **build → type**  | can be `maven`, `gradle` or `ant`                                                                                                   |
-| Optional | **build → goal**  | is the target you want to use to build your project                                                                                 |
-| Required | **deploy → goal** | the goal/target and options you want to execute to deploy/run you project, unless `CC_MAVEN_DEPLOY_GOAL` or `CC_RUN_COMMAND` is set |
-
-When `build.type` is `maven`, `gradle` or `sbt`, Clever Cloud uses the same build setup as for an automatically detected project, including your Maven `settings.xml`. Any other value runs a generic build.
+To build with Ant, a `clevercloud/maven.json` file is the only way: set `ant` in `build.type`, and the target in `build.goal`.
 
 ### Custom Maven settings
 
@@ -109,15 +63,7 @@ To use your own Maven configuration, such as credentials for a private repositor
 
 ### Specifying a profile
 
-If you need to specify a maven profile (either for the `build` or the `deploy` goal, you can add it in the `goal` section:
-
-```txt
-"-Pmyprofile package"
-```
-
-Or use the `CC_MAVEN_PROFILES` environment variable.
-
-Eg. `CC_MAVEN_PROFILES="prod"`.
+To activate a Maven profile, set it in `CC_MAVEN_PROFILES`, such as `CC_MAVEN_PROFILES="prod"`, or add `-P` to a goal, such as `CC_MAVEN_BUILD_GOAL="-Pprod package"` for the build.
 
  {{% content "new-relic" %}}
 

@@ -60,6 +60,7 @@ Follow these guidelines while writing new content. The goal is to help you write
 - Over-politeness with the use of *please*: go straight to the point
 - Prices in documentation pages: they change, and belong in changelog entries. The Kubernetes page is the only exception. Writing that a feature is free or not billed is fine
 - Version history in documentation pages, such as *available since version 2.3*: describe the current state, and announce changes in a changelog entry
+- The deprecated `clevercloud/*.json` configuration files and fields, when environment variables or the detection of the project replace them: document them only when they have no alternative
 
 #### 💡 Shortcodes and callouts
 

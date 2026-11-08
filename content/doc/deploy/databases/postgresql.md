@@ -65,10 +65,8 @@ A proxy serves all dedicated PostgreSQL databases. In some cases, this can add s
 
 Generating direct access adds new variables to the add-on's environment, allowing connections without going through the proxy.
 
-> [!WARNING] Direct access after a migration
-> Direct access doesn't persist after a database migration. Generate the direct hostname and port again after a migration, so that the applications linked through direct access can connect to the database.
->
-> Proxy access doesn't have this limitation.
+> [!NOTE] Direct access after a migration
+> A [migration](/doc/develop/database-migration/) moves the database to a new server, with a new direct hostname and port. Clever Cloud updates the variables of the add-on, and redeploys its running linked applications. Update the direct hostname and port wherever you copied them.
 
 ## Encryption at rest
 

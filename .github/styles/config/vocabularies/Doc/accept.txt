@@ -2,6 +2,7 @@ Actix
 allowlist
 allowlists
 APIs
+Asciinema
 Astro
 AstroWind
 autoscaler
@@ -62,6 +63,7 @@ hardcoded
 hardcoding
 Headscale
 Heptapod
+Heroicons
 Hextra
 Hono
 hostname

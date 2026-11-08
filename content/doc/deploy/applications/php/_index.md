@@ -240,8 +240,6 @@ You can use [Blackfire](https://www.blackfire.io/) to monitor your application o
 
 Please refer to our [Blackfire documentation](/doc/observability/blackfire) to configure it for your application.
 
-## ProxySQL
-
 {{% include "shared/proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)

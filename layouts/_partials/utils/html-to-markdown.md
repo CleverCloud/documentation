@@ -7,6 +7,7 @@ Converts rendered HTML to Markdown for the Markdown output format.
 Before the conversion:
 - SVG elements are dropped: Markdown has no equivalent for them, and the icons
   the theme renders inline would otherwise become stray characters.
+- Abbreviations get their title in parentheses, which only shows on hover.
 - The href and src attributes of HTML tags are resolved against the HTML page,
   fragments included. The Markdown file is served from another URL, is often
   copied elsewhere, and has no heading anchors, so relative URLs would no
@@ -17,6 +18,11 @@ After the conversion, blocks prepared by utils/markdown-block.md are restored.
 Requires Hugo v0.151.0 or later for transform.HTMLToMarkdown.
 */ -}}
 {{- $html := .html | replaceRE `(?s)<svg\b.*?</svg>` "" -}}
+{{- /* Abbreviations, such as those of the term shortcode, show their title on
+hover only: write it in parentheses. The shortcode surrounds the element with
+line breaks, which would leave a space before the punctuation that follows. */ -}}
+{{- $html = $html | replaceRE `\s*<abbr\s+title="([^"]*)"\s*>([^<]*)</abbr>\s*([,.;:!?)])` " $2 ($1)$3" -}}
+{{- $html = $html | replaceRE `\s*<abbr\s+title="([^"]*)"\s*>([^<]*)</abbr>` " $2 ($1)" -}}
 
 {{- $base := urls.Parse .page.Permalink -}}
 {{- with .page.OutputFormats.Get "html" -}}

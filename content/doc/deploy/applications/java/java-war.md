@@ -23,11 +23,11 @@ aliases:
 
 Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 
-In {{< tooltip title="JEE">}}JEE{{< /tooltip >}}, application modules are packaged as EAR and WAR based on their purpose.
+In {{< term "JEE" >}}, application modules are packaged as EAR and WAR based on their purpose.
 
-- {{< tooltip title="WAR" >}}WAR{{< /tooltip >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
+- {{< term "WAR" >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
 
-- {{< tooltip title="EAR" >}}EAR{{< /tooltip >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
+- {{< term "EAR" >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
 
 Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/manage/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
@@ -39,9 +39,8 @@ Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on 
 
 ## Configure your Java application
 
-{{< callout type="warning" >}}
-You **must** provide a `clevercloud/war.json` file in your application repository.
-{{< /callout >}}
+> [!IMPORTANT] clevercloud/war.json is mandatory
+> You **must** provide a `clevercloud/war.json` file in your application repository.
 
 ### Full configuration example
 

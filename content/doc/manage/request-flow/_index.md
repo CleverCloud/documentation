@@ -86,7 +86,7 @@ CC_REQUEST_FLOW="disable"
 
 Setting `CC_REQUEST_FLOW=block` replaces the public endpoint (port `8080`) with a service that responds `200 OK` to every request. Your application still runs normally, but no external HTTP traffic reaches it through the default route. This is useful for applications that should only communicate through [Network Groups](/doc/network/network-groups/) or internal services, while keeping the public health check endpoint alive.
 
-When `block` is set, all other Request Flow services are ignored.
+When `block` is set, all other Request Flow services are ignored. To expose such an application only through an API gateway, with API keys and quotas, follow the [Protect a private API with Otoroshi](/guides/security/otoroshi-private-api/) guide.
 
 ```bash
 CC_REQUEST_FLOW="block"

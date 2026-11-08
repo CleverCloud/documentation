@@ -164,7 +164,7 @@ The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 > [!WARNING]
 > There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://github.com/celery/celery/issues/4184](https://github.com/celery/celery/issues/4184).
 
-{{% content "new-relic" %}}
+{{% include "shared/new-relic" %}}
 
 ## Go Further
 

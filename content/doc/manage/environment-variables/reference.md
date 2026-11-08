@@ -125,7 +125,7 @@ Use these to define [commands to run](/doc/manage/build-hooks) between various s
 | [`CC_VARNISH_STORAGE_SIZE`](/doc/manage/request-flow/varnish "Cache")                                                               | Configure the size of the Varnish cache.                                                                                                                                                                              | 1G                         |
 | [`CC_WORKER_COMMAND`](/doc/manage/workers "Workers")                                                                                | Command to run in background as a worker process. You can run multiple workers.                                                                                                                                       |                            |
 
-{{% content "mise" %}}
+{{% include "shared/mise" %}}
 
 | Name                | Description                                                     | Default value |
 | ------------------- | --------------------------------------------------------------- | ------------- |

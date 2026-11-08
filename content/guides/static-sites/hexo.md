@@ -25,7 +25,7 @@ If you need example source code, initialize a Hexo project with the [Cactus them
 npx hexo init myStaticApp --no-install
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 Import the theme as a submodule:
 
@@ -43,7 +43,7 @@ clever env set CC_PRE_BUILD_HOOK "npm install"
 clever env set CC_BUILD_COMMAND "npm run build"
 ```
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## 🎓 Learn more
 

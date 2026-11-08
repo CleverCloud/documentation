@@ -41,7 +41,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must listen on the port of the `http.port` system property.
 
-{{% content "java-versions" %}}
+{{% include "shared/java-versions" %}}
 
 {{< runtimes_versions java >}}
 
@@ -65,9 +65,9 @@ To use your own Maven configuration, such as credentials for a private repositor
 
 To activate a Maven profile, set it in `CC_MAVEN_PROFILES`, such as `CC_MAVEN_PROFILES="prod"`, or add `-P` to a goal, such as `CC_MAVEN_BUILD_GOAL="-Pprod package"` for the build.
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
-{{% content "java-env-injection" %}}
+{{% include "shared/java-env-injection" %}}
 
 ## Custom run command
 

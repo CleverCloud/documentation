@@ -30,7 +30,7 @@ To follow this guide, clone [Nuxt Boilerplate](https://github.com/renegadevi/nux
 git clone https://github.com/renegadevi/nuxt-boilerplate myStaticApp
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 Clever Tools targets your personal organisation by default. To use another organisation, add `--org ORGANISATION` or `-o ORGANISATION` when you create or link the application.
 
@@ -38,7 +38,7 @@ Clever Tools targets your personal organisation by default. To use another organ
 
 The Static runtime automatically detects `nuxt.config.ts`, runs the Nuxt static generation command and serves the generated files.
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## Deploy a Node.js application
 

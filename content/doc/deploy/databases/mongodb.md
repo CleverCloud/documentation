@@ -42,7 +42,7 @@ DEV plan is no longer available for MongoDB.
 
 Heavy usage of DEV databases may impact the shared cluster they rely upon. It will degrade performance of the other databases. To that extent, DEV plan has a limit of **15 operations/second**. Going above the limit might disconnect your database.
 
-{{% content "db-backup" %}}
+{{% include "shared/db-backup" %}}
 
 ## Database Migration Process
 
@@ -62,7 +62,7 @@ The process consists in three steps:
 
 Encryption at rest is available on MongoDB. You can have more information on the [dedicated page](/doc/security/encryption-at-rest)
 
-{{% content "db-migration" %}}
+{{% include "shared/db-migration" %}}
 
 ## Can I use Mongo Ops Manager on Clever Cloud?
 

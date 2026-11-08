@@ -232,7 +232,7 @@ return [
 
 Then, set `APP_LOG=syslog` as Clever application environment variable.
 
-{{% content "new-relic" %}}
+{{% include "shared/new-relic" %}}
 
 ### Monitor your application with Blackfire
 
@@ -242,7 +242,7 @@ Please refer to our [Blackfire documentation](/doc/observability/blackfire) to c
 
 ## ProxySQL
 
-{{% content "proxysql" %}}
+{{% include "shared/proxysql" %}}
 
 You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)
 

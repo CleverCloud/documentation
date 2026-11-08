@@ -24,7 +24,7 @@ Clever Cloud offers you to run any Java ARchive file. You do not need to change 
 
 Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "java-versions" %}}
+{{% include "shared/java-versions" %}}
 
 {{< runtimes_versions java >}}
 
@@ -55,9 +55,9 @@ To select Ant, or Maven when your project also has a `build.gradle` file, set th
 
 Pass extra arguments to the `java` command with `CC_EXTRA_JAVA_ARGS`, and to your JAR with `CC_JAR_ARGS`.
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
-{{% content "java-env-injection" %}}
+{{% include "shared/java-env-injection" %}}
 
 ## Custom run command
 

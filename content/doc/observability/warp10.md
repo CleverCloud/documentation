@@ -16,7 +16,7 @@ aliases:
 - /doc/metrics/warp10
 ---
 
-{{% content "warp10-concepts" %}}
+{{% include "shared/warp10-concepts" %}}
 
 ## Endpoint
 
@@ -40,4 +40,4 @@ Tokens are based on your application with the notion of producer and owner. Henc
 
 You can find a 5 days available token in the `metric` tab of your application.
 
-{{% content "warp10-content" %}}
+{{% include "shared/warp10-content" %}}

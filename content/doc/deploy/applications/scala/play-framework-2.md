@@ -65,9 +65,9 @@ If you have a single repository with multiple modules, then you can specify whic
 For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add
 `CC_SBT_TARGET_DIR=play` environment variable.
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
-{{% content "env-injection" %}}
+{{% include "shared/env-injection" %}}
 
 ### Access environment variables from application.conf
 

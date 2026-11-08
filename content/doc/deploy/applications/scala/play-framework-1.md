@@ -71,9 +71,9 @@ More information on [playframework.com](https://www.playframework.com).
 
 HTTPS is handled by Clever Cloud ahead of your application, your application retrieves the traffic in plain http. To be able to use `request.secure`, you have to add `XForwardedSupport=all` in `application.conf`.
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
- {{% content "env-injection" %}}
+ {{% include "shared/env-injection" %}}
 
 To access the environment variables from your code, you need to add `my.option=${MY_VARIABLE}` in your `application.conf` file, and then use the configuration item `my.option` in your application. e.g `%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}`
 

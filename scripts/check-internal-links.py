@@ -92,7 +92,7 @@ DEFAULT_SKIP_ANCHORS = ("api/swagger",)
 # The script lives in scripts/, one level below the repository root.
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_ROOT = REPO_ROOT / "public" / "developers"
-DEFAULT_SOURCES = (REPO_ROOT / "content", REPO_ROOT / "shared")
+DEFAULT_SOURCES = (REPO_ROOT / "content",)
 DEFAULT_CONFIGS = (REPO_ROOT / "hugo.yaml",)
 
 SKIPPED_SCHEMES = ("mailto:", "tel:", "javascript:", "data:")

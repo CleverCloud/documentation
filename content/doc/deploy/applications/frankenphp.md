@@ -62,7 +62,7 @@ To install development dependencies, set the `CC_PHP_DEV_DEPENDENCIES` environme
 > [!TIP] Use a local Composer version
 > If you put a `composer.phar` file at the root of your project, it will be used to install dependencies.
 
-{{% content "private-composer-repositories" %}}
+{{% include "shared/private-composer-repositories" %}}
 
 ## Custom PHP configuration
 

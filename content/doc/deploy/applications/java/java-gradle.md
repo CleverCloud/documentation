@@ -25,7 +25,7 @@ Gradle is a project automation tool that builds upon the concepts of Apache Ant 
 
 Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
 
-{{% content "java-versions" %}}
+{{% include "shared/java-versions" %}}
 
 Accepted values are the following:
 
@@ -53,9 +53,9 @@ The former `GRADLE_BUILD_GOAL` and `GRADLE_DEPLOY_GOAL` names remain supported a
 
 To build with Ant, a `clevercloud/gradle.json` file is the only way: set `ant` in `build.type`, and the target in `build.goal`.
 
- {{% content "new-relic" %}}
+ {{% include "shared/new-relic" %}}
 
-{{% content "java-env-injection" %}}
+{{% include "shared/java-env-injection" %}}
 
 ## Custom run command
 

@@ -13,4 +13,4 @@ keywords:
 
 These guides build a website with a static site generator, then serve it with a [static application](/doc/deploy/applications/static/). The [Astro](/guides/frameworks/astro/), [Nuxt](/guides/frameworks/nuxt/), and [SvelteKit](/guides/frameworks/sveltekit/) guides also cover a static output.
 
-{{% content-raw "static-guides" %}}
+{{% include "shared/static-guides" %}}

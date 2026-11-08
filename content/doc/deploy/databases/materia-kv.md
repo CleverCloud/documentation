@@ -82,7 +82,7 @@ redis-cli -h $KV_HOST -p $KV_PORT --tls
 
 You can also deploy Materia KV add-ons with [Terraform provider](https://registry.terraform.io/providers/CleverCloud/clevercloud/latest/docs/resources/materiadb_kv) (OpenTofu compatible).
 
-{{% content "kv-explorer" %}}
+{{% include "shared/kv-explorer" %}}
 
 ## Using the Redis API compatible layer
 

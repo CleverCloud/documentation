@@ -21,4 +21,4 @@ aliases:
 - /doc/healthcheck
 ---
 
-{{% content "url_healthcheck" %}}
+{{% include "shared/url_healthcheck" %}}

@@ -125,7 +125,7 @@ clever deploy # or clever restart if there is no code change
 
 ## Expand your toolbox with Mise package manager
 
-{{% content "mise" %}}
+{{% include "shared/mise" %}}
 
 ## Go Further
 

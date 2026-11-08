@@ -27,7 +27,7 @@ To create an example website, install [Hugo](https://gohugo.io/installation/) an
 hugo new site myStaticApp
 ```
 
-{{% content "static-create" %}}
+{{% include "shared/static-create" %}}
 
 Add the Ananke theme as a Git submodule and create a first page:
 
@@ -43,7 +43,7 @@ The generated page is a draft by default. Open `content/posts/hello.md`, add som
 
 Hugo is one of the static site generators supported by the [Static runtime automatic build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build), so you don't need any additional build configuration.
 
-{{% content "static-deploy" %}}
+{{% include "shared/static-deploy" %}}
 
 ## 🎓 Learn more
 

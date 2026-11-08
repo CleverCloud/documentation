@@ -1,6 +1,6 @@
 # Clever Cloud documentation
 
-The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hextra](https://imfing.github.io/hextra/) theme. It provides responsive navigation, dark mode, full-text search and the following content features:
+The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hextra](https://imfing.github.io/hextra/) theme. It provides responsive navigation, dark mode, and full-text search, and supports the following content features:
 
 - [Diagrams](https://imfing.github.io/hextra/docs/guide/diagrams/)
 - [LaTeX mathematical notation](https://imfing.github.io/hextra/docs/guide/latex/)
@@ -18,6 +18,8 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
 - [Platform changelog](https://www.clever.cloud/developers/changelog/)
 - [Technical documentation](https://www.clever.cloud/developers/doc/)
 
+The documentation is also available in the [llms.txt format](https://www.clever.cloud/developers/llms.txt).
+
 ## Repository structure
 
 - [`archetypes/`](./archetypes/): templates for new guides, documentation pages, and application runtime pages
@@ -25,10 +27,11 @@ The Clever Cloud documentation site uses [Hugo](https://gohugo.io/) and the [Hex
   - `api/`: API reference
   - `changelog/`: platform updates, one folder per year
   - `doc/`: technical documentation
-  - `guides/`: deployment guides, grouped by section: databases, frameworks, observability, self-hosted software, and static site generators
+  - `guides/`: deployment guides, one folder per section, such as `frameworks/` or `self-hosted/`
   - `postmortem/`: incident reports
-- [`data/`](./data/): structured data, such as the supported runtime versions in `runtime_versions.yml`, the Kubernetes versions, and the tooltip definitions in `tooltips.toml`
-- [`layouts/`](./layouts/): Hugo templates and project shortcodes, including the Markdown output of each page and the `llms.txt` home page for large language models (LLMs)
+- [`contributing/`](./contributing/): the style guide and the authoring guide, which [CONTRIBUTING.md](./CONTRIBUTING.md) introduces
+- [`data/`](./data/): structured data, such as runtime versions, Kubernetes versions, and tooltips
+- [`layouts/`](./layouts/): Hugo templates and shortcodes, including the Markdown and `llms.txt` outputs
 - [`scripts/`](./scripts/): maintenance scripts, such as the CLI reference generator and the offline internal link checker
 - [`shared/`](./shared/): Markdown blocks that several pages include
 - [`static/`](./static/): images, fonts, and the favicon
@@ -42,7 +45,7 @@ Install the following tools before building the site:
 - [Git](https://git-scm.com/downloads)
 - [Mise](https://mise.jdx.dev/getting-started.html)
 
-Mise installs the commitlint, Go, Hugo Extended, markdownlint-cli2, Node.js and Vale versions declared in [`mise.toml`](./mise.toml).
+Mise installs the commitlint, Go, Hugo Extended, markdownlint-cli2, Node.js, and Vale versions declared in [`mise.toml`](./mise.toml), which both the local build and the [checks of a change](./CONTRIBUTING.md#check-your-change) use.
 
 ### Preview the site
 
@@ -55,7 +58,7 @@ mise install
 hugo server
 ```
 
-The site is available at <http://localhost:1313> and refreshes when you modify a file. See the [`hugo server` documentation](https://gohugo.io/commands/hugo_server/) for the available options.
+The site is available at <http://localhost:1313> and refreshes when a file changes. See the [`hugo server` documentation](https://gohugo.io/commands/hugo_server/) for its options.
 
 ## Deploy on Clever Cloud
 
@@ -68,158 +71,11 @@ CC_STATIC_AUTOBUILD_OUTDIR="public/developers"
 SERVER_ERROR_PAGE_404="developers/404.html"
 ```
 
-`CC_DISABLE_MISE` prevents Clever Cloud from installing the development dependencies because the static runtime provides and manages its deployment tools. Configure the route so its path ends in `/developers`, which matches the site's configured base URL and output directory.
+`CC_DISABLE_MISE` stops Clever Cloud from installing the development tools because the static runtime manages its deployment tools. Configure the route so its path ends in `/developers`, which matches the base URL and output directory of the site.
 
 > [!TIP]
 > Set `CC_HUGO_VERSION` to a supported version such as `0.167` to select the Hugo version used for deployment
 
 ## Contribute
 
-You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls). Read the following project instructions before submitting a change:
-
-- [Coding agent instructions](./AGENTS.md)
-- [Contributing guidelines](./CONTRIBUTING.md)
-
-The documentation is also available in the [llms.txt format](https://www.clever.cloud/developers/llms.txt).
-
-## Add a page or guide
-
-Use the archetypes in [`archetypes/`](./archetypes/) to create new content. These examples create a guide, a documentation page and an application runtime page:
-
-```bash
-hugo new content --kind guides guides/frameworks/my-framework.md
-hugo new content doc/develop/my-feature.md
-hugo new content --kind applications doc/deploy/applications/my-runtime.md
-```
-
-Store a guide in the section that matches its subject, and add it to the section index. For a guide in `guides/static-sites/`, add its card to [`shared/static-guides.md`](./shared/static-guides.md), which the section index and the Static runtime pages include. Archetypes set `draft: true` so regular builds exclude unfinished pages. Preview drafts locally with:
-
-```bash
-hugo server --buildDrafts
-```
-
-Remove the `draft` field when the page is ready to publish.
-
-### Update the CLI reference
-
-The body of [`content/doc/cli-reference.md`](./content/doc/cli-reference.md) comes from the documentation of a Clever Tools release. Regenerate it from the latest release, or from the version you pass as argument, with:
-
-```bash
-scripts/update-cli-reference.sh
-scripts/update-cli-reference.sh 5.3.0
-```
-
-The script keeps the page's front matter, which this repository maintains.
-
-### Add a changelog entry
-
-Only Clever Cloud team members add entries to `content/changelog/`, one for each significant platform update. To report an error in an entry, [open an issue](https://github.com/CleverCloud/documentation/issues). Keep entries concise and focused on information users need to understand or act on.
-
-Store each entry under its publication year and name it with the `MM-DD-title.md` format, for example `content/changelog/2026/08-26-product-update.md`. Multiple entries can share the same date.
-
-### Configure front matter
-
-Hugo front matter stores page metadata. This project uses the following fields:
-
-| Field           | Status      | Purpose                                                                                                                                     |
-| --------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `aliases`       | Optional    | Redirects paths that existed previously. Omit the `/developers` base path, for example `/doc/docker`                                        |
-| `authors`       | Changelog   | Lists contributors with `name`, `link` and `image` fields                                                                                   |
-| `date`          | Changelog   | Sets the publication date or date-time in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format                                         |
-| `description`   | Recommended | Provides the page's description for search results and search engines                                                                       |
-| `draft`         | Optional    | Excludes unfinished content from regular builds when set to `true`. Remove the field before publication                                     |
-| `excludeSearch` | Optional    | Excludes the page from the search index when set to `true`. Set it for changelog entries                                                    |
-| `keywords`      | Optional    | Lists search keywords                                                                                                                       |
-| `linkTitle`     | Optional    | Sets a short sidebar label, usually the product name, and defaults to `title`                                                               |
-| `tags`          | Changelog   | Lists lowercase product tags with consistent spelling                                                                                       |
-| `title`         | Required    | Sets the page heading and search-oriented title. The generated HTML title adds the Clever Cloud name                                        |
-| `type`          | Optional    | Selects a content layout and uses `docs` outside the changelog                                                                              |
-| `weight`        | Optional    | Orders pages in the sidebar and defaults to `0`                                                                                             |
-
-A changelog entry can use the following front matter:
-
-```yaml
----
-title: Product 1.2 is available
-description: Product 1.2 adds a new feature and fixes an upgrade issue
-date: 2026-08-26
-tags:
-  - product
-authors:
-  - name: Clever Cloud
-    link: https://github.com/CleverCloud
-    image: https://github.com/CleverCloud.png?size=40
-excludeSearch: true
----
-```
-
-[CONTRIBUTING.md](./CONTRIBUTING.md#front-matter) explains how to write titles and when to use aliases. See the [Hugo front matter documentation](https://gohugo.io/content-management/front-matter/) for the supported formats and built-in fields.
-
-### Add an image
-
-Store documentation images under `static/images/` and reference them with Markdown:
-
-```markdown
-![Alt text](/images/your-image.jpg "Image title")
-```
-
-Use Hugo's [`figure` shortcode](https://gohugo.io/shortcodes/figure/) when the image needs attributes such as a width limit:
-
-```markdown
-{{< figure src="/developers/images/your-image.jpg" alt="Alt text" title="Image title" width="800px">}}
-```
-
-### Add shared content
-
-Create reusable Markdown in [`shared/`](./shared/) when several pages need the same content, and include it in each of them with:
-
-```markdown
-{{% content "your-partial" %}}
-```
-
-> [!TIP]
-> Use `{{% content-raw "your-partial" %}}` when the shared file contains shortcode markup. Don't add headings to shared files because they don't appear in the page table of contents
-
-### Add a tooltip
-
-Add a term and its definition to [`data/tooltips.toml`](./data/tooltips.toml). The site then displays the definition when readers hover over matching terms.
-
-## Validate changes
-
-Run a production build before submitting a change:
-
-```bash
-hugo
-```
-
-Then check the internal links and anchors of the build in `public/developers/`, offline. The script reports broken links, aliases that lead nowhere, and anchors a page doesn't define:
-
-```bash
-scripts/check-internal-links.py
-```
-
-The repository provides [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) rules in [`.markdownlint.jsonc`](./.markdownlint.jsonc) and CLI configuration in [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc), which excludes the paths listed in [`.gitignore`](./.gitignore). Run the version installed by Mise:
-
-```bash
-markdownlint-cli2 "**/*.md"
-```
-
-Every pull request runs markdownlint on all the Markdown files of the repository, and fails if it reports an issue.
-
-Editorial checks use [Vale](https://vale.sh/) with the project's own `Clever` style, in [`.github/styles/Clever/`](./.github/styles/Clever/), which implements the rules of [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-Mise can run the same styles locally, on the files you change or on the whole repository:
-
-```bash
-vale README.md AGENTS.md CONTRIBUTING.md archetypes content shared
-```
-
-The pull request workflow reports Vale alerts on changed lines without failing, so a green check doesn't prove that a change has none. [CONTRIBUTING.md](./CONTRIBUTING.md#-validation) lists which alerts to fix and what to review by hand.
-
-Commit subjects follow the [commit conventions](./CONTRIBUTING.md#commit-messages). [commitlint](https://commitlint.js.org/) checks them with the rules in [`commitlint.config.mjs`](./commitlint.config.mjs). Run the version installed by Mise on the commits of your branch before you push:
-
-```bash
-commitlint --from origin/main
-```
-
-Every pull request runs commitlint on its commits once markdownlint passes, and fails if a subject breaks a rule.
+You can contribute by [creating an issue](https://github.com/CleverCloud/documentation/issues) or [submitting a pull request](https://github.com/CleverCloud/documentation/pulls). Before you submit a change, read the [contributing guidelines](./CONTRIBUTING.md), which explain how to check and submit it. They link to the [style guide](./contributing/style-guide.md) and the [authoring guide](./contributing/authoring.md). Coding agents also follow [AGENTS.md](./AGENTS.md).

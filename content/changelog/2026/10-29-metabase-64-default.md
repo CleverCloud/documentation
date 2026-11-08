@@ -41,5 +41,6 @@ clever metabase version update yourMetabaseNameOrId --target 0.64
 ```
 
 - [Learn more about Metabase 64](https://www.metabase.com/releases/metabase-64)
-- [Watch the Metabase 64 video playlist](https://www.youtube.com/playlist?list=PLF-FhkRU3Jto)
 - [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
+
+{{< youtube list="PLF-FhkRU3Jto" >}}

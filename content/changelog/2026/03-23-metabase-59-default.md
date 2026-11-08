@@ -32,3 +32,5 @@ clever metabase version update yourMetabaseNameOrId 0.59
 
 - [Learn more about Metabase 59](https://www.metabase.com/changelog/59)
 - [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
+
+{{< youtube list="PLzmftu0Z5MYGUmUedWH4_NTqSaSllZt9I" >}}

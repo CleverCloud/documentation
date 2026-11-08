@@ -33,4 +33,4 @@ clever metabase version update yourMetabaseNameOrId 0.57
 - [Learn more about Metabase 57](https://www.metabase.com/releases/metabase-57)
 - [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
 
-{{< youtube id="-Cbs-lg3rSo" >}}
+{{< youtube list="PLzmftu0Z5MYEJxYy2FLeJcRnLKS0Fa78k" >}}

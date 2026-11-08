@@ -32,4 +32,4 @@ clever metabase version update yourMetabaseNameOrId 0.58
 - [Learn more about Metabase 58](https://www.metabase.com/changelog/58)
 - [Learn more about Metabase on Clever Cloud](/doc/deploy/services/metabase/)
 
-{{< youtube id="Qc8Zsoam9Dc" >}}
+{{< youtube list="PLzmftu0Z5MYGK2Ym5FPh-rXq9hTWM_IxL" >}}

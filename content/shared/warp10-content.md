@@ -82,8 +82,7 @@ The following macros are helpers to compute consumption in seconds
 
 - `app_consumption`
 
-Return the consumption in **second** by **applications** for a specific **organisation**.
-`Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
+Return the consumption in **second** by **applications** for a specific **organisation**. `Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
 
 ```bash
 '<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption
@@ -91,8 +90,7 @@ Return the consumption in **second** by **applications** for a specific **organi
 
 - `orga_consumption`
 
-Return **all** the consumption in **second** for a specific **organisation**. `Start` and `End` parameters
-can be either a timestamp in microseconds or an iso8601 date format.
+Return **all** the consumption in **second** for a specific **organisation**. `Start` and `End` parameters can be either a timestamp in microseconds or an iso8601 date format.
 
 ```bash
 '<READ TOKEN>' '<ORGANISATION ID>' '<START>' '<END>' @clevercloud/app_consumption

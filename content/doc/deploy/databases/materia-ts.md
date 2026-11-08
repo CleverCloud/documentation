@@ -38,8 +38,7 @@ The add-on is immediately created and you can start using it with provided token
 
 ## Using your Materia TS add-on
 
-Materia TS uses Warp10 time series engine and WarpsScript query language. It
-provides PromQL and Prometheus Ingestion gateway in addition to warp10 endpoints. You can also use [Time Series Language (TSL)](https://github.com/ovh/tsl/) previously written by OVHcloud Metrics team.
+Materia TS uses Warp10 time series engine and WarpsScript query language. It provides PromQL and Prometheus Ingestion gateway in addition to warp10 endpoints. You can also use [Time Series Language (TSL)](https://github.com/ovh/tsl/) previously written by OVHcloud Metrics team.
 
 | Endpoint                                                                | Description                          |
 | ----------------------------------------------------------------------- | ------------------------------------ |
@@ -48,12 +47,9 @@ provides PromQL and Prometheus Ingestion gateway in addition to warp10 endpoints
 | `https://catalyst-materiats.eu-fr-1.services.clever-cloud.com:443/`     | Prometheus Ingestion gateway         |
 | `https://prometheus-materiats.eu-fr-1.services.clever-cloud.com:433`    | PromQL endpoint                      |
 
-For complete technical documentation on Warp 10 and its query language,
-see our [Warp 10 documentation](/doc/observability/warp10/).
+For complete technical documentation on Warp 10 and its query language, see our [Warp 10 documentation](/doc/observability/warp10/).
 
 > [!TIP] HTTP headers to pass tokens
-> Warp 10 related endpoints expects a `X-warp10-token` HTTP header containing
-the read or write token of your add-on. Prometheus related endpoints expects
-your tokens inside the `Authorization` HTTP header.
+> Warp 10 related endpoints expects a `X-warp10-token` HTTP header containing the read or write token of your add-on. Prometheus related endpoints expects your tokens inside the `Authorization` HTTP header.
 
 {{% include "shared/warp10-content" %}}

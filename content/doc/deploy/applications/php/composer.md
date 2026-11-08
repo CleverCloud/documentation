@@ -73,9 +73,7 @@ Sometimes, you can encounter the following error when downloading dependencies:
 Failed to download symfony/symfony from dist: Could not authenticate against GitHub.com
 ```
 
-To avoid failed dependency downloads caused by GitHub API rate limits during deployment,
-configure an OAuth token in your Composer configuration file or in a separate file as described in the
-[Composer FAQ (API rate limit and OAuth tokens)](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
+To avoid failed dependency downloads caused by GitHub API rate limits during deployment, configure an OAuth token in your Composer configuration file or in a separate file as described in the [Composer FAQ (API rate limit and OAuth tokens)](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
 
 You can find more documentation about Composer configuration in the [Composer schema reference](https://getcomposer.org/doc/04-schema.md).
 

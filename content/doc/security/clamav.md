@@ -62,7 +62,6 @@ Be sure to use these settings when configuring your ClamAV client.
 
 ## Additional configurations
 
-`CC_CLAMAV_MAXTHREADS`: Maximum number of threads running at the same time.
-`CC_CLAMAV_MAXQUEUE`: Maximum number of queued items.
+`CC_CLAMAV_MAXTHREADS`: Maximum number of threads running at the same time. `CC_CLAMAV_MAXQUEUE`: Maximum number of queued items.
 
 If you have special needs, you can make a request on [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).

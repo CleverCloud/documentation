@@ -16,15 +16,13 @@ aliases:
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Deploy your apps, databases,
-  and services on Clever Cloud
+  Deploy your apps, databases, and services on Clever Cloud
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-6">
 {{< hextra/hero-subtitle style="margin:.3rem 0 1rem 0">}}
-  Documentation and guides to run and monitor
-  applications, add-ons, and Kubernetes clusters
+  Documentation and guides to run and monitor applications, add-ons, and Kubernetes clusters
 {{< /hextra/hero-subtitle >}}
 </div>
 

@@ -43,8 +43,7 @@ Checking connectivity... done.
 
 This usually means that you created an application and asked to start it in the console without having pushed any source code to it before.
 
-Under the Clever Cloud console, in your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`.
-You can now push your commits to the new remote with `$ git push clever master`.
+Under the Clever Cloud console, in your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`. You can now push your commits to the new remote with `$ git push clever master`.
 
 It may also be because you are working on another branch than master and pushed this specific branch to Clever Cloud and you encountered this error:
 
@@ -56,8 +55,7 @@ remote: error: hook declined to update refs/heads/<yourSpecificBranchName>
 error: failed to push some refs to '<yourSpecificBranchName>'
 ```
 
-Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
-What differs if you use another branch than master on your computer is that you need to explicitly tell Clever to consider the specific branch as the master one.
+Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer. What differs if you use another branch than master on your computer is that you need to explicitly tell Clever to consider the specific branch as the master one.
 
 ```bash
 git push <cleverRemote> <yourSpecificBranchName>:master
@@ -77,16 +75,12 @@ git push clever production:master
 fatal: Not a git repository (or any of the parent directories)
 ```
 
-This means that the folder in which you are is not a git repository.
-In your console, at the root of your project, type `$ git init`. This will create a new git repository for your folder locally. Link it to Clever Cloud by going under the Clever Cloud console. In your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`.
-You can add all your files with `$ git add .`, then you need to commit the files with `$ git commit -m "<your commit message>"`.
-You will finally push your code with `$ git push clever master`.
+This means that the folder in which you are is not a git repository. In your console, at the root of your project, type `$ git init`. This will create a new git repository for your folder locally. Link it to Clever Cloud by going under the Clever Cloud console. In your application's information menu you will find a deployment url. Add it to your local repository git remotes with `$ git remote add clever <your deployment url>`. You can add all your files with `$ git add .`, then you need to commit the files with `$ git commit -m "<your commit message>"`. You will finally push your code with `$ git push clever master`.
 {{% /details %}}
 
 {{% details title="'fatal: 'clever' does not appear to be a git repository'" closed="true" %}}
 
-"clever" is a name used in our examples to represent the Clever Cloud servers.
-In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:
+"clever" is a name used in our examples to represent the Clever Cloud servers. In order to be able to use the same name for yourself, you will need to create a git remote named clever like this:
 
 ```shell
 git remote add clever <your-git-deployment-url>
@@ -104,8 +98,7 @@ It might be because your SSH agent is not properly configured. Please check [the
 
 {{% details title="Activating the troubleshooting mode" closed="true" %}}
 
-Sometimes, when something goes wrong during the deployment, it can be hard to find out what happens. The troubleshoot mode allows you to keep the instances up while you find out what has happened.
-Additionally, the troubleshoot mode increases the overall verbosity of the deployment process.
+Sometimes, when something goes wrong during the deployment, it can be hard to find out what happens. The troubleshoot mode allows you to keep the instances up while you find out what has happened. Additionally, the troubleshoot mode increases the overall verbosity of the deployment process.
 
 To enable this mode, simply add `CC_TROUBLESHOOT=true` to your environment variables.
 
@@ -204,8 +197,7 @@ Check the status of the services on [clevercloudstatus.com](https://www.clevercl
 
 {{% details title="There are a lot of open ports, according to a port scan." closed="true" %}}
 
-If you tried to scan your domain, you may not only have scanned your app, but also several public load balancers.
-Here is an explanation of the different port you may see.
+If you tried to scan your domain, you may not only have scanned your app, but also several public load balancers. Here is an explanation of the different port you may see.
 
 - TCP redirection ports: the public load balancers are shared, so a scan also shows the ports of the [TCP redirections](/doc/manage/tcp-redirections/) of other applications. Each port in a namespace only leads to the application that owns its redirection. List the ports of your application with `clever tcp-redirs`.
 - Port 9999 : [Zabbix](https://www.zabbix.com) uses this port to monitor the hypervisor.

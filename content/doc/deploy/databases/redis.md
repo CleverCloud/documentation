@@ -37,8 +37,7 @@ A backup is a `tar.gz` archive containing both the `.rdb` and `.aof` files. You 
 
 ## Leader / follower topology
 
-By default, all redis add-ons are configured as leaders. You can set up a redis add-on as a follower from the add-on panel (in the "Add-on information" tab). You need to set the leader
-information (host, port, password) to start the replication. The add-on panel will display the sync process status so that you know when the synchronisation is done.
+By default, all redis add-ons are configured as leaders. You can set up a redis add-on as a follower from the add-on panel (in the "Add-on information" tab). You need to set the leader information (host, port, password) to start the replication. The add-on panel will display the sync process status so that you know when the synchronisation is done.
 
 While a redis database is configured as a follower, it's read-only.
 
@@ -56,8 +55,7 @@ Clever Cloud automatically applies kernel-level performance settings recommended
 
 ## Default retention policy
 
-By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,
-please contact the support to change its policy.
+By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache, please contact the support to change its policy.
 
 ## 🔑 Rights and permissions
 

@@ -25,13 +25,8 @@ By default, an [FS Bucket](/doc/deploy/storage/fs-bucket/) is created for each P
 
 You can set the following environment variables:
 
-- `CC_PHP_ASYNC_APP_BUCKET=async` to mount the session FS Bucket with the `async` option.
-  It speeds up the FS Bucket usage, but it can corrupt files in case of a network outage.
-- `CC_PHP_DISABLE_APP_BUCKET=(true|yes|disable)` to entirely prevent the session FS Bucket
-  from being mounted.
-  Use this if you don't use the default PHP session library.
-  It will speed up your application but users might lose their session across instances
-  and deployments.
+- `CC_PHP_ASYNC_APP_BUCKET=async` to mount the session FS Bucket with the `async` option. It speeds up the FS Bucket usage, but it can corrupt files in case of a network outage.
+- `CC_PHP_DISABLE_APP_BUCKET=(true|yes|disable)` to entirely prevent the session FS Bucket from being mounted. Use this if you don't use the default PHP session library. It will speed up your application but users might lose their session across instances and deployments.
 
 ### Use Materia KV or Redis to store PHP Sessions
 

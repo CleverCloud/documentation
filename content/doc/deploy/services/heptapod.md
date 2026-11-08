@@ -55,16 +55,13 @@ Heptapod Cloud provides your team with a suite of collaborative tools for softwa
 
 ### Create an organisation
 
-You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/doc/account-billing/organisations/).
-Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
+You will need a **Heptapod group** to create your projects in. **Heptapod groups** are mapped to Clever Cloud [organisations](/doc/account-billing/organisations/). Every organisation you have access to will have its corresponding group on the Heptapod Cloud instance.
 
-In the Clever Cloud console, click **Add an organisation** and fill the form to create one.
-organisation are the way users collaborate and share applications.
+In the Clever Cloud console, click **Add an organisation** and fill the form to create one. organisation are the way users collaborate and share applications.
 
 ### Access to Heptapod via SSO
 
-Accessing to Heptapod Cloud is done with the built-in of Clever Cloud.
-To launch Heptapod Cloud go to **<https://heptapod.host>**.
+Accessing to Heptapod Cloud is done with the built-in of Clever Cloud. To launch Heptapod Cloud go to **<https://heptapod.host>**.
 
 ### Usage and billing
 
@@ -80,8 +77,7 @@ Clever Cloud Runners for Heptapod enable on-demand generation of Docker containe
 
 ## Heptapod Runner
 
-Clever Cloud Runners for Heptapod is a SaaS that automates the execution of tasks on machines of varying sizes and power to best match your continuous integration and deployment needs.
-Fully integrated with Heptapod Cloud, the service can also be used from a self-managed Heptapod or GitLab instance, either managed by Clever Cloud or self-hosted on your infrastructure.
+Clever Cloud Runners for Heptapod is a SaaS that automates the execution of tasks on machines of varying sizes and power to best match your continuous integration and deployment needs. Fully integrated with Heptapod Cloud, the service can also be used from a self-managed Heptapod or GitLab instance, either managed by Clever Cloud or self-hosted on your infrastructure.
 
 ### Integrated CI/CD
 
@@ -187,8 +183,7 @@ tests:
 
 ###### Job cache
 
-Currently, the job cache is discarded at the end of each job.
-This is because we don't have offloading capabilities for the cache yet, and the entire virtual machine gets decommissioned at the end of the job.
+Currently, the job cache is discarded at the end of each job. This is because we don't have offloading capabilities for the cache yet, and the entire virtual machine gets decommissioned at the end of the job.
 
 We're working on it and should have a solution soon (see the Persistent cache upcoming feature).
 
@@ -204,9 +199,7 @@ Even if your projects are public, this can be an important factor, for instance 
 
 While most of the public CI offering seems to have converged on running jobs on comparatively modest systems (e.g., 2 virtual cores with 7GB of RAM), and many testing frameworks have ways to partition big test suites in several jobs to run in parallel (sharding), this does not fit all needs:
 
-Jobs performing big compilation tasks (OS kernels, desktop applications) may benefit from in-job parallelization and may not be practical to cut in several parallel jobs.
-At the opposite side of the spectrum, jobs for unit tests or fast linting of small projects may content themselves with a tiny system.
-In other words, one size does not fit all.
+Jobs performing big compilation tasks (OS kernels, desktop applications) may benefit from in-job parallelization and may not be practical to cut in several parallel jobs. At the opposite side of the spectrum, jobs for unit tests or fast linting of small projects may content themselves with a tiny system. In other words, one size does not fit all.
 
 Jobs executed by the Clever Cloud Runner can specify the scale (flavour) of the Docker host it needs, using the `CI_CLEVER_CLOUD_FLAVOR` variable.
 

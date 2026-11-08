@@ -45,8 +45,7 @@ The `CC_PLAY1_VERSION` environment variable can contain one of the following val
 
 ### Play! configuration with application.conf
 
-By default, your application will run on Clever Cloud with the option `--%clevercloud`.
-It means that you can define special keys in your `application.conf` file that will be used only on Clever Cloud.
+By default, your application will run on Clever Cloud with the option `--%clevercloud`. It means that you can define special keys in your `application.conf` file that will be used only on Clever Cloud.
 
 You can for example:
 

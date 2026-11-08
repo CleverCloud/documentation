@@ -35,8 +35,7 @@ aliases:
 
 ## Overview
 
-PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
-into HTML.
+PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 

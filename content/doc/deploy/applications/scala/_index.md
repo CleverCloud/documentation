@@ -79,8 +79,7 @@ When you set `CC_RUN_COMMAND`, Clever Cloud runs it as is and ignores `CC_SBT_TA
 
 ### HOCON users
 
-If you're using
-[HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation) configuration files, then you can have direct acces to environment variables from the configuration file:
+If you're using [HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation) configuration files, then you can have direct acces to environment variables from the configuration file:
 
 ```shell
 application.secret=${APPLICATION_SECRET}

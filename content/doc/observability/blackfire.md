@@ -26,8 +26,7 @@ Blackfire can be used on Clever Cloud with **PHP** applications.
 
 ### Necessary information
 
-Your PHP version must be 7.4 or higher.
-Before setting up your app, be sure to have a [Blackfire Account](https://www.blackfire.io/).
+Your PHP version must be 7.4 or higher. Before setting up your app, be sure to have a [Blackfire Account](https://www.blackfire.io/).
 
 ### Configuration
 

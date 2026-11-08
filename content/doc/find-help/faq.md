@@ -179,8 +179,7 @@ Refer to [prefix routing](/doc/manage/domain-names/#path-routing) to learn how t
 
 {{% details title="Does Clever Cloud support TLS/SSL (HTTPS)?" closed="true" %}}
 
-Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/security/ssl/#uploading-my-own-certificates).
-Have a look at [installing TLS certificates](/doc/security/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
+Yes. For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either generate one automatically with Let's Encrypt while adding a domain, or [use an existing one](/doc/security/ssl/#uploading-my-own-certificates). Have a look at [installing TLS certificates](/doc/security/ssl), and feel free to contact the support team in the [Ticket Center](https://console.clever-cloud.com/ticket-center-choice) if you have questions.
 {{% /details %}}
 
 {{% details title="What are the supported ciphers?" closed="true" %}}
@@ -211,13 +210,11 @@ Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information,
 
 {{% details title="How to get the user's IP address?" closed="true" %}}
 
-Load-balancers ahead of your applications handle all connections and forward them in plain HTTP.
-So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
+Load-balancers ahead of your applications handle all connections and forward them in plain HTTP. So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
 
 To get the original client's IP address, use the `X-Forwarded-For` HTTP header. The load balancer automatically adds this header to each request.
 
-The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application.
-[Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
+The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application. [Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
 {{% /details %}}
 
 {{% details title="How to setup a firewall on Clever Cloud?" closed="true" %}}
@@ -243,21 +240,17 @@ Support is not able to provide help in case of DEV plan.
 
 {{% details title="I received an email saying 'Add-on [my add-on] disk is nearly full'. What do I do?" closed="true" %}}
 
-A full disk can cause your database to crash or become unresponsive.
-Consider upgrading your add-on plan.
-You might want to do one of the following:
+A full disk can cause your database to crash or become unresponsive. Consider upgrading your add-on plan. You might want to do one of the following:
 
 ### Remove data from your database
 
-You can take a snapshot of your database and export the obsolete data to a cold storage.
-Then you can remove records from your database, re-index your tables and try to perform a VACUUM operation if the database software allows it.
+You can take a snapshot of your database and export the obsolete data to a cold storage. Then you can remove records from your database, re-index your tables and try to perform a VACUUM operation if the database software allows it.
 
 ### Migrate your add-on to a bigger plan
 
 … or to the same plan.
 
-You can buy more disk space by migrating your add-on to a higher plan.
-If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regains space.
+You can buy more disk space by migrating your add-on to a higher plan. If a VACUUM operation needs more disk that there is remaining, migrating to the same plan cleans up the file on disk and regains space.
 {{% /details %}}
 
 {{% details title="Where are the backups stored?" closed="true" %}}
@@ -269,8 +262,7 @@ For custom configurations (for example, multiple retention policies), contact Su
 
 {{% details title="I can't create my add-on" closed="true" %}}
 
-To create add-ons, you need to complete your account information, including your city and ZIP code.
-For instance, you cannot create a Matomo add-on until you provide these details.
+To create add-ons, you need to complete your account information, including your city and ZIP code. For instance, you cannot create a Matomo add-on until you provide these details.
 {{% /details %}}
 
 ## Account and organisations

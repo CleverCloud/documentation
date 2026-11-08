@@ -102,16 +102,11 @@ The request body contains the following fields:
 - `addon_id` - The id we give to your add-on to identify it on our side.
 - `owner_id` - The id of the customer this add-on will belong to.
 - `owner_name` - The name of the customer. (Actually, the name of the organisation)
-- `user_id` - The id of the user that is performing the action of provisioning this
-  add-on. (The user will do it for the account of `owner_id`).
-- `plan` - The slug field for the plan the user chose. You can create
-plans in the dashboard once your add-on manifest has been uploaded to
-the Clever Cloud platform. We send you the slug of the given plan,
-not its name.
+- `user_id` - The id of the user that is performing the action of provisioning this add-on. (The user will do it for the account of `owner_id`).
+- `plan` - The slug field for the plan the user chose. You can create plans in the dashboard once your add-on manifest has been uploaded to the Clever Cloud platform. We send you the slug of the given plan, not its name.
 - `region` - The region to provision the add-on. As for now, only "EU" will be sent.
 - `callback_url` - The URL you can use to get details about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
-- `options` - String -> String map with options.
-The response body contains the following fields:
+- `options` - String -> String map with options. The response body contains the following fields:
 - `id` - The add-on id as seen from your side. It *MUST* be a String.
 - `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
 - `message` (Optional) - A creation message we will display in the dashboard.
@@ -178,9 +173,7 @@ Response Body: [
 
 ### Get information about a specific add-on
 
-**Caution**: this endpoint is **not** available during the provisioning call. If you want
-information, you need to reply to the provisioning call, **then** you can call this
-endpoint.
+**Caution**: this endpoint is **not** available during the provisioning call. If you want information, you need to reply to the provisioning call, **then** you can call this endpoint.
 
 ```json
 GET /vendor/apps/{addonId}
@@ -229,8 +222,7 @@ Request Body: {
 Response Status: 200 OK
 ```
 
-The object should only contain the `config` object your API returned
-during the provisioning.
+The object should only contain the `config` object your API returned during the provisioning.
 
 > [!NOTE] Provisioning call
 > This endpoint isn't available during the provisioning call: reply to the provisioning call **first**, then call this endpoint.
@@ -322,12 +314,9 @@ def requires_auth(f):
 
 ## SSO
 
-Your service probably has a web UI admin panel that your users log into to manage and view their resources.
-Clever Cloud customers will be able to access the admin panel for their resource if you implement single sign-on (SSO).
+Your service probably has a web UI admin panel that your users log into to manage and view their resources. Clever Cloud customers will be able to access the admin panel for their resource if you implement single sign-on (SSO).
 
-Clever Cloud will generate a single sign-on signature by combining the salt (a shared secret you defined in your manifest) with the rest of the body (see below).
-Clever Cloud redirects the user’s browser to your SSO URL with this signature.
-Your site can confirm the authenticity of the signature, then set a cookie for the user session and redirect them to the admin panel for their resource.
+Clever Cloud will generate a single sign-on signature by combining the salt (a shared secret you defined in your manifest) with the rest of the body (see below). Clever Cloud redirects the user’s browser to your SSO URL with this signature. Your site can confirm the authenticity of the signature, then set a cookie for the user session and redirect them to the admin panel for their resource.
 
 When the user opens your add-on dashboard in their add-on menu, they will be directed via HTTP POST to the SSO URL defined in your manifest.
 
@@ -354,8 +343,7 @@ The `signature` field in the SSO call is created as follows:
 sha512sum(id + ':' + user_id + ':' + email + ':' + nav-data + ':' + sso_salt + ':' + timestamp)
 ```
 
-Where `sso_salt` is the shared secret you defined while registering in the marketplace.
-The other fields are the url-decoded fields previously enumerated.
+Where `sso_salt` is the shared secret you defined while registering in the marketplace. The other fields are the url-decoded fields previously enumerated.
 
 ### Sample in Python
 

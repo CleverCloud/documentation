@@ -26,8 +26,7 @@ Your Clever Cloud account identifies you on the platform and owns the organisati
 
 ## Create an account
 
-The API of Clever Cloud uses OAuth 1 to perform authentication actions.
-There are two ways to sign up to Clever Cloud: **email** or **GitHub login**.
+The API of Clever Cloud uses OAuth 1 to perform authentication actions. There are two ways to sign up to Clever Cloud: **email** or **GitHub login**.
 
 ### Email
 
@@ -46,8 +45,7 @@ This process asks the following permissions:
 
 The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
 
-If you need to give access to Clever Cloud's API to a specific GitHub organisation, you
-can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 Go to the [Clever Cloud Console](https://console.clever-cloud.com/) and select the method you prefer.
 

@@ -21,15 +21,13 @@ aliases:
 - /doc/environment-variables
 ---
 
-Clever Cloud allows you to define environment variables that will be
-injected in your application's environment.
+Clever Cloud allows you to define environment variables that will be injected in your application's environment.
 
 ## How are variables defined?
 
 Variables are defined on a per-application basis. They are defined in four ways:
 
-- By provisioned add-ons linked to applications. The variables names
-  are listed in the add-on's information panel.
+- By provisioned add-ons linked to applications. The variables names are listed in the add-on's information panel.
 
 - By linked applications with [exposed configuration](/doc/manage/service-dependencies/#exposed-configuration).
 
@@ -45,27 +43,19 @@ Check out our [environment variable reference](/doc/manage/environment-variables
 
 ## Special environment variables
 
-Some variables are injected to the environment of your application when you deploy it,
-to inform you about the current context of your application and about the application itself.
+Some variables are injected to the environment of your application when you deploy it, to inform you about the current context of your application and about the application itself.
 
 They can be accessed as classic environment variables.
 
-- `APP_ID`: the ID of the application. Each application has a unique identifier used to
-  identify it in our system. This ID is the same than the one you can find in the information
-  section of your application.
+- `APP_ID`: the ID of the application. Each application has a unique identifier used to identify it in our system. This ID is the same than the one you can find in the information section of your application.
 
-- `INSTANCE_ID`: the ID of the current instance (scaler) of your application. It's unique for each
-  instance of your application and changes every time you deploy it.
+- `INSTANCE_ID`: the ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.
 
-- `INSTANCE_TYPE`: The type of the instance (scaler). Its value can be `build` or `production`.
-  `build` is when your application is being built on a dedicated instance.
+- `INSTANCE_TYPE`: The type of the instance (scaler). Its value can be `build` or `production`. `build` is when your application is being built on a dedicated instance.
 
-- `COMMIT_ID`: the commit ID used as a base to deploy your application. As we remove
-  the `.git` directory before the deployment (to avoid security problems), it can be used
-  to know which version of your application is running on the server.
+- `COMMIT_ID`: the commit ID used as a base to deploy your application. As we remove the `.git` directory before the deployment (to avoid security problems), it can be used to know which version of your application is running on the server.
 
-- `APP_HOME`: The absolute path of your application on the server. Can be used to
-  create absolute links in your application (e.g. `${APP_HOME}/foo/bar`).
+- `APP_HOME`: The absolute path of your application on the server. Can be used to create absolute links in your application (e.g. `${APP_HOME}/foo/bar`).
 
 - `CC_PRETTY_INSTANCE_NAME`: A random string name generated for each instance using pokemon names.
 
@@ -77,31 +67,20 @@ This variable allows your application to differentiate each running node on the 
 
 It will contain a different number for each instance of the same deployment.
 
-For example, if three instances are running, it will contain `0` for the first,
-`1` for the second and `2` for the third.
-Check it to run a [CRON job](/doc/manage/cron/) on the first instance only.
-During a deployment, the old and new instances both number from `0`, so a job
-can still run twice: see [Avoid duplicate runs](/doc/manage/cron/#avoid-duplicate-runs).
+For example, if three instances are running, it will contain `0` for the first, `1` for the second and `2` for the third. Check it to run a [CRON job](/doc/manage/cron/) on the first instance only. During a deployment, the old and new instances both number from `0`, so a job can still run twice: see [Avoid duplicate runs](/doc/manage/cron/#avoid-duplicate-runs).
 
 ## Settings you can define using environment variables
 
 We use environment variables for some settings:
 
-- `CC_DISABLE_BUILD_CACHE_UPLOAD`: allows you to ask that the cache archive is neither
-  created nor uploaded after the build process. Thus, restarts won't be speeded up,
-  as the build process will be launched each time.
-- `CC_IGNORE_FROM_BUILDCACHE`: allows you to specify paths to ignore when the build
-  cache archive is created. Must be relative to your application root.
-  (e.g. `foo/bar:foo/baz` where `bar` or `baz` can be either a directory or a file)
+- `CC_DISABLE_BUILD_CACHE_UPLOAD`: allows you to ask that the cache archive is neither created nor uploaded after the build process. Thus, restarts won't be speeded up, as the build process will be launched each time.
+- `CC_IGNORE_FROM_BUILDCACHE`: allows you to specify paths to ignore when the build cache archive is created. Must be relative to your application root. (e.g. `foo/bar:foo/baz` where `bar` or `baz` can be either a directory or a file)
 
-- `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache.
-  Only those files/directories will be cached
-  (e.g. `foo/bar:foo/baz` where `bar` or `baz` can be either a directory or a file).
+- `CC_OVERRIDE_BUILDCACHE`: allows you to specify paths that will be in the build cache. Only those files/directories will be cached (e.g. `foo/bar:foo/baz` where `bar` or `baz` can be either a directory or a file).
 
 ## Environment variables rules and formats
 
-You will find below a list of rules applied to our environment variables keys and
-examples of the formats available on our different modes.
+You will find below a list of rules applied to our environment variables keys and examples of the formats available on our different modes.
 
 ### Rules
 
@@ -128,8 +107,7 @@ Deploying any other type of application with such a variable fails, with an erro
 
 ### Format
 
-Here are some formats that you can use when editing your variables
-in our ["expert"](#expert) and [JSON](#json) modes.
+Here are some formats that you can use when editing your variables in our ["expert"](#expert) and [JSON](#json) modes.
 
 #### Expert
 
@@ -213,8 +191,7 @@ Here are some examples:
 
 ## How do I use these variables?
 
-Depending on the type of your application, the code will differ.
-You can find more information in the documentation pages related to your application type.
+Depending on the type of your application, the code will differ. You can find more information in the documentation pages related to your application type.
 
 Here is a non-exhaustive summary:
 

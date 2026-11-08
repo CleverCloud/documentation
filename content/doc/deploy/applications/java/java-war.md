@@ -100,9 +100,7 @@ Here are the mandatory fields:
 
 #### Let Clever Cloud build your application
 
-The mandatory part alone is enough… if you directly push a dry war file to deploy. You
-might want to just push your code to Clever Cloud and let us build the app and generate
-the war.
+The mandatory part alone is enough… if you directly push a dry war file to deploy. You might want to just push your code to Clever Cloud and let us build the app and generate the war.
 
 That you can do, by setting the "build" field object in the `war.json` file:
 
@@ -143,9 +141,7 @@ Here's the list of the configuration values for the "container" field in `war.js
 
 ## Custom run command
 
-If you need to run a custom command
-you can specify it through the `CC_RUN_COMMAND` environment variable.
-This will override the default way of running your application.
+If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default way of running your application.
 
 Example:
 

@@ -73,14 +73,12 @@ This section of the invoice details the usage of each cloud service.
 
 ## Managed Services
 
-While applications are billed on a per second basis, this may be different for managed services.
-From a billing point of view there are X categories
+While applications are billed on a per second basis, this may be different for managed services. From a billing point of view there are X categories
 
 - time-based billing (per second)
 - resource consumption billing
 
-For example, dedicated databases are charged by the second, just like applications.
-In contrast, services such as Cellar object storage or Pulsar are charged according to the volume of data stored and the volume of outgoing traffic.
+For example, dedicated databases are charged by the second, just like applications. In contrast, services such as Cellar object storage or Pulsar are charged according to the volume of data stored and the volume of outgoing traffic.
 
 ## Specific invoices
 
@@ -94,12 +92,10 @@ For each organisation it is possible to register one or more payment methods ([s
 
 As long as an invoice remains *pending*, we'll perform these actions on specific days:
 
-- Try to issue an automatic payment using your favorite payment method everyday from the
-  5th to the 15th day after issuing the invoice, then every 5 days after that.
+- Try to issue an automatic payment using your favorite payment method everyday from the 5th to the 15th day after issuing the invoice, then every 5 days after that.
 - Send a reminder via email every 5 days if the payment remains unsuccessful.
 - Shutdown of your services everyday starting day 31 after invoice issue.
 
-This schedule can adapt according to your company's payment delays.
-Please reach out to us via the support to ensure the best experience.
+This schedule can adapt according to your company's payment delays. Please reach out to us via the support to ensure the best experience.
 
 Support and access to your account will remain available to regularise non-payment situations.

@@ -57,6 +57,7 @@ Updating the links matters most in the shared blocks of `content/shared/`, which
 This documentation uses the [Hextra theme](https://imfing.github.io/hextra/), whose [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) improve readability:
 
 - [Asciinema](https://imfing.github.io/hextra/docs/guide/shortcodes/asciinema/), with `{{< asciinema file="demo.cast" >}}`, plays a terminal recording
+- [Badges](https://imfing.github.io/hextra/docs/guide/shortcodes/others/#badge), with `{{< badge "Beta" >}}`, mark the status of an element
 - [Cards](https://imfing.github.io/hextra/docs/guide/shortcodes/cards/), with `{{< cards >}}`, link to related resources
 - [Details](https://imfing.github.io/hextra/docs/guide/shortcodes/details/), with `{{% details title="Full log" closed="true" %}}`, fold optional content
 - [File trees](https://imfing.github.io/hextra/docs/guide/shortcodes/filetree/), with `{{< filetree/container >}}`, show the structure of a project
@@ -135,9 +136,19 @@ When the image needs attributes, such as a width limit, use the Hugo [`figure` s
 {{< figure src="/developers/images/your-image.jpg" alt="Alt text" title="Image title" width="800px">}}
 ```
 
-### Tooltips
+### Glossary terms
 
-Add a term and its definition to [`data/tooltips.toml`](../data/tooltips.toml): the site shows it when readers hover over the term.
+Add a term, its abbreviation, and its definition to [`data/en/termbase.yaml`](../data/en/termbase.yaml), then write it with the `term` shortcode of the theme, such as `{{< term "WAR" >}}`. The site shows the definition on hover, and the Markdown output writes it in parentheses.
+
+### Product status
+
+When a product is in beta or in private access, show its status the same way everywhere:
+
+- A `> [!NOTE]` callout at the top of its page, such as `> [!NOTE] Clever KMS is in private access`
+- The `tag` of every card that leads to this page, `Beta` or `Private access`
+- A badge next to an element of a page, such as a table row or an option, when only this element has a status
+
+Explain in the callout what the status implies, such as the data not to store or where to share feedback. The Markdown output of a page keeps the tags of cards and the text of badges.
 
 ### Source formatting
 

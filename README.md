@@ -31,7 +31,7 @@ The documentation is also available in the [llms.txt format](https://www.clever.
   - `postmortem/`: incident reports
   - `shared/`: blocks that several pages include, never published on their own
 - [`contributing/`](./contributing/): the style guide and the authoring guide, which [CONTRIBUTING.md](./CONTRIBUTING.md) introduces
-- [`data/`](./data/): structured data, such as runtime versions, Kubernetes versions, and tooltips
+- [`data/`](./data/): structured data, such as runtime versions, Kubernetes versions, and glossary terms
 - [`layouts/`](./layouts/): Hugo templates and shortcodes, including the Markdown and `llms.txt` outputs
 - [`scripts/`](./scripts/): maintenance scripts, such as the CLI reference generator and the offline internal link checker
 - [`static/`](./static/): images, fonts, and the favicon

@@ -56,12 +56,60 @@ Updating the links matters most in the `shared/` blocks, which many pages includ
 
 This documentation uses the [Hextra theme](https://imfing.github.io/hextra/), whose [shortcodes](https://imfing.github.io/hextra/docs/guide/shortcodes/) improve readability:
 
+- [Asciinema](https://imfing.github.io/hextra/docs/guide/shortcodes/asciinema/), with `{{< asciinema file="demo.cast" >}}`, plays a terminal recording
 - [Cards](https://imfing.github.io/hextra/docs/guide/shortcodes/cards/), with `{{< cards >}}`, link to related resources
+- [Details](https://imfing.github.io/hextra/docs/guide/shortcodes/details/), with `{{% details title="Full log" closed="true" %}}`, fold optional content
+- [File trees](https://imfing.github.io/hextra/docs/guide/shortcodes/filetree/), with `{{< filetree/container >}}`, show the structure of a project
+- [Galleries](https://imfing.github.io/hextra/docs/guide/shortcodes/gallery/), with `{{< gallery >}}` and `{{< gallery-item >}}` children, show several images
 - Hero subtitles, with `{{< hextra/hero-subtitle >}}`, introduce a guide
 - [Steps](https://imfing.github.io/hextra/docs/guide/shortcodes/steps/), with `{{% steps %}}`, suit the `/guides/` section, or any tutorial
 - [Tabs](https://imfing.github.io/hextra/docs/guide/shortcodes/tabs/), with `{{< tabs >}}` and named `{{< tab name="npm" >}}` children, show alternatives side by side
 
+Use details for content only some readers need, such as a long log or a complete configuration file. The main path of the page then stays short. Store a terminal recording in `static/`. The Markdown output of a page, which large language models read, drops it: show the commands it plays in a code block too.
+
+By default, tab blocks with the same names, in the same order, share their selection: choosing a tab in one selects it in the others. The browser remembers this choice. Name the tabs of similar blocks the same way, such as `npm`, `pnpm`, and `yarn`, in this order.
+
+Hugo adds the `/developers` base path to Markdown links and images. A card's `link` and a figure's `src` keep their local paths as written: include the base path, such as `/developers/doc/deploy/applications/` in a card link.
+
 The project adds its own shortcodes in [`layouts/shortcodes/`](../layouts/shortcodes/), such as `content` and `content-raw` for shared content. The [style guide](./style-guide.md#callouts) explains how to choose and write callouts.
+
+### Diagrams
+
+Draw a process or an architecture, such as the path of a request, with [Mermaid](https://mermaid.js.org/), in a code block of the `mermaid` language. The theme renders the diagram, and the Markdown output of the page keeps its code. Always explain in the text what the diagram shows: it illustrates the explanation, it doesn't replace it.
+
+````markdown
+```mermaid
+flowchart LR
+    Client --> LB[Load balancer] --> Application
+```
+````
+
+### File trees
+
+Show the structure of a project, such as where a runtime expects its files, with a file tree. Nest `filetree/folder` and `filetree/file` in a `filetree/container`, and add `state="closed"` to a folder to fold it:
+
+```markdown
+{{< filetree/container >}}
+  {{< filetree/folder name="my-application" >}}
+    {{< filetree/file name="mise.toml" >}}
+    {{< filetree/folder name="src" state="closed" >}}
+      {{< filetree/file name="main.go" >}}
+    {{< /filetree/folder >}}
+  {{< /filetree/folder >}}
+{{< /filetree/container >}}
+```
+
+The Markdown output of the page turns the tree into a nested list.
+
+### Icons
+
+Cards, tabs, and the `{{< icon "cube" >}}` shortcode take the name of an icon from these sources:
+
+- The [Heroicons](https://heroicons.com) the theme provides, such as `cube`
+- The icons of the project in [`data/icons.yaml`](../data/icons.yaml), such as `docs-suite`
+- [Simple Icons](https://simpleicons.org), for brands and products, with the `simple:` prefix, such as `simple:postgresql`
+
+The Markdown output of a page drops its icons: don't let an icon carry information on its own.
 
 ### Shared content
 
@@ -81,7 +129,7 @@ Store documentation images under `static/images/`, and reference them with Markd
 ![Alt text](/images/your-image.jpg "Image title")
 ```
 
-When the image needs attributes, such as a width limit, use the Hugo [`figure` shortcode](https://gohugo.io/shortcodes/figure/):
+When the image needs attributes, such as a width limit, use the Hugo [`figure` shortcode](https://gohugo.io/shortcodes/figure/), with the `/developers` base path in `src`:
 
 ```markdown
 {{< figure src="/developers/images/your-image.jpg" alt="Alt text" title="Image title" width="800px">}}
@@ -102,6 +150,15 @@ Provide complete examples that run, with real commands and configurations. Add s
 Keep commands literally copyable. Don't use shell-invalid placeholders or bracketed optional arguments in executable code blocks: show optional variants separately, or explain where to add the flag. Archetypes are the exception: replace their placeholders, such as `<runtime>` or `RUNTIME`, before you publish the page.
 
 Add code comments only when they explain non-obvious behavior.
+
+Set the language of every code block, which markdownlint checks, such as `bash` for commands, `text` for their output, or the format of a file. When a block shows a file, give its name in `filename`. To link this name to the file in a repository, add the folder URL in `base_url`. Highlight the lines readers must change with `hl_lines`, as the [syntax highlighting](https://imfing.github.io/hextra/docs/guide/syntax-highlighting/) of the theme allows:
+
+````markdown
+```toml {filename="mise.toml",hl_lines=[2]}
+[tools]
+"github:Pagefind/pagefind" = "1.6.0"
+```
+````
 
 ## Configure dependencies
 

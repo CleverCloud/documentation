@@ -45,8 +45,7 @@ Also, depending on whether you are using a single vCPU add-on or a multiple vCPU
 
 Note that most of the databases either have an in-memory cache or use the system's file cache so if the same data is often read, it may be available in the cache and no decryption occur leading to fast reads.
 
-Those tests were made using a 4 vCPU instance with 4 GiB of RAM.
-Before each test, the system's cache was dropped to avoid having reads that are faster than they should be: `sync; echo 1 > /proc/sys/vm/drop_caches`.
+Those tests were made using a 4 vCPU instance with 4 GiB of RAM. Before each test, the system's cache was dropped to avoid having reads that are faster than they should be: `sync; echo 1 > /proc/sys/vm/drop_caches`.
 
 Note: The `dd` tool wasn't used for this benchmark as it does not represent a valid workload, leading to results that can greatly vary depending on disk performance.
 

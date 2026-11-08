@@ -232,21 +232,18 @@ There are two cases:
 
 When you add a new data source to Metabase, its credentials are stored into Metabase internal database. Metabase offers an [optional feature](https://www.metabase.com/docs/latest/databases/encrypting-details-at-rest) that allows you to encrypt such credentials before storing them in the database.
 
-When you deploy a Metabase add-on, this **at-rest encryption is enabled by default**.
-This is why the Java app of your add-on has a `MB_ENCRYPTION_SECRET_KEY` environment variable that contains a randomly generated value.
+When you deploy a Metabase add-on, this **at-rest encryption is enabled by default**. This is why the Java app of your add-on has a `MB_ENCRYPTION_SECRET_KEY` environment variable that contains a randomly generated value.
 
 ## Configuring a SMTP server
 
-While this is not strictly required to successfully operate Metabase, it might be useful to configure a SMTP server.
-There are two main usages:
+While this is not strictly required to successfully operate Metabase, it might be useful to configure a SMTP server. There are two main usages:
 
 1. Sending user management/security emails (new user connections, account recoveries, invitations, …)
 2. Sending questions/dashboards emails (when users created subscriptions to them)
 
 Use a [MailPace](/doc/deploy/services/mailpace/) add-on or any other SMTP server.
 
-The SMTP server can be configured (and tested) in Metabase administration interface.
-See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
+The SMTP server can be configured (and tested) in Metabase administration interface. See [documentation](https://www.metabase.com/docs/latest/configuring-metabase/email) for more details.
 
 ### Using a MailPace add-on
 

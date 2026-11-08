@@ -38,8 +38,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 
 ### About Cargo
 
-To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
-Your application must listen on the port of the `http.port` system property.
+To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)). Your application must listen on the port of the `http.port` system property.
 
 {{% include "shared/java-versions" %}}
 
@@ -71,9 +70,7 @@ To activate a Maven profile, set it in `CC_MAVEN_PROFILES`, such as `CC_MAVEN_PR
 
 ## Custom run command
 
-If you need to run a custom command
-you can specify it through the `CC_RUN_COMMAND` environment variable.
-This will override the default `maven run` we use to run your application.
+If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default `maven run` we use to run your application.
 
 Example:
 

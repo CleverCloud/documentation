@@ -26,8 +26,7 @@ pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
 
 ## Rust example
 
-Clever Cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits.
-Here is a minimal example that produces (publishes) a *"Hello, World!"* on the topic `my-own-topic`:
+Clever Cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits. Here is a minimal example that produces (publishes) a *"Hello, World!"* on the topic `my-own-topic`:
 
 ```toml
 # Cargo.toml

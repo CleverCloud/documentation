@@ -30,26 +30,22 @@ aliases:
 
 ## Create a Clever Cloud Account
 
-The API of Clever Cloud uses OAuth 1 to perform authentication actions.
-There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
+The API of Clever Cloud uses OAuth 1 to perform authentication actions. There are two ways to sign up for Clever Cloud: **email** or **GitHub login**.
 
 {{< tabs >}}
 
   {{< tab name="Email Auth" icon="envelope" >}}
-  This kind of auth requires a valid and non-temporary disposable email, and a password having at least 6 characters.
-  Do not forget to validate your email by clicking the link you will receive.
+  This kind of auth requires a valid and non-temporary disposable email, and a password having at least 6 characters. Do not forget to validate your email by clicking the link you will receive.
   {{< /tab >}}
 
   {{< tab name="GitHub Auth" icon="github" >}}
 
-  The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click.
-  This process asks the following permissions:
+  The GitHub sign up allows you to create an account or link your existing one to GitHub, in one click. This process asks the following permissions:
 
 - Read your Public Key
 - Read User Repositories
 
-  The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step.
-  If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+  The "repository permission" is used to deploy your GitHub apps directly to Clever Cloud, with a simple step. If you need to give access to Clever Cloud's API to a specific GitHub organisation, you can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -121,8 +117,7 @@ Choose the organisation you want to deploy in from the organisation switcher, at
 
 Find the **Create** button at the top of the sidebar, below the organisation switcher.
 
-This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
-If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account. If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
 #### Select the language
 

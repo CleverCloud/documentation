@@ -63,8 +63,7 @@ A topic is defined this way:
 
 Tenants and namespaces allow for grouping and sub-grouping of topics.
 
-A Clever Cloud Pulsar add-on is basically an immutable `tenant/namespace` where the tenant is your organisation ID, and the namespace is the add-on ID.
-It allows you to create and use topics following this pattern:
+A Clever Cloud Pulsar add-on is basically an immutable `tenant/namespace` where the tenant is your organisation ID, and the namespace is the add-on ID. It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<CLEVERCLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
 

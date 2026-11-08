@@ -619,11 +619,7 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 ### VPN
 
-The VPN add-on provides a fixed-ip outgoing node. This can be used to work
-with services protected by ip address filtering. `CC_VPN_*` variables will
-be provided by Clever Cloud upon setup, the only configuration you have to
-provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic
-to be routed through the exit node.
+The VPN add-on provides a fixed-ip outgoing node. This can be used to work with services protected by ip address filtering. `CC_VPN_*` variables will be provided by Clever Cloud upon setup, the only configuration you have to provide is a list of CIDRs (eg. 1.2.3.0/24) for which you want the traffic to be routed through the exit node.
 
 > [!NOTE]
 > New setups use the `CC_VPN_*` names listed below. The previous `VPN_ADDON_*` names (and `VPN_TARGETS`) are deprecated and kept only for backward compatibility with existing setups.

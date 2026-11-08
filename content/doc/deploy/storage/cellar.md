@@ -183,8 +183,7 @@ Then, create a CNAME record on your domain pointing to `cellar-c2.services.cleve
 
 ## Using SDKs
 
-To use Cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk) or any S3-compatible client.
-You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-cloud.com`).
+To use Cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk) or any S3-compatible client. You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-cloud.com`).
 
 {{< tabs >}}
 
@@ -437,8 +436,7 @@ You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-clou
   {{< tab name="Ruby" icon="ruby" >}}
   **Active Storage (Ruby On Rails)**
 
-  [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar,
-  you must configure a S3 service with a custom endpoint.
+  [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar, you must configure a S3 service with a custom endpoint.
 
   **Required environment variables:**
 
@@ -526,8 +524,7 @@ The original ACL should apply to all of your objects after that.
 
 ### IP restrictions
 
-If you need to restrict your S3 Cellar to certain IPs, you can use a policy.
-To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
+If you need to restrict your S3 Cellar to certain IPs, you can use a policy. To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
 
 - Replace the `<bucket-name>` with your bucket name in the policy file.
 - Change the `Effect` to `Allow` or `Deny` depending on your needs.
@@ -702,15 +699,13 @@ Only the latest version of a file is visible, while previous versions remain hid
 
 ### How does versioning work
 
-Versioning can't be enabled for a single file: it will cover the entire bucket.
-A bucket can be in one of three state :
+Versioning can't be enabled for a single file: it will cover the entire bucket. A bucket can be in one of three state :
 
 - Unversioned (The default)
 - Versioning-enabled
 - Versioning-suspended
 
-You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time.
-Once versioning is enabled, any object you add have a unique version ID. Object that were already existing before enabling versioning have a version ID of `null`.
+You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time. Once versioning is enabled, any object you add have a unique version ID. Object that were already existing before enabling versioning have a version ID of `null`.
 
 For that reason, we do recommend you to enable versioning when creating a new bucket. It will be easier to navigate through version IDs.
 
@@ -1136,8 +1131,7 @@ Store it with your application secrets. The following examples read it from an e
 
 ## Uploading objects with presigned URLs and checksum validation
 
-Pre-signed URLs allow the client to upload files directly to S3 without ever exposing your credentials. You simply generate a temporary, time-limited URL and the client uses it to upload their file to your cellar.
-To ensure the integrity of the uploaded file, you can add a checksum as part of the URL parameters. This checksum acts as a fingerprint for the expected file.
+Pre-signed URLs allow the client to upload files directly to S3 without ever exposing your credentials. You simply generate a temporary, time-limited URL and the client uses it to upload their file to your cellar. To ensure the integrity of the uploaded file, you can add a checksum as part of the URL parameters. This checksum acts as a fingerprint for the expected file.
 
 Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign your URL with an MD5 checksum as a parameter, Cellar validates the uploaded file against the expected checksum by verifying both the request headers and the file content. The upload fail if either value doesn't match the expected checksum.
 

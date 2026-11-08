@@ -62,8 +62,7 @@ To be able to use `request.secure`, you have to add `trustxforwarded=true` in `a
 
 If you have a single repository with multiple modules, then you can specify which module to run with `CC_SBT_TARGET_DIR` [environment variable](/doc/manage/environment-variables/).
 
-For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add
-`CC_SBT_TARGET_DIR=play` environment variable.
+For instance, if your Sbt project contains a `shared` and `play` module and you want to execute the `play` module, then add `CC_SBT_TARGET_DIR=play` environment variable.
 
  {{% include "shared/new-relic" %}}
 
@@ -77,8 +76,7 @@ To expose an environment variable through Play configuration, add `my.option=${?
 
 ### sbt-plugin unresolved dependency error
 
-If your project fails with the error `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found` this is because some versions of Play2 try to retrieve a nonexistent version of "sbt-plugin" which is required by the framework.
-To fix it, modify `plugins.sbt` in the project folder of your app like the following:
+If your project fails with the error `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found` this is because some versions of Play2 try to retrieve a nonexistent version of "sbt-plugin" which is required by the framework. To fix it, modify `plugins.sbt` in the project folder of your app like the following:
 
 ``` scala
 // Comment to get more information during initialization

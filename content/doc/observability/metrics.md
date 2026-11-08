@@ -22,8 +22,7 @@ aliases:
 - /doc/tools/metrics
 - /metrics
 ---
-In addition to logs, you can have access to metrics to know how your application behaves.
-By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
+In addition to logs, you can have access to metrics to know how your application behaves. By default, system metrics like CPU and RAM use are available, as well as application-level metrics when available (apache or nginx status for instance).
 
 ## Display metrics
 
@@ -31,16 +30,13 @@ For each application, there is a `Metrics` tab in the console.
 
 ### Overview pane
 
-To get a quick overview of the current state of your scalers, the overview pane
-displays the current CPU, RAM, Disk and Network activity. On supported platforms,
-you can also have access to requests / second, and GC statistics.
+To get a quick overview of the current state of your scalers, the overview pane displays the current CPU, RAM, Disk and Network activity. On supported platforms, you can also have access to requests / second, and GC statistics.
 
 ![Overview pane on Grafana](/images/grafana-from-oveview-pane.png "Direct link from Overview pane to app dashboard in Grafana")
 
 ### Advanced pane
 
-Advanced metrics allow you to access all gathered metrics,
-on a specified time range.
+Advanced metrics allow you to access all gathered metrics, on a specified time range.
 
 ### Custom queries
 
@@ -64,13 +60,11 @@ To customize a template and preserve your changes, create and save a **copy** of
 
 ## Monitoring' metrics
 
-All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/doc/observability/warp10), a Geotimes series database.
-All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.
+All applications and VMs instances behind are monitored. Data is sent to [Warp 10](/doc/observability/warp10), a Geotimes series database. All metrics can be processed directly in the console in the Metrics tab of your applications or by the Clever Cloud Warp 10 endpoint.
 
 ### Monitoring data model
 
-All metrics data follow the same schema in warp 10.
-Each class represents a specific metric. The context is provided by the Warp 10 labels.
+All metrics data follow the same schema in warp 10. Each class represents a specific metric. The context is provided by the Warp 10 labels.
 
 #### Class values and Labels
 
@@ -78,8 +72,7 @@ Each class represents a specific metric. The context is provided by the Warp 10 
 
 A telegraf daemon supplies most metrics.
 
-Each metric is recorded as a Warp 10 class.
-Labels provide additional information about the VMs like instances id, organisation id, reverse proxy used.
+Each metric is recorded as a Warp 10 class. Labels provide additional information about the VMs like instances id, organisation id, reverse proxy used.
 
 ##### Labels
 
@@ -172,8 +165,7 @@ From the `metrics` tab on the console. You can either open a Quantum console, an
 
 More information about [Quantum and Warp 10](/doc/observability/warp10) in our documentation.
 
-For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by
-minute.
+For example, you could fetch the memory usage of an application for the last hour. Smoothed by a data average by minute.
 
 > [!NOTE] Slow queries
 > The computation can take time.
@@ -195,8 +187,7 @@ Consumption can also be inferred by our metrics. We provide some helper macros i
 
 Consumption unit is in **second**.
 
-The following script provides the whole consumption from between start and end timestamps for all applications
-under an organisation.
+The following script provides the whole consumption from between start and end timestamps for all applications under an organisation.
 
 ```txt
 '<READ TOKEN>' '<ORGANISATION ID>' <START TIMESTAMP> <END TIMESTAMP> @clevercloud/app_consumption
@@ -206,11 +197,7 @@ under an organisation.
 
 ### FS Bucket
 
-The storage used by each of your [FS Bucket](/doc/deploy/storage/fs-bucket) add-ons is recorded as the
-`fsbucket.storage` class, with one data point per hour. The value is a size in **bytes**.
-This metric belongs to the `addon-api-fsbucket` Warp 10 application, which is not included in the
-read token shown in an application's **Metrics** tab. Generate a token that includes it with
-[`clever curl`](/doc/tools/cli/#curl):
+The storage used by each of your [FS Bucket](/doc/deploy/storage/fs-bucket) add-ons is recorded as the `fsbucket.storage` class, with one data point per hour. The value is a size in **bytes**. This metric belongs to the `addon-api-fsbucket` Warp 10 application, which is not included in the read token shown in an application's **Metrics** tab. Generate a token that includes it with [`clever curl`](/doc/tools/cli/#curl):
 
 ```bash
 clever curl -X POST -H "Content-Type: application/json" \
@@ -218,13 +205,9 @@ clever curl -X POST -H "Content-Type: application/json" \
   https://api.clever-cloud.com/v4/stats/organisations/<ORGANISATION ID>/tokens/read
 ```
 
-`ttl` controls how long the token remains valid, not how far back it can query. It is an
-[ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) and cannot exceed `P20D`,
-which represents a period of 20 days. The token is returned in the `token` field of the response.
+`ttl` controls how long the token remains valid, not how far back it can query. It is an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) and cannot exceed `P20D`, which represents a period of 20 days. The token is returned in the `token` field of the response.
 
-Save the following [WarpScript](https://www.warp10.io/doc/tools/reference) as `fsbucket.mc2`, replacing
-the token and organisation ID with your values. It retrieves the storage used by every bucket of
-the organisation over the last 30 days:
+Save the following [WarpScript](https://www.warp10.io/doc/tools/reference) as `fsbucket.mc2`, replacing the token and organisation ID with your values. It retrieves the storage used by every bucket of the organisation over the last 30 days:
 
 ```txt
 [ '<READ TOKEN>' 'fsbucket.storage' { 'owner_id' '<ORGANISATION ID>' } NOW 30 d ] FETCH
@@ -237,8 +220,7 @@ curl --data-binary @fsbucket.mc2 \
   https://c2-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
 ```
 
-The API returns a Geo Time Series for each bucket, with its owner, ID, datacenter and storage
-server as labels. A simplified response follows this structure:
+The API returns a Geo Time Series for each bucket, with its owner, ID, datacenter and storage server as labels. A simplified response follows this structure:
 
 ```json
 [
@@ -261,14 +243,9 @@ server as labels. A simplified response follows this structure:
 ]
 ```
 
-Each entry in `v` contains a timestamp in microseconds followed by the storage used in bytes. The
-owner ID starts with `orga_`, or `user_` for a personal organisation. Bucket IDs start with
-`bucket_`, or `app_` for buckets created before the naming change. Datacenter values are not
-case-normalised: both `PAR` and `par` exist in the data. Prefer not to filter on that label, or
-match it case-insensitively.
+Each entry in `v` contains a timestamp in microseconds followed by the storage used in bytes. The owner ID starts with `orga_`, or `user_` for a personal organisation. Bucket IDs start with `bucket_`, or `app_` for buckets created before the naming change. Datacenter values are not case-normalised: both `PAR` and `par` exist in the data. Prefer not to filter on that label, or match it case-insensitively.
 
-To return the total storage used by every bucket, aggregated hourly, append these operations after
-`FETCH` in `fsbucket.mc2`:
+To return the total storage used by every bucket, aggregated hourly, append these operations after `FETCH` in `fsbucket.mc2`:
 
 ```txt
 // Group points into one-hour buckets and keep the last value in each bucket
@@ -341,16 +318,11 @@ client.gauge("my_gauge", 123.45);
 
 <!-- Maybe this should be put in haskell documentation? -->
 
-In Haskell, metrics are usually gathered with [EKG](https://hackage.haskell.org/package/ekg).
-The package `ekg-statsd` allows to push EKG metrics over `statsd`.
+In Haskell, metrics are usually gathered with [EKG](https://hackage.haskell.org/package/ekg). The package `ekg-statsd` allows to push EKG metrics over `statsd`.
 
-If you're using [warp](https://hackage.haskell.org/package/warp), you can use
-`wai-middleware-metrics` to report request distributions (request count,
-responses count aggregated by status code,
-responses latency distribution).
+If you're using [warp](https://hackage.haskell.org/package/warp), you can use `wai-middleware-metrics` to report request distributions (request count, responses count aggregated by status code, responses latency distribution).
 
-EKG allows you to have access to GC metrics, make sure you compile your application
-with `"-with-rtsopts=-T -N"` to enable profiling.
+EKG allows you to have access to GC metrics, make sure you compile your application with `"-with-rtsopts=-T -N"` to enable profiling.
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}

@@ -59,8 +59,7 @@ It's possible to point your personalized domain name to Clever Cloud with either
 > [!TIP] Use a CNAME record
 > Use a CNAME record whenever you can.
 
-With a `CNAME` record, your DNS configuration is always up-to-date.
-Using `A` records requires you to keep the DNS configuration up-to-date manually.
+With a `CNAME` record, your DNS configuration is always up-to-date. Using `A` records requires you to keep the DNS configuration up-to-date manually.
 
 We also support wildcard personal domain names, to do so use the standard pattern to describe it: `*.example.com`
 
@@ -175,10 +174,7 @@ Remember that DNS changes may take time to propagate (usually a few hours, somet
 
 Requests are routed to applications based on the domain name, but you can also route depending on its path.
 
-For instance, you can bind `example.com` to an app, and `example.com/api` to another one.
-All the HTTP requests on `example.com` where the path starts with `/api` are routed to
-the second app. The other requests are routed to the first app.
-You can add a path after every domain name you bind in the console (or with [clever tools](/doc/tools/cli "Clever Tools")).
+For instance, you can bind `example.com` to an app, and `example.com/api` to another one. All the HTTP requests on `example.com` where the path starts with `/api` are routed to the second app. The other requests are routed to the first app. You can add a path after every domain name you bind in the console (or with [clever tools](/doc/tools/cli "Clever Tools")).
 
 Note that your path-routed application **needs** to have a `/whatever` route.
 

@@ -52,9 +52,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
 - Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
 
-    Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
-    in your application, sending performance metrics and errors to the Elastic APM server.
-    **Warning**: This extension is available starting PHP 7.2.
+    Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations in your application, sending performance metrics and errors to the Elastic APM server. **Warning**: This extension is available starting PHP 7.2.
 
 - Event: set `ENABLE_EVENT` to `true`.
 
@@ -94,8 +92,7 @@ Some extensions need to be enabled explicitly. To do so, set the corresponding e
 
 - Mongo: set `ENABLE_MONGO` to `true`.
 
-    MongoDB is a NoSQL Database. This extension allows to use it from PHP.
-    **Warning**: this extension is now superseded by the `mongodb` extension. It is provided for backward compatibility.
+    MongoDB is a NoSQL Database. This extension allows to use it from PHP. **Warning**: this extension is now superseded by the `mongodb` extension. It is provided for backward compatibility.
 
 - NewRelic: set `ENABLE_NEWRELIC` to `true`.
 

@@ -37,27 +37,18 @@ In the sidebar of the organisation section, there are three alternatives to buy 
 
 ## SEPA Direct Debit
 
-When adding your IBAN in the admin console, you accept the following SEPA Direct Debit
-Mandate:
+When adding your IBAN in the admin console, you accept the following SEPA Direct Debit Mandate:
 
-> By providing your IBAN or confirming this payment, you are authorizing Clever Cloud and
-> Stripe, our payment service provider, to send instructions to your bank to debit your
-> account and your bank to debit your account in accordance with those instructions.
-> You also agree to be debited in the future 2 days after receiving a debit notification.
+> By providing your IBAN or confirming this payment, you are authorizing Clever Cloud and Stripe, our payment service provider, to send instructions to your bank to debit your account and your bank to debit your account in accordance with those instructions. You also agree to be debited in the future 2 days after receiving a debit notification.
 >
-> You are entitled to a refund from your bank under the terms and conditions of your
-> agreement with your bank. A refund must be claimed within 8 weeks starting from the date
-> on which your account was debited.
+> You are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
 >
 > Debit instructions are issued in the following cases:
 >
 > - when you confirm an invoice payment;
 > - starting 5 days after issuing the invoice, would you set your IBAN as default payment method;
-> - would the first debit fail, new attempts will be made every day up to 15 days after invoice issuance and every 5 days after that.
-> Your rights are explained in a statement that you can obtain from your bank.
+> - would the first debit fail, new attempts will be made every day up to 15 days after invoice issuance and every 5 days after that. Your rights are explained in a statement that you can obtain from your bank.
 
 ### About invoices issuance and notifications
 
-As explained in the [Monthly Invoice documentation](/doc/account-billing/invoices#monthly-invoice), Clever Cloud issues an invoice at the beginning of every month.
-This invoice is sent to both primary and secondary email address of any Admin or Accountant within the organisation.
-In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.
+As explained in the [Monthly Invoice documentation](/doc/account-billing/invoices#monthly-invoice), Clever Cloud issues an invoice at the beginning of every month. This invoice is sent to both primary and secondary email address of any Admin or Accountant within the organisation. In accordance with SEPA rules and the mandate your agreed to, this email also notifies you that a debit will be attempted 5 days after invoice issuance.

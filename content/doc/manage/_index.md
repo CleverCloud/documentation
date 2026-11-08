@@ -205,29 +205,18 @@ In the **Information** menu, **Archive** hides your application from your list: 
 
 ## Private SSH key
 
-To fetch private dependencies over SSH, provide a private key for your application.
-Clever Cloud installs it in `~/.ssh/` before the build. Register its public key
-with the service that hosts the dependencies. This key is separate from the
-[public keys on your Clever Cloud account](/doc/account-billing/ssh-keys/),
-which authenticate your Git deployments and access to instances. Use a key
-without a passphrase: the deployment can't unlock it interactively.
+To fetch private dependencies over SSH, provide a private key for your application. Clever Cloud installs it in `~/.ssh/` before the build. Register its public key with the service that hosts the dependencies. This key is separate from the [public keys on your Clever Cloud account](/doc/account-billing/ssh-keys/), which authenticate your Git deployments and access to instances. Use a key without a passphrase: the deployment can't unlock it interactively.
 
-Store the key in the `CC_SSH_PRIVATE_KEY` environment variable of your
-application, not in your repository. Its value is the whole content of the
-private key file, from the `-----BEGIN` line to the `-----END` line, line
-breaks included.
+Store the key in the `CC_SSH_PRIVATE_KEY` environment variable of your application, not in your repository. Its value is the whole content of the private key file, from the `-----BEGIN` line to the `-----END` line, line breaks included.
 
-With Clever Tools, write `--` before the key, otherwise Clever Tools reads its
-`-----BEGIN` line as an option:
+With Clever Tools, write `--` before the key, otherwise Clever Tools reads its `-----BEGIN` line as an option:
 
 ```bash
 ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519_dependencies
 clever env set CC_SSH_PRIVATE_KEY -- "$(cat ~/.ssh/id_ed25519_dependencies)"
 ```
 
-Clever Cloud saves the key as `~/.ssh/id_ed25519` by default. To change its
-name, set `CC_SSH_PRIVATE_KEY_FILE` to a file name, such as `dependencies_key`.
-This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
+Clever Cloud saves the key as `~/.ssh/id_ed25519` by default. To change its name, set `CC_SSH_PRIVATE_KEY_FILE` to a file name, such as `dependencies_key`. This value is a file name within `~/.ssh/`, not a path, and can't contain `/`.
 
 ## Other settings
 

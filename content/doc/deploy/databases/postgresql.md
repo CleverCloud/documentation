@@ -36,8 +36,7 @@ PostgreSQL is an object-relational database management system (ORDBMS) with an e
 
 ## Point In Time Recovery
 
-The PostgreSQL add-on supports pgBackRest, enabling incremental backups and point-in-time data restoration.
-It's not installed by default on a PostgreSQL add-on, if you need it, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
+The PostgreSQL add-on supports pgBackRest, enabling incremental backups and point-in-time data restoration. It's not installed by default on a PostgreSQL add-on, if you need it, you can contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Migrating from an old database
 
@@ -163,9 +162,7 @@ In the [Console's Ticket Center](https://console.clever-cloud.com/ticket-center-
 
 ## Automatic vacuuming
 
-[Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons.
-The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted.
-Usually this threshold is set to 20%.
+[Autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html) is automatically enabled on PostgreSQL add-ons. The autovacuum will proceed when a given percentage of rows of a table will be updated/inserted/deleted. Usually this threshold is set to 20%.
 
 ## `pg_activity`
 

@@ -59,9 +59,7 @@ To build with Ant, a `clevercloud/gradle.json` file is the only way: set `ant` i
 
 ## Custom run command
 
-If you need to run a custom command
-you can specify it through the `CC_RUN_COMMAND` environment variable.
-This will override the default way of running your application.
+If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default way of running your application.
 
 Example:
 

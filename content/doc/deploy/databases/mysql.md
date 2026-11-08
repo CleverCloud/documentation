@@ -36,8 +36,7 @@ Two long term support (LTS) branches are available for new add-ons: 8.4, used by
 
 ## Migrating from an old database
 
-Some applications require a populated database to run properly.
-If you want to import your **SQL** dump, you can use several methods:
+Some applications require a populated database to run properly. If you want to import your **SQL** dump, you can use several methods:
 
 1. [The WebGUI (PhpMyAdmin)](https://pma.services.clever-cloud.com/).
 2. Command line tool for MySQL administration

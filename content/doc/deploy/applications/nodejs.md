@@ -299,8 +299,7 @@ app.use(enforce.HTTPS({
 
 ## Troubleshooting your application
 
-If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart.
-To target this behavior, you can gracefully shut down with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment, so you can fix the problem.
+If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart. To target this behavior, you can gracefully shut down with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment, so you can fix the problem.
 
 {{% include "shared/env-injection" %}}
 

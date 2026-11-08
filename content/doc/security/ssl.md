@@ -112,9 +112,7 @@ You should create a `file.pem` containing:
 -----END CERTIFICATE-----
 ```
 
-You may need to mention the algorithm in the footer and header.
-For instance, if the previous format doesn't work, try to use
-`-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----`
+You may need to mention the algorithm in the footer and header. For instance, if the previous format doesn't work, try to use `-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----`
 
 You can add optionnal intermediate certificates by appending them to the file as
 
@@ -147,15 +145,13 @@ In the event that you request the installation of a certificate by the support t
 
 ### Sharing Certificates via Keybase
 
-Another way to transmit your certificates is Keybase.
-Keybase is an encrypted social networking service providing a key directory that maps social media identities to encryption keys (including, but not limited to PGP keys) in a publicly auditable manner. Additionally it offers an end-to-end encrypted chat, you can use to share sensitive informations, such as SSL/TLS certificates.
+Another way to transmit your certificates is Keybase. Keybase is an encrypted social networking service providing a key directory that maps social media identities to encryption keys (including, but not limited to PGP keys) in a publicly auditable manner. Additionally it offers an end-to-end encrypted chat, you can use to share sensitive informations, such as SSL/TLS certificates.
 
 If your are a Keybase.io user, you can find us at [keybase.io/clevercloud](https://keybase.io/clevercloud).
 
 ### Sharing Certificates via GPG
 
-Email can be a secure way to transfer your certificates **when using a signed and encrypted email with GPG**.
-Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
+Email can be a secure way to transfer your certificates **when using a signed and encrypted email with GPG**. Our dedicated email for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
 
 - fingerprint:  `0394 3517 934C 1FA5 ED4E  2F61 218B 86BD 5278 460F`
 - 64-bit: `218B 86BD 5278 460F`

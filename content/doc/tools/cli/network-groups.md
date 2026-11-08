@@ -151,8 +151,7 @@ clever ng search text_to_search --type Member
 ```
 
 > [!NOTE] Search and exact matches
-> The search command is case-insensitive and will return all resources containing the search string.
-> The get command looks for an exact match and will return an error if multiple resources are found.
+> The search command is case-insensitive and will return all resources containing the search string. The get command looks for an exact match and will return an error if multiple resources are found.
 
 ## Get the WireGuard configuration of a Peer
 

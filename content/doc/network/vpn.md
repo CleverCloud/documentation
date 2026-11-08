@@ -22,7 +22,7 @@ We provide three kinds of VPN technologies:
 
 - [WireGuard](https://www.wireguard.com/): our favorite VPN technology. Has been adopted
   by most major "off-the-shelf" VPNs (like the ones that sponsor Youtubers 😉).
-- [IPSec](https://www.wikiwand.com/fr/IPsec): used by a lot of companies. It might be
+- [IPSec](https://en.wikipedia.org/wiki/IPsec): used by a lot of companies. It might be
   their only available VPN technology.
 - [OpenVPN](https://openvpn.net/): less used by companies, but still quite common.
 

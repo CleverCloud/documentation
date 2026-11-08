@@ -41,7 +41,7 @@ If you want to import your **SQL** dump, you can use several methods:
 
 1. [The WebGUI (PhpMyAdmin)](https://pma.services.clever-cloud.com/).
 2. Command line tool for MySQL administration
-3. Any MySQL client such as [MySQL Workbench](https://www.mysql.fr/products/workbench/)
+3. Any MySQL client such as [MySQL Workbench](https://www.mysql.com/products/workbench/)
 
 If you need to import a very large dump, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
 

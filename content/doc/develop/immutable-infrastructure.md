@@ -14,7 +14,7 @@ aliases:
 - /doc/develop/best-practices/immutable-infrastructure
 ---
 
-On Clever Cloud, you don't administer servers: the platform runs your application on instances it creates and replaces. It never updates a running instance: it starts new ones from your runtime image and your code, then stops the old ones. This is immutable infrastructure.
+On Clever Cloud, you don't administer servers: the platform runs your application on instances it creates and replaces. It never updates a running instance: it starts new ones from your runtime image and your code, then stops the old ones. This is immutable infrastructure, one of the principles that [how Clever Cloud works](/doc/how-it-works/) describes, from a push to a running instance.
 
 ## What replaces an instance
 

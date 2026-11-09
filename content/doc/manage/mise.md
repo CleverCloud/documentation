@@ -14,7 +14,7 @@ aliases:
 - /doc/develop/mise
 ---
 
-[Mise](https://mise.jdx.dev) is a tool version manager, an environment manager and a task runner in one file. Clever Cloud ships it on every runtime and runs it before your build.
+[Mise](https://mise.jdx.dev) is a tool version manager, an environment manager and a task runner in one file. Clever Cloud ships it in its [runtime images](/doc/how-it-works/#runtime-images-built-by-clever-cloud), next to the languages and tools they provide, and runs it before your build.
 
 ## What a mise.toml unlocks
 

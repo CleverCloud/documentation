@@ -14,6 +14,8 @@
 }
 
 :root {
+  /* The arrow of the theme for external links, as a mask so it takes the color of the text */
+  --external-arrow-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
   --red-color: rgb(203, 28, 66);
   --blue-color: rgb(0, 172, 230);
   --purple-color: rgb(58, 56, 113);
@@ -143,18 +145,31 @@ Mostly used in environment variables table */
 }
 
 /* Display an arrow at the end of the linked inline code
-External links already get the theme's arrow (externalLinkDecoration) */
+External links already get the theme's arrow (externalLinkDecoration):
+draw the same arrow, in the color of the code, on its baseline */
 .content a:not([target="_blank"]):not(.code-block code) code::after {
-  content: "\00a0↗";
-    color: tomato;
-    font-size: 1rem;
-    bottom: -2px;
-    position: relative;
-    left: 4px;
-    width: 14px;
-    display: inline-block;
-    height: 14px;
-    line-height: 0.35em;
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: baseline;
+  background-color: currentColor;
+  -webkit-mask: var(--external-arrow-mask);
+  mask: var(--external-arrow-mask);
+}
+
+/* Cards: align the badge with the title row, inside the padding of the card */
+.hextra-card-tag {
+  top: 0.9375rem;
+}
+
+.hextra-card-tag:where(:dir(ltr)) {
+  right: 1rem;
+}
+
+.hextra-card-tag:where(:dir(rtl)) {
+  left: 1rem;
 }
 
 /* ---------------
@@ -276,6 +291,6 @@ html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd
   margin-left: 0.15em;
   vertical-align: baseline;
   background-color: currentColor;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+  -webkit-mask: var(--external-arrow-mask);
+  mask: var(--external-arrow-mask);
 }

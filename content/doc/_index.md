@@ -40,8 +40,10 @@ With a [Clever Cloud account](/doc/account-billing/user/#create-an-account) and 
 ```bash
 npm install -g clever-tools
 clever login
+
 git clone https://github.com/CleverCloud/nodejs-example
 cd nodejs-example
+
 clever create --type node my-app
 clever deploy
 ```

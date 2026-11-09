@@ -11,6 +11,7 @@ keywords:
 - key-value
 - search
 aliases:
+- /doc/addons/add-an-addon
 - /doc/addons/couchbase/
 - /doc/databases
 - /doc/databases-and-services/couchbase

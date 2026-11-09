@@ -358,3 +358,5 @@ To revoke a token, use:
 ```console
 clever tokens revoke myTokenId
 ```
+
+Creating a token requires a password, and a token acts with all the rights of your account: [Account](/doc/account-billing/user/#sign-in-from-your-tools) details these rules.

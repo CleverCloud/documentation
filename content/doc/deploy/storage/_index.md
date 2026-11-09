@@ -32,7 +32,7 @@ Use an FS Bucket for software that writes to its disk and that you can't change,
 
 ## Create a storage add-on
 
-In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick Cellar or FS Bucket. Choose its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/addons/), create one of them and link it to an application in one command:
+In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick Cellar or FS Bucket. Choose its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/addons/), from a folder linked to your application, create one of them and link it with the alias of the application:
 
 ```bash
 clever addon create cellar-addon my-storage --link my-app

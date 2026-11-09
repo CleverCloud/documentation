@@ -1250,8 +1250,8 @@ Clever Cloud certificate covers `*.cellar-c2.services.clever-cloud.com` but not 
 Solve it by **forcing s3cmd to use path style endpoint** with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
 {{% /details %}}
 
-{{% details title="I can't delete a bucket/Cellar add-on" closed="true" %}}
+{{% details title="I can't delete a bucket" closed="true" %}}
 
-The buckets need to be empty before you can delete them. Solve this error by deleting the content of your bucket using a [bucket management option](#managing-your-buckets).
+A bucket needs to be empty before you can delete it. Delete its content first, with one of the [bucket management options](#managing-your-buckets).
 
 {{% /details %}}

@@ -21,7 +21,7 @@ To create a new {{ replace .File.ContentBaseName "-" " " | title }} application,
 clever create --type {{ .File.ContentBaseName }}
 ```
 
-The [getting started guide](/doc/getting-started/#create-an-application-step-by-step) describes each step of the creation of an application.
+The [getting started guide](/doc/getting-started/) describes each step of the creation of an application.
 
 ## Configure your {{ replace .File.ContentBaseName "-" " " | title }} application
 

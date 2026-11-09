@@ -33,7 +33,7 @@ clever create --type frankenphp
 ```
 
 - [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
+- [Learn more about Clever Cloud application deployment](/doc/getting-started/)
 
 > [!NOTE] FrankenPHP applications can't be deployed on a pico instance, XS is the default instance type
 

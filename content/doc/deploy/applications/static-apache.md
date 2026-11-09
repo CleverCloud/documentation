@@ -37,8 +37,6 @@ Just follow the instructions of your FTP Software to send code to Clever Cloud.
 
 ⚠️ **An FTP application automatically starts once you create the application, even if you don't send any code yet.**
 
-Refer to  [Quick Start - FTP deployment](/doc/getting-started#choose-how-to-deploy) for more details.
-
 ## Serving index.html for SPA (Single Page Application) routers
 
 When you work with an SPA framework like React, Vue.js, Angular…, you're using client side routing. This means when you click on a link going to `/the-page`, your browser doesn't make an HTTP request for `/the-page`. Instead, the client side router highjacks the clicks on links, changes the DOM to display the page and ask the browser to change the URL in the address bar to `/the-page`.

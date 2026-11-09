@@ -117,6 +117,7 @@ clever env set CC_SSH_PRIVATE_KEY -- "$(cat ~/.ssh/id_ed25519_dependencies)"
 Write `--` before the key, otherwise Clever Tools reads its `-----BEGIN` line as an option.
 
 - [Learn more about the private SSH key](/doc/manage/#private-ssh-key)
+- [Deploy private Git submodules](/doc/deploy/applications/#git-submodules)
 {{% /details %}}
 
 {{% details title="I get a `java.lang.UnsupportedClassVersionError: Unsupported major.minor version` error. How can I fix it?" closed="true" %}}

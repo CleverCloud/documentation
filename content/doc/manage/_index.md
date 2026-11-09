@@ -199,7 +199,7 @@ In the **Information** menu, **Archive** hides your application from your list: 
 
 ## Private SSH key
 
-To fetch private dependencies over SSH, provide a private key for your application. Clever Cloud installs it in `~/.ssh/` before the build. Register its public key with the service that hosts the dependencies. This key is separate from the [public keys on your Clever Cloud account](/doc/account-billing/ssh-keys/), which authenticate your Git deployments and access to instances. Use a key without a passphrase: the deployment can't unlock it interactively.
+To fetch private dependencies or [Git submodules](/doc/deploy/applications/#git-submodules) over SSH, provide a private key for your application. Clever Cloud installs it in `~/.ssh/` before the build. Register its public key with the service that hosts them. This key is separate from the [public keys on your Clever Cloud account](/doc/account-billing/ssh-keys/), which authenticate your Git deployments and access to instances. Use a key without a passphrase: the deployment can't unlock it.
 
 Store the key in the `CC_SSH_PRIVATE_KEY` environment variable of your application, not in your repository. Its value is the whole content of the private key file, from the `-----BEGIN` line to the `-----END` line, line breaks included.
 

@@ -66,18 +66,26 @@ menu:
     - identifier: more
       name: More
       weight: 6
+    - name: Academy
+      parent: more
+      url: https://academy.clever.cloud/?lang=en
+      weight: 1
     - name: Community
       parent: more
       url: https://github.com/CleverCloud/Community/discussions
-      weight: 1
+      weight: 2
     - name: Roadmap
       parent: more
       url: https://github.com/orgs/CleverCloud/projects/9
-      weight: 2
+      weight: 3
+    - name: Status
+      parent: more
+      url: https://www.clevercloudstatus.com/
+      weight: 4
     - name: Web Components
       parent: more
       url: https://www.clever.cloud/developers/clever-components/
-      weight: 3
+      weight: 5
     - name: Search
       weight: 7
       params:

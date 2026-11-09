@@ -1,153 +1,100 @@
-/* -----------------------------------------------
-         This code is overriding default theme
-            configuration and classes
--------------------------------------------------*/
+/* =========================================================================
+   Clever Cloud overrides of the Hextra theme
 
-/* -----------------------------------------
-            Fonts and typography
-------------------------------------------*/
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  font-weight: 700;
-  src: url('/developers/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('/developers/fonts/plus-jakarta-sans-v8-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
+   The site loads the precompiled CSS of Hextra (css/compiled/main.css), then
+   this file. Hextra only ships the `hx:` utility classes its own templates
+   use: a utility class that our templates add, and that Hextra doesn't use,
+   has no effect unless this file defines it.
+
+   Hextra puts its utility classes in a CSS layer: a rule of this file wins
+   over them whatever its specificity. Its other rules, for the content and
+   its components, aren't layered: a rule of this file only wins over them
+   with the same specificity or a higher one, as it comes later. When Hextra
+   renames a class, check the rules below that target it: they stop matching
+   without any error.
+   ========================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   Variables
+   ------------------------------------------------------------------------- */
 
 :root {
-  /* The arrow of the theme for external links, as a mask so it takes the color of the text */
-  --external-arrow-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+  /* Colors of the Clever Cloud brand */
   --red-color: rgb(203, 28, 66);
   --blue-color: rgb(0, 172, 230);
   --purple-color: rgb(58, 56, 113);
-  --dark-background-color: rgba(227, 210, 210, 0);
-  --hx-tracking-tighter: +0.005em;
+
+  /* Arrow that Hextra draws after external links (externalLinkDecoration),
+     as a mask, so that it takes the color of the text it follows */
+  --external-arrow-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m9.1716 7.7574h7.0711m0 0v7.0711m0-7.0711-8.4853 8.4853" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+
+  /* Hextra tightens the title of the home page (hx:tracking-tighter), which
+     makes Plus Jakarta Sans too dense: loosen it slightly instead */
+  --hx-tracking-tighter: 0.005em;
 }
 
-h1, .content h1,
+
+/* -------------------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------------------- */
+
+/* Plus Jakarta Sans, the font of the Clever Cloud brand, for the titles */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 700;
+  src: url('/developers/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2'),
+       url('/developers/fonts/plus-jakarta-sans-v8-latin-700.ttf') format('truetype');
+}
+
+h1,
 .content h2,
-.content h3,
 .content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.highlight .chroma .err {
-  color: var(--red-color);
-  background-color: var(--dark-background-color);
-}
 
-html:not([class~="dark"]) .sidebar-active-item {
-  background-color: rgb(224, 227, 255) !important;
-  color: rgb(0, 14, 163) !important;
-}
+/* -------------------------------------------------------------------------
+   Square corners of the home page
+   The feature cards and the buttons of the home page, also used by the 404
+   page, follow the square corners of the Clever Cloud brand. Everything
+   else keeps the rounded corners of Hextra.
+   ------------------------------------------------------------------------- */
 
-/* Override border-radius class to fit Clever's theme */
-.btn-secondary,
+.hextra-feature-card,
 .btn-primary,
-.chroma .lntable,
-.content img,
-.hx\:rounded-xl,
-.hx\:rounded-3xl {
-  border-radius: 0rem;
+.btn-secondary {
+  border-radius: 0;
 }
 
-/* -----------------------------
-            Shortcodes
------------------------------ */
 
-/* Align card content to the top when cards have different heights */
-.hextra-card > .hx\:mt-auto {
-  margin-top: 0;
-}
+/* -------------------------------------------------------------------------
+   Links
+   ------------------------------------------------------------------------- */
 
-/* Hero buttons on home page */
-.btn-primary {
-  background-color: var(--purple-color);
-  text-decoration: none;
-}
-
-.btn-primary:hover, .btn-secondary:hover {
-  background-color: var(--red-color);
-  color: white;
-}
-
-/* Steps
-Allow inserting "steps" shortcode with h4 */
-.steps h4 {
-  counter-increment: step;
-}
-
-.steps h4:before,.steps h3:before {
-  position: absolute;
-  height: 33px;
-  width: 33px;
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-radius: 9999px;
-  border-color: var(--purple-color);
-  background-color: var(--purple-color);
-  text-align: center;
-  font-size: 1rem;
-  font-weight:700;
-  --tw-text-opacity: 1;
-  color: white;
-  margin-top: -1px;
-  margin-left: -41px;
-  content: counter(step);
-  }
-
-  .steps h3:before{
-    margin-top:2px
-  }
-
-.steps h4,.steps h3{
-  font-family: inherit;
-}
-
-:is(html[class~="dark"] .steps h4):before,:is(html[class~="dark"] .steps h3):before {
-  --tw-border-opacity: 1;
-  border-color: rgb(38 38 38 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-}
-
-/* --------------
-      Links
---------------- */
-
-/* Custom link color.
-This will be applied also to code (except in tables):
-selectors in css can't be grained to target Markdown syntax
-(for now) */
-html[class~="dark"] .content p a,
-html[class~="dark"] article .content p a,
-html[class~="dark"] article .content div a:not(.hextra-feature-card) ,
-html[class~="dark"] article .content li a {
+/* In dark mode, links of the content use the blue of the brand, dotted.
+   In light mode, they keep the primary color of Hextra. */
+html[class~="dark"] article .content :is(p, li, div) a:not(.hextra-feature-card) {
   color: var(--blue-color);
   text-decoration-style: dotted;
 }
 
-html[class~="dark"] button[data-state="selected"],
-html[class~="dark"] .sidebar-active-item {
-  color: var(--blue-color) !important;
-}
-
-article .content a:hover:not(.hextra-feature-card),
-article main h4 a:hover {
+/* Links of the content turn red on hover, in both modes */
+article .content a:hover:not(.hextra-feature-card) {
   color: var(--red-color) !important;
   text-decoration-style: dotted;
 }
 
-/* Don't change the style for an inline code within a link
-Mostly used in environment variables table */
-.content a:has(code){
+/* A link around inline code, as in the environment variables reference,
+   keeps the look of the code rather than the one of a link */
+.content a:has(code) {
   text-decoration: none;
   color: inherit;
 }
 
-/* Display an arrow at the end of the linked inline code
-External links already get the theme's arrow (externalLinkDecoration):
-draw the same arrow, in the color of the code, on its baseline */
-.content a:not([target="_blank"]):not(.code-block code) code::after {
+/* As it isn't underlined, a link around inline code gets an arrow, the same
+   as the one of external links, which already get it from Hextra */
+.content a:not([target="_blank"]) code::after {
   content: "";
   display: inline-block;
   width: 1em;
@@ -159,7 +106,44 @@ draw the same arrow, in the color of the code, on its baseline */
   mask: var(--external-arrow-mask);
 }
 
-/* Cards: align the badge with the title row, inside the padding of the card */
+/* "Edit this page" link of the table of contents: the i18n string can only
+   carry text, so the arrow of external links is added here */
+.hextra-toc a[rel="noreferrer"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: baseline;
+  background-color: currentColor;
+  -webkit-mask: var(--external-arrow-mask);
+  mask: var(--external-arrow-mask);
+}
+
+
+/* -------------------------------------------------------------------------
+   Tabs
+   ------------------------------------------------------------------------- */
+
+/* In dark mode, the selected tab uses the blue of the brand, as links do */
+html[class~="dark"] button[data-state="selected"] {
+  color: var(--blue-color) !important;
+}
+
+
+/* -------------------------------------------------------------------------
+   Cards
+   ------------------------------------------------------------------------- */
+
+/* Hextra pushes the content of a card to its bottom (hx:mt-auto): in a row
+   of cards of different heights, align it to the top instead, so that the
+   titles of the row stay on the same line */
+.hextra-card > .hx\:mt-auto {
+  margin-top: 0;
+}
+
+/* Hextra puts the badge of a card, such as Beta, in its top corner: align it
+   with the title row, within the padding of the card */
 .hextra-card-tag {
   top: 0.9375rem;
 }
@@ -172,125 +156,111 @@ draw the same arrow, in the color of the code, on its baseline */
   left: 1rem;
 }
 
-/* ---------------
-      Tables
---------------- */
 
-/* Table headers formatting */
-.content table:not(.code-block table) th {
-  border-right-width: 0px;
-  border-left-width: 0px;
-  border-top: none;
-  text-transform: uppercase;
-  color: rgba(115, 115, 142, 1);
+/* -------------------------------------------------------------------------
+   Code highlighting
+   ------------------------------------------------------------------------- */
+
+/* Chroma marks the tokens it can't parse with a pink background. Show them
+   as regular red text instead. In dark mode, Hextra keeps its own red. */
+.highlight .chroma .err {
+  color: var(--red-color);
+  background-color: transparent;
 }
 
-/* Table headers formatting for dark mode */
-html[class~="dark"] .content table:not(.code-block table) th {
+
+/* -------------------------------------------------------------------------
+   Tables of the content
+   Code blocks with line numbers are tables too: leave them out.
+   ------------------------------------------------------------------------- */
+
+/* Headers in uppercase and gray, without side and top borders */
+.content table:not(.hextra-code-block table) th {
+  border-right-width: 0;
+  border-left-width: 0;
+  border-top: none;
+  text-transform: uppercase;
+  color: rgb(115, 115, 142);
+}
+
+html[class~="dark"] .content table:not(.hextra-code-block table) th {
   color: rgb(193, 193, 196);
 }
 
-/* Remove most of the borders */
-.content table:not(.code-block table) td {
-  margin: 0px;
-  border-width: 0px;
-  --tw-border-opacity: 0;
-}
-
-/* Text in cells */
-.content table:not(.code-block table) tr {
+/* Rows without borders, in a smaller font, with zebra striping */
+.content table:not(.hextra-code-block table) tr {
   font-size: 0.9rem;
-  border-width: 0px;
+  border-width: 0;
 }
 
-/* Zebra striping for table rows */
-.content table:not(.code-block table) tbody tr:nth-child(even) {
-  background-color: rgb(243, 244, 246); /* Gray-100 */
+.content table:not(.hextra-code-block table) td {
+  margin: 0;
+  border-width: 0;
 }
 
-.content table:not(.code-block table) tbody tr:nth-child(odd) {
-  background-color: transparent;
+.content table:not(.hextra-code-block table) tbody tr:nth-child(even) {
+  background-color: rgb(243, 244, 246);
 }
 
-/* Dark mode zebra striping */
-html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(even) {
-  background-color: rgba(75, 85, 99, 0.2); /* Gray-600 with 20% opacity */
+html[class~="dark"] .content table:not(.hextra-code-block table) tbody tr:nth-child(even) {
+  background-color: rgba(75, 85, 99, 0.2);
 }
 
-html[class~="dark"] .content table:not(.code-block table) tbody tr:nth-child(odd) {
-  background-color: transparent;
+
+/* -------------------------------------------------------------------------
+   Buttons of the home and 404 pages
+   (shortcodes hero-button-primary and hero-button-secondary, 404 layout)
+   ------------------------------------------------------------------------- */
+
+.btn-primary {
+  background-color: var(--purple-color);
+  text-decoration: none;
 }
 
-/* ---------------------------------------
-          Animation for 404 page
---------------------------------------- */
-.animate__headShake {
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-name: headShake;
-  animation-name:headShake
-}
-.animate__animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: var(--red-color);
+  color: white;
 }
 
-@keyframes headShake {
-    0% {
-        -webkit-transform: translateX(0);
-        transform:translateX(0)
-    }
 
-    6.5% {
-        -webkit-transform: translateX(-6px) rotateY(-9deg);
-        transform:translateX(-6px) rotateY(-9deg)
-    }
+/* -------------------------------------------------------------------------
+   Changelog
+   ------------------------------------------------------------------------- */
 
-    18.5% {
-        -webkit-transform: translateX(5px) rotateY(7deg);
-        transform:translateX(5px) rotateY(7deg)
-    }
-
-    31.5% {
-        -webkit-transform: translateX(-3px) rotateY(-5deg);
-        transform:translateX(-3px) rotateY(-5deg)
-    }
-
-    43.5% {
-        -webkit-transform: translateX(2px) rotateY(3deg);
-        transform:translateX(2px) rotateY(3deg)
-    }
-
-    50% {
-        -webkit-transform: translateX(0);
-        transform:translateX(0)
-    }
-}
-
-/* -------------------------
-            Changelog
-------------------------- */
-
-/* Entries listing--*/
+/* Indentation of the entries of the changelog list (changelog/list.html):
+   Hextra doesn't use this utility class, so its CSS doesn't define it */
 .hx\:pl-5 {
   padding-left: 1.25rem;
 }
 
-/* "Edit this page" link: reuse the same arrow as external links.
-   The i18n string can only carry text, so the icon is appended here.
-   A mask keeps it on currentColor, so hover and dark mode follow the link. */
-.hextra-toc a[rel="noreferrer"]::after {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.15em;
-  vertical-align: baseline;
-  background-color: currentColor;
-  -webkit-mask: var(--external-arrow-mask);
-  mask: var(--external-arrow-mask);
+/* Titles of the entries turn red on hover, as links of the content do */
+article main h4 a:hover {
+  color: var(--red-color) !important;
+  text-decoration-style: dotted;
+}
+
+
+/* -------------------------------------------------------------------------
+   404 page
+   Head shake of the illustration (404 layout)
+   ------------------------------------------------------------------------- */
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__headShake {
+  animation-name: headShake;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes headShake {
+  0%    { transform: translateX(0); }
+  6.5%  { transform: translateX(-6px) rotateY(-9deg); }
+  18.5% { transform: translateX(5px) rotateY(7deg); }
+  31.5% { transform: translateX(-3px) rotateY(-5deg); }
+  43.5% { transform: translateX(2px) rotateY(3deg); }
+  50%   { transform: translateX(0); }
 }

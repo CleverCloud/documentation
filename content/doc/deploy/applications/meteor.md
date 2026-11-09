@@ -34,7 +34,7 @@ clever create --type meteor
 Use the `meteor` type: a [Node.js application](/doc/deploy/applications/nodejs/) doesn't build Meteor projects, it only logs a warning when it finds a `.meteor` folder. To move such an application to the Meteor runtime, deploy your code to a new Meteor.js application.
 
 - [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/#create-an-application-step-by-step)
+- [Learn more about Clever Cloud application deployment](/doc/getting-started/)
 
 ## Configure your Meteor.js application
 

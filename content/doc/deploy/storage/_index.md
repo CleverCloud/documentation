@@ -2,7 +2,7 @@
 type: docs
 linkTitle: Storage
 title: Storage
-description: Store files and objects on Clever Cloud with S3-compatible object storage, persistent file systems and managed messaging
+description: Keep the files of your applications across deployments on Clever Cloud, with Cellar object storage or an FS Bucket file system, and choose between them
 keywords:
 - storage
 - object storage
@@ -17,62 +17,34 @@ aliases:
 - /doc/storage
 ---
 
-Applications on Clever Cloud run on ephemeral file systems: anything written locally disappears on the next deployment. Use these add-ons to persist files across deployments and share them between instances.
+Each deployment starts new instances: the files an application writes on its local disk disappear with the previous ones. To keep them across deployments, and share them between instances, store them in one of these add-ons.
 
-{{< cards >}}
+{{< cards cols="2" >}}
   {{< card link="/developers/doc/deploy/storage/cellar" title="Cellar" subtitle="S3-compatible object storage" icon="cellar" >}}
   {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Bucket" subtitle="Persistent file system for applications" icon="fsbucket" >}}
 {{< /cards >}}
 
-You want to store files but you can't decide between FS Buckets and Cellar. This article will compare them: usage, pros/cons, pricing.
+## Choose between Cellar and FS Bucket
 
-Clever Cloud uses immutable disposable VMs. Every time you redeploy your application, you lose the old instances and all the files stored on their filesystems. If you want to avoid that, you have to store your important files outside of your instances.
+For a new project, use Cellar. Your application reads and writes objects over HTTPS, with any S3 client or SDK, and doesn't depend on the instance it runs on. It can also hand out [temporary signed URLs](/doc/deploy/storage/cellar/#uploading-objects-with-presigned-urls-and-checksum-validation), so that browsers upload or download files directly, without going through your application. Cellar also [hosts static websites](/doc/deploy/storage/cellar/#static-hosting), and keeps former versions of your files when you enable [versioning](/doc/deploy/storage/cellar/#versioning).
 
-Cellar and FS Buckets both allow you to store files outside of your instances for later use. But there are some differences between them.
+Use an FS Bucket for software that writes to its disk and that you can't change, such as a content management system storing its media. Your application sees a folder, mounted over the network and shared by all its instances, so its code doesn't change. This compatibility comes with [limits](/doc/deploy/storage/fs-bucket/#limits): Docker applications can't mount an FS Bucket, an application only mounts the buckets of its region, and file locks only apply within an instance. Don't store a SQLite database in a bucket that several instances use.
 
-> [!TIP] Cellar or FS Bucket
-> To store the files of a new project, use Cellar: it costs less and gives you more flexibility. To run a WordPress website or an open source PHP application, you may have to use an FS Bucket.
+## Create a storage add-on
 
-## What is FS Bucket?
+In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick Cellar or FS Bucket. Choose its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/addons/), create one of them and link it to an application in one command:
 
-Configuring FS Buckets in your application will give you a folder *in your filesystem*. This folder is shared between instances/applications. It's mounted over the network. As for any network filesystem there are upsides and downsides.
+```bash
+clever addon create cellar-addon my-storage --link my-app
+clever addon create fs-bucket my-bucket --region par --link my-app
+```
 
-### Upsides of FS Bucket
+Linking Cellar gives the application its credentials in `CELLAR_ADDON_HOST`, `CELLAR_ADDON_KEY_ID`, and `CELLAR_ADDON_KEY_SECRET`: then [create a bucket](/doc/deploy/storage/cellar/#creating-a-bucket) for your files. Linking an FS Bucket gives its host and FTP credentials, but doesn't mount it: [mount it](/doc/deploy/storage/fs-bucket/#mount-the-bucket-in-your-application) with `CC_FS_BUCKET`.
 
-If your application manages files on a filesystem, you don't have to change anything. Just setup your FS Bucket to mount on a given folder, setup your application to write in that folder and you are good to go!
+## Delete a storage add-on
 
-Since the folder is mounted over the network, multiple instances/applications can read it like any file on the system. At the same time.
+Select **Delete the add-on** in the danger zone of the **Dashboard** of the add-on, or **Remove add-on** in its **Information** menu. With Clever Tools:
 
-### Downsides of FS Bucket
-
-Since it's a file on a filesystem, you can be tempted to store a SQLite (or equivalent) database in it. This would be wrong. If many instances try to write in it at the same time, you might end up with a corrupted database.
-
-For the same reason, anything accessing a file in write at the same time might corrupt the data you put in it.
-
-## What is Cellar?
-
-Cellar is an Amazon S3 API implementation using [Ceph Rados Gateway](https://ceph.com/ceph-storage/object-storage/). It provides an HTTP API that can be used with any S3 API Client. Clients exist for a lot of languages. You can use any S3 Client, from the official Amazon ones to the community ones.
-
-If you already use S3, you will be in your element.
-
-To store a file, issue a PUT HTTP request to Cellar's API. To get a file, issue a GET request to the API. You need secret and public keys to authenticate your requests. You can manage ACLs and generate signed URLs with an expiration date.
-
-### Upsides of Cellar
-
-You can move the file uploads to your client entirely. Just give it a temporary signed URL (generated by your backend) and it will be able to upload directly to Cellar. That way, you don't have to handle the receive-and-upload part on the server side.
-
-Your files are stored in a secure way outside of your apps FS. So an attacker will have a harder time to find it.
-
-You can delegate the authorization part to Cellar by giving signed urls for file downloads and uploads.
-
-The files are stored with a replication factor of 3, meaning that there are 2 replicas in addition of the original data.
-
-### Downsides of Cellar
-
-When deploying an application you did not write, file uploads may already be developed using local files. Like in WordPress, PrestaShop, etc. So you would have to use plugins or hack it to upload to Cellar.
-
-## What should I choose?
-
-Well, you read the upsides and downsides of both. You may understand where our preference goes, by now! If you can, use Cellar. S3 Client library exist in almost all languages. It's [cheaper](/doc/deploy/storage/cellar). It's more resilient to hardware failures. It gives you free processing power: when using files on your filesystem, you have to process them yourself. When using Cellar, you can delegate the handling of the upload to Cellar itself.
-
-If you don't have a choice, use whatever you have to use.
+```bash
+clever addon delete my-storage
+```

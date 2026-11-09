@@ -37,7 +37,17 @@ An entry shows:
 - **Commit ID**: the commit it deployed, for applications deployed with Git
 - **Logs**: the [logs](/doc/observability/logs/) of this deployment, while they're within their retention period
 
-From the Console, **Redeploy this commit** deploys the commit of an entry again, to roll back to a previous version. You can cancel a `DEPLOY` in progress from the Console, or with `clever cancel-deploy`.
+You can cancel a `DEPLOY` in progress from the Console, or with `clever cancel-deploy`.
+
+## Roll back to a previous version
+
+The activity keeps the commit of each deployment: if a new version misbehaves, redeploy a previous one. Select **Redeploy this commit** next to an entry that succeeded, or restart the application on its commit with Clever Tools:
+
+```bash
+clever restart --commit "<commitID>"
+```
+
+Clever Cloud deploys this commit like any other: when [zero downtime deployment](/doc/manage/#zero-downtime-deployment) is enabled, the new instances get the traffic once they pass the [health check](/doc/manage/healthcheck/). The rollback restores your code, not your environment variables nor the data of your add-ons, which keep their current state. To fix the issue for good, push a new commit, which becomes the next deployment.
 
 ## Actions
 

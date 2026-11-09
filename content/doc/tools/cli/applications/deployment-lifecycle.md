@@ -91,6 +91,8 @@ By default, it will use its build cache when available. But you can override it 
 [--exit-on, -e] STEP       Step at which the logs streaming is ended, steps are: deploy-start, deploy-end, never (default: deploy-end)
 ```
 
+To roll back, restart the application with the `--commit` option of a previous deployment: [Activity](/doc/manage/activity/#roll-back-to-a-previous-version) explains what it restores.
+
 ## stop | cancel-deploy
 
 To stop an application or cancel any ongoing deployment, use:

@@ -20,4 +20,4 @@ Elastic Stack, Materia KV, and Pulsar also get an access block. It lists what yo
 
 [Configuration provider](/doc/deploy/services/config-provider/) add-ons get the new header too, above the form managing their environment variables.
 
-- [Learn more about add-ons on Clever Cloud](/doc/deploy/addons/)
+- [Learn more about add-ons on Clever Cloud](/doc/deploy/)

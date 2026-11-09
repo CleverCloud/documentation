@@ -46,7 +46,7 @@ aliases:
   {{< hextra/feature-card
     title="Add databases and services"
     subtitle="Link MySQL, PostgreSQL, Redis, MongoDB, Elastic, or other managed add-ons to your applications"
-    link="/developers/doc/deploy/addons"
+    link="/developers/doc/deploy/databases/"
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
     image="/images/metrics-home.png"
     imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"

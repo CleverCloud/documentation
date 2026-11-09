@@ -63,11 +63,6 @@
   {{- /* Layout and dark theme overrides, loaded after swagger-ui.css */ -}}
   {{- $swaggerCss := resources.Get "css/swagger.css" | minify | fingerprint }}
   <link href="{{ $swaggerCss.RelPermalink }}" rel="stylesheet" integrity="{{ $swaggerCss.Data.Integrity }}" />
-  <!-- CSS custom Swagger UI (si défini) -->
-  {{ $cssUrl := .Params.swagger.cssUrl }}
-  {{ if $cssUrl }}
-  <link rel="stylesheet" href="{{ $cssUrl }}" />
-  {{ end }}
 
   {{ partial "components/analytics/analytics.html" . }}
 

@@ -37,4 +37,4 @@ What only exists on an instance disappears with it: files written on its disk, p
 - Store your data and your sessions outside the instance, in add-ons, an FS Bucket, or Cellar Object Storage
 - Start fast to shorten each replacement: with zero downtime deployment, old instances serve until the new ones are healthy
 - Debug an instance through SSH if you need to, then bring the fix to your code and redeploy
-- To roll back, redeploy a previous commit from the activity of your application
+- To roll back, [redeploy a previous commit](/doc/manage/activity/#roll-back-to-a-previous-version) from the activity of your application

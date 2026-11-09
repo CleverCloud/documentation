@@ -77,13 +77,7 @@ Old and new instances share the same add-ons during the switch: make your databa
 
 ### Roll back
 
-To roll back, click **Redeploy this commit** next to a previous deployment in the [activity](/doc/manage/activity/) of your application, or use Clever Tools:
-
-```bash
-clever restart --commit COMMIT_ID
-```
-
-Replace `COMMIT_ID` with the commit of a successful deployment. This restores your code, not your variables nor your databases.
+If a new version misbehaves, redeploy the commit of a previous deployment from the [activity](/doc/manage/activity/#roll-back-to-a-previous-version) of your application.
 
 ### Validate a version before production
 

@@ -13,7 +13,7 @@ aliases:
 - /doc/services
 ---
 
-These add-ons cover what your team needs around its own code, without installing it yourself. Clever Cloud or a partner operates them: Keycloak, Matomo, Metabase, and Otoroshi Gateway run on applications and add-ons of your organisation, which you see and resize like your own.
+These services cover what your team needs around its own code, without installing it yourself. Clever Cloud or a partner operates them: Keycloak, Matomo, Metabase, and Otoroshi Gateway run on applications and add-ons of your organisation, which you see and resize like your own.
 
 ## Identity and API management
 
@@ -35,7 +35,7 @@ Matomo measures the audience of your websites while you keep its data. Metabase 
 
 ## Code hosting and CI/CD
 
-Heptapod hosts your Git and Mercurial repositories. Jenkins runs your pipelines on runners that Clever Cloud starts on demand.
+Heptapod Cloud hosts your Git and Mercurial repositories: it isn't an add-on, and you [open it](/doc/deploy/services/heptapod/#accessing-heptapod-cloud) with your Clever Cloud account. Jenkins runs your pipelines on runners that Clever Cloud starts on demand.
 
 {{< cards cols="2" >}}
   {{< card link="/developers/doc/deploy/services/heptapod" title="Heptapod" subtitle="Fork of GitLab Community Edition with Mercurial support" icon="git" >}}
@@ -53,7 +53,7 @@ MailPace sends the transactional emails of your applications. A configuration pr
 
 ## Create a service
 
-In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick a service. Choose its plan, region, and name. With [Clever Tools](/doc/tools/cli/addons/), `clever addon providers` lists the services, and `clever addon providers show keycloak` the plans and options of one. Then create it:
+In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick a service, except Heptapod. Choose its plan, region, and name. With [Clever Tools](/doc/tools/cli/addons/), `clever addon providers` lists the services, and `clever addon providers show keycloak` the plans of one. Then create it:
 
 ```bash
 clever addon create keycloak my-keycloak

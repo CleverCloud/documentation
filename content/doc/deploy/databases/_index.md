@@ -52,7 +52,7 @@ Store JSON documents, index text for search and logs, or record metrics over tim
 
 ## Create a database
 
-In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick a database. Choose its plan, its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/addons/), create the add-on and link it to an application in one command:
+In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, then **Add-on**, and pick a database. Choose its plan, its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/addons/), from a folder linked to your application, create the add-on and link it with the alias of the application:
 
 ```bash
 clever addon create postgresql-addon my-database --plan dev --link my-app

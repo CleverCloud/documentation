@@ -119,7 +119,7 @@ To declare your **public SSH Key** on Clever Cloud, in the [Console](https://con
 
 Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_[ed25519/rsa].pub** file including the `id_ed25519/ssh-rsa` part and your email.
 
-If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/doc/getting-started/#choose-how-to-deploy), your SSH keys may be invalid or not available on Clever Cloud. Check that your SSH key is present and valid in your profile.
+If you see "*access denied*" or "*password:*" when you [push on Clever Cloud](/doc/deploy/applications/#create-and-deploy-an-application), your SSH keys may be invalid or not available on Clever Cloud. Check that your SSH key is present and valid in your profile.
 
 ### From Clever Tools {#through-cc-api-or-clever-curl}
 

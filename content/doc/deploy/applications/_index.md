@@ -47,6 +47,12 @@ Find here specific instructions related to your application's language.
   {{< card link="/developers/doc/deploy/applications/v" title="V (Vlang)" icon="simple:v" >}}
 {{< /cards >}}
 
+## Create and Deploy an Application
+
+In the [Console](https://console.clever-cloud.com/), select **Create** at the top of the sidebar, pick the runtime of your application, and follow the wizard: choose its scaling, its region, and its name. With Clever Tools, run [`clever create`](/doc/tools/cli/applications/#create) with the type of your runtime from the Git repository of your code, such as `clever create --type node my-app`. [How Clever Cloud works](/doc/how-it-works/) explains how the runtime builds and runs your code, and which tools it provides.
+
+To deploy your code, run `clever deploy` from this repository: an application created in the Console needs [`clever link`](/doc/tools/cli/applications/#unlink-and-make-default) first. You can also push with Git to the `master` branch of the **Deployment URL** in its **Information** menu, with an [SSH key](/doc/account-billing/ssh-keys/) in your profile, or [deploy from a GitHub repository](/doc/tools/github/), which redeploys on each push. [PHP applications](/doc/deploy/applications/php/) can also use FTP. For a first deployment, follow the [getting started tutorial](/doc/getting-started/).
+
 ## Deploying a Non-native Runtime
 
 If your runtime isn't available natively, the [Linux runtime](/developers/doc/deploy/applications/linux) with [Mise](https://mise.jdx.dev/) can run many languages and tools — see examples in [our GitHub examples and demos](https://github.com/CleverCloud/examples-and-demos). Otherwise, use the [Docker runtime](/developers/doc/deploy/applications/docker) with a Dockerfile from [Docker Hub](https://hub.docker.com/) or your own.

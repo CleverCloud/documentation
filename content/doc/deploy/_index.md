@@ -12,11 +12,20 @@ keywords:
 - runtimes
 - managed services
 aliases:
+- /addons
+- /clever-cloud-overview/intro-to-addons
+- /doc/addons
+- /doc/addons/add-an-addon
+- /doc/addons/clever-cloud-addons
+- /doc/administrate/addons
 - /doc/cli/deploy/
-
+- /doc/clever-cloud-overview/intro-to-addons
+- /doc/deploy/addon
+- /doc/deploy/addons
+- /doc/extend
 ---
 
-Push your source, and the platform detects the runtime, installs your dependencies, then starts your application behind a load balancer with TLS configured. Databases, storage and services are add-ons you create alongside it. Several of them run on Materia, the serverless layer Clever Cloud built on FoundationDB: nothing to size or back up, data replicated across three data centers, and access through the protocols you already use.
+Push your source, and the platform detects the runtime, installs your dependencies, then starts your application behind a load balancer with TLS. Databases, storage and services are add-ons you create alongside it. Several of them run on Materia, the serverless layer Clever Cloud built on FoundationDB: nothing to size or back up, data replicated across three data centers, and access through the protocols you already use.
 
 {{< cards >}}
   {{< card link="/developers/doc/deploy/applications" title="Applications" subtitle="Language runtimes for your code, from Node.js to Rust" icon="rocket-launch" >}}

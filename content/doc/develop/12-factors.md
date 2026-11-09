@@ -31,7 +31,7 @@ What changes between two deployments of the same code, such as credentials or th
 
 ## Backing services
 
-A database, a cache, or a message broker is an attached resource, reached through an address in the configuration. On Clever Cloud, link an [add-on](/doc/deploy/addons/) to your application: it gets its credentials as environment variables, such as `POSTGRESQL_ADDON_URI`. To move to another PostgreSQL database, replace this link with one to the new add-on, then redeploy: your code doesn't change, but the link doesn't move your data. Avoid linking two add-ons that expose [the same variables](/doc/manage/service-dependencies/#conflicting-variable-names), such as two PostgreSQL databases.
+A database, a cache, or a message broker is an attached resource, reached through an address in the configuration. On Clever Cloud, [link an add-on](/doc/manage/service-dependencies/#link-a-service) to your application: it gets its credentials as environment variables, such as `POSTGRESQL_ADDON_URI`. To move to another PostgreSQL database, replace this link with one to the new add-on, then redeploy: your code doesn't change, but the link doesn't move your data. Avoid linking two add-ons that expose [the same variables](/doc/manage/service-dependencies/#conflicting-variable-names), such as two PostgreSQL databases.
 
 ## Build, release, run
 

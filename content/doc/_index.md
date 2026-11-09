@@ -79,7 +79,7 @@ Once your application runs, the platform gives you what production needs:
 
 - **Scale with the load**: set the size and number of instances, or let [autoscaling](/doc/manage/scaling/) adjust them
 - **Deploy without downtime, roll back in one click**: with [zero downtime deployment](/doc/manage/#zero-downtime-deployment), new instances get the traffic once they pass the [health check](/doc/manage/healthcheck/), and you [redeploy a previous commit](/doc/manage/activity/#roll-back-to-a-previous-version) from the activity of your application
-- **Update your versions**: change a [variable](/doc/manage/environment-variables/reference/) such as `CC_NODE_VERSION`, then redeploy, while Clever Cloud keeps the [runtime images](/doc/how-it-works/#runtime-images-built-by-clever-cloud) up to date
+- **Update your versions**: change the [version](/doc/deploy/applications/) your application requests, such as `engines.node` in `package.json` or `CC_PYTHON_VERSION`, then redeploy, while Clever Cloud keeps the [runtime images](/doc/how-it-works/#runtime-images-built-by-clever-cloud) up to date
 - **Observe**: read your [logs](/doc/observability/logs/), explore your [metrics in Grafana](/doc/observability/metrics/), send logs to your tools with [drains](/doc/observability/drains/), or profile with [Blackfire](/doc/observability/blackfire/) and [New Relic](/doc/observability/new-relic/)
 - **Shape your traffic**: add a cache, redirections, or authentication before your application with [Request Flow](/doc/manage/request-flow/), on [your domains](/doc/manage/domain-names/)
 - **Connect privately**: link applications, add-ons, and your own machines over WireGuard with [Network Groups](/doc/network/network-groups/)

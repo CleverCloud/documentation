@@ -118,7 +118,7 @@ clever domain rm FQDN
 > [!TIP]
 > You can set the same domain with multiple apps thanks to [prefix routing](/doc/manage/domain-names/#path-routing). For example, you can add `mydomain.com/app1` domain to an application and `mydomain.com/app2` to another.
 
-To (un)set [the favourite domain](/doc/manage/domain-names/#primary-favourite-domain-name), use:
+To (un)set [the favorite domain](/doc/manage/domain-names/#favorite-domain), use:
 
 ```console
 clever domain favourite set FQDN

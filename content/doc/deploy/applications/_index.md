@@ -53,6 +53,14 @@ In the [Console](https://console.clever-cloud.com/), select **Create** at the to
 
 To deploy your code, run `clever deploy` from this repository: an application created in the Console needs [`clever link`](/doc/tools/cli/applications/#unlink-and-make-default) first. You can also push with Git to the `master` branch of the **Deployment URL** in its **Information** menu, with an [SSH key](/doc/account-billing/ssh-keys/) in your profile, or [deploy from a GitHub repository](/doc/tools/github/), which redeploys on each push. [PHP applications](/doc/deploy/applications/php/) can also use FTP. For a first deployment, follow the [getting started tutorial](/doc/getting-started/).
 
+### Git Submodules
+
+Your repository records the commit of each submodule, not its files. If your repository has a `.gitmodules` file, Clever Cloud fetches the content of its submodules after the clone, before the build, with `git submodule update --init`. This fetch isn't recursive: it skips nested submodules.
+
+For a private submodule, keep credentials out of `.gitmodules`: use its SSH URL, such as `git@github.com:my-org/my-library.git`, and give your application a [private SSH key](/doc/manage/#private-ssh-key) with read access to it. Clever Cloud installs this key before it fetches the submodules. If it can't fetch one, the deployment fails, and its logs show the Git error, such as `Permission denied (publickey)`.
+
+To deploy without fetching the submodules, set `CC_DISABLE_GIT_SUBMODULES=true`.
+
 ## Deploying a Non-native Runtime
 
 If your runtime isn't available natively, the [Linux runtime](/developers/doc/deploy/applications/linux) with [Mise](https://mise.jdx.dev/) can run many languages and tools — see examples in [our GitHub examples and demos](https://github.com/CleverCloud/examples-and-demos). Otherwise, use the [Docker runtime](/developers/doc/deploy/applications/docker) with a Dockerfile from [Docker Hub](https://hub.docker.com/) or your own.

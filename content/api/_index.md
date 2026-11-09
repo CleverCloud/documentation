@@ -53,7 +53,7 @@ Each response carries a `Sozu-Id` header. If you contact the support team about 
 
 ### API tokens
 
-Clever Cloud Console allows you to easily create and manage API tokens.
+Create and manage API tokens in the Console. Creating one requires a password, and the token shows only once: [Account](/doc/account-billing/user/#sign-in-from-your-tools) details these rules.
 
 ![Manage API tokens in Clever Cloud Console](/images/console-api-tokens.webp)
 

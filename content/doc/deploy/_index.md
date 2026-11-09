@@ -15,7 +15,6 @@ aliases:
 - /addons
 - /clever-cloud-overview/intro-to-addons
 - /doc/addons
-- /doc/addons/add-an-addon
 - /doc/addons/clever-cloud-addons
 - /doc/administrate/addons
 - /doc/cli/deploy/

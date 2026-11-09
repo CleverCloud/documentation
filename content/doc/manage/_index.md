@@ -157,7 +157,7 @@ The region sets where your instances run. Choose it when you create your applica
 
 PHP applications can't change region, and an [FS Bucket](/doc/deploy/storage/fs-bucket/) only mounts in its own region.
 
-- [Learn how to move an application and its add-ons to another region](/doc/manage/zone-migration/)
+- [Learn more about regions, and how to move an application](/doc/manage/regions/)
 
 ### Zero downtime deployment
 
@@ -228,6 +228,7 @@ Clever Cloud saves the key as `~/.ssh/id_ed25519` by default. To change its name
   {{< card link="/developers/doc/manage/environment-variables" title="Environment variables" subtitle="Configure your application and get the credentials of its add-ons" icon="pencil-square" >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
   {{< card link="/developers/doc/manage/mise" title="Mise Package Manager" subtitle="Pin the tool versions your build needs" icon="cube" >}}
+  {{< card link="/developers/doc/manage/regions" title="Regions" subtitle="Choose where your applications run, and move them to another region" icon="map-pin" >}}
   {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
   {{< card link="/developers/doc/manage/scaling" title="Scaling" subtitle="Set the size and number of instances, or let them follow the load" icon="server-stack" >}}
   {{< card link="/developers/doc/manage/service-dependencies" title="Service dependencies" subtitle="Link applications and add-ons to receive their credentials" icon="plug" >}}
@@ -235,5 +236,4 @@ Clever Cloud saves the key as `~/.ssh/id_ed25519` by default. To change its name
   {{< card link="/developers/doc/manage/tailscale" title="Tailscale" subtitle="Connect the instances of your application to your tailnet" icon="lock-closed" >}}
   {{< card link="/developers/doc/manage/tcp-redirections" title="TCP redirections" subtitle="Expose a public TCP port of your application for non-HTTP protocols" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/manage/workers" title="Workers" subtitle="Keep background processes running next to your application" icon="cog-6-tooth" >}}
-  {{< card link="/developers/doc/manage/zone-migration" title="Zone migration" subtitle="Move your applications and add-ons to another region" icon="map-pin" >}}
 {{< /cards >}}

@@ -31,17 +31,17 @@ A Network Group has members: applications, add-ons, and external machines of the
 
 On each instance, Clever Cloud adds one WireGuard interface for each group the application belongs to, named `wg-` followed by the end of the group ID. The peers connect directly to each other, without a central gateway.
 
-An application or add-on member has a domain name for all its peers, and each peer its own name, from the ID of the instance:
+An application or add-on member has a domain name for all its peers, and each peer its own name:
 
 | Name                                          | Resolves to                     |
 | --------------------------------------------- | ------------------------------- |
 | `<memberID>.m.<ngID>.cc-ng.cloud`             | All the instances of the member |
-| `<hostname>.p.<ngID>.cc-ng.cloud`             | One instance                    |
-| `<hostname>.<memberID>.m.<ngID>.cc-ng.cloud`  | One instance                    |
+| `<peerID>.p.<ngID>.cc-ng.cloud`               | One instance                    |
+| `<peerID>.<memberID>.m.<ngID>.cc-ng.cloud`    | One instance                    |
 
-These names resolve only inside Clever Cloud instances, through the internal DNS resolver. External peers get no name: reach them by their private address. The domain name of a member isn't a load balancer or a health check: a client connects to one of the addresses it returns.
+The ID of a peer is the `INSTANCE_ID` of its instance. These names resolve only inside Clever Cloud instances, through the internal DNS resolver. External peers have no address in the DNS, even though the API lists a domain name for their member: reach them by their private address. The domain name of a member isn't a load balancer or a health check: a client connects to one of the addresses it returns.
 
-The domain name of a member holds its ID, such as `app_xxx` or `postgresql_xxx`, and the ID of the group, `ng_xxx`: a hostname doesn't allow their underscores. Tomcat, the HTTP client of Java, and other clients and servers reject these names in a URL or a `Host` header. The same name written with a hyphen in place of each underscore also resolves: use `app-xxx.m.ng-xxx.cc-ng.cloud` or `postgresql-xxx.m.ng-xxx.cc-ng.cloud` instead.
+The domain name of a member holds its ID, such as `app_xxx` or `postgresql_xxx`, and the ID of the group, `ng_xxx`: a hostname doesn't allow their underscores. Tomcat, the HTTP client of Java, and other clients and servers reject these names in a URL or a `Host` header. The same name with hyphens in place of underscores also resolves: use `app-xxx.m.ng-xxx.cc-ng.cloud` or `postgresql-xxx.m.ng-xxx.cc-ng.cloud`.
 
 A peer reaches another on any port, if the service behind it listens on `0.0.0.0` or on the address of the group, not only on `localhost`.
 

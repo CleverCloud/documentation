@@ -53,7 +53,7 @@ So you can alter the build&start process for your application.
 
 | Name                                                                    | Description                                                                                                                            | Default value |
 |-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| `APP_FOLDER`                                                            | Folder in which the application is located (inside the git repository)                                                                 |               |
+| `CC_APP_FOLDER`                                                         | Folder in which the application is located, relative to the root of the Git repository. `APP_FOLDER` also works                        |               |
 | `CC_DISABLE_JVM_AGENT`                                                  | Set to `true` to disable the JVM metrics agent                                                                                         |               |
 | `CC_GIT_FULL_CLONE`                                                     | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment                                            | true          |
 | [`CC_DISABLE_GIT_SUBMODULES`](/doc/deploy/applications/#git-submodules) | Disable Git submodules initialization & synchronization                                                                                |               |
@@ -96,15 +96,15 @@ You can set some tools' version in any runtime (except Docker):
 
 #### Deployment hooks
 
-Use these to define [commands to run](/doc/manage/build-hooks) between various steps of the deployment.
+Use these to define [commands to run](/doc/manage/build-hooks) between various steps of the deployment. Docker applications only run `CC_RUN_SUCCEEDED_HOOK`.
 
-| Name                                                                                                                   | Description                                                                                                               |
-|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| [`CC_PRE_BUILD_HOOK`](/doc/manage/build-hooks/#pre-build "Pre build hook")                                             | Ran before the dependencies are fetched. If it fails, the deployment fails.                                               |
-| [`CC_POST_BUILD_HOOK`](/doc/manage/build-hooks/#post-build "Post build hook")                                          | Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.             |
-| [`CC_PRE_RUN_HOOK`](/doc/manage/build-hooks/#pre-run "Pre run hook")                                                   | Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails. |
-| [`CC_RUN_FAILED_HOOK`](/doc/manage/build-hooks/#run-successfail "Run succeeded/failed hook")                           | Ran once the application has failed to start.                                                                             |
-| [`CC_RUN_SUCCEEDED_HOOK`](/doc/manage/build-hooks/#run-successfail "Run succeeded/failed hook" )                       | Ran once the application has started successfuly.                                                                         |
+| Name                                                                                                         | Description                                                                                                                                           |
+|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`CC_PRE_BUILD_HOOK`](/doc/manage/build-hooks/#pre-build "Pre build hook")                                   | Runs before the dependencies are installed, unless the deployment starts from the build cache. If it fails, the deployment fails.                     |
+| [`CC_POST_BUILD_HOOK`](/doc/manage/build-hooks/#post-build "Post build hook")                                | Runs after the build, before the build cache is created, unless the deployment starts from the build cache. If it fails, the deployment fails.        |
+| [`CC_PRE_RUN_HOOK`](/doc/manage/build-hooks/#pre-run "Pre run hook")                                         | Runs before the application starts, at each start of each instance. If it fails, the deployment fails.                                                |
+| [`CC_RUN_FAILED_HOOK`](/doc/manage/build-hooks/#run-succeeded-and-run-failed "Run succeeded/failed hook")    | Runs once the deployment has failed. Its errors are logged, without changing the outcome.                                                             |
+| [`CC_RUN_SUCCEEDED_HOOK`](/doc/manage/build-hooks/#run-succeeded-and-run-failed "Run succeeded/failed hook") | Runs once the application has started successfully, or once the command of a task has succeeded. Its errors are logged, without changing the outcome. |
 
 #### Configure extra software
 

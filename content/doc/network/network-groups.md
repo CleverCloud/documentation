@@ -41,6 +41,8 @@ An application or add-on member has a domain name for all its peers, and each pe
 
 These names resolve only inside Clever Cloud instances, through the internal DNS resolver. External peers get no name: reach them by their private address. The domain name of a member isn't a load balancer or a health check: a client connects to one of the addresses it returns.
 
+The domain name of a member holds its ID, such as `app_xxx` or `postgresql_xxx`, and the ID of the group, `ng_xxx`: a hostname doesn't allow their underscores. Tomcat, the HTTP client of Java, and other clients and servers reject these names in a URL or a `Host` header. The same name written with a hyphen in place of each underscore also resolves: use `app-xxx.m.ng-xxx.cc-ng.cloud` or `postgresql-xxx.m.ng-xxx.cc-ng.cloud` instead.
+
 A peer reaches another on any port, if the service behind it listens on `0.0.0.0` or on the address of the group, not only on `localhost`.
 
 ```mermaid

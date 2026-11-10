@@ -83,6 +83,7 @@ resource "clevercloud_nodejs" "app" {
   max_instance_count = 3
   smallest_flavor    = "XS"
   biggest_flavor     = "M"
+  node_version       = "24"
 
   dependencies = [clevercloud_postgresql.db.id]
 
@@ -94,7 +95,11 @@ resource "clevercloud_nodejs" "app" {
 }
 ```
 
-Every application and add-on resource accepts `tags`, either plain (`production`) or key/value (`env:production`). When the attribute is unset, Terraform leaves the tags set elsewhere untouched and never reports them. Removing it from the configuration keeps the current tags: set `tags = []` to remove them all.
+Every application, add-on, and Kubernetes cluster resource accepts `tags`, either plain (`production`) or key/value (`env:production`). When the attribute is unset, Terraform leaves the tags set elsewhere untouched and never reports them. Removing it from the configuration keeps the current tags: set `tags = []` to remove them all.
+
+Application resources expose most variables of their runtime as attributes, such as `node_version` for `CC_NODE_VERSION`: the documentation of each attribute names the variable it sets. The `environment` attribute refuses a variable that an attribute of the resource manages, and `terraform plan` fails until you move it. Variables without an attribute, such as `NODE_ENV`, stay in `environment`.
+
+A `clevercloud_kubernetes` cluster takes a `version`, checked against the versions the platform offers: changing it moves the cluster in place, and a move to an older version comes with a plan warning. The `topology` attribute sets the control plane, and changing it replaces the cluster with every workload and volume it holds. `persistent_storage = true` enables the driver that provides persistent volumes.
 
 On a `clevercloud_kubernetes` cluster, `node_autoprovisioning = true` enables node auto-provisioning, which creates and deletes nodes on demand instead of resizing node groups. It provisions nothing until you deploy `NodePool` and `CleverNodeClass` resources in the cluster, requires Kubernetes 1.34 or later, and excludes the cluster-wide autoscaler.
 

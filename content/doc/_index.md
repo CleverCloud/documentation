@@ -33,7 +33,7 @@ aliases:
 
 Clever Cloud is a European Platform as a Service (PaaS): it maintains the system your code runs on, so you focus on your application. Each instance runs in its own virtual machine, isolated from other customers. [How Clever Cloud works](/doc/how-it-works/) explains what the platform takes care of.
 
-## Deploy in minutes
+## Deploy in seconds
 
 With a [Clever Cloud account](/doc/account-billing/user/#create-an-account) and Git, install [Clever Tools](/doc/tools/cli/install/) with npm, Homebrew, or a binary, sign in, and deploy a [ready-made example](https://github.com/CleverCloud/nodejs-example):
 

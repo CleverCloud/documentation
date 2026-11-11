@@ -84,6 +84,7 @@ Laravel
 Let's Encrypt
 LLMs
 Lume
+Magnetar
 Mailparse
 Makefile
 markdownlint

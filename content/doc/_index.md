@@ -57,7 +57,7 @@ With a [Clever Cloud account](/doc/account-billing/user/#create-an-account) and 
 
 `clever deploy` ends with the URL of your application, which [consumes credits](/doc/account-billing/consumption/) until you run `clever delete`. To deploy your own project, run `clever create` with [its runtime](#choose-your-runtime) and `clever deploy` from its Git repository, once your code is committed and [listens on the right port](/doc/manage/#listen-on-the-right-port).
 
-Watch a deployment in the [interactive demo](https://www.clever.cloud/quickstart/), or follow the tutorial, which builds an application from scratch. Your code is on GitHub? [Deploy it from its repository](/doc/tools/github/), and each push redeploys it. To try another stack, fork one of the [examples and demos](https://github.com/CleverCloud/examples-and-demos), ready to deploy for each runtime.
+The [interactive demo](https://www.clever.cloud/quickstart/) shows a deployment from the Console, and the tutorial builds an application from scratch. Your code is on GitHub? [Deploy it from its repository](/doc/tools/github/), and each push redeploys it. To try another stack, fork one of the [examples and demos](https://github.com/CleverCloud/examples-and-demos), ready to deploy for each runtime.
 
 {{< cards cols="2" >}}
   {{< card link="/developers/doc/getting-started" title="Deploy your first application" subtitle="Deploy, link a database, and ship a change in about ten minutes" icon="rocket-launch" >}}

@@ -598,16 +598,18 @@ When your Python application doesn't use uv nor one of the supported backends, w
 
 ### Pulsar
 
-| Name                       | Description                                 | Default value           | Read Only |
-| -------------------------- | ------------------------------------------- | ----------------------- | --------- |
-| `ADDON_PULSAR_BINARY_URL`  | The complete URL to use in your application | Generated upon creation | ✓         |
-| `ADDON_PULSAR_BINARY_PORT` | The port to connect to the Pulsar Cluster   | Generated upon creation | ✓         |
-| `ADDON_PULSAR_HOSTNAME`    | The host to connect to the Pulsar Cluster   | Generated upon creation | ✓         |
-| `ADDON_PULSAR_HTTP_URL`    | The complete URL to connect with WebSocket  | Generated upon creation | ✓         |
-| `ADDON_PULSAR_HTTP_PORT`   | The port to connect with WebSocket          | Generated upon creation | ✓         |
-| `ADDON_PULSAR_NAMESPACE`   | Your add-on Pulsar ID                       | Generated upon creation | ✓         |
-| `ADDON_PULSAR_TENANT`      | Your Clever Cloud tenant ID                 | Generated upon creation | ✓         |
-| `ADDON_PULSAR_TOKEN`       | Your Biscuit authentication token           | Generated upon creation | ✓         |
+[Pulsar Documentation](/doc/deploy/pulsar/)
+
+| Name                       | Description                                                        | Default value           | Read Only |
+| -------------------------- | ------------------------------------------------------------------ | ----------------------- | --------- |
+| `ADDON_PULSAR_BINARY_URL`  | URL of the Pulsar protocol, with TLS, for client libraries         | Generated upon creation | ✓         |
+| `ADDON_PULSAR_BINARY_PORT` | Port of the Pulsar protocol, with TLS                              | Generated upon creation | ✓         |
+| `ADDON_PULSAR_HOSTNAME`    | Host of the Pulsar cluster                                         | Generated upon creation | ✓         |
+| `ADDON_PULSAR_HTTP_URL`    | URL of the admin API, with TLS                                     | Generated upon creation | ✓         |
+| `ADDON_PULSAR_HTTP_PORT`   | Port of the admin API, with TLS                                    | Generated upon creation | ✓         |
+| `ADDON_PULSAR_NAMESPACE`   | Namespace of the add-on, its real ID                               | Generated upon creation | ✓         |
+| `ADDON_PULSAR_TENANT`      | Tenant of the add-on: ID of its organisation or personal space     | Generated upon creation | ✓         |
+| `ADDON_PULSAR_TOKEN`       | [Eclipse Biscuit](https://doc.biscuitsec.org/) token of the add-on | Generated upon creation | ✓         |
 
 ### Redis
 

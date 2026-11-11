@@ -195,9 +195,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 {{% details title="How to know if a user comes from a secure connection?" closed="true" %}}
 
-Load-balancers handles all connections ahead of your applications and forward them in plain HTTP, you can't rely on the server port to know the scheme used by the user.
-
-Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information, it's set to either '*http*' or '*https*'.
+The load balancers handle TLS and forward requests in plain HTTP: the port of your server doesn't tell the protocol of the client. With [Force HTTPS](/doc/manage/#force-https), enabled by default, each request that reaches your application through the load balancers came over HTTPS. Otherwise, read the headers that the load balancers add: see [Get the protocol](/doc/network/load-balancers/#get-the-protocol).
 
 > [!NOTE] Play Framework
 > To use `request.secure` instead of the header, configure your `application.conf`. Add `XForwardedSupport=all` with Play Framework 1, or `trustxforwarded=true` with Play Framework 2 before 2.4. For later versions, see the [Play Framework 2 page](/doc/deploy/applications/scala/play-framework-2/).
@@ -211,11 +209,7 @@ Instead, you can use the `X-Forwarded-Proto` HTTP header to get the information,
 
 {{% details title="How to get the user's IP address?" closed="true" %}}
 
-Load-balancers ahead of your applications handle all connections and forward them in plain HTTP. So if you get the `REMOTE_ADDR` or `Client-IP` header, you get only the IP of the load balancer that forwarded the user request.
-
-To get the original client's IP address, use the `X-Forwarded-For` HTTP header. The load balancer automatically adds this header to each request.
-
-The `X-Forwarded-For` header contains a comma-separated list of IP addresses. The first address in this list is your end user's original IP address. Any subsequent addresses represent the proxies that the request passed through before reaching your application. [Read the Wikipedia page for more details](https://en.wikipedia.org/wiki/X-Forwarded-For).
+The connection to your application comes from a load balancer: `REMOTE_ADDR` holds its address, not the one of the client. The load balancers add the address of the client at the end of the `X-Forwarded-For` header: see [Get the address of the client](/doc/network/load-balancers/#get-the-address-of-the-client).
 {{% /details %}}
 
 {{% details title="How to setup a firewall on Clever Cloud?" closed="true" %}}

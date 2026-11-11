@@ -124,6 +124,7 @@ Some clients allow you to upload files, list them, delete them, etc, like:
 - [MinIO](https://min.io/docs/minio/linux/reference/minio-mc.html)
 - [Rclone Web GUI](https://rclone.org/gui/)
 - [S3 Browser](https://s3browser.com/)
+- [S3 Explorer](https://s3explorer.accessdevops.com/)
 - [WinSCP](https://winscp.net)
 
 This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/issues/new/choose).

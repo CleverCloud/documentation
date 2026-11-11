@@ -111,13 +111,16 @@ Clever Cloud then runs `go install ./cmd/server`, and starts the `server` binary
 
 ### Go version
 
-The image includes a recent Go release. When the `go` or `toolchain` line of `go.mod` requires a newer version, Go downloads it during the build, as [`GOTOOLCHAIN`](https://go.dev/doc/toolchain) is `auto`. To build with another version, from Go 1.21 and at least the one of the `go` line of `go.mod`, set `GOTOOLCHAIN`:
+The image includes Go `{{< runtime_version go >}}`. When the `go` or `toolchain` line of `go.mod` requires a newer version, Go downloads it during the build, as [`GOTOOLCHAIN`](https://go.dev/doc/toolchain) is `auto`. To build with another version, declare it in a [`mise.toml`](/doc/manage/mise/) file at the root of your project. Clever Cloud installs it with Mise at the start of each new build, before it runs `go install`:
 
-```bash
-clever env set GOTOOLCHAIN go1.26.0
+```toml {filename="mise.toml"}
+[tools]
+go = "1.26.5"
 ```
 
-With `go 1.26` in `go.mod`, the deployment logs then show `go: downloading go1.26.0`, before the build.
+You can also set `GOTOOLCHAIN` to a version from Go 1.21, such as `go1.26.0`: the deployment logs then show `go: downloading go1.26.0` before the build. In both cases, use a version at least as recent as the `go` line of `go.mod`. With an older one, Go downloads the version of this line instead, while a build pinned to an older version with `GOTOOLCHAIN` fails.
+
+Go only [supports](https://go.dev/doc/devel/release#policy) its two latest versions: you use an older one, which can have known vulnerabilities, at your own risk.
 
 ### Build with a Makefile
 

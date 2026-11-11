@@ -105,7 +105,7 @@ Clever Cloud is API-first: the Console uses the same public [API](/api/) as your
 
 ## Need more?
 
-Clever Cloud also provides, on request, [dedicated load balancers](/doc/network/load-balancers/), [VPN connections](/doc/network/vpn/) to your data centers with WireGuard, IPsec, or OpenVPN, and a [managed GitLab](https://www.clever.cloud/product/gitlab/). Contact the [sales team](mailto:sales@clever-cloud.com) to discuss your needs.
+Clever Cloud also provides, on request, [dedicated load balancers](/doc/network/load-balancers/#dedicated-load-balancers), [VPN connections](/doc/network/vpn/) to your data centers with WireGuard, IPsec, or OpenVPN, and a [managed GitLab](https://www.clever.cloud/product/gitlab/). Contact the [sales team](mailto:sales@clever-cloud.com) to discuss your needs.
 
 ## Explore the documentation
 

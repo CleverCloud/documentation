@@ -285,7 +285,7 @@ NPM_TOKEN="00000000-0000-0000-0000-000000000000"
 
 ## Automatic HTTPS redirection
 
-You can use the [X-Forwarded-Proto header](/doc/find-help/faq) to enable it.
+[Force HTTPS](/doc/manage/#force-https), enabled by default, redirects HTTP requests to HTTPS. To do it in your application, read the [load balancer headers](/doc/network/load-balancers/#get-the-protocol).
 
 If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
 

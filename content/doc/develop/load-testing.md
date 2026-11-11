@@ -23,7 +23,7 @@ Test a staging application rather than production, with the same runtime and [sc
 
 The public load balancers are shared between customers: a heavy load from a few addresses looks like an attack, and the network protection can block it. [Contact the Support](https://console.clever-cloud.com/ticket-center-choice) before the test, with its date, its duration, the expected request rate, and the target domain.
 
-With a [dedicated load balancer](/doc/network/load-balancers/), the load stays on it, but it also affects the other applications behind this load balancer.
+With a [dedicated load balancer](/doc/network/load-balancers/#dedicated-load-balancers), the load stays on it, but it also affects the other applications behind this load balancer.
 
 ## Define the test
 

@@ -22,7 +22,7 @@ aliases:
 - /doc/services/otoroshi
 ---
 
-[Otoroshi](https://www.otoroshi.io/) is an open source API gateway, built by MAIF on a modern HTTP reverse proxy. It routes requests to your services, authenticates their callers with API keys, JWT tokens, OpenID Connect, or Biscuit tokens, enforces quotas, and transforms requests and responses. Its configuration changes at runtime, from its web interface or its API, without a restart.
+[Otoroshi](https://www.otoroshi.io/) is an open source API gateway, built by MAIF on a modern HTTP reverse proxy. It routes requests to your services, authenticates their callers with API keys, JWT tokens, OpenID Connect, or [Eclipse Biscuit](https://doc.biscuitsec.org/) tokens, enforces quotas, and transforms requests and responses. Its configuration changes at runtime, from its web interface or its API, without a restart.
 
 Otoroshi Gateway is Otoroshi managed by Clever Cloud. Its distribution, built with [Cloud APIM](https://www.cloud-apim.com/), adds [extensions](#bundled-extensions) to the open source gateway, such as an LLM gateway, a threat protection suite, and Biscuit tokens.
 

@@ -82,7 +82,7 @@ To create a Kubernetes cluster, use the Console or the following command in Clev
 clever addon create kms myKMS --org <your_org_id>
 ```
 
-The add-on is immediately created and you can start using it. You will receive two tokens, based on [Eclipse Biscuit](https://biscuitsec.org/):
+The add-on is immediately created and you can start using it. You will receive two tokens, based on [Eclipse Biscuit](https://doc.biscuitsec.org/):
 
 - Root token: for administrative tasks
 - User token: for day‑to‑day tasks

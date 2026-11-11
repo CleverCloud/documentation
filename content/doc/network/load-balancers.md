@@ -99,6 +99,8 @@ The host of a dedicated database add-on, such as `POSTGRESQL_ADDON_HOST`, usuall
 
 To bypass these proxies, generate a direct host and port for [MySQL](/doc/deploy/databases/mysql/#direct-access) or [PostgreSQL](/doc/deploy/databases/postgresql/#direct-access), or reach the add-on through a [Network Group](/doc/network/network-groups/).
 
+A PostgreSQL [private database](/doc/network/private-databases/) is reachable only from a Network Group, through a dedicated load balancer.
+
 ## Dedicated load balancers
 
 By default, your applications share the load balancers of their region with other customers. For workloads that need isolated capacity, fixed inbound IP addresses or additional redundancy, you can request **dedicated load balancers**.
@@ -106,6 +108,7 @@ By default, your applications share the load balancers of their region with othe
 Dedicated load balancers are especially relevant if you need to:
 
 - **Isolate your traffic** from other customers
+- **Isolate a PostgreSQL add-on** from the internet, as a [private database](/doc/network/private-databases/)
 - **Add redundancy** to the network entry point of critical architectures
 - **Use fixed inbound IP addresses** for allowlists or compliance requirements
 - **Handle high traffic volumes** without sharing load balancer capacity with other organisations

@@ -68,6 +68,10 @@ Generating direct access adds new variables to the add-on's environment, allowin
 > [!NOTE] Direct access after a migration
 > A [migration](/doc/develop/database-migration/) moves the database to a new server, with a new direct hostname and port. Clever Cloud updates the variables of the add-on, and redeploys its running linked applications. Update the direct hostname and port wherever you copied them.
 
+## Private database
+
+To isolate a dedicated PostgreSQL add-on from the internet, create it as a [private database](/doc/network/private-databases/), behind a dedicated load balancer.
+
 ## Encryption at rest
 
 Encryption at rest is available on PostgreSQL. You can find more information on the [dedicated page](/doc/security/encryption-at-rest)

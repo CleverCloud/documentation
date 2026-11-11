@@ -19,6 +19,7 @@ An application has no stable network identity by default: inbound traffic shares
   {{< card link="/developers/doc/network/load-balancers" title="Load balancers" subtitle="Request headers, client address, dedicated load balancers" icon="server-stack" >}}
   {{< card link="/developers/doc/network/ip-ranges" title="IP ranges" subtitle="Query current outbound ranges from the API, never hardcode them" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/network/network-groups" title="Network Groups" subtitle="WireGuard network between your resources, joinable from outside" icon="endpoints" >}}
+  {{< card link="/developers/doc/network/private-databases" title="Private databases" subtitle="PostgreSQL add-ons reachable only from a Network Group" icon="circle-stack" >}}
   {{< card link="/developers/doc/network/unique-ip" title="Unique IP" subtitle="One fixed exit IP address per region" icon="map-pin" >}}
   {{< card link="/developers/doc/network/vpn" title="VPN" subtitle="Private access to your services over WireGuard, IPSec or OpenVPN" icon="lock-closed" >}}
 {{< /cards >}}

@@ -137,6 +137,12 @@ pagination:
   pagerSize: 21 # Number of entries in Changelog section before pagination
 
 params:
+  # Asciinema player and Mermaid, downloaded at build time and served with the site
+  asciinema:
+    base: https://cdn.jsdelivr.net/npm/asciinema-player@3/dist/bundle
+  mermaid:
+    base: https://cdn.jsdelivr.net/npm/mermaid@12/dist
+
   blog:
     list:
       displayTags: true

@@ -215,7 +215,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/dotnet" title=".NET" icon="dotnet" >}}
   {{< card link="/developers/doc/deploy/applications/docker" title="Docker" icon="simple:docker" >}}
   {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
-  {{< card link="/developers/doc/deploy/applications/golang/#environment-injection" title="Go" icon="simple:go" >}}
+  {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="simple:go" >}}
   {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell" >}}
   {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java WAR/EAR" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/nodejs/#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}

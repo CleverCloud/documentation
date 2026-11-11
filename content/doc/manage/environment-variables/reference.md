@@ -211,11 +211,13 @@ Use these to define [commands to run](/doc/manage/build-hooks) between various s
 
 [Go Documentation](/doc/deploy/applications/golang)
 
-| Name               | Description                                                                                                       |
-| :----------------- | :---------------------------------------------------------------------------------------------------------------- |
-| `CC_GO_BUILD_TOOL` | Available values: `gomod`, `gobuild`. Build and install your application. `goget` still exists but is deprecated. |
-| `CC_GO_RUNDIR`     | Run the application from the specified path, relative to `$GOPATH/src/`, now deprecated.                          |
-| `CC_GO_PKG`        | Tell the `CC_GO_BUILD_TOOL` which file contains the `main()` function, default `main.go`.                         |
+| Name                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`CC_GO_BINARY`](/doc/deploy/applications/golang/#build-with-a-makefile)     | Path of the binary that your Makefile builds, from the folder of your project                                    |
+| `CC_GO_BUILD_TOOL`                                                           | Build method: `gomod` or `makefile`. The legacy `gobuild` and `goget` values remain                              |
+| [`CC_GO_PKG`](/doc/deploy/applications/golang/#build-another-package)        | Path of the `main` package to build, such as `./cmd/server`. Defaults to the module of `go.mod`, or to `main.go` |
+| `CC_GO_RUNDIR`                                                               | Folder of `$GOPATH/src` where Clever Cloud places and runs the application, for legacy projects                  |
+| `CC_RUN_COMMAND`                                                             | Custom command to run your application                                                                           |
 
 ## Haskell
 

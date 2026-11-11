@@ -35,18 +35,25 @@ Clever Cloud is a European Platform as a Service (PaaS): it maintains the system
 
 ## Deploy in minutes
 
-With a [Clever Cloud account](/doc/account-billing/user/#create-an-account) and Git, install [Clever Tools](/doc/tools/cli/install/) with npm, Homebrew, a package, or a binary, sign in, and deploy a ready-made example:
+With a [Clever Cloud account](/doc/account-billing/user/#create-an-account) and Git, install [Clever Tools](/doc/tools/cli/install/) with npm, Homebrew, or a binary, sign in, and deploy a [ready-made example](https://github.com/CleverCloud/nodejs-example):
 
-```bash
-npm install -g clever-tools
-clever login
+{{< tabs >}}
+  {{< tab name="Watch" icon="play" selected=true >}}
+    {{< asciinema file="casts/deploy.cast" poster="npt:0:24" >}}
+  {{< /tab >}}
+  {{< tab name="Commands" icon="command-line" >}}
+    ```bash
+    npm install -g clever-tools
+    clever login
 
-git clone https://github.com/CleverCloud/nodejs-example
-cd nodejs-example
+    git clone https://github.com/CleverCloud/nodejs-example
+    cd nodejs-example
 
-clever create --type node my-app
-clever deploy
-```
+    clever create --type node
+    clever deploy
+    ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 `clever deploy` ends with the URL of your application, which [consumes credits](/doc/account-billing/consumption/) until you run `clever delete`. To deploy your own project, run `clever create` with [its runtime](#choose-your-runtime) and `clever deploy` from its Git repository, once your code is committed and [listens on the right port](/doc/manage/#listen-on-the-right-port).
 

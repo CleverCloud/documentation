@@ -1,8 +1,8 @@
 ---
 type: docs
-linkTitle: Token Attenuation
-title: Pulsar Token Attenuation
-description: Restrict a Pulsar add-on Biscuit token to specific topics or operations before handing it to a client
+linkTitle: Token attenuation
+title: Pulsar token attenuation
+description: Restrict the Eclipse Biscuit token of a Pulsar add-on of Clever Cloud to some topics or to a period of time, before you hand it to a client
 keywords:
 - pulsar
 - biscuit
@@ -14,91 +14,71 @@ aliases:
 - /doc/pulsar/token-attenuation
 ---
 
-Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
+The token of a Pulsar add-on is an [Eclipse Biscuit](https://doc.biscuitsec.org/) token: the Pulsar clusters of Clever Cloud check it with [biscuit-pulsar](https://github.com/CleverCloud/biscuit-pulsar). Clients send it as a usual token, with the token authentication of their library. Anyone who holds a Biscuit can attenuate it: add a block of checks that restricts what the new token allows, without contacting Clever Cloud. A client that gets the new token can't remove these checks.
 
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
+To give access to a single topic, the [Clever Cloud API](/doc/deploy/pulsar/#restrict-the-token) creates a token for it. Attenuate the token yourself for other restrictions, without calling the Clever Cloud API. You can limit its topics, its operations, or its period of validity.
 
-## Attenuation
+## Inspect the token
 
-The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with a custom topic prefix called `"my-own-prefix"`.
-
-Put your Biscuit token in a file:
+Install [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli), save the token in a file, then inspect it:
 
 ```bash
-echo $ADDON_PULSAR_TOKEN > addon.biscuit
-```
-
-Inspect your Biscuit token:
-
-```bash
+printf '%s' "$ADDON_PULSAR_TOKEN" > addon.biscuit
 biscuit inspect addon.biscuit
+```
+
+Delete this file once you've attenuated the token: it holds the token of the whole namespace.
+
+The first block grants the rights of the cluster, and the second one restricts them to the namespace of the add-on and its topics:
+
+```text
 Authority block:
-== Datalog ==
+== Datalog v3.0 ==
 right("admin");
 
-== Revocation id ==
-0392cdc4dbda294fd254269ad0ce5d1ad2e9c6301b189945074dd051890e495dd16bf5390f84e8499a2045bde85795636f2e156309f9b425270979957e50280a
-
-==========
-
 Block n°1:
-== Datalog ==
-check if namespace("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c") or topic("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $topic);
-
-== Revocation id ==
-4a72ca17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450c
-
-==========
+== Datalog v3.0 ==
+check if namespace("user_xxx", "pulsar_xxx") or topic("user_xxx", "pulsar_xxx", $topic);
 ```
 
-- The authority block is the cluster authentication block (the cluster admin Biscuit token).
-- The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
+## Limit topics
 
-Attenuate it:
+Add a block that only allows the topics whose name starts with `my-own-prefix-`:
 
 ```bash
-biscuit attenuate addon.biscuit
+biscuit attenuate addon.biscuit \
+  --block 'check if topic($tenant, $namespace, $topic), $topic.starts_with("my-own-prefix-")' \
+  > attenuated.biscuit
 ```
 
-This will open your `$EDITOR` to type the attenuation.
+`attenuated.biscuit` holds the new token: give its content to the client as its token. The client can produce to and consume from `my-own-prefix-orders`, not from `other-topic`. This check needs a topic: the token can't list the topics of the namespace.
 
-Put
+## Limit operations
+
+The cluster gives each check the operation that the client asks for, such as `produce` or `consume`. A token for a client that only reads messages:
 
 ```bash
-check if topic_operation($operation), $topic.starts_with("my-own-prefix")
+biscuit attenuate addon.biscuit --block 'check if topic_operation("consume")' > reader.biscuit
 ```
 
-Then it outputs the attenuated token. Inspect it to ensure your attenuation:
+A token for a client that only publishes them:
 
 ```bash
-Authority block:
-== Datalog ==
-right("admin");
-
-== Revocation id ==
-0392cdc4dbda294fd254269ad0ce5d1ad2e9c6301b189945074dd051890e495dd16bf5390f84e8499a2045bde85795636f2e156309f9b425270979957e50280a
-
-==========
-
-Block n°1:
-== Datalog ==
-check if namespace("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c") or topic("user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $topic);
-
-== Revocation id ==
-4a72ca17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450c
-
-==========
-
-Block n°2:
-== Datalog ==
-check if topic_operation($operation), $topic.starts_with("my-own-prefix");
-
-== Revocation ids ==
-3b71ba17001b173853f5cd6cce7b46ba4113b1d6e934a3e13e717f91e276c3230861ee49c843c4aafd7d11b14903a7ff32f9e2b35bd6f84794ba3dc6e3c0450d
-
-==========
+biscuit attenuate addon.biscuit --block 'check if topic_operation("produce")' > writer.biscuit
 ```
 
-Now the block n°2 ensures that topics must start with `"my-own-prefix"`.
+These tokens connect to the topics of the namespace, but refuse the other operation. Attenuate a new token again to combine restrictions, such as a prefix of topics and `consume`. The cluster doesn't give the checks the address of the client: a token can't restrict the IP addresses that use it.
 
-You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
+## Limit in time
+
+Add `--add-ttl` with a duration or a date to make the new token expire, here after one hour:
+
+```bash
+biscuit attenuate addon.biscuit --add-ttl 1h \
+  --block 'check if topic_operation("consume")' \
+  > attenuated.biscuit
+```
+
+Once this time has passed, the cluster refuses the new producers and consumers of this token. Those created before keep working until they disconnect: the expiry doesn't close an open connection.
+
+Attenuate a topic token from the Clever Cloud API, such as `orders.biscuit`, the same way: the tokens of Pulsar add-ons don't expire. Inspect the new token to check its blocks before you hand it to a client.

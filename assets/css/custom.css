@@ -264,3 +264,16 @@ article main h4 a:hover {
   43.5% { transform: translateX(2px) rotateY(3deg); }
   50%   { transform: translateX(0); }
 }
+
+
+/* -------------------------------------------------------------------------
+   Terminal recordings (asciinema)
+   ------------------------------------------------------------------------- */
+
+/* In dark mode, the black terminal of the player blends into the page: give
+   it the background of the code blocks. The player paints this color on
+   several nested elements: mix it with the page background, as an opaque
+   color, rather than stacking a translucent one */
+html[class~="dark"] .asciinema-player .asciinema-player-theme-asciinema {
+  --term-color-background: color-mix(in oklab, var(--hx-color-primary-300) 10%, var(--hx-color-dark));
+}

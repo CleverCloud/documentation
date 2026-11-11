@@ -47,6 +47,11 @@ frankenphp:
   php:
     - "8.5.12"
 
+go:
+  eol_source: https://go.dev/doc/devel/release
+  default:
+    - "1.27.3"
+
 hugo:
   eol_source: https://github.com/gohugoio/hugo/releases
   default:

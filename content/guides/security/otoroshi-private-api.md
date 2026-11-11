@@ -234,7 +234,7 @@ The plugins and extensions of Otoroshi cover many other needs, which this guide 
 - [Keycloak](/doc/deploy/services/keycloak/) to log your users in, with an [authentication module](https://maif.github.io/otoroshi/manual/docs/tutorials/secure-app-with-keycloak)
 - [JWT tokens](https://maif.github.io/otoroshi/manual/docs/tutorials/secure-an-app-with-jwt-verifiers) issued by your identity provider, checked by Otoroshi
 - [OAuth 2.0 client credentials](https://maif.github.io/otoroshi/manual/docs/tutorials/secure-with-oauth2-client-credentials), for calls between services
-- [Biscuit tokens](https://cloud-apim.github.io/otoroshi-biscuit-studio/docs/overview), which their holder can restrict, with the Biscuit Studio of Cloud APIM
+- [Eclipse Biscuit](https://doc.biscuitsec.org/) tokens, which their holder can restrict, with the [Biscuit Studio](https://cloud-apim.github.io/otoroshi-biscuit-studio/docs/overview) of Cloud APIM
 - A [developer portal](https://cloud-apim.github.io/otoroshi-api-portal/) of Cloud APIM, with the documentation of your API and the keys of its users
 - [Data exporters](https://maif.github.io/otoroshi/manual/docs/entities/data-exporters), to send the events of the gateway to your analytics tools
 - A [mailer endpoint](https://github.com/cloud-apim/otoroshi-plugin-mailer) of Cloud APIM, which turns your SMTP provider into a REST API to send emails

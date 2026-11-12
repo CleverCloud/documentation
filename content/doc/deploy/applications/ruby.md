@@ -51,7 +51,7 @@ clever create --type ruby
 
 ### Mandatory needs
 
-A Ruby application needs, at the root of the project or of the folder set in `APP_FOLDER`:
+A Ruby application needs, at the root of the project or of the folder set in `CC_APP_FOLDER`:
 
 - A `Gemfile` with the `puma` gem, and its committed `Gemfile.lock`
 - A `config.ru` file

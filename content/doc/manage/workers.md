@@ -59,7 +59,7 @@ clever restart
 
 Clever Cloud starts the workers at the end of each deployment, once your application passes its startup checks. Each worker:
 
-- Runs as the `bas` user, from `$APP_HOME`, the root of your application, even when `APP_FOLDER` selects a subdirectory
+- Runs as the `bas` user, from `$APP_HOME`, the root of your application, even when `CC_APP_FOLDER` selects a subdirectory
 - Runs in a `bash` login shell, with your environment variables loaded
 - Reads your environment variables when it starts: redeploy your application after you change one
 - Writes its standard output and error to the [logs of your application](/doc/observability/logs/)

@@ -45,7 +45,7 @@ clever create --type dotnet
 
 A .NET application needs:
 
-- A project file, at the root of the project or of the folder set in `APP_FOLDER`
+- A project file, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
 The project file is a `.csproj` file for C#, `.fsproj` for F#, or `.vbproj` for Visual Basic. It describes the [version of .NET your code targets](#net-version-and-target-framework), and the libraries it uses, called NuGet packages. A [Clever Task](#net-applications-as-clever-tasks) doesn't need a web server.
@@ -102,7 +102,7 @@ clever env set CC_DOTNET_VERSION 10.0
 
 ### Several projects or target frameworks
 
-Clever Cloud looks for project files at the root of the repository, or of the folder set in `APP_FOLDER`, but not in the folders below. If your web project is in `src/Api/`, for instance, set `APP_FOLDER=src/Api`.
+Clever Cloud looks for project files at the root of the repository, or of the folder set in `CC_APP_FOLDER`, but not in the folders below. If your web project is in `src/Api/`, for instance, set `CC_APP_FOLDER=src/Api`.
 
 If this folder holds several project files, set the one to publish in `CC_DOTNET_PROJ`, by its name without extension:
 
@@ -161,7 +161,7 @@ To pass arguments, set `CC_RUN_COMMAND`. It runs from the root of the repository
 clever env set CC_RUN_COMMAND "./bin/Release/net8.0/exherbo-x64/publish/hello --verbose"
 ```
 
-With `APP_FOLDER`, start the path of the executable with this folder.
+With `CC_APP_FOLDER`, start the path of the executable with this folder.
 
 ### Caches
 

@@ -45,7 +45,7 @@ clever create --type haskell
 
 A Haskell application needs:
 
-- A `stack.yaml` file, at the root of the project or of the folder set in `APP_FOLDER`
+- A `stack.yaml` file, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - A package described in a `.cabal` or a `package.yaml` file, with one executable
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
@@ -116,7 +116,7 @@ clever env set CC_HASKELL_STACK_TARGET hello
 
 ### Custom run command
 
-By default, Clever Cloud starts the executable Stack built, which it looks for in the `.stack-work/install` folder at the root of the repository. If your project is in an `APP_FOLDER`, has several executables, or needs arguments, set `CC_RUN_COMMAND`. It runs from the root of the repository: call the executable by its name, as `stack install` copies it to `~/.local/bin`. For instance, for the `site` executable of a [Hakyll](https://jaspervdj.be/hakyll/) website:
+By default, Clever Cloud starts the executable Stack built, which it looks for in the `.stack-work/install` folder at the root of the repository. If your project is in a `CC_APP_FOLDER` folder, has several executables, or needs arguments, set `CC_RUN_COMMAND`. It runs from the root of the repository: call the executable by its name, as `stack install` copies it to `~/.local/bin`. For instance, for the `site` executable of a [Hakyll](https://jaspervdj.be/hakyll/) website:
 
 ```bash
 clever env set CC_RUN_COMMAND 'site server --host 0.0.0.0 --port $PORT'

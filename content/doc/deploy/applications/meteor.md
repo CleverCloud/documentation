@@ -42,7 +42,7 @@ Use the `meteor` type: a [Node.js application](/doc/deploy/applications/nodejs/)
 
 A Meteor.js application needs:
 
-- The `.meteor` folder and `package.json` file, at the root of the project or of the folder set in `APP_FOLDER`
+- The `.meteor` folder and `package.json` file, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - The Node.js version of your Meteor release, set in [`engines.node`](#nodejs-version)
 - A MongoDB database, set in `MONGO_URL`
 - The URL of your application, set in `ROOT_URL`
@@ -134,7 +134,7 @@ To pass arguments to your application, set `CC_RUN_COMMAND`. It runs from the ro
 clever env set CC_RUN_COMMAND "node .build/bundle/main.js --my-option"
 ```
 
-With `APP_FOLDER`, start the path of the bundle with this folder.
+With `CC_APP_FOLDER`, start the path of the bundle with this folder.
 
 ### Caches
 

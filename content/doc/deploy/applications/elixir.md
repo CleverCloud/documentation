@@ -45,7 +45,7 @@ clever create --type elixir
 
 An Elixir application needs:
 
-- A `mix.exs` file and its `mix.lock` file, at the root of the project or of the folder set in `APP_FOLDER`
+- A `mix.exs` file and its `mix.lock` file, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
 Mix is the build tool of Elixir. `mix.exs` describes your project and its dependencies. `mix deps.get` records their exact versions in `mix.lock`: commit it, so that the build fetches the versions you tested. A [Clever Task](#elixir-applications-as-clever-tasks) doesn't need a web server.

@@ -49,7 +49,7 @@ clever create --type go
 
 A Go application needs:
 
-- A `go.mod` file, at the root of the project or of the folder set in `APP_FOLDER`, or a [Makefile](#build-with-a-makefile)
+- A `go.mod` file, at the root of the project or of the folder set in `CC_APP_FOLDER`, or a [Makefile](#build-with-a-makefile)
 - A `main` package at the root of the module, or the path of another one set in [`CC_GO_PKG`](#build-another-package)
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port), unless the application runs as a [Clever Task](#go-applications-as-clever-tasks)
 
@@ -149,7 +149,7 @@ By default, Clever Cloud starts the binary without arguments, from a folder that
 clever env set CC_RUN_COMMAND "hello --workers 4"
 ```
 
-This command runs in a shell, from the root of your repository, even when `APP_FOLDER` sets another folder. Start it with `cd api &&` to keep the relative paths of an `api` folder. With a Makefile, call the binary with its path from this root, such as `./bin/app`.
+This command runs in a shell, from the root of your repository, even when `CC_APP_FOLDER` sets another folder. Start it with `cd api &&` to keep the relative paths of an `api` folder. With a Makefile, call the binary with its path from this root, such as `./bin/app`.
 
 ### Caches
 

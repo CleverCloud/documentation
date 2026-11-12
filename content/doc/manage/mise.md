@@ -47,7 +47,7 @@ Prefer the runtime's own version variable when one exists, and derive the Mise v
 node = "{{ env.CC_NODE_VERSION }}"
 ```
 
-Mise also reads the version files your ecosystem already uses, `.tool-versions`, `.nvmrc`, `.python-version` or `go.mod` among others, and honours them alongside `mise.toml`. A `mise.toml` still has to exist for the platform to trigger the installation at all.
+Mise also reads the version files your ecosystem already uses, `.tool-versions`, `.python-version`, or `go.mod` among others, and honors them alongside `mise.toml`. A `mise.toml` still has to exist for the platform to trigger the installation at all.
 
 ### Pick a backend
 

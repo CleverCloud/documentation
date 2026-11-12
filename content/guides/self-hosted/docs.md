@@ -250,7 +250,7 @@ export Y_PROVIDER_API_KEY="$(openssl rand -base64 48)"
 Configure the Python runtime, public URLs, linked services, collaboration server and Keycloak client:
 
 ```bash
-clever env set APP_FOLDER src/backend -a myDocsBackend
+clever env set CC_APP_FOLDER src/backend -a myDocsBackend
 clever env set CC_PYTHON_VERSION 3.14 -a myDocsBackend
 clever env set CC_POST_BUILD_HOOK './clevercloud.sh migrate' -a myDocsBackend
 clever env set CC_PYTHON_UV_RUN_COMMAND '../../clevercloud.sh run' -a myDocsBackend
@@ -299,7 +299,7 @@ The helper maps the linked PostgreSQL and Cellar variables to the names expected
 Docs exports its Next.js frontend as a static site. Configure the Static runtime and use an `L` build instance, which is required by the current frontend build:
 
 ```bash
-clever env set APP_FOLDER src/frontend -a myDocsFrontend
+clever env set CC_APP_FOLDER src/frontend -a myDocsFrontend
 clever env set CC_NODE_VERSION 22 -a myDocsFrontend
 clever env set CC_BUILD_COMMAND '. /home/bas/.nvm/nvm.sh && nvm use "$CC_NODE_VERSION" && yarn install --frozen-lockfile && yarn app:build' -a myDocsFrontend
 clever env set CC_WEBROOT /src/frontend/apps/impress/out -a myDocsFrontend
@@ -318,7 +318,7 @@ The explicit `nvm use` keeps the custom Static build command on Node.js 22. The 
 Configure the Node.js application from the frontend workspace:
 
 ```bash
-clever env set APP_FOLDER src/frontend -a myDocsCollaboration
+clever env set CC_APP_FOLDER src/frontend -a myDocsCollaboration
 clever env set CC_NODE_VERSION 22 -a myDocsCollaboration
 clever env set CC_NODE_BUILD_TOOL yarn -a myDocsCollaboration
 clever env set CC_NODE_DEV_DEPENDENCIES true -a myDocsCollaboration
@@ -331,7 +331,7 @@ clever env set COLLABORATION_SERVER_SECRET "$COLLABORATION_SERVER_SECRET" -a myD
 clever env set Y_PROVIDER_API_KEY "$Y_PROVIDER_API_KEY" -a myDocsCollaboration
 ```
 
-Custom build and run hooks start from the repository root, so both commands explicitly enter `src/frontend` despite `APP_FOLDER`.
+Custom build and run hooks start from the repository root, so both commands explicitly enter `src/frontend` despite `CC_APP_FOLDER`.
 
 ### Media proxy
 

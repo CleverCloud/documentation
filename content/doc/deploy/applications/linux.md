@@ -87,7 +87,7 @@ Clever Cloud looks for the build command and the start command separately, in th
 
 Each source only fills in the commands that a previous one doesn't define. For instance, you can set `CC_BUILD_COMMAND` only, and let a `run` task of Mise or a `run` target of a Makefile provide the start command.
 
-Clever Cloud looks for these files at the root of your repository, even with `APP_FOLDER`, before the pre-build [hook](/doc/manage/build-hooks/): a hook can't create them. It runs the Mise tasks from the folder of `mise.toml`, which `CC_MISE_FILE_PATH` can move. For the Makefile, it uses the first file it finds among:
+Clever Cloud looks for these files at the root of your project, or of the `CC_APP_FOLDER` folder, before the pre-build [hook](/doc/manage/build-hooks/): a hook can't create them. It runs the Mise tasks from the folder of `mise.toml`, which `CC_MISE_FILE_PATH` can move. For the Makefile, it uses the first file it finds among:
 
 - The file set in `CC_MAKEFILE`
 - `GNUmakefile`, `Makefile`, then `makefile`
@@ -96,11 +96,11 @@ It checks each target with `make --dry-run`, and ignores the ones that fail. Wit
 
 ### Build phase
 
-Before an instance starts, Mise installs the tools of `mise.toml`. On a new build, Clever Cloud then runs the pre-build hook, the build command, and the post-build hook. `CC_BUILD_COMMAND` and the Makefile targets run from the root of your project, or from the folder set in `APP_FOLDER`.
+Before an instance starts, Mise installs the tools of `mise.toml`. On a new build, Clever Cloud then runs the pre-build hook, the build command, and the post-build hook. `CC_BUILD_COMMAND` and the Makefile targets run from the root of your project, or from the folder set in `CC_APP_FOLDER`.
 
 ### Start command
 
-A `run` target of a Makefile runs from the root of your project, or from the folder set in `APP_FOLDER`. A Mise task runs from the folder of `mise.toml`. `CC_RUN_COMMAND` runs from the root of the repository, through a shell: it reads variables such as `$PORT`.
+A `run` target of a Makefile runs from the root of your project, or from the folder set in `CC_APP_FOLDER`. A Mise task runs from the folder of `mise.toml`. `CC_RUN_COMMAND` runs from the root of the repository, through a shell: it reads variables such as `$PORT`.
 
 ### Caches
 

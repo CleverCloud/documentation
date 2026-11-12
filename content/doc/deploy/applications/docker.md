@@ -71,7 +71,7 @@ A Docker application needs:
 - A web server listening on `0.0.0.0:8080` in the container
 - A command that starts your application, set with `CMD` or `ENTRYPOINT` in your Dockerfile or in its base image
 
-To use another file, set its path in `CC_DOCKERFILE`, such as `docker/Dockerfile.prod`. With `APP_FOLDER`, Clever Cloud looks for the `Dockerfile` in this folder. To listen on another port, set it in `CC_DOCKER_EXPOSED_HTTP_PORT`. A [Clever Task](#docker-applications-as-clever-tasks) doesn't need a web server.
+To use another file, set its path in `CC_DOCKERFILE`, such as `docker/Dockerfile.prod`. With `CC_APP_FOLDER`, Clever Cloud looks for the `Dockerfile` in this folder. To listen on another port, set it in `CC_DOCKER_EXPOSED_HTTP_PORT`. A [Clever Task](#docker-applications-as-clever-tasks) doesn't need a web server.
 
 In most cases, `CMD` gives the whole command, such as `CMD ["node", "server.js"]`. If the image sets an `ENTRYPOINT`, it's the program to run, and `CMD` only gives its arguments, as in the following example. Learn more in the [Docker documentation](https://docs.docker.com/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact).
 
@@ -95,7 +95,7 @@ The container writes its logs to its standard output and error: Clever Cloud col
 
 ### Build phase
 
-On a new build, Clever Cloud builds the image with [Buildx](https://docs.docker.com/build/). The build context is the root of your project, or the folder set in `APP_FOLDER`. Set `CC_DOCKER_BUILDX=false` to use the legacy builder instead (deprecated, and to be removed).
+On a new build, Clever Cloud builds the image with [Buildx](https://docs.docker.com/build/). The build context is the root of your project, or the folder set in `CC_APP_FOLDER`. Set `CC_DOCKER_BUILDX=false` to use the legacy builder instead (deprecated, and to be removed).
 
 Clever Cloud passes each [environment variable](/doc/manage/environment-variables/) of your application with `--build-arg`. Declare the ones a build step needs with an [`ARG`](https://docs.docker.com/reference/dockerfile/#arg) instruction. For instance, a [Vite](https://vite.dev/) application embeds its `VITE_*` variables in its files at build time. With a `VITE_API_URL` environment variable, this Dockerfile builds the application, then serves it with Nginx. Declare `ARG` in the stage that uses it:
 

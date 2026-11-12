@@ -53,7 +53,7 @@ So you can alter the build&start process for your application.
 
 | Name                                                                    | Description                                                                                                                            | Default value |
 |-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| `CC_APP_FOLDER`                                                         | Folder in which the application is located, relative to the root of the Git repository. `APP_FOLDER` also works                        |               |
+| `CC_APP_FOLDER`                                                         | Folder in which the application is located, relative to the root of the Git repository. `APP_FOLDER` is its deprecated name            |               |
 | `CC_DISABLE_JVM_AGENT`                                                  | Set to `true` to disable the JVM metrics agent                                                                                         |               |
 | `CC_GIT_FULL_CLONE`                                                     | If set to `false`, the git repository is cloned with `--depth 1` to speed up the deployment                                            | true          |
 | [`CC_DISABLE_GIT_SUBMODULES`](/doc/deploy/applications/#git-submodules) | Disable Git submodules initialization & synchronization                                                                                |               |
@@ -159,7 +159,7 @@ Use these to define [commands to run](/doc/manage/build-hooks) between various s
 
 | Name                          | Description                                                                           | Default value |
 | ----------------------------- | ------------------------------------------------------------------------------------- | ------------- |
-| `CC_DOCKERFILE`               | Path of the Dockerfile to build, relative to the root of the project or `APP_FOLDER`  | `Dockerfile`  |
+| `CC_DOCKERFILE`               | Path of the Dockerfile to build, relative to the project root or `CC_APP_FOLDER`      | `Dockerfile`  |
 | `CC_DOCKER_BUILDX`            | Set to `false` to build with the legacy builder instead of Buildx                     | `true`        |
 | `CC_DOCKER_EXPOSED_HTTP_PORT` | HTTP port of the container that receives the traffic of port `8080`                   | `8080`        |
 | `CC_DOCKER_EXPOSED_TCP_PORT`  | TCP port of the container that receives the TCP redirection traffic                   | `4040`        |
@@ -402,12 +402,12 @@ When your Python application doesn't use uv nor one of the supported backends, w
 | `CC_HUGO_VERSION`            | Set the Hugo version, for example `0.161`                                                                                                                                 |                                     |
 | `CC_BUILD_COMMAND`           | The command to run during the build phase                                                                                                                                 |                                     |
 | `CC_OVERRIDE_BUILDCACHE`     | Files and path to put in the build cache, separated by a `:`                                                                                                              |                                     |
-| `CC_STATIC_AUTOBUILD_OUTDIR` | The output folder of the static site generator (SSG) auto-build, from the build folder (`APP_FOLDER`, or the root of the repository). It doesn't change the served folder | `/cc_static_autobuilt`              |
-| `CC_STATIC_CADDYFILE`        | Path to the Caddyfile, from the build folder (`APP_FOLDER`, or the root of the repository)                                                                                | `./Caddyfile`                       |
+| `CC_STATIC_AUTOBUILD_OUTDIR` | The output folder of the static site generator (SSG) auto-build, from the build folder (`CC_APP_FOLDER`, or the repository root). It doesn't change the served folder     | `/cc_static_autobuilt`              |
+| `CC_STATIC_CADDYFILE`        | Path to the Caddyfile, from the build folder (`CC_APP_FOLDER`, or the repository root)                                                                                    | `./Caddyfile`                       |
 | `CC_STATIC_FLAGS`            | Command line flags to pass to the static web server                                                                                                                       |                                     |
 | `CC_STATIC_PORT`             | The port on which the static web server listens for HTTP requests                                                                                                         | `8080`, or `9000` with Request Flow |
 | `CC_STATIC_SERVER`           | The server of your static website: `static-web-server`, or `caddy` for `caddy file-server`. Without it, a valid Caddyfile selects `caddy run`                             | `static-web-server`                 |
-| `CC_WEBROOT`                 | Path to the folder to serve, relative to the root of your repository                                                                                                      | `/`                                 |
+| `CC_WEBROOT`                 | Path to the folder to serve, looked up in the `CC_APP_FOLDER` folder first, then at the repository root                                                                   | `/`                                 |
 
 > [!NOTE] Static Site Generators (SSG) Auto-build
 > Without `CC_BUILD_COMMAND`, Clever Cloud detects and builds a supported static site generator (SSG). `CC_STATIC_AUTOBUILD_OUTDIR` doesn't change the served folder: set `CC_WEBROOT` too. See [Static Site Generators (SSG) Auto-build](/doc/deploy/applications/static/#static-site-generators-ssg-auto-build).

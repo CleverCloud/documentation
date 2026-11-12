@@ -68,7 +68,7 @@ With a static site generator, Clever Cloud can [build your website](#static-site
 
 ### Served folder
 
-By default, Clever Cloud serves the root of your repository. To serve one of its folders instead, set its path in `CC_WEBROOT`:
+By default, Clever Cloud serves the root of your project. To serve one of its folders instead, set its path in `CC_WEBROOT`:
 
 ```bash
 clever env set CC_WEBROOT /public
@@ -76,7 +76,7 @@ clever env set CC_WEBROOT /public
 
 Every file in the served folder is public: keep notes, scripts, configuration files, and secrets out of it.
 
-The build, the generators, and the servers run from the root of your project: the folder set in `APP_FOLDER`, or the root of the repository. They read their configuration files, such as a Caddyfile or the file set in `SERVER_CONFIG_FILE`, from there.
+The build, the generators, and the servers run from the root of your project: the folder set in `CC_APP_FOLDER`, or the root of the repository. They read their configuration files, such as a Caddyfile or the file set in `SERVER_CONFIG_FILE`, from there.
 
 ### Build phase
 
@@ -86,7 +86,7 @@ On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/)
 - Otherwise, the build command of a [static site generator](#static-site-generators-ssg-auto-build) it detects
 - Otherwise, nothing: it serves your files as they are
 
-The build runs from the root of your project, or from the folder set in `APP_FOLDER`. The image includes the tools of the supported generators, and [`CC_HUGO_VERSION`](#hugo) sets the version of Hugo. To use a tool Clever Cloud doesn't provide, or a version the image doesn't include, declare it in a [`mise.toml` file](/doc/manage/mise/). For instance, [Pagefind](https://pagefind.app), which indexes your website for its search:
+The build runs from the root of your project, or from the folder set in `CC_APP_FOLDER`. The image includes the tools of the supported generators, and [`CC_HUGO_VERSION`](#hugo) sets the version of Hugo. To use a tool Clever Cloud doesn't provide, or a version the image doesn't include, declare it in a [`mise.toml` file](/doc/manage/mise/). For instance, [Pagefind](https://pagefind.app), which indexes your website for its search:
 
 ```toml {filename="mise.toml"}
 [tools]
@@ -185,10 +185,12 @@ After a successful build of an application, Clever Cloud keeps a build cache of 
 clever restart --without-cache
 ```
 
-If Clever Cloud serves a folder of your repository, from `CC_WEBROOT` or `cc_static_autobuilt`, the cache keeps only this folder and these files:
+If Clever Cloud serves a folder of your project, from `CC_WEBROOT` or `cc_static_autobuilt`, the cache keeps only this folder and these files:
 
-- The `clevercloud/` folder, a `Caddyfile` and an `sws.toml` file, at the root of the repository
+- The `clevercloud/` folder, a `Caddyfile`, and an `sws.toml` file, at the root of your project
 - The files set in `CC_STATIC_CADDYFILE`, `CC_VARNISH_FILE`, and `SERVER_CONFIG_FILE`
+
+If it serves the root of your project, the cache keeps this whole folder, without the rest of the repository when you set `CC_APP_FOLDER`.
 
 On a restart from the cache, the other files are missing, such as a script your `CC_RUN_COMMAND` or a hook runs. To keep them, list in `CC_OVERRIDE_BUILDCACHE` every path the cache needs, from the root of the repository and separated by `:`. It replaces the default content:
 
@@ -223,12 +225,12 @@ clever env set CC_WEBROOT /public
 
 Set this path in the configuration of the generator too, such as `baseURL = "/blog/"` for Hugo, so that the links of the website include it.
 
-With `APP_FOLDER`, the generator runs from this folder, but `CC_WEBROOT` starts from the root of the repository. For a website in `site`:
+With `CC_APP_FOLDER`, the generator runs from this folder. Clever Cloud looks for the `CC_WEBROOT` folder there first, then at the root of the repository. For instance, for a website in the `site` folder of your repository:
 
 ```bash
-clever env set APP_FOLDER site
+clever env set CC_APP_FOLDER site
 clever env set CC_STATIC_AUTOBUILD_OUTDIR public
-clever env set CC_WEBROOT /site/public
+clever env set CC_WEBROOT /public
 ```
 
 ### Hugo version {#hugo}

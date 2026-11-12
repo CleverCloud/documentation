@@ -29,7 +29,7 @@ The [getting started guide](/doc/getting-started/) describes each step of the cr
 
 A {{ replace .File.ContentBaseName "-" " " | title }} application needs:
 
-- A project file, at the root of the project or of the folder set in `APP_FOLDER`
+- A project file, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
 <!-- If the runtime doesn't need a project file, replace or remove its item. Explain what the project file and its lock file, if the ecosystem has one, are for. Then show a minimal application that reads PORT, with the command to try it locally. If Clever Cloud starts a managed web server, such as Puma for Ruby, replace the web server item and explain this server instead. -->

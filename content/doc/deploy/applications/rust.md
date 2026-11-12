@@ -46,7 +46,7 @@ clever create --type rust
 
 A Rust application needs:
 
-- A `Cargo.toml` file with at least one binary target, at the root of the project or of the folder set in `APP_FOLDER`
+- A `Cargo.toml` file with at least one binary target, at the root of the project or of the folder set in `CC_APP_FOLDER`
 - A committed `Cargo.lock` file: the build runs with `--locked`, so it fails if `Cargo.lock` is missing or out of date
 - A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port), unless the application runs as a [Clever Task](#rust-binaries-as-clever-tasks)
 
@@ -142,7 +142,7 @@ Set `CC_RUST_INSTALL=true` to build with `cargo install` instead of `cargo build
 
 ### Custom run command
 
-By default, Clever Cloud starts the selected binary without arguments. To pass arguments, or start something else, set `CC_RUN_COMMAND`. It runs from the folder of your project, the one set in `APP_FOLDER` if any. For a `web` binary that accepts a `--workers` option:
+By default, Clever Cloud starts the selected binary without arguments. To pass arguments, or start something else, set `CC_RUN_COMMAND`. It runs from the folder of your project, the one set in `CC_APP_FOLDER` if any. For a `web` binary that accepts a `--workers` option:
 
 ```bash
 clever env set CC_RUN_COMMAND "./target/release/web --workers 4"

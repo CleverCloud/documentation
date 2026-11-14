@@ -24,7 +24,7 @@ Database add-ons run on immutable virtual machines: Clever Cloud never updates a
 
 Migrate a database to:
 
-- Apply the security updates of its system and database, with the same plan, version, and region
+- Move to the latest patch release of the same version, with the security updates of its system and database
 - Change its plan, such as from a `DEV` plan to a dedicated one, or to a larger size
 - Upgrade its version, such as from PostgreSQL 17 to PostgreSQL 18
 - Move it to another region

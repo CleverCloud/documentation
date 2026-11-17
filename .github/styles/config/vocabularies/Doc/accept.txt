@@ -33,6 +33,7 @@ CVE
 CVEs
 Cyberduck
 Datadog
+[Dd]atagrams?
 Deno
 [Dd]eprovision(ed|ing|s)?
 Dockerfile

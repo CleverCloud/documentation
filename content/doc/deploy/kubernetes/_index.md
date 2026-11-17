@@ -440,6 +440,8 @@ spec:
       targetPort: 80  # Port on which the container is listening
 ```
 
+To choose the size of the load balancer, check the health of UDP ports, or give your pods the address of the client, see [Kubernetes load balancer services](/doc/deploy/kubernetes/load-balancer/).
+
 ## Quotas and limits
 
 Each organisation starts with **40 vCPU and 40 GB of RAM** across all its Kubernetes clusters by default. This envelope covers both the control plane VMs and the worker nodes, whatever their topology. Check your current consumption and the remaining budget at any time with `clever k8s quota`. If you need more, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice).

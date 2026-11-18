@@ -9,6 +9,7 @@ keywords:
 - custom domains
 - cname
 - cleverapps.io
+- http/2
 - path routing
 - favorite domain
 aliases:
@@ -76,6 +77,18 @@ To serve both `example.com` and `www.example.com`, add both to your application.
 ### Wildcard domains
 
 A wildcard domain, such as `*.example.com`, serves the names one level under it, such as `blog.example.com` or `shop.example.com`. It doesn't serve `example.com` itself, nor deeper names such as `api.blog.example.com`: add them to your application too. Point the wildcard with a `CNAME` record named `*`. Clever Cloud doesn't generate wildcard certificates: [upload your own](/doc/security/ssl/).
+
+### HTTP/2 in the Paris region
+
+In the Paris region (`par`), a second set of load balancers lets clients reach your custom domains over HTTP/2. To use them, point your domain to this `CNAME` record, instead of `domain.par.clever-cloud.com.`:
+
+```text
+domain.par.h2.services.clever-cloud.com.
+```
+
+Your application keeps receiving [HTTP/1.1 requests](/doc/network/load-balancers/#how-a-request-reaches-your-application), with two more [request headers](/doc/network/load-balancers/#request-headers). These load balancers serve the Let's Encrypt certificate of your domain, and still answer clients that only support HTTP/1.1. Before you switch, read how to [change the DNS records of a domain](#change-the-dns-records-of-a-domain).
+
+A name that needs `A` records, such as the root of a domain, keeps the load balancers of the table, and HTTP/1.1. `clever domain diag` expects the records of the table, and reports this one as a record to replace: ignore this suggestion.
 
 ### Change the DNS records of a domain
 

@@ -3,7 +3,7 @@ type: docs
 linkTitle: How it works
 weight: 11
 title: How Clever Cloud Works
-description: What a Platform as a Service does for you, what happens between a push and a running application, why Clever Cloud runs each instance in its own virtual machine, from runtime images it builds, and which add-ons run next to it
+description: What a Platform as a Service does for you, what its price includes, why it doesn't lock you in, what happens between a push and a running application, why Clever Cloud runs each instance in its own virtual machine, from runtime images it builds, and which add-ons run next to it
 keywords:
 - paas
 - platform as a service
@@ -26,10 +26,23 @@ With virtual servers or a container orchestrator, you prepare the system, instal
 
 - It installs your dependencies, builds your application, and starts it behind load balancers, with [TLS certificates](/doc/security/ssl/) it renews
 - It replaces an instance that stops answering, adds instances or resizes them with [autoscaling](/doc/manage/scaling/), and bills the time they run
-- It collects [logs and metrics](/doc/observability/), and gives your application the credentials of its [databases and services](#databases-and-services-next-to-your-applications), which it operates for you
-- It updates the runtime images with new versions and security fixes
+- It collects [logs and metrics](/doc/observability/), and sets in your application the credentials of its [databases and services](#databases-and-services-next-to-your-applications), which it operates for you
+- It updates the runtime images with new versions and security fixes of all included tools
 
 You choose your code, its dependencies, the versions of your languages, and the configuration in [environment variables](/doc/manage/environment-variables/). Your code deploys with Git and runs with standard languages and tools, so you keep it portable. Applications that follow the [twelve-factor principles](/doc/develop/12-factors/), such as keeping their configuration in the environment, get the most out of the platform.
+
+## An "all-inclusive" approach, without lock-in
+
+This ease of use saves you operational work, and billing follows the same idea. The price of an instance or an add-on covers the resources you deploy, and everything they need to run. It includes:
+
+- The storage of your [logs, access logs](/doc/observability/logs/), and [metrics](/doc/observability/metrics/)
+- The storage of the Git repository of your application and of its build cache
+- The daily backups of your PostgreSQL, MySQL, MongoDB, and Redis databases, kept for 7 days
+- The other resources tied to your application, such as its load balancers, its TLS certificates, and `cleverapps.io` domains to test it
+
+Unlike other providers, Clever Cloud doesn't bill the network traffic of your applications and databases. Traffic is only billed on products where it's a unit of consumption, such as [Cellar](/doc/deploy/storage/cellar/) or [Pulsar](/doc/deploy/pulsar/). You only pay extra to go beyond these defaults. When you need more or custom services, contact your sales representative or [Clever Cloud support](https://console.clever-cloud.com/ticket-center-choice). They're here to help.
+
+Nothing locks you in either. Your data uses open formats and standards, compatible with many tools from the market and from Clever Cloud. They let you import, use, and export your data, and a [drain](/doc/observability/drains/) forwards your logs to the tools you already use. If you leave a product such as Cellar, [outbound traffic is free of charge](https://www.clever.cloud/blog/company/2024/01/31/object-storage-data-free-of-charge/), so you take all your data with you.
 
 ## From a push to a running application
 

@@ -28,10 +28,12 @@ The load balancers of Clever Cloud run [Sōzu](https://www.sozu.io/), the open-s
 
 The `cleverapps.io` domains have their own load balancers, apart from those of your [custom domains](/doc/manage/domain-names/). Both forward requests in a similar way:
 
-- Clients can use HTTP/2 on `cleverapps.io` domains, and your application receives HTTP/1.1
+- Your application receives HTTP/1.1 requests, whatever the protocol of the client
 - [Force HTTPS](/doc/manage/#force-https), enabled by default, answers HTTP requests with a redirection to HTTPS
 - The connection comes from the address of the load balancer, not from the client
 - With several instances, any of them can get a request, unless you enable [sticky sessions](/doc/manage/#sticky-sessions)
+
+Clients can use HTTP/2 on `cleverapps.io` domains and on custom domains pointed to the [HTTP/2 load balancers](/doc/manage/domain-names/#http2-in-the-paris-region) of the Paris region.
 
 A [Request Flow](/doc/manage/request-flow/) middleware, such as Varnish, sits between the load balancer and your application: the connection then comes from `127.0.0.1`. A request that runs for more than 180 seconds fails on the [backend timeout](/doc/find-help/troubleshooting/#network) of the load balancers.
 
@@ -46,10 +48,10 @@ The load balancers set these headers on each request, so that your application k
 | `X-Forwarded-Proto` | `http` or `https`, unless the client sends its own                       | All                            |
 | `X-Forwarded-Port`  | `80` or `443`, unless the client sends its own                           | All                            |
 | `Sozu-Id`           | Unique ID of the request, also in the headers of the response            | All                            |
-| `X-Request-Id`      | Same value as `Sozu-Id`, unless the client sends its own                 | Some, such as `cleverapps.io`  |
-| `traceparent`       | [W3C Trace Context](https://www.w3.org/TR/trace-context/) of the request | Some, such as `cleverapps.io`  |
+| `X-Request-Id`      | Same value as `Sozu-Id`, unless the client sends its own                 | `cleverapps.io`, Paris HTTP/2  |
+| `traceparent`       | [W3C Trace Context](https://www.w3.org/TR/trace-context/) of the request | `cleverapps.io`, Paris HTTP/2  |
 
-`Forwarded` follows [RFC 7239](https://www.rfc-editor.org/rfc/rfc7239): each element holds the protocol, the client as `for`, and the load balancer as `by`. On `cleverapps.io` domains, when a client sends a `traceparent` header, the load balancers keep its trace ID and replace its parent ID. To ask the support team about a request, give its `Sozu-Id`: the last one, if the client sent its own.
+`Forwarded` follows [RFC 7239](https://www.rfc-editor.org/rfc/rfc7239): each element holds the protocol, the client as `for`, and the load balancer as `by`. When a client sends a `traceparent` header, the load balancers that add this header keep its trace ID and replace its parent ID. To ask the support team about a request, give its `Sozu-Id`: the last one, if the client sent its own.
 
 A request to a `cleverapps.io` domain over HTTPS reaches your application with these headers:
 

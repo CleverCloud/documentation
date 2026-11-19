@@ -45,6 +45,25 @@ Select an organisation from the organisation switcher, at the top of the sidebar
 - **Notifications**: Manage email notifications and web hooks for team members.
 - **Shared software**: It's a section displaying third-party software, like [Heptapod](/doc/deploy/services/heptapod/)
 
+## Manage an organisation with Clever Tools
+
+[Clever Tools](/doc/tools/cli/) lists your organisations, shows their details, and updates their name, description, and billing information:
+
+```bash
+clever orgs list
+clever orgs get my-organisation
+clever orgs update my-organisation --billing-email billing@example.com
+```
+
+Target an organisation by its ID or its exact name. Clever Tools also lists its members, invites new ones, changes their role, and removes them, as [Organisations and members](/doc/tools/cli/organisations/) explains:
+
+```bash
+clever members list my-organisation --without-2fa
+clever members invite my-organisation giulia.rossi@example.com --role developer
+clever members update my-organisation giulia.rossi@example.com --role manager
+clever members remove my-organisation giulia.rossi@example.com
+```
+
 ## Delete an organisation
 
 In the **Information** page, click the *remove this organisation* button. You're then prompted to enter the name of the organisation to confirm the organisation deletion.

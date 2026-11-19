@@ -62,6 +62,7 @@ You'll find below the first commands to know to connect Clever Tools to your acc
   {{< card link="/developers/doc/tools/cli/network-groups" title="Network Groups" icon="tcp-ip-service" >}}
   {{< card link="/developers/doc/tools/cli/notifications-webhooks" title="Notifications and webhooks" icon="bell" >}}
   {{< card link="/developers/doc/tools/cli/operators" title="Operators (managed services)" icon="document-check" >}}
+  {{< card link="/developers/doc/tools/cli/organisations" title="Organisations and members" icon="building-library" >}}
   {{< card link="/developers/doc/tools/cli/profiles" title="Profiles and overrides" icon="user" >}}
   {{< card link="/developers/doc/tools/cli/service-dependencies" title="Service dependencies" icon="endpoints" >}}
 {{< /cards >}}

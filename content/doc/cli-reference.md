@@ -314,6 +314,10 @@ Applications deployment zones (region): `par`, `parhds`, `fr-north-hds`, `grahds
   - plans: `dev`, `xxs_sml`, `xxs_med`, `xxs_big`, `xs_tny`, `xs_sml`, `xs_med`, `xs_big`, `s_sml`, `s_med`, `s_big`, `m_sml`, `m_med`, `m_big`, `l_sml`, `l_med`, `l_big`, `xl_sml`, `xl_med`, `xl_big`, `xxl_sml`, `xxl_med`, `xxl_big`, `xxl_hug`
   - zones: `par`, `parhds`, `grahds`, `ldn`, `mtl`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
 
+- `openvisio`:
+  - plans: `visio-plan-1`
+  - zones: `par`
+
 - `otoroshi`:
   - plans: `base`
   - zones: `par`, `fr-north-hds`, `grahds`, `mtl`, `rbx`, `rbxhds`, `scw`, `sgp`, `syd`, `wsw`
@@ -1175,7 +1179,7 @@ clever domain favourite unset [options]
 
 ### domain overview
 
-**Description:** Get an overview of all your domains (all orgas, all apps)
+**Description:** Get an overview of all your domains (all orgs, all apps)
 
 **Since:** 3.9.0
 
@@ -3012,6 +3016,119 @@ clever matomo restart <addon-id|addon-name>
 addon-id|addon-name    Add-on ID (or name, if unambiguous)
 ```
 
+## members
+
+**Description:** Manage the members of an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever members
+```
+
+### members invite
+
+**Description:** Invite someone to an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever members invite --role <role> <org-id|org-name> <email> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name      Organisation ID (or exact name, if unambiguous)
+email                Email address of the person to invite
+```
+
+**Options**
+
+```console
+    --role <role>    Role of the new member (admin, manager, developer, accounting) (required)
+```
+
+### members list
+
+**Description:** List the members of an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever members list <org-id|org-name> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name          Organisation ID (or exact name, if unambiguous)
+```
+
+**Options**
+
+```console
+-F, --format <format>    Output format (human, json) (default: human)
+    --role <role>        Only list the members with this role (admin, manager, developer, accounting)
+    --without-2fa        Only list the members without 2FA
+```
+
+### members remove
+
+**Description:** Remove a member from an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever members remove <org-id|org-name> <member-id|email> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name    Organisation ID (or exact name, if unambiguous)
+member-id|email    Member ID (user_...) or email address
+```
+
+**Options**
+
+```console
+-y, --yes          Skip confirmation prompts
+```
+
+### members update
+
+**Description:** Update the role of a member of an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever members update --role <role> <org-id|org-name> <member-id|email> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name      Organisation ID (or exact name, if unambiguous)
+member-id|email      Member ID (user_...) or email address
+```
+
+**Options**
+
+```console
+    --role <role>    New role of the member (admin, manager, developer, accounting) (required)
+```
+
 ## metabase
 
 **Description:** Manage Clever Cloud Metabase services
@@ -3711,6 +3828,93 @@ clever open [options]
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
 ```
 
+## orgs
+
+**Description:** Manage organisations
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever orgs
+```
+
+### orgs get
+
+**Description:** Get the details of an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever orgs get <org-id|org-name> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name          Organisation ID (or exact name, if unambiguous)
+```
+
+**Options**
+
+```console
+-F, --format <format>    Output format (human, json) (default: human)
+```
+
+### orgs list
+
+**Description:** List your organisations
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever orgs list [options]
+```
+
+**Options**
+
+```console
+-F, --format <format>    Output format (human, json) (default: human)
+```
+
+### orgs update
+
+**Description:** Update the details of an organisation
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever orgs update <org-id|org-name> [options]
+```
+
+**Arguments**
+
+```console
+org-id|org-name                        Organisation ID (or exact name, if unambiguous)
+```
+
+**Options**
+
+```console
+    --address <address>                Billing address
+    --billing-email <billing-email>    Email receiving the invoices
+    --billing-name <billing-name>      Billing contact name
+    --city <city>                      Billing city
+    --company <company>                Company name
+    --country <country-code>           Billing country, as a two-letter ISO code (e.g.: FR)
+    --description <description>        Organisation description
+    --name <name>                      Organisation name
+    --vat-number <vat-number>          VAT number, requires a company
+    --zipcode <zipcode>                Billing zipcode
+```
+
 ## otoroshi
 
 **Description:** Manage Clever Cloud Otoroshi services
@@ -4143,6 +4347,29 @@ variable-value                 Value of the environment variable
 ```console
 -a, --alias <alias>            Short name for the application
     --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+```
+
+## rebuild
+
+**Description:** Restart an application without using cache
+
+**Since:** 5.5.0
+
+**Usage**
+
+```console
+clever rebuild [options]
+```
+
+**Options**
+
+```console
+-a, --alias <alias>            Short name for the application
+    --app <app-id|app-name>    Application to manage by its ID (or name, if unambiguous)
+    --commit <commit-id>       Restart the application with a specific commit ID
+-e, --exit-on <step>           Step at which the logs streaming is ended (deploy-start, deploy-end, never) (default: deploy-end)
+    --follow                   Continue to follow logs after deployment has ended (deprecated, use `--exit-on never` instead)
+-q, --quiet                    Don't show logs during deployment
 ```
 
 ## restart

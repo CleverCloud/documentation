@@ -209,10 +209,10 @@ clever domain diag --app my-api --filter example.com
 
 ### Redeploy without a new commit
 
-Changed an environment variable, or want a fresh start? No need for an empty commit. `clever restart` starts your application again, reusing the build cache when it can, and `--without-cache` rebuilds it from scratch. When you deploy a commit already on Clever Cloud, `--same-commit-policy` tells `clever deploy` to restart or rebuild instead of failing:
+Changed an environment variable, or want a fresh start? No need for an empty commit. `clever restart` starts your application again, reusing the build cache when it can, and `clever rebuild` starts it again without this cache. When you deploy a commit already on Clever Cloud, `--same-commit-policy` tells `clever deploy` to restart or rebuild instead of failing:
 
 ```bash
-clever restart --without-cache
+clever rebuild
 clever deploy --same-commit-policy rebuild
 ```
 

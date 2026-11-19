@@ -1,7 +1,7 @@
 bun:
   eol_source: https://github.com/oven-sh/bun/releases
   default:
-    - 1.4.4
+    - 1.4.5
 
 caddy:
   eol_source: https://github.com/caddyserver/caddy/releases
@@ -41,31 +41,31 @@ elixir:
 frankenphp:
   eol_source: https://github.com/php/frankenphp/releases
   default:
-    - "1.13.5"
+    - "1.13.6"
   caddy:
     - "2.11.9"
   php:
-    - "8.5.12"
+    - "8.5.13"
 
 go:
   eol_source: https://go.dev/doc/devel/release
   default:
-    - "1.27.3"
+    - "1.27.4"
 
 hugo:
   eol_source: https://github.com/gohugoio/hugo/releases
   default:
-    - "0.163"
+    - "0.169"
   accepted:
     - "0.160"
     - "0.161"
     - "0.162"
+    - "0.163"
     - "0.164"
     - "0.165"
     - "0.166"
     - "0.167"
     - "0.168"
-    - "0.169"
 
 java:
   eol_source: https://adoptium.net/fr/support/
@@ -85,7 +85,7 @@ java:
 node:
   eol_source: https://nodejs.org/en/about/releases/
   default:
-    - 26.13.0 (npm 11.20.0)
+    - 26.13.1 (npm 11.20.0)
 
 php:
   eol_source: https://www.php.net/supported-versions.php
@@ -109,7 +109,7 @@ php:
 sws:
   eol_source: https://github.com/static-web-server/static-web-server/releases
   default:
-    - "2.44.1"
+    - "2.44.3"
 
 varnish:
   eol_source: https://www.varnish.org/releases/

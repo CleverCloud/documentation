@@ -91,6 +91,7 @@ From December 1, 2026, Hugo 0.168 will be the minimum supported version. If your
 ## Other changes
 
 - NGINX 1.30.7 fixes the [NGINX2Root vulnerabilities](/changelog/2026/11-19-nginx2root/)
+- Bun 1.4.5 includes [security fixes](https://bun.com/blog/bun-v1.4.5) for HTTP/3, TLS, and DNS
 - The Node.js version included in our images is its latest [security release](https://nodejs.org/en/blog/release/v26.13.1)
 - The Java 17, 21, and 25 releases are the ones announced [to fix Java4Shell](/changelog/2026/11-19-java-security-releases/)
 - Apache 2.4.71 fixes [three vulnerabilities](https://httpd.apache.org/security/vulnerabilities_24.html), including a critical one in `mod_http2`

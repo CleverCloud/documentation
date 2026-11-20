@@ -66,13 +66,13 @@ Learn more about Otoroshi with LLM on Clever Cloud: https://www.clever.cloud/dev
 
 Set options at creation with `--option name=value`, once per option. An unknown option fails the creation, and lists the available ones:
 
-| Option          | Value                               | Effect                                                                                                                            |
-| --------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `access-domain` | A domain, such as `example.com`     | Serves the web interface and the API under this domain instead of `services.clever-cloud.com`                                     |
-| `routes-domain` | A domain, such as `api.example.com` | Serves the routes on this domain instead of the `cleverapps.io` domain of the Java application                                    |
-| `networkgroup`  | `true`                              | Adds Otoroshi to a [Network Group](#use-otoroshi-in-a-network-group) at creation                                                  |
-| `cellar`        | `true`                              | Creates a [Cellar](/doc/deploy/storage/cellar/) add-on, linked to the Java application                                            |
-| `exporter`      | `pulsar` or `elastic`               | Creates a [Pulsar](/doc/deploy/pulsar/) or [Elastic Stack](/doc/deploy/databases/elastic/) add-on, linked to the Java application |
+| Option          | Value                                | Effect                                                                                                                                                                              |
+| --------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `access-domain` | A domain, such as `example.com`      | Serves the web interface and the API under this domain instead of `services.clever-cloud.com`                                                                                       |
+| `routes-domain` | A domain, such as `api.example.com`  | Serves the routes on this domain instead of the `cleverapps.io` domain of the Java application                                                                                      |
+| `networkgroup`  | `true`                               | Adds Otoroshi to a [Network Group](#use-otoroshi-in-a-network-group) at creation                                                                                                    |
+| `cellar`        | `true`                               | Creates a [Cellar](/doc/deploy/storage/cellar/) add-on, linked to the Java application                                                                                              |
+| `exporter`      | `pulsar`, `elastic`, or `postgresql` | Creates a [Pulsar](/doc/deploy/pulsar/), [Elastic Stack](/doc/deploy/databases/elastic/), or [PostgreSQL](/doc/deploy/databases/postgresql/) add-on, linked to the Java application |
 
 For instance, to serve Otoroshi and its routes on your own domains:
 
@@ -92,7 +92,7 @@ An Otoroshi Gateway add-on runs on resources of your organisation, which you see
 
 - A [Java](/doc/deploy/applications/java/java-jar/) application that runs Otoroshi, of size `S` with a single instance at creation
 - A [Redis](/doc/deploy/databases/redis/) add-on of size `S`, which stores the configuration and the state of Otoroshi
-- The add-ons of the `cellar` and `exporter` options, if you set them: Cellar `S`, Pulsar, or Elastic Stack `XS`
+- The add-ons of the `cellar` and `exporter` options, if you set them: Cellar `S`, Pulsar, Elastic Stack `XS`, or PostgreSQL `XXS Small Space`
 
 You can change these sizes afterwards, as for any application or add-on.
 

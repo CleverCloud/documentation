@@ -127,7 +127,7 @@ With Secured Multi Instances enabled, you're billed for two Java instances of yo
 
 ### Check the cluster
 
-`clever keycloak get myKeycloak` shows whether the Network Group is enabled. Once the application has restarted, the latest `Received new cluster view for channel ISPN` line in the logs lists as many members as running instances, such as `(2)`. Each instance also reports physical addresses on the Network Group private network. With several instances, addresses on `127.0.0.1:7800` mean they aren't clustered: check that Secured Multi Instances is enabled, then restart the application. An instance may log `becoming singleton` while the cluster forms, so rely on the latest cluster view instead.
+`clever keycloak get myKeycloak` shows whether the Network Group is enabled. Once the application has restarted, the latest `Received new cluster view for channel ISPN` line in the logs lists as many members as running instances, such as `(2)`. Each instance also reports physical addresses on the Network Group private network. With several instances, a `no cluster defined, use only local caches` line means they aren't clustered: check that Secured Multi Instances is enabled, then restart the application. An instance may log `becoming singleton` while the cluster forms, so rely on the latest cluster view instead.
 
 ### Run more than 2 instances
 
@@ -208,13 +208,28 @@ Then click **Save**.
 
 Keycloak uses an [FSBucket](/doc/deploy/storage/fs-bucket) to install themes and plugins. To deploy a custom theme or custom plugin, simply download them into the respective `themes` or `providers` folder in your FSBucket.
 
+## Trust custom CA certificates
+
+Starting with version `26.7.5`, Keycloak can trust the internal certificate authority of an LDAPS directory, an identity provider, or a webhook. Upload its CA certificates to the `truststores` folder of the add-on's [FS Bucket](/doc/deploy/storage/fs-bucket), then restart the Java application. Keycloak loads them at each start, so a restart is enough to add or remove a certificate.
+
+If the `truststores` folder doesn't exist in the FS Bucket, rebuild the add-on first: the build creates it.
+
+Keycloak reads these files, in the `truststores` folder and the folders it contains:
+
+- PEM files holding one or more certificates, or a single DER certificate, with a `.pem`, `.crt`, `.cer`, or `.ca` extension
+- PKCS12 files without password, with a `.p12`, `.pfx`, or `.pkcs12` extension
+
+It ignores private keys and other files. The logs report each file at startup, as `Truststores: installed <file>`, or `Truststores: REJECTED <file>` when Keycloak can't read it. A rejected file doesn't prevent Keycloak from starting. `KC_TRUSTSTORE_PATHS` still applies.
+
 ## IP filtering
 
 You can restrict who can reach your Keycloak instance with two complementary mechanisms: a per-endpoint filter that blocks traffic before authentication runs, and an in-realm authentication flow that filters at sign-in time. They can be used together.
 
 ### Per-realm, on admin, public and SCIM endpoints
 
-Starting with version `26.6`, the Keycloak add-on can filter incoming requests based on the client's public IP, with separate rules for each realm and for each endpoint category (admin console and admin API, public endpoints, SCIM provisioning). Filtering is configured through environment variables of the underlying Java application. Each variable accepts a comma-separated list of IP addresses and blocked requests receive an `HTTP 403` response.
+Starting with version `26.7.5`, the Keycloak add-on can filter incoming requests based on the client's public IP. Rules apply to each realm and to each category of endpoints: admin console and admin API, public endpoints, and SCIM provisioning.
+
+Set them in environment variables of the Java application. Each variable accepts comma-separated IPv4 or IPv6 addresses and Classless Inter-Domain Routing (CIDR) ranges. Blocked requests receive an `HTTP 403` response, such as `Access denied - Admin of realm master`.
 
 | Variable                         | Scope                                                                                     | Protected paths                               |
 | -------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------- |
@@ -223,7 +238,13 @@ Starting with version `26.6`, the Keycloak add-on can filter incoming requests b
 | `CC_KEYCLOAK_SCIM_IPS_<REALM>`   | SCIM provisioning endpoints of a given realm (requires the `scim-api` feature, see below) | `/realms/<realm>/scim/*`                      |
 | `CC_KEYCLOAK_ADMIN_IPS`          | Global fallback for admin endpoints not covered by a per-realm rule                       | `/admin/*`                                    |
 
-The realm name in the variable suffix must match the realm name as it appears in URLs (case-sensitive). Per-realm rules take precedence over the global admin filter. If none of these variables is set, Keycloak keeps its standard public behavior.
+Realm names in the variables match regardless of case: `CC_KEYCLOAK_ADMIN_IPS_MASTER` protects the `master` realm. With a custom HTTP path in `KC_HTTP_RELATIVE_PATH`, the protected paths start with this prefix. The add-on checks each request against the most specific rule only:
+
+- Paths that no rule matches aren't filtered
+- A per-realm admin rule replaces `CC_KEYCLOAK_ADMIN_IPS` for this realm
+- A SCIM rule replaces the public rule for the SCIM endpoints of this realm
+
+A per-realm admin rule doesn't protect the admin API of other realms, which administrators of the `master` realm can reach. Set `CC_KEYCLOAK_ADMIN_IPS` to cover them. If you set none of these variables, Keycloak keeps its standard public behavior.
 
 For example, to allow only two office IPs to reach the `master` realm admin console, restrict the `production` realm to your application servers and reserve its SCIM endpoints for your identity sync server:
 
@@ -234,10 +255,24 @@ CC_KEYCLOAK_SCIM_IPS_production="198.51.100.42"
 CC_KEYCLOAK_ADMIN_IPS="203.0.113.10"
 ```
 
-Filters compare the client IP to the literal values you provide, so use individual IP addresses rather than CIDR ranges. If you configure a custom HTTP path through `KC_HTTP_RELATIVE_PATH`, the prefix is automatically prepended to the protected paths.
+The deployment fails, and its logs explain why, in these cases:
+
+- A variable lists no address
+- Two variables configure the same paths
+- An entry isn't an IP address or a CIDR range
 
 > [!NOTE] Enabling the SCIM endpoints
 > SCIM was introduced in Keycloak `26.6` as an [experimental feature](https://www.keycloak.org/2026/04/scim-as-experimental-feature) and is disabled by default. The `CC_KEYCLOAK_SCIM_IPS_<REALM>` filter only takes effect once SCIM is enabled. Add `scim-api` (comma-separated if you already have other entries) to the `KC_FEATURES` environment variable of the Java application and rebuild it — `KC_FEATURES` is a build-time setting, so a simple restart is not enough. Once the rebuild completes, enable SCIM on each target realm from the Keycloak admin console (Realm Settings, *SCIM API Enabled* toggle) where the SCIM base URL is also displayed.
+
+#### Clients behind a proxy
+
+Filters check the client IP that the Clever Cloud load balancer adds to `X-Forwarded-For`, not the addresses a client writes in it. Behind a CDN, a web application firewall (WAF), or a corporate proxy, this address is the proxy's.
+
+List these proxies in `CC_KEYCLOAK_TRUSTED_PROXIES`, as comma-separated addresses and CIDR ranges. Keycloak and the filters then see the client IP behind up to three proxies in a row. An entry can't be a Clever Cloud load balancer address, or the deployment fails.
+
+```bash
+CC_KEYCLOAK_TRUSTED_PROXIES="198.51.100.0/24, 203.0.113.25"
+```
 
 ### At the realm authentication flow level
 

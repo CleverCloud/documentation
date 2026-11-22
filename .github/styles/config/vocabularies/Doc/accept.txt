@@ -124,6 +124,9 @@ Percona
 pico
 pnpm
 Poppler
+precompile
+precompiled
+precompiles
 Protobuf
 psql
 Quarkus

@@ -152,6 +152,7 @@ Scotty
 SELinux
 serverless
 Servlet
+servlets
 SFTPGo
 shortcode
 shortcodes

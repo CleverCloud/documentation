@@ -195,19 +195,20 @@ Depending on the type of your application, the code will differ. You can find mo
 
 Here is a non-exhaustive summary:
 
-| Language                              | Usage                                                          |
-| ------------------------------------- | -------------------------------------------------------------- |
-| Go                                    | `os.Getenv("MY_VAR")`                                          |
-| Haskell                               | `Os.Getenv["MY_VAR"]`                                          |
-| Node.js                               | `process.env["MY_VAR"]`                                        |
-| Java WAR                              | `System.getProperties().getProperty("MY_VAR")`                 |
-| PHP                                   | `getenv("MY_VAR")`                                             |
-| Play! Framework 1 & Play! Framework 2 | `System.getenv("MY_VAR")` or `${MY_VAR}` in `application.conf` |
-| Python                                | `os.getenv("MY_VAR")`                                          |
-| Ruby                                  | `ENV["MY_VAR"]`                                                |
-| Rust                                  | `std::env::var("MY_VAR")`                                      |
-| Scala                                 | `System.getenv("MY_VAR")`                                      |
-| .NET                                  | `System.Environment.GetEnvironmentVariable("MY_VAR")`          |
+| Language               | Usage                                                 |
+| ---------------------- | ----------------------------------------------------- |
+| Go                     | `os.Getenv("MY_VAR")`                                 |
+| Haskell                | `Os.Getenv["MY_VAR"]`                                 |
+| Node.js                | `process.env["MY_VAR"]`                               |
+| Java WAR               | `System.getProperties().getProperty("MY_VAR")`        |
+| PHP                    | `getenv("MY_VAR")`                                    |
+| Play Framework 1       | `${MY_VAR}` in `application.conf`                     |
+| Play Framework 2 and 3 | `${?MY_VAR}` in `application.conf`                    |
+| Python                 | `os.getenv("MY_VAR")`                                 |
+| Ruby                   | `ENV["MY_VAR"]`                                       |
+| Rust                   | `std::env::var("MY_VAR")`                             |
+| Scala                  | `sys.env("MY_VAR")`                                   |
+| .NET                   | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
 ## Specific languages
 
@@ -230,4 +231,4 @@ Here is a non-exhaustive summary:
 {{< /cards >}}
 
 > [!NOTE] Build time
-> Variables are available at build time for runtimes that support build time instructions, such as [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play! Framework 1](/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud), [Play! Framework 2](/doc/deploy/applications/scala/play-framework-2/#application-secret), or [Scala](/doc/deploy/applications/scala/#mandatory-needs).
+> Variables are also available during the build, as with [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play 1](/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud), [Play 2 and 3](/doc/deploy/applications/scala/play-framework-2/#application-secret), or [Scala](/doc/deploy/applications/scala/#mandatory-needs) applications.

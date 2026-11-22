@@ -52,6 +52,14 @@ go:
   default:
     - "1.27.4"
 
+gradle:
+  eol_source: https://gradle.org/releases/
+  default:
+    - "8"
+  accepted:
+    - "8"
+    - "9"
+
 hugo:
   eol_source: https://github.com/gohugoio/hugo/releases
   default:

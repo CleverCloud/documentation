@@ -2,14 +2,14 @@
 type: docs
 linkTitle: Gradle
 title: Gradle
-description: Deploy Java applications using Gradle build system on Clever Cloud with automatic dependency resolution and build automation
+description: Build Java applications with Gradle on Clever Cloud, with the Gradle Wrapper or the Gradle version of your choice, and the task or the JAR to start
 keywords:
-- java
+- build.gradle
 - gradle
-- build-system
-- deployment
-- automation
-- dependencies
+- gradle wrapper
+- gradlew
+- java
+- spring boot
 aliases:
 - /doc/applications/java/java-gradle
 - /doc/deploy/application/java/java-gradle
@@ -19,85 +19,51 @@ aliases:
 
 ## Overview
 
-Clever Cloud offers you to run your Gradle projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files or environment variables, to add parameters like your gradle task for example.
+[Gradle](https://gradle.org) builds a Java project from its `build.gradle` file, which declares the plugins, the dependencies, and the tasks of the project. Clever Cloud builds it with `gradle assemble`, then starts the JAR it produces or a task of Gradle. The [Java page](/doc/deploy/applications/java/) describes what all Java applications share: the Java version, the memory, the variables, and the caches.
 
-Gradle is a project automation tool that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the more traditional XML form of declaring the project configuration.
+## Create your Gradle application
 
-Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
-
-{{% include "shared/java-versions" %}}
-
-Accepted values are the following:
-
-{{< runtimes_versions java >}}
-
-(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
-
-## Configure your Java application
-
-Unless you set `CC_RUN_COMMAND`, you *must* tell Clever Cloud how to run your application, with the `CC_GRADLE_DEPLOY_GOAL` environment variable [described below](#configure-goals-with-environment-variables).
-
-### Configure goals with environment variables
-
-Set the goals with these environment variables:
-
-- `CC_GRADLE_BUILD_GOAL`: the task that builds your project, `assemble` by default
-- `CC_GRADLE_DEPLOY_GOAL`: the task and options that run your project, such as `bootRun`
+To create a new Gradle application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
-CC_GRADLE_BUILD_GOAL="clean assemble"
-CC_GRADLE_DEPLOY_GOAL="bootRun"
+clever create --type gradle
 ```
 
-The former `GRADLE_BUILD_GOAL` and `GRADLE_DEPLOY_GOAL` names remain supported as aliases.
+## Build with Gradle
 
-To build with Ant, a `clevercloud/gradle.json` file is the only way: set `ant` in `build.type`, and the target in `build.goal`.
-
- {{% include "shared/new-relic" %}}
-
-{{% include "shared/java-env-injection" %}}
-
-## Custom run command
-
-If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default way of running your application.
-
-Example:
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), then the `assemble` task of Gradle:
 
 ```bash
-CC_RUN_COMMAND="java -jar somefile.jar <options>"
+gradle assemble
 ```
 
-## Gradle version
+To run other tasks, set them in `CC_GRADLE_BUILD_GOAL`, such as `clean assemble`.
 
-Without the [Gradle Wrapper](#the-gradle-wrapper), set the major version of Gradle in `CC_GRADLE_VERSION`, `8` or `9`:
+### Gradle version
+
+The [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) sets the version of Gradle in your project. Run `gradle wrapper`, then commit the `gradlew` script, executable, and the `gradle/wrapper` folder: Clever Cloud runs `./gradlew` instead of `gradle`. Clever Cloud detects Gradle from `build.gradle` or `gradlew`: commit the wrapper with a Kotlin build script, `build.gradle.kts`.
+
+Without the wrapper, Clever Cloud uses Gradle {{< runtime_version gradle >}} by default. To use Gradle 9, set `CC_GRADLE_VERSION`:
 
 ```bash
 clever env set CC_GRADLE_VERSION 9
 ```
 
-## The Gradle Wrapper
+## Start your application
 
-Since Gradle can come in many versions, Clever Cloud automatically support the [Gradle Wrapper ↗](https://www.gradle.org/docs/current/userguide/gradle_wrapper.html).
+Set the JAR that the build produces in `CC_JAR_PATH`, as the [Java page](/doc/deploy/applications/java/#start-command) explains. Its pattern must match a single file: the Spring Boot plugin builds a `-plain.jar` next to the executable JAR, and `build/libs/*.jar` then matches both. Build only the executable JAR with the `bootJar` task:
 
-Just create and commit the `gradlew` file and the wrapper `jar` and `properties` files. Your working repository should look like this:
+```bash
+clever env set CC_GRADLE_BUILD_GOAL bootJar
+clever env set CC_JAR_PATH "build/libs/*.jar"
+```
 
-{{< filetree/container >}}
-  {{< filetree/folder name="." >}}
-    {{< filetree/file name="gradlew" >}}
-    {{< filetree/folder name="gradle" >}}
-      {{< filetree/folder name="wrapper" >}}
-        {{< filetree/file name="gradle-wrapper.jar" >}}
-        {{< filetree/file name="gradle-wrapper.properties" >}}
-      {{< /filetree/folder >}}
-    {{< /filetree/folder >}}
-    {{< filetree/folder name="src" >}}
-    {{< /filetree/folder >}}
-  {{< /filetree/folder >}}
-{{< /filetree/container >}}
+You can also start a task of Gradle, such as `bootRun`, set in `CC_GRADLE_DEPLOY_GOAL`. Gradle then stays in memory next to your application, which runs in another JVM: a JAR uses less memory.
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/java" title="Java" subtitle="Java version, memory, variables, caches, and tasks" icon="java" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-maven" title="Maven" subtitle="Build with Maven or its wrapper, and start a JAR or a goal" icon="simple:apachemaven" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-war" title="WAR and EAR" subtitle="Deploy a WAR or an EAR in Tomcat, Jetty, WildFly, or Payara" icon="java" >}}
 {{< /cards >}}

@@ -95,6 +95,7 @@ Maudit
 mdBook
 Metabase
 Metabot
+Micronaut
 middleware
 misconfiguration
 Monolog
@@ -165,6 +166,7 @@ syslog
 tailnet
 Tailscale
 Telegraf
+Temurin
 Tesseract
 tolerations
 toolchain

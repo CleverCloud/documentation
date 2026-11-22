@@ -1,157 +1,170 @@
 ---
 type: docs
-linkTitle: War/Ear
-title: War/Ear
-description: Deploy WAR and EAR Java Enterprise (JEE) applications on Clever Cloud with support for various containers and servlet technologies
+linkTitle: WAR and EAR
+title: WAR and EAR
+description: Deploy WAR and EAR packages on Clever Cloud in Tomcat, Jetty, WildFly, or Payara, built by Clever Cloud or committed to your repository
 keywords:
-- java
-- war
 - ear
-- jee
-- containers
-- deployment
+- jakarta ee
+- jetty
+- payara
+- servlet container
+- tomcat
+- war
+- wildfly
 aliases:
 - /deploy/application/java/java-war
 - /doc/applications/java/java-war
+- /doc/applications/java/war/
 - /doc/deploy/application/java/java-war
 - /doc/java-war
-- /doc/applications/java/war/
 - /doc/java/java-war
 ---
 
 ## Overview
 
-Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
+A WAR file packages a Java web application, with its servlets, pages, and libraries, for a servlet container. An EAR file groups several modules for an application server. Clever Cloud starts the container of your choice, Tomcat, Jetty, WildFly, or Payara, and deploys your packages in it. The [Java page](/doc/deploy/applications/java/) describes what all Java applications share: the Java version, the variables, and the caches.
 
-In {{< term "JEE" >}}, application modules are packaged as EAR and WAR based on their purpose.
+## Create your WAR application
 
-- {{< term "WAR" >}}: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
+To create a new WAR application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
-- {{< term "EAR" >}}: `*.war` and `*.jar` files are packaged as JAR file with `.ear` extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root URL mapping of web modules.
+```bash
+clever create --type war
+```
 
-Note: Clever Cloud configures your container to listen on `0.0.0.0:8080`, or on port `9000` with [Request Flow](/doc/manage/request-flow/): you have nothing to set. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
+## Configure your WAR application
 
-{{% include "shared/java-versions" %}}
+A `clevercloud/war.json` file is mandatory: it sets the container and the packages to deploy, which no environment variable replaces. For instance, a servlet packaged as a WAR by Maven:
 
-{{< runtimes_versions java >}}
+```xml {filename="pom.xml"}
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
+  <groupId>com.example</groupId>
+  <artifactId>hello</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
 
-## Configure your Java application
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-> [!IMPORTANT] clevercloud/war.json is mandatory
-> You **must** provide a `clevercloud/war.json` file in your application repository.
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
-### Full configuration example
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.5.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
 
-Here's what your configuration file can look like:
+```java {filename="src/main/java/com/example/hello/HelloServlet.java"}
+package com.example.hello;
 
-```json
-{
-   "build": {
-      "type": "maven",
-      "goal": "package"
-   },
-   "deploy": {
-      "container": "TOMCAT10",
-      "war": [
-         {
-            "file": "target/my-app-1.0-SNAPSHOT.war",
-            "context": "/app1",
-            "checkMe": "/app1/ping"
-         },
-         {
-            "file": "my-second-app.war",
-            "context": "/app2",
-            "checkMe": "/app2/web/foobar"
-         }
-      ]
-   }
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/plain");
+        response.getWriter().println("Hello from a WAR on Clever Cloud");
+    }
 }
 ```
 
-### Breaking down the configuration
+Here, Maven builds the WAR, which Tomcat 10.1 serves at the root of the domain:
 
-#### Requirements
-
-Here are the mandatory fields:
-
-```json
-{
-   "deploy": {
-      "container":"<string>",
-      "war": [
-         {
-            "file": "<string>",
-            "context": "/<string>",
-            "checkMe": "/<string>"
-         }
-      ]
-   }
-}
-```
-
-| Usage    | Field         | Description                                                                                                                                                                                                                                                                                                                                                                                        |
-| -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Required | **container** | Name of the container to use. Should contain one of the values inside parentheses in the containers table (uppercase).                                                                                                                                                                                                                                                                             |
-| Required | file          | Should contain the path of the war/ear file relative to your application root.                                                                                                                                                                                                                                                                                                                     |
-| Optional | context       | - Must start with a slash (/), can be "/" <br>- Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path. <br>- Not needed for an `ear` file. <br>- The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context. |
-| Optional | checkMe       | - This field is recommended. <br>- A path to GET in order to test if the application is really running. <br>- By default we will consider that the application is up if the container is up. <br>- With this option, we will try to GET `/{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.                                       |
-
-#### Let Clever Cloud build your application
-
-The mandatory part alone is enough… if you directly push a dry war file to deploy. You might want to just push your code to Clever Cloud and let us build the app and generate the war.
-
-That you can do, by setting the "build" field object in the `war.json` file:
-
-```json
+```json {filename="clevercloud/war.json"}
 {
   "build": {
-    "type": "<string>",
-    "goal": "<string>"
+    "type": "maven",
+    "goal": "package"
+  },
+  "deploy": {
+    "container": "TOMCAT10",
+    "war": [
+      {
+        "file": "target/hello-1.0.0.war",
+        "context": "/",
+        "checkMe": "/hello"
+      }
+    ]
   }
 }
 ```
 
-| Usage    | Field    | Description                                                                                            |
-| -------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| Required | **type** | - The tool you want to use to build your app. <br>- Can be "maven", "gradle", "sbt" or "ant"           |
-| Required | **goal** | - The goal you want the tool to execute.<br>- Basically, for maven, you want to put "package" in here. |
+The container listens on the port Clever Cloud sets, with a heap size that depends on the memory of the instance.
 
- {{% include "shared/new-relic" %}}
+### Build the package
 
-## Available containers for war.json
+With `war.json`, Clever Cloud doesn't detect the build tool from the files of your project. Its `build` object runs Maven with a goal, such as `mvn package`, after the pre-build [hook](/doc/manage/build-hooks/) and before the deployment of the WAR.
 
-Here's the list of the configuration values for the "container" field in `war.json` (with **End Of Life** versions tagged as `EOL`):
+For a Gradle project, leave the `build` object out and set the task in `CC_GRADLE_BUILD_GOAL` instead, such as `war`. Without either, Clever Cloud skips the build: commit the WAR or EAR files to deploy.
 
-| Value     | Description                                                                              | EOL |
-| --------- | ---------------------------------------------------------------------------------------- | --- |
-| JETTY9    | Use Jetty servlet container 9.x (see <https://jetty.org/download.html#version-history>)  | EOL |
-| JETTY11   | Use Jetty servlet container 11.x (see <https://jetty.org/download.html#version-history>) | EOL |
-| PAYARA5   | Use Payara servlet container 5.x (see <https://www.payara.fish/>)                        | EOL |
-| PAYARA6   | Use Payara servlet container 6.x (see <https://www.payara.fish/>)                        | EOL |
-| TOMCAT8   | Use Tomcat servlet container 8.x (see <https://tomcat.apache.org/>)                      | EOL |
-| TOMCAT9   | Use Tomcat servlet container 9.x (see <https://tomcat.apache.org/>)                      |     |
-| TOMCAT10  | Use Tomcat servlet container 10.x (see <https://tomcat.apache.org/>)                     |     |
-| WILDFLY9  | Use Wildfly servlet container 9.x (see <https://wildfly.org/>)                           | EOL |
-| WILDFLY27 | Use Wildfly servlet container 27.x (see <https://wildfly.org/>)                          | EOL |
-| WILDFLY33 | Use Wildfly servlet container 33.x (see <https://wildfly.org/>)                          | EOL |
+### Deploy the packages
 
-{{% include "shared/java-env-injection" %}}
+`deploy.war` lists the packages to deploy, each with these fields:
 
-## Custom run command
+- `file`: the path of the WAR or EAR file, from the folder of your project
+- `context`: the path the application answers on, such as `/` or `/app`
+- `checkMe`: a path that must answer for the deployment to succeed, context included
 
-If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default way of running your application.
+Without `context`, a WAR answers on its name without the extension, such as `/hello-1.0.0`. Set `checkMe` to a path of your application, such as `/hello-1.0.0/hello`: the [health check](/doc/manage/healthcheck/) then waits until it answers. Deploy an EAR in WildFly or Payara, which are application servers.
 
-Example:
+### Containers
 
-```bash
-CC_RUN_COMMAND="java -jar somefile.jar <options>"
+`deploy.container` accepts these values, with end-of-life (EOL) versions marked. For a new application, use Tomcat 10.1:
+
+| Value       | Container        |
+| ----------- | ---------------- |
+| `JETTY9`    | Jetty 9.4 (EOL)  |
+| `JETTY11`   | Jetty 11 (EOL)   |
+| `PAYARA5`   | Payara 5 (EOL)   |
+| `PAYARA6`   | Payara 6 (EOL)   |
+| `TOMCAT8`   | Tomcat 8 (EOL)   |
+| `TOMCAT9`   | Tomcat 9         |
+| `TOMCAT10`  | Tomcat 10.1      |
+| `WILDFLY27` | WildFly 27 (EOL) |
+| `WILDFLY33` | WildFly 33 (EOL) |
+
+Tomcat 10, Jetty 11, WildFly 27 and later, and Payara 6 use the `jakarta.*` packages of Jakarta EE 9 and later. The other containers use the former `javax.*` packages. Another value fails at start: `No enum constant com.clevercloud.cargostarter.ContainerEnum`.
+
+## Environment variables
+
+Your application reads its [environment variables](/doc/manage/environment-variables/) from its environment, and from the system properties of the container:
+
+```java
+String fromEnvironment = System.getenv("MY_VARIABLE");
+String fromProperties = System.getProperty("MY_VARIABLE");
 ```
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/java" title="Java" subtitle="Java version, memory, variables, caches, and tasks" icon="java" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-gradle" title="Gradle" subtitle="Build with Gradle or its wrapper, and start a JAR or a task" icon="simple:gradle" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-maven" title="Maven" subtitle="Build with Maven or its wrapper, and start a JAR or a goal" icon="simple:apachemaven" >}}
 {{< /cards >}}

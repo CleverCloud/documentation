@@ -220,14 +220,14 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java WAR/EAR" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/nodejs/#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#environment-injection" title="Play Framework 1.x" icon="playframework" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#environment-injection" title="Play Framework 2.x" icon="playframework" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud" title="Play Framework 1" icon="playframework" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#application-secret" title="Play Framework 2 and 3" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/python/#configure-your-python-application" title="Python" icon="simple:python" >}}
   {{< card link="/developers/doc/deploy/applications/ruby" title="Ruby" icon="ruby" >}}
   {{< card link="/developers/doc/deploy/applications/rust/#mandatory-needs" title="Rust" icon="simple:rust" >}}
-  {{< card link="/developers/doc/deploy/applications/scala/#environment-injection" title="Scala" icon="simple:scala" >}}
+  {{< card link="/developers/doc/deploy/applications/scala/#mandatory-needs" title="Scala" icon="simple:scala" >}}
   {{< card link="/developers/doc/deploy/applications/static/" title="Static" icon="static" >}}
 {{< /cards >}}
 
 > [!NOTE] Build time
-> Variables are available at build time for runtimes that support build time instructions, such as [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play! Framework 1](/doc/deploy/applications/scala/play-framework-1/#environment-injection), [Play! Framework 2](/doc/deploy/applications/scala/play-framework-2/#environment-injection), or [Scala](/doc/deploy/applications/scala/#environment-injection).
+> Variables are available at build time for runtimes that support build time instructions, such as [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play! Framework 1](/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud), [Play! Framework 2](/doc/deploy/applications/scala/play-framework-2/#application-secret), or [Scala](/doc/deploy/applications/scala/#mandatory-needs).

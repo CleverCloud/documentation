@@ -49,7 +49,7 @@ The Clever Cloud Keycloak add-on is designed to meet the most common needs, buil
 
 When you create the Keycloak add-on, Clever Cloud automatically deploys:
 
-- A [Java](/doc/deploy/applications/java/java-jar) instance with Keycloak pre-loaded and configured
+- A [Java](/doc/deploy/applications/java) instance with Keycloak pre-loaded and configured
 - A [PostgreSQL](/doc/deploy/databases/postgresql) database
 - A [FS Bucket](/doc/deploy/storage/fs-bucket) used for themes, plugins, and import/export storage needs
 

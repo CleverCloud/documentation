@@ -90,7 +90,7 @@ The `cellar` and `exporter` options create and link an add-on: the Java applicat
 
 An Otoroshi Gateway add-on runs on resources of your organisation, which you see and manage [in the Console](https://console.clever-cloud.com/):
 
-- A [Java](/doc/deploy/applications/java/java-jar/) application that runs Otoroshi, of size `S` with a single instance at creation
+- A [Java](/doc/deploy/applications/java/) application that runs Otoroshi, of size `S` with a single instance at creation
 - A [Redis](/doc/deploy/databases/redis/) add-on of size `S`, which stores the configuration and the state of Otoroshi
 - The add-ons of the `cellar` and `exporter` options, if you set them: Cellar `S`, Pulsar, Elastic Stack `XS`, or PostgreSQL `XXS Small Space`
 

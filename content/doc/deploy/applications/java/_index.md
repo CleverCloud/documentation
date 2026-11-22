@@ -11,16 +11,22 @@ keywords:
 - jar deployment
 - war deployment
 aliases:
+- /applications/java
+- /applications/java/java-jar
+- /deploy/application/java/java-jar
 - /doc/applications/java
+- /doc/applications/java/java-jar
 - /doc/deploy/application/java
 - /doc/deploy/application/java/by-framework
 - /doc/deploy/application/java/java
+- /doc/deploy/application/java/java-jar
+- /doc/deploy/applications/java/java-jar
+- /doc/develop/java/
 - /doc/getting-started/by-language/java
 - /doc/java
 - /doc/java-hosting
+- /doc/java/java-jar
 - /doc/java/select-java-version
-- /doc/develop/java/
-- /applications/java
 - /doc/partials/language-specific-deploy/java
 ---
 

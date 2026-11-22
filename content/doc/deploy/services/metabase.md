@@ -156,7 +156,7 @@ Remove the `CC_PRE_RUN_HOOK` environment variable from the Java application and 
 
 When you create the Metabase add-on, Clever Cloud automatically deploys:
 
-- A [Java](/doc/deploy/applications/java/java-jar/) instance with Metabase pre-loaded
+- A [Java](/doc/deploy/applications/java/) instance with Metabase pre-loaded
 - A [PostgreSQL](/doc/deploy/databases/postgresql/) database (for internal Metabase use)
 
 ## Plan sizing
